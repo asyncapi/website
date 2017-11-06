@@ -1,0 +1,1058 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The specification — AsyncAPI</title>
+    <meta charset="utf-8">
+    <meta name="description" content="AsyncAPI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://asyncapi.org/v1/spec.html">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The specification — AsyncAPI">
+    <meta property="og:description" content="AsyncAPI">
+    <meta property="og:image" content="https://asyncapi.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The specification — AsyncAPI">
+    <meta name="twitter:description" content="AsyncAPI">
+    <meta name="twitter:image" content="https://asyncapi.org/images/logo.png">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/asyncapi.js"></script>
+    <script>window.PAGE_TYPE = "spec"</script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '', 'asyncapi.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body class="docs">    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>AsyncAPI</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link">
+    Learn
+    <span class="arrow"></span>
+  </a>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v1/guide/" class="nav-link">Guide</a></li>
+      <li><a href="/v1/tutorial/" class="nav-link">Tutorial</a></li>
+      <li><a href="/v1/spec.html" class="nav-link current">The specification</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/asyncapi/asyncapi " class="nav-link" target="_blank">Github repo</a></li>
+      <li><a href="https://async-apis-slack.herokuapp.com/ " class="nav-link" target="_blank">Slack channel</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="http://editor.asyncapi.org" class="nav-link" target="_blank">Online editor</a></li>
+        <li><a href="/v1/tooling/docgens.html" class="nav-link ">Documentation generators</a></li>
+        <li><a href="/v1/tooling/codegens.html" class="nav-link ">Code generators</a></li>
+      </ul>
+    </li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/search?q=asyncapi" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/asyncapi" class="nav-link" target="_blank">Blog</a></li>
+    </ul></li>
+    <li><h4>Spread the word</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.asyncapi.org&via=fmvilas&text=Check%20out%20%23AsyncAPI.%20Worth%20having%20a%20look%21&hashtags=api%2Cmicroservices%2Ctech%2Ccode" class="nav-link" target="_blank">Tweet about it</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/about.html" class="nav-link about">About</a>
+</li>
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li class="nav-dropdown-container learn">
+  <a class="nav-link">
+    Learn
+    <span class="arrow"></span>
+  </a>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v1/guide/" class="nav-link">Guide</a></li>
+      <li><a href="/v1/tutorial/" class="nav-link">Tutorial</a></li>
+      <li><a href="/v1/spec.html" class="nav-link current">The specification</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://github.com/asyncapi/asyncapi " class="nav-link" target="_blank">Github repo</a></li>
+      <li><a href="https://async-apis-slack.herokuapp.com/ " class="nav-link" target="_blank">Slack channel</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="http://editor.asyncapi.org" class="nav-link" target="_blank">Online editor</a></li>
+        <li><a href="/v1/tooling/docgens.html" class="nav-link ">Documentation generators</a></li>
+        <li><a href="/v1/tooling/codegens.html" class="nav-link ">Code generators</a></li>
+      </ul>
+    </li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/search?q=asyncapi" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/asyncapi" class="nav-link" target="_blank">Blog</a></li>
+    </ul></li>
+    <li><h4>Spread the word</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.asyncapi.org&via=fmvilas&text=Check%20out%20%23AsyncAPI.%20Worth%20having%20a%20look%21&hashtags=api%2Cmicroservices%2Ctech%2Ccode" class="nav-link" target="_blank">Tweet about it</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="/about.html" class="nav-link about">About</a>
+</li>
+
+    </ul>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+  
+    <li>
+      <a href="/v1/spec.html" class="sidebar-link current">The specification</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content spec with-sidebar ">
+  
+    
+  
+  
+    <h1>The specification</h1>
+  
+  <p class="tip">Part of this content has been taken from the great work done by the folks at the <a href="https://openapis.org" target="_blank" rel="external">Open API Initiative</a>.</p>
+
+<h4 id="Version-1-0-0"><a href="#Version-1-0-0" class="headerlink" title="Version 1.0.0"></a>Version 1.0.0</h4><p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank" rel="external">RFC 2119</a>.</p>
+<p>The AsyncAPI Specification is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank" rel="external">The Apache License, Version 2.0</a>.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>The AsyncAPI Specification is a project used to describe and document Asynchronous APIs.</p>
+<p>The AsyncAPI Specification defines a set of files required to describe such an API.<br>These files can then be used to create utilities, such as documentation, integration and/or testing tools.</p>
+<p>The AsyncAPI Specification is often used to describe the inter-process communication (IPC) in distributed systems built using a broker-centric architecture. In such cases, it’s very easy to get confused with what the AsyncAPI files must describe. <strong>It’s RECOMMENDED to create a single file describing the whole system instead of creating a file for each <a href="#definitionsProcess">process</a>.</strong> Otherwise, you will end up having lots of interdependent files.</p>
+<p>The file(s) MUST describe the operations a new <a href="#definitionsProcess">process</a> can perform. For instance:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="string">event.user.signup:</span></div><div class="line"><span class="attr">  subscribe:</span></div><div class="line">    <span class="string">$ref:</span> <span class="string">"#/components/messages/userSignUp"</span></div></pre></td></tr></table></figure>
+<p>It means <a href="#definitionsProcess">processes</a> can subscribe to <code>event.user.signup</code> topic. However, it does NOT mean every <a href="#definitionsProcess">process</a> must subscribe to this topic.</p>
+<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><h4 id="Message-Broker"><a href="#Message-Broker" class="headerlink" title="Message Broker"></a><a name="definitionsMessageBroker"></a>Message Broker</h4><p>A message broker is a system in charge of message exchange. It MAY provide additional features, such as message queueing, storage or processing.</p>
+<h4 id="Message"><a href="#Message" class="headerlink" title="Message"></a><a name="definitionsMessage"></a>Message</h4><p>A message is a piece of information a process will send to a message broker. It MUST contain headers and payload.</p>
+<h4 id="Topic"><a href="#Topic" class="headerlink" title="Topic"></a><a name="definitionstTopic"></a>Topic</h4><p>A topic is a routing key used by the message broker to deliver messages to the subscribed processes. Depending on the protocol used, a message MAY include the topic in its headers.</p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a><a name="definitionsProcess"></a>Process</h4><p>A process is any kind of computer program connected to a message broker. It MUST be a producer, a consumer or both.</p>
+<h4 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a><a name="definitionsProducer"></a>Producer</h4><p>A producer is a process publishing messages to a message broker.</p>
+<h4 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a><a name="definitionsConsumer"></a>Consumer</h4><p>A consumer is a process subscribed to a message broker and consumes messages from it.</p>
+<h4 id="Topic-Templating"><a href="#Topic-Templating" class="headerlink" title="Topic Templating"></a><a name="definitionsTopicTemplating"></a>Topic Templating</h4><p>Topic templating refers to the usage of curly braces ({}) to mark a section of a topic as replaceable.</p>
+<h2 id="Specification"><a href="#Specification" class="headerlink" title="Specification"></a>Specification</h2><h3 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h3><p>The files describing the Asynchronous API in accordance with the AsyncAPI Specification are represented as JSON objects and conform to the JSON standards.<br>YAML, being a superset of JSON, can be used as well to represent a A2S (AsyncAPI Specification) file.</p>
+<p>For example, if a field is said to have an array value, the JSON array representation will be used:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="string">&#123;</span></div><div class="line">   <span class="string">"field"</span> <span class="string">:</span> <span class="string">[...]</span></div><div class="line"><span class="string">&#125;</span></div></pre></td></tr></table></figure>
+<p>While the API is described using JSON it does not impose a JSON input/output to the API itself.</p>
+<p>All field names in the specification are <strong>case sensitive</strong>.</p>
+<p>The schema exposes two types of fields.<br>Fixed fields, which have a declared name, and Patterned fields, which declare a regex pattern for the field name.<br>Patterned fields can have multiple occurrences as long as each has a unique name.</p>
+<p>In order to preserve the ability to round-trip between YAML and JSON formats, YAML version <a href="http://www.yaml.org/spec/1.2/spec.html" target="_blank" rel="external">1.2</a> is recommended along with some additional constraints:</p>
+<ul>
+<li>Tags MUST be limited to those allowed by the <a href="http://www.yaml.org/spec/1.2/spec.html#id2803231" target="_blank" rel="external">JSON Schema ruleset</a></li>
+<li>Keys used in YAML maps MUST be limited to a scalar string, as defined by the YAML Failsafe schema ruleset</li>
+</ul>
+<h3 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h3><p>The A2S representation of the API is made of a single file.<br>However, parts of the definitions can be split into separate files, at the discretion of the user.<br>This is applicable for <code>$ref</code> fields in the specification as follows from the <a href="http://json-schema.org" target="_blank" rel="external">JSON Schema</a> definitions.</p>
+<p>By convention, the AsyncAPI Specification (A2S) file is named <code>asyncapi.json</code> or <code>asyncapi.yaml</code>.</p>
+<h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><h4 id="AsyncAPI-Object"><a href="#AsyncAPI-Object" class="headerlink" title="AsyncAPI Object"></a><a name="A2SObject"></a>AsyncAPI Object</h4><p>This is the root document object for the API specification.<br>It combines resource listing and API declaration together into one document.</p>
+<h5 id="Fixed-Fields"><a href="#Fixed-Fields" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="A2SAsyncAPI"></a>asyncapi</td>
+<td style="text-align:center"><a href="#A2SVersionString">AsyncAPI Version String</a></td>
+<td><strong>Required.</strong> Specifies the AsyncAPI Specification version being used. It can be used by tooling Specifications and clients to interpret the version. The structure shall be <code>major</code>.<code>minor</code>.<code>patch</code>, where <code>patch</code> versions <em>must</em> be compatible with the existing <code>major</code>.<code>minor</code> tooling. Typically patch versions will be introduced to address errors in the documentation, and tooling should typically be compatible with the corresponding <code>major</code>.<code>minor</code> (1.0.*). Patch versions will correspond to patches of this document.</td>
+</tr>
+<tr>
+<td><a name="A2SInfo"></a>info</td>
+<td style="text-align:center"><a href="#infoObject">Info Object</a></td>
+<td><strong>Required.</strong> Provides metadata about the API. The metadata can be used by the clients if needed.</td>
+</tr>
+<tr>
+<td><a name="A2SBaseTopic"></a>baseTopic</td>
+<td style="text-align:center"><a href="#baseTopicString">BaseTopic String</a></td>
+<td>The base topic to the API.</td>
+</tr>
+<tr>
+<td><a name="A2SServers"></a>servers</td>
+<td style="text-align:center"><a href="#serverObject">Server Object</a></td>
+<td>An array of <a href="#serverObject">Server Objects</a>, which provide connectivity information to a target server.</td>
+</tr>
+<tr>
+<td><a name="A2STopics"></a>topics</td>
+<td style="text-align:center"><a href="#topicsObject">Topics Object</a></td>
+<td><strong>Required.</strong> The available topics and messages for the API.</td>
+</tr>
+<tr>
+<td><a name="A2SComponents"></a>components</td>
+<td style="text-align:center"><a href="#componentsObject">Components Object</a></td>
+<td>An element to hold various schemas for the specification.</td>
+</tr>
+<tr>
+<td><a name="A2SSecurity"></a>security</td>
+<td style="text-align:center">[<a href="#securityRequirementObject">Security Requirement Object</a>]</td>
+<td>A declaration of which security mechanisms can be used across the API. The list of values includes alternative security requirement objects that can be used. Only one of the security requirement objects need to be satisfied to authorize a connection or operation.</td>
+</tr>
+<tr>
+<td><a name="A2STags"></a>tags</td>
+<td style="text-align:center">[<a href="#tagObject">Tag Object</a>]</td>
+<td>A list of tags used by the specification with additional metadata. Each tag name in the list MUST be unique.</td>
+</tr>
+<tr>
+<td><a name="A2SExternalDocs"></a>externalDocs</td>
+<td style="text-align:center"><a href="#externalDocumentationObject">External Documentation Object</a></td>
+<td>Additional external documentation.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<h4 id="AsyncAPI-Version-String"><a href="#AsyncAPI-Version-String" class="headerlink" title="AsyncAPI Version String"></a><a name="A2SVersionString"></a>AsyncAPI Version String</h4><p>The version string signifies the version of the AsyncAPI Specification that the document complies to.<br>The format for this string <em>must</em> be <code>major</code>.<code>minor</code>.<code>patch</code>.  The <code>patch</code> <em>may</em> be suffixed by a hyphen and extra alphanumeric characters.</p>
+<p>A <code>major</code>.<code>minor</code> shall be used to designate the AsyncAPI Specification version, and will be considered compatible with the AsyncAPI Specification specified by that <code>major</code>.<code>minor</code> version.<br>The patch version will not be considered by tooling, making no distinction between <code>1.0.0</code> and <code>1.0.1</code>.</p>
+<p>In subsequent versions of the AsyncAPI Specification, care will be given such that increments of the <code>minor</code> version should not interfere with operations of tooling developed to a lower minor version. Thus a hypothetical <code>1.1.0</code> specification should be usable with tooling designed for <code>1.0.0</code>.</p>
+<h4 id="Info-Object"><a href="#Info-Object" class="headerlink" title="Info Object"></a><a name="infoObject"></a>Info Object</h4><p>The object provides metadata about the API.<br>The metadata can be used by the clients if needed.</p>
+<h5 id="Fixed-Fields-1"><a href="#Fixed-Fields-1" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="infoObjectTitle"></a>title</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required.</strong> The title of the application.</td>
+</tr>
+<tr>
+<td><a name="infoObjectVersion"></a>version</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required</strong> Provides the version of the application API (not to be confused with the specification version).</td>
+</tr>
+<tr>
+<td><a name="infoObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A short description of the application. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> can be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="infoObjectTermsOfService"></a>termsOfService</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A URL to the Terms of Service for the API. MUST be in the format of a URL.</td>
+</tr>
+<tr>
+<td><a name="infoObjectContact"></a>contact</td>
+<td style="text-align:center"><a href="#contactObject">Contact Object</a></td>
+<td>The contact information for the exposed API.</td>
+</tr>
+<tr>
+<td><a name="infoObjectLicense"></a>license</td>
+<td style="text-align:center"><a href="#licenseObject">License Object</a></td>
+<td>The license information for the exposed API.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<h5 id="Info-Object-Example"><a href="#Info-Object-Example" class="headerlink" title="Info Object Example:"></a>Info Object Example:</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"title"</span>: <span class="string">"AsyncAPI Sample App"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">"This is a sample server."</span>,</div><div class="line">  <span class="attr">"termsOfService"</span>: <span class="string">"http://asyncapi.org/terms/"</span>,</div><div class="line">  <span class="attr">"contact"</span>: &#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"API Support"</span>,</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"http://www.asyncapi.org/support"</span>,</div><div class="line">    <span class="attr">"email"</span>: <span class="string">"support@asyncapi.org"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"license"</span>: &#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"Apache 2.0"</span>,</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"http://www.apache.org/licenses/LICENSE-2.0.html"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.1"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">AsyncAPI</span> <span class="string">Sample</span> <span class="string">App</span></div><div class="line"><span class="attr">description:</span> <span class="string">This</span> <span class="string">is</span> <span class="string">a</span> <span class="string">sample</span> <span class="string">server.</span></div><div class="line"><span class="attr">termsOfService:</span> <span class="attr">http://asyncapi.org/terms/</span></div><div class="line"><span class="attr">contact:</span></div><div class="line"><span class="attr">  name:</span> <span class="string">API</span> <span class="string">Support</span></div><div class="line"><span class="attr">  url:</span> <span class="attr">http://www.asyncapi.org/support</span></div><div class="line"><span class="attr">  email:</span> <span class="string">support@asyncapi.org</span></div><div class="line"><span class="attr">license:</span></div><div class="line"><span class="attr">  name:</span> <span class="string">Apache</span> <span class="number">2.0</span></div><div class="line"><span class="attr">  url:</span> <span class="attr">http://www.apache.org/licenses/LICENSE-2.0.html</span></div><div class="line"><span class="attr">version:</span> <span class="number">1.0</span><span class="number">.1</span></div></pre></td></tr></table></figure>
+<h4 id="Contact-Object"><a href="#Contact-Object" class="headerlink" title="Contact Object"></a><a name="contactObject"></a>Contact Object</h4><p>Contact information for the exposed API.</p>
+<h5 id="Fixed-Fields-2"><a href="#Fixed-Fields-2" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="contactObjectName"></a>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The identifying name of the contact person/organization.</td>
+</tr>
+<tr>
+<td><a name="contactObjectUrl"></a>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The URL pointing to the contact information. MUST be in the format of a URL.</td>
+</tr>
+<tr>
+<td><a name="contactObjectEmail"></a>email</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The email address of the contact person/organization. MUST be in the format of an email address.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="Contact-Object-Example"><a href="#Contact-Object-Example" class="headerlink" title="Contact Object Example:"></a>Contact Object Example:</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"API Support"</span>,</div><div class="line">  <span class="attr">"url"</span>: <span class="string">"http://www.example.com/support"</span>,</div><div class="line">  <span class="attr">"email"</span>: <span class="string">"support@example.com"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">name:</span> <span class="string">API</span> <span class="string">Support</span></div><div class="line"><span class="attr">url:</span> <span class="attr">http://www.example.com/support</span></div><div class="line"><span class="attr">email:</span> <span class="string">support@example.com</span></div></pre></td></tr></table></figure>
+<h4 id="License-Object"><a href="#License-Object" class="headerlink" title="License Object"></a><a name="licenseObject"></a>License Object</h4><p>License information for the exposed API.</p>
+<h5 id="Fixed-Fields-3"><a href="#Fixed-Fields-3" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="licenseObjectName"></a>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required.</strong> The license name used for the API.</td>
+</tr>
+<tr>
+<td><a name="licenseObjectUrl"></a>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A URL to the license used for the API. MUST be in the format of a URL.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="License-Object-Example"><a href="#License-Object-Example" class="headerlink" title="License Object Example:"></a>License Object Example:</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"Apache 2.0"</span>,</div><div class="line">  <span class="attr">"url"</span>: <span class="string">"http://www.apache.org/licenses/LICENSE-2.0.html"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">name:</span> <span class="string">Apache</span> <span class="number">2.0</span></div><div class="line"><span class="attr">url:</span> <span class="attr">http://www.apache.org/licenses/LICENSE-2.0.html</span></div></pre></td></tr></table></figure>
+<h4 id="Base-Topic-String"><a href="#Base-Topic-String" class="headerlink" title="Base Topic String"></a><a name="baseTopicString"></a>Base Topic String</h4><p>The base topic to the API. You MAY use this field to avoid repeating the beginning of the topics.</p>
+<h5 id="Base-Topic-String-Example"><a href="#Base-Topic-String-Example" class="headerlink" title="Base Topic String Example:"></a>Base Topic String Example:</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"baseTopic"</span>: <span class="string">"hitch.accounts"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">baseTopic:</span> <span class="string">hitch.accounts</span></div></pre></td></tr></table></figure>
+<h4 id="Server-Object"><a href="#Server-Object" class="headerlink" title="Server Object"></a><a name="serverObject"></a>Server Object</h4><p>An object representing a Server.</p>
+<h5 id="Fixed-Fields-4"><a href="#Fixed-Fields-4" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="serverObjectUrl"></a>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>REQUIRED</strong>. A URL to the target host.  This URL supports Server Variables and MAY be relative, to indicate that the host location is relative to the location where the AsyncAPI document is being served. Variable substitutions will be made when a variable is named in <code>{</code>brackets<code>}</code>.</td>
+</tr>
+<tr>
+<td><a name="serverObjectScheme"></a>scheme</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>REQUIRED</strong>. The scheme this URL supports for connection. The value MUST be one of the following: <code>amqp</code>, <code>amqps</code>, <code>mqtt</code>, <code>mqtts</code>, <code>ws</code>, <code>wss</code>, <code>stomp</code>, <code>stomps</code>.</td>
+</tr>
+<tr>
+<td><a name="serverObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>An optional string describing the host designated by the URL. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> MAY be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="serverObjectVariables"></a>variables</td>
+<td style="text-align:center">Map[<code>string</code>, <a href="#serverVariableObject">Server Variable Object</a>]</td>
+<td>A map between a variable name and its value.  The value is used for substitution in the server’s URL template.</td>
+</tr>
+</tbody>
+</table>
+<p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<h5 id="Server-Object-Example"><a href="#Server-Object-Example" class="headerlink" title="Server Object Example"></a>Server Object Example</h5><p>A single server would be described as:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"url"</span>: <span class="string">"development.gigantic-server.com"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">"Development server"</span>,</div><div class="line">  <span class="attr">"scheme"</span>: <span class="string">"mqtts"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="string">development.gigantic-server.com</span></div><div class="line"><span class="attr">description:</span> <span class="string">Development</span> <span class="string">server</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">mqtts</span></div></pre></td></tr></table></figure>
+<p>The following shows how multiple servers can be described, for example, at the AsyncAPI Object’s <a href="#A2SServers"><code>servers</code></a>:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"servers"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"url"</span>: <span class="string">"development.gigantic-server.com"</span>,</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"Development server"</span>,</div><div class="line">      <span class="attr">"scheme"</span>: <span class="string">"mqtts"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"url"</span>: <span class="string">"staging.gigantic-server.com"</span>,</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"Staging server"</span>,</div><div class="line">      <span class="attr">"scheme"</span>: <span class="string">"mqtts"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"url"</span>: <span class="string">"api.gigantic-server.com"</span>,</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"Production server"</span>,</div><div class="line">      <span class="attr">"scheme"</span>: <span class="string">"mqtts"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">servers:</span></div><div class="line"><span class="attr">- url:</span> <span class="string">development.gigantic-server.com</span></div><div class="line"><span class="attr">  description:</span> <span class="string">Development</span> <span class="string">server</span></div><div class="line"><span class="attr">  scheme:</span> <span class="string">mqtts</span></div><div class="line"><span class="attr">- url:</span> <span class="string">staging.gigantic-server.com</span></div><div class="line"><span class="attr">  description:</span> <span class="string">Staging</span> <span class="string">server</span></div><div class="line"><span class="attr">  scheme:</span> <span class="string">mqtts</span></div><div class="line"><span class="attr">- url:</span> <span class="string">api.gigantic-server.com</span></div><div class="line"><span class="attr">  description:</span> <span class="string">Production</span> <span class="string">server</span></div><div class="line"><span class="attr">  scheme:</span> <span class="string">mqtts</span></div></pre></td></tr></table></figure>
+<p>The following shows how variables can be used for a server configuration:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"servers"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"url"</span>: <span class="string">"&#123;username&#125;.gigantic-server.com:&#123;port&#125;/&#123;basePath&#125;"</span>,</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"The production API server"</span>,</div><div class="line">      <span class="attr">"variables"</span>: &#123;</div><div class="line">        <span class="attr">"username"</span>: &#123;</div><div class="line">          <span class="attr">"default"</span>: <span class="string">"demo"</span>,</div><div class="line">          <span class="attr">"description"</span>: <span class="string">"This value is assigned by the service provider, in this example `gigantic-server.com`"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"port"</span>: &#123;</div><div class="line">          <span class="attr">"enum"</span>: [</div><div class="line">            <span class="string">"8883"</span>,</div><div class="line">            <span class="string">"8884"</span></div><div class="line">          ],</div><div class="line">          <span class="attr">"default"</span>: <span class="string">"8883"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"basePath"</span>: &#123;</div><div class="line">          <span class="attr">"default"</span>: <span class="string">"v2"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">servers:</span></div><div class="line"><span class="attr">- url:</span> <span class="string">&#123;username&#125;.gigantic-server.com:&#123;port&#125;/&#123;basePath&#125;</span></div><div class="line"><span class="attr">  description:</span> <span class="string">The</span> <span class="string">production</span> <span class="string">API</span> <span class="string">server</span></div><div class="line"><span class="attr">  variables:</span></div><div class="line"><span class="attr">    username:</span></div><div class="line">      <span class="comment"># note! no enum here means it is an open value</span></div><div class="line"><span class="attr">      default:</span> <span class="string">demo</span></div><div class="line"><span class="attr">      description:</span> <span class="string">This</span> <span class="string">value</span> <span class="string">is</span> <span class="string">assigned</span> <span class="string">by</span> <span class="string">the</span> <span class="string">service</span> <span class="string">provider,</span> <span class="string">in</span> <span class="string">this</span> <span class="string">example</span> <span class="string">`gigantic-server.com`</span></div><div class="line"><span class="attr">    port:</span></div><div class="line"><span class="attr">      enum:</span></div><div class="line"><span class="bullet">        -</span> <span class="string">'8883'</span></div><div class="line"><span class="bullet">        -</span> <span class="string">'8884'</span></div><div class="line"><span class="attr">      default:</span> <span class="string">'8883'</span></div><div class="line"><span class="attr">    basePath:</span></div><div class="line">      <span class="comment"># open meaning there is the opportunity to use special base paths as assigned by the provider, default is `v2`</span></div><div class="line"><span class="attr">      default:</span> <span class="string">v2</span></div></pre></td></tr></table></figure>
+<h4 id="Server-Variable-Object"><a href="#Server-Variable-Object" class="headerlink" title="Server Variable Object"></a><a name="serverVariableObject"></a>Server Variable Object</h4><p>An object representing a Server Variable for server URL template substitution.</p>
+<h5 id="Fixed-Fields-5"><a href="#Fixed-Fields-5" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="serverVariableObjectEnum"></a>enum</td>
+<td style="text-align:center">[<code>string</code>]</td>
+<td>An enumeration of string values to be used if the substitution options are from a limited set.</td>
+</tr>
+<tr>
+<td><a name="serverVariableObjectDefault"></a>default</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The default value to use for substitution, and to send, if an alternate value is <em>not</em> supplied.</td>
+</tr>
+<tr>
+<td><a name="serverVariableObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>An optional description for the server variable. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> MAY be used for rich text representation.</td>
+</tr>
+</tbody>
+</table>
+<p>At least one of the fields MUST be provided.</p>
+<p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<h4 id="Topics-Object"><a href="#Topics-Object" class="headerlink" title="Topics Object"></a><a name="topicsObject"></a>Topics Object</h4><p>Holds the relative paths to the individual topic and their operations.<br>The topic is appended to the <a href="#baseTopicString"><code>Base Topic</code></a> in order to construct the full one.</p>
+<h5 id="Patterned-Fields"><a href="#Patterned-Fields" class="headerlink" title="Patterned Fields"></a>Patterned Fields</h5><table>
+<thead>
+<tr>
+<th>Field Pattern</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="topicsObjectTopic"></a>^[^.]{topic}</td>
+<td style="text-align:center"><a href="#topicItemObject">Topic Item Object</a></td>
+<td>A relative path to an individual topic. The field name MUST NOT begin with a dot. <a href="#definitionsTopicTemplating">Topic templating</a> is allowed.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="Topics-Object-Example"><a href="#Topics-Object-Example" class="headerlink" title="Topics Object Example"></a>Topics Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"accounts.1.0.event.user.signup"</span>: &#123;</div><div class="line">    <span class="attr">"subscribe"</span>: &#123;</div><div class="line">      <span class="attr">"$ref"</span>: <span class="string">"#/components/messages/userSignedUp"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="string">accounts.1.0.event.user.signup:</span></div><div class="line"><span class="attr">  subscribe:</span></div><div class="line">    <span class="string">$ref:</span> <span class="string">"#/components/messages/userSignedUp"</span></div></pre></td></tr></table></figure>
+<h4 id="Topic-Item-Object"><a href="#Topic-Item-Object" class="headerlink" title="Topic Item Object"></a><a name="topicItemObject"></a>Topic Item Object</h4><p>Describes the operations available on a single topic.</p>
+<h5 id="Fixed-Fields-6"><a href="#Fixed-Fields-6" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="topicItemObjectRef"></a>$ref</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Allows for an external definition of this topic item. The referenced structure MUST be in the format of a <a href="#topicItemObject">Topic Item Object</a>. If there are conflicts between the referenced definition and this Topic Item’s definition, the behavior is <em>undefined</em>.</td>
+</tr>
+<tr>
+<td><a name="topicItemObjectSubscribe"></a>subscribe</td>
+<td style="text-align:center"><a href="#messageObject">Message Object</a></td>
+<td>A definition of the message a SUBSCRIBE operation will receive on this topic.</td>
+</tr>
+<tr>
+<td><a name="topicItemObjectPublish"></a>publish</td>
+<td style="text-align:center"><a href="#messageObject">Message Object</a></td>
+<td>A definition of the message a PUBLISH operation will receive on this topic.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="Topic-Item-Object-Example"><a href="#Topic-Item-Object-Example" class="headerlink" title="Topic Item Object Example"></a>Topic Item Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"subscribe"</span>: &#123;</div><div class="line">    <span class="attr">"summary"</span>: <span class="string">"A user signed up."</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"A longer description of the message"</span>,</div><div class="line">    <span class="attr">"payload"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">      <span class="attr">"properties"</span>: &#123;</div><div class="line">        <span class="attr">"user"</span>: &#123;</div><div class="line">          <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/user"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"signup"</span>: &#123;</div><div class="line">          <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/signup"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">subscribe:</span></div><div class="line"><span class="attr">  summary:</span> <span class="string">A</span> <span class="string">user</span> <span class="string">signed</span> <span class="string">up.</span></div><div class="line"><span class="attr">  description:</span> <span class="string">A</span> <span class="string">longer</span> <span class="string">description</span> <span class="string">of</span> <span class="string">the</span> <span class="string">message</span></div><div class="line"><span class="attr">  payload:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">object</span></div><div class="line"><span class="attr">    properties:</span></div><div class="line"><span class="attr">      user:</span></div><div class="line">        <span class="string">$ref:</span> <span class="string">"#/components/schemas/user"</span></div><div class="line"><span class="attr">      signup:</span></div><div class="line">        <span class="string">$ref:</span> <span class="string">"#/components/schemas/signup"</span></div></pre></td></tr></table></figure>
+<h4 id="Message-Object"><a href="#Message-Object" class="headerlink" title="Message Object"></a><a name="messageObject"></a>Message Object</h4><p>Describes a message received on a given topic and operation.</p>
+<h5 id="Fixed-Fields-7"><a href="#Fixed-Fields-7" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="messageObjectHeaders"></a>headers</td>
+<td style="text-align:center"><a href="#schemaObject">Schema Object</a></td>
+<td>Definition of the message headers. It MAY or MAY NOT define the protocol headers.</td>
+</tr>
+<tr>
+<td><a name="messageObjectPayload"></a>payload</td>
+<td style="text-align:center"><a href="#schemaObject">Schema Object</a></td>
+<td>Definition of the message payload.</td>
+</tr>
+<tr>
+<td><a name="messageObjectSummary"></a>summary</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A short summary of what the message is about.</td>
+</tr>
+<tr>
+<td><a name="messageObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A verbose explanation of the message. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> can be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="messageObjectTags"></a>tags</td>
+<td style="text-align:center">[<a href="#tagObject">Tag Object</a>]</td>
+<td>A list of tags for API documentation control. Tags can be used for logical grouping of messages.</td>
+</tr>
+<tr>
+<td><a name="messageObjectExternalDocs"></a>externalDocs</td>
+<td style="text-align:center"><a href="#externalDocumentationObject">External Documentation Object</a></td>
+<td>Additional external documentation for this message.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="Message-Object-Example"><a href="#Message-Object-Example" class="headerlink" title="Message Object Example"></a>Message Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"summary"</span>: <span class="string">"Action to sign a user up."</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">"A longer description"</span>,</div><div class="line">  <span class="attr">"tags"</span>: [</div><div class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"user"</span> &#125;,</div><div class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"signup"</span> &#125;,</div><div class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"register"</span> &#125;</div><div class="line">  ],</div><div class="line">  <span class="attr">"headers"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">    <span class="attr">"properties"</span>: &#123;</div><div class="line">      <span class="attr">"qos"</span>: &#123;</div><div class="line">        <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/MQTTQoSHeader"</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">"retainFlag"</span>: &#123;</div><div class="line">        <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/MQTTRetainHeader"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"payload"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">    <span class="attr">"properties"</span>: &#123;</div><div class="line">      <span class="attr">"user"</span>: &#123;</div><div class="line">        <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/userCreate"</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">"signup"</span>: &#123;</div><div class="line">        <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/signup"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">summary:</span> <span class="string">Action</span> <span class="string">to</span> <span class="string">sign</span> <span class="string">a</span> <span class="string">user</span> <span class="string">up.</span></div><div class="line"><span class="attr">description:</span> <span class="string">A</span> <span class="string">longer</span> <span class="string">description</span></div><div class="line"><span class="attr">tags:</span></div><div class="line"><span class="attr">  - name:</span> <span class="string">user</span></div><div class="line"><span class="attr">  - name:</span> <span class="string">signup</span></div><div class="line"><span class="attr">  - name:</span> <span class="string">register</span></div><div class="line"><span class="attr">headers:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">object</span></div><div class="line"><span class="attr">  properties:</span></div><div class="line"><span class="attr">    qos:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">"#/components/schemas/MQTTQoSHeader"</span></div><div class="line"><span class="attr">    retainFlag:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">"#/components/schemas/MQTTRetainHeader"</span></div><div class="line"><span class="attr">payload:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">object</span></div><div class="line"><span class="attr">  properties:</span></div><div class="line"><span class="attr">    user:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">"#/components/schemas/userCreate"</span></div><div class="line"><span class="attr">    signup:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">"#/components/schemas/signup"</span></div></pre></td></tr></table></figure>
+<h4 id="Tag-Object"><a href="#Tag-Object" class="headerlink" title="Tag Object"></a><a name="tagObject"></a>Tag Object</h4><p>Allows adding meta data to a single tag.</p>
+<h5 id="Fixed-Fields-8"><a href="#Fixed-Fields-8" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="tagObjectName"></a>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required.</strong> The name of the tag.</td>
+</tr>
+<tr>
+<td><a name="tagObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A short description for the tag. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> can be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="tagObjectExternalDocs"></a>externalDocs</td>
+<td style="text-align:center"><a href="#externalDocumentationObject">External Documentation Object</a></td>
+<td>Additional external documentation for this tag.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="Tag-Object-Example"><a href="#Tag-Object-Example" class="headerlink" title="Tag Object Example"></a>Tag Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"name"</span>: <span class="string">"user"</span>,</div><div class="line">	<span class="attr">"description"</span>: <span class="string">"User-related messages"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">name:</span> <span class="string">user</span></div><div class="line"><span class="attr">description:</span> <span class="string">User-related</span> <span class="string">messages</span></div></pre></td></tr></table></figure>
+<h4 id="External-Documentation-Object"><a href="#External-Documentation-Object" class="headerlink" title="External Documentation Object"></a><a name="externalDocumentationObject"></a>External Documentation Object</h4><p>Allows referencing an external resource for extended documentation.</p>
+<h5 id="Fixed-Fields-9"><a href="#Fixed-Fields-9" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="externalDocDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>A short description of the target documentation. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> can be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="externalDocUrl"></a>url</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required.</strong> The URL for the target documentation. Value MUST be in the format of a URL.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="External-Documentation-Object-Example"><a href="#External-Documentation-Object-Example" class="headerlink" title="External Documentation Object Example"></a>External Documentation Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"description"</span>: <span class="string">"Find more info here"</span>,</div><div class="line">  <span class="attr">"url"</span>: <span class="string">"https://example.com"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">description:</span> <span class="string">Find</span> <span class="string">more</span> <span class="string">info</span> <span class="string">here</span></div><div class="line"><span class="attr">url:</span> <span class="attr">https://example.com</span></div></pre></td></tr></table></figure>
+<h4 id="Reference-Object"><a href="#Reference-Object" class="headerlink" title="Reference Object"></a><a name="referenceObject"></a>Reference Object</h4><p>A simple object to allow referencing other components in the specification, internally and externally.</p>
+<p>The Reference Object is defined by <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03" target="_blank" rel="external">JSON Reference</a> and follows the same structure, behavior and rules.</p>
+<p>For this specification, reference resolution is done as defined by the JSON Reference specification<br>and not by the JSON Schema specification.</p>
+<h5 id="Fixed-Fields-10"><a href="#Fixed-Fields-10" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="referenceRef"></a>$ref</td>
+<td style="text-align:center"><code>string</code></td>
+<td><strong>Required.</strong> The reference string.</td>
+</tr>
+</tbody>
+</table>
+<p>This object cannot be extended with additional properties and any properties added SHALL be ignored.</p>
+<h5 id="Reference-Object-Example"><a href="#Reference-Object-Example" class="headerlink" title="Reference Object Example"></a>Reference Object Example</h5><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/Pet"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="string">$ref:</span> <span class="string">'#/components/schemas/Pet'</span></div></pre></td></tr></table></figure>
+<h4 id="Components-Object"><a href="#Components-Object" class="headerlink" title="Components Object"></a><a name="componentsObject"></a>Components Object</h4><p>Holds a set of reusable objects for different aspects of the AsyncAPI specification.<br>All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.</p>
+<h5 id="Fixed-Fields-11"><a href="#Fixed-Fields-11" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:left">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="componentsSchemas"></a> schemas</td>
+<td style="text-align:left">Map[<code>string</code>, <a href="#schemaObject">Schema Object</a> &#124; <a href="#referenceObject">Reference Object</a>]</td>
+<td>An object to hold reusable <a href="#schemaObject">Schema Objects</a>.</td>
+</tr>
+<tr>
+<td><a name="componentsMessages"></a> messages</td>
+<td style="text-align:left">Map[<code>string</code>, <a href="#messageObject">Message Object</a> &#124; <a href="#referenceObject">Reference Object</a>]</td>
+<td>An object to hold reusable <a href="#messageObject">Message Objects</a>.</td>
+</tr>
+<tr>
+<td><a name="componentsSecuritySchemes"></a> securitySchemes</td>
+<td style="text-align:left">Map[<code>string</code>, <a href="#securitySchemeObject">Security Scheme Object</a> &#124; <a href="#referenceObject">Reference Object</a>]</td>
+<td>An object to hold reusable <a href="#securitySchemeObject">Security Scheme Objects</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<p>All the fixed fields declared above are objects that MUST use keys that match the regular expression: <code>^[a-zA-Z0-9\.\-_]+$</code>.</p>
+<p>Field Name Examples:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">User</div><div class="line">User_1</div><div class="line">User_Name</div><div class="line">user-name</div><div class="line">my.org.User</div></pre></td></tr></table></figure>
+<h5 id="Components-Object-Example"><a href="#Components-Object-Example" class="headerlink" title="Components Object Example"></a>Components Object Example</h5><figure class="highlight"><table><tr><td class="code"><pre><div class="line">"components": &#123;</div><div class="line">  "schemas": &#123;</div><div class="line">    "Category": &#123;</div><div class="line">      "type": "object",</div><div class="line">      "properties": &#123;</div><div class="line">        "id": &#123;</div><div class="line">          "type": "integer",</div><div class="line">          "format": "int64"</div><div class="line">        &#125;,</div><div class="line">        "name": &#123;</div><div class="line">          "type": "string"</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    "Tag": &#123;</div><div class="line">      "type": "object",</div><div class="line">      "properties": &#123;</div><div class="line">        "id": &#123;</div><div class="line">          "type": "integer",</div><div class="line">          "format": "int64"</div><div class="line">        &#125;,</div><div class="line">        "name": &#123;</div><div class="line">          "type": "string"</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  "messages": &#123;</div><div class="line">    "userSignUp": &#123;</div><div class="line">      "summary": "Action to sign a user up.",</div><div class="line">      "description": "Multiline description of what this action does.\nHere you have another line.\n",</div><div class="line">      "tags": [</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"user"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"signup"</span></div><div class="line">        &#125;</div><div class="line">      ],</div><div class="line">      "headers": &#123;</div><div class="line">        "type": "object",</div><div class="line">        "properties": &#123;</div><div class="line">          "qos": &#123;</div><div class="line">            "$ref": "#/components/schemas/MQTTQoSHeader"</div><div class="line">          &#125;,</div><div class="line">          "retainFlag": &#123;</div><div class="line">            "$ref": "#/components/schemas/MQTTRetainHeader"</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      "payload": &#123;</div><div class="line">        "type": "object",</div><div class="line">        "properties": &#123;</div><div class="line">          "user": &#123;</div><div class="line">            "$ref": "#/components/schemas/userCreate"</div><div class="line">          &#125;,</div><div class="line">          "signup": &#123;</div><div class="line">            "$ref": "#/components/schemas/signup"</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">components:</span></div><div class="line"><span class="attr">  schemas:</span></div><div class="line"><span class="attr">    Category:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        id:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">          format:</span> <span class="string">int64</span></div><div class="line"><span class="attr">        name:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    Tag:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        id:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">          format:</span> <span class="string">int64</span></div><div class="line"><span class="attr">        name:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">string</span></div><div class="line"><span class="attr">  messages:</span></div><div class="line"><span class="attr">    userSignUp:</span></div><div class="line"><span class="attr">      summary:</span> <span class="string">Action</span> <span class="string">to</span> <span class="string">sign</span> <span class="string">a</span> <span class="string">user</span> <span class="string">up.</span></div><div class="line"><span class="attr">      description:</span> <span class="string">|</span></div><div class="line"><span class="string">        Multiline description of what this action does.</span></div><div class="line"><span class="string">        Here you have another line.</span></div><div class="line"><span class="string"></span><span class="attr">      tags:</span></div><div class="line"><span class="attr">        - name:</span> <span class="string">user</span></div><div class="line"><span class="attr">        - name:</span> <span class="string">signup</span></div><div class="line"><span class="attr">      headers:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">object</span></div><div class="line"><span class="attr">        properties:</span></div><div class="line"><span class="attr">          qos:</span></div><div class="line">            <span class="string">$ref:</span> <span class="string">"#/components/schemas/MQTTQoSHeader"</span></div><div class="line"><span class="attr">          retainFlag:</span></div><div class="line">            <span class="string">$ref:</span> <span class="string">"#/components/schemas/MQTTRetainHeader"</span></div><div class="line"><span class="attr">      payload:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">object</span></div><div class="line"><span class="attr">        properties:</span></div><div class="line"><span class="attr">          user:</span></div><div class="line">            <span class="string">$ref:</span> <span class="string">"#/components/schemas/userCreate"</span></div><div class="line"><span class="attr">          signup:</span></div><div class="line">            <span class="string">$ref:</span> <span class="string">"#/components/schemas/signup"</span></div></pre></td></tr></table></figure>
+<h4 id="Schema-Object"><a href="#Schema-Object" class="headerlink" title="Schema Object"></a><a name="schemaObject"></a>Schema Object</h4><p>The Schema Object allows the definition of input and output data types.<br>These types can be objects, but also primitives and arrays.<br>This object is an extended subset of the <a href="http://json-schema.org/" target="_blank" rel="external">JSON Schema Specification Wright Draft 00</a>.</p>
+<p>Further information about the properties can be found in <a href="https://tools.ietf.org/html/draft-wright-json-schema-00" target="_blank" rel="external">JSON Schema Core</a> and <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00" target="_blank" rel="external">JSON Schema Validation</a>.<br>Unless stated otherwise, the property definitions follow the JSON Schema specification as referenced here.</p>
+<h5 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h5><p>The following properties are taken directly from the JSON Schema definition and follow the same specifications:</p>
+<ul>
+<li>title</li>
+<li>multipleOf</li>
+<li>maximum</li>
+<li>exclusiveMaximum</li>
+<li>minimum</li>
+<li>exclusiveMinimum</li>
+<li>maxLength</li>
+<li>minLength</li>
+<li>pattern (This string SHOULD be a valid regular expression, according to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.8.5" target="_blank" rel="external">ECMA 262 regular expression</a> dialect)</li>
+<li>maxItems</li>
+<li>minItems</li>
+<li>uniqueItems</li>
+<li>maxProperties</li>
+<li>minProperties</li>
+<li>required</li>
+<li>enum</li>
+</ul>
+<p>The following properties are taken from the JSON Schema definition but their definitions were adjusted to the AsyncAPI Specification. </p>
+<ul>
+<li>type - Value MUST be a string. Multiple types via an array are not supported.</li>
+<li>allOf - Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.</li>
+<li>oneOf - Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.</li>
+<li>anyOf - Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.</li>
+<li>not - Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.</li>
+<li>items - Value MUST be an object and not an array. Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema. <code>items</code> MUST be present if the <code>type</code> is <code>array</code>.</li>
+<li>properties - Property definitions MUST be a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema (inline or referenced).</li>
+<li>additionalProperties - Value can be boolean or object. Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.</li>
+<li>description - <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> can be used for rich text representation.</li>
+<li>format - See <a href="#dataTypeFormat">Data Type Formats</a> for further details. While relying on JSON Schema’s defined formats, the AsyncAPI Specification offers a few additional predefined formats.</li>
+<li>default - The default value represents what would be assumed by the consumer of the input as the value of the schema if one is not provided. Unlike JSON Schema, the value MUST conform to the defined type for the Schema Object defined at the same level. For example, of <code>type</code> is <code>string</code>, then <code>default</code> can be <code>&quot;foo&quot;</code> but cannot be <code>1</code>.</li>
+</ul>
+<p>Alternatively, any time a Schema Object can be used, a <a href="#referenceObject">Reference Object</a> can be used in its place. This allows referencing definitions in place of defining them inline.</p>
+<p>Additional properties defined by the JSON Schema specification that are not mentioned here are strictly unsupported.</p>
+<p>Other than the JSON Schema subset fields, the following fields MAY be used for further schema documentation:</p>
+<h5 id="Fixed-Fields-12"><a href="#Fixed-Fields-12" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="schemaObjectNullable"></a>nullable</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>Allows sending a <code>null</code> value for the defined schema. Default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectDiscriminator"></a>discriminator</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Adds support for polymorphism. The discriminator is the schema property name that is used to differentiate between other schema that inherit this schema. The property name used MUST be defined at this schema and it MUST be in the <code>required</code> property list. When used, the value MUST be the name of this schema or any schema that inherits it. See <a href="#schemaComposition">Composition and Inheritance</a> for more details.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectReadOnly"></a>readOnly</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>Relevant only for Schema <code>&quot;properties&quot;</code> definitions. Declares the property as “read only”. This means that it MAY be sent as part of a response but SHOULD NOT be sent as part of the request. If property is marked as <code>readOnly</code> being <code>true</code> and is in the <code>required</code> list, the <code>required</code> will take effect on the response only. A property MUST NOT be marked as both <code>readOnly</code> and <code>writeOnly</code> being <code>true</code>. Default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectWriteOnly"></a>writeOnly</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>Relevant only for Schema <code>&quot;properties&quot;</code> definitions. Declares the property as “write only”. This means that it MAY be sent as part of a request but SHOULD NOT be sent as part of the response. If property is marked as <code>writeOnly</code> being <code>true</code> and is in the <code>required</code> list, the <code>required</code> will take effect on the request only. A property MUST NOT be marked as both <code>readOnly</code> and <code>writeOnly</code> being <code>true</code>. Default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectXml"></a>xml</td>
+<td style="text-align:center"><a href="#xmlObject">XML Object</a></td>
+<td>This MAY be used only on properties schemas. It has no effect on root schemas. Adds Additional metadata to describe the XML representation format of this property.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectExternalDocs"></a>externalDocs</td>
+<td style="text-align:center"><a href="#externalDocumentationObject">External Documentation Object</a></td>
+<td>Additional external documentation for this schema. </td>
+</tr>
+<tr>
+<td><a name="schemaObjectExample"></a>example</td>
+<td style="text-align:center">Any</td>
+<td>A free-form property to include an example of an instance for this schema. To represent examples that cannot naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.</td>
+</tr>
+<tr>
+<td><a name="schemaObjectDeprecated"></a> deprecated</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h6 id="Composition-and-Inheritance-Polymorphism"><a href="#Composition-and-Inheritance-Polymorphism" class="headerlink" title="Composition and Inheritance (Polymorphism)"></a><a name="schemaComposition"></a>Composition and Inheritance (Polymorphism)</h6><p>The AsyncAPI Specification allows combining and extending model definitions using the <code>allOf</code> property of JSON Schema, in effect offering model composition.<br><code>allOf</code> takes in an array of object definitions that are validated <em>independently</em> but together compose a single object. </p>
+<p>While composition offers model extensibility, it does not imply a hierarchy between the models.<br>To support polymorphism, AsyncAPI Specification adds the support of the <code>discriminator</code> field.<br>When used, the <code>discriminator</code> will be the name of the property used to decide which schema definition is used to validate the structure of the model.<br>As such, the <code>discriminator</code> field MUST be a required field.<br>There are are two ways to define the value of a discriminator for an inheriting instance.</p>
+<ul>
+<li>Use the schema’s name.</li>
+<li>Override the schema’s name by overriding the property with a new value. If exists, this takes precedence over the schema’s name.<br>As such, inline schema definitions, which do not have a given id, <em>cannot</em> be used in polymorphism.</li>
+</ul>
+<h6 id="XML-Modeling"><a href="#XML-Modeling" class="headerlink" title="XML Modeling"></a>XML Modeling</h6><p>The <a href="#schemaObjectXml">xml</a> property allows extra definitions when translating the JSON definition to XML.<br>The <a href="#xmlObject">XML Object</a> contains additional information about the available options.</p>
+<h5 id="Schema-Object-Examples"><a href="#Schema-Object-Examples" class="headerlink" title="Schema Object Examples"></a>Schema Object Examples</h5><h6 id="Primitive-Sample"><a href="#Primitive-Sample" class="headerlink" title="Primitive Sample"></a>Primitive Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">  <span class="attr">"format"</span>: <span class="string">"email"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">string</span></div><div class="line"><span class="attr">format:</span> <span class="string">email</span></div></pre></td></tr></table></figure>
+<h6 id="Simple-Model"><a href="#Simple-Model" class="headerlink" title="Simple Model"></a>Simple Model</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">  <span class="attr">"required"</span>: [</div><div class="line">    <span class="string">"name"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"properties"</span>: &#123;</div><div class="line">    <span class="attr">"name"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"address"</span>: &#123;</div><div class="line">      <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/Address"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"age"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"integer"</span>,</div><div class="line">      <span class="attr">"format"</span>: <span class="string">"int32"</span>,</div><div class="line">      <span class="attr">"minimum"</span>: <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">object</span></div><div class="line"><span class="attr">required:</span></div><div class="line"><span class="bullet">-</span> <span class="string">name</span></div><div class="line"><span class="attr">properties:</span></div><div class="line"><span class="attr">  name:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">  address:</span></div><div class="line">    <span class="string">$ref:</span> <span class="string">'#/components/schemas/Address'</span></div><div class="line"><span class="attr">  age:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">    format:</span> <span class="string">int32</span></div><div class="line"><span class="attr">    minimum:</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+<h6 id="Model-with-Map-Dictionary-Properties"><a href="#Model-with-Map-Dictionary-Properties" class="headerlink" title="Model with Map/Dictionary Properties"></a>Model with Map/Dictionary Properties</h6><p>For a simple string to string mapping:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">  <span class="attr">"additionalProperties"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">object</span></div><div class="line"><span class="attr">additionalProperties:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">string</span></div></pre></td></tr></table></figure>
+<p>For a string to model mapping:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">  <span class="attr">"additionalProperties"</span>: &#123;</div><div class="line">    <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/ComplexModel"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">object</span></div><div class="line"><span class="attr">additionalProperties:</span></div><div class="line">  <span class="string">$ref:</span> <span class="string">'#/components/schemas/ComplexModel'</span></div></pre></td></tr></table></figure>
+<h6 id="Model-with-Example"><a href="#Model-with-Example" class="headerlink" title="Model with Example"></a>Model with Example</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">  <span class="attr">"properties"</span>: &#123;</div><div class="line">    <span class="attr">"id"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"integer"</span>,</div><div class="line">      <span class="attr">"format"</span>: <span class="string">"int64"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"name"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"required"</span>: [</div><div class="line">    <span class="string">"name"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"example"</span>: &#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"Puma"</span>,</div><div class="line">    <span class="attr">"id"</span>: <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">object</span></div><div class="line"><span class="attr">properties:</span></div><div class="line"><span class="attr">  id:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">    format:</span> <span class="string">int64</span></div><div class="line"><span class="attr">  name:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">required:</span></div><div class="line"><span class="bullet">-</span> <span class="string">name</span></div><div class="line"><span class="attr">example:</span></div><div class="line"><span class="attr">  name:</span> <span class="string">Puma</span></div><div class="line"><span class="attr">  id:</span> <span class="number">1</span></div></pre></td></tr></table></figure>
+<h6 id="Models-with-Composition"><a href="#Models-with-Composition" class="headerlink" title="Models with Composition"></a>Models with Composition</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"schemas"</span>: &#123;</div><div class="line">    <span class="attr">"ErrorModel"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">      <span class="attr">"required"</span>: [</div><div class="line">        <span class="string">"message"</span>,</div><div class="line">        <span class="string">"code"</span></div><div class="line">      ],</div><div class="line">      <span class="attr">"properties"</span>: &#123;</div><div class="line">        <span class="attr">"message"</span>: &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"code"</span>: &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"integer"</span>,</div><div class="line">          <span class="attr">"minimum"</span>: <span class="number">100</span>,</div><div class="line">          <span class="attr">"maximum"</span>: <span class="number">600</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"ExtendedErrorModel"</span>: &#123;</div><div class="line">      <span class="attr">"allOf"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/ErrorModel"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">          <span class="attr">"required"</span>: [</div><div class="line">            <span class="string">"rootCause"</span></div><div class="line">          ],</div><div class="line">          <span class="attr">"properties"</span>: &#123;</div><div class="line">            <span class="attr">"rootCause"</span>: &#123;</div><div class="line">              <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">schemas:</span></div><div class="line"><span class="attr">  ErrorModel:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">object</span></div><div class="line"><span class="attr">    required:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">message</span></div><div class="line"><span class="bullet">    -</span> <span class="string">code</span></div><div class="line"><span class="attr">    properties:</span></div><div class="line"><span class="attr">      message:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">string</span></div><div class="line"><span class="attr">      code:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">        minimum:</span> <span class="number">100</span></div><div class="line"><span class="attr">        maximum:</span> <span class="number">600</span></div><div class="line"><span class="attr">  ExtendedErrorModel:</span></div><div class="line"><span class="attr">    allOf:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">$ref:</span> <span class="string">'#/components/schemas/ErrorModel'</span></div><div class="line"><span class="attr">    - type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      required:</span></div><div class="line"><span class="bullet">      -</span> <span class="string">rootCause</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        rootCause:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">string</span></div></pre></td></tr></table></figure>
+<h6 id="Models-with-Polymorphism-Support"><a href="#Models-with-Polymorphism-Support" class="headerlink" title="Models with Polymorphism Support"></a>Models with Polymorphism Support</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"schemas"</span>: &#123;</div><div class="line">    <span class="attr">"Pet"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">      <span class="attr">"discriminator"</span>: <span class="string">"petType"</span>,</div><div class="line">      <span class="attr">"properties"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"petType"</span>: &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">"required"</span>: [</div><div class="line">        <span class="string">"name"</span>,</div><div class="line">        <span class="string">"petType"</span></div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"Cat"</span>: &#123;</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"A representation of a cat. Note that `Cat` will be used as the discriminator value."</span>,</div><div class="line">      <span class="attr">"allOf"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/Pet"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">          <span class="attr">"properties"</span>: &#123;</div><div class="line">            <span class="attr">"huntingSkill"</span>: &#123;</div><div class="line">              <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">              <span class="attr">"description"</span>: <span class="string">"The measured skill for hunting"</span>,</div><div class="line">              <span class="attr">"enum"</span>: [</div><div class="line">                <span class="string">"clueless"</span>,</div><div class="line">                <span class="string">"lazy"</span>,</div><div class="line">                <span class="string">"adventurous"</span>,</div><div class="line">                <span class="string">"aggressive"</span></div><div class="line">              ]</div><div class="line">            &#125;</div><div class="line">          &#125;,</div><div class="line">          <span class="attr">"required"</span>: [</div><div class="line">            <span class="string">"huntingSkill"</span></div><div class="line">          ]</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"Dog"</span>: &#123;</div><div class="line">      <span class="attr">"description"</span>: <span class="string">"A representation of a dog. Note that `Dog` will be used as the discriminator value."</span>,</div><div class="line">      <span class="attr">"allOf"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"$ref"</span>: <span class="string">"#/components/schemas/Pet"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">          <span class="attr">"properties"</span>: &#123;</div><div class="line">            <span class="attr">"packSize"</span>: &#123;</div><div class="line">              <span class="attr">"type"</span>: <span class="string">"integer"</span>,</div><div class="line">              <span class="attr">"format"</span>: <span class="string">"int32"</span>,</div><div class="line">              <span class="attr">"description"</span>: <span class="string">"the size of the pack the dog is from"</span>,</div><div class="line">              <span class="attr">"minimum"</span>: <span class="number">0</span></div><div class="line">            &#125;</div><div class="line">          &#125;,</div><div class="line">          <span class="attr">"required"</span>: [</div><div class="line">            <span class="string">"packSize"</span></div><div class="line">          ]</div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">schemas:</span></div><div class="line"><span class="attr">  Pet:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">object</span></div><div class="line"><span class="attr">    discriminator:</span> <span class="string">petType</span></div><div class="line"><span class="attr">    properties:</span></div><div class="line"><span class="attr">      name:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">string</span></div><div class="line"><span class="attr">      petType:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    required:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">name</span></div><div class="line"><span class="bullet">    -</span> <span class="string">petType</span></div><div class="line"><span class="attr">  Cat:</span>  <span class="comment">## "Cat" will be used as the discriminator value</span></div><div class="line"><span class="attr">    description:</span> <span class="string">A</span> <span class="string">representation</span> <span class="string">of</span> <span class="string">a</span> <span class="string">cat</span></div><div class="line"><span class="attr">    allOf:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">$ref:</span> <span class="string">'#/components/schemas/Pet'</span></div><div class="line"><span class="attr">    - type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        huntingSkill:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">string</span></div><div class="line"><span class="attr">          description:</span> <span class="string">The</span> <span class="string">measured</span> <span class="string">skill</span> <span class="string">for</span> <span class="string">hunting</span></div><div class="line"><span class="attr">          enum:</span></div><div class="line"><span class="bullet">          -</span> <span class="string">clueless</span></div><div class="line"><span class="bullet">          -</span> <span class="string">lazy</span></div><div class="line"><span class="bullet">          -</span> <span class="string">adventurous</span></div><div class="line"><span class="bullet">          -</span> <span class="string">aggressive</span></div><div class="line"><span class="attr">      required:</span></div><div class="line"><span class="bullet">      -</span> <span class="string">huntingSkill</span></div><div class="line"><span class="attr">  Dog:</span>  <span class="comment">## "Dog" will be used as the discriminator value</span></div><div class="line"><span class="attr">    description:</span> <span class="string">A</span> <span class="string">representation</span> <span class="string">of</span> <span class="string">a</span> <span class="string">dog</span></div><div class="line"><span class="attr">    allOf:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">$ref:</span> <span class="string">'#/components/schemas/Pet'</span></div><div class="line"><span class="attr">    - type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        packSize:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">          format:</span> <span class="string">int32</span></div><div class="line"><span class="attr">          description:</span> <span class="string">the</span> <span class="string">size</span> <span class="string">of</span> <span class="string">the</span> <span class="string">pack</span> <span class="string">the</span> <span class="string">dog</span> <span class="string">is</span> <span class="string">from</span></div><div class="line"><span class="attr">          minimum:</span> <span class="number">0</span></div><div class="line"><span class="attr">      required:</span></div><div class="line"><span class="bullet">      -</span> <span class="string">packSize</span></div></pre></td></tr></table></figure>
+<h4 id="XML-Object"><a href="#XML-Object" class="headerlink" title="XML Object"></a><a name="xmlObject"></a>XML Object</h4><p>A metadata object that allows for more fine-tuned XML model definitions.</p>
+<p>When using arrays, XML element names are <em>not</em> inferred (for singular/plural forms) and the <code>name</code> property SHOULD be used to add that information.<br>See examples for expected behavior.</p>
+<h5 id="Fixed-Fields-13"><a href="#Fixed-Fields-13" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="xmlObjectName"></a>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Replaces the name of the element/attribute used for the described schema property. When defined within <code>items</code>, it will affect the name of the individual XML elements within the list. When defined alongside <code>type</code> being <code>array</code> (outside the <code>items</code>), it will affect the wrapping element and only if <code>wrapped</code> is <code>true</code>. If <code>wrapped</code> is <code>false</code>, it will be ignored.</td>
+</tr>
+<tr>
+<td><a name="xmlObjectNamespace"></a>namespace</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The URL of the namespace definition. Value SHOULD be in the form of a URL.</td>
+</tr>
+<tr>
+<td><a name="xmlObjectPrefix"></a>prefix</td>
+<td style="text-align:center"><code>string</code></td>
+<td>The prefix to be used for the <a href="#xmlObjectName">name</a>.</td>
+</tr>
+<tr>
+<td><a name="xmlObjectAttribute"></a>attribute</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>Declares whether the property definition translates to an attribute instead of an element. Default value is <code>false</code>.</td>
+</tr>
+<tr>
+<td><a name="xmlObjectWrapped"></a>wrapped</td>
+<td style="text-align:center"><code>boolean</code></td>
+<td>MAY be used only for an array definition. Signifies whether the array is wrapped (for example, <code>&lt;books&gt;&lt;book/&gt;&lt;book/&gt;&lt;/books&gt;</code>) or unwrapped (<code>&lt;book/&gt;&lt;book/&gt;</code>). Default value is <code>false</code>. The definition takes effect only when defined alongside <code>type</code> being <code>array</code> (outside the <code>items</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>This object can be extended with <a href="#specificationExtensions">Specification Extensions</a>. </p>
+<h5 id="XML-Object-Examples"><a href="#XML-Object-Examples" class="headerlink" title="XML Object Examples"></a>XML Object Examples</h5><p>The examples of the XML object definitions are included inside a property definition of a <a href="#schemaObject">Schema Object</a> with a sample of the XML representation of it.</p>
+<h6 id="No-XML-Element"><a href="#No-XML-Element" class="headerlink" title="No XML Element"></a>No XML Element</h6><p>Basic string property:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"animals"</span>: &#123;</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">string</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span>...<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Basic string array property (<a href="#xmlObjectWrapped"><code>wrapped</code></a> is <code>false</code> by default):</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"animals"</span>: &#123;</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">        <span class="attr">"items"</span>: &#123;</div><div class="line">            <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span>...<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span>...<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span>...<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="XML-Name-Replacement"><a href="#XML-Name-Replacement" class="headerlink" title="XML Name Replacement"></a>XML Name Replacement</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"animal"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">string</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">animal</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animal</span>&gt;</span>...<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="XML-Attribute-Prefix-and-Namespace"><a href="#XML-Attribute-Prefix-and-Namespace" class="headerlink" title="XML Attribute, Prefix and Namespace"></a>XML Attribute, Prefix and Namespace</h6><p>In this example, a full model definition is shown.</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Person"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"object"</span>,</div><div class="line">    <span class="attr">"properties"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: &#123;</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"integer"</span>,</div><div class="line">        <span class="attr">"format"</span>: <span class="string">"int32"</span>,</div><div class="line">        <span class="attr">"xml"</span>: &#123;</div><div class="line">          <span class="attr">"attribute"</span>: <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">"name"</span>: &#123;</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">        <span class="attr">"xml"</span>: &#123;</div><div class="line">          <span class="attr">"namespace"</span>: <span class="string">"http://example.com/schema/sample"</span>,</div><div class="line">          <span class="attr">"prefix"</span>: <span class="string">"sample"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">Person:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">object</span></div><div class="line"><span class="attr">  properties:</span></div><div class="line"><span class="attr">    id:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">      format:</span> <span class="string">int32</span></div><div class="line"><span class="attr">      xml:</span></div><div class="line"><span class="attr">        attribute:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    name:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">string</span></div><div class="line"><span class="attr">      xml:</span></div><div class="line"><span class="attr">        namespace:</span> <span class="attr">http://example.com/schema/sample</span></div><div class="line"><span class="attr">        prefix:</span> <span class="string">sample</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Person</span> <span class="attr">id</span>=<span class="string">"123"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">sample:name</span> <span class="attr">xmlns:sample</span>=<span class="string">"http://example.com/schema/sample"</span>&gt;</span>example<span class="tag">&lt;/<span class="name">sample:name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Person</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="XML-Arrays"><a href="#XML-Arrays" class="headerlink" title="XML Arrays"></a>XML Arrays</h6><p>Changing the element names:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"xml"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"animal"</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    xml:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">animal</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The external <code>name</code> property has no effect on the XML:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"xml"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"animal"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"aliens"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    xml:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">animal</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">aliens</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Even when the array is wrapped, if no name is explicitly defined, the same name will be used both internally and externally:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"wrapped"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    wrapped:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animals</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animals</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>To overcome the above example, the following definition can be used:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"xml"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"animal"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"wrapped"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    xml:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">animal</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    wrapped:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animals</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">animals</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Affecting both internal and external names:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span>,</div><div class="line">      <span class="attr">"xml"</span>: &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"animal"</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"aliens"</span>,</div><div class="line">      <span class="attr">"wrapped"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">    xml:</span></div><div class="line"><span class="attr">      name:</span> <span class="string">animal</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">aliens</span></div><div class="line"><span class="attr">    wrapped:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">aliens</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">animal</span>&gt;</span>value<span class="tag">&lt;/<span class="name">animal</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">aliens</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>If we change the external element but not the internal ones:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"animals"</span>: &#123;</div><div class="line">    <span class="attr">"type"</span>: <span class="string">"array"</span>,</div><div class="line">    <span class="attr">"items"</span>: &#123;</div><div class="line">      <span class="attr">"type"</span>: <span class="string">"string"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"xml"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"aliens"</span>,</div><div class="line">      <span class="attr">"wrapped"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">animals:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">array</span></div><div class="line"><span class="attr">  items:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">string</span></div><div class="line"><span class="attr">  xml:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">aliens</span></div><div class="line"><span class="attr">    wrapped:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">aliens</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">aliens</span>&gt;</span>value<span class="tag">&lt;/<span class="name">aliens</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">aliens</span>&gt;</span>value<span class="tag">&lt;/<span class="name">aliens</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">aliens</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="Security-Scheme-Object"><a href="#Security-Scheme-Object" class="headerlink" title="Security Scheme Object"></a><a name="securitySchemeObject"></a>Security Scheme Object</h4><p>Defines a security scheme that can be used by the operations.<br>Supported schemes are User/Password, API key (either as user or as password), X.509 certificate, end-to-end encryption (either symmetric or asymmetric), HTTP authentication and HTTP API key.</p>
+<h5 id="Fixed-Fields-14"><a href="#Fixed-Fields-14" class="headerlink" title="Fixed Fields"></a>Fixed Fields</h5><table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th style="text-align:center">Type</th>
+<th>Applies To</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="securitySchemeObjectType"></a>type</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Any</td>
+<td><strong>REQUIRED</strong>. The type of the security scheme. Valid values are <code>&quot;userPassword&quot;</code>, <code>&quot;apiKey&quot;</code>, <code>&quot;X509&quot;</code>, <code>&quot;symmetricEncryption&quot;</code>, <code>&quot;asymmetricEncryption&quot;</code>, <code>&quot;httpApiKey&quot;</code>, <code>&quot;http&quot;</code>.</td>
+</tr>
+<tr>
+<td><a name="securitySchemeObjectDescription"></a>description</td>
+<td style="text-align:center"><code>string</code></td>
+<td>Any</td>
+<td>A short description for security scheme. <a href="http://spec.commonmark.org/" target="_blank" rel="external">CommonMark syntax</a> MAY be used for rich text representation.</td>
+</tr>
+<tr>
+<td><a name="securitySchemeObjectName"></a>name</td>
+<td style="text-align:center"><code>string</code></td>
+<td><code>httpApiKey</code></td>
+<td><strong>REQUIRED</strong>. The name of the header, query or cookie parameter to be used.</td>
+</tr>
+<tr>
+<td><a name="securitySchemeObjectIn"></a>in</td>
+<td style="text-align:center"><code>string</code></td>
+<td><code>apiKey</code> &#124; <code>httpApiKey</code></td>
+<td><strong>REQUIRED</strong>. The location of the API key. Valid values are <code>&quot;user&quot;</code> and <code>&quot;password&quot;</code> for <code>apiKey</code> and <code>&quot;query&quot;</code>, <code>&quot;header&quot;</code> or <code>&quot;cookie&quot;</code> for <code>httpApiKey</code>.</td>
+</tr>
+<tr>
+<td><a name="securitySchemeObjectScheme"></a>scheme</td>
+<td style="text-align:center"><code>string</code></td>
+<td><code>http</code></td>
+<td><strong>REQUIRED</strong>. The name of the HTTP Authorization scheme to be used in the <a href="https://tools.ietf.org/html/rfc7235#section-5.1" target="_blank" rel="external">Authorization header as defined in RFC7235</a>.</td>
+</tr>
+<tr>
+<td><a name="securitySchemeObjectBearerFormat"></a>bearerFormat</td>
+<td style="text-align:center"><code>string</code></td>
+<td><code>http</code> (<code>&quot;bearer&quot;</code>)</td>
+<td>A hint to the client to identify how the bearer token is formatted.  Bearer tokens are usually generated by an authorization server, so this information is primarily for documentation purposes.</td>
+</tr>
+</tbody>
+</table>
+<p>This object MAY be extended with <a href="#specificationExtensions">Specification Extensions</a>.</p>
+<h5 id="Security-Scheme-Object-Example"><a href="#Security-Scheme-Object-Example" class="headerlink" title="Security Scheme Object Example"></a>Security Scheme Object Example</h5><h6 id="User-Password-Authentication-Sample"><a href="#User-Password-Authentication-Sample" class="headerlink" title="User/Password Authentication Sample"></a>User/Password Authentication Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"userPassword"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">userPassword</span></div></pre></td></tr></table></figure>
+<h6 id="API-Key-Authentication-Sample"><a href="#API-Key-Authentication-Sample" class="headerlink" title="API Key Authentication Sample"></a>API Key Authentication Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"apiKey"</span>,</div><div class="line">  <span class="attr">"in"</span>: <span class="string">"user"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">apiKey,</span></div><div class="line"><span class="attr">in:</span> <span class="string">user</span></div></pre></td></tr></table></figure>
+<h6 id="X-509-Authentication-Sample"><a href="#X-509-Authentication-Sample" class="headerlink" title="X.509 Authentication Sample"></a>X.509 Authentication Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"X509"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">X509</span></div></pre></td></tr></table></figure>
+<h6 id="End-to-end-Encryption-Authentication-Sample"><a href="#End-to-end-Encryption-Authentication-Sample" class="headerlink" title="End-to-end Encryption Authentication Sample"></a>End-to-end Encryption Authentication Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"symmetricEncryption"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">symmetricEncryption</span></div></pre></td></tr></table></figure>
+<h6 id="Basic-Authentication-Sample"><a href="#Basic-Authentication-Sample" class="headerlink" title="Basic Authentication Sample"></a>Basic Authentication Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"http"</span>,</div><div class="line">  <span class="attr">"scheme"</span>: <span class="string">"basic"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">http</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">basic</span></div></pre></td></tr></table></figure>
+<h6 id="API-Key-Sample"><a href="#API-Key-Sample" class="headerlink" title="API Key Sample"></a>API Key Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"httpApiKey"</span>,</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"api_key"</span>,</div><div class="line">  <span class="attr">"in"</span>: <span class="string">"header"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">httpApiKey</span></div><div class="line"><span class="attr">name:</span> <span class="string">api_key</span></div><div class="line"><span class="attr">in:</span> <span class="string">header</span></div></pre></td></tr></table></figure>
+<h6 id="JWT-Bearer-Sample"><a href="#JWT-Bearer-Sample" class="headerlink" title="JWT Bearer Sample"></a>JWT Bearer Sample</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"type"</span>: <span class="string">"http"</span>,</div><div class="line">  <span class="attr">"scheme"</span>: <span class="string">"bearer"</span>,</div><div class="line">  <span class="attr">"bearerFormat"</span>: <span class="string">"JWT"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">type:</span> <span class="string">http</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">bearer</span></div><div class="line"><span class="attr">bearerFormat:</span> <span class="string">JWT</span></div></pre></td></tr></table></figure>
+<h4 id="Security-Requirement-Object"><a href="#Security-Requirement-Object" class="headerlink" title="Security Requirement Object"></a><a name="securityRequirementObject"></a>Security Requirement Object</h4><p>Lists the required security schemes to execute this operation.<br>The name used for each property MUST correspond to a security scheme declared in the <a href="#componentsSecuritySchemes">Security Schemes</a> under the <a href="#componentsObject">Components Object</a>.</p>
+<p>When a list of Security Requirement Objects is defined on the <a href="#A2SObject">AsyncAPI object</a>, only one of Security Requirement Objects in the list needs to be satisfied to authorize the connection or operation.</p>
+<h5 id="Patterned-Fields-1"><a href="#Patterned-Fields-1" class="headerlink" title="Patterned Fields"></a>Patterned Fields</h5><table>
+<thead>
+<tr>
+<th>Field Pattern</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="securityRequirementsName"></a>{name}</td>
+<td style="text-align:center">[<code>string</code>]</td>
+<td>Each name MUST correspond to a security scheme which is declared in the <a href="#componentsSecuritySchemes">Security Schemes</a> under the <a href="#componentsObject">Components Object</a>. The value MUST be an empty array.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="Security-Requirement-Object-Examples"><a href="#Security-Requirement-Object-Examples" class="headerlink" title="Security Requirement Object Examples"></a>Security Requirement Object Examples</h5><h6 id="User-Password-Security-Requirement"><a href="#User-Password-Security-Requirement" class="headerlink" title="User/Password Security Requirement"></a>User/Password Security Requirement</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"user_pass"</span>: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">user_pass:</span> <span class="string">[]</span></div></pre></td></tr></table></figure>
+<h6 id="API-Key-Security-Requirement"><a href="#API-Key-Security-Requirement" class="headerlink" title="API Key Security Requirement"></a>API Key Security Requirement</h6><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"api_key"</span>: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">api_key:</span> <span class="string">[]</span></div></pre></td></tr></table></figure>
+<h3 id="Specification-Extensions"><a href="#Specification-Extensions" class="headerlink" title="Specification Extensions"></a><a name="specificationExtensions"></a>Specification Extensions</h3><p>While the AsyncAPI Specification tries to accommodate most use cases, additional data can be added to extend the specification at certain points.</p>
+<p>The extensions properties are implemented as patterned fields that are always prefixed by <code>&quot;x-&quot;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field Pattern</th>
+<th style="text-align:center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="infoExtensions"></a>^x-</td>
+<td style="text-align:center">Any</td>
+<td>Allows extensions to the AsyncAPI Schema. The field name MUST begin with <code>x-</code>, for example, <code>x-internal-id</code>. The value can be <code>null</code>, a primitive, an array or an object. Can have any valid JSON format value.</td>
+</tr>
+</tbody>
+</table>
+<p>The extensions may or may not be supported by the available tooling, but those may be extended as well to add requested support (if tools are internal or open-sourced).</p>
+<h3 id="Data-Type-Formats"><a href="#Data-Type-Formats" class="headerlink" title="Data Type Formats"></a><a name="dataTypeFormat"></a>Data Type Formats</h3><p>Primitives have an optional modifier property: <code>format</code>.<br>The AsyncAPI specification uses several known formats to more finely define the data type being used.<br>However, the <code>format</code> property is an open <code>string</code>-valued property, and can have any value to support documentation needs.<br>Formats such as <code>&quot;email&quot;</code>, <code>&quot;uuid&quot;</code>, etc., can be used even though they are not defined by this specification.<br>Types that are not accompanied by a <code>format</code> property follow their definition from the JSON Schema.<br>Tools that do not recognize a specific <code>format</code> MAY default back to the <code>type</code> alone, as if the <code>format</code> was not specified.</p>
+<p>The formats defined by the AsyncAPI Specification are:</p>
+<table>
+<thead>
+<tr>
+<th>Common Name</th>
+<th><code>type</code></th>
+<th><a href="#dataTypeFormat"><code>format</code></a></th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>integer</td>
+<td><code>integer</code></td>
+<td><code>int32</code></td>
+<td>signed 32 bits</td>
+</tr>
+<tr>
+<td>long</td>
+<td><code>integer</code></td>
+<td><code>int64</code></td>
+<td>signed 64 bits</td>
+</tr>
+<tr>
+<td>float</td>
+<td><code>number</code></td>
+<td><code>float</code></td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td><code>number</code></td>
+<td><code>double</code></td>
+<td></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>string</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>byte</td>
+<td><code>string</code></td>
+<td><code>byte</code></td>
+<td>base64 encoded characters</td>
+</tr>
+<tr>
+<td>binary</td>
+<td><code>string</code></td>
+<td><code>binary</code></td>
+<td>any sequence of octets</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td><code>boolean</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td><code>string</code></td>
+<td><code>date</code></td>
+<td>As defined by <code>full-date</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14" target="_blank" rel="external">RFC3339</a></td>
+</tr>
+<tr>
+<td>dateTime</td>
+<td><code>string</code></td>
+<td><code>date-time</code></td>
+<td>As defined by <code>date-time</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14" target="_blank" rel="external">RFC3339</a></td>
+</tr>
+<tr>
+<td>password</td>
+<td><code>string</code></td>
+<td><code>password</code></td>
+<td>Used to hint UIs the input needs to be obscured.</td>
+</tr>
+</tbody>
+</table>
+
+  
+  <div class="footer">
+    Have you found a mistake or want to contribute to this documentation?
+    <a href="https://github.com/asyncapi/asyncapi.github.io/blob/master/src/v1/spec.md" target="_blank">
+      Edit this page on Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>

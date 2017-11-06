@@ -117,29 +117,29 @@
     // build sidebar
     var currentPageAnchor = sidebar.querySelector('.sidebar-link.current')
     var contentClasses = document.querySelector('.content').classList
-    var isAPIOrStyleGuide = (
-      contentClasses.contains('api') ||
-      contentClasses.contains('style-guide')
-    )
-    if (currentPageAnchor || isAPIOrStyleGuide) {
+    if (currentPageAnchor) {
       var allHeaders = []
-      var sectionContainer
-      if (isAPIOrStyleGuide) {
-        sectionContainer = document.querySelector('.menu-root')
-      } else {
-        sectionContainer = document.createElement('ul')
-        sectionContainer.className = 'menu-sub'
-        currentPageAnchor.parentNode.appendChild(sectionContainer)
-      }
+      var sectionContainer = document.createElement('ul')
+      sectionContainer.className = 'menu-sub'
+      currentPageAnchor.parentNode.appendChild(sectionContainer)
+
       var headers = content.querySelectorAll('h2')
       if (headers.length) {
         each.call(headers, function (h) {
           sectionContainer.appendChild(makeLink(h))
           var h3s = collectH3s(h)
           allHeaders.push(h)
-          allHeaders.push.apply(allHeaders, h3s)
           if (h3s.length) {
-            sectionContainer.appendChild(makeSubLinks(h3s, isAPIOrStyleGuide))
+            var h3list = makeSubLinks(h3s)
+            sectionContainer.appendChild(h3list)
+            
+            var h3els = h3list.querySelectorAll('li')
+            each.call(h3els, function (hh, index) {
+              var h4s = collectH4s(h3s[index])
+              allHeaders.push(h3s[index])
+              allHeaders.push.apply(allHeaders, h4s)
+              hh.appendChild(makeSubLinks(h4s))
+            })
           }
         })
       } else {
@@ -243,6 +243,18 @@
         next = next.nextSibling
       }
       return h3s
+    }
+
+    function collectH4s (h) {
+      var h4s = []
+      var next = h.nextSibling
+      while (next && next.tagName !== 'H3') {
+        if (next.tagName === 'H4') {
+          h4s.push(next)
+        }
+        next = next.nextSibling
+      }
+      return h4s
     }
 
     function makeSubLinks (h3s, small) {
