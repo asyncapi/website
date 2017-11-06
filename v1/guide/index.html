@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Introduction — AsyncAPI</title>
+    <meta charset="utf-8">
+    <meta name="description" content="AsyncAPI">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="alternate" hreflang="x-default" href="https://asyncapi.org/v1/guide/index.html">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Introduction — AsyncAPI">
+    <meta property="og:description" content="AsyncAPI">
+    <meta property="og:image" content="https://asyncapi.org//images/logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Introduction — AsyncAPI">
+    <meta name="twitter:description" content="AsyncAPI">
+    <meta name="twitter:image" content="https://asyncapi.org/images/logo.png">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Dosis:500' rel='stylesheet' type='text/css'>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- main page styles -->
+    <link rel="stylesheet" href="/css/page.css">
+
+    <!-- this needs to be loaded before guide's inline scripts -->
+    <script src="/js/asyncapi.js"></script>
+    <script>window.PAGE_TYPE = "guide"</script>
+
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '', 'asyncapi.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body class="docs">    <div id="mobile-bar" >
+      <a class="menu-button"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+  <a id="logo" href="/">
+    <img src="/images/logo.png">
+    <span>AsyncAPI</span>
+  </a>
+  <ul id="nav">
+    <li class="nav-dropdown-container learn">
+  <a class="nav-link current">
+    Learn
+    <span class="arrow"></span>
+  </a>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v1/guide/" class="nav-link current">Guide</a></li>
+      <li><a href="/v1/tutorial/" class="nav-link">Tutorial</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://async-apis-slack.herokuapp.com/ " class="nav-link" target="_blank">Slack channel</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="http://editor.asyncapi.org" class="nav-link" target="_blank">Online editor</a></li>
+        <li><a href="/v1/tooling/docgens.html" class="nav-link ">Documentation generators</a></li>
+        <li><a href="/v1/tooling/codegens.html" class="nav-link ">Code generators</a></li>
+      </ul>
+    </li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/asyncapi" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/asyncapi" class="nav-link" target="_blank">Blog</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="https://asyncapi.threadless.com" class="nav-link" target="_blank">AsyncAPI swag</a>
+</li>
+<li>
+  <a href="/about.html" class="nav-link about">About</a>
+</li>
+
+  </ul>
+</div>
+
+    
+      <div id="main" class="fix-sidebar">
+        
+          
+  <div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <li class="nav-dropdown-container learn">
+  <a class="nav-link current">
+    Learn
+    <span class="arrow"></span>
+  </a>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v1/guide/" class="nav-link current">Guide</a></li>
+      <li><a href="/v1/tutorial/" class="nav-link">Tutorial</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li class="nav-dropdown-container ecosystem">
+  <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><h4>Help</h4></li>
+    <li><ul>
+      <li><a href="https://async-apis-slack.herokuapp.com/ " class="nav-link" target="_blank">Slack channel</a></li>
+    </ul></li>
+    <li><h4>Tooling</h4></li>
+    <li>
+      <ul>
+        <li><a href="http://editor.asyncapi.org" class="nav-link" target="_blank">Online editor</a></li>
+        <li><a href="/v1/tooling/docgens.html" class="nav-link ">Documentation generators</a></li>
+        <li><a href="/v1/tooling/codegens.html" class="nav-link ">Code generators</a></li>
+      </ul>
+    </li>
+    <li><h4>News</h4></li>
+    <li><ul>
+      <li><a href="https://twitter.com/asyncapi" class="nav-link" target="_blank">Twitter</a></li>
+      <li><a href="https://medium.com/asyncapi" class="nav-link" target="_blank">Blog</a></li>
+    </ul></li>
+  </ul>
+</li>
+
+<li>
+  <a href="https://asyncapi.threadless.com" class="nav-link" target="_blank">AsyncAPI swag</a>
+</li>
+<li>
+  <a href="/about.html" class="nav-link about">About</a>
+</li>
+
+    </ul>
+    <div class="list">
+      <ul class="menu-root">
+  
+    
+  
+    <li>
+      <a href="/v1/guide/index.html" class="sidebar-link current">Introduction</a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="content guide with-sidebar index-guide">
+  
+    
+  
+  
+    <h1>Introduction</h1>
+  
+  <p>The <a href="https://github.com/asyncapi/asyncapi" target="_blank" rel="external">AsyncAPI specification</a> allows you to create machine-readable definitions of your asynchronous APIs. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The specification is heavily inspired on <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank" rel="external">OpenAPI</a> (fka Swagger) and it’s designed to maintain as much compatibility as possible with it.</p>
+<h2 id="A-basic-example"><a href="#A-basic-example" class="headerlink" title="A basic example"></a>A basic example</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">asyncapi:</span> <span class="string">'1.0.0'</span></div><div class="line"><span class="attr">info:</span></div><div class="line"><span class="attr">  title:</span> <span class="string">Streetlights</span> <span class="string">API</span></div><div class="line"><span class="attr">  version:</span> <span class="string">'1.0'</span></div><div class="line"><span class="attr">  description:</span> <span class="string">|</span></div><div class="line"><span class="string">    The Smartylighting Streetlights API allows you</span></div><div class="line"><span class="string">    to remotely manage the city lights.</span></div><div class="line"><span class="string"></span><span class="attr">  license:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">Apache</span> <span class="number">2.0</span></div><div class="line"><span class="attr">    url:</span> <span class="string">'https://www.apache.org/licenses/LICENSE-2.0'</span></div><div class="line"><span class="attr">baseTopic:</span> <span class="string">smartylighting.streetlights.1.0</span></div><div class="line"></div><div class="line"><span class="attr">servers:</span></div><div class="line"><span class="attr">  - url:</span> <span class="string">api.streetlights.smartylighting.com:&#123;port&#125;</span></div><div class="line"><span class="attr">    scheme:</span> <span class="string">mqtt</span></div><div class="line"><span class="attr">    description:</span> <span class="string">Test</span> <span class="string">broker</span></div><div class="line"><span class="attr">    variables:</span></div><div class="line"><span class="attr">      port:</span></div><div class="line"><span class="attr">        description:</span> <span class="string">Secure</span> <span class="string">connection</span> <span class="string">(TLS)</span> <span class="string">is</span> <span class="string">available</span> <span class="string">through</span> <span class="string">port</span> <span class="number">8883.</span></div><div class="line"><span class="attr">        default:</span> <span class="string">'1883'</span></div><div class="line"><span class="attr">        enum:</span></div><div class="line"><span class="bullet">          -</span> <span class="string">'1883'</span></div><div class="line"><span class="bullet">          -</span> <span class="string">'8883'</span></div><div class="line"></div><div class="line"><span class="attr">topics:</span></div><div class="line">  <span class="string">event.&#123;streetlightId&#125;.lighting.measured:</span></div><div class="line"><span class="attr">    publish:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">'#/components/messages/lightMeasured'</span></div><div class="line"></div><div class="line"><span class="attr">components:</span></div><div class="line"><span class="attr">  messages:</span></div><div class="line"><span class="attr">    lightMeasured:</span></div><div class="line"><span class="attr">      summary:</span> <span class="string">Inform</span> <span class="string">about</span> <span class="string">environmental</span> <span class="string">lighting</span> <span class="string">conditions</span> <span class="string">for</span> <span class="string">a</span> <span class="string">particular</span> <span class="string">streetlight.</span></div><div class="line"><span class="attr">      payload:</span></div><div class="line">        <span class="string">$ref:</span> <span class="string">"#/components/schemas/lightMeasuredPayload"</span></div><div class="line"></div><div class="line"><span class="attr">  schemas:</span></div><div class="line"><span class="attr">    lightMeasuredPayload:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">object</span></div><div class="line"><span class="attr">      properties:</span></div><div class="line"><span class="attr">        lumens:</span></div><div class="line"><span class="attr">          type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">          minimum:</span> <span class="number">0</span></div><div class="line"><span class="attr">          description:</span> <span class="string">Light</span> <span class="string">intensity</span> <span class="string">measured</span> <span class="string">in</span> <span class="string">lumens.</span></div><div class="line"><span class="attr">        sentAt:</span></div><div class="line">          <span class="string">$ref:</span> <span class="string">"#/components/schemas/sentAt"</span></div><div class="line"><span class="attr">    sentAt:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">string</span></div><div class="line"><span class="attr">      format:</span> <span class="string">date-time</span></div><div class="line"><span class="attr">      description:</span> <span class="string">Date</span> <span class="string">and</span> <span class="string">time</span> <span class="string">when</span> <span class="string">the</span> <span class="string">message</span> <span class="string">was</span> <span class="string">sent.</span></div></pre></td></tr></table></figure>
+<p>This example describes a very basic streetlights service. It says there’s a service you can connect at <code>api.streetlights.smartylighting.com</code> (port 1883 or 8883) and it allows you to publish information about environmental lighting conditions.<br>Afterwards, the service might decide to turn on or off certain lights or it might simply log it for statistics. Or both! That’s up to your implementation.</p>
+<p>If you are familiar with the OpenAPI specification I’m sure you already found lots of similarities. But, what’s this <code>topics</code> section in the file? And what’s this <code>event.{streetlightId}.lighting.measured</code>? Let’s dive into it!</p>
+<h2 id="Core-concepts"><a href="#Core-concepts" class="headerlink" title="Core concepts"></a>Core concepts</h2><p>The AsyncAPI specification is based on the assumption of 2 core concepts:</p>
+<h3 id="Messages"><a href="#Messages" class="headerlink" title="Messages"></a>Messages</h3><p>The way a consumer(s) can communicate with your API is based on messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want them to perform an action.<br> Technically speaking the events and actions will always be sent in the same way. These are just messages and their content can be anything. So when we speak about the difference between events and actions, this is just a semantic differentiation of message’s content. We do not enforce you to make any difference between them, although we encourage you to do it.<br>A message can contain headers and a payload, however both are optional. To remain as much protocol-agnostic as possible, the specification allows you to define any kind of header.</p>
+<h3 id="Topics"><a href="#Topics" class="headerlink" title="Topics"></a>Topics</h3><p>Message-driven protocols usually contain something that can be found as topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices" target="_blank" rel="external">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So when you send a message to your API it will be routed depending on the topic you published on. It allows you to create APIs that subscribe to certain topics and publish to other ones.<br>There’s no standard way of naming topics so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition" target="_blank" rel="external">have a look at our proposal here</a></strong>.</p>
+
+  
+    <div class="guide-links">
+      
+      
+    </div>
+  
+  <div class="footer">
+    Have you found a mistake or want to contribute to this documentation?
+    <a href="https://github.com/asyncapi/asyncapi.github.io/blob/master/src/v1/guide/index.md" target="_blank">
+      Edit this page on Github!
+    </a>
+  </div>
+</div>
+
+        
+      </div>
+      <script src="/js/smooth-scroll.min.js"></script>
+    
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="/js/css.escape.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- fastclick -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+  </body>
+</html>
