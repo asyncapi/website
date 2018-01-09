@@ -1,5 +1,5 @@
-
-
+---
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel="alternate" hreflang="x-default" href="https://asyncapi.org/v1/guide/index.html">
-    
+
     <meta property="og:type" content="article">
     <meta property="og:title" content="Introduction — AsyncAPI">
     <meta property="og:description" content="Define your Message-Driven APIs">
@@ -103,10 +103,10 @@
   </ul>
 </div>
 
-    
+
       <div id="main" class="fix-sidebar">
-        
-          
+
+
   <div class="sidebar">
   <div class="sidebar-inner">
     <ul class="main-menu">
@@ -159,13 +159,13 @@
     </ul>
     <div class="list">
       <ul class="menu-root">
-  
-    
-  
+
+
+
     <li>
       <a href="/v1/guide/index.html" class="sidebar-link current">Introduction</a>
     </li>
-  
+
 </ul>
 
     </div>
@@ -174,12 +174,12 @@
 
 
 <div class="content guide with-sidebar index-guide">
-  
-    
-  
-  
+
+
+
+
     <h1>Introduction</h1>
-  
+
   <p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank" rel="external">OpenAPI/Swagger</a> so, if you’re familiar with them, AsyncAPI should be easy for you.</p>
 <h2 id="A-basic-example"><a href="#A-basic-example" class="headerlink" title="A basic example"></a>A basic example</h2><p>The following example describes a very simple streetlights service. It describes a service you can connect at <code>api.streetlights.smartylighting.com</code> (port 1883 or 8883) and allows you to publish information about environmental lighting conditions.</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="attr">asyncapi:</span> <span class="string">'1.0.0'</span></div><div class="line"><span class="attr">info:</span></div><div class="line"><span class="attr">  title:</span> <span class="string">Streetlights</span> <span class="string">API</span></div><div class="line"><span class="attr">  version:</span> <span class="string">'1.0'</span></div><div class="line"><span class="attr">  description:</span> <span class="string">|</span></div><div class="line"><span class="string">    The Smartylighting Streetlights API allows you</span></div><div class="line"><span class="string">    to remotely manage the city lights.</span></div><div class="line"><span class="string"></span><span class="attr">  license:</span></div><div class="line"><span class="attr">    name:</span> <span class="string">Apache</span> <span class="number">2.0</span></div><div class="line"><span class="attr">    url:</span> <span class="string">'https://www.apache.org/licenses/LICENSE-2.0'</span></div><div class="line"><span class="attr">baseTopic:</span> <span class="string">smartylighting.streetlights.1.0</span></div><div class="line"></div><div class="line"><span class="attr">servers:</span></div><div class="line"><span class="attr">  - url:</span> <span class="string">api.streetlights.smartylighting.com:&#123;port&#125;</span></div><div class="line"><span class="attr">    scheme:</span> <span class="string">mqtt</span></div><div class="line"><span class="attr">    description:</span> <span class="string">Test</span> <span class="string">broker</span></div><div class="line"><span class="attr">    variables:</span></div><div class="line"><span class="attr">      port:</span></div><div class="line"><span class="attr">        description:</span> <span class="string">Secure</span> <span class="string">connection</span> <span class="string">(TLS)</span> <span class="string">is</span> <span class="string">available</span> <span class="string">through</span> <span class="string">port</span> <span class="number">8883.</span></div><div class="line"><span class="attr">        default:</span> <span class="string">'1883'</span></div><div class="line"><span class="attr">        enum:</span></div><div class="line"><span class="bullet">          -</span> <span class="string">'1883'</span></div><div class="line"><span class="bullet">          -</span> <span class="string">'8883'</span></div><div class="line"></div><div class="line"><span class="attr">topics:</span></div><div class="line">  <span class="string">event.&#123;streetlightId&#125;.lighting.measured:</span></div><div class="line"><span class="attr">    publish:</span></div><div class="line">      <span class="string">$ref:</span> <span class="string">'#/components/messages/lightMeasured'</span></div><div class="line"></div><div class="line"><span class="attr">components:</span></div><div class="line"><span class="attr">  messages:</span></div><div class="line"><span class="attr">    lightMeasured:</span></div><div class="line"><span class="attr">      summary:</span> <span class="string">Inform</span> <span class="string">about</span> <span class="string">environmental</span> <span class="string">lighting</span> <span class="string">conditions</span> <span class="string">for</span> <span class="string">a</span> <span class="string">particular</span> <span class="string">streetlight.</span></div><div class="line"><span class="attr">      payload:</span></div><div class="line"><span class="attr">        type:</span> <span class="string">object</span></div><div class="line"><span class="attr">        properties:</span></div><div class="line"><span class="attr">          lumens:</span></div><div class="line"><span class="attr">            type:</span> <span class="string">integer</span></div><div class="line"><span class="attr">            minimum:</span> <span class="number">0</span></div><div class="line"><span class="attr">            description:</span> <span class="string">Light</span> <span class="string">intensity</span> <span class="string">measured</span> <span class="string">in</span> <span class="string">lumens.</span></div><div class="line"><span class="attr">          sentAt:</span></div><div class="line">            <span class="string">$ref:</span> <span class="string">"#/components/schemas/sentAt"</span></div><div class="line"></div><div class="line"><span class="attr">  schemas:</span></div><div class="line"><span class="attr">    sentAt:</span></div><div class="line"><span class="attr">      type:</span> <span class="string">string</span></div><div class="line"><span class="attr">      format:</span> <span class="string">date-time</span></div><div class="line"><span class="attr">      description:</span> <span class="string">Date</span> <span class="string">and</span> <span class="string">time</span> <span class="string">when</span> <span class="string">the</span> <span class="string">message</span> <span class="string">was</span> <span class="string">sent.</span></div></pre></td></tr></table></figure>
@@ -191,24 +191,19 @@
 <h3 id="2-Topics"><a href="#2-Topics" class="headerlink" title="2. Topics"></a>2. Topics</h3><p>Message-driven protocols usually contain something called topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices" target="_blank" rel="external">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.</p>
 <p>There’s no standard way of naming topics, so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition" target="_blank" rel="external">have a look at our proposal here</a></strong>.</p>
 
-  
+
     <div class="guide-links">
-      
-      
+
+
     </div>
-  
-  <div class="footer">
-    Have you found a mistake or want to contribute to this documentation?
-    <a href="https://github.com/asyncapi/asyncapi.github.io/blob/master/src/v1/guide/index.md" target="_blank">
-      Edit this page on Github!
-    </a>
-  </div>
+
+    {% include footer.html %}
 </div>
 
-        
+
       </div>
       <script src="/js/smooth-scroll.min.js"></script>
-    
+
 
     <!-- main custom script for sidebars, version selects etc. -->
     <script src="/js/css.escape.js"></script>
