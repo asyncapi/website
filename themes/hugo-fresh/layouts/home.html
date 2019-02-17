@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+{{ if .Site.Params.hero }}
+{{ partial "hero.html" . }}
+{{ end }}
+
+{{ if .Site.Params.section1 }}
+{{ partial "section1.html" . }}
+{{ end }}
+
+{{ if .Site.Params.footer }}
+{{ partial "footer.html" . }}
+{{ end }}
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+{{ end }}

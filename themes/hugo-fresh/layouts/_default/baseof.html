@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    {{ partial "meta.html" . }}
+    <title>{{ block "title" . }}{{.Page.Title}} | {{ .Site.Title }}{{ end }}</title>
+    {{ partial "css.html" . }}
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    {{ partial "navbar.html" . }}
+    {{ partial "navbar-clone.html" . }}
+    
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
+</body>
+
+</html>

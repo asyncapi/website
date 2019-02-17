@@ -1,0 +1,178 @@
+baseURL: https://asyncapi.org/
+languageCode: en-us
+title: AsyncAPI Initiative
+theme: hugo-fresh
+
+pygmentsUseClasses: true
+pygmentsCodefences: true
+
+params:
+  navbarlogo:
+    image: logos/asyncapi.png
+    link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Define your<br>Message-Driven APIs
+    # Hero subtitle (optional)
+    subtitle: Machine-readable specification for your message-driven systems.
+    # Button text
+    buttontext: Get started
+    # Where the main hero button links to
+    buttonlink: "/docs/getting-started"
+    # Footer logos (from /images/logos/clients/___.svg)
+    clientlogos:
+    - mulesoft
+    - sap
+    - salesforce
+    - slack
+    - tibco
+    
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Learn
+    sublinks:
+    - title: Get started
+      url: /docs/getting-started
+    - title: Tutorials
+      url: /docs/tutorials
+    - title: Specification
+      url: /docs/specifications/latest
+  - title: Tooling
+    sublinks:
+    - title: Online editor
+      url: http://editor.asyncapi.org
+      blank: true
+    - title: Code generators
+      url: /docs/tooling#codegens
+    - title: Documentation generators
+      url: /docs/tooling#docgens
+    - title: Validators
+      url: /docs/tooling#validators
+    - title: Code-first tools
+      url: /docs/tooling#code-first
+  - title: News
+    sublinks:
+    - title: Blog
+      url: https://medium.com/asyncapi
+      blank: true
+    - title: Twitter
+      url: https://twitter.com/search?q=asyncapi
+      blank: true
+  - title: Help
+    sublinks:
+    - title: Github repo
+      url: https://github.com/asyncapi/asyncapi
+      blank: true
+    - title: Slack workspace
+      url: https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg
+      blank: true
+  - title: About
+    url: /about
+  - title: Get Started
+    url: /docs/getting-started
+    button: true
+  section1:
+    title: Full of great features
+    subtitle: crafted by the best people
+    tiles:
+    - title: Machine-readable
+      icon: robotic
+      text: Machine-readable definitions of your Message-Driven APIs.
+    - title: Human Friendly
+      icon: maternity
+      text: Easy and intuitive for humans at a glance.
+    - title: Open Source
+      icon: open-source
+      text: It is Open Source and community-driven.
+    tiles2:
+    - title: Tooling
+      icon: tools
+      text: Built-in tools to make your life easier.
+    - title: Online Editor
+      icon: editor
+      text: Provides an online editor for fast prototyping.
+    - title: Support
+      icon: help
+      text: Supported by the awesome AsyncAPI community.
+  section2:
+    title: You're here because you want the best
+    subtitle: And we know it
+    features:
+    - title: Powerful and unified interface
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: Cross-device synchronisation
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: doc-sync
+    - title: Nomad system
+      text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      icon: mobile-feed
+  section3:
+    title: One platform
+    subtitle: To rule them all
+    image: illustrations/mockups/app-mockup.png
+    buttonText: Get started
+    buttonLink: "#"
+  section4:
+    title: Our Clients love us!
+    subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+    clients:
+    - name: Irma Walters
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Accountant
+      img: 1
+    - name: John Bradley
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: Financial Analyst
+      img: 2
+    - name: Gary Blackman
+      quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+      job: HR Manager
+      img: 3
+  footer:
+    # Logo (from /images/logos/___)
+    logo: logo-footer.png
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/asyncapi/asyncapi
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg
+      icon: slack
+    - link: https://medium.com/asyncapi
+      icon: medium
+    - link: https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ
+      icon: youtube
+    - link: https://twitter.com/search?q=asyncapi
+      icon: twitter
+    product:
+    - text: Discover features
+      link: /
+    - text: Why choose our product?
+      link: /
+    - text: Compare features
+      link: /
+    - text: Our roadmap
+      link: /
+    - text: Request features
+      link: /
+    docs:
+    - text: Get started
+      link: /
+    - text: User guides
+      link: /
+    - text: Admin guide
+      link: /
+    - text: Developers
+      link: /
+    blogroll:
+    - text: Latest news
+      link: /
+    - text: Tech articles
+      link: /
+    - text: Video blog
+      link: /
