@@ -8,7 +8,7 @@
 <meta name="twitter:card" value="summary">
 
 <!-- Open Graph data -->
-<meta property="og:title" content="{{ .Page.Title }} | {{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Page.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Page.Permalink }}" />
 <meta property="og:image" content="{{ "/images/social/card.png" | absURL }}" />

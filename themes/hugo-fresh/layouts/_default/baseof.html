@@ -3,7 +3,7 @@
 
 <head>
     {{ partial "meta.html" . }}
-    <title>{{ block "title" . }}{{.Page.Title}} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ .Page.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
     {{ partial "css.html" . }}
 </head>
 
