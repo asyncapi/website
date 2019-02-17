@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AsyncAPI Initiative</title>
-    <link>https://asyncapi.com/categories/</link>
+    <link>https://www.asyncapi.com/categories/</link>
     <description>Recent content in Categories on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://asyncapi.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.asyncapi.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Specifications</title>
-      <link>https://asyncapi.com/categories/specifications/</link>
+      <link>https://www.asyncapi.com/categories/specifications/</link>
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
-      <guid>https://asyncapi.com/categories/specifications/</guid>
+      <guid>https://www.asyncapi.com/categories/specifications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorials</title>
-      <link>https://asyncapi.com/categories/tutorials/</link>
+      <link>https://www.asyncapi.com/categories/tutorials/</link>
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
-      <guid>https://asyncapi.com/categories/tutorials/</guid>
+      <guid>https://www.asyncapi.com/categories/tutorials/</guid>
       <description></description>
     </item>
     
