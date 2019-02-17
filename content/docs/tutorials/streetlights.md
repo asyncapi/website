@@ -162,7 +162,7 @@ Cool! So we're done with our AsyncAPI file!
 To generate our code we'll use the [AsyncAPI Node.js code generator](https://www.npmjs.com/package/asyncapi-node-codegen).
 
 ```bash
-	npm install -g asyncapi-node-codegen
+npm install -g asyncapi-node-codegen
 ```
 
 (You might need to use sudo)
@@ -170,19 +170,19 @@ To generate our code we'll use the [AsyncAPI Node.js code generator](https://www
 Create a directory for your projects and step into it:
 
 ```bash
-	mkdir streetlights && cd "$_"
+mkdir streetlights && cd "$_"
 ```
 
 Create a file with the AsyncAPI machine-readable description we created before:
 
 ```bash
-	touch asyncapi.yml
-	# Open asyncapi.yml and paste the definition
+touch asyncapi.yml
+# Open asyncapi.yml and paste the definition
 ```
 
 And now let's generate the code for it:
 ```bash
-	asyncapi-node-codegen asyncapi.yml .
+asyncapi-node-codegen asyncapi.yml .
 ```
 
 And voilà!
@@ -192,7 +192,7 @@ And voilà!
 Before running your code don't forget to install the dependencies on every project:
 
 ```bash
-	npm install
+npm install
 ```
 
 Then go to `config/common.yml` and change the default mqtt host to `mqtt://test.mosquitto.org` and default mqtt topics to `smartylighting/streetlights/1/0/event/#`.
@@ -202,7 +202,7 @@ Finally you can run the code by simply running `npm start`.
 Now that you have your code running you'll want to test it, right? Go and install the mqtt library:
 
 ```bash
-	npm install mqtt -g
+npm install mqtt -g
 ```
 
 (You might need to use sudo)
@@ -210,7 +210,7 @@ Now that you have your code running you'll want to test it, right? Go and instal
 Try to send messages to your service using the command line:
 
 ```bash
-	mqtt pub -t 'smartylighting/streetlights/1/0/event/farolina/lighting/measured' -h 'test.mosquitto.org' -m '{"lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'
+mqtt pub -t 'smartylighting/streetlights/1/0/event/farolina/lighting/measured' -h 'test.mosquitto.org' -m '{"lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'
 ```
 
 You should see our application logging the message you just sent.

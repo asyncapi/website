@@ -1,4 +1,4 @@
-baseURL: https://asyncapi.com/
+baseURL: https://www.asyncapi.com/
 languageCode: en-us
 title: AsyncAPI Initiative
 theme: hugo-fresh
@@ -7,6 +7,10 @@ pygmentsUseClasses: true
 pygmentsCodefences: true
 
 params:
+  meta: 
+    description: Create machine-readable specification for your message-driven systems.
+    og:
+      url: https://www.asyncapi.com/
   navbarlogo:
     image: logos/asyncapi.png
     link: /

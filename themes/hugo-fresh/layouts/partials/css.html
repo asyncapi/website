@@ -12,8 +12,7 @@
 <link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
 {{- else }}
 {{- $css := resources.Get $sass | toCSS $cssOpts | minify | fingerprint }}
-<link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" type="text/css" href="{{ $css.RelPermalink }}">
 {{- end }}
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous">
-<link rel="stylesheet" href="/syntax.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ "/syntax.css" | relURL }}">
