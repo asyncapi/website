@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AsyncAPI Initiative | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://asyncapi.org/images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.7fdab707516fae6795f687dbcf1d1ccd8ed9a1de16a7e21e9a81c49fa90ea72e.css" integrity="sha256-f9q3B1FvrmeV9ofbzx0czY7Zod4Wp&#43;IemoHEn6kOpy4=">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="/syntax.css">
+</head>
+
+<body>
+    
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    
+
+<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+      <div id="navbar-menu" class="navbar-menu is-static">
+
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Learn
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="/docs/getting-started" class="navbar-item" >
+                Get started
+              </a>
+              <a href="/docs/tutorials" class="navbar-item" >
+                Tutorials
+              </a>
+              <a href="/docs/specifications/latest" class="navbar-item" >
+                Specification
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Tooling
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+                Online editor
+              </a>
+              <a href="/docs/tooling#codegens" class="navbar-item" >
+                Code generators
+              </a>
+              <a href="/docs/tooling#docgens" class="navbar-item" >
+                Documentation generators
+              </a>
+              <a href="/docs/tooling#validators" class="navbar-item" >
+                Validators
+              </a>
+              <a href="/docs/tooling#code-first" class="navbar-item" >
+                Code-first tools
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              News
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+                Blog
+              </a>
+              <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Help
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+                Github repo
+              </a>
+              <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+                Slack workspace
+              </a>
+            </div>
+          </div>
+          <a href="/about" class="navbar-item is-secondary">
+            About
+          </a>
+          <a href="/docs/getting-started" class="navbar-item">
+            <span class="button signup-button rounded secondary-btn raised">
+              Get Started
+            </span>
+          </a>
+        </div>
+      </div>
+  </div>
+</nav>
+
+    
+
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Learn
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/docs/getting-started" class="navbar-item" >
+              Get started
+            </a>
+            <a href="/docs/tutorials" class="navbar-item" >
+              Tutorials
+            </a>
+            <a href="/docs/specifications/latest" class="navbar-item" >
+              Specification
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Tooling
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+              Online editor
+            </a>
+            <a href="/docs/tooling#codegens" class="navbar-item" >
+              Code generators
+            </a>
+            <a href="/docs/tooling#docgens" class="navbar-item" >
+              Documentation generators
+            </a>
+            <a href="/docs/tooling#validators" class="navbar-item" >
+              Validators
+            </a>
+            <a href="/docs/tooling#code-first" class="navbar-item" >
+              Code-first tools
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            News
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+              Blog
+            </a>
+            <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+              Twitter
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Help
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+              Github repo
+            </a>
+            <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+              Slack workspace
+            </a>
+          </div>
+        </div>
+        <a href="/about" class="navbar-item is-secondary">
+          About
+        </a>
+        <a href="/docs/getting-started" class="navbar-item">
+          <span class="button signup-button rounded secondary-btn raised">
+            Get Started
+          </span>
+        </a>
+      </div>
+    </div>
+</div>
+</nav>
+
+    
+    
+
+
+<section class="hero is-fullheight is-default is-bold">
+  
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6 is-offset-3 landing-caption">
+        <div class="has-text-centered">
+          <img src="/images/logos/asyncapi-notext.png" class="logo">
+        </div>
+        <h1 class="title is-1 is-bold is-spaced has-text-centered">
+          Define your<br>Message-Driven APIs
+        </h1>
+        
+        <h2 class="subtitle is-5 is-muted has-text-centered">
+          Machine-readable specification for your message-driven systems.
+        </h2>
+        
+        <p class="has-text-centered">
+          <a class="button cta rounded primary-btn raised" href="/docs/getting-started">
+            Get started
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="hero-foot mb-20">
+  <div class="container">
+    <div class="tabs is-centered">
+      <ul>
+        <li>
+          <a>
+            <img class="partner-logo" src="/images/logos/clients/mulesoft.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img class="partner-logo" src="/images/logos/clients/sap.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img class="partner-logo" src="/images/logos/clients/salesforce.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img class="partner-logo" src="/images/logos/clients/slack.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img class="partner-logo" src="/images/logos/clients/tibco.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+<section class="section section-feature-grey is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Full of great features</h2>
+      <h3 class="subtitle is-5 is-muted">crafted by the best people</h3>
+      <div class="divider is-centered"></div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Machine-readable</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/robotic.svg">
+            </div>
+            <div class="card-text">
+                <p>Machine-readable definitions of your Message-Driven APIs.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Human Friendly</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/maternity.svg">
+            </div>
+            <div class="card-text">
+                <p>Easy and intuitive for humans at a glance.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Open Source</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/open-source.svg">
+            </div>
+            <div class="card-text">
+                <p>It is Open Source and community-driven.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Tooling</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/tools.svg">
+            </div>
+            <div class="card-text">
+                <p>Built-in tools to make your life easier.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Online Editor</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/editor.svg">
+            </div>
+            <div class="card-text">
+                <p>Provides an online editor for fast prototyping.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+            <div class="card-title">
+              <h4>Support</h4>
+            </div>
+            <div class="card-icon">
+                <img src="/images/illustrations/icons/help.svg">
+            </div>
+            <div class="card-text">
+                <p>Supported by the awesome AsyncAPI community.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="footer-logo">
+          <img src="/images/logos/logo-footer.png">
+        </div>
+      </div>
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>Follow Us</h3>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" href="https://github.com/asyncapi/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                </a>
+                <a class="level-item" href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" target="_blank">
+                  <span class="icon"><i class="fab fa-slack"></i></span>
+                </a>
+                <a class="level-item" href="https://medium.com/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-medium"></i></span>
+                </a>
+                <a class="level-item" href="https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ" target="_blank">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                </a>
+                <a class="level-item" href="https://twitter.com/search?q=asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-twitter"></i></span>
+                </a>
+              </div>
+            </nav>
+
+            <h6>Icons & Graphics attributions</h6>
+            <div class="attributions">
+              <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
+                www.freepik.com</a>
+              <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.freepik.com/" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, and <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"
+                  title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                  target="_blank">CC 3.0 BY</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<div id="backtotop"><a href="#"></a></div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://asyncapi.org/js/fresh.js"></script>
+<script src="https://asyncapi.org/js/jquery.panelslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</body>
+
+</html>

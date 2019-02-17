@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tooling | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://asyncapi.org/images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.7fdab707516fae6795f687dbcf1d1ccd8ed9a1de16a7e21e9a81c49fa90ea72e.css" integrity="sha256-f9q3B1FvrmeV9ofbzx0czY7Zod4Wp&#43;IemoHEn6kOpy4=">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="/syntax.css">
+</head>
+
+<body>
+    
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    
+
+<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+      <div id="navbar-menu" class="navbar-menu is-static">
+
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Learn
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="/docs/getting-started" class="navbar-item" >
+                Get started
+              </a>
+              <a href="/docs/tutorials" class="navbar-item" >
+                Tutorials
+              </a>
+              <a href="/docs/specifications/latest" class="navbar-item" >
+                Specification
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Tooling
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+                Online editor
+              </a>
+              <a href="/docs/tooling#codegens" class="navbar-item" >
+                Code generators
+              </a>
+              <a href="/docs/tooling#docgens" class="navbar-item" >
+                Documentation generators
+              </a>
+              <a href="/docs/tooling#validators" class="navbar-item" >
+                Validators
+              </a>
+              <a href="/docs/tooling#code-first" class="navbar-item" >
+                Code-first tools
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              News
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+                Blog
+              </a>
+              <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Help
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+                Github repo
+              </a>
+              <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+                Slack workspace
+              </a>
+            </div>
+          </div>
+          <a href="/about" class="navbar-item is-secondary">
+            About
+          </a>
+          <a href="/docs/getting-started" class="navbar-item">
+            <span class="button signup-button rounded secondary-btn raised">
+              Get Started
+            </span>
+          </a>
+        </div>
+      </div>
+  </div>
+</nav>
+
+    
+
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Learn
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/docs/getting-started" class="navbar-item" >
+              Get started
+            </a>
+            <a href="/docs/tutorials" class="navbar-item" >
+              Tutorials
+            </a>
+            <a href="/docs/specifications/latest" class="navbar-item" >
+              Specification
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Tooling
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+              Online editor
+            </a>
+            <a href="/docs/tooling#codegens" class="navbar-item" >
+              Code generators
+            </a>
+            <a href="/docs/tooling#docgens" class="navbar-item" >
+              Documentation generators
+            </a>
+            <a href="/docs/tooling#validators" class="navbar-item" >
+              Validators
+            </a>
+            <a href="/docs/tooling#code-first" class="navbar-item" >
+              Code-first tools
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            News
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+              Blog
+            </a>
+            <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+              Twitter
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Help
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+              Github repo
+            </a>
+            <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+              Slack workspace
+            </a>
+          </div>
+        </div>
+        <a href="/about" class="navbar-item is-secondary">
+          About
+        </a>
+        <a href="/docs/getting-started" class="navbar-item">
+          <span class="button signup-button rounded secondary-btn raised">
+            Get Started
+          </span>
+        </a>
+      </div>
+    </div>
+</div>
+</nav>
+
+    
+    
+<div class="container">
+    <div class="columns">
+        <div class="column is-centered-tablet-portrait">
+            <h1 class="title section-title">Tooling</h1>
+            <h5 class="subtitle is-5 is-muted"></h5>
+            <div class="divider"></div>
+        </div>
+    </div>
+    <div class="docs-content">
+    
+
+<blockquote>
+<p>Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!</p>
+</blockquote>
+
+<h1 id="codegens">Code Generators</h1>
+
+<p>The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Link</th>
+<th align="left">Description</th>
+<th align="left">Langage/Framework</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/asyncapi/generator">AsyncAPI Generator</a></td>
+<td align="left">Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything!</td>
+<td align="left"><em>Many</em></td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://github.com/asyncapi/node-codegen">node-codegen</a></td>
+<td align="left"><strong><em>(Deprecated in favor of AsyncAPI Generator)</em></strong> <br>Use your AsyncAPI definition to generate the Node.js ES7 code for your API. The generated code features: <ul><li>ES7</li><li>No transpiling</li><li>ESLint</li><li>YAML config file</li><li>Hermes</li></ul></td>
+<td align="left">Node.js/Hermes</td>
+</tr>
+</tbody>
+</table>
+
+<p>The language you&rsquo;re looking for is not here? You have created a new code generator and want to list it here? <a href="https://github.com/asyncapi/asyncapi/issues/new">Let us know!</a></p>
+
+<h1 id="docgens">Documentation Generators</h1>
+
+<p>The following is a list of tools that generate human-readable documentation from an AsyncAPI document.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Link</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/asyncapi/generator">AsyncAPI Generator</a></td>
+<td align="left">Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything!</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://github.com/Mermade/widdershins">Widdershins</a></td>
+<td align="left">OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to <a href="https://twitter.com/@Permittedsoc">@PermittedSoc</a>.</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://github.com/asyncapi/docgen">Docgen</a></td>
+<td align="left"><strong><em>(Deprecated in favor of AsyncAPI Generator)</em></strong> <br>Use your AsyncAPI definition to generate beautiful human-readable documentation for your API. It generates documentation in HTML, CSS and JS.</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="validators">Validators</h1>
+
+<p>The following is a list of tools that validate AsyncAPI documents.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Link</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/Mermade/check_api">Check-API</a></td>
+<td align="left">It allows you to validate a local file or remote URL with a single command-line or programmatic invocation. It returns an exitCode of 0 on success and 1 on failure, making it suitable for use in Continuous Integration environments. Thanks to <a href="https://twitter.com/@Permittedsoc">@PermittedSoc</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="code-first">Code-first tools</h1>
+
+<p>The following is a list of tools that generate AsyncAPI documents from your code.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Link</th>
+<th align="left">Description</th>
+<th align="left">Langage/Framework</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/swaggest/go-asyncapi">Go AsyncAPI</a></td>
+<td align="left">It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema. Thanks to <a href="https://github.com/vearutop">@vearutop</a>.</td>
+<td align="left">Go</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://asyncapi.org/js/fresh.js"></script>
+<script src="https://asyncapi.org/js/jquery.panelslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</body>
+
+</html>

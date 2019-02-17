@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Getting Started | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://asyncapi.org/images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.7fdab707516fae6795f687dbcf1d1ccd8ed9a1de16a7e21e9a81c49fa90ea72e.css" integrity="sha256-f9q3B1FvrmeV9ofbzx0czY7Zod4Wp&#43;IemoHEn6kOpy4=">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="/syntax.css">
+</head>
+
+<body>
+    
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+
+    
+
+<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+      <div id="navbar-menu" class="navbar-menu is-static">
+
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Learn
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="/docs/getting-started" class="navbar-item" >
+                Get started
+              </a>
+              <a href="/docs/tutorials" class="navbar-item" >
+                Tutorials
+              </a>
+              <a href="/docs/specifications/latest" class="navbar-item" >
+                Specification
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Tooling
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+                Online editor
+              </a>
+              <a href="/docs/tooling#codegens" class="navbar-item" >
+                Code generators
+              </a>
+              <a href="/docs/tooling#docgens" class="navbar-item" >
+                Documentation generators
+              </a>
+              <a href="/docs/tooling#validators" class="navbar-item" >
+                Validators
+              </a>
+              <a href="/docs/tooling#code-first" class="navbar-item" >
+                Code-first tools
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              News
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+                Blog
+              </a>
+              <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+                Twitter
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Help
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+                Github repo
+              </a>
+              <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+                Slack workspace
+              </a>
+            </div>
+          </div>
+          <a href="/about" class="navbar-item is-secondary">
+            About
+          </a>
+          <a href="/docs/getting-started" class="navbar-item">
+            <span class="button signup-button rounded secondary-btn raised">
+              Get Started
+            </span>
+          </a>
+        </div>
+      </div>
+  </div>
+</nav>
+
+    
+
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/images/logos/asyncapi.png" alt="AsyncAPI logo">
+      </a>
+    </div>
+
+    <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Learn
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="/docs/getting-started" class="navbar-item" >
+              Get started
+            </a>
+            <a href="/docs/tutorials" class="navbar-item" >
+              Tutorials
+            </a>
+            <a href="/docs/specifications/latest" class="navbar-item" >
+              Specification
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Tooling
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="http://editor.asyncapi.org" class="navbar-item" target="_blank">
+              Online editor
+            </a>
+            <a href="/docs/tooling#codegens" class="navbar-item" >
+              Code generators
+            </a>
+            <a href="/docs/tooling#docgens" class="navbar-item" >
+              Documentation generators
+            </a>
+            <a href="/docs/tooling#validators" class="navbar-item" >
+              Validators
+            </a>
+            <a href="/docs/tooling#code-first" class="navbar-item" >
+              Code-first tools
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            News
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
+              Blog
+            </a>
+            <a href="https://twitter.com/search?q=asyncapi" class="navbar-item" target="_blank">
+              Twitter
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Help
+          </a>
+
+          <div class="navbar-dropdown">
+            <a href="https://github.com/asyncapi/asyncapi" class="navbar-item" target="_blank">
+              Github repo
+            </a>
+            <a href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" class="navbar-item" target="_blank">
+              Slack workspace
+            </a>
+          </div>
+        </div>
+        <a href="/about" class="navbar-item is-secondary">
+          About
+        </a>
+        <a href="/docs/getting-started" class="navbar-item">
+          <span class="button signup-button rounded secondary-btn raised">
+            Get Started
+          </span>
+        </a>
+      </div>
+    </div>
+</div>
+</nav>
+
+    
+    
+<div class="container">
+    <div class="columns">
+        <div class="column is-centered-tablet-portrait">
+            <h1 class="title section-title">Getting Started</h1>
+            <h5 class="subtitle is-5 is-muted"></h5>
+            <div class="divider"></div>
+        </div>
+    </div>
+    <div class="docs-content">
+    
+
+<p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI/Swagger</a> so, if you’re familiar with them, AsyncAPI should be easy for you.</p>
+
+<h1 id="a-basic-example">A basic example</h1>
+
+<p>The following example describes a very simple streetlights service. It describes a service you can connect at <code>api.streetlights.smartylighting.com</code> (port 1883 or 8883) and allows you to publish information about environmental lighting conditions.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">asyncapi<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1.0.0&#39;</span><span class="w">
+</span><span class="w"></span>info<span class="p">:</span><span class="w">
+</span><span class="w">  </span>title<span class="p">:</span><span class="w"> </span>Streetlights<span class="w"> </span>API<span class="w">
+</span><span class="w">  </span>version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1.0&#39;</span><span class="w">
+</span><span class="w">  </span>description<span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">    The Smartylighting Streetlights API allows you</span><span class="w">
+</span><span class="w">    </span>to<span class="w"> </span>remotely<span class="w"> </span>manage<span class="w"> </span>the<span class="w"> </span>city<span class="w"> </span>lights.<span class="w">
+</span><span class="w">  </span>license<span class="p">:</span><span class="w">
+</span><span class="w">    </span>name<span class="p">:</span><span class="w"> </span>Apache<span class="w"> </span><span class="m">2.0</span><span class="w">
+</span><span class="w">    </span>url<span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://www.apache.org/licenses/LICENSE-2.0&#39;</span><span class="w">
+</span><span class="w"></span>baseTopic<span class="p">:</span><span class="w"> </span>smartylighting.streetlights.<span class="m">1.0</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>servers<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span>url<span class="p">:</span><span class="w"> </span>api.streetlights.smartylighting.com<span class="p">:</span>{port}<span class="w">
+</span><span class="w">    </span>scheme<span class="p">:</span><span class="w"> </span>mqtt<span class="w">
+</span><span class="w">    </span>description<span class="p">:</span><span class="w"> </span>Test<span class="w"> </span>broker<span class="w">
+</span><span class="w">    </span>variables<span class="p">:</span><span class="w">
+</span><span class="w">      </span>port<span class="p">:</span><span class="w">
+</span><span class="w">        </span>description<span class="p">:</span><span class="w"> </span>Secure<span class="w"> </span>connection<span class="w"> </span>(TLS)<span class="w"> </span>is<span class="w"> </span>available<span class="w"> </span>through<span class="w"> </span>port<span class="w"> </span><span class="m">8883</span>.<span class="w">
+</span><span class="w">        </span>default<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1883&#39;</span><span class="w">
+</span><span class="w">        </span>enum<span class="p">:</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span><span class="s1">&#39;1883&#39;</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span><span class="s1">&#39;8883&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>topics<span class="p">:</span><span class="w">
+</span><span class="w">  </span>event.{streetlightId}.lighting.measured<span class="p">:</span><span class="w">
+</span><span class="w">    </span>publish<span class="p">:</span><span class="w">
+</span><span class="w">      </span>$ref<span class="p">:</span><span class="w"> </span><span class="s1">&#39;#/components/messages/lightMeasured&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>components<span class="p">:</span><span class="w">
+</span><span class="w">  </span>messages<span class="p">:</span><span class="w">
+</span><span class="w">    </span>lightMeasured<span class="p">:</span><span class="w">
+</span><span class="w">      </span>summary<span class="p">:</span><span class="w"> </span>Inform<span class="w"> </span>about<span class="w"> </span>environmental<span class="w"> </span>lighting<span class="w"> </span>conditions<span class="w"> </span>for<span class="w"> </span>a<span class="w"> </span>particular<span class="w"> </span>streetlight.<span class="w">
+</span><span class="w">      </span>payload<span class="p">:</span><span class="w">
+</span><span class="w">        </span>type<span class="p">:</span><span class="w"> </span>object<span class="w">
+</span><span class="w">        </span>properties<span class="p">:</span><span class="w">
+</span><span class="w">          </span>lumens<span class="p">:</span><span class="w">
+</span><span class="w">            </span>type<span class="p">:</span><span class="w"> </span>integer<span class="w">
+</span><span class="w">            </span>minimum<span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w">            </span>description<span class="p">:</span><span class="w"> </span>Light<span class="w"> </span>intensity<span class="w"> </span>measured<span class="w"> </span>in<span class="w"> </span>lumens.<span class="w">
+</span><span class="w">          </span>sentAt<span class="p">:</span><span class="w">
+</span><span class="w">            </span>$ref<span class="p">:</span><span class="w"> </span><span class="s2">&#34;#/components/schemas/sentAt&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>schemas<span class="p">:</span><span class="w">
+</span><span class="w">    </span>sentAt<span class="p">:</span><span class="w">
+</span><span class="w">      </span>type<span class="p">:</span><span class="w"> </span>string<span class="w">
+</span><span class="w">      </span>format<span class="p">:</span><span class="w"> </span>date-time<span class="w">
+</span><span class="w">      </span>description<span class="p">:</span><span class="w"> </span>Date<span class="w"> </span>and<span class="w"> </span>time<span class="w"> </span>when<span class="w"> </span>the<span class="w"> </span>message<span class="w"> </span>was<span class="w"> </span>sent.</code></pre></div>
+<p>If you are familiar with the OpenAPI specification, I’m sure you already found lots of similarities. But, what’s this <code>topics</code> section in the file? And what’s this <code>event.{streetlightId}.lighting.measured</code>? Let’s dive into it!</p>
+
+<h1 id="core-concepts">Core concepts</h1>
+
+<p>The AsyncAPI specification assumes two core concepts:</p>
+
+<h2 id="1-messages">1. Messages</h2>
+
+<p>Consumer(s) communicate with your API via messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want to trigger a command.</p>
+
+<p>Technically speaking the events and actions will always be sent in the same way. These are just messages, and their content can be anything. So when we talk about the difference between events and actions, this is only a semantic differentiation of message’s content. We do not enforce you to make any difference between them, although we encourage you to do it.</p>
+
+<p>A message can contain headers and a payload. However, both are optional. The specification allows you to define any header, to remain as much protocol-agnostic as possible.</p>
+
+<h2 id="2-topics">2. Topics</h2>
+
+<p>Message-driven protocols usually contain something called topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.</p>
+
+<p>There’s no standard way of naming topics, so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition">have a look at our proposal here</a></strong>.</p>
+
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://asyncapi.org/js/fresh.js"></script>
+<script src="https://asyncapi.org/js/jquery.panelslider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</body>
+
+</html>

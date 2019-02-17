@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AsyncAPI Initiative</title>
+    <link>https://asyncapi.org/</link>
+    <description>Recent content on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Feb 2019 17:41:57 +0100</lastBuildDate>
+    
+	<atom:link href="https://asyncapi.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AsyncAPI specification 1.0.0</title>
+      <link>https://asyncapi.org/docs/specifications/1.0.0/</link>
+      <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/specifications/1.0.0/</guid>
+      <description>Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
+    </item>
+    
+    <item>
+      <title>AsyncAPI specification 1.1.0</title>
+      <link>https://asyncapi.org/docs/specifications/1.1.0/</link>
+      <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/specifications/1.1.0/</guid>
+      <description>Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+Version 1.1.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
+    </item>
+    
+    <item>
+      <title>AsyncAPI specification 1.2.0</title>
+      <link>https://asyncapi.org/docs/specifications/1.2.0/</link>
+      <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/specifications/1.2.0/</guid>
+      <description>Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
+Version 1.2.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
+    </item>
+    
+    <item>
+      <title>Streetlights</title>
+      <link>https://asyncapi.org/docs/tutorials/streetlights/</link>
+      <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/tutorials/streetlights/</guid>
+      <description>&lt;p&gt;In this tutorial I want to help you get started with actual code and a (could-be) real world use case.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://asyncapi.org/about/</link>
+      <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/about/</guid>
+      <description>Maintainers and Contributors Fran Méndez is currently the project director.
+Current maintainers are Mike Ralphson and Raisel Melian.
+So far, we have had many contributors and we are thankful for their time and help. Until the day of this writing, main contributors are:
+ Bruno Pedro Chris Wood Emmelyn Wang Kin Lane Lukasz Gornicki  Would you like to contribute? Check out our contributing guidelines.
+History This project started at Hitch (a.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://asyncapi.org/docs/getting-started/</link>
+      <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/getting-started/</guid>
+      <description>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
+A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.</description>
+    </item>
+    
+    <item>
+      <title>Tooling</title>
+      <link>https://asyncapi.org/docs/tooling/</link>
+      <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://asyncapi.org/docs/tooling/</guid>
+      <description>Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!
+ Code Generators The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.
+   Link Description Langage/Framework     AsyncAPI Generator Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! Many   node-codegen (Deprecated in favor of AsyncAPI Generator) Use your AsyncAPI definition to generate the Node.</description>
+    </item>
+    
+  </channel>
+</rss>
