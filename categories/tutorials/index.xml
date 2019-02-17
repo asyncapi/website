@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on AsyncAPI Initiative</title>
-    <link>https://asyncapi.org/categories/tutorials/</link>
+    <link>https://asyncapi.com/categories/tutorials/</link>
     <description>Recent content in Tutorials on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Feb 2019 17:41:57 +0100</lastBuildDate>
     
-	<atom:link href="https://asyncapi.org/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://asyncapi.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Streetlights</title>
-      <link>https://asyncapi.org/docs/tutorials/streetlights/</link>
+      <link>https://asyncapi.com/docs/tutorials/streetlights/</link>
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
-      <guid>https://asyncapi.org/docs/tutorials/streetlights/</guid>
+      <guid>https://asyncapi.com/docs/tutorials/streetlights/</guid>
       <description>&lt;p&gt;In this tutorial I want to help you get started with actual code and a (could-be) real world use case.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Tutorials</title>
-      <link>https://asyncapi.org/docs/tutorials/</link>
+      <link>https://asyncapi.com/docs/tutorials/</link>
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
-      <guid>https://asyncapi.org/docs/tutorials/</guid>
+      <guid>https://asyncapi.com/docs/tutorials/</guid>
       <description></description>
     </item>
     
