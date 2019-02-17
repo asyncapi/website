@@ -79,9 +79,7 @@ A basic example The following example describes a very simple streetlights servi
       <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/tooling/</guid>
-      <description>Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!
- Code Generators The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.
-   Link Description Langage/Framework     AsyncAPI Generator Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! Many   node-codegen (Deprecated in favor of AsyncAPI Generator) Use your AsyncAPI definition to generate the Node.</description>
+      <description>&lt;p&gt;This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? &lt;a href=&#34;https://github.com/asyncapi/asyncapi/issues/new&#34;&gt;Let us know!&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
