@@ -2,14 +2,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="{{ .Site.Params.meta.description }}" />
+<meta name="description" content="{{if .IsHome }}{{ .Site.Params.meta.description }}{{ else }}{{ .Page.Summary }}{{ end }}" />
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="{{ .Page.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}">
+<meta itemprop="description" content="{{if .IsHome }}{{ .Site.Params.meta.description }}{{ else }}{{ .Page.Summary }}{{ end }}">
+<meta itemprop="image" content="{{ "/images/social/card.png" | absURL }}">
 
 <!-- Twitter Card data -->
-<meta name="twitter:card" value="summary">
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:title" content="{{ .Page.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{if .IsHome }}{{ .Site.Params.meta.description }}{{ else }}{{ .Page.Summary }}{{ end }}">
+<meta name="twitter:image" content="{{ "/images/social/card.png" | absURL }}">
+
 
 <!-- Open Graph data -->
 <meta property="og:title" content="{{ .Page.Title }}{{ if not .IsHome }} | {{ .Site.Title }}{{ end }}" />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
 <meta property="og:url" content="{{ .Page.Permalink }}" />
 <meta property="og:image" content="{{ "/images/social/card.png" | absURL }}" />
 <meta property="og:description" content="{{ .Page.Summary }}" />

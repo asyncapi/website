@@ -8,7 +8,7 @@ pygmentsCodefences: true
 
 params:
   meta: 
-    description: Create machine-readable specification for your message-driven systems.
+    description: Create machine-readable definitions of your message-driven systems.
     og:
       url: https://www.asyncapi.com/
   navbarlogo:
