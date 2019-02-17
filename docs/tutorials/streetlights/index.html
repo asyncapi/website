@@ -352,32 +352,32 @@
 <h1 id="generating-code">Generating code</h1>
 
 <p>To generate our code we&rsquo;ll use the <a href="https://www.npmjs.com/package/asyncapi-node-codegen">AsyncAPI Node.js code generator</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	npm install -g asyncapi-node-codegen</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install -g asyncapi-node-codegen</code></pre></div>
 <p>(You might need to use sudo)</p>
 
 <p>Create a directory for your projects and step into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	mkdir streetlights <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$_</span><span class="s2">&#34;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir streetlights <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$_</span><span class="s2">&#34;</span></code></pre></div>
 <p>Create a file with the AsyncAPI machine-readable description we created before:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	touch asyncapi.yml
-	<span class="c1"># Open asyncapi.yml and paste the definition</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">touch asyncapi.yml
+<span class="c1"># Open asyncapi.yml and paste the definition</span></code></pre></div>
 <p>And now let&rsquo;s generate the code for it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	asyncapi-node-codegen asyncapi.yml .</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">asyncapi-node-codegen asyncapi.yml .</code></pre></div>
 <p>And voilà!</p>
 
 <h1 id="running-our-code">Running our code</h1>
 
 <p>Before running your code don&rsquo;t forget to install the dependencies on every project:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	npm install</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install</code></pre></div>
 <p>Then go to <code>config/common.yml</code> and change the default mqtt host to <code>mqtt://test.mosquitto.org</code> and default mqtt topics to <code>smartylighting/streetlights/1/0/event/#</code>.</p>
 
 <p>Finally you can run the code by simply running <code>npm start</code>.</p>
 
 <p>Now that you have your code running you&rsquo;ll want to test it, right? Go and install the mqtt library:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	npm install mqtt -g</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install mqtt -g</code></pre></div>
 <p>(You might need to use sudo)</p>
 
 <p>Try to send messages to your service using the command line:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">	mqtt pub -t <span class="s1">&#39;smartylighting/streetlights/1/0/event/farolina/lighting/measured&#39;</span> -h <span class="s1">&#39;test.mosquitto.org&#39;</span> -m <span class="s1">&#39;{&#34;lumens&#34;: 3, &#34;sentAt&#34;: &#34;2017-06-07T12:34:32.000Z&#34;}&#39;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mqtt pub -t <span class="s1">&#39;smartylighting/streetlights/1/0/event/farolina/lighting/measured&#39;</span> -h <span class="s1">&#39;test.mosquitto.org&#39;</span> -m <span class="s1">&#39;{&#34;lumens&#34;: 3, &#34;sentAt&#34;: &#34;2017-06-07T12:34:32.000Z&#34;}&#39;</span></code></pre></div>
 <p>You should see our application logging the message you just sent.</p>
 
 <h1 id="conclusions">Conclusions</h1>
