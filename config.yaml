@@ -7,6 +7,7 @@ pygmentsUseClasses: true
 pygmentsCodefences: true
 
 params:
+  google_analytics_id: UA-109278936-1
   meta: 
     description: Create machine-readable definitions of your message-driven systems.
     og:
