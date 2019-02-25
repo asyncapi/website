@@ -1,6 +1,8 @@
 ---
 title: "Streetlights"
 date: 2019-02-16T17:41:57+01:00
+aliases:
+- '/v1/tutorial/'
 categories:
 - tutorials
 ---

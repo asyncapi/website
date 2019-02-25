@@ -1,6 +1,9 @@
 ---
 title: "Getting Started"
 date: 2019-02-16T13:56:52+01:00
+aliases:
+- '/v1/guide/'
+- '/v1/guide/index.html'
 ---
 
 AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to [OpenAPI/Swagger](https://github.com/OAI/OpenAPI-Specification) so, if you’re familiar with them, AsyncAPI should be easy for you.

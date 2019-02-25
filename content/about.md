@@ -2,6 +2,8 @@
 title: "About"
 date: 2019-02-16T13:56:52+01:00
 layout: docs
+aliases:
+- '/about.html'
 ---
 
 # Maintainers and Contributors
