@@ -10,6 +10,8 @@ Navbar
     z-index: 99;
     .container {
         min-height: 4rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
     }
     &.no-shadow {
         box-shadow: none !important;
@@ -111,5 +113,13 @@ Navbar
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
     &.is-active {
         transform: translateY(0); 
+    }
+}
+
+@media screen and (min-width: 1088px) {
+    .navbar.is-fresh {
+        .container {
+            padding: 0;
+        }
     }
 }
