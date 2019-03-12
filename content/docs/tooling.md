@@ -18,7 +18,7 @@ The following is a list of tools that generate code from an AsyncAPI document, a
 
 | Link           | Description    | Langage/Framework |
 | :------------- | :------------- | :---------------- |
-| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! | _Many_
+| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **Please, check out the [templates directory](https://github.com/asyncapi/generator/tree/master/templates) to get a list of the supported languages/formats**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 | [node-codegen](https://github.com/asyncapi/node-codegen) | **_(Deprecated in favor of AsyncAPI Generator)_** <br>Use your AsyncAPI definition to generate the Node.js ES7 code for your API. The generated code features: <ul><li>ES7</li><li>No transpiling</li><li>ESLint</li><li>YAML config file</li><li>Hermes</li></ul>       | Node.js/Hermes
 
 The language you're looking for is not here? You have created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
