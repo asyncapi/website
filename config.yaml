@@ -30,9 +30,10 @@ params:
     # Footer logos (from /images/logos/clients/___.svg)
     clientlogos:
     - mulesoft
-    - sap
     - salesforce
+    - sap
     - slack
+    - solace
     - tibco
     
   # Customizable navbar. For a dropdown, add a "sublinks" list.
