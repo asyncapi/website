@@ -16,7 +16,9 @@ So far, we have had many contributors and we are thankful for their time and hel
 
 * [Bruno Pedro](https://twitter.com/bpedro)
 * [Chris Wood](https://twitter.com/sensiblewood)
+* [Dulce De La Rosa](https://twitter.com/DeLaR0sa)
 * [Emmelyn Wang](https://twitter.com/lifewingmate)
+* [Jonathan Schabowsky](https://twitter.com/JSchabowsky)
 * [Kin Lane](https://twitter.com/kinlane)
 * [Lukasz Gornicki](https://twitter.com/derberq)
 
