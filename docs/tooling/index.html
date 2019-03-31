@@ -30,8 +30,11 @@
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.c0c8b878680d8a5decd74b1d943edf9f626e008f7d622357a6a59b653846105e.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.f6ffa2b21beac513849f79e8178a3ea9b54a8e686a1bfa2e3f8728434ced2bc5.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
 <link rel="stylesheet" href="/syntax.css">
 </head>
 
@@ -240,22 +243,101 @@
 
     
     
-<div class="container" style="padding:0 2rem;">
+<div class="container" style="padding:0 2rem;margin-top:30px;">
     <div class="columns">
-        <div class="column is-centered-tablet-portrait">
-            <h1 class="title section-title">Tooling</h1>
-            <h5 class="subtitle is-5 is-muted"></h5>
-            <div class="divider"></div>
+        <div class="column is-3 is-hidden-mobile is-hidden-tablet-only">
+            <aside class="docs-menu">
+    <h3>Menu</h3>
+    <ul>
+        
+        
+        
+            
+            <li>
+                <a href="/docs/getting-started/">
+                    
+                    <span>Getting started</span>
+                </a>
+            </li>
+            
+        
+        
+        
+        <li>
+            <a href="#">
+                
+                <span>Tutorials</span>
+            </a>
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/tutorials/streetlights/">
+                        
+                        <span>Streetlights</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+        
+        <li>
+            <a href="#">
+                
+                <span>Specification</span>
+            </a>
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.0.0/">
+                        
+                        <span>1.0.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.1.0/">
+                        
+                        <span>1.1.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.2.0/">
+                        
+                        <span>1.2.0</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+    </ul>
+</aside>
         </div>
+        <div class="column is-9 is-centered-tablet-portrait">
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title" style="margin-top:30px;">Tooling</h1>
     </div>
-    <div class="docs-content">
-    <p>This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? <a href="https://github.com/asyncapi/asyncapi/issues/new">Let us know!</a></p>
+</div>
+<div class="docs-content"><p>This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? <a href="https://github.com/asyncapi/asyncapi/issues/new">Let us know!</a></p>
 
 <blockquote>
 <p>Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!</p>
 </blockquote>
 
-<h1 id="codegens">Code Generators</h1>
+<h1 id="codegens">Code Generators<a href="#codegens" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.</p>
 
@@ -285,7 +367,7 @@
 
 <p>The language you&rsquo;re looking for is not here? You have created a new code generator and want to list it here? <a href="https://github.com/asyncapi/asyncapi/issues/new">Let us know!</a></p>
 
-<h1 id="docgens">Documentation Generators</h1>
+<h1 id="docgens">Documentation Generators<a href="#docgens" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The following is a list of tools that generate human-readable documentation from an AsyncAPI document.</p>
 
@@ -315,7 +397,7 @@
 </tbody>
 </table>
 
-<h1 id="validators">Validators</h1>
+<h1 id="validators">Validators<a href="#validators" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The following is a list of tools that validate AsyncAPI documents.</p>
 
@@ -335,7 +417,7 @@
 </tbody>
 </table>
 
-<h1 id="code-first">Code-first tools</h1>
+<h1 id="code-first">Code-first tools<a href="#code-first" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The following is a list of tools that generate AsyncAPI documents from your code.</p>
 
@@ -355,7 +437,8 @@
 <td align="left">Go</td>
 </tr>
 </tbody>
-</table>
+</table></div>
+        </div>
     </div>
 </div>
 
@@ -377,6 +460,14 @@
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
 <script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
 </body>
 
 </html>

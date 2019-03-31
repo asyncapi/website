@@ -42,8 +42,11 @@ So far, we have had many contributors and we are thankful for their time and hel
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.c0c8b878680d8a5decd74b1d943edf9f626e008f7d622357a6a59b653846105e.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.f6ffa2b21beac513849f79e8178a3ea9b54a8e686a1bfa2e3f8728434ced2bc5.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
 <link rel="stylesheet" href="/syntax.css">
 </head>
 
@@ -252,18 +255,14 @@ So far, we have had many contributors and we are thankful for their time and hel
 
     
     
-<div class="container" style="padding:0 2rem;">
-    <div class="columns">
-        <div class="column is-centered-tablet-portrait">
-            <h1 class="title section-title">About</h1>
-            <h5 class="subtitle is-5 is-muted"></h5>
-            <div class="divider"></div>
-        </div>
+<div class="columns">
+    <div class="column">
+        <h1 class="title section-title" style="margin-top:30px;">About</h1>
     </div>
-    <div class="docs-content">
-    
+</div>
+<div class="docs-content">
 
-<h1 id="maintainers-and-contributors">Maintainers and Contributors</h1>
+<h1 id="maintainers-and-contributors">Maintainers and Contributors<a href="#maintainers-and-contributors" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p><a href="https://twitter.com/fmvilas">Fran Méndez</a> is currently the project director.</p>
 
@@ -283,15 +282,13 @@ So far, we have had many contributors and we are thankful for their time and hel
 
 <p>Would you like to contribute? Check out our <a href="https://github.com/asyncapi/asyncapi/blob/master/CONTRIBUTING.md">contributing guidelines</a>.</p>
 
-<h1 id="history">History</h1>
+<h1 id="history">History<a href="#history" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>This project started at Hitch (a.k.a. API Changelog). We are in love with API machine-readable documentation formats (OpenAPI, RAML, etc.) and always encouraged our customers to use a machine-readable definition for their APIs because it allows them to get extra benefits. From documentation and code generation to setup their own <a href="http://apiassistant.com">API Assistant</a>.</p>
 
 <p>Internally, we used a message-driven microservices architecture and we couldn&rsquo;t have all those tools that we have with the HTTP APIs. All those things you get because you have your API defined with a machine-readable documentation format. And, on top of that, we noticed that some of our customers were creating IoT APIs over MQTT and they couldn&rsquo;t get all the benefits from Hitch because the existing specifications don&rsquo;t support message-driven APIs.</p>
 
 <p><strong>It was time to come up with something good enough for everyone instead of having every company doing its own battle. We can learn a lot together if we join forces, so we decided to create AsyncAPI!</strong></p>
-
-    </div>
 </div>
 
 
@@ -312,6 +309,14 @@ So far, we have had many contributors and we are thankful for their time and hel
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
 <script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
 </body>
 
 </html>

@@ -30,8 +30,11 @@
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.c0c8b878680d8a5decd74b1d943edf9f626e008f7d622357a6a59b653846105e.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.f6ffa2b21beac513849f79e8178a3ea9b54a8e686a1bfa2e3f8728434ced2bc5.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
 <link rel="stylesheet" href="/syntax.css">
 </head>
 
@@ -251,21 +254,21 @@
         </div>
         <div class="docs-content">
             
+            <a href="/docs/getting-started/">Getting started</a>
+            AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
+asyncapi: '1.0.0' info: title: Streetlights API version: '1.0' description: | The Smartylighting Streetlights API allows you to remotely manage the city lights.
+            
             <a href="/docs/specifications/1.0.0/">AsyncAPI specification 1.0.0</a>
-            Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+            Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
 Version 1.0.0 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in RFC 2119.
             
             <a href="/docs/specifications/1.1.0/">AsyncAPI specification 1.1.0</a>
-            Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+            Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
 Version 1.1.0 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in RFC 2119.
             
             <a href="/docs/specifications/1.2.0/">AsyncAPI specification 1.2.0</a>
-            Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
+            Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
 Version 1.2.0 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in RFC 2119.
-            
-            <a href="/docs/getting-started/">Getting Started</a>
-            AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.
             
             <a href="/docs/tooling/">Tooling</a>
             <p>This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? <a href="https://github.com/asyncapi/asyncapi/issues/new">Let us know!</a></p>
@@ -292,6 +295,14 @@ A basic example The following example describes a very simple streetlights servi
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
 <script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
 </body>
 
 </html>

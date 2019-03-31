@@ -6,36 +6,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api." />
+<meta name="description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
+asyncapi: &#39;1.0.0&#39; info: title: Streetlights API version: &#39;1.0&#39; description: | The Smartylighting Streetlights API allows you to remotely manage the city lights." />
 
 
-<meta itemprop="name" content="Getting Started | AsyncAPI Initiative">
-<meta itemprop="description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.">
+<meta itemprop="name" content="Getting started | AsyncAPI Initiative">
+<meta itemprop="description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
+asyncapi: &#39;1.0.0&#39; info: title: Streetlights API version: &#39;1.0&#39; description: | The Smartylighting Streetlights API allows you to remotely manage the city lights.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Getting Started | AsyncAPI Initiative">
-<meta name="twitter:description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.">
+<meta name="twitter:title" content="Getting started | AsyncAPI Initiative">
+<meta name="twitter:description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
+asyncapi: &#39;1.0.0&#39; info: title: Streetlights API version: &#39;1.0&#39; description: | The Smartylighting Streetlights API allows you to remotely manage the city lights.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 
-<meta property="og:title" content="Getting Started | AsyncAPI Initiative" />
+<meta property="og:title" content="Getting started | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with them, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api." />
-    <title>Getting Started | AsyncAPI Initiative</title>
+<meta property="og:description" content="AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
+asyncapi: &#39;1.0.0&#39; info: title: Streetlights API version: &#39;1.0&#39; description: | The Smartylighting Streetlights API allows you to remotely manage the city lights." />
+    <title>Getting started | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.c0c8b878680d8a5decd74b1d943edf9f626e008f7d622357a6a59b653846105e.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.f6ffa2b21beac513849f79e8178a3ea9b54a8e686a1bfa2e3f8728434ced2bc5.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
 <link rel="stylesheet" href="/syntax.css">
 </head>
 
@@ -244,77 +247,169 @@ A basic example The following example describes a very simple streetlights servi
 
     
     
-<div class="container" style="padding:0 2rem;">
+<div class="container" style="padding:0 2rem;margin-top:30px;">
     <div class="columns">
-        <div class="column is-centered-tablet-portrait">
-            <h1 class="title section-title">Getting Started</h1>
-            <h5 class="subtitle is-5 is-muted"></h5>
-            <div class="divider"></div>
+        <div class="column is-3 is-hidden-mobile is-hidden-tablet-only">
+            <aside class="docs-menu">
+    <h3>Menu</h3>
+    <ul>
+        
+        
+        
+            
+            <li>
+                
+                <span class="active">Getting started</span>
+            </li>
+            
+        
+        
+        
+        <li>
+            <a href="#">
+                
+                <span>Tutorials</span>
+            </a>
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/tutorials/streetlights/">
+                        
+                        <span>Streetlights</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+        
+        <li>
+            <a href="#">
+                
+                <span>Specification</span>
+            </a>
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.0.0/">
+                        
+                        <span>1.0.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.1.0/">
+                        
+                        <span>1.1.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.2.0/">
+                        
+                        <span>1.2.0</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+    </ul>
+</aside>
         </div>
+        <div class="column is-9 is-centered-tablet-portrait">
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title" style="margin-top:30px;">Getting started</h1>
     </div>
-    <div class="docs-content">
-    
+</div>
+<div class="docs-content">
 
-<p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI/Swagger</a> so, if you’re familiar with them, AsyncAPI should be easy for you.</p>
+<p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI/Swagger</a> so, if you’re familiar with it, AsyncAPI should be easy for you.</p>
 
-<h1 id="a-basic-example">A basic example</h1>
+<pre class="language-yaml line-numbers" data-line="2-5"><code>asyncapi: '1.0.0'
+info:
+  title: Streetlights API
+  version: '1.0'
+  description: |
+    The Smartylighting Streetlights API allows you
+    to remotely manage the city lights.
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+baseTopic: smartylighting.streetlights.1.0</code></pre>
+
+<h1 id="a-basic-example">A basic example<a href="#a-basic-example" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The following example describes a very simple streetlights service. It describes a service you can connect at <code>api.streetlights.smartylighting.com</code> (port 1883 or 8883) and allows you to publish information about environmental lighting conditions.</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">asyncapi<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1.0.0&#39;</span><span class="w">
-</span><span class="w"></span>info<span class="p">:</span><span class="w">
-</span><span class="w">  </span>title<span class="p">:</span><span class="w"> </span>Streetlights<span class="w"> </span>API<span class="w">
-</span><span class="w">  </span>version<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1.0&#39;</span><span class="w">
-</span><span class="w">  </span>description<span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">    The Smartylighting Streetlights API allows you</span><span class="w">
-</span><span class="w">    </span>to<span class="w"> </span>remotely<span class="w"> </span>manage<span class="w"> </span>the<span class="w"> </span>city<span class="w"> </span>lights.<span class="w">
-</span><span class="w">  </span>license<span class="p">:</span><span class="w">
-</span><span class="w">    </span>name<span class="p">:</span><span class="w"> </span>Apache<span class="w"> </span><span class="m">2.0</span><span class="w">
-</span><span class="w">    </span>url<span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://www.apache.org/licenses/LICENSE-2.0&#39;</span><span class="w">
-</span><span class="w"></span>baseTopic<span class="p">:</span><span class="w"> </span>smartylighting.streetlights.<span class="m">1.0</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>servers<span class="p">:</span><span class="w">
-</span><span class="w">  </span>-<span class="w"> </span>url<span class="p">:</span><span class="w"> </span>api.streetlights.smartylighting.com<span class="p">:</span>{port}<span class="w">
-</span><span class="w">    </span>scheme<span class="p">:</span><span class="w"> </span>mqtt<span class="w">
-</span><span class="w">    </span>description<span class="p">:</span><span class="w"> </span>Test<span class="w"> </span>broker<span class="w">
-</span><span class="w">    </span>variables<span class="p">:</span><span class="w">
-</span><span class="w">      </span>port<span class="p">:</span><span class="w">
-</span><span class="w">        </span>description<span class="p">:</span><span class="w"> </span>Secure<span class="w"> </span>connection<span class="w"> </span>(TLS)<span class="w"> </span>is<span class="w"> </span>available<span class="w"> </span>through<span class="w"> </span>port<span class="w"> </span><span class="m">8883</span>.<span class="w">
-</span><span class="w">        </span>default<span class="p">:</span><span class="w"> </span><span class="s1">&#39;1883&#39;</span><span class="w">
-</span><span class="w">        </span>enum<span class="p">:</span><span class="w">
-</span><span class="w">          </span>-<span class="w"> </span><span class="s1">&#39;1883&#39;</span><span class="w">
-</span><span class="w">          </span>-<span class="w"> </span><span class="s1">&#39;8883&#39;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>topics<span class="p">:</span><span class="w">
-</span><span class="w">  </span>event.{streetlightId}.lighting.measured<span class="p">:</span><span class="w">
-</span><span class="w">    </span>publish<span class="p">:</span><span class="w">
-</span><span class="w">      </span>$ref<span class="p">:</span><span class="w"> </span><span class="s1">&#39;#/components/messages/lightMeasured&#39;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>components<span class="p">:</span><span class="w">
-</span><span class="w">  </span>messages<span class="p">:</span><span class="w">
-</span><span class="w">    </span>lightMeasured<span class="p">:</span><span class="w">
-</span><span class="w">      </span>summary<span class="p">:</span><span class="w"> </span>Inform<span class="w"> </span>about<span class="w"> </span>environmental<span class="w"> </span>lighting<span class="w"> </span>conditions<span class="w"> </span>for<span class="w"> </span>a<span class="w"> </span>particular<span class="w"> </span>streetlight.<span class="w">
-</span><span class="w">      </span>payload<span class="p">:</span><span class="w">
-</span><span class="w">        </span>type<span class="p">:</span><span class="w"> </span>object<span class="w">
-</span><span class="w">        </span>properties<span class="p">:</span><span class="w">
-</span><span class="w">          </span>lumens<span class="p">:</span><span class="w">
-</span><span class="w">            </span>type<span class="p">:</span><span class="w"> </span>integer<span class="w">
-</span><span class="w">            </span>minimum<span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
-</span><span class="w">            </span>description<span class="p">:</span><span class="w"> </span>Light<span class="w"> </span>intensity<span class="w"> </span>measured<span class="w"> </span>in<span class="w"> </span>lumens.<span class="w">
-</span><span class="w">          </span>sentAt<span class="p">:</span><span class="w">
-</span><span class="w">            </span>$ref<span class="p">:</span><span class="w"> </span><span class="s2">&#34;#/components/schemas/sentAt&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span>schemas<span class="p">:</span><span class="w">
-</span><span class="w">    </span>sentAt<span class="p">:</span><span class="w">
-</span><span class="w">      </span>type<span class="p">:</span><span class="w"> </span>string<span class="w">
-</span><span class="w">      </span>format<span class="p">:</span><span class="w"> </span>date-time<span class="w">
-</span><span class="w">      </span>description<span class="p">:</span><span class="w"> </span>Date<span class="w"> </span>and<span class="w"> </span>time<span class="w"> </span>when<span class="w"> </span>the<span class="w"> </span>message<span class="w"> </span>was<span class="w"> </span>sent.</code></pre></div>
+
+<pre><code class="language-yaml">asyncapi: '1.0.0'
+info:
+  title: Streetlights API
+  version: '1.0'
+  description: |
+    The Smartylighting Streetlights API allows you
+    to remotely manage the city lights.
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+baseTopic: smartylighting.streetlights.1.0
+
+servers:
+  - url: api.streetlights.smartylighting.com:{port}
+    scheme: mqtt
+    description: Test broker
+    variables:
+      port:
+        description: Secure connection (TLS) is available through port 8883.
+        default: '1883'
+        enum:
+          - '1883'
+          - '8883'
+
+topics:
+  event.{streetlightId}.lighting.measured:
+    publish:
+      $ref: '#/components/messages/lightMeasured'
+
+components:
+  messages:
+    lightMeasured:
+      summary: Inform about environmental lighting conditions for a particular streetlight.
+      payload:
+        type: object
+        properties:
+          lumens:
+            type: integer
+            minimum: 0
+            description: Light intensity measured in lumens.
+          sentAt:
+            $ref: &quot;#/components/schemas/sentAt&quot;
+
+  schemas:
+    sentAt:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
+</code></pre>
+
 <p>If you are familiar with the OpenAPI specification, I’m sure you already found lots of similarities. But, what’s this <code>topics</code> section in the file? And what’s this <code>event.{streetlightId}.lighting.measured</code>? Let’s dive into it!</p>
 
-<h1 id="core-concepts">Core concepts</h1>
+<h1 id="core-concepts">Core concepts<a href="#core-concepts" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
 <p>The AsyncAPI specification assumes two core concepts:</p>
 
-<h2 id="1-messages">1. Messages</h2>
+<h2 id="1-messages">1. Messages<a href="#1-messages" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
 
 <p>Consumer(s) communicate with your API via messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want to trigger a command.</p>
 
@@ -322,12 +417,13 @@ A basic example The following example describes a very simple streetlights servi
 
 <p>A message can contain headers and a payload. However, both are optional. The specification allows you to define any header, to remain as much protocol-agnostic as possible.</p>
 
-<h2 id="2-topics">2. Topics</h2>
+<h2 id="2-topics">2. Topics<a href="#2-topics" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
 
 <p>Message-driven protocols usually contain something called topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.</p>
 
 <p>There’s no standard way of naming topics, so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition">have a look at our proposal here</a></strong>.</p>
-
+</div>
+        </div>
     </div>
 </div>
 
@@ -349,6 +445,14 @@ A basic example The following example describes a very simple streetlights servi
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
 <script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
 </body>
 
 </html>
