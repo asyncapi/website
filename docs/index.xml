@@ -18,7 +18,7 @@
       
       <guid>https://www.asyncapi.com/docs/getting-started/</guid>
       <description>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
-asyncapi: &#39;1.0.0&#39; info: title: Streetlights API version: &#39;1.0&#39; description: | The Smartylighting Streetlights API allows you to remotely manage the city lights.</description>
+A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.</description>
     </item>
     
     <item>
