@@ -65,7 +65,7 @@ params:
       url: https://medium.com/asyncapi
       blank: true
     - title: Twitter
-      url: https://twitter.com/search?q=asyncapi
+      url: https://twitter.com/AsyncAPISpec
       blank: true
   - title: Help
     sublinks:
