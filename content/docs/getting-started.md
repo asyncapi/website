@@ -1,12 +1,27 @@
 ---
-title: "Getting Started"
+title: "Getting started"
 date: 2019-02-16T13:56:52+01:00
+menu:
+  docs:
+weight: 100
 aliases:
 - '/v1/guide/'
 - '/v1/guide/index.html'
 ---
 
-AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to [OpenAPI/Swagger](https://github.com/OAI/OpenAPI-Specification) so, if you’re familiar with them, AsyncAPI should be easy for you.
+AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to [OpenAPI/Swagger](https://github.com/OAI/OpenAPI-Specification) so, if you’re familiar with it, AsyncAPI should be easy for you.
+
+<pre class="language-yaml line-numbers" data-line="2-5"><code>asyncapi: '1.0.0'
+info:
+  title: Streetlights API
+  version: '1.0'
+  description: |
+    The Smartylighting Streetlights API allows you
+    to remotely manage the city lights.
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+baseTopic: smartylighting.streetlights.1.0</code></pre>
 
 # A basic example
 

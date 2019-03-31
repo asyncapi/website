@@ -3219,20 +3219,6 @@ a.tag:hover {
     overflow: auto;
     max-width: 100%; }
 
-.number {
-  align-items: center;
-  background-color: whitesmoke;
-  border-radius: 290486px;
-  display: inline-flex;
-  font-size: 1.25rem;
-  height: 2em;
-  justify-content: center;
-  margin-right: 1.5rem;
-  min-width: 2.5em;
-  padding: 0.25rem 0.5rem;
-  text-align: center;
-  vertical-align: top; }
-
 .breadcrumb {
   font-size: 1rem;
   white-space: nowrap; }
@@ -7035,7 +7021,33 @@ button:focus, button:active {
   color: #cecece; }
 
 .section-title {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  font-weight: 200; }
+
+.docs-menu {
+  border: #46a2c7 2px solid;
+  padding: 1em;
+  margin-top: 30px; }
+  .docs-menu a {
+    color: #666; }
+  .docs-menu .active {
+    color: #46a2c7; }
+  .docs-menu ul {
+    list-style: none;
+    padding-left: 0; }
+    .docs-menu ul li {
+      line-height: 2em; }
+      .docs-menu ul li.active {
+        color: #46a2c7; }
+    .docs-menu ul ul.sub-menu {
+      margin-left: 2px; }
+      .docs-menu ul ul.sub-menu li {
+        padding-left: 1em;
+        border-left: #EFF4F7 2px solid; }
+        .docs-menu ul ul.sub-menu li.active {
+          border-left: #46a2c7 2px solid;
+          color: #46a2c7; }
 
 .docs-content {
   font-size: 18px;
@@ -7044,7 +7056,36 @@ button:focus, button:active {
   line-height: 1.58;
   margin-bottom: 10rem; }
   .docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6 {
-    margin: 1em 0; }
+    margin: 1em 0;
+    font-weight: 200; }
+  .docs-content h1 {
+    font-size: 1.9rem; }
+  .docs-content h2 {
+    font-size: 1.6rem; }
+  .docs-content h3 {
+    font-size: 1.5rem;
+    color: #66676b; }
+  .docs-content h4 {
+    font-size: 1.3rem;
+    color: #66676b;
+    font-weight: 300; }
+  .docs-content h5 {
+    font-size: 1.2rem;
+    color: #66676b;
+    font-weight: 300; }
+  .docs-content h6 {
+    font-size: 1.1rem;
+    color: #66676b;
+    font-weight: 500; }
+  .docs-content .hanchor {
+    font-size: 100%;
+    visibility: hidden;
+    color: silver; }
+  .docs-content h1:hover a,
+  .docs-content h2:hover a,
+  .docs-content h3:hover a,
+  .docs-content h4:hover a {
+    visibility: visible; }
   .docs-content blockquote {
     border-left: #dbdbdb 4px solid;
     margin: 1em 0;
@@ -7087,5 +7128,11 @@ button:focus, button:active {
     .docs-content table tbody tr:last-child td,
     .docs-content table tbody tr:last-child th {
       border-bottom-width: 0; }
+  .docs-content code[class*=language-],
+  .docs-content pre[class*=language-] {
+    background-color: #EFF4F7;
+    text-shadow: none; }
+  .docs-content .line-highlight {
+    background: linear-gradient(to right, rgba(126, 192, 196, 0.2) 70%, rgba(126, 192, 196, 0)); }
 
 /*# sourceMappingURL=style.css.map */

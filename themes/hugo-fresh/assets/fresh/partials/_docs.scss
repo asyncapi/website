@@ -21,6 +21,49 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
 
 .section-title {
     margin-top: 4rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.docs-menu {
+    border: #46a2c7 2px solid;
+    padding: 1em;
+    margin-top: 30px;
+
+    a {
+        color: #666;
+    }
+
+    .active {
+        color: #46a2c7;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            line-height: 2em;
+            
+            &.active {
+                color: #46a2c7;
+            }
+        }
+
+        ul.sub-menu {
+            margin-left: 2px;
+            
+            li {
+                padding-left: 1em;
+                border-left: $light-grey 2px solid;
+
+                &.active {
+                    border-left: #46a2c7 2px solid;
+                    color: #46a2c7;
+                }
+            }
+        }
+    }
 }
 
 .docs-content {
@@ -32,6 +75,48 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
 
     h1, h2, h3, h4, h5, h6 {
         margin: 1em 0;
+        font-weight: 200;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        color: $medium-grey;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h5 {
+        font-size: 1.2rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h6 {
+        font-size: 1.1rem;
+        color: $medium-grey;
+        font-weight: 500;
+    }
+
+    .hanchor {
+        font-size: 100%; visibility: hidden; color:silver;
+    }
+    h1:hover a,
+    h2:hover a,
+    h3:hover a,
+    h4:hover a {
+        visibility: visible
     }
 
     blockquote {
@@ -95,6 +180,20 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
                 }
             }
         }
+    }
+
+    code[class*=language-],
+    pre[class*=language-] {
+        background-color: #EFF4F7;
+        text-shadow: none;
+    }
+
+    .line-highlight {
+        background: linear-gradient(
+            to right,
+            hsla(183, 37%, 63%, 0.2) 70%,
+            hsla(183, 37%, 63%,0)
+        );
     }
 
 }

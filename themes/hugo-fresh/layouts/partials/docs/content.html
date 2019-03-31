@@ -1,12 +1,10 @@
-<div class="container" style="padding:0 2rem;">
-    <div class="columns">
-        <div class="column is-centered-tablet-portrait">
-            <h1 class="title section-title">{{ .Title }}</h1>
-            <h5 class="subtitle is-5 is-muted">{{ .Params.Subtitle }}</h5>
-            <div class="divider"></div>
-        </div>
+<div class="columns">
+    <div class="column">
+        <h1 class="title section-title" style="margin-top:30px;">{{ .Title }}</h1>
     </div>
-    <div class="docs-content">
-    {{ .Content }}
-    </div>
+</div>
+<div class="docs-content">
+    {{- with .Content -}}
+        {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> ${3}` | safeHTML }}
+    {{- end -}}
 </div>
