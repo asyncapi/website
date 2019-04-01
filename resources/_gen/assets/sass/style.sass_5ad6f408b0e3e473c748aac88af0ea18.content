@@ -7021,7 +7021,7 @@ button:focus, button:active {
   color: #cecece; }
 
 .section-title {
-  margin-top: 4rem;
+  margin-top: 22px;
   font-size: 2.5rem;
   font-weight: 200; }
 
