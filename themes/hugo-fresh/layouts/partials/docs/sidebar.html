@@ -5,10 +5,14 @@
         {{ range .Site.Menus.docs }}
         {{ if .HasChildren }}
         <li>
-            <a href="{{ .URL }}">
-                {{ .Pre }}
-                <span>{{ .Name }}</span>
-            </a>
+            {{ if $currentPage.IsMenuCurrent "docs" . }}
+                <span class="active">{{ .Name }}</span>
+            {{ else }}
+                <a href="{{ .URL }}">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                </a>
+            {{ end }}
         </li>
         <ul class="sub-menu">
             {{ range .Children }}
