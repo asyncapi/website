@@ -21,7 +21,7 @@ channels:
           pattern: '^hello .+$'
 ```
 
-Let's get into the details of what we have here:
+Let's get into the details of the sample specification:
 
 <pre class="language-yaml line-numbers" data-line="1,2"><code>asyncapi: '2.0.0'
 id: hello-world-app
@@ -33,9 +33,9 @@ channels:
           type: string
           pattern: '^hello .+$'</code></pre>
 
-The first line tells us this is an AsyncAPI document and it's using version 2.0.0 of the specification. This line doesn't have to be the first one but it's a recommended practice.
+The first line of the specification starts with the document type (AsyncAPI) and the version (2.0.0) as a recommended practice.
 
-The second line is an identifier for our application. It is mandatory and must be unique so, when doing real stuff, don't use `hello-world-app` but instead something more "unique" like `urn:com:mycompany:hello-world-app`.
+The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is considered unique and preferred rather than 'hello-world-app', for example.
 
 <pre class="language-yaml line-numbers" data-line="3-9"><code>asyncapi: '2.0.0'
 id: hello-world-app
@@ -47,9 +47,9 @@ channels:
           type: string
           pattern: '^hello .+$'</code></pre>
 
-And here is the `channels` section. A channel is the medium where the messages flow through. In some systems this is known as `topic`, `event name` or `routing key`. Like in TV channels, you may receive different kind of information on each one.
+The 'channels' section of the specification houses all of the mediums where messages flow through. For example, some systems use 'topic, 'event name' or 'routing key'. Different kinds of information flow through each channel similar to the analogy of TV channels.
 
-In our example, we only have one channel called `hello`. Our app is subscribing to this channel to receive "hello {name}" messages.
+In our example, we only have one channel called `hello`. The sample app subscribes to this channel to receive "hello {name}" messages.
 
 <pre class="language-yaml line-numbers" data-line="4-7"><code>asyncapi: '2.0.0'
 id: hello-world-app
@@ -73,7 +73,7 @@ channels:
           type: string
           pattern: '^hello .+$'</code></pre>
 
-And last but not least, the `payload` object defines how our message would have to look like. In our case, it must be a string and match the given regular expression. In other words, it must be a "hello {name}" string.
+The 'payload' object defines how the message must be structured. In this example, the message must be a string and match the given regular expression in the format "hello {name}" string.
 
 ## Conclusion
 
