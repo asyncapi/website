@@ -5,9 +5,13 @@ theme: hugo-fresh
 
 menu:
   docs:
+    - identifier: getting-started
+      name: Getting started
+      url: /docs/getting-started/
+      weight: 100
     - identifier: tutorials
       name: Tutorials
-      url: /docs/tutorials
+      url: /docs/tutorials/
       weight: 200
     - identifier: spec
       name: Specification
