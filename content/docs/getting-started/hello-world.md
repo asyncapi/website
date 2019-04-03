@@ -33,7 +33,7 @@ channels:
           type: string
           pattern: '^hello .+$'</code></pre>
 
-The first line of the specification starts with the document type (AsyncAPI) and the version (2.0.0) as a recommended practice.
+The first line of the specification starts with the document type (AsyncAPI) and the version (2.0.0). This line doesn't have to be the first one but it's a recommended practice.
 
 The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is preferred rather than 'hello-world-app', for example.
 
