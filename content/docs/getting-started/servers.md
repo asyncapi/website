@@ -18,7 +18,7 @@ id: hello-world-app
 servers:
   - url: kafka.mycompany.com
     protocol: kafka
-    description: This is an example of a "My Company" Kafka instance.
+    description: This is "My Company" Kafka instance.
 channels:
   hello:
     subscribe:
@@ -32,13 +32,14 @@ We added a new section called "servers" in our AsyncAPI document. Note that the 
 
 > Hint: YAML arrays are denoted by a `-` (dash) symbol.
 
-You might have noticed that the example mentions a Kafka example. You can use almost any protocol. For example, the most commons are `amqp` (known for RabbitMQ), `mqtt` (widely adopted by the Internet of Things and mobile apps), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
+You might have noticed that the example mentions "Kafka". You can use any protocol. For example, the most commons are `amqp` (known for RabbitMQ), `mqtt` (widely adopted by the Internet of Things and mobile apps), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
 
-{{<important>}}
+{{%important%}}
 The "servers" section defines where your application should connect to start sending and receiving messages. 
-1. If you are using a {{<link "https://fmvilas.com/event-driven-architectures-asyncapi/">}}broker-centric architecture{{</link>}}such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
+
+1. If you are using a {{<link "https://fmvilas.com/event-driven-architectures-asyncapi/">}}broker-centric architecture{{</link>}} such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
 2. If you have the classic client-server model such as for REST APIs, then your server should be the URL of your application.
-{{</important>}}
+{{%/important%}}
 
 ## Conclusion
 
