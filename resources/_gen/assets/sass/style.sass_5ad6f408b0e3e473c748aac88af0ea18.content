@@ -7087,10 +7087,11 @@ button:focus, button:active {
   .docs-content h4:hover a {
     visibility: visible; }
   .docs-content blockquote {
-    border-left: #dbdbdb 4px solid;
+    background-color: #deedf5;
+    border-left: #46a2c7 4px solid;
     margin: 1em 0;
-    padding-left: 1em;
-    font-style: italic; }
+    font-style: italic;
+    padding: 1em; }
   .docs-content code:not([class*="language-"]) {
     color: #344258; }
   .docs-content table {
@@ -7134,5 +7135,18 @@ button:focus, button:active {
     text-shadow: none; }
   .docs-content .line-highlight {
     background: linear-gradient(to right, rgba(126, 192, 196, 0.2) 70%, rgba(126, 192, 196, 0)); }
+  .docs-content .important {
+    background-color: #46a2c7;
+    padding: 1em;
+    color: white; }
+    .docs-content .important .important__header {
+      padding-bottom: .5em;
+      border-bottom: #56afd2 1px solid;
+      margin-bottom: 1em; }
+      .docs-content .important .important__header .important__header__icon {
+        margin-right: .5em; }
+    .docs-content .important .important__body a {
+      color: white;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

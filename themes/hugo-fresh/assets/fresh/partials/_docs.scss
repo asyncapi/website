@@ -120,10 +120,11 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
     }
 
     blockquote {
-        border-left: #dbdbdb 4px solid;
+        background-color: #deedf5;
+        border-left: #46a2c7 4px solid;
         margin: 1em 0;
-        padding-left: 1em;
         font-style: italic;
+        padding: 1em;
     }
 
     code:not([class*="language-"]) {
@@ -194,6 +195,27 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
             hsla(183, 37%, 63%, 0.2) 70%,
             hsla(183, 37%, 63%,0)
         );
+    }
+
+    .important {
+        background-color: #46a2c7;
+        padding: 1em;
+        color: white;
+        
+        .important__header {
+            padding-bottom: .5em;
+            border-bottom: #56afd2 1px solid;
+            margin-bottom: 1em;
+
+            .important__header__icon {
+                margin-right: .5em;
+            }
+        }
+
+        .important__body a {
+            color: white;
+            text-decoration: underline;
+        }
     }
 
 }
