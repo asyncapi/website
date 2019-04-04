@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2019-02-16T13:56:52+01:00
-layout: docs
+type: static
 aliases:
 - '/about.html'
 ---

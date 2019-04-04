@@ -1,6 +1,7 @@
 ---
 title: "Tooling"
 date: 2019-02-16T13:56:52+01:00
+type: static
 aliases:
 - '/v1/tooling/docgens.html'
 - '/v1/tooling/codegens.html'
