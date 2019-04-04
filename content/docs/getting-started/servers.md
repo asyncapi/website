@@ -7,13 +7,18 @@ menu:
 weight: 110
 ---
 
+{{% notice %}}
+This article is about version 2.0.0-rc1 of the specification. Please, note that documentation and tooling support are minimum or inexistent yet. We're working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+{{% /notice %}}
+
 In the previous lesson, we learned how to create the definition of a simple [Hello World application](/docs/getting-started/hello-world), so let's take it from there.
 
 In this article, we will learn how to add "servers" to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
 
 
 {{<code "yaml" "3-6">}}
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 servers:
   - url: kafka.mycompany.com
@@ -34,12 +39,12 @@ We added a new section called "servers" in our AsyncAPI document. Note that the 
 
 You might have noticed that the example mentions "Kafka". You can use any protocol. For example, the most commons are `amqp` (known for RabbitMQ), `mqtt` (widely adopted by the Internet of Things and mobile apps), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
 
-{{%important%}}
+{{%remember%}}
 The "servers" section defines where your application should connect to start sending and receiving messages. 
 
 1. If you are using a {{<link "https://fmvilas.com/event-driven-architectures-asyncapi/">}}broker-centric architecture{{</link>}} such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
 2. If you have the classic client-server model such as for REST APIs, then your server should be the URL of your application.
-{{%/important%}}
+{{%/remember%}}
 
 ## Conclusion
 

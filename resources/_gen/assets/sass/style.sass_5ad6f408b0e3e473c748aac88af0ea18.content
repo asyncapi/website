@@ -7148,5 +7148,18 @@ button:focus, button:active {
     .docs-content .important .important__body a {
       color: white;
       text-decoration: underline; }
+  .docs-content .notice {
+    background-color: #e48f24;
+    padding: 1em;
+    color: white; }
+    .docs-content .notice .notice__header {
+      padding-bottom: .5em;
+      border-bottom: #eaa653 1px solid;
+      margin-bottom: 1em; }
+      .docs-content .notice .notice__header .notice__header__icon {
+        margin-right: .5em; }
+    .docs-content .notice .notice__body a {
+      color: white;
+      text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */

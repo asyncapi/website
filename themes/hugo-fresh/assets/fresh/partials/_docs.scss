@@ -218,4 +218,25 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
+    .notice {
+        background-color: #e48f24;
+        padding: 1em;
+        color: white;
+        
+        .notice__header {
+            padding-bottom: .5em;
+            border-bottom: #eaa653 1px solid;
+            margin-bottom: 1em;
+
+            .notice__header__icon {
+                margin-right: .5em;
+            }
+        }
+
+        .notice__body a {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+
 }

@@ -1,0 +1,13 @@
+<div class="important">
+    <div class="important__header">
+        <i class="important__header__icon fa fa-{{ if .Get "title" }}{{.Get "icon"}}{{else}}lightbulb{{end}}"></i>
+        {{ if .Get "title" }}
+            {{ .Get "title" }}
+        {{ else }}
+            Remember
+        {{ end }}
+    </div>
+    <div class="important__body">
+        {{.Inner}}
+    </div>
+</div>

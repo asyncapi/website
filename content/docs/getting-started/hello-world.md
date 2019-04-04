@@ -7,10 +7,15 @@ menu:
 weight: 101
 ---
 
+{{% notice %}}
+This article is about version 2.0.0-rc1 of the specification. Please, note that documentation and tooling support are minimum or inexistent yet. We're working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+{{% /notice %}}
+
 Let's define an application that's capable of receiving a "hello {name}" message.
 
 ```yaml
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 channels:
   hello:
@@ -24,7 +29,7 @@ channels:
 Let's get into the details of the sample specification:
 
 {{<code "yaml" "1,2">}}
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 channels:
   hello:
@@ -40,7 +45,7 @@ The first line of the specification starts with the document type (AsyncAPI) and
 The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is preferred rather than 'hello-world-app', for example.
 
 {{<code "yaml" "3-9">}}
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 channels:
   hello:
@@ -56,7 +61,7 @@ The 'channels' section of the specification houses all of the mediums where mess
 In our example, we only have one channel called `hello`. The sample app subscribes to this channel to receive "hello {name}" messages.
 
 {{<code "yaml" "4-7">}}
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 channels:
   hello:
@@ -70,7 +75,7 @@ channels:
 You can read the highlighted lines as "this is the **payload** of the **message** your app is **subscribed** to on the «**hello**» channel".
 
 {{<code "yaml" "7-9">}}
-asyncapi: '2.0.0'
+asyncapi: '2.0.0-rc1'
 id: hello-world-app
 channels:
   hello:
