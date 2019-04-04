@@ -17,6 +17,7 @@ Let's pretend we have a company called Smarty Lighting and we do smart-city ligh
 # System Description
 
 We want to create a system capable of turning on/off the streetlights depending on the environmental conditions of each of them:
+
 - We're going to implement a message-driven architecture, with a Message Broker in its "center".
 - Streetlights will send information about its environmental lighting to the broker.
 - None of the services will wait for any kind of response. Think about it as fire and forget. We'll publish messages to the broker and that's it. Our service don't know who will receive them.
