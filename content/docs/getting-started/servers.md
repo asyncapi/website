@@ -1,6 +1,7 @@
 ---
 title: "Servers"
 date: 2019-04-03T10:56:52+01:00
+draft: true
 menu:
   docs:
     parent: 'getting-started'
