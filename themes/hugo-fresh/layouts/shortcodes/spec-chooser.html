@@ -1,5 +1,5 @@
 {{- $versions := slice "2.0.0-rc1" "1.2.0" "1.1.0" "1.0.0" }}
-{{- $selectedVersion := .Get 0 }}
+{{- $selectedVersion := .Get "current" }}
 
 <div style="background: #eee;padding: 20px;">
     Choose another version: |
