@@ -502,6 +502,18 @@
 <script>
     $('pre code').addClass('line-numbers');
 </script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
 </body>
 
 </html>
