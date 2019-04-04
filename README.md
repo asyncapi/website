@@ -94,6 +94,8 @@ A Markdown text for the notice.
 {{% /notice %}}
 ```
 
+> Find icons here: https://fontawesome.com/icons?d=gallery&m=free
+
 #### Remember
 
 This shortcode allows you to add a message the user must remember or something you want to remark.
@@ -121,6 +123,8 @@ Icon and header title are customizable using `icon` and `title` properties respe
 A Markdown text.
 {{% /remember %}}
 ```
+
+> Find icons here: https://fontawesome.com/icons?d=gallery&m=free
 
 #### Specification chooser
 
