@@ -23,3 +23,16 @@
 <script>
     $('pre code').addClass('line-numbers');
 </script>
+
+<!-- Get rid of service workers from the previous theme. -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
