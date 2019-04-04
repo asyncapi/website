@@ -12,12 +12,22 @@
     
     
     <item>
+      <title>AsyncAPI specification 2.0.0-rc1</title>
+      <link>https://www.asyncapi.com/docs/specifications/2.0.0-rc1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.asyncapi.com/docs/specifications/2.0.0-rc1/</guid>
+      <description>Choose another version: | 2.0.0-rc1 | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
+Version 2.0.0-rc1 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
+    </item>
+    
+    <item>
       <title>AsyncAPI specification 1.0.0</title>
       <link>https://www.asyncapi.com/docs/specifications/1.0.0/</link>
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/specifications/1.0.0/</guid>
-      <description>Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+      <description>Choose another version: | 2.0.0-rc1 | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
 Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
     </item>
     
@@ -27,7 +37,7 @@ Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/specifications/1.1.0/</guid>
-      <description>Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
+      <description>Choose another version: | 2.0.0-rc1 | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the Open API Specification.
 Version 1.1.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
     </item>
     
@@ -37,7 +47,7 @@ Version 1.1.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;
       <pubDate>Sat, 16 Feb 2019 17:41:57 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/specifications/1.2.0/</guid>
-      <description>Choose another version: | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
+      <description>Choose another version: | 2.0.0-rc1 | 1.2.0 | 1.1.0 | 1.0.0 |  Disclaimer Part of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp;rsquo;s a great work and we want to keep as much compatibility as possible with the OpenAPI Specification.
 Version 1.2.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;rdquo;, &amp;ldquo;REQUIRED&amp;rdquo;, &amp;ldquo;SHALL&amp;rdquo;, &amp;ldquo;SHALL NOT&amp;rdquo;, &amp;ldquo;SHOULD&amp;rdquo;, &amp;ldquo;SHOULD NOT&amp;rdquo;, &amp;ldquo;RECOMMENDED&amp;rdquo;, &amp;ldquo;MAY&amp;rdquo;, and &amp;ldquo;OPTIONAL&amp;rdquo; in this document are to be interpreted as described in RFC 2119.</description>
     </item>
     

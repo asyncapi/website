@@ -6,31 +6,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance." />
 
 
-<meta itemprop="name" content="Tags | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Servers | AsyncAPI Initiative">
+<meta itemprop="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Tags | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Servers | AsyncAPI Initiative">
+<meta name="twitter:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 
-<meta property="og:title" content="Tags | AsyncAPI Initiative" />
+<meta property="og:title" content="Servers | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/tags/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/servers/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Tags | AsyncAPI Initiative</title>
+<meta property="og:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance." />
+    <title>Servers | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.e34a23cf2ad56417538d82d42d47fda8cfb45bb0b52309385311be73837202e4.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.a90f1f060263090f3e344295035368fd140a6bed3881c5306fd6385a83b90f1a.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
@@ -154,14 +162,33 @@
         
         
         
+        <li>
             
-            <li>
                 <a href="/docs/getting-started/">
                     
                     <span>Getting started</span>
                 </a>
-            </li>
             
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/getting-started/hello-world/">
+                        
+                        <span>Hello world</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li class="active">
+                    
+                    <span>Servers</span>
+                </li>
+                
+            
+        </ul>
         
         
         
@@ -241,18 +268,63 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Tags</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                    </div>
-                </div>
-            
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">Servers</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content">
+
+<p>In the previous lesson, we learned how to create the definition of a simple <a href="/docs/getting-started/hello-world">Hello World application</a>, so let&rsquo;s take it from there.</p>
+
+<p>In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.</p>
+
+<pre class="language-yaml line-numbers" data-line="3-6"><code>asyncapi: &#39;2.0.0&#39;
+id: hello-world-app
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+channels:
+  hello:
+    subscribe:
+      message:
+        payload:
+          type: string
+          pattern: &#39;^hello .&#43;$&#39;</code></pre>
+
+<p>We added a new section called &ldquo;servers&rdquo; in our AsyncAPI document. Note that the object is an array because we can have multiple servers such as staging, production, and development.</p>
+
+<blockquote>
+<p>Hint: YAML arrays are denoted by a <code>-</code> (dash) symbol.</p>
+</blockquote>
+
+<p>You might have noticed that the example mentions &ldquo;Kafka&rdquo;. You can use any protocol. For example, the most commons are <code>amqp</code> (known for RabbitMQ), <code>mqtt</code> (widely adopted by the Internet of Things and mobile apps), <code>ws</code> (WebSockets are frequently used in browsers), and <code>http</code> (used in HTTP streaming APIs.)</p>
+
+<div class="important">
+    <div class="important__header">
+        <i class="important__header__icon fa fa-exclamation-triangle"></i>
+        Important
+    </div>
+    <div class="important__body">
+        <p>The &ldquo;servers&rdquo; section defines where your application should connect to start sending and receiving messages.</p>
+
+<ol>
+<li>If you are using a <a href="https://fmvilas.com/event-driven-architectures-asyncapi/" target="_blank">broker-centric architecture</a> such as Kafka or RabbitMQ, usually you specify the URL of the broker.</li>
+<li>If you have the classic client-server model such as for REST APIs, then your server should be the URL of your application.</li>
+</ol>
+
+    </div>
+</div>
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Now we know where our application connects to and can start receiving &ldquo;hello {name}&rdquo; messages.</p>
+
+<p>Go to the next chapter and <a href="/docs/getting-started/create-publisher">learn how to create a publisher</a>.</p>
+</div>
+</div>
         </div>
     </div>
 </div>
@@ -273,6 +345,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
+<script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
@@ -282,7 +355,6 @@
 <script>
     $('pre code').addClass('line-numbers');
 </script>
-
 
 <script>
   if ('serviceWorker' in navigator) {

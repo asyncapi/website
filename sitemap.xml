@@ -3,12 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.asyncapi.com/docs/getting-started/</loc>
-    <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/docs/specifications/2.0.0-rc1/</loc>
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/docs/specifications/1.0.0/</loc>
+    <loc>https://www.asyncapi.com/docs/specifications/1.2.0/</loc>
     <lastmod>2019-02-16T17:41:57+01:00</lastmod>
   </url>
   
@@ -18,7 +17,7 @@
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/docs/specifications/1.2.0/</loc>
+    <loc>https://www.asyncapi.com/docs/specifications/1.0.0/</loc>
     <lastmod>2019-02-16T17:41:57+01:00</lastmod>
   </url>
   
@@ -33,13 +32,18 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/docs/getting-started/</loc>
+    <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/docs/tooling/</loc>
     <lastmod>2019-02-16T13:56:52+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.asyncapi.com/</loc>
-    <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+    <lastmod>2019-02-16T17:41:57+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -50,6 +54,12 @@
   
   <url>
     <loc>https://www.asyncapi.com/docs/</loc>
+    <lastmod>2019-02-16T17:41:57+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/categories/getting-started/</loc>
     <lastmod>2019-02-16T13:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
