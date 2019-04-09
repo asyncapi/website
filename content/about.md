@@ -21,6 +21,7 @@ So far, we have had many contributors and we are thankful for their time and hel
 * [Jonathan Schabowsky](https://twitter.com/JSchabowsky)
 * [Kin Lane](https://twitter.com/kinlane)
 * [Lukasz Gornicki](https://twitter.com/derberq)
+* [Maciej Urbańczyk](https://github.com/magicmatatjahu)
 
 Would you like to contribute? Check out our [contributing guidelines](https://github.com/asyncapi/asyncapi/blob/master/CONTRIBUTING.md).
 
