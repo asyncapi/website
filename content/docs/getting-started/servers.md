@@ -20,7 +20,7 @@ In this article, we will learn how to add "servers" to our AsyncAPI document. Ad
 
 {{<code lang="yaml" lines="3-6">}}
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 servers:
   - url: kafka.mycompany.com
     protocol: kafka
@@ -51,4 +51,4 @@ The "servers" section defines where your application should connect to start sen
 
 Now we know where our application connects to and can start receiving "hello {name}" messages.
 
-Go to the next chapter and [learn how to create a publisher](/docs/getting-started/create-publisher).
+Go to the next chapter and [learn how to create a publisher](/docs/getting-started/publishing).
