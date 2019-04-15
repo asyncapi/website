@@ -18,6 +18,9 @@ Let's define an application that's capable of receiving a "hello {name}" message
 ```yaml
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 channels:
   hello:
     subscribe:
@@ -32,6 +35,9 @@ Let's get into the details of the sample specification:
 {{<code lang="yaml" lines="1,2">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 channels:
   hello:
     subscribe:
@@ -45,9 +51,29 @@ The first line of the specification starts with the document type (AsyncAPI) and
 
 The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is preferred rather than 'urn:hello-world-app', for example.
 
-{{<code lang="yaml" lines="3-9">}}
+{{<code lang="yaml" lines="3-5">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
+channels:
+  hello:
+    subscribe:
+      message:
+        payload:
+          type: string
+          pattern: '^hello .+$'
+{{</code>}}
+
+The "info" object contains the minimum required information about the application. It contains the title, which is a memorable name for the API, and the version. While it's not mandatory, it is strongly recommended to change the version whenever you make changes to the API.
+
+{{<code lang="yaml" lines="6-12">}}
+asyncapi: '2.0.0-rc1'
+id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 channels:
   hello:
     subscribe:
@@ -61,9 +87,12 @@ The 'channels' section of the specification houses all of the mediums where mess
 
 In our example, we only have one channel called `hello`. The sample app subscribes to this channel to receive "hello {name}" messages.
 
-{{<code lang="yaml" lines="4-7">}}
+{{<code lang="yaml" lines="7-10">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 channels:
   hello:
     subscribe:
@@ -75,9 +104,12 @@ channels:
 
 You can read the highlighted lines as "this is the **payload** of the **message** your app is **subscribed** to on the «**hello**» channel".
 
-{{<code lang="yaml" lines="7-9">}}
+{{<code lang="yaml" lines="10-12">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 channels:
   hello:
     subscribe:

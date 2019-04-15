@@ -18,9 +18,12 @@ In the previous lesson, we learned how to create the definition of a simple [Hel
 In this article, we will learn how to add "servers" to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
 
 
-{{<code lang="yaml" lines="3-6">}}
+{{<code lang="yaml" lines="6-9">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-app'
+info:
+  title: Hello world application
+  version: '0.1.0'
 servers:
   - url: kafka.mycompany.com
     protocol: kafka

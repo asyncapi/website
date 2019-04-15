@@ -25,9 +25,12 @@ A message broker is the infrastructure piece in charge of receiving the messages
 
 The publisher definition would look like the following:
 
-{{<code lang="yaml" lines="2,9">}}
+{{<code lang="yaml" lines="2,4,12">}}
 asyncapi: '2.0.0-rc1'
 id: 'urn:hello-world-publisher'
+info:
+  title: Hello world publisher application
+  version: '0.1.0'
 servers:
   - url: kafka.mycompany.com
     protocol: kafka
@@ -41,10 +44,10 @@ channels:
           pattern: '^hello .+$'
 {{</code>}}
 
-You probably have noticed that the only difference between this AsyncAPI definition and the one for the [Hello world application](/docs/getting-started/hello-world) are the lines 2 and 9. The id must be unique for each application, that's the reason it is different. In the case of the line 9, it is now `publish` because we're defining a publishing operation.
+You probably have noticed that the only difference between this AsyncAPI definition and the one for the [Hello world application](/docs/getting-started/hello-world) are the lines 2, 4, and 9. The id must be unique for each application, that's the reason it is different. Since it's a publisher application, we also wanted to make it obvious in the title. In the case of the line 9, it is now `publish` because we're defining a publishing operation.
 
 ## Conclusion
 
 From the AsyncAPI perspective, the differences between publishers and subscribers are very subtle. This level of expressiveness makes AsyncAPI documents highly explicit and self-documenting. However, it comes at the cost of duplicating a lot of information.
 
-Go to the next chapter and [learn how to reuse information](/docs/getting-started/reusing) and avoid duplication.
+Go to the next chapter and [learn how to reuse messages](/docs/getting-started/reusing-messages) and avoid duplication.
