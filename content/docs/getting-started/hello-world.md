@@ -17,7 +17,7 @@ Let's define an application that's capable of receiving a "hello {name}" message
 
 ```yaml
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 channels:
   hello:
     subscribe:
@@ -31,7 +31,7 @@ Let's get into the details of the sample specification:
 
 {{<code lang="yaml" lines="1,2">}}
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 channels:
   hello:
     subscribe:
@@ -43,11 +43,11 @@ channels:
 
 The first line of the specification starts with the document type (AsyncAPI) and the version (2.0.0). This line doesn't have to be the first one but it's a recommended practice.
 
-The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is preferred rather than 'hello-world-app', for example.
+The second line identifies the application and is both required and unique. In a real environment using 'urn:com:mycompany:hello-world-app' is preferred rather than 'urn:hello-world-app', for example.
 
 {{<code lang="yaml" lines="3-9">}}
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 channels:
   hello:
     subscribe:
@@ -63,7 +63,7 @@ In our example, we only have one channel called `hello`. The sample app subscrib
 
 {{<code lang="yaml" lines="4-7">}}
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 channels:
   hello:
     subscribe:
@@ -77,7 +77,7 @@ You can read the highlighted lines as "this is the **payload** of the **message*
 
 {{<code lang="yaml" lines="7-9">}}
 asyncapi: '2.0.0-rc1'
-id: hello-world-app
+id: 'urn:hello-world-app'
 channels:
   hello:
     subscribe:
