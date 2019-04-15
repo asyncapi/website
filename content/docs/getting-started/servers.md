@@ -36,7 +36,9 @@ channels:
 
 We added a new section called "servers" in our AsyncAPI document. Note that the object is an array because we can have multiple servers such as staging, production, and development.
 
-> Hint: YAML arrays are denoted by a `-` (dash) symbol.
+{{%hint%}}
+YAML arrays are denoted by a `-` (dash) symbol.
+{{%/hint%}}
 
 You might have noticed that the example mentions "Kafka". You can use any protocol. For example, the most commons are `amqp` (known for RabbitMQ), `mqtt` (widely adopted by the Internet of Things and mobile apps), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
 

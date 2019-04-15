@@ -239,4 +239,24 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
+    .hint {
+        display: flex;
+        
+        .hint__icon-wrapper {
+            padding: 1em 1em 1em 0;
+            border-right: #46a2c7 2px solid;
+            margin-right: 1em;
+            align-self: center;
+
+            .hint__icon-wrapper__icon {
+                color: #46a2c7;
+                font-size: 2em;
+            }
+        }
+
+        .hint__body {
+            align-self: center;
+        }
+    }
+
 }

@@ -7161,5 +7161,17 @@ button:focus, button:active {
     .docs-content .notice .notice__body a {
       color: white;
       text-decoration: underline; }
+  .docs-content .hint {
+    display: flex; }
+    .docs-content .hint .hint__icon-wrapper {
+      padding: 1em 1em 1em 0;
+      border-right: #46a2c7 2px solid;
+      margin-right: 1em;
+      align-self: center; }
+      .docs-content .hint .hint__icon-wrapper .hint__icon-wrapper__icon {
+        color: #46a2c7;
+        font-size: 2em; }
+    .docs-content .hint .hint__body {
+      align-self: center; }
 
 /*# sourceMappingURL=style.css.map */

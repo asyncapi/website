@@ -1,0 +1,8 @@
+<div class="hint">
+    <div class="hint__icon-wrapper">
+        <i class="hint__icon-wrapper__icon fa fa-{{ if .Get "title" }}{{.Get "icon"}}{{else}}question-circle{{end}}"></i>
+    </div>
+    <div class="hint__body">
+        {{.Inner}}
+    </div>
+</div>

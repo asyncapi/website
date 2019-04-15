@@ -19,9 +19,9 @@ A publisher is any application that sends messages. They are the initiators of t
 
 ![](/images/diagrams/simple-event-driven.png)
 
-{{%remember title="Hint" icon="question-circle"%}}
+{{%hint%}}
 A message broker is the infrastructure piece in charge of receiving the messages from the publishers and delivering them to the interested applications, i.e., the subscribers. For instance, Kafka and RabbitMQ are message brokers.
-{{%/remember%}}
+{{%/hint%}}
 
 The publisher definition would look like the following:
 
