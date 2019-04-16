@@ -7162,7 +7162,9 @@ button:focus, button:active {
       color: white;
       text-decoration: underline; }
   .docs-content .hint {
-    display: flex; }
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em; }
     .docs-content .hint .hint__icon-wrapper {
       padding: 1em 1em 1em 0;
       border-right: #46a2c7 2px solid;

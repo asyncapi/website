@@ -241,7 +241,9 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
 
     .hint {
         display: flex;
-        
+        margin-top: 2em;
+        margin-bottom: 2em;
+
         .hint__icon-wrapper {
             padding: 1em 1em 1em 0;
             border-right: #46a2c7 2px solid;
