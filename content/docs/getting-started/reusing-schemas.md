@@ -5,7 +5,7 @@ draft: true
 menu:
   docs:
     parent: 'getting-started'
-weight: 130
+weight: 140
 ---
 
 {{% notice %}}
