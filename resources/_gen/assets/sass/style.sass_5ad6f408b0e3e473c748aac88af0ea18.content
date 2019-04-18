@@ -6307,7 +6307,7 @@ Section Styles
     margin: 0 auto; }
 
 .content-wrapper {
-  padding: 60px 0; }
+  padding: 40px 0; }
 
 img.pushed-image {
   margin-top: -29vh; }
