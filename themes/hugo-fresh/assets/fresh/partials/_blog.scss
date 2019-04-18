@@ -204,3 +204,18 @@
         }
     }
 }
+
+/* AddThis hack */
+
+#at4-share {
+    left: 50%;
+    margin-left: -460px !important;
+
+    &.addthis-animated {
+        animation-duration: 0s !important;
+    }
+}
+
+#at4-scc {
+    display: none !important;
+}

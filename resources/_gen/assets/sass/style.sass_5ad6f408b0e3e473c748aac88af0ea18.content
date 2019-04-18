@@ -7325,4 +7325,14 @@ button:focus, button:active {
     font-style: italic;
     color: #777; }
 
+/* AddThis hack */
+#at4-share {
+  left: 50%;
+  margin-left: -460px !important; }
+  #at4-share.addthis-animated {
+    animation-duration: 0s !important; }
+
+#at4-scc {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
