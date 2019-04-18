@@ -7183,10 +7183,23 @@ button:focus, button:active {
   font-size: 2.5rem;
   font-weight: 200; }
 
+.blog-meta {
+  color: #888888;
+  font-size: 14px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+  margin-bottom: 5px; }
+  .blog-meta .blog-meta__tag {
+    background: #eee;
+    padding: 3px;
+    border-radius: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 13px; }
+
 .blog-author {
   display: flex;
   line-height: 20px;
-  margin: 24px 0; }
+  margin: 30px 0; }
   .blog-author .blog-author__photo {
     display: inline-block;
     vertical-align: middle;

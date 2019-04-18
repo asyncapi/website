@@ -1,6 +1,12 @@
 {{- $publishDate := .PublishDate.Format "Jan 2, 2006" -}}
 
 <h1 class="blog-title">{{ .Title }}</h1>
+<div class="blog-meta">
+    {{ $publishDate }} •
+    {{ range $tag := .Params.tags }}
+    <span class="blog-meta__tag">{{ $tag }}</span>
+    {{ end }}
+</div>
 <div class="blog-author">
     {{ range $author := .Params.authors }}
         {{ if $author.link }}
