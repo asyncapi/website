@@ -1,10 +1,11 @@
 ---
 title: "Replicating the Success of REST in Event-Driven Architecture"
-date: 2019-02-14T13:56:52+01:00
+date: 2019-04-04T13:56:52+01:00
 type: blog
 tags:
-  - status update
-cover: /images/posts/drill.png
+  - REST
+  - Event-Driven
+cover: /images/posts/replicating-success-of-rest.png
 authors:
     - name: Jonathan Schabowsky
       photo: /images/avatars/jschabowsky.jpg
