@@ -1,0 +1,190 @@
+.blog-title {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    margin-top: 22px;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.blog-author {
+    display: flex;
+    line-height: 20px;
+    margin: 24px 0;
+
+    .blog-author__photo {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100%;
+        width: 50px!important;
+        height: 50px!important;
+        object-fit: cover;
+    }
+    
+    .blog-author__info {
+        margin-left: 14px;
+        margin-right: 24px;
+        font-size: 14px;
+        align-self: center;
+
+        .blog-author__info__name {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .blog-author__info__name--link {
+            color: #4A4A49;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .blog-wrapper {
+        width: 740px;
+        margin: 0 auto;
+    }
+}
+
+.blog-content {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    color: rgba(0,0,0,.74);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4em;
+    padding-top: 1px;
+
+    p {
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+
+    figure {
+        margin: 43px 0 0 0;
+
+        figcaption {
+            text-align: center;
+            font-size: 14px;
+            h4 {
+                font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+                font-weight: 400;
+                color: rgba(0,0,0,.68);
+
+            }
+        }
+    }
+
+    hr {
+        display: block;
+        border: 0;
+        text-align: center;
+        overflow: visible;
+        margin-top: 52px;
+        margin-bottom: 42px;
+        background: none;
+
+        &::before {
+            content: '...';
+            display: inline-block;
+            margin-left: .6em;
+            color: rgba(0,0,0,.58);
+            position: relative;
+            top: -30px;
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 30px;
+            letter-spacing: .6em;
+        }
+    }
+
+    ol {
+        margin-top: 12px;
+        padding-left: 2em;
+
+        li {
+            margin-bottom: 14px;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    h1, h2, h3 {
+        margin-top: 56px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        color: $medium-grey;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h5 {
+        font-size: 1.2rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h6 {
+        font-size: 1.1rem;
+        color: $medium-grey;
+        font-weight: 500;
+    }
+
+    .hanchor {
+        font-size: 100%; visibility: hidden; color:silver;
+    }
+    h1:hover a,
+    h2:hover a,
+    h3:hover a,
+    h4:hover a,
+    h5:hover a,
+    h6:hover a {
+        visibility: visible
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    iframe {
+        margin: 43px 0 0 0;
+    }
+
+    blockquote {
+        &::before {
+            position: absolute;
+            content: '“';
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+            font-size: 100px;
+            color: #ddd;
+            margin-left: -47px;
+            margin-top: -32px;
+        }
+
+        p {
+            font-style: italic;
+            color: #777;
+        }
+    }
+}

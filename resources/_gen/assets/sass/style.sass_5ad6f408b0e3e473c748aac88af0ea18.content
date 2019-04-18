@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! bulma.io v0.7.0 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -7175,5 +7176,140 @@ button:focus, button:active {
         font-size: 2em; }
     .docs-content .hint .hint__body {
       align-self: center; }
+
+.blog-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  margin-top: 22px;
+  font-size: 2.5rem;
+  font-weight: 200; }
+
+.blog-author {
+  display: flex;
+  line-height: 20px;
+  margin: 24px 0; }
+  .blog-author .blog-author__photo {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover; }
+  .blog-author .blog-author__info {
+    margin-left: 14px;
+    margin-right: 24px;
+    font-size: 14px;
+    align-self: center; }
+    .blog-author .blog-author__info .blog-author__info__name {
+      margin-bottom: 4px;
+      font-weight: 500; }
+    .blog-author .blog-author__info .blog-author__info__name--link {
+      color: #4A4A49;
+      margin-bottom: 4px;
+      font-weight: 500; }
+
+@media only screen and (min-width: 800px) {
+  .blog-wrapper {
+    width: 740px;
+    margin: 0 auto; } }
+
+.blog-content {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: rgba(0, 0, 0, 0.74);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 4em;
+  padding-top: 1px; }
+  .blog-content p {
+    word-break: break-word;
+    word-wrap: break-word; }
+  .blog-content figure {
+    margin: 43px 0 0 0; }
+    .blog-content figure figcaption {
+      text-align: center;
+      font-size: 14px; }
+      .blog-content figure figcaption h4 {
+        font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.68); }
+  .blog-content hr {
+    display: block;
+    border: 0;
+    text-align: center;
+    overflow: visible;
+    margin-top: 52px;
+    margin-bottom: 42px;
+    background: none; }
+    .blog-content hr::before {
+      content: '...';
+      display: inline-block;
+      margin-left: .6em;
+      color: rgba(0, 0, 0, 0.58);
+      position: relative;
+      top: -30px;
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 30px;
+      letter-spacing: .6em; }
+  .blog-content ol {
+    margin-top: 12px;
+    padding-left: 2em; }
+    .blog-content ol li {
+      margin-bottom: 14px; }
+  .blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+  .blog-content h1, .blog-content h2, .blog-content h3 {
+    margin-top: 56px; }
+  .blog-content h1 {
+    font-size: 1.9rem; }
+  .blog-content h2 {
+    font-size: 1.6rem; }
+  .blog-content h3 {
+    font-size: 1.5rem;
+    color: #66676b; }
+  .blog-content h4 {
+    font-size: 1.3rem;
+    color: #66676b;
+    font-weight: 300; }
+  .blog-content h5 {
+    font-size: 1.2rem;
+    color: #66676b;
+    font-weight: 300; }
+  .blog-content h6 {
+    font-size: 1.1rem;
+    color: #66676b;
+    font-weight: 500; }
+  .blog-content .hanchor {
+    font-size: 100%;
+    visibility: hidden;
+    color: silver; }
+  .blog-content h1:hover a,
+  .blog-content h2:hover a,
+  .blog-content h3:hover a,
+  .blog-content h4:hover a,
+  .blog-content h5:hover a,
+  .blog-content h6:hover a {
+    visibility: visible; }
+  .blog-content a {
+    color: inherit;
+    text-decoration: underline; }
+  .blog-content iframe {
+    margin: 43px 0 0 0; }
+  .blog-content blockquote::before {
+    position: absolute;
+    content: '“';
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 100px;
+    color: #ddd;
+    margin-left: -47px;
+    margin-top: -32px; }
+  .blog-content blockquote p {
+    font-style: italic;
+    color: #777; }
 
 /*# sourceMappingURL=style.css.map */
