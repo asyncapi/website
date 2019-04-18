@@ -7252,14 +7252,15 @@ button:focus, button:active {
     word-break: break-word;
     word-wrap: break-word; }
   .blog-content figure {
-    margin: 43px 0 0 0; }
+    margin: 43px 0; }
     .blog-content figure figcaption {
       text-align: center;
       font-size: 14px; }
       .blog-content figure figcaption h4 {
         font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
         font-weight: 400;
-        color: rgba(0, 0, 0, 0.68); }
+        color: rgba(0, 0, 0, 0.68);
+        font-size: 14px; }
   .blog-content hr {
     display: block;
     border: 0;
