@@ -2,6 +2,9 @@ baseURL: https://www.asyncapi.com/
 languageCode: en-us
 title: AsyncAPI Initiative
 theme: hugo-fresh
+enableInlineShortcodes: true
+blackfriday:
+  hrefTargetBlank: true
 
 menu:
   docs:
