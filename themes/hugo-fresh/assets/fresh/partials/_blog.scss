@@ -1,0 +1,331 @@
+.blog-title {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    margin-top: 22px;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.blog-meta {
+    color: #888888;
+    font-size: 14px;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    margin-bottom: 5px;
+
+    .blog-meta__tag {
+        background: #eee;
+        padding: 3px;
+        border-radius: 5px;
+        margin-left: 3px;
+        margin-right: 3px;
+        font-size: 13px;
+    }
+}
+
+.blog-author {
+    display: flex;
+    line-height: 20px;
+    margin: 30px 0;
+
+    .blog-author__photo {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100%;
+        width: 50px!important;
+        height: 50px!important;
+        object-fit: cover;
+    }
+    
+    .blog-author__info {
+        margin-left: 14px;
+        margin-right: 24px;
+        font-size: 14px;
+        align-self: center;
+
+        .blog-author__info__name {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .blog-author__info__name--link {
+            color: #4A4A49;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .blog-wrapper {
+        width: 740px;
+        margin: 0 auto;
+    }
+    
+    .blog-list {
+        width: 1152px;
+        margin: 0 auto;
+    }
+
+    /* AddThis hack */
+
+    #at4-share {
+        left: 50%;
+        margin-left: -460px !important;
+
+        &.addthis-animated {
+            animation-duration: 0s !important;
+        }
+    }
+
+    #at4-scc {
+        display: none !important;
+    }
+}
+
+.blog-content {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    color: rgba(0,0,0,.74);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4em;
+    padding-top: 1px;
+
+    p {
+        word-break: break-word;
+        word-wrap: break-word;
+    }
+
+    figure {
+        margin: 43px 0;
+
+        figcaption {
+            text-align: center;
+            font-size: 14px;
+            h4 {
+                font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+                font-weight: 400;
+                color: rgba(0,0,0,.68);
+                font-size: 14px;
+            }
+        }
+    }
+
+    hr {
+        display: block;
+        border: 0;
+        text-align: center;
+        overflow: visible;
+        margin-top: 52px;
+        margin-bottom: 42px;
+        background: none;
+
+        &::before {
+            content: '...';
+            display: inline-block;
+            margin-left: .6em;
+            color: rgba(0,0,0,.58);
+            position: relative;
+            top: -30px;
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 30px;
+            letter-spacing: .6em;
+        }
+    }
+
+    ol {
+        margin-top: 12px;
+        padding-left: 2em;
+
+        li {
+            margin-bottom: 14px;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    h1, h2, h3 {
+        margin-top: 56px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        color: $medium-grey;
+    }
+    
+    h4 {
+        font-size: 1.3rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h5 {
+        font-size: 1.2rem;
+        color: $medium-grey;
+        font-weight: 300;
+    }
+    
+    h6 {
+        font-size: 1.1rem;
+        color: $medium-grey;
+        font-weight: 500;
+    }
+
+    .hanchor {
+        font-size: 100%; visibility: hidden; color:silver;
+    }
+    h1:hover a,
+    h2:hover a,
+    h3:hover a,
+    h4:hover a,
+    h5:hover a,
+    h6:hover a {
+        visibility: visible
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    iframe {
+        margin: 43px 0 0 0;
+    }
+
+    blockquote {
+        &::before {
+            position: absolute;
+            content: '“';
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+            font-size: 100px;
+            color: #ddd;
+            margin-left: -47px;
+            margin-top: -32px;
+        }
+
+        p {
+            font-style: italic;
+            color: #777;
+        }
+    }
+}
+
+.blog-list {
+    .column {
+        box-sizing: border-box;
+    }
+
+    .blog-list__article {
+        display: block;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 230px;
+
+        .blog-list__article__shadow {
+            background-image: linear-gradient(to left, rgba(0, 0, 0, .5) 50%, rgba(0,0,0,0));
+            position: absolute;
+            left: 10px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .blog-list__article__details {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: right;
+
+            .blog-list__article__details__title {
+                display: inline-block;
+                width: 60%;
+                font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+                font-size: 20px;
+                color: white;
+                text-align: right;
+                box-sizing: border-box;
+            }
+
+            .blog-list__article__authors {
+                display: block;
+                width: 100%;
+                text-align: right;
+                margin-top: 10px;
+                box-sizing: border-box;
+
+                .blog-list__article__authors__photo {
+                    display: inline-block;
+                    vertical-align: middle;
+                    border-radius: 100%;
+                    width: 30px!important;
+                    height: 30px!important;
+                    object-fit: cover;
+                    margin-left: 14px;
+                }
+            }
+        }
+
+        &.blog-list__article--featured {
+            width: 100%;
+            min-height: 400px;
+            height: 50vh;
+
+            .blog-list__article--featured__details {
+                position: absolute;
+                width: 100%;
+                right: 0;
+                bottom: 0;
+                padding: 60px 20px 20px 20px;
+                text-align: right;
+                box-sizing: border-box;
+                background: linear-gradient(to top, rgba(0, 0, 0, .8) 60%, rgba(0,0,0,0));
+
+                .blog-list__article--featured__details__title {
+                    display: inline-block;
+                    width: 40%;
+                    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+                    font-size: 40px;
+                    color: white;
+                    text-align: right;
+                    box-sizing: border-box;
+                }
+
+                .blog-list__article__authors {
+                    display: block;
+                    width: 100%;
+                    text-align: right;
+                    margin-top: 10px;
+                    box-sizing: border-box;
+
+                    .blog-list__article__authors__photo {
+                        display: inline-block;
+                        vertical-align: middle;
+                        border-radius: 100%;
+                        width: 40px!important;
+                        height: 40px!important;
+                        object-fit: cover;
+                        margin-left: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

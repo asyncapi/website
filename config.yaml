@@ -2,6 +2,9 @@ baseURL: https://www.asyncapi.com/
 languageCode: en-us
 title: AsyncAPI Initiative
 theme: hugo-fresh
+enableInlineShortcodes: true
+blackfriday:
+  hrefTargetBlank: true
 
 menu:
   docs:
@@ -70,14 +73,8 @@ params:
       url: /docs/tooling#validators
     - title: Code-first tools
       url: /docs/tooling#code-first
-  - title: News
-    sublinks:
-    - title: Blog
-      url: https://medium.com/asyncapi
-      blank: true
-    - title: Twitter
-      url: https://twitter.com/AsyncAPISpec
-      blank: true
+  - title: Blog
+    url: /blog
   - title: Help
     sublinks:
     - title: Github repo
