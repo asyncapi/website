@@ -31,7 +31,7 @@
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.e34a23cf2ad56417538d82d42d47fda8cfb45bb0b52309385311be73837202e4.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.15dfe934761e9c5ed124cdcb7555f316c1c0548e0442053dd5b9bdc681e8501e.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
@@ -103,20 +103,9 @@
               </a>
             </div>
           </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              News
-            </a>
-
-            <div class="navbar-dropdown">
-              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
-                Blog
-              </a>
-              <a href="https://twitter.com/AsyncAPISpec" class="navbar-item" target="_blank">
-                Twitter
-              </a>
-            </div>
-          </div>
+          <a href="/blog" class="navbar-item is-secondary">
+            Blog
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Help
@@ -221,7 +210,7 @@
 
 
 
-<section class="section section-feature-grey is-medium">
+<section class="section" style="margin-top: 40px;">
   <div class="container">
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2">Full of great features</h2>
@@ -276,7 +265,7 @@
       </div>
       <div class="columns">
         <div class="column is-one-third">
-          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+          <div class="feature-card is-bordered has-text-centered">
             <div class="card-title">
               <h4>Tooling</h4>
             </div>
@@ -290,7 +279,7 @@
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+          <div class="feature-card is-bordered has-text-centered">
             <div class="card-title">
               <h4>Online Editor</h4>
             </div>
@@ -304,7 +293,7 @@
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
+          <div class="feature-card is-bordered has-text-centered">
             <div class="card-title">
               <h4>Support</h4>
             </div>
@@ -322,6 +311,54 @@
   </div>
 </section>
 
+
+<section class="section">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2 is-spaced">Featured blog posts</h2>
+      <div class="divider is-centered"></div>
+    </div>
+
+    <div class="content-wrapper blog-list">
+        <div class="columns">
+            
+            <div class="column is-half">
+                <a href="/blog/replicating-success-rest-event-driven-architecture/" class="blog-list__article" style="background-image: url(/images/posts/replicating-success-of-rest.png);">
+                    <span class="blog-list__article__shadow"></span>
+                    <span class="blog-list__article__details">
+                        <span class="blog-list__article__details__title">Replicating the Success of REST in Event-Driven Architecture</span>
+                        <span class="blog-list__article__authors">
+                            
+                            <img src="/images/avatars/jschabowsky.jpg" class="blog-list__article__authors__photo" title="Jonathan Schabowsky"
+                                alt="Jonathan Schabowsky" />
+                            
+                            <img src="/images/avatars/fmvilas.jpg" class="blog-list__article__authors__photo" title="Fran Méndez"
+                                alt="Fran Méndez" />
+                            
+                        </span>
+                    </span>
+                </a>
+            </div>
+            
+            <div class="column is-half">
+                <a href="/blog/organizing-asyncapi-documents/" class="blog-list__article" style="background-image: url(/images/posts/organizing-asyncapi-documents.jpg);">
+                    <span class="blog-list__article__shadow"></span>
+                    <span class="blog-list__article__details">
+                        <span class="blog-list__article__details__title">Organizing your AsyncAPI documents</span>
+                        <span class="blog-list__article__authors">
+                            
+                            <img src="/images/avatars/fmvilas.jpg" class="blog-list__article__authors__photo" title="Fran Méndez"
+                                alt="Fran Méndez" />
+                            
+                        </span>
+                    </span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -397,6 +434,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 

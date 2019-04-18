@@ -57,7 +57,7 @@ Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;
       <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/tooling/</guid>
-      <description>&lt;p&gt;This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? &lt;a href=&#34;https://github.com/asyncapi/asyncapi/issues/new&#34;&gt;Let us know!&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? &lt;a href=&#34;https://github.com/asyncapi/asyncapi/issues/new&#34; target=&#34;_blank&#34;&gt;Let us know!&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

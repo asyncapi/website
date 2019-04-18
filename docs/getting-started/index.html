@@ -34,7 +34,7 @@ A basic example The following example describes a very simple streetlights servi
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.e34a23cf2ad56417538d82d42d47fda8cfb45bb0b52309385311be73837202e4.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.15dfe934761e9c5ed124cdcb7555f316c1c0548e0442053dd5b9bdc681e8501e.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
@@ -106,20 +106,9 @@ A basic example The following example describes a very simple streetlights servi
               </a>
             </div>
           </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              News
-            </a>
-
-            <div class="navbar-dropdown">
-              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
-                Blog
-              </a>
-              <a href="https://twitter.com/AsyncAPISpec" class="navbar-item" target="_blank">
-                Twitter
-              </a>
-            </div>
-          </div>
+          <a href="/blog" class="navbar-item is-secondary">
+            Blog
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Help
@@ -252,7 +241,7 @@ A basic example The following example describes a very simple streetlights servi
 <div class="columns">
     <div class="column is-11 docs-content">
 
-<p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI/Swagger</a> so, if you’re familiar with it, AsyncAPI should be easy for you.</p>
+<p>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI/Swagger</a> so, if you’re familiar with it, AsyncAPI should be easy for you.</p>
 
 <h1 id="a-basic-example">A basic example<a href="#a-basic-example" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
 
@@ -324,15 +313,64 @@ components:
 
 <h2 id="2-topics">2. Topics<a href="#2-topics" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
 
-<p>Message-driven protocols usually contain something called topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.</p>
+<p>Message-driven protocols usually contain something called topic (<a href="http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices" target="_blank">MQTT</a>), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.</p>
 
-<p>There’s no standard way of naming topics, so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition">have a look at our proposal here</a></strong>.</p>
+<p>There’s no standard way of naming topics, so we recommend you to <strong><a href="https://github.com/asyncapi/topic-definition" target="_blank">have a look at our proposal here</a></strong>.</p>
 </div>
 </div>
             
         </div>
     </div>
 </div>
+
+
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="footer-logo">
+          <img src="/images/logos/logo-footer.png">
+        </div>
+      </div>
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>Follow Us</h3>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" href="https://github.com/asyncapi/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                </a>
+                <a class="level-item" href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" target="_blank">
+                  <span class="icon"><i class="fab fa-slack"></i></span>
+                </a>
+                <a class="level-item" href="https://medium.com/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-medium"></i></span>
+                </a>
+                <a class="level-item" href="https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ" target="_blank">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                </a>
+                <a class="level-item" href="https://twitter.com/search?q=asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-twitter"></i></span>
+                </a>
+              </div>
+            </nav>
+
+            <h6>Icons & Graphics attributions</h6>
+            <div class="attributions">
+              <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
+                www.freepik.com</a>
+              <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.freepik.com/" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, and <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"
+                  title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                  target="_blank">CC 3.0 BY</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 
     <script>
@@ -353,6 +391,7 @@ components:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 

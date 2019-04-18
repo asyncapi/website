@@ -34,7 +34,7 @@ Version 2.0.0-rc1 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldq
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.e34a23cf2ad56417538d82d42d47fda8cfb45bb0b52309385311be73837202e4.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.15dfe934761e9c5ed124cdcb7555f316c1c0548e0442053dd5b9bdc681e8501e.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
@@ -106,20 +106,9 @@ Version 2.0.0-rc1 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldq
               </a>
             </div>
           </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              News
-            </a>
-
-            <div class="navbar-dropdown">
-              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
-                Blog
-              </a>
-              <a href="https://twitter.com/AsyncAPISpec" class="navbar-item" target="_blank">
-                Twitter
-              </a>
-            </div>
-          </div>
+          <a href="/blog" class="navbar-item is-secondary">
+            Blog
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Help
@@ -276,13 +265,13 @@ Version 2.0.0-rc1 The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldq
 
 <h4 id="disclaimer">Disclaimer<a href="#disclaimer" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h4>
 
-<p>Part of this content has been taken from the great work done by the folks at the <a href="https://openapis.org">OpenAPI Initiative</a>. Mainly because <strong>it&rsquo;s a great work</strong> and we want to keep as much compatibility as possible with the <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI Specification</a>.</p>
+<p>Part of this content has been taken from the great work done by the folks at the <a href="https://openapis.org" target="_blank">OpenAPI Initiative</a>. Mainly because <strong>it&rsquo;s a great work</strong> and we want to keep as much compatibility as possible with the <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI Specification</a>.</p>
 
 <h4 id="version-2-0-0-rc1">Version 2.0.0-rc1<a href="#version-2-0-0-rc1" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h4>
 
-<p>The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
+<p>The key words &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a>.</p>
 
-<p>The AsyncAPI Specification is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">The Apache License, Version 2.0</a>.</p>
+<p>The AsyncAPI Specification is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">The Apache License, Version 2.0</a>.</p>
 
 <h2 id="introduction">Introduction<a href="#introduction" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
 
@@ -405,10 +394,10 @@ YAML, being a superset of JSON, can be used as well to represent a A2S (AsyncAPI
 Fixed fields, which have a declared name, and Patterned fields, which declare a regex pattern for the field name.
 Patterned fields can have multiple occurrences as long as each has a unique name.</p>
 
-<p>In order to preserve the ability to round-trip between YAML and JSON formats, YAML version <a href="http://www.yaml.org/spec/1.2/spec.html">1.2</a> is recommended along with some additional constraints:</p>
+<p>In order to preserve the ability to round-trip between YAML and JSON formats, YAML version <a href="http://www.yaml.org/spec/1.2/spec.html" target="_blank">1.2</a> is recommended along with some additional constraints:</p>
 
 <ul>
-<li>Tags MUST be limited to those allowed by the <a href="http://www.yaml.org/spec/1.2/spec.html#id2803231">JSON Schema ruleset</a></li>
+<li>Tags MUST be limited to those allowed by the <a href="http://www.yaml.org/spec/1.2/spec.html#id2803231" target="_blank">JSON Schema ruleset</a></li>
 <li>Keys used in YAML maps MUST be limited to a scalar string, as defined by the YAML Failsafe schema ruleset</li>
 </ul>
 
@@ -416,7 +405,7 @@ Patterned fields can have multiple occurrences as long as each has a unique name
 
 <p>The A2S representation of the API is made of a single file.
 However, parts of the definitions can be split into separate files, at the discretion of the user.
-This is applicable for <code>$ref</code> fields in the specification as follows from the <a href="http://json-schema.org">JSON Schema</a> definitions.</p>
+This is applicable for <code>$ref</code> fields in the specification as follows from the <a href="http://json-schema.org" target="_blank">JSON Schema</a> definitions.</p>
 
 <p>By convention, the AsyncAPI Specification (A2S) file is named <code>asyncapi.json</code> or <code>asyncapi.yaml</code>.</p>
 
@@ -503,7 +492,7 @@ The patch version will not be considered by tooling, making no distinction betwe
 
 <h4 id="a-name-a2sidstring-a-identifier"><a name="A2SIdString"></a>Identifier<a href="#a-name-a2sidstring-a-identifier" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h4>
 
-<p>This field represents a unique universal identifier of the <a href="#definitionsApplication">application</a> the AsyncAPI document is defining. It must conform to the URI Reference format (either a URI or a relative-reference), according to <a href="http://tools.ietf.org/html/rfc3986#section-4.1">RFC3986, section 4.1</a>.</p>
+<p>This field represents a unique universal identifier of the <a href="#definitionsApplication">application</a> the AsyncAPI document is defining. It must conform to the URI Reference format (either a URI or a relative-reference), according to <a href="http://tools.ietf.org/html/rfc3986#section-4.1" target="_blank">RFC3986, section 4.1</a>.</p>
 
 <h6 id="examples">Examples<a href="#examples" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h6>
 
@@ -555,7 +544,7 @@ The metadata can be used by the clients if needed.</p>
 <tr>
 <td><a name="infoObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A short description of the application. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A short description of the application. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -745,7 +734,7 @@ url: http://www.apache.org/licenses/LICENSE-2.0.html
 <tr>
 <td><a name="serverObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>An optional string describing the host designated by the URL. <a href="http://spec.commonmark.org/">CommonMark syntax</a> MAY be used for rich text representation.</td>
+<td>An optional string describing the host designated by the URL. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> MAY be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -757,7 +746,7 @@ url: http://www.apache.org/licenses/LICENSE-2.0.html
 <tr>
 <td><a name="serverObjectBaseChannel"></a>baseChannel</td>
 <td align="center"><code>string</code></td>
-<td>A string describing the base channel. MUST be in the form of a <a href="https://tools.ietf.org/html/rfc3986#section-3.3">RFC 3986 URI path</a>. URI templates are not allowed here. Defaults to empty string.</td>
+<td>A string describing the base channel. MUST be in the form of a <a href="https://tools.ietf.org/html/rfc3986#section-3.3" target="_blank">RFC 3986 URI path</a>. URI templates are not allowed here. Defaults to empty string.</td>
 </tr>
 
 <tr>
@@ -910,7 +899,7 @@ baseChannel: company/events
 <tr>
 <td><a name="serverVariableObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>An optional description for the server variable. <a href="http://spec.commonmark.org/">CommonMark syntax</a> MAY be used for rich text representation.</td>
+<td>An optional description for the server variable. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> MAY be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -959,7 +948,7 @@ Channels starting with a slash (<code>/</code>) MUST be treated as absolute path
 <tr>
 <td><a name="channelsObjectChannel"></a>{channel}</td>
 <td align="center"><a href="#channelItemObject">Channel Item Object</a></td>
-<td>A relative path to an individual channel. The field name MUST be in the form of a <a href="https://tools.ietf.org/html/rfc6570">RFC 6570 URI template</a>.</td>
+<td>A relative path to an individual channel. The field name MUST be in the form of a <a href="https://tools.ietf.org/html/rfc6570" target="_blank">RFC 6570 URI template</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1019,7 +1008,7 @@ Channels starting with a slash (<code>/</code>) MUST be treated as absolute path
 <tr>
 <td><a name="channelItemObjectParameters"></a>parameters</td>
 <td align="center">[<a href="#parameterObject">Parameter Object</a> &#124; <a href="#referenceObject">Reference Object</a>]</td>
-<td>A list of the parameters included in the channel name. It SHOULD be present only when using channels with expressions (as defined by <a href="https://tools.ietf.org/html/rfc6570#section-2.2">RFC 6570 section 2.2</a>).</td>
+<td>A list of the parameters included in the channel name. It SHOULD be present only when using channels with expressions (as defined by <a href="https://tools.ietf.org/html/rfc6570#section-2.2" target="_blank">RFC 6570 section 2.2</a>).</td>
 </tr>
 
 <tr>
@@ -1129,7 +1118,7 @@ amqp-0-9-1:
 <tr>
 <td><a name="operationObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A verbose explanation of the operation. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A verbose explanation of the operation. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1153,7 +1142,7 @@ amqp-0-9-1:
 <tr>
 <td><a name="operationObjectTraits"></a>traits</td>
 <td align="center">[<a href="#operationTraitObject">Operation Trait Object</a>] &#124; [[<a href="#operationTraitObject">Operation Trait Object</a>, Map]]</td>
-<td>A list of traits to apply to the operation object. The list MUST contain either a list of <a href="#operationTraitObject">Operation Trait Objects</a> or a list of tuples where the first element is an <a href="#operationTraitObject">Operation Trait Object</a>] and the second is a free-form object with the values of the variables a trait MAY use. <strong>All the variables of a trait MUST be provided.</strong> Traits MUST be merged into the operation object using the <a href="https://tools.ietf.org/html/rfc7386">JSON Merge Patch</a> algorithm in the same order they are defined here.</td>
+<td>A list of traits to apply to the operation object. The list MUST contain either a list of <a href="#operationTraitObject">Operation Trait Objects</a> or a list of tuples where the first element is an <a href="#operationTraitObject">Operation Trait Object</a>] and the second is a free-form object with the values of the variables a trait MAY use. <strong>All the variables of a trait MUST be provided.</strong> Traits MUST be merged into the operation object using the <a href="https://tools.ietf.org/html/rfc7386" target="_blank">JSON Merge Patch</a> algorithm in the same order they are defined here.</td>
 </tr>
 
 <tr>
@@ -1272,7 +1261,7 @@ traits:
 <tr>
 <td><a name="operationTraitObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A verbose explanation of the operation. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A verbose explanation of the operation. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1349,7 +1338,7 @@ traits:
 <tr>
 <td><a name="parameterObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A verbose explanation of the parameter. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A verbose explanation of the parameter. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1503,7 +1492,7 @@ traits:
 <tr>
 <td><a name="messageObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A verbose explanation of the message. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A verbose explanation of the message. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1533,7 +1522,7 @@ traits:
 <tr>
 <td><a name="messageObjectTraits"></a>traits</td>
 <td align="center">[<a href="#messageTraitObject">Message Trait Object</a>] &#124; [[<a href="#messageTraitObject">Message Trait Object</a>, Map]]</td>
-<td>A list of traits to apply to the message object. The list MUST contain either a list of <a href="#messageTraitObject">Message Trait Objects</a> or a list of tuples where the first element is a <a href="#messageTraitObject">Message Trait Object</a>] and the second is a free-form object with the values of the variables a trait may use. <strong>All the variables of a trait MUST be provided.</strong> Traits MUST be merged into the message object using the <a href="https://tools.ietf.org/html/rfc7386">JSON Merge Patch</a> algorithm in the same order they are defined here. The resulting object MUST be a valid <a href="#messageObject">Message Object</a>.</td>
+<td>A list of traits to apply to the message object. The list MUST contain either a list of <a href="#messageTraitObject">Message Trait Objects</a> or a list of tuples where the first element is a <a href="#messageTraitObject">Message Trait Object</a>] and the second is a free-form object with the values of the variables a trait may use. <strong>All the variables of a trait MUST be provided.</strong> Traits MUST be merged into the message object using the <a href="https://tools.ietf.org/html/rfc7386" target="_blank">JSON Merge Patch</a> algorithm in the same order they are defined here. The resulting object MUST be a valid <a href="#messageObject">Message Object</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1726,7 +1715,7 @@ payload:
 <tr>
 <td><a name="messageTraitObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A verbose explanation of the message. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A verbose explanation of the message. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1805,7 +1794,7 @@ contentType: application/json
 <tr>
 <td><a name="tagObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A short description for the tag. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A short description for the tag. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1849,7 +1838,7 @@ description: User-related messages
 <tr>
 <td><a name="externalDocDescription"></a>description</td>
 <td align="center"><code>string</code></td>
-<td>A short description of the target documentation. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A short description of the target documentation. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -1878,7 +1867,7 @@ url: https://example.com
 
 <p>A simple object to allow referencing other components in the specification, internally and externally.</p>
 
-<p>The Reference Object is defined by <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03">JSON Reference</a> and follows the same structure, behavior and rules.</p>
+<p>The Reference Object is defined by <a href="https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03" target="_blank">JSON Reference</a> and follows the same structure, behavior and rules.</p>
 
 <p>For this specification, reference resolution is done as defined by the JSON Reference specification
 and not by the JSON Schema specification.</p>
@@ -2126,9 +2115,9 @@ my.org.User
 
 <p>The Schema Object allows the definition of input and output data types.
 These types can be objects, but also primitives and arrays.
-This object is an extended subset of the <a href="http://json-schema.org/">JSON Schema Specification Wright Draft 00</a>.</p>
+This object is an extended subset of the <a href="http://json-schema.org/" target="_blank">JSON Schema Specification Wright Draft 00</a>.</p>
 
-<p>Further information about the properties can be found in <a href="https://tools.ietf.org/html/draft-wright-json-schema-00">JSON Schema Core</a> and <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00">JSON Schema Validation</a>.
+<p>Further information about the properties can be found in <a href="https://tools.ietf.org/html/draft-wright-json-schema-00" target="_blank">JSON Schema Core</a> and <a href="https://tools.ietf.org/html/draft-wright-json-schema-validation-00" target="_blank">JSON Schema Validation</a>.
 Unless stated otherwise, the property definitions follow the JSON Schema specification as referenced here.</p>
 
 <h5 id="properties">Properties<a href="#properties" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h5>
@@ -2144,7 +2133,7 @@ Unless stated otherwise, the property definitions follow the JSON Schema specifi
 <li>exclusiveMinimum</li>
 <li>maxLength</li>
 <li>minLength</li>
-<li>pattern (This string SHOULD be a valid regular expression, according to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.8.5">ECMA 262 regular expression</a> dialect)</li>
+<li>pattern (This string SHOULD be a valid regular expression, according to the <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.8.5" target="_blank">ECMA 262 regular expression</a> dialect)</li>
 <li>maxItems</li>
 <li>minItems</li>
 <li>uniqueItems</li>
@@ -2163,7 +2152,7 @@ Unless stated otherwise, the property definitions follow the JSON Schema specifi
 - items - Value MUST be an object and not an array. Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema. <code>items</code> MUST be present if the <code>type</code> is <code>array</code>.
 - properties - Property definitions MUST be a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema (inline or referenced).
 - additionalProperties - Value can be boolean or object. Inline or referenced schema MUST be of a <a href="#schemaObject">Schema Object</a> and not a standard JSON Schema.
-- description - <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.
+- description - <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.
 - format - See <a href="#dataTypeFormat">Data Type Formats</a> for further details. While relying on JSON Schema&rsquo;s defined formats, the AsyncAPI Specification offers a few additional predefined formats.
 - default - The default value represents what would be assumed by the consumer of the input as the value of the schema if one is not provided. Unlike JSON Schema, the value MUST conform to the defined type for the Schema Object defined at the same level. For example, of <code>type</code> is <code>string</code>, then <code>default</code> can be <code>&quot;foo&quot;</code> but cannot be <code>1</code>.</p>
 
@@ -2932,8 +2921,8 @@ See examples for expected behavior.</p>
 <li>End-to-end encryption (either symmetric or asymmetric).</li>
 <li>HTTP authentication.</li>
 <li>HTTP API key.</li>
-<li>OAuth2&rsquo;s common flows (Implicit, Resource Owner Protected Credentials, Client Credentials and Authorization Code) as defined in <a href="https://tools.ietf.org/html/rfc6749">RFC6749</a>.</li>
-<li><a href="https://tools.ietf.org/html/draft-ietf-oauth-discovery-06">OpenID Connect Discovery</a>.</li>
+<li>OAuth2&rsquo;s common flows (Implicit, Resource Owner Protected Credentials, Client Credentials and Authorization Code) as defined in <a href="https://tools.ietf.org/html/rfc6749" target="_blank">RFC6749</a>.</li>
+<li><a href="https://tools.ietf.org/html/draft-ietf-oauth-discovery-06" target="_blank">OpenID Connect Discovery</a>.</li>
 </ul>
 
 <h5 id="fixed-fields-18">Fixed Fields<a href="#fixed-fields-18" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h5>
@@ -2960,7 +2949,7 @@ See examples for expected behavior.</p>
 <td><a name="securitySchemeObjectDescription"></a>description</td>
 <td align="center"><code>string</code></td>
 <td>Any</td>
-<td>A short description for security scheme. <a href="http://spec.commonmark.org/">CommonMark syntax</a> MAY be used for rich text representation.</td>
+<td>A short description for security scheme. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> MAY be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -2981,7 +2970,7 @@ See examples for expected behavior.</p>
 <td><a name="securitySchemeObjectScheme"></a>scheme</td>
 <td align="center"><code>string</code></td>
 <td><code>http</code></td>
-<td><strong>REQUIRED</strong>. The name of the HTTP Authorization scheme to be used in the <a href="https://tools.ietf.org/html/rfc7235#section-5.1">Authorization header as defined in RFC7235</a>.</td>
+<td><strong>REQUIRED</strong>. The name of the HTTP Authorization scheme to be used in the <a href="https://tools.ietf.org/html/rfc7235#section-5.1" target="_blank">Authorization header as defined in RFC7235</a>.</td>
 </tr>
 
 <tr>
@@ -3335,7 +3324,7 @@ The name used for each property MUST correspond to a security scheme declared in
 <tr>
 <td>description</td>
 <td align="left"><code>string</code></td>
-<td>A optional description of the identifier. <a href="http://spec.commonmark.org/">CommonMark syntax</a> can be used for rich text representation.</td>
+<td>A optional description of the identifier. <a href="http://spec.commonmark.org/" target="_blank">CommonMark syntax</a> can be used for rich text representation.</td>
 </tr>
 
 <tr>
@@ -3365,7 +3354,7 @@ location: $message.header#/correlationId
 <p>A runtime expression allows values to be defined based on information that will be available within the message.
 This mechanism is used by <a href="#correlationIdObject">Correlation ID Object</a>.</p>
 
-<p>The runtime expression is defined by the following <a href="https://tools.ietf.org/html/rfc5234">ABNF</a> syntax:</p>
+<p>The runtime expression is defined by the following <a href="https://tools.ietf.org/html/rfc5234" target="_blank">ABNF</a> syntax:</p>
 
 <pre><code>      expression = ( &quot;$message&quot; &quot;.&quot; source )
       source = ( header-reference | payload-reference )
@@ -3512,14 +3501,14 @@ Tools that do not recognize a specific <code>format</code> MAY default back to t
 <td>date</td>
 <td><code>string</code></td>
 <td><code>date</code></td>
-<td>As defined by <code>full-date</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14">RFC3339</a></td>
+<td>As defined by <code>full-date</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14" target="_blank">RFC3339</a></td>
 </tr>
 
 <tr>
 <td>dateTime</td>
 <td><code>string</code></td>
 <td><code>date-time</code></td>
-<td>As defined by <code>date-time</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14">RFC3339</a></td>
+<td>As defined by <code>date-time</code> - <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14" target="_blank">RFC3339</a></td>
 </tr>
 
 <tr>
@@ -3535,6 +3524,54 @@ Tools that do not recognize a specific <code>format</code> MAY default back to t
         </div>
     </div>
 </div>
+
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="footer-logo">
+          <img src="/images/logos/logo-footer.png">
+        </div>
+      </div>
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>Follow Us</h3>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" href="https://github.com/asyncapi/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                </a>
+                <a class="level-item" href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" target="_blank">
+                  <span class="icon"><i class="fab fa-slack"></i></span>
+                </a>
+                <a class="level-item" href="https://medium.com/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-medium"></i></span>
+                </a>
+                <a class="level-item" href="https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ" target="_blank">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                </a>
+                <a class="level-item" href="https://twitter.com/search?q=asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-twitter"></i></span>
+                </a>
+              </div>
+            </nav>
+
+            <h6>Icons & Graphics attributions</h6>
+            <div class="attributions">
+              <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
+                www.freepik.com</a>
+              <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.freepik.com/" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, and <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"
+                  title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                  target="_blank">CC 3.0 BY</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 
     <script>
@@ -3555,6 +3592,7 @@ Tools that do not recognize a specific <code>format</code> MAY default back to t
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 

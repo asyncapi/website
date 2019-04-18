@@ -6,9 +6,64 @@
     <description>Recent content in Tags on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 01 Mar 2019 13:56:52 +0100</lastBuildDate>
     
 	<atom:link href="https://www.asyncapi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Asyncapi</title>
+      <link>https://www.asyncapi.com/tags/asyncapi/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/asyncapi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Documents</title>
+      <link>https://www.asyncapi.com/tags/documents/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/documents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event Driven</title>
+      <link>https://www.asyncapi.com/tags/event-driven/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/event-driven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Organization</title>
+      <link>https://www.asyncapi.com/tags/organization/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/organization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rest</title>
+      <link>https://www.asyncapi.com/tags/rest/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Status Update</title>
+      <link>https://www.asyncapi.com/tags/status-update/</link>
+      <pubDate>Thu, 11 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/status-update/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

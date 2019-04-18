@@ -22,6 +22,26 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</loc>
+    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/status-update-week-15-2019/</loc>
+    <lastmod>2019-04-11T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/status-update-week-14-2019/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/docs/tutorials/streetlights/</loc>
     <lastmod>2019-02-16T17:41:57+01:00</lastmod>
   </url>
@@ -48,6 +68,17 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/asyncapi/</loc>
+    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -59,8 +90,32 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/documents/</loc>
+    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/event-driven/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/categories/getting-started/</loc>
     <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/organization/</loc>
+    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/rest/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,7 +126,14 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/status-update/</loc>
+    <lastmod>2019-04-11T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/tags/</loc>
+    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   

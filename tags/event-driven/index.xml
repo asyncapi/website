@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event Driven on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/event-driven/</link>
+    <description>Recent content in Event Driven on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Apr 2019 13:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/event-driven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Replicating the Success of REST in Event-Driven Architecture</title>
+      <link>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</guid>
+      <description>This post is a collaboration between Fran Méndez of AsyncAPI and Solace’s Jonathan Schabowsky. It was originally published at Solace’s blog.
+Jonathan explained in his last blog post how the loose coupling of applications associated with event-driven architecture and publish/subscribe messaging is both a strength and a weakness. As part of that, he touched on the fact that request/reply interactions using RESTful APIs are still the dominant application integration paradigm, even in hybrid cloud, machine learning and IoT use cases that benefit from event-driven interactions.</description>
+    </item>
+    
+  </channel>
+</rss>

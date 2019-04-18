@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asyncapi on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/asyncapi/</link>
+    <description>Recent content in Asyncapi on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Mar 2019 13:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/asyncapi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Organizing your AsyncAPI documents</title>
+      <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</guid>
+      <description>A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same AsyncAPI document?”.
+Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
+Organizing Microservices  I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.</description>
+    </item>
+    
+    <item>
+      <title>Status update (week 15, 2019)</title>
+      <link>https://www.asyncapi.com/blog/status-update-week-15-2019/</link>
+      <pubDate>Thu, 11 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/status-update-week-15-2019/</guid>
+      <description>Kaixo lagunak! This week we continued working on the parser as it’s a top priority for us. We made significant progress and plan to release a simple but functional version soon.
+Building the parser  We’ve added support for AsyncAPI 1.x/OpenAPI schemas. This is the first step before we dive into Avro and Protobuf support. Updated the Node.js to automatically test itself on Linux, Mac, and Windows. We’re still struggling to debug some failures on Windows so we encourage people who work on this operating system to join and help us test.</description>
+    </item>
+    
+    <item>
+      <title>Status update (week 14, 2019)</title>
+      <link>https://www.asyncapi.com/blog/status-update-week-14-2019/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/status-update-week-14-2019/</guid>
+      <description>Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!
+Improvements on documentation  Check out version 2.0.0-rc1 of the specification in our website: https://www.asyncapi.com/docs/specifications/2.0.0-rc1/. Added a “Hello world” article to our getting started guide: https://github.com/asyncapi/asyncapi.github.io/pull/3. Added a “Servers” article to our getting started guide, explaining how the “servers” section of AsyncAPI works: https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
