@@ -8,7 +8,7 @@ tags:
   - Organization
   - Documents
 cover: /images/posts/organizing-asyncapi-documents.jpg
-weight: 200
+weight: 300
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.jpg

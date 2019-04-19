@@ -2,12 +2,10 @@
 title: "Status update (week 15, 2019)"
 date: 2019-04-11T13:56:52+01:00
 type: blog
-featured: true
 tags:
   - AsyncAPI
   - Status Update
 cover: /images/posts/status-update-week-15-2019.jpg
-weight: 300
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.jpg

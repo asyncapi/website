@@ -5,7 +5,8 @@ type: blog
 featured: true
 tags:
   - REST
-  - Event-Driven
+  - Event-Driven Architectures
+  - EDA
 cover: /images/posts/replicating-success-of-rest.png
 weight: 100
 authors:
