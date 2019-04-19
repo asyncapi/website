@@ -6,7 +6,6 @@ tags:
   - AsyncAPI
   - Status Update
 cover: /images/posts/status-update-week-14-2019.jpg
-weight: 400
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.jpg
