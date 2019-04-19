@@ -7178,6 +7178,11 @@ button:focus, button:active {
     .docs-content .hint .hint__body {
       align-self: center; }
 
+.blog-container {
+  padding: 0 2rem;
+  margin-top: 30px;
+  margin-bottom: 60px; }
+
 .blog-title {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   margin-top: 22px;
@@ -7196,6 +7201,9 @@ button:focus, button:active {
     margin-left: 3px;
     margin-right: 3px;
     font-size: 13px; }
+
+.blog-authors {
+  display: flex; }
 
 .blog-author {
   display: flex;
@@ -7221,7 +7229,7 @@ button:focus, button:active {
       margin-bottom: 4px;
       font-weight: 500; }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   .blog-wrapper {
     width: 740px;
     margin: 0 auto; }
@@ -7418,5 +7426,20 @@ button:focus, button:active {
           height: 40px !important;
           object-fit: cover;
           margin-left: 14px; }
+
+@media only screen and (max-width: 768px) {
+  .blog-container {
+    padding: 0;
+    margin-top: 0; }
+  .blog-list .blog-list__article.blog-list__article--featured .blog-list__article--featured__details .blog-list__article--featured__details__title {
+    width: 100%;
+    font-size: 30px; }
+  .blog-authors {
+    display: block; }
+    .blog-authors .blog-author {
+      display: block;
+      text-align: center; }
+      .blog-authors .blog-author .blog-author__info {
+        margin: 20px 0 0 0; } }
 
 /*# sourceMappingURL=style.css.map */
