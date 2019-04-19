@@ -7,8 +7,9 @@
     <span class="blog-meta__tag">{{ $tag }}</span>
     {{ end }}
 </div>
-<div class="blog-author">
+<div class="blog-authors">
     {{ range $author := .Params.authors }}
+    <div class="blog-author">
         {{ if $author.link }}
         <a href="{{ $author.link }}" target="_blank" class="blog-author__photo--link">
         {{ end }}
@@ -28,6 +29,7 @@
             {{ $author.byline }}
             </div>
         </div>
+    </div>
     {{ end }}
 </div>
 <div class="blog-content">

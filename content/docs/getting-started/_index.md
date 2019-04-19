@@ -16,6 +16,18 @@ To make this happen, the first step has been to create a specification that allo
 
 If you are looking for a solution to automate and formalize the documentation or code generation of your event-driven (micro)services, you are in the right place. Likewise, if you are aiming to stablish solid standards for your events and improve the governance of your asynchronous APIs, welcome to your new home.
 
-Please answer the following three questions so we can adapt this guide for you:
+---
 
-{{<start-menu>}}
+## Select your next chapter
+
+{{<navigation-options>}}
+{{%navigation-option url="/docs/getting-started/event-driven-architectures/" style="green"%}}
+Learn the basics of event-driven architectures.
+{{%/navigation-option%}}
+{{%navigation-option url="/docs/getting-started/coming-from-openapi/" style="cyan"%}}
+Learn how AsyncAPI compares to OpenAPI (fka Swagger).
+{{%/navigation-option%}}
+{{%navigation-option url="/docs/getting-started/asyncapi-documents/" style="purple"%}}
+Learn the basics of the AsyncAPI specification.
+{{%/navigation-option%}}
+{{</navigation-options>}}

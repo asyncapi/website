@@ -1,11 +1,11 @@
 ---
-title: "What is a specification?"
+title: "AsyncAPI documents"
 date: 2019-04-01T10:56:52+01:00
 draft: true
 menu:
   docs:
     parent: 'getting-started'
-weight: 20
+weight: 30
 ---
 
 * It's a document (YAML or JSON).

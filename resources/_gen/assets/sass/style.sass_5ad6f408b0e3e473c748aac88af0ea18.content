@@ -7178,6 +7178,50 @@ button:focus, button:active {
         font-size: 2em; }
     .docs-content .hint .hint__body {
       align-self: center; }
+  .docs-content .navigation-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px; }
+    .docs-content .navigation-options .navigation-option {
+      flex-grow: 1;
+      flex-basis: 0;
+      box-sizing: border-box;
+      margin-right: 10px;
+      border: #666 2px solid;
+      padding: 20px;
+      text-align: center;
+      color: black; }
+      .docs-content .navigation-options .navigation-option:last-child {
+        margin-right: 0; }
+      .docs-content .navigation-options .navigation-option.navigation-option--style-green {
+        border-color: #559455;
+        background-color: #7ac17a;
+        color: white; }
+      .docs-content .navigation-options .navigation-option.navigation-option--style-cyan {
+        border-color: #569595;
+        background-color: #7bc1c1;
+        color: white; }
+      .docs-content .navigation-options .navigation-option.navigation-option--style-purple {
+        border-color: #575695;
+        background-color: #7c7bc1;
+        color: white; }
+      .docs-content .navigation-options .navigation-option .navigation-option__text {
+        display: inline-block;
+        height: 7em; }
+
+@media only screen and (max-width: 768px) {
+  .docs-content .navigation-options {
+    display: block; }
+    .docs-content .navigation-options .navigation-option {
+      display: block;
+      margin: 20px 0; }
+      .docs-content .navigation-options .navigation-option .navigation-option__text {
+        height: auto; } }
+
+.blog-container {
+  padding: 0 2rem;
+  margin-top: 30px;
+  margin-bottom: 60px; }
 
 .blog-title {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -7197,6 +7241,9 @@ button:focus, button:active {
     margin-left: 3px;
     margin-right: 3px;
     font-size: 13px; }
+
+.blog-authors {
+  display: flex; }
 
 .blog-author {
   display: flex;
@@ -7222,7 +7269,7 @@ button:focus, button:active {
       margin-bottom: 4px;
       font-weight: 500; }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   .blog-wrapper {
     width: 740px;
     margin: 0 auto; }
@@ -7419,6 +7466,21 @@ button:focus, button:active {
           height: 40px !important;
           object-fit: cover;
           margin-left: 14px; }
+
+@media only screen and (max-width: 768px) {
+  .blog-container {
+    padding: 0;
+    margin-top: 0; }
+  .blog-list .blog-list__article.blog-list__article--featured .blog-list__article--featured__details .blog-list__article--featured__details__title {
+    width: 100%;
+    font-size: 30px; }
+  .blog-authors {
+    display: block; }
+    .blog-authors .blog-author {
+      display: block;
+      text-align: center; }
+      .blog-authors .blog-author .blog-author__info {
+        margin: 20px 0 0 0; } }
 
 .start-menu {
   margin-top: 40px; }
