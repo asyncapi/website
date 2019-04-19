@@ -62,6 +62,15 @@ Jonathan explained in his last blog post how the loose coupling of applications 
     </item>
     
     <item>
+      <title>Getting started with event-driven architectures</title>
+      <link>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</link>
+      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</guid>
+      <description>All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API.</description>
+    </item>
+    
+    <item>
       <title>Organizing your AsyncAPI documents</title>
       <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
       <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>

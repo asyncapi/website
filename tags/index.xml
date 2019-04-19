@@ -6,7 +6,7 @@
     <description>Recent content in Tags on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2019 13:56:52 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 16:56:52 +0100</lastBuildDate>
     
 	<atom:link href="https://www.asyncapi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Asyncapi</title>
       <link>https://www.asyncapi.com/tags/asyncapi/</link>
-      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/tags/asyncapi/</guid>
       <description></description>
@@ -30,11 +30,29 @@
     </item>
     
     <item>
-      <title>Event Driven</title>
-      <link>https://www.asyncapi.com/tags/event-driven/</link>
+      <title>Eda</title>
+      <link>https://www.asyncapi.com/tags/eda/</link>
       <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
       
-      <guid>https://www.asyncapi.com/tags/event-driven/</guid>
+      <guid>https://www.asyncapi.com/tags/eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event Driven Architectures</title>
+      <link>https://www.asyncapi.com/tags/event-driven-architectures/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/event-driven-architectures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://www.asyncapi.com/tags/getting-started/</link>
+      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/getting-started/</guid>
       <description></description>
     </item>
     

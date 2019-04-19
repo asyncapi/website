@@ -27,6 +27,11 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</loc>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</loc>
     <lastmod>2019-03-01T13:56:52+01:00</lastmod>
   </url>
@@ -69,7 +74,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/tags/asyncapi/</loc>
-    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -96,8 +101,20 @@
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/tags/event-driven/</loc>
+    <loc>https://www.asyncapi.com/tags/eda/</loc>
     <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/event-driven-architectures/</loc>
+    <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/getting-started/</loc>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +150,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/tags/</loc>
-    <lastmod>2019-03-01T13:56:52+01:00</lastmod>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
