@@ -8,79 +8,14 @@ aliases:
 - '/v1/guide/index.html'
 ---
 
-AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to [OpenAPI/Swagger](https://github.com/OAI/OpenAPI-Specification) so, if you’re familiar with it, AsyncAPI should be easy for you.
+AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDA's as easy as it is to work with REST APIs. That goes from documentation to code generation, from discovery to event management. Most of the processes we apply to our REST APIs nowadays would be applicable to our event-driven/asynchronous APIs too.
 
-# A basic example
+To make this happen, the first step has been to create a specification that allows **developers, architects, and product managers** to define the interfaces of an async API. Much like [OpenAPI (fka Swagger)](https://github.com/OAI/OpenAPI-Specification) does for REST APIs.
 
-The following example describes a very simple streetlights service. It describes a service you can connect at `api.streetlights.smartylighting.com` (port 1883 or 8883) and allows you to publish information about environmental lighting conditions.
+**The AsyncAPI specification settles the base for a greater and better tooling ecosystem for EDA's**. We recently launched AsyncAPI specification 2.0.0 —the strongest version to date— that will sustain the event-driven architectures of tomorrow.
 
-```yaml
-asyncapi: '1.0.0'
-info:
-  title: Streetlights API
-  version: '1.0'
-  description: |
-    The Smartylighting Streetlights API allows you
-    to remotely manage the city lights.
-  license:
-    name: Apache 2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0'
-baseTopic: smartylighting.streetlights.1.0
+If you are looking for a solution to automate and formalize the documentation or code generation of your event-driven (micro)services, you are in the right place. Likewise, if you are aiming to stablish solid standards for your events and improve the governance of your asynchronous APIs, welcome to your new home.
 
-servers:
-  - url: api.streetlights.smartylighting.com:{port}
-    scheme: mqtt
-    description: Test broker
-    variables:
-      port:
-        description: Secure connection (TLS) is available through port 8883.
-        default: '1883'
-        enum:
-          - '1883'
-          - '8883'
+Please answer the following three questions so we can adapt this guide for you:
 
-topics:
-  event.{streetlightId}.lighting.measured:
-    publish:
-      $ref: '#/components/messages/lightMeasured'
-
-components:
-  messages:
-    lightMeasured:
-      summary: Inform about environmental lighting conditions for a particular streetlight.
-      payload:
-        type: object
-        properties:
-          lumens:
-            type: integer
-            minimum: 0
-            description: Light intensity measured in lumens.
-          sentAt:
-            $ref: "#/components/schemas/sentAt"
-
-  schemas:
-    sentAt:
-      type: string
-      format: date-time
-      description: Date and time when the message was sent.
-```
-
-If you are familiar with the OpenAPI specification, I’m sure you already found lots of similarities. But, what’s this `topics` section in the file? And what’s this `event.{streetlightId}.lighting.measured`? Let’s dive into it!
-
-# Core concepts
-
-The AsyncAPI specification assumes two core concepts:
-
-## 1. Messages
-
-Consumer(s) communicate with your API via messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want to trigger a command.
-
-Technically speaking the events and actions will always be sent in the same way. These are just messages, and their content can be anything. So when we talk about the difference between events and actions, this is only a semantic differentiation of message’s content. We do not enforce you to make any difference between them, although we encourage you to do it.
-
-A message can contain headers and a payload. However, both are optional. The specification allows you to define any header, to remain as much protocol-agnostic as possible.
-
-## 2. Topics
-
-Message-driven protocols usually contain something called topic ([MQTT](http://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.
-
-There’s no standard way of naming topics, so we recommend you to **[have a look at our proposal here](https://github.com/asyncapi/topic-definition)**.
+{{<start-menu>}}

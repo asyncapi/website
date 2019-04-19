@@ -1,0 +1,80 @@
+<div class="start-menu">
+    <div class="start-menu__steps">
+        <div class="start-menu__steps__step">
+            1
+        </div>
+        <div class="start-menu__steps__step">
+            2
+        </div>
+        <div class="start-menu__steps__step">
+            3
+        </div>
+    </div>
+    <div class="start-menu__steps-content">
+        <div class="start-menu__steps-content__step">
+            <span class="start-menu__steps-content__step__question">Have you heard about event-driven architectures before?</span>
+
+            <select name="startMenuEda" id="startMenuEda" style="margin-top: 20px;">
+                <option disabled selected value> -- Select an option -- </option>
+                <option value="newbie">No, it's the first time.</option>
+                <option value="theory">Yes, but I've never put it in practice.</option>
+                <option value="pro">Yes, and I've already put it in practice.</option>
+            </select>
+        </div>
+        <div id="startMenuSpecsStep" class="start-menu__steps-content__step" style="visibility: hidden;">
+            <span class="start-menu__steps-content__step__question">Have you used an API specification before? e.g., OpenAPI (Swagger), RAML, WSDL, etc.</span>
+
+            <select name="startMenuSpecs" id="startMenuSpecs" style="margin-top: 20px;">
+                <option disabled selected value> -- Select an option -- </option>
+                <option value="newbie">I don't know what an API specification is.</option>
+                <option value="theory">No, but I know what an API specification is.</option>
+                <option value="pro">Yes, I've used an API specification before.</option>
+            </select>
+        </div>
+        <div id="startMenuJsStep" class="start-menu__steps-content__step" style="visibility: hidden;">
+            <span class="start-menu__steps-content__step__question">Are you familiar with JSON Schema?</span>
+            
+            <select name="startMenuJS" id="startMenuJS" style="margin-top: 20px;">
+                <option disabled selected value> -- Select an option -- </option>
+                <option value="newbie">I don't know what's JSON Schema.</option>
+                <option value="theory">No, but I know what JSON Schema is.</option>
+                <option value="pro">Yes, I've used JSON Schema before.</option>
+            </select>
+        </div>
+    </div>
+
+    <div style="text-align: center;padding: 20px;">
+        <a id="startMenuButton" class="button primary-btn" style="opacity: .3;" disabled="true">Let's get started</a>
+    </div>
+</div>
+
+<script>
+window.addEventListener('load', function () {
+    var $startMenuEda = $('#startMenuEda');
+    var $startMenuSpecs = $('#startMenuSpecs');
+    var $startMenuSpecsStep = $('#startMenuSpecsStep');
+    var $startMenuJS = $('#startMenuJS');
+    var $startMenuJsStep = $('#startMenuJsStep');
+    var $startMenuButton = $('#startMenuButton');
+
+    function maybeShowLink() {
+        if ($startMenuEda.val() && $startMenuSpecs.val() && $startMenuJS.val()) {
+            $startMenuButton.css('opacity', 1).attr('disabled', false);
+        }
+    }
+
+    $startMenuEda.on('change', function (ev) {
+        $startMenuSpecsStep.css('visibility', 'visible');
+        maybeShowLink();
+    });
+    
+    $startMenuSpecs.on('change', function (ev) {
+        $startMenuJsStep.css('visibility', 'visible');
+        maybeShowLink();
+    });
+    
+    $startMenuJS.on('change', function (ev) {
+        maybeShowLink();
+    });
+});
+</script>

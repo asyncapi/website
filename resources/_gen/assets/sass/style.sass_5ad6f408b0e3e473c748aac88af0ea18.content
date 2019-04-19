@@ -7063,7 +7063,8 @@ button:focus, button:active {
   .docs-content h1 {
     font-size: 1.9rem; }
   .docs-content h2 {
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    font-weight: 300; }
   .docs-content h3 {
     font-size: 1.5rem;
     color: #66676b; }
@@ -7418,5 +7419,45 @@ button:focus, button:active {
           height: 40px !important;
           object-fit: cover;
           margin-left: 14px; }
+
+.start-menu {
+  margin-top: 40px; }
+  .start-menu .start-menu__steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative; }
+    .start-menu .start-menu__steps::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      height: 0;
+      width: 100%;
+      border-bottom: #ccc 1px solid;
+      z-index: -1; }
+    .start-menu .start-menu__steps .start-menu__steps__step {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border: #ccc 1px solid;
+      border-radius: 100%;
+      text-align: center;
+      vertical-align: middle;
+      background-color: white; }
+  .start-menu .start-menu__steps-content {
+    display: flex;
+    justify-content: space-between;
+    position: relative; }
+    .start-menu .start-menu__steps-content .start-menu__steps-content__step {
+      width: 33%;
+      padding: 20px;
+      border-right: #eee 1px solid;
+      color: #444;
+      font-size: 14px;
+      text-align: center; }
+      .start-menu .start-menu__steps-content .start-menu__steps-content__step:last-child {
+        border-right: none; }
+      .start-menu .start-menu__steps-content .start-menu__steps-content__step .start-menu__steps-content__step__question {
+        display: inline-block;
+        height: 5em; }
 
 /*# sourceMappingURL=style.css.map */
