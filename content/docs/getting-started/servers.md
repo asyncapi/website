@@ -55,4 +55,6 @@ The "servers" section defines where your application should connect to start sen
 
 Now we know where our application connects to and can start receiving "hello {name}" messages.
 
-Go to the next chapter and [learn how to create a publisher](/docs/getting-started/publishing).
+On the next chapter, you'll learn how to create a publisher.
+
+{{%next-chapter url="/docs/getting-started/publishing"%}}

@@ -124,4 +124,6 @@ The 'payload' object defines how the message must be structured. In this example
 
 We've seen how to define our simple Hello World app but, **how do we send a message to our Hello World application?**
 
-Go to the next chapter to [learn about the `servers` property](/docs/getting-started/servers).
+On the next chapter, you'll learn about the `servers` property.
+
+{{%next-chapter url="/docs/getting-started/servers"%}}

@@ -151,4 +151,6 @@ As we did with messages in the previous chapter, we moved the definition of the 
 
 Schema reusability is possible inside the same document and across multiple ones too. Move schema definitions to the components section and then use "$ref" to point to them wherever you need them.
 
-Go to the next chapter and [learn how to add security to our API](/docs/getting-started/security).
+On the next chapter, you'll learn how to add security to your API.
+
+{{%next-chapter url="/docs/getting-started/security"%}}

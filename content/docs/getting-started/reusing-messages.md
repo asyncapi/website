@@ -104,4 +104,6 @@ We made the subscriber message definition point to the one on the publisher. Thi
 
 Message reusability is possible inside the same document and across multiple ones. Move definitions to the components section and then use "$ref" to point to them wherever you need them.
 
-Go to the next chapter and [learn how to reuse schemas](/docs/getting-started/reusing-schemas).
+On the next chapter, you'll learn how to reuse schemas.
+
+{{%next-chapter url="/docs/getting-started/reusing-schemas"%}}

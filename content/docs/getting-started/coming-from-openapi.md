@@ -7,6 +7,11 @@ menu:
 weight: 20
 ---
 
+{{% notice %}}
+This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We're working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+{{% /notice %}}
+
 If you're coming from OpenAPI, you must know that AsyncAPI [started as an adaptation of the OpenAPI specification](https://medium.com/asyncapi/whats-new-on-asyncapi-lots-2d9019a1869d). We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
 
 You'll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
