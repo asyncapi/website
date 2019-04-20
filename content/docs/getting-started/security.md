@@ -1,7 +1,6 @@
 ---
 title: "Adding security"
 date: 2019-04-16T10:56:52+01:00
-draft: true
 menu:
   docs:
     parent: 'getting-started'
@@ -84,4 +83,6 @@ There are many more security schemes. Learn more about them {{%link "/docs/speci
 
 We're now able to define what security mechanisms our application needs to connect to the server. We've seen how to define the requirement of a user and a password, which is the most common use case.
 
-At this point, you know AsyncAPI well enough to create a simple hello world application. However, real use cases are more complicated than that. Go to the [Tutorials page](/docs/tutorials) and learn how to create real world use cases, from zero to production.
+At this point, you know AsyncAPI well enough to create a simple hello world application. However, real use cases are more complicated than that. Our tutorials can teach you how to create real world use cases, from zero to production.
+
+{{%next-chapter url="/docs/tutorials" text="Go to the tutorials page"%}}
