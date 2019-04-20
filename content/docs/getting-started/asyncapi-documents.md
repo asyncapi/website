@@ -23,17 +23,18 @@ channels:
     subscribe:
       message:
         description: An event describing that a user just signed up.
-        additionalProperties: false
         payload:
           type: object
+          additionalProperties: false
           properties:
-            username:
-              type: string
             fullName:
               type: string
             email:
               type: string
               format: email
+            age:
+              type: integer
+              minimum: 18
 {{</code>}}
 
 The AsyncAPI document is a machine-readable definition of your event-driven API. This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.
