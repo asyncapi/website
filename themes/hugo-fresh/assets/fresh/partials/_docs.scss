@@ -198,7 +198,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         );
     }
 
-    .important {
+    > .important {
         background-color: #46a2c7;
         padding: 1em;
         color: white;
@@ -219,7 +219,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
-    .notice {
+    > .notice {
         background-color: #e48f24;
         padding: 1em;
         color: white;
@@ -240,7 +240,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
-    .hint {
+    > .hint {
         display: flex;
         margin-top: 2em;
         margin-bottom: 2em;
@@ -303,6 +303,12 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
                 display: inline-block;
                 height: 7em;
             }
+        }
+    }
+
+    .button--next-chapter {
+        i {
+            margin-left: 20px;
         }
     }
 }

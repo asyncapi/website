@@ -7138,45 +7138,45 @@ button:focus, button:active {
     text-shadow: none; }
   .docs-content .line-highlight {
     background: linear-gradient(to right, rgba(126, 192, 196, 0.2) 70%, rgba(126, 192, 196, 0)); }
-  .docs-content .important {
+  .docs-content > .important {
     background-color: #46a2c7;
     padding: 1em;
     color: white; }
-    .docs-content .important .important__header {
+    .docs-content > .important .important__header {
       padding-bottom: .5em;
       border-bottom: #56afd2 1px solid;
       margin-bottom: 1em; }
-      .docs-content .important .important__header .important__header__icon {
+      .docs-content > .important .important__header .important__header__icon {
         margin-right: .5em; }
-    .docs-content .important .important__body a {
+    .docs-content > .important .important__body a {
       color: white;
       text-decoration: underline; }
-  .docs-content .notice {
+  .docs-content > .notice {
     background-color: #e48f24;
     padding: 1em;
     color: white; }
-    .docs-content .notice .notice__header {
+    .docs-content > .notice .notice__header {
       padding-bottom: .5em;
       border-bottom: #eaa653 1px solid;
       margin-bottom: 1em; }
-      .docs-content .notice .notice__header .notice__header__icon {
+      .docs-content > .notice .notice__header .notice__header__icon {
         margin-right: .5em; }
-    .docs-content .notice .notice__body a {
+    .docs-content > .notice .notice__body a {
       color: white;
       text-decoration: underline; }
-  .docs-content .hint {
+  .docs-content > .hint {
     display: flex;
     margin-top: 2em;
     margin-bottom: 2em; }
-    .docs-content .hint .hint__icon-wrapper {
+    .docs-content > .hint .hint__icon-wrapper {
       padding: 1em 1em 1em 0;
       border-right: #46a2c7 2px solid;
       margin-right: 1em;
       align-self: center; }
-      .docs-content .hint .hint__icon-wrapper .hint__icon-wrapper__icon {
+      .docs-content > .hint .hint__icon-wrapper .hint__icon-wrapper__icon {
         color: #46a2c7;
         font-size: 2em; }
-    .docs-content .hint .hint__body {
+    .docs-content > .hint .hint__body {
       align-self: center; }
   .docs-content .navigation-options {
     display: flex;
@@ -7208,6 +7208,8 @@ button:focus, button:active {
       .docs-content .navigation-options .navigation-option .navigation-option__text {
         display: inline-block;
         height: 7em; }
+  .docs-content .button--next-chapter i {
+    margin-left: 20px; }
 
 @media only screen and (max-width: 768px) {
   .docs-content .navigation-options {
@@ -7217,11 +7219,6 @@ button:focus, button:active {
       margin: 20px 0; }
       .docs-content .navigation-options .navigation-option .navigation-option__text {
         height: auto; } }
-
-.blog-container {
-  padding: 0 2rem;
-  margin-top: 30px;
-  margin-bottom: 60px; }
 
 .blog-title {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -7241,9 +7238,6 @@ button:focus, button:active {
     margin-left: 3px;
     margin-right: 3px;
     font-size: 13px; }
-
-.blog-authors {
-  display: flex; }
 
 .blog-author {
   display: flex;
@@ -7269,7 +7263,7 @@ button:focus, button:active {
       margin-bottom: 4px;
       font-weight: 500; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   .blog-wrapper {
     width: 740px;
     margin: 0 auto; }
@@ -7466,21 +7460,6 @@ button:focus, button:active {
           height: 40px !important;
           object-fit: cover;
           margin-left: 14px; }
-
-@media only screen and (max-width: 768px) {
-  .blog-container {
-    padding: 0;
-    margin-top: 0; }
-  .blog-list .blog-list__article.blog-list__article--featured .blog-list__article--featured__details .blog-list__article--featured__details__title {
-    width: 100%;
-    font-size: 30px; }
-  .blog-authors {
-    display: block; }
-    .blog-authors .blog-author {
-      display: block;
-      text-align: center; }
-      .blog-authors .blog-author .blog-author__info {
-        margin: 20px 0 0 0; } }
 
 .start-menu {
   margin-top: 40px; }
