@@ -67,7 +67,7 @@ We've seen what an event-driven architecture is, how it works, and what are thei
 {{%navigation-option url="/docs/getting-started/coming-from-openapi/" style="cyan"%}}
 Learn how AsyncAPI compares to OpenAPI (fka Swagger).
 {{%/navigation-option%}}
-{{%navigation-option url="/docs/getting-started/basics-of-specification/" style="purple"%}}
+{{%navigation-option url="/docs/getting-started/asyncapi-documents/" style="purple"%}}
 Learn the basics of the AsyncAPI specification.
 {{%/navigation-option%}}
 {{</navigation-options>}}
