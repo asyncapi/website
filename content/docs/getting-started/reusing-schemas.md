@@ -1,7 +1,6 @@
 ---
 title: "Reusing schemas"
 date: 2019-04-15T10:56:52+01:00
-draft: true
 menu:
   docs:
     parent: 'getting-started'

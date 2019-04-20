@@ -1,7 +1,6 @@
 ---
 title: "Coming from OpenAPI"
 date: 2019-04-01T10:56:52+01:00
-draft: true
 menu:
   docs:
     parent: 'getting-started'

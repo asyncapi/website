@@ -1,7 +1,6 @@
 ---
 title: "Publishing"
 date: 2019-04-13T10:56:52+01:00
-draft: true
 menu:
   docs:
     parent: 'getting-started'
