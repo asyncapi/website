@@ -1,7 +1,6 @@
 ---
 title: "Publishing"
 date: 2019-04-13T10:56:52+01:00
-draft: true
 menu:
   docs:
     parent: 'getting-started'
@@ -50,4 +49,6 @@ You probably have noticed that the only difference between this AsyncAPI definit
 
 From the AsyncAPI perspective, the differences between publishers and subscribers are very subtle. This level of expressiveness makes AsyncAPI documents highly explicit and self-documenting. However, it comes at the cost of duplicating a lot of information.
 
-Go to the next chapter and [learn how to reuse messages](/docs/getting-started/reusing-messages) and avoid duplication.
+On the next chapter, you'll learn how to reuse messages and avoid duplication.
+
+{{%next-chapter url="/docs/getting-started/reusing-messages"%}}

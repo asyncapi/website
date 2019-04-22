@@ -84,6 +84,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
     
     h2 {
         font-size: 1.6rem;
+        font-weight: 300;
     }
     
     h3 {
@@ -197,7 +198,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         );
     }
 
-    .important {
+    > .important {
         background-color: #46a2c7;
         padding: 1em;
         color: white;
@@ -218,7 +219,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
-    .notice {
+    > .notice {
         background-color: #e48f24;
         padding: 1em;
         color: white;
@@ -239,7 +240,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
-    .hint {
+    > .hint {
         display: flex;
         margin-top: 2em;
         margin-bottom: 2em;
@@ -261,4 +262,189 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
         }
     }
 
+    .navigation-options {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        .navigation-option {
+            flex-grow: 1;
+            flex-basis: 0;
+            box-sizing: border-box;
+            margin-right: 10px;
+            border: #666 2px solid;
+            padding: 20px;
+            text-align: center;
+            color: black;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.navigation-option--style-green {
+                border-color: #559455;
+                background-color: #7ac17a;
+                color: white;
+            }
+
+            &.navigation-option--style-cyan {
+                border-color: #569595;
+                background-color: #7bc1c1;
+                color: white;
+            }
+
+            &.navigation-option--style-purple {
+                border-color: #575695;
+                background-color: #7c7bc1;
+                color: white;
+            }
+
+            .navigation-option__text {
+                display: inline-block;
+                height: 7em;
+            }
+        }
+    }
+
+    .button--next-chapter {
+        i {
+            margin-left: 20px;
+        }
+    }
+
+    .openapi-comparison {
+        margin: 40px 0;
+        
+        h2.openapi-comparison__title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+
+        .openapi-comparison__content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 1;
+
+            .openapi-comparison__block {
+                flex-grow: 1;
+                flex-basis: 0;
+                border: black 1px solid;
+                box-sizing: border-box;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .openapi-comparison__block__title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+
+                .openapi-comparison__block__content {
+                    .openapi-comparison__block {
+                        font-size: 14px;
+                        margin: 10px;
+                        padding: 15px;
+
+                        &.openapi-comparison__block--medium-height {
+                            padding-top: 30px;
+                            padding-bottom: 30px;
+                        }
+                        
+                        &.openapi-comparison__block--big-height {
+                            padding-top: 60px;
+                            padding-bottom: 60px;
+                        }
+                        
+                        &.openapi-comparison__block--id {
+                            background-color: #94d5f9;
+                        }
+                        
+                        &.openapi-comparison__block--info {
+                            background-color: #caefef;
+                        }
+                        
+                        &.openapi-comparison__block--hosts {
+                            background-color: #e2efd9;
+                        }
+                        
+                        &.openapi-comparison__block--security {
+                            background-color: #cdd2d8;
+                        }
+                        
+                        &.openapi-comparison__block--paths {
+                            background-color: #ffe698;
+                        }
+                        
+                        &.openapi-comparison__block--path-item {
+                            background-color: #ffd966;
+                        }
+                        
+                        &.openapi-comparison__block--annotations {
+                            background-color: #9dc2e5;
+                        }
+                        
+                        &.openapi-comparison__block--operation {
+                            background-color: #f3b183;
+                        }
+                        
+                        &.openapi-comparison__block--reqres {
+                            background-color: #a25353;
+                            color: white;
+                        }
+                        
+                        &.openapi-comparison__block--headers {
+                            background-color: #ca7474;
+                            color: white;
+                        }
+                        
+                        &.openapi-comparison__block--payload {
+                            background-color: #ca7474;
+                            color: white;
+                        }
+                        
+                        &.openapi-comparison__block--tags {
+                            background-color: #dbbdfb;
+                        }
+                        
+                        &.openapi-comparison__block--external-docs {
+                            background-color: #51ca92;
+                        }
+                        
+                        &.openapi-comparison__block--components {
+                            background-color: #e7e6e6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .docs-content {
+        .navigation-options {
+            display: block;
+
+            .navigation-option {
+                display: block;
+                margin: 20px 0;
+
+                .navigation-option__text {
+                    height: auto;
+                }
+            }
+        }
+
+        .openapi-comparison {
+            > .openapi-comparison__content > .openapi-comparison__block {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
