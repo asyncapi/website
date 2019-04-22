@@ -6,29 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API." />
 
 
 
 
 
-<meta itemprop="name" content="Categories | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Event-driven architectures | AsyncAPI Initiative">
+<meta itemprop="description" content="All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Categories | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Event-driven architectures | AsyncAPI Initiative">
+<meta name="twitter:description" content="All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
-<meta property="og:title" content="Categories | AsyncAPI Initiative" />
+<meta property="og:title" content="Event-driven architectures | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/categories/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/event-driven-architectures/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Categories | AsyncAPI Initiative</title>
+<meta property="og:description" content="All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API." />
+    <title>Event-driven architectures | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -151,11 +151,9 @@
         <ul class="sub-menu">
             
                 
-                <li>
-                    <a href="/docs/getting-started/event-driven-architectures/">
-                        
-                        <span>Event-driven architectures</span>
-                    </a>
+                <li class="active">
+                    
+                    <span>Event-driven architectures</span>
                 </li>
                 
             
@@ -311,31 +309,106 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Categories</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/categories/getting-started/">Getting Started</a>
-                        
-                        
-                        <a href="/categories/specifications/">Specifications</a>
-                        
-                        
-                        <a href="/categories/tutorials/">Tutorials</a>
-                        
-                        
-                    </div>
-                </div>
-            
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">Event-driven architectures</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content">
+
+<p>All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. <strong>The web is the greatest implementation of a REST API.</strong></p>
+
+<p>However, there are certain situations when you don&rsquo;t really need a response from the server. At least no other than the confirmation the request has been received. This is also called <em>&ldquo;fire and forget&rdquo;</em>, and it&rsquo;s really useful when you just want to communicate or inform that &ldquo;something happened.&rdquo; It is, you&rsquo;re not requesting or asking for anything, thus you don&rsquo;t need a response.  Examples of this are:</p>
+
+<ul>
+<li>A user just signed up.</li>
+<li>You have a new follower.</li>
+<li>Your fridge is getting empty.</li>
+</ul>
+
+<p>Along with the event, you may also want to send <em>extra information</em>. For instance:</p>
+
+<ul>
+<li>A user just signed up: here&rsquo;s the user information (e.g., name, email, age, etc.)</li>
+<li>You have a new follower: here are the details of the follower (e.g., username, name, picture, etc.)</li>
+<li>Your fridge is getting empty: here&rsquo;s the percentage of &ldquo;emptiness&rdquo; (e.g., 23%)</li>
+</ul>
+
+<p>This extra information is often referred to as <em>event payload</em> or <em>message payload</em>.</p>
+
+<h2 id="core-concepts">Core concepts<a href="#core-concepts" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p><img src="/images/diagrams/simple-event-driven.png" alt="" /></p>
+
+<p>In most cases, Event-Driven Architectures (EDAs) are broker-centric, like in the diagram above. In it you can find some new concepts, so let&rsquo;s go through them now.</p>
+
+<h3 id="message-broker">Message broker<a href="#message-broker" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h3>
+
+<p>A message broker (or <em>&ldquo;broker&rdquo;</em>) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, what makes EDAs very resilient to failures. Examples of brokers are <a href="https://rabbitmq.com" target="_blank">RabbitMQ</a>, <a href="http://kafka.apache.org/" target="_blank">Apache Kafka</a>, <a href="http://solace.com" target="_blank">Solace</a>, etc.</p>
+
+<h3 id="publisher-subscriber">Publisher/Subscriber<a href="#publisher-subscriber" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h3>
+
+<p>A publisher (a.k.a. <em>producer</em>) is an application that sends messages to the <em>broker</em>.</p>
+
+<p>A subscriber (a.k.a. <em>consumer</em>) is an application that connects to the <em>broker</em>, manifests interest in certain type of messages, and leaves the connection open so the <em>broker</em> can push messages to them.</p>
+
+<h3 id="message">Message<a href="#message" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h3>
+
+<p>A message is a piece of information that&rsquo;s sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything but they are frequently catalogued as <em>events</em> and <em>commands</em>. As we saw above, <em>events</em> communicate a fact that occurred. Instead, <em>commands</em> are very much like <em>requests</em> in REST APIs: they tell the subscribers &ldquo;do this&rdquo;.</p>
+
+<p><strong>Technically speaking, <em>events</em> and <em>commands</em> are the same. The only difference is in their semantics.</strong></p>
+
+<h3 id="channels">Channels<a href="#channels" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h3>
+
+<p>One detail that might pass unnoticed from the diagram above is the existence of <em>channels</em>. All the <em>brokers</em> support communication through multiple channels. The industry doesn&rsquo;t have a common term though so you may find them as <em>topics</em>, <em>routing keys</em>, <em>event types</em>, and probably other ones I&rsquo;m missing.</p>
+
+<p>They&rsquo;re usually assigned a name or identifier (e.g., <code>user_signed_up</code>) and it&rsquo;s often a good practice to send a single type of message through them. Think about TV or radio channels: the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn&rsquo;t respect that rule you (the subscriber) would only see and hear interferences.</p>
+
+<h2 id="why-event-driven-and-not-message-driven">Why &ldquo;event-driven&rdquo; and not &ldquo;message-driven&rdquo;?<a href="#why-event-driven-and-not-message-driven" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>You will find both used interchangeably, although they are not exactly the same. You will even find <em>&ldquo;message-based&rdquo;</em> and <em>&ldquo;event-based&rdquo;</em>. In practice, chances are they all refer to the same thing.</p>
+
+<p>Theoretically, <em>&ldquo;message-driven&rdquo;</em> is the most generic term, meaning you may use events and commands, while <em>event-driven</em> means that it&rsquo;s purely about events. However, that&rsquo;s not always the case, as Martin Fowler explains in his talk <em>&ldquo;the many meanings of event-driven architecture&rdquo;</em>:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/STKCRSUsyP0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>We&rsquo;ve seen what an event-driven architecture is, how it works, and what are their components. AsyncAPI is all about defining and documenting each of these components. We&rsquo;ll go through it during the rest of this guide but, before we continue, please choose what&rsquo;s your next step:</p>
+
+<div class="navigation-options">
+
+<a href="/docs/getting-started/coming-from-openapi/" class="navigation-option navigation-option--style-cyan">
+    <span class="navigation-option__text">
+        <p>Learn how AsyncAPI compares to OpenAPI (fka Swagger).</p>
+
+    </span>
+
+    <i class="fa fa-arrow-right"></i>
+</a>
+
+<a href="/docs/getting-started/asyncapi-documents/" class="navigation-option navigation-option--style-purple">
+    <span class="navigation-option__text">
+        <p>Learn the basics of the AsyncAPI specification.</p>
+
+    </span>
+
+    <i class="fa fa-arrow-right"></i>
+</a>
+
+
+</div>
+
+</div>
+</div>
         </div>
     </div>
 </div>
-
 
 <footer class="footer footer-dark">
   <div class="container">

@@ -17,8 +17,8 @@
       <pubDate>Sat, 16 Feb 2019 13:56:52 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/docs/getting-started/</guid>
-      <description>AsyncAPI provides a specification that allows you to define Message-Driven APIs in a machine-readable format. It’s protocol-agnostic, so you can use it for APIs that work over Kafka, MQTT, AMQP, WebSockets, STOMP, etc. The spec is very similar to OpenAPI/Swagger so, if you’re familiar with it, AsyncAPI should be easy for you.
-A basic example The following example describes a very simple streetlights service. It describes a service you can connect at api.</description>
+      <description>AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDA&amp;rsquo;s as easy as it is to work with REST APIs. That goes from documentation to code generation, from discovery to event management. Most of the processes we apply to our REST APIs nowadays would be applicable to our event-driven/asynchronous APIs too.
+To make this happen, the first step has been to create a specification that allows developers, architects, and product managers to define the interfaces of an async API.</description>
     </item>
     
   </channel>

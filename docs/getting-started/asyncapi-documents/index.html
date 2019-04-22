@@ -6,29 +6,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.
+The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed." />
 
 
 
 
 
-<meta itemprop="name" content="Categories | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="AsyncAPI documents | AsyncAPI Initiative">
+<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.
+The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Categories | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="AsyncAPI documents | AsyncAPI Initiative">
+<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.
+The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
-<meta property="og:title" content="Categories | AsyncAPI Initiative" />
+<meta property="og:title" content="AsyncAPI documents | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/categories/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/asyncapi-documents/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Categories | AsyncAPI Initiative</title>
+<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.
+The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed." />
+    <title>AsyncAPI documents | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -169,11 +177,9 @@
                 
             
                 
-                <li>
-                    <a href="/docs/getting-started/asyncapi-documents/">
-                        
-                        <span>AsyncAPI documents</span>
-                    </a>
+                <li class="active">
+                    
+                    <span>AsyncAPI documents</span>
                 </li>
                 
             
@@ -311,31 +317,73 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Categories</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/categories/getting-started/">Getting Started</a>
-                        
-                        
-                        <a href="/categories/specifications/">Specifications</a>
-                        
-                        
-                        <a href="/categories/tutorials/">Tutorials</a>
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">AsyncAPI documents</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content"><div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
+        
+            Notice
+        
+    </div>
+    <div class="notice__body">
+        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
+
     </div>
 </div>
 
+<p>An AsyncAPI document is a file that defines and annotates the different components of <strong>a specific Event-Driven API</strong>.</p>
+
+<p>The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed.</p>
+
+<pre class="language-yaml line-numbers" data-line=""><code>asyncapi: &#39;2.0.0&#39;
+id: &#39;urn:com.my-application.example&#39;
+info:
+  title: Example
+  version: 0.1.0
+channels:
+  user/signedup:
+    subscribe:
+      message:
+        description: An event describing that a user just signed up.
+        payload:
+          type: object
+          additionalProperties: false
+          properties:
+            fullName:
+              type: string
+            email:
+              type: string
+              format: email
+            age:
+              type: integer
+              minimum: 18</code></pre>
+
+<p>The AsyncAPI document is a machine-readable definition of your event-driven API. This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.</p>
+
+<p>Your API documentation is now machine-readable –easily parseable by code— so the myriad of useful applications is endless.</p>
+
+<p>Enough speaking, let&rsquo;s get our hands dirty with some examples. Learn how to create an AsyncAPI document defining a &ldquo;Hello world&rdquo; application.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/getting-started/hello-world" class="button primary-btn cta button--next-chapter">
+        
+            Go to the next chapter
+        
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+
+</div>
+</div>
+        </div>
+    </div>
+</div>
 
 <footer class="footer footer-dark">
   <div class="container">

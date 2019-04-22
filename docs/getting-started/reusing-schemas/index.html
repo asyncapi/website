@@ -6,29 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  To illustrate how schema reusability works on AsyncAPI, we&rsquo;re going to enhance the Hello world publisher application to make it, say, a bit less &ldquo;hello world&rdquo;:" />
 
 
 
 
 
-<meta itemprop="name" content="Categories | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Reusing schemas | AsyncAPI Initiative">
+<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  To illustrate how schema reusability works on AsyncAPI, we&rsquo;re going to enhance the Hello world publisher application to make it, say, a bit less &ldquo;hello world&rdquo;:">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Categories | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Reusing schemas | AsyncAPI Initiative">
+<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  To illustrate how schema reusability works on AsyncAPI, we&rsquo;re going to enhance the Hello world publisher application to make it, say, a bit less &ldquo;hello world&rdquo;:">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
-<meta property="og:title" content="Categories | AsyncAPI Initiative" />
+<meta property="og:title" content="Reusing schemas | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/categories/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/reusing-schemas/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Categories | AsyncAPI Initiative</title>
+<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  To illustrate how schema reusability works on AsyncAPI, we&rsquo;re going to enhance the Hello world publisher application to make it, say, a bit less &ldquo;hello world&rdquo;:" />
+    <title>Reusing schemas | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -214,11 +218,9 @@
                 
             
                 
-                <li>
-                    <a href="/docs/getting-started/reusing-schemas/">
-                        
-                        <span>Reusing schemas</span>
-                    </a>
+                <li class="active">
+                    
+                    <span>Reusing schemas</span>
                 </li>
                 
             
@@ -311,31 +313,181 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Categories</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/categories/getting-started/">Getting Started</a>
-                        
-                        
-                        <a href="/categories/specifications/">Specifications</a>
-                        
-                        
-                        <a href="/categories/tutorials/">Tutorials</a>
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">Reusing schemas</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content">
+
+<div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
+        
+            Notice
+        
+    </div>
+    <div class="notice__body">
+        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
+
     </div>
 </div>
 
+<p>To illustrate how schema reusability works on AsyncAPI, we&rsquo;re going to enhance the <a href="/docs/getting-started/publishing">Hello world publisher application</a> to make it, say, a bit less &ldquo;hello world&rdquo;:</p>
+
+<pre class="language-yaml line-numbers" data-line="19-26"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-publisher&#39;
+info:
+  title: Hello world publisher application
+  version: &#39;0.1.0&#39;
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+channels:
+  hello:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/hello-msg&#39;
+components:
+  messages:
+    hello-msg:
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+          sentAt:
+            type: string
+            description: The date and time a message was sent.
+            format: datetime</code></pre>
+
+<p>The payload is now a JSON object instead of a raw string. This object must contain the properties &ldquo;name&rdquo; and &ldquo;sentAt&rdquo;. We&rsquo;ll use the name to know who we have to say hello to, and &ldquo;sentAt&rdquo; to register the date and time our application sent the message. An example of a valid object would be:</p>
+
+<pre class="language-json line-numbers" data-line=""><code>{
+  &#34;name&#34;: &#34;Jess&#34;,
+  &#34;sentAt&#34;: &#34;2018-11-13T20:20:39&#43;00:00&#34;
+}</code></pre>
+
+<div class="hint">
+    <div class="hint__icon-wrapper">
+        <i class="hint__icon-wrapper__icon fa fa-question-circle"></i>
+    </div>
+    <div class="hint__body">
+        <p>Are you new to JSON Schema? Check out their guide <a href="https://json-schema.org/understanding-json-schema/basics.html" target="_blank">Understanding JSON Schema</a>.</p>
+
+    </div>
+</div>
+
+<p>We updated our publisher to send a JSON object. Since the subscriber application is pointing to this definition, there&rsquo;s no need to change it on the subscriber side. Reusability at its best.</p>
+
+<p>However, it looks like the <code>sentAt</code> property is going to appear on every message. To keep it simple, we only have a message (hello-msg) but in real-world environment you&rsquo;ll have more than one and most probably across different channels too. Say, for instance, we want to add a &ldquo;goodbye&rdquo; message:</p>
+
+<pre class="language-yaml line-numbers" data-line="15-18,31-38"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-publisher&#39;
+info:
+  title: Hello world publisher application
+  version: &#39;0.1.0&#39;
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+channels:
+  hello:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/hello-msg&#39;
+  goodbye:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/goodbye-msg&#39;
+components:
+  messages:
+    hello-msg:
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+          sentAt:
+            type: string
+            description: The date and time a message was sent.
+            format: datetime
+    goodbye-msg:
+      payload:
+        type: object
+        properties:
+          sentAt:
+            type: string
+            description: The date and time a message was sent.
+            format: datetime</code></pre>
+
+<p>As you can see, the definition is almost the same as the one for <code>hello-msg</code>. The only difference is that the <code>goodbye-msg</code> message doesn&rsquo;t have a &ldquo;name&rdquo; property. However, it the definition of <code>sentAt</code> is repeated, so let&rsquo;s reuse this schema:</p>
+
+<pre class="language-yaml line-numbers" data-line="28,34,35-39"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-publisher&#39;
+info:
+  title: Hello world publisher application
+  version: &#39;0.1.0&#39;
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+channels:
+  hello:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/hello-msg&#39;
+  goodbye:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/goodbye-msg&#39;
+components:
+  messages:
+    hello-msg:
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+          sentAt:
+            $ref: &#39;#/components/schemas/sent-at&#39;
+    goodbye-msg:
+      payload:
+        type: object
+        properties:
+          sentAt:
+            $ref: &#39;#/components/schemas/sent-at&#39;
+  schemas:
+    sent-at:
+      type: string
+      description: The date and time a message was sent.
+      format: datetime</code></pre>
+
+<p>As we did with messages in the previous chapter, we moved the definition of the <code>sentAt</code> property to components &gt; schemas &gt; sent-at, and referenced it from the <code>hello-msg</code> and <code>goodbye-msg</code> messages.</p>
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Schema reusability is possible inside the same document and across multiple ones too. Move schema definitions to the components section and then use &ldquo;$ref&rdquo; to point to them wherever you need them.</p>
+
+<p>On the next chapter, you&rsquo;ll learn how to add security to your API.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/getting-started/security" class="button primary-btn cta button--next-chapter">
+        
+            Go to the next chapter
+        
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+
+</div>
+</div>
+        </div>
+    </div>
+</div>
 
 <footer class="footer footer-dark">
   <div class="container">

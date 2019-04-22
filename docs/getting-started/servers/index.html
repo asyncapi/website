@@ -6,39 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
-asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance." />
+<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document." />
+
+
+
 
 
 <meta itemprop="name" content="Servers | AsyncAPI Initiative">
-<meta itemprop="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
-asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance.">
+<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:title" content="Servers | AsyncAPI Initiative">
-<meta name="twitter:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
-asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance.">
+<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
-
 
 
 <meta property="og:title" content="Servers | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/servers/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
-asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.com protocol: kafka description: This is &#34;My Company&#34; Kafka instance." />
+<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document." />
     <title>Servers | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.a90f1f060263090f3e344295035368fd140a6bed3881c5306fd6385a83b90f1a.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.c3608eb94b7beafe1770b53573458965eb0fa30c317a114b20857abb63917b4c.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
@@ -47,11 +49,6 @@ asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.co
 </head>
 
 <body>
-    
-    <div id="preloader">
-        <div id="status"></div>
-    </div>
-
     
 
 <nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
@@ -110,20 +107,9 @@ asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.co
               </a>
             </div>
           </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              News
-            </a>
-
-            <div class="navbar-dropdown">
-              <a href="https://medium.com/asyncapi" class="navbar-item" target="_blank">
-                Blog
-              </a>
-              <a href="https://twitter.com/AsyncAPISpec" class="navbar-item" target="_blank">
-                Twitter
-              </a>
-            </div>
-          </div>
+          <a href="/blog" class="navbar-item is-secondary">
+            Blog
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Help
@@ -174,6 +160,33 @@ asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.co
             
                 
                 <li>
+                    <a href="/docs/getting-started/event-driven-architectures/">
+                        
+                        <span>Event-driven architectures</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/coming-from-openapi/">
+                        
+                        <span>Coming from OpenAPI</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/asyncapi-documents/">
+                        
+                        <span>AsyncAPI documents</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
                     <a href="/docs/getting-started/hello-world/">
                         
                         <span>Hello world</span>
@@ -185,6 +198,42 @@ asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.co
                 <li class="active">
                     
                     <span>Servers</span>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/publishing/">
+                        
+                        <span>Publishing</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/reusing-messages/">
+                        
+                        <span>Reusing messages</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/reusing-schemas/">
+                        
+                        <span>Reusing schemas</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/security/">
+                        
+                        <span>Adding security</span>
+                    </a>
                 </li>
                 
             
@@ -276,12 +325,29 @@ asyncapi: &#39;2.0.0&#39; id: hello-world-app servers: - url: kafka.mycompany.co
 <div class="columns">
     <div class="column is-11 docs-content">
 
+<div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
+        
+            Notice
+        
+    </div>
+    <div class="notice__body">
+        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
+
+    </div>
+</div>
+
 <p>In the previous lesson, we learned how to create the definition of a simple <a href="/docs/getting-started/hello-world">Hello World application</a>, so let&rsquo;s take it from there.</p>
 
 <p>In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.</p>
 
-<pre class="language-yaml line-numbers" data-line="3-6"><code>asyncapi: &#39;2.0.0&#39;
-id: hello-world-app
+<pre class="language-yaml line-numbers" data-line="6-9"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-app&#39;
+info:
+  title: Hello world application
+  version: &#39;0.1.0&#39;
 servers:
   - url: kafka.mycompany.com
     protocol: kafka
@@ -296,16 +362,24 @@ channels:
 
 <p>We added a new section called &ldquo;servers&rdquo; in our AsyncAPI document. Note that the object is an array because we can have multiple servers such as staging, production, and development.</p>
 
-<blockquote>
-<p>Hint: YAML arrays are denoted by a <code>-</code> (dash) symbol.</p>
-</blockquote>
+<div class="hint">
+    <div class="hint__icon-wrapper">
+        <i class="hint__icon-wrapper__icon fa fa-question-circle"></i>
+    </div>
+    <div class="hint__body">
+        <p>YAML arrays are denoted by a <code>-</code> (dash) symbol.</p>
+
+    </div>
+</div>
 
 <p>You might have noticed that the example mentions &ldquo;Kafka&rdquo;. You can use any protocol. For example, the most commons are <code>amqp</code> (known for RabbitMQ), <code>mqtt</code> (widely adopted by the Internet of Things and mobile apps), <code>ws</code> (WebSockets are frequently used in browsers), and <code>http</code> (used in HTTP streaming APIs.)</p>
 
 <div class="important">
     <div class="important__header">
-        <i class="important__header__icon fa fa-exclamation-triangle"></i>
-        Important
+        <i class="important__header__icon fa fa-lightbulb"></i>
+        
+            Remember
+        
     </div>
     <div class="important__body">
         <p>The &ldquo;servers&rdquo; section defines where your application should connect to start sending and receiving messages.</p>
@@ -322,12 +396,70 @@ channels:
 
 <p>Now we know where our application connects to and can start receiving &ldquo;hello {name}&rdquo; messages.</p>
 
-<p>Go to the next chapter and <a href="/docs/getting-started/create-publisher">learn how to create a publisher</a>.</p>
+<p>On the next chapter, you&rsquo;ll learn how to create a publisher.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/getting-started/publishing" class="button primary-btn cta button--next-chapter">
+        
+            Go to the next chapter
+        
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+
 </div>
 </div>
         </div>
     </div>
 </div>
+
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="footer-logo">
+          <img src="/images/logos/logo-footer.png">
+        </div>
+      </div>
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+            <h3>Follow Us</h3>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" href="https://github.com/asyncapi/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                </a>
+                <a class="level-item" href="https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg" target="_blank">
+                  <span class="icon"><i class="fab fa-slack"></i></span>
+                </a>
+                <a class="level-item" href="https://medium.com/asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-medium"></i></span>
+                </a>
+                <a class="level-item" href="https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ" target="_blank">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
+                </a>
+                <a class="level-item" href="https://twitter.com/search?q=asyncapi" target="_blank">
+                  <span class="icon"><i class="fab fa-twitter"></i></span>
+                </a>
+              </div>
+            </nav>
+
+            <h6>Icons & Graphics attributions</h6>
+            <div class="attributions">
+              <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
+                www.freepik.com</a>
+              <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.freepik.com/" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, and <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"
+                  title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                  target="_blank">CC 3.0 BY</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 
     <script>
@@ -345,16 +477,17 @@ channels:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://www.asyncapi.com/js/fresh.js"></script>
-<script src="https://www.asyncapi.com/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 
 <script>
     $('pre code').addClass('line-numbers');
 </script>
+
 
 <script>
   if ('serviceWorker' in navigator) {

@@ -6,29 +6,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates." />
 
 
 
 
 
-<meta itemprop="name" content="Categories | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Adding security | AsyncAPI Initiative">
+<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Categories | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Adding security | AsyncAPI Initiative">
+<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
-<meta property="og:title" content="Categories | AsyncAPI Initiative" />
+<meta property="og:title" content="Adding security | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/categories/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/security/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Categories | AsyncAPI Initiative</title>
+<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates." />
+    <title>Adding security | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -223,11 +231,9 @@
                 
             
                 
-                <li>
-                    <a href="/docs/getting-started/security/">
-                        
-                        <span>Adding security</span>
-                    </a>
+                <li class="active">
+                    
+                    <span>Adding security</span>
                 </li>
                 
             
@@ -311,31 +317,123 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Categories</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/categories/getting-started/">Getting Started</a>
-                        
-                        
-                        <a href="/categories/specifications/">Specifications</a>
-                        
-                        
-                        <a href="/categories/tutorials/">Tutorials</a>
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">Adding security</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content">
+
+<div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
+        
+            Notice
+        
+    </div>
+    <div class="notice__body">
+        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
+
     </div>
 </div>
 
+<p>In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:</p>
+
+<ul>
+<li>User &amp; password</li>
+<li>Certificates</li>
+<li>API keys</li>
+<li>OAuth 2</li>
+</ul>
+
+<p>If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose and they&rsquo;re not exposed to the public. That&rsquo;s why their security mechanisms are also simpler than what we&rsquo;re used to with REST APIs. However, AsyncAPI also helps you define your HTTP streaming APIs and therefore it supports more sophisticated mechanisms like OAuth2 or OpenID.</p>
+
+<p>Continuing with the &ldquo;hello world&rdquo; application example, let&rsquo;s learn how to define a simple security scheme (mechanism) for it.</p>
+
+<pre class="language-yaml line-numbers" data-line="10-11,42-44"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-publisher&#39;
+info:
+  title: Hello world publisher application
+  version: &#39;0.1.0&#39;
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+    security:
+      - user-password: []
+channels:
+  hello:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/hello-msg&#39;
+  goodbye:
+    publish:
+      message:
+        $ref: &#39;#/components/messages/goodbye-msg&#39;
+components:
+  messages:
+    hello-msg:
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+          sentAt:
+            $ref: &#39;#/components/schemas/sent-at&#39;
+    goodbye-msg:
+      payload:
+        type: object
+        properties:
+          sentAt:
+            $ref: &#39;#/components/schemas/sent-at&#39;
+  schemas:
+    sent-at:
+      type: string
+      description: The date and time a message was sent.
+      format: datetime
+  securitySchemes:
+    user-password:
+      type: userPassword</code></pre>
+
+<p>The example above shows how to specify that our server (the Kafka broker) requires a user and a password to stablish a connection. Let&rsquo;s break this down:</p>
+
+<ol>
+<li>There&rsquo;s a new property in the server object called <code>security</code>. It&rsquo;s an array and can contain multiple security mechanisms. We chose to add one called &ldquo;user-password&rdquo;. This is simply a memorable name that we give this security scheme but, whatever name we choose, it must be defined in the <code>components/securitySchemes</code> section. You might have also noticed its value is an empty array. It&rsquo;s because some security schemes allow for extra configuration but, since this is not the case, we leave the array empty.</li>
+<li>We&rsquo;ve added a new section called &ldquo;securitySchemes&rdquo; under components. Inside it, you can find the definition of our &ldquo;user-password&rdquo; mechanism. What really makes it clear that we&rsquo;re speaking about a <code>user/password</code> mechanism is the <code>type: userPassword</code> on line 44.</li>
+</ol>
+
+<div class="hint">
+    <div class="hint__icon-wrapper">
+        <i class="hint__icon-wrapper__icon fa fa-question-circle"></i>
+    </div>
+    <div class="hint__body">
+        <p>There are many more security schemes. Learn more about them <a href="/docs/specifications/2.0.0-rc1/#securitySchemeObject" target="_blank">here</a>.</p>
+
+    </div>
+</div>
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>We&rsquo;re now able to define what security mechanisms our application needs to connect to the server. We&rsquo;ve seen how to define the requirement of a user and a password, which is the most common use case.</p>
+
+<p>At this point, you know AsyncAPI well enough to create a simple hello world application. However, real use cases are more complicated than that. Our tutorials can teach you how to create real world use cases, from zero to production.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/tutorials" class="button primary-btn cta button--next-chapter">
+        
+            Go to the tutorials page
+        
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+
+</div>
+</div>
+        </div>
+    </div>
+</div>
 
 <footer class="footer footer-dark">
   <div class="container">

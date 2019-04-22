@@ -6,29 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In a previous lesson, we learned how to create the definition of a subscriber application. Receiving (and processing) messages is an important part of an event-driven architecture but, where are these messages coming from?" />
 
 
 
 
 
-<meta itemprop="name" content="Categories | AsyncAPI Initiative">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Publishing | AsyncAPI Initiative">
+<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In a previous lesson, we learned how to create the definition of a subscriber application. Receiving (and processing) messages is an important part of an event-driven architecture but, where are these messages coming from?">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Categories | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Publishing | AsyncAPI Initiative">
+<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In a previous lesson, we learned how to create the definition of a subscriber application. Receiving (and processing) messages is an important part of an event-driven architecture but, where are these messages coming from?">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
-<meta property="og:title" content="Categories | AsyncAPI Initiative" />
+<meta property="og:title" content="Publishing | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/categories/" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/publishing/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Categories | AsyncAPI Initiative</title>
+<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
+  In a previous lesson, we learned how to create the definition of a subscriber application. Receiving (and processing) messages is an important part of an event-driven architecture but, where are these messages coming from?" />
+    <title>Publishing | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -196,11 +200,9 @@
                 
             
                 
-                <li>
-                    <a href="/docs/getting-started/publishing/">
-                        
-                        <span>Publishing</span>
-                    </a>
+                <li class="active">
+                    
+                    <span>Publishing</span>
                 </li>
                 
             
@@ -311,31 +313,85 @@
 </aside>
         </div>
         <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Categories</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/categories/getting-started/">Getting Started</a>
-                        
-                        
-                        <a href="/categories/specifications/">Specifications</a>
-                        
-                        
-                        <a href="/categories/tutorials/">Tutorials</a>
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
+        <div class="columns">
+    <div class="column">
+        <h1 class="title section-title">Publishing</h1>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-11 docs-content">
+
+<div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
+        
+            Notice
+        
+    </div>
+    <div class="notice__body">
+        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
+to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
+
     </div>
 </div>
 
+<p>In a previous lesson, we learned how to create the definition of a <a href="/docs/getting-started/hello-world">subscriber application</a>. Receiving (and processing) messages is an important part of an event-driven architecture but, where are these messages coming from? The publishers.</p>
+
+<p>A publisher is any application that sends messages. They are the initiators of the communication.</p>
+
+<p><img src="/images/diagrams/simple-event-driven.png" alt="" /></p>
+
+<div class="hint">
+    <div class="hint__icon-wrapper">
+        <i class="hint__icon-wrapper__icon fa fa-question-circle"></i>
+    </div>
+    <div class="hint__body">
+        <p>A message broker is the infrastructure piece in charge of receiving the messages from the publishers and delivering them to the interested applications, i.e., the subscribers. For instance, Kafka and RabbitMQ are message brokers.</p>
+
+    </div>
+</div>
+
+<p>The publisher definition would look like the following:</p>
+
+<pre class="language-yaml line-numbers" data-line="2,4,12"><code>asyncapi: &#39;2.0.0-rc1&#39;
+id: &#39;urn:hello-world-publisher&#39;
+info:
+  title: Hello world publisher application
+  version: &#39;0.1.0&#39;
+servers:
+  - url: kafka.mycompany.com
+    protocol: kafka
+    description: This is &#34;My Company&#34; Kafka instance.
+channels:
+  hello:
+    publish:
+      message:
+        payload:
+          type: string
+          pattern: &#39;^hello .&#43;$&#39;</code></pre>
+
+<p>You probably have noticed that the only difference between this AsyncAPI definition and the one for the <a href="/docs/getting-started/hello-world">Hello world application</a> are the lines 2, 4, and 9. The id must be unique for each application, that&rsquo;s the reason it is different. Since it&rsquo;s a publisher application, we also wanted to make it obvious in the title. In the case of the line 9, it is now <code>publish</code> because we&rsquo;re defining a publishing operation.</p>
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>From the AsyncAPI perspective, the differences between publishers and subscribers are very subtle. This level of expressiveness makes AsyncAPI documents highly explicit and self-documenting. However, it comes at the cost of duplicating a lot of information.</p>
+
+<p>On the next chapter, you&rsquo;ll learn how to reuse messages and avoid duplication.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/getting-started/reusing-messages" class="button primary-btn cta button--next-chapter">
+        
+            Go to the next chapter
+        
+        <i class="fa fa-arrow-right"></i>
+    </a>
+</div>
+
+</div>
+</div>
+        </div>
+    </div>
+</div>
 
 <footer class="footer footer-dark">
   <div class="container">
