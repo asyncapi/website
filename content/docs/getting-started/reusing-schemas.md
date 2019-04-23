@@ -21,9 +21,9 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: kafka.mycompany.com
-    protocol: kafka
-    description: This is "My Company" Kafka instance.
+  - url: broker.mycomapny.com
+    protocol: amqp
+    description: This is "My Company" broker.
 channels:
   hello:
     publish:
@@ -67,9 +67,9 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: kafka.mycompany.com
-    protocol: kafka
-    description: This is "My Company" Kafka instance.
+  - url: broker.mycomapny.com
+    protocol: amqp
+    description: This is "My Company" broker.
 channels:
   hello:
     publish:
@@ -110,9 +110,9 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: kafka.mycompany.com
-    protocol: kafka
-    description: This is "My Company" Kafka instance.
+  - url: broker.mycomapny.com
+    protocol: amqp
+    description: This is "My Company" broker.
 channels:
   hello:
     publish:

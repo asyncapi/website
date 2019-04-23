@@ -24,9 +24,9 @@ info:
   title: Hello world application
   version: '0.1.0'
 servers:
-  - url: kafka.mycompany.com
-    protocol: kafka
-    description: This is "My Company" Kafka instance.
+  - url: broker.mycomapny.com
+    protocol: amqp
+    description: This is "My Company" broker.
 channels:
   hello:
     subscribe:
@@ -42,7 +42,7 @@ We added a new section called "servers" in our AsyncAPI document. Note that the 
 YAML arrays are denoted by a `-` (dash) symbol.
 {{%/hint%}}
 
-You might have noticed that the example mentions "Kafka". You can use any protocol. For example, the most commons are `amqp` (known for RabbitMQ), `mqtt` (widely adopted by the Internet of Things and mobile apps), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
+You might have noticed that the example mentions "amqp". This protocol is very common and was popularized by RabbitMQ (among others). You can use any protocol. For example, the most common are `mqtt` (widely adopted by the Internet of Things and mobile apps), `kafka` (popular for its streaming solution), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs.)
 
 {{%remember%}}
 The "servers" section defines where your application should connect to start sending and receiving messages. 
