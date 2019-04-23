@@ -349,9 +349,9 @@ info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 servers:
-  - url: kafka.mycompany.com
-    protocol: kafka
-    description: This is &#34;My Company&#34; Kafka instance.
+  - url: broker.mycomapny.com
+    protocol: amqp
+    description: This is &#34;My Company&#34; broker.
 channels:
   hello:
     subscribe:
@@ -372,7 +372,7 @@ channels:
     </div>
 </div>
 
-<p>You might have noticed that the example mentions &ldquo;Kafka&rdquo;. You can use any protocol. For example, the most commons are <code>amqp</code> (known for RabbitMQ), <code>mqtt</code> (widely adopted by the Internet of Things and mobile apps), <code>ws</code> (WebSockets are frequently used in browsers), and <code>http</code> (used in HTTP streaming APIs.)</p>
+<p>You might have noticed that the example mentions &ldquo;amqp&rdquo;. This protocol is very common and was popularized by RabbitMQ (among others). You can use any protocol. For example, the most common are <code>mqtt</code> (widely adopted by the Internet of Things and mobile apps), <code>kafka</code> (popular for its streaming solution), <code>ws</code> (WebSockets are frequently used in browsers), and <code>http</code> (used in HTTP streaming APIs.)</p>
 
 <div class="important">
     <div class="important__header">
