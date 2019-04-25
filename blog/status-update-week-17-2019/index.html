@@ -6,29 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="" />
+<meta name="description" content="Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
+The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process." />
 
 
 
+    
 
 
-<meta itemprop="name" content="Status Update | AsyncAPI Initiative">
-<meta itemprop="description" content="">
-<meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
+
+<meta itemprop="name" content="Status update (week 17, 2019) | AsyncAPI Initiative">
+<meta itemprop="description" content="Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
+The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process.">
+<meta itemprop="image" content="https://www.asyncapi.com/images/posts/status-update-week-17-2019.jpg">
 
 
 <meta name="twitter:card" value="summary_large_image">
-<meta name="twitter:title" content="Status Update | AsyncAPI Initiative">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
+<meta name="twitter:title" content="Status update (week 17, 2019) | AsyncAPI Initiative">
+<meta name="twitter:description" content="Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
+The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process.">
+<meta name="twitter:image" content="https://www.asyncapi.com/images/posts/status-update-week-17-2019.jpg">
 
 
-<meta property="og:title" content="Status Update | AsyncAPI Initiative" />
+<meta property="og:title" content="Status update (week 17, 2019) | AsyncAPI Initiative" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.asyncapi.com/tags/status-update/" />
-<meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="" />
-    <title>Status Update | AsyncAPI Initiative</title>
+<meta property="og:url" content="https://www.asyncapi.com/blog/status-update-week-17-2019/" />
+<meta property="og:image" content="https://www.asyncapi.com/images/posts/status-update-week-17-2019.jpg" />
+<meta property="og:description" content="Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
+The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process." />
+    <title>Status update (week 17, 2019) | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
@@ -131,211 +137,79 @@
 
     
     
-<div class="container" style="padding:0 2rem;margin-top:30px;">
-    <div class="columns">
-        <div class="column is-3">
-            <aside class="docs-menu">
-    <h3>Menu</h3>
-    <ul>
+<div style="padding:0 2rem;margin-top:30px;">
+    <div class="blog-wrapper is-centered-tablet-portrait">
+        <h1 class="blog-title">Status update (week 17, 2019)</h1>
+<div class="blog-meta">
+    Apr 25, 2019 •
+    
+    <span class="blog-meta__tag">AsyncAPI</span>
+    
+    <span class="blog-meta__tag">Status Update</span>
+    
+</div>
+<div class="blog-authors">
+    
+    <div class="blog-author">
         
+        <a href="https://twitter.com/fmvilas" target="_blank" class="blog-author__photo--link">
         
+            <img src="/images/avatars/fmvilas.jpg" class="blog-author__photo"/>
         
-        <li>
-            
-                <a href="/docs/getting-started/">
-                    
-                    <span>Getting started</span>
-                </a>
-            
-        </li>
-        <ul class="sub-menu">
-            
-                
-                <li>
-                    <a href="/docs/getting-started/event-driven-architectures/">
-                        
-                        <span>Event-driven architectures</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/coming-from-openapi/">
-                        
-                        <span>Coming from OpenAPI</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/asyncapi-documents/">
-                        
-                        <span>AsyncAPI documents</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/hello-world/">
-                        
-                        <span>Hello world</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/servers/">
-                        
-                        <span>Servers</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/publishing/">
-                        
-                        <span>Publishing</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-messages/">
-                        
-                        <span>Reusing messages</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-schemas/">
-                        
-                        <span>Reusing schemas</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/security/">
-                        
-                        <span>Adding security</span>
-                    </a>
-                </li>
-                
-            
-        </ul>
+        </a>
         
-        
-        
-        <li>
-            
-                <a href="/docs/tutorials/">
-                    
-                    <span>Tutorials</span>
-                </a>
-            
-        </li>
-        <ul class="sub-menu">
-            
+        <div class="blog-author__info">
+            <div class="blog-author__info__name">
                 
-                <li>
-                    <a href="/docs/tutorials/streetlights/">
-                        
-                        <span>Streetlights</span>
-                    </a>
-                </li>
+                    <a href="https://twitter.com/fmvilas" target="_blank" class="blog-author__info__name--link">Fran Méndez</a>
                 
-            
-        </ul>
-        
-        
-        
-        <li>
-            
-                <a href="/docs/specifications/latest">
-                    
-                    <span>Specification</span>
-                </a>
-            
-        </li>
-        <ul class="sub-menu">
-            
-                
-                <li>
-                    <a href="/docs/specifications/2.0.0-rc1/">
-                        
-                        <span>2.0.0-rc1</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/specifications/1.2.0/">
-                        
-                        <span>1.2.0</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/specifications/1.1.0/">
-                        
-                        <span>1.1.0</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/specifications/1.0.0/">
-                        
-                        <span>1.0.0</span>
-                    </a>
-                </li>
-                
-            
-        </ul>
-        
-        
-    </ul>
-</aside>
+            </div>
+            <div class="blog-author__info__date">
+            AsyncAPI founder
+            </div>
         </div>
-        <div class="column is-9 is-centered-tablet-portrait">
-            
-                <div class="columns">
-                    <div class="column">
-                        <h1 class="title section-title">Status Update</h1>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
-                        
-                        <a href="/blog/status-update-week-17-2019/">Status update (week 17, 2019)</a>
-                        Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
-The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process.
-                        
-                        <a href="/blog/status-update-week-15-2019/">Status update (week 15, 2019)</a>
-                        Kaixo lagunak! This week we continued working on the parser as it’s a top priority for us. We made significant progress and plan to release a simple but functional version soon.
-Building the parser  We’ve added support for AsyncAPI 1.x/OpenAPI schemas. This is the first step before we dive into Avro and Protobuf support. Updated the Node.js to automatically test itself on Linux, Mac, and Windows. We’re still struggling to debug some failures on Windows so we encourage people who work on this operating system to join and help us test.
-                        
-                        <a href="/blog/status-update-week-14-2019/">Status update (week 14, 2019)</a>
-                        Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!
-Improvements on documentation  Check out version 2.0.0-rc1 of the specification in our website: https://www.asyncapi.com/docs/specifications/2.0.0-rc1/. Added a “Hello world” article to our getting started guide: https://github.com/asyncapi/asyncapi.github.io/pull/3. Added a “Servers” article to our getting started guide, explaining how the “servers” section of AsyncAPI works: https://github.
-                        
-                    </div>
-                </div>
-            
-        </div>
+    </div>
+    
+</div>
+<div class="blog-content">
+
+<p>Alas güenas tardis! This week we&rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:</p>
+
+<h2 id="the-parser">The parser<a href="#the-parser" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<ol>
+<li><a href="https://github.com/asyncapi/parser/pull/32" target="_blank">Compile for all platforms</a>: One of the hardest things to solve, before we continue moving forward, was the compilation process. We had to make sure we can compile the Go parser to C shared objects for Linux, Mac, and Windows. To make thing easier, we moved the compilation process to Travis CI, so now we don&rsquo;t have to configure our computers for cross-compilation.</li>
+<li><a href="https://github.com/asyncapi/parser/pull/33" target="_blank">JSON Schema dereferencing</a>: When we decided to choose Go as our main language for the parser development we knew there were less libraries than in the Node.js universe. One of the missing pieces was a JSON Schema dereferencer, i.e., a library that takes a JSON Schema document and replaces all the appearances of <code>$ref</code> with the value they point to. <a href="https://twitter.com/xinoman12" target="_blank">Rubén</a> came up with an initial solution and he&rsquo;s now working on polishing it, extracting the code to a separate library so the Go community can benefit from it, and adding support for circular references.</li>
+</ol>
+
+<h2 id="the-documentation">The documentation<a href="#the-documentation" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<ol>
+<li><a href="https://www.asyncapi.com/docs/getting-started/" target="_blank">New Getting Started guide</a>: This week we just launched our new getting started guide for AsyncAPI 2.0.0. The guide targets new users of AsyncAPI and event-driven architectures. Also, if you&rsquo;re coming from OpenAPI (Swagger), don&rsquo;t miss the comparative chart.</li>
+<li><a href="https://www.asyncapi.com/blog/" target="_blank">New blog</a>: Enough with Medium. There&rsquo;s no point on hosting the blog on a service that puts very low limits on how much you can read for free. We&rsquo;ll keep posting there as a distribution channel but the full articles will live in our self-hosted blog, powered by <a href="https://gohugo.io" target="_blank">Hugo</a>.</li>
+</ol>
+
+<h2 id="talks">Talks<a href="#talks" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Join us tomorrow for <a href="http://apidaysmad.apiaddicts.org/schedule/#session-2" target="_blank">API days Madrid</a> if you&rsquo;re in the city. I&rsquo;ll be talking all things AsyncAPI, past, present, and future. And also having some beers and tapas 🍻. Let&rsquo;s connect!</p>
+
+<h2 id="donate">Donate<a href="#donate" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>And last but not least, we’re running a sponsorship campaign. We’ve got different tiers so that everybody can show their love! ❤️</p>
+
+<p><img src="/images/posts/donation.png" alt="" /></p>
+
+<p><a href="https://opencollective.com/asyncapi" target="_blank">Donate here</a>. Help Open Source projects.</p>
+
+<hr />
+
+<blockquote>
+<p>“Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.”
+— Sun Tzu</p>
+</blockquote>
+
+<p>See you next week, folks! 👋</p>
+</div>
     </div>
 </div>
 
@@ -387,6 +261,7 @@ Improvements on documentation  Check out version 2.0.0-rc1 of the specification 
   </div>
 </footer>
 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596"></script>
 
 
     <script>

@@ -82,6 +82,11 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/blog/status-update-week-17-2019/</loc>
+    <lastmod>2019-04-25T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/blog/status-update-week-15-2019/</loc>
     <lastmod>2019-04-11T13:56:52+01:00</lastmod>
   </url>
@@ -189,7 +194,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/tags/status-update/</loc>
-    <lastmod>2019-04-11T13:56:52+01:00</lastmod>
+    <lastmod>2019-04-25T13:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
