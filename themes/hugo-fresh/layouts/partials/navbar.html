@@ -4,52 +4,63 @@
 {{ $sidebarVisible = .Params.sidebar }}
 {{ end }}
 {{- $navbarLogo     := .Site.Params.navbarlogo }}
-<nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
-  <div class="container">
-    <div class="navbar-brand">
-      {{- if $navbarLogo}}
-      <a class="navbar-item" href="{{ $navbarLogo.link }}">
-        <img src="{{ printf "/images/%s" $navbarLogo.image | relURL }}" alt="AsyncAPI logo">
-      </a>
-      {{- end}}
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+<!-- Navigation -->
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
 
-      <div id="navbar-menu" class="navbar-menu is-static">
-
-        <div class="navbar-end">
-          {{- range $navbar }}
-          {{- if .sublinks }}
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              {{ .title }}
-            </a>
-
-            <div class="navbar-dropdown">
-              {{- range .sublinks }}
-              <a href="{{ .url }}" class="navbar-item" {{ if .blank }}target="_blank"{{end}}>
-                {{ .title }}
-              </a>
-              {{- end }}
-            </div>
-          </div>
-          {{- else if .button }}
-          <a href="{{ .url }}" class="navbar-item">
-            <span class="button signup-button rounded secondary-btn raised">
-              {{ .title }}
-            </span>
+        <div class="nav__header">
+          <!-- Logo -->
+          <a href="{{ $navbarLogo.link }}" class="logo-container flex-child">
+            <img class="logo" src="{{ printf "/img/%s" $navbarLogo.image | relURL }}" alt="AsyncAPI logo">
           </a>
-          {{- else }}
-          <a href="{{ .url }}" class="navbar-item is-secondary">
-            {{ .title }}
-          </a>
-          {{- end }}
-          {{- end }}
+
+          <!-- Mobile toggle -->
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
         </div>
-      </div>
+
+        <!-- Navbar -->
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            {{- range $navbar }}
+            {{- if .sublinks }}
+            <li class="nav__dropdown">
+              <a href="#">{{ .title }}</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                {{- range .sublinks }}
+                <li><a href="{{ .url }}" {{ if .blank }}target="_blank" {{end}}>{{ .title }}</a></li>
+                {{- end }}
+              </ul>
+            </li>
+            {{- else if .button }}
+            <li><a href="{{ .url }}" style="font-weight: bold; color: #46a2c7;">{{ .title }}</a></li>
+            {{- else }}
+            <li>
+              <a href="{{ .url }}">{{ .title }}</a>
+            </li>
+            {{- end }}
+            {{- end }}
+          </ul> <!-- end menu -->
+        </nav> <!-- end nav-wrap -->
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> <!-- end flex-parent -->
+    </div> <!-- end container -->
+
   </div>
-</nav>
+</header> <!-- end navigation -->
+

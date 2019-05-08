@@ -1,0 +1,107 @@
+/*-------------------------------------------------------*/
+/* Grid
+/*-------------------------------------------------------*/
+.section-wrap {
+  padding: 100px 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  @include bp-lg-down {
+    padding: 80px 0;
+  }
+
+  @include bp-md-down {
+    padding: 60px 0;
+  }
+
+  &--pb-large {
+    padding-bottom: 180px;
+
+    @include bp-md-down {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.container-semi-fluid {
+  padding: 0 50px;
+
+  @include bp-md-down {
+    padding: 0 20px;
+  }
+}
+
+.main-container {
+  margin: auto;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+
+/* Columns Gutters
+-------------------------------------------------------*/
+.row-16 {
+  margin: 0 -8px;
+}
+
+.row-16 > [class*="col-"] {
+  padding: 0 8px;
+}
+
+.row-20 {
+  margin: 0 -10px;
+}
+
+.row-20 > [class*="col-"] {
+  padding: 0 10px;
+}
+
+
+.row-30 {
+  margin: 0 -15px;
+}
+
+.row-30 > [class*="col-"] {
+  padding: 0 15px;
+}
+
+.row-60 {
+  margin: 0 -30px;
+}
+
+.row-60 > [class*="col-"] {
+  padding: 0 30px;
+}
+
+
+/* Flexbox
+-------------------------------------------------------*/
+.flex-parent {
+  @include display-flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.flex-child {
+  @include flex (1 0 0);
+}
+
+
+/* Columns With No Gutters
+-------------------------------------------------------*/
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

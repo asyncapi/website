@@ -1,59 +1,65 @@
-{{- $footer      := .Site.Params.footer }}
-{{- $logo        := index $footer "logo" }}
-{{- $quickLinks  := index $footer "quicklinks" }}
-{{- $socialMedia := index $footer "socialmedia" }}
-{{- $bulmaLogo   := index $footer "bulmalogo" }}
-<footer class="footer footer-dark">
+<!-- Footer -->
+<footer class="footer">
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="footer-logo">
-          <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
-        </div>
-      </div>
-      {{- range $quickLinks }}
-        <div class="column">
-          <div class="footer-column">
-            <div class="footer-header">
-                <h3>{{ .title }}</h3>
+    <div class="footer__widgets">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="widget widget-about-us">
+            <!-- Logo -->
+            <a href="index.html" class="logo-container flex-child">
+              <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+            </a>
+            <p class="mt-24 mb-32">Building the future of event-driven architectures.</p>
+            <div class="socials">
+              <a href="https://twitter.com/AsyncAPISpec" class="social social-twitter" aria-label="twitter"
+                title="Twitter" target="_blank"><i class="ui-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/asyncapi" class="social social-linkedin" aria-label="linkedin"
+                title="LinkedIn" target="_blank"><i class="ui-linkedin"></i></a>
             </div>
-            <ul class="link-list">
-              {{- range .links }}
-              <li>
-                <a href="{{ .link }}">
-                  {{ .text }}
-                </a>
-              </li>
-              {{- end }}
+          </div>
+        </div> <!-- end about us -->
+
+
+        <div class="col-lg-2 offset-lg-5 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Resources</h5>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
-      {{- end }}
-      <div class="column">
-        <div class="footer-column">
-          <div class="footer-header">
-            <h3>Follow Us</h3>
-            <nav class="level is-mobile">
-              <div class="level-left">
-                {{- range $socialMedia }}
-                <a class="level-item" href="{{ .link }}" target="_blank">
-                  <span class="icon"><i class="fab fa-{{ .icon }}"></i></span>
-                </a>
-                {{- end }}
-              </div>
-            </nav>
 
-            <h6>Icons & Graphics attributions</h6>
-            <div class="attributions">
-              <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
-                www.freepik.com</a>
-              <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.freepik.com/" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, and <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/"
-                  title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                  target="_blank">CC 3.0 BY</a></div>
-            </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Solutions</h5>
+            <ul>
+              <li><a href="#">Marketing Strategy</a></li>
+              <li><a href="#">Advertising</a></li>
+              <li><a href="#">SMM</a></li>
+              <li><a href="#">SEO</a></li>
+              <li><a href="#">Google AdWords</a></li>
+            </ul>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-</footer>
+  </div> <!-- end container -->
+
+  <div class="footer__bottom top-divider">
+    <div class="container text-center">
+      <span class="copyright">
+        Made with <code>:love:</code> by the AsyncAPI Initiative.
+      </span>
+    </div>
+  </div> <!-- end footer bottom -->
+</footer> <!-- end footer -->
+
+<div id="back-to-top">
+  <a href="#top"><i class="ui-arrow-up"></i></a>
+</div>

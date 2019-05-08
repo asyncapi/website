@@ -1,20 +1,20 @@
 {{ define "main" }}
 <div class="container" style="padding:0 2rem;margin-top:30px;">
-    <div class="columns">
-        <div class="column is-3">
+    <div class="row">
+        <div class="col-md-3">
             {{ partial "docs/sidebar.html" . }}
         </div>
-        <div class="column is-9 is-centered-tablet-portrait">
+        <div class="col-md-9">
             {{ if .Content }}
                 {{ partial "docs/content.html" . }}
             {{ else }}
-                <div class="columns">
-                    <div class="column">
+                <div class="row">
+                    <div class="col-12">
                         <h1 class="title section-title">{{ .Title }}</h1>
                     </div>
                 </div>
-                <div class="columns">
-                    <div class="column is-11 docs-content">
+                <div class="row">
+                    <div class="col-12 docs-content">
                         {{ range .Pages }}
                         <a href="{{.URL}}">{{.Title}}</a>
                         {{ .Render "summary"}}

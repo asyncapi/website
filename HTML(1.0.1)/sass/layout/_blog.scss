@@ -1,0 +1,416 @@
+/*-------------------------------------------------------*/
+/* Blog
+/*-------------------------------------------------------*/
+.blog .content-wrapper {
+  padding-top: 144px;
+
+  @include bp-lg-down {
+    padding-top: 20px;
+  }
+}
+
+.entry {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 48px;
+  
+  &__img {
+    width: 100%;
+  }
+
+  &__date {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #fff;
+    color: $heading-color;
+    padding: 12px 16px;
+    border-radius: 5px;
+    text-align: center;
+    pointer-events: none;
+
+    &-day {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+      line-height: 1;
+    }
+
+    &-month {
+      @include uppercase;
+      line-height: 1;
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  &__excerpt {
+    margin-top: 20px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+
+/* Blog meta
+-------------------------------------------------------*/
+.entry__meta {
+  li {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 18px;
+    color: $meta-color;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $heading-color;
+
+    &:hover,
+    &:focus {
+      color: $main-color;
+    }
+  }
+
+  i {
+    color: $main-color;
+    font-size: 15px;
+    display: inline-block;
+    margin-right: 3px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Pagination
+/*-------------------------------------------------------*/
+.pagination {
+  text-align: center;
+
+  &__page {
+    font-size: 15px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    margin-right: 2px;
+    border-radius: 5px;
+    text-align: center;
+    color: $text-color;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    vertical-align: middle;
+    @include transition($all); 
+
+    &:not(span):hover {
+      background-color: $main-color;
+      border-color: transparent;
+      color: #fff;
+    }
+
+    &--current {
+      background-color: $main-color;
+      color: #fff;
+      border-color: transparent;
+    }
+  }
+
+  &__icon {
+    font-size: 12px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Featured Image
+/*-------------------------------------------------------*/
+.blog-featured-img {
+  padding: 152px 0;
+
+  .entry__meta li {
+    font-size: 18px;
+    margin-right: 6px;
+
+    &:after {
+      content: '-';
+      display: inline-block;
+      margin-left: 6px;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  .entry__meta-author {
+    &-img {
+      margin-right: 16px;
+
+      @include bp-sm-down {
+        display: none;
+      }
+    }
+  }
+
+  @include bp-sm-down {
+    padding: 80px 0;
+  }
+}
+
+
+
+/*-------------------------------------------------------*/
+/* Single Post
+/*-------------------------------------------------------*/
+.entry__article {
+
+  &-wrap {
+    margin-bottom: 48px;
+  }
+
+  @include bp-lg-up {
+    &-wrap .entry__article {
+      padding-left: 20px;
+    }    
+
+    &-wrap {
+      @include display-flex;      
+    }
+  }  
+
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    margin-top: 36px;
+  }
+
+  & > p,
+  & > ul,
+  & > ol {
+    margin-bottom: 34px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  p > a,
+  ul:not(.entry__meta) a {
+    color: $secondary-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  figure {
+    margin-bottom: 24px;
+  }
+
+  ol, ul {
+    padding-left: 16px;
+    line-height: 30px;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  .entry__meta {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-family: $body-font;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 10px;
+  color: $meta-color;
+}
+
+.entry__share {
+  margin-top: 8px;
+
+  @include bp-lg-down {
+    margin-bottom: 16px;
+  }
+  
+}
+
+
+/* Entry Tags
+/*-------------------------------------------------------*/
+.entry__tags {
+  margin-top: 30px;
+
+  &-label {
+    color: $heading-color;
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 4px;
+  }
+}
+
+
+/* Comments
+/*-------------------------------------------------------*/
+.comment {
+
+  @include bp-sm-up {
+    .children {
+      padding-left: 8%;
+    }
+  }
+
+  &-list > li:first-child > .comment-body {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  &-body {
+    margin-bottom: 24px;
+    padding-top: 24px;
+    border-top: 1px solid $border-color;
+  }
+
+  &-text {
+    overflow: hidden;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-avatar {
+    float: left;
+    margin-right: 20px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &-author {
+    font-family: $heading-font;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 8px;
+  }
+
+  &-metadata {
+    display: inline-block;
+  }
+
+  &-date,
+  &-edit-link {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #9AA5B5;
+  }
+
+  &-edit-link {
+    margin-left: 5px;
+    margin-bottom: 0;
+    color: $main-color;
+  }
+
+  &-reply {
+    color: $heading-color;
+    font-weight: 600;
+
+    &:hover {
+      color: $main-color;
+    }
+  }  
+}
+
+
+/* Comment Form
+/*-------------------------------------------------------*/
+.comment-form {
+  p {
+    margin: 0;
+  }
+}
+
+.comment-respond {
+  margin-top: 40px;
+}
+
+
+/* Entry Navigation
+/*-------------------------------------------------------*/
+.entry-navigation {
+  padding-top: 48px;
+
+  &__url {
+    @include display-flex;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      .entry-navigation__title {
+        color: $main-color;
+      }      
+    }
+  }
+
+  &--left {
+    i {
+      margin-right: 7px;
+    }
+  }
+
+  &--right {
+    text-align: right;
+
+    i {
+      margin-left: 7px;
+    }
+  }
+
+  &__body {
+    padding: 16px 24px;
+    background-color: $bg-light;
+  }
+
+  i {
+    font-size: 12px;
+    color: $text-color;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: $meta-color;
+    font-size: 13px;
+  }
+}

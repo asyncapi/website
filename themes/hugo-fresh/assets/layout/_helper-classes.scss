@@ -1,0 +1,149 @@
+/*-------------------------------------------------------*/
+/* Helper classes
+/*-------------------------------------------------------*/
+.clear { clear: both; }
+.oh { overflow: hidden; }
+.ov { overflow: visible; }
+.relative { position: relative; }
+.mobile section { background-attachment: scroll !important; }
+.bg-dark { background-color: $bg-dark; }
+.bg-light { background-color: $bg-light; }
+.bg-white { background-color: #fff; }
+.bg-color { background-color: $secondary-color; }
+.white { color: #fff; }
+.static { position: static; }
+.block { display: block; }
+.left { float: left; }
+.right { float: right; }
+.valign { position: absolute; top: 50%; @include transform (translateY(-50%)); }
+.img-full-width { width: 100%; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.02em; }
+.last { margin-bottom: 0 !important; }
+
+
+/* Section Dark / Background Image
+-------------------------------------------------------*/
+.bg-color,
+.bg-color-overlay,
+.bg-gradient {
+  .section-title,
+  .subtitle,
+  .statistic__number,
+  .statistic__title {
+    color: #fff;
+  }  
+}
+
+
+/* Box Shadow
+-------------------------------------------------------*/
+.box-shadow {
+  box-shadow: 0 1px 6px rgba(61, 65, 84, 0.15);
+}
+
+.box-shadow-large {
+  box-shadow: 0 20px 40px rgba(61, 65, 84, 0.15);
+}
+
+
+/* Hovers
+-------------------------------------------------------*/
+.hover-up {
+  top: 0;
+  position: relative;
+  @include transition($all);
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(61, 65, 84, 0.15);
+    top: -2px;
+  }  
+}
+
+.hover-line {
+  &:before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $secondary-color;
+    @include transition($all);
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+
+/* Offset
+-------------------------------------------------------*/
+.offset-top-152 {
+  margin-top: -152px;
+}
+
+.offset-top-171 {
+  margin-top: -171px;
+}
+
+@include bp-md-down {
+  .offset-top-152,
+  .offset-top-171 {
+    margin-top: 0;
+  }  
+}
+
+
+/* Gradients / Overlays
+-------------------------------------------------------*/
+.bg-gradient:before {
+  content: "";
+  top: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  @include linear-gradient-from-bottom(#B939E5, #4C86E7);
+}
+
+.bg-color-overlay:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba($secondary-color, .87);
+}
+
+.bg-color-overlay--1:before {
+  background-color: rgba(51, 59, 105, .36);
+}
+
+.bg-color-overlay--2:before {
+  background-color: rgba(51, 59, 105, .75);
+}
+
+.bottom-gradient {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  @include linear-gradient-from-bottom(rgba(#000, .75), transparent);
+}
+
+/* Section Dividers
+-------------------------------------------------------*/
+.top-divider {
+  border-top: 1px solid $border-color;
+}
+
+.bottom-divider {
+  border-bottom: 1px solid $border-color;
+}

@@ -1,0 +1,791 @@
+/*-------------------------------------------------------*/
+/* Hero
+/*-------------------------------------------------------*/
+.hero {
+  padding-top: 262px;
+  padding-bottom: 150px;
+
+  &__title {
+    line-height: 1.3;
+    margin-bottom: 24px;
+
+    &--boxed {
+      max-width: 330px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 47px;
+    color: $text-color;
+  }
+
+  @media (max-width: 1400px) {
+    padding-top: 180px;
+  }
+
+  @include bp-lg-down {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+.main-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.triangle-img {
+  position: absolute;  
+  width: 1920px;
+  z-index: -1;
+
+  &--align-right {
+    top: -850px;
+    right: -700px;
+    @include transform(rotate(-16deg));
+
+    @media (max-width: 1660px) {
+      right: -900px;
+    }
+
+    @include bp-xl-down {
+      right: -1000px;
+    }
+  }
+
+  &--align-left {
+    left: -1100px;
+    top: -880px;
+    @include transform(rotate(-16deg));
+
+    @media (max-width: 1600px) {
+      left: -1150px;
+    }
+
+    @media (max-width: 1440px) {
+      left: -1200px;
+    }
+
+    @media (max-width: 1360px) {
+      left: -1260px;
+    }
+
+    @include bp-xl-down {
+      left: -1340px;
+    }
+
+    @media (max-width: 1140px) {
+      left: -1400px;
+    }
+  }
+
+
+  @include bp-lg-down {
+    display: none;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Optin Form
+/*-------------------------------------------------------*/
+.optin {
+  background-color: $bg-light;
+  border-radius: 5px;
+  padding: 40px 70px 20px;
+  box-shadow: 0px 20px 40px 0px rgba(61, 65, 84, 0.15);
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    @include display-flex;
+  }
+
+  &__form-group--active {
+    & > label {
+      top:-20px;
+      font-size:14px;
+      color: $main-color;
+    }
+  }
+
+  .form-group {
+    flex: 1 0 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    position: absolute;
+    font-weight: 500;
+    font-size: 15px;
+    top: 12px;
+    left: 0;
+    pointer-events: none;
+    @include transition($all);
+  }
+
+  &__input {    
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #D5D9ED;
+
+    &:focus {
+      background-color: transparent;
+    }
+
+    &:focus ~ label {
+      top:-20px;
+      font-size:14px;
+      color: $main-color;
+    }
+  }
+
+  @include bp-md-down {
+    padding: 30px;
+
+    &__form {
+      display: block;
+    }
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Feature
+/*-------------------------------------------------------*/
+.feature {  
+  z-index: 1;  
+  padding: 48px 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fff;
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }  
+}
+
+.icon-holder {
+  text-align: center;
+  width: 20%;
+  padding: 15px;
+  float: left;
+
+  pre {
+    display: none;
+  }
+
+  @include bp-lg-down {
+    width: 50%;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Testimonials
+/*-------------------------------------------------------*/
+.testimonial {
+  padding: 48px 40px;
+  background-color: #fff;  
+  border-radius: 5px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 4px rgba(61, 65, 84, 0.1);
+
+  @include bp-sm-down {
+    padding: 30px;
+  }
+
+  &__img {
+    width: 55px !important;
+    border-radius: 50%;
+    margin-bottom: 27px;
+    float: left;
+    margin-right: 20px;
+  }
+
+  &__info {
+    font-family: $heading-font;
+    overflow: hidden;
+  }
+
+  &__author {
+    font-size: 18px;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: $heading-color;
+  }
+
+  &__company {
+    color: #ADB8C7;
+  }
+
+  &__body {
+    margin-top: 10px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 14px;
+    display: inline-block;
+  }  
+
+  &__rating {
+    i {
+      display: inline-block;
+      margin-right: 2px;
+      color: #FBC02D;
+      line-height: 1;
+      font-size: 18px;
+    }
+  }  
+}
+
+
+/*-------------------------------------------------------*/
+/* Promo Section
+/*-------------------------------------------------------*/
+.promo-section {
+
+  &--pb-large {
+    padding-bottom: 266px;
+
+    @include bp-xl-down {
+      padding-bottom: 120px;
+    }
+
+    @include bp-lg-down {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    &--boxed {
+      max-width: 470px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Call To Action
+/*-------------------------------------------------------*/
+.call-to-action {  
+  position: relative;
+  background-color: $bg-light;
+  padding: 96px 15px;
+  border-radius: 5px;
+
+  &__title {
+    font-size: 34px;
+    margin-bottom: 30px;
+
+    @include bp-sm-down {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Page Title
+/*-------------------------------------------------------*/
+.page-title {
+  position: relative;
+  width: 100%;
+  overflow: hidden;  
+  display: block;
+  padding: 200px 0 115px;
+  background-size: cover;
+  @include background-img-cover;
+  background-color: $bg-light;
+
+  &__holder {
+    max-width: 878px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  &__title {
+    line-height: 1.3;
+    margin-bottom: 24px; 
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  // Blog title
+  &.bg-color-overlay .page-title__title,
+  &.bg-color-overlay .page-title__subtitle,
+  .entry__meta li,
+  .entry__meta a {
+    color: #fff;
+  }
+
+  @include bp-lg-down {
+    padding: 80px 0 130px;
+  }
+
+  @include bp-md-down {
+    padding: 40px 0;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Benefits
+/*-------------------------------------------------------*/
+.benefits {
+  padding: 70px 48px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  &__item {
+    @include display-flex;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__item-title {
+    font-size: 18px;
+    color: $heading-color;
+  }
+
+  &__item-icon {
+    color: #44D88D;
+    font-size: 20px;
+    margin-right: 8px;
+    margin-top: -2px;
+  }
+
+  @include bp-sm-down {
+    padding: 40px 32px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Statistic
+/*-------------------------------------------------------*/
+.statistic {
+  margin: 32px 0;
+
+  &__number {
+    font-size: 36px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Team
+/*-------------------------------------------------------*/
+.team {
+  margin-bottom: 32px;
+
+  &__img {
+    border-radius: 5px;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  &__name {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__occupation {
+    color: #ADB8C7;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Newsletter
+/*-------------------------------------------------------*/
+.newsletter {
+  
+  .title-row {
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    font-size: 21px;
+    font-weight: 400;
+  }
+
+  &__form {
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mc4wp-form-fields {
+    @include display-flex;
+
+    & > .form-group:first-child {
+      flex: 1;
+      margin-right: 8px;
+
+      @include bp-sm-down {
+        margin-right: 0;
+      }
+    }
+
+    @include bp-sm-down {
+      display: block;
+    }
+  }
+
+  input {
+    height: 50px;
+  }
+
+  input[type=email],
+  input[type=text] {
+    color: #fff;
+    background-color: transparent;
+    border-color: rgba(213, 217, 237, 0.36);
+
+    &:focus {
+      border-color: #fff;
+    }
+  }
+
+  /* Change Color of Placeholders */
+  input[type=email]::-webkit-input-placeholder,
+  input[type=text]::-webkit-input-placeholder {
+    color: #fff;
+  }
+
+  input[type=email]:-moz-placeholder,
+  input[type=text]:-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+  }
+
+  input[type=email]::-moz-placeholder,
+  input[type=text]::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+  }
+
+  input[type=email]:-ms-input-placeholder,
+  input[type=text]:-ms-input-placeholder {
+    color: #fff;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Pricing Tables
+/*-------------------------------------------------------*/
+.pricing {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 48px 40px;
+  margin-bottom: 20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  top: 0;
+
+  @include bp-sm-down {
+    padding: 30px;
+  }
+
+  &.pricing--best {
+    box-shadow: 0 20px 40px rgba(61, 65, 84, 0.15);
+
+    &:before {
+      width: 100%;
+    }
+  }
+  
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+
+  &__price-box {
+    padding: 0 0 18px;
+    color: $heading-color;
+  }
+
+  &__currency {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 18px;
+    font-size: 28px;
+    font-family: $heading-font;
+  }
+
+  &__price {
+    font-size: 68px;
+    font-family: $heading-font;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+
+  &__term {
+    font-size: 24px;
+    display: inline-block;
+    color: #9AA5B5;
+    font-family: $body-font;
+
+    &:before {
+      content: "/";
+      display: inline-block;
+      margin: 0 7px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 33px;
+    font-weight: 700;
+  }
+
+  &__button {
+    min-width: 155px;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Moneyback
+/*-------------------------------------------------------*/
+.moneyback {
+  border-radius: 5px;
+  padding: 78px 60px 48px;
+  background-color: #FFFEF6;
+  box-shadow: 0 1px 6px #EDEBDB;
+  text-align: center;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    top: 0;
+    @include transform(translate(-50%, -50%));
+  }
+
+  &__text {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* FAQ
+/*-------------------------------------------------------*/
+.faq {
+  margin-bottom: 48px;
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    @include bp-lg-up {
+      padding-right: 20px;
+    }
+  }
+}
+
+/*-------------------------------------------------------*/
+/* Gmap
+/*-------------------------------------------------------*/
+.gmap {
+  width: 100%;
+  height: 350px;
+}
+
+
+/*-------------------------------------------------------*/
+/* Widgets
+/*-------------------------------------------------------*/
+.widget-title {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+}
+
+.widget-address {
+  line-height: 30px;
+}
+
+.widget_nav_menu {
+  li {
+    line-height: 30px;
+  }
+}
+
+
+/* Widget Tags / Entry Tags
+-------------------------------------------------------*/
+.widget_tag_cloud a,
+.entry__tags a {
+  line-height: 1;
+  color: $text-color;
+  display: inline-block;
+  font-size: 18px;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.tagcloud {
+  overflow: hidden;
+}
+
+
+/* Cookies banner
+-------------------------------------------------------*/
+.cc-container {
+  @include display-flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.cc-revoke,
+.cc-window {
+  position: relative;
+}
+
+.cc-window {
+  background-color: $heading-color !important;
+  padding: 5px 20px !important;
+}
+
+.cc-message {
+  margin-right: 20px;
+  flex: 0 1 auto !important;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.cc-link {
+  opacity: 1;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
+a.cc-btn.cc-dismiss {
+  background-color: $main-color;
+  border-radius: 5px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 14px;
+  border: 0;
+  color: #fff;
+  min-width: auto !important;
+
+  &:hover,
+  &:focus {
+    background-color: darken($main-color, 3%);
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Contact
+/*-------------------------------------------------------*/
+.contact {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 48px 110px;
+
+  @include bp-lg-down {
+    padding: 30px;
+  }
+
+  &__items {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    line-height: 26px;
+
+    a {
+      color: $text-color;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}

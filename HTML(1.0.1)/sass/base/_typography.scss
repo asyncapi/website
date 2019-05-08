@@ -1,0 +1,119 @@
+/*-------------------------------------------------------*/
+/* Typography
+/*-------------------------------------------------------*/
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $heading-font;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: $heading-color;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 34px; }
+h3 { font-size: 28px; }
+h4 { font-size: 24px; }
+h5 { font-size: 21px; }
+h6 { font-size: 18px; }
+
+@include bp-sm-down {
+  h1 { font-size: 32px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 26px; }
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  color: $heading-color;
+  font-size: 85%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+@include bp-xl-down { .text-lg-center {text-align: center}; }
+@include bp-lg-down { .text-md-center {text-align: center}; }
+@include bp-md-down { .text-sm-center {text-align: center}; }
+@include bp-sm-down { .text-xs-center {text-align: center}; }
+
+.section-headings p {
+  margin-bottom: 40px;
+}
+
+.title-row {
+  margin-bottom: 48px;
+  position: relative;
+
+  &--boxed {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 500;
+}
+
+.highlight {
+  color: $main-color;
+}
+
+blockquote {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+  p {
+    font-size: 28px;
+    line-height: 1.3;
+    font-style: italic;
+    margin-bottom: 0 !important; 
+    position: relative;
+    color: $text-color;
+  }
+
+  cite {
+    font-size: 15px;
+    font-weight: 400;
+    color: $meta-color;
+  }
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 0;
+}

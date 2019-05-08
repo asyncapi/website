@@ -27,7 +27,7 @@ params:
     og:
       url: https://www.asyncapi.com/
   navbarlogo:
-    image: logos/asyncapi.png
+    image: logo.png
     link: /
   font:
     name: "Open Sans"
@@ -81,7 +81,7 @@ params:
       url: https://github.com/asyncapi/asyncapi
       blank: true
     - title: Slack workspace
-      url: https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg
+      url: https://asyncapi.com/slack-invite
       blank: true
   - title: About
     url: /about
