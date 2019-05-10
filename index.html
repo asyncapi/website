@@ -45,7 +45,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.a17263d0dcbb0268ea39b646b31038f429908e2631f89f922752784b2939602b.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.0f186c07787c04c2cbc472c0a88fded4709d53c8af847d4abb2cebe4e4fd21eb.css">
 
 </head>
 
@@ -207,13 +207,26 @@
                     </div>
                 </div>
 
-                <div class="row subscribe-form justify-content-center">
+                <div class="row subscribe-form hidden justify-content-center">
                     <div class="col-lg-10">
                         
                         <div class="optin">
                             <h3 class="optin__title">Subscribe to our newsletter to receive news about AsyncAPI</h3>
                             <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
-                            <iframe src="https://asyncapi.io/form.html" frameborder="0" style="width: 100%;"></iframe>
+                            <form class="optin__form" netlify>
+                                <div class="optin__form-group form-group">
+                                    <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
+                                    <label for="optin-name" class="optin__label">Your name</label>
+                                    <span class="input-underline"></span>
+                                </div>
+                                <div class="optin__form-group form-group">
+                                    <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
+                                    <label for="optin-email" class="optin__label">Your e-mail address</label>
+                                    <span class="input-underline"></span>
+                                </div>
+
+                                <button class="optin__btn btn btn--md btn--color btn--button">Subscribe</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -550,15 +563,26 @@
 
         
         <section class="section-wrap offset-top-152 pt-sm-48">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        
-                        <div class="optin">
-                            <h3 class="optin__title">Subscribe to our newsletter to receive news about AsyncAPI</h3>
-                            <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
-                            <iframe src="https://asyncapi.io/form.html" frameborder="0" style="width: 100%;"></iframe>
-                        </div>
+            <div class="subscribe-form hidden row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="optin">
+                        <h3 class="optin__title">Subscribe to our newsletter to receive news about AsyncAPI</h3>
+                        <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
+                        <form class="optin__form" netlify>
+                            <div class="optin__form-group form-group">
+                                <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
+                                <label for="optin-name" class="optin__label">Your name</label>
+                                <span class="input-underline"></span>
+                            </div>
+                            <div class="optin__form-group form-group">
+                                <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
+                                <label for="optin-email" class="optin__label">Your e-mail address</label>
+                                <span class="input-underline"></span>
+                            </div>
+            
+                            <button class="optin__btn btn btn--md btn--color btn--button">Subscribe</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -566,6 +590,15 @@
 
     </div> 
 </main> 
+
+<script>
+    if (window.location.hostname !== 'asyncapi.com') {
+        var forms = document.querySelectorAll('.subscribe-form');
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].classList.remove('hidden');
+        }
+    }
+</script>
 
 
 
