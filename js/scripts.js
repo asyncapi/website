@@ -55,6 +55,7 @@
 
     $('.nav__dropdown').on('click', '> a', function(e) {
       e.preventDefault();
+      $('.nav__dropdown-menu').removeClass('hide-dropdown');
     });
 
     $('.nav__dropdown').on('click',function(e) {
