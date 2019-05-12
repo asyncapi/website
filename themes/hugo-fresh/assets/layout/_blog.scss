@@ -539,6 +539,14 @@ figcaption {
         }
     }
 
+    img {
+      margin: 40px 0;
+    }
+
+    pre {
+      margin: 40px 0;
+    }
+
     hr {
         display: block;
         border: 0;
@@ -661,6 +669,7 @@ figcaption {
     .blog-list__article {
         display: block;
         background-size: cover;
+        background-position: center center;
         position: relative;
         width: 100%;
         height: 230px;

@@ -2519,6 +2519,10 @@ figcaption {
         font-weight: 400;
         color: rgba(0, 0, 0, 0.68);
         font-size: 14px; }
+  .blog-content img {
+    margin: 40px 0; }
+  .blog-content pre {
+    margin: 40px 0; }
   .blog-content hr {
     display: block;
     border: 0;
@@ -2602,6 +2606,7 @@ figcaption {
 .blog-list .blog-list__article {
   display: block;
   background-size: cover;
+  background-position: center center;
   position: relative;
   width: 100%;
   height: 230px;
