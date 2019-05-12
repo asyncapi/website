@@ -32,7 +32,7 @@
             {{- range $navbar }}
             {{- if .sublinks }}
             <li class="nav__dropdown">
-              <a href="#">{{ .title }}</a>
+              <a>{{ .title }}</a>
               <i class="ui-arrow-down nav__dropdown-trigger"></i>
               <ul class="nav__dropdown-menu">
                 {{- range .sublinks }}

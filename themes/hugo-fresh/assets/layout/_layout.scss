@@ -1,3 +1,8 @@
+.subscribe-form.hidden {
+  display: none;
+}
+
+
 /*-------------------------------------------------------*/
 /* Hero
 /*-------------------------------------------------------*/
@@ -18,12 +23,16 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
-    margin-bottom: 47px;
+    margin-bottom: 20px;
     color: $text-color;
   }
 
+  .subscribe-form {
+    margin-top: 40px;
+  }
+
   @media (max-width: 1400px) {
-    padding-top: 180px;
+    padding-top: 80px;
   }
 
   @include bp-lg-down {

@@ -1499,6 +1499,9 @@ img.mfp-img {
     background-color: #ed7412 !important;
     color: #fff !important; }
 
+.subscribe-form.hidden {
+  display: none; }
+
 /*-------------------------------------------------------*/
 /* Hero
 /*-------------------------------------------------------*/
@@ -1514,11 +1517,13 @@ img.mfp-img {
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
-    margin-bottom: 47px;
+    margin-bottom: 20px;
     color: #6A798C; }
+  .hero .subscribe-form {
+    margin-top: 40px; }
   @media (max-width: 1400px) {
     .hero {
-      padding-top: 180px; } }
+      padding-top: 80px; } }
   @media only screen and (max-width: 991px) {
     .hero {
       padding-top: 60px;
@@ -2704,7 +2709,9 @@ figcaption {
     margin: 0; }
     .nav__menu li {
       position: relative; }
-    .nav__menu > li > a {
+    .nav__menu > li > a,
+    .nav__menu > li > a:not([href]):not([tabindex]) {
+      cursor: pointer;
       font-family: "Roboto", sans-serif;
       font-weight: 700;
       color: #333B69;
@@ -2713,7 +2720,13 @@ figcaption {
       line-height: 72px;
       display: block;
       position: relative; }
-      .nav__menu > li > a:hover {
+      @media only screen and (max-width: 991px) {
+        .nav__menu > li > a,
+        .nav__menu > li > a:not([href]):not([tabindex]) {
+          padding: 0;
+          line-height: 46px; } }
+      .nav__menu > li > a:hover,
+      .nav__menu > li > a:not([href]):not([tabindex]):hover {
         color: #46a2c7; }
     .nav__menu > .active > a {
       color: #46a2c7; }
@@ -3925,7 +3938,7 @@ dd {
   border-bottom: 1px solid #E8ECED; }
 
 .sponsors {
-  padding: 30px 20px;
+  padding: 50px 20px;
   text-align: center; }
   .sponsors .sponsors__title {
     font-size: 14px;

@@ -39,7 +39,9 @@
       position: relative;      
     }
 
-    & > li > a {
+    & > li > a,
+    & > li > a:not([href]):not([tabindex]) {
+      cursor: pointer;
       font-family: $heading-font;
       font-weight: 700;
       color: $heading-color;
@@ -48,6 +50,11 @@
       line-height: $nav-height;
       display: block;
       position: relative;
+
+      @include bp-lg-down {
+        padding: 0;
+        line-height: 46px;
+      }
 
       &:hover {
         color: $main-color;

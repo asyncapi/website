@@ -12,7 +12,16 @@
                     <div class="col-lg-5 offset-lg-1">
                         <div class="hero__text-holder">
                             <h1 class="hero__title hero__title--boxed">Building the future of event-driven architectures.</h1>
-                            <h2 class="hero__subtitle">Use our open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the <strong>industry standard</strong> for defining asynchronous APIs.</h2>
+                            <h2 class="hero__subtitle">
+                                Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI
+                                specification, the <strong>industry standard</strong> for defining asynchronous APIs.
+                            </h2>
+                            <h2 class="hero__subtitle">
+                                <a href="/docs/getting-started" class="btn btn--lg btn--color btn--icon">
+                                    <span>Get Started</span>
+                                    <i class="ui-arrow-right"></i>
+                                </a>
+                            </h2>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -22,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
+                <div class="row subscribe-form hidden justify-content-center">
                     <div class="col-lg-10">
                         <!-- Optin Form -->
                         <div class="optin">
@@ -30,12 +39,12 @@
                             <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
                             <form class="optin__form" netlify>
                                 <div class="optin__form-group form-group">
-                                    <input type="text" class="form-input optin__input" id="optin-name" required>
+                                    <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
                                     <label for="optin-name" class="optin__label">Your name</label>
                                     <span class="input-underline"></span>
                                 </div>
                                 <div class="optin__form-group form-group">
-                                    <input type="email" class="form-input optin__input" id="optin-email" required>
+                                    <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
                                     <label for="optin-email" class="optin__label">Your e-mail address</label>
                                     <span class="input-underline"></span>
                                 </div>
@@ -273,7 +282,7 @@
 
         <!-- Subscribe -->
         <section class="section-wrap offset-top-152 pt-sm-48">
-            <div class="row justify-content-center">
+            <div class="subscribe-form hidden row justify-content-center">
                 <div class="col-lg-10">
                     <!-- Optin Form -->
                     <div class="optin">
@@ -281,12 +290,12 @@
                         <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
                         <form class="optin__form" netlify>
                             <div class="optin__form-group form-group">
-                                <input type="text" class="form-input optin__input" id="optin-name" required>
+                                <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
                                 <label for="optin-name" class="optin__label">Your name</label>
                                 <span class="input-underline"></span>
                             </div>
                             <div class="optin__form-group form-group">
-                                <input type="email" class="form-input optin__input" id="optin-email" required>
+                                <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
                                 <label for="optin-email" class="optin__label">Your e-mail address</label>
                                 <span class="input-underline"></span>
                             </div>
@@ -300,6 +309,15 @@
 
     </div> <!-- end content wrapper -->
 </main> <!-- end main wrapper -->
+
+<script>
+    if (!['asyncapi.com', 'www.asyncapi.com'].includes(window.location.hostname)) {
+        var forms = document.querySelectorAll('.subscribe-form');
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].classList.remove('hidden');
+        }
+    }
+</script>
 
 
 {{ partial "footer.html" . }}
