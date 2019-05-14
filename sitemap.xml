@@ -72,8 +72,8 @@
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</loc>
-    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/blog/asyncapi-cloud-events/</loc>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -84,6 +84,11 @@
   <url>
     <loc>https://www.asyncapi.com/blog/status-update-week-17-2019/</loc>
     <lastmod>2019-04-25T13:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</loc>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -124,7 +129,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/tags/asyncapi/</loc>
-    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,6 +140,12 @@
   
   <url>
     <loc>https://www.asyncapi.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/cloudevents/</loc>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -163,6 +174,12 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/faas/</loc>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/tags/getting-started/</loc>
     <lastmod>2019-04-19T16:56:52+01:00</lastmod>
     <priority>0</priority>
@@ -175,6 +192,12 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/microservices/</loc>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/tags/organization/</loc>
     <lastmod>2019-03-01T13:56:52+01:00</lastmod>
     <priority>0</priority>
@@ -183,6 +206,12 @@
   <url>
     <loc>https://www.asyncapi.com/tags/rest/</loc>
     <lastmod>2019-04-04T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/serverless/</loc>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -200,7 +229,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/tags/</loc>
-    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
+    <lastmod>2019-05-11T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   

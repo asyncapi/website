@@ -6,18 +6,21 @@
     <description>Recent content in Asyncapi on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Apr 2019 16:56:52 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2019 16:56:52 +0100</lastBuildDate>
     
 	<atom:link href="https://www.asyncapi.com/tags/asyncapi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Getting started with event-driven architectures</title>
-      <link>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</link>
-      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
+      <title>AsyncAPI and CloudEvents</title>
+      <link>https://www.asyncapi.com/blog/asyncapi-cloud-events/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
       
-      <guid>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</guid>
-      <description>All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API.</description>
+      <guid>https://www.asyncapi.com/blog/asyncapi-cloud-events/</guid>
+      <description>I&amp;rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&amp;rsquo;t be less true, and I&amp;rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way.</description>
     </item>
     
     <item>
@@ -39,6 +42,15 @@ Organizing Microservices  I’m using the term microservices here because it’s
       <guid>https://www.asyncapi.com/blog/status-update-week-17-2019/</guid>
       <description>Alas güenas tardis! This week we&amp;rsquo;ve made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it. Check out the progress so far:
 The parser  Compile for all platforms: One of the hardest things to solve, before we continue moving forward, was the compilation process.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with event-driven architectures</title>
+      <link>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</link>
+      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/getting-started-with-event-driven-architectures/</guid>
+      <description>All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. The web is the greatest implementation of a REST API.</description>
     </item>
     
     <item>
