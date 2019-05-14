@@ -2,14 +2,12 @@
 title: "Getting started with event-driven architectures"
 date: 2019-04-19T16:56:52+01:00
 type: blog
-featured: true
 tags:
   - AsyncAPI
   - Getting Started
   - Event-Driven Architectures
   - EDA
 cover: /images/posts/getting-started-with-event-driven-architectures.jpg
-weight: 200
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.jpg
