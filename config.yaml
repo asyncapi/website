@@ -62,8 +62,8 @@ params:
       url: /docs/specifications/latest
   - title: Tooling
     sublinks:
-    - title: Online editor
-      url: http://editor.asyncapi.org
+    - title: Playground
+      url: http://playground.asyncapi.io?utm_source=asyncapi.com&utm_medium=top-menu
       blank: true
     - title: Code generators
       url: /docs/tooling#codegens
