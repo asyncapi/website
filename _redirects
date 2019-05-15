@@ -5,4 +5,4 @@ https://asyncapi-website.netlify.com/* https://asyncapi.io/:splat 301!
 
 
 https://asyncapi.org/* https://asyncapi.com/:splat 301!
-https://www.asyncapi.org/* https://www.asyncapi.com/:splat 301!
+https://www.asyncapi.org/* https://asyncapi.com/:splat 301!
