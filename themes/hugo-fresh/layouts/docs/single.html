@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container" style="padding:0 2rem;margin-top:30px;">
+    <div class="row">
+        <div class="col-md-3">
+            {{ partial "docs/sidebar.html" . }}
+        </div>
+        <div class="col-md-9">
+        {{ partial "docs/content.html" . }}
+        </div>
+    </div>
+</div>
+{{ partial "footer.html" . }}
+{{ end }}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="container" style="padding:0 2rem;margin-top:30px;">
+    <div class="row">
+        <div class="col-md-3">
+            {{ partial "docs/sidebar.html" . }}
+        </div>
+        <div class="col-md-9">
+            {{ if .Content }}
+                {{ partial "docs/content.html" . }}
+            {{ else }}
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="title section-title">{{ .Title }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 docs-content">
+                        {{ range .Pages }}
+                        <a href="{{.URL}}">{{.Title}}</a>
+                        {{ .Render "summary"}}
+                        {{ end }}
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
+{{ end }}

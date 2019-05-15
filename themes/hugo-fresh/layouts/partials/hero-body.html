@@ -1,0 +1,29 @@
+{{- $hero       := .Site.Params.hero }}
+{{- $title      := index $hero "title" }}
+{{- $subtitle   := index $hero "subtitle" }}
+{{- $buttonText := index $hero "buttontext" }}
+{{- $buttonLink := index $hero "buttonlink" }}
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6 is-offset-3 landing-caption">
+        <div class="has-text-centered">
+          <img src="/images/logos/asyncapi-notext.png" class="logo">
+        </div>
+        <h1 class="title is-1 is-bold is-spaced has-text-centered">
+          {{ $title | safeHTML }}
+        </h1>
+        {{ with $subtitle }}
+        <h2 class="subtitle is-5 is-muted has-text-centered">
+          {{ . }}
+        </h2>
+        {{ end }}
+        <p class="has-text-centered">
+          <a class="button cta rounded primary-btn raised" href="{{ $buttonLink }}">
+            {{ $buttonText }}
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

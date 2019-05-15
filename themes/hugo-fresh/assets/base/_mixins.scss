@@ -1,0 +1,129 @@
+$all: all .2s ease-in-out;
+
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin linear-gradient($left, $right){
+  background: $left; /* Old browsers */
+  background: -moz-linear-gradient(left,  $left 0%, $right 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,$left), color-stop(100%,$right)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  $left 0%,$right 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  $left 0%,$right 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  $left 0%,$right 100%); /* IE10+ */
+  background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin linear-gradient-from-bottom($bottom, $top){
+  background: $bottom; /* Old browsers */
+  background: -moz-linear-gradient(bottom,  $bottom 0%, $top 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$bottom), color-stop(100%,$top)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(bottom,  $bottom 0%,$top 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(bottom,  $bottom 0%,$top 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(bottom,  $bottom 0%,$top 100%); /* IE10+ */
+  background: linear-gradient(to top,  $bottom 0%,$top 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@mixin background-img-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin display-inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+@mixin flex($flex...) {
+  -webkit-box-flex: $flex;
+  -webkit-flex: $flex;
+  -ms-flex: $flex;
+  flex: $flex;
+}
+
+@mixin order($order...) {
+  -webkit-order: $order;
+  -ms-flex-order: $order;
+  order: $order;
+}
+
+@mixin bp-xl-down {
+  @media only screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin bp-xl-up {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin bp-lg-down {
+  @media only screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin bp-lg-up {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin bp-md-down {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin bp-md-up {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bp-sm-down {
+  @media only screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin bp-sm-up {
+  @media only screen and (min-width: 576px) {
+    @content;
+  }
+}

@@ -1,0 +1,44 @@
+.sponsors {
+    padding: 50px 20px;
+    text-align: center;
+
+    .sponsors__title {
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    .sponsor-logo {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+        @include bp-xl-down {
+            margin-right: 30px;
+        }
+
+        &--mulesoft {
+            width: 147px;
+        }
+        
+        &--salesforce {
+            width: 86px;
+        }
+        
+        &--sap {
+            width: 84px;
+        }
+        
+        &--slack {
+            width: 151px;
+        }
+        
+        &--solace {
+            width: 139px;
+            margin-top: -5px;
+        }
+        
+        &--tibco {
+            width: 116px;
+        }
+    }
+}

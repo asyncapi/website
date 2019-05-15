@@ -1,0 +1,10 @@
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="{{ .Get "url" }}" class="btn btn--lg btn--color btn--icon button--next-chapter">
+        <span>{{ if .Get "text" }}
+            {{ .Get "text" }}
+        {{ else }}
+            Go to the next chapter
+        {{ end }}</span>
+        <i class="ui-arrow-right"></i>
+    </a>
+</div>

@@ -1,0 +1,13 @@
+<div class="notice">
+    <div class="notice__header">
+        <i class="notice__header__icon fa fa-{{ if .Get "title" }}{{.Get "icon"}}{{else}}exclamation-triangle{{end}}"></i>
+        {{ if .Get "title" }}
+            {{ .Get "title" }}
+        {{ else }}
+            Notice
+        {{ end }}
+    </div>
+    <div class="notice__body">
+        {{.Inner}}
+    </div>
+</div>

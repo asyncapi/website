@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Margin | Privacy Policy</title>
+
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700' rel='stylesheet'>
+
+  <!-- Css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-icons.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      "Loading..."
+    </div>
+  </div>
+
+  <main class="main-wrapper">
+
+    <!-- Navigation -->
+    <header class="nav">
+      <div class="nav__holder nav--sticky">
+        <div class="container-fluid container-semi-fluid nav__container">
+          <div class="flex-parent">
+
+            <div class="nav__header">
+              <!-- Logo -->
+              <a href="index.html" class="logo-container flex-child">
+                <img class="logo" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="logo">
+              </a>
+
+              <!-- Mobile toggle -->
+              <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="nav__icon-toggle-bar"></span>
+                <span class="nav__icon-toggle-bar"></span>
+                <span class="nav__icon-toggle-bar"></span>
+              </button> 
+            </div>                      
+
+            <!-- Navbar -->
+            <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+              <ul class="nav__menu">
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="nav__dropdown active">
+                  <a href="#">Pages</a>
+                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
+                  <ul class="nav__dropdown-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </li>
+                <li class="nav__dropdown">
+                  <a href="blog.html">Features</a>
+                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
+                  <ul class="nav__dropdown-menu">
+                    <li><a href="icons.html">Icons</a></li>
+                    <li><a href="elements.html">Elements</a></li>
+                  </ul>
+                </li>
+                <li class="nav__dropdown">
+                  <a href="blog.html">Blog</a>
+                  <i class="ui-arrow-down nav__dropdown-trigger"></i>
+                  <ul class="nav__dropdown-menu">
+                    <li><a href="blog.html">Blog Posts</a></li>
+                    <li><a href="single-post.html">Single Post</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Purchase</a>
+                </li>
+              </ul> <!-- end menu -->
+            </nav> <!-- end nav-wrap -->
+
+            <div class="nav__btn-holder nav--align-right">
+              <a href="#" class="btn nav__btn">
+                <span class="nav__btn-text">Call us for Free</span>
+                <span class="nav__btn-phone">63-995-3959</span>
+              </a>
+            </div>     
+        
+          </div> <!-- end flex-parent -->
+        </div> <!-- end container -->
+
+      </div>
+    </header> <!-- end navigation -->
+
+    <div class="content-wrapper oh">
+
+      <!-- Page Title -->
+      <section class="page-title text-center">
+        <div class="container">
+          <div class="page-title__holder">
+            <h1 class="page-title__title">Privacy Policy</h1>
+            <p class="page-title__subtitle">Last Updated: July 28, 2018</p>
+          </div>
+        </div>
+      </section> <!-- end page title -->
+
+
+      <!-- Privacy Policy -->
+      <section class="section-wrap">
+        <div class="container">
+          <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+              <div class="entry__article">
+                <p>Margin Inc. (“us”, “we”, or “our”) operates the https://margin.com website (the “Service”).</p>
+                <p>This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.</p>
+                <p>We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+                <p>We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at https://margin.com.</p>
+                <h6>Information Collection And Use</h6>
+                <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your email address, name, phone number, postal address, other information (“Personal Information”).</p>
+                <p>We collect this information for the purpose of providing the Service, identifying and communicating with you, responding to your requests/inquiries, servicing your purchase orders, and improving our services.</p>
+                <h6>Log Data</h6>
+                <p>We collect information that your browser sends whenever you visit our Service (“Log Data”). This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.</p>
+                <p>In addition, we may use third party services such as Google Analytics that collect, monitor and analyze this type of information in order to increase our Service’s functionality. These third party service providers have their own privacy policies addressing how they use such information.</p>
+                <h6>Cookies</h6>
+                <p>What Are Cookies?</p>
+                <p>As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored however this may downgrade or ‘break’ certain elements of the sites functionality.</p>
+                <p>For more general information on cookies see the Wikipedia article on HTTP Cookies…</p>
+                <h6>How We Use Cookies</h6>
+                <p>We use cookies for a variety of reasons detailed below. Unfortunately in most cases there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.</p>
+                <h6>Disabling Cookies</h6>
+                <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies.</p>
+                <h6>The Cookies We Set</h6>
+                <p>If you create an account with us then we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out however in some cases they may remain afterwards to remember your site preferences when logged out.</p>
+                <p>We use cookies when you are logged in so that we can remember this fact. This prevents you from having to log in every single time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in.</p>
+                <p>This site offers newsletter or email subscription services and cookies may be used to remember if you are already registered and whether to show certain notifications which might only be valid to subscribed/unsubscribed users.</p>
+                <p>This site offers e-commerce or payment facilities and some cookies are essential to ensure that your order is remembered between pages so that we can process it properly.</p>
+                <p>From time to time we offer user surveys and questionnaires to provide you with interesting insights, helpful tools, or to understand our user base more accurately. These surveys may use cookies to remember who has already taken part in a survey or to provide you with accurate results after you change pages.</p>
+                <p>When you submit data to through a form such as those found on contact pages or comment forms cookies may be set to remember your user details for future correspondence.</p>
+                <p>In order to provide you with a great experience on this site we provide the functionality to set your preferences for how this site runs when you use it. In order to remember your preferences we need to set cookies so that this information can be called whenever you interact with a page is affected by your preferences.</p>
+                <h6>Third Party Cookies</h6>
+                <p>In some special cases we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.</p>
+                <p>This site uses Google Analytics which is one of the most widespread and trusted analytics solution on the web for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.</p>
+                <p>For more information on Google Analytics cookies, see the official Google Analytics page.</p>
+                <p>Third party analytics are used to track and measure usage of this site so that we can continue to produce engaging content. These cookies may track things such as how long you spend on the site or pages you visit which helps us to understand how we can improve the site for you.</p>
+                <p>From time to time we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features these cookies may be used to ensure that you receive a consistent experience whilst on the site whilst ensuring we understand which optimisations our users appreciate the most.</p>
+                <p>As we sell products it’s important for us to understand statistics about how many of the visitors to our site actually make a purchase and as such this is the kind of data that these cookies will track. This is important to you as it means that we can accurately make business predictions that allow us to monitor our advertising and product costs to ensure the best possible price.</p>
+                <p>The Google AdSense service we use to serve advertising uses a DoubleClick cookie to serve more relevant ads across the web and limit the number of times that a given ad is shown to you.</p>
+                <p>For more information on Google AdSense see the official Google AdSense privacy FAQ.</p>
+                <p>We use adverts to offset the costs of running this site and provide funding for further development. The behavioural advertising cookies used by this site are designed to ensure that we provide you with the most relevant adverts where possible by anonymously tracking your interests and presenting similar things that may be of interest.</p>
+                <p>In some cases we may provide you with custom content based on what you tell us about yourself either directly or indirectly by linking a social media account. These types of cookies simply allow us to provide you with content that we feel may be of interest to you.</p>
+                <p>Several partners advertise on our behalf and affiliate tracking cookies simply allow us to see if our customers have come to the site through one of our partner sites so that we can credit them appropriately and where applicable allow our affiliate partners to provide any bonus that they may provide you for making a purchase.</p>
+                <p>We also use social media buttons and/or plugins on this site that allow you to connect with your social network in various ways. For these to work the following social media sites including; Facebook, Twitter, Google+, will set cookies through our site which may be used to enhance your profile on their site or contribute to the data they hold for various purposes outlined in their respective privacy policies.</p>
+                <h6>DoubleClick Cookie</h6>
+                <p>Google, as a third party vendor, uses cookies to serve ads on our Service. Google’s use of the DoubleClick cookie enables it and its partners to serve ads to our users based on their visit to our Service or other web sites on the Internet.</p>
+                <p>You may opt out of the use of the DoubleClick Cookie for interest-based advertising by visiting the <a title="Google Ads Settings" href="http://www.google.com/ads/preferences/" rel="nofollow" data-wpel-link="external" target="_blank">Google Ads Settings</a> web page.</p>
+                <h6>Behavioral Remarketing</h6>
+                <p>margin Inc. uses remarketing services to advertise on third party web sites to you after you visited our Service. We, and our third party vendors, use cookies to inform, optimize and serve ads based on your past visits to our Service.</p>
+                <ul>
+                <li>Google AdWords remarketing service is provided by Google Inc.You can opt-out of Google Analytics for Display Advertising and customize the Google Display Network ads by visiting the <a title="Google Ads Settings" href="http://www.google.com/settings/ads" target="_blank">Google Ads Settings</a> page.Google also recommends installing the <a title="Google Analytics Opt-out Browser Add-on" href="https://tools.google.com/dlpage/gaoptout" rel="nofollow" target="_blank">Google Analytics Opt-out Browser Add-on</a> for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics.For more information on the privacy practices of Google, please visit the <a title="Google Privacy &amp; Terms" href="http://www.google.com/intl/en/policies/privacy/" rel="nofollow" target="_blank">Google Privacy &amp; Terms</a> web page.</li>
+                <li>AdRoll remarketing service is provided by Semantic Sugar, Inc. You can opt-out of AdRoll remarketing by visiting this <a title="AdRoll Advertising Preferences" href="http://info.evidon.com/pub_info/573?v=1&amp;nt=1&amp;nw=false" rel="nofollow" target="_blank">AdRoll Advertising Preferences</a> web page.For more information on the privacy practices of AdRoll, please visit the <a title="AdRoll Privacy Policy" href="http://www.adroll.com/about/privacy" rel="nofollow" target="_blank">AdRoll Privacy Policy</a> web page.</li>
+                </ul>
+                <h6>More Information</h6>
+                <p>Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren’t sure whether you need or not it’s usually safer to leave cookies enabled in case it does interact with one of the features you use on our site. However if you are still looking for more information then you can contact us through one of our preferred contact methods.</p>
+                <h6>Do Not Track Disclosure</h6>
+                <p>We do not support Do Not Track (“DNT”). Do Not Track is a preference you can set in your web browser to inform websites that you do not want to be tracked.</p>
+                <p>You can enable or disable Do Not Track by visiting the Preferences or Settings page of your web browser.</p>
+                <h6>Service Providers</h6>
+                <p>We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services and/or to assist us in analyzing how our Service is used.</p>
+                <p>These third parties have access to your Personal Information only to perform specific tasks on our behalf and are obligated not to disclose or use your information for any other purpose.</p>
+                <h6>Communications</h6>
+                <p>We may use your Personal Information to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send or by contacting us.</p>
+                <h6>Compliance With Laws</h6>
+                <p>We will disclose your Personal Information where required to do so by law or subpoena or if we believe that such action is necessary to comply with the law and the reasonable requests of law enforcement or to protect the security or integrity of our Service.</p>
+                <h6>Business Transaction</h6>
+                <p>If margin Inc. is involved in a merger, acquisition or asset sale, your Personal Information may be transferred as a business asset. In such cases, we will provide notice before your Personal Information is transferred and/or becomes subject to a different Privacy Policy.</p>
+                <h6>Security</h6>
+                <p>The security of your Personal Information is important to us, and we strive to implement and maintain reasonable, commercially acceptable security procedures and practices appropriate to the nature of the information we store, in order to protect it from unauthorized access, destruction, use, modification, or disclosure.</p>
+                <p>However, please be aware that no method of transmission over the internet, or method of electronic storage is 100% secure and we are unable to guarantee the absolute security of the Personal Information we have collected from you.</p>
+                <h6>International Transfer</h6>
+                <p>Your information, including Personal Information, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
+                <p>If you are located outside United States and choose to provide information to us, please note that we transfer the information, including Personal Information, to United States and process it there.</p>
+                <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+                <h6>Links To Other Sites</h6>
+                <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+                <p>We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+                <h6>Children’s Privacy</h6>
+                <p>Only persons age 18 or older have permission to access our Service. Our Service does not address anyone under the age of 13 (“Children”).</p>
+                <p>We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you learn that your Children have provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from a children under age 13 without verification of parental consent, we take steps to remove that information from our servers.</p>
+                <h6>Changes To This Privacy Policy</h6>
+                <p>This Privacy Policy is effective as of February 11, 2015 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</p>
+                <p>We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.</p>
+                <p>If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website.</p>
+                <h6>Contact Us</h6>
+                <p>If you have any questions about this Privacy Policy, please contact us.<br>
+                Margin Inc.<br>
+                50 N 1, #4i, 11249, Brooklyn, NY<br>
+                +1 646 492 93 15<br>
+                <a href="#">info@margin.com</a></p>
+              </div>                    
+            </div>
+          </div>
+        </div>
+      </section> <!-- end privacy policy -->
+
+  
+      <!-- CTA -->
+      <div class="call-to-action text-center">
+        <div class="call-to-action__container">
+          <h3 class="call-to-action__title">
+            Get, keep and grow more customers. We’re here to help.
+          </h3>
+          <a href="#" class="btn btn--lg btn--color">
+            <span>Let’s Work Together</span>
+          </a>
+        </div>                
+      </div> <!-- end cta -->      
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__widgets">
+            <div class="row">
+
+              <div class="col-lg-3 col-md-6">
+                <div class="widget widget-about-us">
+                  <!-- Logo -->
+                  <a href="index.html" class="logo-container flex-child">
+                    <img class="logo" src="img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x" alt="logo">
+                  </a>
+                  <p class="mt-24 mb-32">Tools to Effectively Build Your Brand and Grow Your Business.</p>
+                  <div class="socials">
+                    <a href="#" class="social social-twitter" aria-label="twitter" title="twitter" target="_blank"><i class="ui-twitter"></i></a>
+                    <a href="#" class="social social-facebook" aria-label="facebook" title="facebook" target="_blank"><i class="ui-facebook"></i></a>
+                    <a href="#" class="social social-google-plus" aria-label="google plus" title="google plus" target="_blank"><i class="ui-google"></i></a>
+                  </div>
+                </div>
+              </div> <!-- end about us -->
+
+
+              <div class="col-lg-2 offset-lg-3 col-md-6">
+                <div class="widget widget_nav_menu">
+                  <h5 class="widget-title">Resources</h5>
+                  <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-6">
+                <div class="widget widget_nav_menu">
+                  <h5 class="widget-title">Solutions</h5>
+                  <ul>                  
+                    <li><a href="#">Marketing Strategy</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">SMM</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Google AdWords</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-6">
+                <div class="widget widget-address">
+                  <h5 class="widget-title">Company</h5>
+                  <ul>
+                    <li><address>8910 University Center Lane Suite 620 San Diego, CA 92102</address></li>
+                    <li>
+                      <span>Phone: </span>
+                      <a href="tel:+1-800-1554-456-123">+ 1 (800) 155 4561</a>
+                    </li>
+                    <li>
+                      <span>Email: </span>
+                      <a href="mailto:hi@margin.com">hi@margin.com</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>           
+
+            </div>
+          </div>    
+        </div> <!-- end container -->
+
+        <div class="footer__bottom top-divider">
+          <div class="container text-center">
+            <span class="copyright">
+              &copy; 2018 Margin, Made by <a href="https://deothemes.com">DeoThemes</a>
+            </span>
+          </div>
+        </div> <!-- end footer bottom -->
+      </footer> <!-- end footer -->
+
+      <div id="back-to-top">
+        <a href="#top"><i class="ui-arrow-up"></i></a>
+      </div>
+
+    </div> <!-- end content wrapper -->
+  </main> <!-- end main wrapper -->
+  
+
+  <!-- jQuery Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <!-- Cookies -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script src="js/cookies.js"></script>
+  
+</body>
+</html>

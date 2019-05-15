@@ -1,0 +1,405 @@
+/*-------------------------------------------------------*/
+/* Navigation
+/*-------------------------------------------------------*/
+.nav {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 120;
+  position: relative;
+
+  @include bp-lg-up {
+    &__holder {
+      margin-top: 40px;
+    }
+  } 
+
+  &__wrap {
+    padding-left: 44px;
+  }
+
+  &__container {
+    @include bp-lg-up {
+      padding: 0 82px;
+    }    
+  }
+  
+  &__menu,
+  &__dropdown-menu {
+    list-style: none;
+  }
+
+  &__menu {
+    position: relative;
+    @include display-inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+      position: relative;      
+    }
+
+    & > li > a {
+      font-family: $heading-font;
+      font-weight: 700;
+      color: $heading-color;
+      font-size: 15px;
+      padding: 0 17px;
+      line-height: $nav-height;
+      display: block;
+      position: relative;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+
+    & > .active > a {
+      color: $main-color;
+    }
+  }
+
+  /* Dropdowns (large screen) */
+  @include bp-lg-up {
+
+    &__wrap {
+      display: block !important;
+      height: auto !important;
+    }
+
+    &__menu > li {
+      display: inline-block;
+      text-align: center;
+    }
+
+    &__dropdown-menu {
+      position: absolute;
+      left: -5px;      
+      top: 100%;
+      z-index: 1000;
+      min-width: 220px;
+      width: 100%;
+      text-align: left;
+      padding: 20px 0;
+      list-style: none;
+      white-space: nowrap;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba( #9aa1ab, .25);
+      border-radius: 5px;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      @include transition (all .2s ease-in-out);
+
+      & > li > a {
+        color: $text-color;
+        padding: 5px 30px;
+        display: block;
+
+        &:hover,
+        &:focus {
+          color: $main-color;
+        }
+      }
+    }
+
+    &__menu > &__dropdown > &__dropdown-menu:before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: #fff;
+      position: absolute;
+      top: -7px;
+      left: 35px;
+      @include transform ( rotate(45deg) );
+    }
+
+    &__dropdown-menu.hide-dropdown {
+      visibility: hidden !important;
+      opacity: 0 !important;
+    }
+
+    &__dropdown-menu--right {
+      right: 0;
+    }
+
+    &__dropdown:hover > .nav__dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__dropdown-menu {
+      .nav__dropdown-menu {
+        left: 100%;
+        top: -20px;
+      }
+    }
+
+    &__dropdown &__dropdown {
+      position: relative;
+    }
+
+    &__dropdown &__dropdown > a:after {
+      content: '\e804';
+      font-family: 'ui-icons';
+      font-size: 10px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+
+    &__dropdown-trigger {
+      display: none;
+    }
+  }
+}
+
+.mobile body {
+  cursor: pointer;
+}
+
+
+/* Logo
+-------------------------------------------------------*/
+.logo {
+  line-height: 1;
+}
+
+
+/* Nav Flexbox
+-------------------------------------------------------*/
+header .flex-parent {
+  align-items: center;
+
+  @include bp-lg-down {
+    display: block;
+  }
+}
+
+.nav--align-right {
+  margin-left: auto;
+}
+
+.nav--align-left {
+  margin-right: auto;
+}
+
+
+/* Nav Icon Toggle (mobile nav)
+-------------------------------------------------------*/
+.nav__icon-toggle {
+  position: relative;
+  padding: 9px 0 9px 10px;
+  background-color: transparent;
+  border: none;
+  z-index: 50;
+
+  @include bp-lg-up {
+    display: none;
+  }
+
+  &-bar {
+    background-color: $heading-color;
+    width: 18px;
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:focus .nav__icon-toggle-bar,
+  &:hover .nav__icon-toggle-bar {
+    background-color: $main-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/* Sticky Nav
+-------------------------------------------------------*/
+.nav--sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: inherit;
+  @include transition ($all);
+}
+
+.nav__holder--sticky {
+  margin-top: 0;
+  background-color: #fff;
+}
+
+
+
+/* Nav Button
+-------------------------------------------------------*/
+.nav__btn {
+  @include linear-gradient(#F8875F, $main-color);
+  padding: 10px 17px;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+
+  &-text {
+    font-size: 12px;
+  }
+
+  &-phone {
+    font-size: 18px;
+  }
+}
+
+
+/* Go to Top
+-------------------------------------------------------*/
+#back-to-top {
+  display: block;
+  z-index: 100;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  font-size: 12px;
+  position: fixed;
+  bottom: -34px;
+  right: 20px;
+  line-height: 34px;
+  background-color: $bg-light;
+  box-shadow: 0px 1px 4px 0px rgba( 154, 161, 171, .4 );
+  border-radius: 50%;
+  @include transition ($all);
+  text-decoration: none;
+
+  i {
+    @include transition ($all);
+  }
+
+  a {
+    display: block;
+    color: $heading-color;
+  }
+
+  &.show {
+    bottom: 20px;
+  }
+
+  &:hover {
+    background-color: $main-color;
+    bottom: 24px;
+  }
+
+  &:hover i {
+    color: #fff;
+  }
+}
+
+
+/*-------------------------------------------------------*/
+/* Nav Mobile Styles
+/*-------------------------------------------------------*/
+
+@include bp-lg-down {
+
+  .nav {
+    min-height: $nav-height;
+    margin-top: 0;
+    background-color: #fff;
+
+    &__wrap {
+      padding-left: 0;
+    }
+
+    &__header {
+      height: $nav-height;
+      @include display-flex;
+      align-items: center;
+    }
+
+    &__menu {
+      display: block;
+    }
+
+    &__menu li a {
+      padding: 0;
+      line-height: 46px;
+      height: 46px;
+      display: block;      
+      border-bottom: 1px solid $border-color;
+    }
+
+    &__dropdown-menu a {
+      color: $text-color;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    &__dropdown-menu > li > a {
+      padding-left: 10px;
+    }
+
+    &__dropdown-menu > li > ul > li > a {
+      padding-left: 20px;
+    }
+
+    &__dropdown-trigger {
+      display: block;
+      width: 20px;
+      height: 46px;
+      line-height: 46px;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 50;
+      cursor: pointer;
+    }
+
+    &__dropdown-menu {
+      display: none;
+      width: 100% !important;
+    }
+
+    &__dropdown-trigger.active + .nav__dropdown-menu {
+      display: block;
+    }
+  }
+
+  .logo-wrap {
+    float: left;
+
+    a {
+      display: table-cell;
+      vertical-align: middle;
+      height: $nav-height;
+    }
+  }
+
+  .nav__btn {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .sticky-on-mobile .navbar {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

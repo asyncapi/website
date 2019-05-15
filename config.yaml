@@ -1,0 +1,156 @@
+baseURL: https://www.asyncapi.com/
+languageCode: en-us
+title: AsyncAPI Initiative
+theme: hugo-fresh
+enableInlineShortcodes: true
+blackfriday:
+  hrefTargetBlank: true
+
+menu:
+  docs:
+    - identifier: getting-started
+      name: Getting started
+      url: /docs/getting-started/
+      weight: 100
+    - identifier: tutorials
+      name: Tutorials
+      url: /docs/tutorials/
+      weight: 200
+    - identifier: spec
+      name: Specification
+      url: /docs/specifications/latest
+      weight: 800
+params:
+  google_analytics_id: UA-109278936-1
+  meta: 
+    description: Create machine-readable definitions of your message-driven systems.
+    og:
+      url: https://www.asyncapi.com/
+  navbarlogo:
+    image: logo.png
+    link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Define your<br>Message-Driven APIs
+    # Hero subtitle (optional)
+    subtitle: Machine-readable specification for your message-driven systems.
+    # Button text
+    buttontext: Get started
+    # Where the main hero button links to
+    buttonlink: "/docs/getting-started"
+    # Footer logos (from /images/logos/clients/___.svg)
+    clientlogos:
+    - mulesoft
+    - salesforce
+    - sap
+    - slack
+    - solace
+    - tibco
+    
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: Learn
+    sublinks:
+    - title: Get started
+      url: /docs/getting-started
+    - title: Tutorials
+      url: /docs/tutorials
+    - title: Specification
+      url: /docs/specifications/latest
+  - title: Tooling
+    sublinks:
+    - title: Playground
+      url: http://playground.asyncapi.io?utm_source=asyncapi.com&utm_medium=top-menu
+      blank: true
+    - title: Code generators
+      url: /docs/tooling#codegens
+    - title: Documentation generators
+      url: /docs/tooling#docgens
+    - title: Validators
+      url: /docs/tooling#validators
+    - title: Code-first tools
+      url: /docs/tooling#code-first
+  - title: Blog
+    url: /blog
+  - title: Help
+    sublinks:
+    - title: Github repo
+      url: https://github.com/asyncapi/asyncapi
+      blank: true
+    - title: Slack workspace
+      url: https://asyncapi.com/slack-invite
+      blank: true
+  - title: About
+    url: /about
+  - title: Get Started
+    url: /docs/getting-started
+    button: true
+  section1:
+    title: Full of great features
+    subtitle: crafted by the best people
+    tiles:
+    - title: Machine-readable
+      icon: robotic
+      text: Machine-readable definitions of your Message-Driven APIs.
+    - title: Human Friendly
+      icon: maternity
+      text: Easy and intuitive for humans at a glance.
+    - title: Open Source
+      icon: open-source
+      text: It is Open Source and community-driven.
+    tiles2:
+    - title: Tooling
+      icon: tools
+      text: Built-in tools to make your life easier.
+    - title: Online Editor
+      icon: editor
+      text: Provides an online editor for fast prototyping.
+    - title: Support
+      icon: help
+      text: Supported by the awesome AsyncAPI community.
+  footer:
+    # Logo (from /images/logos/___)
+    logo: logo-footer.png
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/asyncapi/asyncapi
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLWU4ZGU2MTg1MDIyZDFjMTI2YjkxYTdlMzc1NjgzYTAxZDM1YTg1NDhhMTE2NDliMjlhZjYxNzk0ZTE5ZGU1ZTg
+      icon: slack
+    - link: https://medium.com/asyncapi
+      icon: medium
+    - link: https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ
+      icon: youtube
+    - link: https://twitter.com/search?q=asyncapi
+      icon: twitter
+    product:
+    - text: Discover features
+      link: /
+    - text: Why choose our product?
+      link: /
+    - text: Compare features
+      link: /
+    - text: Our roadmap
+      link: /
+    - text: Request features
+      link: /
+    docs:
+    - text: Get started
+      link: /
+    - text: User guides
+      link: /
+    - text: Admin guide
+      link: /
+    - text: Developers
+      link: /
+    blogroll:
+    - text: Latest news
+      link: /
+    - text: Tech articles
+      link: /
+    - text: Video blog
+      link: /

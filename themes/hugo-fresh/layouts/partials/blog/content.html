@@ -1,0 +1,39 @@
+{{- $publishDate := .PublishDate.Format "Jan 2, 2006" -}}
+
+<h1 class="blog-title">{{ .Title }}</h1>
+<div class="blog-meta">
+    {{ $publishDate }} •
+    {{ range $tag := .Params.tags }}
+    <span class="blog-meta__tag">{{ $tag }}</span>
+    {{ end }}
+</div>
+<div class="blog-authors">
+    {{ range $author := .Params.authors }}
+    <div class="blog-author">
+        {{ if $author.link }}
+        <a href="{{ $author.link }}" target="_blank" class="blog-author__photo--link">
+        {{ end }}
+            <img src="{{ $author.photo }}" class="blog-author__photo"/>
+        {{ if $author.link }}
+        </a>
+        {{ end }}
+        <div class="blog-author__info">
+            <div class="blog-author__info__name">
+                {{ if $author.link }}
+                    <a href="{{ $author.link }}" target="_blank" class="blog-author__info__name--link">{{ $author.name }}</a>
+                {{ else }}
+                    {{ $author.name }}
+                {{ end }}
+            </div>
+            <div class="blog-author__info__date">
+            {{ $author.byline }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+<div class="blog-content">
+    {{- with .Content -}}
+    {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> ${3}` | safeHTML }}
+    {{- end -}}
+</div>

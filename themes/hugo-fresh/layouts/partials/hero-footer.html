@@ -1,0 +1,23 @@
+{{- $hero        := .Site.Params.hero }}
+{{- $clientLogos := index $hero "clientlogos" }}
+<div class="hero-foot mb-20">
+  <div class="container">
+    <div class="has-text-centered" style="margin-top:20px;font-size:13px;color:#aaa;">
+      Platinum Sponsors
+    </div>
+    <div class="tabs is-centered">
+      <ul>
+        {{- range $clientLogos }}
+        <li>
+          <a>
+            <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.png" . | relURL }}">
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    <div class="has-text-centered">
+      <a href="https://opencollective.com/asyncapi" target="_blank">🙌 Become a sponsor 🙌</a>
+    </div>
+  </div>
+</div>

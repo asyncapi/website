@@ -1,0 +1,66 @@
+{{- $navbar         := .Site.Params.navbar }}
+{{- $sidebarVisible := .Site.Params.sidebar }}
+{{ if .Params.sidebar }}
+{{ $sidebarVisible = .Params.sidebar }}
+{{ end }}
+{{- $navbarLogo     := .Site.Params.navbarlogo }}
+<!-- Navigation -->
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
+
+        <div class="nav__header">
+          <!-- Logo -->
+          <a href="{{ $navbarLogo.link }}" class="logo-container flex-child">
+            <img class="logo" src="{{ printf "/img/%s" $navbarLogo.image | relURL }}" alt="AsyncAPI logo">
+          </a>
+
+          <!-- Mobile toggle -->
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
+        </div>
+
+        <!-- Navbar -->
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            {{- range $navbar }}
+            {{- if .sublinks }}
+            <li class="nav__dropdown">
+              <a>{{ .title }}</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                {{- range .sublinks }}
+                <li><a href="{{ .url }}" {{ if .blank }}target="_blank" {{end}}>{{ .title }}</a></li>
+                {{- end }}
+              </ul>
+            </li>
+            {{- else if .button }}
+            <li><a href="{{ .url }}" style="font-weight: bold; color: #46a2c7;">{{ .title }}</a></li>
+            {{- else }}
+            <li>
+              <a href="{{ .url }}">{{ .title }}</a>
+            </li>
+            {{- end }}
+            {{- end }}
+          </ul> <!-- end menu -->
+        </nav> <!-- end nav-wrap -->
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> <!-- end flex-parent -->
+    </div> <!-- end container -->
+
+  </div>
+</header> <!-- end navigation -->
+

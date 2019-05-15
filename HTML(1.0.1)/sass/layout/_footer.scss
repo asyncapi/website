@@ -1,0 +1,49 @@
+/*-------------------------------------------------------*/
+/* Footer
+/*-------------------------------------------------------*/
+.footer {
+  position: relative;
+}
+
+
+/* Footer Widgets
+-------------------------------------------------------*/
+.footer__widgets {
+  padding: 100px 0 70px;
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  @include bp-md-down {
+    .row > div:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }  
+}
+
+
+/* Bottom Footer
+-------------------------------------------------------*/
+.footer__bottom {
+  padding: 48px 0;
+}
+
+.copyright {
+  display: inline-block;
+  font-size: 15px;
+  color: $text-color;
+
+  a {
+   color: inherit;
+
+   &:hover,
+   &:focus {
+    color: $main-color;
+   }
+  }
+}

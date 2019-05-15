@@ -1,0 +1,69 @@
+{{ define "main" }}
+<div class="container" style="padding:0 2rem;margin-top:30px;margin-bottom:60px;">
+    <div class="blog-list text-center">
+        <div class="row">
+            <div class="col-12">
+                {{ range first 1 (where .Pages "Params.featured" true).ByWeight }}
+                    <a href="{{.URL}}" class="blog-list__article blog-list__article--featured" style="background-image: url({{ .Params.cover }});">
+                        <span class="blog-list__article--featured__details">
+                            <span class="blog-list__article--featured__details__title">{{.Title}}</span>
+                            <span class="blog-list__article__authors">
+                                {{ range $author := .Params.authors }}
+                                <img src="{{ $author.photo }}" class="blog-list__article__authors__photo" title="{{ $author.name }}" alt="{{ $author.name }}" />
+                                {{ end }}
+                            </span>
+                        </span>
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+        <div class="row">
+            {{ range first 2 (after 1 (where .Pages "Params.featured" true)).ByWeight }}
+            <div class="col-lg-6">
+                <a href="{{.URL}}" class="blog-list__article" style="background-image: url({{ .Params.cover }});">
+                    <span class="blog-list__article__shadow"></span>
+                    <span class="blog-list__article__details">
+                        <span class="blog-list__article__details__title">{{.Title}}</span>
+                        <span class="blog-list__article__authors">
+                            {{ range $author := .Params.authors }}
+                            <img src="{{ $author.photo }}" class="blog-list__article__authors__photo" title="{{ $author.name }}"
+                                alt="{{ $author.name }}" />
+                            {{ end }}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="blog-list text-center">
+        <hr>
+        <h3 class="text-center">Latest blog posts</h3>
+        <hr>
+    </div>
+
+    <div class="blog-list text-center">
+        <div class="row is-multiline">
+            {{ range .Pages.ByPublishDate.Reverse }}
+            <div class="col-lg-4">
+                <a href="{{.URL}}" class="blog-list__article" style="background-image: url({{ .Params.cover }});">
+                    <span class="blog-list__article__shadow"></span>
+                    <span class="blog-list__article__details">
+                        <span class="blog-list__article__details__title">{{.Title}}</span>
+                        <span class="blog-list__article__authors">
+                            {{ range $author := .Params.authors }}
+                            <img src="{{ $author.photo }}" class="blog-list__article__authors__photo"
+                                title="{{ $author.name }}" alt="{{ $author.name }}" />
+                            {{ end }}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
+{{ end }}

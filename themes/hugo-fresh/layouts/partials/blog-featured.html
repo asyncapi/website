@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2 is-spaced">Featured blog posts</h2>
+      <div class="divider is-centered"></div>
+    </div>
+
+    <div class="content-wrapper blog-list">
+        <div class="columns">
+            {{ range first 2 (where .Pages "Params.featured" true).ByWeight }}
+            <div class="column is-half">
+                <a href="{{.URL}}" class="blog-list__article" style="background-image: url({{ .Params.cover }});">
+                    <span class="blog-list__article__shadow"></span>
+                    <span class="blog-list__article__details">
+                        <span class="blog-list__article__details__title">{{.Title}}</span>
+                        <span class="blog-list__article__authors">
+                            {{ range $author := .Params.authors }}
+                            <img src="{{ $author.photo }}" class="blog-list__article__authors__photo" title="{{ $author.name }}"
+                                alt="{{ $author.name }}" />
+                            {{ end }}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+  </div>
+</section>
