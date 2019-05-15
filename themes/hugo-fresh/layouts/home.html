@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="row subscribe-form hidden justify-content-center">
+                <div class="row subscribe-form justify-content-center">
                     <div class="col-lg-10">
                         <!-- Optin Form -->
                         <div class="optin">
@@ -282,7 +282,7 @@
 
         <!-- Subscribe -->
         <section class="section-wrap offset-top-152 pt-sm-48">
-            <div class="subscribe-form hidden row justify-content-center">
+            <div class="subscribe-form row justify-content-center">
                 <div class="col-lg-10">
                     <!-- Optin Form -->
                     <div class="optin">
@@ -309,15 +309,6 @@
 
     </div> <!-- end content wrapper -->
 </main> <!-- end main wrapper -->
-
-<script>
-    if (!['asyncapi.com', 'www.asyncapi.com'].includes(window.location.hostname)) {
-        var forms = document.querySelectorAll('.subscribe-form');
-        for (var i = 0; i < forms.length; i++) {
-            forms[i].classList.remove('hidden');
-        }
-    }
-</script>
 
 
 {{ partial "footer.html" . }}
