@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta name="generator" content="Hugo 0.54.0" />
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Create machine-readable definitions of your message-driven systems." />
+
+
+
+
+
+<meta itemprop="name" content="AsyncAPI Initiative">
+<meta itemprop="description" content="Create machine-readable definitions of your message-driven systems.">
+<meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
+
+
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:title" content="AsyncAPI Initiative">
+<meta name="twitter:description" content="Create machine-readable definitions of your message-driven systems.">
+<meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
+
+
+<meta property="og:title" content="AsyncAPI Initiative" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.asyncapi.com/" />
+<meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
+<meta property="og:description" content="" />
+    <title>AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-icons.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.5172582fa804cfda220339b467606ac77754d6551f6fb3e12e3f816429399687.css">
+
+</head>
+
+<body>
+    <a href="https://github.com/asyncapi/asyncapi" target="_blank" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80"
+            viewBox="0 0 250 250" style="fill:#46a2c7; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    
+        @keyframes octocat-wave {
+    
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+    
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+    
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+    
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+    
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    
+
+
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
+
+        <div class="nav__header">
+          
+          <a href="/" class="logo-container flex-child">
+            <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+          </a>
+
+          
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
+        </div>
+
+        
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            <li class="nav__dropdown">
+              <a>Learn</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="/docs/getting-started" >Get started</a></li>
+                <li><a href="/docs/tutorials" >Tutorials</a></li>
+                <li><a href="/docs/specifications/latest" >Specification</a></li>
+              </ul>
+            </li>
+            <li class="nav__dropdown">
+              <a>Tooling</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="http://playground.asyncapi.io?utm_source=asyncapi.com&amp;utm_medium=top-menu" target="_blank" >Playground</a></li>
+                <li><a href="/docs/tooling#codegens" >Code generators</a></li>
+                <li><a href="/docs/tooling#docgens" >Documentation generators</a></li>
+                <li><a href="/docs/tooling#validators" >Validators</a></li>
+                <li><a href="/docs/tooling#code-first" >Code-first tools</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li class="nav__dropdown">
+              <a>Help</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="https://github.com/asyncapi/asyncapi" target="_blank" >Github repo</a></li>
+                <li><a href="https://asyncapi.com/slack-invite" target="_blank" >Slack workspace</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li><a href="/docs/getting-started" style="font-weight: bold; color: #46a2c7;">Get Started</a></li>
+          </ul> 
+        </nav> 
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> 
+    </div> 
+
+  </div>
+</header> 
+
+
+    
+    
+
+<main class="main-wrapper">
+
+    <div class="content-wrapper oh">
+
+        
+        <section class="hero">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 offset-lg-1">
+                        <div class="hero__text-holder">
+                            <h1 class="hero__title hero__title--boxed">Building the future of event-driven architectures.</h1>
+                            <h2 class="hero__subtitle">
+                                Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI
+                                specification, the <strong>industry standard</strong> for defining asynchronous APIs.
+                            </h2>
+                            <h2 class="hero__subtitle">
+                                <a href="/docs/getting-started" class="btn btn--lg btn--color btn--icon">
+                                    <span>Get Started</span>
+                                    <i class="ui-arrow-right"></i>
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="hero__text-holder">
+                            <img src="/img/illustrations/rocket-launch.png" alt="AsyncAPI">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row subscribe-form justify-content-center">
+                    <div class="col-lg-10">
+                        
+                        <div class="optin">
+                            <h3 class="optin__title">Subscribe to our newsletter to receive news about AsyncAPI</h3>
+                            <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
+                            <form class="optin__form" netlify>
+                                <div class="optin__form-group form-group">
+                                    <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
+                                    <label for="optin-name" class="optin__label">Your name</label>
+                                    <span class="input-underline"></span>
+                                </div>
+                                <div class="optin__form-group form-group">
+                                    <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
+                                    <label for="optin-email" class="optin__label">Your e-mail address</label>
+                                    <span class="input-underline"></span>
+                                </div>
+
+                                <button class="optin__btn btn btn--md btn--color btn--button">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row sponsors justify-content-center">
+                    <div class="col-lg-10">
+                        <a href="https://mulesoft.com" target="_blank"><img class="sponsor-logo sponsor-logo--mulesoft" src="/images/logos/clients/mulesoft.png"></a>
+                        <a href="https://salesforce.com" target="_blank"><img class="sponsor-logo sponsor-logo--salesforce" src="/images/logos/clients/salesforce.png"></a>
+                        <a href="https://sap.com" target="_blank"><img class="sponsor-logo sponsor-logo--sap" src="/images/logos/clients/sap.png"></a>
+                        <a href="https://slack.com" target="_blank"><img class="sponsor-logo sponsor-logo--slack" src="/images/logos/clients/slack.png"></a>
+                        <a href="https://solace.com" target="_blank"><img class="sponsor-logo sponsor-logo--solace" src="/images/logos/clients/solace.png"></a>
+                        <a href="https://tibco.com" target="_blank"><img class="sponsor-logo sponsor-logo--tibco" src="/images/logos/clients/tibco.png"></a>
+                    </div>
+                    <div class="col-lg-10">
+                        <span class="sponsors__title">Platinum sponsors</span>
+                        — <a href="https://opencollective.com/asyncapi" target="_blank">Join the best companies in the world.</a>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        
+        <section class="playground-section section-wrap pb-72 pb-lg-40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="title-row">
+                            <h2 class="section-title text-center">
+                                Use the playground to <span class="highlight">generate documentation</span> in multiple formats.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="playground">
+                        <iframe src="https://playground.asyncapi.io?embed=1" class="playground__iframe" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+
+        
+        <section class="section-wrap pb-72 pb-lg-40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="title-row">
+                            <h2 class="section-title text-center">
+                                Documentation is great. <span class="highlight">Taking control of the event lifecycle</span> is awesome!
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/design.png" alt="Design">
+                            <h4 class="feature__title">Design</h4>
+                            <p class="feature__text">Design event-driven APIs in a format that's readable for machines. Humans will thank you.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/document.png" alt="Documentation">
+                            <h4 class="feature__title">Documentation</h4>
+                            <p class="feature__text">Provide a superior development experience. No more outdated documentation. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/code.png" alt="Code">
+                            <h4 class="feature__title">Coding</h4>
+                            <p class="feature__text">Quickly bootstrap your application code in any programming language.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/manage.png" alt="Management">
+                            <h4 class="feature__title">Event Management</h4>
+                            <p class="feature__text">Consume events from the broker with confidence. If the event is there, it's valid.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/test.png" alt="Test">
+                            <h4 class="feature__title">Test</h4>
+                            <p class="feature__text">Automatically test your event-driven applications before they reach production.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 offset-md-0 offset-sm-3 col-sm-6 feature-column">
+                        <div class="feature">
+                            <img class="feature__icon" src="/img/icons/monitor.png" alt="Monitoring">
+                            <h4 class="feature__title">Monitoring</h4>
+                            <p class="feature__text">Gather analytics of your event-driven architecture in real time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        
+        <section class="section-wrap promo-section promo-section--pb-large pt-lg-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="/img/illustrations/learn.png" alt="Learn AsyncAPI">
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <h2 class="promo-section__title promo-section__title--boxed">Learn AsyncAPI now!</h2>
+                        <p class="promo-section__text lead">The AsyncAPI has become the industry standard for defining event-driven architectures.
+                            Thousands of companies are already using it for their development operations (DevOps) and the microservices industry leaders are 
+                            already working on supporting AsyncAPI in their SaaS offerings.
+                        </p>
+                        <a href="/docs/getting-started" class="btn btn--lg btn--color btn--icon">
+                            <span>Get Started</span>
+                            <i class="ui-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+
+        
+        <section class="section-wrap bg-color">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="title-row">
+                            <h2 class="section-title">Testimonials</h2>
+                            <p class="subtitle">Read what the experts are saying.</p>
+                        </div>
+
+                        <div id="owl-testimonials" class="owl-carousel owl-theme owl-carousel--arrows-outside">
+
+                            <div class="testimonial clearfix">
+                                <img src="img/testimonials/matt-mclarty.jpg" alt="" class="testimonial__img">
+                                <div class="testimonial__info">
+                                    <span class="testimonial__author">Matt McLarty</span>
+                                    <span class="testimonial__company">Global Leader of API Strategy at MuleSoft</span>
+                                </div>
+                                <div class="testimonial__body">
+                                    <p class="testimonial__text">“Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the
+                                    richness of the REST API ecosystem to asynchronous APIs.”</p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial clearfix">
+                                <img src="img/testimonials/bill-doerrfeld.jpg" alt="" class="testimonial__img">
+                                <div class="testimonial__info">
+                                    <span class="testimonial__author">Bill Doerrfeld</span>
+                                    <span class="testimonial__company">Editor in Chief at Nordic APIs</span>
+                                </div>
+                                <div class="testimonial__body">
+                                    <p class="testimonial__text">“Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these
+                                    nuanced approaches.”</p>
+                                </div>
+                            </div>
+
+                            <div class="testimonial clearfix">
+                                <img src="img/testimonials/eric-horesnyi.jpg" alt="" class="testimonial__img">
+                                <div class="testimonial__info">
+                                    <span class="testimonial__author">Eric Horesnyi</span>
+                                    <span class="testimonial__company">CEO of Streamdata.io</span>
+                                </div>
+                                <div class="testimonial__body">
+                                    <p class="testimonial__text">“We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community
+                                    towards common standards.”</p>
+                                </div>
+                            </div>
+
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        
+        <section class="section-wrap">
+            <div class="container">
+                <div class="title-row title-row--boxed text-center">
+                    <h2 class="section-title">Blog</h2>
+                    <p class="subtitle">Read the latest news and stories from our blog.</p>
+                </div>
+                <div class="row card-row">
+                    <div class="col-lg-12 col-xl-4">
+                        <article class="entry card box-shadow hover-up">
+                            <div class="entry__img-holder card__img-holder">
+                                <a href="/blog/replicating-success-rest-event-driven-architecture/">
+                                    <img src="/images/posts/replicating-success-of-rest.png" class="entry__img" alt="">
+                                </a>
+                                <div class="entry__date">
+                                    <span class="entry__date-day">4</span>
+                                    <span class="entry__date-month">Aug</span>
+                                </div>
+                                <div class="entry__body card__body">
+                                    <h4 class="entry__title">
+                                        <a href="/blog/replicating-success-rest-event-driven-architecture/">Replicating the Success of REST in Event-Driven Architecture</a>
+                                    </h4>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-author">
+                                            <i class="fas fa-user"></i>
+                                            Jonathan Schabowsky
+                                        </li>
+                                        
+                                        <li class="entry__meta-author">
+                                            <i class="fas fa-user"></i>
+                                            Fran Méndez
+                                        </li>
+                                        
+                                    </ul>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            REST
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            Event-Driven Architectures
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            EDA
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-12 col-xl-4">
+                        <article class="entry card box-shadow hover-up">
+                            <div class="entry__img-holder card__img-holder">
+                                <a href="/blog/asyncapi-cloud-events/">
+                                    <img src="/images/posts/asyncapi-cloudevents.jpg" class="entry__img" alt="">
+                                </a>
+                                <div class="entry__date">
+                                    <span class="entry__date-day">11</span>
+                                    <span class="entry__date-month">Aug</span>
+                                </div>
+                                <div class="entry__body card__body">
+                                    <h4 class="entry__title">
+                                        <a href="/blog/asyncapi-cloud-events/">AsyncAPI and CloudEvents</a>
+                                    </h4>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-author">
+                                            <i class="fas fa-user"></i>
+                                            Fran Méndez
+                                        </li>
+                                        
+                                    </ul>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            AsyncAPI
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            CloudEvents
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            Serverless
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            FaaS
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            Microservices
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-12 col-xl-4">
+                        <article class="entry card box-shadow hover-up">
+                            <div class="entry__img-holder card__img-holder">
+                                <a href="/blog/organizing-asyncapi-documents/">
+                                    <img src="/images/posts/organizing-asyncapi-documents.jpg" class="entry__img" alt="">
+                                </a>
+                                <div class="entry__date">
+                                    <span class="entry__date-day">1</span>
+                                    <span class="entry__date-month">Aug</span>
+                                </div>
+                                <div class="entry__body card__body">
+                                    <h4 class="entry__title">
+                                        <a href="/blog/organizing-asyncapi-documents/">Organizing your AsyncAPI documents</a>
+                                    </h4>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-author">
+                                            <i class="fas fa-user"></i>
+                                            Fran Méndez
+                                        </li>
+                                        
+                                    </ul>
+                                    <ul class="entry__meta">
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            AsyncAPI
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            Organization
+                                        </li>
+                                        
+                                        <li class="entry__meta-tag">
+                                            <i class="ui-category"></i>
+                                            Documents
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </section> 
+
+        
+        <section class="section-wrap offset-top-152 pt-sm-48">
+            <div class="subscribe-form row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <div class="optin">
+                        <h3 class="optin__title">Subscribe to our newsletter to receive news about AsyncAPI</h3>
+                        <h4 class="optin__subtitle">We respect your inbox. No spam, promise ✌️</h4>
+                        <form class="optin__form" netlify>
+                            <div class="optin__form-group form-group">
+                                <input type="text" name="name" class="form-input optin__input" id="optin-name" required>
+                                <label for="optin-name" class="optin__label">Your name</label>
+                                <span class="input-underline"></span>
+                            </div>
+                            <div class="optin__form-group form-group">
+                                <input type="email" name="email" class="form-input optin__input" id="optin-email" required>
+                                <label for="optin-email" class="optin__label">Your e-mail address</label>
+                                <span class="input-underline"></span>
+                            </div>
+            
+                            <button class="optin__btn btn btn--md btn--color btn--button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+</main> 
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__widgets">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="widget widget-about-us">
+            
+            <a href="index.html" class="logo-container flex-child">
+              <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+            </a>
+            <p class="mt-24 mb-32">Building the future of event-driven architectures.</p>
+            <div class="socials">
+              <a href="https://twitter.com/AsyncAPISpec" class="social social-twitter" aria-label="twitter"
+                title="Twitter" target="_blank"><i class="ui-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/asyncapi" class="social social-linkedin" aria-label="linkedin"
+                title="LinkedIn" target="_blank"><i class="ui-linkedin"></i></a>
+            </div>
+          </div>
+        </div> 
+
+
+        <div class="col-lg-2 offset-lg-6 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Resources</h5>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="https://github.com/asyncapi" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  <div class="footer__bottom top-divider">
+    <div class="container text-center">
+      <span class="copyright">
+        Made with <code>:love:</code> by the AsyncAPI Initiative.
+      </span>
+    </div>
+  </div> 
+</footer> 
+
+<div id="back-to-top">
+  <a href="#top"><i class="ui-arrow-up"></i></a>
+</div>
+
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109278936-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109278936-1');
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/scripts.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/cookies.js"></script>
+
+
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="I&rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&rsquo;t be less true, and I&rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way." />
+
+
+
+    
+
+
+
+<meta itemprop="name" content="AsyncAPI and CloudEvents | AsyncAPI Initiative">
+<meta itemprop="description" content="I&rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&rsquo;t be less true, and I&rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way.">
+<meta itemprop="image" content="https://www.asyncapi.com/images/posts/asyncapi-cloudevents.jpg">
+
+
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:title" content="AsyncAPI and CloudEvents | AsyncAPI Initiative">
+<meta name="twitter:description" content="I&rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&rsquo;t be less true, and I&rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way.">
+<meta name="twitter:image" content="https://www.asyncapi.com/images/posts/asyncapi-cloudevents.jpg">
+
+
+<meta property="og:title" content="AsyncAPI and CloudEvents | AsyncAPI Initiative" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.asyncapi.com/blog/asyncapi-cloud-events/" />
+<meta property="og:image" content="https://www.asyncapi.com/images/posts/asyncapi-cloudevents.jpg" />
+<meta property="og:description" content="I&rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&rsquo;t be less true, and I&rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way." />
+    <title>AsyncAPI and CloudEvents | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-icons.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.5172582fa804cfda220339b467606ac77754d6551f6fb3e12e3f816429399687.css">
+
+</head>
+
+<body>
+    <a href="https://github.com/asyncapi/asyncapi" target="_blank" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80"
+            viewBox="0 0 250 250" style="fill:#46a2c7; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    
+        @keyframes octocat-wave {
+    
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+    
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+    
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+    
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+    
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    
+
+
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
+
+        <div class="nav__header">
+          
+          <a href="/" class="logo-container flex-child">
+            <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+          </a>
+
+          
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
+        </div>
+
+        
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            <li class="nav__dropdown">
+              <a>Learn</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="/docs/getting-started" >Get started</a></li>
+                <li><a href="/docs/tutorials" >Tutorials</a></li>
+                <li><a href="/docs/specifications/latest" >Specification</a></li>
+              </ul>
+            </li>
+            <li class="nav__dropdown">
+              <a>Tooling</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="http://playground.asyncapi.io?utm_source=asyncapi.com&amp;utm_medium=top-menu" target="_blank" >Playground</a></li>
+                <li><a href="/docs/tooling#codegens" >Code generators</a></li>
+                <li><a href="/docs/tooling#docgens" >Documentation generators</a></li>
+                <li><a href="/docs/tooling#validators" >Validators</a></li>
+                <li><a href="/docs/tooling#code-first" >Code-first tools</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li class="nav__dropdown">
+              <a>Help</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="https://github.com/asyncapi/asyncapi" target="_blank" >Github repo</a></li>
+                <li><a href="https://asyncapi.com/slack-invite" target="_blank" >Slack workspace</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li><a href="/docs/getting-started" style="font-weight: bold; color: #46a2c7;">Get Started</a></li>
+          </ul> 
+        </nav> 
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> 
+    </div> 
+
+  </div>
+</header> 
+
+
+    
+    
+<div style="padding:0 2rem;margin-top:120px;">
+    <div class="blog-wrapper is-centered-tablet-portrait">
+        <h1 class="blog-title">AsyncAPI and CloudEvents</h1>
+<div class="blog-meta">
+    May 11, 2019 •
+    
+    <span class="blog-meta__tag">AsyncAPI</span>
+    
+    <span class="blog-meta__tag">CloudEvents</span>
+    
+    <span class="blog-meta__tag">Serverless</span>
+    
+    <span class="blog-meta__tag">FaaS</span>
+    
+    <span class="blog-meta__tag">Microservices</span>
+    
+</div>
+<div class="blog-authors">
+    
+    <div class="blog-author">
+        
+        <a href="https://twitter.com/fmvilas" target="_blank" class="blog-author__photo--link">
+        
+            <img src="/images/avatars/fmvilas.jpg" class="blog-author__photo"/>
+        
+        </a>
+        
+        <div class="blog-author__info">
+            <div class="blog-author__info__name">
+                
+                    <a href="https://twitter.com/fmvilas" target="_blank" class="blog-author__info__name--link">Fran Méndez</a>
+                
+            </div>
+            <div class="blog-author__info__date">
+            AsyncAPI founder
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="blog-content">
+
+<p>I&rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!</p>
+
+<p>There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&rsquo;t be less true, and I&rsquo;d like to explain you why. Read on!</p>
+
+<h1 id="what-is-cloudevents">What is CloudEvents?<a href="#what-is-cloudevents" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
+
+<p>From <a href="https://cloudevents.io" target="_blank">cloudevents.io</a>:</p>
+
+<blockquote>
+<p>Enter CloudEvents, a specification for <strong>describing event data in a common way</strong>. CloudEvents seeks to ease event declaration and delivery across services, platforms and beyond!</p>
+</blockquote>
+
+<p>The purpose of CloudEvents is to establish a common format for event data description. And it makes a lot of sense when you realize they are part of the <a href="https://github.com/cncf/wg-serverless" target="_blank">CNCF’s Serverless Working Group</a>.</p>
+
+<p>If you are doing serverless or FaaS (Function as a Service), then CloudEvents is your best friend because the event is the only information you will have in your function during runtime. No topics or channels, no servers, no subscribers. Just the event and some extra information you may need to make your function work.</p>
+
+<p><strong>CloudEvents is focused on the event</strong> and defines an envelope for your application&rsquo;s data. See an example from their repo:</p>
+
+<pre><code class="language-json">{
+    &quot;specversion&quot; : &quot;0.2&quot;,
+    &quot;type&quot; : &quot;com.github.pull.create&quot;,
+    &quot;source&quot; : &quot;https://github.com/cloudevents/spec/pull/123&quot;,
+    &quot;id&quot; : &quot;A234-1234-1234&quot;,
+    &quot;time&quot; : &quot;2018-04-05T17:31:00Z&quot;,
+    &quot;comexampleextension1&quot; : &quot;value&quot;,
+    &quot;comexampleextension2&quot; : {
+        &quot;othervalue&quot;: 5
+    },
+    &quot;contenttype&quot; : &quot;text/xml&quot;,
+    &quot;data&quot; : &quot;&lt;much wow=\&quot;xml\&quot;/&gt;&quot;
+}
+</code></pre>
+
+<p>Here your event is actually <code>&lt;much wow=\&quot;xml\&quot;/&gt;</code> and the rest is meta information about your event. This envelope is what CloudEvents defines with the purpose of making event declaration reusable across services and platforms.</p>
+
+<h1 id="what-is-asyncapi">What is AsyncAPI?<a href="#what-is-asyncapi" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
+
+<p>From the <a href="https://github.com/asyncapi/asyncapi" target="_blank">AsyncAPI repo</a>:</p>
+
+<blockquote>
+<p>Create machine-readable definitions of your event-driven APIs.</p>
+</blockquote>
+
+<p>The purpose of AsyncAPI is to provide a way for you to define how your event-driven applications (or APIs) communicate with the rest of the world. <strong>AsyncAPI is focused on the application and the channels it uses to communicate</strong>. Similar to what <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI</a> and <a href="https://raml.org/" target="_blank">RAML</a> do for REST APIs. Unlike CloudEvents —who focuses on the message— AsyncAPI does not impose how your event must look like but, instead, allows you to strictly define its shape. See an example:</p>
+
+<pre><code class="language-yaml">asyncapi: 2.0.0-rc1
+id: urn:com.asyncapi.examples.user
+info:
+  title: User service
+  version: 1.6.3
+channels:
+  user/signedup:
+    publish:
+      message:
+        payload:
+          type: object
+          properties:
+            fullName:
+              type: string
+            email:
+              type: string
+              format: email
+</code></pre>
+
+<p>Looking at the example above, one can rapidly say this is the AsyncAPI definition of a User service, which its API version is 1.6.3 and it publishes to the <code>user/signedup</code> channel an event that is an object containing two properties: <code>fullName</code> and <code>email</code>.</p>
+
+<p>We can define the event payload but its structure is totally free and user-defined. And that&rsquo;s what makes AsyncAPI so powerful! Since our event payload can be anything, it can also be a CloudEvents event.</p>
+
+<h1 id="asyncapi-cloudevents">AsyncAPI + CloudEvents<a href="#asyncapi-cloudevents" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
+
+<p>Let&rsquo;s see an example of the two combined:</p>
+
+<pre><code class="language-yaml">asyncapi: 2.0.0-rc1
+id: urn:com.asyncapi.examples.user
+info:
+  title: User service
+  version: 1.6.3
+channels:
+  user/signedup:
+    publish:
+      message:
+        payload:
+          type: object
+          properties:
+            specversion:
+              type: string
+              enum: ['0.2']
+            type:
+              type: string
+              example: com.github.pull.create
+            source:
+              type: string
+              format: uri
+              example: urn:com.asyncapi.examples.user
+            id:
+              type: string
+              example: 'A234-1234-1234'
+            time:
+              type: string
+              format: date-time
+              example: 2018-04-05T17:31:00Z
+            contenttype:
+              type: string
+              example: 'application/json'
+            data:
+              type: object
+              properties:
+                fullName:
+                  type: string
+                email:
+                  type: string
+                  format: email
+</code></pre>
+
+<p>Looking at the example above, one can say this is the AsyncAPI definition of a User service, which its API version is 1.6.3 and it publishes to the <code>user/signedup</code> channel a CloudEvents event whose data is a JSON object containing two properties: <code>fullName</code> and <code>email</code>.</p>
+
+<h2 id="leveraging-asyncapi-custom-schema-formats">Leveraging AsyncAPI Custom Schema Formats<a href="#leveraging-asyncapi-custom-schema-formats" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>There&rsquo;s only one concern with the approach above: every single CloudEvents definition is going to be exactly the same from line 11 to 33 — except for the examples that were added in this blog for clarity.</p>
+
+<p>The default format for defining events (messages) in AsyncAPI 2.0 is JSON Schema. Thankfully, AsyncAPI provides a way to define events in your own custom format —like Avro and Protobuf — or a hypothetical CloudEvents one in this case. See example:</p>
+
+<pre class="language-yaml line-numbers" data-line="10"><code>asyncapi: 2.0.0-rc1
+id: urn:com.asyncapi.examples.user
+info:
+  title: User service
+  version: 1.6.3
+channels:
+  user/signedup:
+    publish:
+      message:
+        schemaFormat: &#39;application/cloudevents&#43;json; version=0.2; charset=utf-8&#39;
+        payload:
+          type: object
+          properties:
+            fullName:
+              type: string
+            email:
+              type: string
+              format: email</code></pre>
+
+<p>This results in a much shorter and nicer way of defining the usage of CloudEvents inside an AsyncAPI document.</p>
+
+<h2 id="ok-it-s-possible-but-does-it-makes-sense">Ok, it&rsquo;s possible but, does it makes sense?<a href="#ok-it-s-possible-but-does-it-makes-sense" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>It really depends on your use case but it makes sense in scenarios where some kind of FaaS is involved. Consider the following example:</p>
+
+<p><img src="/images/diagrams/asyncapi-cloudevents.png" alt="" /></p>
+
+<p>Reading the diagram from the bottom up, we see an overly simplified diagram of a sign up process. The <code>user/signedup</code> event flows from the REST API to the monitoring service and the FaaS API through the broker. The event could have the CloudEvents format so that both, the FaaS API and the monitoring service, understand it. Obviously, one may argue that the Faas API could be wrapping the event data in CloudEvents format and leave the rest of the events untouched, in plain JSON. Fair.</p>
+
+<p>So, does it really makes sense? It certainly does in some situations. Do you have to use AsyncAPI and CloudEvents together? As always that&rsquo;s up to you. <strong>You have the tools. Choose them wisely.</strong></p>
+
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
+
+<p>We&rsquo;ve learned how AsyncAPI differs from CloudEvents. Before I finish these lines, I&rsquo;d like to make something clear again: AsyncAPI focuses on the application and how it is connected; and CloudEvents focuses on the message. Both things are compatible and complementary. Evaluate what are your needs and decide which one suits them better. There&rsquo;s no one-size-fits-all solution.</p>
+
+<p>I hope you learned something new, if so, please consider donating to the <a href="https://opencollective.com/asyncapi" target="_blank">AsyncAPI Initiative</a>.</p>
+
+<p>Until next time! 👋</p>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__widgets">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="widget widget-about-us">
+            
+            <a href="index.html" class="logo-container flex-child">
+              <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+            </a>
+            <p class="mt-24 mb-32">Building the future of event-driven architectures.</p>
+            <div class="socials">
+              <a href="https://twitter.com/AsyncAPISpec" class="social social-twitter" aria-label="twitter"
+                title="Twitter" target="_blank"><i class="ui-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/asyncapi" class="social social-linkedin" aria-label="linkedin"
+                title="LinkedIn" target="_blank"><i class="ui-linkedin"></i></a>
+            </div>
+          </div>
+        </div> 
+
+
+        <div class="col-lg-2 offset-lg-6 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Resources</h5>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="https://github.com/asyncapi" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  <div class="footer__bottom top-divider">
+    <div class="container text-center">
+      <span class="copyright">
+        Made with <code>:love:</code> by the AsyncAPI Initiative.
+      </span>
+    </div>
+  </div> 
+</footer> 
+
+<div id="back-to-top">
+  <a href="#top"><i class="ui-arrow-up"></i></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596"></script>
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109278936-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109278936-1');
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/scripts.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/cookies.js"></script>
+
+
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
+</body>
+
+</html>
