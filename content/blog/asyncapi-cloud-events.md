@@ -50,7 +50,7 @@ If you are doing serverless or FaaS (Function as a Service), then CloudEvents is
 }
 ```
 
-Here your event is actually `<much wow=\"xml\"/>` and the rest is meta information about your event. This envelope is what CloudEvents define with the purpose of making event declaration reusable across services and platforms.
+Here your event is actually `<much wow=\"xml\"/>` and the rest is meta information about your event. This envelope is what CloudEvents defines with the purpose of making event declaration reusable across services and platforms.
 
 # What is AsyncAPI?
 
@@ -58,7 +58,7 @@ From the [AsyncAPI repo](https://github.com/asyncapi/asyncapi):
 
 > Create machine-readable definitions of your event-driven APIs.
 
-The purpose of AsyncAPI is to provide a way for you to define how your event-driven applications (or APIs) communicate with the rest of the world. **AsyncAPI is focused on the application and the channels it uses to communicate**. Similar to what [OpenAPI](https://github.com/OAI/OpenAPI-Specification) does for REST APIs. Unlike CloudEvents —who focuses on the message— AsyncAPI does not impose how your event must look like but, instead, allows you to strictly define its shape. See an example:
+The purpose of AsyncAPI is to provide a way for you to define how your event-driven applications (or APIs) communicate with the rest of the world. **AsyncAPI is focused on the application and the channels it uses to communicate**. Similar to what [OpenAPI](https://github.com/OAI/OpenAPI-Specification) and [RAML](https://raml.org/) do for REST APIs. Unlike CloudEvents —who focuses on the message— AsyncAPI does not impose how your event must look like but, instead, allows you to strictly define its shape. See an example:
 
 ```yaml
 asyncapi: 2.0.0-rc1
