@@ -6,17 +6,35 @@
     <description>Recent content in Tags on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 16:56:52 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 10:56:52 +0100</lastBuildDate>
     
 	<atom:link href="https://www.asyncapi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Announcement</title>
+      <link>https://www.asyncapi.com/tags/announcement/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/announcement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Asyncapi</title>
       <link>https://www.asyncapi.com/tags/asyncapi/</link>
-      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
       
       <guid>https://www.asyncapi.com/tags/asyncapi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beta</title>
+      <link>https://www.asyncapi.com/tags/beta/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/beta/</guid>
       <description></description>
     </item>
     

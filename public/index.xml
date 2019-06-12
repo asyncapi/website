@@ -82,13 +82,13 @@ Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;
     </item>
     
     <item>
-      <title>Replicating the Success of REST in Event-Driven Architecture</title>
-      <link>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</link>
-      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      <title>AsyncAPI 2.0.0 important dates</title>
+      <link>https://www.asyncapi.com/blog/v2-important-dates/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
       
-      <guid>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</guid>
-      <description>This post is a collaboration between Fran Méndez of AsyncAPI and Solace’s Jonathan Schabowsky. It was originally published at Solace’s blog.
-Jonathan explained in his last blog post how the loose coupling of applications associated with event-driven architecture and publish/subscribe messaging is both a strength and a weakness. As part of that, he touched on the fact that request/reply interactions using RESTful APIs are still the dominant application integration paradigm, even in hybrid cloud, machine learning and IoT use cases that benefit from event-driven interactions.</description>
+      <guid>https://www.asyncapi.com/blog/v2-important-dates/</guid>
+      <description>Hey folks! After some time thinking about it, I&amp;rsquo;ve decided it&amp;rsquo;s time to define some important dates for AsyncAPI 2.0.0. So here we go!
+End of review period (July 1, 2019) After some time, many people have reviewed the specification and they&amp;rsquo;ve identified some issues that need to be addressed before we launch the version 2.0.0. Actually, this process will never finish but we have to decide on a date to stop reviewing and move forward.</description>
     </item>
     
     <item>
@@ -167,14 +167,13 @@ What is CloudEvents? From cloudevents.io:
     </item>
     
     <item>
-      <title>Organizing your AsyncAPI documents</title>
-      <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
-      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      <title>Replicating the Success of REST in Event-Driven Architecture</title>
+      <link>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
       
-      <guid>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</guid>
-      <description>A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same AsyncAPI document?”.
-Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
-Organizing Microservices  I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.</description>
+      <guid>https://www.asyncapi.com/blog/replicating-success-rest-event-driven-architecture/</guid>
+      <description>This post is a collaboration between Fran Méndez of AsyncAPI and Solace’s Jonathan Schabowsky. It was originally published at Solace’s blog.
+Jonathan explained in his last blog post how the loose coupling of applications associated with event-driven architecture and publish/subscribe messaging is both a strength and a weakness. As part of that, he touched on the fact that request/reply interactions using RESTful APIs are still the dominant application integration paradigm, even in hybrid cloud, machine learning and IoT use cases that benefit from event-driven interactions.</description>
     </item>
     
     <item>
@@ -214,6 +213,17 @@ Building the parser  We’ve added support for AsyncAPI 1.x/OpenAPI schemas. Thi
       <guid>https://www.asyncapi.com/blog/status-update-week-14-2019/</guid>
       <description>Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!
 Improvements on documentation  Check out version 2.0.0-rc1 of the specification in our website: https://www.asyncapi.com/docs/specifications/2.0.0-rc1/. Added a “Hello world” article to our getting started guide: https://github.com/asyncapi/asyncapi.github.io/pull/3. Added a “Servers” article to our getting started guide, explaining how the “servers” section of AsyncAPI works: https://github.</description>
+    </item>
+    
+    <item>
+      <title>Organizing your AsyncAPI documents</title>
+      <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</guid>
+      <description>A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same AsyncAPI document?”.
+Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
+Organizing Microservices  I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.</description>
     </item>
     
     <item>

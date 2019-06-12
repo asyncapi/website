@@ -6,10 +6,20 @@
     <description>Recent content in Asyncapi on AsyncAPI Initiative</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 16:56:52 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 10:56:52 +0100</lastBuildDate>
     
 	<atom:link href="https://www.asyncapi.com/tags/asyncapi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AsyncAPI 2.0.0 important dates</title>
+      <link>https://www.asyncapi.com/blog/v2-important-dates/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/v2-important-dates/</guid>
+      <description>Hey folks! After some time thinking about it, I&amp;rsquo;ve decided it&amp;rsquo;s time to define some important dates for AsyncAPI 2.0.0. So here we go!
+End of review period (July 1, 2019) After some time, many people have reviewed the specification and they&amp;rsquo;ve identified some issues that need to be addressed before we launch the version 2.0.0. Actually, this process will never finish but we have to decide on a date to stop reviewing and move forward.</description>
+    </item>
     
     <item>
       <title>AsyncAPI and CloudEvents</title>
@@ -21,17 +31,6 @@
 There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&amp;rsquo;t be less true, and I&amp;rsquo;d like to explain you why. Read on!
 What is CloudEvents? From cloudevents.io:
  Enter CloudEvents, a specification for describing event data in a common way.</description>
-    </item>
-    
-    <item>
-      <title>Organizing your AsyncAPI documents</title>
-      <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
-      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
-      
-      <guid>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</guid>
-      <description>A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same AsyncAPI document?”.
-Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
-Organizing Microservices  I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.</description>
     </item>
     
     <item>
@@ -71,6 +70,17 @@ Building the parser  We’ve added support for AsyncAPI 1.x/OpenAPI schemas. Thi
       <guid>https://www.asyncapi.com/blog/status-update-week-14-2019/</guid>
       <description>Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!
 Improvements on documentation  Check out version 2.0.0-rc1 of the specification in our website: https://www.asyncapi.com/docs/specifications/2.0.0-rc1/. Added a “Hello world” article to our getting started guide: https://github.com/asyncapi/asyncapi.github.io/pull/3. Added a “Servers” article to our getting started guide, explaining how the “servers” section of AsyncAPI works: https://github.</description>
+    </item>
+    
+    <item>
+      <title>Organizing your AsyncAPI documents</title>
+      <link>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/organizing-asyncapi-documents/</guid>
+      <description>A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same AsyncAPI document?”.
+Let’s break down some best practices and tips to avoid ending up in a hell of unmanageable documents.
+Organizing Microservices  I’m using the term microservices here because it’s the most common type of distributed architecture that you can find nowadays.</description>
     </item>
     
   </channel>
