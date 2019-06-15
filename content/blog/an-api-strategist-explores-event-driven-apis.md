@@ -51,9 +51,8 @@ I was thinking about how you measure the *effects* of event-driven APIs. For exa
 
 Recommendations are the most important piece of the event-driven architecture value proposition. Business leaders only care about event-driven architecture as much as the end result produces the business-driving experience that specifically this type of architecture can produce.
 
-### Technology and consulting organizations need to know when and how to recommend event-driven architecture, APIs and microservices, and corresponding methods of implementation.
-
-### How they impact my current product engine? What business results justify the spend? — [lifewingmate](https://twitter.com/lifewingmate)
+> Technology and consulting organizations need to know when and how to recommend event-driven architecture, APIs and microservices, and corresponding methods of implementation.
+> How they impact my current product engine? What business results justify the spend? — [lifewingmate](https://twitter.com/lifewingmate)
 
 Here we go!
 
