@@ -82,13 +82,17 @@ Version 1.0.0 The key words &amp;ldquo;MUST&amp;rdquo;, &amp;ldquo;MUST NOT&amp;
     </item>
     
     <item>
-      <title>AsyncAPI 2.0.0 important dates</title>
-      <link>https://www.asyncapi.com/blog/v2-important-dates/</link>
-      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      <title>An API Strategist Explores Event-Driven APIs</title>
+      <link>https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/</link>
+      <pubDate>Tue, 14 May 2019 16:56:52 +0100</pubDate>
       
-      <guid>https://www.asyncapi.com/blog/v2-important-dates/</guid>
-      <description>Hey folks! After some time thinking about it, I&amp;rsquo;ve decided it&amp;rsquo;s time to define some important dates for AsyncAPI 2.0.0. So here we go!
-End of review period (July 1, 2019) After some time, many people have reviewed the specification and they&amp;rsquo;ve identified some issues that need to be addressed before we launch the version 2.0.0. Actually, this process will never finish but we have to decide on a date to stop reviewing and move forward.</description>
+      <guid>https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/</guid>
+      <description>An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp;amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp;amp; Integration, Axway (CEO of Streamdata.</description>
     </item>
     
     <item>
@@ -152,6 +156,16 @@ In this article, we will learn how to add &amp;ldquo;servers&amp;rdquo; to our A
       <description>Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&amp;rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
   In production environments, your API may have to access a message broker that&amp;rsquo;s protected by some auth mechanisms. Examples of these are:
  User &amp;amp; password Certificates API keys OAuth 2  If you&amp;rsquo;re using AsyncAPI to define an API that connects to a message broker, you&amp;rsquo;ll most probably make use of user/password or certificates.</description>
+    </item>
+    
+    <item>
+      <title>AsyncAPI 2.0.0 important dates</title>
+      <link>https://www.asyncapi.com/blog/v2-important-dates/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/v2-important-dates/</guid>
+      <description>Hey folks! After some time thinking about it, I&amp;rsquo;ve decided it&amp;rsquo;s time to define some important dates for AsyncAPI 2.0.0. So here we go!
+End of review period (July 1, 2019) After some time, many people have reviewed the specification and they&amp;rsquo;ve identified some issues that need to be addressed before we launch the version 2.0.0. Actually, this process will never finish but we have to decide on a date to stop reviewing and move forward.</description>
     </item>
     
     <item>

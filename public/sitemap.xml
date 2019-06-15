@@ -37,8 +37,8 @@
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/blog/v2-important-dates/</loc>
-    <lastmod>2019-06-12T10:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/</loc>
+    <lastmod>2019-05-14T16:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -69,6 +69,11 @@
   <url>
     <loc>https://www.asyncapi.com/docs/getting-started/security/</loc>
     <lastmod>2019-04-16T10:56:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/blog/v2-important-dates/</loc>
+    <lastmod>2019-06-12T10:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -133,6 +138,12 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/apis/</loc>
+    <lastmod>2019-05-14T16:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/</loc>
     <lastmod>2019-04-01T10:56:52+01:00</lastmod>
     <priority>0</priority>
@@ -152,7 +163,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/blog/</loc>
-    <lastmod>2019-06-12T10:56:52+01:00</lastmod>
+    <lastmod>2019-05-14T16:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -185,6 +196,12 @@
   </url>
   
   <url>
+    <loc>https://www.asyncapi.com/tags/event-driven/</loc>
+    <lastmod>2019-05-14T16:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.asyncapi.com/tags/event-driven-architectures/</loc>
     <lastmod>2019-04-04T13:56:52+01:00</lastmod>
     <priority>0</priority>
@@ -205,6 +222,12 @@
   <url>
     <loc>https://www.asyncapi.com/categories/getting-started/</loc>
     <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.asyncapi.com/tags/interview/</loc>
+    <lastmod>2019-05-14T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   

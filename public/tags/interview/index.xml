@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interview on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/interview/</link>
+    <description>Recent content in Interview on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 May 2019 16:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/interview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An API Strategist Explores Event-Driven APIs</title>
+      <link>https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/</link>
+      <pubDate>Tue, 14 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/</guid>
+      <description>An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp;amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp;amp; Integration, Axway (CEO of Streamdata.</description>
+    </item>
+    
+  </channel>
+</rss>

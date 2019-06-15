@@ -8,7 +8,7 @@ tags:
   - Announcement
   - Beta
 cover: /images/posts/v2-important-dates.jpg
-weight: 100
+weight: 200
 authors:
   - name: Fran Méndez
     photo: /images/avatars/fmvilas.jpg
