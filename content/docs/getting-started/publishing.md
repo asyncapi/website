@@ -43,7 +43,7 @@ channels:
           pattern: '^hello .+$'
 {{</code>}}
 
-You probably have noticed that the only difference between this AsyncAPI definition and the one for the [Hello world application](/docs/getting-started/hello-world) are the lines 2, 4, and 9. The id must be unique for each application, that's the reason it is different. Since it's a publisher application, we also wanted to make it obvious in the title. In the case of the line 9, it is now `publish` because we're defining a publishing operation.
+You probably have noticed that the only difference between this AsyncAPI definition and the one for the [Hello world application](/docs/getting-started/hello-world) are the lines 2, 4, and 12. The id must be unique for each application, that's the reason it is different. Since it's a publisher application, we also wanted to make it obvious in the title. In the case of the line 12, it is now `publish` because we're defining a publishing operation.
 
 ## Conclusion
 
