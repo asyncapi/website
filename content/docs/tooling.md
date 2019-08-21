@@ -17,8 +17,8 @@ This page contains a list of AsyncAPI tooling. Would you like to add your tool t
 
 The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.
 
-| Link           | Description    | Langage/Framework |
-| :------------- | :------------- | :---------------- |
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **Please, check out the [templates directory](https://github.com/asyncapi/generator/tree/master/templates) to get a list of the supported languages/formats**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 | [node-codegen](https://github.com/asyncapi/node-codegen) | **_(Deprecated in favor of AsyncAPI Generator)_** <br>Use your AsyncAPI definition to generate the Node.js ES7 code for your API. The generated code features: <ul><li>ES7</li><li>No transpiling</li><li>ESLint</li><li>YAML config file</li><li>Hermes</li></ul>       | Node.js/Hermes
 
@@ -46,6 +46,6 @@ The following is a list of tools that validate AsyncAPI documents.
 
 The following is a list of tools that generate AsyncAPI documents from your code.
 
-| Link           | Description    | Langage/Framework |
-| :------------- | :------------- | :---------------- |
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
 | [Go AsyncAPI](https://github.com/swaggest/go-asyncapi) | It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema. Thanks to [@vearutop](https://github.com/vearutop). | Go
