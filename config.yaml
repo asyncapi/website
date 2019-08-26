@@ -88,6 +88,9 @@ params:
   - title: Get Started
     url: /docs/getting-started
     button: true
+  - title: Shop
+    url: https://asyncapi.threadless.com/
+    blank: true
   section1:
     title: Full of great features
     subtitle: crafted by the best people
