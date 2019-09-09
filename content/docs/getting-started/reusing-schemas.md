@@ -21,7 +21,7 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: broker.mycomapny.com
+  - url: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
 channels:
@@ -67,7 +67,7 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: broker.mycomapny.com
+  - url: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
 channels:
@@ -110,7 +110,7 @@ info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: broker.mycomapny.com
+  - url: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
 channels:
