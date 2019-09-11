@@ -7,11 +7,6 @@ menu:
 weight: 150
 ---
 
-{{% notice %}}
-This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We're working hard
-to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-{{% /notice %}}
-
 In production environments, your API may have to access a message broker that's protected by some auth mechanisms. Examples of these are:
 
 * User & password
