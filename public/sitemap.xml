@@ -3,12 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.asyncapi.com/docs/getting-started/event-driven-architectures/</loc>
-    <lastmod>2019-04-01T10:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/docs/specifications/2.0.0/</loc>
+    <lastmod>2019-09-09T17:15:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/docs/specifications/2.0.0-rc1/</loc>
+    <loc>https://www.asyncapi.com/docs/getting-started/event-driven-architectures/</loc>
+    <lastmod>2019-04-01T10:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -49,21 +50,6 @@
   <url>
     <loc>https://www.asyncapi.com/docs/getting-started/servers/</loc>
     <lastmod>2019-04-03T10:56:52+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.asyncapi.com/docs/getting-started/publishing/</loc>
-    <lastmod>2019-04-13T10:56:52+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.asyncapi.com/docs/getting-started/reusing-messages/</loc>
-    <lastmod>2019-04-15T10:56:52+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.asyncapi.com/docs/getting-started/reusing-schemas/</loc>
-    <lastmod>2019-04-15T10:56:52+01:00</lastmod>
   </url>
   
   <url>
@@ -145,7 +131,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/</loc>
-    <lastmod>2019-04-01T10:56:52+01:00</lastmod>
+    <lastmod>2019-09-09T17:15:09+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -179,7 +165,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/docs/</loc>
-    <lastmod>2019-02-16T17:41:57+01:00</lastmod>
+    <lastmod>2019-09-09T17:15:09+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -214,14 +200,14 @@
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/tags/getting-started/</loc>
-    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/categories/getting-started/</loc>
+    <lastmod>2019-02-16T13:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.asyncapi.com/categories/getting-started/</loc>
-    <lastmod>2019-02-16T13:56:52+01:00</lastmod>
+    <loc>https://www.asyncapi.com/tags/getting-started/</loc>
+    <lastmod>2019-04-19T16:56:52+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -257,7 +243,7 @@
   
   <url>
     <loc>https://www.asyncapi.com/categories/specifications/</loc>
-    <lastmod>2019-02-16T17:41:57+01:00</lastmod>
+    <lastmod>2019-09-09T17:15:09+01:00</lastmod>
     <priority>0</priority>
   </url>
   

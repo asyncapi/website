@@ -6,26 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document." />
+<meta name="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; servers: production: url: broker." />
 
 
 
 
 
 <meta itemprop="name" content="Servers | AsyncAPI Initiative">
-<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document.">
+<meta itemprop="description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; servers: production: url: broker.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:title" content="Servers | AsyncAPI Initiative">
-<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document.">
+<meta name="twitter:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; servers: production: url: broker.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
@@ -33,9 +33,9 @@ In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/servers/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
-In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document." />
+<meta property="og:description" content="In the previous lesson, we learned how to create the definition of a simple Hello World application, so let&rsquo;s take it from there.
+In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; servers: production: url: broker." />
     <title>Servers | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
@@ -249,33 +249,6 @@ In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI 
             
                 
                 <li>
-                    <a href="/docs/getting-started/publishing/">
-                        
-                        <span>Publishing</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-messages/">
-                        
-                        <span>Reusing messages</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-schemas/">
-                        
-                        <span>Reusing schemas</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
                     <a href="/docs/getting-started/security/">
                         
                         <span>Adding security</span>
@@ -322,9 +295,9 @@ In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI 
             
                 
                 <li>
-                    <a href="/docs/specifications/2.0.0-rc1/">
+                    <a href="/docs/specifications/2.0.0/">
                         
-                        <span>2.0.0-rc1</span>
+                        <span>2.0.0</span>
                     </a>
                 </li>
                 
@@ -371,31 +344,17 @@ In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI 
 <div class="row">
     <div class="col-12 docs-content">
 
-<div class="notice">
-    <div class="notice__header">
-        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
-        
-            Notice
-        
-    </div>
-    <div class="notice__body">
-        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
-to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
-
-    </div>
-</div>
-
 <p>In the previous lesson, we learned how to create the definition of a simple <a href="/docs/getting-started/hello-world">Hello World application</a>, so let&rsquo;s take it from there.</p>
 
 <p>In this article, we will learn how to add &ldquo;servers&rdquo; to our AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.</p>
 
-<pre class="language-yaml line-numbers" data-line="6-9"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="5-8"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 servers:
-  - url: broker.mycomapny.com
+  production:
+    url: broker.mycompany.com
     protocol: amqp
     description: This is &#34;My Company&#34; broker.
 channels:
@@ -406,17 +365,7 @@ channels:
           type: string
           pattern: &#39;^hello .&#43;$&#39;</code></pre>
 
-<p>We added a new section called &ldquo;servers&rdquo; in our AsyncAPI document. Note that the object is an array because we can have multiple servers such as staging, production, and development.</p>
-
-<div class="hint">
-    <div class="hint__icon-wrapper">
-        <i class="hint__icon-wrapper__icon fa fa-question-circle"></i>
-    </div>
-    <div class="hint__body">
-        <p>YAML arrays are denoted by a <code>-</code> (dash) symbol.</p>
-
-    </div>
-</div>
+<p>We added a new section called &ldquo;servers&rdquo; in our AsyncAPI document.</p>
 
 <p>You might have noticed that the example mentions &ldquo;amqp&rdquo;. This protocol is very common and was popularized by RabbitMQ (among others). You can use any protocol. For example, the most common are <code>mqtt</code> (widely adopted by the Internet of Things and mobile apps), <code>kafka</code> (popular for its streaming solution), <code>ws</code> (WebSockets are frequently used in browsers), and <code>http</code> (used in HTTP streaming APIs.)</p>
 
@@ -432,7 +381,7 @@ channels:
 
 <ol>
 <li>If you are using a <a href="https://fmvilas.com/event-driven-architectures-asyncapi/" target="_blank">broker-centric architecture</a> such as Kafka or RabbitMQ, usually you specify the URL of the broker.</li>
-<li>If you have the classic client-server model such as for REST APIs, then your server should be the URL of your application.</li>
+<li>If you have the classic client-server model such as for REST APIs, then your server should be the URL of the server.</li>
 </ol>
 
     </div>
@@ -440,12 +389,12 @@ channels:
 
 <h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
 
-<p>Now we know where our application connects to and can start receiving &ldquo;hello {name}&rdquo; messages.</p>
+<p>Now we know where to connect to start receiving &ldquo;hello {name}&rdquo; messages.</p>
 
-<p>On the next chapter, you&rsquo;ll learn how to create a publisher.</p>
+<p>On the next chapter, you&rsquo;ll learn how to add security requirements to a server.</p>
 
 <div class="has-text-centered" style="margin-top: 40px;">
-    <a href="/docs/getting-started/publishing" class="btn btn--lg btn--color btn--icon button--next-chapter">
+    <a href="/docs/getting-started/security" class="btn btn--lg btn--color btn--icon button--next-chapter">
         <span>
             Go to the next chapter
         </span>

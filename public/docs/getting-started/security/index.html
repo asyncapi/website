@@ -6,26 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
- User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates." />
+<meta name="description" content="In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose and they&rsquo;re not exposed to the public." />
 
 
 
 
 
 <meta itemprop="name" content="Adding security | AsyncAPI Initiative">
-<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
- User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates.">
+<meta itemprop="description" content="In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose and they&rsquo;re not exposed to the public.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:title" content="Adding security | AsyncAPI Initiative">
-<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
- User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates.">
+<meta name="twitter:description" content="In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose and they&rsquo;re not exposed to the public.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
@@ -33,9 +30,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/security/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
- User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates." />
+<meta property="og:description" content="In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:
+ User &amp; password Certificates API keys OAuth 2  If you&rsquo;re using AsyncAPI to define an API that connects to a message broker, you&rsquo;ll most probably make use of user/password or certificates. Traditionally, message brokers are infrastructure pieces that serve an internal purpose and they&rsquo;re not exposed to the public." />
     <title>Adding security | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
@@ -250,33 +246,6 @@
                 
             
                 
-                <li>
-                    <a href="/docs/getting-started/publishing/">
-                        
-                        <span>Publishing</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-messages/">
-                        
-                        <span>Reusing messages</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-schemas/">
-                        
-                        <span>Reusing schemas</span>
-                    </a>
-                </li>
-                
-            
-                
                 <li class="active">
                     
                     <span>Adding security</span>
@@ -322,9 +291,9 @@
             
                 
                 <li>
-                    <a href="/docs/specifications/2.0.0-rc1/">
+                    <a href="/docs/specifications/2.0.0/">
                         
-                        <span>2.0.0-rc1</span>
+                        <span>2.0.0</span>
                     </a>
                 </li>
                 
@@ -371,20 +340,6 @@
 <div class="row">
     <div class="col-12 docs-content">
 
-<div class="notice">
-    <div class="notice__header">
-        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
-        
-            Notice
-        
-    </div>
-    <div class="notice__body">
-        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
-to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
-
-    </div>
-</div>
-
 <p>In production environments, your API may have to access a message broker that&rsquo;s protected by some auth mechanisms. Examples of these are:</p>
 
 <ul>
@@ -404,7 +359,7 @@ info:
   title: Hello world publisher application
   version: &#39;0.1.0&#39;
 servers:
-  - url: broker.mycomapny.com
+  - url: broker.mycompany.com
     protocol: amqp
     description: This is &#34;My Company&#34; broker.
     security:

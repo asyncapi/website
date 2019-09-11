@@ -6,26 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
-asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: subscribe: message: payload: type: string pattern: &#39;^hello ." />
+<meta name="description" content="Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39;  Let&rsquo;s get into the details of the sample specification:
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39; The first line of the specification starts with the document type (AsyncAPI) and the version (2." />
 
 
 
 
 
 <meta itemprop="name" content="Hello world | AsyncAPI Initiative">
-<meta itemprop="description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
-asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: subscribe: message: payload: type: string pattern: &#39;^hello .">
+<meta itemprop="description" content="Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39;  Let&rsquo;s get into the details of the sample specification:
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39; The first line of the specification starts with the document type (AsyncAPI) and the version (2.">
 <meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
 
 
 <meta name="twitter:card" value="summary_large_image">
 <meta name="twitter:title" content="Hello world | AsyncAPI Initiative">
-<meta name="twitter:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
-asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: subscribe: message: payload: type: string pattern: &#39;^hello .">
+<meta name="twitter:description" content="Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39;  Let&rsquo;s get into the details of the sample specification:
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39; The first line of the specification starts with the document type (AsyncAPI) and the version (2.">
 <meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
 
 
@@ -33,9 +33,9 @@ asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hel
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/hello-world/" />
 <meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
-<meta property="og:description" content="Notice  This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard to update everything to version 2.0.0 as soon as possible. Thanks for your patience.
-  Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
-asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: subscribe: message: payload: type: string pattern: &#39;^hello ." />
+<meta property="og:description" content="Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39;  Let&rsquo;s get into the details of the sample specification:
+asyncapi: 2.0.0 info: title: Hello world application version: &#39;0.1.0&#39; channels: hello: publish: message: payload: type: string pattern: &#39;^hello .&#43;$&#39; The first line of the specification starts with the document type (AsyncAPI) and the version (2." />
     <title>Hello world | AsyncAPI Initiative</title>
     
 <link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
@@ -249,33 +249,6 @@ asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hel
             
                 
                 <li>
-                    <a href="/docs/getting-started/publishing/">
-                        
-                        <span>Publishing</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-messages/">
-                        
-                        <span>Reusing messages</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a href="/docs/getting-started/reusing-schemas/">
-                        
-                        <span>Reusing schemas</span>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
                     <a href="/docs/getting-started/security/">
                         
                         <span>Adding security</span>
@@ -322,9 +295,9 @@ asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hel
             
                 
                 <li>
-                    <a href="/docs/specifications/2.0.0-rc1/">
+                    <a href="/docs/specifications/2.0.0/">
                         
-                        <span>2.0.0-rc1</span>
+                        <span>2.0.0</span>
                     </a>
                 </li>
                 
@@ -371,30 +344,15 @@ asyncapi: &#39;2.0.0-rc1&#39; id: &#39;urn:hello-world-app&#39; info: title: Hel
 <div class="row">
     <div class="col-12 docs-content">
 
-<div class="notice">
-    <div class="notice__header">
-        <i class="notice__header__icon fa fa-exclamation-triangle"></i>
-        
-            Notice
-        
-    </div>
-    <div class="notice__body">
-        <p>This article is about version 2.0.0-rc1 of the specification. Please note that documentation and tooling support are minimum or inexistent yet. We&rsquo;re working hard
-to update everything to version 2.0.0 as soon as possible. Thanks for your patience.</p>
-
-    </div>
-</div>
-
 <p>Let&rsquo;s define an application that&rsquo;s capable of receiving a &ldquo;hello {name}&rdquo; message.</p>
 
-<pre><code class="language-yaml">asyncapi: '2.0.0-rc1'
-id: 'urn:hello-world-app'
+<pre><code class="language-yaml">asyncapi: 2.0.0
 info:
   title: Hello world application
   version: '0.1.0'
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
@@ -403,14 +361,13 @@ channels:
 
 <p>Let&rsquo;s get into the details of the sample specification:</p>
 
-<pre class="language-yaml line-numbers" data-line="1,2"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="1"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
@@ -418,16 +375,13 @@ channels:
 
 <p>The first line of the specification starts with the document type (AsyncAPI) and the version (2.0.0). This line doesn&rsquo;t have to be the first one but it&rsquo;s a recommended practice.</p>
 
-<p>The second line identifies the application and is both required and unique. In a real environment using &lsquo;urn:com:mycompany:hello-world-app&rsquo; is preferred rather than &lsquo;urn:hello-world-app&rsquo;, for example.</p>
-
-<pre class="language-yaml line-numbers" data-line="3-5"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="2-4"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
@@ -435,14 +389,13 @@ channels:
 
 <p>The &ldquo;info&rdquo; object contains the minimum required information about the application. It contains the title, which is a memorable name for the API, and the version. While it&rsquo;s not mandatory, it is strongly recommended to change the version whenever you make changes to the API.</p>
 
-<pre class="language-yaml line-numbers" data-line="6-12"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="5-11"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
@@ -452,29 +405,27 @@ channels:
 
 <p>In our example, we only have one channel called <code>hello</code>. The sample app subscribes to this channel to receive &ldquo;hello {name}&rdquo; messages.</p>
 
-<pre class="language-yaml line-numbers" data-line="7-10"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="6-9"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
           pattern: &#39;^hello .&#43;$&#39;</code></pre>
 
-<p>You can read the highlighted lines as &ldquo;this is the <strong>payload</strong> of the <strong>message</strong> your app is <strong>subscribed</strong> to on the «<strong>hello</strong>» channel&rdquo;.</p>
+<p>You can read the highlighted lines as &ldquo;this is the <strong>payload</strong> of the <strong>message</strong> your app can <strong>publish</strong> to the «<strong>hello</strong>» channel&rdquo;.</p>
 
-<pre class="language-yaml line-numbers" data-line="10-12"><code>asyncapi: &#39;2.0.0-rc1&#39;
-id: &#39;urn:hello-world-app&#39;
+<pre class="language-yaml line-numbers" data-line="9-11"><code>asyncapi: 2.0.0
 info:
   title: Hello world application
   version: &#39;0.1.0&#39;
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
