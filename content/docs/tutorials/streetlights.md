@@ -45,27 +45,28 @@ info:
 servers:
   mosquitto:
     url: test.mosquitto.org
-    scheme: mqtt
+    protocol: mqtt
 
 channels:
   light/measured:
     publish:
       summary: Inform about environmental lighting conditions for a particular streetlight.
-      payload:
-        type: object
-        properties:
-          id:
-            type: integer
-            minimum: 0
-            description: Id of the streetlight.
-          lumens:
-            type: integer
-            minimum: 0
-            description: Light intensity measured in lumens.
-          sentAt:
-            type: string
-            format: date-time
-            description: Date and time when the message was sent.
+      message:
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the streetlight.
+            lumens:
+              type: integer
+              minimum: 0
+              description: Light intensity measured in lumens.
+            sentAt:
+              type: string
+              format: date-time
+              description: Date and time when the message was sent.
 ```
 
 Let's break it down into pieces:
