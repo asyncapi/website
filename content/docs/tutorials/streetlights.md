@@ -127,7 +127,7 @@ Cool! So we're done with our AsyncAPI file! Let's get into generating code.
 To generate our code we'll use the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
 
 ```bash
-npm install -g asyncapi-node-codegen
+npm install -g asyncapi-generator
 ```
 
 (You might need to use sudo)
