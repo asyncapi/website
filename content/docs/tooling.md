@@ -49,4 +49,4 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
 | [Go AsyncAPI](https://github.com/swaggest/go-asyncapi) | It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema. Thanks to [@vearutop](https://github.com/vearutop). | Go
-| [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. | C#/dotnet
+| [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. Thanks to [@tehmantra](https://github.com/tehmantra) | C#/dotnet
