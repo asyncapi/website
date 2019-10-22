@@ -3942,31 +3942,32 @@ dd {
 .bottom-divider {
   border-bottom: 1px solid #E8ECED; }
 
-.sponsors {
+/* Renamed from sponsors class as EasyList used by ad blockers blocks sponsor classes */
+.platinum-members {
   padding: 50px 20px;
   text-align: center; }
-  .sponsors .sponsors__title {
+  .platinum-members .platinum-members__title {
     font-size: 14px;
     color: #aaa; }
-  .sponsors .sponsor-logo {
+  .platinum-members .platinum-member-logo {
     display: inline-block;
     margin-right: 20px;
     margin-bottom: 20px; }
     @media only screen and (max-width: 1199px) {
-      .sponsors .sponsor-logo {
+      .platinum-members .platinum-member-logo {
         margin-right: 30px; } }
-    .sponsors .sponsor-logo--mulesoft {
+    .platinum-members .platinum-member-logo--mulesoft {
       width: 147px; }
-    .sponsors .sponsor-logo--salesforce {
+    .platinum-members .platinum-member-logo--salesforce {
       width: 86px; }
-    .sponsors .sponsor-logo--sap {
+    .platinum-members .platinum-member-logo--sap {
       width: 84px; }
-    .sponsors .sponsor-logo--slack {
+    .platinum-members .platinum-member-logo--slack {
       width: 151px; }
-    .sponsors .sponsor-logo--solace {
+    .platinum-members .platinum-member-logo--solace {
       width: 139px;
       margin-top: -5px; }
-    .sponsors .sponsor-logo--tibco {
+    .platinum-members .platinum-member-logo--tibco {
       width: 116px; }
 
 .section-title {
