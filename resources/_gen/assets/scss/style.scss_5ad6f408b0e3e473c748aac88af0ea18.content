@@ -3956,6 +3956,8 @@ dd {
     @media only screen and (max-width: 1199px) {
       .platinum-members .platinum-member-logo {
         margin-right: 30px; } }
+    .platinum-members .platinum-member-logo--iqvia {
+      width: 147px; }
     .platinum-members .platinum-member-logo--mulesoft {
       width: 147px; }
     .platinum-members .platinum-member-logo--salesforce {
