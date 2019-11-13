@@ -44,13 +44,14 @@ info:
 
 servers:
   mosquitto:
-    url: test.mosquitto.org
+    url: mqtt://test.mosquitto.org
     protocol: mqtt
 
 channels:
   light/measured:
     publish:
       summary: Inform about environmental lighting conditions for a particular streetlight.
+      operationId: onLightMeasured
       message:
         payload:
           type: object
@@ -94,9 +95,10 @@ channels:
   light/measured:
     publish:
       summary: Inform about environmental lighting conditions for a particular streetlight.
+      operationId: onLightMeasured
 ```
 
-In this example, `light/measured` is the channel name your API will allow you to `publish` to. To understand how the event should look like when publishing to that channel, there is the `payload` property:
+In this example, `light/measured` is the channel name your API will allow you to `publish` to. The `operationId` property, describes what will be the name of function or method that will take care of this functionality in the case we generate code (which is the case). To understand how the event should look like when publishing to that channel, there is the `payload` property:
 
 ```yaml
       payload:
