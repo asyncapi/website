@@ -65,7 +65,7 @@ components:
       type: userPassword
 {{</code>}}
 
-The example above shows how to specify that our server (the Kafka broker) requires a user and a password to stablish a connection. Let's break this down:
+The example above shows how to specify that our server (the Kafka broker) requires a user and a password to establish a connection. Let's break this down:
 
 1. There's a new property in the server object called `security`. It's an array and can contain multiple security mechanisms. We chose to add one called "user-password". This is simply a memorable name that we give this security scheme but, whatever name we choose, it must be defined in the `components/securitySchemes` section. You might have also noticed its value is an empty array. It's because some security schemes allow for extra configuration but, since this is not the case, we leave the array empty.
 2. We've added a new section called "securitySchemes" under components. Inside it, you can find the definition of our "user-password" mechanism. What really makes it clear that we're speaking about a `user/password` mechanism is the `type: userPassword` on line 44.
