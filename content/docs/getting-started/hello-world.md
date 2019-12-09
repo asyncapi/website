@@ -7,12 +7,12 @@ menu:
 weight: 101
 ---
 
-Let's define an application that's capable of receiving a "hello {name}" message.
+Let's define an application that's capable of publishing a "hello {name}" message.
 
 ```yaml
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -28,7 +28,7 @@ Let's get into the details of the sample specification:
 {{<code lang="yaml" lines="1">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -44,7 +44,7 @@ The first line of the specification starts with the document type (AsyncAPI) and
 {{<code lang="yaml" lines="2-4">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -60,7 +60,7 @@ The "info" object contains the minimum required information about the applicatio
 {{<code lang="yaml" lines="5-11">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -78,7 +78,7 @@ In our example, we only have one channel called `hello`. The sample app subscrib
 {{<code lang="yaml" lines="6-9">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -94,7 +94,7 @@ You can read the highlighted lines as "this is the **payload** of the **message*
 {{<code lang="yaml" lines="9-11">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 channels:
   hello:
@@ -109,7 +109,7 @@ The 'payload' object defines how the message must be structured. In this example
 
 ## Conclusion
 
-We've seen how to define our simple Hello World app but, **how do we send a message to our Hello World application?**
+We've seen how to define our simple Hello World app but, **how do we publish a message from our Hello World application?**
 
 On the next chapter, you'll learn about the `servers` property.
 

@@ -15,7 +15,7 @@ The format of the file must be JSON or YAML, however, only the subset of YAML th
 asyncapi: '2.0.0'
 id: 'urn:com.my-application.example'
 info:
-  title: Example
+  title: Example message consumer/subscriber
   version: 0.1.0
 channels:
   user/signedup:

@@ -7,7 +7,7 @@ menu:
 weight: 150
 ---
 
-In production environments, your API may have to access a message broker that's protected by some auth mechanisms. Examples of these are:
+In production environments, your application(s) may have to access a message broker that's protected by some auth mechanisms. Examples of these are:
 
 * User & password
 * Certificates
@@ -19,13 +19,14 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the "hello world" application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 {{<code lang="yaml" lines="10-11,42-44">}}
-asyncapi: '2.0.0-rc1'
-id: 'urn:hello-world-publisher'
+asyncapi: '2.0.0'
+id: 'urn:com.asyncapi.hello-world-publisher'
 info:
   title: Hello world publisher application
   version: '0.1.0'
 servers:
-  - url: broker.mycompany.com
+  production:
+    url: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
     security:
@@ -71,7 +72,7 @@ The example above shows how to specify that our server (the Kafka broker) requir
 2. We've added a new section called "securitySchemes" under components. Inside it, you can find the definition of our "user-password" mechanism. What really makes it clear that we're speaking about a `user/password` mechanism is the `type: userPassword` on line 44.
 
 {{%hint%}}
-There are many more security schemes. Learn more about them {{%link "/docs/specifications/2.0.0-rc1/#securitySchemeObject" %}}here{{%/link%}}.
+There are many more security schemes. Learn more about them {{%link "/docs/specifications/2.0.0.md/#securitySchemeObject" %}}here{{%/link%}}.
 {{%/hint%}}
 
 ## Conclusion

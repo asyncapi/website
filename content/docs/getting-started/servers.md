@@ -15,16 +15,17 @@ In this article, we will learn how to add "servers" to our AsyncAPI document. Ad
 {{<code lang="yaml" lines="5-8">}}
 asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Hello world publisher application
   version: '0.1.0'
 servers:
   production:
     url: broker.mycompany.com
     protocol: amqp
+    protocolVersion: "0.9.1"
     description: This is "My Company" broker.
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string
@@ -44,7 +45,7 @@ The "servers" section defines where your application should connect to start sen
 
 ## Conclusion
 
-Now we know where to connect to start receiving "hello {name}" messages.
+Now we know where to connect to start publishing "hello {name}" messages.
 
 On the next chapter, you'll learn how to add security requirements to a server.
 
