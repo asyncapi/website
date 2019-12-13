@@ -33,6 +33,7 @@ The following is a list of tools that generate human-readable documentation from
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything!
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc).
 | [Docgen](https://github.com/asyncapi/docgen) | **_(Deprecated in favor of AsyncAPI Generator)_** <br>Use your AsyncAPI definition to generate beautiful human-readable documentation for your API. It generates documentation in HTML, CSS and JS.
+| [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser
 
 # Validators {#validators}
 
