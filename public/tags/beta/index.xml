@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beta on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/beta/</link>
+    <description>Recent content in Beta on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2019 10:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/beta/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AsyncAPI 2.0.0 important dates</title>
+      <link>https://www.asyncapi.com/blog/v2-important-dates/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/v2-important-dates/</guid>
+      <description>Hey folks! After some time thinking about it, I&amp;rsquo;ve decided it&amp;rsquo;s time to define some important dates for AsyncAPI 2.0.0. So here we go!
+End of review period (July 1, 2019) After some time, many people have reviewed the specification and they&amp;rsquo;ve identified some issues that need to be addressed before we launch the version 2.0.0. Actually, this process will never finish but we have to decide on a date to stop reviewing and move forward.</description>
+    </item>
+    
+  </channel>
+</rss>

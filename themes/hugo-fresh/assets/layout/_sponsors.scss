@@ -1,13 +1,14 @@
-.sponsors {
+/* Renamed from sponsors class as EasyList used by ad blockers blocks sponsor classes */
+.platinum-members {
     padding: 50px 20px;
     text-align: center;
 
-    .sponsors__title {
+    .platinum-members__title {
         font-size: 14px;
         color: #aaa;
     }
 
-    .sponsor-logo {
+    .platinum-member-logo {
         display: inline-block;
         margin-right: 20px;
         margin-bottom: 20px;
@@ -16,6 +17,10 @@
             margin-right: 30px;
         }
 
+        &--iqvia {
+            width: 147px;
+        }
+        
         &--mulesoft {
             width: 147px;
         }

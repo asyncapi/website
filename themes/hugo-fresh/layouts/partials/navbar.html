@@ -44,7 +44,7 @@
             <li><a href="{{ .url }}" style="font-weight: bold; color: #46a2c7;">{{ .title }}</a></li>
             {{- else }}
             <li>
-              <a href="{{ .url }}">{{ .title }}</a>
+              <a href="{{ .url }}" {{ if .blank }}target="_blank" {{end}} {{ if eq .title "Shop" }}style="color: #df02dd;"{{end}}>{{ .title }}</a>
             </li>
             {{- end }}
             {{- end }}
@@ -63,4 +63,3 @@
 
   </div>
 </header> <!-- end navigation -->
-

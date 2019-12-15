@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="If you&rsquo;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
+You&rsquo;ll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by Darrel Miller&rsquo;s blog post:" />
+
+
+
+
+
+<meta itemprop="name" content="Coming from OpenAPI | AsyncAPI Initiative">
+<meta itemprop="description" content="If you&rsquo;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
+You&rsquo;ll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by Darrel Miller&rsquo;s blog post:">
+<meta itemprop="image" content="https://www.asyncapi.com/images/social/card.png">
+
+
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:title" content="Coming from OpenAPI | AsyncAPI Initiative">
+<meta name="twitter:description" content="If you&rsquo;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
+You&rsquo;ll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by Darrel Miller&rsquo;s blog post:">
+<meta name="twitter:image" content="https://www.asyncapi.com/images/social/card.png">
+
+
+<meta property="og:title" content="Coming from OpenAPI | AsyncAPI Initiative" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.asyncapi.com/docs/getting-started/coming-from-openapi/" />
+<meta property="og:image" content="https://www.asyncapi.com/images/social/card.png" />
+<meta property="og:description" content="If you&rsquo;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
+You&rsquo;ll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by Darrel Miller&rsquo;s blog post:" />
+    <title>Coming from OpenAPI | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-icons.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.c6a281168271efed5bb93c06b2a37b52a430b99f623502cbbb06bfc5b7ad24bc.css">
+
+</head>
+
+<body>
+    <a href="https://github.com/asyncapi/asyncapi" target="_blank" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80"
+            viewBox="0 0 250 250" style="fill:#46a2c7; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    
+        @keyframes octocat-wave {
+    
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+    
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+    
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+    
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+    
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    
+
+
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
+
+        <div class="nav__header">
+          
+          <a href="/" class="logo-container flex-child">
+            <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+          </a>
+
+          
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
+        </div>
+
+        
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            <li class="nav__dropdown">
+              <a>Learn</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="/docs/getting-started" >Get started</a></li>
+                <li><a href="/docs/tutorials" >Tutorials</a></li>
+                <li><a href="/docs/specifications/latest" >Specification</a></li>
+              </ul>
+            </li>
+            <li class="nav__dropdown">
+              <a>Tooling</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="http://playground.asyncapi.io?utm_source=asyncapi.com&amp;utm_medium=top-menu" target="_blank" >Playground</a></li>
+                <li><a href="/docs/tooling#codegens" >Code generators</a></li>
+                <li><a href="/docs/tooling#docgens" >Documentation generators</a></li>
+                <li><a href="/docs/tooling#validators" >Validators</a></li>
+                <li><a href="/docs/tooling#code-first" >Code-first tools</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/blog"  >Blog</a>
+            </li>
+            <li class="nav__dropdown">
+              <a>Help</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="https://github.com/asyncapi/asyncapi" target="_blank" >Github repo</a></li>
+                <li><a href="https://asyncapi.com/slack-invite" target="_blank" >Slack workspace</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/about"  >About</a>
+            </li>
+            <li><a href="/docs/getting-started" style="font-weight: bold; color: #46a2c7;">Get Started</a></li>
+            <li>
+              <a href="https://asyncapi.threadless.com/" target="_blank"  style="color: #df02dd;">Shop</a>
+            </li>
+          </ul> 
+        </nav> 
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> 
+    </div> 
+
+  </div>
+</header> 
+    
+    
+<div class="container" style="padding:0 2rem;margin-top:30px;">
+    <div class="row">
+        <div class="col-md-3">
+            <aside class="docs-menu">
+    <h3>Menu</h3>
+    <ul>
+        
+        
+        
+        <li>
+            
+                <a href="/docs/getting-started/">
+                    
+                    <span>Getting started</span>
+                </a>
+            
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/getting-started/event-driven-architectures/">
+                        
+                        <span>Event-driven architectures</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li class="active">
+                    
+                    <span>Coming from OpenAPI</span>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/asyncapi-documents/">
+                        
+                        <span>AsyncAPI documents</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/hello-world/">
+                        
+                        <span>Hello world</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/servers/">
+                        
+                        <span>Servers</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/getting-started/security/">
+                        
+                        <span>Adding security</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+        
+        <li>
+            
+                <a href="/docs/tutorials/">
+                    
+                    <span>Tutorials</span>
+                </a>
+            
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/tutorials/streetlights/">
+                        
+                        <span>Streetlights</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+        
+        <li>
+            
+                <a href="/docs/specifications/latest">
+                    
+                    <span>Specification</span>
+                </a>
+            
+        </li>
+        <ul class="sub-menu">
+            
+                
+                <li>
+                    <a href="/docs/specifications/2.0.0/">
+                        
+                        <span>2.0.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.2.0/">
+                        
+                        <span>1.2.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.1.0/">
+                        
+                        <span>1.1.0</span>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/docs/specifications/1.0.0/">
+                        
+                        <span>1.0.0</span>
+                    </a>
+                </li>
+                
+            
+        </ul>
+        
+        
+    </ul>
+</aside>
+        </div>
+        <div class="col-md-9">
+        <div class="row">
+    <div class="col-12">
+        <h1 class="title section-title">Coming from OpenAPI</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 docs-content">
+
+<p>If you&rsquo;re coming from OpenAPI, you must know that AsyncAPI <a href="https://medium.com/asyncapi/whats-new-on-asyncapi-lots-2d9019a1869d" target="_blank">started as an adaptation of the OpenAPI specification</a>. We wanted to have as much compatibility as possible between the two so users could reuse parts in both.</p>
+
+<p>You&rsquo;ll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, we have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by <a href="https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2" target="_blank">Darrel Miller&rsquo;s blog post</a>:</p>
+
+<div class="openapi-comparison has-text-centered">
+    <h2 class="openapi-comparison__title">OpenAPI — AsyncAPI comparison</h2>
+
+    <div class="openapi-comparison__content">
+        <div class="openapi-comparison__block">
+            <h3 class="openapi-comparison__block__title">OpenAPI 3.0</h3>
+    
+            <div class="openapi-comparison__block__content">
+                <div class="openapi-comparison__block openapi-comparison__block--info">
+                    Info
+                </div>
+                <div class="openapi-comparison__content">
+                    <div class="openapi-comparison__block openapi-comparison__block--hosts">
+                        Hosts
+                    </div>
+                    <div class="openapi-comparison__block openapi-comparison__block--security">
+                        Security
+                    </div>
+                </div>
+                <div class="openapi-comparison__block openapi-comparison__block--paths">
+                    Paths
+
+                    <div class="openapi-comparison__content">
+                        <div class="openapi-comparison__block openapi-comparison__block--path-item">
+                            Path Item
+
+                            <div class="openapi-comparison__content">
+                                <div class="openapi-comparison__block openapi-comparison__block--annotations">
+                                    Summary and description
+                                </div>
+                                <div class="openapi-comparison__content">
+                                    <div class="openapi-comparison__block openapi-comparison__block--operation">
+                                        Operation (GET, PUT, POST, etc.)
+
+                                        <div class="openapi-comparison__content">
+                                            <div class="openapi-comparison__block openapi-comparison__block--reqres">
+                                                Request
+                                            </div>
+                                            <div class="openapi-comparison__block openapi-comparison__block--reqres">
+                                                Responses
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openapi-comparison__content">
+                    <div class="openapi-comparison__block openapi-comparison__block--tags">
+                        Tags
+                    </div>
+                    <div class="openapi-comparison__block openapi-comparison__block--external-docs">
+                        External Docs
+                    </div>
+                </div>
+                <div class="openapi-comparison__block openapi-comparison__block--components">
+                    Components
+
+                    <div class="openapi-comparison__content">
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Definitions
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Responses
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Parameters
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Response Headers
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Security Definitions
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Callbacks
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Links
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="openapi-comparison__block">
+            <h3 class="openapi-comparison__block__title">AsyncAPI 2.0</h3>
+    
+            <div class="openapi-comparison__block__content">
+                <div class="openapi-comparison__block openapi-comparison__block--info">
+                    Info
+                </div>
+                <div class="openapi-comparison__content">
+                    <div class="openapi-comparison__block openapi-comparison__block--hosts">
+                        Servers (hosts + security)
+                    </div>
+                </div>
+                <div class="openapi-comparison__block openapi-comparison__block--paths">
+                    Channel
+                
+                    <div class="openapi-comparison__content">
+                        <div class="openapi-comparison__block openapi-comparison__block--path-item">
+                            Channel Item
+                
+                            <div class="openapi-comparison__content">
+                                <div class="openapi-comparison__content">
+                                    <div class="openapi-comparison__block openapi-comparison__block--operation">
+                                        Operation (Publish and Subscribe)
+                
+                                        <div class="openapi-comparison__content">
+                                            <div class="openapi-comparison__content">
+                                                <div class="openapi-comparison__block openapi-comparison__block--annotations">
+                                                    Summary, description, tags, etc.
+                                                </div>
+                                            </div>
+                                            <div class="openapi-comparison__content">
+                                                <div class="openapi-comparison__block openapi-comparison__block--reqres">
+                                                    Message
+
+                                                    <div class="openapi-comparison__block openapi-comparison__block--headers">
+                                                        Headers
+                                                    </div>
+                                                    <div class="openapi-comparison__block openapi-comparison__block--payload">
+                                                        Payload
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openapi-comparison__content">
+                    <div class="openapi-comparison__block openapi-comparison__block--id">
+                        Id (application identifier)
+                    </div>
+                </div>
+                <div class="openapi-comparison__content">
+                    <div class="openapi-comparison__block openapi-comparison__block--tags">
+                        Tags
+                    </div>
+                    <div class="openapi-comparison__block openapi-comparison__block--external-docs">
+                        External Docs
+                    </div>
+                </div>
+                <div class="openapi-comparison__block openapi-comparison__block--components">
+                    Components
+                
+                    <div class="openapi-comparison__content">
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Schemas
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Messages
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Security Schemes
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Parameters
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Correlation Ids
+                        </div>
+                        <div class="openapi-comparison__block openapi-comparison__block--components">
+                            Traits
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p>Aside from structural differences you must know that:</p>
+
+<ol>
+<li>AsyncAPI is compatible with OpenAPI schemas.</li>
+<li>Message payload in AsyncAPI can be any value, not just an AsyncAPI/OpenAPI schema. For instance, it could be an Avro schema.</li>
+<li><a href="/docs/specifications/2.0.0/#serverObject">AsyncAPI server object</a> is almost identical to its OpenAPI counterpart with the exception that <code>scheme</code> has been renamed to <code>protocol</code> and AsyncAPI introduces a new property called <code>protocolVersion</code>.</li>
+<li>OpenAPI path parameters and <a href="/docs/specifications/2.0.0/#parameterObject">AsyncAPI channel parameters</a> are a bit different since AsyncAPI doesn&rsquo;t have the notion of &ldquo;query&rdquo; and &ldquo;cookie&rdquo;, and header parameters can be defined in the <a href="/docs/specifications/2.0.0/#messageObject">message object</a>. Therefore, AsyncAPI channel parameters are the equivalent of OpenAPI path parameters.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>As we have seen above, OpenAPI and AsyncAPI are very similar. In a real world environment, systems don&rsquo;t have just REST APIs or events but a mix of both. Most of the times, the information flowing in the events are very similar to the one the REST APIs have to handle in requests and responses, thus being able to reuse schemas is a huge win.</p>
+
+<p>Enough speaking, let&rsquo;s get our hands dirty with some examples. Learn how to create an AsyncAPI document defining a &ldquo;Hello world&rdquo; application.</p>
+
+<div class="has-text-centered" style="margin-top: 40px;">
+    <a href="/docs/getting-started/hello-world" class="btn btn--lg btn--color btn--icon button--next-chapter">
+        <span>
+            Go to the next chapter
+        </span>
+        <i class="ui-arrow-right"></i>
+    </a>
+</div>
+
+</div>
+</div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__widgets">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="widget widget-about-us">
+            
+            <a href="index.html" class="logo-container flex-child">
+              <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+            </a>
+            <p class="mt-24 mb-32">Building the future of event-driven architectures.</p>
+            <div class="socials">
+              <a href="https://twitter.com/AsyncAPISpec" class="social social-twitter" aria-label="twitter"
+                title="Twitter" target="_blank"><i class="ui-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/asyncapi" class="social social-linkedin" aria-label="linkedin"
+                title="LinkedIn" target="_blank"><i class="ui-linkedin"></i></a>
+            </div>
+          </div>
+        </div> 
+
+
+        <div class="col-lg-2 offset-lg-6 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Resources</h5>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="https://github.com/asyncapi" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  <div class="footer__bottom top-divider">
+    <div class="container text-center">
+      <span class="copyright">
+        Made with <code>:love:</code> by the AsyncAPI Initiative.
+      </span>
+    </div>
+  </div> 
+</footer> 
+
+<div id="back-to-top">
+  <a href="#top"><i class="ui-arrow-up"></i></a>
+</div>
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109278936-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109278936-1');
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/scripts.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/cookies.js"></script>
+
+
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
+</body>
+
+</html>

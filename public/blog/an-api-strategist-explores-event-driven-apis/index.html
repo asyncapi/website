@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp; Integration, Axway (CEO of Streamdata." />
+
+
+
+    
+
+
+
+<meta itemprop="name" content="An API Strategist Explores Event-Driven APIs | AsyncAPI Initiative">
+<meta itemprop="description" content="An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp; Integration, Axway (CEO of Streamdata.">
+<meta itemprop="image" content="https://www.asyncapi.com/images/posts/an-api-strategist-explores-event-driven-apis.jpg">
+
+
+<meta name="twitter:card" value="summary_large_image">
+<meta name="twitter:title" content="An API Strategist Explores Event-Driven APIs | AsyncAPI Initiative">
+<meta name="twitter:description" content="An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp; Integration, Axway (CEO of Streamdata.">
+<meta name="twitter:image" content="https://www.asyncapi.com/images/posts/an-api-strategist-explores-event-driven-apis.jpg">
+
+
+<meta property="og:title" content="An API Strategist Explores Event-Driven APIs | AsyncAPI Initiative" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.asyncapi.com/blog/an-api-strategist-explores-event-driven-apis/" />
+<meta property="og:image" content="https://www.asyncapi.com/images/posts/an-api-strategist-explores-event-driven-apis.jpg" />
+<meta property="og:description" content="An API Strategist Explores Event-Driven APIs If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.
+I virtually sat down with these experts:
+ Fran Mendez, Founder of AsyncAPI
+ Jonathan Schabowsky, Chief Architect, Solace
+ David McKenna, SVP, Research &amp; Development, Axway
+ Eric Horesnyi, General Manager, APIs &amp; Integration, Axway (CEO of Streamdata." />
+    <title>An API Strategist Explores Event-Driven APIs | AsyncAPI Initiative</title>
+    
+<link rel="icon" type="image/png" href="https://www.asyncapi.com/images/favicon.png" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-icons.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.c6a281168271efed5bb93c06b2a37b52a430b99f623502cbbb06bfc5b7ad24bc.css">
+
+</head>
+
+<body>
+    <a href="https://github.com/asyncapi/asyncapi" target="_blank" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80"
+            viewBox="0 0 250 250" style="fill:#46a2c7; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+            aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+    
+        @keyframes octocat-wave {
+    
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+    
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+    
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+    
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+    
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    
+
+
+<header class="nav">
+  <div class="nav__holder">
+    <div class="container-fluid container-semi-fluid nav__container">
+      <div class="flex-parent">
+
+        <div class="nav__header">
+          
+          <a href="/" class="logo-container flex-child">
+            <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+          </a>
+
+          
+          <button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+            data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+            <span class="nav__icon-toggle-bar"></span>
+          </button>
+        </div>
+
+        
+        <nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse">
+          <ul class="nav__menu">
+            <li class="nav__dropdown">
+              <a>Learn</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="/docs/getting-started" >Get started</a></li>
+                <li><a href="/docs/tutorials" >Tutorials</a></li>
+                <li><a href="/docs/specifications/latest" >Specification</a></li>
+              </ul>
+            </li>
+            <li class="nav__dropdown">
+              <a>Tooling</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="http://playground.asyncapi.io?utm_source=asyncapi.com&amp;utm_medium=top-menu" target="_blank" >Playground</a></li>
+                <li><a href="/docs/tooling#codegens" >Code generators</a></li>
+                <li><a href="/docs/tooling#docgens" >Documentation generators</a></li>
+                <li><a href="/docs/tooling#validators" >Validators</a></li>
+                <li><a href="/docs/tooling#code-first" >Code-first tools</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/blog"  >Blog</a>
+            </li>
+            <li class="nav__dropdown">
+              <a>Help</a>
+              <i class="ui-arrow-down nav__dropdown-trigger"></i>
+              <ul class="nav__dropdown-menu">
+                <li><a href="https://github.com/asyncapi/asyncapi" target="_blank" >Github repo</a></li>
+                <li><a href="https://asyncapi.com/slack-invite" target="_blank" >Slack workspace</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/about"  >About</a>
+            </li>
+            <li><a href="/docs/getting-started" style="font-weight: bold; color: #46a2c7;">Get Started</a></li>
+            <li>
+              <a href="https://asyncapi.threadless.com/" target="_blank"  style="color: #df02dd;">Shop</a>
+            </li>
+          </ul> 
+        </nav> 
+
+        <div class="nav__btn-holder nav--align-right">
+          <a href="https://opencollective.com/asyncapi" target="_blank" class="btn nav__btn">
+            <span class="nav__btn-text">We need your help</span>
+            <span class="nav__btn-phone">Donate</span>
+          </a>
+        </div>
+
+      </div> 
+    </div> 
+
+  </div>
+</header> 
+    
+    
+<div style="padding:0 2rem;margin-top:120px;">
+    <div class="blog-wrapper is-centered-tablet-portrait">
+        <h1 class="blog-title">An API Strategist Explores Event-Driven APIs</h1>
+<div class="blog-meta">
+    May 14, 2019 •
+    
+    <span class="blog-meta__tag">APIs</span>
+    
+    <span class="blog-meta__tag">Event-Driven</span>
+    
+    <span class="blog-meta__tag">Interview</span>
+    
+</div>
+<div class="blog-authors">
+    
+    <div class="blog-author">
+        
+        <a href="https://twitter.com/lifewingmate" target="_blank" class="blog-author__photo--link">
+        
+            <img src="/images/avatars/ewang.jpg" class="blog-author__photo"/>
+        
+        </a>
+        
+        <div class="blog-author__info">
+            <div class="blog-author__info__name">
+                
+                    <a href="https://twitter.com/lifewingmate" target="_blank" class="blog-author__info__name--link">Emmelyn Wang</a>
+                
+            </div>
+            <div class="blog-author__info__date">
+            API Strategy Catalyst
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="blog-content">
+
+<h1 id="an-api-strategist-explores-event-driven-apis">An API Strategist Explores Event-Driven APIs<a href="#an-api-strategist-explores-event-driven-apis" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h1>
+
+<p>If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.</p>
+
+<p>I virtually sat down with these experts:</p>
+
+<ul>
+<li><p><a href="https://twitter.com/fmvilas" target="_blank">Fran Mendez</a>, Founder of <a href="https://twitter.com/AsyncAPISpec" target="_blank">AsyncAPI</a></p></li>
+
+<li><p><a href="https://twitter.com/JSchabowsky" target="_blank">Jonathan Schabowsky</a>, Chief Architect, <a href="https://twitter.com/solacedotcom" target="_blank">Solace</a></p></li>
+
+<li><p><a href="https://www.linkedin.com/in/david-mckenna-05726b1" target="_blank">David McKenna</a>, SVP, Research &amp; Development, <a href="https://twitter.com/Axway" target="_blank">Axway</a></p></li>
+
+<li><p><a href="https://twitter.com/EricHoresnyi" target="_blank">Eric Horesnyi</a>, General Manager, APIs &amp; Integration, Axway (CEO of <a href="https://twitter.com/StreamdataIO" target="_blank">Streamdata.io acquired by Axway</a>)</p></li>
+</ul>
+
+<p>Question 1: <strong>What do you think is the most important value proposition of event-driven architecture and event-driven/messaging APIs?</strong></p>
+
+<p>Question 2: <strong>What is the consumption experience of messaging APIs and how much does it differ from RESTful APIs?</strong></p>
+
+<p>For example, at the time of writing can’t just mock up the API and run it in a Postman collection and transform it (convert the technical specification to the version I want such as YAML to RAML or JSON, for example) and consume it.</p>
+
+<p>Try <a href="http://editor.asyncapi.org/" target="_blank">http://editor.asyncapi.org</a> to understand the sister spec to OpenAPI (OAS).</p>
+
+<p>Question 3: <strong>Today, how can I test drive event-driven APIs out in the wild?</strong></p>
+
+<p>My frame of reference with REST APIs: I can inspect HTTP calls in a browser and mock up the API. I can run the API calls in API Builder or Stoplight or Postman and get an InVision conceptual app to consume the API, for example. I can use Stoplight to lint or APIMatic to create starter SDKs to test drive.</p>
+
+<p>Question 4: <strong>How do you measure event-driven APIs?</strong></p>
+
+<p>I was thinking about how you measure the <em>effects</em> of event-driven APIs. For example, how can various types of calls live within dashboards for the sake of analytics and measurement? Future Trend: Is there a way to get wholistic data from webhooks, RESTful/JSON, SOAP/WSDL/WADL/XML, GraphQL, gRPC, etc.?
+&gt; POV: The future of APIs is the unified catalog having a matching data-driven view. <a href="https://twitter.com/lifewingmate" target="_blank">lifewingmate</a></p>
+
+<h2 id="for-the-greater-api-community">For the greater API Community<a href="#for-the-greater-api-community" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Recommendations are the most important piece of the event-driven architecture value proposition. Business leaders only care about event-driven architecture as much as the end result produces the business-driving experience that specifically this type of architecture can produce.</p>
+
+<blockquote>
+<p>Technology and consulting organizations need to know when and how to recommend event-driven architecture, APIs and microservices, and corresponding methods of implementation.
+How they impact my current product engine? What business results justify the spend? — <a href="https://twitter.com/lifewingmate" target="_blank">lifewingmate</a></p>
+</blockquote>
+
+<p>Here we go!</p>
+
+<h2 id="question-1-what-do-you-think-is-the-most-important-value-proposition-of-event-driven-architecture">Question 1: What do you think is the most important value proposition of event-driven architecture?<a href="#question-1-what-do-you-think-is-the-most-important-value-proposition-of-event-driven-architecture" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Fran: I’d say most interesting for me are:</p>
+
+<ul>
+<li><p>loose coupling between services (if a downstream service breaks the others just work fine),</p></li>
+
+<li><p>they’re fault-tolerant since events are queued or stored somewhere, and processed once the service is up and running again, and</p></li>
+
+<li><p>they allow you to build real-time products easily.</p></li>
+</ul>
+
+<p>Jonathan: 1) <strong>Loose Coupling</strong>— As Fran states, apps do not have to know how many different apps they are consuming data from. Rather they just care about what data they are consuming. This [scenario] is extremely powerful.</p>
+
+<p>Also, data today is RARELY consumed only once, rather, it goes into big data and analytics platforms. The loose coupling described allows you to have this for free.</p>
+
+<p>2) <strong>Reactive to Change</strong> — Instead of polling, consumers can register their their interest (subscribe) and react to changes in real-time. The producer just sends events, and does not care if anyone is interested… fire and forget… Meanwhile clients that are subscribed get the data in realtime and can react. This is useful where you want to service customers in real-time.</p>
+
+<p>3) <strong>Scale</strong>— Want to be able to consume events, in order, across millions of devices? How about do 500k messages per second guaranteed of capital market trades?</p>
+
+<blockquote>
+<p>Asynchronous interactions enable enterprises to do things which are nearly impossible to do synchronously.
+— <a href="https://twitter.com/JSchabowsky" target="_blank">JSchabowsky</a></p>
+</blockquote>
+
+<p>David, Eric: Event-driven architecture brings comfort to end users and efficiency to the web at individual component level and at system level:</p>
+
+<ul>
+<li><p>UX in Frontends</p></li>
+
+<li><p>Network</p></li>
+
+<li><p>APIs</p></li>
+
+<li><p>Backends</p></li>
+
+<li><p>Behind the API: Application languages, data plane, and DevOps</p></li>
+
+<li><p>Entire System</p></li>
+</ul>
+
+<p><strong>UX in Frontends</strong> The <a href="https://hackr.io/blog/10-best-javascript-frameworks-2019" target="_blank">most popular</a> reactive frameworks (AngularJS, ReactJS, VueJS) react to streams of events presented to their <a href="https://streamdata.io/blog/realtime-event-driven-app-with-riot-xignite-and-streamdata-io/" target="_blank">observables</a>, a data plane presenting events to the UI.</p>
+
+<p>Why is that? Because, we -mobile and desktop human users- want to be presented data in real-time:</p>
+
+<ul>
+<li><p>Where is my cab?
+What is the price of my favorite share, now?</p></li>
+
+<li><p>At what time will my train arrive at destination ?</p></li>
+</ul>
+
+<p>Yes, our life is real-time: we do not want to waste any time and we do not want to miss anything that happens in the world (<a href="https://en.wikipedia.org/wiki/Fear_of_missing_out" target="_blank">FOMO</a> — Fear Of Missing Out).</p>
+
+<p>Good news: Events improve latency of the UI by factor x20 according to our <a href="https://streamdata.io/blog/ui-latency-json-patch/" target="_blank">benchmark</a>, and avoids for users to have to refresh their UI to get the latest from their newsfeed, stocks or favorite transportation, as our <a href="https://streamdata.io/blog/animated-data/" target="_blank">reptilian brain</a> is naturally used to [understanding].</p>
+
+<p><strong>Network</strong> Since 2011, with the advent of social networks and to support reactive UI, the web has RFCed protocols for low-volume bidirectional/peer-to-peer traffic (<strong>Websockets</strong>) and server to client push over HTTP (<a href="https://streamdata.io/blog/push-sse-vs-websockets/" target="_blank">SSE</a>). For lower volume of events, typically for alerts, <strong>webhooks</strong> have become popular.</p>
+
+<p><strong>APIs</strong> Most API calls are useless: up to 98.5% according to <a href="https://news.ycombinator.com/item?id=6360474" target="_blank">Zapier</a> who created the concept of Polling Madness. That is because the API client does not know when data will change, so would keep polling an API to make sure it does not miss any update. Event-Driven Architecture in APIs reverses the paradigm: why don’t we have the component who know when data change to take charge, instead of answering to useless calls?</p>
+
+<p>This [situation] leads to the API server pushing streams of events to the API client who have subscribed to a topic. Traffic hence goes north-south only when necessary, rather than south-north-south to hit updates randomly. Augmenting a REST API with a streaming API typically brings <a href="https://streamdata.io/blog/benchmark-server-sent-events-versus-polling/" target="_blank">90% efficiency</a> in CPU and network use for most demanding traffic.</p>
+
+<p><strong>Backends</strong> In some industries, backends have been using evented architecture for a while.</p>
+
+<p><strong>Behind the API: Application Languages, data plane, and DevOps</strong>
+Backend architectures have relied on events for a while, before REST was created. In my Flashboy days in <a href="https://www.infoq.com/podcasts/eric-horesnyi-ai-hft" target="_blank">High Frequency Trading</a>, we were pushing events from exchanges to hedge funds to allow them to stay in front of the market (making big money at low risk, I’m repentant), using IP-based tweaks (IP multicast and their famous storms), and proprietary middleware.</p>
+
+<p>Since then, message buses have evolved to open standards adopted outside finance (thanks Linkedin for <strong>Kafka</strong>), and -as already noted- the web has made it possible to transport events over HTTP. Additionally, and almost at the same time, people -like <a href="https://streamdata.io/blog/network-based-architecture-fielding-fowler-and-haussmann/" target="_blank">myself</a>- having advocated microservices for years without seeing convergence of best practices are now contented: <strong>Kubernetes</strong> is here, and has instantly been adopted by all architects and DevOps to prepare their ideal microservices architecture.</p>
+
+<p>And when you dig into Kubernetes and associated frameworks Istio and Envoy, what do you find? REST APIs of course, but that was expected by definition of microservices. What you also find is Async APIs for each microservice. Kaboom! Backends now have a blueprint for quite a few years: Kafka and Kubernetes to orchestrate data flows, control and scale them. And this blueprint is entirely event-driven.</p>
+
+<p>To top it all and not surprisingly, languages traditionally used to create application layers linked to databases have also gone through their event revolution with reactive extensions such as <strong>RxJava</strong> widely adopted by the Java community. Now the entire backend dev, DevOps, and IT community can focus on what will make them able to compete with agility over the web.</p>
+
+<p><strong>Entire System</strong> If we take a helicopter view to look at the entire system, what does the event-driven revolution?</p>
+
+<p>The entire chain from data plane, app, API, network down to the frontends are event-driven: Event flow between IoT devices (eg GPS), mobile apps, and ML without any barrier, people can all align thinking in terms of data streams of events rather than databases, considering intensity and relevance of feeds rather than states and calls.</p>
+
+<p>As all components have embraced the EDA revolution (I prefer evolution -revolution is always violent- as this is happening with live clients to be supported at the same time, hence slowly, but based on a Darwinian selection of design). This new <strong>end-to-end chain of events</strong> brings simplicity and efficiency to components individually and collectively.</p>
+
+<h2 id="question-2-what-is-the-consumption-experience-of-event-driven-apis-how-much-does-it-differ-from-restful-apis">Question 2: What is the consumption experience of event-driven APIs? How much does it differ from RESTful APIs?<a href="#question-2-what-is-the-consumption-experience-of-event-driven-apis-how-much-does-it-differ-from-restful-apis" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Fran: You usually connect to a broker to start sending and/or receiving messages. Examples of brokers are RabbitMQ, Kafka, Solace, etc. The difference with synchronous patterns like REST, gRPC, and GraphQL is that you don’t ask for information. You don’t make requests.</p>
+
+<p>Just connect to the broker and subscribe to a channel of your interest. Eventually (no pun intended), you’ll get this information, such as when the events occur. Similarly, you’ll send events to the broker whenever they occur to you. (replace you with your service)</p>
+
+<p>Jonathan: Today, the consumption experience generally sucks! This is a gap in the market AsyncAPI is solving and Solace [and several other companies, organizations, and individuals] is looking to help solve too… help make the experience as pleasant as with RESTful APIs.</p>
+
+<p>David, Eric: There are many different technologies for providing event driven APIs</p>
+
+<ul>
+<li><p>Server-Sent Events (SSE) for pushing data to the client to provide reactive user experience</p></li>
+
+<li><p>Webhooks for making HTTP callbacks on state change</p></li>
+
+<li><p>HTML5 Websockets providing full-duplex communication channels over a single TCP connection between client and server.</p></li>
+
+<li><p>MQTT and AMQP for IoT use cases</p></li>
+</ul>
+
+<h2 id="question-3-today-how-can-i-test-drive-event-driven-apis-out-in-the-wild">Question 3: Today, how can I test drive event-driven APIs out in the wild?<a href="#question-3-today-how-can-i-test-drive-event-driven-apis-out-in-the-wild" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Fran: You can’t or is not easy. Part of the reason for the existence of AsyncAPI is precisely to enable that.</p>
+
+<p>Jonathan: Check out <a href="https://cloud.solace.com" target="_blank">cloud.solace.com</a> … Sign up for an account (free) and play around. Create an event broker (think of that like an API gateway) and look at our runnable code pen examples. This is all more infrastructure based…. Now imagine AsyncAPI and you layer that on top, it becomes more like API management. Also, check out this blog <a href="https://solace.com/blog/api-management-event-management/" target="_blank">https://solace.com/blog/api-management-event-management/</a></p>
+
+<p><em>(Emmelyn) I can inspect HTTP calls in a browser and mock up the API and run it in Postman and get an InVision conceptual app to consume the API, for example.</em></p>
+
+<p>You can kind of do this at <a href="https://cloud.solace.com" target="_blank">cloud.solace.com</a>… Again its more how do you send/receive messages… with no app context, but its a start and the most useful I have ever found.</p>
+
+<p><em>(Emmelyn) I can use Stoplight to lint or APIMatic to create starter SDKs to “try it”</em></p>
+
+<p>See previous comment and try it out and give me feedback!</p>
+
+<p>David, Eric: Many of the traditional testing tools do not natively support event- driven protocols and are built for standard HTTP request/response found in REST based services. In order to help support the testing of SSE a client SDK is provided to help build automated clients to test both functional and non-functional aspects of SSE services.</p>
+
+<h2 id="question-4-how-do-you-measure-event-driven-apis">Question 4: How do you measure event-driven APIs?<a href="#question-4-how-do-you-measure-event-driven-apis" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p>Fran: You don’t have “calls” because you don’t ask for anything. You just show your interest in certain types of events and wait for them to happen. That’s a subscriber/consumer. If you’re building a publisher/producer then you’ll send events to the broker when certain events occur. The consumers interested in your type of event will receive them.</p>
+
+<p>Jonathan: I think effectiveness is a direct correlation between consumption. An event that is consumed 0 times was actually worth 0… an event consumed 100 times is valuable. Yes, you do this via dashboards. Today, nobody deals with BOTH events and synchronous apis in one platform.</p>
+
+<p>David, Eric: The enhanced user experience in the client can be tracked by NPS of the service.</p>
+
+<p>Traditional monitoring tools are optimized for request-response scenario, asynchronous scenarios bring in additional complexity where by a single request could result in N number of responses been relayed to the client. Adoption of OpenTracing can help to see the spans of distributed transactions.</p>
+
+<h2 id="value-proposition-of-event-driven-architecture">Value Proposition of Event-Driven Architecture<a href="#value-proposition-of-event-driven-architecture" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p><strong>Business leaders only care about event-driven architecture as much as the end result produces the business-driving experience that specifically this type of architecture can produce. What would you explain to this type of audience?</strong></p>
+
+<p>Fran’s take</p>
+
+<ul>
+<li><p>Real-time experiences are built with event-driven architectures. You can’t build something real-time with REST APIs or any of the aforementioned styles.</p></li>
+
+<li><p>Solace has an interesting concept called “event mesh” and <a href="http://twitter.com/Jonathan" target="_blank">Jonathan</a> Schabowsky can explain better and point to existing documentation.</p></li>
+
+<li><p>And then you have the cool thing about event-driven microservices, which allows you to build products faster. It allows you to spend less time worrying about the systems and more about your business logic.</p></li>
+</ul>
+
+<p>Eric’s take</p>
+
+<p>As a CEO myself, I do not invest in any feature of any technology until I can see proven track records and numbers. Well, EDA actually brings sizeable benefits in terms of topline, customer satisfaction, cost base, competitive differentiation and even HR attractiveness and retention:</p>
+
+<ul>
+<li><p>Topline</p></li>
+
+<li><p>Customer Satisfaction</p></li>
+
+<li><p>Outsmart your Competitors with Machine Learning ML</p></li>
+
+<li><p>IT Cost Base Reduction</p></li>
+
+<li><p>HR</p></li>
+</ul>
+
+<p><strong>Topline</strong> The main benefits of the EDA mindset is to optimize the time it takes between the occurrence of an event in the universe, and the reaction by the company to that event. Each industry has its own metrics for assessing such benefit. In capital markets, 1 millisecond is worth <strong><a href="https://research.tabbgroup.com/report/v06-007-value-millisecond-finding-optimal-speed-trading-infrastructure" target="_blank">$8m</a></strong> (!)</p>
+
+<p>In marketplace/ecommerce/retail/logistics business where players make as much money as they can reduce the time between an order is placed to them, and such order is shipped to the end user, each second count. I did a quick calculation of how much a second is worth for Amazon, by dividing revenue by the number of seconds in a year: <strong>$50m</strong> (!)</p>
+
+<p><strong>Customer Satisfaction</strong> As already noted, reactive interfaces are not only the coolest but also the most natural for our human brain. Well, we can put a number on this: <a href="https://perspectives.mvdirona.com/2009/10/the-cost-of-latency/" target="_blank">100 ms is worth 1%</a> additional revenue on any mobile or desktop app, from mobile banking to eCommerce.</p>
+
+<p>For developers using your API, when you can provide your most important customer the ability to consume your API without limit, they are happy to pay a premium for it as it means they have more data to make decision upon, and it helps streamlining their data ingestion chain.</p>
+
+<p><strong>Outsmart your Competitors with ML</strong> A major way for technology to bring value to customer interactions (chatbots), optimize processes and make best-possible decisions in an ever-changing world is Machine Learning. And Machine Learning thrives on data. In the past, data architectures were based on tables and data lakes. Well, for practitioners, data lakes actually became data swamps.</p>
+
+<p>With some experience, the key is to master data ingestion so that data sources are consumed upstream, as close as possible to the source, and turned into value as soon as possible by Machine Learning. Machine Learning consumes streams of data conveyed by Kafka from third party streaming APIs, such as <a href="https://www.xignite.com/product/CloudStreaming" target="_blank">Xignite Cloudstreaming</a>, learn from them as they come and learns from its errors against what it had predicted.</p>
+
+<p>And the closer you are from data sources (acting as senses for the ML brain), the smarter your ML brain will be, faster than your competition. There is even a family of ML updating their model for each, called <a href="https://moa.cms.waikato.ac.nz/" target="_blank">Massive Online Analysis</a> or Streaming Algorithms. EDA has even invaded ML.</p>
+
+<p><strong>IT Cost Base Reduction</strong> With the 90%+ gains in efficiency that we have mentioned earlier, an API vendor servicing clients with events can not only make them happier, but also reduce its cloud bill on CPU and network by 90% on these use cases. As cloud bills have become so high and critical to become visible to executive desks, they should understand the impact.</p>
+
+<p><strong>HR</strong> I believe we would agree that developers and DevOps like new and efficient [tools]. And events are fun while bringing efficiency. Working with events makes your organization more attractive to new developers, and help keeping them happy while working on cutting-edge technology. As developers cannot meet the demand while “software is eating the world” this [circumstance] alone could be a driver for considering and EDA and API and Microservices first approach in your organization.</p>
+
+<h2 id="question-how-and-when-should-companies-actively-choose-event-driven-architecture">Question: How and when should companies actively choose event-driven architecture?<a href="#question-how-and-when-should-companies-actively-choose-event-driven-architecture" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> </h2>
+
+<p><em>For example, how is discovery performed? Which APIM catalogs can showcase event-driven APIs so that companies can decide to consume rather than build it themselves? What kind of guidance and best practices can we provide?</em></p>
+
+<p>David and Eric advise</p>
+
+<p><strong>IoT</strong> — Many companies are looking to leverage IoT in their offering such as car insurance (pay as you drive), healthcare (health monitoring).</p>
+
+<p>A vast variety of low-price devices (sensors, thermostats, robots, etc.) with internet connectivity is flooding the market. Their value does not lie in the hardware but in the services that are/will be attached to it. The infrastructure that support these services must have a real-time processing capability to provide real value back to the consumer.</p>
+
+<p><strong>MQTT</strong> is becoming the de-facto standard to exchange data with IoT devices because it is simple and efficient on low memory devices. It is also based on a Publish/Subscribe model that will force the companies to adopt an EDA in order to process all the generated events.</p>
+
+<p><strong>Cloud</strong> — Adaption of cloud-based services in Enterprise adds more integration patterns (Cloud-to-cloud, Cloud-to-ground, Ground-to-Cloud, ..) thus more complexity. The different systems needs to exchange data to keep a coherent state across the applications. Using a point-to-point integration strategy can quickly become a trap because of the exponential complexity and tight coupling between the different systems.</p>
+
+<p>EDA enables a loose coupling between the components/apps in order regain agility, increases innovation pace and reduces time-to-market for new features/services.
+&gt; # In general, I’m studying API Design Patterns and how various kinds of APIs expedite R&amp;D adoption. What business results are accelerated from these kinds of patterns?
+&gt; Thanks for suggesting topics and connecting with feedback. You can also reach me via Twitter @lifewingmate DM or via the AsyncAPI community via our <a href="https://github.com/asyncapi" target="_blank">Github</a> or <a href="http://asyncapi.slack.com" target="_blank">Slack channel</a>.</p>
+
+<p>Disclaimer: The professional opinions of those interviewed do not necessarily reflect the organizations they represent. These interviewees volunteered their time and contributions to support the AsyncAPI initiative and community.</p>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__widgets">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="widget widget-about-us">
+            
+            <a href="index.html" class="logo-container flex-child">
+              <img class="logo" src="/img/logo.png" alt="AsyncAPI logo">
+            </a>
+            <p class="mt-24 mb-32">Building the future of event-driven architectures.</p>
+            <div class="socials">
+              <a href="https://twitter.com/AsyncAPISpec" class="social social-twitter" aria-label="twitter"
+                title="Twitter" target="_blank"><i class="ui-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/asyncapi" class="social social-linkedin" aria-label="linkedin"
+                title="LinkedIn" target="_blank"><i class="ui-linkedin"></i></a>
+            </div>
+          </div>
+        </div> 
+
+
+        <div class="col-lg-2 offset-lg-6 col-md-6">
+          <div class="widget widget_nav_menu">
+            <h5 class="widget-title">Resources</h5>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="https://github.com/asyncapi" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  <div class="footer__bottom top-divider">
+    <div class="container text-center">
+      <span class="copyright">
+        Made with <code>:love:</code> by the AsyncAPI Initiative.
+      </span>
+    </div>
+  </div> 
+</footer> 
+
+<div id="back-to-top">
+  <a href="#top"><i class="ui-arrow-up"></i></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596"></script>
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109278936-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109278936-1');
+</script>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/scripts.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/cookies.js"></script>
+
+
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.js"></script>
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+<script>
+    $('pre code').addClass('line-numbers');
+</script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      if (regs && regs.length > 0) {
+        for (var registration of regs) {
+          registration.unregister();
+        }
+      }
+    });
+  }
+</script>
+</body>
+
+</html>

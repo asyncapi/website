@@ -8,7 +8,7 @@ tags:
   - Event-Driven Architectures
   - EDA
 cover: /images/posts/replicating-success-of-rest.png
-weight: 100
+weight: 300
 authors:
     - name: Jonathan Schabowsky
       photo: /images/avatars/jschabowsky.jpg

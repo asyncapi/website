@@ -2,13 +2,11 @@
 title: "Organizing your AsyncAPI documents"
 date: 2019-03-01T13:56:52+01:00
 type: blog
-featured: true
 tags:
   - AsyncAPI
   - Organization
   - Documents
 cover: /images/posts/organizing-asyncapi-documents.jpg
-weight: 300
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.jpg
