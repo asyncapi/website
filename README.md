@@ -1,18 +1,30 @@
 # AsyncAPI website
 
-This repo contains the asyncapi.org website. It's powered by [Hugo](https://gohugo.io).
+This repo contains the sources of AsyncAPI website. It's powered by [Hugo](https://gohugo.io). It is built using custom theme inspired on [hugo-fresh](https://themes.gohugo.io/hugo-fresh/) theme.
 
 ## Installation
 
-Follow [Hugo](https://gohugo.io) installation instructions to install the website.
+### Prerequisites
 
-## Running in development
+Install [Hugo](https://gohugo.io/getting-started/installing/).
+
+### Development
 
 Start a development server:
 
 ```bash
 hugo server -D
 ```
+
+### Build website
+
+Build website:
+
+```bash
+hugo -t hugo-asyncapi
+```
+
+Generated files end up in `public` folder.
 
 ## Authoring
 
