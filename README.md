@@ -1,6 +1,8 @@
-# AsyncAPI website
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
 
-This repo contains the sources of AsyncAPI website. It's powered by [Hugo](https://gohugo.io). It is built using custom theme inspired on [hugo-fresh](https://themes.gohugo.io/hugo-fresh/) theme.
+# Overview
+
+This repository contains the sources of AsyncAPI website. It's powered by [Hugo](https://gohugo.io). It is built using custom theme inspired on [hugo-fresh](https://themes.gohugo.io/hugo-fresh/) theme.
 
 ## Installation
 
