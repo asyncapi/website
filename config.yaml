@@ -73,6 +73,8 @@ params:
       url: /docs/tooling#validators
     - title: Code-first tools
       url: /docs/tooling#code-first
+    - title: Others
+      url: /docs/tooling#others
   - title: Blog
     url: /blog
   - title: Help
