@@ -22,6 +22,7 @@ menu:
       weight: 800
 params:
   google_analytics_id: UA-109278936-1
+  content_sources_location: https://github.com/asyncapi/website/edit/master/content/
   meta: 
     description: Create machine-readable definitions of your message-driven systems.
     og:
