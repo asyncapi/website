@@ -37,11 +37,11 @@ A message broker (or _"broker"_) is a piece of infrastructure in charge of recei
 
 A publisher (a.k.a. _producer_) is an application that sends messages to the _broker_.
 
-A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_, manifests interest in certain type of messages, and leaves the connection open so the _broker_ can push messages to them.
+A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_, manifests an interest in a certain type of messages, and leaves the connection open so the _broker_ can push messages to them.
 
 ### Message
 
-A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything but they are frequently catalogued as _events_ and _commands_. As we saw above, _events_ communicate a fact that occurred. Instead, _commands_ are very much like _requests_ in REST APIs: they tell the subscribers "do this".
+A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything but they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. Instead, _commands_ are very much like _requests_ in REST APIs: they tell the subscribers "do this".
 
 **Technically speaking, _events_ and _commands_ are the same. The only difference is in their semantics.**
 
@@ -61,7 +61,7 @@ Theoretically, _"message-driven"_ is the most generic term, meaning you may use 
 
 ## Conclusion
 
-We've seen what an event-driven architecture is, how it works, and what are their components. AsyncAPI is all about defining and documenting each of these components. We'll go through it during the rest of this guide but, before we continue, please choose what's your next step:
+We've seen what an event-driven architecture is, how it works, and what are their components. AsyncAPI is all about defining and documenting each of these components. We'll go through it during the rest of this guide but, before you continue, please choose what's your next step:
 
 {{<navigation-options>}}
 {{%navigation-option url="/docs/getting-started/coming-from-openapi/" style="cyan"%}}
