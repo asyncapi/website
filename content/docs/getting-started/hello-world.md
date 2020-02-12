@@ -71,7 +71,7 @@ channels:
           pattern: '^hello .+$'
 {{</code>}}
 
-The `channels` section of the specification houses all of the mediums where messages flow through. For example, some systems use `topi`, `event name` or `routing key`. Different kinds of information flow through each channel similar to the analogy of TV channels.
+The `channels` section of the specification houses all of the mediums where messages flow through. For example, some systems use `topic`, `event name` or `routing key`. Different kinds of information flow through each channel similar to the analogy of TV channels.
 
 In this example, you only have one channel called `hello`. The sample app subscribes to this channel to receive `hello {name}` messages.
 
