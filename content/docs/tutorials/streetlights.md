@@ -137,6 +137,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
     ```bash
     mkdir streetlights && cd "$_"
     ```
+
 3. Create a file with the AsyncAPI machine-readable description you defined before:
     ```bash
     cat <<EOT >> asyncapi.yaml
@@ -179,10 +180,12 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
                   description: Date and time when the message was sent.
     EOT
     ```
+
 4. Trigger generation of the Node.js code:
     ```bash
     ag asyncapi.yaml nodejs -p server=mosquitto
     ```
+
 5. And voilà! List all files in directory and notice that Node.js application is generated:
     ```bash
     ls
@@ -194,18 +197,22 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
     ```bash
     npm install
     ```
+
 2. Start the application:
     ```bash
     npm start
     ```
+
 3. In another terminal install the MQTT.js library:
     ```bash
     npm install mqtt -g
     ```
+
 4. Send message to your application:
     ```bash
     mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'
     ```
+    
 5. Go back to previous terminal and notice that your application logs the message you just sent.
 
 # Conclusions
