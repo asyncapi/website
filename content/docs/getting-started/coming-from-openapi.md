@@ -22,7 +22,7 @@ Aside from structural differences you must know that:
 
 ## Conclusion
 
-As we have seen above, OpenAPI and AsyncAPI are very similar. In a real world environment, systems don't have just REST APIs or events but a mix of both. Most of the times, the information flowing in the events are very similar to the one the REST APIs have to handle in requests and responses, thus being able to reuse schemas is a huge win.
+As we have seen above, OpenAPI and AsyncAPI are very similar. In a real world environment, systems don't have just REST APIs or events but a mix of both. Most of the time, the information flowing in the events are very similar to the one the REST APIs have to handle in requests and responses, thus being able to reuse schemas is a huge win.
 
 Enough speaking, let's get our hands dirty with some examples. Learn how to create an AsyncAPI document defining a "Hello world" application.
 
