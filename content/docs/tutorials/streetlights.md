@@ -138,7 +138,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
     mkdir streetlights && cd "$_"
     ```
 
-3. Create a file with the AsyncAPI machine-readable description you defined before:
+3. Create a file with the AsyncAPI machine-readable description you defined before. On Windows use `type` instead of `cat`:
     ```bash
     cat <<EOT >> asyncapi.yaml
     asyncapi: '2.0.0'
@@ -191,7 +191,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
     ls
     ```
 
-# Running our code
+# Running your code
 
 1. Install dependencies of newly generated application:
     ```bash
