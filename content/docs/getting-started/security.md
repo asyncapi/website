@@ -19,7 +19,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 {{<code lang="yaml" lines="10-11,42-44">}}
-asyncapi: '2.0.0-rc1'
+asyncapi: '2.0.0'
 id: 'urn:hello-world-publisher'
 info:
   title: Hello world application
@@ -71,7 +71,7 @@ The example above shows how to specify that your server (the Kafka broker) requi
 2. We've added a new section called `securitySchemes` under `components`. Inside it, you can find the definition of your `user-password` mechanism. This section makes it clear that you're speaking about a `user/password` mechanism is the `type: userPassword` in line 44.
 
 {{%hint%}}
-There are many more security schemes. Learn more about them {{%link "/docs/specifications/2.0.0-rc1/#securitySchemeObject" %}}here{{%/link%}}.
+There are many more security schemes. Learn more about them {{%link "/docs/specifications/2.0.0/#securitySchemeObject" %}}here{{%/link%}}.
 {{%/hint%}}
 
 ## Conclusion

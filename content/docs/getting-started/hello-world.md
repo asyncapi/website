@@ -90,7 +90,7 @@ channels:
 {{</code>}}
 
 You can read the highlighted lines as:
-> This is the `payload` of the `message` your app `publish` to the `hello` channel.
+> This is the `payload` of the `message` that `Hello world application` is subscribed to. You can `publish` the `message` to `hello` channel and `Hello world application` app will receive it.
 
 {{<code lang="yaml" lines="9-11">}}
 asyncapi: 2.0.0
