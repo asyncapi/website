@@ -40,6 +40,6 @@ The AsyncAPI document is a machine-readable definition of your event-driven API.
 
 Your API documentation is now machine-readable –easily parseable by code— so the myriad of useful applications is endless.
 
-Enough speaking, let's get our hands dirty with some examples. Learn how to create an AsyncAPI document defining a "Hello world" application.
+Enough speaking, let's get your hands dirty with some examples. Learn how to create an AsyncAPI document defining a "Hello world" application.
 
 {{%next-chapter url="/docs/getting-started/hello-world"%}}
