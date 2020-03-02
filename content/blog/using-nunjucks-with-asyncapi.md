@@ -16,9 +16,9 @@ authors:
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
 
-Specifications exist for a reason. Among other things, they help to bring quality, consistency and standardize a given area. They are a great use case for templating engines. You can prepare a template that generates something from any document that follows a certain specification. You can generate whatever you want, docs, code, and diagrams. The sky is the limit. 
+Specifications exist for a reason. Among other things, they help to bring quality, consistency, and standardize a given area. They are a great use case for templating engines. You can prepare a template that generates something from any document that follows a particular specification. You can generate whatever you want, docs, code, and diagrams. The sky is the limit. 
 
-Templating is a huge topic that is impossible to cover in a single post. In JavaScript alone, there is a zoo of different [templating engines](https://colorlib.com/wp/top-templating-engines-for-javascript/). This is why I focus here only on one engine for JavaScript, which is [Nunjucks](https://mozilla.github.io/nunjucks/). Why? Soon you'll figure that out.
+Templating is a vast topic that is impossible to cover in a single post. In JavaScript alone, there is a zoo of different [templating engines](https://colorlib.com/wp/top-templating-engines-for-javascript/). This is why I focus here only on one engine for JavaScript, which is [Nunjucks](https://mozilla.github.io/nunjucks/). Why? Soon you'll figure that out.
 
 > **tl;dr**
 In case you don't want to read and prefer to jump right into code. Go to this CodeSandbox project, but keep in mind you'll miss the important context and explanation.
@@ -31,8 +31,8 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 [AsyncAPI](https://www.asyncapi.com/) is a specification that you use to create machine-readable definitions of your event-driven APIs:
 
 - It focuses on the application from the API user perspective. You describe what the user can do with the API, subscribe or publish to it.
-- It is protocol-agnostic, so you can use it for APIs using Kafka or MQTT, and many others.
-- It supports many different schema formats, so you can describe messages payload schema in a format that you already use, like for example Avro.
+- It is protocol-agnostic so that you can use it for APIs using Kafka or MQTT, and many others.
+- It supports many different schema formats, so you can describe messages payload schema in a format that you already use like, for example, Avro.
 
 ## What is Nunjucks?
 
@@ -55,7 +55,7 @@ All examples shown in this post can be explored in action in below CodeSandbox p
 
 In this learning project, I created a simple Express app that handles super short documentation generated from the AsyncAPI file. It is just a small sample of things that you can get from AsyncAPI using Nunjucks.
 
-I picked Nunjucks here for a reason. AsyncAPI community maintains [a tool for generating](https://github.com/asyncapi/generator/) different things from the specification document, and it is using Nunjucks as a templating engine. This basically means, use my CodeSandbox to experiment with Nunjucks, but if you plan to build some serious template for AsyncAPI, do it with the [generator](https://github.com/asyncapi/generator/) or just reuse existing templates.
+I picked Nunjucks here for a reason. AsyncAPI community maintains [a tool for generating](https://github.com/asyncapi/generator/) different things from the specification document, and it is using Nunjucks as a templating engine. This basically means, use my CodeSandbox to experiment with Nunjucks, but if you plan to build some serious template for AsyncAPI, do it with the [generator](https://github.com/asyncapi/generator/) or reuse existing templates.
 
 ### Variables declaration
 
@@ -86,9 +86,9 @@ using {{ server.protocol() | upper }} protocol
  
 ### Creating custom filters
 
-Built-in filters are awesome, but sometimes you need to create your own filters. In my example, I had to build a filter that will help me to modify the `server.url()` value. 
+Built-in filters are awesome, but sometimes you need to create your filters. In my example, I had to build a filter that helps me to modify the `server.url()` value. 
 
-In the AsyncAPI document, you can specify a server that the application uses to publish and consume messages from. In the URL you are allowed to use variables like this: `test.mosquitto.org:{port}`. Such a variable can be described with different levels of details. You can provide a default value and even an enum of values. 
+In the AsyncAPI document, you can specify a server that the application uses to publish and consume messages from. In the URL, you are allowed to use variables like this: `test.mosquitto.org:{port}`. Such a variable can be described with different levels of detail. You can provide a default value and even an enum of values. 
 
 In my example, instead of a URL like `test.mosquitto.org:{port}`, I wanted to get a fixed URL with a proper port number taken from the document:
 
@@ -154,7 +154,7 @@ The same case with URL. The URL after replacing variables with values, I want to
 
 ### Includes
 
-You can easily share static parts of the template. This allows you to decrease the size of templates and make maintenance easier. My example here is not very complex and I've added it to the template to make the point that it is possible:
+You can share static parts of the template. This allows you to decrease the size of templates and make maintenance easier. My example here is not very complex, and I've added it to the template to make the point that it is possible:
 
 ```html
 <!-- content of space.html file -->
@@ -169,9 +169,9 @@ I can include it as many times as I want across the templates like this:
 
 ### Macros
 
-You can not only share static but also dynamic parts of the template. What does it mean? Let's take an HTML list as an example. From syntax/structure perspective it looks always the same, but the displayed values of the list are different. Macros are here to help you out to define a list element once. It is like a mixture of the include and a filter.
+You can share not only static but also dynamic parts of the template. What does it mean? Let's take an HTML list as an example. From the syntax/structure perspective, it always looks the same, but the displayed values of the list are different. Macros are here to help you out to define a list element once. It is like a mixture of the include and a filter.
 
-In the AsyncAPI document, I have a case where I want to list all the channels that the application uses. Actually, I want to have two lists. One list that has channels that application is subscribed to (`publish` operation), to receive messages. The other one that the application publishes (`subscribe` operation) messages to.
+In the AsyncAPI document, I have a case where I want to list all the channels that the application uses. Actually, I want to have two lists: one list that has channels where the application is subscribed (`publish` operation) to receive messages and the other one where the application publishes (`subscribe` operation) messages to.
 
 First you define a macro:
 ```html
@@ -197,4 +197,4 @@ Don't build tools from scratch if there are others already available, and they a
 
 Keep in mind that [AsyncAPI](https://www.asyncapi.com/) is an open community. We do not work on the specification only, but tools too. Join us on [Slack](https://www.asyncapi.com/slack-invite/) and help us build awesome tools or [donate](opencollective.com/asyncapi).
 
-Take time to look into the [parser-js](https://github.com/asyncapi/parser-js/). I used it in my CodeSandbox to parse AsyncAPI document to pass it to templates as a context.
+Take time to look into the [parser-js](https://github.com/asyncapi/parser-js/). I used it in my CodeSandbox to parse the AsyncAPI document to pass it to templates as a context.
