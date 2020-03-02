@@ -7,7 +7,6 @@ tags:
   - Event-Driven
   - Interview
 cover: /images/posts/an-api-strategist-explores-event-driven-apis.jpg
-weight: 100
 authors:
   - name: Emmelyn Wang
     photo: /images/avatars/ewang.jpg

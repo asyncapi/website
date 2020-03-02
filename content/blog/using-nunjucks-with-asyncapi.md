@@ -8,6 +8,7 @@ tags:
   - Template engine
   - Generator
 cover: /images/posts/nunjucks-asyncapi-cover.png
+weight: 100
 authors:
   - name: Lukasz Gornicki
     photo: /images/avatars/lpgornicki.png
