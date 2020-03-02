@@ -85,11 +85,11 @@ using {{ server.protocol() | upper }} protocol
  
 ### Creating custom filters
 
-Built-in filters are awesome, but sometimes you need to create your own filters, and obviously it is possible. In my example I had to build a filter that will help me to modify the `server.url()` value. 
+Built-in filters are awesome, but sometimes you need to create your own filters. In my example, I had to build a filter that will help me to modify the `server.url()` value. 
 
-In AsyncAPI document you can specify a server that the application uses to publish and consume messages from. In the URL you are allowed to use variables like this: `test.mosquitto.org:{port}`. Such variable can be described with different level of details. You can provide a default value, and even an enum of values. 
+In the AsyncAPI document, you can specify a server that the application uses to publish and consume messages from. In the URL you are allowed to use variables like this: `test.mosquitto.org:{port}`. Such a variable can be described with different levels of details. You can provide a default value and even an enum of values. 
 
-In my example, instead of the URL like `test.mosquitto.org:{port}`, I wanted to get fixed URL with proper port number taken from the document:
+In my example, instead of a URL like `test.mosquitto.org:{port}`, I wanted to get a fixed URL with a proper port number taken from the document:
 
 ```js
 //replace is performed only if there are variables in the URL and they are declared for a server
@@ -192,7 +192,7 @@ You call macros like you typically call functions:
 
 ## Conclusion
 
-Don't build tools from scratch if there are others already available, and they are opened for contributions. Trying something from scratch, as I did with the templating CodeSandbox for AsyncAPI, makes sense only for learning purposes.
+Don't build tools from scratch if there are others already available, and they are open for contributions. Trying something from scratch, as I did with the templating CodeSandbox for AsyncAPI, makes sense only for learning purposes.
 
 Keep in mind that [AsyncAPI](https://www.asyncapi.com/) is an open community. We do not work on the specification only, but tools too. Join us on [Slack](https://www.asyncapi.com/slack-invite/) and help us build awesome tools or [donate](opencollective.com/asyncapi).
 
