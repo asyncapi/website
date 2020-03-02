@@ -1,6 +1,6 @@
 ---
 title: "Nunjucks templating explained on AsyncAPI use case"
-date: 2020-03-03T08:00:00+01:00
+date: 2020-03-02T08:00:00+01:00
 type: blog
 tags:
   - Nunjucks
