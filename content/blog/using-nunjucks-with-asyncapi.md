@@ -1,5 +1,5 @@
 ---
-title: "Nunjucks templating explained on AsyncAPI use case"
+title: "Nunjucks templating explained on the basis of AsyncAPI specification"
 date: 2020-03-02T08:00:00+01:00
 type: blog
 tags:
@@ -22,7 +22,7 @@ Templating is a huge topic that is impossible to cover in a single post. In Java
 In case you don't want to read and prefer to jump right into code. Go to this CodeSandbox project, but keep in mind you'll miss the important context and explanation.
 [![Edit learning-nunjucks](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/learning-nunjucks-wis89?fontsize=14&hidenavigation=1&theme=dark)
 
-## What AsyncAPI is?
+## What is AsyncAPI?
 
 ![](/images/posts/nunjucks-asyncapi.png)
 
@@ -32,7 +32,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 - It is protocol-agnostic, so you can use it for APIs using Kafka or MQTT, and many others.
 - It supports many different schema formats, so you can describe messages payload schema in a format that you already use, like for example Avro.
 
-## What Nunjucks is?
+## What is Nunjucks?
 
 ![](/images/posts/nunjucks-nunjucks.png)
 
@@ -45,7 +45,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 - Includes
 - Macros
 
-## Nunjucks basics shown on examples
+## Nunjucks basics by example
 
 All examples shown in this post can be explored in action in below CodeSandbox project.
 
