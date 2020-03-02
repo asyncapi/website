@@ -27,6 +27,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 ![](/images/posts/nunjucks-asyncapi.png)
 
 [AsyncAPI](https://www.asyncapi.com/) is a specification that you use to create machine-readable definitions of your event-driven APIs:
+
 - It focuses on the application from the API user perspective. You describe what the user can do with the API, subscribe or publish to it.
 - It is protocol-agnostic, so you can use it for APIs using Kafka or MQTT, and many others.
 - It supports many different schema formats, so you can describe messages payload schema in a format that you already use, like for example Avro.
@@ -36,6 +37,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 ![](/images/posts/nunjucks-nunjucks.png)
 
 [Nunjucks](https://mozilla.github.io/nunjucks/) is a templating engine for JavaScript, inspired by [Jinja](https://palletsprojects.com/p/jinja/). It has many nifty features that make templating really nice:
+
 - Variables declaration
 - Built-in filters
 - Way to create custom filters
@@ -88,7 +90,7 @@ In AsyncAPI document you can specify a server that the application uses to publi
 
 In my example, instead of the URL like `test.mosquitto.org:{port}`, I wanted to get fixed URL with proper port number taken from the document:
 
-```
+```js
 //replace is performed only if there are variables in the URL and they are declared for a server
 function replaceVariablesWithValues(url, serverVariables) {
   const urlVariables = getVariablesNamesFromUrl(url);
@@ -152,14 +154,14 @@ The same case with URL. The URL after replacing variables with values, I want to
 
 You can easily share static parts of the template. This allows you to decrease the size of templates and make maintenance easier. My example here is not very complex and I've added it to the template to make the point that it is possible:
 
-```
+```html
 <!-- content of space.html file -->
 <hr />
 <br />
 ```
 
 I can include it as many times as I want across the templates like this:
-```
+```html
 {% include "space.html" %}
 ```
 
@@ -170,20 +172,20 @@ You can not only share static but also dynamic parts of the template. What does 
 In the AsyncAPI document, I have a case where I want to list all the channels that the application uses. Actually, I want to have two lists. One list that has channels that application is subscribed to (`publish` operation), to receive messages. The other one that the application publishes (`subscribe` operation) messages to.
 
 First you define a macro:
-```
+```html
 {% macro listEl(value) %}
 <li><strong>{{ value }}</strong></li>
 {% endmacro %}
 ```
 
 Then you can import macros in your template:
-```
+```html
 {% import "macros.html" as helpers %}
 ```
 
 You call macros like you typically call functions:
 
-```
+```html
 {{ helpers.listEl(channelName) }}
 ```
 
