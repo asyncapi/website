@@ -2,13 +2,11 @@
 title: "An API Strategist Explores Event-Driven APIs"
 date: 2019-05-14T16:56:52+01:00
 type: blog
-featured: true
 tags:
   - APIs
   - Event-Driven
   - Interview
 cover: /images/posts/an-api-strategist-explores-event-driven-apis.jpg
-weight: 100
 authors:
   - name: Emmelyn Wang
     photo: /images/avatars/ewang.jpg
