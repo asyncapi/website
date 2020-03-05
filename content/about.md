@@ -15,7 +15,7 @@ So far, we have had many contributors and we are thankful for their time and hel
 
 # Contributors
 
-We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
+We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
 
 We apologize in advance if we failed in recognizing your work. Feel free to contact us on [slack](https://www.asyncapi.com/slack-invite/) and we will fix it immediately, or just talk to [All Contributors](https://allcontributors.org) bot.
 
