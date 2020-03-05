@@ -8,7 +8,7 @@ type: static
 
 AsyncAPI is actively maintained by:
 
-- [Fran Méndez](https://twitter.com/fmvilas) - Project Founder.
+- [Fran Méndez](https://twitter.com/fmvilas) - Project Director.
 - [Łukasz Górnicki](https://twitter.com/derberq) - Maintainer and Dev Community Keeper.
 
 So far, we have had many contributors and we are thankful for their time and help.
