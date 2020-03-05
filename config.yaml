@@ -160,3 +160,7 @@ params:
       link: /
     - text: Video blog
       link: /
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

@@ -4,24 +4,37 @@ date: 2019-02-16T13:56:52+01:00
 type: static
 ---
 
-# Maintainers and Contributors
+# Maintainers 
 
-[Fran Méndez](https://twitter.com/fmvilas) is currently the project director.
+AsyncAPI is actively maintained by:
+* [Fran Méndez](https://twitter.com/fmvilas) - Project Founder.
+* [Łukasz Górnicki](https://twitter.com/derberq) - Maintainer and Dev Community Keeper.
 
-Current maintainers are [Mike Ralphson](https://twitter.com/PermittedSoc) and [Raisel Melian](https://twitter.com/raiselmelian).
+So far, we have had many contributors and we are thankful for their time and help.
 
-So far, we have had many contributors and we are thankful for their time and help. Until the day of this writing, main contributors are:
+# Contributors
 
-* [Bruno Pedro](https://twitter.com/bpedro)
-* [Chris Wood](https://twitter.com/sensiblewood)
-* [Dulce De La Rosa](https://twitter.com/DeLaR0sa)
-* [Emmelyn Wang](https://twitter.com/lifewingmate)
-* [Jonathan Schabowsky](https://twitter.com/JSchabowsky)
-* [Kin Lane](https://twitter.com/kinlane)
-* [Lukasz Gornicki](https://twitter.com/derberq)
-* [Maciej Urbańczyk](https://github.com/magicmatatjahu)
+We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
 
-Would you like to contribute? Check out our [contributing guidelines](https://github.com/asyncapi/asyncapi/blob/master/CONTRIBUTING.md).
+We apologize in advance if we failed in recognizing your work. Feel free to contact us on [slack](https://www.asyncapi.com/slack-invite/) and we will fix it immediately, or just talk to [All Contributors](https://allcontributors.org) bot.
+
+# Companies support
+
+This is the list of companies that either provide a significant financial support or delegate their employees to support AsyncAPI with maintainance:
+
+<div class="row platinum-members">
+<a href="https://iqvia.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--iqvia" src="/images/logos/sponsors/iqvia.png"></a>
+<a href="https://mulesoft.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--mulesoft" src="/images/logos/sponsors/mulesoft.png"></a>
+<a href="https://salesforce.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--salesforce" src="/images/logos/sponsors/salesforce.png"></a>
+<a href="https://sap.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--sap" src="/images/logos/sponsors/sap.png"></a>
+<a href="https://slack.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--slack" src="/images/logos/sponsors/slack.png"></a>
+<a href="https://solace.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--solace" src="/images/logos/sponsors/solace.png"></a>
+<a href="https://tibco.com" target="_blank"><img class="platinum-member-logo platinum-member-logo--tibco" src="/images/logos/sponsors/tibco.png"></a>
+</div>
+
+Would you like to get on the list and support us financially? Check out the [sponsoring options](https://opencollective.com/asyncapi).
+
+Would you like to help us with the maintainance? Contact us on [slack](https://www.asyncapi.com/slack-invite/).
 
 # History
 
