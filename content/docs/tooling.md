@@ -34,6 +34,14 @@ The following is a list of tools that generate human-readable documentation from
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
 
+# DSL {#docgens}
+
+Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.
+
+| Link           | Description    | Language/Kind |
+| :------------- | :------------- | :------------- |
+| [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks plus a few extra helpers. Once compiled BOATS calls in [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
+
 # Validators {#validators}
 
 The following is a list of tools that validate AsyncAPI documents.
