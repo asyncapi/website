@@ -34,7 +34,7 @@ The following is a list of tools that generate human-readable documentation from
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
 
-# DSL {#docgens}
+# DSL {#dsl}
 
 Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.
 
