@@ -66,16 +66,18 @@ params:
     - title: Playground
       url: http://playground.asyncapi.io?utm_source=asyncapi.com&utm_medium=top-menu
       blank: true
-    - title: Code generators
-      url: /docs/tooling#codegens
-    - title: Documentation generators
-      url: /docs/tooling#docgens
-    - title: Validators
-      url: /docs/tooling#validators
     - title: Code-first tools
       url: /docs/tooling#code-first
-    - title: Others
-      url: /docs/tooling#others
+    - title: Code generators
+      url: /docs/tooling#codegens
+    - title: Converters
+      url: /docs/tooling#converters
+    - title: Documentation generators
+      url: /docs/tooling#docgens
+    - title: DSL
+      url: /docs/tooling#dsl
+    - title: Validators
+      url: /docs/tooling#validators
   - title: Blog
     url: /blog
   - title: Help
