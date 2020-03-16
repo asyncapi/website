@@ -9,7 +9,7 @@ weight: 10
 
 All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. **The web is the greatest implementation of a REST API.**
 
-However, there are certain situations when you don't really need a response from the server. At least no other than the confirmation the request has been received. This is also called _"fire and forget"_, and it's really useful when you just want to communicate or inform that "something happened." It is, you're not requesting or asking for anything, thus you don't need a response.  Examples of this are:
+However, there are certain situations when you don't really need a response from the server. At least no other than the confirmation the request has been received. This is also called _"fire and forget"_, and it's really useful when you just want to communicate or inform that "something happened". You're not requesting or asking for anything, thus you don't need a response.  Examples of this are:
 
 * A user just signed up.
 * You have a new follower.
@@ -27,7 +27,7 @@ This extra information is often referred to as _event payload_ or _message paylo
 
 ![](/images/diagrams/simple-event-driven.png)
 
-In most cases, Event-Driven Architectures (EDAs) are broker-centric, like in the diagram above. In it you can find some new concepts, so let's go through them now.
+In most cases, Event-Driven Architectures (EDAs) are broker-centric, like in the diagram above. You can find some new concepts in it, so let's go through them now.
 
 ### Message broker
 
@@ -41,7 +41,7 @@ A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_
 
 ### Message
 
-A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything but they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. Instead, _commands_ are very much like _requests_ in REST APIs: they tell the subscribers "do this".
+A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything, but they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. Instead, _commands_ are very much like _requests_ in REST APIs: they tell the subscribers "do this".
 
 **Technically speaking, _events_ and _commands_ are the same. The only difference is in their semantics.**
 
