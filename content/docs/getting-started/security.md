@@ -20,12 +20,12 @@ Continuing with the `hello world` application example, let's learn how to define
 
 {{<code lang="yaml" lines="10-11,42-44">}}
 asyncapi: '2.0.0'
-id: 'urn:hello-world-publisher'
 info:
   title: Hello world application
   version: '0.1.0'
 servers:
-  - url: broker.mycompany.com
+  production:
+    url: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
     security:
