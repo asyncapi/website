@@ -338,4 +338,6 @@ In the end, you can always use something different, custom approach, like reacti
 
 <iframe src="https://giphy.com/embed/10640GYyK1INZ6" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
+<br><br>
+
 > Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash.
