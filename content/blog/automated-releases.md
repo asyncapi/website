@@ -31,7 +31,7 @@ Am I just showing off? sounds like, but that is not my intention. I just want to
 
 ## What full automation means
 
-Full automation means that release process if fully automated with no manual steps... what else did you think.
+Full automation means that the release process if fully automated with no manual steps... what else did you think.
 
 <iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -105,7 +105,7 @@ on:
 
 #### GitHub and NPM
 
-For releases to GitHub and NPM, the most convenient solution is to integrate [semantic release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits. You can configure plugins in your `package.json` in order they should be invoked:
+For releases to GitHub and NPM, the most convenient solution is to integrate [semantic release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits. You can configure plugins in your `package.json` in the order they should be invoked:
 
 ```json
 "plugins": [
@@ -141,7 +141,7 @@ Remember that good automation should be backed by a technical bot rather than a 
   run: npm run release
 ```
 
-The bonus great thing you get from this toolset is that at the end, once your pull request is merged and released, you get a nice information under it that it is included in release:
+The bonus great thing you get from this toolset is that at the end, once your pull request is merged and released, you get helpful information under it that it is included in the release:
 
 ![pr info about release](/images/posts/pr-indicator.png)
 
