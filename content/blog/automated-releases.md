@@ -17,7 +17,7 @@ authors:
 ---
 
 > tl;dr
-from now on, some libraries owned by [AsyncAPI Initiative](https://www.asyncapi.com/) are released in an automated way. We roll-out this setup to the rest when we see it is needed.
+from now on, [generator](https://github.com/asyncapi/generator/) is released in an automated way. We roll-out this setup to the rest when we see it is needed.
 
 Repetitive tasks are boring. If what you do manually can be automated, then what are you waiting for! 
 
@@ -31,7 +31,9 @@ Am I just showing off? sounds like, but that is not my intention. I just want to
 
 ## What full automation means
 
-Full automation means that release process if fully automated with no manual steps... what else did you think :trollface:.
+Full automation means that release process if fully automated with no manual steps... what else did you think.
+
+<iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/awkward-pulp-fiction-john-travolta-6uGhT1O4sxpi8">via GIPHY</a></p>
 
 Your responsibility is just to merge a pull request. The automation handles the rest. 
 
@@ -47,16 +49,16 @@ Purpose of Conventional Commits is to make commits not only human-readable but a
 
 This is how the version of the library looks like when it follows semantic versioning: `MAJOR.MINOR.PATCH`. How does the machine know what release you want to bump because of a given commit? Simplest mapping looks like in the following list:
 
-- `fix: ` -> `PATCH`
-- `feat: ` -> `MINOR`
-- `{ANY_PREFIX}!: ` so for example `refactor!: ` -> `MAJOR` 
+- Commit message prefix `fix: ` indicates `PATCH` release,
+- Commit message prefix `feat: ` indicates `MINOR` release,
+- Commit message prefix `{ANY_PREFIX}!: ` so for example `refactor!: ` indicates `MAJOR` release.
 
 
-It other words, assume your version was 1.0.0 and you made a commit like `feat: add new parameter to test endpoint`. You can have a script that picks up `feat: ` and triggers release that eventually releases version 1.1.0.
+It other words, assume your version was 1.0.0 and you made a commit like `feat: add new parameter to test endpoint`. You can have a script that picks up `feat: ` and triggers release that eventually bumps to version 1.1.0.
 
 ## Workflow design
 
-At [AsyncAPI Initiative](https://www.asyncapi.com/), and to be more specific, in [generator](https://github.com/asyncapi/generator/) where we introduced the pipeline for the very first time we had to automatically:
+At [AsyncAPI Initiative](https://www.asyncapi.com/) where we introduced the release pipeline for the very first time, we had to automatically do the following :
 
 - Tag Git repository with a new version
 - Create GitHub Release
@@ -70,11 +72,12 @@ This is how the design looks like:
 
 There are two workflows designed here. 
 
-The first workflow, release, react to changes in the release branch (`master` in this case) and decides if release should be triggered, and triggers it. The last step of the workflow is a pull request creation with changes in `package.json`. Why changes are not committed directly to the release branch? because in the majority of cases people, like we in AsyncAPI, use branch protection rules and do not allow direct commits to release branches.
+The first workflow reacts to changes in the release branch (`master` in this case) and decides if release should be triggered, and triggers it. The last step of the workflow is a pull request creation with changes in `package.json`. Why changes are not committed directly to the release branch? because in the majority of cases people, like we in AsyncAPI, use branch protection rules and do not allow direct commits to release branches.
 
-The second workflow is just for handling changes in `package.json`. To fulfill branch protection settings, we heed to auto-approve the pull request and then we can automatically merge it.
+The second workflow is just for handling changes in `package.json`. To fulfill branch protection settings, we had to auto-approve the pull request so we can automatically merge it.
 
 You can extend this workflow with additional steps, like:
+
 * Integration testing
 * Deployment
 * Notifications
@@ -83,7 +86,7 @@ You can extend this workflow with additional steps, like:
 
 Even though I have my opinion about GitHub Actions (for more details you can read my [post about it](https://dev.to/derberg/github-actions-when-fascination-turns-into-disappointment-4d75)) I still think it is worth investing in it, especially for the release workflows.
 
-Except from the GitHub provided actions, I used the following awesome actions provided by the community:
+We used the GitHub-provided actions and the following awesome actions provided by the community:
 
 - [Create Pull Request](ttps://github.com/marketplace/actions/create-pull-request)
 - [Auto Approve](https://github.com/marketplace/actions/auto-approve)
@@ -91,7 +94,7 @@ Except from the GitHub provided actions, I used the following awesome actions pr
 
 ### Release workflow
 
-Release workflow must be triggered every time there is something new happening in the release branch, in our case it is a `master` branch:
+Release workflow triggers every time there is something new happening in the release branch, in our case it is a `master` branch:
 
 ```yaml
 on:
@@ -102,28 +105,28 @@ on:
 
 #### GitHub and NPM
 
-For releases to GitHub and NPM, the most convenient solution is to integrate [semantic release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits. You can configure plugins in your `package.json` but not only:
+For releases to GitHub and NPM, the most convenient solution is to integrate [semantic release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits. You can configure plugins in your `package.json` in order they should be invoked:
 
 ```json
 "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "conventionalcommits"
-        }
-      ],
-      [
-        "@semantic-release/release-notes-generator",
-        {
-          "preset": "conventionalcommits"
-        }
-      ],
-      "@semantic-release/npm",
-      "@semantic-release/github"
-    ]
+  [
+    "@semantic-release/commit-analyzer",
+    {
+      "preset": "conventionalcommits"
+    }
+  ],
+  [
+    "@semantic-release/release-notes-generator",
+    {
+      "preset": "conventionalcommits"
+    }
+  ],
+  "@semantic-release/npm",
+  "@semantic-release/github"
+]
 ```
 
-Remember that good automation should be backed by a technical bot rather than a real user. GitHub Actions allow you to encrypt credentials to different systems on the repository level and referring them in actions if straight-forward. 
+Remember that good automation should be backed by a technical bot rather than a real user. GitHub Actions allow you to encrypt credentials to different systems on the repository level and referring them in actions looks as follows: 
 
 ```yaml
 - name: Release to NPM and GitHub
@@ -140,7 +143,7 @@ Remember that good automation should be backed by a technical bot rather than a 
 
 #### Docker
 
-For handling Docker you can use some community-provided GitHub Action that abstracts Docker CLI. I don't think it is needed though if you know Docker. Some of the commands you might want to reuse also during local development, like image building and have them behind npm script like `npm run docker-build`.
+For handling Docker you can use some community-provided GitHub Action that abstracts Docker CLI. I don't think it is needed if you know Docker. Some of the commands you might want to reuse also during local development, like image building and have them behind npm script like `npm run docker-build`.
 
 ```yaml
 - name: Release to Docker
@@ -155,12 +158,12 @@ For handling Docker you can use some community-provided GitHub Action that abstr
 
 #### Bump version in package.json
 
-A common practice is that once during release you bump package version in `package.json`, you should also commit the modified file to release branch. It is all fine but good practices in the project are:
+A common practice is that once during release you bump package version in `package.json`, you should also push the modified file to release branch. Be aware though that good practices in the project are:
 
-- Do not commit directly to the release branch, all changes should go through pull requests with proper peer review.
-- Branches should have basic protection enabled, simple rules that will block pull request before it is merged.
+- Do not commit directly to the release branch. All changes should go through pull requests with proper peer review.
+- Branches should have basic protection enabled. There should be simple rules that block pull request before it is merged.
 
-Release workflow instead of committing to the release branch, should commit to a new branch and create a pull request. Seems like an overhead? no, you can also automate it, just read further.
+Release workflow instead of pushing directly to the release branch, should commit to a new branch and create a pull request. Seems like an overhead? no, you can also automate it. Just keep on reading.
 
 ```yaml
 - name: Create Pull Request with updated package files
@@ -179,10 +182,12 @@ Release workflow instead of committing to the release branch, should commit to a
 #### Conditions and sharing outputs
 
 GitHub Actions has two awesome features:
-- You can set conditions to specific steps
+- You can set conditions for specific steps
 - You can share the output of one step with another
 
-These features are used in the release workflow to check the version of the package before and after the GitHub and NPM release. To share output you must assign an `id` to the step and declare a variable and assign any value to it.
+These features are used in the release workflow to check the version of the package before and after the GitHub and NPM release. 
+
+To share output you must assign an `id` to the step and declare a variable and assign any value to it.
 ```yaml
 - name: Get version from package.json after release step
   id: extractver
@@ -325,6 +330,12 @@ For a detailed reference, you can look into [this pull request](https://github.c
 
 ## Conclusions
 
-Automate all the things, don't waste time. Automate releases, even if you are a purist that for years followed a rule of using [imperative mood](https://chris.beams.io/posts/git-commit/#imperative) in commit subject and after looking on prefixes from Conventional Commits you feel pure disgust :laughing:. In the end, you can always use something different, custom approach, like reacting to merges from pull requests with the specific label only.
+Automate all the things, don't waste time. Automate releases, even if you are a purist that for years followed a rule of using [imperative mood](https://chris.beams.io/posts/git-commit/#imperative) in commit subject and after looking on prefixes from Conventional Commits you feel pure disgust.
 
-> Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash
+<iframe src="https://giphy.com/embed/8PmTor9XVnD3sxXHRe" width="480" height="435" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fallontonight-tonight-show-ew-priyanka-chopra-8PmTor9XVnD3sxXHRe">via GIPHY</a></p>
+
+In the end, you can always use something different, custom approach, like reacting to merges from pull requests with the specific label only. If you have time to reinvent the wheel, go for it.
+
+<iframe src="https://giphy.com/embed/10640GYyK1INZ6" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/time-wheel-reinvent-10640GYyK1INZ6">via GIPHY</a></p>
+
+> Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash.
