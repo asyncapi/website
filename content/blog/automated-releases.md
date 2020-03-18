@@ -48,7 +48,7 @@ Purpose of Conventional Commits is to make commits not only human-readable but a
 This is how the version of the library looks like when it follows semantic versioning: `MAJOR.MINOR.PATCH`. How does the machine know what release you want to bump because of a given commit? Simplest mapping looks like in the following table:
 
 semver bump  | commit prefix
----|:---:|---
+---|---
 `PATCH` | `fix: `
 `MINOR` | `feat: `
 `MAJOR` | `{ANY_PREFIX}!: ` so for example `refactor!: `
@@ -94,7 +94,7 @@ Except from the GitHub provided actions, I used the following awesome actions pr
 
 Release workflow must be triggered every time there is something new happening in the release branch, in our case it is a `master` branch:
 
-```
+```yaml
 on:
   push:
     branches:
@@ -163,7 +163,7 @@ A common practice is that once during release you bump package version in `packa
 
 Release workflow instead of committing to the release branch, should commit to a new branch and create a pull request. Seems like an overhead? no, you can also automate it, just read further.
 
-```yml
+```yaml
 - name: Create Pull Request with updated package files
   if: steps.initversion.outputs.version != steps.extractver.outputs.version
   uses: peter-evans/create-pull-request@v2.4.4
@@ -184,7 +184,7 @@ GitHub Actions has two awesome features:
 - You can share the output of one step with another
 
 These features are used in the release workflow to check the version of the package before and after the GitHub and NPM release. To share output you must assign an `id` to the step and declare a variable and assign any value to it.
-```yml
+```yaml
 - name: Get version from package.json after release step
   id: extractver
   run: echo "::set-output name=version::$(npm run get-version --silent)"
@@ -192,7 +192,7 @@ These features are used in the release workflow to check the version of the pack
 
 You access the shared value by the `id` and the variable name like `steps.extractver.outputs.version`. We use it for example in the condition that specifies if further steps of the workflow should be triggered or not. If the version in `package.json` changed after GitHub and NPM step, this means we should proceed with Docker publishing and pull request creation:
 
-```yml
+```yaml
 if: steps.initversion.outputs.version != steps.extractver.outputs.version
 ```
 
@@ -272,7 +272,7 @@ Automation can be divided into separate jobs that enable you to define job depen
 
 Below you can find the entire workflow file:
 
-```yml
+```yaml
 name: Automerge release bump PR
 
 on:
