@@ -45,30 +45,12 @@ At [AsyncAPI Initiative](https://www.asyncapi.com/) we use [Semantic Versioning]
 
 Purpose of Conventional Commits is to make commits not only human-readable but also machine-readable. It defines a set of commit prefixes (but not only) that can be easily parsed and analyzed by tooling.
 
-This is how the version of the library looks like when it follows semantic versioning: `MAJOR.MINOR.PATCH`. How does the machine know what release you want to bump because of a given commit? Simplest mapping looks like in the following table:
+This is how the version of the library looks like when it follows semantic versioning: `MAJOR.MINOR.PATCH`. How does the machine know what release you want to bump because of a given commit? Simplest mapping looks like in the following list:
 
-<table>
-<thead>
-<tr>
-<th>semver bump</th>
-<th>commit prefix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PATCH</code></td>
-<td><code>fix:</code></td>
-</tr>
-<tr>
-<td><code>MINOR</code></td>
-<td><code>feat:</code></td>
-</tr>
-<tr>
-<td><code>MAJOR</code></td>
-<td><code>{ANY_PREFIX}!:</code> so for example <code>refactor!:</code></td>
-</tr>
-</tbody>
-</table>
+- `fix: ` -> `PATCH`
+- `feat: ` -> `MINOR`
+- `{ANY_PREFIX}!: ` so for example `refactor!: ` -> `MAJOR` 
+
 
 It other words, assume your version was 1.0.0 and you made a commit like `feat: add new parameter to test endpoint`. You can have a script that picks up `feat: ` and triggers release that eventually releases version 1.1.0.
 
