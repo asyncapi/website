@@ -141,6 +141,10 @@ Remember that good automation should be backed by a technical bot rather than a 
   run: npm run release
 ```
 
+The bonus great thing you get from this toolset is that at the end, once your pull request is merged and released, you get a nice information under it that it is included in release:
+
+![pr info about release](/images/posts/pr-indicator.png)
+
 #### Docker
 
 For handling Docker you can use some community-provided GitHub Action that abstracts Docker CLI. I don't think it is needed if you know Docker. Some of the commands you might want to reuse also during local development, like image building and have them behind npm script like `npm run docker-build`.
