@@ -33,7 +33,7 @@ Am I just showing off? sounds like, but that is not my intention. I just want to
 
 Full automation means that release process if fully automated with no manual steps... what else did you think.
 
-<iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/awkward-pulp-fiction-john-travolta-6uGhT1O4sxpi8">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 Your responsibility is just to merge a pull request. The automation handles the rest. 
 
@@ -204,7 +204,7 @@ if: steps.initversion.outputs.version != steps.extractver.outputs.version
 
 Below you can find the entire workflow file:
 
-```yml
+```yaml
 name: Release
 
 on:
@@ -332,10 +332,10 @@ For a detailed reference, you can look into [this pull request](https://github.c
 
 Automate all the things, don't waste time. Automate releases, even if you are a purist that for years followed a rule of using [imperative mood](https://chris.beams.io/posts/git-commit/#imperative) in commit subject and after looking on prefixes from Conventional Commits you feel pure disgust.
 
-<iframe src="https://giphy.com/embed/8PmTor9XVnD3sxXHRe" width="480" height="435" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fallontonight-tonight-show-ew-priyanka-chopra-8PmTor9XVnD3sxXHRe">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/8PmTor9XVnD3sxXHRe" width="480" height="435" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 In the end, you can always use something different, custom approach, like reacting to merges from pull requests with the specific label only. If you have time to reinvent the wheel, go for it.
 
-<iframe src="https://giphy.com/embed/10640GYyK1INZ6" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/time-wheel-reinvent-10640GYyK1INZ6">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/10640GYyK1INZ6" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 > Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash.
