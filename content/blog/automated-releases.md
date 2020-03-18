@@ -47,11 +47,11 @@ Purpose of Conventional Commits is to make commits not only human-readable but a
 
 This is how the version of the library looks like when it follows semantic versioning: `MAJOR.MINOR.PATCH`. How does the machine know what release you want to bump because of a given commit? Simplest mapping looks like in the following table:
 
-| semver bump  | commit prefix |
-| ------------- |:-------------:| -----:|
-| `PATCH` | `fix: ` |
-| `MINOR` | `feat: ` |
-| `MAJOR` | `{ANY_PREFIX}!: ` so for example `refactor!: ` |
+semver bump  | commit prefix
+---|:---:|---
+`PATCH` | `fix: `
+`MINOR` | `feat: `
+`MAJOR` | `{ANY_PREFIX}!: ` so for example `refactor!: `
 
 It other words, assume your version was 1.0.0 and you made a commit like `feat: add new parameter to test endpoint`. You can have a script that picks up `feat: ` and triggers release that eventually releases version 1.1.0.
 
