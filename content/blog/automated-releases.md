@@ -92,7 +92,113 @@ Except from the GitHub provided actions, I used the following awesome actions pr
 
 ### Release workflow
 
-TODO decription of important parts 
+Release workflow must be triggered every time there is something new happening in the release branch, in our case it is a `master` branch:
+
+```
+on:
+  push:
+    branches:
+      - master
+```
+
+#### GitHub and NPM
+
+For releases to GitHub and NPM, the most convenient solution is to integrate [semantic release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits. You can configure plugins in your `package.json` but not only:
+
+```json
+"plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+```
+
+Remember that good automation should be backed by a technical bot rather than a real user. GitHub Actions allow you to encrypt credentials to different systems on the repository level and referring them in actions if straight-forward. 
+
+```yaml
+- name: Release to NPM and GitHub
+  id: release
+  env:
+    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    GIT_AUTHOR_NAME: asyncapi-bot
+    GIT_AUTHOR_EMAIL: info@asyncapi.io
+    GIT_COMMITTER_NAME: asyncapi-bot
+    GIT_COMMITTER_EMAIL: info@asyncapi.io
+  run: npm run release
+```
+
+#### Docker
+
+For handling Docker you can use some community-provided GitHub Action that abstracts Docker CLI. I don't think it is needed though if you know Docker. Some of the commands you might want to reuse also during local development, like image building and have them behind npm script like `npm run docker-build`.
+
+```yaml
+- name: Release to Docker
+  if: steps.initversion.outputs.version != steps.extractver.outputs.version
+  run: | 
+    echo ${{secrets.DOCKER_PASSWORD}} | docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin
+    npm run docker-build
+    docker tag asyncapi/generator:latest asyncapi/generator:${{ steps.extractver.outputs.version }}
+    docker push asyncapi/generator:${{ steps.extractver.outputs.version }}
+    docker push asyncapi/generator:latest
+```
+
+#### Bump version in package.json
+
+A common practice is that once during release you bump package version in `package.json`, you should also commit the modified file to release branch. It is all fine but good practices in the project are:
+
+- Do not commit directly to the release branch, all changes should go through pull requests with proper peer review.
+- Branches should have basic protection enabled, simple rules that will block pull request before it is merged.
+
+Release workflow instead of committing to the release branch, should commit to a new branch and create a pull request. Seems like an overhead? no, you can also automate it, just read further.
+
+```yml
+- name: Create Pull Request with updated package files
+  if: steps.initversion.outputs.version != steps.extractver.outputs.version
+  uses: peter-evans/create-pull-request@v2.4.4
+  with:
+    token: ${{ secrets.GH_TOKEN }}
+    commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
+    committer: asyncapi-bot <info@asyncapi.io>
+    author: asyncapi-bot <info@asyncapi.io>
+    title: 'chore(release): ${{ steps.extractver.outputs.version }}'
+    body: 'Version bump in package.json and package-lock.json for release [${{ steps.extractver.outputs.version }}](https://github.com/${{github.repository}}/releases/tag/v${{ steps.extractver.outputs.version }})'
+    branch: version-bump/${{ steps.extractver.outputs.version }}
+```
+
+#### Conditions and sharing outputs
+
+GitHub Actions has two awesome features:
+- You can set conditions to specific steps
+- You can share the output of one step with another
+
+These features are used in the release workflow to check the version of the package before and after the GitHub and NPM release. To share output you must assign an `id` to the step and declare a variable and assign any value to it.
+```yml
+- name: Get version from package.json after release step
+  id: extractver
+  run: echo "::set-output name=version::$(npm run get-version --silent)"
+```
+
+You access the shared value by the `id` and the variable name like `steps.extractver.outputs.version`. We use it for example in the condition that specifies if further steps of the workflow should be triggered or not. If the version in `package.json` changed after GitHub and NPM step, this means we should proceed with Docker publishing and pull request creation:
+
+```yml
+if: steps.initversion.outputs.version != steps.extractver.outputs.version
+```
+
+#### Full workflow
+
+Below you can find the entire workflow file:
 
 ```yml
 name: Release
@@ -152,10 +258,19 @@ jobs:
           branch: version-bump/${{ steps.extractver.outputs.version }}
 ```
 
-
 ## Automated merging workflow
 
-TODO decription of important parts
+Your first question here should be:
+
+> _Why automated approving and merging is handled in a separate workflow and not as part of release workflow_
+
+The reason is that time between pull request creation and its readiness to be merged is hard to define. Pull requests always include some automated checks, like testing, linting, and others. These are long-running checks. You should not make such an asynchronous step a part of your synchronous release workflow. 
+
+Another reason is that you can also extend such an automated merging flow to handle not only pull request coming form release bot but also other bots, that for example update your dependencies for security reasons. 
+
+Automation can be divided into separate jobs that enable you to define job dependencies. There is no point to run **automerge** job until the **autoapprove** job is finished, and GitHub actions allow you to define this with `needs: [autoapprove]`
+
+Below you can find the entire workflow file:
 
 ```yml
 name: Automerge release bump PR
