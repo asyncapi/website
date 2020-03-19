@@ -27,7 +27,7 @@ A couple of minutes here, a couple of minutes there and all of a sudden you do n
 
 We kick ass at [AsyncAPI Initiative](https://www.asyncapi.com/) at the moment. We started to improve our tooling regularly. We are now periodically sharing project status in our [newsletter](https://www.asyncapi.com/subscribe), and host [bi-weekly open meetings](https://github.com/asyncapi/asyncapi/issues/115), but most important is that we just recently updated our roadmap.
 
-Am I just showing off? It sounds like, but that is not my intention. I wish to point out we are productive, and we want to continue this trend, this means we need automation. If you have libraries that you want to release regularly and you plan additional ones to come, you need to focus on release automation.
+Am I just showing off? It sounds like, but that is not my intention. I wish to point out we are productive, and we want to continue this trend and automation helps here a lot. If you have libraries that you want to release regularly and you plan additional ones to come, you need to focus on release automation.
 
 ## What full automation means
 
@@ -126,7 +126,7 @@ For releases to GitHub and NPM, the most convenient solution is to integrate [se
 ]
 ```
 
-Conveniently, functional automation uses a technical bot rather than a real user. GitHub actions allow you to encrypt the credentials of different systems at the repository level. Referring to them in actions looks as follows: 
+Conveniently, functional automation uses a [technical bot rather than a real user](https://www.thinkautomation.com/bots-and-ai/what-are-software-bots/). GitHub actions allow you to encrypt the credentials of different systems at the repository level. Referring to them in actions looks as follows: 
 
 ```yaml
 - name: Release to NPM and GitHub
