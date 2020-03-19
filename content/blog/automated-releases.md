@@ -74,13 +74,13 @@ There are two workflows designed here.
 
 The first workflow reacts to changes in the release branch (`master` in this case), decides if release should be triggered, and triggers it. The last step of the workflow is a pull request creation with changes in `package.json` and `package-lock.json`. Why are changes not committed directly to the release branch? Because we use branch protection rules and do not allow direct commits to release branches.
 
-The second workflow is just for handling changes in `package.json`. To fulfill branch protection settings, we had to auto-approve the pull request so we can automatically merge it.
-
 You can extend this workflow with additional steps, like:
 
 * Integration testing
 * Deployment
 * Notifications
+
+The second workflow is just for handling changes in `package.json`. To fulfill branch protection settings, we had to auto-approve the pull request so we can automatically merge it.
 
 ## GitHub Actions
 
@@ -141,7 +141,7 @@ Conveniently, functional automation uses a [technical bot rather than a real use
   run: npm run release
 ```
 
-The great bonus thing you get from this toolset is that at the end, once your pull request is merged and released, you get helpful information under it that it is a part of the release:
+Aside from automation, the bot also comments on every pull request and issue included in the release notifying subscribed participants that the given topic is part of the release. Isn't it awesome?
 
 ![pr info about release](/images/posts/pr-indicator.png)
 
