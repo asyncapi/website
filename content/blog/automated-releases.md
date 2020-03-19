@@ -1,6 +1,6 @@
 ---
 title: "Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits"
-date: 2020-03-18T08:00:00+01:00
+date: 2020-03-20T08:00:00+01:00
 type: blog
 featured: true
 tags:
