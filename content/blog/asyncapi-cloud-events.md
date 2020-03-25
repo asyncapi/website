@@ -2,7 +2,6 @@
 title: "AsyncAPI and CloudEvents"
 date: 2019-05-11T16:56:52+01:00
 type: blog
-featured: true
 tags:
   - AsyncAPI
   - CloudEvents
