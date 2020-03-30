@@ -130,7 +130,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
 
 1. Install the generator to use is at a command-line tool
     ```bash
-    npm install -g asyncapi-generator
+    npm install -g @asyncapi/generator
     ```
 
 2. Create a directory for your projects and enter it:
@@ -183,12 +183,12 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
 
 4. Trigger generation of the Node.js code:
     ```bash
-    ag asyncapi.yaml nodejs -p server=mosquitto
+    ag asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
     ```
 
 5. And voilà! List all files in directory and notice that Node.js application is generated:
     ```bash
-    ls
+    cd output && ls
     ```
 
 # Running your code
