@@ -55,8 +55,8 @@ One of the projects where we use this JavaScript tools is our parser for AsyncAP
 ### Semantic Release configuration
 
 The Semantic Release supports configuration files in different formats and file types. You are not bound to `package.json`. We chose to use `.releaserc` file in YAML format, but there are [other options](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration-file) too.
-```
 
+```yaml
 ---
 branches:
 - master
