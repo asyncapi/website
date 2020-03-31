@@ -21,7 +21,6 @@ authors:
 This post and the [previous one](/blog/automated-releases/) come from our experience we gained when working on full automation for all tools maintained by [AsyncaPI Initiative](https://github.com/asyncapi/asyncapi/).
 
 > [AsyncAPI](https://github.com/asyncapi/asyncapi/) is a specification that you use to create machine-readable definitions of your event-driven APIs. 
-<iframe src="https://ghbtns.com/github-btn.html?user=twbs&repo=bootstrap&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
 
 The previous post focused on JavaScript as the first library that we automated was our [generator](https://github.com/asyncapi/generator/). It covered publishing to NPM and usage of the JavaScript community ecosystem. Now we have automation rolled out to all our libraries, Go-written too.
 
