@@ -42,7 +42,7 @@ The problem is, there are people that [Hate JavaScript](https://www.reddit.com/r
 
 Conventional Commits specification is heavily inspired by [Angular Commit Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit-message-format). Semantic Release package and its plugins ecosystem are all Node.js packages.
 
-![](https://media.giphy.com/media/k2A4gzRxDL4GI/200w_d.gif)
+![](https://media.giphy.com/media/10FHR5A4cXqVrO/giphy.gif)
 
 Don't worry. If you have Java or Go project, you can still use these tools. You do not have to keep `package.json` in your repository, so don't worry, you can keep your repository clean. Great guys from Semantic Release thought about you too.
 
