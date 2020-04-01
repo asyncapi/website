@@ -28,13 +28,13 @@ Two AsyncAPI related actions we crafterd in March are:
 
 ## Writing a GitHub Action
 
-Our actions are both written in JavaScript. The other way of writing action is to do a Docker container action. The best way to start writing your action is to:
+Our actions are both [written in JavaScript](https://help.github.com/en/actions/building-actions/creating-a-javascript-action). The other way of writing action is to do a [Docker container action](https://help.github.com/en/actions/building-actions/creating-a-docker-container-action). The best way to start writing your action is to:
 
 1. Follow [this](https://help.github.com/en/actions/building-actions/creating-a-javascript-action) tutorial to create a simple action to understand it's components.
 1. Get familiar with [official toolkit](https://github.com/actions/toolkit) that you can use to simplify writing an action. 
 1. Create your custom action with [this](https://github.com/actions/javascript-action) template that has many things plugged in already, like eslint, testing, and most important, distro generation, so you do not have to commit `node_modules` directory to your repository.
 
-These are all the resources I used to write my first action, and to master it, I only had to read official docs, like reference docs for `action.yml` file. Well done GitHub!
+These are all the resources I used to write my first action, and to master it, I only had to read official docs, like [reference docs for "action.yml" file](https://help.github.com/en/actions/building-actions/metadata-syntax-for-github-actions). Well done GitHub!
 
 ## What I can do today with AsyncAPI GitHub Actions
 
@@ -44,29 +44,13 @@ Those two actions can help you a lot already, together or separately. I present 
 
 You can make sure that whenever someone makes a Pull Request to propose a change in the AsyncAPI document, you can validate it automatically using [Waleed's](https://twitter.com/WaleedAshraf01/) action `WaleedAshraf/asyncapi-github-action@v0.0.3`.
 
-You only need to make sure the action reacts to `pull_request` events that make sense for you. For the sake of this example, all possible events are mentioned, depending on your setup, some might not be necessary.
+Actions can be triggered by [multiple types of events](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions). In this example, we will trigger the action on any `pull_request` event.
 
 ```yaml
 name: Validate AsyncAPI document
 
 on:
   pull_request:
-    types:
-      - labeled
-      - unlabeled
-      - synchronize
-      - opened
-      - edited
-      - ready_for_review
-      - reopened
-      - unlocked
-  pull_request_review:
-    types:
-      - submitted
-  check_suite: 
-    types:
-      - completed
-  status: {}
   
 jobs:
   validation:
@@ -92,7 +76,7 @@ on:
 To generate HTML from your AsyncAPI documentation, you need to use `asyncapi/github-action-for-generator@v0.2.0` action. You also need to specify a few more things:
 - The template you want to use for generation. In this example, you can see official [AsyncAPI HTML Template](https://github.com/asyncapi/html-template). You can also write your custom template, and hosting it on npm is not mandatory.
 - Filepath to the AsyncAPI document in case it is not in the root of the working directory, and not called `asyncapi.yml`
-- The template specific parameters. The crucial part here is the `baseHref` parameter. When enabling [GitHub Pages](https://pages.github.com/) for regular repository, the URL of the website is `https://{GITHUB_PROFILE}.github.io/{REPO_NAME}/`. Specifying `baseHref` parameter helps the browser to properly resolve URL to relative links to additional resources like CSS or JS files. You do not have to hardcode the name of the repo in workflow configuration. Your workflow has access to information about the repository it is running in. You could do this: `${baseHref=/{github.repository}}/`
+- The template specific parameters. The crucial part here is the `baseHref` parameter. When enabling [GitHub Pages](https://pages.github.com/) for regular repository, the URL of the Web page is `https://{GITHUB_PROFILE}.github.io/{REPO_NAME}/`. Specifying `baseHref` parameter helps the browser to properly resolve URL to relative links to additional resources like CSS or JS files. You do not have to hardcode the name of the repo in workflow configuration. Your workflow has access to information about the repository it is running in. You could do this: `${baseHref=/{github.repository}}/`
 - The output directory where the generator creates files. You might access those files in other steps of the workflow. 
 
 ```yaml
@@ -105,7 +89,7 @@ To generate HTML from your AsyncAPI documentation, you need to use `asyncapi/git
     output: generated-html
 ```
 
-Now you have a trigger, and you can generate a website. The next step is to publish a website to GitHub Pages. For this, you can use one of the actions created by the community, like `JamesIves/github-pages-deploy-action@3.4.2`. You can also use other hosting solutions than GitHub Pages, like, for example, Netlify and [one of their actions](https://github.com/netlify/actions/tree/master/cli).
+Now you have a trigger, and you can generate a Web page. The next step is to publish the Web page to GitHub Pages. For this, you can use one of the actions created by the community, like `JamesIves/github-pages-deploy-action@3.4.2`. You can also use other hosting solutions than GitHub Pages, like, for example, Netlify and [one of their actions](https://github.com/netlify/actions/tree/master/cli).
 
 ```yaml
 - name: Deploy GH page
