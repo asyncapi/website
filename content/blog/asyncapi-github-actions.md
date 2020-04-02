@@ -154,5 +154,4 @@ Please try out the above-described actions and let us know what you think. Feel 
 In case you are interested with other GitHub Actions related posts you might have a look at:
 
 - [Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits](/blog/automated-releases/)
-- [Full automation of release with GitHub Actions and Conventional Commits for non-JS projects - part 2](/blog/automated-releases-part-two/)
 - [GitHub Actions - When Fascination Turns Into Disappointment](https://dev.to/derberg/github-actions-when-fascination-turns-into-disappointment-4d75)
