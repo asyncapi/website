@@ -25,6 +25,7 @@ GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#h
 The hackathon was only a trigger, the right moment to decide that we should engage. The primary motivation was to write a GitHub Action that can help the AsyncAPI community in specification adoption.
 
 Two AsyncAPI related actions we crafted in March are:
+
 - Our community member, [Waleed Ashraf](https://twitter.com/WaleedAshraf01/) created [an action](https://github.com/marketplace/actions/asyncapi-github-action) to validate AsyncAPI documents with our [parser](https://github.com/asyncapi/parser-js/)
 - We also created [official AsyncAPI action](https://github.com/marketplace/actions/generator-for-asyncapi-documents) for our [generator](https://github.com/asyncapi/generator/).
 
@@ -76,6 +77,7 @@ on:
 ```
 
 To generate HTML from your AsyncAPI definition, you need to use `asyncapi/github-action-for-generator@v0.2.0` action. You also need to specify a few more things:
+
 - The template you want to use for generation. In this example, you can see the official [AsyncAPI HTML Template](https://github.com/asyncapi/html-template). You can also write your custom template but hosting it on npm is not mandatory.
 - Path to the AsyncAPI file, in case it is not in the root of the working directory and its name is not `asyncapi.yml`
 - The template specific parameters. The crucial part here is the `baseHref` parameter. When enabling [GitHub Pages](https://pages.github.com/) for a regular repository, the URL of the Web page is `https://{GITHUB_PROFILE}.github.io/{REPO_NAME}/`. Specifying `baseHref` parameter helps the browser to properly resolve the URLs of relative links to resources like CSS and JS files. You do not have to hardcode the name of the repo in workflow configuration. Your workflow has access to information about the repository it is running in. You could do this: `${baseHref=/{github.repository}}/`
