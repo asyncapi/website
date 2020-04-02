@@ -228,7 +228,7 @@ I don't think I can ever understand this "hate" towards JavaScript. I think, tho
 
 ![pr info about release](/images/posts/pr-indicator.png)
 
-If you think this blog post is not clear and is missing some more explanation, you most probably did not read the first part of the automation story. I highly recommend you to read [Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits](/blog/automated-releases/). I also recommend to [join our Slack](https://www.asyncapi.com/slack-invite/) for further discussion.
+In case you want to have more explanation on the release automation subject, I recommend reading [the first part of the automation story](/blog/automated-releases/). You can also [join our Slack](https://www.asyncapi.com/slack-invite/) for further discussion.
 
 <br><br>
 > Cover photo by [Rock'n Roll Monkey](https://unsplash.com/@rocknrollmonkey) on Unsplash
