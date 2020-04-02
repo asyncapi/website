@@ -1,6 +1,6 @@
 ---
 title: "Automate AsyncAPI workflows with Github Actions"
-date: 2020-03-31T06:00:00+01:00
+date: 2020-04-02T06:00:00+01:00
 type: blog
 featured: true
 tags:
