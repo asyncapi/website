@@ -22,7 +22,7 @@ AsyncAPI community got rich with two GitHub Actions that you can use for [valida
 
 GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#hackathon). There is no better reason to work on a solution if there is a bag of swags waiting for you.
 
-<img alt="" style="width: 10%;" src="https://media.giphy.com/media/amxLHEPgGDCKs/giphy.gif">
+<img alt="" style="width: 10%;margin: auto;" src="https://media.giphy.com/media/amxLHEPgGDCKs/giphy.gif">
 
 The hackathon was only a trigger, the right moment to decide that we should engage. The primary motivation was to write a GitHub Action that can help the AsyncAPI community in specification adoption.
 
