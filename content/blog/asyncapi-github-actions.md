@@ -20,7 +20,11 @@ authors:
 > tl;dr
 AsyncAPI community got rich with two GitHub Actions that you can use for [validation](https://github.com/marketplace/actions/asyncapi-github-action) and [generation](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
 
-There is no better reason to work on a solution if there is a bag of swags waiting for you. GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#hackathon), and it was the best moment to write a GitHub Action that can help AsyncAPI community.
+GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#hackathon). There is no better reason to work on a solution if there is a bag of swags waiting for you.
+
+![](https://media.giphy.com/media/amxLHEPgGDCKs/giphy.gif)
+
+The hackathon was only a trigger, the right moment to decide that we should engage. The primary motivation was to write a GitHub Action that can help the AsyncAPI community in specification adoption.
 
 Two AsyncAPI related actions we crafted in March are:
 - Our community member, [Waleed Ashraf](https://twitter.com/WaleedAshraf01/) created [an action](https://github.com/marketplace/actions/asyncapi-github-action) to validate AsyncAPI documents with our [parser](https://github.com/asyncapi/parser-js/)
