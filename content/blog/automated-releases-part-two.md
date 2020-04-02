@@ -1,5 +1,5 @@
 ---
-title: "Full automation of release with GitHub Actions and Conventional Commits for non-JS projects - part 2"
+title: "(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects"
 date: 2020-03-24T06:00:00+01:00
 type: blog
 featured: true
@@ -26,25 +26,25 @@ The previous post focused on JavaScript as the first library that we automated w
 
 ## What I need to automate release?
 
-To automate release efficiently, you need two things:
-- Machine-readable information that allows you to identify if given commit is release-triggering or not.
-- Tooling that you can easily plugin and configure without a need to write everything from scratch.
+To automate a release efficiently, you need two things:
+- Machine-readable information that allows you to identify if a given commit should trigger a release or not.
+- Tooling that you can easily plug in and configure without the need to write everything from scratch.
 
-The automation is possible thanks to the following:
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. The purpose of Conventional Commits is to make commits not only human-readable but also machine-readable. It defines a set of commit prefixes that can be easily parsed and analyzed by tooling.
-- [Semantic Release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits and publishing to different channels, GitHub, NPM, Slack, and others.
+This automation is possible thanks to the following:
+- The [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. The purpose of Conventional Commits is to make commits machine-readable but also human-readable. It defines a set of commit prefixes that can be easily parsed and analyzed by tooling and looks good to the human eye too.
+- The [Semantic Release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits and publishing to different channels like GitHub, NPM, Slack, and others.
 
 ## Where's the catch?
 
 This blog post is about the automation of releases for non-JavaScript projects. Let me be honest though, solutions I mentioned in the previous chapter come from the JavaScript community.
 
-The problem is, there are people that [Hate JavaScript](https://www.reddit.com/r/javascript/comments/9pwzpn/why_do_people_hate_javascript/), they truly [hate it](https://www.quora.com/Why-is-JavaScript-so-hated) like it is a living thing. Although, I'm personally proud to be an idiot that has a programming language that I can use.
+The problem is, there are people who [Hate JavaScript](https://www.reddit.com/r/javascript/comments/9pwzpn/why_do_people_hate_javascript/), they truly [hate it](https://www.quora.com/Why-is-JavaScript-so-hated) like it is a living thing. Although, I'm personally proud to be an idiot that has a programming language that I can use.
 
-Conventional Commits specification is heavily inspired by [Angular Commit Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit-message-format). Semantic Release package and its plugins ecosystem are all Node.js packages.
+Conventional Commits specification is heavily inspired by [Angular Commit Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit-message-format). The Semantic Release package and its plugins ecosystem are all Node.js packages.
 
 ![](https://media.giphy.com/media/10FHR5A4cXqVrO/giphy.gif)
 
-Don't worry. If you have Java or Go project, you can still use these tools. You do not have to keep `package.json` in your repository, so don't worry, you can keep your repository clean. Great guys from Semantic Release thought about you too.
+If you have Java or Go project, you can still use these tools. You do not have to keep `package.json` in your repository, so don't worry, you can keep your repository clean. The great folks from Semantic Release thought about you too.
 
 ![](https://media.giphy.com/media/QynGWwS6GdOMj6cvmz/giphy-downsized.gif)
 
@@ -54,7 +54,7 @@ One of the projects where we use this JavaScript tools is our parser for AsyncAP
 
 ### Semantic Release configuration
 
-The Semantic Release supports configuration files in different formats and file types. You are not bound to `package.json`. We chose to use `.releaserc` file in YAML format, but there are [other options](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration-file) too.
+The Semantic Release package supports configuration files in different formats and file types. You are not bound to `package.json`. We chose to use `.releaserc` file in YAML format but there are [other options](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration-file) too.
 
 ```yaml
 ---
@@ -76,11 +76,11 @@ plugins:
 ```
 
 Our configuration uses plugins to:
-- Analyze Git commits with Conventional Commits specification
-- Create a Git tag and generate changelog for release notes
-- Publish release with additional assets. We compile our parser into binary compatible with many platforms and want to have them easily accessible with each release.
+- Analyze Git commits with Conventional Commits specification.
+- Create a Git tag and generate changelog for release notes.
+- Publish a release with additional assets. We compile our parser as binaries that are compatible with many platforms and we want to have them easily accessible with each release.
 
-We hide configuration in `.github/workflows/` next to our GitHub action release workflow file `release.yml`. It indicates that it is for release only, nothing else.
+We place the configuration under `.github/workflows/`, next to our GitHub Action release workflow file: `release.yml`. It indicates that it is for release only, nothing else.
 
 ### Release workflow
 
@@ -124,7 +124,7 @@ The next step is the `release` job, where you can differentiate two core steps. 
     GOOS=windows GOARCH=amd64 go build -o=.github/workflows/asyncapi-parser.windows.amd64.exe ./cmd/api-parser/main.go
 ```
 
-So far, it is all Go related operations. How about release? For the release you need to set up a Node.js environment to run Semantic Release. Node.js community has this excellent package, [npx](https://www.npmjs.com/package/npx), that allows you to run a package without installing it, and this is what you can do here in the workflow.
+So far, it is all Go-related operations. How about the release? For the release, you need to set up a Node.js environment to run Semantic Release. Node.js community has this excellent package, [npx](https://www.npmjs.com/package/npx), that allows you to run a package without installing it, and this is what you can do here in the workflow.
 
 ```yaml
 - name: Setup Node.js
@@ -220,11 +220,11 @@ jobs:
         run: npx semantic-release
 ```
 
-You see, you can still have your project pure from any JavaScript specific files and references. Everything you need to run release with the JavaScript community tooling is only in the release related configuration.
+You see, you can still have your project "clean" from any JavaScript-specific files and references. Everything you need for running your release with the JavaScript community tooling is only in the release-related configuration.
 
 ## Conclusion
 
-I don't think I can ever understand this "hate" towards JavaScript. I think, though, that you can "hate" the language, but if you see some amazing tooling built with it, that can increase your productivity, grit your teeth, put bias aside, and enjoy life. Especially if in exchange you get this excellent feature, notification about release under the Issue and Pull Request:
+I don't think I can ever understand this "hate" towards JavaScript. I think, though, that you can "hate" the language, but if you see some amazing tooling built with it, that can increase your productivity, grit your teeth, put bias aside, and enjoy life. Especially, if in exchange you get this excellent feature, notification about release under the Issue and Pull Request:
 
 ![pr info about release](/images/posts/pr-indicator.png)
 
