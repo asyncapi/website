@@ -28,7 +28,7 @@ The following is a list of tools that generate code from an AsyncAPI document, a
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **Please, check out the [templates directory](https://github.com/asyncapi/generator/tree/master/templates) to get a list of the supported languages/formats**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
+| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 
 The language you're looking for is not here? You have created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 
@@ -47,7 +47,7 @@ The following is a list of tools that generate human-readable documentation from
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
-| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! | CLI / Javascript
+| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | CLI / Javascript
 | [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
