@@ -1,6 +1,6 @@
 ---
 title: "(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects"
-date: 2020-03-24T06:00:00+01:00
+date: 2020-04-09T06:00:00+01:00
 type: blog
 featured: true
 tags:
