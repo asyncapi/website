@@ -60,6 +60,16 @@ Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain 
 | :------------- | :------------- | :------------- |
 | [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks plus a few extra helpers. Once compiled BOATS calls in [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
 
+# GitHub Actions {#ghactions}
+
+The following is a list of [GitHub Actions](https://github.com/features/actions) that you can use in your workflows:
+
+| Link           | Description    |
+| :------------- | :------------- |
+| [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncaAPI schema file is valid or not.
+| [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
+| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
+
 # Validators {#validators}
 
 The following is a list of tools that validate AsyncAPI documents.
