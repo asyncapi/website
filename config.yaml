@@ -76,6 +76,8 @@ params:
       url: /docs/tooling#docgens
     - title: DSL
       url: /docs/tooling#dsl
+    - title: GitHub Actions
+      url: /docs/tooling#ghactions
     - title: Validators
       url: /docs/tooling#validators
   - title: Blog
