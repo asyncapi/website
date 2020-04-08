@@ -42,7 +42,7 @@ We decided on a tight schedule. Our community had only three days to submit prop
 
 ## Talks selection
 
-We wanted to establish as fair rules as possible in such a short timeframe. We decided to form a committee of people that could join Fran and vote for talks that they found most interesting:
+We wanted to establish as many fair rules as possible in such a short timeframe. We decided to form a committee of people that could join Fran and vote for talks that they found most interesting:
 
 - They could give 1-10 points per talk.
 - They had no idea who is behind the talk. They knew only a title and an abstract of every proposal.
@@ -70,6 +70,7 @@ How to collect money? Do it transparently with tools that you already know. We d
 We created a dedicated [event](https://opencollective.com/asyncapi-online-conference-fd574661/) using [Open Collective events](https://docs.opencollective.com/help/collectives/events#create-an-event). This approach allows us to collect money and share expenses explicitly for the event only. The sponsors in exchange get much more than just being listed in our [conference sponsors list](https://www.asyncapiconf.com/#sponsors), and it is clearly described under our event page.
 
 What is the money for? We want to spend it mainly on:
+
 - Prizes for the community involved in the event. 
 - Paid event marketing. We are doing our best to promote event [on our own](https://github.com/asyncapi/asyncapi/issues/369), but we know that we could do much better using paid channels too. More people know about the event and indirectly about AsyncAPI, better profits for the community, and the sponsors.
 
@@ -89,7 +90,6 @@ Don't be afraid to organize your event; just find some freaks that follow you to
 In the name of the whole AsyncAPI community and the core team, I'd like to invite you to join our event on 22 of April, at [11 AM UTC](https://everytimezone.com/s/52eb2b62). The conference line-up suggests that the AsyncAPI Online conference is going to be epic!
 
 #stayhome #staysafe #staycurious
-
 
 
 
