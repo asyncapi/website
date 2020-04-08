@@ -15,7 +15,7 @@ authors:
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
 
-It is happening, a first-ever AsyncAPI Online conference. We start on 22 of April, at [11 AM UTC](https://everytimezone.com/s/52eb2b62). The event is going to take 7 hours with 12 talks from all over the world. We start in sunny Sydney and finish in cloudy Seattle. The event is for free, online, in your favorite quarantine room.
+It is happening, a first-ever AsyncAPI Online conference. We start on 22 of April, at [11 AM UTC](https://everytimezone.com/s/52eb2b62). The event is going to take 7 hours with 12 talks from all over the world. We start in sunny Sydney and finish in cloudy Vancouver. The event is for free, online, in your favorite quarantine room.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EsCiDSwfAMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
