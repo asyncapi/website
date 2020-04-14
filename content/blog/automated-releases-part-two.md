@@ -27,10 +27,12 @@ The previous post focused on JavaScript as the first library that we automated w
 ## What I need to automate release?
 
 To automate a release efficiently, you need two things:
+
 - Machine-readable information that allows you to identify if a given commit should trigger a release or not.
 - Tooling that you can easily plug in and configure without the need to write everything from scratch.
 
 This automation is possible thanks to the following:
+
 - The [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. The purpose of Conventional Commits is to make commits machine-readable but also human-readable. It defines a set of commit prefixes that can be easily parsed and analyzed by tooling and looks good to the human eye too.
 - The [Semantic Release](https://github.com/semantic-release/semantic-release) package and related plugins that support Conventional Commits and publishing to different channels like GitHub, NPM, Slack, and others.
 
