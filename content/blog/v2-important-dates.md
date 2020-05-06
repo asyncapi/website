@@ -6,11 +6,11 @@ tags:
   - AsyncAPI
   - Announcement
   - Beta
-cover: /images/posts/v2-important-dates.jpg
+cover: /images/posts/v2-important-dates.webp
 weight: 200
 authors:
   - name: Fran Méndez
-    photo: /images/avatars/fmvilas.jpg
+    photo: /images/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI founder
 ---

@@ -5,10 +5,10 @@ type: blog
 tags:
   - AsyncAPI
   - Status Update
-cover: /images/posts/status-update-week-14-2019.jpg
+cover: /images/posts/status-update-week-14-2019.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---
@@ -32,7 +32,7 @@ We had our bi-weekly SIG meeting this week where we talked about future plans an
 ## Donate
 And last but not least, we’re running a sponsorship campaign. We’ve got different tiers so that everybody can show their love! ❤️
 
-![](/images/posts/donation.png)
+![](/images/posts/donation.webp)
 
 [Donate here](https://opencollective.com/asyncapi). Help Open Source projects.
 

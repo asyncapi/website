@@ -6,10 +6,10 @@ tags:
   - APIs
   - Event-Driven
   - Interview
-cover: /images/posts/an-api-strategist-explores-event-driven-apis.jpg
+cover: /images/posts/an-api-strategist-explores-event-driven-apis.webp
 authors:
   - name: Emmelyn Wang
-    photo: /images/avatars/ewang.jpg
+    photo: /images/avatars/ewang.webp
     link: https://twitter.com/lifewingmate
     byline: API Strategy Catalyst
 ---

@@ -6,10 +6,10 @@ tags:
   - AsyncAPI
   - Organization
   - Documents
-cover: /images/posts/organizing-asyncapi-documents.jpg
+cover: /images/posts/organizing-asyncapi-documents.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---
@@ -23,15 +23,15 @@ Let’s break down some best practices and tips to avoid ending up in a hell of 
 
 The best practice for organizing AsyncAPI files in your microservices architecture is to have a file per microservice. This way, you end up with multiple independent files that define your application.
 
-{{% figure src="/images/posts/organizing-asyncapi-documents-1.png" title="One publisher and one subscriber, both sharing the UserSignUp message." %}}
+{{% figure src="/images/posts/organizing-asyncapi-documents-1.webp" title="One publisher and one subscriber, both sharing the UserSignUp message." %}}
 
 Microservices are meant to do a single thing and to do it well and, very importantly, they must be independently deployable. However, if you have a publisher and multiple consumers, you quickly end up having something like the following:
 
-{{% figure src="/images/posts/organizing-asyncapi-documents-2.png" title="One publisher and various subscribers. All of them sharing the UserSignUp message." %}}
+{{% figure src="/images/posts/organizing-asyncapi-documents-2.webp" title="One publisher and various subscribers. All of them sharing the UserSignUp message." %}}
 
 It’s clear there’s a dependency between all of them: the _UserSignedUp_ message. If at some point to want to change it, you’ll have to go through all of the files and change it. It’s a tedious task we want to avoid, so we can make use of the _$ref_ capability of AsyncAPI to simplify things:
 
-{{% figure src="/images/posts/organizing-asyncapi-documents-3.png" title="The value of $ref should be “common/messages.json#UserSignedUp”." %}}
+{{% figure src="/images/posts/organizing-asyncapi-documents-3.webp" title="The value of $ref should be “common/messages.json#UserSignedUp”." %}}
 
 Now, if you have to add something to the _UserSignedUp_ message, it’s just a matter of changing one file. Depending on your setup, you may have to restart your services to get the new definition. However, as simple and straightforward as it may seem, you must take care not to introduce breaking changes in the message definition. Otherwise, you’ll have inconsistent states while some services got the new message definition and some didn’t yet. Here comes the importance of versioning your messages, but that makes for another blog post alone.
 

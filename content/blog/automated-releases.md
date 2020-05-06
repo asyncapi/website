@@ -7,11 +7,11 @@ tags:
   - GitHubActions
   - Release
   - Generator
-cover: /images/posts/robot.png
+cover: /images/posts/robot.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.png
+    photo: /images/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
@@ -68,7 +68,7 @@ At [AsyncAPI Initiative](https://www.asyncapi.com/) where we introduced the rele
 
 This is how the design looks like:
 
-![npm docker release workflow](/images/posts/release-workflow.png)
+![npm docker release workflow](/images/posts/release-workflow.webp)
 
 There are two workflows designed here. 
 
@@ -143,7 +143,7 @@ Conveniently, functional automation uses a [technical bot rather than a real use
 
 Aside from automation, the bot also comments on every pull request and issue included in the release notifying subscribed participants that the given topic is part of the release. Isn't it awesome?
 
-![pr info about release](/images/posts/pr-indicator.png)
+![pr info about release](/images/posts/pr-indicator.webp)
 
 #### Docker
 

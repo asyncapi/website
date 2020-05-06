@@ -8,11 +8,11 @@ tags:
   - Serverless
   - FaaS
   - Microservices
-cover: /images/posts/asyncapi-cloudevents.jpg
+cover: /images/posts/asyncapi-cloudevents.webp
 weight: 200
 authors:
   - name: Fran Méndez
-    photo: /images/avatars/fmvilas.jpg
+    photo: /images/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI founder
 ---
@@ -165,7 +165,7 @@ This results in a much shorter and nicer way of defining the usage of CloudEvent
 
 It really depends on your use case but it makes sense in scenarios where some kind of FaaS is involved. Consider the following example:
 
-![](/images/diagrams/asyncapi-cloudevents.png)
+![](/images/diagrams/asyncapi-cloudevents.webp)
 
 Reading the diagram from the bottom up, we see an overly simplified diagram of a sign up process. The `user/signedup` event flows from the REST API to the monitoring service and the FaaS API through the broker. The event could have the CloudEvents format so that both, the FaaS API and the monitoring service, understand it. Obviously, one may argue that the Faas API could be wrapping the event data in CloudEvents format and leave the rest of the events untouched, in plain JSON. Fair.
 

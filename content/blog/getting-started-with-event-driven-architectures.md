@@ -7,10 +7,10 @@ tags:
   - Getting Started
   - Event-Driven Architectures
   - EDA
-cover: /images/posts/getting-started-with-event-driven-architectures.jpg
+cover: /images/posts/getting-started-with-event-driven-architectures.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---
@@ -33,7 +33,7 @@ This extra information is often referred to as _event payload_ or _message paylo
 
 ## Core concepts
 
-![](/images/diagrams/simple-event-driven.png)
+![](/images/diagrams/simple-event-driven.webp)
 
 In most cases, Event-Driven Architectures (EDAs) are broker-centric, like in the diagram above. In it you can find some new concepts, so let's go through them now.
 

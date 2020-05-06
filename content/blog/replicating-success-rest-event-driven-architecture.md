@@ -6,15 +6,15 @@ tags:
   - REST
   - Event-Driven Architectures
   - EDA
-cover: /images/posts/replicating-success-of-rest.png
+cover: /images/posts/replicating-success-of-rest.webp
 weight: 300
 authors:
     - name: Jonathan Schabowsky
-      photo: /images/avatars/jschabowsky.jpg
+      photo: /images/avatars/jschabowsky.webp
       link: https://twitter.com/jschabowsky
       byline: Sr. Architect at Solace
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---

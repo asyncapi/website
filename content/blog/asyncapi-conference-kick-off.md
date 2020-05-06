@@ -6,11 +6,11 @@ featured: true
 tags:
   - Conference
   - Community
-cover: /images/posts/asyncapi-conf-banner.jpg
+cover: /images/posts/asyncapi-conf-banner.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.png
+    photo: /images/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
@@ -34,7 +34,7 @@ There are two requirements you should fulfill behind you start organizing a conf
 ## First baby steps to kick off the event
 
 1. Consult your community if what you plan to do makes sense
-![slack asyncapi conference](/images/posts/slack-conference.png)
+![slack asyncapi conference](/images/posts/slack-conference.webp)
 2. Set a conference date and call for proposals deadline
 3. Get your community involved
 

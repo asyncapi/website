@@ -5,10 +5,10 @@ type: blog
 tags:
   - AsyncAPI
   - Status Update
-cover: /images/posts/status-update-week-15-2019.jpg
+cover: /images/posts/status-update-week-15-2019.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---
@@ -17,7 +17,7 @@ Kaixo lagunak! This week we continued working on the parser as it’s a top prio
 
 ## Building the parser
 
-![](/images/diagrams/parser-architecture.png)
+![](/images/diagrams/parser-architecture.webp)
 
 1. [We’ve added support for AsyncAPI 1.x/OpenAPI schemas](https://github.com/asyncapi/parser/pull/31). This is the first step before we dive into Avro and Protobuf support.
 2. [Updated the Node.js to automatically test itself on Linux, Mac, and Windows](https://github.com/asyncapi/parser-nodejs). We’re still struggling to debug some failures on Windows so we encourage people who work on this operating system to join and help us test.
@@ -34,7 +34,7 @@ I’ll be speaking about AsyncAPI and event-driven architectures in a few confer
 ## Donate
 And last but not least, we’re running a sponsorship campaign. We’ve got different tiers so that everybody can show their love! ❤️
 
-![](/images/posts/donation.png)
+![](/images/posts/donation.webp)
 
 [Donate here](https://opencollective.com/asyncapi). Help Open Source projects.
 
