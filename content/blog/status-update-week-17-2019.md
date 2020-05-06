@@ -31,7 +31,7 @@ Join us tomorrow for [API days Madrid](http://apidaysmad.apiaddicts.org/schedule
 ## Donate
 And last but not least, we’re running a sponsorship campaign. We’ve got different tiers so that everybody can show their love! ❤️
 
-![](/images/posts/donation.png)
+![](/images/posts/donation.webp)
 
 [Donate here](https://opencollective.com/asyncapi). Help Open Source projects.
 

@@ -6,7 +6,7 @@ tags:
   - REST
   - Event-Driven Architectures
   - EDA
-cover: /images/posts/replicating-success-of-rest.png
+cover: /images/posts/replicating-success-of-rest.webp
 weight: 300
 authors:
     - name: Jonathan Schabowsky

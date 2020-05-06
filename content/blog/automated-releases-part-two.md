@@ -6,11 +6,11 @@ featured: true
 tags:
   - GitHubActions
   - Release
-cover: /images/posts/robot2.jpg
+cover: /images/posts/robot2.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.png
+    photo: /images/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
@@ -228,7 +228,7 @@ You see, you can still have your project "clean" from any JavaScript-specific fi
 
 I don't think I can ever understand this "hate" towards JavaScript. I think, though, that you can "hate" the language, but if you see some amazing tooling built with it, that can increase your productivity, grit your teeth, put bias aside, and enjoy life. Especially, if in exchange you get this excellent feature, notification about release under the Issue and Pull Request:
 
-![pr info about release](/images/posts/pr-indicator.png)
+![pr info about release](/images/posts/pr-indicator.webp)
 
 In case you want to have more explanation on the release automation subject, I recommend reading [the first part of the automation story](/blog/automated-releases/). You can also [join our Slack](https://www.asyncapi.com/slack-invite/) for further discussion.
 

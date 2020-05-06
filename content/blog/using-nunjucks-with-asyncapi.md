@@ -7,11 +7,11 @@ tags:
   - Nunjucks
   - Template engine
   - Generator
-cover: /images/posts/nunjucks-asyncapi-cover.png
+cover: /images/posts/nunjucks-asyncapi-cover.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.png
+    photo: /images/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
@@ -26,7 +26,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 
 ## What is AsyncAPI?
 
-![](/images/posts/nunjucks-asyncapi.png)
+![](/images/posts/nunjucks-asyncapi.webp)
 
 [AsyncAPI](https://www.asyncapi.com/) is a specification that you use to create machine-readable definitions of your event-driven APIs:
 
@@ -36,7 +36,7 @@ In case you don't want to read and prefer to jump right into code. Go to this Co
 
 ## What is Nunjucks?
 
-![](/images/posts/nunjucks-nunjucks.png)
+![](/images/posts/nunjucks-nunjucks.webp)
 
 [Nunjucks](https://mozilla.github.io/nunjucks/) is a templating engine for JavaScript, inspired by [Jinja](https://palletsprojects.com/p/jinja/). It has many nifty features that make templating really nice:
 
@@ -144,7 +144,7 @@ Such a filter is very handy to use, the same as the built-in filters. You can ad
 
 Built-in filters, custom filters...that is not all. Chaining of the filters is like an icing on the cake.
 
-![](/images/posts/nunjucks-cherry.png)
+![](/images/posts/nunjucks-cherry.webp)
 
 The same case with URL. The URL after replacing variables with values, I want to transform it into a clickable element and make it part of the DOM. All of it made easy thanks to chaining:
 

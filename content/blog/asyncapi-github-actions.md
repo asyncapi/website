@@ -8,11 +8,11 @@ tags:
   - Validation
   - Generator
   - Automation
-cover: /images/posts/asyncapi-github-action.png
+cover: /images/posts/asyncapi-github-action.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.png
+    photo: /images/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
