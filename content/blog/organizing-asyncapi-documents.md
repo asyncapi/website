@@ -6,7 +6,7 @@ tags:
   - AsyncAPI
   - Organization
   - Documents
-cover: /images/posts/organizing-asyncapi-documents.jpg
+cover: /images/posts/organizing-asyncapi-documents.webp
 authors:
     - name: Fran Méndez
       photo: /images/avatars/fmvilas.webp
