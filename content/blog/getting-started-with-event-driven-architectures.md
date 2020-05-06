@@ -7,10 +7,10 @@ tags:
   - Getting Started
   - Event-Driven Architectures
   - EDA
-cover: /images/posts/getting-started-with-event-driven-architectures.jpg
+cover: /images/posts/getting-started-with-event-driven-architectures.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---

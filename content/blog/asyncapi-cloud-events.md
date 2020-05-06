@@ -8,11 +8,11 @@ tags:
   - Serverless
   - FaaS
   - Microservices
-cover: /images/posts/asyncapi-cloudevents.jpg
+cover: /images/posts/asyncapi-cloudevents.webp
 weight: 200
 authors:
   - name: Fran Méndez
-    photo: /images/avatars/fmvilas.jpg
+    photo: /images/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI founder
 ---

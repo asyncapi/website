@@ -5,10 +5,10 @@ type: blog
 tags:
   - AsyncAPI
   - Status Update
-cover: /images/posts/status-update-week-17-2019.jpg
+cover: /images/posts/status-update-week-17-2019.webp
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---

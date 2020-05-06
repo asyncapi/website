@@ -9,7 +9,7 @@ tags:
 cover: /images/posts/organizing-asyncapi-documents.jpg
 authors:
     - name: Fran Méndez
-      photo: /images/avatars/fmvilas.jpg
+      photo: /images/avatars/fmvilas.webp
       link: https://twitter.com/fmvilas
       byline: AsyncAPI founder
 ---

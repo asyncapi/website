@@ -6,7 +6,7 @@ featured: true
 tags:
   - Conference
   - Community
-cover: /images/posts/asyncapi-conf-banner.jpg
+cover: /images/posts/asyncapi-conf-banner.webp
 weight: 100
 authors:
   - name: Lukasz Gornicki
