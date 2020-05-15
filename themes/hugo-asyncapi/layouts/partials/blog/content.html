@@ -32,11 +32,6 @@
     </div>
     {{ end }}
 </div>
-<div style="margin-top: 10px; margin-bottom: 30px;">
-    <a href="https://www.asyncapiconf.com" target="_blank">
-        <img src="/img/asyncapi-conf-banner.jpg">
-    </a>
-</div>
 <div class="blog-content">
     {{- with .Content -}}
     {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #&#xFE0E;</a> ${3}` | safeHTML }}
