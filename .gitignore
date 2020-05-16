@@ -1,5 +1,4 @@
 .vscode
 .DS_Store
-public
-resources
 .idea
+node_modules

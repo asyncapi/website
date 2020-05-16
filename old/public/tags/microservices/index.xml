@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microservices on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/microservices/</link>
+    <description>Recent content in Microservices on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 May 2019 16:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AsyncAPI and CloudEvents</title>
+      <link>https://www.asyncapi.com/blog/asyncapi-cloud-events/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/blog/asyncapi-cloud-events/</guid>
+      <description>I&amp;rsquo;ve been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!
+There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can&amp;rsquo;t be less true, and I&amp;rsquo;d like to explain you why. Read on!
+What is CloudEvents? From cloudevents.io:
+ Enter CloudEvents, a specification for describing event data in a common way.</description>
+    </item>
+    
+  </channel>
+</rss>

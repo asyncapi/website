@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on AsyncAPI Initiative</title>
+    <link>https://www.asyncapi.com/tags/</link>
+    <description>Recent content in Tags on AsyncAPI Initiative</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2019 10:56:52 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.asyncapi.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Announcement</title>
+      <link>https://www.asyncapi.com/tags/announcement/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/announcement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apis</title>
+      <link>https://www.asyncapi.com/tags/apis/</link>
+      <pubDate>Tue, 14 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/apis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asyncapi</title>
+      <link>https://www.asyncapi.com/tags/asyncapi/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/asyncapi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beta</title>
+      <link>https://www.asyncapi.com/tags/beta/</link>
+      <pubDate>Wed, 12 Jun 2019 10:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/beta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloudevents</title>
+      <link>https://www.asyncapi.com/tags/cloudevents/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/cloudevents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Documents</title>
+      <link>https://www.asyncapi.com/tags/documents/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/documents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eda</title>
+      <link>https://www.asyncapi.com/tags/eda/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event Driven</title>
+      <link>https://www.asyncapi.com/tags/event-driven/</link>
+      <pubDate>Tue, 14 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/event-driven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event Driven Architectures</title>
+      <link>https://www.asyncapi.com/tags/event-driven-architectures/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/event-driven-architectures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Faas</title>
+      <link>https://www.asyncapi.com/tags/faas/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/faas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generator</title>
+      <link>https://www.asyncapi.com/tags/generator/</link>
+      <pubDate>Tue, 03 Mar 2020 08:00:00 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://www.asyncapi.com/tags/getting-started/</link>
+      <pubDate>Fri, 19 Apr 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/getting-started/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interview</title>
+      <link>https://www.asyncapi.com/tags/interview/</link>
+      <pubDate>Tue, 14 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://www.asyncapi.com/tags/microservices/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nunjucks</title>
+      <link>https://www.asyncapi.com/tags/nunjucks/</link>
+      <pubDate>Tue, 03 Mar 2020 08:00:00 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/nunjucks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Organization</title>
+      <link>https://www.asyncapi.com/tags/organization/</link>
+      <pubDate>Fri, 01 Mar 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/organization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rest</title>
+      <link>https://www.asyncapi.com/tags/rest/</link>
+      <pubDate>Thu, 04 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serverless</title>
+      <link>https://www.asyncapi.com/tags/serverless/</link>
+      <pubDate>Sat, 11 May 2019 16:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Status Update</title>
+      <link>https://www.asyncapi.com/tags/status-update/</link>
+      <pubDate>Thu, 25 Apr 2019 13:56:52 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/status-update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Template Engine</title>
+      <link>https://www.asyncapi.com/tags/template-engine/</link>
+      <pubDate>Tue, 03 Mar 2020 08:00:00 +0100</pubDate>
+      
+      <guid>https://www.asyncapi.com/tags/template-engine/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
