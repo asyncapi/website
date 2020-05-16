@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { registerClickAway } from '../helpers/click-away'
+import AsyncAPILogo from '../AsyncAPILogo'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
 import LearningPanel from './LearningPanel'
@@ -31,7 +32,7 @@ export default function NavBar () {
       <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <div className="lg:w-0 lg:flex-1">
           <a href="/" className="flex">
-            <img className="h-8 w-auto sm:h-8" src="/img/logos/asyncapi-horizontal-color.svg" alt="AsyncAPI" />
+            <AsyncAPILogo className="h-8 w-auto sm:h-8" />
           </a>
         </div>
         <div className="-mr-2 -my-2 md:hidden">
@@ -59,7 +60,7 @@ export default function NavBar () {
 
           {
             otherItems.map((item, index) => (
-              <NavItem href={item.href} text={item.text} target={item.target} />
+              <NavItem href={item.href} key={index} text={item.text} target={item.target} />
             ))
           }
         </nav>
