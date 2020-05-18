@@ -2,7 +2,6 @@
 title: "AsyncAPI Online Conference scheduled for 22.04 11 AM UTC"
 date: 2020-04-09T06:00:00+01:00
 type: blog
-featured: true
 tags:
   - Conference
   - Community
