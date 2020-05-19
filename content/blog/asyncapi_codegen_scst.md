@@ -13,15 +13,15 @@ authors:
 
  ![](https://solace.com/wp-content/uploads/2020/04/blog-featured-image-asyncapi.jpg) 
 
-Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://solace.com/resources/pubsub-event-portal/asyncapi-code-generation-with-spring-cloud-stream).
+Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://solace.com/resources/pubsub-event-portal/asyncapi-code-generation-with-spring-cloud-stream), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst).
 
-## **AsyncAPI: What Is It?** 
+# **AsyncAPI: What Is It?** 
 
 Before we dive into code generation let’s start with the basics – what is AsyncAPI? Over the past few years, [AsyncAPI](https://www.asyncapi.com/) has emerged as the industry standard for defining asynchronous, event-driven APIs; you can think of it as OpenAPI for the asynchronous world. It is an open source initiative that provides <u>both</u> a specification to describe and document your asynchronous applications in a machine-readable format, and tooling (such as code generators) to make life easier for developers tasked with implementing them.
 
 I’m not going to go into great detail about the specification, but for context you should know that it defines metadata about your asynchronous API, the channels available for sending/receiving messages, and components – such as schemas – that define the messages that are being exchanged. For more information about the specification you can read about it [here](https://www.asyncapi.com/docs/specifications/2.0.0/).
 
-## **Defining the Application That You Want to Develop: The  AsyncAPI Document**
+# **Defining the Application That You Want to Develop: The  AsyncAPI Document**
 
 The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI document that defines the application that you want to develop. Per the specification, this document is represented as JSON objects and must conform to the JSON standards. YAML, being a superset of JSON, can also be used. There are two main ways of going about obtaining this document: manually create the document or use an event portal.
 
@@ -35,7 +35,7 @@ Once the design is in place, PubSub+ Event Portal allows the developer to choose
 
 **[![](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-02-1024x503.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-02.png) **
 
-## **Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs**
+# **Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs**
 
 Now that we have our AsyncAPI document that describes our application it’s time to develop the application. The AsyncAPI [Code Generator](https://github.com/asyncapi/generator) supports templates to generate code for a variety of different languages and protocols, but for this example we’re going to use the [Spring Cloud Stream template](https://github.com/asyncapi/java-spring-cloud-stream-template). One should note that the template generates a Maven project.
 
@@ -72,7 +72,7 @@ ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p a
 After running, the output will look something like this:  
 [![](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-03-1024x152.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-03.png)
 
-## Add Your Business Logic
+# Add Your Business Logic
 
 At this point the generator has created an `ExpenseIntegration` directory that contains the Maven project. We can use the IDE of choice and import the Maven project to add business logic.
 
@@ -99,7 +99,7 @@ spring: cloud: stream: function: definition: acmeRideshareBillingReceiptCreated0
 
 Note that all of this was done for the developer so they didn’t have to track down which SCSt parameters needed to be set, map the functions to the bindings, etc. They just have to add their business logic in place of the project and hit run! In this case since it’s a Spring Boot project you can “run as a Spring Boot app” in your IDE or even run from the command line using `mvn spring-boot:run`.
 
-### **Helpful Parameters and Specification Extensions for Creating Microservices Using the AsyncAPI Spring Cloud Stream Template** 
+# **Helpful Parameters and Specification Extensions for Creating Microservices Using the AsyncAPI Spring Cloud Stream Template** 
 
 As I mentioned, there are a lot of complexities when it comes to generating useful application code from a microservice. Because of these complexities, I thought I’d call out some tips, tricks, and painpoints of using the AsyncAPI Spring Cloud Stream template.
 
@@ -114,7 +114,7 @@ channels: 'input': subscribe: x-scs-function-name: calculatePercentage message: 
 - **The `x-scs-destination` specification extension** can be specified on a `subscribe` operation, allowing you to override the default destination value which usually matches the channel. This is useful when you are using the Solace binder and you are following the Solace pattern of publishing to topics and consuming from queues. In this case the `x-scs-destination` value would be treated as the name of the queue which your microservice will consume from and the channel name in the AsyncAPI document will be added as a topic subscription to that queue.
 - **The `x-scs-group` specification extension** can also be specified on a `subscribe` operation, allowing for the addition of a `group` to the generated Spring Cloud Stream `binding`. This allows for the use of consumer groups and will end up in a [durable queue](https://dev.to/solacedevs/understanding-solace-endpoints-durable-vs-non-durable-53gd) being created when using the Solace binder.
 
-## **Tips For Using The Code Generator To Create Event-Driven Microservices Using Spring Cloud Stream**
+# **Tips For Using The Code Generator To Create Event-Driven Microservices Using Spring Cloud Stream**
 
 Besides configuration options there are a few more things to keep in mind when using the generator to create event-driven microservices using Spring Cloud Stream.
 
@@ -124,7 +124,7 @@ Besides configuration options there are a few more things to keep in mind when u
 
 I hope those tips are helpful and save you some troubleshooting time!
 
-## Conclusion
+# Conclusion
 
 I hope this post was useful and you’re able to quickly dive in to generating your own event-driven microservices using Spring Cloud Stream and the AsyncAPI Code Generator after exploring the example described above.
 
