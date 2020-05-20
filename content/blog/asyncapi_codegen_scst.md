@@ -1,8 +1,16 @@
 ---
+type: blog
+featured: true
+cover: /images/posts/asyncapi-codegen_pic-00.webp
+weight: 100
 title: AsyncAPI Code Generation: Microservices Using Spring Cloud Stream
-published: true
 date: 2020-04-28 17:39:34 UTC
-tags: solace, asyncapi, java, spring, EDA
+tags:
+   - solace
+   - asyncapi
+   - java
+   - spring
+   - EDA
 authors:
    - name: Marc DiPasquale
      photo: /images/avatars/marc-dipasquale.webp
@@ -10,9 +18,7 @@ authors:
      byline: Developer Advocate at Solace
 ---
 
- ![](https://solace.com/wp-content/uploads/2020/04/blog-featured-image-asyncapi.jpg) 
-
-Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://solace.com/resources/pubsub-event-portal/asyncapi-code-generation-with-spring-cloud-stream), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst).
+Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst).
 
 # **AsyncAPI: What Is It?** 
 
@@ -26,13 +32,13 @@ The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI d
 
 If you decide to manually create the document after familiarizing yourself with the specification, don’t worry – you won’t be starting with a blank slate. The AsyncAPI initiative has provided a handy, interactive tool called the [AsyncAPI playground](https://playground.asyncapi.io) to make this easier. On the left side of the playground you can familiarize yourself with the specification and make changes to a real AsyncAPI document, and as you do so the right side of the screen updates to show how the document is parsed into a more human-readable format.
 
-[![asyncapi playground for creating microservices using spring cloud stream](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-01-1024x499.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-01.png)
+[![asyncapi playground for creating microservices using spring cloud stream](https://asyncapi.com/images/posts/asyncapi-codegen_pic-01.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-01.webp)
 
 The second way is to use an event portal. Solace PubSub+ Event Portal, for example, allows for architects and developers to collaborate using a GUI to design your event-driven architecture. The team would define the applications that exist in the system, as well as the events that are exchanged and the schemas which define them. Having a catalog of well-organized channels and events for reuse will also save you both time and headaches while collaborating, instead of having to comb through a bunch of files in various locations.
 
 Once the design is in place, PubSub+ Event Portal allows the developer to choose the application they are responsible for developing and download the AsyncAPI document in JSON or YAML.
 
-**[![](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-02-1024x503.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-02.png) **
+[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-02.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-02.webp) 
 
 # **Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs**
 
@@ -51,7 +57,7 @@ npm install -g @asyncapi/generator
 Once you have the generator installed you can run it using the `ag` command. At a minimum you must specify the AsyncAPI document to run it against and the template to use as shown below.
 
 ```
-ag ~/AsyncApiDocument.yaml https://github.com/asyncapi/java-spring-cloud-stream-template.git
+ag ~/AsyncApiDocument.yaml @asyncapi/java-spring-cloud-stream-template
 ```
 
 In most cases you’ll want to take advantage of the parameters and specification extensions that are specified by the template being used. For example, the Spring Cloud Stream template that I’m using in this example allows me to [configure many options](https://github.com/asyncapi/java-spring-cloud-stream-template#configuration-options), including the Spring Cloud Stream binder I want to use – for example, the Solace binder.
@@ -65,18 +71,18 @@ Other parameters include:
 Using these options, my `ag` command might look something like this, where `-o` specifies the output directory:
 
 ```
-ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p artifactId=ExpenseIntegration -p groupId=acme.rideshare -p javaPackage=acme.rideshare.expense -p host=localhost:55555 -p username=default -p password=default -p msgVpn=default ~/Downloads/ExpenseIntegration.yaml
+ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p artifactId=ExpenseIntegration -p groupId=acme.rideshare -p javaPackage=acme.rideshare.expense -p host=localhost:55555 -p username=default -p password=default -p msgVpn=default ~/Downloads/ExpenseIntegration.yaml @asyncapi/java-spring-cloud-stream-template
 ```
 
 After running, the output will look something like this:  
-[![](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-03-1024x152.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-03.png)
+[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-03.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-03.webp)
 
 # Add Your Business Logic
 
 At this point the generator has created an `ExpenseIntegration` directory that contains the Maven project. We can use the IDE of choice and import the Maven project to add business logic.
 
 As seen in the image below, once imported, the project looks like a regular Spring Boot Java project with generated classes under the `javaPackage` that was defined earlier and an `application.yml` file for configuration. Generated classes under `javaPackage` include Plain Old Java Objects (POJOs) defined from the schemas in the AsyncAPI document and `Application.java` which contains the actual Spring Cloud Functions where we’ll add our business logic.  
-[![](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-04.png)](https://solace.com/wp-content/uploads/2020/04/asyncapi-codegen_pic-04.png)
+[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-04.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-04.webp)
 
 The generated POJOs, like `RideReceipt` in the image above, define your data model per the schemas included in the AsyncAPI document. These POJOs contains variables with getters and setters for each attribute defined to allow both for developers to get coding quickly without having to manually create the objects themselves, but also for Spring Cloud Stream to automatically convert messages directly to POJOs.
 
