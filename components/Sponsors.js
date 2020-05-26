@@ -10,8 +10,8 @@ export default function Sponsors ({ className }) {
         <a href="https://www.solace.com" target="_blank"><img className="inline-block px-4 mt-6 w-1/2 sm:w-auto sm:h-10" src="img/sponsors/solace.png" /></a>
         <a href="https://www.tibco.com" target="_blank"><img className="inline-block px-4 mt-6 w-1/2 sm:w-auto sm:h-12" src="img/sponsors/tibco.png" /></a>
       </div>
-      <div class="md:px-4">
-        <span class="text-gray-500">Platinum sponsors</span> — <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600">Join the best companies in the world.</a>
+      <div className="md:px-4">
+        <span className="text-gray-500">Platinum sponsors</span> — <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600">Join the best companies in the world.</a>
       </div>
     </div>
   )

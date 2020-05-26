@@ -1,0 +1,252 @@
+[
+  {
+    "title": "Getting Started",
+    "weight": 0,
+    "isSection": true,
+    "slug": "/docs/getting-started"
+  },
+  {
+    "title": "AsyncAPI documents",
+    "date": "2019-04-01T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 30,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/asyncapi-documents"
+  },
+  {
+    "title": "Coming from OpenAPI",
+    "date": "2019-04-01T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 20,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/coming-from-openapi"
+  },
+  {
+    "title": "Event-driven architectures",
+    "date": "2019-04-01T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 10,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/event-driven-architectures"
+  },
+  {
+    "title": "Hello world",
+    "date": "2019-04-01T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 101,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/hello-world"
+  },
+  {
+    "title": "Introduction",
+    "date": "2019-02-16T12:56:52.000Z",
+    "weight": 0,
+    "categories": [
+      "getting-started"
+    ],
+    "aliases": [
+      "/v1/guide/",
+      "/v1/guide/index.html"
+    ],
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started"
+  },
+  {
+    "title": "Adding security",
+    "date": "2019-04-16T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 150,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/security"
+  },
+  {
+    "title": "Servers",
+    "date": "2019-04-03T09:56:52.000Z",
+    "menu": {
+      "docs": {
+        "parent": "getting-started"
+      }
+    },
+    "weight": 110,
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/servers"
+  },
+  {
+    "title": "Typography",
+    "sectionSlug": "/docs/getting-started",
+    "sectionWeight": 0,
+    "slug": "/docs/getting-started/typography"
+  },
+  {
+    "title": "Specifications",
+    "weight": 3,
+    "isSection": true,
+    "slug": "/docs/specifications"
+  },
+  {
+    "title": "AsyncAPI specification 1.0.0",
+    "date": "2019-02-16T16:41:57.000Z",
+    "menu": {
+      "docs": {
+        "name": "1.0.0",
+        "parent": "spec"
+      }
+    },
+    "weight": 40,
+    "categories": [
+      "specifications"
+    ],
+    "sectionSlug": "/docs/specifications",
+    "sectionWeight": 3,
+    "slug": "/docs/specifications/1.0.0"
+  },
+  {
+    "title": "AsyncAPI specification 1.1.0",
+    "date": "2019-02-16T16:41:57.000Z",
+    "menu": {
+      "docs": {
+        "name": "1.1.0",
+        "parent": "spec"
+      }
+    },
+    "weight": 30,
+    "categories": [
+      "specifications"
+    ],
+    "sectionSlug": "/docs/specifications",
+    "sectionWeight": 3,
+    "slug": "/docs/specifications/1.1.0"
+  },
+  {
+    "title": "AsyncAPI specification 1.2.0",
+    "date": "2019-02-16T16:41:57.000Z",
+    "menu": {
+      "docs": {
+        "name": "1.2.0",
+        "parent": "spec"
+      }
+    },
+    "weight": 20,
+    "categories": [
+      "specifications"
+    ],
+    "aliases": [
+      "/v1/spec.html"
+    ],
+    "sectionSlug": "/docs/specifications",
+    "sectionWeight": 3,
+    "slug": "/docs/specifications/1.2.0"
+  },
+  {
+    "title": "AsyncAPI specification 2.0.0",
+    "date": "2019-09-09T16:15:09.000Z",
+    "menu": {
+      "docs": {
+        "name": "2.0.0",
+        "parent": "spec"
+      }
+    },
+    "weight": 1,
+    "categories": [
+      "specifications"
+    ],
+    "aliases": [
+      "/docs/specifications/latest",
+      "/docs/specifications/2.0.0-rc1"
+    ],
+    "sectionSlug": "/docs/specifications",
+    "sectionWeight": 3,
+    "slug": "/docs/specifications/2.0.0"
+  },
+  {
+    "title": "Tooling",
+    "weight": 2,
+    "isSection": true,
+    "slug": "/docs/tooling"
+  },
+  {
+    "title": "Tooling",
+    "date": "2019-02-16T12:56:52.000Z",
+    "type": "static",
+    "aliases": [
+      "/v1/tooling/docgens.html",
+      "/v1/tooling/codegens.html",
+      "/v1/tooling/validators.html"
+    ],
+    "sectionSlug": "/docs/tooling",
+    "sectionWeight": 2,
+    "slug": "/docs/tooling"
+  },
+  {
+    "title": "Tutorials",
+    "weight": 1,
+    "isSection": true,
+    "slug": "/docs/tutorials"
+  },
+  {
+    "title": "Streetlights - Interactive (Alpha)",
+    "date": "2019-05-06T09:00:00.000Z",
+    "menu": {
+      "docs": {
+        "name": "Streetlights - Interactive (Alpha)",
+        "parent": "tutorials"
+      }
+    },
+    "aliases": [
+      "/v1/tutorial/interactive/"
+    ],
+    "categories": [
+      "tutorials"
+    ],
+    "weight": 20,
+    "sectionSlug": "/docs/tutorials",
+    "sectionWeight": 1,
+    "slug": "/docs/tutorials/streetlights-interactive"
+  },
+  {
+    "title": "Streetlights",
+    "date": "2019-02-16T16:41:57.000Z",
+    "menu": {
+      "docs": {
+        "name": "Streetlights",
+        "parent": "tutorials"
+      }
+    },
+    "aliases": [
+      "/v1/tutorial/"
+    ],
+    "categories": [
+      "tutorials"
+    ],
+    "sectionSlug": "/docs/tutorials",
+    "sectionWeight": 1,
+    "slug": "/docs/tutorials/streetlights"
+  }
+]

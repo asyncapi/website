@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "scripts": {
-    "dev": "next -p 8080",
-    "build": "next build",
+    "dev": "node scripts/build-post-list.js && next -p 8080",
+    "build": "node scripts/build-post-list.js && next build",
     "start": "next start"
   },
   "repository": {
@@ -26,13 +26,18 @@
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@mdx-js/loader": "^1.6.4",
+    "@mdx-js/react": "^1.6.4",
+    "@next/mdx": "^9.4.2",
     "@tailwindcss/ui": "^0.3.0",
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^9.7.6",
+    "gray-matter": "^4.0.2",
     "next": "^9.4.0",
     "postcss-import": "^12.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "remark-emoji": "^2.1.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-images": "^2.0.0",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
