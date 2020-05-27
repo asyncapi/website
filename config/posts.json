@@ -13,7 +13,7 @@
         "parent": "getting-started"
       }
     },
-    "weight": 30,
+    "weight": 101,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "slug": "/docs/getting-started/asyncapi-documents"
@@ -52,7 +52,7 @@
         "parent": "getting-started"
       }
     },
-    "weight": 101,
+    "weight": 30,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "slug": "/docs/getting-started/hello-world"

@@ -21,14 +21,25 @@ If you are looking for a solution to automate and formalize the documentation or
 
 ## Select your next chapter
 
-{{<navigation-options>}}
-{{%navigation-option url="/docs/getting-started/event-driven-architectures/" style="green"%}}
-Learn the basics of event-driven architectures.
-{{%/navigation-option%}}
-{{%navigation-option url="/docs/getting-started/coming-from-openapi/" style="cyan"%}}
-Learn how AsyncAPI compares to OpenAPI (fka Swagger).
-{{%/navigation-option%}}
-{{%navigation-option url="/docs/getting-started/asyncapi-documents/" style="purple"%}}
-Learn the basics of the AsyncAPI specification.
-{{%/navigation-option%}}
-{{</navigation-options>}}
+<ChapterSuggestions
+  suggestions={[
+    {
+      href: '/docs/getting-started/event-driven-architectures',
+      title: 'Event-Driven Architectures',
+      description: 'Core concepts of event-driven architectures.',
+      linkText: 'Learn the basics of event-driven architectures',
+    },
+    {
+      href: '/docs/getting-started/coming-from-openapi',
+      title: 'Coming from OpenAPI',
+      description: 'If you\'re familiar with OpenAPI (fka Swagger), you should really read this.',
+      linkText: 'Learn how AsyncAPI compares to OpenAPI',
+    },
+    {
+      href: '/docs/getting-started/hello-world',
+      title: 'Hello World',
+      description: 'Jump straight into an example of how to create your first AsyncAPI document.',
+      linkText: 'Learn the basics of the AsyncAPI specification',
+    }
+  ]}
+/>

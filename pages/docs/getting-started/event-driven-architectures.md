@@ -25,7 +25,7 @@ This extra information is often referred to as _event payload_ or _message paylo
 
 ## Core concepts
 
-![](/img/diagrams/simple-event-driven.webp)
+![](/img/diagrams/simple-event-driven.png)
 
 In most cases, Event-Driven Architectures (EDAs) are broker-centric, like in the diagram above. You can find some new concepts in it, so let's go through them now.
 
@@ -57,17 +57,27 @@ You will find both used interchangeably, although they are not exactly the same.
 
 Theoretically, _"message-driven"_ is the most generic term, meaning you may use events and commands, while _event-driven_ means that it's purely about events. However, that's not always the case, as Martin Fowler explains in his talk _"the many meanings of event-driven architecture"_:
 
-{{%youtube STKCRSUsyP0%}}
+<div className="my-8">
+  <YouTube id="STKCRSUsyP0" />
+</div>
 
 ## Conclusion
 
 We've seen what an event-driven architecture is, how it works, and what are their components. AsyncAPI is all about defining and documenting each of these components. We'll go through it during the rest of this guide but, before you continue, please choose what's your next step:
 
-{{<navigation-options>}}
-{{%navigation-option url="/docs/getting-started/coming-from-openapi/" style="cyan"%}}
-Learn how AsyncAPI compares to OpenAPI (fka Swagger).
-{{%/navigation-option%}}
-{{%navigation-option url="/docs/getting-started/asyncapi-documents/" style="purple"%}}
-Learn the basics of the AsyncAPI specification.
-{{%/navigation-option%}}
-{{</navigation-options>}}
+<ChapterSuggestions
+  suggestions={[
+    {
+      href: '/docs/getting-started/coming-from-openapi',
+      title: 'Coming from OpenAPI',
+      description: 'If you\'re familiar with OpenAPI (fka Swagger), you should really read this.',
+      linkText: 'Learn how AsyncAPI compares to OpenAPI',
+    },
+    {
+      href: '/docs/getting-started/hello-world',
+      title: 'Hello World',
+      description: 'Jump straight into an example of how to create your first AsyncAPI document.',
+      linkText: 'Learn the basics of the AsyncAPI specification',
+    }
+  ]}
+/>

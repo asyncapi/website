@@ -11,7 +11,9 @@ If you're coming from OpenAPI, you must know that AsyncAPI [started as an adapta
 
 You'll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, you have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
 
-{{<openapi-comparison>}}
+import OpenAPIComparison from '../../../components/OpenAPIComparison'
+
+<OpenAPIComparison className="my-8" />
 
 Aside from structural differences you must know that:
 
@@ -26,11 +28,19 @@ As you have seen above, OpenAPI and AsyncAPI are very similar. In a real-world e
 
 Enough speaking, let's get your hands dirty with some examples. Learn how to create an AsyncAPI document defining a "Hello world" application.
 
-{{<navigation-options>}}
-{{%navigation-option url="/docs/getting-started/asyncapi-documents/" style="cyan"%}}
-Learn the basics of the AsyncAPI specification.
-{{%/navigation-option%}}
-{{%navigation-option url="/docs/getting-started/hello-world/" style="purple"%}}
-Create your first AsyncAPI document.
-{{%/navigation-option%}}
-{{</navigation-options>}}
+<ChapterSuggestions
+  suggestions={[
+    {
+      href: '/docs/getting-started/event-driven-architectures',
+      title: 'Event-Driven Architectures',
+      description: 'Core concepts of event-driven architectures.',
+      linkText: 'Learn the basics of event-driven architectures',
+    },
+    {
+      href: '/docs/getting-started/hello-world',
+      title: 'Hello World',
+      description: 'Jump straight into an example of how to create your first AsyncAPI document.',
+      linkText: 'Learn the basics of the AsyncAPI specification',
+    }
+  ]}
+/>
