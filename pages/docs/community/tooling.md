@@ -1,11 +1,5 @@
 ---
 title: "Tooling"
-date: 2019-02-16T13:56:52+01:00
-type: static
-aliases:
-- '/v1/tooling/docgens.html'
-- '/v1/tooling/codegens.html'
-- '/v1/tooling/validators.html'
 ---
 
 This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)

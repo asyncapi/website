@@ -7,17 +7,10 @@
   },
   {
     "title": "Tooling",
-    "date": "2019-02-16T12:56:52.000Z",
-    "type": "static",
-    "aliases": [
-      "/v1/tooling/docgens.html",
-      "/v1/tooling/codegens.html",
-      "/v1/tooling/validators.html"
-    ],
     "sectionSlug": "/docs/community",
     "sectionWeight": 3,
-    "isIndex": true,
-    "slug": "/docs/community"
+    "isIndex": false,
+    "slug": "/docs/community/tooling"
   },
   {
     "title": "Getting Started",
@@ -133,17 +126,7 @@
   },
   {
     "title": "AsyncAPI specification 1.0.0",
-    "date": "2019-02-16T16:41:57.000Z",
-    "menu": {
-      "docs": {
-        "name": "1.0.0",
-        "parent": "spec"
-      }
-    },
     "weight": 40,
-    "categories": [
-      "specifications"
-    ],
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -151,17 +134,7 @@
   },
   {
     "title": "AsyncAPI specification 1.1.0",
-    "date": "2019-02-16T16:41:57.000Z",
-    "menu": {
-      "docs": {
-        "name": "1.1.0",
-        "parent": "spec"
-      }
-    },
     "weight": 30,
-    "categories": [
-      "specifications"
-    ],
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -169,20 +142,7 @@
   },
   {
     "title": "AsyncAPI specification 1.2.0",
-    "date": "2019-02-16T16:41:57.000Z",
-    "menu": {
-      "docs": {
-        "name": "1.2.0",
-        "parent": "spec"
-      }
-    },
     "weight": 20,
-    "categories": [
-      "specifications"
-    ],
-    "aliases": [
-      "/v1/spec.html"
-    ],
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -190,21 +150,7 @@
   },
   {
     "title": "AsyncAPI specification 2.0.0",
-    "date": "2019-09-09T16:15:09.000Z",
-    "menu": {
-      "docs": {
-        "name": "2.0.0",
-        "parent": "spec"
-      }
-    },
     "weight": 1,
-    "categories": [
-      "specifications"
-    ],
-    "aliases": [
-      "/docs/specifications/latest",
-      "/docs/specifications/2.0.0-rc1"
-    ],
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,

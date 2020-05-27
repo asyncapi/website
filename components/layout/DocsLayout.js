@@ -79,6 +79,12 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             </div>
             <div className="px-4 sm:px-6 md:px-8">
+              <p className="text-sm font-normal text-gray-400 font-sans antialiased">
+                Found an error? Have a suggestion? 
+                <a href={`https://github.com/asyncapi/website/blob/master/pages${post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+              </p>
+            </div>
+            <div className="mt-8 px-4 sm:px-6 md:px-8">
               <article className="mb-32">
                 <Head title={post.title} />
                 { children }
