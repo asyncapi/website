@@ -27,9 +27,6 @@ export default function MonacoEditorWrapper ({
   editorDidMount,
   ...props
 }) {
-  // Render on the browser only
-  if (typeof navigator === 'undefined') return null
-
   const previousValue = useRef(value);
   const debouncedOnChange = debounce(onChange, 500)
 

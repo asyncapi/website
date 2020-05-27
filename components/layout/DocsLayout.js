@@ -4,6 +4,7 @@ import ErrorPage from 'next/error'
 import Link from 'next/link'
 import AsyncAPILogo from '../AsyncAPILogo'
 import Head from '../Head'
+import DocsContext from '../../context/DocsContext'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -23,69 +24,70 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   })
 
   return (
-    <div className="h-screen flex overflow-hidden bg-white">
-      { showMenu && (
-        <DocsMobileMenu onClickClose={() => setShowMenu(false)} />
-      ) }
-      
-
-      {/* <!-- Static sidebar for desktop --> */}
-      <div className="hidden md:flex md:flex-shrink-0">
-        <div className="flex flex-col w-64 border-r border-gray-200 bg-white pb-8">
-          <div className="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+    <DocsContext.Provider value={{ post, navItems }}>
+      <div className="flex h-screen max-w-7xl mx-auto overflow-hidden bg-white">
+        { showMenu && (
+          <DocsMobileMenu onClickClose={() => setShowMenu(false)} />
+        ) }
+        
+        {/* <!-- Static sidebar for desktop --> */}
+        <div className="hidden md:flex md:flex-shrink-0">
+          <div className="flex flex-col w-64 border-r border-gray-200 bg-white pb-8">
+            <div className="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+              <Link href="/">
+                <a className="flex">
+                  <AsyncAPILogo className="h-8 w-auto ml-3" />
+                  <div className="self-end mb-0.5 ml-0.5 font-bold italic text-pink-500 text-lg">docs</div>
+                </a>
+              </Link>
+              
+              <nav className="mt-3 flex-1 px-2 bg-white">
+                {
+                  navigation.map((item, i) => (
+                    <div key={`menu-item-${i}`}>
+                    {
+                      item.isSection ? (
+                        <DocsNavItem title={item.title} href={item.slug} section />
+                      ) : (
+                        <DocsNavItem title={item.title} href={item.slug} active={post.slug === item.slug} />
+                      )
+                    }
+                    </div>
+                  ))
+                }
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col w-0 flex-1 overflow-hidden">
+          <div className="flex md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
             <Link href="/">
-              <a className="flex">
-                <AsyncAPILogo className="h-8 w-auto ml-3" />
-                <div className="self-end mb-0.5 ml-0.5 font-bold italic text-pink-500 text-lg">docs</div>
+              <a className="flex-1 text-left">
+                <AsyncAPILogo className="inline-block h-6 w-auto ml-3 mt-3" />
               </a>
             </Link>
-            
-            <nav className="mt-3 flex-1 px-2 bg-white">
-              {
-                navigation.map((item, i) => (
-                  <div key={`menu-item-${i}`}>
-                  {
-                    item.isSection ? (
-                      <DocsNavItem title={item.title} href={item.slug} section />
-                    ) : (
-                      <DocsNavItem title={item.title} href={item.slug} active={post.slug === item.slug} />
-                    )
-                  }
-                  </div>
-                ))
-              }
-            </nav>
+            { !showMenu && (
+              <button onClick={() => setShowMenu(true)} className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150" aria-label="Open sidebar">
+                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            )}
           </div>
+          <main className="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
+            <div className="px-4 sm:px-6 md:px-8">
+              <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
+            </div>
+            <div className="px-4 sm:px-6 md:px-8">
+              <article className="mb-32">
+                <Head title={post.title} />
+                { children }
+              </article>
+            </div>
+          </main>
         </div>
       </div>
-      <div className="flex flex-col w-0 flex-1 overflow-hidden">
-        <div className="flex md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
-          <Link href="/">
-            <a className="flex-1 text-left">
-              <AsyncAPILogo className="inline-block h-6 w-auto ml-3 mt-3" />
-            </a>
-          </Link>
-          { !showMenu && (
-            <button onClick={() => setShowMenu(true)} className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150" aria-label="Open sidebar">
-              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          )}
-        </div>
-        <main className="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <article className="mb-32">
-              <Head title={post.title} />
-              { children }
-            </article>
-          </div>
-        </main>
-      </div>
-    </div>
+    </DocsContext.Provider>
   )
 }
 

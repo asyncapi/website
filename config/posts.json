@@ -1,5 +1,25 @@
 [
   {
+    "title": "Community",
+    "weight": 3,
+    "isSection": true,
+    "slug": "/docs/community"
+  },
+  {
+    "title": "Tooling",
+    "date": "2019-02-16T12:56:52.000Z",
+    "type": "static",
+    "aliases": [
+      "/v1/tooling/docgens.html",
+      "/v1/tooling/codegens.html",
+      "/v1/tooling/validators.html"
+    ],
+    "sectionSlug": "/docs/community",
+    "sectionWeight": 3,
+    "isIndex": true,
+    "slug": "/docs/community"
+  },
+  {
     "title": "Getting Started",
     "weight": 0,
     "isSection": true,
@@ -16,6 +36,7 @@
     "weight": 101,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/asyncapi-documents"
   },
   {
@@ -29,6 +50,7 @@
     "weight": 20,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/coming-from-openapi"
   },
   {
@@ -42,6 +64,7 @@
     "weight": 10,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/event-driven-architectures"
   },
   {
@@ -55,6 +78,7 @@
     "weight": 30,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/hello-world"
   },
   {
@@ -70,6 +94,7 @@
     ],
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": true,
     "slug": "/docs/getting-started"
   },
   {
@@ -83,6 +108,7 @@
     "weight": 150,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/security"
   },
   {
@@ -96,17 +122,12 @@
     "weight": 110,
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "isIndex": false,
     "slug": "/docs/getting-started/servers"
   },
   {
-    "title": "Typography",
-    "sectionSlug": "/docs/getting-started",
-    "sectionWeight": 0,
-    "slug": "/docs/getting-started/typography"
-  },
-  {
     "title": "Specifications",
-    "weight": 3,
+    "weight": 2,
     "isSection": true,
     "slug": "/docs/specifications"
   },
@@ -124,7 +145,8 @@
       "specifications"
     ],
     "sectionSlug": "/docs/specifications",
-    "sectionWeight": 3,
+    "sectionWeight": 2,
+    "isIndex": false,
     "slug": "/docs/specifications/1.0.0"
   },
   {
@@ -141,7 +163,8 @@
       "specifications"
     ],
     "sectionSlug": "/docs/specifications",
-    "sectionWeight": 3,
+    "sectionWeight": 2,
+    "isIndex": false,
     "slug": "/docs/specifications/1.1.0"
   },
   {
@@ -161,7 +184,8 @@
       "/v1/spec.html"
     ],
     "sectionSlug": "/docs/specifications",
-    "sectionWeight": 3,
+    "sectionWeight": 2,
+    "isIndex": false,
     "slug": "/docs/specifications/1.2.0"
   },
   {
@@ -182,27 +206,9 @@
       "/docs/specifications/2.0.0-rc1"
     ],
     "sectionSlug": "/docs/specifications",
-    "sectionWeight": 3,
-    "slug": "/docs/specifications/2.0.0"
-  },
-  {
-    "title": "Tooling",
-    "weight": 2,
-    "isSection": true,
-    "slug": "/docs/tooling"
-  },
-  {
-    "title": "Tooling",
-    "date": "2019-02-16T12:56:52.000Z",
-    "type": "static",
-    "aliases": [
-      "/v1/tooling/docgens.html",
-      "/v1/tooling/codegens.html",
-      "/v1/tooling/validators.html"
-    ],
-    "sectionSlug": "/docs/tooling",
     "sectionWeight": 2,
-    "slug": "/docs/tooling"
+    "isIndex": false,
+    "slug": "/docs/specifications/2.0.0"
   },
   {
     "title": "Tutorials",
@@ -211,42 +217,27 @@
     "slug": "/docs/tutorials"
   },
   {
+    "title": "Overview",
+    "sectionSlug": "/docs/tutorials",
+    "sectionWeight": 1,
+    "isIndex": true,
+    "slug": "/docs/tutorials"
+  },
+  {
     "title": "Streetlights - Interactive (Alpha)",
-    "date": "2019-05-06T09:00:00.000Z",
-    "menu": {
-      "docs": {
-        "name": "Streetlights - Interactive (Alpha)",
-        "parent": "tutorials"
-      }
-    },
-    "aliases": [
-      "/v1/tutorial/interactive/"
-    ],
-    "categories": [
-      "tutorials"
-    ],
+    "description": "Interactive version of the original Streetlights tutorial.",
     "weight": 20,
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
+    "isIndex": false,
     "slug": "/docs/tutorials/streetlights-interactive"
   },
   {
     "title": "Streetlights",
-    "date": "2019-02-16T16:41:57.000Z",
-    "menu": {
-      "docs": {
-        "name": "Streetlights",
-        "parent": "tutorials"
-      }
-    },
-    "aliases": [
-      "/v1/tutorial/"
-    ],
-    "categories": [
-      "tutorials"
-    ],
+    "description": "In this tutorial, you get started with actual code and an IoT real-world use case. Let's pretend you have a company called Smarty Lighting and you do smart-city lighting systems.",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
+    "isIndex": false,
     "slug": "/docs/tutorials/streetlights"
   }
 ]

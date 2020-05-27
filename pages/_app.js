@@ -6,6 +6,7 @@ import Button from '../components/buttons/Button'
 import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
 import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
+import Warning from '../components/Warning'
 import '../css/highlight-asyncapi.css'
 import '../css/tailwind.css'
 
@@ -39,14 +40,14 @@ function getMDXComponents() {
       <div className={`${props.className || ''} flex flex-col`}>
         <div className="my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
           <div className="align-middle inline-block w-full shadow overflow-auto sm:rounded-lg border-b border-gray-200">
-            <table {...props} className={`${props.className || ''} min-w-full`} />
+            <table {...props} className={`${props.className || ''} w-full`} />
           </div>
         </div>
       </div>
     ),
     th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider`} />,
     tr: props => <tr {...props} className={`${props.className || ''} bg-white`} />,
-    td: props => <td {...props} className={`${props.className || ''} px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
+    td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
     pre: props => <pre {...props} className={`${props.className || ''} my-8`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm`} />,
     code: props => <Highlight {...props} className={`${props.className || ''} px-3 py-2 rounded`} />,
@@ -55,5 +56,6 @@ function getMDXComponents() {
     ChapterSuggestions,
     YouTube,
     Remember,
+    Warning,
   }
 }

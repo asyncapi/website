@@ -1,14 +1,6 @@
 ---
 title: "Streetlights - Interactive (Alpha)"
-date: 2019-05-06T10:00:00+01:00
-menu:
-  docs:
-    name: Streetlights - Interactive (Alpha)
-    parent: tutorials
-aliases:
-- '/v1/tutorial/interactive/'
-categories:
-- tutorials
+description: Interactive version of the original Streetlights tutorial.
 weight: 20
 ---
 

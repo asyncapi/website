@@ -40,7 +40,8 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
         details = frontMatter(readFileSync(fileName, 'utf-8')).data
         details.sectionSlug = sectionSlug
         details.sectionWeight = sectionWeight
-        details.slug = fileName.endsWith('/index.md') ? sectionSlug : slug.replace(/\.md$/, '')
+        details.isIndex = fileName.endsWith('/index.md')
+        details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
         result.push(details)
       }
     }
