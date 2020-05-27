@@ -6,6 +6,7 @@ import AsyncAPILogo from '../AsyncAPILogo'
 import Head from '../Head'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
+  if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
   const router = useRouter()
