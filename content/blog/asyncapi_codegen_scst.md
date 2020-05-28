@@ -18,7 +18,9 @@ authors:
      byline: Developer Advocate at Solace
 ---
 
-Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst). This post [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/) appeared first on [Solace](https://solace.com).
+Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst). 
+
+> This post [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/) appeared first on [Solace](https://solace.com).
 
 # **AsyncAPI: What Is It?** 
 
@@ -182,5 +184,4 @@ You can get started right away and use the Solace PubSub+ Event Portal to genera
 If you have more questions or want to share your experience with the tools, you can let us know in the [Solace Community Forum](http://solace.community/) or consider joining us in contributing directly to the AsyncAPI initiative.
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=QEDL6AqsaJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
