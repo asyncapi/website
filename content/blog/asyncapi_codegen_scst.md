@@ -13,12 +13,12 @@ tags:
    - EDA
 authors:
    - name: Marc DiPasquale
-     photo: /images/avatars/marc-dipasquale.webp
+     photo: /images/avatars/mdipasquale.webp
      link: https://twitter.com/mrc0113
      byline: Developer Advocate at Solace
 ---
 
-Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst).
+Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices using Spring Cloud Stream and the AsyncAPI Code Generator. These tools should help to simplify things when defining and implementing your asynchronous applications. I explained the same idea in a video you can [watch here](https://www.youtube.com/watch?v=QEDL6AqsaJc), and all of the artifacts are [available in GitHub](https://github.com/Mrc0113/asyncapi-codegen-scst). This post [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/) appeared first on [Solace](https://solace.com).
 
 # **AsyncAPI: What Is It?** 
 
@@ -32,13 +32,13 @@ The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI d
 
 If you decide to manually create the document after familiarizing yourself with the specification, don’t worry – you won’t be starting with a blank slate. The AsyncAPI initiative has provided a handy, interactive tool called the [AsyncAPI playground](https://playground.asyncapi.io) to make this easier. On the left side of the playground you can familiarize yourself with the specification and make changes to a real AsyncAPI document, and as you do so the right side of the screen updates to show how the document is parsed into a more human-readable format.
 
-[![asyncapi playground for creating microservices using spring cloud stream](https://asyncapi.com/images/posts/asyncapi-codegen_pic-01.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-01.webp)
+![asyncapi playground for creating microservices using spring cloud stream](/images/posts/asyncapi-codegen_pic-01.webp)
 
 The second way is to use an event portal. Solace PubSub+ Event Portal, for example, allows for architects and developers to collaborate using a GUI to design your event-driven architecture. The team would define the applications that exist in the system, as well as the events that are exchanged and the schemas which define them. Having a catalog of well-organized channels and events for reuse will also save you both time and headaches while collaborating, instead of having to comb through a bunch of files in various locations.
 
 Once the design is in place, PubSub+ Event Portal allows the developer to choose the application they are responsible for developing and download the AsyncAPI document in JSON or YAML.
 
-[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-02.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-02.webp) 
+![pic2](/images/posts/asyncapi-codegen_pic-02.webp)
 
 # **Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs**
 
@@ -50,13 +50,13 @@ The Spring Cloud Stream framework provides an easy way to get started with event
 
 The first step is of course to install the AsyncAPI generator itself. If you have NodeJS installed this takes just one easy `npm` command as seen below. You can find the required versions in the [Code Generator](https://github.com/asyncapi/generator) on github.
 
-```
+```bash
 npm install -g @asyncapi/generator
 ```
 
 Once you have the generator installed you can run it using the `ag` command. At a minimum you must specify the AsyncAPI document to run it against and the template to use as shown below.
 
-```
+```bash
 ag ~/AsyncApiDocument.yaml @asyncapi/java-spring-cloud-stream-template
 ```
 
@@ -70,19 +70,19 @@ Other parameters include:
 
 Using these options, my `ag` command might look something like this, where `-o` specifies the output directory:
 
-```
+```bash
 ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p artifactId=ExpenseIntegration -p groupId=acme.rideshare -p javaPackage=acme.rideshare.expense -p host=localhost:55555 -p username=default -p password=default -p msgVpn=default ~/Downloads/ExpenseIntegration.yaml @asyncapi/java-spring-cloud-stream-template
 ```
 
 After running, the output will look something like this:  
-[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-03.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-03.webp)
+![pic3](/images/posts/asyncapi-codegen_pic-03.webp)
 
 # Add Your Business Logic
 
 At this point the generator has created an `ExpenseIntegration` directory that contains the Maven project. We can use the IDE of choice and import the Maven project to add business logic.
 
 As seen in the image below, once imported, the project looks like a regular Spring Boot Java project with generated classes under the `javaPackage` that was defined earlier and an `application.yml` file for configuration. Generated classes under `javaPackage` include Plain Old Java Objects (POJOs) defined from the schemas in the AsyncAPI document and `Application.java` which contains the actual Spring Cloud Functions where we’ll add our business logic.  
-[![](https://asyncapi.com/images/posts/asyncapi-codegen_pic-04.webp)](https://asyncapi.com/images/posts/asyncapi-codegen_pic-04.webp)
+![pic4](/images/posts/asyncapi-codegen_pic-04.webp)
 
 The generated POJOs, like `RideReceipt` in the image above, define your data model per the schemas included in the AsyncAPI document. These POJOs contains variables with getters and setters for each attribute defined to allow both for developers to get coding quickly without having to manually create the objects themselves, but also for Spring Cloud Stream to automatically convert messages directly to POJOs.
 
@@ -90,16 +90,48 @@ Then we have the `Application.java` class, which can be renamed using the `javaC
 
 In the example below we can see a single `java.util.function.Consumer` bean since our AsyncAPI document describes our application as a subscriber to messages whose payload is defined by the `RideReceipt` schema. Note the comment that states // Add business logic here; this is where the developer can add their business logic.
 
-```
-@SpringBootApplicationpublic class Application {private static final Logger logger = LoggerFactory.getLogger(Application.class);public static void main(String[] args) {SpringApplication.run(Application.class);}@Beanpublic Consumer<RideReceipt> acmeRideshareBillingReceiptCreated001Consumer() {// Add business logic here.return null;}}
+```java
+@SpringBootApplication
+public class Application {
+   private static final Logger logger = LoggerFactory.getLogger(Application.class);
+   public static void main(String[] args) {
+      SpringApplication.run(Application.class);
+   }
+
+   @Bean
+   public Consumer<RideReceipt> acmeRideshareBillingReceiptCreated001Consumer() {
+      // Add business logic here.
+      return null;
+   }
+}
 ```
 
 You might say: “Marc, that’s great, but how the heck is that function actually binding to the messaging channels!?” This is where the `application.yml` file comes into play.
 
 The generated `application.yml` file defines several things as specified in the AsyncAPI document or from the parameters passed into the generator. First, it defines the list of functions it wants Spring Cloud Stream aware of under `spring.cloud.stream.function.definition`. Second, it tells Spring Cloud Stream which channels to bind those functions to under `spring.cloud.streams.bindings`. Lastly, it contains connection information to the messaging system. The connection info is specified by different parameters depending on the binder you choose but, in this case, it’s defined under `solace.java`.
 
-```
-spring: cloud: stream: function: definition: acmeRideshareBillingReceiptCreated001Consumer bindings: acmeRideshareBillingReceiptCreated001Consumer-in-0: destination: acme/rideshare/billing/receipt/created/0.0.1solace: java: host: 'localhost:55555' msgVpn: default clientUsername: default clientPassword: defaultlogging: level: root: info org: springframework: info
+```yaml
+spring: 
+  cloud: 
+    stream: 
+      function: 
+        definition: acmeRideshareBillingReceiptCreated001Consumer 
+    bindings: 
+      acmeRideshareBillingReceiptCreated001Consumer-in-0:
+        destination: acme/rideshare/billing/receipt/created/0.0.1
+
+solace: 
+  java: 
+    host: 'localhost:55555' 
+    msgVpn: default 
+    clientUsername: default 
+    clientPassword: default
+
+logging: 
+  level: 
+    root: info 
+    org: 
+      springframework: info
 ```
 
 Note that all of this was done for the developer so they didn’t have to track down which SCSt parameters needed to be set, map the functions to the bindings, etc. They just have to add their business logic in place of the project and hit run! In this case since it’s a Spring Boot project you can “run as a Spring Boot app” in your IDE or even run from the command line using `mvn spring-boot:run`.
@@ -113,9 +145,21 @@ There are a bunch of different parameters and specification extensions that you 
 - **The `binder` parameter** allows you to specify the Spring Cloud Stream binder that you’d like to use. Currently the generator supports `kafka`, `rabbit` and `solace`.
 - **The `info.x-view` specification extension** can be set at the info level in your AsyncAPI document. This extension allows for you to define how the document should be viewed from an application perspective. By default an AsyncAPI specification takes a `client` view where operations (publish/subscribe) defined in a document represent what an application accepts (or how you would communicate with that application). However, for code generation you may want to  generate what an application actually does. This is where setting the `view` parameter comes in. If you set `view` to a value of `provider`  the operations defined in the document will be treated as what an application actually does. Note that this extension can also be set using the `view` parameter on some generator templates, such as the Java Spring Cloud Stream one. 
 - **The `operation.x-scs-function-name` specification extension** can be set on your `publish` or `subscribe` operations in the AsyncAPI document, allowing you not only to name the generated function, but also tie two operations together to form a function that subscribes to one channel and publishes to another when the same name is used. For example, if your AsyncAPI document looked like the image below a `java.util.function.Function` bean called “calculatePercentage” would be generated which subscribes to the input channel and publishes to the output channel.
+
+```yaml
+channels:
+  'input':
+    subscribe:
+      x-scs-function-name: calculatePercentage
+      message:
+        $ref: '#/components/messages/CovidTracking_SingleStateCurrentDataUpdate'
+  'output':
+    publish:
+      x-scs-function-name: calculatePercentage
+      message:
+        $ref: '#/components/messages/CovidTracking_SingleStateTestPercentagesUpdate'
 ```
-channels: 'input': subscribe: x-scs-function-name: calculatePercentage message: $ref: '#/components/messages/CovidTracking\_SingleStateCurrentDataUpdate' 'output': publish: x-scs-function-name: calculatePercentage message: $ref: '#/components/messages/CovidTracking\_SingleStateTestPercentagesUpdate'
-```
+
 - **The `x-scs-destination` specification extension** can be specified on a `subscribe` operation, allowing you to override the default destination value which usually matches the channel. This is useful when you are using the Solace binder and you are following the Solace pattern of publishing to topics and consuming from queues. In this case the `x-scs-destination` value would be treated as the name of the queue which your microservice will consume from and the channel name in the AsyncAPI document will be added as a topic subscription to that queue.
 - **The `x-scs-group` specification extension** can also be specified on a `subscribe` operation, allowing for the addition of a `group` to the generated Spring Cloud Stream `binding`. This allows for the use of consumer groups and will end up in a [durable queue](https://dev.to/solacedevs/understanding-solace-endpoints-durable-vs-non-durable-53gd) being created when using the Solace binder.
 
@@ -139,4 +183,4 @@ If you have more questions or want to share your experience with the tools, you 
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=QEDL6AqsaJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The post [AsyncAPI Code Generation: Microservices Using Spring Cloud Stream](https://solace.com/blog/asyncapi-codegen-microservices-spring-cloud-stream/) appeared first on [Solace](https://solace.com).
+
