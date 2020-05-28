@@ -1,4 +1,4 @@
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
 import Highlight from 'react-highlight'
 import Layout from '../components/layout/Layout'

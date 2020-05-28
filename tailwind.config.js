@@ -55,7 +55,13 @@ module.exports = {
         '96': '24rem',
         '100': '25rem',
         '104': '26rem',
-      }
+      },
+      maxHeight: {
+        '(screen-16)': 'calc(100vh - 4rem)',
+      },
+      maxWidth: {
+        '(screen-32)': 'calc(100vw - 34rem)',
+      },
     },
   },
   plugins: [

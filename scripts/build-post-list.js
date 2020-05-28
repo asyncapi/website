@@ -2,6 +2,7 @@ const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = requi
 const { join, resolve, basename } = require('path')
 const { inspect } = require('util')
 const frontMatter = require('gray-matter')
+const toc = require('markdown-toc')
 
 const result = []
 const basePath = 'pages'
@@ -37,7 +38,9 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
         result.push(details)
         walkDirectories([fileName], result, slug, details.weight)
       } else if (!fileName.endsWith('/_section.md')) {
-        details = frontMatter(readFileSync(fileName, 'utf-8')).data
+        const fileContent = readFileSync(fileName, 'utf-8')
+        details = frontMatter(fileContent).data
+        details.toc = toc(fileContent).json
         details.sectionSlug = sectionSlug
         details.sectionWeight = sectionWeight
         details.isIndex = fileName.endsWith('/index.md')
