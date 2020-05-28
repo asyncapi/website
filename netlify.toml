@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOW"
+    X-Frame-Options: "ALLOW-FROM https://www.youtube.com/"
