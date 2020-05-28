@@ -4,7 +4,7 @@ featured: true
 cover: /images/posts/asyncapi-codegen_pic-00.webp
 weight: 100
 title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
-date: 2020-04-28 17:39:34 UTC
+date: 2020-05-28T10:00:00+01:00
 tags:
    - solace
    - asyncapi
@@ -184,4 +184,3 @@ You can get started right away and use the Solace PubSub+ Event Portal to genera
 If you have more questions or want to share your experience with the tools, you can let us know in the [Solace Community Forum](http://solace.community/) or consider joining us in contributing directly to the AsyncAPI initiative.
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=QEDL6AqsaJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
