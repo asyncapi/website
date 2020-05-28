@@ -1,2 +1,4 @@
-/*
-  X-Frame-Options: ALLOW
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "ALLOW"
