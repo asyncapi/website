@@ -4,7 +4,7 @@ featured: true
 cover: /images/posts/asyncapi-codegen_pic-00.webp
 weight: 40
 title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
-date: 2020-05-03T10:00:00+01:00
+date: 2020-06-03T10:00:00+01:00
 tags:
    - solace
    - asyncapi
