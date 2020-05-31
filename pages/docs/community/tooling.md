@@ -1,5 +1,6 @@
 ---
-title: "Tooling"
+title: Tooling
+weight: 0
 ---
 
 This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
@@ -7,7 +8,7 @@ This page contains a list of AsyncAPI tooling. Would you like to add your tool t
 
 > Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!
 
-# <a name="code-first" href="#code-first" className="text-gray-200 hover:text-gray-400">#</a> Code-first tools
+# Code-first tools
 
 The following is a list of tools that generate AsyncAPI documents from your code.
 
@@ -17,7 +18,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. Thanks to [@tehmantra](https://github.com/tehmantra). | C#/dotnet
 | [Java AsyncAPI](https://github.com/Pakisan/java-asyncapi) | This is a code-first tool for AsyncAPI specification | Java, Kotlin
 
-# <a name="codegens" href="#codegens" className="text-gray-200 hover:text-gray-400">#</a> Code Generators
+# Code Generators
 
 The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.
 
@@ -27,7 +28,7 @@ The following is a list of tools that generate code from an AsyncAPI document, a
 
 The language you're looking for is not here? You have created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 
-# <a name="converters" href="#converters" className="text-gray-200 hover:text-gray-400">#</a> Converters
+# Converters
 
 The following is a list of tools that do not yet belong to any specific category but are also useful for the community.
 
@@ -36,7 +37,7 @@ The following is a list of tools that do not yet belong to any specific category
 | [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | Javascript
 | [Converter Go](https://github.com/asyncapi/converter-go) | Converts old versions of AsyncAPI files into the latest version. Thanks to [@Kyma team](https://kyma-project.io/). | Go
 
-# <a name="docgens" href="#docgens" className="text-gray-200 hover:text-gray-400">#</a> Documentation Generators
+# Documentation Generators
 
 The following is a list of tools that generate human-readable documentation from an AsyncAPI document.
 
@@ -47,7 +48,7 @@ The following is a list of tools that generate human-readable documentation from
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
 
-# <a name="dsl" href="#dsl" className="text-gray-200 hover:text-gray-400">#</a> DSL
+# DSL
 
 Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.
 
@@ -55,7 +56,7 @@ Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain 
 | :------------- | :------------- | :------------- |
 | [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks plus a few extra helpers. Once compiled BOATS calls in [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
 
-# <a name="ghactions" href="#ghactions" className="text-gray-200 hover:text-gray-400">#</a> GitHub Actions
+# GitHub Actions
 
 The following is a list of [GitHub Actions](https://github.com/features/actions) that you can use in your workflows:
 
@@ -65,7 +66,7 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
 | [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
 
-# <a name="validators" href="#validators" className="text-gray-200 hover:text-gray-400">#</a> Validators
+# Validators
 
 The following is a list of tools that validate AsyncAPI documents.
 

@@ -50,7 +50,7 @@ export default function IconGettingStarted ({ className }) {
           <clipPath>
             <use xlinkHref="#SVGID_29_" style={{overflow:'visible'}}/>
 		      </clipPath>
-          <clipPath class="st3">
+          <clipPath className="st3">
             <use xlinkHref="#SVGID_30_" style={{overflow:'visible'}}/>
 		      </clipPath>
         </g>

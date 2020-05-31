@@ -9,6 +9,7 @@ import Remember from '../components/Remember'
 import Warning from '../components/Warning'
 import '../css/highlight-asyncapi.css'
 import '../css/tailwind.css'
+import '../css/overrides.css'
 
 export default function MyApp({ Component, pageProps }) {
   return (

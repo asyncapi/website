@@ -3,11 +3,15 @@ const { join, resolve, basename } = require('path')
 const { inspect } = require('util')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
+const { slugify } = require('markdown-toc/lib/utils')
+const readingTime = require('reading-time')
+const { markdownToTxt } = require('markdown-to-txt')
 
 const result = []
 const basePath = 'pages'
 const postDirectories = [
   `${basePath}/docs`,
+  `${basePath}/blog`,
 ]
 walkDirectories(postDirectories, result)
 if (process.env.NODE_ENV === 'production') {
@@ -37,10 +41,13 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
         details.slug = slug
         result.push(details)
         walkDirectories([fileName], result, slug, details.weight)
-      } else if (!fileName.endsWith('/_section.md')) {
+      } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
         const fileContent = readFileSync(fileName, 'utf-8')
-        details = frontMatter(fileContent).data
-        details.toc = toc(fileContent).json
+        const { data, content } = frontMatter(fileContent)
+        details = data
+        details.toc = toc(content, { slugify: slugifyToC }).json
+        details.readingTime = Math.ceil(readingTime(content).minutes)
+        details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200)
         details.sectionSlug = sectionSlug
         details.sectionWeight = sectionWeight
         details.isIndex = fileName.endsWith('/index.md')
@@ -49,6 +56,13 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
       }
     }
   }
+}
+
+function slugifyToC(str) {
+  let slug
+  const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/)
+  if (headingIdMatch && headingIdMatch.length >= 2) slug = headingIdMatch[1]
+  return slug || slugify(str, { firsth1: true, maxdepth: 6 })
 }
 
 function isDirectory(dir) {

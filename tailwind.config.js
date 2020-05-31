@@ -60,7 +60,17 @@ module.exports = {
         '(screen-16)': 'calc(100vh - 4rem)',
       },
       maxWidth: {
-        '(screen-32)': 'calc(100vw - 34rem)',
+        '(screen-34)': 'calc(100vw - 34rem)',
+        '64': '16rem',
+        '164': '41rem',
+        '172': '43rem',
+      },
+      minWidth: {
+        '72': '18rem',
+        '40': '10rem',
+      },
+      marginRight: {
+        '36': '9rem'
       },
     },
   },

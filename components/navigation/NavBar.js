@@ -45,17 +45,17 @@ export default function NavBar () {
         <nav className="hidden md:flex space-x-10">
           <div className="relative">
             <NavItem text="Learning" onClick={() => showMenu('learning')} hasDropdown />
-            {open === 'learning' && <LearningPanel />}
+            {open === 'learning' && <LearningPanel className="z-50" />}
           </div>
 
           <div className="relative">
             <NavItem text="Tools" onClick={() => showMenu('tooling')} hasDropdown />
-            { open === 'tooling' && <ToolsPanel /> }
+            { open === 'tooling' && <ToolsPanel className="z-50" /> }
           </div>
 
           <div className="relative">
             <NavItem text="Community" onClick={() => showMenu('community')} hasDropdown />
-            {open === 'community' && <NavMenu items={communityItems} />}
+            {open === 'community' && <NavMenu items={communityItems} className="z-50" />}
           </div>
 
           {

@@ -7,64 +7,60 @@
   },
   {
     "title": "Tooling",
+    "weight": 0,
     "toc": [
       {
-        "content": "title: \"Tooling\"",
-        "slug": "title-tooling",
-        "lvl": 2,
+        "content": "Code-first tools",
+        "slug": "code-first-tools",
+        "lvl": 1,
         "i": 0,
         "seen": 0
       },
       {
-        "content": "<a name=\"code-first\" href=\"#code-first\" className=\"text-gray-200 hover:text-gray-400\">#</a> Code-first tools",
-        "slug": "#-code-first-tools",
+        "content": "Code Generators",
+        "slug": "code-generators",
         "lvl": 1,
         "i": 1,
         "seen": 0
       },
       {
-        "content": "<a name=\"codegens\" href=\"#codegens\" className=\"text-gray-200 hover:text-gray-400\">#</a> Code Generators",
-        "slug": "#-code-generators",
+        "content": "Converters",
+        "slug": "converters",
         "lvl": 1,
         "i": 2,
         "seen": 0
       },
       {
-        "content": "<a name=\"converters\" href=\"#converters\" className=\"text-gray-200 hover:text-gray-400\">#</a> Converters",
-        "slug": "#-converters",
+        "content": "Documentation Generators",
+        "slug": "documentation-generators",
         "lvl": 1,
         "i": 3,
         "seen": 0
       },
       {
-        "content": "<a name=\"docgens\" href=\"#docgens\" className=\"text-gray-200 hover:text-gray-400\">#</a> Documentation Generators",
-        "slug": "#-documentation-generators",
+        "content": "DSL",
+        "slug": "dsl",
         "lvl": 1,
         "i": 4,
         "seen": 0
       },
       {
-        "content": "<a name=\"dsl\" href=\"#dsl\" className=\"text-gray-200 hover:text-gray-400\">#</a> DSL",
-        "slug": "#-dsl",
+        "content": "GitHub Actions",
+        "slug": "github-actions",
         "lvl": 1,
         "i": 5,
         "seen": 0
       },
       {
-        "content": "<a name=\"ghactions\" href=\"#ghactions\" className=\"text-gray-200 hover:text-gray-400\">#</a> GitHub Actions",
-        "slug": "#-github-actions",
+        "content": "Validators",
+        "slug": "validators",
         "lvl": 1,
         "i": 6,
         "seen": 0
-      },
-      {
-        "content": "<a name=\"validators\" href=\"#validators\" className=\"text-gray-200 hover:text-gray-400\">#</a> Validators",
-        "slug": "#-validators",
-        "lvl": 1,
-        "i": 7,
-        "seen": 0
       }
     ],
+    "readingTime": 4,
+    "excerpt": "This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? Let us know!\nPlease, before you decide to create a new tool, consider contributing to the existing ones. Th",
     "sectionSlug": "/docs/community",
     "sectionWeight": 3,
     "isIndex": false,
@@ -86,6 +82,8 @@
     },
     "weight": 101,
     "toc": [],
+    "readingTime": 1,
+    "excerpt": "An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.\nThe format of the file must be JSON or YAML, however, only the subset of YAML that ma",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -109,6 +107,8 @@
         "seen": 0
       }
     ],
+    "readingTime": 2,
+    "excerpt": "If you&amp#39;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users co",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -174,6 +174,8 @@
         "seen": 0
       }
     ],
+    "readingTime": 4,
+    "excerpt": "All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. Y",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -189,6 +191,8 @@
     },
     "weight": 30,
     "toc": [],
+    "readingTime": 2,
+    "excerpt": "Let&amp#39;s define an application that&amp#39;s capable of receiving a &ampquot;hello {name}&ampquot; message.\nLet&amp#39;s get into the details of the sample specification:\nThe first line of the spe",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -214,6 +218,8 @@
         "seen": 0
       }
     ],
+    "readingTime": 2,
+    "excerpt": "AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDA&amp#39;s as easy as it is to work with",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": true,
@@ -237,6 +243,8 @@
         "seen": 0
       }
     ],
+    "readingTime": 3,
+    "excerpt": "In production environments, your API may have to access a message broker that&amp#39;s protected by some auth mechanisms. Examples of these are:\nUser &ampamp; password\nCertificates\nAPI keys\nOAuth 2\n\nI",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -260,6 +268,8 @@
         "seen": 0
       }
     ],
+    "readingTime": 2,
+    "excerpt": "In the previous lesson, you learned how to create the definition of a simple Hello World application, so let&amp#39;s take it from there.\nIn this article, you learn how to add servers to your AsyncAPI",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
     "isIndex": false,
@@ -297,629 +307,624 @@
         "seen": 0
       },
       {
-        "content": "Table of Contents",
-        "slug": "table-of-contents",
+        "content": "Definitions",
+        "slug": "definitions",
         "lvl": 2,
         "i": 3,
         "seen": 0
       },
       {
-        "content": "Definitions",
-        "slug": "definitions",
-        "lvl": 2,
+        "content": "Message Broker {#definitionsMessageBroker}",
+        "slug": "definitionsMessageBroker",
+        "lvl": 4,
         "i": 4,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessageBroker\"></a>Message Broker",
-        "slug": "message-broker",
+        "content": "Message {#definitionsMessage}",
+        "slug": "definitionsMessage",
         "lvl": 4,
         "i": 5,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessage\"></a>Message",
-        "slug": "message",
+        "content": "Topic {#definitionstTopic}",
+        "slug": "definitionstTopic",
         "lvl": 4,
         "i": 6,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionstTopic\"></a>Topic",
-        "slug": "topic",
+        "content": "Process {#definitionsProcess}",
+        "slug": "definitionsProcess",
         "lvl": 4,
         "i": 7,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProcess\"></a>Process",
-        "slug": "process",
+        "content": "Producer {#definitionsProducer}",
+        "slug": "definitionsProducer",
         "lvl": 4,
         "i": 8,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProducer\"></a>Producer",
-        "slug": "producer",
+        "content": "Consumer {#definitionsConsumer}",
+        "slug": "definitionsConsumer",
         "lvl": 4,
         "i": 9,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsConsumer\"></a>Consumer",
-        "slug": "consumer",
+        "content": "Topic Templating {#definitionsTopicTemplating}",
+        "slug": "definitionsTopicTemplating",
         "lvl": 4,
         "i": 10,
-        "seen": 0
-      },
-      {
-        "content": "<a name=\"definitionsTopicTemplating\"></a>Topic Templating",
-        "slug": "topic-templating",
-        "lvl": 4,
-        "i": 11,
         "seen": 0
       },
       {
         "content": "Specification",
         "slug": "specification",
         "lvl": 2,
-        "i": 12,
+        "i": 11,
         "seen": 0
       },
       {
         "content": "Format",
         "slug": "format",
         "lvl": 3,
-        "i": 13,
+        "i": 12,
         "seen": 0
       },
       {
         "content": "File Structure",
         "slug": "file-structure",
         "lvl": 3,
-        "i": 14,
+        "i": 13,
         "seen": 0
       },
       {
         "content": "Schema",
         "slug": "schema",
         "lvl": 3,
-        "i": 15,
+        "i": 14,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SObject\"></a>AsyncAPI Object",
-        "slug": "asyncapi-object",
+        "content": "AsyncAPI Object {#A2SObject}",
+        "slug": "A2SObject",
         "lvl": 4,
-        "i": 16,
+        "i": 15,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
         "slug": "fixed-fields",
         "lvl": 5,
+        "i": 16,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI Version String {#A2SVersionString}",
+        "slug": "A2SVersionString",
+        "lvl": 4,
         "i": 17,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SVersionString\"></a>AsyncAPI Version String",
-        "slug": "asyncapi-version-string",
+        "content": "Info Object {#infoObject}",
+        "slug": "infoObject",
         "lvl": 4,
         "i": 18,
         "seen": 0
       },
       {
-        "content": "<a name=\"infoObject\"></a>Info Object",
-        "slug": "info-object",
-        "lvl": 4,
-        "i": 19,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-1",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 20,
+        "i": 19,
         "seen": 1
       },
       {
         "content": "Info Object Example:",
         "slug": "info-object-example",
         "lvl": 5,
+        "i": 20,
+        "seen": 0
+      },
+      {
+        "content": "Contact Object {#contactObject}",
+        "slug": "contactObject",
+        "lvl": 4,
         "i": 21,
         "seen": 0
       },
       {
-        "content": "<a name=\"contactObject\"></a>Contact Object",
-        "slug": "contact-object",
-        "lvl": 4,
-        "i": 22,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-2",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 23,
+        "i": 22,
         "seen": 2
       },
       {
         "content": "Contact Object Example:",
         "slug": "contact-object-example",
         "lvl": 5,
+        "i": 23,
+        "seen": 0
+      },
+      {
+        "content": "License Object {#licenseObject}",
+        "slug": "licenseObject",
+        "lvl": 4,
         "i": 24,
         "seen": 0
       },
       {
-        "content": "<a name=\"licenseObject\"></a>License Object",
-        "slug": "license-object",
-        "lvl": 4,
-        "i": 25,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-3",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 26,
+        "i": 25,
         "seen": 3
       },
       {
         "content": "License Object Example:",
         "slug": "license-object-example",
         "lvl": 5,
-        "i": 27,
+        "i": 26,
         "seen": 0
       },
       {
-        "content": "<a name=\"baseTopicString\"></a>Base Topic String",
-        "slug": "base-topic-string",
+        "content": "Base Topic String {#baseTopicString}",
+        "slug": "baseTopicString",
         "lvl": 4,
-        "i": 28,
+        "i": 27,
         "seen": 0
       },
       {
         "content": "Base Topic String Example:",
         "slug": "base-topic-string-example",
         "lvl": 5,
+        "i": 28,
+        "seen": 0
+      },
+      {
+        "content": "Server Object {#serverObject}",
+        "slug": "serverObject",
+        "lvl": 4,
         "i": 29,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverObject\"></a>Server Object",
-        "slug": "server-object",
-        "lvl": 4,
-        "i": 30,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-4",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 31,
+        "i": 30,
         "seen": 4
       },
       {
         "content": "Server Object Example",
         "slug": "server-object-example",
         "lvl": 5,
+        "i": 31,
+        "seen": 0
+      },
+      {
+        "content": "Server Variable Object {#serverVariableObject}",
+        "slug": "serverVariableObject",
+        "lvl": 4,
         "i": 32,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverVariableObject\"></a>Server Variable Object",
-        "slug": "server-variable-object",
-        "lvl": 4,
-        "i": 33,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-5",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 34,
+        "i": 33,
         "seen": 5
       },
       {
-        "content": "<a name=\"topicsObject\"></a>Topics Object",
-        "slug": "topics-object",
+        "content": "Topics Object {#topicsObject}",
+        "slug": "topicsObject",
         "lvl": 4,
-        "i": 35,
+        "i": 34,
         "seen": 0
       },
       {
         "content": "Patterned Fields",
         "slug": "patterned-fields",
         "lvl": 5,
-        "i": 36,
+        "i": 35,
         "seen": 0
       },
       {
         "content": "Topics Object Example",
         "slug": "topics-object-example",
         "lvl": 5,
+        "i": 36,
+        "seen": 0
+      },
+      {
+        "content": "Topic Item Object {#topicItemObject}",
+        "slug": "topicItemObject",
+        "lvl": 4,
         "i": 37,
         "seen": 0
       },
       {
-        "content": "<a name=\"topicItemObject\"></a>Topic Item Object",
-        "slug": "topic-item-object",
-        "lvl": 4,
-        "i": 38,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-6",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 39,
+        "i": 38,
         "seen": 6
       },
       {
         "content": "Topic Item Object Example",
         "slug": "topic-item-object-example",
         "lvl": 5,
+        "i": 39,
+        "seen": 0
+      },
+      {
+        "content": "Message Object {#messageObject}",
+        "slug": "messageObject",
+        "lvl": 4,
         "i": 40,
         "seen": 0
       },
       {
-        "content": "<a name=\"messageObject\"></a>Message Object",
-        "slug": "message-object",
-        "lvl": 4,
-        "i": 41,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-7",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 42,
+        "i": 41,
         "seen": 7
       },
       {
         "content": "Message Object Example",
         "slug": "message-object-example",
         "lvl": 5,
+        "i": 42,
+        "seen": 0
+      },
+      {
+        "content": "Tag Object {#tagObject}",
+        "slug": "tagObject",
+        "lvl": 4,
         "i": 43,
         "seen": 0
       },
       {
-        "content": "<a name=\"tagObject\"></a>Tag Object",
-        "slug": "tag-object",
-        "lvl": 4,
-        "i": 44,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-8",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 45,
+        "i": 44,
         "seen": 8
       },
       {
         "content": "Tag Object Example",
         "slug": "tag-object-example",
         "lvl": 5,
+        "i": 45,
+        "seen": 0
+      },
+      {
+        "content": "External Documentation Object {#externalDocumentationObject}",
+        "slug": "externalDocumentationObject",
+        "lvl": 4,
         "i": 46,
         "seen": 0
       },
       {
-        "content": "<a name=\"externalDocumentationObject\"></a>External Documentation Object",
-        "slug": "external-documentation-object",
-        "lvl": 4,
-        "i": 47,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-9",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 48,
+        "i": 47,
         "seen": 9
       },
       {
         "content": "External Documentation Object Example",
         "slug": "external-documentation-object-example",
         "lvl": 5,
+        "i": 48,
+        "seen": 0
+      },
+      {
+        "content": "Reference Object {#referenceObject}",
+        "slug": "referenceObject",
+        "lvl": 4,
         "i": 49,
         "seen": 0
       },
       {
-        "content": "<a name=\"referenceObject\"></a>Reference Object",
-        "slug": "reference-object",
-        "lvl": 4,
-        "i": 50,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-10",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 51,
+        "i": 50,
         "seen": 10
       },
       {
         "content": "Reference Object Example",
         "slug": "reference-object-example",
         "lvl": 5,
+        "i": 51,
+        "seen": 0
+      },
+      {
+        "content": "Components Object {#componentsObject}",
+        "slug": "componentsObject",
+        "lvl": 4,
         "i": 52,
         "seen": 0
       },
       {
-        "content": "<a name=\"componentsObject\"></a>Components Object",
-        "slug": "components-object",
-        "lvl": 4,
-        "i": 53,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-11",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 54,
+        "i": 53,
         "seen": 11
       },
       {
         "content": "Components Object Example",
         "slug": "components-object-example",
         "lvl": 5,
-        "i": 55,
+        "i": 54,
         "seen": 0
       },
       {
-        "content": "<a name=\"schemaObject\"></a>Schema Object",
-        "slug": "schema-object",
+        "content": "Schema Object {#schemaObject}",
+        "slug": "schemaObject",
         "lvl": 4,
-        "i": 56,
+        "i": 55,
         "seen": 0
       },
       {
         "content": "Properties",
         "slug": "properties",
         "lvl": 5,
-        "i": 57,
+        "i": 56,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-12",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 58,
+        "i": 57,
         "seen": 12
       },
       {
-        "content": "<a name=\"schemaComposition\"></a>Composition and Inheritance (Polymorphism)",
-        "slug": "composition-and-inheritance-polymorphism",
+        "content": "Composition and Inheritance (Polymorphism) {#schemaComposition}",
+        "slug": "schemaComposition",
         "lvl": 6,
-        "i": 59,
+        "i": 58,
         "seen": 0
       },
       {
         "content": "XML Modeling",
         "slug": "xml-modeling",
         "lvl": 6,
-        "i": 60,
+        "i": 59,
         "seen": 0
       },
       {
         "content": "Schema Object Examples",
         "slug": "schema-object-examples",
         "lvl": 5,
-        "i": 61,
+        "i": 60,
         "seen": 0
       },
       {
         "content": "Primitive Sample",
         "slug": "primitive-sample",
         "lvl": 6,
-        "i": 62,
+        "i": 61,
         "seen": 0
       },
       {
         "content": "Simple Model",
         "slug": "simple-model",
         "lvl": 6,
-        "i": 63,
+        "i": 62,
         "seen": 0
       },
       {
         "content": "Model with Map/Dictionary Properties",
         "slug": "model-with-mapdictionary-properties",
         "lvl": 6,
-        "i": 64,
+        "i": 63,
         "seen": 0
       },
       {
         "content": "Model with Example",
         "slug": "model-with-example",
         "lvl": 6,
-        "i": 65,
+        "i": 64,
         "seen": 0
       },
       {
         "content": "Models with Composition",
         "slug": "models-with-composition",
         "lvl": 6,
-        "i": 66,
+        "i": 65,
         "seen": 0
       },
       {
         "content": "Models with Polymorphism Support",
         "slug": "models-with-polymorphism-support",
         "lvl": 6,
+        "i": 66,
+        "seen": 0
+      },
+      {
+        "content": "XML Object {#xmlObject}",
+        "slug": "xmlObject",
+        "lvl": 4,
         "i": 67,
         "seen": 0
       },
       {
-        "content": "<a name=\"xmlObject\"></a>XML Object",
-        "slug": "xml-object",
-        "lvl": 4,
-        "i": 68,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-13",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 69,
+        "i": 68,
         "seen": 13
       },
       {
         "content": "XML Object Examples",
         "slug": "xml-object-examples",
         "lvl": 5,
-        "i": 70,
+        "i": 69,
         "seen": 0
       },
       {
         "content": "No XML Element",
         "slug": "no-xml-element",
         "lvl": 6,
-        "i": 71,
+        "i": 70,
         "seen": 0
       },
       {
         "content": "XML Name Replacement",
         "slug": "xml-name-replacement",
         "lvl": 6,
-        "i": 72,
+        "i": 71,
         "seen": 0
       },
       {
         "content": "XML Attribute, Prefix and Namespace",
         "slug": "xml-attribute-prefix-and-namespace",
         "lvl": 6,
-        "i": 73,
+        "i": 72,
         "seen": 0
       },
       {
         "content": "XML Arrays",
         "slug": "xml-arrays",
         "lvl": 6,
+        "i": 73,
+        "seen": 0
+      },
+      {
+        "content": "Security Scheme Object {#securitySchemeObject}",
+        "slug": "securitySchemeObject",
+        "lvl": 4,
         "i": 74,
         "seen": 0
       },
       {
-        "content": "<a name=\"securitySchemeObject\"></a>Security Scheme Object",
-        "slug": "security-scheme-object",
-        "lvl": 4,
-        "i": 75,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-14",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 76,
+        "i": 75,
         "seen": 14
       },
       {
         "content": "Security Scheme Object Example",
         "slug": "security-scheme-object-example",
         "lvl": 5,
-        "i": 77,
+        "i": 76,
         "seen": 0
       },
       {
         "content": "User/Password Authentication Sample",
         "slug": "userpassword-authentication-sample",
         "lvl": 6,
-        "i": 78,
+        "i": 77,
         "seen": 0
       },
       {
         "content": "API Key Authentication Sample",
         "slug": "api-key-authentication-sample",
         "lvl": 6,
-        "i": 79,
+        "i": 78,
         "seen": 0
       },
       {
         "content": "X.509 Authentication Sample",
         "slug": "x509-authentication-sample",
         "lvl": 6,
-        "i": 80,
+        "i": 79,
         "seen": 0
       },
       {
         "content": "End-to-end Encryption Authentication Sample",
         "slug": "end-to-end-encryption-authentication-sample",
         "lvl": 6,
-        "i": 81,
+        "i": 80,
         "seen": 0
       },
       {
         "content": "Basic Authentication Sample",
         "slug": "basic-authentication-sample",
         "lvl": 6,
-        "i": 82,
+        "i": 81,
         "seen": 0
       },
       {
         "content": "API Key Sample",
         "slug": "api-key-sample",
         "lvl": 6,
-        "i": 83,
+        "i": 82,
         "seen": 0
       },
       {
         "content": "JWT Bearer Sample",
         "slug": "jwt-bearer-sample",
         "lvl": 6,
+        "i": 83,
+        "seen": 0
+      },
+      {
+        "content": "Security Requirement Object {#securityRequirementObject}",
+        "slug": "securityRequirementObject",
+        "lvl": 4,
         "i": 84,
         "seen": 0
       },
       {
-        "content": "<a name=\"securityRequirementObject\"></a>Security Requirement Object",
-        "slug": "security-requirement-object",
-        "lvl": 4,
-        "i": 85,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-1",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 86,
+        "i": 85,
         "seen": 1
       },
       {
         "content": "Security Requirement Object Examples",
         "slug": "security-requirement-object-examples",
         "lvl": 5,
-        "i": 87,
+        "i": 86,
         "seen": 0
       },
       {
         "content": "User/Password Security Requirement",
         "slug": "userpassword-security-requirement",
         "lvl": 6,
-        "i": 88,
+        "i": 87,
         "seen": 0
       },
       {
         "content": "API Key Security Requirement",
         "slug": "api-key-security-requirement",
         "lvl": 6,
+        "i": 88,
+        "seen": 0
+      },
+      {
+        "content": "Specification Extensions {#specificationExtensions}",
+        "slug": "specificationExtensions",
+        "lvl": 3,
         "i": 89,
         "seen": 0
       },
       {
-        "content": "<a name=\"specificationExtensions\"></a>Specification Extensions",
-        "slug": "specification-extensions",
+        "content": "Data Type Formats {#dataTypeFormat}",
+        "slug": "dataTypeFormat",
         "lvl": 3,
         "i": 90,
         "seen": 0
-      },
-      {
-        "content": "<a name=\"dataTypeFormat\"></a>Data Type Formats",
-        "slug": "data-type-formats",
-        "lvl": 3,
-        "i": 91,
-        "seen": 0
       }
     ],
+    "readingTime": 32,
+    "excerpt": "Disclaimer\nPart of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp#39;s a great work and we want to keep as much compatibility as po",
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -951,650 +956,645 @@
         "seen": 0
       },
       {
-        "content": "Table of Contents",
-        "slug": "table-of-contents",
+        "content": "Definitions",
+        "slug": "definitions",
         "lvl": 2,
         "i": 3,
         "seen": 0
       },
       {
-        "content": "Definitions",
-        "slug": "definitions",
-        "lvl": 2,
+        "content": "Message Broker {#definitionsMessageBroker}",
+        "slug": "definitionsMessageBroker",
+        "lvl": 4,
         "i": 4,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessageBroker\"></a>Message Broker",
-        "slug": "message-broker",
+        "content": "Message {#definitionsMessage}",
+        "slug": "definitionsMessage",
         "lvl": 4,
         "i": 5,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessage\"></a>Message",
-        "slug": "message",
+        "content": "Topic {#definitionstTopic}",
+        "slug": "definitionstTopic",
         "lvl": 4,
         "i": 6,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionstTopic\"></a>Topic",
-        "slug": "topic",
+        "content": "Process {#definitionsProcess}",
+        "slug": "definitionsProcess",
         "lvl": 4,
         "i": 7,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProcess\"></a>Process",
-        "slug": "process",
+        "content": "Producer {#definitionsProducer}",
+        "slug": "definitionsProducer",
         "lvl": 4,
         "i": 8,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProducer\"></a>Producer",
-        "slug": "producer",
+        "content": "Consumer {#definitionsConsumer}",
+        "slug": "definitionsConsumer",
         "lvl": 4,
         "i": 9,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsConsumer\"></a>Consumer",
-        "slug": "consumer",
+        "content": "Topic Templating {#definitionsTopicTemplating}",
+        "slug": "definitionsTopicTemplating",
         "lvl": 4,
         "i": 10,
-        "seen": 0
-      },
-      {
-        "content": "<a name=\"definitionsTopicTemplating\"></a>Topic Templating",
-        "slug": "topic-templating",
-        "lvl": 4,
-        "i": 11,
         "seen": 0
       },
       {
         "content": "Specification",
         "slug": "specification",
         "lvl": 2,
-        "i": 12,
+        "i": 11,
         "seen": 0
       },
       {
         "content": "Format",
         "slug": "format",
         "lvl": 3,
-        "i": 13,
+        "i": 12,
         "seen": 0
       },
       {
         "content": "File Structure",
         "slug": "file-structure",
         "lvl": 3,
-        "i": 14,
+        "i": 13,
         "seen": 0
       },
       {
         "content": "Schema",
         "slug": "schema",
         "lvl": 3,
-        "i": 15,
+        "i": 14,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SObject\"></a>AsyncAPI Object",
-        "slug": "asyncapi-object",
+        "content": "AsyncAPI Object {#A2SObject}",
+        "slug": "A2SObject",
         "lvl": 4,
-        "i": 16,
+        "i": 15,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
         "slug": "fixed-fields",
         "lvl": 5,
+        "i": 16,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI Version String {#A2SVersionString}",
+        "slug": "A2SVersionString",
+        "lvl": 4,
         "i": 17,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SVersionString\"></a>AsyncAPI Version String",
-        "slug": "asyncapi-version-string",
+        "content": "Info Object {#infoObject}",
+        "slug": "infoObject",
         "lvl": 4,
         "i": 18,
         "seen": 0
       },
       {
-        "content": "<a name=\"infoObject\"></a>Info Object",
-        "slug": "info-object",
-        "lvl": 4,
-        "i": 19,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-1",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 20,
+        "i": 19,
         "seen": 1
       },
       {
         "content": "Info Object Example:",
         "slug": "info-object-example",
         "lvl": 5,
+        "i": 20,
+        "seen": 0
+      },
+      {
+        "content": "Contact Object {#contactObject}",
+        "slug": "contactObject",
+        "lvl": 4,
         "i": 21,
         "seen": 0
       },
       {
-        "content": "<a name=\"contactObject\"></a>Contact Object",
-        "slug": "contact-object",
-        "lvl": 4,
-        "i": 22,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-2",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 23,
+        "i": 22,
         "seen": 2
       },
       {
         "content": "Contact Object Example:",
         "slug": "contact-object-example",
         "lvl": 5,
+        "i": 23,
+        "seen": 0
+      },
+      {
+        "content": "License Object {#licenseObject}",
+        "slug": "licenseObject",
+        "lvl": 4,
         "i": 24,
         "seen": 0
       },
       {
-        "content": "<a name=\"licenseObject\"></a>License Object",
-        "slug": "license-object",
-        "lvl": 4,
-        "i": 25,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-3",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 26,
+        "i": 25,
         "seen": 3
       },
       {
         "content": "License Object Example:",
         "slug": "license-object-example",
         "lvl": 5,
-        "i": 27,
+        "i": 26,
         "seen": 0
       },
       {
-        "content": "<a name=\"baseTopicString\"></a>Base Topic String",
-        "slug": "base-topic-string",
+        "content": "Base Topic String {#baseTopicString}",
+        "slug": "baseTopicString",
         "lvl": 4,
-        "i": 28,
+        "i": 27,
         "seen": 0
       },
       {
         "content": "Base Topic String Example:",
         "slug": "base-topic-string-example",
         "lvl": 5,
+        "i": 28,
+        "seen": 0
+      },
+      {
+        "content": "Server Object {#serverObject}",
+        "slug": "serverObject",
+        "lvl": 4,
         "i": 29,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverObject\"></a>Server Object",
-        "slug": "server-object",
-        "lvl": 4,
-        "i": 30,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-4",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 31,
+        "i": 30,
         "seen": 4
       },
       {
         "content": "Server Object Example",
         "slug": "server-object-example",
         "lvl": 5,
+        "i": 31,
+        "seen": 0
+      },
+      {
+        "content": "Server Variable Object {#serverVariableObject}",
+        "slug": "serverVariableObject",
+        "lvl": 4,
         "i": 32,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverVariableObject\"></a>Server Variable Object",
-        "slug": "server-variable-object",
-        "lvl": 4,
-        "i": 33,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-5",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 34,
+        "i": 33,
         "seen": 5
       },
       {
-        "content": "<a name=\"topicsObject\"></a>Topics Object",
-        "slug": "topics-object",
+        "content": "Topics Object {#topicsObject}",
+        "slug": "topicsObject",
         "lvl": 4,
-        "i": 35,
+        "i": 34,
         "seen": 0
       },
       {
         "content": "Patterned Fields",
         "slug": "patterned-fields",
         "lvl": 5,
-        "i": 36,
+        "i": 35,
         "seen": 0
       },
       {
         "content": "Topics Object Example",
         "slug": "topics-object-example",
         "lvl": 5,
+        "i": 36,
+        "seen": 0
+      },
+      {
+        "content": "Topic Item Object {#topicItemObject}",
+        "slug": "topicItemObject",
+        "lvl": 4,
         "i": 37,
         "seen": 0
       },
       {
-        "content": "<a name=\"topicItemObject\"></a>Topic Item Object",
-        "slug": "topic-item-object",
-        "lvl": 4,
-        "i": 38,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-6",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 39,
+        "i": 38,
         "seen": 6
       },
       {
         "content": "Topic Item Object Example",
         "slug": "topic-item-object-example",
         "lvl": 5,
+        "i": 39,
+        "seen": 0
+      },
+      {
+        "content": "Parameter Object {#parameterObject}",
+        "slug": "parameterObject",
+        "lvl": 4,
         "i": 40,
         "seen": 0
       },
       {
-        "content": "<a name=\"parameterObject\"></a>Parameter Object",
-        "slug": "parameter-object",
-        "lvl": 4,
-        "i": 41,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-7",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 42,
+        "i": 41,
         "seen": 7
       },
       {
         "content": "Parameter Object Example",
         "slug": "parameter-object-example",
         "lvl": 5,
+        "i": 42,
+        "seen": 0
+      },
+      {
+        "content": "Message Object {#messageObject}",
+        "slug": "messageObject",
+        "lvl": 4,
         "i": 43,
         "seen": 0
       },
       {
-        "content": "<a name=\"messageObject\"></a>Message Object",
-        "slug": "message-object",
-        "lvl": 4,
-        "i": 44,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-8",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 45,
+        "i": 44,
         "seen": 8
       },
       {
         "content": "Message Object Example",
         "slug": "message-object-example",
         "lvl": 5,
+        "i": 45,
+        "seen": 0
+      },
+      {
+        "content": "Tag Object {#tagObject}",
+        "slug": "tagObject",
+        "lvl": 4,
         "i": 46,
         "seen": 0
       },
       {
-        "content": "<a name=\"tagObject\"></a>Tag Object",
-        "slug": "tag-object",
-        "lvl": 4,
-        "i": 47,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-9",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 48,
+        "i": 47,
         "seen": 9
       },
       {
         "content": "Tag Object Example",
         "slug": "tag-object-example",
         "lvl": 5,
+        "i": 48,
+        "seen": 0
+      },
+      {
+        "content": "External Documentation Object {#externalDocumentationObject}",
+        "slug": "externalDocumentationObject",
+        "lvl": 4,
         "i": 49,
         "seen": 0
       },
       {
-        "content": "<a name=\"externalDocumentationObject\"></a>External Documentation Object",
-        "slug": "external-documentation-object",
-        "lvl": 4,
-        "i": 50,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-10",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 51,
+        "i": 50,
         "seen": 10
       },
       {
         "content": "External Documentation Object Example",
         "slug": "external-documentation-object-example",
         "lvl": 5,
+        "i": 51,
+        "seen": 0
+      },
+      {
+        "content": "Reference Object {#referenceObject}",
+        "slug": "referenceObject",
+        "lvl": 4,
         "i": 52,
         "seen": 0
       },
       {
-        "content": "<a name=\"referenceObject\"></a>Reference Object",
-        "slug": "reference-object",
-        "lvl": 4,
-        "i": 53,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-11",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 54,
+        "i": 53,
         "seen": 11
       },
       {
         "content": "Reference Object Example",
         "slug": "reference-object-example",
         "lvl": 5,
+        "i": 54,
+        "seen": 0
+      },
+      {
+        "content": "Components Object {#componentsObject}",
+        "slug": "componentsObject",
+        "lvl": 4,
         "i": 55,
         "seen": 0
       },
       {
-        "content": "<a name=\"componentsObject\"></a>Components Object",
-        "slug": "components-object",
-        "lvl": 4,
-        "i": 56,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-12",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 57,
+        "i": 56,
         "seen": 12
       },
       {
         "content": "Components Object Example",
         "slug": "components-object-example",
         "lvl": 5,
-        "i": 58,
+        "i": 57,
         "seen": 0
       },
       {
-        "content": "<a name=\"schemaObject\"></a>Schema Object",
-        "slug": "schema-object",
+        "content": "Schema Object {#schemaObject}",
+        "slug": "schemaObject",
         "lvl": 4,
-        "i": 59,
+        "i": 58,
         "seen": 0
       },
       {
         "content": "Properties",
         "slug": "properties",
         "lvl": 5,
-        "i": 60,
+        "i": 59,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-13",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 61,
+        "i": 60,
         "seen": 13
       },
       {
-        "content": "<a name=\"schemaComposition\"></a>Composition and Inheritance (Polymorphism)",
-        "slug": "composition-and-inheritance-polymorphism",
+        "content": "Composition and Inheritance (Polymorphism) {#schemaComposition}",
+        "slug": "schemaComposition",
         "lvl": 6,
-        "i": 62,
+        "i": 61,
         "seen": 0
       },
       {
         "content": "XML Modeling",
         "slug": "xml-modeling",
         "lvl": 6,
-        "i": 63,
+        "i": 62,
         "seen": 0
       },
       {
         "content": "Schema Object Examples",
         "slug": "schema-object-examples",
         "lvl": 5,
-        "i": 64,
+        "i": 63,
         "seen": 0
       },
       {
         "content": "Primitive Sample",
         "slug": "primitive-sample",
         "lvl": 6,
-        "i": 65,
+        "i": 64,
         "seen": 0
       },
       {
         "content": "Simple Model",
         "slug": "simple-model",
         "lvl": 6,
-        "i": 66,
+        "i": 65,
         "seen": 0
       },
       {
         "content": "Model with Map/Dictionary Properties",
         "slug": "model-with-mapdictionary-properties",
         "lvl": 6,
-        "i": 67,
+        "i": 66,
         "seen": 0
       },
       {
         "content": "Model with Example",
         "slug": "model-with-example",
         "lvl": 6,
-        "i": 68,
+        "i": 67,
         "seen": 0
       },
       {
         "content": "Models with Composition",
         "slug": "models-with-composition",
         "lvl": 6,
-        "i": 69,
+        "i": 68,
         "seen": 0
       },
       {
         "content": "Models with Polymorphism Support",
         "slug": "models-with-polymorphism-support",
         "lvl": 6,
+        "i": 69,
+        "seen": 0
+      },
+      {
+        "content": "XML Object {#xmlObject}",
+        "slug": "xmlObject",
+        "lvl": 4,
         "i": 70,
         "seen": 0
       },
       {
-        "content": "<a name=\"xmlObject\"></a>XML Object",
-        "slug": "xml-object",
-        "lvl": 4,
-        "i": 71,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-14",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 72,
+        "i": 71,
         "seen": 14
       },
       {
         "content": "XML Object Examples",
         "slug": "xml-object-examples",
         "lvl": 5,
-        "i": 73,
+        "i": 72,
         "seen": 0
       },
       {
         "content": "No XML Element",
         "slug": "no-xml-element",
         "lvl": 6,
-        "i": 74,
+        "i": 73,
         "seen": 0
       },
       {
         "content": "XML Name Replacement",
         "slug": "xml-name-replacement",
         "lvl": 6,
-        "i": 75,
+        "i": 74,
         "seen": 0
       },
       {
         "content": "XML Attribute, Prefix and Namespace",
         "slug": "xml-attribute-prefix-and-namespace",
         "lvl": 6,
-        "i": 76,
+        "i": 75,
         "seen": 0
       },
       {
         "content": "XML Arrays",
         "slug": "xml-arrays",
         "lvl": 6,
+        "i": 76,
+        "seen": 0
+      },
+      {
+        "content": "Security Scheme Object {#securitySchemeObject}",
+        "slug": "securitySchemeObject",
+        "lvl": 4,
         "i": 77,
         "seen": 0
       },
       {
-        "content": "<a name=\"securitySchemeObject\"></a>Security Scheme Object",
-        "slug": "security-scheme-object",
-        "lvl": 4,
-        "i": 78,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-15",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 79,
+        "i": 78,
         "seen": 15
       },
       {
         "content": "Security Scheme Object Example",
         "slug": "security-scheme-object-example",
         "lvl": 5,
-        "i": 80,
+        "i": 79,
         "seen": 0
       },
       {
         "content": "User/Password Authentication Sample",
         "slug": "userpassword-authentication-sample",
         "lvl": 6,
-        "i": 81,
+        "i": 80,
         "seen": 0
       },
       {
         "content": "API Key Authentication Sample",
         "slug": "api-key-authentication-sample",
         "lvl": 6,
-        "i": 82,
+        "i": 81,
         "seen": 0
       },
       {
         "content": "X.509 Authentication Sample",
         "slug": "x509-authentication-sample",
         "lvl": 6,
-        "i": 83,
+        "i": 82,
         "seen": 0
       },
       {
         "content": "End-to-end Encryption Authentication Sample",
         "slug": "end-to-end-encryption-authentication-sample",
         "lvl": 6,
-        "i": 84,
+        "i": 83,
         "seen": 0
       },
       {
         "content": "Basic Authentication Sample",
         "slug": "basic-authentication-sample",
         "lvl": 6,
-        "i": 85,
+        "i": 84,
         "seen": 0
       },
       {
         "content": "API Key Sample",
         "slug": "api-key-sample",
         "lvl": 6,
-        "i": 86,
+        "i": 85,
         "seen": 0
       },
       {
         "content": "JWT Bearer Sample",
         "slug": "jwt-bearer-sample",
         "lvl": 6,
+        "i": 86,
+        "seen": 0
+      },
+      {
+        "content": "Security Requirement Object {#securityRequirementObject}",
+        "slug": "securityRequirementObject",
+        "lvl": 4,
         "i": 87,
         "seen": 0
       },
       {
-        "content": "<a name=\"securityRequirementObject\"></a>Security Requirement Object",
-        "slug": "security-requirement-object",
-        "lvl": 4,
-        "i": 88,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-1",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 89,
+        "i": 88,
         "seen": 1
       },
       {
         "content": "Security Requirement Object Examples",
         "slug": "security-requirement-object-examples",
         "lvl": 5,
-        "i": 90,
+        "i": 89,
         "seen": 0
       },
       {
         "content": "User/Password Security Requirement",
         "slug": "userpassword-security-requirement",
         "lvl": 6,
-        "i": 91,
+        "i": 90,
         "seen": 0
       },
       {
         "content": "API Key Security Requirement",
         "slug": "api-key-security-requirement",
         "lvl": 6,
+        "i": 91,
+        "seen": 0
+      },
+      {
+        "content": "Specification Extensions {#specificationExtensions}",
+        "slug": "specificationExtensions",
+        "lvl": 3,
         "i": 92,
         "seen": 0
       },
       {
-        "content": "<a name=\"specificationExtensions\"></a>Specification Extensions",
-        "slug": "specification-extensions",
+        "content": "Data Type Formats {#dataTypeFormat}",
+        "slug": "dataTypeFormat",
         "lvl": 3,
         "i": 93,
         "seen": 0
-      },
-      {
-        "content": "<a name=\"dataTypeFormat\"></a>Data Type Formats",
-        "slug": "data-type-formats",
-        "lvl": 3,
-        "i": 94,
-        "seen": 0
       }
     ],
+    "readingTime": 34,
+    "excerpt": "Disclaimer\nPart of this content has been taken from the great work done by the folks at the Open API Initiative. Mainly because it&amp#39;s a great work and we want to keep as much compatibility as po",
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -1626,713 +1626,708 @@
         "seen": 0
       },
       {
-        "content": "Table of Contents",
-        "slug": "table-of-contents",
+        "content": "Definitions",
+        "slug": "definitions",
         "lvl": 2,
         "i": 3,
         "seen": 0
       },
       {
-        "content": "Definitions",
-        "slug": "definitions",
-        "lvl": 2,
+        "content": "Message Broker {#definitionsMessageBroker}",
+        "slug": "definitionsMessageBroker",
+        "lvl": 4,
         "i": 4,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessageBroker\"></a>Message Broker",
-        "slug": "message-broker",
+        "content": "Message {#definitionsMessage}",
+        "slug": "definitionsMessage",
         "lvl": 4,
         "i": 5,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessage\"></a>Message",
-        "slug": "message",
+        "content": "Topic {#definitionstTopic}",
+        "slug": "definitionstTopic",
         "lvl": 4,
         "i": 6,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionstTopic\"></a>Topic",
-        "slug": "topic",
+        "content": "Process {#definitionsProcess}",
+        "slug": "definitionsProcess",
         "lvl": 4,
         "i": 7,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProcess\"></a>Process",
-        "slug": "process",
+        "content": "Producer {#definitionsProducer}",
+        "slug": "definitionsProducer",
         "lvl": 4,
         "i": 8,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProducer\"></a>Producer",
-        "slug": "producer",
+        "content": "Consumer {#definitionsConsumer}",
+        "slug": "definitionsConsumer",
         "lvl": 4,
         "i": 9,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsConsumer\"></a>Consumer",
-        "slug": "consumer",
+        "content": "Topic Templating {#definitionsTopicTemplating}",
+        "slug": "definitionsTopicTemplating",
         "lvl": 4,
         "i": 10,
-        "seen": 0
-      },
-      {
-        "content": "<a name=\"definitionsTopicTemplating\"></a>Topic Templating",
-        "slug": "topic-templating",
-        "lvl": 4,
-        "i": 11,
         "seen": 0
       },
       {
         "content": "Specification",
         "slug": "specification",
         "lvl": 2,
-        "i": 12,
+        "i": 11,
         "seen": 0
       },
       {
         "content": "Format",
         "slug": "format",
         "lvl": 3,
-        "i": 13,
+        "i": 12,
         "seen": 0
       },
       {
         "content": "File Structure",
         "slug": "file-structure",
         "lvl": 3,
-        "i": 14,
+        "i": 13,
         "seen": 0
       },
       {
         "content": "Schema",
         "slug": "schema",
         "lvl": 3,
-        "i": 15,
+        "i": 14,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SObject\"></a>AsyncAPI Object",
-        "slug": "asyncapi-object",
+        "content": "AsyncAPI Object {#A2SObject}",
+        "slug": "A2SObject",
         "lvl": 4,
-        "i": 16,
+        "i": 15,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
         "slug": "fixed-fields",
         "lvl": 5,
+        "i": 16,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI Version String {#A2SVersionString}",
+        "slug": "A2SVersionString",
+        "lvl": 4,
         "i": 17,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SVersionString\"></a>AsyncAPI Version String",
-        "slug": "asyncapi-version-string",
+        "content": "Info Object {#infoObject}",
+        "slug": "infoObject",
         "lvl": 4,
         "i": 18,
         "seen": 0
       },
       {
-        "content": "<a name=\"infoObject\"></a>Info Object",
-        "slug": "info-object",
-        "lvl": 4,
-        "i": 19,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-1",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 20,
+        "i": 19,
         "seen": 1
       },
       {
         "content": "Info Object Example:",
         "slug": "info-object-example",
         "lvl": 5,
+        "i": 20,
+        "seen": 0
+      },
+      {
+        "content": "Contact Object {#contactObject}",
+        "slug": "contactObject",
+        "lvl": 4,
         "i": 21,
         "seen": 0
       },
       {
-        "content": "<a name=\"contactObject\"></a>Contact Object",
-        "slug": "contact-object",
-        "lvl": 4,
-        "i": 22,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-2",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 23,
+        "i": 22,
         "seen": 2
       },
       {
         "content": "Contact Object Example:",
         "slug": "contact-object-example",
         "lvl": 5,
+        "i": 23,
+        "seen": 0
+      },
+      {
+        "content": "License Object {#licenseObject}",
+        "slug": "licenseObject",
+        "lvl": 4,
         "i": 24,
         "seen": 0
       },
       {
-        "content": "<a name=\"licenseObject\"></a>License Object",
-        "slug": "license-object",
-        "lvl": 4,
-        "i": 25,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-3",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 26,
+        "i": 25,
         "seen": 3
       },
       {
         "content": "License Object Example:",
         "slug": "license-object-example",
         "lvl": 5,
-        "i": 27,
+        "i": 26,
         "seen": 0
       },
       {
-        "content": "<a name=\"baseTopicString\"></a>Base Topic String",
-        "slug": "base-topic-string",
+        "content": "Base Topic String {#baseTopicString}",
+        "slug": "baseTopicString",
         "lvl": 4,
-        "i": 28,
+        "i": 27,
         "seen": 0
       },
       {
         "content": "Base Topic String Example:",
         "slug": "base-topic-string-example",
         "lvl": 5,
+        "i": 28,
+        "seen": 0
+      },
+      {
+        "content": "Server Object {#serverObject}",
+        "slug": "serverObject",
+        "lvl": 4,
         "i": 29,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverObject\"></a>Server Object",
-        "slug": "server-object",
-        "lvl": 4,
-        "i": 30,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-4",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 31,
+        "i": 30,
         "seen": 4
       },
       {
         "content": "Server Object Example",
         "slug": "server-object-example",
         "lvl": 5,
+        "i": 31,
+        "seen": 0
+      },
+      {
+        "content": "Server Variable Object {#serverVariableObject}",
+        "slug": "serverVariableObject",
+        "lvl": 4,
         "i": 32,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverVariableObject\"></a>Server Variable Object",
-        "slug": "server-variable-object",
-        "lvl": 4,
-        "i": 33,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-5",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 34,
+        "i": 33,
         "seen": 5
       },
       {
-        "content": "<a name=\"topicsObject\"></a>Topics Object",
-        "slug": "topics-object",
+        "content": "Topics Object {#topicsObject}",
+        "slug": "topicsObject",
         "lvl": 4,
-        "i": 35,
+        "i": 34,
         "seen": 0
       },
       {
         "content": "Patterned Fields",
         "slug": "patterned-fields",
         "lvl": 5,
-        "i": 36,
+        "i": 35,
         "seen": 0
       },
       {
         "content": "Topics Object Example",
         "slug": "topics-object-example",
         "lvl": 5,
+        "i": 36,
+        "seen": 0
+      },
+      {
+        "content": "Topic Item Object {#topicItemObject}",
+        "slug": "topicItemObject",
+        "lvl": 4,
         "i": 37,
         "seen": 0
       },
       {
-        "content": "<a name=\"topicItemObject\"></a>Topic Item Object",
-        "slug": "topic-item-object",
-        "lvl": 4,
-        "i": 38,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-6",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 39,
+        "i": 38,
         "seen": 6
       },
       {
         "content": "Topic Item Object Example",
         "slug": "topic-item-object-example",
         "lvl": 5,
+        "i": 39,
+        "seen": 0
+      },
+      {
+        "content": "Parameter Object {#parameterObject}",
+        "slug": "parameterObject",
+        "lvl": 4,
         "i": 40,
         "seen": 0
       },
       {
-        "content": "<a name=\"parameterObject\"></a>Parameter Object",
-        "slug": "parameter-object",
-        "lvl": 4,
-        "i": 41,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-7",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 42,
+        "i": 41,
         "seen": 7
       },
       {
         "content": "Parameter Object Example",
         "slug": "parameter-object-example",
         "lvl": 5,
+        "i": 42,
+        "seen": 0
+      },
+      {
+        "content": "Stream Object {#streamObject}",
+        "slug": "streamObject",
+        "lvl": 4,
         "i": 43,
         "seen": 0
       },
       {
-        "content": "<a name=\"streamObject\"></a>Stream Object",
-        "slug": "stream-object",
-        "lvl": 4,
-        "i": 44,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-8",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 45,
+        "i": 44,
         "seen": 8
       },
       {
         "content": "Stream Object Example",
         "slug": "stream-object-example",
         "lvl": 5,
+        "i": 45,
+        "seen": 0
+      },
+      {
+        "content": "Stream Framing Object {#streamFramingObject}",
+        "slug": "streamFramingObject",
+        "lvl": 4,
         "i": 46,
         "seen": 0
       },
       {
-        "content": "<a name=\"streamFramingObject\"></a>Stream Framing Object",
-        "slug": "stream-framing-object",
-        "lvl": 4,
-        "i": 47,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-9",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 48,
+        "i": 47,
         "seen": 9
       },
       {
         "content": "Stream Framing Object Example",
         "slug": "stream-framing-object-example",
         "lvl": 5,
+        "i": 48,
+        "seen": 0
+      },
+      {
+        "content": "Events Object {#eventsObject}",
+        "slug": "eventsObject",
+        "lvl": 4,
         "i": 49,
         "seen": 0
       },
       {
-        "content": "<a name=\"eventsObject\"></a>Events Object",
-        "slug": "events-object",
-        "lvl": 4,
-        "i": 50,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-10",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 51,
+        "i": 50,
         "seen": 10
       },
       {
         "content": "Events Object Example",
         "slug": "events-object-example",
         "lvl": 5,
+        "i": 51,
+        "seen": 0
+      },
+      {
+        "content": "Message Object {#messageObject}",
+        "slug": "messageObject",
+        "lvl": 4,
         "i": 52,
         "seen": 0
       },
       {
-        "content": "<a name=\"messageObject\"></a>Message Object",
-        "slug": "message-object",
-        "lvl": 4,
-        "i": 53,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-11",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 54,
+        "i": 53,
         "seen": 11
       },
       {
         "content": "Message Object Example",
         "slug": "message-object-example",
         "lvl": 5,
+        "i": 54,
+        "seen": 0
+      },
+      {
+        "content": "Tag Object {#tagObject}",
+        "slug": "tagObject",
+        "lvl": 4,
         "i": 55,
         "seen": 0
       },
       {
-        "content": "<a name=\"tagObject\"></a>Tag Object",
-        "slug": "tag-object",
-        "lvl": 4,
-        "i": 56,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-12",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 57,
+        "i": 56,
         "seen": 12
       },
       {
         "content": "Tag Object Example",
         "slug": "tag-object-example",
         "lvl": 5,
+        "i": 57,
+        "seen": 0
+      },
+      {
+        "content": "External Documentation Object {#externalDocumentationObject}",
+        "slug": "externalDocumentationObject",
+        "lvl": 4,
         "i": 58,
         "seen": 0
       },
       {
-        "content": "<a name=\"externalDocumentationObject\"></a>External Documentation Object",
-        "slug": "external-documentation-object",
-        "lvl": 4,
-        "i": 59,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-13",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 60,
+        "i": 59,
         "seen": 13
       },
       {
         "content": "External Documentation Object Example",
         "slug": "external-documentation-object-example",
         "lvl": 5,
+        "i": 60,
+        "seen": 0
+      },
+      {
+        "content": "Reference Object {#referenceObject}",
+        "slug": "referenceObject",
+        "lvl": 4,
         "i": 61,
         "seen": 0
       },
       {
-        "content": "<a name=\"referenceObject\"></a>Reference Object",
-        "slug": "reference-object",
-        "lvl": 4,
-        "i": 62,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-14",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 63,
+        "i": 62,
         "seen": 14
       },
       {
         "content": "Reference Object Example",
         "slug": "reference-object-example",
         "lvl": 5,
+        "i": 63,
+        "seen": 0
+      },
+      {
+        "content": "Components Object {#componentsObject}",
+        "slug": "componentsObject",
+        "lvl": 4,
         "i": 64,
         "seen": 0
       },
       {
-        "content": "<a name=\"componentsObject\"></a>Components Object",
-        "slug": "components-object",
-        "lvl": 4,
-        "i": 65,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-15",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 66,
+        "i": 65,
         "seen": 15
       },
       {
         "content": "Components Object Example",
         "slug": "components-object-example",
         "lvl": 5,
-        "i": 67,
+        "i": 66,
         "seen": 0
       },
       {
-        "content": "<a name=\"schemaObject\"></a>Schema Object",
-        "slug": "schema-object",
+        "content": "Schema Object {#schemaObject}",
+        "slug": "schemaObject",
         "lvl": 4,
-        "i": 68,
+        "i": 67,
         "seen": 0
       },
       {
         "content": "Properties",
         "slug": "properties",
         "lvl": 5,
-        "i": 69,
+        "i": 68,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-16",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 70,
+        "i": 69,
         "seen": 16
       },
       {
-        "content": "<a name=\"schemaComposition\"></a>Composition and Inheritance (Polymorphism)",
-        "slug": "composition-and-inheritance-polymorphism",
+        "content": "Composition and Inheritance (Polymorphism) {#schemaComposition}",
+        "slug": "schemaComposition",
         "lvl": 6,
-        "i": 71,
+        "i": 70,
         "seen": 0
       },
       {
         "content": "XML Modeling",
         "slug": "xml-modeling",
         "lvl": 6,
-        "i": 72,
+        "i": 71,
         "seen": 0
       },
       {
         "content": "Schema Object Examples",
         "slug": "schema-object-examples",
         "lvl": 5,
-        "i": 73,
+        "i": 72,
         "seen": 0
       },
       {
         "content": "Primitive Sample",
         "slug": "primitive-sample",
         "lvl": 6,
-        "i": 74,
+        "i": 73,
         "seen": 0
       },
       {
         "content": "Simple Model",
         "slug": "simple-model",
         "lvl": 6,
-        "i": 75,
+        "i": 74,
         "seen": 0
       },
       {
         "content": "Model with Map/Dictionary Properties",
         "slug": "model-with-mapdictionary-properties",
         "lvl": 6,
-        "i": 76,
+        "i": 75,
         "seen": 0
       },
       {
         "content": "Model with Example",
         "slug": "model-with-example",
         "lvl": 6,
-        "i": 77,
+        "i": 76,
         "seen": 0
       },
       {
         "content": "Models with Composition",
         "slug": "models-with-composition",
         "lvl": 6,
-        "i": 78,
+        "i": 77,
         "seen": 0
       },
       {
         "content": "Models with Polymorphism Support",
         "slug": "models-with-polymorphism-support",
         "lvl": 6,
+        "i": 78,
+        "seen": 0
+      },
+      {
+        "content": "XML Object {#xmlObject}",
+        "slug": "xmlObject",
+        "lvl": 4,
         "i": 79,
         "seen": 0
       },
       {
-        "content": "<a name=\"xmlObject\"></a>XML Object",
-        "slug": "xml-object",
-        "lvl": 4,
-        "i": 80,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-17",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 81,
+        "i": 80,
         "seen": 17
       },
       {
         "content": "XML Object Examples",
         "slug": "xml-object-examples",
         "lvl": 5,
-        "i": 82,
+        "i": 81,
         "seen": 0
       },
       {
         "content": "No XML Element",
         "slug": "no-xml-element",
         "lvl": 6,
-        "i": 83,
+        "i": 82,
         "seen": 0
       },
       {
         "content": "XML Name Replacement",
         "slug": "xml-name-replacement",
         "lvl": 6,
-        "i": 84,
+        "i": 83,
         "seen": 0
       },
       {
         "content": "XML Attribute, Prefix and Namespace",
         "slug": "xml-attribute-prefix-and-namespace",
         "lvl": 6,
-        "i": 85,
+        "i": 84,
         "seen": 0
       },
       {
         "content": "XML Arrays",
         "slug": "xml-arrays",
         "lvl": 6,
+        "i": 85,
+        "seen": 0
+      },
+      {
+        "content": "Security Scheme Object {#securitySchemeObject}",
+        "slug": "securitySchemeObject",
+        "lvl": 4,
         "i": 86,
         "seen": 0
       },
       {
-        "content": "<a name=\"securitySchemeObject\"></a>Security Scheme Object",
-        "slug": "security-scheme-object",
-        "lvl": 4,
-        "i": 87,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-18",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 88,
+        "i": 87,
         "seen": 18
       },
       {
         "content": "Security Scheme Object Example",
         "slug": "security-scheme-object-example",
         "lvl": 5,
-        "i": 89,
+        "i": 88,
         "seen": 0
       },
       {
         "content": "User/Password Authentication Sample",
         "slug": "userpassword-authentication-sample",
         "lvl": 6,
-        "i": 90,
+        "i": 89,
         "seen": 0
       },
       {
         "content": "API Key Authentication Sample",
         "slug": "api-key-authentication-sample",
         "lvl": 6,
-        "i": 91,
+        "i": 90,
         "seen": 0
       },
       {
         "content": "X.509 Authentication Sample",
         "slug": "x509-authentication-sample",
         "lvl": 6,
-        "i": 92,
+        "i": 91,
         "seen": 0
       },
       {
         "content": "End-to-end Encryption Authentication Sample",
         "slug": "end-to-end-encryption-authentication-sample",
         "lvl": 6,
-        "i": 93,
+        "i": 92,
         "seen": 0
       },
       {
         "content": "Basic Authentication Sample",
         "slug": "basic-authentication-sample",
         "lvl": 6,
-        "i": 94,
+        "i": 93,
         "seen": 0
       },
       {
         "content": "API Key Sample",
         "slug": "api-key-sample",
         "lvl": 6,
-        "i": 95,
+        "i": 94,
         "seen": 0
       },
       {
         "content": "JWT Bearer Sample",
         "slug": "jwt-bearer-sample",
         "lvl": 6,
+        "i": 95,
+        "seen": 0
+      },
+      {
+        "content": "Security Requirement Object {#securityRequirementObject}",
+        "slug": "securityRequirementObject",
+        "lvl": 4,
         "i": 96,
         "seen": 0
       },
       {
-        "content": "<a name=\"securityRequirementObject\"></a>Security Requirement Object",
-        "slug": "security-requirement-object",
-        "lvl": 4,
-        "i": 97,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-1",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 98,
+        "i": 97,
         "seen": 1
       },
       {
         "content": "Security Requirement Object Examples",
         "slug": "security-requirement-object-examples",
         "lvl": 5,
-        "i": 99,
+        "i": 98,
         "seen": 0
       },
       {
         "content": "User/Password Security Requirement",
         "slug": "userpassword-security-requirement",
         "lvl": 6,
-        "i": 100,
+        "i": 99,
         "seen": 0
       },
       {
         "content": "API Key Security Requirement",
         "slug": "api-key-security-requirement",
         "lvl": 6,
+        "i": 100,
+        "seen": 0
+      },
+      {
+        "content": "Specification Extensions {#specificationExtensions}",
+        "slug": "specificationExtensions",
+        "lvl": 3,
         "i": 101,
         "seen": 0
       },
       {
-        "content": "<a name=\"specificationExtensions\"></a>Specification Extensions",
-        "slug": "specification-extensions",
+        "content": "Data Type Formats {#dataTypeFormat}",
+        "slug": "dataTypeFormat",
         "lvl": 3,
         "i": 102,
         "seen": 0
-      },
-      {
-        "content": "<a name=\"dataTypeFormat\"></a>Data Type Formats",
-        "slug": "data-type-formats",
-        "lvl": 3,
-        "i": 103,
-        "seen": 0
       }
     ],
+    "readingTime": 36,
+    "excerpt": "Disclaimer\nPart of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp#39;s a great work and we want to keep as much compatibility as pos",
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -2364,860 +2359,855 @@
         "seen": 0
       },
       {
-        "content": "Table of Contents",
-        "slug": "table-of-contents",
+        "content": "Definitions {#definitions}",
+        "slug": "definitions",
         "lvl": 2,
         "i": 3,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitions\"/>Definitions",
-        "slug": "definitions",
-        "lvl": 2,
+        "content": "Application {#definitionsApplication}",
+        "slug": "definitionsApplication",
+        "lvl": 4,
         "i": 4,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsApplication\"></a>Application",
-        "slug": "application",
+        "content": "Producer {#definitionsProducer}",
+        "slug": "definitionsProducer",
         "lvl": 4,
         "i": 5,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProducer\"></a>Producer",
-        "slug": "producer",
+        "content": "Consumer {#definitionsConsumer}",
+        "slug": "definitionsConsumer",
         "lvl": 4,
         "i": 6,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsConsumer\"></a>Consumer",
-        "slug": "consumer",
+        "content": "Message {#definitionsMessage}",
+        "slug": "definitionsMessage",
         "lvl": 4,
         "i": 7,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsMessage\"></a>Message",
-        "slug": "message",
+        "content": "Channel {#definitionsChannel}",
+        "slug": "definitionsChannel",
         "lvl": 4,
         "i": 8,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsChannel\"></a>Channel",
-        "slug": "channel",
+        "content": "Protocol {#definitionsProtocol}",
+        "slug": "definitionsProtocol",
         "lvl": 4,
         "i": 9,
         "seen": 0
       },
       {
-        "content": "<a name=\"definitionsProtocol\"></a>Protocol",
-        "slug": "protocol",
-        "lvl": 4,
+        "content": "Specification {#specification}",
+        "slug": "specification",
+        "lvl": 2,
         "i": 10,
         "seen": 0
       },
       {
-        "content": "<a name=\"specification\"></a>Specification",
-        "slug": "specification",
-        "lvl": 2,
+        "content": "Format {#format}",
+        "slug": "format",
+        "lvl": 3,
         "i": 11,
         "seen": 0
       },
       {
-        "content": "<a name=\"format\"></a>Format",
-        "slug": "format",
+        "content": "File Structure {#file-structure}",
+        "slug": "file-structure",
         "lvl": 3,
         "i": 12,
         "seen": 0
       },
       {
-        "content": "<a name=\"file-structure\"></a>File Structure",
-        "slug": "file-structure",
+        "content": "Schema {#schema}",
+        "slug": "schema",
         "lvl": 3,
         "i": 13,
         "seen": 0
       },
       {
-        "content": "<a name=\"schema\"></a>Schema",
-        "slug": "schema",
-        "lvl": 3,
-        "i": 14,
-        "seen": 0
-      },
-      {
-        "content": "<a name=\"A2SObject\"></a>AsyncAPI Object",
-        "slug": "asyncapi-object",
+        "content": "AsyncAPI Object {#A2SObject}",
+        "slug": "A2SObject",
         "lvl": 4,
-        "i": 15,
+        "i": 14,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
         "slug": "fixed-fields",
         "lvl": 5,
+        "i": 15,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI Version String {#A2SVersionString}",
+        "slug": "A2SVersionString",
+        "lvl": 4,
         "i": 16,
         "seen": 0
       },
       {
-        "content": "<a name=\"A2SVersionString\"></a>AsyncAPI Version String",
-        "slug": "asyncapi-version-string",
+        "content": "Identifier {#A2SIdString}",
+        "slug": "A2SIdString",
         "lvl": 4,
         "i": 17,
-        "seen": 0
-      },
-      {
-        "content": "<a name=\"A2SIdString\"></a>Identifier",
-        "slug": "identifier",
-        "lvl": 4,
-        "i": 18,
         "seen": 0
       },
       {
         "content": "Examples",
         "slug": "examples",
         "lvl": 6,
+        "i": 18,
+        "seen": 0
+      },
+      {
+        "content": "Info Object {#infoObject}",
+        "slug": "infoObject",
+        "lvl": 4,
         "i": 19,
         "seen": 0
       },
       {
-        "content": "<a name=\"infoObject\"></a>Info Object",
-        "slug": "info-object",
-        "lvl": 4,
-        "i": 20,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-1",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 21,
+        "i": 20,
         "seen": 1
       },
       {
         "content": "Info Object Example:",
         "slug": "info-object-example",
         "lvl": 5,
+        "i": 21,
+        "seen": 0
+      },
+      {
+        "content": "Contact Object {#contactObject}",
+        "slug": "contactObject",
+        "lvl": 4,
         "i": 22,
         "seen": 0
       },
       {
-        "content": "<a name=\"contactObject\"></a>Contact Object",
-        "slug": "contact-object",
-        "lvl": 4,
-        "i": 23,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-2",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 24,
+        "i": 23,
         "seen": 2
       },
       {
         "content": "Contact Object Example:",
         "slug": "contact-object-example",
         "lvl": 5,
+        "i": 24,
+        "seen": 0
+      },
+      {
+        "content": "License Object {#licenseObject}",
+        "slug": "licenseObject",
+        "lvl": 4,
         "i": 25,
         "seen": 0
       },
       {
-        "content": "<a name=\"licenseObject\"></a>License Object",
-        "slug": "license-object",
-        "lvl": 4,
-        "i": 26,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-3",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 27,
+        "i": 26,
         "seen": 3
       },
       {
         "content": "License Object Example:",
         "slug": "license-object-example",
         "lvl": 5,
-        "i": 28,
+        "i": 27,
         "seen": 0
       },
       {
-        "content": "<a name=\"serversObject\"></a>Servers Object",
-        "slug": "servers-object",
+        "content": "Servers Object {#serversObject}",
+        "slug": "serversObject",
         "lvl": 4,
-        "i": 29,
+        "i": 28,
         "seen": 0
       },
       {
         "content": "Patterned Fields",
         "slug": "patterned-fields",
         "lvl": 5,
-        "i": 30,
+        "i": 29,
         "seen": 0
       },
       {
         "content": "Servers Object Example",
         "slug": "servers-object-example",
         "lvl": 5,
+        "i": 30,
+        "seen": 0
+      },
+      {
+        "content": "Server Object {#serverObject}",
+        "slug": "serverObject",
+        "lvl": 4,
         "i": 31,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverObject\"></a>Server Object",
-        "slug": "server-object",
-        "lvl": 4,
-        "i": 32,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-4",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 33,
+        "i": 32,
         "seen": 4
       },
       {
         "content": "Server Object Example",
         "slug": "server-object-example",
         "lvl": 5,
+        "i": 33,
+        "seen": 0
+      },
+      {
+        "content": "Server Variable Object {#serverVariableObject}",
+        "slug": "serverVariableObject",
+        "lvl": 4,
         "i": 34,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverVariableObject\"></a>Server Variable Object",
-        "slug": "server-variable-object",
-        "lvl": 4,
-        "i": 35,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-5",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 36,
+        "i": 35,
         "seen": 5
       },
       {
-        "content": "<a name=\"defaultContentTypeString\"></a>Default Content Type",
-        "slug": "default-content-type",
+        "content": "Default Content Type {#defaultContentTypeString}",
+        "slug": "defaultContentTypeString",
         "lvl": 4,
-        "i": 37,
+        "i": 36,
         "seen": 0
       },
       {
         "content": "Default Content Type Example",
         "slug": "default-content-type-example",
         "lvl": 5,
+        "i": 37,
+        "seen": 0
+      },
+      {
+        "content": "Channels Object {#channelsObject}",
+        "slug": "channelsObject",
+        "lvl": 4,
         "i": 38,
         "seen": 0
       },
       {
-        "content": "<a name=\"channelsObject\"></a>Channels Object",
-        "slug": "channels-object",
-        "lvl": 4,
-        "i": 39,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-1",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 40,
+        "i": 39,
         "seen": 1
       },
       {
         "content": "Channels Object Example",
         "slug": "channels-object-example",
         "lvl": 5,
+        "i": 40,
+        "seen": 0
+      },
+      {
+        "content": "Channel Item Object {#channelItemObject}",
+        "slug": "channelItemObject",
+        "lvl": 4,
         "i": 41,
         "seen": 0
       },
       {
-        "content": "<a name=\"channelItemObject\"></a>Channel Item Object",
-        "slug": "channel-item-object",
-        "lvl": 4,
-        "i": 42,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-6",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 43,
+        "i": 42,
         "seen": 6
       },
       {
         "content": "Channel Item Object Example",
         "slug": "channel-item-object-example",
         "lvl": 5,
+        "i": 43,
+        "seen": 0
+      },
+      {
+        "content": "Operation Object {#operationObject}",
+        "slug": "operationObject",
+        "lvl": 4,
         "i": 44,
         "seen": 0
       },
       {
-        "content": "<a name=\"operationObject\"></a>Operation Object",
-        "slug": "operation-object",
-        "lvl": 4,
-        "i": 45,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-7",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 46,
+        "i": 45,
         "seen": 7
       },
       {
         "content": "Operation Object Example",
         "slug": "operation-object-example",
         "lvl": 5,
+        "i": 46,
+        "seen": 0
+      },
+      {
+        "content": "Operation Trait Object {#operationTraitObject}",
+        "slug": "operationTraitObject",
+        "lvl": 4,
         "i": 47,
         "seen": 0
       },
       {
-        "content": "<a name=\"operationTraitObject\"></a>Operation Trait Object",
-        "slug": "operation-trait-object",
-        "lvl": 4,
-        "i": 48,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-8",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 49,
+        "i": 48,
         "seen": 8
       },
       {
         "content": "Operation Trait Object Example",
         "slug": "operation-trait-object-example",
         "lvl": 5,
+        "i": 49,
+        "seen": 0
+      },
+      {
+        "content": "Parameters Object {#parametersObject}",
+        "slug": "parametersObject",
+        "lvl": 4,
         "i": 50,
         "seen": 0
       },
       {
-        "content": "<a name=\"parametersObject\"></a>Parameters Object",
-        "slug": "parameters-object",
-        "lvl": 4,
-        "i": 51,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-2",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 52,
+        "i": 51,
         "seen": 2
       },
       {
         "content": "Parameters Object Example",
         "slug": "parameters-object-example",
         "lvl": 5,
+        "i": 52,
+        "seen": 0
+      },
+      {
+        "content": "Parameter Object {#parameterObject}",
+        "slug": "parameterObject",
+        "lvl": 4,
         "i": 53,
         "seen": 0
       },
       {
-        "content": "<a name=\"parameterObject\"></a>Parameter Object",
-        "slug": "parameter-object",
-        "lvl": 4,
-        "i": 54,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-9",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 55,
+        "i": 54,
         "seen": 9
       },
       {
         "content": "Parameter Object Example",
         "slug": "parameter-object-example",
         "lvl": 5,
+        "i": 55,
+        "seen": 0
+      },
+      {
+        "content": "Server Bindings Object {#serverBindingsObject}",
+        "slug": "serverBindingsObject",
+        "lvl": 4,
         "i": 56,
         "seen": 0
       },
       {
-        "content": "<a name=\"serverBindingsObject\"></a>Server Bindings Object",
-        "slug": "server-bindings-object",
-        "lvl": 4,
-        "i": 57,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-10",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 58,
+        "i": 57,
         "seen": 10
       },
       {
-        "content": "<a name=\"channelBindingsObject\"></a>Channel Bindings Object",
-        "slug": "channel-bindings-object",
+        "content": "Channel Bindings Object {#channelBindingsObject}",
+        "slug": "channelBindingsObject",
         "lvl": 4,
-        "i": 59,
+        "i": 58,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-11",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 60,
+        "i": 59,
         "seen": 11
       },
       {
-        "content": "<a name=\"operationBindingsObject\"></a>Operation Bindings Object",
-        "slug": "operation-bindings-object",
+        "content": "Operation Bindings Object {#operationBindingsObject}",
+        "slug": "operationBindingsObject",
         "lvl": 4,
-        "i": 61,
+        "i": 60,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-12",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 62,
+        "i": 61,
         "seen": 12
       },
       {
-        "content": "<a name=\"messageBindingsObject\"></a>Message Bindings Object",
-        "slug": "message-bindings-object",
+        "content": "Message Bindings Object {#messageBindingsObject}",
+        "slug": "messageBindingsObject",
         "lvl": 4,
-        "i": 63,
+        "i": 62,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-13",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 64,
+        "i": 63,
         "seen": 13
       },
       {
-        "content": "<a name=\"messageObject\"></a>Message Object",
-        "slug": "message-object",
+        "content": "Message Object {#messageObject}",
+        "slug": "messageObject",
         "lvl": 4,
-        "i": 65,
+        "i": 64,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-14",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 66,
+        "i": 65,
         "seen": 14
       },
       {
-        "content": "<a name=\"messageObjectSchemaFormatTable\"></a>Schema formats table",
-        "slug": "schema-formats-table",
+        "content": "Schema formats table {#messageObjectSchemaFormatTable}",
+        "slug": "messageObjectSchemaFormatTable",
         "lvl": 5,
-        "i": 67,
+        "i": 66,
         "seen": 0
       },
       {
         "content": "Message Object Example",
         "slug": "message-object-example",
         "lvl": 5,
+        "i": 67,
+        "seen": 0
+      },
+      {
+        "content": "Message Trait Object {#messageTraitObject}",
+        "slug": "messageTraitObject",
+        "lvl": 4,
         "i": 68,
         "seen": 0
       },
       {
-        "content": "<a name=\"messageTraitObject\"></a>Message Trait Object",
-        "slug": "message-trait-object",
-        "lvl": 4,
-        "i": 69,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-15",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 70,
+        "i": 69,
         "seen": 15
       },
       {
         "content": "Message Trait Object Example",
         "slug": "message-trait-object-example",
         "lvl": 5,
+        "i": 70,
+        "seen": 0
+      },
+      {
+        "content": "Tags Object {#tagsObject}",
+        "slug": "tagsObject",
+        "lvl": 4,
         "i": 71,
         "seen": 0
       },
       {
-        "content": "<a name=\"tagsObject\"></a>Tags Object",
-        "slug": "tags-object",
+        "content": "Tag Object {#tagObject}",
+        "slug": "tagObject",
         "lvl": 4,
         "i": 72,
         "seen": 0
       },
       {
-        "content": "<a name=\"tagObject\"></a>Tag Object",
-        "slug": "tag-object",
-        "lvl": 4,
-        "i": 73,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-16",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 74,
+        "i": 73,
         "seen": 16
       },
       {
         "content": "Tag Object Example",
         "slug": "tag-object-example",
         "lvl": 5,
+        "i": 74,
+        "seen": 0
+      },
+      {
+        "content": "External Documentation Object {#externalDocumentationObject}",
+        "slug": "externalDocumentationObject",
+        "lvl": 4,
         "i": 75,
         "seen": 0
       },
       {
-        "content": "<a name=\"externalDocumentationObject\"></a>External Documentation Object",
-        "slug": "external-documentation-object",
-        "lvl": 4,
-        "i": 76,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-17",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 77,
+        "i": 76,
         "seen": 17
       },
       {
         "content": "External Documentation Object Example",
         "slug": "external-documentation-object-example",
         "lvl": 5,
+        "i": 77,
+        "seen": 0
+      },
+      {
+        "content": "Reference Object {#referenceObject}",
+        "slug": "referenceObject",
+        "lvl": 4,
         "i": 78,
         "seen": 0
       },
       {
-        "content": "<a name=\"referenceObject\"></a>Reference Object",
-        "slug": "reference-object",
-        "lvl": 4,
-        "i": 79,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-18",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 80,
+        "i": 79,
         "seen": 18
       },
       {
         "content": "Reference Object Example",
         "slug": "reference-object-example",
         "lvl": 5,
+        "i": 80,
+        "seen": 0
+      },
+      {
+        "content": "Components Object {#componentsObject}",
+        "slug": "componentsObject",
+        "lvl": 4,
         "i": 81,
         "seen": 0
       },
       {
-        "content": "<a name=\"componentsObject\"></a>Components Object",
-        "slug": "components-object",
-        "lvl": 4,
-        "i": 82,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-19",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 83,
+        "i": 82,
         "seen": 19
       },
       {
         "content": "Components Object Example",
         "slug": "components-object-example",
         "lvl": 5,
-        "i": 84,
+        "i": 83,
         "seen": 0
       },
       {
-        "content": "<a name=\"schemaObject\"></a>Schema Object",
-        "slug": "schema-object",
+        "content": "Schema Object {#schemaObject}",
+        "slug": "schemaObject",
         "lvl": 4,
-        "i": 85,
+        "i": 84,
         "seen": 0
       },
       {
         "content": "Properties",
         "slug": "properties",
         "lvl": 5,
-        "i": 86,
+        "i": 85,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-20",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 87,
+        "i": 86,
         "seen": 20
       },
       {
-        "content": "<a name=\"schemaComposition\"></a>Composition and Inheritance (Polymorphism)",
-        "slug": "composition-and-inheritance-polymorphism",
+        "content": "Composition and Inheritance (Polymorphism) {#schemaComposition}",
+        "slug": "schemaComposition",
         "lvl": 6,
-        "i": 88,
+        "i": 87,
         "seen": 0
       },
       {
         "content": "Schema Object Examples",
         "slug": "schema-object-examples",
         "lvl": 5,
-        "i": 89,
+        "i": 88,
         "seen": 0
       },
       {
         "content": "Primitive Sample",
         "slug": "primitive-sample",
         "lvl": 6,
-        "i": 90,
+        "i": 89,
         "seen": 0
       },
       {
         "content": "Simple Model",
         "slug": "simple-model",
         "lvl": 6,
-        "i": 91,
+        "i": 90,
         "seen": 0
       },
       {
         "content": "Model with Map/Dictionary Properties",
         "slug": "model-with-mapdictionary-properties",
         "lvl": 6,
-        "i": 92,
+        "i": 91,
         "seen": 0
       },
       {
         "content": "Model with Example",
         "slug": "model-with-example",
         "lvl": 6,
-        "i": 93,
+        "i": 92,
         "seen": 0
       },
       {
         "content": "Models with Composition",
         "slug": "models-with-composition",
         "lvl": 6,
-        "i": 94,
+        "i": 93,
         "seen": 0
       },
       {
         "content": "Models with Polymorphism Support",
         "slug": "models-with-polymorphism-support",
         "lvl": 6,
+        "i": 94,
+        "seen": 0
+      },
+      {
+        "content": "Security Scheme Object {#securitySchemeObject}",
+        "slug": "securitySchemeObject",
+        "lvl": 4,
         "i": 95,
         "seen": 0
       },
       {
-        "content": "<a name=\"securitySchemeObject\"></a>Security Scheme Object",
-        "slug": "security-scheme-object",
-        "lvl": 4,
-        "i": 96,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-21",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 97,
+        "i": 96,
         "seen": 21
       },
       {
         "content": "Security Scheme Object Example",
         "slug": "security-scheme-object-example",
         "lvl": 5,
-        "i": 98,
+        "i": 97,
         "seen": 0
       },
       {
         "content": "User/Password Authentication Sample",
         "slug": "userpassword-authentication-sample",
         "lvl": 6,
-        "i": 99,
+        "i": 98,
         "seen": 0
       },
       {
         "content": "API Key Authentication Sample",
         "slug": "api-key-authentication-sample",
         "lvl": 6,
-        "i": 100,
+        "i": 99,
         "seen": 0
       },
       {
         "content": "X.509 Authentication Sample",
         "slug": "x509-authentication-sample",
         "lvl": 6,
-        "i": 101,
+        "i": 100,
         "seen": 0
       },
       {
         "content": "End-to-end Encryption Authentication Sample",
         "slug": "end-to-end-encryption-authentication-sample",
         "lvl": 6,
-        "i": 102,
+        "i": 101,
         "seen": 0
       },
       {
         "content": "Basic Authentication Sample",
         "slug": "basic-authentication-sample",
         "lvl": 6,
-        "i": 103,
+        "i": 102,
         "seen": 0
       },
       {
         "content": "API Key Sample",
         "slug": "api-key-sample",
         "lvl": 6,
-        "i": 104,
+        "i": 103,
         "seen": 0
       },
       {
         "content": "JWT Bearer Sample",
         "slug": "jwt-bearer-sample",
         "lvl": 6,
-        "i": 105,
+        "i": 104,
         "seen": 0
       },
       {
         "content": "Implicit OAuth2 Sample",
         "slug": "implicit-oauth2-sample",
         "lvl": 6,
+        "i": 105,
+        "seen": 0
+      },
+      {
+        "content": "OAuth Flows Object {#oauthFlowsObject}",
+        "slug": "oauthFlowsObject",
+        "lvl": 4,
         "i": 106,
         "seen": 0
       },
       {
-        "content": "<a name=\"oauthFlowsObject\"></a>OAuth Flows Object",
-        "slug": "oauth-flows-object",
-        "lvl": 4,
-        "i": 107,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-22",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 108,
+        "i": 107,
         "seen": 22
       },
       {
-        "content": "<a name=\"oauthFlowObject\"></a>OAuth Flow Object",
-        "slug": "oauth-flow-object",
+        "content": "OAuth Flow Object {#oauthFlowObject}",
+        "slug": "oauthFlowObject",
         "lvl": 4,
-        "i": 109,
+        "i": 108,
         "seen": 0
       },
       {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-23",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 110,
+        "i": 109,
         "seen": 23
       },
       {
         "content": "OAuth Flow Object Examples",
         "slug": "oauth-flow-object-examples",
         "lvl": 5,
+        "i": 110,
+        "seen": 0
+      },
+      {
+        "content": "Security Requirement Object {#securityRequirementObject}",
+        "slug": "securityRequirementObject",
+        "lvl": 4,
         "i": 111,
         "seen": 0
       },
       {
-        "content": "<a name=\"securityRequirementObject\"></a>Security Requirement Object",
-        "slug": "security-requirement-object",
-        "lvl": 4,
-        "i": 112,
-        "seen": 0
-      },
-      {
         "content": "Patterned Fields",
-        "slug": "patterned-fields-3",
+        "slug": "patterned-fields",
         "lvl": 5,
-        "i": 113,
+        "i": 112,
         "seen": 3
       },
       {
         "content": "Security Requirement Object Examples",
         "slug": "security-requirement-object-examples",
         "lvl": 5,
-        "i": 114,
+        "i": 113,
         "seen": 0
       },
       {
         "content": "User/Password Security Requirement",
         "slug": "userpassword-security-requirement",
         "lvl": 6,
-        "i": 115,
+        "i": 114,
         "seen": 0
       },
       {
         "content": "API Key Security Requirement",
         "slug": "api-key-security-requirement",
         "lvl": 6,
-        "i": 116,
+        "i": 115,
         "seen": 0
       },
       {
         "content": "OAuth2 Security Requirement",
         "slug": "oauth2-security-requirement",
         "lvl": 6,
+        "i": 116,
+        "seen": 0
+      },
+      {
+        "content": "Correlation ID Object {#correlationIdObject}",
+        "slug": "correlationIdObject",
+        "lvl": 3,
         "i": 117,
         "seen": 0
       },
       {
-        "content": "<a name=\"correlationIdObject\"></a>Correlation ID Object",
-        "slug": "correlation-id-object",
-        "lvl": 3,
-        "i": 118,
-        "seen": 0
-      },
-      {
         "content": "Fixed Fields",
-        "slug": "fixed-fields-24",
+        "slug": "fixed-fields",
         "lvl": 5,
-        "i": 119,
+        "i": 118,
         "seen": 24
       },
       {
         "content": "Examples",
-        "slug": "examples-1",
+        "slug": "examples",
         "lvl": 5,
-        "i": 120,
+        "i": 119,
         "seen": 1
       },
       {
-        "content": "<a name=\"runtimeExpression\"></a>Runtime Expression",
-        "slug": "runtime-expression",
+        "content": "Runtime Expression {#runtimeExpression}",
+        "slug": "runtimeExpression",
         "lvl": 3,
+        "i": 120,
+        "seen": 0
+      },
+      {
+        "content": "Examples {#runtimeExpressionExamples}",
+        "slug": "runtimeExpressionExamples",
+        "lvl": 5,
         "i": 121,
         "seen": 0
       },
       {
-        "content": "<a name=\"runtimeExpressionExamples\"></a>Examples",
-        "slug": "examples",
-        "lvl": 5,
+        "content": "Specification Extensions {#specificationExtensions}",
+        "slug": "specificationExtensions",
+        "lvl": 3,
         "i": 122,
         "seen": 0
       },
       {
-        "content": "<a name=\"specificationExtensions\"></a>Specification Extensions",
-        "slug": "specification-extensions",
+        "content": "Data Type Formats {#dataTypeFormat}",
+        "slug": "dataTypeFormat",
         "lvl": 3,
         "i": 123,
         "seen": 0
-      },
-      {
-        "content": "<a name=\"dataTypeFormat\"></a>Data Type Formats",
-        "slug": "data-type-formats",
-        "lvl": 3,
-        "i": 124,
-        "seen": 0
       }
     ],
+    "readingTime": 48,
+    "excerpt": "Disclaimer\nPart of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp#39;s a great work and we want to keep as much compatibility as pos",
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
     "isIndex": false,
@@ -3231,15 +3221,9 @@
   },
   {
     "title": "Overview",
-    "toc": [
-      {
-        "content": "title: Overview",
-        "slug": "title-overview",
-        "lvl": 2,
-        "i": 0,
-        "seen": 0
-      }
-    ],
+    "toc": [],
+    "readingTime": 1,
+    "excerpt": "import TutorialList from &amp#39;../../../components/navigation/TutorialList&amp#39;\n",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
     "isIndex": true,
@@ -3250,6 +3234,8 @@
     "description": "Interactive version of the original Streetlights tutorial.",
     "weight": 20,
     "toc": [],
+    "readingTime": 1,
+    "excerpt": "tl;dr\nPlease try out this interactive tutorial and let us know what you think, as we plan to have all the docs written this way.&lt!--more--&gt\n\nOne of the most critical roadmap items for the AsyncAPI",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
     "isIndex": false,
@@ -3372,9 +3358,1024 @@
         "seen": 0
       }
     ],
+    "readingTime": 5,
+    "excerpt": "In this tutorial, you get started with actual code and a (could-be) real-world use case. &lt!--more--&gt\nLet&amp#39;s pretend you have a company called Smarty Lighting and you do smart-city lighting s",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
     "isIndex": false,
     "slug": "/docs/tutorials/streetlights"
+  },
+  {
+    "title": "An API Strategist Explores Event-Driven APIs",
+    "date": "2019-05-14T15:56:52.000Z",
+    "type": "Strategy",
+    "tags": [
+      "APIs",
+      "Event-Driven",
+      "Interview"
+    ],
+    "cover": "/img/posts/an-api-strategist-explores-event-driven-apis.webp",
+    "authors": [
+      {
+        "name": "Emmelyn Wang",
+        "photo": "/img/avatars/ewang.webp",
+        "link": "https://twitter.com/lifewingmate",
+        "byline": "API Strategy Catalyst"
+      }
+    ],
+    "excerpt": "If you’re like me and have experience with web services and the paradigm of RESTful, web services, and SOAP APIs, but curious about event-driven, message based, or streaming APIs, this article is for you.",
+    "toc": [
+      {
+        "content": "An API Strategist Explores Event-Driven APIs",
+        "slug": "an-api-strategist-explores-event-driven-apis",
+        "lvl": 1,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "For the greater API Community",
+        "slug": "for-the-greater-api-community",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Question 1: What do you think is the most important value proposition of event-driven architecture?",
+        "slug": "question-1-what-do-you-think-is-the-most-important-value-proposition-of-event-driven-architecture",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Question 2: What is the consumption experience of event-driven APIs? How much does it differ from RESTful APIs?",
+        "slug": "question-2-what-is-the-consumption-experience-of-event-driven-apis-how-much-does-it-differ-from-restful-apis",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Question 3: Today, how can I test drive event-driven APIs out in the wild?",
+        "slug": "question-3-today-how-can-i-test-drive-event-driven-apis-out-in-the-wild",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Question 4: How do you measure event-driven APIs?",
+        "slug": "question-4-how-do-you-measure-event-driven-apis",
+        "lvl": 2,
+        "i": 5,
+        "seen": 0
+      },
+      {
+        "content": "Value Proposition of Event-Driven Architecture",
+        "slug": "value-proposition-of-event-driven-architecture",
+        "lvl": 2,
+        "i": 6,
+        "seen": 0
+      },
+      {
+        "content": "Question: How and when should companies actively choose event-driven architecture?",
+        "slug": "question-how-and-when-should-companies-actively-choose-event-driven-architecture",
+        "lvl": 2,
+        "i": 7,
+        "seen": 0
+      },
+      {
+        "content": "In general, I’m studying API Design Patterns and how various kinds of APIs expedite R&D adoption. What business results are accelerated from these kinds of patterns?",
+        "slug": "in-general-im-studying-api-design-patterns-and-how-various-kinds-of-apis-expedite-rd-adoption-what-business-results-are-accelerated-from-these-kinds-of-patterns",
+        "lvl": 1,
+        "i": 8,
+        "seen": 0
+      }
+    ],
+    "readingTime": 16,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/an-api-strategist-explores-event-driven-apis"
+  },
+  {
+    "title": "AsyncAPI and CloudEvents",
+    "date": "2019-05-11T15:56:52.000Z",
+    "type": "Engineering",
+    "tags": [
+      "CloudEvents",
+      "Serverless",
+      "FaaS",
+      "Microservices"
+    ],
+    "cover": "/img/posts/asyncapi-cloudevents.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "excerpt": "There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can't be less true, and I'd like to explain you why. Read on!",
+    "featured": true,
+    "toc": [
+      {
+        "content": "What is CloudEvents?",
+        "slug": "what-is-cloudevents",
+        "lvl": 1,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "What is AsyncAPI?",
+        "slug": "what-is-asyncapi",
+        "lvl": 1,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI + CloudEvents",
+        "slug": "asyncapi--cloudevents",
+        "lvl": 1,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Leveraging AsyncAPI Custom Schema Formats",
+        "slug": "leveraging-asyncapi-custom-schema-formats",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Ok, it's possible but, does it makes sense?",
+        "slug": "ok-its-possible-but-does-it-makes-sense",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 1,
+        "i": 5,
+        "seen": 0
+      }
+    ],
+    "readingTime": 5,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/asyncapi-cloud-events"
+  },
+  {
+    "title": "AsyncAPI Online Conference scheduled for 22.04 11 AM UTC",
+    "date": "2020-04-09T05:00:00.000Z",
+    "type": "Marketing",
+    "tags": [
+      "Conference",
+      "Community"
+    ],
+    "cover": "/img/posts/asyncapi-conf-banner.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Dev Comm Keeper"
+      }
+    ],
+    "excerpt": "It is happening, a first-ever AsyncAPI Online conference. We start on 22 of April, at 11 AM UTC. The event is going to take 7 hours with 12 talks from all over the world. We start in sunny Sydney and finish in cloudy Vancouver. The event is for free, online, in your favorite quarantine room.",
+    "toc": [
+      {
+        "content": "How do you organize an event like this in such a short time",
+        "slug": "how-do-you-organize-an-event-like-this-in-such-a-short-time",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "First baby steps to kick off the event",
+        "slug": "first-baby-steps-to-kick-off-the-event",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Talks selection",
+        "slug": "talks-selection",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Sponsoring",
+        "slug": "sponsoring",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Logistics aka connectivity issues can kill your event",
+        "slug": "logistics-aka-connectivity-issues-can-kill-your-event",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 5,
+        "seen": 0
+      }
+    ],
+    "readingTime": 5,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/asyncapi-conference-kick-off"
+  },
+  {
+    "title": "Automate AsyncAPI workflows with Github Actions",
+    "date": "2020-04-02T05:00:00.000Z",
+    "type": "Engineering",
+    "tags": [
+      "GitHub Actions",
+      "Validation",
+      "Generator",
+      "Automation"
+    ],
+    "cover": "/img/posts/asyncapi-github-action.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Dev Comm Keeper"
+      }
+    ],
+    "excerpt": "AsyncAPI community got rich with two GitHub Actions that you can use for validation and generation.",
+    "featured": true,
+    "toc": [
+      {
+        "content": "Writing a GitHub Action",
+        "slug": "writing-a-github-action",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "What I can do today with AsyncAPI GitHub Actions",
+        "slug": "what-i-can-do-today-with-asyncapi-github-actions",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Validation of AsyncAPI files in a Pull Request",
+        "slug": "validation-of-asyncapi-files-in-a-pull-request",
+        "lvl": 3,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Generating HTML and publishing it to GitHub Pages",
+        "slug": "generating-html-and-publishing-it-to-github-pages",
+        "lvl": 3,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      }
+    ],
+    "readingTime": 5,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/asyncapi-github-actions"
+  },
+  {
+    "title": "(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects",
+    "date": "2020-04-14T05:00:00.000Z",
+    "type": "Engineering",
+    "tags": [
+      "GitHub Actions",
+      "Release"
+    ],
+    "cover": "/img/posts/robot2.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Dev Comm Keeper"
+      }
+    ],
+    "excerpt": "This post and the previous one come from our experience we gained when working on full automation for all tools maintained by AsyncaPI Initiative.",
+    "toc": [
+      {
+        "content": "What I need to automate release?",
+        "slug": "what-i-need-to-automate-release",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Where's the catch?",
+        "slug": "wheres-the-catch",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Using Semantic Release with GitHub Action in Go project",
+        "slug": "using-semantic-release-with-github-action-in-go-project",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Semantic Release configuration",
+        "slug": "semantic-release-configuration",
+        "lvl": 3,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Release workflow",
+        "slug": "release-workflow",
+        "lvl": 3,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 5,
+        "seen": 0
+      }
+    ],
+    "readingTime": 6,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/automated-releases-part-two"
+  },
+  {
+    "title": "Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits",
+    "date": "2020-03-20T05:00:00.000Z",
+    "type": "Engineering",
+    "tags": [
+      "GitHub Actions",
+      "Release",
+      "Generator"
+    ],
+    "cover": "/img/posts/robot.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Dev Comm Keeper"
+      }
+    ],
+    "excerpt": "Repetitive tasks are tedious. If what you do manually can be automated, then what are you waiting for!",
+    "toc": [
+      {
+        "content": "What full automation means",
+        "slug": "what-full-automation-means",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Conventional Commits",
+        "slug": "conventional-commits",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Workflow design",
+        "slug": "workflow-design",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "GitHub Actions",
+        "slug": "github-actions",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Release workflow",
+        "slug": "release-workflow",
+        "lvl": 3,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "GitHub and NPM",
+        "slug": "github-and-npm",
+        "lvl": 4,
+        "i": 5,
+        "seen": 0
+      },
+      {
+        "content": "Docker",
+        "slug": "docker",
+        "lvl": 4,
+        "i": 6,
+        "seen": 0
+      },
+      {
+        "content": "Bump version in package.json",
+        "slug": "bump-version-in-packagejson",
+        "lvl": 4,
+        "i": 7,
+        "seen": 0
+      },
+      {
+        "content": "Conditions and sharing outputs",
+        "slug": "conditions-and-sharing-outputs",
+        "lvl": 4,
+        "i": 8,
+        "seen": 0
+      },
+      {
+        "content": "Full workflow",
+        "slug": "full-workflow",
+        "lvl": 4,
+        "i": 9,
+        "seen": 0
+      },
+      {
+        "content": "Automated merging workflow",
+        "slug": "automated-merging-workflow",
+        "lvl": 2,
+        "i": 10,
+        "seen": 0
+      },
+      {
+        "content": "Conclusions",
+        "slug": "conclusions",
+        "lvl": 2,
+        "i": 11,
+        "seen": 0
+      }
+    ],
+    "readingTime": 10,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/automated-releases"
+  },
+  {
+    "title": "API documentation in event-driven applications",
+    "date": "2020-05-18T09:00:10.000Z",
+    "type": "Engineering",
+    "tags": [
+      "Event-Driven Architectures",
+      "EDA"
+    ],
+    "cover": "/img/posts/doc-event-driven-api.webp",
+    "featured": true,
+    "authors": [
+      {
+        "name": "Héctor Valls",
+        "photo": "/img/avatars/hvalls.webp",
+        "link": "https://twitter.com/hhccvvmm",
+        "byline": "Freelance Software Engineer"
+      }
+    ],
+    "toc": [],
+    "readingTime": 4,
+    "excerpt": "We live in an era of distributed systems. Airlines and hotels communicate with each other to offer us a better experience in our travels; shops work with shipping companies, so we have our new product",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/doc-event-driven-api"
+  },
+  {
+    "title": "Getting started with event-driven architectures",
+    "date": "2019-04-19T15:56:52.000Z",
+    "type": "Engineering",
+    "tags": [
+      "Getting Started",
+      "Event-Driven Architectures",
+      "EDA"
+    ],
+    "cover": "/img/posts/getting-started-with-event-driven-architectures.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "toc": [
+      {
+        "content": "Core concepts",
+        "slug": "core-concepts",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Message broker",
+        "slug": "message-broker",
+        "lvl": 3,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Publisher/Subscriber",
+        "slug": "publishersubscriber",
+        "lvl": 3,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Message",
+        "slug": "message",
+        "lvl": 3,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Channels",
+        "slug": "channels",
+        "lvl": 3,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Why \"event-driven\" and not \"message-driven\"?",
+        "slug": "why-event-driven-and-not-message-driven",
+        "lvl": 2,
+        "i": 5,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 6,
+        "seen": 0
+      }
+    ],
+    "readingTime": 4,
+    "excerpt": "All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. Y",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/getting-started-with-event-driven-architectures"
+  },
+  {
+    "title": "Organizing your AsyncAPI documents",
+    "date": "2019-03-01T12:56:52.000Z",
+    "type": "Engineering",
+    "tags": [
+      "Organization",
+      "Documents"
+    ],
+    "cover": "/img/posts/organizing-asyncapi-documents.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "toc": [
+      {
+        "content": "Organizing Microservices",
+        "slug": "organizing-microservices",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Common mistakes",
+        "slug": "common-mistakes",
+        "lvl": 3,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Organizing Client-Server",
+        "slug": "organizing-client-server",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Summary",
+        "slug": "summary",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "readingTime": 4,
+    "excerpt": "A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same Asy",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/organizing-asyncapi-documents"
+  },
+  {
+    "title": "Replicating the Success of REST in Event-Driven Architecture",
+    "date": "2019-04-04T12:56:52.000Z",
+    "type": "Engineering",
+    "tags": [
+      "REST",
+      "Event-Driven Architectures",
+      "EDA"
+    ],
+    "cover": "/img/posts/replicating-success-of-rest.webp",
+    "authors": [
+      {
+        "name": "Jonathan Schabowsky",
+        "photo": "/img/avatars/jschabowsky.webp",
+        "link": "https://twitter.com/jschabowsky",
+        "byline": "Sr. Architect at Solace"
+      },
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "excerpt": "Jonathan explained in his last blog post how the loose coupling of applications associated with event-driven architecture and publish/subscribe messaging is both a strength and a weakness.",
+    "toc": [
+      {
+        "content": "How did REST get to be so hot?",
+        "slug": "how-did-rest-get-to-be-so-hot",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "The Building Blocks of REST’s Success",
+        "slug": "the-building-blocks-of-rests-success",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Foundational Components",
+        "slug": "foundational-components",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Enablement Tooling",
+        "slug": "enablement-tooling",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "How Event-Driven is Following in REST’s Footsteps",
+        "slug": "how-event-driven-is-following-in-rests-footsteps",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Foundational Components",
+        "slug": "foundational-components",
+        "lvl": 2,
+        "i": 5,
+        "seen": 1
+      },
+      {
+        "content": "Enablement Tooling",
+        "slug": "enablement-tooling",
+        "lvl": 2,
+        "i": 6,
+        "seen": 1
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 7,
+        "seen": 0
+      }
+    ],
+    "readingTime": 8,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/replicating-success-rest-event-driven-architecture"
+  },
+  {
+    "title": "Status update (week 14, 2019)",
+    "date": "2019-04-04T12:56:52.000Z",
+    "type": "Communication",
+    "tags": [
+      "Status Update"
+    ],
+    "cover": "/img/posts/status-update-week-14-2019.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "toc": [
+      {
+        "content": "Improvements on documentation",
+        "slug": "improvements-on-documentation",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Improvements on tooling",
+        "slug": "improvements-on-tooling",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "AsyncAPI SIG meeting",
+        "slug": "asyncapi-sig-meeting",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Donate",
+        "slug": "donate",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "readingTime": 2,
+    "excerpt": "Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!\nImprovem",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/status-update-week-14-2019"
+  },
+  {
+    "title": "Status update (week 15, 2019)",
+    "date": "2019-04-11T12:56:52.000Z",
+    "type": "Communication",
+    "tags": [
+      "Status Update"
+    ],
+    "cover": "/img/posts/status-update-week-15-2019.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "toc": [
+      {
+        "content": "Building the parser",
+        "slug": "building-the-parser",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Talks",
+        "slug": "talks",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Donate",
+        "slug": "donate",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      }
+    ],
+    "readingTime": 2,
+    "excerpt": "Kaixo lagunak! This week we continued working on the parser as it’s a top priority for us. We made significant progress and plan to release a simple but functional version soon.\nBuilding the parser\n\nW",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/status-update-week-15-2019"
+  },
+  {
+    "title": "Status update (week 17, 2019)",
+    "date": "2019-04-25T12:56:52.000Z",
+    "type": "Communication",
+    "tags": [
+      "Status Update"
+    ],
+    "cover": "/img/posts/status-update-week-17-2019.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "excerpt": "Alas güenas tardis! This week we've made significant progress on the documentation and the parser. The goal is to make AsyncAPI 2.0.0 easy and quick to learn at the same time we provide you the necessary tools to start playing with it.",
+    "toc": [
+      {
+        "content": "The parser",
+        "slug": "the-parser",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "The documentation",
+        "slug": "the-documentation",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Talks",
+        "slug": "talks",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Donate",
+        "slug": "donate",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "readingTime": 3,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/status-update-week-17-2019"
+  },
+  {
+    "title": "Nunjucks templating explained on the basis of AsyncAPI specification",
+    "date": "2020-03-03T07:00:00.000Z",
+    "type": "Engineering",
+    "tags": [
+      "Nunjucks",
+      "Template engine",
+      "Generator"
+    ],
+    "cover": "/img/posts/nunjucks-asyncapi-cover.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Dev Comm Keeper"
+      }
+    ],
+    "toc": [
+      {
+        "content": "What is AsyncAPI?",
+        "slug": "what-is-asyncapi",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "What is Nunjucks?",
+        "slug": "what-is-nunjucks",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Nunjucks basics by example",
+        "slug": "nunjucks-basics-by-example",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Variables declaration",
+        "slug": "variables-declaration",
+        "lvl": 3,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Built-in filters",
+        "slug": "built-in-filters",
+        "lvl": 3,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Creating custom filters",
+        "slug": "creating-custom-filters",
+        "lvl": 3,
+        "i": 5,
+        "seen": 0
+      },
+      {
+        "content": "Chaining filters",
+        "slug": "chaining-filters",
+        "lvl": 3,
+        "i": 6,
+        "seen": 0
+      },
+      {
+        "content": "Includes",
+        "slug": "includes",
+        "lvl": 3,
+        "i": 7,
+        "seen": 0
+      },
+      {
+        "content": "Macros",
+        "slug": "macros",
+        "lvl": 3,
+        "i": 8,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 2,
+        "i": 9,
+        "seen": 0
+      }
+    ],
+    "readingTime": 7,
+    "excerpt": "Specifications exist for a reason. Among other things, they help to bring quality, consistency, and standardize a given area. They are a great use case for templating engines. You can prepare a templa",
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/using-nunjucks-with-asyncapi"
+  },
+  {
+    "title": "AsyncAPI 2.0.0 important dates",
+    "date": "2019-06-12T09:56:52.000Z",
+    "type": "Communication",
+    "tags": [
+      "Announcement",
+      "Beta"
+    ],
+    "cover": "/img/posts/v2-important-dates.webp",
+    "authors": [
+      {
+        "name": "Fran Méndez",
+        "photo": "/img/avatars/fmvilas.webp",
+        "link": "https://twitter.com/fmvilas",
+        "byline": "AsyncAPI founder"
+      }
+    ],
+    "excerpt": "Hey folks! After some time thinking about it, I've decided it's time to define some important dates for AsyncAPI 2.0.0. So here we go!",
+    "toc": [
+      {
+        "content": "End of review period (July 1, 2019)",
+        "slug": "end-of-review-period-july-1-2019",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Beta testing program (July-September)",
+        "slug": "beta-testing-program-july-september",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Official announcement (Late September-Early October)",
+        "slug": "official-announcement-late-september-early-october",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      }
+    ],
+    "readingTime": 2,
+    "sectionSlug": "",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/v2-important-dates"
   }
 ]
