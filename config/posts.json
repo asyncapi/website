@@ -3450,7 +3450,7 @@
       }
     ],
     "readingTime": 16,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/an-api-strategist-explores-event-driven-apis"
@@ -3521,7 +3521,7 @@
       }
     ],
     "readingTime": 5,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/asyncapi-cloud-events"
@@ -3589,7 +3589,7 @@
       }
     ],
     "readingTime": 5,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/asyncapi-conference-kick-off"
@@ -3653,7 +3653,7 @@
       }
     ],
     "readingTime": 5,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/asyncapi-github-actions"
@@ -3721,7 +3721,7 @@
       }
     ],
     "readingTime": 6,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/automated-releases-part-two"
@@ -3832,7 +3832,7 @@
       }
     ],
     "readingTime": 10,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/automated-releases"
@@ -3858,7 +3858,7 @@
     "toc": [],
     "readingTime": 4,
     "excerpt": "We live in an era of distributed systems. Airlines and hotels communicate with each other to offer us a better experience in our travels; shops work with shipping companies, so we have our new product",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/doc-event-driven-api"
@@ -3934,7 +3934,7 @@
     ],
     "readingTime": 4,
     "excerpt": "All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. Y",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/getting-started-with-event-driven-architectures"
@@ -3986,9 +3986,9 @@
         "seen": 0
       }
     ],
-    "readingTime": 4,
+    "readingTime": 5,
     "excerpt": "A recurring question that I get very often is: “how do I organize my AsyncAPI documents?”. Also, the related one: “I have two services, a publisher and a consumer, should I define both in the same Asy",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/organizing-asyncapi-documents"
@@ -4077,7 +4077,7 @@
       }
     ],
     "readingTime": 8,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/replicating-success-rest-event-driven-architecture"
@@ -4130,7 +4130,7 @@
     ],
     "readingTime": 2,
     "excerpt": "Hallo meine Freunde! This week we’ve done great progress on tooling and documentation. It will be our main focus for the next month. In the meantime, check out what we did last week. Read on!\nImprovem",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/status-update-week-14-2019"
@@ -4176,7 +4176,7 @@
     ],
     "readingTime": 2,
     "excerpt": "Kaixo lagunak! This week we continued working on the parser as it’s a top priority for us. We made significant progress and plan to release a simple but functional version soon.\nBuilding the parser\n\nW",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/status-update-week-15-2019"
@@ -4229,7 +4229,7 @@
       }
     ],
     "readingTime": 3,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/status-update-week-17-2019"
@@ -4326,7 +4326,7 @@
     ],
     "readingTime": 7,
     "excerpt": "Specifications exist for a reason. Among other things, they help to bring quality, consistency, and standardize a given area. They are a great use case for templating engines. You can prepare a templa",
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/using-nunjucks-with-asyncapi"
@@ -4373,9 +4373,48 @@
       }
     ],
     "readingTime": 2,
-    "sectionSlug": "",
+    "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/v2-important-dates"
+  },
+  {
+    "title": "About",
+    "toc": [
+      {
+        "content": "Maintainers",
+        "slug": "maintainers",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Contributors",
+        "slug": "contributors",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Companies support",
+        "slug": "companies-support",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "History",
+        "slug": "history",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "readingTime": 2,
+    "excerpt": "Maintainers\nAsyncAPI is actively maintained by:\nFran Méndez - Project Director.\nŁukasz Górnicki - Maintainer and Dev Community Keeper.\n\nSo far, we have had many contributors and we are thankful for th",
+    "sectionSlug": "/about",
+    "sectionWeight": 0,
+    "isIndex": true,
+    "slug": "/about"
   }
 ]

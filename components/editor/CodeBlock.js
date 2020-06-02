@@ -3,7 +3,8 @@ import MonacoEditorWrapper from "./MonacoEditorWrapper";
 export default function CodeBlock({
   children,
   className = '',
-  highlightedLines = [],
+  highlightedLines,
+  highlightedRanges,
   language,
   autoHeight = false,
 }) {
@@ -38,6 +39,8 @@ export default function CodeBlock({
           matchBrackets: 'never',
         }}
         highlightedLines={highlightedLines}
+        highlightedRanges={highlightedRanges}
+        updateHighlightOnChange={true}
       />
     </div>
   )

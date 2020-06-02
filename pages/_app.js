@@ -7,6 +7,7 @@ import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
 import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
 import Warning from '../components/Warning'
+import Sponsors from '../components/Sponsors'
 import '../css/highlight-asyncapi.css'
 import '../css/tailwind.css'
 import '../css/overrides.css'
@@ -58,5 +59,6 @@ function getMDXComponents() {
     YouTube,
     Remember,
     Warning,
+    Sponsors,
   }
 }

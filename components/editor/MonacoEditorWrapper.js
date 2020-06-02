@@ -7,12 +7,24 @@ let editor
 let Monaco
 
 const renderHighlightedLines = (highlightedLines) => {
-  return editor.deltaDecorations(editor.getModel().getAllDecorations(), highlightedLines.map(lineNumber => ({
-    range: new Monaco.Range(lineNumber, 0, lineNumber, 0),
+  return renderHighlightedRanges(highlightedLines.map(lineNumber => ({
+    startLine: lineNumber,
+    startCol: 0,
+    endLine: lineNumber,
+    endCol: 0,
     options: {
       isWholeLine: true,
+    }
+  })))
+}
+
+const renderHighlightedRanges = (highlightedRanges) => {
+  return editor.deltaDecorations(editor.getModel().getAllDecorations(), highlightedRanges.map(range => ({
+    range: new Monaco.Range(range.startLine, range.startCol, range.endLine, range.endCol),
+    options: {
       className: 'bg-code-editor-dark-highlight',
-      marginClassName: 'bg-code-editor-dark-highlight'
+      marginClassName: 'bg-code-editor-dark-highlight',
+      ...range.options
     },
   })))
 }
@@ -23,6 +35,8 @@ export default function MonacoEditorWrapper ({
   onChange = () => {},
   value,
   highlightedLines = [],
+  highlightedRanges = [],
+  updateHighlightOnChange = false,
   options,
   editorDidMount,
   ...props
@@ -33,6 +47,7 @@ export default function MonacoEditorWrapper ({
   const handleEditorDidMount = (getValue, ed) => {
     editor = ed
     renderHighlightedLines(highlightedLines)
+    renderHighlightedRanges(highlightedRanges)
 
     editor.onDidChangeModelContent(ev => {
       const currentValue = editor.getValue()
@@ -67,6 +82,13 @@ export default function MonacoEditorWrapper ({
       })
       .catch(console.error)
   }, [])
+
+  useEffect(() => {
+    if (editor && updateHighlightOnChange) {
+      renderHighlightedLines(highlightedLines)
+      renderHighlightedRanges(highlightedRanges)
+    }
+  }, [highlightedLines, highlightedRanges])
 
   return (
     <Editor

@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 import DocsLayout from './DocsLayout'
 import BlogLayout from './BlogLayout'
+import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import Footer from '../Footer'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
@@ -31,12 +31,16 @@ export default function Layout({ children }) {
         {children}
       </BlogContext.Provider>
     )
+  } else {
+    const post = getPostBySlug(pathname)
+    if (post) {
+      return (
+        <GenericPostLayout post={post}>
+          {children}
+        </GenericPostLayout>
+      )
+    }
   }
   
-  return (
-    <>
-      {children}
-      <Footer />
-    </>
-  )
+  return children
 }

@@ -6,10 +6,16 @@ export default function Button({
   icon,
   iconPosition = 'right',
   className,
+  bgColor = 'primary-500',
+  bgHoverColor = 'primary-400',
+  textColor = 'white',
+  textHoverColor = 'white',
 }) {
+  const classNames = `inline-block bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} hover:text-${textHoverColor} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`
+  
   if (!href) {
     return (
-      <button type={type} className={`inline-block bg-primary-500 hover:bg-primary-600 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`}>
+      <button type={type} className={classNames}>
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
@@ -26,7 +32,7 @@ export default function Button({
   }
 
   return (
-    <a href={href} target={target} className={`inline-block bg-primary-500 hover:bg-primary-600 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`}>
+    <a href={href} target={target} className={classNames}>
       {
         icon && iconPosition === 'left' && (
           <span className="inline-block mr-2">{icon}</span>

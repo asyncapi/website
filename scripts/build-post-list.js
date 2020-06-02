@@ -10,8 +10,9 @@ const { markdownToTxt } = require('markdown-to-txt')
 const result = []
 const basePath = 'pages'
 const postDirectories = [
-  `${basePath}/docs`,
-  `${basePath}/blog`,
+  [`${basePath}/docs`, '/docs'],
+  [`${basePath}/blog`, '/blog'],
+  [`${basePath}/about`, '/about'],
 ]
 walkDirectories(postDirectories, result)
 if (process.env.NODE_ENV === 'production') {
@@ -19,13 +20,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 
-function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 0) {
+function walkDirectories(directories, result, sectionWeight = 0) {
   for (let dir of directories) {
-    let files = readdirSync(dir)
+    let directory = dir[0]
+    let sectionSlug = dir[1] || ''
+    let files = readdirSync(directory)
 
     for (let file of files) {
       let details
-      const fileName = join(dir, file)
+      const fileName = join(directory, file)
       const fileNameWithSection = join(fileName, '_section.md')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
       if (isDirectory(fileName)) {
@@ -40,7 +43,7 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
         details.isSection = true
         details.slug = slug
         result.push(details)
-        walkDirectories([fileName], result, slug, details.weight)
+        walkDirectories([[fileName, slug]], result, details.weight)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
         const fileContent = readFileSync(fileName, 'utf-8')
         const { data, content } = frontMatter(fileContent)
@@ -48,7 +51,7 @@ function walkDirectories(directories, result, sectionSlug = '', sectionWeight = 
         details.toc = toc(content, { slugify: slugifyToC }).json
         details.readingTime = Math.ceil(readingTime(content).minutes)
         details.excerpt = details.excerpt || markdownToTxt(content).substr(0, 200)
-        details.sectionSlug = sectionSlug
+        details.sectionSlug = sectionSlug || slug.replace(/\.md$/, '')
         details.sectionWeight = sectionWeight
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
