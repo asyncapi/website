@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import GenericLayout from '../../components/layout/GenericLayout'
 import Button from '../../components/buttons/Button'
 import IconDocuments from '../../components/icons/Documents'
@@ -6,58 +5,9 @@ import IconCode from '../../components/icons/Code'
 import IconPowerPlug from '../../components/icons/PowerPlug'
 import IconRocket from '../../components/icons/Rocket'
 import GithubButton from '../../components/buttons/GithubButton'
-import Select from '../../components/form/Select'
-import generatorTemplates from '../../config/generator-templates.json'
+import GeneratorInstallation from '../../components/GeneratorInstallation'
 
 export default function GeneratorPage() {
-  const [template, setTemplate] = useState('@asyncapi/html-template')
-  const [params, setParams] = useState('')
-  const [cli, setCLI] = useState('npm')
-  const [copyMessage, setCopyMessage] = useState('Copy')
-  let codeBlock
-
-  function onChangeTemplate(templateName) {
-    setTemplate(templateName)
-    if (!['@asyncapi/html-template', '@asyncapi/markdown-template'].includes(templateName)) {
-      setParams(' -p server=production')
-    } else {
-      setParams('')
-    }
-  }
-
-  function renderNpm() {
-    return (
-      <>
-        <div>npm install -g @asyncapi/generator</div>
-        <div>ag <span className="text-yellow-200">https://bit.ly/asyncapi</span> <span className="text-teal-400">{template}</span><span className="text-pink-400">{params} -o example</span></div>
-      </>
-    )
-  }
-  
-  function renderDocker() {
-    return (
-      <>
-        <div>docker run --rm -it -v ${`{PWD}`}/example:/app/example \</div>
-        <div>asyncapi/generator <span className="text-yellow-200">https://bit.ly/asyncapi</span> <span className="text-teal-400">{template}</span><span className="text-pink-400">{params} -o example --force-write</span></div>
-      </>
-    )
-  }
-
-  function onClickCopy() {
-    const selection = window.getSelection()
-    const range = document.createRange()
-    range.selectNodeContents(codeBlock)
-    selection.removeAllRanges()
-    selection.addRange(range)
-    document.execCommand('copy')
-    selection.removeAllRanges()
-
-    setCopyMessage('Copied!')
-    setTimeout(() => {
-      setCopyMessage('Copy')
-    }, 2000)  
-  }
-
   return (
     <GenericLayout title="Generator" wide>
       <div className="py-16 overflow-hidden lg:py-24">
@@ -145,32 +95,7 @@ export default function GeneratorPage() {
             You can use it now. It's open source.
           </p>
         </div>
-        <div className="max-w-2xl mt-8 mx-auto">
-          <div className="mb-1.5">
-            <span className="text-sm text-gray-500 mr-2">Select a Generator template:</span>
-            <Select
-              options={generatorTemplates}
-              selected={template}
-              onChange={onChangeTemplate}
-              className="shadow-outline-blue"
-            />
-          </div>
-          <div className="relative">
-            <button onClick={onClickCopy} className="absolute text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none">{copyMessage}</button>
-            <div ref={e => codeBlock = e} className="bg-code-editor-dark py-2 pl-3 pr-10 rounded-t rounded-br text-gray-300 text-sm font-mono">
-              {cli === 'npm' && renderNpm()}
-              {cli === 'docker' && renderDocker()}
-            </div>
-          </div>
-          <div className="text-xs">
-            <nav>
-              <ul>
-                <li className={`bg-code-editor-dark inline-block rounded-b uppercase ${cli === 'npm' ? 'text-teal-300 font-bold' : 'text-gray-300 font-medium'} py-1 px-2 mr-px cursor-pointer hover:text-teal-300`} onClick={() => setCLI('npm')}>npm</li>
-                <li className={`bg-code-editor-dark inline-block rounded-b uppercase ${cli === 'docker' ? 'text-teal-300 font-bold' : 'text-gray-300 font-medium'} py-1 px-2 mr-px cursor-pointer hover:text-teal-300`} onClick={() => setCLI('docker')}>Docker</li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+        <GeneratorInstallation />
         <div className="max-w-xl mt-8 mx-auto text-center">
           <Button
             text="Learn more"
