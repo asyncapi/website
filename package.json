@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node scripts/build-post-list.js && next -p 8080",
     "build": "node scripts/build-post-list.js && next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "repository": {
     "type": "git",
