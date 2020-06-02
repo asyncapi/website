@@ -58,7 +58,7 @@ export default function GeneratorInstallation({}) {
 
   return (
     <div className="max-w-2xl mt-8 mx-auto">
-      <div className="mb-2">
+      <div className="mb-4">
         <span className="text-sm text-gray-500 mr-2">Select a Generator template:</span>
         <Select
           options={generatorTemplates}

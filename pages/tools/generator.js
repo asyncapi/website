@@ -21,16 +21,40 @@ export default function GeneratorPage() {
             </p>
           </div>
 
-          <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
+          <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="relative lg:mt-8">
+              <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+              Installation & Usage
+              </h4>
+              <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
+                Start using Generator really quickly. Select one of the multiple templates we offer and start generating documentation and code in a few seconds.
+              </p>
+              <div className="mt-8">
+                <Button
+                  text="Learn more"
+                  href="/docs/tools/generator"
+                  iconPosition="left"
+                  icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
+                  className="w-full mb-2 sm:w-auto sm:mb-0"
+                />
+                <GithubButton
+                  className="w-full sm:w-auto sm:ml-2"
+                  href="https://www.github.com/asyncapi/generator"
+                />
+              </div>
+            </div>
+            
+            <GeneratorInstallation />
+
+            <div className="relative mt-20">
               <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
                 Ready to use
               </h4>
-              <p className="mt-3 text-lg leading-7 text-gray-500">
+              <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
                 The Generator is our solution to automatically generate documentation and code from your AsyncAPI files. It comes packed with lots of cool features you can't miss. Have a look!
               </p>
 
-              <ul className="mt-10">
+              <ul className="mt-10 lg:pr-4">
                 <li>
                   <div className="flex">
                     <div className="flex-shrink-0">
@@ -87,28 +111,6 @@ export default function GeneratorPage() {
 
         </div>
 
-        <div className="relative mt-12 lg:mt-16">
-          <h4 className="text-center text-2xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-           Installation & Usage
-          </h4>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-            You can use it now. It's open source.
-          </p>
-        </div>
-        <GeneratorInstallation />
-        <div className="max-w-xl mt-8 mx-auto text-center">
-          <Button
-            text="Learn more"
-            href="/docs/tools/generator"
-            iconPosition="left"
-            icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
-            className="w-full mb-2 sm:w-auto sm:mb-0"
-          />
-          <GithubButton
-            className="w-full sm:w-auto sm:ml-2"
-            href="https://www.github.com/asyncapi/generator"
-          />
-        </div>
       </div>
     </GenericLayout>
   )
