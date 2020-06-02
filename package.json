@@ -43,6 +43,8 @@
     "monaco-editor": "^0.20.0",
     "next": "^9.4.4",
     "postcss-import": "^12.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-highlight": "^0.12.0",
     "react-scrollspy": "^3.4.2",
     "react-text-truncate": "^0.16.0",
