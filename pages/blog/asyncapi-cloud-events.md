@@ -138,7 +138,7 @@ There's only one concern with the approach above: every single CloudEvents defin
 
 The default format for defining events (messages) in AsyncAPI 2.0 is JSON Schema. Thankfully, AsyncAPI provides a way to define events in your own custom format —like Avro and Protobuf — or a hypothetical CloudEvents one in this case. See example:
 
-<CodeBlock autoHeight highlightedLines={[10]}>
+<CodeBlock highlightedLines={[10]}>
 {`asyncapi: 2.0.0-rc1
 id: urn:com.asyncapi.examples.user
 info:

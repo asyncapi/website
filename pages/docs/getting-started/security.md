@@ -18,7 +18,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
-<CodeBlock className="h-100" highlightedLines={[10,11,42,43,44]}>
+<CodeBlock highlightedLines={[10,11,42,43,44]}>
 {`asyncapi: '2.0.0'
 info:
   title: Hello world application

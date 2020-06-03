@@ -30,6 +30,11 @@ module.exports = {
         dark: '#252f3f',
         'dark-highlight': '#3e4d64',
       },
+      'mac-window': {
+        'close': '#ff5f56',
+        'minimize': '#ffbd2e',
+        'maximize': '#28c93f',
+      },
     },
     extend: {
       height: {
