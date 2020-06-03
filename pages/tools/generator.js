@@ -8,6 +8,24 @@ import GithubButton from '../../components/buttons/GithubButton'
 import GeneratorInstallation from '../../components/GeneratorInstallation'
 
 export default function GeneratorPage() {
+  function renderButtons () {
+    return (
+      <div className="mt-8">
+        <Button
+          text="Learn more"
+          href="/docs/tools/generator"
+          iconPosition="left"
+          icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
+          className="w-full mb-2 sm:w-auto sm:mb-0"
+        />
+        <GithubButton
+          className="w-full sm:w-auto sm:ml-2"
+          href="https://www.github.com/asyncapi/generator"
+        />
+      </div>
+    )
+  }
+
   return (
     <GenericLayout title="Generator" wide>
       <div className="py-16 overflow-hidden lg:py-24">
@@ -29,19 +47,7 @@ export default function GeneratorPage() {
               <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
                 Start using Generator really quickly. Select one of the multiple templates we offer and start generating documentation and code in a few seconds.
               </p>
-              <div className="mt-8">
-                <Button
-                  text="Learn more"
-                  href="/docs/tools/generator"
-                  iconPosition="left"
-                  icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
-                  className="w-full mb-2 sm:w-auto sm:mb-0"
-                />
-                <GithubButton
-                  className="w-full sm:w-auto sm:ml-2"
-                  href="https://www.github.com/asyncapi/generator"
-                />
-              </div>
+              {renderButtons()}
             </div>
             
             <GeneratorInstallation />
@@ -108,9 +114,11 @@ export default function GeneratorPage() {
               <img className="relative rounded mt-8 shadow-lg mx-auto" src="/img/tools/generator-2.png" alt="" />
             </div>
           </div>
-
         </div>
 
+        <div className="mt-16 text-center">
+          {renderButtons()}
+        </div>
       </div>
     </GenericLayout>
   )
