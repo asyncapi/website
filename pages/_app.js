@@ -1,6 +1,5 @@
 import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
-import Highlight from 'react-highlight'
 import Layout from '../components/layout/Layout'
 import Button from '../components/buttons/Button'
 import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
@@ -9,6 +8,7 @@ import Remember from '../components/Remember'
 import Warning from '../components/Warning'
 import Sponsors from '../components/Sponsors'
 import '../css/styles.css'
+
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -50,7 +50,7 @@ function getMDXComponents() {
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
     pre: props => <pre {...props} className={`${props.className || ''} my-8`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm`} />,
-    code: props => <Highlight {...props} className={`${props.className || ''} px-3 py-2 rounded`} />,
+    code: props => <CodeBlock {...props} className={`${props.className || ''} rounded`} showLineNumbers={children.split('\n').length > 2} />,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
     CodeBlock,
     ChapterSuggestions,
