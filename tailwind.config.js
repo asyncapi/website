@@ -24,18 +24,7 @@ module.exports = {
   purge: false,
   theme: {
     colors: {
-      transparent: colors.transparent,
-      white: colors.white,
-      black: colors.black,
-      gray: colors.gray,
-      yellow: getColors(colors.yellow, [50, 100, 200, 300, 700, 800]),
-      red: getColors(colors.red, [100, 400]),
-      green: getColors(colors.green, [100, 500, 800]),
-      orange: getColors(colors.orange, [100, 800]),
-      blue: getColors(colors.blue, [100, 200, 400]),
-      teal: getColors(colors.teal, [100, 200, 300, 400, 600, 800]),
-      indigo: getColors(colors.indigo, [100, 500, 800]),
-      pink: getColors(colors.pink, [100, 300, 400, 500, 800]),
+      ...colors,
       primary: getColors(colorPrimary, [100, 200, 300, 400, 500, 600, 700, 800, 900]),
       'code-editor': {
         dark: '#252f3f',
