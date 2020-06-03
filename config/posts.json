@@ -3659,6 +3659,92 @@
     "slug": "/blog/asyncapi-github-actions"
   },
   {
+    "type": "Engineering",
+    "featured": true,
+    "cover": "/img/posts/asyncapi-codegen_pic-00.webp",
+    "title": "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream",
+    "date": "2020-06-02T05:00:00.000Z",
+    "tags": [
+      "solace",
+      "asyncapi",
+      "java",
+      "spring",
+      "EDA"
+    ],
+    "authors": [
+      {
+        "name": "Marc DiPasquale",
+        "photo": "/img/avatars/mdipasquale.webp",
+        "link": "https://twitter.com/mrc0113",
+        "byline": "Developer Advocate at Solace"
+      }
+    ],
+    "toc": [
+      {
+        "content": "AsyncAPI: What Is It?",
+        "slug": "asyncapi-what-is-it",
+        "lvl": 1,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Defining the Application That You Want to Develop: The  AsyncAPI Document",
+        "slug": "defining-the-application-that-you-want-to-develop-the--asyncapi-document",
+        "lvl": 1,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs",
+        "slug": "create-event-driven-microservices-using-spring-cloud-stream-without-learning-messaging-apis",
+        "lvl": 1,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Download and Run the AsyncAPI Generator",
+        "slug": "download-and-run-the-asyncapi-generator",
+        "lvl": 3,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Add Your Business Logic",
+        "slug": "add-your-business-logic",
+        "lvl": 1,
+        "i": 4,
+        "seen": 0
+      },
+      {
+        "content": "Helpful Parameters and Specification Extensions for Creating Microservices Using the AsyncAPI Spring Cloud Stream Template",
+        "slug": "helpful-parameters-and-specification-extensions-for-creating-microservices-using-the-asyncapi-spring-cloud-stream-template",
+        "lvl": 1,
+        "i": 5,
+        "seen": 0
+      },
+      {
+        "content": "Tips For Using The Code Generator To Create Event-Driven Microservices Using Spring Cloud Stream",
+        "slug": "tips-for-using-the-code-generator-to-create-event-driven-microservices-using-spring-cloud-stream",
+        "lvl": 1,
+        "i": 6,
+        "seen": 0
+      },
+      {
+        "content": "Conclusion",
+        "slug": "conclusion",
+        "lvl": 1,
+        "i": 7,
+        "seen": 0
+      }
+    ],
+    "readingTime": 12,
+    "excerpt": "Code generation is no simple feat. There are a lot of complexities when it comes to generating useful application code. In this post, I am going to walk you through generating your own microservices u",
+    "sectionSlug": "/blog",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/asyncapi_codegen_scst"
+  },
+  {
     "title": "(Part 2) Full automation of release with GitHub Actions and Conventional Commits for non-JS projects",
     "date": "2020-04-14T05:00:00.000Z",
     "type": "Engineering",

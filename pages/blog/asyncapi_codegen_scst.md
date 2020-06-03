@@ -1,8 +1,7 @@
 ---
-type: blog
+type: Engineering
 featured: true
-cover: /images/posts/asyncapi-codegen_pic-00.webp
-weight: 40
+cover: /img/posts/asyncapi-codegen_pic-00.webp
 title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
 date: 2020-06-02T06:00:00+01:00
 tags:
@@ -13,7 +12,7 @@ tags:
    - EDA
 authors:
    - name: Marc DiPasquale
-     photo: /images/avatars/mdipasquale.webp
+     photo: /img/avatars/mdipasquale.webp
      link: https://twitter.com/mrc0113
      byline: Developer Advocate at Solace
 ---
@@ -34,13 +33,13 @@ The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI d
 
 If you decide to manually create the document after familiarizing yourself with the specification, don’t worry – you won’t be starting with a blank slate. The AsyncAPI initiative has provided a handy, interactive tool called the [AsyncAPI Hub](https://hub.asyncapi.io/) to make this easier. On the left side of the Hub you can familiarize yourself with the specification and make changes to a real AsyncAPI document, and as you do so the right side of the screen updates to show how the document is parsed into a more human-readable format.
 
-![asyncapi playground for creating microservices using spring cloud stream](/images/posts/asyncapi-codegen_pic-01.webp)
+![asyncapi playground for creating microservices using spring cloud stream](/img/posts/asyncapi-codegen_pic-01.webp)
 
 The second way is to use an event portal. Solace PubSub+ Event Portal, for example, allows for architects and developers to collaborate using a GUI to design your event-driven architecture. The team would define the applications that exist in the system, as well as the events that are exchanged and the schemas which define them. Having a catalog of well-organized channels and events for reuse will also save you both time and headaches while collaborating, instead of having to comb through a bunch of files in various locations.
 
 Once the design is in place, PubSub+ Event Portal allows the developer to choose the application they are responsible for developing and download the AsyncAPI document in JSON or YAML.
 
-![pic2](/images/posts/asyncapi-codegen_pic-02.webp)
+![pic2](/img/posts/asyncapi-codegen_pic-02.webp)
 
 # Create Event-Driven Microservices Using Spring Cloud Stream Without Learning Messaging APIs
 
@@ -77,14 +76,14 @@ ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p a
 ```
 
 After running, the output will look something like this:  
-![pic3](/images/posts/asyncapi-codegen_pic-03.webp)
+![pic3](/img/posts/asyncapi-codegen_pic-03.webp)
 
 # Add Your Business Logic
 
 At this point the generator has created an `ExpenseIntegration` directory that contains the Maven project. We can use the IDE of choice and import the Maven project to add business logic.
 
 As seen in the image below, once imported, the project looks like a regular Spring Boot Java project with generated classes under the `javaPackage` that was defined earlier and an `application.yml` file for configuration. Generated classes under `javaPackage` include Plain Old Java Objects (POJOs) defined from the schemas in the AsyncAPI document and `Application.java` which contains the actual Spring Cloud Functions where we’ll add our business logic.  
-![pic4](/images/posts/asyncapi-codegen_pic-04.webp)
+![pic4](/img/posts/asyncapi-codegen_pic-04.webp)
 
 The generated POJOs, like `RideReceipt` in the image above, define your data model per the schemas included in the AsyncAPI document. These POJOs contains variables with getters and setters for each attribute defined to allow both for developers to get coding quickly without having to manually create the objects themselves, but also for Spring Cloud Stream to automatically convert messages directly to POJOs.
 
@@ -183,4 +182,4 @@ You can get started right away and use the Solace PubSub+ Event Portal to genera
 
 If you have more questions or want to share your experience with the tools, you can let us know in the [Solace Community Forum](http://solace.community/) or consider joining us in contributing directly to the AsyncAPI initiative.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QEDL6AqsaJc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<YouTube id="https://www.youtube.com/embed/QEDL6AqsaJc" />
