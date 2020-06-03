@@ -1,0 +1,18 @@
+/*! purgecss start ignore */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./highlight-asyncapi.css";
+/*! purgecss end ignore */
+
+@import "tailwindcss/utilities";
+
+/*! purgecss start ignore */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li > p {
+  display: inline;
+}
+/*! purgecss end ignore */

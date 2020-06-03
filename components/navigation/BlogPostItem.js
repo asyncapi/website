@@ -2,20 +2,20 @@ import moment from 'moment'
 import TextTruncate from 'react-text-truncate'
 
 export default function BlogPostItem({ post }) {
-  let typeColor = 'indigo'
+  let typeColors = ['bg-indigo-100', 'text-indigo-800']
 
   switch (post.type.toLowerCase()) {
     case 'video':
-      typeColor = 'pink'
+      typeColors = ['bg-pink-100', 'text-pink-800']
       break
     case 'marketing':
-      typeColor = 'orange'
+      typeColors = ['bg-orange-100', 'text-orange-800']
       break
     case 'strategy':
-      typeColor = 'green'
+      typeColors = ['bg-green-100', 'text-green-800']
       break
     case 'communication':
-      typeColor = 'teal'
+      typeColors = ['bg-teal-100', 'text-teal-800']
       break
   }
 
@@ -27,7 +27,7 @@ export default function BlogPostItem({ post }) {
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
           <p className="text-sm leading-5 font-normal text-indigo-500">
-            <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-${typeColor}-100 text-${typeColor}-800`}>
+            <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 ${typeColors[0]} ${typeColors[1]}`}>
               {post.type}
             </span>
           </p>
@@ -44,7 +44,12 @@ export default function BlogPostItem({ post }) {
           <div className="relative flex-shrink-0">
             {
               post.authors && post.authors.map((author, index) => (
-                <img key={index} title={author.name} className={`${index > 0 ? `absolute left-${index*7} top-0` : `relative mr-${(post.authors.length-1)*7}`} z-${(post.authors.length-1-index)*10} h-10 w-10 border-2 border-white rounded-full object-cover hover:z-50`} src={author.photo} />
+                <img
+                  key={index}
+                  title={author.name}
+                  className={`${index > 0 ? `absolute left-${index*7} top-0` : `relative mr-${(post.authors.length-1)*7}`} z-${(post.authors.length-1-index)*10} h-10 w-10 border-2 border-white rounded-full object-cover hover:z-50`}
+                  src={author.photo}
+                />
               ))
             }
           </div>

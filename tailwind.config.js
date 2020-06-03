@@ -1,3 +1,5 @@
+const colors = require('@tailwindcss/ui/colors')
+
 const colorPrimary = {
   100: '#e0f0fb',
   200: '#c1e1f8',
@@ -10,44 +12,37 @@ const colorPrimary = {
   900: '#14242f',
 };
 
+function getColors(color, shades) {
+  const result = {}
+  shades.forEach(shade => {
+    result[shade] = color[shade]
+  })
+  return result
+}
+
 module.exports = {
+  purge: false,
   theme: {
+    colors: {
+      transparent: colors.transparent,
+      white: colors.white,
+      black: colors.black,
+      gray: colors.gray,
+      yellow: getColors(colors.yellow, [50, 100, 200, 300, 700, 800]),
+      red: getColors(colors.red, [100, 400]),
+      green: getColors(colors.green, [100, 500, 800]),
+      orange: getColors(colors.orange, [100, 800]),
+      blue: getColors(colors.blue, [100, 200, 400]),
+      teal: getColors(colors.teal, [100, 200, 300, 400, 600, 800]),
+      indigo: getColors(colors.indigo, [100, 500, 800]),
+      pink: getColors(colors.pink, [100, 300, 400, 500, 800]),
+      primary: getColors(colorPrimary, [100, 200, 300, 400, 500, 600, 700, 800, 900]),
+      'code-editor': {
+        dark: '#252f3f',
+        'dark-highlight': '#3e4d64',
+      },
+    },
     extend: {
-      backgroundColor: {
-        'primary-100': colorPrimary[100],
-        'primary-200': colorPrimary[200],
-        'primary-300': colorPrimary[300],
-        'primary-400': colorPrimary[400],
-        'primary-500': colorPrimary[500],
-        'primary-600': colorPrimary[600],
-        'primary-700': colorPrimary[700],
-        'primary-800': colorPrimary[800],
-        'primary-900': colorPrimary[900],
-        'code-editor-dark': '#252f3f',
-        'code-editor-dark-highlight': '#3e4d64',
-      },
-      textColor: {
-        'primary-100': colorPrimary[100],
-        'primary-200': colorPrimary[200],
-        'primary-300': colorPrimary[300],
-        'primary-400': colorPrimary[400],
-        'primary-500': colorPrimary[500],
-        'primary-600': colorPrimary[600],
-        'primary-700': colorPrimary[700],
-        'primary-800': colorPrimary[800],
-        'primary-900': colorPrimary[900],
-      },
-      borderColor: {
-        'primary-100': colorPrimary[100],
-        'primary-200': colorPrimary[200],
-        'primary-300': colorPrimary[300],
-        'primary-400': colorPrimary[400],
-        'primary-500': colorPrimary[500],
-        'primary-600': colorPrimary[600],
-        'primary-700': colorPrimary[700],
-        'primary-800': colorPrimary[800],
-        'primary-900': colorPrimary[900],
-      },
       height: {
         '72': '18rem',
         '80': '20rem',

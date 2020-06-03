@@ -6,12 +6,10 @@ export default function Button({
   icon,
   iconPosition = 'right',
   className,
-  bgColor = 'primary-500',
-  bgHoverColor = 'primary-400',
-  textColor = 'white',
-  textHoverColor = 'white',
+  bgClassName = 'bg-primary-500 hover:bg-primary-400',
+  textClassName = 'text-white hover:text-white',
 }) {
-  const classNames = `inline-block bg-${bgColor} hover:bg-${bgHoverColor} text-${textColor} hover:text-${textHoverColor} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`
+  const classNames = `inline-block ${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`
   
   if (!href) {
     return (

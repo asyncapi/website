@@ -1,8 +1,22 @@
 const purgecss = [
   "@fullhuman/postcss-purgecss",
   {
-    content: ["./components/**/*.js", "./pages/**/*.js"],
-    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+    content: ["./components/**/*.*", "./pages/**/*.*"],
+    whitelistPatterns: [
+      /left-/,
+      /mr-/,
+      /pl-/,
+      /z-/,
+      /(md|lg):mb-/,
+      /(md|lg):text-xs$/,
+      /(md|lg):text-gray-/,
+      /(md|lg):font-/,
+      /(md|lg):block$/,
+      /(md|lg):hidden$/,
+      /(md|lg):cursor-/,
+      /(md|lg):flex/,
+    ],
+    defaultExtractor: content => content.match(/[\w-/:()]+(?<!:)/g) || []
   }
 ];
 module.exports = {
