@@ -1,18 +1,59 @@
 import { useState } from 'react'
+import lowlight from 'lowlight'
 import Select from '../components/form/Select'
-import IconClipboard from '../components/icons/Clipboard'
 import generatorTemplates from '../config/generator-templates.json'
+import CodeBlock from './editor/CodeBlock'
 
-export default function GeneratorInstallation({}) {
+lowlight.registerLanguage('generator-cli', hljs => ({
+  name: 'generator-cli',
+  case_insensitive: true,
+  contains: [
+    {
+      className: 'generator-command',
+      begin: 'ag',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: 'https://bit.ly/asyncapi',
+        },
+        {
+          className: 'generator-template',
+          begin: '@asyncapi/',
+          end: '-template',
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
+        },
+      ]
+    },
+    {
+      className: 'generator-docker-command',
+      begin: 'docker',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: 'https://bit.ly/asyncapi',
+        },
+        {
+          className: 'generator-template',
+          begin: '@asyncapi/',
+          end: '-template',
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
+        },
+      ]
+    },
+  ]
+}))
+
+export default function GeneratorInstallation({ }) {
   const [template, setTemplate] = useState('@asyncapi/html-template')
   const [params, setParams] = useState('')
-  const [cli, setCLI] = useState('npm')
-  const [showIsCopied, setShowIsCopied] = useState(false)
-  let codeBlock
-
-  const tabItemsCommonClassNames = 'inline-block uppercase border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300'
-  const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`
-  const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 font-bold border-b-2`
 
   function onChangeTemplate(templateName) {
     setTemplate(templateName)
@@ -23,41 +64,18 @@ export default function GeneratorInstallation({}) {
     }
   }
 
-  function renderNpm() {
-    return (
-      <>
-        <div>npm install -g @asyncapi/generator</div>
-        <div>ag <span className="text-yellow-200">https://bit.ly/asyncapi</span> <span className="text-teal-400">{template}</span><span className="text-pink-400">{params} -o example</span></div>
-      </>
-    )
+  function getNpmCode() {
+    return `npm install -g @asyncapi/generator
+ag https://bit.ly/asyncapi ${template}${params} -o example`
   }
 
-  function renderDocker() {
-    return (
-      <>
-        <div>docker run --rm -it -v ${`{PWD}`}/example:/app/example \</div>
-        <div>asyncapi/generator <span className="text-yellow-200">https://bit.ly/asyncapi</span> <span className="text-teal-400">{template}</span><span className="text-pink-400">{params} -o example</span></div>
-      </>
-    )
-  }
-
-  function onClickCopy() {
-    const selection = window.getSelection()
-    const range = document.createRange()
-    range.selectNodeContents(codeBlock)
-    selection.removeAllRanges()
-    selection.addRange(range)
-    document.execCommand('copy')
-    selection.removeAllRanges()
-
-    setShowIsCopied(true)
-    setTimeout(() => {
-      setShowIsCopied(false)
-    }, 2000)
+  function getDockerCode() {
+    return `docker run --rm -it -v \${PWD}/example:/app/example \\
+asyncapi/generator https://bit.ly/asyncapi ${template}${params} -o example`
   }
 
   return (
-    <div className="max-w-2xl mt-8 mx-auto">
+    <div className="relative max-w-full mt-8 mx-auto">
       <div className="mb-4">
         <span className="text-sm text-gray-500 mr-2">Select a Generator template:</span>
         <Select
@@ -67,24 +85,18 @@ export default function GeneratorInstallation({}) {
           className="shadow-outline-blue"
         />
       </div>
-      <div className="relative bg-code-editor-dark rounded">
-        <div className="text-xs pb-2 pt-1 pl-1">
-          <nav>
-            <ul>
-              <li className={cli === 'npm' ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setCLI('npm')}>npm</li>
-              <li className={cli === 'docker' ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setCLI('docker')}>Docker</li>
-            </ul>
-          </nav>
-        </div>
-        <button onClick={onClickCopy} className="absolute text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
-          { showIsCopied && <span className="inline-block pt-1 mr-2">Copied!</span> }
-          <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-1" /></span>
-        </button>
-        <div ref={e => codeBlock = e} className="py-2 pl-3 pr-10 text-gray-300 text-sm font-mono">
-          {cli === 'npm' && renderNpm()}
-          {cli === 'docker' && renderDocker()}
-        </div>
-      </div>
+      <CodeBlock
+        language="generator-cli"
+        textSizeClassName="text-sm"
+        className="shadow-lg"
+        codeBlocks={[{
+          language: 'npm',
+          code: getNpmCode(),
+        }, {
+          language: 'Docker',
+          code: getDockerCode(),
+        }]}
+      />
     </div>
   )
 }

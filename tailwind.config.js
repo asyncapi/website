@@ -1,4 +1,5 @@
 const colors = require('@tailwindcss/ui/colors')
+const plugin = require('tailwindcss/plugin')
 
 const colorPrimary = {
   100: '#e0f0fb',
@@ -65,5 +66,21 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/ui'),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.hljs-asyncapi-file': {
+          'color': colors.yellow[200],
+          'font-weight': 'bold',
+        },
+        '.hljs-generator-template': {
+          'color': colors.teal[400],
+          'font-weight': 'bold',
+        },
+        '.hljs-generator-param': {
+          'color': colors.pink[400],
+          'font-weight': 'bold',
+        },
+      })
+    })
   ],
 }

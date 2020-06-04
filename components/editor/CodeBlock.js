@@ -4,6 +4,7 @@ import Highlight from 'react-syntax-highlighter'
 
 export default function CodeBlock({
   children,
+  codeBlocks,
   className = '',
   highlightedLines,
   language = 'yaml',
@@ -11,12 +12,18 @@ export default function CodeBlock({
   showCopy = true,
   showLineNumbers = true,
   startingLineNumber = 1,
+  textSizeClassName = 'text-xs',
 }) {
+  const [activeBlock, setActiveBlock] = useState(0)
   const [showIsCopied, setShowIsCopied] = useState(false)
-  const code = children.replace(/\n$/, '')
+  codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }]
+
+  const tabItemsCommonClassNames = 'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300'
+  const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`
+  const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 font-bold border-b-2`
 
   function onClickCopy() {
-    navigator.clipboard.writeText(code).then(() => {
+    navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
       setShowIsCopied(true)
       setTimeout(() => {
         setShowIsCopied(false)
@@ -26,50 +33,68 @@ export default function CodeBlock({
 
   function renderHighlight() {
     return (
-      <div className="pr-8">
-        <Highlight
-          className="pl-2 pr-4 pt-px pb-0 text-xs"
-          language={language}
-          style={theme}
-          showLineNumbers={showLineNumbers}
-          startingLineNumber={startingLineNumber}
-          lineNumberContainerProps={{
-            className: 'pl-0 pr-2 float-left',
-            style: {},
-          }}
-          lineNumberProps={lineNumber => {
-            const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber)
-            return {
-              className: `${isHighlighted ? 'bg-code-editor-dark-highlight text-gray-500' : 'text-gray-600'} block pl-2`
-            }
-          }}
-          wrapLines={true}
-          lineProps={lineNumber => {
-            if (highlightedLines && highlightedLines.includes(lineNumber)) return {
-              className: 'bg-code-editor-dark-highlight block ml-4',
-            }
-          }}
-        >
-          {code}  
-        </Highlight>
+      <div>
+        {codeBlocks.length > 1 && (
+          <div className="text-xs pb-3 pt-0 pl-1">
+            <nav>
+              <ul>
+                {
+                  codeBlocks.map((block, index) => (
+                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.language}</li>
+                  ))
+                }
+              </ul>
+            </nav>
+          </div>
+        )}
+        <div className="pr-8 relative overflow-y-auto">
+          <Highlight
+            className={`pt-px pb-0 mr-8 ${textSizeClassName}`}
+            language={language}
+            style={theme}
+            showLineNumbers={showLineNumbers}
+            startingLineNumber={startingLineNumber}
+            lineNumberContainerProps={{
+              className: 'pl-2 pr-2 float-left left-0 sticky bg-code-editor-dark',
+              style: {},
+            }}
+            lineNumberProps={lineNumber => {
+              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber)
+              return {
+                className: `${isHighlighted ? 'bg-code-editor-dark-highlight text-gray-500' : 'text-gray-600'} block pl-2`
+              }
+            }}
+            wrapLines={true}
+            lineProps={lineNumber => {
+              if (highlightedLines && highlightedLines.includes(lineNumber)) return {
+                className: 'bg-code-editor-dark-highlight block ml-4',
+              }
+            }}
+            codeTagProps={{
+              className: 'mr-2'
+            }}
+          >
+            {codeBlocks[activeBlock].code}
+          </Highlight>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className={`${className} relative rounded overflow-hidden py-2 bg-code-editor-dark`}>
-      { hasWindow && (
+    <div className={`${className} relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark`}>
+      {hasWindow && (
         <div className="pl-4 pb-2">
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-minimize mr-2"></span>
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-maximize mr-2"></span>
         </div>
-      ) }
-      { showCopy && (<button onClick={onClickCopy} className="absolute z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
+      )}
+      {showCopy && (<button onClick={onClickCopy} className="absolute z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
         {showIsCopied && <span className="inline-block pt-1 mr-2">Copied!</span>}
         <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
-      </button>) }
-      { renderHighlight() }
+      </button>)}
+      {renderHighlight()}
     </div>
   )
 }
@@ -77,7 +102,6 @@ export default function CodeBlock({
 const theme = {
   'hljs': {
     'display': 'block',
-    'overflowX': 'auto',
     'background': '#252f3f',
     'color': '#d6deeb'
   },
@@ -332,5 +356,5 @@ const theme = {
   },
   'yaml .hljs-meta': {
     'color': '#D08770'
-  }
+  },
 }
