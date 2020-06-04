@@ -1,6 +1,55 @@
 import { useState } from 'react'
-import IconClipboard from '../icons/Clipboard'
 import Highlight from 'react-syntax-highlighter'
+import lowlight from 'lowlight'
+import IconClipboard from '../icons/Clipboard'
+
+lowlight.registerLanguage('generator-cli', hljs => ({
+  name: 'generator-cli',
+  case_insensitive: true,
+  contains: [
+    {
+      className: 'generator-command',
+      begin: 'ag',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: /[\~\w\d_\/]+/,
+          end: ' ',
+        },
+        {
+          className: 'generator-template',
+          begin: '@asyncapi/',
+          end: '-template',
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
+        },
+      ]
+    },
+    {
+      className: 'generator-docker-command',
+      begin: 'docker',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: 'https://bit.ly/asyncapi',
+        },
+        {
+          className: 'generator-template',
+          begin: '@asyncapi/',
+          end: '-template',
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
+        },
+      ]
+    },
+  ]
+}))
 
 export default function CodeBlock({
   children,
@@ -49,7 +98,7 @@ export default function CodeBlock({
         )}
         <div className="pr-8 relative overflow-y-auto">
           <Highlight
-            className={`pt-px pb-0 mr-8 ${textSizeClassName}`}
+            className={`pt-px pb-0 mr-8 ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
             language={language}
             style={theme}
             showLineNumbers={showLineNumbers}
@@ -71,7 +120,7 @@ export default function CodeBlock({
               }
             }}
             codeTagProps={{
-              className: 'mr-2'
+              className: 'mr-8'
             }}
           >
             {codeBlocks[activeBlock].code}
@@ -90,10 +139,16 @@ export default function CodeBlock({
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-maximize mr-2"></span>
         </div>
       )}
-      {showCopy && (<button onClick={onClickCopy} className="absolute z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
-        {showIsCopied && <span className="inline-block pt-1 mr-2">Copied!</span>}
-        <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
-      </button>)}
+      {
+        showCopy && (
+          <div className={`${ !showLineNumbers && codeBlocks[activeBlock].code.split('/n').length < 2 ? 'absolute top-0 bottom-0 right-0 pl-5 pr-2 bg-code-editor-dark z-50' : ''}`}>
+            <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
+              {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2">Copied!</span>}
+              <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
+            </button>
+          </div>
+        )
+      }
       {renderHighlight()}
     </div>
   )
@@ -124,7 +179,7 @@ const theme = {
     'fontWeight': 'bold',
   },
   'hljs-selector-pseudo': {
-    'color': '#88C0D0'
+    'color': '#74e287'
   },
   'hljs-addition': {
     'backgroundColor': 'rgba(163, 190, 140, 0.5)'
@@ -145,10 +200,10 @@ const theme = {
     'fontWeight': 'bold',
   },
   'hljs-function': {
-    'color': '#88C0D0'
+    'color': '#74e287'
   },
   'hljs-function > .hljs-title': {
-    'color': '#88C0D0'
+    'color': '#74e287'
   },
   'hljs-keyword': {
     'color': '#64a0dc',
@@ -169,7 +224,7 @@ const theme = {
     'color': '#EBCB8B'
   },
   'hljs-string': {
-    'color': '#A3BE8C'
+    'color': '#c0e2a3'
   },
   'hljs-title': {
     'color': '#7edcda',
@@ -216,7 +271,7 @@ const theme = {
     'color': '#5E81AC'
   },
   'hljs-meta-string': {
-    'color': '#A3BE8C'
+    'color': '#c0e2a3'
   },
   'hljs-attr': {
     'color': '#7edcda',
@@ -234,7 +289,7 @@ const theme = {
     'fontWeight': 'bold',
   },
   'hljs-section': {
-    'color': '#88C0D0'
+    'color': '#74e287'
   },
   'hljs-tag': {
     'color': '#64a0dc',
@@ -248,111 +303,6 @@ const theme = {
   },
   'hljs-template-tag': {
     'color': '#5E81AC'
-  },
-  'abnf .hljs-attribute': {
-    'color': '#88C0D0'
-  },
-  'abnf .hljs-symbol': {
-    'color': '#EBCB8B'
-  },
-  'apache .hljs-attribute': {
-    'color': '#88C0D0'
-  },
-  'apache .hljs-section': {
-    'color': '#64a0dc',
-    'fontWeight': 'bold',
-  },
-  'arduino .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'aspectj .hljs-meta': {
-    'color': '#D08770'
-  },
-  'aspectj > .hljs-title': {
-    'color': '#88C0D0'
-  },
-  'bnf .hljs-attribute': {
-    'color': '#7edcda',
-    'fontWeight': 'bold',
-  },
-  'clojure .hljs-name': {
-    'color': '#88C0D0'
-  },
-  'clojure .hljs-symbol': {
-    'color': '#EBCB8B'
-  },
-  'coq .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'cpp .hljs-meta-string': {
-    'color': '#7edcda',
-    'fontWeight': 'bold',
-  },
-  'css .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'css .hljs-keyword': {
-    'color': '#D08770'
-  },
-  'diff .hljs-meta': {
-    'color': '#7edcda',
-    'fontWeight': 'bold',
-  },
-  'ebnf .hljs-attribute': {
-    'color': '#7edcda',
-    'fontWeight': 'bold',
-  },
-  'glsl .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'groovy .hljs-meta:not(:first-child)': {
-    'color': '#D08770'
-  },
-  'haxe .hljs-meta': {
-    'color': '#D08770'
-  },
-  'java .hljs-meta': {
-    'color': '#D08770'
-  },
-  'ldif .hljs-attribute': {
-    'color': '#7edcda',
-    'fontWeight': 'bold',
-  },
-  'lisp .hljs-name': {
-    'color': '#88C0D0'
-  },
-  'lua .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'moonscript .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'nginx .hljs-attribute': {
-    'color': '#88C0D0'
-  },
-  'nginx .hljs-section': {
-    'color': '#5E81AC'
-  },
-  'pf .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'processing .hljs-built_in': {
-    'color': '#88C0D0'
-  },
-  'scss .hljs-keyword': {
-    'color': '#64a0dc',
-    'fontWeight': 'bold',
-  },
-  'stylus .hljs-keyword': {
-    'color': '#64a0dc',
-    'fontWeight': 'bold',
-  },
-  'swift .hljs-meta': {
-    'color': '#D08770'
-  },
-  'vim .hljs-built_in': {
-    'color': '#88C0D0',
-    'fontStyle': 'italic'
   },
   'yaml .hljs-meta': {
     'color': '#D08770'

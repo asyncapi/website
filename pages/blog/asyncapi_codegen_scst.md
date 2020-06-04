@@ -57,7 +57,7 @@ npm install -g @asyncapi/generator
 
 Once you have the generator installed you can run it using the `ag` command. At a minimum you must specify the AsyncAPI document to run it against and the template to use as shown below.
 
-```bash
+```generator-cli
 ag https://github.com/asyncapi/asyncapi/blob/2.0.0/examples/2.0.0/streetlights.yml @asyncapi/java-spring-cloud-stream-template
 ```
 
@@ -71,7 +71,7 @@ Other parameters include:
 
 Using these options, my `ag` command might look something like this, where `-o` specifies the output directory:
 
-```bash
+```generator-cli
 ag -o ExpenseIntegration -p binder=solace -p view=provider -p actuator=true -p artifactId=ExpenseIntegration -p groupId=acme.rideshare -p javaPackage=acme.rideshare.expense -p host=localhost:55555 -p username=default -p password=default -p msgVpn=default ~/Downloads/ExpenseIntegration.yaml @asyncapi/java-spring-cloud-stream-template
 ```
 

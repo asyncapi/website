@@ -1,55 +1,7 @@
 import { useState } from 'react'
-import lowlight from 'lowlight'
 import Select from '../components/form/Select'
 import generatorTemplates from '../config/generator-templates.json'
 import CodeBlock from './editor/CodeBlock'
-
-lowlight.registerLanguage('generator-cli', hljs => ({
-  name: 'generator-cli',
-  case_insensitive: true,
-  contains: [
-    {
-      className: 'generator-command',
-      begin: 'ag',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: 'https://bit.ly/asyncapi',
-        },
-        {
-          className: 'generator-template',
-          begin: '@asyncapi/',
-          end: '-template',
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
-        },
-      ]
-    },
-    {
-      className: 'generator-docker-command',
-      begin: 'docker',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: 'https://bit.ly/asyncapi',
-        },
-        {
-          className: 'generator-template',
-          begin: '@asyncapi/',
-          end: '-template',
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
-        },
-      ]
-    },
-  ]
-}))
 
 export default function GeneratorInstallation({ }) {
   const [template, setTemplate] = useState('@asyncapi/html-template')
