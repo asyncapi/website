@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('@tailwindcss/ui/colors')
 const plugin = require('tailwindcss/plugin')
 
@@ -62,6 +63,9 @@ module.exports = {
       marginRight: {
         '36': '9rem'
       },
+      fontFamily: {
+        'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+      },
     },
   },
   plugins: [
@@ -70,15 +74,15 @@ module.exports = {
       addUtilities({
         '.hljs-asyncapi-file': {
           'color': colors.yellow[200],
-          'font-weight': 'bold',
         },
         '.hljs-generator-template': {
           'color': colors.teal[400],
-          'font-weight': 'bold',
         },
         '.hljs-generator-param': {
           'color': colors.pink[400],
-          'font-weight': 'bold',
+        },
+        '.font-ligatures-contextual': {
+          'font-variant-ligatures': 'contextual',
         },
       })
     })

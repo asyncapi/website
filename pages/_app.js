@@ -50,10 +50,9 @@ function getMDXComponents() {
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
     pre: props => <pre {...props} className={`${props.className || ''} my-8`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm`} />,
-    code: ({ children, className, ...rest }) => {
+    code: ({ children, className = '', ...rest }) => {
       const maybeLanguage = className.match(/language\-([\w\d\-_]+)/)
       const language = maybeLanguage && maybeLanguage.length >= 2 ? maybeLanguage[1] : undefined
-      console.log(language)
       return (<CodeBlock {...rest} className={`${className || ''} rounded`} language={language} showLineNumbers={children.split('\n').length > 2}>{children}</CodeBlock>)
     },
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,

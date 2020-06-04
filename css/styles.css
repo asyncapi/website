@@ -1,6 +1,7 @@
 /*! purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 /*! purgecss end ignore */
 
 @import "tailwindcss/utilities";

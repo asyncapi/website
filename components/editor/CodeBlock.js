@@ -98,25 +98,26 @@ export default function CodeBlock({
         )}
         <div className="pr-8 relative overflow-y-auto">
           <Highlight
-            className={`pt-px pb-0 mr-8 ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
+            className={`pt-px pb-0 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
             language={language}
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
             lineNumberContainerProps={{
-              className: 'pl-2 pr-2 float-left left-0 sticky bg-code-editor-dark',
+              className: 'pl-2 float-left left-0 sticky bg-code-editor-dark',
               style: {},
             }}
             lineNumberProps={lineNumber => {
               const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber)
               return {
-                className: `${isHighlighted ? 'bg-code-editor-dark-highlight text-gray-500' : 'text-gray-600'} block pl-2`
+                className: `${isHighlighted ? 'bg-code-editor-dark-highlight text-gray-500' : 'text-gray-600'} block pl-2 pr-2`
               }
             }}
             wrapLines={true}
             lineProps={lineNumber => {
-              if (highlightedLines && highlightedLines.includes(lineNumber)) return {
-                className: 'bg-code-editor-dark-highlight block ml-4',
+              const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber)
+              return {
+                className: `${isHighlighted ? 'bg-code-editor-dark-highlight block ml-4' : ''} pr-8`,
               }
             }}
             codeTagProps={{
@@ -172,11 +173,9 @@ const theme = {
   },
   'hljs-selector-class': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-selector-attr': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-selector-pseudo': {
     'color': '#74e287'
@@ -189,15 +188,12 @@ const theme = {
   },
   'hljs-built_in': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-type': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-class': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-function': {
     'color': '#74e287'
@@ -207,46 +203,40 @@ const theme = {
   },
   'hljs-keyword': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-literal': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-symbol': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-number': {
-    'color': '#B48EAD'
+    'color': '#d8da68',
   },
   'hljs-regexp': {
     'color': '#EBCB8B'
   },
   'hljs-string': {
-    'color': '#c0e2a3'
+    'color': '#c0e2a3',
+    'fontWeight': '500',
   },
   'hljs-title': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-params': {
     'color': '#d6deeb'
   },
   'hljs-bullet': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-code': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-emphasis': {
     'fontStyle': 'italic'
   },
   'hljs-formula': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-strong': {
     'fontWeight': 'bold'
@@ -262,7 +252,6 @@ const theme = {
   },
   'hljs-doctag': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-meta': {
     'color': '#5E81AC'
@@ -275,25 +264,21 @@ const theme = {
   },
   'hljs-attr': {
     'color': '#7edcda',
-    'fontWeight': 'bold',
   },
   'hljs-attribute': {
     'color': '#d6deeb'
   },
   'hljs-builtin-name': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-name': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-section': {
     'color': '#74e287'
   },
   'hljs-tag': {
     'color': '#64a0dc',
-    'fontWeight': 'bold',
   },
   'hljs-variable': {
     'color': '#d6deeb'
