@@ -7,16 +7,18 @@ import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
 import Warning from '../components/Warning'
 import Sponsors from '../components/Sponsors'
+import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
-
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps, router }) {
   return (
-    <MDXProvider components={getMDXComponents()}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </MDXProvider>
+    <AppContext.Provider value={{ path: router.asPath }}>
+      <MDXProvider components={getMDXComponents()}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </MDXProvider>
+    </AppContext.Provider>
   )
 }
 

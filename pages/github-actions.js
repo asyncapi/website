@@ -23,8 +23,16 @@ export default function GithubActionsPage() {
     )
   }
 
+  const description = 'Generate docs and code on your Github Actions pipeline.'
+  const image = '/img/landing/github-actions.png'
+
   return (
-    <GenericLayout title="Github Actions" wide>
+    <GenericLayout
+      title="Github Actions"
+      description={description}
+      image={image}
+      wide
+    >
       <div className="py-16 overflow-hidden lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
@@ -32,7 +40,7 @@ export default function GithubActionsPage() {
               Automate using Github Actions
             </h3>
             <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-              Generate docs and code on your Github Actions pipeline.
+              {description}
             </p>
           </div>
 

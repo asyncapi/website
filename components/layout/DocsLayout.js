@@ -83,7 +83,11 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               <TOC toc={post.toc} contentSelector=".js-main-content" className="bg-blue-100 mt-4 p-4 md:bg-transparent md:mt-0 md:pt-0 md:pb-8 md:sticky md:top-4 md:overflow-y-auto md:max-h-(screen-16) md:w-72 md:border-l md:border-gray-200" />
               <div className="mt-8 px-4 sm:px-6 md:px-8 md:flex-1 md:max-w-(screen-34)">
                 <article className="mb-32">
-                  <Head title={post.title} />
+                  <Head
+                    title={post.title}
+                    description={post.excerpt}
+                    image={post.cover}
+                  />
                   { children }
                 </article>
               </div>

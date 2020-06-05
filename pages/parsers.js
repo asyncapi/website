@@ -23,8 +23,16 @@ export default function ParsersPage() {
     )
   }
 
+  const description = 'Use our parsers to build your own tools or add AsyncAPI support to your product.'
+  const image = '/img/landing/parsers.png'
+
   return (
-    <GenericLayout title="Parsers & Validators" wide>
+    <GenericLayout
+      title="Parsers"
+      description={description}
+      image={image}
+      wide
+    >
       <div className="py-16 overflow-hidden lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
@@ -32,7 +40,7 @@ export default function ParsersPage() {
               Build your own tools
             </h3>
             <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-              Use our parsers to build your own tools or add AsyncAPI support to your product.
+              {description}
             </p>
           </div>
 

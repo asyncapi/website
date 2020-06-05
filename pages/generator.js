@@ -26,8 +26,16 @@ export default function GeneratorPage() {
     )
   }
 
+  const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.'
+  const image = '/img/tools/generator-1.png'
+
   return (
-    <GenericLayout title="Generator" wide>
+    <GenericLayout
+      title="Generator"
+      description={description}
+      image={image}
+      wide
+    >
       <div className="py-16 overflow-hidden lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
@@ -35,7 +43,7 @@ export default function GeneratorPage() {
               Docs, Code, Anything!
             </h3>
             <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-              Generate documentation, code, and more out of your AsyncAPI files with the Generator.
+              {description}
             </p>
           </div>
 
@@ -110,7 +118,7 @@ export default function GeneratorPage() {
             </div>
 
             <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img className="relative rounded shadow-lg mx-auto" src="/img/tools/generator-1.png" alt="" />
+              <img className="relative rounded shadow-lg mx-auto" src={image} alt="" />
               <img className="relative rounded mt-8 shadow-lg mx-auto" src="/img/tools/generator-2.png" alt="" />
             </div>
           </div>

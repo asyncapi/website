@@ -26,7 +26,11 @@ export default function GenericPostLayout({ post, children }) {
             <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
           </header>
           <article className="mb-32">
-            <Head title={post.title} />
+            <Head
+              title={post.title}
+              description={post.excerpt}
+              image={post.cover}
+            />
             {children}
           </article>
         </main>

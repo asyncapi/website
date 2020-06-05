@@ -4,6 +4,7 @@ import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
 import BlogPostItem from "../../components/navigation/BlogPostItem";
 import Footer from "../../components/Footer";
+import Head from "../../components/Head";
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext)
@@ -19,6 +20,7 @@ export default function BlogIndexPage() {
 
   return (
     <div>
+      <Head title="Blog" />
       <Container>
         <NavBar />
       </Container>
