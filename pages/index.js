@@ -3,10 +3,12 @@ import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
+import Head from '../components/Head'
 
 function HomePage() {
   return (
     <Container>
+      <Head title="Home" />
       <NavBar />
       <Hero />
       <NewsletterSubscribe className="mt-8" />
