@@ -27,7 +27,7 @@ export default function GeneratorPage() {
   }
 
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.'
-  const image = '/img/tools/generator-1.png'
+  const image = '/img/landing/generator.png'
 
   return (
     <GenericLayout
@@ -118,7 +118,7 @@ export default function GeneratorPage() {
             </div>
 
             <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img className="relative rounded shadow-lg mx-auto" src={image} alt="" />
+              <img className="relative rounded shadow-lg mx-auto" src="/img/tools/generator-1.png" alt="" />
               <img className="relative rounded mt-8 shadow-lg mx-auto" src="/img/tools/generator-2.png" alt="" />
             </div>
           </div>
