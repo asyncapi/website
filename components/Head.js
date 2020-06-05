@@ -7,11 +7,12 @@ export default function HeadComponent({
   description = 'Building the future of event-driven architectures.',
   image = '/img/social/card.png',
 }) {
+  const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL
   const { path = '' } = useContext(AppContext)
-  const permalink = `${process.env.ORIGIN}${path}`
+  const permalink = `${url}${path}`
   let type = 'website'
   if (path.startsWith('/docs') || path.startsWith('/blog')) type = 'article'
-  if (!image.startsWith('http') && !image.startsWith('https')) image = `${process.env.ORIGIN}${image}`
+  if (!image.startsWith('http') && !image.startsWith('https')) image = `${url}${image}`
   title = `${title} | AsyncAPI Initiative`
 
   return (
