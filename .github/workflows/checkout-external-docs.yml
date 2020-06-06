@@ -18,7 +18,7 @@ jobs:
         repository: asyncapi/generator
         path: generator-docs
     - name: Copy Generator docs
-      run: "cp generator-docs/README.md pages/docs/generator/index.md"
+      run: 'cat <(echo "---\ntitle: Generator\nweight: 10\n---\n") generator-docs/README.md > pages/docs/generator/index.md'
     - name: Netlify build
       uses: netlify/actions/build@master
       env:
