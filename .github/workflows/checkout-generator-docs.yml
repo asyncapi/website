@@ -16,3 +16,8 @@ jobs:
       with:
         repository: asyncapi/generator
         path: generator-docs
+    - name: Netlify build
+      uses: netlify/actions/build@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
