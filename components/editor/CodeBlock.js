@@ -14,13 +14,21 @@ lowlight.registerLanguage('generator-cli', hljs => ({
       contains: [
         {
           className: 'asyncapi-file',
-          begin: /[\~\w\d_\/]+/,
+          begin: / [\.\~\w\d_\/]+/,
           end: ' ',
-        },
-        {
-          className: 'generator-template',
-          begin: '@asyncapi/',
-          end: '-template',
+          contains: [
+            {
+              className: 'generator-template',
+              begin: / [\@\.\~\w\d\-_\/]+/,
+              end: '-template',
+              contains: [
+                {
+                  className: 'generator-param',
+                  begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
+                },
+              ]
+            },
+          ],
         },
         {
           className: 'generator-param',
