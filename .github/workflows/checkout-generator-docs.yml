@@ -1,0 +1,18 @@
+name: Checkout Generator docs
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  checkout-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: asyncapi/generator
+        path: generator-docs
