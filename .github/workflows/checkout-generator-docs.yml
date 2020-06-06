@@ -12,6 +12,7 @@ jobs:
   checkout-docs:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     - uses: actions/checkout@v2
       with:
         repository: asyncapi/generator
