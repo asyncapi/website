@@ -3,9 +3,9 @@
 https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 
 # Docs
-https://www.asyncapi.com/docs https://www.asyncapi.com/docs/getting-started 301!
-https://www.asyncapi.com/docs/tooling https://www.asyncapi.com/docs/community/tooling 301!
-https://www.asyncapi.com/docs/specifications/latest https://www.asyncapi.com/docs/specifications/2.0.0 302!
+/docs /docs/getting-started 301!
+/docs/tooling /docs/community/tooling 301!
+/docs/specifications/latest /docs/specifications/2.0.0 302!
 
 # Slack
-https://www.asyncapi.com/slack-invite https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLTM5NTlkYzFmZDQyMGVkNzVkOTRhMGU2N2VmMWRlOTdkNWE0YzdjMGQ2NzRlOWU1NGJkYjUyZDEzMzM3ZGYzYzM 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLTM5NTlkYzFmZDQyMGVkNzVkOTRhMGU2N2VmMWRlOTdkNWE0YzdjMGQ2NzRlOWU1NGJkYjUyZDEzMzM3ZGYzYzM 302!
