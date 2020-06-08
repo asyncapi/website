@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Link from 'next/link'
-import AsyncAPILogo from '../AsyncAPILogo'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
+import ClickableLogo from '../ClickableLogo'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -35,7 +35,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="hidden md:flex md:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
             <div className="h-0 flex-1 flex flex-col pt-5 overflow-y-auto">
-              <DocsLogo />
+              <ClickableLogo logoClassName="h-8 w-auto ml-3" />
               
               <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
                 {
@@ -58,7 +58,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="flex flex-col w-0 flex-1 overflow-hidden">
           <div className="flex md:hidden pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3">
             <div className="flex-1 mt-1.5">
-              <DocsLogo />
+              <ClickableLogo logoClassName="h-8 w-auto ml-3" />
             </div>
 
             { !showMenu && (
@@ -120,7 +120,7 @@ function DocsMobileMenu({
             </button>
           </div>
           <div className="flex-1 h-0 pt-5 overflow-y-auto">
-            <DocsLogo />
+            <ClickableLogo logoClassName="h-8 w-auto ml-3" />
             <nav className="mt-5 px-2 mb-4">
               {
                 navigation.map((item, i) => (
@@ -164,15 +164,4 @@ function DocsNavItem ({ href, title, section = false, active = false }) {
   if (section) return <Anchor />
 
   return <LinkWrapper><Anchor /></LinkWrapper>
-}
-
-function DocsLogo() {
-  return (
-    <Link href="/">
-      <a className="flex">
-        <AsyncAPILogo className="h-8 w-auto ml-3" />
-        <div className="self-end mb-0.5 ml-0.5 font-bold italic text-pink-500 text-lg">docs</div>
-      </a>
-    </Link>
-  )
 }
