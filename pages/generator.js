@@ -11,13 +11,13 @@ export default function GeneratorPage() {
   function renderButtons () {
     return (
       <div className="mt-8">
-        <Button
+        {/* <Button
           text="Learn more"
           href="/docs/tools/generator"
           iconPosition="left"
           icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
           className="w-full mb-2 sm:w-auto sm:mb-0"
-        />
+        /> */}
         <GithubButton
           className="w-full sm:w-auto sm:ml-2"
           href="https://www.github.com/asyncapi/generator"
