@@ -8,15 +8,15 @@ export default function ParsersPage() {
   function renderButtons () {
     return (
       <div className="mt-8">
-        <Button
+        {/* <Button
           text="Learn more"
           href="/docs/tools/parser-js"
           iconPosition="left"
           icon={<IconRocket className="inline-block w-6 h-6 -mt-1" />}
-          className="w-full mb-2 sm:w-auto sm:mb-0"
-        />
+          className="w-full mb-2 sm:w-auto sm:mb-0 sm:mr-2"
+        /> */}
         <GithubButton
-          className="w-full sm:w-auto sm:ml-2"
+          className="w-full sm:w-auto"
           href="https://www.github.com/asyncapi/parser-js"
         />
       </div>
