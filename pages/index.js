@@ -7,7 +7,7 @@ import Head from '../components/Head'
 
 function HomePage() {
   return (
-    <Container>
+    <Container wide>
       <Head title="Home" />
       <NavBar />
       <Hero />

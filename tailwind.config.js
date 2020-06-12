@@ -38,7 +38,35 @@ module.exports = {
         'maximize': '#28c93f',
       },
     },
+    animations: {
+      blink: {
+        from: {
+          opacity: 1,
+        },
+        '50%': {
+          opacity: 0,
+        },
+        to: {
+          opacity: 1,
+        },
+      },
+    },
+    animationTimingFunction: {
+      'step-end': 'step-end',
+    },
     extend: {
+      scale: {
+        '25': '.25',
+      },
+      padding: {
+        '2ch': '2ch',
+        '4ch': '4ch',
+        '6ch': '6ch',
+        '8ch': '8ch',
+        '10ch': '10ch',
+        '12ch': '12ch',
+        '14ch': '14ch',
+      },
       height: {
         '72': '18rem',
         '80': '20rem',
@@ -46,9 +74,6 @@ module.exports = {
         '96': '24rem',
         '100': '25rem',
         '104': '26rem',
-      },
-      maxHeight: {
-        '(screen-16)': 'calc(100vh - 4rem)',
       },
       maxWidth: {
         '(screen-34)': 'calc(100vw - 34rem)',
@@ -60,6 +85,13 @@ module.exports = {
         '72': '18rem',
         '40': '10rem',
       },
+      minHeight: {
+        '108': '27rem',
+      },
+      maxHeight: {
+        '(screen-16)': 'calc(100vh - 4rem)',
+        '108': '27rem',
+      },
       marginRight: {
         '36': '9rem'
       },
@@ -70,6 +102,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/ui'),
+    require('tailwindcss-animations'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.hljs-asyncapi-file': {
