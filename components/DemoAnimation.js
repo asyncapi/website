@@ -201,15 +201,6 @@ export default function DemoAnimation({ className = '' }) {
 
   return (
     <div className={`${className} relative`}>
-      {
-        showControls && (
-          <div className="absolute z-10 w-full top-1/2 text-center -mt-8">
-            <div className="inline-block px-16 py-8 bg-white border border-gray-500 rounded-lg">
-              <Button className="inline-block" href="https://hub.asyncapi.io" text="Try it live!" />
-            </div>
-          </div>
-        )
-      }
       <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: '', opacity: '1' } : null }>
         <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
@@ -232,7 +223,7 @@ export default function DemoAnimation({ className = '' }) {
             <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
               Open this example on AsyncAPI Hub to play with it and get a better taste of the specification. No signup is required!
             </p>
-            <Button text="Open on AsyncAPI Hub" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
+            <Button text="Open on AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
           </div>
           <MacWindow
             className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-3/4' : ''}`}
