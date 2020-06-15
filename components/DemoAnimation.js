@@ -16,7 +16,7 @@ export default function DemoAnimation({ className = '' }) {
   const [showEmailDescription, setShowEmailDescription] = useState(false)
   const [finished, setFinished] = useState(false)
   const [showControls, setShowControls] = useState(false)
-  const typingSpeed = 1
+  const typingSpeed = 60
 
   useEffect(() => {
     if (finished) {
@@ -25,6 +25,10 @@ export default function DemoAnimation({ className = '' }) {
       }, 2000)
     }
   }, [finished])
+
+  function transitionClassNames(condition) {
+    return `transition-all duration-500 ease-in-out overflow-hidden ${condition ? 'opacity-100 max-h-auto' : 'max-h-0 opacity-0'}`
+  }
 
   function renderTyping(children, callback) {
     return (
@@ -51,6 +55,7 @@ export default function DemoAnimation({ className = '' }) {
         <div>
           <span className="text-teal-400">&nbsp;&nbsp;version:</span> 1.0.0
         </div>
+        <Typing.Delay ms={500} />
       </>
     )
 
@@ -85,6 +90,7 @@ export default function DemoAnimation({ className = '' }) {
         <div>
           <span className="text-purple-400">&nbsp;&nbsp;&nbsp;&nbsp;subscribe:</span>
         </div>
+        <Typing.Delay ms={500} />
       </>,
       callback
     )
@@ -233,75 +239,59 @@ export default function DemoAnimation({ className = '' }) {
             contentClassName="text-left h-full text-gray-800 text-sm font-medium transition-all duration-500 ease-in-out"
             title="Account Service Documentation"
           >
-            { showInfo && (
-              <div className="mb-8 mt-4">
-                <h1 className="text-2xl font-bold text-gray-500">Account Service 1.0.0</h1>
-                { finished && (<p>
-                  This service is in charge of processing user signups 🚀
-                </p>) }
-              </div>
-            ) }
-            { showChannelsAndOperation && (
-              <>
-                <span className="px-3 py-2 mr-2 bg-green-500 text-white font-bold rounded">SUB</span> <span className="text-lg text-gray-700">user/signedup</span>
-              </>
-            ) }
-            { showUntilMessagePayload && (
-              <div className="">
-                <div className="mt-4 mb-2 text-gray-400">Accepts the following message:</div>
-                <div className="px-4 py-4 bg-gray-200 text-gray-600 rounded">
-                  Payload <ArrowRight className={`inline-block w-4 h-4 ${showDisplayName ? 'rotate-90 transform' : ''}`} /> <span className="ml-24 text-green-500 font-bold">Object</span>
-                  <div>
-                    <div className="px-4 py-4 mt-2 bg-gray-100 rounded">
-                      {
-                        showDisplayName && (
-                          <div className="grid grid-cols-2 mb-4">
-                            <div>displayName</div>
-                            <div>
-                              <div className="text-green-500 font-bold">String</div>
-                              { showDisplayNameDescription && <div className="text-sm">Name of the user</div> }
-                            </div>
-                          </div>
-                        )
-                      }
-                      {
-                        showEmail && (
-                          <div className="grid grid-cols-2">
-                            <div>email</div>
-                            <div>
-                              <div className="text-green-500 font-bold">
-                                String
-                                <span className="text-xs bg-yellow-300 ml-2 px-1 py-0.5 text-black rounded">email</span>
-                              </div>
-                              { showEmailDescription && <div className="text-sm">Email of the user</div> }
-                            </div>
-                          </div>
-                        )
-                      }
-                      
-                      <div className="mt-8 text-xs text-gray-400">Additional properties are allowed.</div>
-                    </div>
+            <div className={`mb-8 mt-4 ${transitionClassNames(showInfo)}`}>
+              <h1 className="text-2xl font-bold text-gray-500">Account Service 1.0.0</h1>
+              <p className={transitionClassNames(finished)}>
+                This service is in charge of processing user signups 🚀
+              </p>
+            </div>
+            
+            <div className={transitionClassNames(showChannelsAndOperation)}>
+              <span className="px-3 py-2 mr-2 bg-green-500 text-white font-bold rounded">SUB</span> <span className="text-lg text-gray-700">user/signedup</span>
+            </div>
 
-                    <div className="mt-4 p-4 font-mono bg-code-editor-dark text-gray-400 rounded">
-                      <div className="text-gray-500">// Example</div>
-                      <div>&nbsp;</div>
-                      <div>{'{'}</div>
-                      { showDisplayName && (
-                        <div>
-                          <span className="text-teal-400">&nbsp;&nbsp;"displayName"</span>: <span className="text-white">"Eve & Chan"</span>,
-                        </div>
-                      ) }
-                      { showEmail && (
-                        <div>
-                          <span className="text-teal-400">&nbsp;&nbsp;"email"</span>: <span className="text-white">"info@asyncapi.io"</span>
-                        </div>
-                      ) }
-                      <div>{'}'}</div>
+            <div className={transitionClassNames(showUntilMessagePayload)}>
+              <div className="mt-4 mb-2 text-gray-400">Accepts the following message:</div>
+              <div className="px-4 py-4 bg-gray-200 text-gray-600 rounded">
+                Payload <ArrowRight className={`inline-block w-4 h-4 transition-all duration-500 ease-in-out ${showDisplayName ? 'rotate-90 transform' : ''}`} /> <span className="ml-24 text-green-500 font-bold">Object</span>
+                <div>
+                  <div className="px-4 py-4 mt-2 bg-gray-100 rounded">
+                    <div className={`grid grid-cols-2 mb-4 ${transitionClassNames(showDisplayName)}`}>
+                      <div>displayName</div>
+                      <div>
+                        <div className="text-green-500 font-bold">String</div>
+                        <div className={`text-sm ${transitionClassNames(showDisplayNameDescription)}`}>Name of the user</div>
+                      </div>
                     </div>
+                    <div className={`grid grid-cols-2 ${transitionClassNames(showEmail)}`}>
+                      <div>email</div>
+                      <div>
+                        <div className="text-green-500 font-bold">
+                          String
+                          <span className="text-xs bg-yellow-300 ml-2 px-1 py-0.5 text-black rounded">email</span>
+                        </div>
+                        <div className={`text-sm ${transitionClassNames(showEmailDescription)}`}>Email of the user</div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-8 text-xs text-gray-400">Additional properties are allowed.</div>
+                  </div>
+
+                  <div className="mt-4 p-4 font-mono bg-code-editor-dark text-gray-400 rounded">
+                    <div className="text-gray-500">// Example</div>
+                    <div>&nbsp;</div>
+                    <div>{'{'}</div>
+                    <div className={transitionClassNames(showDisplayName)}>
+                      <span className="text-teal-400">&nbsp;&nbsp;"displayName"</span>: <span className="text-white">"Eve & Chan"</span>,
+                    </div>
+                    <div className={transitionClassNames(showEmail)}>
+                      <span className="text-teal-400">&nbsp;&nbsp;"email"</span>: <span className="text-white">"info@asyncapi.io"</span>
+                    </div>
+                    <div>{'}'}</div>
                   </div>
                 </div>
               </div>
-            ) }
+            </div>
           </MacWindow>
         </div>
       </div>
