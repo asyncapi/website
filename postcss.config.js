@@ -17,6 +17,7 @@ const purgecss = [
       /(md|lg):flex/,
       /asyncapi\-[\w]+/,
       /generator\-[\w]+/,
+      /mac-window/,
     ],
     defaultExtractor: content => content.match(/[\w-/:()]+(?<!:)/g) || []
   }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Typing from 'react-typing-animation'
 import MacWindow from './MacWindow'
 import ArrowRight from './icons/ArrowRight'
+import IconRocket from './icons/Rocket'
 import Button from './buttons/Button'
 
 export default function DemoAnimation({ className = '' }) {
@@ -15,7 +16,7 @@ export default function DemoAnimation({ className = '' }) {
   const [showEmailDescription, setShowEmailDescription] = useState(false)
   const [finished, setFinished] = useState(false)
   const [showControls, setShowControls] = useState(false)
-  const typingSpeed = 80
+  const typingSpeed = 1
 
   useEffect(() => {
     if (finished) {
@@ -203,8 +204,8 @@ export default function DemoAnimation({ className = '' }) {
           </div>
         )
       }
-      <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: 'blur(5px)', opacity: '.8' } : null }>
-        <div className="mb-2 md:flex-1 md:mr-1 md:mb-0">
+      <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: '', opacity: '1' } : null }>
+        <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
             contentClassName="text-left min-h-108 text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out"
@@ -217,9 +218,18 @@ export default function DemoAnimation({ className = '' }) {
             { (showDisplayName || showDisplayNameDescription) && renderEmail(() => setShowEmail(true)) }
           </MacWindow>
         </div>
-        <div className="md:flex-1 md:ml-1 md:mb-0">
+        <div className={`relative md:flex-1 md:ml-1 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
+          <div className={`md:absolute md:left-0 md:top-0 md:right-0 md:ml-48 md:mr-8 md:text-center ${showControls ? 'block' : 'hidden'}`}>
+            <h3 className="text-primary-800 text-xl font-bold md:text-2xl mb-4">
+              Play with it!
+            </h3>
+            <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
+              Open this example on AsyncAPI Hub to play with it and get a better taste of the specification. No signup is required!
+            </p>
+            <Button text="Open on AsyncAPI Hub" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
+          </div>
           <MacWindow
-            className="bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out"
+            className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-3/4' : ''}`}
             contentClassName="text-left h-full text-gray-800 text-sm font-medium transition-all duration-500 ease-in-out"
             title="Account Service Documentation"
           >
