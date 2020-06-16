@@ -8,7 +8,6 @@ import Remember from '../components/Remember'
 import Warning from '../components/Warning'
 import Sponsors from '../components/Sponsors'
 import AppContext from '../context/AppContext'
-import '@mobiscroll/react-lite/dist/css/mobiscroll.min.css'
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
