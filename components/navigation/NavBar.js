@@ -9,7 +9,7 @@ import MobileNavMenu from './MobileNavMenu'
 import communityItems from './communityItems'
 import otherItems from './otherItems'
 
-export default function NavBar () {
+export default function NavBar ({ className = '' }) {
   const [open, setOpen] = useState()
   const [mobileMenuOpen, setMobileMenuOpen] = useState()
 
@@ -28,7 +28,7 @@ export default function NavBar () {
   }, [open])
 
   return (
-    <div className="relative bg-white">
+    <div className={`relative bg-white ${className}`}>
       <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <div className="lg:w-0 lg:flex-1">
           <a href="/" className="flex">

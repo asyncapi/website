@@ -9,8 +9,8 @@ function HomePage() {
   return (
     <Container wide>
       <Head title="Home" />
-      <NavBar />
-      <Hero />
+      <NavBar className="z-50" />
+      <Hero className="mb-32" />
       <NewsletterSubscribe className="mt-8" />
       <Sponsors className="mt-8" />
     </Container>

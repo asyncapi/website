@@ -32,6 +32,7 @@ module.exports = {
         dark: '#252f3f',
         'dark-highlight': '#3e4d64',
       },
+      hub: '#252f3f',
       'mac-window': {
         'close': '#ff5f56',
         'minimize': '#ffbd2e',

@@ -205,7 +205,7 @@ export default function DemoAnimation({ className = '' }) {
         <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
-            contentClassName="text-left min-h-108 text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out"
+            contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out md:min-h-108"
             title="asyncapi.yaml"
           >
             { (showEmailDescription || started) && renderInfoBlock(() => setShowInfo(true)) }
@@ -216,17 +216,17 @@ export default function DemoAnimation({ className = '' }) {
           </MacWindow>
         </div>
         <div className={`relative md:flex-1 md:ml-1 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
-          <div className={`md:absolute md:left-0 md:top-0 md:right-0 md:ml-48 md:mr-8 md:text-center ${showControls ? 'block' : 'hidden'}`}>
-            <h3 className="text-primary-800 text-xl font-bold md:text-2xl mb-4">
+          <div className={`text-center mt-8 lg:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
+            <h3 className="text-primary-800 text-2xl font-bold md:text-2xl mb-4">
               Play with it!
             </h3>
             <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
               Open this example on AsyncAPI Hub to play with it and get a better taste of the specification. No signup is required!
             </p>
-            <Button text="Open on AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
+            <Button bgClassName="bg-green-500" className="block md:inline-block" text="Open on AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
           </div>
           <MacWindow
-            className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-3/4' : ''}`}
+            className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto lg:opacity-100 lg:-translate-x-3/4' : ''}`}
             contentClassName="text-left h-full text-gray-800 text-sm font-medium transition-all duration-500 ease-in-out"
             title="Account Service Documentation"
           >
