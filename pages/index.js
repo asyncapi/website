@@ -11,7 +11,7 @@ function HomePage() {
       <Head title="Home" />
       <NavBar className="z-50" />
       <Hero className="mb-32" />
-      <NewsletterSubscribe className="mt-8" />
+      <NewsletterSubscribe formName="form 1" className="mt-8" />
       <Sponsors className="mt-8" />
     </Container>
   )
