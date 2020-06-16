@@ -14,8 +14,13 @@ export default function MacWindow({
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-minimize mr-2"></span>
           <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-maximize mr-2"></span>
         </div>
-        <div className="flex-1 text-center text-gray-400 text-sm -ml-14">
+        <div className="flex-1 text-gray-400 text-sm px-2 truncate text-left sm:text-center" title={title}>
           {title}
+        </div>
+        <div className="hidden sm:block"> {/* This block is used for aligning the title on the center */}
+          <span className="inline-block w-2.5 h-2.5 mr-2"></span>
+          <span className="inline-block w-2.5 h-2.5 mr-2"></span>
+          <span className="inline-block w-2.5 h-2.5 mr-2"></span>
         </div>
       </div>
       <div className={`${contentClassName} px-4 pb-4`}>

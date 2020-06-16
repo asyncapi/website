@@ -205,7 +205,7 @@ export default function DemoAnimation({ className = '' }) {
         <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
-            contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out md:min-h-108"
+            contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108"
             title="asyncapi.yaml"
           >
             { (showEmailDescription || started) && renderInfoBlock(() => setShowInfo(true)) }
