@@ -1,11 +1,18 @@
-import IconTwitter from "./icons/Twitter";
-import IconGithub from "./icons/Github";
-import IconYoutube from "./icons/YouTube";
-import IconLinkedIn from "./icons/LinkedIn";
+import IconTwitter from "./icons/Twitter"
+import IconGithub from "./icons/Github"
+import IconYoutube from "./icons/YouTube"
+import IconLinkedIn from "./icons/LinkedIn"
+import NewsletterSubscribe from "./NewsletterSubscribe"
+import Container from "./layout/Container"
 
 export default function Footer() {
   return (
-    <div className="bg-white">
+    <div className="bg-white mt-12">
+      <div className="bg-primary-900 py-12">
+        <Container wide>
+          <NewsletterSubscribe formName="form 2" dark />
+        </Container>
+      </div>
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">

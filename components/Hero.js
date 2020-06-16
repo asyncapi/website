@@ -18,7 +18,7 @@ export default function Hero ({ className = '' }) {
         <Button className="block mt-2 md:mt-0 md:inline-block md:ml-2" bgClassName="bg-green-500" text="Go to AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
       </div>
       
-      <div className="mt-8">
+      <div className="mt-8 md:mt-16">
         <DemoAnimation />
       </div>
     </div>

@@ -1,11 +1,15 @@
 import Button from "./buttons/Button";
 
-export default function NewsletterSubscribe ({ className = '', formName }) {
+export default function NewsletterSubscribe ({
+  formName,
+  className = '',
+  dark = false,
+}) {
   if (!formName) throw new Error('Parameter formName is required for the NewsletterSubscribe component.')
-  
+
   return (
-    <div className={`shadow-lg p-8 ${className}`}>
-      <h3 className="text-primary-800 text-lg font-bold">
+    <div className={`p-8 ${className}`}>
+      <h3 className={`${dark ? 'text-primary-200' : 'text-primary-800'} text-lg font-bold`}>
         Subscribe to our newsletter to receive news about AsyncAPI.
       </h3>
       <p className="text-gray-400 mt-2 text-sm">We respect your inbox. No spam, promise ✌️</p>

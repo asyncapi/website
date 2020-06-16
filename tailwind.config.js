@@ -33,6 +33,7 @@ module.exports = {
         'dark-highlight': '#3e4d64',
       },
       hub: '#252f3f',
+      slack: '#371038',
       'mac-window': {
         'close': '#ff5f56',
         'minimize': '#ffbd2e',
@@ -98,6 +99,9 @@ module.exports = {
       },
       fontFamily: {
         'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+      },
+      borderRadius: {
+        'xl': '1rem',
       },
     },
   },
