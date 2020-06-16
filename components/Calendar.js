@@ -24,7 +24,7 @@ export default function Calendar ({ className = '' }) {
 
   return (
     <div className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4 ${className}`}>
-      <h3 className="text-left text-lg mb-8">Upcoming events</h3>
+      <h3 className="text-left text-lg mb-8">Upcoming meetings</h3>
       {
         upcomingEvents().map((event, index) => (
           <div className="inline-block text-center mb-4 lg:flex" key={index}>
