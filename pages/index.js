@@ -62,10 +62,10 @@ function HomePage() {
                     <p className="mt-2 text-base leading-6 text-gray-500">
                       We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
                     </p>
-                    <div className="mt-5">
-                      <Button className="block md:inline" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
-                      <Button className="mt-2 md:mt-0 md:ml-2 block md:inline" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
-                      <Button className="mt-2 mt:mt-0 md:ml-2 block md:inline" bgClassName="bg-red-500 hover:bg-red-400" text="Watch recordings" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
+                    <div className="mt-5 md:flex">
+                      <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
+                      <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list to get invite" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
+                      <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-red-500 hover:bg-red-400" text="Watch previous recordings" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
                     </div>
                   </div>
                 </div>
