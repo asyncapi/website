@@ -1,7 +1,7 @@
 import moment from 'moment'
 import TextTruncate from 'react-text-truncate'
 
-export default function BlogPostItem({ post }) {
+export default function BlogPostItem({ post, className = '' }) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800']
 
   switch (post.type.toLowerCase()) {
@@ -20,7 +20,7 @@ export default function BlogPostItem({ post }) {
   }
 
   return (
-    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <div className={`flex flex-col rounded-lg shadow-lg overflow-hidden ${className}`}>
       <a href={post.slug} className="flex-shrink-0">
         <img className="h-48 w-full object-cover" src={post.cover} alt="" />
       </a>
