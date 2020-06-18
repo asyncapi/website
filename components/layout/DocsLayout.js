@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Link from 'next/link'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
 import ClickableLogo from '../ClickableLogo'
+import DocsNavItem from '../navigation/DocsNavItem'
+import DocsMobileMenu from '../navigation/DocsMobileMenu'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -27,6 +28,10 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <div className="flex max-w-7xl mx-auto bg-white min-h-screen">
+        { showMenu && (
+          <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
+        ) }
+        
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden md:flex md:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
@@ -92,68 +97,5 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         </div>
       </div>
     </DocsContext.Provider>
-  )
-}
-
-function DocsMobileMenu({
-  post,
-  navigation,
-  onClickClose = () => {},
-}) {
-  return (
-    <div className="md:hidden">
-      <div className="fixed inset-0 flex z-40">
-        <div className="fixed inset-0">
-          <div className="absolute inset-0 bg-gray-600 opacity-75"></div>
-        </div>
-
-        <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
-          <div className="absolute top-0 right-0 -mr-14 p-1">
-            <button onClick={onClickClose} className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600" aria-label="Close sidebar">
-              <svg className="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex-1 h-0 pt-5 overflow-y-auto">
-            <ClickableLogo logoClassName="h-8 w-auto ml-3" />
-            <nav className="mt-5 px-2 mb-4">
-              {
-                navigation.map((item, i) => (
-                  <div key={`mobile-menu-item-${i}`}>
-                  {
-                    item.isSection ? (
-                      <DocsNavItem title={item.title} href={item.slug} section />
-                    ) : (
-                      <DocsNavItem title={item.title} href={item.slug} active={post.slug === item.slug} />
-                    )
-                  }
-                  </div>
-                ))
-              }
-            </nav>
-          </div>
-        </div>
-        <div className="flex-shrink-0 w-14">
-          {/* Force sidebar to shrink to fit close icon */}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function DocsNavItem ({ href, title, section = false, active = false }) {
-  const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none'
-  const sectionClassNames = `mt-8 mb-2 text-primary-800 text-xs font-medium uppercase hover:text-primary-800 ${commonClassNames}`
-  const activeItemClassNames = 'font-medium text-primary-600'
-  const nonActiveItemClassNames = 'font-thin hover:text-primary-800 hover:font-normal'
-  const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
-  
-  return (
-    <Link href={href}>
-      <a href={section ? undefined : href} className={section ? sectionClassNames : itemClassNames}>
-        {title}
-      </a>
-    </Link>
   )
 }
