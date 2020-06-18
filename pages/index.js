@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { getAllPosts } from '../lib/api'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
@@ -45,8 +44,12 @@ function HomePage() {
         </Container>
       </div>
 
-      <Container wide>
-        <Sponsors className="mt-8" />
+      <Container className="text-center mt-12 pt-12" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
+        <p className="mt-2 text-base leading-6 text-gray-500">
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium">Support us!</a>
+        </p>
+        <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
 
       <Container className="text-center mt-24 py-12" wide>
@@ -96,9 +99,9 @@ function HomePage() {
       </Container>
       
       <Container className="text-center pb-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Trusted by the world leading brands</h3>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
         <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI in your company and want to get it listed? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium">Let us know here!</a>
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and want to get it listed? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium">Let us know here!</a>
         </p>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="justify-center flex">
