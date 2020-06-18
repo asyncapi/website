@@ -18,21 +18,15 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false)
 
-  console.log('BEFORE SORTING', navItems)
   const navigation = navItems.sort((i1, i2) => {
     const i1Weight = i1.isSection ? (i1.weight + 1) * 1000 : (i1.sectionWeight + 1) * 1000 + (i1.weight || 0)
     const i2Weight = i2.isSection ? (i2.weight + 1) * 1000 : (i2.sectionWeight + 1) * 1000 + (i2.weight || 0)
     return i1Weight - i2Weight
   })
-  console.log('AFTER SORTING', navigation)
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <div className="flex max-w-7xl mx-auto bg-white min-h-screen">
-        { showMenu && (
-          <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
-        ) }
-        
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden md:flex md:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
