@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import sortBy from 'lodash/sortBy'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
@@ -19,17 +20,13 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false)
 
-  const navigation = navItems.sort((i1, i2) => {
-    const i1Weight = i1.isSection ? (i1.weight + 1) * 1000 : (i1.sectionWeight + 1) * 1000 + (i1.weight || 0)
-    const i2Weight = i2.isSection ? (i2.weight + 1) * 1000 : (i2.sectionWeight + 1) * 1000 + (i2.weight || 0)
-    console.group()
-    console.log(i1, i2)
-    console.log(i1Weight, i2Weight)
-    console.log(i1Weight - i2Weight)
-    console.groupEnd()
-
-    return i1Weight - i2Weight
-  })
+  const navigation = sortBy(navItems.map(item => {
+    const sortWeight = item.isSection ? (item.weight + 1) * 1000 : (item.sectionWeight + 1) * 1000 + (item.weight || 0)
+    return {
+      ...item,
+      sortWeight: sortWeight,
+    }
+  }), ['sortWeight'])
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
