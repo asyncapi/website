@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function DocsNavItem({ item, active }) {
   const { slug, title, isSection } = item
   const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none'
@@ -17,10 +15,8 @@ export default function DocsNavItem({ item, active }) {
   }
 
   return (
-    <Link href={slug}>
-      <a href={slug} className={itemClassNames}>
-        {title}
-      </a>
-    </Link>
+    <a href={slug} className={itemClassNames}>
+      {title}
+    </a>
   )
 }
