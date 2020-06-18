@@ -15,6 +15,7 @@ const purgecss = [
       /(md|lg|xl):hidden$/,
       /(md|lg|xl):cursor-/,
       /(md|lg|xl):flex/,
+      /^xl:max-w-184$/,
       /asyncapi\-[\w]+/,
       /generator\-[\w]+/,
       /w\-2\.5/,

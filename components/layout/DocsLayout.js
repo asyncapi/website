@@ -18,11 +18,13 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false)
 
+  console.log('BEFORE SORTING', navItems)
   const navigation = navItems.sort((i1, i2) => {
     const i1Weight = i1.isSection ? (i1.weight + 1) * 1000 : (i1.sectionWeight + 1) * 1000 + (i1.weight || 0)
     const i2Weight = i2.isSection ? (i2.weight + 1) * 1000 : (i2.sectionWeight + 1) * 1000 + (i2.weight || 0)
     return i1Weight - i2Weight
   })
+  console.log('AFTER SORTING', navigation)
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -124,7 +126,7 @@ function DocsMobileMenu({
             <nav className="mt-5 px-2 mb-4">
               {
                 navigation.map((item, i) => (
-                  <div key={`menu-item-${i}`}>
+                  <div key={`mobile-menu-item-${i}`}>
                   {
                     item.isSection ? (
                       <DocsNavItem title={item.title} href={item.slug} section />
