@@ -1,4 +1,4 @@
 ---
-title: Specifications
+title: Specification
 weight: 2
 ---
