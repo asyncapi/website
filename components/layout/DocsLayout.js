@@ -154,16 +154,12 @@ function DocsNavItem ({ href, title, section = false, active = false }) {
   const activeItemClassNames = 'font-medium text-primary-600'
   const nonActiveItemClassNames = 'font-thin hover:text-primary-800 hover:font-normal'
   const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
-  const LinkWrapper = ({ children }) => (
-    <Link href={href}>{children}</Link>
+  
+  return (
+    <Link href={href}>
+      <a href={section ? undefined : href} className={section ? sectionClassNames : itemClassNames}>
+        {title}
+      </a>
+    </Link>
   )
-  const Anchor = () => (
-    <a href={section ? undefined : href} className={section ? sectionClassNames : itemClassNames}>
-      {title}
-    </a>
-  )
-
-  if (section) return <Anchor />
-
-  return <LinkWrapper><Anchor /></LinkWrapper>
 }
