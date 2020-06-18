@@ -46,7 +46,7 @@ function HomePage() {
 
       <Container className="text-center mt-12 pt-12" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500">
+        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium">Support us!</a>
         </p>
         <Sponsors className="mt-8" showSupportBanner={false} />
@@ -54,7 +54,7 @@ function HomePage() {
 
       <Container className="text-center mt-24 py-12" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Join our great community!</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500">
+        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
           We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
         </p>
         <div className="py-2 lg:py-12">
