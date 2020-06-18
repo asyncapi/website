@@ -78,6 +78,7 @@ module.exports = {
         '104': '26rem',
       },
       maxWidth: {
+        '(screen-16)': 'calc(100vw - 16rem)',
         '(screen-34)': 'calc(100vw - 34rem)',
         '64': '16rem',
         '164': '41rem',

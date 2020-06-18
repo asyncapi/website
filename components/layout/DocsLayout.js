@@ -30,7 +30,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className="flex max-w-7xl mx-auto bg-white min-h-screen">
+      <div className="flex bg-white min-h-screen xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -53,8 +53,8 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-0 flex-1">
-          <div className="flex md:hidden pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3">
+        <div className="flex flex-col w-0 flex-1 max-w-full md:max-w-(screen-16)">
+          <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 md:hidden">
             <div className="flex-1 mt-1.5">
               <ClickableLogo logoClassName="h-8 w-auto ml-3" />
             </div>
