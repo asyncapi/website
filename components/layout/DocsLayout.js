@@ -19,9 +19,15 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false)
 
-  const navigation = [...navItems].sort((i1, i2) => {
+  const navigation = navItems.sort((i1, i2) => {
     const i1Weight = i1.isSection ? (i1.weight + 1) * 1000 : (i1.sectionWeight + 1) * 1000 + (i1.weight || 0)
     const i2Weight = i2.isSection ? (i2.weight + 1) * 1000 : (i2.sectionWeight + 1) * 1000 + (i2.weight || 0)
+    console.group()
+    console.log(i1, i2)
+    console.log(i1Weight, i2Weight)
+    console.log(i1Weight - i2Weight)
+    console.groupEnd()
+
     return i1Weight - i2Weight
   })
 
