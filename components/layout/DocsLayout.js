@@ -42,13 +42,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 {
                   navigation.map((item, i) => (
                     <div key={`menu-item-${i}`}>
-                    {
-                      item.isSection ? (
-                        <DocsNavItem title={item.title} href={item.slug} section />
-                      ) : (
-                        <DocsNavItem title={item.title} href={item.slug} active={post.slug === item.slug} />
-                      )
-                    }
+                      <DocsNavItem item={item} active={post.slug === item.slug} />
                     </div>
                   ))
                 }
