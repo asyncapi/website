@@ -4,7 +4,7 @@ import ArrowRight from './icons/ArrowRight'
 
 export default function TOC({
   className,
-  cssBreakingPoint = 'md',
+  cssBreakingPoint = 'xl',
   toc,
   contentSelector,
 }) {

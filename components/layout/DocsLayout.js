@@ -26,7 +26,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className="flex h-screen max-w-7xl mx-auto overflow-hidden bg-white">
+      <div className="flex max-w-7xl mx-auto bg-white min-h-screen">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -34,7 +34,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden md:flex md:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
-            <div className="h-0 flex-1 flex flex-col pt-5 overflow-y-auto">
+            <div className="flex-1 flex flex-col pt-5 md:overflow-y-auto md:sticky md:top-0 md:max-h-screen">
               <ClickableLogo logoClassName="h-8 w-auto ml-3" />
               
               <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
@@ -55,7 +55,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-0 flex-1 overflow-hidden">
+        <div className="flex flex-col w-0 flex-1">
           <div className="flex md:hidden pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3">
             <div className="flex-1 mt-1.5">
               <ClickableLogo logoClassName="h-8 w-auto ml-3" />
@@ -69,7 +69,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </button>
             )}
           </div>
-          <main className="js-main-content relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
+          <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
             <div className="px-4 sm:px-6 md:px-8">
               <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             </div>
@@ -79,9 +79,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 <a href={`https://github.com/asyncapi/website/blob/master/pages${post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
               </p>
             </div>
-            <div className={`md:flex ${post.toc && post.toc.length ? 'md:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} contentSelector=".js-main-content" className="bg-blue-100 mt-4 p-4 md:bg-transparent md:mt-0 md:pt-0 md:pb-8 md:sticky md:top-4 md:overflow-y-auto md:max-h-(screen-16) md:w-72 md:border-l md:border-gray-200" />
-              <div className="mt-8 px-4 sm:px-6 md:px-8 md:flex-1 md:max-w-(screen-34)">
+            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
+              <TOC toc={post.toc} className="bg-blue-100 mt-4 p-4 sticky top-0 xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:overflow-y-auto xl:max-h-(screen-16) xl:w-72 xl:border-l xl:border-gray-200" />
+              <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
                 <article className="mb-32">
                   <Head
                     title={post.title}
