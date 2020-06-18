@@ -3,6 +3,9 @@
   [headers.values]
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
 
+[[plugins]]
+package = "netlify-plugin-cache-nextjs"
+
 [build]
   command = "npm run build && npm run export"
   publish = "out"
