@@ -56,7 +56,7 @@ Let’s revisit our previous example. We needed to solve two separate requiremen
 
 If we introduce a message-driven architecture to our solution, we can develop an API that delivers project and task resources that offer the necessary capabilities (create, read, update, delete, and mark as complete). Our API doesn’t need to know about how the task completion event notification will be used, including that an email will be sent. All it needs to do is publish event messages when those events occur and allow other services to take action as appropriate. Events this API may publish include:
 
-![Example of API events](/images/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.jpg "Example of API events")
+![Example of API events](/images/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.webp "Example of API events")
 
 Interested parties can then subscribe to the event(s) they are interested in and safely ignore the rest. In our example, we may end up with three components:
 
