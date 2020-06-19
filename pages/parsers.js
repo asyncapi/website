@@ -45,7 +45,7 @@ export default function ParsersPage() {
           </div>
 
           <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative lg:mt-8">
+            <div className="relative mb-8 lg:mt-8">
               <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
               JavaScript parser
               </h4>

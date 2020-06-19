@@ -28,7 +28,7 @@ export default function NavBar ({ className = '' }) {
   }, [open])
 
   return (
-    <div className={`relative bg-white ${className}`}>
+    <div className={`relative bg-white ${className} z-50`}>
       <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
         <div className="lg:w-0 lg:flex-1">
           <a href="/" className="flex">
