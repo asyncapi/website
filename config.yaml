@@ -28,7 +28,7 @@ params:
     og:
       url: https://www.asyncapi.com/
   navbarlogo:
-    image: logo.png
+    image: logo-pride.png
     link: /
   font:
     name: "Open Sans"
