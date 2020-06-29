@@ -6,7 +6,7 @@ featured: true
 tags:
   - Status
   - Community
-#cover: /images/posts/asyncapi-conf-banner.webp
+cover: /images/posts/radar.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
@@ -15,6 +15,7 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
+![cover](/images/posts/radar.webp)
 ## AsyncAPI is innovation and you should assess it
 
 ThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization into event-driven architectures and makes space for building great tools to solve problems like testing, documentation, code generation, and many others. Read more:
@@ -22,11 +23,7 @@ ThoughtWorks and InfoQ clearly point out this is the best moment to have a close
 - [ThoughtWorks Technology Radar - Tools](https://www.thoughtworks.com/radar/tools?blipid=202005046)
 - [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/)
 
-## Project Status Update
-
-Things we are focused on at the moment.
-
-### Generator and Parser 1.0 releases
+## Generator and Parser 1.0 releases
 
 We are going in the right direction with the first major releases for [the Generator](https://github.com/asyncapi/generator/) and [the Parser](https://github.com/asyncapi/parser-js/). The last [release candidate](https://github.com/asyncapi/generator/releases/tag/v1.0.0-rc.4) we produced for the Generator is pretty much stable, and all tasks were completed. We also tried it in our [GitHub Action](https://github.com/asyncapi/github-action-for-generator/pull/8) and [AsyncAPI Hub](https://hub.asyncapi.io), and it works like a charm.
 
@@ -44,7 +41,7 @@ Release the Parser with 1.0.0 and then Generator 1.0.0 as we already know that P
 
 Fair point. We just need more hands on the board. If you are a JavaScript developer and you thought about joining AsyncAPI as a contributor, but you never knew the right moment, now is the time. I'm now entirely focused on the Parser and would be happy to onboard some more people. Just let me know, and I'll onboard you.
 
-### New Website Right Behind The Corner
+## New Website Right Behind The Corner
 
 The time has come to do some refreshment of the AsyncAPI website. We also change the engine used to generate the website, from Hugo to Next.js. Have a look at [the preview](https://deploy-preview-108--asyncapi-website.netlify.app/) of the work and feel free to share your feedback to Fran in [this pull request](https://github.com/asyncapi/website/pull/108). Greatest things you can see there:
 
