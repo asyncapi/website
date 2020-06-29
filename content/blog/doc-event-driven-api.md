@@ -8,7 +8,6 @@ tags:
   - EDA
 cover: /images/posts/doc-event-driven-api.webp
 weight: 50
-featured: true
 authors:
   - name: Héctor Valls
     photo: /images/avatars/hvalls.webp
