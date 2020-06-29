@@ -17,9 +17,8 @@ authors:
 
 ## AsyncAPI is innovation and you should assess it
 
-ThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization into event-driven architectures and makes space for building great tools to solve problems like testing, documentation, code generation, and many others.
+ThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization into event-driven architectures and makes space for building great tools to solve problems like testing, documentation, code generation, and many others. Read more:
 
-Read more:
 - [ThoughtWorks Technology Radar - Tools](https://www.thoughtworks.com/radar/tools?blipid=202005046)
 - [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/)
 
@@ -67,6 +66,7 @@ How would you expect those are handled by the Parser and also by the Generator? 
 ### React Wrapper Redoc style
 
 AsyncAPI Initiative provides two ways of generating docs from AsyncAPI specification:
+
 - [HTML template](https://github.com/asyncapi/html-template) for the AsyncAPI generator. The classical server-side generation you perform in your CI pipelines or in an application with Node.js server.
 - [React component](https://github.com/asyncapi/asyncapi-react/) that you can use for dynamic docs rendering client-side. This one is great, but only if you want to use React in your application.
 
