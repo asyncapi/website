@@ -1,6 +1,10 @@
 import Link from 'next/link'
 
-export default function DocsNavItem({ item, active }) {
+export default function DocsNavItem({
+  item,
+  active,
+  onClick = () => {},
+}) {
   const { slug, title, isSection } = item
   const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none'
   const sectionClassNames = `mt-8 mb-2 text-primary-800 text-xs font-medium uppercase hover:text-primary-800 ${commonClassNames}`
@@ -10,7 +14,7 @@ export default function DocsNavItem({ item, active }) {
 
   if (isSection) {
     return (
-      <a className={sectionClassNames}>
+      <a className={sectionClassNames} onClick={onClick}>
         {title}
       </a>
     )
@@ -18,7 +22,7 @@ export default function DocsNavItem({ item, active }) {
 
   return (
     <Link href={slug}>
-      <a className={itemClassNames}>
+      <a className={itemClassNames} onClick={onClick}>
         {title}
       </a>
     </Link>

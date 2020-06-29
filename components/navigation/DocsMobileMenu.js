@@ -7,10 +7,10 @@ export default function DocsMobileMenu({
   onClickClose = () => { },
 }) {
   return (
-    <div className="md:hidden">
+    <div className="z-60 md:hidden">
       <div className="fixed inset-0 flex z-40">
         <div className="fixed inset-0">
-          <div className="absolute inset-0 bg-gray-600 opacity-75"></div>
+          <div className="absolute inset-0 bg-gray-600 opacity-75" onClick={onClickClose}></div>
         </div>
 
         <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
@@ -27,7 +27,7 @@ export default function DocsMobileMenu({
               {
                 navigation.map((item, i) => (
                   <div key={`mobile-menu-item-${i}`}>
-                    <DocsNavItem item={item} active={post.slug === item.slug} />
+                    <DocsNavItem item={item} active={post.slug === item.slug} onClick={onClickClose} />
                   </div>
                 ))
               }

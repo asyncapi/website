@@ -106,6 +106,9 @@ module.exports = {
       borderRadius: {
         'xl': '1rem',
       },
+      zIndex: {
+        '60': 60,
+      },
     },
   },
   plugins: [

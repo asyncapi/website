@@ -63,6 +63,7 @@
     "excerpt": "This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? Let us know!\nPlease, before you decide to create a new tool, consider contributing to the existing ones. Th",
     "sectionSlug": "/docs/community",
     "sectionWeight": 3,
+    "sectionTitle": "Community",
     "isIndex": false,
     "slug": "/docs/community/tooling"
   },
@@ -86,6 +87,7 @@
     "excerpt": "An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.\nThe format of the file must be JSON or YAML, however, only the subset of YAML that ma",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/asyncapi-documents"
   },
@@ -111,6 +113,7 @@
     "excerpt": "If you&amp#39;re coming from OpenAPI, you must know that AsyncAPI started as an adaptation of the OpenAPI specification. We wanted to have as much compatibility as possible between the two so users co",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/coming-from-openapi"
   },
@@ -178,6 +181,7 @@
     "excerpt": "All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. Y",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/event-driven-architectures"
   },
@@ -195,6 +199,7 @@
     "excerpt": "Let&amp#39;s define an application that&amp#39;s capable of receiving a &ampquot;hello {name}&ampquot; message.\nLet&amp#39;s get into the details of the sample specification:\nThe first line of the spe",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/hello-world"
   },
@@ -222,6 +227,7 @@
     "excerpt": "AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDA&amp#39;s as easy as it is to work with",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": true,
     "slug": "/docs/getting-started"
   },
@@ -247,6 +253,7 @@
     "excerpt": "In production environments, your API may have to access a message broker that&amp#39;s protected by some auth mechanisms. Examples of these are:\nUser &ampamp; password\nCertificates\nAPI keys\nOAuth 2\n\nI",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/security"
   },
@@ -272,6 +279,7 @@
     "excerpt": "In the previous lesson, you learned how to create the definition of a simple Hello World application, so let&amp#39;s take it from there.\nIn this article, you learn how to add servers to your AsyncAPI",
     "sectionSlug": "/docs/getting-started",
     "sectionWeight": 0,
+    "sectionTitle": "Getting Started",
     "isIndex": false,
     "slug": "/docs/getting-started/servers"
   },
@@ -1158,6 +1166,7 @@
     "excerpt": "Disclaimer\nPart of this content has been taken from the great work done by the folks at the OpenAPI Initiative. Mainly because it&amp#39;s a great work and we want to keep as much compatibility as pos",
     "sectionSlug": "/docs/specifications",
     "sectionWeight": 2,
+    "sectionTitle": "Specification",
     "isIndex": false,
     "slug": "/docs/specifications/2.0.0"
   },
@@ -1174,6 +1183,7 @@
     "excerpt": "import TutorialList from &amp#39;../../../components/navigation/TutorialList&amp#39;\n",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
+    "sectionTitle": "Tutorials",
     "isIndex": true,
     "slug": "/docs/tutorials"
   },
@@ -1186,6 +1196,7 @@
     "excerpt": "tl;dr\nPlease try out this interactive tutorial and let us know what you think, as we plan to have all the docs written this way.&lt!--more--&gt\n\nOne of the most critical roadmap items for the AsyncAPI",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
+    "sectionTitle": "Tutorials",
     "isIndex": false,
     "slug": "/docs/tutorials/streetlights-interactive"
   },
@@ -1310,6 +1321,7 @@
     "excerpt": "In this tutorial, you get started with actual code and a (could-be) real-world use case. &lt!--more--&gt\nLet&amp#39;s pretend you have a company called Smarty Lighting and you do smart-city lighting s",
     "sectionSlug": "/docs/tutorials",
     "sectionWeight": 1,
+    "sectionTitle": "Tutorials",
     "isIndex": false,
     "slug": "/docs/tutorials/streetlights"
   },
@@ -1870,6 +1882,56 @@
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/automated-releases"
+  },
+  {
+    "title": "Choosing Between Web APIs and Message Streaming",
+    "date": "2020-06-23T06:00:00.000Z",
+    "type": "Engineering",
+    "tags": [
+      "AsyncAPI",
+      "REST APIs",
+      "Streaming",
+      "Event-Driven Architecture"
+    ],
+    "cover": "/img/posts/choosing_between_web_apis_and_message_streaming/cover.webp",
+    "featured": true,
+    "authors": [
+      {
+        "name": "James Higginbotham",
+        "photo": "/img/avatars/jhigginbotham.webp",
+        "link": "https://twitter.com/launchany",
+        "byline": "AsyncAPI Contributor"
+      }
+    ],
+    "excerpt": "When faced with a variety of options, how are developers building APIs supposed to know which is the right one for their solution? In this article, I’m going to outline the common characteristics for both REST APIs and message streaming so developers can better understand when (and when not) to use each one.",
+    "toc": [
+      {
+        "content": "Characteristics of REST-Based Web APIs",
+        "slug": "characteristics-of-rest-based-web-apis",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Characteristics of Message Streaming",
+        "slug": "characteristics-of-message-streaming",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "Summary",
+        "slug": "summary",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      }
+    ],
+    "readingTime": 7,
+    "sectionSlug": "/blog",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/choosing_between_web_apis_and_message_streaming"
   },
   {
     "title": "API documentation in event-driven applications",

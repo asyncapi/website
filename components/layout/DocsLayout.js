@@ -8,6 +8,8 @@ import TOC from '../TOC'
 import ClickableLogo from '../ClickableLogo'
 import DocsNavItem from '../navigation/DocsNavItem'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
+import NavBar from '../navigation/NavBar'
+import ArrowRight from '../icons/ArrowRight'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -55,22 +57,21 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full md:max-w-(screen-16)">
           <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 md:hidden">
-            <div className="flex-1 mt-1.5">
-              <ClickableLogo logoClassName="h-8 w-auto ml-3" />
-            </div>
-
-            { !showMenu && (
-              <button onClick={() => setShowMenu(true)} className="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150" aria-label="Open sidebar">
-                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            )}
+            <NavBar className="flex px-4 w-full md:hidden" />
+          </div>
+          <div className="hidden md:flex md:border-b md:border-gray-200">
+            <NavBar hideLogo />
           </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
-            <div className="px-4 sm:px-6 md:px-8">
-              <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
-            </div>
+            {!showMenu && (
+              <div className="md:hidden">
+                <button onClick={() => setShowMenu(true)} className="flex text-gray-500 px-4 sm:px-6 md:px-8 hover:text-gray-900 focus:outline-none" aria-label="Open sidebar">
+                  <span>{post.sectionTitle}</span>
+                  <ArrowRight className="pl-1 w-5 h-5 transform rotate-90" />
+                </button>
+              </div>
+            )}
+            <h1 className="px-4 text-4xl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
             <div className="px-4 sm:px-6 md:px-8">
               <p className="text-sm font-normal text-gray-400 font-sans antialiased">
                 Found an error? Have a suggestion? 

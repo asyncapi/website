@@ -1,20 +1,20 @@
 ---
 title: "Choosing Between Web APIs and Message Streaming"
 date: 2020-06-23T07:00:00+01:00
-type: blog
+type: Engineering
 tags:
   - AsyncAPI
   - REST APIs
   - Streaming
   - Event-Driven Architecture
-cover: /images/posts/choosing_between_web_apis_and_message_streaming/cover.webp
+cover: /img/posts/choosing_between_web_apis_and_message_streaming/cover.webp
 featured: true
-weight: 10
 authors:
   - name: James Higginbotham
-    photo: /images/avatars/jhigginbotham.webp
+    photo: /img/avatars/jhigginbotham.webp
     link: https://twitter.com/launchany
     byline: AsyncAPI Contributor
+excerpt: When faced with a variety of options, how are developers building APIs supposed to know which is the right one for their solution? In this article, I’m going to outline the common characteristics for both REST APIs and message streaming so developers can better understand when (and when not) to use each one.
 ---
 
 > This post originally appeared on [Capital One Tech](https://medium.com/capital-one-tech/choosing-between-rest-web-apis-and-message-streaming-8e2f4813a058)
@@ -25,7 +25,7 @@ When faced with a variety of options, how are developers building APIs supposed 
 
 REST-based web APIs create a conversation between a client (the API consumer) and an API server (the backend). When we build REST-based APIs within Capital One, we use HTTP as our protocol. Our designs depend heavily on HTTP, from the methods (e.g. GET, POST, PUT, PATCH, DELETE) to the headers that help us communicate between client and server (e.g. Authorization, Accept, Content-Type).
 
-![Request/response client-server list conversation](/images/posts/choosing_between_web_apis_and_message_streaming/convo-1.webp)
+![Request/response client-server list conversation](/img/posts/choosing_between_web_apis_and_message_streaming/convo-1.webp)
 
 ```
 GET /projects
@@ -42,7 +42,7 @@ Content-Type: application/json
  ]
 ```
 
-![Request/response client-server create conversation](/images/posts/choosing_between_web_apis_and_message_streaming/convo-2.webp)
+![Request/response client-server create conversation](/img/posts/choosing_between_web_apis_and_message_streaming/convo-2.webp)
 
 ```
 POST/projects
@@ -61,7 +61,7 @@ The client (or API consumer) is the app, which sends a message (i.e. an HTTP req
 
 When we add in hypermedia links, we extend the conversation with some additional information that may be helpful to the client:
 
-![Request/response client-server hypermedia conversation](/images/posts/choosing_between_web_apis_and_message_streaming/convo-3.webp)
+![Request/response client-server hypermedia conversation](/img/posts/choosing_between_web_apis_and_message_streaming/convo-3.webp)
 
 ```
 GET /projects/12345
@@ -105,7 +105,7 @@ For most solutions, offering a REST-based API is a great starting point, allowin
 
 Unlike REST APIs, message streaming is better at providing notifications when new messages arrive. Once subscribed, the client will be notified when new messages are available:
 
-![Event-based API subscription](/images/posts/choosing_between_web_apis_and_message_streaming/convo-4.webp)
+![Event-based API subscription](/img/posts/choosing_between_web_apis_and_message_streaming/convo-4.webp)
 
 ```
 POST /subscriptions
@@ -120,7 +120,7 @@ Content-Type: application/json
 
 Now that the client is subscribed to a topic, it will receive notifications when new messages are available. This may be the result of a REST API processing incoming requests from a web or mobile app, then adding messages into the message stream topic to notify anyone that is interested:
 
-![Event-based API notifications](/images/posts/choosing_between_web_apis_and_message_streaming/convo-5.webp)
+![Event-based API notifications](/img/posts/choosing_between_web_apis_and_message_streaming/convo-5.webp)
 
 ```
 POST https://my.callback/path
@@ -137,7 +137,7 @@ Notice how our conversation became more interesting. We now can be notified when
 
 Those familiar with message brokers will realize that this is familiar. The difference between a message broker and message streaming is that _message streaming allows us to revisit past messages in sequence as well_:
 
-![Streaming API conversation](/images/posts/choosing_between_web_apis_and_message_streaming/convo-6.webp)
+![Streaming API conversation](/img/posts/choosing_between_web_apis_and_message_streaming/convo-6.webp)
 
 ```
 <<request last 12 messages from project_messages topic>>
