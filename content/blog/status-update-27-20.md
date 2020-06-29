@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 27, 2020)"
-date: 2020-06-30T06:00:00+01:00
+date: 2020-06-29T06:00:00+01:00
 type: blog
 featured: true
 tags:
@@ -77,7 +77,7 @@ We are getting a bit tired of Nunjucks and how hard it is to debug and read the 
 
 The last meeting took place on Tuesday, 23rd of June, 4PM UTC. Meeting notes are available [here](https://github.com/asyncapi/asyncapi/issues/394).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LDanOihP9i4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{%youtube id="LDanOihP9i4"%}}
 
 The next meeting is scheduled for next Tuesday, 7th of July, 8AM UTC. 
 
