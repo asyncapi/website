@@ -9,7 +9,7 @@ tags:
   - Event-Driven Architecture
 cover: /images/posts/choosing_between_web_apis_and_message_streaming/cover.webp
 featured: true
-weight: 10
+weight: 30
 authors:
   - name: James Higginbotham
     photo: /images/avatars/jhigginbotham.webp

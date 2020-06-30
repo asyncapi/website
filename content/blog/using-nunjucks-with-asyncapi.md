@@ -2,7 +2,6 @@
 title: "Nunjucks templating explained on the basis of AsyncAPI specification"
 date: 2020-03-03T08:00:00+01:00
 type: blog
-featured: true
 tags:
   - Nunjucks
   - Template engine
