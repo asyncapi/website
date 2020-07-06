@@ -69,7 +69,7 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 
 | Link           | Description    |
 | :------------- | :------------- |
-| [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncaAPI schema file is valid or not.
+| [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
 | [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
 
