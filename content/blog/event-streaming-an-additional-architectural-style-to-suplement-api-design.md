@@ -1,6 +1,6 @@
 ---
 title: "Event-Streaming: An Additional Architectural Style to Supplement API Design"
-date: 2020-06-11T17:56:52+01:00
+date: 2020-07-07T09:00:00+01:00
 type: blog
 tags:
   - AsyncAPI
