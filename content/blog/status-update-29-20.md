@@ -75,6 +75,6 @@ We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about 
 
 Some articles you might want to read to learn something new:
 
-- [Event-Streaming: An Additional Architectural Style to Supplement API Design]() by [James Higginbotham](https://twitter.com/launchany)
+- [Event-Streaming: An Additional Architectural Style to Supplement API Design](https://www.asyncapi.com/blog/event-streaming-an-additional-architectural-style-to-suplement-api-design/) by [James Higginbotham](https://twitter.com/launchany)
 - [How to mitigate unhappy paths with an event-driven architecture at scale](https://blogs.mulesoft.com/dev/design-dev/event-driven-architecture-for-unhappy-paths/) by Paul Taylor
 - [Understanding Event Driven Architecture](https://hackernoon.com/understanding-event-driven-architecture-ub1k3umo) by [Craig Godden-Payne](https://twitter.com/DigitalBeardy)
