@@ -43,7 +43,7 @@ Recent releases in the JavaScript Parser, brought many new features to the parse
 - Parser throws an error if OperationId is duplicated across the whole AsyncAPI document. This is an essential property for code generation, and specification is precise that duplicates of this information are not allowed.
 - Parser throws an error if you provided server security information in a wrong format and has a corresponding Security Schema object.
 
-For today, except for [handling circular references issue](https://www.asyncapi.com/blog/status-update-27-20/#circular-references) we mentioned in our last update, there are no other serious tasks we want to solve before the 1.0.0 release. Keep your fingers crossed.
+For today, except for [handling circular references issue](https://www.asyncapi.com/blog/status-update-27-20/#circular-references) I mentioned in my last update, there are no other serious tasks we want to solve before the 1.0.0 release. Keep your fingers crossed.
 
 ## The Highlight of Interesting Discussions
 
@@ -57,7 +57,7 @@ Please have a look at [the corresponding issue](https://github.com/asyncapi/asyn
 
 ### Allow $schema property in the specification
 
-With `$schema` property you can specify a location of the JSON Schema file and most of the IDEs will make your life much easier by adding auto-completion and other super useful functionalities. In the issue we discuss how we could allow maybe not only `$schema` but maybe any property starting with `$`, and also we talk about the opportunity to measure the adoption of the specification. 
+With `$schema` property you can specify a location of the JSON Schema file and most of the IDEs will make your life much easier by adding auto-completion and other super useful functionalities. In the issue we discuss how we could allow maybe not only `$schema` but any property starting with `$`, and also we talk about the opportunity to measure the adoption of the specification. 
 
 Please have a look at [the corresponding issue](https://github.com/asyncapi/asyncapi/issues/377) and share your opinion.
 
