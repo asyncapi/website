@@ -27,7 +27,7 @@ We enabled [SonarCloud](https://sonarcloud.io) for the most critical AsyncAPI to
 - Parser
 - Custom schema parsers for OpenAPI schema and RAML data types
 
-The quality of those projects is visible [here](https://sonarcloud.io/projects). We additionally validate code with [ESLint plugin from SonarCloud](https://github.com/SonarSource/eslint-plugin-sonarjs). 
+The quality of those projects is visible [here](https://sonarcloud.io/organizations/asyncapi/projects). We additionally validate code with [ESLint plugin from SonarCloud](https://github.com/SonarSource/eslint-plugin-sonarjs). 
 
 With the Parser we went even one step further, and we now statically check the security of the code also with the [ESLint security plugin](https://github.com/nodesecurity/eslint-plugin-security).
 
