@@ -83,3 +83,4 @@ The following is a list of tools that validate AsyncAPI documents.
 | [Check-API](https://github.com/Mermade/check_api) | It allows you to validate a local file or remote URL with a single command-line or programmatic invocation. It returns an exitCode of 0 on success and 1 on failure, making it suitable for use in Continuous Integration environments. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | Javascript
 | [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
+| [Spectral](https://github.com/stoplightio/spectral) | A command line linter for AsyncAPI & OpenAPI documents. | Javascript
