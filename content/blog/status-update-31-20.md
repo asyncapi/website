@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 31, 2020)"
-date: 2020-07-27T06:00:00+01:00
+date: 2020-07-30T06:00:00+01:00
 type: blog
 featured: true
 tags:
