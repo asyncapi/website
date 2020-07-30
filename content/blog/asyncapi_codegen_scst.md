@@ -1,6 +1,5 @@
 ---
 type: blog
-featured: true
 cover: /images/posts/asyncapi-codegen_pic-00.webp
 weight: 40
 title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
