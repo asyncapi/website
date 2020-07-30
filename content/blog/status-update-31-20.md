@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 31, 2020)"
+title: "Avro Schema Parser and others in AsyncAPI Initiative Status Update (week 31, 2020)"
 date: 2020-07-30T06:00:00+01:00
 type: blog
 featured: true
@@ -30,7 +30,7 @@ From the AsyncAPI tooling perspective, we have a [basic JavaScript Parser](https
 
 ### Avro Parser
 
-The 3rd plugin that we now officially support is related to Avro schema type. The first minor version is already out there, and you can give it a try, even if your schemas are in the Confluent Schema Registry. Have a look at the docs of [the Avro schema parser](https://github.com/asyncapi/avro-schema-parser). The Avro parser is also added to the latest release candidate of [the Generator](https://github.com/asyncapi/generator/). Please help us make it work for you.
+The 3rd plugin that we now officially support is related to Avro schema type. The first minor version is already out there, and you can give it a try, even if your schemas are in the Confluent Schema Registry. Have a look at the docs of [the Avro schema parser](https://github.com/asyncapi/avro-schema-parser). The Avro parser is also part of the latest release candidate of [the Generator](https://github.com/asyncapi/generator/). Please help us make it work for you.
 
 ## Circular References in AsyncAPI
 
@@ -72,5 +72,6 @@ We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about 
 
 ## Curated Content
 
-- [Pulsar vs. Kafka — Part 1 — A More Accurate Perspective on Performance, Architecture, and Features](https://streamnative.io/blog/tech/pulsar-vs-kafka-part-1) - StreamNative view on Apache Pulsar vs Apache Kafka
-- [Kafka vs. Pulsar vs. RabbitMQ: Performance, Architecture, and Features Compared](https://www.confluent.io/kafka-vs-pulsar/) - Confluent view on Apache Kafka vs Apache Pulsar
+- [Pulsar vs. Kafka — Part 1 — A More Accurate Perspective on Performance, Architecture, and Features](https://streamnative.io/blog/tech/pulsar-vs-kafka-part-1) - [StreamNative](https://streamnative.io/) view on Apache Pulsar vs Apache Kafka
+- [Kafka vs. Pulsar vs. RabbitMQ: Performance, Architecture, and Features Compared](https://www.confluent.io/kafka-vs-pulsar/) - [Confluent](https://www.confluent.io/) view on Apache Kafka vs Apache Pulsar
+- [How to Write Your First AsyncAPI Specification](https://nordicapis.com/how-to-write-your-first-asyncapi-specification/) - by [Thomas Bush](https://nordicapis.com/author/thomas_bush/)
