@@ -30,11 +30,11 @@ From the AsyncAPI tooling perspective, we have a [basic JavaScript Parser](https
 
 ### Avro Parser
 
-The 3rd plugin that we now officially support is related to Avro schema type. The first minor version is already out there, and you can give it a try, even if your schemas are in the Confluent Schema Registry. Have a look at the docs of [the Avro schema parser](https://github.com/asyncapi/avro-schema-parser). Please help us make it work for you.
+The 3rd plugin that we now officially support is related to Avro schema type. The first minor version is already out there, and you can give it a try, even if your schemas are in the Confluent Schema Registry. Have a look at the docs of [the Avro schema parser](https://github.com/asyncapi/avro-schema-parser). The Avro parser is also added to the latest release candidate of [the Generator](https://github.com/asyncapi/generator/). Please help us make it work for you.
 
 ## Circular References in AsyncAPI
 
-Now JavaScript Parser can handle circular references that you might have in your AsyncAPI files. The current implementation also dereferences circular references, and you cannot change this behavior. We also extended the API to help you out to deal with circular references:
+Now JavaScript Parser can handle circular references that you might have in your AsyncAPI files. The current implementation fully dereferences circular references, and you cannot change this behavior. We also extended the API to help you out to deal with circular references:
 
 - The core AsyncAPI model now contains the hasCircular() function that you can use to determine at the very beginning if a given AsyncAPI document contains some circular references or not. An example use case for it is to throw a proper error message to the user with a clear message that circular references are not supported by your tool at the moment,
 - The Schema model contains isCircular() function to check if a given schema is circular, so you do not have to detect it on your own and adequately react
@@ -45,9 +45,9 @@ Have a look at [this](https://github.com/asyncapi/parser-js/pull/94/files) pull 
 
 Since Parser 0.27 we will now always generate [TypeScript types](https://github.com/asyncapi/parser-js/blob/master/types.d.ts) to make it much easier for TypeScript developers to use Parser in their tools.
 
-## Generator Release Candidate 6 is out
+## Generator Release Candidate 7 is out
 
-We just released another release candidate that contains a lot of improvements that we added to the Parser. Give it a try.
+We just released another release candidate that contains a lot of improvements that we added to the Parser. It also includes the above mentioned `avro-schema-parser` so it is easier for you to test it out. Give it a try.
 
 ## The Highlight of Interesting Discussions
 
