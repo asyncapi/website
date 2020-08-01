@@ -16,7 +16,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
@@ -32,7 +32,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
@@ -48,7 +48,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
@@ -64,7 +64,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
@@ -82,7 +82,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
@@ -99,7 +99,7 @@ info:
   version: '0.1.0'
 channels:
   hello:
-    publish:
+    subscribe:
       message:
         payload:
           type: string
