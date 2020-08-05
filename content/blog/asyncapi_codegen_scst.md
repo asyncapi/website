@@ -58,7 +58,7 @@ npm install -g @asyncapi/generator
 Once you have the generator installed you can run it using the `ag` command. At a minimum you must specify the AsyncAPI document to run it against and the template to use as shown below.
 
 ```bash
-ag https://github.com/asyncapi/asyncapi/blob/2.0.0/examples/2.0.0/streetlights.yml @asyncapi/java-spring-cloud-stream-template
+ag https://raw.githubusercontent.com/asyncapi/asyncapi/2.0.0/examples/2.0.0/streetlights.yml @asyncapi/java-spring-cloud-stream-template
 ```
 
 In most cases you’ll want to take advantage of the parameters and specification extensions that are specified by the template being used. For example, the Spring Cloud Stream template that I’m using in this example allows me to [configure many options](https://github.com/asyncapi/java-spring-cloud-stream-template#configuration-options), including the Spring Cloud Stream binder I want to use – for example, the Solace binder.
