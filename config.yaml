@@ -76,12 +76,12 @@ params:
       url: /docs/tooling#docgens
     - title: DSL
       url: /docs/tooling#dsl
-    - title: Mocking & Testing
-      url: /docs/tooling#mocking
     - title: GitHub Actions
       url: /docs/tooling#ghactions
     - title: Validators
       url: /docs/tooling#validators
+    - title: Mocking & Testing
+      url: /docs/tooling#mocking
   - title: Blog
     url: /blog
   - title: Help
