@@ -78,10 +78,10 @@ params:
       url: /docs/tooling#dsl
     - title: GitHub Actions
       url: /docs/tooling#ghactions
-    - title: Validators
-      url: /docs/tooling#validators
     - title: Mocking & Testing
       url: /docs/tooling#mocking
+    - title: Validators
+      url: /docs/tooling#validators
   - title: Blog
     url: /blog
   - title: Help
