@@ -6,7 +6,7 @@ featured: true
 tags:
   - Status
   - Community
-cover: /images/posts/asyncapi-avro.webp
+cover: /images/posts/status-update-33-robots.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
@@ -15,7 +15,7 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/asyncapi-avro.webp)
+![cover](/images/posts/status-update-33-robots.webp)
 
 ## Parser First Release Candidate is Alive
 
