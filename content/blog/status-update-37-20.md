@@ -25,7 +25,7 @@ We’ve spent a lot of time recently on tooling development. Now it is time to s
 
 The work is still in progress and will take a few weeks more, but you can already see a preview [here](https://github.com/derberg/template-for-generator-templates). All the Generator features are showcased there already. We are missing only example tests and readme there. 
 
-The next steps are writing a set of interactive tutorials that can step by step, explain all the features, help create a super basic template, and then a more complex one.
+The next steps are writing a set of interactive tutorials that can explain all the features step by step, help create a super basic template, and then a more complex one.
 
 In case you have some ideas, or maybe you want to help write those, please let us know.
 
