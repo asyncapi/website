@@ -21,31 +21,16 @@ authors:
 
 After recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML and Markdown docs generators. With the latest releases of those two templates, you can generate documentation for schemas containing circular references. Below you can see an example specification file and how its payload and payload generated example looks like in generated HTML. You can also give it a try on your own in our [Playground](https://playground.asyncapi.io/). 
 
-<figure>
-<center>
-<img src="/images/posts/status-update-39/pic1-circ-spec.webp" alt="AsyncAPI schema with a circular reference" style="width:50%">
-<figcaption>Pic. 1: AsyncAPI schema with a circular reference</figcaption>
-</center>
-</figure> 
+{{% figure src="/images/posts/status-update-39/pic1-circ-spec.webp" title="Pic. 1: AsyncAPI schema with a circular reference." %}}
 
-<div class="row">
-<div class="column" class="column" style="float: left;width: 50%;">
-<center>
-<figure>
-<img src="/images/posts/status-update-39/pic2-circ-schema.webp" alt="Message payload presentation" style="width:50%">
-<figcaption>Pic. 2: Message payload presentation</figcaption>
-</figure> 
-</center>
-</div>
-<div class="column" style="float: right;width: 50%;">
-<center>
-<figure>
-<img src="/images/posts/status-update-39/pic3-circ-example.webp" alt="Generated payload example" style="width:50%">
-<figcaption>Pic. 3: Generated payload example</figcaption>
-</figure>
-</center>
-</div>
-</div> 
+{{% row %}}
+{{% column %}}
+{{% figure src="/images/posts/status-update-39/pic2-circ-schema.webp" title="Pic. 2: Message payload presentation." %}}
+{{% /column %}}
+{{% column %}}
+{{% figure src="/images/posts/status-update-39/pic3-circ-example.webp" title="Pic. 3: Generated payload example." %}}
+{{% /column %}}
+{{% /row %}}
 
 ## Generate HTML Docs into a Single File
 
@@ -60,36 +45,26 @@ Now it is possible! There is a new parameter added to the template called single
 ## Parser with More Helpers and Better API docs
 
 We released [Parser release candidate 5](https://github.com/asyncapi/parser-js/releases/tag/v1.0.0-rc.5) with features you want to have in a library before you announce the 1.0.0 release. Thanks to generous support from our community member [Maciej Urbanczyk](https://github.com/magicmatatjahu), this release candidate contains the following additions:
-Missing externalDocs field in AsyncAPIDocument model
-New functions to all models that need it: hasBindings, bindingProtocols, hasBinding(name), binding(name), extensionKeys, extKeys, hasExtension, hasExt, tagNames, tag, hasTag, hasDescription
-Much better API documentation. In the past, it was not only missing functions that were not available but also functions that were not documented because of the wrong usage of JSDocs. Now see on your own how significant is the change by looking just on the list of functions available for ChannelParameter model:
 
-        
-<div class="row">
-<div class="column" class="column" style="float: left;width: 50%;">
-<center>
-<figure>
-<img src="/images/posts/status-update-39/pic1-api-after.webp" alt="ChannelParameter Docs after release" style="width:70%">
-<figcaption>Pic. 1: ChannelParameter Docs after release</figcaption>
-</figure> 
-</center>
-</div>
-<div class="column" style="float: right;width: 50%;">
-<center>
-<figure>
-<img src="/images/posts/status-update-39/pic2-api-before.webp" alt="ChannelParameter Docs before release" style="width:40%">
-<figcaption>Pic. 2: ChannelParameter Docs before release</figcaption>
-</figure>
-</center>
-</div>
-</div>
+- Missing externalDocs field in AsyncAPIDocument model
+- New functions to all models that need it: hasBindings, bindingProtocols, hasBinding(name), binding(name), extensionKeys, extKeys, hasExtension, hasExt, tagNames, tag, hasTag, hasDescription
+- Much better API documentation. In the past, it was not only missing functions that were not available but also functions that were not documented because of the wrong usage of JSDocs. Now see on your own how significant is the change by looking just on the list of functions available for ChannelParameter model:
+
+{{% row %}}
+{{% column %}}
+{{% figure src="/images/posts/status-update-39/pic1-api-before.webp" title="Pic. 1: ChannelParameter Docs before release" %}}
+{{% /column %}}
+{{% column %}}
+{{% figure src="/images/posts/status-update-39/pic2-api-after.webp" title="Pic. 2: ChannelParameter Docs after release" %}}
+{{% /column %}}
+{{% /row %}}        
 
 ## Hacktoberfest Preparation
 
 [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is a great event for people to start contributing to open source. It runs throughout October, and we want AsyncAPI Initiative to join the event. Why?
 
-Enable different communities to jump into the AsyncAPI projects with simple tasks, so they can get familiar with what we have, where to find things, and how easy it is to kick off with the first contribution
-Show to the community something that might not be so obvious, that the AsyncAPI Initiative is not only working on the specification but also a lot of great tools to make it easy to work with the specification 
+- Enable different communities to jump into the AsyncAPI projects with simple tasks, so they can get familiar with what we have, where to find things, and how easy it is to kick off with the first contribution
+- Show to the community something that might not be so obvious, that the AsyncAPI Initiative is not only working on the specification but also a lot of great tools to make it easy to work with the specification 
 
 If you are interested in how we plan to join the Hacktoberfest, look at our [plan](https://docs.google.com/document/d/1fljbYU-wD4gvusFpWqCrVQfPb4nitcKAKag1TOm5lNs/). 
 
