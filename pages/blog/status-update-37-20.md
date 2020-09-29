@@ -1,20 +1,20 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 37, 2020)"
 date: 2020-09-09T06:00:00+01:00
-type: blog
+type: Communication
 tags:
   - Status
   - Community
-cover: /images/posts/status-update-33-vacation.webp
+cover: /img/posts/status-update-33-vacation.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/status-update-33-vacation.webp)
+![cover](/img/posts/status-update-33-vacation.webp)
 
 We canceled the previous status update due to the vacation cucumber season, so this status update covers the last four and not two weeks. Please familiarize yourself with many things we worked on and the exciting discussions we had.
 

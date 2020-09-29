@@ -6,7 +6,6 @@ tags:
   - Event-Driven Architectures
   - EDA
 cover: /img/posts/doc-event-driven-api.webp
-featured: true
 authors:
   - name: Héctor Valls
     photo: /img/avatars/hvalls.webp

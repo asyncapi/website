@@ -1,20 +1,20 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 33, 2020)"
 date: 2020-08-12T06:00:00+01:00
-type: blog
+type: Communication
 tags:
   - Status
   - Community
-cover: /images/posts/status-update-33-robots.webp
+cover: /img/posts/status-update-33-robots.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/status-update-33-robots.webp)
+![cover](/img/posts/status-update-33-robots.webp)
 
 ## Parser First Release Candidate is Alive
 

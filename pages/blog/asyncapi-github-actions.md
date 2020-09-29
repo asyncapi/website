@@ -14,7 +14,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: AsyncAPI community got rich with two GitHub Actions that you can use for validation and generation.
-featured: true
 ---
 
 > tl;dr

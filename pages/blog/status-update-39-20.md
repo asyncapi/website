@@ -1,34 +1,33 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 39, 2020)"
 date: 2020-09-22T06:00:00+01:00
-type: blog
+type: Communication
 featured: true
 tags:
   - Status
   - Community
-cover: /images/posts/status-update-39/status-update-39-cover.webp
-weight: 10
+cover: /img/posts/status-update-39/status-update-39-cover.webp
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/status-update-39/status-update-39-cover.webp)
+![cover](/img/posts/status-update-39/status-update-39-cover.webp)
 
 ## Circular References Supported in HTML and Markdown Templates
 
 After recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML and Markdown docs generators. With the latest releases of those two templates, you can generate documentation for schemas containing circular references. Below you can see an example specification file and how its payload and payload generated example looks like in generated HTML. You can also give it a try on your own in our [Playground](https://playground.asyncapi.io/). 
 
-{{% figure src="/images/posts/status-update-39/pic1-circ-spec.webp" title="Pic. 1: AsyncAPI schema with a circular reference." %}}
+{{% figure src="/img/posts/status-update-39/pic1-circ-spec.webp" title="Pic. 1: AsyncAPI schema with a circular reference." %}}
 
 {{% row %}}
 {{% column %}}
-{{% figure src="/images/posts/status-update-39/pic2-circ-schema.webp" title="Pic. 2: Message payload presentation." %}}
+{{% figure src="/img/posts/status-update-39/pic2-circ-schema.webp" title="Pic. 2: Message payload presentation." %}}
 {{% /column %}}
 {{% column %}}
-{{% figure src="/images/posts/status-update-39/pic3-circ-example.webp" title="Pic. 3: Generated payload example." %}}
+{{% figure src="/img/posts/status-update-39/pic3-circ-example.webp" title="Pic. 3: Generated payload example." %}}
 {{% /column %}}
 {{% /row %}}
 
@@ -52,10 +51,10 @@ We released [Parser release candidate 5](https://github.com/asyncapi/parser-js/r
 
 {{% row %}}
 {{% column %}}
-{{% figure src="/images/posts/status-update-39/pic1-api-before.webp" title="Pic. 1: ChannelParameter Docs before release" %}}
+{{% figure src="/img/posts/status-update-39/pic1-api-before.webp" title="Pic. 1: ChannelParameter Docs before release" %}}
 {{% /column %}}
 {{% column %}}
-{{% figure src="/images/posts/status-update-39/pic2-api-after.webp" title="Pic. 2: ChannelParameter Docs after release" %}}
+{{% figure src="/img/posts/status-update-39/pic2-api-after.webp" title="Pic. 2: ChannelParameter Docs after release" %}}
 {{% /column %}}
 {{% /row %}}        
 

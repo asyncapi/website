@@ -1,21 +1,21 @@
 ---
 title: "Avro Schema Parser and others in AsyncAPI Initiative Status Update (week 31, 2020)"
 date: 2020-07-30T06:00:00+01:00
-type: blog
+type: Communication
 tags:
   - Status
   - Community
   - Avro
-cover: /images/posts/asyncapi-avro.webp
+cover: /img/posts/asyncapi-avro.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/asyncapi-avro.webp)
+![cover](/img/posts/asyncapi-avro.webp)
 
 ## Avro Schema Parser
 

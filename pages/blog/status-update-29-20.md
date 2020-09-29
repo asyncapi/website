@@ -1,20 +1,20 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 29, 2020)"
 date: 2020-07-14T06:00:00+01:00
-type: blog
+type: Communication
 tags:
   - Status
   - Community
-cover: /images/posts/asyncapi-sonarcloud.webp
+cover: /img/posts/asyncapi-sonarcloud.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/asyncapi-sonarcloud.webp)
+![cover](/img/posts/asyncapi-sonarcloud.webp)
 
 ## Increasing the quality of tools with SonarCloud
 

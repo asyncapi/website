@@ -1,20 +1,20 @@
 ---
 title: "AsyncAPI Initiative Status Update (week 27, 2020)"
 date: 2020-06-30T06:00:00+01:00
-type: blog
+type: Communication
 tags:
   - Status
   - Community
-cover: /images/posts/radar.webp
+cover: /img/posts/radar.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
-    photo: /images/avatars/lpgornicki.webp
+    photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/radar.webp)
+![cover](/img/posts/radar.webp)
 ## AsyncAPI is innovation and you should assess it
 
 ThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization into event-driven architectures and makes space for building great tools to solve problems like testing, documentation, code generation, and many others. Read more:

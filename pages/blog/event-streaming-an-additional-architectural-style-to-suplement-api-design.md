@@ -1,18 +1,17 @@
 ---
 title: "Event-Streaming: An Additional Architectural Style to Supplement API Design"
 date: 2020-07-07T09:00:00+01:00
-type: blog
+type: Engineering
 tags:
   - AsyncAPI
   - REST APIs
   - Streaming
   - Event-Driven Architecture
-cover: /images/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/cover.webp
-weight: 20
+cover: /img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/cover.webp
 featured: true
 authors:
   - name: James Higginbotham
-    photo: /images/avatars/jhigginbotham.webp
+    photo: /img/avatars/jhigginbotham.webp
     link: https://twitter.com/launchany
     byline: AsyncAPI Contributor
 ---
@@ -56,7 +55,7 @@ Let’s revisit our previous example. We needed to solve two separate requiremen
 
 If we introduce a message-driven architecture to our solution, we can develop an API that delivers project and task resources that offer the necessary capabilities (create, read, update, delete, and mark as complete). Our API doesn’t need to know about how the task completion event notification will be used, including that an email will be sent. All it needs to do is publish event messages when those events occur and allow other services to take action as appropriate. Events this API may publish include:
 
-![Example of API events](/images/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.webp "Example of API events")
+![Example of API events](/img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/event-examples.webp "Example of API events")
 
 Interested parties can then subscribe to the event(s) they are interested in and safely ignore the rest. In our example, we may end up with three components:
 
