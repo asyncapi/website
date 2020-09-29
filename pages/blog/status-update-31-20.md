@@ -15,8 +15,6 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/img/posts/asyncapi-avro.webp)
-
 ## Avro Schema Parser
 
 ### Short Intro to Schema Types in AsyncAPI

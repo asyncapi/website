@@ -14,8 +14,6 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/img/posts/asyncapi-sonarcloud.webp)
-
 ## Increasing the quality of tools with SonarCloud
 
 We enabled [SonarCloud](https://sonarcloud.io) for the most critical AsyncAPI tools that are reaching or already reached 1.0.0 release. Luckily this amazing software is available for free for open-source projects.

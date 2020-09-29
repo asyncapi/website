@@ -14,8 +14,6 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/img/posts/status-update-39/status-update-39-cover.webp)
-
 ## Circular References Supported in HTML and Markdown Templates
 
 After recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML and Markdown docs generators. With the latest releases of those two templates, you can generate documentation for schemas containing circular references. Below you can see an example specification file and how its payload and payload generated example looks like in generated HTML. You can also give it a try on your own in our [Playground](https://playground.asyncapi.io/). 

@@ -14,8 +14,6 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/img/posts/status-update-33-vacation.webp)
-
 We canceled the previous status update due to the vacation cucumber season, so this status update covers the last four and not two weeks. Please familiarize yourself with many things we worked on and the exciting discussions we had.
 
 ## Template for templates development

@@ -14,7 +14,6 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/img/posts/radar.webp)
 ## AsyncAPI is innovation and you should assess it
 
 ThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization into event-driven architectures and makes space for building great tools to solve problems like testing, documentation, code generation, and many others. Read more:
