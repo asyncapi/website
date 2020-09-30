@@ -24,19 +24,20 @@ AsyncAPI is a specification for describing your [event-driven architecture](http
 
 In contrast to the OpenAPI Initiative, AsyncAPI Initiative is focused not only on creating and evolving the AsyncAPI specification but also on its tooling. It is a vendor-neutral space for the community to work together on the spec and its tools. We work on tools like specification parsers or docs and code generators.
 
-TODO: put video here
+{{%youtube pU71J-F7pfI%}}
 
-## What is Hacktoberfest And Why AsyncAPI Initiative Joins It
+## What Is Hacktoberfest And Why AsyncAPI Initiative Joins It
 
 [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is a well-known event that promotes open source contributions. In short, you have the entire October to submit four pull requests to any project you want, and in exchange, you get a super cool t-shirt. Is that it? Is it just for a t-shirt? Nah, the t-shirt is nice but what you also get is easy access to open source world. Maintainers of many projects open up for contributions, and it is a great chance to make your first step to joining this fantastic world.
 
 AsyncAPI Initiative joins the Hacktoberfest for two main reasons:
+
 - Promote AsyncAPI Initiative as a place where we don't work on the specification only but also build a lot of great tools
 - Make it much easier for the community to make the first contribution to one of the AsyncAPI repositories
 
 In the past, we were also there where you are now, shy and uncertain if we can impact open source community. We want to give you an easy path to take the first baby steps in the world of open source in a welcoming and friendly environment.
 
-TODO: put video here
+{{%youtube _1WRr3Ml9t4%}}
 
 ## How Can You Help
 
@@ -48,26 +49,24 @@ There is always a lot of work waiting out there. For the sake of this special ev
 
 TODO: put video here
 
-### 2. Setup Your Environment For The Issue
+### 2. Setup Your Environment and Create a First Pull Request
 
 Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI. 
 
 In case you are here just for the Hacktoberfest, and you picked easy issues that involve changes only to a single file, there is no need to install Git and complicate your life. GitHub UI enables you to [make changes to a single file online](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository).
 
 In case you:
+
 - want to stay with us longer,
 - you picked up an issue where you need to make changes to more than just one file,
 - you also need to run the project locally to check if it works
+
 Then follow [this](https://github.com/asyncapi/.github/blob/master/git-workflow.md) short instruction on how to fork the repository and set it up locally.
-
-TODO: put video here
-
-### 3. Make A Change And Create A Pull Request
 
 Once you are ready with your changes, submit a pull request. Be nice and follow our [code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and make sure your pull request is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits).
 
-TODO: put video here
-
+{{%youtube BsC5tu4M1rw%}}
+ 
 ## Office Hours
 
 Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously. 
@@ -76,4 +75,24 @@ Trust me when I write that every pull request is crucial for us.
 Trust me when I write that we are a welcoming community.
 Don't be afraid that you will waste our time. If we would think about it this way, we would not even join the Hacktoberfest.
 
-Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different timezones. You can join whenever you want and ask us anything, or do pair programming with us. You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/).
+Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different timezones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) and then on the following days:
+
+- Tuesday 6th, 8AM UTC
+- Thursday 8th, 4PM UTC
+- Tuesday 13th, 8AM UTC
+- Thursday 15th, 4PM UTC
+- Tuesday 20th, 8AM UTC
+- Thursday 22nd, 4PM UTC
+- Tuesday 27th, 8AM UTC
+- Thursday 29th, 4PM UTC
+
+You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec). 
+
+Enjoy the Hacktoberfest!
+
+## Blooper Reel
+
+Before you jump to your first contribution, have a look a the making of the videos. It was quite fun.
+
+{{%youtube anjcF2l0lGs%}}
+
