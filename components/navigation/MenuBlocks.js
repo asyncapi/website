@@ -1,3 +1,5 @@
+import Label from './Label'
+
 export default function MenuBlocks ({
   items = [],
 }) {
@@ -11,7 +13,7 @@ export default function MenuBlocks ({
             </div>
             <div className="space-y-1">
               <p className="text-base leading-6 font-medium text-gray-900">
-                { item.title }
+                { item.title } { item.comingSoon && <Label text="Coming soon" /> }
               </p>
               <p className="text-sm leading-5 text-gray-500">
                 { item.description }
