@@ -1,6 +1,6 @@
 import Button from './buttons/Button'
 import ArrowRight from './icons/ArrowRight'
-import IconRocket from './icons/Rocket'
+import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
 import DemoAnimation from './DemoAnimation'
 
 export default function Hero ({ className = '' }) {
@@ -15,9 +15,9 @@ export default function Hero ({ className = '' }) {
           All powered by the AsyncAPI specification, the <strong>industry standard</strong> for defining asynchronous APIs.
         </h2>
         <Button className="block md:inline-block" text="Read the docs" href="/docs/getting-started" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
-        <Button className="block mt-2 md:mt-0 md:inline-block md:ml-2" bgClassName="bg-green-500" text="Go to AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
+        <OpenInPlaygroundButton />
       </div>
-      
+
       <div className="mt-8 md:mt-16">
         <DemoAnimation />
       </div>

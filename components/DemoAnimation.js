@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import Typing from 'react-typing-animation'
 import MacWindow from './MacWindow'
 import ArrowRight from './icons/ArrowRight'
-import IconRocket from './icons/Rocket'
-import Button from './buttons/Button'
+import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
 
 export default function DemoAnimation({ className = '' }) {
   const [started, setStarted] = useState(true)
@@ -154,7 +153,7 @@ export default function DemoAnimation({ className = '' }) {
         </>
       )
     }
-    
+
     return renderTyping(
       <>
         { common }
@@ -223,7 +222,7 @@ export default function DemoAnimation({ className = '' }) {
             <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
               Open this example on AsyncAPI Hub to play with it and get a better taste of the specification. No signup is required!
             </p>
-            <Button bgClassName="bg-green-500" className="block md:inline-block" text="Open on AsyncAPI Hub" href="https://hub.asyncapi.io" target="_blank" icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />} />
+            <OpenInPlaygroundButton />
           </div>
           <MacWindow
             className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto lg:opacity-100 lg:-translate-x-3/4' : ''}`}
@@ -236,7 +235,7 @@ export default function DemoAnimation({ className = '' }) {
                 This service is in charge of processing user signups 🚀
               </p>
             </div>
-            
+
             <div className={transitionClassNames(showChannelsAndOperation)}>
               <span className="px-3 py-2 mr-2 bg-green-500 text-white font-bold rounded">SUB</span> <span className="text-lg text-gray-700">user/signedup</span>
             </div>
@@ -264,7 +263,7 @@ export default function DemoAnimation({ className = '' }) {
                         <div className={`text-sm ${transitionClassNames(showEmailDescription)}`}>Email of the user</div>
                       </div>
                     </div>
-                    
+
                     <div className="mt-8 text-xs text-gray-400">Additional properties are allowed.</div>
                   </div>
 
