@@ -6,7 +6,7 @@ import IconParser from '../icons/Parser'
 // import IconPlugins from '../icons/Plugins'
 
 export default [
-  { href: '/hub', icon: IconHub, title: 'Hub', description: 'Design, Collaborate, and Share your AsyncAPI files with your team.', comingSoon: true },
+  { href: '/studio', icon: IconHub, title: 'Studio', description: 'Visually design your AsyncAPI files and event-driven architecture.', comingSoon: true },
   { href: '/generator', icon: IconGenerator, title: 'Generator', description: 'Use your AsyncAPI files to generate documentation, code, anything!' },
   // { href: '/react', icon: IconReact, title: 'React Component', description: 'Embed your AsyncAPI documentation in your React application.' },
   { href: '/github-actions', icon: IconGithubActions, title: 'Github Actions', description: 'Automate the validation and generation of documentation.' },
