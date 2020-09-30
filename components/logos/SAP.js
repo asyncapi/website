@@ -2,8 +2,8 @@ export default function SapLogo({ className }) {
   return (
     <svg className={className || 'inline-block'} fill="currentColor" viewBox="0 0 1024 522">
       <linearGradient id="path3060_1_" gradientUnits="userSpaceOnUse" x1="-127.4302" y1="661.6777" x2="-126.4722" y2="661.6777" gradientTransform="matrix(0 513.7015 -513.7015 0 340415.5625 65474.9453)">
-        <stop offset="0" style={{ 'stop-color':'currentColor' }} />
-        <stop offset="1" style={{ 'stop-color':'currentColor' }} />
+        <stop offset="0" style={{ stopColor:'currentColor' }} />
+        <stop offset="1" style={{ stopColor:'currentColor' }} />
       </linearGradient>
       <path id="path3060" fill="url(#path3060_1_)" d="M13.43,13.621v491.971h502.559l491.915-491.915l0,0H13.43V13.621z" />
       <path id="path5384" fill="currentColor" d="M649.993,455.304v36.691h5.538v-15.923h6.229l10.039,15.923h6.23l-10.731-15.923
