@@ -64,7 +64,7 @@ Then follow [this](https://github.com/asyncapi/.github/blob/master/git-workflow.
 Once you are ready with your changes, submit a pull request. Be nice and follow our [code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and make sure your pull request is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits).
 
 <YouTube id="BsC5tu4M1rw" />
- 
+
 ## Office Hours
 
 Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously. 
