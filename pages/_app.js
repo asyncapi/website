@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
+import ReactGA from 'react-ga'
 import Layout from '../components/layout/Layout'
 import Button from '../components/buttons/Button'
 import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
@@ -15,6 +16,11 @@ import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
+  if (typeof window !== 'undefined') {
+    ReactGA.initialize('UA-109278936-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
+
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <MDXProvider components={getMDXComponents()}>
