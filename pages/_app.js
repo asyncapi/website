@@ -56,7 +56,7 @@ function getMDXComponents() {
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
     pre: props => <div {...props} className={`${props.className || ''} my-8`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm`} />,
-    code: ({ children, className = '', metastring, ...rest }) => {
+    code: ({ children, className = '', metastring = '', ...rest }) => {
       let caption
       const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || []
       meta.forEach(str => {
