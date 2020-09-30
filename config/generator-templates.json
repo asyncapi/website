@@ -1,0 +1,9 @@
+[
+  { "value": "@asyncapi/html-template", "text": "HTML" },
+  { "value": "@asyncapi/markdown-template", "text": "Markdown" },
+  { "value": "@asyncapi/nodejs-template", "text": "Node.js" },
+  { "value": "@asyncapi/nodejs-ws-template", "text": "Node.js WebSockets" },
+  { "value": "@asyncapi/java-spring-cloud-stream-template", "text": "Java Spring Cloud Stream" },
+  { "value": "@asyncapi/java-spring-template", "text": "Java Spring Boot" },
+  { "value": "@asyncapi/python-paho-template", "text": "Python Paho" }
+]

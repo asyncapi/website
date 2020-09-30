@@ -4,5 +4,5 @@
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
 
 [build]
-  command = "HUGO_VERSION=0.63 hugo -t hugo-asyncapi"
-  publish = "public"
+  command = "npm run build && npm run export"
+  publish = "out"
