@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI @Hacktoberfest"
-date: 2020-09-29T06:00:00+01:00
+date: 2020-09-30T06:00:00+01:00
 type: blog
 featured: true
 tags:
@@ -49,7 +49,7 @@ There is always a lot of work waiting out there. For the sake of this special ev
 
 TODO: put video here
 
-### 2. Setup Your Environment and Create a First Pull Request
+### 2. Setup Your Environment And Create A First Pull Request
 
 Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI. 
 
