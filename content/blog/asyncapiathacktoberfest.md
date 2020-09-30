@@ -88,10 +88,10 @@ Still not sure if you can make it? Don't worry. We want to host office hours thr
 
 You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec). 
 
-Enjoy the Hacktoberfest!
-
 ## Blooper Reel
 
 Before you jump to your first contribution, have a look at the making of the videos. It was quite fun.
 
 {{%youtube anjcF2l0lGs%}}
+
+Enjoy the Hacktoberfest!
