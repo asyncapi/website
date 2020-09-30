@@ -7,7 +7,7 @@ tags:
   - Hacktoberfest
   - Community
   - Contribute
-cover: /images/posts/
+cover: /images/posts/hacktoberfest.webp
 weight: 10
 authors:
   - name: Lukasz Gornicki
@@ -16,7 +16,7 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-![cover](/images/posts/)
+![cover](/images/posts/hacktoberfest.webp)
 
 ## What is AsyncAPI
 
