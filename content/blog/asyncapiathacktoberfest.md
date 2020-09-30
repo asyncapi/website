@@ -41,7 +41,7 @@ In the past, we were also there where you are now, shy and uncertain if we can i
 
 ## How Can You Help
 
-There is always a lot of work waiting out there. For the sake of this special event, we prepared around 75 GitHub issues that you can pick up. They represent different areas (for example, JavaScript or HTML), different difficulty (for example, 50 issues are easy), and different repositories. No matter if they are trivial or demanding, all of them are important for us. Even with trivial ones, where you, for example, need to remove a semicolon, we will still be super happy if you do this work because this will improve the quality of the project (SonarCloud reports). In other words, every single issue from [this](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/edit?usp=sharing) list is important.
+There is always a lot of work waiting out there. For the sake of this special event, we prepared around 75 GitHub issues that you can pick up. They represent different areas (for example, JavaScript or HTML), different difficulty (for example, 50 issues are easy), and different repositories. No matter if they are trivial or demanding, all of them are important for us. Even with trivial ones where you, for example, need to remove a semicolon, we will still be super happy because this will improve the quality of the project (SonarCloud reports). In other words, every single issue from [this](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/edit?usp=sharing) list is important.
 
 ### 1. Pick The Right Issue
 
@@ -75,7 +75,7 @@ Trust me when I write that every pull request is crucial for us.
 Trust me when I write that we are a welcoming community.
 Don't be afraid that you will waste our time. If we would think about it this way, we would not even join the Hacktoberfest.
 
-Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different timezones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) and then on the following days:
+Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different time zones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) and then on the following days:
 
 - Tuesday 6th, 8AM UTC
 - Thursday 8th, 4PM UTC
@@ -92,7 +92,6 @@ Enjoy the Hacktoberfest!
 
 ## Blooper Reel
 
-Before you jump to your first contribution, have a look a the making of the videos. It was quite fun.
+Before you jump to your first contribution, have a look at the making of the videos. It was quite fun.
 
 {{%youtube anjcF2l0lGs%}}
-
