@@ -20,7 +20,7 @@ authors:
 
 ## What is AsyncAPI
 
-AsyncAPI is a specification for describing your [event-driven architecture](https://www.asyncapi.com/docs/getting-started/event-driven-architectures/). You are probably using already [OpenAPI/Swagger specification](https://www.asyncapi.com/docs/getting-started/coming-from-openapi/) for describing your synchronous RESTful APIs. AsyncAPI is something that supplements OpenAPI. When you should use AsyncAPI, one of the cases is when your services do not talk to each other directly but through a message broker.
+AsyncAPI is a specification for describing your [event-driven architecture](https://www.asyncapi.com/docs/getting-started/event-driven-architectures/). You are probably using already [OpenAPI/Swagger specification](https://www.asyncapi.com/docs/getting-started/coming-from-openapi/) for describing your synchronous RESTful APIs. AsyncAPI is something that supplements OpenAPI. As an example, you should use AsyncAPI when your services do not talk to each other directly but through a message broker.
 
 In contrast to the OpenAPI Initiative, AsyncAPI Initiative is focused not only on creating and evolving the AsyncAPI specification but also on its tooling. It is a vendor-neutral space for the community to work together on the spec and its tools. We work on tools like specification parsers or docs and code generators.
 
