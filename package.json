@@ -36,7 +36,7 @@
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^9.7.6",
     "gray-matter": "^4.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "markdown-to-txt": "^1.0.1",
     "markdown-toc": "^1.2.0",
     "moment": "^2.26.0",
