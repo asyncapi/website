@@ -45,7 +45,7 @@ There is always a lot of work waiting out there. For the sake of this special ev
 
 [Here](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/edit?usp=sharing) you can find a list of all the issues that you can work on. Most of the issues are about code contribution, but not all of them. There are also issues about documentation or CI/CD configuration (we use GitHub Actions). Just pick the issues you want to work on, one at a time, and let us know in the comments section that you want to work on it.
 
-TODO: put video here
+<YouTube id="Iqs_2BiNEEo" />
 
 ### 2. Setup Your Environment And Create A First Pull Request
 
