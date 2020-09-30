@@ -2324,7 +2324,7 @@
       }
     ],
     "readingTime": 5,
-    "excerpt": "cover\nAsyncAPI is innovation and you should assess it\nThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardiza",
+    "excerpt": "AsyncAPI is innovation and you should assess it\nThoughtWorks and InfoQ clearly point out this is the best moment to have a closer look at AsyncAPI specification. Specification brings standardization i",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
@@ -2400,7 +2400,7 @@
       }
     ],
     "readingTime": 4,
-    "excerpt": "cover\nIncreasing the quality of tools with SonarCloud\nWe enabled SonarCloud for the most critical AsyncAPI tools that are reaching or already reached 1.0.0 release. Luckily this amazing software is av",
+    "excerpt": "Increasing the quality of tools with SonarCloud\nWe enabled SonarCloud for the most critical AsyncAPI tools that are reaching or already reached 1.0.0 release. Luckily this amazing software is availabl",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
@@ -2498,7 +2498,7 @@
       }
     ],
     "readingTime": 5,
-    "excerpt": "cover\nAvro Schema Parser\nShort Intro to Schema Types in AsyncAPI\nThere are many different schema formats that one might use to describe the message payload. Not everyone uses JSON Schema. There are mu",
+    "excerpt": "Avro Schema Parser\nShort Intro to Schema Types in AsyncAPI\nThere are many different schema formats that one might use to describe the message payload. Not everyone uses JSON Schema. There are multiple",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
@@ -2574,7 +2574,7 @@
       }
     ],
     "readingTime": 3,
-    "excerpt": "cover\nParser First Release Candidate is Alive\nSince the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the AsyncAPI JSON Schema t",
+    "excerpt": "Parser First Release Candidate is Alive\nSince the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the AsyncAPI JSON Schema that th",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
@@ -2664,7 +2664,7 @@
       }
     ],
     "readingTime": 4,
-    "excerpt": "cover\nWe canceled the previous status update due to the vacation cucumber season, so this status update covers the last four and not two weeks. Please familiarize yourself with many things we worked o",
+    "excerpt": "We canceled the previous status update due to the vacation cucumber season, so this status update covers the last four and not two weeks. Please familiarize yourself with many things we worked on and ",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
@@ -2747,7 +2747,7 @@
       }
     ],
     "readingTime": 4,
-    "excerpt": "cover\nCircular References Supported in HTML and Markdown Templates\nAfter recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML ",
+    "excerpt": "Circular References Supported in HTML and Markdown Templates\nAfter recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML and Ma",
     "sectionSlug": "/blog",
     "sectionWeight": 0,
     "isIndex": false,
