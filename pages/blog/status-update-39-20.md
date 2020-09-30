@@ -18,16 +18,44 @@ authors:
 
 After recent efforts into circular references support in the AsyncAPI JavaScript Parser, now we started using these features in HTML and Markdown docs generators. With the latest releases of those two templates, you can generate documentation for schemas containing circular references. Below you can see an example specification file and how its payload and payload generated example looks like in generated HTML. You can also give it a try on your own in our [Playground](https://playground.asyncapi.io/). 
 
-{{% figure src="/img/posts/status-update-39/pic1-circ-spec.webp" title="Pic. 1: AsyncAPI schema with a circular reference." %}}
+```asyncapi caption='AsyncAPI schema with a circular reference.'
+asyncapi: 2.0.0
+info:
+  title: Example
+  version: 0.1.1
+channels:
+  recursive:
+    subscribe:
+      message:
+        payload:
+          $ref: '#/components/schemas/Recursive'
+components:
+  schemas:
+    Recursive:
+      type: object
+      properties:
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recursive'
+        something:
+          type: string
+```
 
-{{% row %}}
-{{% column %}}
-{{% figure src="/img/posts/status-update-39/pic2-circ-schema.webp" title="Pic. 2: Message payload presentation." %}}
-{{% /column %}}
-{{% column %}}
-{{% figure src="/img/posts/status-update-39/pic3-circ-example.webp" title="Pic. 3: Generated payload example." %}}
-{{% /column %}}
-{{% /row %}}
+<Row>
+  <Column>
+    <Figure
+      src="/img/posts/status-update-39/pic2-circ-schema.webp"
+      caption="Message payload presentation."
+    />
+  </Column>
+  <Column>
+    <Figure
+      src="/img/posts/status-update-39/pic3-circ-example.webp"
+      caption="Generated payload example."
+    />
+  </Column>
+</Row>
 
 ## Generate HTML Docs into a Single File
 
@@ -47,14 +75,21 @@ We released [Parser release candidate 5](https://github.com/asyncapi/parser-js/r
 - New functions to all models that need it: hasBindings, bindingProtocols, hasBinding(name), binding(name), extensionKeys, extKeys, hasExtension, hasExt, tagNames, tag, hasTag, hasDescription
 - Much better API documentation. In the past, it was not only missing functions that were not available but also functions that were not documented because of the wrong usage of JSDocs. Now see on your own how significant is the change by looking just on the list of functions available for ChannelParameter model:
 
-{{% row %}}
-{{% column %}}
-{{% figure src="/img/posts/status-update-39/pic1-api-before.webp" title="Pic. 1: ChannelParameter Docs before release" %}}
-{{% /column %}}
-{{% column %}}
-{{% figure src="/img/posts/status-update-39/pic2-api-after.webp" title="Pic. 2: ChannelParameter Docs after release" %}}
-{{% /column %}}
-{{% /row %}}        
+
+<Row>
+  <Column>
+    <Figure
+      src="/img/posts/status-update-39/pic1-api-before.webp"
+      caption="ChannelParameter Docs before release."
+    />
+  </Column>
+  <Column>
+    <Figure
+      src="/img/posts/status-update-39/pic2-api-after.webp"
+      caption="ChannelParameter Docs after release."
+    />
+  </Column>
+</Row>      
 
 ## Hacktoberfest Preparation
 

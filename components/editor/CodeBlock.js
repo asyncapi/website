@@ -1,63 +1,8 @@
 import { useState } from 'react'
 import Highlight from 'react-syntax-highlighter'
-import lowlight from 'lowlight'
+import lowlight, {  } from 'lowlight'
 import IconClipboard from '../icons/Clipboard'
-
-lowlight.registerLanguage('generator-cli', hljs => ({
-  name: 'generator-cli',
-  case_insensitive: true,
-  contains: [
-    {
-      className: 'generator-command',
-      begin: 'ag',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: / [\.\~\w\d_\/]+/,
-          end: ' ',
-          contains: [
-            {
-              className: 'generator-template',
-              begin: / [\@\.\~\w\d\-_\/]+/,
-              end: '-template',
-              contains: [
-                {
-                  className: 'generator-param',
-                  begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
-                },
-              ]
-            },
-          ],
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
-        },
-      ]
-    },
-    {
-      className: 'generator-docker-command',
-      begin: 'docker',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: 'https://bit.ly/asyncapi',
-        },
-        {
-          className: 'generator-template',
-          begin: '@asyncapi/',
-          end: '-template',
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
-        },
-      ]
-    },
-  ]
-}))
+import Caption from '../Caption'
 
 export default function CodeBlock({
   children,
@@ -67,6 +12,8 @@ export default function CodeBlock({
   language = 'yaml',
   hasWindow = false,
   showCopy = true,
+  showCaption = true,
+  caption = '',
   showLineNumbers = true,
   startingLineNumber = 1,
   textSizeClassName = 'text-xs',
@@ -140,26 +87,31 @@ export default function CodeBlock({
   }
 
   return (
-    <div className={`${className} relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark z-10`}>
-      {hasWindow && (
-        <div className="pl-4 pb-2">
-          <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>
-          <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-minimize mr-2"></span>
-          <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-maximize mr-2"></span>
-        </div>
-      )}
-      {
-        showCopy && (
-          <div className={`${ !showLineNumbers && codeBlocks[activeBlock].code.split('/n').length < 2 ? 'absolute top-0 bottom-0 right-0 pl-5 pr-2 bg-code-editor-dark' : ''} z-10`}>
-            <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
-              {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2">Copied!</span>}
-              <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
-            </button>
+    <>
+      <div className={`${className} relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark z-10`}>
+        {hasWindow && (
+          <div className="pl-4 pb-2">
+            <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>
+            <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-minimize mr-2"></span>
+            <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-maximize mr-2"></span>
           </div>
-        )
-      }
-      {renderHighlight()}
-    </div>
+        )}
+        {
+          showCopy && (
+            <div className={`${ !showLineNumbers && codeBlocks[activeBlock].code.split('/n').length < 2 ? 'absolute top-0 bottom-0 right-0 pl-5 pr-2 bg-code-editor-dark' : ''} z-10`}>
+              <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
+                {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2">Copied!</span>}
+                <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
+              </button>
+            </div>
+          )
+        }
+        {renderHighlight()}
+      </div>
+      { showCaption && caption && (
+        <Caption>{caption}</Caption>
+      )}
+    </>
   )
 }
 
@@ -261,6 +213,9 @@ const theme = {
   'hljs-doctag': {
     'color': '#7edcda',
   },
+  'hljs-$ref': {
+    'color': 'yellow'
+  },
   'hljs-meta': {
     'color': '#5E81AC'
   },
@@ -301,3 +256,235 @@ const theme = {
     'color': '#D08770'
   },
 }
+
+lowlight.registerLanguage('asyncapi+yaml', hljs => {
+  const LITERALS = 'true false yes no null'
+
+  // YAML spec allows non-reserved URI characters in tags.
+  const URI_CHARACTERS = '[\\w#/?:@&=+$,.~*\\\'()[\\]]+'
+
+  // Define keys as starting with a word character
+  // ...containing word chars, spaces, colons, forward-slashes, hyphens and periods
+  // ...and ending with a colon followed immediately by a space, tab or newline.
+  // The YAML spec allows for much more than this, but this covers most use-cases.
+  const KEY = {
+    className: 'attr',
+    variants: [
+      { begin: '\\w[\\w :\\/.-]*:(?=[ \t]|$)' },
+      { begin: '"\\w[\\w :\\/.-]*":(?=[ \t]|$)' }, // double quoted keys
+      { begin: '\'\\w[\\w :\\/.-]*\':(?=[ \t]|$)' } // single quoted keys
+    ]
+  }
+
+  const $REF_KEY = {
+    className: '$ref',
+    variants: [
+      { begin: '\\$\\w[\\w :\\/.-]*:(?=[ \t]|$)' },
+      { begin: '"\\$\\w[\\w :\\/.-]*":(?=[ \t]|$)' }, // double quoted keys
+      { begin: '\'\\$\\w[\\w :\\/.-]*\':(?=[ \t]|$)' } // single quoted keys
+    ]
+  }
+
+  const TEMPLATE_VARIABLES = {
+    className: 'template-variable',
+    variants: [
+      { begin: '{{', end: '}}' }, // jinja templates Ansible
+      { begin: '%{', end: '}' } // Ruby i18n
+    ]
+  }
+  const STRING = {
+    className: 'string',
+    relevance: 0,
+    variants: [
+      { begin: /'/, end: /'/ },
+      { begin: /"/, end: /"/ },
+      { begin: /\S+/ }
+    ],
+    contains: [
+      hljs.BACKSLASH_ESCAPE,
+      TEMPLATE_VARIABLES
+    ]
+  }
+
+  // Strings inside of value containers (objects) can't contain braces,
+  // brackets, or commas
+  const CONTAINER_STRING = hljs.inherit(STRING, {
+    variants: [
+      { begin: /'/, end: /'/ },
+      { begin: /"/, end: /"/ },
+      { begin: /[^\s,{}[\]]+/ }
+    ]
+  })
+
+  const DATE_RE = '[0-9]{4}(-[0-9][0-9]){0,2}'
+  const TIME_RE = '([Tt \\t][0-9][0-9]?(:[0-9][0-9]){2})?'
+  const FRACTION_RE = '(\\.[0-9]*)?'
+  const ZONE_RE = '([ \\t])*(Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?'
+  const TIMESTAMP = {
+    className: 'number',
+    begin: '\\b' + DATE_RE + TIME_RE + FRACTION_RE + ZONE_RE + '\\b'
+  }
+
+  const VALUE_CONTAINER = {
+    end: ',',
+    endsWithParent: true,
+    excludeEnd: true,
+    contains: [],
+    keywords: LITERALS,
+    relevance: 0
+  }
+  const OBJECT = {
+    begin: '{',
+    end: '}',
+    contains: [VALUE_CONTAINER],
+    illegal: '\\n',
+    relevance: 0
+  }
+  const ARRAY = {
+    begin: '\\[',
+    end: '\\]',
+    contains: [VALUE_CONTAINER],
+    illegal: '\\n',
+    relevance: 0
+  }
+
+  const MODES = [
+    KEY,
+    $REF_KEY,
+    {
+      className: 'meta',
+      begin: '^---\s*$',
+      relevance: 10
+    },
+    { // multi line string
+      // Blocks start with a | or > followed by a newline
+      //
+      // Indentation of subsequent lines must be the same to
+      // be considered part of the block
+      className: 'string',
+      begin: '[\\|>]([0-9]?[+-])?[ ]*\\n( *)[\\S ]+\\n(\\2[\\S ]+\\n?)*'
+    },
+    { // Ruby/Rails erb
+      begin: '<%[%=-]?',
+      end: '[%-]?%>',
+      subLanguage: 'ruby',
+      excludeBegin: true,
+      excludeEnd: true,
+      relevance: 0
+    },
+    { // named tags
+      className: 'type',
+      begin: '!\\w+!' + URI_CHARACTERS
+    },
+    // https://yaml.org/spec/1.2/spec.html#id2784064
+    { // verbatim tags
+      className: 'type',
+      begin: '!<' + URI_CHARACTERS + ">"
+    },
+    { // primary tags
+      className: 'type',
+      begin: '!' + URI_CHARACTERS
+    },
+    { // secondary tags
+      className: 'type',
+      begin: '!!' + URI_CHARACTERS
+    },
+    { // fragment id &ref
+      className: 'meta',
+      begin: '&' + hljs.UNDERSCORE_IDENT_RE + '$'
+    },
+    { // fragment reference *ref
+      className: 'meta',
+      begin: '\\*' + hljs.UNDERSCORE_IDENT_RE + '$'
+    },
+    { // array listing
+      className: 'bullet',
+      // TODO: remove |$ hack when we have proper look-ahead support
+      begin: '\\-(?=[ ]|$)',
+      relevance: 0
+    },
+    hljs.HASH_COMMENT_MODE,
+    {
+      beginKeywords: LITERALS,
+      keywords: { literal: LITERALS }
+    },
+    TIMESTAMP,
+    // numbers are any valid C-style number that
+    // sit isolated from other words
+    {
+      className: 'number',
+      begin: hljs.C_NUMBER_RE + '\\b'
+    },
+    OBJECT,
+    ARRAY,
+    STRING
+  ]
+
+  const VALUE_MODES = [...MODES]
+  VALUE_MODES.pop()
+  VALUE_MODES.push(CONTAINER_STRING)
+  VALUE_CONTAINER.contains = VALUE_MODES
+
+  return {
+    name: 'asyncapi+yaml',
+    aliases: ['asyncapi'],
+    case_insensitive: true,
+    contains: MODES
+  }
+})
+
+lowlight.registerLanguage('generator-cli', hljs => ({
+  name: 'generator-cli',
+  case_insensitive: true,
+  contains: [
+    {
+      className: 'generator-command',
+      begin: 'ag',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: / [\.\~\w\d_\/]+/,
+          end: ' ',
+          contains: [
+            {
+              className: 'generator-template',
+              begin: / [\@\.\~\w\d\-_\/]+/,
+              end: '-template',
+              contains: [
+                {
+                  className: 'generator-param',
+                  begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
+                },
+              ]
+            },
+          ],
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/,
+        },
+      ]
+    },
+    {
+      className: 'generator-docker-command',
+      begin: 'docker',
+      end: /[^\\]{1}$/,
+      contains: [
+        {
+          className: 'asyncapi-file',
+          begin: 'https://bit.ly/asyncapi',
+        },
+        {
+          className: 'generator-template',
+          begin: '@asyncapi/',
+          end: '-template',
+        },
+        {
+          className: 'generator-param',
+          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/,
+        },
+      ]
+    },
+  ]
+}))
