@@ -35,6 +35,8 @@ AsyncAPI Initiative joins the Hacktoberfest for two main reasons:
 
 In the past, we were also there where you are now, shy and uncertain if we can impact open source community. We want to give you an easy path to take the first baby steps in the world of open source in a welcoming and friendly environment.
 
+> Don't forget to [sign up](https://hacktoberfest.digitalocean.com/login) to the Hacktoberfest
+
 <YouTube id="_1WRr3Ml9t4" />
 
 ## How Can You Help

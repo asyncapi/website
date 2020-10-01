@@ -76,8 +76,8 @@ export default function BlogLayout({ post, children }) {
                     left: 50%;
                     margin-left: -500px !important;
 
-                    &.addthis-animated {
-                        animation-duration: 0s !important;
+                    &amp;.addthis-animated {
+                      animation-duration: 0s !important;
                     }
                 }
 
