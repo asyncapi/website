@@ -220,7 +220,7 @@ export default function DemoAnimation({ className = '' }) {
               Play with it!
             </h3>
             <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
-              Open this example on AsyncAPI Hub to play with it and get a better taste of the specification. No signup is required!
+              Open this example on AsyncAPI Playground to get a better taste of the specification. No signup is required!
             </p>
             <OpenInPlaygroundButton />
           </div>
