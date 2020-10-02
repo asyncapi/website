@@ -57,7 +57,7 @@ npm install -g @asyncapi/generator
 
 Once you have the generator installed you can run it using the `ag` command. At a minimum you must specify the AsyncAPI document to run it against and the template to use as shown below.
 
-```bash
+```generator-cli
 ag https://raw.githubusercontent.com/asyncapi/asyncapi/2.0.0/examples/2.0.0/streetlights.yml @asyncapi/java-spring-cloud-stream-template
 ```
 
