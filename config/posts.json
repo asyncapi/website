@@ -2100,7 +2100,7 @@
   {
     "title": "AsyncAPI @Hacktoberfest",
     "date": "2020-09-30T05:00:00.000Z",
-    "type": "Marketing",
+    "type": "Community",
     "featured": true,
     "tags": [
       "Hacktoberfest",
@@ -2829,6 +2829,40 @@
     "sectionWeight": 0,
     "isIndex": false,
     "slug": "/blog/status-update-39-20"
+  },
+  {
+    "title": "AsyncAPI Initiative Status Update (week 41, 2020)",
+    "date": "2020-10-06T05:00:00.000Z",
+    "type": "Communication",
+    "featured": true,
+    "tags": [
+      "Status",
+      "Community"
+    ],
+    "cover": "/img/posts/status-update-41-20-new-website.webp",
+    "authors": [
+      {
+        "name": "Lukasz Gornicki",
+        "photo": "/img/avatars/lpgornicki.webp",
+        "link": "https://twitter.com/derberq",
+        "byline": "AsyncAPI Maintainer and Community Guardian"
+      }
+    ],
+    "toc": [
+      {
+        "content": "AsyncAPI Special Interest Group (SIG) open meeting",
+        "slug": "asyncapi-special-interest-group-sig-open-meeting",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      }
+    ],
+    "readingTime": 1,
+    "excerpt": "AsyncAPI Special Interest Group (SIG) open meeting\nThe last meeting took place on Tuesday, 15th of September, 4PM UTC. Meeting notes and recording are available here. \nThe next meeting is scheduled fo",
+    "sectionSlug": "/blog",
+    "sectionWeight": 0,
+    "isIndex": false,
+    "slug": "/blog/status-update-41-20"
   },
   {
     "title": "Status update (week 14, 2019)",
