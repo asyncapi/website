@@ -86,6 +86,12 @@ Still not sure if you can make it? Don't worry. We want to host office hours thr
 - Tuesday 27th, 8AM UTC
 - Thursday 29th, 4PM UTC
 
+We stream to our official media accounts:
+
+- https://www.twitch.tv/asyncapi
+- https://www.youtube.com/channel/UCIz9zGwDLbrYQcDKVXdOstQ
+- https://twitter.com/AsyncAPISpec 
+
 You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec). 
 
 ## Blooper Reel
