@@ -48,7 +48,7 @@ Look into [this](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbm
 
 ## Apidays Live Hong Kong
 
-The AsyncAPI founder, [Fran Méndez](https://twitter.com/fmvilas), was invited to present at Apidays Live Hong Kong. It is a free event that we recommend you to join. Fran's talk is scheduled for tomorrow, 8.10 2:10PM (Hong Kong timezone). He'll talk about the AsyncAPI and the Future of API specs. To join the event, register [here](https://www.eventbrite.com/e/apidays-live-hong-kong-the-open-api-economy-finance-as-a-service-api-ecosystems-tickets-104511637120). 
+The AsyncAPI founder, [Fran Méndez](https://twitter.com/fmvilas), was invited to present at Apidays Live Hong Kong. It is a free event that we recommend you to join. Fran's talk is scheduled for tomorrow at 8.10 AM CEST (2:10 PM Hong Kong timezone). He'll talk about AsyncAPI and the Future of API specs. To join the event, register [here](https://www.eventbrite.com/e/apidays-live-hong-kong-the-open-api-economy-finance-as-a-service-api-ecosystems-tickets-104511637120). 
 
 ## React Component Improvements
 
