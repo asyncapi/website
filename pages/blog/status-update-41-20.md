@@ -31,7 +31,7 @@ I'm super excited to share with you that last week we released [a new AsyncAPI w
 
 AsyncAPI Initiative joined Hacktoberfest. We decided to join the event at the end of August when nobody even thought this would happen. The first day of Hacktoberfest felt like a false start. Because of the enormous amount of SPAM pull requests, some open-source community people went too far in the #cancelculture trend. They opted on Twitter for the Hacktoberfest cancelation and DigitalOcean boycott. Luckily not everyone is haters and Hacktoberfest stays. Anyway, this is a topic for another post.
 
-Do we regret we engaged with event participants? Hell no! So far, yes, we got only 2 SPAM PRs, but we also got many issues addressed (19 in 5 days) that we listed for the event. 
+Do we regret we engaged with event participants? Hell no! So far, yes, we got only 2 SPAM PRs, but we also got many issues addressed (25 in 7 days) that we listed for the event. 
 
 We had two primary goals to join the event:
 - Show the community that AsyncAPI Initiative is not just the spec but a lot of great tooling.
@@ -54,7 +54,7 @@ The AsyncAPI founder, [Fran Méndez](https://twitter.com/fmvilas), was invited t
 
 The latest version of the component is 0.13.1. Since the last status update, we had three releases, where one was a feature to display descriptions of channels and operations correctly. We can see more interest in the component and more people asking about a client side's documentation rendering. External contributors pushed all recent changes to the component. Thanks a lot to [Dominik Henneke](https://github.com/dhenneke), [Oliver Sand](https://github.com/Fox32), and [Jakub Iwanowski](https://github.com/JakubIwanowski).
 
-Don't think that server-side docs generation dies. So far generation of docs using [HTML Template](https://github.com/asyncapi/html-template) is most popular. We had a few bug fixes added to it, and the current release is 0.12.2.
+Don't think that server-side docs generation dies. So far generation of docs using [HTML Template](https://github.com/asyncapi/html-template) is most popular. We had a few bug fixes added to it, and the current release is 0.13.0. The latest release has a feature that few people asked for. Now you can add `p outFilename=customName.html` parameter to modify the name of the output HTML file.
 
 ## AsyncAPI Special Interest Group (SIG) open meeting
 
