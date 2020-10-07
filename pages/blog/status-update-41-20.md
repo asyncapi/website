@@ -31,7 +31,7 @@ I'm super excited to share with you that last week we released [a new AsyncAPI w
 
 AsyncAPI Initiative joined Hacktoberfest. We decided to join the event at the end of August when nobody even thought this would happen. The first day of Hacktoberfest felt like a false start. Because of the enormous amount of spam pull requests, some open-source community people went too far in the #cancelculture trend. They opted on Twitter for the Hacktoberfest cancelation and DigitalOcean boycott. Luckily, not everyone is a hater, and Hacktoberfest stays. Anyway, this is a topic for another post.
 
-Do we regret we engaged with event participants? Hell no! So far, yes, we got only 2 SPAM PRs, but we also got many issues addressed (26 in 7 days) that we listed for the event. 
+Do we regret we engaged with event participants? Hell no! So far, we got only 2 spam PRs, but we also got many issues addressed (26 in 7 days) that we listed for the event.
 
 We had two primary goals to join the event:
 - Show the community that AsyncAPI Initiative is not just the spec but a lot of great tooling.
