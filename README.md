@@ -57,6 +57,8 @@ Generated files of the website go to the `.next` folder.
 
 This repository has the following structure:
 
+<!-- If you make any changes in the project structure, remember to update it. -->
+
 ```text
   ├── .github                     # Definitions of Github workflows, pull request and issue templates
   ├── components                  # Various generic components such as "Button", "Figure", etc.
@@ -68,11 +70,9 @@ This repository has the following structure:
   │    ├── about                  # Raw content for /about page
   │    ├── blog                   # Blog posts
   │    └── docs                   # Content for /docs/* pages
-  ├── public                      # Data for site metadata and also includes static content such as images
-  ├── scripts                     # Scripts used in the development process
+  ├── public                      # Data for site metadata and static content such as images
+  ├── scripts                     # Scripts used in the build and dev processes
   ├── next.config.js              # Next.js configuration file
   ├── postcss.config.js           # PostCSS configuration file
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
-
-<!-- If you make any changes in the project structure, remember to update it. -->
