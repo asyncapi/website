@@ -53,10 +53,6 @@ npm run build
 
 Generated files of the website go to the `.next` folder.
 
-## Contributing
-
-Read [CONTRIBUTING](CONTRIBUTING.md) guide.
-
 ## Project structure
 
 This repository has the following structure:
