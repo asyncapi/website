@@ -41,7 +41,7 @@ Launch the development server with the hot reloading functionality that allows a
 npm run dev
 ```
 
-You can access the live development server at localhost:8080.
+You can access the live development server at [localhost:8080](http://localhost:8080).
 
 ### Build
 
