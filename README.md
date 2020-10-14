@@ -16,12 +16,12 @@ This repository contains the sources of AsyncAPI website:
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
 - It's build and deployed with [Netlify](https://www.netlify.com/).
 
-## Prerequisites
+## Requirements
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/)
-- [NPM](https://www.npmjs.com/)
+- [Node.js](https://nodejs.org/) v12.16+
+- [npm](https://www.npmjs.com/) v6.13.7+
 
 ## Usage
 
@@ -51,7 +51,11 @@ To build a production-ready website, run the following command:
 npm run build
 ```
 
-Generated files of the website go to the `.next` folder:
+Generated files of the website go to the `.next` folder.
+
+## Contributing
+
+Read [CONTRIBUTING](CONTRIBUTING.md) guide.
 
 ## Project structure
 
