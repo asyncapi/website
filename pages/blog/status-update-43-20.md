@@ -18,8 +18,6 @@ authors:
 
 I’m very proud to share that we are finally there, release 1.0.0 is out in the wild.
 
-I'm very proud to share that we are finally there, release 1.0.0 is out in the wild.
-
 One month passed since the last release candidate, and no one reported any blockers for our first major release.
 
 AsyncAPI JavaScript Parser is an official library that validates AsyncAPI documents and returns a set of functions that make it much easier to access the document's contents. It works well both in the browser and in Node.js. We've been using it for very long in our React component to parse in the browser and in the AsyncAPI Generator to parse documents in the Node.js server and CLI.
