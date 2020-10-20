@@ -22,13 +22,13 @@ I'm very proud to share that we are finally there, release 1.0.0 is out in the w
 
 One month passed since the last release candidate, and no one reported any blockers for our first major release.
 
-AsyncAPI JavaScript Parser is an official library that validates AsyncAPI documents and returns a set of functions that make it much easier to access the document's contents. It works well both in the browser and in Node.js. We use it for very long in our React component to parse in the browser and in the AsyncAPI Generator to parse documents in the Node.js server.
+AsyncAPI JavaScript Parser is an official library that validates AsyncAPI documents and returns a set of functions that make it much easier to access the document's contents. It works well both in the browser and in Node.js. We've been using it for very long in our React component to parse in the browser and in the AsyncAPI Generator to parse documents in the Node.js server and CLI.
 
-Please join us in the celebration. We do it in a typical asynchronous way. Everyone celebrates whenever you can...
+Please join us in the celebration. We do it in a typical asynchronous way. Everyone celebrates whenever they can...
 
-<center>
-<img src="https://media.giphy.com/media/Vj97qNut6WDHa/giphy.gif"></img>
-</center>
+<div className="text-center">
+  <img src="https://media.giphy.com/media/Vj97qNut6WDHa/giphy.gif" />
+</div>
 
 ## HTML Template Improvements
 
@@ -48,7 +48,7 @@ Due to suggestions from different community members, we now display the UID of t
 
 Notice how it is displayed in the below example, next to the first two **mixedTypeArray** property schemas.
 
-<img width="80%" src="/img/posts/status-update-43/display-schema-uid.webp"></img>
+<img className="w-3/4" src="/img/posts/status-update-43/display-schema-uid.webp" />
 
 ## Java Spring Template Improvements
 
@@ -72,7 +72,7 @@ The last meeting took place on Tuesday, 13th of October, 4PM UTC. Meeting notes 
 
 The next meeting is scheduled for next [Tuesday, 27th of October 8AM UTC](https://everytimezone.com/s/577ca99f). 
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/455). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/455). At the moment, there is nothing on the agenda so you can easily sneak your topic in. 
 
 We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
