@@ -34,11 +34,11 @@ Hacktoberfest contributions brought many improvements and bug fixes. Two weeks a
 
 ### PDF Generation
 
-The template supports now an additional parameter called `pdf`. You use it to get an additional PDF file generated, next to the index.html file. In the CLI, pass `-p pdf=true` to get it. Thank you [Talmiz Ahmed](https://github.com/HashTalmiz).
+The template supports now an additional parameter called **pdf**. You use it to get an additional PDF file generated, next to the index.html file. In the CLI, pass `-p pdf=true` to get it. Thank you [Talmiz Ahmed](https://github.com/HashTalmiz).
 
 ### Change Default Name of HTML File
 
-The template now supports an additional parameter called `outFilename`. You use it to change the default index.html file to something different, like for example, asyncapi.html. In the CLI, pass `-p outFilename=asyncapi.html` to get it. Thank you [Mitchell Sawatzky](https://github.com/bufutda). 
+The template now supports an additional parameter called **outFilename**. You use it to change the default index.html file to something different, like for example, asyncapi.html. In the CLI, pass `-p outFilename=asyncapi.html` to get it. Thank you [Mitchell Sawatzky](https://github.com/bufutda). 
 
 ### Display of Schema UID
 
@@ -62,7 +62,7 @@ Only around 20 issues left on our [list](https://docs.google.com/spreadsheets/d/
 
 ## Generator Release Candidate 13
 
-We released [another](https://github.com/asyncapi/generator/releases/tag/v1.0.0-rc.12) release candidate with several security fixes. Important to notice in this RC is that we changed the way we build the docker image. Now it doesn’t contain the generator's sources but we install Generator CLI as a global application. This means the entrypoint is not “node ./cli.js” but “ag”, just like you would use it without Docker. Also, keep in mind that this release candidate now uses the official major release of the JavaScript Parser.
+We released [another](https://github.com/asyncapi/generator/releases/tag/v1.0.0-rc.13) release candidate with several security fixes. Important to notice in this RC is that we changed the way we build the docker image. Now it doesn’t contain the generator's sources but we install Generator CLI as a global application. This means the entrypoint is not “node ./cli.js” but “ag”, just like you would use it without Docker. Also, keep in mind that this release candidate now uses the official major release of the JavaScript Parser.
 
 ## AsyncAPI Special Interest Group (SIG) open meeting
 
