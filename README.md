@@ -1,154 +1,78 @@
+<h5 align="center">
+  <img src="./.github/assets/logo.png" alt="AsyncAPI logo" width="200">
+  <br>
+  Website
+</h5>
+
+---
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
 
-# Overview
+## Overview
 
 This repository contains the sources of AsyncAPI website:
-- It's powered by [Hugo](https://gohugo.io), 
-- It's set on a custom theme inspired on [hugo-fresh](https://themes.gohugo.io/hugo-fresh/) theme,
+
+- It's powered by [Next.js](https://nextjs.org/), 
+- It uses [Tailwind](https://tailwindcss.com/) CSS framework,
 - It's build and deployed with [Netlify](https://www.netlify.com/).
 
-## Installation
+## Requirements
 
-### Prerequisites
+Use the following tools to set up the project:
 
-Install [Hugo](https://gohugo.io/getting-started/installing/).
+- [Node.js](https://nodejs.org/) v12.16+
+- [npm](https://www.npmjs.com/) v6.13.7+
 
-### Build
+## Usage
 
-Generated files of the website go to the `public` folder:
+### Install dependencies
+
+To install all dependencies, run this command:
 
 ```bash
-hugo -t hugo-asyncapi
+npm install
 ```
 
 ### Develop
 
-Start a development server:
+Launch the development server with the hot reloading functionality that allows any change in files to be immediately visible in the browser. Use this command:
 
 ```bash
-hugo server -D
+npm run dev
 ```
 
-## Authoring
+You can access the live development server at [localhost:8080](http://localhost:8080).
 
-### Adding a new documentation page
+### Build
+
+To build a production-ready website, run the following command:
 
 ```bash
-hugo new docs/page_name.md
+npm run build
 ```
 
-> This will create a draft version of your page. Make sure you remove `draft: true` from the front-matter of the document once it's ready to get published.
+Generated files of the website go to the `.next` folder.
 
-### Removing a page
+## Project structure
 
-Just remove the page file. E.g., `rm content/docs/page_name.md`.
+This repository has the following structure:
 
-### Shortcodes
+<!-- If you make any changes in the project structure, remember to update it. -->
 
-#### Code
-
-This shortcode allows you to add a block of code. It has the following features:
-
-* Language selector
-* Line highlighter
-
-##### Usage Example
-
-```md
-{{<code lang="yaml" lines="2-4,6">}}
-This line should not be highlighted.
-This line should be highlighted.
-This line should be highlighted.
-This line should be highlighted.
-This line should not be highlighted.
-This line should be highlighted.
-{{</code>}}
+```text
+  ├── .github                     # Definitions of Github workflows, pull request and issue templates
+  ├── components                  # Various generic components such as "Button", "Figure", etc.
+  ├── config                      # Transformed static data to display on the pages such as blog posts etc.
+  ├── context                     # Various React's contexts used in website
+  ├── css                         # Various CSS files
+  ├── lib                         # Various JS code for preparing static data to render in pages
+  ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
+  │    ├── about                  # Raw content for /about page
+  │    ├── blog                   # Blog posts
+  │    └── docs                   # Content for /docs/* pages
+  ├── public                      # Data for site metadata and static content such as images
+  ├── scripts                     # Scripts used in the build and dev processes
+  ├── next.config.js              # Next.js configuration file
+  ├── postcss.config.js           # PostCSS configuration file
+  └── tailwind.config.js          # TailwindCSS configuration file
 ```
-
-![](./images/code.png)
-
-#### Link
-
-This shortcode allows you to add a link that will open in a new tab.
-
-##### Usage Example
-
-```md
-{{% link anotherwebsite.com %}}Text of the link (Markdown){{% /link %}}
-```
-
-```html
-{{<link anotherwebsite.com>}}Text of the link (HTML){{</link>}}
-```
-
-#### Notice
-
-This shortcode allows you to add a notice message to your document.
-
-##### Usage Example
-
-```md
-{{% notice %}}
-A Markdown text for the notice.
-{{% /notice %}}
-```
-
-```html
-{{<notice>}}
-An HTML text for the notice.
-{{</notice>}}
-```
-
-![](./images/notice.png)
-
-Icon and header title are customizable using `icon` and `title` properties respectively. For instance:
-
-```md
-{{% notice icon="map-pin" title="Another title" %}}
-A Markdown text for the notice.
-{{% /notice %}}
-```
-
-> Find icons here: https://fontawesome.com/icons?d=gallery&m=free
-
-#### Remember
-
-This shortcode allows you to add a message the user must remember or something you want to remark.
-
-##### Usage Example
-
-```md
-{{% remember %}}
-A Markdown text.
-{{% /remember %}}
-```
-
-```html
-{{<remember>}}
-An HTML text.
-{{</remember>}}
-```
-
-![](./images/remember.png)
-
-Icon and header title are customizable using `icon` and `title` properties respectively. For instance:
-
-```md
-{{% remember icon="map-pin" title="Another title" %}}
-A Markdown text.
-{{% /remember %}}
-```
-
-> Find icons here: https://fontawesome.com/icons?d=gallery&m=free
-
-#### Specification chooser
-
-This shortcode shows a menu bar with all the specification versions and highlights the current one.
-
-##### Usage Example
-
-```md
-{{% spec-chooser current="1.1.0" %}}
-```
-
-![](./images/spec-chooser.png)

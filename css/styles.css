@@ -1,0 +1,22 @@
+/*! purgecss start ignore */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+/*! purgecss end ignore */
+
+@import "tailwindcss/utilities";
+
+/*! purgecss start ignore */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li > p {
+  display: inline;
+}
+
+.atss { /* AddThis plugin */
+  z-index: 10 !important;
+}
+/*! purgecss end ignore */

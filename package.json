@@ -1,0 +1,67 @@
+{
+  "name": "@asyncapi/website",
+  "version": "0.1.0",
+  "description": "AsyncAPI website",
+  "scripts": {
+    "dev": "node scripts/build-post-list.js && next -p 8080",
+    "build": "node scripts/build-post-list.js && next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asyncapi/website.git"
+  },
+  "keywords": [
+    "asyncapi",
+    "website",
+    "web",
+    "homepage",
+    "site"
+  ],
+  "author": "Fran Mendez <fmvilas@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/asyncapi/website/issues"
+  },
+  "homepage": "https://github.com/asyncapi/website#readme",
+  "dependencies": {
+    "@fec/remark-a11y-emoji": "^1.0.0",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@mdx-js/loader": "^1.6.4",
+    "@mdx-js/react": "^1.6.4",
+    "@monaco-editor/react": "^3.3.0",
+    "@next/mdx": "^9.4.2",
+    "@tailwindcss/ui": "^0.3.0",
+    "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^9.7.6",
+    "gray-matter": "^4.0.2",
+    "lodash": "^4.17.19",
+    "markdown-to-txt": "^1.0.1",
+    "markdown-toc": "^1.2.0",
+    "moment": "^2.26.0",
+    "monaco-editor": "^0.20.0",
+    "next": "^9.4.4",
+    "postcss-import": "^12.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
+    "react-scrollspy": "^3.4.2",
+    "react-syntax-highlighter": "^12.2.1",
+    "react-text-truncate": "^0.16.0",
+    "react-typing-animation": "^1.6.2",
+    "react-youtube-embed": "^1.0.3",
+    "reading-time": "^1.2.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-gemoji-to-emoji": "^1.1.0",
+    "remark-heading-id": "^1.0.0",
+    "remark-images": "^2.0.0",
+    "remark-slug": "^6.0.0",
+    "tailwindcss": "^1.4.6",
+    "tailwindcss-animations": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.20.0"
+  }
+}
