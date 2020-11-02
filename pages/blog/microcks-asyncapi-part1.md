@@ -4,7 +4,8 @@ date: 2020-10-27T19:00:00+01:00
 type: Engineering
 featured: true
 tags:
-  - Engineering
+  - Community
+  - Testing
   - Tools
 cover: /img/posts/microcks-asyncapi-part1/microcks-1.0.0-loves-asyncapi.webp
 authors:
