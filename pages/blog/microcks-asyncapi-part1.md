@@ -1,10 +1,10 @@
 ---
 title: "How Microcks can speed-up your AsyncAPI adoption - Part 1"
 date: 2020-10-27T19:00:00+01:00
-type: Communication
+type: Engineering
 featured: true
 tags:
-  - Community
+  - Engineering
   - Tools
 cover: /img/posts/microcks-asyncapi-part1/microcks-1.0.0-loves-asyncapi.webp
 authors:
@@ -27,7 +27,7 @@ Our communities clearly validate that it makes sense to have the same tool manag
 
 ![microcks-supported-standards](/img/posts/microcks-asyncapi-part1/microcks-supported-standards.webp)
 
-It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tooling/#mocking) ;-) 
+It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tooling/#mocking) :wink: 
 
 ![asyncapi-tool-tweet](/img/posts/microcks-asyncapi-part1/asyncapi-tool-tweet.webp)
 
@@ -43,4 +43,4 @@ Please have a look at [this proposal #329](https://github.com/asyncapi/asyncapi/
 
 **On next article we will focus on Microcks + AsyncAPI use cases : stay tuned.**
 
-> And if you can't wait for text explanataions, do not hesitate having a look at the [AsyncAPI SIG Meeting #34 recording](https://www.youtube.com/watch?v=pmRA4M-TWuE) for full illustrations of the capabilities. ;-)
+> And if you can't wait for text explanataions, do not hesitate having a look at the [AsyncAPI SIG Meeting #34 recording](https://www.youtube.com/watch?v=pmRA4M-TWuE) for full illustrations of the capabilities. :wink:
