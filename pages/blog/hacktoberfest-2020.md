@@ -2,7 +2,6 @@
 title: "AsyncAPI @Hacktoberfest"
 date: 2020-09-30T06:00:00+01:00
 type: Community
-featured: true
 tags:
   - Hacktoberfest
   - Community
