@@ -1,5 +1,5 @@
 ---
-title: "Making Hacktoberfest a Successfull Event for Your Project"
+title: "Making Hacktoberfest a Successfull Event"
 date: 2020-11-01T06:00:00+01:00
 type: Communication
 featured: true
@@ -23,21 +23,21 @@ In October, we welcomed 26 new contributors with 70 pull requests (PRs) merged. 
 
 Don't be afraid of [Hacktoberfest](https://hacktoberfest.digitalocean.com/). It is an excellent event for both contributors and maintainers.
 
-There are [haters](https://blog.domenic.me/hacktoberfest/) that will tell you something different. My advice, follow **trimmed mean** measure and always discard extreme opinions, especially if they call for boycotting:
+There are [haters](https://blog.domenic.me/hacktoberfest/) that will tell you something different. My advice, follow [truncated mean](https://en.wikipedia.org/wiki/Truncated_mean) measure and always discard extreme opinions, especially if they call for boycotting:
 
 > Finally, and most importantly, we can remember that this is how DigitalOcean treats the open source maintainer community, and stay away from their products going forward
 
-Cancel culture at its best. That someone is good at programming or works at Google or Facebook doesn't make them experts in everything. Remember that celebrities are not good candidates for a role model.
+Cancel culture at its best. The fact that someone is good at programming or works at Google or Facebook doesn't make them experts in everything. Remember that celebrities are not good candidates for a role model.
 
 There are no perfect events; there are no best solutions. There is always a place for improvement, but it should be followed by open, civilized discussion.
 
 Let me conclude by saying that I hope the "harm to the open source made by DigitalOcean" is not as significant as the harm that such hate does to open source by discouraging new open source contributors. However, this is just speculation. How can I know that any of these things is the harm if I did not conduct scientific research? I can only confirm that Hacktoberfest did not harm [AsyncAPI Initiative](https://www.asyncapi.com/). On the contrary, it was pretty neat.
 
-## SPAM
+## Spam
 
-During the entire event, we had only two SPAM PRs. I can imagine that a much more popular and known project might have more. Nevertheless, adding the **invalid** label and closing a PR is a super simple operation, three clicks.
+During the entire event, we had only two spam PRs. I can imagine that a much more popular and known project might have more. Nevertheless, adding the **invalid** label and closing a PR is a super simple operation, three clicks.
 
-The definition of SPAM heavily depends on maintainers. For example, [this](https://github.com/facebook/react/pull/19953) is not invalid for me; for me, grammar is not "subjective nits".
+The definition of spam heavily depends on maintainers. For example, [this](https://github.com/facebook/react/pull/19953) is not invalid for me; for me, grammar is not "subjective nits".
 
 ## Why We Participated in Hacktoberfest
 
@@ -45,7 +45,7 @@ Our intentions were pretty clear from the very beginning. As I wrote in the [pre
  - Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we not only work on the AsyncAPI specification but also lots of tools,
  - Help members of the broader open source community make their first contributions in a friendly environment
 
-My impression is that sometimes the open-source is perceived as a kind of elite gathering. This is quite often blocking people from joining because they feel they cannot help but rather waste others' time. I was there in the past. It's just another variation of damn [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You can always help, no matter what your experience is.
+My impression is that sometimes the open-source is perceived as a kind of elite gathering. This is quite often blocking people from joining because they feel they cannot help but rather waste others' time. I was there in the past, I thought the same. It's just another variation of damn [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You can always help, no matter what your experience is.
 
 Start small. Don't start with tasks that can be overwhelming. Don't throw yourself into the deep end. 
 
@@ -53,7 +53,7 @@ We wanted to help others make first baby steps in a secure and inclusive environ
 
 ## What It Takes To Have 70 PRs Merged
 
-It is not enough to label 70 issues with the **hacktoberfest** label :smiley:
+It is not enough to label 70 issues with the **hacktoberfest** label, sorry :smiley:
 
 First of all, you need to be passionate about open source and dedicated to what you do. It can't just be a task that somebody assigned you. It would help if you were prepared to treat Hacktoberfest participants as a priority. I would compare it to the onboarding process of new hires. 
 
@@ -61,14 +61,14 @@ Of course, not all participants join to stay longer, usually it is just one pull
 
 It doesn't matter. 
 
-Please don't make assumptions; they are evil. Be opened, treat every contribution equally, and remember that the onboarding process is a crucial element. If you fail with the onboarding process, you fail big time at the very beginning.
+Please don't make assumptions; assumptions are evil. Be opened, treat every contribution equally, and remember that the onboarding process is a crucial element. If you fail with the onboarding process, you fail big time at the very beginning.
 
 ### What We Prepared
 
 We prepared the following materials for potential participants:
 - [Blog post](https://www.asyncapi.com/blog/hacktoberfest-2020) about our participation,
 - [Onboarding videos](https://www.youtube.com/playlist?list=PLbi1gRlP7pigFSE_6G88x0t12HFLU4A4b) that explain how to start,
-- Labeled 78 issues from more than 30 repositories and put them all in one [list](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/) with additional information about difficulty level or technical area it is about, 
+- 78 issues from more than 30 repositories and put them all in one [list](https://docs.google.com/spreadsheets/d/1vX4J395apexutfQ0OSqPNltFKDacmemHZwCmOXwHNLo/) with additional information about difficulty level or technical area it is about, 
 
 It took me around eight workdays to do it all. The most time consuming was to go through all the issues, pick candidates, create new ones, and group them all in a google sheet.
 
@@ -76,7 +76,7 @@ It took me around eight workdays to do it all. The most time consuming was to go
 
 70 pull requests mean 70 reviews :sweat:
 
-If you know your project well, it is not very consuming, though, and anyway, it is work you have to do as a maintainer. I do not count this time as an extra Hacktoberfest effort. It can be overwhelming if this is not a standard amount of PRs that you get every month.
+If you know your project well, it is not very time consuming, though, and anyway, it is work you have to do as a maintainer. I do not count this time as an extra Hacktoberfest effort. Of course it can be overwhelming if this is not a standard amount of PRs that you get every month.
 
 We also hosted [office hours](https://www.youtube.com/playlist?list=PLbi1gRlP7pigZP2da6zbDT2YU7glQOTPH) for participants. This was fun, and we anyway wanted to start doing live streams about AsyncAPI.
 
