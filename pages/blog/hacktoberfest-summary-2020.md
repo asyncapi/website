@@ -90,7 +90,7 @@ It looks like we do not need to do more for the next year.
 
 Hell yeah, and I'm already looking forward to Hacktoberfest 2021.
 
-It was great to see so many different people engaging with the project and seeing we reached our goal.
+It was great to see so many different people interacting with the project and seeing we reached our goal.
 
 [![](/img/posts/hacktoberfest-summary-2020/feedback-juergenbr.webp)](https://github.com/asyncapi/html-template/pull/98#issuecomment-709014754)
 
