@@ -45,7 +45,7 @@ Our intentions were pretty clear from the very beginning. As I wrote in the [pre
  - Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we work not only on the AsyncAPI specification, but also lots of tools
  - Help members of the broader open-source community make their first contributions in a friendly environment
 
-My impression is that sometimes the open-source is perceived as a kind of elite gathering. This is quite often blocking people from joining because they feel they cannot help but rather waste others' time. I was there in the past, I thought the same. It's just another variation of damn [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You can always help, no matter what your experience is.
+My impression is that sometimes the open-source is perceived as a kind of elite gathering. **This is quite often blocking people from joining because they feel they cannot help but rather waste others' time.** I was there in the past, I thought the same. It's just another variation of the damn [impostor syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome). You can always help, no matter what your experience is.
 
 Start small. Don't start with tasks that can be overwhelming. Don't throw yourself into the deep end. 
 
@@ -74,9 +74,9 @@ It took me around eight workdays to do it all. The most time-consuming part was 
 
 ### What We Did During The Event
 
-70 pull requests mean 70 reviews :sweat:
+70 pull requests mean —at least— 70 reviews :sweat_smile:
 
-If you know your project well, it is not very time-consuming, and anyway, it is the work you have to do as a maintainer. I do not count this time as an extra Hacktoberfest effort. Of course, it can be overwhelming, if this is not a standard amount of PRs that you get every month.
+If you know your project well, it is not very time-consuming, and anyway, it is the work you have to do as a maintainer. I do not count this time as an extra Hacktoberfest effort. Of course, it can be overwhelming if this is not a standard amount of PRs that you get every month.
 
 We also hosted [office hours](https://www.youtube.com/playlist?list=PLbi1gRlP7pigZP2da6zbDT2YU7glQOTPH) for participants. This was fun, and we wanted to start doing live streams about AsyncAPI anyway.
 
@@ -104,8 +104,10 @@ Our success was a typical return on investment.
 
 We asked all contributors to provide feedback on how they learned about us and what was the most helpful resource. 20 out of 26 responded to our request.
 
-![](/img/posts/hacktoberfest-summary-2020/how-they-learned.webp)
-_Figure 1: Ways in which the contributors learned about AsyncAPI participating in Hacktoberfest_
+<Figure
+  src="/img/posts/hacktoberfest-summary-2020/how-they-learned.webp"
+  caption="Figure 1: Ways in which the contributors learned about AsyncAPI participating in Hacktoberfest"
+/>
 
 I think it is pretty clear that introducing the official Discord channel was a great idea. I personally do not like Discord because of the lack of support for threads, but better this than nothing.
 
