@@ -111,8 +111,10 @@ We asked all contributors to provide feedback on how they learned about us and w
 
 I think it is pretty clear that introducing the official Discord channel was a great idea. I personally do not like Discord because of the lack of support for threads, but better this than nothing.
 
-![](/img/posts/hacktoberfest-summary-2020/what-they-used.webp)
-_Figure 2: Resources helpful for contributors_
+<Figure
+  src="/img/posts/hacktoberfest-summary-2020/what-they-used.webp"
+  caption="Figure 2: Resources helpful for contributors"
+/>
 
 Such a simple thing as a Google Sheet with a list of issues grouped by different factors was, in the end, our best resource for contributors. I encourage you to create such a sheet for your contributors next year.
 
