@@ -1,6 +1,6 @@
 ---
 title: "Is Hacktoberfest Good For Maintainers?"
-date: 2020-11-01T06:00:00+01:00
+date: 2020-11-05T06:00:00+01:00
 type: Community
 featured: true
 tags:
