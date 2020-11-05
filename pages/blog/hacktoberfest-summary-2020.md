@@ -1,7 +1,7 @@
 ---
 title: "Making Hacktoberfest a Successful Event"
 date: 2020-11-01T06:00:00+01:00
-type: Communication
+type: Community
 featured: true
 tags:
   - Status
