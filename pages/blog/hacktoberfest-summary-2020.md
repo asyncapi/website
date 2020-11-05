@@ -1,5 +1,5 @@
 ---
-title: "Making Hacktoberfest a Successful Event"
+title: "Is Hacktoberfest Good For Maintainers?"
 date: 2020-11-01T06:00:00+01:00
 type: Community
 featured: true
