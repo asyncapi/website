@@ -15,6 +15,13 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
+<Warning
+  title="HacktoberFest 2020 has finished"
+  description={
+    <span>Check out our <a href="/blog/hacktoberfest-summary-2020">summary blog post</a>. There are lots of good insights!</span>
+  }
+/>
+
 ## What is AsyncAPI
 
 AsyncAPI is a specification for describing your [event-driven architecture](https://www.asyncapi.com/docs/getting-started/event-driven-architectures/). You are probably using already [OpenAPI/Swagger specification](https://www.asyncapi.com/docs/getting-started/coming-from-openapi/) for describing your synchronous RESTful APIs. AsyncAPI is something that supplements OpenAPI. As an example, you should use AsyncAPI when your services do not talk to each other directly but through a message broker.
