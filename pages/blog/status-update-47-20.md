@@ -34,7 +34,7 @@ Join us during these strange pandemic times in asynchronous remote celebration, 
 
 Following the recent [1.0 release of the AsyncAPI Parser](https://www.asyncapi.com/blog/status-update-43-20) we came to the point we could release the first major release of [the AsyncAPI Generator](https://github.com/asyncapi/generator/) too. 
 
-Feel free to congratulate us by giving a :star: to [the project](https://github.com/asyncapi/generator/stargazers). That is the moment to join us and think with us about the 2.0 release and all the goodies we can add to it.
+Feel free to congratulate us by giving a :star: to [the project](https://github.com/asyncapi/generator/stargazers). This is the moment to join us and think with us about the 2.0 release and all the goodies we can add to it.
 
 Try out the project by following :point_down: instructions:
 <GeneratorInstallation />
@@ -67,7 +67,7 @@ There is a lot of it. We wanted to make it easy for you. We created a [GitHub Te
 - A template that generates class diagram showing relations between schemas
 - Detailed readme which explains all the features and where are they used in the template
 
-To try out the template, run :point_down: command:
+To try out the template, run :point_down: commands:
 ```
 # Install the AsyncAPI Generator if you do not have it yet
 npm install -g @asyncapi/generator
@@ -94,7 +94,7 @@ Since the 0.16.2 release, we changed the npm scope of the component and now use 
 
 ### Web Component
 
-Since the 0.17.5 release, we are now automatically publishing also the @asyncapi/web-component to npm. Since it depends on the React component, it will always follow the same version number. This is all possible thanks to work done by amazing [Hesyar Uzuner](https://github.com/hesyar), [Claude Gex](https://github.com/gexclaude), [Maciej Urbańczyk](https://github.com/magicmatatjahu).
+Since the 0.17.5 release, we are now automatically publishing also the @asyncapi/web-component to npm. Given that it depends on the React component, it will always follow the same version number. This is all possible thanks to work done by amazing [Hesyar Uzuner](https://github.com/hesyar), [Claude Gex](https://github.com/gexclaude), [Maciej Urbańczyk](https://github.com/magicmatatjahu).
 
 Now it should be easier for you to use this component in non-React projects. That is, for example, how you would use it in a plain HTML:
 
