@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 47, 2020)"
+title: "Happy Birthday AsyncAPI (week 47, 2020)"
 date: 2020-11-17T06:00:00+01:00
 type: Communication
 tags:
@@ -89,6 +89,8 @@ open output/index.html
 ### New Npm Scope
 
 Since the 0.16.2 release, we changed the npm scope of the component and now use the official **asyncapi** one. That means you should update your dependencies and from now on use **@asyncapi/react-component**.
+
+Play with the latest version of the component using :point_down: showcase project. At the moment, you need to add a line break to **index.js** file and save the change to make the showcase work for you. Sorry about that. We reported the issue to CodeSandbox folks.
 
 [![Edit asyncapi-react-component-in-action](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/asyncapi-react-component-in-action-wvdy2)
 
