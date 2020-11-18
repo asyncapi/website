@@ -1,6 +1,6 @@
 ---
 title: "Happy Birthday AsyncAPI (week 47, 2020)"
-date: 2020-11-17T06:00:00+01:00
+date: 2020-11-18T06:00:00+01:00
 type: Communication
 tags:
   - Status
