@@ -8,7 +8,6 @@ tags:
   - Streaming
   - Event-Driven Architecture
 cover: /img/posts/choosing_between_web_apis_and_message_streaming/cover.webp
-featured: true
 authors:
   - name: James Higginbotham
     photo: /img/avatars/jhigginbotham.webp
