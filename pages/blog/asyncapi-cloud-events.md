@@ -14,7 +14,6 @@ authors:
     link: https://twitter.com/fmvilas
     byline: AsyncAPI founder
 excerpt: There is the belief by many people that AsyncAPI and CloudEvents are competing for the same thing. This can't be less true, and I'd like to explain you why. Read on!
-featured: true
 ---
 
 I've been receiving the same question for a long time now: Should I use CloudEvents or AsyncAPI? — And my response has always been the same: it depends!

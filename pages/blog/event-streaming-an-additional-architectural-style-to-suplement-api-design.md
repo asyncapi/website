@@ -8,7 +8,6 @@ tags:
   - Streaming
   - Event-Driven Architecture
 cover: /img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/cover.webp
-featured: true
 authors:
   - name: James Higginbotham
     photo: /img/avatars/jhigginbotham.webp
