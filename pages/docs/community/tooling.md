@@ -88,3 +88,4 @@ The following is a list of tools that validate AsyncAPI documents.
 | [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
 | [Spectral](https://github.com/stoplightio/spectral) | A command line linter for AsyncAPI & OpenAPI documents. | Javascript
+| [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
