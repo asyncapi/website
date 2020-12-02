@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import DocsLayout from './DocsLayout'
 import BlogLayout from './BlogLayout'
+import JobsLayout from './JobsLayout'
 import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
@@ -30,6 +31,13 @@ export default function Layout({ children }) {
       <BlogContext.Provider value={{ navItems: posts.filter(p => p.slug.startsWith('/blog/')) }}>
         {children}
       </BlogContext.Provider>
+    )
+  } else if (pathname.startsWith('/jobs/')) {
+    const post = getPostBySlug(pathname)
+    return (
+      <JobsLayout post={post}>
+        {children}
+      </JobsLayout>
     )
   } else {
     const post = getPostBySlug(pathname)
