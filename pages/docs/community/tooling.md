@@ -18,7 +18,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. Thanks to [@tehmantra](https://github.com/tehmantra). | C#/dotnet
 | [Java AsyncAPI](https://github.com/Pakisan/java-asyncapi) | This is a code-first tool for AsyncAPI specification | Java, Kotlin
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
-| [KnstEventBu](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
+| [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client or documentation | Scala
 
 # Code Generators
