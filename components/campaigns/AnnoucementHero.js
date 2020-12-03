@@ -13,7 +13,7 @@ export default function AnnouncementHero() {
       </h1>
       <p className="mb-2 text-xl text-gray-500">To change things forever. To take AsyncAPI to a whole new level.</p>
       <p className="text-xl font-bold text-gray-700">Are you ready for the big announcement?</p>
-      <YoutubeButton href="/" text="Watch it live on Youtube" className="mt-4 inline-block" />
+      <YoutubeButton href="https://youtu.be/Q5ZdPUzYbmc" text="Watch it live on Youtube" className="mt-4 inline-block" />
     </div>
   )
 }
