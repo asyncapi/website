@@ -109,6 +109,9 @@ module.exports = {
       zIndex: {
         '60': 60,
       },
+      rotate: {
+        '-15': '-7deg'
+      },
     },
   },
   plugins: [
