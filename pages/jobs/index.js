@@ -5,6 +5,7 @@ import JobsContext from "../../context/JobsContext"
 import JobPostItem from "../../components/navigation/JobPostItem"
 import Footer from "../../components/Footer"
 import Head from "../../components/Head"
+import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
 
 export default function JobsIndexPage() {
   const { navItems } = useContext(JobsContext)
@@ -34,6 +35,7 @@ export default function JobsIndexPage() {
               Want to work on a great open-source project with a lovely team and a vibrant community? Come work with us!
             </p>
           </div>
+          <AnnouncementHero className="text-center m-4" small={true} />
           <div className="mt-8 flex flex-col items-stretch sm:rounded-md">
             <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
             {
