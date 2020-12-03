@@ -1,5 +1,5 @@
 import Button from './Button'
-import IconYoutube from '../icons/Youtube'
+import IconYoutube from '../icons/YouTube'
 
 export default function YoutubeButton({
   text = 'Watch on YouTube',
