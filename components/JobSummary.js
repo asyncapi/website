@@ -38,7 +38,7 @@ export default function JobSummary({ job, className = '' }) {
       </div>
 
       <div className="hidden lg:block border-t border-gray-200 px-4 py-5 sm:px-6">
-        <ApplyJobButton className="block text-center" />
+        <ApplyJobButton job={job} className="block text-center" />
       </div>
     </div>
   )

@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from '../Head'
-import BlogContext from '../../context/BlogContext'
-import TOC from '../TOC'
+import JobsContext from '../../context/JobsContext'
 import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
@@ -19,7 +18,7 @@ export default function JobsLayout({ post, children }) {
   }
 
   return (
-    <BlogContext.Provider value={{ post }}>
+    <JobsContext.Provider value={{ post }}>
       <Container>
         <NavBar />
       </Container>
@@ -34,18 +33,14 @@ export default function JobsLayout({ post, children }) {
           <div className="lg:flex">
             <JobSummary job={post} className="block my-8 lg:hidden" />
             <article className="mb-32">
-              <Head
-                title={`${post.title} | Jobs`}
-                description={post.excerpt}
-                image={post.cover}
-              />
+              <Head title={`${post.title} | Jobs`} />
               {children}
-              <ApplyJobButton className="mt-4 inline-block" />
+              <ApplyJobButton job={post} className="mt-4 inline-block" />
             </article>
           </div>
         </main>
       </Container>
       <Footer />
-    </BlogContext.Provider>
+    </JobsContext.Provider>
   )
 }

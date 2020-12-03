@@ -12,15 +12,12 @@ export default function JobsIndexPage() {
   const posts = navItems.sort((i1, i2) => {
     const i1Date = new Date(i1.date)
     const i2Date = new Date(i2.date)
-
-    if (i1.featured && !i2.featured) return -1
-    if (!i1.featured && i2.featured) return 1
     return i2Date - i1Date
   })
 
   return (
     <div>
-      <Head title="Blog" />
+      <Head title="Jobs" />
       <Container>
         <NavBar />
       </Container>
