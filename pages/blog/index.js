@@ -5,6 +5,7 @@ import BlogContext from "../../context/BlogContext"
 import BlogPostItem from "../../components/navigation/BlogPostItem"
 import Footer from "../../components/Footer"
 import Head from "../../components/Head"
+import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext)
@@ -41,6 +42,7 @@ export default function BlogIndexPage() {
               <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">Submit yours!</a>
             </p>
           </div>
+          <AnnouncementHero className="text-center m-4" small={true} />
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {
               posts.map((post, index) => (

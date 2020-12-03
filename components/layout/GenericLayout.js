@@ -2,6 +2,7 @@ import Head from '../Head'
 import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
 
 export default function GenericLayout({
   title,
@@ -23,6 +24,7 @@ export default function GenericLayout({
         <NavBar />
       </Container>
       <Container wide={wide}>
+        <AnnouncementHero className="text-center m-4" small={true} />
         {children}
       </Container>
       <Footer />

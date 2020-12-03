@@ -10,6 +10,8 @@ import DocsNavItem from '../navigation/DocsNavItem'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
+import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -63,6 +65,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             <NavBar hideLogo />
           </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
+            <AnnouncementHero className="text-center mx-4" small={true} />
             {!showMenu && (
               <div className="md:hidden">
                 <button onClick={() => setShowMenu(true)} className="flex text-gray-500 px-4 sm:px-6 md:px-8 hover:text-gray-900 focus:outline-none" aria-label="Open sidebar">
