@@ -5,7 +5,7 @@ category: design
 closingOn: 01/15/2021
 ---
 
-We're the tiny team behind the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
+We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
 
 ## TL;DR
 
@@ -25,10 +25,10 @@ You'd spend your time improving the user experience of existing and new tools, f
 * Improving the CLI user experience when generating documentation and code using the AsyncAPI Generator tool.
 * Designing a unified CLI tool to work with AsyncAPI.
 * Creating a design system for [AsyncAPI Studio](https://hub.asyncapi.io).
-* Designing delightful experiences on our documentation and website.
+* Designing delightful experiences for our documentation and website.
 * Researching how our users use AsyncAPI, what they would love to do with it that's not yet possible, etc.
 
-Everything we do is open source and, therefore, all your work will be open sourced too. We do everything on Github, however, we're not rigid as to what tools you should use, as long as you keep your work public, open, and accessible to everyone.
+Everything we do is open-source and, therefore, all your work will be 100% open-source too. We do everything on Github, however, we're not rigid as to what tools you should use, as long as you keep your work public, open, and accessible to everyone.
 
 We're just a team of four people at the time of this writing. We plan to triple the size of the team on the first half of 2021.
 
