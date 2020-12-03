@@ -67,7 +67,7 @@ export default function NavBar ({
 
           {
             otherItems.map((item, index) => (
-              <NavItem href={item.href} key={index} text={item.text} target={item.target} />
+              <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
             ))
           }
         </nav>

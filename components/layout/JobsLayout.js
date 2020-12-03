@@ -25,14 +25,14 @@ export default function JobsLayout({ post, children }) {
       </Container>
       <Container cssBreakingPoint="lg" flex flexReverse>
         <div className="">
-          <JobSummary className="hidden mt-24 max-w-xs sticky top-4 lg:block" />
+          <JobSummary job={post} className="hidden mt-24 max-w-xs sticky top-4 lg:block" />
         </div>
         <main className="mt-8 px-4 sm:px-6 lg:pr-8 lg:pl-0 lg:flex-1">
           <header className="pr-4 sm:pr-6 md:pr-8">
             <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
           </header>
           <div className="lg:flex">
-            <JobSummary className="block my-8 lg:hidden" />
+            <JobSummary job={post} className="block my-8 lg:hidden" />
             <article className="mb-32">
               <Head
                 title={`${post.title} | Jobs`}
