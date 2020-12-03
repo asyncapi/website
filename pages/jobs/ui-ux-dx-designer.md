@@ -6,6 +6,15 @@ category: design
 
 We're the tiny team behind the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
 
+## TL;DR
+
+* :bulb: Developer tools & CLI developer experience
+* :unlock: Your work will be open sourced
+* :muscle: Growing team
+* :house_with_garden: Fully remote job
+* :money_mouth_face: Great salary and compensation package
+* :mountain_snow: Unlimited paid time off
+
 ## About the job
 
 We're looking for someone to work closely with our team to help shape and build the future of our tools.
@@ -58,5 +67,3 @@ We offer **competitive salary** and benefits, and a flexible schedule working wi
 We’re building a long-term initiative with an inclusive culture where everyone can be the best version of themselves, and we want you to be part of it.
 
 Join us!
-
-<button href="mailto:info@asyncapi.io?subject=Applying for the UI/UX/DX designer position" target="_blank" text="Apply for this job" className="mt-4 inline-block" />
