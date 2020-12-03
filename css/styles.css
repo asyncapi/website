@@ -19,4 +19,19 @@ li > p {
 .atss { /* AddThis plugin */
   z-index: 10 !important;
 }
+
+.countdown-text-gradient {
+  background: linear-gradient(230deg, #e74694, #4b79cf, #4bc5cf, #4b79cf, #e74694);
+  background-size: 500% 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: GradientAnimation 50s ease infinite alternate;
+  -moz-animation: GradientAnimation 50s ease infinite alternate;
+  animation: GradientAnimation 50s ease infinite alternate;
+}
+
+@keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    100%{background-position:200% 50%}
+}
 /*! purgecss end ignore */
