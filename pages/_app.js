@@ -13,6 +13,7 @@ import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
 import Figure from '../components/Figure'
 import GeneratorInstallation from '../components/GeneratorInstallation'
+import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
@@ -86,6 +87,7 @@ function getMDXComponents() {
     Row,
     Column,
     Figure,
-    GeneratorInstallation
+    GeneratorInstallation,
+    NewsletterSubscribe,
   }
 }

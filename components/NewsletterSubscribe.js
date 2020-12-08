@@ -1,16 +1,17 @@
 import Button from "./buttons/Button";
 
 export default function NewsletterSubscribe ({
-  formName,
-  className = '',
+  formName = 'free form',
+  className = 'p-8',
   dark = false,
+  title = 'Subscribe to our newsletter to receive news about AsyncAPI.'
 }) {
   if (!formName) throw new Error('Parameter formName is required for the NewsletterSubscribe component.')
 
   return (
-    <div className={`p-8 ${className}`}>
+    <div className={className}>
       <h3 className={`${dark ? 'text-primary-200' : 'text-primary-800'} text-lg font-bold`}>
-        Subscribe to our newsletter to receive news about AsyncAPI.
+        {title}
       </h3>
       <p className="text-gray-400 mt-2 text-sm">We respect your inbox. No spam, promise ✌️</p>
       <form className="mt-4 md:flex" data-netlify="true">

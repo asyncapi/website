@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-featured: true
 ---
 
 ## Happy Birthday AsyncAPI

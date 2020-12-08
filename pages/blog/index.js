@@ -25,6 +25,7 @@ export default function BlogIndexPage() {
       <Container>
         <NavBar />
       </Container>
+      <AnnouncementHero className="text-center m-4" small={true} />
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
@@ -42,7 +43,6 @@ export default function BlogIndexPage() {
               <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">Submit yours!</a>
             </p>
           </div>
-          <AnnouncementHero className="text-center m-4" small={true} />
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {
               posts.map((post, index) => (
