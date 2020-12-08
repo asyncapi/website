@@ -15,7 +15,7 @@ excerpt: I'm proud and honored to let you know that we're partnering with Postma
 featured: true
 ---
 
-I'm proud and honored to let you know that we're partnering with Postman to boost the development of Asynchronous APIs to a new level :rocket:
+I'm proud and honored to let you know that we're partnering with [Postman](https://www.postman.com) to boost the development of Asynchronous APIs to a new level :rocket:
 
 Since the very beginning, I knew the dutty we had at hand was challenging. And still is! The specification was just the trigger of a snowball effect. What's the spec for if you can't do anything with it? Tooling is as important as the specification. However, tooling is a number of times more complex than the specification. We engineers don't want to abandon our favorite programming language and framework, therefore, it's AsyncAPI's responsibility to integrate with the existing tools in the market. **The specification (and tools) should work for the user, not the other way around.** Partnering with Postman allows us to boost the development of more and better tools to help engineers create and maintain Asynchronous APIs while using their favorite programming languages and frameworks.
 
