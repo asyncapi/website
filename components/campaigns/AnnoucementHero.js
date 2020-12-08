@@ -5,7 +5,7 @@ import Button from '../buttons/Button'
 
 export default function AnnouncementHero({ className = '', small = false }) {
   const { pathname } = useRouter()
-  const announcementDateTime = '2020-12-08T16:00:00Z'
+  const announcementDateTime = '2020-12-08T15:00:00Z'
   const announcementDeadlineDateTime = '2020-12-15T16:00:00Z'
 
   if (pathname === '/blog/asyncapi-partners-with-postman') return null
