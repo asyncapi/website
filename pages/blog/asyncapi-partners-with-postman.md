@@ -27,7 +27,7 @@ We want to make the AsyncAPI Initiative a neutral and independent place for coll
 
 Also, we want you to work with us. [We are hiring](/jobs) at Postman to work full-time on AsyncAPI. In the first half of 2021, we'll open a bunch of positions, including Software Engineers, Graphic Designers, Technical Writers, and more. Make sure you don't miss them!
 
-<NewsletterSubscribe className="my-8" formName="form 1" title="Receive an email when we publish a new job offer:" />
+<NewsletterSubscribe className="my-8" formName="form 1" type="jobs" title="Receive an email when we publish a new job offer:" />
 
 Before I finish, I would love to thank [Kin Lane](https://twitter.com/kinlane/) and [Abhinav Asthana](https://twitter.com/a85) for being so supportive. And of course, a huge shout out to [Łukasz Gornicki](https://twitter.com/derberq) and [Eva Morcillo](https://twitter.com/e_morcillo) for their tireless support. None of these would be possible without their help.
 
