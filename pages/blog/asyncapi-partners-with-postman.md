@@ -5,7 +5,7 @@ type: Communication
 tags:
   - Postman
   - Announcement
-cover: /img/posts/asyncapi-partners-with-postman.png
+cover: /img/posts/asyncapi-partners-with-postman.webp
 authors:
   - name: Fran Mendez
     photo: /img/avatars/fmvilas.webp
