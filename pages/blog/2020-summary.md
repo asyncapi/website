@@ -30,7 +30,7 @@ This post is not 100% just in numbers and analytics. It is also a summary of all
 1. Our first ever <a href="/blog/asyncapi-conference-kick-off">AsyncAPI Online Conference</a>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
 1. We took active part in <a href="/blog/hacktoberfest-summary-2020">Hacktoberfest</a> as maintainers and increased the number of contributions to the project
 1. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1 963 new users to the AsyncAPI website
-1. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that tool 1051 users directly to AsyncAPI website
+1. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that took 1051 users directly to the AsyncAPI website
 1. Our two core tools reached their first major release
     * [JavaScript Parser](https://github.com/asyncapi/parser-js/)
     * [Generator](https://github.com/asyncapi/generator/)
@@ -139,14 +139,14 @@ I was also super curious to check out where our members are coming from. The onl
 - tibco.com
 - worldpay.com
 
-Some of these companies sponsored our work in 2020. The ones that didn't... don't worry, we'll contact you :wink:. In 2021 we want to go into a neutral ground (join a foundation). There'll be no more excuses.
+Some of these companies sponsored our work in 2020. The ones that didn't... don't worry, we'll contact you :wink: In 2021, we want to go into a neutral ground (i.e., joining a foundation). There'll be no more excuses.
 
 ### What's next with Slack
 
-Slack hard numbers confirm what we see in Slack every day. Luckily, even though the activity doubled, the number of active users that help out in the workspace also grew :pray:. With the recently announced Postman partnership, I do not worry about how we'll handle 2021.
+Slack hard numbers confirm what we see in Slack every day. Luckily, even though the activity doubled, the number of active users that help out in the workspace also grew :pray: With the recently announced Postman partnership, I do not worry about how we'll handle 2021.
 
 Next year we need to address two critical topics:
-- out community grows, but the knowledge that we all share in Slack is lost. We use a free version of Slack, and therefore, only the last 10k messages are available. In 2021 we need to make a strong decision on what next. Should we spend some budget on Slack commercial subscriptions, or maybe we should find a better tool.
+- our community grows but the knowledge that we all share in Slack is lost. We use a free version of Slack, and therefore, only the last 10k messages are available. In 2021, we need to make a strong decision on what's next. Should we spend some budget on Slack commercial subscriptions, or maybe we should find a better tool?
 - we need to reorganize our channels, be a bit more granular, and target suitable community groups. We'll bother you to get your feedback once we start this reorganization.
 
 ## LinkedIn
@@ -183,11 +183,11 @@ At the moment, we have 757 followers.
   </tr>
 </table>
 
-People that like your updates are most likely the ones that click on links. 75% (947) of likes converted into visits to our [website](http://asyncapi.com/). We took this data from Google Analytics, and we know that in 2019 we had only 137 visits from LinkedIn.
+People that like our updates are most likely the ones that click on links. 75% (947) of likes converted into visits to our [website](http://asyncapi.com/). We took this data from Google Analytics, and we know that in 2019 we had only 137 visits from LinkedIn.
 
-The most performing update was the one about [partnership with Postman](https://www.linkedin.com/feed/update/urn:li:activity:6742099578591481856). It is LinkedIn, and it is all about business.
+The most performing update was the one about the [partnership with Postman](https://www.linkedin.com/feed/update/urn:li:activity:6742099578591481856). It is LinkedIn, and it is all about business.
 
-The below charts show that data match reality. The highest peak in late March is related to our first [AsyncAPI Online Conference](https://www.youtube.com/watch?v=oMSzGc5bDr4). The rise of sponsored traffic is connected to our post-conference activities using the money we got from conference sponsors.
+The chart below shows that data match reality. The highest peak in late March is related to our first [AsyncAPI Online Conference](https://www.youtube.com/watch?v=oMSzGc5bDr4). The rise of sponsored traffic is connected to our post-conference activities using the money we got from conference sponsors.
 
 <Figure
   src="/img/posts/2020-summary/linkedin-impressions.webp"
@@ -198,7 +198,7 @@ The below charts show that data match reality. The highest peak in late March is
 
 This year we explored paid adverts on LinkedIn. We had some money left from sponsors of our AsyncAPI conference but zero experience with LinkedIn.
 
-Luckily we have a fantastic community. One of the community members, [Dan Weese](https://www.linkedin.com/in/daniel-weese-53b27410/), helped us here. He did not only put us in contact with marketing expert, [Charles Serdou](https://www.linkedin.com/in/sardou/), but also covered his wages. Thank you Dan :pray:
+Luckily, we have a fantastic community. One of the community members, [Dan Weese](https://www.linkedin.com/in/daniel-weese-53b27410/), helped us here. He did not only put us in contact with marketing expert, [Charles Serdou](https://www.linkedin.com/in/sardou/) but also covered his wages. Thank you, Dan :pray:
 
 This way, we covered only LinkedIn costs paying $1 074.08
 
@@ -217,13 +217,13 @@ The numbers show it is worth investing in the channel. We can reach a lot of peo
 
 I feel that probably some traffic coming from LinkedIn to our website is not adequately tracked in Google Analytics. Data from LinkedIn say we should notice 2x947 traffic. It might be related to people blocking tracking tools, and we will have to make sure to use other tracking methods, like putting identifiers in the links.
 
-Most important conclusion. If the AsyncAPI conference brought so much activity, it is evident that in 2021 we must organize another great AsyncAPI event.
+Most important conclusion: If the AsyncAPI conference brought so much activity, it is evident that in 2021 we must organize another great AsyncAPI event.
 
 ## Google Analytics
 
 We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) because we want to understand what content is most valuable for you, and we want to learn how the interest is growing. 
 
-### traffic got much higher
+### Traffic got much higher
 
 The interest is growing by a lot! Our website handles it well with the support of [Netlify](https://www.netlify.com), which is free for open-source projects.
 
@@ -441,7 +441,7 @@ We spent $924.14 on this activity and when we compare it to organic impressions 
   </tr>
 </table>
 
-Nothing is black and white, even twitter performance. One could say:
+Nothing is black and white, even Twitter performance. One could say:
 
 > leave organic growth and invest in paid marketing 
 
