@@ -25,7 +25,7 @@ This post is based on quantitative data using metrics from different platforms w
 
 This post is not 100% just in numbers and analytics. It is also a summary of all the important things that happened to the project this year.
 
-## Important moments - Top 6
+## Important moments
 
 1. Our first ever <a href="/blog/asyncapi-conference-kick-off">AsyncAPI Online Conference</a>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
 1. We took active part in <a href="/blog/hacktoberfest-summary-2020">Hacktoberfest</a> as maintainers and increased the number of contributions to the project
@@ -151,7 +151,7 @@ Next year we need to address two critical topics:
 
 ## LinkedIn
 
-[LinkedIn](https://www.linkedin.com/company/asyncapi/) grew a lot this year. We won't be able to compare this year with the previous because... this is not a place where I want to discuss not the experience you get with LinkedIn.
+[LinkedIn](https://www.linkedin.com/company/asyncapi/) grew a lot this year. We won't be able to compare this year with the previous one because... this is not a place where I want to discuss the experience you get with LinkedIn.
 
 ### Followers and impressions
 
@@ -200,7 +200,7 @@ This year we explored paid adverts on LinkedIn. We had some money left from spon
 
 Luckily, we have a fantastic community. One of the community members, [Dan Weese](https://www.linkedin.com/in/daniel-weese-53b27410/), helped us here. He did not only put us in contact with marketing expert, [Charles Serdou](https://www.linkedin.com/in/sardou/) but also covered his wages. Thank you, Dan :pray:
 
-This way, we covered only LinkedIn costs paying $1 074.08
+This way, we covered only LinkedIn costs paying $1 074,08
 
 <Figure
   src="/img/posts/2020-summary/linkedin-folowers.webp"
@@ -371,7 +371,7 @@ By the time I gathered data for this blog post, we had 1433 followers on Twitter
 
 We used money from our AsyncAPI conference sponsors to advertise the conference on Twitter.
 
-We spent $924.14 on this activity and when we compare it to organic impressions over this year, result is just great:
+We spent $924,14 on this activity and when we compare it to organic impressions over this year, result is just great:
 
 <table>
   <tr>
@@ -678,7 +678,7 @@ The majority of our tools are written in JavaScript/TypeScript, and we host them
 
 ### Top packages
 
-Our most important packages are [the Generator](https://www.npmjs.com/package/@asyncapi/generator) and [the Parser](https://www.npmjs.com/package/@asyncapi/parser). 
+Our most important packages are [the Generator](https://www.npmjs.com/package/@asyncapi/generator) and [the Parser](https://www.npmjs.com/package/@asyncapi/parser). Below you can see how downloads of these packages increased.
 
 <table>
   <tr>
@@ -879,10 +879,10 @@ We enabled the [GitHub sponsoring](https://github.com/sponsors/asyncapi) this ye
     </td>
     <td align="left">
       $983 Swags for participants<br/>
-      $359.10 <a href="https://www.womenwhocode.com/">WWC donation</a><br/>
-      $1 074.08 LinkedIn marketing<br/>
-      $924.14 Twitter marketing<br/>
-      $66.54 Zoom account<br/>
+      $359,10 <a href="https://www.womenwhocode.com/">WWC donation</a><br/>
+      $1 074,08 LinkedIn marketing<br/>
+      $924,14 Twitter marketing<br/>
+      $66,54 Zoom account<br/>
     </td>
     <td align="center">
       $0
@@ -901,7 +901,7 @@ We enabled the [GitHub sponsoring](https://github.com/sponsors/asyncapi) this ye
       </a> 
     </td>
     <td>
-      $1 493.64
+      $1 493,64
     </td>
   </tr>
 </table>
