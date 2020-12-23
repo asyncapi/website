@@ -217,8 +217,6 @@ The numbers show it is worth investing in the channel. We can reach a lot of peo
 
 I feel that probably some traffic coming from LinkedIn to our website is not adequately tracked in Google Analytics. Data from LinkedIn say we should notice 2x947 traffic. It might be related to people blocking tracking tools, and we will have to make sure to use other tracking methods, like putting identifiers in the links.
 
-Most important conclusion: If the AsyncAPI conference brought so much activity, it is evident that in 2021 we must organize another great AsyncAPI event.
-
 ## Google Analytics
 
 We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) because we want to understand what content is most valuable for you, and we want to learn how the interest is growing. 
@@ -921,6 +919,8 @@ From observations, we know that number of users that use specification grows:
 It is a specification we are talking about here. There is no way to measure how many AsyncAPI files were created worldwide. At least there was no way to do it in 2020. We'll try [one idea](https://github.com/asyncapi/asyncapi/issues/377#issuecomment-626755982) of ours in 2021. It looks like in the 2021 summary, we could provide some hard numbers on the subject :crossed_fingers:
 
 ## Final words
+
+Most important conclusion: If the AsyncAPI conference brought so much activity, it is evident that in 2021 we must organize another great AsyncAPI event.
 
 Thanks for being with us in 2020, and stay with us for 2021 as it will be epic!
 
