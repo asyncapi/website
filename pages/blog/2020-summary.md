@@ -445,7 +445,7 @@ Nothing is black and white, even twitter performance. One could say:
 
 > leave organic growth and invest in paid marketing 
 
-We do not treat tweeter as just a marketing channel. It is our window to the community. We use it to share updates, short information and engage directly with our community members. We should continue to work on organic growth. It converted only into 2 160 sessions to the AsyncAPI website, which is not much if we compare it with 2 283 sessions opened with the AsyncAPI Conference website using promoted content. We do not want to close the window, though.
+We do not treat Twitter as just a marketing channel. It is our window to the community. We use it to share updates, short information and engage directly with our community members. We should continue to work on organic growth. It converted only into 2 160 sessions to the AsyncAPI website, which is not much if we compare it with 2 283 sessions opened with the AsyncAPI Conference website using promoted content. We do not want to close the window, though.
 
 It's all about keeping the balance :balance_scale:
 
@@ -924,6 +924,6 @@ It is a specification we are talking about here. There is no way to measure how 
 
 Thanks for being with us in 2020, and stay with us for 2021 as it will be epic!
 
-I planned to include in this post also a list of all the AsyncAPI Heroes for 2020, but I was afraid I could miss someone very important and that the list will be very subjective. I hope it is clear, though, that this project is where it is, thanks to many guardian angels out there that help us out.
+I planned to include a list of all the AsyncAPI Heroes for 2020, but I was afraid I could miss someone very important and that the list would be very subjective. I hope it is clear, though, that this project is where it is, thanks to many guardian angels out there that help us out.
 
 > Photo by <a href="https://unsplash.com/@macroman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Immo Wegmann</a> on <a href="https://unsplash.com/s/photos/2020-summary?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
