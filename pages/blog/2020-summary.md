@@ -29,7 +29,7 @@ This post is not 100% just in numbers and analytics. It is also a summary of all
 
 1. Our first ever <a href="/blog/asyncapi-conference-kick-off">AsyncAPI Online Conference</a>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
 1. We took active part in <a href="/blog/hacktoberfest-summary-2020">Hacktoberfest</a> as maintainers and increased the number of contributions to the project
-1. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1 963 new users to the AsyncAPI website
+1. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1963 new users to the AsyncAPI website
 1. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that took 1051 users directly to the AsyncAPI website
 1. Our two core tools reached their first major release
     * [JavaScript Parser](https://github.com/asyncapi/parser-js/)
