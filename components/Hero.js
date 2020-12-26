@@ -2,11 +2,14 @@ import Button from './buttons/Button'
 import ArrowRight from './icons/ArrowRight'
 import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
 import DemoAnimation from './DemoAnimation'
+import AnnouncementHero from './campaigns/AnnoucementHero'
 
 export default function Hero ({ className = '' }) {
   return (
     <div className={`px-2 mt-12 ${className}`}>
       <div className="text-center">
+        <AnnouncementHero />
+
         <h1 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">
           Building the future of event-driven architecture.
         </h1>

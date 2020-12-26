@@ -23,7 +23,7 @@ servers:
     description: This is "My Company" broker.
 channels:
   hello:
-    subscribe:
+    publish:
       message:
         payload:
           type: string

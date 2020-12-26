@@ -5,6 +5,7 @@ import GenericPostContext from '../../context/GenericPostContext'
 import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
 
 export default function GenericPostLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -20,6 +21,7 @@ export default function GenericPostLayout({ post, children }) {
       <Container>
         <NavBar />
       </Container>
+      <AnnouncementHero className="text-center m-4" small={true} />
       <Container>
         <main className="mt-8 px-4 sm:px-6">
           <header className="pr-4 sm:pr-6 md:pr-8">

@@ -1,6 +1,7 @@
 import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
 import ReactGA from 'react-ga'
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import Layout from '../components/layout/Layout'
 import Button from '../components/buttons/Button'
 import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
@@ -12,6 +13,8 @@ import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
 import Figure from '../components/Figure'
+import GeneratorInstallation from '../components/GeneratorInstallation'
+import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
@@ -85,5 +88,17 @@ function getMDXComponents() {
     Row,
     Column,
     Figure,
+    GeneratorInstallation,
+    NewsletterSubscribe,
+    TwitterTimelineEmbed,
+    TwitterShareButton,
+    TwitterFollowButton,
+    TwitterHashtagButton,
+    TwitterMentionButton,
+    TwitterTweetEmbed,
+    TwitterMomentShare,
+    TwitterDMButton,
+    TwitterVideoEmbed,
+    TwitterOnAirButton
   }
 }

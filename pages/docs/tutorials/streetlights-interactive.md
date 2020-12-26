@@ -11,7 +11,7 @@ One of the most critical roadmap items for the AsyncAPI Initiative for 2020 is *
 
 Before we start writing more docs and improve their structure, we need first to know how you want you to interact with docs. We need to see if you prefer classic plain-text docs or rather interactive docs where you can play with the content.
 
-We created an interactive tutorial using [Katacoda](https://www.katacoda.com/). It is another version of the [Streetlights](../streetlights) tutorial that will always work for you no matter what operating system do you have.
+We created an interactive tutorial using [Katacoda](https://www.katacoda.com/). It is another version of the [Streetlights](./streetlights) tutorial that will always work for you no matter what operating system do you have.
 
 Please become our alpha testers of the tutorial:
 

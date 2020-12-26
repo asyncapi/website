@@ -2,7 +2,6 @@
 title: "AsyncAPI Initiative Status Update (week 43, 2020)"
 date: 2020-10-21T06:00:00+01:00
 type: Communication
-featured: true
 tags:
   - Status
   - Community

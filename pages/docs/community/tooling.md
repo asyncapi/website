@@ -18,7 +18,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. Thanks to [@tehmantra](https://github.com/tehmantra). | C#/dotnet
 | [Java AsyncAPI](https://github.com/Pakisan/java-asyncapi) | This is a code-first tool for AsyncAPI specification | Java, Kotlin
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
-| [KnstEventBu](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
+| [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client or documentation | Scala
 
 # Code Generators
@@ -88,3 +88,4 @@ The following is a list of tools that validate AsyncAPI documents.
 | [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
 | [Spectral](https://github.com/stoplightio/spectral) | A command line linter for AsyncAPI & OpenAPI documents. | Javascript
+| [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support

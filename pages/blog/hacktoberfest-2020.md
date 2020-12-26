@@ -2,7 +2,6 @@
 title: "AsyncAPI @Hacktoberfest"
 date: 2020-09-30T06:00:00+01:00
 type: Community
-featured: true
 tags:
   - Hacktoberfest
   - Community
@@ -15,6 +14,13 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 ---
+
+<Warning
+  title="HacktoberFest 2020 has finished"
+  description={
+    <span>Check out our <a href="/blog/hacktoberfest-summary-2020">summary blog post</a>. There are lots of good insights!</span>
+  }
+/>
 
 ## What is AsyncAPI
 

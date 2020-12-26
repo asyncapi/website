@@ -5,6 +5,7 @@ import BlogContext from "../../context/BlogContext"
 import BlogPostItem from "../../components/navigation/BlogPostItem"
 import Footer from "../../components/Footer"
 import Head from "../../components/Head"
+import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext)
@@ -24,6 +25,7 @@ export default function BlogIndexPage() {
       <Container>
         <NavBar />
       </Container>
+      <AnnouncementHero className="text-center m-4" small={true} />
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
