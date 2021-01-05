@@ -7,6 +7,9 @@ tags:
   - Community
   - Testing
   - Tools
+  - Mocking
+  - Strimzi
+  - Kafka
 cover: /img/posts/microcks-asyncapi-part2/microcks-kafka-distribs.webp
 authors:
   - name: Laurent Broudoux
@@ -95,6 +98,5 @@ The roadmap ahead is also full of exciting new features, we are looking forward 
 * Solidifying an initiative we started a long time ago about a shared repository of simulation and test suites for standards or products APIs...
 
 We are open and you can help make Microcks an even greater tool! Please spread the word, send us some love through [GitHub stars](https://github.com/microcks/microcks), follow us on [Twitter](https://twitter.com/microcksio) or join our chat room on [Zulip](https://microcksio.zulipchat.com/login/).
-
 
 
