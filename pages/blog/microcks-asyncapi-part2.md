@@ -34,7 +34,7 @@ As good developers, we are lazy - in a very good way :wink: - and hate to restar
 
 Apart from generating frustrations, this above situation is also very inefficient from a cost and time to market point of view for the organization. 
 
-The contract-first approach is a wonderful way to create strong and efficient agreements between functional / business / product owners and developers ! But it represents only a partial answer to the above situation...
+The contract-first approach is a wonderful way to create strong and efficient agreements between functional / business / product owners and developers! But it represents only a partial answer to the above situation
 
 ![time-money-quality](/img/posts/microcks-asyncapi-part2/time-money-quality.webp)
 
