@@ -1,6 +1,6 @@
 ---
 title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2"
-date: 2020-12-26T20:32:00+01:00
+date: 2021-01-07T00:07:00+01:00
 type: Engineering
 featured: true
 tags:
@@ -98,5 +98,4 @@ The roadmap ahead is also full of exciting new features, we are looking forward 
 * Solidifying an initiative we started a long time ago about a shared repository of simulation and test suites for standards or products APIs...
 
 We are open and you can help make Microcks an even greater tool! Please spread the word, send us some love through [GitHub stars](https://github.com/microcks/microcks), follow us on [Twitter](https://twitter.com/microcksio) or join our chat room on [Zulip](https://microcksio.zulipchat.com/login/).
-
 
