@@ -69,7 +69,7 @@ Again this is all provided by Microcks thanks to its capability to interoperate 
 
 ![microcks-kafka-testing](/img/posts/microcks-asyncapi-part2/microcks-kafka-testing.webp)
 
-In Microcks, testing Kafka endpoints means connecting to a remote Kafka topic on an existing broker in the organisation, listening for incoming messages and checking that received messages are valid regarding the event-based API schema that is referenced in your source of truth: the AsyncAPI specification. You can find further technical details on the blog post [mocking and testing Apache Kafka API using Microcks](https://microcks.io/blog/apache-kafka-mocking-testing/).
+In Microcks, testing Kafka endpoints means connecting to a remote Kafka topic on an existing broker in the organization, listening for incoming messages, and checking that received messages are valid against the event-based API schema that is referenced in your source of truth: the AsyncAPI specification. You can find further technical details on the blog post [mocking and testing Apache Kafka API using Microcks](https://microcks.io/blog/apache-kafka-mocking-testing/).
 
 Testing of event-driven architecture is no longer a nightmare with Microcks! Microcks can connect to the Kafka brokers in your organization and tell you if the received messages are valid according to your specification. No drifting risks anymore or way to introduce regression in production! You'll drive and control everything from your pipeline.
 
