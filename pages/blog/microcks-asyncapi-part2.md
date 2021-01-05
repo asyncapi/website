@@ -91,11 +91,10 @@ We are convinced that cutting edge developers understand the purpose, usages and
 
 Hope these two Microcks features (mocking & testing) and application use-cases are clear and you know better understand our value proposition. Microcks proposes a very pragmatic and powerful usage of AsyncAPI specification: way beyond documentation or code generation! It allows you to speed-up and make reliable your delivery of Kafka event-driven architectures.
 
-The roadmap ahead is also full of exciting new features, we are looking forward to: 
+The roadmap ahead is also full of exciting new features we are looking forward to: 
 
 * Continuing to make AsyncAPI full potential bloom through implementing multiple schema format supports - like Apache Avro - and [adding examples in the spec](https://github.com/asyncapi/asyncapi/issues/329),
 * Taking advantage of multiple protocol binding capabilities, releasing very soon a [MQTT implementation](https://github.com/microcks/microcks/issues/293) to support our users and prospects on the IoT landscape,
 * Solidifying an initiative we started a long time ago about a shared repository of simulation and test suites for standards or products APIs...
 
 We are open and you can help make Microcks an even greater tool! Please spread the word, send us some love through [GitHub stars](https://github.com/microcks/microcks), follow us on [Twitter](https://twitter.com/microcksio) or join our chat room on [Zulip](https://microcksio.zulipchat.com/login/).
-
