@@ -38,7 +38,7 @@ The contract-first approach is a wonderful way to create strong and efficient ag
 
 ![time-money-quality](/img/posts/microcks-asyncapi-part2/time-money-quality.webp)
 
-In order to avoid unnecessary work from developers and speed-up feedback gathering from consumers, simulation is the second part of the answer. This is why Microcks first use case and killer feature is Mocking! 
+To avoid unnecessary work from developers and speed-up feedback gathering from consumers, simulation is the second part of the answer. That is why Microck's first use case and the killer feature is mocking!
 
 These are some of the reasons why the way to do mocking with Microcks is highly scalable: 
 * We rely 100% on Product Owners contracts 
