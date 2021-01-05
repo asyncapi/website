@@ -18,7 +18,7 @@ authors:
     byline: Microcks.io Founder
 ---
 
-On our [first AsyncAPI blog post](https://www.asyncapi.com/blog/microcks-asyncapi-part1) we have introduced [Microcks 1.0 General Availability (GA)](https://microcks.io/blog/microcks-1.0.0-release/) as a unique milestone for mocking and testing event-driven API like any other APIs through the support of AsyncAPI specification. 
+On our [first AsyncAPI blog post](/blog/microcks-asyncapi-part1) we have introduced [Microcks 1.0 General Availability (GA)](https://microcks.io/blog/microcks-1.0.0-release/) as a unique milestone for mocking and testing event-driven API like any other APIs through the support of AsyncAPI specification.
 
 In case you missed it, we have already released [version 1.1.0](https://microcks.io/blog/microcks-1.1.0-release/) in the meantime. This release includes some nice enhancements related to the topic of the day: **Microcks + AsyncAPI use cases using Apache Kafka**. In this post we will show you how Microcks is leveraging the AsyncAPI specification on Kafka in a very pragmatic and powerful approach: way beyond documentation or code generation! We will also go through the different business use-cases implemented by users integrating Microcks in their asynchronous API toolchain.
 
