@@ -89,7 +89,7 @@ These use cases are coming from companies using Microcks for simulating and test
 
 We are convinced that cutting edge developers understand the purpose, usages and efficiency of asynchronous mechanisms. But, in order to take all the advantages of it and especially to use an AsyncAPI contract-first approach : developers must work hand in hand with software architects, business/product owners within the enterprise. This is clearly and in our humble opinion a strong point of attention to improve collaboration between enterprise silos and to take the quintessence of AsyncAPI specification for a contract-first approach using Microcks as the ultime tooling for mocking and testing purposes. Please read our [previous blog post on this topic](https://microcks.io/blog/continuous-testing-all-your-apis/) and share it with your software architects :wink:
 
-Hope these two Microcks features (mocking & testing) and application use-cases are clear and you know better understand our value proposition. Microcks proposes a very pragmatic and powerful usage of AsyncAPI specification: way beyond documentation or code generation! It allows you to speed-up and make reliable your delivery of Kafka event-driven architectures.
+We hope these two Microcks features - mocking and testing - and application use-cases are clear and you now better understand our value proposition. Microcks proposes a very pragmatic and powerful usage of AsyncAPI specification: way beyond documentation or code generation! It allows you to speed-up and makes your delivery of Kafka event-driven architectures reliable.
 
 The roadmap ahead is also full of exciting new features we are looking forward to: 
 
