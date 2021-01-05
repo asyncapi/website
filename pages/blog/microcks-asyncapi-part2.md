@@ -63,7 +63,7 @@ Mocking event-driven architecture using Microcks is a game changer as you do not
 
 **Our second feature is testing or how to make your delivery lifecycle reliable.**
 
-Obviously, as the number of event producers and subscribers is exploding: managing changes and taking care of versioning compatibility is essential. And what about checking that business rules implying event triggering are correctly implemented ? The fact it produces syntactically correct events and all this in a fully automated way based on each change and new commit in your source code repository ?
+As the number of event producers and subscribers is exploding, managing changes and taking care of versioning compatibility is essential. And what about checking that business rules implying event triggering are correctly implemented? The fact it produces syntactically correct events and all this in a fully automated way based on each change and new commit in your source code repository?
 
 Again this is all provided by Microcks thanks to its capability to interoperate with your CI/CD pipeline using our plugins for [Jenkins](https://microcks.io/documentation/automating/jenkins/), [Tekton](https://microcks.io/documentation/automating/tekton/) or [any other CI pipeline technology like GitLab](https://microcks.io/documentation/automating/cli/). You’ll typically use these plugins to trigger a Kafka test in Microcks.
 
