@@ -77,11 +77,11 @@ Testing event-driven architecture is no longer a nightmare with Microcks! Microc
 
 As said before event-driven and asynchronous APIs are becoming mainstream because we truly understand now the level of decoupling - and thus power and agility - it brings within our products.  We see the need for asynchronous APIs - and the presence of Apache Kafka as the de facto standard for message brokering - everywhere :
 
-* In every business vertical : to decouple an recording action (registration, purchase, like) to a marketing reaction (CRM update, behavioral analysis, marketing notification, renewal process management, etc...)
-* In Governmental organizations : to synchronize complex and partitioned repositories using master data management and staging pipelines techniques
-* In Financial Services : to streamline the sharing of information between core platforms and distribution ecosystems of partners,
-* In Industry : to enable Industry 4.0 to use IoT and become more agile to respond to market unpredictability and improve quality,
-* Soon in every Citizen life : to power tomorrow Smart Cities with IoT and enable smart real time insights and decision making.
+* In every business vertical: to decouple a recording action (registration, purchase, like) to a marketing reaction (CRM update, behavioral analysis, marketing notification, renewal process management, etc...)
+* In Governmental organizations: to synchronize complex and partitioned repositories using master data management and staging pipelines techniques
+* In Financial Services: to streamline the sharing of information between core platforms and distribution ecosystems of partners,
+* In Industry: to enable Industry 4.0 to use IoT and become more agile to respond to market unpredictability and improve quality,
+* Soon in every Citizen's life: to power tomorrow Smart Cities with IoT and enable smart real-time insights and decision making.
 
 These use cases are coming from companies using Microcks for simulating and testing their API implementation and we are thankful to our users and community.
 
