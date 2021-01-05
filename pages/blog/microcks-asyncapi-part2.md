@@ -59,7 +59,7 @@ This is how Microcks value proposition of accelerating Kafka asynchronous API si
 
 In a very pragmatic approach, Microcks uses your AsyncAPI specification as the source of truth for your simulation. As soon as it is imported into Microcks, it manages to create a topic for your API version on the connected Kafka broker and starts publishing mock messages. Messages are published at a configured frequency and thus consumers immediately start receiving event messages as if it is published by a real application. Thanks to Microcks’ [message templating](https://microcks.io/documentation/using/advanced/templates/) you can also easily include dynamic content in the sample messages.
 
-Mocking event-driven architecture using Microcks is a game changer as you do not need to write code nor set up complex infrastructure! Your consumers are able to receive messages in the minute and testing some changes is just one commit away: you update the AsyncAPI specification in the Git repository and Microcks will take care of updating everything! It’s even capable of providing and managing the Kafka infrastructure thanks to the excellent [Strimzi.io](https://strimzi.io/) operator if you wish!
+Mocking event-driven architecture using Microcks is a game-changer as you do not need to write code nor set up complex infrastructure! Your consumers can receive messages in the minute. Testing some changes is just one commit away. You update the AsyncAPI specification in the Git repository and Microcks will take care of updating everything! It's even capable of providing and managing the Kafka infrastructure thanks to the excellent [Strimzi.io](https://strimzi.io/) operator if you wish!
 
 **Our second feature is testing or how to make your delivery lifecycle reliable.**
 
