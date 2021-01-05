@@ -75,7 +75,7 @@ Testing event-driven architecture is no longer a nightmare with Microcks! Microc
 
 **What are the business use-cases of AsyncAPI? Where can you use Microcks as an essential part of your toolchain?**
 
-As said before event-driven and asynchronous APIs are becoming mainstream because we truly understand now the level of decoupling - and thus power and agility - it brings within our products.  We see the need for asynchronous APIs - and the presence of Apache Kafka as the de facto standard for message brokering - everywhere :
+As said before, event-driven and asynchronous APIs are becoming mainstream because we truly understand the decoupling level - and thus power and agility - it brings within our products. We see the need for asynchronous APIs and Apache Kafka's presence as the de facto standard for message brokering - everywhere.
 
 * In every business vertical: to decouple a recording action (registration, purchase, like) to a marketing reaction (CRM update, behavioral analysis, marketing notification, renewal process management, etc...)
 * In Governmental organizations: to synchronize complex and partitioned repositories using master data management and staging pipelines techniques
