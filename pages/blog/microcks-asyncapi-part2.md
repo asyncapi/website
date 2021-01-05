@@ -26,7 +26,7 @@ In case you missed it, we have already released [version 1.1.0](https://microcks
 
 ![microcks-kafka-distribs](/img/posts/microcks-asyncapi-part2/microcks-kafka-distribs.webp)
 
-By the way, we will be happy to have some QA [contributors and reports](https://github.com/microcks/microcks/blob/master/CONTRIBUTING.md) on more brokers and AsyncAPI supported protocols :wink:
+> By the way, we will be happy to have some QA [contributors and reports](https://github.com/microcks/microcks/blob/master/CONTRIBUTING.md) on more brokers and AsyncAPI supported protocols :wink:
 
 **Before diving into AsyncAPI on Apache Kafka, let first see why simulating producers is a key project success factor**
 
