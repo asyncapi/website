@@ -22,15 +22,14 @@ On our [first AsyncAPI blog post](/blog/microcks-asyncapi-part1) we have introdu
 
 In case you missed it, we have already released [version 1.1.0](https://microcks.io/blog/microcks-1.1.0-release/) in the meantime. This release includes some nice enhancements related to the topic of the day: **Microcks + AsyncAPI use cases using Apache Kafka**. This post will show you how Microcks is leveraging the AsyncAPI specification on Kafka in a very pragmatic and powerful approach: way beyond documentation or code generation! We will also go through the different business use-cases implemented by users integrating Microcks in their asynchronous API toolchain.
 
-> For your information, when we are talking about Kafka we mean all Kafka distributions translated into *the choice is yours*: from vanilla Apache upstream distribution, to enterprise products and also cloud providers’ managed distributions!
+When we are talking about Kafka we mean all Kafka distributions translated into *the choice is yours*: from vanilla Apache upstream distribution, to enterprise products and also cloud providers’ managed distributions!
 
 ![microcks-kafka-distribs](/img/posts/microcks-asyncapi-part2/microcks-kafka-distribs.webp)
 
 > By the way, we will be happy to have some QA [contributors and reports](https://github.com/microcks/microcks/blob/master/CONTRIBUTING.md) on more brokers and AsyncAPI supported protocols :wink:
+## Before diving into AsyncAPI on Apache Kafka, let first see why simulating producers is a key project success factor
 
-**Before diving into AsyncAPI on Apache Kafka, let first see why simulating producers is a key project success factor**
-
-As good developers, we are lazy - in a very good way :wink: - and hate to restart from scratch our beautiful code implementations due to misunderstanding with Product Owners. However, nowadays Product Owners have integrated and love the [Fail-Fast Principle](https://www.forbes.com/sites/danpontefract/2018/09/15/the-foolishness-of-fail-fast-fail-often/)... So if we still rely on functional implementations to start beta testing with consumers, fail and make them change requirements, there's a great chance that they claimed “We need to become more agile. We’re not lean enough…”
+As good developers, we are lazy - in a very good way :wink: - and hate to restart from scratch our beautiful code implementations due to misunderstanding with Product Owners. However, nowadays Product Owners have integrated and love the [Fail-Fast Principle](https://www.forbes.com/sites/danpontefract/2018/09/15/the-foolishness-of-fail-fast-fail-often/)... So if we still rely on functional implementations to start beta testing with consumers, fail and make them change requirements, there's a great chance that they claimed "We need to become more agile. We’re not lean enough..."
 
 Apart from generating frustrations, this above situation is also very inefficient from a cost and time to market point of view for the organization. 
 
@@ -51,7 +50,7 @@ These are some of the reasons why the way to do mocking with Microcks is highly 
 
 This is why Microcks is the ultimate way to test, iterate and speed-up your APIs validations before asking developers to code the real implementation! And this certainly applies to asynchronous API on Kafka too: thanks to [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/2.0.0).
 
-**Now let’s start with mocking asynchronous API on top of Apache Kafka**
+## Now let’s start with mocking asynchronous API on top of Apache Kafka
 
 This is how Microcks value proposition of accelerating Kafka asynchronous API simulation looks like:
 
@@ -59,9 +58,9 @@ This is how Microcks value proposition of accelerating Kafka asynchronous API si
 
 In a very pragmatic approach, Microcks uses your AsyncAPI specification as the source of truth for your simulation. As soon as it is imported into Microcks, it manages to create a topic for your API version on the connected Kafka broker and starts publishing mock messages. Messages are published at a configured frequency and thus consumers immediately start receiving event messages as if it is published by a real application. Thanks to Microcks’ [message templating](https://microcks.io/documentation/using/advanced/templates/) you can also easily include dynamic content in the sample messages.
 
-Mocking event-driven architecture using Microcks is a game-changer as you do not need to write code nor set up complex infrastructure! Your consumers can receive messages in the minute. Testing some changes is just one commit away. You update the AsyncAPI specification in the Git repository and Microcks will take care of updating everything! It's even capable of providing and managing the Kafka infrastructure thanks to the excellent [Strimzi.io](https://strimzi.io/) operator if you wish!
+Mocking event-driven architecture using Microcks is a game-changer as you do not need to write code nor set up complex infrastructure! Your consumers can receive messages in the minute. Testing some changes is just one commit away. You update the AsyncAPI specification in the Git repository and Microcks will take care of updating everything! It's even capable of providing and managing the Kafka infrastructure thanks to the excellent [Strimzi.io](https://strimzi.io/) operator if you wish! See our [Everything managed by Microcks](https://microcks.io/documentation/installing/deployment-options/#everything-managed-by-microcks) deployment option :rocket:
 
-**Our second feature is testing or how to make your delivery lifecycle reliable.**
+## Our second feature is testing or how to make your delivery lifecycle reliable.
 
 As the number of event producers and subscribers is exploding, managing changes and taking care of versioning compatibility is essential. And what about checking that business rules implying event triggering are correctly implemented? The fact it produces syntactically correct events and all this in a fully automated way based on each change and new commit in your source code repository?
 
@@ -73,7 +72,7 @@ In Microcks, testing Kafka endpoints means connecting to a remote Kafka topic on
 
 Testing of event-driven architecture is no longer a nightmare with Microcks! Microcks can connect to the Kafka brokers in your organization and tell you if the received messages are valid according to your specification. No drifting risks anymore or way to introduce regression in production! You'll drive and control everything from your pipeline.
 
-**What are the business use-cases of AsyncAPI? Where can you use Microcks as an essential part of your toolchain?**
+## What are the business use-cases of AsyncAPI? Where can you use Microcks as an essential part of your toolchain?
 
 As said before, event-driven and asynchronous APIs are becoming mainstream because we truly understand the decoupling level - and thus power and agility - it brings within our products. We see the need for asynchronous APIs and Apache Kafka's presence as the de facto standard for message brokering - everywhere.
 
@@ -85,7 +84,7 @@ As said before, event-driven and asynchronous APIs are becoming mainstream becau
 
 These use cases come from companies using Microcks for simulating and testing their API implementation, and we are thankful to our users and community.
 
-**Summary**
+## Summary
 
 We are convinced that cutting edge developers understand the purpose, usages, and efficiency of asynchronous mechanisms. To take all its advantages and especially to use an AsyncAPI contract-first approach: developers must work hand in hand with software architects, business/product owners within the enterprise. In our humble opinion, this is clearly a strong point of attention to improve collaboration between enterprise silos and take the quintessence of AsyncAPI specification for a contract-first approach using Microcks as the ultimate tooling for mocking and testing purposes. Please read our [previous blog post on this topic](https://microcks.io/blog/continuous-testing-all-your-apis/) and share it with your software architects :wink:
 
