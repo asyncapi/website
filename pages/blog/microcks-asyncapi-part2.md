@@ -47,7 +47,7 @@ These are some of the reasons why the way to do mocking with Microcks is highly 
 * We publish APIs mocks like real implementations using specifications examples 
 * We centralize all contracts and are the single point of trust
 * We are always in sync with your repositories: no drift anymore!
-* We provide sandbox at scale, you can heavily stress tests your business rules: remember we are Kubernetes-native
+* We provide sandbox at scale. You can heavily stress tests your business rules. Remember, we are Kubernetes-native!
 
 This is why Microcks is the ultimate way to test, iterate and speed-up your APIs validations before asking developers to code the real implementation! And this certainly applies to asynchronous API on Kafka too: thanks to [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/2.0.0).
 
