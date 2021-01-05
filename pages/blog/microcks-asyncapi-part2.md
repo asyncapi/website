@@ -43,7 +43,7 @@ In order to avoid unnecessary work from developers and speed-up feedback gatheri
 These are some of the reasons why the way to do mocking with Microcks is highly scalable: 
 * We rely 100% on Product Owners contracts 
 * We rely 100% on standards and specifications to describe contracts
-* We generate automatically all APIs mocks from contracts: no code!
+* We automatically generate all APIs mocks from contracts: no code!
 * We publish APIs mocks like real implementations using specifications examples 
 * We centralize all contracts and are the single point of trust
 * We are always in sync with your repositories: no drift anymore!
