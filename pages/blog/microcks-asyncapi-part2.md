@@ -83,7 +83,7 @@ As said before event-driven and asynchronous APIs are becoming mainstream becaus
 * In Industry: to enable Industry 4.0 to use IoT and become more agile to respond to market unpredictability and improve quality,
 * Soon in every Citizen's life: to power tomorrow Smart Cities with IoT and enable smart real-time insights and decision making.
 
-These use cases are coming from companies using Microcks for simulating and testing their API implementation and we are thankful to our users and community.
+These use cases come from companies using Microcks for simulating and testing their API implementation, and we are thankful to our users and community.
 
 **Summary**
 
