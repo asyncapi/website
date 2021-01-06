@@ -29,7 +29,7 @@ When we are talking about Kafka we mean all Kafka distributions translated into 
 > By the way, we will be happy to have some QA [contributors and reports](https://github.com/microcks/microcks/blob/master/CONTRIBUTING.md) on more brokers and AsyncAPI supported protocols :wink:
 ## Before diving into AsyncAPI on Apache Kafka, let first see why simulating producers is a key project success factor
 
-As good developers, we are lazy - in a very good way :wink: - and hate to restart from scratch our beautiful code implementations due to misunderstanding with Product Owners. However, nowadays Product Owners have integrated and love the [Fail-Fast Principle](https://www.forbes.com/sites/danpontefract/2018/09/15/the-foolishness-of-fail-fast-fail-often/)... So if we still rely on functional implementations to start beta testing with consumers, fail and make them change requirements, there's a great chance that they claimed "We need to become more agile. We’re not lean enough..."
+As good developers, we are lazy - in a very good way :wink: - and hate to restart from scratch our beautiful code implementations due to misunderstanding with Product Owners. However, nowadays Product Owners adopted and love the [Fail-Fast Principle](https://www.forbes.com/sites/danpontefract/2018/09/15/the-foolishness-of-fail-fast-fail-often/). We can't rely on functional implementations to start beta testing with consumers, we should fail fast and make them change requirements before we start implementation.
 
 Apart from generating frustrations, this above situation is also very inefficient from a cost and time to market point of view for the organization. 
 
