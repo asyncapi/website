@@ -9,7 +9,7 @@ tags:
   - Templating
   - React
   - Nunjucks
-cover: /img/posts/react-as-generator-engine/react-as-generator-engine.webp
+cover: /img/posts/react-as-generator-engine.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
