@@ -21,9 +21,9 @@ authors:
     byline: AsyncAPI Core Team Member
 ---
 
-React permanently changing the way how developers write web-apps. Personally, we love React and we tried to integrate it as a template rendering engine in our [Generator](https://github.com/asyncapi/generator). This post is a short introduction for developers who write/want to write templates for AsyncAPI specification using React. It also includes a comparison to the Nunjucks, which is default renderer in the Generator.
+React permanently changed the way how developers write web-apps. Personally, we love React and knew it would solve many pain points we where faced with Nunjucks. Therefore in the last [cycle](https://github.com/asyncapi/shape-up-process/issues/1) we integrated it as a template rendering engine into our [Generator](https://github.com/asyncapi/generator). This post is a short introduction for developers who write/want to write templates for AsyncAPI specification using React. It also includes a comparison to the default Nunjucks renderer.
 
-## How to start using
+## Getting started
 
 Your React template always require [`@asyncapi/generator-react-sdk`](https://github.com/asyncapi/generator-react-sdk) as a dependency. `@asyncapi/generator-react-sdk` is required to access the `File` component which is required as a root component for a file to be rendered. Furthermore it provides some common components to make your development easier, like `Text` or `Indent`.
 
@@ -107,28 +107,24 @@ Unfornatelly we have some restrictions:
 
 ## Comparison with Nunjucks
 
-If you don't know, the existing templates developers were forced (if they used our Generator) to write in [Nunjucks](https://mozilla.github.io/nunjucks/). It's a templating language, heavily focused on string literals, filters (similar to bash pipes) and partials called macros.
+If you don't know, the existing templates developers were forced (if they used our Generator) to use [Nunjucks](https://mozilla.github.io/nunjucks/). It's a templating language, heavily focused on string literals, filters (similar to bash pipes) and partials called macros.
 
-Below are some examples comparing doing those same things in Nunjucks and React. If you want check another, more complex, examples please see [`template-for-generator-templates`](https://github.com/asyncapi/template-for-generator-templates) repository and coresponding [Nunjucks](ttps://github.com/asyncapi/template-for-generator-templates/tree/nunjucks) branch.
+Below are some examples comparing doing those same things in Nunjucks and React. If you want check another, more complex, examples please see the updated [`template-for-generator-templates`](https://github.com/asyncapi/template-for-generator-templates) repository and the corresponding old [Nunjucks](https://github.com/asyncapi/template-for-generator-templates/tree/nunjucks) branch.
 
 ### Make reusable parts
 
 It may sound trivial, but when writing any code, even a template, a programmer wants to create reusable parts that will separate the given, very frequent repeating logic.
 
-As we mentioned, in Nunjucks partials are called macros, in React otherwise we called those parts as `components` (we follow with React's nomenclature). Imagine that you are writing a template that produces a Markdown's content. You need to create a reusable macro/component that will be able to render a list based on given an array of strings.
+As we mentioned, in Nunjucks partials are called macros, in React reusables are called `components` (we follow with React's nomenclature). Imagine that you are writing a template that produces a Markdown content. You need to create a reusable macro/component that will be able to render a list based on given an array of strings.
 
 For example, using Nunjucks you can write something like:
 
 ```njk
-{# partials/list.njk #}
-
 {% macro list(data, type = "-") %}
 {% for item in data %}
 {{type}} {{item}}
 {% endfor %}
 {% endmacro %}
-
-{# template/Readme.md #}
 
 {% from "partials/list.njk" import list %}
 {{ list(["one", "two", "three"]) }}
@@ -149,18 +145,16 @@ export function SimpleList() {
 }
 ```
 
-Looking at both examples we see that in Nujucks we operate on string literals, it means that when passing data to a macro, you always need to know what type of data the macro takes. In React we operate on JS objects/variables. By this, your IDE should always inform you what value, of what type, you must pass to component. Also, Nunjucks's macro should be created inside `partials` folder of template. Using React, you can create component whenever you want.
+Looking at both examples we see that in Nujucks we operate on string literals, it means that when passing data to a macro, you always need to know what type of data the macro takes. In React we operate on JS objects/variables. By this, your IDE should always inform you what value, of what type, you must pass to component. Also, Nunjucks's macro should be created inside `.partials` folder of template. Using React, you can create component whenever you want.
 
-### Using 3rd packages
+### Using third party packages
 
-Using helper functions from 3rd packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [`Lodash`](https://lodash.com/) library like `lowerCase`. To do this, you must create inside `filters` folder function to convert given function to Nunjucks's filter:
+Using helper functions from third party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [`Lodash`](https://lodash.com/) library like `lowerCase`. To do this, you must create a function inside `filters` folder to convert the function to Nunjucks's filter:
 
 ```js
 // filters/lowerCase.js
 const _ = require('lodash');  
-
 const filter = module.exports;
-
 filter.lowerCase = _.lowerCase;
 ```
 
@@ -170,7 +164,7 @@ And then you can use this function inside your template/macro:
 {{ AsyncAPI rocks! | lowerCase }}
 ```
 
-The main problem in this solution is that it creates unnecessary boilerplate - you must create function in the separate file. Another problem is that you operate on name of this helper function. What it means? You must always remember which filters you have included in your template.
+The main problem in this solution is that it creates unnecessary boilerplate - you must create function in the separate file. Another problem is that you operate on name of this helper function which means you must always remember which filters you have included in your template.
 
 In opposite, in React you can use `Lodash` directly in your template:
 
@@ -199,7 +193,7 @@ We can list the advantages:
 
 However, it does have disadvantages:
 
-- Common pain on writing template with React, will be writing indentations and new lines. We know about this problem and in the next integrations of the React in the Generator we will try to minimize this problem as much as possible. However, we have a several helpers in `@asyncapi/generator-react-sdk` package to make the life easier, like [`withIndendation`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withIndendation.ts#L13) or [`withNewLines`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withNewLines.ts#L8).
+- Common pain when writing templates with React, will be writing indentations and new lines. We know about this problem and in the next integrations of the React in the Generator we will try to minimize this problem as much as possible. However, we have a several helpers in `@asyncapi/generator-react-sdk` package to make the life easier, like [`withIndendation`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withIndendation.ts#L13) or [`withNewLines`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withNewLines.ts#L8).
 - Some people don't like to mix logic inside template, so probably React won't be useful and friendly in their cases.
 - Unfornatelly, HTML tags at the moment is not supported. Developer must write them as string literal, like [here](https://github.com/asyncapi/template-for-generator-templates/blob/main/components/ListChannels.js#L18).
 
@@ -209,6 +203,7 @@ To check React in production-ready templates, please see follow links:
 
 - [`template-for-generator-templates`](https://github.com/asyncapi/template-for-generator-templates) template showcases features of [the AsyncAPI Generator](https://github.com/asyncapi/generator), including the React renderer. It shows how to write templates, reusable parts (components), what are the recommended patterns. It has simple and complex examples. You can also check how this same things could be done using Nunjucks in [this](https://github.com/asyncapi/template-for-generator-templates/tree/nunjucks) branch.
 - [`markdown-template`](https://github.com/asyncapi/markdown-template) is written using React. It generates documentation into a Markdown file.
+- [`ts-nats-template`](https://github.com/asyncapi/ts-nats-template/) is re-written using React to generate a TypeScript NATS client.
 
 If you want to check the source code of React renderer, please see official repository under [this](https://github.com/asyncapi/generator-react-sdk) link.
 
@@ -219,3 +214,5 @@ We have a long way to stabilize React as a render engine. We know about problems
 We are waiting for your feedback.
 
 Happy coding!
+
+> Cover photo is from [`Drunken Master`](https://www.imdb.com/title/tt0080179/) movie.
