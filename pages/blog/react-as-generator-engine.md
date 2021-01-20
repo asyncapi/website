@@ -29,7 +29,7 @@ Your React template requires [@asyncapi/generator-react-sdk](https://github.com/
 
 Let's consider a basic React template file as the one below called **MyTemplate.js**:
 
-```js
+<CodeBlock language="javascript" highlightedLines={[5,6,7]}>
 import { File, Text } from "@asyncapi/generator-react-sdk";
 
 export default function({ asyncapi, params, originalAsyncAPI }) {
@@ -39,7 +39,7 @@ export default function({ asyncapi, params, originalAsyncAPI }) {
     </File>
   );
 }
-```
+</CodeBlock>
 
 The exported default function returns the **File** component as a root component that the [Generator](https://github.com/asyncapi/generator) uses to figure out what file it should generate. In the below example, we overwrite the default functionality of saving the file as **MyTemplate.js**, and we set **asyncapi.md** as the filename. Using the **Text** component, we specify what content should be rendered inside the file. The content of the resulting file is: `Some text that should render as is\n`. Notice the **\n** character at the end. It is automatically added after the **Text** component.
 
@@ -63,7 +63,7 @@ You can find more information about the Generator configuration [here](https://g
 
 The process of creating content from React components consists of two steps: transpile and render.	 
 
-The SDK has a custom transpiler which ensures that any directory are transpiled using [Rollup](https://www.npmjs.com/package/rollup). Rollup helps bundling all dependencies and transpile them into CommonJS modules. This is required because this library will be used through NodeJS (by AsyncAPI Generator) which does not understand these new modules natively and we do not want to limit the developer in which syntax they prefer nor how they want to separate code.
+The SDK has a custom transpiler which ensures that any directory in template's **template** folder are transpiled using [Rollup](https://www.npmjs.com/package/rollup). Rollup helps bundling all dependencies and transpile them into CommonJS modules. This is required because this library will be used through NodeJS (by AsyncAPI Generator) which does not understand these new modules natively and we do not want to limit the developer in which syntax they prefer nor how they want to separate code.
 
 Also, SDK has its own reconciler. It traverses through each element in the template structure and transforms it into a pure string. Additionally, prop `children` is also converted to a regular string and stored in the `childrenContent` prop, which is appended to each component. Check below example, to understand this part (you can also see how to make composition using components):
 
@@ -145,7 +145,7 @@ export function SimpleList() {
 }
 ```
 
-Looking at both examples we see that in Nujucks we operate on string literals, it means that when passing data to a macro, you always need to know what type of data the macro takes. In React we operate on JS objects/variables. By this, your IDE should always inform you what value, of what type, you must pass to component. Also, Nunjucks's macro should be created inside `.partials` folder of template. Using React, you can create component whenever you want.
+Looking at both examples we see that in Nujucks we operate on string literals, it means that when passing data to a macro, you always need to know what type of data the macro takes. In React we operate on JS objects/variables. By this, your IDE should always inform you what value, of what type, you must pass to component. Additionally, you must place Nunjucks's macro inside the **partials** folder of the template. Using React, you can put your components wherever you want.
 
 ### Using third party packages
 
@@ -193,7 +193,7 @@ Like any solution, React has its advantages as well as disadvantages.
 
 ### Disadvantages
 
-- Common pain when writing templates with React, will be writing indentations and new lines. We know about this problem and in the next integrations of the React in the Generator we will try to minimize this problem as much as possible. However, we have a several helpers in `@asyncapi/generator-react-sdk` package to make the life easier, like [`withIndendation`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withIndendation.ts#L13) or [`withNewLines`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/utils/withNewLines.ts#L8).
+- Common pain when writing templates with React is related to indentations and new lines. However, we have several helpers in SDK to make your life easier, like [`Indent`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/components/Indent.tsx) or [`Text`](https://github.com/asyncapi/generator-react-sdk/blob/master/src/components/Text.tsx) components.
 - Some people don't like to mix logic inside template files, so probably React won't be friendly for them.
 - HTML tags at the moment are not supported. The developer must write them as a string literal, like [here](https://github.com/asyncapi/template-for-generator-templates/blob/main/components/ListChannels.js#L18).
 
