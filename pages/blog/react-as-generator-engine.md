@@ -65,7 +65,7 @@ The process of creating content from React components consists of two steps: tra
 
 The SDK has a custom transpiler which ensures that any directory in template's **template** folder are transpiled using [Rollup](https://www.npmjs.com/package/rollup). Rollup helps bundling all dependencies and transpile them into CommonJS modules. This is required because this library will be used through NodeJS (by AsyncAPI Generator) which does not understand these new modules natively and we do not want to limit the developer in which syntax they prefer nor how they want to separate code.
 
-Also, SDK has its own reconciler. It traverses through each element in the template structure and transforms it into a pure string. Additionally, prop `children` is also converted to a regular string and stored in the `childrenContent` prop, which is appended to each component. Check below example, to understand this part (you can also see how to make composition using components):
+Also, SDK has its own reconciler. It traverses through each element in the template structure and transforms it into a pure string. Prop `children` is always converted to a regular string and stored in the `childrenContent` prop in each component. Check the below example, to see how it works. In addition, you can also see how to apply the composition to templates using components:
 
 ```js
 import { Text, Indent, IndentationTypes, render } from '@asyncapi/generator-react-sdk';
