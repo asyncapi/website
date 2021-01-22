@@ -30,8 +30,7 @@ Your React template requires [@asyncapi/generator-react-sdk](https://github.com/
 Let's consider a basic React template file as the one below called **MyTemplate.js**:
 
 <CodeBlock language="javascript" highlightedLines={[5,6,7]}>
-{`import { File, Text } from "@asyncapi/generator-react-sdk";
-
+{`import { File, Text } from "@asyncapi/generator-react-sdk";\n
 export default function({ asyncapi, params, originalAsyncAPI }) {
   return (
     <File name="asyncapi.md">
