@@ -30,7 +30,7 @@ Your React template requires [@asyncapi/generator-react-sdk](https://github.com/
 Let's consider a basic React template file as the one below called **MyTemplate.js**:
 
 <CodeBlock language="javascript" highlightedLines={[5,6,7]}>
-import { File, Text } from "@asyncapi/generator-react-sdk";
+{`import { File, Text } from "@asyncapi/generator-react-sdk";
 
 export default function({ asyncapi, params, originalAsyncAPI }) {
   return (
@@ -38,7 +38,7 @@ export default function({ asyncapi, params, originalAsyncAPI }) {
       <Text>Some text that should render as is</Text>
     </File>
   );
-}
+}`}
 </CodeBlock>
 
 The exported default function returns the **File** component as a root component that the [Generator](https://github.com/asyncapi/generator) uses to figure out what file it should generate. In the below example, we overwrite the default functionality of saving the file as **MyTemplate.js**, and we set **asyncapi.md** as the filename. Using the **Text** component, we specify what content should be rendered inside the file. The content of the resulting file is: `Some text that should render as is\n`. Notice the **\n** character at the end. It is automatically added after the **Text** component.
