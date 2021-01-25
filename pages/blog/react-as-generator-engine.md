@@ -1,6 +1,6 @@
 ---
 title: "Simplify code generation with React"
-date: 2021-01-25T00:07:00+01:00
+date: 2021-01-26T00:07:00+01:00
 type: Engineering
 featured: true
 tags:
@@ -171,7 +171,7 @@ In opposite, in React you can use `Underscore.string` directly in your template:
 import cleanDiacritics from 'underscore.string/cleanDiacritics';  
 
 function MyComponent() {
-  return cleanDiacritics(`Urbańczyk`);
+  return cleanDiacritics(`Urbańczyk`); // will be Urbanczyk
 }
 ```
 
