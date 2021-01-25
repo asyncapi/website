@@ -148,7 +148,7 @@ Looking at both examples we see that in Nujucks we operate on string literals, i
 
 ### Using third party packages
 
-Using helper functions from third party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [`Underscore.string`](https://github.com/esamattis/underscore.string) library like `cleanDiacritics`, which replaces diacritic characters with closest ASCII equivalents. To do this, you must create a function inside `filters` folder to convert the function to Nunjucks's filter:
+Using helper functions from third-party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [Underscore.string](https://github.com/esamattis/underscore.string) library like **cleanDiacritics**, which replaces diacritic characters with closest ASCII equivalents. To do this, you must create a function inside **filters** folder to convert the function to Nunjucks's filter:
 
 ```js
 // filters/cleanDiacritics.js
@@ -163,7 +163,7 @@ And then you can use this function inside your template/macro:
 {{ Urbańczyk | cleanDiacritics }} # will be Urbanczyk
 ```
 
-The main problem in this solution is that it creates unnecessary boilerplate - you must create function in the separate file. Another problem is that you operate on name of this helper function which means you must always remember which filters you have included in your template.
+The main problem with this solution is that it creates an unnecessary boilerplate - you must create a function in a separate file. Another problem is that you operate on the name of this helper function which means you must always remember what filters you have included in your template.
 
 In opposite, in React you can use `Underscore.string` directly in your template:
 
