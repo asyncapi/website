@@ -40,7 +40,7 @@ export default function({ asyncapi, params, originalAsyncAPI }) {
 }`}
 </CodeBlock>
 
-The exported default function returns the **File** component as a root component that the [Generator](https://github.com/asyncapi/generator) uses to figure out what file it should generate. In the below example, we overwrite the default functionality of saving the file as **MyTemplate.js**, and we set **asyncapi.md** as the filename. Using the **Text** component, we specify what content should be rendered inside the file. The content of the resulting file is: `Some text that should render as is\n`. Notice the **\n** character at the end. It is automatically added after the **Text** component.
+The exported default function returns the **File** component as a root component that the [Generator](https://github.com/asyncapi/generator) uses to figure out what file it should generate. In the example above, we overwrite the default functionality of saving the file as **MyTemplate.js**, and we set **asyncapi.md** as the filename. Using the **Text** component, we specify what content should be rendered inside the file. The content of the resulting file is: `Some text that should render as is\n`. Notice the **\n** character at the end. It is automatically added after the **Text** component.
 
 > For further information about components and their props, see the [Generator React SDK](https://github.com/asyncapi/generator-react-sdk).	 
 
@@ -116,7 +116,7 @@ It may sound obvious, but when writing any code, even a template, a programmer w
 
 In Nunjucks, you can reuse parts of the template using **macros**, in React, using **components**. Imagine that you are writing a template that produces Markdown content. You need to create a reusable macro/component that renders a list from an array of strings.
 
-Using Nunjucks you can write below:
+Using Nunjucks you can write the code below:
 
 ```njk
 {% macro list(data, type = "-") %}
@@ -129,7 +129,7 @@ Using Nunjucks you can write below:
 {{ list(["one", "two", "three"]) }}
 ```
 
-Using React you can write below:
+Using React you can write the code below:
 
 ```js
 function List({ list = [], type = "-" }) {
@@ -148,30 +148,30 @@ Looking at both examples we see that in Nujucks we operate on string literals, i
 
 ### Using third party packages
 
-Using helper functions from third party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [`Lodash`](https://lodash.com/) library like `lowerCase`. To do this, you must create a function inside `filters` folder to convert the function to Nunjucks's filter:
+Using helper functions from third party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [`Underscore.string`](https://github.com/esamattis/underscore.string) library like `cleanDiacritics`, which replaces diacritic characters with closest ASCII equivalents. To do this, you must create a function inside `filters` folder to convert the function to Nunjucks's filter:
 
 ```js
-// filters/lowerCase.js
-const _ = require('lodash');  
+// filters/cleanDiacritics.js
+const cleanDiacritics = require('underscore.string/cleanDiacritics');
 const filter = module.exports;
-filter.lowerCase = _.lowerCase;
+filter.cleanDiacritics = cleanDiacritics;
 ```
 
 And then you can use this function inside your template/macro:
 
 ```njk
-{{ AsyncAPI rocks! | lowerCase }}
+{{ Urbańczyk | cleanDiacritics }} # will be Urbanczyk
 ```
 
 The main problem in this solution is that it creates unnecessary boilerplate - you must create function in the separate file. Another problem is that you operate on name of this helper function which means you must always remember which filters you have included in your template.
 
-In opposite, in React you can use `Lodash` directly in your template:
+In opposite, in React you can use `Underscore.string` directly in your template:
 
 ```js
-import _ from 'lodash';  
+import cleanDiacritics from 'underscore.string/cleanDiacritics';  
 
 function MyComponent() {
-  return _.lowerCase(`AsyncAPI rocks!`);
+  return cleanDiacritics(`Urbańczyk`);
 }
 ```
 
