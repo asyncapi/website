@@ -171,7 +171,7 @@ In opposite, in React you can use `Underscore.string` directly in your template:
 import cleanDiacritics from 'underscore.string/cleanDiacritics';  
 
 function MyComponent() {
-  return cleanDiacritics(`Urbańczyk`); // will be Urbanczyk
+  return cleanDiacritics('Urbańczyk'); // will be Urbanczyk
 }
 ```
 
