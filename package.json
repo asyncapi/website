@@ -6,7 +6,8 @@
     "dev": "node scripts/build-post-list.js && next -p 8080",
     "build": "node scripts/build-post-list.js && next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "echo \"No linter configured yet\""
   },
   "repository": {
     "type": "git",
