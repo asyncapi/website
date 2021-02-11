@@ -14,7 +14,7 @@ excerpt: 'I always thought January is a month of a slow start of a new year. I c
 featured: true
 ---
 
-A new year always comes with New Year's resolution, right? Folks from Bump.sh came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
+A new year always comes with New Year's resolution, right? Folks from [Bump.sh](https://www.bump.sh) came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
 
 <TwitterTweetEmbed
   tweetId='1346374069877428225'
@@ -75,7 +75,7 @@ Last but not least, we beat the record of people joining our public meetings :ro
 
 ## RapidAPI Developer Survey
 
-RapidAPI released the results of their [developer survey](https://rapidapi.com/developer-survey/). Reading it at the beginning of the year is like drinking a strong coffee in the morning - you can a good kick of positive energy for the rest of the year.
+RapidAPI released the results of their [developer survey](https://rapidapi.com/developer-survey/). Reading it at the beginning of the year is like drinking a strong coffee in the morning - you get a good kick of positive energy for the rest of the year.
 
 Spoiler alert -> number of developers using AsyncAPI in production tripled in 2020.
 
@@ -83,7 +83,7 @@ Spoiler alert -> number of developers using AsyncAPI in production tripled in 20
 
 - [Pavel Bodiachevskii](https://twitter.com/PBodiachevskii) continues his hard work on **asyncapi-java**. Wait, it is finally not **asyncapi-java** anymore. Thanks to a suggestion from [James Higginbotham](https://twitter.com/launchany) it is all about [jasyncapi](https://github.com/asyncapi/jasyncapi/) now. Maven, Gradle and IntelliJ plugins are not published as a preview release under official AsyncAPI accounts. Please give them a try and share your feedback.
 - React component:
-  - shows [required flag for required props](https://github.com/asyncapi/asyncapi-react/releases/tag/v0.18.0) thnaks to [c-pius](https://github.com/c-pius) from [SAP](https://twitter.com/SAP)
+  - shows [required flag for required props](https://github.com/asyncapi/asyncapi-react/releases/tag/v0.18.0) thanks to [c-pius](https://github.com/c-pius) from [SAP](https://twitter.com/SAP)
   - we have better [DX in Web component](https://twitter.com/AsyncAPISpec/status/1352565434181177344) thanks to [Viacheslav Turovskyi](https://github.com/aeworxet)
 - Playground now shows [much detailed errors](https://twitter.com/AsyncAPISpec/status/1354728263705366528) thanks to [Jorge Aguiar Martín](https://github.com/jotamusik) from [Lean Mind - es](https://twitter.com/leanfulness_es)
 - HTML template:
@@ -102,7 +102,7 @@ Feel free to share your thoughts in [this](https://github.com/asyncapi/shape-up-
 
 ## Refactoring of our CI/CD
 
-GitHub Actions is what powers our CI/CD. It is a great tool that you configure through a file stored in a repository. Things are just getting more complex when you want to use them in an organization with around 40 repositories (and growing). That is not a post about our internal organizational challenges and GitHub Actions limitations, so I will not bother you with details. The most important is to share that we are managing our GitHub workflows like a pro and if you are interested in more details, contact us.
+GitHub Actions is what powers our CI/CD. It is a great tool that you configure through a file stored in a repository. Things are just getting more complex when you want to use them in an organization with around 40 repositories (and growing). This is not a post about our internal organizational challenges and GitHub Actions limitations, so I will not bother you with details. The most important is to share that we are managing our GitHub workflows like a pro and if you are interested in more details, contact us.
 
 So what changed that is meaningful for our community:
 - We have two new channels in Slack workspace:
@@ -110,7 +110,7 @@ So what changed that is meaningful for our community:
   - #github-new-issues-prs where you get information about all new issues and PRs
 - Whenever we have a major or a minor release in any repository, our bot automatically tweets about it
 - All pull requests are now tested against Linux, MacOS, and Windows. For you, this means that we fixed a lot of bugs in tests and configurations that were blocking Windows users from smooth contributions
-- Not used to Conventional Commits specification? now all pull requests change dedicated check that lints your pull request titles and gives hints what you should fix
+- Not used to Conventional Commits specification? now all pull requests have a dedicated check that lints your pull request titles and gives hints what you should fix
 - You contributed something to the JavaScript Parser, and you wonder what you have to do to see the change in the Generator? No need to wonder. Now, when we release any package, we also bump its version in all the other packages that depend on it. AsyncAPI bot is a super busy bot :robot:
 
 ## The future of API specifications
@@ -153,6 +153,6 @@ This month we want to apply for [Google Summer of Code](https://summerofcode.wit
 - [How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2](/blog/microcks-asyncapi-part2) by [Laurent Broudoux](https://twitter.com/lbroudoux)
 - [Simplify code generation with React](/blog/react-as-generator-engine) by [Jonas Lagoni](https://www.linkedin.com/in/jonas-terp-lagoni-85b027b9/) and [Maciej Urbańczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/)
 
-Thank was an exhausting month, but looking at what is happening around the project, you feel it was worth it. Let us see what February brings.
+That was an exhausting month, but looking at what is happening around the project, you feel it was worth it. Let us see what February brings.
 
 > Photo by <a href="https://unsplash.com/@nhoizey?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nicolas Hoizey</a> on <a href="https://unsplash.com/s/photos/start?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a><
