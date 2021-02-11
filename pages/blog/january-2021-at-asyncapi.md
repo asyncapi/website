@@ -33,7 +33,7 @@ AsyncAPI must go into a "neutral ground" aka independent foundation that, among 
 
 Joining a foundation also means setting up an open governance model to ensure a single company's lack of dominance over the specification and its tools. 
 
-As communicated during our public meetings on [2nd of February](https://www.youtube.com/watch?v=vAcTtr__CwU) or [19th of January](https://www.youtube.com/watch?v=14I-l-TCgI4), or our official [Twitter account](https://twitter.com/AsyncAPISpec/status/1351895870636220418), me and Fran treat this topic as priority number 1.
+As communicated during our public meetings on [2nd of February](https://www.youtube.com/watch?v=vAcTtr__CwU) or [19th of January](https://www.youtube.com/watch?v=14I-l-TCgI4), or our official [Twitter account](https://twitter.com/AsyncAPISpec/status/1351895870636220418), Fran and I treat this topic as priority number 1.
 
 At the moment, we are trying to figure out a governance model that:
 - is as democratic as possible,
