@@ -36,9 +36,9 @@ Joining a foundation also means setting up an open governance model to ensure a 
 As communicated during our public meetings on [2nd of February](https://www.youtube.com/watch?v=vAcTtr__CwU) or [19th of January](https://www.youtube.com/watch?v=14I-l-TCgI4), or our official [Twitter account](https://twitter.com/AsyncAPISpec/status/1351895870636220418), Fran and I treat this topic as priority number 1.
 
 At the moment, we are trying to figure out a governance model that:
-- is as democratic as possible,
-- supports asynchronous decision-making process,
-- gives power to people that "work", not companies that "pay". In other words, it gives equal power to both, individual and corporate contributors.
+- is as democratic as possible
+- supports asynchronous decision-making process
+- gives power to people that "work", not companies that "pay". In other words, it gives equal power to both, individual and corporate contributors
 
 Now we spend a lot of time reading and reaching out to similar communities that went this path and know what booby traps to avoid to stay healthy. We hope to share something more concrete in the next update, in March.
 
@@ -58,10 +58,10 @@ We kicked off this year with a new bronze sponsor. Thanks a lot to Bump.sh and t
 ## Community continues to grow
 
 My [last post](/blog/2020-summary) that summarizes the year 2020 was pretty clear that the community's size grew a lot. Well, it is January, and we see that not much has changed. We keep growing:
-- we went over 1k users on Slack. [Join now](https://www.asyncapi.com/slack-invite/).
-- we went over 1.5k followers on Twitter. [Follow us](https://twitter.com/AsyncAPISpec/) to be up to date with the latest news in the project.
-- we went over 1.4k stars on GitHub. If you like the project, [express it](https://github.com/asyncapi/asyncapi/stargazers).
-- we had several issues solved by the community members from different companies, including few new features. For more details, read [Feature releases and community-driven changes](#feature-releases-and-community-driven-changes) section.
+- we went over 1k users on Slack. [Join now](https://www.asyncapi.com/slack-invite/)
+- we went over 1.5k followers on Twitter. [Follow us](https://twitter.com/AsyncAPISpec/) to be up to date with the latest news in the project
+- we went over 1.4k stars on GitHub. If you like the project, [express it](https://github.com/asyncapi/asyncapi/stargazers)
+- we had several issues solved by the community members from different companies, including few new features. For more details, read [Feature releases and community-driven changes](#feature-releases-and-community-driven-changes) section
 
 Last but not least, we beat the record of people joining our public meetings :rocket:
 
@@ -151,7 +151,7 @@ This month we want to apply for [Google Summer of Code](https://summerofcode.wit
 - [AsyncAPI and OpenAPI: an API Modeling Approach](https://engineering.salesforce.com/asyncapi-and-openapi-an-api-modeling-approach-db9873695910) by [Antonio Garrote](https://twitter.com/antoniogarrote)
 - [API adoption is on the rise across all industries](https://www.helpnetsecurity.com/2021/02/05/api-adoption-2021/)
 - [How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2](/blog/microcks-asyncapi-part2) by [Laurent Broudoux](https://twitter.com/lbroudoux)
-- [Simplify code generation with React](/blog/react-as-generator-engine) by [Jonas Lagoni](https://www.linkedin.com/in/jonas-terp-lagoni-85b027b9/) and [Maciej Urbańczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/). 
+- [Simplify code generation with React](/blog/react-as-generator-engine) by [Jonas Lagoni](https://www.linkedin.com/in/jonas-terp-lagoni-85b027b9/) and [Maciej Urbańczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/)
 
 Thank was an exhausting month, but looking at what is happening around the project, you feel it was worth it. Let us see what February brings.
 
