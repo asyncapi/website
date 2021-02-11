@@ -20,8 +20,8 @@ A new year always comes with New Year's resolution, right? Folks from [Bump.sh](
   tweetId='1346374069877428225'
   options={{
     cards: 'hidden',
-    width: 200,
-    maxWidth: 400
+    width: 500,
+    align: 'center'
   }}
 />
 
@@ -50,8 +50,8 @@ We kicked off this year with a new bronze sponsor. Thanks a lot to Bump.sh and t
   tweetId='1357262834200117250'
   options={{
     cards: 'hidden',
-    width: 200,
-    maxWidth: 400
+    width: 500,
+    align: 'center'
   }}
 />
 
@@ -68,8 +68,8 @@ Last but not least, we beat the record of people joining our public meetings :ro
 <TwitterTweetEmbed
   tweetId='1356949862449893376'
   options={{
-    width: 200,
-    maxWidth: 400
+    width: 500,
+    align: 'center'
   }}
 />
 
