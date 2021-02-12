@@ -14,7 +14,7 @@ excerpt: 'I always thought January is a month of a slow start of a new year. I c
 featured: true
 ---
 
-A new year always comes with New Year's resolution, right? Folks from [Bump.sh](https://www.bump.sh) came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
+A new year always comes with New Year's resolution, right? Folks from [Bump.sh](https://bump.sh/) came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
 
 <TwitterTweetEmbed
   tweetId='1346374069877428225'
