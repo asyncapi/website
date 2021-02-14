@@ -15,3 +15,5 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
+# Central Gradle repository verification
+/asyncapi-gradle-plugin https://github.com/asyncapi/java-asyncapi
