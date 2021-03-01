@@ -60,7 +60,7 @@ export default function RoadmapPage() {
                     The AsyncAPI community grows 400%
                   </h2>
                   <p className="my-4 text-gray-600 lg:text-center">
-                    We are aware that our goals are insane. None of the other goals are possible if we don't have a huge community supporting us. AsyncAPI is and must continue being a community-driven initiative. Now more than ever.
+                    We are aware that our goals are insane. <strong>None of the other goals are possible if we don't have a huge community supporting us. AsyncAPI is and must continue being a community-driven initiative. Now more than ever.</strong>
                   </p>
                   <p className="my-4 text-gray-600 lg:text-center">
                     By 2023, our community has to multiply its size by four when compared with 2021. We need people to contribute code, ideas, docs, articles, presentations, and more. The sponsors base should also grow along with the community size and the donated money should serve to give back to the community.
