@@ -36,7 +36,7 @@ export default function RoadmapPage() {
                     AsyncAPI unifies all the API specifications
                   </h2>
                   <p className="my-4 text-gray-600 lg:text-center">
-                    Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI), GraphQL, and/or gRPC APIs. <strong>We want people to use the AsyncAPI specification and tooling together with their existing OpenAPI, GraphQL, and gRPC definitions.</strong> For that purpose, our specification and tools will need to understand and leverage many other specifications and tools.
+                    Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI), GraphQL, and/or gRPC APIs. <strong>We want people to use the AsyncAPI specification and tooling together with their existing OpenAPI, GraphQL, and RPC definitions.</strong> For that purpose, our specification and tools will need to understand and leverage many other specifications and tools.
                   </p>
                   <p className="my-4 text-gray-600 lg:text-center">
                     This is not about reinventing the wheel or creating yet another spec to solve the same problems but to integrate with the existing tools instead.
