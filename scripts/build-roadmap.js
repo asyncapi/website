@@ -1,23 +1,44 @@
 const { writeFileSync } = require('fs')
 const { resolve } = require('path')
-const fetch = require('node-fetch')
+const { graphql } = require('@octokit/graphql')
 require('dotenv').config({
   path: resolve(process.cwd(), '.env.local')
 })
 
 async function start() {
   try {
-    res = await fetch('https://api.zenhub.com/v5/workspaces/5f6492205269c584ae1b576f/issues?epics=1&estimates=1&pipelines=1&repo_ids=296590488', {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Authentication-Token': process.env.ZENHUB_TOKEN,
-      },
-    })
-    const issues = await res.json()
-    const keyResultsNow = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Now)' && iss.state === 'open')
-    const keyResultsLater = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Later)' && iss.state === 'open')
-    const keyResultsFuture = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Future)' && iss.state === 'open')
+    const keyResultsQuery = await graphql(`
+      query keyResults($owner: String!, $repo: String!) {
+        repository(owner: $owner, name: $repo) {
+          issues(labels: ["Key Result"], states: [OPEN], last: 100) {
+            nodes {
+              title
+              url
+              labels (last: 100) {
+                nodes {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+      {
+        owner: 'asyncapi',
+        repo: 'shape-up-process',
+        headers: {
+          authorization: `token ${process.env.GITHUB_TOKEN}`,
+        },
+      }
+    )
+
+    const keyResults = keyResultsQuery.repository.issues.nodes
+    const keyResultsNow = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Now'))
+    const keyResultsLater = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Later'))
+    const keyResultsFuture = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Future'))
+    
+    console.log(keyResults)
     
     const result = {
       keyResults: {

@@ -4,6 +4,7 @@ import IconDocuments from '../components/icons/Documents'
 import IconCode from '../components/icons/Code'
 import IconPowerPlug from '../components/icons/PowerPlug'
 import GeneratorInstallation from '../components/GeneratorInstallation'
+import RoadmapColumn from '../components/roadmap/RoadmapColumn'
 
 export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative'
@@ -78,72 +79,24 @@ export default function RoadmapPage() {
             </p>
 
             <div className="mt-10 lg:grid lg:grid-cols-3 lg:gap-10">
-              <div>
-                <div className="p-4">
-                  <h3 className="text-md font-semibold uppercase text-center">Now</h3>
-                  <p className="text-center text-sm text-gray-600 mt-2">Our top priority. We're probably working on it right now or starting pretty soon.</p>
-                </div>
-                <ul className="mt-3">
-                  {
-                    roadmapData.keyResults.now.map((kr, index) => (
-                      <li key={index} className="mt-2 flex shadow-sm rounded-md">
-                        <a href={kr.html_url} target="_blank" className="flex-shrink-0 flex items-center justify-center w-4 bg-green-300 text-sm font-medium rounded-l-md">
-                          
-                        </a>
-                        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
-                          <div className="flex-1 px-4 py-2 text-sm">
-                            <a href={kr.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{kr.title}</a>
-                          </div>
-                        </div>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-              <div>
-                <div className="p-4">
-                  <h3 className="text-md font-semibold uppercase text-center">Later</h3>
-                  <p className="text-center text-sm text-gray-600 mt-2">Our next priority. We'll work on this soon if everything goes as planned.</p>
-                </div>
-                <ul className="mt-3">
-                  {
-                    roadmapData.keyResults.later.map((kr, index) => (
-                      <li key={index} className="mt-2 flex shadow-sm rounded-md">
-                        <a href={kr.html_url} target="_blank" className="flex-shrink-0 flex items-center justify-center w-4 bg-yellow-200 text-sm font-medium rounded-l-md">
-                          
-                        </a>
-                        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
-                          <div className="flex-1 px-4 py-2 text-sm">
-                            <a href={kr.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{kr.title}</a>
-                          </div>
-                        </div>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-              <div>
-                <div className="p-4">
-                  <h3 className="text-md font-semibold uppercase text-center">Future</h3>
-                  <p className="text-center text-sm text-gray-600 mt-2">Not a priority. We're considering working on this but it's too early to know when.</p>
-                </div>
-                <ul className="mt-3">
-                  {
-                    roadmapData.keyResults.future.map((kr, index) => (
-                      <li key={index} className="mt-2 flex shadow-sm rounded-md">
-                        <a href={kr.html_url} target="_blank" className="flex-shrink-0 flex items-center justify-center w-4 bg-orange-200 text-sm font-medium rounded-l-md">
-                          
-                        </a>
-                        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
-                          <div className="flex-1 px-4 py-2 text-sm">
-                            <a href={kr.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{kr.title}</a>
-                          </div>
-                        </div>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
+              <RoadmapColumn
+                title="Now"
+                description="Our top priority. We're probably working on it right now or starting pretty soon."
+                colorClass="bg-green-300"
+                items={roadmapData.keyResults.now}
+              />
+              <RoadmapColumn
+                title="Later"
+                description="Our next priority. We'll work on this soon if everything goes as planned."
+                colorClass="bg-yellow-200"
+                items={roadmapData.keyResults.later}
+              />
+              <RoadmapColumn
+                title="Future"
+                description="Not a priority. We're considering working on this but it's too early to know when."
+                colorClass="bg-orange-200"
+                items={roadmapData.keyResults.future}
+              />
             </div>
           </div>
         </div>
