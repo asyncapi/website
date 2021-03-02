@@ -15,9 +15,9 @@ async function start() {
       },
     })
     const issues = await res.json()
-    const keyResultsNow = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Now)')
-    const keyResultsLater = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Later)')
-    const keyResultsFuture = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Future)')
+    const keyResultsNow = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Now)' && iss.state === 'open')
+    const keyResultsLater = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Later)' && iss.state === 'open')
+    const keyResultsFuture = issues.filter(iss => iss.labels.length && iss.labels.find(label => label.name === 'Key Result') && iss.pipeline.name === 'Key Results (Future)' && iss.state === 'open')
     
     const result = {
       keyResults: {
