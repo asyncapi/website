@@ -1,0 +1,514 @@
+{
+  "keyResults": {
+    "now": [
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:27:29Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/67",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 67,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "The vision and roadmap are clear",
+        "updated_at": "2021-03-02T13:27:30Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 67,
+        "pipeline": {
+          "name": "Key Results (Now)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA1ODU"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDU3OQ"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:23:15Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/62",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 62,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "User can make sure only well-formed messages reach the broker without having to touch a single line of code",
+        "updated_at": "2021-03-02T13:23:17Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 62,
+        "pipeline": {
+          "name": "Key Results (Now)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA1ODU"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDQzMQ"
+      }
+    ],
+    "later": [
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:24:24Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/63",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 63,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "Time to first contribution goes down to a day",
+        "updated_at": "2021-03-02T13:24:25Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 63,
+        "pipeline": {
+          "name": "Key Results (Later)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTA"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDQ2Mg"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:22:15Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/60",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 60,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "It's impossible to unsync documentation from code",
+        "updated_at": "2021-03-02T13:22:16Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 60,
+        "pipeline": {
+          "name": "Key Results (Later)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTA"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDM5NQ"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:21:13Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/59",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 59,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "User is able to focus only on business logic",
+        "updated_at": "2021-03-02T13:21:14Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 59,
+        "pipeline": {
+          "name": "Key Results (Later)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTA"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDM1OA"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:20:41Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/58",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 58,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "User is able to create a basic API in under 20 minutes with no prior knowledge of AsyncAPI",
+        "updated_at": "2021-03-02T13:20:43Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 58,
+        "pipeline": {
+          "name": "Key Results (Later)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTA"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDM0MQ"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T12:17:28Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/57",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 57,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "Specification is ready for defining other kind of APIs",
+        "updated_at": "2021-03-02T12:17:29Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 57,
+        "pipeline": {
+          "name": "Key Results (Later)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTA"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTEzNTE2OA"
+      }
+    ],
+    "future": [
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:26:58Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/66",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 66,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "The yearly number of community members presenting and/or writing about AsyncAPI goes above 50",
+        "updated_at": "2021-03-02T13:26:59Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 66,
+        "pipeline": {
+          "name": "Key Results (Future)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTE"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDU2Mg"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:26:23Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/65",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 65,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "The number of community and community-donated projects go above 100",
+        "updated_at": "2021-03-02T13:26:25Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 65,
+        "pipeline": {
+          "name": "Key Results (Future)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTE"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDU0MA"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:25:47Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/64",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 64,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "Number of contributors go above 100 in top repos",
+        "updated_at": "2021-03-02T13:25:49Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 64,
+        "pipeline": {
+          "name": "Key Results (Future)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTE"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDUyNA"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T13:22:50Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/61",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 61,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "User can modify their existing APIs to work with AsyncAPI in under an hour with no prior knowledge of AsyncAPI and without leaving their framework of choice",
+        "updated_at": "2021-03-02T13:22:52Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 61,
+        "pipeline": {
+          "name": "Key Results (Future)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTE"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTE0MDQyMA"
+      },
+      {
+        "assignee": null,
+        "assignees": [],
+        "closed_at": null,
+        "created_at": "2021-03-02T12:04:37Z",
+        "estimate": null,
+        "html_url": "https://github.com/asyncapi/shape-up-process/issues/56",
+        "is_epic": true,
+        "labels": [
+          {
+            "color": "3E4B9E",
+            "name": "Epic",
+            "id": 2367424163
+          },
+          {
+            "color": "d4c5f9",
+            "name": "Key Result",
+            "id": 2785671736
+          }
+        ],
+        "milestone": null,
+        "number": 56,
+        "repo_name": "shape-up-process",
+        "organization_name": "asyncapi",
+        "parent_epics": [],
+        "repo_id": 296590488,
+        "state": "open",
+        "title": "OpenAPI, RAML, Avro, GraphQL, Protobuf, and XSD users reuse their schema/type definitions within AsyncAPI.",
+        "updated_at": "2021-03-02T12:04:39Z",
+        "user": {
+          "html_url": "https://github.com/fmvilas",
+          "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+          "login": "fmvilas",
+          "id": 242119
+        },
+        "issue_number": 56,
+        "pipeline": {
+          "name": "Key Results (Future)",
+          "_id": "Z2lkOi8vcmFwdG9yL1BpcGVsaW5lLzIzNDA2MTE"
+        },
+        "id": "Z2lkOi8vcmFwdG9yL0lzc3VlLzIxNTEzNDIwMA"
+      }
+    ]
+  }
+}
