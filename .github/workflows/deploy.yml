@@ -7,7 +7,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
-    if: github.events.*.name == 'Key Result'
+    if: github.event.labels.*.name == 'Key Result'
     steps:
     - name: Trigger deploy on Netlify
       run: |
