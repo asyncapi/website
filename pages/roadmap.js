@@ -1,9 +1,5 @@
 import GenericLayout from '../components/layout/GenericLayout'
 import roadmapData from '../roadmap.json'
-import IconDocuments from '../components/icons/Documents'
-import IconCode from '../components/icons/Code'
-import IconPowerPlug from '../components/icons/PowerPlug'
-import GeneratorInstallation from '../components/GeneratorInstallation'
 import RoadmapColumn from '../components/roadmap/RoadmapColumn'
 
 export default function RoadmapPage() {
@@ -28,6 +24,9 @@ export default function RoadmapPage() {
               <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
                 It all starts with a vision. This is where we want to see AsyncAPI by 2026.
               </p>
+              <p className="mt-10 text-lg leading-7 text-gray-500 lg:pr-4">
+                To make this vision a reality, we've set some goals that will help us to get there. These goals are not necessarily everything we'll have to do to get to that vision but instead, they are manageable objectives we can already anticipate. Together, vision and goals set the direction of the project.
+              </p>
             </div>
 
             <div className="relative mt-20">
@@ -41,7 +40,7 @@ export default function RoadmapPage() {
                     Nobody does only event-driven architectures. Most people complement them with REST (OpenAPI), GraphQL, and/or RPC APIs. <strong>We want people to use the AsyncAPI specification and tooling together with their existing OpenAPI, GraphQL, and gRPC definitions.</strong> For that purpose, our specification and tools will need to understand and leverage many other specifications and tools.
                   </p>
                   <p className="my-4 text-gray-600 lg:text-center">
-                    This is not about reinventing the wheel or creating yet another spec to solve the same problems but to integrate with the existing tools instead.
+                    This is not about reinventing the wheel or creating yet another spec to solve the same problems but to integrate with the existing tools and specs instead.
                   </p>
                 </div>
                 <div>
@@ -71,13 +70,22 @@ export default function RoadmapPage() {
               </div>
             </div>
 
-            <h3 className="text-center mt-10 text-3xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-              Roadmap
-            </h3>
-            <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-              The key results we want to achieve
-            </p>
-            
+            <div className="lg:w-2/3 lg:mx-auto text-center">
+              <p className="mt-10 text-lg leading-7 text-gray-500 lg:pr-4">
+                We'll be regularly setting outcomes or key results that will allow us to accomplish the goals above. You can find a categorization of the outcomes in the roadmap below. They are split by priority and some of them show the related features.
+              </p>
+              <p className="mt-4 mb-14 text-lg leading-7 text-gray-500 lg:pr-4">
+                Please bear in mind <strong>this is an outcome-based roadmap</strong>. We don't maintain a long-term release plan. If you want to find more specific and actionable items, head to the related repository issues or our <a href="https://shapeup.asyncapi.io" className="text-pink-600 font-semibold hover:text-pink-800">Shape Up dashboard</a>.
+              </p>
+
+              <h3 className="text-center mt-10 text-3xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                Roadmap
+              </h3>
+              <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
+                The outcomes or key results we want to achieve
+              </p>
+            </div>
+
             <div className="grid grid-cols-2 lg:flex lg:justify-center mt-10 max-w-3xl mx-auto text-sm uppercase font-semibold text-gray-700">
               <div className="flex">
                 <div className="w-5 my-1 mr-2 bg-green-300 rounded"></div>
@@ -117,6 +125,9 @@ export default function RoadmapPage() {
                 items={roadmapData.keyResults.future}
               />
             </div>
+            <p className="text-xs text-center text-gray-600 mt-8">
+              <strong>Warning:</strong> this roadmap is synchronized with the Zenhub issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+            </p>
           </div>
         </div>
       </div>
