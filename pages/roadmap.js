@@ -18,14 +18,17 @@ export default function RoadmapPage() {
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
             <div className="lg:w-2/3 lg:mx-auto text-center">
-              <p className="text-3xl font-bold text-gray-600 decoration-green-500 lg:text-4xl">
-                AsyncAPI becomes the #1 API specification for defining and developing APIs. <span className="text-green-400 block">Any kind of APIs.</span>
+              <p className="text-green-400 text-lg uppercase font-semibold">
+                Vision
               </p>
-              <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
-                It all starts with a vision. This is where we want to see AsyncAPI by 2026.
+              <p className="text-3xl font-bold text-gray-600 decoration-green-500 lg:text-4xl">
+                AsyncAPI becomes the #1 API specification for defining and developing APIs. <span className="text-green-400 block underline">Any kind of APIs.</span>
               </p>
               <p className="mt-10 text-lg leading-7 text-gray-500 lg:pr-4">
-                To make this vision a reality, we've set some goals that will help us to get there. These goals are not necessarily everything we'll have to do to get to that vision but instead, they are manageable objectives we can already anticipate. Together, vision and goals set the direction of the project.
+                It all starts with a vision. <strong>This is where we want to see AsyncAPI by 2026.</strong> To make this vision a reality, we've set some goals below that will help us to get there.
+              </p>
+              <p className="mt-4 text-lg leading-7 text-gray-500 lg:pr-4">
+                These goals are not necessarily everything we'll have to do to get to that vision but instead, they are manageable objectives we can already anticipate. <strong>Together, vision and goals set the direction of the project.</strong>
               </p>
             </div>
 
