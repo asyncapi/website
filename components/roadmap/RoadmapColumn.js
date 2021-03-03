@@ -14,6 +14,7 @@ export default function RoadmapColumn({ title, description, colorClass, items = 
               key={index}
               url={item.url}
               title={item.title}
+              bets={item.bets}
               colorClass={colorClass}
             />
           ))
