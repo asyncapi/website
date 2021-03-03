@@ -128,7 +128,7 @@ export default function RoadmapPage() {
               />
             </div>
             <p className="text-xs text-center text-gray-600 mt-8">
-              <strong>Warning:</strong> this roadmap is synchronized with the Zenhub issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+              <strong>Warning:</strong> this roadmap is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
             </p>
           </div>
         </div>
