@@ -77,8 +77,27 @@ export default function RoadmapPage() {
             <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
               The key results we want to achieve
             </p>
-
-            <div className="mt-10 lg:grid lg:grid-cols-3 lg:gap-10">
+            
+            <div className="grid grid-cols-2 lg:flex lg:justify-center mt-10 max-w-3xl mx-auto text-sm uppercase font-semibold text-gray-700">
+              <div className="flex">
+                <div className="w-5 my-1 mr-2 bg-green-300 rounded"></div>
+                <div className="mr-4">Now</div>
+              </div>
+              <div className="flex">
+                <div className="w-5 my-1 mr-2 bg-yellow-200 rounded"></div>
+                <div className="mr-4">Later</div>
+              </div>
+              <div className="flex">
+                <div className="w-5 my-1 mr-2 bg-orange-200 rounded"></div>
+                <div className="mr-4">Future</div>
+              </div>
+              <div className="flex">
+                <div className="w-5 my-1 mr-2 bg-gray-700 rounded"></div>
+                <div className="mr-4">Feature</div>
+              </div>
+            </div>
+            
+            <div className="lg:grid lg:grid-cols-3 lg:gap-10">
               <RoadmapColumn
                 title="Now"
                 description="Our top priority. We're probably working on it right now or starting pretty soon."

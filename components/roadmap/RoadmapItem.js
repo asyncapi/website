@@ -20,7 +20,7 @@ export default function RoadmapItem({ url, title, bets = [], colorClass }) {
                 <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
                   <div className="flex flex-1 px-4 py-2 text-sm">
                     {
-                      bet.state === 'closed' && (<span className="text-xs rounded-md px-1.5 py-0.5 mr-2 uppercase font-semibold bg-gray-100 text-pink-600">Done</span>)
+                      bet.state === 'closed' && (<div className="text-xs rounded-md h-6 px-1.5 py-0.5 mr-2 uppercase font-semibold bg-gray-100 text-pink-600">Done</div>)
                     }
                     <a href={bet.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{bet.title}</a>
                   </div>
