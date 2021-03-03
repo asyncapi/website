@@ -3,9 +3,8 @@ import roadmapData from '../roadmap.json'
 import RoadmapColumn from '../components/roadmap/RoadmapColumn'
 
 export default function RoadmapPage() {
-  const description = 'Long-term vision and plans for the AsyncAPI Initiative'
-  const image = 'Image for meta tags here...'
-  // const image = '/img/social/generator.png'
+  const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
+  const image = '/img/social/roadmap.png'
 
   return (
     <GenericLayout
