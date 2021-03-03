@@ -17,7 +17,7 @@ export default function RoadmapPage() {
       <div className="py-16 overflow-hidden lg:py-24">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
-            <div className="lg:w-2/3 lg:mx-auto text-center">
+            <div className="lg:w-2/3 lg:mx-auto lg:text-center">
               <p className="text-green-400 text-lg uppercase font-semibold">
                 Vision
               </p>
@@ -73,7 +73,7 @@ export default function RoadmapPage() {
               </div>
             </div>
 
-            <div className="lg:w-2/3 lg:mx-auto text-center">
+            <div className="lg:w-2/3 lg:mx-auto lg:text-center">
               <p className="mt-10 text-lg leading-7 text-gray-500 lg:pr-4">
                 We'll be regularly setting outcomes or key results that will allow us to accomplish the goals above. You can find a categorization of the outcomes in the roadmap below. They are split by priority and some of them show the related features.
               </p>
