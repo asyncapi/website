@@ -11,6 +11,8 @@ export default function RoadmapColumn({ title, description, colorClass, items = 
         items={items}
         colorClass={colorClass}
         showConnector={false}
+        collapsed={false}
+        collapsible={false}
       />
     </div>
   )

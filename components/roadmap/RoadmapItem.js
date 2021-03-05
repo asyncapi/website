@@ -1,6 +1,16 @@
-import RoadmapList from "./RoadmapList";
+import { useState } from "react"
+import RoadmapList from "./RoadmapList"
+import IconArrowRight from '../icons/ArrowRight'
 
-export default function RoadmapItem({ item, colorClass, showConnector = true }) {
+export default function RoadmapItem({
+  item,
+  colorClass,
+  showConnector = true,
+  collapsed = true,
+}) {
+  const [isCollapsed, setIsCollapsed] = useState(collapsed)
+  const isCollapsible = item.solutions || item.bets
+
   const connectorClasses = 'border-l-2 border-dashed border-gray-300'
   const classNames = `pt-2 ${showConnector && connectorClasses}`
   return (
@@ -18,27 +28,32 @@ export default function RoadmapItem({ item, colorClass, showConnector = true }) 
               {
                 item.state === 'closed' && (<div className="text-xs rounded-md h-6 px-1.5 py-0.5 mr-2 uppercase font-semibold bg-gray-100 text-pink-600">Done</div>)
               }
-              <a href={item.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{item.title}</a>
+              <a href={item.url || item.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{item.title}</a>
             </div>
+            { isCollapsible && (
+              <button className="mr-2" onClick={() => setIsCollapsed(!isCollapsed)}>
+                <IconArrowRight className={`h-4 transform ${isCollapsed ? 'rotate-90' : '-rotate-90' }`} />
+              </button>
+            )}
           </div>
         </div>
       </div>
       
-      { item.solutions && item.solutions.length && (
+      { !isCollapsed && item.solutions && item.solutions.length && (
         <RoadmapList
           className="pt-3 ml-2"
           colorClass="bg-blue-400"
           items={item.solutions}
+          collapsed={false}
         />
       )}
 
-      { item.bets && item.bets.length && (
+      { !isCollapsed && item.bets && item.bets.length && (
         <RoadmapList
           className="ml-9"
           colorClass="bg-gray-700"
           items={item.bets}
-          collapsible={true}
-          collapsed={true}
+          collapsed={false}
         />
       )}
     </li>
