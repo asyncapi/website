@@ -1,4 +1,4 @@
-import RoadmapItem from "./RoadmapItem";
+import RoadmapList from "./RoadmapList"
 
 export default function RoadmapColumn({ title, description, colorClass, items = [] }) {
   return (
@@ -7,19 +7,11 @@ export default function RoadmapColumn({ title, description, colorClass, items = 
         <h3 className="text-md font-semibold uppercase text-center">{title}</h3>
         <p className="text-center text-sm text-gray-600 mt-2">{description}</p>
       </div>
-      <ul className="mt-3">
-        {
-          items.map((item, index) => (
-            <RoadmapItem
-              key={index}
-              url={item.url}
-              title={item.title}
-              bets={item.bets}
-              colorClass={colorClass}
-            />
-          ))
-        }
-      </ul>
+      <RoadmapList
+        items={items}
+        colorClass={colorClass}
+        showConnector={false}
+      />
     </div>
   )
 }

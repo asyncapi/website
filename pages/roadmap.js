@@ -102,6 +102,10 @@ export default function RoadmapPage() {
                 <div className="mr-4">Future</div>
               </div>
               <div className="flex">
+                <div className="w-5 my-1 mr-2 bg-blue-400 rounded"></div>
+                <div className="mr-4">Solution</div>
+              </div>
+              <div className="flex">
                 <div className="w-5 my-1 mr-2 bg-gray-700 rounded"></div>
                 <div className="mr-4">Feature</div>
               </div>

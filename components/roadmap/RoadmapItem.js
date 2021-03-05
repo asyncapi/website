@@ -1,35 +1,46 @@
-export default function RoadmapItem({ url, title, bets = [], colorClass }) {
+import RoadmapList from "./RoadmapList";
+
+export default function RoadmapItem({ item, colorClass, showConnector = true }) {
+  const connectorClasses = 'border-l-2 border-dashed border-gray-300'
+  const classNames = `pt-2 ${showConnector && connectorClasses}`
   return (
-    <li className="mt-2">
-      <div className="flex shadow-sm rounded-md">
-        <a href={url} target="_blank" className={`flex-shrink-0 flex items-center justify-center w-4 text-sm font-medium rounded-l-md ${colorClass}`}></a>
-        <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
-          <div className="flex-1 px-4 py-2 text-sm">
-            <a href={url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{title}</a>
+    <li className={classNames}>
+      <div className="flex">
+        { showConnector && (
+          <div className="flex flex-col justify-center">
+            <div className="border-b-2 border-dashed border-gray-300 w-5 h-1 my-2 ml-0 mr-2"></div>
+          </div>
+        )}
+        <div className="flex flex-1 shadow-sm rounded-md">
+          <a href={item.url} target="_blank" className={`flex-shrink-0 flex items-center justify-center w-4 text-sm font-medium rounded-l-md ${colorClass}`}></a>
+          <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
+            <div className="flex flex-1 px-4 py-2 text-sm">
+              {
+                item.state === 'closed' && (<div className="text-xs rounded-md h-6 px-1.5 py-0.5 mr-2 uppercase font-semibold bg-gray-100 text-pink-600">Done</div>)
+              }
+              <a href={item.url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{item.title}</a>
+            </div>
           </div>
         </div>
       </div>
+      
+      { item.solutions && item.solutions.length && (
+        <RoadmapList
+          className="pt-3 ml-2"
+          colorClass="bg-blue-400"
+          items={item.solutions}
+        />
+      )}
 
-      <ul className="mt-3">
-        {
-          bets.map((bet, index) => (
-            <li key={index} className="mt-2 flex">
-              <div className="border-b-2 border-l-2 border-gray-200 rounded-bl-md w-5 my-2 ml-4 mr-2"></div>
-              <div className="flex flex-1 shadow-sm rounded-md">
-                <a href={bet.html_url} target="_blank" className="flex-shrink-0 flex items-center justify-center w-4 text-sm font-medium rounded-l-md bg-gray-700"></a>
-                <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md">
-                  <div className="flex flex-1 px-4 py-2 text-sm">
-                    {
-                      bet.state === 'closed' && (<div className="text-xs rounded-md h-6 px-1.5 py-0.5 mr-2 uppercase font-semibold bg-gray-100 text-pink-600">Done</div>)
-                    }
-                    <a href={bet.html_url} target="_blank" className="block text-gray-900 font-medium hover:text-gray-600">{bet.title}</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
+      { item.bets && item.bets.length && (
+        <RoadmapList
+          className="ml-9"
+          colorClass="bg-gray-700"
+          items={item.bets}
+          collapsible={true}
+          collapsed={true}
+        />
+      )}
     </li>
   )
 }
