@@ -2,7 +2,6 @@
 title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 1"
 date: 2020-11-11T19:00:00+01:00
 type: Engineering
-featured: true
 tags:
   - Community
   - Testing
