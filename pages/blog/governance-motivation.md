@@ -22,7 +22,7 @@ featured: true
 
 > tl;dr charter for the AsyncAPI Initiative open governance is ready for the review. Leave your comments there in [this](https://github.com/asyncapi/.github/pull/37) pull request. We will wait two weeks for your feedback.
 
-December 2020 brought to AsyncAPI important announcement, a [partnership with Postman](/blog/asyncapi-partners-with-postman). This huge milestone secured the AsyncAPI Initiative development efforts as few active community members moved to Postman. This move speeded up our work on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative.
+December 2020 brought to AsyncAPI an important announcement, a [partnership with Postman](/blog/asyncapi-partners-with-postman). This huge milestone secured the AsyncAPI Initiative development efforts as few active community members moved to Postman. This move speeded up our work on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative.
 
 It took us a lot of time to write down the initial charter for the initiative.
 
@@ -36,7 +36,7 @@ We started with a basic vision in our heads and studied governance models of man
 
 <img className="w-1/3" src="https://media.giphy.com/media/5QMPpCzH6yxEqhev5A/giphy.gif" />
 
-In the end, we just wanted to make sure the initiative is community-driven, leaves no man behind. We tried to figure out a governance model that:
+In the end, we just wanted to make sure the initiative is community-driven and leaves no man behind. We tried to figure out a governance model that:
 - is as democratic as possible
 - supports the asynchronous decision-making process
 - gives power to people that "work", not companies that "pay". In other words, it gives equal power to both individual and corporate contributors.
@@ -49,7 +49,7 @@ Committer rules in the repository, but for topics that go beyond, there is a Tec
 
 TSC consists of all committers. 
 
-Yes, not a dedicated group of people for now. Are you a committer? If yes, then it means you are a voting member of TSC either (unless you do not want to). But more on that further in the blog post.
+Yes, not a dedicated group of people for now. Are you a committer? If yes, then it means you are a voting member of TSC (unless you do not want to). But more on that further in the blog post.
 
 ### Single TSC for spec and tools
 
