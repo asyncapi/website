@@ -43,7 +43,7 @@ In the end, we just wanted to make sure the initiative is community-driven and l
 
 ### Vocabulary
 
-In the governance model, you can find two essential roles: contributor and committer. A contributor is a person that contributes to the project code, docs, or other artifacts. A committer is a person that contributes regularly and is invited by other committers to manage the repository, to have more privileges, and to approve pull requests.
+In the AsyncAPI governance model, you can find two essential roles: contributor and committer. A contributor is a person that contributes to the project code, docs, or other artifacts. A committer is a person that contributes regularly and is invited by other committers to manage the repository, to have more privileges, and to approve pull requests.
 
 Committer rules in the repository, but for topics that go beyond, there is a Technical Steering Committee (TSC). 
 
