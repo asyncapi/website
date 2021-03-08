@@ -97,7 +97,7 @@ The governance model embraces this direction. How?
 
 If you own a project, you created it. It means you are its committer. 
 
-Do you see where I'm getting?
+Do you see where We're getting?
 
 Yes, it means that once you donate the project to the AsyncAPI Initiative, you do not only stay there as a committer but also become a voting member.
 
