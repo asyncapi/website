@@ -34,7 +34,7 @@ Nobody's trying to be a smart ass here. We actually had to google that :smiley:
 
 We started with a basic vision in our heads and studied governance models of many diverse communities, like NodeJS Foundation, OpenJS Foundation, GraphQL Foundation, Cloud Events, OpenAPI Initiative, and CNCF. We also got a charter template from a foundation. That was a lot to handle. 
 
-<img className="w-1/3" src="https://media.giphy.com/media/5QMPpCzH6yxEqhev5A/giphy.gif" />
+<center><img className="w-1/3" src="https://media.giphy.com/media/5QMPpCzH6yxEqhev5A/giphy.gif" /></center>
 
 In the end, we just wanted to make sure the initiative is community-driven and leaves no man behind. We tried to figure out a governance model that:
 - is as democratic as possible
