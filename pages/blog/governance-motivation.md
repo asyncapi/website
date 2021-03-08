@@ -20,7 +20,7 @@ excerpt: 'AsyncAPI can be successful if the initiative is community-driven. To b
 featured: true
 ---
 
-> tl;dr charter for the AsyncAPI Initiative open governance is ready for the review. Leave your comments there in [this](https://github.com/asyncapi/.github/pull/37) pull request. We will wait two weeks for your feedback.
+> tl;dr charter for the AsyncAPI Initiative open governance is ready for review. Leave your comments there in [this](https://github.com/asyncapi/.github/pull/37) pull request. We will wait two weeks for your feedback.
 
 December 2020 brought to AsyncAPI an important announcement, a [partnership with Postman](/blog/asyncapi-partners-with-postman). This huge milestone secured the AsyncAPI Initiative development efforts as few active community members moved to Postman. This move speeded up our work on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative.
 
@@ -32,18 +32,18 @@ Nobody's trying to be a smart ass here. We actually had to google that :smiley:
 
 ## The vision
 
-We started with a basic vision in our heads and studied governance models of many diverse communities, like NodeJS Foundation, OpenJS Foundation, GraphQL Foundation, Cloud Events, OpenAPI Initiative, and CNCF. We also got a charter template from a foundation. That was a lot to handle. 
+We started with a basic vision in our heads and studied governance models of many diverse communities, like NodeJS Foundation, OpenJS Foundation, GraphQL Foundation, Cloud Events, OpenAPI Initiative, and CNCF. We also got a charter template from Linux Foundation. That was a lot to handle. 
 
 <center><img className="w-1/3" src="https://media.giphy.com/media/5QMPpCzH6yxEqhev5A/giphy.gif" /></center>
 
-In the end, we just wanted to make sure the initiative is community-driven and leaves no man behind. We tried to figure out a governance model that:
+In the end, we just wanted to make sure the initiative is community-driven and leaves no one behind. We tried to figure out a governance model that:
 - is as democratic as possible
 - supports the asynchronous decision-making process
 - gives power to people that "work", not companies that "pay". In other words, it gives equal power to both individual and corporate contributors.
 
 ### Vocabulary
 
-In the governance model, you can find two essential roles, contributor and committer. A contributor is a person that contributes to the project code, docs, or other artifacts. A committer is a person that contributes regularly and is invited by other committers to manage the repository, to have more privileges, and to approve pull requests.
+In the governance model, you can find two essential roles: contributor and committer. A contributor is a person that contributes to the project code, docs, or other artifacts. A committer is a person that contributes regularly and is invited by other committers to manage the repository, to have more privileges, and to approve pull requests.
 
 Committer rules in the repository, but for topics that go beyond, there is a Technical Steering Committee (TSC). 
 
@@ -53,7 +53,7 @@ Yes, not a dedicated group of people for now. Are you a committer? If yes, then 
 
 ### Single TSC for spec and tools
 
-Spec and tools will have different licenses, but there will not be two TSCs though. One TSC for now to handle both specification and tools.
+Spec and tools will have different licenses, but there will not be two TSCs though. One TSC to handle both the specification and the tools.
 
 Why?
 
@@ -61,14 +61,14 @@ Why?
 - don't design processes and then work accordingly but better build a process that facilitates the way you work already.
 - we are a large community, but not large enough to handle two different charters, not now.
 
-The other good reason for not splitting is that we believe the initiative should work on spec and tools to provide essential open-source tools that consistently support the latest version of the specification. In other words, when we release the newest version of the specification, you can already use it with official tools and do not have to wait for other tooling providers to catch up. We know big companies do not care much about basic tooling as they most probably write their own as it is much easier for them to work without unnecessary noise. Nevertheless, we need to think about the small ones too. Two TSCs sound like having two silos that work separately, and it is not good for the start. Nobody says, though, that TSC can't organically grow into two separate groups in the future.
+The other good reason for not splitting is that we believe the initiative should work on spec and tools to provide essential open-source tools that consistently support the latest version of the specification. In other words, when we release the newest version of the specification, you can already use it with official tools and do not have to wait for other tooling providers to catch up. We know big companies do not care much about basic tooling as they most probably write their own because it is much easier for them to work without unnecessary noise. Nevertheless, we need to think about the small ones too. Two TSCs sound like having two silos that work separately, and it is not good for the start. Nobody says, though, that the TSC can't organically grow into two separate groups in the future.
 
 
 ### Value work more than money
 
-We want to have a TSC consisting of all the active committers in the project, not people who are there because their company is a sponsor of the project. You are TSC member because you work on the project, you code, write docs, maintain CI. You work, and therefore, you are a part of the initiative.
+We want to have a TSC consisting of all the active committers in the project, not people who are there because their company is a sponsor of the project. You are a TSC member because you work on the project, you code, write docs, maintain CI. You work, and therefore, you are a part of the initiative.
 
-Why? Don't you like the money?
+Why? Don't you like money?
 
 We like money, don't get us wrong here :smiley: Money helps the project a lot, we can sponsor many good things with the money we obtain from you.
 
@@ -85,9 +85,9 @@ The rule we want to follow is that the committer automatically gets a right to v
 
 Why? 
 
-Voting is always about essential things, essential for the entire initiative. Who else should have a right to vote if not people that are directly affected by decisions of the ToC. The tricky situation here is that this approach can lead to a problem where one company hires most committers and, therefore, takes over project steering. This is something we actually have at the moment. The majority of folks working actively on the project are from Postman. Nothing terrible happened to the project for now, but this doesn't mean the whole community feels comfortable.
+Voting is always about essential things, essential for the entire initiative. Who else should have a right to vote if not people that are directly affected by the decisions of the ToC? The tricky situation here is that this approach can lead to a problem where one company hires most committers and, therefore, takes over project steering. This is something we actually have at the moment. The majority of folks working actively on the project are from Postman. Nothing terrible happened to the project for now, but this doesn't mean the whole community feels comfortable.
 
-We had a tough brainstorming here about finding the right balance between respecting all contributors equally and still making sure that there is no risk that a company has most voters. That is why we have a rule that only 1/4 (1/3 in case we need to look for more maintainers to bring balance back to the force) of voters can be affiliated with the same company. 
+We had a tough brainstorming here about finding the right balance between respecting all contributors equally and still making sure that there is no risk that a company has most voters. That is why we have a rule that only 1/4 of voters can be affiliated with the same company. Or 1/3 in case we need to look for more maintainers to bring balance back to the force.
 
 ### Work on all the tools under the AsyncAPI umbrella
 
@@ -105,9 +105,9 @@ Yes, it means that once you donate the project to the AsyncAPI Initiative, you d
 
 We hate to have too many meetings. Meetings suck out your blood. Meetings = schedule and schedule = leash. 
 
-Zero meetings? No, we will have something on the schedule, but it will not be mandatory. We will not make decisions during the meetings, so you do not have to rush to be there. You just need to watch the recording to learn if there is something relevant for you, if there is a topic that needs voting. Decisions making should be asynchronous, and people should have time to make a wise decision.
+Zero meetings? No, we will have something on the schedule, but it will not be mandatory. We will not make decisions during the meetings, so you do not have to rush to be there. You just need to watch the recording to learn if there is something relevant for you if there is a topic that needs voting. Decision-making should be asynchronous, and people should have time to make wise decisions.
 
-The Async decision-making process also assures that the number of voters can scale up easily, and we should be able to handle as many committers in the group as we have. We can automate many things here.
+The async decision-making process also assures that the number of voters can scale up easily, and we should be able to handle as many committers in the group as we have. We can automate many things here.
 
 ### Wishful thinking
 
