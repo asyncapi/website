@@ -86,7 +86,7 @@ export default function RoadmapPage() {
                 Roadmap
               </h3>
               <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
-                The outcomes or key results we want to achieve
+                The outcomes we want to achieve
               </p>
             </div>
 
@@ -112,19 +112,19 @@ export default function RoadmapPage() {
                 title="Now"
                 description="Our top priority. We're probably working on it right now or starting pretty soon."
                 colorClass="bg-green-300"
-                items={roadmapData.keyResults.now}
+                items={roadmapData.outcomes.now}
               />
               <RoadmapColumn
                 title="Later"
                 description="Our next priority. We'll work on this soon if everything goes as planned."
                 colorClass="bg-yellow-200"
-                items={roadmapData.keyResults.later}
+                items={roadmapData.outcomes.later}
               />
               <RoadmapColumn
                 title="Future"
                 description="Not a priority. We're considering working on this but it's too early to know when."
                 colorClass="bg-orange-200"
-                items={roadmapData.keyResults.future}
+                items={roadmapData.outcomes.future}
               />
             </div>
             <Warning

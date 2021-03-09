@@ -8,10 +8,10 @@ require('dotenv').config({
 
 async function start() {
   try {
-    const keyResultsAndSolutionsQuery = await graphql(`
-      query keyResultsAndSolutions($owner: String!, $repo: String!) {
-        keyResults: repository(owner: $owner, name: $repo) {
-          issues(labels: ["Key Result"], states: [OPEN], last: 100) {
+    const outcomesAndSolutionsQuery = await graphql(`
+      query outcomesAndSolutions($owner: String!, $repo: String!) {
+        outcomes: repository(owner: $owner, name: $repo) {
+          issues(labels: ["Outcome"], states: [OPEN], last: 100) {
             nodes {
               number
               title
@@ -50,7 +50,7 @@ async function start() {
       }
     )
 
-    const keyResults = keyResultsAndSolutionsQuery.keyResults.issues.nodes
+    const outcomes = outcomesAndSolutionsQuery.outcomes.issues.nodes
 
     let res = await fetch('https://api.zenhub.com/v5/workspaces/5f6492205269c584ae1b576f/issues?epics=1&connections=1&repo_ids=296590488', {
       method: 'get',
@@ -90,22 +90,22 @@ async function start() {
         },
       })
       const parentEpic = await res.json()
-      if (parentEpic && parentEpic.labels.find(l => l.name === 'Key Result')) {
-        const kr = keyResults.find(kr => kr.number === parentEpic.issue_number)
+      if (parentEpic && parentEpic.labels.find(l => l.name === 'Outcome')) {
+        const kr = outcomes.find(kr => kr.number === parentEpic.issue_number)
         kr.solutions = kr.solutions || []
         kr.solutions.push(solution)
       }
     }
 
-    const keyResultsNow = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Now'))
-    const keyResultsLater = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Later'))
-    const keyResultsFuture = keyResults.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Future'))
+    const outcomesNow = outcomes.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Now'))
+    const outcomesLater = outcomes.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Later'))
+    const outcomesFuture = outcomes.filter(kr => kr.labels.nodes.find(label => label.name === 'Pipeline: Future'))
     
     const result = {
-      keyResults: {
-        now: keyResultsNow,
-        later: keyResultsLater,
-        future: keyResultsFuture,
+      outcomes: {
+        now: outcomesNow,
+        later: outcomesLater,
+        future: outcomesFuture,
       },
     }
 
