@@ -1,6 +1,8 @@
 import GenericLayout from '../components/layout/GenericLayout'
 import roadmapData from '../roadmap.json'
 import RoadmapColumn from '../components/roadmap/RoadmapColumn'
+import Warning from '../components/Warning'
+import InlineHelp from '../components/InlineHelp'
 
 export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
@@ -88,26 +90,20 @@ export default function RoadmapPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:flex lg:justify-center mt-10 max-w-3xl mx-auto text-sm uppercase font-semibold text-gray-700">
-              <div className="flex">
+            <div className="lg:flex lg:justify-center mt-10 max-w-3xl mx-auto text-sm uppercase font-semibold text-gray-700">
+              <div className="flex mb-2 justify-center">
                 <div className="w-5 my-1 mr-2 bg-green-300 rounded"></div>
-                <div className="mr-4">Now</div>
-              </div>
-              <div className="flex">
                 <div className="w-5 my-1 mr-2 bg-yellow-200 rounded"></div>
-                <div className="mr-4">Later</div>
-              </div>
-              <div className="flex">
                 <div className="w-5 my-1 mr-2 bg-orange-200 rounded"></div>
-                <div className="mr-4">Future</div>
+                <div className="mr-4">Outcome <InlineHelp text="An outcome is the result of implementing a solution and represents a specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an outcome is a Key Result." /></div>
               </div>
-              <div className="flex">
+              <div className="flex mb-2 justify-center">
                 <div className="w-5 my-1 mr-2 bg-blue-400 rounded"></div>
-                <div className="mr-4">Solution</div>
+                <div className="mr-4">Solution <InlineHelp text="A solution is an idea we have to achieve its related outcome. It may produce the outcome partially or totally." /></div>
               </div>
-              <div className="flex">
+              <div className="flex mb-2 justify-center">
                 <div className="w-5 my-1 mr-2 bg-gray-700 rounded"></div>
-                <div className="mr-4">Feature</div>
+                <div className="mr-4">Feature <InlineHelp text="A feature talks about specific details to implement a solution. It may implement the solution partially or totally." /></div>
               </div>
             </div>
             
@@ -131,8 +127,12 @@ export default function RoadmapPage() {
                 items={roadmapData.keyResults.future}
               />
             </div>
+            <Warning
+              className="lg:w-1/2 mt-8 mx-auto"
+              title="Warning for Contributors"
+              description="This road map reflects the priorities of the core team. If you want to contribute a feature that's not a priority, feel free to let us know on the corresponding Github issue so we can discuss what's the best way to proceed and implement it yourself." />
             <p className="text-xs text-center text-gray-600 mt-8">
-              <strong>Warning:</strong> this roadmap is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+              <strong>Attention:</strong> this roadmap is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
             </p>
           </div>
         </div>
