@@ -5,7 +5,8 @@ export default function RoadmapList({
   className = 'mt-3',
   items = [],
   showConnector = true,
-  collapsed = true,
+  collapsed = false,
+  childrenCollapsed = true,
 }) {
   return (
     items && items.length && (
@@ -17,6 +18,7 @@ export default function RoadmapList({
               item={item}
               colorClass={colorClass}
               showConnector={showConnector}
+              collapsed={childrenCollapsed}
             />
           ))
         )}

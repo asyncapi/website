@@ -1,6 +1,12 @@
 import RoadmapList from "./RoadmapList"
 
-export default function RoadmapColumn({ title, description, colorClass, items = [] }) {
+export default function RoadmapColumn({
+  title,
+  description,
+  colorClass,
+  items = [],
+  childrenCollapsed = true,
+}) {
   return (
     <div className="mt-8 lg:mt-4">
       <div className="p-4">
@@ -11,8 +17,7 @@ export default function RoadmapColumn({ title, description, colorClass, items = 
         items={items}
         colorClass={colorClass}
         showConnector={false}
-        collapsed={false}
-        collapsible={false}
+        childrenCollapsed={childrenCollapsed}
       />
     </div>
   )
