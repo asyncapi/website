@@ -9,7 +9,8 @@
     "export": "next export",
     "lint": "echo \"No linter configured yet\"",
     "generate:assets": "echo \"No assets to configure\"",
-    "test": "echo \"No tests configured yet\""
+    "test": "echo \"No tests configured yet\"",
+    "release": "echo \"No release to npm for this project\""
   },
   "repository": {
     "type": "git",
