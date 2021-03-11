@@ -35,11 +35,6 @@ function HomePage() {
       <Container wide>
         <Head title="Home" />
         <NavBar className="z-50" />
-
-        <a href="https://www.internationalwomensday.com/" target="_blank">
-          <img src="/img/iwd-banner.jpg" className="block w-full" />
-        </a>
-
         <Hero className="mb-24" />
       </Container>
 
