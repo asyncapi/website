@@ -1,5 +1,5 @@
 ---
-title: "February 2021 at AsyncAPI"
+title: February 2021 at AsyncAPI
 date: 2021-02-11T06:00:00+01:00
 type: Communication
 tags:
@@ -10,19 +10,19 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: ''
+excerpt: We are getting close to joining a foundation. We started few new initiatives. We are busy. In other words, this is a good time to join us and drive things together
 featured: true
 ---
 
 > Read [January 2021 at AsyncAPI](/blog/january-2021-at-asyncapi) for the update from January.
 
-I think I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. It's that I think people do have other things to do than just follow AsyncAPI. Community has other things to do. Life in open-source runs slower, at least when you look at it from the outside :sweat_smile:. I just have an impression more people read it, when it is once a month. At least this is how it looks now and we will see what next months bring. I wonder what is your view on that.
+I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. I think people do have other things to do than follow AsyncAPI only :sweat_smile:. Life in open-source runs slower, at least when you look at it from the outside. I have an impression more people pay attention to the status when it is once a month. I wonder what your view is on that.
 
-## Open governance model aka Charter ready for the review
+## Open governance model aka charter ready for the review
 
-Is open governance model the same as a charter? No. Charter is a boring legal document that describes many rules that need to be followed when being under the Linux Foundation. One of the things the charter tackles is the overall rules on how the project will operate and be governed. 
+Is an "open governance model" the same as a "charter"? No. Charter is a boring legal document that describes many rules that need to be followed when being under a foundation. One of the things the charter tackles is the general rules on how the project will operate and be governed. 
 
-I think more important to write here is that the charter is here, it finally arrived and is ready for the review. We also explained in special blog post, in more human-friendly words what governance model we envision for the AsyncAPI Initiative. This content was released and communicated on Tuesday, 9th of March and we will wait for your feedback until 23rd of March. Looks like we will kick off April under the umbrella of the Linux Foundation :crossed_fingers:
+I think more important to write here is that the charter is here. It finally arrived and is ready for review. In the special blog post, we also explained what governance model we envision for the AsyncAPI Initiative in more human-friendly words. This content was released and communicated on Tuesday, 9th of March, and we will wait for your feedback until 23rd of March. It looks like we will kick off April under the umbrella of the foundation :crossed_fingers:
 
 Please take your time to:
 - Read [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation) to understand our motivation
@@ -30,37 +30,46 @@ Please take your time to:
 
 ## Code generators activities
 
-We had some significant traffic in area of code generation templates in February.
+We had some significant traffic in the area of code generation templates in February.
 
 ### PHP
 
-[Emiliano Zublena](https://twitter.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under `@asyncapi` scope on npm but you can already play with it by using generator with direct GitHub link like `ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o output`
+[Emiliano Zublena](https://twitter.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with direct GitHub link like:
+
+```bash
+ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o output`
+```
 
 ### Go
 
-We merged initial pull request to the [Go template](https://github.com/asyncapi/go-template). Initial contributor was not able to continue working on the template but the foundation is there. [Emiliano Zublena](https://twitter.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with `ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output` and let us know what you think in the GitHub issues section . Thank you [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
+We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation is there. [Emiliano Zublena](https://twitter.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
+
+```bash
+ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output
+```
+Let us know what you think in the GitHub issues section. Thank you [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
 
 ### TypeScript and NATS
 
-[Jonas Lagoni](https://github.com/jonaslagoni/) regularly extends and polishes (the TypeScript template for NATS](https://github.com/asyncapi/ts-nats-template). It reached 0.3 release and is the first template that is already using a new AsyncAPI SDK for data types generation. Go and check it out.
+[Jonas Lagoni](https://github.com/jonaslagoni/) regularly extends and polishes (the TypeScript template for NATS](https://github.com/asyncapi/ts-nats-template). It reached 0.3 release and is the first template that is already using a new AsyncAPI SDK for data types generation. Please go and check it out.
 
 ## AsyncAPI CLI to rule them all
 
-We always wanted to have a single CLI to do all the things related to AsyncAPI. In other words, one CLI to validate, generate, edit, create and others. So far we had CLI for the AsyncAPI generator, and recently one of community members [Jorge Aguiar Martín](https://twitter.com/jotamusik) referred us to his CLI for AsyncAPI validation.
+We always wanted to have a single CLI to do all the things related to AsyncAPI. In other words, one CLI to validate, generate, edit, create and others. So far, we had CLI for the AsyncAPI generator, and recently one of the community members, [Jorge Aguiar Martín](https://twitter.com/jotamusik), referred us to his CLI for AsyncAPI validation.
 
-We all agreed that instead of working separately on different CLIs it is better to work together on one single CLI that everyone will love. Project kicked off! Repository created and we already discuss details on how the CLI interface should look like. [Join](https://github.com/asyncapi/cli/issues/1) the discussion.
+We all agreed that instead of working separately on different CLIs, it is better to work together on one CLI that everyone will love. The project kicked off! Repository created, and we already discuss details on how the CLI interface should look like. [Join](https://github.com/asyncapi/cli/issues/1) the discussion.
 
 ## Event gateway
 
 Sounds big? It is :smiley:
 
-An excelent engeneer joined AsyncAPI, [Sergio Moya](https://twitter.com/smoyac/status/1361289838075539461). We felt like we need to start something big that should be built independently from any vendor together with the AsyncAPI community. The project got kicked off and it is the best time to join. Have a look at the dedicated repository and our plans for [the Everest? AsyncAPI Gate or maybe Eventide](https://github.com/asyncapi/event-gateway) :smiley:
+An excellent engineer joined AsyncAPI, [Sergio Moya](https://twitter.com/smoyac/status/1361289838075539461). We felt like we need to start something big that should be built independently from any vendor together with the AsyncAPI community. The project got kicked off, and it is the best time to join. Have a look at the dedicated repository and our plans for [the Everest? AsyncAPI Gate? or maybe Eventide?](https://github.com/asyncapi/event-gateway) :smiley:
 
-Share your use cases. Help us understand what you need. Sergio prepared an issue template that [helps with that](https://github.com/asyncapi/event-gateway/issues/new?assignees=&labels=use+case&template=use_case.md&title=%5BUSECASE%5D+).
+Share your use cases. Please help us understand what you need. Sergio prepared an issue template that [helps with that](https://github.com/asyncapi/event-gateway/issues/new?assignees=&labels=use+case&template=use_case.md&title=%5BUSECASE%5D+).
 
 ## Domain model generation
 
-As mentioned in [the blog post about January](/blog/january-2021-at-asyncapi#next-major-feature-is-data-model-generation), February was all about data model generation that we wanted to use to speed up templates development for code generation. The library is [ready](https://github.com/asyncapi/generator-model-sdk) and we started trying it out. You can try it out too, and you do not even need our AsyncAPI Generator or AsyncAPI at all. It is a generic library and you only need JSON Schema Draft 7.
+As mentioned in [the blog post about January](/blog/january-2021-at-asyncapi#next-major-feature-is-data-model-generation), February was all about data model generation that we wanted to use to speed up templates development for code generation. The library is [ready](https://github.com/asyncapi/generator-model-sdk), and we started trying it out. You can try it out too, and you do not even need our AsyncAPI Generator or AsyncAPI at all. It is a generic library and you only need JSON Schema Draft 7.
 
 ```js
 import { TypeScriptGenerator } from '@asyncapi/generator-model-sdk';
@@ -117,7 +126,7 @@ export interface Address {
 
 Some important resources to follow:
 - [How processing data from input works](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/input_processing.md)
-- [How `generator-model-sdk` simplify JSON Schema](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/simplification.md)
+- [How **generator-model-sdk** simplify JSON Schema](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/simplification.md)
 - [How model generator works and how to write a new one](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/generators.md)
 - [How presets (customization) works and how to write a custom preset](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/customization.md)
 
@@ -134,15 +143,16 @@ In February we reached 1600 followers on Twitter.
   }}
 />
 
-Great thing to see is that community from [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6769647615823945728/) grew to 900 and our news shared there get a lot of traction.
+A great thing to see is that the community from [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6769647615823945728/) grew to 900, and our news shared there also get more visibility.
 
 We are very noisy :sweat_smile:
 
 ## Other features
 
-- Thanks to the support of [Daniel CHU](https://www.linkedin.com/in/daniel-chu-dc/) that joined us during last Hacktoberfest now the Java Script parser also validates the examples of server variables. From more details check [1.4](https://github.com/asyncapi/parser-js/releases/tag/v1.4.0) release.
-- Once again thanks to [Ludovic Dussart](https://twitter.com/ldussart) from Ineat Lab we have additional features, these time in HTML and Markdown template. Thanks to new **version** parameter you can overwrite the version of the application specified in the AsyncAPI file under **info.version**. Useful in CI/CD when your service version is not maintained in the #AsyncAPI file but pom.xml or package.json
-- Thanks to [Mike Ralphson](https://twitter.com/PermittedSoc) we have a new `frontMatter` parameter in the Markdown template. It let's you specify during generation an external file with a custom front-matter that should be included in generated Markdown. Very useful for static site generators users.
+- Thanks to the support of [Daniel CHU](https://www.linkedin.com/in/daniel-chu-dc/) that joined us during last Hacktoberfest now the JavaScript parser also validates the examples of server variables. For more details, check [1.4](https://github.com/asyncapi/parser-js/releases/tag/v1.4.0) release.
+- Once again, thanks to [Ludovic Dussart](https://twitter.com/ldussart) from Ineat Lab, we have additional features, these time in HTML and Markdown template. Thanks to the new **version** parameter, you can overwrite the version of the application specified in the AsyncAPI file under **info.version**. Useful in CI/CD when your service version is not maintained in the #AsyncAPI file but pom.xml or package.json
+- Thanks to [Mike Ralphson](https://twitter.com/PermittedSoc), we have a new **frontMatter** parameter in the Markdown template. It lets you specify an external file with a custom front-matter that should be included in generated Markdown during generation. Very useful for static site generators' users.
+
   ```bash
   # 1. Get AsyncAPI Generator
   npm install -g @asyncapi/generator
@@ -161,18 +171,18 @@ We are very noisy :sweat_smile:
   cat output/asyncapi.md
   ```
 - [Maciej Urbanczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/) and [I](https://twitter.com/derberq) (I mean me :smiley:) pushed some features to the AsyncAPI Generator:
-  - It supports latest Node.js 15 and npm 7
-  - You can now install generator templates globally. For more details read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
-  - It is now much easier to generate multiple files using new React render engine
+  - It supports the latest Node.js 15 and npm 7
+  - You can now install generator templates globally. For more details, read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
+  - It is now much easier to generate multiple files using the new React render engine
   - You can now use TypeScript in all parts of your generator templates
 
-  Check out all the [releases](https://github.com/asyncapi/generator/releases)
+Check out all the [releases](https://github.com/asyncapi/generator/releases)
 
 ## Good learning resources
 
 - Read this important [10 FAQs About Event-Driven APIs](https://duckster.medium.com/10-faqs-about-event-driven-apis-50ee9c94bbb8) from [Dakshitha Ratnayake](https://twitter.com/techieducky)
 - Great summary from Nordic APIs and [Vyom Srivastava](https://www.linkedin.com/in/vyomsrivastava/) on [8+ AsyncAPI Documentation Generators](https://nordicapis.com/8-asyncapi-documentation-generators/)
-- Fran Mendez was a part of Postman's live stream. Learn how to get from zero to AsyncAPI in just about 1h 30min. I hope it can be done faster and Fran was just having to much small talk with Kevin and Kin :sweat_smile:
+- Fran Mendez was a part of Postman's live stream. Learn how to get from zero to AsyncAPI in just about 1h 30min. I hope it can be done faster, and Fran was just having too much small talk with Kevin and Kin :sweat_smile:
 <YouTube id="g2pqCIhXQ3k" />
 
 > Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="/s/photos/traffic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
