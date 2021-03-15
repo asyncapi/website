@@ -1,6 +1,6 @@
 ---
 title: February 2021 at AsyncAPI
-date: 2021-02-11T06:00:00+01:00
+date: 2021-03-16T06:00:00+01:00
 type: Communication
 tags:
   - status
@@ -16,7 +16,7 @@ featured: true
 
 > Read [January 2021 at AsyncAPI](/blog/january-2021-at-asyncapi) for the update from January.
 
-I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. I think people do have other things to do than following AsyncAPI only :sweat_smile: Life in open-source runs slower, at least when you look at it from the outside. I have an impression more people pay attention to the status when it is once a month. I wonder what your view is on that.
+I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. I think people do have other things to do than following AsyncAPI only :sweat_smile: Life in open-source runs slower, at least when you look at it from the outside. I have an impression, that more people pay attention to the status when it is once a month. I wonder what your view is on that.
 
 ## Open governance model aka charter ready for the review
 
@@ -51,7 +51,7 @@ Let us know what you think in the GitHub issues section. Thank you, [Jacob Posto
 
 ### TypeScript and NATS
 
-[Jonas Lagoni](https://github.com/jonaslagoni/) regularly extends and polishes (the TypeScript template for NATS](https://github.com/asyncapi/ts-nats-template). It reached 0.3 release and is the first template that is already using a new AsyncAPI SDK for data types generation. Please go and check it out.
+[Jonas Lagoni](https://github.com/jonaslagoni/) regularly extends and polishes [the TypeScript template for NATS](https://github.com/asyncapi/ts-nats-template). It reached 0.3 release and is the first template that is already using a new AsyncAPI SDK for data types generation. Please go and check it out.
 
 ## AsyncAPI CLI to rule them all
 
@@ -173,8 +173,8 @@ We are very noisy :sweat_smile:
 - [Maciej Urbanczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/) and [I](https://twitter.com/derberq) (I mean me :smiley:) pushed some features to the AsyncAPI Generator:
   - It supports the latest Node.js 15 and npm 7
   - You can now install generator templates globally. For more details, read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
-  - It is now much easier to generate multiple files using the new React render engine
-  - You can now use TypeScript in all parts of your generator templates
+  - It is now much easier to generate multiple files using the new React render engine. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#react) or have a look at it [here](https://github.com/asyncapi/template-for-generator-templates/blob/master/template/schemas/schema.js#L10)
+  - Some parts of templates can be written in TypeScript. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#typescript-support). We still cannot use TS in main template code. For more details read [this](https://github.com/asyncapi/generator-react-sdk/issues/3).
 
 Check out all the [releases](https://github.com/asyncapi/generator/releases)
 
