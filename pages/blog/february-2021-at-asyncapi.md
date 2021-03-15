@@ -34,7 +34,7 @@ We had some significant traffic in the area of code generation templates in Febr
 
 ### PHP
 
-[Emiliano Zublena](https://twitter.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with a direct GitHub link like:
+[Emiliano Zublena](https://github.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with a direct GitHub link like:
 
 ```bash
 ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o output`
@@ -42,7 +42,7 @@ ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o 
 
 ### Go
 
-We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation was there. [Emiliano Zublena](https://twitter.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
+We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation was there. [Emiliano Zublena](https://github.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
 
 ```bash
 ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output
