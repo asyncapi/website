@@ -99,28 +99,24 @@ const schema = {
   properties: {
     street_name:    { type: "string" },
     city:           { type: "string", description: "City description" },
-    state:          { type: "string" },
     house_number:   { type: "number" },
     marriage:       { type: "boolean", description: "Status if marriage live in given house" },
     pet_names:      { type: "array", items: { type: "string" } },
-    state:          { type: "string", enum: ["Texas", "Alabama", "California", "other"] },
   },
   required: ["street_name", "city", "state", "house_number", "state"],
 };
 
 const interfaceModels = await generator.generate(schema);
 
-// generated interfaceModels[0] should have the following shape:
+// generated interfaceModels[0].result should have the following shape:
 export interface Address {
   streetName: string;
   // City description
   city: string;
-  state: string;
   houseNumber: number;
   // Status if marriage live in given house
   marriage?: boolean;
   petNames?: Array<string>;
-  state?: "Texas" | "Alabama" | "California" | "other";
 }
 ```
 
