@@ -10,19 +10,19 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: We are getting close to joining a foundation. We started few new initiatives. We are busy. In other words, this is a good time to join us and drive things together
+excerpt: We are getting close to joining a foundation. We started a few new initiatives. We are busy. In other words, this is a good time to join us and drive things together.
 featured: true
 ---
 
 > Read [January 2021 at AsyncAPI](/blog/january-2021-at-asyncapi) for the update from January.
 
-I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. I think people do have other things to do than follow AsyncAPI only :sweat_smile:. Life in open-source runs slower, at least when you look at it from the outside. I have an impression more people pay attention to the status when it is once a month. I wonder what your view is on that.
+I enjoy monthly status over weekly one. It is not that I'm just happy I have more time for other things. Content size did not change. I think people do have other things to do than following AsyncAPI only :sweat_smile: Life in open-source runs slower, at least when you look at it from the outside. I have an impression more people pay attention to the status when it is once a month. I wonder what your view is on that.
 
 ## Open governance model aka charter ready for the review
 
 Is an "open governance model" the same as a "charter"? No. Charter is a boring legal document that describes many rules that need to be followed when being under a foundation. One of the things the charter tackles is the general rules on how the project will operate and be governed. 
 
-I think more important to write here is that the charter is here. It finally arrived and is ready for review. In the special blog post, we also explained what governance model we envision for the AsyncAPI Initiative in more human-friendly words. This content was released and communicated on Tuesday, 9th of March, and we will wait for your feedback until 23rd of March. It looks like we will kick off April under the umbrella of the foundation :crossed_fingers:
+I think the most important thing to write here is that the AsyncAPI charter is a reality. It finally arrived and is ready for review. In the special blog post, we also explained what governance model we envision for the AsyncAPI Initiative in more human-friendly words. This content was released and communicated on Tuesday, 9th of March, and we will wait for your feedback until the 23rd of March. It looks like we will kick off April under the umbrella of the foundation :crossed_fingers:
 
 Please take your time to:
 - Read [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation) to understand our motivation
@@ -34,7 +34,7 @@ We had some significant traffic in the area of code generation templates in Febr
 
 ### PHP
 
-[Emiliano Zublena](https://twitter.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with direct GitHub link like:
+[Emiliano Zublena](https://twitter.com/emilianozublena) joined the AsyncAPI community big time by starting with donating [a new template for PHP](https://github.com/asyncapi/asyncapi-php-template). It is not yet released under **@asyncapi** scope on npm, but you can already play with it by using the AsyncAPI Generator with a direct GitHub link like:
 
 ```bash
 ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o output`
@@ -42,12 +42,12 @@ ag https://bit.ly/asyncapi https://github.com/asyncapi/asyncapi-php-template -o 
 
 ### Go
 
-We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation is there. [Emiliano Zublena](https://twitter.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
+We merged the initial pull request to the [Go template](https://github.com/asyncapi/go-template). The initial contributor was not able to continue working on the template, but the foundation was there. [Emiliano Zublena](https://twitter.com/emilianozublena) and [Takumi Sueda](https://github.com/puhitaku) will try to help to drive forward template development. This template is not yet released as we need to get some feedback from the community first. Give it a try with:
 
 ```bash
 ag https://bit.ly/asyncapi https://github.com/asyncapi/go-template -o output
 ```
-Let us know what you think in the GitHub issues section. Thank you [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
+Let us know what you think in the GitHub issues section. Thank you, [Jacob Poston](https://github.com/jposton96a) for your initial hard work on the template!
 
 ### TypeScript and NATS
 
@@ -55,9 +55,9 @@ Let us know what you think in the GitHub issues section. Thank you [Jacob Poston
 
 ## AsyncAPI CLI to rule them all
 
-We always wanted to have a single CLI to do all the things related to AsyncAPI. In other words, one CLI to validate, generate, edit, create and others. So far, we had CLI for the AsyncAPI generator, and recently one of the community members, [Jorge Aguiar Martín](https://twitter.com/jotamusik), referred us to his CLI for AsyncAPI validation.
+We always wanted to have a single CLI to do all the things related to AsyncAPI. In other words, one CLI to validate, generate, edit, create, and others. So far, we had a CLI for the AsyncAPI generator, and recently one of our community members, [Jorge Aguiar Martín](https://twitter.com/jotamusik), referred us to his CLI for AsyncAPI validation.
 
-We all agreed that instead of working separately on different CLIs, it is better to work together on one CLI that everyone will love. The project kicked off! Repository created, and we already discuss details on how the CLI interface should look like. [Join](https://github.com/asyncapi/cli/issues/1) the discussion.
+We all agreed that instead of working separately on different CLIs, it is better to work together on one CLI that everyone will love. The project kicked off! A repository has been created and we already discuss details on how the CLI interface should look like. [Join](https://github.com/asyncapi/cli/issues/1) the discussion.
 
 ## Event gateway
 
@@ -149,9 +149,9 @@ We are very noisy :sweat_smile:
 
 ## Other features
 
-- Thanks to the support of [Daniel CHU](https://www.linkedin.com/in/daniel-chu-dc/) that joined us during last Hacktoberfest now the JavaScript parser also validates the examples of server variables. For more details, check [1.4](https://github.com/asyncapi/parser-js/releases/tag/v1.4.0) release.
-- Once again, thanks to [Ludovic Dussart](https://twitter.com/ldussart) from Ineat Lab, we have additional features, these time in HTML and Markdown template. Thanks to the new **version** parameter, you can overwrite the version of the application specified in the AsyncAPI file under **info.version**. Useful in CI/CD when your service version is not maintained in the #AsyncAPI file but pom.xml or package.json
-- Thanks to [Mike Ralphson](https://twitter.com/PermittedSoc), we have a new **frontMatter** parameter in the Markdown template. It lets you specify an external file with a custom front-matter that should be included in generated Markdown during generation. Very useful for static site generators' users.
+- Thanks to the support of [Daniel CHU](https://www.linkedin.com/in/daniel-chu-dc/) —who joined us during last Hacktoberfest— now the JavaScript parser also validates the examples of server variables. For more details, check out the [1.4](https://github.com/asyncapi/parser-js/releases/tag/v1.4.0) release.
+- Once again, thanks to [Ludovic Dussart](https://twitter.com/ldussart) from Ineat Lab, we have additional features, these time in HTML and Markdown template. Thanks to the new **version** parameter, you can overwrite the version of the application specified in the AsyncAPI file under **info.version**. Useful in CI/CD when your service version is not maintained in the AsyncAPI file but pom.xml or package.json
+- Thanks to [Mike Ralphson](https://twitter.com/PermittedSoc), we have a new **frontMatter** parameter in the Markdown template. It lets you specify an external file with a custom front-matter that should be included in the resulting Markdown during generation. Very useful for static site generators' users.
 
   ```bash
   # 1. Get AsyncAPI Generator
