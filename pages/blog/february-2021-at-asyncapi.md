@@ -69,7 +69,7 @@ Share your use cases. Please help us understand what you need. Sergio prepared a
 
 ## Domain model generation
 
-As mentioned in [the blog post about January](/blog/january-2021-at-asyncapi#next-major-feature-is-data-model-generation), February was all about data model generation that we wanted to use to speed up templates development for code generation. The library is [ready](https://github.com/asyncapi/generator-model-sdk), and we started trying it out. You can try it out too, and you do not even need our AsyncAPI Generator or AsyncAPI at all. It is a generic library and you only need JSON Schema Draft 7.
+As mentioned in [the blog post about January](/blog/january-2021-at-asyncapi#next-major-feature-is-data-model-generation), February was all about data model generation that we wanted to use to speed up templates development for code generation. The library is [ready](https://github.com/asyncapi/generator-model-sdk), and we started trying it out. You can try it out too, and you do not even need our AsyncAPI Generator. It is a generic library and you only need a JSON Schema Draft 7 or an AsyncAPI document.
 
 ```js
 import { TypeScriptGenerator } from '@asyncapi/generator-model-sdk';
