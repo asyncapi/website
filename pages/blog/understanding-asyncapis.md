@@ -316,6 +316,6 @@ Finally, the AsyncAPI community is growing so fast. Your contribution to the com
 
 I hope you enjoyed this post.
 
-> Originally published at [https://medium.com/event-driven-utopia](https://medium.com/event-driven-utopia/understanding-asyncapis-with-a-practical-example-ee2b4be221d8
+> Originally published at [https://medium.com/event-driven-utopia](https://medium.com/event-driven-utopia/understanding-asyncapis-with-a-practical-example-ee2b4be221d8)
 
 > Cover image by <a href="https://pixabay.com/users/silviarita-3142410/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">silviarita</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">Pixabay</a>
