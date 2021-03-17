@@ -9,6 +9,7 @@ import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
+import AuthorAvatars from '../AuthorAvatars'
 
 export default function BlogLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -32,16 +33,7 @@ export default function BlogLayout({ post, children }) {
             <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             <div className="mt-6 flex items-center">
               <div className="relative flex-shrink-0">
-                {
-                  post.authors && post.authors.map((author, index) => (
-                    <img
-                      key={index}
-                      title={author.name}
-                      className="mr-1 -mt-1 h-10 w-10 border-2 border-white rounded-full object-cover hover:z-50"
-                      src={author.photo}
-                    />
-                  ))
-                }
+                <AuthorAvatars authors={post.authors} />
               </div>
               <div className="ml-3">
                 <p className="text-sm leading-5 font-medium text-gray-900">

@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: 'Fuck you COVID-19, AsyncAPI Community is stronger than you think. See the growth of AsyncAPI in 2020 in hard numbers. How we compare to 2019?'
-featured: true
 ---
 
 :fu: COVID-19

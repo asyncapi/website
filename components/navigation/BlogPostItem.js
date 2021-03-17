@@ -1,5 +1,6 @@
 import moment from 'moment'
 import TextTruncate from 'react-text-truncate'
+import AuthorAvatars from '../AuthorAvatars'
 
 export default function BlogPostItem({ post, className = '' }) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800']
@@ -42,16 +43,7 @@ export default function BlogPostItem({ post, className = '' }) {
         </div>
         <div className="mt-6 flex items-center">
           <div className="relative flex-shrink-0">
-            {
-              post.authors && post.authors.map((author, index) => (
-                <img
-                  key={index}
-                  title={author.name}
-                  className={`${index > 0 ? `absolute left-${index*7} top-0` : `relative mr-${(post.authors.length-1)*7}`} z-${(post.authors.length-1-index)*10} h-10 w-10 border-2 border-white rounded-full object-cover hover:z-50`}
-                  src={author.photo}
-                />
-              ))
-            }
+            <AuthorAvatars authors={post.authors} />
           </div>
           <div className="ml-3">
             <p className="text-sm leading-5 font-medium text-gray-900">

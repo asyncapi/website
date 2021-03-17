@@ -4,3 +4,5 @@
 node_modules
 .next
 config/posts.json
+.env.local
+roadmap.json

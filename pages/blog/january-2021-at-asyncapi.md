@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: 'I always thought January is a month of a slow start of a new year. I could not have been more wrong. No time to rest, no slow down here.'
-featured: true
 ---
 
 A new year always comes with New Year's resolution, right? Folks from [Bump.sh](https://bump.sh/) came up with the best idea you could get this year. Don't you dare to fail this time :smiley:
@@ -27,7 +26,7 @@ A new year always comes with New Year's resolution, right? Folks from [Bump.sh](
 
 ## Foundation and open governance model
 
-As part of recently [announced](https://www.asyncapi.com/blog/asyncapi-partners-with-postman) partnership with Postman, most core AsyncAPI maintainers joined Postman as employees. This change made it clear that now it is even more important what we planned in the past.
+As part of recently [announced](/blog/asyncapi-partners-with-postman) partnership with Postman, most core AsyncAPI maintainers joined Postman as employees. This change made it clear that now it is even more important what we planned in the past.
 
 AsyncAPI must go into a "neutral ground" aka independent foundation that, among other things, will take over the AsyncAPI intellectual property. 
 
@@ -155,4 +154,4 @@ This month we want to apply for [Google Summer of Code](https://summerofcode.wit
 
 That was an exhausting month, but looking at what is happening around the project, you feel it was worth it. Let us see what February brings.
 
-> Photo by <a href="https://unsplash.com/@nhoizey?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nicolas Hoizey</a> on <a href="https://unsplash.com/s/photos/start?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a><
+> Photo by <a href="https://unsplash.com/@nhoizey?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nicolas Hoizey</a> on <a href="https://unsplash.com/s/photos/start?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>

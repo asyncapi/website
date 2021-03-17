@@ -3,7 +3,8 @@ export function registerClickAway(callback) {
   document.addEventListener("click", unregisterClickAway)
 
   document.querySelectorAll('iframe').forEach(iframe => {
-    if (iframe.attributes.src.value.startsWith('/') && !iframe.attributes.src.value.startsWith('//')) {
+    const src = iframe.attributes.src
+    if (src && src.value.startsWith('/') && !src.value.startsWith('//')) {
       iframe.contentWindow.document.removeEventListener("click", unregisterClickAway)
       iframe.contentWindow.document.addEventListener("click", unregisterClickAway)
     }
@@ -12,7 +13,8 @@ export function registerClickAway(callback) {
   function unregisterClickAway() {
     document.removeEventListener("click", unregisterClickAway)
     document.querySelectorAll('iframe').forEach(iframe => {
-      if (iframe.attributes.src.value.startsWith('/') && !iframe.attributes.src.value.startsWith('//')) {
+      const src = iframe.attributes.src
+      if (src && src.value.startsWith('/') && !src.value.startsWith('//')) {
         iframe.contentWindow.document.removeEventListener("click", unregisterClickAway)
       }
     })
