@@ -10,6 +10,9 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 /docs/specifications/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
 /docs/specifications/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
 
+# Old React Playground
+/asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
+
 # Slack
 /slack-invite https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLTM5NTlkYzFmZDQyMGVkNzVkOTRhMGU2N2VmMWRlOTdkNWE0YzdjMGQ2NzRlOWU1NGJkYjUyZDEzMzM3ZGYzYzM 302!
 
