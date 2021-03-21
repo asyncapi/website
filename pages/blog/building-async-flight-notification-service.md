@@ -1,6 +1,6 @@
 ---
 title: "Building an asynchronous flight notification service using AsyncAPI"
-date: 2021-03-03T19:00:00+01:00
+date: 2021-03-19T19:00:00+01:00
 type: Engineering
 featured: true
 tags:
@@ -87,45 +87,13 @@ properties:
     example: "2020-10-20 19:15" 
   gate: 
     type: string 
-    de*scription: departure gate 
+    description: departure gate
     example: "2D" 
   terminal: 
     type: string 
     description: airport terminal 
     example: "4" 
 ```
-
-Each message is emitted on a different channel:
-
-```yaml
-channels: 
-  flight/update: 
-    description: | 
-      Provides updates from a subscribed flight 
-    subscribe: 
-      summary: Inform about the status of a subscribed flight 
-      message: 
-        $ref: '#/components/messages/flightStatus' 
-
-  flight/queue: 
-    description: | 
-      Queues a flight in order to retrieve status 
-    publish: 
-      summary: Subscribe about the status of a given flight 
-      message: 
-        $ref: '#/components/messages/flightQueue' 
-
-components: 
-  messages: 
-    flightStatus: 
-      $ref: '../common/messages/flight_status.yaml' 
-    flightQueue: 
-      $ref: '../common/messages/flight_queue.yaml' 
-```
- 
-The `flight/queue` channel queues flights for monitoring by the Monitor service. When the user provides their flight information, the Subscriber service emits a `flightQueue` message. The Notifier service receives the message and adds the payload to the list of flights to monitor.
- 
-When the Monitor service detects a change in flight status (e.g. a change in boarding gate), it emits a `flightStatus` message to inform subscribers. The Notifier service, which is subscribed to the changes, notifies the end-user by SMS.
 
 Messages are shared among services so it’s important to correctly organize the YAML definition files under a common folder. In our case, we call it common:
 
@@ -138,7 +106,46 @@ Messages are shared among services so it’s important to correctly organize the
                 segment.yaml
                 user.yaml
 
-Each service will contain an `asyncapi.yaml` file with the description of the service and server and channel information.
+Services communicate through channels using the publish/subscribe pattern. Our architecture uses two different channels:
+
+- `flight/queue` to manage and queue the flights to be monitored.
+- `flight/update` to manage the notifications about flight updates.
+
+Each service contains an `asyncapi.yaml` file with the description of the service and server and channel information. Let's take a look to the final `asyncapi.yaml` file of the Subscriber service to see how the messages and channels are organized:
+
+```yaml
+asyncapi: '2.0.0'
+info:
+  title: Flight Subscriber Service
+  version: '1.0.0'
+  description: |
+     Allows users to subscribe events from a given flight
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+servers:
+  development:
+    url: mqtt://localhost:1883
+    protocol: mqtt
+channels:
+  flight/queue:
+    description: |
+      queue flight in order to retrieve status
+    subscribe:
+      summary: Inform about the status of a subscribed flight
+      message:
+        $ref: '#/components/messages/flightQueue'
+components:
+  messages:
+    flightQueue:
+      $ref: '../common/messages/flight_queue.yaml'
+```
+
+When the user provides their flight information, the Subscriber service emits a `flightQueue` message which will be receive by the Monitor service. The Notifier service receives the message and adds the payload to the list of flights to monitor.
+
+Once the Monitor service detects a change in flight status (e.g. a change in boarding gate), it emits a `flightStatus` message to inform subscribers. The Notifier service, which is subscribed to the changes, notifies the end-user by SMS.
+
+The AsyncAPI specification files for the [Monitor Service](https://github.com/amadeus4dev/amadeus-async-flight-status/blob/main/monitor/asyncapi.yaml) and [Notifier Service](https://github.com/amadeus4dev/amadeus-async-flight-status/blob/main/notifier/asyncapi.yaml) can be found on GitHub.
 
 ## Monitoring flight status information 
 
@@ -225,12 +232,13 @@ message = client.messages.create(body=msg,
 
 ## Running the service 
 
-The prototype runs on four Docker containers – one per service plus another for the [MQTT broker](https://github.com/toke/docker-mosquitto) based on the Docker image maintained by the Eclipse Mosquitto project.
+The [prototype](https://github.com/amadeus4dev/amadeus-async-flight-status) runs on four Docker containers – one per service plus another for the [MQTT broker](https://github.com/toke/docker-mosquitto) based on the Docker image maintained by the Eclipse Mosquitto project.
 
 To avoid manually starting each service (plus the dependency of starting the broker first), we will use [Docker compose](https://docs.docker.com/compose/), a tool to run applications composed of multiple containers using a YAML file to define each container as well as their dependencies.
 
 We start the service by executing:
 
+        docker network create my-network
         docker-compose up --remove-orphans 
 
 In the browser, we go to http://localhost:5000 and enter information about the flight we want to monitor. The service will send us an alert once the flight information is updated: 
