@@ -40,7 +40,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         ) }
         
         {/* <!-- Static sidebar for desktop --> */}
-        <div className="hidden md:flex md:flex-shrink-0">
+        <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
             <div className="flex-1 flex flex-col pt-5 md:overflow-y-auto md:sticky md:top-0 md:max-h-screen">
               <ClickableLogo logoClassName="h-8 w-auto ml-4 mt-0.5" />
@@ -57,17 +57,17 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-0 flex-1 max-w-full md:max-w-(screen-16)">
-          <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 md:hidden">
-            <NavBar className="flex px-4 w-full md:hidden" />
+        <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
+          <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden">
+            <NavBar className="flex px-4 w-full lg:hidden" />
           </div>
-          <div className="hidden md:flex md:border-b md:border-gray-200">
+          <div className="hidden lg:flex lg:border-b lg:border-gray-200">
             <NavBar hideLogo />
           </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
             <AnnouncementHero className="text-center mx-4" small={true} />
             {!showMenu && (
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <button onClick={() => setShowMenu(true)} className="flex text-gray-500 px-4 sm:px-6 md:px-8 hover:text-gray-900 focus:outline-none" aria-label="Open sidebar">
                   <span>{post.sectionTitle}</span>
                   <ArrowRight className="pl-1 w-5 h-5 transform rotate-90" />
@@ -82,7 +82,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </p>
             </div>
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} className="bg-blue-100 mt-4 p-4 sticky top-0 xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:overflow-y-auto xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} className="bg-blue-100 mt-4 p-4 sticky top-0 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:max-h-(screen-16) xl:w-72" />
               <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
                 <article className="mb-32">
                   <Head
