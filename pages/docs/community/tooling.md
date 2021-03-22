@@ -19,11 +19,11 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Java AsyncAPI](https://github.com/Pakisan/java-asyncapi) | This is a code-first tool for AsyncAPI specification | Java, Kotlin
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
 | [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
-| [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client or documentation | Scala
+| [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation | Scala
 
 # Code Generators
 
-The following is a list of tools that generate code from an AsyncAPI document, and not the other way around.
+The following is a list of tools that generate code from an AsyncAPI document and not the other way around.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
@@ -39,6 +39,15 @@ The following is a list of tools that do not yet belong to any specific category
 | :------------- | :------------- | :----------------- |
 | [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | Javascript
 | [Converter Go](https://github.com/asyncapi/converter-go) | Converts old versions of AsyncAPI files into the latest version. Thanks to [@Kyma team](https://kyma-project.io/). | Go
+
+# Directories {#directories}
+
+The following is a list of directories that index public AsyncAPI documents.
+
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
+| [AsyncAPI-Directory by APIs.guru](https://apis.guru/asyncapi-directory/) | Directory of asynchronous API specifications in AsyncAPI format. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | N/A
+| [API Tracker - AsyncAPI specs](https://apitracker.io/specifications/asyncapi) | Explore APIs and companies with public AsyncAPI specifications. | N/A
 
 # Documentation Generators
 
@@ -67,15 +76,15 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 | :------------- | :------------- |
 | [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
-| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
+| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
 
 # Mocking and Testing {#mocking}
 
-Tools that take specification documents as input, then publish fake messages to broker destinations for simulation purpose. May also check that publisher messages are compliant with schemas.
+Tools that take specification documents as input, then publish fake messages to broker destinations for simulation purposes. May also check that publisher messages are compliant with schemas.
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
-| [Microcks](https://microcks.io) | Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples or Postman collections into ready to use mocks. Use examples to simulate and validate received messages according schema elements. | Kubernetes-native, Self-hosted / SaaS, Open Source |
+| [Microcks](https://microcks.io) | Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements. | Kubernetes-native, Self-hosted / SaaS, Open Source |
 
 # Validators {#validators}
 
@@ -85,7 +94,7 @@ The following is a list of tools that validate AsyncAPI documents.
 | :------------- | :------------- | :----------------- |
 | [AsyncAPI Parser](https://github.com/asyncapi/parser-js) | It parses and validates AsyncAPI documents. | Javascript
 | [Check-API](https://github.com/Mermade/check_api) | It allows you to validate a local file or remote URL with a single command-line or programmatic invocation. It returns an exitCode of 0 on success and 1 on failure, making it suitable for use in Continuous Integration environments. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | Javascript
-| [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
+| [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate the schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
-| [Spectral](https://github.com/stoplightio/spectral) | A command line linter for AsyncAPI & OpenAPI documents. | Javascript
+| [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
