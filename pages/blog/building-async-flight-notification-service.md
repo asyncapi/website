@@ -151,7 +151,10 @@ The AsyncAPI specification files for the [Monitor Service](https://github.com/am
 
 The Monitor service checks the status of the user’s flight by calling the On-Demand Flight Status API, which provides real-time flight schedule information like departure/arrival times, gate, or terminal. A simple cURL request to the API shows how the information is represented:
 
-        curl https://test.api.amadeus.com/v2/schedule/flights?carrierCode=KL&flightNumber=1772&scheduledDepartureDate=2021-02-18 -H 'Authorization: Bearer dzh1cpJiFgAlE7iZS'
+> To get your own authorization token, follow [this](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335) guide.
+
+```sh
+curl https://test.api.amadeus.com/v2/schedule/flights?carrierCode=KL&flightNumber=1772scheduledDepartureDate=2021-02-18 -H 'Authorization: Bearer dzh1cpJiFgAlE7iZS'
 
 In the JSON response, the schedule data of this example has one single segment (a leg of an itinerary, in airline jargon) with several `flightPoints`:
 
@@ -254,4 +257,3 @@ However, developing this prototype lets us learn how to specify and document eve
 You can find the complete source code of the prototype on the GitHub [async-flight-status repository](https://github.com/amadeus4dev/amadeus-async-flight-status). Feel free to clone, modify and improve the implementation!
 
 Happy coding!
-
