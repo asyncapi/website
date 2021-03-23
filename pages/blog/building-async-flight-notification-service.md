@@ -67,7 +67,7 @@ properties:
         example: "2020-10-20" 
 ```
 
-A `flightStatus` message to notify about changes. When the service detects a change in flight status, it triggers a notification event to alert the user. The payload of the `flightStatus` message consists of the following structure:
+A `flightStatus` message to notify about changes. When the service detects a change in flight status, it triggers a notification event to alert the user. The payload of the `flightStatus` message consists of the following structure:
 
 - `flight` and `user` schemas (the same as in the `flightQueue` message) to identify the flight emitting the event and the user receiving the notification.
 
@@ -132,7 +132,7 @@ channels:
     description: |
       queue flight in order to retrieve status
     subscribe:
-      summary: Inform about the status of a subscribed flight
+      summary: Receive information about the flight that should be monitored for changes
       message:
         $ref: '#/components/messages/flightQueue'
 components:
@@ -141,9 +141,9 @@ components:
       $ref: '../common/messages/flight_queue.yaml'
 ```
 
-When the user provides their flight information, the Subscriber service emits a `flightQueue` message which will be receive by the Monitor service. The Notifier service receives the message and adds the payload to the list of flights to monitor.
+When the user provides their flight information, the Subscriber service emits a `flightQueue` message that will be received by the Monitor service from the `flight/queue` channel. The Notifier service also receives the message and adds the payload to the list of flights to monitor.
 
-Once the Monitor service detects a change in flight status (e.g. a change in boarding gate), it emits a `flightStatus` message to inform subscribers. The Notifier service, which is subscribed to the changes, notifies the end-user by SMS.
+Once the Monitor service detects a change in flight status (e.g. a change in boarding gate), it emits a `flightStatus` message to inform subscribers. The Notifier service, which is subscribed to the changes on the `flight/update` channel, notifies the end-user by SMS.
 
 The AsyncAPI specification files for the [Monitor Service](https://github.com/amadeus4dev/amadeus-async-flight-status/blob/main/monitor/asyncapi.yaml) and [Notifier Service](https://github.com/amadeus4dev/amadeus-async-flight-status/blob/main/notifier/asyncapi.yaml) can be found on GitHub.
 
@@ -151,7 +151,7 @@ The AsyncAPI specification files for the [Monitor Service](https://github.com/am
 
 The Monitor service checks the status of the user’s flight by calling the On-Demand Flight Status API, which provides real-time flight schedule information like departure/arrival times, gate, or terminal. A simple cURL request to the API shows how the information is represented:
 
-        curl https://test.api.amadeus.com/v2/schedule/flights?carrierCode=KL&flightNumber=1772&scheduledDepartureDate=2021-02-18  
+        curl https://test.api.amadeus.com/v2/schedule/flights?carrierCode=KL&flightNumber=1772&scheduledDepartureDate=2021-02-18 -H 'Authorization: Bearer dzh1cpJiFgAlE7iZS'
 
 In the JSON response, the schedule data of this example has one single segment (a leg of an itinerary, in airline jargon) with several `flightPoints`:
 
@@ -208,9 +208,9 @@ To solve this, we put the Monitor service on a separate thread. Every five minut
 
 ## Subscribing to flight updates 
 
-The Subscriber service  lets users subscribe to the notifications. We built a simple HTTP server with Flask to let the user enter their name, phone number and flight information.
+The Subscriber service  lets users subscribe to the notifications. We built a simple HTTP server with Flask to let the user enter their name, phone number and flight information.
 
-Once it receives this information, the Subscriber emits a `flightQueue` message with that information in the payload to the broker, so that it can be received by the Monitor.
+Once the Subscriber service gets a new user subscription, it emits a `flightQueue` message with that information in the payload to the broker, so that it can be received by the Monitor.
 
 ## Sending notifications to users 
 
