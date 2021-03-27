@@ -80,7 +80,7 @@ export default function BlogLayout({ post, children }) {
                 }
               `}</style>
             </HtmlHead>
-            <img src={post.cover} alt="Post cover image" className="mt-6 mb-6 w-full" />
+            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className="mt-6 mb-6 w-full" />
             {children}
           </article>
         </main>
