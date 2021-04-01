@@ -152,6 +152,7 @@ channels:
       summary: Inform about environmental lighting conditions for a particular streetlight.
       operationId: onLightMeasured
       message:
+        name: LightMeasured
         payload:
           type: object
           properties:
