@@ -1,20 +1,22 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import NavBar from "../../components/navigation/NavBar"
 import Container from "../../components/layout/Container"
 import JobsContext from "../../context/JobsContext"
 import JobPostItem from "../../components/navigation/JobPostItem"
 import Footer from "../../components/Footer"
 import Head from "../../components/Head"
+import Filter from "../../components/navigation/Filter"
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
 
 // eslint-disable-next-line react/prop-types
 export default function JobsIndexPage({template}) {
   const { navItems } = useContext(JobsContext)
-  const posts = navItems.sort((i1, i2) => {
+  console.log(navItems);
+  const [posts, setPosts] = useState(navItems.sort((i1, i2) => {
     const i1Date = new Date(i1.date)
     const i2Date = new Date(i2.date)
     return i2Date - i1Date
-  })
+  }))
 
   return (
     <div>
@@ -43,6 +45,9 @@ export default function JobsIndexPage({template}) {
             </p>
           </div>
           <div className="mt-8 flex flex-col items-stretch sm:rounded-md">
+            <div className="mx-auto">
+            <Filter data={posts} />
+            </div>
             <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
             {
               posts.map((post, index) => (
