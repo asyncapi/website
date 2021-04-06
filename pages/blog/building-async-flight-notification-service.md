@@ -155,6 +155,7 @@ The Monitor service checks the status of the user’s flight by 
 
 ```sh
 curl https://test.api.amadeus.com/v2/schedule/flights?carrierCode=KL&flightNumber=1772scheduledDepartureDate=2021-02-18 -H 'Authorization: Bearer dzh1cpJiFgAlE7iZS'
+```
 
 In the JSON response, the schedule data of this example has one single segment (a leg of an itinerary, in airline jargon) with several `flightPoints`:
 
