@@ -7,9 +7,9 @@ import Footer from "../../components/Footer"
 import Head from "../../components/Head"
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
 
-export default function JobsIndexPage() {
+// eslint-disable-next-line react/prop-types
+export default function JobsIndexPage({template}) {
   const { navItems } = useContext(JobsContext)
-
   const posts = navItems.sort((i1, i2) => {
     const i1Date = new Date(i1.date)
     const i2Date = new Date(i2.date)
@@ -35,6 +35,12 @@ export default function JobsIndexPage() {
             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
               Want to work on a great open-source project with a lovely team and a vibrant community? Come work with us!
             </p>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+            <span role="img">💡</span> Want to post a job? All job posting must be AsyncAPI-related jobs. <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${template}`} target="_blank" rel="noreferrer">Get started now!</a>
+            </p>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">Do you want to discuss about your job posting?
+            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Get started here</a>
+            </p>
           </div>
           <div className="mt-8 flex flex-col items-stretch sm:rounded-md">
             <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
@@ -50,4 +56,22 @@ export default function JobsIndexPage() {
       <Footer />
     </div>
   )
+}
+
+// eslint-disable-next-line no-unused-vars
+export async function getStaticProps(context) {
+  // eslint-disable-next-line no-undef
+  const fs = require('fs'); 
+  // eslint-disable-next-line no-undef
+  const process = require("process");
+  const template =`${process.cwd()}/pages/jobs/template/encoded_job_template.txt`;
+  const rawContent = fs.readFileSync(template, {
+    encoding: "utf-8",
+  });
+  return {
+    props: {
+      template: rawContent
+    }
+  }
+
 }
