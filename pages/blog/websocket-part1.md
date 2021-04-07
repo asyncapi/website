@@ -1,6 +1,6 @@
 ---
 title: WebSocket, Shrek, AsyncAPI - An Opinionated Intro
-date: 2021-04-01T06:00:00+01:00
+date: 2021-04-09T06:00:00+01:00
 type: Communication
 tags:
   - websocket
@@ -14,7 +14,7 @@ excerpt: Websocket is a protocol, an industry standard for building client appli
 featured: true
 ---
 
-It is a pretty subjective post. I'm gonna share my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
+It is a pretty subjective post. I share my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
 
 >  Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
 ― [Marcus Aurelius](https://www.politifact.com/factchecks/2019/sep/26/viral-image/no-marcus-aurelius-didnt-say-about-opinions-and-fa/)
@@ -29,9 +29,9 @@ So why are we even mention it in 2021?
 
 It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate, and it would not happen if not a strong support and push from all the big players. 
 
-Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for Websocket and HTTP/2 and tooling already adopts it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is not going anywhere.
+Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for Websocket and HTTP/2 and tooling already adopts it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is not going anywhere.
 
-Anyway, the future of Websocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the future of the protocol.
+Anyway, the future of Websocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the protocol's future.
 
 ## Websocket use case
 
@@ -39,11 +39,11 @@ Anyway, the future of Websocket has nothing to do with this post. This post is f
 - Do you like when a user interface updates without page refresh?
 - Do you like it when your client app knows there are updates available for display?
 
-It's what WebSocket is for. You establish a connection between client and server, a long-living connection. Through such a connection, client can send a stream of messages to the server, and this is possible the other way around at the same time.
+That is what WebSocket is for. You establish a connection between client and server, a long-living connection. Through such a connection, the client can send a stream of messages to the server, and this is possible the other way around at the same time.
 
 One could say: _I don't need WebSocket to achieve that. I could just set up a data pulling with REST API. Just ask the API every few seconds if there are updates._
 
-Sadly this is not a joke. Engineers do it. Some engineers just take shortcuts, mostly because deadlines hunt them.
+Sadly this is not a joke. Engineers do it. Some engineers just take shortcuts, mostly because deadlines hunt them down.
 
 HTTP pulling was presented very well in Shrek's famous _Are we there yet?_ scene.
 
@@ -60,10 +60,10 @@ Don't go that path. Do not perform unnecessary connections to your servers and c
 
 When building a WebSocket API on a server, you might have some additional needs:
 - Want to document the API for the team that writes a client app, Web UI, Desktop app, or Mobile app. 
-- Want to have a way to specify the format of the messages that the server understands, to validate them in the runtime.
+- Want to have a way to specify the format of the messages that the server supports to validate them in the runtime.
 - Want to generate a server or/and a client? If not for final production use, then for sure for prototyping and testing.
 
-These are just a few common needs. For WebSocket, you only establish a connection over HTTP protocol, and the rest goes over WS, so OpenAPI specification won't help you much here. WebSocket is one of the patterns in event-based systems. In the end, it is all about a stream of messages and asynchronous processing. Yes, it would be best if you had AsyncAPI :smiley:
+These are just a few common needs. For WebSocket, you only establish a connection over HTTP protocol, and the rest goes over WS, so OpenAPI specification won't help you much here. WebSocket is one of the patterns in event-based systems. In the end, it is all about a stream of messages and asynchronous processing. Yes, it would be best to use AsyncAPI :smiley:
 
 ## WebSocket described with AsyncAPI
 
@@ -74,9 +74,9 @@ When I google for some public WebSocket API to play with, I find mostly currency
 
 Currency trading is a topic I know nothing about :man_shrugging: but it feels interesting to explore more. Documentation of the 1st and 2nd API looks familiar from look&feel perspective. I think we can make a bet they are already using AsyncAPI, and Kraken most probably is still running on version 1. Let's release the Kraken then.
 
-> I'm sorry if you expected me to describe with AsyncAPI Shrek's interface. It would be fun, but only fun, and except of fun, I'd like also to teach you something.
+> I'm sorry if you expected me to describe with AsyncAPI Shrek's interface. It would be fun, but only fun, and I'd also like to teach you something.
 
-I'm gonna try to write an AsyncAPI document for Kraken API  after playing with the API and basing it on the [current documentation](https://docs.kraken.com/websockets/).
+I will write an AsyncAPI document for Kraken API after playing with the API and basing it on the [current documentation](https://docs.kraken.com/websockets/).
 
 ### Playing with WebSocket API
 
@@ -108,194 +108,30 @@ The best way to play with API is through CLI. Who didn't hear about **curl** in 
   {"event":"heartbeat"}
   ```
 
-  Boy, it is always such a fun to do it. Like seriously, I always have fun playing with APIs, any APIs. Just making this API "conversation". I hope nothing is wrong with me :sweat_smile:
+  Boy, it is always such fun to do it. Like seriously, I always have fun playing with APIs, any APIs. Just making this API "conversation". I hope nothing is wrong with me :sweat_smile:
 
   Now you know how to interact with the Kraken API. Now let's try to describe it using AsyncAPI.
 
 ### Describing API using AsyncAPI
 
-#### Basic information about the API
+I'll explain, in detail, how to describe Websocket API with AsyncAPI in another blog post that will be part of the series. Why? I don't want to make this post super lengthy and discourage others from reading it. Let us learn step by step. 
 
-Let me first provide some basic information that every good AsyncAPI file should have:
-- What AsyncAPI version you use?
-- What is the name of your API?
-- What version of the API you describe?
-- Do not underestimate the description. Optional != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read?
+For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Playground](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/53b8c1af10ce474a54c96f7dd15d9a6f18448504/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
 
-> In case you think using just one property to add overarching documentation for your API is very limiting, I agree with you :smiley: Join discussion [here](https://github.com/asyncapi/extensions-catalog/issues/11). I believe spec should have better support for docs, and we should first explore it with specification extensions.
-
-```yaml
-asyncapi: 2.0.0
-info:
-  title: Kraken Websockets API
-  version: '1.8'
-  description: |
-    WebSockets API offers real-time market data updates. WebSockets is a bidirectional protocol offering fastest real-time data, helping you build real-time applications. The public message types presented below do not require authentication. Private-data messages can be subscribed on a separate authenticated endpoint. 
-
-    ### General Considerations
-
-    - TLS with SNI (Server Name Indication) is required in order to establish a Kraken WebSockets API connection. See Cloudflare's [What is SNI?](https://www.cloudflare.com/learning/ssl/what-is-sni/) guide for more details.
-    - All messages sent and received via WebSockets are encoded in JSON format
-    - All decimal fields (including timestamps) are quoted to preserve precision.
-    - Timestamps should not be considered unique and not be considered as aliases for transaction IDs. Also, the granularity of timestamps is not representative of transaction rates.
-    - At least one private message should be subscribed to keep the authenticated client connection open.
-    - Please use REST API endpoint [AssetPairs](https://www.kraken.com/features/api#get-tradable-pairs) to fetch the list of pairs which can be subscribed via WebSockets API. For example, field 'wsname' gives the supported pairs name which can be used to subscribe.
-    - Cloudflare imposes a connection/re-connection rate limit (per IP address) of approximately 150 attempts per rolling 10 minutes. If this is exceeded, the IP is banned for 10 minutes.
-    - Recommended reconnection behaviour is to (1) attempt reconnection instantly up to a handful of times if the websocket is dropped randomly during normal operation but (2) after maintenance or extended downtime, attempt to reconnect no more quickly than once every 5 seconds. There is no advantage to reconnecting more rapidly after maintenance during cancel_only mode.
-```
-
-#### Provide server information
-
-Let me now describe how to connect to the API:
-- What is the URL of the server?
-- Is there any authorization in place?
-- What is the protocol requirement, is SSL connection required?
-
-An example of Kraken API is a great example of how different architecture can be and that there is never one way to design your architecture. It all depends on your requirements, the use cases that drive your product.
-
-##### Describing multiple servers
-
-Below you can notice two different servers. These are not, as you might think, production and development servers. Here you have a clear division between publicly available data and private-only data. In other words, users use two different servers, not channels, to talk to the API.
-
-```yaml
-servers:
-  public:
-    url: ws.kraken.com
-    protocol: wss
-    description: |
-      Public server available without authorization.
-      Once the socket is open you can subscribe to a public channel by sending a subscribe request message.
-  private:
-    url: ws-auth.kraken.com
-    protocol: wss
-    description: |
-      Private server that requires authorization.
-      Once the socket is open you can subscribe to private-data channels by sending an authenticated subscribe request message.
-```
-
-You can verify if above is true it by connecting to `ws.kraken.com` and trying to subscribe to one of the event streams that require a token: 
-```json
-{        "event": "subscribe",        "subscription":        {          "name": "ownTrades",          "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"        }      }
-```
-
-In response you get an error:
-```json
-{"errorMessage":"Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com","event":"subscriptionStatus","status":"error","subscription":{"name":"ownTrades","token":"WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"}}
-```
-
-> In documentation, they indicate also beta servers like `beta-ws.kraken.com`. It is hard to understand their purpose, so I did not put them in the AsyncAPI document. For me, beta means something new, some upgrades, and I would consider writing a separate AsyncAPI document.
-
-Is it reasonable to describe API that has two different production servers in one AsyncAPI? As usual, it depends, sorry.
-
-I believe you always need to ask ourselves a question first: `What do you need the AsyncAPI document for?`:
-- Is it only for documentation?
-- Is it fol docs, testing, mocking, and many other things?
-
-Why? 
-
-For documentation, you can "workaround" some AsyncAPI features if they do not support your use case or do not need to be specific. Check out, for example, what I had to do in section [Server security](#server-security).
-
-For validation or mocking the server, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to describe that the message can be published only to the **private** server?
-
-Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server `ws.kraken.com`. The only way to emit errors like _Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com_ is by writing the code that handles validation manually. You cannot generate that.
-
-Why?
-
-At the moment, in AsyncAPI, you don't have a way to "wire" a server with a message or an operation. Version 2.0 was created with the assumption that you have one server, and it's different versions per environment. It is impossible to model information that messages with the name **ownTrades** can only be sent to `ws-auth.kraken.com` server.
-
-Solution?
-
-Create two AsyncAPI documents. Treat those two servers as separate services that share messages and schemas. Use **$ref** feature to cross-reference schemas.
-
-In this blog post I don't want to go that far. Let's focus on a use case that we just want to document the API. Destructuring of AsyncAPI file and using references is a topic for another post.
-
-##### Server security
-
-You can use AsyncAPI also to describe the security of your API. You can describe in a machine-readable way the security mechanism that protects the server. For that, you use. Several [security schemes](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md#securitySchemeObject) are supported. In Kraken's case, I could not figure out from their docs what kind of security scheme they use, that is the standard set up for getting the authorization token, which is why the only option was to put a human-readable-only description there.
-
-```yaml
-servers:
-  public:
-    url: ws.kraken.com
-    protocol: wss
-    description: |
-      Public server available without authorization.
-      Once the socket is open you can subscribe to a public channel by sending a subscribe request message.
-  private:
-    url: ws-auth.kraken.com
-    protocol: wss
-    description: |
-      Private server that requires authorization.
-      Once the socket is open you can subscribe to private-data channels by sending an authenticated subscribe request message.
-
-      The API client must request an authentication "token" via the following REST API endpoint "GetWebSocketsToken" to connect to WebSockets Private endpoints. For more details read https://support.kraken.com/hc/en-us/articles/360034437672-How-to-retrieve-a-WebSocket-authentication-token-Example-code-in-Python-3
-
-      The resulting token must be provided in the "token" field of any new private WebSocket feed subscription: 
-      ```
-      {
-        "event": "subscribe",
-        "subscription":
-        {
-          "name": "ownTrades",
-          "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"
-        }
-      }
-      ```
-```
-
-### Endpoints aka Channels
-
-I saw WebSocket APIs that provide different streams on different endpoints. In the case of Kraken API we have no endpoints. You connect to the root of the server.
-
-No matter what setup you have, just remember you should use `channels` object to describe it. In the case of connecting to the root, it is a simple as:
-
-```yaml
-channels:
-  /:
-```
-
-### Multiple different messages on the same channel
-
-tbd
-
-```yaml
-channels:
-  /:
-    publish:
-      operationId: sendMessage
-      message:
-        oneOf:
-          - $ref: '#/components/messages/ping'
-          - $ref: '#/components/messages/subscribe'
-          - $ref: '#/components/messages/unsubscribe'
-    subscribe:
-      operationId: processMessage
-      message:
-        oneOf:
-          - $ref: '#/components/messages/pong'
-          - $ref: '#/components/messages/heartbeat'
-          - $ref: '#/components/messages/systemStatus'
-          - $ref: '#/components/messages/subscriptionStatus'
-```
-
-### Describe responses
-
-tbd
-
-### Messages definition
-
-### Schemas vs JSON Schema
-
-### Schemas complexity
-
-### Let's have a look at the final document
+Familiarize with below before you look at the AsyncAPI document:
+- AsyncAPI describes the API interface between the client and the server. In other words, the AsyncAPI document is for the user of the API. It does not describe what the server does but what the user can do with the API.
+- Kraken API is quite complex. It has some beta servers, some private messages, and messages closely related to vocabulary specific for currency trading. I dropped all of those from my research not to overcomplicate things. In other words, the AsyncAPI file that you can see below is not and a complete document.
+- Websocket protocol is very flexible, and therefore you can implement the server in many different ways. There is no standard way of doing things, like there is no common way of doing things with AsyncAPI. We can only make some generic assumptions looking at existing implementations:
+  - Your server has one entry point, just one endpoint that you communicate with to gain access to the API. It can be a [path with some dynamic values](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml), as some data id. It can also be nothing, no path at all, like in the case of below Kraken API. These entry points are **channels** in AsyncAPI document. Commonly, Websocket API has just one **channel** that user can send messages to and receive messages at the same time
+  - AsyncAPI publish and subscribe operations translates to **messages user can send to the API** and **messages user will receive from the API**. Depending on API complexity, sometimes you have an API that sends [only one message](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml). You can also have a situation where you can send to the server multiple different messages, and also receive different messages in response, **oneOf** use case.
+- Current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI. In the below document, you will notice that for such a use case, I use AsyncAPI specification extensions (**x-response**).
 
 ```yaml
 asyncapi: 2.0.0
 
 info:
   title: Kraken Websockets API
-  version: '1.8'
+  version: '1.8.0'
   description: |
     WebSockets API offers real-time market data updates. WebSockets is a bidirectional protocol offering fastest real-time data, helping you build real-time applications. The public message types presented below do not require authentication. Private-data messages can be subscribed on a separate authenticated endpoint. 
 
@@ -341,7 +177,8 @@ servers:
 channels:
   /:
     publish:
-      operationId: sendMessage
+      description: Send messages to the API
+      operationId: processReceivedMessage
       message:
         oneOf:
           - $ref: '#/components/messages/ping'
@@ -349,7 +186,8 @@ channels:
           - $ref: '#/components/messages/unsubscribe'
 
     subscribe:
-      operationId: processMessage
+      description: Messages that you receive from the API
+      operationId: sendMessage
       message:
         oneOf:
           - $ref: '#/components/messages/pong'
@@ -358,19 +196,25 @@ channels:
           - $ref: '#/components/messages/subscriptionStatus'
 
 components:
-
   messages:
     ping:
+      summary: Ping server to determine whether connection is alive
+      description: Client can ping server to determine whether connection is alive, server responds with pong. This is an application level ping as opposed to default ping in websockets standard which is server initiated
       payload:
         $ref: '#/components/schemas/ping'
+      x-response:
+        $ref: '#/components/messages/pong'
     heartbeat:
       description: Server heartbeat sent if no subscription traffic within 1 second (approximately)
       payload:
         $ref: '#/components/schemas/heartbeat'
     pong:
+      summary: Pong is a response to ping message
+      description: Server pong response to a ping to determine whether connection is alive. This is an application level pong as opposed to default pong in websockets standard which is sent by client in response to a ping
       payload:
         $ref: '#/components/schemas/pong'
     systemStatus:
+      description: Status sent on connection or system status changes.
       payload:
         $ref: '#/components/schemas/systemStatus'
       examples:
@@ -380,6 +224,7 @@ components:
             status: online
             version: 1.0.0
     subscribe:
+      description: Subscribe to a topic on a single or multiple currency pairs.
       payload:
         $ref: '#/components/schemas/subscribe'
       examples:
@@ -395,7 +240,10 @@ components:
             subscription:
               name: ownTrades
               token: WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu
+      x-response:
+        $ref: '#/components/messages/subscriptionStatus'
     unsubscribe:
+      description: Unsubscribe, can specify a channelID or multiple currency pairs.
       payload:
         $ref: '#/components/schemas/subscribe'
       examples:
@@ -411,7 +259,10 @@ components:
             subscription:
               name: ownTrades
               token: WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu
+      x-response:
+        $ref: '#/components/messages/subscriptionStatus'
     subscriptionStatus:
+      description: Subscription status response to subscribe, unsubscribe or exchange initiated unsubscribe.
       payload:
         $ref: '#/components/schemas/subscriptionStatus'
       examples:
@@ -433,7 +284,7 @@ components:
             subscription:
               depth: 42
               name: book
-              
+
   schemas:
     ping:
       type: object
@@ -638,6 +489,7 @@ components:
         pattern: '[A-Z\s]+\/[A-Z\s]+'
 ```
 
-### Conclusions
+> **Personal note**
+If you can, if you are in a planning phase, new project, etc., then start designing your architecture with AsyncAPI. Don't do the mistake of coding first and then trying to figure out how to describe it with AsyncAPI :sweat_smile:
 
-tbd
+Stay tuned for the next blog post that guides you step by step through the above document :peace_symbol:
