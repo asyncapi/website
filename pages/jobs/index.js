@@ -7,16 +7,26 @@ import Footer from "../../components/Footer"
 import Head from "../../components/Head"
 import Filter from "../../components/navigation/Filter"
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero"
+import emptyChecker from "../../utils/emptyChecker";
+import Empty from "../../components/illustrations/empty";
 
 // eslint-disable-next-line react/prop-types
 export default function JobsIndexPage({template}) {
   const { navItems } = useContext(JobsContext)
-  console.log(navItems);
+  navItems.map((job) => {
+    if(new Date() > new Date(job.closingOn)){
+      navItems.splice(job, 1)
+    }
+  })
   const [posts, setPosts] = useState(navItems.sort((i1, i2) => {
     const i1Date = new Date(i1.date)
     const i2Date = new Date(i2.date)
     return i2Date - i1Date
-  }))
+  }));
+
+  const onFilter = (data) => {
+    setPosts(data);
+  }
 
   return (
     <div>
@@ -41,20 +51,26 @@ export default function JobsIndexPage({template}) {
             <span role="img">💡</span> Want to post a job? All job posting must be AsyncAPI-related jobs. <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${template}`} target="_blank" rel="noreferrer">Get started now!</a>
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">Do you want to discuss about your job posting?
-            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Get started here</a>
+            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank" rel="noreferrer">Get started here</a>
             </p>
           </div>
-          <div className="mt-8 flex flex-col items-stretch sm:rounded-md">
-            <div className="mx-auto">
-            <Filter data={posts} />
-            </div>
-            <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
-            {
-              posts.map((post, index) => (
-                <JobPostItem key={index} job={post} />
-              ))
-            }
-            </ul>
+          <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-center">
+            {emptyChecker(posts) ? <div className="flex content-center justify-center">
+             <div>
+             <Empty/>
+             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500">No open positions currently. Check back later</p>
+             </div>
+            </div> : <div>
+              <div className="divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                <Filter data={navItems} onFilter={onFilter} />
+              </div>
+              <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                {
+                posts.map((post, index) => (
+                  <JobPostItem key={index} job={post} />
+                ))}
+              </ul>
+            </div>}
           </div>
         </div>
       </div>
@@ -69,7 +85,7 @@ export async function getStaticProps(context) {
   const fs = require('fs'); 
   // eslint-disable-next-line no-undef
   const process = require("process");
-  const template =`${process.cwd()}/pages/jobs/template/encoded_job_template.txt`;
+  const template =`${process.cwd()}/template/encoded_job_template.txt`;
   const rawContent = fs.readFileSync(template, {
     encoding: "utf-8",
   });

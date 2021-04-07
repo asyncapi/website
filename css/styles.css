@@ -35,3 +35,7 @@ li > p {
     100%{background-position:200% 50%}
 }
 /*! purgecss end ignore */
+
+#sortbox:checked ~ #sortboxmenu {
+  opacity: 1;
+}

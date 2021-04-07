@@ -1,8 +1,8 @@
 ---
 title: 'UI/UX/DX Designer'
 date: 2020-12-02T16:56:52+01:00
-category: design
-closingOn: 04/15/2021
+category: Design
+closingOn: 02/15/2021
 ---
 
 We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
