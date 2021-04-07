@@ -54,13 +54,13 @@ export default function JobsIndexPage({template}) {
             <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank" rel="noreferrer">Get started here</a>
             </p>
           </div>
-          <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-center">
+          <div className="text-center">
             {emptyChecker(posts) ? <div className="flex content-center justify-center">
              <div>
              <Empty/>
              <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500">No open positions currently. Check back later</p>
              </div>
-            </div> : <div>
+            </div> : <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
               <div className="divide-y divide-gray-200 sm:w-2/3 sm:self-center">
                 <Filter data={navItems} onFilter={onFilter} />
               </div>
