@@ -2,7 +2,7 @@
 title: 'Job Title'
 date: DD/MM/YYYY (current date)
 category: job category
-closingOn: DD/MM/YYYY
+closingOn: MM/DD/YYYY
 ---
 ## About the team
 Let potential employees knows what it'll feel like to joining your team in this section
