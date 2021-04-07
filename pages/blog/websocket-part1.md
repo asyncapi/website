@@ -108,9 +108,9 @@ The best way to play with API is through CLI. Who didn't hear about **curl** in 
   {"event":"heartbeat"}
   ```
 
-  Boy, it is always such fun to do it. Like seriously, I always have fun playing with APIs, any APIs. Just making this API "conversation". I hope nothing is wrong with me :sweat_smile:
+Boy, it is always such fun to do it. Like seriously, I always have fun playing with APIs, any APIs. Just making this API "conversation". I hope nothing is wrong with me :sweat_smile:
 
-  Now you know how to interact with the Kraken API. Now let's try to describe it using AsyncAPI.
+Now you know how to interact with the Kraken API. Now let's try to describe it using AsyncAPI.
 
 ### Describing API using AsyncAPI
 
