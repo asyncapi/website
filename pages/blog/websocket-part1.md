@@ -25,7 +25,7 @@ This blog post is the first one about Websocket, but there will be more. I'm wor
 
 It is a pretty old protocol used for duplex communication over TCP connection. It was standardized in 2011. Yes, ten years ago means it is old, super old. 
 
-So why are we even mention it in 2021? 
+So why do I even mention it in 2021? 
 
 It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate, and it would not happen if not a strong support and push from all the big players. 
 
