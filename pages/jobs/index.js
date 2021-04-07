@@ -45,13 +45,13 @@ export default function JobsIndexPage() {
              Job Postings
             </h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-              Want to work on a great open-source project with a lovely team and a vibrant community? Come work with us!
+              Want to work on a great open-source project with a lovely team and a vibrant community? Browse through available job offers!
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-            <span role="img">💡</span> Want to post a job? All job posting must be AsyncAPI-related jobs. <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`} target="_blank" rel="noreferrer">Get started now!</a>
+            <span role="img">💡</span> Want to post a job offer? All job postings must be AsyncAPI-related jobs. <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`} target="_blank">Get started now!</a>
             </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">Do you want to discuss about your job posting?
-            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank" rel="noreferrer">Get started here</a>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400"> Do you want to discuss your job offer first?
+            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here</a>
             </p>
           </div>
           <div className="text-center">
