@@ -36,10 +36,6 @@ li > p {
 }
 /*! purgecss end ignore */
 
-#sortbox:checked ~ #sortboxmenu {
-  opacity: 1;
-}
-
 .select-box {
   position: relative;
   display: block;
