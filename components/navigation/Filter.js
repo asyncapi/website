@@ -11,7 +11,6 @@ export default function Filter({data, onFilter}) {
             text : data.category
         }
     });
-    console.log(categories);
     const onFilterApply = (value) => {
         setState(value);
         const jobs = data.filter((e) => e.category === value);
