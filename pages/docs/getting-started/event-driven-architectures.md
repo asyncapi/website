@@ -7,19 +7,19 @@ menu:
 weight: 10
 ---
 
-All developers, architects, and product managers are used to REST APIs and the synchronous paradigm of communication. You make a request and wait for the response. This is exactly how the web works. You enter a URL (e.g., google.com) in the address bar of your favorite browser and it sends a request to the server. Following, the server sends the response with the content of the website. **The web is the greatest implementation of a REST API.**
+Many developers, architects, and product managers have used to REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL e.g., www.google.com in the browser's address bar and it sends a request to the server. Following, the server sends the response with the website content. **The web is the greatest implementation of a REST API.**
 
-However, there are certain situations when you don't really need a response from the server. At least no other than the confirmation the request has been received. This is also called _"fire and forget"_, and it's really useful when you just want to communicate or inform that "something happened". You're not requesting or asking for anything, thus you don't need a response.  Examples of this are:
+However, there are certain situations where you don't really need a response from the server. In most cases its only important to have some confirmation that the request was received. This is also called _"fire and forget"_, and it's very useful when you just want to communicate or inform that "something happened." You're not requesting or asking for anything, thus you don't need a response.  Examples of this are:
 
 * A user just signed up.
 * You have a new follower.
-* Your fridge is getting empty.
+* Your fridge is almost empty.
 
 Along with the event, you may also want to send _extra information_. For instance:
 
-* A user just signed up: here's the user information (e.g., name, email, age, etc.)
-* You have a new follower: here are the details of the follower (e.g., username, name, picture, etc.)
-* Your fridge is getting empty: here's the percentage of "emptiness" (e.g., 23%)
+* A user just signed up: here's the user information e.g., name, email, age, etc.
+* You have a new follower: here are the details of the follower, e.g., username, name, picture, etc.
+* Your fridge is almost empty: here's the percentage of "emptiness" or available volume, e.g., 23%
 
 This extra information is often referred to as _event payload_ or _message payload_.
 
@@ -63,7 +63,7 @@ Theoretically, _"message-driven"_ is the most generic term, meaning you may use 
 
 ## Conclusion
 
-We've seen what an event-driven architecture is, how it works, and what are their components. AsyncAPI is all about defining and documenting each of these components. We'll go through it during the rest of this guide but, before you continue, please choose what's your next step:
+We've seen what an event-driven architecture is, how it works, and explained its components. AsyncAPI defines and documents each of these components. We'll go through it during the rest of this guide but, before you continue, please choose what's your next step:
 
 <ChapterSuggestions
   suggestions={[
