@@ -18,7 +18,7 @@ E.g.
 ## About the job
 Let the potential employee knows about the job in this section
 
-## About youY
+## About you
 The Potential employees would love to know more about you. Tell them more about you in this section
 
 ## Pay and benefits
