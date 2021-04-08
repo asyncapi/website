@@ -13,7 +13,7 @@ export default function Filter({data, onFilter}) {
         onFilter(jobs);
     }
     return (
-        <div>
+        <div class="mb-4">
             <div className="select-box inline-flex w-56 max-w-sm justify-between">
                 <div className="select-box__current" tabIndex="1">
                     <div className="select-box__value">
