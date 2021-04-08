@@ -4,6 +4,10 @@ date: DD/MM/YYYY (current date)
 category: job category
 closingOn: MM/DD/YYYY
 ---
+## Disclaimer
+
+The job posting must be an AsyncAPI-related job.
+
 ## About the team
 Let potential employees knows what it'll feel like to joining your team in this section
 
