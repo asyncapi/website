@@ -51,7 +51,7 @@ export default function JobsIndexPage() {
             <span role="img">💡</span> Want to post a job offer? <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`} target="_blank">Post it now!</a>
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400"> Do you want to discuss your job offer first?
-            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here</a>
+            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here.</a>
             </p>
           </div>
           <div className="text-center">
