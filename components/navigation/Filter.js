@@ -4,7 +4,6 @@ import Select from '../form/Select';
 
 export default function Filter({data, onFilter}) {
     const [state, setState] = useState('Filter');
-    console.log(state);
     const categories = data.map(data => {
         return {
             value: data.category,
