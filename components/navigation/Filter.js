@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Filter({data, onFilter}) {
     const [state, setState] = useState('Filter');
-    const catgeories = [];
-    data.map((data) => {
-        catgeories.push(data.category)
-    });
+    const catgeories = data.map(data => data.category);
     const onFilterApply = (value) => {
         setState(value);
         const jobs = data.filter((e) => e.category === value);
