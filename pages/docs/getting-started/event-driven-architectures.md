@@ -7,7 +7,7 @@ menu:
 weight: 10
 ---
 
-Many developers, architects, and product managers have used to REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL e.g., www.google.com in the browser's address bar and it sends a request to the server. Following, the server sends the response with the website content. **The web is the greatest implementation of a REST API.**
+Many developers, architects, and product managers have used REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL e.g., www.google.com in the browser's address bar and it sends a request to the server. Following, the server sends the response with the website content. **The web is the greatest implementation of a REST API.**
 
 However, there are certain situations where you don't really need a response from the server. In most cases its only important to have some confirmation that the request was received. This is also called _"fire and forget"_, and it's very useful when you just want to communicate or inform that "something happened." You're not requesting or asking for anything, thus you don't need a response.  Examples of this are:
 
