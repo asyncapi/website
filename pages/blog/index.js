@@ -40,7 +40,7 @@ export default function BlogIndexPage() {
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
               Want to publish a blog post? We love community stories.
-              <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">Submit yours!</a>
+              <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
             </p>
           </div>
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
