@@ -74,7 +74,7 @@ When I google for some public WebSocket API to play with, I find mostly currency
 
 Currency trading is a topic I know nothing about :man_shrugging: but it feels interesting to explore more. Documentation of the 1st and 2nd API looks familiar from look&feel perspective. I think we can make a bet they are already using AsyncAPI, and Kraken most probably is still running on version 1. Let's release the Kraken then.
 
-> I'm sorry if you expected me to describe with AsyncAPI Shrek's interface. It would be fun, but only fun, and I'd also like to teach you something.
+> I'm sorry if you expected me to describe Shrek's API interface using AsyncAPI. It would be fun, but only fun, and I'd also like to teach you something.
 
 I will write an AsyncAPI document for Kraken API after playing with the API and basing it on the [current documentation](https://docs.kraken.com/websockets/).
 
