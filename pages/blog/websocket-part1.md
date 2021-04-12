@@ -1,5 +1,5 @@
 ---
-title: WebSocket, Shrek, AsyncAPI - An Opinionated Intro
+title: WebSocket, Shrek, and AsyncAPI - An Opinionated Intro
 date: 2021-04-09T06:00:00+01:00
 type: Communication
 tags:
@@ -10,16 +10,16 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: Websocket is a protocol, an industry standard for building client applications that users love to use. What AsyncAPI has to do with it?
+excerpt: WebSocket is a protocol, an industry standard for building client applications that users love to use. What does AsyncAPI have to do with it?
 featured: true
 ---
 
-It is a pretty subjective post. I share my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
+This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
 
 >  Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
 ― [Marcus Aurelius](https://www.politifact.com/factchecks/2019/sep/26/viral-image/no-marcus-aurelius-didnt-say-about-opinions-and-fa/)
 
-This blog post is the first one about Websocket, but there will be more. I'm working on a series of blog posts about WebSocket.
+This blog post is the first of a series of blog posts about WebSocket I'm working on.
 
 ## What is WebSocket
 
@@ -27,29 +27,29 @@ It is a pretty old protocol used for duplex communication over TCP connection. I
 
 So why do I even mention it in 2021? 
 
-It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate, and it would not happen if not a strong support and push from all the big players. 
+It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate. It would not happen without the strong support and push from all the big players. 
 
-Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for Websocket and HTTP/2 and tooling already adopts it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is not going anywhere.
+Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
 
-Anyway, the future of Websocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the protocol's future.
+Anyway, the future of WebSocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the protocol's future.
 
 ## Websocket use case
 
 - Do you like to see in Slack that someone is typing a response? 
-- Do you like when a user interface updates without page refresh?
+- Do you like it when a user interface updates without page refresh?
 - Do you like it when your client app knows there are updates available for display?
 
-That is what WebSocket is for. You establish a connection between client and server, a long-living connection. Through such a connection, the client can send a stream of messages to the server, and this is possible the other way around at the same time.
+That is what WebSocket is for. You establish a long-living connection between client and server. Through such a connection, the client can send a stream of messages to the server, and this is possible the other way around at the same time.
 
-One could say: _I don't need WebSocket to achieve that. I could just set up a data pulling with REST API. Just ask the API every few seconds if there are updates._
+One could say: _I don't need WebSocket to achieve that. I could just set up a data polling with REST API. Just ask the API every few seconds if there are updates._
 
 Sadly this is not a joke. Engineers do it. Some engineers just take shortcuts, mostly because deadlines hunt them down.
 
-HTTP pulling was presented very well in Shrek's famous _Are we there yet?_ scene.
+HTTP polling was presented very well in Shrek's famous _Are we there yet?_ scene.
 
 <YouTube id="basofea2UEs" />
 
-Don't go that path. Do not perform unnecessary connections to your servers and create more and more traffic with more and more resource consumption. Wasting resources is bad and makes Shrek angry. Websocket change a lot there:
+Don't go that path. Do not perform unnecessary connections to your servers and create more and more traffic with more and more resource consumption. Wasting resources is bad and makes Shrek angry. WebSocket changes a lot there:
 
 <Figure
   src="/img/posts/websocket-part1/websocket-shrek.webp"
@@ -80,9 +80,9 @@ I will write an AsyncAPI document for Kraken API after playing with the API and 
 
 ### Playing with WebSocket API
 
-The best way to play with API is through CLI. Who didn't hear about **curl** in the REST API world? For WebSocket, I would recommend **websocat**. Kraken's API is partially public without authorization which is just great because to play with it, you do not have to set up an account to get an authorization token.
+The best way to play with a WebSocket API is through a CLI. Who didn't hear about **curl** in the REST API world? For WebSocket, I would recommend **websocat**. Kraken's API is partially public without authorization which is just great because to play with it, you do not have to set up an account to get an authorization token.
 
-1. Install **websocat**. For other installation options, check [this](https://github.com/vi/websocat#installation) list.
+1. Install **websocat**. For other installation options, check out [this](https://github.com/vi/websocat#installation) list.
   ```sh
   brew install websocat
   ```
@@ -120,7 +120,7 @@ For now, I will throw here a full AsyncAPI document I created for the Kraken API
 
 Familiarize with below before you look at the AsyncAPI document:
 - AsyncAPI describes the API interface between the client and the server. In other words, the AsyncAPI document is for the user of the API. It does not describe what the server does but what the user can do with the API.
-- Kraken API is quite complex. It has some beta servers, some private messages, and messages closely related to vocabulary specific for currency trading. I dropped all of those from my research not to overcomplicate things. In other words, the AsyncAPI file that you can see below is not and a complete document.
+- Kraken API is quite complex. It has some beta servers, some private messages, and messages closely related to vocabulary specific for currency trading. I dropped all of those from my research not to overcomplicate things. In other words, the AsyncAPI file that you can see below is not a complete document.
 - Websocket protocol is very flexible, and therefore you can implement the server in many different ways. There is no standard way of doing things, like there is no common way of doing things with AsyncAPI. We can only make some generic assumptions looking at existing implementations:
   - Your server has one entry point, just one endpoint that you communicate with to gain access to the API. It can be a [path with some dynamic values](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml), as some data id. It can also be nothing, no path at all, like in the case of below Kraken API. These entry points are **channels** in AsyncAPI document. Commonly, Websocket API has just one **channel** that user can send messages to and receive messages at the same time
   - AsyncAPI publish and subscribe operations translates to **messages user can send to the API** and **messages user will receive from the API**. Depending on API complexity, sometimes you have an API that sends [only one message](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml). You can also have a situation where you can send to the server multiple different messages, and also receive different messages in response. This is when you need to use **oneOf** as I did in document for Kraken API.
