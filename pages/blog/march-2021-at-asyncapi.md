@@ -58,11 +58,11 @@ It also means our [GitHub organization](https://github.com/asyncapi) is not goin
 
 #### Do we need to sign some CLA now to contribute
 
-We do not need a contributor license agreement (CLA) on repositories for our tools. We might need to set up [EasyCLA](https://easycla.lfx.linuxfoundation.org/#/) for the repository where we have the specification. We need to clarify it in the long run—nothing to worry about until we set it up. In the end, the only reason to set it up is to secure the community from a situation that some contributor (or his company) claims rights to some part of the specification they contributed to.
+We do not need a contributor license agreement (CLA) on repositories for our tools. We might need to set up [EasyCLA](https://easycla.lfx.linuxfoundation.org/#/) for the repository where we have the specification. We need to clarify it in the long run—nothing to worry about until we set it up. In the end, the only reason to set it up is to secure the community from a situation that some contributor (or their company) claims rights to some part of the specification they contributed to.
 
 #### How much money you need
 
-Glad you asked. We joined the foundation with an open governance model that favors active contributors over sponsors. As a result, we do not have a setup where we can assure significant income in exchange for voting rights. In other words, we do not have a financial founding associated with joining the foundation. We still need your financial support. Go to our [Open Collective profile](https://opencollective.com/asyncapi) and drop some coins. Let us know if I can help to peach about AsyncAPI in your company for some extra money.
+Glad you asked. We joined the foundation with an open governance model that favors active contributors over sponsors. As a result, we do not have a setup where we can assure significant income in exchange for voting rights. In other words, we do not have a financial founding associated with joining the foundation. We still need your financial support. Go to our [Open Collective profile](https://opencollective.com/asyncapi) and drop some coins. Let us know if I can help to preach about AsyncAPI in your company for some extra money.
 
 #### How can we help
 
@@ -78,7 +78,7 @@ Everyone with a different set of skills is welcome. Just contact me.
 
 We are almost ready for the next releases of the specification. We already have a new, GraphQL-inspired contribution guide that explains how to introduce changes in the specification. What is left is a decision on how actually to decide that release will happen and when. Help us by:
 - Familiarize with [instruction](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md) on how to introduce changes in the spec, pick [the idea](https://github.com/asyncapi/spec/issues) that you want to champion, and let us start improving the spec
-- Have a look at [the proposal](https://github.com/asyncapi/spec/issues/513) on release cadence and share your opinion, as comments or emojis
+- Have a look at the [proposal on release cadence](https://github.com/asyncapi/spec/issues/513) and share your opinion, as comments or emojis
 
 ## Vision and roadmap
 
