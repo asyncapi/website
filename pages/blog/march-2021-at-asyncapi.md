@@ -72,7 +72,7 @@ Except for regular contributions, we need help setting up tooling for our open g
 - Figure out tooling for the website
 - Setup CODEOWNERS and VOTING files in all the repositories
 
-Everyone with a different set of skills is welcome. Just contact me.
+Everyone with a different set of skills is welcome. [Just contact me](https://www.asyncapi.com/slack-invite/).
 
 ### What is next
 
