@@ -19,6 +19,10 @@ featured: true
 
 > Read [February 2021 at AsyncAPI](/blog/february-2021-at-asyncapi) for the update from February.
 
+> In case you do not have time to read this article, maybe take time to listen to the news. Let me know what you think about such an appraoch.
+
+<iframe title="March 2021 at AsyncAPI Initiative" allowtransparency="true" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ufy2n-1009123-pb&from=pb6admin&download=1&share=1&download=1&rtl=0&fonts=Arial&skin=1&btn-skin=7" width="100%" height="150"></iframe>
+
 Q1 2021 came to an end. Let me summarise our targets, revenue, and forecasts :smiley:
 
 This month:
