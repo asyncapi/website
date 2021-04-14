@@ -14,6 +14,10 @@ authors:
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 ---
 
+> **Edit 14.04.2021**
+In this post, I explain how you can use Nunjucks to template information extracted from an AsyncAPI file. I also write how you can make it even easier using Nunjucks inside the AsyncAPI Generator. Now, we also have a [React-based](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#react) render engine inside the generator, and it is far more developer-friendly. I encourage you to try it out. 
+
+
 Specifications exist for a reason. Among other things, they help to bring quality, consistency, and standardize a given area. They are a great use case for templating engines. You can prepare a template that generates something from any document that follows a particular specification. You can generate whatever you want, docs, code, and diagrams. The sky is the limit. 
 
 Templating is a vast topic that is impossible to cover in a single post. In JavaScript alone, there is a zoo of different [templating engines](https://colorlib.com/wp/top-templating-engines-for-javascript/). This is why I focus here only on one engine for JavaScript, which is [Nunjucks](https://mozilla.github.io/nunjucks/). Why? Soon you'll figure that out.
