@@ -1,6 +1,6 @@
 ---
 title: WebSocket, Shrek, and AsyncAPI - An Opinionated Intro
-date: 2021-04-09T06:00:00+01:00
+date: 2021-04-16T06:00:00+01:00
 type: Communication
 tags:
   - websocket
