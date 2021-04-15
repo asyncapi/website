@@ -116,7 +116,7 @@ Now you know how to interact with the Kraken API. Now let's try to describe it u
 
 I'll explain, in detail, how to describe Websocket API with AsyncAPI in another blog post that will be part of the series. Why? I don't want to make this post super lengthy and discourage others from reading it. Let us learn step by step. 
 
-For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Playground](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/53b8c1af10ce474a54c96f7dd15d9a6f18448504/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
+For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Playground](https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/2d6e0ffe7fa1ef3f47bd901d63658f7804072881/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
 
 Familiarize with below before you look at the AsyncAPI document:
 - AsyncAPI describes the API interface between the client and the server. In other words, the AsyncAPI document is for the user of the API. It does not describe what the server does but what the user can do with the API.
@@ -126,7 +126,7 @@ Familiarize with below before you look at the AsyncAPI document:
   - AsyncAPI publish and subscribe operations translates to **messages user can send to the API** and **messages user will receive from the API**. Depending on API complexity, sometimes you have an API that sends [only one message](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml). You can also have a situation where you can send to the server multiple different messages, and also receive different messages in response. This is when you need to use **oneOf** as I did in document for Kraken API.
 - Current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI. In the below document, you will notice that for such a use case, I use AsyncAPI specification extensions (**x-response**).
 
-```yaml
+```yml
 asyncapi: 2.0.0
 
 info:
@@ -388,46 +388,71 @@ components:
     subscriptionStatus:
       type: object
       oneOf:
-        - required:
+        - properties:
+            errorMessage:
+              type: string
+            event:
+              type: string
+              const: subscriptionStatus
+            reqid:
+              $ref: '#/components/schemas/reqid'
+            pair:
+              $ref: '#/components/schemas/pair'
+            status:
+              $ref: '#/components/schemas/status'
+            subscription:
+              type: object
+              properties:
+                depth:
+                  $ref: '#/components/schemas/depth'
+                interval:
+                  $ref: '#/components/schemas/interval'
+                maxratecount:
+                  $ref: '#/components/schemas/maxratecount'
+                name:
+                  $ref: '#/components/schemas/name'
+                token:
+                  $ref: '#/components/schemas/token'
+              required:
+                - name
+          required:
+            - event
             - errorMessage
-        - required:
+        - properties:
+            channelID:
+              type: integer
+              description: ChannelID on successful subscription, applicable to public messages only.
+            channelName:
+              type: string
+              description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
+            event:
+              type: string
+              const: subscriptionStatus
+            reqid:
+              $ref: '#/components/schemas/reqid'
+            pair:
+              $ref: '#/components/schemas/pair'
+            status:
+              $ref: '#/components/schemas/status'
+            subscription:
+              type: object
+              properties:
+                depth:
+                  $ref: '#/components/schemas/depth'
+                interval:
+                  $ref: '#/components/schemas/interval'
+                maxratecount:
+                  $ref: '#/components/schemas/maxratecount'
+                name:
+                  $ref: '#/components/schemas/name'
+                token:
+                  $ref: '#/components/schemas/token'
+              required:
+                - name
+          required:
+            - event
             - channelID
             - channelName
-      properties:
-        channelID:
-          type: integer
-          description: ChannelID on successful subscription, applicable to public messages only.
-        channelName:
-          type: string
-          description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
-        errorMessage:
-          type: string
-        event:
-          type: string
-          const: subscriptionStatus
-        reqid:
-          $ref: '#/components/schemas/reqid'
-        pair:
-          $ref: '#/components/schemas/pair'
-        status:
-          $ref: '#/components/schemas/status'
-        subscription:
-          type: object
-          properties:
-            depth:
-              $ref: '#/components/schemas/depth'
-            interval:
-              $ref: '#/components/schemas/interval'
-            maxratecount:
-              $ref: '#/components/schemas/maxratecount'
-            name:
-              $ref: '#/components/schemas/name'
-            token:
-              $ref: '#/components/schemas/token'
-          required:
-            - name
-      required:
-        - event
     interval:
       type: integer
       description: Time interval associated with ohlc subscription in minutes.
@@ -489,10 +514,10 @@ components:
         pattern: '[A-Z\s]+\/[A-Z\s]+'
 ```
 
-> **Personal note**
+> **Personal note** <br/>
 If you can, if you are in a planning phase, new project, etc., then start designing your architecture with AsyncAPI. Don't do the mistake of coding first and then trying to figure out how to describe it with AsyncAPI :sweat_smile:
 
 Stay tuned for the next blog post that guides you step by step through the above document :peace_symbol:
 
-> **Message to Kraken API developers and technical writers**
+> **Message to Kraken API developers and technical writers** <br/>
 In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
