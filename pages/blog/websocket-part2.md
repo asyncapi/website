@@ -39,7 +39,7 @@ Road **automation**: You need AsyncAPI for docs and code generation, which means
 
 ## Kraken API use case
 
-I'm going to guide you through the process of creating an AsyncAPI document basing on the example of Kraken API mentioned in my [previous](/blog/websocket-part1) article.
+I'm going to guide you through the process of creating an AsyncAPI document. I'll use the example of Kraken API mentioned in my [previous](/blog/websocket-part1) article.
 
 The challenge I had here was that I'm trying to document an API basing on public docs with no access to a subject matter expert. I also have zero understanding of the cryptocurrency industry and still do not fully understand the vocabulary. 
 
@@ -53,17 +53,17 @@ More interesting here are the technical challenges though, caused by the fact th
 
 ## Writing a single AsyncAPI document
 
-Because of all these different challenges, I took the **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome). No worries though, I give tips for the other road.
+Because of all these different challenges, I took the **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome). No worries though, I give tips for the **automation** road too.
 
 ### Basic information about the API
 
 First, provide some basic information that every good AsyncAPI file should have:
-- What AsyncAPI version you use?
+- What AsyncAPI version do you use?
 - What is the name of your API?
 - What version of the API you describe?
-- Do not underestimate the description. Optional != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read?
+- Do not underestimate the description. Optional != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read
 
-> In case you think using just one property to add overarching documentation for your API is very limiting, I agree with you :smiley: Join discussion [here](https://github.com/asyncapi/extensions-catalog/issues/11). I believe spec should have better support for docs, and we should first explore it with specification extensions. To be honest, I always thought documentation deserves its specification, but I don't want to bother you with my wicked visions.
+> In case you think using just one property to add overarching documentation for your API is very limiting, I agree with you :smiley: Join discussion [here](https://github.com/asyncapi/extensions-catalog/issues/11). I believe spec should have better support for docs, and we should first explore it with specification extensions. To be honest, I always thought documentation deserves its specification, but I don't want to bother you with my wicked visions now.
 
 
 ```yaml
@@ -115,9 +115,9 @@ servers:
       Once the socket is open you can subscribe to private-data channels by sending an authenticated subscribe request message.
 ```
 
-You can verify if above is true by connecting to `ws.kraken.com` and trying to subscribe to one of the event streams that require a token: 
+You can verify if above is true by connecting to **ws.kraken.com** and trying to subscribe to one of the event streams that require a token: 
 ```json
-{        "event": "subscribe",        "subscription":        {          "name": "ownTrades",          "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu"        }      }
+{ "event": "subscribe",  "subscription": { "name": "ownTrades", "token": "WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBnb2VzIGhlcmUu" } }
 ```
 
 In response you get an error:
@@ -127,11 +127,11 @@ In response you get an error:
 
 > In the documentation, they also indicate beta servers like `beta-ws.kraken.com`. It is hard to understand their purpose, so I did not put them in the AsyncAPI document. For me, beta means something new, some upgrades, and I would consider writing a separate AsyncAPI document.
 
-Is it reasonable to describe API that has two different production servers in one AsyncAPI? As usual, it depends. For **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), you can "workaround" some AsyncAPI features if they do not support your use case or do not need to be specific. Check out, for example, what I had to do in section [Server security](#server-security) where I was not sure how to describe the specific security of the private server. Short answer: just extend the description.
+Is it reasonable to describe API that has two different production servers in one AsyncAPI? As usual, it depends. For **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), you can "workaround" some AsyncAPI features if they do not support your use case. Check out, for example, what I had to do in section [Server security](#server-security) where I was not sure how to describe the specific security of the private server. Short answer: just extend the description.
 
 For **automation** road described in [Choosing the right road to Rome](#choosing-the-right-road-to-rome) section, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to specify that the given message can be published only to the **private** server. It is exactly the case with Kraken API.
 
-Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server `ws.kraken.com`. The only way to emit errors like _Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com_ is by writing the code that handles validation manually. You won't generate that as the AsyncAPI file does not specif what messages can go to `ws.kraken.com` and what messages can't.
+Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server **ws.kraken.com**. The only way to emit errors like `Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com` is by writing the code that handles validation manually. You can't generate that as the AsyncAPI file does not specif what messages can go to **ws.kraken.com** and what messages can't.
 
 Why?
 
@@ -179,7 +179,7 @@ servers:
 
 I saw WebSocket APIs that provide different streams of messages on separate endpoints. It is often the case when you build the WebSocket API for the frontend only and design it for different UI views. In the case of Kraken API we have no endpoints. You connect to the root of the server.
 
-No matter what setup you have, just remember you should use `channels` to describe it. In the case of connecting to the root, it is a simple as:
+No matter what setup you have, just remember you should use **channels** to describe it. In the case of connecting to the root, it is as simple as:
 
 ```yaml
 channels:
@@ -210,18 +210,22 @@ channels:
           - $ref: '#/components/messages/subscriptionStatus'
 ```
 
-Hold on! Where did these **publish** and **subscribe** keywords came from. When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://tools.ietf.org/html/rfc6455). We are used to **sending** and **receiving** messages.
+Hold on! Where did these **publish** and **subscribe** keywords came from. 
 
-Let me present to you an unofficial AsyncAPI vocabulary translator for WebSocket users:
+When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://tools.ietf.org/html/rfc6455). We are used to **sending** and **receiving** messages.
 
-WebSocket term || AsyncAPI term || Meaning from API server perspective || Meaning from API user perspective
----|---|---
+Let me present to you an unofficial AsyncAPI vocabulary translator for WebSocket users :smiley:
+
+WebSocket term | AsyncAPI term | Meaning from API server perspective | Meaning from API user perspective
+---|---|---|---
 Send | Publish | The API server receives the given message. | The API user can send a given message to the API server.
 Receive | Subscribe | The API server sends a given message. | The API user can receive a given message from the API server.
 
 ### Messages definition
 
-In event-driven architectures (EDA) it's all about the event right, the message passed in the system. You need to specify many details about the message, like its payload structure, headers, purpose, and many others. Above all, always remember to have good examples. Please don't count on the autogenerated ones, as in most cases, they're useless. 
+In event-driven architectures (EDA) it's all about the event, right? The message passed in the system. You need to specify many details about the message, like its payload structure, headers, purpose, and many others. 
+
+Above all, always remember to have good examples. Please don't count on the autogenerated ones, as in most cases, they're useless. 
 
 ```yml
 messages:
@@ -301,9 +305,9 @@ You can see that **ping** message is an object that has two properties where onl
 
 ### Schemas complexity
 
-Splitting schemas into reusable chunks with **$ref** usage is not something complex. It gets complex when messages are complex when you get different message payload depending on system behavior.
+Splitting schemas into reusable chunks with **$ref** usage is not something complex. It gets complex when messages are complex, when you get different message payload depending on system behavior.
 
-Kraken API has a **subscriptionStatus** message where payload depends on the success of the subscription. In case of successful subscription, you get a message with **channelID** and **channelName** properties, but in case of success, the message doesn't contain these properties but in exchange has **errorMessage**. In other words, some properties are mutually exclusive.
+Kraken API has a **subscriptionStatus** message where payload depends on the success of the subscription. In case of successful subscription, you get a message with **channelID** and **channelName** properties, but in case of failure, the message doesn't contain these properties but in exchange has **errorMessage**. In other words, some properties are mutually exclusive.
 
 ```yml
     subscriptionStatus:
@@ -426,7 +430,7 @@ It is why you sometimes need compromises and adjusts schemas, so they get proper
             - channelName
 ```
 
-I managed to get a structure that will be nicely rendered in the UI. Even code generation will work well. The problem is that I failed with DRY rule and have most of the structure is repeated, which makes the solution error-prone.
+I managed to get a structure that will be nicely rendered in the UI. Even code generation will work well. The problem is that I failed with DRY rule and have most of the structure repeated, which makes the solution error-prone.
 
 How to solve it? In the AsyncAPI tooling case, it is easy. Just contribute! When you see something is not rendered right, or is missing, just let us know, report it or create a pull request.
 
@@ -434,7 +438,7 @@ How to solve it? In the AsyncAPI tooling case, it is easy. Just contribute! When
 
 Websocket protocol is very flexible, and therefore you can implement the server in many different ways. The path that Kraken API took is complex but not impossible to describe with the AsyncAPI document. Look at the document's final structure and keep in mind that it is not a complete document for Kraken API and the road that I chose to get to Rome was to focus on documentation rendering only. 
 
-For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**.
+For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**. Another solution would be to use specification extensions to describe relations between messages and servers.
 
 > You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/2d6e0ffe7fa1ef3f47bd901d63658f7804072881/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
 
