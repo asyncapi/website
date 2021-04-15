@@ -1,6 +1,6 @@
 ---
 title: Creating AsyncAPI for WebSocket API - Step by Step
-date: 2021-04-13T06:00:00+01:00
+date: 2021-04-20T06:00:00+01:00
 type: Communication
 tags:
   - websocket
@@ -25,17 +25,17 @@ You may invest in using the specification for many different reasons, like for e
 - code generation
 - message validation
 
-Depending on your goal, you might need to take different paths to get there. If your only goal is documentation, you might take a different approach to writing an AsyncAPI file than you would take while thinking about code generation.
+Depending on your goal, you might need to take different roads to get there. If your only goal is documentation, you might take a different approach to writing an AsyncAPI file than you would take while thinking about code generation.
 
-## Choosing the right path to Rome
+## Choosing the right road to Rome
 
 Let's say AsyncAPI does not fully cover your use case. You are missing some extra property. You are disappointed that you cannot explicitly provide information that your production servers both support different channels. Server A supports channel AA and AB, while Server B supports channel BA and BB. It is not currently possible with the specification as the assumption is that your application communicates with servers that support the same channels.
 
-There are two paths to Rome:
+There are two roads to Rome:
 
-Patch **docs-only**: You need AsyncAPI for docs generation only and have no intention of sharing the source document with anyone. It means you do not need to bother much about inventing some specification extension. You can just add missing information to the description of a given object.
+Road **docs-only**: You need AsyncAPI for docs generation only and have no intention of sharing the source document with anyone. It means you do not need to bother much about inventing some specification extension. You can just add missing information to the description of a given object.
 
-Patch **automation**: You need AsyncAPI for docs and code generation, which means that all details in your AsyncAPI document must be machine-readable. You can't just put unsupported information in the description.
+Road **automation**: You need AsyncAPI for docs and code generation, which means that all details in your AsyncAPI document must be machine-readable. You can't just put unsupported information in the description.
 
 ## Kraken API use case
 
@@ -53,7 +53,7 @@ More interesting here are the technical challenges though, caused by the fact th
 
 ## Writing a single AsyncAPI document
 
-Because of all these different challenges, I took the **docs-only** patch described in section [Choosing the right path to Rome](#choosing-the-right-path-to-rome). No worries though, I give tips for the other path.
+Because of all these different challenges, I took the **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome). No worries though, I give tips for the other road.
 
 ### Basic information about the API
 
@@ -127,9 +127,9 @@ In response you get an error:
 
 > In the documentation, they also indicate beta servers like `beta-ws.kraken.com`. It is hard to understand their purpose, so I did not put them in the AsyncAPI document. For me, beta means something new, some upgrades, and I would consider writing a separate AsyncAPI document.
 
-Is it reasonable to describe API that has two different production servers in one AsyncAPI? As usual, it depends. For **docs-only** patch described in section [Choosing the right path to Rome](#choosing-the-right-path-to-rome), you can "workaround" some AsyncAPI features if they do not support your use case or do not need to be specific. Check out, for example, what I had to do in section [Server security](#server-security) where I was not sure how to describe the specific security of the private server. Short answer: just extend the description.
+Is it reasonable to describe API that has two different production servers in one AsyncAPI? As usual, it depends. For **docs-only** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), you can "workaround" some AsyncAPI features if they do not support your use case or do not need to be specific. Check out, for example, what I had to do in section [Server security](#server-security) where I was not sure how to describe the specific security of the private server. Short answer: just extend the description.
 
-For **automation** path described in [Choosing the right path to Rome](#choosing-the-right-path-to-rome) section, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to specify that the given message can be published only to the **private** server. It is exactly the case with Kraken API.
+For **automation** road described in [Choosing the right road to Rome](#choosing-the-right-road-to-rome) section, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to specify that the given message can be published only to the **private** server. It is exactly the case with Kraken API.
 
 Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server `ws.kraken.com`. The only way to emit errors like _Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com_ is by writing the code that handles validation manually. You won't generate that as the AsyncAPI file does not specif what messages can go to `ws.kraken.com` and what messages can't.
 
@@ -247,7 +247,7 @@ The thing is that request and reply pattern is also used in EDA. This is also th
 
 The simplest example is the message **ping** that triggers a **pong** reply. The current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is received in a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI.
 
-For **docs-only** path from section [Choosing the right path to Rome](#choosing-the-right-path-to-rome), I would be lazy and just put such info in the description of both messages. Even though this is an error-prone approach, I would just make my life easier. For **automation** path I would choose to use a specification extension.
+For **docs-only** road from section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), I would be lazy and just put such info in the description of both messages. Even though this is an error-prone approach, I would just make my life easier. For **automation** road I would choose to use a specification extension.
 
 What is specification extension?
 
@@ -432,9 +432,9 @@ How to solve it? In the AsyncAPI tooling case, it is easy. Just contribute! When
 
 ### Let's have a look at the final document
 
-Websocket protocol is very flexible, and therefore you can implement the server in many different ways. The path that Kraken API took is complex but not impossible to describe with the AsyncAPI document. Look at the document's final structure and keep in mind that it is not a complete document for Kraken API and the path that I chose to get to Rome was to focus on documentation rendering only. 
+Websocket protocol is very flexible, and therefore you can implement the server in many different ways. The path that Kraken API took is complex but not impossible to describe with the AsyncAPI document. Look at the document's final structure and keep in mind that it is not a complete document for Kraken API and the road that I chose to get to Rome was to focus on documentation rendering only. 
 
-For **automation** patch described in section [Choosing the right path to Rome](#choosing-the-right-path-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**.
+For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**.
 
 > You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/2d6e0ffe7fa1ef3f47bd901d63658f7804072881/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
 
