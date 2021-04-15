@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: We are getting close to joining a foundation. We started a few new initiatives. We are busy. In other words, this is a good time to join us and drive things together.
-featured: true
 ---
 
 > Read [January 2021 at AsyncAPI](/blog/january-2021-at-asyncapi) for the update from January.
