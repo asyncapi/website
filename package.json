@@ -42,6 +42,7 @@
     "autoprefixer": "^9.7.6",
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
+    "jgexml": "^0.4.4",
     "lodash": "^4.17.19",
     "markdown-to-txt": "^1.0.1",
     "markdown-toc": "^1.2.0",
