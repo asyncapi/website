@@ -17,7 +17,6 @@ authors:
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder
 excerpt: 'AsyncAPI can be successful if the initiative is community-driven. To be community-driven, we need the community to see it can drive things and make an impact. For that, we need a proper open governance model. What model would be the best?'
-featured: true
 ---
 
 > tl;dr charter for the AsyncAPI Initiative open governance is ready for review. Leave your comments there in [this](https://github.com/asyncapi/.github/pull/37) pull request. We will wait two weeks for your feedback.
