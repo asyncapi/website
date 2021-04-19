@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder
 excerpt: I'm proud and honored to let you know that we're partnering with Postman to boost the development of Asynchronous APIs to a new level.
-featured: true
 ---
 
 I'm proud and honored to let you know that we're partnering with [Postman](https://www.postman.com) to boost the development of Asynchronous APIs to a new level :rocket:
