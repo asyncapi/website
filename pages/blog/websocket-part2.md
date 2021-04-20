@@ -39,7 +39,7 @@ Road **automation**: You need AsyncAPI for docs and code generation, which means
 
 ## Kraken API use case
 
-I'm going to guide you through the process of creating an AsyncAPI document. I'll use the example of Kraken API mentioned in my [previous](/blog/websocket-part1) article.
+I'm going to guide you through the process of creating an AsyncAPI document. I'll use the example of Kraken API mentioned in my [previous article](/blog/websocket-part1).
 
 The challenge I had here was that I'm trying to document an API basing on public docs with no access to a subject matter expert. I also have zero understanding of the cryptocurrency industry and still do not fully understand the vocabulary. 
 
@@ -77,7 +77,7 @@ info:
     ### General Considerations
 
     - TLS with SNI (Server Name Indication) is required in order to establish a Kraken WebSockets API connection. See Cloudflare's [What is SNI?](https://www.cloudflare.com/learning/ssl/what-is-sni/) guide for more details.
-    - All messages sent and received via WebSockets are encoded in JSON format
+    - All messages sent and received via WebSockets are encoded in JSON format.
     - All decimal fields (including timestamps) are quoted to preserve precision.
     - Timestamps should not be considered unique and not be considered as aliases for transaction IDs. Also, the granularity of timestamps is not representative of transaction rates.
     - At least one private message should be subscribed to keep the authenticated client connection open.
@@ -93,7 +93,7 @@ Describe how to connect to the API:
 - Is there any authorization in place?
 - What is the protocol requirement, is SSL connection required?
 
-An example of Kraken API is an excellent example of how different WebSocket implementations can be and that there is never one way to design your architecture. It all depends on your requirements, the use cases that drive your product.
+The Kraken API is an excellent example of how different WebSocket implementations can be and that there is never one way to design your architecture. It all depends on your requirements, the use cases that drive your product.
 
 #### Describing multiple servers
 
@@ -139,7 +139,7 @@ At the moment, in AsyncAPI, you don't have a way to "wire" a server with a messa
 
 Solution?
 
-Create two AsyncAPI documents. Treat those two servers as separate services that share messages and schemas. Use **$ref** feature to cross-reference schemas.
+Create two AsyncAPI documents. Treat those two servers as separate services that share messages and schemas. Use **$ref** feature to [cross-reference schemas](/blog/organizing-asyncapi-documents).
 
 #### Server security
 
@@ -229,16 +229,16 @@ Above all, always remember to have good examples. Please don't count on the auto
 
 ```yml
 messages:
-    systemStatus:
-        description: Status sent on connection or system status changes.
-        payload:
-            $ref: '#/components/schemas/systemStatus'
-        examples:
-            - payload:
-                connectionID: 8628615390848610000
-                event: systemStatus
-                status: online
-                version: 1.0.0
+  systemStatus:
+    description: Status sent on connection or system status changes.
+    payload:
+      $ref: '#/components/schemas/systemStatus'
+    examples:
+      - payload:
+          connectionID: 8628615390848610000
+          event: systemStatus
+          status: online
+          version: 1.0.0
 ```
 
 ### Describe responses - specification extensions
@@ -261,13 +261,13 @@ In the below document, you will notice that for the request/reply pattern, I use
 
 ```yml
 messages:
-    ping:
-        summary: Ping server to determine whether connection is alive
-        description: Client can ping server to determine whether connection is alive, server responds with pong. This is an application level ping as opposed to default ping in websockets standard which is server initiated
-        payload:
-            $ref: '#/components/schemas/ping'
-        x-response:
-            $ref: '#/components/messages/pong'
+  ping:
+    summary: Ping server to determine whether connection is alive
+    description: Client can ping server to determine whether connection is alive, server responds with pong. This is an application level ping as opposed to default ping in websockets standard which is server initiated
+    payload:
+      $ref: '#/components/schemas/ping'
+    x-response:
+      $ref: '#/components/messages/pong'
 ```
 
 Even though the reference to another object is provided inside the extension that is not part of AsyncAPI, our parser will resolve it correctly. It means that under **x-response** property, I will have access to the entire message object.
@@ -278,7 +278,7 @@ Because the message itself is most important in the entire EDA, you need to desc
 
 AsyncAPI allows you to provide payload information in different schema formats. The default format is AsyncAPI Schema that is a superset of JSON Schema. You can use others too, like Avro, for example.
 
-From the AsyncAPI document point of view, the most important is that you can reuse schemas. In other words, instead of providing data directly to the **payload** object, you can **$ref** them from **components.schema** or even an external document. Just DRY, right?
+From the AsyncAPI document point of view, the most important is that you can reuse schemas. In other words, instead of providing data directly to the **payload** object, you can **$ref** them from **components.schemas** or even an external document. Just DRY, right?
 
 The rest, I would say, has nothing to do with AsyncAPI itself. How you structure schemas depends on you and the schema format that you use. It is why the next sections of my article describe something specific, not for the AsyncAPI itself but rather JSON Schema.
 
@@ -286,19 +286,19 @@ Simplest example of schemas from Kraken API is a payload for **ping** message:
 
 ```yml
 schemas:
-    ping:
-        type: object
-        properties:
-            event:
-                type: string
-                const: ping
-            reqid:
-                $ref: '#/components/schemas/reqid'
-        required:
-            - event
-    reqid:
-        type: integer
-        description: client originated ID reflected in response message.
+  ping:
+    type: object
+    properties:
+      event:
+        type: string
+        const: ping
+      reqid:
+        $ref: '#/components/schemas/reqid'
+    required:
+      - event
+  reqid:
+    type: integer
+    description: client originated ID reflected in response message.
 ```
 
 You can see that **ping** message is an object that has two properties where only one is required. One property is used across other messages, so is part of many different schemas, so better to keep its definition as a separate schema and reference where needed.
