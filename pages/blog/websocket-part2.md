@@ -370,36 +370,18 @@ It is why you sometimes need compromises and adjusts schemas, so they get proper
     subscriptionStatus:
       type: object
       oneOf:
+        - $ref: '#/components/schemas/subscriptionStatusError'
+        - $ref: '#/components/schemas/subscriptionStatusSuccess'
+    subscriptionStatusError:
+      allOf:
         - properties:
             errorMessage:
               type: string
-            event:
-              type: string
-              const: subscriptionStatus
-            reqid:
-              $ref: '#/components/schemas/reqid'
-            pair:
-              $ref: '#/components/schemas/pair'
-            status:
-              $ref: '#/components/schemas/status'
-            subscription:
-              type: object
-              properties:
-                depth:
-                  $ref: '#/components/schemas/depth'
-                interval:
-                  $ref: '#/components/schemas/interval'
-                maxratecount:
-                  $ref: '#/components/schemas/maxratecount'
-                name:
-                  $ref: '#/components/schemas/name'
-                token:
-                  $ref: '#/components/schemas/token'
-              required:
-                - name
           required:
-            - event
             - errorMessage
+        - $ref: '#/components/schemas/subscriptionStatusCommon'
+    subscriptionStatusSuccess:
+      allOf:
         - properties:
             channelID:
               type: integer
@@ -407,39 +389,42 @@ It is why you sometimes need compromises and adjusts schemas, so they get proper
             channelName:
               type: string
               description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
-            event:
-              type: string
-              const: subscriptionStatus
-            reqid:
-              $ref: '#/components/schemas/reqid'
-            pair:
-              $ref: '#/components/schemas/pair'
-            status:
-              $ref: '#/components/schemas/status'
-            subscription:
-              type: object
-              properties:
-                depth:
-                  $ref: '#/components/schemas/depth'
-                interval:
-                  $ref: '#/components/schemas/interval'
-                maxratecount:
-                  $ref: '#/components/schemas/maxratecount'
-                name:
-                  $ref: '#/components/schemas/name'
-                token:
-                  $ref: '#/components/schemas/token'
-              required:
-                - name
           required:
-            - event
             - channelID
             - channelName
+        - $ref: '#/components/schemas/subscriptionStatusCommon'
+    subscriptionStatusCommon:
+      type: object
+      required:
+         - event
+      properties:
+        event:
+          type: string
+          const: subscriptionStatus
+        reqid:
+          $ref: '#/components/schemas/reqid'
+        pair:
+          $ref: '#/components/schemas/pair'
+        status:
+          $ref: '#/components/schemas/status'
+        subscription:
+          required:
+            - name
+          type: object
+          properties:
+            depth:
+              $ref: '#/components/schemas/depth'
+            interval:
+              $ref: '#/components/schemas/interval'
+            maxratecount:
+              $ref: '#/components/schemas/maxratecount'
+            name:
+              $ref: '#/components/schemas/name'
+            token:
+              $ref: '#/components/schemas/token'
 ```
 
-I managed to get a structure that will be nicely rendered in the UI. Even code generation will work well. The problem is that I failed with DRY rule and have most of the structure repeated, which makes the solution error-prone.
-
-How to solve it? In the AsyncAPI tooling case, it is easy. Just contribute! When you see something is not rendered right, or is missing, just let us know, report it or create a pull request.
+I managed to get a structure that will be nicely rendered in the UI. Even code generation will work well. It is a bit more complex than initial structure, although this is rather subjective personal-taste-like opinion.
 
 ### Let's have a look at the final document
 
@@ -447,7 +432,7 @@ Websocket protocol is very flexible, and therefore you can implement the server 
 
 For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**. Another solution would be to use specification extensions to describe relations between messages and servers.
 
-> You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/2d6e0ffe7fa1ef3f47bd901d63658f7804072881/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
+> You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
 
 ```yml
 asyncapi: 2.0.0
@@ -711,36 +696,18 @@ components:
     subscriptionStatus:
       type: object
       oneOf:
+        - $ref: '#/components/schemas/subscriptionStatusError'
+        - $ref: '#/components/schemas/subscriptionStatusSuccess'
+    subscriptionStatusError:
+      allOf:
         - properties:
             errorMessage:
               type: string
-            event:
-              type: string
-              const: subscriptionStatus
-            reqid:
-              $ref: '#/components/schemas/reqid'
-            pair:
-              $ref: '#/components/schemas/pair'
-            status:
-              $ref: '#/components/schemas/status'
-            subscription:
-              type: object
-              properties:
-                depth:
-                  $ref: '#/components/schemas/depth'
-                interval:
-                  $ref: '#/components/schemas/interval'
-                maxratecount:
-                  $ref: '#/components/schemas/maxratecount'
-                name:
-                  $ref: '#/components/schemas/name'
-                token:
-                  $ref: '#/components/schemas/token'
-              required:
-                - name
           required:
-            - event
             - errorMessage
+        - $ref: '#/components/schemas/subscriptionStatusCommon'
+    subscriptionStatusSuccess:
+      allOf:
         - properties:
             channelID:
               type: integer
@@ -748,34 +715,39 @@ components:
             channelName:
               type: string
               description: Channel Name on successful subscription. For payloads 'ohlc' and 'book', respective interval or depth will be added as suffix.
-            event:
-              type: string
-              const: subscriptionStatus
-            reqid:
-              $ref: '#/components/schemas/reqid'
-            pair:
-              $ref: '#/components/schemas/pair'
-            status:
-              $ref: '#/components/schemas/status'
-            subscription:
-              type: object
-              properties:
-                depth:
-                  $ref: '#/components/schemas/depth'
-                interval:
-                  $ref: '#/components/schemas/interval'
-                maxratecount:
-                  $ref: '#/components/schemas/maxratecount'
-                name:
-                  $ref: '#/components/schemas/name'
-                token:
-                  $ref: '#/components/schemas/token'
-              required:
-                - name
           required:
-            - event
             - channelID
             - channelName
+        - $ref: '#/components/schemas/subscriptionStatusCommon'
+    subscriptionStatusCommon:
+      type: object
+      required:
+         - event
+      properties:
+        event:
+          type: string
+          const: subscriptionStatus
+        reqid:
+          $ref: '#/components/schemas/reqid'
+        pair:
+          $ref: '#/components/schemas/pair'
+        status:
+          $ref: '#/components/schemas/status'
+        subscription:
+          required:
+            - name
+          type: object
+          properties:
+            depth:
+              $ref: '#/components/schemas/depth'
+            interval:
+              $ref: '#/components/schemas/interval'
+            maxratecount:
+              $ref: '#/components/schemas/maxratecount'
+            name:
+              $ref: '#/components/schemas/name'
+            token:
+              $ref: '#/components/schemas/token'
     interval:
       type: integer
       description: Time interval associated with ohlc subscription in minutes.
