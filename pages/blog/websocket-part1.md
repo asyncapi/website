@@ -126,6 +126,9 @@ Familiarize with below before you look at the AsyncAPI document:
   - AsyncAPI publish and subscribe operations translates to **messages user can send to the API** and **messages user will receive from the API**. Depending on API complexity, sometimes you have an API that sends [only one message](https://ik.imagekit.io/ably/s3/xchg_products/async_api_specs/000/000/019/original/weather.yaml). You can also have a situation where you can send to the server multiple different messages, and also receive different messages in response. This is when you need to use **oneOf** as I did in document for Kraken API.
 - Current AsyncAPI limitation is that you cannot specify that once the user sends (publish) message **ping**, the **pong** message is a reply. Look at this [thread](https://github.com/asyncapi/spec/issues/94) to participate in an ongoing discussion about request/reply pattern support in AsyncAPI. In the below document, you will notice that for such a use case, I use AsyncAPI specification extensions (**x-response**).
 
+> **Message to Kraken API developers and technical writers** <br/>
+In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+
 ```yml
 asyncapi: 2.0.0
 
@@ -519,5 +522,4 @@ If you can, if you are in a planning phase, new project, etc., then start design
 
 Stay tuned for the next blog post that guides you step by step through the above document :peace_symbol:
 
-> **Message to Kraken API developers and technical writers** <br/>
-In case you want to continue the work I started on the AsyncAPI document for Kraken API, feel free to do that. I'm happy to help, just let me know. Reach me out in our [AsyncAPI Slack workspace](https://www.asyncapi.com/slack-invite/).
+> I recommend you also read another article from the series about WebSocket: [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2).

@@ -1,6 +1,6 @@
 ---
 title: Creating AsyncAPI for WebSocket API - Step by Step
-date: 2021-04-20T06:00:00+01:00
+date: 2021-04-21T06:00:00+01:00
 type: Communication
 tags:
   - websocket
