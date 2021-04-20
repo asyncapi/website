@@ -315,9 +315,16 @@ Kraken API has a **subscriptionStatus** message where payload depends on the suc
       oneOf:
         - required:
             - errorMessage
+          not:
+            required:
+                - channelID
+                - channelName
         - required:
             - channelID
             - channelName
+          not:
+            required:
+                - errorMessage
       properties:
         channelID:
           type: integer
