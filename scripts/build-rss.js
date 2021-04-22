@@ -28,7 +28,7 @@ function rssFeed() {
   rss['@version'] = '2.0'
   rss["@xmlns:atom"] = 'http://www.w3.org/2005/Atom'
   rss.channel = {}
-  rss.channel.title = 'AsyncAPI Blog RSS Feed'
+  rss.channel.title = 'AsyncAPI Initiative Blog RSS Feed'
   rss.channel.link = base+'/rss'
   rss.channel["atom:link"] = {}
   rss.channel["atom:link"]["@rel"] = 'self'
@@ -51,4 +51,3 @@ function rssFeed() {
 }
 
 rssFeed()
-
