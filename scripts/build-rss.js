@@ -35,7 +35,7 @@ function rssFeed() {
   rss.channel["atom:link"]["@href"] = rss.channel.link
   rss.channel["atom:link"]["@type"] = 'application/rss+xml'
   rss.channel.description = 'AsyncAPI Initiative Blog'
-  rss.channel.webMaster = 'info@asyncapi.io'
+  rss.channel.webMaster = 'info@asyncapi.io (AsyncAPI Initiative)'
   rss.channel.pubDate = new Date().toUTCString()
   rss.channel.generator = 'next.js'
   rss.channel.item = []
