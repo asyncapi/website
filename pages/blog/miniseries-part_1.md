@@ -35,7 +35,7 @@ Explaining something is always better with actual examples, therefore I will be 
 
 ![General setup](/img/posts/jonaslagoni-miniseries/blog-miniseries-general-setup.png)
 
-I will be creating a system of two applications, a **game server** and a **backend processor** using a micro-service architecture with no public facing API. How a player interact with the **game server** could be through a phone, a computer, Xbox or PlayStation, for us this is out of scope for this project, we only care about the interaction between the **game server** and the **backend processor**. That being said, you could probably use AsyncAPI for this as well :thinking: 
+I will be creating a system of two applications, a **game server** and a **backend processor** using a micro-service architecture with no public facing API. How a player interact with the **game server** could be through a phone, a computer, Xbox or PlayStation, for us this is out of scope for this project, we only care about the interaction between the **game server** and the **backend processor**.
 
 The main point of the **game server** will be to simulate the interaction of the player. This means it will simulate the following events: when players join the game server, pick up items in game, uses the chat, hit one another, and eventually disconnect.
 
@@ -70,7 +70,7 @@ channels:
 
 Channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject). The way I like to structure my channels, is to utilize `parameters` to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of `pickup` what item `{itemId}` gets picked up. For the last part of the channel we describe what the event was, for example `connect`, `disconnect`, etc.
 
-Next we define the actual definition of the channels, and here I will focus on explaining, in full, the channel `game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup`. The rest of the channels can be seen [here]().
+Next we define the actual definition of the channels, and here I will focus on explaining the channel `game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup`. The full AsyncAPI document can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/GameServer.yaml).
 
 ```yaml
 ...
@@ -118,7 +118,7 @@ Next we design the **backend processor** API which contains all the same channel
 
 ![General setup](/img/posts/jonaslagoni-miniseries/blog-miniseries-processor-api.png)
 
-This is again because we want to define how others may interact with our **backend processor**. This means that instead of using the `subscribe` operation we use `publish` to tell others that they can publish to this channel since the backend process are subscribing to it. The full AsyncAPI document for the **backend processor** can be found [here](). 
+This is again because we want to define how others may interact with our **backend processor**. This means that instead of using the `subscribe` operation we use `publish` to tell others that they can publish to this channel since the backend process are subscribing to it. The full AsyncAPI document for the **backend processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
 
 ```yaml
 ...
@@ -201,12 +201,9 @@ and alter the channel definition for the **game server** to:
 ...
 ```
 
-These changes are done to the **backend processor** as well to end up with the following documents:
-* [AsyncAPI document for the game server]()
-* [AsyncAPI document for the processor]()
-
+These changes are done to the **backend processor** as well. All the AsyncAPI files can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI).
 ## What's next
-Now that our API's are designed for our two applications, we can move on to [Part 2: Implementing the applications using code generation]().
+Now that our API's are designed for our two applications, we can move on to Part 2: Implementing the applications using code generation.
 
 # Related issues
 In case you are interested in jumping into our discussions and be part of the community that drives the specification and tools, I have referenced some of the outstanding issues and discussions related to the different aspects I have referenced in the post.
