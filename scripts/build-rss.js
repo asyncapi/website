@@ -6,7 +6,13 @@ function getAllPosts() {
 }
 
 function clean(s) {
-  return s.split('&amp').join('&')
+  s = s.split('&ltspan&gt').join('')
+  s = s.split('&amp').join('&')
+  s = s.split('&#39;').join("'")
+  s = s.split('&lt;').join('<')
+  s = s.split('&gt;').join('>')
+  s = s.split('&quot;').join('"')
+  return s
 }
 
 function rssFeed() {
@@ -21,7 +27,7 @@ function rssFeed() {
       return i2Date - i1Date
     })
 
-  const base = 'https://asyncapi.com'
+  const base = 'https://www.asyncapi.com'
 
   const feed = {}
   const rss = {}
@@ -29,12 +35,14 @@ function rssFeed() {
   rss["@xmlns:atom"] = 'http://www.w3.org/2005/Atom'
   rss.channel = {}
   rss.channel.title = 'AsyncAPI Initiative Blog RSS Feed'
-  rss.channel.link = base+'/rss'
+  rss.channel.link = base+'/rss.xml'
   rss.channel["atom:link"] = {}
   rss.channel["atom:link"]["@rel"] = 'self'
   rss.channel["atom:link"]["@href"] = rss.channel.link
   rss.channel["atom:link"]["@type"] = 'application/rss+xml'
   rss.channel.description = 'AsyncAPI Initiative Blog'
+  rss.channel.language = 'en-gb';
+  rss.channel.copyright = 'Made with :love: by the AsyncAPI Initiative.';
   rss.channel.webMaster = 'info@asyncapi.io (AsyncAPI Initiative)'
   rss.channel.pubDate = new Date().toUTCString()
   rss.channel.generator = 'next.js'
