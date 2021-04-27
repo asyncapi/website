@@ -21,7 +21,8 @@ export default function HeadComponent({
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="description" content={description} />
-      
+      <link rel="alternate" type="application/rss+xml" title="RSS Feed for AsyncAPI Initiative" href="/rss.xml" />
+
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
