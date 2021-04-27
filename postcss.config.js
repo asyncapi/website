@@ -6,6 +6,8 @@ const purgecss = [
       /left-/,
       /mr-/,
       /pl-/,
+      /px-/,
+      /py-/,
       /z-/,
       /(md|lg|xl):mb-/,
       /(md|lg|xl):text-xs$/,
