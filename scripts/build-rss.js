@@ -49,7 +49,21 @@ function rssFeed() {
   rss.channel.item = []
 
   for (let post of posts) {
-    rss.channel.item.push({ title: post.title, description: clean(post.excerpt), link: base+post.slug, category: 'blog', guid: { '@isPermaLink': true, '': base+post.slug }, pubDate: new Date(post.date).toUTCString() })
+    const item = { title: post.title, description: clean(post.excerpt), link: base+post.slug, category: 'blog', guid: { '@isPermaLink': true, '': base+post.slug }, pubDate: new Date(post.date).toUTCString() }
+    if (post.cover) {
+      const enclosure = {};
+      enclosure["@url"] = base+post.cover;
+      enclosure["@length"] = 15026; // dummy value, anything works
+      enclosure["@type"] = 'image/jpeg';
+      if (typeof enclosure["@url"] === 'string') {
+        let tmp = enclosure["@url"].toLowerCase();
+        if (tmp.indexOf('.png')>=0) enclosure["@type"] = 'image/png';
+        if (tmp.indexOf('.svg')>=0) enclosure["@type"] = 'image/svg+xml';
+        if (tmp.indexOf('.webp')>=0) enclosure["@type"] = 'image/webp';
+      }
+      item.enclosure = enclosure;
+    }
+    rss.channel.item.push(item)
   }
 
   feed.rss = rss
