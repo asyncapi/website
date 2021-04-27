@@ -1,6 +1,6 @@
 ---
 title: "Mini series - Speed up your development process (part 1)"
-date: 2021-03-10T06:00:00+01:00
+date: 2021-04-27T06:00:00+01:00
 type: Engineering
 tags:
   - tools
