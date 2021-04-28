@@ -16,8 +16,6 @@ featured: true
 
 How can you utilize code generation to speed up the development process and only focus on what is important, the business logic? In this mini-series we will explore the ways AsyncAPI and code generation can work hand in hand beyond generating documentation. 
 
-The source code for the entire project can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries) incase you want more specific details then what is available in the blog posts.
-
 Structure of the miniseries:
 * **Part 1: Designing the API's with AsyncAPI**
 * Part 2: Implementing the applications using code generation
