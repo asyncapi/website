@@ -200,7 +200,7 @@ and alter the channel definition for the **game server** to:
 ```
 
 These changes are applied to the **backend processor** as well. All the AsyncAPI files can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI).
-## What's next
+# What's next
 Now that our API's are designed for our two applications, we can move on to Part 2: Implementing the applications using code generation.
 
 # Related issues
