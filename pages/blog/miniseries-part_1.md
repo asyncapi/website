@@ -199,15 +199,15 @@ and alter the channel definition for the **game server** to:
 ...
 ```
 
-These changes are done to the **backend processor** as well. All the AsyncAPI files can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI).
+These changes are applied to the **backend processor** as well. All the AsyncAPI files can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI).
 ## What's next
 Now that our API's are designed for our two applications, we can move on to Part 2: Implementing the applications using code generation.
 
 # Related issues
 In case you are interested in jumping into our discussions and be part of the community that drives the specification and tools, I have referenced some of the outstanding issues and discussions related to the different aspects I have referenced in the post.
-1. <a name="view-property"></a>[Add a View property to the info section to change the perspective of subscribe and publish operations](https://github.com/asyncapi/spec/issues/390)
-2. <a name="channel-reusability"></a>[Reusing channel definitions across files is hard](https://github.com/asyncapi/spec/issues/415)
-3. <a name="clarify-view"></a>[Confusions with the Publish and Subscribe meaning/perspective](https://github.com/asyncapi/spec/issues/520) 
+1. [Add a View property to the info section to change the perspective of subscribe and publish operations](https://github.com/asyncapi/spec/issues/390) <a name="view-property"></a>
+2. [Reusing channel definitions across files is hard](https://github.com/asyncapi/spec/issues/415) <a name="channel-reusability"></a>
+3. [Confusions with the Publish and Subscribe meaning/perspective](https://github.com/asyncapi/spec/issues/520) <a name="clarify-view"></a>
 
 > Cover photo by <a href="https://unsplash.com/@hidd3n?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Horvat</a> on <a href="https://unsplash.com/s/photos/software?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
