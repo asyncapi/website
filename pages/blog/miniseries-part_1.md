@@ -127,7 +127,7 @@ This is again because we want to define how others may interact with our **backe
 ...
 ```
 
-## Reusability
+## Introducing reusability
 At the moment each of the AsyncAPI documents contains their own definition of the channels. But what if we where to add a new validation rule such as a new property to the `playerItemPickupPayload` schema? In our case we would have to change this for both applications which is way too much work :smile:
 
 We can therefore introduce `$ref` to separate the parameters and messages into smaller sections for reusability. I will be placing all separate components into a `components` directory in the same directory the AsyncAPI documents reside.
