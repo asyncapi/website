@@ -25,7 +25,7 @@ What was the point of doing it anyway? Why learning the specification?
 
 <Figure
   src="/img/posts/websocket-part3/meme-newspec.webp"
-  widthClass="w-1/3"
+  widthClass="w-1/2"
 />
 
 Just to document your API? Nah, that would be a huge waste of time. Like seriously, would you learn a new specification only to describe the API for documentation purposes? Please don't. You could do so much more with it.
@@ -46,7 +46,7 @@ Even though I'm an author of many memes like those in this article, I'm actually
 
 <Figure
   src="/img/posts/websocket-part3/meme-blame.webp"
-  widthClass="w-1/3"
+  widthClass="w-1/2"
 />
 
 In the end, I think there is a wrong assumption that if you generate spec from code, it means you did not think about API design and your users. 
@@ -354,7 +354,6 @@ The **index.html** contains a simple API that you can call from the browser's co
 
 <Figure
   src="/img/posts/websocket-part3/client.webp"
-  widthClass="w-1/2"
 />
 
 ## Add Business Logic
@@ -514,7 +513,7 @@ Are you convinced now that API-first is better than code-first?
 
 <Figure
   src="/img/posts/websocket-part3/meme-redbuttons.webp"
-  widthClass="w-1/3"
+  widthClass="w-1/2"
 />
 
 I'm an API-first person. I can go on and give you many arguments that support my view.
@@ -594,7 +593,7 @@ Don't give up, though. Technical challenges are not a good excuse for avoiding t
 
 <Figure
   src="/img/posts/websocket-part3/meme-starwars.webp"
-  widthClass="w-1/3"
+  widthClass="w-1/2"
 />
 
 In my opinion, specification limitations and gaps in tooling support should not block you from choosing an API-first direction. The benefits are too big to resign that easily. Just join us and let us find solutions together. We want to help solve all those issues, but we just need some help from you too.
