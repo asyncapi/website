@@ -114,6 +114,7 @@ async function start() {
     writeFileSync(resolve(__dirname, '..', 'roadmap.json'), JSON.stringify(result, null, '  '))
   } catch (e) {
     console.error(e)
+    writeFileSync(resolve(__dirname, '..', 'roadmap.json'), '{}')
   }
 }
 
