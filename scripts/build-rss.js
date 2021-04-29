@@ -28,6 +28,7 @@ function rssFeed() {
     })
 
   const base = 'https://www.asyncapi.com'
+  const tracking = '?utm_source=rss';
 
   const feed = {}
   const rss = {}
@@ -49,7 +50,8 @@ function rssFeed() {
   rss.channel.item = []
 
   for (let post of posts) {
-    const item = { title: post.title, description: clean(post.excerpt), link: base+post.slug, category: 'blog', guid: { '@isPermaLink': true, '': base+post.slug }, pubDate: new Date(post.date).toUTCString() }
+    const link = `${base}${post.slug}${tracking}`;
+    const item = { title: post.title, description: clean(post.excerpt), link, category: 'blog', guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
     if (post.cover) {
       const enclosure = {};
       enclosure["@url"] = base+post.cover;
