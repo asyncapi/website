@@ -5,10 +5,10 @@ type: Engineering
 tags:
   - Publish
   - Subscribe
-cover: /img/posts/publish-subscribe-semantics/cover.jpg
+cover: /img/posts/publish-subscribe-semantics/cover.webp
 authors:
   - name: Nic Townsend
-    photo: /img/avatars/nictownsend.jpg
+    photo: /img/avatars/nictownsend.webp
     link: https://twitter.com/nict0wnsend
     byline: AsyncAPI user
 excerpt: 'Learn how to interpret publish and subscribe operations when reading an AsyncAPI specification, and why they might not mean what you expect.'
@@ -39,13 +39,13 @@ Or in other words, what code would you expect to be generated for the publish op
 
 If you would be surprised to hear that this would result in a Kafka Consumer, then you should keep reading!
 
-![meme with phrase 'you keep using that word, I do not think you know what it means'](/img/posts/publish-subscribe-semantics/meme.jpg)
+![meme with phrase 'you keep using that word, I do not think you know what it means'](/img/posts/publish-subscribe-semantics/meme.webp)
 
 # In the beginning
 
 AsyncAPI started as an adaptation of OpenAPI - which describes synchronous "request/response" based APIs. In an OpenAPI world, you describe the application from the perspective of the client. Or in other words, the OpenAPI document describes how a client should interact with your application. The client and server communicate directly with each other.  
   
-![server communicating with client](/img/posts/publish-subscribe-semantics/REST.png)
+![server communicating with client](/img/posts/publish-subscribe-semantics/REST.webp)
 
 You document that a GET endpoint exists to access data, a POST endpoint exists to create data, etc. In all cases, a client speaks to the application (server) that is serving these endpoints.
 
@@ -88,7 +88,7 @@ Answer... it's a Subscriber!
 
 Like with OpenAPI, an AsyncAPI documents an application from the "client" perspective. For a client to interact with My Application”, it must publish an event to the myChannel channel on the Kafka broker hosted at mybroker.com:3514  
   
-![clients communicating via a broker](/img/posts/publish-subscribe-semantics/BROKER.png)
+![clients communicating via a broker](/img/posts/publish-subscribe-semantics/BROKER.webp)
 
 # Where's the confusion?
 
