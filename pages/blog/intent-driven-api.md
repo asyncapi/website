@@ -144,13 +144,6 @@ Imagine **messages** are now independent of channels and **Operations** get move
 asyncapi: '99.99.99'
 # ...
 operations:
-  onLightMeasured:
-    operationType: publish
-    summary: Inform about environmental lighting conditions for a particular streetlight.
-    message: 
-      $ref: "#/messages/lightMessage"
-    channel: 
-      $ref: "#/channels/light/measured"
   onLightMeasureChanged:
     operationType: subscribe
     summary: Receive an update every time a lighting condition changed.
