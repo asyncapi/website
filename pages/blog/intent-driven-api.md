@@ -32,9 +32,9 @@ In short, applications worldwide depend on free libraries maintained by the comm
 
 The latter is, precisely, a problem for many developers. The feared 👻  **breaking changes** 👻.
 
-- Disclaimer: This post provides examples from the point of view of a software library API maintainer. However, the same principles apply to any other API, such as command-line tools, REST, Kernel modules, or peripheral drivers.
+> Disclaimer: This post provides examples from the point of view of a software library API maintainer. However, the same principles apply to any other API, such as command-line tools, REST, Kernel modules, or peripheral drivers.
 
-## What is a breaking change?
+# What is a breaking change?
 
 > A change in one part of a software system that potentially causes other components to fail; occurs most often in shared libraries of code used by multiple applications.
 >
@@ -61,7 +61,7 @@ Finally, the third option would be to make zero use of FOSS.
 
 How can we mitigate the impact on users when releasing a new [major](https://semver.org/#summary) version of our library or service API?
 
-## Designing APIs that are resilient to breaking changes
+# Designing APIs that are resilient to breaking changes
 
 APIs solve user needs. 
 
@@ -72,7 +72,7 @@ As *Mark Dalgleish* once tweeted:
 
 [![API design is the most underappreciated design skill since it's literally invisible to most designers](/img/posts/intent-driven-api/tweet.webp)](https://twitter.com/markdalgleish/status/1384127726861258756)
 
-### Be ready for what the user needs
+## Be ready for what the user needs
 
 Focusing on what the user needs pulls away most of the overprint of any API: What is the user **intention** when asking for a particular action to happen?
 
@@ -133,7 +133,7 @@ In the hypothetical case a user wants to parse this document and *get all the me
 doc.channels().filter(c => c.hasSubscribe()).map(c => c.subscribe().messages()).flat();
 ```
 
-We can observe that the [Parser-js](https://github.com/asyncapi/parser-js) API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the Json Schema parsed document with some helpers and extras, meaning you should know how the document's structure to get info from it.
+We can observe that the [Parser-js](https://github.com/asyncapi/parser-js) API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the Json Schema parsed document with some helpers and extras, meaning you should know the document's structure to get info from it.
 
 Let's emulate a possible breaking change. 
 
@@ -164,7 +164,7 @@ Now the users of the [Parser-js](https://github.com/asyncapi/parser-js) that wan
 doc.operations().filter(o => o.isSubscribe()).map(o => o.message()).flat();
 ```
 
-### Intent-driven design to the rescue
+## Intent-driven design to the rescue
 
 What if I tell you that you could avoid most of the breaking changes on your APIs by following an Intent-driven design approach?
 
@@ -270,6 +270,6 @@ I firmly believe making a great user experience should always be a top priority,
 I want to take this opportunity to express my gratitude to [Jonas Lagoni](https://github.com/jonaslagoni), who has been my partner along this journey. 
 Hours of figuring out small details, long backs and forths, and discussions around user experience were easy-going, thanks to this one.
 
-I hope you enjoyed this post as much as I did writing it :)
+I hope you enjoyed reading this post as much as I did writing it :)
 
 > Cover image credit goes to [Karolina Grabowska](https://kaboompics.com/photo/20669/sharpened-colorful-pencils).
