@@ -286,3 +286,5 @@ I want to take this opportunity to express my gratitude to [Jonas Lagoni](https:
 Hours of figuring out small details, long backs and forths, and discussions around user experience were easy-going, thanks to this one.
 
 I hope you enjoyed this post as much as I did writing it :)
+
+> Cover image credit goes to [Karolina Grabowska](https://kaboompics.com/photo/20669/sharpened-colorful-pencils).
