@@ -1,12 +1,11 @@
 ---
 title: Designing a unified Intent-driven API for all AsyncAPI's parsers
 date: 2021-05-07T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
-  - api
-  - parser
-  - design
-  - codegen
+  - API design
+  - AsyncAPI tooling
+  - Processes
 cover: /img/posts/intent-driven-api/cover.webp
 authors:
   - name: Sergio Moya
