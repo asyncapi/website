@@ -105,14 +105,7 @@ servers:
   mosquitto:
     url: mqtt://test.mosquitto.org
     protocol: mqtt
-channels:
-  light/measured:
-    publish:
-      summary: Inform about environmental lighting conditions for a particular streetlight.
-      operationId: onLightMeasured
-      message: 
-        $ref: "#/components/messages/lightMessage"
-      
+channels:    
   light/measured/changed:
     subscribe:
       summary: Receive an update every time a lighting condition changed.
@@ -240,7 +233,7 @@ Methods were returning hardcoded data but were enough for getting an idea of how
 At this point, we faced up some API design decisions, such as: 
 
 - Shall we add getters for all properties?
-- Are we going to use singular and plural methods? Both? Only plural?
+- Are we going to use singular or plural methods?
 - Are methods going to have any argument at all?
 - Etc
 
