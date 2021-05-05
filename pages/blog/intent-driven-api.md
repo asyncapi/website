@@ -133,7 +133,7 @@ In the hypothetical case a user wants to parse this document and *get all the me
 doc.channels().filter(c => c.hasSubscribe()).map(c => c.subscribe().messages()).flat();
 ```
 
-We can observe that the [Parser-js](https://github.com/asyncapi/parser-js) API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the Json Schema parsed document with some helpers and extras, meaning you should know the document's structure to get info from it.
+We can observe that the [Parser-js][parser-js] API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the Json Schema parsed document with some helpers and extras, meaning you should know the document's structure to get info from it.
 
 Let's emulate a possible breaking change. 
 
@@ -158,7 +158,7 @@ messages:
     # ...
 ```
 
-Now the users of the [Parser-js](https://github.com/asyncapi/parser-js) that wanted to *get all the messages a consumer of the application can consume* will need to change their code so their app keeps working after the **breaking change** got introduced. For instance:
+Now the users of the [Parser-js][parser-js] that wanted to *get all the messages a consumer of the application can consume* will need to change their code so their app keeps working after the **breaking change** got introduced. For instance:
 
 ```jsx
 doc.operations().filter(o => o.isSubscribe()).map(o => o.message()).flat();
@@ -197,7 +197,7 @@ Here is a summary of the steps we followed:
 
 ## 1. Identify how users use the library
 
-We first focused on identifying the intents behind our [generator templates](https://github.com/asyncapi/generator#list-of-official-generator-templates). By doing some code analysis, we came out with [a list](https://github.com/asyncapi/shape-up-process/issues/84) of *potential* intents that became the foundation of our API.
+We first focused on identifying the intents behind our [generator templates][templates]. By doing some code analysis, we came out with [a list][issue-2] of *potential* intents that became the foundation of our API.
 
 Furthermore, we tried to think about potential users of the parsers. For example, [Slack](https://github.com/slackapi/slack-api-specs/blob/master/events-api/slack_events_api_async_v1.json) developers could use the parser for adding documentation to their UI, validating messages, among others. 
 
@@ -231,7 +231,7 @@ At this point, we faced up some API design decisions, such as:
 
 ## 4. Validate the intents and their UX
 
-With the new API mock built-in Javascript, we chose some of the most used [generator templates](https://github.com/asyncapi/generator#list-of-official-generator-templates) and replaced all the calls made to the old [Parser-js](https://github.com/asyncapi/parser-js) API with the new ones.
+With the new API mock built-in Javascript, we chose some of the most used [generator templates][templates] and replaced all the calls made to the old [Parser-js][parser-js] API with the new ones.
 
 This step made us realize that some of the intents we mocked up worked like a charm: We were pretty happy seeing how the code got simplified.
 
@@ -245,7 +245,7 @@ Even though each parser will now maintain an individual release cycle, changes t
 
 It follows [Semver](https://semver.org/) (as we do for all projects), so each parser will therefore maintain its compatibility matrix, making visible what version of the API specification they support. 
 
-You can find the new repository holding the new Parsers API specification [here](https://github.com/asyncapi/parser-api), which at the moment of writing this post, it's still `v1.0.0-alpha`, as we are waiting for more feedback from the community.
+You can find the new repository holding the new Parsers API specification [here][api], which at the moment of writing this post, it's still `v1.0.0-alpha`, as we are waiting for more feedback from the community.
 
 # What's next?
 
@@ -253,12 +253,30 @@ Even though we do now have an alpha version of the new spec, work is pending aro
 
 Our next steps are going to be:
 
-1. To release a new version (alpha) of the [Parser-js](https://github.com/asyncapi/parser-js) that implements the new API specification.
-2. To use that new [Parser-js](https://github.com/asyncapi/parser-js) version in some of the [generator templates](https://github.com/asyncapi/generator#list-of-official-generator-templates). That will help us to:
-    1. Validate that the [Parser-js](https://github.com/asyncapi/parser-js) behaves as expected.
+1. To release a new version (alpha) of the [Parser-js][parser-js] that implements the new API specification.
+2. To use that new [Parser-js][parser-js] version in some of the [generator templates][templates]. That will help us to:
+    1. Validate that the [Parser-js][parser-js] behaves as expected.
     2. Set an example of what kind of changes users will need to do on their codes to adopt the new API (We expect code will require no significant changes).
-3. To ask for feedback from the community, especially to maintainers and users of the [Parser-js](https://github.com/asyncapi/parser-js). Reviewing the new API now becomes easier as there will be the specification, a new version of the [Parser-js](https://github.com/asyncapi/parser-js) and also examples to follow.
+3. To ask for feedback from the community, especially to maintainers and users of the [Parser-js][parser-js]. Reviewing the new API now becomes easier as there will be the specification, a new version of the [Parser-js][parser-js] and also examples to follow.
 4. Review feedback, apply suggestions, and do release a release-candidate or final version.
+
+# Related issues and links
+Please find the outstanding issues related to the design process we went through here:
+
+- [Main issue for the API design process][issue-1]
+- [Collecting potential intents][issue-2]
+- [Emulating few breaking changes][issue-3]
+- [Figuring out how to do API versioning][issue-4]
+
+The new Parser(s) API specification can be found [here][api].
+
+[issue-1]: https://github.com/asyncapi/shape-up-process/issues/90
+[issue-2]: https://github.com/asyncapi/shape-up-process/issues/84
+[issue-3]: https://github.com/asyncapi/shape-up-process/issues/93
+[issue-4]: https://github.com/asyncapi/shape-up-process/issues/95
+[parserjs]: https://github.com/asyncapi/parser-js
+[templates]: https://github.com/asyncapi/generator#list-of-official-generator-templates
+[api]: https://github.com/asyncapi/parser-api
 
 # Conclusion
 Intent-driven design helps to better understand your users by focusing on their intentions rather than technical details.
