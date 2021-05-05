@@ -274,7 +274,7 @@ The new Parser(s) API specification can be found [here][api].
 [issue-2]: https://github.com/asyncapi/shape-up-process/issues/84
 [issue-3]: https://github.com/asyncapi/shape-up-process/issues/93
 [issue-4]: https://github.com/asyncapi/shape-up-process/issues/95
-[parserjs]: https://github.com/asyncapi/parser-js
+[parser-js]: https://github.com/asyncapi/parser-js
 [templates]: https://github.com/asyncapi/generator#list-of-official-generator-templates
 [api]: https://github.com/asyncapi/parser-api
 
