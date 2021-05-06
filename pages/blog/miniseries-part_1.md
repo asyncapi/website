@@ -126,11 +126,11 @@ And you would be correct, but this is how you currently define operations in Asy
 The **payload** of the channel (is described using a super-set of JSON Schema draft 7) should validate against an **object** which contains the property **pickupTimestamp**, which should validate against a **string**. When **additionalProperties** is **false**, no extra properties may be added to the object (by default this is **true** in JSON Schema draft 7). The **$id** keyword are used as an identifier for that specific schema, in this case we name the object schema **PlayerItemPickupPayload**.
 
 ## The backend processor
-Next we design the **backend processor** API which contains all the same channels as the **game server**, but with a different operation keyword. 
+Next we design the **processor** API which contains all the same channels as the **game server**, but with a different operation keyword. 
 
 ![Processor setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp)
 
-This is again because we want to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation we use `publish` to tell others that they can publish to this channel since the backend process are subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
+This is again because we want to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation we use `publish` to tell others that they can publish to this channel since the backend **processor** are subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
 
 ```yaml
 ...
