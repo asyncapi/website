@@ -26,7 +26,7 @@ FOSS has changed the way most developers operate: from coding all features from 
 
 So much so that I, as a developer, can't imagine having to implement a complex application from scratch. 
 
-If we go a step further, we won't talk only about libraries but also about APIs as services. For example, the fast adoption of the [Jamstack](https://jamstack.org) architecture, where the Backend consists on different API services (primarily third-party), are pushing SaaS companies to make public their private APIs.
+If we go a step further, we won't talk only about libraries but also about APIs as services. For example, the fast adoption of the [Jamstack](https://jamstack.org) architecture, where the backend consists of different API services (primarily third-party), is pushing SaaS companies to make their private APIs public.
 
 In short, applications worldwide depend on free libraries maintained by the community, which constantly deliver updates at a frenetic rate: new functionalities, fixes, or in many other cases, drastic changes that allow us to continue growing and maintaining those libraries or APIs.
 
