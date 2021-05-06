@@ -70,7 +70,14 @@ However, I believe we do not listen to the final users that much. Instead, we te
 Not an easy journey, but I can promise you it is worth it.
 As *Mark Dalgleish* once tweeted:
 
-[![API design is the most underappreciated design skill since it's literally invisible to most designers](/img/posts/intent-driven-api/tweet.webp)](https://twitter.com/markdalgleish/status/1384127726861258756)
+<TwitterTweetEmbed
+  tweetId='1384127726861258756'
+  options={{
+    cards: 'hidden',
+    width: 500,
+    align: 'center'
+  }}
+/>
 
 ## Be ready for what the user needs
 
