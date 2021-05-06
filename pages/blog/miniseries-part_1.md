@@ -79,9 +79,9 @@ channels:
     description: Channel used when a player hit another player in-game
 ```
 
-Channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject), regardless of how the underlying broker . The way I like to structure my channels, is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of `pickup` what item `{itemId}` gets picked up. For the last part of the channel we describe what the event was, for example connect, disconnect, etc.
+Channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject), regardless of how the underlying broker . The way I like to structure my channels, is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of **pickup**, what item `{itemId}` gets picked up. For the last part of the channel we describe what the event was, **pickup**, **connect**, **disconnect**, etc.
 
-Next we define the actual definition of the channels, and here I will focus on explaining the channel **game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup**. The full AsyncAPI document can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/GameServer.yaml).
+Next we define the actual definition of the channels, and here I will focus on explaining the channel `game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup`. The full AsyncAPI document can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/GameServer.yaml).
 
 ```yaml
 ...
@@ -142,9 +142,9 @@ This is again because we want to define how others may interact with our **proce
 ```
 
 ## Introducing reusability
-At the moment each of the AsyncAPI documents contains their own definition of the channels. But what if we where to add a new validation rule such as a new property to the `playerItemPickupPayload` schema? In our case we would have to change this for both applications which is way too much work :smile:
+At the moment each of the AsyncAPI documents contains their own definition of the channels. But what if we where to add a new validation rule such as a new property to the **playerItemPickupPayload** schema? In our case we would have to change this for both applications which is way too much work :smile:
 
-We can therefore introduce `$ref` to separate the parameters and messages into smaller sections for reusability. I will be placing all separate components into a `components` directory in the same directory the AsyncAPI documents reside.
+We can therefore introduce **$ref** to separate the parameters and messages into smaller sections for reusability. I will be placing all separate components into a **components** directory in the same directory the AsyncAPI documents reside.
 
 Just a quick note, at the moment it is not possible to reuse channels and operations directly, therefore we must do it to the parameters and message individually \[[2](#channel-reusability)\]. 
 
