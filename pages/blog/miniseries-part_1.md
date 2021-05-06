@@ -35,7 +35,7 @@ Initially I used OpenAPI to describe the API and the great thing was their tooli
 
 I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible, but cumbersome. So I started exploring different alternatives, in terms of event driven architecture, however, none could be described using OpenAPI or offered tooling, so I had to find alternatives. 
 
-That was when I vaguely remembered a meeting where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the API's, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, and sparked my first ever encounter with open source, but is a story for another time.
+That was when I vaguely remembered a meeting where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the API's, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, and sparked my first ever encounter with open source, but that is a story for another time, maybe.
 
 So this blog post is a dedication to that experience, showcasing how I use AsyncAPI to document and generate code to speed up the development process, and maybe spark your interest in building the best tooling possible.
 
