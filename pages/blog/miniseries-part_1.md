@@ -5,7 +5,7 @@ type: Engineering
 tags:
   - tools
   - code generation
-cover: /img/posts/jonaslagoni-miniseries/blog-miniseries-cover.jpg
+cover: /img/posts/jonaslagoni-miniseries-part1/blog-miniseries-cover.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
@@ -43,7 +43,7 @@ So this blog post is a dedication to that experience, showcasing how I use Async
 
 Explaining something is always better with actual examples, therefore I will be creating a little system to show you how code generation can help the development process. 
 
-![General setup](/img/posts/jonaslagoni-miniseries/blog-miniseries-general-setup.png)
+![General setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-general-setup.webp)
 
 I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public facing API. How a player interact with the **game server** could be through a phone, a computer, Xbox or PlayStation, for us this is out of scope for this project, we only care about the interaction between the **game server** and the **processor**. The round dot between some broker and the game server represent how others may grab/interact with the application, ergo its API. The same thing is for the processor.
 
@@ -117,7 +117,7 @@ This is the full AsyncAPI channel definition for describing the event for when a
 
 First we have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
 
-![Game server setup](/img/posts/jonaslagoni-miniseries/blog-miniseries-gameserver-api.png)
+![Game server setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-gameserver-api.webp)
 
 Next we have the **subscribe** operation, which might not make much sense at first glance. We do want the **game server** to publish this event right? 
 
@@ -128,7 +128,7 @@ The **payload** of the channel (is described using a super-set of JSON Schema dr
 ## The backend processor
 Next we design the **backend processor** API which contains all the same channels as the **game server**, but with a different operation keyword. 
 
-![Processor setup](/img/posts/jonaslagoni-miniseries/blog-miniseries-processor-api.png)
+![Processor setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp)
 
 This is again because we want to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation we use `publish` to tell others that they can publish to this channel since the backend process are subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
 
