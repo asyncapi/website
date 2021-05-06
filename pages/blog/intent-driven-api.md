@@ -140,7 +140,7 @@ In the hypothetical case a user wants to parse this document and *get all the me
 doc.channels().filter(c => c.hasSubscribe()).map(c => c.subscribe().messages()).flat();
 ```
 
-We can observe that the [Parser-js][parser-js] API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the Json Schema parsed document with some helpers and extras, meaning you should know the document's structure to get info from it.
+We can observe that the [Parser-js][parser-js] API (`v1.x`) is completely coupled with the structure of the AsyncAPI spec (by the date of this post, `v2.0.0`) document. The API is just a layer on top of the JSON Schema parsed document with some helpers and extras, meaning you should know the document's structure to access any information.
 
 Let's emulate a possible breaking change. 
 
