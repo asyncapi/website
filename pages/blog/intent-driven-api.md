@@ -297,4 +297,4 @@ Hours of figuring out small details, long backs and forths, and discussions arou
 
 I hope you enjoyed reading this post as much as I did writing it :)
 
-> Cover image credit goes to [Karolina Grabowska](https://kaboompics.com/photo/20669/sharpened-colorful-pencils).
+> Cover photo by <a href="https://kaboompics.com/photo/20669/sharpened-colorful-pencils">Karolina Grabowska</a> on <a href="https://kaboompics.com">Kaboompics</a>
