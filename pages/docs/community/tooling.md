@@ -20,6 +20,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
 | [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation | Scala
+| [EventBridge Atlas](https://github.com/boyney123/eventbridge-atlas) | Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI | Node
 
 # Code Generators
 
