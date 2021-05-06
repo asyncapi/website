@@ -256,7 +256,7 @@ You can find the new repository holding the new Parsers API specification [here]
 
 # What's next?
 
-Even though we do now have an alpha version of the new spec, work is pending around implementation.
+Even though we do now have an alpha version of the new parser API, work is pending around implementation.
 
 Our next steps are going to be:
 
