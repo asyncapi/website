@@ -295,6 +295,6 @@ I firmly believe making a great user experience should always be a top priority,
 I want to take this opportunity to express my gratitude to [Jonas Lagoni](https://github.com/jonaslagoni), who has been my partner along this journey. 
 Hours of figuring out small details, long backs and forths, and discussions around user experience were easy-going, thanks to this one.
 
-I hope you enjoyed reading this post as much as I did writing it :)
+I hope you enjoyed reading this post as much as I did writing it 😃 
 
 > Cover photo by <a href="https://kaboompics.com/photo/20669/sharpened-colorful-pencils">Karolina Grabowska</a> on <a href="https://kaboompics.com">Kaboompics</a>
