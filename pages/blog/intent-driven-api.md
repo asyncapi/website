@@ -257,6 +257,7 @@ You can find the new repository holding the new Parsers API specification [here]
 # What's next?
 
 Even though we do now have an alpha version of the new parser API, work is pending around implementation.
+We are actively asking for feedback. Please submit yours via Github Discussions [here][api-discussions].
 
 Our next steps are going to be:
 
@@ -268,6 +269,7 @@ Our next steps are going to be:
 4. Review feedback, apply suggestions, and do release a release-candidate or final version.
 
 # Related issues and links
+
 Please find the outstanding issues related to the design process we went through here:
 
 - [Main issue for the API design process][issue-1]
@@ -275,7 +277,7 @@ Please find the outstanding issues related to the design process we went through
 - [Emulating few breaking changes][issue-3]
 - [Figuring out how to do API versioning][issue-4]
 
-The new Parser(s) API specification can be found [here][api].
+The new Parser(s) API specification can be found [here][api]. Discussions take place [here][api-discussions].
 
 [issue-1]: https://github.com/asyncapi/shape-up-process/issues/90
 [issue-2]: https://github.com/asyncapi/shape-up-process/issues/84
@@ -284,8 +286,10 @@ The new Parser(s) API specification can be found [here][api].
 [parser-js]: https://github.com/asyncapi/parser-js
 [templates]: https://github.com/asyncapi/generator#list-of-official-generator-templates
 [api]: https://github.com/asyncapi/parser-api
+[api-discussions]: https://github.com/asyncapi/parser-api/discussions
 
 # Conclusion
+
 Intent-driven design helps to better understand your users by focusing on their intentions rather than technical details.
 
 It is not an easy path in the short term; however, the benefits can be visible early, making the process a grateful experience.
