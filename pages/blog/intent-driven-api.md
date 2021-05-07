@@ -97,9 +97,6 @@ Building APIs based on the implementation detail will nothing less than lead you
 
 Let's pick up another example, this time a more practical one. 
 
-Let's use our [AsyncAPI Parser](https://github.com/asyncapi/parser-js) built-in Javascript. 
-It parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
-
 Here is a modified version of the [Streetlights tutorial](https://www.asyncapi.com/docs/tutorials/streetlights) document made for demo purposes:
 
 ```yaml
@@ -133,6 +130,9 @@ components:
             minimum: 0
             description: Light intensity measured in lumens.
 ```
+
+By the time of this post, there is only one implementation of the parser, which is built-in Javascript. 
+[Parser-js][parser-js] parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
 
 In the hypothetical case a user wants to parse this document and *get all the messages a consumer of the application can consume*, this is needed: 
 
