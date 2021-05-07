@@ -100,7 +100,7 @@ Let's pick up another example, this time a more practical one.
 Let's use our [AsyncAPI Parser](https://github.com/asyncapi/parser-js) built-in Javascript. 
 It parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
 
-Here is a mod version of the [Streetlights tutorial](https://www.asyncapi.com/docs/tutorials/streetlights) document made for demo purposes:
+Here is a modified version of the [Streetlights tutorial](https://www.asyncapi.com/docs/tutorials/streetlights) document made for demo purposes:
 
 ```yaml
 asyncapi: '2.0.0'
