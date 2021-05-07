@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import Head from 'next/head'
 import AppContext from '../context/AppContext'
+import ReactGA from 'react-ga'
 
 export default function HeadComponent({
   title,
@@ -14,6 +15,12 @@ export default function HeadComponent({
   if (path.startsWith('/docs') || path.startsWith('/blog')) type = 'article'
   if (!image.startsWith('http') && !image.startsWith('https')) image = `${url}${image}`
   title = `${title} | AsyncAPI Initiative`
+
+  //enable google analytics
+  if (typeof window !== 'undefined') {
+    ReactGA.initialize('UA-109278936-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
 
   return (
     <Head>
@@ -40,7 +47,7 @@ export default function HeadComponent({
       <meta property="og:url" content={permalink} />
       <meta property="og:image" content={image} />
       <meta property="og:description" content={description} />
-      
+
       <title>{title}</title>
     </Head>
   )
