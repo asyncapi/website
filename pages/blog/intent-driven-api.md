@@ -131,7 +131,7 @@ components:
             description: Light intensity measured in lumens.
 ```
 
-By the time of this post, there is only one implementation of the parser, which is built-in Javascript. 
+By the time of this post, there is only one implementation of the parser, which is written in Javascript. 
 [Parser-js][parser-js] parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
 
 In the hypothetical case a user wants to parse this document and *get all the messages a consumer of the application can consume*, this is needed: 
