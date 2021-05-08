@@ -16,7 +16,7 @@ export default function Filter({data, onFilter}) {
         onFilter(jobs);
     }
     return (
-        <div class="mb-4">
+        <div className="mb-4">
             <Select options={categories} 
             onChange={onFilterApply} selected={state}
             className='w-56 max-w-sm'
