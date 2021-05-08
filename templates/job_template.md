@@ -3,6 +3,9 @@ title: 'Job Title'
 date: DD/MM/YYYY (current date)
 category: job category
 closingOn: MM/DD/YYYY
+company: 
+  name: company's name
+  logoUrl: company's logo url
 ---
 ## Disclaimer
 
