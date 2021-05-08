@@ -6,17 +6,12 @@ export default function JobPostItem({ job }) {
       <a href={job.slug} className="block hover:bg-gray-50">
         <div className="px-4 py-4 sm:px-6">
           <div className="flex items-center justify-between">
+          <div className="flex items-center">
+          <img src={job.company.logoUrl} className="h-6 pr-0.5" /> 
             <p className="text-sm font-medium text-indigo-600 truncate">
-              {job.title}
+              {job.title} at {job.company.name}
             </p>
-            <a href={job.company.url}>
-              <div className="ml-2 flex-shrink-0 flex">
-                <img src={job.company.logoUrl} height="10px" width="20px" />
-                <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-green-800">
-                  {job.company.name}
-                </p>
-              </div>{" "}
-            </a>
+            </div>
             <div className="ml-2 flex-shrink-0 flex">
               <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                 {!job.employmentType || job.employmentType === "full-time"
