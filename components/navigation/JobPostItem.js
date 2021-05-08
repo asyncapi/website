@@ -11,7 +11,7 @@ export default function JobPostItem({ job }) {
             </p>
             <a href={job.company.url}>
               <div className="ml-2 flex-shrink-0 flex">
-                <img src={job.company.logo_url} height="10px" width="20px" />
+                <img src={job.company.logoUrl} height="10px" width="20px" />
                 <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-green-800">
                   {job.company.name}
                 </p>

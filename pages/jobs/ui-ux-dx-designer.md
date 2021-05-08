@@ -6,7 +6,7 @@ closingOn: 06/15/2021
 company: 
   name: 'Postman'
   url:  https://www.postman.com/
-  logo_url: https://i.ibb.co/bBrpjgM/images.png
+  logoUrl: https://i.ibb.co/bBrpjgM/images.png
 ---
 
 We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
