@@ -5,7 +5,6 @@ category: job category
 closingOn: MM/DD/YYYY
 company: 
   name: company's name
-  url:  company's website url
   logoUrl: company's logo url
 ---
 ## Disclaimer
