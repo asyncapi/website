@@ -14,7 +14,8 @@ export default function HeadComponent({
   let type = 'website'
   if (path.startsWith('/docs') || path.startsWith('/blog')) type = 'article'
   if (!image.startsWith('http') && !image.startsWith('https')) image = `${url}${image}`
-  title = `AsyncAPI Initiative for Event-driven APIs`
+  const permTitle = 'AsyncAPI Initiative for event-driven APIs'
+  title = title ? `${title} | ${permTitle}` : permTitle
 
   //enable google analytics
   if (typeof window !== 'undefined') {

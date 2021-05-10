@@ -33,7 +33,7 @@ function HomePage() {
   return (
     <>
       <Container wide>
-        <Head title="Home" />
+        <Head />
         <NavBar className="z-50" />
         <Hero className="mb-24" />
       </Container>
