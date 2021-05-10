@@ -5,7 +5,7 @@ import ReactGA from 'react-ga'
 
 export default function HeadComponent({
   title,
-  description = 'Building the future of event-driven architectures.',
+  description = 'Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.',
   image = '/img/social/card.png',
 }) {
   const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL
@@ -14,7 +14,8 @@ export default function HeadComponent({
   let type = 'website'
   if (path.startsWith('/docs') || path.startsWith('/blog')) type = 'article'
   if (!image.startsWith('http') && !image.startsWith('https')) image = `${url}${image}`
-  title = `${title} | AsyncAPI Initiative`
+  const permTitle = 'AsyncAPI Initiative for event-driven APIs'
+  title = title ? `${title} | ${permTitle}` : permTitle
 
   //enable google analytics
   if (typeof window !== 'undefined') {
