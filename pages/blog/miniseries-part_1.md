@@ -1,5 +1,5 @@
 ---
-title: "Mini series - Speed up your development process (part 1)"
+title: "Speed up your development process (part 1)"
 date: 2021-04-28T06:00:00+01:00
 type: Engineering
 tags:
