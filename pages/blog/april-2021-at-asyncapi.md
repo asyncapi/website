@@ -66,6 +66,8 @@ Don't stay behind. Maciek is now entirely focused on the component. Now is the b
 
 Your favorite missing features like rendering of extensions and bindings are already there!
 
+[![Edit asyncapi-react-component-next-in-action](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/asyncapi-react-next-in-action-4en9x)
+
 ## Intend-driven API for AsyncAPI Parsers
 
 Over the last couple of weeks [Jonas Lagoni](https://www.linkedin.com/in/jonas-terp-lagoni-85b027b9/) and [Sergio Moya](https://twitter.com/smoyac) worked on an idea to make the AsyncAPI JavaScript Parser, and in future other parsers, resilient to breaking changes in the AsyncAPI specification. 
