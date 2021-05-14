@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import Head from 'next/head'
 import AppContext from '../context/AppContext'
 import ReactGA from 'react-ga'
+import TagManager from 'react-gtm-module'
 
 export default function HeadComponent({
   title,
@@ -19,6 +20,7 @@ export default function HeadComponent({
 
   //enable google analytics
   if (typeof window !== 'undefined') {
+    TagManager.initialize({gtmId: 'GTM-T58BTVQ'})
     ReactGA.initialize('UA-109278936-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
   }
