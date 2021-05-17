@@ -1,5 +1,5 @@
 ---
-title: "Speed up your development process (part 1)"
+title: "Designing the APIs with AsyncAPI (Part 1)"
 date: 2021-04-28T06:00:00+01:00
 type: Engineering
 tags:
@@ -17,7 +17,7 @@ featured: true
 How can you utilize code generation to speed up the development process and only focus on what is important, the business logic? In this mini-series, I will explore the ways AsyncAPI and code generation can work hand in hand beyond generating documentation. 
 
 Structure of the miniseries:
-* **Part 1: Designing the API's with AsyncAPI**
+* **Part 1: Designing the APIs with AsyncAPI**
 * Part 2: Implementing the applications using code generation
 * Part 3: Black-box testing the applications using code generation
 * Part 4: Introducing new changes when using code generation
@@ -35,7 +35,7 @@ Initially, I used OpenAPI to describe the API and the great thing was their tool
 
 I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible, but cumbersome. So I started exploring different alternatives, in terms of event-driven architecture, however, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
 
-That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the API's, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
+That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the APIs, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
 
 So this blog post is a dedication to that experience, showcasing how I use AsyncAPI to document and generate code to speed up the development process, and maybe spark your interest in helping us build the best tooling possible.
 
@@ -55,7 +55,7 @@ The backend **processor** will be consuming these events to process them. In thi
 
 I will not get into the specifics of the stack for this system yet since it does not affect the writing of the API documents for the two applications.
 
-# Designing the API's with AsyncAPI
+# Designing the APIs with AsyncAPI
 I always use the [design first principle](https://apisyouwonthate.com/blog/api-design-first-vs-code-first), even when we are talking about internal systems, which means describing the two applications, **game server** and **processor** using the AsyncAPI specification before starting with the implementation.
 
 Using AsyncAPI to define an internal system is not entirely apparent how to do, since AsyncAPI is build to define behavior from the perspective of the external user. I will be clarifying this a bit more later on with actual examples, but if you want to go deeper into this, otherwise read Nic Townsend's post about [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics). 
