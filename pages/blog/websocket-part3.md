@@ -19,7 +19,7 @@ featured: true
 
 >  This is the last article of WebSocket series. I recommend you read [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) and [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) first.
 
-In my previous articles, from the WebSocket series, I introduced you to WebSocket topic and explained how you would describe your WebSocket API using AsyncAPI specification.
+In my previous articles from the WebSocket series, I introduced you to WebSocket topic and explained how you would describe your WebSocket API using AsyncAPI specification.
 
 What was the point of doing it anyway? Why learning the specification?
 
@@ -31,7 +31,7 @@ What was the point of doing it anyway? Why learning the specification?
 
 Just to document your API? Nah, that would be a huge waste of time. Like seriously, would you learn a new specification only to describe the API for documentation purposes? Please don't. You could do so much more with it.
 
-Look at [the list](https://www.asyncapi.com/docs/community/tooling) of all the tools built for AsyncAPI. There are many ahead of us, but the current list already explains what can be done with AsyncAPI. You can validate your messages in real-time in your application with [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) or mock and test your application with [Microcks](https://microcks.io/). You can also generate code by picking one of [the official templates](https://github.com/asyncapi/generator#list-of-official-generator-templates). In this article, I will focus on the aspect of code generation.
+Look at the list of [all the tools](https://www.asyncapi.com/docs/community/tooling) built for AsyncAPI. There are many ahead of us, but the current list already explains what can be done with AsyncAPI. You can validate your messages in real-time in your application with [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) or mock and test your application with [Microcks](https://microcks.io/). You can also generate code by picking one of [the official templates](https://github.com/asyncapi/generator#list-of-official-generator-templates). In this article, I will focus on the aspect of code generation.
 
 ## API-First vs Code-First
 
@@ -65,13 +65,13 @@ I'll try to come back into **API-First vs Code-First** topic in the summary of t
 
 ## ShrekApp
 
-I know that in [this](/blog/websocket-part1) article, I wrote that I would not try to model a Shrek application. Since the moment I wrote I will not do it, I immediately started thinking about doing it :smiley:. So here I am, showing you a possible use case for AsyncAPI with WebSocket protocol basing on Shrek. I shamefully admit I do it mainly to make sure my head moves on and thinks about something other than Shrek :smiley:.
+I know that in [this article](/blog/websocket-part1), I wrote that I would not try to model a Shrek application. Since the moment I wrote I will not do it, I immediately started thinking about doing it :smiley: So here I am, showing you a possible use case for AsyncAPI with WebSocket protocol basing on Shrek. I shamefully admit I do it mainly to make sure my head moves on and thinks about something other than Shrek :smiley:
 
 ## Write AsyncAPI document
 
 > You can see entire AsyncAPI document [here](https://github.com/derberg/shrekapp-asyncapi-designed/blob/main/asyncapi.yaml)
 
-There are several questions you need to ask yourself when designing API:
+There are several questions you need to ask yourself when designing an API:
 - What is the name of the API?
 - What is the purpose of the API?
 - What is the version of the API?
@@ -183,7 +183,7 @@ components:
 
 You can see the entire AsyncAPI document for ShrekApp always up to date [here](https://github.com/derberg/shrekapp-asyncapi-designed/blob/main/asyncapi.yaml)
 
-Created AsyncAPI document is not very complicated as this way it will be easier to understand the generated code. Most important is for you to notice that all information about your application is expressed in the AsyncAPI document, and once you do it, options for the next steps are just endless.
+The AsyncAPI document I just created is not very complicated as this way it will be easier to understand the generated code. Most important is for you to notice that all information about your application is expressed in the AsyncAPI document, and once you do it, options for the next steps are just endless.
 
 ## Generate Code
 
@@ -191,7 +191,7 @@ It is time now to generate some code that enables you to focus just on the busin
 
 ### AsyncAPI Generator
 
-The AsyncAPI Initiative maintains an [AsyncAPI Generator](https://github.com/asyncapi/generator/), a tool that enables you to generate anything you want out of the AsyncAPI document. [Generator](https://www.asyncapi.com/generator) provides several features that make it much easier to provide so-called **templates**. The template is a standalone project that defines what files should be rendered by the Generator as a final output.
+The AsyncAPI Initiative maintains the [AsyncAPI Generator](https://github.com/asyncapi/generator/), a tool that enables you to generate anything you want out of an AsyncAPI document. [Generator](https://www.asyncapi.com/generator) provides several features that make it much easier to provide so-called **templates**. The template is a standalone project that defines what files should be rendered by the Generator as a final output.
 
 We have many templates on our [list](https://github.com/asyncapi/generator#list-of-official-generator-templates). Try out the project by following :point_down: instructions:
 
@@ -202,9 +202,9 @@ We have many templates on our [list](https://github.com/asyncapi/generator#list-
 This article focuses on WebSocket therefore, I use our [Node.js WebSocket template](https://github.com/asyncapi/nodejs-ws-template) that is capable of generating server for WebSocket API and also a client that is aware of available channels.
 
 1. Create a new directory where you will work on the project:
-      ```bash
-      mkdir shrekapp && cd shrekapp
-      ```
+    ```bash
+    mkdir shrekapp && cd shrekapp
+    ```
 1. Trigger generation using the template:
   ```bash
   ag https://raw.githubusercontent.com/derberg/shrekapp-asyncapi-designed/main/asyncapi.yaml @asyncapi/nodejs-ws-template -o myapp -p server=swamp
@@ -224,7 +224,7 @@ This article focuses on WebSocket therefore, I use our [Node.js WebSocket templa
 
 That is it. The basics are done. The application is ready, and all the basic logic is there. You can already interact with the application on **localhost** on port **80**. Now you need a client able to communicate with WebSocket protocol. For now, we will not explore the generated client.
 
-1. Get **websocat** (curl-like tool for WebSocket) by following [these](https://github.com/vi/websocat#installation) instructions
+1. Get **websocat** (curl-like tool for WebSocket) by following [these instructions](https://github.com/vi/websocat#installation)
 1. Connect to one of the channels and notice that the server sent you a message to respond to established connection.
   ```bash
   websocat ws://localhost/travel/status
@@ -238,7 +238,7 @@ Listening on port 80
 /travel/status client connected.
 ```
 
-## Walkthrough the Code
+## Code Walkthrough
 
 Before writing some code, let's first go through the generated code:
 - For the generated server, we need to look into `src/api/routes.js` and `src/api/services`
@@ -471,7 +471,7 @@ The most important part of this code is when the communication with the Wit.ai p
       });
 ```
 
-This is it. Now restart the server and check with previously installed **websocat** if after connecting to **chat** channel you can send messages to chatbot and receive answers. You need to start the server with **CHATBOT_TOKEN** environment variable with the token: `CHATBOT_TOKEN=your-token npm start`. I cannot give you my token, sorry, you have to get yours from **Wit.ai** and train your chatbot:
+This is it. Now restart the server and check with previously installed **websocat** if after connecting to **chat** channel you can send messages to chatbot and receive answers. You need to start the server with **CHATBOT_TOKEN** environment variable with the token: `CHATBOT_TOKEN=your-token npm start`. I cannot give you my token, sorry, you have to get yours from [Wit.ai](https://www.wit.ai) and train your chatbot:
 ```bash
 websocat ws://localhost/chat
 
@@ -507,7 +507,7 @@ Answered with: good
 
 ## Summary
 
-If you do not want to go through all the steps of getting the generated code, you can use directly [this](https://github.com/derberg/shrekapp-asyncapi-designed) project that contains everything mentioned in this article.
+If you do not want to go through all the steps of getting the generated code, you can use directly [this project](https://github.com/derberg/shrekapp-asyncapi-designed) that contains everything mentioned in this article.
 
 As you could see, the only coding part was just business implementation details, and the rest was generated. When I worked on this article, I focused first on the API. My main goal was to write the AsyncAPI document first, and the rest was easy.
 
@@ -529,11 +529,11 @@ Instead, I will honestly tell you what the problems are related to API-first and
 
 As I mention in this article and the previous ones on WebSocket, you write AsyncAPI document for your application from a client perspective. When you start designing your API, you ask yourself questions from the user's perspective.
 
-Don't get me wrong; I'm not saying that taking user perspective is wrong. It makes sense but also confusing for many. I recommend joining [this](https://github.com/asyncapi/spec/issues/520) thread for more details.
+Don't get me wrong; I'm not saying that taking user perspective is wrong. It makes sense but also confusing for many. I recommend joining [this thread](https://github.com/asyncapi/spec/issues/520) for more details.
 
 Confusion between **subscribe** and **publish** is not the only problem. Once you understand that your application that publishes events must describe it as subscribe operation, the rest is trivial.
 
-The real problem is with code generation. You describe the application from a user perspective, so client code generation is easy. What about generating code for your application. Have a look again at the **/travel/status** channel from ShrekApp:
+The real problem is with code generation. You describe the application from a user perspective, so client code generation is easy. What about generating code for your server? Have a look again at the **/travel/status** channel from ShrekApp:
 
 ```yml
   /travel/status:
@@ -544,7 +544,7 @@ The real problem is with code generation. You describe the application from a us
         $ref: '#/components/messages/travelInfo'
 ```
 
-I had to try hard to make sure the **summary** and **operationID** are as a neutral as possible. My first version looked like this:
+I had to try hard to make sure the **summary** and **operationId** are as neutral as possible. My first version looked like this:
 
 ```yml
   /travel/status:
