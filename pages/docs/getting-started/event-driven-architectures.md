@@ -31,7 +31,7 @@ In most cases, Event-Driven Architectures (EDAs) are broker-centric, as in the d
 
 ### Message broker
 
-A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, what makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
+A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
 
 ### Publisher/Subscriber
 
@@ -41,15 +41,15 @@ A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_
 
 ### Message
 
-A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything, and they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. Instead, _commands_ are very much like _requests_ in REST APIs: They tell the subscribers "do this."
+A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything, and they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very much like _requests_ in REST APIs: They tell the subscribers "do this."
 
-**Technically speaking, _events_ and _commands_ are the same. The only difference is in their semantics.**
+**To be precise, _events_ and _commands_ share the same structure, but differ conceptually.**
 
 ### Channels
 
 One detail that might pass unnoticed from the diagram above is the existence of _channels_. All the _brokers_ support communication through multiple channels. The industry doesn't have a common term though so you may find them as _topics_, _routing keys_, _event types_, and probably other ones I'm missing.
 
-They're usually assigned a name or identifier e.g., `user_signed_up` and it's often a good practice to send a single type of message through them. Think about TV or radio channels: the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn't respect that rule you (the subscriber) would only see and hear interferences.
+They're usually assigned a name or identifier e.g., `user_signed_up` and it's often good practice to send a single type of message through them. Think about TV or radio channels: the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn't respect that rule you (the subscriber) would only see and hear interferences.
 
 ## Why "event-driven" and not "message-driven"?
 
