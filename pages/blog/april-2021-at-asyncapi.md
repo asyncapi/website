@@ -58,10 +58,10 @@ Sounds simple, but there was a lot of work to do:
 - Rework design of React component to match the HTML template
 
 The result:
-You need to try the new React component that is getting closer to the 1.0 release and join [the discussion](https://github.com/asyncapi/asyncapi-react/issues/265).
-    ```bash
-    npm install @asyncapi/react-component@next
-    ```
+- You need to try the new React component that is getting closer to the 1.0 release and join [the discussion](https://github.com/asyncapi/asyncapi-react/issues/265).
+  ```bash
+  npm install @asyncapi/react-component@next
+  ```
 - HTML template already uses this React release candidate under `0.21.1` version.
 
 Don't stay behind. Maciek is now entirely focused on the component. Now is the best time to push for your features :smiley:.
