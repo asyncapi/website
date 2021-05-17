@@ -572,6 +572,8 @@ I chose neutral descriptions. They are acceptable, I think, but not when it come
 
 Therefore, all descriptions and even things like **operationId** should have two versions to satisfy both docs and code depending on the perspective. Otherwise, you need to make a sacrifice. You either make the developer that maintains the code happy or the technical writer that maintains docs happy.
 
+> Join the discussion around [operationId](https://github.com/asyncapi/spec/issues/538).
+
 In my opinion, this limitation should not block you from choosing the direction of API-first. The benefits are too big to resign that easily. Just join us and let us find solutions together. We want to help solve all those issues, but we just need some help from you too.
 
 ### Keeping AsyncAPI in Sync With Code
