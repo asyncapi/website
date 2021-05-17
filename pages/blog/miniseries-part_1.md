@@ -44,14 +44,14 @@ So this blog post is a dedication to that experience, showcasing how I use Async
 Explaining something is always better with actual examples, therefore I will be creating a little system to show you how code generation can help the development process. 
 <figure>
   <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-general-setup.webp" title="General setup of the project"/>
-  <figcaption className="text-center text-gray-400 text-sm">The general setup of the project, with the two applications game server and processor. The round dot between "some broker" and the game server represent how others may grab/interact with the application, ergo its API. The same thing is for the processor.</figcaption>
+  <figcaption className="text-center text-gray-400 text-sm">The general setup of the project, with the two applications game server and processor. The round dot between "some broker" and the applications represent how others may grab/interact with the application, ergo its API.</figcaption>
 </figure>
 
 I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public facing API. How a player interact with the **game server** could be through a phone, a computer, Xbox or PlayStation, for us this is out of scope for this project. For this blog post I only care about the interaction between the **game server** and the **processor**. 
 
-The **game server** will produce the following events: when players join the server, pick up items in game, uses the chat, hit one another, and eventually disconnect. it will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting, to provide a sense of realism. 
+The **game server** will produce the following events: when players join the server, pick up items in game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting, to provide a sense of realism. 
 
-The backend **processor** will be subscribing to these events to process them. In our example it will simply save the received data directly to a database.
+The backend **processor** will be consume these events to process them. In our example it will simply save the received events directly to a database.
 
 I will not get into the specifics of the stack for this system yet since it have no effect on the writing of the API documents for the two applications.
 
@@ -119,7 +119,10 @@ This is the full AsyncAPI channel definition for describing the event for when a
 
 First I have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
 
-![Game server setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-gameserver-api.webp)
+<figure>
+  <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-gameserver-api.webp" title="Game server setup"/>
+  <figcaption className="text-center text-gray-400 text-sm">Displays the game server API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the game server represent how others may grab/consume the produced event from the game server.</figcaption>
+</figure>
 
 Next we have the **subscribe** operation, which might not make much sense at first glance. I do want the **game server** to publish this event right? 
 
@@ -130,8 +133,10 @@ The **payload** of the channel (is described using a super-set of JSON Schema dr
 ## The backend processor
 Next I design the **processor** API which contains all the same channels as the **game server**, but with a different operation keyword. 
 
-![Processor setup](/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp)
-
+<figure>
+  <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp" title="Processor setup"/>
+  <figcaption className="text-center text-gray-400 text-sm">Displays the processor API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the processor represent how others may grab/provide events that the processor subscribes to.</figcaption>
+</figure>
 This is again because I need to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation I use `publish` to tell others that they can publish to this channel since the backend **processor** are subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
 
 ```yaml
