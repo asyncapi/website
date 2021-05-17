@@ -17,6 +17,8 @@ featured: true
 
 > Read [March 2021 at AsyncAPI](/blog/march-2021-at-asyncapi) for the update from March.
 
+<center><iframe src="https://anchor.fm/asyncapi/embed/episodes/April-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
+
 ## AsyncAPI specification release cadence
 
 I'm super happy to share that we removed the last roadblock for the next AsyncAPI release. Basing on some discussions during our public meetings and on [this](https://github.com/asyncapi/spec/issues/513) issue, the release schedule for the spec looks like this:
