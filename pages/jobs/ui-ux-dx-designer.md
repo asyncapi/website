@@ -3,6 +3,9 @@ title: 'UI/UX/DX Designer'
 date: 2020-12-02T16:56:52+01:00
 category: Design
 closingOn: 06/15/2021
+company: 
+  name: 'Postman'
+  logoUrl: /img/logos/companies/postman.svg
 ---
 
 We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
