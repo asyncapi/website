@@ -33,6 +33,12 @@ export default function HeadComponent({
       <meta name="description" content={description} />
       <link rel="alternate" type="application/rss+xml" title="RSS Feed for AsyncAPI Initiative Blog" href="/rss.xml" />
 
+      {/* Icons */}
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png" />
+
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
