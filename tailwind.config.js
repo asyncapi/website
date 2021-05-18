@@ -109,6 +109,12 @@ module.exports = {
       zIndex: {
         '60': 60,
       },
+      rotate: {
+        '-15': '-7deg'
+      },
+      fontSize: {
+        'xxs': ['0.6rem', '0.6rem']
+      },
     },
   },
   plugins: [

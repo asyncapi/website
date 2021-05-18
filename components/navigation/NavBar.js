@@ -32,24 +32,24 @@ export default function NavBar ({
 
   return (
     <div className={`relative bg-white ${className} z-50`}>
-      <div className="flex w-full justify-between items-center py-6 md:justify-start md:space-x-10">
+      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {
           !hideLogo && (
-            <div className="lg:w-0 lg:flex-1">
+            <div className="lg:w-auto lg:flex-1">
               <a href="/" className="flex">
                 <AsyncAPILogo className="h-8 w-auto sm:h-8" />
               </a>
             </div>
           )
         }
-        <div className="-mr-2 -my-2 md:hidden">
+        <div className="-mr-2 -my-2 lg:hidden">
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
         </div>
-        <nav className="hidden md:flex space-x-10">
+        <nav className="hidden lg:flex space-x-10">
           <div className="relative">
             <NavItem text="Learning" onClick={() => showMenu('learning')} hasDropdown />
             {open === 'learning' && <LearningPanel />}
@@ -67,11 +67,11 @@ export default function NavBar ({
 
           {
             otherItems.map((item, index) => (
-              <NavItem href={item.href} key={index} text={item.text} target={item.target} />
+              <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
             ))
           }
         </nav>
-        <div className="hidden md:flex md:flex-1">
+        <div className="hidden lg:flex lg:flex-1">
           
         </div>
       </div>

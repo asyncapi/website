@@ -1,0 +1,16 @@
+name: Deploy to Netlify
+on:
+  issues:
+    types: [opened, deleted, closed, reopened, labeled, unlabeled]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger deploy on Netlify
+      run: |
+        curl -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/builds" -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN"
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
