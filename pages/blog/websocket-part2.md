@@ -16,6 +16,9 @@ featured: true
 
 >  This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.
 
+If you do not want to read this article, then watch the recording of the live stream about the same:
+<YouTube id="8tFBcf31e_c" />
+
 All roads lead to Rome, but all those roads are different. First, you need to identify where you are and what is the purpose of your journey. What is your goal? What do you want to use AsyncAPI for?
 
 You may invest in using the specification for many different reasons, like for example:

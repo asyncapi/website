@@ -42,8 +42,8 @@ function getMDXComponents() {
     p: props => <p {...props} className={`${props.className || ''} my-4 text-gray-700 font-normal font-sans antialiased`} />,
     strong: props => <strong {...props} className={`${props.className || ''} my-4 text-gray-700 font-semibold font-sans antialiased`} />,
     a: props => <a {...props} className={`${props.className ? props.className : 'text-primary-600 font-medium hover:text-primary-500'} font-sans antialiased`} />,
-    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc list-inside text-gray-700 font-normal font-sans antialiased`} />,
-    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal list-inside text-gray-700 font-normal font-sans antialiased`} />,
+    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc text-gray-700 font-normal font-sans antialiased`} />,
+    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal text-gray-700 font-normal font-sans antialiased`} />,
     li: props => <li {...props} className={`${props.className || ''} my-3 text-gray-700 font-normal font-sans antialiased`} />,
     button: Button,
     table: props => (
