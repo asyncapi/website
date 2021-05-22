@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "scripts": {
-    "dev": "node scripts/build-post-list.js && node scripts/build-roadmap.js && next -p 8080",
+    "dev": "node scripts/build-post-list.js && node scripts/build-roadmap.js && next -p 3000",
     "build": "node scripts/build-post-list.js && node scripts/build-roadmap.js && next build",
     "start": "next start",
     "export": "next export",
