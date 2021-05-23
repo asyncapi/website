@@ -56,12 +56,9 @@ The backend **processor** will be consuming these events to process them. In thi
 I will not get into the specifics of the stack for this system yet since it does not affect the writing of the API documents for the two applications.
 
 # Designing the APIs with AsyncAPI
-I always use the [design first principle](https://apisyouwonthate.com/blog/api-design-first-vs-code-first), even when we are talking about internal systems, which means describing the two applications, **game server** and **processor** using the AsyncAPI specification before starting with the implementation.
-
-Using AsyncAPI to define an internal system is not entirely apparent how to do, since AsyncAPI is build to define behavior from the perspective of the external user. I will be clarifying this a bit more later on with actual examples, but if you want to go deeper into this, otherwise read Nic Townsend's post about [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics). 
-
+When starting designing the application APIs I always use the [design first principle](https://apisyouwonthate.com/blog/api-design-first-vs-code-first), even when we are talking about internal systems.
 ## The game server
-I always start with the basics, and first define all the different channels for which the **game server** should produce events over.
+I always start with the basics, and first define all the different channels for which the **game server** should produce events over. 
 
 ```yaml
 asyncapi: 2.0.0
@@ -81,7 +78,11 @@ channels:
     description: Channel used when a player hit another player in-game
 ```
 
-Channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject), regardless of the underlying broker. The way I like to structure my channels is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of **pickup**, what item `{itemId}` gets picked up. For the last part of the channel I describe what the event was, **pickup**, **connect**, **disconnect**, etc.
+AsyncAPI channels have a different meaning based on the underlying setup, for brokers such as [Apache Kafka](https://kafka.apache.org/), this is referred to as `topics`. 
+
+However, regardless of the underlying setup, channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject). 
+
+The way I like to structure my channels is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of **pickup**, what item `{itemId}` gets picked up. For the last part of the channel I describe what the event was, **pickup**, **connect**, **disconnect**, etc.
 
 Next I define the actual definition of the channels, and here I will focus on explaining the channel `game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup`. The full AsyncAPI document can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/GameServer.yaml).
 
@@ -115,8 +116,6 @@ Next I define the actual definition of the channels, and here I will focus on ex
           additionalProperties: false
 ...
 ```
-This is the full AsyncAPI channel definition for describing the event for when a player picks up an item in-game.
-
 First I have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
 
 <figure>
@@ -124,9 +123,9 @@ First I have the definition of **parameters** used in the channel. **serverId** 
   <figcaption className="text-center text-gray-400 text-sm">Displays the game server API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the game server represent how others may grab/consume the produced event from the game server.</figcaption>
 </figure>
 
-Next, we have the **subscribe** operation, which might not make much sense at first glance. I do want the **game server** to publish this event right? 
+Next, we have the **subscribe** operation, which might not make much sense at first glance. I do want the **game server** to publish this event right?
 
-And you would be correct, but this is how you currently define operations in AsyncAPI. You define the operation others may interact with. This means that the **game server** publishes on this channel and others may **subscribe** to it \[[1](#view-property)\]\[[3](#clarify-view)\]. 
+And you would be correct, but this is how you currently define operations in AsyncAPI. You define the operation others may interact with. This means that the **game server** publishes on this channel and others may **subscribe** to it \[[1](#view-property)\]\[[3](#clarify-view)\]. If you want a more detailed explanation I suggest reading Nic Townsend's post about [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics). 
 
 The **payload** of the channel (is described using a super-set of JSON Schema draft 7) should validate against an **object** which contains the property **pickupTimestamp**, which should validate against a **string**. When **additionalProperties** is **false**, no extra properties may be added to the object (by default this is **true** in JSON Schema draft 7). The **$id** keyword is used as an identifier for that specific schema, in this case, I name the object schema **PlayerItemPickupPayload**.
 
@@ -230,5 +229,6 @@ In case you are interested in jumping into our discussions and be part of the co
 2. [Reusing channel definitions across files is hard](https://github.com/asyncapi/spec/issues/415) <a name="channel-reusability"></a>
 3. [Confusions with the Publish and Subscribe meaning/perspective](https://github.com/asyncapi/spec/issues/520) <a name="clarify-view"></a>
 
-> Cover photo by <a href="https://unsplash.com/@hidd3n?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Horvat</a> on <a href="https://unsplash.com/s/photos/software?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Cover photo by <a href="https://unsplash.com/@othentikisra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">israel palacio</a> on <a href="https://unsplash.com/s/photos/connections?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   
