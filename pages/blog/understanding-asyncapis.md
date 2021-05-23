@@ -7,7 +7,6 @@ tags:
   - Event-driven Architecture
   - Microservices
 cover: /img/posts/understanding-asyncapis.webp
-featured: true
 authors:
   - name: Dunith Dhanushka
     photo: /img/avatars/dunithd.webp
