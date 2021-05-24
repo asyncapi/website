@@ -283,7 +283,7 @@ router.ws('/travel/status', async (ws, req) => {
 });
 ```
 
-Once the client establishes connection with the server, generated code invokes a function called ****subTravelInfo**. Now look again at the AsyncAPI document:
+Once the client establishes connection with the server, generated code invokes a function called **subTravelInfo**. Now look again at the AsyncAPI document:
 
 ```yml
   /travel/status:
@@ -507,7 +507,7 @@ Answered with: good
 
 ## Summary
 
-If you do not want to go through all the steps of getting the generated code, you can use directly [this project](https://github.com/derberg/shrekapp-asyncapi-designed) that contains everything mentioned in this article.
+If you do not want to go through all the steps of getting the generated code, you can directly use [this project](https://github.com/derberg/shrekapp-asyncapi-designed). It contains everything mentioned in this article.
 
 As you could see, the only coding part was just business implementation details, and the rest was generated. When I worked on this article, I focused first on the API. My main goal was to write the AsyncAPI document first, and the rest was easy.
 
@@ -574,8 +574,6 @@ Therefore, all descriptions and even things like **operationId** should have two
 
 > Join the discussion around [operationId](https://github.com/asyncapi/spec/issues/538).
 
-In my opinion, this limitation should not block you from choosing the direction of API-first. The benefits are too big to resign that easily. Just join us and let us find solutions together. We want to help solve all those issues, but we just need some help from you too.
-
 ### Keeping AsyncAPI in Sync With Code
 
 In this article, I generated a server that was easy to extend, to showcase AsyncAPI capabilities. Using such projects is a way for building prototypes and quickly design architectures. You can even scaffold a server that later you can tune and use on production.
@@ -588,7 +586,7 @@ Let's say you add a new channel to the server or modify the name of the old chan
 
 Where do you do it? AsyncAPI document or the code? You need to do it manually in both. You need to add a channel to the AsyncAPI document and add implementation for the channel in the code. You enter the land where your AsyncAPI document describes something different from your code at some point in time. You cannot regenerate the project with the template you used in the beginning, as your custom logic will be lost.
 
-The AsyncAPI Generator provides support for Git. If you have a Git repository and unstaged files, the Generator warns your that your changes may be lost. Git support is definitely helpful. You can try code regeneration, but you need to review changes and manually ignore overrides after that. 
+The AsyncAPI Generator provides support for Git. If you have a Git repository and unstaged files, the Generator warns you that your changes may be lost. Git support is definitely helpful. You can try code regeneration, but you need to review changes and manually ignore overrides after that. 
 
 It can be a cumbersome process, but you maintain sync between the AsyncAPI document and the code. There is no place for automation, though.
 
