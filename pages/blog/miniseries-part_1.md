@@ -187,7 +187,7 @@ And then change all the channel parameters to reference the external parameter d
 ...
 ```
 
-For the messages I add a new file per message instead of keeping everything in the same file as parameters, I use this approach since I find it easier to maintain and extend.
+For the messages, I add a new file per message instead of keeping everything in the same file as parameters. I use this approach since I find it easier to maintain and extend.
 
 We add the message file `./components/messages/PlayerItemPickup.yaml`
 ```yaml
