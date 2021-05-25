@@ -33,7 +33,7 @@ My side project at that time was a [Rust](https://rust.facepunch.com/) game serv
 
 Initially, I used OpenAPI to describe the API, and the great thing was their tooling allowed me to generate clients and servers in different languages which speed up the implementation process.
 
-I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible, but cumbersome. So I started exploring different alternatives, in terms of event-driven architecture, however, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
+I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible but cumbersome. So I started exploring different alternatives in terms of event-driven architecture. However, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
 
 That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the APIs, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
 
