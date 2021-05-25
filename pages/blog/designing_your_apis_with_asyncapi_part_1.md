@@ -1,10 +1,11 @@
 ---
-title: "Designing the APIs with AsyncAPI (Part 1)"
+title: "Designing your APIs with AsyncAPI (Part 1)"
 date: 2021-04-28T06:00:00+01:00
 type: Engineering
 tags:
   - tools
   - code generation
+  - design 
 cover: /img/posts/jonaslagoni-miniseries-part1/blog-miniseries-cover.webp
 authors:
   - name: Jonas Lagoni
@@ -17,11 +18,11 @@ featured: true
 How can you utilize code generation to speed up the development process and only focus on what is important - the business logic? In this miniseries, I will explore the ways AsyncAPI and code generation can work hand in hand beyond generating documentation.
 
 Structure of the miniseries:
-* **Part 1: Designing the APIs with AsyncAPI**
-* Part 2: Implementing the applications using code generation
+* **Part 1: Designing your APIs with AsyncAPI**
+* Part 2: Implementing your applications using code generation
 * Part 3: Black-box testing the applications using code generation
 * Part 4: Introducing new changes when using code generation
-* Part 5: The path to 1 billion players - Scaling the applications and finding bottlenecks with code generation
+* Part 5: The path to 1 billion players - Scaling the applications and finding bottlenecks with tooling
 
 > Don't see this blog post series as anything other than an example workflow. This is purely how I do it with my applications and how I use AsyncAPI and its tooling to my advantage. Use this as an inspiration to finding an approach that works for you.
 
