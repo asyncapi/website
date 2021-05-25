@@ -23,7 +23,7 @@ Structure of the miniseries:
 * Part 4: Introducing new changes when using code generation
 * Part 5: The path to 1 billion players - Scaling the applications and finding bottlenecks with code generation
 
-> Don't see this blog post series as anything other than an example workflow, this is purely how I do it with my applications and how I use AsyncAPI and its tooling to my advantage. Use this as an inspiration to finding an approach that works for you.
+> Don't see this blog post series as anything other than an example workflow. This is purely how I do it with my applications and how I use AsyncAPI and its tooling to my advantage. Use this as an inspiration to finding an approach that works for you.
 
 # Backstory
 
