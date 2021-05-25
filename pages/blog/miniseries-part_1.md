@@ -154,7 +154,8 @@ We can therefore introduce **$ref** to separate the parameters and messages into
 
 Just a quick note, at the moment it is not possible to reuse channels and operations directly between the two applications, therefore we can only apply this to the parameters and message individually while keeping some duplicate information \[[2](#channel-reusability)\]. 
 
-First I separate the different parameters, for simplicity I add all of them into the same file `./components/Parameters.yaml`.
+First, I separate the different parameters. For simplicity, I add all of them into the same file `./components/Parameters.yaml`.
+
 ```yaml
 serverId:
   description: The id of the server
