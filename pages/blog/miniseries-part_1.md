@@ -31,7 +31,7 @@ Back in 2019 when I started contributing to the tooling of AsyncAPI, I was still
 
 My side project at that time was a [Rust](https://rust.facepunch.com/) game server plugin that collected in-game events, such as when a player farms resources, kills another player, loots a container, etc, and send them to a backend. Later these could be extracted by an API to display the player's progression and detailed account of what the player did on the game server. 
 
-Initially, I used OpenAPI to describe the API and the great thing was their tooling allowed me to generate clients and servers in different languages which speed up the implementation process.
+Initially, I used OpenAPI to describe the API, and the great thing was their tooling allowed me to generate clients and servers in different languages which speed up the implementation process.
 
 I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible, but cumbersome. So I started exploring different alternatives, in terms of event-driven architecture, however, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
 
