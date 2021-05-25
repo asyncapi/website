@@ -35,9 +35,9 @@ Initially, I used OpenAPI to describe the API, and the great thing was their too
 
 I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible but cumbersome. So I started exploring different alternatives in terms of event-driven architecture. However, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
 
-That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time figuring out how to mainstream the process and document the APIs, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
+That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time, figuring out how to mainstream the process and document the APIs, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
 
-So this blog post is a dedication to that experience, showcasing how I use AsyncAPI to document and generate code to speed up the development process, and maybe spark your interest in helping us build the best tooling possible.
+So this blog post is a dedication to that experience, showcasing how I use AsyncAPI to document and generate code to speed up the development process and maybe spark your interest in helping us build the best tooling possible.
 
 # To that end
 
@@ -47,18 +47,20 @@ Explaining something is always better with actual examples, therefore I will be 
   <figcaption className="text-center text-gray-400 text-sm">The general setup of the project, with the two applications game server and processor. The round dot between "some broker" and the applications represent how others may grab/interact with the application, ergo its API.</figcaption>
 </figure>
 
-I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public-facing API. How a player interacts with the **game server** could be through a phone, a computer, Xbox, or PlayStation, for us this is out of scope for this project. For this blog post I only care about the interaction between the **game server** and the **processor**. 
+I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public-facing API. How a player interacts with the **game server** could be through a phone, a computer, Xbox, or PlayStation. I only care about the interaction between the **game server** and the **processor** for this blog post. 
 
-The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting, to provide a sense of realism. 
+The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting to provide a sense of realism. 
 
 The backend **processor** will be consuming these events to process them. In this series, I will not do anything particular with the data other than it will simply save the received events directly to a database.
 
 I will not get into the specifics of the stack for this system yet since it does not affect the writing of the API documents for the two applications.
 
 # Designing the APIs with AsyncAPI
+
 When starting designing the application APIs I always use the [design first principle](https://apisyouwonthate.com/blog/api-design-first-vs-code-first), even when we are talking about internal systems.
 ## The game server
-I always start with the basics, and first define all the different channels for which the **game server** should produce events over. 
+
+I always start with the basics and define all the different channels for which the **game server** should produce events over.
 
 ```yaml
 asyncapi: 2.0.0
@@ -78,11 +80,11 @@ channels:
     description: Channel used when a player hit another player in-game
 ```
 
-AsyncAPI channels have a different meaning based on the underlying setup, for brokers such as [Apache Kafka](https://kafka.apache.org/), this is referred to as `topics`. 
+AsyncAPI channels have a different meaning based on the underlying setup. For brokers such as [Apache Kafka](https://kafka.apache.org/), this is referred to as `topics`. 
 
 However, regardless of the underlying setup, channels must be defined as a [RFC 6570 URI template](https://www.asyncapi.com/docs/specifications/2.0.0#channelsObject). 
 
-The way I like to structure my channels is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of **pickup**, what item `{itemId}` gets picked up. For the last part of the channel I describe what the event was, **pickup**, **connect**, **disconnect**, etc.
+The way I like to structure my channels is to utilize parameters to separate the action from information about the event, so it describes, on what server the event was performed `{serverId}`, by what player `{playerId}` and in case of **pickup**, what item `{itemId}` gets picked up. For the last part of the channel, I describe what event it was, **pickup**, **connect**, **disconnect**, etc.
 
 Next I define the actual definition of the channels, and here I will focus on explaining the channel `game/server/{server_id}/events/player/{player_id}/item/{item_id}/pickup`. The full AsyncAPI document can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/GameServer.yaml).
 
@@ -116,21 +118,22 @@ Next I define the actual definition of the channels, and here I will focus on ex
           additionalProperties: false
 ...
 ```
-First I have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
+First, I have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
 
 <figure>
   <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-gameserver-api.webp" title="Game server setup"/>
   <figcaption className="text-center text-gray-400 text-sm">Displays the game server API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the game server represent how others may grab/consume the produced event from the game server.</figcaption>
 </figure>
 
-Next, we have the **subscribe** operation, which might not make much sense at first glance. I do want the **game server** to publish this event right?
+Next, we have the **subscribe** operation, which might not make much sense at first glance. I do want the **game server** to publish this event, right?
 
-And you would be correct, but this is how you currently define operations in AsyncAPI. You define the operation others may interact with. This means that the **game server** publishes on this channel and others may **subscribe** to it \[[1](#view-property)\]\[[3](#clarify-view)\]. If you want a more detailed explanation I suggest reading Nic Townsend's post about [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics). 
+And you would be correct, but this is how you currently define operations in AsyncAPI. You define the operation others may interact with. This means that the **game server** publishes on this channel and others may **subscribe** to it \[[1](#view-property)\]\[[3](#clarify-view)\]. If you want a more detailed explanation, I suggest reading Nic Townsend's post about [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics). 
 
 The **payload** of the channel (is described using a super-set of JSON Schema draft 7) should validate against an **object** which contains the property **pickupTimestamp**, which should validate against a **string**. When **additionalProperties** is **false**, no extra properties may be added to the object (by default this is **true** in JSON Schema draft 7). The **$id** keyword is used as an identifier for that specific schema, in this case, I name the object schema **PlayerItemPickupPayload**.
 
 ## The backend processor
-Next, I design the **processor** API which contains all the same channels as the **game server**, but with a different operation keyword. 
+
+Next, I design the **processor** API, which contains all the same channels as the **game server**, but with a different operation keyword. 
 
 <figure>
   <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp" title="Processor setup"/>
@@ -148,11 +151,12 @@ This is again because I need to define how others may interact with our **proces
 ```
 
 ## Introducing reusability
-At the moment each of the AsyncAPI documents contains its own definition of the channels. But what if I were to add a new validation rule such as a new property to the **playerItemPickupPayload** schema? In this case, I would have to change this for both applications which is way too much work :smile:
 
-We can therefore introduce **$ref** to separate the parameters and messages into smaller sections for reusability. I will be placing all separate components into a ["components" directory](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI) in the same directory the AsyncAPI documents reside.
+At the moment, each of the AsyncAPI documents contains its definition of the channels. But what if I were to add a new validation rule such as a new property to the **playerItemPickupPayload** schema? In this case, I would have to change this for both applications, which is way too much work :smile:
 
-Just a quick note, at the moment it is not possible to reuse channels and operations directly between the two applications, therefore we can only apply this to the parameters and message individually while keeping some duplicate information \[[2](#channel-reusability)\]. 
+Therefore, we can introduce **$ref** to separate the parameters and messages into smaller sections for reusability. I will be placing all separate components into a ["components" directory](https://github.com/jonaslagoni/asyncapi-miniseries/tree/master/AsyncAPI) in the same directory the AsyncAPI documents reside.
+
+Just a quick note, at the moment, it is not possible to reuse channels and operations directly between the two applications. Therefore we can only apply this to the parameters and message individually while keeping some duplicate information \[[2](#channel-reusability)\]. 
 
 First, I separate the different parameters. For simplicity, I add all of them into the same file `./components/Parameters.yaml`.
 
