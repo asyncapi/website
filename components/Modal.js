@@ -1,5 +1,6 @@
-export default function Modal({ body, onClickClose = () => {} }) {
-  console.log("hello");
+import Cancel from "./illustrations/cancel";
+export default function Modal({ children, onClickClose = () => { } }) {
+
   return (
     <div
       className="fixed z-50 inset-0 overflow-y-auto"
@@ -18,9 +19,14 @@ export default function Modal({ body, onClickClose = () => {} }) {
         >
           &#8203;
         </span>
-        <div className="inline-block w-full align-bottom bg-white rounded-lg text-left my-52 overflow-hidden shadow-xl transform transition-all md:my-10 md:align-middle md:max-w-lg md:w-full">
-          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">{body}</div>
-          <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <div className="inline-block w-full align-bottom bg-white rounded-lg text-left my-52 overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-lg sm:w-full">
+          <div className="p-1.5 flex justify-end">
+            <Cancel onClick={onClickClose} />
+          </div>
+          <div className="bg-white px-4 pb-4 sm:pb-4">
+            {children}
+          </div>
+          {/* <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
             <button
               type="button"
               className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
@@ -34,7 +40,7 @@ export default function Modal({ body, onClickClose = () => {} }) {
             >
               Cancel
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
