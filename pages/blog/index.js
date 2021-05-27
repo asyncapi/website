@@ -12,6 +12,7 @@ import Filter from "../../components/navigation/Filter";
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext);
   const [show, setShow] = useState(false);
+  const [filter, setFilter] = useState(false);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
@@ -99,10 +100,34 @@ export default function BlogIndexPage() {
       <Footer />
       {show && (
         <Modal onClickClose={() => setShow(false)}>
-          <div className="p-2 text-center">
-            <p className="font-bold text-lg">Filter Blog Posts</p>
+          <div className="px-4 py-3">
+            <div className="p-2 text-center">
+              <p className="font-bold text-lg">Filter Blog Posts</p>
+            </div>
+            <Filter
+              data={navItems}
+              type="multi"
+              filter={filter}
+              onFilter={onFilter}
+              checks={toFilter}
+            />
           </div>
-          <Filter data={navItems} type="multi" onFilter={onFilter} checks={toFilter} />
+          <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+            <button
+              onClick={() => setFilter(Math.random())}
+              type="button"
+              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-900 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+            >
+              Apply filter
+            </button>
+            <button
+              onClick={() => setShow(false)}
+              type="button"
+              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+            >
+              Cancel
+            </button>
+          </div>
         </Modal>
       )}
     </div>

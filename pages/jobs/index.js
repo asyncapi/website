@@ -16,6 +16,7 @@ export default function JobsIndexPage() {
       navItems.splice(job, 1)
     }
   })
+  const [filter, setFilter] = useState(null)
   const [posts, setPosts] = useState(navItems.sort((i1, i2) => {
     const i1Date = new Date(i1.date)
     const i2Date = new Date(i2.date)
@@ -46,39 +47,76 @@ export default function JobsIndexPage() {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-             Job Postings
+              Job Postings
             </h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-              Want to work on a great open-source project with a lovely team and a vibrant community? Browse through available job offers!
+              Want to work on a great open-source project with a lovely team and
+              a vibrant community? Browse through available job offers!
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-            <span role="img">💡</span> Want to post a job offer? <a className="ml-1 text-primary-500 hover:text-primary-400" href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`} target="_blank">Post it now!</a>
+              <span role="img">💡</span> Want to post a job offer?{" "}
+              <a
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`}
+                target="_blank"
+              >
+                Post it now!
+              </a>
             </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400"> Do you want to discuss your job offer first?
-            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here.</a>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+              {" "}
+              Do you want to discuss your job offer first?
+              <a
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                href="https://github.com/asyncapi/website/issues/new"
+                target="_blank"
+              >
+                Get started here.
+              </a>
             </p>
           </div>
           <div className="text-center">
-            {!hasPosts ? <div className="flex content-center justify-center">
-             <div>
-             <Empty/>
-             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500">No open positions currently. Check back later</p>
-             </div>
-            </div> : <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
-              <div className="divide-y divide-gray-200 sm:w-2/3 sm:self-center">
-                <Filter data={navItems} onFilter={onFilter} checks={filterChecks} />
+            {!hasPosts ? (
+              <div className="flex content-center justify-center">
+                <div>
+                  <Empty />
+                  <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500">
+                    No open positions currently. Check back later
+                  </p>
+                </div>
               </div>
-              <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
-                {
-                posts.map((post, index) => (
-                  <JobPostItem key={index} job={post} />
-                ))}
-              </ul>
-            </div>}
+            ) : (
+              <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
+                <div className="divide-y divide-gray-200 mb-2 sm:w-2/3 sm:self-center">
+                  <div className="">
+                    <div className="w-full inline-flex justify-center sm:mt-0 sm:w-auto sm:text-sm">
+                      <Filter
+                        data={navItems}
+                          onFilter={onFilter}
+                          filter={filter}
+                        checks={filterChecks}
+                      />
+                    </div>
+                    <button
+                      onClick={() => setFilter(Math.random())}
+                      type="button"
+                      className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-900 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                    >
+                      Apply filter
+                    </button>
+                  </div>
+                </div>
+                <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                  {posts.map((post, index) => (
+                    <JobPostItem key={index} job={post} />
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <Footer />
     </div>
-  )
+  );
 }

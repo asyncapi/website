@@ -3,8 +3,8 @@ export default function Cancel({ className, onClick }) {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      width="24px"
-      height="24px"
+      width="20px"
+      height="20px"
       className={className}
       onClick={onClick}
       style={{

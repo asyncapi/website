@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Select from "../form/Select";
 
-export default function Filter({ data, onFilter, type, checks }) {
+export default function Filter({ data, onFilter, filter, type, checks }) {
   const [values, setValues] = useState({});
   const [filters, setFilters] = useState({});
   useEffect(() => {
@@ -14,11 +14,11 @@ export default function Filter({ data, onFilter, type, checks }) {
       for (var i = 0; i < data.length; i++) {
         for (var j = 0; j < checks.length; j++) {
           const name = checks[j].name;
-          const b = data[i][name];
+          const result = data[i][name];
           if (data[i][name]) {
             if (Object.keys(lists[name])) {
-              if (Array.isArray(b)) {
-                b.map((i) => {
+              if (Array.isArray(result)) {
+                result.map((i) => {
                   if (checks[j].unique) {
                     if (
                       lists[name].some(
@@ -34,7 +34,6 @@ export default function Filter({ data, onFilter, type, checks }) {
                       lists[name].push(newData);
                     }
                   } else {
-                    // console.log(lists[name])
                     if (lists[name].some((data) => data.value === i)) {
                       return;
                     }
@@ -46,12 +45,12 @@ export default function Filter({ data, onFilter, type, checks }) {
                   }
                 });
               } else {
-                if (lists[name].some((data) => data.value === b)) {
+                if (lists[name].some((data) => data.value === result)) {
                   break;
                 } else {
                   const newData = {
-                    value: b,
-                    text: b,
+                    value: result,
+                    text: result,
                   };
                   lists[name].push(newData);
                 }
@@ -63,33 +62,38 @@ export default function Filter({ data, onFilter, type, checks }) {
       setFilters(lists);
     }
   }, []);
+  useEffect(() => {
+    onFilterApply();
+  },[filter])
   const onFilterApply = () => {
-    console.log(values);
-    const a = data.filter((e) => {
-      for (const property in values) {
-        if (e[property] === values[property].name) {
-          return (e[property] = values[property].name);
-        }
-        if (Array.isArray(e[property])) {
-          if (
-            e[property].some(
-              (data) => data[values[property].unique] === values[property].name
-            )
-          ) {
-            console.log(values[property]);
-            return e[property].some(
-              (data) => data[values[property].unique] === values[property].name
-            );
-          } else if (e[property].includes(values[property].name)) {
-            return e[property].includes(values[property].name);
-          }
-        }
-      }
-    });
-    onFilter(a);
+    if (Object.keys(values).length >= 1) {
+          const a = data.filter((e) => {
+            for (const property in values) {
+              if (e[property] === values[property].name) {
+                return (e[property] = values[property].name);
+              }
+              if (Array.isArray(e[property])) {
+                if (
+                  e[property].some(
+                    (data) =>
+                      data[values[property].unique] === values[property].name
+                  )
+                ) {
+                  return e[property].some(
+                    (data) =>
+                      data[values[property].unique] === values[property].name
+                  );
+                } else if (e[property].includes(values[property].name)) {
+                  return e[property].includes(values[property].name);
+                }
+              }
+            }
+          });
+          onFilter(a);
+    }
   };
   return (
-    <div className="mb-4 my-1">
+    <div className="w-full">
       {checks.map((check) => {
         return (
           <div key={check.name}>
@@ -103,24 +107,13 @@ export default function Filter({ data, onFilter, type, checks }) {
                     unique: check.unique,
                   },
                 });
-                if (type !== "multi") {
-                  onFilterApply();
-                }
               }}
               selected={`Select ${check.name}...`}
-              className={`${type === "multi" ? "w-full" : "w-56"} my-1`}
+              className="w-full my-1"
             />
           </div>
         );
       })}
-      {type === "multi" && (
-        <button
-          onClick={onFilterApply}
-          className="w-full bg-primary-900 my-2 p-1.5 rounded"
-        >
-          <span className="text-white">Apply</span>
-        </button>
-      )}
     </div>
   );
 }
