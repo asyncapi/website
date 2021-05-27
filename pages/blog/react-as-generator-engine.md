@@ -2,7 +2,6 @@
 title: "Simplify code generation with React"
 date: 2021-01-26T00:07:00+01:00
 type: Engineering
-featured: true
 tags:
   - Tools
   - Generator

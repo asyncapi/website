@@ -8,6 +8,18 @@ export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
   const image = '/img/social/roadmap.png'
 
+  if (Object.keys(roadmapData).length === 0) { 
+    return (
+      <GenericLayout
+        title="Vision & Roadmap"
+        description={description}
+        image={image}
+        wide
+      >
+      </GenericLayout>
+    )
+  }
+
   return (
     <GenericLayout
       title="Vision & Roadmap"

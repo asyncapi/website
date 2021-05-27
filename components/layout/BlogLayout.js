@@ -38,7 +38,7 @@ export default function BlogLayout({ post, children }) {
               <div className="ml-3">
                 <p className="text-sm leading-5 font-medium text-gray-900">
                   <span className="hover:underline">
-                    {post.authors.map(author => author.name).join(' & ')}
+                    {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link}>{author.name}</a> : author.name).reduce((prev, curr) => [ prev, ' & ', curr ])}
                   </span>
                 </p>
                 <div className="flex text-sm leading-5 text-gray-500">

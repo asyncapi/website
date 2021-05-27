@@ -20,6 +20,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
 | [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation | Scala
+| [EventBridge Atlas](https://github.com/boyney123/eventbridge-atlas) | Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI | Node
 
 # Code Generators
 
@@ -67,6 +68,14 @@ Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
 | [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks plus a few extra helpers. Once compiled BOATS calls in [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
+
+# Frameworks
+
+The following is a list of API/application frameworks that make use of AsyncAPI.
+
+| Link           | Description    | Language/Kind |
+| :------------- | :------------- | :------------- |
+| [Asynction](https://github.com/dedoussis/asynction) | SocketIO server framework driven by the AsyncAPI specification. Asynction guarantees that your API will work in accordance with its AsyncAPI documentation. Built on top of Flask-SocketIO. | Python |
 
 # GitHub Actions
 

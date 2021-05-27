@@ -58,14 +58,10 @@ export default function BlogIndexPage() {
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
               Want to publish a blog post? We love community stories.
-              <a
-                className="ml-1 text-primary-500 hover:text-primary-400"
-                href="https://github.com/asyncapi/website/issues/new?template=blog.md"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Submit yours!
-              </a>
+              <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
+            </p>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+              We have an <img className="ml-1 text-primary-500 hover:text-primary-400" style={{ display: 'inline' }} src="/img/logos/rss.svg" height="18px" width="18px" /> <a className="ml-1 text-primary-500 hover:text-primary-400" href="/rss.xml">RSS Feed</a> too!
             </p>
           </div>
           <div className="relative inline-block text-left w-min">

@@ -1,6 +1,5 @@
 import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
-import ReactGA from 'react-ga'
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import Layout from '../components/layout/Layout'
 import Button from '../components/buttons/Button'
@@ -19,10 +18,6 @@ import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
-  if (typeof window !== 'undefined') {
-    ReactGA.initialize('UA-109278936-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }
 
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
@@ -47,8 +42,8 @@ function getMDXComponents() {
     p: props => <p {...props} className={`${props.className || ''} my-4 text-gray-700 font-normal font-sans antialiased`} />,
     strong: props => <strong {...props} className={`${props.className || ''} my-4 text-gray-700 font-semibold font-sans antialiased`} />,
     a: props => <a {...props} className={`${props.className ? props.className : 'text-primary-600 font-medium hover:text-primary-500'} font-sans antialiased`} />,
-    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc list-inside text-gray-700 font-normal font-sans antialiased`} />,
-    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal list-inside text-gray-700 font-normal font-sans antialiased`} />,
+    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc text-gray-700 font-normal font-sans antialiased`} />,
+    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal text-gray-700 font-normal font-sans antialiased`} />,
     li: props => <li {...props} className={`${props.className || ''} my-3 text-gray-700 font-normal font-sans antialiased`} />,
     button: Button,
     table: props => (

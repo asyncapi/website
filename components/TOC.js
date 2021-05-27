@@ -9,7 +9,7 @@ export default function TOC({
   contentSelector,
 }) {
   if (!toc || !toc.length) return null
-  const minLevel = toc.reduce((item, mLevel) => item.lvl < mLevel ? item.lvl : mLevel, 1).lvl
+  const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel) ? item.lvl : mLevel, 0)
   const tocItems = toc.filter(item => item.lvl <= minLevel + 2).map(item => ({ ...item, content: item.content.replace(/[\s]?\{\#[\w\d\-_]+\}$/, '') }))
 
   const [open, setOpen] = useState(false)
