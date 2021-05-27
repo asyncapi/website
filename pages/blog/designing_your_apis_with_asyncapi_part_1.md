@@ -42,13 +42,13 @@ So this blog post is a dedication to that experience, showcasing how I use Async
 
 # To that end
 
-Explaining something is always better with actual examples, therefore I will be creating a little system to show you how code generation can help the development process. 
+Explaining something is always better with actual examples, therefore I will be creating a little system to show you how code generation can support the development process. 
 <figure>
   <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-general-setup.webp" title="General setup of the project"/>
   <figcaption className="text-center text-gray-400 text-sm">The general setup of the project, with the two applications game server and processor. The round dot between "some broker" and the applications represent how others may grab/interact with the application, ergo its API.</figcaption>
 </figure>
 
-I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public-facing API. How a player interacts with the **game server** could be through a phone, a computer, Xbox, or PlayStation. I only care about the interaction between the **game server** and the **processor** for this blog post. 
+I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public-facing API. How a player interacts with the **game server** could be through a phone, a computer, Xbox, or PlayStation. I only care about the interaction between the **game server** and the **processor** in this blog post. 
 
 The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting to provide a sense of realism. 
 
@@ -216,7 +216,7 @@ and alter the channel definition for the **game server** to:
       serverId: 
         $ref: "./components/Parameters.yaml#/serverId"
       playerId: 
-        $ref: "./components/Parameters.yaml#7playerId"
+        $ref: "./components/Parameters.yaml#/playerId"
       itemId: 
         $ref: "./components/Parameters.yaml#/itemId"
     subscribe: 
