@@ -52,7 +52,7 @@ Explaining something is always better with actual examples, therefore I will be 
 
 I will be creating a system of two applications, a **game server** and a **processor** using a micro-service architecture with no public-facing API. How a player interacts with the **game server** could be through a phone, a computer, Xbox, or PlayStation. I only care about the interaction between the **game server** and the **processor** in this blog post. 
 
-The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting to provide a sense of realism. 
+The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals joins the server, perform the different actions, and eventually disconnect to provide a sense of realism. 
 
 The backend **processor** will be consuming these events to process them. In this series, I will not do anything particular with the data. The **Processor** will simply save the received events directly to a database.
 
