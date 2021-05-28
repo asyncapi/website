@@ -1,6 +1,6 @@
 ---
 title: "Designing your APIs with AsyncAPI (Part 1)"
-date: 2021-04-28T06:00:00+01:00
+date: 2021-06-01T12:00:00+01:00
 type: Engineering
 tags:
   - tools
