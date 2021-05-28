@@ -36,7 +36,9 @@ Initially, I used OpenAPI to describe the REST API, and the community tooling al
 
 I soon encountered a use case that required me to push data to the game server, and solving this with REST was possible but cumbersome. So I started exploring different alternatives in terms of event-driven architecture. However, none could be described using OpenAPI removing tooling, so I had to find alternatives. 
 
-That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, at work, we began to switch from a custom socket protocol to [NATS](https://nats.io/), and at the same time they spend some time, figuring out how to mainstream the process and document the APIs, and this is where they found and adopted AsyncAPI. So I started to use AsyncAPI in my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
+That was when I vaguely remembered a meeting in the company where AsyncAPI was mentioned. Around that time, we began to switch from a custom socket protocol to [NATS](https://nats.io/) and spend some time figuring out how to mainstream the process for both documenting and generating code for the APIs. This was where we had found AsyncAPI and started adopting the specification.
+
+So I started to look into AsyncAPI for my project, which sparked my first ever contribution to an open-source project, but that is a story for another time, maybe.
 
 So this blog post is a dedication to that experience, showcasing how I use AsyncAPI to document and generate code to speed up the development process and maybe spark your interest in helping us build the best tooling possible.
 
@@ -52,7 +54,7 @@ I will be creating a system of two applications, a **game server** and a **proce
 
 The **game server** will produce the following events: when players join the server, pick up items in-game, uses the chat, hit one another, and eventually disconnect. It will be implemented to simulate players at random intervals is joining the server, picking up some items, etc, and eventually disconnecting to provide a sense of realism. 
 
-The backend **processor** will be consuming these events to process them. In this series, I will not do anything particular with the data other than it will simply save the received events directly to a database.
+The backend **processor** will be consuming these events to process them. In this series, I will not do anything particular with the data. The **Processor** will simply save the received events directly to a database.
 
 I will not get into the specifics of the stack for this system yet since it does not affect the writing of the API documents for the two applications.
 
