@@ -6,12 +6,10 @@ import BlogPostItem from "../../components/navigation/BlogPostItem";
 import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
-import Modal from "../../components/Modal";
 import Filter from "../../components/navigation/Filter";
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext);
-  const [show, setShow] = useState(false);
   const [filter, setFilter] = useState(false);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
@@ -58,33 +56,42 @@ export default function BlogIndexPage() {
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
               Want to publish a blog post? We love community stories.
-              <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
+              <a
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                href="https://github.com/asyncapi/website/issues/new?template=blog.md"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Submit yours!
+              </a>
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-              We have an <img className="ml-1 text-primary-500 hover:text-primary-400" style={{ display: 'inline' }} src="/img/logos/rss.svg" height="18px" width="18px" /> <a className="ml-1 text-primary-500 hover:text-primary-400" href="/rss.xml">RSS Feed</a> too!
+              We have an{" "}
+              <img
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                style={{ display: "inline" }}
+                src="/img/logos/rss.svg"
+                height="18px"
+                width="18px"
+              />{" "}
+              <a
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                href="/rss.xml"
+              >
+                RSS Feed
+              </a>{" "}
+              too!
             </p>
           </div>
-          <div className="relative inline-block text-left w-min">
-            <button
-              type="button"
-              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-              onClick={() => setShow(true)}
-            >
-              <span>Apply filter</span>
-              <svg
-                className="-mr-1 ml-2 h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
+          <div className="mt-4">
+            <Filter
+              data={navItems}
+              onFilter={onFilter}
+              filter={filter}
+              setFilter={setFilter}
+              className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
+              checks={toFilter}
+            />
           </div>
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {posts.map((post, index) => (
@@ -94,38 +101,6 @@ export default function BlogIndexPage() {
         </div>
       </div>
       <Footer />
-      {show && (
-        <Modal onClickClose={() => setShow(false)}>
-          <div className="px-4 py-3">
-            <div className="p-2 text-center">
-              <p className="font-bold text-lg">Filter Blog Posts</p>
-            </div>
-            <Filter
-              data={navItems}
-              type="multi"
-              filter={filter}
-              onFilter={onFilter}
-              checks={toFilter}
-            />
-          </div>
-          <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-            <button
-              onClick={() => setFilter(Math.random())}
-              type="button"
-              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-900 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Apply filter
-            </button>
-            <button
-              onClick={() => setShow(false)}
-              type="button"
-              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Cancel
-            </button>
-          </div>
-        </Modal>
-      )}
     </div>
   );
 }

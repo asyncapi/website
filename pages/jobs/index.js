@@ -88,23 +88,15 @@ export default function JobsIndexPage() {
             ) : (
               <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
                 <div className="divide-y divide-gray-200 mb-2 sm:w-2/3 sm:self-center">
-                  <div className="">
-                    <div className="w-full inline-flex justify-center sm:mt-0 sm:w-auto sm:text-sm">
+      
                       <Filter
+                        className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
                         data={navItems}
-                          onFilter={onFilter}
-                          filter={filter}
+                        onFilter={onFilter}
+                        filter={filter}
+                        setFilter={setFilter}
                         checks={filterChecks}
                       />
-                    </div>
-                    <button
-                      onClick={() => setFilter(Math.random())}
-                      type="button"
-                      className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-900 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                    >
-                      Apply filter
-                    </button>
-                  </div>
                 </div>
                 <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
                   {posts.map((post, index) => (
