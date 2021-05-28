@@ -142,7 +142,8 @@ Next, I design the **processor** API, which contains all the same channels as th
   <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp" title="Processor setup"/>
   <figcaption className="text-center text-gray-400 text-sm">Displays the processor API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the processor represent how others may grab/provide events that the processor subscribes to.</figcaption>
 </figure>
-This is again because I need to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation I use `publish` to tell others that they can publish to this channel since the backend **processor** is subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml). 
+
+This is again because I need to define how others may interact with our **processor**. This means that instead of using the `subscribe` operation I use `publish` to tell others that they can publish to this channel since the backend **processor** is subscribing to it. The full AsyncAPI document for the **processor** can be found [here](https://github.com/jonaslagoni/asyncapi-miniseries/blob/master/AsyncAPI/Processor.yaml).
 
 ```yaml
 ...
