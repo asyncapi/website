@@ -239,6 +239,7 @@ If you are interested in jumping into our discussions and being part of the comm
 2. [Reusing channel definitions across files is hard](https://github.com/asyncapi/spec/issues/415) <a name="channel-reusability"></a>
 3. [Confusions with the Publish and Subscribe meaning/perspective](https://github.com/asyncapi/spec/issues/520) <a name="clarify-view"></a>
 
-> Cover photo by <a href="https://unsplash.com/@othentikisra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">israel palacio</a> on <a href="https://unsplash.com/s/photos/connections?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Cover photo by [David Jakab](https://www.pexels.com/@david-jakab-283330?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com/photo/galleon-ship-photo-under-the-cloudy-sky-1050656/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
   
   
+
