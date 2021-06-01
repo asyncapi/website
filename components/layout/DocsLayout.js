@@ -16,10 +16,7 @@ import AnnouncementHero from '../campaigns/AnnoucementHero'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
-    if(post.slug.endsWith('/latest')) {
-      return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
-    }
-    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/${basename(post.slug)}/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
+    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
   } 
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
 }

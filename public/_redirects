@@ -5,6 +5,12 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 # Docs
 /docs /docs/getting-started 301!
 /docs/tooling /docs/community/tooling 301!
+
+# Redirection will be handled automatically by Action.
+# SPEC-REDIRECTION:START
+/docs/specifications/latest /docs/specifications/2.0.0 302!
+# SPEC-REDIRECTION:END
+
 /docs/specifications/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
 /docs/specifications/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
 /docs/specifications/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
