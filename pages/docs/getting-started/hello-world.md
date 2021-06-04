@@ -73,7 +73,7 @@ channels:
 
 The `channels` section of the specification houses all of the mediums where messages flow through. For example, some systems use `topic`, `event name` or `routing key`. Different kinds of information flow through each channel similar to the analogy of TV channels.
 
-In this example, you only have one channel called `hello`. The sample app subscribes to this channel to receive `hello {name}` messages.
+In this example, you only have one channel called `hello`. The sample app publishes to this channel to send `hello {name}` messages.
 
 <CodeBlock highlightedLines={[6,7,8,9]}>
 {`asyncapi: 2.0.0
