@@ -58,7 +58,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
         if(details.slug.includes('/specifications/') && !details.title) {
-          details.title = capitalize(basename(data.slug))
+          details.title = capitalize(basename(data.slug).slice(1))
         }
         result.push(details)
       }
