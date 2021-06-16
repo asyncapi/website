@@ -7,6 +7,7 @@ const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
 
+let specWeight = 100
 const result = []
 const basePath = 'pages'
 const postDirectories = [
@@ -58,10 +59,25 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
         if(details.slug.includes('/specifications/') && !details.title) {
-          if(basename(data.slug).startsWith('v')) {
-            details.title = capitalize(basename(data.slug).slice(1))
+          let fileName = basename(data.slug)
+
+          if(fileName.includes('release')) {
+            details.isPrerelease = true
+            details.releaseDate = getReleaseDate(fileName)
+            fileName = fileName.split('-')[0]
+          }
+
+          details.weight = specWeight--
+
+          if(fileName.startsWith('v')) {
+            details.title = capitalize(fileName.slice(1))
           } else {
-            details.title = capitalize(basename(data.slug))
+            details.title = capitalize(fileName)
+          }
+
+          if(details.isPrerelease) {
+            // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
+            details.title += " (Pre-release)"
           }
         }
         result.push(details)
@@ -83,4 +99,11 @@ function isDirectory(dir) {
 
 function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
+}
+
+function getReleaseDate(text) {
+ // ex. filename = v2.1.0-2021-06-release.md
+ const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
+ const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
+ return releaseDate
 }
