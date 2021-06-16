@@ -41,20 +41,6 @@ I don't think I need to write more than you can spot in this tweet :smiley:. 202
   }}
 />
 
-## Tests coverage tracking in tooling
-
-To increase the quality of our tools now and maintain it in the future, we started exploring tools for tracking test coverage. We integrated [Coveralls](https://coveralls.io/) with the [Modelina](https://github.com/asyncapi/modelina) project.
-
-<Figure
-  src="/img/posts/may-2021-at-asyncapi/coverage.webp"
-  widthClass="w-1/2"
-  className="text-center"
-/>
-
-[Jonas Lagoni](https://github.com/jonaslagoni) that actively maintains the library gave Coveralls a score of 8 out of 10. Now we need to roll it out to other projects. If you were looking for some good first issue to start contributing to AsyncAPI, then [this issue](https://github.com/asyncapi/.github/issues/30) is a good one.
-
-> Modelina is a data models generator that supports AsyncAPI and JSON Schema. Its goal is to make it easier to write code generators. Jonas released many improvements in May and still does, so it is best to try it out now and provide feedback.
-
 ## Assigning channels to servers
 
 I want to suggest you pay attention to the proposal from [Gerald Loeffler](https://github.com/GeraldLoeffler) that introduces a way to [assign a channel to a specific server](https://github.com/asyncapi/spec/pull/531). This proposal would enable you to have a single AsyncAPI document with multiple different servers supporting different protocols. You could specify that your application is subscribed to channel A on the Kafka server and that it publishes messages to Channel B on the MQTT server.
