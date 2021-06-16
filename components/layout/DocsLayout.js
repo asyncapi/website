@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import sortBy from 'lodash/sortBy'
+import { basename } from 'path'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
@@ -12,6 +13,13 @@ import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
+
+function generateEditLink(post) {
+  if (post.slug.includes('/specifications/')) {
+    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
+  } 
+  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+}
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -78,7 +86,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             <div className="px-4 sm:px-6 md:px-8">
               <p className="text-sm font-normal text-gray-400 font-sans antialiased">
                 Found an error? Have a suggestion? 
-                <a href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+                {generateEditLink(post)}
               </p>
             </div>
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
