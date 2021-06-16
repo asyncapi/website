@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: ''
+excerpt: 'We have JSON Schemas for bindings and some great community tools, one that was donated to AsyncAPI Initiative'
 featured: true
 ---
 
