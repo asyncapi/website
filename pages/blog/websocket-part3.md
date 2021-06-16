@@ -1,7 +1,7 @@
 ---
 title: From API-First to Code Generation - A WebSocket Use Case
 date: 2021-05-19T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
   - websocket
   - chatbot

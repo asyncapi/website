@@ -3,7 +3,6 @@ type: Engineering
 cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
 title: "AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?"
 date: 2021-05-25T06:00:00+01:00
-featured: true
 tags:
    - asyncapi
    - opentelemetry
