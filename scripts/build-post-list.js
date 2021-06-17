@@ -59,12 +59,12 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
         if(details.slug.includes('/specifications/') && !details.title) {
-          let fileName = basename(data.slug)
+          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-2021-06-release
+          const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
 
-          if(fileName.includes('release')) {
+          if(fileBaseName.includes('release')) {
             details.isPrerelease = true
-            details.releaseDate = getReleaseDate(fileName)
-            fileName = fileName.split('-')[0]
+            details.releaseDate = getReleaseDate(fileBaseName)
           }
 
           details.weight = specWeight--
@@ -102,7 +102,7 @@ function capitalize(text) {
 }
 
 function getReleaseDate(text) {
- // ex. filename = v2.1.0-2021-06-release.md
+ // ex. filename = v2.1.0-2021-06-release
  const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
  const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
  return releaseDate
