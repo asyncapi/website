@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import sortBy from 'lodash/sortBy'
-import { basename } from 'path'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
@@ -83,6 +82,11 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </div>
             )}
             <h1 className="px-4 text-4xl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            {
+              post.isPrerelease 
+              ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 
+              : null
+            }
             <div className="px-4 sm:px-6 md:px-8">
               <p className="text-sm font-normal text-gray-400 font-sans antialiased">
                 Found an error? Have a suggestion? 

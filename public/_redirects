@@ -7,8 +7,11 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 /docs/tooling /docs/community/tooling 301!
 
 # Redirection will be handled automatically by Action.
-# SPEC-REDIRECTION:START
+# LATEST-SPEC-REDIRECTION:START
 /docs/specifications/latest /docs/specifications/v2.0.0 302!
+# LATEST-SPEC-REDIRECTION:END
+
+# SPEC-REDIRECTION:START
 /docs/specifications/2.0.0 /docs/specifications/v2.0.0 302! # The path was changed. We want to keep links pointing to the old path working.
 # SPEC-REDIRECTION:END
 
