@@ -19,7 +19,7 @@ featured: true
 
 ## JSON Schemas for the bindings
 
-AsyncAPI is protocol agnostic. It doesn't mean that you cannot specify some protocol-specific information in the AsyncAPI document. It is possible through a **bindings** feature. In deferent parts of the AsyncAPI document, you can provide specific details for Kafka, MQTT, and other protocols. Definitions of bindings are maintained separately from the main AsyncAPI specification in the [bindings repository](https://github.com/asyncapi/bindings).
+AsyncAPI is protocol agnostic. It doesn't mean that you cannot specify some protocol-specific information in the AsyncAPI document. It is possible through a **bindings** feature. In different parts of the AsyncAPI document, you can provide specific details for Kafka, MQTT, and other protocols. Definitions of bindings are maintained separately from the main AsyncAPI specification in the [bindings repository](https://github.com/asyncapi/bindings).
 
 The current challenge with bindings is that they are hard to validate because they are written in Markdown, human-readable form only. Support in tooling is also pretty limited because of this. We had to start maintaining the JSON Schema, as we do with the main AsyncAPI specification. 
 
