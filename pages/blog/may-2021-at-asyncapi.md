@@ -17,7 +17,7 @@ featured: true
 
 > Read [April 2021 at AsyncAPI](/blog/april-2021-at-asyncapi) for the update from April.
 
-<center><iframe src="https://anchor.fm/asyncapi/episodes/May-2021-at-AsyncAPI-Initiative-e1369a9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
+<center><iframe src="https://anchor.fm/asyncapi/embed/episodes/May-2021-at-AsyncAPI-Initiative-e1369a9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
 
 ## JSON Schemas for the bindings
 
