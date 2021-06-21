@@ -67,7 +67,6 @@ To increase the quality of our tools now and maintain it in the future, we start
 
 <Figure
   src="/img/posts/may-2021-at-asyncapi/coverage.webp"
-  widthClass="w-1/2"
   className="text-center"
 />
 
