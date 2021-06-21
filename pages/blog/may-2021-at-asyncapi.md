@@ -17,6 +17,8 @@ featured: true
 
 > Read [April 2021 at AsyncAPI](/blog/april-2021-at-asyncapi) for the update from April.
 
+<center><iframe src="https://anchor.fm/asyncapi/embed/episodes/May-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
+
 ## JSON Schemas for the bindings
 
 AsyncAPI is protocol agnostic. It doesn't mean that you cannot specify some protocol-specific information in the AsyncAPI document. It is possible through a **bindings** feature. In different parts of the AsyncAPI document, you can provide specific details for Kafka, MQTT, and other protocols. Definitions of bindings are maintained separately from the main AsyncAPI specification in the [bindings repository](https://github.com/asyncapi/bindings).
