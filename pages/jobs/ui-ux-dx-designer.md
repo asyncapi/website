@@ -2,7 +2,7 @@
 title: 'UI/UX/DX Designer'
 date: 2020-12-02T16:56:52+01:00
 category: Design
-closingOn: 06/15/2021
+closingOn: 10/01/2021
 company: 
   name: 'Postman'
   logoUrl: /img/logos/companies/postman.svg
