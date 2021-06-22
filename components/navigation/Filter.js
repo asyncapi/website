@@ -93,7 +93,7 @@ export default function Filter({
     let result = data;
     if (query && Object.keys(query).length >= 1) {
       for (const property in query) {
-      const a = result.filter((e) => {
+      const res = result.filter((e) => {
         if (e[property] === query[property]) {
           return (e[property] = query[property]);
         }
@@ -106,16 +106,16 @@ export default function Filter({
         }
         return;
       });
-        result = a;
+        result = res;
       }
     }
     onFilter(result)
   };
   return checks.map((check) => {
-    let a = `Filter by ${check.name}...`;
+    let selected = `Filter by ${check.name}...`;
     if (Object.keys(query).length) {
       if (query[check.name]) {
-        a = `${query[check.name]}`;
+        selected = `${query[check.name]}`;
       }
     }
       return (
@@ -131,7 +131,7 @@ export default function Filter({
               },
             });
           }}
-          selected={a}
+          selected={selected}
           className={`${className} w-full my-1`}
         />
       );
