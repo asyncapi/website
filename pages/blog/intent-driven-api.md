@@ -13,7 +13,6 @@ authors:
     link: https://twitter.com/smoyac
     byline: Pilot at AsyncAPI Airlines
 excerpt: Afraid because of breaking changes? Learn how do we plan to reduce breaking changes in our tooling APIs by introducing a new design approach called Intent-driven. 
-featured: true
 ---
 
 The **Free and Open-Source Software** (FOSS) model, since its inception, has brought a flurry of libraries and applications available to everyone. 

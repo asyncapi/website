@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 'AsyncAPI 2.1 release is scheduled. Is there anything else that could be more important.'
-featured: true
 ---
 
 > Read [March 2021 at AsyncAPI](/blog/march-2021-at-asyncapi) for the update from March.

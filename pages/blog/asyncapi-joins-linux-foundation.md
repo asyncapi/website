@@ -13,7 +13,6 @@ authors:
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder
 excerpt: "Today marks a delightful milestone for us at AsyncAPI: I'm proud to share with you that we're now a Linux Foundation project 🎉"
-featured: true
 ---
 
 Today marks a delightful milestone for us at AsyncAPI: **I'm proud to share with you that we're now a Linux Foundation project** 🎉
