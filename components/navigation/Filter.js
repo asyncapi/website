@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import PropTypes from "prop-types";
 import Select from "../form/Select";
 
@@ -17,14 +18,15 @@ function sortFilter(arr) {
 export default function Filter({
   data,
   onFilter,
-  filter,
-  setFilter,
   checks,
   className,
 }) {
-  const [values, setValues] = useState({});
+  const route = useRouter();
   const [filters, setFilters] = useState({});
+  const [query, setQuery] = useState({});
+
   useEffect(() => {
+    setQuery(route.query);
     if (Object.keys(checks).length) {
       let lists = {};
       checks.map((check) => {
@@ -83,56 +85,56 @@ export default function Filter({
       }
       setFilters(lists);
     }
-  }, []);
+  }, [route]);
   useEffect(() => {
     onFilterApply();
-  }, [filter]);
+  }, [query]);
   const onFilterApply = () => {
-    if (Object.keys(values).length >= 1) {
-      const a = data.filter((e) => {
-        for (const property in values) {
-          if (e[property] === values[property].name) {
-            return (e[property] = values[property].name);
-          }
-          if (Array.isArray(e[property])) {
-            if (
-              e[property].some(
-                (data) =>
-                  data[values[property].unique] === values[property].name
-              )
-            ) {
-              return e[property].some(
-                (data) =>
-                  data[values[property].unique] === values[property].name
-              );
-            } else if (e[property].includes(values[property].name)) {
-              return e[property].includes(values[property].name);
-            }
+    let result = data;
+    if (query && Object.keys(query).length >= 1) {
+      for (const property in query) {
+      const a = result.filter((e) => {
+        if (e[property] === query[property]) {
+          return (e[property] = query[property]);
+        }
+        if (Array.isArray(e[property])) {
+          if (e[property].some((data) => data.name === query[property])) {
+            return e[property].some((data) => data.name === query[property]);
+          } else if (e[property].includes(query[property])) {
+            return e[property].includes(query[property]);
           }
         }
+        return;
       });
-      onFilter(a);
+        result = a;
+      }
     }
+    onFilter(result)
   };
   return checks.map((check) => {
-    return (
-      <Select
-        key={check.name}
-        options={filters[check.name]}
-        onChange={(e) => {
-          setValues({
-            ...values,
-            [check.name]: {
-              name: e,
-              unique: check.unique,
-            },
-          });
-          setFilter(Math.random());
-        }}
-        selected={`Filter by ${check.name}...`}
-        className={`${className} w-full my-1`}
-      />
-    );
+    let a = `Filter by ${check.name}...`;
+    if (Object.keys(query).length) {
+      if (query[check.name]) {
+        a = `${query[check.name]}`;
+      }
+    }
+      return (
+        <Select
+          key={check.name}
+          options={filters[check.name]}
+          onChange={(e) => {
+            const newQuery = route.query;
+            route.push({
+              query: {
+                ...newQuery,
+                [check.name]: e,
+              },
+            });
+          }}
+          selected={a}
+          className={`${className} w-full my-1`}
+        />
+      );
   });
 }
 

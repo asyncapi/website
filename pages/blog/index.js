@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
 import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
@@ -9,8 +11,8 @@ import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
 
 export default function BlogIndexPage() {
+    const route = useRouter();
   const { navItems } = useContext(BlogContext);
-  const [filter, setFilter] = useState(false);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
@@ -86,12 +88,16 @@ export default function BlogIndexPage() {
           <div className="mt-4">
             <Filter
               data={navItems}
+              filteredData={posts}
               onFilter={onFilter}
-              filter={filter}
-              setFilter={setFilter}
               className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
               checks={toFilter}
             />
+            <Link href="/blog" onClick={() => {
+              route.push({
+                query: {}
+              })
+            }} className="text-sm font-bold"> Clear filters </Link>
           </div>
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {posts.map((post, index) => (
