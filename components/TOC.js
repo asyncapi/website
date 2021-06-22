@@ -10,7 +10,7 @@ export default function TOC({
 }) {
   if (!toc || !toc.length) return null
   const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel) ? item.lvl : mLevel, 0)
-  const tocItems = toc.filter(item => item.lvl <= minLevel + 2).map(item => ({ ...item, content: item.content.replace(/[\s]?\{\#[\w\d\-_]+\}$/, '') }))
+  const tocItems = toc.filter(item => item.lvl <= minLevel + 2).map(item => ({ ...item, content: item.content.replace(/[\s]?\{\#[\w\d\-_]+\}$/, '').replace(/<a name="[\w\d\-_]*"><\/a>/, '') }))
 
   const [open, setOpen] = useState(false)
 
