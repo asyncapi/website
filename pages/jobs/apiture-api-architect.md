@@ -5,7 +5,7 @@ category: job category
 closingOn: 22/08/2021
 company: 
   name: 'Apiture'
-  logoUrl: /img/logos/companies/apiture.png
+  logoUrl: ./apiture.png
 ---
 ## About the team
 
