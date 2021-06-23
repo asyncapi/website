@@ -12,6 +12,7 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
+/docs/specifications/2.1.0-2021-06-release.5 /docs/specifications/v2.1.0-2021-06-release.5 302!
 /docs/specifications/2.0.0 /docs/specifications/v2.0.0 302! # The path was changed. We want to keep links pointing to the old path working.
 # SPEC-REDIRECTION:END
 
