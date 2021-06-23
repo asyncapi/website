@@ -3,6 +3,9 @@ title: 'API Architect'
 date: 22/06/2021
 category: job category
 closingOn: 22/08/2021
+company: 
+  name: 'Apiture'
+  logoUrl: /img/logos/companies/apiture.png
 ---
 ## About the team
 
