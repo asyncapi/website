@@ -88,8 +88,15 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
 
 function slugifyToC(str) {
   let slug
+  // Try to match heading ids like {# myHeadingId}
   const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/)
-  if (headingIdMatch && headingIdMatch.length >= 2) slug = headingIdMatch[1]
+  if (headingIdMatch && headingIdMatch.length >= 2) {
+    slug = headingIdMatch[1]
+  } else {
+    // Try to match heading ids like {<a name="myHeadingId"/>}
+    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/)
+    if (anchorTagMatch && anchorTagMatch.length >= 2) slug = anchorTagMatch[1]
+  }
   return slug || slugify(str, { firsth1: true, maxdepth: 6 })
 }
 
