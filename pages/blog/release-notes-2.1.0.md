@@ -48,4 +48,8 @@ The following tools are already updated to support 2.1.0 version of the specific
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest `@asyncapi/specs` package and can be used to parse and validate `2.1.0` documents. Upgrade to 1.6.0 version.
 - [AsyncAPI Generator](https://github.com/asyncapi/generator/) uses latest `@asyncapi/parser` package so while generating output, it is able to validate `2.1.0` documents. Upgrade to 1.8.0 version
 
+## Thank you
+
+Except of thank you towards contributors, I'd like to send an exceptional thank you to [Aayush Kumar Sahu](https://github.com/aayushmau5) who helped us to automate the part of the release responsible for updating the specification Markdown document on the AsyncAPI website, right after triggering the release, even the release candidate. Thank you :bow:.
+
 > Photo by <a href="https://unsplash.com/@dougswinson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Doug Swinson</a> on <a href="https://unsplash.com/s/photos/landing-eagle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
