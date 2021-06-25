@@ -21,7 +21,31 @@ The last, 2.0.0 AsyncAPI release took place on 11th of September, 2019. In 2020 
 
 Thanks to work done by [Laurent Broudoux](https://github.com/lbroudoux), you can now clearly describe message examples. New properties **name** and **summary** are optional. These properties help not only to properly describe the example in documentation. These properties make it easier to work with mocking and testing tools (like [microcks](https://microcks.io/)), so you can better identify what example to use for mocking and what it does.
 
+```yml
+message:
+  payload:
+    type: object
+    properties:
+      user:
+        $ref: "#/components/schemas/userCreate"
+      signup:
+        $ref: "#/components/schemas/signup"
+  examples:
+    - name: SimpleSignup
+      summary: A simple UserSignup example message
+      headers:
+        correlationId: my-correlation-id
+        applicationInstanceId: myInstanceId
+      payload:
+        user:
+          someUserKey: someUserValue
+        signup:
+          someSignupKey: someSignupValue
+```
+
 For more details, check out [this pull request](https://github.com/asyncapi/spec/pull/534).
+
+TODO: I think would be good to show these in html template as a screen shot
 
 ## New protocol bindings
 
