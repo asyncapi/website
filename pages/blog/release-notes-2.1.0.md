@@ -67,7 +67,7 @@ We used and supported **defaultContentType** property to specify the default con
 
 ## Tooling support
 
-The following tools are already updated to support 2.1.0 version of the specification:
+The following official AsyncAPI tools are already updated to support 2.1.0 version of the specification:
 - JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/asyncapi-node) repository. Also **@asyncapi/specs** package has been updated on NPM to version 2.8.0, and it contains the 2.1.0 JSON Schema.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.1.0 documents. Upgrade to 1.6.0 version.
 - [AsyncAPI Generator](https://github.com/asyncapi/generator/) uses the latest **@asyncapi/parser** package, so while generating output, it can validate 2.1.0 documents. Upgrade to 1.8.0 version
@@ -75,6 +75,8 @@ The following tools are already updated to support 2.1.0 version of the specific
 TODO: add js converter, generator filters, playground, react component, html and markdown templated, modelina
 
 Big thanks to [Maciej Urbanczyk](https://github.com/magicmatatjahu) and [Jonas Lagoni](https://github.com/jonaslagoni/) for updating most relevant tooling.
+
+This is not all! Not only official AsyncAPI tools are updated. Thanks to [Laurent Broudoux](https://github.com/lbroudoux) also [Microcs](https://microcks.io/) now supports version 2.1.0 and its new example's properties. Upgrade to 1.3.0 version.
 
 ## Thank you
 
