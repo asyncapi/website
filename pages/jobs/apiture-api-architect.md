@@ -48,7 +48,7 @@ Continuously evolve and improve the Apiture DX.
 
 ## About you
 
-* BMaster's or Bachelor’s degree preferred or commensurate industry experience
+* Master's or Bachelor’s degree preferred or commensurate industry experience
 * Proficient with REST APIs, HTTP, JSON, and several modern programming languages used to build services and clients (Java, JavaScript/TypeScript, Python, Go, Swift, C#, Clojure, etc.), and Markdown
 * OpenAPI 3.x, JSON Schema, AsyncAPI 2.0, YAML, OWASP API Security Top Ten
 * Familiarity with API Style Guides and API Governance
@@ -64,7 +64,6 @@ Continuously evolve and improve the Apiture DX.
 * A strong bent for delivering quality products.
 * Willingness to travel periodically and meet with developers. 
 * Work with Apiture Technical Writers in producing Apiture Open Platform documentation.
-
 
 ## Pay and benefits
 
