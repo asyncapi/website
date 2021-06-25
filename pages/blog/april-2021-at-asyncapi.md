@@ -12,10 +12,11 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 'AsyncAPI 2.1 release is scheduled. Is there anything else that could be more important.'
-featured: true
 ---
 
 > Read [March 2021 at AsyncAPI](/blog/march-2021-at-asyncapi) for the update from March.
+
+<center><iframe src="https://anchor.fm/asyncapi/embed/episodes/April-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
 
 ## AsyncAPI specification release cadence
 
@@ -56,10 +57,10 @@ Sounds simple, but there was a lot of work to do:
 - Rework design of React component to match the HTML template
 
 The result:
-You need to try the new React component that is getting closer to the 1.0 release and join [the discussion](https://github.com/asyncapi/asyncapi-react/issues/265).
-    ```bash
-    npm install @asyncapi/react-component@next
-    ```
+- You need to try the new React component that is getting closer to the 1.0 release and join [the discussion](https://github.com/asyncapi/asyncapi-react/issues/265).
+  ```bash
+  npm install @asyncapi/react-component@next
+  ```
 - HTML template already uses this React release candidate under `0.21.1` version.
 
 Don't stay behind. Maciek is now entirely focused on the component. Now is the best time to push for your features :smiley:.

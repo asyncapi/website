@@ -1,7 +1,7 @@
 ---
 title: Creating AsyncAPI for WebSocket API - Step by Step
 date: 2021-04-21T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
   - websocket
 cover: /img/posts/websocket-part2/cover.webp
@@ -15,6 +15,9 @@ featured: true
 ---
 
 >  This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.
+
+If you do not want to read this article, then watch the recording of the live stream about the same:
+<YouTube id="8tFBcf31e_c" />
 
 All roads lead to Rome, but all those roads are different. First, you need to identify where you are and what is the purpose of your journey. What is your goal? What do you want to use AsyncAPI for?
 

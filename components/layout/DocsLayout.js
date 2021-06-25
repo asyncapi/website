@@ -13,6 +13,13 @@ import ArrowRight from '../icons/ArrowRight'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 
+function generateEditLink(post) {
+  if (post.slug.includes('/specifications/')) {
+    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
+  } 
+  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+}
+
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
@@ -75,14 +82,19 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </div>
             )}
             <h1 className="px-4 text-4xl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            {
+              post.isPrerelease 
+              ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 
+              : null
+            }
             <div className="px-4 sm:px-6 md:px-8">
               <p className="text-sm font-normal text-gray-400 font-sans antialiased">
                 Found an error? Have a suggestion? 
-                <a href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+                {generateEditLink(post)}
               </p>
             </div>
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} className="bg-blue-100 mt-4 p-4 sticky top-0 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-0 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:max-h-(screen-16) xl:w-72" />
               <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
                 <article className="mb-32">
                   <Head
