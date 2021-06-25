@@ -7,10 +7,11 @@ export default function TOC({
   cssBreakingPoint = 'xl',
   toc,
   contentSelector,
+  depth = 2,
 }) {
   if (!toc || !toc.length) return null
   const minLevel = toc.reduce((mLevel, item) => (!mLevel || item.lvl < mLevel) ? item.lvl : mLevel, 0)
-  const tocItems = toc.filter(item => item.lvl <= minLevel + 2).map(item => ({ ...item, content: item.content.replace(/[\s]?\{\#[\w\d\-_]+\}$/, '').replace(/(<([^>]+)>)/gi, '') }))
+  const tocItems = toc.filter(item => item.lvl <= minLevel + depth).map(item => ({ ...item, content: item.content.replace(/[\s]?\{\#[\w\d\-_]+\}$/, '').replace(/(<([^>]+)>)/gi, '') }))
 
   const [open, setOpen] = useState(false)
 
