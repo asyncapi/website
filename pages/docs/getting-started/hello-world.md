@@ -1,5 +1,5 @@
 ---
-title: "Hello world"
+title: "Ankara Antalya"
 date: 2019-04-01T10:56:52+01:00
 menu:
   docs:
@@ -12,9 +12,9 @@ Let's define an application that's capable of receiving a "hello {name}" message
 <CodeBlock>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankara Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
@@ -28,9 +28,9 @@ Let's get into the details of the sample specification:
 <CodeBlock highlightedLines={[1]}>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankara Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
@@ -44,9 +44,9 @@ The first line of the specification starts with the document type, `asyncapi`, a
 <CodeBlock highlightedLines={[2,3,4]}>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankaral Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
@@ -60,9 +60,9 @@ The `info` object contains the minimum required information about the applicatio
 <CodeBlock highlightedLines={[5,6,7,8,9,10,11]}>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankara Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
@@ -78,9 +78,9 @@ In this example, you only have one channel called `hello`. The sample app subscr
 <CodeBlock highlightedLines={[6,7,8,9]}>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankara Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
@@ -95,9 +95,9 @@ You can read the highlighted lines as:
 <CodeBlock highlightedLines={[9,10,11]}>
 {`asyncapi: 2.0.0
 info:
-  title: Hello world application
+  title: Ankara Antalya
   version: '0.1.0'
-channels:
+channels:user/signup:
   hello:
     publish:
       message:
