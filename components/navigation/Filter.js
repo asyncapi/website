@@ -123,18 +123,15 @@ export default function Filter({
           key={check.name}
           options={filters[check.name]}
           onChange={(e) => {
-            const newQuery = route.query;
-            route.push(
-              {
-                query: {
-                  ...newQuery,
-                  [check.name]: e,
-                },
-              },
-              {
-                shallow: true,
-              }
-            );
+            const {query} = route;
+            let newQuery = {
+              ...query,
+              [check.name]: e
+            }
+            let queryParams = new URLSearchParams(newQuery).toString();
+            route.push(`${route.pathname}?${queryParams}`, undefined, {
+              shallow: true
+            });
           }}
           selected={selected}
           className={`${className} w-full my-1 md:mr-4`}
