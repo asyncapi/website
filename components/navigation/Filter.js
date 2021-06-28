@@ -124,15 +124,20 @@ export default function Filter({
           options={filters[check.name]}
           onChange={(e) => {
             const newQuery = route.query;
-            route.push({
-              query: {
-                ...newQuery,
-                [check.name]: e,
+            route.push(
+              {
+                query: {
+                  ...newQuery,
+                  [check.name]: e,
+                },
               },
-            });
+              {
+                shallow: true,
+              }
+            );
           }}
           selected={selected}
-          className={`${className} w-full my-1`}
+          className={`${className} w-full my-1 md:mr-4`}
         />
       );
   });

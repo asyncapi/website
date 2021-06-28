@@ -83,12 +83,12 @@ export default function BlogIndexPage() {
               too!
             </p>
           </div>
-          <div className="mt-4">
+          <div className="mt-12">
             <Filter
               data={navItems}
               filteredData={posts}
               onFilter={onFilter}
-              className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
+              className="w-full inline-flex mx-px justify-center md:mt-0 md:w-1/5 md:text-sm"
               checks={toFilter}
             />
             <Link href="/blog" className="text-sm font-bold"> Clear filters </Link>
