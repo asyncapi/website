@@ -11,15 +11,15 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: 'The eagle has landed! Check out all the changes in the AsyncAPI specification introduces in the new v2.1.0 release'
+excerpt: 'The eagle has landed! Check out all the changes the AsyncAPI specification introduces in the new v2.1.0 release'
 featured: true
 ---
 
-The last, 2.0.0 AsyncAPI release took place on 11th of September, 2019. In 2020 the focus went into growing community and adoption and stabilization of basic tooling for specification. This year was a year of "formalizm" 😃 aka getting into the foundation, setting up governance model and contribution guide to enable work on next spec release. We are good to go forward. The 2.1.0 release is out in the wild 🎉
+The last AsyncAPI release (2.0.0) took place on the 11th of September, 2019. In 2020 the focus went into growing community and adoption and stabilization of basic tooling for specification. This year was a year of "formalizm" 😃 aka getting into the foundation, setting up governance model and contribution guide to enable work on next spec release. We are good to go forward. The 2.1.0 release is out in the wild 🎉
 
 ## Message examples object extended with additional fields
 
-Thanks to work done by [Laurent Broudoux](https://github.com/lbroudoux), you can now clearly describe message examples. New properties **name** and **summary** are optional. These properties help not only to properly describe the example in documentation. These properties make it easier to work with mocking and testing tools (like [microcks](https://microcks.io/)), so you can better identify what example to use for mocking and what it does.
+Thanks to work done by [Laurent Broudoux](https://github.com/lbroudoux), you can now clearly describe message examples. New properties **name** and **summary** are optional. These properties help not only to properly describe the example in documentation but make it easier to work with mocking and testing tools (like [microcks](https://microcks.io/)), so you can better identify what example to use for mocking and what it does.
 
 Example of new properties added to existing [WebSocket example for Gemini API](https://github.com/asyncapi/spec/blob/v2.1.0/examples/websocket-gemini.yml):
 
