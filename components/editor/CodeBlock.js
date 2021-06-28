@@ -72,7 +72,7 @@ export default function CodeBlock({
             lineProps={lineNumber => {
               const isHighlighted = highlightedLines && highlightedLines.includes(lineNumber)
               return {
-                className: `${isHighlighted ? 'bg-code-editor-dark-highlight block ml-4' : ''} pr-8`,
+                className: `${isHighlighted ? 'bg-code-editor-dark-highlight block ml-10 w-full' : ''} pr-8`,
               }
             }}
             codeTagProps={{
@@ -117,7 +117,7 @@ export default function CodeBlock({
 
 const theme = {
   'hljs': {
-    'display': 'block',
+    'display': 'inline-block',
     'background': '#252f3f',
     'color': '#d6deeb'
   },
