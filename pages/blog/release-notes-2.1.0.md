@@ -95,7 +95,7 @@ The following official AsyncAPI tools are already updated to support 2.1.0 versi
 - [Modelina](https://github.com/asyncapi/modelina) now also accepts AsyncAPI documents valid against the 2.1.0 version of the spec. Upgrade to 0.16.0 version.
 
 
-Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.1.0/examples/websocket-gemini.yml).
+Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template and Markdown template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.1.0/examples/websocket-gemini.yml).
 
 Big thanks to [Maciej Urbanczyk](https://github.com/magicmatatjahu) and [Jonas Lagoni](https://github.com/jonaslagoni/) for updating most relevant tooling.
 
