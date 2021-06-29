@@ -99,7 +99,7 @@ Last but not least is the AsyncAPI Playground. Check new playground that uses la
 
 Big thanks to [Maciej Urbanczyk](https://github.com/magicmatatjahu) and [Jonas Lagoni](https://github.com/jonaslagoni/) for updating most relevant tooling.
 
-This is not all! Not only official AsyncAPI tools are updated. Thanks to [Laurent Broudoux](https://github.com/lbroudoux) also [Microcs](https://microcks.io/) now supports version 2.1.0 and its new example's properties. Upgrade to 1.3.0 version.
+This is not all! Not only official AsyncAPI tools are updated. Thanks to [Laurent Broudoux](https://github.com/lbroudoux) also [Microcks](https://microcks.io/) now supports version 2.1.0 and its new example's properties. Upgrade to 1.3.0 version.
 
 ## Thank you
 
