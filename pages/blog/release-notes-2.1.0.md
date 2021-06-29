@@ -92,7 +92,7 @@ The following official AsyncAPI tools are already updated to support 2.1.0 versi
 - [Markdown template](https://github.com/asyncapi/markdown-template) supports rendering of new message example properties. Upgrade to 0.14.0 version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to 0.23.0 version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.1.0 version of the spec. Upgrade to 0.5.0 version.
-- [Modelina](https://github.com/asyncapi/modelina) now also accepts AsyncAPI documents valid against the 2.1.0 version of the spec. Upgrade to 0.15.0 version.
+- [Modelina](https://github.com/asyncapi/modelina) now also accepts AsyncAPI documents valid against the 2.1.0 version of the spec. Upgrade to 0.16.0 version.
 
 
 Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.1.0/examples/websocket-gemini.yml).
