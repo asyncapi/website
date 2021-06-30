@@ -17,7 +17,7 @@ export default function TOC({
     //For TOC rendering in specification files in the spec repo we have "a" tags added manually to the spec markdown document
     //MDX takes these "a" tags and uses them to render the "id" for headers like a-namedefinitionsapplicationaapplication
     //slugWithATag contains transformed heading name that is later used for scroll spy identification
-    slugWithATag: item.content.replace(/<|>|"|\\|\/|=/gi, '').replace(/ /gi, '-').toLowerCase()
+    slugWithATag: item.content.replace(/<|>|"|\\|\/|=/gi, '').replace(/\s/gi, '-').toLowerCase()
 }))
   const [open, setOpen] = useState(false)
 
