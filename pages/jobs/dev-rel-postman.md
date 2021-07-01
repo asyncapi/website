@@ -3,6 +3,7 @@ title: 'Developer Advocate'
 date: 2021-07-01T06:00:00+01:00
 category: Education
 closingOn: 10/01/2021
+contact: https://www.postman.com/company/careers/developer-advocate-open-technologies-4360218003/
 company: 
   name: 'Postman'
   logoUrl: /img/logos/companies/postman.svg

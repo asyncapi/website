@@ -30,6 +30,7 @@ title: 'Job Title'
 date: MM/DD/YYYY (current date)
 category: job category
 closingOn: MM/DD/YYYY
+contact: provide link to oryginal job posting or a contact email address
 company: 
   name: 'YourCompanyName'
   logoUrl: /img/logos/companies/YourCompanyName.png
