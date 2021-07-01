@@ -61,7 +61,7 @@ const jobPostUrl = encodeURIComponent(body);
 const hasPosts = Object.keys(posts).length;
   return (
     <div>
-      <Head title="Jobs" />
+      <Head title="Jobs" rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board" rssLink = "/jobs/rss.xml" />
       <Container>
         <NavBar />
       </Container>
@@ -83,6 +83,9 @@ const hasPosts = Object.keys(posts).length;
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400"> Do you want to discuss your job offer first?
             <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here.</a>
+            </p>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+              We have an <img className="ml-1 text-primary-500 hover:text-primary-400" style={{ display: 'inline' }} src="/img/logos/rss.svg" height="18px" width="18px" /> <a className="ml-1 text-primary-500 hover:text-primary-400" href="jobs/rss.xml">RSS Feed</a> too!
             </p>
           </div>
           <div className="text-center">

@@ -8,7 +8,7 @@ company:
   logoUrl: /img/logos/companies/postman.svg
 ---
 
-We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
+We are a tiny team working on the AsyncAPI Initiative. We are hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
 
 ## TL;DR
 

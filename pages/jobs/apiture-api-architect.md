@@ -1,7 +1,7 @@
 ---
 title: 'API Architect'
 date: 06/22/2021
-category: job category
+category: Architect
 closingOn: 08/22/2021
 company: 
   name: 'Apiture'
