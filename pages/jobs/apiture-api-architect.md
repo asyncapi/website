@@ -1,8 +1,9 @@
 ---
 title: 'API Architect'
 date: 06/22/2021
-category: job category
+category: Architect
 closingOn: 08/22/2021
+contact: https://apiture.com/careers/?gh_jid=5303104002
 company: 
   name: 'Apiture'
   logoUrl: /img/logos/companies/apiture.png
