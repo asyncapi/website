@@ -23,7 +23,7 @@ You'll use Node.js to code APIs and Mosquitto as the message broker. Selected te
 Let's start by creating an AsyncAPI file to describe your API. It will help you generate the code and the documentation later.
 
 <CodeBlock>
-{`asyncapi: '2.0.0'
+{`asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -64,7 +64,7 @@ channels:
 Let's break it down into pieces:
 
 <CodeBlock>
-{`asyncapi: '2.0.0'
+{`asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -132,7 +132,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
 ### 3. Create a file with the AsyncAPI machine-readable description you defined before. On Windows use `type` instead of `cat`:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.0.0'
+asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'

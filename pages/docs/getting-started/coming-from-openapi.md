@@ -19,8 +19,8 @@ Aside from structural differences you must know that:
 
 1. AsyncAPI is compatible with OpenAPI schemas.
 1. Message payload in AsyncAPI can be any value, not just an AsyncAPI/OpenAPI schema. For instance, it could be an Avro schema.
-1. [AsyncAPI server object](/docs/specifications/2.0.0/#serverObject) is almost identical to its OpenAPI counterpart with the exception that `scheme` has been renamed to `protocol` and AsyncAPI introduces a new property called `protocolVersion`.
-1. OpenAPI path parameters and [AsyncAPI channel parameters](/docs/specifications/2.0.0/#parameterObject) are a bit different since AsyncAPI doesn't have the notion of "query" and "cookie", and header parameters can be defined in the [message object](/docs/specifications/2.0.0/#messageObject). Therefore, AsyncAPI channel parameters are the equivalent of OpenAPI path parameters.
+1. [AsyncAPI server object](/docs/specifications/2.1.0/#serverObject) is almost identical to its OpenAPI counterpart with the exception that `scheme` has been renamed to `protocol` and AsyncAPI introduces a new property called `protocolVersion`.
+1. OpenAPI path parameters and [AsyncAPI channel parameters](/docs/specifications/2.1.0/#parameterObject) are a bit different since AsyncAPI doesn't have the notion of "query" and "cookie", and header parameters can be defined in the [message object](/docs/specifications/2.1.0/#messageObject). Therefore, AsyncAPI channel parameters are the equivalent of OpenAPI path parameters.
 
 ## Conclusion
 
