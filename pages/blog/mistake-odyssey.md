@@ -11,7 +11,7 @@ tags:
 cover: img/mistake odyssey-Carolinie-cavalli.webp
 authors:
   - name: Barbaño González
-    photo: /img/avatars/
+    photo: /img/avatars//barbano.webp
     link: https://www.linkedin.com/feed/
     byline: AsyncAPI Press
 excerpt: Experience with Git, GitHub, VS Code and Markdown for non-developers within AsyncAPI.
