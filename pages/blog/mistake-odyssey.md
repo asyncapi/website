@@ -16,21 +16,23 @@ authors:
     byline: AsyncAPI Press
 excerpt: Experience with Git, GitHub, VS Code and Markdown for non-developers within AsyncAPI.
 ---
-The human being for many centuries delegated the responsibility of preserving a great part of their culture, of the most precious information, in the capacity of keeping in their memory the data, the names, the places, the details?
+The human being for many centuries delegated the responsibility of preserving a great part of their culture, of the most precious information, in the capacity of keeping in their memory the data, the names, the places, the details...
 
-Homer was the first to leave written traces of what until then were only remembered words, poems heard and recited from generation to generation. All this with the invaluable help of the muses. What a relief! He must have thought. What enormous risk and stress must have been in the atmosphere of those times. What would happen if amnesia came, the sudden loss of information. To forget is human. To err is human.
+In the Ancient Greece, Homer was the first to leave written traces of what until then were only remembered words, poems heard and recited from generation to generation. All this with the invaluable help of the muses. What a relief! He must have thought. What enormous risk and stress must have been in the atmosphere of those times. What would happen if amnesia came, the sudden loss of information. To forget is human. To err is human.
 
 ## The age of error
 
 Undoubtedly, in our time, a recurring nightmare that we have all had is the one in which, after having done a work on our computer, just when we have to present it, a failure in the system makes everything written in the last minutes disappear... sometimes hours. Re-writing a previously written text is a hard exercise of memory, between frustration and despair. It will never be the same. Muses hardly come to the rescue. We are not Homer.
 
-Such suffering could be avoided in an ideal, utopian world where we would all keep backup copies of our documents every second. But the reality is that neither the obsession with saving versions in the cloud or on external disks is infallible. The danger of losing a moment of inspiration is part of all of us. Some say that we live in the age of error.
-
-For a writer or content creator, this nightmare can be especially hurtful, since the ability to write good texts and communicate information does not imply being an expert in computers or in the operation of the software that serves as a platform on which to shape texts.
-
 <p align="center">
   <img src="https://media.giphy.com/media/12qZzOj2MkY26A/giphy.gif" alt="animated" />
 </p>
+
+Such suffering could be avoided in an ideal, utopian world where we would all keep backup copies of our documents every second. But the reality is that neither the obsession with saving versions in the cloud or on external disks is infallible. The danger of losing a moment of inspiration is part of all of us. Some say that we live in the age of error. Some of them made by us, others by the machines.
+
+For a writer or content creator, this nightmare can be especially hurtful, since the ability to write good texts and communicate information does not imply being an expert in computers or in the operation of the software that serves as a platform on which to shape texts.
+
+
 
 ## Getting out the comfort zone
 
@@ -42,9 +44,9 @@ Sometimes opportunities appear when you least expect them. Thus AsyncAPI appeare
 
 AsyncAPI is an open, free and collaborative project so the community needs to work with tools that allow working from transparency and horizontality creating an agile system. We are talking about Git, GitHub and VS Code, three free and open source software tools. 
 
-When it comes to writing, the project relies on plain text, specifically the use of Markdown. It is considered a language that has the purpose of allowing the creation of content in a simple way of writing, and that at all times maintains a readable design. This system allows to easily recover lost information in case of failure or mistake, as well as to consult changes and revert them at any time.
+When it comes to writing, the project relies on plain text, specifically the use of Markdown. It is considered a language that has the purpose of allowing the creation of content in a simple way of writing, and that at all times maintains a readable design. VS Code is the text editor in which we will work with Markdown. And then Git and GitHub conform the system that allows to store the information and easily retrieve it in case of loss, failure or error, as well as to consult the changes and revert them at any time.
 
-Evidently my immersion in these programs was for weeks an odyssey through the desert of ignorance, or what is the same, an odyssey through the purest science of trial and error in which, apparently, there were only errors. Empirical learning is hard.
+Evidently my immersion in these programs was for weeks an odyssey through the vast ocean of ignorance, or what is the same, an odyssey through the purest science of trial and error in which, apparently, there were only errors. Empirical learning is hard.
 
 Fortunately AsyncAPI has a community that works as a great team, in it I found people who help me to dispel my doubts and solve my mistakes. I take this opportunity to thank you from these lines, especially @anbreaker for your patience 😅.
 
