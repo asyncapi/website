@@ -25,11 +25,44 @@ export default function JobsIndexPage() {
   const onFilter = (data) => {
     setPosts(data);
   }
-  const jobPostUrl = '---%0Atitle%3A%20%27Job%20Title%27%0Adate%3A%20DD%2FMM%2FYYYY%20(current%20date)%0Acategory%3A%20job%20category%0AclosingOn%3A%20MM%2FDD%2FYYYY%0A---%0A%23%23%20About%20the%20team%0ALet%20potential%20employees%20knows%20what%20it%27ll%20feel%20like%20to%20joining%20your%20team%20in%20this%20section%0A%0A%23%23%20TL%3BDR%0AEnter%20list%20of%20perks%20for%20potential%20employees%20in%20this%20section.%0AE.g.%0A*%20%3Amuscle%3A%20Growing%20team%0A*%20%3Ahouse_with_garden%3A%20Fully%20remote%20job%0A*%20%3Amoney_mouth_face%3A%20Great%20salary%20and%20compensation%20package%0A*%20%3Amountain_snow%3A%20Unlimited%20paid%20time%20off%0A%0A%23%23%20About%20the%20job%0ALet%20the%20potential%20employee%20knows%20about%20the%20job%20in%20this%20section%0A%0A%23%23%20About%20youY%0AThe%20Potential%20employees%20would%20love%20to%20know%20more%20about%20you.%20Tell%20them%20more%20about%20you%20in%20this%20section%0A%0A%23%23%20Pay%20and%20benefits%0ALet%20the%20potential%20employees%20knows%20what%20comes%20with%20joining%20your%20team%20in%20this%20section.%0A%0AJoin%20us!%0A'
-  const hasPosts = Object.keys(posts).length;
+const body=`---
+title: 'Job Title'
+date: MM/DD/YYYY (current date)
+category: job category
+closingOn: MM/DD/YYYY
+contact: provide link to oryginal job posting or a contact email address
+company: 
+  name: 'YourCompanyName'
+  logoUrl: /img/logos/companies/YourCompanyName.png
+  # Add your image in /pages/img/logos/companies
+---
+## About the team
+Let potential employees knows what it'll feel like to joining your team in this section
+
+## TL;DR
+Enter list of perks for potential employees in this section.
+E.g.
+* :muscle: Growing team
+* :house_with_garden: Fully remote job
+* :money_mouth_face: Great salary and compensation package
+* :mountain_snow: Unlimited paid time off
+
+## About the job
+Let the potential employee knows about the job in this section
+
+## About you
+The potential employees would love to know more about you. Tell them more about you in this section
+
+## Pay and benefits
+Let the potential employees knows what comes with joining your team in this section.
+
+Join us!
+`;
+const jobPostUrl = encodeURIComponent(body);
+const hasPosts = Object.keys(posts).length;
   return (
     <div>
-      <Head title="Jobs" />
+      <Head title="Jobs" rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board" rssLink = "/jobs/rss.xml" />
       <Container>
         <NavBar />
       </Container>
@@ -51,6 +84,9 @@ export default function JobsIndexPage() {
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400"> Do you want to discuss your job offer first?
             <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new" target="_blank">Get started here.</a>
+            </p>
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+              We have an <img className="ml-1 text-primary-500 hover:text-primary-400" style={{ display: 'inline' }} src="/img/logos/rss.svg" height="18px" width="18px" /> <a className="ml-1 text-primary-500 hover:text-primary-400" href="jobs/rss.xml">RSS Feed</a> too!
             </p>
           </div>
           <div className="text-center">
