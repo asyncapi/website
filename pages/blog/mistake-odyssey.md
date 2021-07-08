@@ -1,7 +1,7 @@
 ---
 title: "Mistake Odyssey"
 Subtitle: "Git, Github, VS Code and Markdown for non-programmers"
-date: 2020-07-08T06:00:00+01:00
+date: 2021-07-08T06:00:00+01:00
 type: Communication
 tags:
   - Git
