@@ -149,7 +149,7 @@ type State string
 npm install --save @asyncapi/react-component@v1.0.0-next.11
 ```
 
-In June, a couple of release candidates were released. Most important to notice is a new standalone bundle that makes it super easy to reuse React component in [Angular](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) and [Vue](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md) projects. In addition, we now provide also **esm** and **umd** modules. As a result, it is much easier to use React component with [Next.js](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/nextjs.md) projects.
+In June, a couple of release candidates were released. Most important to notice is a new standalone bundle that makes it super easy to reuse React component in [Angular](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) and [Vue](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md) projects. In addition, we now provide not only **cjs** but also **esm** and **umd** modules. As a result, it is much easier to use React component with [Next.js](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/nextjs.md) projects. In addition, the component supports the whole specification, except **discriminator**.
 
 Few more items left for the official 1.0.0 release:
 - Custom theming that is [right behind the corner](https://github.com/asyncapi/asyncapi-react/pull/374)
