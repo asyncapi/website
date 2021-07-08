@@ -17,6 +17,8 @@ featured: true
 
 > Read [May 2021 at AsyncAPI](/blog/may-2021-at-asyncapi) for the update from May.
 
+<iframe src="https://anchor.fm/asyncapi/embed/episodes/June-2021-at-AsyncAPI-Initiative-e144cup" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+
 ## Specification 2.1.0 release
 
 The eagle has landed. The new version of the AsyncAPI specification is here. For more details, read [AsyncAPI Spec 2.1.0 Release Notes](https://www.asyncapi.com/blog/release-notes-2.1.0).
@@ -140,6 +142,8 @@ type Address struct {
 type State string
 */
 ```
+
+You can also try out this code on [RunKit](https://runkit.com/derberg/runkit-npm-asyncapi-modelina).
 
 ## React component vs HTML template and where are we
 
