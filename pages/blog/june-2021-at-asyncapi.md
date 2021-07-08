@@ -5,7 +5,7 @@ type: Communication
 tags:
   - status
   - news
-cover: /img/posts/may-2021-at-asyncapi/cover.webp
+cover: /img/posts/june-2021-at-asyncapi/cover.webp
 authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
