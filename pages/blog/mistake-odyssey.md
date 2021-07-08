@@ -32,8 +32,6 @@ Such suffering could be avoided in an ideal, utopian world where we would all ke
 
 For a writer or content creator, this nightmare can be especially hurtful, since the ability to write good texts and communicate information does not imply being an expert in computers or in the operation of the software that serves as a platform on which to shape texts.
 
-
-
 ## Getting out the comfort zone
 
 When we are trained, we learn tools for our profession that we tend to hold on to tightly. Our first jobs are usually done with those initial tools and little by little we discover new ones that open up a world of infinite possibilities. Of course, it is not always easy to let go of the everyday to tackle new challenges with different methods. Homer first learned to recite by heart... at some point he would learn to write... and to read verses.
