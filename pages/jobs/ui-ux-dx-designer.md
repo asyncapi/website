@@ -2,13 +2,14 @@
 title: 'UI/UX/DX Designer'
 date: 2020-12-02T16:56:52+01:00
 category: Design
-closingOn: 06/15/2021
+closingOn: 10/01/2021
+contact: https://www.postman.com/company/careers/product-designer-open-technologies-4359182003/
 company: 
   name: 'Postman'
   logoUrl: /img/logos/companies/postman.svg
 ---
 
-We're a tiny team working on the AsyncAPI Initiative. We're hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
+We are a tiny team working on the AsyncAPI Initiative. We are hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.
 
 ## TL;DR
 
