@@ -1,7 +1,7 @@
 ---
 title: "Mistake Odyssey"
 Subtitle: "Git, Github, VS Code and Markdown for non-programmers"
-date: 2020-07-07T06:00:00+01:00
+date: 2020-07-08T06:00:00+01:00
 type: Communication
 tags:
   - Git
@@ -28,11 +28,9 @@ Such suffering could be avoided in an ideal, utopian world where we would all ke
 
 For a writer or content creator, this nightmare can be especially hurtful, since the ability to write good texts and communicate information does not imply being an expert in computers or in the operation of the software that serves as a platform on which to shape texts.
 
-<center>
-
-![gif muses](https://media.giphy.com/media/12qZzOj2MkY26A/giphy.gif)
-
-</center>
+<p align="center">
+  <img src="https://media.giphy.com/media/12qZzOj2MkY26A/giphy.gif" alt="animated" />
+</p>
 
 ## Getting out the comfort zone
 
