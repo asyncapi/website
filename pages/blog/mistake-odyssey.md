@@ -8,7 +8,7 @@ tags:
   - GitHub
   - VS Code
   - Markdown
-cover: img/mistake odyssey-Carolinie-cavalli.webp
+cover: img/posts/mistake-odyssey/mistake-odyssey-carolinie-cavalli.webp
 authors:
   - name: Barbaño González
     photo: /img/avatars/barbano.webp
