@@ -29,7 +29,7 @@ For more details on new properties in examples, check out the demo of the latest
 
 <YouTube id="ksYrvrqj8NI" />
 
-A significant side effect of the release is that we automated the process of publishing the specification. Now [AsyncAPI Website](https://www.asyncapi.com/docs/specifications/v2.1.0) always reflects the latest version of specification document from [the spec repository](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md).
+A significant side effect of the release is that we automated the process of publishing the specification. Now [AsyncAPI Website](https://www.asyncapi.com/docs/specifications/v2.1.0) always reflects the latest version of specification document from [the spec repository](https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md). Thank you [Aayush Kumar Sahu](https://github.com/aayushmau5) for the hard work.
 
 The next release is scheduled for September. It is not decided if it is going to be a major or minor. It depends on the changes in the spec. Patch releases will be automatically released as 2.1.1 etc.
 
