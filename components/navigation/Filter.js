@@ -93,10 +93,13 @@ export default function Filter({
     let result = data;
     if (query && Object.keys(query).length >= 1) {
       for (const property in query) {
-      const res = result.filter((e) => {
-        if (e[property] === query[property]) {
-          return (e[property] = query[property]);
-        }
+          const res = result.filter((e) => {
+              if (!query[property]) {
+                  return e[property]
+              }
+                if (e[property] === query[property]) {
+                  return (e[property] = query[property]);
+                }
         if (Array.isArray(e[property])) {
           if (e[property].some((data) => data.name === query[property])) {
             return e[property].some((data) => data.name === query[property]);
