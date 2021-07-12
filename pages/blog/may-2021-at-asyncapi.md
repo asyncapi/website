@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 'We have JSON Schemas for bindings and some great community tools, one that was donated to AsyncAPI Initiative'
-featured: true
 ---
 
 > Read [April 2021 at AsyncAPI](/blog/april-2021-at-asyncapi) for the update from April.

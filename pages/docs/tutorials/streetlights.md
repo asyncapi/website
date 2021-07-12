@@ -76,7 +76,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use AsyncAPI version 2.0.0.
+- The `asyncapi` field indicates you use AsyncAPI version 2.1.0.
 - Inside the `info` field you find information about the API, like its name, version, description, and its license.
 
 We're now going for the `channels` section. It is used to describe the event names your API will be publishing and/or subscribing to.
