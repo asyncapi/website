@@ -2,18 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import PropTypes from "prop-types";
 import Select from "../form/Select";
-
-function sortFilter(arr) {
-  arr.sort((a, b) => {
-    if (a.value < b.value) {
-      return -1;
-    }
-    if (a.value > b.value) {
-      return 1;
-    }
-    return 0;
-  });
-}
+import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
 
 export default function Filter({
   data,
@@ -27,93 +16,11 @@ export default function Filter({
 
   useEffect(() => {
     setQuery(route.query);
-    if (Object.keys(checks).length) {
-      let lists = {};
-      checks.map((check) => {
-        lists[check.name] = [];
-      });
-      for (var i = 0; i < data.length; i++) {
-        for (var j = 0; j < checks.length; j++) {
-          const name = checks[j].name;
-          const result = data[i][name];
-          if (data[i][name]) {
-            if (Object.keys(lists[name])) {
-              if (Array.isArray(result)) {
-                result.map((i) => {
-                  if (checks[j].unique) {
-                    if (
-                      lists[name].some(
-                        (person) => person.value === i[checks[j].unique]
-                      )
-                    ) {
-                      return;
-                    } else {
-                      const newData = {
-                        value: i[checks[j].unique],
-                        text: i[checks[j].unique],
-                      };
-                      lists[name].push(newData);
-                      sortFilter(lists[name]);
-                    }
-                  } else {
-                    if (lists[name].some((data) => data.value === i)) {
-                      return;
-                    }
-                    const newData = {
-                      value: i,
-                      text: i,
-                    };
-                    lists[name].push(newData);
-                    sortFilter(lists[name]);
-                  }
-                });
-              } else {
-                if (lists[name].some((data) => data.value === result)) {
-                  break;
-                } else {
-                  const newData = {
-                    value: result,
-                    text: result,
-                  };
-                  lists[name].push(newData);
-                  sortFilter(lists[name]);
-                }
-              }
-            }
-          }
-        }
-      }
-      setFilters(lists);
-    }
+    applyFilterList(checks, data, setFilters);
   }, [route]);
   useEffect(() => {
-    onFilterApply();
+    onFilterApply(data, onFilter, query);
   }, [query]);
-  const onFilterApply = () => {
-    let result = data;
-    if (query && Object.keys(query).length >= 1) {
-      for (const property in query) {
-          const res = result.filter((e) => {
-              if (!query[property]) {
-                  return e[property]
-              }
-                if (e[property] === query[property]) {
-                  return (e[property] = query[property]);
-                }
-        if (Array.isArray(e[property])) {
-          if (e[property].some((data) => data.name === query[property])) {
-            return e[property].some((data) => data.name === query[property]);
-          } else if (e[property].includes(query[property])) {
-            return e[property].includes(query[property]);
-          }
-        }
-        return;
-      });
-        result = res;
-      }
-    }
-    onFilter(result)
-  };
   return checks.map((check) => {
     let selected = `Filter by ${check.name}...`;
     if (Object.keys(query).length) {
@@ -126,15 +33,19 @@ export default function Filter({
           key={check.name}
           options={filters[check.name]}
           onChange={(e) => {
-            const {query} = route;
-            let newQuery = {
-              ...query,
-              [check.name]: e
+            const { query } = route;
+            const newQuery = {
+            ...query,
+            [check.name]: e,
+            };
+            if (!e) {
+              delete newQuery[check.name];
             }
-            let queryParams = new URLSearchParams(newQuery).toString();
+            const queryParams = new URLSearchParams(newQuery).toString();
             route.push(`${route.pathname}?${queryParams}`, undefined, {
-              shallow: true
+              shallow: true,
             });
+        
           }}
           selected={selected}
           className={`${className} w-full my-1 md:mr-4`}
@@ -146,4 +57,6 @@ export default function Filter({
 Filter.propTypes = {
   data: PropTypes.array.isRequired,
   onFilter: PropTypes.func.isRequired,
+  checks: PropTypes.array.isRequired,
+  className: PropTypes.string.isRequired
 };
