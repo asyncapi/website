@@ -44,7 +44,7 @@ This is an extremely powerful tool which allows you to create complex validation
 
 Many of the JSON Schema keywords are for [JSON instance validation](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01), which means specifying validation rules that data should comply with. However, what if you wanted to know the definition of the data rather than what it should validate against? That is currently not something JSON Schema provides to you, even though it is such an important part of tooling. Let's deep dive a bit into JSON Schema and see where some of the complexity lies:
 
-It of course not all JSON Schemas that are complex to interpret to data definition. For our simple example, we can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice: how we use the `$id` keyword to define the name of such a class.
+Of course not all JSON Schemas are complex to interpret to data definition. For our simple example, we can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice: how we use the `$id` keyword to define the name of such a class.
 
 ```ts
 class SomeIdForSchema {
