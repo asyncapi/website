@@ -28,7 +28,7 @@ However, in tooling, many times you do not want to validate data, but to represe
 Let's try and take a look at an example. Given the following, we have a schema representing the validation rules that our data should comply with. 
 
 <figure>
-  <img src="../img/posts/jonaslagoni/json-schema-beyond-validation/json-schema-process.webp" title="Processor setup"/>
+  <img src="../img/posts/jonaslagoni/json-schema-beyond-validation/json-schema-process.webp" title="JSON Schema validation process" alt="Shows the overall JSON Schema validation process of how a JSON Schema and some data is validated against each other."/>
   <figcaption className="text-center text-gray-400 text-sm">Displays the overall process of validating data using JSON Schema.</figcaption>
 </figure>
 
@@ -79,7 +79,6 @@ Ideally, all keyword possibilities MUST be supported with no restrictions. So le
   }
 }
 ```
-
 **Take a moment and think about what data would you say is valid against this schema?**
 
 In the very simplest form the JSON Schema could be converted to the following:
