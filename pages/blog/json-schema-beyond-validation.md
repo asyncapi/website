@@ -55,7 +55,7 @@ class SomeIdForSchema {
 
 In theory, we use the very same validation rules and interpret them, such that the output gives us the definition of what form the data may take. Sounds easy enough right? :sweat_smile:
 
-The problem is JSON Schema, which might seem simple on the surface, is complex underneath when you start to interpret the recursive keywords such as `not`, `then`, `else`, `allOf`, `oneOf`, etc. This causes the possibilities to be endless in terms of how the JSON Schema document can be structured (at least endless in principle).
+The problem is that JSON Schema –which might seem simple on the surface— is complex underneath when you start to interpret the recursive keywords such as `not`, `if`, `then`, `else`, `allOf`, `oneOf`, etc. This causes the possibilities to be endless in terms of how the JSON Schema document can be structured (at least endless in principle).
 
 Ideally, all keyword possibilities MUST be supported with no restrictions. So let's take a look at a more complex example, that introduces the `not` keyword. We are not that interested in why one would define something like this, but merely the possibility of doing so.
 
