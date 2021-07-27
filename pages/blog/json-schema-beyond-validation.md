@@ -36,7 +36,7 @@ The JSON Schema defines that the JSON data should be an object, which requires a
 
 If we then take a look at the example [data instances](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-4.2), the first one contains the required property, and the second one both the required and the optional property.
 
-The data and the JSON Schema can then together, validate whether the data is an instance of the schema, i.e., validate whether the data comply with the validation rules and giving a simple true or false statement whether they are compatible.
+The data and the JSON Schema can then together, validate whether the data is an instance of the schema, i.e., validate if the data comply with the validation rules and give a simple true or false statement if they are compatible.
 
 JSON Schema is an extremely powerful tool which allows you to create complex validation rules for data, that would not otherwise be easy to do, if you used other specification which defines the data model using [TypeSchema](https://typeschema.org/), [JTD](https://datatracker.ietf.org/doc/html/rfc8927), etc.
 
