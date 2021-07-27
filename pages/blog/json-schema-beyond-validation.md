@@ -19,9 +19,9 @@ What is JSON Schema, why is it important and why is it so hard to use beyond val
 
 For those unfamiliar with Asyncapi [we use a superset of JSON Schema](https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject) as the default format for defining operation payloads, headers, channel parameter schemas, etc.
 
-Even though we allow other formats such as Avro, OpenAPI 3.x and Swagger 2.x, RAML schemas in its place, as soon as it hits the parser (which most tooling utilizes), said formats are converted to JSON Schema draft 7 to ensure a [common structure for tooling](https://github.com/asyncapi/parser-js/blob/826b36922260254ba23d162cda309fc72f552c49/lib/models/message.js#L20). 
+Even though we allow other formats such as Avro, OpenAPI 3.x and Swagger 2.x, RAML schemas in its place, as soon as it hits the parser (which most tooling utilizes), said formats are converted to [JSON Schema draft 7](https://json-schema.org/specification-links.html#draft-7) to ensure a [common structure for tooling](https://github.com/asyncapi/parser-js/blob/826b36922260254ba23d162cda309fc72f552c49/lib/models/message.js#L20). 
 
-However, in tooling, many times you do not want to validate data, but know the structure of the data. For example for the payload of messages, in specific programming languages, how do you represent such data so it is easier to interact with, such as classes that represent the payload? 
+However, in tooling, many times you do not want to validate data, but to represent the data in a structured manner so it is easier to interact with, such as classes that represent a message payload.
 
 ## Quick intro to JSON Schema
 
@@ -32,13 +32,13 @@ Let's try and take a look at an example. Given the following, we have a schema r
   <figcaption className="text-center text-gray-400 text-sm">Displays the overall process of validating data using JSON Schema.</figcaption>
 </figure>
 
-The JSON Schema defines that the JSON data should be an object, which requires a property called `someRequiredProperty` to always be present and an optional property called `someOptionalProperty`. `someRequiredProperty` should validate against an integer and and `someOptionalProperty` against an arbitrary string. The schema also dictates that no additional properties (`"additionalProperties": false`) may be allowed. There is also some metadata defined, called `$id` and `$schema`, but they are not important for this example.
+The JSON Schema defines that the JSON data should be an object, which requires a property called `someRequiredProperty` to always be present and an optional property called `someOptionalProperty`. `someRequiredProperty` should validate against an integer and `someOptionalProperty` against an arbitrary string. The schema also dictates that no additional properties (`"additionalProperties": false`) may be allowed. There is also some metadata defined, called `$id` and `$schema`, but they are not important for this example.
 
 If we then take a look at the example [data instances](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-4.2), the first one contains the required property, and the second one both the required and the optional property.
 
-The data and the JSON Schema can then together, validate whether the data is an instance of the schema i.e. validate whether the data comply with the validation rules and giving a simple true or false statement whether they are compatible.
+The data and the JSON Schema can then together, validate whether the data is an instance of the schema, i.e., validate whether the data comply with the validation rules and giving a simple true or false statement whether they are compatible.
 
-This is an extremely powerful tool which allows you to create complex validation rules for data, that would not otherwise be easy to do, if you used other specification which defines the data model using [TypeSchema](https://typeschema.org/), [JTD](https://datatracker.ietf.org/doc/html/rfc8927), etc.
+JSON Schema is an extremely powerful tool which allows you to create complex validation rules for data, that would not otherwise be easy to do, if you used other specification which defines the data model using [TypeSchema](https://typeschema.org/), [JTD](https://datatracker.ietf.org/doc/html/rfc8927), etc.
 
 ## The problems of using JSON Schema as data definitions
 
@@ -125,11 +125,11 @@ Notice how the `not` keyword reverses the validation result after step 5.
 ```
 
 1. Step: accept, as the input is of type object.
-1. Step: accept, as no additional properties have been defined.
-1. Step: accept, as we have such a property
-1. Step: accept, as the property is type string
-1. Step: reject - as the data is of type string
-1. Step: accept (negate step 5) - as we negate the validation result of the inner schema which was rejected in step 5. 
+2. Step: accept, as no additional properties have been defined.
+3. Step: accept, as we have such a property
+4. Step: accept, as the property is type string
+5. Step: reject - as the data is of type string
+6. Step: accept (negate step 5) - as we negate the validation result of the inner schema which was rejected in step 5. 
 
 With the `not` keyword it means that it is not only a matter of interpreting what form the data may take, but also which it may not. If we had to represent a class for this Schema it would be the following:
 ```ts
