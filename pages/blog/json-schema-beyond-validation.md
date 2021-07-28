@@ -40,7 +40,7 @@ The data and the JSON Schema can then together, validate whether the data is an 
 
 JSON Schema is an extremely powerful tool which allows you to create complex validation rules for data and is the standard specification used in not only AsyncAPI but also OpenAPI.
 
-## The problems of using JSON Schema as data definitions
+## Challenges using JSON Schema for data definitions
 
 Many of the JSON Schema keywords are for [JSON instance validation](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01), which means specifying validation rules that data should comply with. However, what if you wanted to know the definition of the data rather than what it should validate against? That is currently not something JSON Schema provides to you, even though it is such an important part of tooling. Let's deep dive a bit into JSON Schema and see where some of the complexity lies.
 
