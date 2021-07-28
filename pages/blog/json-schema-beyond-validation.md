@@ -1,5 +1,5 @@
 ---
-title: "Using JSON Schema beyond validation"
+title: "Using JSON Schema Beyond Validation"
 date: 2021-07-27T12:00:00+01:00
 type: Engineering
 tags:
