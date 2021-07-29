@@ -6,7 +6,7 @@ tags:
   - tools
   - code generation
   - design 
-cover: /img/posts/jonaslagoni/miniseries-part1/blog-miniseries-cover.webp
+cover: /img/posts/jonaslagoni-miniseries-part1/blog-miniseries-cover.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
@@ -45,7 +45,7 @@ So this blog post is a dedication to that experience, showcasing how I use Async
 
 Explaining something is always better with actual examples, therefore I will be creating a little system to show you how code generation can support the development process. 
 <figure>
-  <img src="/img/posts/jonaslagoni/miniseries-part1/blog-miniseries-general-setup.webp" title="General setup of the project"/>
+  <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-general-setup.webp" title="General setup of the project"/>
   <figcaption className="text-center text-gray-400 text-sm">The general setup of the project, with the two applications game server and processor. The round dot between "some broker" and the applications represent how others may grab/interact with the application, ergo its API.</figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ Next I define the actual definition of the channels, and here I will focus on ex
 First, I have the definition of **parameters** used in the channel. **serverId** tells us where the action originates from, the **playerId** tells us who performed the action, and the **itemId** tells us which item was picked up and should all validate against a value with type **string**.
 
 <figure>
-  <img src="/img/posts/jonaslagoni/miniseries-part1/blog-miniseries-gameserver-api.webp" title="Game server setup"/>
+  <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-gameserver-api.webp" title="Game server setup"/>
   <figcaption className="text-center text-gray-400 text-sm">Displays the game server API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the game server represent how others may grab/consume the produced event from the game server.</figcaption>
 </figure>
 
@@ -138,7 +138,7 @@ The **payload** of the channel (is described using a super-set of JSON Schema dr
 Next, I design the **processor** API, which contains all the same channels as the **game server**, but with a different operation keyword. 
 
 <figure>
-  <img src="/img/posts/jonaslagoni/miniseries-part1/blog-miniseries-processor-api.webp" title="Processor setup"/>
+  <img src="/img/posts/jonaslagoni-miniseries-part1/blog-miniseries-processor-api.webp" title="Processor setup"/>
   <figcaption className="text-center text-gray-400 text-sm">Displays the processor API as it is described with AsyncAPI with version 2.0.0. The round dot between "some broker" and the processor represent how others may grab/provide events that the processor subscribes to.</figcaption>
 </figure>
 
