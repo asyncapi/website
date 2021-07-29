@@ -34,11 +34,11 @@ Let's try and take a look at an example. Given the following, I have defined a s
 
 The JSON Schema defines that the JSON data should be an object, which requires a property called `someRequiredProperty` to always be present and an optional property called `someOptionalProperty`. `someRequiredProperty` should validate against an integer and `someOptionalProperty` against an arbitrary string. The schema also dictates that no additional properties (`"additionalProperties": false`) may be allowed. There is also some metadata defined, called `$id` and `$schema`, but they are not important for this example.
 
-If we then take a look at the example [data instances](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-4.2), the first one contains the required property, and the second one both the required and the optional property.
+If we then take a look at the example data instances (below the JSON Schema in the figure), the first one contains the required property, and the second one has both the required and the optional property.
 
 The data and the JSON Schema can then together, validate whether the data is an instance of the schema, i.e., validate if the data comply with the validation rules and give a simple true or false statement if they are compatible.
 
-JSON Schema is an extremely powerful tool that allows you to create complex validation rules for data and is the standard specification used in not only AsyncAPI but also OpenAPI.
+JSON Schema is an extremely powerful tool that allows you to create complex validation rules for data and is the standard specification used in not only AsyncAPI but also OpenAPI, however it has its challenges in tooling when used beyond validation.
 
 ## Challenges using JSON Schema for data definitions
 
