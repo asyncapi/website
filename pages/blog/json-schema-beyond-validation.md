@@ -19,13 +19,13 @@ What is JSON Schema, why is it important and why is it so hard to use beyond val
 
 For those unfamiliar with Asyncapi [we use a superset of JSON Schema](https://www.asyncapi.com/docs/specifications/2.0.0#schemaObject) as the default format for defining operation payloads, headers, channel parameter schemas, etc.
 
-Even though we allow other formats such as Avro, OpenAPI 3.x and Swagger 2.x, RAML schemas in its place, as soon as it hits the parser (which most tooling utilizes), said formats are converted to [JSON Schema draft 7](https://json-schema.org/specification-links.html#draft-7) to ensure a [common structure for tooling](https://github.com/asyncapi/parser-js/blob/826b36922260254ba23d162cda309fc72f552c49/lib/models/message.js#L20). 
+Even though formats such as Avro, OpenAPI 3.x and Swagger 2.x, RAML schemas, etc, are allowed in its place, as soon as it hits the parser (which most tooling utilizes), said formats are converted to [JSON Schema draft 7](https://json-schema.org/specification-links.html#draft-7) to ensure a [common structure for tooling](https://github.com/asyncapi/parser-js/blob/826b36922260254ba23d162cda309fc72f552c49/lib/models/message.js#L20). 
 
-However, in tooling, many times you do not want to validate data, but to represent the data in a structured manner so it is easier to interact with, such as classes that represent a message payload.
+However, in tooling, many times you do not want to validate data, but to represent the data in a structured manner so it is easier to interact with, such as classes that represent a message payload. How can you achieve this with validation rules?
 
 ## Quick intro to JSON Schema
 
-Let's try and take a look at an example. Given the following, we have a schema representing the validation rules that our data should comply with. 
+Let's try and take a look at an example. Given the following, I have defined a schema representing the validation rules that the data should comply with. 
 
 <figure>
   <img src="../img/posts/json-schema-beyond-validation/json-schema-process.webp" title="JSON Schema validation process" alt="Shows the overall JSON Schema validation process of how a JSON Schema and some data is validated against each other."/>
@@ -44,9 +44,9 @@ JSON Schema is an extremely powerful tool that allows you to create complex vali
 
 Many of the JSON Schema keywords are for [JSON instance validation](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01), which means specifying validation rules that data should comply with. However, what if you wanted to know the definition of the data rather than what it should validate against? 
 
-This is currently not something the JSON Schema specification provides to you, even though it is such an important part of tooling. First, let me show you how to interpret data definition from the example above for then to explain a more complex JSON Schema example to further highlight the complexity. 
+This is currently not something the JSON Schema specification provides to you, even though it is such an important part of tooling. First, let me show you how to interpret data definition from the above example for then to move into a more complex JSON Schema. 
 
-Interpreting data definition from a JSON Schema is not always complex. For our previous example, we can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice how we use the `$id` keyword to define the name of such a class.
+Interpreting data definition from a JSON Schema is not always complex. For our previous example, I can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice how the `$id` keyword is used to define the naming of the class.
 
 ```ts
 class SomeIdForSchema {
@@ -55,7 +55,7 @@ class SomeIdForSchema {
 }
 ```
 
-In theory, we use the very same validation rules and interpret them, such that the output gives us the definition of what form the data may take. Sounds easy enough right? :sweat_smile:
+In theory, I use the very same validation rules and interpret them, such that the output gives us the definition of what form the data may take. Sounds easy enough right? :sweat_smile:
 
 The problem is that JSON Schema –which might seem simple on the surface— is complex underneath when you start to interpret the recursive keywords such as `not`, `if`, `then`, `else`, `allOf`, `oneOf`, etc. This causes the possibilities to be endless in terms of how the JSON Schema document can be structured (at least endless in principle).
 
@@ -127,10 +127,10 @@ Notice how the `not` keyword reverses the validation result of step 5, which is 
 
 1. Step: accept, as the input is of type object.
 2. Step: accept, as no additional properties have been defined.
-3. Step: accept, as we have such a property
-4. Step: accept, as the property is type string
-5. Step: reject, as the data is of type string
-6. Step: accept (negate step 5), as we negate the validation result of the inner schema which was rejected in step 5. 
+3. Step: accept, as the property exists.
+4. Step: accept, as the property is of type string.
+5. Step: reject, as the property is of type string and not number.
+6. Step: accept (negate step 5), as the validation of the inner schema is negated. 
 
 With the `not` keyword it means that it is not only a matter of interpreting what form the data may take but also which it may not. If we had to represent a class for this Schema it would be the following:
 ```ts
