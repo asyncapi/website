@@ -101,7 +101,7 @@ Where the property `someOptionalProperty` may only be of type `string`. But, let
   "someOptionalProperty": "string"
 }
 ```
-Notice how the `not` keyword reverses the validation result after step 5.
+Notice how the `not` keyword reverses the validation result of step 5, which is why the inner schema is validated before the keyword itself.
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#", 
@@ -127,8 +127,8 @@ Notice how the `not` keyword reverses the validation result after step 5.
 2. Step: accept, as no additional properties have been defined.
 3. Step: accept, as we have such a property
 4. Step: accept, as the property is type string
-5. Step: reject - as the data is of type string
-6. Step: accept (negate step 5) - as we negate the validation result of the inner schema which was rejected in step 5. 
+5. Step: reject, as the data is of type string
+6. Step: accept (negate step 5), as we negate the validation result of the inner schema which was rejected in step 5. 
 
 With the `not` keyword it means that it is not only a matter of interpreting what form the data may take but also which it may not. If we had to represent a class for this Schema it would be the following:
 ```ts
