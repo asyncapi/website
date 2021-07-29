@@ -38,13 +38,15 @@ If we then take a look at the example [data instances](https://datatracker.ietf.
 
 The data and the JSON Schema can then together, validate whether the data is an instance of the schema, i.e., validate if the data comply with the validation rules and give a simple true or false statement if they are compatible.
 
-JSON Schema is an extremely powerful tool which allows you to create complex validation rules for data and is the standard specification used in not only AsyncAPI but also OpenAPI.
+JSON Schema is an extremely powerful tool that allows you to create complex validation rules for data and is the standard specification used in not only AsyncAPI but also OpenAPI.
 
 ## Challenges using JSON Schema for data definitions
 
-Many of the JSON Schema keywords are for [JSON instance validation](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01), which means specifying validation rules that data should comply with. However, what if you wanted to know the definition of the data rather than what it should validate against? That is currently not something JSON Schema provides to you, even though it is such an important part of tooling. Let's deep dive a bit into JSON Schema and see where some of the complexity lies.
+Many of the JSON Schema keywords are for [JSON instance validation](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01), which means specifying validation rules that data should comply with. However, what if you wanted to know the definition of the data rather than what it should validate against? 
 
-However, interpreting data definition from a JSON Schema is not always complex. For our previous example, we can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice how we use the `$id` keyword to define the name of such a class.
+This is currently not something the JSON Schema specification provides to you, even though it is such an important part of tooling. First, let me show you how to interpret data definition from the example above for then to explain a more complex JSON Schema example to further highlight the complexity. 
+
+Interpreting data definition from a JSON Schema is not always complex. For our previous example, we can almost interpret it as is. If I wanted a class in TypeScript that represented the data, it could look something like this (gonna use TS syntax as examples throughout). Notice how we use the `$id` keyword to define the name of such a class.
 
 ```ts
 class SomeIdForSchema {
@@ -57,7 +59,7 @@ In theory, we use the very same validation rules and interpret them, such that t
 
 The problem is that JSON Schema –which might seem simple on the surface— is complex underneath when you start to interpret the recursive keywords such as `not`, `if`, `then`, `else`, `allOf`, `oneOf`, etc. This causes the possibilities to be endless in terms of how the JSON Schema document can be structured (at least endless in principle).
 
-Ideally, all keyword possibilities MUST be supported with no restrictions. So let's take a look at a more complex example, that introduces the `not` keyword. We are not that interested in why one would define something like this, but merely the possibility of doing so.
+Ideally, all keyword possibilities MUST be supported with no restrictions. So let's take a look at a more complex example, that introduces the `not` keyword. We aren't interested in why one would define something like this, but merely the possibility of doing so.
 
 ```json
 {
@@ -138,11 +140,11 @@ class SomeIdForSchema {
 ``` 
 ## The interpretation of JSON Schema
 
-So, how can we program such a process that will enable us to consistently and accurately represent the underlying data model for the JSON data? How can this be standardized across all versions of JSON Schema (as we might not stay on Draft 7 forever)? 
+So, how can we create an algorithm that will enable us to consistently and accurately represent the underlying data model for the JSON data? How can this be standardized across all versions of JSON Schema (as we might not stay on Draft 7 forever)? 
 
 Some of the alternatives to JSON Schema is specification such as [TypeSchema](https://typeschema.org/) or [JTD](https://datatracker.ietf.org/doc/html/rfc8927), that instead of focusing on validation, you focus on the definition of data models. Using these as the standard definition for payloads would indeed solve the problem in terms of data definitions in tooling. However, doing so neglect many important features of JSON Schema that simply cannot be done by defining the models, and we are left with the very same problem of transforming `JSON Schema -> TypeSchema` or `JSON Schema -> JTD`, which to some extent is the process we are trying to figure out.
 
-For the process itself, it is highly work in progress :smiley: For [Modelina](github.com/asyncapi/modelina) we have our own process, but... It is something we are trying to solve collectively (as AsyncAPI is not the only one with this problem, [OAI, IBM](https://github.com/OAI/OpenAPI-Specification/issues/2542), etc) in the JSON Schema organization. 
+In terms of the algorithm, it is highly work in progress :smiley: For [Modelina](github.com/asyncapi/modelina) we have our own process, but... It is something we are trying to solve collectively (as AsyncAPI is not the only one with this problem, [OAI, IBM](https://github.com/OAI/OpenAPI-Specification/issues/2542), etc) in the JSON Schema organization. 
 
 Therefore I started a [discussion](https://github.com/json-schema-org/community/discussions/18) to trigger some initial thoughts on the subject and a SIG is being formed to tackle this problem, it can be found here - https://github.com/json-schema-org/vocab-idl.
 
