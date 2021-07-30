@@ -1,6 +1,6 @@
 ---
 title: "Using JSON Schema Beyond Validation"
-date: 2021-07-27T12:00:00+01:00
+date: 2021-07-31T12:00:00+01:00
 type: Engineering
 tags:
   - tools
@@ -146,7 +146,15 @@ Some of the alternatives to JSON Schema is specification such as [TypeSchema](ht
 
 In terms of the algorithm, it is highly work in progress :smiley: For [Modelina](github.com/asyncapi/modelina) we have our own process, but... It is something we are trying to solve collectively (as AsyncAPI is not the only one with this problem, [OAI, IBM](https://github.com/OAI/OpenAPI-Specification/issues/2542), etc) in the JSON Schema organization. 
 
-Therefore I started a [discussion](https://github.com/json-schema-org/community/discussions/18) to trigger some initial thoughts on the subject and a SIG is being formed to tackle this problem, it can be found here - https://github.com/json-schema-org/vocab-idl.
+Therefore I started a [discussion](https://github.com/json-schema-org/community/discussions/18) to trigger some initial thoughts on the subject and a [JSON Schema SIG](https://t.co/n20GalaIkI?amp=1) has been formed to tackle this problem.
+<center>
+<TwitterTweetEmbed
+  tweetId='1420774687328583680' 
+  options={{
+    cards: 'hidden'
+  }}
+/>
+</center>
 
 This blog post is as much a call for help as it is to enlighten you about the problem of using JSON Schema beyond validation. If you want to help tackle this problem, test the process, review changes, or make some kick-ass documentation, just reach out, cause we want your help! 
 
