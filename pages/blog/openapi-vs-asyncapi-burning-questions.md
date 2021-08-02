@@ -119,4 +119,4 @@ AsyncAPI and OpenAPI are now both part of the Linux Foundation, which means:
 - Both will be open standards with community governance
 - Both should continue to be integrated with open-source tooling and commercial products
 
-![Figure 14: OpenAPI and AsyncAPI are now roommates at Linux Foundation](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-07.webp)
+![Figure 14: OpenAPI and AsyncAPI are now roommates at Linux Foundation](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-14.webp)
