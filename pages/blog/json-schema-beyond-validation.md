@@ -144,7 +144,7 @@ So, how can we create an algorithm that will enable us to consistently and accur
 
 Some of the alternatives to JSON Schema is specification such as [TypeSchema](https://typeschema.org/) or [JTD](https://datatracker.ietf.org/doc/html/rfc8927), that instead of focusing on validation, you focus on the definition of data models. Using these as the standard definition for payloads would indeed solve the problem in terms of data definitions in tooling. However, doing so neglect many important features of JSON Schema that simply cannot be done by defining the models, and we are left with the very same problem of transforming `JSON Schema -> TypeSchema` or `JSON Schema -> JTD`, which to some extent is the process we are trying to figure out.
 
-In terms of the algorithm, it is highly work in progress :smiley: For [Modelina](github.com/asyncapi/modelina) we have our own process, but... It is something we are trying to solve collectively (as AsyncAPI is not the only one with this problem, [OAI, IBM](https://github.com/OAI/OpenAPI-Specification/issues/2542), etc) in the JSON Schema organization. 
+In terms of the algorithm, it is highly work in progress :smiley: For [Modelina](https://github.com/asyncapi/modelina) we have our own process, but... It is something we are trying to solve collectively (as AsyncAPI is not the only one with this problem, [OAI, IBM](https://github.com/OAI/OpenAPI-Specification/issues/2542), etc) in the JSON Schema organization. 
 
 Therefore I started a [discussion](https://github.com/json-schema-org/community/discussions/18) to trigger some initial thoughts on the subject and a [JSON Schema SIG](https://t.co/n20GalaIkI?amp=1) has been formed to tackle this problem.
 <center>
