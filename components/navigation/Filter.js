@@ -4,15 +4,12 @@ import Select from '../form/Select';
 
 export default function Filter({ data, onFilter }) {
   const [state, setState] = useState('Filter');
-  let foundCategories = new Set();
-  let categories = [];
-
-  data.forEach(data => {
-    if (foundCategories.has(data.category)) {
-      return;
+  let uniqueCategories = [...new Set(data.map(data => data.category))];
+  let categories = uniqueCategories.map(category => {
+    return {
+      text: category,
+      value: category
     }
-    foundCategories.add(data.category);
-    categories.push({ value: data.category, text: data.category });
   })
 
   const onFilterApply = (value) => {
