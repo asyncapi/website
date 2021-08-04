@@ -64,7 +64,7 @@ Microservices architecture is the new, cool kid on the street. Its purpose is to
 
 Typically, if a company wants to create something new, it glues different combinations of microservices together using REST calls. This method for microservices architecture worked… to an extent. People eventually realized that REST wasn’t always the best glue, and recognized the need for a new kind of glue that facilitated asynchronous communication.
 
-![Figure 8: Microservice architecture decomposes huge applications into tiny services] (/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-08.webp)
+![Figure 8: Microservice architecture decomposes huge applications into tiny services](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-08.webp)
 
 Establishing asynchronous communication between microservices makes them more reliable, faster, easier to scale, and more agile to adopt.  [Here’s a great video explaining why.](https://solace.com/resources/videos/how-to-enhance-microservices-with-events-video)
 
