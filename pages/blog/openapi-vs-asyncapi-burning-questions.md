@@ -1,6 +1,6 @@
 ---
 type: Engineering
-cover: /img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-01.webp
+cover: /img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-15.webp
 title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About the Two Most Popular API Specs"
 date: 2021-08-06T06:00:00+01:00
 featured: true
