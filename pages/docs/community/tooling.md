@@ -96,6 +96,7 @@ Tools that take specification documents as input, then publish fake messages to 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
 | [Microcks](https://microcks.io) | Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements. | Kubernetes-native, Self-hosted / SaaS, Open Source |
+| [Virtualan](https://virtualan.io) | Mocking and testing platform for API and microservices. Allow you to create and setup mocks for OpenAPI and AsyncAPI contracts. Refer how to setup and create for AsyncAPI [GitHub Reference Examples](https://github.com/virtualansoftware/AsyncAPI-Virtualization) And OpenAPI [GitHub Reference Examples](https://github.com/virtualansoftware/service-virtualization-openapi). | Kubernetes-native, Self-hosted / SaaS, Open Source |
 
 # Validators {#validators}
 
