@@ -383,6 +383,7 @@ for (const model of models) {
             title: 'Generator code',
             code: generatorCode
           }]}
+          caption="See the generated models under the 'Models' tab, and the associated generator code used for generating the models under 'Generator code'"
         />
       </div>
     </div>
@@ -390,7 +391,7 @@ for (const model of models) {
 }
 export default function ModelinaPlaygroundPage() {
   const [input, setInput] = useState(JSON.stringify(defaultAsyncapiFile, null, 4))
-  const [error, setError] = useState('testing')
+  const [error, setError] = useState()
 
   const description = 'Sometimes you just want to generate data models for your payload'
   const image = '/img/social/generator.png'
