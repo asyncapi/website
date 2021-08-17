@@ -17,6 +17,7 @@ export default function CodeBlock({
   showLineNumbers = true,
   startingLineNumber = 1,
   textSizeClassName = 'text-xs',
+  title = language
 }) {
   const [activeBlock, setActiveBlock] = useState(0)
   const [showIsCopied, setShowIsCopied] = useState(false)
@@ -44,7 +45,7 @@ export default function CodeBlock({
               <ul>
                 {
                   codeBlocks.map((block, index) => (
-                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.language}</li>
+                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.title ? block.title : block.language}</li>
                   ))
                 }
               </ul>
@@ -54,7 +55,7 @@ export default function CodeBlock({
         <div className="pr-8 relative overflow-y-auto">
           <Highlight
             className={`pt-px pb-0 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={language}
+            language={codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
