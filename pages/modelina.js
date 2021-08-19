@@ -2,10 +2,14 @@ import GenericWideLayout from '../components/layout/GenericWideLayout'
 import { useState } from 'react'
 import Select from '../components/form/Select'
 import CodeBlock from '../components/editor/CodeBlock'
-import modelinaOutputs from '../config/modelina-outputs.json'
+import modelinaLanguageOptions from '../config/modelina-language-options.json'
 import MonacoEditorWrapper from '../components/editor/MonacoEditorWrapper'
-import {CommonNamingConventionImplementation, CSharpGenerator, GoGenerator, JavaGenerator, JavaScriptGenerator, JAVA_COMMON_PRESET, JAVA_CONSTRAINTS_PRESET, JAVA_DESCRIPTION_PRESET, JAVA_JACKSON_PRESET, TS_COMMON_PRESET, TypeScriptGenerator} from '@asyncapi/modelina'
 import {parse} from '@asyncapi/parser'
+import TypeScriptOptions from '../components/modelina/TypeScriptGenerator'
+import JavaOptions from '../components/modelina/JavaGenerator'
+import JavaScriptOptions from '../components/modelina/JavaScriptGenerator'
+import GoOptions from '../components/modelina/GoGenerator'
+import CSharpOptions from '../components/modelina/CSharpGenerator'
 let defaultAsyncapiFile = {
   "asyncapi": "2.1.0",
   "info": {
@@ -56,341 +60,126 @@ let defaultAsyncapiFile = {
     }
   }
 }
-
-export function CSharpOptions({onGeneratorChange}) {
-  async function onNewSettings(){
-    const generator = new CSharpGenerator();
-    let jsCode = `const generator = new CSharpGenerator();`
-    onGeneratorChange({generator, jsCode});
-  }
-  onNewSettings();
-
-  return (
-    <div className="relative max-w-full mt-8 mx-auto">
-      <div className="mb-4">
-      </div>
-    </div>
-  )
-}
-export function JavaScriptOptions({onGeneratorChange}) {
-  async function onNewSettings(){
-    const generator = new JavaScriptGenerator();
-    let jsCode = `const generator = new JavaScriptGenerator();`
-    onGeneratorChange({generator, jsCode});
-  }
-  onNewSettings();
-
-  return (
-    <div className="relative max-w-full mt-8 mx-auto">
-      <div className="mb-4">
-      </div>
-    </div>
-  )
-}
-export function GoOptions({onGeneratorChange}) {
-  async function onNewSettings(){
-    const generator = new GoGenerator();
-    let jsCode = `const generator = new GoGenerator();`
-    onGeneratorChange({generator, jsCode});
-  }
-  onNewSettings();
-
-  return (
-    <div className="relative max-w-full mt-8 mx-auto">
-      <div className="mb-4">
-      </div>
-    </div>
-  )
-}
-
-export function JavaOptions({onGeneratorChange}) {
-  const [state, setState] = useState({equals: false, hashCode: false, classToString: false, includeConstraints: false, includeDescriptions: false, includeJackson: false})
-
-  function onChangeEquals(event) {
-    const newState = {...state, equals: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeHashCode(event) {
-    const newState = {...state, hashCode: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeClassToString(event) {
-    const newState = {...state, classToString: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeIncludeDescriptions(event) {
-    const newState = {...state, includeDescriptions: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeIncludeConstraints(event) {
-    const newState = {...state, includeConstraints: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeIncludeJackson(event) {
-    const newState = {...state, includeJackson: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  async function onNewSettings(){
-    const jsPresetCode = [`{
-  preset: JAVA_COMMON_PRESET,
-  options: {
-    equal: ${state.equals}, 
-    hashCode: ${state.hashCode}, 
-    classToString: ${state.classToString}
-  }
-}`]
-    const presets = [{
-      preset: JAVA_COMMON_PRESET,
-      options: {
-        equal: state.equals, 
-        hashCode: state.hashCode, 
-        classToString: state.classToString
-      }
-    }];
-    if (state.includeConstraints === true) {
-      presets.push({
-        preset: JAVA_CONSTRAINTS_PRESET
-      });
-      jsPresetCode.push(`{ preset: JAVA_CONSTRAINTS_PRESET }`);
+class ModelinaExample extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      input: JSON.stringify(defaultAsyncapiFile, null, 4),
+      codeblockModels: [], 
+      generatorCode: '', 
+      rawGeneratorCode: '',
+      generator: undefined,
+      generatorOptions: undefined, 
+      language: 'java'
     }
-    if (state.includeJackson === true) {
-      presets.push({
-        preset: JAVA_JACKSON_PRESET
-      });
-      jsPresetCode.push(`{ preset: JAVA_JACKSON_PRESET }`);
-    }
-    if (state.includeDescriptions === true) {
-      presets.push({
-        preset: JAVA_DESCRIPTION_PRESET
-      });
-      jsPresetCode.push(`{ preset: JAVA_DESCRIPTION_PRESET }`);
-    }
-    const generator = new JavaGenerator({presets});
-    let jsCode = `const generator = new JavaGenerator({
-presets: [
-${jsPresetCode.join(',\n')}
-]);`
-    onGeneratorChange({generator, jsCode});
-  }
-  onNewSettings();
 
-  return (
-    <div className="relative max-w-full mt-8 mx-auto">
-      <div className="grid grid-cols-6 gap-4">
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include equals functions</span>
-            <input type="checkbox" className="form-checkbox" name="equals" checked={state.equals} onChange={onChangeEquals}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include hashCode functions</span>
-            <input type="checkbox" className="form-checkbox" name="hashCode" checked={state.hashCode} onChange={onChangeHashCode}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include toString functions</span>
-            <input type="checkbox" className="form-checkbox" name="classToString" checked={state.classToString} onChange={onChangeClassToString}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include descriptions</span>
-            <input type="checkbox" className="form-checkbox" name="includeDescriptions" checked={state.includeDescriptions} onChange={onChangeIncludeDescriptions}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include constraints</span>
-            <input type="checkbox" className="form-checkbox" name="includeConstraints" checked={state.includeConstraints} onChange={onChangeIncludeConstraints}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include Jackson annotation</span>
-            <input type="checkbox" className="form-checkbox" name="includeJackson" checked={state.includeJackson} onChange={onChangeIncludeJackson}/>
-          </label>
-        </div>
-      </div>
-    </div>
-  )
-}
+    this.generateOutput = this.generateOutput.bind(this)
+    this.onGeneratorChange = this.onGeneratorChange.bind(this)
+    this.setNewLanguageOptions = this.setNewLanguageOptions.bind(this)
+  }
+  componentDidMount(){
+    this.setNewLanguageOptions(this.state.language)
+  }
 
-export function TypeScriptOptions({onGeneratorChange}) {
-  const [state, setState] = useState({mashalling: false, variant: 'class'})
-
-  function onChangeMarshalling(event) {
-    const newState = {...state, mashalling: event.target.checked};
-    setState(newState)
-    onNewSettings();
-  }
-  function onChangeVariant(variant) {
-    const newState = {...state, variant};
-    setState(newState)
-    onNewSettings();
-  }
-  function getRegularGenerator(){
-    const generator = new TypeScriptGenerator({
-      modelType: state.variant
-    });
-    let jsCode = `const generator = new TypeScriptGenerator({
-  modelType: ${JSON.stringify(state.variant)}
-});`
-    return {generator, jsCode}
-  }
-  function getClassGenerator(){
-    const generator = new TypeScriptGenerator({
-      modelType: state.variant,
-      presets: [
-        {
-          preset: TS_COMMON_PRESET,
-          options: {
-            marshalling: state.mashalling
-          }
-        }
-      ]
-    });
-    let jsCode = `const generator = new TypeScriptGenerator({
-  modelType: ${JSON.stringify(state.variant)},
-  presets: [
-    {
-      preset: TS_COMMON_PRESET,
-      options: {
-        marshalling: ${JSON.stringify(state.mashalling)}
-      }
-    }
-  ]
-});`
-    return {generator, jsCode}
-  }
-  async function onNewSettings(){
-    let jsCode;
-    let generator;
-    if(state.variant === 'interface') {
-      ({generator, jsCode} = getRegularGenerator())
-    } else if(state.variant === 'class') {
-      ({generator, jsCode} = getClassGenerator())
-    }
-    onGeneratorChange({generator, jsCode});
-  }
-  onNewSettings();
-
-  return (
-    <div className="relative max-w-full mt-8 mx-auto">
-      <div className="grid grid-cols-6 gap-4">
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Output variant</span>
-            <Select
-              options={[{value: 'class', text: 'Class'}, {value: 'interface', text: 'Interface'}]}
-              selected={'class'}
-              onChange={onChangeVariant}
-              className="shadow-outline-blue"
-              />
-          </label>
-        </div>
-        {
-          state.variant === 'class' &&
-          <div className="col-span-2">
-            <label className="inline-flex items-center ml-6 col-span-2">
-              <span className="text-sm text-gray-500 mr-2">Include un/marshal functions</span>
-              <input type="checkbox" className="form-checkbox" name="marshalling" checked={state.mashalling} onChange={onChangeMarshalling}/>
-            </label>
-          </div>
-        }
-      </div>
-    </div>
-  )
-}
-export function ModelinaExample({ input, setError}) {
-  const [language, setLanguage] = useState('typescript')
-  const [model, setModel] = useState('')
-  const [generatorCode, setGeneratorCode] = useState('')
-
-  async function changeGenerator({generator, jsCode}) {
+  async generateOutput() {
     try {
-      const parsedInput = await parse(input, {path: './'}); 
+      const parsedInput = await parse(this.state.input, {path: './'}) 
       //generator.generate(input, {processorOptions: {asyncapi: {path: './'}}}).then((models) => {
-      const models = await generator.generate(parsedInput);
-      let dependencies = [];
-      const modelCode = [];
+      const models = await this.state.generator.generate(parsedInput)
+      const newCodeblockModels = [] 
       for (const model of models) {
-        dependencies = [...dependencies, ...model.dependencies]
-        modelCode.push(model.result);
+        newCodeblockModels.push({
+          language: this.state.language,
+          title: model.$id,
+          code: `${model.dependencies.join('\n')}\n${model.result}`
+        })
       }
-      const output = `${[...new Set(dependencies)].join('\n')}\n${modelCode.join('\n')}`
-      setModel(output.trim())
-      setGeneratorCode(`${jsCode}
+      const newGeneratorCode = `${this.state.rawGeneratorCode}
 //const input = AsyncAPI document
-const models = await generator.generate(input);
-for (const model of models) {
-  // The model dependencies
-  console.log(model.dependencies);
-  // The model code
-  console.log(model.result);
-}`);
-      setError(undefined);
-    } catch(e) {
-      setError(JSON.stringify(e));
+const models = await generator.generate(input)`
+      this.setState({...this.state, codeblockModels: newCodeblockModels, generatorCode: newGeneratorCode})
+      this.props.onError(undefined)
+    } catch(e){
+      this.props.onError(e)
     }
   }
-
-  let outputOptions;
-  if(language === 'typescript'){
-    outputOptions = <TypeScriptOptions onGeneratorChange={changeGenerator}/>;
-  } else if(language === 'java'){
-    outputOptions = <JavaOptions onGeneratorChange={changeGenerator}/>;
-  } else if(language === 'go'){
-    outputOptions = <GoOptions onGeneratorChange={changeGenerator}/>;
-  } else if(language === 'javascript'){
-    outputOptions = <JavaScriptOptions onGeneratorChange={changeGenerator}/>;
-  } else if(language === 'csharp'){
-    outputOptions = <CSharpOptions onGeneratorChange={changeGenerator}/>;
+  async onGeneratorChange({generator, generatorCode: rawGeneratorCode}){
+    this.setState({...this.state, generator, rawGeneratorCode})
+    await this.generateOutput()
   }
-  return (
-    <div className="relative max-w-full min-w-full mt-8 mx-auto">
-      <div className="mb-4">
-        <label className="inline-flex items-center ml-6">
-          <span className="text-sm text-gray-500 mr-2">Select the desired output:</span>
-          <Select
-            options={modelinaOutputs}
-            selected={language}
-            onChange={setLanguage}
-            className="shadow-outline-blue"
+  setNewLanguageOptions(newLanguage){
+    let generatorOptions
+    if(newLanguage === 'typescript'){
+      generatorOptions = <TypeScriptOptions key={"typescript"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
+    } else if(newLanguage === 'javascript'){
+      generatorOptions = <JavaScriptOptions key={"javascript"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
+    } else if(newLanguage === 'go'){
+      generatorOptions = <GoOptions key={"go"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
+    } else if(newLanguage === 'csharp'){
+      generatorOptions = <CSharpOptions key={"csharp"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
+    } else if(newLanguage === 'java'){
+      generatorOptions = <JavaOptions key={"java"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
+    }
+    this.setState({...this.state, generatorOptions: generatorOptions, language: newLanguage})
+  }
+  render() {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
+        <div className="col-span-2">
+          <div className="grid grid-cols-1 gap-4">
+            <div className="col-span-1 text-center">
+              <label className="inline-flex items-center ml-6">
+                <span className="text-sm text-gray-500 mr-2">Select the desired language:</span>
+                <Select
+                  options={modelinaLanguageOptions}
+                  selected={this.state.language}
+                  onChange={this.setNewLanguageOptions}
+                  className="shadow-outline-blue"
+                />
+                <span className="text-sm text-gray-400 mr-2 ml-5">Missing a language? Please let us know!</span>
+              </label>
+            </div>
+            <div className="col-span-1 pr-96 pl-96">
+              {this.state.generatorOptions}
+            </div>
+          </div>
+        </div>
+        <div className="col-span-1">
+          <MonacoEditorWrapper
+            key={"input"}
+            value={this.state.input}
+            onChange={(_,change) => {this.setState({input: change}); this.generateOutput()}}
+            language="yaml"
+            height="300px"
           />
-          <span className="text-sm text-gray-400 mr-2 ml-5">Missing an output option? Please let us know!</span>
-        </label>
-        {outputOptions}
+        </div>
+        <div className="col-span-1 row-span-2">
+          <CodeBlock
+            key={"models"}
+            language="javascript"
+            textSizeClassName="text-sm"
+            className="shadow-lg h-full w-full"
+            codeBlocks={this.state.codeblockModels === undefined || this.state.codeblockModels.length === 0 ? [{code: ''}] : this.state.codeblockModels}
+          />
+        </div>
+        <div className="col-span-1">
+          <CodeBlock
+            key={"generator"}
+            textSizeClassName="text-sm"
+            className="shadow-lg h-full w-full"
+            codeBlocks={[{
+              language:'js',
+              title: 'Generator code',
+              code: this.state.generatorCode || ''
+            }]}
+          />
+        </div>
       </div>
-      <div className="mb-4">
-        <CodeBlock
-          textSizeClassName="text-sm"
-          className="shadow-lg h-full w-full"
-          codeBlocks={[{
-            language: language,
-            title: 'Models',
-            code: model
-          }, {
-            language:'js',
-            title: 'Generator code',
-            code: generatorCode
-          }]}
-          caption="See the generated models under the 'Models' tab, and the associated generator code used for generating the models under 'Generator code'"
-        />
-      </div>
-    </div>
-  )
+    )
+  }
 }
+
 export default function ModelinaPlaygroundPage() {
-  const [input, setInput] = useState(JSON.stringify(defaultAsyncapiFile, null, 4))
   const [error, setError] = useState()
 
   const description = 'Sometimes you just want to generate data models for your payload'
@@ -421,15 +210,7 @@ export default function ModelinaPlaygroundPage() {
         </span>
       </div>
     }
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-12">
-        <MonacoEditorWrapper
-          value={input}
-          onChange={(event, change) => {setInput(change)}}
-          language="yaml"
-        />
-        <ModelinaExample input={input} setError={setError} />
-      </div>
+    <ModelinaExample key="modelina" onError={setError} />
     </div>
   </GenericWideLayout>
   )
