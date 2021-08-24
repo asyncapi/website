@@ -107,6 +107,7 @@ const models = await generator.generate(input)`
     this.setState({...this.state, generator, rawGeneratorCode})
     await this.generateOutput()
   }
+  
   setNewLanguageOptions(newLanguage){
     let generatorOptions
     if(newLanguage === 'typescript'){
