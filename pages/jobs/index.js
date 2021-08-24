@@ -11,9 +11,9 @@ import Empty from "../../components/illustrations/empty";
 
 export default function JobsIndexPage() {
   const { navItems } = useContext(JobsContext)
-  navItems.map((job) => {
-    if(new Date() > new Date(job.closingOn)){
-      navItems.splice(job, 1)
+  navItems.map((job, index) => {
+    if(new Date().getTime() > new Date(job.closingOn).getTime()){
+      navItems.splice(index, 1)
     }
   })
   const [posts, setPosts] = useState(navItems.sort((i1, i2) => {
