@@ -121,7 +121,7 @@ const models = await generator.generate(input)`
       {
         id: 'Options',
         content: (
-          <div className="h-full bg-code-editor-dark text-white px-4 rounded-b shadow-lg">
+          <div className="h-full bg-code-editor-dark text-white px-4 rounded-b shadow-lg font-bold">
             {generatorOptions}
           </div>
         )
@@ -168,7 +168,7 @@ const models = await generator.generate(input)`
               language="javascript"
               textSizeClassName="text-sm"
               className="shadow-lg w-full"
-              highlightClassName="h-96"
+              highlightClassName="h-half-screen"
               codeBlocks={this.state.codeblockModels === undefined || this.state.codeblockModels.length === 0 ? [{code: ''}] : this.state.codeblockModels}
             />
           </div>

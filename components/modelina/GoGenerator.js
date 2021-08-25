@@ -26,8 +26,8 @@ export default class GoOptions extends React.Component {
 
   render() {
     return (
-      <div className="relative max-w-full mt-8 mx-auto">
-        <div className="mb-4">
+      <div className="relative max-w-full mx-auto">
+        <div className="pt-4 text-center">
           No available options
         </div>
       </div>
