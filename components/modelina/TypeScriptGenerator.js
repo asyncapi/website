@@ -1,5 +1,7 @@
+import React from 'react';
 import { TS_COMMON_PRESET, TypeScriptGenerator } from "@asyncapi/modelina"
 import Select from "../form/Select"
+
 export const defaultState = { marshalling: false, variant: 'class' }
 
 export function getClassGenerator(marshalling) {
@@ -13,8 +15,11 @@ export function getClassGenerator(marshalling) {
         }
       }
     ]
-  })
-  let generatorCode = `const generator = new TypeScriptGenerator({
+  });
+
+  const generatorCode = `import { TypeScriptGenerator, TS_COMMON_PRESET } from '@asyncapi/modelina';
+
+const generator = new TypeScriptGenerator({
   modelType: 'class',
   presets: [
     {
@@ -25,16 +30,21 @@ export function getClassGenerator(marshalling) {
     }
   ]
 })`
-  return { generator, generatorCode }
+
+  return { generator, generatorCode };
 }
 
 export function getRegularGenerator(variant) {
   const generator = new TypeScriptGenerator({
     modelType: variant
-  })
-  let generatorCode = `const generator = new TypeScriptGenerator({
+  });
+
+  let generatorCode = `import { TypeScriptGenerator } from '@asyncapi/modelina';
+
+const generator = new TypeScriptGenerator({
   modelType: ${JSON.stringify(variant)}
-})`
+})`;
+
   return { generator, generatorCode }
 }
 
@@ -71,30 +81,27 @@ export default class TypeScriptOptions extends React.Component {
 
   render() {
     return (
-      <div className="relative max-w-full mt-8 mx-auto">
-        <div className="grid grid-cols-6 gap-4">
-          <div className="col-span-2">
-            <label className="inline-flex items-center ml-6 col-span-2">
-              <span className="text-sm text-gray-500 mr-2">Output variant</span>
+      <ul className="flex flex-col">
+        <li>
+          <label className="flex items-center py-2 justify-between cursor-pointer">
+            <span className="text-sm mr-2">Output variant</span>
               <Select
                 options={[{ value: 'class', text: 'Class' }, { value: 'interface', text: 'Interface' }]}
                 selected={'class'}
                 onChange={this.onChangeVariant}
-                className="shadow-outline-blue"
+                className="shadow-outline-blue cursor-pointer"
               />
+          </label>
+        </li>
+        {this.state.variant === 'class' ? (
+          <li>
+            <label className="flex items-center py-2 justify-between cursor-pointer">
+              <span className="text-sm mr-2">Include un/marshal functions</span>
+              <input type="checkbox" className="form-checkbox cursor-pointer" name="marshalling" checked={this.state.mashalling} onChange={this.onChangeMarshalling} />
             </label>
-          </div>
-          {
-            this.state.variant === 'class' &&
-            <div className="col-span-2">
-              <label className="inline-flex items-center ml-6 col-span-2">
-                <span className="text-sm text-gray-500 mr-2">Include un/marshal functions</span>
-                <input type="checkbox" className="form-checkbox" name="marshalling" checked={this.state.mashalling} onChange={this.onChangeMarshalling} />
-              </label>
-            </div>
-          }
-        </div>
-      </div>
-    )
+          </li>
+        ) : null}
+      </ul>
+    );
   }
 }

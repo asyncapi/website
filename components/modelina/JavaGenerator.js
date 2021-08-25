@@ -1,5 +1,8 @@
+import React from 'react';
 import { JavaGenerator, JAVA_COMMON_PRESET, JAVA_CONSTRAINTS_PRESET, JAVA_DESCRIPTION_PRESET, JAVA_JACKSON_PRESET } from "@asyncapi/modelina"
+
 import Select from "../form/Select"
+
 export const defaultState = {equals: false, hashCode: false, classToString: false, includeConstraints: false, includeDescriptions: false, includeJackson: false, collectionType: 'List'}
 export const javaCollectionTypes = [
   { 
@@ -10,51 +13,62 @@ export const javaCollectionTypes = [
     "value": "Array", 
     "text": "Array"
   }
-]
+];
+
 export function getClassGenerator(state){
-    const jsPresetCode = [` {
-      preset: JAVA_COMMON_PRESET,
-      options: {
-        equal: ${state.equals}, 
-        hashCode: ${state.hashCode}, 
-        classToString: ${state.classToString}
-      }
-    }`]
-    const presets = [{
-      preset: JAVA_COMMON_PRESET,
-      options: {
-        equal: state.equals, 
-        hashCode: state.hashCode, 
-        classToString: state.classToString
-      }
-    }]
-    if (state.includeConstraints === true) {
-      presets.push({
-        preset: JAVA_CONSTRAINTS_PRESET
-      })
-      jsPresetCode.push(`    { preset: JAVA_CONSTRAINTS_PRESET }`)
+  const imports = ['JAVA_COMMON_PRESET'];
+
+  const jsPresetCode = [` {
+    preset: JAVA_COMMON_PRESET,
+    options: {
+      equal: ${state.equals}, 
+      hashCode: ${state.hashCode}, 
+      classToString: ${state.classToString}
     }
-    if (state.includeJackson === true) {
-      presets.push({
-        preset: JAVA_JACKSON_PRESET
-      })
-      jsPresetCode.push(`    { preset: JAVA_JACKSON_PRESET }`)
+  }`]
+  const presets = [{
+    preset: JAVA_COMMON_PRESET,
+    options: {
+      equal: state.equals, 
+      hashCode: state.hashCode, 
+      classToString: state.classToString
     }
-    if (state.includeDescriptions === true) {
-      presets.push({
-        preset: JAVA_DESCRIPTION_PRESET
-      })
-      jsPresetCode.push(`    { preset: JAVA_DESCRIPTION_PRESET }`)
-    }
-    const generator = new JavaGenerator({collectionType: state.collectionType, presets})
-    const generatorCode = `const generator = new JavaGenerator({
+  }];
+  if (state.includeConstraints === true) {
+    presets.push({
+      preset: JAVA_CONSTRAINTS_PRESET
+    });
+    imports.push('JAVA_CONSTRAINTS_PRESET');
+    jsPresetCode.push(`    JAVA_CONSTRAINTS_PRESET`)
+  }
+  if (state.includeJackson === true) {
+    presets.push({
+      preset: JAVA_JACKSON_PRESET
+    });
+    imports.push('JAVA_JACKSON_PRESET');
+    jsPresetCode.push(`    JAVA_JACKSON_PRESET`)
+  }
+  if (state.includeDescriptions === true) {
+    presets.push({
+      preset: JAVA_DESCRIPTION_PRESET
+    });
+    imports.push('JAVA_DESCRIPTION_PRESET');
+    jsPresetCode.push(`    JAVA_DESCRIPTION_PRESET`)
+  }
+
+  const generator = new JavaGenerator({collectionType: state.collectionType, presets});
+  const generatorCode = `import { JavaGenerator, ${imports.join(', ')} } from '@asyncapi/modelina';
+    
+const generator = new JavaGenerator({
   collectionType: ${JSON.stringify(state.collectionType)},
   presets: [
   ${jsPresetCode.join(',\n')}
   ]
-})`
-    return {generator, generatorCode}
+})`;
+  
+  return { generator, generatorCode }
 }
+
 export function getGeneratorCode(state = defaultState){
   return getClassGenerator(state)
 }
@@ -117,61 +131,66 @@ export default class JavaOptions extends React.Component {
   }
 
   render() {
+    const options = [
+      (
+        <>
+          <span className="text-sm mr-2 ">Include equals functions</span>
+          <input type="checkbox" className="form-checkbox" name="equals" checked={this.state.equals} onChange={this.onChangeEquals}/>
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Collection type</span>
+          <Select
+            options={javaCollectionTypes}
+            selected={this.state.collectionType}
+            onChange={this.setNewCollectionType}
+            className="shadow-outline-blue cursor-pointer"
+          />
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Include hashCode functions</span>
+          <input type="checkbox" className="form-checkbox" name="hashCode" checked={this.state.hashCode} onChange={this.onChangeHashCode}/>
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Include toString functions</span>
+          <input type="checkbox" className="form-checkbox" name="classToString" checked={this.state.classToString} onChange={this.onChangeClassToString}/>
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Include descriptions</span>
+          <input type="checkbox" className="form-checkbox" name="includeDescriptions" checked={this.state.includeDescriptions} onChange={this.onChangeIncludeDescriptions}/>
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Include constraints</span>
+          <input type="checkbox" className="form-checkbox" name="includeConstraints" checked={this.state.includeConstraints} onChange={this.onChangeIncludeConstraints}/>
+        </>
+      ),
+      (
+        <>
+          <span className="text-sm mr-2">Include Jackson annotation</span>
+          <input type="checkbox" className="form-checkbox" name="includeJackson" checked={this.state.includeJackson} onChange={this.onChangeIncludeJackson}/>
+        </>
+      )
+    ];
+
     return (
-      <div className="grid grid-cols-10 gap-4">
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include equals functions</span>
-            <input type="checkbox" className="form-checkbox" name="equals" checked={this.state.equals} onChange={this.onChangeEquals}/>
-          </label>
-        </div>
-        <div className="col-span-3">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Collection type</span>
-            <Select
-              options={javaCollectionTypes}
-              selected={this.state.collectionType}
-              onChange={this.setNewCollectionType}
-              className="shadow-outline-blue" />
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include hashCode functions</span>
-            <input type="checkbox" className="form-checkbox" name="hashCode" checked={this.state.hashCode} onChange={this.onChangeHashCode}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include toString functions</span>
-            <input type="checkbox" className="form-checkbox" name="classToString" checked={this.state.classToString} onChange={this.onChangeClassToString}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include descriptions</span>
-            <input type="checkbox" className="form-checkbox" name="includeDescriptions" checked={this.state.includeDescriptions} onChange={this.onChangeIncludeDescriptions}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include constraints</span>
-            <input type="checkbox" className="form-checkbox" name="includeConstraints" checked={this.state.includeConstraints} onChange={this.onChangeIncludeConstraints}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include Jackson annotation</span>
-            <input type="checkbox" className="form-checkbox" name="includeJackson" checked={this.state.includeJackson} onChange={this.onChangeIncludeJackson}/>
-          </label>
-        </div>
-        <div className="col-span-2">
-          <label className="inline-flex items-center ml-6 col-span-2">
-            <span className="text-sm text-gray-500 mr-2">Include equals functions</span>
-            <input type="checkbox" className="form-checkbox" name="equals" checked={this.state.equals} onChange={this.onChangeEquals}/>
-          </label>
-        </div>
-      </div>
+      <ul className="flex flex-col">
+        {options.map(option => (
+          <li>
+            <label className="flex items-center py-2 justify-between cursor-pointer">
+              {option}
+            </label>
+          </li>
+        ))}
+      </ul>
     )
   }
 }

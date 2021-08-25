@@ -1,10 +1,16 @@
-import { JavaScriptGenerator } from "@asyncapi/modelina"
+import React from 'react';
+import { JavaScriptGenerator } from "@asyncapi/modelina";
+
 export const defaultState = {}
 
 export function getClassGenerator(){
-  const generator = new JavaScriptGenerator()
-  let generatorCode = `const generator = new JavaScriptGenerator()`
-  return {generator, generatorCode}
+  const generator = new JavaScriptGenerator();
+
+  const generatorCode = `import { JavaScriptGenerator } from '@asyncapi/modelina';
+
+const generator = new JavaScriptGenerator()`;
+
+  return { generator, generatorCode };
 }
 
 export function getGeneratorCode(state = defaultState){
@@ -22,8 +28,9 @@ export default class JavaScriptOptions extends React.Component {
     return (
       <div className="relative max-w-full mt-8 mx-auto">
         <div className="mb-4">
+          No available options
         </div>
       </div>
-    )
+    );
   }
 }

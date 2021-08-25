@@ -1,10 +1,16 @@
-import { GoGenerator } from "@asyncapi/modelina"
+import React from 'react';
+import { GoGenerator } from "@asyncapi/modelina";
+
 export const defaultState = {}
 
 export function getClassGenerator(){
-  const generator = new GoGenerator()
-  let generatorCode = `const generator = new GoGenerator()`
-  return {generator, generatorCode}
+  const generator = new GoGenerator();
+
+  const generatorCode = `import { GoGenerator } from '@asyncapi/modelina';
+
+const generator = new GoGenerator()`;
+
+  return { generator, generatorCode };
 }
 
 export function getGeneratorCode(state = defaultState){
@@ -22,8 +28,9 @@ export default class GoOptions extends React.Component {
     return (
       <div className="relative max-w-full mt-8 mx-auto">
         <div className="mb-4">
+          No available options
         </div>
       </div>
-    )
+    );
   }
 }

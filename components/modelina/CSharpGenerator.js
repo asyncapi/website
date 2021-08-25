@@ -1,10 +1,16 @@
-import { CSharpGenerator } from "@asyncapi/modelina"
+import React from 'react';
+import { CSharpGenerator } from "@asyncapi/modelina";
+
 export const defaultState = {}
 
 export function getClassGenerator(){
-  const generator = new CSharpGenerator()
-  let generatorCode = `const generator = new CSharpGenerator()`
-  return {generator, generatorCode}
+  const generator = new CSharpGenerator();
+
+  const generatorCode = `import { CSharpGenerator } from '@asyncapi/modelina';
+
+const generator = new CSharpGenerator()`;
+
+  return { generator, generatorCode };
 }
 
 export function getGeneratorCode(state = defaultState){
@@ -22,8 +28,9 @@ export default class CSharpOptions extends React.Component {
     return (
       <div className="relative max-w-full mt-8 mx-auto">
         <div className="mb-4">
+          No available options
         </div>
       </div>
-    )
+    );
   }
 }
