@@ -18,22 +18,26 @@ export const javaCollectionTypes = [
 export function getClassGenerator(state){
   const imports = ['JAVA_COMMON_PRESET'];
 
-  const jsPresetCode = [` {
-    preset: JAVA_COMMON_PRESET,
-    options: {
-      equal: ${state.equals}, 
-      hashCode: ${state.hashCode}, 
-      classToString: ${state.classToString}
-    }
-  }`]
-  const presets = [{
-    preset: JAVA_COMMON_PRESET,
-    options: {
-      equal: state.equals, 
-      hashCode: state.hashCode, 
-      classToString: state.classToString
-    }
-  }];
+  const jsPresetCode = [];
+  const presets = [];
+  if (state.equals === true || state.hashCode === true || state.classToString === true) {
+    presets.push({
+      preset: JAVA_COMMON_PRESET,
+      options: {
+        equal: state.equals, 
+        hashCode: state.hashCode, 
+        classToString: state.classToString
+      },
+    });
+    jsPresetCode.push(`{
+      preset: JAVA_COMMON_PRESET,
+      options: {
+        ${state.equals ? 'equals: true,' : ''}
+        ${state.hashCode ? 'hashCode: true,' : ''}
+        ${state.classToString ? 'classToString: true,' : ''}
+      }
+    }`.replace(/^\s*\n/gm, ''));
+  }
   if (state.includeConstraints === true) {
     presets.push({
       preset: JAVA_CONSTRAINTS_PRESET
@@ -56,15 +60,17 @@ export function getClassGenerator(state){
     jsPresetCode.push(`    JAVA_DESCRIPTION_PRESET`)
   }
 
+  const generateInstanceCode = `const generator = new JavaGenerator({
+  collectionType: ${JSON.stringify(state.collectionType)},
+  ${presets.length ? `presets: [
+    ${jsPresetCode.join(',\n')}
+  ]`: ''}
+});`.replace(/^\s*\n/gm, '');
+
   const generator = new JavaGenerator({collectionType: state.collectionType, presets});
   const generatorCode = `import { JavaGenerator, ${imports.join(', ')} } from '@asyncapi/modelina';
     
-const generator = new JavaGenerator({
-  collectionType: ${JSON.stringify(state.collectionType)},
-  presets: [
-  ${jsPresetCode.join(',\n')}
-  ]
-})`;
+${generateInstanceCode}`;
   
   return { generator, generatorCode }
 }

@@ -18,7 +18,7 @@ class ModelinaPlayground extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      input: JSON.stringify(defaultAsyncapiFile, null, 4),
+      input: JSON.stringify(playgroundAsyncAPIDocument, null, 4),
       codeblockModels: [], 
       generatorCode: '', 
       rawGeneratorCode: '',
@@ -88,7 +88,7 @@ const models = await generator.generate(input)`
 
     const tabs = [
       {
-        id: 'Document',
+        id: 'AsyncAPI Document',
         content: (
           <div className="h-full bg-code-editor-dark text-white px-4 rounded-b shadow-lg">
             <MonacoEditorWrapper
@@ -106,7 +106,7 @@ const models = await generator.generate(input)`
         )
       },
       {
-        id: 'Code',
+        id: 'Generator Code',
         content: (
           <CodeBlock
             textSizeClassName="text-sm"
@@ -182,8 +182,29 @@ const models = await generator.generate(input)`
 export default function ModelinaPlaygroundPage() {
   const [error, setError] = useState();
 
-  const description = 'Sometimes you just want to generate data models for your payload.'
-  const image = '/img/social/modelina.png'
+  const description = 'Sometimes you just want to generate data models for your payload.';
+  const image = '/img/social/modelina.png';
+
+  const tabs = (
+    <CodeBlock
+      language="javascript"
+      textSizeClassName="text-sm"
+      className="shadow-lg w-full"
+      highlightClassName="h-120"
+      codeBlocks={[
+        {
+          language:'javascript',
+          title: 'Generator code',
+          code: exampleModelinaCode,
+        },
+        {
+          language:'javascript',
+          title: 'Output model',
+          code: exampleOutputModel,
+        },
+      ]}
+    />
+  );
 
   const playground = (
     <div>
@@ -236,7 +257,7 @@ export default function ModelinaPlaygroundPage() {
             </div>
           </div>
           <div className="relative lg:mt-8">
-            <CodeBlock language="javascript" hasWindow>{defaultModelinaCode}</CodeBlock>
+            {tabs}
           </div>
         </div>
 
@@ -256,7 +277,7 @@ export default function ModelinaPlaygroundPage() {
   )
 }
 
-const defaultModelinaCode = `import { JavaGenerator, JAVA_COMMON_PRESET } from '@asyncapi/modelina'
+const exampleModelinaCode = `import { JavaGenerator, JAVA_COMMON_PRESET } from '@asyncapi/modelina'
   
 const generator = new JavaGenerator({
   collectionType: "List",
@@ -264,8 +285,6 @@ const generator = new JavaGenerator({
     {
       preset: JAVA_COMMON_PRESET,
       options: {
-        equal: true, 
-        hashCode: true, 
         classToString: true
       }
     }
@@ -275,7 +294,50 @@ const generator = new JavaGenerator({
 // const input = ...AsyncAPI document
 const models = await generator.generate(input)`;
 
-const defaultAsyncapiFile = {
+const exampleOutputModel = `import java.util.List;
+import java.util.Map;
+
+public class LightMeasured {
+  private Integer id;
+  private Integer lumens;
+  private java.time.OffsetDateTime sentAt;
+  private Map<String, Object> additionalProperties;
+
+  public Integer getId() { return this.id; }
+  public void setId(Integer id) { this.id = id; }
+
+  public Integer getLumens() { return this.lumens; }
+  public void setLumens(Integer lumens) { this.lumens = lumens; }
+
+  public java.time.OffsetDateTime getSentAt() { return this.sentAt; }
+  public void setSentAt(java.time.OffsetDateTime sentAt) { this.sentAt = sentAt; }
+
+  public Map<String, Object> getAdditionalProperties() { return this.additionalProperties; }
+  public void setAdditionalProperties(Map<String, Object> additionalProperties) { this.additionalProperties = additionalProperties; }
+
+  @Override
+  public String toString() {
+    return "class LightMeasured {\\n" +   
+      "    id: " + toIndentedString(id) + "\\n" +
+      "    lumens: " + toIndentedString(lumens) + "\\n" +
+      "    sentAt: " + toIndentedString(sentAt) + "\\n" +
+      "    additionalProperties: " + toIndentedString(additionalProperties) + "\\n" +
+    "}";
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\\n", "\\n    ");
+  }
+}`;
+
+const playgroundAsyncAPIDocument = {
   "asyncapi": "2.1.0",
   "info": {
     "title": "Streetlights API",
