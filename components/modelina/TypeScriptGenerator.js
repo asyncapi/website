@@ -17,19 +17,21 @@ export function getClassGenerator(marshalling) {
     ]
   });
 
-  const generatorCode = `import { TypeScriptGenerator, TS_COMMON_PRESET } from '@asyncapi/modelina';
-
-const generator = new TypeScriptGenerator({
+  const generateInstanceCode = `const generator = new TypeScriptGenerator({
   modelType: 'class',
-  presets: [
+  ${marshalling ? `presets: [
     {
       preset: TS_COMMON_PRESET,
       options: {
         marshalling: ${JSON.stringify(marshalling)}
       }
     }
-  ]
-})`
+  ]` : ''}
+});`.replace(/^\s*\n/gm, '');
+
+  const generatorCode = `import { TypeScriptGenerator, TS_COMMON_PRESET } from '@asyncapi/modelina';
+
+${generateInstanceCode}`
 
   return { generator, generatorCode };
 }
