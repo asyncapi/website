@@ -182,7 +182,7 @@ export default function ModelinaPlaygroundPage() {
   const [error, setError] = useState();
 
   const description = 'Sometimes you just want to generate data models for your payload.'
-  const image = '/img/social/generator.png'
+  const image = '/img/social/modelina.png'
 
   const playground = (
     <div>

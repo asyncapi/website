@@ -13,6 +13,7 @@ export default function Tabs({ tabs = [], className = '' }) {
       <ul className="flex-none flex text-xs rounded-t bg-code-editor-dark pl-1">
         {filteredTabs.map(({ id }) => (
           <li 
+            key={id}
             onClick={() => seShowTab(id)}
             className={id === showTab ? tabItemsActiveClassNames : tabItemsClassNames}
           >
@@ -22,7 +23,7 @@ export default function Tabs({ tabs = [], className = '' }) {
       </ul>
       <div className="flex-grow">
         {filteredTabs.map(({ content, id }) => (
-          <div className={`h-full ${id === showTab ? '' : 'hidden'}`}>
+          <div key={id} className={`h-full ${id === showTab ? '' : 'hidden'}`}>
             {content}
           </div>
         ))}
