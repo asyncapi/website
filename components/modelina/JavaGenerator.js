@@ -183,8 +183,8 @@ export default class JavaOptions extends React.Component {
 
     return (
       <ul className="flex flex-col">
-        {options.map(option => (
-          <li>
+        {options.map((option, id) => (
+          <li key={id}>
             <label className="flex items-center py-2 justify-between cursor-pointer">
               {option}
             </label>
