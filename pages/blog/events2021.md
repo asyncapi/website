@@ -26,7 +26,7 @@ We do not have the call for proposals opened yet.
 
 Don't worry though, all logistics are in progress.
 
-## What do we know so far
+## What we do know so far
 
 We do know these events will take place for sure!
 
