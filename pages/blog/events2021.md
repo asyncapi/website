@@ -40,12 +40,12 @@ We do know these events will take place for sure!
   - We will explain in detail how to become a contributor
 - Day 2 and 3 of the conference setup highly depends on the number of proposals, source (vendors, tooling providers, or end-users), and topics.
 
-## What can you do already
+## What you can do already
 
 - Join detailed [discussion](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-conf-2021-organization) about the event!
 - Start talking to your employer. **We need some cash from sponsors** to give it away to the community and spend some on event marketing.
 - Start working on a proposal for a conference talk. The call for proposals is not yet officially opened, but you can already draft the initial proposal.
-- Start brainstorming on your hackathon project as only one month left for the event:
+- Start brainstorming on your hackathon project as it's only one month left for the event:
   - You want to be part of it? Feel free to [discuss your idea with others](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming) if you are not sure it makes sense, 
   - You don't have time? That is fine, at least [drop your ideas](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-ideas-brainstorming), maybe others will pick them up
 
