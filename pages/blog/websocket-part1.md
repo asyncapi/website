@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: WebSocket is a protocol, an industry standard for building client applications that users love to use. What does AsyncAPI have to do with it?
-featured: true
 ---
 
 This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
