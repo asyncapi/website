@@ -14,7 +14,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: Learn how to go from API design to code generation. Create a WebSocket API for ChatBot. All supported by AsyncAPI
-featured: true
 ---
 
 >  This is the last article of WebSocket series. I recommend you read [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) and [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) first.
