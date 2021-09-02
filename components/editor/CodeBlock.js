@@ -42,7 +42,7 @@ export default function CodeBlock({
 
   function renderHighlight() {
     return (
-      <div>
+      <div className="h-full">
         {codeBlocks.length > 1 && (
           <div className="text-xs pb-3 pt-0 pl-1">
             <nav>

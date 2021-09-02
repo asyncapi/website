@@ -111,6 +111,7 @@ const models = await generator.generate(input)`
           <CodeBlock
             textSizeClassName="text-sm"
             className="shadow-lg h-full w-full rounded-t-none"
+            highlightClassName="h-full"
             codeBlocks={[{
               language:'js',
               title: 'Generator code',
