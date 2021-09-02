@@ -171,8 +171,8 @@ function HomePage() {
         </div>
         <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
           {
-            posts.map((post, index) => (
-              <BlogPostItem className="mb-8 md:mb-0" key={index} post={post} />
+            posts.map((post) => (
+              <BlogPostItem className="mb-8 md:mb-0" key={post.slug} post={post} />
             ))
           }
         </div>

@@ -48,8 +48,8 @@ export default function BlogIndexPage() {
           </div>
           <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {
-              posts.map((post, index) => (
-                <BlogPostItem key={index} post={post} />
+              posts.map(post => (
+                <BlogPostItem key={post.slug} post={post} />
               ))
             }
           </div>
