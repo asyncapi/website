@@ -8,7 +8,7 @@ export default function AuthorAvatars({ authors = [] }) {
         src={author.photo}
       />
 
-      return author.link ? <a alt={author.name} href={author.link}>{avatar}</a> : {avatar}
+      return author.link ? <a key={author.name} alt={author.name} href={author.link}>{avatar}</a> : {avatar}
     })
   )
 }
