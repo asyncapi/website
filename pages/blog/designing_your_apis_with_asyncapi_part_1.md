@@ -12,7 +12,6 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
     byline: AsyncAPI Maintainer
-featured: true
 ---
 
 How can you utilize code generation to speed up the development process and only focus on what is important - the business logic? In this miniseries, I will explore the ways AsyncAPI and code generation can work hand in hand beyond generating documentation.

@@ -8,6 +8,7 @@ export default function CodeBlock({
   children,
   codeBlocks,
   className = '',
+  highlightClassName = '',
   highlightedLines,
   language = 'yaml',
   hasWindow = false,
@@ -17,44 +18,48 @@ export default function CodeBlock({
   showLineNumbers = true,
   startingLineNumber = 1,
   textSizeClassName = 'text-xs',
+  title = language
 }) {
   const [activeBlock, setActiveBlock] = useState(0)
   const [showIsCopied, setShowIsCopied] = useState(false)
   codeBlocks = codeBlocks && codeBlocks.length ? codeBlocks : [{ code: children.replace(/\n$/, '') }]
 
-  const tabItemsCommonClassNames = 'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300'
+  const tabItemsCommonClassNames = 'inline-block border-teal-300 py-1 px-2 mx-px cursor-pointer hover:text-teal-300 font-bold'
   const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`
-  const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 font-bold border-b-2`
+  const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`
 
   function onClickCopy() {
-    navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
-      setShowIsCopied(true)
-      setTimeout(() => {
-        setShowIsCopied(false)
-      }, 2000)
-    })
+    // check if navigator with clipboard exists (fallback for older browsers) 
+    if (navigator && navigator.clipboard) {
+      navigator.clipboard.writeText(codeBlocks[activeBlock].code).then(() => {
+        setShowIsCopied(true)
+        setTimeout(() => {
+          setShowIsCopied(false)
+        }, 2000);
+      })
+    }
   }
 
   function renderHighlight() {
     return (
-      <div>
+      <div className="h-full">
         {codeBlocks.length > 1 && (
           <div className="text-xs pb-3 pt-0 pl-1">
             <nav>
               <ul>
                 {
                   codeBlocks.map((block, index) => (
-                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.language}</li>
+                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.title ? block.title : block.language}</li>
                   ))
                 }
               </ul>
             </nav>
           </div>
         )}
-        <div className="pr-8 relative overflow-y-auto">
+        <div className={`pr-8 relative overflow-y-auto ${highlightClassName}`}>
           <Highlight
             className={`pt-px pb-0 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
-            language={language}
+            language={codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
             style={theme}
             showLineNumbers={showLineNumbers}
             startingLineNumber={startingLineNumber}
@@ -88,7 +93,7 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`${className} relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark z-10`}>
+      <div className={`relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark z-10 ${className}`}>
         {hasWindow && (
           <div className="pl-4 pb-2">
             <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>

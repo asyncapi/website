@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 2.1.0 spec released, GSoC started, CLI released, other tools under heavy development. June was a hell of a ride.
-featured: true
 ---
 
 > Read [May 2021 at AsyncAPI](/blog/may-2021-at-asyncapi) for the update from May.

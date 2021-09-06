@@ -2,7 +2,7 @@
 title: 'Technical Writer'
 date: 2021-07-01T06:00:00+01:00
 category: Education
-closingOn: 10/01/2021
+closingOn: 08/10/2021
 contact: https://www.postman.com/company/careers/technical-writer-open-technologies-4360221003/
 company: 
   name: 'Postman'
