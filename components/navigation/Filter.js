@@ -1,15 +1,10 @@
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import Select from "../form/Select";
 import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
 
-export default function Filter({
-  data,
-  onFilter,
-  checks,
-  className,
-}) {
+export default function Filter({ data, onFilter, checks, className }) {
   const route = useRouter();
   const [filters, setFilters] = useState({});
   const [query, setQuery] = useState({});
@@ -22,35 +17,41 @@ export default function Filter({
     onFilterApply(data, onFilter, query);
   }, [query]);
   return checks.map((check) => {
-    let selected = `Filter by ${check.name}...`;
+    let selected = "";
     if (Object.keys(query).length) {
       if (query[check.name]) {
         selected = `${query[check.name]}`;
       }
     }
-      return (
-        <Select
-          key={check.name}
-          options={filters[check.name]}
-          onChange={(e) => {
-            const { query } = route;
-            const newQuery = {
+    const selectOptions = [
+      {
+        value: "",
+        text: `Filter by ${check.name}...`,
+      },
+      ...(filters[check.name] || []),
+    ];
+    return (
+      <Select
+        key={check.name}
+        options={selectOptions}
+        onChange={(e) => {
+          const { query } = route;
+          const newQuery = {
             ...query,
             [check.name]: e,
-            };
-            if (!e) {
-              delete newQuery[check.name];
-            }
-            const queryParams = new URLSearchParams(newQuery).toString();
-            route.push(`${route.pathname}?${queryParams}`, undefined, {
-              shallow: true,
-            });
-        
-          }}
-          selected={selected}
-          className={`${className} w-full my-1 md:mr-4`}
-        />
-      );
+          };
+          if (!e) {
+            delete newQuery[check.name];
+          }
+          const queryParams = new URLSearchParams(newQuery).toString();
+          route.push(`${route.pathname}?${queryParams}`, undefined, {
+            shallow: true,
+          });
+        }}
+        selected={selected}
+        className={`${className} w-full my-1 md:mr-4`}
+      />
+    );
   });
 }
 
@@ -58,5 +59,5 @@ Filter.propTypes = {
   data: PropTypes.array.isRequired,
   onFilter: PropTypes.func.isRequired,
   checks: PropTypes.array.isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
 };
