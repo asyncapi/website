@@ -8,12 +8,13 @@ export default function Button({
   className,
   bgClassName = 'bg-primary-500 hover:bg-primary-400',
   textClassName = 'text-white hover:text-white',
+  ...props
 }) {
   const classNames = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`
   
   if (!href) {
     return (
-      <button type={type} className={classNames}>
+      <button {...props} type={type} className={classNames}>
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
@@ -30,7 +31,7 @@ export default function Button({
   }
 
   return (
-    <a href={href} target={target} className={classNames}>
+    <a {...props} href={href} target={target} className={classNames}>
       {
         icon && iconPosition === 'left' && (
           <span className="inline-block mr-2">{icon}</span>
