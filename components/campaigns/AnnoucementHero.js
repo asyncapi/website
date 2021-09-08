@@ -21,13 +21,11 @@ export default function AnnouncementHero({ className = '', small = false }) {
         { !isConferenceOver && <AnnouncementRemainingDays dateTime={conferenceStartDateTime} eventName="Conference" /> }
       </h1>
       <div className="my-2 text-xl text-gray-500">
-        <p className="font-bold text-gray-700">Connect and innovate with the AsyncAPI Community</p>
+        <p className="font-bold text-gray-700">Connect and innovate with the AsyncAPI Community.</p>
       </div>
       <div className="mt-8">
         <Button href="/blog/events2021" text="Learn more" />
       </div>
     </div>
-
-    
   )
 }

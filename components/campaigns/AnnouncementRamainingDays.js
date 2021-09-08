@@ -6,6 +6,7 @@ export default function AnnouncementRemainingDays({ dateTime, eventName }) {
   const days = date.diff(now, 'days');
   const hours = date.diff(now, 'hours');
   const minutes = date.diff(now, 'minutes');
+  
   let text;
   if (days >= 1) {
     text = `${days} ${days === 1 ? 'day' : 'days'}`;
