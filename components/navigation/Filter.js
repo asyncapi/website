@@ -49,7 +49,7 @@ export default function Filter({ data, onFilter, checks, className }) {
           });
         }}
         selected={selected}
-        className={`${className} w-full my-1 md:mr-4`}
+        className={`${className} my-1 md:mr-4`}
       />
     );
   });

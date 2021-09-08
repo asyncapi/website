@@ -10,13 +10,12 @@ import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Empty from "../../components/illustrations/empty";
 
 export default function JobsIndexPage() {
-  const { navItems } = useContext(JobsContext)
+  const { navItems } = useContext(JobsContext);
   navItems.map((job, index) => {
-    if(new Date().getTime() > new Date(job.closingOn).getTime()){
-      navItems.splice(index, 1)
+    if (new Date().getTime() > new Date(job.closingOn).getTime()) {
+      navItems.splice(index, 1);
     }
   });
-  const [filter, setFilter] = useState(null);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
@@ -25,15 +24,13 @@ export default function JobsIndexPage() {
     })
   );
 
-  const onFilter = (data) => {
-    setPosts(data);
-  };
+  const onFilter = (data) => setPosts(data);
   const toFilter = [
     {
       name: "category",
     },
   ];
-const body = `---
+  const body = `---
 title: 'Job Title'
 date: MM/DD/YYYY (current date)
 category: job category
@@ -61,11 +58,15 @@ The potential employees would love to know more about you. Tell them more about 
 Let the potential employees knows what comes with joining your team in this section.
 Join us!
 `;
-const jobPostUrl = encodeURIComponent(body);
+  const jobPostUrl = encodeURIComponent(body);
   const hasPosts = Object.keys(posts).length;
   return (
     <div>
-      <Head title="Jobs" rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board" rssLink = "/jobs/rss.xml" />
+      <Head
+        title="Jobs"
+        rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board"
+        rssLink="/jobs/rss.xml"
+      />
       <Container>
         <NavBar />
       </Container>
@@ -105,7 +106,21 @@ const jobPostUrl = encodeURIComponent(body);
               </a>
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-              We have an <img className="ml-1 text-primary-500 hover:text-primary-400" style={{ display: 'inline' }} src="/img/logos/rss.svg" height="18px" width="18px" /> <a className="ml-1 text-primary-500 hover:text-primary-400" href="jobs/rss.xml">RSS Feed</a> too!
+              We have an{" "}
+              <img
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                style={{ display: "inline" }}
+                src="/img/logos/rss.svg"
+                height="18px"
+                width="18px"
+              />{" "}
+              <a
+                className="ml-1 text-primary-500 hover:text-primary-400"
+                href="jobs/rss.xml"
+              >
+                RSS Feed
+              </a>{" "}
+              too!
             </p>
           </div>
           <div className="text-center">
@@ -124,9 +139,8 @@ const jobPostUrl = encodeURIComponent(body);
                   <Filter
                     className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
                     data={navItems}
+                    filteredData={posts}
                     onFilter={onFilter}
-                    filter={filter}
-                    setFilter={setFilter}
                     checks={toFilter}
                   />
                 </div>

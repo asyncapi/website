@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
+import Empty from "../../components/illustrations/empty";
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext);
@@ -25,14 +26,14 @@ export default function BlogIndexPage() {
   const onFilter = (data) => setPosts(data);
   const toFilter = [
     {
-      name: "tags",
+      name: "type",
     },
     {
       name: "authors",
       unique: "name",
     },
     {
-      name: "type",
+      name: "tags",
     },
   ];
   return (
@@ -83,20 +84,33 @@ export default function BlogIndexPage() {
               too!
             </p>
           </div>
-          <div className="mt-12">
+          <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
             <Filter
               data={navItems}
               filteredData={posts}
               onFilter={onFilter}
-              className="w-full inline-flex mx-px justify-center md:mt-0 md:w-1/5 md:text-sm"
+              className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
-            <Link href="/blog" className="text-sm font-bold"> Clear filters </Link>
+            <span className="text-sm leading-10">
+              <Link href="/blog"> Clear filters </Link>
+            </span>
           </div>
-          <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            {posts.map((post, index) => (
-              <BlogPostItem key={index} post={post} />
-            ))}
+          <div>
+            {!Object.keys(posts).length ? (
+              <div className="flex flex-col items-center justify-center mt-16">
+                <Empty />
+                <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500">
+                  No post matches your filter
+                </p>
+              </div>
+            ) : (
+              <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+                {posts.map((post, index) => (
+                  <BlogPostItem key={index} post={post} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
