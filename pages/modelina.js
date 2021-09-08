@@ -1,11 +1,12 @@
-import GenericWideLayout from '../components/layout/GenericWideLayout'
 import GenericLayout from '../components/layout/GenericLayout'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Select from '../components/form/Select'
 import CodeBlock from '../components/editor/CodeBlock'
 import Tabs from '../components/tabs/Tabs'
 import modelinaLanguageOptions from '../config/modelina-language-options.json'
 import GithubButton from '../components/buttons/GithubButton'
+import Button from '../components/buttons/Button'
+import IconRocket from '../components/icons/Rocket'
 import MonacoEditorWrapper from '../components/editor/MonacoEditorWrapper'
 import {parse} from '@asyncapi/parser'
 import TypeScriptOptions from '../components/modelina/TypeScriptGenerator'
@@ -182,6 +183,7 @@ const models = await generator.generate(input)`
 
 export default function ModelinaPlaygroundPage() {
   const [error, setError] = useState();
+  const tryItOutRef = useRef(null);
 
   const description = 'Sometimes you just want to generate data models for your payload.';
   const image = '/img/social/modelina.png';
@@ -251,8 +253,17 @@ export default function ModelinaPlaygroundPage() {
               <CodeBlock language="bash" showLineNumbers={false} className="mt-8">npm install @asyncapi/modelina</CodeBlock>
               <div className="mt-8">
                 <GithubButton
-                  className="w-full sm:w-auto mt-8"
+                  className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto mt-8"
                   href="https://www.github.com/asyncapi/modelina"
+                />
+                <Button 
+                  className="hidden mt-2 md:mt-0 lg:inline-block md:ml-2" 
+                  text="Try it now"
+                  icon={<IconRocket className="inline-block -mt-1 w-6 h-6" />}
+                  onClick={() => {
+                    const element = tryItOutRef.current;
+                    element && typeof element.scrollIntoView === 'function' && element.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 />
               </div>
             </div>
@@ -262,7 +273,9 @@ export default function ModelinaPlaygroundPage() {
           </div>
         </div>
 
-        {playground}
+        <div ref={tryItOutRef}>
+          {playground}
+        </div>
 
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative" role="alert">
