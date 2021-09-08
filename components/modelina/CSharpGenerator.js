@@ -1,14 +1,50 @@
 import React from 'react';
-import { CSharpGenerator } from "@asyncapi/modelina";
+import { CSharpGenerator, CSHARP_COMMON_PRESET, CSHARP_JSON_SERIALIZER_PRESET } from "@asyncapi/modelina";
 
-export const defaultState = {}
+export const defaultState = {serialization: false, getHashCode: false, equals: false}
 
-export function getClassGenerator(){
-  const generator = new CSharpGenerator();
+export function getClassGenerator(state){
+  const imports = ['CSharpGenerator']
+  const jsPresetCode = [];
+  const presets = [];
+  
+  if (state.equals === true || state.getHashCode === true) {
+    presets.push({
+      preset: CSHARP_COMMON_PRESET,
+      options: {
+        equal: state.equals, 
+        hashCode: state.hashCode
+      },
+    });
+    imports.push('CSHARP_COMMON_PRESET');
+    jsPresetCode.push(`{
+      preset: CSHARP_COMMON_PRESET,
+      options: {
+        ${state.equals ? 'equals: true,' : ''}
+        ${state.hashCode ? 'hashCode: true,' : ''}
+      }
+    }`.replace(/^\s*\n/gm, ''));
+  }
+  if (state.serialization === true) {
+    presets.push({
+      preset: CSHARP_JSON_SERIALIZER_PRESET
+    });
+    imports.push('CSHARP_JSON_SERIALIZER_PRESET');
+    jsPresetCode.push(`{
+      preset: CSHARP_JSON_SERIALIZER_PRESET
+    }`.replace(/^\s*\n/gm, ''));
+  }
 
-  const generatorCode = `import { CSharpGenerator } from '@asyncapi/modelina';
-
-const generator = new CSharpGenerator()`;
+  const generator = new CSharpGenerator({
+    presets: presets
+  });
+  const generatorCode = `import { ${imports.join(', ')} } from '@asyncapi/modelina';
+  
+const generator = new CSharpGenerator({
+  ${presets.length ? `presets: [
+    ${jsPresetCode.join(',\n')}
+  ]`: ''}
+})`;
 
   return { generator, generatorCode };
 }
@@ -24,13 +60,47 @@ export default class CSharpOptions extends React.Component {
     props.onInit(getGeneratorCode(this.state))
   }
 
+  onChangeEquals(event) {
+    const newState = {...this.state, equals: event.target.checked}
+    this.setState(newState)
+    this.onNewSettings(newState)
+  }
+  onChangeGetHashCode(event) {
+    const newState = {...this.state, hashCode: event.target.checked}
+    this.setState(newState)
+    this.onNewSettings(newState)
+  }
+  onChangeSerialization(event) {
+    const newState = {...this.state, serialization: event.target.checked}
+    this.setState(newState)
+    this.onNewSettings(newState)
+  }
+  async onNewSettings(state) {
+    this.props.onGeneratorChange(getGeneratorCode(state))
+  }
+
   render() {
     return (
-      <div className="relative max-w-full mx-auto">
-        <div className="pt-4 text-center">
-          No available options
-        </div>
-      </div>
+      <ul className="flex flex-col">
+        <li>
+          <label className="flex items-center py-2 justify-between cursor-pointer">
+            <span className="text-sm mr-2">Include Equals method</span>
+            <input type="checkbox" className="form-checkbox cursor-pointer" name="equals" checked={this.state.equals} onChange={this.onChangeEquals} />
+          </label>
+        </li>
+        <li>
+          <label className="flex items-center py-2 justify-between cursor-pointer">
+            <span className="text-sm mr-2">Include GetHashCode methods</span>
+            <input type="checkbox" className="form-checkbox cursor-pointer" name="getHashCode" checked={this.state.hashCode} onChange={this.onChangeGetHashCode} />
+          </label>
+        </li>
+        <li>
+          <label className="flex items-center py-2 justify-between cursor-pointer">
+            <span className="text-sm mr-2">Include de/serialization methods</span>
+            <input type="checkbox" className="form-checkbox cursor-pointer" name="serialization" checked={this.state.serialization} onChange={this.onChangeSerialization} />
+          </label>
+        </li>
+      </ul>
     );
   }
 }

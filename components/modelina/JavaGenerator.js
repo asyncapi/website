@@ -16,7 +16,7 @@ export const javaCollectionTypes = [
 ];
 
 export function getClassGenerator(state){
-  const imports = ['JAVA_COMMON_PRESET'];
+  const imports = ['JavaGenerator', 'JAVA_COMMON_PRESET'];
 
   const jsPresetCode = [];
   const presets = [];
@@ -68,7 +68,7 @@ export function getClassGenerator(state){
 });`.replace(/^\s*\n/gm, '');
 
   const generator = new JavaGenerator({collectionType: state.collectionType, presets});
-  const generatorCode = `import { JavaGenerator, ${imports.join(', ')} } from '@asyncapi/modelina';
+  const generatorCode = `import { ${imports.join(', ')} } from '@asyncapi/modelina';
     
 ${generateInstanceCode}`;
   
