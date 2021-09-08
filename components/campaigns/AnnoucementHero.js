@@ -16,7 +16,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
 
   return (
     <div className={`mb-12 px-4 ${small ? 'sm:py-8' : 'sm:py-28'} sm:bg-gray-50 sm:border sm:border-gray-200 ${className}`}>
-      <h1 className={`text-5xl ${small ? 'sm:text-5xl' : 'sm:text-5xl'}`}>
+      <h1 className={`text-4xl sm:text-4xl md:text-5xl`}>
         { !isHackathonOver && <AnnouncementRemainingDays dateTime={hackathonStartDateTime} eventName="Hackathon" /> }
         { !isConferenceOver && <AnnouncementRemainingDays dateTime={conferenceStartDateTime} eventName="Conference" /> }
       </h1>
