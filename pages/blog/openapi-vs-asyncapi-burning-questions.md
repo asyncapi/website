@@ -12,7 +12,7 @@ tags:
 authors:
    - name: Jesse Menning
      photo: /img/avatars/jmenning.webp
-     link: https://twitter.com/jmenning
+     link: https://linkedin.com/in/jmenning
      byline: CTO Architect at Solace
 ---
 
