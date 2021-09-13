@@ -16,7 +16,6 @@ export const applyFilterList = (checks, data, setFilters) => {
     checks.map((check) => {
       lists[check.name] = [];
     });
-    // console.log(lists);
     for (let i = 0; i < data.length; i++) {
       const res = data[i];
       for (const key in lists) {

@@ -5,7 +5,6 @@ import Select from "../form/Select";
 import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
 
 export default function Filter({ data, onFilter, checks, className }) {
-  console.log(data);
   const route = useRouter();
   const [filters, setFilters] = useState({});
   const [query, setQuery] = useState({});
