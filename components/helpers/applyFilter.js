@@ -1,5 +1,5 @@
 function sortFilter(arr) {
-  return [...arr].sort((a, b) => {
+  return arr.sort((a, b) => {
     if (a.value < b.value) {
       return -1;
     }
@@ -16,57 +16,80 @@ export const applyFilterList = (checks, data, setFilters) => {
     checks.map((check) => {
       lists[check.name] = [];
     });
+    // console.log(lists);
     for (let i = 0; i < data.length; i++) {
-      for (let j = 0; j < checks.length; j++) {
-        const name = checks[j].name;
-        const result = data[i][name];
-        if (data[i][name]) {
-          if (Object.keys(lists[name])) {
+      const res = data[i];
+      for (const key in lists) {
+        const result = data[i][key];
+        if (res) {
+          if (lists[key].length) {
             if (Array.isArray(result)) {
-              result.map((i) => {
-                if (checks[j].unique) {
-                  if (
-                    lists[name].some(
-                      (person) => person.value === i[checks[j].unique]
-                    )
-                  ) {
+              result.map((a) => {
+                if (a.name) {
+                  if (lists[key].some((e) => e.value === a.name)) {
                     return;
                   } else {
                     const newData = {
-                      value: i[checks[j].unique],
-                      text: i[checks[j].unique],
+                      value: a.name,
+                      text: a.name,
                     };
-                    lists[name].push(newData);
-                    sortFilter(lists[name]);
+                    lists[key].push(newData);
+                    sortFilter(lists[key]);
                   }
                 } else {
-                  if (lists[name].some((data) => data.value === i)) {
+                  if (lists[key].some((e) => e.value === a)) {
                     return;
+                  } else {
+                    const newData = {
+                      value: a,
+                      text: a,
+                    };
+                    lists[key].push(newData);
+                    sortFilter(lists[key]);
                   }
-                  const newData = {
-                    value: i,
-                    text: i,
-                  };
-                  lists[name].push(newData);
-                  sortFilter(lists[name]);
                 }
               });
             } else {
-              if (lists[name].some((data) => data.value === result)) {
-                break;
+              if (lists[key].some((e) => e.value === result)) {
+                continue;
               } else {
                 const newData = {
                   value: result,
                   text: result,
                 };
-                lists[name].push(newData);
-                sortFilter(lists[name]);
+                lists[key].push(newData);
+                sortFilter(lists[key]);
               }
+            }
+          } else {
+            if (Array.isArray(result)) {
+              result.map((e) => {
+                if (e.name) {
+                  const newData = {
+                    value: e.name,
+                    text: e.name,
+                  };
+                  lists[key].push(newData);
+                } else {
+                  const newData = {
+                    value: e,
+                    text: e,
+                  };
+                  lists[key].push(newData);
+                }
+              });
+            } else {
+                 const newData = {
+                   value: result,
+                   text: result,
+                 };
+              lists[key].push(newData);
             }
           }
         }
       }
     }
+    console.log("Dupa, It works")
     setFilters(lists);
   }
 };

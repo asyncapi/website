@@ -87,7 +87,6 @@ export default function BlogIndexPage() {
           <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
             <Filter
               data={navItems}
-              filteredData={posts}
               onFilter={onFilter}
               className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
               checks={toFilter}
