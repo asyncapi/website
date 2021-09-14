@@ -88,7 +88,6 @@ export const applyFilterList = (checks, data, setFilters) => {
         }
       }
     }
-    console.log("Dupa, It works")
     setFilters(lists);
   }
 };
