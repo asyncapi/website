@@ -1,7 +1,7 @@
 ---
 type: Engineering
 cover: /img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-15.webp
-title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About the Two Most Popular API Specs"
+title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs"
 date: 2021-09-08T06:00:00+01:00
 featured: true
 tags:
@@ -12,7 +12,7 @@ tags:
 authors:
    - name: Jesse Menning
      photo: /img/avatars/jmenning.webp
-     link: https://twitter.com/jmenning
+     link: https://linkedin.com/in/jmenning
      byline: CTO Architect at Solace
 ---
 
@@ -66,7 +66,7 @@ Typically, if a company wants to create something new, it glues different combin
 
 ![Figure 8: Microservice architecture decomposes huge applications into tiny services](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-08.webp)
 
-Establishing asynchronous communication between microservices makes them more reliable, faster, easier to scale, and more agile to adopt.  [Here’s a great video explaining why.](https://solace.com/resources/videos/how-to-enhance-microservices-with-events-video)
+Establishing asynchronous communication between microservices makes them more reliable, faster, easier to scale, and more agile to adopt.  [Here’s a great video explaining why.](https://solace.com/resources/solace-microservices-resources/enhancing-microservices-with-events-video)
 
 The internet of things also changed things up. My [coffee cup](http://www.ember.com/) is connected to the Internet now. Which is fantastic. But internet connected gadgets like cars and stoves and refrigerators don’t always have solid internet connections. Again, asynchronous communication seemed like a better way to connect.
 
