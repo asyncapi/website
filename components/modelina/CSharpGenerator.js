@@ -57,6 +57,10 @@ export default class CSharpOptions extends React.Component {
   constructor(props) {
     super(props)
     this.state = defaultState
+    this.onChangeEquals = this.onChangeEquals.bind(this)
+    this.onChangeGetHashCode = this.onChangeGetHashCode.bind(this)
+    this.onChangeSerialization = this.onChangeSerialization.bind(this)
+    this.onNewSettings = this.onNewSettings.bind(this)
     props.onInit(getGeneratorCode(this.state))
   }
 
