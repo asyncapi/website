@@ -13,15 +13,15 @@ export function getClassGenerator(state){
       preset: CSHARP_COMMON_PRESET,
       options: {
         equal: state.equals, 
-        hashCode: state.hashCode
+        hashCode: state.getHashCode
       },
     });
     imports.push('CSHARP_COMMON_PRESET');
-    jsPresetCode.push(`{
+    jsPresetCode.push(`    {
       preset: CSHARP_COMMON_PRESET,
       options: {
         ${state.equals ? 'equals: true,' : ''}
-        ${state.hashCode ? 'hashCode: true,' : ''}
+        ${state.getHashCode ? 'hashCode: true,' : ''}
       }
     }`.replace(/^\s*\n/gm, ''));
   }
@@ -30,9 +30,7 @@ export function getClassGenerator(state){
       preset: CSHARP_JSON_SERIALIZER_PRESET
     });
     imports.push('CSHARP_JSON_SERIALIZER_PRESET');
-    jsPresetCode.push(`{
-      preset: CSHARP_JSON_SERIALIZER_PRESET
-    }`.replace(/^\s*\n/gm, ''));
+    jsPresetCode.push('    CSHARP_JSON_SERIALIZER_PRESET'.replace(/^\s*\n/gm, ''));
   }
 
   const generator = new CSharpGenerator({
@@ -40,11 +38,11 @@ export function getClassGenerator(state){
   });
   const generatorCode = `import { ${imports.join(', ')} } from '@asyncapi/modelina';
   
-const generator = new CSharpGenerator({
-  ${presets.length ? `presets: [
-    ${jsPresetCode.join(',\n')}
-  ]`: ''}
-})`;
+const generator = new CSharpGenerator(${presets.length ? `{
+  presets: [
+${jsPresetCode.join(',\n')}
+  ]
+}`: ''})`;
 
   return { generator, generatorCode };
 }
@@ -70,7 +68,7 @@ export default class CSharpOptions extends React.Component {
     this.onNewSettings(newState)
   }
   onChangeGetHashCode(event) {
-    const newState = {...this.state, hashCode: event.target.checked}
+    const newState = {...this.state, getHashCode: event.target.checked}
     this.setState(newState)
     this.onNewSettings(newState)
   }
