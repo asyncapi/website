@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
     byline: AsyncAPI Maintainer
-featured: true
 ---
 
 What is JSON Schema, why is it important and why is it so hard to use beyond validation? 
