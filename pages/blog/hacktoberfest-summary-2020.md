@@ -3,10 +3,8 @@ title: "Is Hacktoberfest Good For Maintainers?"
 date: 2020-11-05T06:00:00+01:00
 type: Community
 tags:
-  - Status
-  - Community
   - Hacktoberfest
-cover: /img/posts/hacktoberfest-summary-2020/cover.webp
+cover: /img/pots/hacktoberfest-summary-2020/cover.webp
 authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp

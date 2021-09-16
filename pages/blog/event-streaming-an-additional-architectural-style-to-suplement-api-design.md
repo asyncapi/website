@@ -3,10 +3,9 @@ title: "Event-Streaming: An Additional Architectural Style to Supplement API Des
 date: 2020-07-07T09:00:00+01:00
 type: Engineering
 tags:
-  - AsyncAPI
   - REST APIs
   - Streaming
-  - Event-Driven Architecture
+  - EDA
 cover: /img/posts/event-streaming-an-additional-architectural-style-to-suplement-api-design/cover.webp
 authors:
   - name: James Higginbotham

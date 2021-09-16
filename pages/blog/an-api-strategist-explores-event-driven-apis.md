@@ -4,7 +4,7 @@ date: 2019-05-14T16:56:52+01:00
 type: Strategy
 tags:
   - APIs
-  - Event-Driven
+  - EDA
   - Interview
 cover: /img/posts/an-api-strategist-explores-event-driven-apis.webp
 authors:

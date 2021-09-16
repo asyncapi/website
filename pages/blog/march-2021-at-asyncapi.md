@@ -3,10 +3,9 @@ title: March 2021 at AsyncAPI
 date: 2021-04-14T06:00:00+01:00
 type: Communication
 tags:
-  - status
-  - linux foundation
-  - roadmap
-  - news
+  - Project Status
+  - Linux Foundation
+  - Roadmap
 cover: /img/posts/march-2021-at-asyncapi/cover.webp
 authors:
   - name: Lukasz Gornicki

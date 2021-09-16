@@ -4,8 +4,6 @@ date: 2020-03-03T08:00:00+01:00
 type: Engineering
 tags:
   - Nunjucks
-  - Template engine
-  - Generator
 cover: /img/posts/nunjucks-asyncapi-cover.webp
 authors:
   - name: Lukasz Gornicki
