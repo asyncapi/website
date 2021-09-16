@@ -3,16 +3,15 @@ title: "Finding a Good Open Governance Model for AsyncAPI"
 date: 2021-03-08T06:00:00+01:00
 type: Strategy
 tags:
-  - governance
-  - foundation
-  - openness
+  - Governance
+  - Foundation
 cover: /img/posts/governance-motivation-cover.webp
 authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-  - name: Fran Mendez
+  - name: Fran Méndez
     photo: /img/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder

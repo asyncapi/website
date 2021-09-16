@@ -8,7 +8,7 @@ tags:
 cover: /img/posts/asyncapi-joins-linux-foundation.webp
 coverCaption: Background vector created by starline.
 authors:
-  - name: Fran Mendez
+  - name: Fran Méndez
     photo: /img/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder

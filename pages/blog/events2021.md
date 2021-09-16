@@ -3,8 +3,8 @@ title: "AsyncAPI Hackathon and Conference - Get Yourself Ready"
 date: 2021-08-30T06:00:00+01:00
 type: Communication
 tags:
-  - conference
-  - hackathon
+  - Conference
+  - Hackathon
 cover: /img/posts/events2021/cover.webp
 authors:
   - name: Lukasz Gornicki

@@ -3,8 +3,7 @@ title: "Awesome 2020 and What Can Get Better In 2021"
 date: 2020-12-23T06:00:00+01:00
 type: Communication
 tags:
-  - Postman
-  - Announcement
+  - Project Status
 cover: /img/posts/2020-summary/cover.webp
 authors:
   - name: Lukasz Gornicki
