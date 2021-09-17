@@ -55,7 +55,7 @@ We do not set any limits here. The same idea can be done by multiple teams. Just
 
 ### What is the scope of the submission? What does it mean I finished my solution on time?
 
-- Your solution must be fully open-sourced and stored in a repository under your GitHub profile,
+- Your solution must be fully open-sourced and stored in a repository under your GitHub profile. Please do not use Bitbucket or GitLab as it will increase complexity for our community members that will review submissions,
 - It cannot integrate with a commercial solution that has no free tier,
 - You must submit it before the deadline. Evaluation of the solution will not take into account any commits pushed to the repository after the deadline.
 
