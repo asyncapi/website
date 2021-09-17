@@ -27,9 +27,9 @@ You have an entire month to complete your idea. No usual over-weekend hard work 
 
 The goal of the Hackathon is to provide MVP solutions that can help AsyncAPI Community in ways like:
 
-- Ease education and getting started with the project
-- Bring new AsyncAPI-related solutions that can solve the existing challenges the community is facing with event-driven architectures
-- Extend existing tools, reuse them in some scenarios, add the extra implementation on top
+- Ease education and getting started with the project.
+- Bring new AsyncAPI-related solutions that can solve the existing challenges the community is facing with event-driven architectures.
+- Extend existing tools, reuse them in some scenarios, add the extra implementation on top.
 
 ### Do I need to register for the event?
 
@@ -55,16 +55,16 @@ We do not set any limits here. The same idea can be done by multiple teams. Just
 
 ### What is the scope of the submission? What does it mean I finished my solution on time?
 
-- Your solution must be fully open-sourced and stored in a repository under your GitHub profile. Please do not use Bitbucket or GitLab as it will increase complexity for our community members that will review submissions,
-- It cannot integrate with a commercial solution that has no free tier,
+- Your solution must be fully open-sourced and stored in a repository under your GitHub profile. Please do not use Bitbucket or GitLab as it will increase complexity for our community members that will review submissions.
+- It cannot integrate with a commercial solution that has no free tier.
 - You must submit it before the deadline. Evaluation of the solution will not take into account any commits pushed to the repository after the deadline.
 
 ### How do I submit my task?
 
 Create a new discussion item [here](https://github.com/asyncapi/community/discussions/categories/asyncapi-hack-2021-submissions). Make sure there is:
-- Overview of what the solution is about
-- Screenshots/Video/Diagrams/Code snippets (`anyOf` :wink:) that helps judges to quickly understand the solution and encourage them for further review
-- Link to the repository where the full solution can be found
+- Overview of what the solution is about.
+- Screenshots/Video/Diagrams/Code snippets (`anyOf` :wink:) that helps judges to quickly understand the solution and encourage them for further review.
+- Link to the repository where the full solution can be found.
 
 This is not it. If you win, you need to present your idea at [AsyncAPI Conference in November](http://conference.asyncapi.com/)
 
