@@ -11,9 +11,11 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: TODO
+excerpt: Answers to all the questions you ever wanted to ask about the AsyncAPI Hackathon 2021
 featured: true
 ---
+
+Last year it was the first time we hosted the AsyncAPI Conference. This year it is time to host our first AsyncAPI Hackathon. Many questions are coming from the community, and this article tries to address them.
 
 ### When is the Hackathon?
 
@@ -76,7 +78,9 @@ Solution with the highest score wins.
 
 ### How do I get help? Who can help with further understanding of AsyncAPI and the entire tooling landscape?
 
-TODO
+- Join one of `Contributor First` meetings. These will be streamed throughout the entire October. Add this calendar with [Google Calendar format](https://calendar.google.com/calendar/embed?src=tbrbfq4de5bcngt8okvev4lstk%40group.calendar.google.com) or [iCal format](https://calendar.google.com/calendar/ical/tbrbfq4de5bcngt8okvev4lstk%40group.calendar.google.com/public/basic.ics). `Contributor First` will take place every Wednesday, twice a day, 8AM UTC and 4PM UTC.
+- Join our [Slack](https://www.asyncapi.com/slack-invite). We are a very friendly and responsive community.
+- Create an issue in [one of the repositories](https://github.com/asyncapi/) and explain what help you need.
 
 ### What prizes are there?
 
@@ -86,8 +90,9 @@ There will also be additional swag-packs for other participants.
 
 ### How do I get the money or swag?
 
-TODO 
+After the AsyncAPI Conference, you must submit an expense to Open Collective [here](https://opencollective.com/asyncapi/events/asyncapi-hackathon-and-conference-2021-3156d7af) with an invoice that indicates the amount of money you have won.
+
+For swags, we will ask you directly to share your postal address with us that we will share with the agency responsible for swag-pack production.
 
 
 > Photo by <a href="https://unsplash.com/@emilymorter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emily Morter</a> on <a href="https://unsplash.com/s/photos/question-marks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
