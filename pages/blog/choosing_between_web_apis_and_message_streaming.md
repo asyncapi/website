@@ -3,10 +3,9 @@ title: "Choosing Between Web APIs and Message Streaming"
 date: 2020-06-23T07:00:00+01:00
 type: Engineering
 tags:
-  - AsyncAPI
   - REST APIs
   - Streaming
-  - Event-Driven Architecture
+  - EDA
 cover: /img/posts/choosing_between_web_apis_and_message_streaming/cover.webp
 authors:
   - name: James Higginbotham

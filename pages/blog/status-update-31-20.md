@@ -3,9 +3,7 @@ title: "Avro Schema Parser and others in AsyncAPI Initiative Status Update (week
 date: 2020-07-30T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
-  - Avro
+  - Project Status
 cover: /img/posts/asyncapi-avro.webp
 weight: 10
 authors:
