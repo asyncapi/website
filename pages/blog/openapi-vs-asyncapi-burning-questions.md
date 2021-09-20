@@ -5,10 +5,8 @@ title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading
 date: 2021-09-08T06:00:00+01:00
 featured: true
 tags:
-   - asyncapi
-   - openapi
-   - async
-   - architecture
+   - Specification
+   - OpenAPI
 authors:
    - name: Jesse Menning
      photo: /img/avatars/jmenning.webp

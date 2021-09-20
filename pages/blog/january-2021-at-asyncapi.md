@@ -3,7 +3,7 @@ title: "January 2021 at AsyncAPI"
 date: 2021-02-11T06:00:00+01:00
 type: Communication
 tags:
-  - status
+  - Project Status
 cover: /img/posts/january-2021-at-asyncapi/cover.webp
 authors:
   - name: Lukasz Gornicki

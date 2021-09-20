@@ -3,10 +3,8 @@ title: From API-First to Code Generation - A WebSocket Use Case
 date: 2021-05-19T06:00:00+01:00
 type: Engineering
 tags:
-  - websocket
-  - chatbot
-  - wit.ai
-  - codegen
+  - WebSocket
+  - Code Generation
 cover: /img/posts/websocket-part3/cover.webp
 authors:
   - name: Lukasz Gornicki

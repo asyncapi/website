@@ -3,8 +3,7 @@ title: "AsyncAPI Initiative Status Update (week 29, 2020)"
 date: 2020-07-14T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
+  - Project Status
 cover: /img/posts/asyncapi-sonarcloud.webp
 weight: 10
 authors:

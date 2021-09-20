@@ -6,8 +6,6 @@ type: Communication
 tags:
   - Git
   - GitHub
-  - VS Code
-  - Markdown
 cover: /img/posts/mistake-odyssey/mistake-odyssey-carolinie-cavalli.webp
 authors:
   - name: Barbaño González

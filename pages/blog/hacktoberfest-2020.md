@@ -4,8 +4,6 @@ date: 2020-09-30T06:00:00+01:00
 type: Community
 tags:
   - Hacktoberfest
-  - Community
-  - Contribute
 cover: /img/posts/hacktoberfest.webp
 weight: 10
 authors:

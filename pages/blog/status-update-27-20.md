@@ -3,8 +3,7 @@ title: "AsyncAPI Initiative Status Update (week 27, 2020)"
 date: 2020-06-30T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
+  - Project Status
 cover: /img/posts/radar.webp
 weight: 10
 authors:

@@ -3,8 +3,7 @@ title: AsyncAPI Spec 2.1.0 Release Notes
 date: 2021-06-29T06:00:00+01:00
 type: Communication
 tags:
-  - specification
-  - release
+  - Release Notes
 cover: /img/posts/release-notes-2.1.0/cover.webp
 authors:
   - name: Lukasz Gornicki

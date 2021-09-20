@@ -3,8 +3,7 @@ title: "AsyncAPI Initiative Status Update (week 33, 2020)"
 date: 2020-08-12T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
+  - Project Status
 cover: /img/posts/status-update-33-robots.webp
 weight: 10
 authors:
