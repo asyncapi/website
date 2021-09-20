@@ -56,6 +56,7 @@ We do not set any limits here. The same idea can be done by multiple teams. Just
 ### What is the scope of the submission? What does finishing my solution on time really mean?
 
 - Your solution must be fully open-sourced and stored in a repository under your GitHub profile. Please do not use Bitbucket or GitLab as it will increase complexity for our community members that will review submissions.
+- Your repository must have [an open source](https://choosealicense.com/) license. If that helps, at AsyncAPI Initiative we always use Apache 2.0 :wink:.
 - It cannot integrate with a commercial solution that has no free tier.
 - You must submit it before the deadline. Evaluation of the solution will not take into account any commits pushed to the repository after the deadline.
 
@@ -94,5 +95,8 @@ After the AsyncAPI Conference, you must submit an expense to Open Collective [he
 
 For swags, we will ask you directly to share your postal address with us that we will share with the agency responsible for swag-pack production.
 
+### Who owns the intellectual property (IP) 
+
+AsyncAPI Initiative doesn't claim the IP of submitted solutions. Nevertheless, we welcome projects donations. Contact us if you want to continue working on your submission further after the Hackathon, and you want to do it under the GitHub organization owned by the AsyncAPI Initiative.
 
 > Photo by <a href="https://unsplash.com/@emilymorter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emily Morter</a> on <a href="https://unsplash.com/s/photos/question-marks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
