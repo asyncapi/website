@@ -24,7 +24,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
         <p className="font-bold text-gray-700">Connect and innovate with the AsyncAPI Community.</p>
       </div>
       <div className="mt-8">
-        <Button href="/blog/events2021" text="Learn more" />
+        <Button href="https://conference.asyncapi.com/" target="_blank" text="Learn more" />
       </div>
     </div>
   )
