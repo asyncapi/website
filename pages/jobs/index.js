@@ -10,11 +10,9 @@ import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Empty from "../../components/illustrations/empty";
 
 export default function JobsIndexPage() {
-  const { navItems } = useContext(JobsContext);
-  navItems.map((job, index) => {
-    if (new Date().getTime() > new Date(job.closingOn).getTime()) {
-      navItems.splice(index, 1);
-    }
+  let { navItems } = useContext(JobsContext);
+  navItems = navItems.filter((job) => {
+    return new Date() <= new Date(job.closingOn)
   });
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
