@@ -1,8 +1,8 @@
 ---
 title: 'UI/UX/DX Designer'
-date: 2020-12-02T16:56:52+01:00
+date: 2021-07-01T06:00:00+01:00
 category: Design
-closingOn: 10/01/2021
+closingOn: 09/15/2021
 contact: https://www.postman.com/company/careers/product-designer-open-technologies-4582365003/
 company: 
   name: 'Postman'
