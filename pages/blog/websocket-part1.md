@@ -1,9 +1,9 @@
 ---
 title: WebSocket, Shrek, and AsyncAPI - An Opinionated Intro
 date: 2021-04-16T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
-  - websocket
+  - WebSocket
 cover: /img/posts/websocket-part1/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -11,10 +11,12 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: WebSocket is a protocol, an industry standard for building client applications that users love to use. What does AsyncAPI have to do with it?
-featured: true
 ---
 
 This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
+
+If you do not want to read this article, then watch the recording of the live stream about the same:
+<YouTube id="8tFBcf31e_c" />
 
 >  Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.
 ― [Marcus Aurelius](https://www.politifact.com/factchecks/2019/sep/26/viral-image/no-marcus-aurelius-didnt-say-about-opinions-and-fa/)

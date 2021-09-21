@@ -3,8 +3,7 @@ title: "AsyncAPI Initiative Status Update (week 41, 2020)"
 date: 2020-10-07T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
+  - Project Status
 cover: /img/posts/status-update-41-20-new-website.webp
 authors:
   - name: Lukasz Gornicki

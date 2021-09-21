@@ -3,10 +3,9 @@ title: March 2021 at AsyncAPI
 date: 2021-04-14T06:00:00+01:00
 type: Communication
 tags:
-  - status
-  - linux foundation
-  - roadmap
-  - news
+  - Project Status
+  - Linux Foundation
+  - Roadmap
 cover: /img/posts/march-2021-at-asyncapi/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -14,7 +13,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 'AsyncAPI Initiative joined the Linux Foundation in March, but except of this, many other interesting things happened: new roadmap, google summer of code'
-featured: true
 ---
 
 > Read [February 2021 at AsyncAPI](/blog/february-2021-at-asyncapi) for the update from February.

@@ -2,11 +2,10 @@
 title: "Building an asynchronous flight notification service using AsyncAPI, MQTT, Amadeus and Twilio"
 date: 2021-03-24T06:00:00+01:00
 type: Engineering
-featured: true
 tags:
-  - Community
   - Testing
-  - Tools
+  - EDA
+  - Use Case
 cover: /img/posts/building-async-flight-notification-service/event-driven-architecture.webp
 authors:
   - name: Alvaro Navarro

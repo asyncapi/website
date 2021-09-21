@@ -23,7 +23,7 @@ You'll use Node.js to code APIs and Mosquitto as the message broker. Selected te
 Let's start by creating an AsyncAPI file to describe your API. It will help you generate the code and the documentation later.
 
 <CodeBlock>
-{`asyncapi: '2.0.0'
+{`asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -64,7 +64,7 @@ channels:
 Let's break it down into pieces:
 
 <CodeBlock>
-{`asyncapi: '2.0.0'
+{`asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -76,7 +76,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use AsyncAPI version 2.0.0.
+- The `asyncapi` field indicates you use AsyncAPI version 2.1.0.
 - Inside the `info` field you find information about the API, like its name, version, description, and its license.
 
 We're now going for the `channels` section. It is used to describe the event names your API will be publishing and/or subscribing to.
@@ -132,7 +132,7 @@ To generate your code you'll use the [AsyncAPI Generator](https://github.com/asy
 ### 3. Create a file with the AsyncAPI machine-readable description you defined before. On Windows use `type` instead of `cat`:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.0.0'
+asyncapi: '2.1.0'
 info:
   title: Streetlights API
   version: '1.0.0'

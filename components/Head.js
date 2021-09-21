@@ -2,11 +2,14 @@ import { useContext } from 'react'
 import Head from 'next/head'
 import AppContext from '../context/AppContext'
 import ReactGA from 'react-ga'
+import TagManager from 'react-gtm-module'
 
 export default function HeadComponent({
   title,
   description = 'Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.',
   image = '/img/social/card.png',
+  rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
+  rssLink = '/rss.xml'
 }) {
   const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL
   const { path = '' } = useContext(AppContext)
@@ -19,6 +22,7 @@ export default function HeadComponent({
 
   //enable google analytics
   if (typeof window !== 'undefined') {
+    TagManager.initialize({gtmId: 'GTM-T58BTVQ'})
     ReactGA.initialize('UA-109278936-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
   }
@@ -29,7 +33,13 @@ export default function HeadComponent({
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="description" content={description} />
-      <link rel="alternate" type="application/rss+xml" title="RSS Feed for AsyncAPI Initiative Blog" href="/rss.xml" />
+      <link rel="alternate" type="application/rss+xml" title={rssTitle} href={rssLink} />
+
+      {/* Icons */}
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png" />
 
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} />
