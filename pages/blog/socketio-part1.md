@@ -60,3 +60,5 @@ Note that the scope of this documentation is limited to the interface between th
 Stay tuned for the next (and most exciting) part of this series which adds AsyncAPI into the equation. In the meantime, you can check out [Asynction](https://github.com/dedoussis/asynction), a python Socket.IO micro-framework driven by the AsyncAPI specification.
 
 _Special thanks to [derberq](https://twitter.com/derberq) for reviewing this post!_ 🙏
+
+> Photo by <a href="https://unsplash.com/photos/A4iL43vunlY">Matt Howard</a> on <a href="https://unsplash.com/photos/A4iL43vunlY">Unsplash</a>
