@@ -9,7 +9,7 @@ weight: 101
 
 An AsyncAPI document is a file that defines and annotates the different components of **a specific Event-Driven API**.
 
-The format of the file must be JSON or YAML, however, only the subset of YAML that matches the JSON capabilities is allowed.
+The format of the file must be JSON or YAML; however, only the subset of YAML that matches the JSON capabilities is allowed.
 
 <CodeBlock>
 {`asyncapi: 2.1.0
@@ -35,7 +35,7 @@ channels:
               minimum: 18`}
 </CodeBlock>
 
-The AsyncAPI document is a machine-readable definition of your event-driven API. This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.
+The AsyncAPI document is a machine-readable definition of your Event-Driven API. This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.
 
 Your API documentation is now machine-readable –easily parseable by code— so the myriad of useful applications is endless.
 

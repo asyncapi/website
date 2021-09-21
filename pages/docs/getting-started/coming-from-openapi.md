@@ -9,7 +9,7 @@ weight: 20
 
 If you're coming from OpenAPI, you must know that AsyncAPI [started as an adaptation of the OpenAPI specification](https://medium.com/asyncapi/whats-new-on-asyncapi-lots-2d9019a1869d). We wanted to have as much compatibility as possible between the two so users could reuse parts in both.
 
-You'll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that, in the world of event-driven architectures, you have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
+You'll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that in the world of event-driven architectures, you have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
 
 import OpenAPIComparison from '../../../components/OpenAPIComparison'
 
@@ -24,9 +24,9 @@ Aside from structural differences you must know that:
 
 ## Conclusion
 
-As you have seen above, OpenAPI and AsyncAPI are very similar. In a real-world environment, systems don't have just REST APIs or events but a mix of both. Most of the time, the information flowing in the events is very similar to the one the REST APIs have to handle in requests and responses, thus being able to reuse schemas is a huge win.
+As you have seen above, OpenAPI and AsyncAPI are very similar. In a real-world environment, systems don't have just REST APIs or events but a mix of both. Most of the time, the information flowing in the events is very similar to the one the REST APIs have to handle in requests and responses; thus, being able to reuse schemas is a huge win.
 
-Enough speaking, let's get your hands dirty with some examples. Learn how to create an AsyncAPI document defining a "Hello world" application.
+Enough reading, it's time to get your hands dirty with some actual examples. Let's learn how to create an AsyncAPI document that defines a "Hello world" application.
 
 <ChapterSuggestions
   suggestions={[
