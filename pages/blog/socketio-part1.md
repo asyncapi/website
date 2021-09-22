@@ -18,7 +18,7 @@ authors:
 
 > This post originally appeared on [https://dedouss.is](https://dedouss.is/posts/2021-06-24-documenting-socketio-part-1.html)
 
-My recent adventures with [Socket.IO](https://socket.io/) took me off on a tangent of exploring the world of [AsyncAPI](https://www.asyncapi.com/) as a means of documenting Socket.IO APIs. This is the first part of a series of blog posts covering the modelling of the Socket.IO protocol using AsyncAPI objects followed by a step-by-step tutorial on how to create a specification YAML file given an existing Socket.IO API.
+My recent adventures with [Socket.IO](https://socket.io/) took me off on a tangent, exploring the world of [AsyncAPI](https://www.asyncapi.com/) as a means of documenting Socket.IO APIs. This is the first part of a series of blog posts covering the modeling of the Socket.IO protocol using AsyncAPI objects, followed by a step-by-step tutorial on how to create a specification YAML file given an existing Socket.IO API.
 
 ## Setting the scene
 
