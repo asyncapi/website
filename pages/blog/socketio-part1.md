@@ -45,7 +45,7 @@ The caveat is that a user of Socket.IO (client or server) should never interact 
   1. Implements a publishing operation.
   1. The ack callback is invoked only if the receiver returns an acknowledgment.
 
-A more advanced concept of Socket.IO is the [Namespace](https://socket.io/docs/v4/namespaces/), which enables multiplexing capabilities. A namespace has its own event handlers (and potentially its own dedicated connection). Socket.IO uses the main namespace (`/`) by default but it is possible to set up multiple custom namespaces.
+A more advanced concept of Socket.IO is [Namespace](https://socket.io/docs/v4/namespaces/), which enables multiplexing capabilities. A Namespace has its own event handlers (and potentially its own dedicated connection). Socket.IO uses the main Namespace (`/`) by default, but it is possible to set up multiple custom Namespaces.
 
 At this point one may wonder:
 
