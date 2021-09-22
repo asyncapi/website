@@ -3,8 +3,8 @@ title: "Understanding AsyncAPIs with a Practical Example"
 date: 2021-03-18T06:00:00+01:00
 type: Engineering
 tags:
-  - AsyncAPI
-  - Event-driven Architecture
+  - Use Case
+  - EDA
   - Microservices
 cover: /img/posts/understanding-asyncapis.webp
 authors:

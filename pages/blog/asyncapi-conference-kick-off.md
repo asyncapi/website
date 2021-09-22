@@ -1,10 +1,9 @@
 ---
 title: "AsyncAPI Online Conference scheduled for 22.04 11 AM UTC"
 date: 2020-04-09T06:00:00+01:00
-type: Marketing
+type: Communication
 tags:
   - Conference
-  - Community
 cover: /img/posts/asyncapi-conf-banner.webp
 authors:
   - name: Lukasz Gornicki

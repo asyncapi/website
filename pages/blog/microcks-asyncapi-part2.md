@@ -3,9 +3,7 @@ title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 2"
 date: 2021-01-07T00:07:00+01:00
 type: Engineering
 tags:
-  - Community
   - Testing
-  - Tools
   - Mocking
   - Strimzi
   - Kafka

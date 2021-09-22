@@ -3,8 +3,7 @@ title: "Using JSON Schema Beyond Validation"
 date: 2021-08-03T12:00:00+01:00
 type: Engineering
 tags:
-  - tools
-  - code generation
+  - Code Generation
   - JSON Schema
 cover: /img/posts/json-schema-beyond-validation/halgatewood-com-QM9yzAoX-GQ-unsplash.webp
 authors:
@@ -12,7 +11,6 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
     byline: AsyncAPI Maintainer
-featured: true
 ---
 
 What is JSON Schema, why is it important and why is it so hard to use beyond validation? 

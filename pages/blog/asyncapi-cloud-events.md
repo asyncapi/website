@@ -4,9 +4,8 @@ date: 2019-05-11T16:56:52+01:00
 type: Engineering
 tags:
   - CloudEvents
+  - Specification
   - Serverless
-  - FaaS
-  - Microservices
 cover: /img/posts/asyncapi-cloudevents.webp
 authors:
   - name: Fran Méndez

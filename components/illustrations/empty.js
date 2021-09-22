@@ -1,6 +1,6 @@
 export default function Empty ({ className }) {
 	return (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="200" x="0" y="0" viewBox="0 0 512.00032 512" xmlSpace="preserve" className={className} style={{
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150" x="0" y="0" viewBox="0 0 512.00032 512" xmlSpace="preserve" className={className} style={{
         display: "initial"
     }}>
         <g>
