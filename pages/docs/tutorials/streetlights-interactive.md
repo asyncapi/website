@@ -9,7 +9,7 @@ Please try out [this](https://www.katacoda.com/asyncapi/scenarios/streetlight-tu
 
 One of the most critical roadmap items for the AsyncAPI Initiative in 2020 was **Make it super easy for people to get started with AsyncAPI**. One of the crucial things here is to put a lot of love into the documentation.
 
-Before we start writing more docs and improve their structure, we need first to know how you want you to interact with docs. We need to see if you prefer static HTML pages, or interactive docs where you can play with the content.
+Before we start writing more docs and improve their structure, we first need to know how you want you to interact with docs. We need to see if you prefer static HTML pages, or interactive docs where you can play with the content.
 
 We created an interactive tutorial using [Katacoda](https://www.katacoda.com/). It is another version of the [Streetlights](./streetlights) tutorial that will always work for you no matter what operating system you have.
 

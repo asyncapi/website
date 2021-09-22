@@ -18,21 +18,21 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [Saunter](https://github.com/tehmantra/saunter) | Like [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) for AsyncAPI. Generates (and hosts) an AsyncAPI schema document from your code. Thanks to [@tehmantra](https://github.com/tehmantra). | C#/dotnet
 | [Java AsyncAPI](https://github.com/Pakisan/java-asyncapi) | This is a code-first tool for AsyncAPI specification | Java, Kotlin
 | [Springwolf](https://github.com/stavshamir/springwolf) | Like [Springfox](https://github.com/springfox/springfox) for AsyncAPI. Auto-generates an AsyncAPI document and a web UI. | Java, Spring Boot
-| [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generate document and view. | C#
+| [KnstEventBus](https://github.com/d0972058277/KnstEventBus) | AsyncApi code-first tools for c#. Generates document and view. | C#
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation | Scala
 | [EventBridge Atlas](https://github.com/boyney123/eventbridge-atlas) | Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI | Node
 | [Neuroglia AsyncAPI](https://github.com/neuroglia-io/AsyncApi) | Automatically generates and serves AsyncAPI documents based on your code. Includes fluent-builders to create AsyncAPI documents from scratch, and provides a web-based GUI to browse generated documents, | C# / .NET 5.0
 
 # Code Generators
 
-The following is a list of tools that generate code from an AsyncAPI document and not the other way around.
+The following is a list of tools that generate code from an AsyncAPI document; not the other way around.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 | [Node-RED AsyncAPI plugin](https://github.com/dalelane/node-red-contrib-plugin-asyncapi) | Use your AsyncAPI definition to generate and configure Node-RED nodes. | [Node-RED](https://nodered.org) |
 
-The language you're looking for is not here? You have created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
+The language you're looking for is not here? You created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 
 # Converters
 
@@ -69,7 +69,7 @@ Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain 
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
-| [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks plus a few extra helpers. Once compiled BOATS calls in [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
+| [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple components and with the help of the template engine Nunjucks, plus a few extra helpers. Once compiled, BOATS calls the [AsyncAPI Parser](https://github.com/asyncapi/parser-js) to validate. | JS |
 
 # Frameworks
 
@@ -91,12 +91,12 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 
 # Mocking and Testing {#mocking}
 
-Tools that take specification documents as input, then publish fake messages to broker destinations for simulation purposes. May also check that publisher messages are compliant with schemas.
+The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
 | [Microcks](https://microcks.io) | Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements. | Kubernetes-native, Self-hosted / SaaS, Open Source |
-| [Virtualan](https://virtualan.io) | Mocking and testing platform for API and microservices. Allow you to create and setup mocks for OpenAPI and AsyncAPI contracts. Refer how to setup and create for AsyncAPI [GitHub Reference Examples](https://github.com/virtualansoftware/AsyncAPI-Virtualization) And OpenAPI [GitHub Reference Examples](https://github.com/virtualansoftware/service-virtualization-openapi). | Kubernetes-native, Self-hosted / SaaS, Open Source |
+| [Virtualan](https://virtualan.io) | Mocking and testing platform for API and microservices. Allows you to create and setup mocks for OpenAPI and AsyncAPI contracts. Shows how to setup and create AsyncAPI [GitHub Reference Examples](https://github.com/virtualansoftware/AsyncAPI-Virtualization) and OpenAPI [GitHub Reference Examples](https://github.com/virtualansoftware/service-virtualization-openapi). | Kubernetes-native, Self-hosted / SaaS, Open Source |
 
 # Validators {#validators}
 
