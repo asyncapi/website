@@ -13,7 +13,6 @@ authors:
     link: https://www.linkedin.com/in/barbano-gonzalez-moreno
     byline: AsyncAPI Press
 excerpt: Experience with Git, GitHub, VS Code and Markdown for non-developers within AsyncAPI.
-featured: true
 ---
 The human being for many centuries delegated the responsibility of preserving a great part of their culture, of the most precious information, in the capacity of keeping in their memory the data, the names, the places, the details...
 

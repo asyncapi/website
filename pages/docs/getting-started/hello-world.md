@@ -23,7 +23,7 @@ channels:
           pattern: '^hello .+$'`}
 </CodeBlock>
 
-Let's get into the details of the sample specification:
+Let's get into the details of this sample specification:
 
 <CodeBlock highlightedLines={[1]}>
 {`asyncapi: 2.1.0
@@ -39,7 +39,7 @@ channels:
           pattern: '^hello .+$'`}
 </CodeBlock>
 
-The first line of the specification starts with the document type, `asyncapi`, and the version (2.1.0). This line doesn't have to be the first one but it's a recommended practice.
+The first line of the specification starts with the document type `asyncapi` and the version (2.1.0). This line doesn't have to be the first one, but it's a recommended practice.
 
 <CodeBlock highlightedLines={[2,3,4]}>
 {`asyncapi: 2.1.0
@@ -55,7 +55,7 @@ channels:
           pattern: '^hello .+$'`}
 </CodeBlock>
 
-The `info` object contains the minimum required information about the application. It contains the `title`, which is a memorable name for the API, and the `version`. While it's not mandatory, it is strongly recommended to change the version whenever you make changes to the API.
+The `info` object contains the minimum required information about the application. It contains the `title`, which is a memorable name for the API, and the `version`. While it's not mandatory, it's strongly recommended to change the version whenever you make changes to the API.
 
 <CodeBlock highlightedLines={[5,6,7,8,9,10,11]}>
 {`asyncapi: 2.1.0
@@ -73,7 +73,7 @@ channels:
 
 The `channels` section of the specification houses all of the mediums where messages flow through. For example, some systems use `topic`, `event name` or `routing key`. Different kinds of information flow through each channel similar to the analogy of TV channels.
 
-In this example, you only have one channel called `hello`. The sample app subscribes to this channel to receive `hello {name}` messages.
+In this example, you only have one channel called `hello`. The sample application subscribes to this channel to receive `hello {name}` messages.
 
 <CodeBlock highlightedLines={[6,7,8,9]}>
 {`asyncapi: 2.1.0
@@ -90,7 +90,7 @@ channels:
 </CodeBlock>
 
 You can read the highlighted lines as:
-> This is the `payload` of the `message` that `Hello world application` is subscribed to. You can `publish` the `message` to `hello` channel and `Hello world application` app will receive it.
+> This is the `payload` of the `message` that the `Hello world application` is subscribed to. You can `publish` the `message` to the `hello` channel and the `Hello world application` will receive it.
 
 <CodeBlock highlightedLines={[9,10,11]}>
 {`asyncapi: 2.1.0
