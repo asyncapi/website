@@ -12,6 +12,7 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
+/docs/specifications/2.2.0-2021-09-release.4 /docs/specifications/v2.2.0-2021-09-release.4 302!
 /docs/specifications/2.2.0-2021-09-release.3 /docs/specifications/v2.2.0-2021-09-release.3 302!
 /docs/specifications/2.2.0-2021-09-release.2 /docs/specifications/v2.2.0-2021-09-release.2 302!
 /docs/specifications/2.2.0-2021-09-release.1 /docs/specifications/v2.2.0-2021-09-release.1 302!
