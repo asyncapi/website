@@ -1,11 +1,12 @@
-import GenericLayout from '../components/layout/GenericLayout'
-import Button from '../components/buttons/Button'
-import IconDocuments from '../components/icons/Documents'
-import IconCode from '../components/icons/Code'
-import IconPowerPlug from '../components/icons/PowerPlug'
-import IconRocket from '../components/icons/Rocket'
-import GithubButton from '../components/buttons/GithubButton'
-import GeneratorInstallation from '../components/GeneratorInstallation'
+import GenericLayout from '../../components/layout/GenericLayout'
+import IconDocuments from '../../components/icons/Documents'
+import IconCode from '../../components/icons/Code'
+import IconPowerPlug from '../../components/icons/PowerPlug'
+import GithubButton from '../../components/buttons/GithubButton'
+import GeneratorInstallation from '../../components/GeneratorInstallation'
+
+//import Button from '../../components/buttons/Button'
+//import IconRocket from '../../components/icons/Rocket'
 
 export default function GeneratorPage() {
   function renderButtons () {

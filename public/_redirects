@@ -33,3 +33,10 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
 # Central Gradle repository verification
 /asyncapi-gradle-plugin https://plugins.gradle.org/plugin/com.asyncapi.asyncapi-gradle-plugin
+
+# TOOLS-REDIRECTION:START
+/parsers /tools/parsers 301!
+/modelina /tools/modelina 301!
+/generator /tools/generator 301!
+/github-actions /tools/github-actions 301!
+# TOOLS-REDIRECTION:END
