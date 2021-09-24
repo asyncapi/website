@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Hackathon FAQ"
-date: 2021-10-19T06:00:00+01:00
+date: 2021-09-19T06:00:00+01:00
 type: Communication
 tags:
   - Conference
