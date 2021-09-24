@@ -3,9 +3,8 @@ title: "Simplify code generation with React"
 date: 2021-01-26T00:07:00+01:00
 type: Engineering
 tags:
-  - Tools
-  - Generator
-  - Templating
+  - Code Generation
+  - Docs Generation
   - React
   - Nunjucks
 cover: /img/posts/react-as-generator-engine.webp

@@ -3,10 +3,8 @@ title: From API-First to Code Generation - A WebSocket Use Case
 date: 2021-05-19T06:00:00+01:00
 type: Engineering
 tags:
-  - websocket
-  - chatbot
-  - wit.ai
-  - codegen
+  - WebSocket
+  - Code Generation
 cover: /img/posts/websocket-part3/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -14,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: Learn how to go from API design to code generation. Create a WebSocket API for ChatBot. All supported by AsyncAPI
-featured: true
 ---
 
 >  This is the last article of WebSocket series. I recommend you read [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) and [Creating AsyncAPI for WebSocket API - Step by Step](/blog/websocket-part2) first.

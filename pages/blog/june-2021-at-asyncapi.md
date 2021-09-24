@@ -3,8 +3,7 @@ title: June 2021 at AsyncAPI
 date: 2021-07-09T06:00:00+01:00
 type: Communication
 tags:
-  - status
-  - news
+  - Project Status
 cover: /img/posts/june-2021-at-asyncapi/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -12,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 2.1.0 spec released, GSoC started, CLI released, other tools under heavy development. June was a hell of a ride.
-featured: true
 ---
 
 > Read [May 2021 at AsyncAPI](/blog/may-2021-at-asyncapi) for the update from May.

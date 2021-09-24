@@ -3,8 +3,7 @@ title: AsyncAPI Spec 2.1.0 Release Notes
 date: 2021-06-29T06:00:00+01:00
 type: Communication
 tags:
-  - specification
-  - release
+  - Release Notes
 cover: /img/posts/release-notes-2.1.0/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -12,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: 'The eagle has landed! Check out all the changes the AsyncAPI specification introduces in the new v2.1.0 release'
-featured: true
 ---
 
 The last AsyncAPI release (2.0.0) took place on the 11th of September, 2019. In 2020 the focus went into growing community and adoption and stabilization of basic tooling for specification. This year was a year of "formalizm" 😃 aka getting into the foundation, setting up governance model and contribution guide to enable work on next spec release. We are good to go forward. The 2.1.0 release is out in the wild 🎉

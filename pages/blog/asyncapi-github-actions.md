@@ -4,8 +4,6 @@ date: 2020-04-02T06:00:00+01:00
 type: Engineering
 tags:
   - GitHub Actions
-  - Validation
-  - Generator
   - Automation
 cover: /img/posts/asyncapi-github-action.webp
 authors:

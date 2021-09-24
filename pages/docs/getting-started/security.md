@@ -7,8 +7,9 @@ menu:
 weight: 150
 ---
 
-In production environments, your API may have to access a message broker that's protected by some auth mechanisms. Examples of these are:
+In production environments, your API may have to access a message broker that's protected by some auth mechanisms. 
 
+Some examples of these are:
 * User & password
 * Certificates
 * API keys
@@ -65,10 +66,10 @@ components:
       type: userPassword`}
 </CodeBlock>
 
-The example above shows how to specify that your server (the Kafka broker) requires a user and a password to establish a connection. Let's break this down:
+The example above shows how to specify that your server (a Kafka broker) requires a user and a password to establish a connection. Let's break this down:
 
-1. There's a new property in the server object called `security`. It's an array and can contain multiple security mechanisms. You chose to add one called "user-password". This is simply a memorable name that you give to this `security` scheme but, whatever name you choose, it must be defined in the `components/securitySchemes` section. You might have also noticed its value is an empty array. It's because some security schemes allow for extra configuration but, since this is not the case in this example, leave the array empty.
-2. We've added a new section called `securitySchemes` under `components`. Inside it, you can find the definition of your `user-password` mechanism. This section makes it clear that you're speaking about a `user/password` mechanism is the `type: userPassword` in line 44.
+1. There's a new property in the server object called `security`. It's an array and can contain multiple security mechanisms. You chose to add one called "user-password". This is simply a memorable name that you give to this `security` scheme. Whatever name you choose, it must be defined in the `components/securitySchemes` section. You might have also noticed its value is an empty array. That's because some security schemes allow for extra configuration. Since this is not the case in this example, leave the array empty.
+2. We've added a new section called `securitySchemes` under `components`. Inside it, you can find the definition of your `user-password` mechanism. This section makes it clear that you're speaking about a `user/password` mechanism, which is the `type: userPassword` in line 44.
 
 <Remember title="Hint">
 
@@ -80,7 +81,7 @@ There are many more security schemes. Learn more about them <a href="/docs/speci
 
 You're now able to define what security mechanisms your application needs to connect to the server. You've seen how to define the requirement of a user and a password, which is the most common use case.
 
-At this point, you know AsyncAPI well enough to create a simple `Hello world application`. However, real use cases are more complicated than that. Next tutorials can teach you how to create real-world use cases, from zero to production.
+At this point, you know AsyncAPI well enough to create a simple `Hello world application`. However, real use cases are more complicated than that. The following tutorials can teach you how to create real-world use cases, from zero to production.
 
 <ChapterSuggestions
   suggestions={[

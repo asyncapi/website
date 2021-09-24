@@ -3,7 +3,7 @@ title: Creating AsyncAPI for WebSocket API - Step by Step
 date: 2021-04-21T06:00:00+01:00
 type: Engineering
 tags:
-  - websocket
+  - WebSocket
 cover: /img/posts/websocket-part2/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: Learn how to create a complex AsyncAPI document using WebSocket API as an example. 
-featured: true
 ---
 
 >  This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.

@@ -5,7 +5,6 @@ type: Engineering
 tags:
   - GitHub Actions
   - Release
-  - Generator
 cover: /img/posts/robot.webp
 authors:
   - name: Lukasz Gornicki

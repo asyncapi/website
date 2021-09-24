@@ -3,8 +3,7 @@ title: "Demystifying the Semantics of Publish and Subscribe"
 date: 2021-05-06T00:00:00+01:00
 type: Engineering
 tags:
-  - Publish
-  - Subscribe
+  - Specification
 cover: /img/posts/publish-subscribe-semantics/cover.webp
 authors:
   - name: Nic Townsend
@@ -12,7 +11,6 @@ authors:
     link: https://twitter.com/nict0wnsend
     byline: AsyncAPI user
 excerpt: 'Learn how to interpret publish and subscribe operations when reading an AsyncAPI specification, and why they might not mean what you expect.'
-featured: true
 ---
 > This post originally appeared on [IBM Integration Community](https://community.ibm.com/community/user/integration/blogs/nic-townsend1/2021/04/01/publish-vs-subscribe-in-asyncapi-and-why-it-may-no)
 
