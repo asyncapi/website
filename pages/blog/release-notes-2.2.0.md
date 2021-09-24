@@ -1,17 +1,17 @@
 ---
 title: AsyncAPI Spec 2.2.0 Release Notes
-date: 2021-09-29T06:00:00+01:00
+date: 2021-09-28T06:00:00+01:00
 type: Communication
 tags:
-  - specification
-  - release
+  - Release Notes
+  - Specification
 cover: /img/posts/release-notes-2.2.0/cover.webp
 authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-excerpt: 'TODO: write excerpt'
+excerpt: '2.2 release of AsyncAPI specification is here. The long-awaited feature for assigning channels to servers is finally here.'
 featured: true
 ---
 
