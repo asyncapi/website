@@ -5,9 +5,6 @@ import IconPowerPlug from '../../components/icons/PowerPlug'
 import GithubButton from '../../components/buttons/GithubButton'
 import GeneratorInstallation from '../../components/GeneratorInstallation'
 
-//import Button from '../../components/buttons/Button'
-//import IconRocket from '../../components/icons/Rocket'
-
 export default function GeneratorPage() {
   function renderButtons () {
     return (

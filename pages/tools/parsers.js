@@ -2,10 +2,6 @@ import GenericLayout from '../../components/layout/GenericLayout'
 import GithubButton from '../../components/buttons/GithubButton'
 import CodeBlock from '../../components/editor/CodeBlock'
 
-// import Button from '../../components/buttons/Button'
-// import IconRocket from '../../components/icons/Rocket'
-
-
 export default function ParsersPage() {
   function renderButtons () {
     return (
