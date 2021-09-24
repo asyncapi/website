@@ -57,6 +57,6 @@ Pushing things through into the specification is not an easy process are require
 
 Are you wondering how we managed to release 2.2.0 release just three months after 2.1.0 release? I recommend you familiarize yourself with [AsyncAPI release process](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md). Brace yourself for the next release scheduled for January 2022.
 
-<img className="w-3/4" src="/img/posts/release-notes-2.2.0/brace.webp" />
+<img className="w-3/4" src="/img/posts/release-notes-2.2.0/brace.webp" alt="Meme showing a knight, Ned Stark from Game of Thrones. Description says: Brace yourself, all the stars in heaven say 3.0.0 version is coming." />
 
 > Photo by <a href="https://unsplash.com/@jeremythomasphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Thomas</a> on <a href="https://unsplash.com/s/photos/autumn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
