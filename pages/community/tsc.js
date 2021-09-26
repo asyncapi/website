@@ -1,9 +1,9 @@
-import Container from "../../components/layout/Container";
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 
 export default function TSC() {
-  const description = "See the current AsyncAPI TSC members and learn how you can become one.";
+  const description =
+    "See the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/parsers.png"; // TODO: change to a Screenshot of the page
 
   function addAdditionalUserInfo(user) {
@@ -54,32 +54,34 @@ export default function TSC() {
       image={image}
       wide
     >
-      <Container className="mt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">
-          What is TSC?
-        </h3>
-        <p className="text-base text-gray-500 md:w-1/2">
-          TSC is something......
-        </p>
-      </Container>
-      <Container className="mt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">
-          Where is it coming from?
-        </h3>
-        <p className="text-base text-gray-500 md:w-1/2">
-          Lorem ipsum dolor sit amet...
-        </p>
-      </Container>
-      <Container className="mt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">
-          Governance model
-        </h3>
-        <p className="text-base text-gray-500 md:w-1/2">
-          Lorem ipsum dolor sit amet...
-        </p>
-      </Container>
-      <Container className="mt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">
+      <div className="grid lg:grid-cols-3 lg:gap-8">
+        <div>
+          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            What is TSC?
+          </h3>
+          <p className="my-4 text-base text-gray-500 lg:text-center">
+            TSC is something......
+          </p>
+        </div>
+        <div>
+          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            Where is it coming from?
+          </h3>
+          <p className="my-4 text-base text-gray-500 lg:text-center">
+            Lorem ipsum dolor sit amet...
+          </p>
+        </div>
+        <div>
+          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            Governance model
+          </h3>
+          <p className="my-4 text-base text-gray-500 lg:text-center">
+            Lorem ipsum dolor sit amet...
+          </p>
+        </div>
+      </div>
+      <div className="mt-5">
+        <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl">
           The current TSC members
         </h3>
 
@@ -90,7 +92,7 @@ export default function TSC() {
           {tscMembers.map((user) => displayUserInfo(user))}
           <QuestionCard />
         </ul>
-      </Container>
+      </div>
     </GenericLayout>
   );
 }
@@ -99,50 +101,57 @@ function displayUserInfo(user) {
   return (
     <li
       key={user.name}
-      className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4"
+      className="p-4 text-center border rounded-md border-gray-200 shadow-md"
     >
-      <img
-        src={user.avatarUrl}
-        className="mx-auto rounded-full h-40 w-40 xl:w-56 xl:h-56"
-      />
-      <div className="font-bold text-xl my-3">{user.name}</div>
-      {showWorkStatus(user)}
-      <ul role="list" className="flex justify-center space-x-5 my-5">
-        <li>
-          <a href={user.github} className="text-gray-600 hover:text-gray-500">
-            <span className="sr-only">Github</span>
-            <GithubSVG />
-          </a>
-        </li>
-        {user.twitter ? (
-          <li>
-            <a
-              href={user.twitter}
-              className="text-gray-600 hover:text-gray-500"
-            >
-              <span className="sr-only">Twitter</span>
-              <TwitterSVG />
-            </a>
-          </li>
-        ) : null}
-        {user.linkedin ? (
-          <li>
-            <a
-              href={user.linkedin}
-              className="text-gray-600 hover:text-gray-500"
-            >
-              <span className="sr-only">LinkedIn</span>
-              <LinkedInSVG />
-            </a>
-          </li>
-        ) : null}
-      </ul>
-      <div className="flex flex-wrap gap-2 items-center">
+      <div className="flex flex-row">
+        <img
+          src={user.avatarUrl}
+          className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
+        />
+        <div className="flex-1">
+          <div className="font-bold text-lg my-3">{user.name}</div>
+          {showWorkStatus(user)}
+          <ul role="list" className="flex justify-center space-x-5 my-5">
+            <li>
+              <a
+                href={user.github}
+                className="text-gray-600 hover:text-gray-500"
+              >
+                <span className="sr-only">Github</span>
+                <GithubSVG />
+              </a>
+            </li>
+            {user.twitter ? (
+              <li>
+                <a
+                  href={user.twitter}
+                  className="text-gray-600 hover:text-gray-500"
+                >
+                  <span className="sr-only">Twitter</span>
+                  <TwitterSVG />
+                </a>
+              </li>
+            ) : null}
+            {user.linkedin ? (
+              <li>
+                <a
+                  href={user.linkedin}
+                  className="text-gray-600 hover:text-gray-500"
+                >
+                  <span className="sr-only">LinkedIn</span>
+                  <LinkedInSVG />
+                </a>
+              </li>
+            ) : null}
+          </ul>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-1 items-center">
         Maintainer of:
         {user.repos.map((repo) => (
           <a
             key={repo.name}
-            className="border border-teal-500 w-max-content rounded-md py-1 px-2 text-teal-500 hover:text-white hover:bg-teal-500"
+            className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-teal-100 text-teal-800 hover:bg-teal-300"
             href={repo.url}
           >
             {repo.name}
@@ -156,19 +165,19 @@ function displayUserInfo(user) {
 function showWorkStatus(user) {
   if (user.availableForHire) {
     return (
-      <div className="m-auto border-2 border-green-500 text-green-500 rounded-lg w-max-content py-2 px-2 my-2">
+      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-green-100 text-green-800">
         Available for hire
       </div>
     );
   } else if (user.company) {
     return (
-      <div className="m-auto border-2 border-orange-400 text-orange-400 rounded-lg w-max-content py-2 px-2 my-2">
+      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-orange-100 text-orange-800">
         {user.company}
       </div>
     );
   } else {
     return (
-      <div className="m-auto border-2 border-blue-400 text-blue-400 rounded-lg w-max-content py-2 px-2 my-2">
+      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-blue-100 text-blue-800">
         Individual Member
       </div>
     );
@@ -180,7 +189,7 @@ function QuestionCard() {
     <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4">
       <img
         src="/img/avatars/questionmark.webp"
-        className="mx-auto rounded-full h-40 w-40 xl:w-56 xl:h-56"
+        className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
       <div className="my-4">Want to become one?</div>
       <div className="my-4">
@@ -196,7 +205,7 @@ function QuestionCard() {
 function TwitterSVG() {
   return (
     <svg
-      className="w-7 h-7"
+      className="w-5 h-5"
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -209,7 +218,7 @@ function TwitterSVG() {
 function GithubSVG() {
   return (
     <svg
-      className="w-7 h-7"
+      className="w-5 h-5"
       fill="currentColor"
       aria-hidden="true"
       viewBox="0 0 30 30"
@@ -222,7 +231,7 @@ function GithubSVG() {
 function LinkedInSVG() {
   return (
     <svg
-      className="w-7 h-7"
+      className="w-5 h-5"
       aria-hidden="true"
       fill="currentColor"
       viewBox="0 0 20 20"
