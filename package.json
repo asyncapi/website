@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/modelina": "^0.31.0",
+    "@asyncapi/modelina": "^0.31.1",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "@mdx-js/loader": "^1.6.4",
