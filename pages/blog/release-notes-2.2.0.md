@@ -59,6 +59,6 @@ Are you wondering how we managed to release 2.2.0 just three months after 2.1.0?
 
 <img className="w-3/4" src="/img/posts/release-notes-2.2.0/brace.webp" alt="Meme showing a knight, Ned Stark from Game of Thrones. Description says: Brace yourself, all the stars in heaven say 3.0.0 version is coming." />
 
-The above meme gives you mixed feelings? Are you afraid of possible changes or actually happy to see it coming? Don't overthink it, just join our [Slack](https://www.asyncapi.com/slack-invite) and talk to us.
+The above meme gives you mixed feelings? Are you afraid of possible changes or actually happy to see it coming? Don't overthink it, just join our [Slack](https://www.asyncapi.com/slack-invite) and talk to us or check out [3.0.0 milestone](https://github.com/asyncapi/spec/milestone/18).
 
 > Photo by <a href="https://unsplash.com/@jeremythomasphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Thomas</a> on <a href="https://unsplash.com/s/photos/autumn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
