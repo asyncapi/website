@@ -1,8 +1,6 @@
-import GenericLayout from '../components/layout/GenericLayout'
-import Button from '../components/buttons/Button'
-import IconRocket from '../components/icons/Rocket'
-import GithubButton from '../components/buttons/GithubButton'
-import CodeBlock from '../components/editor/CodeBlock'
+import GenericLayout from '../../components/layout/GenericLayout'
+import GithubButton from '../../components/buttons/GithubButton'
+import CodeBlock from '../../components/editor/CodeBlock'
 
 export default function GithubActionsPage() {
   function renderButtons () {
