@@ -38,7 +38,7 @@ bindings:
     is: queue
 ```
 
-Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#serversObject). This new property is optional, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. Suppose **servers** is absent or empty. In that case, the given channel must be available on all servers defined in the Servers Object, as it was before the 2.2.0 version.
+Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#serversObject). This new property is optional, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. If **servers** is absent or empty, the given channel must be available on all servers defined in the Servers Object, like the previous version.
 
 For more details, check out [this pull request](https://github.com/asyncapi/spec/pull/531).
 
@@ -51,7 +51,7 @@ The specification is now extended to support the following custom protocols thro
 
 ## Become a contributor
 
-Pushing things through into the specification is not an easy process are requires a lot of time and patience, but it is worth it. Have a look at our [contribution guide](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md) and start contributing.
+Pushing things through into the specification is not an easy process. It requires a lot of time and patience, but it is worth it. Have a look at our [contribution guide](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md) and start contributing.
 
 ## Conclusions
 
@@ -59,6 +59,6 @@ Are you wondering how we managed to release 2.2.0 just three months after 2.1.0?
 
 <img className="w-3/4" src="/img/posts/release-notes-2.2.0/brace.webp" alt="Meme showing a knight, Ned Stark from Game of Thrones. Description says: Brace yourself, all the stars in heaven say 3.0.0 version is coming." />
 
-The above meme gives you mixed feelings? Are you afraid of possible changes or actually happy to see it coming? Don't overthink it, just join our [Slack](https://www.asyncapi.com/slack-invite) and talk to us or check out [3.0.0 milestone](https://github.com/asyncapi/spec/milestone/18).
+Does the above meme give you mixed feelings? Are you afraid of possible changes, or actually happy to see it coming? Don't overthink it! Join our [Slack](https://www.asyncapi.com/slack-invite) and talk to us, or check out the [3.0.0 milestone](https://github.com/asyncapi/spec/milestone/18).
 
 > Photo by <a href="https://unsplash.com/@jeremythomasphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeremy Thomas</a> on <a href="https://unsplash.com/s/photos/autumn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
