@@ -1,0 +1,23 @@
+{
+    "@asyncapi/html-template": {
+        "flag": " -o example"
+    },
+    "@asyncapi/markdown-template": {
+        "flag": " -o example"
+    },
+    "@asyncapi/nodejs-template": {
+        "flag": " -p server=production -o example"
+    },
+    "@asyncapi/nodejs-ws-template": {
+        "flag": " -p server=production -o example"
+    },
+    "@asyncapi/java-spring-cloud-stream-template": {
+        "flag": " -p server=production -o example"
+    },
+    "@asyncapi/java-spring-template": {
+        "flag": " -p server=production -o example"
+    },
+    "@asyncapi/python-paho-template": {
+        "flag": " -p server=production -o example"
+    }
+}
