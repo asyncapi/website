@@ -12,12 +12,12 @@
         "flag": " -p server=production -o example"
     },
     "@asyncapi/java-spring-cloud-stream-template": {
-        "flag": " -p server=production -o example"
+        "flag": " -o example"
     },
     "@asyncapi/java-spring-template": {
-        "flag": " -p server=production -o example"
+        "flag": " -o example"
     },
     "@asyncapi/python-paho-template": {
-        "flag": " -p server=production -o example"
+        "flag": " -o example"
     }
 }
