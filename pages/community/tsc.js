@@ -1,6 +1,45 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 
+function addAdditionalUserInfo(user) {
+  const userData = {
+    ...user,
+  };
+
+  addNameIfNotPresent(userData);
+  addSocialLinks(userData);
+  addAvatarUrl(userData);
+  userData.repos = userData.repos.map((repoName) =>
+    generateRepositoryInfo(repoName)
+  );
+
+  return userData;
+}
+
+function addNameIfNotPresent(user) {
+  // if username is not present, use the github username
+  if (!user.name) user.name = user.github;
+}
+
+function addSocialLinks(user) {
+  if (user.github) user.github = `https://www.github.com/${user.github}`;
+  if (user.linkedin)
+    user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
+  if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
+}
+
+function addAvatarUrl(user) {
+  // github redirects to avatar url using `https://www.github.com/<username>.png`
+  user.avatarUrl = user.github + ".png";
+}
+
+function generateRepositoryInfo(repositoryName) {
+  return {
+    name: repositoryName,
+    url: `https://www.github.com/asyncapi/${repositoryName}`,
+  };
+}
+
 export default function TSC() {
   const description =
     "See the current AsyncAPI TSC members and learn how you can become one.";
@@ -231,43 +270,4 @@ function LinkedInSVG() {
       />
     </svg>
   );
-}
-
-function addAdditionalUserInfo(user) {
-  const userData = {
-    ...user,
-  };
-
-  addNameIfNotPresent(userData);
-  addSocialLinks(userData);
-  addAvatarUrl(userData);
-  userData.repos = userData.repos.map((repoName) =>
-    generateRepositoryInfo(repoName)
-  );
-
-  return userData;
-}
-
-function addNameIfNotPresent(user) {
-  // if username is not present, use the github username
-  if (!user.name) user.name = user.github;
-}
-
-function addSocialLinks(user) {
-  if (user.github) user.github = `https://www.github.com/${user.github}`;
-  if (user.linkedin)
-    user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
-  if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
-}
-
-function addAvatarUrl(user) {
-  // github redirects to avatar url using `https://www.github.com/<username>.png`
-  user.avatarUrl = user.github + ".png";
-}
-
-function generateRepositoryInfo(repositoryName) {
-  return {
-    name: repositoryName,
-    url: `https://www.github.com/asyncapi/${repositoryName}`,
-  };
 }
