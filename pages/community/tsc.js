@@ -4,7 +4,7 @@ import TSCMembersList from "../../config/TSC_MEMBERS.json";
 export default function TSC() {
   const description =
     "See the current AsyncAPI TSC members and learn how you can become one.";
-  const image = "/img/social/parsers.png"; // TODO: change to a Screenshot of the page
+  const image = "/img/social/card.png"; // TODO: change to a Screenshot of the page
 
   function addAdditionalUserInfo(user) {
     const userData = {
@@ -60,15 +60,24 @@ export default function TSC() {
             What is TSC?
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
-            TSC is something......
+            Technical Steering Committee (TSC) is responsible for the oversight
+            of the AsyncAPI Initiative. At the repository/project level given
+            maintainers (aka committers) make decisions. TSC helps to make
+            decisions on a higher level, or when maintainers cannot find a
+            consensus.
           </p>
         </div>
         <div>
           <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            Where is it coming from?
+            How to become a TSC member?
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
-            Lorem ipsum dolor sit amet...
+            Anybody can become a member of the TSC. You just have to be a
+            maintainer of one of the AsyncAPI projects. To become a maintainer,
+            you just need to regularly contribute to one of the projects and
+            then other maintainers will invite you to join. You can also build a
+            great AsyncAPI-based project that we do not have yet in our GitHub
+            organization and donate it. We'll ask you to stay as a maintainer.
           </p>
         </div>
         <div>
@@ -76,7 +85,23 @@ export default function TSC() {
             Governance model
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
-            Lorem ipsum dolor sit amet...
+            AsyncAPI Initiative runs under an{" "}
+            <a
+              href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
+              className="text-blue-500 hover:text-blue-400"
+            >
+              an open governance model
+            </a>{" "}
+            that gives power to people actively involved and working on the
+            project. No matter if you are an individual contributor or backed by
+            a company, you have equal rights. Read{" "}
+            <a
+              href="https://www.asyncapi.com/blog/governance-motivation"
+              className="text-blue-500 hover:text-blue-400"
+            >
+              this
+            </a>{" "}
+            article in case you want to learn more.
           </p>
         </div>
       </div>
