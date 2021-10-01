@@ -7,17 +7,17 @@ function addAdditionalUserInfo(user) {
   };
 
   // if username is not present, use the github username
-  if (!user.name) user.name = user.github;
+  if (!userData.name) userData.name = userData.github;
 
   // add social links
-  if (user.github) user.github = `https://www.github.com/${user.github}`;
-  if (user.linkedin)
-    user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
-  if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
+  if (userData.github) userData.github = `https://www.github.com/${userData.github}`;
+  if (userData.linkedin)
+    userData.linkedin = `https://www.linkedin.com/in/${userData.linkedin}`;
+  if (userData.twitter) userData.twitter = `https://www.twitter.com/${userData.twitter}`;
 
   // add avatar url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
-  user.avatarUrl = user.github + ".png";
+  userData.avatarUrl = userData.github + ".png";
 
   // make repo links
   userData.repos = userData.repos.map((repoName) => ({
