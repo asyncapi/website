@@ -6,45 +6,6 @@ export default function TSC() {
     "See the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/card.png"; // TODO: change to a Screenshot of the page
 
-  function addAdditionalUserInfo(user) {
-    const userData = {
-      ...user,
-    };
-
-    addNameIfNotPresent(userData);
-    addSocialLinks(userData);
-    addAvatarUrl(userData);
-    userData.repos = userData.repos.map((repoName) =>
-      generateRepositoryInfo(repoName)
-    );
-
-    return userData;
-  }
-
-  function addNameIfNotPresent(user) {
-    // if username is not present, use the github username
-    if (!user.name) user.name = user.github;
-  }
-
-  function addSocialLinks(user) {
-    if (user.github) user.github = `https://www.github.com/${user.github}`;
-    if (user.linkedin)
-      user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
-    if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
-  }
-
-  function addAvatarUrl(user) {
-    // github redirects to avatar url using `https://www.github.com/<username>.png`
-    user.avatarUrl = user.github + ".png";
-  }
-
-  function generateRepositoryInfo(repositoryName) {
-    return {
-      name: repositoryName,
-      url: `https://www.github.com/asyncapi/${repositoryName}`,
-    };
-  }
-
   const tscMembers = TSCMembersList.map((user) => addAdditionalUserInfo(user));
 
   return (
@@ -114,7 +75,9 @@ export default function TSC() {
           role="list"
           className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
         >
-          {tscMembers.map((user) => displayUserInfo(user))}
+          {tscMembers.map((user) => (
+            <UserInfo key={user.name} user={user} />
+          ))}
           <QuestionCard />
         </ul>
       </div>
@@ -122,7 +85,7 @@ export default function TSC() {
   );
 }
 
-function displayUserInfo(user) {
+function UserInfo({ user }) {
   return (
     <li
       key={user.name}
@@ -135,7 +98,7 @@ function displayUserInfo(user) {
         />
         <div className="flex-1">
           <div className="font-bold text-lg my-3">{user.name}</div>
-          {showWorkStatus(user)}
+          <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
             <li>
               <a
@@ -187,7 +150,7 @@ function displayUserInfo(user) {
   );
 }
 
-function showWorkStatus(user) {
+function UserWorkStatus({ user }) {
   if (user.availableForHire) {
     return (
       <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-green-100 text-green-800">
@@ -268,4 +231,43 @@ function LinkedInSVG() {
       />
     </svg>
   );
+}
+
+function addAdditionalUserInfo(user) {
+  const userData = {
+    ...user,
+  };
+
+  addNameIfNotPresent(userData);
+  addSocialLinks(userData);
+  addAvatarUrl(userData);
+  userData.repos = userData.repos.map((repoName) =>
+    generateRepositoryInfo(repoName)
+  );
+
+  return userData;
+}
+
+function addNameIfNotPresent(user) {
+  // if username is not present, use the github username
+  if (!user.name) user.name = user.github;
+}
+
+function addSocialLinks(user) {
+  if (user.github) user.github = `https://www.github.com/${user.github}`;
+  if (user.linkedin)
+    user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
+  if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
+}
+
+function addAvatarUrl(user) {
+  // github redirects to avatar url using `https://www.github.com/<username>.png`
+  user.avatarUrl = user.github + ".png";
+}
+
+function generateRepositoryInfo(repositoryName) {
+  return {
+    name: repositoryName,
+    url: `https://www.github.com/asyncapi/${repositoryName}`,
+  };
 }
