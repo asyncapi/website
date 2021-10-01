@@ -6,38 +6,26 @@ function addAdditionalUserInfo(user) {
     ...user,
   };
 
-  addNameIfNotPresent(userData);
-  addSocialLinks(userData);
-  addAvatarUrl(userData);
-  userData.repos = userData.repos.map((repoName) =>
-    generateRepositoryInfo(repoName)
-  );
-
-  return userData;
-}
-
-function addNameIfNotPresent(user) {
   // if username is not present, use the github username
   if (!user.name) user.name = user.github;
-}
 
-function addSocialLinks(user) {
+  // add social links
   if (user.github) user.github = `https://www.github.com/${user.github}`;
   if (user.linkedin)
     user.linkedin = `https://www.linkedin.com/in/${user.linkedin}`;
   if (user.twitter) user.twitter = `https://www.twitter.com/${user.twitter}`;
-}
 
-function addAvatarUrl(user) {
+  // add avatar url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
   user.avatarUrl = user.github + ".png";
-}
 
-function generateRepositoryInfo(repositoryName) {
-  return {
-    name: repositoryName,
-    url: `https://www.github.com/asyncapi/${repositoryName}`,
-  };
+  // make repo links
+  userData.repos = userData.repos.map((repoName) => ({
+    name: repoName,
+    url: `https://www.github.com/asyncapi/${repoName}`,
+  }));
+
+  return userData;
 }
 
 export default function TSC() {
@@ -115,7 +103,7 @@ export default function TSC() {
           className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
         >
           {tscMembers.map((user) => (
-            <UserInfo key={user.name} user={user} />
+            <UserInfo key={user.github} user={user} />
           ))}
           <QuestionCard />
         </ul>
@@ -127,8 +115,8 @@ export default function TSC() {
 function UserInfo({ user }) {
   return (
     <li
-      key={user.name}
       className="p-4 text-center border rounded-md border-gray-200 shadow-md"
+      key={user.github}
     >
       <div className="flex flex-row">
         <img
