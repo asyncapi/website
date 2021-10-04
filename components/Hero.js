@@ -14,7 +14,7 @@ export default function Hero ({ className = '' }) {
           <span className="text-primary-400 block"> event-driven architecture.</span>
         </h1>
         <h2 className="text-gray-500 text-lg font-normal mb-16 max-w-3xl mx-auto">
-          Open source tools to easily build and maintain your event-driven architecture.
+          Open Source tools to easily build and maintain your event-driven architecture.
           All powered by the AsyncAPI specification, the <strong>industry standard</strong> for defining asynchronous APIs.
         </h2>
         <Button className="block md:inline-block" text="Read the docs" href="/docs/getting-started" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
