@@ -26,7 +26,7 @@ const Banner = () => {
             <p className="ml-3 font-medium text-white truncate">
               <span className="md:hidden">Our Global Hackathon is on! <a className="underline" href="/blog/hackathon-faq" target="_blank" rel="noreferrer">Join us &rarr;</a></span>
               <span className="hidden md:inline">
-                Our Global Hackathon is now taking place! Prizes to be won ⭐️
+                Our Global Hackathon has begun! Prizes to be won ⭐️
               </span>
             </p>
           </div>
