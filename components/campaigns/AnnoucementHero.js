@@ -12,7 +12,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
       {!small && 
         <>
           <p className=" text-gray-700 md:hidden text-xs  my-2 text-center">Connect and innovate with the AsyncAPI Community.</p>
-          <p className=" text-gray-700 hidden md:block max-w-3xl mx-auto  my-2 text-center">First day of the conference is dedicated entirely to folks that want to contribute to AsyncAPI Initiative. Next two days of the conference are a pure learning experience, community for the community.</p>
+          <p className=" text-gray-700 hidden md:block max-w-3xl mx-auto  my-2 text-center">The first day of the conference is dedicated entirely for folks that want to contribute to AsyncAPI Initiative. The next two days of the conference are a pure learning experience, community for the community.</p>
         </>
       }
       <div className="mt-8 pb-2 space-x-2">
