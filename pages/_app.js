@@ -22,9 +22,9 @@ export default function MyApp({ Component, pageProps, router }) {
 
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
+      <HeaderCampaign />
       <MDXProvider components={getMDXComponents()}>
         <Layout>
-          <HeaderCampaign />
           <Component {...pageProps} />
         </Layout>
       </MDXProvider>
