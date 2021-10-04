@@ -16,7 +16,6 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
-import HeaderCampaign from '../components/campaigns/Banner'
 
 function HomePage() {
   const posts = getAllPosts()
@@ -33,7 +32,6 @@ function HomePage() {
 
   return (
     <>
-      <HeaderCampaign />
       <Container wide>
         <Head />
         <NavBar className="z-50" />
