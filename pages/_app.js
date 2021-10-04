@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react"
 import YouTube from 'react-youtube-embed'
+import Head from 'next/head';
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import Layout from '../components/layout/Layout'
 import Button from '../components/buttons/Button'
@@ -22,6 +23,9 @@ export default function MyApp({ Component, pageProps, router }) {
 
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
+      <Head>
+          <script async defer src="https://buttons.github.io/buttons.js"></script>
+      </Head>
       <HeaderCampaign />
       <MDXProvider components={getMDXComponents()}>
         <Layout>
