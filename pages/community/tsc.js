@@ -206,13 +206,7 @@ function QuestionCard() {
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <div className="my-4">Want to become one?</div>
-      <div className="my-4">
-        See{" "}
-        <a href="" className="text-blue-400">
-          here!
-        </a>
-      </div>
+      <div className="my-4">Become a member!</div>
     </li>
   );
 }
