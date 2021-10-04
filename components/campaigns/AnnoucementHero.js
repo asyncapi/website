@@ -8,7 +8,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
 
   return (
     <div className={`bg-gray-50 border border-gray-200 py-6  ${className} ${small ? 'mb-0' : 'mb-12'}`}>
-      <h2 className="text-xl md:text-3xl">AsyncAPI Conference (Nov 16-18)</h2>
+      <h2 className="text-xl md:text-3xl font-bold countdown-text-gradient">AsyncAPI Conference (Nov 16-18)</h2>
       {!small && 
         <>
           <p className=" text-gray-700 md:hidden text-xs  my-2 text-center">Connect and innovate with the AsyncAPI Community.</p>
