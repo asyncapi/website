@@ -28,7 +28,7 @@ export default function RoadmapPage() {
       image={image}
       wide
     >
-      <div className="py-16 overflow-hidden lg:py-24">
+      <div className="py-12 overflow-hidden">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
             <div className="lg:w-2/3 lg:mx-auto lg:text-center">
