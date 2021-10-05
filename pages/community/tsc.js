@@ -94,7 +94,7 @@ export default function TSC() {
         </div>
       </div>
       <div className="mt-5">
-        <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl">
+        <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl lg:text-center">
           The current TSC members
         </h3>
 
