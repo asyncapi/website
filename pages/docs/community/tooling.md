@@ -69,7 +69,7 @@ Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain 
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
-| [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple yml files with BOATS and with the help of the template engine Nunjucks, plus a many extra helpers to automate much of the donkey work. The [AsyncAPI Parser](https://github.com/asyncapi/parser-js) is used to to validate the output. | CLI / Javascript |
+| [BOATS](https://www.npmjs.com/package/boats) | Compile your single AsyncAPI file from multiple YAML files with BOATS and with the help of the template engine Nunjucks, plus a many extra helpers to automate much of the donkey work. The [AsyncAPI Parser](https://github.com/asyncapi/parser-js) is used to validate the output. | CLI / JavaScript |
 
 # Frameworks
 
