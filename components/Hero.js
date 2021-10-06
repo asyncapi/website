@@ -1,8 +1,8 @@
-import Button from './buttons/Button';
-import ArrowRight from './icons/ArrowRight';
-import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton';
-import Features from '../components/features';
-import AnnouncementHero from '../components/campaigns/AnnoucementHero';
+import Button from './buttons/Button'
+import ArrowRight from './icons/ArrowRight'
+import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
+import Features from '../components/features'
+import AnnouncementHero from '../components/campaigns/AnnoucementHero'
 
 export default function Hero({ className = '' }) {
   return (
