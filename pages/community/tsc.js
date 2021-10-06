@@ -44,72 +44,74 @@ export default function TSC() {
       image={image}
       wide
     >
-      <div className="grid lg:grid-cols-3 lg:gap-8">
-        <div>
-          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            What is a TSC?
-          </h3>
-          <p className="my-4 text-base text-gray-500 lg:text-center">
-            The Technical Steering Committee (TSC) is responsible for the
-            oversight of the AsyncAPI Initiative. Maintainers (aka committers)
-            make decisions at the given repository/project level. The TSC helps
-            to make decisions on a higher level, or when maintainers cannot find
-            a consensus.
-          </p>
+      <div className="py-12">
+        <div className="grid lg:grid-cols-3 lg:gap-8">
+          <div>
+            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+              What is a TSC?
+            </h3>
+            <p className="my-4 text-base text-gray-500 lg:text-center">
+              The Technical Steering Committee (TSC) is responsible for the
+              oversight of the AsyncAPI Initiative. Maintainers (aka committers)
+              make decisions at the given repository/project level. The TSC
+              helps to make decisions on a higher level, or when maintainers
+              cannot find a consensus.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+              How can I become a TSC member?
+            </h3>
+            <p className="my-4 text-base text-gray-500 lg:text-center">
+              Anybody can become a member of the TSC. All you have to do is
+              become a maintainer of one of the AsyncAPI projects! To become a
+              maintainer, you just need to regularly contribute to one of the
+              projects and then other maintainers will invite you to join. You
+              can also build a great AsyncAPI-based project that we don't have
+              yet in our GitHub organization and donate it (we'll ask you to
+              stay as a maintainer).
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+              Our governance model
+            </h3>
+            <p className="my-4 text-base text-gray-500 lg:text-center">
+              AsyncAPI Initiative runs under an{" "}
+              <a
+                href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
+                className="text-blue-500 hover:text-blue-400"
+              >
+                Open Governance Model
+              </a>{" "}
+              that gives power to the people actively involved and working on
+              the project. No matter if you are an individual contributor or
+              backed by a company, you have equal rights. Read{" "}
+              <a
+                href="https://www.asyncapi.com/blog/governance-motivation"
+                className="text-blue-500 hover:text-blue-400"
+              >
+                this
+              </a>{" "}
+              article to learn more.
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            How can I become a TSC member?
+        <div className="mt-5">
+          <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl lg:text-center">
+            Current TSC members
           </h3>
-          <p className="my-4 text-base text-gray-500 lg:text-center">
-            Anybody can become a member of the TSC. All you have to do is become
-            a maintainer of one of the AsyncAPI projects! To become a
-            maintainer, you just need to regularly contribute to one of the
-            projects and then other maintainers will invite you to join. You can
-            also build a great AsyncAPI-based project that we don't have yet in
-            our GitHub organization and donate it (we'll ask you to stay as a
-            maintainer).
-          </p>
-        </div>
-        <div>
-          <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            Our governance model
-          </h3>
-          <p className="my-4 text-base text-gray-500 lg:text-center">
-            AsyncAPI Initiative runs under an{" "}
-            <a
-              href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
-              className="text-blue-500 hover:text-blue-400"
-            >
-              Open Governance Model
-            </a>{" "}
-            that gives power to the people actively involved and working on the
-            project. No matter if you are an individual contributor or backed by
-            a company, you have equal rights. Read{" "}
-            <a
-              href="https://www.asyncapi.com/blog/governance-motivation"
-              className="text-blue-500 hover:text-blue-400"
-            >
-              this
-            </a>{" "}
-            article to learn more.
-          </p>
-        </div>
-      </div>
-      <div className="mt-5">
-        <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl lg:text-center">
-          Current TSC members
-        </h3>
 
-        <ul
-          role="list"
-          className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
-        >
-          {tscMembers.map((user) => (
-            <UserInfo key={user.github} user={user} />
-          ))}
-          <QuestionCard />
-        </ul>
+          <ul
+            role="list"
+            className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8"
+          >
+            {tscMembers.map((user) => (
+              <UserInfo key={user.github} user={user} />
+            ))}
+            <QuestionCard />
+          </ul>
+        </div>
       </div>
     </GenericLayout>
   );
