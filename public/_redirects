@@ -8,13 +8,11 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/specifications/latest /docs/specifications/v2.1.0 302!
+/docs/specifications/latest /docs/specifications/v2.2.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/specifications/2.2.0-2021-09-release.3 /docs/specifications/v2.2.0-2021-09-release.3 302!
-/docs/specifications/2.2.0-2021-09-release.2 /docs/specifications/v2.2.0-2021-09-release.2 302!
-/docs/specifications/2.2.0-2021-09-release.1 /docs/specifications/v2.2.0-2021-09-release.1 302!
+/docs/specifications/2.2.0 /docs/specifications/v2.2.0 302!
 /docs/specifications/2.1.0 /docs/specifications/v2.1.0 302!
 /docs/specifications/2.0.0 /docs/specifications/v2.0.0 302! # The path was changed. We want to keep links pointing to the old path working.
 # SPEC-REDIRECTION:END
@@ -33,3 +31,10 @@ https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
 # Central Gradle repository verification
 /asyncapi-gradle-plugin https://plugins.gradle.org/plugin/com.asyncapi.asyncapi-gradle-plugin
+
+# TOOLS-REDIRECTION:START
+/parsers /tools/parsers 301!
+/modelina /tools/modelina 301!
+/generator /tools/generator 301!
+/github-actions /tools/github-actions 301!
+# TOOLS-REDIRECTION:END
