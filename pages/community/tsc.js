@@ -10,10 +10,12 @@ function addAdditionalUserInfo(user) {
   if (!userData.name) userData.name = userData.github;
 
   // add social links
-  if (userData.github) userData.github = `https://www.github.com/${userData.github}`;
+  if (userData.github)
+    userData.github = `https://www.github.com/${userData.github}`;
   if (userData.linkedin)
     userData.linkedin = `https://www.linkedin.com/in/${userData.linkedin}`;
-  if (userData.twitter) userData.twitter = `https://www.twitter.com/${userData.twitter}`;
+  if (userData.twitter)
+    userData.twitter = `https://www.twitter.com/${userData.twitter}`;
 
   // add avatar url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
@@ -30,7 +32,7 @@ function addAdditionalUserInfo(user) {
 
 export default function TSC() {
   const description =
-    "See the current AsyncAPI TSC members and learn how you can become one.";
+    "Meet the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/card.png"; // TODO: change to a Screenshot of the page
 
   const tscMembers = TSCMembersList.map((user) => addAdditionalUserInfo(user));
@@ -45,32 +47,33 @@ export default function TSC() {
       <div className="grid lg:grid-cols-3 lg:gap-8">
         <div>
           <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            What is TSC?
+            What is a TSC?
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
-            Technical Steering Committee (TSC) is responsible for the oversight
-            of the AsyncAPI Initiative. At the repository/project level given
-            maintainers (aka committers) make decisions. TSC helps to make
-            decisions on a higher level, or when maintainers cannot find a
-            consensus.
+            The Technical Steering Committee (TSC) is responsible for the
+            oversight of the AsyncAPI Initiative. Maintainers (aka committers)
+            make decisions at the given repository/project level. The TSC helps
+            to make decisions on a higher level, or when maintainers cannot find
+            a consensus.
           </p>
         </div>
         <div>
           <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            How to become a TSC member?
+            How can I become a TSC member?
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
-            Anybody can become a member of the TSC. You just have to be a
-            maintainer of one of the AsyncAPI projects. To become a maintainer,
-            you just need to regularly contribute to one of the projects and
-            then other maintainers will invite you to join. You can also build a
-            great AsyncAPI-based project that we do not have yet in our GitHub
-            organization and donate it. We'll ask you to stay as a maintainer.
+            Anybody can become a member of the TSC. All you have to do is become
+            a maintainer of one of the AsyncAPI projects! To become a
+            maintainer, you just need to regularly contribute to one of the
+            projects and then other maintainers will invite you to join. You can
+            also build a great AsyncAPI-based project that we don't have yet in
+            our GitHub organization and donate it (we'll ask you to stay as a
+            maintainer).
           </p>
         </div>
         <div>
           <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            Governance model
+            Our governance model
           </h3>
           <p className="my-4 text-base text-gray-500 lg:text-center">
             AsyncAPI Initiative runs under an{" "}
@@ -78,9 +81,9 @@ export default function TSC() {
               href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
               className="text-blue-500 hover:text-blue-400"
             >
-              an open governance model
+              Open Governance Model
             </a>{" "}
-            that gives power to people actively involved and working on the
+            that gives power to the people actively involved and working on the
             project. No matter if you are an individual contributor or backed by
             a company, you have equal rights. Read{" "}
             <a
@@ -89,13 +92,13 @@ export default function TSC() {
             >
               this
             </a>{" "}
-            article in case you want to learn more.
+            article to learn more.
           </p>
         </div>
       </div>
       <div className="mt-5">
         <h3 className="font-semibold mb-5 text-primary-800 lg:text-2xl lg:text-center">
-          The current TSC members
+          Current TSC members
         </h3>
 
         <ul
