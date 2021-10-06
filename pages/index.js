@@ -16,6 +16,8 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
+import DemoAnimation from "../components/DemoAnimation";
+
 
 function HomePage() {
   const posts = getAllPosts()
@@ -38,21 +40,52 @@ function HomePage() {
         <Hero className="mb-24" />
       </Container>
 
+      <Container className="text-center pb-12" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
+        <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and want to get it listed? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium" rel="noreferrer">Let us know here!</a>
+        </p>
+        <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="justify-center flex">
+            <AdidasLogo className="h-8 text-gray-400" />
+          </div>
+          <div className="justify-center flex">
+            <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
+          </div>
+          <div className="justify-center flex">
+            <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
+          </div>
+          <div className="justify-center flex">
+            <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
+          </div>
+          <div className="justify-center flex">
+            <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
+          </div>
+        </div>
+      </Container>
+
       <div className="bg-primary-900 py-12 mt-8">
         <Container wide>
           <NewsletterSubscribe formName="form 1" dark />
         </Container>
       </div>
 
-      <Container className="text-center mt-12 pt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium" rel="noreferrer">Support us!</a>
-        </p>
-        <Sponsors className="mt-8" showSupportBanner={false} />
+      <Container className="text-center pt-8 pb-16" wide>
+        <div className="mt-8 md:mt-16 text-center space-y-12">
+          <div>
+            <p className="mt-2 text-3xl font-extrabold text-primary-800 tracking-tight sm:text-4xl">
+              See it in action
+            </p>
+            <p className="max-w-prose mx-auto text-gray-500">
+              Using AsyncAPI file to generate documentation
+            </p>
+          </div>
+          <DemoAnimation />
+        </div>
       </Container>
+   
 
-      <Container className="text-center mt-24 py-12" wide>
+      <Container className="text-center py-8 " wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Join our great community!</h3>
         <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
           We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
@@ -98,28 +131,12 @@ function HomePage() {
         </div>
       </Container>
       
-      <Container className="text-center pb-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
-        <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and want to get it listed? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium" rel="noreferrer">Let us know here!</a>
+      <Container className="text-center py-12" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
+        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium" rel="noreferrer">Support us!</a>
         </p>
-        <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
-          <div className="justify-center flex">
-            <AdidasLogo className="h-8 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
-          </div>
-        </div>
+        <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
       
       <Container className="text-center pb-12" wide>
