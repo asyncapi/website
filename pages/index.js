@@ -70,22 +70,7 @@ function HomePage() {
         </Container>
       </div>
 
-      <Container className="text-center pt-8 pb-16" wide>
-        <div className="mt-8 md:mt-16 text-center space-y-12">
-          <div>
-            <p className="mt-2 text-3xl font-extrabold text-primary-800 tracking-tight sm:text-4xl">
-              See it in action
-            </p>
-            <p className="max-w-prose mx-auto text-gray-500">
-              Using AsyncAPI file to generate documentation
-            </p>
-          </div>
-          <DemoAnimation />
-        </div>
-      </Container>
-   
-
-      <Container className="text-center py-8 " wide>
+      <Container className="text-center py-12" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Join our great community!</h3>
         <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
           We're a community of great people who are passionate about AsyncAPI and event-driven architectures.

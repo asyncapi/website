@@ -2,6 +2,7 @@ import Button from './buttons/Button'
 import ArrowRight from './icons/ArrowRight'
 import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
 import Features from '../components/features'
+import DemoAnimation from './DemoAnimation'
 import AnnouncementHero from '../components/campaigns/AnnoucementHero'
 
 export default function Hero({ className = '' }) {
@@ -34,6 +35,9 @@ export default function Hero({ className = '' }) {
             Linux Foundation
           </a>
         </p>
+      </div>
+      <div className="mt-8 md:mt-16">
+        <DemoAnimation />
       </div>
       <Features />
     </div>
