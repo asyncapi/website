@@ -70,10 +70,14 @@ export default function NavBar ({
               <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
             ))
           }
+
+          <a className="github-button" href="https://github.com/asyncapi/spec" data-icon="octicon-star" data-show-count="true" aria-label="Star asyncapi/spec on GitHub">Star</a>
+
         </nav>
         <div className="hidden lg:flex lg:flex-1">
           
         </div>
+
       </div>
 
       { /* Mobile menu, show/hide based on mobile menu state. */ }
