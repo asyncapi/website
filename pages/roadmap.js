@@ -9,7 +9,7 @@ export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
   const image = '/img/social/roadmap.png'
 
-  if (Object.keys(roadmapData).length === 0) { 
+  if (Object.keys(roadmapData).length === 0) {
     return (
       <GenericLayout
         title="Vision & Roadmap"
@@ -119,7 +119,7 @@ export default function RoadmapPage() {
                 <div className="mr-4">Feature <InlineHelp text="A feature talks about specific details to implement a solution. It may implement the solution partially or totally." /></div>
               </div>
             </div>
-            
+
             <div className="lg:grid lg:grid-cols-3 lg:gap-10">
               <RoadmapColumn
                 title="Now"
@@ -158,7 +158,7 @@ export default function RoadmapPage() {
               description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding Github issue so we can discuss what's the best way to proceed and implement it yourself."
             />
             <p className="text-xs text-center text-gray-600 mt-8">
-              <strong>Attention:</strong> this road map is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3A%22Key+Result%22" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+              <strong>Attention:</strong> this road map is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3AOutcome" target="_blank" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
             </p>
           </div>
         </div>
