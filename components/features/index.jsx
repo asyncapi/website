@@ -1,5 +1,5 @@
 const features = [
-  { name: "Specification", description: "Allows teams to define the interfaces of an Async API.", link: "docs/specifications/latest" },
+  { name: "Specification", description: "Allows you define the interfaces of asynchronous APIs and is protocol agnostic", link: "docs/specifications/latest" },
   { name: "Document Event Driven Architecture", description: "Don't wait for pain points to start, explore how AsyncAPI can help you today.", link: "docs/getting-started" },
   { name: "Community", description: "Active and welcoming community with over 1500 people.", link: "https://asyncapi.com/slack-invite" },
   { name: "Generator", description : "Generate documentation, code and more out of your AsyncAPI files.", link: "tools/generator" },
