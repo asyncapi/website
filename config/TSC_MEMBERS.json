@@ -179,5 +179,13 @@
         "repos": [
             "simulator"
         ]
+    },
+    {
+        "github": "anandsunderraman",
+        "linkedin": "anand-sunderraman-a6b7a131",
+        "availableForHire": false,
+        "repos": [
+            "go-watermill-template"
+        ]
     }
 ]
