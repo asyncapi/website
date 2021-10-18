@@ -1,10 +1,50 @@
 const features = [
-  { name: "Specification", description: "Allows you define the interfaces of asynchronous APIs and is protocol agnostic", link: "docs/specifications/latest" },
-  { name: "Document Event Driven Architecture", description: "Don't wait for pain points to start, explore how AsyncAPI can help you today.", link: "docs/getting-started" },
-  { name: "Community", description: "Active and welcoming community with over 1500 people.", link: "https://asyncapi.com/slack-invite" },
-  { name: "Generator", description : "Generate documentation, code and more out of your AsyncAPI files.", link: "tools/generator" },
-  { name: "Code Bindings", description: "Generate data models for JavaScript, TypeScript, Go, C# and more...", link: "tools/modelina" },
-  { name: "Encourage new tools", description: "Use our parsers to build your own tools or add AsyncAPI support to your product.", link: "tools/parsers" },
+  {
+    name: "Specification",
+    description:
+      "Allows you define the interfaces of asynchronous APIs and is protocol agnostic.",
+    links: [{ label: "Documentation", href: "docs/specifications/latest" }],
+  },
+  {
+    name: "Document APIs",
+    description:
+      "Use our tools that let you generate documentation on a build level, on a server and on a client.",
+    links: [
+      {
+        label: "HTML Template",
+        href: "https://github.com/asyncapi/html-template",
+      },
+      {
+        label: "React Components",
+        href: "https://github.com/asyncapi/asyncapi-react/",
+      },
+    ],
+  },
+  {
+    name: "Community",
+    description: "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
+    links: [
+      { label: "Join us", href: "https://asyncapi.com/slack-invite" },
+    ],
+  },
+  {
+    name: "Code Generation",
+    description:
+      "Generate documentation, Code (TypeScript, Java, C#, etc) and more out of your AsyncAPI files.",
+    links: [{ label: "Generator", href: "tools/generator" }, { label: "Modelina", href: "tools/modelina" }],
+  },
+  {
+    name: "Open Governance",
+    description:
+      "Open source project that is part of Linux Foundation and works under open governance model.",
+    links: [{ label: "Read more", href: "blog/governance-motivation" }, { label: "TSC Members", href: "community/tsc" }],
+  },
+  {
+    name: "And much more...",
+    description:
+      "We have many different tools and welcome you to explore our ideas and propose new ideas to AsyncAPI.",
+    links: [{ label: "View GitHub Discussions", href: "https://github.com/asyncapi/community/discussions" }],
+  },
 ];
 
 export default function Features() {
@@ -15,7 +55,7 @@ export default function Features() {
           Why AsyncAPI?
         </p>
         <p className="mt-2 max-w-prose mx-auto text-gray-500">
-         Improving the current state of Event-Driven Architectures (EDA)
+          Improving the current state of Event-Driven Architectures (EDA)
         </p>
         <div className="mt-12 text-left">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -25,12 +65,25 @@ export default function Features() {
                   <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                     {feature.name}
                   </h3>
-                  {feature.description && 
+                  {feature.description && (
                     <p className="mt-5 text-base text-gray-500">
-                        {feature.description}
+                      {feature.description}
                     </p>
-                  }
-                  <a className="mt-6 block text-primary-500" href={feature.link}>Documentation &rarr;</a>
+                  )}
+
+                  <div className="flex justify-between">
+                    {feature.links.map((link) => {
+                      return (
+                        <a
+                          key={link.label}
+                          className="mt-6 inline-block text-primary-500"
+                          href={link.href}
+                        >
+                          {link.label}
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             ))}
