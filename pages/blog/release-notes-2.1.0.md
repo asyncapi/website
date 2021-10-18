@@ -4,6 +4,7 @@ date: 2021-06-29T06:00:00+01:00
 type: Communication
 tags:
   - Release Notes
+  - Specification
 cover: /img/posts/release-notes-2.1.0/cover.webp
 authors:
   - name: Lukasz Gornicki
