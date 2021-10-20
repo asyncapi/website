@@ -502,7 +502,7 @@ Any piece of feedback would be much appreciated.
 
 ## The end
 
-Hopefully, you found this series of blog posts useful and motivating enough to start documenting your own Socket.IO API(s). For any questions, comments or corrections feel free to reach out to me at [dimitrios@dedouss.is](mailto:dimitrios@dedouss.is).
+For any questions, comments, or corrections, feel free to reach out to me at [dimitrios@dedouss.is](mailto:dimitrios@dedouss.is).
 
 _A special shout out to [derberq](https://twitter.com/derberq) and the wider AsyncAPI community for being particularly helpful and responsive._ 🙇
 
