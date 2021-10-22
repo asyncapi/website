@@ -1,7 +1,7 @@
 ---
 type: Engineering
 title: "The journey of documenting a Socket.IO API (Pt 2)"
-date: 2021-10-20T10:00:00+01:00
+date: 2021-10-25T10:00:00+01:00
 featured: true
 cover: /img/posts/socketio-part2/cover.webp
 tags:
@@ -32,7 +32,7 @@ Don’t let the title of this section intimidate you. This modelling exercise en
 
 I will approach this problem by traversing the AsyncAPI object structure, attempting to map each of the objects to a semantic of the Socket.IO client API.
 
-The root object of the specification is the [AsyncAPI Object](https://www.asyncapi.com/docs/specifications/v2.2.0#A2SObject). The fields of this object that require special attention are `channels` and `servers`.
+The root object of the specification is the [AsyncAPI Object](https://www.asyncapi.com/docs/specifications/v2.2.0#A2SObject). The fields of this object that require special attention are **channels** and **servers**.
 
 ### Channels
 
@@ -46,7 +46,7 @@ channels:
 
 Channels are addressable components where messages/events flow through. The specification suggests that a server may support multiple channel instances enabling an application to separate its concerns. This sounds very much like the definition of the Socket.IO [namespace](https://socket.io/docs/v4/namespaces/index.html). Namespaces are indeed addressable components that follow the relative URI convention. Since Socket.IO supports multiplexing, a client may emit messages to multiple namespaces over a single shared connection. However, it could also force a seperate connection per namespace (using the [`forceNew` option](https://socket.io/docs/v4/client-initialization/#forceNew)). Thus, a Socket.IO namespace could either be a virtual or physical channel.
 
-Given that connections are established on the namespace level, the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject) is the only object of the specification that MAY include `bindings`. For a Socket.IO API, the [Channel Bindings Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelBindingsObject) should only contain the `ws` field, in which one can specify the handshake context (HTTP headers and query params) that a client should provide when connecting to that particular channel/namespace.
+Given that connections are established on the namespace level, the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject) is the only object of the specification that MAY include **bindings**. For a Socket.IO API, the [Channel Bindings Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelBindingsObject) should only contain the **ws** field, in which one can specify the handshake context (HTTP headers and query params) that a client should provide when connecting to that particular channel/namespace.
 
 ```yaml
 channels:
@@ -63,24 +63,24 @@ channels:
           required: [token]
 ```
 
-Since a single connection (and thus binding) is going to be used across multiple channels, there is no need to repeat the same `bindings` object under each channel/namespace. We can introduce the convention of always including bindings under the main (`/`) namespace but omitting them under the custom ones. At this point I would also like to propose the following bonus semantic: If a custom namespace includes bindings, then the client should always [force a new connection](https://socket.io/docs/v4/client-initialization/#forceNew) when connecting to it.
+Since a single connection (and thus binding) is going to be used across multiple channels, there is no need to repeat the same **bindings** object under each channel/namespace. We can introduce the convention of always including bindings under the main (`/`) namespace but omitting them under the custom ones. At this point I would also like to propose the following bonus semantic: If a custom namespace includes bindings, then the client should always [force a new connection](https://socket.io/docs/v4/client-initialization/#forceNew) when connecting to it.
 
 You have probably noticed that I chose to stick to the [WebSockets Channel Binding](https://github.com/asyncapi/bindings/blob/master/websockets/README.md#channel-binding-object) as the only possible binding that a Socket.IO API may define. One could ask why not use an [HTTP Channel Binding](https://github.com/asyncapi/bindings/blob/master/http/README.md#channel) object alongside the WebSockets one, since the protocol could also be implemented via HTTP long-polling. There are 2 answers to this question:
 
 1. The current latest version of the [AsyncAPI bindings specifications](https://github.com/asyncapi/bindings) does not allow HTTP bindings to be defined at the channel level.
 1. The HTTP long-polling implementation of Socket.IO is essentially a pseudo WebSocket. It is implemented in such a way to resemble the WebSocket implementation. The same HTTP headers and query params are sent to the server no matter the transport mechanism.
 
-Hence, it is safe to use the ws bindings even for the HTTP long-polling fallback. However, in an ideal world, we would have AsyncAPI supporting SocketIO bindings through an explicit `socketio` field. In fact, I have created [a github issue](https://github.com/asyncapi/bindings/issues/74) to pitch this proposal.
+Hence, it is safe to use the ws bindings even for the HTTP long-polling fallback. However, in an ideal world, we would have AsyncAPI supporting SocketIO bindings through an explicit **socketio** field. In fact, I have created [a github issue](https://github.com/asyncapi/bindings/issues/74) to pitch this proposal.
 
-Along with `bindings`, the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject) includes the `publish` and `subscribe` fields, in which one defines the operations that a namespace supports. The `publish` [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) lists all the possible events that the client may emit (`socket.emit`), while the `subscribe` operation defines the events that the client may listen to (`socket.on`).
+Along with **bindings**, the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject) includes the **publish** and **subscribe** fields, in which one defines the operations that a namespace supports. The **publish** [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) lists all the possible events that the client may emit (`socket.emit`), while the **subscribe** operation defines the events that the client may listen to (`socket.on`).
 
-A Socket.IO event can be expressed using the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject), where the `name` field describes the `eventName` and the `payload` field describes the schema of the `args` that the client passes as part of the `socket.emit` invocation: `socket.emit(eventName[, …args][, ack])`. For `subscribe` events, `payload` defines the structure of the arguments that the event handler callback expects: `socket.on(eventName, (...args) => {})`.
+A Socket.IO event can be expressed using the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject), where the **name** field describes the **eventName** and the **payload** field describes the schema of the **args** that the client passes as part of the **socket.emit** invocation: `socket.emit(eventName[, …args][, ack])`. For **subscribe** events, **payload** defines the structure of the arguments that the event handler callback expects: `socket.on(eventName, (...args) => {})`.
 
 The structure of the payload value depends on the number of arguments expected:
 
-<table class="table table-hover mb-4">
+<table>
   <thead>
-    <tr class="header">
+    <tr>
       <th>Scenario</th>
       <th>Sender-side code</th>
       <th>Payload value structure</th>
@@ -88,13 +88,13 @@ The structure of the payload value depends on the number of arguments expected:
     </tr>
   </thead>
   <tbody>
-    <tr class="odd">
+    <tr>
       <td>No args expected</td>
       <td><inlineCode>{`socket.emit("hello")`}</inlineCode></td>
       <td>n/a — Payload field should be omitted</td>
       <td><CodeBlock showLineNumbers={false}>{`name: hello`}</CodeBlock></td>
     </tr>
-    <tr class="even">
+    <tr>
       <td>Single arg expected</td>
       <td><inlineCode>{`socket.emit("hello", {foo: “bar”})`}</inlineCode></td>
       <td>Any <a href="https://json-schema.org/understanding-json-schema/reference/type.html">type</a> other than <a href="https://json-schema.org/understanding-json-schema/reference/array.html#tuple-validation">tuple</a></td>
@@ -108,7 +108,7 @@ payload:
         </CodeBlock>
       </td>
     </tr>
-    <tr class="odd">
+    <tr>
       <td>Multiple args expected</td>
       <td><inlineCode>{`socket.emit("hello", {foo: “bar”}, 1)`}</inlineCode></td>
       <td><a href="https://json-schema.org/understanding-json-schema/reference/array.html#tuple-validation">Tuple type</a></td>
@@ -128,7 +128,7 @@ payload:
   </tbody>
 </table>
 
-To account for multiple events ([Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)s) per namespace, the `message` field of each [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) allows the `oneOf` array structure. For example, in the message of the publish operation of the `/admin` namespace, the `oneOf` array lists all the available `eventName` and `args` payload pairs that a client can pass to the `adminNamespace.emit` call:
+To account for multiple events ([Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)s) per namespace, the **message** field of each [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) allows the **oneOf** array structure. For example, in the message of the publish operation of the `/admin` namespace, the **oneOf** array lists all the available **eventName** and **args** payload pairs that a client can pass to the `adminNamespace.emit` call:
 
 ```yaml
 channels:
@@ -140,7 +140,7 @@ channels:
           - $ref: "#/components/messages/MessageTwo"
 ```
 
-Now, let’s move on to the acknowledgement semantics of the protocol: The basic unit of information in the Socket.IO protocol is the packet. There are 7 distinct [packet types](https://github.com/socketio/socket.io-protocol#packet-types). The payloads of the publish and subscribe Message Objects described above correspond to the `EVENT` and `BINARY_EVENT` packet types. These are essentially the packets that are transmitted when the Socket.IO sender invokes the `emit` API function of the Socket.IO library (regardless of implementation). In turn, the Socket.IO event receiver handles the received event using the `on` API function of the Socket.IO library. As part of the `on` handler, the receiver may choose to return an acknowledgement of the received message. This acknowledgement is conveyed back to the sender via the `ACK` and `BINARY_ACK` packet types. The ack data is passed as input to the callback that the message sender has provided through the `emit` invocation.
+Now, let’s move on to the acknowledgement semantics of the protocol: The basic unit of information in the Socket.IO protocol is the packet. There are 7 distinct [packet types](https://github.com/socketio/socket.io-protocol#packet-types). The payloads of the publish and subscribe Message Objects described above correspond to the `EVENT` and `BINARY_EVENT` packet types. These are essentially the packets that are transmitted when the Socket.IO sender invokes the **emit** API function of the Socket.IO library (regardless of implementation). In turn, the Socket.IO event receiver handles the received event using the **on** API function of the Socket.IO library. As part of the **on** handler, the receiver may choose to return an acknowledgement of the received message. This acknowledgement is conveyed back to the sender via the `ACK` and `BINARY_ACK` packet types. The ack data is passed as input to the callback that the message sender has provided through the **emit** invocation.
 
 <Figure
   className="text-center"
@@ -160,11 +160,11 @@ In order to express the above semantics, the Message Object (eventName and args 
 | ---------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | args       | [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject) | Schema of the arguments that are passed as input to the acknowledgement callback function. In the case of multiple arguments, use the array type to express the tuple. |
 
-In the case of a `publish` message, the `x-ack` field informs the client that it should expect an acknowledgement from the server, and that this acknowledgement should adhere to the agreed schema. Likewise, for `subscribe` messages the `x-ack` field encourages the client to send a structured acknowledgement, for each message it receives.
+In the case of a **publish** message, the `x-ack` field informs the client that it should expect an acknowledgement from the server, and that this acknowledgement should adhere to the agreed schema. Likewise, for **subscribe** messages the `x-ack` field encourages the client to send a structured acknowledgement, for each message it receives.
 
 ### Servers
 
-The [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject) is – surprise surprise – a map of Server Objects. Each [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject) contains a `url` field from which the client may infer the custom path to the Socket.IO server. This custom path should then be provided via the `path` option upon the [initialisation of the Socket.IO connection manager](https://socket.io/docs/v4/client-api/#io-url-options), alongside the `url` arg. The `protocol` field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject) is also required, and specifies the scheme part of that `url` arg. Its value should equal any of the `ws`, `wss`, `http` or `https` protocols. For a Socket.IO client, it does not really matter whether the scheme is http or ws, due to the upgrade mechanism. Thus, for Socket.IO APIs, the only purpose of the `protocol` field is to indicate the use (or absence) of SSL.
+The [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject) is – surprise surprise – a map of Server Objects. Each [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject) contains a **url** field from which the client may infer the custom path to the Socket.IO server. This custom path should then be provided via the **path** option upon the [initialisation of the Socket.IO connection manager](https://socket.io/docs/v4/client-api/#io-url-options), alongside the **url** arg. The **protocol** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject) is also required, and specifies the scheme part of that **url** arg. Its value should equal any of the **ws**, **wss**, **http** or **https** protocols. For a Socket.IO client, it does not really matter whether the scheme is http or ws, due to the upgrade mechanism. Thus, for Socket.IO APIs, the only purpose of the **protocol** field is to indicate the use (or absence) of SSL.
 
 ### Summary
 
@@ -174,14 +174,14 @@ We made it to the end of the modelling exercise the outcome of which is the foll
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Namespace](https://socket.io/docs/v4/namespaces/index.html)                                                                                                                | [Channel](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsChannel) (described through the [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject))                                                                                                                                                                                   |
 | [IO options](https://www.google.com/url?q=https://socket.io/docs/v4/client-api/%23io-url-options&sa=D&source=editors&ust=1626260158636000&usg=AOvVaw3Jm-RtRjuNphtaCN-54p4L) | [WebSockets Channel Binding](https://github.com/asyncapi/bindings/blob/master/websockets/README.md#channel-binding-object)                                                                                                                                                                                                                                                               |
-| `namespaceSocket.emit(eventName[, …args][, ack])`                                                                                                                           | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the `publish` field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available `eventName` & `args` pairs for this `emit` invocation are listed under the `message` field, through the `oneOf` array structure.              |
-| `namespaceSocket.on(eventName, callback)`                                                                                                                                   | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the `subscribe` field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available `eventName` & `callback` argument pairs for this `on` invocation are listed under the `message` field, through the `oneOf` array structure. |
+| `namespaceSocket.emit(eventName[, …args][, ack])`                                                                                                                           | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the **publish** field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available **eventName** & **args** pairs for this **emit** invocation are listed under the **message** field, through the **oneOf** array structure.              |
+| `namespaceSocket.on(eventName, callback)`                                                                                                                                   | [Operation Object](https://www.asyncapi.com/docs/specifications/v2.2.0#operationObject) defined under the **subscribe** field of a [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.2.0#channelItemObject). The available **eventName** & **callback** argument pairs for this **on** invocation are listed under the **message** field, through the **oneOf** array structure. |
 | Event                                                                                                                                                                       | [Message](https://www.asyncapi.com/docs/specifications/v2.2.0#definitionsMessage) (described through the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                            |
-| `eventName`                                                                                                                                                                 | The `name` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                                                                                                             |
-| Event `args`                                                                                                                                                                | The `payload` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)                                                                                                                                                                                                                                                                           |
-| `ack`                                                                                                                                                                       | The `x-ack` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). Requires an [extension of the specification](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions). The field may be populated for both `publish` and `subscribe` messages.                                                                         |
-| Custom path (`path` option)                                                                                                                                                 | The `url` field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                                 |
-| Use of TLS (regardless of transport mechanism)                                                                                                                              | The `protocol` field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                            |
+| **eventName**                                                                                                                                                                 | The **name** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject))                                                                                                                                                                                                                                                                             |
+| Event **args**                                                                                                                                                                | The **payload** field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject)                                                                                                                                                                                                                                                                           |
+| **ack**                                                                                                                                                                       | The `x-ack` field of the [Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). Requires an [extension of the specification](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions). The field may be populated for both **publish** and **subscribe** messages.                                                                         |
+| Custom path (`path` option)                                                                                                                                                 | The **url** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                                 |
+| Use of TLS (regardless of transport mechanism)                                                                                                                              | The **protocol** field of the [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)                                                                                                                                                                                                                                                                            |
 
 ## In practice
 
@@ -504,6 +504,6 @@ Any piece of feedback would be much appreciated.
 
 For any questions, comments, or corrections, feel free to reach out to me at [dimitrios@dedouss.is](mailto:dimitrios@dedouss.is).
 
-_A special shout out to [derberq](https://twitter.com/derberq) and the wider AsyncAPI community for being particularly helpful and responsive._ 🙇
+_A special shout out to [derberq](https://twitter.com/derberq), [alequetzalli](https://twitter.com/QuetzalliAle), and the wider AsyncAPI community for being particularly helpful and responsive._ 🙇
 
 > Photo by <a href="https://unsplash.com/photos/A4iL43vunlY">Matt Howard</a> on <a href="https://unsplash.com/photos/A4iL43vunlY">Unsplash</a>
