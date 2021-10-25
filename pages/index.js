@@ -176,6 +176,9 @@ function HomePage() {
             ))
           }
         </div>
+        <div className="my-10 text-center">
+          <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="/blog" text="View more blog posts" />
+        </div>
       </Container>
       <Footer />
     </>

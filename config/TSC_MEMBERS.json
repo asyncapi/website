@@ -187,5 +187,15 @@
         "repos": [
             "go-watermill-template"
         ]
+    },
+    {
+        "name": "Cameron Rushton",
+        "github": "CameronRushton",
+        "availableForHire": false,
+        "company": "Solace",
+        "repos": [
+            "java-spring-cloud-stream-template",
+            "python-paho-template"
+        ]
     }
 ]
