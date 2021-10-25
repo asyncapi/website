@@ -7,7 +7,8 @@ import generatorflags from '../config/generator-flags.json'
 export default function GeneratorInstallation({ }) {
   const [template, setTemplate] = useState('@asyncapi/html-template')
   // By default we will have output folder flag so its set here.
-  const [params, setParams] = useState(' -o example')
+  const [params, setParams] = useState('-o example')
+  const [specPath, setSpecPath] = useState('https://bit.ly/asyncapi')
   
   function onChangeTemplate(templateName) {
    
@@ -19,18 +20,19 @@ export default function GeneratorInstallation({ }) {
       // so it is mandatory to have check in case if any misses the option in future
       if(templateBasedJSON){
         setParams(templateBasedJSON.flag)
+        setSpecPath(templateBasedJSON.specPath)
       }
     }
   }
 
   function getNpmCode() {
     return `npm install -g @asyncapi/generator
-ag https://bit.ly/asyncapi ${template}${params}`
+ag ${specPath} ${template} ${params}`
   }
 
   function getDockerCode() {
     return `docker run --rm -it -v \${PWD}/example:/app/example \\
-asyncapi/generator https://bit.ly/asyncapi ${template}${params}`
+asyncapi/generator ${specPath} ${template} ${params}`
   }
 
   return (
