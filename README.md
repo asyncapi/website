@@ -76,3 +76,9 @@ This repository has the following structure:
   ├── postcss.config.js           # PostCSS configuration file
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
+
+
+## Spin up Gitpod codespace
+In order to prepare and spin up a Gitpod dev environment for our project, we configured our workspace through a [.gitpod.yml](/.gitpod.yml) file.
+
+To spin up a Gitpod codespace, use **8080** for your port number: `http://localhost:8080/`.
