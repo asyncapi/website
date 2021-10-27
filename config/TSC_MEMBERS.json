@@ -73,7 +73,7 @@
         "linkedin": "jorge-aguiar-martin",
         "twitter": "jotamusik",
         "availableForHire": false,
-        "company": "LeanMind",
+        "company": "The Agile Monkeys",
         "repos": [
             "cli"
         ]
@@ -186,6 +186,16 @@
         "availableForHire": false,
         "repos": [
             "go-watermill-template"
+        ]
+    },
+    {
+        "name": "Cameron Rushton",
+        "github": "CameronRushton",
+        "availableForHire": false,
+        "company": "Solace",
+        "repos": [
+            "java-spring-cloud-stream-template",
+            "python-paho-template"
         ]
     }
 ]
