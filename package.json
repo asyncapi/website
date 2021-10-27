@@ -42,7 +42,7 @@
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^9.7.6",
     "dotenv": "^8.2.0",
-    "gray-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "jgexml": "^0.4.4",
     "lodash": "^4.17.21",
     "markdown-to-txt": "^1.0.1",

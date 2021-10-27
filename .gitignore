@@ -4,6 +4,7 @@
 node_modules
 .next
 config/posts.json
+config/tools/*.json
 public/rss.xml
 .env.local
 roadmap.json

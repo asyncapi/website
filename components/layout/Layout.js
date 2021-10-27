@@ -5,10 +5,13 @@ import JobsLayout from './JobsLayout'
 import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import JobsContext from '../../context/JobsContext'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts, getToolByName, getToolBySlug } from '../../lib/api'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
+
+  const regex = new RegExp(/tools\/*.*\/docs/);
+  const isToolsDocs = regex.test(pathname)
 
   if (pathname.startsWith('/docs/')) {
     const posts = getAllPosts()
@@ -47,7 +50,19 @@ export default function Layout({ children }) {
         {children}
       </JobsLayout>
     )
-  } else {
+  } else if(isToolsDocs) {
+
+    const toolName = pathname.split('/')[2];
+    const tools = getToolByName(toolName)
+    const tool = getToolBySlug(toolName, pathname)
+
+    return (
+      <DocsLayout post={tool} navItems={tools}>
+        {children}
+      </DocsLayout>
+    )
+  }
+  else {
     const post = getPostBySlug(pathname)
     if (post) {
       return (
