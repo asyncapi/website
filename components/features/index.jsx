@@ -21,17 +21,17 @@ const features = [
     ],
   },
   {
+    name: "Code Generation",
+    description:
+      "Generate documentation, Code (TypeScript, Java, C#, etc) and more out of your AsyncAPI files.",
+    links: [{ label: "Generator", href: "tools/generator" }, { label: "Modelina", href: "tools/modelina" }],
+  },
+  {
     name: "Community",
     description: "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
     links: [
       { label: "Join us", href: "https://asyncapi.com/slack-invite" },
     ],
-  },
-  {
-    name: "Code Generation",
-    description:
-      "Generate documentation, Code (TypeScript, Java, C#, etc) and more out of your AsyncAPI files.",
-    links: [{ label: "Generator", href: "tools/generator" }, { label: "Modelina", href: "tools/modelina" }],
   },
   {
     name: "Open Governance",
@@ -58,10 +58,10 @@ export default function Features() {
           Improving the current state of Event-Driven Architectures (EDA)
         </p>
         <div className="mt-12 text-left">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid  grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.name}>
-                <div className="flow-root shadow-lg rounded-lg px-6 pb-8">
+              <div key={feature.name} className="flex flex-col justify-between shadow-lg rounded-lg px-6 pb-8">
+                <div>
                   <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                     {feature.name}
                   </h3>
@@ -70,20 +70,19 @@ export default function Features() {
                       {feature.description}
                     </p>
                   )}
-
-                  <div className="flex justify-between">
-                    {feature.links.map((link) => {
-                      return (
-                        <a
-                          key={link.label}
-                          className="mt-6 inline-block text-primary-500"
-                          href={link.href}
-                        >
-                          {link.label}
-                        </a>
-                      );
-                    })}
-                  </div>
+                </div>
+                <div className="flex justify-between">
+                  {feature.links.map((link) => {
+                    return (
+                      <a
+                        key={link.label}
+                        className="mt-6 inline-block text-primary-500"
+                        href={link.href}
+                      >
+                        {link.label}
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             ))}
