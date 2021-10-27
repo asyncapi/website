@@ -15,7 +15,7 @@ const features = [
         href: "https://github.com/asyncapi/html-template",
       },
       {
-        label: "React Components",
+        label: "React Component",
         href: "https://github.com/asyncapi/asyncapi-react/",
       },
     ],
