@@ -2,7 +2,7 @@ const features = [
   {
     name: "Specification",
     description:
-      "Allows you define the interfaces of asynchronous APIs and is protocol agnostic.",
+      "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
     links: [{ label: "Documentation", href: "docs/specifications/latest" }],
   },
   {
