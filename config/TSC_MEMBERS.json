@@ -64,6 +64,7 @@
             "generator",
             "modelina",
             "parser-js",
+            "parser-api",
             "simulator"
         ]
     },
@@ -218,6 +219,19 @@
         "company": "Ineat",
         "repos": [
             "avro-schema-parser"
+        ]
+    },
+    {
+        "name": "Sergio Moya",
+        "github": "smoya",
+        "linkedin": "smoya",
+        "twitter": "smoyac",
+        "availableForHire": false,
+        "company": "Postman",
+        "repos": [
+            "event-gateway",
+            "go-watermill-template",
+            "parser-api"
         ]
     }
 ]
