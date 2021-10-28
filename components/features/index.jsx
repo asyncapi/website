@@ -30,7 +30,7 @@ const features = [
     name: "Community",
     description: "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
     links: [
-      { label: "Join us", href: "https://asyncapi.com/slack-invite" },
+      { label: "Join our Slack", href: "https://asyncapi.com/slack-invite" },
     ],
   },
   {
