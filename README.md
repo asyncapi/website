@@ -43,6 +43,11 @@ npm run dev
 
 You can access the live development server at [localhost:8080](http://localhost:8080).
 
+### Spin up Gitpod codespace
+In order to prepare and spin up a Gitpod dev environment for our project, we configured our workspace through a [.gitpod.yml](/.gitpod.yml) file.
+
+To spin up a Gitpod codespace, go to http://gitpod.io/#https://github.com/asyncapi/website.
+
 ### Build
 
 To build a production-ready website, run the following command:
