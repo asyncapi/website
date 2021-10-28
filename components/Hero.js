@@ -18,8 +18,8 @@ export default function Hero({ className = '' }) {
           </span>
         </h1>
         <h2 className="text-gray-500 text-lg font-normal mb-16 max-w-3xl mx-auto">
-          Open Source tools to easily build and maintain your event-driven
-          architecture. All powered by the AsyncAPI specification, the{" "}
+          Open-Source tools to easily build and maintain your event-driven
+          architecture. All powered by the AsyncAPI specification, the {" "}
           <strong>industry standard</strong> for defining asynchronous APIs.
         </h2>
         <Button
