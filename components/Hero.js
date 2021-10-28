@@ -30,7 +30,7 @@ export default function Hero({ className = '' }) {
         />
         <OpenInPlaygroundButton />
         <p className="mt-4 text-xs text-gray-500">
-          Proud to be part of the{" "}
+          Proud to be part of the {" "}
           <a className="underline" href="https://www.linuxfoundation.org/">
             Linux Foundation
           </a>
