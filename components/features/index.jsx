@@ -23,7 +23,7 @@ const features = [
   {
     name: "Code Generation",
     description:
-      "Generate documentation, Code (TypeScript, Java, C#, etc) and more out of your AsyncAPI files.",
+      "Generate documentation, Code (TypeScript, Java, C#, etc), and more out of your AsyncAPI files.",
     links: [{ label: "Generator", href: "tools/generator" }, { label: "Modelina", href: "tools/modelina" }],
   },
   {
