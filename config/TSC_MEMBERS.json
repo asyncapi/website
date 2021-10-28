@@ -64,6 +64,7 @@
             "generator",
             "modelina",
             "parser-js",
+            "parser-api",
             "simulator"
         ]
     },
@@ -73,7 +74,7 @@
         "linkedin": "jorge-aguiar-martin",
         "twitter": "jotamusik",
         "availableForHire": false,
-        "company": "LeanMind",
+        "company": "The Agile Monkeys",
         "repos": [
             "cli"
         ]
@@ -196,6 +197,41 @@
         "repos": [
             "java-spring-cloud-stream-template",
             "python-paho-template"
+        ]
+    },
+    {
+        "name": "Dale Lane",
+        "github": "dalelane",
+        "linkedin": "dalelane",
+        "twitter": "dalelane",
+        "availableForHire": false,
+        "company": "IBM",
+        "repos": [
+            "avro-schema-parser"
+        ]
+    },
+    {
+        "name": "Ludovic Dussart",
+        "github": "m3lkior",
+        "linkedin": "ludovic-dussart-846a8063",
+        "twitter": "ldussart",
+        "availableForHire": false,
+        "company": "Ineat",
+        "repos": [
+            "avro-schema-parser"
+        ]
+    },
+    {
+        "name": "Sergio Moya",
+        "github": "smoya",
+        "linkedin": "smoya",
+        "twitter": "smoyac",
+        "availableForHire": false,
+        "company": "Postman",
+        "repos": [
+            "event-gateway",
+            "go-watermill-template",
+            "parser-api"
         ]
     }
 ]
