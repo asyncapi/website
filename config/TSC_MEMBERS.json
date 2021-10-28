@@ -197,5 +197,27 @@
             "java-spring-cloud-stream-template",
             "python-paho-template"
         ]
+    },
+    {
+        "name": "Dale Lane",
+        "github": "dalelane",
+        "linkedin": "dalelane",
+        "twitter": "dalelane",
+        "availableForHire": false,
+        "company": "IBM",
+        "repos": [
+            "avro-schema-parser"
+        ]
+    },
+    {
+        "name": "Ludovic Dussart",
+        "github": "m3lkior",
+        "linkedin": "ludovic-dussart-846a8063",
+        "twitter": "ldussart",
+        "availableForHire": false,
+        "company": "Ineat",
+        "repos": [
+            "avro-schema-parser"
+        ]
     }
 ]
