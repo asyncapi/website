@@ -37,7 +37,7 @@ const features = [
     name: "Open Governance",
     description:
       "Our Open-Source project is part of Linux Foundation and works under an Open Governance model.",
-    links: [{ label: "Read more", href: "blog/governance-motivation" }, { label: "TSC Members", href: "community/tsc" }],
+    links: [{ label: "Read more about Open Governance", href: "blog/governance-motivation" }, { label: "TSC Members", href: "community/tsc" }],
   },
   {
     name: "And much more...",
