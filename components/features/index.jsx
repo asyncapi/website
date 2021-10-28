@@ -8,7 +8,7 @@ const features = [
   {
     name: "Document APIs",
     description:
-      "Use our tools that let you generate documentation on a build level, on a server and on a client.",
+      "Use our tools to generate documentation at the build level, on a server, and on a client.",
     links: [
       {
         label: "HTML Template",
