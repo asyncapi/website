@@ -1,6 +1,6 @@
 import Button from './buttons/Button'
 import ArrowRight from './icons/ArrowRight'
-import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
+import OpenInStudioButton from './buttons/OpenInStudioButton'
 import Features from '../components/features'
 import DemoAnimation from './DemoAnimation'
 import AnnouncementHero from '../components/campaigns/AnnoucementHero'
@@ -22,13 +22,8 @@ export default function Hero({ className = '' }) {
           architecture. All powered by the AsyncAPI specification, the {" "}
           <strong>industry standard</strong> for defining asynchronous APIs.
         </h2>
-        <Button
-          className="block md:inline-block"
-          text="Read the docs"
-          href="/docs/getting-started"
-          icon={<ArrowRight className="-mb-1 h-5 w-5" />}
-        />
-        <OpenInPlaygroundButton />
+        <Button className="block md:inline-block" text="Read the docs" href="/docs/getting-started" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
+        <OpenInStudioButton text='Open Studio' />
         <p className="mt-4 text-xs text-gray-500">
           Proud to be part of the {" "}
           <a className="underline" href="https://www.linuxfoundation.org/">
