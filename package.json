@@ -33,6 +33,7 @@
     "@asyncapi/modelina": "^0.39.0",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@heroicons/react": "^1.0.5",
     "@mdx-js/loader": "^1.6.4",
     "@mdx-js/react": "^1.6.4",
     "@monaco-editor/react": "^3.3.0",
