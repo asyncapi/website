@@ -1,11 +1,12 @@
-const { writeFileSync } = require("fs");
-const { resolve } = require("path");
-const { graphql } = require("@octokit/graphql");
-require("dotenv").config({
-  path: resolve(process.cwd(), ".env.local"),
+const { writeFileSync } = require('fs');
+const { resolve } = require('path');
+const { graphql } = require('@octokit/graphql');
+
+require('dotenv').config({
+  path: resolve(process.cwd(), '.env.local'),
 });
 
-async function start() {
+module.exports = async function buildMeetings() {
   try {
     const eventIssues = await graphql(
       `
@@ -21,8 +22,8 @@ async function start() {
         }
       `,
       {
-        owner: "asyncapi",
-        repo: "community",
+        owner: 'asyncapi',
+        repo: 'community',
         headers: {
           authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
@@ -30,8 +31,8 @@ async function start() {
     );
 
     const result = eventIssues.repository.issues.nodes.map((meeting) => {
-      const [title, dateAndTime] = meeting.title.split(",");
-      const dateAndTimeArray = dateAndTime.split(" ");
+      const [title, dateAndTime] = meeting.title.split(',');
+      const dateAndTimeArray = dateAndTime.split(' ');
       return {
         title,
         url: meeting.url,
@@ -45,15 +46,12 @@ async function start() {
         ),
       };
     });
-    console.log(result);
     writeFileSync(
-      resolve(__dirname, "..", "meetings.json"),
-      JSON.stringify(result, null, "  ")
+      resolve(__dirname, '..', 'meetings.json'),
+      JSON.stringify(result, null, '  ')
     );
   } catch (e) {
     console.error(e);
-    writeFileSync(resolve(__dirname, "..", "meetings.json"), "{}");
+    writeFileSync(resolve(__dirname, '..', 'meetings.json'), '{}');
   }
-}
-
-start();
+};
