@@ -3,7 +3,7 @@ const features = [
     name: "Specification",
     description:
       "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
-    links: [{ label: "Documentation", href: "docs/specifications/latest" }],
+    links: [{ label: "Documentation", href: "docs/specifications/latest", id:'whyasyncapi-spec-documentation-link' }],
   },
   {
     name: "Document APIs",
@@ -13,10 +13,12 @@ const features = [
       {
         label: "HTML Template",
         href: "https://github.com/asyncapi/html-template",
+        id:'whyasyncapi-apis-htmltemplate-link'
       },
       {
         label: "React Component",
         href: "https://github.com/asyncapi/asyncapi-react/",
+        id:'whyasyncapi-apis-reactcomponents-link'
       },
     ],
   },
@@ -24,26 +26,26 @@ const features = [
     name: "Code Generation",
     description:
       "Generate documentation, Code (TypeScript, Java, C#, etc), and more out of your AsyncAPI files.",
-    links: [{ label: "Generator", href: "tools/generator" }, { label: "Modelina", href: "tools/modelina" }],
+    links: [{ label: "Generator", href: "tools/generator", id:'whyasyncapi-generation-generator-link' }, { label: "Modelina", href: "tools/modelina", id:'whyasyncapi-generation-modelina-link' }],
   },
   {
     name: "Community",
     description: "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
     links: [
-      { label: "Join our Slack", href: "https://asyncapi.com/slack-invite" },
+      { label: "Join our Slack", href: "https://asyncapi.com/slack-invite", id:'whyasyncapi-community-slack-link' },
     ],
   },
   {
     name: "Open Governance",
     description:
       "Our Open-Source project is part of Linux Foundation and works under an Open Governance model.",
-    links: [{ label: "Read more about Open Governance", href: "blog/governance-motivation" }, { label: "TSC Members", href: "community/tsc" }],
+    links: [{ label: "Read more about Open Governance", href: "blog/governance-motivation", id:'whyasyncapi-governance-more-link' }, { label: "TSC Members", href: "community/tsc", id:'whyasyncapi-governance-tsc-link' }],
   },
   {
     name: "And much more...",
     description:
       "We have many different tools and welcome you to explore our ideas and propose new ideas to AsyncAPI.",
-    links: [{ label: "View GitHub Discussions", href: "https://github.com/asyncapi/community/discussions" }],
+    links: [{ label: "View GitHub Discussions", href: "https://github.com/asyncapi/community/discussions", id:'whyasyncapi-muchmore-github-link' }],
   },
 ];
 
@@ -78,6 +80,7 @@ export default function Features() {
                         key={link.label}
                         className="mt-6 inline-block text-primary-500"
                         href={link.href}
+                        id={link.id}
                       >
                         {link.label}
                       </a>
