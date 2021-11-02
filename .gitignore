@@ -8,3 +8,4 @@ public/rss.xml
 .env.local
 roadmap.json
 yarn.lock
+meetings.json
