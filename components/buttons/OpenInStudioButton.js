@@ -7,7 +7,7 @@ export default function OpenInStudioButton() {
     <Button
       className="block mt-2 md:mt-0 md:inline-block md:ml-2"
       bgClassName="bg-green-500"
-      text="Open Studio"
+      text="Open in Studio"
       href={`https://studio.asyncapi.com?url=${sampleSpec}`}
       target="_blank"
       icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
