@@ -17,7 +17,7 @@ import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
 import meetingsData from '../meetings.json'
-import NewCalendar from '../components/NewCalendar'
+import DynamicCalendar from '../components/DynamicCalendar'
 import DemoAnimation from "../components/DemoAnimation";
 
 function HomePage() {
@@ -97,9 +97,11 @@ function HomePage() {
 
             <div className="mt-12 lg:flex lg:flex-row-reverse">
               <div className="mt-10 lg:mt-0 lg:flex-1">
-                {meetingsData.length === 0 
-                ? <Calendar /> 
-                : <NewCalendar meetingsData={meetingsData}/>}
+              {meetingsData.length === 0 ? (
+                  <Calendar />
+                ) : (
+                  <DynamicCalendar meetingsData={meetingsData} />
+                )}
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-8">
                 <div className="mt-5">

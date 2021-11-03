@@ -1,13 +1,11 @@
 import moment from 'moment';
 
-export default function NewCalendar({ className = '', meetingsData }) {
+export default function DynamicCalendar({ className = '', meetingsData }) {
   let meetingsWithDates = meetingsData.map((meeting) => ({
     ...meeting,
     date: new Date(meeting.date),
   }));
-  if (meetingsData.length === 0) {
-    return null;
-  }
+
   meetingsWithDates.sort((a, b) => a.date - b.date);
 
   return (
