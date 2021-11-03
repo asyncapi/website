@@ -1,17 +1,11 @@
-const {
-  readdirSync,
-  statSync,
-  existsSync,
-  readFileSync,
-  writeFileSync,
-} = require('fs');
-const { join, resolve, basename } = require('path');
-const { inspect } = require('util');
-const frontMatter = require('gray-matter');
-const toc = require('markdown-toc');
-const { slugify } = require('markdown-toc/lib/utils');
-const readingTime = require('reading-time');
-const { markdownToTxt } = require('markdown-to-txt');
+const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
+const { join, resolve, basename } = require('path')
+const { inspect } = require('util')
+const frontMatter = require('gray-matter')
+const toc = require('markdown-toc')
+const { slugify } = require('markdown-toc/lib/utils')
+const readingTime = require('reading-time')
+const { markdownToTxt } = require('markdown-to-txt')
 
 module.exports = async function buildPostList() {
   let specWeight = 100;
