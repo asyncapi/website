@@ -52,6 +52,6 @@ module.exports = async function buildMeetings() {
     );
   } catch (e) {
     console.error(e);
-    writeFileSync(resolve(__dirname, '..', 'meetings.json'), '{}');
+    writeFileSync(resolve(__dirname, '..', 'meetings.json'), '[]');
   }
 };
