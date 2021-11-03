@@ -77,7 +77,7 @@ export default function CliPage() {
                 Installation & Usage
               </h4>
               <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
-                Start using AsyncAPI CLI really quickly. Select one of our
+                Start using AsyncAPI CLI within seconds by selecting one of our
                 commands to get started.
               </p>
               {renderButtons()}
