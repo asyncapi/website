@@ -20,7 +20,7 @@ const features = [
   {
     name: "Validate",
     description:
-      "Validate your AsyncAPI files with the CLI. Quickly get feedback to verify your AsyncAPI is within the correct format.",
+      "Validate your AsyncAPI documents with the CLI. Quickly get feedback to verify your AsyncAPI document is within the correct format.",
     icon: BadgeCheckIcon,
   },
   {
