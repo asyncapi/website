@@ -50,7 +50,7 @@ export default function CliPage() {
   }
 
   const description =
-    "Create, validate and explore your AsyncAPI files with our CLI tool";
+    "Create, validate, and explore your AsyncAPI files with our CLI tool.";
   const image = "/img/social/generator.png";
 
   return (
