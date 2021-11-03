@@ -119,7 +119,7 @@ export default function CliPage() {
                     />
                   </div>
                   <div>
-                    <h4 className="text-xs">Open AsyncAPI studio</h4>
+                    <h4 className="text-xs">Open AsyncAPI Studio</h4>
                     <CodeBlock
                       language="generator-cli"
                       textSizeClassName="text-sm"
