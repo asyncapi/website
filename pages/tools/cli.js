@@ -73,7 +73,7 @@ export default function CliPage() {
 
           <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative lg:mt-8">
-              <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+              <h4 className="text-xl md:text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
                 Installation & Usage
               </h4>
               <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
@@ -83,18 +83,57 @@ export default function CliPage() {
               {renderButtons()}
             </div>
 
-            <div className="relative max-w-full mt-8 mx-auto">
-              <CodeBlock
-                language="generator-cli"
-                textSizeClassName="text-sm"
-                className="shadow-lg"
-                codeBlocks={[
-                  {
-                    language: "npm",
-                    code: `npm install -g @asyncapi/cli`,
-                  },
-                ]}
-              />
+            <div className="relative max-w-full mt-8 mx-auto space-y-10">
+              <div>
+                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">Installing</h3>
+                <CodeBlock
+                  language="generator-cli"
+                  textSizeClassName="text-sm"
+                  className="shadow-lg"
+                  codeBlocks={[
+                    {
+                      language: "npm",
+                      code: `npm install -g @asyncapi/cli`,
+                    },
+                  ]}
+                />
+              </div>
+
+              <div>
+                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">Examples</h3>
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-xs">
+                      Create a new AsyncAPI file
+                    </h4>
+                    <CodeBlock
+                      language="generator-cli"
+                      textSizeClassName="text-sm"
+                      className="shadow-lg"
+                      codeBlocks={[
+                        {
+                          language: "npm",
+                          code: `asyncapi new`,
+                        },
+                      ]}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-xs">Open AsyncAPI studio</h4>
+                    <CodeBlock
+                      language="generator-cli"
+                      textSizeClassName="text-sm"
+                      className="shadow-lg"
+                      codeBlocks={[
+                        {
+                          language: "npm",
+                          code: `asyncapi start studio`,
+                        },
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
