@@ -14,7 +14,7 @@ const features = [
   {
     name: "New files",
     description:
-      "Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MMQT, WebSockets, Kafka and more...)",
+      "Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MMQT, WebSockets, Kafka, and more.)",
     icon: DocumentAddIcon,
   },
   {
