@@ -14,7 +14,7 @@ const features = [
   {
     name: "New files",
     description:
-      "Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MMQT, WebSockets, Kafka and more...)",
+      "Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MMQT, WebSockets, Kafka, and more.)",
     icon: DocumentAddIcon,
   },
   {
@@ -32,7 +32,7 @@ const features = [
   {
     name: "Open Source",
     description:
-      "All our tools are open source, feel free to contribute new commands or help evolve our exisiting ones",
+      "All our tools are open source, feel free to contribute new commands or help evolve our existing ones.",
     icon: GlobeIcon,
   },
 ];
@@ -50,7 +50,7 @@ export default function CliPage() {
   }
 
   const description =
-    "Create, validate and explore your AsyncAPI files with our CLI tool";
+    "Create, validate, and explore your AsyncAPI files with our CLI tool.";
   const image = "/img/social/generator.png";
 
   return (
@@ -77,7 +77,7 @@ export default function CliPage() {
                 Installation & Usage
               </h4>
               <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
-                Start using AsyncAPI CLI really quickly. Select one of our
+                Start using AsyncAPI CLI within seconds by selecting one of our
                 commands to get started.
               </p>
               {renderButtons()}
@@ -143,7 +143,7 @@ export default function CliPage() {
               Features
             </h4>
             <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
-              Use the AsyncAPI CLI tool to help you create, develop and maintain
+              Use the AsyncAPI CLI tool to help you create, develop, and maintain
               your AsyncAPI files.
             </p>
 
