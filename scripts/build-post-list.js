@@ -7,7 +7,6 @@ const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
 
-module.exports = async function buildPostList() {
 let specWeight = 100
 const result = []
 const basePath = 'pages'
@@ -17,6 +16,7 @@ const postDirectories = [
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
 ]
+module.exports = async function buildPostList() {
 walkDirectories(postDirectories, result)
 if (process.env.NODE_ENV === 'production') {
   console.log(inspect(result, { depth: null, colors: true }))
