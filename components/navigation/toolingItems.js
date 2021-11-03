@@ -8,7 +8,7 @@ import IconParser from '../icons/Parser'
 import { TerminalIcon } from '@heroicons/react/outline';
 
 export default [
-  { href: '/tools/studio', icon: IconHub, title: 'Studio', description: 'Visually design your AsyncAPI files and event-driven architecture.', comingSoon: true },
+  { href: 'https://studio.asyncapi.com/', icon: IconHub, title: 'Studio', description: 'Visually design your AsyncAPI files and event-driven architecture.', beta: true },
   { href: '/tools/generator', icon: IconGenerator, title: 'Generator', description: 'Use your AsyncAPI files to generate documentation, code, anything!' },
   { href: '/tools/cli', icon: TerminalIcon, title: 'CLI', description: 'Interact with AsyncAPI from the comfort of your CLI.' },
   { href: '/tools/modelina', icon: IconModelina, title: 'Modelina', description: 'Sometimes you just want to generate data models from your payload.' },
