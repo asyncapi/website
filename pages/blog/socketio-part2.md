@@ -1,7 +1,7 @@
 ---
 type: Engineering
 title: "The journey of documenting a Socket.IO API (Pt 2)"
-date: 2021-10-25T10:00:00+01:00
+date: 2021-11-04T10:00:00+01:00
 featured: true
 cover: /img/posts/socketio-part2/cover.webp
 tags:
