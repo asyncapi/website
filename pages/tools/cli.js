@@ -32,7 +32,7 @@ const features = [
   {
     name: "Open Source",
     description:
-      "All our tools are open source, feel free to contribute new commands or help evolve our exisiting ones",
+      "All our tools are open source, feel free to contribute new commands or help evolve our existing ones.",
     icon: GlobeIcon,
   },
 ];
