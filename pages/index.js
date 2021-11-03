@@ -16,6 +16,8 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
+import meetingsData from '../meetings.json'
+import NewCalendar from '../components/NewCalendar'
 
 function HomePage() {
   const posts = getAllPosts()
@@ -78,7 +80,9 @@ function HomePage() {
 
             <div className="mt-12 lg:flex lg:flex-row-reverse">
               <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Calendar />
+                {meetingsData.length === 0 
+                ? <Calendar /> 
+                : <NewCalendar meetingsData={meetingsData}/>}
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-8">
                 <div className="mt-5">
