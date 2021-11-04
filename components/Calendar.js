@@ -1,5 +1,5 @@
 import moment from 'moment'
-import Button from './buttons/Button'
+import GoToCalendarButton from './buttons/GoToCalendarButton'
 export default function Calendar ({ className = '' }) {
   const referenceDate = moment.utc('2020-06-09T08:00:00')
   
@@ -35,12 +35,7 @@ export default function Calendar ({ className = '' }) {
           </div>
         ))
       }
-      <Button
-        className="block md:inline-block md:text-center float-right"
-        text="Go to Calendar"
-        href="https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com"
-        target="_blank"
-      />
+      <GoToCalendarButton />
     </div>
   )
 }
