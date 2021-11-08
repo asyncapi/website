@@ -1,0 +1,50 @@
+name: Use Case
+description: Share how your company is using AsyncAPI
+title: "[UseCase]: "
+labels: ["use-case"]
+assignees: website
+body:
+  - type: markdown
+    attributes:
+      value: Share your use case(s) for AsyncAPI.
+  - type: textarea
+    attributes:
+      label: Please provide the name of your company and/or project.
+    validations:
+      required: true
+  - type: checkboxes
+    id: stage
+    attributes:
+      label: Our company/project uses AsyncAPI in these stages of development
+      description: Check all that apply
+      multiple: true
+      options:
+        - label: development
+        - label: testing
+        - label: production
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Please describe your use of AsyncAPI.
+      description: Include details like what the project does, goals, etc.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: AsyncAPI provided our project the following advantages.
+      description: Provide as much detail as you can.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: We found the following challenges or difficulties...
+      description: Provide as much detail as you can.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Is there anything else you wish to share with us?
+    validations:
+      required: false
+
