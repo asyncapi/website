@@ -132,7 +132,9 @@ function getReleaseDate(text) {
 
 function checkAndGroupDocumentsByCategory(results) {
   return results.reduce((items, item, index) => {
-    const documentCategoryName = item?.menu?.docs?.parent;
+
+    const { menu: { docs: { parent: documentCategoryName } = {} } = {} } = item;
+
     if (documentCategoryName) {
       const documentCategory = result.find((item) => item.title === documentCategoryName);
       const categoryHasBeenProcessed = items.find((item) => item.title === documentCategoryName);
