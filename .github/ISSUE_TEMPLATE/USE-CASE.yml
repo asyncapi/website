@@ -15,13 +15,12 @@ body:
   - type: dropdown
     id: stage
     attributes:
-      label: Our company/project uses AsyncAPI in these stages of development
-      description: Check all that apply
+      label: Our company/project uses AsyncAPI in these stages of development.
       multiple: true
       options:
-        - label: development
-        - label: testing
-        - label: production
+        - development
+        - testing
+        - production
     validations:
       required: true
   - type: textarea
