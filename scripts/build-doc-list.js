@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
 const { join, resolve, basename } = require('path')
 const { inspect } = require('util')
@@ -7,20 +8,34 @@ const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
 
-let specWeight = 100
-const result = []
+const yargs = require('yargs/yargs')
+const { hideBin } = require('yargs/helpers')
+const argv = yargs(hideBin(process.argv)).argv
+
 const basePath = 'pages'
-const postDirectories = [
+const defaultDirectoriesToProcess = [
   [`${basePath}/docs`, '/docs'],
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/about`, '/about'],
-  [`${basePath}/jobs`, '/jobs'],
-]
-walkDirectories(postDirectories, result)
+  [`${basePath}/jobs`, '/jobs']
+];
+
+let specWeight = 100
+const result = []
+
+const output = argv.output;
+const groupCategoriesByFrontMatter = argv.groupByCategories || false;
+const directories = !argv.directory ? defaultDirectoriesToProcess : [[argv.directory]];
+
+walkDirectories(directories, result)
+
 if (process.env.NODE_ENV === 'production') {
   console.log(inspect(result, { depth: null, colors: true }))
 }
-writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
+
+const groupedResults = groupCategoriesByFrontMatter ? checkAndGroupDocumentsByCategory(result) : result;
+
+writeFileSync(resolve(__dirname, '..', 'config', output), JSON.stringify(groupedResults, null, '  '))
 
 function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
   for (let dir of directories) {
@@ -113,4 +128,29 @@ function getReleaseDate(text) {
  const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
  const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
  return releaseDate
+}
+
+function checkAndGroupDocumentsByCategory(results) {
+  return results.reduce((items, item, index) => {
+    const documentCategoryName = item?.menu?.docs?.parent;
+    if (documentCategoryName) {
+      const documentCategory = result.find((item) => item.title === documentCategoryName);
+      const categoryHasBeenProcessed = items.find((item) => item.title === documentCategoryName);
+      if (!documentCategory) {
+        if(!categoryHasBeenProcessed) {
+          items.push({
+            title: documentCategoryName,
+            isSection: true,
+            "weight": 1000 + index,
+            slug: `/tools/modelina/${documentCategoryName}`,
+          });
+        }
+        item.sectionWeight = 1000 + index;
+        item.sectionTitle = documentCategoryName;
+        item.sectionSlug = `/tools/modelina/${documentCategoryName}`;
+      }
+    }
+    return items.concat([item]);
+  }, []);
+
 }
