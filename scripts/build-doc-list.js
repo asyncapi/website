@@ -141,13 +141,11 @@ function checkAndGroupDocumentsByCategory(results) {
           items.push({
             title: documentCategoryName,
             isSection: true,
-            "weight": 1000 + index,
-            slug: `/tools/modelina/${documentCategoryName}`,
+            weight: index
           });
         }
-        item.sectionWeight = 1000 + index;
+        item.sectionWeight =  index;
         item.sectionTitle = documentCategoryName;
-        item.sectionSlug = `/tools/modelina/${documentCategoryName}`;
       }
     }
     return items.concat([item]);
