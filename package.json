@@ -69,11 +69,11 @@
     "remark-images": "^2.0.0",
     "remark-slug": "^6.0.0",
     "tailwindcss": "^1.4.6",
-    "tailwindcss-animations": "^2.0.0"
+    "tailwindcss-animations": "^2.0.0",
+    "yargs": "^17.2.1"
   },
   "devDependencies": {
     "eslint": "^7.0.0",
-    "eslint-plugin-react": "^7.20.0",
-    "yargs": "^17.2.1"
+    "eslint-plugin-react": "^7.20.0"
   }
 }
