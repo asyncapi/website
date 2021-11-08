@@ -12,7 +12,7 @@ body:
       label: Please provide the name of your company and/or project.
     validations:
       required: true
-  - type: checkboxes
+  - type: dropdown
     id: stage
     attributes:
       label: Our company/project uses AsyncAPI in these stages of development
