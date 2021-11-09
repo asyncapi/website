@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run build:posts && npm run build:rss && npm run build:roadmap && next -p 8080",
     "build": "npm run build:posts && npm run build:rss && npm run build:roadmap && next build",
-    "build:posts": "node scripts/build-doc-list.js --output=posts.json",
+    "build:posts": "node scripts/build-doc-list.js",
     "build:rss": "node scripts/build-rss.js",
     "build:roadmap": "node scripts/build-roadmap.js",
     "start": "next start",
