@@ -13,11 +13,15 @@ const directories = [
   [`${basePath}/jobs`, '/jobs']
 ];
 
-const result = []
-walkDirectories(directories, result)
+const main = () => {
+  const result = []
+  walkDirectories(directories, result)
 
-if (process.env.NODE_ENV === 'production') {
-  console.log(inspect(result, { depth: null, colors: true }))
+  if (process.env.NODE_ENV === 'production') {
+    console.log(inspect(result, { depth: null, colors: true }))
+  }
+
+  writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 }
 
-writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
+main();
