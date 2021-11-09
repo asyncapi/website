@@ -18,7 +18,7 @@ export default function Layout({ children }) {
         {children}
       </DocsLayout>
     )
-  } else if(pathname.startsWith('/tools/') && pathname.includes('docs')) {
+  } else if(pathname.startsWith('/tools/') && pathname.includes('/docs')) {
     const toolName = pathname.split('/')[2];
     return (
       <DocsLayout post={getToolBySlug(toolName, pathname)} navItems={getTool(toolName)}>
