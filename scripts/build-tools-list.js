@@ -1,4 +1,3 @@
-/* eslint-disable */
 const { readFileSync, writeFileSync } = require('fs')
 const { resolve } = require('path')
 

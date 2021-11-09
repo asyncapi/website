@@ -1,4 +1,3 @@
-/* eslint-disable */
 const { readdirSync, statSync, existsSync, readFileSync } = require('fs')
 const { join, basename } = require('path')
 const frontMatter = require('gray-matter')
