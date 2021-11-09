@@ -24,7 +24,7 @@ let specWeight = 100
 const result = []
 
 const output = argv.output;
-const groupCategoriesByFrontMatter = argv.groupByCategories || false;
+const groupCategoriesByFrontMatter = !!argv.groupByCategories;
 const directories = !argv.directory ? defaultDirectoriesToProcess : [[argv.directory]];
 
 walkDirectories(directories, result)
