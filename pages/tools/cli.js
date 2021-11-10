@@ -13,25 +13,25 @@ import CodeBlock from "../../components/editor/CodeBlock";
 const features = [
   {
     name: "New files",
-    description:
+    description: () =>
       "Use the CLI tool to quickly create new AsyncAPI files. Select from a range of templates (MMQT, WebSockets, Kafka, and more.)",
     icon: DocumentAddIcon,
   },
   {
     name: "Validate",
-    description:
+    description: () =>
       "Validate your AsyncAPI documents with the CLI. Quickly get feedback to verify your AsyncAPI document is within the correct format.",
     icon: BadgeCheckIcon,
   },
   {
     name: "Open Studio",
-    description:
-      "Got an AsyncAPI file locally? Run `asyncapi studio` to open our studio in seconds.",
+    // eslint-disable-next-line react/display-name
+    description: () => <>Got an AsyncAPI file locally? Run <span className="bg-gray-800 text-gray-100 rounded-sm px-2 py-0.5">asyncapi start studio</span> to open our studio in seconds.</>,
     icon: CodeIcon,
   },
   {
     name: "Open Source",
-    description:
+    description: () =>
       "All our tools are open source, feel free to contribute new commands or help evolve our existing ones.",
     icon: GlobeIcon,
   },
@@ -85,7 +85,9 @@ export default function CliPage() {
 
             <div className="relative max-w-full mt-8 mx-auto space-y-10">
               <div>
-                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">Installing</h3>
+                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">
+                  Installing
+                </h3>
                 <CodeBlock
                   language="generator-cli"
                   textSizeClassName="text-sm"
@@ -100,12 +102,12 @@ export default function CliPage() {
               </div>
 
               <div>
-                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">Examples</h3>
+                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">
+                  Examples
+                </h3>
                 <div className="space-y-5">
                   <div>
-                    <h4 className="text-xs">
-                      Create a new AsyncAPI file
-                    </h4>
+                    <h4 className="text-xs">Create a new AsyncAPI file</h4>
                     <CodeBlock
                       language="generator-cli"
                       textSizeClassName="text-sm"
@@ -143,13 +145,13 @@ export default function CliPage() {
               Features
             </h4>
             <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
-              Use the AsyncAPI CLI tool to help you create, develop, and maintain
-              your AsyncAPI files.
+              Use the AsyncAPI CLI tool to help you create, develop, and
+              maintain your AsyncAPI files.
             </p>
 
             <div className="mt-10">
               <dl className=" md:grid md:grid-cols-2 space-y-0">
-                {features.map((feature) => (
+                {features.map(({ description: Description, ...feature }) => (
                   <div key={feature.name} className="relative mb-10">
                     <dt>
                       <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
@@ -160,7 +162,7 @@ export default function CliPage() {
                       </p>
                     </dt>
                     <dd className="mt-2 ml-16 text-base text-gray-500 pr-10">
-                      {feature.description}
+                      <Description />
                     </dd>
                   </div>
                 ))}
