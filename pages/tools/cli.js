@@ -26,7 +26,7 @@ const features = [
   {
     name: "Open Studio",
     // eslint-disable-next-line react/display-name
-    description: () => <>Got an AsyncAPI file locally? Run <span className="bg-gray-800 text-gray-100 rounded-sm px-2 py-0.5">asyncapi start studio</span> to open our studio in seconds.</>,
+    description: () => <>Got an AsyncAPI file locally? Run <code className=" px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm">asyncapi start studio</code> to open our studio in seconds.</>,
     icon: CodeIcon,
   },
   {
