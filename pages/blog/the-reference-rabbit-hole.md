@@ -88,7 +88,7 @@ This was something that, I especially, did not realize up until this point. In A
 
 By default, `$ref` in the Schema Object, is inherited by [JSON Schema Draft 7](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01), described in [section 8](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8).
 
-One of the key differences between our Reference Object, and how `$ref` is interpreted in JSON Schema Draft 7, is the [$id keyword](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.2). This allows you to define a URI that other schemas within itself need to resolve against. Meaning that it is allowed to do:
+One of the key differences between our Reference Object, and how `$ref` is dereferenced in JSON Schema Draft 7, is the [$id keyword](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.2). This allows you to define a URI that other schemas within itself need to resolve against. Meaning that it is allowed to do:
 
 ```yaml
 asyncapi: "2.2.0"
@@ -109,7 +109,7 @@ components:
 ...
 ```
 
-Which results in the dereferencer to look up the reference for the address property at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the the parent schema (`https://example.com`). I tried a little test in the [new Studio](https://studio.asyncapi.com/), which shoed that this was not supported by the parser. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+Which results in the dereferencing logic to look up the reference for the `address` property, at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). I tried a little test in the [new Studio](https://studio.asyncapi.com/), which shoed that this was not supported by the parser. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 Luckily, they both match the same behavior in terms of extra keywords. Both Reference Object and Schema Object should ignore extra keywords. Unlucky for us, tooling did not follow this behavior, as they include the extra keywords anyway. See [parser-js #404](https://github.com/asyncapi/parser-js/issues/404) for more information.
 
