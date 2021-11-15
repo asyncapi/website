@@ -16,21 +16,25 @@ authors:
 So [Sergio](https://github.com/smoya) and I, went down a little bit of a rabbit hole the last couple of days, when we where discussing [Fran's proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618), and I thought I would share the journey.
 
 ## What is a reference?
-References is something in AsyncAPI we use to allow for reusability, so we don't need to define things twice. In AsyncAPI we refer to this as the [Reference Object](https://www.asyncapi.com/docs/specifications/v2.2.0#referenceObject). 
-
+Just to start with the basic, a references is something in AsyncAPI we use to allow for reusability, so we don't need to define things twice. In AsyncAPI we refer to this as the [Reference Object](https://www.asyncapi.com/docs/specifications/v2.2.0#referenceObject). The reference can either be local within the same document, external in another file, or remotely.
 
 ## The Trigger
-During the discussion Sergio brought up that Fran was actually using an illegal reference, as he, in one of the examples, used a Reference Object for server, which was not allowed.
+During the discussion Sergio brought up that Fran was actually using an illegal reference, as he, in one of the examples, used a Reference Object for a server, which was not allowed. 
 
-Immediately I was like, "Wait, it's not?!". Cause Prior to this, I had always used `$ref` quite extensively in my AsyncAPI documents, - and I knew that the tooling had no problems with `$ref` as long as it was a valid reference that could be resolved. 
+```yaml
+asyncapi: 3.0.0
+...
+servers:
+  mosquitto:
+    $ref: 'common.asyncapi.yaml#/components/servers/mosquitto'
+```
 
-So to me, there was no way you could not reference servers, cause I had done just that in the past.
+Immediately I said, "wait .... It's not?!". Cause prior to this, I had always used `$ref` quite extensively in my AsyncAPI documents, and specifically used a reference for servers. And I knew that the tooling had no problems with the `$ref` as long as it was a valid reference. 
 
 But Sergio was absolutely right, a second look into the specification, `servers` are defined using [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject), which are defined using a map of [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)s. **NOT** `Server Object | Reference Object` as I expected.
 
-
 ### But why did tooling allow it?!
-So after that, we started to realize that there is quite a big difference when and where Reference Objects are allowed. For the full list of discrepancies, check out [spec #650](https://github.com/asyncapi/spec/issues/650).
+So after that, we started to realize, that there is quite a big difference when and where Reference Objects are allowed. For the full list of discrepancies, check out [spec #650](https://github.com/asyncapi/spec/issues/650).
 
 A quick side note, when I say tooling allowed it, I mean the [JS Parser](https://github.com/asyncapi/parser-js), as most of our tooling directly depend upon this library to parse and interact with AsyncAPI documents. 
 
@@ -130,6 +134,4 @@ Overview of issues:
 - [parser-js #404](https://github.com/asyncapi/parser-js/issues/404), highlight that the parser allow for keywords to be defined together with `$ref` and are not being ignored.
 - [parser-js #403](https://github.com/asyncapi/parser-js/issues/403), highlight that the parser does not care about `$id` in the Schema Object, when it should.
 
-
-> Photo by <a href="https://unsplash.com/@emilymorter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emily Morter</a> on <a href="https://unsplash.com/s/photos/confusion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+> Photo by <a href="https://unsplash.com/@nxvision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nigel Tadyanehondo</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
