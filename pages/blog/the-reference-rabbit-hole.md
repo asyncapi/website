@@ -33,14 +33,16 @@ Immediately I said, "wait .... It's not?!". Cause prior to this, I had always us
 
 But Sergio was absolutely right, a second look into the specification, `servers` are defined using [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject), which are defined using a map of [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)s. **NOT** `Server Object | Reference Object` as I expected.
 
-### But why did tooling allow it?!
 So after that, we started to realize, that there is quite a big difference when and where Reference Objects are allowed. For the full list of discrepancies, check out [spec #650](https://github.com/asyncapi/spec/issues/650).
 
 A quick side note, when I say tooling allowed it, I mean the [JS Parser](https://github.com/asyncapi/parser-js), as most of our tooling directly depend upon this library to parse and interact with AsyncAPI documents. 
 
+
+### But why did tooling allow it?!
+
 So back to my own experience, why was I so sure that the tooling allowed for me to use Reference Objects for servers? 
 
-Well, as it turns out, it is because that the underlying parser bundles references before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
+Well, as it turns out, it is because that the underlying parser, bundles references before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
 
 ```yaml
 asyncapi: '2.2.0'
@@ -107,11 +109,11 @@ components:
 ...
 ```
 
-Which results in the dereferencer to look up the reference for the address property at `https://example.com/schemas/address`, because it uses the Base URI of the `$id` (`https://example.com`). A Little test showed that this was not supported by the parser, see [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+Which results in the dereferencer to look up the reference for the address property at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the the parent schema (`https://example.com`). I tried a little test in the [new Studio](https://studio.asyncapi.com/), which shoed that this was not supported by the parser. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
-Luckily, they both match the same behavior in terms of extra keywords. Both Reference Object and Schema Object should ignore extra keywords. Unlucky for us, tooling did not follow this behavior, as they include the extra keywords. See [parser-js #404](https://github.com/asyncapi/parser-js/issues/404) for more information.
+Luckily, they both match the same behavior in terms of extra keywords. Both Reference Object and Schema Object should ignore extra keywords. Unlucky for us, tooling did not follow this behavior, as they include the extra keywords anyway. See [parser-js #404](https://github.com/asyncapi/parser-js/issues/404) for more information.
 
-This difference in behavior, is actually really really annoying from a tooling, or more specifically from a parser perspective. Because this means that we **NEED** to dereference and bundle references differently, based on it's location in the AsyncAPI document, and maybe even with different tooling, since they don't share the same underlying behavior.
+This difference in behavior, is actually really really annoying from a tooling, or more specifically from a parser perspective. Because this means that we **NEED** to dereference and bundle references differently, based on it's location in the AsyncAPI document, and maybe even with different dependencies, since they don't share the same underlying behavior.
 
 This becomes only more apparent if we want to update JSON Schema Draft 7 to [JSON Schema draft 2020-12](https://github.com/asyncapi/spec/issues/596), we no longer will have the same behavior in terms of extra keywords. As from [2019-09 JSON Schema](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02) changed it's behavior to allowing extra keywords along side `$ref` - And this is along side a bunch of other referencing keywords such as `$recursiveAnchor`, `$dynamicAnchor`, ..., which changes the dereference behavior even more.
 
