@@ -125,7 +125,7 @@ In case you are interested, we are also looking for contributors, to help us sol
 Overview of issues:
 
 - [spec #650](https://github.com/asyncapi/spec/issues/650), highlight the discrepancies when the Reference Object can be used.
-- [spec 649](https://github.com/asyncapi/spec/issues/649), tries to solve the core issue that `$ref` means two different things, depending on when it's used.
+- [spec #649](https://github.com/asyncapi/spec/issues/649), tries to solve the core issue that `$ref` means two different things, depending on when it's used.
 - [parser-js #405](https://github.com/asyncapi/parser-js/issues/405), highlight that the parser accurately validates incorrect AsyncAPI documents, because it bundles references before validating.
 - [parser-js #404](https://github.com/asyncapi/parser-js/issues/404), highlight that the parser allow for keywords to be defined together with `$ref` and are not being ignored.
 - [parser-js #403](https://github.com/asyncapi/parser-js/issues/403), highlight that the parser does not care about `$id` in the Schema Object, when it should.
