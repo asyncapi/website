@@ -13,7 +13,7 @@ authors:
     byline: AsyncAPI Maintainer
 ---
 
-So [Sergio](https://github.com/smoya) and I, went down a little bit of a rabbit hole the last couple of days when we were discussing [Fran's proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618), and I thought I would share the journey.
+So [Sergio](https://github.com/smoya) and I went a little bit down a rabbit hole the last couple of days when we were discussing [Fran's proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618), and I thought I would share the journey.
 
 ## What is a reference?
 Just to start with the basics, a reference is something in AsyncAPI we use to allow for reusability, so we don't need to define things twice. In AsyncAPI we refer to this as the [Reference Object](https://www.asyncapi.com/docs/specifications/v2.2.0#referenceObject). The reference can either be local within the same document, external in another file or remotely.
