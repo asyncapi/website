@@ -19,7 +19,7 @@ So [Sergio](https://github.com/smoya) and I, went down a little bit of a rabbit 
 Just to start with the basics, a reference is something in AsyncAPI we use to allow for reusability, so we don't need to define things twice. In AsyncAPI we refer to this as the [Reference Object](https://www.asyncapi.com/docs/specifications/v2.2.0#referenceObject). The reference can either be local within the same document, external in another file or remotely.
 
 ## The Trigger
-During the discussion, Sergio brought up that Fran was actually using an illegal reference, as he, in one of the examples, using a Reference Object for a server, which was not allowed.  More specifically, it was this example where he references the `mosquitto` server:
+During the discussion, Sergio brought up that Fran was actually using an illegal reference. In one of the examples, it used a Reference Object for a server, which is not allowed. More specifically, it was this example where he references the `mosquitto` server:
 
 ```yaml
 asyncapi: 3.0.0
@@ -42,7 +42,7 @@ A quick side note, when I say tooling allowed it, I mean the [JS Parser](https:/
 
 So back to my own experience, why was I so sure that the tooling allowed for me to use Reference Objects for servers? 
 
-Well, as it turns out, it is because that the underlying parser, bundles references before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
+Well, as it turns out, it is because the underlying parser bundles references before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
 
 ```yaml
 asyncapi: '2.2.0'
@@ -84,7 +84,7 @@ We started discussing the reference behavior, and we started to peruse the speci
 
 That was when we took notice, that depending on where you use the `$ref` keyword, it is subject to different behavior.
 
-This was something that, I especially, did not realize up until this point. In AsyncAPI Reference Object, is following [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03), and for our Schema Object something different...
+This was something that, I especially, did not realize up until this point. AsyncAPI Reference Object is following [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03), and for our Schema Object something different...
 
 By default, `$ref` in the Schema Object, is inherited by [JSON Schema Draft 7](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01), described in [section 8](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8).
 
@@ -109,7 +109,7 @@ components:
 ...
 ```
 
-This results in the dereferencing logic to look up the reference for the `address` property, at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). I tried a little test in the [new Studio](https://studio.asyncapi.com/), which showed that this was not supported by the parser. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+This results in the dereferencing logic to look up the reference for the `address` property at `https://example.com/schemas/address` because it uses the Base URI in `$id` from the parent schema (`https://example.com`). I tried a little test in the [new Studio](https://studio.asyncapi.com/), which showed that this was not supported by the parser. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 Luckily, they both match the same behavior in terms of extra keywords. Both Reference Object and Schema Object should ignore extra keywords. Unlucky for us, tooling did not follow this behavior, as they include the extra keywords anyway. See [parser-js #404](https://github.com/asyncapi/parser-js/issues/404) for more information.
 
