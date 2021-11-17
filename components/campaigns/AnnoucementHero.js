@@ -17,7 +17,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
       </div>
       <div className="mt-8 pb-2 space-x-2">
         <Button href="https://www.asyncapi.com/slack-invite" target="_blank" text="Comment and ask questions" />
-        <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="https://conference.asyncapi.com/" target="_blank" text="Check schedule and links to other streaming platforms" />
+        <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="https://conference.asyncapi.com/#schedule" target="_blank" text="Check schedule" />
       </div>
     </div>
   )
