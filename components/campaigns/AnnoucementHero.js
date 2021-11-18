@@ -12,7 +12,7 @@ export default function AnnouncementHero({ className = '', small = false }) {
       <h2 className="text-xl md:text-3xl font-bold countdown-text-gradient">AsyncAPI Conference Day 2 is running!</h2>
       <div className='px-4 mt-4 mx-auto max-w-7xl'>
         <YouTube
-          id="mWQtnQIqXTw"
+          id="3EeMHhbwyOQ"
         />
       </div>
       <div className="mt-8 pb-2 space-x-2">
