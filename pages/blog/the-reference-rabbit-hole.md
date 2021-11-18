@@ -52,7 +52,9 @@ As seen in the streetlight example, in AsyncAPI, to define your message payloads
 
 What `superset` means is we follow the JSON Schema draft 7 specification, but with a few modifications and additions to keywords.
 
-The message `LightMeasured`, contains a keyword called `payload`, which is by default defined as **Schema Object**. However this is where the confusion starts, what behavior does the `$ref` keyword follow? More precisely, which specification?
+The message `LightMeasured`, contains a keyword called `payload`, which is by default defined as **Schema Object**. 
+
+This is where the confusion starts, what behavior does the `$ref` keyword follow? More precisely, which specification?
 
 # The confusion creeping in
 Let's try to take take a closer look at the [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject) to see if we can figure out the answer.
@@ -205,9 +207,10 @@ We started to correlate the findings with the feature request from [Maciej](http
 
 What would this mean for our little `$ref` keywords?
 
-OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references, I dont want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post: https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources
 
-One of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references where extra keywords are now allowed adjacent to `$ref`.
+OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references, I dont want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post: https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources. Besides this the release notes for Draft 2020-12 also offers some guidance which can be found here: https://json-schema.org/draft/2020-12/release-notes.html
+
+Besides having a bunch of new keywords that change the referencing behavior, such as `$dynamicRef`, `$dynamicAnchor`, `$anchor`. One of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references where extra keywords are now allowed adjacent to `$ref`.
 
 But what does this mean exactly? Does this mean `$ref` overwrite any duplicate properties? or the other way around?
 
@@ -235,14 +238,18 @@ This is because in validation, you want to validate that the input data is valid
 
 This behavior is different from what is assumed when using AsyncAPI, as the last option, is more aligned with expected behavior.
 
-This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the spec? This difference is what triggered the last issue in the [spec 649](https://github.com/asyncapi/spec/issues/649).
+Furthermore, now, each schema can define it's own `$schema` that they follow, instead of ONLY being available at the root... 
 
-## No common tooling for dereferencing
+This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the AsyncAPI specification? This difference is what triggered the last issue in the [spec 649](https://github.com/asyncapi/spec/issues/649).
+
+## Hard to find tooling
 This leaves us with one huge deficit, that there are so many different behaviors for references that tooling mix and matches between the specifications and what they solve.
 
 One of the most used tooling for dereferencing stuff in JS, and the one we are using is from [APIDevTools called json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser). We actually use this tool to ensure **ANY** encounters of `$ref` are dereferenced, so the tool has direct access to the schema, without it having to look elsewhere for it. 
 
 However, the tool starting out building build **ONLY**  for dereferencing `$ref` based on the [JSON Reference specification and the JSON Pointer specification](https://github.com/APIDevTools/json-schema-ref-parser/issues/22#issuecomment-231783185).  At least it was, now it's not easy to figure it out what it is for, as [it allows extra properties](https://github.com/APIDevTools/json-schema-ref-parser/issues/232) and [$id is not taken into account](https://github.com/APIDevTools/json-schema-ref-parser/issues/136).
+
+This leaves us in a big of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing), for JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there are no tooling that our [Go parser](https://github.com/asyncapi/parser-go).
 
 ## Final word
 That concludes the rabbit hole me and Sergio went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
