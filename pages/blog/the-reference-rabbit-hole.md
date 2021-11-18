@@ -249,12 +249,14 @@ One of the most used tooling for dereferencing stuff in JS, and the one we are u
 
 However, the tool starting out building build **ONLY**  for dereferencing `$ref` based on the [JSON Reference specification and the JSON Pointer specification](https://github.com/APIDevTools/json-schema-ref-parser/issues/22#issuecomment-231783185).  At least it was, now it's not easy to figure it out what it is for, as [it allows extra properties](https://github.com/APIDevTools/json-schema-ref-parser/issues/232) and [$id is not taken into account](https://github.com/APIDevTools/json-schema-ref-parser/issues/136).
 
-This leaves us in a big of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing), for JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there are no tooling that our [Go parser](https://github.com/asyncapi/parser-go).
+This leaves us in a big of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing), for JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there are no tooling that our [Go parser](https://github.com/asyncapi/parser-go) can use.
+
+And with no official or community tooling, we are left with having to develop it our selves to adopt the spec...
 
 ## Final word
 That concludes the rabbit hole me and Sergio went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
 
-All I can add here, in the end, is a serious :pray: to start switching the mindset from tooling for spec is something others build, to something we all have to build together.
+All I can add here, in the end, is a serious :pray: that we start switching the mindset from tooling for specification is something others build, to something we all have to build together. 
 
 If you have any comments or issues with what was described here, please go into the respective issues and make a comment - also if you think we are wrong!
 
