@@ -88,17 +88,13 @@ So after that, we started to realize, that there is quite a big difference when 
 But... Why did I think it was allowed to do so? 
 
 ## Discrepancies in AsyncAPI Tooling
-This was when we started to take a closer look at tooling, and how it behaved. 
-
 So back to my own experience, why was I so sure that the tooling allowed for me to use **Reference Object**s for servers? 
 
 Well, as it turns out, it is because the [JS parser](https://github.com/asyncapi/parser-js) dereferences before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
 
 ```yaml
 asyncapi: '2.2.0'
-info:
-  title: Test overriding dereferenced objects 
-  version: '1.0.0'
+...
 servers:
   test-server:
     $ref: './servers/testServer.yaml'
@@ -111,26 +107,25 @@ url: ws://mycompany.com/ws
 protocol: ws
 ```
 
-Validating the AsyncAPI document using the [JSON Schema representation for 2.2.0](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.2.0.json), would reject it. 
+Validating the AsyncAPI document using a tool such as [ajv](https://ajv.js.org/) against [JSON Schema representation for 2.2.0](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.2.0.json), it would reject it. 
 
-However, because the parser dereferences first, the document is being validated is this:
+However, because the parser dereferences first, the document that is being validated is this:
 
 ```yaml
 asyncapi: '2.2.0'
-info:
-  title: Test overriding dereferenced objects 
-  version: '1.0.0'
+...
 servers:
   test-server:
     url: ws://mycompany.com/ws
     protocol: ws
 ...
 ```
+
 Checkout [parser-js #405](https://github.com/asyncapi/parser-js/issues/405) for more information.
 
 ## What about `$id` keyword
 
-One of the key differences between our **Reference Object**, and how `$ref` is resolved in JSON Schema Draft 7, is the [$id keyword](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.2). This allows you to define a URI that is used as a base URI. This means that for example a message such as this:
+The next thoughts that came to out minds was, one of the key differences between our **Reference Object**, and how `$ref` is resolved in JSON Schema Draft 7, is the [$id keyword](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.2). This allows you to define a URI that is used as a base URI. This means that for example a message such as this:
 
 ```yaml
 asyncapi: '2.2.0'
@@ -151,8 +146,7 @@ channels:
 
 This will result in the reference for the `address` property, to be looked up at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). 
 
-I tried a little test in the [new Studio](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdDoKICAgIHB1Ymxpc2g6CiAgICAgIG1lc3NhZ2U6CiAgICAgICAgJHJlZjogJyMvY29tcG9uZW50cy9tZXNzYWdlcy9teU1lc3NhZ2UnCmNvbXBvbmVudHM6CiAgbWVzc2FnZXM6CiAgICBteU1lc3NhZ2U6CiAgICAgIHNjaGVtYUZvcm1hdDogYXBwbGljYXRpb24vc2NoZW1hK2pzb247dmVyc2lvbj1kcmFmdC0wNwogICAgICBuYW1lOiBNeU1lc3NhZ2UKICAgICAgcGF5bG9hZDoKICAgICAgICAgICRpZDogJ2h0dHA6Ly9sb2NhbGhvc3QuY29tLycKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgc2VudEF0OgogICAgICAgICAgICAgICRyZWY6ICIvY29tcG9uZW50cy9zY2hlbWFzL3NlbnRBdCI=). See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
-
+I tried a little test in the [new Studio](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdDoKICAgIHB1Ymxpc2g6CiAgICAgIG1lc3NhZ2U6CiAgICAgICAgJHJlZjogJyMvY29tcG9uZW50cy9tZXNzYWdlcy9teU1lc3NhZ2UnCmNvbXBvbmVudHM6CiAgbWVzc2FnZXM6CiAgICBteU1lc3NhZ2U6CiAgICAgIHNjaGVtYUZvcm1hdDogYXBwbGljYXRpb24vc2NoZW1hK2pzb247dmVyc2lvbj1kcmFmdC0wNwogICAgICBuYW1lOiBNeU1lc3NhZ2UKICAgICAgcGF5bG9hZDoKICAgICAgICAgICRpZDogJ2h0dHA6Ly9sb2NhbGhvc3QuY29tLycKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgc2VudEF0OgogICAgICAgICAgICAgICRyZWY6ICIvY29tcG9uZW50cy9zY2hlbWFzL3NlbnRBdCI=). The library tries to resolve the reference at `https:///components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 ## What about `$schema`?
 In JSON Schema Draft 7, and in the **Schema Object**, there exist a keyword, similar to what `schemaFormat` is for the AsyncAPI Message Object, that can be used to define what version of JSON Schema `LightMeasurement` follows.
@@ -181,7 +175,7 @@ Following that, by taking a closer look at the [JSON reference](https://datatrac
 
 > Any members other than "$ref" in a JSON Reference object SHALL be ignored.
 
-What this means, that if we have a reference defined such as:
+What this means, is that if we have a reference defined such as:
 
 ```yaml
 ...
@@ -194,9 +188,9 @@ components:
 ```
 
 
-The `type` property for the message payload, should be completely ignored. So let's try and see what happens when we try this in [Studio again](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIHByb3BlcnRpZXMgd2l0aCBkZXJlZmVyZW5jZWQgb2JqZWN0cyAKICB2ZXJzaW9uOiAnMS4wLjAnCmNoYW5uZWxzOgogIHRlc3Q6CiAgICBwdWJsaXNoOgogICAgICBtZXNzYWdlOgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvbWVzc2FnZXMvTGlnaHRNZWFzdXJlbWVudCcKY29tcG9uZW50czoKICBtZXNzYWdlczoKICAgIExpZ2h0TWVhc3VyZW1lbnQ6IAogICAgICBuYW1lOiBMaWdodE1lYXN1cmVtZW50CiAgICAgIHBheWxvYWQ6CiAgICAgICAgdHlwZTogYm9vbGVhbgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvc2NoZW1hcy9MaWdodE1lYXN1cmVtZW50JwogIHNjaGVtYXM6CiAgICBMaWdodE1lYXN1cmVtZW50OgogICAgICB0eXBlOiBzdHJpbmc=).
+The `type` property for the message payload, should be completely ignored. So let's try and see what happens when we try this in [Studio](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIHByb3BlcnRpZXMgd2l0aCBkZXJlZmVyZW5jZWQgb2JqZWN0cyAKICB2ZXJzaW9uOiAnMS4wLjAnCmNoYW5uZWxzOgogIHRlc3Q6CiAgICBwdWJsaXNoOgogICAgICBtZXNzYWdlOgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvbWVzc2FnZXMvTGlnaHRNZWFzdXJlbWVudCcKY29tcG9uZW50czoKICBtZXNzYWdlczoKICAgIExpZ2h0TWVhc3VyZW1lbnQ6IAogICAgICBuYW1lOiBMaWdodE1lYXN1cmVtZW50CiAgICAgIHBheWxvYWQ6CiAgICAgICAgdHlwZTogYm9vbGVhbgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvc2NoZW1hcy9MaWdodE1lYXN1cmVtZW50JwogIHNjaGVtYXM6CiAgICBMaWdodE1lYXN1cmVtZW50OgogICAgICB0eXBlOiBzdHJpbmc=).
 
-Firstly this is only allowed because we don't first validate the document. However, the underlying behavior still shows that the tooling did not follow the expected behavior, as they include the extra keywords anyway. See [parser-js #404](https://github.com/asyncapi/parser-js/issues/404) for more information.
+Firstly this is only allowed because we don't first validate the document. However, the underlying behavior still shows that the tooling did not follow the expected behavior, as they include the extra keywords anyway. More precisely, the referenced schema did not overwrite anything, as `type: object` was preserved. For more information see [parser-js #404](https://github.com/asyncapi/parser-js/issues/404).
 
 Then what about JSON Schema, does this define a different behavior? The answer to this question can be found [here](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.3):
 
@@ -207,7 +201,7 @@ Luckily, they both match the same behavior in terms of extra keywords. Both Refe
 But, what if I use one of the newer JSON Schema versions, what then?
 
 ## Upgrading to JSON Schema draft 2020-12
-Later in the discussion, we also started to correlate the findings with the feature request from [Maciej](https://github.com/magicmatatjahu) about updating AsyncAPI Schema Object to point towards [JSON Schema Draft 2020-12](https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00).
+We started to correlate the findings with the feature request from [Maciej](https://github.com/magicmatatjahu) about updating AsyncAPI Schema Object to point towards [JSON Schema Draft 2020-12](https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00).
 
 What would this mean for our little `$ref` keywords?
 
