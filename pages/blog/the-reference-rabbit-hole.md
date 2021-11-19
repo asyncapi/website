@@ -188,16 +188,18 @@ components:
   messages:
     LightMeasured:
       payload:
-        type: object
+        type: boolean
         $ref: '#/components/schemas/LightMeasurement'
+  schemas:
+    LightMeasurement:
+      type: string
 ```
-
 
 The `type` property for the message payload, should be completely ignored. So let's try and see what happens when we try this in [Studio](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIHByb3BlcnRpZXMgd2l0aCBkZXJlZmVyZW5jZWQgb2JqZWN0cyAKICB2ZXJzaW9uOiAnMS4wLjAnCmNoYW5uZWxzOgogIHRlc3Q6CiAgICBwdWJsaXNoOgogICAgICBtZXNzYWdlOgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvbWVzc2FnZXMvTGlnaHRNZWFzdXJlbWVudCcKY29tcG9uZW50czoKICBtZXNzYWdlczoKICAgIExpZ2h0TWVhc3VyZW1lbnQ6IAogICAgICBuYW1lOiBMaWdodE1lYXN1cmVtZW50CiAgICAgIHBheWxvYWQ6CiAgICAgICAgdHlwZTogYm9vbGVhbgogICAgICAgICRyZWY6ICcjL2NvbXBvbmVudHMvc2NoZW1hcy9MaWdodE1lYXN1cmVtZW50JwogIHNjaGVtYXM6CiAgICBMaWdodE1lYXN1cmVtZW50OgogICAgICB0eXBlOiBzdHJpbmc=).
 
-Firstly this is only allowed because we don't first validate the document. However, the underlying behavior still shows that the tooling did not follow the expected behavior, as they include the extra keywords anyway. More precisely, the referenced schema did not overwrite anything, as `type: object` was preserved. For more information see [parser-js #404](https://github.com/asyncapi/parser-js/issues/404).
+Once the schema is parsed, all that remains is `type: boolean`, and not the expected `type: string` from the referenced schema. This is clearly the opposite of what the specification defines. For more information see [parser-js #404](https://github.com/asyncapi/parser-js/issues/404).
 
-Then what about JSON Schema, does this define a different behavior? The answer to this question can be found [here](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.3):
+We then asked ourself, what about JSON Schema, does it define a different behavior? The answer to this question can be found [here](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.3):
 
 > All other properties in a "$ref" object MUST be ignored.
 
