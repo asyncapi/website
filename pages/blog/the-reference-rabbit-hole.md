@@ -255,7 +255,7 @@ However, the tool started out being built **ONLY** for dereferencing `$ref` base
 
 This leaves us in a big of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing), for JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there are no tooling that our [Go parser](https://github.com/asyncapi/parser-go) can use.
 
-And with no official or community tooling, we are left with having to develop it our selves to adopt the spec...
+And with no official or community tooling, we are left with having to develop it our selves to adopt the spec... There are luckily efforts being made in [JSON Schema to adopt to such a change](https://github.com/json-schema-org/community/discussions/113).
 
 # Final word
 That concludes the rabbit hole me and Sergio went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
