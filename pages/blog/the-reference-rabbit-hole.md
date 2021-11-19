@@ -216,7 +216,7 @@ OpenAPI have in its most recent version 3.1, switched its default JSON Schema ve
 
 Besides having a bunch of new keywords that change the referencing behavior, such as `$dynamicRef`, `$dynamicAnchor`, `$anchor`, pne of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references where extra keywords are now allowed adjacent to `$ref`.
 
-But what does this mean exactly? Does this mean `$ref` overwrite any duplicate properties? or the other way around?
+But what does this mean exactly? Does this mean `$ref` overwrites any duplicated properties? Or is it the other way around?
 
 Well, there is one thing we need to remember about JSON Schema. It is primary build for validation rules and how a validator can take input data and determine whether that input is valid against the Schema. 
 
