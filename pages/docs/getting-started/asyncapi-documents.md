@@ -12,7 +12,7 @@ An AsyncAPI document is a file that defines and annotates the different componen
 The format of the file must be JSON or YAML; however, only the subset of YAML that matches the JSON capabilities is allowed.
 
 <CodeBlock>
-{`asyncapi: 2.1.0
+{`asyncapi: 2.2.0
 info:
   title: Example
   version: 0.1.0
