@@ -199,7 +199,7 @@ The `type` property for the message payload, should be completely ignored. So le
 
 Once the schema is parsed, all that remains is `type: boolean`, and not the expected `type: string` from the referenced schema. This is clearly the opposite of what the specification defines. For more information see [parser-js #404](https://github.com/asyncapi/parser-js/issues/404).
 
-We then asked ourself, what about JSON Schema, does it define a different behavior? The answer to this question can be found [here](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.3):
+We then asked ourselves, what about JSON Schema, does it define a different behavior? The answer to this question can be found [here](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01#section-8.3):
 
 > All other properties in a "$ref" object MUST be ignored.
 
