@@ -149,12 +149,14 @@ channels:
 
 This will result in the reference for the `address` property, to be looked up at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). 
 
-I tried a little test in the [new Studio](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdDoKICAgIHB1Ymxpc2g6CiAgICAgIG1lc3NhZ2U6CiAgICAgICAgJHJlZjogJyMvY29tcG9uZW50cy9tZXNzYWdlcy9teU1lc3NhZ2UnCmNvbXBvbmVudHM6CiAgbWVzc2FnZXM6CiAgICBteU1lc3NhZ2U6CiAgICAgIHNjaGVtYUZvcm1hdDogYXBwbGljYXRpb24vc2NoZW1hK2pzb247dmVyc2lvbj1kcmFmdC0wNwogICAgICBuYW1lOiBNeU1lc3NhZ2UKICAgICAgcGF5bG9hZDoKICAgICAgICAgICRpZDogJ2h0dHA6Ly9sb2NhbGhvc3QuY29tLycKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgc2VudEF0OgogICAgICAgICAgICAgICRyZWY6ICIvY29tcG9uZW50cy9zY2hlbWFzL3NlbnRBdCI=). The library tries to resolve the reference at `https:///components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+I tried a little test in the [new Studio](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdC9jaGFubmVsOgogICAgcHVibGlzaDoKICAgICAgbWVzc2FnZToKICAgICAgICBzY2hlbWFGb3JtYXQ6IGFwcGxpY2F0aW9uL3NjaGVtYStqc29uO3ZlcnNpb249ZHJhZnQtMDcKICAgICAgICBwYXlsb2FkOiAKICAgICAgICAgICRpZDogaHR0cHM6Ly9leGFtcGxlLmNvbS9zY2hlbWFzL3Rlc3QKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgYWRkcmVzczogCiAgICAgICAgICAgICAgJHJlZjogIi9zY2hlbWFzL2FkZHJlc3Mi. The library tries to resolve the reference at `https:///components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 ## What about `$schema`?
-In JSON Schema Draft 7, and in the **Schema Object**, there exist a keyword, similar to what `schemaFormat` is for the AsyncAPI Message Object, that can be used to define what version of JSON Schema `LightMeasurement` follows.
+Before getting into `$schema` I first need to mention a keyword in AsyncAPI called [schemaFormat which is part of the Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). What this keyword is used for is to change what format the payload is defined with. By defining it with `application/vnd.aai.asyncapi+yaml;version=2.2.0` it is the same as the default format.
 
-So what if both are defined at the same time?
+In JSON Schema Draft 7, and in the **Schema Object**, there exist a keyword, similar to what `schemaFormat` is for AsyncAPI, that can be used to define what version of JSON Schema `LightMeasurement` follows.
+
+So what if both are defined at the same time, that contradict each other?
 
 ```yaml
 asyncapi: '2.2.0'
