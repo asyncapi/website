@@ -201,7 +201,7 @@ export default function DemoAnimation({ className = '' }) {
   return (
     <div className={`${className} relative`}>
       <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: '', opacity: '1' } : null }>
-        <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
+        <div className="mb-2 z-40 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
             contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108"
