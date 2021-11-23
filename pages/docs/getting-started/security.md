@@ -20,7 +20,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 <CodeBlock highlightedLines={[10,11,42,43,44]}>
-{`asyncapi: '2.1.0'
+{`asyncapi: '2.2.0'
 info:
   title: Hello world application
   version: '0.1.0'
@@ -73,7 +73,7 @@ The example above shows how to specify that your server (a Kafka broker) require
 
 <Remember title="Hint">
 
-There are many more security schemes. Learn more about them <a href="/docs/specifications/2.1.0/#securitySchemeObject" className="text-teal-600 font-medium hover:underline">here</a>.
+There are many more security schemes. Learn more about them <a href="/docs/specifications/2.2.0/#securitySchemeObject" className="text-teal-600 font-medium hover:underline">here</a>.
 
 </Remember>
 
