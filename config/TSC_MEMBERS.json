@@ -269,5 +269,16 @@
 		"repos": [
 			"cli"
 		]
+	},
+	{
+		"name": "Alejandra Quetzalli",
+		"github": "alequetzalli",
+		"twitter": "QuetzalliAle",
+		"linkedin": "alejandra-quetzalli",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"website"
+		]
 	}
 ]
