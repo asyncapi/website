@@ -16,12 +16,13 @@ const postDirectories = [
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
 ]
+module.exports = async function buildPostList() {
 walkDirectories(postDirectories, result)
 if (process.env.NODE_ENV === 'production') {
   console.log(inspect(result, { depth: null, colors: true }))
 }
 writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
-
+}
 function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
   for (let dir of directories) {
     let directory = dir[0]
