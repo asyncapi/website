@@ -10,7 +10,7 @@ In this tutorial, you get started with actual code and a sample real-world use c
 You want to create a system capable of turning on/off the streetlights depending on the environmental conditions of each of them:
 
 - You're going to implement an event-driven architecture, with a Message Broker in its "center".
-- Streetlights will each publish information about their environmental lighting to the broker.
+- Streetlights will publish information about their environmental lighting to the broker.
 - Your application will connect to the broker and receive a stream of events from all the streetlights that are reporting their conditions.
 - Based off the events, your application can make a decision regarding turning the streetlight off.
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
@@ -90,7 +90,7 @@ Now lets move all the way to the `channels` section. This section is used to des
       operationId: onLightMeasured`}
 </CodeBlock>
 
-In this example, `light/measured` is the channel name your API will `subscribe` to (i.e, to interact with the API you `publish` to the broker). The `operationId` property, describes what will be the name of function or method that takes care of this functionality in the generated code. The `payload` property is used to understand how the event should look like when publishing to that channel:
+In this example, `light/measured` is the channel name the Streetlight API will `subscribe` to (i.e, to interact with the Streetlight API you `publish` to the broker). The `operationId` property, describes what is the name of function or method that takes care of this functionality in the generated code. The `payload` property is used to understand how the event should look like when publishing to that channel:
 
 <CodeBlock>
 {`      payload:
