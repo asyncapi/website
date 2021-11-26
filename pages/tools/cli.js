@@ -103,7 +103,7 @@ export default function CliPage() {
 
               <div>
                 <h3 className="mb-4 text-sm font-semibold text-center md:text-left">
-                  Examples
+                  Example
                 </h3>
                 <div className="space-y-5">
                   <div>
@@ -116,20 +116,6 @@ export default function CliPage() {
                         {
                           language: "npm",
                           code: `asyncapi new`,
-                        },
-                      ]}
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-xs">Open AsyncAPI Studio</h4>
-                    <CodeBlock
-                      language="generator-cli"
-                      textSizeClassName="text-sm"
-                      className="shadow-lg"
-                      codeBlocks={[
-                        {
-                          language: "npm",
-                          code: `asyncapi start studio`,
                         },
                       ]}
                     />
