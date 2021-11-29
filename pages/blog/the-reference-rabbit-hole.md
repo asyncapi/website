@@ -260,7 +260,6 @@ And with no official or community tooling, we are left with having to develop it
 # Final word
 That concludes the rabbit hole that Sergio and I went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
 
-All I can add here, in the end, is a serious :pray: that we start switching the mindset from tooling for specification is something others build, to something we all have to build together. 
 
 If you have any comments or issues with what was described here, please go into the respective issues and make a comment - also if you think we are wrong!
 
