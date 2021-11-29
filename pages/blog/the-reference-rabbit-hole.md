@@ -14,13 +14,13 @@ authors:
     byline: AsyncAPI Maintainer
 ---
 
-So [Sergio](https://github.com/smoya) and I, went down a little bit of a rabbit hole the last couple of days when we were discussing [Fran's proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618), and I thought I would share the journey.
+[Sergio](https://github.com/smoya) and I went down a bit of a rabbit hole the last couple of days while discussing [Fran's proposal to solve the publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618); I thought I would share the journey. 
 
 A lot of this can be seen as nitpicking... And I totally get this, as we need to venture deep into the specifications to fully understand the differences.
 
-I am gonna try to not use any complex words and explanations, so everyone can understand the problems, whether you are a novice AsyncAPI user or an experienced one.
+I'm going to try to not use any complex words and explanations so that everyone can understand the problems, whether you're a novice or an experienced AsyncAPI user. 
 
-So let's split up the understanding of what references is, and where they can be used, and what is down in this rabbit hole. 
+So let's split up the understanding of what references are, where references can be used, and what's down this rabbit hole. 
 
 # AsyncAPI references
 
@@ -49,29 +49,29 @@ components:
 Here you can see that we simply reference where the definition of messages and payload schema is located.
 
 # Schema Object references
-As seen in the streetlight example, in AsyncAPI, to define your message payloads, we use use a [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject), which is a superset of [JSON Schema draft 7](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01). 
+As seen in the streetlight example, to define your message payloads in AsyncAPI, we use a [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject), which is a superset of [JSON Schema draft 7](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-01). 
 
 What `superset` means is we follow the JSON Schema draft 7 specification, but with a few modifications and additions to keywords.
 
-The message `LightMeasured`, contains a keyword called `payload`, which is by default defined as **Schema Object**. 
+The message `LightMeasured`, contains a keyword called `payload`, which is by default defined as a **Schema Object**. 
 
 This is where the confusion starts, what behavior does the `$ref` keyword follow? More precisely, which specification?
 
-# The confusion creeping in
-Let's try to take take a closer look at the [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject) to see if we can figure out the answer.
+# The confusion creeps in
+Let's take a closer look at the [Schema Object](https://www.asyncapi.com/docs/specifications/v2.2.0#schemaObject) to see if we can figure out the answer.
 
 > Further information about the properties can be found in JSON Schema Core and JSON Schema Validation. Unless stated otherwise, the property definitions follow the JSON Schema specification as referenced here.
 
-So what this means is that unless states otherwise in the **Schema Object**, it should follow the official JSON Schema draft 7 specification. So let's try to read further, to see if anything is stated about references. 
+So what this means is that unless stated otherwise in the **Schema Object**, it should follow the official JSON Schema draft 7 specification. So let's try to read further, to see if anything is stated about references. 
 
 > Alternatively, any time a Schema Object can be used, a **Reference Object** can be used in its place. This allows referencing definitions in place of defining them inline.
 
-Okay... So that must mean that if we ever encounter a reference we just follow the **Reference Object** description. 
+Okay... So that must mean that if we ever encounter a reference, we follow the **Reference Object** description. 
 
-Well, that was easy, I see no rabbit hole here Jonas!? 
+Well, that was easy; I see no rabbit hole here, Jonas!? 
 
 # Welcome to the rabbit hole
-During the discussion, Sergio brought up that Fran was actually using an illegal reference, as he, in one of the examples, was using a **Reference Object** for a server, which was not allowed.  More specifically, it was this example where he references the `mosquitto` server:
+During the discussion, Sergio brought up that Fran was using an illegal reference, as he, in one of the examples, was using a **Reference Object** for a server, which was not allowed.  More specifically, it was this example where he references the `mosquitto` server:
 
 ```yaml
 ...
@@ -80,20 +80,20 @@ servers:
     $ref: 'common.asyncapi.yaml#/components/servers/mosquitto'
 ```
 
-My immediate reaction was "wait .... It's not?!". 
+My immediate reaction was "wait... It's not?!"
 
 I had always used `$ref` quite extensively in my AsyncAPI documents and specifically used a reference for servers. And I knew that the tooling had no problems with the `$ref` as long as it was a valid reference. 
 
-But Sergio was absolutely right, a second look into the specification, `servers` are defined using [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject), which are defined using a map of [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)s. **NOT** `Server Object | Reference Object` as I expected.
+But Sergio was absolutely right; a second look at the specification showed that `servers` are defined using the [Servers Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serversObject), which is defined by using a map of [Server Object](https://www.asyncapi.com/docs/specifications/v2.2.0#serverObject)s. **NOT** `Server Object | Reference Object` as I expected.
 
-So after that, we started to realize, that there is quite a big difference when and where **Reference Object**s are allowed. For the full list of discrepancies, check out [spec #650](https://github.com/asyncapi/spec/issues/650).
+After that, we started to realize that there is quite a big difference between when and where **Reference Object**s are allowed. For the full list of discrepancies, check out [spec #650](https://github.com/asyncapi/spec/issues/650).
 
 But... Why did I think it was allowed to do so? 
 
 ## Discrepancies in AsyncAPI Tooling
 So back to my own experience, why was I so sure that the tooling allowed for me to use **Reference Object**s for servers? 
 
-Well, as it turns out, it is because the [JS parser](https://github.com/asyncapi/parser-js) dereferences before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document such as:
+Well, as it turns out, it's because the [JS parser](https://github.com/asyncapi/parser-js) dereferences before it validates the AsyncAPI document. This means that if I defined my AsyncAPI document as follows:
 
 ```yaml
 asyncapi: '2.2.0'
@@ -110,7 +110,7 @@ url: ws://mycompany.com/ws
 protocol: ws
 ```
 
-Validating the AsyncAPI document using a tool such as [ajv](https://ajv.js.org/) against [JSON Schema representation for 2.2.0](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.2.0.json), it would reject it. 
+Validating the AsyncAPI document using a tool such as [ajv](https://ajv.js.org/) against the [JSON Schema representation for 2.2.0](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.2.0.json), it would reject it. 
 
 However, because the parser dereferences first, the document that is being validated is this:
 
@@ -149,14 +149,14 @@ channels:
 
 This will result in the reference for the `address` property, to be looked up at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). 
 
-I tried a little test in the [new Studio](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdC9jaGFubmVsOgogICAgcHVibGlzaDoKICAgICAgbWVzc2FnZToKICAgICAgICBzY2hlbWFGb3JtYXQ6IGFwcGxpY2F0aW9uL3NjaGVtYStqc29uO3ZlcnNpb249ZHJhZnQtMDcKICAgICAgICBwYXlsb2FkOiAKICAgICAgICAgICRpZDogaHR0cHM6Ly9leGFtcGxlLmNvbS9zY2hlbWFzL3Rlc3QKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgYWRkcmVzczogCiAgICAgICAgICAgICAgJHJlZjogIi9zY2hlbWFzL2FkZHJlc3Mi. The library tries to resolve the reference at `https:///components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+I tried a little test in the [new Studio tool](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdC9jaGFubmVsOgogICAgcHVibGlzaDoKICAgICAgbWVzc2FnZToKICAgICAgICBzY2hlbWFGb3JtYXQ6IGFwcGxpY2F0aW9uL3NjaGVtYStqc29uO3ZlcnNpb249ZHJhZnQtMDcKICAgICAgICBwYXlsb2FkOiAKICAgICAgICAgICRpZDogaHR0cHM6Ly9leGFtcGxlLmNvbS9zY2hlbWFzL3Rlc3QKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgYWRkcmVzczogCiAgICAgICAgICAgICAgJHJlZjogIi9zY2hlbWFzL2FkZHJlc3Mi. The library tries to resolve the reference at `https://components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 ## What about `$schema`?
 Before getting into `$schema` I first need to mention a keyword in AsyncAPI called [schemaFormat which is part of the Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). What this keyword is used for is to change what format the payload is defined with. By defining it with `application/vnd.aai.asyncapi+yaml;version=2.2.0` it is the same as the default format.
 
-In JSON Schema Draft 7, and in the **Schema Object**, there exist a keyword, similar to what `schemaFormat` is for AsyncAPI, that can be used to define what version of JSON Schema `LightMeasurement` follows.
+In JSON Schema Draft 7, and in the **Schema Object**, there exists a keyword, similar to what `schemaFormat` is for AsyncAPI, that can be used to define what version of JSON Schema `LightMeasurement` follows.
 
-So what if both are defined at the same time, that contradict each other?
+So what if both are defined at the same time, and they contradict each other?
 
 ```yaml
 asyncapi: '2.2.0'
@@ -212,13 +212,13 @@ We started to correlate the findings with the feature request from [Maciej](http
 
 What would this mean for our little `$ref` keywords?
 
-OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references. I don't want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post: https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources. Besides this the release notes for Draft 2020-12 also offers some guidance which can be found here: https://json-schema.org/draft/2020-12/release-notes.html
+OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references. I don't want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post: https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources. Besides this, the release notes for Draft 2020-12 also offers some guidance which can be found here: https://json-schema.org/draft/2020-12/release-notes.html
 
-Besides having a bunch of new keywords that change the referencing behavior, such as `$dynamicRef`, `$dynamicAnchor`, `$anchor`, pne of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references where extra keywords are now allowed adjacent to `$ref`.
+Besides having a bunch of new keywords that change the referencing behavior, such as `$dynamicRef`, `$dynamicAnchor`, `$anchor`, one of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references so that extra keywords are now allowed adjacent to `$ref`.
 
 But what does this mean exactly? Does this mean `$ref` overwrites any duplicated properties? Or is it the other way around?
 
-Well, there is one thing we need to remember about JSON Schema. It is primary build for validation rules and how a validator can take input data and determine whether that input is valid against the Schema. 
+Well, there is one thing we need to remember about JSON Schema. It is primarily built for validation rules and how a validator can take input data and determine whether that input is valid against the Schema. 
 
 This means, that if you have a JSON Schema using `$ref` such as:
 ```json
@@ -253,12 +253,12 @@ One of the most used tooling for dereferencing stuff in JS, and the one we are u
 
 However, the tool started out being built **ONLY** for dereferencing `$ref` based on the [JSON Reference specification and the JSON Pointer specification](https://github.com/APIDevTools/json-schema-ref-parser/issues/22#issuecomment-231783185).  At least it was, now it's not easy to figure out what it is for, as [it allows extra properties](https://github.com/APIDevTools/json-schema-ref-parser/issues/232) but [$id is not taken into account](https://github.com/APIDevTools/json-schema-ref-parser/issues/136).
 
-This leaves us in a big of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing), for JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there are no tooling that our [Go parser](https://github.com/asyncapi/parser-go) can use.
+This leaves us in a bit of a struggle, as [there are not many alternatives](https://json-schema.org/implementations.html#general-processing); JS [@hyperjump/json-schema-core](https://github.com/jdesrosiers/json-schema-core) looks promising, but there's no tooling that our [Go parser](https://github.com/asyncapi/parser-go) can use.
 
-And with no official or community tooling, we are left with having to develop it our selves to adopt the spec... There are luckily efforts being made in [JSON Schema to adopt to such a change](https://github.com/json-schema-org/community/discussions/113).
+And with no official or community tooling, we are left with having to develop it ourselves to adopt the spec... There are luckily efforts being made in [JSON Schema to adopt to such a change](https://github.com/json-schema-org/community/discussions/113).
 
 # Final word
-That concludes the rabbit hole me and Sergio went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
+That concludes the rabbit hole that Sergio and I went down, for a simple `$ref` keyword... (ONE KEYWORD! :sweat_smile:)
 
 All I can add here, in the end, is a serious :pray: that we start switching the mindset from tooling for specification is something others build, to something we all have to build together. 
 
