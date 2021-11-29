@@ -55,7 +55,7 @@ export default function CliPage() {
 
   return (
     <GenericLayout
-      title="Generator"
+      title="CLI"
       description={description}
       image={image}
       wide
