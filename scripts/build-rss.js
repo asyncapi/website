@@ -15,7 +15,8 @@ function clean(s) {
   return s
 }
 
-function rssFeed(type, title, desc, outputPath) {
+module.exports = function rssFeed(type, title, desc, outputPath) {
+
   const posts = getAllPosts()
     .filter(p => p.slug.startsWith(`/${type}/`))
     .sort((i1, i2) => {
@@ -72,7 +73,4 @@ function rssFeed(type, title, desc, outputPath) {
 
   const xml = json2xml.getXml(feed,'@','',2)
   fs.writeFileSync(`./public/${outputPath}`, xml, 'utf8')
-}
-
-rssFeed('blog', 'AsyncAPI Initiative Blog RSS Feed', 'AsyncAPI Initiative Blog', 'rss.xml')
-rssFeed('jobs', 'AsyncAPI Initiative Jobs RSS Feed', 'AsyncAPI Initiative Jobs Board', 'jobs/rss.xml')
+};
