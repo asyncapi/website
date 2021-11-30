@@ -42,7 +42,7 @@ export default function CodeBlock({
 
   function renderHighlight() {
     return (
-      <div className="h-full">
+      <div className="h-full max-h-screen">
         {codeBlocks.length > 1 && (
           <div className="text-xs pb-3 pt-0 pl-1">
             <nav>
@@ -93,7 +93,7 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative max-w-full rounded overflow-y-hidden overflow-x-auto py-2 bg-code-editor-dark z-10 ${className}`}>
+      <div className={`relative max-w-full rounded overflow-y-auto overflow-x-auto py-2 bg-code-editor-dark z-10 ${className}`}>
         {hasWindow && (
           <div className="pl-4 pb-2">
             <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>
