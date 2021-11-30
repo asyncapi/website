@@ -244,7 +244,7 @@ This behavior is different from what is assumed when using AsyncAPI, as the last
 
 Furthermore, now, each schema can define it's own `$schema` that they follow, instead of ONLY being available at the root... 
 
-This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the AsyncAPI specification? This difference is what triggered the last issue in the [spec 649](https://github.com/asyncapi/spec/issues/649).
+This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the AsyncAPI specification? This difference is what triggered the last issue in [spec 649](https://github.com/asyncapi/spec/issues/649).
 
 ## Hard to find tooling
 This leaves us with one huge deficit, that there are so many different behaviors for references that tooling mix and matches between the specifications and what they solve.
