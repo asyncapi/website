@@ -143,13 +143,13 @@ channels:
           type: object
           properties:
             address: 
-              $ref: "/schemas/address"
+              $ref: "address"
 ...
 ```
 
-This will result in the reference for the `address` property, to be looked up at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com`). 
+This will result in the reference for the `address` property, to be looked up at `https://example.com/schemas/address`, because it uses the Base URI in `$id` from the parent schema (`https://example.com/schemas`). 
 
-I tried a little test in the [new Studio tool](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdC9jaGFubmVsOgogICAgcHVibGlzaDoKICAgICAgbWVzc2FnZToKICAgICAgICBzY2hlbWFGb3JtYXQ6IGFwcGxpY2F0aW9uL3NjaGVtYStqc29uO3ZlcnNpb249ZHJhZnQtMDcKICAgICAgICBwYXlsb2FkOiAKICAgICAgICAgICRpZDogaHR0cHM6Ly9leGFtcGxlLmNvbS9zY2hlbWFzL3Rlc3QKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgYWRkcmVzczogCiAgICAgICAgICAgICAgJHJlZjogIi9zY2hlbWFzL2FkZHJlc3Mi). The library tries to resolve the reference at `https://components/schemas/sentAt` when it should have tried to resolve it from `http://localhost.com/components/schemas/sentAt`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
+I tried a little test in the [new Studio tool](https://studio.asyncapi.com/) (Studio uses the parser, so it could be used for an easy test), [which showed that this was not supported by the parser](https://studio.asyncapi.com/?base64=YXN5bmNhcGk6ICcyLjIuMCcKaW5mbzoKICB0aXRsZTogVGVzdCBvdmVycmlkaW5nIGRlcmVmZXJlbmNlZCBvYmplY3RzIAogIHZlcnNpb246ICcxLjAuMCcKY2hhbm5lbHM6CiAgdGVzdC9jaGFubmVsOgogICAgcHVibGlzaDoKICAgICAgbWVzc2FnZToKICAgICAgICBzY2hlbWFGb3JtYXQ6IGFwcGxpY2F0aW9uL3NjaGVtYStqc29uO3ZlcnNpb249ZHJhZnQtMDcKICAgICAgICBwYXlsb2FkOiAKICAgICAgICAgICRpZDogaHR0cHM6Ly9leGFtcGxlLmNvbS9zY2hlbWFzL3Rlc3QKICAgICAgICAgIHR5cGU6IG9iamVjdAogICAgICAgICAgcHJvcGVydGllczoKICAgICAgICAgICAgYWRkcmVzczogCiAgICAgICAgICAgICAgJHJlZjogImFkZHJlc3Mi). The library tries to resolve the reference at `https:///address` when it should have tried to resolve it from `http://example.com/schemas/address`. See [parser-js #403](https://github.com/asyncapi/parser-js/issues/403) for more information.
 
 ## What about `$schema`?
 Before getting into `$schema` I first need to mention a keyword in AsyncAPI called [schemaFormat which is part of the Message Object](https://www.asyncapi.com/docs/specifications/v2.2.0#messageObject). What this keyword is used for is to change what format the payload is defined with. By defining it with `application/vnd.aai.asyncapi+yaml;version=2.2.0` it is the same as the default format.
@@ -212,7 +212,7 @@ We started to correlate the findings with the feature request from [Maciej](http
 
 What would this mean for our little `$ref` keywords?
 
-OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references. I don't want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post[Bundling simple external resources](https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources). Besides this, the release notes for Draft 2020-12 also offers some guidance which can be found here: https://json-schema.org/draft/2020-12/release-notes.html
+OpenAPI have in its most recent version 3.1, switched its default JSON Schema version to Draft 2020-12, the exact feature request for AsyncAPI. This, however, introduced a huge change to how you bundle references. I don't want to spend much time on this as [Ben](https://twitter.com/relequestual) and [Mike](https://twitter.com/PermittedSoc) described this entire change and what it means in terms of bundling in this great blog post [Bundling simple external resources](https://json-schema.org/blog/posts/bundling-json-schema-compound-documents#bundling-simple-external-resources). Besides this, the release notes for Draft 2020-12 also offers some guidance which can be found here: https://json-schema.org/draft/2020-12/release-notes.html
 
 Besides having a bunch of new keywords that change the referencing behavior, such as `$dynamicRef`, `$dynamicAnchor`, `$anchor`, one of the key differences is that in [JSON Schema draft 2019-09](https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-02), they changed their behavior of references so that extra keywords are now allowed adjacent to `$ref`.
 
@@ -244,7 +244,7 @@ This behavior is different from what is assumed when using AsyncAPI, as the last
 
 Furthermore, now, each schema can define it's own `$schema` that they follow, instead of ONLY being available at the root... 
 
-This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the AsyncAPI specification? This difference is what triggered the last issue in the [spec 649](https://github.com/asyncapi/spec/issues/649).
+This leaves the question, how can we make sure that we stay consistent and don't introduce more confusion into the AsyncAPI specification? This difference is what triggered the last issue in [spec 649](https://github.com/asyncapi/spec/issues/649).
 
 ## Hard to find tooling
 This leaves us with one huge deficit, that there are so many different behaviors for references that tooling mix and matches between the specifications and what they solve.
