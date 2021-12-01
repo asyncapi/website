@@ -1,237 +1,285 @@
 [
-    {
-        "name": "Aayush Sahu",
-        "github": "aayushmau5",
-        "linkedin": "aayushmau5",
-        "twitter": "aayushmau5",
-        "availableForHire": false,
-        "repos": [
-            "diff"
-        ]
-    },
-    {
-        "name": "Arjun Garg",
-        "github": "arjungarg07",
-        "linkedin": "arjungarg17",
-        "twitter": "ArjunGarg07",
-        "availableForHire": true,
-        "repos": [
-            "cupid"
-        ]
-    },
-    {
-        "name": "Emiliano Zublena",
-        "github": "emilianozublena",
-        "linkedin": "emilianozublena",
-        "availableForHire": false,
-        "repos": [
-            "asyncapi-php-template"
-        ]
-    },
-    {
-        "name": "Fran Méndez",
-        "github": "fmvilas",
-        "availableForHire": false,
-        "company": "Postman",
-        "linkedin": "fmvilas",
-        "repos": [
-            "raml-dt-schema-parser",
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "asyncapi-react",
-            "glee",
-            "generator",
-            "nodejs-template",
-            "nodejs-ws-template",
-            "parser-js",
-            "playground",
-            "spec",
-            "spec-json-schemas",
-            "website",
-            "bindings"
-        ]
-    },
-    {
-        "name": "Jonas Lagoni",
-        "github": "jonaslagoni",
-        "linkedin": "jonaslagoni",
-        "availableForHire": false,
-        "company": "Postman",
-        "repos": [
-            "dotnet-nats-template",
-            "ts-nats-template",
-            "generator-react-sdk",
-            "generator",
-            "modelina",
-            "parser-js",
-            "parser-api",
-            "simulator"
-        ]
-    },
-    {
-        "name": "Jorge Aguiar Martín",
-        "github": "jotamusik",
-        "linkedin": "jorge-aguiar-martin",
-        "twitter": "jotamusik",
-        "availableForHire": false,
-        "company": "The Agile Monkeys",
-        "repos": [
-            "cli"
-        ]
-    },
-    {
-        "name": "Khuda Dad Nomani",
-        "github": "KhudaDad414",
-        "twitter": "KhudaDadNomani",
-        "linkedin": "khudadadnomani",
-        "availableForHire": true,
-        "repos": [
-            "optimizer"
-        ]
-    },
-    {
-        "name": "Lukasz Gornicki",
-        "github": "derberg",
-        "linkedin": "lukasz-gornicki-a621914",
-        "twitter": "derberq",
-        "availableForHire": false,
-        "company": "Postman",
-        "repos": [
-            "avro-schema-parser",
-            "openapi-schema-parser",
-            "chatbot",
-            "diff",
-            "cli",
-            "generator-filters",
-            "generator-hooks",
-            "github-action-for-generator",
-            "generator",
-            "nodejs-template",
-            "nodejs-ws-template",
-            "parser-js",
-            "playground",
-            "spec",
-            "spec-json-schemas",
-            "template-for-generator-templates",
-            "website"
-        ]
-    },
-    {
-        "name": "Maciej Urbańczyk",
-        "github": "magicmatatjahu",
-        "availableForHire": false,
-        "linkedin": "maciej-urbańczyk-909547164",
-        "company": "Postman",
-        "repos": [
-            "asyncapi-react",
-            "chatbot",
-            "cli",
-            "generator-react-sdk",
-            "generator",
-            "html-template",
-            "markdown-template",
-            "modelina",
-            "parser-js",
-            "playground",
-            "website"
-        ]
-    },
-    {
-        "github": "AceTheCreator",
-        "twitter": "_acebuild",
-        "availableForHire": true,
-        "repos": [
-            "chatbot"
-        ]
-    },
-    {
-        "name": "Souvik De",
-        "github": "Souvikns",
-        "twitter": "souvik_ns",
-        "linkedin": "souvik-de-a2b941169",
-        "availableForHire": true,
-        "repos": [
-            "cli"
-        ]
-    },
-    {
-        "name": "Pavel Bodiachevskii",
-        "github": "Pakisan",
-        "twitter": "pbodiachevskii",
-        "availableForHire": false,
-        "repos": [
-            "jasyncapi"
-        ]
-    },
-    {
-        "name": "Michael Davis",
-        "github": "damaru-inc",
-        "availableForHire": false,
-        "company": "Solace",
-        "repos": [
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
-        ]
-    },
-    {
-        "github": "NektariosFifes",
-        "linkedin": "nektarios-fifes-372740220",
-        "availableForHire": true,
-        "repos": [
-            "simulator"
-        ]
-    },
-    {
-        "github": "anandsunderraman",
-        "linkedin": "anand-sunderraman-a6b7a131",
-        "availableForHire": false,
-        "repos": [
-            "go-watermill-template"
-        ]
-    },
-    {
-        "name": "Cameron Rushton",
-        "github": "CameronRushton",
-        "availableForHire": false,
-        "company": "Solace",
-        "repos": [
-            "java-spring-cloud-stream-template",
-            "python-paho-template"
-        ]
-    },
-    {
-        "name": "Dale Lane",
-        "github": "dalelane",
-        "linkedin": "dalelane",
-        "twitter": "dalelane",
-        "availableForHire": false,
-        "company": "IBM",
-        "repos": [
-            "avro-schema-parser"
-        ]
-    },
-    {
-        "name": "Ludovic Dussart",
-        "github": "m3lkior",
-        "linkedin": "ludovic-dussart-846a8063",
-        "twitter": "ldussart",
-        "availableForHire": false,
-        "company": "Ineat",
-        "repos": [
-            "avro-schema-parser"
-        ]
-    },
-    {
-        "name": "Sergio Moya",
-        "github": "smoya",
-        "linkedin": "smoya",
-        "twitter": "smoyac",
-        "availableForHire": false,
-        "company": "Postman",
-        "repos": [
-            "event-gateway",
-            "go-watermill-template",
-            "parser-api"
-        ]
-    }
+	{
+		"name": "Aayush Sahu",
+		"github": "aayushmau5",
+		"linkedin": "aayushmau5",
+		"twitter": "aayushmau5",
+		"availableForHire": false,
+		"repos": [
+			"diff"
+		]
+	},
+	{
+		"name": "Anand Sunderraman",
+		"github": "anandsunderraman",
+		"linkedin": "anand-sunderraman-a6b7a131",
+		"availableForHire": false,
+		"repos": [
+			"go-watermill-template"
+		]
+	},
+	{
+		"name": "Arjun Garg",
+		"github": "arjungarg07",
+		"linkedin": "arjungarg17",
+		"twitter": "ArjunGarg07",
+		"availableForHire": true,
+		"repos": [
+			"cupid"
+		]
+	},
+	{
+		"name": "Cameron Rushton",
+		"github": "CameronRushton",
+		"availableForHire": false,
+		"company": "Solace",
+		"repos": [
+			"java-spring-cloud-stream-template",
+			"python-paho-template",
+			"bindings"
+		]
+	},
+	{
+		"name": "Dale Lane",
+		"github": "dalelane",
+		"linkedin": "dalelane",
+		"twitter": "dalelane",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"avro-schema-parser",
+			"bindings"
+		]
+	},
+	{
+		"name": "Emiliano Zublena",
+		"github": "emilianozublena",
+		"linkedin": "emilianozublena",
+		"availableForHire": false,
+		"repos": [
+			"asyncapi-php-template"
+		]
+	},
+	{
+		"name": "Fran Méndez",
+		"github": "fmvilas",
+		"availableForHire": false,
+		"company": "Postman",
+		"linkedin": "fmvilas",
+		"repos": [
+			"raml-dt-schema-parser",
+			"avro-schema-parser",
+			"openapi-schema-parser",
+			"asyncapi-react",
+			"glee",
+			"generator",
+			"nodejs-template",
+			"nodejs-ws-template",
+			"parser-js",
+			"playground",
+			"spec",
+			"spec-json-schemas",
+			"website",
+			"bindings"
+		]
+	},
+	{
+		"name": "Gerald Loeffler",
+		"github": "GeraldLoeffler",
+		"linkedin": "geraldloeffler",
+		"availableForHire": false,
+		"company": "Salesforce",
+		"repos": [
+			"bindings"
+		]
+	},
+	{
+		"name": "Jonas Lagoni",
+		"github": "jonaslagoni",
+		"linkedin": "jonaslagoni",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"dotnet-nats-template",
+			"ts-nats-template",
+			"generator-react-sdk",
+			"generator",
+			"modelina",
+			"parser-js",
+			"parser-api",
+			"simulator"
+		]
+	},
+	{
+		"name": "Jorge Aguiar Martín",
+		"github": "jotamusik",
+		"linkedin": "jorge-aguiar-martin",
+		"twitter": "jotamusik",
+		"availableForHire": false,
+		"company": "The Agile Monkeys",
+		"repos": [
+			"cli"
+		]
+	},
+	{
+		"name": "Khuda Dad Nomani",
+		"github": "KhudaDad414",
+		"twitter": "KhudaDadNomani",
+		"linkedin": "khudadadnomani",
+		"availableForHire": true,
+		"repos": [
+			"optimizer",
+			"bindings"
+		]
+	},
+	{
+		"name": "Laurent Broudoux",
+		"github": "lbroudoux",
+		"twitter": "lbroudoux",
+		"linkedin": "laurentbroudoux",
+		"availableForHire": false,
+		"repos": [
+			"bindings"
+		]
+	},
+	{
+		"name": "Ludovic Dussart",
+		"github": "m3lkior",
+		"linkedin": "ludovic-dussart-846a8063",
+		"twitter": "ldussart",
+		"availableForHire": false,
+		"company": "Ineat",
+		"repos": [
+			"avro-schema-parser"
+		]
+	},
+	{
+		"name": "Lukasz Gornicki",
+		"github": "derberg",
+		"linkedin": "lukasz-gornicki-a621914",
+		"twitter": "derberq",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"avro-schema-parser",
+			"openapi-schema-parser",
+			"chatbot",
+			"diff",
+			"cli",
+			"generator-filters",
+			"generator-hooks",
+			"github-action-for-generator",
+			"generator",
+			"nodejs-template",
+			"nodejs-ws-template",
+			"parser-js",
+			"playground",
+			"spec",
+			"spec-json-schemas",
+			"template-for-generator-templates",
+			"website"
+		]
+	},
+	{
+		"name": "Maciej Urbańczyk",
+		"github": "magicmatatjahu",
+		"availableForHire": false,
+		"linkedin": "maciej-urbańczyk-909547164",
+		"company": "Postman",
+		"repos": [
+			"asyncapi-react",
+			"chatbot",
+			"cli",
+			"generator-react-sdk",
+			"generator",
+			"html-template",
+			"markdown-template",
+			"modelina",
+			"parser-js",
+			"playground",
+			"website"
+		]
+	},
+	{
+		"github": "AceTheCreator",
+		"twitter": "_acebuild",
+		"availableForHire": true,
+		"repos": [
+			"chatbot"
+		]
+	},
+	{
+		"name": "Michael Davis",
+		"github": "damaru-inc",
+		"availableForHire": false,
+		"company": "Solace",
+		"repos": [
+			"java-spring-cloud-stream-template",
+			"python-paho-template",
+			"bindings"
+		]
+	},
+	{
+		"name": "Nektarios Fifes",
+		"github": "NektariosFifes",
+		"linkedin": "nektarios-fifes-372740220",
+		"availableForHire": true,
+		"repos": [
+			"simulator"
+		]
+	},
+	{
+		"name": "Pavel Bodiachevskii",
+		"github": "Pakisan",
+		"twitter": "pbodiachevskii",
+		"availableForHire": false,
+		"repos": [
+			"jasyncapi"
+		]
+	},
+	{
+		"name": "Richard Coppen",
+		"github": "rcoppen",
+		"linkedin": "richard-coppen",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"bindings"
+		]
+	},
+	{
+		"name": "Sergio Moya",
+		"github": "smoya",
+		"linkedin": "smoya",
+		"twitter": "smoyac",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"event-gateway",
+			"go-watermill-template",
+			"infra",
+			"parser-api"
+		]
+	},
+	{
+		"name": "Souvik De",
+		"github": "Souvikns",
+		"twitter": "souvik_ns",
+		"linkedin": "souvik-de-a2b941169",
+		"availableForHire": true,
+		"repos": [
+			"cli"
+		]
+	},
+	{
+		"name": "Alejandra Quetzalli",
+		"github": "alequetzalli",
+		"twitter": "QuetzalliAle",
+		"linkedin": "alejandra-quetzalli",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"website"
+		]
+	}
 ]

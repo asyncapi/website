@@ -1,0 +1,30 @@
+{
+    "@asyncapi/html-template": {
+        "flag": "-o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    },
+    "@asyncapi/markdown-template": {
+        "flag": "-o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    },
+    "@asyncapi/nodejs-template": {
+        "flag": "-p server=production -o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    },
+    "@asyncapi/nodejs-ws-template": {
+        "flag": "-p server=localhost -o example",
+        "specPath" : "https://raw.githubusercontent.com/asyncapi/generator/v1.4.0/test/docs/ws.yml"
+    },
+    "@asyncapi/java-spring-cloud-stream-template": {
+        "flag": "-o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    },
+    "@asyncapi/java-spring-template": {
+        "flag": "-o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    },
+    "@asyncapi/python-paho-template": {
+        "flag": "-o example",
+        "specPath" : "https://bit.ly/asyncapi"
+    }
+}
