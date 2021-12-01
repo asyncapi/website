@@ -24,7 +24,7 @@
         "infra",
         "ideas",
         "review",
-        "content"
+        "blog"
       ]
     },
     {
@@ -41,7 +41,7 @@
         "infra",
         "ideas",
         "review",
-        "content"
+        "blog"
       ]
     },
     {
@@ -58,7 +58,7 @@
         "infra",
         "ideas",
         "review",
-        "content"
+        "blog"
       ]
     },
     {
@@ -99,7 +99,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/62108913?v=4",
       "profile": "https://github.com/jessemenning",
       "contributions": [
-        "content"
+        "blog"
       ]
     },
     {
@@ -108,7 +108,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/24495755?v=4",
       "profile": "https://dedouss.is/",
       "contributions": [
-        "content"
+        "blog"
       ]
     },
     {
@@ -117,7 +117,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/13396189?v=4",
       "profile": "https://linkedin.com/in/jonaslagoni/",
       "contributions": [
-        "content",
+        "blog",
         "code",
         "review"
       ]
@@ -129,7 +129,7 @@
       "profile": "https://github.com/smoya",
       "contributions": [
         "code",
-        "content"
+        "blog"
       ]
     }
   ],
