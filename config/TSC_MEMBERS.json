@@ -257,6 +257,7 @@
 		"repos": [
 			"event-gateway",
 			"go-watermill-template",
+			"infra",
 			"parser-api"
 		]
 	},
