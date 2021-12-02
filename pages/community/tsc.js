@@ -99,12 +99,14 @@ export default function TSC() {
           </div>
         </div>
         <div className="mt-10">
-          <h3 className="font-semibold mb-5 text-primary-800 text-2xl text-center">
-            <span>Current TSC members</span>
-            <span className="font-thin pl-2 text-sm">
+          <div className="mb-5 text-primary-800 text-center">
+            <h3 className="font-semibold text-2xl">
+              Current TSC members
+            </h3>
+            <span className="font-thin text-sm">
               (in alphabetical order)
             </span>
-          </h3>
+          </div>
 
           <ul
             role="list"
