@@ -1,5 +1,6 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
+import {sortBy} from 'lodash';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -35,7 +36,7 @@ export default function TSC() {
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/tsc.png";
 
-  const tscMembers = TSCMembersList.map((user) => addAdditionalUserInfo(user));
+  const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
 
   return (
     <GenericLayout
@@ -99,7 +100,10 @@ export default function TSC() {
         </div>
         <div className="mt-10">
           <h3 className="font-semibold mb-5 text-primary-800 text-2xl text-center">
-            Current TSC members
+            <span>Current TSC members</span>
+            <span className="font-thin pl-2 text-sm">
+              (in alphabetical order)
+            </span>
           </h3>
 
           <ul
