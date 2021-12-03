@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Typing from 'react-typing-animation'
 import MacWindow from './MacWindow'
 import ArrowRight from './icons/ArrowRight'
-import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
+import OpenInStudioButton from './buttons/OpenInStudioButton'
 
 export default function DemoAnimation({ className = '' }) {
   const [started, setStarted] = useState(true)
@@ -43,7 +43,7 @@ export default function DemoAnimation({ className = '' }) {
     const common = (
       <>
         <div>
-          <span className="text-teal-400">asyncapi:</span> 2.1.0
+          <span className="text-teal-400">asyncapi:</span> 2.2.0
         </div>
         <div>
           <span className="text-teal-400">info:</span>
@@ -201,7 +201,7 @@ export default function DemoAnimation({ className = '' }) {
   return (
     <div className={`${className} relative`}>
       <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: '', opacity: '1' } : null }>
-        <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
+        <div className="mb-2 z-40 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
             contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108"
@@ -220,9 +220,9 @@ export default function DemoAnimation({ className = '' }) {
               Play with it!
             </h3>
             <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
-              Open this example on AsyncAPI Playground to get a better taste of the specification. No signup is required!
+              Open this example on AsyncAPI Studio to get a better taste of the specification. No signup is required!
             </p>
-            <OpenInPlaygroundButton />
+            <OpenInStudioButton />
           </div>
           <MacWindow
             className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto lg:opacity-100 lg:-translate-x-3/4' : ''}`}
