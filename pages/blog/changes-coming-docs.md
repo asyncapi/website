@@ -21,7 +21,9 @@ excerpt: Changes are coming to the Docs!
 
 AsyncAPI community, it's an absolute pleasure to meet you. My name is Alejandra. I was born and raised in México 🇲🇽, so my first language is Spanish.
 
-I’m a Senior Technical Writer 👩🏻‍💻 recently hired by [Postman](https://www.postman.com/alejandra-quetzalli) to focus solely on the Open-Source (OSS) [AsyncAPI initiative](https://www.asyncapi.com/) as primary owner for our AsyncAPI Dev Docs 📄 .
+I’m a Senior Technical Writer 👩🏻‍💻 recently hired by [Postman](https://www.postman.com/alejandra-quetzalli) to focus solely on the Open-Source (OSS) [AsyncAPI initiative](https://www.asyncapi.com/) as primary owner for our AsyncAPI Dev Docs 📄 . 
+
+I also recently [joined our initiative's Technical Steering Committee (TSC)](https://www.asyncapi.com/community/tsc)! The TSC is responsible for the oversight of the AsyncAPI Initiative, helping make decisions on a higher level, or when maintainers cannot find a consensus.
 
 By the second day on the team, I was already working on community Pull Requests (PRs) and getting to know more of our community members. This direct engagement with community feels amazing, because I really **_do_** want to help as much as I can. I'm excited to listen what our OSS community thinks needs to be documented first.
 
@@ -89,8 +91,7 @@ The Diátaxis engineering documentation system classifies content under 4 main _
 #### 💁🏻‍♀️ How does the Diátaxis system apply to an actual technology?
 Let’s take a look at the following Mind Map.
 
-![Mind Map, displaying Diátaxis system applied to documenting AsyncAPI capabilities](/img/posts/changes-coming-docs/)
-<!-- insert mind map img -->
+![Mind Map, displaying Diátaxis system applied to documenting AsyncAPI capabilities](/img/posts/changes-coming-docs/mind-map.png)
 
 Here we see that the AsyncAPI _CLI_ and _Spec_ fall under the `Reference` bucket. The `Concepts` bucket details AsyncAPI's specification concepts and terms that deserve to be covered in more detail. But when it comes to understanding the difference between what fits under a `Tutorial` vs. a `How-To` bucket, it feels harder to understand.
 
