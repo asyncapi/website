@@ -14,7 +14,7 @@ export default function Hero({ className = '' }) {
           Building the future of {` `}
           <span className="text-primary-400 block md:-mt-4">
             {" "}
-            Event-Driven Architectures (EDA).
+            Event-Driven Architectures (EDA)
           </span>
         </h1>
         <h2 className="text-gray-500 text-lg font-normal mb-16 max-w-3xl mx-auto">
