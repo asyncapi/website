@@ -132,7 +132,17 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "bodograumann",
+      "name": "Bodo Graumann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1223583?v=4",
+      "profile": "https://github.com/bodograumann",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
