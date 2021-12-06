@@ -53,7 +53,7 @@ export default function BlogIndexPage() {
               Welcome to our blog!
             </h2>
             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-              Find the latest and greatest stories from our community.
+              Find the latest and greatest stories from our community
             </p>
             <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
               Want to publish a blog post? We love community stories.
