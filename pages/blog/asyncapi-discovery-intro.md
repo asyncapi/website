@@ -34,7 +34,7 @@ Oftentimes, removing an event topic or queue requires nerves of steel, for fear 
 
 Thankfully, the AsyncAPI Discovery Tool offers a better way.
 # How the AsyncAPI Discovery Tool Works
-The AsyncAPI Discovery Tool analyzes event traffic passing through brokers like Kafka, RabbitMQ, IBM MQ, Solace, and more. After learning how the broker distributes events, the AsyncAPI Discovery Tool generates a corresponding [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.2.0). The generated spec can be used for code generation, documentation, visualization, infrastructure deployment, and more.
+The AsyncAPI Discovery Tool analyzes event traffic passing through brokers like Kafka, RabbitMQ, IBM MQ, Solace, and more. After learning how the broker distributes events, the AsyncAPI Discovery Tool generates a corresponding [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/latest). The generated spec can be used for code generation, documentation, visualization, infrastructure deployment, and more.
 
 It’s a great starting point for getting events catalogued and governed.
 
