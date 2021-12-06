@@ -41,7 +41,7 @@ It’s a great starting point for getting events catalogued and governed.
 It’s not perfect (more on that later), and there’s a lot more work to be done, but the AsyncAPI Discovery Tool helps your enterprise align production reality with AsyncAPI documentation. And perhaps relieve some tension for middleware engineers.
 
 # Getting Started with AsyncAPI Discovery Tool
-Getting started means a trip to the [SolaceLabs GitHub](https://github.com/SolaceLabs/event-discovery-agent), where you can find detailed instructions and documentation. (While Solace created AsyncAPI Discovery, it’s open source with an Apache 2.0 license.)
+Getting started means a trip to the [SolaceLabs GitHub](https://github.com/SolaceLabs/event-discovery-agent), where you can find detailed instructions and documentation. (While Solace created the AsyncAPI Discovery Tool, it’s open-source with an Apache 2.0 license.)
 
 The AsyncAPI Discovery Tool runs as a stand-alone Java Jar, so getting it running requires only Java and Maven. Once it’s up and running, AsyncAPI has its own self-contained UI, offering fill-in-the-blanks configuration ([get more details about the UI](https://github.com/SolaceLabs/event-discovery-agent/blob/main/docs/ui.md)). Here’s an example for Kafka:
 
