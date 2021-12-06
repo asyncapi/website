@@ -66,7 +66,7 @@ The most obvious place to improve the AsyncAPI Discovery Tool is to expand the n
 
 Fortunately, the tool was built with extensibility in mind. There is a documented plug-in architecture just itching to have more brokers added. If you’re interested, the people who maintain the tool welcome pull requests.
 
-- The confusing publish and subscribe verbs in the output.
+- The confusing `publish` and `subscribe` verbs in the output.
 - The requirement that a single file must represent a single application makes it tough to get a high-level understanding of the architecture.
 
 As the spec matures, the tooling will hopefully be close behind.
