@@ -1,0 +1,138 @@
+{
+  "projectName": "website",
+  "projectOwner": "asyncapi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "fmvilas",
+      "name": "Fran Méndez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+      "profile": "http://www.fmvilas.com/",
+      "contributions": [
+        "code",
+        "doc",
+        "bug",
+        "design",
+        "maintenance",
+        "infra",
+        "ideas",
+        "review",
+        "blog"
+      ]
+    },
+    {
+      "login": "derberg",
+      "name": "Lukasz Gornicki",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6995927?v=4",
+      "profile": "https://dev.to/derberg",
+      "contributions": [
+        "code",
+        "doc",
+        "bug",
+        "design",
+        "maintenance",
+        "infra",
+        "ideas",
+        "review",
+        "blog"
+      ]
+    },
+    {
+      "login": "magicmatatjahu",
+      "name": "Maciej Urbańczyk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20404945?v=4",
+      "profile": "https://github.com/magicmatatjahu",
+      "contributions": [
+        "code",
+        "doc",
+        "bug",
+        "design",
+        "maintenance",
+        "infra",
+        "ideas",
+        "review",
+        "blog"
+      ]
+    },
+    {
+      "login": "alequetzalli",
+      "name": "Alejandra Quetzalli ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19964402?v=4",
+      "profile": "https://github.com/alequetzalli",
+      "contributions": [
+        "doc",
+        "review",
+        "talk"
+      ]
+    },
+    {
+      "login": "aayushmau5",
+      "name": "Aayush Kumar Sahu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54525741?v=4",
+      "profile": "https://aayushmau5.github.io/",
+      "contributions": [
+        "code",
+        "bug",
+        "design"
+      ]
+    },
+    {
+      "login": "boyney123",
+      "name": "David Boyne",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3268013?v=4",
+      "profile": "https://boyney.io/",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "jessemenning",
+      "name": "Jesse Menning",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62108913?v=4",
+      "profile": "https://github.com/jessemenning",
+      "contributions": [
+        "blog"
+      ]
+    },
+    {
+      "login": "dedoussis",
+      "name": "Dimitrios Dedoussis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24495755?v=4",
+      "profile": "https://dedouss.is/",
+      "contributions": [
+        "blog"
+      ]
+    },
+    {
+      "login": "jonaslagoni",
+      "name": "Jonas Lagoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13396189?v=4",
+      "profile": "https://linkedin.com/in/jonaslagoni/",
+      "contributions": [
+        "blog",
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "smoya",
+      "name": "Sergio Moya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1083296?v=4",
+      "profile": "https://github.com/smoya",
+      "contributions": [
+        "code",
+        "blog",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
