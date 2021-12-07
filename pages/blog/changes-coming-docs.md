@@ -35,7 +35,7 @@ Before I tell you more details about upcoming changes to the Docs and how you ca
 - **Own the docs for the AsyncAPI feature set** — documenting this specific area of our Open Technologies function and driving all docs efforts around it.
 - **Plan documentation in conjunction with OSS community feedback** — working with open-source communities to learn about a feature from specifications and user research.
 - **Collaborate closely with Developer Relations to ensure docs, educational, and learning materials align with community needs:** this includes assisting with documentation, tutorials, and all education efforts within AsyncAPI.
-- **Conduct editorial reviews on my community doc drafts**— providing constructive and kind feedback that helps colleagues to grow.
+- **Conduct editorial reviews on community doc drafts**— providing constructive and kind feedback that helps colleagues to grow.
 - **Liaise with stakeholders** across the AsyncAPI Initiative to establish and address docs needs.
 - **Maintain [AsyncAPI Docs GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs)**.
  
