@@ -10,8 +10,10 @@ In this tutorial, you get started with actual code and a sample real-world use c
 You want to create a system capable of turning on/off the streetlights depending on the environmental conditions of each of them:
 
 - You're going to implement an event-driven architecture, with a Message Broker in its "center".
-- Streetlights will send information about its environmental lighting to the broker.
-- None of the services will wait for any kind of response. (Think about it as _fire and forget_.) You'll publish messages to the broker and that's it. Your service doesn't need to know who receives them.
+- Streetlights will publish information about their environmental lighting to the broker.
+- Your application will connect to the broker and receive a stream of events from all the streetlights that are reporting their conditions.
+- Based off the events, your application can make a decision regarding turning the streetlight off.
+- Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
 
 # Technology
 
@@ -22,7 +24,7 @@ You'll use Node.js to code the APIs and Mosquitto as the message broker. The sel
 Let's start by creating an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
 
 <CodeBlock>
-{`asyncapi: '2.1.0'
+{`asyncapi: '2.2.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -63,7 +65,7 @@ channels:
 Let's break it down into pieces:
 
 <CodeBlock>
-{`asyncapi: '2.1.0'
+{`asyncapi: '2.2.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -75,7 +77,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use the AsyncAPI version 2.1.0.
+- The `asyncapi` field indicates you use the AsyncAPI version 2.2.0.
 - The `info` field holds information about the API, such as its name, version, description, and license.
 
 Now lets move all the way to the `channels` section. This section is used to describe the event names your API will be publishing and/or subscribing to.
@@ -88,7 +90,7 @@ Now lets move all the way to the `channels` section. This section is used to des
       operationId: onLightMeasured`}
 </CodeBlock>
 
-In this example, `light/measured` is the channel name your API will `publish` to. The `operationId` property, describes what will be the name of function or method that takes care of this functionality in the generated code. The `payload` property is used to understand how the event should look like when publishing to that channel:
+In this example, `light/measured` is the channel name the Streetlight API will `subscribe` to (i.e, to interact with the Streetlight API you `publish` to the broker). The `operationId` property, describes what is the name of function or method that takes care of this functionality in the generated code. The `payload` property is used to understand how the event should look like when publishing to that channel:
 
 <CodeBlock>
 {`      payload:
@@ -131,7 +133,7 @@ To generate your code, you'll use the [AsyncAPI Generator](https://github.com/as
 ### 3. Create a file with the AsyncAPI machine-readable description you defined before. On Windows use `type` instead of `cat`:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.1.0'
+asyncapi: '2.2.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -197,17 +199,17 @@ EOT`}
 {`npm install mqtt -g`}
 </CodeBlock>
 
-### 4. Send correct message to your application:
+### 4. Send a correct message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 5. Send incorrect message to your application:
+### 5. Send an incorrect message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 6. Go back to the previous terminal and check if your application logged the message you just sent, with errors related to the invalid message.
+### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
 
 # Conclusions
 

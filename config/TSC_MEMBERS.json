@@ -257,6 +257,7 @@
 		"repos": [
 			"event-gateway",
 			"go-watermill-template",
+			"infra",
 			"parser-api"
 		]
 	},
@@ -268,6 +269,17 @@
 		"availableForHire": true,
 		"repos": [
 			"cli"
+		]
+	},
+	{
+		"name": "Alejandra Quetzalli",
+		"github": "alequetzalli",
+		"twitter": "QuetzalliAle",
+		"linkedin": "alejandra-quetzalli",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"website"
 		]
 	}
 ]

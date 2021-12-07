@@ -1,8 +1,9 @@
 ---
 type: Engineering
+featured: true
 cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
 title: "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool"
-date: 2021-11-24T06:00:00+01:00
+date: 2021-12-07T06:00:00+01:00
 tags:
    - Discovery
    - Specification
@@ -34,16 +35,18 @@ Oftentimes, removing an event topic or queue requires nerves of steel, for fear 
 
 Thankfully, the AsyncAPI Discovery Tool offers a better way.
 # How the AsyncAPI Discovery Tool Works
-The AsyncAPI Discovery Tool analyzes event traffic passing through brokers like Kafka, RabbitMQ, IBM MQ, Solace, and more. After learning how the broker distributes events, the AsyncAPI Discovery Tool generates a corresponding [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.2.0). The generated spec can be used for code generation, documentation, visualization, infrastructure deployment, and more.
+The AsyncAPI Discovery Tool analyzes event traffic passing through brokers like Kafka, RabbitMQ, IBM MQ, Solace, and more. After learning how the broker distributes events, the AsyncAPI Discovery Tool generates a corresponding [AsyncAPI specification](https://www.asyncapi.com/docs/specifications/latest). The generated spec can be used for code generation, documentation, visualization, infrastructure deployment, and more.
 
 It’s a great starting point for getting events catalogued and governed.
 
 It’s not perfect (more on that later), and there’s a lot more work to be done, but the AsyncAPI Discovery Tool helps your enterprise align production reality with AsyncAPI documentation. And perhaps relieve some tension for middleware engineers.
 
 # Getting Started with AsyncAPI Discovery Tool
-Getting started means a trip to the [SolaceLabs GitHub](https://github.com/SolaceLabs/event-discovery-agent), where you can find detailed instructions and documentation. (While Solace created AsyncAPI Discovery, it’s open source with an Apache 2.0 license.)
+Getting started means a trip to the [SolaceLabs GitHub](https://github.com/SolaceLabs/event-discovery-agent), where you can find detailed instructions and documentation. (While Solace created the AsyncAPI Discovery Tool, it’s open-source with an Apache 2.0 license.)
 
-The AsyncAPI Discovery Tool runs as a stand-alone Java Jar, so getting it running requires only Java and Maven. Once it’s up and running, AsyncAPI has its own self-contained UI, offering fill-in-the-blanks configuration ([get more details about the UI](https://github.com/SolaceLabs/event-discovery-agent/blob/main/docs/ui.md)). Here’s an example for Kafka:
+The AsyncAPI Discovery Tool runs as a stand-alone Java Jar, so getting it running requires only Java and Maven. Once it’s up and running, AsyncAPI has its own self-contained UI, offering fill-in-the-blanks configuration. You can read more details about the UI ([here](https://github.com/SolaceLabs/event-discovery-agent/blob/main/docs/ui.md)). 
+
+Here’s an example for Kafka:
 
 ![Figure 1: UI for AsyncAPI Discovery for Kafka](/img/posts/asyncapi-discovery-tool/asyncapi-discovery-tool-1.webp)
 
@@ -62,14 +65,14 @@ The most obvious place to improve the AsyncAPI Discovery Tool is to expand the n
 - RabbitMQ
 - HiveMQ
 
-Fortunately, the tool was built with extensibility in mind. There is a documented plug-in architecture just itching to have more brokers added. If you’re interested, The people who maintain the tool welcome pull requests.
+Fortunately, the tool was built with extensibility in mind. There is a documented plug-in architecture just itching to have more brokers added. If you’re interested, the people who maintain the tool welcome pull requests.
 
-- The confusing publish and subscribe verbs in the output.
+- The confusing `publish` and `subscribe` verbs in the output.
 - The requirement that a single file must represent a single application makes it tough to get a high-level understanding of the architecture.
 
 As the spec matures, the tooling will hopefully be close behind.
 
 # Conclusion
-In the meantime, the AsyncAPI Discovery Tool can be a huge help to enterprises that are new to AsyncAPI but experienced with event-driven architecture and messaging. The AsyncAPI Discovery Tool can start you down the road from a tangled event mess, to a well-organized, fully documented, tightly governed architecture.
+In the meantime, the AsyncAPI Discovery Tool can be a huge help to enterprises that are new to AsyncAPI but experienced with event-driven architecture and messaging. The AsyncAPI Discovery Tool can start you down the road from a tangled event mess to a well-organized, fully documented, tightly governed architecture.
 
 If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://asyncapi.com/slack-inviteyou) or the [Solace Community Forum](http://solace.community/). 

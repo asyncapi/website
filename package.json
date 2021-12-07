@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "scripts": {
-    "dev": "node scripts/build-post-list.js && node scripts/build-rss.js && node scripts/build-roadmap.js && next -p 8080",
-    "build": "node scripts/build-post-list.js && node scripts/build-rss.js && node scripts/build-roadmap.js && next build",
+    "dev": "node scripts/index.js && next -p 8080",
+    "build": "node scripts/index.js && next build",
     "start": "next start",
     "export": "next export",
     "lint": "echo \"No linter configured yet\"",
@@ -30,9 +30,10 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/modelina": "^0.39.5",
+    "@asyncapi/modelina": "^0.39.7",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@heroicons/react": "^1.0.5",
     "@mdx-js/loader": "^1.6.4",
     "@mdx-js/react": "^1.6.4",
     "@monaco-editor/react": "^3.3.0",
