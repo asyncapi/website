@@ -1,18 +1,18 @@
 ---
 title: "Change is coming to our AsyncAPI Developer Documentation"
-Subtitle: "AsyncAPI Dev Docs are getting a makeover!"
-date: 2021
+date: 2021-12-07 06:00:00 +0100
 type: Engineering
 tags:
   - Documentation
   - Announcement
-cover: /img/posts/changes-coming-docs/diataxis.jpg
+cover: /img/posts/changes-coming-docs/mind-map.png
 authors:
   - name: Alejandra Quetzalli
     photo: /img/avatars/canela-ale.jpg
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: AsyncAPI Dev Docs are getting a makeover!
-excerpt: Changes are coming to the Docs!
+excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
+featured: true
 ---
 
 ## 🦄 Hola, soy Alejandra Quetzalli
