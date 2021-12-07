@@ -25,7 +25,7 @@ I’m a Senior Technical Writer 👩🏻‍💻 recently hired by [Postman](http
 
 I also recently [joined our initiative's Technical Steering Committee (TSC)](https://www.asyncapi.com/community/tsc)! The TSC is responsible for the oversight of the AsyncAPI Initiative, helping make decisions on a higher level, or when maintainers cannot find a consensus.
 
-By the second day on the team, I was already working on community Pull Requests (PRs) and getting to know more of our community members. This direct engagement with community feels amazing, because I really **_do_** want to help as much as I can. I'm excited to listen what our OSS community thinks needs to be documented first.
+By the second day, I was already working on community Pull Requests (PRs) and getting to know more of our community members. This direct engagement with community feels amazing, because I really **_do_** want to help as much as I can. I'm excited to listen what our OSS community thinks needs to be documented first.
 
 Before I tell you more details about upcoming changes to the Docs and how you can contribute to them, I also want to share more granular details about my work here within our OSS community.
 
@@ -35,7 +35,7 @@ Before I tell you more details about upcoming changes to the Docs and how you ca
 - **Own the docs for the AsyncAPI feature set** — documenting this specific area of our Open Technologies function and driving all docs efforts around it.
 - **Plan documentation in conjunction with OSS community feedback** — working with open-source communities to learn about a feature from specifications and user research.
 - **Collaborate closely with Developer Relations to ensure docs, educational, and learning materials align with community needs:** this includes assisting with documentation, tutorials, and all education efforts within AsyncAPI.
-- **Conduct editorial reviews on my teammates’ and community doc drafts**— providing constructive and kind feedback that helps colleagues to grow.
+- **Conduct editorial reviews on my community doc drafts**— providing constructive and kind feedback that helps colleagues to grow.
 - **Liaise with stakeholders** across the AsyncAPI Initiative to establish and address docs needs.
 - **Maintain [AsyncAPI Docs GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs)**.
  
