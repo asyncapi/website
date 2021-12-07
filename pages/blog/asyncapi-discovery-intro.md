@@ -1,5 +1,6 @@
 ---
 type: Engineering
+featured: true
 cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
 title: "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool"
 date: 2021-12-07T06:00:00+01:00
