@@ -146,4 +146,4 @@ There's a lot of good work ahead, but **you** determine _our content roadmap_ be
 
 
 ---
-> Photo from <a href="https://diataxis.fr/">Diátaxis</a> on <a href="https://diataxis.fr/">Diataxis framework</a>
+> Photo from <a href="https://diataxis.fr/">Diátaxis</a> on <a href="https://diataxis.fr/">Diátaxis framework</a>
