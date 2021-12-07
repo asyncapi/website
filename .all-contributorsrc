@@ -141,6 +141,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "damilolarandolph",
+      "name": "Damilola Randolph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43427949?v=4",
+      "profile": "https://damilolarandolph.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
