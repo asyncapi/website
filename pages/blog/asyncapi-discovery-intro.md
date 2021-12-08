@@ -1,7 +1,7 @@
 ---
 type: Engineering
 featured: true
-cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
+cover: /img/posts/asyncapi-discovery-intro/asyncapi-discovery-tool-header.webp
 title: "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool"
 date: 2021-12-07T06:00:00+01:00
 tags:
@@ -48,11 +48,11 @@ The AsyncAPI Discovery Tool runs as a stand-alone Java Jar, so getting it runnin
 
 Here’s an example for Kafka:
 
-![Figure 1: UI for AsyncAPI Discovery for Kafka](/img/posts/asyncapi-discovery-tool/asyncapi-discovery-tool-1.webp)
+![Figure 1: UI for AsyncAPI Discovery for Kafka](/img/posts/asyncapi-discovery-intro/asyncapi-discovery-tool-1.webp)
 
 Just fill in the configuration, asking your friendly local administrator for help if needed, and then click the “Start Scan” button. After grinding away, the AsyncAPI Discovery Tool returns a consolidated spec file. The AsyncAPI file describes the channels and schemas of events passing through the broker. From there, the world is your oyster: generate code, create infrastructure, or start governing your events.
 
-![Figure 2: Resulting (greatly simplified) AsyncAPI spec](/img/posts/asyncapi-discovery-tool/asyncapi-discovery-tool-2.webp)
+![Figure 2: Resulting (greatly simplified) AsyncAPI spec](/img/posts/asyncapi-discovery-intro/asyncapi-discovery-tool-2.webp)
 
 
 # The Future of the AsyncAPI Discovery Tool
