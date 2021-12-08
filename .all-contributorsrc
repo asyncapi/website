@@ -160,6 +160,15 @@
         "blog",
         "ideas"
       ]
+    },
+    {
+      "login": "ceich",
+      "name": "Chris Eich",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38611?v=4",
+      "profile": "https://github.com/ceich",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
