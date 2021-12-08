@@ -62,6 +62,7 @@ The following is a list of tools that generate human-readable documentation from
 | [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
+| [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | Javascript
 
 # DSL
 
