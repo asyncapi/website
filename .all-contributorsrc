@@ -141,8 +141,27 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "damilolarandolph",
+      "name": "Damilola Randolph",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43427949?v=4",
+      "profile": "https://damilolarandolph.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Barbanio",
+      "name": "Barbanio González",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77982319?v=4",
+      "profile": "https://github.com/Barbanio",
+      "contributions": [
+        "blog",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "skipCi": false
 }
