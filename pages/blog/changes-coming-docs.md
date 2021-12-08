@@ -5,10 +5,10 @@ type: Engineering
 tags:
   - Documentation
   - Announcement
-cover: /img/posts/changes-coming-docs/mind-map.png
+cover: /img/posts/changes-coming-docs/mind-map.webp
 authors:
   - name: Alejandra Quetzalli
-    photo: /img/avatars/canela-ale.jpg
+    photo: /img/avatars/canela-ale.webp
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: AsyncAPI Dev Docs are getting a makeover!
 excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
@@ -77,7 +77,7 @@ Why, you wonder?
 
 It was important (and exciting!) to me to introduce best practices from the [Diátaxis Framework](https://diataxis.fr/) for our new content buckets.
 
-![Diátaxis framework](/img/posts/changes-coming-docs/diataxis.png)
+![Diátaxis framework](/img/posts/changes-coming-docs/diataxis.webp)
 
 The Diátaxis engineering documentation system classifies content under 4 main _agnostic_ buckets. This approach for Information Architecture (IA) and User Flows in dev docs is currently upheld widely within the tech industry. _(i.e. One current live example is GatsbyJS, which also uses the Diátaxis system for their Dev Docs. If you want to see a longer list of companies using it, go over [here](https://diataxis.fr/adoption/).)_
 
@@ -91,7 +91,7 @@ The Diátaxis engineering documentation system classifies content under 4 main _
 #### 💁🏻‍♀️ How does the Diátaxis system apply to an actual technology?
 Let’s take a look at the following Mind Map.
 
-![Mind Map, displaying Diátaxis system applied to documenting AsyncAPI capabilities](/img/posts/changes-coming-docs/mind-map.png)
+![Mind Map, displaying Diátaxis system applied to documenting AsyncAPI capabilities](/img/posts/changes-coming-docs/mind-map.webp)
 
 Here we see that the AsyncAPI _CLI_ and _Spec_ fall under the `Reference` bucket. The `Concepts` bucket details AsyncAPI's specification concepts and terms that deserve to be covered in more detail. But when it comes to understanding the difference between what fits under a `Tutorial` vs. a `How-To` bucket, it feels harder to understand.
 
