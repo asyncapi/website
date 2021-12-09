@@ -24,10 +24,12 @@ module.exports = withMDX({
   webpack(config, { isServer }) {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
-      config.node = {
-        fs: 'empty'
-      }
+      config.resolve.fallback.fs = false;
     }
+
+    // config.resolve.alias["react/jsx-dev-runtime"] = require.resolve('react/jsx-dev-runtime');
+    // config.resolve.alias["react/jsx-runtime"] = require.resolve('react/jsx-runtime');
+
     return config
   },
 })
