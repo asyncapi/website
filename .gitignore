@@ -10,3 +10,6 @@ public/rss.xml
 roadmap.json
 yarn.lock
 meetings.json
+
+#Automatically copied in the build script
+public/definitions

@@ -24,14 +24,6 @@ module.exports = withMDX({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/definitions/:slug*',
-        destination: '/api/definitions/:slug*',
-      },
-    ]
-  },
   webpack(config, { isServer }) {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
