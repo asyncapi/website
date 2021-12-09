@@ -1,6 +1,6 @@
 ---
 title: "Change is coming to our AsyncAPI Developer Documentation"
-date: 2021-12-07 06:00:00 +0100
+date: 2021-12-13 06:00:00 +0100
 type: Engineering
 tags:
   - Documentation
