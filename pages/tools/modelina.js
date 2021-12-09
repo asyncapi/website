@@ -1,5 +1,5 @@
 import GenericLayout from '../../components/layout/GenericLayout'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Select from '../../components/form/Select'
 import CodeBlock from '../../components/editor/CodeBlock'
 import Tabs from '../../components/tabs/Tabs'
