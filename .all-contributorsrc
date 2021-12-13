@@ -160,6 +160,15 @@
         "blog",
         "ideas"
       ]
+    },
+    {
+      "login": "hkaur008",
+      "name": "Hargun Kaur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56452820?v=4",
+      "profile": "https://github.com/hkaur008",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
