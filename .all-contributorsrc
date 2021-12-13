@@ -160,6 +160,33 @@
         "blog",
         "ideas"
       ]
+    },
+    {
+      "login": "hkaur008",
+      "name": "Hargun Kaur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56452820?v=4",
+      "profile": "https://github.com/hkaur008",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ceich",
+      "name": "Chris Eich",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38611?v=4",
+      "profile": "https://github.com/ceich",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "hpatoio",
+      "name": "Simone Fumagalli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/249948?v=4",
+      "profile": "https://github.com/hpatoio",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
