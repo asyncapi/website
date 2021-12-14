@@ -53,7 +53,7 @@ In our case, we need to add...
 - **Conceptual docs** that explain our spec terminology in more detail that include **engineering diagrams**: people often learn visually! 
 - **Many more tutorials**. _(i.e. Websocket tutorial)_
 - **CLI docs** under a **Reference** content bucket.
-- A **tools section**! Currently we have documentation for our tools in individual tools' GitHub repos, under a `/docs` directory. Those should still remain there and continue to be maintained, but they also need to be documented in our Docs in a less informal way that what you see in a `README`.
+- A **tools section**! Currently we have documentation for our tools in individual tools' GitHub repos, under a `/docs` directory. Those should still remain there and continue to be maintained, but they also need to be documented in our Docs in a less informal way than what you see in a `README`.
 - **Usecases** and **Troubleshooting Guides**, under a new _How-To_ section.
 
 
