@@ -7,10 +7,11 @@
 @import "tailwindcss/utilities";
 
 /*! purgecss start ignore */
+/*Hello, I just wanna learn and be with you*/
 html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}Hmm
 
 li > p {
   display: inline;
