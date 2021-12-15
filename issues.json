@@ -5,65 +5,83 @@
       "isPR": false,
       "isAssigned": true,
       "title": "Proposal to solve publish/subscribe confusion",
-      "lastActivity": "11 days",
       "author": "fmvilas",
       "resourcePath": "/asyncapi/spec/issues/618",
       "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
       "score": 29.004633463675134
-    },
-    {
-      "id": "PR_kwDOGPFxkc4vL2T2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add /generator path",
-      "lastActivity": "1 days",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/server-api/pull/7",
-      "repo": "asyncapi/server-api",
-      "score": 18.953522857451077
-    },
-    {
-      "id": "MDU6SXNzdWU4Mjc0MTg2NDk=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Press tab",
-      "lastActivity": "5 days",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/website/issues/195",
-      "repo": "asyncapi/website",
-      "score": 15.507427792459973
     },
     {
       "id": "MDExOlB1bGxSZXF1ZXN0NzE3MTU5MDAy",
       "isPR": true,
       "isAssigned": false,
       "title": "feat: changes in schema, refactorings, input loops, random parameters in channels.",
-      "lastActivity": "2 days",
       "author": "NektariosFifes",
       "resourcePath": "/asyncapi/simulator/pull/50",
       "repo": "asyncapi/simulator",
-      "score": 15.507427792459973
+      "score": 16.65612614745701
     },
     {
       "id": "I_kwDOGQYLdM49j08P",
       "isPR": false,
       "isAssigned": true,
-      "title": "Brand refresh",
-      "lastActivity": "2 days",
+      "title": "Brand Refresh: Logo/Colors/Typography",
       "author": "mcturco",
       "resourcePath": "/asyncapi/brand/issues/1",
       "repo": "asyncapi/brand",
-      "score": 14.358729437462937
+      "labels": [
+        {
+          "name": "design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 16.08177696995849
+    },
+    {
+      "id": "MDU6SXNzdWU4Mjc0MTg2NDk=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Press tab",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/website/issues/195",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 15.507427792459973
     },
     {
       "id": "I_kwDOBW5R_c48EHFH",
       "isPR": false,
       "isAssigned": true,
       "title": "Create a dashboard on the website",
-      "lastActivity": "3 days",
       "author": "KhudaDad414",
       "resourcePath": "/asyncapi/website/issues/385",
       "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 14.358729437462937
+    },
+    {
+      "id": "PR_kwDODyzcIc4uDoLJ",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: add a docs feedback template issue",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/.github/pull/100",
+      "repo": "asyncapi/.github",
       "score": 14.358729437462937
     },
     {
@@ -71,10 +89,10 @@
       "isPR": true,
       "isAssigned": false,
       "title": "docs: small social media system example",
-      "lastActivity": "7 days",
       "author": "jonaslagoni",
       "resourcePath": "/asyncapi/spec/pull/651",
       "repo": "asyncapi/spec",
+      "labels": [],
       "score": 14.07155484871368
     },
     {
@@ -82,444 +100,786 @@
       "isPR": true,
       "isAssigned": false,
       "title": "feat!: split out definitions",
-      "lastActivity": "2 days",
       "author": "jonaslagoni",
       "resourcePath": "/asyncapi/spec-json-schemas/pull/128",
       "repo": "asyncapi/spec-json-schemas",
       "score": 13.210031082465903
     },
     {
-      "id": "PR_kwDODyzcIc4uDoLJ",
+      "id": "MDExOlB1bGxSZXF1ZXN0Njk4MTUxNTg3",
       "isPR": true,
-      "isAssigned": true,
-      "title": "docs: add a docs feedback template issue",
-      "lastActivity": "3 minutes",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/.github/pull/100",
-      "repo": "asyncapi/.github",
-      "score": 12.922856493716644
+      "isAssigned": false,
+      "title": "feat: request/response support in both operation and message objects",
+      "author": "smarek",
+      "resourcePath": "/asyncapi/spec/pull/594",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💡 Proposal (RFC 1)",
+          "color": "F9D0C4"
+        }
+      ],
+      "score": 10.625459783722574
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFGbvC85AWog3",
+      "title": "Automate Helm chart release version bump",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/event-gateway/issues/86",
+      "repo": "asyncapi/event-gateway",
+      "author": "smoya",
+      "area": "Unknown",
+      "complexity": "1",
+      "labels": []
+    },
     {
       "id": "I_kwDODou01c5ADhD8",
       "title": "Beta label is almost invisible",
       "isAssigned": false,
       "resourcePath": "/asyncapi/studio/issues/209",
-      "repo": "studio",
+      "repo": "asyncapi/studio",
       "author": "fmvilas",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
     },
     {
       "id": "I_kwDOFLhIt84_RlG5",
       "title": "we should have a GH workflow that posts a welcome message to the PR that is merged that contained new TSC member",
       "isAssigned": false,
       "resourcePath": "/asyncapi/community/issues/178",
-      "repo": "community",
+      "repo": "asyncapi/community",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOFGbvC84_LkcI",
       "title": "Create better Kubernetes liveness, readiness and startup Probes",
       "isAssigned": false,
       "resourcePath": "/asyncapi/event-gateway/issues/77",
-      "repo": "event-gateway",
+      "repo": "asyncapi/event-gateway",
       "author": "smoya",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh384-Mdyr",
       "title": "Special cases in enum values fails to generate accurate enum keys for C# generator",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/503",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
-    },
-    {
-      "id": "I_kwDOE8Qh384-MdEf",
-      "title": "Special cases in enum values fails to generate accurate enum keys for Java generator",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/502",
-      "repo": "modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc4-IAIu",
       "title": "No file extension when user defines the name of the file (using new command)",
       "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/114",
-      "repo": "cli",
+      "repo": "asyncapi/cli",
       "author": "boyney123",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc4-EpJQ",
       "title": "Add tests for \"new\" and \"start studio\" commands",
       "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/106",
-      "repo": "cli",
+      "repo": "asyncapi/cli",
       "author": "fmvilas",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": []
     },
     {
       "id": "I_kwDOGIfWhs49AQuD",
       "title": "Test Issue #1 (Please Ignore)",
       "isAssigned": false,
       "resourcePath": "/asyncapi/temp-repo-test-for-website/issues/18",
-      "repo": "temp-repo-test-for-website",
+      "repo": "asyncapi/temp-repo-test-for-website",
       "author": "KhudaDad414",
       "area": "github actions",
-      "complexity": "easy"
+      "complexity": "easy",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZlCm",
       "title": "Show how to generate Java data models with Jackson annotation",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/427",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZU8D",
       "title": "Show how to change collection types for Java data models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/424",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZSHn",
       "title": "Show how to generate Java data models that overwrite hashCode method",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/422",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZQod",
       "title": "Show how to generate Java data models that overwrite equal method",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/421",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZKng",
       "title": "Show how to generate C# data models with serializer functionality",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/417",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZBlV",
       "title": "Show how to change the naming format for data models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/415",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848ZA4u",
       "title": "Show how to change the naming format for properties",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/414",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848Y5-K",
       "title": "Show how to include a custom function in the data model",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/413",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848Y0YA",
       "title": "Show how to generate C# data models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/412",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh3848YxpN",
       "title": "Show how to generate Java data models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/409",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDODtSyFs48VNgA",
       "title": "Variables should not be shadowed",
       "isAssigned": true,
       "resourcePath": "/asyncapi/nodejs-template/issues/91",
-      "repo": "nodejs-template",
+      "repo": "asyncapi/nodejs-template",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "I_kwDOFiHaLM48UhHw",
       "title": "Include underlying TypeScript types into the API Documentation",
       "isAssigned": true,
       "resourcePath": "/asyncapi/diff/issues/47",
-      "repo": "diff",
+      "repo": "asyncapi/diff",
       "author": "aayushmau5",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "documentation",
+          "color": "0075ca"
+        }
+      ]
     },
     {
       "id": "I_kwDOFGbvC8473gxV",
       "title": "Define a better API that can be used by other applications",
       "isAssigned": false,
       "resourcePath": "/asyncapi/event-gateway/issues/47",
-      "repo": "event-gateway",
+      "repo": "asyncapi/event-gateway",
       "author": "smoya",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "help wanted",
+          "color": "008672"
+        }
+      ]
     },
     {
       "id": "I_kwDOE8Qh38472p_i",
       "title": "Show how to generate Go data models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/387",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        },
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOBW5R_c47q5h1",
       "title": "Show previous (already closed) job posts",
       "isAssigned": false,
       "resourcePath": "/asyncapi/website/issues/371",
-      "repo": "website",
+      "repo": "asyncapi/website",
       "author": "fmvilas",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5OTUwMTgzNjQ=",
       "title": "Add ENABLE_DEBUG flag to turn on logging",
       "isAssigned": false,
       "resourcePath": "/asyncapi/playground/issues/172",
-      "repo": "playground",
+      "repo": "asyncapi/playground",
       "author": "fmvilas",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5OTA3OTAwMjA=",
       "title": "Workflow that updates every PR with clear info about conventional commits",
       "isAssigned": false,
       "resourcePath": "/asyncapi/.github/issues/70",
-      "repo": ".github",
+      "repo": "asyncapi/.github",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5Njg0ODQ2Nzg=",
       "title": "Automerge should auto merge master",
       "isAssigned": false,
       "resourcePath": "/asyncapi/.github/issues/68",
-      "repo": ".github",
+      "repo": "asyncapi/.github",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5NTU4MjM0OTQ=",
       "title": "Validate `object` type for the headers in the message trait ",
       "isAssigned": false,
       "resourcePath": "/asyncapi/spec-json-schemas/issues/82",
-      "repo": "spec-json-schemas",
+      "repo": "asyncapi/spec-json-schemas",
       "author": "magicmatatjahu",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5NTI5MDU1MTg=",
       "title": "Wrong rendered content in the blog posts list",
       "isAssigned": false,
       "resourcePath": "/asyncapi/website/issues/311",
-      "repo": "website",
+      "repo": "asyncapi/website",
       "author": "magicmatatjahu",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5NDc4NzA2NTE=",
       "title": "Support different asyncapi file names: asyncapi.json and asyncapi.yml",
       "isAssigned": false,
       "resourcePath": "/asyncapi/glee/issues/23",
-      "repo": "glee",
+      "repo": "asyncapi/glee",
       "author": "fmvilas",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5NDM1ODYyODc=",
       "title": "Bad indentation for properties and objects description on generated doc via AsyncAPI Playground",
       "isAssigned": false,
       "resourcePath": "/asyncapi/asyncapi-react/issues/393",
-      "repo": "asyncapi-react",
+      "repo": "asyncapi/asyncapi-react",
       "author": "tmdoit",
       "area": "library",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU5Mzg3NjY0NjQ=",
       "title": "Add End to End test so we ensure users can use @asyncapi/modelina npm package.",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/296",
-      "repo": "modelina",
+      "repo": "asyncapi/modelina",
       "author": "smoya",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWUxMDA4MjQ5Nzg4",
       "title": "Set the right menu collapsable",
       "isAssigned": false,
       "resourcePath": "/asyncapi/asyncapi-react/issues/441",
-      "repo": "asyncapi-react",
+      "repo": "asyncapi/asyncapi-react",
       "author": "M3lkior",
       "area": "library",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU4MzQ4NzE2MzA=",
       "title": "Bindings are specified differently between objects",
       "isAssigned": false,
       "resourcePath": "/asyncapi/spec/issues/519",
-      "repo": "spec",
+      "repo": "asyncapi/spec",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "🐞 Bug",
+          "color": "E60205"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU4MDU4MDM5Njg=",
       "title": "Enhance API docs with information about results of code generation with generateFromString using entrypoint",
       "isAssigned": false,
       "resourcePath": "/asyncapi/generator/issues/507",
-      "repo": "generator",
+      "repo": "asyncapi/generator",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU3OTUyMDIyNDk=",
       "title": "`schemaUrl` it sends a few requests to the same resource",
       "isAssigned": true,
       "resourcePath": "/asyncapi/asyncapi-react/issues/243",
-      "repo": "asyncapi-react",
+      "repo": "asyncapi/asyncapi-react",
       "author": "rols2015",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "2",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2ODQ4MjI5ODQ=",
       "title": "Integrate eslint plugin for jsdoc validation and fix potential issues",
       "isAssigned": false,
       "resourcePath": "/asyncapi/parser-js/issues/164",
-      "repo": "parser-js",
+      "repo": "asyncapi/parser-js",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2ODI3ODYwODg=",
       "title": "one entry in nonRenderableFiles: []",
       "isAssigned": false,
       "resourcePath": "/asyncapi/generator/issues/403",
-      "repo": "generator",
+      "repo": "asyncapi/generator",
       "author": "felixplatteau",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2NzYxMTY2NDM=",
       "title": "Throw meaningfull error when parser of specific schemaFormat is not available",
       "isAssigned": false,
       "resourcePath": "/asyncapi/parser-js/issues/157",
-      "repo": "parser-js",
+      "repo": "asyncapi/parser-js",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2NDgwOTkwMzA=",
       "title": "Add validation of message examples",
       "isAssigned": false,
       "resourcePath": "/asyncapi/parser-js/issues/99",
-      "repo": "parser-js",
+      "repo": "asyncapi/parser-js",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWUxMDA4MjQ1NzQ4",
       "title": "Ability to auto-expand message schema",
       "isAssigned": false,
       "resourcePath": "/asyncapi/asyncapi-react/issues/440",
-      "repo": "asyncapi-react",
+      "repo": "asyncapi/asyncapi-react",
       "author": "derberg",
       "area": "library",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2MDYzOTQ1Nzg=",
       "title": "Make it clear to community that our Blog is opened for them to write posts",
       "isAssigned": false,
       "resourcePath": "/asyncapi/website/issues/90",
-      "repo": "website",
+      "repo": "asyncapi/website",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "1",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2MDYzODgzNzM=",
       "title": "Improve overall performance of the website but especially Blog",
       "isAssigned": false,
       "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "website",
+      "repo": "asyncapi/website",
       "author": "derberg",
       "area": "Unknown",
-      "complexity": "Unknown"
+      "complexity": "3",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ]
     }
   ]
 }

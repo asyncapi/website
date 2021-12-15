@@ -17,7 +17,7 @@ export default function Home() {
         <Header />
         <div className="block lg:flex gap-3  w-full  mt-8">
           <Table
-            title="Hot discussions"
+            title="🔥 Hot Topics"
             data={data.hotDiscussions.map((item) => {
               return {
                 id: item.id,
