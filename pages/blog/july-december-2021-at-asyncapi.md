@@ -14,7 +14,7 @@ excerpt: It has been a while since the last update on the things at AsyncAPI Ini
 featured: true
 ---
 
-Around August, I communicated that because vacation is a dead season (in Poland we call it cucumber time) I will not do my monthly updates and write a single vacation summary.
+Around August, I communicated that because vacation is a dead season (in Poland we call it cucumber time) I will not do my monthly updates or write a single vacation summary.
 
 Well, the thing is that vacations were not as quiet as I expected. In September, a carousel started that was impossible to stop.
 
@@ -22,39 +22,39 @@ I started writing status updates bi-weekly in early 2020. These were about simpl
 
 I submit my official apologies to those awaiting my update-related articles. Honestly, looking at the size of the community and the growth that we are noticing, I don't know how I'll manage to publish these regularly in 2022. Maybe we should start writing those as a collective. 
 
-What I can promise for sure is that in January 2022 I will write a summary article about AsyncAPI growth in 2021. 
+What I can promise for sure is that in January 2022, I will write a summary article about AsyncAPI growth in 2021. 
 
 ## More regular live-streams
 
 We started two live streams under the AsyncAPI brand:
-- **Thinking Out Loud** is hosted by AsyncAPI Founder (Fran Mendez). He invites different community members to talk about AsyncAPI specification. All recordings are available [in the official YouTube playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ). Fran plans to continue doing them in 2022 as well,
-- **Contributor-first** is strictly targeted at new or existing contributors. Any AsyncAPI Technical Steering Committee member can volunteer as a host and talk about specific contribution-related topics. We aim to have it as frequently as possible, at least once a week. All recordings are available [in the official YouTube playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY). Basing on the community feedback, live stream will be renamed to **Let's talk about contributing** in 2022.
+- **Thinking Out Loud** is hosted by AsyncAPI Founder (Fran Mendez). He invites different community members to talk about AsyncAPI specification. All recordings are available [in the official YouTube playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ). Fran plans to continue doing them in 2022 as well.
+- **Contributor-first** is strictly targeted at new or existing contributors. Any AsyncAPI Technical Steering Committee member can volunteer as a host and talk about specific contribution-related topics. We aim to have it as frequently as possible, at least once a week. All recordings are available [in the official YouTube playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY). Based on the community feedback, the live stream will be renamed to **Let's talk about contributing** in 2022.
 
-Hosting these live streams is all possible thanks to great support from [Restream.io](https://restream.io/) folks who gave us free access to the tool that enables us to live stream directly all our social media channels.
+Hosting these live streams is all possible thanks to the great support from the [Restream.io](https://restream.io/) folks who gave us free access to the tool that enables us to live stream directly to all our social media channels.
 
-All official meetings are always listed:
-- in [our Community repository](https://github.com/asyncapi/community/labels/meeting)
-- in [our official Google Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com)
+All official meetings are always listed in our:
+- [Community repository](https://github.com/asyncapi/community/labels/meeting)
+- [official Google Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com)
 
 The best way to learn about a new event is to join [our official Google Group](https://groups.google.com/u/1/g/asyncapi-users) that we use as a mailing list for invites.
 
 ## Solving publish/subscribe confusion aka possible AsyncAPI 3.0 release in 2022
 
-It is hard to find someone in the community that was not confused by semantics related to **publish** and **subscribe** operations when learning about the AsyncAPI specification. Many people are asking in Slack. People are opening pull requests to fix our documentation, assuming we mixed things up by accident.
+It was hard to find someone in the community that was not confused by the semantics related to the **publish** and **subscribe** operations when learning about the AsyncAPI specification. Many people were asking in Slack. People were also opening pull requests to fix our documentation, assuming we mixed things up by accident.
 
 There are cases where education is not enough. You can have great docs and education materials. Still, some stuff just needs to be improved and cannot be fixed by documentation.
 
-At the beginning of my tech career, I've learned one sentence from an experienced developer: "documented bug becomes a feature". Sometimes you do not have a chance to learn from the bests :sweat_smile:
+At the beginning of my tech career, I learned a sentence from an experienced developer: "documented bugs become features". Sometimes you do not have a chance to learn from the best :sweat_smile:
 
 This is causing too much confusion and needs to be solved in 2022. It is probably not possible without a breaking change in the specification. 
 
-Please join us and help us improve not only the specification but also update tooling:
+Please join us and help us improve not only the specification but also update the tooling:
 - [Proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
 - [The many meanings of an AsyncAPI file](https://github.com/asyncapi/spec/issues/628)
 
 ## Google Summer of Code Summary
 
-We closed holidays 2021 with massive success of the [Google Summer of Code](https://www.asyncapi.com/blog/march-2021-at-asyncapi#google-summer-of-code) participants. All participants not only finished their projects, but they also became members of AsyncAPI Technical Steering Committee and also got a chance to present their work at AsyncAPI Conference.
+We closed holidays 2021 with massive success of the [Google Summer of Code](https://www.asyncapi.com/blog/march-2021-at-asyncapi#google-summer-of-code) participants. All participants not only finished their projects, but they also became members of AsyncAPI Technical Steering Committee and also got a chance to present their work at the 2021 AsyncAPI Conference.
 
 - [Aayush Sahu](https://www.linkedin.com/in/aayushmau5) created [Diff](https://github.com/asyncapi/diff)
   <YouTube id="yILtksZriqA" /> 
@@ -70,25 +70,25 @@ It was a pleasure to work with these folks and see them staying with us after GS
 
 ## Technical Steering Committee members setup
 
-After joining [Linux Foundation (LF)](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation) and applying the [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) it was a time for us to start setting up a Technical Steering Committee. 
+After joining the [Linux Foundation (LF)](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation) and applying the [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md), it was time for us to start setting up a Technical Steering Committee (TSC). 
 
-So here we are, 9 months after joining LF, we already have 23 members. Check out [complete list of all the members](https://www.asyncapi.com/community/tsc). Pay attention to those that are marked as **Available for hire**. Don't let folks work for free. Pay them to work on open source. Be good humans.
+So here we are, 9 months after joining LF, we already have 23 members. Check out the [complete list of all the TSC members](https://www.asyncapi.com/community/tsc). Pay attention to those that are marked as **Available for hire**. Don't let folks work for free. Pay them to work on open-source. Be good humans.
 
-Do you want to be on that list? Watch :point_down: presentation.
+Do you want to be on that list? Watch the following :point_down: presentation.
 
 <YouTube id="uG_aLF9Z1F0" /> 
 
-There are lots of things yet missing, like TSC list synchronization, voting process automation, and other things that need lots of work, so if you want to contribute to the project and you are a fan of automation, this is the right topic to help with.
+There are many things still missing, such as a TSC list synchronization, voting process automation, and more. Other things still need a lot of work. If you want to contribute to the project and you are a fan of automation, this is the right topic to help with.
 
-## Welcome Studio and Good Bye Playground
+## Welcome Studio and Goodbye Playground
 
 We released a new application that you can use to work on your AsyncAPI files. 
 
-Before, you could use [AsyncAPI Playground](https://playground.asyncapi.com/) but soon we'll start redirecting traffic to new, beautiful :point_right: [AsyncAPI Studio](https://studio.asyncapi.com/) :point_left:
+Before, you could use the [AsyncAPI Playground](https://playground.asyncapi.com/), but soon we'll start redirecting traffic to a new, beautiful :point_right: [AsyncAPI Studio](https://studio.asyncapi.com/) :point_left:
 
 The new Studio has a bright future, and you should expect lots of new features coming there. I definitely recommend checking out [Studio's GitHub repository](https://github.com/asyncapi/studio/).
 
-The cool stuff is that it is also integrated with [AsyncAPI CLI](https://www.asyncapi.com/tools/cli):
+The cool stuff is that it is also integrated with the [AsyncAPI CLI](https://www.asyncapi.com/tools/cli):
 ```bash
 #install CLI
 npm install -g @asyncapi/cli
@@ -108,23 +108,23 @@ This year, we hosted our first [AsyncAPI Hackathon](https://www.asyncapi.com/blo
 
 <YouTube id="j_KLiCRW3t0" /> 
 
-We also had 2 folks that got into the 2nd place:
+We also had 2 folks that tied in 2nd place:
 - [Ace](https://www.twitter.com/_acebuild) submitted [AsyncAPI Blocks](https://github.com/asyncapi/community/discussions/149)
 - [Greg Meldrum](https://www.linkedin.com/in/greg-meldrum-8b15a03/) submitted [Event Discovery Agent](https://github.com/asyncapi/community/discussions/147)
 
 Congrats to all of you folks!
 
-Check [this discussion to get more details on the voting process](https://github.com/asyncapi/community/discussions/165).
+Check out [this discussion to get more details on the Hackathon voting process](https://github.com/asyncapi/community/discussions/165).
 
-PS. During Hackathon we also had lots of people engaging with us because of Hacktoberfest. We got [30 issues resolved and merged](https://docs.google.com/spreadsheets/d/17YYe-ZompcuUACfCGa8Pc3XunFfWRBrNllIBChJ0yWw/edit#gid=0).
+P.S. During the Hackathon, we also had a lot of people engaging with us because of Hacktoberfest. We got [30 issues resolved and merged](https://docs.google.com/spreadsheets/d/17YYe-ZompcuUACfCGa8Pc3XunFfWRBrNllIBChJ0yWw/edit#gid=0).
 
 ## Conference
 
-COVID19 is still here. Thus, we decided that we will have another AsyncAPI Conference this year only in online mode. It was a three-day event with lots of great content, and most importantly, with 1st day dedicated to contributors only.
+COVID-19 is still here. Thus, we decided to host the 2021 AsyncAPI Conference this year only in online mode. It was a three-day event with lots of great content, and most importantly, with the 1st day dedicated to contributors only.
 
-The conference was live-streamed. Full-day recordings were released immediately, and individual talks recordings will follow. All listed under [dedicated Conference playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pijq9F5eYsJomWc7Zf6EYVTZ).
+The conference was live-streamed. Full-day recordings were released immediately, and individual talk recordings will follow. All will be listed under the [dedicated Conference playlist](https://www.youtube.com/playlist?list=PLbi1gRlP7pijq9F5eYsJomWc7Zf6EYVTZ).
 
-Till today this is how many people watched it during the conference and after as recordings:
+Check out the current sum of people that watched it during the conference and after as recordings:
 - Day 1:
   - YouTube: 1119
   - Twitch: 89 (during event only, later Twitch removes old videos)
@@ -147,9 +147,9 @@ Till today this is how many people watched it during the conference and after as
 
   Total: **888**
 
-These numbers are great if we compare them with a total of 600 registrations!
+These numbers are great if we compare them against a total of 600 registrations!
 
-Personally, the best number was that I discovered when I started listing names of all the people who helped during hackathon and conference organization. I think 62 is now my favorite number :heart:
+Personally, the best number that I discovered was when I started listing the names of all the people who helped during the hackathon and conference organization. I think 62 is now my favorite number :heart:
 
 <Figure
   src="/img/posts/july-december-2021-at-asyncapi/conf_contrib.webp"
@@ -157,11 +157,11 @@ Personally, the best number was that I discovered when I started listing names o
   className="text-center"
 />
 
-What about 2022? People during the conference voted for hybrid approach:
+What about 2022? People during the conference voted for a hybrid approach:
 
 <Figure
   src="/img/posts/july-december-2021-at-asyncapi/asyncapi_conf.webp"
-  caption="Picture showing that out of 25 voters, 18 (72%) voted for conference that is at the same time online and in person."
+  caption="Picture showing that out of 25 voters, 18 (72%) voted for a hybrid conference that is both online and in-person."
   className="text-center"
 />
 
