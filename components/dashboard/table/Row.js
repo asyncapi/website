@@ -1,11 +1,7 @@
-import { constant } from 'lodash';
-import PropTypes from 'prop-types';
-
 function Row({ item }) {
-  console.log(item);
   return (
-    <tr>
-      <td className="flex flex-col px-5 pt-5">
+    <li>
+      <div className="flex flex-col px-3 pt-2">
         <div className="inline-flex gap-2 items-center m-1">
           <img
             className="w-5 h-5"
@@ -15,21 +11,40 @@ function Row({ item }) {
                 : '/img/illustrations/icons/issue.svg'
             }
           />
-          <spin className="underline">{item.repo}</spin>
+          <span className="underline">{item.repo}</span>
         </div>
         <div>
-          <span className="font-semibold text-lg text-gray-600">
-            {item.title}
-          </span>
+          <a href={`https://github.com/${item.resourcePath}`}>
+            <span className="font-semibold text-lg text-gray-600 w-full">
+              {item.title}
+            </span>
+          </a>
         </div>
-        <div className="inline-flex m-1">
-          <span className="bg-green-200 px-2 py-1 rounded-full">
-            enhancement
-          </span>
+        <div className="inline-flex items-center m-1 gap-1">
+          {item.labels &&
+            item.labels.map((label) => (
+              <span
+                key={label.name}
+                className={`bg-blue-200 px-1 py-0.5 text-sm rounded-full z-0`}
+              >
+                {label.name}
+              </span>
+            ))}
+
+          {item.complexity && (
+            <img
+              src={`/img/illustrations/icons/dificulty-${item.complexity}.svg`}
+            />
+          )}
+          <a href={`https://github.com/${item.author}`}>
+            <img
+              className="rounded-full blur-none h-5 w-5"
+              src={`https://github.com/${item.author}.png?size=20`}
+            />
+          </a>
         </div>
-        <div className="bg-gray-200 h-px w-full mt-5"></div>
-      </td>
-    </tr>
+      </div>
+    </li>
   );
 }
 

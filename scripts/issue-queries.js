@@ -63,6 +63,12 @@ query IssueByID($id: ID!) {
       repository {
         name
       }
+      labels(first: 10){
+        nodes {
+          name
+          color
+        }
+      }
       title
       resourcePath
       reactions(last: 1) {
@@ -112,6 +118,7 @@ query($first: Int!, $after: String) {
         labels(first: 10){
           nodes {
             name
+            color
           }
         }
       }
@@ -148,6 +155,12 @@ query($first: Int!, $after: String) {
         resourcePath
         repository {
           name
+        }
+        labels(first: 10){
+          nodes {
+            name
+            color
+          }
         }
         reactions(last: 1) {
           totalCount
@@ -197,6 +210,12 @@ query($first: Int!, $after: String) {
         resourcePath
         repository {
           name
+        }
+        labels(first: 10){
+          nodes {
+            name
+            color
+          }
         }
         reactions(last: 1) {
           totalCount

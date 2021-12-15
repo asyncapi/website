@@ -9,12 +9,12 @@ export default function Header() {
           <Link href="/">
             <a>
               <h2 className="text-4xl leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
-                <span className="shapeup-animated-gradient">Dashboard</span> 🚀
+                <span className="shapeup-animated-gradient">Dashboard</span>
               </h2>
             </a>
           </Link>
           <p className="mt-5 text-xl leading-7 text-gray-500">
-            Visualize our progress. Get involved.{' '}
+            Lorem ipsum dolor sit amet.{' '}
           </p>
         </div>
       </div>

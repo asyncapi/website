@@ -6,17 +6,16 @@ import GoodFirstIssues from '../../components/dashboard/GoodFirstIssues';
 export default function Home() {
   return (
     <GenericLayout
-      title="Technical Steering Committee"
+      title="AsyncAPI - Dashboard"
       description={'description'}
       image={'image'}
       wide
     >
       <title>AsyncAPI - Dashboard</title>
 
-      <div className="bg-white">
-        <div className="max-w-screen-xl mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
-          <Header />
-          <div className="bg-slate-100"></div>
+      <div className="max-w-screen-xl mx-auto mt-16 pb-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <Header />
+        <div className="block lg:flex gap-3  w-full  mt-8">
           <Table
             title="Hot discussions"
             data={data.hotDiscussions.map((item) => {
@@ -26,6 +25,8 @@ export default function Home() {
                 author: item.author,
                 repo: item.repo,
                 isPR: item.isPR,
+                resourcePath: item.resourcePath,
+                labels: item.labels,
               };
             })}
           />

@@ -1,33 +1,21 @@
 function Filter({ data }) {
   return (
-    <div class="my-2 flex sm:flex-row flex-col">
-      <div class="flex flex-row mb-1 sm:mb-0">
-        {data.map((filter) => (
-          <div key={filter.values[0]} class="relative">
-            <select
-              onChange={(e) => {
-                filter.listener(e.target.value);
-              }}
-              class="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            >
-              {filter.values.map((value) => (
-                <option key={value} value={value}>
-                  {value || "Unknown"}
-                </option>
-              ))}
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg
-                class="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="flex w-full gap-1">
+      {data.map((filter) => (
+        <select
+          key={filter.values[0]}
+          onChange={(e) => {
+            filter.listener(e.target.value);
+          }}
+          className="form-select pl-2 pr-8 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 mx-px md:mt-0 md: md:text-sm my-1 w-1/3"
+        >
+          {filter.values.map((value) => (
+            <option key={value} value={value}>
+              {value || 'Unknown'}
+            </option>
+          ))}
+        </select>
+      ))}
     </div>
   );
 }

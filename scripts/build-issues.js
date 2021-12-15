@@ -7,8 +7,6 @@ require('dotenv').config({
   path: resolve(process.cwd(), '.env.local'),
 });
 
-//TODO remove count
-let count = 0;
 async function getHotDiscussions(discussions) {
   const result = await Promise.all(
     discussions.map(async (discussion) => {
@@ -17,7 +15,6 @@ async function getHotDiscussions(discussions) {
         if (discussion.comments.pageInfo.hasNextPage) {
           fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
           discussion = fetchedDiscussion.node;
-          count++;
         }
 
         const interactionsCount =
@@ -41,10 +38,10 @@ async function getHotDiscussions(discussions) {
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          lastActivity: timeSince(new Date(discussion.timelineItems.updatedAt)),
           author: discussion.author?.login,
           resourcePath: discussion.resourcePath,
           repo: 'asyncapi/' + discussion.repository.name,
+          labels: discussion.labels?.nodes,
           score:
             finalInteractionsCount /
             Math.pow(monthsSince(discussion.timelineItems.updatedAt) + 2, 1.8),
@@ -74,12 +71,20 @@ async function mapGoodFirstIssues(issues) {
     title: issue.title,
     isAssigned: !!issue.assignees.totalCount,
     resourcePath: issue.resourcePath,
-    repo: issue.repository.name,
+    repo: 'asyncapi/' + issue.repository.name,
     author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
-    complexity: getLabel(issue, 'complexity/') || 'Unknown',
+    complexity:
+      getLabel(issue, 'complexity/') || `${Math.floor(Math.random() * 3 + 1)}`,
+    labels: issue.labels.nodes.filter(
+      (label) =>
+        !label.name.startsWith('area/') &&
+        !label.name.startsWith('complexity/') &&
+        !label.name.startsWith('good first issue')
+    ),
   }));
 }
+
 function getLabel(issue, filter) {
   const result = issue.labels.nodes.find((label) =>
     label.name.startsWith(filter)
@@ -99,8 +104,6 @@ module.exports = async function start() {
       mapGoodFirstIssues(rawGoodFirstIssues),
     ]);
     writeToFile({ hotDiscussions, goodFirstIssues });
-
-    console.log(count);
   } catch (e) {
     console.error(e);
   }
@@ -110,35 +113,6 @@ function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
   const months = seconds / 2592000;
   return Math.floor(months);
-}
-
-function timeSince(date) {
-  var seconds = Math.floor((new Date() - date) / 1000);
-  if (seconds <= 0) {
-    return 'Just Now';
-  }
-  var interval = seconds / 31536000;
-
-  if (interval > 1) {
-    return Math.floor(interval) + ' years';
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + ' months';
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + ' days';
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + ' hours';
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + ' minutes';
-  }
-  return Math.floor(seconds) + ' seconds';
 }
 
 async function getDiscussions(query, pageSize, endCursor = null) {
