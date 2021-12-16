@@ -290,5 +290,16 @@
 		"repos": [
 			"website"
 		]
+	},
+	{
+		"name": "David Pereira",
+		"github": "BOLT04",
+		"twitter": "BOLT2938",
+		"linkedin": "josé-david-pereira-13ba5315a",
+		"availableForHire": false,
+		"company": "Create IT",
+		"repos": [
+			"server-api"
+		]
 	}
 ]
