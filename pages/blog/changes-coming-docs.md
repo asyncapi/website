@@ -1,6 +1,6 @@
 ---
 title: "Change is coming to our AsyncAPI Developer Documentation"
-date: 2021-12-13 06:00:00 +0100
+date: 2021-12-13T06:00:00+01:00
 type: Engineering
 tags:
   - Documentation
@@ -53,12 +53,12 @@ In our case, we need to add...
 - **Conceptual docs** that explain our spec terminology in more detail that include **engineering diagrams**: people often learn visually! 
 - **Many more tutorials**. _(i.e. Websocket tutorial)_
 - **CLI docs** under a **Reference** content bucket.
-- A **tools section**! Currently we have documentation for our tools in individual tools' GitHub repos, under a `/docs` directory. Those should still remain there and continue to be maintained, but they also need to be documented in our Docs in a less informal way that what you see in a `README`.
+- A **tools section**! Currently we have documentation for our tools in individual tools' GitHub repos, under a `/docs` directory. Those should still remain there and continue to be maintained, but they also need to be documented in our Docs in a less informal way than what you see in a `README`.
 - **Usecases** and **Troubleshooting Guides**, under a new _How-To_ section.
 
 
 #### 🪣 Agnostic Content Buckets, coming right up
-Engieering Documentation can and should be divided into _agnostic_ content buckets.
+Engineering Documentation can and should be divided into _agnostic_ content buckets.
 
 Currently, our documentation has the following content buckets:
 - Getting Started
@@ -78,6 +78,7 @@ Why, you wonder?
 It was important (and exciting!) to me to introduce best practices from the [Diátaxis Framework](https://diataxis.fr/) for our new content buckets.
 
 ![Diátaxis framework](/img/posts/changes-coming-docs/diataxis.webp)
+> Photo from <a href="https://diataxis.fr/">Diátaxis</a> on <a href="https://diataxis.fr/">Diátaxis framework</a>
 
 The Diátaxis engineering documentation system classifies content under 4 main _agnostic_ buckets. This approach for Information Architecture (IA) and User Flows in dev docs is currently upheld widely within the tech industry. _(i.e. One current live example is GatsbyJS, which also uses the Diátaxis system for their Dev Docs. If you want to see a longer list of companies using it, go over [here](https://diataxis.fr/adoption/).)_
 
@@ -141,9 +142,3 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
 I want and need to listen 👂🏽 to all of your perspectives and ideas. Please don't be shy to express to me what you think needs to be documented first or what is missing. 📝
 
 There's a lot of good work ahead, but **you** determine _our content roadmap_ because the OSS community needs should always come first.✨
-
-
-
-
----
-> Photo from <a href="https://diataxis.fr/">Diátaxis</a> on <a href="https://diataxis.fr/">Diátaxis framework</a>
