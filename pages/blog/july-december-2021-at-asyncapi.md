@@ -1,6 +1,6 @@
 ---
 title: 2nd half of 2021 at AsyncAPI
-date: 2021-12-17T06:00:00+01:00
+date: 2021-12-21T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -13,6 +13,8 @@ authors:
 excerpt: It has been a while since the last update on the things at AsyncAPI Initiative. Lots of things have happened since June. You better have a read or listen to the podcast. 
 featured: true
 ---
+
+<iframe src="https://anchor.fm/asyncapi/embed/episodes/2nd-half-of-2021-at-AsyncAPI-Initiative-e1bvc3u" height="102px" width="600px" scrolling="no"></iframe>
 
 Around August, I communicated that because vacation is a dead season (in Poland we call it cucumber time) I will not do my monthly updates or write a single vacation summary.
 
@@ -72,7 +74,7 @@ It was a pleasure to work with these folks and see them staying with us after GS
 
 After joining the [Linux Foundation (LF)](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation) and applying the [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md), it was time for us to start setting up a Technical Steering Committee (TSC). 
 
-So here we are, 9 months after joining LF, we already have 23 members. Check out the [complete list of all the TSC members](https://www.asyncapi.com/community/tsc). Pay attention to those that are marked as **Available for hire**. Don't let folks work for free. Pay them to work on open-source. Be good humans.
+So here we are, 9 months after joining LF, we already have 24 members. Check out the [complete list of all the TSC members](https://www.asyncapi.com/community/tsc). Pay attention to those that are marked as **Available for hire**. Don't let folks work for free. Pay them to work on open-source. Be good humans.
 
 Do you want to be on that list? Watch the following :point_down: presentation.
 
