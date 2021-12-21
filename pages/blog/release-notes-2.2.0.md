@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: '2.2 release of AsyncAPI specification is here. The long-awaited feature for assigning channels to servers is finally here.'
-featured: true
 ---
 
 I'm happy to share that AsyncAPI specification 2.2.0 is here. Check out all the goodies that it brings.

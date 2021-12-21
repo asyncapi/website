@@ -3,7 +3,6 @@ type: Engineering
 cover: /img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-15.webp
 title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs"
 date: 2021-09-08T06:00:00+01:00
-featured: true
 tags:
    - Specification
    - OpenAPI
