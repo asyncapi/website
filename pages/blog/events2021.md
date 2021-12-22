@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: It is official! October is an AsyncAPI Hacking Fest! and November 16-18 a 2nd online AsyncAPI Conference
-featured: true
 ---
 
 AsyncAPI Community organizes two important events in the second half of 2021:
