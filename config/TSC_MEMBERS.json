@@ -116,7 +116,7 @@
 		"linkedin": "jorge-aguiar-martin",
 		"twitter": "jotamusik",
 		"availableForHire": false,
-		"company": "The Agile Monkeys",
+		"company": "Lean Mind",
 		"repos": [
 			"cli"
 		]
@@ -190,13 +190,18 @@
 			"asyncapi-react",
 			"chatbot",
 			"cli",
+			"converter-go",
+			"event-gateway",
 			"generator-react-sdk",
 			"generator",
 			"html-template",
 			"markdown-template",
 			"modelina",
 			"parser-js",
+			"parser-go",
 			"playground",
+                        "server-api",
+			"template-for-go-projects",
 			"website"
 		]
 	},
@@ -255,10 +260,14 @@
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
+			"converter-go",
 			"event-gateway",
 			"go-watermill-template",
 			"infra",
-			"parser-api"
+			"parser-api",
+			"parser-go",
+			"server-api",
+			"template-for-go-projects"
 		]
 	},
 	{
@@ -280,6 +289,17 @@
 		"company": "Postman",
 		"repos": [
 			"website"
+		]
+	},
+	{
+		"name": "David Pereira",
+		"github": "BOLT04",
+		"twitter": "BOLT2938",
+		"linkedin": "josé-david-pereira-13ba5315a",
+		"availableForHire": false,
+		"company": "Create IT",
+		"repos": [
+			"server-api"
 		]
 	}
 ]
