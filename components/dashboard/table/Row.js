@@ -31,11 +31,6 @@ function Row({ item }) {
               </span>
             ))}
 
-          {item.complexity && (
-            <img
-              src={`/img/illustrations/icons/dificulty-${item.complexity}.svg`}
-            />
-          )}
           <a href={`https://github.com/${item.author}`}>
             <img
               className="rounded-full blur-none h-5 w-5"

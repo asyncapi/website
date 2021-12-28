@@ -7,10 +7,6 @@ function filterIssues(issues, filters) {
     result = result.filter((issue) => issue.repo === filters.selectedRepo);
   if (filters.selectedArea !== 'Area - All')
     result = result.filter((issue) => issue.area === filters.selectedArea);
-  if (filters.selectedComplexity !== 'Complexity - All')
-    result = result.filter(
-      (issue) => issue.complexity === filters.selectedComplexity
-    );
   return result;
 }
 function GoodFirstIssues(props) {
@@ -21,7 +17,6 @@ function GoodFirstIssues(props) {
     filters: {
       selectedRepo: 'Repository - All',
       selectedArea: 'Area - All',
-      selectedComplexity: 'Complexity - All',
     },
   });
   console.log(state.currentPage);
@@ -63,14 +58,6 @@ function GoodFirstIssues(props) {
               ...new Set(filteredIssues.map((issue) => issue.area)),
             ],
           },
-          {
-            listener: (complexity) =>
-              applyFilter('selectedComplexity', complexity),
-            values: [
-              'Complexity - All',
-              ...new Set(filteredIssues.map((issue) => issue.complexity)),
-            ],
-          },
         ]}
         paginationOptions={{
           issuesPerPage: state.issuesPerPage,
@@ -84,12 +71,10 @@ function GoodFirstIssues(props) {
             title: item.title,
             author: item.author,
             isAssigned: item.isAssigned,
-            conmplexity: item.complexity,
             area: item.area,
             repo: item.repo,
             isPR: false,
             resourcePath: item.resourcePath,
-            complexity: item.complexity,
             labels: item.labels,
           };
         })}

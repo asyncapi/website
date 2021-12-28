@@ -74,12 +74,9 @@ async function mapGoodFirstIssues(issues) {
     repo: 'asyncapi/' + issue.repository.name,
     author: issue.author.login,
     area: getLabel(issue, 'area/') || 'Unknown',
-    complexity:
-      getLabel(issue, 'complexity/') || `${Math.floor(Math.random() * 3 + 1)}`,
     labels: issue.labels.nodes.filter(
       (label) =>
         !label.name.startsWith('area/') &&
-        !label.name.startsWith('complexity/') &&
         !label.name.startsWith('good first issue')
     ),
   }));
