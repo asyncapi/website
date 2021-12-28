@@ -38,10 +38,10 @@ async function getHotDiscussions(discussions) {
           isPR,
           isAssigned: !!discussion.assignees.totalCount,
           title: discussion.title,
-          author: discussion.author?.login,
+          author: discussion.author ? discussion.author.login : '',
           resourcePath: discussion.resourcePath,
           repo: 'asyncapi/' + discussion.repository.name,
-          labels: discussion.labels?.nodes,
+          labels: discussion.labels ? discussion.labels.nodes : [],
           score:
             finalInteractionsCount /
             Math.pow(monthsSince(discussion.timelineItems.updatedAt) + 2, 1.8),
