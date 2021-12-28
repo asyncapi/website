@@ -102,7 +102,8 @@ module.exports = async function start() {
     ]);
     writeToFile({ hotDiscussions, goodFirstIssues });
   } catch (e) {
-    console.error(e);
+    writeToFile({ hotDiscussions: [], goodFirstIssues: [] });
+    console.log(e);
   }
 };
 
