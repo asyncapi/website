@@ -62,7 +62,7 @@ export default function Features() {
         <div className="mt-12 text-left">
           <div className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-lg rounded-lg px-6 pb-8">
+              <div key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
                 <div>
                   <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                     {feature.name}
