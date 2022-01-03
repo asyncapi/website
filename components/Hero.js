@@ -23,7 +23,7 @@ export default function Hero({ className = '' }) {
           <strong>industry standard</strong> for defining asynchronous APIs.
         </h2>
         <Button className="block md:inline-block" text="Read the docs" href="/docs/getting-started" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
-        <OpenInStudioButton text='Open Studio' />
+        <OpenInStudioButton text='Open Studio' className="md:ml-2" />
         <p className="mt-4 text-xs text-gray-500">
           Proud to be part of the {" "}
           <a className="underline" href="https://www.linuxfoundation.org/">
