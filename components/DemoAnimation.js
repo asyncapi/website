@@ -214,8 +214,8 @@ export default function DemoAnimation({ className = '' }) {
             { (showDisplayName || showDisplayNameDescription) && renderEmail(() => setShowEmail(true)) }
           </MacWindow>
         </div>
-        <div className={`relative md:flex-1 md:ml-1 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
-          <div className={`md:text-left text-center mt-8 lg:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
+        <div className={`relative md:flex-1 md:ml-6 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
+          <div className={`md:text-left text-center mt-8 md:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
             <h3 className="text-primary-800 text-2xl font-bold md:text-2xl mb-4">
               Play with it!
             </h3>
