@@ -13,7 +13,7 @@ export default function Home() {
     >
       <title>AsyncAPI - Dashboard</title>
 
-      <div className="max-w-screen-xl mx-auto mt-16 pb-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl mx-auto pb-16 px-4 sm:py-16 sm:px-6 lg:px-8">
         <Header />
         <div className="block lg:flex gap-3  w-full  mt-8">
           <Table
