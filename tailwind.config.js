@@ -34,6 +34,7 @@ module.exports = {
       },
       hub: '#252f3f',
       slack: '#371038',
+      'slack-light': '#552157',
       'mac-window': {
         'close': '#ff5f56',
         'minimize': '#ffbd2e',
