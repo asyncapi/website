@@ -10,7 +10,7 @@ export default function Header() {
             Dashboard
           </h2>
           <p className="mt-5 text-xl leading-7 text-gray-500">
-            Lorem ipsum dolor sit amet.{' '}
+            Visualize our progress. Get involved.{' '}
           </p>
         </div>
       </div>
