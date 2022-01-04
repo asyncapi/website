@@ -7,7 +7,7 @@ export default function SlackLogo({ className }) {
       className={className}
       viewBox="0 0 60 60"
       xmlns="http://www.w3.org/2000/svg"
-      shape-rendering="geometricPrecision"
+      shapeRendering="geometricPrecision"
     >
       <g fillRule="evenodd" clipRule="evenodd">
         <path d="m21.902.148c-3.299 0-5.973 2.68-5.973 5.985a5.979 5.979 0 0 0 5.973 5.985h5.974v-5.985a5.98 5.98 0 0 0 -5.974-5.985m0 15.96h-15.929c-3.299 0-5.973 2.68-5.973 5.986 0 3.305 2.674 5.985 5.973 5.985h15.93c3.298 0 5.973-2.68 5.973-5.985 0-3.306-2.675-5.986-5.974-5.986"></path>

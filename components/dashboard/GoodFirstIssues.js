@@ -45,18 +45,24 @@ function GoodFirstIssues(props) {
         title="Good First Issues"
         filters={[
           {
+            selected: state.filters.selectedRepo,
             listener: (repo) => applyFilter('selectedRepo', repo),
             values: [
               'Repository - All',
               ...new Set(filteredIssues.map((issue) => issue.repo)),
-            ],
+            ].map((repo) => {
+              return { text: repo, value: repo };
+            }),
           },
           {
+            selected: state.filters.selectedArea,
             listener: (area) => applyFilter('selectedArea', area),
             values: [
               'Area - All',
               ...new Set(filteredIssues.map((issue) => issue.area)),
-            ],
+            ].map((area) => {
+              return { text: area, value: area };
+            }),
           },
         ]}
         paginationOptions={{

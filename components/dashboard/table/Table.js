@@ -1,6 +1,6 @@
 import Row from './Row';
 import Pagination from './Pagination';
-import Filter from './Filter';
+import Select from '../../form/Select';
 
 export default function Table({ title, data, paginationOptions, filters }) {
   return (
@@ -8,7 +8,19 @@ export default function Table({ title, data, paginationOptions, filters }) {
       <div className="inline-flex bg-gray-300 w-full p-4 gap-1">
         <h2 className="text-2xl font-semibold leading-tight">{title}</h2>
       </div>
-      {filters && <Filter data={filters} />}
+      {filters && (
+        <div className="flex w-full gap-2 p-2 pb-0">
+          {filters.map((filter) => (
+            <Select
+              key={filter.values[0].text}
+              onChange={filter.listener}
+              className="flex-1"
+              options={filter.values}
+              selected={filter.selected}
+            />
+          ))}
+        </div>
+      )}
       <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 overflow-x-auto min-w-full">
         <div className="inline-block min-w-full">
           <ul className="min-w-full leading-normal divide-y divide-gray-200">
