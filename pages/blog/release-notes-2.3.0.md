@@ -1,10 +1,10 @@
 ---
 title: AsyncAPI Spec 2.3.0 Release Notes
-date: 2021-12-14T18:00:00+01:00
+date: 2022-01-05T10:00:00+01:00
 type: Communication
 tags:
-  - specification
-  - release
+  - Specification
+  - Release Notes
 cover: /img/posts/release-notes-2.3.0/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -14,6 +14,42 @@ authors:
 excerpt: 'TODO: write excerpt'
 featured: true
 ---
+
+AsyncAPI specification 2.3.0 release notes
+
+> This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.2.0'` into `asyncapi: '2.3.0'`
+
+## Make regular expressions ECMA-262 compliant
+
+- pull request: https://github.com/asyncapi/spec-json-schemas/pull/145
+- contributor: Sergio Moya
+
+## Make channels optional
+
+- pull request: https://github.com/asyncapi/spec/pull/682
+- contributor: Sergio Moya
+
+## Allow servers and channels to be defined as components
+
+- pull request: https://github.com/asyncapi/spec/pull/665
+- contributor: Sergio Moya
+
+
+## Add Solace bindings
+
+- pull request: https://github.com/asyncapi/spec/pull/666
+- contributor: Michael Davis
+
+## Look ahead
+
+future minor releases https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence
+
+work on 3.0.0 https://github.com/asyncapi/spec/milestone/18
+
+
+
+
+
 
 - put good overview
 - each section should represent a feature
