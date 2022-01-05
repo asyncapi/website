@@ -17,6 +17,7 @@ import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
 import DemoAnimation from "../components/DemoAnimation";
+import Heading from '../components/typography/Heading'
 
 
 function HomePage() {
@@ -41,8 +42,13 @@ function HomePage() {
       </Container>
 
       <Container className="text-center pb-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
-        <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
+        <Heading
+        level="h3"
+        style="h2"
+        text="Adopted by the world leading brands"
+        className="mb-4"
+        />
+        <p className="mt-2 mb-20 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
           These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium" rel="noreferrer">Let us know here!</a>
         </p>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
@@ -64,7 +70,7 @@ function HomePage() {
         </div>
       </Container>
 
-      <div className="bg-primary-900 py-12 mt-8">
+      <div className="bg-gray-900 py-12 mt-8">
         <Container wide>
           <NewsletterSubscribe formName="form 1" dark />
         </Container>

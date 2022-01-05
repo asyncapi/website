@@ -8,6 +8,8 @@ import NavMenu from './NavMenu'
 import MobileNavMenu from './MobileNavMenu'
 import communityItems from './communityItems'
 import otherItems from './otherItems'
+import Button from '../buttons/Button'
+import GithubButton from "../buttons/GithubButton"
 
 export default function NavBar ({
   className = '',
@@ -32,7 +34,7 @@ export default function NavBar ({
 
   return (
     <div className={`relative bg-white ${className} z-50`}>
-      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
+      <div className="flex w-full justify-between items-center py-6 lg:space-x-10">
         {
           !hideLogo && (
             <div className="lg:w-auto lg:flex-1">
@@ -49,7 +51,7 @@ export default function NavBar ({
             </svg>
           </button>
         </div>
-        <nav className="hidden lg:flex space-x-10">
+        <nav className="hidden lg:flex lg:items-center space-x-10 w-full">
           <div className="relative">
             <NavItem text="Learning" onClick={() => showMenu('learning')} hasDropdown />
             {open === 'learning' && <LearningPanel />}
@@ -71,12 +73,9 @@ export default function NavBar ({
             ))
           }
 
-          <a className="github-button" href="https://github.com/asyncapi/spec" data-icon="octicon-star" data-show-count="true" aria-label="Star asyncapi/spec on GitHub">Star</a>
+          <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" />
 
         </nav>
-        <div className="hidden lg:flex lg:flex-1">
-          
-        </div>
 
       </div>
 

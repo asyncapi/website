@@ -1,3 +1,5 @@
+import Heading from "../typography/Heading";
+
 const features = [
   {
     name: "Specification",
@@ -53,10 +55,13 @@ export default function Features() {
   return (
     <div className="relative bg-white pt-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <p className="mt-2 text-3xl font-extrabold text-primary-800 tracking-tight sm:text-4xl">
-          Why AsyncAPI?
-        </p>
-        <p className="mt-2 max-w-prose mx-auto text-gray-500">
+        <Heading
+        level="p"
+        style="h2"
+        text="Why AsyncAPI?"
+        className="mt-2"
+        />
+        <p className="mt-2 max-w-prose mx-auto text-gray-600">
           Improving the current state of Event-Driven Architectures (EDA)
         </p>
         <div className="mt-12 text-left">
@@ -64,11 +69,15 @@ export default function Features() {
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
                 <div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
-                    {feature.name}
-                  </h3>
+                  <Heading 
+                  level="h3"
+                  style="h3"
+                  weight="font-semi-bold"
+                  text={feature.name}
+                  className="mt-8"
+                  />
                   {feature.description && (
-                    <p className="mt-5 text-base text-gray-500">
+                    <p className="mt-5 text-base text-gray-600">
                       {feature.description}
                     </p>
                   )}

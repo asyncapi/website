@@ -16,7 +16,8 @@ export default function GithubButton({
       iconPosition={iconPosition}
       target={target}
       className={className}
-      bgClassName="bg-gray-800 hover:bg-gray-600"
+      bgClassName="bg-gray-800 hover:bg-gray-700"
+      buttonSize='small'
     />
   )
 }

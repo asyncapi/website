@@ -1,8 +1,9 @@
 import Button from "./buttons/Button";
+import Heading from "./typography/Heading";
 
 export default function NewsletterSubscribe ({
   formName = 'free form',
-  className = 'p-8',
+  className = 'p-8 text-center',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
   type,
@@ -11,11 +12,15 @@ export default function NewsletterSubscribe ({
 
   return (
     <div className={className}>
-      <h3 className={`${dark ? 'text-primary-200' : 'text-primary-800'} text-lg font-bold`}>
-        {title}
-      </h3>
-      <p className="text-gray-400 mt-2 text-sm">We respect your inbox. No spam, promise ✌️</p>
-      <form className="mt-4 md:flex" data-netlify="true">
+      <Heading 
+      level="h3"
+      textColor="text-white"
+      style="h2"
+      text={title}
+      className="mb-4"
+      />
+      <p className="text-gray-400 mb-8 text-sm">We respect your inbox. No spam, promise ✌️</p>
+      <form className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value={formName} />
         <input type="hidden" name="type" value={type} />
         <input type="text" name="name" placeholder="Your name" className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1" required />
