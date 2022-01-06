@@ -9,6 +9,7 @@ import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
 import Empty from "../../components/illustrations/empty";
+import Heading from "../../components/typography/Heading";
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext);
@@ -39,7 +40,7 @@ export default function BlogIndexPage() {
   return (
     <div>
       <Head title="Blog" />
-      <Container>
+      <Container wide>
         <NavBar />
       </Container>
       <AnnouncementHero className="text-center m-4" small={true} />
@@ -49,16 +50,18 @@ export default function BlogIndexPage() {
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-              Welcome to our blog!
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+            <Heading 
+            level="h1"
+            style="h2"
+            text="Welcome to our blog!"
+            />
+            <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-800 sm:mt-4">
               Find the latest and greatest stories from our community
             </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-600">
               Want to publish a blog post? We love community stories.
               <a
-                className="ml-1 text-primary-500 hover:text-primary-400"
+                className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300"
                 href="https://github.com/asyncapi/website/issues/new?template=blog.md"
                 target="_blank"
                 rel="noreferrer"
@@ -66,17 +69,17 @@ export default function BlogIndexPage() {
                 Submit yours!
               </a>
             </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-600">
               We have an{" "}
               <img
-                className="ml-1 text-primary-500 hover:text-primary-400"
+                className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
                 height="18px"
                 width="18px"
               />{" "}
               <a
-                className="ml-1 text-primary-500 hover:text-primary-400"
+                className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300"
                 href="/rss.xml"
               >
                 RSS Feed
