@@ -223,7 +223,7 @@ export default function DemoAnimation({ className = '' }) {
             level="h3"
             className="mb-4"
             />
-            <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
+            <p className="text-gray-700 text-lg font-normal tracking mb-6 max-w-3xl mx-auto mb-8">
               Open this example on AsyncAPI Studio to get a better taste of the specification. No signup is required!
             </p>
             <OpenInStudioButton />

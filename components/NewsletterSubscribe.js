@@ -19,7 +19,7 @@ export default function NewsletterSubscribe ({
       text={title}
       className="mb-4"
       />
-      <p className="text-gray-400 mb-8 text-sm">We respect your inbox. No spam, promise ✌️</p>
+      <p className="text-gray-300 mb-8 text-lg">We respect your inbox. No spam, promise ✌️</p>
       <form className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value={formName} />
         <input type="hidden" name="type" value={type} />

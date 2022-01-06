@@ -61,7 +61,7 @@ export default function Features() {
         text="Why AsyncAPI?"
         className="mt-2"
         />
-        <p className="mt-2 max-w-prose mx-auto text-gray-600">
+        <p className="mt-2 max-w-prose mx-auto text-lg text-gray-700">
           Improving the current state of Event-Driven Architectures (EDA)
         </p>
         <div className="mt-12 text-left">
@@ -77,7 +77,7 @@ export default function Features() {
                   className="mt-8"
                   />
                   {feature.description && (
-                    <p className="mt-5 text-base text-gray-600">
+                    <p className="mt-5 text-base text-gray-700">
                       {feature.description}
                     </p>
                   )}

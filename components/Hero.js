@@ -10,14 +10,14 @@ export default function Hero({ className = '' }) {
     <div className={`px-2 mt-12 ${className}`}>
       <div className="text-center">
         <AnnouncementHero />
-        <h1 className="text-primary-800 text-2xl tracking-heading font-bold md:text-6xl mb-4 leading-snug">
+        <h1 className="text-gray-900 text-2xl tracking-heading font-bold md:text-6xl mb-4 leading-snug">
           Building the future of {` `}
-          <span className="text-primary-400 block md:-mt-4">
+          <span className="block md:-mt-4">
             {" "}
             Event-Driven Architectures (EDA)
           </span>
         </h1>
-        <h2 className="text-gray-600 text-lg font-normal mb-16 max-w-3xl mx-auto">
+        <h2 className="text-gray-700 text-lg font-normal mb-16 max-w-3xl mx-auto">
           Open-Source tools to easily build and maintain your event-driven
           architecture. All powered by the AsyncAPI specification, the {" "}
           <strong>industry standard</strong> for defining asynchronous APIs.

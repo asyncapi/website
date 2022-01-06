@@ -48,7 +48,7 @@ function HomePage() {
         text="Adopted by the world leading brands"
         className="mb-4"
         />
-        <p className="mt-2 mb-20 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
+        <p className="mt-2 mb-20 text-lg text-gray-700 md:w-2/3 md:mx-auto">
           These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 hover:text-primary-300 transition ease-in-out duration-300 hover:underline font-medium" rel="noreferrer">Let us know here!</a>
         </p>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
@@ -83,7 +83,7 @@ function HomePage() {
         text="Join our great community!"
         className="mb-4"
         />
-        <p className="mt-2 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
+        <p className="mt-2 text-lg text-gray-700 md:w-1/2 md:mx-auto">
           We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
         </p>
         <div className="py-2 lg:py-12">
@@ -92,10 +92,10 @@ function HomePage() {
               <div className="mt-10 lg:mt-0 lg:flex-1">
                 <Slack />
               </div>
-              <div className="lg:text-left lg:max-w-xl lg:ml-8">
+              <div className="lg:text-left lg:max-w-xl lg:ml-12">
                 <div className="mt-5">
-                  <h5 className="text-lg leading-6 font-medium text-gray-900">Join our Slack workspace</h5>
-                  <p className="mt-2 text-base leading-6 text-gray-600">
+                  <h5 className="text-xl tracking-heading leading-6 font-semi-bold text-gray-900">Join our Slack workspace</h5>
+                  <p className="mt-2 text-lg text-gray-700">
                     We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
                   </p>
                 </div>
@@ -109,10 +109,10 @@ function HomePage() {
               <div className="mt-10 lg:mt-0 lg:flex-1">
                 <Calendar />
               </div>
-              <div className="lg:text-left lg:max-w-xl lg:mr-8">
+              <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
-                  <h5 className="text-lg leading-6 font-medium text-gray-900">Join our public meetings</h5>
-                  <p className="mt-2 text-base leading-6 text-gray-600">
+                  <h5 className="text-xl tracking-heading leading-6 font-semi-bold text-gray-900">Join our public meetings</h5>
+                  <p className="mt-2 text-lg text-gray-700">
                     We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
                   </p>
                   <div className="mt-5 md:flex">
@@ -134,7 +134,7 @@ function HomePage() {
         text="Platinum Sponsors"
         className="mb-4"
         />
-        <p className="mt-2 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
+        <p className="mt-2 text-lg text-gray-700 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300 font-medium" rel="noreferrer">Support us!</a>
         </p>
         <Sponsors className="mt-8" showSupportBanner={false} />
@@ -184,7 +184,7 @@ function HomePage() {
           <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-800 sm:mt-4">
             Find the latest and greatest stories from our community.
           </p>
-          <p className="max-w-2xl mx-auto text-md leading-7 text-gray-600">
+          <p className="max-w-2xl mx-auto text-md text-gray-700">
             Want to publish a blog post? We love community stories.
             <a className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
           </p>
