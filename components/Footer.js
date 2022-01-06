@@ -11,27 +11,27 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
-            <a href="/about" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="/about" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
               About
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="/blog" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="/blog" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
               Blog
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="https://asyncapi.threadless.com" target="_blank" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="https://asyncapi.threadless.com" target="_blank" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
               Shop
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="/jobs" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="/jobs" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
               Jobs
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
               Press
             </a>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
             Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-1">
-            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-700 underline" target="_blank">https://lfprojects.org</a>
+            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-primary-300 hover:text-primary-200 transition ease-in-out duration-300 underline" target="_blank">https://lfprojects.org</a>
           </p>
         </div>
       </div>
