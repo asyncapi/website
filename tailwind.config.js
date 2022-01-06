@@ -4,8 +4,8 @@ const plugin = require('tailwindcss/plugin')
 
 const colorPrimary = {
   100: '#F3DEFC',
-  250: '#DB92FC',
-  350: '#B656E2',
+  200: '#DB92FC',
+  300: '#B656E2',
   500: '#A829E2',
   600: '#8320B0'
 };

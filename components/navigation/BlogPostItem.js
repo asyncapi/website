@@ -36,7 +36,7 @@ export default function BlogPostItem({ post, className = '' }) {
             <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
               {post.title}
             </h3>
-            <p className="mt-3 text-base leading-6 text-gray-500">
+            <p className="mt-3 text-base leading-6 text-gray-600">
               <TextTruncate element="span" line={4} text={post.excerpt} />
             </p>
           </a>
