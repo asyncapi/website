@@ -6,10 +6,10 @@ export default function DocsNavItem({
   onClick = () => {},
 }) {
   const { slug, title, isSection } = item
-  const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none'
-  const sectionClassNames = `mt-8 mb-2 text-primary-800 text-xs font-bold uppercase hover:text-primary-800 ${commonClassNames}`
-  const activeItemClassNames = 'font-medium text-primary-600'
-  const nonActiveItemClassNames = 'font-normal text-gray-700 hover:text-primary-800 hover:font-normal'
+  const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none tracking-tight'
+  const sectionClassNames = `mt-8 mb-2 text-gray-900 text-xs font-bold tracking-wide uppercase hover:text-primary-500 ${commonClassNames}`
+  const activeItemClassNames = 'font-medium text-primary-500'
+  const nonActiveItemClassNames = 'font-regular text-gray-800 hover:text-primary-900'
   const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
 
   if (isSection) {

@@ -97,9 +97,6 @@ module.exports = {
       'extra-bold': 800,
       black: 900
     },
-    letterSpacing: {
-      heading: '-0.03em'
-    },
     animations: {
       blink: {
         from: {
@@ -169,6 +166,9 @@ module.exports = {
         'sans': ['Work Sans', ...defaultTheme.fontFamily.sans], 
         'body': ['Work Sans', ...defaultTheme.fontFamily.sans], 
         'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+      },
+      letterSpacing: {
+        heading: '-0.03em'
       },
       borderRadius: {
         'xl': '1rem',
