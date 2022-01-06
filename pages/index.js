@@ -49,7 +49,7 @@ function HomePage() {
         className="mb-4"
         />
         <p className="mt-2 mb-20 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium" rel="noreferrer">Let us know here!</a>
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 hover:text-primary-300 transition ease-in-out duration-300 hover:underline font-medium" rel="noreferrer">Let us know here!</a>
         </p>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="justify-center flex">
@@ -135,7 +135,7 @@ function HomePage() {
         className="mb-4"
         />
         <p className="mt-2 text-base leading-6 text-gray-600 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium" rel="noreferrer">Support us!</a>
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300 font-medium" rel="noreferrer">Support us!</a>
         </p>
         <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
@@ -186,7 +186,7 @@ function HomePage() {
           </p>
           <p className="max-w-2xl mx-auto text-md leading-7 text-gray-600">
             Want to publish a blog post? We love community stories.
-            <a className="ml-1 text-primary-500 hover:text-primary-300" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
+            <a className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
           </p>
         </div>
         <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
