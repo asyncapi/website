@@ -51,7 +51,7 @@ export default function NavBar ({
             </svg>
           </button>
         </div>
-        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-10 w-full">
+        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
           <div className="relative">
             <NavItem text="Learning" onClick={() => showMenu('learning')} hasDropdown />
             {open === 'learning' && <LearningPanel />}
