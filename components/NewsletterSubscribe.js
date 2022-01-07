@@ -1,5 +1,6 @@
 import Button from "./buttons/Button";
 import Heading from "./typography/Heading";
+import Paragraph from "./typography/Paragraph";
 
 export default function NewsletterSubscribe ({
   formName = 'free form',
@@ -20,7 +21,9 @@ export default function NewsletterSubscribe ({
       >
         {title}
       </Heading>
-      <p className="text-gray-300 mb-8 text-lg">We respect your inbox. No spam, promise ✌️</p>
+      <Paragraph className="mb-8" textColor="text-gray-300">
+        We respect your inbox. No spam, promise ✌️
+      </Paragraph>
       <form className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value={formName} />
         <input type="hidden" name="type" value={type} />

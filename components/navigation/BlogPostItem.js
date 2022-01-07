@@ -1,6 +1,8 @@
 import moment from 'moment'
 import TextTruncate from 'react-text-truncate'
 import AuthorAvatars from '../AuthorAvatars'
+import Heading from '../typography/Heading'
+import Paragraph from '../typography/Paragraph'
 
 export default function BlogPostItem({ post, className = '' }) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800']
@@ -27,18 +29,18 @@ export default function BlogPostItem({ post, className = '' }) {
       </a>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
-          <p className="text-sm leading-5 font-normal text-indigo-500">
-            <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 ${typeColors[0]} ${typeColors[1]}`}>
+          <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
+            <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`}>
               {post.type}
-            </span>
-          </p>
+            </span> 
+          </Paragraph>
           <a href={post.slug} className="block">
-            <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
+            <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
               {post.title}
-            </h3>
-            <p className="mt-3 text-base leading-6 text-gray-600">
+            </Heading>
+            <Paragraph typeStyle="body-sm" className="mt-3">
               <TextTruncate element="span" line={4} text={post.excerpt} />
-            </p>
+            </Paragraph>
           </a>
         </div>
         <div className="mt-6 flex items-center">
@@ -46,12 +48,12 @@ export default function BlogPostItem({ post, className = '' }) {
             <AuthorAvatars authors={post.authors} />
           </div>
           <div className="ml-3">
-            <p className="text-sm leading-5 font-medium text-gray-900">
+            <Heading typeStyle="heading-xs-semibold" textColor="text-gray-900">
               <span className="hover:underline">
                 {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link}>{author.name}</a> : author.name).reduce((prev, curr) => [ prev, ' & ', curr ])}
               </span>
-            </p>
-            <div className="flex text-sm leading-5 text-gray-500">
+            </Heading>
+            <Paragraph typeStyle="body-sm" className="flex">
               <time dateTime={post.date}>
                 {moment(post.date).format('MMMM D, YYYY')}
               </time>
@@ -61,7 +63,7 @@ export default function BlogPostItem({ post, className = '' }) {
               <span>
                 {post.readingTime} min read
               </span>
-            </div>
+            </Paragraph>
           </div>
         </div>
       </div>

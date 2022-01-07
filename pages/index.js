@@ -18,6 +18,7 @@ import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
 import DemoAnimation from "../components/DemoAnimation";
 import Heading from '../components/typography/Heading'
+import Paragraph from '../components/typography/Paragraph'
 
 
 function HomePage() {
@@ -48,10 +49,10 @@ function HomePage() {
           className="mb-4"
         >
           Adopted by the world leading brands
-        </Heading> 
-        <p className="mt-2 mb-20 text-lg text-gray-700 md:w-2/3 md:mx-auto">
+        </Heading>
+        <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
           These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 hover:text-primary-300 transition ease-in-out duration-300 hover:underline font-medium" rel="noreferrer">Let us know here!</a>
-        </p>
+        </Paragraph>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="justify-center flex">
             <AdidasLogo className="h-8 text-gray-400" />
@@ -85,9 +86,9 @@ function HomePage() {
         >
           Join our great community!
         </Heading>
-        <p className="mt-2 text-lg text-gray-700 md:w-1/2 md:mx-auto">
+        <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
           We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
-        </p>
+        </Paragraph>
         <div className="py-2 lg:py-12">
           <Container wide>
             <div className="lg:flex">
@@ -96,10 +97,12 @@ function HomePage() {
               </div>
               <div className="lg:text-left lg:max-w-xl lg:ml-12">
                 <div className="mt-5">
-                  <h5 className="text-xl tracking-heading leading-6 font-semibold text-gray-900">Join our Slack workspace</h5>
-                  <p className="mt-2 text-lg text-gray-700">
+                  <Heading level="h5" typeStyle="heading-md-semibold">
+                    Join our Slack workspace
+                  </Heading>
+                  <Paragraph className="mt-2">
                     We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
-                  </p>
+                  </Paragraph>
                 </div>
                 <div className="mt-5 flex">
                   <Button className="block" text="Join us!" href="/slack-invite" />
@@ -113,10 +116,12 @@ function HomePage() {
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
-                  <h5 className="text-xl tracking-heading leading-6 font-semibold text-gray-900">Join our public meetings</h5>
-                  <p className="mt-2 text-lg text-gray-700">
+                  <Heading level="h5" typeStyle="heading-md-semibold">
+                    Join our public meetings
+                  </Heading>
+                  <Paragraph className="mt-2">
                     We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
-                  </p>
+                  </Paragraph>
                   <div className="mt-5 md:flex">
                     <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
                     <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list to get invite" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
@@ -137,9 +142,9 @@ function HomePage() {
         >
           Platinum Sponsors
         </Heading>
-        <p className="mt-2 text-lg text-gray-700 md:w-1/2 md:mx-auto">
+        <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300 font-medium" rel="noreferrer">Support us!</a>
-        </p>
+        </Paragraph>
         <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
 
@@ -185,13 +190,13 @@ function HomePage() {
           >
             Latest stories from our blog
           </Heading>
-          <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-800 sm:mt-4">
+          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4">
             Find the latest and greatest stories from our community.
-          </p>
-          <p className="max-w-2xl mx-auto text-md text-gray-700">
+          </Paragraph>
+          <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto">
             Want to publish a blog post? We love community stories.
             <a className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
-          </p>
+          </Paragraph>
         </div>
         <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
           {
