@@ -56,11 +56,12 @@ export default function Features() {
     <div className="relative bg-white pt-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <Heading
-        level="p"
-        style="h2"
-        text="Why AsyncAPI?"
-        className="mt-2"
-        />
+          level="h2"
+          typeStyle="heading-lg"
+          className="mt-2"
+        >
+          Why AsyncAPI?
+        </Heading>
         <p className="mt-2 max-w-prose mx-auto text-lg text-gray-700">
           Improving the current state of Event-Driven Architectures (EDA)
         </p>
@@ -71,11 +72,11 @@ export default function Features() {
                 <div>
                   <Heading 
                   level="h3"
-                  style="h3"
-                  weight="font-semi-bold"
-                  text={feature.name}
+                  typeStyle="heading-md-semibold"
                   className="mt-8"
-                  />
+                >
+                  {feature.name}
+                </Heading>
                   {feature.description && (
                     <p className="mt-5 text-base text-gray-700">
                       {feature.description}

@@ -51,10 +51,11 @@ export default function BlogIndexPage() {
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <Heading 
-            level="h1"
-            style="h2"
-            text="Welcome to our blog!"
-            />
+              level="h1"
+              typeStyle="heading-lg"
+            >
+              Welcome to our blog!
+            </Heading>
             <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-800 sm:mt-4">
               Find the latest and greatest stories from our community
             </p>

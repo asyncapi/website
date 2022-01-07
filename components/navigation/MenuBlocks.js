@@ -20,7 +20,7 @@ export default function MenuBlocks ({
                 <item.icon className="h-6 w-6" />
               </div>
               <div className="space-y-1">
-                <p className="text-base leading-6 font-semi-bold text-gray-900">
+                <p className="text-base leading-6 font-semibold text-gray-900">
                   <span className={item.comingSoon && 'opacity-50'}>{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
                 </p>
                 <p className={`text-sm leading-5 text-gray-700 ${item.comingSoon && 'opacity-50'}`}>

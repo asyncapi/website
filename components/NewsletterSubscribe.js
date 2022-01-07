@@ -13,12 +13,13 @@ export default function NewsletterSubscribe ({
   return (
     <div className={className}>
       <Heading 
-      level="h3"
-      textColor="text-white"
-      style="h2"
-      text={title}
-      className="mb-4"
-      />
+        level="h3"
+        textColor="text-white"
+        typeStyle="heading-lg"
+        className="mb-4"
+      >
+        {title}
+      </Heading>
       <p className="text-gray-300 mb-8 text-lg">We respect your inbox. No spam, promise ✌️</p>
       <form className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value={formName} />

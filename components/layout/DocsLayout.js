@@ -81,7 +81,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </button>
               </div>
             )}
-            <h1 className="px-4 text-4xl tracking-heading font-semi-bold text-gray-900 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            <h1 className="px-4 text-4xl tracking-heading font-semibold text-gray-900 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
             {
               post.isPrerelease 
               ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 

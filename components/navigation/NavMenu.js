@@ -9,7 +9,7 @@ export default function NavMenu({ items = [] }) {
             {
               items.map((item, index) => (
                 <a href={item.href} key={index} target={item.target || '_self'} className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
-                  <p className="text-base leading-6 font-semi-bold text-gray-900">
+                  <p className="text-base leading-6 font-semibold text-gray-900">
                     {item.text}
                   </p>
                   <p className="text-sm leading-5 text-gray-700">

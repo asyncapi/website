@@ -92,9 +92,9 @@ module.exports = {
       light: 300,
       regular: 400,
       medium: 500,
-      'semi-bold': 600,
+      'semibold': 600,
       bold: 700,
-      'extra-bold': 800,
+      'extrabold': 800,
       black: 900
     },
     animations: {
@@ -168,7 +168,8 @@ module.exports = {
         'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
       },
       letterSpacing: {
-        heading: '-0.03em'
+        heading: '-0.03em',
+        body: '-0.01em'
       },
       borderRadius: {
         'xl': '1rem',
