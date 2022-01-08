@@ -30,7 +30,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         >
           <img
             className="inline-block px-8 mt-6 sm:mt-4 sm:h-18"
-            src="/img/sponsors/pm-test2.png"
+            src="/img/sponsors/postman.png"
           />
         </a>
         <a
