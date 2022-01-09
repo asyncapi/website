@@ -19,10 +19,11 @@ AsyncAPI specification 2.3.0 release notes
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.2.0'` into `asyncapi: '2.3.0'`
 
-## Make channels optional
+## Channels are now optional
 
-- pull request: https://github.com/asyncapi/spec/pull/682
-- contributor: Sergio Moya
+To allow for more flexibility in how AsyncAPI documents are structured and reused, `channels` are no longer a required section.
+
+This change from [Sergio Moya](https://www.linkedin.com/in/smoya) makes it easier, for example, to have an AsyncAPI document that only contains reusable component definitions. For more detail, see the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/661).
 
 ## Allow servers and channels to be defined as components
 
