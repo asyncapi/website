@@ -34,11 +34,11 @@ AsyncAPI specification 2.3.0 release notes
 - pull request: https://github.com/asyncapi/spec/pull/665
 - contributor: Sergio Moya
 
+## New protocol bindings
 
-## Add Solace bindings
+The specification is now extended to support the following custom protocols through the bindings feature:
 
-- pull request: https://github.com/asyncapi/spec/pull/666
-- contributor: Michael Davis
+Solace, thanks to [Michael Davis](https://github.com/damaru-inc). For more details check out this [pull request](https://github.com/asyncapi/spec/pull/666) and [binding definition](https://github.com/asyncapi/bindings/tree/master/solace).
 
 ## Look ahead
 
