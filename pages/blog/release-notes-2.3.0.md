@@ -19,11 +19,6 @@ AsyncAPI specification 2.3.0 release notes
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.2.0'` into `asyncapi: '2.3.0'`
 
-## Make regular expressions ECMA-262 compliant
-
-- pull request: https://github.com/asyncapi/spec-json-schemas/pull/145
-- contributor: Sergio Moya
-
 ## Make channels optional
 
 - pull request: https://github.com/asyncapi/spec/pull/682
@@ -38,7 +33,11 @@ AsyncAPI specification 2.3.0 release notes
 
 The specification is now extended to support the following custom protocols through the bindings feature:
 
-Solace, thanks to [Michael Davis](https://github.com/damaru-inc). For more details check out this [pull request](https://github.com/asyncapi/spec/pull/666) and [binding definition](https://github.com/asyncapi/bindings/tree/master/solace).
+Solace, thanks to [Michael Davis](https://github.com/damaru-inc). For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/666) and [binding definition](https://github.com/asyncapi/bindings/tree/master/solace).
+
+## Other enhancements
+
+Regular expressions are now Unicode-compliant. This enhancement to the specification from [Sergio Moya](https://www.linkedin.com/in/smoya) means that regular expressions (found in `pattern` and `patternProperties` fields) are now Unicode-compliant (according to ECMA-262). This improves compatibility with some JSON Schema parsers. For more details, check out the [pull request](https://github.com/asyncapi/spec-json-schemas/pull/145).
 
 ## Look ahead
 
