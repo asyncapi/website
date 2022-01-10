@@ -3,17 +3,19 @@ const colors = require('@tailwindcss/ui/colors')
 const plugin = require('tailwindcss/plugin')
 
 const colorPrimary = {
-  100: '#F3DEFC',
-  200: '#DB92FC',
-  300: '#B656E2',
+  100: '#F9F4FC',
+  200: '#F3DEFC',
+  300: '#DB92FC',
+  400: '#B656E2',
   500: '#A829E2',
   600: '#8320B0'
 };
 
 const colorSecondary = {
-  100: '#B9F0FD',
-  250: '#86E7FD',
-  350: '#53DDFD',
+  100: '#E4F8FD',
+  200: '#B9F0FD',
+  300: '#86E7FD',
+  400: '#53DDFD',
   500: '#21D4FD',
   600: '#1AA9C9'
 }
@@ -70,7 +72,7 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      primary: getColors(colorPrimary, [100, 200, 300, 400, 500, 600, 700, 800, 900]), 
+      primary: colorPrimary, 
       secondary: colorSecondary, 
       pink: colorPink,
       yellow: colorYellow,
