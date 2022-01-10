@@ -15,6 +15,7 @@ const postDirectories = [
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
+  [`${basePath}/brand-guidelines`, '/brand-guidelines']
 ]
 module.exports = async function buildPostList() {
 walkDirectories(postDirectories, result)

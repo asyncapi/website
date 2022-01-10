@@ -47,7 +47,16 @@ export default function Layout({ children }) {
         {children}
       </JobsLayout>
     )
-  } else {
+  } else if (pathname.startsWith('/brand-guidelines')) {
+    const posts = getAllPosts()
+    const post = getPostBySlug(pathname)
+    return (
+      <DocsLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/brand-guidelines'))}>
+        {children}
+      </DocsLayout>
+    )
+  }
+  else {
     const post = getPostBySlug(pathname)
     if (post) {
       return (
