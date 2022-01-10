@@ -43,9 +43,6 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
             src="/img/sponsors/solace.png"
           />
         </a>
-        {/* <a href="https://www.tibco.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-12" src="/img/sponsors/tibco.png" />
-        </a> */}
       </div>
       {showSupportBanner && (
         <div className="md:px-4">
