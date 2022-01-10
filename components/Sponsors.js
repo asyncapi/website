@@ -26,10 +26,10 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         <a
           href="https://www.postman.com"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-full md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-8 mt-6 sm:mt-4 sm:h-18"
+            className="inline-block px-2 mt-6 sm:mt-4 sm:h-18 flex-shrink-0"
             src="/img/sponsors/postman.png"
           />
         </a>
