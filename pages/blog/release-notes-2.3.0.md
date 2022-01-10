@@ -1,21 +1,20 @@
 ---
 title: AsyncAPI Spec 2.3.0 Release Notes
-date: 2022-01-05T10:00:00+01:00
+date: 2022-01-10T10:00:00+01:00
 type: Communication
 tags:
   - Specification
   - Release Notes
-cover: /img/posts/release-notes-2.3.0/cover.webp
+cover: /img/posts/release-notes-2.2.0/cover.webp
 authors:
-  - name: Lukasz Gornicki
-    photo: /img/avatars/lpgornicki.webp
-    link: https://twitter.com/derberq
-    byline: AsyncAPI Maintainer and Community Guardian
-excerpt: 'TODO: write excerpt'
+  - name: Dale Lane
+    photo: /img/avatars/questionmark.webp
+    link: https://twitter.com/dalelane
+excerpt: 'AsyncAPI 2.3 is now released. This brings enhancements allowing new ways of structuring AsyncAPI documents and support for describing Solace APIs.'
 featured: true
 ---
 
-AsyncAPI specification 2.3.0 release notes
+PLACEHOLDER... intro for AsyncAPI specification 2.3.0 release notes
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.2.0'` into `asyncapi: '2.3.0'`
 
@@ -48,9 +47,9 @@ This new feature was contributed by [Sergio Moya](https://www.linkedin.com/in/sm
 
 ## Channels are now optional
 
-Related to the above change, also in support of enabling greater flexibility in how AsyncAPI documents are structured and reused, `channels` are no longer a required section.
+Related to the above change, and also in support of enabling greater flexibility in how AsyncAPI documents are structured and reused, `channels` are no longer a required section.
 
-This change makes it easier, for example, to have an AsyncAPI document that only contains reusable component definitions. For more detail, see the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/661).
+This change makes it easier, for example, to have an AsyncAPI document that only contains reusable component definitions.
 
 For example, you could now have:
 
@@ -61,6 +60,9 @@ PLACEHOLDER - asyncapi doc A without channels
 ```yaml
 PLACEHOLDER - asyncapi doc B that has refs to content from doc A
 ```
+
+For more detail, see the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/661).
+
 
 ## New protocol bindings
 
@@ -76,19 +78,7 @@ Regular expressions are now Unicode-compliant. This enhancement to the specifica
 
 ## Look ahead
 
-future minor releases https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence
+PLACEHOLDER... explain future minor releases https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence
 
-work on 3.0.0 https://github.com/asyncapi/spec/milestone/18
+PLACEHOLDER... explain work on 3.0.0 https://github.com/asyncapi/spec/milestone/18
 
-
-
-
-
-
-- put good overview
-- each section should represent a feature
-  - clear info about feature
-  - use case
-  - contributor
-  - link to PR
-- last section should have additional thank you towards other people involved in the release success
