@@ -1,36 +1,61 @@
-export default function Sponsors ({ className = '', showSupportBanner = true }) {
+export default function Sponsors({ className = '', showSupportBanner = true }) {
   return (
     <div className={`text-center ${className}`}>
       <div className="flex flex-wrap mb-8 items-center justify-center md:px-4">
-        <a href="https://www.iqvia.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-10" src="/img/sponsors/iqvia.png" />
+        <a
+          href="https://www.ibm.com"
+          target="_blank"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-4 mt-6 sm:h-14 sm:mt-4"
+            src="/img/sponsors/ibm.png"
+          />
         </a>
-        <a href="https://www.mulesoft.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-14 sm:mt-4" src="/img/sponsors/mulesoft.png" />
+        <a
+          href="https://www.iqvia.com"
+          target="_blank"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-4 mt-6 sm:h-10"
+            src="/img/sponsors/iqvia.png"
+          />
         </a>
-        <a href="https://www.salesforce.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-8 mt-6 sm:mt-4 sm:h-14" src="/img/sponsors/salesforce.png" />
+
+        <a
+          href="https://www.postman.com"
+          target="_blank"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-full md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-2 mt-6 sm:mt-4 sm:h-18 flex-shrink-0"
+            src="/img/sponsors/postman.png"
+          />
         </a>
-        <a href="https://www.sap.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-8 mt-6 sm:h-14 sm:mt-4" src="/img/sponsors/sap.png" />
-        </a>
-        <a href="https://www.slack.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-14 sm:mt-4" src="/img/sponsors/slack.png" />
-        </a>
-        <a href="https://www.solace.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-10" src="/img/sponsors/solace.png" />
-        </a>
-        <a href="https://www.tibco.com" target="_blank" className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5">
-          <img className="inline-block px-4 mt-6 sm:h-12" src="/img/sponsors/tibco.png" />
+        <a
+          href="https://www.solace.com"
+          target="_blank"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-4 mt-6 sm:h-10"
+            src="/img/sponsors/solace.png"
+          />
         </a>
       </div>
-      {
-        showSupportBanner && (
-          <div className="md:px-4">
-            <span className="text-gray-500">Want to become a sponsor?</span> <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600">Support us!</a>
-          </div>
-        )
-      }
+      {showSupportBanner && (
+        <div className="md:px-4">
+          <span className="text-gray-500">Want to become a sponsor?</span>{' '}
+          <a
+            href="https://opencollective.com/asyncapi"
+            target="_blank"
+            className="text-primary-600"
+          >
+            Support us!
+          </a>
+        </div>
+      )}
     </div>
-  )
+  );
 }
