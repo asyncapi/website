@@ -19,6 +19,7 @@ import BlogPostItem from '../components/navigation/BlogPostItem'
 import DemoAnimation from "../components/DemoAnimation";
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
+import TextLink from '../components/typography/TextLink'
 
 
 function HomePage() {
@@ -51,7 +52,10 @@ function HomePage() {
           Adopted by the world leading brands
         </Heading>
         <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 hover:text-primary-300 transition ease-in-out duration-300 hover:underline font-medium" rel="noreferrer">Let us know here!</a>
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? 
+          <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
+            Let us know here!
+          </TextLink>
         </Paragraph>
         <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="justify-center flex">
@@ -143,7 +147,10 @@ function HomePage() {
           Platinum Sponsors
         </Heading>
         <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300 font-medium" rel="noreferrer">Support us!</a>
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor? 
+          <TextLink href="https://opencollective.com/asyncapi" target="_blank">
+            Support us!
+          </TextLink>
         </Paragraph>
         <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
@@ -195,7 +202,9 @@ function HomePage() {
           </Paragraph>
           <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto">
             Want to publish a blog post? We love community stories.
-            <a className="ml-1 text-primary-500 hover:text-primary-300 hover:underline transition ease-in-out duration-300" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank" rel="noreferrer">Submit yours!</a>
+            <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
+              Submit yours!
+            </TextLink>
           </Paragraph>
         </div>
         <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">

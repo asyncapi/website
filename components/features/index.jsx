@@ -1,4 +1,6 @@
 import Heading from "../typography/Heading";
+import Paragraph from "../typography/Paragraph";
+import TextLink from "../typography/TextLink";
 
 const features = [
   {
@@ -62,9 +64,9 @@ export default function Features() {
         >
           Why AsyncAPI?
         </Heading>
-        <p className="mt-2 max-w-prose mx-auto text-lg text-gray-700">
+        <Paragraph className="mt-2 max-w-prose mx-auto">
           Improving the current state of Event-Driven Architectures (EDA)
-        </p>
+        </Paragraph>
         <div className="mt-12 text-left">
           <div className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
@@ -78,22 +80,17 @@ export default function Features() {
                   {feature.name}
                 </Heading>
                   {feature.description && (
-                    <p className="mt-5 text-base text-gray-700">
+                    <Paragraph typeStyle="body-md" className="mt-5">
                       {feature.description}
-                    </p>
+                    </Paragraph>
                   )}
                 </div>
                 <div className="flex justify-between">
                   {feature.links.map((link) => {
                     return (
-                      <a
-                        key={link.label}
-                        className="mt-6 inline-block text-primary-500"
-                        href={link.href}
-                        id={link.id}
-                      >
+                      <TextLink href={link.href} key={link.label} className="mt-6 inline-block">
                         {link.label}
-                      </a>
+                      </TextLink>
                     );
                   })}
                 </div>
