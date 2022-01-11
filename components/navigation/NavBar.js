@@ -8,6 +8,7 @@ import NavMenu from './NavMenu'
 import MobileNavMenu from './MobileNavMenu'
 import communityItems from './communityItems'
 import otherItems from './otherItems'
+import Link from 'next/link';
 
 export default function NavBar ({
   className = '',
@@ -36,9 +37,13 @@ export default function NavBar ({
         {
           !hideLogo && (
             <div className="lg:w-auto lg:flex-1">
-              <a href="/" className="flex">
-                <AsyncAPILogo className="h-8 w-auto sm:h-8" />
-              </a>
+              <div className="flex">
+               <Link href="/">
+                 <a>
+                 <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+                 </a>
+               </Link>
+              </div>
             </div>
           )
         }
