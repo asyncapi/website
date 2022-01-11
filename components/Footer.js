@@ -36,9 +36,9 @@ export default function Footer() {
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="/jobs" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-              Jobs
-            </a>
+            <Link href="/jobs">
+             <a className="text-base leading-6 text-gray-500 hover:text-gray-900"> Jobs </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
             <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 hover:text-gray-900">
