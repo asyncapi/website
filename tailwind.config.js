@@ -3,20 +3,20 @@ const colors = require('@tailwindcss/ui/colors')
 const plugin = require('tailwindcss/plugin')
 
 const colorPrimary = {
-  100: '#F9F4FC',
-  200: '#F3DEFC',
-  300: '#DB92FC',
-  400: '#B656E2',
-  500: '#A829E2',
-  600: '#8320B0'
+  100: '#F4EFFC',
+  200: '#E0D1FC',
+  300: '#CAB0FC',
+  400: '#A87EFC',
+  500: '#8851FB',
+  600: '#461E96'
 };
 
 const colorSecondary = {
-  100: '#E4F8FD',
-  200: '#B9F0FD',
-  300: '#86E7FD',
-  400: '#53DDFD',
-  500: '#21D4FD',
+  100: '#EDFAFF',
+  200: '#CCF0FF',
+  300: '#B2E8FF',
+  400: '#80D9FF',
+  500: '#47BCEE',
   600: '#1AA9C9'
 }
 
