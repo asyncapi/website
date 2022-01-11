@@ -6,7 +6,7 @@ export default function Paragraph({
     children
 }) {
 
-    let classNames
+    let classNames = ''
 
     if (typeStyle == 'body-lg') {
         classNames = `text-lg leading-relaxed tracking-body font-regular ${className || ''}`

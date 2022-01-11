@@ -6,7 +6,7 @@ export default function Heading({
     className,
     children
 }) {
-    let classNames
+    let classNames = ''
     const Tag = `${level}`;
 
     if (typeStyle === 'heading-xl') {
