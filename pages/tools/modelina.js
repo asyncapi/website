@@ -153,7 +153,7 @@ const models = await generator.generate(input)`
                     />
                   </div>
                   <p className="text-sm text-gray-500 mt-2 underline">
-                    <a href="https://github.com/asyncapi/modelina/issues/new?assignees=&labels=enhancement&template=enhancement.md" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/asyncapi/modelina/issues/new?assignees=&labels=enhancement&template=enhancement.md" target="_blank" rel="noopener noreferrer nofollow">
                       Missing a language? Please let us know!
                     </a>
                   </p>

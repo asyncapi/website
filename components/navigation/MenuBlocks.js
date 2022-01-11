@@ -14,7 +14,7 @@ export default function MenuBlocks ({
               key={index} 
               className="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150" 
               target={isExternalHref ? "_blank" : undefined} 
-              rel={isExternalHref ? "noopener noreferrer" : undefined}
+              rel={isExternalHref ? "noopener noreferrer nofollow" : undefined}
             >
               <div className={`flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-primary-500 text-white sm:h-12 sm:w-12 ${item.comingSoon && 'opacity-50'}`}>
                 <item.icon className="h-6 w-6" />

@@ -61,7 +61,7 @@ export default function BlogIndexPage() {
                 className="ml-1 text-primary-500 hover:text-primary-400"
                 href="https://github.com/asyncapi/website/issues/new?template=blog.md"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer nofollow"
               >
                 Submit yours!
               </a>
