@@ -75,7 +75,7 @@ export default function Calendar({ className = '' }) {
       ))}
       {eventsExist && (
         <Button
-          className="block md:inline-block md:text-center float-right"
+          className="block md:inline-block md:text-center float-right mt-4"
           text="Go to Calendar"
           href={CALENDAR_URL}
           target="_blank"
