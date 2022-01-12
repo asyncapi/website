@@ -8,7 +8,7 @@ export default function NavMenu({ items = [] }) {
           <div className="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
             {
               items.map((item, index) => (
-                <a href={item.href} key={index} target={item.target || '_self'} rel="noopener noreferrer nofollow" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                <a href={item.href} key={index} target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                   <p className="text-base leading-6 font-medium text-gray-900">
                     {item.text}
                   </p>
