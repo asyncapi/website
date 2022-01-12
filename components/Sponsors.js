@@ -6,6 +6,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.ibm.com"
           target="_blank"
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          rel="noopener noreferrer"
         >
           <img
             className="inline-block px-4 mt-6 sm:h-14 sm:mt-4"
@@ -15,6 +16,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         <a
           href="https://www.iqvia.com"
           target="_blank"
+          rel="noopener noreferrer"
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
         >
           <img
@@ -26,6 +28,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         <a
           href="https://www.postman.com"
           target="_blank"
+          rel="noopener noreferrer"
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-full md:w-1/3 lg:w-1/5"
         >
           <img
@@ -36,6 +39,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         <a
           href="https://www.solace.com"
           target="_blank"
+          rel="noopener noreferrer"
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
         >
           <img
@@ -50,6 +54,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           <a
             href="https://opencollective.com/asyncapi"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-primary-600"
           >
             Support us!
