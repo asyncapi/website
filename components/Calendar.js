@@ -54,7 +54,7 @@ export default function Calendar({ className = '' }) {
       {getEvents().map((event, index) => (
         <a
           href={event.url}
-          className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row mb-1"
+          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1"
           key={index}
         >
           <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
@@ -75,7 +75,7 @@ export default function Calendar({ className = '' }) {
       ))}
       {eventsExist && (
         <Button
-          className="block md:inline-block md:text-center float-right mt-4"
+          className="block md:inline-block md:text-center float-left mt-4"
           text="Go to Calendar"
           href={CALENDAR_URL}
           target="_blank"
