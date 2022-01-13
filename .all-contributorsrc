@@ -187,6 +187,18 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mcturco",
+      "name": "Missy Turco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60163079?v=4",
+      "profile": "https://melissaturco.com",
+      "contributions": [
+        "code",
+        "design",
+        "ideas",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
