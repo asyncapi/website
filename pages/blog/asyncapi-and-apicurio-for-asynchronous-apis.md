@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI and Apicurio for Asynchronous APIs"
-date: 2022-01-06T06:00:00+01:00
+date: 2022-01-13T06:00:00+01:00
 featured: true
 type: Engineering
 tags:
@@ -220,4 +220,4 @@ Many other official projects of the AsyncAPI team are still in the alpha or beta
 
 If you want to dive a bit deeper, I recommend having a look at the recording of the AsyncAPI conference in November 2021. There were many interesting talks on how AsyncAPI can be used in projects and with other tools. For more details on how to use schemas, schema registries, and API registries with AsyncAPI, listen to my conference talk below.
 
-<iframe width="100%" height="380" src="https://www.youtube.com/embed/3EeMHhbwyOQ?start=14100" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+<YouTube id="37X4Hbu0bSQ" />
