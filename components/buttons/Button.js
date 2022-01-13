@@ -6,7 +6,7 @@ export default function Button({
   icon,
   iconPosition = 'right',
   className,
-  bgClassName = 'bg-primary-500 hover:bg-primary-300',
+  bgClassName = 'bg-primary-500 hover:bg-primary-400',
   textClassName = 'text-white hover:text-white',
   buttonSize,
   ...props
