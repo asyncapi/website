@@ -116,20 +116,21 @@ function HomePage() {
         </div>
       </Container>
       
-      <Container className="text-center py-12" wide>
+      <Container className="text-center py-6" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium" rel="noreferrer">Support us!</a>
-        </p>
-        <Sponsors className="mt-8" showSupportBanner={false} />
+        <Sponsors className="mt-4" showSupportBanner={false} />
       </Container>
 
-      <Container className="text-center py-12" wide>
+      <Container className="text-center py-6" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Gold Sponsors</h3>
+        <GoldSponsors className="mt-4" showSupportBanner={false} />
+      </Container>
+      
+      <Container className="text-center py-6" wide>
+        <h3 className="text-primary-800 text-2xl font-bold md:text-3xl mb-4">Want to Sponsor Us?</h3>
         <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium" rel="noreferrer">Support us!</a>
         </p>
-        <GoldSponsors className="mt-8" showSupportBanner={false} />
       </Container>
 
       <Container className="text-center pb-12" wide>

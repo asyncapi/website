@@ -9,7 +9,7 @@ export default function GoldSponsors({ className = '', showSupportBanner = true 
             rel="noopener noreferrer"
            >
             <img
-            className="inline-block sm:h-40"
+            className="inline-block sm:h-16"
             src="/img/sponsors/redhat.svg"
           />
            </a>
