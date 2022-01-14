@@ -12,6 +12,7 @@ export default function ChapterSuggestion({
     <a
       href={href}
       target={target}
+      rel="noopener noreferrer"
       title={description}
       className={`${className} flex flex-col mt-4 p-6 max-w-lg rounded shadow-md border border-gray-200 text-gray-700 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300`}
     >
