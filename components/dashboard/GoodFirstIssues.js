@@ -19,7 +19,6 @@ function GoodFirstIssues(props) {
       selectedArea: 'Area - All',
     },
   });
-  console.log(state.currentPage);
   //Get current issues
   const filteredIssues = filterIssues(issues, state.filters);
   const indexOfLastIssue = state.currentPage * state.issuesPerPage;

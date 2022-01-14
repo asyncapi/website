@@ -3,7 +3,7 @@ import IconGithub from '../icons/Github'
 
 export default function GithubButton({
   text = 'View on Github',
-  href,
+  href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = 'left',
   className,

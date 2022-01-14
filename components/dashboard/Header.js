@@ -16,13 +16,9 @@ export default function Header() {
       </div>
       <div className="self-end flex gap-x-4">
         <GithubButton
-          text="Join On GitHub"
-          href="https://github.com/asyncapi"
           className="mt-5 lg:mt-0"
         />
         <SlackButton
-          text="Join Slack Channel"
-          href="/slack-invite"
           className="mt-5 lg:mt-0"
         />
       </div>

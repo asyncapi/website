@@ -3,7 +3,7 @@ import IconSlack from '../icons/Slack';
 
 export default function SlackButton({
   text = 'Join on Slack',
-  href,
+  href = '/slack-invite',
   target = '_blank',
   iconPosition = 'left',
   className,

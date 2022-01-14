@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "scripts": {
-    "dev": "node scripts/index.js && next -p 8080",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && node scripts/index.js && next -p 8080",
     "build": "node scripts/index.js && next build",
     "start": "next start",
     "export": "next export",
