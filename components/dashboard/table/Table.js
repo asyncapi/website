@@ -4,8 +4,8 @@ import Select from '../../form/Select';
 
 export default function Table({ title, data, paginationOptions, filters }) {
   return (
-    <div className=" bg-white lg:w-1/2 border border-gray-200">
-      <div className="inline-flex bg-gray-300 w-full p-4 gap-1">
+    <div className=" bg-white lg:w-1/2 border border-gray-200 rounded">
+      <div className="inline-flex bg-primary-300 w-full p-3 gap-1 rounded">
         <h2 className="text-2xl font-semibold leading-tight">{title}</h2>
       </div>
       {filters && (
