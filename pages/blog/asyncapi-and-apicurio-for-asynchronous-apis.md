@@ -110,7 +110,7 @@ If you want to look at it in a more readable way, you can copy and paste the def
 
 I do not want to dive too deep into the exact details of the specification because the [documentation](https://www.asyncapi.com/docs/specifications/v2.2.0) is already helpful enough for this. But I want to highlight some parts of the specification that could be the icing on the cake when considering it.
 
-Besides some general information about the API, like the title and the description, the "Info" object can contain a ["Contact" object](https://www.asyncapi.com/docs/specifications/v2.2.0#contactObject). Especially when thinking about multiple groups working together, the responsible team and how to reach them can be linked at this place. In the example from above, this would look like:
+Besides some general information about the API, like the title and the description, the "Info" object can contain a ["Contact" object](https://www.asyncapi.com/docs/specifications/v2.2.0#contactObject). Especially when thinking about multiple groups working together, the responsible team and how to reach them can be linked at this place. In the example from above, this would look like this:
 
     asyncapi: '2.2.0'
     info:
