@@ -136,7 +136,7 @@ The fixed structure defined by the specification might not be sufficient for all
         x-team-name: Kafka Streetlights Team
     ...
 
-For long and detailed API definitions, the document can become messy fast. As an improvement for this, it is possible to include references to internal and external resources (using the $ref field). They enable to reuse objects and to add schemas and definitions from external sources.  
+For long and detailed API definitions, the document can become messy fast. As an improvement for this, it is possible to include references to internal and external resources (using the $ref field). They enable us to reuse objects, add schemas and add definitions from external sources.  
 As another use case, let’s assume there are already event-driven applications using an Avro schema for their messages. For example, the schema is registered at Confluent Schema Registry or Apicurio Registry. Using $ref, it is possible to reference this Avro schema within a message object in the AsyncAPI definition:
 
     ...
