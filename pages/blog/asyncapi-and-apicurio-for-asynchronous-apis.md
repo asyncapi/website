@@ -199,7 +199,7 @@ For Avro schemas, Apicurio Registry supports schema validation and a compatibili
 
 ![Screenshot of the details overview for artifacts in Apicurio](/img/posts/asyncapi-and-apicurio-for-asynchronous-apis/apicurio_registry_details.webp)
 
-The Data Models Library of Apicurio and Apicurio Registry give a first idea of what can be done with AsyncAPI. Nevertheless, the functionalities and use cases are still limited. When I tested the Data Models Library, I hoped for more features that can be used at runtime. In fact, it is currently cumbersome to extract message schemas from the AsyncAPI definition. Therefore, I would not recommend the library for this use case.  
+The Data Models Library of Apicurio and Apicurio Registry gives a first idea of what can be done with AsyncAPI. Nevertheless, the functionalities and use cases are still limited. When I tested the Data Models Library, I hoped for more features that could be used at runtime. In fact, it is currently cumbersome to extract message schemas from the AsyncAPI definition. Therefore, I would not recommend the library for this use case.  
 However, one possibility would be to use Confluent Schema Registry or Apicurio Registry for Avro schemas. Messages could be serialized and deserialized with the schemas from there. The AsyncAPI definition can then reference these schemas. In addition, Apicurio Registry can be used as an API catalog. Developers could then use this catalog to work on new services or to mock applications.
 
 Besides these aspects, you should consider that Apicurio has little to no competition. At least I could not find another established open-source registry on the market that supports both schemas and APIs and so many formats. Feel free to leave a comment if you know more about this!
