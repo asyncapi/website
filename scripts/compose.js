@@ -32,18 +32,48 @@ const genFrontMatter = (answers) => {
   excerpt: ${answers.excerpt ? answers.excerpt : ' '}
   ---
 
+  Write your blog post content here, just remember to mention "AsyncAPI" :smile: 
+
   **Authors**
 
   Before submitting your blog post, don't forget to change the \`authors\` array field to include yourself :smile:
 
   **Images**
-
-  You can change the cover image on the metadata field above called \`cover\`.
+ 
+  Please make sure to give credit to source of the image, for example:
+  
+  > Cover image by <a href="https://pixabay.com/users/silviarita-3142410/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">silviarita</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">Pixabay</a>
+  
+  Add a cover image, you can change it on the metadata field above called \`cover\`. In case you need some inspiration we recommend https://unsplash.com/.
   All images should be stored in the \`public/img/posts/\` folder, below is an example of using an image in your post:
 
   ![Figure 3: APIs give developer teams more independence](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-03.webp)
 
   \`![Figure 3: APIs give developer teams more independence](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-03.webp)\`
+
+  Also, make sure to have the following:
+    * **Compress the image as much as possible**, we recommend https://squoosh.app/
+    * The output format needs to be `.webp`
+    * Include a clear `alt` description for people that cannot see images
+
+  **Twitter**
+  
+  To embed a tweet on your post you can use a `TwitterTweetEmbed` React component, like so:
+  
+  <TwitterTweetEmbed
+    tweetId='1384127726861258756'
+    options={{
+      cards: 'hidden',
+      width: 500,
+      align: 'center'
+    }}
+  />
+  
+  **YouTube**
+  
+  To embed a YouTube video use the `YouTube` React component, like so:
+  
+  <YouTube id="yILtksZriqA" /> 
 
   `
 
