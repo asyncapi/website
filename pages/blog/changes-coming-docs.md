@@ -58,7 +58,7 @@ In our case, we need to add...
 
 
 #### 🪣 Agnostic Content Buckets, coming right up
-Engieering Documentation can and should be divided into _agnostic_ content buckets.
+Engineering Documentation can and should be divided into _agnostic_ content buckets.
 
 Currently, our documentation has the following content buckets:
 - Getting Started
