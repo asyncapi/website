@@ -186,7 +186,7 @@ In addition, some [conventions](https://github.com/asyncapi/bindings/pull/75) fo
 AsyncAPI and Apicurio: A Match?
 ===============================
 
-In contrast to the [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html), Apicurio is not limited to [message schemas but also supports API specifications](https://www.apicur.io/registry/docs/apicurio-registry/2.0.1.Final/getting-started/assembly-registry-reference.html). Apicurio could therefore also replace the Confluent Schema Registry.  
+In contrast to the [Confluent Schema Registry](https://docs.confluent.io/platform/current/schema-registry/index.html), Apicurio is not limited to [message schemas but also supports API specifications](https://www.apicur.io/registry/docs/apicurio-registry/2.1.x/getting-started/assembly-intro-to-the-registry.html). Apicurio could therefore also replace the Confluent Schema Registry.  
 However, this is probably only true if the architecture does not mainly base on a Confluent ecosystem. But depending on the use case, Apicurio can be a helpful addition to the Schema Registry due to the additionally supported formats.
 
 Apicurio Registry allows registering AsyncAPI definitions, which can then be searched and browsed. At the moment, unfortunately, AsyncAPI documents are not rendered to make them more readable. External references (like in the example above) are currently not resolved automatically either. Orientation for this could be the [AsyncAPI playground](https://playground.asyncapi.io/), where this is already possible. However, Apicurio Studio already offers this functionality for OpenAPI, and support for AsyncAPI in Apicurio Studio [is already planned](https://github.com/Apicurio/apicurio-registry/issues/865).
