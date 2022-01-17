@@ -180,7 +180,7 @@ For example, it is possible to add a key for Kafka messages:
             $ref: '#/components/messages/lightMeasured'
     ...
 
-Unfortunately, for many protocols, there are a lot of binding objects which are not specified yet. E.g., for Kafka, there are no specifications for the Server and Channel Binding objects. In the case of Kafka, relevant but missing properties could be the number of partitions or the delivery guarantee. These properties would be a good use case for [specification extensions](https://www.asyncapi.com/docs/specifications/v2.1.0#specificationExtensions) that [currently cannot be used in binding objects](https://github.com/asyncapi/bindings/issues/83#issuecomment-925965378).  
+Unfortunately, for many protocols, there are a lot of binding objects which are not specified yet. E.g., for Kafka, there are no specifications for the Server and Channel Binding objects. In the case of Kafka, relevant but missing properties could be the number of partitions or the delivery guarantee. These properties would be a good use case for [specification extensions](https://www.asyncapi.com/docs/specifications/v2.2.0#specificationExtensions) that [currently cannot be used in binding objects](https://github.com/asyncapi/bindings/issues/83#issuecomment-925965378).  
 In addition, some [conventions](https://github.com/asyncapi/bindings/pull/75) for the specification of bindings are on the roadmap. As protocol-specific bindings are still in the alpha version, this feature will become mature with continuous development.
 
 AsyncAPI and Apicurio: A Match?
