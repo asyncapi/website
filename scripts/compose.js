@@ -32,11 +32,16 @@ const genFrontMatter = (answers) => {
   excerpt: ${answers.excerpt ? answers.excerpt : ' '}
   ---
 
-  Write your blog post content here, just remember to mention "AsyncAPI" :smile:
+  Write your blog post content here, just remember to mention "AsyncAPI" :smile:. If you need a refresher on Markdown,
+  you can take a look at [this guide](https://tailwind-nextjs-starter-blog.vercel.app/blog/github-markdown-guide).
+
+  ## Test sub-section 1
 
   **Authors**
 
   Before submitting your blog post, don't forget to change the \`authors\` array field to include yourself :smile:
+
+  ## Test sub-section 2
 
   **Images**
 
@@ -53,12 +58,12 @@ const genFrontMatter = (answers) => {
 
   Also, make sure to have the following:
     * **Compress the image as much as possible**, we recommend https://squoosh.app/
-    * The output format needs to be `.webp`
-    * Include a clear `alt` description for people that cannot see images
+    * The output format needs to be \`.webp\`
+    * Include a clear \`alt\` description for people that cannot see images
 
   **Twitter**
 
-  To embed a tweet on your post you can use a `TwitterTweetEmbed` React component, like so:
+  To embed a tweet on your post you can use a \`TwitterTweetEmbed\` React component, like so:
 
   <TwitterTweetEmbed
     tweetId='1384127726861258756'
@@ -71,9 +76,15 @@ const genFrontMatter = (answers) => {
 
   **YouTube**
 
-  To embed a YouTube video use the `YouTube` React component, like so:
+  To embed a YouTube video use the \`YouTube\` React component, like so:
 
   <YouTube id="yILtksZriqA" />
+
+  **Podcast**
+
+  To embed a Podcast audio use, like so:
+
+  <center><iframe src="https://anchor.fm/asyncapi/embed/episodes/April-2021-at-AsyncAPI-Initiative-e111lo9" height="102px" width="400px" frameborder="0" scrolling="no"></iframe></center>
 
   `
 
