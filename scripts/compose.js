@@ -32,18 +32,18 @@ const genFrontMatter = (answers) => {
   excerpt: ${answers.excerpt ? answers.excerpt : ' '}
   ---
 
-  Write your blog post content here, just remember to mention "AsyncAPI" :smile: 
+  Write your blog post content here, just remember to mention "AsyncAPI" :smile:
 
   **Authors**
 
   Before submitting your blog post, don't forget to change the \`authors\` array field to include yourself :smile:
 
   **Images**
- 
+
   Please make sure to give credit to source of the image, for example:
-  
+
   > Cover image by <a href="https://pixabay.com/users/silviarita-3142410/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">silviarita</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">Pixabay</a>
-  
+
   Add a cover image, you can change it on the metadata field above called \`cover\`. In case you need some inspiration we recommend https://unsplash.com/.
   All images should be stored in the \`public/img/posts/\` folder, below is an example of using an image in your post:
 
@@ -57,9 +57,9 @@ const genFrontMatter = (answers) => {
     * Include a clear `alt` description for people that cannot see images
 
   **Twitter**
-  
+
   To embed a tweet on your post you can use a `TwitterTweetEmbed` React component, like so:
-  
+
   <TwitterTweetEmbed
     tweetId='1384127726861258756'
     options={{
@@ -68,12 +68,12 @@ const genFrontMatter = (answers) => {
       align: 'center'
     }}
   />
-  
+
   **YouTube**
-  
+
   To embed a YouTube video use the `YouTube` React component, like so:
-  
-  <YouTube id="yILtksZriqA" /> 
+
+  <YouTube id="yILtksZriqA" />
 
   `
 
@@ -88,12 +88,6 @@ inquirer
       name: 'title',
       message: 'Enter post title:',
       type: 'input',
-    },
-    {
-      name: 'extension',
-      message: 'Choose post extension:',
-      type: 'list',
-      choices: ['md'],
     },
     {
       name: 'excerpt',
@@ -126,9 +120,7 @@ inquirer
       .replace(/ /g, '-')
       .replace(/-+/g, '-')
     const frontMatter = genFrontMatter(answers)
-    const filePath = `pages/blog/${fileName ? fileName : 'untitled'}.${
-      answers.extension ? answers.extension : 'md'
-    }`
+    const filePath = `pages/blog/${fileName ? fileName : 'untitled'}.md`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
       if (err) {
         throw err
