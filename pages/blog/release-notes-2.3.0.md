@@ -86,7 +86,7 @@ servers:
 channels:
   mychannel1:
     $ref: 'dictionary.yaml#/components/channels/myChannel'
-  mychannel1:
+  mychannel2:
     $ref: 'dictionary.yaml#/components/channels/myOtherChannel'
 ```
 
