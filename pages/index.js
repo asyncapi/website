@@ -16,8 +16,9 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
-import DemoAnimation from "../components/DemoAnimation";
+import DemoAnimation from "../components/DemoAnimation"
 import GoldSponsors from '../components/GoldSponsors'
+import SupportUs from '../components/SupportUs'
 
 function HomePage() {
   const posts = getAllPosts()
@@ -190,6 +191,13 @@ function HomePage() {
         <div className="my-10 text-center">
           <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="/blog" text="View more blog posts" />
         </div>
+      </Container>
+      <Container className="text-center py-6" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
+        <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+          These companies support us by letting us use their products for free.
+        </p>
+        <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
       <Footer />
     </>
