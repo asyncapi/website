@@ -194,9 +194,9 @@ function HomePage() {
       </Container>
       <Container className="text-center py-6" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
-        <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4">
           These companies support us by letting us use their products for free.
-          Want to <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer">Support us!</a>
+          Want to <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer">support us?</a>
         </p>
         <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
