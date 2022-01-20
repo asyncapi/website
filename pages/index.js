@@ -134,7 +134,7 @@ function HomePage() {
         </p>
       </Container>
 
-      <Container className="text-center pb-12" wide>
+      <Container className="text-center pb-10" wide>
         <section>
           <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
@@ -168,6 +168,14 @@ function HomePage() {
           </div>
         </section>
       </Container>
+      <Container className="text-center py-6 pb-20" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
+        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4 pb-4">
+          These companies support us by letting us use their products for free. Want to become a supporter?
+          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Support us!</a>
+        </p>
+        <SupportUs className="mt-4" showSupportBanner={false} />
+      </Container>
       <Container wide>
         <div className="text-center">
           <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
@@ -191,14 +199,6 @@ function HomePage() {
         <div className="my-10 text-center">
           <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="/blog" text="View more blog posts" />
         </div>
-      </Container>
-      <Container className="text-center py-6" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
-        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4">
-          These companies support us by letting us use their products for free. Want to become a supporter?
-          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Support us!</a>
-        </p>
-        <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
       <Footer />
     </>

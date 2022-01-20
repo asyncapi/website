@@ -60,7 +60,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           rel="noopener noreferrer"
         >
           <img
-            className="inline-block px-4 sm:h-10"
+            className="inline-block px-2 sm:h-10"
             src="/img/supportus/digitalocean.webp"
             title="$500 on cloud services."
           />
