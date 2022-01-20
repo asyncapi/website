@@ -10,8 +10,8 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-10"
-            src="/img/supportus/slack.png"
-            title=" Free standard subscription"
+            src="/img/supportus/slack.webp"
+            title="Free standard subscription."
           />
         </a>
         <a
@@ -22,8 +22,8 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-10"
-            src="/img/supportus/toast.png"
-            title="Free services"
+            src="/img/supportus/toast.webp"
+            title="Free services."
           />
         </a>
 
@@ -35,8 +35,8 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-10"
-            src="/img/supportus/netlify.png"
-            title="Free website deployment"
+            src="/img/supportus/netlify.webp"
+            title="Free website deployment."
           />
         </a>
         <a
@@ -47,8 +47,8 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-14"
-            src="/img/supportus/sonarcloud.png"
-            title="Free tier for automated project scanning"
+            src="/img/supportus/sonarcloud.webp"
+            title="Free tier for automated project scanning."
           />
         </a>
       </div>
@@ -61,8 +61,8 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-10"
-            src="/img/supportus/digitalocean.png"
-            title="$500 on cloud services"
+            src="/img/supportus/digitalocean.webp"
+            title="$500 on cloud services."
           />
         </a>
         <a
@@ -72,9 +72,9 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-4 sm:h-12"
-            src="/img/supportus/restream.png"
-            title="Professional plan subscription"
+            className="inline-block px-4 sm:h-8"
+            src="/img/supportus/restream.webp"
+            title="Free professional plan subscription."
           />
         </a>
       </div>
