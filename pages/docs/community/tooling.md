@@ -89,7 +89,7 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 | [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
 | [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
-| [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this Github Action you can automatically bump version based on commit messages, in similar to what semantic-release is for NPM. 
+| [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this Github Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM. 
 
 # Mocking and Testing {#mocking}
 
