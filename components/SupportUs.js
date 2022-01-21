@@ -1,7 +1,7 @@
 export default function SupportUs({ className = '', showSupportBanner = true }) {
   return (
     <div className={`text-center ${className}`}>
-      <div className="flex flex-wrap mb-4 items-center justify-center md:px-4">
+      <div className="flex flex-wrap md:mb-4 items-center justify-center md:px-4">
         <a
           href="https://slack.com/media-kit"
           target="_blank"
@@ -39,6 +39,9 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
             title="Free website deployment."
           />
         </a>
+
+      </div>
+      <div className="flex flex-wrap mb-4 items-center justify-center md:px-2">
         <a
           href="https://sonarcloud.io/"
           target="_blank"
@@ -46,13 +49,11 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-4 sm:h-14"
+            className="inline-block px-4 md:h-14"
             src="/img/supportus/sonarcloud.webp"
             title="Free tier for automated project scanning."
           />
         </a>
-      </div>
-      <div className="flex flex-wrap mb-4 items-center justify-center md:px-2">
         <a
           href="https://www.digitalocean.com/press/"
           target="_blank"
