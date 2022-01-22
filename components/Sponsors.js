@@ -5,7 +5,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
         <a
           href="https://www.ibm.com"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
@@ -17,7 +17,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.iqvia.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
@@ -29,7 +29,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.postman.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-full md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-2 sm:h-18 flex-shrink-0"
@@ -40,7 +40,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.solace.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
