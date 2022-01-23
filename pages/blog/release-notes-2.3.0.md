@@ -48,51 +48,6 @@ These are added to the many other aspects of the AsyncAPI specification which ca
 This new feature was contributed by [Sergio Moya](https://www.linkedin.com/in/smoya). For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/665) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/660).
 
 
-## Channels are now optional
-
-Related to the above change, and also in support of enabling greater flexibility in how AsyncAPI documents are structured and reused, `channels` are no longer a required section.
-
-This change makes it easier, for example, to have an AsyncAPI document that only contains reusable component definitions.
-
-For example, you could now have a document like this, which you use solely to hold reusable components for use in other documents.
-
-```yaml
-asyncapi: 2.3.0
-info:
-  description: Dictionary for our definitions
-servers:
-  production:
-    $ref: '#/components/servers/myserver'
-components:
-  servers:
-    myserver:
-      url: "http://localhost:5000/ws"
-      protocol: ws
-  channels:
-    myChannel:
-      description: "mychannel"
-    myOtherChannel:
-      description: "another channel"
-```
-
-This could be then used in other documents, like:
-```yaml
-asyncapi: 2.3.0
-info:
-  description: My awesome service API
-servers:
-  myserver:
-    $ref: 'dictionary.yaml#/components/servers/myserver'
-channels:
-  mychannel1:
-    $ref: 'dictionary.yaml#/components/channels/myChannel'
-  mychannel2:
-    $ref: 'dictionary.yaml#/components/channels/myOtherChannel'
-```
-
-For more detail, see the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/661).
-
-
 ## New protocol bindings
 
 The specification is now extended to support another custom protocol through the bindings feature:
