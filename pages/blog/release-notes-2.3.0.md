@@ -63,6 +63,27 @@ Regular expressions are now Unicode-compliant. This enhancement to the specifica
 This improves compatibility with some JSON Schema parsers. For more details, check out the [pull request](https://github.com/asyncapi/spec-json-schemas/pull/145).
 
 
+## Deprecations
+
+The `$ref` field in [Channel Item Object](#https://www.asyncapi.com/docs/specifications/v2.3.0#channelItemObject) is deprecated from AsyncAPI 2.3.0, in favour of using [Reference Object](https://www.asyncapi.com/docs/specifications/v2.3.0#referenceObject) instead.
+
+The preferred approach is:
+
+```yaml
+asyncapi: 2.3.0
+...
+channels:
+  mychannel:
+    $ref: '#/components/channels/mychannel'
+components:
+  channels:
+    mychannel:
+      description: 'my channel'
+```
+
+The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0, . For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
+
+
 ## Look ahead
 
 We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
