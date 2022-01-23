@@ -81,7 +81,7 @@ components:
       description: 'my channel'
 ```
 
-The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0, . For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
+The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0. For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
 
 
 ## Look ahead
