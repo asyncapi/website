@@ -65,23 +65,11 @@ This improves compatibility with some JSON Schema parsers. For more details, che
 
 ## Deprecations
 
-The `$ref` field in [Channel Item Object](#https://www.asyncapi.com/docs/specifications/v2.3.0#channelItemObject) is deprecated from AsyncAPI 2.3.0, in favour of using [Reference Object](https://www.asyncapi.com/docs/specifications/v2.3.0#referenceObject) instead.
+The `$ref` field in [Channel Item Object](#https://www.asyncapi.com/docs/specifications/v2.3.0#channelItemObject) is now deprecated from AsyncAPI 2.3.0.
 
-The preferred approach is:
+The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0, and replaced with [Reference Object](https://www.asyncapi.com/docs/specifications/v2.3.0#referenceObject).
 
-```yaml
-asyncapi: 2.3.0
-...
-channels:
-  mychannel:
-    $ref: '#/components/channels/mychannel'
-components:
-  channels:
-    mychannel:
-      description: 'my channel'
-```
-
-The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0. For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
+For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
 
 
 ## Look ahead
