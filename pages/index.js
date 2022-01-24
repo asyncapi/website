@@ -172,7 +172,7 @@ function HomePage() {
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
         <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4 pb-4">
           The following companies support us by letting us use their products for free. Interested in supporting us too?
-          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Email </a> for more info.
+          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Email </a> us for more info.
         </p>
         <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
