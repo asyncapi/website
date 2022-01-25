@@ -16,8 +16,9 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
-import DemoAnimation from "../components/DemoAnimation";
+import DemoAnimation from "../components/DemoAnimation"
 import GoldSponsors from '../components/GoldSponsors'
+import SupportUs from '../components/SupportUs'
 
 function HomePage() {
   const posts = getAllPosts()
@@ -115,7 +116,7 @@ function HomePage() {
           </Container>
         </div>
       </Container>
-      
+
       <Container className="text-center py-6" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
         <Sponsors className="mt-4" showSupportBanner={false} />
@@ -125,7 +126,7 @@ function HomePage() {
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Gold Sponsors</h3>
         <GoldSponsors className="mt-4" showSupportBanner={false} />
       </Container>
-      
+
       <Container className="text-center py-6" wide>
         <h3 className="text-primary-800 text-2xl font-semibold mb-4">Want to Sponsor Us?</h3>
         <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
@@ -133,7 +134,7 @@ function HomePage() {
         </p>
       </Container>
 
-      <Container className="text-center pb-12" wide>
+      <Container className="text-center pb-10" wide>
         <section>
           <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
@@ -166,6 +167,14 @@ function HomePage() {
             />
           </div>
         </section>
+      </Container>
+      <Container className="text-center py-6 pb-20" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
+        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4 pb-4">
+          The following companies support us by letting us use their products for free. Interested in supporting us too?
+          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Email </a> us for more info.
+        </p>
+        <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
       <Container wide>
         <div className="text-center">
