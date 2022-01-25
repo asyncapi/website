@@ -1,15 +1,15 @@
 export default function Sponsors({ className = '', showSupportBanner = true }) {
   return (
     <div className={`text-center ${className}`}>
-      <div className="flex flex-wrap mb-8 items-center justify-center md:px-4">
+      <div className="flex flex-wrap mb-4 items-center justify-center md:px-4">
         <a
           href="https://www.ibm.com"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
-            className="inline-block px-4 mt-6 sm:h-14 sm:mt-4"
+            className="inline-block px-4 sm:h-14"
             src="/img/sponsors/ibm.png"
           />
         </a>
@@ -17,10 +17,10 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.iqvia.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-4 mt-6 sm:h-10"
+            className="inline-block px-4 sm:h-10"
             src="/img/sponsors/iqvia.png"
           />
         </a>
@@ -29,10 +29,10 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.postman.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-full md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-2 mt-6 sm:mt-4 sm:h-18 flex-shrink-0"
+            className="inline-block px-2 sm:h-18 flex-shrink-0"
             src="/img/sponsors/postman.png"
           />
         </a>
@@ -40,10 +40,10 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           href="https://www.solace.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/2 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/4 md:w-1/3 lg:w-1/5"
         >
           <img
-            className="inline-block px-4 mt-6 sm:h-10"
+            className="inline-block px-4 sm:h-10"
             src="/img/sponsors/solace.png"
           />
         </a>
