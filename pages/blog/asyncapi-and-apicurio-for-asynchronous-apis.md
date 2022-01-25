@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI and Apicurio for Asynchronous APIs"
-date: 2022-01-13T06:00:00+01:00
+date: 2022-01-26T06:00:00+01:00
 featured: true
 type: Engineering
 tags:
