@@ -17,7 +17,7 @@ export default function DocsButton({ suggestions = [], className }) {
       <div className="pr-2 flex flex-col grow w-full">
         {backPages.map((suggestion, key) => (
           <Link href={suggestion.href} key={key}>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-left">
+            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-left cursor-pointer">
               <div className="text-primary-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function DocsButton({ suggestions = [], className }) {
       <div className="pl-2 flex flex-col grow w-full">
         {nextPages.map((suggestion, key) => (
           <Link href={suggestion.href} key={key}>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-right">
+            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-right cursor-pointer">
               <div className="text-primary-600">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
