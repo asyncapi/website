@@ -6,7 +6,7 @@ export default function DocsButton({ suggestions }) {
       {suggestions.map((suggestion, index) => (
         <div
           key={index}
-          className={`mt-4 p-4 w-1/2 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 ${suggestion.classname}`}
+          className={`mt-2 p-4 w-1/2 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 ${suggestion.classname}`}
         >
           <Link href={suggestion.href}>
             {suggestion.type === 'back' ? (

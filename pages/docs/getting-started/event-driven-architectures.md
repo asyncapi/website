@@ -66,19 +66,21 @@ Theoretically, _"message-driven"_ is the most generic term -meaning you may use 
 
 We've seen what an Event-Driven Architecture is, how it works, and explained its components. AsyncAPI defines and documents each of these components. We'll cover each of the components during the rest of this guide. To continue, choose your next step:
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
+    {
+      href: '/docs/getting-started/',
+      title: 'Introduction',
+      type:'back',
+      classname: 'mr-4',
+    },
     {
       href: '/docs/getting-started/coming-from-openapi',
       title: 'Coming from OpenAPI',
-      description: 'If you\'re familiar with OpenAPI (fka Swagger), you should really read this.',
-      linkText: 'Learn how AsyncAPI compares to OpenAPI',
-    },
-    {
-      href: '/docs/getting-started/hello-world',
-      title: 'Hello World',
-      description: 'Jump straight into an example of how to create your first AsyncAPI document.',
-      linkText: 'Learn the basics of the AsyncAPI specification',
+      type:'next',
+      classname: '',
     }
   ]}
 />

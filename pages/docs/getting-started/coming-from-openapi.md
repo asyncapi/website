@@ -28,19 +28,21 @@ As you have seen above, OpenAPI and AsyncAPI are very similar. In a real-world e
 
 Enough reading, it's time to get your hands dirty with some actual examples. Let's learn how to create an AsyncAPI document that defines a "Hello world" application.
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
     {
       href: '/docs/getting-started/event-driven-architectures',
       title: 'Event-Driven Architectures',
-      description: 'Core concepts of event-driven architectures.',
-      linkText: 'Learn the basics of event-driven architectures',
+      type:'back',
+      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/hello-world',
       title: 'Hello World',
-      description: 'Jump straight into an example of how to create your first AsyncAPI document.',
-      linkText: 'Learn the basics of the AsyncAPI specification',
+      type:'next',
+      classname: '',
     }
   ]}
 />
