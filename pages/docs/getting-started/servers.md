@@ -59,3 +59,22 @@ In the next chapter, you'll learn how to add security requirements to your serve
     }
   ]}
 />
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/getting-started/asyncapi-documents',
+      title: 'AsyncAPI Documents',
+      type:'back',
+      classname: 'mr-4',
+    },
+    {
+      href: '/docs/getting-started/security',
+      title: 'Security',
+      type:'next',
+      classname: '',
+    }
+  ]}
+/>

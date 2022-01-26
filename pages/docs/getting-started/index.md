@@ -22,16 +22,11 @@ If you are looking for a solution to automate and formalize the documentation or
 <DocsButton
  suggestions={[
    {
-      href:'/',
-      type: 'back',  
-      title: 'Homepage',
-      classname: 'mr-4',
-   },
-   {
       href:'/docs/getting-started/event-driven-architectures',
       type: 'next',  
       title: 'Event-Driven Architectures',
       classname: '',
    }
  ]}
+ parentClass='justify-end'
 />

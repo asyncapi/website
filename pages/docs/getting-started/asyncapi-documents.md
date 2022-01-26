@@ -39,13 +39,21 @@ The AsyncAPI document is a machine-readable definition of your Event-Driven API.
 
 Your API documentation is now machine-readable –easily parseable by code— so the myriad of useful applications is endless.
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
+    {
+      href: '/docs/getting-started/hello-world',
+      title: 'Hello World',
+      type:'back',
+      classname: 'mr-4',
+    },
     {
       href: '/docs/getting-started/servers',
       title: 'Servers',
-      description: 'Use servers to define where your consumers should interact with your application.',
-      linkText: 'Learn more about the servers property',
+      type:'next',
+      classname: '',
     }
   ]}
 />

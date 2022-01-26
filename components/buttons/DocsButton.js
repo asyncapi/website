@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-export default function DocsButton({ suggestions }) {
+export default function DocsButton({ suggestions, parentClass }) {
   return (
-    <div className="flex flex-row cursor-pointer">
+    <div className={`flex flex-row cursor-pointer ${parentClass}`}>
       {suggestions.map((suggestion, index) => (
         <div
           key={index}
