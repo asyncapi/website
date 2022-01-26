@@ -68,7 +68,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           <div className="sticky top-0 flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden z-50 bg-white">
             <NavBar className="flex px-4 w-full lg:hidden" />
           </div>
-          <div className="sticky top-0 hidden lg:flex lg:border-b lg:border-gray-200 z-50 bg-white">
+          <div className="sticky top-0 hidden lg:flex lg:border-b lg:border-gray-300 z-50 bg-white">
             <NavBar hideLogo />
           </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">

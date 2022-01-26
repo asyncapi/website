@@ -38,7 +38,7 @@ function HomePage() {
       <Container wide>
         <Head />
       </Container>
-      <div className="sticky top-0 w-full bg-white border-b border-gray-500 z-50">
+      <div className="sticky top-0 w-full bg-white border-b border-gray-300 z-50">
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </div>
       
