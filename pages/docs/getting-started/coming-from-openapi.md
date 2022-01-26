@@ -36,13 +36,11 @@ Enough reading, it's time to get your hands dirty with some actual examples. Let
       href: '/docs/getting-started/event-driven-architectures',
       title: 'Event-Driven Architectures',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/hello-world',
       title: 'Hello World',
       type:'next',
-      classname: '',
     }
   ]}
 />

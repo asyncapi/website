@@ -29,13 +29,11 @@ Please become our alpha testers of the tutorial:
       href: '/docs/tutorials/streetlights',
       title: 'Streetlights',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/specifications/v2.3.0-2022-01-release.3',
       title: 'Specifications 2.3.0 (Pre-release)',
       type:'next',
-      classname: '',
     }
   ]}
 />

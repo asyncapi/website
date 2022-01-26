@@ -47,13 +47,11 @@ Your API documentation is now machine-readable –easily parseable by code— so
       href: '/docs/getting-started/hello-world',
       title: 'Hello World',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/servers',
       title: 'Servers',
       type:'next',
-      classname: '',
     }
   ]}
 />

@@ -120,7 +120,6 @@ The following is a list of tools that validate AsyncAPI documents.
       href: '/docs//docs/specifications/v2.0.0',
       title: 'Specifications - Release 2.0.0',
       type:'back',
-      classname: 'mr-4',
     }
   ]}
 />

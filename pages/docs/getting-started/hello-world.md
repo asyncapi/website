@@ -116,13 +116,11 @@ The `payload` object defines how the message must be structured. In this example
       href: '/docs/getting-started/coming-from-openapi',
       title: 'Coming from OpenAPI',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
       type:'next',
-      classname: '',
     }
   ]}
 />

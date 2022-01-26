@@ -49,17 +49,6 @@ Now you know where `Hello world application` connects to and you can start recei
 
 In the next chapter, you'll learn how to add security requirements to your server.
 
-<ChapterSuggestions
-  suggestions={[
-    {
-      href: '/docs/getting-started/security',
-      title: 'Security',
-      description: 'Define the security mechanisms your application accepts.',
-      linkText: 'Learn more about how to add security',
-    }
-  ]}
-/>
-
 ---
 
 <DocsButton
@@ -68,13 +57,11 @@ In the next chapter, you'll learn how to add security requirements to your serve
       href: '/docs/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/security',
       title: 'Security',
       type:'next',
-      classname: '',
     }
   ]}
 />

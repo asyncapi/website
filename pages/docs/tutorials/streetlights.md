@@ -225,13 +225,11 @@ We would love to see what you create with AsyncAPI! As an open-source project, w
       href: '/docs/tutorials',
       title: 'Tutorials - Overview',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/tutorials/streetlights-interactive',
       title: 'Streetlights - Interactive (Alpha)',
       type:'next',
-      classname: '',
     }
   ]}
 />

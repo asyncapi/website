@@ -91,13 +91,11 @@ At this point, you know AsyncAPI well enough to create a simple `Hello world app
       href: '/docs/getting-started/servers',
       title: 'Servers',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/tutorials',
       title: 'Tutorials Overview',
       type:'next',
-      classname: '',
     }
   ]}
 />

@@ -74,13 +74,11 @@ We've seen what an Event-Driven Architecture is, how it works, and explained its
       href: '/docs/getting-started/',
       title: 'Introduction',
       type:'back',
-      classname: 'mr-4',
     },
     {
       href: '/docs/getting-started/coming-from-openapi',
       title: 'Coming from OpenAPI',
       type:'next',
-      classname: '',
     }
   ]}
 />
