@@ -37,10 +37,15 @@ function HomePage() {
     <>
       <Container wide>
         <Head />
-        <NavBar className="z-50" />
-        <Hero className="mb-24" />
       </Container>
-
+      <div className="sticky top-0 w-full bg-white border-b border-gray-500 z-50">
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </div>
+      
+      <Container wide>
+      <Hero className="mb-24" /> 
+      </Container>
+      
       <Container className="text-center pb-12" wide>
         <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
         <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">

@@ -18,9 +18,9 @@ export default function GenericPostLayout({ post, children }) {
 
   return (
     <GenericPostContext.Provider value={{ post }}>
-      <Container>
-        <NavBar />
-      </Container>
+      <div className="sticky top-0 w-full bg-white border-b border-gray-500 z-50">
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </div>
       <AnnouncementHero className="text-center m-4" small={true} />
       <Container>
         <main className="mt-8 px-4 sm:px-6">

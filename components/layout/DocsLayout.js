@@ -65,10 +65,10 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
-          <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden">
+          <div className="sticky top-0 flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden z-50 bg-white">
             <NavBar className="flex px-4 w-full lg:hidden" />
           </div>
-          <div className="hidden lg:flex lg:border-b lg:border-gray-200">
+          <div className="sticky top-0 hidden lg:flex lg:border-b lg:border-gray-200 z-50 bg-white">
             <NavBar hideLogo />
           </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
@@ -94,7 +94,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </p>
             </div>
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-0 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-4 xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-24 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
               <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
                 <article className="mb-32">
                   <Head

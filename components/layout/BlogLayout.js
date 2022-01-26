@@ -22,12 +22,12 @@ export default function BlogLayout({ post, children }) {
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <Container>
-        <NavBar />
-      </Container>
+      <div className="sticky top-0 w-full bg-white border-b border-gray-500 z-50">
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </div>
       <AnnouncementHero className="text-center m-4" small={true} />
       <Container cssBreakingPoint="lg" flex flexReverse>
-        <TOC toc={post.toc} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-0 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-0 lg:pt-0 lg:pb-8 lg:top-4 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
+        <TOC toc={post.toc} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-24 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
         <main className="mt-8 px-4 sm:px-6 lg:pr-8 lg:pl-0 lg:flex-1 lg:max-w-172 xl:max-w-172">
           <header className="pr-4 sm:pr-6 md:pr-8">
             <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
