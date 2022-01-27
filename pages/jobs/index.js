@@ -8,6 +8,7 @@ import Head from "../../components/Head";
 import Filter from "../../components/navigation/Filter";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Empty from "../../components/illustrations/empty";
+import StickyNavbar from "../../components/navigation/StickyNavbar"
 
 export default function JobsIndexPage() {
   let { navItems } = useContext(JobsContext);
@@ -65,9 +66,9 @@ Join us!
         rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board"
         rssLink="/jobs/rss.xml"
       />
-      <div className="sticky top-0 w-full bg-white border-b border-gray-300 z-50">
+      <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </div>
+      </StickyNavbar>
       <AnnouncementHero className="text-center m-4" small={true} />
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="absolute inset-0">
@@ -87,7 +88,7 @@ Join us!
               <a
                 className="ml-1 text-primary-500 hover:text-primary-400"
                 href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 Post it now!
               </a>
@@ -98,7 +99,7 @@ Join us!
               <a
                 className="ml-1 text-primary-500 hover:text-primary-400"
                 href="https://github.com/asyncapi/website/issues/new"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 Get started here.
               </a>

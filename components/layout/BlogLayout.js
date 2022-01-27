@@ -10,6 +10,7 @@ import Container from './Container'
 import Footer from '../Footer'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import AuthorAvatars from '../AuthorAvatars'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function BlogLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -22,9 +23,9 @@ export default function BlogLayout({ post, children }) {
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <div className="sticky top-0 w-full bg-white border-b border-gray-300 z-50">
+      <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </div>
+      </StickyNavbar>
       <AnnouncementHero className="text-center m-4" small={true} />
       <Container cssBreakingPoint="lg" flex flexReverse>
         <TOC toc={post.toc} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />

@@ -12,6 +12,7 @@ import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -41,13 +42,13 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
+      <StickyNavbar>
+            <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+        </StickyNavbar>
       <div className="bg-white min-h-screen xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
-        <div className="sticky top-0 flex pl-2 border-b border-gray-300 z-50 bg-white">
-            <NavBar className="flex px-4 w-full" />
-        </div>
         <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
