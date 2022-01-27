@@ -42,7 +42,7 @@ The following is a list of tools that do not yet belong to any specific category
 | :------------- | :------------- | :----------------- |
 | [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | Javascript
 | [Converter Go](https://github.com/asyncapi/converter-go) | Converts old versions of AsyncAPI files into the latest version. Thanks to [@Kyma team](https://kyma-project.io/). | Go
-| [AsyncAPI-format](https://www.npmjs.com/package/asyncapi-format) | Format an AsyncAPI document by ordering, formatting and filtering fields. | NodeJS
+| [AsyncAPI-format](https://www.npmjs.com/package/asyncapi-format) | Format an AsyncAPI document by ordering, formatting, and filtering fields. | NodeJS
 
 # Directories
 
