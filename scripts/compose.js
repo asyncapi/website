@@ -5,6 +5,7 @@
 const fs = require('fs')
 const inquirer = require('inquirer')
 const dedent = require('dedent')
+const moment = require('moment')
 
 const genFrontMatter = (answers) => {
   let d = new Date()
@@ -19,7 +20,7 @@ const genFrontMatter = (answers) => {
 
   let frontMatter = dedent`---
   title: ${answers.title ? answers.title : 'Untitled'}
-  date: '${date}'
+  date: ${moment().format("YYYY-MM-DDTh:mm:ssZ")}
   type: ${answers.type}
   tags: [${answers.tags ? tags : ''}]
   cover: /img/posts/may-2021-at-asyncapi/cover.webp
@@ -50,11 +51,14 @@ const genFrontMatter = (answers) => {
   > Cover image by <a href="https://pixabay.com/users/silviarita-3142410/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">silviarita</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2634391">Pixabay</a>
 
   Add a cover image, you can change it on the metadata field above called \`cover\`. In case you need some inspiration we recommend https://unsplash.com/.
-  All images should be stored in the \`public/img/posts/\` folder, below is an example of using an image in your post:
+  All images should be stored in the \`public/img/posts/\` folder, below is an example of using an image in your post with a caption (used as \`alt\` attribute):
 
-  ![Figure 3: APIs give developer teams more independence](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-03.webp)
+  <Figure
+    src="/img/posts/2020-summary/linkedin-folowers.webp"
+    caption="Figure 3: Followers growth in 2020"
+  />
 
-  \`![Figure 3: APIs give developer teams more independence](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-03.webp)\`
+  \`<Figure src="/img/posts/2020-summary/linkedin-folowers.webp" caption="Figure 3: Followers growth in 2020" />\`
 
   Also, make sure to have the following:
     * **Compress the image as much as possible**, we recommend https://squoosh.app/
