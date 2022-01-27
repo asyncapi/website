@@ -41,16 +41,18 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <div className="flex bg-white min-h-screen xl:max-w-7xl xl:mx-auto">
+      <div className="bg-white min-h-screen xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
-        
+        <div className="sticky top-0 flex pl-2 border-b border-gray-300 z-50 bg-white">
+            <NavBar className="flex px-4 w-full" />
+        </div>
+        <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
-            <div className="flex-1 flex flex-col pt-5 md:overflow-y-auto md:sticky md:top-0 md:max-h-screen">
-              <ClickableLogo logoClassName="h-8 w-auto ml-4 mt-0.5" />
+            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen">
               
               <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
                 {
@@ -65,12 +67,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
-          <div className="sticky top-0 flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden z-50 bg-white">
-            <NavBar className="flex px-4 w-full lg:hidden" />
-          </div>
-          <div className="sticky top-0 hidden lg:flex lg:border-b lg:border-gray-300 z-50 bg-white">
-            <NavBar hideLogo />
-          </div>
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
             <AnnouncementHero className="text-center mx-4" small={true} />
             {!showMenu && (
@@ -94,7 +90,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </p>
             </div>
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-24 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
               <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
                 <article className="mb-32">
                   <Head
@@ -107,6 +103,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </div>
             </div>
           </main>
+        </div>
         </div>
       </div>
     </DocsContext.Provider>
