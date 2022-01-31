@@ -24,7 +24,6 @@ const genFrontMatter = (answers) => {
   type: ${answers.type}
   tags: [${answers.tags ? tags : ''}]
   cover: /img/posts/may-2021-at-asyncapi/cover.webp
-  draft: ${answers.draft === 'yes' ? true : false}
   authors:
     - name: Lukasz Gornicki
       photo: /img/avatars/lpgornicki.webp
@@ -108,12 +107,6 @@ inquirer
       name: 'excerpt',
       message: 'Enter post excerpt:',
       type: 'input',
-    },
-    {
-      name: 'draft',
-      message: 'Set post as draft?',
-      type: 'list',
-      choices: ['yes', 'no'],
     },
     {
       name: 'tags',
