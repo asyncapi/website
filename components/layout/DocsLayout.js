@@ -46,7 +46,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       <StickyNavbar>
             <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
         </StickyNavbar>
-      <div className="bg-white min-h-screen xl:max-w-7xl xl:mx-auto">
+      <div className="bg-white xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
