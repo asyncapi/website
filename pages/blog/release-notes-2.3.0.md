@@ -5,7 +5,7 @@ type: Communication
 tags:
   - Specification
   - Release Notes
-cover: /img/posts/release-notes-2.2.0/cover.webp
+cover: /img/posts/release-notes-2.3.0/cover.webp
 authors:
   - name: Dale Lane
     photo: /img/avatars/questionmark.webp
@@ -78,3 +78,5 @@ We aim to have a regular cadence of releases of the AsyncAPI specification, four
 
 We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see the [milestone on Github](https://github.com/asyncapi/spec/milestone/18).
 
+
+> Photo by <a href="https://unsplash.com/@aridley88?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Ridley</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
