@@ -79,7 +79,7 @@ The following official AsyncAPI tools are already updated to support 2.3.0 versi
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.3.0 documents. Upgrade to 1.14.0 version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to 0.23.0 version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.3.0 version of the spec. Upgrade to 0.7.0 version.
-
+- [Modelina](https://github.com/asyncapi/modelina/) now also accepts AsyncAPI documents valid against the 2.3.0 version of the spec. Upgrade to 1.46.0 version.
 
 Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template and Markdown template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.3.0/examples/websocket-gemini.yml).
 
