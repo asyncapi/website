@@ -72,6 +72,20 @@ The current plan is that the `$ref` field will be removed from **Channel Item Ob
 For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
 
 
+## Tooling support
+
+The following official AsyncAPI tools are already updated to support 2.3.0 version of the specification:
+- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/asyncapi-node) repository. Also **@asyncapi/specs** package has been updated on NPM to version 2.13.0, and it contains the 2.3.0 JSON Schema.
+- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.3.0 documents. Upgrade to 1.14.0 version.
+- [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to 0.23.0 version.
+- [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.3.0 version of the spec. Upgrade to 0.7.0 version.
+
+
+Last but not least is the AsyncAPI Playground. Check new playground that uses latest HTML template and Markdown template with [this example](https://playground.asyncapi.io/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.3.0/examples/websocket-gemini.yml).
+
+Big thanks to [Maciej Urbanczyk](https://github.com/magicmatatjahu) and [Jonas Lagoni](https://github.com/jonaslagoni/) for updating most relevant tooling.
+
+
 ## Look ahead
 
 We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
