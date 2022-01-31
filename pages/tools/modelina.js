@@ -352,7 +352,7 @@ public class LightMeasured {
 }`;
 
 const playgroundAsyncAPIDocument = {
-  "asyncapi": "2.2.0",
+  "asyncapi": "2.3.0",
   "info": {
     "title": "Streetlights API",
     "version": "1.0.0",
