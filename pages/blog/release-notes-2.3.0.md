@@ -8,7 +8,7 @@ tags:
 cover: /img/posts/release-notes-2.3.0/cover.webp
 authors:
   - name: Dale Lane
-    photo: /img/avatars/questionmark.webp
+    photo: /img/avatars/dalelane.webp
     link: https://twitter.com/dalelane
 excerpt: 'AsyncAPI 2.3 is now released. This brings enhancements allowing new ways of structuring AsyncAPI documents and support for describing Solace APIs.'
 featured: true
