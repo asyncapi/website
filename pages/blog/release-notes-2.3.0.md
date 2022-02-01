@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Spec 2.3.0 Release Notes
-date: 2022-01-31T19:00:00+01:00
+date: 2022-02-01T19:00:00+01:00
 type: Communication
 tags:
   - Specification
