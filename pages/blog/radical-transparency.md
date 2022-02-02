@@ -46,7 +46,7 @@ I often get a lot of pressure from different companies to do something for them.
 
 So Radical Transparency is actually making things easier for me. I just have to say something like this:
 
-> I'm sorry, but I can't do what you're suggesting. If you're still interested in a similar deal, please head over https://www.github.com/asyncapi/community and open an issue with your proposal. We can happily discuss it there.
+> I'm sorry, but I can't do what you're suggesting. If you're still interested in a similar deal, please head over to https://www.github.com/asyncapi/community and open an issue with your proposal. We can happily discuss it there.
 
 All of a sudden, it's not just my responsibility. It's [the TSC](https://www.asyncapi.com/community/tsc) who gets to decide if their proposal moves forward or doesn't. This makes the TSC (including myself) accountable for the decision. And most important, it's all registered and accessible to anyone in the community to scrutinize.
 
