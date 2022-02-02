@@ -32,7 +32,7 @@ export default function NavBar ({
   }, [open])
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`bg-white ${className} z-50`} id="navbar">
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {
           !hideLogo && (

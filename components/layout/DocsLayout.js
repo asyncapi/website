@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import sortBy from 'lodash/sortBy'
@@ -22,6 +22,7 @@ function generateEditLink(post) {
 }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
+  
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -39,6 +40,17 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       sortWeight: sortWeight,
     }
   }), ['sortWeight'])
+  
+  useEffect(() => {
+     const navbar = document.getElementById("navbar");
+     const sidebar = document.querySelector(".sidebar");
+     
+     const height = (navbar.offsetHeight).toString();
+     
+     sidebar.style.setProperty("max-height", `calc(100vh - ${height}px)`)
+     sidebar.style.cssText+='top: '+ height + 'px';
+  }, []);
+  
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -53,7 +65,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
-            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen">
+            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen sidebar" id="sidebar">
               
               <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
                 {
