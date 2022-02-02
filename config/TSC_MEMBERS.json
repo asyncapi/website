@@ -341,5 +341,14 @@
 			"studio",
 			"cli"
 		]
+	},
+	{
+		"name": "Semen Tenishchev",
+		"github": "Tenischev",
+		"linkedin": "semen-tenishchev",
+		"availableForHire": true,
+		"repos": [
+			"java-spring-template"
+		]
 	}
 ]
