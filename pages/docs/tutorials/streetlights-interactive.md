@@ -20,3 +20,20 @@ Please become our alpha testers of the tutorial:
     - [Slack](https://www.asyncapi.com/slack-invite/)
     - [Twitter](https://twitter.com/AsyncAPISpec)
     - [GitHub Issue](https://github.com/asyncapi/website/issues/)
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tutorials/streetlights',
+      title: 'Streetlights',
+      type:'back',
+    },
+    {
+      href: '/docs/specifications/v2.3.0-2022-01-release.3',
+      title: 'Specifications 2.3.0 (Pre-release)',
+      type:'next',
+    }
+  ]}
+/>
