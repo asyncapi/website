@@ -64,7 +64,7 @@ Of course, the "downside" of this is that the whole process becomes slower and m
 
 ## Challenge us!
 
-That said, we're always looking for ways to improve. We're already radically transparent but I'm sure there are things that can be improved. So here's a challenge for you, find something we're not doing transparently enough and let us know. Or, even better, join us to improve it!
+That said, we're always looking for ways to improve. We're already radically transparent, but I'm sure we can improve some things. So here's a challenge for you, find something we're not doing transparently enough and let us know. Or, even better, join us to improve it!
 
 Thanks for reading!
 
