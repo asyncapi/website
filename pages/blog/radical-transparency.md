@@ -16,7 +16,7 @@ excerpt: ''
 featured: true
 ---
 
-There are multiple ways to manage an open-source project. At AsyncAPI, we chose Open Governance for many good reasons that Lukasz explained in his article [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation).
+There are multiple ways to manage an open-source project. At AsyncAPI, we chose the Open Governance model for many good reasons that Lukasz explained in his article [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation).
 
 However, there's more than _"just"_ doing Open Governance. **If something can't easily be found, then it's not really transparent and, therefore, not truly open.** We not only chose Open Governance but _Radical Transparency_.
 
