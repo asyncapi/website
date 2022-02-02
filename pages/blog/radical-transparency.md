@@ -50,7 +50,7 @@ So Radical Transparency is actually making things easier for me. I just have to 
 
 All of a sudden, it's not just my responsibility. It's [the TSC](https://www.asyncapi.com/community/tsc) who gets to decide if their proposal moves forward or doesn't. This makes the TSC (including myself) accountable for the decision. And most important, it's all registered and accessible to anyone in the community to scrutinize.
 
-Radical Transparency is removing all these trouble-makers for me. Whoever is truly interested in making a honest proposal, will also suggest it publicly. This system allows me to get rid of those whose interest is not making the project better and are only seeking profit. And, so far, these people stand for 100% of the cases.
+Radical Transparency is removing all these trouble-makers for me. Whoever is truly interested in making an honest proposal, will also suggest it publicly. This system allows me to get rid of those whose interest is not making the project better and are only seeking profit. And, so far, these people stand for 100% of the cases.
 
 Of course, I'm still happy to take private calls and emails when they make sense. E.g. they contain sensitive information, you don't speak English, you're shy to propose things in public, they're not related to AsyncAPI, etc.
 
