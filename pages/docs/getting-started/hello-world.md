@@ -108,13 +108,19 @@ channels:
 
 The `payload` object defines how the message must be structured. In this example, the message must be a string and match the given regular expression in the format `hello {name}` string.
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
+    {
+      href: '/docs/getting-started/coming-from-openapi',
+      title: 'Coming from OpenAPI',
+      type:'back',
+    },
     {
       href: '/docs/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
-      description: 'AsyncAPI is composed by individual documents describing the applications.',
-      linkText: 'Learn more about the AsyncAPI documents',
+      type:'next',
     }
   ]}
 />
