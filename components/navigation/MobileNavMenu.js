@@ -41,9 +41,11 @@ export default function MobileNavMenu ({
                 <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
                 {
                   communityItems.map((item, index) => (
-                    <a href={item.href} target={item.target || '_self'} rel="noopener noreferrer" key={index} className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4">
+                    <Link href={item.href} key={index}>
+                    <a target={item.target || '_self'} rel="noopener noreferrer" key={index} className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4">
                       { item.text }
                     </a>
+                    </Link>
                   ))
                 }
               </div>
@@ -51,9 +53,11 @@ export default function MobileNavMenu ({
                 <h4 className="text-gray-500 font-medium block mb-4">Others</h4>
                 {
                   otherItems.map((item, index) => (
-                    <a href={item.href} target={item.target || '_self'} rel="noopener noreferrer" key={index} className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4">
+                    <Link href={item.href} key={index}>  
+                    <a target={item.target || '_self'} rel="noopener noreferrer" key={index} className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4">
                       { item.text }
                     </a>
+                    </Link>
                   ))
                 }
               </div>
