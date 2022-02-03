@@ -91,22 +91,23 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </button>
               </div>
             )}
-            <h1 className="px-4 text-4xl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            
+            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
+              <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
+              <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             {
               post.isPrerelease 
-              ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 
+              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
               : null
             }
-            <div className="px-4 sm:px-6 md:px-8">
+            <div className="">
               <p className="text-sm font-normal text-gray-400 font-sans antialiased">
                 Found an error? Have a suggestion? 
                 {generateEditLink(post)}
               </p>
             </div>
-            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
-              <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
-                <article className="mb-32">
+                <article className="mb-32 mt-12">
                   <Head
                     title={post.title}
                     description={post.excerpt}
