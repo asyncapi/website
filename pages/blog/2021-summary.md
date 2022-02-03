@@ -209,7 +209,7 @@ We published 265 posts on LinkedIn, and with a growing number of followers, it c
 
 We spent $1200 on paid marketing on LinkedIn to increase awareness about AsyncAPI Hackathon and Conference. We noticed a large increase in impressions on our sponsored posts. These sponsored posts did not link to our AsyncAPI website but to the conference registration site. To summarize, $1200 converted into 763 visits to the registration website and ... wait for it ... wait for it ... 15 registrations. I have to tell you that 2021 taught me that there is nothing better than organic marketing. Better pay $1200 to contributors for their work rather than give it out to LinkedIn.
 
-I recommend everyone to maintain a relationship with the community also on LinkedIn. This social media is changing. Many folks that are not active on Twitter are active on LinkedIn, and you should address them. In the end, reposting stuff you have for Twitter to LinkedIn is not very time-consuming.
+I recommend everyone to maintain a relationship with the community also on LinkedIn. This social media is changing. Many folks that are not active on Twitter are active on LinkedIn, and you should target them. In the end, reposting stuff you have for Twitter to LinkedIn is not very time-consuming.
 
 In Q4 of 2021, we also started streaming different meetings to LinkedIn. In three months, we noted 1180 views of our streaming content. So we basically enabled over 1k users to watch the content they would probably not watch if LinkedIn was their only social media channel. Think about it, omnichannel is the only way to build the community,
 
@@ -232,7 +232,7 @@ The interest is growing by a lot! Our website handles it well with the support o
       2020
     </td>
     <td align="center">
-      2020
+      2021
     </td>
   </tr>
   <tr>
@@ -287,7 +287,7 @@ The interest is growing by a lot! Our website handles it well with the support o
 
 ### Top blog posts
 
-[AsyncAPI blog](/blog) is a place where the AsyncAPI Community can publish articles. Anyone can share knowledge, experience, and showcase their work there. Just [let us](https://github.com/asyncapi/website/issues/new?template=blog.md) know what you want to write about.
+[AsyncAPI blog](/blog) is a place where the AsyncAPI Community can publish articles. Anyone can share knowledge, experience, and showcase their work there. Just [let us know what you want to write about](https://github.com/asyncapi/website/issues/new?template=blog.md).
 
 What is the benefit of writing/republishing on the AsyncAPI blog? Visibility among the AsyncAPI community plus our activities to make your work go viral. Just look at the below table to see our top 3 viral posts.
 
@@ -354,7 +354,7 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
 
 In 2021 we integrated our Google Analytics with Google Search Console (GSC). I believe that numbers from GSC can show how many more people hear about AsyncAPI and gain interest in the topic. In other words, the assumption is that the more people google, the more people are aware of AsyncAPI.
 
-The last data we have access to is from 20th of September 2020. So we cannot fully compare 2020 and 2021. We know we had 1 230 000 (OVER ONE MILLION) impressions and 104 000 clicks in 2021 in total, but in the below table we only compare data between 20th of September and 31st of December.
+The last data we have access to is from the 20th of September 2020. So we cannot fully compare 2020 and 2021. We know we had 1 230 000 (OVER ONE MILLION) impressions and 104 000 clicks in 2021 in total, but in the table below we only compare data between the 20th of September and the 31st of December.
 
 <table>
   <tr>
@@ -425,7 +425,7 @@ We did some [super basic SEO improvements](https://github.com/asyncapi/website/p
 
 I think we have proof that all additional activities planned for 2022, such as rework of existing documentation, should improve numbers even more.
 
-If you have more ideas on improving, just open up an issue in [the website repository](https://github.com/asyncapi/website/) and let us discuss how we can get better.
+If you have more ideas on improving, just open up an issue in [the website repository](https://github.com/asyncapi/website/), and let's discuss how we can get better.
 
 ## Twitter
 
