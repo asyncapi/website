@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Initiative 2021 in Numbers"
-date: 2022-02-05T06:00:00+01:00
+date: 2022-02-07T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
