@@ -93,7 +93,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             )}
             
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
               <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
               <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             {
