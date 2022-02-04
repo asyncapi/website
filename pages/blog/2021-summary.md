@@ -431,7 +431,7 @@ If you have more ideas on improving, just open up an issue in [the website repos
 
 By the time I gathered data for this blog post, we had 2997 followers on Twitter. 1 564 increase since the last time we had published such metrics in mid-December 2020. It is **78% more followers in a year compared to 2020**.
 
-I'm not gonna hide, I'm not a Twitter fan, really :smiley:
+I'm not gonna hide, I'm not a Twitter fan, really. :smiley:
 Who cares about my preferences, though, our community is present there, and we must too. In the end, Twitter led 2 478 new users to AsyncAPI website.
 
 What I can tell you for sure. Do not spend your money on Twitter marketing. We tried it for AsyncAPI Conference. Of course, I might configure something in a bad way, but does it change anything? We spent $560.21 on sponsored tweets that converted into 16 471 visits to the conference registration page. Guess what, **0 folks registered**. 
@@ -456,7 +456,7 @@ The good news is that we should get access to Linux Foundation Insights tool aro
 
 ## npm
 
-The majority of our tools are written in JavaScript/TypeScript, and we host them on Node Package Manager(npm)
+The majority of our tools are written in JavaScript/TypeScript, and we host them on Node Package Manager (npm).
 
 ### Top packages
 
@@ -528,17 +528,17 @@ Let me challenge you:
 - Most build systems cache packages that are downloaded already to improve performance. Not included in downloads.
 When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
-An interesting observation is that Generator uses Parser and Parser uses the package with AsyncAPI specs. So you can read from these data that package with specs is primarily used in AsyncAPI Parser. You can also see that Parser is a backbone for much more projects than just the AsyncAPI Generator.
+An interesting observation is that Generator uses Parser and Parser uses the package with AsyncAPI specs. So you can read from this data that packages with specs are primarily used in the AsyncAPI Parser. You can also see that Parser is a backbone for many more projects than just the AsyncAPI Generator.
 
-Do you see it? Last year Generator and Parser download numbers were super close to each other, now the difference is much higher, 1 MILLION!.
+Do you see it? Last year Generator and Parser download numbers were super close to each other, now the difference is much higher, 1 MILLION!
 
 ## YouTube
 
-The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in the traffic. 
+The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in traffic. 
 
 ### Watch time
 
-This is the only channel where numbers did not get higher than in previous years. The main reason is that in 2020 our conference took place in March, while in 2021, it was November. We only released like 1/5 of all presentations. Let's see if I'm right. Numbers in 2022 should get up.
+YouTube is the only channel where numbers were not higher than in previous years. The main reason is that in 2020, our conference took place in March, while in 2021, it was November. We only released like 1/5 of all presentations. Let's see if I'm right. Numbers in 2022 should get up.
 
 <table>
   <tr>
@@ -600,7 +600,7 @@ This is the only channel where numbers did not get higher than in previous years
 
 ## Open Collective
 
-We earned and spent lots of money this year :money_mouth_face:
+We earned and spent lots of money this year. :money_mouth_face:
 
 Huge applause :clap: to all [our sponsors](https://opencollective.com/asyncapi#section-contributors)! 
 
@@ -659,10 +659,10 @@ We grow. Numbers just confirm our observation. We grow not only because people l
 
 If you want to look at more data, some of it is available [in this spreadsheet](https://docs.google.com/spreadsheets/d/1KxEkX9BqtJ4WIkh-NMftq5pDTcBStV_pHqa6P6-7bfM/edit?usp=sharing) and for others you just need to contact me directly. 
 
-In 2022 we need to establish a stronger bond with the community. We have many folks that give back a lot of time into the project, and it is time to give back. The main goals we have:
+In 2022, we need to establish a stronger bond with the community. We have many folks that give back a lot of time into the project, and it is time to give back. The main goals we have:
 - Meet in person for AsyncAPI Conference
 - Setup Ambassador program to give back to most active community members
-- Involve in more events like Google Summer of Code
+- Get involved in more events like Google Summer of Code
 
 Join us so we can work on these together!
 
