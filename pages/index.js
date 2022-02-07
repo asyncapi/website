@@ -216,11 +216,15 @@ function HomePage() {
         </section>
       </Container>
       <Container className="text-center py-6 pb-20" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
-        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4 pb-4">
+        <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+          Supported by
+        </Heading>
+        <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
           The following companies support us by letting us use their products for free. Interested in supporting us too?
-          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Email </a> us for more info.
-        </p>
+          <TextLink href="mailto:info@asyncapi.io" target="_blank">
+              Email us
+          </TextLink> for more info.
+        </Paragraph>
         <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
       <Container wide>

@@ -18,7 +18,7 @@ export default function DocsButton({ suggestions = [], className }) {
         {backPages.map((suggestion, key) => (
           <Link href={suggestion.href} key={key}>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-left cursor-pointer">
-              <div className="text-primary-600">
+              <div className="text-secondary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 inline mr-1"
@@ -46,7 +46,7 @@ export default function DocsButton({ suggestions = [], className }) {
         {nextPages.map((suggestion, key) => (
           <Link href={suggestion.href} key={key}>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-right cursor-pointer">
-              <div className="text-primary-600">
+              <div className="text-secondary-500">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
                 </div>

@@ -11,7 +11,7 @@ export default function TextLink({
     return(
         <>
         {' '}
-        <a href={href} target={target} className={classNames}>
+        <a href={href} target={target} rel="noreferrer noopener" className={classNames}>
             {children}
         </a>
         </>

@@ -46,7 +46,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       <StickyNavbar>
             <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
         </StickyNavbar>
-      <div className="bg-white xl:max-w-7xl xl:mx-auto">
+      <div className="bg-white px-4 sm:px-6 lg:px-8 xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -56,7 +56,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen">
               
-              <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
+              <nav className="flex-1 mt-3 pb-8 bg-white">
                 {
                   navigation.map((item, i) => (
                     <div key={`menu-item-${i}`}>
