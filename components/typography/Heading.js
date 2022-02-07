@@ -13,15 +13,15 @@ export default function Heading({
         classNames = `text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-lg') {
         classNames = `text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-md-bold') {
+    } else if (typeStyle === 'heading-md') {
         classNames = `text-2xl font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-md-semibold') {
         classNames = `text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-sm-bold') {
+    } else if (typeStyle === 'heading-sm') {
         classNames = `text-xl font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-sm-semibold') {
         classNames = `text-xl font-semibold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-xs-bold') {
+    } else if (typeStyle === 'heading-xs') {
         classNames = `text-base font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-xs-semibold') {
         classNames = `text-base font-semibold tracking-heading leading-snug ${className || ''}`

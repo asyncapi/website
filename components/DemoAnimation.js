@@ -218,7 +218,7 @@ export default function DemoAnimation({ className = '' }) {
         <div className={`relative md:flex-1 md:ml-6 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
           <div className={`md:text-left text-center mt-8 md:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
             <Heading
-              typeStyle="heading-md-bold"
+              typeStyle="heading-md"
               level="h3"
               className="mb-4"
             >

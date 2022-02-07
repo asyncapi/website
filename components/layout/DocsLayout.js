@@ -65,8 +65,8 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
-          <div className="flex pl-1 pt-2 pb-2 sm:pl-3 sm:pt-3 lg:hidden">
-            <NavBar className="flex px-4 w-full lg:hidden" />
+          <div className="flex pb-2 sm:pl-3 sm:pt-3 lg:hidden">
+            <NavBar className="flex w-full lg:hidden" />
           </div>
           <div className="hidden lg:flex lg:border-b lg:border-gray-200">
             <NavBar hideLogo />
