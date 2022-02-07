@@ -20,7 +20,9 @@ import DemoAnimation from "../components/DemoAnimation";
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
-
+import GoldSponsors from '../components/GoldSponsors'
+import SupportUs from '../components/SupportUs'
+import StickyNavbar from '../components/navigation/StickyNavbar'
 
 function HomePage() {
   const posts = getAllPosts()
@@ -37,12 +39,15 @@ function HomePage() {
 
   return (
     <>
+      <Head />
+      <StickyNavbar>
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
+      
       <Container wide>
-        <Head />
-        <NavBar className="z-50" />
-        <Hero className="mb-24" />
+      <Hero className="mb-24" /> 
       </Container>
-
+      
       <Container className="text-center pb-12" wide>
         <Heading
           level="h3"
@@ -137,8 +142,8 @@ function HomePage() {
           </Container>
         </div>
       </Container>
-      
-      <Container className="text-center py-12" wide>
+
+      <Container className="text-center py-6" wide>
         <Heading 
           level="h3"
           typeStyle="heading-lg"
@@ -146,16 +151,37 @@ function HomePage() {
         >
           Platinum Sponsors
         </Heading>
+        <Sponsors className="mt-4" showSupportBanner={false} />
+      </Container>
+
+      <Container className="text-center py-6" wide>
+        <Heading 
+          level="h3"
+          typeStyle="heading-lg"
+          className="mb-4"
+        >
+          Gold Sponsors
+        </Heading>
+        <GoldSponsors className="mt-4" showSupportBanner={false} />
+      </Container>
+
+      <Container className="text-center py-6" wide>
+        <Heading 
+          level="h3"
+          typeStyle="heading-md-semibold"
+          className="mb-4"
+        >
+            Want to Sponsor Us?
+        </Heading>
         <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor? 
           <TextLink href="https://opencollective.com/asyncapi" target="_blank">
             Support us!
           </TextLink>
         </Paragraph>
-        <Sponsors className="mt-8" showSupportBanner={false} />
       </Container>
 
-      <Container className="text-center pb-12" wide>
+      <Container className="text-center pb-10" wide>
         <section>
           <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
@@ -188,6 +214,14 @@ function HomePage() {
             />
           </div>
         </section>
+      </Container>
+      <Container className="text-center py-6 pb-20" wide>
+        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Supported by</h3>
+        <p className="mt-3 max-w-2xl mx-auto text-l leading-7 text-gray-500 sm:mt-4 pb-4">
+          The following companies support us by letting us use their products for free. Interested in supporting us too?
+          <a href="mailto:info@asyncapi.io" target="_blank" className="text-primary-600" rel="noreferrer"> Email </a> us for more info.
+        </p>
+        <SupportUs className="mt-4" showSupportBanner={false} />
       </Container>
       <Container wide>
         <div className="text-center">

@@ -4,6 +4,7 @@ import IconYoutube from "./icons/YouTube"
 import IconLinkedIn from "./icons/LinkedIn"
 import NewsletterSubscribe from "./NewsletterSubscribe"
 import Container from "./layout/Container"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -11,24 +12,28 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
-            <a href="/about" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
-              About
-            </a>
+          <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <Link href="/about" className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
+             <a>About</a>
+            </Link>
+            </div>
           </div>
           <div className="px-5 py-2">
-            <a href="/blog" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
-              Blog
-            </a>
+            <div className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
+              <Link href="/blog">
+              <a>Blog</a>
+              </Link>
+            </div>
           </div>
           <div className="px-5 py-2">
-            <a href="https://asyncapi.threadless.com" target="_blank" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
+            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
               Shop
             </a>
           </div>
           <div className="px-5 py-2">
-            <a href="/jobs" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
-              Jobs
-            </a>
+            <Link href="/jobs">
+             <a className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300"> Jobs </a>
+            </Link>
           </div>
           <div className="px-5 py-2">
             <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
@@ -37,19 +42,19 @@ export default function Footer() {
           </div>
         </nav>
         <div className="mt-8 flex justify-center">
-          <a href="https://twitter.com/AsyncAPISpec" target="_blank" className="text-gray-400 hover:text-blue-500">
+          <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
             <span className="sr-only">Twitter</span>
             <IconTwitter className="h-6 w-6" />
           </a>
-          <a href="https://github.com/asyncapi" target="_blank" className="ml-6 text-gray-400 hover:text-gray-500">
+          <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
             <span className="sr-only">GitHub</span>
             <IconGithub className="h-6 w-6" />
           </a>
-          <a href="https://linkedin.com/company/asyncapi" target="_blank" className="ml-6 text-gray-400 hover:text-blue-500">
+          <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="ml-6 text-gray-400 hover:text-blue-500">
             <span className="sr-only">LinkedIn</span>
             <IconLinkedIn className="h-6 w-6" />
           </a>
-          <a href="https://youtube.com/asyncapi" target="_blank" className="ml-6 text-gray-400 hover:text-red-600">
+          <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-red-600">
             <span className="sr-only">YouTube</span>
             <IconYoutube className="h-6 w-6" />
           </a>
@@ -59,7 +64,7 @@ export default function Footer() {
             Made with <span className="font-mono text-pink-500">:love:</span> by the AsyncAPI Initiative.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
-            <a href="https://netlify.com" target="_blank">
+            <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
               <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" />
             </a>
           </p>
@@ -67,7 +72,7 @@ export default function Footer() {
             Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-1">
-            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-primary-300 hover:text-primary-200 transition ease-in-out duration-300 underline" target="_blank">https://lfprojects.org</a>
+            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-700 hover:text-gray-900 transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
           </p>
         </div>
       </div>

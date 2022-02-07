@@ -48,7 +48,8 @@
 		"company": "IBM",
 		"repos": [
 			"avro-schema-parser",
-			"bindings"
+			"bindings",
+			"java-template"
 		]
 	},
 	{
@@ -108,17 +109,6 @@
 			"parser-js",
 			"parser-api",
 			"simulator"
-		]
-	},
-	{
-		"name": "Jorge Aguiar Martín",
-		"github": "jotamusik",
-		"linkedin": "jorge-aguiar-martin",
-		"twitter": "jotamusik",
-		"availableForHire": false,
-		"company": "Lean Mind",
-		"repos": [
-			"cli"
 		]
 	},
 	{
@@ -300,6 +290,65 @@
 		"company": "Create IT",
 		"repos": [
 			"server-api"
+		]
+	},
+	{
+		"name": "Daniel Raper",
+		"github": "dan-r",
+		"linkedin": "danielr",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Kieran Murphy",
+		"github": "KieranM1999",
+		"linkedin": "kieran-murphy-175b0412b",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Tom Jefferson",
+		"github": "JEFFLUFC",
+		"linkedin": "t-jefferson",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Lewis Relph",
+		"github": "lewis-relph",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "David Boyne",
+		"github": "boyney123",
+		"twitter": "boyney123",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"studio",
+			"cli"
+		]
+	},
+	{
+		"name": "Semen Tenishchev",
+		"github": "Tenischev",
+		"linkedin": "semen-tenishchev",
+		"availableForHire": true,
+		"repos": [
+			"java-spring-template"
 		]
 	}
 ]

@@ -3,6 +3,7 @@ import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function GenericLayout({
   title,
@@ -20,9 +21,9 @@ export default function GenericLayout({
         description={description}
         image={image}
       />
-      <Container wide={wide}>
-        <NavBar />
-      </Container>
+     <StickyNavbar>
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+     </StickyNavbar>
       <Container wide={wide}>
         <AnnouncementHero className="text-center m-4" small={true} />
         {children}

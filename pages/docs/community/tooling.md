@@ -42,6 +42,7 @@ The following is a list of tools that do not yet belong to any specific category
 | :------------- | :------------- | :----------------- |
 | [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | Javascript
 | [Converter Go](https://github.com/asyncapi/converter-go) | Converts old versions of AsyncAPI files into the latest version. Thanks to [@Kyma team](https://kyma-project.io/). | Go
+| [AsyncAPI-format](https://github.com/thim81/asyncapi-format) | Format an AsyncAPI document by ordering, casing, formatting, and filtering fields. | NodeJS
 
 # Directories
 
@@ -89,6 +90,7 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 | [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
 | [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
+| [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this Github Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM. 
 
 # Mocking and Testing {#mocking}
 
@@ -111,3 +113,15 @@ The following is a list of tools that validate AsyncAPI documents.
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
 | [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs//docs/specifications/v2.0.0',
+      title: 'Specifications - Release 2.0.0',
+      type:'back',
+    }
+  ]}
+/>

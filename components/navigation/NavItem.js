@@ -8,7 +8,7 @@ export default function NavItem ({
 }) {
   if (href) {
     return (
-      <a href={href} target={target} className={`${className} text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`}>
+      <a href={href} target={target} rel="noopener noreferrer" className={`${className} text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`}>
         {text}
       </a>
     )

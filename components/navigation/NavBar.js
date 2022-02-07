@@ -10,6 +10,8 @@ import communityItems from './communityItems'
 import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
+import Link from 'next/link';
+
 
 export default function NavBar ({
   className = '',
@@ -33,14 +35,18 @@ export default function NavBar ({
   }, [open])
 
   return (
-    <div className={`relative bg-white ${className} z-50`}>
-      <div className="flex w-full justify-between items-center py-6 lg:space-x-10">
+    <div className={`bg-white ${className} z-50`}>
+      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {
           !hideLogo && (
             <div className="lg:w-auto lg:flex-1">
-              <a href="/" className="flex">
-                <AsyncAPILogo className="h-8 w-auto sm:h-8" />
-              </a>
+              <div className="flex">
+               <Link href="/">
+                 <a>
+                 <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+                 </a>
+               </Link>
+              </div>
             </div>
           )
         }
