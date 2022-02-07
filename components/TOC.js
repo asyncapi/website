@@ -32,8 +32,8 @@ export default function TOC({
   
 
   return (
-    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block z-20 ${cssBreakingPoint}:pt-6 toc`} onClick={() => setOpen(!open)}>
-      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto`}>
+    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block z-20 toc`} onClick={() => setOpen(!open)}>
+      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto xl:mt-2`}>
         <h5 className={`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-500 ${cssBreakingPoint}:font-thin`}>
           On this page
         </h5>
