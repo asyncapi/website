@@ -12,33 +12,37 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
-          <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
-            <Link href="/about" className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
+          <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+            <Link href="/about">
              <a>About</a>
             </Link>
             </div>
           </div>
           <div className="px-5 py-2">
-            <div className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
               <Link href="/blog">
               <a>Blog</a>
               </Link>
             </div>
           </div>
           <div className="px-5 py-2">
-            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300">
+            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
               Shop
             </a>
           </div>
           <div className="px-5 py-2">
-            <Link href="/jobs">
-             <a className="text-base leading-6 text-gray-500 hover:text-gray-900 transition ease-in-out duration-300"> Jobs </a>
-            </Link>
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+              <Link href="/jobs">
+              <a>Jobs</a>
+              </Link>
+            </div>
           </div>
           <div className="px-5 py-2">
-            <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 transition ease-in-out duration-300 hover:text-primary-300">
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+            <a href="mailto:press@asyncapi.io">
               Press
             </a>
+            </div>
           </div>
         </nav>
         <div className="mt-8 flex justify-center">
