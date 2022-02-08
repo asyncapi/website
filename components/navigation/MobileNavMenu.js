@@ -16,7 +16,7 @@ export default function MobileNavMenu ({
           <div className="pt-5 pb-6 px-5 space-y-6">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex">
-                <a>
+                <a className="cursor-pointer">
                 <AsyncAPILogo className="h-8 w-auto" />
                 </a> 
               </Link>

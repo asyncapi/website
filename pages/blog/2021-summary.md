@@ -306,9 +306,10 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/openapi-vs-asyncapi-burning-questions">
+    <Link href="/blog/openapi-vs-asyncapi-burning-questions">
+      <a>
       AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs
-      </a> (September 2021)
+      </a></Link> (September 2021)
     </td>
     <td align="center">
       8 107
@@ -321,9 +322,10 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/understanding-asyncapis">
+    <Link href="/blog/understanding-asyncapis">
+      <a>
       Understanding AsyncAPIs with a Practical Example
-      </a> (March 2021)
+      </a></Link> (March 2021)
     </td>
     <td align="center">
       6 161
@@ -336,9 +338,10 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/websocket-part2">
+    <Link href="/blog/websocket-part2">
+      <a>
       Creating AsyncAPI for WebSocket API - Step by Step
-      </a> (April 2021)
+      </a></Link> (April 2021)
     </td>
     <td align="center">
       5 049
