@@ -1,6 +1,5 @@
 ---
 type: Engineering
-featured: true
 cover: /img/posts/asyncapi-discovery-intro/asyncapi-discovery-tool-header.webp
 title: "Align Production Reality and Event Documentation with the AsyncAPI Discovery Tool"
 date: 2021-12-07T06:00:00+01:00
