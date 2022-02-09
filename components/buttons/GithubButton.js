@@ -7,6 +7,7 @@ export default function GithubButton({
   target = '_blank',
   iconPosition = 'left',
   className,
+  inNav = "false"
 }) {
   return (
     <Button
@@ -17,7 +18,7 @@ export default function GithubButton({
       target={target}
       className={className}
       bgClassName="bg-gray-800 hover:bg-gray-700"
-      buttonSize='small'
+      buttonSize={ inNav == "true" ? "small" : "default" }
     />
   )
 }

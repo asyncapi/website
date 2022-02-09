@@ -79,7 +79,7 @@ export default function NavBar ({
             ))
           }
 
-          <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" />
+          <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
 
         </nav>
 
