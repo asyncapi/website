@@ -39,6 +39,9 @@ module.exports = {
         'minimize': '#ffbd2e',
         'maximize': '#28c93f',
       },
+      'deprecated': '#E81717',
+      'required': '#3B6B8E',
+      'optional': '#CECCCC'
     },
     animations: {
       blink: {

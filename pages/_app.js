@@ -17,6 +17,7 @@ import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
 import DocsButton from '../components/buttons/DocsButton';
+import LifeCycle from '../components/LifeCycle'
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
@@ -84,6 +85,7 @@ function getMDXComponents() {
     ChapterSuggestions,
     YouTube,
     DocsButton,
+    LifeCycle,
     Remember,
     Warning,
     Sponsors,
