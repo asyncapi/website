@@ -22,8 +22,8 @@ export default function BlogPostItem({ post, className = '' }) {
   }
 
   return (
-    <Link href={post.slug}>
-      <div className={`flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer ${className}`}>
+    <Link href={post.slug} passHref>
+      <a className={`flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer ${className}`}>
         <Link href={post.slug}>
           <a className="flex-shrink-0">
             <img className="h-48 w-full object-cover" src={post.cover} alt="" />
@@ -71,7 +71,7 @@ export default function BlogPostItem({ post, className = '' }) {
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   )
 }

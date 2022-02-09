@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function JobPostItem({ job }) {
   return (
     <li>
-     <Link href={job.slug}>
+     <Link href={job.slug} passHref>
       <a className="block hover:bg-gray-50">
         <div className="px-4 py-4 sm:px-6">
           <div className="flex items-center justify-between">

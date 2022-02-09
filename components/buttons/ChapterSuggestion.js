@@ -12,7 +12,6 @@ export default function ChapterSuggestion({
   return (
     <Link href={href}>
       <a
-        href={href}
         target={target}
         rel="noopener noreferrer"
         title={description}
