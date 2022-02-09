@@ -165,8 +165,9 @@ module.exports = {
         '36': '9rem'
       },
       fontFamily: {
-        'sans': ['Work Sans', ...defaultTheme.fontFamily.sans], 
-        'body': ['Work Sans', ...defaultTheme.fontFamily.sans], 
+        'sans': ['Inter', ...defaultTheme.fontFamily.sans], 
+        'heading': ['Work Sans', ...defaultTheme.fontFamily.sans],
+        'body': ['Inter', ...defaultTheme.fontFamily.sans], 
         'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
       },
       letterSpacing: {

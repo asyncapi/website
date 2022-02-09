@@ -11,7 +11,7 @@ export default function NavMenu({ items = [] }) {
             {
               items.map((item, index) => (
                 <a href={item.href} key={index} target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
-                  <Paragraph typeStyle="body-md" textColor="text-gray-900" className="font-semibold">
+                  <Paragraph typeStyle="body-sm" textColor="text-gray-900" className="font-semibold">
                     {item.text}
                   </Paragraph>
                   <Paragraph typeStyle="body-sm">

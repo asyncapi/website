@@ -9,11 +9,11 @@ export default function Paragraph({
     let classNames = ''
 
     if (typeStyle == 'body-lg') {
-        classNames = `text-lg leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `text-lg leading-relaxed font-regular ${className || ''}`
     } else if (typeStyle == 'body-md') {
-        classNames = `text-base leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `text-base leading-relaxed font-regular ${className || ''}`
     } else if (typeStyle == 'body-sm') {
-        classNames = `text-sm leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `text-sm leading-relaxed font-regular ${className || ''}`
     }
 
     return (

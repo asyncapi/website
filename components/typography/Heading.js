@@ -10,27 +10,27 @@ export default function Heading({
     const Tag = `${level}`;
 
     if (typeStyle === 'heading-xl') {
-        classNames = `text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
+        classNames = `font-heading text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-lg') {
-        classNames = `text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
+        classNames = `font-heading text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-md') {
-        classNames = `text-2xl font-bold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-2xl font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-md-semibold') {
-        classNames = `text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-sm') {
-        classNames = `text-xl font-bold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-xl font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-sm-semibold') {
-        classNames = `text-xl font-semibold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-xl font-semibold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-xs') {
-        classNames = `text-base font-bold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-base font-bold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle === 'heading-xs-semibold') {
-        classNames = `text-base font-semibold tracking-heading leading-snug ${className || ''}`
+        classNames = `font-heading text-base font-semibold tracking-heading leading-snug ${className || ''}`
     } else if (typeStyle == 'body-lg') {
-        classNames = `text-lg leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `font-heading text-lg leading-relaxed tracking-body font-regular ${className || ''}`
     } else if (typeStyle == 'body-md') {
-        classNames = `text-base leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `font-heading text-base leading-relaxed tracking-body font-regular ${className || ''}`
     } else if (typeStyle == 'body-sm') {
-        classNames = `text-sm leading-relaxed tracking-body font-regular ${className || ''}`
+        classNames = `font-heading text-sm leading-relaxed tracking-body font-regular ${className || ''}`
     }
 
     return (
