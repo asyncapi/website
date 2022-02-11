@@ -50,6 +50,8 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in OpenFor
 - [Add asyncapi bundle command in AsyncAPI CLI](https://github.com/asyncapi/cli/issues/219)
 - [Add asyncapi optimize command in AsyncAPI CLI](https://github.com/asyncapi/cli/issues/218)
 - [Remove usage of Parser, validation and update docs from AsyncAPI bundler](https://github.com/asyncapi/bundler/issues/26)
+- [Add support for Markdown output in AsyncAPI Diff](https://github.com/asyncapi/diff/issues/84)
+- [Add support for HTML output in AsyncAPI Diff](https://github.com/asyncapi/diff/issues/85)
 - TODO
 
 > Photo by <a href="https://www.openforce.tech/">OpenForce</a>
