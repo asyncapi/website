@@ -39,9 +39,6 @@ module.exports = {
         'minimize': '#ffbd2e',
         'maximize': '#28c93f',
       },
-      'deprecated': '#E81717',
-      'required': '#3B6B8E',
-      'optional': '#CECCCC'
     },
     animations: {
       blink: {
@@ -62,6 +59,11 @@ module.exports = {
     extend: {
       scale: {
         '25': '.25',
+      },
+      colors:{
+        'deprecated': '#E81717',
+        'required': '#FFD23F',
+        'optional': '#CECCCC'
       },
       padding: {
         '2ch': '2ch',
