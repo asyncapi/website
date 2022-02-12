@@ -47,7 +47,7 @@ You can access the live development server at [localhost:8080](http://localhost:
 
 #### Compose a new blog post
 
-To bootstrap a new post use this command:
+To bootstrap a new post, run this command:
 ```bash
 npm run write:blog
 ```
