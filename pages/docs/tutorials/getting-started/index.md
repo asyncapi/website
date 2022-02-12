@@ -1,13 +1,15 @@
 ---
 title: Introduction
 date: 2019-02-16T13:56:52+01:00
-weight: 0
+weight: 1
 categories:
 - getting-started
 aliases:
 - '/v1/guide/'
 - '/v1/guide/index.html'
 ---
+
+## Getting Started
 
 AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDAs as easy as it is to work with REST APIs. That goes from documentation to code generation, from discovery to event management. Most of the processes you apply to your REST APIs nowadays would be applicable to your event-driven/asynchronous APIs too.
 

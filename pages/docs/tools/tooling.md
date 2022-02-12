@@ -1,14 +1,18 @@
 ---
-title: Tooling
+title: Tools
 weight: 0
 ---
 
-This page contains a list of AsyncAPI tooling. Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
+# Welcome to AsyncAPI Tools
+
+This section contains documentation for AsyncAPI tools. 
+
+Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 <!--more-->
 
 > Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!
 
-# Code-first tools
+## Code-first tools
 
 The following is a list of tools that generate AsyncAPI documents from your code.
 

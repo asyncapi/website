@@ -1,4 +1,4 @@
 ---
 title: Community
-weight: 3
+weight: 5
 ---
