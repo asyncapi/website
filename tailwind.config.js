@@ -23,7 +23,7 @@ function getColors(color, shades) {
 }
 
 module.exports = {
-  purge: true,
+  purge: false,
   theme: {
     colors: {
       ...colors,
