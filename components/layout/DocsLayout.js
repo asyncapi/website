@@ -14,6 +14,7 @@ import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import Footer from '../Footer'
 import StickyNavbar from '../navigation/StickyNavbar'
+import Heading from '../typography/Heading'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -79,7 +80,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </button>
               </div>
             )}
-            <h1 className="px-4 text-4xl tracking-heading font-semibold text-gray-900 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            <Heading level="h1" typeStyle="heading-lg" className="px-4 sm:px-6 md:px-8">
+              {post.title}
+            </Heading>
             {
               post.isPrerelease 
               ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 
