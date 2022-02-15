@@ -31,7 +31,7 @@ export default function Button({
   }
 
   return (
-    <a {...props} href={href} target={target} className={classNames}>
+    <a {...props} href={href} target={target} rel="noopener noreferrer" className={classNames}>
       {
         icon && iconPosition === 'left' && (
           <span className="inline-block mr-2">{icon}</span>

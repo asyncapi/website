@@ -6,6 +6,7 @@ import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import Footer from '../Footer'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function GenericPostLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -18,9 +19,9 @@ export default function GenericPostLayout({ post, children }) {
 
   return (
     <GenericPostContext.Provider value={{ post }}>
-      <Container>
-        <NavBar />
-      </Container>
+      <StickyNavbar>
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
       <AnnouncementHero className="text-center m-4" small={true} />
       <Container>
         <main className="mt-8 px-4 sm:px-6">

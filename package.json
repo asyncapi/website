@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/modelina": "^0.42.0",
+    "@asyncapi/modelina": "^0.48.0",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "@heroicons/react": "^1.0.5",
@@ -51,7 +51,7 @@
     "moment": "^2.26.0",
     "monaco-editor": "^0.20.0",
     "next": "^11.1.3",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "postcss-import": "^12.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
