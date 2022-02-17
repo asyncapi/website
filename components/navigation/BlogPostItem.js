@@ -24,11 +24,7 @@ export default function BlogPostItem({ post, className = '' }) {
   return (
     <Link href={post.slug} passHref>
       <a className={`flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer ${className}`}>
-        <Link href={post.slug}>
-          <a className="flex-shrink-0">
-            <img className="h-48 w-full object-cover" src={post.cover} alt="" />
-          </a>
-        </Link>
+            <img className="h-48 w-full object-cover" src={post.cover} alt="" />  
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
             <p className="text-sm leading-5 font-normal text-indigo-500">
