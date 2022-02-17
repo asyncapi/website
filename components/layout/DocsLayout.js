@@ -42,16 +42,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
     }
   }), ['sortWeight'])
   
-  useEffect(() => {
-     const navbar = document.getElementById("navbar");
-     const sidebar = document.querySelector(".sidebar");
-     
-     const height = (navbar.offsetHeight).toString();
-     
-     sidebar.style.setProperty("max-height", `calc(100vh - ${height}px)`)
-     sidebar.style.cssText+='top: '+ height + 'px';
-  }, []);
-  
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -66,7 +56,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
-            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen sidebar" id="sidebar">
+            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
               
               <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
                 {
@@ -93,7 +83,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             )}
             
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
               <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
               <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
             {
