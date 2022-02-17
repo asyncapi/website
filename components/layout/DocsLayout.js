@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import sortBy from 'lodash/sortBy'

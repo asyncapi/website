@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
 import ArrowRight from './icons/ArrowRight'
 
