@@ -38,11 +38,6 @@ module.exports = {
         'close': '#ff5f56',
         'minimize': '#ffbd2e',
         'maximize': '#28c93f',
-      },
-      'lifecycle':{
-        'deprecated': '#E81717',
-        'required': '#FFD23F',
-        'optional': '#CECCCC'
       }
     },
     animations: {
