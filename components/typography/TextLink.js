@@ -2,7 +2,7 @@
 export default function TextLink({
     href,
     className,
-    target = '_self',
+    target,
     children
 }) {
 
