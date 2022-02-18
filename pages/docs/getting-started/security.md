@@ -73,7 +73,7 @@ The example above shows how to specify that your server (a Kafka broker) require
 
 <Remember title="Hint">
 
-There are many more security schemes. Learn more about them <a href="/docs/specifications/2.2.0/#securitySchemeObject" className="text-teal-600 font-medium hover:underline">here</a>.
+There are many more security schemes. Learn more about them <Link href="/docs/specifications/2.2.0/#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
 
 </Remember>
 
