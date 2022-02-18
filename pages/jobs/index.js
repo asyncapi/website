@@ -86,19 +86,19 @@ Join us!
               Want to work on a great open-source project with a lovely team and
               a vibrant community? Browse through available job offers!
             </Paragraph>
-            <Paragraph className="max-w-2xl mx-auto mb-4">
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mb-4">
               <span role="img">💡</span> Want to post a job offer?
               <TextLink href={`https://github.com/asyncapi/website/new/master/pages/jobs?value=${jobPostUrl}`} target="_blank">
                 Post it now!
               </TextLink>
             </Paragraph>
-            <Paragraph className="max-w-2xl mx-auto mb-4">
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mb-4">
               Do you want to discuss your job offer first?
               <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
                 Get started here.
               </TextLink>
             </Paragraph>
-            <Paragraph className="max-w-2xl mx-auto mb-4">
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mb-4">
               We have an{" "}
               <img
                 className="ml-1 text-primary-500 hover:text-primary-400"
@@ -118,7 +118,7 @@ Join us!
               <div className="flex content-center justify-center">
                 <div>
                   <Empty className="mt-5" />
-                  <Paragraph className="mt-5 max-w-2xl mx-auto">
+                  <Paragraph typeStyle="body-md" className="mt-5 max-w-2xl mx-auto">
                     No open positions currently. Check back later!
                   </Paragraph>
                 </div>
