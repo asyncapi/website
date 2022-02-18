@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const features = [
   {
     name: "Specification",
@@ -76,14 +78,15 @@ export default function Features() {
                 <div className="flex justify-between">
                   {feature.links.map((link) => {
                     return (
+                      <Link href={link.href} key={link.label}>
                       <a
-                        key={link.label}
                         className="mt-6 inline-block text-primary-500"
                         href={link.href}
                         id={link.id}
                       >
                         {link.label}
                       </a>
+                      </Link>
                     );
                   })}
                 </div>
