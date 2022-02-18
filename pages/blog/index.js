@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
               checks={toFilter}
             />
             <span className="text-sm leading-10">
-              <Link href="/blog"> Clear filters </Link>
+              <Link href="/blog" passHref><a> Clear filters </a></Link>
             </span>
           </div>
           <div>
