@@ -16,7 +16,7 @@ authors:
 <Warning
   title="HacktoberFest 2020 has finished"
   description={
-    <span>Check out our <a href="/blog/hacktoberfest-summary-2020">summary blog post</a>. There are lots of good insights!</span>
+    <span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
   }
 />
 

@@ -42,7 +42,7 @@ export default function NavBar ({
             <div className="lg:w-auto lg:flex-1">
               <div className="flex">
                <Link href="/">
-                 <a>
+                 <a className="cursor-pointer">
                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
                  </a>
                </Link>

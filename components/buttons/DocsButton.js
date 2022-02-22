@@ -16,7 +16,8 @@ export default function DocsButton({ suggestions = [], className }) {
     <div className={`flex flex-row ${className}`}>
       <div className="pr-2 flex flex-col grow w-full">
         {backPages.map((suggestion, key) => (
-          <Link href={suggestion.href} key={key}>
+          <Link href={suggestion.href} key={key} passHref>
+            <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-left cursor-pointer">
               <div className="text-secondary-500">
                 <svg
@@ -39,12 +40,14 @@ export default function DocsButton({ suggestions = [], className }) {
               </div>
               <div className="font-medium text-base my-2">{suggestion.title}</div>
             </div>
+            </a>
           </Link>
         ))}
       </div>
       <div className="pl-2 flex flex-col grow w-full">
         {nextPages.map((suggestion, key) => (
-          <Link href={suggestion.href} key={key}>
+          <Link href={suggestion.href} key={key} passHref>
+            <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-right cursor-pointer">
               <div className="text-secondary-500">
                 <div className="font-bold my-auto text-sm inline uppercase">
@@ -67,6 +70,7 @@ export default function DocsButton({ suggestions = [], className }) {
               </div>
               <div className="font-medium text-base my-2">{suggestion.title}</div>
             </div>
+            </a>
           </Link>
         ))}
       </div>

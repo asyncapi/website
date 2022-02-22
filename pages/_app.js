@@ -16,6 +16,7 @@ import Figure from '../components/Figure'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
+import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
@@ -88,6 +89,7 @@ function getMDXComponents() {
     Warning,
     Sponsors,
     Caption,
+    Link,
     Row,
     Column,
     Figure,

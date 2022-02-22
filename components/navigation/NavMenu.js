@@ -1,4 +1,5 @@
 import Paragraph from "../typography/Paragraph"
+import Link from 'next/link';
 
 export default function NavMenu({ items = [] }) {
   if (!items.length) return
@@ -12,12 +13,16 @@ export default function NavMenu({ items = [] }) {
               items.map((item, index) => (
                 <a href={item.href} key={index} target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                   <Paragraph typeStyle="body-sm" textColor="text-gray-900" className="font-semibold">
+                <Link href={item.href} key={index}>
+                <a target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  <Paragraph typeStyle="body-sm" textColor="text-gray-900" className="font-semibold">
                     {item.text}
                   </Paragraph>
                   <Paragraph typeStyle="body-sm">
                     {item.description}
                   </Paragraph>
                 </a>
+                </Link>
               ))
             }
           </div>

@@ -1,6 +1,7 @@
 import Heading from "../typography/Heading";
 import Paragraph from "../typography/Paragraph";
 import TextLink from "../typography/TextLink";
+import Link from 'next/link'
 
 const features = [
   {
@@ -91,6 +92,11 @@ export default function Features() {
                       <TextLink href={link.href} key={link.label} className="mt-6 inline-block">
                         {link.label}
                       </TextLink>
+                      <Link href={link.href} key={link.label}>
+                        <TextLink href={link.href} className="mt-6 inline-block">
+                          {link.label}
+                        </TextLink>
+                      </Link>
                     );
                   })}
                 </div>
