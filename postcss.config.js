@@ -22,9 +22,6 @@ const purgecss = [
       /generator\-[\w]+/,
       /w\-2\.5/,
       /h\-2\.5/,
-      /required$/,
-      /optional$/,
-      /deprecated$/,
     ],
     defaultExtractor: content => content.match(/[\w-/:()]+(?<!:)/g) || []
   }
