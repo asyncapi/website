@@ -89,9 +89,6 @@ export default function Features() {
                 <div className="flex justify-between">
                   {feature.links.map((link) => {
                     return (
-                      <TextLink href={link.href} key={link.label} className="mt-6 inline-block">
-                        {link.label}
-                      </TextLink>
                       <Link href={link.href} key={link.label}>
                         <TextLink href={link.href} className="mt-6 inline-block">
                           {link.label}
