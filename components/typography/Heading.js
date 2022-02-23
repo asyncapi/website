@@ -8,29 +8,40 @@ export default function Heading({
 }) {
     let classNames = ''
     const Tag = `${level}`;
-
-    if (typeStyle === 'heading-xl') {
-        classNames = `font-heading text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-lg') {
-        classNames = `font-heading text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-md') {
-        classNames = `font-heading text-2xl font-bold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-md-semibold') {
-        classNames = `font-heading text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-sm') {
-        classNames = `font-heading text-xl font-bold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-sm-semibold') {
-        classNames = `font-heading text-xl font-semibold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-xs') {
-        classNames = `font-heading text-base font-bold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle === 'heading-xs-semibold') {
-        classNames = `font-heading text-base font-semibold tracking-heading leading-snug ${className || ''}`
-    } else if (typeStyle == 'body-lg') {
-        classNames = `font-heading text-lg leading-relaxed tracking-body font-regular ${className || ''}`
-    } else if (typeStyle == 'body-md') {
-        classNames = `font-heading text-base leading-relaxed tracking-body font-regular ${className || ''}`
-    } else if (typeStyle == 'body-sm') {
-        classNames = `font-heading text-sm leading-relaxed tracking-body font-regular ${className || ''}`
+    switch (typeStyle) {
+        case 'heading-xl': {
+            classNames = `font-heading text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
+        }
+        case 'heading-lg': {
+            classNames = `font-heading text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
+        }
+        case 'heading-md': {
+            classNames = `font-heading text-2xl font-bold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'heading-md-semibold': {
+            classNames = `font-heading text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'heading-sm': {
+            classNames = `font-heading text-xl font-bold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'heading-sm-semibold': {
+            classNames = `font-heading text-xl font-semibold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'heading-xs': {
+            classNames = `font-heading text-base font-bold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'heading-xs-semibold': {
+            classNames = `font-heading text-base font-semibold tracking-heading leading-snug ${className || ''}`
+        }
+        case 'body-lg': {
+            classNames = `font-heading text-lg leading-relaxed tracking-body font-regular ${className || ''}`
+        }
+        case 'body-md': {
+            classNames = `font-heading text-base leading-relaxed tracking-body font-regular ${className || ''}`
+        }
+        case 'body-sm': {
+            classNames = `font-heading text-sm leading-relaxed tracking-body font-regular ${className || ''}`
+        }
     }
 
     return (
