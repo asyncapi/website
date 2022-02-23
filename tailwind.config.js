@@ -106,6 +106,7 @@ module.exports = {
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
         '108': '27rem',
+        '(screen-14)': 'calc(100vh - 81px)'
       },
       marginRight: {
         '36': '9rem'
