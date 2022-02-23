@@ -9,39 +9,41 @@ export default function Heading({
     let classNames = ''
     const Tag = `${level}`;
     switch (typeStyle) {
-        case 'heading-xl': {
+        case 'heading-xl': 
             classNames = `font-heading text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
-        }
-        case 'heading-lg': {
+            break;
+        case 'heading-lg':
             classNames = `font-heading text-2xl font-bold tracking-heading md:text-4xl leading-snug ${className || ''}`
-        }
-        case 'heading-md': {
+            break;
+        case 'heading-md':
             classNames = `font-heading text-2xl font-bold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'heading-md-semibold': {
+            break;
+        case 'heading-md-semibold':
             classNames = `font-heading text-2xl font-semibold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'heading-sm': {
+            break;
+        case 'heading-sm':
             classNames = `font-heading text-xl font-bold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'heading-sm-semibold': {
+            break;
+        case 'heading-sm-semibold':
             classNames = `font-heading text-xl font-semibold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'heading-xs': {
+            break;
+        case 'heading-xs':
             classNames = `font-heading text-base font-bold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'heading-xs-semibold': {
+            break;
+        case 'heading-xs-semibold':
             classNames = `font-heading text-base font-semibold tracking-heading leading-snug ${className || ''}`
-        }
-        case 'body-lg': {
+            break;
+        case 'body-lg':
             classNames = `font-heading text-lg leading-relaxed tracking-body font-regular ${className || ''}`
-        }
-        case 'body-md': {
+            break;
+        case 'body-md':
             classNames = `font-heading text-base leading-relaxed tracking-body font-regular ${className || ''}`
-        }
-        case 'body-sm': {
+            break;
+        case 'body-sm':
             classNames = `font-heading text-sm leading-relaxed tracking-body font-regular ${className || ''}`
-        }
+            break;
+        default:
+            classNames = `font-heading text-2xl font-bold tracking-heading md:text-6xl leading-snug ${className || ''}`
     }
 
     return (
