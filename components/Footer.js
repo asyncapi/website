@@ -76,7 +76,7 @@ export default function Footer() {
             Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-1">
-            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-700 hover:text-gray-900 transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
+            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-600 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
           </p>
         </div>
       </div>
