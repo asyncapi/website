@@ -10,6 +10,7 @@ import DocsNavItem from '../navigation/DocsNavItem'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
+import Feedback from '../Feedback'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import Footer from '../Footer'
@@ -105,6 +106,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   />
                   { children }
                 </article>
+                <div className="">
+                  <Feedback />
+                </div>
               </div>
             </div>
           </main>
