@@ -9,6 +9,9 @@ import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
 import Warning from '../components/Warning'
 import Sponsors from '../components/Sponsors'
+import Deprecated from '../components/Deprecated'
+import Required from '../components/Required'
+import Optional from '../components/Optional'
 import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
@@ -18,7 +21,6 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
 import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
-import LifeCycle from '../components/LifeCycle'
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
@@ -86,7 +88,9 @@ function getMDXComponents() {
     ChapterSuggestions,
     YouTube,
     DocsButton,
-    LifeCycle,
+    Deprecated,
+    Required,
+    Optional,
     Remember,
     Warning,
     Sponsors,

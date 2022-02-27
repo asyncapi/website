@@ -18,7 +18,7 @@ The last AsyncAPI release (2.0.0) took place on the 11th of September, 2019. In 
 
 ## Message examples object extended with additional fields
 
-Thanks to work done by [Laurent Broudoux](https://github.com/lbroudoux), you can now clearly describe message examples. New properties **name** and **summary** are <LifeCycle text="optional" />. These properties help not only to properly describe the example in documentation but make it easier to work with mocking and testing tools (like [microcks](https://microcks.io/)), so you can better identify what example to use for mocking and what it does.
+Thanks to work done by [Laurent Broudoux](https://github.com/lbroudoux), you can now clearly describe message examples. New properties **name** and **summary** are optional. These properties help not only to properly describe the example in documentation but make it easier to work with mocking and testing tools (like [microcks](https://microcks.io/)), so you can better identify what example to use for mocking and what it does.
 
 Example of new properties added to existing [WebSocket example for Gemini API](https://github.com/asyncapi/spec/blob/v2.1.0/examples/websocket-gemini.yml):
 

@@ -63,7 +63,7 @@ First, provide some basic information that every good AsyncAPI file should have:
 - What AsyncAPI version do you use?
 - What is the name of your API?
 - What version of the API you describe?
-- Do not underestimate the description. <LifeCycle text="optional" /> != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read
+- Do not underestimate the description. Optional != not needed. AsyncAPI supports markdown in descriptions. Provide long generic documentation for your API. Benefit from markdown features to structure it, so it is easier to read
 
 > In case you think using just one property to add overarching documentation for your API is very limiting, I agree with you :smiley: Join discussion [here](https://github.com/asyncapi/extensions-catalog/issues/11). I believe spec should have better support for docs, and we should first explore it with specification extensions. To be honest, I always thought documentation deserves its specification, but I don't want to bother you with my wicked visions now.
 

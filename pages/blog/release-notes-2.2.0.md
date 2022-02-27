@@ -37,7 +37,7 @@ bindings:
     is: queue
 ```
 
-Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#serversObject). This new property is <LifeCycle text="optional" />, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. If **servers** is absent or empty, the given channel must be available on all servers defined in the Servers Object, like the previous version.
+Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#serversObject). This new property is optional, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. If **servers** is absent or empty, the given channel must be available on all servers defined in the Servers Object, like the previous version.
 
 For more details, check out [this pull request](https://github.com/asyncapi/spec/pull/531).
 
