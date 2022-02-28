@@ -41,9 +41,14 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 ### CI/CD
 
 - [Workflow that updates every PR with clear info about conventional commits](https://github.com/asyncapi/.github/issues/70)
-- [Add /review to automatically add codeowners as reviewers](https://github.com/asyncapi/.github/issues/112)
 - [Readme links check](https://github.com/asyncapi/.github/issues/92)
-- TODO
+- [CI on PR's should build the Docker image](https://github.com/asyncapi/server-api/issues/50)
+
+### K8S/Helm
+
+- [Automate Helm chart release version bump](https://github.com/asyncapi/event-gateway/issues/86)
+- [Create better Kubernetes liveness, readiness and startup Probes](https://github.com/asyncapi/event-gateway/issues/77)
+- [Add livenessProbe and readinessProbe to K8s Deployment](https://github.com/asyncapi/server-api/issues/57)
 
 ### TypeScript
 
@@ -52,6 +57,25 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 - [Remove usage of Parser, validation and update docs from AsyncAPI bundler](https://github.com/asyncapi/bundler/issues/26)
 - [Add support for Markdown output in AsyncAPI Diff](https://github.com/asyncapi/diff/issues/84)
 - [Add support for HTML output in AsyncAPI Diff](https://github.com/asyncapi/diff/issues/85)
-- TODO
+- [Add implementation for /bundle path](https://github.com/asyncapi/server-api/issues/55)
+- [Add implementation for /diff path](https://github.com/asyncapi/server-api/issues/56)
+- [Serve openapi.yaml file as documentation page](https://github.com/asyncapi/server-api/issues/43)
+- [Enable validation of an example payload](https://github.com/asyncapi/studio/issues/200)
+
+### JavaScript
+
+- [Switch for rendering whole channels by template parameter](https://github.com/asyncapi/markdown-template/issues/194)
+- [Create eslint plugin for organization repositories](https://github.com/asyncapi/community/issues/238)
+
+### Go
+
+- [Support Kafka](https://github.com/asyncapi/go-watermill-template/issues/126) - Also includes JavaScript work.
+- [Create Avro schema parser](https://github.com/asyncapi/parser-go/issues/51)
+
+### Others
+
+- [Define a better API that can be used by other applications](https://github.com/asyncapi/event-gateway/issues/47)
+- [Idea: Using EventGateway Websocket with Grafana](https://github.com/asyncapi/event-gateway/issues/60)
+
 
 > Photo by <a href="https://www.openforce.tech/">OpenForce</a>
