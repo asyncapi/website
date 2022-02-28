@@ -15,7 +15,7 @@ excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Checkout all the ma
 featured: false
 ---
 
-AsyncAPI is a specification for describing your event-driven architecture and our specification allows you to describe and document your message-driven APIs into a human-readable format. After the last v2.3.0 release, the AsyncAPI community is inching towards a 3.0 release that will bring together multiple features, enhancements and breaking changes.
+AsyncAPI is a specification for describing your event-driven architecture and our specification allows you to describe and document your message-driven APIs into a human-readable format. AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.
 
 ## Major new features
 
@@ -42,7 +42,7 @@ We are using the [GitHub milestone](https://github.com/asyncapi/spec/milestone/1
 
 ## Contributing to the release
 
-AsyncAPI is a community-driven project and we welcome all kinds of contributions! To get started, join our Slack workspace by [requesting an invite](http://asyncapi.com/slack-invite). After joining, reach out to us on the `#03_specification` channel and participate in the conversations.
+AsyncAPI is a community-driven project and we welcome all kinds of contributions! To get started, join our [Slack workspace](http://asyncapi.com/slack-invite). After joining, reach out to us on the `#03_specification` channel and participate in the conversations.
 
 To better understand AsyncAPI and how the Spec 3.0 release will play out, we recommend watching our [past meeting recordings](https://www.youtube.com/watch?v=CLNgLB4-UnA&list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV). To know how you can contribute, we recommend checking out our [contributing guidelines](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). If you wish to keep track of all the work that is happening on the Spec 3.0 release, we recommend checking out our [GitHub issue](https://github.com/asyncapi/spec/issues/691).
 
@@ -50,7 +50,7 @@ Before landing in your contributions, make sure you follow our [Code of Conduct]
 
 ## When will the release happen?
 
-We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it!
+We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 3, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com) and explore our upcoming meetings.
 
 The release would follow a three-step process: End of the review period, Beta testing and official announcement. Currently, we are working in a review period where important work is picked before we start working on them. During Beta testing, we invite external contributors and users to test the contributions that have landed in and validate their use cases. Finally, after rigorous testing, we will make an official announcement about our release!
 
