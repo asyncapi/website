@@ -45,6 +45,15 @@ npm run dev
 
 You can access the live development server at [localhost:8080](http://localhost:8080).
 
+#### Compose a new blog post
+
+To bootstrap a new post, run this command:
+```bash
+npm run write:blog
+```
+
+Follow the interactive prompt to generate a post with pre-filled front matter.
+
 ### Spin up Gitpod codespace
 In order to prepare and spin up a Gitpod dev environment for our project, we configured our workspace through a [.gitpod.yml](/.gitpod.yml) file.
 
