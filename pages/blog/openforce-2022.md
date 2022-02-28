@@ -10,7 +10,7 @@ authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
-    byline: AsyncAPI Maintainer and Dev Comm Keeper
+    byline: AsyncAPI Maintainer and Community Guardian
 featured: true
 ---
 
