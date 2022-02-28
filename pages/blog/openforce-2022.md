@@ -61,6 +61,8 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 - [Add implementation for /diff path](https://github.com/asyncapi/server-api/issues/56)
 - [Serve openapi.yaml file as documentation page](https://github.com/asyncapi/server-api/issues/43)
 - [Enable validation of an example payload](https://github.com/asyncapi/studio/issues/200)
+- [Show how to integrate Modelina in an AsyncAPI generator template](https://github.com/asyncapi/modelina/issues/641)
+- [Show how to integrate Modelina in a website](https://github.com/asyncapi/modelina/issues/642)
 
 ### JavaScript
 
