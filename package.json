@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node scripts/index.js && next -p 8080",
     "build": "node scripts/index.js && next build",
+    "write:blog": "node ./scripts/compose.js",
     "start": "next start",
     "export": "next export",
     "lint": "echo \"No linter configured yet\"",
@@ -74,7 +75,9 @@
     "tailwindcss-animations": "^2.0.0"
   },
   "devDependencies": {
+    "dedent": "^0.7.0",
     "eslint": "^7.0.0",
-    "eslint-plugin-react": "^7.20.0"
+    "eslint-plugin-react": "^7.20.0",
+    "inquirer": "^8.2.0"
   }
 }
