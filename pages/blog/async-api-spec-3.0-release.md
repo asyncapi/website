@@ -11,21 +11,21 @@ authors:
   - name: Harsh Mishra
     photo: /img/avatars/harsh.webp
     link: https://www.linkedin.com/in/harshcasper/
-excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Checkout all the major new features coming to AsyncAPI and how you can get involved!'
+excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Check out all the potential new features coming to AsyncAPI 3.0 and how you can get involved!'
 featured: false
 ---
 
 AsyncAPI is a specification for describing your event-driven architecture and our specification allows you to describe and document your message-driven APIs into a human-readable format. AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.
 
-## Major new features
+## Potential Changes
 
-Many new features for AsyncAPI Spec 3.0 are being planned and written. Among the new major new features and changes so far:
+Many new features for AsyncAPI Spec 3.0 are being planned, written, and discussed. Among them are:
 
 -   [Introduce Schema Versioning](https://github.com/asyncapi/spec/issues/697)
 -   [Introducing Data Format bindings](https://github.com/asyncapi/spec/issues/694)
 -   [Making servers aware of their service name](https://github.com/asyncapi/spec/issues/654)
 -   [Solving publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618) 
--   [Defining an AsyncAPI file](https://github.com/asyncapi/spec/issues/628) 
+-   [What does an AsyncAPI file mean](https://github.com/asyncapi/spec/issues/628)
 -   [Fixing schema inconsistencies](https://github.com/asyncapi/spec/issues/583)
 -   [Defining a schema format other than the default one](https://github.com/asyncapi/spec/issues/622)
 -   [Remove `$ref` field from `Channel Item Object`](https://github.com/asyncapi/spec/issues/699) 
@@ -52,7 +52,7 @@ Before landing in your contributions, make sure you follow our [Code of Conduct]
 
 We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 3, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com) and explore our upcoming meetings.
 
-The release would follow a three-step process: End of the review period, Beta testing and official announcement. Currently, we are working in a review period where important work is picked before we start working on them. During Beta testing, we invite external contributors and users to test the contributions that have landed in and validate their use cases. Finally, after rigorous testing, we will make an official announcement about our release!
+The release will happen gradually, where the new specification and tooling will live in coexistence until there is a collective consensus that everything is ready. This gives everyone an easy way to test out the new changes and provide feedback before the release. Finally, after rigorous testing, we will make an official announcement about our release!
 
 Join us and help make the upcoming release a successful one!
 
