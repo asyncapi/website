@@ -163,7 +163,7 @@ Join us!
           <div className="text-center mt-3 p-4">
             { !checkOldPost ? (
               <button className="btn btn-outline btn-lg text-gray-600" onClick={onClickOldPost}>
-                Check closed published jobs
+                Show closed jobs
               </button>
             ) : (
             <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
@@ -173,7 +173,7 @@ Join us!
                 ))}
               </ul>
               <button className="btn btn-outline-dark back-to-top mt-1 text-gray-600" onClick={onClickOldPost}>
-                Close
+                Back
               </button>
             </div>
             )}
