@@ -1,35 +1,49 @@
-import { useState} from "react";
+import { useState } from "react";
 
 export default function Feedback(className = '') {
     const [Submit, setSubmit] = useState(false);
     const [feedback, setFeedback] = useState('')
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
-        setSubmit(true);
-        setTimeout(() =>{
-              setSubmit(false);
-        },5000);
+        const data = {
+            feedback: feedback
+        }
+        const response = await fetch("../api/sheet", {
+            method: "POST",
+            body:JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => {
+            if(response.status===200){
+                setSubmit(true);
+                setTimeout(() => {
+                    setSubmit(false);
+                }, 5000);
+            }
+        })
+
     }
 
     if (Submit) {
         return (
             <div className={`flex flex-col rounded-md shadow-md text-center border border-gray-200 p-4 ${className}`}>
-                 <div className='block mx-auto w-fit'>
-                     <img src='/img/illustrations/icons/icon-check.svg' className='md:w-14'/>
-                 </div>
-                 <div className='text-center mx-auto text-lg mt-4'>
-                   Thank you for your feedback!
-                 </div>
-                 <div className='text-center mx-auto text-md text-gray-500'>
-                   Your contribution has been received and we couldn't be happier.
-                 </div>
-                 <a href='https://github.com/asyncapi/website' target='_blank' rel='noopener noreferrer' className="w-full shadow-md hover:shadow-lg transition-all duration-500 bg-black ease-in-out py-2 px-2 rounded-md mx-auto mt-4 md:w-1/2">
+                <div className='block mx-auto w-fit'>
+                    <img src='/img/illustrations/icons/icon-check.svg' className='md:w-14' />
+                </div>
+                <div className='text-center mx-auto text-lg mt-4'>
+                    Thank you for your feedback!
+                </div>
+                <div className='text-center mx-auto text-md text-gray-500'>
+                    Your contribution has been received and we couldn't be happier.
+                </div>
+                <a href='https://github.com/asyncapi/website' target='_blank' rel='noopener noreferrer' className="w-full shadow-md hover:shadow-lg transition-all duration-500 bg-black ease-in-out py-2 px-2 rounded-md mx-auto mt-4 md:w-1/2">
                     <div className='text-white flex flex-row justify-center text-center'>
-                    <img src='/img/logos/github-fill.svg' className='w-6 mr-2'/>
-                    Follow on GitHub
+                        <img src='/img/logos/github-fill.svg' className='w-6 mr-2' />
+                        Follow on GitHub
                     </div>
-                 </a>
+                </a>
             </div>
         )
     }
