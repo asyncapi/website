@@ -217,6 +217,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "BOLT04",
+      "name": "David Pereira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18630253?v=4",
+      "profile": "https://bolt04.github.io/react-ultimate-resume/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
