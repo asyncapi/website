@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import NavBar from "../../components/navigation/NavBar";
-import Container from "../../components/layout/Container";
 import JobsContext from "../../context/JobsContext";
 import JobPostItem from "../../components/navigation/JobPostItem";
 import Footer from "../../components/Footer";
@@ -12,16 +11,26 @@ import StickyNavbar from "../../components/navigation/StickyNavbar"
 
 export default function JobsIndexPage() {
   let { navItems } = useContext(JobsContext);
-  navItems = navItems.filter((job) => {
+
+  const closedJobPosts =  navItems.filter((job) => {
+    return new Date() > new Date(job.closingOn)
+  });
+
+  const openJobPosts = navItems.filter((job) => {
     return new Date() <= new Date(job.closingOn)
   });
+
   const [posts, setPosts] = useState(
-    navItems.sort((i1, i2) => {
+    openJobPosts.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
       const i2Date = new Date(i2.date);
       return i2Date - i1Date;
     })
   );
+
+  const [checkOldPost, setOldPost] = useState(false);
+
+  const onClickOldPost = () => setOldPost(!checkOldPost);
 
   const onFilter = (data) => setPosts(data);
   const toFilter = [
@@ -137,7 +146,7 @@ Join us!
                 <div className="divide-y divide-gray-200 mb-2 sm:w-2/3 sm:self-center">
                   <Filter
                     className="w-full inline-flex mx-px justify-center sm:mt-0 sm:w-1/5 sm:text-sm"
-                    data={navItems}
+                    data={openJobPosts}
                     filteredData={posts}
                     onFilter={onFilter}
                     checks={toFilter}
@@ -149,6 +158,24 @@ Join us!
                   ))}
                 </ul>
               </div>
+            )}
+          </div>
+          <div className="text-center mt-3 p-4">
+            { !checkOldPost ? (
+              <button className="btn btn-outline btn-lg text-gray-600" onClick={onClickOldPost}>
+                Show closed jobs
+              </button>
+            ) : (
+            <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
+              <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                {closedJobPosts.map((post, index) => (
+                  <JobPostItem key={index} job={post} />
+                ))}
+              </ul>
+              <button className="btn btn-outline-dark back-to-top mt-1 text-gray-600" onClick={onClickOldPost}>
+                Back
+              </button>
+            </div>
             )}
           </div>
         </div>
