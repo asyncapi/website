@@ -10,7 +10,7 @@ export default function NavItem ({
   if (href) {
     return (
       <Link href={href}>
-      <a target={target} rel="noopener noreferrer" className={`${className} text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>
+      <a target={target} rel="noopener noreferrer" className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>
         {text}
       </a>
       </Link>
@@ -18,7 +18,7 @@ export default function NavItem ({
   }
 
   return (
-    <button type="button" onClick={onClick} className={`${className} group text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>
+    <button type="button" onClick={onClick} className={`${className} group text-gray-700 inline-flex items-center space-x-2 text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`}>
       <span>{text}</span>
       {
         hasDropdown && (
