@@ -167,7 +167,8 @@
 			"spec",
 			"spec-json-schemas",
 			"template-for-generator-templates",
-			"website"
+			"website",
+			"bundler"
 		]
 	},
 	{
@@ -267,7 +268,8 @@
 		"linkedin": "souvik-de-a2b941169",
 		"availableForHire": true,
 		"repos": [
-			"cli"
+			"cli",
+			"bundler"
 		]
 	},
 	{
@@ -349,6 +351,16 @@
 		"availableForHire": true,
 		"repos": [
 			"java-spring-template"
+		]
+	},
+	{
+		"name": "Samridhi Agrawal",
+		"github": "Samridhi-98",
+		"linkedin": "samridhi-agrawal-1713201ab",
+		"availableForHire": false,
+		"company": "ThoughtWorks",
+		"repos": [
+			"modelina"
 		]
 	}
 ]
