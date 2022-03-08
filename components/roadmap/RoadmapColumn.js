@@ -1,3 +1,5 @@
+import Heading from "../typography/Heading"
+import Paragraph from "../typography/Paragraph"
 import RoadmapList from "./RoadmapList"
 
 export default function RoadmapColumn({
@@ -9,9 +11,9 @@ export default function RoadmapColumn({
 }) {
   return (
     <div className="mt-8 lg:mt-4">
-      <div className="p-4">
-        <h3 className="text-md font-semibold uppercase text-center">{title}</h3>
-        <p className="text-center text-sm text-gray-600 mt-2">{description}</p>
+      <div className="p-4 text-center">
+        <Heading level="h3" typeStyle="heading-sm-semibold">{title}</Heading>
+        <Paragraph typeStyle="body-md" className="mt-2">{description}</Paragraph>
       </div>
       <RoadmapList
         items={items}
