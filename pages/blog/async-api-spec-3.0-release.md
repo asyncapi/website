@@ -50,7 +50,7 @@ Before landing in your contributions, make sure you follow our [Code of Conduct]
 
 ## When will the release happen?
 
-We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 3, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com) and explore our upcoming meetings.
+We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 16, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com) and explore our upcoming meetings.
 
 The release will happen gradually, where the new specification and tooling will live in coexistence until there is a collective consensus that everything is ready. This gives everyone an easy way to test out the new changes and provide feedback before the release. Finally, after rigorous testing, we will make an official announcement about our release!
 
