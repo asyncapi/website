@@ -63,6 +63,7 @@ We will also have [Abir Pal](https://twitter.com/imabptweets) present in the Ope
 - [Enable validation of an example payload](https://github.com/asyncapi/studio/issues/200)
 - [Show how to integrate Modelina in an AsyncAPI generator template](https://github.com/asyncapi/modelina/issues/641)
 - [Show how to integrate Modelina in a website](https://github.com/asyncapi/modelina/issues/642)
+- [Add support for WebSocket clients](https://github.com/asyncapi/glee/issues/259) 
 
 ### JavaScript
 
