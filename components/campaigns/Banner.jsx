@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-primary-600">
+    <div className="bg-primary-500">
       <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8">
 
         {/* mobile view */}

@@ -8,13 +8,16 @@ export default function Button({
   className,
   bgClassName = 'bg-primary-500 hover:bg-primary-400',
   textClassName = 'text-white hover:text-white',
+  buttonSize,
   ...props
 }) {
-  const classNames = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded px-4 py-3 text-white ${className || ''}`
+
+  const smallButtonClasses = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading text-white ${className || ''}`
+  const classNames = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading text-white ${className || ''}`
   
   if (!href) {
     return (
-      <button {...props} type={type} className={classNames}>
+      <button {...props} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames}>
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
@@ -31,7 +34,7 @@ export default function Button({
   }
 
   return (
-    <a {...props} href={href} target={target} rel="noopener noreferrer" className={classNames}>
+    <a {...props} href={href} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames}>
       {
         icon && iconPosition === 'left' && (
           <span className="inline-block mr-2">{icon}</span>
