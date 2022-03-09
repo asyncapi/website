@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Spec 3.0 is coming!"
-date: 2022-02-28T06:00:00+01:00
+date: 2022-03-10T06:00:00+01:00
 type: Communication
 tags:
   - Specification
