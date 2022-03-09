@@ -15,7 +15,7 @@ excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Check out all the p
 featured: false
 ---
 
-AsyncAPI is a specification for describing your event-driven architecture and our specification allows you to describe and document your message-driven APIs into a human-readable format. AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.
+AsyncAPI is a specification for describing your event-driven architecture. Our specification allows you to describe and document your message-driven APIs into a human-readable format. The AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements, and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.
 
 ## Potential Changes
 
@@ -38,7 +38,7 @@ The tooling issues and pull requests which are tied up with the Spec 3.0 release
 -   [Splitting out definitions into separate files](https://github.com/asyncapi/spec-json-schemas/issues/127)
 -   [Move binding JSON schema files to main JSON schema repository](https://github.com/asyncapi/bindings/issues/113)
 
-We are using the [GitHub milestone](https://github.com/asyncapi/spec/milestone/18) to track down all the issues related to Spec 3.0 release. If you are willing to take up an issue, filter the issues with `needs champion` label and drive the initiative forward. We also have a [release journal](https://github.com/asyncapi/community/issues/163) for the upcoming Spec 3.0 release to keep note of all the references, build the right documentation, and track the progress for the upcoming release.
+We are using [this GitHub milestone](https://github.com/asyncapi/spec/milestone/18) to track down all the issues related to Spec 3.0 release. If you are willing to take up an issue, filter the issues with `needs champion` label and drive the initiative forward. We also have a [release journal](https://github.com/asyncapi/community/issues/163) for the upcoming Spec 3.0 release to keep note of all the references, build the right documentation, and track the progress for the upcoming release.
 
 ## Contributing to the release
 
@@ -46,7 +46,7 @@ AsyncAPI is a community-driven project and we welcome all kinds of contributions
 
 To better understand AsyncAPI and how the Spec 3.0 release will play out, we recommend watching our [past meeting recordings](https://www.youtube.com/watch?v=CLNgLB4-UnA&list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV). To know how you can contribute, we recommend checking out our [contributing guidelines](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). If you wish to keep track of all the work that is happening on the Spec 3.0 release, we recommend checking out our [GitHub issue](https://github.com/asyncapi/spec/issues/691).
 
-Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/.github/blob/master/git-workflow.md) that we have developed for new contributors.
+Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/.github/blob/master/git-workflow.md) that we have developed for contributors.
 
 ## When will the release happen?
 
