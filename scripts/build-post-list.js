@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 }
-function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
+function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
     let directory = dir[0]
     let sectionSlug = dir[1] || ''
@@ -34,6 +34,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
       const fileName = join(directory, file)
       const fileNameWithSection = join(fileName, '_section.md')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
+      const slugElements = slug.split('/');
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
           details = frontMatter(readFileSync(fileNameWithSection, 'utf-8')).data
@@ -44,9 +45,19 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
           }
         }
         details.isSection = true
+        if (slugElements.length > 3) {
+           details.parent = slugElements[slugElements.length - 2]
+           details.sectionId = slugElements[slugElements.length - 1]
+        }
+        if (!details.parent) { 
+          details.isRootSection = true
+          details.rootSectionId = slugElements[slugElements.length - 1]
+        }
+        details.sectionWeight = sectionWeight
         details.slug = slug
         result.push(details)
-        walkDirectories([[fileName, slug]], result, details.weight, details.title)
+        const rootId = details.parent || details.rootSectionId
+        walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
         const fileContent = readFileSync(fileName, 'utf-8')
         const { data, content } = frontMatter(fileContent)
@@ -57,9 +68,12 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
         details.sectionSlug = sectionSlug || slug.replace(/\.md$/, '')
         details.sectionWeight = sectionWeight
         details.sectionTitle = sectionTitle
+        details.sectionId = sectionId
+        details.rootSectionId = rootSectionId
+        details.id = fileName
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
-        if(details.slug.includes('/specifications/') && !details.title) {
+        if(details.slug.includes('/reference/specification/') && !details.title) {
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-2021-06-release
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
 

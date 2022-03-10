@@ -34,14 +34,74 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   const [showMenu, setShowMenu] = useState(false)
 
-  const navigation = sortBy(navItems.map(item => {
-    const sortWeight = item.isSection ? (item.weight + 1) * 1000 : (item.sectionWeight + 1) * 1000 + (item.weight || 0)
-    return {
-      ...item,
-      sortWeight: sortWeight,
+  const buildNavTree = (navItems) => {
+      const tree = {}
+      
+      //first we make sure that list of items lists main section items and then sub sections, documents last
+      const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+
+      sortedItems.forEach(item => {
+
+        //identify main sections
+        if (item.isRootSection) {
+          tree[item.rootSectionId] = { item, children: { orphans: []} }
+        }
+
+        //identify subsections
+        if (item.parent) {
+          tree[item.parent].children[item.sectionId] = { item, children: [] }
+        }
+
+        //add documents under subsections, unless they do not have one and are considered orphans
+        if (!item.isSection) {
+          if (item.sectionId) {
+            tree[item.rootSectionId].children[item.sectionId].children.push(item)
+          } else {
+            tree[item.rootSectionId].children.orphans.push(item)
+          }
+        }
+      })
+
+      return tree
+  }
+
+  const navigation = () => {
+    const tree = buildNavTree(navItems);
+    const flatTree = [];
+
+    for (const [rootKey, rootValue] of Object.entries(tree)) {
+      const allChildrenKeys = Object.keys(rootValue.children);
+      const allChildren = rootValue.children;
+
+      //handling root elements
+      flatTree.push(rootValue.item)
+
+      //handling documents that are under root section without subsection
+      const orphans = allChildren.orphans;
+      if (orphans.length) {
+        flatTree.push(...orphans.sort((prev, next) => {
+          return prev.weight - next.weight
+        }))
+      }
+
+      //handling subsections
+      if (allChildrenKeys.length > 1) {
+
+        for (const key of allChildrenKeys) {
+          if (key !== 'orphans') {
+            //identify subheader
+            flatTree.push(allChildren[key].item);
+
+            flatTree.push(...allChildren[key].children.sort((prev, next) => {
+              return prev.weight - next.weight
+            }))
+          }
+        }
+      }
+
     }
-  }), ['sortWeight'])
-  
+    return flatTree;
+  }
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -60,7 +120,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               
               <nav className="flex-1 mt-3 pb-8 bg-white">
                 {
-                  navigation.map((item, i) => (
+                  navigation().map((item, i) => (
                     <div key={`menu-item-${i}`}>
                       <DocsNavItem item={item} active={post.slug === item.slug} />
                     </div>

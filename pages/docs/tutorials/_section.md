@@ -1,4 +1,4 @@
 ---
-title: Tutorials
-weight: 4
+title: 'Tutorials: Learn how AsyncAPI works'
+weight: 2
 ---
