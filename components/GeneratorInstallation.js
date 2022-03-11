@@ -3,6 +3,7 @@ import Select from '../components/form/Select'
 import generatorTemplates from '../config/generator-templates.json'
 import CodeBlock from './editor/CodeBlock'
 import generatorflags from '../config/generator-flags.json'
+import Paragraph from './typography/Paragraph'
 
 export default function GeneratorInstallation({ }) {
   const [template, setTemplate] = useState('@asyncapi/html-template')
@@ -38,7 +39,9 @@ asyncapi/generator ${specPath} ${template} ${params}`
   return (
     <div className="relative max-w-full mt-8 mx-auto">
       <div className="mb-4">
-        <span className="text-sm text-gray-500 mr-2">Select a Generator template:</span>
+        <Paragraph typeStyle="body-md" className="inline mr-4">
+          Select a Generator template:
+        </Paragraph>
         <Select
           options={generatorTemplates}
           selected={template}
