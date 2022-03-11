@@ -1,14 +1,18 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Feedback(className = '') {
     const [Submit, setSubmit] = useState(false);
     const [feedback, setFeedback] = useState('')
 
+    const { asPath, pathname } = useRouter();
     async function handleSubmit(e) {
         e.preventDefault();
         const data = {
+            title: 'Feedback on '+asPath,
             feedback: feedback
         }
+        
         const response = await fetch("../api/sheet", {
             method: "POST",
             body:JSON.stringify(data),
@@ -23,7 +27,6 @@ export default function Feedback(className = '') {
                 }, 5000);
             }
         })
-
     }
 
     if (Submit) {

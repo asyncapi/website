@@ -1,35 +1,32 @@
-import { google } from 'googleapis'
+const { graphql } = require('@octokit/graphql')
 
 async function handler(req, res) {
-            if(req.method=='POST'){           
-            const {feedback} = req.body;
-            const auth = new google.auth.GoogleAuth({
-                credentials: {
-                    client_email: process.env.CLIENT_EMAIL,
-                    client_id: process.env.CLIENT_ID,
-                    private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
+    if (req.method == 'POST') {
+        const {title, feedback} = req.body;
+        const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk=";
+        const categoryID = "DIC_kwDOFLhIt84B_T4d"
+        try{
+            const createDiscussion = await graphql(`
+            mutation { 
+                createDiscussion(input:{repositoryId:"${repositoryID}", categoryId:"${categoryID}", title:"${title}", body:"${feedback}"}){
+                 discussion{
+                   url
+                 }
+               }
+            }`,
+            {
+                owner: 'akshatnema',
+                repo: 'Login-Registration-project',
+                headers: {
+                    authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`,
                 },
-                scopes: [
-                    'https://www.googleapis.com/auth/drive',
-                    'https://www.googleapis.com/auth/drive.file',
-                    'https://www.googleapis.com/auth/spreadsheets',
-                ],
-            });
-            const sheets = google.sheets({
-                auth,
-                version: 'v4',
-            });
-            const response = await sheets.spreadsheets.values.append({
-                spreadsheetId: process.env.SPREADSHEET_ID,
-                range: 'Sheet1!A2:C',
-                valueInputOption: 'USER_ENTERED',
-                resource: {
-                  "values": [[feedback]],
-                },
-              });
-             res.status(200).json({response, result: "Feedback posted to spreadsheet!"})    
-            
+            })
+            let url = createDiscussion.createDiscussion.discussion.url;
+            res.status(200).json({url:url, result:"Feedback posted in Discussion"});
+        }catch(e){
+            console.log(e);
         }
     }
+}
 
 export default handler
