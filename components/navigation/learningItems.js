@@ -4,8 +4,9 @@ import IconUseCases from '../icons/UseCases'
 import IconTutorials from '../icons/Tutorials'
 
 export default [
-  { href: '/docs/getting-started', icon: IconGettingStarted, title: 'Getting started', description: 'Learn the basics of AsyncAPI in less than 15 minutes with our guide.' },
-  { href: '/docs/tutorials', icon: IconTutorials, title: 'Tutorials', description: 'Get your hands dirty with our step-by-step interactive tutorials.' },
-  { href: '/docs/specifications/latest', icon: IconSpec, title: 'AsyncAPI specification', description: `Explore the specification that's powering the tools.` },
-  { href: '/docs/use-cases', icon: IconUseCases, title: 'Use cases', description: 'Learn how AsyncAPI can suit your specific needs.', comingSoon: true },
+  { href: '/docs/concepts', icon: IconGettingStarted, title: 'Concepts', description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.' },
+  { href: '/docs/tutorials/', icon: IconTutorials, title: 'Tutorials', description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing. ' },
+  { href: '/docs/tools', icon: IconUseCases, title: 'Tools', description: 'Our Tools section documents the AsyncAPI tools ecosystem.' },
+  { href: '/docs/reference/specification/v2.3.0', icon: IconSpec, title: 'Reference', description: `Our Reference section teaches how to set up your development environment, CLI, APIs, and beyond.` }
+ 
 ]

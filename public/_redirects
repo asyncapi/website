@@ -7,7 +7,6 @@ https://asyncapi.io/* https://www.asyncapi.com/:splat 301!
 https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Docs
-/docs /docs/getting-started 301!
 /docs/tooling /docs/community/tooling 301!
 
 # Redirection will be handled automatically by Action.
