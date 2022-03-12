@@ -1,4 +1,4 @@
-[![AsyncAPI Website](/public/img/logos/github-repobanner-website.png)](https://www.asyncapi.com)
+[![AsyncAPI Banner and Logo](/public/img/logos/github-repobanner-website.png)](https://www.asyncapi.com)
 
 ---
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
