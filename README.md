@@ -1,5 +1,5 @@
 <a href="https://www.asyncapi.com" target="_blank">
-<img width="830" alt="github-repobanner-website" src="https://user-images.githubusercontent.com/76521428/158002500-639985d7-7558-410d-ae57-ca04e57f2be4.png">
+<img alt="github-repobanner-website" src="https://user-images.githubusercontent.com/76521428/158002500-639985d7-7558-410d-ae57-ca04e57f2be4.png">
 </a>
 
 ---
