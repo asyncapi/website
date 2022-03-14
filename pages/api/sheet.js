@@ -15,8 +15,8 @@ async function handler(req, res) {
                }
             }`,
             {
-                owner: 'akshatnema',
-                repo: 'Login-Registration-project',
+                owner: 'asyncapi',
+                repo: 'community',
                 headers: {
                     authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`,
                 },
