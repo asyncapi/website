@@ -1,8 +1,4 @@
-<h5 align="center">
-  <img src="./.github/assets/logo.png" alt="AsyncAPI logo" width="200">
-  <br>
-  Website
-</h5>
+[![AsyncAPI Banner and Logo](/public/img/logos/github-repobanner-website.png)](https://www.asyncapi.com)
 
 ---
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
