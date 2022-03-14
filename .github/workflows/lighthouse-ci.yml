@@ -1,0 +1,69 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  lighthouse-ci:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    if: "github.repository == 'asyncapi/website' && github.event.pull_request.draft == false &&!((github.actor == 'asyncapi-bot' && startsWith(github.event.pull_request.title, 'ci: update global workflows')) || (github.actor == 'asyncapi-bot' && startsWith(github.event.pull_request.title, 'chore(release):')) || (github.actor == 'allcontributors' && startsWith(github.event.pull_request.title, 'docs: add')))"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Await Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: netlify
+        with:
+          site_name: asyncapi-website
+          max_timeout: 300
+
+      - name: Lighthouse Audit
+        id: lighthouse_audit
+        uses: treosh/lighthouse-ci-action@9.3.0
+        with:
+          urls: |
+            https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
+          configPath: ./.github/workflows/lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number}}
+
+      - name: Lighthouse Score Report
+        id: lighthouse_score_report
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
+            const links = ${{ steps.lighthouse_audit.outputs.links }}
+            const formatResult = (res) => Math.round((res * 100))
+            Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
+            const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
+            const comment = [
+                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
+                '| Category | Score |',
+                '| --- | --- |',
+                `| ${score(result.performance)} Performance | ${result.performance} |`,
+                `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
+                `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
+                `| ${score(result.seo)} SEO | ${result.seo} |`,
+                `| ${score(result.pwa)} PWA | ${result.pwa} |`,
+                ' ',
+                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
+            ].join('\n')
+             core.setOutput("comment", comment);
+
+      - name: LightHouse Statistic Comment
+        id: lighthouse_statistic_comment
+        uses: marocchino/sticky-pull-request-comment@v2.2.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          header: lighthouse
+          message: ${{ steps.lighthouse_score_report.outputs.comment }}

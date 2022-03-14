@@ -1,0 +1,21 @@
+{
+    "ci": {
+      "assert": {
+        "assertions": {
+          "categories:accessibility": ["error", {"minScore": 0.70}]
+        }
+      },
+      "collect": {
+        "settings": {
+          "skipAudits": [
+            "robots-txt",
+            "canonical",
+            "tap-targets",
+            "is-crawlable",
+            "works-offline",
+            "offline-start-url"
+          ]
+        }
+      }
+    }
+  }
