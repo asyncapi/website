@@ -8,42 +8,41 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <div className="bg-white mt-12">
-      <div className="bg-primary-900 py-12">
-        <Container wide>
-          <NewsletterSubscribe formName="form 2" dark />
-        </Container>
-      </div>
+    <div className="bg-gray-900 mt-12">
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
           <div className="px-5 py-2">
-          <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
-            <Link href="/about" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-             <a> About </a>
+          <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+            <Link href="/about">
+             <a>About</a>
             </Link>
             </div>
           </div>
           <div className="px-5 py-2">
-            <div className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
               <Link href="/blog">
               <a>Blog</a>
               </Link>
             </div>
           </div>
           <div className="px-5 py-2">
-            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
               Shop
             </a>
           </div>
           <div className="px-5 py-2">
-            <Link href="/jobs">
-             <a className="text-base leading-6 text-gray-500 hover:text-gray-900"> Jobs </a>
-            </Link>
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+              <Link href="/jobs">
+              <a>Jobs</a>
+              </Link>
+            </div>
           </div>
           <div className="px-5 py-2">
-            <a href="mailto:press@asyncapi.io" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+            <a href="mailto:press@asyncapi.io">
               Press
             </a>
+            </div>
           </div>
         </nav>
         <div className="mt-8 flex justify-center">
@@ -77,7 +76,7 @@ export default function Footer() {
             Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-1">
-            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-700 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
+            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-600 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
           </p>
         </div>
       </div>

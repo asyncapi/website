@@ -22,9 +22,9 @@ export default function TOC({
   const [open, setOpen] = useState(false)
 
   return (
-    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block z-20`} onClick={() => setOpen(!open)}>
-      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto`}>
-        <h5 className={`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-500 ${cssBreakingPoint}:font-thin`}>
+    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block md:top-24 md:max-h-(screen-14) z-20`} onClick={() => setOpen(!open)}>
+      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto xl:mt-2`}>
+        <h5 className={`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-900 ${cssBreakingPoint}:font-bold`}>
           On this page
         </h5>
         <div className={`text-underline text-center p4 ${cssBreakingPoint}:hidden`}>
@@ -34,14 +34,14 @@ export default function TOC({
       <div className={`${!open && 'hidden'} ${cssBreakingPoint}:block`}>
         <Scrollspy
           items={tocItems.map(item => item.slugWithATag)}
-          currentClassName="text-primary-600 font-bold"
+          currentClassName="text-primary-500 font-bold"
           componentTag="div"
           rootEl={contentSelector}
         >
           {
             tocItems.map((item, index) => (
               <a
-                className={`pl-${(item.lvl - minLevel) * 2} block mb-1 transition duration-100 ease-in-out text-gray-500 font-normal text-sm font-sans antialiased hover:text-gray-700 hover:font-medium`}
+                className={`pl-${(item.lvl - minLevel) * 2} block mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline`}
                 href={`#${item.slug}`}
                 key={index}
               >

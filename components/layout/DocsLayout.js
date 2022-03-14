@@ -14,6 +14,7 @@ import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import Footer from '../Footer'
 import StickyNavbar from '../navigation/StickyNavbar'
+import Heading from '../typography/Heading'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -23,6 +24,7 @@ function generateEditLink(post) {
 }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
+  
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -40,13 +42,14 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       sortWeight: sortWeight,
     }
   }), ['sortWeight'])
+  
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <StickyNavbar>
             <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
         </StickyNavbar>
-      <div className="bg-white xl:max-w-7xl xl:mx-auto">
+      <div className="bg-white px-4 sm:px-6 lg:px-8 xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -54,9 +57,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
-            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-15 md:max-h-screen">
+            <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
               
-              <nav className="flex-1 mt-3 pb-8 px-2 bg-white">
+              <nav className="flex-1 mt-3 pb-8 bg-white">
                 {
                   navigation.map((item, i) => (
                     <div key={`menu-item-${i}`}>
@@ -79,22 +82,25 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </button>
               </div>
             )}
-            <h1 className="px-4 text-4xl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">{post.title}</h1>
+            
+            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
+              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
+              <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
+              <Heading level="h1" typeStyle="heading-lg">
+                {post.title}
+              </Heading>
             {
               post.isPrerelease 
-              ? <h3 className="px-4 text-lxl font-normal text-gray-800 font-sans antialiased sm:px-6 md:px-8">To be released on {post.releaseDate}</h3> 
+              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
               : null
             }
-            <div className="px-4 sm:px-6 md:px-8">
-              <p className="text-sm font-normal text-gray-400 font-sans antialiased">
+            <div>
+              <p className="text-sm font-normal text-gray-600 font-sans antialiased">
                 Found an error? Have a suggestion? 
                 {generateEditLink(post)}
               </p>
             </div>
-            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pt-0 xl:pb-8 xl:top-24 xl:max-h-(screen-16) xl:w-72" />
-              <div className="mt-8 px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
-                <article className="mb-32">
+                <article className="mb-32 mt-12">
                   <Head
                     title={post.title}
                     description={post.excerpt}
