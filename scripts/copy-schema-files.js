@@ -31,7 +31,7 @@ module.exports = function copySchemaFiles() {
   const sourcePath = path.resolve(__dirname, '../node_modules/@asyncapi/specs/definitions');
   const destinationPath = path.resolve(__dirname, '../public/definitions')
 
-  const destinationExists = fs.existsSync(sourcePath);
+  const destinationExists = fs.existsSync(destinationPath);
 
   //Ensure we have a clean slate
   if(destinationExists) fs.rmSync(destinationPath, {recursive: true})
