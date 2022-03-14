@@ -48,7 +48,8 @@
 		"company": "IBM",
 		"repos": [
 			"avro-schema-parser",
-			"bindings"
+			"bindings",
+			"java-template"
 		]
 	},
 	{
@@ -111,17 +112,6 @@
 		]
 	},
 	{
-		"name": "Jorge Aguiar Martín",
-		"github": "jotamusik",
-		"linkedin": "jorge-aguiar-martin",
-		"twitter": "jotamusik",
-		"availableForHire": false,
-		"company": "Lean Mind",
-		"repos": [
-			"cli"
-		]
-	},
-	{
 		"name": "Khuda Dad Nomani",
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
@@ -177,7 +167,8 @@
 			"spec",
 			"spec-json-schemas",
 			"template-for-generator-templates",
-			"website"
+			"website",
+			"bundler"
 		]
 	},
 	{
@@ -190,13 +181,18 @@
 			"asyncapi-react",
 			"chatbot",
 			"cli",
+			"converter-go",
+			"event-gateway",
 			"generator-react-sdk",
 			"generator",
 			"html-template",
 			"markdown-template",
 			"modelina",
 			"parser-js",
+			"parser-go",
 			"playground",
+                        "server-api",
+			"template-for-go-projects",
 			"website"
 		]
 	},
@@ -255,10 +251,14 @@
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
+			"converter-go",
 			"event-gateway",
 			"go-watermill-template",
 			"infra",
-			"parser-api"
+			"parser-api",
+			"parser-go",
+			"server-api",
+			"template-for-go-projects"
 		]
 	},
 	{
@@ -266,9 +266,11 @@
 		"github": "Souvikns",
 		"twitter": "souvik_ns",
 		"linkedin": "souvik-de-a2b941169",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
-			"cli"
+			"cli",
+			"bundler"
 		]
 	},
 	{
@@ -280,6 +282,96 @@
 		"company": "Postman",
 		"repos": [
 			"website"
+		]
+	},
+	{
+		"name": "David Pereira",
+		"github": "BOLT04",
+		"twitter": "BOLT2938",
+		"linkedin": "josé-david-pereira-13ba5315a",
+		"availableForHire": false,
+		"company": "Create IT",
+		"repos": [
+			"server-api"
+		]
+	},
+	{
+		"name": "Daniel Raper",
+		"github": "dan-r",
+		"linkedin": "danielr",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Kieran Murphy",
+		"github": "KieranM1999",
+		"linkedin": "kieran-murphy-175b0412b",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Tom Jefferson",
+		"github": "JEFFLUFC",
+		"linkedin": "t-jefferson",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "Lewis Relph",
+		"github": "lewis-relph",
+		"availableForHire": false,
+		"company": "IBM",
+		"repos": [
+			"java-template"
+		]
+	},
+	{
+		"name": "David Boyne",
+		"github": "boyney123",
+		"twitter": "boyney123",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"studio",
+			"cli"
+		]
+	},
+	{
+		"name": "Semen Tenishchev",
+		"github": "Tenischev",
+		"linkedin": "semen-tenishchev",
+		"availableForHire": true,
+		"repos": [
+			"java-spring-template"
+		]
+	},
+	{
+		"name": "Samridhi Agrawal",
+		"github": "Samridhi-98",
+		"linkedin": "samridhi-agrawal-1713201ab",
+		"availableForHire": false,
+		"company": "ThoughtWorks",
+		"repos": [
+			"modelina"
+		]
+	},
+	{
+		"name": "Debajyoti Halder",
+		"github": "ron-debajyoti",
+		"twitter": "rondebajyoti",
+		"linkedin": "rondebajyoti",
+		"availableForHire": true,
+		"repos": [
+			"modelina"
 		]
 	}
 ]

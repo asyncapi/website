@@ -73,7 +73,7 @@ The example above shows how to specify that your server (a Kafka broker) require
 
 <Remember title="Hint">
 
-There are many more security schemes. Learn more about them <a href="/docs/specifications/2.2.0/#securitySchemeObject" className="text-teal-600 font-medium hover:underline">here</a>.
+There are many more security schemes. Learn more about them <Link href="/docs/specifications/2.2.0/#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
 
 </Remember>
 
@@ -83,13 +83,19 @@ You're now able to define what security mechanisms your application needs to con
 
 At this point, you know AsyncAPI well enough to create a simple `Hello world application`. However, real use cases are more complicated than that. The following tutorials can teach you how to create real-world use cases, from zero to production.
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials/streetlights',
-      title: 'Streetlights Tutorial',
-      description: 'Real-world IoT example using AsyncAPI.',
-      linkText: 'Go to the streetlights tutorial',
+      href: '/docs/getting-started/servers',
+      title: 'Servers',
+      type:'back',
+    },
+    {
+      href: '/docs/tutorials',
+      title: 'Tutorials Overview',
+      type:'next',
     }
   ]}
 />

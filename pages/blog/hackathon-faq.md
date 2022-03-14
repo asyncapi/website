@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: Answers to all the questions you ever wanted to ask about the AsyncAPI Hackathon 2021
-featured: true
 ---
 
 Last year was the first time we hosted the AsyncAPI Conference. This year, we're going to host our first AsyncAPI Hackathon. This article tries to address the many questions coming from our community. 😀

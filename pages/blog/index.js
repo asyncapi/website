@@ -9,6 +9,10 @@ import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
 import Empty from "../../components/illustrations/empty";
+import Heading from "../../components/typography/Heading";
+import StickyNavbar from "../../components/navigation/StickyNavbar"
+import Paragraph from "../../components/typography/Paragraph";
+import TextLink from "../../components/typography/TextLink";
 
 export default function BlogIndexPage() {
   const { navItems } = useContext(BlogContext);
@@ -39,9 +43,9 @@ export default function BlogIndexPage() {
   return (
     <div>
       <Head title="Blog" />
-      <Container>
-        <NavBar />
-      </Container>
+      <StickyNavbar>
+       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
       <AnnouncementHero className="text-center m-4" small={true} />
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="absolute inset-0">
@@ -49,40 +53,34 @@ export default function BlogIndexPage() {
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+            <Heading 
+              level="h1"
+              typeStyle="heading-lg"
+            >
               Welcome to our blog!
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+            </Heading>
+            <Paragraph className="mt-3 sm:mt-4 max-w-2xl mx-auto">
               Find the latest and greatest stories from our community
-            </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
+            </Paragraph>
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-4">
               Want to publish a blog post? We love community stories.
-              <a
-                className="ml-1 text-primary-500 hover:text-primary-400"
-                href="https://github.com/asyncapi/website/issues/new?template=blog.md"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
                 Submit yours!
-              </a>
-            </p>
-            <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-              We have an{" "}
-              <img
-                className="ml-1 text-primary-500 hover:text-primary-400"
+              </TextLink>
+            </Paragraph>
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-1">
+                We have an<img
+                className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
                 height="18px"
                 width="18px"
-              />{" "}
-              <a
-                className="ml-1 text-primary-500 hover:text-primary-400"
-                href="/rss.xml"
-              >
+              />
+              <TextLink href="/rss.xml">
                 RSS Feed
-              </a>{" "}
-              too!
-            </p>
+              </TextLink>
+              , too!
+            </Paragraph>
           </div>
           <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
             <Filter
@@ -92,7 +90,7 @@ export default function BlogIndexPage() {
               checks={toFilter}
             />
             <span className="text-sm leading-10">
-              <Link href="/blog"> Clear filters </Link>
+              <Link href="/blog" passHref><a> Clear filters </a></Link>
             </span>
           </div>
           <div>

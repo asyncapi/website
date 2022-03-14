@@ -38,7 +38,7 @@ You might have noticed that our example mentions `amqp`. This protocol is very c
 
 The `servers` section defines where your application should connect to start sending and receiving messages. 
 
-1. If you are using a <a href="https://dev.to/fmvilas/event-driven-architectures--asyncapi-db7" target="_blank" className="text-teal-600 font-medium hover:underline">broker-centric architecture</a> such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
+1. If you are using a <a href="https://dev.to/fmvilas/event-driven-architectures--asyncapi-db7" target="_blank" className="text-secondary-600 font-medium hover:underline">broker-centric architecture</a> such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
 2. If you have the classic client-server model such as for REST APIs, then your `server` should be the URL of the server.
 
 </Remember>
@@ -49,13 +49,19 @@ Now you know where `Hello world application` connects to and you can start recei
 
 In the next chapter, you'll learn how to add security requirements to your server.
 
-<ChapterSuggestions
+---
+
+<DocsButton
   suggestions={[
+    {
+      href: '/docs/getting-started/asyncapi-documents',
+      title: 'AsyncAPI Documents',
+      type:'back',
+    },
     {
       href: '/docs/getting-started/security',
       title: 'Security',
-      description: 'Define the security mechanisms your application accepts.',
-      linkText: 'Learn more about how to add security',
+      type:'next',
     }
   ]}
 />

@@ -1,3 +1,8 @@
+import Heading from "../typography/Heading";
+import Paragraph from "../typography/Paragraph";
+import TextLink from "../typography/TextLink";
+import Link from 'next/link'
+
 const features = [
   {
     name: "Specification",
@@ -53,37 +58,42 @@ export default function Features() {
   return (
     <div className="relative bg-white pt-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <p className="mt-2 text-3xl font-extrabold text-primary-800 tracking-tight sm:text-4xl">
+        <Heading
+          level="h2"
+          typeStyle="heading-lg"
+          className="mt-2"
+        >
           Why AsyncAPI?
-        </p>
-        <p className="mt-2 max-w-prose mx-auto text-gray-500">
+        </Heading>
+        <Paragraph className="mt-2 max-w-prose mx-auto">
           Improving the current state of Event-Driven Architectures (EDA)
-        </p>
+        </Paragraph>
         <div className="mt-12 text-left">
-          <div className="grid  grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col justify-between shadow-lg rounded-lg px-6 pb-8">
+              <div key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
                 <div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
-                    {feature.name}
-                  </h3>
+                  <Heading 
+                  level="h3"
+                  typeStyle="heading-md-semibold"
+                  className="mt-8"
+                >
+                  {feature.name}
+                </Heading>
                   {feature.description && (
-                    <p className="mt-5 text-base text-gray-500">
+                    <Paragraph typeStyle="body-md" className="mt-5">
                       {feature.description}
-                    </p>
+                    </Paragraph>
                   )}
                 </div>
                 <div className="flex justify-between">
                   {feature.links.map((link) => {
                     return (
-                      <a
-                        key={link.label}
-                        className="mt-6 inline-block text-primary-500"
-                        href={link.href}
-                        id={link.id}
-                      >
-                        {link.label}
-                      </a>
+                      <Link href={link.href} key={link.label}>
+                        <TextLink href={link.href} className="mt-6 inline-block">
+                          {link.label}
+                        </TextLink>
+                      </Link>
                     );
                   })}
                 </div>

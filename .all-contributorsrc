@@ -187,6 +187,55 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mcturco",
+      "name": "Missy Turco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60163079?v=4",
+      "profile": "https://melissaturco.com",
+      "contributions": [
+        "code",
+        "design",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "ritik307",
+      "name": "Ritik Rawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22374829?v=4",
+      "profile": "https://ritik307.github.io/portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "akshatnema",
+      "name": "Akshat Nema",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76521428?v=4",
+      "profile": "https://github.com/akshatnema",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "BOLT04",
+      "name": "David Pereira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18630253?v=4",
+      "profile": "https://bolt04.github.io/react-ultimate-resume/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "ron-debajyoti",
+      "name": "Debajyoti Halder",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22571664?v=4",
+      "profile": "https://github.com/ron-debajyoti",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

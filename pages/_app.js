@@ -16,6 +16,8 @@ import Figure from '../components/Figure'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
+import Link from 'next/link'
+import DocsButton from '../components/buttons/DocsButton';
 import AppContext from '../context/AppContext'
 import '../css/styles.css'
 
@@ -38,19 +40,19 @@ export default function MyApp({ Component, pageProps, router }) {
 
 function getMDXComponents() {
   return {
-    h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-sans antialiased font-medium text-2xl`} />,
-    h2: props => <h2 {...props} className={`${props.className || ''} my-4 font-sans antialiased font-medium text-xl`} />,
-    h3: props => <h3 {...props} className={`${props.className || ''} my-4 font-sans antialiased font-medium text-lg`} />,
-    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-sans antialiased font-medium text-lg text-gray-500`} />,
-    h5: props => <h5 {...props} className={`${props.className || ''} my-4 font-sans antialiased text-md font-bold`} />,
-    h6: props => <h6 {...props} className={`${props.className || ''} my-4 font-sans antialiased text-sm font-bold text-gray-500 uppercase`} />,
-    blockquote: props => <blockquote {...props} className={`${props.className || ''} italic font-sans antialiased text-gray-400 border-l-4 border-gray-400 pl-4 pt-1 pb-1 pr-1 my-4 bg-white`} />,
-    p: props => <p {...props} className={`${props.className || ''} my-4 text-gray-700 font-normal font-sans antialiased`} />,
-    strong: props => <strong {...props} className={`${props.className || ''} my-4 text-gray-700 font-semibold font-sans antialiased`} />,
-    a: props => <a {...props} className={`${props.className ? props.className : 'text-primary-600 font-medium hover:text-primary-500'} font-sans antialiased`} />,
-    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc text-gray-700 font-normal font-sans antialiased`} />,
-    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal text-gray-700 font-normal font-sans antialiased`} />,
-    li: props => <li {...props} className={`${props.className || ''} my-3 text-gray-700 font-normal font-sans antialiased`} />,
+    h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
+    h2: props => <h2 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
+    h3: props => <h3 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-medium tracking-heading text-gray-900 text-lg`} />,
+    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-medium text-lg text-gray-900`} />,
+    h5: props => <h5 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-md font-bold`} />,
+    h6: props => <h6 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-sm font-bold text-gray-900 uppercase`} />,
+    blockquote: props => <blockquote {...props} className={`${props.className || ''} italic font-body antialiased text-gray-700 border-l-4 border-gray-400 pl-4 pt-1 pb-1 pr-1 my-4 bg-white`} />,
+    p: props => <p {...props} className={`${props.className || ''} my-4 text-gray-700 font-regular font-body antialiased`} />,
+    strong: props => <strong {...props} className={`${props.className || ''} my-4 text-gray-800 font-semibold font-body antialiased`} />,
+    a: props => <a {...props} className={`${props.className ? props.className : 'text-gray-900 font-semibold border-b border-secondary-400 hover:border-secondary-500 transition ease-in-out duration-300'} font-body antialiased`} />,
+    ul: props => <ul {...props} className={`${props.className || ''} my-4 ml-4 list-disc text-gray-700 font-normal font-body antialiased`} />,
+    ol: props => <ol {...props} className={`${props.className || ''} my-4 ml-4 list-decimal text-gray-700 font-normal font-body antialiased`} />,
+    li: props => <li {...props} className={`${props.className || ''} my-3 text-gray-700 font-regular tracking-tight font-body antialiased`} />,
     button: Button,
     table: props => (
       <div className={`${props.className || ''} flex flex-col`}>
@@ -61,11 +63,11 @@ function getMDXComponents() {
         </div>
       </div>
     ),
-    th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider`} />,
+    th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium font-body text-gray-900 uppercase tracking-wider`} />,
     tr: props => <tr {...props} className={`${props.className || ''} bg-white`} />,
-    td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-500`} />,
+    td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-700 tracking-tight`} />,
     pre: props => <div {...props} className={`${props.className || ''} my-8`} />,
-    inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm`} />,
+    inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
     code: ({ children, className = '', metastring = '', ...rest }) => {
       let caption
       const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || []
@@ -82,10 +84,12 @@ function getMDXComponents() {
     CodeBlock,
     ChapterSuggestions,
     YouTube,
+    DocsButton,
     Remember,
     Warning,
     Sponsors,
     Caption,
+    Link,
     Row,
     Column,
     Figure,

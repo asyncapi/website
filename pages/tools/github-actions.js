@@ -1,6 +1,8 @@
 import GenericLayout from '../../components/layout/GenericLayout'
 import GithubButton from '../../components/buttons/GithubButton'
 import CodeBlock from '../../components/editor/CodeBlock'
+import Heading from '../../components/typography/Heading'
+import Paragraph from '../../components/typography/Paragraph'
 
 export default function GithubActionsPage() {
   function renderButtons () {
@@ -34,22 +36,22 @@ export default function GithubActionsPage() {
       <div className="py-12 overflow-hidden">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
-            <h3 className="text-center text-3xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+            <Heading level="h1" typeStyle="heading-lg" className="text-center">
               Automate using Github Actions
-            </h3>
-            <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
+            </Heading>
+            <Paragraph className="mt-4 max-w-3xl mx-auto text-center">
               {description}
-            </p>
+            </Paragraph>
           </div>
 
           <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative mb-8 lg:mt-8">
-              <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-              Generate docs
-              </h4>
-              <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
+              <Heading level="h4" typeStyle="heading-md-semibold">
+                Generate docs
+              </Heading>
+              <Paragraph className="mt-3 lg:pr-4">
                 Seamlessly integrate the docs generation process with your Github pipeline. Make sure your documentation is always up to date. It will be a gift to your team and your future self.
-              </p>
+              </Paragraph>
               {renderButtons()}
             </div>
             

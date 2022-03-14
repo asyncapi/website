@@ -9,6 +9,8 @@ import {
 } from '@heroicons/react/outline';
 
 import CodeBlock from '../../components/editor/CodeBlock';
+import Heading from '../../components/typography/Heading';
+import Paragraph from '../../components/typography/Paragraph';
 
 const features = [
   {
@@ -29,7 +31,7 @@ const features = [
     description: () => (
       <>
         Got an AsyncAPI file locally? Run{' '}
-        <code className=" px-1 py-0.5 bg-primary-700 text-white rounded font-mono text-sm">
+        <code className=" px-1 py-0.5 bg-gray-200 text-gray-900 rounded font-mono text-sm">
           asyncapi start studio
         </code>{' '}
         to open our studio in seconds.
@@ -66,34 +68,34 @@ export default function CliPage() {
       <div className="py-12 overflow-hidden">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
-            <h3 className="text-center text-3xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+            <Heading level="h1" typeStyle="heading-lg" className="text-center">
               <span className="hidden md:block">
                 Interact with AsyncAPI from the comfort of your CLI
               </span>
               <span className="md:hidden">AsyncAPI CLI</span>
-            </h3>
-            <p className="mt-4 max-w-3xl mx-auto text-center text-lg md:text-xl leading-7 text-gray-500">
+            </Heading>
+            <Paragraph className="mt-4 max-w-3xl mx-auto text-center">
               {description}
-            </p>
+            </Paragraph>
           </div>
 
           <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative lg:mt-8">
-              <h4 className="text-xl md:text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+              <Heading level="h4" typeStyle="heading-md-semibold">
                 Installation & Usage
-              </h4>
-              <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
+              </Heading>
+              <Paragraph className="mt-3 lg:pr-4">
                 Start using AsyncAPI CLI within seconds by selecting one of our
                 commands to get started.
-              </p>
+              </Paragraph>
               {renderButtons()}
             </div>
 
             <div className="relative max-w-full mt-8 mx-auto space-y-10">
               <div>
-                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">
+                <Heading level="h3" typeStyle="heading-sm-semibold" className="mb-4 text-center md:text-left">
                   Installing
-                </h3>
+                </Heading>
                 <CodeBlock
                   language="generator-cli"
                   textSizeClassName="text-sm"
@@ -108,12 +110,14 @@ export default function CliPage() {
               </div>
 
               <div>
-                <h3 className="mb-4 text-sm font-semibold text-center md:text-left">
+                <Heading level="h3" typeStyle="heading-sm-semibold" className="text-center md:text-left">
                   Example
-                </h3>
+                </Heading>
                 <div className="space-y-5">
                   <div>
-                    <h4 className="text-xs">Create a new AsyncAPI file</h4>
+                    <Paragraph typeStyle="body-md" className="mb-4">
+                      Create a new AsyncAPI file
+                    </Paragraph>
                     <CodeBlock
                       language="generator-cli"
                       textSizeClassName="text-sm"
@@ -133,13 +137,13 @@ export default function CliPage() {
           <div className="lg:py-12 bg-white mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9 ">
+                <Heading level="h2" typeStyle="heading-md-semibold">
                   Features
-                </h4>
-                <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4 text-center">
+                </Heading>
+                <Paragraph className="mt-3 text-center lg:pr-4 max-w-lg mx-auto">
                   Use the AsyncAPI CLI tool to help you create, develop, and
                   maintain your AsyncAPI files.
-                </p>
+                </Paragraph>
               </div>
 
               <div className="mt-10">
@@ -147,18 +151,20 @@ export default function CliPage() {
                   {features.map(({ description: Description, ...feature }) => (
                     <div key={feature.name} className="relative mb-10">
                       <dt>
-                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-secondary-100 text-gray-900 border border-gray-900">
                           <feature.icon
                             className="h-6 w-6"
                             aria-hidden="true"
                           />
                         </div>
-                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                          {feature.name}
-                        </p>
+                        <Heading level="h4" typeStyle="heading-sm-semibold" className="ml-16">
+                          {feature.name} 
+                        </Heading>
                       </dt>
-                      <dd className="mt-2 ml-16 text-base text-gray-500 pr-10">
-                        <Description />
+                      <dd className="mt-2 ml-16 pr-10">
+                        <Paragraph typeStyle="body-md">
+                          <Description />
+                        </Paragraph>
                       </dd>
                     </div>
                   ))}
