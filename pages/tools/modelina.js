@@ -14,6 +14,8 @@ import JavaOptions from '../../components/modelina/JavaGenerator'
 import JavaScriptOptions from '../../components/modelina/JavaScriptGenerator'
 import GoOptions from '../../components/modelina/GoGenerator'
 import CSharpOptions from '../../components/modelina/CSharpGenerator'
+import Heading from '../../components/typography/Heading'
+import Paragraph from '../../components/typography/Paragraph'
 
 class ModelinaPlayground extends React.Component {
   constructor(props) {
@@ -144,7 +146,9 @@ const models = await generator.generate(input)`
               <div className="col-span-1 text-center">
                 <div>
                   <div className="inline-flex items-center ml-6">
-                    <p className="text-sm text-gray-500 mr-2">Select the desired language:</p>
+                    <Paragraph typeStyle="body-md" className="mr-2">
+                      Select the desired language:
+                    </Paragraph>
                     <Select
                       options={modelinaLanguageOptions}
                       selected={this.state.language}
@@ -152,11 +156,11 @@ const models = await generator.generate(input)`
                       className="shadow-outline-blue cursor-pointer"
                     />
                   </div>
-                  <p className="text-sm text-gray-500 mt-2 underline">
+                  <Paragraph typeStyle="body-sm" className="underline mt-2 hover:text-secondary-500 transition duration-300 ease">
                     <a href="https://github.com/asyncapi/modelina/issues/new?assignees=&labels=enhancement&template=enhancement.md" target="_blank" rel="noopener noreferrer">
                       Missing a language? Please let us know!
                     </a>
-                  </p>
+                  </Paragraph>
                 </div>
               </div>
             </div>
@@ -212,15 +216,15 @@ export default function ModelinaPlaygroundPage() {
   const playground = (
     <div>
       <div className="relative pt-16 pb-8 hidden lg:block">
-        <h4 className="text-center text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+        <Heading level="h4" typeStyle="heading-md-semibold" className="text-center">
           Try it now
-        </h4>
+        </Heading>
 
         <ModelinaPlayground onError={setError} />
       </div>
-      <p className="block lg:hidden mt-8 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
+      <Paragraph className="text-center block lg:hidden mt-8 max-w-3xl mx-auto">
         Modelina Playground works only on the desktop devices.
-      </p>
+      </Paragraph>
     </div>
   );
 
@@ -232,23 +236,23 @@ export default function ModelinaPlaygroundPage() {
       wide
     >
       <div className="py-16 overflow-hidden lg:py-24">
-        <div className="relative">
-          <h3 className="text-center text-3xl leading-8 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        <div className="relative text-center">
+          <Heading level="h1" typeStyle="heading-lg">
             Modelina
-          </h3>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl leading-7 text-gray-500">
+          </Heading>
+          <Paragraph className="mt-4 max-w-3xl mx-auto">
             {description}
-          </p>
+          </Paragraph>
         </div>
 
         <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative mb-8 lg:mt-8">
-            <h4 className="text-2xl leading-8 font-normal text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-              Installation & Usage
-            </h4>
-            <p className="mt-3 text-lg leading-7 text-gray-500 lg:pr-4">
+            <Heading level="h4" typeStyle="heading-md-semibold">
+                Installation & Usage
+            </Heading>
+            <Paragraph className="mt-3 lg:pr-4">
               Start using Modelina really quickly. Select one of the available languages we offer and start generating models from your AsyncAPI document in a few seconds.
-            </p>
+            </Paragraph>
             <div className="mt-8">
               <CodeBlock language="bash" showLineNumbers={false} className="mt-8">npm install @asyncapi/modelina</CodeBlock>
               <div className="mt-8">
@@ -352,7 +356,7 @@ public class LightMeasured {
 }`;
 
 const playgroundAsyncAPIDocument = {
-  "asyncapi": "2.2.0",
+  "asyncapi": "2.3.0",
   "info": {
     "title": "Streetlights API",
     "version": "1.0.0",
