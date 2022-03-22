@@ -32,49 +32,37 @@ Join the `#temp-gsod-2022` slack channel for:
 - mentees and ideas and mentors matching
 
 
-Below is the **project proposal** we're submitting to `GSoD 2022`. 
+Below is the **project proposal** we're submitting to `GSoD 2022`:
 
 
 ___ 
 
-# Update Docs Information Architecture - AsyncAPI Initiative 
+# 🙌🏾  Update Docs Information Architecture - AsyncAPI Initiative 
 
-## About AsyncAPI
-AsyncAPI (currently version 2.3.0, first released in 2016) is an Apache License 2.0 library under the Linux Foundation that seeks to improve the current state of Event-Driven Architectures (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define asynchronous APIs, and build and maintain event-driven architectures. Developers familiar with OpenAPI (aka Swagger) for RESTful APIs will see strong similarities when using AsyncAPI. One common use case is generating documentation (HTML or Markdown) of an asynchronous API. The specification is both platform and language agnostic. Current tooling includes support for common message brokers such as Apache Kafka and RabbitMQ, and languages including Python, Java, and Nodejs. Our long-term goal is to make working with EDAs as easy as working with REST APIs. That goes from documentation to code generation, from discovery to event management, and beyond. Our 150+ Open-Source (OSS) contributors are EDA enthusiasts from all around the world. 
+## ❤️ About AsyncAPI
+AsyncAPI (currently version 2.3.0, first released in 2016) is an Apache License 2.0 library [under the Linux Foundation](https://www.linuxfoundation.org/press-release/linux-foundation-will-host-asyncapi-to-support-growth-and-collaboration-for-industrys-fastest-growing-api-spec/) that seeks to improve the current state of Event-Driven Architectures (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define asynchronous APIs, and build and maintain event-driven architectures. Developers familiar with OpenAPI (aka Swagger) for RESTful APIs will see strong similarities when using AsyncAPI. One common use case is generating documentation (HTML or Markdown) of an asynchronous API. The specification is both platform and language agnostic. Current tooling includes support for common message brokers such as Apache Kafka and RabbitMQ, and languages including Python, Java, and Nodejs. Our long-term goal is to make working with EDAs as easy as working with REST APIs. That goes from documentation to code generation, from discovery to event management, and beyond. Our 150+ Open-Source (OSS) contributors are EDA enthusiasts from all around the world. 
 
 
-## About our Docs project
+## 📑 About our Docs project
 
-### Our current Docs problem
+### 🔎 Our current Docs problem
 Our current Docs and their Information Architecture (IA) needs a major makeover. The current content buckets are far from ideal and much basic content is missing to help onboard new contributors. Users new to our API spec need `/Conceptual` docs that explain our spec terminology in more detail with engineering diagrams: people often learn visually! We also have to move our CLI docs under the Docs upcoming new `Reference` content bucket; currently we have a README version of CLI docs only. Similarly, we're adding a new and broader `/Tools` section of documentation for our tools in individual tools' GitHub repos, under a `/docs` directory. Those should still remain there and continue to be maintained, but they also need to be documented in our Docs in a less informal way than what you see in a README. In time, we also need to add many more tutorials (i.e. Websocket, Kafka, etc) and Usecases and Troubleshooting Guides, under a new `How-To` section.
 
 
-### Our Docs project’s scope
+### 🎯 Our Docs project’s scope
 _Tell us about what documentation your organization will create, update, or improve. If some work is deliberately not being done, include that information as well. Include a time estimate, and whether you have already identified organization volunteers and a technical writer to work with your project._
 
-We're already invested in utilizing the [Diátaxis methodology](https://diataxis.fr/) for determining our **content buckets** _(Concepts, Tutorials, Tools, How-To Guides, Reference)_, it makes sense to ADD NEW landing pages to introduce each content bucket. each content bucket landing page could include cards featuring content the community has already requested but that we still need contributions for. Instead of having a card that merely says "coming soon," we could have the cards read, "Contributors Needed." 
+We're already invested in utilizing the [Diátaxis methodology](https://diataxis.fr/) for determining our **content buckets** _(Concepts, Tutorials, Tools, How-To Guides, Reference)_, it makes sense to ADD NEW landing pages to introduce each content bucket. In addition, each content bucket landing page could include cards featuring content the community has already requested but that we still need contributions for. For example, instead of having a card that says "coming soon," we would have the cards say, "Contributors Needed." Lastly, we have several CLI and Tools markdown README documentation in miscellaneous GitHub repos that we're in the process of migrating over to the main Docs site section. This last item would be another task we'd incoropate as part of our goal to finalize our 2022 AsyncAPI Docs Information Architecture makeover, which is not only mentioned in one of our OSS blog posts titled ["Change is coming to our AsyncAPI Developer Documentation"](https://www.asyncapi.com/blog/changes-coming-docs), but is also extensively documented in our [AsyncAPI Docs GitHub Project Board](https://github.com/orgs/asyncapi/projects/8). 
 
+We've also started voluntary OSS bi-weekly updates via GitHub Gists to speak about the latest updates made in the AsyncAPI Docs Ecosystem. Due to our commitment to investing time in gaining interest in our community and getting Google excited about us, we've made sure to maintain updates about our `Google Season of Docs 2022` application too! In fact, you can take a look at the latest three where we made said mentions here in [AsyncAPI Docs update (31 Jan - 11 Feb 2022)](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), [AsyncAPI Docs update (14 Feb - 25 Feb 2022)](https://gist.github.com/alequetzalli/d34e3aececa49d10d0ddb2dc9938b477), and [AsyncAPI Docs update (28 Feb - 11 March 2022)](https://gist.github.com/alequetzalli/8f449f731b919193f4101098a69da14d).
 
-
-**** 
-The GloriousPickle project (code-named PicklePlus) will:
-
-Audit the existing documentation and create a friction log of the current documentation for the three top use cases (adding a new ingredient, adding a variant ingredient, and updating or correcting information about an ingredient).
-Using the friction log as a guide for understanding the gaps in the documentation, create updated documentation for the top use cases.
-Create a quick “cheat sheet” to help contributors new to pull requests and GitHub to help them be able to use our process.
-Incorporate feedback from documentation testers (volunteers in the project) and the wider GloriousPickle community.
-Work with the release team to update the documentation on the GloriousPickle site, and to create a process for keeping the documentation in sync with the update tool going forward.
-Work that is out-of-scope for this project:
-
-This project will not create a process for cross-linking between different spellings or names for the same ingredient.
-This project will not create any GitHub tutorials; instead, the cheat sheet will link to existing material that is relevant and helpful.
-We have two strong technical writing candidates for this project, and we estimate that this work will take three months to complete. The GloriousPickle PickleDocs SIG and @GloriousPicklePat (the core maintainer of the ingredient-adding API) have committed to supporting the project.
-
-
-
-### Measuring our Docs project’s success
+### 📏 Measuring our Docs project’s success
 How will you know that your new documentation has helped solve your problem? What metrics will you use, and how will you track them?
 
+In our [Create Docs Feedback card](https://github.com/asyncapi/website/issues/453), we...
+
+
+**
 GloriousPickle receives an average of ten pull requests a quarter to add or update new ingredients (tagged ‘ingredient’). The majority of these pull requests (>60%) are from previous contributors. We believe that this improved documentation will result in more pull requests and more pull requests from new contributors. Since most of our active contributors began by adding ingredients, we also think improving this documentation will result in more active contributors overall.
 
 We will track two metrics (number of ingredient-related pull requests and number of pull requests from new contributors) monthly after the documentation is published. We will also track the number of contributors who have made more than three contributions overall, starting quarterly after the documentation is published.
@@ -88,7 +76,7 @@ The number of contributors who have made >3 contributions increases by 10% (begi
 
 
 
-### Timeline
+### ⌛ Timeline
 How long do you estimate this work will take? Are you able to breakdown the tech writer tasks by month/week?
 
 The project itself will take approximately six months to complete. Once the tech writer is hired, we'll spend a month on tech writer orientation, then move onto the audit and friction log, and spend last few months focusing on creating the documentation.
@@ -103,7 +91,7 @@ November	Project completion
 
 
 
-### Project budget
+### 💸 Project budget
 General guidelines
 You can include your budget in your proposal, or as a separate link. If your budget is fewer than ten items, we recommend including it in your proposal.
 All budgets should be in US dollars. We expect grants to range from US$5000 to US$15000; if your project is outside of that range, please provide additional information to justify your budget.
@@ -123,8 +111,8 @@ https://developers.google.com/season-of-docs/docs/org-proposal-template#sample_b
 
 ___ 
 
-## 👉🏽 How to contribute to AsyncAPI Docs
-Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
+## 👉🏽 Get started contributing to AsyncAPI Docs Today
+Last but not least, don't forget that code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:
 1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
