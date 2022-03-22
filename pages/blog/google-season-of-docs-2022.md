@@ -59,8 +59,12 @@ We've also started voluntary OSS bi-weekly updates via GitHub Gists to speak abo
 ### 📏 Measuring our Docs project’s success
 How will you know that your new documentation has helped solve your problem? What metrics will you use, and how will you track them?
 
-In our [Create Docs Feedback card](https://github.com/asyncapi/website/issues/453), we...
+We will measure success in Docs project’s success partially by capturing specific feedback about the IA changes via our soon-to-come new [Docs Feedback card](https://github.com/asyncapi/website/issues/453). Some of you may remember even from our Gist Docs updates that Design contributors were teaming with Docs on `/website`issue [#453](https://github.com/asyncapi/website/issues/453) for the ideation and development of our new **feedback card** that will be added at the bottom of each Docs page. What the community decided over the last 2 weeks was that the `Submit feedback` button in the card will publish the feedback anonymously via the AsyncAPI bot and create a new **GitHub Discussion** with said feedback:
 
+<img width="500" alt="Screen Shot 2022-03-10 at 8 47 22 PM" src="https://user-images.githubusercontent.com/19964402/158282499-a50737c0-a669-417d-99ae-a91ab21a0c07.png">
+<img width="500" alt="Screen Shot 2022-03-10 at 8 48 47 PM" src="https://user-images.githubusercontent.com/19964402/158282500-a29c953b-e333-455f-b5bb-c1d2491fef2a.png">
+
+The other way we will measure success is...
 
 **
 GloriousPickle receives an average of ten pull requests a quarter to add or update new ingredients (tagged ‘ingredient’). The majority of these pull requests (>60%) are from previous contributors. We believe that this improved documentation will result in more pull requests and more pull requests from new contributors. Since most of our active contributors began by adding ingredients, we also think improving this documentation will result in more active contributors overall.
