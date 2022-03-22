@@ -1,8 +1,6 @@
 ---
 title: Overview
+weight: 2
 ---
 
-import TutorialList from '../../../components/navigation/TutorialList'
-
-<TutorialList />
-
+Welcome to Tutorials! 

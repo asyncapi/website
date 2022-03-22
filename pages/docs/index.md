@@ -1,8 +1,6 @@
 ---
-title: Overview
-date: 
+title: Welcome
 weight: 0
-categories: overview
 ---
 
 ## Welcome to AsyncAPI Docs! 
