@@ -32,7 +32,7 @@ Join the `#temp-gsod-2022` slack channel for:
 - mentees and ideas and mentors matching
 
 
-Below is the **project proposal** we're submitting to `GSoD 2022`:
+Below is the **project proposal** we're submitting to `GSoD 2022` and then we close with a reminder of how to get started as an AsyncAPI Docs contributor:
 
 
 ___ 
@@ -50,68 +50,30 @@ Our current Docs and their Information Architecture (IA) needs a major makeover.
 
 
 ### 🎯 Our Docs project’s scope
-_Tell us about what documentation your organization will create, update, or improve. If some work is deliberately not being done, include that information as well. Include a time estimate, and whether you have already identified organization volunteers and a technical writer to work with your project._
-
 We're already invested in utilizing the [Diátaxis methodology](https://diataxis.fr/) for determining our **content buckets** _(Concepts, Tutorials, Tools, How-To Guides, Reference)_, it makes sense to ADD NEW landing pages to introduce each content bucket. In addition, each content bucket landing page could include cards featuring content the community has already requested but that we still need contributions for. For example, instead of having a card that says "coming soon," we would have the cards say, "Contributors Needed." Lastly, we have several CLI and Tools markdown README documentation in miscellaneous GitHub repos that we're in the process of migrating over to the main Docs site section. This last item would be another task we'd incoropate as part of our goal to finalize our 2022 AsyncAPI Docs Information Architecture makeover, which is not only mentioned in one of our OSS blog posts titled ["Change is coming to our AsyncAPI Developer Documentation"](https://www.asyncapi.com/blog/changes-coming-docs), but is also extensively documented in our [AsyncAPI Docs GitHub Project Board](https://github.com/orgs/asyncapi/projects/8). 
 
 We've also started voluntary OSS bi-weekly updates via GitHub Gists to speak about the latest updates made in the AsyncAPI Docs Ecosystem. Due to our commitment to investing time in gaining interest in our community and getting Google excited about us, we've made sure to maintain updates about our `Google Season of Docs 2022` application too! In fact, you can take a look at the latest three where we made said mentions here in [AsyncAPI Docs update (31 Jan - 11 Feb 2022)](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), [AsyncAPI Docs update (14 Feb - 25 Feb 2022)](https://gist.github.com/alequetzalli/d34e3aececa49d10d0ddb2dc9938b477), and [AsyncAPI Docs update (28 Feb - 11 March 2022)](https://gist.github.com/alequetzalli/8f449f731b919193f4101098a69da14d).
 
 ### 📏 Measuring our Docs project’s success
-How will you know that your new documentation has helped solve your problem? What metrics will you use, and how will you track them?
-
-We will measure success in Docs project’s success partially by capturing specific feedback about the IA changes via our soon-to-come new [Docs Feedback card](https://github.com/asyncapi/website/issues/453). Some of you may remember even from our Gist Docs updates that Design contributors were teaming with Docs on `/website`issue [#453](https://github.com/asyncapi/website/issues/453) for the ideation and development of our new **feedback card** that will be added at the bottom of each Docs page. What the community decided over the last 2 weeks was that the `Submit feedback` button in the card will publish the feedback anonymously via the AsyncAPI bot and create a new **GitHub Discussion** with said feedback:
+We will measure success in Docs project’s success partially by capturing specific feedback about the IA changes via our soon-to-come new [Docs Feedback card](https://github.com/asyncapi/website/issues/453). We need this specific and granular feedback to make sure we listen and make changes according to what the community requests from Docs. In previous AsyncAPI Docs Gist updates, we've mentioned that Design contributors were teaming with Docs on `/website`issue [#453](https://github.com/asyncapi/website/issues/453) for the ideation and development of our new **feedback card** that will be added at the bottom of each Docs page. What the community decided over the last 2 weeks was that the `Submit feedback` button in the card will publish the feedback anonymously via the AsyncAPI bot and create a new **GitHub Discussion** with said feedback:
 
 <img width="500" alt="Screen Shot 2022-03-10 at 8 47 22 PM" src="https://user-images.githubusercontent.com/19964402/158282499-a50737c0-a669-417d-99ae-a91ab21a0c07.png">
 <img width="500" alt="Screen Shot 2022-03-10 at 8 48 47 PM" src="https://user-images.githubusercontent.com/19964402/158282500-a29c953b-e333-455f-b5bb-c1d2491fef2a.png">
 
-The other way we will measure success is...
-
-**
-GloriousPickle receives an average of ten pull requests a quarter to add or update new ingredients (tagged ‘ingredient’). The majority of these pull requests (>60%) are from previous contributors. We believe that this improved documentation will result in more pull requests and more pull requests from new contributors. Since most of our active contributors began by adding ingredients, we also think improving this documentation will result in more active contributors overall.
-
-We will track two metrics (number of ingredient-related pull requests and number of pull requests from new contributors) monthly after the documentation is published. We will also track the number of contributors who have made more than three contributions overall, starting quarterly after the documentation is published.
-
-We would consider the project successful if, after publication of the new documentation:
-
-The number of ingredient-related pull requests increases by 20%
-The number of pull requests from new contributors increases by 15%
-The number of contributors who have made >3 contributions increases by 10% (beginning the quarter after the documentation is published)
-
-
+The other way we would consider the project successful is the number of our contributors and Docs PRs increased by even 2-5 more community members. Currently, a majority of our OSS contributor community focuses only on contributing code, but we would like to instill a greater interest in contributing to documentation that provides value for everyone.
 
 
 ### ⌛ Timeline
-How long do you estimate this work will take? Are you able to breakdown the tech writer tasks by month/week?
+The project itself will take approximately 3-6 months to complete, depending on how many technical writers (TW) get involved. If we can get even just 2-4 TWs, then we can work on both migrating the CLI and Tools documentation. But if we can only get 1-2 folks, it would be hard to do more than the migration of CLI or Tools docs. Ideally, the timeline could look like the following:
 
-The project itself will take approximately six months to complete. Once the tech writer is hired, we'll spend a month on tech writer orientation, then move onto the audit and friction log, and spend last few months focusing on creating the documentation.
-
-
-Dates	Action Items
-May	Orientation
-June - August	Audit existing documentation and create friction log
-September - October	Create documentation
-November	Project completion
-
-
+- **May:** Orientation on how to contribute to AsyncAPI Inititiave, how Docs issues are organized, detail how we're migrating our CLI and Tools Docs, and assign good `first-time-tickets` to get each new TW contributor started. 
+- **June - August:**	Each TW goes through designated issues marked for both first time contributors and work set aside for `GSoD 2022`. Each TW starts creating documentation for their individual issues assigned/selected. 
+- **September - October:** We determine if we're going to be able to complete both CLI and Tools Docs, depending on how many TWs are in our group and how much they've been able to complete so far. We re-align priorities as needed and asses what is missing to reach our 2022 IA change goals for AsyncAPI Docs.
+- **November:**	Project completion and all contributors receive some swag! 
 
 
 ### 💸 Project budget
-General guidelines
-You can include your budget in your proposal, or as a separate link. If your budget is fewer than ten items, we recommend including it in your proposal.
-All budgets should be in US dollars. We expect grants to range from US$5000 to US$15000; if your project is outside of that range, please provide additional information to justify your budget.
-We expect the bulk of your budget (60-70% minimum) to be allocated to the technical writer working on your project. We recommend budgeting on a per-project basis wherever possible.
-We expect open source projects to use open source tools whenever possible; if your project absolutely requires funds for proprietary software licenses or support, please include a justification for the amount.
-Other possible expenses include:
-Design work to create branding, logos, templates, or other design assets for your documentation site
-Minimal amounts (<US$200) for project swag (t-shirts or stickers for your participants). If you use the Season of Docs logo, it must be accompanied by your project or organization logo or name. Your swag may not use the name Google.
-Minimal stipends for volunteers who take on considerable mentorship or guidance roles in the project (we recommend no more than $500 per volunteer, please)
-Downstream donations to other open source projects should be no more than 10% of your budget total.
-Include other budget items as needed, along with justification for the amount sought. Expense justifications should highlight how the expenditure will contribute to the success of the project as a whole.
-
-
-https://developers.google.com/season-of-docs/docs/org-proposal-template#sample_budget
-
-
+We have set aside 2 mentors for now, for our 1 project on improving our IA. For this we would like to request a US $5000 budget to Google, should we be selected. 
 
 ___ 
 
@@ -128,3 +90,6 @@ To get started as a Docs contributor:
 Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
 
 Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/alequetzalli) 🐙.
+
+
+_-A.Q. 👩🏻‍💻 and Canela 🐕‍🦺_
