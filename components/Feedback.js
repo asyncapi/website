@@ -4,23 +4,24 @@ import { useRouter } from "next/router";
 export default function Feedback(className = '') {
     const [Submit, setSubmit] = useState(false);
     const [feedback, setFeedback] = useState('')
-
+    const date_stamp = new Date()
+    const time_stamp = date_stamp.getDate().toString() + '/' + (date_stamp.getMonth()+1).toString() + '/' + date_stamp.getFullYear().toString() + ' ' + date_stamp.getHours().toString() + ':' + date_stamp.getMinutes().toString() + ':' + date_stamp.getSeconds().toString();
     const { asPath, pathname } = useRouter();
     async function handleSubmit(e) {
         e.preventDefault();
         const data = {
-            title: 'Feedback on '+asPath,
+            title: 'Feedback on ' + asPath + ' - ' + time_stamp,
             feedback: feedback
         }
-        
+
         const response = await fetch("../api/sheet", {
             method: "POST",
-            body:JSON.stringify(data),
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
             },
         }).then((response) => {
-            if(response.status===200){
+            if (response.status === 200) {
                 setSubmit(true);
                 setTimeout(() => {
                     setSubmit(false);
