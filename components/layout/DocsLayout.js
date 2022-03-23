@@ -101,7 +101,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 {generateEditLink(post)}
               </p>
             </div>
-                <article className="mb-32 mt-12">
+                <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
                     description={post.excerpt}
