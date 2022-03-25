@@ -14,7 +14,7 @@ export default function Feedback(className = '') {
             feedback: feedback
         }
 
-        const response = await fetch("../api/sheet", {
+        const response = await fetch("/.netlify/netlify/handler", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
