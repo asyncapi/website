@@ -3,8 +3,8 @@ const { graphql } = require('@octokit/graphql')
 exports.handler = async function (event, context) {
   if (event.httpMethod == 'POST') {
     const { title, feedback } = JSON.parse(event.body);
-    const repositoryID = "MDEwOlJlcG9zaXRvcnkzNTE0NTM1NTI=";
-    const categoryID = "DIC_kwDOFPLBcM4COBUH"
+    const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk=";
+    const categoryID = "DIC_kwDOFLhIt84B_T4d"
     try {
       const createDiscussion = await graphql(`
         mutation { 
