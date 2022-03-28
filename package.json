@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "AsyncAPI website",
   "scripts": {
-    "dev": "node scripts/index.js && next -p 8080",
+    "dev": "node scripts/index.js && next -p 3000",
     "build": "node scripts/index.js && next build",
     "write:blog": "node ./scripts/compose.js",
     "start": "next start",
