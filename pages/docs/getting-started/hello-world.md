@@ -7,7 +7,7 @@ menu:
 weight: 30
 ---
 
-Let's define an application that's capable of receiving a "hello {name}" message.
+Let's define an application that's capable of publishing a "hello {name}" message
 
 <CodeBlock>
 {`asyncapi: 2.2.0
