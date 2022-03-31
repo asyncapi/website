@@ -2,15 +2,17 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Feedback(className = '') {
-    const [Submit, setSubmit] = useState(false);
-    const [feedback, setFeedback] = useState('')
+    const [submitted, setSubmitted] = useState(false);
+    const [feedback, setFeedback] = useState('');
+    const { asPath, pathname } = useRouter();
+    
     const date_stamp = new Date()
     const time_stamp = date_stamp.getDate().toString() + '/' + (date_stamp.getMonth()+1).toString() + '/' + date_stamp.getFullYear().toString() + ' ' + date_stamp.getHours().toString() + ':' + date_stamp.getMinutes().toString() + ':' + date_stamp.getSeconds().toString();
-    const { asPath, pathname } = useRouter();
+    
     async function handleSubmit(e) {
         e.preventDefault();
         const data = {
-            title: 'Feedback on ' + asPath + ' - ' + time_stamp,
+            title: `Feedback on ${asPath} - ${time_stamp}`,
             feedback: feedback
         }
 

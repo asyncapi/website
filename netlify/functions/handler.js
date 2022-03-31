@@ -38,7 +38,7 @@ exports.handler = async function (event, context) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: "GET Request called"
+        message: "The specified HTTP method is not allowed."
       })
     }
   }
