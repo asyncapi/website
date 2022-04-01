@@ -3,11 +3,12 @@ import { useRouter } from "next/router";
 
 export default function Feedback(className = '') {
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
     const [feedback, setFeedback] = useState('');
     const { asPath, pathname } = useRouter();
     
     const date_stamp = new Date()
-    const time_stamp = date_stamp.getDate().toString() + '/' + (date_stamp.getMonth()+1).toString() + '/' + date_stamp.getFullYear().toString() + ' ' + date_stamp.getHours().toString() + ':' + date_stamp.getMinutes().toString() + ':' + date_stamp.getSeconds().toString();
+    const time_stamp = `${date_stamp.getDate().toString()}/${(date_stamp.getMonth()+1).toString()}/${date_stamp.getFullYear().toString()} ${date_stamp.getHours().toString()}:${date_stamp.getMinutes().toString()}:${date_stamp.getSeconds().toString()}`;
     
     async function handleSubmit(e) {
         e.preventDefault();
@@ -16,7 +17,7 @@ export default function Feedback(className = '') {
             feedback: feedback
         }
 
-        const response = await fetch("/.netlify/functions/handler", {
+        fetch("/.netlify/functions/handler", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -24,15 +25,21 @@ export default function Feedback(className = '') {
             },
         }).then((response) => {
             if (response.status === 200) {
-                setSubmit(true);
+                setSubmitted(true);
                 setTimeout(() => {
-                    setSubmit(false);
+                    setSubmitted(false);
                 }, 5000);
+            }
+            if(response.status !== 200) {
+                setError(true);
+                setTimeout(()=>{
+                    setError(false);
+                }, 5000); 
             }
         })
     }
 
-    if (Submit) {
+    if (submitted) {
         return (
             <div className={`flex flex-col rounded-md shadow-md text-center border border-gray-200 p-4 ${className}`}>
                 <div className='block mx-auto w-fit'>
@@ -53,6 +60,25 @@ export default function Feedback(className = '') {
             </div>
         )
     }
+    if(error){
+        return (
+            <div className={`flex flex-col rounded-md shadow-md text-center border border-gray-200 p-4 ${className}`}>
+            <div className='block mx-auto w-fit'>
+                <img src='/img/illustrations/icons/icon-x.svg' className='md:w-14' />
+            </div>
+            <div className='text-center mx-auto text-lg mt-4'>
+                Oops! Something went wrong...
+            </div>
+            <div className='text-center mx-auto text-md text-gray-500'>
+                We were unable to process your feedback
+            </div>
+            <a className='bg-black text-white flex flex-row justify-center text-center shadow-md hover:shadow-lg transition-all duration-500 ease-in-out py-2 px-4 rounded mx-auto mt-4' href='https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+' target='_blank' rel='noopener noreferrer'>
+                <img src='/img/logos/github-fill.svg' className='w-6 mr-2' />
+                Create Issue on Github
+            </a>
+        </div>
+        );
+    }
     return (
         <div className={`flex flex-col rounded-md shadow-md border border-gray-200 p-4 ${className}`}>
             <div className='flex flex-row'>
@@ -68,14 +94,13 @@ export default function Feedback(className = '') {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-col my-4'>
-                    <textarea className='w-full h-20 border rounded-md bg-gray-50 text-sm px-2 py-1 text-gray-700 inline-block align-top focus:border-0' placeholder='Write your suggestions here' onChange={(e) => setFeedback(e.target.value)} />
+                    <textarea className='w-full h-20 border rounded-md bg-gray-50 text-sm px-2 py-1 text-gray-700 inline-block align-top focus:border-0' placeholder='Write your suggestions here' onChange={(e) => setFeedback(e.target.value)} required />
                     <div className='block lg:flex lg:flex-row mt-4 text-sm'>
                         <button className='bg-primary-500 text-white w-full lg:w-6/12 py-2 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded' type='submit'>Submit feedback</button>
                         <div className='my-2 text-center font-medium w-full lg:w-1/12 lg:my-auto'>OR</div>
-                        <a className='bg-black text-white flex flex-row lg:w-6/12 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out py-2 rounded' href='https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+' target='_blank' rel='noopener noreferrer'>
-                            <div className='mx-auto text-center w-fit'>
+                        <a className='bg-black text-white flex flex-row lg:w-6/12 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out py-2 rounded justify-center' href='https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+' target='_blank' rel='noopener noreferrer'>
+                            <img src='/img/logos/github-fill.svg' className='mr-2' />
                                 Create Issue on Github
-                            </div>
                         </a>
                     </div>
                 </div>

@@ -1,10 +1,11 @@
 const { graphql } = require('@octokit/graphql')
+const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk="
+const categoryID = "DIC_kwDOFLhIt84B_T4d"
 
 exports.handler = async function (event, context) {
   if (event.httpMethod == 'POST') {
     const { title, feedback } = JSON.parse(event.body);
-    const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk=";
-    const categoryID = "DIC_kwDOFLhIt84B_T4d"
+    
     try {
       const createDiscussion = await graphql(`
         mutation { 
@@ -30,8 +31,12 @@ exports.handler = async function (event, context) {
           message: "Feedback submitted successfully"
         })
       } 
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
+      return {
+        statusCode: err.response.status,
+        message:err.response.data.message
+      }
     }
   }else{
     console.log("Get Request")
