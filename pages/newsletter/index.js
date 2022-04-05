@@ -13,9 +13,9 @@ export default function NewsletterIndexPage() {
       <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      <div className="bg-gray-900 py-12 mt-12">
+      <div className="py-12 mt-12 h-full-screen">
         <Container wide>
-          <NewsletterSubscribe formName="form 1" dark />
+          <NewsletterSubscribe formName="form 1" />
         </Container>
       </div>
       <Footer />
