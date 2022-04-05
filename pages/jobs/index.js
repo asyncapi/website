@@ -171,7 +171,6 @@ Join us!
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
