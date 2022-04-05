@@ -28,7 +28,6 @@ export default function GenericWideLayout({
         <AnnouncementHero className="text-center m-4" small={true} />
         {children}
       </Row>
-      <Footer />
     </>
   )
 }
