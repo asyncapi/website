@@ -30,7 +30,7 @@ export default function MyApp({ Component, pageProps, router }) {
           <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
       <MDXProvider components={getMDXComponents()}>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col min-h-screen">
           <Banner />
           <Layout>
             <Component {...pageProps} />
