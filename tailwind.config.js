@@ -140,7 +140,6 @@ module.exports = {
         '116': '29rem',
         '120': '30rem',
         'half-screen': '50vh',
-        'full-screen': '80vh',
       },
       maxWidth: {
         '(screen-16)': 'calc(100vw - 16rem)',

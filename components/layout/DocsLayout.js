@@ -114,7 +114,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         </div>
         </div>
       </div>
-      <Footer/>
     </DocsContext.Provider>
   )
 }

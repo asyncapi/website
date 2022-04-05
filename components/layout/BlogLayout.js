@@ -86,7 +86,6 @@ export default function BlogLayout({ post, children }) {
           </article>
         </main>
       </Container>
-      <Footer />
     </BlogContext.Provider>
   )
 }

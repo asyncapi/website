@@ -19,6 +19,7 @@ import Banner from '../components/campaigns/Banner'
 import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
 import AppContext from '../context/AppContext'
+import Footer from "../components/Footer";
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
@@ -28,11 +29,16 @@ export default function MyApp({ Component, pageProps, router }) {
       <Head>
           <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
-      <Banner />
       <MDXProvider components={getMDXComponents()}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <div className="flex flex-col h-screen">
+          <Banner />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <div className="mt-auto">
+            <Footer />
+          </div>
+        </div>
       </MDXProvider>
     </AppContext.Provider>
   )
