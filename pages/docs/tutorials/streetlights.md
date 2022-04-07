@@ -15,9 +15,20 @@ You want to create a system capable of turning on/off the streetlights depending
 - Based off the events, your application can make a decision regarding turning the streetlight off.
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
 
-# Technology
+# Installation Guide
 
 You'll use Node.js to code the APIs and Mosquitto as the message broker. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
+
+Before you proceed to the next stage, you need to have a few things to get started.
+
+1. Installed [NodeJs](https://nodejs.org/en/download/) (v15 or newer) in your local system.
+
+2. Installed Git in your local system according to the Operating System (OS) that you're used:
+- [Install Git on MacOs](https://git-scm.com/download/mac)
+- [Install Git on Windows](https://git-scm.com/download/win)
+- [Install Git on Linux](https://git-scm.com/download/linux)
+
+You can also have other than git like homebrew or anything similar, adjust it to your needs.
 
 # Creating the AsyncAPI file
 
