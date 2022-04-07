@@ -58,9 +58,8 @@ You will find both used interchangeably, although they are not exactly the same.
 
 Theoretically, _"message-driven"_ is the most generic term -meaning you may use events and commands- while _event-driven_ means that it's purely about events. However, that's not always the case, as Martin Fowler explains in his talk _"the many meanings of Event-Driven Architecture"_:
 
-<div className="my-8">
-  <YouTube id="STKCRSUsyP0" />
-</div>
+However, that's not always the case, as Martin Fowler explains in his
+talk ["the many meanings of Event-Driven Architecture"](https://www.youtube.com/watch?v=STKCRSUsyP0).
 
 ## Conclusion
 
