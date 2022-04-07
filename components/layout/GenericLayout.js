@@ -28,7 +28,6 @@ export default function GenericLayout({
         <AnnouncementHero className="text-center m-4" small={true} />
         {children}
       </Container>
-      <Footer />
     </>
   )
 }

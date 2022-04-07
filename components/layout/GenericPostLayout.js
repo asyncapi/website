@@ -38,7 +38,6 @@ export default function GenericPostLayout({ post, children }) {
           </article>
         </main>
       </Container>
-      <Footer />
     </GenericPostContext.Provider>
   )
 }

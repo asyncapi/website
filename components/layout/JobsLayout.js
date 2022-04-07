@@ -42,7 +42,6 @@ export default function JobsLayout({ post, children }) {
           </div>
         </main>
       </Container>
-      <Footer />
     </JobsContext.Provider>
   )
 }

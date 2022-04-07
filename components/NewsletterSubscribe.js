@@ -11,17 +11,20 @@ export default function NewsletterSubscribe ({
 }) {
   if (!formName) throw new Error('Parameter formName is required for the NewsletterSubscribe component.')
 
+  const headTextColor = dark ? 'text-white' : ''
+  const paragraphTextColor = dark ? 'text-gray-300' : ''
+
   return (
     <div className={className}>
       <Heading 
         level="h3"
-        textColor="text-white"
+        textColor={headTextColor}
         typeStyle="heading-lg"
         className="mb-4"
       >
         {title}
       </Heading>
-      <Paragraph className="mb-8" textColor="text-gray-300">
+      <Paragraph className="mb-8" textColor={paragraphTextColor}>
         We respect your inbox. No spam, promise ✌️
       </Paragraph>
       <form className="md:flex" data-netlify="true">
