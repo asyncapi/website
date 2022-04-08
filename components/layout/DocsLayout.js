@@ -25,7 +25,6 @@ function generateEditLink(post) {
 }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
-  
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -50,7 +49,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       <StickyNavbar>
             <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
         </StickyNavbar>
-      <div className="bg-white px-4 sm:px-6 lg:px-8 xl:max-w-7xl xl:mx-auto">
+      <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -118,7 +117,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         </div>
         </div>
       </div>
-      <Footer/>
     </DocsContext.Provider>
   )
 }

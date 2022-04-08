@@ -111,7 +111,6 @@ export default function BlogIndexPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
