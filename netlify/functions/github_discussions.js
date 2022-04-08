@@ -1,8 +1,14 @@
 const { graphql } = require('@octokit/graphql')
-const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk="
-const categoryID = "DIC_kwDOFLhIt84B_T4d"
+const repositoryID = "MDEwOlJlcG9zaXRvcnkzNTE0NTM1NTI=" /* Respository ID */
+const categoryID = "DIC_kwDOFPLBcM4COBUH" /* Docs Category ID */
 
-exports.handler = async function (event, context) {
+/**  
+  ** The handler function create a GitHub discussion in the Docs category of community repository using GitHub GraphQL API. THhs functions accepts a POST request from the Feedback card and will create a Discussion only if GITHUB_TOKEN_CREATE_DISCUSSION has been added in .env properly.
+
+  @param event contains the title and body fo the feedback that is to be added in the GitHub discussion.
+*/
+
+exports.handler = async function (event) {
   if (event.httpMethod == 'POST') {
     const { title, feedback } = JSON.parse(event.body);
     
@@ -23,7 +29,6 @@ exports.handler = async function (event, context) {
           },
         })
       let url = createDiscussion.createDiscussion.discussion.url;
-      // res.status(200).json({ url: url, result: "Feedback posted in Discussion" });
       return {
         statusCode: 200,
         body: JSON.stringify({
@@ -39,7 +44,6 @@ exports.handler = async function (event, context) {
       }
     }
   }else{
-    console.log("Get Request")
     return {
       statusCode: 500,
       body: JSON.stringify({

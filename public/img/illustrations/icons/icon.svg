@@ -1,12 +1,1 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.75" y="0.75" width="46.5" height="46.5" rx="5.25" fill="#FDE68A" stroke="black" stroke-width="1.5"/>
-<path d="M29.1152 28.4885C28.5097 29.0334 28.0501 29.8245 28.0501 30.7378V36.4C28.0501 37.0903 27.4905 37.65 26.8001 37.65H21.2001C20.5097 37.65 19.9501 37.0903 19.9501 36.4V30.7378C19.9501 29.8245 19.4905 29.0334 18.885 28.4885C17.3276 27.0871 16.3501 25.0582 16.3501 22.8C16.3501 18.575 19.7751 15.15 24.0001 15.15C28.2251 15.15 31.6501 18.575 31.6501 22.8C31.6501 25.0582 30.6726 27.0871 29.1152 28.4885Z" stroke="black" stroke-width="1.5"/>
-<path d="M20.3999 34.2H27.5999M20.3999 31.2H27.5999" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linejoin="round"/>
-<circle cx="23.9998" cy="22.8" r="1.2" fill="black"/>
-<path d="M24 22.8V31.2" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linejoin="round"/>
-<path d="M24 9.59998V12" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M31.2002 10.8L30.0002 12.8784" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.7998 10.8L17.9998 12.8784" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 15.6L14.0785 16.8" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M36 15.6L33.9215 16.8" stroke="black" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" xmlns:v="https://vecta.io/nano"><g stroke="#000" stroke-width="1.5"><rect x=".75" y=".75" width="46.5" height="46.5" rx="5.25" fill="#fde68a"/><path d="M29.115 28.489c-.606.545-1.065 1.336-1.065 2.249V36.4a1.25 1.25 0 0 1-1.25 1.25h-5.6a1.25 1.25 0 0 1-1.25-1.25v-5.662c0-.913-.46-1.704-1.065-2.249A7.63 7.63 0 0 1 16.35 22.8a7.65 7.65 0 0 1 15.3 0 7.63 7.63 0 0 1-2.535 5.688z"/><path d="M20.4 34.2h7.2m-7.2-3h7.2" stroke-miterlimit="3.07467" stroke-linejoin="round"/></g><circle cx="24" cy="22.8" r="1.2" fill="#000"/><g stroke="#000" stroke-width="1.5" stroke-miterlimit="3.07467" stroke-linejoin="round"><path d="M24 22.8v8.4"/><path d="M24 9.6V12m7.2-1.2L30 12.878M16.8 10.8l1.2 2.078M12 15.6l2.079 1.2M36 15.6l-2.078 1.2" stroke-linecap="round"/></g></svg>

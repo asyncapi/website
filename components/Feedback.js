@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Feedback(className = '') {
@@ -7,8 +7,13 @@ export default function Feedback(className = '') {
     const [feedback, setFeedback] = useState('');
     const { asPath, pathname } = useRouter();
     
+    useEffect(() => {
+        setSubmitted(false);
+        setError(false);
+    }, [asPath])
+
     const date_stamp = new Date()
-    const time_stamp = `${date_stamp.getDate().toString()}/${(date_stamp.getMonth()+1).toString()}/${date_stamp.getFullYear().toString()} ${date_stamp.getHours().toString()}:${date_stamp.getMinutes().toString()}:${date_stamp.getSeconds().toString()}`;
+    const time_stamp = date_stamp.toUTCString();
     
     async function handleSubmit(e) {
         e.preventDefault();
@@ -17,25 +22,24 @@ export default function Feedback(className = '') {
             feedback: feedback
         }
 
-        fetch("/.netlify/functions/handler", {
+        fetch("/.netlify/functions/github_discussions", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
             },
         }).then((response) => {
+            
             if (response.status === 200) {
                 setSubmitted(true);
-                setTimeout(() => {
-                    setSubmitted(false);
-                }, 5000);
             }
             if(response.status !== 200) {
                 setError(true);
-                setTimeout(()=>{
-                    setError(false);
-                }, 5000); 
             }
+            response.json();
+            console.log(response);
+        }).then(data =>{
+            console.log(data);
         })
     }
 
