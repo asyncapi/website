@@ -121,7 +121,7 @@ function HomePage() {
 
             <div className="mt-12 lg:flex lg:flex-row-reverse">
               <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Calendar />
+                <Calendar size="2" className="float-left"/>
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
@@ -129,12 +129,17 @@ function HomePage() {
                     Join our public meetings
                   </Heading>
                   <Paragraph className="mt-2">
-                    We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
+                    AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
+
+                    <TextLink href="/community/meetings" target="_blank">
+                      Read more about our meetings.
+                    </TextLink>
                   </Paragraph>
                   <div className="mt-5 md:flex">
-                    <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list to get invite" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-red-500 hover:bg-red-400" text="Watch previous recordings" href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS" target="_blank" />
+                    <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" />
+                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Download ICS File" href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" target="_blank" />
+                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" text="Subscribe to Notifications" href="/newsletter" target="_blank" />
+                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Watch recordings" href="https://www.youtube.com/asyncapi" target="_blank" />
                   </div>
                 </div>
               </div>
