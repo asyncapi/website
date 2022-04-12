@@ -50,7 +50,7 @@
     "lodash": "^4.17.21",
     "markdown-to-txt": "^1.0.1",
     "markdown-toc": "1.2.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "monaco-editor": "^0.20.0",
     "next": "^11.1.3",
     "node-fetch": "^2.6.7",
