@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-featured: true
 ---
 
 Two years ago, the AsyncAPI Initiative participated in Hacktoberfest to help folks start their journey in open source. Hacktoberfest was a very successful event. We got feedback that the level of commitment that we presented makes us perfect candidates for Google Summer of Code. 
