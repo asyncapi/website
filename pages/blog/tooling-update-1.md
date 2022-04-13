@@ -19,7 +19,7 @@ Another update on what happen in our tools that help developers develop EDAs and
 
 The previous two updates can be found here: [January](https://gist.github.com/jonaslagoni/4a0117e1432936b89e05b6a509d94259) and [February](https://gist.github.com/jonaslagoni/185890cd7e84ed95c14b8f0556788b7b), however going forward I will add a new blog post for each update. If you have any remarks or if something is missing, you can [suggest changes in through the website repository](https://github.com/asyncapi/website/tree/master/pages/blog/tooling-update-1.md). 
 
-If you want to include updates from your personal tooling, the [next blog post can be found here](), just leave a comment with the updates you want included.
+If you want to include updates from your personal tooling, the [next blog post can be found here](https://github.com/asyncapi/website/pull/662), just leave a comment with the updates you want included.
 
 ## In focus
 [In January I opened up a discussion around potential changes](https://github.com/asyncapi/community/discussions/237) to the AsyncAPI roadmap to change the focus towards the entire lifecycle of APIs instead of only tooling to create APIs. Please do have a look and let us know what you think, as I will start to drive this change soon!
