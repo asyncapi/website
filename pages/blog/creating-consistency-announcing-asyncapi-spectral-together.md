@@ -11,7 +11,7 @@ authors:
     link: https://stoplight.io/
     byline: We build API tooling
 excerpt: | 
-  The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI is going to be a game changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
+The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI will be a game-changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
 ---
 
 # Creating Consistency: Announcing AsyncAPI & Spectral – Together!
@@ -33,7 +33,7 @@ descriptions for parameters or have other problematic design issues. Spectral ca
 ensure API definitions can reach their full potential, without needing to have special code owners review every change
 to the documents.
 
-Although Spectral is mostly referenced in the context of OpenAPI, AsyncAPI (funded by Postman), has been an integral
+Although Spectral is mostly referenced in the context of OpenAPI, AsyncAPI has been an integral
 part of Spectral for quite some time now. In fact, later this month our Spectral AsyncAPI ruleset will celebrate its
 second anniversary.
 
@@ -77,13 +77,13 @@ you get started.
 
 **Step One:**
 
-To get started, you need to install Spectral first, which can be done [here](https://meta.stoplight.io/docs/spectral/docs/getting-started/2-installation.md). Note that you need to have [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or
+To get started, you need to [install Spectral first](https://meta.stoplight.io/docs/spectral/docs/getting-started/2-installation.md). Note that you need to have [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or
 [Yarn](https://yarnpkg.com/getting-started/install) installed, running `npm install -g @stoplight/spectral-cli` or `yarn global add @stoplight/spectral-cli` is sufficient
 to get Spectral.
 
-Since we intend to use the AsyncAPI ruleset, we can also consider installing @stoplight/spectral-rulesets, which
-contains the actual ruleset we’ll use. However, it’s an optional step, as the installation of spectral-cli will already
-install spectral-rulesets for you.
+Since we intend to use the AsyncAPI ruleset, we can also consider installing `@stoplight/spectral-rulesets`, which
+contains the actual ruleset we’ll use. However, it’s an optional step, as the installation of `spectral-cli` will already
+install `spectral-rulesets` for you.
 
 **Step Two:**
 
@@ -92,12 +92,12 @@ create a file called `.spectral.json`. The following template can be used as a d
 
 ```json
 {
-  // this makes sure our rules apply only to AsyncAPI documents. 
+  // This makes sure our rules apply only to AsyncAPI documents. 
   // It might be handy in case you have other specs in the directory you intend to lint.
   "formats": ["asyncapi2"],
   // this includes the ruleset linked below
   // https://meta.stoplight.io/docs/spectral/ZG9jOjUzNDg-async-api-rules
-  // Note, that by default only recommended rules are enabled. 
+  // Note that by default, only recommended rules are enabled. 
   // Some rules listed in the article above may not be a fit for you,
   // therefore we don’t enable them by default.
   "extends": "spectral:asyncapi",
@@ -110,9 +110,8 @@ create a file called `.spectral.json`. The following template can be used as a d
 **Step Three:**
 
 To better facilitate the actual demands, Spectral allows you to create your own rules. These rules will fill the gaps
-and cover use cases unique to your workflow, style guide. While a more thorough reference regarding custom rules is
-available [here](https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg5-custom-rulesets#adding-rules), a basic rule could look as follows. The rule we’re about to implement will assert the presence and
-correctness of the version inside of Info object.
+and cover use cases unique to your workflow, or style guide. While a more thorough [reference regarding custom rules is
+available here](https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg5-custom-rulesets#adding-rules), a basic rule could look as follows. The rule we’re about to implement will assert the presence and correctness of the version inside of the `Info` object.
 
 ```json
 {
@@ -142,7 +141,7 @@ correctness of the version inside of Info object.
 
 **Step four:**
 
-Now that we have a basic rule, we can insert it into the ruleset we previously created
+Now that we have a basic rule, we can insert it into the ruleset we previously created:
 
 ```json
 {
@@ -175,7 +174,7 @@ Now that we have a basic rule, we can insert it into the ruleset we previously c
 
 **Step five:**
 
-Now that we have all pieces together, we can run Spectral. We’ll take the Hello World example from the AsyncAPI documentation.
+Now that we have all the pieces together, we can run Spectral. We’ll take the [`Hello World` example from the AsyncAPI documentation](https://www.asyncapi.com/docs/getting-started/hello-world).
 
 ```yaml
 # hello-world.yaml
@@ -198,7 +197,7 @@ To lint, execute the following command:
 
 ![Spectral Lint Results](/img/posts/creating-consistency-announcing-asyncapi-spectral-together/lint-results.webp)
 
-Thanks to the built-in AsyncAPI ruleset, we receive more feedback than just the information about invalid document version. The default configuration is usually reasonable for most, but should you want to tweak the version, please visit our [documentation](https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg5-custom-rulesets#modifying-rules) that explains everything in greater detail.
+Thanks to the built-in AsyncAPI ruleset, we receive more feedback than just the information about invalid document versions. The default configuration is usually reasonable for most, but should you want to tweak the version, please visit our [documentation](https://meta.stoplight.io/docs/spectral/ZG9jOjI1MTg5-custom-rulesets#modifying-rules) that explains everything in greater detail.
 
 Tada! :tada:
 
