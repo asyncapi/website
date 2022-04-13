@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI tooling update 1"
-date: 2022-02-07T06:00:00+01:00
+date: 2022-04-13T18:00:00+01:00
 type: Communication
 tags:
   - Project Status
