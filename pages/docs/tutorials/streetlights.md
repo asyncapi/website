@@ -21,7 +21,7 @@ You'll use Node.js to code the APIs and Mosquitto as the message broker. The sel
 
 Before you proceed to the next stage, you'll need to download a few things:
 
-1. Install [NodeJs](https://nodejs.org/en/download/) (v15 or newer).
+1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
 2. Install Git based on your Operating System (OS):
 - [Install Git on MacOs](https://git-scm.com/download/mac)
