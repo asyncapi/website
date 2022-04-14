@@ -147,11 +147,6 @@ function HomePage() {
                       href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" 
                       className="mt-2 md:mt-0 md:ml-2"
                     />
-                    <YoutubeButton 
-                      text="Watch recordings" 
-                      className="mt-2 md:mt-0 md:ml-2"
-                      href="https://www.youtube.com/c/AsyncAPI/playlists"
-                    />
                   </div>
                 </div>
               </div>
