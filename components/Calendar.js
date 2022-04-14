@@ -1,6 +1,6 @@
 import moment from 'moment';
-import Button from './buttons/Button';
 import eventsData from '../config/meetings.json';
+import GoogleCalendarButton from './buttons/GoogleCalendarButton';
 
 export default function Calendar({ className = '', size, text="text-left" }) {
   const CALENDAR_URL =
@@ -47,12 +47,12 @@ export default function Calendar({ className = '', size, text="text-left" }) {
         </a>
       ))}
       {eventsExist && (
-        <Button
-          className={`block md:inline-block md:text-center  mt-4 ${className}`}
-          text="Go to Calendar"
-          href={CALENDAR_URL}
-          target="_blank"
-        />
+        <div className='pt-4'>
+          <GoogleCalendarButton 
+            href={CALENDAR_URL}
+            text="View Calendar"
+          />
+        </div>
       )}
     </div>
   );

@@ -15,8 +15,8 @@ export default function YoutubeButton({
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={className}
-      bgClassName="bg-red-600 hover:bg-red-700"
+      className={`text-center block mt-2 md:mt-0 md:inline-block border-red-500 border text-red-500 ${className}`}
+      bgClassName="hover:bg-red-400"
     />
   )
 }

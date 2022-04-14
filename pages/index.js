@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
 import Head from '../components/Head'
-import Footer from '../components/Footer'
 import Slack from '../components/slack'
 import Button from '../components/buttons/Button'
 import Calendar from '../components/Calendar'
@@ -16,13 +15,16 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
-import DemoAnimation from "../components/DemoAnimation";
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
 import GoldSponsors from '../components/GoldSponsors'
 import SupportUs from '../components/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
+import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
+import ICSFileButton from '../components/buttons/ICSFileButton';
+import SubscribeButton from '../components/buttons/SubscribeButton';
+import YoutubeButton from '../components/buttons/YoutubeButton';
 
 function HomePage() {
   const posts = getAllPosts()
@@ -132,14 +134,24 @@ function HomePage() {
                     AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
 
                     <TextLink href="/community/meetings" target="_blank">
-                      Read more about our meetings.
+                      Learn more about our meetings.
                     </TextLink>
                   </Paragraph>
                   <div className="mt-5 md:flex">
-                    <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Download ICS File" href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" text="Subscribe to Notifications" href="/newsletter" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Watch recordings" href="https://www.youtube.com/asyncapi" target="_blank" />
+                    <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
+                    <SubscribeButton 
+                      href="/newsletter" 
+                      className="mt-2 md:mt-0 md:ml-2"
+                    />
+                    <ICSFileButton 
+                      href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" 
+                      className="mt-2 md:mt-0 md:ml-2"
+                    />
+                    <YoutubeButton 
+                      text="Watch recordings" 
+                      className="mt-2 md:mt-0 md:ml-2"
+                      href="https://www.youtube.com/c/AsyncAPI/playlists"
+                    />
                   </div>
                 </div>
               </div>
