@@ -15,8 +15,8 @@ export default function GoogleCalendarButton({
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={`text-center block mt-2 md:mt-0 md:inline-block border-primary-500 border text-primary-500 ${className}`}
-      bgClassName="hover:bg-primary-400"
+      className={`text-center block mt-2 md:mt-0 md:inline-block text-gray-900 ${className}`}
+      bgClassName="bg-gray-200 hover:bg-gray-100"
     />
   )
 }
