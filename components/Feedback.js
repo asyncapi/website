@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import GitHubIssue from "./buttons/GitHubIssue";
 
 export default function Feedback(className = '') {
     const [submitted, setSubmitted] = useState(false);
@@ -76,10 +77,7 @@ export default function Feedback(className = '') {
             <div className='text-center mx-auto text-md text-gray-500'>
                 We were unable to process your feedback
             </div>
-            <a className='bg-black text-white flex flex-row justify-center text-center shadow-md hover:shadow-lg transition-all duration-500 ease-in-out py-2 px-4 rounded mx-auto mt-4' href='https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+' target='_blank' rel='noopener noreferrer'>
-                <img src='/img/logos/github-fill.svg' className='w-6 mr-2' />
-                Create Issue on Github
-            </a>
+            <GitHubIssue />
         </div>
         );
     }
@@ -102,10 +100,7 @@ export default function Feedback(className = '') {
                     <div className='block lg:flex lg:flex-row mt-4 text-sm'>
                         <button className='bg-primary-500 text-white w-full lg:w-6/12 py-2 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded' type='submit'>Submit feedback</button>
                         <div className='my-2 text-center font-medium w-full lg:w-1/12 lg:my-auto'>OR</div>
-                        <a className='bg-black text-white flex flex-row lg:w-6/12 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out py-2 rounded justify-center' href='https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+' target='_blank' rel='noopener noreferrer'>
-                            <img src='/img/logos/github-fill.svg' className='mr-2' />
-                                Create Issue on Github
-                        </a>
+                        <GitHubIssue />
                     </div>
                 </div>
             </form>
