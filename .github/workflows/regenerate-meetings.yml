@@ -8,6 +8,9 @@ on:
 
 jobs:
   meetings:
+    env:
+      CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
+      CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
     name: Regenerate meetings.json
     runs-on: ubuntu-latest
     steps:
