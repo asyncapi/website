@@ -48,7 +48,7 @@ This post bundles updates from the following official tools: [bundler](https://g
 
 ### Glee
 - [sudoshreyansh](https://github.com/sudoshreyansh) [when Glee detect invalid returned data it is now logged](https://github.com/asyncapi/glee/pull/273)
-- [sudoshreyansh](https://github.com/sudoshreyansh) [added a bunch of more missing tests](https://github.com/asyncapi/glee/pull/266)
+- [sudoshreyansh](https://github.com/sudoshreyansh) [added a bunch more of missing tests](https://github.com/asyncapi/glee/pull/266)
 
 ### Optimizer
 - [KhudaDad414](https://github.com/KhudaDad414) [refactored the parsing process to easer add new paths used for optimization](https://github.com/asyncapi/optimizer/pull/85)
