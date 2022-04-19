@@ -1,15 +1,15 @@
 ---
-title: 'Overview'
-weight: 1
+title: Overview
+weight: 2
 ---
 
-## Concepts: Define AsyncAPI features and capabilities
+## Reference: AsyncAPI Specification, CLI, etc.
 
-Welcome to AsyncAPI **Concepts**! Our Concepts section will define the concepts of AsyncAPI features and capabilities.
+Welcome to AsyncAPI **Reference**! Our Reference section will document how to set up your development environment, CLI, APIs, and beyond.
 
 <Remember>
 
-## Contribute to AsyncAPI Concepts
+## Contribute to the AsyncAPI Reference section
 Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:

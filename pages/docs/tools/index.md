@@ -7,6 +7,8 @@ weight: 0
 
 Welcome to AsyncAPI **Tools**! Our Tools section documents the AsyncAPI tools ecosystem.
 
+<Remember>
+
 ## Contribute to AsyncAPI Tools
 Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
@@ -20,6 +22,7 @@ To get started as a Docs contributor:
 Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
 
 Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`alequetzalli`](https://github.com/alequetzalli) 🐙.
+</Remember>
 
 ___ 
 
