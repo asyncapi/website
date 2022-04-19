@@ -43,7 +43,7 @@ Let's scale this party up!
 We did it. AsyncAPI initiative joined Linux Foundation (LF). No more excuses for you not to join us. You're all welcome.
 
 I don't want to write about this too much as everything was described in different articles about us joining LF:
-- [AsyncAPI joins Linux Foundation](http://localhost:8080/blog/asyncapi-joins-linux-foundation)
+- [AsyncAPI joins Linux Foundation](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation)
 - [Linux Foundation Will Host AsyncAPI to Support Growth and Collaboration for Industry's Fastest-Growing API Spec](https://www.linuxfoundation.org/en/press-release/linux-foundation-will-host-asyncapi-to-support-growth-and-collaboration-for-industrys-fastest-growing-api-spec/)
 - [The Linux Foundation Announces Hosting of AsyncAPI](https://www.infoq.com/news/2021/03/linux-foundation-hosts-asyncapi/)
 - [AsyncAPI Looks to Unify API Workflow under Linux Foundation](https://thenewstack.io/asyncapi-looks-to-unify-api-workflow-under-linux-foundation/)
