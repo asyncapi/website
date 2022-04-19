@@ -15,9 +15,9 @@ excerpt: 'A short update on what has happened since the last update of AsyncAPI 
 featured: true
 ---
 
-Another update on what happen in our tools that help developers develop EDAs and APIs! :fire: 
+This is another update on what happened in our tools that help developers develop EDAs and APIs! :fire: 
 
-The previous two updates can be found here: [January](https://gist.github.com/jonaslagoni/4a0117e1432936b89e05b6a509d94259) and [February](https://gist.github.com/jonaslagoni/185890cd7e84ed95c14b8f0556788b7b), however going forward I will add a new blog post for each update. If you have any remarks or if something is missing, you can [suggest changes in through the website repository](https://github.com/asyncapi/website/tree/master/pages/blog/tooling-update-1.md). 
+The previous two updates can be found here: [January](https://gist.github.com/jonaslagoni/4a0117e1432936b89e05b6a509d94259) and [February](https://gist.github.com/jonaslagoni/185890cd7e84ed95c14b8f0556788b7b). Going forward, I will instead add new updates via blog posts. If you have any remarks or if something is missing, you can [suggest changes through the website repository](https://github.com/asyncapi/website/tree/master/pages/blog/tooling-update-1.md). 
 
 If you want to include updates from your personal tooling, the [next blog post can be found here](https://github.com/asyncapi/website/pull/662), just leave a comment with the updates you want included.
 
