@@ -19,7 +19,7 @@ This is another update on what happened in our tools that help developers develo
 
 The previous two updates can be found here: [January](https://gist.github.com/jonaslagoni/4a0117e1432936b89e05b6a509d94259) and [February](https://gist.github.com/jonaslagoni/185890cd7e84ed95c14b8f0556788b7b). Going forward, I will instead add new updates via blog posts. If you have any remarks or if something is missing, you can [suggest changes through the website repository](https://github.com/asyncapi/website/tree/master/pages/blog/tooling-update-1.md). 
 
-If you want to include updates from your personal tooling, the [next blog post can be found here](https://github.com/asyncapi/website/pull/662), just leave a comment with the updates you want included.
+If you want to include updates from your personal tooling, the [next blog post PR can be found here](https://github.com/asyncapi/website/pull/662), just leave a comment with the updates you want to be included.
 
 ## In focus
 [In January, I opened up a discussion around potential changes](https://github.com/asyncapi/community/discussions/237) to the AsyncAPI roadmap to change the focus towards the entire lifecycle of APIs instead of only tooling to create APIs. Please do look and let us know what you think, as I will start driving this change soon!
