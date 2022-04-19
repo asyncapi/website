@@ -133,7 +133,7 @@ function HomePage() {
                   <Paragraph className="mt-2">
                     AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
 
-                    <TextLink href="/community/meetings" target="_blank">
+                    <TextLink href="/community/meetings">
                       Learn more about our meetings.
                     </TextLink>
                   </Paragraph>
