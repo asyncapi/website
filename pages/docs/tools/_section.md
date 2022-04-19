@@ -1,4 +1,4 @@
 ---
-title: 'Tools: Use AsyncAPI tools'
+title: 'Tools'
 weight: 3
 ---
