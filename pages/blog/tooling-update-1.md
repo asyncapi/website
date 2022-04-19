@@ -22,7 +22,7 @@ The previous two updates can be found here: [January](https://gist.github.com/jo
 If you want to include updates from your personal tooling, the [next blog post can be found here](https://github.com/asyncapi/website/pull/662), just leave a comment with the updates you want included.
 
 ## In focus
-[In January I opened up a discussion around potential changes](https://github.com/asyncapi/community/discussions/237) to the AsyncAPI roadmap to change the focus towards the entire lifecycle of APIs instead of only tooling to create APIs. Please do have a look and let us know what you think, as I will start to drive this change soon!
+[In January, I opened up a discussion around potential changes](https://github.com/asyncapi/community/discussions/237) to the AsyncAPI roadmap to change the focus towards the entire lifecycle of APIs instead of only tooling to create APIs. Please do look and let us know what you think, as I will start driving this change soon!
 
 This means these tooling update blogs, will focus on the roadmap and goals to push them forward.
 
