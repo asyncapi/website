@@ -3,9 +3,9 @@ const repositoryID = "MDEwOlJlcG9zaXRvcnkzNTE0NTM1NTI=" /* Respository ID */
 const categoryID = "DIC_kwDOFPLBcM4COBUH" /* Docs Category ID */
 
 /**  
-  ** The handler function create a GitHub discussion in the Docs category of community repository using GitHub GraphQL API. THhs functions accepts a POST request from the Feedback card and will create a Discussion only if GITHUB_TOKEN_CREATE_DISCUSSION has been added in .env properly.
+  ** The handler function creates a GitHub discussion in the Docs category of the community repository using GitHub GraphQL API. This function accepts a POST request from the Feedback card and creates a Discussion only if GITHUB_TOKEN_CREATE_DISCUSSION has been added in .env properly.
 
-  @param event contains the title and body fo the feedback that is to be added in the GitHub discussion.
+  @param event contains the title and body of the feedback to be added in the GitHub discussion.
 */
 
 exports.handler = async function (event) {

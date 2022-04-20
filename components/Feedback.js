@@ -87,7 +87,7 @@ export default function Feedback(className = '') {
                 <img src="/img/illustrations/icons/icon.svg" className='w-28 md:w-14' />
                 <div className='flex flex-col ml-4'>
                     <div className='text-xl'>
-                        Was this Helpful?
+                        Was this helpful?
                     </div>
                     <div className='text-sm text-gray-500'>
                         Help us improve the docs by adding your contribution.
