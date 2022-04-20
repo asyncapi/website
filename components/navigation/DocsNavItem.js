@@ -1,39 +1,19 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-export default function DocsNavItem({
-  item,
-  active,
-  onClick = () => {},
-}) {
-  const { slug, title, isSection, isRootSection } = item
-  const commonClassNames = 'flex transition ease-in-out duration-150 focus:outline-none tracking-tight'
-  const sectionClassNames = `mt-8 mb-2 text-gray-900 text-xs font-bold tracking-wide uppercase ${commonClassNames}`
-  const designIsMyPassion = `mt-8 mb-2 text-gray-900 text-xxs font-bold tracking-wide uppercase ${commonClassNames}`
-  const activeItemClassNames = 'font-medium text-primary-500'
-  const nonActiveItemClassNames = 'font-regular text-gray-800 hover:text-primary-900'
-  const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
-
-  if (isRootSection) {
-    return (
-      <a className={sectionClassNames} onClick={onClick}>
-        {title}
-      </a>
-    )
-  }
-
-  if (isSection) {
-    return (
-      <a className={designIsMyPassion} onClick={onClick}>
-        {title}
-      </a>
-    )
-  }
+export default function DocsNavItem({ title, slug, active, activeSlug, onClick = () => {}, className = '', activeClassName = '', Icon }) {
+  const isActive = slug === '/docs' ? slug === activeSlug : active || activeSlug === slug || (Icon && activeSlug.startsWith(slug));
+  const classes = `${isActive ? activeClassName : ''} ${className} inline-block`
 
   return (
     <Link href={slug}>
-      <a className={itemClassNames} onClick={onClick}>
-        {title}
-      </a>
+      <div>
+        {Icon && <Icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? 'bg-red-200 border-red-200' : ''} h-5 w-5 inline-block border rounded border-white`} style={{ marginLeft: '3px', marginTop: '-1px' }} />}
+        <div className={classes}>
+          <a href={slug} onClick={onClick}>
+            {title}
+          </a>
+        </div>
+      </div>
     </Link>
-  )
+  );
 }

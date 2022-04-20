@@ -16,18 +16,20 @@ const postDirectories = [
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
 ]
+
 module.exports = async function buildPostList() {
-walkDirectories(postDirectories, result)
-if (process.env.NODE_ENV === 'production') {
-  console.log(inspect(result, { depth: null, colors: true }))
+  walkDirectories(postDirectories, result)
+  if (process.env.NODE_ENV === 'production') {
+    console.log(inspect(result, { depth: null, colors: true }))
+  }
+  writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 }
-writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
-}
+
 function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
     let directory = dir[0]
     let sectionSlug = dir[1] || ''
-    let files = readdirSync(directory)
+    let files = readdirSync(directory);
 
     for (let file of files) {
       let details
@@ -95,7 +97,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title += " (Pre-release)"
           }
         }
-        result.push(details)
+        result.push(details);
       }
     }
   }
@@ -124,8 +126,8 @@ function capitalize(text) {
 }
 
 function getReleaseDate(text) {
- // ex. filename = v2.1.0-2021-06-release
- const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
- const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
- return releaseDate
+  // ex. filename = v2.1.0-2021-06-release
+  const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
+  const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
+  return releaseDate
 }

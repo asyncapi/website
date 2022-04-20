@@ -1,5 +1,5 @@
 import ClickableLogo from '../ClickableLogo'
-import DocsNavItem from './DocsNavItem'
+import DocsNavs from './DocsNavs'
 
 export default function DocsMobileMenu({
   post,
@@ -22,15 +22,16 @@ export default function DocsMobileMenu({
             </button>
           </div>
           <div className="flex-1 h-0 pt-5 overflow-y-auto">
-            <ClickableLogo logoClassName="h-8 w-auto ml-3" />
+            <div className='pl-2.5'>
+              <ClickableLogo logoClassName="h-8 w-auto ml-3" />
+            </div>
+
             <nav className="mt-5 px-2 mb-4">
-              {
-                navigation.map((item, i) => (
-                  <div key={`mobile-menu-item-${i}`}>
-                    <DocsNavItem item={item} active={post.slug === item.slug} onClick={onClickClose} />
-                  </div>
-                ))
-              }
+              <ul>
+                {Object.values(navigation).map(navItem => (
+                  <DocsNavs item={navItem} active={post.slug} onClick={onClickClose} />
+                ))}
+              </ul>
             </nav>
           </div>
         </div>

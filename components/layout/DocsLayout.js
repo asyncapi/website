@@ -6,7 +6,7 @@ import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
 import ClickableLogo from '../ClickableLogo'
-import DocsNavItem from '../navigation/DocsNavItem'
+import DocsNavs from '../navigation/DocsNavs'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
@@ -23,6 +23,65 @@ function generateEditLink(post) {
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
 }
 
+function buildNavTree(navItems) {
+  const tree = {
+    'home': {
+      item: { title: 'Home', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'home', sectionWeight: 0, slug: '/docs' },
+      children: { orphans: [] }
+    }
+  }
+  
+  //first we make sure that list of items lists main section items and then sub sections, documents last
+  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+
+  sortedItems.forEach(item => {
+    //identify main sections
+    if (item.isRootSection) {
+      tree[item.rootSectionId] = { item, children: { orphans: []} }
+    }
+
+    //identify subsections
+    if (item.parent) {
+      tree[item.parent].children[item.sectionId] = { item, children: [] }
+    }
+
+    //add documents under subsections, unless they do not have one and are considered orphans
+    if (!item.isSection) {
+      if (item.sectionId) {
+        tree[item.rootSectionId].children[item.sectionId].children.push(item)
+      } else {
+        tree[item.rootSectionId].children.orphans.push(item)
+      }
+    }
+  })
+
+  for (const rootValue of Object.values(tree)) {
+    const allChildrenKeys = Object.keys(rootValue.children);
+    const allChildren = rootValue.children;
+
+    const orphans = allChildren.orphans;
+    if (orphans.length) {
+      orphans.sort((prev, next) => {
+        return prev.weight - next.weight
+      });
+    }
+
+    //handling subsections
+    if (allChildrenKeys.length > 1) {
+      for (const key of allChildrenKeys) {
+        if (key !== 'orphans') {
+          //identify subheader
+          allChildren[key].children.sort((prev, next) => {
+            return prev.weight - next.weight
+          })
+        }
+      }
+    }
+  }
+
+  return tree;
+}
+
 export default function DocsLayout({ post, navItems = {}, children }) {
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
@@ -33,82 +92,14 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   }
 
   const [showMenu, setShowMenu] = useState(false)
-
-  const buildNavTree = (navItems) => {
-      const tree = {}
-      
-      //first we make sure that list of items lists main section items and then sub sections, documents last
-      const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
-
-      sortedItems.forEach(item => {
-
-        //identify main sections
-        if (item.isRootSection) {
-          tree[item.rootSectionId] = { item, children: { orphans: []} }
-        }
-
-        //identify subsections
-        if (item.parent) {
-          tree[item.parent].children[item.sectionId] = { item, children: [] }
-        }
-
-        //add documents under subsections, unless they do not have one and are considered orphans
-        if (!item.isSection) {
-          if (item.sectionId) {
-            tree[item.rootSectionId].children[item.sectionId].children.push(item)
-          } else {
-            tree[item.rootSectionId].children.orphans.push(item)
-          }
-        }
-      })
-
-      return tree
-  }
-
-  const navigation = () => {
-    const tree = buildNavTree(navItems);
-    const flatTree = [];
-
-    for (const [rootKey, rootValue] of Object.entries(tree)) {
-      const allChildrenKeys = Object.keys(rootValue.children);
-      const allChildren = rootValue.children;
-
-      //handling root elements
-      flatTree.push(rootValue.item)
-
-      //handling documents that are under root section without subsection
-      const orphans = allChildren.orphans;
-      if (orphans.length) {
-        flatTree.push(...orphans.sort((prev, next) => {
-          return prev.weight - next.weight
-        }))
-      }
-
-      //handling subsections
-      if (allChildrenKeys.length > 1) {
-
-        for (const key of allChildrenKeys) {
-          if (key !== 'orphans') {
-            //identify subheader
-            flatTree.push(allChildren[key].item);
-
-            flatTree.push(...allChildren[key].children.sort((prev, next) => {
-              return prev.weight - next.weight
-            }))
-          }
-        }
-      }
-
-    }
-    return flatTree;
-  }
+  const navigation = buildNavTree(navItems);
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <StickyNavbar>
-            <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-        </StickyNavbar>
-      <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
+      <div className="bg-white px-4 sm:px-6 lg:px-8 xl:max-w-7xl xl:mx-auto">
         { showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
@@ -119,14 +110,13 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
               
               <nav className="flex-1 mt-3 pb-8 bg-white">
-                {
-                  navigation().map((item, i) => (
-                    <div key={`menu-item-${i}`}>
-                      <DocsNavItem item={item} active={post.slug === item.slug} />
-                    </div>
-                  ))
-                }
+                <ul>
+                  {Object.values(navigation).map(navItem => (
+                    <DocsNavs item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
+                  ))}
+                </ul>
               </nav>
+
             </div>
           </div>
         </div>
