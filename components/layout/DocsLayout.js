@@ -5,14 +5,11 @@ import sortBy from 'lodash/sortBy'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
-import ClickableLogo from '../ClickableLogo'
-import DocsNavs from '../navigation/DocsNavs'
+import DocsNav from '../navigation/DocsNav'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
-import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
-import Footer from '../Footer'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
 
@@ -25,8 +22,8 @@ function generateEditLink(post) {
 
 function buildNavTree(navItems) {
   const tree = {
-    'home': {
-      item: { title: 'Home', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'home', sectionWeight: 0, slug: '/docs' },
+    'welcome': {
+      item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
       children: { orphans: [] }
     }
   }
@@ -55,7 +52,7 @@ function buildNavTree(navItems) {
     }
   })
 
-  for (const rootValue of Object.values(tree)) {
+  for (const [rootKey, rootValue] of Object.entries(tree)) {
     const allChildrenKeys = Object.keys(rootValue.children);
     const allChildren = rootValue.children;
 
@@ -73,7 +70,11 @@ function buildNavTree(navItems) {
           //identify subheader
           allChildren[key].children.sort((prev, next) => {
             return prev.weight - next.weight
-          })
+          });
+        }
+        // point in slug for specification subgroup to the latest specification version
+        if (rootKey === 'reference' && key === 'specification') {
+          allChildren[key].item.slug = allChildren[key].children[0].slug;
         }
       }
     }
@@ -106,13 +107,13 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
-          <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
+          <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
               
-              <nav className="flex-1 mt-3 pb-8 bg-white">
+              <nav className="flex-1 pt-8 pb-8 bg-white">
                 <ul>
                   {Object.values(navigation).map(navItem => (
-                    <DocsNavs item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
+                    <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
                   ))}
                 </ul>
               </nav>

@@ -12,24 +12,28 @@ const cards = [
     title: 'Concepts',
     description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
     link: '/docs/concepts',
+    className: 'bg-secondary-200',
     Icon: IconGettingStarted,
   },
   {
     title: 'Tutorials',
     description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing.',
     link: '/docs/tutorials',
+    className: 'bg-pink-200',
     Icon: IconTutorials,
   },
   {
     title: 'Tools',
     description: 'Our Tools section documents the AsyncAPI tools ecosystem.',
     link: '/docs/tools',
+    className: 'bg-green-200',
     Icon: IconUseCases,
   },
   {
     title: 'Reference',
     description: 'Our Reference section teaches how to set up your development environment, CLI, APIs, and beyond.',
     link: '/docs/reference',
+    className: 'bg-yellow-200',
     Icon: IconSpec,
   }
 ];
@@ -44,7 +48,7 @@ export function DocsCards() {
   );
 }
 
-function Card({ title, description, link, Icon }) {
+function Card({ title, description, link, className, Icon }) {
   return (
     <Link href={link}>
       <a href={link} className='cursor-pointer'>
@@ -56,7 +60,7 @@ function Card({ title, description, link, Icon }) {
               className='pb-4 border-b border-gray-300'
             >
               <div className='flex flex-row items-center'>
-                <div className='flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg border border-gray-800 bg-secondary-100 text-gray-900 sm:h-12 sm:w-12'>
+                <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
                   <Icon className="h-6 w-6" />
                 </div>
                 <span className='ml-4'>{title}</span>

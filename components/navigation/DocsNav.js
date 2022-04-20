@@ -7,15 +7,30 @@ import IconGradCap from '../icons/GradCap'
 import IconPlant from '../icons/Plant'
 import IconPaper from '../icons/Paper'
 
-const icons = {
-  'home': IconHome,
-  'concepts': IconRocket,
-  'tutorials': IconGradCap,
-  'tools': IconPlant,
-  'reference': IconPaper,
+const buckets = {
+  'welcome': {
+    icon: IconHome,
+    className: 'bg-primary-200 border-primary-200',
+  },
+  'concepts': {
+    icon: IconRocket,
+    className: 'bg-secondary-200 border-secondary-200',
+  },
+  'tutorials': {
+    icon: IconGradCap,
+    className: 'bg-pink-200 border-pink-200',
+  },
+  'tools': {
+    icon: IconPlant,
+    className: 'bg-green-200 border-green-200',
+  },
+  'reference': {
+    icon: IconPaper,
+    className: 'bg-yellow-200 border-yellow-200',
+  },
 };
 
-export default function DocsNavs({
+export default function DocsNav({
   item,
   active,
   onClick = () => {},
@@ -23,7 +38,7 @@ export default function DocsNavs({
   const { orphans, ...subCategories } = item.children;
   return (
     <li className='mb-4' key={item.item.title}>
-      <DocsNavItem {...item.item} activeSlug={active} className='font-body font-regular text-sm text-black ml-1.5' activeClassName='font-semibold' Icon={icons[item.item.rootSectionId]} onClick={onClick} />
+      <DocsNavItem {...item.item} activeSlug={active} className='font-body font-regular text-sm text-black' activeClassName='font-semibold' bucket={buckets[item.item.rootSectionId]} onClick={onClick} />
       <ul className='border-l border-gray-200 pl-4 ml-3 mt-1'>
         {orphans && orphans.map((orphan, index) => (
           <li key={orphan.title}>
@@ -45,36 +60,4 @@ export default function DocsNavs({
       </ul>
     </li>
   );
-
-  // const { slug, title, isSection, isRootSection } = item
-  // const commonClassNames = 'flex transition ease-in-out duration-150 focus:outline-none tracking-tight'
-  // const rootSectionClassNames = `mt-8 mb-2 text-gray-900 text-xs font-bold tracking-wide uppercase ${commonClassNames}`
-  // const sectionClassNames = `mt-8 mb-2 text-gray-900 text-xxs font-bold tracking-wide uppercase ${commonClassNames}`
-  // const activeItemClassNames = 'font-medium text-primary-500'
-  // const nonActiveItemClassNames = 'font-regular text-gray-800 hover:text-primary-900'
-  // const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
-
-  // if (isRootSection) {
-  //   return (
-  //     <a className={rootSectionClassNames} onClick={onClick}>
-  //       {title}
-  //     </a>
-  //   )
-  // }
-
-  // if (isSection) {
-  //   return (
-  //     <a className={sectionClassNames} onClick={onClick}>
-  //       {title}
-  //     </a>
-  //   )
-  // }
-
-  // return (
-  //   <Link href={slug}>
-  //     <a className={itemClassNames} onClick={onClick}>
-  //       {title}
-  //     </a>
-  //   </Link>
-  // )
 }

@@ -1,19 +1,19 @@
 import Link from 'next/link';
 
-export default function DocsNavItem({ title, slug, active, activeSlug, onClick = () => {}, className = '', activeClassName = '', Icon }) {
-  const isActive = slug === '/docs' ? slug === activeSlug : active || activeSlug === slug || (Icon && activeSlug.startsWith(slug));
-  const classes = `${isActive ? activeClassName : ''} ${className} inline-block`
+export default function DocsNavItem({ title, slug, active, activeSlug, onClick = () => {}, className = '', activeClassName = '', bucket }) {
+  const isActive = slug === '/docs' ? slug === activeSlug : active || activeSlug === slug || (bucket && activeSlug.startsWith(slug));
+  const classes = `${isActive ? activeClassName : ''} ${className} inline-block`;
 
   return (
-    <Link href={slug}>
-      <div>
-        {Icon && <Icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? 'bg-red-200 border-red-200' : ''} h-5 w-5 inline-block border rounded border-white`} style={{ marginLeft: '3px', marginTop: '-1px' }} />}
-        <div className={classes}>
+    <div className='inline-block'>
+      {bucket && <bucket.icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} h-5 w-5 inline-block border rounded border-white`} style={{ marginLeft: '3px', marginRight: '6px', marginTop: '-1px' }} />}
+      <div className={classes}>
+        <Link href={slug}>
           <a href={slug} onClick={onClick}>
             {title}
           </a>
-        </div>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
