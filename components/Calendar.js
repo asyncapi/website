@@ -1,6 +1,7 @@
 import moment from 'moment';
 import eventsData from '../config/meetings.json';
 import GoogleCalendarButton from './buttons/GoogleCalendarButton';
+import Heading from './typography/Heading';
 
 export default function Calendar({ className = '', size, text="text-left" }) {
   const CALENDAR_URL =
@@ -23,11 +24,13 @@ export default function Calendar({ className = '', size, text="text-left" }) {
     <div
       className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4`}
     >
-      <h3 className={`${text} text-lg mb-8`}>Upcoming events</h3>
+      <Heading level="h2" typeStyle="heading-md-semibold">
+        Upcoming events
+      </Heading> 
       {getEvents().map((event, index) => (
         <a
           href={event.url}
-          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1"
+          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
           key={index}
         >
           <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
