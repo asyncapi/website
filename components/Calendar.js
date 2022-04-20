@@ -1,14 +1,14 @@
 import moment from 'moment';
-import Button from './buttons/Button';
-import eventsData from '../meetings.json';
+import eventsData from '../config/meetings.json';
+import GoogleCalendarButton from './buttons/GoogleCalendarButton';
+import Heading from './typography/Heading';
 
-export default function Calendar({ className = '' }) {
+export default function Calendar({ className = '', size, text="text-left" }) {
   const CALENDAR_URL =
-    'https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com';
+    'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const eventsExist = eventsData.length > 0;
 
   function getEvents() {
-    if (eventsExist) {
       let meetingsWithDates = eventsData.map((event) => ({
         ...event,
         date: moment(event.date),
@@ -16,45 +16,21 @@ export default function Calendar({ className = '' }) {
       meetingsWithDates.sort((a, b) => a.date - b.date);
       return meetingsWithDates
         .filter((meeting) => meeting.date > new Date())
-        .slice(0, 2);
-    } else {
-      return getCalculatedEvents();
-    }
+        .slice(0, size || meetingsWithDates.length);
   }
-  function getCalculatedEvents() {
-    const referenceDate = moment.utc('2020-06-09T08:00:00');
-    let nextDate = referenceDate;
-    let morningOrAfternoon = 'morning';
 
-    do {
-      morningOrAfternoon = toggleMorningAfternoon(morningOrAfternoon);
-      nextDate.add(14, 'days').hours(morningOrAfternoon === 'morning' ? 8 : 16);
-    } while (nextDate.isBefore());
-
-    return [
-      nextDate.hours(morningOrAfternoon === 'morning' ? 8 : 16),
-      moment(nextDate)
-        .add(14, 'days')
-        .hours(morningOrAfternoon === 'morning' ? 16 : 8),
-    ].map((date) => ({
-      title: 'Community SIG Meeting',
-      url: CALENDAR_URL,
-      date,
-    }));
-  }
-  function toggleMorningAfternoon(morningOrAfternoon) {
-    return morningOrAfternoon === 'morning' ? 'afternoon' : 'morning';
-  }
 
   return (
     <div
-      className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4 ${className}`}
+      className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4`}
     >
-      <h3 className="text-left text-lg mb-8">Upcoming events</h3>
+      <Heading level="h2" typeStyle="heading-md-semibold">
+        Upcoming events
+      </Heading> 
       {getEvents().map((event, index) => (
         <a
           href={event.url}
-          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1"
+          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
           key={index}
         >
           <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
@@ -63,7 +39,7 @@ export default function Calendar({ className = '' }) {
             </span>
           </div>
           <div className="text-left flex-grow sm:pl-6 sm:mt-0">
-            <h2 className="font-medium title-font text-gray-900 text-xl">
+            <h2 className="font-medium title-font text-gray-900 text-xl hover:text-gray-500">
               {event.title}
             </h2>
             <p className="text-gray-600">
@@ -74,12 +50,12 @@ export default function Calendar({ className = '' }) {
         </a>
       ))}
       {eventsExist && (
-        <Button
-          className="block md:inline-block md:text-center float-left mt-4"
-          text="Go to Calendar"
-          href={CALENDAR_URL}
-          target="_blank"
-        />
+        <div className='pt-4'>
+          <GoogleCalendarButton 
+            href={CALENDAR_URL}
+            text="View Calendar"
+          />
+        </div>
       )}
     </div>
   );

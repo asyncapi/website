@@ -1,10 +1,8 @@
 const rssFeed = require('./build-rss');
 const buildRoadMap = require('./build-roadmap');
 const buildPostList = require('./build-post-list');
-const buildMeetings = require('./build-meetings');
 
 async function start() {
-  buildMeetings();
   buildRoadMap();
   await buildPostList();
   rssFeed(

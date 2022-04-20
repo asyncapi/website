@@ -1,8 +1,8 @@
-import Button from './Button'
-import IconYoutube from '../icons/YouTube'
+import Button from './Button';
+import IconSubscribe from '../icons/Subscribe';
 
-export default function YoutubeButton({
-  text = 'Watch on YouTube',
+export default function GoogleCalendarButton({
+  text = 'Subscribe',
   href,
   target = '_blank',
   iconPosition = 'left',
@@ -11,7 +11,7 @@ export default function YoutubeButton({
   return (
     <Button
       text={text}
-      icon={<IconYoutube className="inline-block -mt-1 w-6 h-6" />}
+      icon={<IconSubscribe />}
       href={href}
       iconPosition={iconPosition}
       target={target}
