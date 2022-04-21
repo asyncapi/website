@@ -21,7 +21,38 @@ The new version of the AsyncAPI specification - 2.4.0 - is now available.
 
 ## Server Variables can be now referenced from components
 
-TBD
+To allow for more flexibility in how AsyncAPI documents are structured and enable content to be reused, `serverVariables` can now be defined as reusable components.
+
+For example:
+
+```yaml
+asyncapi: 2.4.0
+servers:
+  development:
+    $ref: '#/components/servers/myserver'
+  production:
+    $ref: '#/components/servers/myserver'
+components:
+  servers:
+    myserver:
+      url: "{stage}.my-server.com:{port}"
+      protocol: ws
+      variables:
+        stage:
+          $ref: "#/components/serverVariables/stage"
+        port:
+          $ref: "#/components/serverVariables/port"
+  serverVariables:
+    stage:
+      default: dev
+    port:
+      enum: [5000, 6000]
+      default: 5000
+```
+
+These are added to the many other aspects of the AsyncAPI specification which can be declared as reusable components. You can see the full list in the [Components Object section of the AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.4.0#componentsObject).
+
+This new feature was contributed by [Daniel Kocot](https://github.com/danielkocot). For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/717) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/707).
 
 ## Security can now be defined at Operation level
 
