@@ -23,7 +23,7 @@ export default function NavBar ({
 
     setTimeout(() => {
       setOpen(menu)
-    }, 0)
+    }, 0);
   }
 
   useEffect(() => {
@@ -57,13 +57,13 @@ export default function NavBar ({
         </div>
         <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
           <div className="relative">
-            <NavItem text="Docs" href='/docs' onClick={() => showMenu('learning')} hasDropdown />
+            <NavItem text="Docs" href='/docs' onClick={() => showMenu('learning')} onMouseEnter={() => showMenu('learning')} hasDropdown />
             {open === 'learning' && <LearningPanel />}
           </div>
 
           <div className="relative">
-            <NavItem text="Tools" onClick={() => showMenu('tooling')} hasDropdown />
-            {open === 'tooling' && <ToolsPanel />}
+            <NavItem text="Tools" onClick={() => showMenu('tooling')} onMouseEnter={() => showMenu('tooling')} hasDropdown />
+            { open === 'tooling' && <ToolsPanel /> }
           </div>
 
           <div className="relative">

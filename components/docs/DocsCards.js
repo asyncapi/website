@@ -19,7 +19,7 @@ const cards = [
     title: 'Tutorials',
     description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing.',
     link: '/docs/tutorials',
-    className: 'bg-pink-200',
+    className: 'bg-pink-100',
     Icon: IconTutorials,
   },
   {

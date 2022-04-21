@@ -6,11 +6,11 @@ export default function DocsNavItem({ title, slug, active, activeSlug, onClick =
 
   return (
     <div className='inline-block'>
-      {bucket && <bucket.icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} h-5 w-5 inline-block border rounded border-white`} style={{ marginLeft: '3px', marginRight: '6px', marginTop: '-1px' }} />}
       <div className={classes}>
         <Link href={slug}>
           <a href={slug} onClick={onClick}>
-            {title}
+            {bucket && <bucket.icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} h-5 w-5 inline-block border rounded border-white`} style={{ marginLeft: '3px', marginRight: '6px', marginTop: '-1px' }} />}
+            <span>{title}</span>
           </a>
         </Link>
       </div>
