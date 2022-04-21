@@ -1,7 +1,7 @@
 ---
 title: "Streetlights - Interactive (Alpha)"
 description: Interactive version of the original Streetlights tutorial.
-weight: 20
+weight: 120
 ---
 
 >tl;dr

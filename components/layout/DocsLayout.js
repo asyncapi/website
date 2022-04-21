@@ -38,6 +38,7 @@ function buildNavTree(navItems) {
     }
 
     //identify subsections
+    console.log(item,item.parent) 
     if (item.parent) {
       tree[item.parent].children[item.sectionId] = { item, children: [] }
     }
@@ -45,6 +46,7 @@ function buildNavTree(navItems) {
     //add documents under subsections, unless they do not have one and are considered orphans
     if (!item.isSection) {
       if (item.sectionId) {
+        console.log(tree[item.rootSectionId])
         tree[item.rootSectionId].children[item.sectionId].children.push(item)
       } else {
         tree[item.rootSectionId].children.orphans.push(item)
