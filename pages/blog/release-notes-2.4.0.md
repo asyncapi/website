@@ -19,11 +19,20 @@ The new version of the AsyncAPI specification - 2.4.0 - is now available.
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.3.0'` into `asyncapi: '2.4.0'`
 
-
-## Server Variable Object within the Component Object
+## Server Variables can be now referenced from components
 
 TBD
 
+## Security can now be defined at Operation level
+
+TBD
+
+## Reusability of Servers defined in Components is clarified in the specification
+
+Reusability of Servers was introduced in [AsyncAPI 2.3.0](https://www.asyncapi.com/blog/release-notes-2.3.0#servers-and-channels-can-now-be-defined-as-reusable-components). However, the change was not fully clarified in the specification, leading to confusion.
+
+Thanks to [Vladimir Gorej](https://github.com/char0n), this is now clarified by mentioning that elements for the Servers Object can be either Server Object or a Reference Object.
+For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/706) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/705).
 
 ## Tooling support
 
@@ -36,12 +45,10 @@ The following official AsyncAPI tools are already updated to support 2.4.0 versi
  - [Generator](https://github.com/asyncapi/generator/) uses the latest @asyncapi/parser package, so while generating output, it can validate 2.4.0 documents. Upgrade to `TBD` version.
 Last but not least is the AsyncAPI Studio. Check new studio with [this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.4.0/examples/websocket-gemini.yml).
 
-
 ## Look ahead
 
 We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
 
 We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see the [milestone on Github](https://github.com/asyncapi/spec/milestone/18).
-
 
 > Photo by <a href="https://unsplash.com/@andurache?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandru Tudorache</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
