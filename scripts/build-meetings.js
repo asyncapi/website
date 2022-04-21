@@ -15,17 +15,15 @@ async function buildMeetings() {
   try {
 
       //cron job runs this always on midnight
-      //so every day we get refreshed list of meetings for comming 7 days
+      //so every day we get refreshed list of meetings for comming 14 days
       const currentTime = new Date(Date.now()).toISOString();
-      //we check moday
-      const timeTomorrow = new Date(Date.parse(currentTime) + 1 * 24 * 60 * 60 * 1000).toISOString();
-      //7 days front
-      const timeIn8Days = new Date(Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000).toISOString();
+      //14 days front
+      const timeIn15Days = new Date(Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000).toISOString();
 
       const eventsList = await calendar.events.list({
           calendarId: process.env.CALENDAR_ID,
-          timeMax: timeIn8Days,
-          timeMin: timeTomorrow
+          timeMax: timeIn15Days,
+          timeMin: currentTime
       })
 
       eventsItems = eventsList.data.items.map((e) => {
