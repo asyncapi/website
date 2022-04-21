@@ -18,6 +18,15 @@ export default function Layout({ children }) {
         {children}
       </DocsLayout>
     )
+  } else if (pathname.startsWith('/community/mentorship')) {
+    const posts = getAllPosts()
+    const post = getPostBySlug(pathname);
+    console.log(pathname, post);
+    return (
+      <DocsLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/community/mentorship'))}>
+        {children}
+      </DocsLayout>
+    )
   } else if (pathname.startsWith('/blog/')) {
     const posts = getAllPosts()
     const post = getPostBySlug(pathname)

@@ -12,6 +12,7 @@ const result = []
 const basePath = 'pages'
 const postDirectories = [
   [`${basePath}/docs`, '/docs'],
+  [`${basePath}/community/mentorship`, '/community/mentorship'],
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
