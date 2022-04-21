@@ -20,7 +20,7 @@ jobs:
         id: netlify
         with:
           site_name: asyncapi-website
-          max_timeout: 300
+          max_timeout: 600
 
       - name: Lighthouse Audit
         id: lighthouse_audit
