@@ -97,7 +97,7 @@ For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/7
 
 The following official AsyncAPI tools are already updated to support 2.4.0 version of the specification:
 - JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `TBD`, and it contains the 2.4.0 JSON Schema.
-- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.4.0 documents. Upgrade to `TBD` version.
+- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.4.0 documents. Upgrade to `v2.14.0` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to `TBD` version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.4.0 version of the spec. Upgrade to `TBD` version.
 - [Modelina](https://github.com/asyncapi/modelina/) now also accepts AsyncAPI documents valid against the 2.4.0 version of the spec. Upgrade to `TBD` version.
