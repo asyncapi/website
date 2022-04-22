@@ -7,4 +7,12 @@
   command = "npm run build && npm run export"
   functions = "netlify/functions"
   publish = "out"
-  
+
+[[redirects]]
+  from = "/definitions/*"
+  to = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/:splat"
+  status = 200
+
+[[edge_functions]]
+function = "serve-definitions"
+path = "/definitions/*"
