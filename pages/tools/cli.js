@@ -61,7 +61,7 @@ export default function CliPage() {
 
   const description =
     'Create, validate, and explore your AsyncAPI files with our CLI tool.';
-  const image = '/img/social/generator.png';
+  const image = '/img/social/cli-card.jpg';
 
   return (
     <GenericLayout title="CLI" description={description} image={image} wide>
