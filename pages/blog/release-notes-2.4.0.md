@@ -56,7 +56,35 @@ This new feature was contributed by [Daniel Kocot](https://github.com/danielkoco
 
 ## Security can now be defined at Operation level
 
-TBD
+Until today, Security requirements were defined at Server level. That restricted the security requirements to be the same for all channels linked with a Server, and for all operations of those channels.
+Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is it possible to increase that granularity by defining a set of security requirements at Operation level. 
+In fact, when setting Security in both the Server and the Operation, both should be satisfied.
+
+For example:
+
+```yaml
+asyncapi: 2.4.0
+servers:
+  production:
+    url: "mykafkacluster.org:8092"
+    protocol: kafka-secure
+    security:
+      - service_auth:
+         - auth:write
+         - auth:read
+channels:
+  some/events:
+    servers:
+      - production
+    subscribe:
+      # This operation level security implies the ability to send a message to 
+      # `some/events` with Authorization headers that have `auth:write` scope. 
+      # Note that the operation level security must still satisfy security options 
+      # specified at the server level.
+      security: 
+       service_auth:
+         - auth:read  
+```
 
 ## Reusability of Servers defined in Components is clarified in the specification
 
