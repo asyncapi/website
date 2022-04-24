@@ -13,22 +13,29 @@ export default function Home() {
     >
       <title>AsyncAPI - Dashboard</title>
 
-      <div className="max-w-screen-xl mx-auto pb-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div className="py-16">
         <Header />
-        <div className="block lg:flex gap-3  w-full  mt-8">
+        <div className="flex flex-col gap-6 md:flex-row  w-full  mt-8">
           <Table
-            title="🔥 Hot Topics"
-            data={data.hotDiscussions.map((item) => {
-              return {
-                id: item.id,
-                title: item.title,
-                author: item.author,
-                repo: item.repo,
-                isPR: item.isPR,
-                resourcePath: item.resourcePath,
-                labels: item.labels,
-              };
-            })}
+            title={
+              <div className="flex gap-3">
+                <img
+                  data-tooltip-target="tooltip-default"
+                  src="/img/illustrations/icons/fire.svg"
+                />
+                <div
+                  id="tooltip-default"
+                  role="tooltip"
+                  class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+                >
+                  Tooltip content
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <span>Hot Topics</span>
+              </div>
+            }
+            data={data.hotDiscussions}
+            className="lg:w-1/3"
           />
           <GoodFirstIssues issues={data.goodFirstIssues} />
         </div>

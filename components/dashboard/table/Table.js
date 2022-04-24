@@ -1,42 +1,24 @@
 import Row from './Row';
-import Pagination from './Pagination';
-import Select from '../../form/Select';
 
-export default function Table({ title, data, paginationOptions, filters }) {
+export default function Table({
+  title,
+  data,
+  className,
+  listClassName,
+}) {
   return (
-    <div className=" bg-white lg:w-1/2 border border-gray-200 rounded">
-      <div className="inline-flex bg-primary-300 w-full p-3 gap-1 rounded">
-        <h2 className="text-2xl font-semibold leading-tight">{title}</h2>
+    <div
+      className={`bg-gray-50 lg:w-1/2 border  border-gray-200 rounded ${className}`}
+    >
+      <div className="inline-flex bg-white w-full p-5 rounded">
+        <h2 className="font-semibold text-base w-full">{title}</h2>
       </div>
-      {filters && (
-        <div className="flex w-full gap-2 p-2 pb-0">
-          {filters.map((filter) => (
-            <Select
-              key={filter.values[0].text}
-              onChange={filter.listener}
-              className="flex-1"
-              options={filter.values}
-              selected={filter.selected}
-            />
+      <div className="inline-block min-w-full overflow-y-scroll max-h-108">
+        <ul className={`grid gap-4 m-4  ${listClassName}`}>
+          {data.map((item) => (
+            <Row key={item.id} item={item} />
           ))}
-        </div>
-      )}
-      <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 overflow-x-auto min-w-full">
-        <div className="inline-block min-w-full">
-          <ul className="min-w-full leading-normal divide-y divide-gray-200">
-            {data.map((item) => (
-              <Row key={item.id} item={item} />
-            ))}
-          </ul>
-          {paginationOptions && (
-            <Pagination
-              issuesPerPage={paginationOptions.issuesPerPage}
-              totalIssues={paginationOptions.totalIssues}
-              currentPage={paginationOptions.currentPage}
-              paginate={paginationOptions.paginate}
-            />
-          )}
-        </div>
+        </ul>
       </div>
     </div>
   );

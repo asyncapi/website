@@ -57,7 +57,7 @@ async function getHotDiscussions(discussions) {
     })
   );
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
-  return result.slice(0, 9);
+  return result.slice(0, 7);
 }
 async function writeToFile(content) {
   writeFileSync(

@@ -1,48 +1,48 @@
-function Row({ item }) {
+export default function Row({ item }) {
   return (
     <li>
-      <div className="flex gap-2 leading-tight tracking-tight p-2">
-        <img
-          className="w-4 h-4"
-          src={
-            item.isPR
-              ? '/img/illustrations/icons/pull-request.svg'
-              : '/img/illustrations/icons/issue.svg'
-          }
-        />
-        <div className="flex flex-col gap-1">
-          <a className="text-gray-600 text-sm uppercase font-semibold" href={`https://github.com/${item.repo}`}>
-            {item.repo}
-          </a>
-          <div>
-            <a href={`https://github.com/${item.resourcePath}`}>
-              <span className="font-semibold text-lg text-gray-600 w-full">
+      <div className=" p-4 bg-white rounded-md border border-gray-200">
+        <a href={`https://github.com/${item.resourcePath}`}>
+          <div className="flex justify-between">
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-1 items-center underline">
+                <img
+                  className="w-4 h-4"
+                  src={
+                    item.isPR
+                      ? '/img/illustrations/icons/pull-request.svg'
+                      : '/img/illustrations/icons/issue.svg'
+                  }
+                />
+                <a
+                  className="text-gray-900 text-sm lowercase font-light"
+                  href={`https://github.com/${item.repo}`}
+                >
+                  {item.repo}
+                </a>
+              </div>
+
+              <span className="text-base font-medium text-gray-900 w-full leading-5">
                 {item.title}
               </span>
-            </a>
-          </div>
-          <div className="inline-flex items-center gap-1">
-            {item.labels &&
-              item.labels.map((label) => (
-                <span
-                  key={label.name}
-                  className={`bg-blue-200 px-2 py-0.5 text-base rounded-full z-0`}
-                >
-                  {label.name}
-                </span>
-              ))}
 
-            <a href={`https://github.com/${item.author}`}>
-              <img
-                className="rounded-full blur-none h-5 w-5"
-                src={`https://github.com/${item.author}.png?size=20`}
-              />
-            </a>
+              {item.labels.length > 0 && (
+                <div className="inline-flex items-center gap-1">
+                  {item.labels.map((label) => (
+                    <span
+                      key={label.name}
+                      className={`bg-secondary-300 text-sm leading-5 px-2 rounded-full`}
+                    >
+                      {label.name}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+            <img src="/img/illustrations/icons/arrow.svg" />
           </div>
-        </div>
+        </a>
       </div>
     </li>
   );
 }
-
-export default Row;
