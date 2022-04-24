@@ -67,7 +67,7 @@ Generated files of the website go to the `.next` folder.
 
 ## JSON Schema definitions
 
-All AsyncAPI JSON Schema definition files are being served within the `/definitions/<file>` path. The content is literally being served from GH, in particular from https://github.com/asyncapi/spec-json-schemas/tree/master/schemas.
+All AsyncAPI JSON Schema definition files are being served within the `/definitions/<file>` path. The content is being served from GH, in particular from https://github.com/asyncapi/spec-json-schemas/tree/master/schemas.
 This is possible thanks to the following:
 
 1. A [Netlify Rewrite rule](https://docs.netlify.com/routing/redirects/rewrites-proxies/) located in the [netlify.toml](netlify.toml) file, which acts as proxy for all requests to the `/definitions/<file>` path, serving the content from GH without having an HTTP redirect.
