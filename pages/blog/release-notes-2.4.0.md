@@ -52,7 +52,7 @@ components:
 
 These are added to the many other aspects of the AsyncAPI specification which can be declared as reusable components. You can see the full list in the [Components Object section of the AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.4.0#componentsObject).
 
-This new feature was contributed by [Daniel Kocot](https://github.com/danielkocot). For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/717) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/707).
+This new feature was contributed by [Daniel Kocot](https://github.com/danielkocot). For more detail, see [Daniel's `/spec #717` pull request](https://github.com/asyncapi/spec/pull/717) and the [Github issue where Daniel's change to `serverVariables ` was discussed](https://github.com/asyncapi/spec/issues/707).
 
 ## Security can now be defined at Operation level
 
