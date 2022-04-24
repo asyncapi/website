@@ -91,7 +91,7 @@ channels:
 Reusability of Servers was introduced in [AsyncAPI 2.3.0](https://www.asyncapi.com/blog/release-notes-2.3.0#servers-and-channels-can-now-be-defined-as-reusable-components). However, the change was not fully clarified in the specification, leading to confusion.
 
 Thanks to [Vladimir Gorej](https://github.com/char0n), this is now clarified by mentioning that elements for the Servers Object can be either Server Object or a Reference Object.
-For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/706) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/705).
+For more detail, see [Vladimir's `/spec #706`pull request](https://github.com/asyncapi/spec/pull/706) and the [Github issue where Vladimir's Servers Object change was discussed](https://github.com/asyncapi/spec/issues/705).
 
 ## Tooling support
 
