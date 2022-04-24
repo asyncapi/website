@@ -102,7 +102,7 @@ The following official AsyncAPI tools are already updated to support 2.4.0 versi
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.4.0 version of the spec. Upgrade to `TBD` version.
 - [Modelina](https://github.com/asyncapi/modelina/) now also accepts AsyncAPI documents valid against the 2.4.0 version of the spec. Upgrade to `TBD` version.
  - [Generator](https://github.com/asyncapi/generator/) uses the latest @asyncapi/parser package, so while generating output, it can validate 2.4.0 documents. Upgrade to `TBD` version.
-Last but not least is the AsyncAPI Studio. Check new studio with [this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.4.0/examples/websocket-gemini.yml).
+Last but not least is the AsyncAPI Studio. [Check out the new Studio with this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.4.0/examples/websocket-gemini.yml).
 
 ## Look ahead
 
