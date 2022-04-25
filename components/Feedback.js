@@ -77,7 +77,7 @@ export default function Feedback(className = '') {
             <div className='text-center mx-auto text-md text-gray-500'>
                 We were unable to process your feedback
             </div>
-            <GitHubIssue />
+            <GitHubIssue className="mx-auto" />
         </div>
         );
     }

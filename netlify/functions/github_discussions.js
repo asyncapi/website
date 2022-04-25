@@ -1,6 +1,6 @@
 const { graphql } = require('@octokit/graphql')
-const repositoryID = "MDEwOlJlcG9zaXRvcnkzNTE0NTM1NTI=" /* Respository ID */
-const categoryID = "DIC_kwDOFPLBcM4COBUH" /* Docs Category ID */
+const repositoryID = "MDEwOlJlcG9zaXRvcnkzNDc2MjE1NTk=" /* Respository ID */
+const categoryID = "DIC_kwDOFLhIt84B_T4d" /* Docs Category ID */
 
 /**  
   ** The handler function create a GitHub discussion in the Docs category of community repository using GitHub GraphQL API. THhs functions accepts a POST request from the Feedback card and will create a Discussion only if GITHUB_TOKEN_CREATE_DISCUSSION has been added in .env properly.
