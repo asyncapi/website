@@ -77,10 +77,10 @@ channels:
     servers:
       - production
     subscribe:
-      # This operation level security implies the ability to send a message to 
-      # `some/events` with Authorization headers that have `auth:write` scope. 
-      # Note that the operation level security must still satisfy security options 
-      # specified at the server level.
+      # This operation level security implies the ability to subscribe to messages from
+      # `some/events` channel with Authorization headers 
+      # that have `auth:read` scope. Note that an operation level security must still satisfy 
+      # security requirements specified at the server level.
       security: 
        service_auth:
          - auth:read  
@@ -96,18 +96,18 @@ For more detail, see [Vladimir's `/spec #706`pull request](https://github.com/as
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 2.4.0 version of the specification:
-- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `TBD`, and it contains the 2.4.0 JSON Schema.
-- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.4.0 documents. Upgrade to `v2.14.0` version.
+- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `3.0.0`, and it contains the 2.4.0 JSON Schema.
+- [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.4.0 documents. Upgrade to `1.15.0` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to `TBD` version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.4.0 version of the spec. Upgrade to `TBD` version.
 - [Modelina](https://github.com/asyncapi/modelina/) now also accepts AsyncAPI documents valid against the 2.4.0 version of the spec. Upgrade to `TBD` version.
  - [Generator](https://github.com/asyncapi/generator/) uses the latest @asyncapi/parser package, so while generating output, it can validate 2.4.0 documents. Upgrade to `TBD` version.
-Last but not least is the AsyncAPI Studio. [Check out the new Studio with this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.4.0/examples/websocket-gemini.yml).
+Last but not least is the AsyncAPI Studio. [Check out the Studio with this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.4.0/examples/websocket-gemini.yml).
 
 ## Look ahead
 
 We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
 
-We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see the [milestone on Github](https://github.com/asyncapi/spec/milestone/18).
+We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see [Work on 3.0 release issue](https://github.com/asyncapi/spec/issues/691).
 
 > Photo by <a href="https://unsplash.com/@andurache?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandru Tudorache</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
