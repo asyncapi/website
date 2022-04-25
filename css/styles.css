@@ -34,4 +34,12 @@ li > p {
     0%{background-position:0% 50%}
     100%{background-position:200% 50%}
 }
+
+.two-liner {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /*! purgecss end ignore */

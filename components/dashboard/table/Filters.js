@@ -56,6 +56,7 @@ export default function Filters({
       <img
         onClick={() => setOpen(!open)}
         ref={reference}
+        alt='filter menu'
         src="/img/illustrations/icons/filters-icon.svg"
         className={`cursor-pointer ${className}`}
       />

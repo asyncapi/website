@@ -7,6 +7,7 @@ export default function Row({ item }) {
             <div className="flex flex-col gap-2">
               <div className="flex gap-1 items-center underline">
                 <img
+                  alt='issue or pull-request icon'
                   className="w-4 h-4"
                   src={
                     item.isPR
@@ -22,7 +23,7 @@ export default function Row({ item }) {
                 </a>
               </div>
 
-              <span className="text-base font-medium text-gray-900 w-full leading-5">
+              <span className="text-base font-medium text-gray-900 w-full leading-5 two-liner">
                 {item.title}
               </span>
 
@@ -39,7 +40,7 @@ export default function Row({ item }) {
                 </div>
               )}
             </div>
-            <img src="/img/illustrations/icons/arrow.svg" />
+            <img alt='arrow icon' src="/img/illustrations/icons/arrow.svg" />
           </div>
         </a>
       </div>
