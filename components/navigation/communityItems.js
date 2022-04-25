@@ -4,7 +4,6 @@ export default [
   { text: 'Slack Workspace', href: 'https://asyncapi.com/slack-invite', target: '_blank', description: `Need help? Want to share something? Join our Slack workspace. We're nice people :)` },
   { text: 'Contributing', href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi', target: '_blank', description: `We are always welcoming and looking for contributions. If you are interested check out our contribution guide.` },
   { text: 'Dashboard', href: '/community/dashboard', target: '_blank', description: `Just need a good first issue to start your contribution journey? or want to see what topics are hot in discussion?` },
-  { text: 'Technical Steering Committee', href: '/community/tsc', description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.' }
   { text: 'Technical Steering Committee', href: '/community/tsc', description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.' },
   { text: 'Meetings', href: '/community/meetings', description: 'See what meetings are organized under AsyncAPI umbrella and join one of them.' }
 ]

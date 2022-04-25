@@ -17,17 +17,14 @@ function GoodFirstIssues({ issues }) {
   //Get current issues
 
   let filteredIssues = issues;
-  console.log(filteredIssues, selectedRepo);
   if (selectedRepo !== 'All')
     filteredIssues = filteredIssues.filter(
       (issue) => issue.repo === selectedRepo
     );
-  console.log(filteredIssues, selectedRepo);
   if (selectedArea !== 'All')
     filteredIssues = filteredIssues.filter(
       (issue) => issue.area === selectedArea
     );
-  console.log(filteredIssues, selectedRepo);
   return (
     <Table
       title={
