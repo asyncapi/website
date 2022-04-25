@@ -7,7 +7,7 @@ import TagManager from 'react-gtm-module'
 export default function HeadComponent({
   title,
   description = 'Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.',
-  image = '/img/social/card.png',
+  image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
   rssLink = '/rss.xml'
 }) {
