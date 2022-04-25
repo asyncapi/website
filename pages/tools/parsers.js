@@ -24,7 +24,7 @@ export default function ParsersPage() {
   }
 
   const description = 'Use our parsers to build your own tools or add AsyncAPI support to your product.'
-  const image = '/img/social/parsers.png'
+  const image = '/img/social/parsers-card.jpg'
 
   return (
     <GenericLayout

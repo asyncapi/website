@@ -190,7 +190,7 @@ export default function ModelinaPlaygroundPage() {
   const tryItOutRef = useRef(null);
 
   const description = 'Sometimes you just want to generate data models for your payload.';
-  const image = '/img/social/modelina.png';
+  const image = '/img/social/modelina-card.jpg';
 
   const tabs = (
     <CodeBlock
