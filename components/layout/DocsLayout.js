@@ -24,7 +24,7 @@ function buildNavTree(navItems) {
   const tree = {
     'welcome': {
       item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
-      children: { orphans: [] }
+      children: {}
     }
   }
   
@@ -34,7 +34,7 @@ function buildNavTree(navItems) {
   sortedItems.forEach(item => {
     //identify main sections
     if (item.isRootSection) {
-      tree[item.rootSectionId] = { item, children: { orphans: []} }
+      tree[item.rootSectionId] = { item, children: {} }
     }
 
     //identify subsections
@@ -42,39 +42,44 @@ function buildNavTree(navItems) {
       tree[item.parent].children[item.sectionId] = { item, children: [] }
     }
 
-    //add documents under subsections, unless they do not have one and are considered orphans
     if (!item.isSection) {
       if (item.sectionId) {
+        let section = tree[item.rootSectionId].children[item.sectionId];
+        if (!section) {
+          tree[item.rootSectionId].children[item.sectionId] = { item, children: [] }
+        }
         tree[item.rootSectionId].children[item.sectionId].children.push(item)
       } else {
-        tree[item.rootSectionId].children.orphans.push(item)
+        tree[item.rootSectionId].children[item.title] = { item };
       }
     }
   })
 
   for (const [rootKey, rootValue] of Object.entries(tree)) {
-    const allChildrenKeys = Object.keys(rootValue.children);
     const allChildren = rootValue.children;
+    const allChildrenKeys = Object.keys(allChildren);
 
-    const orphans = allChildren.orphans;
-    if (orphans.length) {
-      orphans.sort((prev, next) => {
-        return prev.weight - next.weight
-      });
-    }
+    rootValue.children = allChildrenKeys
+      .sort((prev, next) => {
+        return allChildren[prev].item.weight - allChildren[next].item.weight;
+      }).reduce(
+        (obj, key) => { 
+          obj[key] = allChildren[key]; 
+          return obj;
+        }, 
+        {}
+      );
 
     //handling subsections
     if (allChildrenKeys.length > 1) {
       for (const key of allChildrenKeys) {
-        if (key !== 'orphans') {
-          //identify subheader
-          allChildren[key].children.sort((prev, next) => {
-            return prev.weight - next.weight
-          });
-        }
+        allChildren[key].children?.sort((prev, next) => {
+          return prev.weight - next.weight;
+        });
+
         // point in slug for specification subgroup to the latest specification version
         if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.slug = allChildren[key].children[0].slug;
+          allChildren[key].item.href = allChildren[key].children[0].slug;
         }
       }
     }

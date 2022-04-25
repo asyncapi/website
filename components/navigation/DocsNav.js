@@ -35,19 +35,14 @@ export default function DocsNav({
   active,
   onClick = () => {},
 }) {
-  const { orphans, ...subCategories } = item.children;
+  const subCategories = item.children;
   return (
     <li className='mb-4' key={item.item.title}>
       <DocsNavItem {...item.item} activeSlug={active} className='font-body font-regular text-sm text-black hover:font-semibold' activeClassName='font-semibold' bucket={buckets[item.item.rootSectionId]} onClick={onClick} />
       <ul className='border-l border-gray-200 pl-4 ml-3 mt-1'>
-        {orphans && orphans.map(orphan => (
-          <li key={orphan.title}>
-            <DocsNavItem {...orphan} activeSlug={active} className={`font-body font-regular text-sm text-gray-700 leading-8 hover:text-secondary-600`} activeClassName='text-secondary-600' onClick={onClick} />
-          </li>
-        ))}
-        {Object.values(subCategories).map(subCategory => (
+        {Object.values(subCategories).map((subCategory, index) => index === 0 ? null : (
           <li key={subCategory.item.title}>
-            <DocsNavItem {...subCategory.item} activeSlug={active} active={active.startsWith(subCategory.item.slug)} className='font-body font-regular text-sm text-black leading-8 hover:font-semibold' activeClassName='font-semibold' onClick={onClick} />
+            <DocsNavItem {...subCategory.item} activeSlug={active} className='font-body font-regular text-sm text-black leading-8 hover:font-semibold' activeClassName='font-semibold' onClick={onClick} />
             <ul className='border-l border-gray-200 pl-4'>
               {subCategory.children && subCategory.children.map(subItem => (
                 <li key={subItem.title}>
