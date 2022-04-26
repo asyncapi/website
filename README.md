@@ -39,7 +39,7 @@ Launch the development server with the hot reloading functionality that allows a
 npm run dev
 ```
 
-You can access the live development server at [localhost:8080](http://localhost:8080).
+You can access the live development server at [localhost:3000](http://localhost:3000).
 
 #### Compose a new blog post
 
@@ -126,6 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://juanarce.me"><img src="https://avatars.githubusercontent.com/u/30204147?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juan A.</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=jaas666" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/luphieanza"><img src="https://avatars.githubusercontent.com/u/20577131?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Rafly Andrianza</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=luphieanza" title="Documentation">📖</a></td>
   </tr>
 </table>
 
