@@ -10,7 +10,7 @@ import TextLink from '../components/typography/TextLink'
 
 export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
-  const image = '/img/social/roadmap.png'
+  const image = '/img/social/website-card.jpg'
 
   if (Object.keys(roadmapData).length === 0) {
     return (

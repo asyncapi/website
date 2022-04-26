@@ -7,13 +7,13 @@ export default function Button({
   iconPosition = 'right',
   className,
   bgClassName = 'bg-primary-500 hover:bg-primary-400',
-  textClassName = 'text-white hover:text-white',
+  textClassName = 'text-white',
   buttonSize,
   ...props
 }) {
 
-  const smallButtonClasses = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading text-white ${className || ''}`
-  const classNames = `${bgClassName} ${textClassName} shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading text-white ${className || ''}`
+  const smallButtonClasses = `${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading text-white ${className || ''}`
+  const classNames = `${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading text-white ${className || ''}`
   
   if (!href) {
     return (

@@ -27,7 +27,7 @@ export default function GeneratorPage() {
   }
 
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.'
-  const image = '/img/social/generator.png'
+  const image = '/img/social/generator-card.jpg'
 
   return (
     <GenericLayout
