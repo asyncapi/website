@@ -18,7 +18,7 @@ export default function DocsNavItem({ title, slug, href, indexDocument, activeSl
           <a href={href || slug} onClick={onClick}>
             {bucket && (
               <div className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded p-0.5`} style={{ marginRight: '5px', marginBottom: '-6px' }}>
-                <bucket.icon className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} h-5 w-5`} />
+                <bucket.icon className='h-5 w-5' />
               </div>
             )}
             <span>{title}</span>
