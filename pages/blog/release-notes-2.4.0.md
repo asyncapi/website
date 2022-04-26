@@ -81,9 +81,9 @@ channels:
       # `some/events` channel with Authorization headers 
       # that have `auth:read` scope. Note that an operation level security must still satisfy 
       # security requirements specified at the server level.
-      security: 
-       service_auth:
-         - auth:read  
+      security:
+        - service_auth:
+          - auth:read  
 ```
 
 ## Reusability of Servers defined in Components is clarified in the specification
