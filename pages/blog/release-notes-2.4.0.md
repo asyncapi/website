@@ -11,13 +11,36 @@ authors:
     photo: /img/avatars/smoya.webp
     link: https://twitter.com/smoyac
     byline: Pilot at AsyncAPI Airlines
-excerpt: 'AsyncAPI 2.4 is now released. This brings ... TBD ...'
+excerpt: 'AsyncAPI 2.4 is now released. This brings really helpful additions, such as the new `messageId' field, Server Variables reusability, and security at Operation level'
 featured: true
 ---
 
 The new version of the AsyncAPI specification - 2.4.0 - is now available.
 
 > This is a minor release, and it doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.3.0'` into `asyncapi: '2.4.0'`
+
+## Message uniqueness thanks to the new messageId field
+
+As operations have `OperationId`, AsyncAPI messages can now define `messageId`. This new field is used to identify a message across a whole AsyncAPI document uniquely.
+This new field will be helpful in tools that ask the user to select a message as input, such as validating their schema or filtering code to be generated.
+
+For example:
+
+```yaml
+asyncapi: 2.4.0
+components:
+  messages:
+    SomeMessage:
+      messageId: SomeMessage
+      payload:
+        type: object
+        properties:
+          name:
+            type: string
+```
+
+This new feature was contributed by [Waleed Ashraf](https://github.com/WaleedAshraf).
+For more detail, see [Waleed's `/spec #751`pull request](https://github.com/asyncapi/spec/pull/751) and the [Github issue where Waleed's `MessageId` feature addition was discussed](https://github.com/asyncapi/spec/issues/458).
 
 ## Server Variables can be now referenced from components
 
