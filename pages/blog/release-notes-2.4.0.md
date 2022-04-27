@@ -80,7 +80,6 @@ This new feature was contributed by [Daniel Kocot](https://github.com/danielkoco
 ## Security can now be defined at Operation level
 
 Until today, Security requirements were defined at Server level. That restricted the security requirements to be the same for all channels linked with a Server, and for all operations of those channels.
-Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is it possible to increase that granularity by defining a set of security requirements at Operation level. 
 In fact, when setting Security in both the Server and the Operation, both should be satisfied.
 
 For example:
@@ -108,6 +107,8 @@ channels:
         - service_auth:
           - auth:read  
 ```
+
+Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is now possible to increase security granularity by defining a set of security requirements at Operation level. For more detail, see [Sekharban's `/spec #584` pull request](https://github.com/asyncapi/spec/pull/584) and the [Github issue where Sekharban's suggested feature was discussed](https://github.com/asyncapi/spec/issues/584).
 
 ## Reusability of Servers defined in Components is clarified in the specification
 
