@@ -78,7 +78,7 @@ We released a [new 2.4.0 version of AsyncAPI Specification](https://github.com/a
 
 Huge shout out to [Sergio Moya](https://twitter.com/smoyac), who was a release coordinator for the 2.4.0 release and pushed all the doors to make sure the release could go out.
 
-2.4.0 was released, but this doesn't block us from working on something much bigger, 3.0.0 version of the specification :rocket:
+2.4.0 was released, but this doesn't block us from working on something much bigger, 3.0.0 version of the specification! :rocket:
 
 If you haven't heard about 3.0.0 yet, I highly recommend you have a look at the [3.0.0 release article](https://www.asyncapi.com/blog/async-api-spec-3.0-release) written by [Harsh Mishra](https://www.linkedin.com/in/harshcasper/).
 
