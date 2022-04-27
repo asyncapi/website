@@ -146,7 +146,7 @@ I recommend you [follow Barbaño's monthly updates](https://gist.github.com/Barb
 
 One of our missions is to have kick-ass documentation. Easy, right? 
 
-Writing docs is easy, just like writing code. Well, we all know the devil is hidden in details. Details like gathering requirements, figuring out architecture, and making sure you have a well-motivated group of people working on it. And last but not least, make sure the community can easily share feedback on your work transparently.
+Writing docs is easy, just like writing code (at least in my opinion :stuck_out_tongue_winking_eye:). Well, we all know the devil is hidden in details. Details like gathering requirements, figuring out architecture, and making sure you have a well-motivated group of people working on it. And last but not least, make sure the community can easily share feedback on your work transparently.
 
 I wrote already about [Alejandra Quetzalli](https://twitter.com/QuetzalliAle) and the efforts to get AsyncAPI into GSoD. Getting a well-motivated group of people to work on docs, checked. :white_check_mark:
 
