@@ -162,7 +162,7 @@ Since this week, we can also say "checked" :white_check_mark: to the idea of **g
   }}
 />
 
-Each documentation page has a dedicated feedback form that one can fill in anonymously. As a result, feedback lands in [GitHub Discussion](https://github.com/asyncapi/community/discussions/340).
+Each documentation page has a dedicated feedback form that one can fill in anonymously. The form injects the feedback into a [docs-related GitHub Discussion like this example](https://github.com/asyncapi/community/discussions/340).
 
 Huge applause to:
 - [Alejandra Quetzalli](https://twitter.com/QuetzalliAle) for leading the change
