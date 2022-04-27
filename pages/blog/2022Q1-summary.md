@@ -9,7 +9,7 @@ authors:
   - name: Lukasz Gornicki
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
-    byline: AsyncAPI Gardner
+    byline: AsyncAPI Gardener
 excerpt: 'New AsyncAPI brand. AsyncAPI 2.4 and work on the 3.0 spec release. Meetings organization change. 2022 conference organization. AND SO MUCH MORE!'
 featured: true
 ---
