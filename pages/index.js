@@ -1,5 +1,5 @@
 import { getAllPosts } from '../lib/api'
-import {Helmet} from "react-helmet";
+import {Helmet} from 'react-helmet'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
