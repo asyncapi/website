@@ -69,7 +69,7 @@ export default function Footer() {
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
             <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" />
+              <img src="https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg" className="inline" />
             </a>
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
