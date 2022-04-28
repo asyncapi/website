@@ -1,6 +1,6 @@
 ---
 title: "Summary of things that happened at AsyncAPI Initiative from January to April, 2022"
-date: 2022-04-28T06:00:00+01:00
+date: 2022-04-29T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
