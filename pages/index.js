@@ -1,5 +1,4 @@
 import { getAllPosts } from '../lib/api'
-// import {Helmet} from 'react-helmet'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -42,9 +41,6 @@ function HomePage() {
 
   return (
     <>
-      {/* <Helmet>
-        <html lang="en" />
-      </Helmet> */}
       <Head />
       <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
