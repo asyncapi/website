@@ -92,7 +92,7 @@ One of the [goals for our 2022 community-building efforts](https://github.com/as
 
 ### Google Summer of Code
 
-We did not start well. We were not accepted for [Google Summer of Code](https://summerofcode.withgoogle.com). Don't ask me why. I really do not know. I wish I could have a clear answer from them about what failed on my end, where I made mistakes in our application. :sad:
+We did not start well. We were not accepted for [Google Summer of Code](https://summerofcode.withgoogle.com). Don't ask me why. I really do not know. I wish I could have a clear answer from them about what failed on my end, where I made mistakes in our application. :cry: 
 
 We never give up here at AsyncAPI, though. :smiley:
 
