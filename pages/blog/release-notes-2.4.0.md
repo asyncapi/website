@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Spec 2.4.0 Release Notes
-date: 2022-04-25T19:00:00+01:00
+date: 2022-04-28T09:00:00+01:00
 type: Communication
 tags:
   - Specification
