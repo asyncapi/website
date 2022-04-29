@@ -4,7 +4,7 @@
       "pattern": "^https://www.postman.com/company/careers/"
     },
     {
-      "pattern": "^https://github.com/asyncapi/bindings"
+      "pattern": "^https://github.com/asyncapi/"
     },
     {
       "pattern": "^https://twitter.com/"
