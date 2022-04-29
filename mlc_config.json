@@ -5,6 +5,9 @@
     },
     {
       "pattern": "^https://github.com/asyncapi/bindings"
+    },
+    {
+      "pattern": "^https://twitter.com/"
     }
   ]
 }
