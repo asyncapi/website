@@ -4,7 +4,6 @@ description: Interactive version of the original Streetlights tutorial.
 weight: 20
 ---
 
->tl;dr
 Please try out [this](https://www.katacoda.com/asyncapi/scenarios/streetlight-tut) interactive tutorial and let us know what you think, as we plan to have all the docs written this way.<!--more-->
 
 One of the most critical roadmap items for the AsyncAPI Initiative in 2020 was **Make it super easy for people to get started with AsyncAPI**. One of the crucial things here is to put a lot of love into the documentation.
