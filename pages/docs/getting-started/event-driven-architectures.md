@@ -48,7 +48,7 @@ A message is a piece of information that's sent by the publishers to the broker,
 
 ### Channels
 
-One detail that might pass unnoticed from the diagram above is the existence of channels. All brokers support communication through multiple channels. The industry doesn't have a common term for them, so you may see them referred to as _topics_, _routing keys_, _event types_, etc.
+One detail that might pass unnoticed from the diagram above is the existence of _channels_. All _brokers_ support communication through multiple channels. The industry doesn't have a common term for them, so you may see them referred to as _topics_, _routing keys_, _event types_, etc.
 
 A channel is usually assigned a name or identifier (e.g., `user_signed_up`) and it is often good practice to send a single type of message through a particular channel. Think about TV or radio channels; the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn't respect that rule, you (the subscriber) would only see and hear interference.
 
