@@ -34,4 +34,20 @@ li > p {
     0%{background-position:0% 50%}
     100%{background-position:200% 50%}
 }
+
+:target {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 768px){
+  :target {
+    scroll-margin-top: 140px;
+  }  
+}
+
+@media (max-width: 640px){
+  :target {
+    scroll-margin-top: 150px;
+  }  
+}
 /*! purgecss end ignore */
