@@ -202,7 +202,7 @@ function HomePage() {
           Testimonials
         </Heading>
         <section>
-          <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
+          <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-4 lg:px-6 flex flex-col space-y-2">
             <Testimonial
               className="md:pr-10 lg:pr-16"
               text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
