@@ -4,9 +4,8 @@ import AsyncAPILogo from '../AsyncAPILogo'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
 import LearningPanel from './LearningPanel'
-import NavMenu from './NavMenu'
+import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
-import communityItems from './communityItems'
 import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
@@ -69,7 +68,8 @@ export default function NavBar ({
 
           <div className="relative">
             <NavItem text="Community" onClick={() => showMenu('community')} hasDropdown />
-            {open === 'community' && <NavMenu items={communityItems} />}
+            {/* {open === 'community' && <NavMenu items={communityItems} />} */}
+            {open === 'community' && <CommunityPanel />}
           </div>
 
           {otherItems.map((item, index) => (
