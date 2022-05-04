@@ -1,16 +1,4 @@
 import { getAllPosts } from '../lib/api'
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-// import {Helmet} from 'react-helmet'
-=======
->>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
-=======
-import {Helmet} from "react-helmet";
->>>>>>> parent of 5e19416... feat: add skip link to the navbar
-=======
-import {Helmet} from 'react-helmet'
->>>>>>> parent of bd93162... fix: add html lang atttibute across all pages
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -53,27 +41,15 @@ function HomePage() {
 
   return (
     <>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      {/* <Helmet>
-        <html lang="en" />
-      </Helmet> */}
-=======
->>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
-=======
-      <Helmet>
-        <html lang="en" />
-      </Helmet>
->>>>>>> parent of bd93162... fix: add html lang atttibute across all pages
       <Head />
       <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      
+
       <Container wide>
-      <Hero className="mb-24" /> 
+      <Hero className="mb-24" />
       </Container>
-      
+
       <Container className="text-center pb-12" wide>
         <Heading
           level="h3"
@@ -83,7 +59,7 @@ function HomePage() {
           Adopted by the world leading brands
         </Heading>
         <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? 
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?
           <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
             Let us know here!
           </TextLink>
@@ -114,7 +90,7 @@ function HomePage() {
       </div>
 
       <Container className="text-center py-12" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -163,12 +139,12 @@ function HomePage() {
                   </Paragraph>
                   <div className="mt-5 md:flex">
                     <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
-                    <SubscribeButton 
-                      href="/newsletter" 
+                    <SubscribeButton
+                      href="/newsletter"
                       className="mt-2 md:mt-0 md:ml-2"
                     />
-                    <ICSFileButton 
-                      href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" 
+                    <ICSFileButton
+                      href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics"
                       className="mt-2 md:mt-0 md:ml-2"
                     />
                   </div>
@@ -180,7 +156,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -191,7 +167,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -202,7 +178,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-md-semibold"
           className="mb-4"
@@ -210,7 +186,7 @@ function HomePage() {
             Want to Sponsor Us?
         </Heading>
         <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? 
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor?
           <TextLink href="https://opencollective.com/asyncapi" target="_blank">
             Support us!
           </TextLink>
@@ -265,7 +241,7 @@ function HomePage() {
       </Container>
       <Container wide>
         <div className="text-center">
-          <Heading 
+          <Heading
             level="h2"
             typeStyle="heading-lg"
           >
