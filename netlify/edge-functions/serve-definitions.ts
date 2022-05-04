@@ -28,18 +28,22 @@ export default async (request: Request, context: Context) => {
 };
 
 async function sendMetrics(request: Request, context: Context) {
+  const splitPath = new URL(request.url).pathname.split("/");
+  const event = {
+    "eventType":"AsyncAPIJSONSchemaDefinitionDownload",
+    "source": splitPath[1],
+    "file": splitPath[2],
+  };
+  
   try {
     const rawResponse = await doFetch(`https://insights-collector.eu01.nr-data.net/v1/accounts/${NR_ACCOUNT}/events`, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
       method: 'POST',
       headers: {
-        'Api-Key': NR_API_KEY,
+        'Api-Key': NR_API_KEY || "",
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        "eventType":"AsyncAPIJSONSchemaDefinitionDownload",
-        "path": new URL(request.url).pathname,
-      })
+      body: JSON.stringify(event)
     });
     
     if (rawResponse.status !== 200) {
