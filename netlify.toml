@@ -8,6 +8,7 @@
   functions = "netlify/functions"
   publish = "out"
 
+# Used by JSON Schema definitions fetched directly from AsyncAPI website
 [[redirects]]
   from = "/definitions/*"
   to = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/:splat"
@@ -16,3 +17,14 @@
 [[edge_functions]]
 function = "serve-definitions"
 path = "/definitions/*"
+
+# Used by JSON Schema definitions fetched from schemastore.org
+[[redirects]]
+  from = "/schemas/*"
+  to = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/:splat"
+  status = 200
+
+[[edge_functions]]
+function = "serve-definitions"
+path = "/schemas/*"
+
