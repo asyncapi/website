@@ -2,12 +2,16 @@ import { getAllPosts } from '../lib/api'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import {Helmet} from 'react-helmet'
 =======
 >>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
 =======
 import {Helmet} from "react-helmet";
 >>>>>>> parent of 5e19416... feat: add skip link to the navbar
+=======
+import {Helmet} from 'react-helmet'
+>>>>>>> parent of bd93162... fix: add html lang atttibute across all pages
 =======
 import {Helmet} from 'react-helmet'
 >>>>>>> parent of bd93162... fix: add html lang atttibute across all pages
@@ -55,11 +59,17 @@ function HomePage() {
     <>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* <Helmet>
         <html lang="en" />
       </Helmet> */}
 =======
 >>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
+=======
+      <Helmet>
+        <html lang="en" />
+      </Helmet>
+>>>>>>> parent of bd93162... fix: add html lang atttibute across all pages
 =======
       <Helmet>
         <html lang="en" />
