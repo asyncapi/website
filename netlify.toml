@@ -20,11 +20,11 @@ path = "/definitions/*"
 
 # Used by JSON Schema definitions fetched from schemastore.org
 [[redirects]]
-  from = "/schemas/*"
+  from = "/schema-store/*"
   to = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/:splat"
   status = 200
 
 [[edge_functions]]
 function = "serve-definitions"
-path = "/schemas/*"
+path = "/schema-store/*"
 
