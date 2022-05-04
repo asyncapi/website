@@ -6,9 +6,8 @@ import DemoAnimation from './DemoAnimation'
 import AnnouncementHero from '../components/campaigns/AnnoucementHero'
 import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
-import Link from 'next/link'
 
-export default function Hero({ className = ''}) {
+export default function Hero({ className = '' }) {
   return (
     <div className={`px-2 mt-12 ${className}`}>
       <div className="text-center">

@@ -20,15 +20,6 @@ li > p {
   z-index: 10 !important;
 }
 
-.skiplink {
-  position: absolute;
-  transform: translateY(-300%);
-}
-
-.skiplink:focus {
-  transform: translateY(0);
-}
-
 .countdown-text-gradient {
   background: linear-gradient(230deg, #e74694, #4b79cf, #4bc5cf, #4b79cf, #e74694);
   background-size: 500% 100%;

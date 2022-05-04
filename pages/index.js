@@ -1,8 +1,12 @@
 import { getAllPosts } from '../lib/api'
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import {Helmet} from 'react-helmet'
 =======
 >>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
+=======
+import {Helmet} from "react-helmet";
+>>>>>>> parent of 5e19416... feat: add skip link to the navbar
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'

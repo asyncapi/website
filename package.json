@@ -62,9 +62,12 @@
     "react-gtm-module": "^2.0.11",
 <<<<<<< HEAD
     "react-helmet": "^6.1.0",
+<<<<<<< HEAD
     "react-router-hash-link": "^2.4.3",
 =======
 >>>>>>> parent of 14d36f9... fix: add html lang attribute for improved accessibility
+=======
+>>>>>>> parent of 5e19416... feat: add skip link to the navbar
     "react-scrollspy": "^3.4.2",
     "react-syntax-highlighter": "^12.2.1",
     "react-text-truncate": "^0.16.0",
