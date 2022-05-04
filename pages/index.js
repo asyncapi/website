@@ -193,7 +193,7 @@ function HomePage() {
         </Paragraph>
       </Container>
 
-      <Container className="text-center pb-10" wide>
+      <Container className="text-center py-10" wide>
       <Heading 
           level="h3"
           typeStyle="heading-lg"
