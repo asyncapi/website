@@ -27,8 +27,7 @@ export default function MyApp({ Component, pageProps, router }) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <Head>
-        <html lang="en" />
-          <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
       <MDXProvider components={getMDXComponents()}>
         <div className="flex flex-col min-h-screen">
