@@ -2,7 +2,7 @@
 // import YouTube from 'react-youtube-embed'
 // import Button from '../buttons/Button'
 
-export default function AnnouncementHero({ className = '', small = false }) {
+export default function AnnouncementHero({ className = '', small = false}) {
   return null;
 
   // const { pathname } = useRouter()
