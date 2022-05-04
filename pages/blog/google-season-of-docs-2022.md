@@ -16,7 +16,7 @@ featured: true
 ---
 
 ## ¡Hola, AsyncAPI community! 
-For today's blog post about AsyncAPI Docs 📑, I wanted to share with all technical writers about our organization’s plan for participation in `Google Season of Docs 2022 (GSoD)`. Any and all technical writers are welcome to come participate with us for GSoD 2022 season, regardless of tech background or years of experience! At AsynAPI, we love mentoring folks who want to get involved in OSS, tech, and Docs. ❤️
+For today's blog post about AsyncAPI Docs 📑, I wanted to share with all technical writers about our organization’s plan for participation in `Google Season of Docs 2022 (GSoD)`. Any and all technical writers are welcome to come participate with us for GSoD 2022 season, regardless of tech background or years of experience! At AsyncAPI, we love mentoring folks who want to get involved in OSS, tech, and Docs. ❤️
 
 As some of you may remember from my [Gist Docs update for 31 Jan - 11 Feb 2022](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), I noted that GSoD 2022 was coming up and that AsyncAPI wanted to participate in the application process once it opened on February 23, 2022.  
 
