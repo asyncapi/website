@@ -29,15 +29,15 @@ export default function Slack({
           text={
             <>
               Good Morning
-              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/grain.png" alt="grain"/>
-              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/coffee.png" alt="coffee"/>
+              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/grain.png" />
+              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/coffee.png" />
             </>
           }
           reactions={[
-            { icon: '/img/homepage/coffee.png', name: 'coffee', count: 6, mine: true },
-            { icon: '/img/homepage/coffee-parrot.gif', name: 'coffee-parrot', count: 4, mine: true },
-            { icon: '/img/homepage/coffee-bean.png', name: 'coffee-bean', count: 6, mine: true },
-            { icon: '/img/homepage/parrotsleep.gif', name: 'parrotsleep', count: 1, mine: false },
+            { icon: '/img/homepage/coffee.png', count: 6, mine: true },
+            { icon: '/img/homepage/coffee-parrot.gif', count: 4, mine: true },
+            { icon: '/img/homepage/coffee-bean.png', count: 6, mine: true },
+            { icon: '/img/homepage/parrotsleep.gif', count: 1, mine: false },
           ]}
         />
         <SlackMessage
