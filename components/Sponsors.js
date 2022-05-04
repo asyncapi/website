@@ -11,6 +11,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           <img
             className="inline-block px-4 sm:h-14"
             src="/img/sponsors/ibm.png"
+            alt="IBM"
           />
         </a>
         <a
@@ -22,6 +23,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/sponsors/iqvia.png"
+            alt="IQVIA Technologies"
           />
         </a>
 
@@ -34,6 +36,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           <img
             className="inline-block px-2 sm:h-18 flex-shrink-0"
             src="/img/sponsors/postman.png"
+            alt="Postman"
           />
         </a>
         <a
@@ -45,6 +48,7 @@ export default function Sponsors({ className = '', showSupportBanner = true }) {
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/sponsors/solace.png"
+            alt="Solace"
           />
         </a>
       </div>
