@@ -11,7 +11,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/slack.webp"
-            title="Slack - Free Standard Subscription."
+            title="Free standard subscription."
           />
         </a>
         <a
@@ -23,7 +23,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/toast.webp"
-            title="Toast - Free services."
+            title="Free services."
           />
         </a>
 
@@ -36,7 +36,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/netlify.webp"
-            title="Netlify - Free website deployment."
+            title="Free website deployment."
           />
         </a>
 
@@ -51,7 +51,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-4 md:h-14"
             src="/img/supportus/sonarcloud.webp"
-            title="Sonarcloud - Free tier for automated project scanning."
+            title="Free tier for automated project scanning."
           />
         </a>
         <a
@@ -63,7 +63,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-2 sm:h-8"
             src="/img/supportus/digitalocean.webp"
-            title="DigitalOcean - 500 dollars on cloud services."
+            title="$500 on cloud services."
           />
         </a>
         <a
@@ -75,7 +75,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           <img
             className="inline-block px-4 sm:h-6"
             src="/img/supportus/restream.webp"
-            title="Restream - Free professional plan subscription."
+            title="Free professional plan subscription."
           />
         </a>
       </div>
