@@ -1,7 +1,7 @@
 export default function AsyncAPILogo({ className }) {
   return (
     <svg className="h-10 w-auto mt-0.5" width="165" height="36" viewBox="0 0 165 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <title>AsyncAPI Logo</title>
+
       <defs>
         <linearGradient id="gradient1" x1="33.0317" y1="3.3661" x2="4.57364" y2="32.1761" gradientUnits="userSpaceOnUse">
           <stop stopColor="#2DCCFD" />
