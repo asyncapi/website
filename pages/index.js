@@ -108,7 +108,7 @@ function HomePage() {
               </div>
               <div className="lg:text-left lg:max-w-xl lg:ml-12">
                 <div className="mt-5">
-                  <Heading level="h5" typeStyle="heading-md-semibold">
+                  <Heading level="h4" typeStyle="heading-md-semibold">
                     Join our Slack workspace
                   </Heading>
                   <Paragraph className="mt-2">
@@ -127,7 +127,7 @@ function HomePage() {
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
-                  <Heading level="h5" typeStyle="heading-md-semibold">
+                  <Heading level="h3" typeStyle="heading-md-semibold">
                     Join our public meetings
                   </Heading>
                   <Paragraph className="mt-2">
