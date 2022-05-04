@@ -116,7 +116,7 @@ function HomePage() {
                   </Paragraph>
                 </div>
                 <div className="mt-5 flex">
-                  <Button className="block" text="Join us!" href="/slack-invite" />
+                  <Button className="w-full md:w-auto" text="Join us!" href="/slack-invite" />
                 </div>
               </div>
             </div>
