@@ -8,7 +8,7 @@ export default function Testimonial({
   authorAvatar,
 }) {
   return (
-    <div className={`py-12 px-4 sm:px-6 md:flex md:flex-row md:py-16 md:pr-0 ${className}`}>
+    <div className={`py-4 px-4 sm:px-6 md:flex md:flex-row md:py-4 md:pr-0 ${className}`}>
       <blockquote className="mt-8 md:flex-grow md:flex md:flex-col">
         <div className="relative text-lg leading-7 font-medium text-gray-600 md:flex-1">
           <svg className="absolute top-0 left-0 transform -translate-y-2 h-8 w-8 text-primary-500" fill="currentColor" viewBox="0 0 32 32">
