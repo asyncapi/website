@@ -21,7 +21,7 @@ export default function Testimonial({
         <footer className="mt-6">
           <div className="flex">
             <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-              <img className="h-12 w-12 rounded-full" src={authorAvatar} />
+              <img className="h-12 w-12 rounded-full" src={authorAvatar} alt={authorName}/>
             </div>
             <div className="ml-4 text-left">
               <div className="text-base leading-6 font-bold text-gray-900">{authorName}</div>
