@@ -194,7 +194,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-10" wide>
-      <Heading 
+        <Heading 
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
