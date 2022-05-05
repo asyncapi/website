@@ -11,7 +11,6 @@ import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
 import Link from 'next/link';
 
-
 export default function NavBar ({
   className = '',
   hideLogo = false,
@@ -34,21 +33,20 @@ export default function NavBar ({
   }, [open])
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+      <div className={`bg-white ${className} z-50`}>
+        <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#"/>
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
-        {
-          !hideLogo && (
-            <div className="lg:w-auto lg:flex-1">
-              <div className="flex">
-               <Link href="/">
-                 <a className="cursor-pointer">
-                 <AsyncAPILogo className="h-8 w-auto sm:h-8" />
-                 </a>
-               </Link>
-              </div>
+        {!hideLogo && (
+          <div className="lg:w-auto lg:flex-1">
+            <div className="flex">
+              <Link href="/">
+                <a className="cursor-pointer">
+                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+                </a>
+              </Link>
             </div>
-          )
-        }
+          </div>
+        )}
         <div className="-mr-2 -my-2 lg:hidden">
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -65,7 +63,7 @@ export default function NavBar ({
 
           <div className="relative">
             <NavItem text="Tools" onClick={() => showMenu('tooling')} hasDropdown />
-            { open === 'tooling' && <ToolsPanel /> }
+            {open === 'tooling' && <ToolsPanel />}
           </div>
 
           <div className="relative">
@@ -73,11 +71,9 @@ export default function NavBar ({
             {open === 'community' && <CommunityPanel />}
           </div>
 
-          {
-            otherItems.map((item, index) => (
-              <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
-            ))
-          }
+          {otherItems.map((item, index) => (
+            <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
+          ))}
 
           <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
 
@@ -85,8 +81,8 @@ export default function NavBar ({
 
       </div>
 
-      { /* Mobile menu, show/hide based on mobile menu state. */ }
-      { mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} /> }
+      {/* Mobile menu, show/hide based on mobile menu state. */}
+      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
     </div>
   )
 }
