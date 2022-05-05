@@ -199,8 +199,8 @@ function HomePage() {
           typeStyle="heading-lg"
           className="mb-4"
         >
-          Here's what the Experts say
-          </Heading>
+          Here's What the Experts Say
+        </Heading>
         <section>
           <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
