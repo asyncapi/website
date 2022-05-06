@@ -1,6 +1,6 @@
 ---
 title: "AsyncAPI Tooling: update 1"
-date: 2022-04-13T18:00:00+01:00
+date: 2022-05-09T18:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -27,7 +27,7 @@ If you want to include updates from your personal tooling, the [next blog post P
 This means that these tooling update blog posts will focus on the roadmap and goals to push them forward.
 
 ## Improvements
-This post bundles updates from the following official tools: [bundler](https://github.com/asyncapi/bundler), [chatbot](https://github.com/asyncapi/chatbot), [studio](https://github.com/asyncapi/studio), [diff](https://github.com/asyncapi/diff), [glee](https://github.com/asyncapi/glee), [create-glee-app](https://github.com/asyncapi/create-glee-app), [cli](https://github.com/asyncapi/cli), [optimizer](https://github.com/asyncapi/optimizer), [modelina](https://github.com/asyncapi/modelina), [generator](https://github.com/asyncapi/generator), [generator-react-sdk](https://github.com/asyncapi/generator-react-sdk), [java-template](https://github.com/asyncapi/java-template), [java-spring-cloud-stream-template](https://github.com/asyncapi/java-spring-cloud-stream-template), [java-spring-template](https://github.com/asyncapi/java-spring-template), [dotnet-nats-template](https://github.com/asyncapi/dotnet-nats-template), [ts-nats-template](https://github.com/asyncapi/ts-nats-template), and [java-template](https://github.com/asyncapi/java-template).
+This post bundles updates from the following official tools, but not limited to: [bundler](https://github.com/asyncapi/bundler), [chatbot](https://github.com/asyncapi/chatbot), [studio](https://github.com/asyncapi/studio), [diff](https://github.com/asyncapi/diff), [glee](https://github.com/asyncapi/glee), [create-glee-app](https://github.com/asyncapi/create-glee-app), [cli](https://github.com/asyncapi/cli), [optimizer](https://github.com/asyncapi/optimizer), [modelina](https://github.com/asyncapi/modelina), [generator](https://github.com/asyncapi/generator), [generator-react-sdk](https://github.com/asyncapi/generator-react-sdk), [java-template](https://github.com/asyncapi/java-template), [java-spring-cloud-stream-template](https://github.com/asyncapi/java-spring-cloud-stream-template), [java-spring-template](https://github.com/asyncapi/java-spring-template), [dotnet-nats-template](https://github.com/asyncapi/dotnet-nats-template), [ts-nats-template](https://github.com/asyncapi/ts-nats-template), and [java-template](https://github.com/asyncapi/java-template).
 
 ### Studio
 - [magicmatatjahu](https://github.com/magicmatatjahu) [added a new modal for when you are redirected from the old Playground to ease the transition for users](https://github.com/asyncapi/studio/pull/282) 
@@ -73,3 +73,5 @@ This post bundles updates from the following official tools: [bundler](https://g
 ### Generator
 - [magicmatatjahu](https://github.com/magicmatatjahu) [fixed ts-node would use multiple instances](https://github.com/asyncapi/generator/pull/764)
 
+## In Closing
+If you are working on tooling and want to include those updates, you can use the next PR to comment what should be included :v: 
