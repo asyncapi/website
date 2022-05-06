@@ -20,7 +20,7 @@ import Heading from '../typography/Heading'
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
     return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
-  } 
+  }
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
 }
 
@@ -42,7 +42,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       sortWeight: sortWeight,
     }
   }), ['sortWeight'])
-  
+
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -58,7 +58,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
-              
+
               <nav className="flex-1 mt-3 pb-8 bg-white">
                 {
                   navigation.map((item, i) => (
@@ -82,7 +82,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </button>
               </div>
             )}
-            
+
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
               <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
               <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
@@ -90,14 +90,17 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 {post.title}
               </Heading>
             {
-              post.isPrerelease 
-              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
+              post.isPrerelease
+              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3>
               : null
             }
             <div>
               <p className="text-sm font-normal text-gray-600 font-sans antialiased">
-                Found an error? Have a suggestion? 
+                Found an error? Have a suggestion?
                 {generateEditLink(post)}
+              </p>
+              <p className="text-center text-sm font-normal text-gray-600 font-sans antialiased">
+                The <a href="https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md">human-readable markdown file<a/> is the source of truth for the specification.
               </p>
             </div>
                 <article className="mb-12 mt-12">
