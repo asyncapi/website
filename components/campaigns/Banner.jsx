@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-primary-500">
+    <div className="bg-gray-100">
       <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8">
 
         {/* mobile view */}
@@ -27,7 +27,7 @@ const Banner = () => {
 
         <div className="hidden md:flex items-center justify-between flex-wrap">
           <div className="w-0 flex-1 flex items-center text-xs">
-            <p className="font-medium text-white truncate">
+            <p className="font-medium text-gray-700">
               <span className="md:inline">
                 AsyncAPI Conference 2021 has ended. Good news: you can still watch the recording! ⭐️
               </span>
