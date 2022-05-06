@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: It has been a while since the last update on the things at AsyncAPI Initiative. Lots of things have happened since June. You better have a read or listen to the podcast. 
-featured: true
 ---
 
 <iframe src="https://anchor.fm/asyncapi/embed/episodes/2nd-half-of-2021-at-AsyncAPI-Initiative-e1bvc3u" height="102px" width="600px" scrolling="no"></iframe>

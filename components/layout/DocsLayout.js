@@ -10,6 +10,7 @@ import DocsNavItem from '../navigation/DocsNavItem'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
+import Feedback from '../Feedback'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import Footer from '../Footer'
@@ -99,7 +100,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 {generateEditLink(post)}
               </p>
             </div>
-                <article className="mb-32 mt-12">
+                <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
                     description={post.excerpt}
@@ -107,6 +108,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   />
                   { children }
                 </article>
+                <div className="">
+                  <Feedback />
+                </div>
               </div>
             </div>
           </main>

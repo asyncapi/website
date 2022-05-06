@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
 import Head from '../components/Head'
-import Footer from '../components/Footer'
 import Slack from '../components/slack'
 import Button from '../components/buttons/Button'
 import Calendar from '../components/Calendar'
@@ -16,13 +15,16 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
-import DemoAnimation from "../components/DemoAnimation";
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
 import GoldSponsors from '../components/GoldSponsors'
 import SupportUs from '../components/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
+import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
+import ICSFileButton from '../components/buttons/ICSFileButton';
+import SubscribeButton from '../components/buttons/SubscribeButton';
+import YoutubeButton from '../components/buttons/YoutubeButton';
 
 function HomePage() {
   const posts = getAllPosts()
@@ -43,11 +45,11 @@ function HomePage() {
       <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      
+
       <Container wide>
-      <Hero className="mb-24" /> 
+      <Hero className="mb-24" />
       </Container>
-      
+
       <Container className="text-center pb-12" wide>
         <Heading
           level="h3"
@@ -57,7 +59,7 @@ function HomePage() {
           Adopted by the world leading brands
         </Heading>
         <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list? 
+          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?
           <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
             Let us know here!
           </TextLink>
@@ -88,7 +90,7 @@ function HomePage() {
       </div>
 
       <Container className="text-center py-12" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -106,7 +108,7 @@ function HomePage() {
               </div>
               <div className="lg:text-left lg:max-w-xl lg:ml-12">
                 <div className="mt-5">
-                  <Heading level="h5" typeStyle="heading-md-semibold">
+                  <Heading level="h4" typeStyle="heading-md-semibold">
                     Join our Slack workspace
                   </Heading>
                   <Paragraph className="mt-2">
@@ -121,20 +123,30 @@ function HomePage() {
 
             <div className="mt-12 lg:flex lg:flex-row-reverse">
               <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Calendar />
+                <Calendar size="2" className="float-left"/>
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
-                  <Heading level="h5" typeStyle="heading-md-semibold">
+                  <Heading level="h3" typeStyle="heading-md-semibold">
                     Join our public meetings
                   </Heading>
                   <Paragraph className="mt-2">
-                    We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
+                    AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
+
+                    <TextLink href="/community/meetings">
+                      Learn more about our meetings.
+                    </TextLink>
                   </Paragraph>
                   <div className="mt-5 md:flex">
-                    <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list to get invite" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-red-500 hover:bg-red-400" text="Watch previous recordings" href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS" target="_blank" />
+                    <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
+                    <SubscribeButton
+                      href="/newsletter"
+                      className="mt-2 md:mt-0 md:ml-2"
+                    />
+                    <ICSFileButton
+                      href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics"
+                      className="mt-2 md:mt-0 md:ml-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -144,7 +156,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -155,7 +167,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-lg"
           className="mb-4"
@@ -166,7 +178,7 @@ function HomePage() {
       </Container>
 
       <Container className="text-center py-6" wide>
-        <Heading 
+        <Heading
           level="h3"
           typeStyle="heading-md-semibold"
           className="mb-4"
@@ -174,7 +186,7 @@ function HomePage() {
             Want to Sponsor Us?
         </Heading>
         <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? 
+          These great organizations are already supporting AsyncAPI. Want to become a sponsor?
           <TextLink href="https://opencollective.com/asyncapi" target="_blank">
             Support us!
           </TextLink>
@@ -229,7 +241,7 @@ function HomePage() {
       </Container>
       <Container wide>
         <div className="text-center">
-          <Heading 
+          <Heading
             level="h2"
             typeStyle="heading-lg"
           >
