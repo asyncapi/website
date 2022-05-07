@@ -11,7 +11,7 @@ export default function GoldSponsors({ className = '', showSupportBanner = true 
             <img
             className="inline-block sm:h-16"
             src="/img/sponsors/redhat.svg"
-            alt="Red Hat"
+            alt="Link,Red Hat"
           />
            </a>
             </div>

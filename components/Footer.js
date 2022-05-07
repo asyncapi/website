@@ -47,19 +47,19 @@ export default function Footer() {
         </nav>
         <div className="mt-8 flex justify-center">
           <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
-            <span className="sr-only">Twitter</span>
+            <span className="sr-only">Follow AsyncAPI on Twitter</span>
             <IconTwitter className="h-6 w-6" />
           </a>
           <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
-            <span className="sr-only">GitHub</span>
+            <span className="sr-only">AsyncAPI on GitHub</span>
             <IconGithub className="h-6 w-6" />
           </a>
           <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="ml-6 text-gray-400 hover:text-blue-500">
-            <span className="sr-only">LinkedIn</span>
+            <span className="sr-only">AsyncAPI on LinkedIn</span>
             <IconLinkedIn className="h-6 w-6" />
           </a>
           <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-red-600">
-            <span className="sr-only">YouTube</span>
+            <span className="sr-only">Subscribe to AsyncAPI on YouTube</span>
             <IconYoutube className="h-6 w-6" />
           </a>
         </div>
@@ -69,7 +69,7 @@ export default function Footer() {
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
             <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
+              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" title="Deploys by Netlify"/>
             </a>
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
