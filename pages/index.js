@@ -44,11 +44,11 @@ function HomePage() {
     <>
       <Head />
       <StickyNavbar>
-       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
 
       <Container wide>
-      <Hero className="mb-24" />
+        <Hero className="mb-24" />
       </Container>
 
       <Container className="text-center pb-12" wide>
@@ -124,7 +124,7 @@ function HomePage() {
 
             <div className="mt-12 lg:flex lg:flex-row-reverse">
               <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Calendar size="2" className="float-left"/>
+                <Calendar size="2" className="float-left" />
               </div>
               <div className="lg:text-left lg:max-w-xl lg:mr-12">
                 <div className="mt-5">
@@ -184,7 +184,7 @@ function HomePage() {
           typeStyle="heading-md-semibold"
           className="mb-4"
         >
-            Want to Sponsor Us?
+          Want to Sponsor Us?
         </Heading>
         <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
           These great organizations are already supporting AsyncAPI. Want to become a sponsor?
@@ -235,7 +235,7 @@ function HomePage() {
         <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
           The following companies support us by letting us use their products for free. Interested in supporting us too?
           <TextLink href="mailto:info@asyncapi.io" target="_blank">
-              Email us
+            Email us
           </TextLink> for more info.
         </Paragraph>
         <SupportUs className="mt-4" showSupportBanner={false} />
@@ -249,36 +249,27 @@ function HomePage() {
             Latest Updates
           </Heading>
           <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-3">
-           Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
+            Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
             <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
               Submit yours!
             </TextLink>
           </Paragraph>
         </div>
         <div className="flex flex-row mt-4">
-            <div className="w-1/5 pt-4">
-               <Heading level="h4" typeStyle="heading-md-semibold">
-                  From the blog
-               </Heading>
-               <Paragraph typeStyle="body-md" className="mt-4">
-                  Check out these articles written by community members
-               </Paragraph>
-               <div className="mt-4">
-               <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" className="mt-4" target="_blank">
+          <div className="w-1/5 pt-4">
+            <Heading level="h4" typeStyle="heading-md-semibold">
+              From the blog
+            </Heading>
+            <Paragraph typeStyle="body-md" className="mt-4">
+              Check out these articles written by community members
+            </Paragraph>
+            <div className="mt-4">
+              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" className="mt-4" target="_blank">
                   Read all blog posts >
               </TextLink>
-              </div>
             </div>
-                <BlogView />
-            
-        </div>
-
-        <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
-          {
-            posts.map((post, index) => (
-              <BlogPostItem className="mb-8 md:mb-0" key={index} post={post} />
-            ))
-          }
+          </div>
+          <BlogView />
         </div>
         <div className="my-10 text-center">
           <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="/blog" text="View more blog posts" />
