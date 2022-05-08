@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 export default function TextLink({
     href,
@@ -11,9 +12,11 @@ export default function TextLink({
     return(
         <>
         {' '}
-        <a href={href} target={target} rel="noreferrer noopener" className={classNames}>
+        <Link href={href} passHref>
+            <a target={target} rel="noreferrer noopener" className={classNames}>
             {children}
-        </a>
+            </a>
+        </Link>
         </>
     )
 

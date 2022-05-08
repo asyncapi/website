@@ -12,13 +12,13 @@ export default function BlogView() {
       if (!i1.featured && i2.featured) return 1
       return i2Date - i1Date
     })
-    .slice(0, 3)
+    .slice(0, 5)
   return (
-    <div className="flex flex-col w-4/5 p-4 overflow-auto">
+    <div className="lg:flex flex-col lg:w-4/5 p-4 overflow-auto">
         <div className="flex flex-row snap-x overflow-x-scroll">
             {
                 posts.map((post, index) => (
-                     <BlogPostItem className='mx-4 w-1/2' post={post} key={index} /> 
+                     <BlogPostItem className='snap-start mx-4 w-1/2 scroll-ml-6' post={post} key={index} /> 
                   ))
             }
         </div>

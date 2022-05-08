@@ -255,8 +255,8 @@ function HomePage() {
             </TextLink>
           </Paragraph>
         </div>
-        <div className="flex flex-row mt-4">
-          <div className="w-1/5 pt-4">
+        <div className="lg:flex flex-row mt-4">
+          <div className="text-center lg:text-left lg:w-1/5 pt-4">
             <Heading level="h4" typeStyle="heading-md-semibold">
               From the blog
             </Heading>
@@ -264,15 +264,12 @@ function HomePage() {
               Check out these articles written by community members
             </Paragraph>
             <div className="mt-4">
-              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" className="mt-4" target="_blank">
+              <TextLink href="/blog" className="mt-4">
                   Read all blog posts >
               </TextLink>
             </div>
           </div>
           <BlogView />
-        </div>
-        <div className="my-10 text-center">
-          <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="/blog" text="View more blog posts" />
         </div>
       </Container>
     </>
