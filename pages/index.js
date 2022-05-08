@@ -15,6 +15,7 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import BlogPostItem from '../components/navigation/BlogPostItem'
+import BlogView from '../components/BlogView'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -245,18 +246,33 @@ function HomePage() {
             level="h2"
             typeStyle="heading-lg"
           >
-            Latest stories from our blog
+            Latest Updates
           </Heading>
-          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4">
-            Find the latest and greatest stories from our community.
-          </Paragraph>
-          <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto">
-            Want to publish a blog post? We love community stories.
+          <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-3">
+           Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
             <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
               Submit yours!
             </TextLink>
           </Paragraph>
         </div>
+        <div className="flex flex-row mt-4">
+            <div className="w-1/5 pt-4">
+               <Heading level="h4" typeStyle="heading-md-semibold">
+                  From the blog
+               </Heading>
+               <Paragraph typeStyle="body-md" className="mt-4">
+                  Check out these articles written by community members
+               </Paragraph>
+               <div className="mt-4">
+               <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" className="mt-4" target="_blank">
+                  Read all blog posts >
+              </TextLink>
+              </div>
+            </div>
+                <BlogView />
+            
+        </div>
+
         <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
           {
             posts.map((post, index) => (
