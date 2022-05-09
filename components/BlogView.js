@@ -1,5 +1,8 @@
+import {useEffect} from 'react'
 import BlogPostItem from './navigation/BlogPostItem'
 import { getAllPosts } from '../lib/api'
+import ArrowRight from './icons/ArrowRight'
+import ArrowLeft from './icons/ArrowLeft'
 
 export default function BlogView() {
     const posts = getAllPosts()
@@ -13,17 +16,35 @@ export default function BlogView() {
       return i2Date - i1Date
     })
     .slice(0, 5)
+    let blogContainer
+    useEffect(() => {
+      blogContainer = document.getElementById('blog-container')
+    }, [])
+    
+    const shiftLeft = (e) =>{
+      e.preventDefault()
+      blogContainer.scrollLeft-=350
+     }
+    const shiftRight = (e) =>{
+    e.preventDefault()
+    blogContainer.scrollLeft+=350
+    }  
   return (
-    <div className="lg:flex flex-col lg:w-4/5 p-4 overflow-auto">
-        <div className="flex flex-row snap-x overflow-x-scroll">
+    <div className="flex-col lg:flex lg:w-4/5 p-4 overflow-auto">
+        <div className="flex snap-x gap-6 overflow-x-auto" id="blog-container">
             {
                 posts.map((post, index) => (
-                     <BlogPostItem className='snap-start mx-4 w-1/2 scroll-ml-6' post={post} key={index} /> 
+                     <BlogPostItem className='snap-start scroll-ml-6' post={post} key={index} /> 
                   ))
             }
         </div>
-       <div className="d-flex flex-row">
-           
+       <div className="flex flex-row mt-4">
+           <div className="border-2 py-4 px-8 shadow-md rounded border-gray-100 text-gray-400 hover:border-secondary-500 hover:text-secondary-500 hover:bg-secondary-100 mx-2" onClick={shiftLeft}>
+                <ArrowLeft className="w-5" />
+           </div>
+           <div className="border-2 py-2 px-6 shadow-md rounded border-gray-100 text-gray-400 hover:border-secondary-500 hover:text-secondary-500 hover:bg-secondary-100 mx-2" onClick={shiftRight}>
+                <ArrowRight className="w-8" />
+           </div>
         </div>   
     </div>
   )

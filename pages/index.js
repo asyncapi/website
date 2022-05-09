@@ -6,6 +6,7 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
 import Head from '../components/Head'
 import Slack from '../components/slack'
+import ArrowRight from '../components/icons/ArrowRight'
 import Button from '../components/buttons/Button'
 import Calendar from '../components/Calendar'
 import AdidasLogo from '../components/logos/Adidas'
@@ -265,7 +266,8 @@ function HomePage() {
             </Paragraph>
             <div className="mt-4">
               <TextLink href="/blog" className="mt-4">
-                  Read all blog posts >
+                  Read all blog posts 
+                  <ArrowRight className="inline w-6" />
               </TextLink>
             </div>
           </div>
