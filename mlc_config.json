@@ -24,16 +24,8 @@
   ],
   "replacementPatterns": [
     {
-      "pattern": "^/img",
-      "replacement": "https://www.asyncapi.com/img/"
-    },
-    {
-      "pattern": "^/blog",
-      "replacement": "https://www.asyncapi.com/blog/"
-    },
-    {
-      "pattern": "^/docs",
-      "replacement": "https://www.asyncapi.com/docs"
+      "pattern": "^/",
+      "replacement": "https://www.asyncapi.com/"
     }
   ]
 }

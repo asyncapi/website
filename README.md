@@ -1,16 +1,20 @@
-[![AsyncAPI Banner and Logo](/public/img/logos/github-repobanner-website.png)](https://www.asyncapi.com)
+[![AsyncAPI Banner and Logo](./public/img/logos/github-repobanner-website.png)](https://www.asyncapi.com)
 
 ---
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
 
 ## Overview
 
 This repository contains the sources of AsyncAPI website:
 
-- It's powered by [Next.js](https://nextjs.org/), 
+- It's powered by [Next.js](https://nextjs.org/),
 - It uses [Tailwind](https://tailwindcss.com/) CSS framework,
 - It's build and deployed with [Netlify](https://www.netlify.com/).
 
@@ -44,6 +48,7 @@ You can access the live development server at [localhost:3000](http://localhost:
 #### Compose a new blog post
 
 To bootstrap a new post, run this command:
+
 ```bash
 npm run write:blog
 ```
@@ -51,7 +56,8 @@ npm run write:blog
 Follow the interactive prompt to generate a post with pre-filled front matter.
 
 ### Spin up Gitpod codespace
-In order to prepare and spin up a Gitpod dev environment for our project, we configured our workspace through a [.gitpod.yml](/.gitpod.yml) file.
+
+In order to prepare and spin up a Gitpod dev environment for our project, we configured our workspace through a [.gitpod.yml](./.gitpod.yml) file.
 
 To spin up a Gitpod codespace, go to http://gitpod.io/#https://github.com/asyncapi/website.
 
