@@ -8,6 +8,15 @@
     },
     {
       "pattern": "^https://twitter.com/"
+    },
+    {
+      "pattern": "^https://www.linkedin.com/"
     }
-  ]
+  ],
+    "replacementPatterns": [
+     {
+      "pattern": "^/img",
+      "replacement": "https://www.asyncapi.com/img/"
+     }
+    ]
 }
