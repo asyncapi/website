@@ -24,7 +24,7 @@
     },
     {
       "pattern": "^/docs",
-      "replacement": "https://www.asyncapi.com/docs/"
+      "replacement": "https://www.asyncapi.com/docs"
     }
   ]
 }
