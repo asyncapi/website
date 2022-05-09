@@ -53,7 +53,7 @@ export default function BlogIndexPage() {
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <Heading 
+            <Heading
               level="h1"
               typeStyle="heading-lg"
             >
@@ -73,6 +73,7 @@ export default function BlogIndexPage() {
                 className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
+                alt="RSS feed"
                 height="18px"
                 width="18px"
               />
