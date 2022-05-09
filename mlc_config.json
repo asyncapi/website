@@ -20,6 +20,12 @@
     },
     {
       "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://docs.github.com/"
+    },
+    {
+      "pattern": "^https://www.pexels.com/"
     }
   ],
   "replacementPatterns": [
