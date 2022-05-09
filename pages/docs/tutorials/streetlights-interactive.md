@@ -31,8 +31,8 @@ Please become our alpha testers of the tutorial:
       type:'back',
     },
     {
-      href: '/docs/specifications/v2.3.0',
-      title: 'Specifications 2.3.0',
+      href: '/docs/specifications/v2.4.0',
+      title: 'Specifications 2.4.0',
       type:'next',
     }
   ]}
