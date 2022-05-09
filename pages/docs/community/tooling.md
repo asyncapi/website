@@ -119,7 +119,7 @@ The following is a list of tools that validate AsyncAPI documents.
 <DocsButton
   suggestions={[
     {
-      href: '/docs//docs/specifications/v2.0.0',
+      href: '/docs/specifications/v2.0.0',
       title: 'Specifications - Release 2.0.0',
       type:'back',
     }
