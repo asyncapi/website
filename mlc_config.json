@@ -11,6 +11,9 @@
     },
     {
       "pattern": "^https://www.linkedin.com/"
+    },
+    {
+      "pattern": "https://calendar.google.com/"
     }
   ],
   "replacementPatterns": [
