@@ -17,6 +17,10 @@
      {
       "pattern": "^/img",
       "replacement": "https://www.asyncapi.com/img/"
+     },
+           {
+      "pattern": "^/blog",
+      "replacement": "https://www.asyncapi.com/blog/"
      }
     ]
 }
