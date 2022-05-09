@@ -22,7 +22,7 @@ ThoughtWorks and InfoQ clearly point out this is the best moment to have a close
 
 ## Generator and Parser 1.0 releases
 
-We are going in the right direction with the first major releases for [the Generator](https://github.com/asyncapi/generator/) and [the Parser](https://github.com/asyncapi/parser-js/). The last [release candidate](https://github.com/asyncapi/generator/releases/tag/v1.0.0-rc.4) we produced for the Generator is pretty much stable, and all tasks were completed. We also tried it in our [GitHub Action](https://github.com/asyncapi/github-action-for-generator/pull/8) and [AsyncAPI Hub](https://hub.asyncapi.io), and it works like a charm.
+We are going in the right direction with the first major releases for [the Generator](https://github.com/asyncapi/generator/) and [the Parser](https://github.com/asyncapi/parser-js/). The last [release candidate](https://github.com/asyncapi/generator/releases/tag/v1.0.0-rc.4) we produced for the Generator is pretty much stable, and all tasks were completed. We also tried it in our [GitHub Action](https://github.com/asyncapi/github-action-for-generator/pull/8) and [AsyncAPI Studio](https://studio.asyncapi.com/), and it works like a charm.
 
 > Then why are you not promoting the last release candidate to 1.0.0?
 
