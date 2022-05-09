@@ -65,11 +65,11 @@ export default function Footer() {
         </div>
         <div className="mt-8">
           <p className="text-center text-base leading-6 text-gray-400">
-            Made with <span className="font-mono text-pink-500">❤️</span> by the AsyncAPI Initiative.
+            Made with <span className="font-mono text-pink-500">:love:</span> by the AsyncAPI Initiative.
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">
             <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" title="Deploys by Netlify"/>
+              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
             </a>
           </p>
           <p className="text-center text-base leading-6 text-gray-400 mt-4">

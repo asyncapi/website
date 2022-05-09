@@ -1,6 +1,8 @@
 export default function IconYoutube({ className }) {
   return (
-    <svg className={className} version="1.1" id="Layer_1" x="0px" y="0px" width="64px" height="45px" viewBox="0 0 64 45" enableBackground="new 0 0 64 45" xmlSpace="preserve">  <image id="image0" width="64" height="45" x="0" y="0"
+    <svg className={className} version="1.1" id="Layer_1" x="0px" y="0px" width="64px" height="45px" viewBox="0 0 64 45" aria-labelledby="YoutubeIcon" role="img" enableBackground="new 0 0 64 45" xmlSpace="preserve">
+      <title id="YoutubeIcon">Subscribe AsyncAPI on Youtube</title>
+     <image id="image0" width="64" height="45" x="0" y="0"
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAtCAMAAAAp3Z1oAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB8lBMVEX/GRn/AAD/FRX/IiL/
 Bwf/Cgr/Hx//AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/
