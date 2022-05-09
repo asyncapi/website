@@ -13,7 +13,13 @@
       "pattern": "^https://www.linkedin.com/"
     },
     {
-      "pattern": "https://calendar.google.com/"
+      "pattern": "^https://calendar.google.com/"
+    },
+    {
+      "pattern": "^https://github.com/issues"
+    },
+    {
+      "pattern": "^http://localhost"
     }
   ],
   "replacementPatterns": [

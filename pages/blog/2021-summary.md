@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative 2021 in Numbers"
+title: 'AsyncAPI Initiative 2021 in Numbers'
 date: 2022-02-07T06:00:00+01:00
 type: Communication
 tags:
@@ -17,7 +17,7 @@ This article is a continuation of a tradition where once a year, we summarize al
 
 It is good to see how we are doing, how are we growing :rocket:
 
-If you are interested in previous years, look at [this 2020 summary article](2020-summary).
+If you are interested in previous years, look at [this 2020 summary article](/blog/2020-summary).
 
 ## Slack
 
@@ -52,7 +52,7 @@ In 2021 we also went through reorganization of the channels setup, created etiqu
 
 ### Weekly active members
 
-Slack is our primary community channel, a kind of direct connection between community members. In my opinion, it indicates the community's growth that is more active in the initiative. 
+Slack is our primary community channel, a kind of direct connection between community members. In my opinion, it indicates the community's growth that is more active in the initiative.
 
 For this year, I removed the stats about the number of posted messages. We have many messages posted by bots (about GitHub activity, for example) affecting the numbers. They are big but do not indicate only Slack activity.
 
@@ -111,7 +111,7 @@ I personally wish we actually reach more product managers (PM) than 2%. As a per
 
 ### Followers and impressions
 
-At the moment, we have 1534 followers. Unfortunately, LinkedIn memory is short and remembers only numbers one year back. I do not have access to January 2021 data. 
+At the moment, we have 1534 followers. Unfortunately, LinkedIn memory is short and remembers only numbers one year back. I do not have access to January 2021 data.
 
 In the case of a percentage increase, I take only numbers related to organic growth.
 
@@ -215,7 +215,7 @@ In Q4 of 2021, we also started streaming different meetings to LinkedIn. In thre
 
 ## Google Analytics
 
-We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) because we want to understand what content is most valuable for you, and we want to learn how the interest is growing. 
+We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) because we want to understand what content is most valuable for you, and we want to learn how the interest is growing.
 
 ### Traffic got much higher
 
@@ -437,7 +437,7 @@ By the time I gathered data for this blog post, we had 2997 followers on Twitter
 I'm not gonna hide, I'm not a Twitter fan, really. :smiley:
 Who cares about my preferences, though, our community is present there, and we must too. In the end, Twitter led 2 478 new users to AsyncAPI website.
 
-What I can tell you for sure. Do not spend your money on Twitter marketing. We tried it for AsyncAPI Conference. Of course, I might configure something in a bad way, but does it change anything? We spent $560.21 on sponsored tweets that converted into 16 471 visits to the conference registration page. Guess what, **0 folks registered**. 
+What I can tell you for sure. Do not spend your money on Twitter marketing. We tried it for AsyncAPI Conference. Of course, I might configure something in a bad way, but does it change anything? We spent $560.21 on sponsored tweets that converted into 16 471 visits to the conference registration page. Guess what, **0 folks registered**.
 
 Now yes, of course, might be that tweets were not targetted properly, might be that registration page was not attractive. But I challenge you with a question: is it worth spending many extra hours and money on this classical marketing instead of the community?
 
@@ -449,9 +449,9 @@ We notice growing traffic in [our GitHub organization](https://github.com/asynca
 
 Our most popular repositories contain the AsyncAPI specification and the AsyncAPI Generator that the community can use to generate documentation and code.
 
-[The AsyncAPI Specification repository](https://github.com/asyncapi/spec/) that had 1 357 stars in 2020 jumped to 1 870. 
+[The AsyncAPI Specification repository](https://github.com/asyncapi/spec/) that had 1 357 stars in 2020 jumped to 1 870.
 
-[The AsyncAPI Generator repository](https://github.com/asyncapi/generator/) grew from 198 to 417. So the number of fans doubled. 
+[The AsyncAPI Generator repository](https://github.com/asyncapi/generator/) grew from 198 to 417. So the number of fans doubled.
 
 The number of contributors also increased, but the problem is I no longer have access to tools that can help me get exact numbers, like the ones I got last year.
 
@@ -527,9 +527,10 @@ Our most important packages are [the project that provides AsyncAPI JSON Schema 
 The increase in numbers is insanely huge. People automatically say that it is because of build systems, local development, or some single corporation started using it at scale. In other words, the increase could result from just one project that uses these tools as a dependency.
 
 Let me challenge you:
+
 - Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit internal proxy. Not included in downloads.
 - Most build systems cache packages that are downloaded already to improve performance. Not included in downloads.
-When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
+  When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
 An interesting observation is that Generator uses Parser and Parser uses the package with AsyncAPI specs. So you can read from this data that packages with specs are primarily used in the AsyncAPI Parser. You can also see that Parser is a backbone for many more projects than just the AsyncAPI Generator.
 
@@ -537,7 +538,7 @@ Do you see it? Last year Generator and Parser download numbers were super close 
 
 ## YouTube
 
-The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in traffic. 
+The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive increase in traffic.
 
 ### Watch time
 
@@ -605,7 +606,7 @@ YouTube is the only channel where numbers were not higher than in previous years
 
 We earned and spent lots of money this year. :money_mouth_face:
 
-Huge applause :clap: to all [our sponsors](https://opencollective.com/asyncapi#section-contributors)! 
+Huge applause :clap: to all [our sponsors](https://opencollective.com/asyncapi#section-contributors)!
 
 <table>
   <tr>
@@ -660,9 +661,10 @@ We also have a good amount of money thanks to the new Platinum sponsor that join
 
 We grow. Numbers just confirm our observation. We grow not only because people love to build a community around the specification. We grow because AsyncAPI Initiative is attractive for contributors because we also host tools related to AsyncAPI.
 
-If you want to look at more data, some of it is available [in this spreadsheet](https://docs.google.com/spreadsheets/d/1KxEkX9BqtJ4WIkh-NMftq5pDTcBStV_pHqa6P6-7bfM/edit?usp=sharing) and for others you just need to contact me directly. 
+If you want to look at more data, some of it is available [in this spreadsheet](https://docs.google.com/spreadsheets/d/1KxEkX9BqtJ4WIkh-NMftq5pDTcBStV_pHqa6P6-7bfM/edit?usp=sharing) and for others you just need to contact me directly.
 
 In 2022, we need to establish a stronger bond with the community. We have many folks that give back a lot of time into the project, and it is time to give back. The main goals we have:
+
 - Meet in person for AsyncAPI Conference
 - Setup Ambassador program to give back to most active community members
 - Get involved in more events like Google Summer of Code

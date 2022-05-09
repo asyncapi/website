@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI @Hacktoberfest"
+title: 'AsyncAPI @Hacktoberfest'
 date: 2020-09-30T06:00:00+01:00
 type: Community
 tags:
@@ -14,10 +14,10 @@ authors:
 ---
 
 <Warning
-  title="HacktoberFest 2020 has finished"
-  description={
-    <span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
-  }
+title="HacktoberFest 2020 has finished"
+description={
+<span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
+}
 />
 
 ## What is AsyncAPI
@@ -39,7 +39,7 @@ AsyncAPI Initiative joins the Hacktoberfest for two main reasons:
 
 In the past, we were also there where you are now, shy and uncertain if we can impact open source community. We want to give you an easy path to take the first baby steps in the world of open source in a welcoming and friendly environment.
 
-> Don't forget to [sign up](https://hacktoberfest.digitalocean.com/login) to the Hacktoberfest
+> Don't forget to [sign up](https://hacktoberfest.digitalocean.com/) to the Hacktoberfest
 
 <YouTube id="_1WRr3Ml9t4" />
 
@@ -55,9 +55,9 @@ There is always a lot of work waiting out there. For the sake of this special ev
 
 ### 2. Setup Your Environment And Create A First Pull Request
 
-Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI. 
+Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI.
 
-In case you are here just for the Hacktoberfest, and you picked easy issues that involve changes only to a single file, there is no need to install Git and complicate your life. GitHub UI enables you to [make changes to a single file online](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository).
+In case you are here just for the Hacktoberfest, and you picked easy issues that involve changes only to a single file, there is no need to install Git and complicate your life. GitHub UI enables you to [make changes to a single file online](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
 
 In case you:
 
@@ -73,7 +73,7 @@ Once you are ready with your changes, submit a pull request. Be nice and follow 
 
 ## Office Hours
 
-Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously. 
+Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously.
 
 Trust me when I write that every pull request is crucial for us.
 Trust me when I write that we are a welcoming community.
@@ -94,9 +94,9 @@ We stream to our official media accounts:
 
 - https://www.twitch.tv/asyncapi
 - https://www.youtube.com/asyncapi
-- https://twitter.com/AsyncAPISpec 
+- https://twitter.com/AsyncAPISpec
 
-You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec). 
+You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec).
 
 ## Blooper Reel
 
