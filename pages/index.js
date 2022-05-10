@@ -115,7 +115,7 @@ function HomePage() {
                     We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
                   </Paragraph>
                 </div>
-                <div className="mt-5 flex">
+                <div className="mt-5 flex justify-center">
                   <Button className="w-full md:w-auto" text="Join us!" href="/slack-invite" />
                 </div>
               </div>
