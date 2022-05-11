@@ -117,8 +117,8 @@ function HomePage() {
                     We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
                   </Paragraph>
                 </div>
-                <div className="mt-5 flex">
-                  <Button className="block" text="Join us!" href="/slack-invite" />
+                <div className="mt-5 flex justify-center lg:justify-start">
+                  <Button className="w-full md:w-auto" text="Join us!" href="/slack-invite" />
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ function HomePage() {
                       Learn more about our meetings.
                     </TextLink>
                   </Paragraph>
-                  <div className="mt-5 md:flex">
+                  <div className="mt-5 md:flex justify-center">
                     <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
                     <SubscribeButton
                       href="/newsletter"
