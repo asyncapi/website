@@ -177,7 +177,7 @@ function HomePage() {
         <GoldSponsors className="mt-4" showSupportBanner={false} />
       </Container>
 
-      <Container className="text-center py-6" wide>
+      <Container className="text-center py-6 pb-20" wide>
         <Heading
           level="h3"
           typeStyle="heading-md-semibold"
@@ -193,13 +193,9 @@ function HomePage() {
         </Paragraph>
       </Container>
 
-      <Container className="text-center pb-10" wide>
-      <Heading 
-          level="h3"
-          typeStyle="heading-lg"
-          className="mb-4"
-        >
-          Here's What the Experts Say
+      <Container className="text-center py-6 pb-20" wide>
+        <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+          What the experts are saying
         </Heading>
         <section>
           <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
