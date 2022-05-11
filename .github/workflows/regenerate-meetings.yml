@@ -8,24 +8,25 @@ on:
 
 jobs:
   meetings:
-    env:
-      CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
-      CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
-    name: Regenerate meetings.json
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Regenerate
-        run: npm run generate:meetings
-      - name: Create Pull Request with new meetings.json version
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          commit-message: 'chore: update meetings.json'
-          committer: asyncapi-bot <info@asyncapi.io>
-          author: asyncapi-bot <info@asyncapi.io>
-          title: 'chore: update meetings.json'
-          branch: update-meetings/${{ github.job }} 
+    if: (github.repository == 'asyncapi/website')
+      env:
+        CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
+        CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
+      name: Regenerate meetings.json
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Install dependencies
+          run: npm install
+        - name: Regenerate
+          run: npm run generate:meetings
+        - name: Create Pull Request with new meetings.json version
+          uses: peter-evans/create-pull-request@v3
+          with:
+            token: ${{ secrets.GH_TOKEN }}
+            commit-message: 'chore: update meetings.json'
+            committer: asyncapi-bot <info@asyncapi.io>
+            author: asyncapi-bot <info@asyncapi.io>
+            title: 'chore: update meetings.json'
+            branch: update-meetings/${{ github.job }} 
