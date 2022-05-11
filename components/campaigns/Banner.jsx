@@ -8,7 +8,7 @@ const Banner = () => {
         {/* mobile view */}
         <div className="flex md:hidden items-center justify-between flex-wrap">
           <div className="w-0 flex-1 flex items-center text-xs">
-            <p className="font-medium text-white truncate">
+            <p className="font-medium text-gray-700">
               <span className="md:inline">
                 AsyncAPI Conference 2021 has ended! ⭐️
               </span>
