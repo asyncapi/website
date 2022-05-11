@@ -266,14 +266,31 @@ function HomePage() {
             </Paragraph>
             <div className="mt-4">
               <TextLink href="/blog" className="mt-4">
-                  Read all blog posts 
-                  <ArrowRight className="inline w-6" />
+                Read all blog posts
+                <ArrowRight className="inline w-6" />
               </TextLink>
             </div>
           </div>
           <BlogView />
         </div>
-      </Container>
+        <div className="lg:flex flex-row mt-4">
+          <div className="text-center lg:text-left lg:w-1/5 pt-4">
+            <Heading level="h4" typeStyle="heading-md-semibold">
+              Latest News
+            </Heading>
+            <Paragraph typeStyle="body-md" className="mt-4">
+              Read about what people are saying about AsyncAPI
+            </Paragraph>
+            <div className="mt-4">
+              <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
+                Follow us on Twitter
+                <ArrowRight className="inline w-6" />
+              </TextLink>
+            </div>
+          </div>
+        </div>
+    </Container>
+      
     </>
   )
 }

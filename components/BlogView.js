@@ -31,7 +31,7 @@ export default function BlogView() {
     }  
   return (
     <div className="flex-col lg:flex lg:w-4/5 p-4 overflow-auto">
-        <div className="flex snap-x gap-6 overflow-x-auto" id="blog-container">
+        <div className="flex snap-x gap-6 overflow-x-auto scroll-none" id="blog-container">
             {
                 posts.map((post, index) => (
                      <BlogPostItem className='snap-start scroll-ml-6' post={post} key={index} /> 

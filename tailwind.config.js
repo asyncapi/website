@@ -207,6 +207,14 @@ module.exports = {
         '.font-ligatures-contextual': {
           'font-variant-ligatures': 'contextual',
         },
+        '.scroll-none':{
+          'scrollbar-width': 'none',
+          '-ms-overflow-style': 'none', 
+        },
+        '.scroll-none::-webkit-scrollbar':{
+          'display':'none',
+          'scroll-behavior':'smooth',
+        }
       })
     })
   ],
