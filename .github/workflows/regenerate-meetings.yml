@@ -8,7 +8,7 @@ on:
 
 jobs:
   meetings:
-    if: (github.repository == 'asyncapi/website')
+      if: github.repository == 'asyncapi/website'
       env:
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
         CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
