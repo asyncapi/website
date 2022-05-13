@@ -243,6 +243,9 @@ export default function ModelinaPlaygroundPage() {
           <Paragraph className="mt-4 max-w-3xl mx-auto">
             {description}
           </Paragraph>
+          <Paragraph className="mt-3 lg:pr-4">
+           Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents.
+          </Paragraph>
         </div>
 
         <div className="relative mt-12 lg:mt-20 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
