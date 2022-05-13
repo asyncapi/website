@@ -189,7 +189,7 @@ export default function ModelinaPlaygroundPage() {
   const [error, setError] = useState();
   const tryItOutRef = useRef(null);
 
-  const description = 'Sometimes you just want to generate data models for your payload.';
+  const description = 'Sometimes you just want to generate data models for your payload. Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents.';
   const image = '/img/social/modelina-card.jpg';
 
   const tabs = (
@@ -242,9 +242,6 @@ export default function ModelinaPlaygroundPage() {
           </Heading>
           <Paragraph className="mt-4 max-w-3xl mx-auto">
             {description}
-          </Paragraph>
-          <Paragraph className="mt-3 lg:pr-4">
-           Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents.
           </Paragraph>
         </div>
 
