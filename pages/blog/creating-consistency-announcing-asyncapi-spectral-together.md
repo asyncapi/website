@@ -79,11 +79,12 @@ you get started.
 
 To get started, you need to [install Spectral first](https://meta.stoplight.io/docs/spectral/docs/getting-started/2-installation.md). Note that you need to have [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or
 [Yarn](https://yarnpkg.com/getting-started/install) installed, running `npm install -g @stoplight/spectral-cli` or `yarn global add @stoplight/spectral-cli` is sufficient
-to get Spectral.
+to get Spectral. 
 
-Since we intend to use the AsyncAPI ruleset, we can also consider installing `@stoplight/spectral-rulesets`, which
-contains the actual ruleset we’ll use. However, it’s an optional step, as the installation of `spectral-cli` will already
-install `spectral-rulesets` for you.
+The CLI package bundles [@stoplight/spectral-rulesets](https://www.npmjs.com/package/@stoplight/spectral-rulesets) which
+contains the actual ruleset we’ll use.
+If you intend to use an older version of the AsyncAPI ruleset, you could additionally install a different version of @stoplight/spectral-rulesets.
+However, it’s an optional step, and it's generally recommended to stick with the latest versions if possible.
 
 **Step Two:**
 
