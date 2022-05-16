@@ -34,7 +34,7 @@ ensure API definitions can reach their full potential, without needing to have s
 to the documents.
 
 Although Spectral is mostly referenced in the context of OpenAPI, AsyncAPI has been an integral
-part of Spectral for quite some time now. In fact, later this month our Spectral AsyncAPI ruleset will celebrate its
+part of Spectral for quite some time now. In fact, last month our Spectral AsyncAPI ruleset celebrated its
 second anniversary.
 
 ## Why AsyncAPI?
