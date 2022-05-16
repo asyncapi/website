@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Dev Comm Keeper
 excerpt: 'AsyncAPI Initiative growth presented in different metrics from different channels in 2021.'
-featured: true
 ---
 
 This article is a continuation of a tradition where once a year, we summarize all the metrics that we can collect from our different tools to see how we are growing as a community.
