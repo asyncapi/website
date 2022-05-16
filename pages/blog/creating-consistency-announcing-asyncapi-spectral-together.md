@@ -6,10 +6,10 @@ tags:
   - API Governance 
 cover: /img/posts/creating-consistency-announcing-asyncapi-spectral-together/cover.webp
 authors:
-  - name: Stoplight
-    photo: /img/avatars/stoplight.webp
-    link: https://stoplight.io/
-    byline: We build API tooling
+  - name: Jakub Rozek
+    photo: /img/avatars/jrozek.webp
+    link: https://rozek.tech/
+    byline: Senior Software Engineer at Stoplight
 excerpt: | 
  The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI will be a game-changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
 ---
