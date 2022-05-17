@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 export default function Hero({ className = ''}) {
   return (
-    <div className={`px-2 mt-12 ${className}`}>
+    <header className={`px-2 mt-12 ${className}`}>
       <div className="text-center">
         <AnnouncementHero />
         <Heading level="h1" typeStyle="heading-xl" className="mb-4">
@@ -38,6 +38,6 @@ export default function Hero({ className = ''}) {
         <DemoAnimation />
       </div>
       <Features />
-    </div>
+    </header>
   );
 }
