@@ -28,7 +28,7 @@ export default function MobileNavMenu ({
                 </button>
               </div>
             </div>
-            <div className="py-2 px-5 space-y-2">
+            <div className="py-2 space-y-2">
               <h4 className="text-gray-500 font-medium block mb-4">Learning</h4>
               <MenuBlocks items={learningItems} />
             </div>
