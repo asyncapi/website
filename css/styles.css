@@ -36,18 +36,13 @@ li > p {
 }
 
 :target {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 10vh;
 }
 
-@media (max-width: 768px){
+@media (max-width: 992px){
   :target {
-    scroll-margin-top: 140px;
+    scroll-margin-top: 17vh;
   }  
 }
 
-@media (max-width: 640px){
-  :target {
-    scroll-margin-top: 150px;
-  }  
-}
 /*! purgecss end ignore */
