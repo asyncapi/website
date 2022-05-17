@@ -6,7 +6,7 @@ export default function Container ({
   flexReverse = false,
   cssBreakingPoint = 'md',
   className = '',
-  tag,
+  as,
 }) {
   const commonClassNames = `${flex ? `${cssBreakingPoint}:flex` : 'block'} ${flexReverse ? `${cssBreakingPoint}:flex-row-reverse` : ''} ${className} px-4 sm:px-6 lg:px-8`
   const wideClassNames = `max-w-screen-xl ${commonClassNames}`
@@ -14,7 +14,7 @@ export default function Container ({
   const normalClassNames = `${wide ? wideClassNames : regularClassNames} mx-auto w-full`
   const fluidClassNames = `${commonClassNames}`
 
-  const Tag = tag || 'div';
+  const Tag = as || 'div';
   
   return (
     <Tag className={fluid ? fluidClassNames : normalClassNames}>

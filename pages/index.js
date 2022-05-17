@@ -51,7 +51,7 @@ function HomePage() {
           <Hero className="mb-24" />
         </Container>
 
-        <Container className="text-center pb-12" wide tag="section">
+        <Container className="text-center pb-12" wide as="section">
           <Heading
             level="h3"
             typeStyle="heading-lg"
@@ -85,12 +85,12 @@ function HomePage() {
         </Container>
 
         <div className="bg-gray-900 py-12 mt-8">
-          <Container wide tag="section">
+          <Container wide as="section">
             <NewsletterSubscribe formName="form 1" dark />
           </Container>
         </div>
 
-        <Container className="text-center py-12" wide tag="section">
+        <Container className="text-center py-12" wide as="section">
           <Heading
             level="h3"
             typeStyle="heading-lg"
@@ -163,7 +163,7 @@ function HomePage() {
         </Container>
 
         <section role="contentinfo" aria-label='Our Sponsors'>
-          <Container className="text-center py-6" wide tag="section">
+          <Container className="text-center py-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -174,7 +174,7 @@ function HomePage() {
             <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
-          <Container className="text-center py-6" wide tag="section">
+          <Container className="text-center py-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -185,7 +185,7 @@ function HomePage() {
             <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
-          <Container className="text-center py-6" wide tag="section">
+          <Container className="text-center py-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-md-semibold"
@@ -202,7 +202,7 @@ function HomePage() {
           </Container>
         </section>
 
-        <Container className="text-center pb-10" wide tag="section">
+        <Container className="text-center pb-10" wide as="section">
           <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
               <Testimonial
                 className="md:pr-10 lg:pr-16"
@@ -234,7 +234,7 @@ function HomePage() {
               />
             </ul>
         </Container>
-        <Container className="text-center py-6 pb-20" wide tag="section">
+        <Container className="text-center py-6 pb-20" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Supported by
           </Heading>
@@ -246,7 +246,7 @@ function HomePage() {
           </Paragraph>
           <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
-        <Container wide tag="section">
+        <Container wide as="section">
           <div className="text-center">
             <Heading
               level="h2"
