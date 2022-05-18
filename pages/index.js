@@ -15,8 +15,7 @@ import SlackLogo from '../components/logos/Slack'
 import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
-import BlogPostItem from '../components/navigation/BlogPostItem'
-import BlogView from '../components/BlogView'
+import NewsroomBlogPosts from '../components/NewsroomBlogPosts'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -245,7 +244,7 @@ function HomePage() {
               </TextLink>
             </div>
           </div>
-          <BlogView />
+          <NewsroomBlogPosts />
         </div>
         <div className="lg:flex flex-row mt-4">
           <div className="text-center lg:text-left lg:w-1/5 pt-4">

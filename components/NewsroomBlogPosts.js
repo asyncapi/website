@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import BlogPostItem from './navigation/BlogPostItem'
 import { getAllPosts } from '../lib/api'
 import ArrowRight from './icons/ArrowRight'
 import ArrowLeft from './icons/ArrowLeft'
 
-export default function BlogView() {
+export default function NewsroomBlogPosts() {
   const posts = getAllPosts()
     .filter(p => p.slug.startsWith('/blog/'))
     .sort((i1, i2) => {
