@@ -20,16 +20,16 @@ export default function Testimonial({
         </div>
         <footer className="mt-6">
           <div className="flex">
-            <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
+            <figure className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
               <img className="h-12 w-12 rounded-full" src={authorAvatar} alt={authorName}/>
-            </div>
+            </figure>
             <div className="ml-4 text-left">
-              <div className="text-base leading-6 font-bold text-gray-900">{authorName}</div>
-              <div className="text-base leading-6 font-medium text-primary-500">{authorDescription}</div>
+              <p className="text-base leading-6 font-bold text-gray-900">{authorName}</p>
+              <p className="text-base leading-6 font-medium text-primary-500">{authorDescription}</p>
             </div>
           </div>
         </footer>
       </blockquote>
-    </div>
+    </li>
   )
 }

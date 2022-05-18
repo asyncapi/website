@@ -22,6 +22,7 @@ const purgecss = [
       /generator\-[\w]+/,
       /w\-2\.5/,
       /h\-2\.5/,
+      /:target/
     ],
     defaultExtractor: content => content.match(/[\w-/:()]+(?<!:)/g) || []
   }
