@@ -203,7 +203,6 @@ function HomePage() {
             </Paragraph>
           </Container>
         </section>
-      </Container>
       <Container className="text-center py-6 pb-20" wide>
         <Heading level="h3" typeStyle="heading-lg" className="mb-4">
           Supported by
