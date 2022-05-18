@@ -36,12 +36,12 @@ li > p {
 }
 
 :target {
-  scroll-margin-top: 10vh;
+  scroll-margin-top: 120px;
 }
 
-@media (max-width: 992px){
+@media (max-width: 1280px) {
   :target {
-    scroll-margin-top: 17vh;
+    scroll-margin-top: 155px;
   }  
 }
 
