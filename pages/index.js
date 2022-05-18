@@ -155,50 +155,51 @@ function HomePage() {
         </div>
       </Container>
 
-      <Container className="text-center py-6" wide>
-        <Heading
-          level="h3"
-          typeStyle="heading-lg"
-          className="mb-4"
-        >
-          Platinum Sponsors
-        </Heading>
-        <Sponsors className="mt-4" showSupportBanner={false} />
-      </Container>
+      <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
+          <Container className="text-center pb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Platinum Sponsors
+            </Heading>
+            <Sponsors className="mt-4" showSupportBanner={false} />
+          </Container>
 
-      <Container className="text-center py-6" wide>
-        <Heading
-          level="h3"
-          typeStyle="heading-lg"
-          className="mb-4"
-        >
-          Gold Sponsors
-        </Heading>
-        <GoldSponsors className="mt-4" showSupportBanner={false} />
-      </Container>
+          <Container className="text-center pyb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Gold Sponsors
+            </Heading>
+            <GoldSponsors className="mt-4" showSupportBanner={false} />
+          </Container>
 
-      <Container className="text-center py-6 pb-20" wide>
-        <Heading
-          level="h3"
-          typeStyle="heading-md-semibold"
-          className="mb-4"
-        >
-            Want to Sponsor Us?
-        </Heading>
-        <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor?
-          <TextLink href="https://opencollective.com/asyncapi" target="_blank">
-            Support us!
-          </TextLink>
-        </Paragraph>
-      </Container>
+          <Container className="text-center py-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-md-semibold"
+              className="mb-4"
+            >
+                Want to Sponsor Us?
+            </Heading>
+            <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
+              These great organizations are already supporting AsyncAPI. Want to become a sponsor?
+              <TextLink href="https://opencollective.com/asyncapi" target="_blank">
+                Support us!
+              </TextLink>
+            </Paragraph>
+          </Container>
+        </section>
 
-      <Container className="text-center py-6 pb-20" wide>
-        <Heading level="h3" typeStyle="heading-lg" className="mb-4">
-          What the experts are saying
-        </Heading>
-        <section>
-          <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
+        <Container className="text-center pb-20" wide as="section">
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            What the experts are saying
+          </Heading>
+          <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
               className="md:pr-10 lg:pr-16"
               text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
@@ -227,21 +228,21 @@ function HomePage() {
               authorName="Eric Horesnyi"
               authorDescription="CEO at Streamdata.io"
             />
-          </div>
-        </section>
-      </Container>
-      <Container className="text-center py-6 pb-20" wide>
-        <Heading level="h3" typeStyle="heading-lg" className="mb-4">
-          Supported by
-        </Heading>
-        <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
-          The following companies support us by letting us use their products for free. Interested in supporting us too?
-          <TextLink href="mailto:info@asyncapi.io" target="_blank">
-              Email us
-          </TextLink> for more info.
-        </Paragraph>
-        <SupportUs className="mt-4" showSupportBanner={false} />
-      </Container>
+          </ul>
+        </Container>
+        <Container className="text-center pb-20" wide as="section">
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            Supported by
+          </Heading>
+          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
+            The following companies support us by letting us use their products for free. Interested in supporting us too?
+            <TextLink href="mailto:info@asyncapi.io" target="_blank">
+                Email us
+            </TextLink> for more info.
+          </Paragraph>
+          <SupportUs className="mt-4" showSupportBanner={false} />
+        </Container>
+
       <Container wide>
         <div className="text-center">
           <Heading
