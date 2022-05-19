@@ -1,4 +1,3 @@
-import { getAllPosts } from '../lib/api'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -16,6 +15,7 @@ import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import NewsroomBlogPosts from '../components/NewsroomBlogPosts'
+import NewsroomArticle from '../components/NewsroomArticle'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -25,21 +25,9 @@ import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-import YoutubeButton from '../components/buttons/YoutubeButton';
+
 
 function HomePage() {
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
-    .sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
-    .slice(0, 3)
-
   return (
     <>
       <Head />
@@ -125,7 +113,7 @@ function HomePage() {
 
               <div className="mt-12 lg:flex lg:flex-row-reverse">
                 <section className="mt-10 lg:mt-0 lg:flex-1">
-                  <Calendar size="2" className="float-left"/>
+                  <Calendar size="2" className="float-left" />
                 </section>
                 <section className="lg:text-left lg:max-w-xl lg:mr-12">
                   <div className="mt-5">
@@ -192,7 +180,7 @@ function HomePage() {
               typeStyle="heading-md-semibold"
               className="mb-4"
             >
-                Want to Sponsor Us?
+              Want to Sponsor Us?
             </Heading>
             <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
               These great organizations are already supporting AsyncAPI. Want to become a sponsor?
@@ -202,70 +190,74 @@ function HomePage() {
             </Paragraph>
           </Container>
         </section>
-      <Container className="text-center py-6 pb-20" wide>
-        <Heading level="h3" typeStyle="heading-lg" className="mb-4">
-          Supported by
-        </Heading>
-        <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
-          The following companies support us by letting us use their products for free. Interested in supporting us too?
-          <TextLink href="mailto:info@asyncapi.io" target="_blank">
-            Email us
-          </TextLink> for more info.
-        </Paragraph>
-        <SupportUs className="mt-4" showSupportBanner={false} />
-      </Container>
-      <Container wide>
-        <div className="text-center">
-          <Heading
-            level="h2"
-            typeStyle="heading-lg"
-          >
-            Latest Updates
+        <Container className="text-center py-6 pb-20" wide>
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            Supported by
           </Heading>
-          <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-3">
-            Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
-            <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
-              Submit yours!
-            </TextLink>
+          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
+            The following companies support us by letting us use their products for free. Interested in supporting us too?
+            <TextLink href="mailto:info@asyncapi.io" target="_blank">
+              Email us
+            </TextLink> for more info.
           </Paragraph>
-        </div>
-        <div className="lg:flex flex-row mt-4">
-          <div className="text-center lg:text-left lg:w-1/5 pt-4">
-            <Heading level="h4" typeStyle="heading-md-semibold">
-              From the blog
+          <SupportUs className="mt-4" showSupportBanner={false} />
+        </Container>
+        <Container wide>
+          <div className="text-center">
+            <Heading
+              level="h2"
+              typeStyle="heading-lg"
+            >
+              Latest Updates
             </Heading>
-            <Paragraph typeStyle="body-md" className="mt-4">
-              Check out these articles written by community members
-            </Paragraph>
-            <div className="mt-4">
-              <TextLink href="/blog" className="mt-4">
-                Read all blog posts
-                <ArrowRight className="inline w-6" />
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-3">
+              Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
+              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
+                Submit yours!
               </TextLink>
+            </Paragraph>
+          </div>
+          <div className="lg:flex flex-row mt-4">
+            <div className="text-center lg:text-left lg:w-1/5 pt-4">
+              <Heading level="h4" typeStyle="heading-md-semibold">
+                From the blog
+              </Heading>
+              <Paragraph typeStyle="body-md" className="mt-4">
+                Check out these articles written by community members
+              </Paragraph>
+              <div className="mt-4">
+                <TextLink href="/blog" className="mt-4">
+                  Read all blog posts
+                  <ArrowRight className="inline w-6" />
+                </TextLink>
+              </div>
+            </div>
+            <NewsroomBlogPosts />
+          </div>
+          <div className="lg:flex flex-row mt-4">
+            <div className="text-center lg:text-left lg:w-1/5 pt-4">
+              <Heading level="h4" typeStyle="heading-md-semibold">
+                Latest News
+              </Heading>
+              <Paragraph typeStyle="body-md" className="mt-4">
+                Read about what people are saying about AsyncAPI
+              </Paragraph>
+              <div className="mt-4">
+                <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
+                  Follow us on Twitter
+                  <ArrowRight className="inline w-6" />
+                </TextLink>
+              </div>
+            </div>
+            <div className="text-center lg:text-left lg:w-4/5 lg:flex flex-row justify-evenly mt-4">
+              <NewsroomArticle />
+              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 mx-auto lg:mt-0" style={{width:'fit-content'}}>
+                <a className="twitter-timeline w-auto" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+              </div>
             </div>
           </div>
-          <NewsroomBlogPosts />
-        </div>
-        <div className="lg:flex flex-row mt-4">
-          <div className="text-center lg:text-left lg:w-1/5 pt-4">
-            <Heading level="h4" typeStyle="heading-md-semibold">
-              Latest News
-            </Heading>
-            <Paragraph typeStyle="body-md" className="mt-4">
-              Read about what people are saying about AsyncAPI
-            </Paragraph>
-            <div className="mt-4">
-              <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
-                Follow us on Twitter
-                <ArrowRight className="inline w-6" />
-              </TextLink>
-            </div>
-          </div>
-        </div>
-    </Container>
-      
-
-        <Container className="text-center pb-20" wide as="section">
+        </Container>
+        <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             What the experts are saying
           </Heading>
@@ -308,7 +300,7 @@ function HomePage() {
           <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
             The following companies support us by letting us use their products for free. Interested in supporting us too?
             <TextLink href="mailto:info@asyncapi.io" target="_blank">
-                Email us
+              Email us
             </TextLink> for more info.
           </Paragraph>
           <SupportUs className="mt-4" showSupportBanner={false} />
