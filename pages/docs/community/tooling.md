@@ -64,7 +64,6 @@ The following is a list of tools that generate human-readable documentation from
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
 | [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | Javascript
 
-
 # UI components {#UI}
 
 The following is a list of UI components to view AsyncAPI documents.
@@ -72,7 +71,7 @@ The following is a list of UI components to view AsyncAPI documents.
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
 | [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript/React
-| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer-jsonschema--async-api) | Javascript/React
+| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [@udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer-jsonschema--async-api) | Javascript/React
 
 # DSL
 
@@ -123,16 +122,14 @@ The following is a list of tools that validate AsyncAPI documents.
 | [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
 
----
-
 # Compare tools {#diff}
 
 The following is a list of tools that compare AsyncAPI documents.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes. | Javascript
-| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API specifications (OpenAPI, AsyncAPI, JsonSchema). Thanks to [udamir](https://github.com/udamir). | Javascript
+| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI documents and provides information about the differences by pointing out explicitly information like breaking changes. | Javascript
+| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema. Thanks to [@udamir](https://github.com/udamir). | Javascript
 
 ---
 
