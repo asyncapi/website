@@ -116,6 +116,18 @@ The following is a list of tools that validate AsyncAPI documents.
 
 ---
 
+# Compare tools {#diff}
+
+The following is a list of tools that compare AsyncAPI documents.
+
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
+| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes. | Javascript
+| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API specifications (OpenAPI, AsyncAPI, JsonSchema). Thanks to [udamir](https://github.com/udamir). | Javascript
+| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. | Javascript/React
+
+---
+
 <DocsButton
   suggestions={[
     {
