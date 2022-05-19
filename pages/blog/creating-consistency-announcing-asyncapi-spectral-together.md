@@ -14,7 +14,6 @@ excerpt: |
  The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI will be a game-changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
 ---
 
-# Creating Consistency: Announcing AsyncAPI & Spectral – Together!
 
 The collaboration between Stoplight’s open-source linting tool, Spectral, and AsyncAPI is going to be a game changer for creating more consistency in your API program. Check out what comes with the release of the AsyncAPI ruleset!
 
