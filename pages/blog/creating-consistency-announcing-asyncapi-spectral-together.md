@@ -1,6 +1,6 @@
 ---
 title: "Creating Consistency: Announcing AsyncAPI & Spectral – Together!"
-date: 2022-04-13T6:20:59+02:00
+date: 2022-05-25T16:00:00+02:00
 type: Community
 tags: 
   - API Governance 
