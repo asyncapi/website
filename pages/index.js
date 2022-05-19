@@ -162,8 +162,8 @@ function HomePage() {
           </div>
         </Container>
 
-        <section role="contentinfo" aria-label='Our Sponsors'>
-          <Container className="text-center py-6" wide as="section">
+        <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
+          <Container className="text-center pb-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -174,7 +174,7 @@ function HomePage() {
             <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
-          <Container className="text-center py-6" wide as="section">
+          <Container className="text-center pyb-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -202,39 +202,43 @@ function HomePage() {
           </Container>
         </section>
 
-        <Container className="text-center pb-10" wide as="section">
+        <Container className="text-center pb-20" wide as="section">
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            What the experts are saying
+          </Heading>
           <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-              <Testimonial
-                className="md:pr-10 lg:pr-16"
-                text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
-                authorAvatar="/img/testimonials/matt-mclarty.jpg"
-                authorName="Matt McLarty"
-                authorDescription="Global Leader of API Strategy at MuleSoft"
-              />
-              <Testimonial
-                className="md:pl-10 lg:pl-16"
-                text="Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches."
-                authorAvatar="/img/testimonials/bill-doerrfeld.jpg"
-                authorName="Bill Doerrfeld"
-                authorDescription="Editor in Chief at Nordic APIs"
-              />
-              <Testimonial
-                className="md:pr-10 lg:pr-16"
-                text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event driven world, and that is exactly what the AsyncAPI initiative is making a reality."
-                authorAvatar="/img/testimonials/jonathan-schabowsky.jpg"
-                authorName="Jonathan Schabowsky"
-                authorDescription="Sr. Architect, Office of the CTO at Solace"
-              />
-              <Testimonial
-                className="md:pl-10 lg:pl-16"
-                text="We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community towards common standards."
-                authorAvatar="/img/testimonials/eric-horesnyi.jpg"
-                authorName="Eric Horesnyi"
-                authorDescription="CEO at Streamdata.io"
-              />
-            </ul>
+            <Testimonial
+              className="md:pr-10 lg:pr-16"
+              text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
+              authorAvatar="/img/testimonials/matt-mclarty.jpg"
+              authorName="Matt McLarty"
+              authorDescription="Global Leader of API Strategy at MuleSoft"
+            />
+            <Testimonial
+              className="md:pl-10 lg:pl-16"
+              text="Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches."
+              authorAvatar="/img/testimonials/bill-doerrfeld.jpg"
+              authorName="Bill Doerrfeld"
+              authorDescription="Editor in Chief at Nordic APIs"
+            />
+            <Testimonial
+              className="md:pr-10 lg:pr-16"
+              text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event driven world, and that is exactly what the AsyncAPI initiative is making a reality."
+              authorAvatar="/img/testimonials/jonathan-schabowsky.jpg"
+              authorName="Jonathan Schabowsky"
+              authorDescription="Sr. Architect, Office of the CTO at Solace"
+            />
+            <Testimonial
+              className="md:pl-10 lg:pl-16"
+              text="We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community towards common standards."
+              authorAvatar="/img/testimonials/eric-horesnyi.jpg"
+              authorName="Eric Horesnyi"
+              authorDescription="CEO at Streamdata.io"
+            />
+          </ul>
         </Container>
-        <Container className="text-center py-6 pb-20" wide as="section">
+
+        <Container className="text-center pb-20" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Supported by
           </Heading>
@@ -246,6 +250,7 @@ function HomePage() {
           </Paragraph>
           <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
+
         <Container wide as="section">
           <div className="text-center">
             <Heading
