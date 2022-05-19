@@ -72,7 +72,7 @@ The following is a list of UI components to view AsyncAPI documents.
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
 | [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript/React
-| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Storybook https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer-jsonschema--async-api Thanks to [udamir](https://github.com/udamir). | Javascript/React
+| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer-jsonschema--async-api) | Javascript/React
 
 # DSL
 
