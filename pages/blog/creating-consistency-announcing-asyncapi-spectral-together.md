@@ -59,7 +59,7 @@ priority.
 The introduction of support for another major API definition helped us further assess its level of importance as well as
 initiated a notable shift in the way we perceived Spectral internally. Treating AsyncAPI ruleset as a first-class
 citizen pushed us to entirely decouple our codebase from OpenAPI. The core purpose of Spectral (linting API definitions)
-remained unchanged and still holds the truth, but from an engineering standpoint, it meant a shift in focus to the other
+remained unchanged and still holds true, but from an engineering standpoint, it meant a shift in focus to the other
 specs and a renewed attention on writing code that can be applicable everywhere.
 
 Back in 2018 or 2019, plenty of code was oriented around OpenAPI, tests, and naming. All were focused solely on OpenAPI,
