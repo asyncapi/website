@@ -28,7 +28,7 @@ export default function NewsroomBlogPosts() {
   }
   let buttonClass = 'border-2 shadow-md rounded border-gray-100 text-gray-400 hover:border-secondary-500 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none mx-2'
   return (
-    <div className="flex-col lg:flex lg:w-4/5 p-4 overflow-auto">
+    <div className="flex-col lg:flex lg:w-3/4 p-4 overflow-auto">
       <div className="flex gap-6 overflow-x-auto scroll-none list-none" ref={blogContainer}>
         {
           posts.map((post, index) => (
@@ -36,7 +36,7 @@ export default function NewsroomBlogPosts() {
           ))
         }
       </div>
-      <div className="flex flex-row mt-4 justify-content-center lg:justify-content-start">
+      <div className="flex flex-row mt-4 justify-content-center md:justify-content-start">
         <button className={`${buttonClass} py-4 px-8 ml-0`} onClick={shiftLeft}>
           <ArrowLeft className="w-4" />
         </button>

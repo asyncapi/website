@@ -127,7 +127,9 @@ module.exports = {
         '10ch': '10ch',
         '12ch': '12ch',
         '14ch': '14ch',
-        'fit': 'fit-content',
+      },
+      width:{
+         'fit': 'fit-content'
       },
       height: {
         '72': '18rem',
