@@ -7,7 +7,7 @@ menu:
 weight: 30
 ---
 
-Let's define an application that's capable of publishing a "hello {name}" message
+Let's define an application that's capable of publishing a "hello {name}" message, that is, clients can publish to this `hello` channel, and the `Hello world application` will receive the message.
 
 <CodeBlock>
 {`asyncapi: 2.2.0
