@@ -236,6 +236,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jaas666",
+      "name": "Juan A.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30204147?v=4",
+      "profile": "http://juanarce.me",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "luphieanza",
+      "name": "Muhammad Rafly Andrianza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20577131?v=4",
+      "profile": "https://github.com/luphieanza",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

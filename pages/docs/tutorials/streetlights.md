@@ -15,9 +15,18 @@ You want to create a system capable of turning on/off the streetlights depending
 - Based off the events, your application can make a decision regarding turning the streetlight off.
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
 
-# Technology
+# Installation Guide
 
 You'll use Node.js to code the APIs and Mosquitto as the message broker. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
+
+Before you proceed to the next stage, you'll need to download a few things:
+
+1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
+
+2. Install Git based on your Operating System (OS):
+- [Install Git on MacOs](https://git-scm.com/download/mac)
+- [Install Git on Windows](https://git-scm.com/download/win)
+- [Install Git on Linux](https://git-scm.com/download/linux)
 
 # Creating the AsyncAPI file
 
@@ -211,11 +220,11 @@ EOT`}
 
 ### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
 
-# Conclusions
+# Conclusion
 
-You've learned how to create an AsyncAPI description file and how to generate code from it. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you get an idea of the potential.
+You've learned how to create an AsyncAPI description file and how to generate code from it. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
-We would love to see what you create with AsyncAPI! As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand [creating a issue in our Github repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy. :simple_smile:
+We would love to see what you create with AsyncAPI! As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand by [creating an issue in our Github repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy.
 
 ---
 

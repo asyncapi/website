@@ -7,7 +7,7 @@ import TagManager from 'react-gtm-module'
 export default function HeadComponent({
   title,
   description = 'Open source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the industry standard for defining asynchronous APIs.',
-  image = '/img/social/card.png',
+  image = '/img/social/website-card.jpg',
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
   rssLink = '/rss.xml'
 }) {
@@ -37,7 +37,7 @@ export default function HeadComponent({
 
       {/* Load Work Sans font */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
       {/* Icons */}
