@@ -50,7 +50,7 @@ The release of [AsyncAPI ruleset](https://meta.stoplight.io/docs/spectral/ZG9jOj
 Spectral lacked meaningful rulesets for other formats, and the number of learning resources was somewhat limited, making
 the adaption of Spectral outside of OpenAPI rather minimal.
 
-Our collaboration with AsyncAPI means that we’ve given the appropriate AsyncAPI maintainers write access to the Spectral
+Our collaboration with AsyncAPI means that we’ve given the respective AsyncAPI maintainers write access to the Spectral
 repo AsyncAPI rulesets, though here at Stoplight we will still continue to operate with PRs, and ensure these get
 priority.
 
