@@ -1,5 +1,5 @@
 ---
-title: "Creating Consistency: Announcing AsyncAPI & Spectral – Together!"
+title: "Governance for Asynchronous APIs: Announcing AsyncAPI & Spectral – Together!"
 date: 2022-05-25T16:00:00+02:00
 type: Community
 tags: 
