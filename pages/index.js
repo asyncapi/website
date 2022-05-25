@@ -218,7 +218,7 @@ function HomePage() {
             </Paragraph>
           </div>
           <div className="lg:flex flex-row mt-4">
-            <div className="text-center lg:text-left pt-4 lg:pr-16 lg:max-w-xs">
+            <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 From the blog
               </Heading>
@@ -235,12 +235,12 @@ function HomePage() {
             <NewsroomBlogPosts />
           </div>
           <div className="lg:flex flex-row mt-4">
-            <div className="text-center lg:text-left lg:w-1/5 pt-4">
+            <div className="text-center lg:text-left lg:w-1/4 pt-4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 Latest News
               </Heading>
               <Paragraph typeStyle="body-md" className="mt-4">
-                Read about what people are saying about AsyncAPI
+                Read about what people are <br /> saying about AsyncAPI
               </Paragraph>
               <div className="mt-4">
                 <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
@@ -249,10 +249,12 @@ function HomePage() {
                 </TextLink>
               </div>
             </div>
-            <div className="text-center md:text-left lg:w-4/5 md:flex flex-row justify-evenly mt-4">
+            <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4">
+              <div className="lg:w-1/2">
               <NewsroomArticle />
-              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 mx-auto md:mt-0" style={{width:'fit-content'}}>
-                <a className="twitter-timeline w-auto" data-width="343" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+              </div>
+              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-fit mx-auto md:mt-0">
+                <a className="twitter-timeline w-auto" data-width="350" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
               </div>
             </div>
           </div>

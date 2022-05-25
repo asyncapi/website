@@ -153,7 +153,7 @@ module.exports = {
         '184': '46rem',
       },
       minWidth: {
-        '76': '20rem',
+        '76': '27rem',
         '72': '18rem',
         '40': '10rem',
         '12': '3rem',

@@ -24,10 +24,10 @@ export default function BlogPostItem({ post, className = '' }) {
   }
 
   return (
-    <li className='rounded-lg min-w-76'>
+    <li className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
-            <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer ${className}`}>
+            <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
               <img className="h-48 w-full object-cover" src={post.cover} alt="" />  
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">

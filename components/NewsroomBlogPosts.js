@@ -20,19 +20,19 @@ export default function NewsroomBlogPosts() {
   const blogContainer = useRef(null);
   const shiftLeft = (e) => {
     e.preventDefault()
-    blogContainer.current.scrollLeft -= 350
+    blogContainer.current.scrollLeft -= 448
   }
   const shiftRight = (e) => {
     e.preventDefault()
-    blogContainer.current.scrollLeft += 350
+    blogContainer.current.scrollLeft += 448
   }
-  let buttonClass = 'border-2 shadow-md rounded border-gray-100 text-gray-400 hover:border-secondary-500 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none mx-2'
+  let buttonClass = 'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2'
   return (
     <div className="flex-col lg:flex lg:w-3/4 p-4 overflow-auto">
-      <div className="flex gap-6 overflow-x-auto scroll-none list-none" ref={blogContainer}>
+      <div className="flex overflow-x-auto scroll-none list-none" ref={blogContainer}>
         {
           posts.map((post, index) => (
-            <BlogPostItem className='scroll-ml-6' post={post} key={index} />
+            <BlogPostItem post={post} key={index} className="mr-4 min-w-76"/>
           ))
         }
       </div>
