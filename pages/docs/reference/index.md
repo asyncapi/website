@@ -3,9 +3,9 @@ title: Overview
 weight: 2
 ---
 
-## Reference: AsyncAPI Specification, CLI, etc.
+## Reference: AsyncAPI Specification.
 
-Welcome to AsyncAPI **Reference**! Our Reference section will document how to set up your development environment, CLI, APIs, and beyond.
+Welcome to AsyncAPI **Reference**! Our Reference section documents the AsyncAPI specification.  
 
 <Remember>
 
