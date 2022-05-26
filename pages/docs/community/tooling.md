@@ -60,10 +60,18 @@ The following is a list of tools that generate human-readable documentation from
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | CLI / Javascript
-| [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript
 | [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
 | [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | Javascript
+
+# UI components {#UI}
+
+The following is a list of UI components to view AsyncAPI documents.
+
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
+| [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript/React
+| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [@udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer--async-api) | Javascript/React
 
 # DSL
 
@@ -114,12 +122,21 @@ The following is a list of tools that validate AsyncAPI documents.
 | [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
 
+# Compare tools {#diff}
+
+The following is a list of tools that compare AsyncAPI documents.
+
+| Link           | Description    | Language/Framework |
+| :------------- | :------------- | :----------------- |
+| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI documents and provides information about the differences by pointing out explicitly information like breaking changes. | Javascript
+| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema. Thanks to [@udamir](https://github.com/udamir). | Javascript
+
 ---
 
 <DocsButton
   suggestions={[
     {
-      href: '/docs//docs/specifications/v2.0.0',
+      href: '/docs/specifications/v2.0.0',
       title: 'Specifications - Release 2.0.0',
       type:'back',
     }
