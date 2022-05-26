@@ -27,28 +27,31 @@ export default function Calendar({ className = '', size, text="text-left" }) {
       <Heading level="h2" typeStyle="heading-md-semibold">
         Upcoming events
       </Heading> 
-      {getEvents().map((event, index) => (
-        <a
-          href={event.url}
-          className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
-          key={index}
-        >
-          <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
-            <span className="flex-1 text-center self-center">
-              {event.date.format('D')}
-            </span>
-          </div>
-          <div className="text-left flex-grow sm:pl-6 sm:mt-0">
-            <h2 className="font-medium title-font text-gray-900 text-xl hover:text-gray-500">
-              {event.title}
-            </h2>
-            <p className="text-gray-600">
-              {event.date.local().format('LLLL')} UTC
-              {event.date.local().format('Z')}
-            </p>
-          </div>
-        </a>
-      ))}
+      <ul>
+        {getEvents().map((event, index) => (
+          <li key={index}>
+            <a
+              href={event.url}
+              className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
+            >
+              <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
+                <span className="flex-1 text-center self-center">
+                  {event.date.format('D')}
+                </span>
+              </div>
+              <div className="text-left flex-grow sm:pl-6 sm:mt-0">
+                <h2 className="font-medium title-font text-gray-900 text-xl hover:text-gray-500">
+                  {event.title}
+                </h2>
+                <p className="text-gray-600">
+                  {event.date.local().format('LLLL')} UTC
+                  {event.date.local().format('Z')}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
       {eventsExist && (
         <div className='pt-4'>
           <GoogleCalendarButton 
