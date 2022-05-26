@@ -31,7 +31,7 @@ const cards = [
   },
   {
     title: 'Reference',
-    description: 'Our Reference section teaches how to set up your development environment, CLI, APIs, and beyond.',
+    description: 'Our Reference section documents the AsyncAPI specification.',
     link: '/docs/reference',
     className: 'bg-yellow-200',
     Icon: IconSpec,
