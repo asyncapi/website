@@ -19,7 +19,7 @@ Some examples of this can be:
 Along with the event, you may also want to send _extra information_. For instance:
 
 * A user just signed up: here's the user information (e.g., name, email, age, etc.)
-* You have a new follower: here are the follower details (e.g., username, name, picture, etc._
+* You have a new follower: here are the follower details (e.g., username, name, picture, etc.)
 * Your fridge is almost empty: here's the percentage of "emptiness" or available volume (e.g. 23%)
 
 This extra information is often referred to as the _event payload_ or _message payload_.
