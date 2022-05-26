@@ -44,7 +44,7 @@ A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_
 
 ### Message
 
-A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything, and they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very much like _requests_ in REST APIs: They tell the subscribers "do this."
+A message is a piece of information that is sent by publishers to the broker, and received by all interested subscribers. Messages can contain anything, and are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very similar to _requests_ in REST APIs. They instruct the subscribers to "do this."
 
 **To be precise, _events_ and _commands_ share the same structure, but differ conceptually.**
 
