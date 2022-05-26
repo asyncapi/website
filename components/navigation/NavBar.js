@@ -4,9 +4,8 @@ import AsyncAPILogo from '../AsyncAPILogo'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
 import LearningPanel from './LearningPanel'
-import NavMenu from './NavMenu'
+import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
-import communityItems from './communityItems'
 import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
@@ -35,7 +34,7 @@ export default function NavBar ({
 
   return (
       <div className={`bg-white ${className} z-50`}>
-        <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#"/>
+        <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#" bgClassName="bg-gray-100" textClassName="text-gray-700"/>
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
@@ -52,7 +51,7 @@ export default function NavBar ({
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
         </div>
@@ -69,7 +68,7 @@ export default function NavBar ({
 
           <div className="relative">
             <NavItem text="Community" onClick={() => showMenu('community')} hasDropdown />
-            {open === 'community' && <NavMenu items={communityItems} />}
+            {open === 'community' && <CommunityPanel />}
           </div>
 
           {otherItems.map((item, index) => (
