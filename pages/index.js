@@ -250,10 +250,10 @@ function HomePage() {
               </div>
             </div>
             <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4">
-              <div className="lg:w-1/2">
+              <div className="w-full lg:w-1/2">
               <NewsroomArticle />
               </div>
-              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-fit mx-auto md:mt-0">
+              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-fit mx-auto md:mt-0">
                 <a className="twitter-timeline w-auto" data-width="350" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
               </div>
             </div>

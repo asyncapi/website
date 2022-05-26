@@ -32,7 +32,7 @@ export default function NewsroomBlogPosts() {
       <div className="flex overflow-x-auto scroll-none list-none" ref={blogContainer}>
         {
           posts.map((post, index) => (
-            <BlogPostItem post={post} key={index} className="mr-4 min-w-76"/>
+            <BlogPostItem post={post} key={index} className="mr-4 min-w-full md:min-w-76"/>
           ))
         }
       </div>
