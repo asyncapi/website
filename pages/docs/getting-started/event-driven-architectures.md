@@ -24,11 +24,13 @@ Along with the event, you may also want to send _extra information_. For instanc
 
 This extra information is often referred to as the _event payload_ or _message payload_.
 
+An Event-Driven Architecture (EDA) uses events to trigger and communicate between services and is common in modern applications built with microservices. An event is a change in state, or an update, like adding a shopping item in a cart on an e-commerce website.
+
 ## Core concepts
 
 ![](/img/diagrams/simple-event-driven.png)
 
-In most cases, Event-Driven Architectures (EDAs) are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
+In most cases, EDAs are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
 
 ### Message broker
 
