@@ -20,7 +20,7 @@ You want to build a system that can turn streetlights on and off based on their 
 
 # Installation Guide
 
-You'll use Node.js to code the APIs and Mosquitto as the message broker. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
+You'll use Node.js to code the APIs and [Mosquitto](https://mosquitto.org/) as the message broker. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
 
 Before you proceed to the next stage, you'll need to download a few things:
 
