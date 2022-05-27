@@ -31,7 +31,7 @@ Before you proceed to the next stage, you'll need to download a few things:
 - [Install Git on Windows](https://git-scm.com/download/win)
 - [Install Git on Linux](https://git-scm.com/download/linux)
 
-# Tutorial Step 1
+# Creating the AsyncAPI file
 
 In this step, we will create an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
 
@@ -128,7 +128,7 @@ The `Payload` property defines the content of the event using AsyncAPI schemas. 
 
 Cool! You're done with your AsyncAPI file! Now let's get into generating code.
 
-# Tutorial Step 2
+# Generating code
 
 In this step, we will generate your code, you'll use the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
 
@@ -194,7 +194,7 @@ EOT`}
 {`cd output && ls`}
 </CodeBlock>
 
-# Tutorial Step 3
+# Running your code
 
 ### 1. Install dependencies of newly generated application:
 <CodeBlock language="bash">
