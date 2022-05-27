@@ -3,11 +3,14 @@ title: Streetlights
 description: In this tutorial, you'll get started with code samples from an IoT real-world use case. Let's pretend you have a company called Smarty Lighting that engineers smart-city lighting systems.
 ---
 
+# Introduction
+
 In this tutorial, you get started with actual code and a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems.
 
-# Streetlights System Description
+# Background Context
 
-You want to create a system capable of turning on/off the streetlights depending on the environmental conditions of each of them:
+The Smartylighting Streetlights API allows you to manage city lights remotely.
+You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
 - You're going to implement an event-driven architecture, with a Message Broker in its "center".
 - Streetlights will publish information about their environmental lighting to the broker.
@@ -28,9 +31,9 @@ Before you proceed to the next stage, you'll need to download a few things:
 - [Install Git on Windows](https://git-scm.com/download/win)
 - [Install Git on Linux](https://git-scm.com/download/linux)
 
-# Creating the AsyncAPI file
+# Tutorial Step 1
 
-Let's start by creating an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
+In this step, we will create an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
 
 <CodeBlock>
 {`asyncapi: '2.2.0'
@@ -125,9 +128,9 @@ The `Payload` property defines the content of the event using AsyncAPI schemas. 
 
 Cool! You're done with your AsyncAPI file! Now let's get into generating code.
 
-# Generating code
+# Tutorial Step 2
 
-To generate your code, you'll use the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
+In this step, we will generate your code, you'll use the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
 
 ### 1. Install the generator to use it as a command-line tool
 <CodeBlock language="bash">
@@ -191,7 +194,7 @@ EOT`}
 {`cd output && ls`}
 </CodeBlock>
 
-# Running your code
+# Tutorial Step 3
 
 ### 1. Install dependencies of newly generated application:
 <CodeBlock language="bash">
@@ -220,9 +223,9 @@ EOT`}
 
 ### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
 
-# Conclusion
+# Summary
 
-You've learned how to create an AsyncAPI description file and how to generate code from it. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
+In this tutorial, we learned how to create an AsyncAPI description file and how to generate code from it. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 We would love to see what you create with AsyncAPI! As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand by [creating an issue in our Github repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy.
 
