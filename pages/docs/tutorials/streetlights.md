@@ -7,7 +7,7 @@ description: In this tutorial, you'll get started with code samples from an IoT 
 
 In this tutorial, you get started with actual code and a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems.
 
-# Background Context
+# Streetlights System Description
 
 The Smartylighting Streetlights API allows you to manage city lights remotely.
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
@@ -26,7 +26,9 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
-2. Install Git based on your Operating System (OS):
+2. Download [Mosquitto](https://mosquitto.org/download/) (based on your Operating System)
+
+3. Install Git based on your Operating System (OS):
 - [Install Git on MacOs](https://git-scm.com/download/mac)
 - [Install Git on Windows](https://git-scm.com/download/win)
 - [Install Git on Linux](https://git-scm.com/download/linux)
