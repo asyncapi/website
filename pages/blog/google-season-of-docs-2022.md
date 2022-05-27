@@ -16,7 +16,7 @@ featured: true
 ---
 
 ## ¡Hola, AsyncAPI community! 
-For today's blog post about AsyncAPI Docs 📑, I wanted to share with all technical writers about our organization’s plan for participation in `Google Season of Docs 2022 (GSoD)`. Any and all technical writers are welcome to come participate with us for GSoD 2022 season, regardless of tech background or years of experience! At AsynAPI, we love mentoring folks who want to get involved in OSS, tech, and Docs. ❤️
+For today's blog post about AsyncAPI Docs 📑, I wanted to share with all technical writers about our organization’s plan for participation in `Google Season of Docs 2022 (GSoD)`. Any and all technical writers are welcome to come participate with us for GSoD 2022 season, regardless of tech background or years of experience! At AsyncAPI, we love mentoring folks who want to get involved in OSS, tech, and Docs. ❤️
 
 As some of you may remember from my [Gist Docs update for 31 Jan - 11 Feb 2022](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), I noted that GSoD 2022 was coming up and that AsyncAPI wanted to participate in the application process once it opened on February 23, 2022.  
 
@@ -72,7 +72,7 @@ The project itself will take approximately 4-6 months to complete, depending on 
 
 For our 2 projects, we would like to request a minimum of 2 TWs, so that we can work on both the CLI/Tools and Generator Docs. 
 
-The timeline would look as following:
+The timeline would look as follows:
 - **May:** Orientation on how to contribute to AsyncAPI Inititiave, how Docs issues are organized, detail how we're migrating our CLI and Tools Docs, and assign good `first-time-tickets` to get each new TW contributor started. 
 - **June - August:**	Each TW goes through designated issues marked for both first time contributors and work set aside for `GSoD 2022`. Each TW starts creating documentation for their individual issues assigned/selected. 
 - **September - October:** We determine if we're going to be able to complete both CLI and Tools Docs plus the Generator Docs, depending on how many TWs are in our group and how much they've been able to complete so far. We re-align priorities as needed and asses what is missing to reach our 2022 IA change goals for AsyncAPI Docs.
