@@ -20,7 +20,7 @@ import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
 import AppContext from '../context/AppContext'
 import Footer from "../components/Footer";
-import '../css/styles.css'
+import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps, router }) {
 
