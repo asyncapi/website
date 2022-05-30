@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-gray-900 mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-10 px-4 overflow-hidden sm:px-6 lg:px-8 divide-y-2 divide-gray-700">
         <nav className="-mx-5 -my-2 p-5 mt-2 flex flex-wrap justify-between ">
-          <div className="px-5">
+          <div className="px-5 w-full md:w-auto">
             <div className="">
               <Link href="/">
                 <a className="cursor-pointer">
@@ -28,8 +28,10 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <div className="flex">
-            <div className="px-5 ml-5">
+
+        
+          <div className="flex flex-col md:flex-row">
+            <div className="px-10 md:px-5 ml-5 mb-5">
               <div className="py-2">
                 <div className="mb-1 text-base font-medium text-white">
                   <p>The Initiative</p>
@@ -64,7 +66,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="px-10 ml-5">
+            <div className="px-10 ml-5 mb-5">
               <div className="py-2">
                 <div className="mb-1 text-base font-medium text-white">
                   <p>News</p>
@@ -88,7 +90,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="px-10 ml-5">
+            <div className="px-10 ml-5 mb-5">
               <div className="py-2">
                 <div className="mb-1 text-base font-medium text-white">
                   <p>Social</p>
@@ -118,7 +120,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="py-2">
-                  <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="text-gray-500 flex justify-center items-center hover:text-blue-500">
+                  <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="text-gray-500 flex hover:text-blue-500">
                     <div className="">
                       <div className="flex fit-content items-center hover:text-blue-500">
                         <span className="sr-only">LinkedIn</span>
@@ -129,7 +131,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="py-2">
-                  <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="text-gray-500 flex justify-center items-center hover:text-red-600">
+                  <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="text-gray-500 flex hover:text-red-600">
                     <div className="">
                       <div className="flex fit-content items-center  hover:text-red-600">
                         <span className="sr-only">YouTube</span>
