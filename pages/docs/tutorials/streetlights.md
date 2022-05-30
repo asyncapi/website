@@ -213,22 +213,22 @@ EOT`}
 {`docker run -it -p 1883:1883 eclipse-mosquitto:1.5`}
 </CodeBlock>
 
-### 3. In another terminal install the MQTT.js library:
+### 4. In another terminal install the MQTT.js library:
 <CodeBlock language="bash">
 {`npm install mqtt -g`}
 </CodeBlock>
 
-### 4. Send a correct message to your application:
+### 5. Send a correct message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 5. Send an incorrect message to your application:
+### 6. Send an incorrect message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
+### 7. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
 
 # Summary
 
