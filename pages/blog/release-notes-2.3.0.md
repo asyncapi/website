@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/dalelane.webp
     link: https://twitter.com/dalelane
 excerpt: 'AsyncAPI 2.3 is now released. This brings enhancements allowing new ways of structuring AsyncAPI documents and support for describing Solace APIs.'
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 2.3.0 - is now available.
