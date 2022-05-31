@@ -210,22 +210,22 @@ function HomePage() {
             >
               Latest Updates
             </Heading>
-            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-3">
+            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-5">
               Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
               <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
                 Submit yours!
               </TextLink>
             </Paragraph>
           </div>
-          <div className="lg:flex flex-row mt-4">
+          <div className="lg:flex flex-row my-20">
             <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 From the blog
               </Heading>
-              <Paragraph typeStyle="body-md" className="mt-4">
+              <Paragraph typeStyle="body-md" className="mt-7">
                 Check out these articles written by community members
               </Paragraph>
-              <div className="mt-4">
+              <div className="mt-7">
                 <TextLink href="/blog" className="mt-4">
                   Read all blog posts
                   <ArrowRight className="inline w-6" />
@@ -234,15 +234,15 @@ function HomePage() {
             </div>
             <NewsroomBlogPosts />
           </div>
-          <div className="lg:flex flex-row mt-4">
+          <div className="lg:flex flex-row my-20">
             <div className="text-center lg:text-left lg:w-1/4 pt-4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 Latest News
               </Heading>
-              <Paragraph typeStyle="body-md" className="mt-4">
+              <Paragraph typeStyle="body-md" className="mt-7">
                 Read about what people are <br /> saying about AsyncAPI
               </Paragraph>
-              <div className="mt-4">
+              <div className="mt-7">
                 <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
                   Follow us on Twitter
                   <ArrowRight className="inline w-6" />
@@ -255,6 +255,22 @@ function HomePage() {
               </div>
               <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-fit mx-auto md:mt-0">
                 <a className="twitter-timeline w-auto" data-width="350" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+              </div>
+            </div>
+          </div>
+          <div className="lg:flex flex-row my-20">
+            <div className="text-center lg:text-left lg:w-1/4 pt-4">
+              <Heading level="h4" typeStyle="heading-md-semibold">
+                Video & Live Streams
+              </Heading>
+              <Paragraph typeStyle="body-md" className="mt-7">
+                Watch our latest videos and live streams on the AsyncAPI YouTube channel
+              </Paragraph>
+              <div className="mt-7">
+                <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
+                  Visit our YouTube channel
+                  <ArrowRight className="inline w-6" />
+                </TextLink>
               </div>
             </div>
           </div>

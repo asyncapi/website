@@ -37,10 +37,10 @@ export default function NewsroomBlogPosts() {
         }
       </div>
       <div className="flex flex-row mt-4 justify-content-center md:justify-content-start">
-        <button className={`${buttonClass} py-4 px-8 ml-0`} onClick={shiftLeft}>
+        <button className={`${buttonClass} py-3 px-6 ml-0`} onClick={shiftLeft}>
           <ArrowLeft className="w-4" />
         </button>
-        <button className={`${buttonClass} py-2 px-6`} onClick={shiftRight}>
+        <button className={`${buttonClass} py-1 px-4`} onClick={shiftRight}>
           <ArrowRight className="w-8" />
         </button>
       </div>
