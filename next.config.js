@@ -35,4 +35,7 @@ module.exports = withMDX({
 
     return config
   },
+  env:{
+    YOUTUBE_TOKEN: process.env.YOUTUBE_TOKEN
+  }
 })

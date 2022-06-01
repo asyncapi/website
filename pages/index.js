@@ -1,3 +1,4 @@
+import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -16,6 +17,7 @@ import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
 import NewsroomBlogPosts from '../components/NewsroomBlogPosts'
 import NewsroomArticle from '../components/NewsroomArticle'
+import NewsroomYoutube from '../components/NewsroomYoutube'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -254,7 +256,11 @@ function HomePage() {
               <NewsroomArticle />
               </div>
               <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-fit mx-auto md:mt-0">
-                <a className="twitter-timeline w-auto" data-width="350" data-height="575" href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">Tweets by AsyncAPISpec</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+                <TwitterTimelineEmbed
+                  sourceType="profile"
+                  screenName="AsyncAPISpec"
+                  options={{height: 575, width:350}}
+                />
               </div>
             </div>
           </div>
@@ -272,6 +278,9 @@ function HomePage() {
                   <ArrowRight className="inline w-6" />
                 </TextLink>
               </div>
+            </div>
+            <div>
+              <NewsroomYoutube />
             </div>
           </div>
         </Container>
