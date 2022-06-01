@@ -13,7 +13,7 @@ AsyncAPI is an open source initiative that seeks to improve the current state of
 
 To make this happen, the first step has been to create a specification that allows **developers, architects, and product managers** to define the interfaces of an async API. Much like [OpenAPI (fka Swagger)](https://github.com/OAI/OpenAPI-Specification) does for REST APIs.
 
-**The AsyncAPI specification settles the base for a greater and better tooling ecosystem for EDA's**. We recently launched AsyncAPI specification 2.3.0 —the strongest version to date— that will sustain the event-driven architectures of tomorrow.
+**The AsyncAPI specification settles the base for a greater and better tooling ecosystem for EDA's**.
 
 If you are looking for a solution to automate and formalize the documentation or code generation of your event-driven (micro)services, you are in the right place. Likewise, if you are aiming to establish solid standards for your events and improve the governance of your asynchronous APIs, welcome to your new home.
 
