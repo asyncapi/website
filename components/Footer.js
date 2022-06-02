@@ -173,10 +173,10 @@ export default function Footer() {
           </div>
         </nav>
         
-        <div className="md:flex justify-between items-center mt-20 px-5 py-10">
-          <div className="px-2">
+        <div className="md:flex justify-between items-center mt-20 py-10">
+          <div className="">
             <p className="text-left text-sm leading-6 text-gray-400">
-              Made with <span className="font-mono text-pink-500">:love:</span> by the AsyncAPI Initiative.
+              Made with <span className="font-mono text-blue-500">:love:</span> by the AsyncAPI Initiative.
             </p>
             <p className="text-left text-sm leading-6 text-gray-400 mt-1">
               Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
@@ -186,7 +186,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="block mt-10 md:mt-0">
-            <p className="text-center text-sm leading-6 text-gray-400">
+            <p className="text-center text-sm leading-6">
               <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
                 <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
               </a>
