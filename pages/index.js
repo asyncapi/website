@@ -251,15 +251,15 @@ function HomePage() {
                 </TextLink>
               </div>
             </div>
-            <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4">
+            <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4 gap-4">
               <div className="w-full lg:w-1/2">
               <NewsroomArticle />
               </div>
-              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-fit mx-auto md:mt-0">
+              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
                 <TwitterTimelineEmbed
                   sourceType="profile"
                   screenName="AsyncAPISpec"
-                  options={{height: 575, width:350}}
+                  options={{height: 575, width:400}}
                 />
               </div>
             </div>

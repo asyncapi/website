@@ -1,11 +1,12 @@
 import moment from 'moment'
+import { forwardRef } from 'react'
 import TextTruncate from 'react-text-truncate'
 import AuthorAvatars from '../AuthorAvatars'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 import Link from 'next/link'
 
-export default function BlogPostItem({ post, className = '' }) {
+export default forwardRef(function BlogPostItem({ post, className = ''}, ref) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800']
 
   switch (post.type.toLowerCase()) {
@@ -24,7 +25,7 @@ export default function BlogPostItem({ post, className = '' }) {
   }
 
   return (
-    <li className={`rounded-lg ${className}`}>
+    <li className={`rounded-lg ${className}`} ref={ref}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
             <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
@@ -76,4 +77,4 @@ export default function BlogPostItem({ post, className = '' }) {
       </article>
     </li>
   )
-}
+})
