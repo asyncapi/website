@@ -1,0 +1,172 @@
+[
+        {
+            "kind": "youtube#searchResult",
+            "etag": "EdJZC1So49W4HpqNnhMhwst6Uqk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "6MUR0RN10As"
+            },
+            "snippet": {
+                "publishedAt": "2022-06-01T04:27:52Z",
+                "channelId": "UCIz9zGwDLbrYQcDKVXdOstQ",
+                "title": "Community Meeting - May 31 2022",
+                "description": "Regular community meeting: https://github.com/asyncapi/community/issues/383.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6MUR0RN10As/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6MUR0RN10As/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6MUR0RN10As/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "AsyncAPI",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-06-01T04:27:52Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "pO-T_-kPOX9dIjCNtZYBs6uVdYo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "SPI7aw7pbHo"
+            },
+            "snippet": {
+                "publishedAt": "2022-05-27T03:37:45Z",
+                "channelId": "UCIz9zGwDLbrYQcDKVXdOstQ",
+                "title": "AsyncAPI Conference 2022 organization kick off",
+                "description": "Let's kick off the regular work. Time is ticking, and if we want to have in person conf in October/November we need to act now.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/SPI7aw7pbHo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/SPI7aw7pbHo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/SPI7aw7pbHo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "AsyncAPI",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-05-27T03:37:45Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "RptMgbR4spyUnhVe4S_-DZs7HkI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "uoKEet0jcSc"
+            },
+            "snippet": {
+                "publishedAt": "2022-05-26T05:14:00Z",
+                "channelId": "UCIz9zGwDLbrYQcDKVXdOstQ",
+                "title": "Spec 3.0 Meeting",
+                "description": "https://github.com/asyncapi/community/issues/366.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/uoKEet0jcSc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/uoKEet0jcSc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/uoKEet0jcSc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "AsyncAPI",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-05-26T05:14:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "M2kR7eCMf4bGebzmj4x50L5OqHQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "wwyHdrHTUlY"
+            },
+            "snippet": {
+                "publishedAt": "2022-05-26T03:07:40Z",
+                "channelId": "UCIz9zGwDLbrYQcDKVXdOstQ",
+                "title": "Thinking Out Loud #16 — with Jeremy Whitlock",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wwyHdrHTUlY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wwyHdrHTUlY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wwyHdrHTUlY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "AsyncAPI",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-05-26T03:07:40Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "UrUzRQs1Ot63SNthobvDDilILok",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ysa3xxxlUpk"
+            },
+            "snippet": {
+                "publishedAt": "2022-05-24T04:15:21Z",
+                "channelId": "UCIz9zGwDLbrYQcDKVXdOstQ",
+                "title": "Request/reply discussion part 2",
+                "description": "Another meeting related to request/reply support in spec 3.0 version.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ysa3xxxlUpk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ysa3xxxlUpk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ysa3xxxlUpk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "AsyncAPI",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-05-24T04:15:21Z"
+            }
+        }
+]

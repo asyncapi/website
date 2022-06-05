@@ -272,14 +272,14 @@ function HomePage() {
               <Paragraph typeStyle="body-md" className="mt-7">
                 Watch our latest videos and live streams on the AsyncAPI YouTube channel
               </Paragraph>
-              <div className="mt-7">
+              <div className="my-7">
                 <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
                   Visit our YouTube channel
                   <ArrowRight className="inline w-6" />
                 </TextLink>
               </div>
             </div>
-            <div>
+            <div className='lg:w-3/4'>
               <NewsroomYoutube />
             </div>
           </div>
