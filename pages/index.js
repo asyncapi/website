@@ -255,17 +255,17 @@ function HomePage() {
               <div className="w-full lg:w-1/2">
               <NewsroomArticle />
               </div>
-              <div className="rounded-md px-6 pt-4 border-2 border-gray-200 mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
+              <div className="rounded p-6 border border-gray-200 drop-shadow-md mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
                 <TwitterTimelineEmbed
                   sourceType="profile"
                   screenName="AsyncAPISpec"
-                  options={{height: 575, width:400}}
+                  options={{height: 545, width:400}}
                 />
               </div>
             </div>
           </div>
           <div className="lg:flex flex-row my-20">
-            <div className="text-center lg:text-left lg:w-1/4 pt-4">
+            <div className="text-center lg:text-left lg:w-1/4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 Video & Live Streams
               </Heading>

@@ -22,8 +22,7 @@ export default function NewsroomYoutube({ className = '' }) {
     videoContainer.current.scrollLeft += width + 16;
   };
 
-  let buttonClass =
-    'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2';
+  let buttonClass = 'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2';
   useEffect(() => {
     // async function youtube() {
     //   const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
@@ -53,7 +52,7 @@ export default function NewsroomYoutube({ className = '' }) {
           <div
             key={index}
             ref={videoref}
-            className="rounded-lg w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden flex flex-col"
+            className="rounded w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col"
           >
             <img
               src={video.snippet.thumbnails.high.url}
@@ -84,7 +83,7 @@ export default function NewsroomYoutube({ className = '' }) {
           </div>
         ))}
       </div>
-      <div className="flex flex-row mt-4 justify-content-center md:justify-content-start">
+      <div className="flex flex-row mt-4 justify-content-center md:justify-content-start my-7">
         <button className={`${buttonClass} py-3 px-6 ml-0`} onClick={shiftLeft}>
           <ArrowLeft className="w-4" />
         </button>
