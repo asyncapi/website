@@ -13,7 +13,7 @@ import Heading from "./typography/Heading"
 export default function Footer() {
   return (
     <footer className="bg-dark mt-12 margin: 0 auto">
-      <div className="max-w-screen-xl mx-auto py-16 px-4 overflow-hidden sm:px-6 lg:px-8 divide-y divide-gray-700">
+      <div className="max-w-screen-xl mx-auto py-16 px-4 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
         <nav className="-mx-5 -my-2 py-10 px-5 mt-2 flex flex-wrap justify-between ">
           <div className="mr-5 w-full md:w-auto">
             <div className="">
@@ -179,13 +179,13 @@ export default function Footer() {
         <div className="md:flex justify-between items-center mt-20 py-10">
           <div className="">
             <p className="text-left text-sm leading-6 text-cool-gray">
-              Made with <span className="font-mono text-blue-500">:love:</span> by the AsyncAPI Initiative.
+              Made with <span className="font-mono text-secondary-500">:love:</span> by the AsyncAPI Initiative.
             </p>
             <p className="text-left text-sm leading-6 text-cool-gray mt-1">
               Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
             </p>
             <p className="text-left text-sm leading-6 text-cool-gray mt-1">
-              For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-blue-500 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
+              For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-secondary-500 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
             </p>
           </div>
           <div className="block mt-10 md:mt-0">
