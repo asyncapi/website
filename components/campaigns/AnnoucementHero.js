@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Button from '../buttons/Button'
-import Heading from '../typography/Heading';
+import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
 export default function AnnouncementHero({ className = '', small = false}) {
