@@ -11,10 +11,10 @@ export default function AnnouncementHero({ className = '', small = false}) {
 
   return (
     <div className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${small ? 'mb-4' : 'mb-12'}`}>
-      <Heading level="h2" typeStyle="heading-lg">
+      <Heading className="text-xl md:text-3xl font-bold countdown-text-gradient" level="h2" typeStyle="heading-lg countdown-text-gradient">
         AsyncAPI Conference 2022
       </Heading>
-      <Paragraph typeStyle="body-lg">
+      <Paragraph className="text-xl md:text-3xl font-bold countdown-text-gradient" typeStyle="body-lg countdown-text-gradient">
         Help us decide on a date and location by filling out a short survey
       </Paragraph>
       <div className="mt-8 pb-2 space-x-2">
