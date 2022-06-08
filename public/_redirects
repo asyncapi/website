@@ -7,7 +7,14 @@ https://asyncapi.io/* https://www.asyncapi.com/:splat 301!
 https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Docs
-/docs/tooling /docs/community/tooling 301!
+/docs/getting-started /docs/tutorials/getting-started 301!
+/docs/getting-started/event-driven-architectures /docs/tutorials/getting-started/event-driven-architectures 301!
+/docs/getting-started/coming-from-openapi /docs/tutorials/getting-started/coming-from-openapi 301!
+/docs/getting-started/hello-world /docs/tutorials/getting-started/hello-world 301!
+/docs/getting-started/asyncapi-documents /docs/tutorials/getting-started/asyncapi-documents 301!
+/docs/getting-started/servers /docs/tutorials/getting-started/servers 301!
+/docs/getting-started/security /docs/tutorials/getting-started/security 301!
+/docs/community/tooling /docs/tools 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
