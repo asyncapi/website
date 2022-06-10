@@ -7,7 +7,7 @@ export default function DocsMobileMenu({
   onClickClose = () => { },
 }) {
   return (
-    <div className="z-60 md:hidden">
+    <div className="z-60 lg:hidden">
       <div className="fixed inset-0 flex z-40">
         <div className="fixed inset-0">
           <div className="absolute inset-0 bg-gray-600 opacity-75" onClick={onClickClose}></div>

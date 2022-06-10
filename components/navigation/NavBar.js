@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
+import { useRouter } from "next/router";
 import { registerClickAway } from '../helpers/click-away'
+import { isMobileDevice } from '../helpers/is-mobile'
 import AsyncAPILogo from '../AsyncAPILogo'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
@@ -11,30 +13,42 @@ import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
 import Link from 'next/link';
 
+const isMobile = isMobileDevice();
+
 export default function NavBar ({
   className = '',
   hideLogo = false,
 }) {
+  const { asPath } = useRouter();
   const [open, setOpen] = useState()
   const [mobileMenuOpen, setMobileMenuOpen] = useState()
 
   function showMenu(menu) {
-    if (open === menu) return setOpen(null)
+    if (open === menu) return;
+    setOpen(menu);
+  }
 
-    setTimeout(() => {
-      setOpen(menu)
-    }, 0);
+  function showOnClickMenu(menu) {
+    console.log(isMobile)
+    if (!isMobile) return;
+    if (open === menu) return setOpen(null);
+    setOpen(menu);
   }
 
   useEffect(() => {
     if (open) registerClickAway(() => {
       setOpen(null)
     })
-  }, [open])
+  }, [open]);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setOpen(null);
+}, [asPath])
 
   return (
-      <div className={`bg-white ${className} z-50`}>
-        <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#" bgClassName="bg-gray-100" textClassName="text-gray-700"/>
+    <div className={`bg-white ${className} z-50`}>
+      <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#" bgClassName="bg-gray-100" textClassName="text-gray-700"/>
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
@@ -56,18 +70,34 @@ export default function NavBar ({
           </button>
         </div>
         <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
-          <div className="relative">
-            <NavItem text="Docs" href='/docs' onClick={() => showMenu('learning')} onMouseEnter={() => showMenu('learning')} hasDropdown />
+          <div className="relative" onMouseLeave={() => showMenu(null)}>
+            <NavItem 
+              text="Docs" 
+              href='/docs' 
+              onClick={() => showOnClickMenu('learning')} 
+              onMouseEnter={() => showMenu('learning')} 
+              hasDropdown
+            />
             {open === 'learning' && <LearningPanel />}
           </div>
 
-          <div className="relative">
-            <NavItem text="Tools" onClick={() => showMenu('tooling')} onMouseEnter={() => showMenu('tooling')} hasDropdown />
+          <div className="relative" onMouseLeave={() => showMenu(null)}>
+            <NavItem 
+              text="Tools" 
+              onClick={() => showOnClickMenu('tooling')} 
+              onMouseEnter={() => showMenu('tooling')} 
+              hasDropdown 
+            />
             { open === 'tooling' && <ToolsPanel /> }
           </div>
 
-          <div className="relative">
-            <NavItem text="Community" onClick={() => showMenu('community')} hasDropdown />
+          <div className="relative" onMouseLeave={() => showMenu(null)}>
+            <NavItem 
+              text="Community" 
+              onClick={() => showOnClickMenu('community')} 
+              onMouseEnter={() => showMenu('community')} 
+              hasDropdown
+            />
             {open === 'community' && <CommunityPanel />}
           </div>
 
