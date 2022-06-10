@@ -15,23 +15,21 @@ export default function Footer() {
     <footer className="bg-dark mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-4 sm:py-6 md:py-12 xl:py-16 px-3 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
         <nav className="-mx-5 -my-2 py-4 sm:py-10 px-6 mt-2 flex flex-wrap justify-between ">
+
           <div className="mr-14 w-full md:w-auto">
             <div className="">
               <Link href="/">
                 <a className="cursor-pointer">
-                  <AsyncAPILogoLight className="h-13 w-auto mt-3" />
+                  <AsyncAPILogoLight className="h-10 w-auto mt-3" />
                 </a>
               </Link>
            </div>
             <div className="">
-              {/* <p className="text-lg font-medium text-white mt-8 mb-15"> */}
               <Heading className="mt-12 mb-15 text-white" typeStyle="heading-sm-semibold">
                 Building the future of <br/> Event-Driven Architectures.
               </Heading>
-              {/* </p> */}
             </div>
           </div>
-
         
           <div className="flex flex-col sm:flex-row">
             
