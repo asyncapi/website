@@ -14,6 +14,7 @@ import Heading from "../../components/typography/Heading";
 import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
+import Button from "../../components/buttons/Button";
 
 export default function BlogIndexPage() {
   const router = useRouter();
@@ -42,6 +43,11 @@ export default function BlogIndexPage() {
       name: "tags",
     },
   ];
+  const clearFilters = () => {
+    router.push(`${router.pathname}`, undefined, {
+      shallow: true,
+    });
+  };
   const showClearFilters = Object.keys(router.query).length > 0;
   return (
     <div>
@@ -94,9 +100,11 @@ export default function BlogIndexPage() {
               checks={toFilter}
             />
             {showClearFilters && (
-              <span className="text-sm leading-10">
-                <Link href="/blog" passHref><a> Clear filters </a></Link>
-              </span>
+              <Button
+                  bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none mt-1 pb-2 pt-2 md:mt-0"
+                  text="Clear filters"
+                  onClick={clearFilters}
+              />
             )}
           </div>
           <div>
