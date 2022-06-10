@@ -10,8 +10,8 @@ import DocsNavItem from '../navigation/DocsNavItem'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
+import Feedback from '../Feedback'
 import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
-import AnnouncementHero from '../campaigns/AnnoucementHero'
 import Footer from '../Footer'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
@@ -72,7 +72,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
-            <AnnouncementHero className="text-center mx-4" small={true} />
             {!showMenu && (
               <div className="lg:hidden">
                 <button onClick={() => setShowMenu(true)} className="flex text-gray-500 px-4 sm:px-6 md:px-8 hover:text-gray-900 focus:outline-none" aria-label="Open sidebar">
@@ -99,7 +98,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 {generateEditLink(post)}
               </p>
             </div>
-                <article className="mb-32 mt-12">
+                <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
                     description={post.excerpt}
@@ -107,6 +106,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   />
                   { children }
                 </article>
+                <div className="">
+                  <Feedback />
+                </div>
               </div>
             </div>
           </main>

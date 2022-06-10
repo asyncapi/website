@@ -24,7 +24,7 @@ export default function GithubActionsPage() {
   }
 
   const description = 'Generate docs and code on your Github Actions pipeline.'
-  const image = '/img/social/github-actions.png'
+  const image = '/img/social/githubactions-card.jpg'
 
   return (
     <GenericLayout

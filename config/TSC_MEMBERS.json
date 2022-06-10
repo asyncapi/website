@@ -216,6 +216,19 @@
 		]
 	},
 	{
+		"name": "Missy Turco",
+		"github": "mcturco",
+		"twitter": "missyturco",
+		"linkedin": "missy-turco-a476a6126",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"brand",
+			"design-system",
+			"studio"
+		]
+	},
+	{
 		"name": "Nektarios Fifes",
 		"github": "NektariosFifes",
 		"linkedin": "nektarios-fifes-372740220",
@@ -339,7 +352,7 @@
 		"github": "boyney123",
 		"twitter": "boyney123",
 		"availableForHire": false,
-		"company": "Postman",
+		"company": "AWS",
 		"repos": [
 			"studio",
 			"cli"
