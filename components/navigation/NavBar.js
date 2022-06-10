@@ -29,7 +29,6 @@ export default function NavBar ({
   }
 
   function showOnClickMenu(menu) {
-    console.log(isMobile)
     if (!isMobile) return;
     if (open === menu) return setOpen(null);
     setOpen(menu);
@@ -44,7 +43,7 @@ export default function NavBar ({
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpen(null);
-}, [asPath])
+  }, [asPath])
 
   return (
     <div className={`bg-white ${className} z-50`}>

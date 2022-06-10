@@ -20,7 +20,7 @@ const postDirectories = [
 module.exports = async function buildPostList() {
   walkDirectories(postDirectories, result)
   if (process.env.NODE_ENV === 'production') {
-    console.log(inspect(result, { depth: null, colors: true }))
+    // console.log(inspect(result, { depth: null, colors: true }))
   }
   writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 }
