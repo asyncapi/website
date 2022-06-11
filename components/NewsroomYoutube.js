@@ -7,7 +7,8 @@ import tempData from '../config/videos.json';
 import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 
-export default function NewsroomYoutube({ className = '' }) {
+export default function NewsroomYoutube({ className = ''}) {
+  //console.log(data);
   const [videoData, setvideoData] = useState([]);
   const videoContainer = useRef();
   const videoref = useRef();
@@ -24,21 +25,15 @@ export default function NewsroomYoutube({ className = '' }) {
 
   let buttonClass = 'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2';
   useEffect(() => {
-    // async function youtube() {
-    //   const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
-    //     key: process.env.YOUTUBE_TOKEN,
-    //     part: 'snippet',
-    //     channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
-    //     eventType: 'completed',
-    //     type:'video',
-    //     order: 'Date',
-    //     maxResults: 5,
-    //   }))
-    //   const data = await response.json();
-    //   console.log(data.items);
-    //   setvideoData(data.items);
-    // }
-    // youtube()
+    async function youtube(){  
+      await fetch('/.netlify/functions/youtube_videos').then((response)=>{
+        //response.json();
+        console.log(response)
+      }).catch((error) => {
+        console.log(error);
+      })  
+    }
+    youtube();
     setvideoData(tempData);
   }, []);
 
