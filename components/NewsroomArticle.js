@@ -7,8 +7,10 @@ export default function NewsroomArticle() {
     <div className="flex flex-col gap-4 overflow-y-auto max-h-120 lg:w-full">
       {articlesData.map((article, index) => (
         <a
-          className="block p-6 rounded-md shadow border-2 border-gray-100 hover:border-gray-400 lg:w-full text-left"
+          className="block p-6 rounded-md shadow-md border-2 border-gray-100 transition-all duration-300 ease-in-out lg:w-full text-left"
           href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
           key={index}
         >
           <Paragraph typeStyle="body-md" className="">

@@ -224,11 +224,11 @@ function HomePage() {
               <Heading level="h4" typeStyle="heading-md-semibold">
                 From the blog
               </Heading>
-              <Paragraph typeStyle="body-md" className="mt-7">
+              <Paragraph typeStyle="body-md" className="mt-5">
                 Check out these articles written by community members
               </Paragraph>
-              <div className="mt-7">
-                <TextLink href="/blog" className="mt-4">
+              <div className="mt-5">
+                <TextLink href="/blog" className="mt-5">
                   Read all blog posts
                   <ArrowRight className="inline w-6" />
                 </TextLink>
@@ -236,15 +236,16 @@ function HomePage() {
             </div>
             <NewsroomBlogPosts />
           </div>
+          <hr />
           <div className="lg:flex flex-row my-20">
             <div className="text-center lg:text-left lg:w-1/4 pt-4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 Latest News
               </Heading>
-              <Paragraph typeStyle="body-md" className="mt-7">
+              <Paragraph typeStyle="body-md" className="mt-5">
                 Read about what people are <br /> saying about AsyncAPI
               </Paragraph>
-              <div className="mt-7">
+              <div className="mt-5">
                 <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
                   Follow us on Twitter
                   <ArrowRight className="inline w-6" />
@@ -255,7 +256,7 @@ function HomePage() {
               <div className="w-full lg:w-1/2">
               <NewsroomArticle />
               </div>
-              <div className="rounded p-6 border border-gray-200 drop-shadow-md mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
+              <div className="rounded p-6 border border-gray-200 shadow-md mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
                 <TwitterTimelineEmbed
                   sourceType="profile"
                   screenName="AsyncAPISpec"
@@ -264,15 +265,16 @@ function HomePage() {
               </div>
             </div>
           </div>
+          <hr />
           <div className="lg:flex flex-row my-20">
             <div className="text-center lg:text-left lg:w-1/4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 Video & Live Streams
               </Heading>
-              <Paragraph typeStyle="body-md" className="mt-7">
+              <Paragraph typeStyle="body-md" className="mt-5">
                 Watch our latest videos and live streams on the AsyncAPI YouTube channel
               </Paragraph>
-              <div className="my-7">
+              <div className="my-5">
                 <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
                   Visit our YouTube channel
                   <ArrowRight className="inline w-6" />

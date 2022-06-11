@@ -31,7 +31,7 @@ export default function NewsroomBlogPosts() {
   }
   let buttonClass = 'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2'
   return (
-    <div className="flex-col lg:flex lg:w-3/4 p-4 overflow-auto">
+    <div className="flex-col lg:flex lg:w-3/4 overflow-auto">
       <div className="flex overflow-x-auto scroll-none list-none gap-4" ref={blogContainer}>
         {
           posts.map((post, index) => (

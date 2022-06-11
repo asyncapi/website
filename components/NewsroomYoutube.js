@@ -52,7 +52,7 @@ export default function NewsroomYoutube({ className = '' }) {
           <div
             key={index}
             ref={videoref}
-            className="rounded w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col"
+            className="rounded-lg w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
           >
             <img
               src={video.snippet.thumbnails.high.url}
