@@ -105,7 +105,7 @@ export default function Footer() {
               <ul className="justify-start flex sm:flex-col" aria-label="AsyncAPI social media links">
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Twitter</span>
                       <IconTwitter className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-5 hidden sm:block">Twitter</span>
@@ -114,7 +114,7 @@ export default function Footer() {
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">GitHub</span>
                       <IconGithub className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-5 hidden sm:block">GitHub</span>
@@ -123,7 +123,7 @@ export default function Footer() {
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://linkedin.com/company/asyncapi" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">LinkedIn</span>
                       <IconLinkedIn className="h-8 w-8 sm:h-5 sm:w-5 ml-1" />
                       <span className="absolute pl-8 pr-2 hidden sm:block">LinkedIn</span>
@@ -132,7 +132,7 @@ export default function Footer() {
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">YouTube</span>
                       <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" /> 
                       <span className="absolute pl-8 pr-2 hidden sm:block">YouTube</span>
@@ -141,7 +141,7 @@ export default function Footer() {
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://asyncapi.com/slack-invite" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Slack</span>
                       <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" /> 
                       <span className="absolute pl-8 pr-8 hidden sm:block">Slack</span>
@@ -150,7 +150,7 @@ export default function Footer() {
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://www.twitch.tv/asyncapi" target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white">
+                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Twitch</span>
                       <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
                       <span className="absolute pl-8 pr-6 hidden sm:block">Twitch</span>
