@@ -98,74 +98,62 @@ export default function Footer() {
 
             <div className="px-0 sm:px-10 sm:ml-5 mb-5">
               <div className="py-2 hidden sm:block">
-                <div className="mr-15 text-white">
+                <div className="mr-12 text-white">
                   <Heading typeStyle="heading-sm-semibold">Social</Heading>
                 </div>
               </div>
               <ul className="justify-start flex sm:flex-col" aria-label="AsyncAPI social media links">
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer" className="text-gray-500 flex">
-                    <div className="">
-                      <div className="flex fit-content items-center hover:text-blue-500">
-                        <span className="sr-only">Twitter</span>
-                        <IconTwitter className="h-8 w-8 sm:h-6 sm:w-6" />
-                        <span className="text-cool-gray absolute ml-8 hover:text-blue-500 hidden sm:block">Twitter</span>
-                      </div>
+                  <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">Twitter</span>
+                      <IconTwitter className="h-8 w-8 sm:h-6 sm:w-6" />
+                      <span className="absolute pl-8 pr-5 hidden sm:block">Twitter</span>
                     </div>
                   </a>
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer" className="text-gray-500 flex">
-                    <div className="">
-                      <div className="flex fit-content items-center  hover:text-gray-700">
-                        <span className="sr-only">GitHub</span>
-                        <IconGithub className="h-8 w-8 sm:h-6 sm:w-6" />
-                        <span className="text-cool-gray absolute ml-8 hover:text-gray-700 hidden sm:block">GitHub</span>
-                      </div>
+                  <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">GitHub</span>
+                      <IconGithub className="h-8 w-8 sm:h-6 sm:w-6" />
+                      <span className="absolute pl-8 pr-5 hidden sm:block">GitHub</span>
                     </div>
                   </a>
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="text-gray-500 flex">
-                    <div className="">
-                      <div className="flex fit-content items-center hover:text-blue-500">
-                        <span className="sr-only">LinkedIn</span>
-                        <IconLinkedIn className="h-8 w-8 sm:h-5 sm:w-5 ml-1" />
-                        <span className="text-cool-gray absolute ml-8 hover:text-blue-500 hidden sm:block">LinkedIn</span>
-                      </div>
+                  <a href="https://linkedin.com/company/asyncapi" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">LinkedIn</span>
+                      <IconLinkedIn className="h-8 w-8 sm:h-5 sm:w-5 ml-1" />
+                      <span className="absolute pl-8 pr-2 hidden sm:block">LinkedIn</span>
                     </div>
                   </a>
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="text-gray-500 flex">
-                    <div className="">
-                      <div className="flex fit-content items-center hover:text-red-600">
-                        <span className="sr-only">YouTube</span>
-                        <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" /> 
-                        <span className="text-cool-gray absolute ml-8 hover:text-white hidden sm:block">YouTube</span>
-                      </div>
+                  <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">YouTube</span>
+                      <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <span className="absolute pl-8 pr-2 hidden sm:block">YouTube</span>
                     </div>
                   </a>
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://asyncapi.com/slack-invite" target="_blank" rel="noopener noreferrer" className="text-gray-500">
-                    <div className="">
-                      <div className="flex fit-content items-center hover:text-white">
-                        <span className="sr-only">Slack</span>
-                        <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" /> 
-                        <span className="text-cool-gray absolute ml-8 hover:text-white hidden sm:block">Slack</span>
-                      </div>
+                  <a href="https://asyncapi.com/slack-invite" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">Slack</span>
+                      <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <span className="absolute pl-8 pr-8 hidden sm:block">Slack</span>
                     </div>
                   </a>
                 </li>
                 <li className="py-2 mr-3 sm:mr-0">
-                  <a href="https://www.twitch.tv/asyncapi" target="_blank" rel="noopener noreferrer" className="text-gray-500">
-                    <div className="">
-                      <div className="flex fit-content items-center hover:text-purple-500">
-                        <span className="sr-only">Twitch</span>
-                        <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
-                        <span className="text-cool-gray absolute ml-8 hover:text-purple-500 hidden sm:block">Twitch</span>
-                      </div>
+                  <a href="https://www.twitch.tv/asyncapi" target="_blank" rel="noopener noreferrer">
+                    <div className="flex items-center text-cool-gray hover:text-white">
+                      <span className="sr-only">Twitch</span>
+                      <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <span className="absolute pl-8 pr-6 hidden sm:block">Twitch</span>
                     </div>
                   </a>
                 </li>
