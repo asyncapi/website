@@ -26,7 +26,8 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
-2. Download [Mosquitto](https://mosquitto.org/download/) (based on your Operating System)
+2. Download [Mosquitto](https://mosquitto.org/download/) based on your Operating System.
+
 
 3. Install Git based on your Operating System (OS):
 - [Install Git on MacOs](https://git-scm.com/download/mac)
