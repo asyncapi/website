@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
 import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
@@ -15,6 +16,7 @@ import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 
 export default function BlogIndexPage() {
+  const router = useRouter();
   const { navItems } = useContext(BlogContext);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
@@ -40,6 +42,7 @@ export default function BlogIndexPage() {
       name: "tags",
     },
   ];
+  const showClearFilters = Object.keys(router.query).length > 0;
   return (
     <div>
       <Head title="Blog" />
@@ -53,7 +56,7 @@ export default function BlogIndexPage() {
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <Heading 
+            <Heading
               level="h1"
               typeStyle="heading-lg"
             >
@@ -73,6 +76,7 @@ export default function BlogIndexPage() {
                 className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
+                alt="RSS feed"
                 height="18px"
                 width="18px"
               />
@@ -89,9 +93,11 @@ export default function BlogIndexPage() {
               className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
-            <span className="text-sm leading-10">
-              <Link href="/blog" passHref><a> Clear filters </a></Link>
-            </span>
+            {showClearFilters && (
+              <span className="text-sm leading-10">
+                <Link href="/blog" passHref><a> Clear filters </a></Link>
+              </span>
+            )}
           </div>
           <div>
             {!Object.keys(posts).length ? (
@@ -102,11 +108,11 @@ export default function BlogIndexPage() {
                 </p>
               </div>
             ) : (
-              <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+              <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
                 {posts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         </div>

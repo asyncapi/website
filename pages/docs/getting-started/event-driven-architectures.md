@@ -19,16 +19,18 @@ Some examples of this can be:
 Along with the event, you may also want to send _extra information_. For instance:
 
 * A user just signed up: here's the user information (e.g., name, email, age, etc.)
-* You have a new follower: here are the follower details (e.g., username, name, picture, etc._
+* You have a new follower: here are the follower details (e.g., username, name, picture, etc.)
 * Your fridge is almost empty: here's the percentage of "emptiness" or available volume (e.g. 23%)
 
 This extra information is often referred to as the _event payload_ or _message payload_.
+
+An Event-Driven Architecture (EDA) uses events to trigger and communicate between services and is common in modern applications built with microservices. An event is a change in state, or an update, like adding a shopping item in a cart on an e-commerce website.
 
 ## Core concepts
 
 ![](/img/diagrams/simple-event-driven.png)
 
-In most cases, Event-Driven Architectures (EDAs) are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
+In most cases, EDAs are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
 
 ### Message broker
 
@@ -42,21 +44,21 @@ A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_
 
 ### Message
 
-A message is a piece of information that's sent by the publishers to the broker, and received by all the interested subscribers. The content of the message can be anything, and they are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very much like _requests_ in REST APIs: They tell the subscribers "do this."
+A message is a piece of information that is sent by publishers to the broker, and received by all interested subscribers. Messages can contain anything, and are frequently catalogued as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very similar to _requests_ in REST APIs. They instruct the subscribers to "do this."
 
 **To be precise, _events_ and _commands_ share the same structure, but differ conceptually.**
 
 ### Channels
 
-One detail that might pass unnoticed from the diagram above is the existence of _channels_. All the _brokers_ support communication through multiple channels. The industry doesn't have a common term though, so you may find them as _topics_, _routing keys_, _event types_, etc.
+One detail that might pass unnoticed from the diagram above is the existence of _channels_. All _brokers_ support communication through multiple channels. The industry doesn't have a common term for them, so you may see them referred to as _topics_, _routing keys_, _event types_, etc.
 
-They're usually assigned a name or identifier (e.g., `user_signed_up`) and it's often good practice to send a single type of message through them. Think about TV or radio channels; the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn't respect that rule, you (the subscriber) would only see and hear interference.
+A channel is usually assigned a name or identifier (e.g., `user_signed_up`) and it is often good practice to send a single type of message through a particular channel. Think about TV or radio channels; the BBC only broadcasts its information through an assigned channel. If the broadcasters (publishers) didn't respect that rule, you (the subscriber) would only see and hear interference.
 
 ## Why "event-driven" and not "message-driven"?
 
 You will find both used interchangeably, although they are not exactly the same. You will even find _"message-based"_ and _"event-based"_. In practice, chances are they all refer to the same thing.
 
-Theoretically, _"message-driven"_ is the most generic term -meaning you may use events and commands- while _event-driven_ means that it's purely about events. However, that's not always the case, as Martin Fowler explains in his talk _"the many meanings of Event-Driven Architecture"_:
+Theoretically, _"message-driven"_ is the most generic term -meaning you may use events and commands- while _event-driven_ means that it's purely about events.
 
 However, that's not always the case, as Martin Fowler explains in his
 talk ["the many meanings of Event-Driven Architecture"](https://www.youtube.com/watch?v=STKCRSUsyP0).

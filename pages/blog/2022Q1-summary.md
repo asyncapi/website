@@ -14,7 +14,7 @@ excerpt: 'New AsyncAPI brand. AsyncAPI 2.4 and work on the 3.0 spec release. Mee
 featured: true
 ---
 
-<iframe src="https://anchor.fm/asyncapi/embed/episodes/Summary-of-things-that-happened-at-AsyncAPI-Initiative-from-January-to-April--2022-e1hqbi1" height="102px" width="600px" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://anchor.fm/asyncapi/embed/episodes/Summary-of-things-that-happened-at-AsyncAPI-Initiative-from-January-to-April--2022-e1hqbi1" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
 
 Welcome to another update from the AsyncAPI Initiative. In this article, I want to highlight the most important items contributed to AsyncAPI during the first few months of 2022.
 
