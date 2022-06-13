@@ -5,18 +5,23 @@ description: In this tutorial, you'll get started with code samples from an IoT 
 
 # Introduction
 
-In this tutorial, you get started with actual code and a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems.
+In this tutorial, you get started with actual code and a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems. This is a use case of Internet of things (IoT).
 
-# Streetlights System Description
+We are going to use Node.js and Mosquitto as the message broker to build a Smartylighting Streetlights API which allows you to manage city lights remotely.
 
-The Smartylighting Streetlights API allows you to manage city lights remotely.
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
-- You're going to implement an event-driven architecture, with a Message Broker in its "center".
+- You're going to implement an event-driven architecture (EDA), with a Message Broker in its "center".
 - Streetlights will publish information about their environmental lighting to the broker.
 - Your application will connect to the broker and receive a stream of events from all the streetlights that are reporting their conditions.
 - Based off the events, your application can make a decision regarding turning the streetlight off.
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
+
+You will learn about event-driven architecture, message broker,pub/sub architecture, create an AsyncAPI file to describe your API and generate code from it.
+
+# Background Context
+
+Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time. [Message brokers](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#message-broker) enable asynchronous communications between services so that the sending service need not wait for the receiving service’s reply.This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms.In this tutorial, we are taking a use case of IoT which is Smart-City street lighting system. Two main features of [pub/sub](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) that make it appealing for IoT use cases include support for flexible coupling between publishers and subscribers, as well as intrinsic support for point-to-multipoint transmission. [MQTT](https://mqtt.org/) and DDS are two well-known protocols that are widely utilized in IoT applications.
 
 # Installation Guide
 
@@ -26,11 +31,9 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
-2. Download [Mosquitto](https://mosquitto.org/download/) based on your Operating System.
+2. Download [Mosquitto](https://mosquitto.org/download/) (based on your Operating System)
 
-
-3. Install Git based on your Operating System:
-
+3. Install Git based on your Operating System (OS):
 - [Install Git on MacOs](https://git-scm.com/download/mac)
 - [Install Git on Windows](https://git-scm.com/download/win)
 - [Install Git on Linux](https://git-scm.com/download/linux)
@@ -234,7 +237,7 @@ EOT`}
 
 # Summary
 
-In this tutorial, we learned how to create an AsyncAPI description file and how to generate code from it. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
+In this tutorial, we learned how to create an AsyncAPI description file and how to generate our API code from [AsyncAPI Generator](https://github.com/asyncapi/generator) using Node.js and Mosquitto as the message broker. We learned how to implement event driven architecture in a real life example, pub/sub architecture to send a message to our application using MQTT and Mosquitto message broker. Today's sample code is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 We would love to see what you create with AsyncAPI! As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand by [creating an issue in our Github repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy.
 
