@@ -9,5 +9,5 @@
   publish = "out"
   environment = {
     NODE_VERSION = "14.19.3"
-    }
+  }
   
