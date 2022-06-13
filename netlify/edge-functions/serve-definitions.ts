@@ -15,26 +15,58 @@ export default async (request: Request, context: Context) => {
   // Fetching the definition file
   const response = await context.next();
 
-  if (response.status === 200) {
+  if (response.ok) {
     // Setting proper Content-Type header for JSON Schema files.
     // This lets tooling fetch the schemas directly from their URL.
     response.headers.set("Content-Type", "application/schema+json");
 
     // Sending metrics to NR.
-    await sendMetrics(request, context);
+    const event = {
+      "eventType": "AsyncAPIJSONSchemaDefinitionDownload",
+    };
+
+    await sendEventToNR(request, context, event);
+  } else {
+    // Notifying NR of the error.
+    const event = {
+      "eventType": "AsyncAPIJSONSchemaDefinitionDownloadError",
+      "responseStatus": response.status,
+      "responseStatusText": response.statusText,
+    };
+
+    await sendEventToNR(request, context, event);
   }
-  
+
   return response;
 };
 
-async function sendMetrics(request: Request, context: Context) {
+interface TimeoutRequestInit extends RequestInit {
+  timeout: number;
+}
+
+async function doFetch(resource: string, options: TimeoutRequestInit): Promise<Response> {
+  const { timeout = 5000 } = options;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
+  const response = await fetch(resource, {...options, signal: controller.signal});
+  clearTimeout(timeoutId);
+  return response;
+}
+
+interface NREvent {
+  eventType: string;
+  source?: string;
+  file?: string;
+}
+
+async function sendEventToNR(request: Request, context: Context, event: NREvent) {
   const splitPath = new URL(request.url).pathname.split("/");
-  const event = {
-    "eventType":"AsyncAPIJSONSchemaDefinitionDownload",
-    "source": splitPath[1],
-    "file": splitPath[2],
-  };
-  
+  if (event.source === "" || event.source === undefined) {
+    event.source = splitPath[1];
+    event.file = splitPath[2];
+  }
+
   try {
     const rawResponse = await doFetch(`https://insights-collector.eu01.nr-data.net/v1/accounts/${NR_ACCOUNT}/events`, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
@@ -45,7 +77,7 @@ async function sendMetrics(request: Request, context: Context) {
       },
       body: JSON.stringify(event)
     });
-    
+
     if (rawResponse.status !== 200) {
       context.log(`Unexpected response status code when sending metrics: ${rawResponse.status} ${rawResponse.statusText}`);
     }
@@ -56,21 +88,4 @@ async function sendMetrics(request: Request, context: Context) {
       context.log(`Unexpected error sending metrics: ${e}`);
     }
   }
-}
-
-interface TimeoutRequestInit extends RequestInit {
-  timeout: number;
-}
-
-async function doFetch(resource: string, options: TimeoutRequestInit): Promise<Response> {
-  const { timeout = 5000 } = options;
-  
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeout);
-  const response = await fetch(resource, {
-    ...options,
-    signal: controller.signal  
-  });
-  clearTimeout(timeoutId);
-  return response;  
 }
