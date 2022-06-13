@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router";
-import { registerClickAway } from '../helpers/click-away'
 import { isMobileDevice } from '../helpers/is-mobile'
+import { useOutsideClick } from '../helpers/use-outside-click';
 import AsyncAPILogo from '../AsyncAPILogo'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
@@ -20,8 +20,17 @@ export default function NavBar ({
   hideLogo = false,
 }) {
   const { asPath } = useRouter();
-  const [open, setOpen] = useState()
-  const [mobileMenuOpen, setMobileMenuOpen] = useState()
+  const [open, setOpen] = useState();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState();
+
+  function outsideClick(menu) {
+    if (open !== menu) return;
+    setOpen(null);
+  }
+
+  const learningRef = useOutsideClick(() => outsideClick('learning'));
+  const toolingRef = useOutsideClick(() => outsideClick('tooling'));
+  const communityRef = useOutsideClick(() => outsideClick('community'));
 
   function showMenu(menu) {
     if (open === menu) return;
@@ -29,16 +38,10 @@ export default function NavBar ({
   }
 
   function showOnClickMenu(menu) {
-    if (!isMobile) return;
+    if (!isMobile) return ;
     if (open === menu) return setOpen(null);
     setOpen(menu);
   }
-
-  useEffect(() => {
-    if (open) registerClickAway(() => {
-      setOpen(null)
-    })
-  }, [open]);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -60,6 +63,7 @@ export default function NavBar ({
             </div>
           </div>
         )}
+
         <div className="-mr-2 -my-2 lg:hidden">
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -68,8 +72,9 @@ export default function NavBar ({
             </svg>
           </button>
         </div>
+
         <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
-          <div className="relative" onMouseLeave={() => showMenu(null)}>
+          <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
             <NavItem 
               text="Docs" 
               href='/docs' 
@@ -80,7 +85,7 @@ export default function NavBar ({
             {open === 'learning' && <LearningPanel />}
           </div>
 
-          <div className="relative" onMouseLeave={() => showMenu(null)}>
+          <div className="relative" onMouseLeave={() => showMenu(null)} ref={toolingRef}>
             <NavItem 
               text="Tools" 
               onClick={() => showOnClickMenu('tooling')} 
@@ -90,7 +95,7 @@ export default function NavBar ({
             { open === 'tooling' && <ToolsPanel /> }
           </div>
 
-          <div className="relative" onMouseLeave={() => showMenu(null)}>
+          <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
             <NavItem 
               text="Community" 
               onClick={() => showOnClickMenu('community')} 
@@ -105,7 +110,6 @@ export default function NavBar ({
           ))}
 
           <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
-
         </nav>
 
       </div>
