@@ -3,13 +3,12 @@ import TextTruncate from 'react-text-truncate'
 import ArrowLeft from './icons/ArrowLeft';
 import ArrowRight from './icons/ArrowRight';
 import TextLink from './typography/TextLink';
-import tempData from '../config/videos.json';
+import videoData from '../config/newsroom_videos.json';
 import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 
 export default function NewsroomYoutube({ className = ''}) {
   //console.log(data);
-  const [videoData, setvideoData] = useState([]);
   const videoContainer = useRef();
   const videoref = useRef();
   const shiftLeft = (e) => {
@@ -24,18 +23,6 @@ export default function NewsroomYoutube({ className = ''}) {
   };
 
   let buttonClass = 'bg-secondary-100 hover:bg-secondary-500 shadow-md rounded border-secondary-500 border text-secondary-500 hover:text-white focus:outline-none mx-2';
-  useEffect(() => {
-    async function youtube(){  
-      await fetch('/.netlify/functions/youtube_videos').then((response)=>{
-        //response.json();
-        console.log(response)
-      }).catch((error) => {
-        console.log(error);
-      })  
-    }
-    youtube();
-    setvideoData(tempData);
-  }, []);
 
   return (
     <div className={`${className}`}>
@@ -50,23 +37,23 @@ export default function NewsroomYoutube({ className = ''}) {
             className="rounded-lg w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
           >
             <img
-              src={video.snippet.thumbnails.high.url}
-              alt=""
+              src={video.image_url}
+              alt="video"
               className="h-48 w-full object-cover"
             />
 
             <div className="flex-1 p-6 flex flex-col justify-between">
               <div className="">
               <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
-                {video.snippet.title}
+                {video.title}
               </Heading>
               <Paragraph typeStyle="body-md" className="mt-3 break-words">
-                  <TextTruncate element="span" line={3} text={video.snippet.description} />
+                  <TextTruncate element="span" line={3} text={video.description} />
               </Paragraph>
               </div>
               <div className='mt-6 block'>
               <TextLink
-                href={`https://youtube.com/watch?v=${video.id.videoId}`}
+                href={`https://youtube.com/watch?v=${video.videoId}`}
                 target="_blank"
                 className=""
               >
