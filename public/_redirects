@@ -22,11 +22,16 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
-/docs/reference/specification/2.3.0 /docs/reference/specification/v2.3.0 302!
-/docs/reference/specification/2.2.0 /docs/reference/specification/v2.2.0 302!
-/docs/reference/specification/2.1.0 /docs/reference/specification/v2.1.0 302!
-/docs/reference/specification/2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/specifications/2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/specifications/v2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/v2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/v2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/v2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/v2.0.0 /docs/reference/specification/v2.0.0 302!
 # SPEC-REDIRECTION:END
 
 /docs/specifications/latest /docs/reference/specification/latest 302!
