@@ -16,7 +16,8 @@ You want to build a system that can turn streetlights on and off based on their 
 
 - You're going to implement an event-driven architecture (EDA), with a Message Broker in its "center".
 - Streetlights will publish information about their environmental lighting to the broker.
-- Your application will connect to the broker and receive a stream of events from all the streetlights that are reporting their conditions.
+- Your application will connect to the broker and receive a stream of events from all the streetlights reporting their conditions.
+
 - Your application decides based on events when to turn the streetlight off.
 
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events.
