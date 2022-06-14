@@ -24,9 +24,10 @@ You will learn about event-driven architecture, message brokers, pub/sub archite
 # Background Context
 
 Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time.
-[Message brokers](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#message-broker) enable asynchronous communications between services so that the sending service need not wait for the receiving service’s reply.This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
+[Message brokers](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#message-broker) enable asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
 
-In this tutorial, we are taking a use case of IoT which is Smart-City street lighting system. Two main features of [pub/sub](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) that make it appealing for IoT use cases include support for flexible coupling between publishers and subscribers, as well as intrinsic support for point-to-multipoint transmission. [MQTT](https://mqtt.org/) and DDS are two well-known protocols that are widely utilized in IoT applications.
+In this tutorial, we are taking a use case of IoT which is a Smart-City street lighting system. Two main features of [pub/sub](https://deploy-preview-601--asyncapi-website.netlify.app/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) make it appealing for IoT use cases include support for flexible coupling between publishers and subscribers, as well as intrinsic support for point-to-multipoint transmission. [MQTT](https://mqtt.org/) and DDS are two well-known protocols that are widely utilized in IoT applications.
+
 
 # Installation Guide
 
