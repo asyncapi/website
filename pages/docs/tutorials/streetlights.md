@@ -6,7 +6,8 @@ description: In this tutorial, you'll start with IoT code samples and pretend yo
 
 # Introduction
 
-In this tutorial, you get started with actual code and a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems. This is a use case of Internet of things (IoT).
+In this tutorial, you get started with actual code for a sample real-world use case. Let's pretend you have a company called Smarty Lighting and you install smart-city streetlight lighting systems. This is a use case of the Internet of things (IoT).
+
 
 You're going to use Node.js and Mosquitto as the message broker to build a Smartylighting Streetlights API, that allows you to manage city lights remotely.
 
