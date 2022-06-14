@@ -18,7 +18,8 @@ You want to build a system that can turn streetlights on and off based on their 
 - Based off the events, your application can make a decision regarding turning the streetlight off.
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events
 
-You will learn about event-driven architecture, message broker,pub/sub architecture, create an AsyncAPI file to describe your API and generate code from it.
+You will learn about event-driven architecture, message brokers, pub/sub architecture, and creating an AsyncAPI file to describe your API and generate code from it.
+
 
 # Background Context
 
