@@ -16,28 +16,30 @@ export default async (request: Request, context: Context) => {
   const response = await context.next();
 
   const isRequestingAFile = request.url.charAt(request.url.length - 1) !== "/";
-  if (response.ok && isRequestingAFile) {
-    // Setting proper Content-Type header for JSON Schema files.
-    // This lets tooling fetch the schemas directly from their URL.
-    response.headers.set("Content-Type", "application/schema+json");
-
-    // Sending metrics to NR.
-    const event = {
-      "eventType": "AsyncAPIJSONSchemaDefinitionDownload",
-    };
-
-    await sendEventToNR(request, context, event);
-  } else {
-    // Notifying NR of the error.
-    const event = {
-      "eventType": "AsyncAPIJSONSchemaDefinitionDownloadError",
-      "responseStatus": response.status,
-      "responseStatusText": response.statusText,
-    };
-
-    await sendEventToNR(request, context, event);
-  }
-
+  if (isRequestingAFile) {
+    if (response.ok) {
+      // Setting proper Content-Type header for JSON Schema files.
+      // This lets tooling fetch the schemas directly from their URL.
+      response.headers.set("Content-Type", "application/schema+json");
+  
+      // Sending metrics to NR.
+      const event = {
+        "eventType": "AsyncAPIJSONSchemaDefinitionDownload",
+      };
+  
+      await sendEventToNR(request, context, event);
+    } else {
+      // Notifying NR of the error.
+      const event = {
+        "eventType": "AsyncAPIJSONSchemaDefinitionDownloadError",
+        "responseStatus": response.status,
+        "responseStatusText": response.statusText,
+      };
+  
+      await sendEventToNR(request, context, event);
+    }
+  } 
+  
   return response;
 };
 
@@ -57,6 +59,7 @@ async function doFetch(resource: string, options: TimeoutRequestInit): Promise<R
 
 interface NREvent {
   eventType: string;
+  url?: string;
   source?: string;
   file?: string;
 }
@@ -67,6 +70,8 @@ async function sendEventToNR(request: Request, context: Context, event: NREvent)
     event.source = splitPath[1];
     event.file = splitPath[2];
   }
+
+  event.url = request.url;
 
   try {
     const rawResponse = await doFetch(`https://insights-collector.eu01.nr-data.net/v1/accounts/${NR_ACCOUNT}/events`, {
