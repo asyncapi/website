@@ -72,7 +72,6 @@ The example above shows how to specify that your server (a Kafka broker) require
 2. We've added a new section called `securitySchemes` under `components`. Inside it, you can find the definition of your `user-password` mechanism. This section makes it clear that you're speaking about a `user/password` mechanism, which is the `type: userPassword` in line 44.
 
 <Remember title="Hint">
-
 There are many more security schemes. Learn more about them <Link href="/docs/specifications/2.2.0/#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
 
 </Remember>
