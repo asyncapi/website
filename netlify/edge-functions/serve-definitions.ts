@@ -15,7 +15,8 @@ export default async (request: Request, context: Context) => {
   // Fetching the definition file
   const response = await context.next();
 
-  if (response.ok) {
+  const isRequestingAFile = request.url.charAt(request.url.length - 1) !== "/";
+  if (response.ok && isRequestingAFile) {
     // Setting proper Content-Type header for JSON Schema files.
     // This lets tooling fetch the schemas directly from their URL.
     response.headers.set("Content-Type", "application/schema+json");
