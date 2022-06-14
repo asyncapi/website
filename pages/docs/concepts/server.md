@@ -6,3 +6,4 @@ APIs use servers to receive requests from a user and responds back with the requ
 Servers play an important role in event-driven architecture, as they create a relationship between an application and clients or/consumers. When designing and setting up an event-driven application, servers are in charge of delivering asynchronous messages to the consumer. With the integration of Websocket APIs, servers can create and maintain the server-client connection or server to server connections.
 
 Server Diagram Link: https://www.figma.com/file/Pgt7xdLp0obDnb9zl3tYK7/Server_Diagram?node-id=1%3A60
+![image](https://user-images.githubusercontent.com/66913810/173637000-408112a1-db07-4423-b8b1-3a823c561cd1.png)
