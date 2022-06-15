@@ -11,7 +11,7 @@ If you're coming from OpenAPI, you must know that AsyncAPI [started as an adapta
 
 You'll find lots of similarities between OpenAPI and AsyncAPI. Just bear in mind that in the world of event-driven architectures, you have more than one protocol and therefore some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
 
-import OpenAPIComparison from '../../../components/OpenAPIComparison'
+import OpenAPIComparison from '../../../../components/OpenAPIComparison'
 
 <OpenAPIComparison className="my-8" />
 

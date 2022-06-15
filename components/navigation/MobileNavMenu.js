@@ -29,7 +29,13 @@ export default function MobileNavMenu ({
               </div>
             </div>
             <div className="py-2 space-y-2">
-              <h4 className="text-gray-500 font-medium block mb-4">Learning</h4>
+              <Link href="/docs" className="flex">
+                <h4 className="text-gray-500 font-medium block mb-4">
+                  <a className="cursor-pointer">
+                    Docs
+                  </a>
+                </h4>
+              </Link>
               <MenuBlocks items={learningItems} />
             </div>
           </div>
