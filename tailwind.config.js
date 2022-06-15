@@ -189,6 +189,14 @@ module.exports = {
         'xxs': ['0.6rem', '0.6rem']
       },
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+      circle: 'circle',
+    },
   },
   plugins: [
     require('@tailwindcss/ui'),
