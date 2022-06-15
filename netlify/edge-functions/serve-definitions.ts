@@ -21,23 +21,23 @@ export default async (request: Request, context: Context) => {
       // Setting proper Content-Type header for JSON Schema files.
       // This lets tooling fetch the schemas directly from their URL.
       response.headers.set("Content-Type", "application/schema+json");
-  
+
       // Sending metrics to NR.
       const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request)
-    
+
       await sendMetricToNR(context, metric);
     } else {
       // Notifying NR of the error.
       const attributes = {
-          "responseStatus": response.status,
-          "responseStatusText": response.statusText,
+        "responseStatus": response.status,
+        "responseStatusText": response.statusText,
       };
       const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, attributes);
-      
+
       await sendMetricToNR(context, metric);
     }
-  } 
-  
+  }
+
   return response;
 };
 
@@ -50,17 +50,17 @@ async function doFetch(resource: string, options: TimeoutRequestInit): Promise<R
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeout);
-  const response = await fetch(resource, {...options, signal: controller.signal});
+  const response = await fetch(resource, { ...options, signal: controller.signal });
   clearTimeout(timeoutId);
   return response;
 }
 
 async function sendMetricToNR(context: Context, metric: NRMetric) {
-  const metrics = [{"metrics": [metric]}];
+  const metrics = [{ "metrics": [metric] }];
 
   console.log(JSON.stringify(metrics));
   try {
-      const rawResponse = await doFetch(NR_METRICS_ENDPOINT, {
+    const rawResponse = await doFetch(NR_METRICS_ENDPOINT, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
       method: 'POST',
       headers: {
@@ -87,7 +87,7 @@ function newNRMetricCount(name: string, request: Request, attributes: any = {}):
   metric["interval.ms"] = 1;
 
   const splitPath = new URL(request.url).pathname.split("/");
-  
+
   metric.attributes = {
     "source": splitPath[1],
     "file": splitPath[2],
@@ -113,7 +113,7 @@ class NRMetric {
   "interval.ms": number;
   type: NRMetricType;
   attributes: any;
- 
+
   constructor(name: string, type = NRMetricType.Count, value = 1, timestamp = Date.now()) {
     this.name = name;
     this.type = type;
