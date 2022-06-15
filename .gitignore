@@ -5,6 +5,11 @@ node_modules
 .next
 out
 config/posts.json
+config/blog-posts.json
+config/jobs.json
+config/docs.json
+config/meetings.json
+config/roadmap.json
 public/rss.xml
 .env.local
 roadmap.json

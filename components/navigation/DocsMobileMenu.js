@@ -2,7 +2,7 @@ import ClickableLogo from '../ClickableLogo'
 import DocsNav from './DocsNav'
 
 export default function DocsMobileMenu({
-  post,
+  doc,
   navigation,
   onClickClose = () => { },
 }) {
@@ -28,8 +28,8 @@ export default function DocsMobileMenu({
 
             <nav className="mt-5 px-2 mb-4">
               <ul>
-                {Object.values(navigation).map(navItem => (
-                  <DocsNav item={navItem} active={post.slug} onClick={onClickClose} />
+                {Object.values(navigation).map(file => (
+                  <DocsNav key={file.section.title} file={file} active={doc.slug} level={0} onClick={() => onClickClose(false)} />
                 ))}
               </ul>
             </nav>

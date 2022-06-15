@@ -1,11 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
-import Container from "../../components/layout/Container";
-import BlogContext from "../../context/BlogContext";
 import BlogPostItem from "../../components/navigation/BlogPostItem";
-import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
@@ -16,39 +13,34 @@ import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 import Button from "../../components/buttons/Button";
 
-export default function BlogIndexPage() {
-  const router = useRouter();
-  const { navItems } = useContext(BlogContext);
-  const [posts, setPosts] = useState(
-    navItems.sort((i1, i2) => {
-      const i1Date = new Date(i1.date);
-      const i2Date = new Date(i2.date);
+import blogPosts from '../../config/blog-posts.json'
 
-      if (i1.featured && !i2.featured) return -1;
-      if (!i1.featured && i2.featured) return 1;
-      return i2Date - i1Date;
-    })
-  );
+const toFilter = [
+  {
+    name: "type",
+  },
+  {
+    name: "authors",
+    unique: "name",
+  },
+  {
+    name: "tags",
+  },
+];
+
+const clearFilters = () => {
+  router.push(`${router.pathname}`, undefined, {
+    shallow: true,
+  });
+};
+
+export default function BlogIndexPage() {
+  const router = useRouter();  
+  const [posts, setPosts] = useState(blogPosts);
 
   const onFilter = (data) => setPosts(data);
-  const toFilter = [
-    {
-      name: "type",
-    },
-    {
-      name: "authors",
-      unique: "name",
-    },
-    {
-      name: "tags",
-    },
-  ];
-  const clearFilters = () => {
-    router.push(`${router.pathname}`, undefined, {
-      shallow: true,
-    });
-  };
   const showClearFilters = Object.keys(router.query).length > 0;
+
   return (
     <div>
       <Head title="Blog" />
@@ -94,7 +86,7 @@ export default function BlogIndexPage() {
           </div>
           <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
             <Filter
-              data={navItems}
+              data={blogPosts}
               onFilter={onFilter}
               className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
               checks={toFilter}

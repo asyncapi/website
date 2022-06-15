@@ -1,7 +1,6 @@
 import Head from '../Head'
 import NavBar from '../navigation/NavBar'
 import Container from './Container'
-import Footer from '../Footer'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import StickyNavbar from '../navigation/StickyNavbar'
 

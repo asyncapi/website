@@ -1,21 +1,18 @@
 import Button from './Button'
 
-export default function ApplyJobButton({ job,  className = '' }) {
-
-  const getHref = (contact) => {
-
-    try {
-      new URL(contact);
-    } catch (_) {
-      return `mailto:${contact}`;  
-    }
-
-    return contact;
+function getHref(contact) {
+  try {
+    new URL(contact);
+  } catch (_) {
+    return `mailto:${contact}`;  
   }
+  return contact;
+}
 
+export default function ApplyJobButton({ job, className = '' }) {
   return (
     <Button
-      href={getHref(job.contact)}
+      href={getHref(job.meta.contact)}
       target="_blank"
       text="Apply for this job"
       className={className}

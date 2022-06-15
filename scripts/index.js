@@ -1,10 +1,12 @@
 const rssFeed = require('./build-rss');
+const buildDocs = require('./build-docs');
+const buildPosts = require('./build-posts');
 const buildRoadMap = require('./build-roadmap');
-const buildPostList = require('./build-post-list');
 
 async function start() {
+  buildDocs();
+  buildPosts();
   buildRoadMap();
-  await buildPostList();
   rssFeed(
     'blog',
     'AsyncAPI Initiative Blog RSS Feed',

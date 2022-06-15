@@ -1,8 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import NavBar from "../../components/navigation/NavBar";
-import JobsContext from "../../context/JobsContext";
 import JobPostItem from "../../components/navigation/JobPostItem";
-import Footer from "../../components/Footer";
 import Head from "../../components/Head";
 import Filter from "../../components/navigation/Filter";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
@@ -12,24 +10,18 @@ import Heading from "../../components/typography/Heading";
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 
+import jobs from '../../config/jobs.json'
+
 export default function JobsIndexPage() {
-  let { navItems } = useContext(JobsContext);
-
-  const closedJobPosts =  navItems.filter((job) => {
-    return new Date() > new Date(job.closingOn)
+  const closedJobPosts = jobs.filter((job) => {
+    return new Date() > new Date(job.meta.closingOn)
   });
 
-  const openJobPosts = navItems.filter((job) => {
-    return new Date() <= new Date(job.closingOn)
+  const openJobPosts = jobs.filter((job) => {
+    return new Date() <= new Date(job.meta.closingOn)
   });
 
-  const [posts, setPosts] = useState(
-    openJobPosts.sort((i1, i2) => {
-      const i1Date = new Date(i1.date);
-      const i2Date = new Date(i2.date);
-      return i2Date - i1Date;
-    })
-  );
+  const [posts, setPosts] = useState(openJobPosts);
 
   const [checkOldPost, setOldPost] = useState(false);
 
@@ -69,8 +61,10 @@ The potential employees would love to know more about you. Tell them more about 
 Let the potential employees knows what comes with joining your team in this section.
 Join us!
 `;
+
   const jobPostUrl = encodeURIComponent(body);
   const hasPosts = Object.keys(posts).length;
+
   return (
     <div>
       <Head
@@ -152,7 +146,7 @@ Join us!
             )}
           </div>
           <div className="text-center mt-3 p-4">
-            { !checkOldPost ? (
+            {!checkOldPost ? (
               <button className="btn btn-outline btn-lg text-gray-600" onClick={onClickOldPost}>
                 Show closed jobs
               </button>
@@ -163,7 +157,7 @@ Join us!
                   <JobPostItem key={index} job={post} />
                 ))}
               </ul>
-              <button className="btn btn-outline-dark back-to-top mt-1 text-gray-600" onClick={onClickOldPost}>
+              <button className="btn btn-outline-dark back-to-top mt-8 text-gray-600" onClick={onClickOldPost}>
                 Back
               </button>
             </div>

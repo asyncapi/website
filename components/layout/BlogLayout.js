@@ -13,7 +13,9 @@ import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function BlogLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
-  if (post.title === undefined) throw new Error('Post title is required')
+  
+  const meta = post.meta;
+  if (meta.title === undefined) throw new Error('Post title is required')
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
@@ -29,26 +31,26 @@ export default function BlogLayout({ post, children }) {
         <TOC toc={post.toc} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
         <main className="mt-8 px-4 sm:px-6 lg:pr-8 lg:pl-0 lg:flex-1 lg:max-w-172 xl:max-w-172">
           <header className="pr-4 sm:pr-6 md:pr-8">
-            <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{post.title}</h1>
+            <h1 className="text-4xl font-normal text-gray-800 font-sans antialiased">{meta.title}</h1>
             <div className="mt-6 flex items-center">
               <div className="relative flex-shrink-0">
-                <AuthorAvatars authors={post.authors} />
+                <AuthorAvatars authors={meta.authors} />
               </div>
               <div className="ml-3">
                 <p className="text-sm leading-5 font-medium text-gray-900">
                   <span className="hover:underline">
-                    {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link}>{author.name}</a> : author.name).reduce((prev, curr) => [prev, ' & ', curr])}
+                    {meta.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link}>{author.name}</a> : author.name).reduce((prev, curr) => [prev, ' & ', curr])}
                   </span>
                 </p>
                 <div className="flex text-sm leading-5 text-gray-500">
-                  <time dateTime={post.date}>
-                    {moment(post.date).format('MMMM D, YYYY')}
+                  <time dateTime={meta.date}>
+                    {moment(meta.date).format('MMMM D, YYYY')}
                   </time>
                   <span className="mx-1">
                     &middot;
                   </span>
                   <span>
-                    {post.readingTime} min read
+                    {meta.readingTime} min read
                   </span>
                 </div>
               </div>
@@ -56,9 +58,9 @@ export default function BlogLayout({ post, children }) {
           </header>
           <article className="mb-32">
             <Head
-              title={post.title}
-              description={post.excerpt}
-              image={post.cover}
+              title={meta.title}
+              description={meta.excerpt}
+              image={meta.cover}
             />
             <HtmlHead>
               <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596" async />
@@ -79,7 +81,7 @@ export default function BlogLayout({ post, children }) {
                 }
               `}</style>
             </HtmlHead>
-            <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className="mt-6 mb-6 w-full" />
+            <img src={meta.cover} alt={meta.coverCaption} title={meta.coverCaption} className="mt-6 mb-6 w-full" />
             {children}
           </article>
         </main>

@@ -111,9 +111,12 @@ module.exports = async function buildRoadMap() {
       },
     }
 
-    writeFileSync(resolve(__dirname, '..', 'roadmap.json'), JSON.stringify(result, null, '  '))
+    writeFileSync(resolve(__dirname, '..', 'config', 'roadmap.json'), JSON.stringify(result, null, '  '))
   } catch (e) {
-    console.error(e)
-    writeFileSync(resolve(__dirname, '..', 'roadmap.json'), '{}')
+    if (process.env.NODE_ENV === 'production') {
+      console.error(e)
+    }
+    
+    writeFileSync(resolve(__dirname, '..', 'config', 'roadmap.json'), '{}')
   }
 };

@@ -1,8 +1,11 @@
 const fs = require('fs')
 const json2xml = require('jgexml/json2xml')
 
-function getAllPosts() {
-  return require('../config/posts.json')
+function getAllItems(type) {
+  switch (type) {
+    case 'blog': return require('../config/blog-posts.json');
+    case 'jobs': return require('../config/jobs.json');
+  }
 }
 
 function clean(s) {
@@ -16,18 +19,7 @@ function clean(s) {
 }
 
 module.exports = function rssFeed(type, title, desc, outputPath) {
-
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith(`/${type}/`))
-    .sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
-
+  const posts = getAllItems(type);
   const base = 'https://www.asyncapi.com'
   const tracking = '?utm_source=rss';
 
@@ -52,10 +44,10 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
 
   for (let post of posts) {
     const link = `${base}${post.slug}${tracking}`;
-    const item = { title: post.title, description: clean(post.excerpt), link, category: type, guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
-    if (post.cover) {
+    const item = { title: post.meta.title, description: clean(post.meta.excerpt), link, category: type, guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.meta.date).toUTCString() }
+    if (post.meta.cover) {
       const enclosure = {};
-      enclosure["@url"] = base+post.cover;
+      enclosure["@url"] = base + post.meta.cover;
       enclosure["@length"] = 15026; // dummy value, anything works
       enclosure["@type"] = 'image/jpeg';
       if (typeof enclosure["@url"] === 'string') {
@@ -70,7 +62,6 @@ module.exports = function rssFeed(type, title, desc, outputPath) {
   }
 
   feed.rss = rss
-
   const xml = json2xml.getXml(feed,'@','',2)
   fs.writeFileSync(`./public/${outputPath}`, xml, 'utf8')
 };

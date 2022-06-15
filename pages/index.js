@@ -1,4 +1,3 @@
-import { getAllPosts } from '../lib/api'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -24,20 +23,10 @@ import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-import YoutubeButton from '../components/buttons/YoutubeButton';
+import blogPosts from '../config/blog-posts.json';
 
 function HomePage() {
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
-    .sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
-    .slice(0, 3)
+  const posts = blogPosts.slice(0, 3);
 
   return (
     <>

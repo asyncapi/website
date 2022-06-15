@@ -2,6 +2,7 @@
 title: Getting Started
 date: 2019-02-16T13:56:52+01:00
 weight: 2
+showInNav: false
 aliases:
 - '/v1/guide/'
 - '/v1/guide/index.html'

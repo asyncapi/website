@@ -1,6 +1,7 @@
 ---
-title: Welcome
+title: Overview
 weight: 0
+showInNav: false
 ---
 
 ## Welcome to AsyncAPI Docs! 

@@ -1,7 +1,8 @@
-import { join } from "lodash";
 import Link from 'next/link'
 
 export default function JobPostItem({ job }) {
+  const meta = job.meta;
+
   return (
     <li>
      <Link href={job.slug} passHref>
@@ -9,16 +10,16 @@ export default function JobPostItem({ job }) {
         <div className="px-4 py-4 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src={job.company.logoUrl} className="h-6 mr-2" />
+              <img src={meta.company.logoUrl} className="h-6 mr-2" />
               <p className="text-sm font-medium text-indigo-600 truncate">
-                {job.title} at {job.company.name}
+                {meta.title} at {meta.company.name}
               </p>
             </div>
             <div className="ml-2 flex-shrink-0 flex">
               <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                {!job.employmentType || job.employmentType === "full-time"
+                {!meta.employmentType || meta.employmentType === "full-time"
                   ? "Full-time"
-                  : job.employmentType}
+                  : meta.employmentType}
               </p>
             </div>
           </div>
@@ -34,7 +35,7 @@ export default function JobPostItem({ job }) {
                 >
                   <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                 </svg>
-                <span className="capitalize">{job.category}</span>
+                <span className="capitalize">{meta.category}</span>
               </p>
               <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
                 <svg
@@ -50,10 +51,10 @@ export default function JobPostItem({ job }) {
                     clipRule="evenodd"
                   />
                 </svg>
-                {!job.location || (job.location === "remote" && "Remote")}&nbsp;
-                {!job.region || job.region === "any"
+                {!meta.location || (meta.location === "remote" && "Remote")}&nbsp;
+                {!meta.region || meta.region === "any"
                   ? "Anywhere (on planet Earth)"
-                  : job.region}
+                  : meta.region}
               </p>
             </div>
             <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
@@ -72,8 +73,8 @@ export default function JobPostItem({ job }) {
               </svg>
               <p>
                 Closing on&nbsp;
-                <time dateTime={job.closingOn}>
-                  {new Date(job.closingOn).toLocaleDateString("en-US", {
+                <time dateTime={meta.closingOn}>
+                  {new Date(meta.closingOn).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",

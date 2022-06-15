@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import PropTypes from "prop-types";
 import Select from "../form/Select";
 import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
 
@@ -13,9 +12,11 @@ export default function Filter({ data, onFilter, checks, className }) {
     setQuery(route.query);
     applyFilterList(checks, data, setFilters);
   }, [route]);
+
   useEffect(() => {
     onFilterApply(data, onFilter, query);
   }, [query]);
+
   return checks.map((check) => {
     let selected = "";
     if (Object.keys(query).length) {
@@ -30,6 +31,7 @@ export default function Filter({ data, onFilter, checks, className }) {
       },
       ...(filters[check.name] || []),
     ];
+
     return (
       <Select
         key={check.name}
@@ -54,10 +56,3 @@ export default function Filter({ data, onFilter, checks, className }) {
     );
   });
 }
-
-Filter.propTypes = {
-  data: PropTypes.array.isRequired,
-  onFilter: PropTypes.func.isRequired,
-  checks: PropTypes.array.isRequired,
-  className: PropTypes.string.isRequired,
-};

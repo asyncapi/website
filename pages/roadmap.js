@@ -1,5 +1,4 @@
 import GenericLayout from '../components/layout/GenericLayout'
-import roadmapData from '../roadmap.json'
 import RoadmapColumn from '../components/roadmap/RoadmapColumn'
 import Warning from '../components/Warning'
 import InlineHelp from '../components/InlineHelp'
@@ -7,6 +6,8 @@ import YouTubeEmbed from 'react-youtube-embed'
 import Paragraph from '../components/typography/Paragraph'
 import Heading from '../components/typography/Heading'
 import TextLink from '../components/typography/TextLink'
+
+import roadmapData from '../config/roadmap.json';
 
 export default function RoadmapPage() {
   const description = 'Long-term vision and plans for the AsyncAPI Initiative.'
@@ -19,8 +20,7 @@ export default function RoadmapPage() {
         description={description}
         image={image}
         wide
-      >
-      </GenericLayout>
+      />
     )
   }
 
