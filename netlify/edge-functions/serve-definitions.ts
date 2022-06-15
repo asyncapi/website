@@ -1,6 +1,6 @@
 import type { Context } from "netlify:edge";
 
-const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN");
+const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
 const NR_ACCOUNT = Deno.env.get("NR_ACCOUNT");
 const NR_API_KEY = Deno.env.get("NR_API_KEY");
 
