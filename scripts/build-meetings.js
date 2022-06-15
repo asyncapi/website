@@ -35,7 +35,7 @@ async function buildMeetings() {
       })
 
       const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
-      console.log('The following events got fetched', eventsForHuman); 
+      // console.log('The following events got fetched', eventsForHuman); 
 
       writeFileSync(
         resolve(__dirname, '../config', 'meetings.json'),
