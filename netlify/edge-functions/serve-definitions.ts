@@ -1,8 +1,8 @@
 import type { Context } from "netlify:edge";
 
 const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
-const NR_ACCOUNT = Deno.env.get("NR_ACCOUNT");
 const NR_API_KEY = Deno.env.get("NR_API_KEY");
+const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metric-api.eu.newrelic.com/metric/v1";
 
 export default async (request: Request, context: Context) => {
   // Deleting Origin header, which is involved in the cache policy, so requests can hit GH cache.
@@ -23,20 +23,18 @@ export default async (request: Request, context: Context) => {
       response.headers.set("Content-Type", "application/schema+json");
   
       // Sending metrics to NR.
-      const event = {
-        "eventType": "AsyncAPIJSONSchemaDefinitionDownload",
-      };
-  
-      await sendEventToNR(request, context, event);
+      const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request)
+    
+      await sendMetricToNR(context, metric);
     } else {
       // Notifying NR of the error.
-      const event = {
-        "eventType": "AsyncAPIJSONSchemaDefinitionDownloadError",
-        "responseStatus": response.status,
-        "responseStatusText": response.statusText,
+      const attributes = {
+          "responseStatus": response.status,
+          "responseStatusText": response.statusText,
       };
-  
-      await sendEventToNR(request, context, event);
+      const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, attributes);
+      
+      await sendMetricToNR(context, metric);
     }
   } 
   
@@ -57,34 +55,22 @@ async function doFetch(resource: string, options: TimeoutRequestInit): Promise<R
   return response;
 }
 
-interface NREvent {
-  eventType: string;
-  url?: string;
-  source?: string;
-  file?: string;
-}
+async function sendMetricToNR(context: Context, metric: NRMetric) {
+  const metrics = [{"metrics": [metric]}];
 
-async function sendEventToNR(request: Request, context: Context, event: NREvent) {
-  const splitPath = new URL(request.url).pathname.split("/");
-  if (event.source === "" || event.source === undefined) {
-    event.source = splitPath[1];
-    event.file = splitPath[2];
-  }
-
-  event.url = request.url;
-
+  console.log(JSON.stringify(metrics));
   try {
-    const rawResponse = await doFetch(`https://insights-collector.eu01.nr-data.net/v1/accounts/${NR_ACCOUNT}/events`, {
+      const rawResponse = await doFetch(NR_METRICS_ENDPOINT, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
       method: 'POST',
       headers: {
         'Api-Key': NR_API_KEY || "",
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(event)
+      body: JSON.stringify(metrics)
     });
 
-    if (rawResponse.status !== 200) {
+    if (!rawResponse.ok) {
       context.log(`Unexpected response status code when sending metrics: ${rawResponse.status} ${rawResponse.statusText}`);
     }
   } catch (e) {
@@ -93,5 +79,45 @@ async function sendEventToNR(request: Request, context: Context, event: NREvent)
     } else {
       context.log(`Unexpected error sending metrics: ${e}`);
     }
+  }
+}
+
+function newNRMetricCount(name: string, request: Request, attributes: any = {}): NRMetric {
+  var metric = new NRMetric(name, NRMetricType.Count, 1);
+  metric["interval.ms"] = 1;
+
+  const splitPath = new URL(request.url).pathname.split("/");
+  
+  metric.attributes = {
+    "source": splitPath[1],
+    "file": splitPath[2],
+    "url": request.url,
+    ...attributes,
+  };
+
+  return metric;
+}
+
+enum NRMetricType {
+  Count = "count",
+  Distribution = "distribution",
+  Gauge = "gauge",
+  Summary = "summary",
+  UniqueCount = "uniqueCount",
+}
+
+class NRMetric {
+  name: string;
+  value: number | any;
+  timestamp: number;
+  "interval.ms": number;
+  type: NRMetricType;
+  attributes: any;
+ 
+  constructor(name: string, type = NRMetricType.Count, value = 1, timestamp = Date.now()) {
+    this.name = name;
+    this.type = type;
+    this.value = value;
+    this.timestamp = timestamp;
   }
 }
