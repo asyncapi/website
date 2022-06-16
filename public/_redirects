@@ -7,25 +7,46 @@ https://asyncapi.io/* https://www.asyncapi.com/:splat 301!
 https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Docs
-/docs /docs/getting-started 301!
-/docs/tooling /docs/community/tooling 301!
+/docs/getting-started /docs/tutorials/getting-started 301!
+/docs/getting-started/event-driven-architectures /docs/tutorials/getting-started/event-driven-architectures 301!
+/docs/getting-started/coming-from-openapi /docs/tutorials/getting-started/coming-from-openapi 301!
+/docs/getting-started/hello-world /docs/tutorials/getting-started/hello-world 301!
+/docs/getting-started/asyncapi-documents /docs/tutorials/getting-started/asyncapi-documents 301!
+/docs/getting-started/servers /docs/tutorials/getting-started/servers 301!
+/docs/getting-started/security /docs/tutorials/getting-started/security 301!
+/docs/community/tooling /docs/tools 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/specifications/latest /docs/specifications/v2.4.0 302!
+/docs/reference/specification/latest /docs/reference/specification/v2.4.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/specifications/2.4.0 /docs/specifications/v2.4.0 302!
-/docs/specifications/2.3.0 /docs/specifications/v2.3.0 302!
-/docs/specifications/2.2.0 /docs/specifications/v2.2.0 302!
-/docs/specifications/2.1.0 /docs/specifications/v2.1.0 302!
-/docs/specifications/2.0.0 /docs/specifications/v2.0.0 302! # The path was changed. We want to keep links pointing to the old path working.
+/docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/reference/specification/2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/reference/specification/2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/reference/specification/2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/reference/specification/2.0.0 /docs/reference/specification/v2.0.0 302!
 # SPEC-REDIRECTION:END
+
+/docs/specifications/latest /docs/reference/specification/latest 302!
+/docs/specifications/2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/specifications/v2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/v2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/v2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/v2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/v2.0.0 /docs/reference/specification/v2.0.0 302!
 
 /docs/specifications/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
 /docs/specifications/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
 /docs/specifications/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
+/docs/reference/specification/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
+/docs/reference/specification/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
+/docs/reference/specification/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
 
 # Old React Playground
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
