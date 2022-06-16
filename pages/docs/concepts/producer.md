@@ -4,4 +4,4 @@ An event indicates a state change or update which is triggered by a user's/devic
 
 ## Why do we need Producers? 
 
-One of the core concepts of an event driven architecture is the publish/subscribe communication model. Producers are essentially publishers in this model, they are the first logical layer in an event driven architecture, and are responsible for publishing messages to the channel so that any consumer subscribed to that event can handle it. ## Where do Producers fit within the AsyncAPI EDA architecture?
+One of the core concepts of an event driven architecture is the publish/subscribe communication model. Producers are essentially publishers in this model, they are the first logical layer in an event driven architecture, and are responsible for publishing messages to the broker so that any consumer subscribed to that event can handle it.
