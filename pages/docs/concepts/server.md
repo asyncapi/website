@@ -7,4 +7,4 @@ Servers play an important role as they maintain a relationship between producers
 
 Server Diagram Link: https://www.figma.com/file/Pgt7xdLp0obDnb9zl3tYK7/Server_Diagram?node-id=1%3A60
 
-![image](https://user-images.githubusercontent.com/66913810/173674034-523d7ab1-e1d4-4609-ae6e-ec3e99d839de.png)
+<img width="1504" alt="Server_Diagram" src="https://user-images.githubusercontent.com/66913810/174148274-1299dc70-ef12-4f30-b3ed-01c260a8f697.png">
