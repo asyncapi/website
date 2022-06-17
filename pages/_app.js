@@ -18,6 +18,7 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
 import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
+import { DocsCards } from '../components/docs/DocsCards'
 import AppContext from '../context/AppContext'
 import Footer from "../components/Footer";
 import '../styles/globals.css'
@@ -99,6 +100,7 @@ function getMDXComponents() {
     Row,
     Column,
     Figure,
+    DocsCards,
     GeneratorInstallation,
     NewsletterSubscribe,
     TwitterTimelineEmbed,
