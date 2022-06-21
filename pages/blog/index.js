@@ -96,15 +96,17 @@ export default function BlogIndexPage() {
             <Filter
               data={navItems}
               onFilter={onFilter}
-              className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
+              className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
             {showClearFilters && (
-              <Button
-                  bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none mt-1 pb-2 pt-2 md:mt-0"
-                  text="Clear filters"
-                  onClick={clearFilters}
-              />
+              <button 
+                type="button" 
+                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none py- text-white transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading text-white md:mt-0 mt-1 md:py-0 py-2"
+                onClick={clearFilters}
+              >
+                <span className="inline-block">Clear filters</span>
+              </button>
             )}
           </div>
           <div>
