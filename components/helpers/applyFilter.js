@@ -23,7 +23,6 @@ export const applyFilterList = (checks, data, setFilters) => {
     for (let i = 0; i < data.length; i++) {
       const res = data[i];
       for (const key in lists) {
-        // const result = data[i][key];
         const result = getDeepValue(data[i], checks.find(c => c.name === key).selector);
         if (res) {
           if (lists[key].length) {

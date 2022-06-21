@@ -72,27 +72,6 @@ export default function DocsNav({
       ) : null}
     </li>
   );
-
-  // const subCategories = item.files;
-  // return (
-  //   <li className='mb-4' key={item.item.title}>
-  //     <DocsNavItem {...item.item} activeSlug={active} className='font-body font-regular text-sm text-black hover:font-semibold' activeClassName='font-semibold' bucket={buckets[item.item.rootSectionId]} onClick={onClick} />
-  //     <ul className='border-l border-gray-200 pl-4 ml-3 mt-1'>
-  //       {Object.values(subCategories).map((subCategory, index) => (
-  //         <li key={subCategory.item.title}>
-  //           <DocsNavItem {...subCategory.item} indexDocument={index === 0} activeSlug={active} className={`font-body font-regular text-sm text-black leading-8 ${subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'}`} activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'} onClick={onClick} />
-  //           <ul className='border-l border-gray-200 pl-4'>
-  //             {subCategory.children && subCategory.children.map(subItem => (
-  //               <li key={subItem.title}>
-  //                 <DocsNavItem {...subItem} activeSlug={active} className='font-body font-regular text-sm text-gray-700 leading-7 hover:text-secondary-600' activeClassName='text-secondary-600' onClick={onClick} />
-  //               </li>
-  //             ))}
-  //           </ul>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   </li>
-  // );
 }
 
 function isActiveSlug(activeSlug, slug, files) {
