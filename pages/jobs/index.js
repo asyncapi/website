@@ -31,8 +31,10 @@ export default function JobsIndexPage() {
   const toFilter = [
     {
       name: "category",
+      selector: "meta.category",
     },
   ];
+
   const body = `---
 title: 'Job Title'
 date: MM/DD/YYYY (current date)

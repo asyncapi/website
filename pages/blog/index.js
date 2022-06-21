@@ -18,13 +18,16 @@ import blogPosts from '../../config/blog-posts.json'
 const toFilter = [
   {
     name: "type",
+    selector: "meta.type",
   },
   {
     name: "authors",
     unique: "name",
+    selector: "meta.authors",
   },
   {
     name: "tags",
+    selector: "meta.tags",
   },
 ];
 

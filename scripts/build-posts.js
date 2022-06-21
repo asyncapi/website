@@ -40,14 +40,16 @@ function walk(directory, meta) {
 
     const fileContent = readFileSync(fileName, 'utf-8')
     const { data, content } = frontMatter(fileContent);
-    const details = { meta: data };
-    details.content = content;
-    details.toc = toc(content, { slugify: slugifyToC }).json;
+    const details = { 
+      meta: data, 
+      content,
+      filePath: fileName,
+      toc: toc(content, { slugify: slugifyToC }).json,
+    };
     details.meta.readingTime = Math.ceil(readingTime(content).minutes);
     details.meta.excerpt = details.meta.excerpt || markdownToTxt(content).substr(0, 200);
     details.slug = fileName.replace(/\.md$/, '');
     details.slug = details.slug.replace(meta.dir, meta.slug);
-    details.filePath = fileName;
 
     result.push(details);
   }

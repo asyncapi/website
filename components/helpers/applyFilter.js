@@ -10,6 +10,10 @@ function sortFilter(arr) {
   });
 }
 
+function getDeepValue(obj, path) {
+  return path.split(".").reduce((o, key) => o && o[key] ? o[key] : null, obj);
+}
+
 export const applyFilterList = (checks, data, setFilters) => {
   if (Object.keys(checks).length) {
     let lists = {};
@@ -19,7 +23,8 @@ export const applyFilterList = (checks, data, setFilters) => {
     for (let i = 0; i < data.length; i++) {
       const res = data[i];
       for (const key in lists) {
-        const result = data[i][key];
+        // const result = data[i][key];
+        const result = getDeepValue(data[i], checks.find(c => c.name === key).selector);
         if (res) {
           if (lists[key].length) {
             if (Array.isArray(result)) {
@@ -92,21 +97,22 @@ export const applyFilterList = (checks, data, setFilters) => {
   }
 };
 
-export const onFilterApply = (data, onFilter, query) => {
+export const onFilterApply = (data, onFilter, query, checks) => {
   let result = data;
   if (query && Object.keys(query).length >= 1) {
     for (const property in query) {
       const res = result.filter((e) => {
-        if (!query[property] || e[property] === query[property]) {
-          return e[property];
+        const value = getDeepValue(e, checks.find(c => c.name === property).selector);
+        if (!query[property] || value === query[property]) {
+          return value;
         }
-        if (Array.isArray(e[property])) {
-          if (e[property].some((data) => data.name === query[property])) {
-            return e[property].some((data) => data.name === query[property]);
+        if (Array.isArray(value)) {
+          if (value.some((data) => data.name === query[property])) {
+            return value.some((data) => data.name === query[property]);
           }
           return (
-            e[property].some((data) => data.name === query[property]) ||
-            e[property].includes(query[property]) ||
+            value.some((data) => data.name === query[property]) ||
+            value.includes(query[property]) ||
             false
           );
         }

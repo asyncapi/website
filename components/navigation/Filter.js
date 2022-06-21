@@ -14,7 +14,7 @@ export default function Filter({ data, onFilter, checks, className }) {
   }, [route]);
 
   useEffect(() => {
-    onFilterApply(data, onFilter, query);
+    onFilterApply(data, onFilter, query, checks);
   }, [query]);
 
   return checks.map((check) => {
