@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-4 sm:py-6 md:py-12 xl:py-16 px-3 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
-        <nav className="-mx-5 my-0 pt-4 pb-0 sm:py-10 px-6 flex flex-wrap justify-between ">
+        <nav className="py-4 sm:py-10 flex flex-wrap justify-between">
 
           <div className="mr-14 w-full md:w-auto">
             <div className="">

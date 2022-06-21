@@ -1,0 +1,256 @@
+[
+  {
+    "meta": {
+      "title": "Head of Developer Experience",
+      "date": "2021-07-30T05:00:00.000Z",
+      "category": "Engineering",
+      "closingOn": "09/30/2021",
+      "contact": "https://joinupvest.recruitee.com/o/head-of-engineering-developer-experience-fmd",
+      "company": {
+        "name": "Upvest GmbH",
+        "logoUrl": "/img/logos/companies/Upvest.png"
+      },
+      "readingTime": 3,
+      "excerpt": "About the team\nWe are a bunch of builders who want to enable other builders to do great things by providing an awesome platform and API for them. We are low hierarchy, no bullshit, trust and transpare"
+    },
+    "content": "## About the team\nWe are a bunch of builders who want to enable other builders to do great things by providing an awesome platform and API for them. We are low hierarchy, no bullshit, trust and transparency valuing group of people. We are looking for ownership taking and outcome focused leaders to join our Mission of democratizing access to investments.\n\n## TL;DR\n* :muscle: Own the Developer Experience of our Investment API Platform (OpenAPI/AsyncAPI)\n* :house_with_garden: Head of roles need some travel to Berlin (a few times a month) so easiest for Germany-based candidates.\n* :money_mouth_face: Market rate salaries but most importantly great options package and a chance to get in at early A-series valuation.\n\n## About the job\n\nWe are an API-first company. Our product is an HTTPS/JSON API our clients integrate with to embed investing capabilities inside their own products. As such the public API is the face of the product and the company. We take a lot of pride in it. Developer Experience is one of the newest teams at Upvest but also one of the most crucial ones. This team owns our public-facing API specifications (OpenAPI, AsyncAPI). It is their job to align with internal Product Engineering teams on best practices and our ways of working with APIs (both public and internal). This team also is responsible for making sure all our documentation, tutorials and guidelines are as easy to understand and use as possible for our clients. They will also provide all the necessary tooling our clients need for making the integration easier including SDKs, command-line utilities, and things we may not have considered yet.\n\n## About you\n\nAs our Head of Engineering, Developer Experience, you’ll join and take ownership of our Developer Experience team (together with Tech Lead Raphael Hüfner and API Engineer Mikhail Kochegarov). This is a Lead of Leads type role meaning that the direct reports are Tech Leads leading their teams. You will report directly to the CTO, Juha Ristolainen.\n\nYou will play a critical role in Upvest Engineering leadership by owning and being accountable for all things related to the public-facing side of our APIs like API-specifications, documentation, SDKs, etc. You will work closely with your stakeholders from Growth and Customer Success as well as directly with the CTO and the CPO in discovering and defining what kind of support we should provide our clients in using our APIs. You will own the roadmap and backlog for Developer Experience and the shorter-term delivery plans with your Tech Leads. You will also be accountable for delivering on those plans. We always put the customer first so leading by example you will set the standards to ensure our API-specifications, documentation, onboarding, and SDKs are all conforming to standards and world-class in ease of use and readability.\n\nYou will collaborate with your Head of Engineering peers in aligning on strategy and plans, agreeing on priorities as well as the growth of the organization.\n\nYou will be working on a greenfield project with cutting-edge technologies and no legacy code.\n\n## Pay and benefits\n\n- Total compensation consisting of competitive base salary plus options package.\n\nJoin us!\n",
+    "toc": [
+      {
+        "content": "About the team",
+        "slug": "about-the-team",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "TL;DR",
+        "slug": "tldr",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "About the job",
+        "slug": "about-the-job",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "About you",
+        "slug": "about-you",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Pay and benefits",
+        "slug": "pay-and-benefits",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      }
+    ],
+    "slug": "/jobs/head-of-dx-upvest",
+    "filePath": "pages/jobs/head-of-dx-upvest.md"
+  },
+  {
+    "meta": {
+      "title": "Open Source Developer Advocate",
+      "date": "2021-07-01T05:00:00.000Z",
+      "category": "Education",
+      "closingOn": "09/08/2021",
+      "contact": "https://www.postman.com/company/careers/open-source-developer-advocate-open-technologies-4584342003/",
+      "company": {
+        "name": "Postman",
+        "logoUrl": "/img/logos/companies/postman.svg"
+      },
+      "readingTime": 3,
+      "excerpt": "About the team\nPostman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise: "
+    },
+    "content": "\n## About the team\n\nPostman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise: to simplify each step of building an API so developers could create better APIs—faster.\n\nPostman’s Open Technologies function was created to establish Postman as a leader in the API sector by investing in Open Specifications, Standards, Tooling, Data, and Policies as well as building strong relationships with thought leaders and organizations in the domain.\n\nThrough our collaboration with the AsyncAPI Initiative, we are looking for a Developer Advocate to work closely with the AsyncAPI team within our Open Technologies function to help shape and build the future of API tooling. Everything is open-source and, therefore, much of your work will be open-source too.\n\nWe believe that building a strong community and investing in their success is essential to our own success as a company. You will engage with open source communities on Github while collaborating within the AsyncAPI team to drive API better practices throughout the broader API ecosystem. In addition to advocacy, you will also have shared responsibilities for user education and community engagement.\n\n## Responsibilities\n\n- Engage with various kinds of AsyncAPI users (including developers, testers, architects, and more) to understand their perspectives, workflows, and use cases.\n- Drive API better practices by creating blog and video content, developing code samples and open source tools, and/or speaking at events\n- Collaborate closely with technical writers to ensure docs and learning materials align with community needs which includes assisting with AsyncAPI documentation, tutorials, and other education efforts within Open Technologies\n- Assist with AsyncAPI communication channels, events, and other community engagement \n- Dogfood AsyncAPI technology, and interpret user data and community feedback, to drive insights and assist product development\n- Represent the company online and at events\n\n\n## About You\n- Strong familiarity and knowledge of open source development and communities. Nice to have proven experience within the field\n- Strong written, verbal, and interpersonal skills with the proven ability to communicate effectively at all levels internally and externally and across diverse geographies and leveraging remote teaming technologies\n- Demonstrated experience working with developer communities and APIs on GitHub, blog posts, and/or videos. This is a critical aspect of the role. \n- Two years of programming experience, or a willingness and aptitude for learning technology\n- Experience making data-driven decisions.\n\n## What Else? (Remote Benefits)\n\nWe offer competitive salary and benefits, and a flexible schedule working with a fun, collaborative team. Enjoy full medical coverage, unlimited PTO, and a monthly lunch stipend. (Yes, seriously. We want you to eat well wherever you’re at.) Plus, our wellness program will help you stay healthy from your location with fitness-related reimbursements. Our frequent and fascinating virtual team-building events will keep you connected, while our donation-matching program can support the causes you care about. We’re building a long-term company with an inclusive culture where everyone can be the best version of themselves, and we want you to be part of it. Join us, why dontcha?",
+    "toc": [
+      {
+        "content": "About the team",
+        "slug": "about-the-team",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Responsibilities",
+        "slug": "responsibilities",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "About You",
+        "slug": "about-you",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "What Else? (Remote Benefits)",
+        "slug": "what-else-remote-benefits",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "slug": "/jobs/dev-rel-postman",
+    "filePath": "pages/jobs/dev-rel-postman.md"
+  },
+  {
+    "meta": {
+      "title": "Technical Writer",
+      "date": "2021-07-01T05:00:00.000Z",
+      "category": "Education",
+      "closingOn": "08/10/2021",
+      "contact": "https://www.postman.com/company/careers/technical-writer-open-technologies-4360221003/",
+      "company": {
+        "name": "Postman",
+        "logoUrl": "/img/logos/companies/postman.svg"
+      },
+      "readingTime": 4,
+      "excerpt": "About the team\nPostman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise: "
+    },
+    "content": "\n## About the team\n\nPostman is the world’s leading API collaboration platform used by more than 15 million developers and 500,000 organizations worldwide. Postman was founded on a straightforward premise: to simplify each step of building an API so developers could create better APIs—faster. \n\nPostman’s Open Technologies function was created to establish Postman as a leader in the API sector by investing in Open Specifications, Standards, Tooling, Data, and Policies as well as building strong relationships with thought leaders and organizations in the domain. \n\nThrough our collaboration with the AsyncAPI Initiative, we are looking for a Technical Writer to work closely with the AsyncAPI team within our Open Technologies function to help shape and build the future of API tooling. This Technical Writer will work to improve and organize documentation around open source tools so developers can easily build and maintain event-driven architecture powered by the AsyncAPI specification - the industry standard for defining asynchronous APIs. \n\nAs the Open Technologies Technical Writer, you will help create a foundation of learning material that will scale up for a rapidly growing AsyncAPI user base. Everything is open-source and, therefore, much of your work will be open-source too. If supporting open source learners sounds like the kind of challenge you’d like to tackle, apply to join us! \n\n## Responsibilities\n\n- Own the docs for the AsyncAPI feature set—you’ll be responsible for documenting this specific area of our Open Technologies function and will drive all docs efforts around it\n- Plan documentation in conjunction with community feedback—you’ll work with open source communities to learn about a feature from specifications, user research, and most importantly through your own hands-on experimentation with the product\n- Collaborate closely with developer relations to ensure docs and learning materials align with community needs which includes assisting with AsyncAPI documentation, tutorials, and other education efforts within Open Technologies\n- Carry out editorial reviews on your docs teammates’ drafts—you’ll be providing constructive feedback that helps your colleagues to grow, as well as receiving it\n- Deliver high-quality, accurate documentation that acts as an effective learning resource, aligns with content strategy guidelines, and represents the AsyncAPI specification to community and customers\n- Liaise with stakeholders across the AsyncAPI Initiative to establish and address docs needs\n- Open to learning how to write the occasional code sample to include within documentation\n\n## About You\n- At least 1 year of experience with the Docs as Code/Docs like Code approach to documentation, writing Markdown-based content, working in an Agile environment, and using open source tooling\n- Self-starter—you can pick up tech skills with minimal support and guidance and have a curiosity about learning development workflows and practices\n- Problem solver—you take a broad view of the role your docs work plays within the organization and are comfortable with shifting priorities\n- User empathy—maybe you’ve been involved in tech support, in a community or customer facing role, you’ve helped people learn tech skills, or you’ve sought user feedback on docs in the past\n- Strong communicator—you’ve written technical material before, whether official documentation or just your own tutorials on tech skills you wanted to share, and your communication skills carry over into the way you engage with teammates\n- Distributed team member—you’re comfortable working within a diverse global team in multiple time zones\n- Nice to have developer knowledge—ideally you’ve worked with APIs and/or open source tooling in some form, maybe you’ve worked as a developer, or you’ve written a little bit of code here and there, but whatever your skill level you’re happy to have a go at developer tasks where they support the documentation effort \n\n## What Else? (Remote Benefits)\n\nWe offer competitive salary and benefits, and a flexible schedule working with a fun, collaborative team. Enjoy full medical coverage, unlimited PTO, and a monthly lunch stipend. (Yes, seriously. We want you to eat well wherever you’re at.) Plus, our wellness program will help you stay healthy from your location with fitness-related reimbursements. Our frequent and fascinating virtual team-building events will keep you connected, while our donation-matching program can support the causes you care about. We’re building a long-term company with an inclusive culture where everyone can be the best version of themselves, and we want you to be part of it. Join us, why dontcha?\n",
+    "toc": [
+      {
+        "content": "About the team",
+        "slug": "about-the-team",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "Responsibilities",
+        "slug": "responsibilities",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "About You",
+        "slug": "about-you",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "What Else? (Remote Benefits)",
+        "slug": "what-else-remote-benefits",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "slug": "/jobs/tech-writer-postman",
+    "filePath": "pages/jobs/tech-writer-postman.md"
+  },
+  {
+    "meta": {
+      "title": "UI/UX/DX Designer",
+      "date": "2021-07-01T05:00:00.000Z",
+      "category": "Design",
+      "closingOn": "09/15/2021",
+      "contact": "https://www.postman.com/company/careers/product-designer-open-technologies-4582365003/",
+      "company": {
+        "name": "Postman",
+        "logoUrl": "/img/logos/companies/postman.svg"
+      },
+      "readingTime": 3,
+      "excerpt": "We are a tiny team working on the AsyncAPI Initiative. We are hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.\nTL;DR\n:bulb: Developer tools &ampamp; CLI devel"
+    },
+    "content": "\nWe are a tiny team working on the AsyncAPI Initiative. We are hiring a UI/UX/DX designer to help us design more awesome UI and CLI tools for developers.\n\n## TL;DR\n\n* :bulb: Developer tools & CLI developer experience\n* :unlock: Your work will be open sourced\n* :muscle: Growing team\n* :house_with_garden: Fully remote job\n* :money_mouth_face: Great salary and compensation package\n* :mountain_snow: Unlimited paid time off\n\n## About the job\n\nWe're looking for someone to work closely with our team to help shape and build the future of our tools.\n\nYou'd spend your time improving the user experience of existing and new tools, for example:\n\n* Improving the CLI user experience when generating documentation and code using the AsyncAPI Generator tool.\n* Designing a unified CLI tool to work with AsyncAPI.\n* Creating a design system for [AsyncAPI Studio](https://hub.asyncapi.io).\n* Designing delightful experiences for our documentation and website.\n* Researching how our users use AsyncAPI, what they would love to do with it that's not yet possible, etc.\n\nEverything we do is open-source and, therefore, all your work will be 100% open-source too. We do everything on Github, however, we're not rigid as to what tools you should use, as long as you keep your work public, open, and accessible to everyone.\n\nWe're just a team of four people at the time of this writing. We plan to triple the size of the team on the first half of 2021.\n\nIn case you're curious, here are a few projects we've been working on during the last years:\n\n* [AsyncAPI specification](https://github.com/asyncapi/asyncapi)\n* [AsyncAPI Generator](https://github.com/asyncapi/generator)\n* [AsyncAPI website and docs](https://asyncapi.com)\n\n## About you\n\nWe're looking for someone who meets some or all of the following points:\n\n* You have an eye for well-designed developer tools.\n* You can visually communicate an idea by creating quick, low fidelity mockups such as pencil sketches.\n* You can create high fidelity mockups and prototypes to articulate detailed screen flows and user interactions that need to be developed.\n* Good at collaborating across teams and locations, especially remote work across time zones.\n* Comfortable using the latest design mockup and prototyping tools. We aren’t rigid about design tools though, so we are open to suggestions always.\n* A good understanding of how APIs work and what AsyncAPI does is important. It’s okay if you’re not an expert as long as you take initiative and are excited to learn about how things work together.\n* Detailed understanding of quantitative research techniques.\n* Ability to plan ahead and expand UX Research into a mature practice.\n* Experience with team collaboration, product management, and support processes (Github and Zenhub helpful).\n* Advanced experience in multiple and mixed methods of research including but not limited to surveys, polls, interjection and in-app surveys, interviews, and log file analysis.\n\n## Pay and benefits\n\nWe offer **competitive salary** and benefits, and a flexible schedule working with a fun, collaborative team. Enjoy these great benefits:\n\n* Full medical coverage.\n* Unlimited PTO.\n* Monthly lunch stipend. Yes, seriously. We want you to eat well wherever you’re at.\n* Wellness Program will help you stay healthy from your location with fitness-related reimbursements.\n* Quarterly team offsites (onsites? we're remote!).\n* Monthly happy hours will keep you connected.\n* Donation-matching program can support the causes you care about.\n\nWe’re building a long-term initiative with an inclusive culture where everyone can be the best version of themselves, and we want you to be part of it.\n\nJoin us!\n",
+    "toc": [
+      {
+        "content": "TL;DR",
+        "slug": "tldr",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "About the job",
+        "slug": "about-the-job",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "About you",
+        "slug": "about-you",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "Pay and benefits",
+        "slug": "pay-and-benefits",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      }
+    ],
+    "slug": "/jobs/ui-ux-dx-designer",
+    "filePath": "pages/jobs/ui-ux-dx-designer.md"
+  },
+  {
+    "meta": {
+      "title": "API Architect",
+      "date": "06/22/2021",
+      "category": "Architect",
+      "closingOn": "08/22/2021",
+      "contact": "https://apiture.com/careers/?gh_jid=5303104002",
+      "company": {
+        "name": "Apiture",
+        "logoUrl": "/img/logos/companies/apiture.png"
+      },
+      "readingTime": 5,
+      "excerpt": "About the team\nWe are an open API banking platform, focused on creating cutting-edge technology for financial institutions.\nThe platform allows banks the fast and flexible deployment of features that "
+    },
+    "content": "## About the team\n\nWe are an open API banking platform, focused on creating cutting-edge technology for financial institutions.\nThe platform allows banks the fast and flexible deployment of features that their customers\nhave come to expect—mobile-focused, user-centric, convenient and secure.\n\nWe have this crazy, thrill-seeking goal to revolutionize banking,\nthrough an open architecture built natively for the next-generation of cloud-based technologies, providing financial customers infinite scalability, availability, and transparency.\nWe are moving fast, thinking big, leading strong, and need your leadership to serve on the front lines of the revolution.\n\nAwesome APIs and an awesome Developer Experience (DX) are crucial to what Apiture creates for developers.\nAs an API First company, Apiture crafts Open APIs and Async APIs as foundational components of our comprehensive open banking platforms, \n_Apiture Open_ and _Apiture Xpress_.\n\nDeveloper Experience (DX) is a deliberate, designed aspect of our product that encompasses all touch points that developer\ncustomers have when building great solutions using the Apiture platforms and suite of APIs. \n\nAs an Apiture API Architect, you will be a key team member creating APIs and DX that will attract and retain developers.\nWell-designed APIs and Developer Experience makes our APIs a joy to work with throughout the entire application development lifecycle.\n\n## TL;DR\n\n* :muscle: Growing team\n* :house_with_garden: Beautiful new office in Wilmington NC, or work from your preferred location (Eastern Time Zone)\n* :money_mouth_face: Great salary and compensation package\n* :mountain_snow: Unlimited paid time off\n\n## About the job\n\nCreate Great APIs – As an API architect, you will contribute to the design and architecture of Apiture's APIs. You will employ (and develop!) our rich set of tools for transforming customer product requirements into secure, consistent, complete, and evolvable APIs which solve challenging real-world customer problems in digital banking. You will build, validate, and maintain API First pipeline tools to create and validate API designs and create other software artifacts such as SDKs from the API definitions. You will start with enhancing existing APIs and progress to creating new APIs to solve emerging business needs. Apiture API Architects are responsible for the API design; other teams provide the implementation and API & platform back-end.\n\nCreate Great API documentation – the documentation must be compelling, attractive, easy to navigate and search. It should not just answer developers' questions but anticipate them. It must honor the way developers think and fit naturally to help solve their problems. Documentation includes reference documentation, usage and guidance, HOW-TOs, concepts and conventions and terminology, tutorials, and reference applications and examples in multiple programming languages. Documentation is live, with the ability to try things out in a safe sandbox to see how the actual API calls work, what the request and response bodies look like, and how errors are handled. \n\nGenerate Software Development Kits – create and support Apiture-developed SDKs for the Apiture platform. Manage different SDKs for different programming languages or platforms. \"Native\" SDKs present the feature set of the APIs using the idioms and conventions of the target programming language and hide the HTTP transport protocol upon which Apiture REST APIs are built.\n\nSupport developers through community forums, whether they are Apiture-hosted discussion boards or external boards (Slack, StackOverflow, GitHub, etc.). \n\nContinuously evolve and improve the Apiture DX.\n\n## About you\n\n* Master's or Bachelor’s degree preferred or commensurate industry experience\n* Proficient with REST APIs, HTTP, JSON, and several modern programming languages used to build services and clients (Java, JavaScript/TypeScript, Python, Go, Swift, C#, Clojure, etc.), and Markdown\n* OpenAPI 3.x, JSON Schema, AsyncAPI 2.0, YAML, OWASP API Security Top Ten\n* Familiarity with API Style Guides and API Governance\n* Familiarity with OpenAPI validators and linters, test frameworks, and code generation tools\n* Excellent knowledge of implementation and system evolution constraints on efficient and robust API designs.\n* Proficient with secure coding practices to prevent fraud, abuse, etc.\n* Proficient with API Gateways, API key management, monitoring and reporting tools.\n* Application, command-line, and service development experience, Node.js\n* Digital Banking and finance domain knowledge a plus\n* Excellent technical writing skills.\n* Excels at reducing complex problems into clear, concise, maintainable, well-documented APIs and sample applications.\n* A passion for creating tools to accelerate software development for others.\n* A strong bent for delivering quality products.\n* Willingness to travel periodically and meet with developers. \n* Work with Apiture Technical Writers in producing Apiture Open Platform documentation.\n\n## Pay and benefits\n\n* Pay commensurate with experience and skills.\n* Exceptional healthcare benefits\n* 401(k) matching\n* Annual bonus\n* Gym access\n* Great Culture\n  * Among Forbes _America's Best Startup Employers_, 2020, 2021\n  * Among American Banker's _Best Fintechs to Work For_, 2019, 2020, 2021\n\n[Apply today](https://apiture.com/careers/?gh_jid=5303104002) \nto join us and start dreaming of new ways to be at the center of your customers’ financial lives.\n",
+    "toc": [
+      {
+        "content": "About the team",
+        "slug": "about-the-team",
+        "lvl": 2,
+        "i": 0,
+        "seen": 0
+      },
+      {
+        "content": "TL;DR",
+        "slug": "tldr",
+        "lvl": 2,
+        "i": 1,
+        "seen": 0
+      },
+      {
+        "content": "About the job",
+        "slug": "about-the-job",
+        "lvl": 2,
+        "i": 2,
+        "seen": 0
+      },
+      {
+        "content": "About you",
+        "slug": "about-you",
+        "lvl": 2,
+        "i": 3,
+        "seen": 0
+      },
+      {
+        "content": "Pay and benefits",
+        "slug": "pay-and-benefits",
+        "lvl": 2,
+        "i": 4,
+        "seen": 0
+      }
+    ],
+    "slug": "/jobs/apiture-api-architect",
+    "filePath": "pages/jobs/apiture-api-architect.md"
+  }
+]
