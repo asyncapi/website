@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-4 sm:py-6 md:py-12 xl:py-16 px-3 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
-        <nav className="-mx-5 my-0 py-4 sm:py-10 px-6 flex flex-wrap justify-between ">
+        <nav className="-mx-5 my-0 pt-4 pb-0 sm:py-10 px-6 flex flex-wrap justify-between ">
 
           <div className="mr-14 w-full md:w-auto">
             <div className="">
@@ -162,7 +162,7 @@ export default function Footer() {
           </div>
         </nav>
         
-        <div className="sm:flex justify-between xl:mt-20 py-12">
+        <div className="sm:flex justify-between xl:mt-20 py-8 sm:py-12">
           <div className="w-full sm:w-2/3">
             <p className="text-left text-base leading-6 mb-3 text-cool-gray">
               Made with <span className="font-mono text-secondary-500">:love:</span> by the AsyncAPI Initiative.
@@ -172,7 +172,7 @@ export default function Footer() {
               For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-secondary-500 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
             </p>
           </div>
-          <div className="block mt-10 sm:mt-0">
+          <div className="block mt-8 sm:mt-0">
             <p className="block text-sm leading-6">
               <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
                 <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
