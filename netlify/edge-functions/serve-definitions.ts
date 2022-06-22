@@ -51,7 +51,7 @@ export default async (request: Request, context: Context) => {
 };
 
 
-// Non-legitimate requests should not use our Github Token and affect the rate limit.
+// Non-legitimate requests should not use our Github Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
 function isRequestLegitimate(request: Request): boolean {
   return legitimateRequestRegex.test(new URL(request.url).pathname);
 }
