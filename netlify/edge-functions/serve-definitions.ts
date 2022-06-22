@@ -53,7 +53,7 @@ export default async (request: Request, context: Context) => {
 
 // Non-legitimate requests should not use our Github Token and affect the rate limit.
 function isRequestLegitimate(request: Request): boolean {
-  return new URL(request.url).pathname.search(legitimateRequestRegex) !== -1;
+  return legitimateRequestRegex.test(new URL(request.url).pathname);
 }
 
 interface TimeoutRequestInit extends RequestInit {
