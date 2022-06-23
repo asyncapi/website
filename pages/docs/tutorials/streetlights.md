@@ -45,9 +45,9 @@ Before you proceed to the next stage, you'll need to download a few things:
 2. Download [Mosquitto](https://mosquitto.org/download/) based on your Operating System.
 
 3. Install Git based on your Operating System:
-- [Install Git on MacOs](https://git-scm.com/download/mac)
-- [Install Git on Windows](https://git-scm.com/download/win)
-- [Install Git on Linux](https://git-scm.com/download/linux)
+    - [Install Git on MacOs](https://git-scm.com/download/mac)
+    - [Install Git on Windows](https://git-scm.com/download/win)
+    - [Install Git on Linux](https://git-scm.com/download/linux)
 
 # Creating the AsyncAPI file
 
