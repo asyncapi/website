@@ -25,7 +25,7 @@ export default function Hero({ className = ''}) {
           architecture. All powered by the AsyncAPI specification, the {" "}
           <strong>industry standard</strong> for defining asynchronous APIs.
         </Heading>
-        <Button className="block md:inline-block" text="Read the docs" href="/docs/getting-started" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
+        <Button className="block md:inline-block" text="Read the docs" href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
         <OpenInStudioButton text='Open Studio' className="md:ml-2" />
         <Paragraph typeStyle="body-sm" className="mt-4" textColor="text-gray-500">
           Proud to be part of the {" "}

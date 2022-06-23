@@ -1,4 +1,4 @@
 ---
-title: Community
+title: 'Tools'
 weight: 3
 ---

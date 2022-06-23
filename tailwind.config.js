@@ -81,6 +81,8 @@ module.exports = {
         dark: '#252f3f',
         'dark-highlight': '#3e4d64',
       },
+      dark: '#1B1130',
+      'cool-gray':'#9C96A8',
       hub: '#252f3f',
       slack: '#371038',
       'mac-window': {
