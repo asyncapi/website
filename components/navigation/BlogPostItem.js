@@ -6,7 +6,7 @@ import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 import Link from 'next/link'
 
-export default forwardRef(function BlogPostItem({ post, className = ''}, ref) {
+export default forwardRef(function BlogPostItem({ post, className = '', id=''}, ref) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800']
 
   switch (post.type.toLowerCase()) {
@@ -25,7 +25,7 @@ export default forwardRef(function BlogPostItem({ post, className = ''}, ref) {
   }
 
   return (
-    <li className={`rounded-lg ${className}`} ref={ref}>
+    <li className={`rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
             <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
