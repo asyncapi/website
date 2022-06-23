@@ -4,7 +4,16 @@ const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
 const NR_API_KEY = Deno.env.get("NR_API_KEY");
 const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metric-api.eu.newrelic.com/metric/v1";
 
+// Example of legitimate request: /<source>/<file> OR /<source>
+// Example of non-legitimate request: /<source>/<another-random-path>/<file>
+const legitimateRequestRegex = /^\/[\w\-]*(\/[\w\-\.]*\.json)?$/
+
 export default async (request: Request, context: Context) => {
+  if (!isRequestLegitimate(request)) {
+    context.log("Request is not legitimate");
+    return;
+  }
+
   // Deleting Origin header, which is involved in the cache policy, so requests can hit GH cache.
   // Reason: raw.githubusercontent.com responses include vary: Authorization,Accept-Encoding,Origin
   request.headers.delete("origin");
@@ -41,6 +50,12 @@ export default async (request: Request, context: Context) => {
   return response;
 };
 
+
+// Non-legitimate requests should not use our Github Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
+function isRequestLegitimate(request: Request): boolean {
+  return legitimateRequestRegex.test(new URL(request.url).pathname);
+}
+
 interface TimeoutRequestInit extends RequestInit {
   timeout: number;
 }
@@ -57,8 +72,6 @@ async function doFetch(resource: string, options: TimeoutRequestInit): Promise<R
 
 async function sendMetricToNR(context: Context, metric: NRMetric) {
   const metrics = [{ "metrics": [metric] }];
-
-  console.log(JSON.stringify(metrics));
   try {
     const rawResponse = await doFetch(NR_METRICS_ENDPOINT, {
       timeout: 2000, // Success in 2 seconds, cancel if not. User's request is more important than collecting metrics.
