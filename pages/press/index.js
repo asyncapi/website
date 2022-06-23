@@ -22,7 +22,7 @@ export default function press() {
       wide
     >
       <div className="py-10 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl lg:text-justify">
-        <a href="#press" id="press">
+        <a href="#press" id="press" className="outline-none">
           <Heading level="h1" typeStyle="heading-lg">
             AsyncAPI 
           </Heading>
@@ -63,7 +63,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#openGovernanceModel" id="openGovernanceModel">
+        <a href="#openGovernanceModel" id="openGovernanceModel" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Open governance model   
           </Heading>
@@ -87,7 +87,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#asyncapiInNumbers" id="asyncapiInNumbers">
+        <a href="#asyncapiInNumbers" id="asyncapiInNumbers" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             AsyncAPI, in numbers
           </Heading>
@@ -131,7 +131,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#valuesOfAsyncapi" id="valuesOfAsyncapi">
+        <a href="#valuesOfAsyncapi" id="valuesOfAsyncapi" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Values of AsyncAPI
           </Heading>
@@ -183,7 +183,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#brandAndCompanies" id="brandAndCompanies">
+        <a href="#brandAndCompanies" id="brandAndCompanies" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Brands and companies using AsyncAPI
           </Heading>
@@ -248,7 +248,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#funding" id="funding">
+        <a href="#funding" id="funding" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Funding
           </Heading>
@@ -277,7 +277,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#contact" id="contact">
+        <a href="#contact" id="contact" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Contact details
           </Heading>
@@ -367,7 +367,7 @@ export default function press() {
           </Paragraph>
         </a>
 
-        <a href="#faq" id="faq">
+        <a href="#faq" id="faq" className="outline-none">
           <Heading level="h3" typeStyle="heading-md" className="my-5">
             Frequently asked questions
           </Heading>
