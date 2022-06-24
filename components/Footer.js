@@ -12,78 +12,6 @@ import Heading from "./typography/Heading"
 
 export default function Footer() {
   return (
-
-    <div className="bg-gray-900 mt-12">
-      <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
-          <div className="px-5 py-2">
-          <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
-            <Link href="/about">
-             <a>About</a>
-            </Link>
-            </div>
-          </div>
-          <div className="px-5 py-2">
-            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
-              <Link href="/blog">
-              <a>Blog</a>
-              </Link>
-            </div>
-          </div>
-          <div className="px-5 py-2">
-            <a href="https://asyncapi.threadless.com" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
-              Shop
-            </a>
-          </div>
-          <div className="px-5 py-2">
-            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
-              <Link href="/jobs">
-              <a>Jobs</a>
-              </Link>
-            </div>
-          </div>
-          <div className="px-5 py-2">
-            <div className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
-            <a href="mailto:press@asyncapi.io">
-              Press
-            </a>
-            </div>
-          </div>
-        </nav>
-        <div className="mt-8 flex justify-center">
-          <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
-            <span className="sr-only">Follow AsyncAPI on Twitter</span>
-            <IconTwitter className="h-6 w-6" />
-          </a>
-          <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-gray-500">
-            <span className="sr-only">AsyncAPI on GitHub</span>
-            <IconGithub className="h-6 w-6" />
-          </a>
-          <a href="https://linkedin.com/company/asyncapi" rel="noopener noreferrer" target="_blank" className="ml-6 text-gray-400 hover:text-blue-500">
-            <span className="sr-only">AsyncAPI on LinkedIn</span>
-            <IconLinkedIn className="h-6 w-6" />
-          </a>
-          <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer" className="ml-6 text-gray-400 hover:text-red-600">
-            <span className="sr-only">Subscribe to AsyncAPI on YouTube</span>
-            <IconYoutube className="h-6 w-6" />
-          </a>
-        </div>
-        <div className="mt-8">
-          <p className="text-center text-base leading-6 text-gray-400">
-            Made with <span className="font-mono text-pink-500">:love:</span> by the AsyncAPI Initiative.
-          </p>
-          <p className="text-center text-base leading-6 text-gray-400 mt-4">
-            <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
-            </a>
-          </p>
-          <p className="text-center text-base leading-6 text-gray-400 mt-4">
-            Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
-          </p>
-          <p className="text-center text-base leading-6 text-gray-400 mt-1">
-            For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-gray-600 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
-          </p>
-=======
     <footer className="bg-dark mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-4 sm:py-6 md:py-12 xl:py-16 px-3 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
         <nav className="py-4 sm:py-10 flex flex-wrap justify-between">
@@ -178,7 +106,7 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://twitter.com/AsyncAPISpec" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">Twitter</span>
+                      <span className="sr-only">Follow AsyncAPI on Twitter</span>
                       <IconTwitter className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-5 hidden sm:block">Twitter</span>
                     </div>
@@ -187,7 +115,7 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://github.com/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">GitHub</span>
+                      <span className="sr-only">AsyncAPI on GitHub</span>
                       <IconGithub className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-5 hidden sm:block">GitHub</span>
                     </div>
@@ -196,7 +124,7 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://linkedin.com/company/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">LinkedIn</span>
+                      <span className="sr-only">Follow AsyncAPI on LinkedIn</span>
                       <IconLinkedIn className="h-8 w-8 sm:h-5 sm:w-5 ml-1" />
                       <span className="absolute pl-8 pr-2 hidden sm:block">LinkedIn</span>
                     </div>
@@ -205,7 +133,7 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">YouTube</span>
+                      <span className="sr-only">Subscribe AsyncAPI on YouTube</span>
                       <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" /> 
                       <span className="absolute pl-8 pr-2 hidden sm:block">YouTube</span>
                     </div>
@@ -214,7 +142,7 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://asyncapi.com/slack-invite" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">Slack</span>
+                      <span className="sr-only">Join AsyncAPI on Slack</span>
                       <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" /> 
                       <span className="absolute pl-8 pr-8 hidden sm:block">Slack</span>
                     </div>
@@ -225,7 +153,7 @@ export default function Footer() {
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Twitch</span>
                       <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
-                      <span className="absolute pl-8 pr-6 hidden sm:block">Twitch</span>
+                      <span className="absolute pl-8 pr-6 hidden sm:block">Follow AsyncAPI on Twitch</span>
                     </div>
                   </a>
                 </li>
@@ -251,9 +179,8 @@ export default function Footer() {
               </a>
             </p>
           </div>
-
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
