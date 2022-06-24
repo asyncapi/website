@@ -28,6 +28,20 @@ Would you like to get on the list and support us financially? Check out the [spo
 
 Would you like to help us with the maintainance? Contact us on [slack](https://www.asyncapi.com/slack-invite/).
 
+## Open governance model
+
+Free software gives users the freedom to apply, modify, and continue in the chain by distributing copies to help others and by, in this case, disseminating modified versions of the specification. 
+
+The above mentioned partnership with Postman speeded up the work in the initiative on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
+
+In doing so, it will be achieved:
+
+- To ensure an open governance model where no single company dominates the specification and its tools.
+- To make the project as democratic as possible.
+- To rely on an asynchronous decision-making process that empowers the people who "work", not the companies who "pay". 
+
+In other words, it will  give equal power to individual and corporate contributors  [[checkout here for more information](https://www.asyncapi.com/blog/governance-motivation)].
+
 ## History
 
 This project started at Hitch (a.k.a. API Changelog). We are in love with API machine-readable documentation formats (OpenAPI, RAML, etc.) and always encouraged our customers to use a machine-readable definition for their APIs because it allows them to get extra benefits. From documentation and code generation to setup their own [API Assistant](http://apiassistant.com).
