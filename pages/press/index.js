@@ -61,29 +61,7 @@ export default function press() {
           However, none of the other goals are possible without the support of a large community. 
           AsyncAPI is and must remain a community-driven initiative.
         </Paragraph>
-
-        <Heading level="h3" typeStyle="heading-md" className="my-5">
-          <span id="openGovernanceModel">Open governance model</span>
-        </Heading>
-        <Paragraph typeStyle="body-md" className="my-4">
-          Free software gives users the freedom to apply, modify, and continue in the chain by distributing copies to help others and by, in this case, disseminating modified versions of the specification.
-        </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          The above mentioned partnership with Postman speeded up the work in the initiative on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level.
-        </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          In doing so, it will be achieved:
-          <ul className="list-disc list-inside ml-4 my-2">
-          <li className="py-1">To ensure an open governance model where no single company dominates the specification and its tools.</li>
-          <li className="py-1">To make the project as democratic as possible.</li>
-          <li className="py-1">To rely on an asynchronous decision-making process that empowers the people who "work", not the companies who "pay".</li>
-          </ul>
-          In other words, it will give equal power to individual and corporate contributors 
-          [<TextLink href="https://www.asyncapi.com/blog/governance-motivation" target="_blank">
-            checkout here for more information
-          </TextLink> ].
-        </Paragraph>
-
+        
         <Heading level="h3" typeStyle="heading-md" className="my-5">
           <span id="asyncapiInNumbers">AsyncAPI, in numbers</span>
         </Heading>
@@ -112,19 +90,6 @@ export default function press() {
             <li className="py-1">On Twitter, the number of followers increased by 257%.</li>
             <li className="py-1">On GitHub, the generator downloads increased by 62%.</li>
           </ul>
-        </Paragraph>
-
-        <Heading level="h3" typeStyle="heading-md" className="my-5">
-          <span id="history">History of the project</span>
-        </Heading>
-        <Paragraph typeStyle="body-md" className="my-4">
-          It all starts with a vision, and AsyncAPI it’s not an exception. 
-          The initiative was born in 2016 as a side project of Fran Mendez while he was working at Hitch (API Changelog). 
-          After identifying the lack of tools for standardized message-based specification systems, this young engineer felt that there was a missing piece and started working on the specification.
-        </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          He formulated an "API theory", so to speak, essentially, with as many interactive API types as RESTful web services, GraphQL, and message-based architectures. 
-          AsyncAPI would serve as a common unifying language for the various formats, protocols, and specifications, enabling standardized communication in the message-based system.
         </Paragraph>
 
         <Heading level="h3" typeStyle="heading-md" className="my-5">
