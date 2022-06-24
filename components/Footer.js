@@ -151,9 +151,9 @@ export default function Footer() {
                 <li className="py-2 mr-3 sm:mr-0">
                   <a href="https://www.twitch.tv/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">Twitch</span>
+                      <span className="sr-only">Follow AsyncAPI on Twitch</span>
                       <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
-                      <span className="absolute pl-8 pr-6 hidden sm:block">Follow AsyncAPI on Twitch</span>
+                      <span className="absolute pl-8 pr-6 hidden sm:block">Twitch</span>
                     </div>
                   </a>
                 </li>
