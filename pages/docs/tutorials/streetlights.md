@@ -42,9 +42,7 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
-2. Download [Mosquitto](https://mosquitto.org/download/) based on your Operating System.
-
-3. Install Git based on your Operating System:
+2. Install Git based on your Operating System:
     - [Install Git on MacOs](https://git-scm.com/download/mac)
     - [Install Git on Windows](https://git-scm.com/download/win)
     - [Install Git on Linux](https://git-scm.com/download/linux)
@@ -54,7 +52,7 @@ Before you proceed to the next stage, you'll need to download a few things:
 In this step, we will create an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
 
 <CodeBlock>
-{`asyncapi: '2.2.0'
+{`asyncapi: '2.4.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -95,7 +93,7 @@ channels:
 Let's break it down into pieces:
 
 <CodeBlock>
-{`asyncapi: '2.2.0'
+{`asyncapi: '2.4.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -107,7 +105,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use the AsyncAPI version 2.2.0.
+- The `asyncapi` field indicates you use the AsyncAPI version 2.4.0.
 - The `info` field holds information about the API, such as its name, version, description, and license.
 
 Now lets move all the way to the `channels` section. This section is used to describe the event names your API will be publishing and/or subscribing to.
@@ -163,7 +161,7 @@ In this step, we will generate your code, you'll use the [AsyncAPI Generator](ht
 ### 3. Create a file with the AsyncAPI machine-readable description you defined before using terminal. The `cat` command is a utility command in Linux. On Windows use `type` instead of `cat`:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.2.0'
+asyncapi: '2.4.0'
 info:
   title: Streetlights API
   version: '1.0.0'
