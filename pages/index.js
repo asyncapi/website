@@ -219,7 +219,7 @@ function HomePage() {
               </TextLink>
             </Paragraph>
           </div>
-          <div className="lg:flex flex-row my-20">
+          <div className="md:flex flex-row my-20">
             <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
               <Heading level="h4" typeStyle="heading-md-semibold">
                 From the blog

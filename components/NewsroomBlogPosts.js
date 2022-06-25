@@ -34,11 +34,11 @@ export default function NewsroomBlogPosts() {
   }
   let buttonClass = 'shadow-md rounded border mx-2 focus:outline-none'
   return (
-    <div className="flex-col lg:flex lg:w-3/4 overflow-auto">
+    <div className="flex-col lg:flex md:w-3/4 overflow-auto">
       <div className="flex overflow-x-auto scroll-none list-none gap-4" ref={blogContainer}>
         {
           posts.map((post, index) => (
-              <BlogPostItem post={post} key={index} className="min-w-full md:min-w-76" ref={blog} id={`post${index}`}/>
+              <BlogPostItem post={post} key={index} className="min-w-full xl:min-w-76" ref={blog} id={`post${index}`}/>
           ))
         }
       </div>

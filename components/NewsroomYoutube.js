@@ -13,15 +13,19 @@ export default function NewsroomYoutube({ className = ''}) {
   const videoref = useRef();
   const shiftLeft = (e) => {
     e.preventDefault();
-    if(current>0) setCurrent(current-1);
+    if(current>0) { 
+    setCurrent(current-1);
     const width = videoref.current.clientWidth;
     videoContainer.current.scrollLeft -= width + 16;
+    }
   };
   const shiftRight = (e) => {
     e.preventDefault();
-    if(current<3) setCurrent(current+1)
+    if(current<3) {
+    setCurrent(current+1)
     const width = videoref.current.clientWidth;
     videoContainer.current.scrollLeft += width + 16;
+    }  
   };
 
   let buttonClass = 'shadow-md rounded border mx-2 focus:outline-none';
@@ -36,7 +40,7 @@ export default function NewsroomYoutube({ className = ''}) {
           <div
             key={index}
             ref={videoref}
-            className="rounded-lg w-1/2 min-w-full md:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
+            className="rounded-lg w-1/2 min-w-full xl:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
           >
             <img
               src={video.image_url}
