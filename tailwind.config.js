@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 const colorPrimary = {
   100: '#F4EFFC',
@@ -85,12 +86,10 @@ module.exports = {
       'body': ['Inter', ...defaultTheme.fontFamily.sans], 
       'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
     },
-    borderRadius: {
-      'xl': '1rem',
-    },
-    letterSpacing: {
-      heading: '-0.03em',
-      body: '-0.01em'
+    minWidth: {
+      '72': '18rem',
+      '40': '10rem',
+      '12': '3rem',
     },
     extend: {
       colors: {
@@ -142,11 +141,6 @@ module.exports = {
           '172': '43rem',
           '184': '46rem',
         },
-        minWidth: {
-          '72': '18rem',
-          '40': '10rem',
-          '12': '3rem',
-        },
         minHeight: {
           '108': '27rem',
         },
@@ -158,7 +152,13 @@ module.exports = {
         margin: {
           '36': '9rem'
         },  
-  
+        borderRadius: {
+          'xl': '1rem',
+        },
+        letterSpacing: {
+          heading: '-0.03em',
+          body: '-0.01em'
+        },
         zIndex: {
           '60': 60,
         },
@@ -170,5 +170,11 @@ module.exports = {
         },
       }
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
+  ]
 }

@@ -1,4 +1,4 @@
-
+import {twMerge} from 'tailwind-merge'
 export default function Heading({
     typeStyle = "heading-lg",
     level = 'h2',
@@ -47,7 +47,7 @@ export default function Heading({
     }
 
     return (
-        <Tag className={`${textColor} ${classNames}`}>
+        <Tag className={twMerge(`${textColor} ${classNames}`)}>
             {children}
         </Tag>
     )
