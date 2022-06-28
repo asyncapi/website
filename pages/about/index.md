@@ -38,7 +38,7 @@ In doing so, we achieve:
 
 - To ensure an open governance model where no single company dominates the specification and its tools.
 - To make the project as democratic as possible.
-- To rely on an asynchronous decision-making process that empowers the people who "work", not the companies who "pay". 
+- To rely on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
 
 In other words, it will  give equal power to individual and corporate contributors  [[checkout here for more information](https://www.asyncapi.com/blog/governance-motivation)].
 
