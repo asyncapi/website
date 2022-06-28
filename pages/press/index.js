@@ -83,7 +83,7 @@ export default function press() {
         <Paragraph typeStyle="body-md" className="my-4">
           Also, the increase of traffic and users in social networks talks by itself.
           <ul className="list-disc list-inside ml-4 my-2">
-            <li className="py-1">On Youtube, the number of views increased by 1646%</li>
+            <li className="py-1">On Youtube, the number of views increased by 1646%.</li>
             <li className="py-1">On Slack, the number of members increased by 558%.</li>
             <li className="py-1">On Linkedin, the visits increased by 296%.</li>
             <li className="py-1">On the Blog, the visits increased by 270%</li>
