@@ -35,7 +35,7 @@ export default function press() {
         </Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
           The project is based on transparency, teamwork, and passion, cooperation with other free software initiatives. 
-          Also, AsyncAPI can't be understood without the talent and the contributions of its community. 
+          Additionally, AsyncAPI can't be understood without the talent and the contributions of its community. 
           It has been crucial for getting to this point.
         </Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
