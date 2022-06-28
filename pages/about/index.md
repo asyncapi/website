@@ -34,7 +34,7 @@ Free software allows users to apply, modify, and continue in the chain by distri
 
 The above mentioned partnership with Postman speeded up the work in the initiative on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
 
-In doing so, it will be achieved:
+In doing so, we achieve:
 
 - To ensure an open governance model where no single company dominates the specification and its tools.
 - To make the project as democratic as possible.
