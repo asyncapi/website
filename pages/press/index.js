@@ -50,7 +50,7 @@ export default function press() {
           Users should be able to create their first API within minutes without prior knowledge of AsyncAPI, the communication protocol, or anything else that's not business logic.
         </Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
-          Right now, the strategy of the project is to continue improving the specification, implementing resources that make it more complete and solid. 
+          Right now, the strategy of the project is to continue improving the specification, and implementing resources that make it more complete and solid. 
           This has led to the partnership with Postman (December 2020), a leading collaborative platform for API development and a reference within this sector all around the world. 
           This partnering allows it to boost the development of more and better tools to help engineers create and maintain Asynchronous APIs while using their favorite programming languages and frameworks.
         </Paragraph>
