@@ -1,5 +1,5 @@
 
-## What is a Server?
+## What is a server?
 A server is a representation of a messaging broker system where connections and communication between a producer and a consumer is established. Unlike traditional API servers which are depended on request/response, message brokers interactions occur back and forth over different TCP/IP.
 
 ## What is the purpose of servers?
