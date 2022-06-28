@@ -27,7 +27,7 @@ export default function press() {
           <span id="press">AsyncAPI </span>
         </Heading>
         <Paragraph typeStyle="body-md" className="my-4">
-          The initiative is an open source specification that has developed an asynchronous messaging language within the event-driven architecture (EDA). 
+          The initiative is an open-source specification that has developed an asynchronous messaging language within the event-driven architecture (EDA). 
           This tool enables the standardization of machine-to-machine communication. 
           <span className="font-bold"> The main aim of the project is to make asynchronous APIs as successful and mature as REST APIs. </span>
           This programming system covers a hitherto unexplored field. 
