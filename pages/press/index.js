@@ -86,7 +86,7 @@ export default function press() {
             <li className="py-1">On Youtube, the number of views increased by 1646%.</li>
             <li className="py-1">On Slack, the number of members increased by 558%.</li>
             <li className="py-1">On Linkedin, the visits increased by 296%.</li>
-            <li className="py-1">On the Blog, the visits increased by 270%</li>
+            <li className="py-1">On the Blog, the visits increased by 270%.</li>
             <li className="py-1">On Twitter, the number of followers increased by 257%.</li>
             <li className="py-1">On GitHub, the generator downloads increased by 62%.</li>
           </ul>
