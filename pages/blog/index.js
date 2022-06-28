@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
 import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
@@ -13,8 +14,10 @@ import Heading from "../../components/typography/Heading";
 import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
+import Button from "../../components/buttons/Button";
 
 export default function BlogIndexPage() {
+  const router = useRouter();
   const { navItems } = useContext(BlogContext);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
@@ -40,6 +43,12 @@ export default function BlogIndexPage() {
       name: "tags",
     },
   ];
+  const clearFilters = () => {
+    router.push(`${router.pathname}`, undefined, {
+      shallow: true,
+    });
+  };
+  const showClearFilters = Object.keys(router.query).length > 0;
   return (
     <div>
       <Head title="Blog" />
@@ -87,12 +96,18 @@ export default function BlogIndexPage() {
             <Filter
               data={navItems}
               onFilter={onFilter}
-              className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
+              className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
-            <span className="text-sm leading-10">
-              <Link href="/blog" passHref><a> Clear filters </a></Link>
-            </span>
+            {showClearFilters && (
+              <button 
+                type="button" 
+                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none py- text-white transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading text-white md:mt-0 mt-1 md:py-0 py-2"
+                onClick={clearFilters}
+              >
+                <span className="inline-block">Clear filters</span>
+              </button>
+            )}
           </div>
           <div>
             {!Object.keys(posts).length ? (
