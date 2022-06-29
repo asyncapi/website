@@ -31,18 +31,18 @@ const toFilter = [
   },
 ];
 
-const clearFilters = () => {
-  router.push(`${router.pathname}`, undefined, {
-    shallow: true,
-  });
-};
-
 export default function BlogIndexPage() {
   const router = useRouter();  
   const [posts, setPosts] = useState(blogPosts);
 
   const onFilter = (data) => setPosts(data);
   const showClearFilters = Object.keys(router.query).length > 0;
+
+  const clearFilters = () => {
+    router.push(`${router.pathname}`, undefined, {
+      shallow: true,
+    });
+  };
 
   return (
     <div>
