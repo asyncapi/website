@@ -16,7 +16,7 @@ export default function NewsroomYoutube({ className = ''}) {
     if(current>0) { 
     setCurrent(current-1);
     const width = videoref.current.clientWidth;
-    videoContainer.current.scrollLeft -= width + 16;
+    videoContainer.current.scrollLeft -= width + 18;
     }
   };
   const shiftRight = (e) => {
@@ -24,11 +24,11 @@ export default function NewsroomYoutube({ className = ''}) {
     if(current<3) {
     setCurrent(current+1)
     const width = videoref.current.clientWidth;
-    videoContainer.current.scrollLeft += width + 16;
+    videoContainer.current.scrollLeft += width + 18;
     }  
   };
 
-  let buttonClass = 'shadow-md rounded border mx-2 focus:outline-none';
+  let buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
   return (
     <div className={`${className}`}>
@@ -40,12 +40,12 @@ export default function NewsroomYoutube({ className = ''}) {
           <div
             key={index}
             ref={videoref}
-            className="rounded-lg w-1/2 min-w-full xl:min-w-76 border border-gray-200 overflow-hidden drop-shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
+            className="rounded-lg w-1/2 min-w-full xl:min-w-76 mb-2 border border-gray-200 overflow-hidden shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-lg"
           >
             <img
               src={video.image_url}
               alt="video"
-              className="h-48 w-full object-cover"
+              className="h-60 w-full object-cover"
             />
 
             <div className="flex-1 p-6 flex flex-col justify-between">
@@ -54,7 +54,7 @@ export default function NewsroomYoutube({ className = ''}) {
                 {video.title}
               </Heading>
               <Paragraph typeStyle="body-md" className="mt-3 break-words">
-                  <TextTruncate element="span" line={3} text={video.description} />
+                  <TextTruncate element="span" line={1} text={video.description} />
               </Paragraph>
               </div>
               <div className='mt-6 block'>
@@ -71,7 +71,7 @@ export default function NewsroomYoutube({ className = ''}) {
           </div>
         ))}
       </div>
-      <div className="flex flex-row mt-4 justify-content-center md:justify-content-start my-7">
+      <div className="flex flex-row mt-5 justify-content-center md:justify-content-start my-7">
         <button className={`${buttonClass} py-3 px-6 ml-0 ${ current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white transition-all duration-300 ease-in-out'}`} onClick={shiftLeft}>
           <ArrowLeft className="w-4" />
         </button>

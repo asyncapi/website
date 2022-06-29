@@ -32,17 +32,17 @@ export default function NewsroomBlogPosts() {
     const width = blog.current.clientWidth
     blogContainer.current.scrollLeft += (width+16)
   }
-  let buttonClass = 'shadow-md rounded border mx-2 focus:outline-none'
+  let buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none'
   return (
     <div className="flex-col lg:flex md:w-3/4 overflow-auto">
       <div className="flex overflow-x-auto scroll-none list-none gap-4" ref={blogContainer}>
         {
           posts.map((post, index) => (
-              <BlogPostItem post={post} key={index} className="min-w-full xl:min-w-76" ref={blog} id={`post${index}`}/>
+              <BlogPostItem post={post} key={index} className="min-w-full mb-4 xl:min-w-76" ref={blog} />
           ))
         }
       </div>
-      <div className="flex flex-row mt-4 justify-content-center md:justify-content-start">
+      <div className="flex flex-row mt-3 justify-content-center md:justify-content-start">
         <button className={`${buttonClass} py-3 px-6 ml-0 ${ current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`} onClick={shiftLeft}>
           <ArrowLeft className='w-4' />
         </button>
