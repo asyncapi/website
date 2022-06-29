@@ -11,11 +11,12 @@ import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
+import { SearchButton } from '../AlgoliaSearch';
 import Link from 'next/link';
 
 const isMobile = isMobileDevice();
 
-export default function NavBar ({
+export default function NavBar({
   className = '',
   hideLogo = false,
 }) {
@@ -108,6 +109,23 @@ export default function NavBar ({
           {otherItems.map((item, index) => (
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
+
+          <SearchButton className="text-slate-500 hover:text-slate-600 w-8 h-8 -my-1 flex items-center justify-center dark:hover:text-slate-300">
+            <span className="sr-only">Search</span>
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m19 19-3.5-3.5" />
+              <circle cx="11" cy="11" r="6" />
+            </svg>
+          </SearchButton>
 
           <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
         </nav>

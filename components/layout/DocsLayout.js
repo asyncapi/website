@@ -12,6 +12,7 @@ import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import { SearchButton } from '../AlgoliaSearch';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -114,8 +115,43 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+
+              <SearchButton 
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-4 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+              >
+                {({ actionKey }) => (
+                  <>
+                    <svg
+                      width="24"
+                      height="24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="flex-none text-slate-300 dark:text-slate-400"
+                      aria-hidden="true"
+                    >
+                      <path d="m19 19-3.5-3.5" />
+                      <circle cx="11" cy="11" r="6" />
+                    </svg>
+                    <span className="flex-auto">Search docs...</span>
+                    {actionKey && (
+                      <kbd className="font-sans font-semibold dark:text-slate-500">
+                        <abbr
+                          title={actionKey.key}
+                          className="no-underline text-slate-300 dark:text-slate-500"
+                        >
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
+              </SearchButton>
               
-              <nav className="flex-1 pt-8 pb-8 bg-white">
+              <nav className="flex-1 bg-white">
                 <ul>
                   {Object.values(navigation).map(navItem => (
                     <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />

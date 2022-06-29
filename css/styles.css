@@ -5,6 +5,7 @@
 @import "swiper/swiper.min";
 @import "swiper/modules/a11y/a11y.min";
 @import "swiper/modules/navigation/navigation.min";
+@import 'docsearch.css';
 /*! purgecss end ignore */
 
 @import "tailwindcss/utilities";
@@ -22,6 +23,10 @@ li > p {
 
 .atss { /* AddThis plugin */
   z-index: 10 !important;
+}
+
+abbr[title] {
+  text-decoration: none;
 }
 
 .countdown-text-gradient {
