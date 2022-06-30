@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -93,6 +94,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...colors,
         'gray': colorGray,
         'primary': colorPrimary,
         'secondary': colorSecondary,
@@ -111,64 +113,72 @@ module.exports = {
           'minimize': '#ffbd2e',
           'maximize': '#28c93f',
         },
-        scale: {
-          '25': '.25',
-        },
-        padding: {
-          '2ch': '2ch',
-          '4ch': '4ch',
-          '6ch': '6ch',
-          '8ch': '8ch',
-          '10ch': '10ch',
-          '12ch': '12ch',
-          '14ch': '14ch',
-        },
-        height: {
-          '88': '22rem',
-          '100': '25rem',
-          '104': '26rem',
-          '108': '27rem',
-          '112': '28rem',
-          '116': '29rem',
-          '120': '30rem',
-          'half-screen': '50vh',
-        },
-        maxWidth: {
-          '(screen-16)': 'calc(100vw - 16rem)',
-          '(screen-34)': 'calc(100vw - 34rem)',
-          '64': '16rem',
-          '164': '41rem',
-          '172': '43rem',
-          '184': '46rem',
-        },
-        minHeight: {
-          '108': '27rem',
-        },
-        maxHeight: {
-          '(screen-16)': 'calc(100vh - 4rem)',
-          '108': '27rem',
-          '(screen-14)': 'calc(100vh - 81px)'
-        },
-        margin: {
-          '36': '9rem'
-        },  
-        borderRadius: {
-          'xl': '1rem',
-        },
-        letterSpacing: {
-          heading: '-0.03em',
-          body: '-0.01em'
-        },
-        zIndex: {
-          '60': 60,
-        },
-        rotate: {
-          '-15': '-7deg'
-        },
-        fontSize: {
-          'xxs': ['0.6rem', '0.6rem']
-        },
-      }
+      },
+      scale: {
+        '25': '.25',
+      },
+      padding: {
+        '2ch': '2ch',
+        '4ch': '4ch',
+        '6ch': '6ch',
+        '8ch': '8ch',
+        '10ch': '10ch',
+        '12ch': '12ch',
+        '14ch': '14ch',
+      },
+      height: {
+        '88': '22rem',
+        '100': '25rem',
+        '104': '26rem',
+        '108': '27rem',
+        '112': '28rem',
+        '116': '29rem',
+        '120': '30rem',
+        'half-screen': '50vh',
+      },
+      maxWidth: {
+        '(screen-16)': 'calc(100vw - 16rem)',
+        '(screen-34)': 'calc(100vw - 34rem)',
+        '64': '16rem',
+        '164': '41rem',
+        '172': '43rem',
+        '184': '46rem',
+      },
+      minHeight: {
+        '108': '27rem',
+      },
+      maxHeight: {
+        '(screen-16)': 'calc(100vh - 4rem)',
+        '108': '27rem',
+        '(screen-14)': 'calc(100vh - 81px)'
+      },
+      margin: {
+        '36': '9rem'
+      },  
+      borderRadius: {
+        'xl': '1rem',
+      },
+      letterSpacing: {
+        heading: '-0.03em',
+        body: '-0.01em'
+      },
+      zIndex: {
+        '60': 60,
+      },
+      rotate: {
+        '-15': '-7deg'
+      },
+      fontSize: {
+        'xxs': ['0.6rem', '0.6rem'],
+        'heading-xs': ['16px', '1.375'],
+        'heading-sm': ['20px', '1.375'],
+        'heading-md': ['24px', '1.375'],
+        'heading-lg': ['36px', '1.375'],
+        'heading-xl': ['64px', '1.375'],
+        'body-sm': ['14px', '1.625'],
+        'body-md': ['16px', '1.625'],
+        'body-lg': ['18px', '1.625']
+      },
     }
   },
   plugins: [
