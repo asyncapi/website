@@ -25,22 +25,25 @@ export default function Newsroom() {
           </TextLink>
         </Paragraph>
       </div>
-      <div className="md:flex flex-row my-20 -mr-2">
-        <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
+
+      <div className="lg:flex flex-row my-20 -mr-2">
+        <div className="text-center lg:text-left lg:w-1/4 pt-4">
           <Heading level="h4" typeStyle="heading-md-semibold">
             From the blog
           </Heading>
           <Paragraph typeStyle="body-md" className="mt-5">
             Check out these articles written by community members
           </Paragraph>
-          <div className="mt-5">
+          <div className="my-5">
             <TextLink href="/blog" className="mt-5">
               Read all blog posts
               <ArrowRight className="inline w-6" />
             </TextLink>
           </div>
         </div>
-        <NewsroomBlogPosts />
+        <div className='lg:w-3/4'>
+          <NewsroomBlogPosts />
+        </div>
       </div>
 
       <hr />
@@ -53,23 +56,25 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
-          <div className="mt-5">
+          <div className="my-5">
             <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
               Follow us on Twitter
               <ArrowRight className="inline w-6" />
             </TextLink>
           </div>
         </div>
-        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between gap-4 ml-2">
+        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between">
           <div className="w-full lg:w-1/2">
             <NewsroomArticle />
           </div>
-          <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full lg:w-1/2 mx-auto md:mt-0">
-            <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName="AsyncAPISpec"
-              options={{height: 570, width: '100%'}}
-            />
+          <div className='w-full lg:w-1/2 px-2 md:pr-0 md:pl-4'>
+            <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full mx-auto md:mt-0">
+              <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName="AsyncAPISpec"
+                options={{height: 570, width: '100%'}}
+              />
+            </div>
           </div>
         </div>
       </div>

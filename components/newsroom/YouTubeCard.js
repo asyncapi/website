@@ -21,7 +21,7 @@ export default function YouTubeCard({ video }) {
                 {video.title}
               </Heading>
               <Paragraph typeStyle="body-md" className="mt-3 break-words">
-                <TextTruncate element="span" line={1} text={video.description} />
+                {video.description}
               </Paragraph>
             </div>
             

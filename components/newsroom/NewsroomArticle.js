@@ -4,7 +4,7 @@ import articlesData from '../../config/articles.json';
 
 export default function NewsroomArticle() {
   return (
-    <div className="flex flex-col gap-2 overflow-y-auto max-h-120 lg:w-full">
+    <div className="flex flex-col gap-2 overflow-y-auto max-h-120 lg:w-full px-2 pb-4">
       {articlesData.map((article, index) => (
         <a
           className="block p-6 rounded-md mb-2 shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg lg:w-full text-left"

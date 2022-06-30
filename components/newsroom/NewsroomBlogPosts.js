@@ -29,16 +29,21 @@ export default function NewsroomBlogPosts() {
   const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
   return (
-    <div className="flex-col md:w-3/4 overflow-auto">
+    <div className="flex-col overflow-auto">
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={8}
-        slidesPerView={2}
+        slidesPerView={1}
         onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
         navigation={{
           prevEl,
           nextEl,
-      }}
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2
+          }
+        }}
       >
         {
           posts.map((post, index) => (

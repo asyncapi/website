@@ -21,12 +21,17 @@ export default function NewsroomYoutube({ className = '' }) {
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={8}
-        slidesPerView={2}
+        slidesPerView={1}
         onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
         navigation={{
           prevEl,
           nextEl,
-      }}
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2
+          }
+        }}
       >
         {videoData.map((video, index) => (
           <SwiperSlide key={index}>
