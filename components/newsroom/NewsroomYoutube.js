@@ -20,7 +20,7 @@ export default function NewsroomYoutube({ className = '' }) {
     <div className="flex-col overflow-auto">
       <Swiper
         modules={[Navigation, A11y]}
-        spaceBetween={8}
+        spaceBetween={7}
         slidesPerView={1}
         onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
         navigation={{

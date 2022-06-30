@@ -63,11 +63,11 @@ export default function Newsroom() {
             </TextLink>
           </div>
         </div>
-        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between">
+        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row gap-7 justify-between">
           <div className="w-full lg:w-1/2">
             <NewsroomArticle />
           </div>
-          <div className='w-full lg:w-1/2 px-2 md:pr-0 md:pl-4'>
+          <div className='w-full lg:w-1/2 md:pr-0'>
             <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full mx-auto md:mt-0">
               <TwitterTimelineEmbed
                 sourceType="profile"

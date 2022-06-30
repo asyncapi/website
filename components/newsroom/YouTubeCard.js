@@ -6,7 +6,7 @@ import ArrowRight from '../icons/ArrowRight';
 
 export default function YouTubeCard({ video }) {
   return (
-    <li className={`rounded-lg min-w-full h-full px-2 pb-6`}>
+    <li className={`rounded-lg min-w-full max-w-md h-full px-2 pb-6`}>
       <article className='h-full rounded-lg'>
         <div className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
           <img
