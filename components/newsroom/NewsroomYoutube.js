@@ -7,7 +7,7 @@ import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import videoData from '../../config/newsroom_videos.json';
 
-import { useSwiperRef } from './swiper';
+import { useSwiperRef, checkLastSnapIndex } from './swiper';
 
 export default function NewsroomYoutube({ className = '' }) {
   const [nextEl, nextElRef] = useSwiperRef();
@@ -44,7 +44,7 @@ export default function NewsroomYoutube({ className = '' }) {
         <button ref={prevElRef} className={`${buttonClass} py-3 px-6 ml-0 ${current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
           <ArrowLeft className='w-4' />
         </button>
-        <button ref={nextElRef} className={`${buttonClass} py-1 px-4 ${current === 3 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
+        <button ref={nextElRef} className={`${buttonClass} py-1 px-4 ${checkLastSnapIndex(current) ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
           <ArrowRight className='w-8' />
         </button>
       </div>

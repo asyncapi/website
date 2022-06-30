@@ -13,3 +13,15 @@ export function useSwiperRef() {
     ref,
   ]
 };
+
+export function checkLastSnapIndex(current) {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const viewportWidth = document.documentElement.clientWidth;
+  if (viewportWidth <= 640) {
+    return current === 4;
+  }
+  return current === 3;
+}
