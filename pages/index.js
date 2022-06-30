@@ -84,7 +84,7 @@ function HomePage() {
           </ul>
         </Container>
 
-        <div className="bg-gray-900 py-12 mt-8">
+        <div className="bg-dark py-12 mt-8">
           <Container wide as="section">
             <NewsletterSubscribe formName="form 1" dark />
           </Container>
