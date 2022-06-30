@@ -25,7 +25,7 @@ export default function Newsroom() {
           </TextLink>
         </Paragraph>
       </div>
-      <div className="md:flex flex-row my-20">
+      <div className="md:flex flex-row my-20 -mr-2">
         <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
           <Heading level="h4" typeStyle="heading-md-semibold">
             From the blog
@@ -60,15 +60,15 @@ export default function Newsroom() {
             </TextLink>
           </div>
         </div>
-        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4 gap-4">
+        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between gap-4 ml-2">
           <div className="w-full lg:w-1/2">
-          <NewsroomArticle />
+            <NewsroomArticle />
           </div>
-          <div className="rounded p-6 border border-gray-200 shadow-md mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
+          <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full lg:w-1/2 mx-auto md:mt-0">
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="AsyncAPISpec"
-              options={{height: 545, width:400}}
+              options={{height: 570, width: '100%'}}
             />
           </div>
         </div>
@@ -76,8 +76,8 @@ export default function Newsroom() {
 
       <hr />
 
-      <div className="lg:flex flex-row my-20">
-        <div className="text-center lg:text-left lg:w-1/4">
+      <div className="lg:flex flex-row my-20 -mr-2">
+        <div className="text-center lg:text-left lg:w-1/4 pt-4">
           <Heading level="h4" typeStyle="heading-md-semibold">
             Video & Live Streams
           </Heading>

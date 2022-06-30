@@ -1,15 +1,18 @@
-import { useState, useRef } from 'react'
-import { Carousel } from 'react-responsive-carousel';
+import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, A11y } from 'swiper';
 
+import ArrowLeft from '../icons/ArrowLeft';
+import ArrowRight from '../icons/ArrowRight';
 import BlogPostItem from '../navigation/BlogPostItem'
-import ArrowRight from '../icons/ArrowRight'
-import ArrowLeft from '../icons/ArrowLeft'
 import { getAllPosts } from '../../lib/api'
 
+import { useSwiperRef } from './swiper';
+
 export default function NewsroomBlogPosts() {
+  const [nextEl, nextElRef] = useSwiperRef();
+  const [prevEl, prevElRef] = useSwiperRef();
   const [current, setCurrent] = useState(0);
-  const blogContainer = useRef(null);
-  const blog = useRef();
 
   const posts = getAllPosts()
     .filter(p => p.slug.startsWith('/blog/'))
@@ -22,56 +25,35 @@ export default function NewsroomBlogPosts() {
       return i2Date - i1Date
     })
     .slice(0, 5);
-  
-  const shiftLeft = (e) => {
-    e.preventDefault();
-    if (current > 0) {
-      setCurrent(current - 1);
-    }
-    const width = blog.current.clientWidth
-    blogContainer.current.scrollLeft -= (width+16)
-  }
 
-  const shiftRight = (e) => {
-    e.preventDefault();
-    if (current < 3) {
-      setCurrent(current + 1);
-    }
-    const width = blog.current.clientWidth
-    blogContainer.current.scrollLeft += (width+16)
-  }
+  const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
-  const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none'
   return (
-    <div className="flex-col lg:flex md:w-3/4 overflow-auto">
-      <div className="flex overflow-x-auto scroll-none list-none gap-4" ref={blogContainer}>
-
-        {/* <Carousel>
-          <div>
-            <img src="assets/1.jpeg" />
-            <p className="legend">Legend 1</p>
-          </div>
-          <div>
-            <img src="assets/2.jpeg" />
-            <p className="legend">Legend 2</p>
-          </div>
-          <div>
-            <img src="assets/3.jpeg" />
-            <p className="legend">Legend 3</p>
-          </div>
-        </Carousel> */}
-
+    <div className="flex-col md:w-3/4 overflow-auto">
+      <Swiper
+        modules={[Navigation, A11y]}
+        spaceBetween={8}
+        slidesPerView={2}
+        onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
+        navigation={{
+          prevEl,
+          nextEl,
+      }}
+      >
         {
           posts.map((post, index) => (
-              <BlogPostItem post={post} key={index} className="min-w-full mb-4 xl:min-w-76" ref={blog} />
+            <SwiperSlide key={index}>
+              <BlogPostItem post={post} className="min-w-full h-full px-2 pb-6" />
+            </SwiperSlide>
           ))
         }
-      </div>
-      <div className="flex flex-row mt-3 justify-content-center md:justify-content-start">
-        <button className={`${buttonClass} py-3 px-6 ml-0 ${ current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`} onClick={shiftLeft}>
+      </Swiper>
+
+      <div className="flex flex-row ml-2 justify-content-center md:justify-content-start">
+        <button ref={prevElRef} className={`${buttonClass} py-3 px-6 ml-0 ${current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
           <ArrowLeft className='w-4' />
         </button>
-        <button className={`${buttonClass} py-1 px-4 ${ current === 3 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`} onClick={shiftRight}>
+        <button ref={nextElRef} className={`${buttonClass} py-1 px-4 ${current === 3 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
           <ArrowRight className='w-8' />
         </button>
       </div>
