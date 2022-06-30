@@ -1,4 +1,3 @@
-import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -6,7 +5,6 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
 import Head from '../components/Head'
 import Slack from '../components/slack'
-import ArrowRight from '../components/icons/ArrowRight'
 import Button from '../components/buttons/Button'
 import Calendar from '../components/Calendar'
 import AdidasLogo from '../components/logos/Adidas'
@@ -15,9 +13,6 @@ import SlackLogo from '../components/logos/Slack'
 import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
-import NewsroomBlogPosts from '../components/NewsroomBlogPosts'
-import NewsroomArticle from '../components/NewsroomArticle'
-import NewsroomYoutube from '../components/NewsroomYoutube'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -27,7 +22,7 @@ import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-
+import Newsroom from '../components/newsroom/Newsroom';
 
 function HomePage() {
   return (
@@ -205,86 +200,7 @@ function HomePage() {
           <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
         <Container wide>
-          <div className="text-center">
-            <Heading
-              level="h2"
-              typeStyle="heading-lg"
-            >
-              Latest Updates
-            </Heading>
-            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-5">
-              Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
-              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
-                Submit yours!
-              </TextLink>
-            </Paragraph>
-          </div>
-          <div className="md:flex flex-row my-20">
-            <div className="text-center lg:text-left pt-4 lg:pr-16 lg:w-1/4">
-              <Heading level="h4" typeStyle="heading-md-semibold">
-                From the blog
-              </Heading>
-              <Paragraph typeStyle="body-md" className="mt-5">
-                Check out these articles written by community members
-              </Paragraph>
-              <div className="mt-5">
-                <TextLink href="/blog" className="mt-5">
-                  Read all blog posts
-                  <ArrowRight className="inline w-6" />
-                </TextLink>
-              </div>
-            </div>
-            <NewsroomBlogPosts />
-          </div>
-          <hr />
-          <div className="lg:flex flex-row my-20">
-            <div className="text-center lg:text-left lg:w-1/4 pt-4">
-              <Heading level="h4" typeStyle="heading-md-semibold">
-                Latest News
-              </Heading>
-              <Paragraph typeStyle="body-md" className="mt-5">
-                Read about what people are <br /> saying about AsyncAPI
-              </Paragraph>
-              <div className="mt-5">
-                <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
-                  Follow us on Twitter
-                  <ArrowRight className="inline w-6" />
-                </TextLink>
-              </div>
-            </div>
-            <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between mt-4 gap-4">
-              <div className="w-full lg:w-1/2">
-              <NewsroomArticle />
-              </div>
-              <div className="rounded p-6 border border-gray-200 shadow-md mt-4 w-full lg:w-1/2 mx-auto md:mt-0">
-                <TwitterTimelineEmbed
-                  sourceType="profile"
-                  screenName="AsyncAPISpec"
-                  options={{height: 545, width:400}}
-                />
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div className="lg:flex flex-row my-20">
-            <div className="text-center lg:text-left lg:w-1/4">
-              <Heading level="h4" typeStyle="heading-md-semibold">
-                Video & Live Streams
-              </Heading>
-              <Paragraph typeStyle="body-md" className="mt-5">
-                Watch our latest videos and live streams on the AsyncAPI YouTube channel
-              </Paragraph>
-              <div className="my-5">
-                <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
-                  Visit our YouTube channel
-                  <ArrowRight className="inline w-6" />
-                </TextLink>
-              </div>
-            </div>
-            <div className='lg:w-3/4'>
-              <NewsroomYoutube />
-            </div>
-          </div>
+          <Newsroom />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">

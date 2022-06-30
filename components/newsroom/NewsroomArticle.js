@@ -1,6 +1,6 @@
-import articlesData from '../config/articles.json';
-import Paragraph from './typography/Paragraph';
-import Heading from './typography/Heading';
+import Paragraph from '../typography/Paragraph';
+import Heading from '../typography/Heading';
+import articlesData from '../../config/articles.json';
 
 export default function NewsroomArticle() {
   return (

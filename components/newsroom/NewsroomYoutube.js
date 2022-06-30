@@ -1,30 +1,32 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import TextTruncate from 'react-text-truncate'
-import ArrowLeft from './icons/ArrowLeft';
-import ArrowRight from './icons/ArrowRight';
-import TextLink from './typography/TextLink';
-import videoData from '../config/newsroom_videos.json';
-import Heading from './typography/Heading'
-import Paragraph from './typography/Paragraph'
+import ArrowLeft from '../icons/ArrowLeft';
+import ArrowRight from '../icons/ArrowRight';
+import TextLink from '../typography/TextLink';
+import Heading from '../typography/Heading'
+import Paragraph from '../typography/Paragraph'
+import videoData from '../../config/newsroom_videos.json';
 
 export default function NewsroomYoutube({ className = ''}) {
   const [current, setCurrent] = useState(0)
   const videoContainer = useRef();
   const videoref = useRef();
+
   const shiftLeft = (e) => {
     e.preventDefault();
-    if(current>0) { 
-    setCurrent(current-1);
-    const width = videoref.current.clientWidth;
-    videoContainer.current.scrollLeft -= width + 18;
+    if (current > 0) { 
+      setCurrent(current - 1);
+      const width = videoref.current.clientWidth;
+      videoContainer.current.scrollLeft -= width + 18;
     }
   };
+
   const shiftRight = (e) => {
     e.preventDefault();
-    if(current<3) {
-    setCurrent(current+1)
-    const width = videoref.current.clientWidth;
-    videoContainer.current.scrollLeft += width + 18;
+    if (current < 3) {
+      setCurrent(current+ 1);
+      const width = videoref.current.clientWidth;
+      videoContainer.current.scrollLeft += width + 18;
     }  
   };
 

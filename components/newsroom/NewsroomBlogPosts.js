@@ -1,11 +1,16 @@
 import { useState, useRef } from 'react'
-import BlogPostItem from './navigation/BlogPostItem'
-import { getAllPosts } from '../lib/api'
-import ArrowRight from './icons/ArrowRight'
-import ArrowLeft from './icons/ArrowLeft'
+import { Carousel } from 'react-responsive-carousel';
+
+import BlogPostItem from '../navigation/BlogPostItem'
+import ArrowRight from '../icons/ArrowRight'
+import ArrowLeft from '../icons/ArrowLeft'
+import { getAllPosts } from '../../lib/api'
 
 export default function NewsroomBlogPosts() {
   const [current, setCurrent] = useState(0);
+  const blogContainer = useRef(null);
+  const blog = useRef();
+
   const posts = getAllPosts()
     .filter(p => p.slug.startsWith('/blog/'))
     .sort((i1, i2) => {
@@ -16,26 +21,46 @@ export default function NewsroomBlogPosts() {
       if (!i1.featured && i2.featured) return 1
       return i2Date - i1Date
     })
-    .slice(0, 5)
+    .slice(0, 5);
   
-  const blogContainer = useRef(null);
-  const blog = useRef();
   const shiftLeft = (e) => {
-    e.preventDefault()
-    if(current>0) setCurrent(current-1);
+    e.preventDefault();
+    if (current > 0) {
+      setCurrent(current - 1);
+    }
     const width = blog.current.clientWidth
     blogContainer.current.scrollLeft -= (width+16)
   }
+
   const shiftRight = (e) => {
-    e.preventDefault()
-    if(current<3) setCurrent(current+1)
+    e.preventDefault();
+    if (current < 3) {
+      setCurrent(current + 1);
+    }
     const width = blog.current.clientWidth
     blogContainer.current.scrollLeft += (width+16)
   }
-  let buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none'
+
+  const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none'
   return (
     <div className="flex-col lg:flex md:w-3/4 overflow-auto">
       <div className="flex overflow-x-auto scroll-none list-none gap-4" ref={blogContainer}>
+
+        {/* <Carousel>
+          <div>
+            <img src="assets/1.jpeg" />
+            <p className="legend">Legend 1</p>
+          </div>
+          <div>
+            <img src="assets/2.jpeg" />
+            <p className="legend">Legend 2</p>
+          </div>
+          <div>
+            <img src="assets/3.jpeg" />
+            <p className="legend">Legend 3</p>
+          </div>
+        </Carousel> */}
+
         {
           posts.map((post, index) => (
               <BlogPostItem post={post} key={index} className="min-w-full mb-4 xl:min-w-76" ref={blog} />
