@@ -5,12 +5,11 @@ title: About
 
 ## Maintainers 
 
-AsyncAPI is actively maintained by:
+**Committers** (also known as **Maintainers**) are the decision-makers at the repository/project level. They regularly contribute to the project and are invited by other maintainers to manage the repository, have more privileges, and approve pull requests.
 
-- [Fran Méndez](https://twitter.com/fmvilas) - Project Director.
-- [Łukasz Górnicki](https://twitter.com/derberq) - Maintainer and Dev Community Keeper.
+The committers rule the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](https://www.asyncapi.com/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
 
-So far, we have had many contributors and we are thankful for their time and help.
+You can check the list of maintainers belonging to the TSC [here](https://www.asyncapi.com/community/tsc).
 
 ## Contributors
 
