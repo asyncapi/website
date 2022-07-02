@@ -32,7 +32,7 @@ export default function NewsroomBlogPosts() {
     <div className="flex-col overflow-auto">
       <Swiper
         modules={[Navigation, A11y]}
-        spaceBetween={7}
+        spaceBetween={8}
         slidesPerView={1}
         onSlideChange={(swiper) => setCurrent(swiper.snapIndex)}
         navigation={{
