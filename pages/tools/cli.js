@@ -91,7 +91,7 @@ export default function CliPage() {
               {renderButtons()}
             </div>
 
-            <div className="relative max-w-full mt-8 mx-auto space-y-10">
+            <div className="relative min-w-full mt-8 mx-auto space-y-10">
               <div>
                 <Heading level="h3" typeStyle="heading-sm-semibold" className="mb-4 text-center md:text-left">
                   Installing
@@ -105,6 +105,10 @@ export default function CliPage() {
                       language: 'npm',
                       code: `npm install -g @asyncapi/cli`,
                     },
+										{
+											language: 'brew',
+											code: `brew install asyncapi`
+										},
                   ]}
                 />
               </div>
