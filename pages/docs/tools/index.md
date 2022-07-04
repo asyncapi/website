@@ -56,6 +56,7 @@ The following is a list of tools that generate code from an AsyncAPI document; n
 | :------------- | :------------- | :----------------- |
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 | [Node-RED AsyncAPI plugin](https://github.com/dalelane/node-red-contrib-plugin-asyncapi) | Use your AsyncAPI definition to generate and configure Node-RED nodes. | [Node-RED](https://nodered.org) |
+| [MultiAPI Generator](https://github.com/corunet/scs-multiapi-plugin) | Use AsyncAPI definition, several of them at the same time, to generate Spring Cloud code with Maven. | Java/Spring, Maven |
 
 The language you're looking for is not here? You created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 
@@ -133,6 +134,7 @@ The tools below take specification documents as input, then publish fake message
 | :------------- | :------------- | :------------- |
 | [Microcks](https://microcks.io) | Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements. | Kubernetes-native, Self-hosted / SaaS, Open Source |
 | [Virtualan](https://virtualan.io) | Mocking and testing platform for API and microservices. Allows you to create and setup mocks for OpenAPI and AsyncAPI contracts. Shows how to setup and create AsyncAPI [GitHub Reference Examples](https://github.com/virtualansoftware/AsyncAPI-Virtualization) and OpenAPI [GitHub Reference Examples](https://github.com/virtualansoftware/service-virtualization-openapi). | Kubernetes-native, Self-hosted / SaaS, Open Source |
+| [MultiAPI Converter](https://github.com/corunet/scc-multiapi-converter) | Use AsyncAPI definition, to generate Spring Cloud Contract producer validation or consumer stubs, using maven. | [ Spring Cloud Contract ](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/)
 
 ## Validators {#validators}
 
