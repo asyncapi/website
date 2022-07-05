@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, createContext, useContext, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef, createContext, useContext } from 'react'
 import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -6,9 +6,9 @@ import Head from 'next/head'
 import { DocSearchModal } from '@docsearch/react'
 import clsx from 'clsx'
 
-const INDEX_NAME = 'tailwindcss'
-const API_KEY = '5fc87cef58bb80203d2207578309fab6'
-const APP_ID = 'KNPXZI5B0M'
+const INDEX_NAME = 'asyncapi';
+const APP_ID = 'Z621OGRI9Y';
+const API_KEY = '09fe8dc96d776bfaf2da47a6d5f57a3f';
 
 const SearchContext = createContext()
 
@@ -67,7 +67,6 @@ function AlgoliaModal({ onClose, initialQuery }) {
       initialQuery={initialQuery}
       initialScrollY={window.scrollY}
       searchParameters={{
-        facetFilters: 'version:v3',
         distinct: 1,
       }}
       placeholder="Search documentation"
