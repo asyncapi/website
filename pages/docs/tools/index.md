@@ -28,7 +28,7 @@ ___
 
 ## AsyncAPI Tools List
 
-Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/website/issues/new)
+Would you like to add your tool to this list? [Let us know!](https://github.com/asyncapi/website/issues/new?template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+)
 <!--more-->
 
 > Please, before you decide to create a new tool, consider contributing to the existing ones. Thanks!
