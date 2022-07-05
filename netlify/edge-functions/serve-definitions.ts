@@ -128,14 +128,16 @@ function newNRMetricCount(name: string, request: Request, attributes: any = {}):
 
   const splitPath = new URL(request.url).pathname.split("/");
   // Examples: 
-  //   /definitions/2.4.0/info.json => file = 2.4.0/info.json
+  //   /definitions/2.4.0/info.json => file = info.json
   //   /definitions/2.4.0.json      => file = 2.4.0.json
-  let file = splitPath.slice(2, splitPath.length).join("/");
+  const file = splitPath.slice(-1).pop();
+  const version = splitPath[2].replace(".json", "");
 
   metric.attributes = {
     "source": splitPath[1],
     "file": file,
     "url": request.url,
+    "version": version,
     ...attributes,
   };
 
