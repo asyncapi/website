@@ -10,7 +10,7 @@ export default function MobileNavMenu ({
   onClickClose = () => {},
 }) {
   return (
-    <div className="absolute top-0 inset-x-0 py-2 transition transform origin-top-right max-h-screen lg:hidden overflow-y-scroll">
+    <div className="fixed top-0 inset-x-0 py-2 transition transform origin-top-right max-h-full lg:hidden overflow-y-scroll">
       <div className="rounded-lg shadow-lg">
         <div className="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
           <div className="pt-5 pb-6 px-5 space-y-6">
