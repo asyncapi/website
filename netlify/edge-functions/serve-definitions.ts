@@ -62,7 +62,7 @@ function buildRewrite(originalRequest: Request): (Request | null) {
   if (extractResult === null) {
     return null;
   }
-  
+
   const definitionVersion = extractResult[1];
   const file = extractResult[2];
   let url: string;
@@ -73,7 +73,7 @@ function buildRewrite(originalRequest: Request): (Request | null) {
   } else {
     url = URL_DEST_DEFINITIONS + `/${definitionVersion}${file}`;
   }
-  
+
   return new Request(url, {
     method: originalRequest.method,
     headers: new Headers({
@@ -127,10 +127,14 @@ function newNRMetricCount(name: string, request: Request, attributes: any = {}):
   metric["interval.ms"] = 1;
 
   const splitPath = new URL(request.url).pathname.split("/");
+  // Examples: 
+  //   /definitions/2.4.0/info.json => file = 2.4.0/info.json
+  //   /definitions/2.4.0.json      => file = 2.4.0.json
+  let file = splitPath.slice(2, splitPath.length).join("/");
 
   metric.attributes = {
     "source": splitPath[1],
-    "file": splitPath[2],
+    "file": file,
     "url": request.url,
     ...attributes,
   };
