@@ -93,7 +93,7 @@ function HomePage() {
                 <div className="mt-10 lg:mt-0 lg:w-1/2">
                   <Slack />
                 </div>
-                <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-7">
+                <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-12">
                   <div className="mt-5">
                     <Heading level="h4" typeStyle="heading-md-semibold">
                       Join our Slack workspace
@@ -109,7 +109,7 @@ function HomePage() {
               </div>
 
               <div className="mt-12 lg:flex lg:flex-row-reverse">
-                <section className="mt-10 lg:mt-0 lg:w-1/2 lg:ml-7">
+                <section className="mt-10 lg:mt-0 lg:w-1/2 lg:ml-12">
                   <Calendar size="2" className="float-left" />
                 </section>
                 <section className="lg:text-left lg:max-w-xl lg:w-1/2">
