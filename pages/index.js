@@ -22,7 +22,7 @@ import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-import Newsroom from '../components/newsroom/Newsroom';
+import NewsroomSection from '../components/newsroom/NewsroomSection'
 
 function HomePage() {
   return (
@@ -90,10 +90,10 @@ function HomePage() {
           <div className="py-2 lg:py-12">
             <Container wide>
               <div className="lg:flex">
-                <div className="mt-10 lg:mt-0 lg:flex-1">
+                <div className="mt-10 lg:mt-0 lg:w-1/2">
                   <Slack />
                 </div>
-                <section className="lg:text-left lg:max-w-xl lg:ml-12">
+                <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-7">
                   <div className="mt-5">
                     <Heading level="h4" typeStyle="heading-md-semibold">
                       Join our Slack workspace
@@ -109,11 +109,11 @@ function HomePage() {
               </div>
 
               <div className="mt-12 lg:flex lg:flex-row-reverse">
-                <section className="mt-10 lg:mt-0 lg:flex-1">
+                <section className="mt-10 lg:mt-0 lg:w-1/2 lg:ml-7">
                   <Calendar size="2" className="float-left" />
                 </section>
-                <section className="lg:text-left lg:max-w-xl lg:mr-12">
-                  <div className="mt-5">
+                <section className="lg:text-left lg:max-w-xl lg:w-1/2">
+                  <div className="mt-5 lg:mr-12">
                     <Heading level="h3" typeStyle="heading-md-semibold">
                       Join our public meetings
                     </Heading>
@@ -145,8 +145,13 @@ function HomePage() {
                 </section>
               </div>
             </Container>
+            <Container wide>
+                <NewsroomSection />
+            </Container>
           </div>
+
         </Container>
+
 
         <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
           <Container className="text-center pb-6" wide as="section">
