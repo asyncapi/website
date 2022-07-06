@@ -7,5 +7,15 @@ Servers play an important role as they maintain a relationship between producers
 
 Server diagram made by mermaid.js :
 
-![image](https://user-images.githubusercontent.com/66913810/176436057-c045b082-7381-4bf1-9c28-96ee3df4707a.png)
-
+```mermaid
+flowchart LR
+    A[producer]
+     A --> a1[channel1]
+    A --> a2[channel2]
+    subgraph one[server/broker]
+    a1
+    a2
+    end
+    a1 --> B[consumer]
+    a2 --> C[consumer]
+```
