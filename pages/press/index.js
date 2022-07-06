@@ -323,7 +323,7 @@ export default function press() {
               <b>What protocols does it support?</b> The latest version supports any protocol.
             </li>
             <li className="py-1">
-              <b>Who are the users of AsyncAPI?</b> AsyncAPI users are mainly software developers of any application programming interface (API) that base their work on the asynchronous method.
+              <b>Who are the users of AsyncAPI?</b>AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka
             </li>
             <li className="py-1">
               <b>What is the AsyncAPI Community?</b> It’s the core of the initiative. 
