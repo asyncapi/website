@@ -10,7 +10,7 @@ Server diagram made by mermaid.js :
 ```mermaid
 flowchart LR
     A[producer]
-     A --> a1[channel1]
+    A --> a1[channel1]
     A --> a2[channel2]
     subgraph one[server/broker]
     a1
