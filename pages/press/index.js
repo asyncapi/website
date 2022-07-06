@@ -68,14 +68,14 @@ export default function press() {
         <Paragraph typeStyle="body-md" className="my-4">
           By 2023, the community that supports the initiative is expected to <b>multiply its size by four</b>. 
           After that, the next goal is to grow <b>400% till 2026</b> 
-          [<TextLink href="https://www.asyncapi.com/roadmap" target="_blank">to know more check the AsyncAPI Road Map</TextLink> ].
+          [<TextLink href="/roadmap" target="_blank">to know more check the AsyncAPI Road Map</TextLink> ].
           These goals can look ambitious, but many other numbers could also have been felt as impossible to reach not so long ago.
         </Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
           Taking the example of the years 2019 and 2020, the unique users visits in the AsyncAPI website climbed from 27.090 to 80.399 (53.309 new ones), and the number of sessions jumped from 50.405 to 142.229 (an increase of 91.824 sessions). 
           Also in just 12 months, the unique pageviews climbed from 143.509 to 348.131, an increase of more than 205.172 pageviews. 
           Great news for AsyncAPI, as the merger with the Linux Foundation and the partnership with Postman, have not yet been reflected in these numbers, as it was sealed subsequent to this data collection 
-          [<TextLink href="https://www.asyncapi.com/blog/2020-summary" target="_blank">
+          [<TextLink href="/blog/2020-summary" target="_blank">
               checkout here for more information
             </TextLink> ]. 
           The next data will be even better.
@@ -216,10 +216,10 @@ export default function press() {
           Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. 
           The main sponsors that contribute to sustain this initiative are Postman, IQVIA Technology, Mulesoft, Salesforce, SAP, SLACK, Solace, and Tibco.
         </Paragraph>
+        <Paragraph typeStyle="body-md" className="my-4"></Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
           All the information about the project's economy, the amount of the donations, the identity of the donors, the sponsors supporting the project and the use of this money is public. 
-          99% of the funding goes through the Open Collective but has also been enabled by GitHub sponsorship 
-          [<TextLink href="https://github.com/sponsors/asyncapi" target="_blank">More information here</TextLink> ].
+          99% of the funding goes through the Open Collective. <TextLink href="https://opencollective.com/asyncapi" target="_blank">More information here</TextLink>.
         </Paragraph>
         <Paragraph typeStyle="body-md" className="my-4">
           Open Collective is an online crowdfunding platform for open and transparent communities. 
@@ -268,7 +268,7 @@ export default function press() {
             </li>
             <li className="py-1">
               <Paragraph typeStyle="body-md" className="my-4">
-                <TextLink href="https://www.asyncapi.com/blog" target="_blank" className="no-underline">
+                <TextLink href="/blog" target="_blank" className="no-underline">
                   <b>Blog</b>
                 </TextLink>: It’s used to disseminate information related to the project. It's also open to collaborations.
               </Paragraph>
@@ -297,24 +297,15 @@ export default function press() {
             </li>
             <li className="py-1">
               <Paragraph typeStyle="body-md" className="my-4">
-                <b>AsyncAPI Open Meetings</b> (biweekly): 
-                <ul className="list-circle list-inside ml-4 my-2">
-                  <li>See the shared 
-                    <TextLink href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" className="no-underline">
-                      Google Calendar
-                    </TextLink>, with the main activities.
-                  </li>
-                  <li>For Outlook users we exported the calendar to an 
-                    <TextLink href="https://github.com/asyncapi/asyncapi/files/4181037/asyncapi-calendar-outlook-ics-file.zip" target="_blank" className="no-underline">
-                      ICS file
-                    </TextLink>.
-                  </li>
-                  <li>To get invited to the mailbox, just add yourself to the mailing list on the 
-                    <TextLink href="https://www.asyncapi.com/" target="_blank" className="no-underline">
-                      website
-                    </TextLink>.
-                  </li>
-                </ul>
+                <TextLink href="https://github.com/asyncapi" target="_blank" className="no-underline">
+                <b>AsyncAPI Open Meetings</b> 
+                </TextLink>:
+                AsyncAPI hosts different meetings every week. 
+                They are focused on different topic, sometimes purely technical and sometimes about community building. 
+                Pick one and join us!  
+                <TextLink href="/community/meetings">
+                  Learn more about our meetings
+                </TextLink>
               </Paragraph>
             </li>
           </ul>
@@ -340,19 +331,16 @@ export default function press() {
               The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
             </li>
             <li className="py-1">
-              <b>Who can use it?</b> Everyone who wants. It’s open to use and contribute. To use it, all you need is a device with an operating system and the latest version of AsyncAPI.
+              <b>Who can use it?</b> Anyone. All projects under AsyncAPI Initiative are part of Linux Foundation, licenced under Apache 2.0 license. It’s open to use and contribute.
             </li>
             <li className="py-1">
               <b>Where can I find more information?</b>
               <ul className="list-circle list-inside ml-4 my-2">
                 <li>
-                  Website: <TextLink href="https://www.asyncapi.com/">https://www.asyncapi.com/</TextLink>
+                  Documentation: <TextLink href="/docs">https://www.asyncapi.com/docs</TextLink>
                 </li>
                 <li>
                   Talk by Fran Méndez, explaining the project: <TextLink href="https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R">https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R</TextLink>
-                </li>
-                <li>
-                  AsyncAPI & Postman: <TextLink href="https://blog.postman.com/asyncapi-joins-forces-with-postman-future-of-apis/">https://blog.postman.com/asyncapi-joins-forces-with-postman-future-of-apis/</TextLink>
                 </li>
               </ul>
             </li>

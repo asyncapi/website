@@ -14,9 +14,9 @@ Our long-term goal is to make working with EDAs as easy as working with REST API
 
 **Committers** (also known as **Maintainers**) are the decision-makers at the repository/project level. They regularly contribute to the project and are invited by other maintainers to manage the repository, have more privileges, and approve pull requests.
 
-The committers rule the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](https://www.asyncapi.com/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
+The committers rule the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
 
-You can check the list of maintainers belonging to the TSC [here](https://www.asyncapi.com/community/tsc).
+You can check the list of maintainers belonging to the TSC [here](/community/tsc).
 
 ## Contributors
 
@@ -46,7 +46,7 @@ In doing so, we achieve:
 - To make the project as democratic as possible.
 - To rely on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
 
-In other words, it will  give equal power to individual and corporate contributors  [[checkout here for more information](https://www.asyncapi.com/blog/governance-motivation)].
+In other words, it will  give equal power to individual and corporate contributors  [[checkout here for more information](/blog/governance-motivation)].
 
 ## History
 
