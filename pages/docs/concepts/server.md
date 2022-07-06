@@ -12,7 +12,7 @@ flowchart LR
     A[producer]
     A --> a1[channel1]
     A --> a2[channel2]
-    subgraph one[server/broker]
+    subgraph one[broker]
     a1
     a2
     end
