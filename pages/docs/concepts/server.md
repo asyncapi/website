@@ -16,6 +16,6 @@ flowchart LR
     a1
     a2
     end
-    a1 --> B[consumer]
+    a1 --> B[consumer1]
     a2 --> C[consumer]
 ```
