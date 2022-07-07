@@ -1,9 +1,7 @@
 ---
-title: Introduction
+title: Getting Started
 date: 2019-02-16T13:56:52+01:00
-weight: 0
-categories:
-- introduction
+weight: 2
 aliases:
 - '/v1/guide/'
 - '/v1/guide/index.html'
