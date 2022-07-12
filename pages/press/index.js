@@ -66,30 +66,23 @@ export default function press() {
           <span id="asyncapiInNumbers">AsyncAPI, in numbers</span>
         </Heading>
         <Paragraph typeStyle="body-md" className="my-4">
-          By 2023, the community that supports the initiative is expected to <b>multiply its size by four</b>. 
-          After that, the next goal is to grow <b>400% till 2026</b> 
-          [<TextLink href="/roadmap" target="_blank">to know more check the AsyncAPI Road Map</TextLink> ].
-          These goals can look ambitious, but many other numbers could also have been felt as impossible to reach not so long ago.
-        </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          Taking the example of the years 2019 and 2020, the unique users visits in the AsyncAPI website climbed from 27.090 to 80.399 (53.309 new ones), and the number of sessions jumped from 50.405 to 142.229 (an increase of 91.824 sessions). 
-          Also in just 12 months, the unique pageviews climbed from 143.509 to 348.131, an increase of more than 205.172 pageviews. 
-          Great news for AsyncAPI, as the merger with the Linux Foundation and the partnership with Postman, have not yet been reflected in these numbers, as it was sealed subsequent to this data collection 
-          [<TextLink href="/blog/2020-summary" target="_blank">
-              checkout here for more information
-            </TextLink> ]. 
-          The next data will be even better.
-        </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          Also, the increase of traffic and users in social networks talks by itself.
-          <ul className="list-disc list-inside ml-4 my-2">
-            <li className="py-1">On Youtube, the number of views increased by 1646%.</li>
-            <li className="py-1">On Slack, the number of members increased by 558%.</li>
-            <li className="py-1">On Linkedin, the visits increased by 296%.</li>
-            <li className="py-1">On the Blog, the visits increased by 270%.</li>
-            <li className="py-1">On Twitter, the number of followers increased by 257%.</li>
-            <li className="py-1">On GitHub, the generator downloads increased by 62%.</li>
+          We, at AsynAPI, are trying to build the future of Event-Driven Architectures.
+          We are steadily progressing towards our mission and we are growing as a strong community. 
+          Interested to know more about our growth? Feel free to check our annual summary report: 
+          
+          <ul className="list-disc list-inside ml-4 my-4">
+            <li className="py-1">
+              <TextLink href="/blog/2020-summary" target="_blank">
+                Summary report 2020
+              </TextLink> 
+            </li>
+            <li className="py-1">
+              <TextLink href="/blog/2021-summary" target="_blank">
+                Summary report 2021
+              </TextLink>
+            </li>
           </ul>
+          
         </Paragraph>
 
         <Heading level="h3" typeStyle="heading-md" className="my-5">
@@ -320,7 +313,9 @@ export default function press() {
               <b>What is the goal of the project?</b> To make asynchronous APIs as successful and mature as REST APIs.
             </li>
             <li className="py-1">
-              <b>What protocols does it support?</b> The latest version supports any protocol.
+              <b>What protocols does it support?</b> AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer <TextLink href="https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject" target="_blank">
+                 this 
+                </TextLink> documentation
             </li>
             <li className="py-1">
               <b>Who are the users of AsyncAPI?</b>AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka
