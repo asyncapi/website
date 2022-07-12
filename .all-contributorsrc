@@ -263,6 +263,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "paulgoldsmith",
+      "name": "Paul Goldsmith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/471550?v=4",
+      "profile": "https://github.com/paulgoldsmith",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
