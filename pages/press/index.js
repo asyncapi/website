@@ -285,7 +285,7 @@ export default function press() {
               <Paragraph typeStyle="body-md" className="my-4">
                 <TextLink href="https://github.com/asyncapi" target="_blank" className="no-underline">
                   <b>GitHub</b>
-                </TextLink>: Issues, for bugs and feature requests, pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
+                </TextLink>: Issues (bugs, feature requests, etc.) and pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
               </Paragraph>
             </li>
             <li className="py-1">
