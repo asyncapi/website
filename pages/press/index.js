@@ -313,9 +313,9 @@ export default function press() {
               <b>What is the goal of the project?</b> To make asynchronous APIs as successful and mature as REST APIs.
             </li>
             <li className="py-1">
-              <b>What protocols does it support?</b> AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer <TextLink href="https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject" target="_blank">
-                 this 
-                </TextLink> documentation
+              <b>What protocols does it support?</b> AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the <TextLink href="https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject" target="_blank">
+                 AsyncAPI specification documentation
+                </TextLink>
             </li>
             <li className="py-1">
               <b>Who are the users of AsyncAPI?</b>AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka
