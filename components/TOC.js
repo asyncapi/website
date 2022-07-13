@@ -18,8 +18,8 @@ export default function TOC({
     //MDX takes these "a" tags and uses them to render the "id" for headers like a-namedefinitionsapplicationaapplication
     //slugWithATag contains transformed heading name that is later used for scroll spy identification
     slugWithATag: item.content.replace(/<|>|"|\\|\/|=/gi, '').replace(/\s/gi, '-').toLowerCase()
-}))
-  const [open, setOpen] = useState(false)
+  }));
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block md:top-24 md:max-h-(screen-14) z-20`} onClick={() => setOpen(!open)}>

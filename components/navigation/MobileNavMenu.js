@@ -10,7 +10,7 @@ export default function MobileNavMenu ({
   onClickClose = () => {},
 }) {
   return (
-    <div className="absolute top-0 inset-x-0 py-2 transition transform origin-top-right max-h-screen lg:hidden overflow-y-scroll">
+    <div className="fixed top-0 inset-x-0 py-2 transition transform origin-top-right max-h-full lg:hidden overflow-y-scroll">
       <div className="rounded-lg shadow-lg">
         <div className="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
           <div className="pt-5 pb-6 px-5 space-y-6">
@@ -29,7 +29,13 @@ export default function MobileNavMenu ({
               </div>
             </div>
             <div className="py-2 space-y-2">
-              <h4 className="text-gray-500 font-medium block mb-4">Learning</h4>
+              <Link href="/docs" className="flex">
+                <h4 className="text-gray-500 font-medium block mb-4">
+                  <a className="cursor-pointer">
+                    Docs
+                  </a>
+                </h4>
+              </Link>
               <MenuBlocks items={learningItems} />
             </div>
           </div>

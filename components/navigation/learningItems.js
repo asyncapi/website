@@ -1,11 +1,11 @@
-import IconGettingStarted from '../icons/GettingStarted'
-import IconSpec from '../icons/Spec'
-import IconUseCases from '../icons/UseCases'
-import IconTutorials from '../icons/Tutorials'
+import IconRocket from '../icons/Rocket'
+import IconGradCap from '../icons/GradCap'
+import IconPlant from '../icons/Plant'
+import IconPaper from '../icons/Paper'
 
 export default [
-  { href: '/docs/getting-started', icon: IconGettingStarted, title: 'Getting started', description: 'Learn the basics of AsyncAPI in less than 15 minutes with our guide.' },
-  { href: '/docs/tutorials', icon: IconTutorials, title: 'Tutorials', description: 'Get your hands dirty with our step-by-step interactive tutorials.' },
-  { href: '/docs/specifications/latest', icon: IconSpec, title: 'AsyncAPI specification', description: `Explore the specification that's powering the tools.` },
-  { href: '/docs/use-cases', icon: IconUseCases, title: 'Use cases', description: 'Learn how AsyncAPI can suit your specific needs.', comingSoon: true },
+  { href: '/docs/concepts', icon: IconRocket, className: 'bg-secondary-200', title: 'Concepts', description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.' },
+  { href: '/docs/tutorials', icon: IconGradCap, className: 'bg-pink-100', title: 'Tutorials', description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing. ' },
+  { href: '/docs/tools', icon: IconPlant, className: 'bg-green-200', title: 'Tools', description: 'Our Tools section documents the AsyncAPI tools ecosystem.' },
+  { href: '/docs/reference', icon: IconPaper, className: 'bg-yellow-200', title: 'Reference', description: `Our Reference section documents the AsyncAPI specification.` }
 ]
