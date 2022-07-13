@@ -42,7 +42,7 @@ The partnership mentioned above with Postman speeded up the initiative's work in
 
 In doing so, we achieve:
 
-- To ensure an open governance model where no single company dominates the specification and its tools.
+- Ensuring an open governance model where no single company dominates the specification and its tools.
 - Making the project as democratic as possible.
 - To rely on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
 
