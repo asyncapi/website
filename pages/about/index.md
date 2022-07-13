@@ -38,7 +38,7 @@ Would you like to help us with the maintainance? Contact us on [slack](https://w
 
 Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
 
-The above-mentioned partnership with Postman speeded up the work in the initiative on transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
+The partnership mentioned above with Postman speeded up the initiative's work in transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
 
 In doing so, we achieve:
 
