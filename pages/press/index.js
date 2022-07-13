@@ -326,7 +326,7 @@ export default function press() {
               The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
             </li>
             <li className="py-1">
-              <b>Who can use it?</b> Anyone. All projects under AsyncAPI Initiative are part of Linux Foundation, licenced under Apache 2.0 license. It’s open to use and contribute.
+              <b>Who can use it?</b> Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
             </li>
             <li className="py-1">
               <b>Where can I find more information?</b>
