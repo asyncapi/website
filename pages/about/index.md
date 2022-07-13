@@ -16,7 +16,7 @@ Our long-term goal is to make working with EDAs as easy as working with REST API
 
 The committers rule the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
 
-You can check the list of maintainers belonging to the TSC [here](/community/tsc).
+You can see the list of maintainers who are also part of the [AsyncAPI TSC here](/community/tsc).
 
 ## Contributors
 
