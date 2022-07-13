@@ -256,7 +256,7 @@ export default function press() {
               <Paragraph typeStyle="body-md" className="my-4">
                 <TextLink href="https://www.asyncapi.com/subscribe/" target="_blank" className="no-underline">
                   <b>Newsletter</b>
-                </TextLink>: To learn about the status of the project/news, actualizations, and recorded events and meetings.
+                </TextLink>: To learn about the status of the project, news, actualizations, recorded events, and meetings.
               </Paragraph>
             </li>
             <li className="py-1">
