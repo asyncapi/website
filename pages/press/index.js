@@ -220,11 +220,7 @@ export default function press() {
           It is an ideal collective for communities such as collaborative groups or open source projects among others. 
           This platform can be used to raise and transparently disburse money for the benefit of their members, their registered projects, and those who want to support them.
         </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-          GitHub is a project management platform that also has the option to manage part of the financing. 
-          It is also important that the company making the largest contribution to the initiative is Postman.
-        </Paragraph>
-
+        
         <Heading level="h3" typeStyle="heading-md" className="my-5">
           <span id="contact">Contact details</span>
         </Heading>
