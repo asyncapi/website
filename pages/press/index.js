@@ -278,7 +278,7 @@ export default function press() {
               <Paragraph typeStyle="body-md" className="my-4">
                 <TextLink href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS" target="_blank" className="no-underline">
                   <b>YouTube Channel</b>
-                </TextLink>: Where you can find conferences, AsyncAPI Open Meetings and much more.
+                </TextLink>: Where you can find conferences, AsyncAPI Open Meetings, and much more.
               </Paragraph>
             </li>
             <li className="py-1">
