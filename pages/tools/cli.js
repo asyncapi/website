@@ -61,7 +61,11 @@ export default function CliPage() {
 
   const description =
     'Create, validate, and explore your AsyncAPI files with our CLI tool.';
-  const image = '/img/social/generator.png';
+  const image = '/img/social/cli-card.jpg';
+
+	const getPkgCode = () => {
+		return `# Download latest PKG file\ncurl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg\n# Install application on MacOS\nsudo installer -pkg asyncapi.pkg -target /`;
+	};
 
   return (
     <GenericLayout title="CLI" description={description} image={image} wide>
@@ -91,7 +95,7 @@ export default function CliPage() {
               {renderButtons()}
             </div>
 
-            <div className="relative max-w-full mt-8 mx-auto space-y-10">
+            <div className="relative w-full mt-8 mx-auto space-y-10">
               <div>
                 <Heading level="h3" typeStyle="heading-sm-semibold" className="mb-4 text-center md:text-left">
                   Installing
@@ -105,6 +109,14 @@ export default function CliPage() {
                       language: 'npm',
                       code: `npm install -g @asyncapi/cli`,
                     },
+										{
+											language: 'brew',
+											code: `brew install asyncapi`
+										},
+										{
+											language: '.pkg',
+											code: getPkgCode()
+										}
                   ]}
                 />
               </div>

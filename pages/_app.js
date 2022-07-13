@@ -18,6 +18,7 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Banner from '../components/campaigns/Banner'
 import Link from 'next/link'
 import DocsButton from '../components/buttons/DocsButton';
+import { DocsCards } from '../components/docs/DocsCards'
 import AppContext from '../context/AppContext'
 import Footer from "../components/Footer";
 import '../css/styles.css'
@@ -27,7 +28,7 @@ export default function MyApp({ Component, pageProps, router }) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <Head>
-          <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
       <MDXProvider components={getMDXComponents()}>
         <div className="flex flex-col min-h-screen">
@@ -99,6 +100,7 @@ function getMDXComponents() {
     Row,
     Column,
     Figure,
+    DocsCards,
     GeneratorInstallation,
     NewsletterSubscribe,
     TwitterTimelineEmbed,

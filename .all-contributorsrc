@@ -236,6 +236,43 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jaas666",
+      "name": "Juan A.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30204147?v=4",
+      "profile": "http://juanarce.me",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "luphieanza",
+      "name": "Muhammad Rafly Andrianza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20577131?v=4",
+      "profile": "https://github.com/luphieanza",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Harish-b-03",
+      "name": "Harish",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69810789?v=4",
+      "profile": "https://github.com/Harish-b-03",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "paulgoldsmith",
+      "name": "Paul Goldsmith",
+      "avatar_url": "https://avatars.githubusercontent.com/u/471550?v=4",
+      "profile": "https://github.com/paulgoldsmith",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

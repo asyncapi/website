@@ -1,57 +1,49 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
-const { graphql } = require('@octokit/graphql');
+const { google } = require('googleapis');
 
-require('dotenv').config({
-  path: resolve(process.cwd(), '.env.local'),
-});
+async function buildMeetings() {
 
-module.exports = async function buildMeetings() {
+  const auth = new google.auth.GoogleAuth({
+    scopes: ['https://www.googleapis.com/auth/calendar'],
+    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT)
+  });
+
+  const calendar = google.calendar({ version: 'v3', auth });
+  let eventsItems;
+
   try {
-    const eventIssues = await graphql(
-      `
-        query eventIssues($owner: String!, $repo: String!) {
-          repository(owner: $owner, name: $repo) {
-            issues(labels: ["meeting"], states: [OPEN], first: 10) {
-              nodes {
-                title
-                url
-              }
-            }
-          }
-        }
-      `,
-      {
-        owner: 'asyncapi',
-        repo: 'community',
-        headers: {
-          authorization: `token ${process.env.GITHUB_TOKEN}`,
-        },
-      }
-    );
 
-    const result = eventIssues.repository.issues.nodes.map((meeting) => {
-      const [title, dateAndTime] = meeting.title.split(',');
-      const dateAndTimeArray = dateAndTime.split(' ');
-      return {
-        title,
-        url: meeting.url,
-        date: new Date(
-          `${dateAndTimeArray[4]} ${dateAndTimeArray[5]}, ${
-            dateAndTimeArray[6]
-          } ${dateAndTimeArray[1].slice(0, 1)}:00 ${dateAndTimeArray[1].slice(
-            1,
-            3
-          )} ${dateAndTimeArray[2]}`
-        ),
-      };
-    });
-    writeFileSync(
-      resolve(__dirname, '..', 'meetings.json'),
-      JSON.stringify(result, null, '  ')
-    );
+      //cron job runs this always on midnight
+      //so every day we get refreshed list of meetings for comming 14 days
+      const currentTime = new Date(Date.now()).toISOString();
+      //14 days front
+      const timeIn15Days = new Date(Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000).toISOString();
+
+      const eventsList = await calendar.events.list({
+          calendarId: process.env.CALENDAR_ID,
+          timeMax: timeIn15Days,
+          timeMin: currentTime
+      })
+
+      eventsItems = eventsList.data.items.map((e) => {
+          return {
+              title: e.summary,
+              url: `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
+              date: new Date(e.start.dateTime).toUTCString()
+          }
+      })
+
+      const eventsForHuman = JSON.stringify(eventsItems, null, '  ');
+      // console.log('The following events got fetched', eventsForHuman); 
+
+      writeFileSync(
+        resolve(__dirname, '../config', 'meetings.json'),
+        eventsForHuman
+      );
   } catch (e) {
     console.error(e);
-    writeFileSync(resolve(__dirname, '..', 'meetings.json'), '[]');
   }
-};
+}
+
+buildMeetings();
