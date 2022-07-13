@@ -46,7 +46,7 @@ In doing so, we achieve:
 - Making the project as democratic as possible.
 - To rely on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
 
-In other words, it will  give equal power to individual and corporate contributors  [[checkout here for more information](/blog/governance-motivation)].
+In other words, it [gives equal power to individual and corporate contributors](/blog/governance-motivation).
 
 ## History
 
