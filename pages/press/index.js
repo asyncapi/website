@@ -129,7 +129,7 @@ export default function press() {
             </li>
             <li className="py-1">
               <Paragraph typeStyle="body-md" className="my-4">
-                <b>User-friendly</b>. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API within minutes without prior knowledge of AsyncAPI. It has to be natural, simple, intuitive.
+                <b>User-friendly</b>. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API within minutes without prior knowledge of AsyncAPI. It has to be natural, simple, and intuitive.
               </Paragraph>
             </li>
           </ul>
