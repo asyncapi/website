@@ -294,7 +294,7 @@ export default function press() {
                 <b>AsyncAPI Open Meetings</b> 
                 </TextLink>:
                 AsyncAPI hosts different meetings every week. 
-                They are focused on different topic, sometimes purely technical and sometimes about community building. 
+                They are focused on different topics, sometimes purely technical and sometimes about community building. 
                 Pick one and join us!  
                 <TextLink href="/community/meetings">
                   Learn more about our meetings
