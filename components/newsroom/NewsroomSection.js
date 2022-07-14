@@ -30,7 +30,7 @@ export default function NewsroomSection() {
           Latest news and blogs
         </Heading>
         <Paragraph typeStyle="body-lg" className="mt-5">
-          We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 you're welcome to join us. We're nice people 🙂
+          Welcome to our Newsroom section. Here, you'll get latest information about our blogs, articles, announcements and Youtube live-streams. Let's get upto date with the recent activities in the organization.
         </Paragraph>
         <div className='mt-7'>
         <Button text='Visit the Newsroom' href='/community/newsroom' />

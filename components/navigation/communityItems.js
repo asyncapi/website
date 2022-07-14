@@ -4,6 +4,7 @@ import IconSlack from '../icons/Slack'
 import IconContributing from '../icons/Contributing'
 import IconTSC from '../icons/TSC'
 import IconMeetings from '../icons/Meetings'
+import IconNewsroom from '../icons/Newsroom'
 
 
 export default [
@@ -12,5 +13,6 @@ export default [
   { icon: IconSlack, title: 'Slack Workspace', href: 'https://asyncapi.com/slack-invite', target: '_blank', description: `Need help? Want to share something? Join our Slack workspace. We're nice people :)` },
   { icon: IconContributing, title: 'Contributing', href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi', target: '_blank', description: `We are always welcoming and looking for contributions. If you are interested check out our contribution guide.` },
   { icon: IconTSC, title: 'Technical Steering Committee', href: '/community/tsc', description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.' },
-  { icon: IconMeetings, title: 'Meetings', href: '/community/meetings', description: 'See what meetings are organized under AsyncAPI umbrella and join one of them.' }
+  { icon: IconMeetings, title: 'Meetings', href: '/community/meetings', description: 'See what meetings are organized under AsyncAPI umbrella and join one of them.' },
+  { icon: IconNewsroom, title: 'Newsroom', href: '/community/newsroom', description: 'Get upto date with the recent activity in the organization.' }
 ]
