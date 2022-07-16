@@ -1,17 +1,12 @@
 [
   {
-    "title": "AsyncAPI Conference 2022 organization - round 3",
-    "url": "https://github.com/asyncapi/community/issues/408",
-    "date": "Thu, 14 Jul 2022 15:00:00 GMT"
-  },
-  {
-    "title": "AsyncAPI Onboarding Workshop - Part 3",
-    "url": "https://github.com/asyncapi/community/issues/409",
-    "date": "Wed, 13 Jul 2022 15:00:00 GMT"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "url": "https://github.com/asyncapi/community/issues/410",
     "date": "Wed, 20 Jul 2022 16:00:00 GMT"
+  },
+  {
+    "title": "AsyncAPI Onboarding Workshop - Part 4",
+    "url": "https://github.com/asyncapi/community/issues/414",
+    "date": "Wed, 20 Jul 2022 14:00:00 GMT"
   }
 ]
