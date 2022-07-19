@@ -12,6 +12,7 @@ import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import IconHamburgerMenu from '../icons/HamburgerMenu'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -124,6 +125,10 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
       </div>
+      
+      {/* <div className='fixed z-50 bg-white bottom-6 right-6 border-2 rounded-md border-black border-solid cursor-pointer'>
+        <IconHamburgerMenu className="p-1" />
+      </div> */}
 
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         <div className="flex flex-row">
@@ -139,14 +144,12 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   ))}
                 </ul>
               </nav>
-
             </div>
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
-            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
-              <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 hidden lg:sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
+            <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row' : ''}`}>
               <div className="px-4 mt-6 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
               <Heading level="h1" typeStyle="heading-lg">
                 {post.title}
@@ -174,6 +177,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   <Feedback />
                 </div>
               </div>
+
+              <TOC toc={post.toc} depth={3} className="sticky z-50 bottom-6 right-4 rounded-md xl:inherit-0 xl:border-0 w-11 overflow-y-auto xl:max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
+            
             </div>
           </main>
         </div>

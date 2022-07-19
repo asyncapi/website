@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
 import ArrowRight from './icons/ArrowRight'
+import IconHamburgerMenu from './icons/HamburgerMenu'
+import IconClose from './icons/CloseButton'
 
 export default function TOC({
   className,
@@ -22,15 +24,16 @@ export default function TOC({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block md:top-24 md:max-h-(screen-14) z-20`} onClick={() => setOpen(!open)}>
-      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto xl:mt-2`}>
-        <h5 className={`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-900 ${cssBreakingPoint}:font-bold`}>
+    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${(open)?"border-2 border-black border-solid p-4 pb-8 mt-4 bg-white w-full":"border-0"} ${cssBreakingPoint}:block md:border:0 md:top-24 md:sticky md:bottom-8 z-20`} onClick={() => setOpen(!open)}>
+      {/* <div className='flex flex-row'> */}
+          
+      {/* </div> */}
+      <div className={`flex cursor-pointer ${(open)?"block":"hidden"} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto ${cssBreakingPoint}:block xl:mt-2`}>
+        <h5 className={`${open && `mb-2 ${cssBreakingPoint}:mb-4`} flex-1 text-black font-bold capitalize tracking-wide text-md font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:uppercase ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-900 ${cssBreakingPoint}:font-bold`}>
           On this page
         </h5>
-        <div className={`text-underline text-center p4 ${cssBreakingPoint}:hidden`}>
-          <ArrowRight className={`${ open ? '-rotate-90' : 'rotate-90' } transform transition duration-200 ease-in-out h-6 -mt-0.5 text-primary-500`} />
-        </div>
       </div>
+
       <div className={`${!open && 'hidden'} ${cssBreakingPoint}:block`}>
         <Scrollspy
           items={tocItems.map(item => item.slugWithATag)}
@@ -50,6 +53,10 @@ export default function TOC({
             ))
           }
         </Scrollspy>
+      </div>
+      { open && (<IconClose className="w-4 h-4 absolute right-3 bottom-3 z-50 cursor-pointer"/>)}
+      <div className={`${cssBreakingPoint}:hidden mt-6 sticky right-3 bottom-3 z-50 bg-white border-2 p-1 rounded-md border-black border-solid cursor-pointer ${(open)?"hidden":""}`}>
+        <IconHamburgerMenu className=""/>
       </div>
     </div>
   )
