@@ -26,8 +26,8 @@ export default function FeaturedBlogPost({ post, className = ''}) {
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
-            <a className={`h-full flex flex-col lg:flex-row border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
-              <img className="w-full lg:w-56 object-cover" src={post.cover} alt="" />  
+            <a className={`h-full flex flex-col md:flex-row md:max-w-164 border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
+              <img className="w-full md:w-56 object-cover" src={post.cover} alt="" />  
               <div className="flex-1 bg-white p-6 flex flex-col justify-between text-left">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">

@@ -1,6 +1,6 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import Container from '../../components/layout/Container'
-import Newsroom from "../../components/newsroom/Newsroom"
+import NewsroomSection from "../../components/newsroom/Newsroom"
 
 function Newsroom() {
     const description =
@@ -14,11 +14,11 @@ function Newsroom() {
       wide
     >
         <Container wide>
-            <Newsroom />
+            <NewsroomSection />
         </Container>
 
     </GenericLayout>
   )
 }
 
-export default newsroom
+export default Newsroom
