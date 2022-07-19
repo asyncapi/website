@@ -28,7 +28,7 @@ export default function FeaturedBlogPost({ post, className = ''}) {
           <Link href={post.slug} passHref>
             <a className={`h-full flex flex-col md:flex-row md:max-w-164 border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
               <img className="w-full md:w-56 object-cover" src={post.cover} alt="" />  
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between text-left">
+              <div className="flex-1 bg-white p-6 flex flex-col justify-between text-left border-none">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
                     <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`}>
