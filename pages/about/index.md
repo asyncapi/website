@@ -88,7 +88,7 @@ AsyncAPI is an open source project and is therefore funded by talent and volunta
 
 Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. The main sponsors that contribute to sustain this initiative are Postman, IQVIA Technology, Mulesoft, Salesforce, SAP, SLACK, Solace, and Tibco.
 
-All the information about the project's economy, the amount of the donations, the identity of the donors, the sponsors supporting the project and the use of this money is public. 99% of the funding goes through the Open Collective. [More information here](https://opencollective.com/asyncapi)
+All the information about the project's economy, the amount of the donations, the identity of the donors, the sponsors supporting the project and the use of this money is public and goes through the Open Collective. [More information here](https://opencollective.com/asyncapi)
 
 Open Collective is an online crowdfunding platform for open and transparent communities. It provides the necessary tools to collect and share the finances raised with complete transparency. It is an ideal collective for communities such as collaborative groups or open source projects among others. This platform can be used to raise and transparently disburse money for the benefit of their members, their registered projects, and those who want to support them.
 
