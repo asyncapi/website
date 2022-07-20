@@ -42,11 +42,11 @@ export default function Footer() {
                   </div>
                 </div>
                 <ul className="justify-center">
-                  {/* <li className="py-2">
+                  <li className="py-2">
                     <Link href="/about">
                       <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">About</a>
                     </Link>
-                  </li> */}
+                  </li>
                   <li className="py-2">
                     <Link href="/blog">
                       <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">Blog</a>
