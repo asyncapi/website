@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/t9NALlHu_tE/hqdefault.jpg",
-    "title": "Request/reply discussion part 3",
-    "description": "Another meeting about request reply pattern in AsyncAPI.",
-    "videoId": "t9NALlHu_tE"
+    "image_url": "https://i.ytimg.com/vi/RNpngZIbmnQ/hqdefault.jpg",
+    "title": "AsyncAPI Conference 2022 organization - round 3",
+    "description": "https://github.com/asyncapi/community/issues/408.",
+    "videoId": "RNpngZIbmnQ"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/iqSiDH8ff1w/hqdefault.jpg",
-    "title": "Spec 3.0 Meeting",
-    "description": "https://github.com/asyncapi/community/issues/378.",
-    "videoId": "iqSiDH8ff1w"
+    "image_url": "https://i.ytimg.com/vi/yav1XGnr418/hqdefault.jpg",
+    "title": "AsyncAPI Onboarding Workshop - Part 3",
+    "description": "https://github.com/asyncapi/community/issues/409.",
+    "videoId": "yav1XGnr418"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/d3GveOT0EPU/hqdefault.jpg",
-    "title": "Thinking Out Loud #17 — with James Urquhart and Clemens Vasters",
-    "description": "",
-    "videoId": "d3GveOT0EPU"
+    "image_url": "https://i.ytimg.com/vi/Le0Eix5YjcU/hqdefault.jpg",
+    "title": "Community Meeting - July 12 2022",
+    "description": "https://github.com/asyncapi/community/issues/411.",
+    "videoId": "Le0Eix5YjcU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/6MUR0RN10As/hqdefault.jpg",
-    "title": "Community Meeting - May 31 2022",
-    "description": "Regular community meeting: https://github.com/asyncapi/community/issues/383.",
-    "videoId": "6MUR0RN10As"
+    "image_url": "https://i.ytimg.com/vi/V5xCvfyL-dg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting",
+    "description": "https://github.com/asyncapi/community/issues/407.",
+    "videoId": "V5xCvfyL-dg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/SPI7aw7pbHo/hqdefault.jpg",
-    "title": "AsyncAPI Conference 2022 organization kick off",
-    "description": "Let's kick off the regular work. Time is ticking, and if we want to have in person conf in October/November we need to act now.",
-    "videoId": "SPI7aw7pbHo"
+    "image_url": "https://i.ytimg.com/vi/Emu4a-iBG7Q/hqdefault.jpg",
+    "title": "AsyncAPI Onboarding Workshop - Part 2",
+    "description": "https://github.com/asyncapi/community/issues/404.",
+    "videoId": "Emu4a-iBG7Q"
   }
 ]
