@@ -86,7 +86,7 @@ In other words, it [gives equal power to individual and corporate contributors](
 
 AsyncAPI is an open source project and is therefore funded by talent and voluntary contributions. It relies on the expertise and dedication of the **Community developers** who believe in the project and contribute to its evolution.
 
-Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. The main sponsors that contribute to sustain this initiative are Postman, IQVIA Technology, Mulesoft, Salesforce, SAP, SLACK, Solace, and Tibco.
+Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. The main sponsors that contribute to sustain this initiative are Postman, IBM, IQVIA Technology and Solace. On different levels project receives contribution from companies like Red Hat and Slack, just to name few.
 
 All the information about the project's economy, the amount of the donations, the identity of the donors, the sponsors supporting the project and the use of this money is public and goes through the Open Collective. [More information here](https://opencollective.com/asyncapi)
 
