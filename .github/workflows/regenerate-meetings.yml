@@ -12,6 +12,7 @@ jobs:
       env:
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
         CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
+        YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
       name: Regenerate meetings.json
       runs-on: ubuntu-latest
       steps:
@@ -20,8 +21,8 @@ jobs:
         - name: Install dependencies
           run: npm install
         - name: Regenerate
-          run: npm run generate:meetings
-        - name: Create Pull Request with new meetings.json version
+          run: npm run generate:meetings && npm run generate:videos
+        - name: Create Pull Request with new meetings.json and newsroom-videos.json version
           uses: peter-evans/create-pull-request@v3
           with:
             token: ${{ secrets.GH_TOKEN }}
