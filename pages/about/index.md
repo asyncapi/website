@@ -62,7 +62,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 
 Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
 
-The partnership mentioned above with Postman speeded up the initiative's work in transferring AsyncAPI to a foundation and forming an open governance model to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
+The partnership mentioned above with Postman speeded up the initiative's work in transferring AsyncAPI to a foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
 
 In doing so, we achieve:
 
