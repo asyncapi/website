@@ -63,7 +63,7 @@ They should also be willing to speak at community events or write technical cont
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            How to become an ambassador?
+            How can you become an ambassador?
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
             To be an official AsyncAPI ambassador, there is no more important requirement than having the desire to work and spread the AsyncAPI tools.
