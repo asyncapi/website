@@ -74,7 +74,7 @@ Be active in your role as an ambassador.
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            What are the benefits of being an ambassador?
+            What are the benefits of becoming an ambassador?
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
     Special Ambassador swag.
