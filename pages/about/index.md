@@ -113,5 +113,5 @@ Open Collective is an online crowdfunding platform for open and transparent comm
 - **What is the AsyncAPI Community?** It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
 - **Who can use it?** Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
 - **Where can I find more information?**
-    - Documentation: [https://www.asyncapi.com/docs](https://www.asyncapi.com/docs)
-    - Talk by Fran Méndez, explaining the project: [https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
+    - [Official AsyncAPI Documentation](/docs)
+    - [Presentation by Fran Méndez, explaining the project](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
