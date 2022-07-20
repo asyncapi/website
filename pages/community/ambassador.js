@@ -204,7 +204,7 @@ function QuestionCard() {
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <div className="my-4">Become an ambassador!</div>
+      <a href="https://github.com/asyncapi/community/pull/361"><div className="my-4">Become an ambassador!</div></a>
     </li>
   );
 }
