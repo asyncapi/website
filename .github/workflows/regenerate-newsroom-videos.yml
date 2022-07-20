@@ -9,7 +9,7 @@ on:
 
 jobs:
   meetings:
-      if: github.repository == 'asyncapi/website'
+      # if: github.repository == 'asyncapi/website'
       env:
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
       name: Regenerate newsroom-videos.json
