@@ -103,7 +103,7 @@ Open Collective is an online crowdfunding platform for open and transparent comm
 - [**LinkedIn**](https://es.linkedin.com/company/asyncapi): It's used to publish news related to the project or its environment. It’s also used as a source of information.
 - [**YouTube Channel**](https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"): Where you can find conferences, AsyncAPI Open Meetings, and much more.
 - [**GitHub**](https://github.com/asyncapi): Issues (bugs, feature requests, etc.) and pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
-- [**AsyncAPI Open Meetings**](https://github.com/asyncapi): AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us! [Learn more about our meetings](/community/meetings")
+- [**AsyncAPI Open Meetings**](https://github.com/asyncapi): AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us! [Learn more about our meetings](/community/meetings)
 
 ## Frequently asked questions
 
