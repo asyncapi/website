@@ -90,46 +90,46 @@ li > p {
 }
 #circle-around-first-1{
     transform: rotate(360deg) translateX(300px) rotate(-360deg);
-    -webkit-animation: orbit3 80s linear infinite;
-    -moz-animation: orbit3 80s linear infinite;
-    -o-animation: orbit3 80s linear infinite;
-    animation: orbit2 80s linear infinite;
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit2 100s linear infinite;
     transition: 1s;
 }
 
 #circle-around-first-2{
-    transform: rotate(360deg) translateX(300px) rotate(-360deg);
-    -webkit-animation: orbit3 130s linear infinite;
-    -moz-animation: orbit3 130s linear infinite;
-    -o-animation: orbit3 130s linear infinite;
-    animation: orbit2 130s linear infinite;
+    transform: rotate(360deg) translateX(-300px) rotate(-360deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit3 100s linear infinite;
     transition: 1s;
 }
 
 #circle-around-first-3{
     transform: rotate(360deg) translateX(300px) rotate(-360deg);
-    -webkit-animation: orbit3 180s linear infinite;
-    -moz-animation: orbit3 180s linear infinite;
-    -o-animation: orbit31060s linear infinite;
-    animation: orbit2 180s linear infinite;
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit4 100s linear infinite;
     transition: 1s;
 }
 
 #circle-around-first-4{
-    transform: rotate(360deg) translateX(300px) rotate(-360deg);
-    -webkit-animation: orbit3 230s linear infinite;
-    -moz-animation: orbit3 230s linear infinite;
-    -o-animation: orbit31060s linear infinite;
-    animation: orbit2 230s linear infinite;
+    transform: rotate(360deg) translateX(-300px) rotate(-360deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit5 100s linear infinite;
     transition: 1s;
 }
 
 #circle-around-first-5{
     transform: rotate(360deg) translateX(300px) rotate(-360deg);
-    -webkit-animation: orbit3 280s linear infinite;
-    -moz-animation: orbit3 280s linear infinite;
-    -o-animation: orbit31060s linear infinite;
-    animation: orbit2 280s linear infinite;
+    -webkit-animation: orbit3 50s linear infinite;
+    -moz-animation: orbit3 50s linear infinite;
+    -o-animation: orbit3 50s linear infinite;
+    animation: orbit6 50s linear infinite;
     transition: 1s;
 }
 
@@ -358,5 +358,46 @@ li > p {
 
     to {
         transform: rotate(360deg) translateY(-300px) rotate(-360deg);
+    }
+}
+
+
+@-webkit-keyframes orbit6 {
+    from {
+        -webkit-transform: rotate(0deg) translateY(300px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateY(300px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes orbit6 {
+    from {
+        -moz-transform: rotate(0deg) translateY(300px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateY(300px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes orbit6 {
+    from {
+        -o-transform: rotate(0deg) translateY(300px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateY(300px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit6 {
+    from {
+        transform: rotate(0deg) translateY(300px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateY(300px) rotate(-360deg);
     }
 }
