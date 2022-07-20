@@ -1,10 +1,11 @@
 name: List everyday latest list of AsyncAPI Meetings
 
 on: 
-  workflow_dispatch:
-  schedule:
-  #every day at midnight
-  - cron: "10 0 * * *"
+  push
+  # workflow_dispatch:
+  # schedule:
+  # #every day at midnight
+  # - cron: "10 0 * * *"
 
 jobs:
   meetings:
