@@ -42,6 +42,9 @@ function CommunityIndexPage() {
             <div id="circle-around-second-3" className="circle-around-orbit">
               <img src="/img/homepage/maciej.png" alt="idea" />
             </div>
+            <div id="circle-around-second-4" className="circle-around-orbit">
+              <img src="/img/homepage/eve-and-chan.png" alt="idea" />
+            </div>
           </div>
           <div id="neptune-orbit" className="orbit">
             <div id="neptune"></div>

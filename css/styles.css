@@ -142,7 +142,8 @@ li > p {
 
 #circle-around-second-1,
 #circle-around-second-2,
-#circle-around-second-3
+#circle-around-second-3,
+#circle-around-second-4
  {
   position: absolute;
     width: 40px;
@@ -176,6 +177,15 @@ li > p {
     -moz-animation: secondOrbit3 80s linear infinite;
     -o-animation: secondOrbit3 80s linear infinite;
     animation: secondOrbit4 80s linear infinite;
+    transition: 1s;
+}
+
+#circle-around-second-4{
+    transform: rotate(360deg) translateX(-400px) rotate(-360deg);
+    -webkit-animation: secondOrbit3 80s linear infinite;
+    -moz-animation: secondOrbit3 80s linear infinite;
+    -o-animation: secondOrbit3 80s linear infinite;
+    animation: secondOrbit5 80s linear infinite;
     transition: 1s;
 }
 
