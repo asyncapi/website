@@ -22,7 +22,7 @@ jobs:
         - name: Install dependencies
           run: npm install
         - name: Regenerate
-          run: npm run generate:meetings && npm run generate:videos
+          run: npm run generate:videos && npm run generate:meetings
         - name: Create Pull Request with new meetings.json and newsroom-videos.json version
           uses: peter-evans/create-pull-request@v3
           with:
