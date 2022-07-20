@@ -19,6 +19,19 @@ Internally, we used a message-driven microservices architecture and we couldn't 
 
 **It was time to come up with something good enough for everyone instead of having every company doing its own battle. We can learn a lot together if we join forces, so we decided to create AsyncAPI!**
 
+## Open governance model
+
+Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
+
+Partnership with Postman speeded up the initiative's work in transferring AsyncAPI to a foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
+
+In doing so, we achieve:
+
+- Ensuring an open governance model where no single company dominates the specification and its tools.
+- Making the project as democratic as possible.
+- Relying on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
+
+In other words, it [gives equal power to individual and corporate contributors](/blog/governance-motivation).
 
 ## Maintainers 
 
@@ -58,20 +71,6 @@ The total number of companies and projects using AsyncAPI as well as their ident
 - [**SAP**](https://www.sap.com/index.html): Company dedicated to the design of computer products for business management. Develops business software to manage operations and business-to-customer relationships. It’s a large company with 100,330 employees.
 - [**IQVIA**](https://www.iqvia.com/"): Company providing services for the combined health information technology and clinical research industries. It employs more than 58.000 people in over 100 countries
 
-## Open governance model
-
-Free software allows users to apply, modify, and continue in the chain by distributing copies to help others and, in this case, disseminating modified versions of the specification. 
-
-The partnership mentioned above with Postman speeded up the initiative's work in transferring AsyncAPI to a foundation and forming [an open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) to assure the community that a single company does not control AsyncAPI Initiative. This move takes the project to a higher level. 
-
-In doing so, we achieve:
-
-- Ensuring an open governance model where no single company dominates the specification and its tools.
-- Making the project as democratic as possible.
-- Relying on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
-
-In other words, it [gives equal power to individual and corporate contributors](/blog/governance-motivation).
-
 ## Values of AsyncAPI
 
 - **Innovative**. There is no other specification that covers the messaging needs in the event-driven architecture that AsyncAPI is covering. What it tries to do is to integrate with the existing tools and remove walls for communication.
@@ -89,8 +88,6 @@ AsyncAPI is an open source project and is therefore funded by talent and volunta
 Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. The main sponsors that contribute to sustain this initiative are Postman, IBM, IQVIA Technology and Solace. On different levels project receives contribution from companies like Red Hat and Slack, just to name few.
 
 All the information about the project's economy, the amount of the donations, the identity of the donors, the sponsors supporting the project and the use of this money is public and goes through the Open Collective. [More information here](https://opencollective.com/asyncapi)
-
-Open Collective is an online crowdfunding platform for open and transparent communities. It provides the necessary tools to collect and share the finances raised with complete transparency. It is an ideal collective for communities such as collaborative groups or open source projects among others. This platform can be used to raise and transparently disburse money for the benefit of their members, their registered projects, and those who want to support them.
 
 ## Contact details
 
