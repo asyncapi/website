@@ -1,15 +1,14 @@
 name: List everyday latest list of AsyncAPI Meetings
 
 on: 
-  push
-  # workflow_dispatch:
-  # schedule:
-  # #every day at midnight
-  # - cron: "10 0 * * *"
+  workflow_dispatch:
+  schedule:
+  #every day at midnight
+  - cron: "10 0 * * *"
 
 jobs:
   meetings:
-      # if: github.repository == 'asyncapi/website'
+      if: github.repository == 'asyncapi/website'
       env:
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
         CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
@@ -22,7 +21,7 @@ jobs:
         - name: Install dependencies
           run: npm install
         - name: Regenerate
-          run: npm run generate:videos && npm run generate:meetings
+          run: npm run generate:meetings && npm run generate:videos
         - name: Create Pull Request with new meetings.json and newsroom-videos.json version
           uses: peter-evans/create-pull-request@v3
           with:
