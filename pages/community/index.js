@@ -13,13 +13,22 @@ function CommunityIndexPage() {
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
             <div className="w-full h-full flex justify-center mt-20">
-              <Heading
-                className="countdown-text-gradient font-bold"
-                level="h6"
-                typeStyle="heading-xs"
-              >
-                AsyncAPI Community
-              </Heading>
+              <div className="text-center">
+                <Heading
+                  className="countdown-text-gradient font-bold"
+                  level="h6"
+                  typeStyle="heading-xs"
+                >
+                  AsyncAPI Community
+                </Heading>
+                <div className="mt-10">
+                  <Heading level="h1" typeStyle="heading-xl">
+                    <span className="block md:-mt-1 leading-[3rem]">
+                      The home <br /> for developer <br /> communities
+                    </span>
+                  </Heading>
+                </div>
+              </div>
             </div>
             <div id="circle-around-first-5" className="circle-around-orbit">
               <div>
