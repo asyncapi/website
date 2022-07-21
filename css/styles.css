@@ -65,11 +65,10 @@ li > p {
 #first-orbit {
     width: 600px;
     height: 600px;
-  top: 165px;
-  left: calc(50% - 300px);
-  position: relative;
+    top: 165px;
+    left: calc(50% - 300px);
+    position: relative;
 }
-
 
 #circle-around-first-1,
 #circle-around-first-2,
@@ -86,7 +85,7 @@ li > p {
 }
 .circle-around-orbit > img{
     border-radius: 100%;
-    width: 30px;
+    width: 35px;
 }
 #circle-around-first-1{
     transform: rotate(360deg) translateX(300px) rotate(-360deg);
@@ -143,7 +142,10 @@ li > p {
 #circle-around-second-1,
 #circle-around-second-2,
 #circle-around-second-3,
-#circle-around-second-4
+#circle-around-second-4,
+#circle-around-second-5,
+#circle-around-second-6,
+#circle-around-second-7
  {
   position: absolute;
     width: 40px;
@@ -187,6 +189,38 @@ li > p {
     -o-animation: secondOrbit3 80s linear infinite;
     animation: secondOrbit5 80s linear infinite;
     transition: 1s;
+}
+
+#circle-around-second-5{
+    transform: rotate(360deg) translateX(-400px) rotate(-360deg);
+    -webkit-animation: secondOrbit2 80s linear infinite;
+    -moz-animation: secondOrbit2 80s linear infinite;
+    -o-animation: secondOrbit2 80s linear infinite;
+    animation: secondOrbit3 80s linear infinite;
+    transition: 1s;
+}
+
+#circle-around-second-6{
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    -webkit-animation: secondOrbit2 80s linear infinite;
+    -moz-animation: secondOrbit2 80s linear infinite;
+    -o-animation: secondOrbit2 80s linear infinite;
+    animation: secondOrbit2 80s linear infinite;
+    transition: 1s;
+}
+
+#circle-around-second-7{
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    -webkit-animation: secondOrbit3 50s linear infinite;
+    -moz-animation: secondOrbit3 50s linear infinite;
+    -o-animation: secondOrbit3 50s linear infinite;
+    animation: secondOrbit3 50s linear infinite;
+    transition: 1s;
+}
+
+#circle-around-second-7 > div{
+  -webkit-animation: spin-right 10s linear infinite;
+  animation: spin-right 10s linear infinite;
 }
 
 #neptune-orbit {
@@ -599,3 +633,43 @@ li > p {
         transform: rotate(360deg) translateX(-400px) rotate(-360deg);
     }
 }
+
+@-webkit-keyframes secondOrbit6 {
+    from {
+        -webkit-transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+}
+@-moz-keyframes secondOrbit6 {
+    from {
+        -moz-transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes secondOrbit6 {
+    from {
+        -o-transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+}
+
+@keyframes secondOrbit6 {
+    from {
+        transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+}
+

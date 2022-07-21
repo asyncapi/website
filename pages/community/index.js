@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from '../../components/typography/Heading';
 import CommunityLayout from '../../components/layout/CommunityLayout';
 
 function CommunityIndexPage() {
@@ -11,6 +12,20 @@ function CommunityIndexPage() {
       <div className="h-screen">
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
+            <div className="w-full h-full flex justify-center mt-20">
+              <Heading
+                className="countdown-text-gradient font-bold"
+                level="h6"
+                typeStyle="heading-xs"
+              >
+                AsyncAPI Community
+              </Heading>
+            </div>
+            <div id="circle-around-first-5" className="circle-around-orbit">
+              <div>
+                <img src="/img/homepage/reaction.png" alt="idea" />
+              </div>
+            </div>
             <div id="circle-around-first-1" className="circle-around-orbit">
               <img src="/img/homepage/fran.png" alt="idea" />
             </div>
@@ -25,14 +40,14 @@ function CommunityIndexPage() {
                 <img src="/img/homepage/comment.png" alt="idea" />
               </div>
             </div>
-            <div id="circle-around-first-5" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/reaction.png" alt="idea" />
-              </div>
-            </div>
             {/* <div><h1>Hello world</h1></div> */}
           </div>
           <div id="second-orbit" className="orbit">
+            <div id="circle-around-second-7" className="circle-around-orbit">
+              <div>
+                <img src="/img/homepage/slack.png" alt="idea" />
+              </div>
+            </div>
             <div id="circle-around-second-1" className="circle-around-orbit">
               <img src="/img/homepage/lukasz-homepage-slack.jpg" alt="idea" />
             </div>
@@ -44,6 +59,16 @@ function CommunityIndexPage() {
             </div>
             <div id="circle-around-second-4" className="circle-around-orbit">
               <img src="/img/homepage/eve-and-chan.png" alt="idea" />
+            </div>
+            <div id="circle-around-second-5" className="circle-around-orbit">
+              <div>
+                <img src="/img/homepage/check.png" alt="idea" />
+              </div>
+            </div>
+            <div id="circle-around-second-6" className="circle-around-orbit">
+              <div>
+                <img src="/img/homepage/git.png" alt="idea" />
+              </div>
             </div>
           </div>
           <div id="neptune-orbit" className="orbit">
