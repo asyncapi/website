@@ -2,6 +2,116 @@ import React from 'react';
 import Heading from '../../components/typography/Heading';
 import CommunityLayout from '../../components/layout/CommunityLayout';
 
+const orbit1 = [
+  {
+    id: 'item',
+    img: '/img/homepage/reaction.png',
+    alt: 'reaction',
+  },
+  {
+    id: 'item',
+    img: '/img/homepage/ale.jpeg',
+    alt: 'ale',
+  },
+  {
+    id: 'item',
+    img: '/img/homepage/idea.png',
+    alt: 'idea',
+  },
+  {
+    id: 'item',
+    img: '/img/homepage/lukasz-homepage-slack.jpg',
+    alt: 'lukasz',
+  },
+  {
+    id: 'item',
+    img: '/img/homepage/comment.png',
+    alt: 'comment',
+  },
+  {
+    id: 'item',
+    img: '/img/homepage/fran.png',
+    alt: 'fran',
+  },
+];
+
+
+const orbit2 = [
+  {
+    id: 'item-2',
+    img: '/img/homepage/jonas.jpeg',
+    alt: 'jonas',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/slack.png',
+    alt: 'slack',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/missy.jpeg',
+    alt: 'missy',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/check.png',
+    alt: 'check',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/eve-and-chan.png',
+    alt: 'eve-chan',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/maciej.png',
+    alt: 'maciej',
+  },
+  {
+    id: 'item-2',
+    img: '/img/homepage/git.png',
+    alt: 'git',
+  },
+];
+
+const orbit3 = [
+  {
+    id: 'item-3',
+    img: '/img/homepage/ace.jpeg',
+    alt: 'ace',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/slack.png',
+    alt: 'slack',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/barbano.jpeg',
+    alt: 'barbano',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/dale.jpeg',
+    alt: 'dale',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/kuda.jpeg',
+    alt: 'kuda',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/maciej.png',
+    alt: 'maciej',
+  },
+  {
+    id: 'item-3',
+    img: '/img/homepage/sergio.jpeg',
+    alt: 'sergio',
+  },
+];
+
 function CommunityIndexPage() {
   return (
     <CommunityLayout
@@ -12,76 +122,25 @@ function CommunityIndexPage() {
       <div className="h-screen">
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
-            <div className="w-full h-full flex justify-center mt-20">
-              <div className="text-center">
-                <Heading
-                  className="countdown-text-gradient font-bold"
-                  level="h6"
-                  typeStyle="heading-xs"
-                >
-                  AsyncAPI Community
-                </Heading>
-                <div className="mt-10">
-                  <Heading level="h1" typeStyle="heading-xl">
-                    <span className="block md:-mt-1 leading-[3rem]">
-                      The home <br /> for developer <br /> communities
-                    </span>
-                  </Heading>
-                </div>
+            {orbit1.map((orbit) => (
+              <div key={orbit.id} className={orbit.id}>
+                <img src={orbit.img} alt={orbit.alt} />
               </div>
-            </div>
-            <div id="circle-around-first-5" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/reaction.png" alt="idea" />
-              </div>
-            </div>
-            <div id="circle-around-first-1" className="circle-around-orbit">
-              <img src="/img/homepage/fran.png" alt="idea" />
-            </div>
-            <div id="circle-around-first-2" className="circle-around-orbit">
-              <img src="/img/homepage/ale.jpeg" alt="idea" />
-            </div>
-            <div id="circle-around-first-3" className="circle-around-orbit">
-              <img src="/img/homepage/idea.png" alt="idea" />
-            </div>
-            <div id="circle-around-first-4" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/comment.png" alt="idea" />
-              </div>
-            </div>
-            {/* <div><h1>Hello world</h1></div> */}
+            ))}
           </div>
           <div id="second-orbit" className="orbit">
-            <div id="circle-around-second-7" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/slack.png" alt="idea" />
+            {orbit2.map((orbit) => (
+              <div key={orbit.id} className={orbit.id}>
+                <img src={orbit.img} alt={orbit.alt} />
               </div>
-            </div>
-            <div id="circle-around-second-1" className="circle-around-orbit">
-              <img src="/img/homepage/lukasz-homepage-slack.jpg" alt="idea" />
-            </div>
-            <div id="circle-around-second-2" className="circle-around-orbit">
-              <img src="/img/homepage/missy.jpeg" alt="idea" />
-            </div>
-            <div id="circle-around-second-3" className="circle-around-orbit">
-              <img src="/img/homepage/maciej.png" alt="idea" />
-            </div>
-            <div id="circle-around-second-4" className="circle-around-orbit">
-              <img src="/img/homepage/eve-and-chan.png" alt="idea" />
-            </div>
-            <div id="circle-around-second-5" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/check.png" alt="idea" />
-              </div>
-            </div>
-            <div id="circle-around-second-6" className="circle-around-orbit">
-              <div>
-                <img src="/img/homepage/git.png" alt="idea" />
-              </div>
-            </div>
+            ))}
           </div>
-          <div id="neptune-orbit" className="orbit">
-            <div id="neptune"></div>
+          <div id="third-orbit" className="orbit">
+            {orbit3.map((orbit) => (
+              <div key={orbit.id} className={orbit.id}>
+                <img src={orbit.img} alt={orbit.alt} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
