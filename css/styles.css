@@ -58,15 +58,18 @@ li > p {
 .orbit {
   position: absolute;
   border-radius: 100%;
-  border: solid 2px #f3f3f4;
+  border: solid 3px #f3f3f4;
   transition: .2s;
 }
 
 .orbit > div > img {
     border-radius: 100%;
-    width: 60px;
+    width: 200px;
 }
-
+.title {
+    line-height: 0.9;
+    font-size: 60px
+}
 #first-orbit {
   --n:6;   /* number of item */
   --d:70s; /* duration */
@@ -106,6 +109,7 @@ li > p {
   grid-template-rows:30px;
   place-content: center;
 }
+
 
 .item, .item-2, .item-3 {
   grid-area:1/1;
