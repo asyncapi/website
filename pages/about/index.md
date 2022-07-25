@@ -45,7 +45,7 @@ You can see the list of maintainers who are also part of the [AsyncAPI TSC here]
 
 We do our best to recognize every contribution to the project. We do it individually in every repository from [AsyncAPI GitHub organization](https://github.com/asyncapi/). There should always be a **Contributors** section in the readme, like [this one](https://github.com/asyncapi/asyncapi/blob/master/README.md#contributors). We use [All Contributors](https://allcontributors.org/docs/en/specification) specification to handle recognitions. 
 
-We apologize in advance if we failed in recognizing your work. Feel free to contact us on [slack](https://www.asyncapi.com/slack-invite/) and we will fix it immediately, or just talk to [All Contributors](https://allcontributors.org) bot.
+We apologize in advance if we failed in recognizing your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/) and we will fix it immediately, or just talk to [All Contributors](https://allcontributors.org) bot.
 
 ## AsyncAPI, in numbers
 We, at AsynAPI, are trying to build the future of Event-Driven Architectures. We are steadily progressing towards our mission and we are growing as a strong community. Interested to know more about our growth? Feel free to check our annual summary report: 
@@ -60,7 +60,7 @@ This is the list of companies that either provide a significant financial suppor
 
 Would you like to get on the list and support us financially? Check out the [sponsoring options](https://opencollective.com/asyncapi).
 
-Would you like to help us with the maintainance? Contact us on [slack](https://www.asyncapi.com/slack-invite/).
+Would you like to help us with the maintainance? Contact us on [Slack](https://www.asyncapi.com/slack-invite/).
 
 ## Brands and companies using AsyncAPI
 The total number of companies and projects using AsyncAPI as well as their identity is impossible to know. So far, we are aware that the following ones operate with it.
@@ -69,7 +69,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 - [**Salesforce**](https://login.salesforce.com/?locale=es): Business consultancy company. It provides (CRM) service and other services. It manages from small businesses to FORTUNE 500 companies and it has more than 150,000 customers.
 - [**IBM**](https://www.ibm.com): Company that manufactures and markets hardware and software. It has operations in over 170 countries and provides hosting and consulting services in many areas.
 - [**SAP**](https://www.sap.com/index.html): Company dedicated to the design of computer products for business management. Develops business software to manage operations and business-to-customer relationships. It’s a large company with 100,330 employees.
-- [**IQVIA**](https://www.iqvia.com/"): Company providing services for the combined health information technology and clinical research industries. It employs more than 58.000 people in over 100 countries
+- [**IQVIA**](https://www.iqvia.com/"): Company providing services for the combined health information technology and clinical research industries. It employs more than 58.000 people in over 100 countries.
 
 ## Values of AsyncAPI
 
@@ -78,7 +78,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 - **Open**. As it's an open-source project and not a company or a product, it works in a change of paradigm: it does not sell anything, it moves away from fierce competition and bets for cooperation.
 - **Multicultural and inclusive**. It’s an initiative with an international and multicultural vision. It’s organic, always in constant mutation and change. It also actively demands compliance with human rights, respect for racial, sexual, and cultural diversity equality. And, of course, the equality between women and men.
 - **Transparent**. The initiative it’s built on transparency, being one of the main values of AsyncAPI, both internally and externally including its financing. All the relevant data of the project is public. The tasks that are being and will be worked on are public and participatory through Slack and GitHub.
-- **Horizontal and participative**. Its structure is based on horizontality; most of the decisions are defined as a group, including the Community. Anyone can submit improvements, lines of action, or elements to be taken into account to strengthen AsyncAPI
+- **Horizontal and participative**. Its structure is based on horizontality; most of the decisions are defined as a group, including the Community. Anyone can submit improvements, lines of action, or elements to be taken into account to strengthen AsyncAPI.
 - **User-friendly**. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API within minutes without prior knowledge of AsyncAPI. It has to be natural, simple, and intuitive.
 
 ## Funding
@@ -92,7 +92,7 @@ All the information about the project's economy, the amount of the donations, th
 ## Contact details
 
 - Press & communications info:
-[**press@asyncapi.io**](mailto:press@asyncapi.io)
+[**press@asyncapi.io**](mailto:press@asyncapi.io).
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all the news and information regarding the project, but also for resolving user queries and sharing news of projects related to technology.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/subscribe/): To learn about the status of the project, news, actualizations, recorded events, and meetings.
@@ -105,8 +105,8 @@ All the information about the project's economy, the amount of the donations, th
 ## Frequently asked questions
 
 - **What is the goal of the project?** To make asynchronous APIs as successful and mature as REST APIs.
-- **What protocols does it support?** AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject)
-- **Who are the users of AsyncAPI?** AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka
+- **What protocols does it support?** AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
+- **Who are the users of AsyncAPI?** AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka.
 - **What is the AsyncAPI Community?** It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
 - **Who can use it?** Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
 - **Where can I find more information?**
