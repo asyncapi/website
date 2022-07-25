@@ -1,4 +1,4 @@
-name: List everyday latest list of AsyncAPI Meetings
+name: List everyday latest list of AsyncAPI Meetings and Newsroom Videos
 
 on: 
   workflow_dispatch:
@@ -26,8 +26,17 @@ jobs:
           uses: peter-evans/create-pull-request@v3
           with:
             token: ${{ secrets.GH_TOKEN }}
-            commit-message: 'chore: update meetings.json'
+            commit-message: 'chore: update meetings.json and newsrooom_videos.json'
             committer: asyncapi-bot <info@asyncapi.io>
             author: asyncapi-bot <info@asyncapi.io>
-            title: 'chore: update meetings.json'
-            branch: update-meetings/${{ github.job }} 
+            title: 'chore: update meetings.json and newsrooom_videos.json'
+            branch: update-meetings/${{ github.job }}
+        - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
+          name: Report workflow run status to Slack
+          uses: 8398a7/action-slack@v3
+          with:
+            status: ${{ job.status }}
+            fields: repo,action,workflow
+            text: 'AsyncAPI Meetings and Videos workflow failed'
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_CI_FAIL_NOTIFY }}
