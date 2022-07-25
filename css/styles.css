@@ -64,7 +64,6 @@ li > p {
 
 .orbit > div > img {
     border-radius: 100%;
-    width: 200px;
 }
 .title {
     line-height: 0.9;
@@ -79,8 +78,8 @@ li > p {
     left: calc(50% - 300px);
     position: relative;
       display:grid;
-  grid-template-columns:30px;
-  grid-template-rows:30px;
+  grid-template-columns:35px;
+  grid-template-rows:35px;
   place-content: center;
 }
 
@@ -92,8 +91,8 @@ li > p {
   top: 75px;
   left: calc(50% - 400px);
   display:grid;
-  grid-template-columns:30px;
-  grid-template-rows:30px;
+  grid-template-columns:35px;
+  grid-template-rows:35px;
   place-content: center;
 }
 
@@ -105,8 +104,8 @@ li > p {
    top: -10px;
   left: calc(50% - 500px);
   display:grid;
-  grid-template-columns:30px;
-  grid-template-rows:30px;
+  grid-template-columns:35px;
+  grid-template-rows:35px;
   place-content: center;
 }
 
@@ -176,3 +175,10 @@ li > p {
 .item-3:nth-child(7) {animation-delay:calc(-6*var(--ds)/var(--ni))}
 .item-3:nth-child(8) {animation-delay:calc(-7*var(--ds)/var(--ni))}
 .item-3:nth-child(9) {animation-delay:calc(-8*var(--ds)/var(--ni))}
+
+.gh-img{
+    border: 1px solid #d4cfd76a;
+    border-radius: 10px;
+    box-shadow: 5px 20px 18px 10px #e8e8e8;
+     background: linear-gradient(225deg, #2DCCFD 9.35%, #AD20E2 88.41%);
+}

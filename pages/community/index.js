@@ -121,12 +121,12 @@ function CommunityIndexPage() {
       description="The home for developer communities"
       wide
     >
-      <div className="h-screen">
+      <div className="">
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
             {orbit1.map((orbit) => (
               <div key={orbit.id} className={orbit.id}>
-                <img src={orbit.img} alt={orbit.alt} />
+                <img src={orbit.img} alt={orbit.alt} className="orbit-img" />
               </div>
             ))}
             <div className="w-full absolute h-full flex justify-center z-50">
@@ -181,6 +181,32 @@ function CommunityIndexPage() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="text-center relative h-screen z-50">
+        <div className="gh-bg absolute">
+          <img
+            className="gh-img"
+            src="/img/homepage/discuss-page.png"
+            alt="github-discussion"
+          />
+        </div>
+      </div>
+      <div className="text-center flex justify-center flex-col items-center">
+        <Heading level="h1" typeStyle="heading-xl" className="md:text-5xl">
+          Home of #CommunityOps
+        </Heading>
+        <div className="w-3/6">
+          <Heading
+            level="h2"
+            typeStyle="body-lg"
+            textColor="text-gray-700"
+            className="text-slate-500 text-sm"
+          >
+            Decrease the burden of managing active work in issues and pull
+            requests by providing a separate space to host ongoing discussions,
+            questions, and ideas.
+          </Heading>
         </div>
       </div>
     </CommunityLayout>
