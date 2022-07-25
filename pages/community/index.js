@@ -115,11 +115,16 @@ const orbit3 = [
 ];
 
 function CommunityIndexPage() {
+      const handleScroll = (event) => {
+        console.log('scrollTop: ', event.currentTarget.scrollTop);
+        console.log('offsetHeight: ', event.currentTarget.offsetHeight);
+      };
   return (
     <CommunityLayout
       title="AsyncAPI Meetings"
       description="The home for developer communities"
       wide
+      onScroll={handleScroll}
     >
       <div className="">
         <div className="orbit-container">
@@ -129,7 +134,7 @@ function CommunityIndexPage() {
                 <img src={orbit.img} alt={orbit.alt} className="orbit-img" />
               </div>
             ))}
-            <div className="w-full absolute h-full flex justify-center z-50">
+            <div className="w-full absolute h-full flex justify-center z-40">
               <div className="text-center flex justify-center flex-col items-center">
                 <Heading
                   className="countdown-text-gradient font-bold"
@@ -183,7 +188,7 @@ function CommunityIndexPage() {
           </div>
         </div>
       </div>
-      <div className="text-center relative h-screen z-50">
+      <div className="text-center relative h-screen z-40">
         <div className="gh-bg absolute">
           <img
             className="gh-img"
