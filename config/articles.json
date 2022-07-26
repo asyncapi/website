@@ -1,0 +1,38 @@
+[
+    {
+        "author": "Barbanio González",
+        "title": "Made by Technology",
+        "url": "https://www.linux.com/audience/made-by-technology/",
+        "publishDate": "March 15, 2022"
+    },
+    {
+        "author": "Barbanio González",
+        "title": "AsyncAPI and Its Horizontal Working System",
+        "url": "https://dzone.com/articles/asyncapi-and-its-horizontal-working-system",
+        "publishDate": "June 16, 2021"
+    },
+    {
+        "author": "Barbanio González",
+        "title": "AsyncAPI: Transparency as a Value",
+        "url": "https://devops.com/asyncapi-transparency-as-a-value/",
+        "publishDate": "October 26, 2021"
+    },
+    {
+        "author": "Barbanio González",
+        "title": "Multiculturalism in technology and its limits: AsyncAPI and the long road to open source utopia",
+        "url": "https://www.linux.com/audience/multiculturalism-in-technology-and-its-limits-asyncapi-and-the-long-road-to-open-source-utopia/",
+        "publishDate": "January 5, 2022"
+    },
+    {
+        "author": "Shekhar Banerjee",
+        "title": "AsyncAPI 2.0: Enabling the Event-Driven World",
+        "url": "https://thenewstack.io/asyncapi-2-0-enabling-the-event-driven-world/",
+        "publishDate": "April 29, 2021"
+    },
+    {
+        "author": "Eran Stiller",
+        "title": "eBay Adopts AsyncAPI for Asynchronous API Contracts",
+        "url": "https://www.infoq.com/news/2021/05/ebay-adopts-asyncapi/",
+        "publishDate": "May 19, 2021"
+    }
+]
