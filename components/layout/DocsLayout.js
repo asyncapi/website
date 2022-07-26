@@ -12,7 +12,7 @@ import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
-import { SearchButton } from '../AlgoliaSearch';
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -118,6 +118,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
               <SearchButton 
                 className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
               >
                 {({ actionKey }) => (
                   <>

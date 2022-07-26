@@ -25,7 +25,6 @@ import AlgoliaSearch from '../components/AlgoliaSearch';
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
-
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <Head>

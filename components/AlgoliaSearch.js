@@ -6,8 +6,8 @@ import Head from 'next/head'
 import { DocSearchModal } from '@docsearch/react'
 import clsx from 'clsx'
 
-const INDEX_NAME = 'asyncapi';
-const DOCS_INDEX_NAME = 'asyncapi-docs';
+export const INDEX_NAME = 'asyncapi';
+export const DOCS_INDEX_NAME = 'asyncapi-docs';
 const APP_ID = 'Z621OGRI9Y';
 const API_KEY = '5a4122ae46ce865146d23d3530595d38';
 
@@ -15,11 +15,13 @@ const SearchContext = createContext()
 
 export default function AlgoliaSearch({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [indexName, setIndexName] = useState(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState(null);
 
-  const onOpen = useCallback(() => {
+  const onOpen = useCallback((_indexName) => {
+    _indexName && setIndexName(_indexName);
     setIsOpen(true)
-  }, [setIsOpen]);
+  }, [setIsOpen, setIndexName]);
 
   const onClose = useCallback(() => {
     setIsOpen(false);
@@ -55,14 +57,13 @@ export default function AlgoliaSearch({ children }) {
       >
         {children}
       </SearchContext.Provider>
-      {isOpen && <AlgoliaModal initialQuery={initialQuery} onClose={onClose} />}
+      {isOpen && <AlgoliaModal initialQuery={initialQuery} onClose={onClose} indexName={indexName} />}
     </>
   );
 }
 
-function AlgoliaModal({ onClose, initialQuery }) {
+function AlgoliaModal({ onClose, initialQuery, indexName }) {
   const router = useRouter();
-  const isDocs = router.pathname.startsWith('/docs');
 
   return createPortal(
     <DocSearchModal
@@ -73,7 +74,7 @@ function AlgoliaModal({ onClose, initialQuery }) {
       }}
       placeholder="Search documentation"
       onClose={onClose}
-      indexName={isDocs ? DOCS_INDEX_NAME : INDEX_NAME}
+      indexName={indexName}
       apiKey={API_KEY}
       appId={APP_ID}
       navigator={{
@@ -123,7 +124,12 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
         if (isOpen) {
           onClose()
         } else if (!document.body.classList.contains('DocSearch--active')) {
-          onOpen()
+          let indexName = INDEX_NAME;
+          if (typeof document !== 'undefined') {
+            const loc = document.location;
+            indexName = loc.pathname.startsWith('/docs') ? DOCS_INDEX_NAME : INDEX_NAME;
+          }
+          onOpen(indexName)
         }
       }
     }
@@ -132,10 +138,10 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }) {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isOpen, onOpen, onClose])
+  }, [isOpen, onOpen, onClose]);
 }
 
-export function SearchButton({ children, ...props }) {
+export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
   const { onOpen, onInput } = useContext(SearchContext);
   const searchButtonRef = useRef();
   const actionKey = getActionKey();
@@ -153,10 +159,17 @@ export function SearchButton({ children, ...props }) {
     return () => {
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [onInput, searchButtonRef])
+  }, [onInput, searchButtonRef]);
 
   return (
-    <button type="button" ref={searchButtonRef} onClick={onOpen} {...props}>
+    <button 
+      type="button" 
+      ref={searchButtonRef} 
+      onClick={() => {
+        onOpen(indexName);
+      }} 
+      {...props}
+    >
       {typeof children === 'function' ? children({ actionKey }) : children}
     </button>
   );
