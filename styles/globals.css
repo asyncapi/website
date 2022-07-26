@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-@import "swiper/swiper.min";
-@import "swiper/modules/a11y/a11y.min";
-@import "swiper/modules/navigation/navigation.min";
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/scrollbar';
 
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 
