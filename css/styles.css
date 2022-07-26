@@ -6,7 +6,6 @@
 @import "swiper/swiper.min";
 @import "swiper/modules/a11y/a11y.min";
 @import "swiper/modules/navigation/navigation.min";
-@import 'docsearch.css';
 /*! purgecss end ignore */
 
 @import "tailwindcss/utilities";

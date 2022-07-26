@@ -1,0 +1,22 @@
+name: Trigger Algolia Crawler
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-algolia-crawler:
+    name: Run Algolia Crawler to update the search indexes
+    if: github.repository == 'asyncapi/website'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep for 900 seconds (15 minutes) to make sure the site is rebuilt and deployed by Netlify
+        run: sleep 900
+      - name: Trigger Algolia Crawler
+        run: |
+          curl -H "Content-Type: application/json" -X POST --user $CRAWLER_USER_ID:$CRAWLER_API_KEY "https://crawler.algolia.com/api/1/crawlers/$CRAWLER_ID/reindex"
+        env:
+          CRAWLER_USER_ID: ${{ secrets.CRAWLER_USER_ID }}
+          CRAWLER_API_KEY: ${{ secrets.CRAWLER_API_KEY }}
+          CRAWLER_ID: ${{ secrets.CRAWLER_ID }}

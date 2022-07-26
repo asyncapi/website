@@ -117,7 +117,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
 
               <SearchButton 
-                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-4 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
               >
                 {({ actionKey }) => (
                   <>

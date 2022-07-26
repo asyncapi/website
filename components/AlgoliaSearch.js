@@ -7,8 +7,9 @@ import { DocSearchModal } from '@docsearch/react'
 import clsx from 'clsx'
 
 const INDEX_NAME = 'asyncapi';
+const DOCS_INDEX_NAME = 'asyncapi-docs';
 const APP_ID = 'Z621OGRI9Y';
-const API_KEY = '09fe8dc96d776bfaf2da47a6d5f57a3f';
+const API_KEY = '5a4122ae46ce865146d23d3530595d38';
 
 const SearchContext = createContext()
 
@@ -21,7 +22,7 @@ export default function AlgoliaSearch({ children }) {
   }, [setIsOpen]);
 
   const onClose = useCallback(() => {
-    setIsOpen(false)
+    setIsOpen(false);
   }, [setIsOpen]);
 
   const onInput = useCallback(
@@ -61,6 +62,7 @@ export default function AlgoliaSearch({ children }) {
 
 function AlgoliaModal({ onClose, initialQuery }) {
   const router = useRouter();
+  const isDocs = router.pathname.startsWith('/docs');
 
   return createPortal(
     <DocSearchModal
@@ -71,7 +73,7 @@ function AlgoliaModal({ onClose, initialQuery }) {
       }}
       placeholder="Search documentation"
       onClose={onClose}
-      indexName={INDEX_NAME}
+      indexName={isDocs ? DOCS_INDEX_NAME : INDEX_NAME}
       apiKey={API_KEY}
       appId={APP_ID}
       navigator={{
@@ -82,6 +84,9 @@ function AlgoliaModal({ onClose, initialQuery }) {
       }}
       hitComponent={Hit}
       transformItems={transformItems}
+      getMissingResultsUrl={({ query }) => {
+        return `https://github.com/asyncapi/website/issues/new?title=${query}`;
+      }}
     />,
     document.body,
   );

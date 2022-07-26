@@ -110,59 +110,44 @@ export default function NavBar({
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <SearchButton 
-            className="flex items-center text-left space-x-2 px-2 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
-          >
-            {({ actionKey }) => (
-              <>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-none text-slate-300 dark:text-slate-400"
-                  aria-hidden="true"
-                >
-                  <path d="m19 19-3.5-3.5" />
-                  <circle cx="11" cy="11" r="6" />
-                </svg>
-                <span className="flex-auto">Search...</span>
-                {actionKey && (
-                  <kbd className="font-sans font-semibold dark:text-slate-500">
-                    <abbr
-                      title={actionKey.key}
-                      className="no-underline text-slate-300 dark:text-slate-500"
-                    >
-                      {actionKey.shortKey}
-                    </abbr>{' '}
-                    K
-                  </kbd>
-                )}
-              </>
-            )}
-          </SearchButton>
-
-          {/* <SearchButton className="text-slate-500 hover:text-slate-600 w-8 h-8 -my-1 flex items-center justify-center dark:hover:text-slate-300">
-            <span className="sr-only">Search</span>
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+          <div className="flex flex-row items-center justify-content">
+            <SearchButton 
+              className="flex items-center text-left space-x-2 px-2 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
             >
-              <path d="m19 19-3.5-3.5" />
-              <circle cx="11" cy="11" r="6" />
-            </svg>
-          </SearchButton> */}
+              {({ actionKey }) => (
+                <>
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="flex-none text-slate-300 dark:text-slate-400"
+                    aria-hidden="true"
+                  >
+                    <path d="m19 19-3.5-3.5" />
+                    <circle cx="11" cy="11" r="6" />
+                  </svg>
+                  <span className="flex-auto text-sm">Search...</span>
+                  {actionKey ? (
+                    <kbd className="font-sans font-semibold dark:text-slate-500 text-sm">
+                      <abbr
+                        title={actionKey.key}
+                        className="no-underline text-slate-300 dark:text-slate-500"
+                      >
+                        {actionKey.shortKey}
+                      </abbr>{' '}
+                      K
+                    </kbd>
+                  ) : null}
+                </>
+              )}
+            </SearchButton>
 
-          <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
+            <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
+          </div>
         </nav>
 
       </div>
