@@ -182,3 +182,11 @@ li > p {
     box-shadow: 5px 20px 18px 10px #e8e8e8;
      background: linear-gradient(225deg, #2DCCFD 9.35%, #AD20E2 88.41%);
 }
+.community-pattern{
+  background: url('/img/homepage/circular-pattern.png');
+  width: 100%;
+  height: 90%;
+  background-position: center;
+  background-size: cover;
+  margin-top: 300px;
+}

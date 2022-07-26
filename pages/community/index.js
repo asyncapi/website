@@ -114,6 +114,13 @@ const orbit3 = [
   },
 ];
 
+const quickLinks = [
+  { title: 'Advocate Programs', bg: 'white', color: 'primary-600' },
+  { title: 'Events & Meetups', bg: 'primary-600', color: 'white' },
+  { title: 'Community Members', bg: 'white', color: 'primary-600' },
+  { title: 'Start Contributing', bg: 'primary-600', color: 'white' },
+];
+
 function CommunityIndexPage() {
       const handleScroll = (event) => {
         console.log('scrollTop: ', event.currentTarget.scrollTop);
@@ -198,10 +205,10 @@ function CommunityIndexPage() {
         </div>
       </div>
       <div className="text-center flex justify-center flex-col items-center">
-        <Heading level="h1" typeStyle="heading-xl" className="md:text-5xl">
+        <Heading level="h1" typeStyle="heading-xl" className="md:text-5xl z-40">
           Home of #CommunityOps
         </Heading>
-        <div className="w-3/6">
+        <div className="w-3/6 z-40">
           <Heading
             level="h2"
             typeStyle="body-lg"
@@ -213,6 +220,53 @@ function CommunityIndexPage() {
             questions, and ideas.
           </Heading>
         </div>
+        <div className="mt-32 z-40">
+          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {quickLinks.map((link) => (
+              <li
+                key={link.title}
+                className={`h-72 w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
+              >
+                <h1 className={`text-3xl font-black text-${link.color}`}>
+                  {link.title}
+                </h1>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="z-40 mt-28 bg-white w-full h-130 rounded-lg shadow-xl flex justify-between">
+          <div className="p-10 flex justify-between w-2/5 h-full flex-col text-left">
+            <div>
+              <Heading
+                level="h2"
+                typeStyle="heading-md"
+                textColor="text-gray-200"
+              >
+                All community info, tracked
+              </Heading>
+            </div>
+            <div>
+              <Heading level="h2" typeStyle="heading-lg">
+                Community Platform
+              </Heading>
+              <Heading
+                level="h2"
+                typeStyle="body-lg"
+                textColor="text-gray-700"
+                className="text-slate-500 text-sm mt-10"
+              >
+                A powerful and flexible tool for tracking community members
+                information, resources, and activities. All of it is stored in
+                real time, so that your team can access it and act on it.
+              </Heading>
+              <div className="mt-10"></div>
+            </div>
+          </div>
+          <div className="w-3/6 flex justify-end">
+            <img src="/img/homepage/slack-cover.png" alt="slack-cover" />
+          </div>
+        </div>
+        <div className="community-pattern absolute"></div>
       </div>
     </CommunityLayout>
   );

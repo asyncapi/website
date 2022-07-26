@@ -72,8 +72,8 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      primary: colorPrimary, 
-      secondary: colorSecondary, 
+      primary: colorPrimary,
+      secondary: colorSecondary,
       pink: colorPink,
       yellow: colorYellow,
       gray: colorGray,
@@ -82,13 +82,14 @@ module.exports = {
         'dark-highlight': '#3e4d64',
       },
       dark: '#1B1130',
-      'cool-gray':'#9C96A8',
+      'cool-gray': '#9C96A8',
       hub: '#252f3f',
       slack: '#371038',
+      secondaryBlue: '#461E96',
       'mac-window': {
-        'close': '#ff5f56',
-        'minimize': '#ffbd2e',
-        'maximize': '#28c93f',
+        close: '#ff5f56',
+        minimize: '#ffbd2e',
+        maximize: '#28c93f',
       },
     },
     fontWeight: {
@@ -96,10 +97,10 @@ module.exports = {
       light: 300,
       regular: 400,
       medium: 500,
-      'semibold': 600,
+      semibold: 600,
       bold: 700,
-      'extrabold': 800,
-      black: 900
+      extrabold: 800,
+      black: 900,
     },
     animations: {
       blink: {
@@ -119,7 +120,7 @@ module.exports = {
     },
     extend: {
       scale: {
-        '25': '.25',
+        25: '.25',
       },
       padding: {
         '2ch': '2ch',
@@ -131,64 +132,65 @@ module.exports = {
         '14ch': '14ch',
       },
       height: {
-        '72': '18rem',
-        '80': '20rem',
-        '88': '22rem',
-        '96': '24rem',
-        '100': '25rem',
-        '104': '26rem',
-        '108': '27rem',
-        '112': '28rem',
-        '116': '29rem',
-        '120': '30rem',
+        72: '18rem',
+        80: '20rem',
+        88: '22rem',
+        96: '24rem',
+        100: '25rem',
+        104: '26rem',
+        108: '27rem',
+        112: '28rem',
+        116: '29rem',
+        120: '30rem',
+        130: '40rem',
         'half-screen': '50vh',
       },
       maxWidth: {
         '(screen-16)': 'calc(100vw - 16rem)',
         '(screen-34)': 'calc(100vw - 34rem)',
-        '64': '16rem',
-        '164': '41rem',
-        '172': '43rem',
-        '184': '46rem',
+        64: '16rem',
+        164: '41rem',
+        172: '43rem',
+        184: '46rem',
       },
       minWidth: {
-        '72': '18rem',
-        '40': '10rem',
-        '12': '3rem',
+        72: '18rem',
+        40: '10rem',
+        12: '3rem',
       },
       minHeight: {
-        '108': '27rem',
+        108: '27rem',
       },
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
-        '108': '27rem',
-        '(screen-14)': 'calc(100vh - 81px)'
+        108: '27rem',
+        '(screen-14)': 'calc(100vh - 81px)',
       },
       marginRight: {
-        '36': '9rem'
+        36: '9rem',
       },
       fontFamily: {
-        'sans': ['Inter', ...defaultTheme.fontFamily.sans], 
-        'heading': ['Work Sans', ...defaultTheme.fontFamily.sans],
-        'body': ['Inter', ...defaultTheme.fontFamily.sans], 
-        'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        heading: ['Work Sans', ...defaultTheme.fontFamily.sans],
+        body: ['Inter', ...defaultTheme.fontFamily.sans],
+        mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
       },
       letterSpacing: {
         heading: '-0.03em',
-        body: '-0.01em'
+        body: '-0.01em',
       },
       borderRadius: {
-        'xl': '1rem',
+        xl: '1rem',
       },
 
       zIndex: {
-        '60': 60,
+        60: 60,
       },
       rotate: {
-        '-15': '-7deg'
+        '-15': '-7deg',
       },
       fontSize: {
-        'xxs': ['0.6rem', '0.6rem']
+        xxs: ['0.6rem', '0.6rem'],
       },
     },
   },
@@ -198,18 +200,18 @@ module.exports = {
     plugin(({ addUtilities }) => {
       addUtilities({
         '.hljs-asyncapi-file': {
-          'color': colors.yellow[200],
+          color: colors.yellow[200],
         },
         '.hljs-generator-template': {
-          'color': colors.teal[400],
+          color: colors.teal[400],
         },
         '.hljs-generator-param': {
-          'color': colors.pink[400],
+          color: colors.pink[400],
         },
         '.font-ligatures-contextual': {
           'font-variant-ligatures': 'contextual',
         },
-      })
-    })
+      });
+    }),
   ],
-}
+};
