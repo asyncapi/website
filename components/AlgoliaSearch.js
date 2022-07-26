@@ -86,7 +86,7 @@ function AlgoliaModal({ onClose, initialQuery, indexName }) {
       hitComponent={Hit}
       transformItems={transformItems}
       getMissingResultsUrl={({ query }) => {
-        return `https://github.com/asyncapi/website/issues/new?title=${query}`;
+        return `https://github.com/asyncapi/website/issues/new?title=Cannot%20search%20given%20query:%20${query}`;
       }}
     />,
     document.body,
