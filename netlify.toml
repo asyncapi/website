@@ -7,7 +7,6 @@
   command = "npm run build && npm run export"
   functions = "netlify/functions"
   publish = "out"
-  environment = { NODE_VERSION = "14.19.3" }
 
 [build.environment]
   NODE_VERSION = "16.13.2"
