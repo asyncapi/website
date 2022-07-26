@@ -9,6 +9,10 @@
   publish = "out"
   environment = { NODE_VERSION = "14.19.3" }
 
+[build.environment]
+  NODE_VERSION = "16.13.2"
+  NPM_VERSION = "8.1.2"
+
 # Used by JSON Schema definitions fetched directly from AsyncAPI website
 [[redirects]]
   from = "/definitions"

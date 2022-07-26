@@ -1,4 +1,3 @@
-import { getAllPosts } from '../lib/api'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
@@ -14,7 +13,6 @@ import SlackLogo from '../components/logos/Slack'
 import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
-import BlogPostItem from '../components/navigation/BlogPostItem'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -24,26 +22,14 @@ import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-import YoutubeButton from '../components/buttons/YoutubeButton';
+import NewsroomSection from '../components/newsroom/NewsroomSection'
 
 function HomePage() {
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
-    .sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
-    .slice(0, 3)
-
   return (
     <>
       <Head />
       <StickyNavbar>
-       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
 
       <main id="main-content" className="scroll-mt-5">
@@ -104,10 +90,10 @@ function HomePage() {
           <div className="py-2 lg:py-12">
             <Container wide>
               <div className="lg:flex">
-                <div className="mt-10 lg:mt-0 lg:flex-1">
+                <div className="mt-10 lg:mt-0 lg:w-1/2">
                   <Slack />
                 </div>
-                <section className="lg:text-left lg:max-w-xl lg:ml-12">
+                <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-12">
                   <div className="mt-5">
                     <Heading level="h4" typeStyle="heading-md-semibold">
                       Join our Slack workspace
@@ -124,10 +110,10 @@ function HomePage() {
 
               <div className="mt-12 lg:flex lg:flex-row-reverse">
                 <section className="mt-10 lg:mt-0 lg:flex-1">
-                  <Calendar size="2" className="float-left"/>
+                  <Calendar size="2" className="float-left" />
                 </section>
                 <section className="lg:text-left lg:max-w-xl lg:mr-12">
-                  <div className="mt-5">
+                  <div className="mt-5 lg:mr-12">
                     <Heading level="h3" typeStyle="heading-md-semibold">
                       Join our public meetings
                     </Heading>
@@ -159,8 +145,13 @@ function HomePage() {
                 </section>
               </div>
             </Container>
+            <Container wide>
+                <NewsroomSection />
+            </Container>
           </div>
+
         </Container>
+
 
         <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
           <Container className="text-center pb-6" wide as="section">
@@ -191,7 +182,7 @@ function HomePage() {
               typeStyle="heading-md-semibold"
               className="mb-4"
             >
-                Want to Sponsor Us?
+              Want to Sponsor Us?
             </Heading>
             <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
               These great organizations are already supporting AsyncAPI. Want to become a sponsor?
@@ -201,8 +192,19 @@ function HomePage() {
             </Paragraph>
           </Container>
         </section>
-
-        <Container className="text-center pb-20" wide as="section">
+        <Container className="text-center py-6 pb-20" wide>
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            Supported by
+          </Heading>
+          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
+            The following companies support us by letting us use their products for free. Interested in supporting us too?
+            <TextLink href="mailto:info@asyncapi.io" target="_blank">
+              Email us
+            </TextLink> for more info.
+          </Paragraph>
+          <SupportUs className="mt-4" showSupportBanner={false} />
+        </Container>
+        <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             What the experts are saying
           </Heading>
@@ -236,49 +238,6 @@ function HomePage() {
               authorDescription="CEO at Streamdata.io"
             />
           </ul>
-        </Container>
-
-        <Container className="text-center pb-20" wide as="section">
-          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
-            Supported by
-          </Heading>
-          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
-            The following companies support us by letting us use their products for free. Interested in supporting us too?
-            <TextLink href="mailto:info@asyncapi.io" target="_blank">
-                Email us
-            </TextLink> for more info.
-          </Paragraph>
-          <SupportUs className="mt-4" showSupportBanner={false} />
-        </Container>
-
-        <Container wide as="section">
-          <div className="text-center">
-            <Heading
-              level="h2"
-              typeStyle="heading-lg"
-            >
-              Latest stories from our blog
-            </Heading>
-            <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4">
-              Find the latest and greatest stories from our community.
-            </Paragraph>
-            <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto">
-              Want to publish a blog post? We love community stories.
-              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
-                Submit yours!
-              </TextLink>
-            </Paragraph>
-          </div>
-          <ul className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
-            {
-              posts.map((post, index) => (
-                <BlogPostItem className="mb-8 md:mb-0" key={index} post={post} />
-              ))
-            }
-          </ul>
-          <div className="my-10 text-center">
-            <Button bgClassName="bg-none border border-gray-200 shadow-none" textClassName="text-gray-800 hover:text-gray-700" href="/blog" text="View more blog posts" />
-          </div>
         </Container>
       </main>
     </>
