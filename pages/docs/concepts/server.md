@@ -7,10 +7,10 @@ Servers play an important role as they maintain a relationship between producers
 
 ```mermaid
 flowchart TD
-    a[Client Browser] -.-> b[(server)]
-    b -.-> a
-    c[Client Mobile] -.-> b[(server)]
-    b -.-> c
+    a[Client Browser] --> b[(server)]
+    b --> a
+    c[Client Mobile] --> b[(server)]
+    b --> c
     
 ```
 
