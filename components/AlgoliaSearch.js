@@ -72,7 +72,7 @@ function AlgoliaModal({ onClose, initialQuery, indexName }) {
       searchParameters={{
         distinct: 1,
       }}
-      placeholder="Search documentation"
+      placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
       onClose={onClose}
       indexName={indexName}
       apiKey={API_KEY}
