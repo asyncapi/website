@@ -1,13 +1,12 @@
 import moment from 'moment'
-import { forwardRef } from 'react'
 import TextTruncate from 'react-text-truncate'
 import AuthorAvatars from '../AuthorAvatars'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 import Link from 'next/link'
 
-export default forwardRef(function BlogPostItem({ post, className = '', id=''}, ref) {
-  let typeColors = ['bg-indigo-100', 'text-indigo-800']
+export default function FeaturedBlogPost({ post, className = ''}) {
+    let typeColors = ['bg-indigo-100', 'text-indigo-800']
 
   switch (post.type.toLowerCase()) {
     case 'video':
@@ -23,14 +22,13 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
       typeColors = ['bg-teal-100', 'text-teal-800']
       break
   }
-
   return (
-    <li className={`rounded-lg ${className}`} ref={ref} id={id}>
+    <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
-            <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
-              <img className="h-48 w-full object-cover" src={post.cover} alt="" />  
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+            <a className={`h-full flex flex-col md:flex-row md:max-w-164 border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
+              <img className="w-full md:w-56 object-cover" src={post.cover} alt="" />  
+              <div className="flex-1 bg-white p-6 flex flex-col justify-between text-left border-none">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
                     <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`}>
@@ -43,7 +41,7 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
                         {post.title}
                       </Heading>
                       <Paragraph typeStyle="body-sm" className="mt-3">
-                        <TextTruncate element="span" line={4} text={post.excerpt} />
+                        <TextTruncate element="span" line={2} text={post.excerpt} />
                       </Paragraph>
                     </a>
                   </Link>
@@ -75,6 +73,6 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
             </a>
         </Link>
       </article>
-    </li>
+    </div>
   )
-})
+}
