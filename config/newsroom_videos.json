@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/czEJN-kmW1Q/hqdefault.jpg",
+    "title": "Community Meeting - July 26 2022",
+    "description": "https://github.com/asyncapi/community/issues/413.",
+    "videoId": "czEJN-kmW1Q"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/7CymWygvWwI/hqdefault.jpg",
     "title": "Spec 3.0 meeting",
     "description": "https://github.com/asyncapi/community/issues/410.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Onboarding - Part 3 - AsyncAPI in Theory",
     "description": "https://github.com/asyncapi/community/issues/409 - what AsyncAPI is and what AsyncAPI Initiative is - key concepts in the ...",
     "videoId": "yav1XGnr418"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Le0Eix5YjcU/hqdefault.jpg",
-    "title": "Community Meeting - July 12 2022",
-    "description": "https://github.com/asyncapi/community/issues/411.",
-    "videoId": "Le0Eix5YjcU"
   }
 ]
