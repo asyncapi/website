@@ -11,6 +11,7 @@
     "lint": "echo \"No linter configured yet\"",
     "generate:assets": "echo \"No assets to configure\"",
     "generate:meetings": "node scripts/build-meetings.js",
+    "generate:videos": "node scripts/build-newsroom-videos.js",
     "test": "echo \"No tests configured yet\"",
     "release": "echo \"No release to npm for this project\""
   },
@@ -51,9 +52,9 @@
     "lodash": "^4.17.21",
     "markdown-to-txt": "^1.0.1",
     "markdown-toc": "1.2.0",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "monaco-editor": "^0.20.0",
-    "next": "^11.1.3",
+    "next": "^12.0.0",
     "node-fetch": "^2.6.7",
     "postcss-import": "^12.0.1",
     "react": "^17.0.2",
@@ -72,6 +73,7 @@
     "remark-heading-id": "^1.0.0",
     "remark-images": "^2.0.0",
     "remark-slug": "^6.0.0",
+    "swiper": "^8.2.6",
     "tailwindcss": "^1.4.6",
     "tailwindcss-animations": "^2.0.0"
   },
