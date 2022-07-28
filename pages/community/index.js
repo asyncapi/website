@@ -266,6 +266,134 @@ function CommunityIndexPage() {
             <img src="/img/homepage/slack-cover.png" alt="slack-cover" />
           </div>
         </div>
+
+        <div className="z-40 mt-10 w-full h-130 shadow-xl flex justify-between">
+          <div className="p-10 bg-primary-500 rounded-l-lg flex justify-between w-3/5 h-full flex-col text-left">
+            <div className="">
+              <Heading
+                level="h2"
+                typeStyle="heading-md"
+                textColor="text-gray-400"
+              >
+                Community heartbeat
+              </Heading>
+            </div>
+            <div>
+              <Heading level="h2" typeStyle="heading-lg" textColor="text-white">
+                Events & Meetups
+              </Heading>
+              <Heading
+                level="h2"
+                typeStyle="body-lg"
+                textColor="text-white"
+                className="text-slate-500 text-sm mt-10"
+              >
+                The easiest way to create, manage, and schedule events and
+                meetups for your community, built for team collaboration. No
+                spreadsheets, or back to back copy-pasting. Track tasks,
+                speakers, event copy and documents all in one place.
+              </Heading>
+              <div className="mt-10"></div>
+            </div>
+          </div>
+          <div className="w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
+            <div className="bg-primary-500 w-full h-full opacity-25 rounded-r-lg" />
+            <div className="absolute h-full w-full flex flex-col justify-center items-end item-right">
+              <div className="w-4/5">
+                <div className="bg-white w-full p-4 rounded-l-md">
+                  <div className="flex">
+                    <div className="w-40 bg-pink-400 p-4 rounded-md text-sm font-semibold text-white">
+                      Conference 2022
+                    </div>
+                    <div className="ml-4 text-left">
+                      <h1 className="text-xl">AsyncAPI Conference</h1>
+                      <span className="text-gray-500 text-sm">
+                        3rd Nov, 2022 - 5th Nov, 2022
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="w-full bg-gray-200 mt-4"
+                    style={{ height: '1px' }}
+                  />
+                  <div className="flex mt-2 justify-between">
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">91</h1>
+                      <div className="text-gray-500 text-md">
+                        Days until <br /> event
+                      </div>
+                    </div>
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">40</h1>
+                      <div className="text-gray-500 text-md">
+                        Talks
+                        <br /> submitted
+                      </div>
+                    </div>
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">1.4k</h1>
+                      <div className="text-gray-500 text-md">
+                        Attendees
+                        <br /> registered
+                      </div>
+                    </div>
+                    <div className="text-left">
+                      <h1 className="text-2xl">91</h1>
+                      <div className="text-gray-500 text-md">
+                        Days until <br /> event
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white w-full p-4 mt-10 rounded-l-md">
+                  <div className="flex">
+                    <div className="w-40 bg-secondary-500 p-4 rounded-md text-sm font-semibold text-white">
+                      Spec 3.0
+                    </div>
+                    <div className="ml-4 text-left">
+                      <h1 className="text-xl">Spec 3.0 Meeting</h1>
+                      <span className="text-gray-500 text-sm">
+                        3rd Nov, 2022 - 5th Nov, 2022
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="w-full bg-gray-200 mt-4"
+                    style={{ height: '1px' }}
+                  />
+                  <div className="flex mt-2 justify-between">
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">91</h1>
+                      <div className="text-gray-500 text-md">
+                        Days until <br /> event
+                      </div>
+                    </div>
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">40</h1>
+                      <div className="text-gray-500 text-md">
+                        Talks
+                        <br /> submitted
+                      </div>
+                    </div>
+                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
+                      <h1 className="text-2xl">1.4k</h1>
+                      <div className="text-gray-500 text-md">
+                        Attendees
+                        <br /> registered
+                      </div>
+                    </div>
+                    <div className="text-left">
+                      <h1 className="text-2xl">91</h1>
+                      <div className="text-gray-500 text-md">
+                        Days until <br /> event
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="community-pattern absolute"></div>
       </div>
     </CommunityLayout>

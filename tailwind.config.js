@@ -70,6 +70,9 @@ function getColors(color, shades) {
 module.exports = {
   purge: false,
   theme: {
+    backgroundImage: {
+      eventCover: "url('/img/homepage/event-cover.png')",
+    },
     colors: {
       ...colors,
       primary: colorPrimary,
