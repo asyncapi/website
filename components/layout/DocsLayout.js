@@ -13,6 +13,7 @@ import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -122,20 +123,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               >
                 {({ actionKey }) => (
                   <>
-                    <svg
-                      width="24"
-                      height="24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="flex-none text-slate-300 dark:text-slate-400"
-                      aria-hidden="true"
-                    >
-                      <path d="m19 19-3.5-3.5" />
-                      <circle cx="11" cy="11" r="6" />
-                    </svg>
+                    <IconLoupe />
                     <span className="flex-auto">Search docs...</span>
                     {actionKey && (
                       <kbd className="font-sans font-semibold dark:text-slate-500">

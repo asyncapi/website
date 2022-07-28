@@ -12,6 +12,7 @@ import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 import Link from 'next/link';
 
 const isMobile = isMobileDevice();
@@ -65,7 +66,12 @@ export default function NavBar({
           </div>
         )}
 
-        <div className="-mr-2 -my-2 lg:hidden">
+        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden">
+          <SearchButton 
+            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+          >
+            <IconLoupe />
+          </SearchButton>
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
@@ -112,38 +118,9 @@ export default function NavBar({
 
           <div className="flex flex-row items-center justify-content">
             <SearchButton 
-              className="flex items-center text-left space-x-2 px-2 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+              className="flex items-center text-left space-x-2 px-2 py-1.5 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             >
-              {({ actionKey }) => (
-                <>
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="flex-none text-slate-300 dark:text-slate-400"
-                    aria-hidden="true"
-                  >
-                    <path d="m19 19-3.5-3.5" />
-                    <circle cx="11" cy="11" r="6" />
-                  </svg>
-                  <span className="flex-auto text-sm">Search...</span>
-                  {actionKey ? (
-                    <kbd className="font-sans font-semibold dark:text-slate-500 text-sm">
-                      <abbr
-                        title={actionKey.key}
-                        className="no-underline text-slate-300 dark:text-slate-500"
-                      >
-                        {actionKey.shortKey}
-                      </abbr>{' '}
-                      K
-                    </kbd>
-                  ) : null}
-                </>
-              )}
+              <IconLoupe />
             </SearchButton>
 
             <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />

@@ -7,7 +7,7 @@ import AnnouncementHero from '../components/campaigns/AnnoucementHero'
 import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 import { SearchButton } from './AlgoliaSearch';
-import Link from 'next/link'
+import IconLoupe from './icons/Loupe';
 
 export default function Hero({ className = ''}) {
   return (
@@ -26,27 +26,14 @@ export default function Hero({ className = ''}) {
           architecture. All powered by the AsyncAPI specification, the {" "}
           <strong>industry standard</strong> for defining asynchronous APIs.
         </Heading>
-        <div className='flex justify-center'>
+        <div className='flex flex-row items-center justify-center'>
           <Button className="block md:inline-block" text="Read the docs" href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
           <SearchButton 
-            className="hidden sm:flex items-center text-left space-x-3 px-4 md:ml-2 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+            className="hidden sm:flex items-center text-left space-x-3 px-4 py-3 ml-2 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
           >
             {({ actionKey }) => (
               <>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-none text-slate-300 dark:text-slate-400"
-                  aria-hidden="true"
-                >
-                  <path d="m19 19-3.5-3.5" />
-                  <circle cx="11" cy="11" r="6" />
-                </svg>
+                <IconLoupe />
                 <span className="flex-auto">Quick search...</span>
                 {actionKey && (
                   <kbd className="font-sans font-semibold dark:text-slate-500">
@@ -62,7 +49,7 @@ export default function Hero({ className = ''}) {
               </>
             )}
           </SearchButton>
-          <OpenInStudioButton text='Open Studio' className="md:ml-2" />
+          <OpenInStudioButton text='Open Studio' className='ml-2' />
         </div>
         <Paragraph typeStyle="body-sm" className="mt-4" textColor="text-gray-500">
           Proud to be part of the {" "}
