@@ -319,27 +319,27 @@ function CommunityIndexPage() {
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Days until <br /> event
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">40</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Talks
                         <br /> submitted
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">1.4k</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Attendees
                         <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
                       <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Days until <br /> event
                       </div>
                     </div>
@@ -364,27 +364,27 @@ function CommunityIndexPage() {
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Days until <br /> event
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">40</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Talks
                         <br /> submitted
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-2xl">1.4k</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Attendees
                         <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
                       <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-md">
+                      <div className="text-gray-500 text-sm">
                         Days until <br /> event
                       </div>
                     </div>
@@ -395,6 +395,43 @@ function CommunityIndexPage() {
           </div>
         </div>
         <div className="community-pattern absolute"></div>
+        <div className="z-40 mt-10 bg-white w-full h-130 rounded-lg shadow-xl flex justify-between">
+          <div className="p-10 flex justify-between w-2/5 h-full flex-col text-left">
+            <div>
+              <Heading
+                level="h2"
+                typeStyle="heading-md"
+                textColor="text-gray-200"
+              >
+                Support your rockstars
+              </Heading>
+            </div>
+            <div>
+              <Heading level="h2" typeStyle="heading-lg">
+                Advocate Programs
+              </Heading>
+              <Heading
+                level="h2"
+                typeStyle="body-lg"
+                textColor="text-gray-700"
+                className="text-slate-500 text-sm mt-10"
+              >
+                Launch community advocate programs that your members are proud
+                to be a part of. Powerful ambassador engagement analytics make
+                it easy to track and reward you contributors and build thriving
+                communities.
+              </Heading>
+              <div className="mt-10"></div>
+            </div>
+          </div>
+          <div className="w-3/6 flex justify-end rounded-lg">
+            <img
+              src="/img/homepage/ambassador.jpeg"
+              alt="slack-cover"
+              className="rounded-r-lg"
+            />
+          </div>
+        </div>
       </div>
     </CommunityLayout>
   );
