@@ -49,7 +49,6 @@ export default function Hero({ className = ''}) {
               </>
             )}
           </SearchButton>
-          <OpenInStudioButton text='Open Studio' className='ml-2' />
         </div>
         <Paragraph typeStyle="body-sm" className="mt-4" textColor="text-gray-500">
           Proud to be part of the {" "}

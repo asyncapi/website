@@ -30,7 +30,7 @@ export default function DocsMobileMenu({
 
             <div className='w-full my-4 px-2'>
               <SearchButton 
-                className="flex w-full items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+                className="flex w-full items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
                 indexName={DOCS_INDEX_NAME}
               >
                 <IconLoupe />
