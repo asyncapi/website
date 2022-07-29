@@ -8,6 +8,10 @@
   functions = "netlify/functions"
   publish = "out"
 
+[build.environment]
+  NODE_VERSION = "16.13.2"
+  NPM_VERSION = "8.1.2"
+
 # Used by JSON Schema definitions fetched directly from AsyncAPI website
 [[redirects]]
   from = "/definitions"

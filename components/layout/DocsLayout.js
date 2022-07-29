@@ -13,6 +13,8 @@ import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
 import IconHamburgerMenu from '../icons/HamburgerMenu'
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -132,8 +134,31 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+
+              <SearchButton 
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
+              >
+                {({ actionKey }) => (
+                  <>
+                    <IconLoupe />
+                    <span className="flex-auto">Search docs...</span>
+                    {actionKey && (
+                      <kbd className="font-sans font-semibold">
+                        <abbr
+                          title={actionKey.key}
+                          className="no-underline text-slate-300"
+                        >
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
+              </SearchButton>
               
-              <nav className="flex-1 pt-8 pb-8 bg-white">
+              <nav className="flex-1 bg-white">
                 <ul>
                   {Object.values(navigation).map(navItem => (
                     <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
