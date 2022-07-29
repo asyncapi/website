@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
     byline: AsyncAPI Maintainer
-excerpt: 'An update on what has happened around AsyncAPI tooling'
+excerpt: 'An update on what has happened around AsyncAPI tooling in the past ~4 months'
 featured: true
 ---
 
