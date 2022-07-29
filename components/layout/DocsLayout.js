@@ -107,12 +107,12 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
 
-      <div className="sticky top-20 right-0 px-3 sm:px-6 lg:px-8 pt-3 pb-3 z-50 bg-white opacity-100 border-b-2 border-gray-200 w-full lg:hidden">
+      <div className="sticky top-20 right-0 px-3 sm:px-6 lg:px-8 pt-3 pb-3 z-10 bg-white opacity-100 border-b border-gray-200 w-full overflow-auto lg:hidden">
         <div className="block bg-white text-gray-500">
           <button onClick={() => {(showMenu)?setShowMenu(false):setShowMenu(true)}} className="flex items-center w-full justify-between focus:outline-none " aria-label="Open sidebar">
             <span className='flex justify-between'>
             <span className="text-sm md:text-base my-1">{post.sectionTitle}</span>
-              {(!(post.sectionTitle == null) && (post.title != post.sectionTitle))?(<ArrowRight className="w-5 h-max md:mx-2" />):(<span></span>)}
+              {(!(post.sectionTitle == null) && (post.title != post.sectionTitle))?(<span className="w-5 h-auto mt-1 md:mx-2 text-sm" >&gt;</span>):(<span></span>)}
               {(post.title != post.sectionTitle)? <span className="text-sm md:text-base p-0 fit-content text-gray-900 my-1">{post.title}</span> : <></>}
             </span>
             <span>
@@ -125,10 +125,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         ) }
       </div>
-      
-      {/* <div className='fixed z-50 bg-white bottom-6 right-6 border-2 rounded-md border-black border-solid cursor-pointer'>
-        <IconHamburgerMenu className="p-1" />
-      </div> */}
 
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         <div className="flex flex-row">
@@ -178,7 +174,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                 </div>
               </div>
 
-              <TOC toc={post.toc} depth={3} className="sticky z-50 bottom-6 right-4 rounded-md xl:inherit-0 xl:border-0 w-11 overflow-y-auto xl:max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
+              <TOC toc={post.toc} depth={3} className="sticky z-50 bottom-6 right-6 float-right rounded-md xl:inherit-0 xl:border-0 w-11 overflow-y-auto xl:max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
             
             </div>
           </main>
