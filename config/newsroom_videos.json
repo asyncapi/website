@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/_59k06LMDRA/hqdefault.jpg",
+    "title": "AsyncAPI Conference 2022 organization - round 4",
+    "description": "https://github.com/asyncapi/community/issues/415.",
+    "videoId": "_59k06LMDRA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/czEJN-kmW1Q/hqdefault.jpg",
     "title": "Community Meeting - July 26 2022",
     "description": "https://github.com/asyncapi/community/issues/413.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Conference 2022 organization - round 3",
     "description": "https://github.com/asyncapi/community/issues/408.",
     "videoId": "RNpngZIbmnQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/yav1XGnr418/hqdefault.jpg",
-    "title": "AsyncAPI Onboarding - Part 3 - AsyncAPI in Theory",
-    "description": "https://github.com/asyncapi/community/issues/409 - what AsyncAPI is and what AsyncAPI Initiative is - key concepts in the ...",
-    "videoId": "yav1XGnr418"
   }
 ]
