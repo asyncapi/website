@@ -22,6 +22,7 @@ import { DocsCards } from '../components/docs/DocsCards'
 import AppContext from '../context/AppContext'
 import Footer from "../components/Footer";
 import AlgoliaSearch from '../components/AlgoliaSearch';
+import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps, router }) {
   return (
