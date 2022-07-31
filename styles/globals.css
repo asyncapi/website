@@ -9,6 +9,11 @@
 @import 'swiper/css/scrollbar';
 
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
+@import "swiper/swiper.min";
+@import "swiper/modules/a11y/a11y.min";
+@import "swiper/modules/navigation/navigation.min";
+/*! purgecss end ignore */
 
 html,
 body {
@@ -23,6 +28,10 @@ li>p {
 .atss {
   /* AddThis plugin */
   z-index: 10 !important;
+}
+
+abbr[title] {
+  text-decoration: none;
 }
 
 .countdown-text-gradient {
@@ -63,3 +72,12 @@ li>p {
 .swiper-slide {
   height: auto !important;
 }
+
+/* adjust DocsSearch mobile styles */
+@media (max-width: 750px) {
+  .DocSearch-Container {
+    position: fixed !important;
+  }
+}
+
+/*! purgecss end ignore */
