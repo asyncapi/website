@@ -348,7 +348,7 @@ function CommunityIndexPage() {
                 <div className="bg-white w-full p-4 mt-10 rounded-l-md">
                   <div className="flex">
                     <div className="w-40 bg-secondary-500 p-4 rounded-md text-sm font-semibold text-white">
-                      Spec 3.0
+                      Spec 3.0 👋
                     </div>
                     <div className="ml-4 text-left">
                       <h1 className="text-xl">Spec 3.0 Meeting</h1>
