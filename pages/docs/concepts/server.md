@@ -12,7 +12,9 @@ flowchart TD
     b --> a
     c[Client Mobile] --> b[(server)]
     b --> c
-    
+  
+ The diagram above describes a bidirectional relationship between client and server.The server stores information that the client requests.Unlike the traditional client to server protocol, messages relayed from the server to client are asynchronous as shown in figure above. This means that the exchanges between occurs interchangeably.
+  
 ```
 * Broker Centric
 ```mermaid
