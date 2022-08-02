@@ -11,11 +11,11 @@ flowchart TD
     a[Client Browser] --> b[(server)]
     b --> a
     c[Client Mobile] --> b[(server)]
-    b --> c
-  
- The diagram above describes a bidirectional relationship between client and server.The server stores information that the client requests.Unlike the traditional client to server protocol, messages relayed from the server to client are asynchronous as shown in figure above. This means that the exchanges between occurs interchangeably.
-  
+    b --> c 
 ```
+The diagram above describes a bi-directional relationship between `clients` and `server`. When we create an AsyncAPI `server` file, the AsyncAPI server object holds information that includes the physical location of the `server`.
+
+
 * Broker Centric
 ```mermaid
 flowchart TD
