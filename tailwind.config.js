@@ -72,6 +72,10 @@ module.exports = {
   theme: {
     backgroundImage: {
       eventCover: "url('/img/homepage/event-cover.png')",
+      channelCover: "url('/img/homepage/slack-cover.png')",
+      tutorialCover: "url('/img/homepage/tutorials.png')",
+      usecases: "url('/img/homepage/usecases.png')",
+      roadmapCover: "url('/img/homepage/roadmap.png')",
     },
     colors: {
       ...colors,
@@ -147,6 +151,10 @@ module.exports = {
         120: '30rem',
         130: '40rem',
         'half-screen': '50vh',
+        beforeHalf: '49%',
+      },
+      width: {
+        beforeHalf: '49%'
       },
       maxWidth: {
         '(screen-16)': 'calc(100vw - 16rem)',

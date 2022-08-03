@@ -262,8 +262,7 @@ function CommunityIndexPage() {
               <div className="mt-10"></div>
             </div>
           </div>
-          <div className="w-3/6 flex justify-end">
-            <img src="/img/homepage/slack-cover.png" alt="slack-cover" />
+          <div className="w-3/6 flex justify-end bg-channelCover bg-left bg-cover">
           </div>
         </div>
 
@@ -432,6 +431,70 @@ function CommunityIndexPage() {
             />
           </div>
         </div>
+        <div className='mt-10 flex justify-between w-full h-130'>
+          <div className='w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-full bg-center'>
+            <div className='w-full h-full bg-primary-500 opacity-25 absolute rounded-lg' />
+            <div className='w-full h-full flex flex-col justify-end absolute'>
+            <div className='bg-primary-400 text-left rounded-b-lg p-5 '>
+            <Heading level="h2" typeStyle="heading-lg" className='text-white'>
+              Browse our Tutorials
+            </Heading>
+            <Heading
+                level="h2"
+                typeStyle="body-lg"
+                textColor="text-gray-700"
+                className="text-slate-500 text-sm"
+              >
+                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
+              </Heading>
+            </div>
+          </div>
+          </div>
+          <div className='w-2/4 flex flex-col justify-around'>
+            <div className='h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative'>
+            <div className='w-full h-full bg-pink-500 opacity-25 absolute rounded-lg' />
+            <div className='w-full h-full flex flex-col justify-end absolute'>
+            <div className='bg-pink-300 text-left rounded-b-lg p-5 '>
+            <Heading level="h2" typeStyle="heading-md" className='text-white'>
+              Explore our Use-cases
+            </Heading>
+            <Heading
+                level="h2"
+                typeStyle="body-md"
+                textColor="text-gray-700"
+                className="text-slate-500 text-sm"
+              >
+                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
+              </Heading>
+            </div>
+          </div>
+            </div>
+            <div className='h-beforeHalf rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative'>
+            <div className='w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg' />
+            <div className='w-full h-full flex flex-col justify-end absolute'>
+            <div className='bg-secondary-300 text-left rounded-b-lg p-5 '>
+            <Heading level="h2" typeStyle="heading-md" className='text-white'>
+              Look into our Roadmap
+            </Heading>
+            <Heading
+                level="h2"
+                typeStyle="body-md"
+                textColor="text-gray-700"
+                className="text-slate-500 text-sm"
+              >
+                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
+              </Heading>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='mt-36 text-center'>
+      <Heading level="h2" typeStyle="heading-lg" className="md:text-5xl z-40">
+      Stay up to date with our latest and greatest
+Community content
+        </Heading>
       </div>
     </CommunityLayout>
   );
