@@ -37,7 +37,6 @@ const orbit1 = [
   },
 ];
 
-
 const orbit2 = [
   {
     id: 'item-2',
@@ -122,10 +121,10 @@ const quickLinks = [
 ];
 
 function CommunityIndexPage() {
-      const handleScroll = (event) => {
-        console.log('scrollTop: ', event.currentTarget.scrollTop);
-        console.log('offsetHeight: ', event.currentTarget.offsetHeight);
-      };
+  const handleScroll = (event) => {
+    console.log('scrollTop: ', event.currentTarget.scrollTop);
+    console.log('offsetHeight: ', event.currentTarget.offsetHeight);
+  };
   return (
     <CommunityLayout
       title="AsyncAPI Meetings"
@@ -262,8 +261,7 @@ function CommunityIndexPage() {
               <div className="mt-10"></div>
             </div>
           </div>
-          <div className="w-3/6 flex justify-end bg-channelCover bg-left bg-cover">
-          </div>
+          <div className="w-3/6 flex justify-end bg-channelCover bg-left bg-cover"></div>
         </div>
 
         <div className="z-40 mt-10 w-full h-130 shadow-xl flex justify-between">
@@ -431,70 +429,98 @@ function CommunityIndexPage() {
             />
           </div>
         </div>
-        <div className='mt-10 flex justify-between w-full h-130'>
-          <div className='w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-full bg-center'>
-            <div className='w-full h-full bg-primary-500 opacity-25 absolute rounded-lg' />
-            <div className='w-full h-full flex flex-col justify-end absolute'>
-            <div className='bg-primary-400 text-left rounded-b-lg p-5 '>
-            <Heading level="h2" typeStyle="heading-lg" className='text-white'>
-              Browse our Tutorials
-            </Heading>
-            <Heading
-                level="h2"
-                typeStyle="body-lg"
-                textColor="text-gray-700"
-                className="text-slate-500 text-sm"
-              >
-                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
-              </Heading>
+        <div className="mt-10 flex justify-between w-full h-130">
+          <div className="w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-full bg-center">
+            <div className="w-full h-full bg-primary-500 opacity-25 absolute rounded-lg" />
+            <div className="w-full h-full flex flex-col justify-end absolute">
+              <div className="bg-primary-400 text-left rounded-b-lg p-5 ">
+                <Heading
+                  level="h2"
+                  typeStyle="heading-lg"
+                  className="text-white"
+                >
+                  Browse our Tutorials
+                </Heading>
+                <Heading
+                  level="h2"
+                  typeStyle="body-lg"
+                  textColor="text-gray-700"
+                  className="text-slate-500 text-sm"
+                >
+                  We have thousands of tutorials covering a wide range of
+                  topics. Jump into our catalog!
+                </Heading>
+              </div>
             </div>
           </div>
-          </div>
-          <div className='w-2/4 flex flex-col justify-around'>
-            <div className='h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative'>
-            <div className='w-full h-full bg-pink-500 opacity-25 absolute rounded-lg' />
-            <div className='w-full h-full flex flex-col justify-end absolute'>
-            <div className='bg-pink-300 text-left rounded-b-lg p-5 '>
-            <Heading level="h2" typeStyle="heading-md" className='text-white'>
-              Explore our Use-cases
-            </Heading>
-            <Heading
-                level="h2"
-                typeStyle="body-md"
-                textColor="text-gray-700"
-                className="text-slate-500 text-sm"
-              >
-                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
-              </Heading>
+          <div className="w-2/4 flex flex-col justify-around">
+            <div className="h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative">
+              <div className="w-full h-full bg-pink-500 opacity-25 absolute rounded-lg" />
+              <div className="w-full h-full flex flex-col justify-end absolute">
+                <div className="bg-pink-300 text-left rounded-b-lg p-5 ">
+                  <Heading
+                    level="h2"
+                    typeStyle="heading-md"
+                    className="text-white"
+                  >
+                    Explore our Use-cases
+                  </Heading>
+                  <Heading
+                    level="h2"
+                    typeStyle="body-md"
+                    textColor="text-gray-700"
+                    className="text-slate-500 text-sm"
+                  >
+                    We have thousands of tutorials covering a wide range of
+                    topics. Jump into our catalog!
+                  </Heading>
+                </div>
+              </div>
             </div>
-          </div>
-            </div>
-            <div className='h-beforeHalf rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative'>
-            <div className='w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg' />
-            <div className='w-full h-full flex flex-col justify-end absolute'>
-            <div className='bg-secondary-300 text-left rounded-b-lg p-5 '>
-            <Heading level="h2" typeStyle="heading-md" className='text-white'>
-              Look into our Roadmap
-            </Heading>
-            <Heading
-                level="h2"
-                typeStyle="body-md"
-                textColor="text-gray-700"
-                className="text-slate-500 text-sm"
-              >
-                We have thousands of tutorials covering a wide range of topics. Jump into our catalog!
-              </Heading>
-            </div>
-          </div>
+            <div className="h-beforeHalf rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative">
+              <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
+              <div className="w-full h-full flex flex-col justify-end absolute">
+                <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
+                  <Heading
+                    level="h2"
+                    typeStyle="heading-md"
+                    className="text-white"
+                  >
+                    Look into our Roadmap
+                  </Heading>
+                  <Heading
+                    level="h2"
+                    typeStyle="body-md"
+                    textColor="text-gray-700"
+                    className="text-slate-500 text-sm"
+                  >
+                    We have thousands of tutorials covering a wide range of
+                    topics. Jump into our catalog!
+                  </Heading>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='mt-36 text-center'>
-      <Heading level="h2" typeStyle="heading-lg" className="md:text-5xl z-40">
-      Stay up to date with our latest and greatest
-Community content
-        </Heading>
+      <div className="mt-36 flex justify-center">
+        <div className="p-5 w-3/5 text-center flex justify-center flex-col items-center">
+          <Heading
+            level="h1"
+            typeStyle="heading-sm"
+            className="md:text-5xl z-40"
+          >
+            Stay up to date!
+          </Heading>
+          <div className="flex border-2 rounded-lg mt-10 w-9/12 p-2">
+            <input
+              className="border-none bg-transparent w-10/12 focus:outline-none"
+              placeholder="Enter email"
+              type="email"
+            />{' '}
+            <Button className="block md:inline-block" text="Subscribe" />
+          </div>
+        </div>
       </div>
     </CommunityLayout>
   );
