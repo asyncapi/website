@@ -3,6 +3,7 @@ import React from 'react';
 import Heading from '../../components/typography/Heading';
 import Button from '../../components/buttons/Button';
 import CommunityLayout from '../../components/layout/CommunityLayout';
+import IconRocket from '../../components/icons/Rocket';
 
 const orbit1 = [
   {
@@ -83,8 +84,8 @@ const orbit3 = [
   },
   {
     id: 'item-3',
-    img: '/img/homepage/slack.png',
-    alt: 'slack',
+    img: '/img/homepage/star.png',
+    alt: 'star',
   },
   {
     id: 'item-3',
@@ -103,8 +104,8 @@ const orbit3 = [
   },
   {
     id: 'item-3',
-    img: '/img/homepage/maciej.png',
-    alt: 'maciej',
+    img: '/img/homepage/yash.jpeg',
+    alt: 'yash',
   },
   {
     id: 'item-3',
@@ -167,7 +168,8 @@ function CommunityIndexPage() {
                 <div className="mt-10">
                   <Button
                     className="block md:inline-block"
-                    text="Explore Discussions >"
+                    text="Explore Discussions"
+                    icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
                   />
                 </div>
               </div>

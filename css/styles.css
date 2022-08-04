@@ -75,6 +75,10 @@ li > p {
   transition: 0.2s;
 }
 
+.orbit > div {
+  cursor: pointer;
+}
+
 .orbit > div > img {
   border-radius: 100%;
 }
