@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/tMqmADw2lck/hqdefault.jpg",
+    "title": "AsyncAPI spec 3.0 meeting",
+    "description": "",
+    "videoId": "tMqmADw2lck"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/_59k06LMDRA/hqdefault.jpg",
     "title": "AsyncAPI Conference 2022 organization - round 4",
     "description": "https://github.com/asyncapi/community/issues/415.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Onboarding - Part 4 - AsyncAPI in Action",
     "description": "https://github.com/asyncapi/community/issues/415 - Creating AsyncAPI file - What can you do with the file, some possible use ...",
     "videoId": "xDjGNJWz_Gc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/RNpngZIbmnQ/hqdefault.jpg",
-    "title": "AsyncAPI Conference 2022 organization - round 3",
-    "description": "https://github.com/asyncapi/community/issues/408.",
-    "videoId": "RNpngZIbmnQ"
   }
 ]
