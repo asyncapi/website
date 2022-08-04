@@ -121,16 +121,11 @@ const quickLinks = [
 ];
 
 function CommunityIndexPage() {
-  const handleScroll = (event) => {
-    console.log('scrollTop: ', event.currentTarget.scrollTop);
-    console.log('offsetHeight: ', event.currentTarget.offsetHeight);
-  };
   return (
     <CommunityLayout
       title="AsyncAPI Meetings"
       description="The home for developer communities"
       wide
-      onScroll={handleScroll}
     >
       <div className="">
         <div className="orbit-container">
@@ -477,7 +472,7 @@ function CommunityIndexPage() {
                 </div>
               </div>
             </div>
-            <div className="h-beforeHalf rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative">
+            <div className="h-beforeHalf mt-5 rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative">
               <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
