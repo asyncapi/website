@@ -211,7 +211,7 @@ function CommunityIndexPage() {
             textColor="text-gray-700"
             className="text-slate-500 text-sm"
           >
-            Decrease the burden of managing active work in issues and pull
+            Decrease the burde n of managing active work in issues and pull
             requests by providing a separate space to host ongoing discussions,
             questions, and ideas.
           </Heading>
