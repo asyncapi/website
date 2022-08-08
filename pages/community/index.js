@@ -116,9 +116,9 @@ const orbit3 = [
 
 const quickLinks = [
   { title: 'Advocate Programs', bg: 'white', color: 'primary-600' },
-  { title: 'Events & Meetups', bg: 'primary-600', color: 'white' },
+  { title: 'Events & Meetups', bg: 'white', color: 'primary-600' },
   { title: 'Community Members', bg: 'white', color: 'primary-600' },
-  { title: 'Start Contributing', bg: 'primary-600', color: 'white' },
+  { title: 'Start Contributing', bg: 'white', color: 'primary-600' },
 ];
 
 function CommunityIndexPage() {
@@ -441,7 +441,7 @@ function CommunityIndexPage() {
                 <Heading
                   level="h2"
                   typeStyle="body-lg"
-                  textColor="text-gray-700"
+                  textColor="text-gray-900"
                   className="text-slate-500 text-sm"
                 >
                   We have thousands of tutorials covering a wide range of
@@ -465,7 +465,7 @@ function CommunityIndexPage() {
                   <Heading
                     level="h2"
                     typeStyle="body-md"
-                    textColor="text-gray-700"
+                    textColor="text-gray-900"
                     className="text-slate-500 text-sm"
                   >
                     We have thousands of tutorials covering a wide range of
@@ -488,7 +488,7 @@ function CommunityIndexPage() {
                   <Heading
                     level="h2"
                     typeStyle="body-md"
-                    textColor="text-gray-700"
+                    textColor="text-gray-900"
                     className="text-slate-500 text-sm"
                   >
                     We have thousands of tutorials covering a wide range of
