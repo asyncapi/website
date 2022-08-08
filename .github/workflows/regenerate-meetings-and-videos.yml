@@ -1,0 +1,42 @@
+name: List everyday latest list of AsyncAPI Meetings and Newsroom Videos
+
+on: 
+  workflow_dispatch:
+  schedule:
+  #every day at midnight
+  - cron: "10 0 * * *"
+
+jobs:
+  meetings:
+      if: github.repository == 'asyncapi/website'
+      env:
+        CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
+        CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
+        YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+      name: Regenerate meetings.json
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Install dependencies
+          run: npm install
+        - name: Regenerate
+          run: npm run generate:meetings && npm run generate:videos
+        - name: Create Pull Request with new meetings.json and newsroom-videos.json version
+          uses: peter-evans/create-pull-request@v3
+          with:
+            token: ${{ secrets.GH_TOKEN }}
+            commit-message: 'chore: update meetings.json and newsrooom_videos.json'
+            committer: asyncapi-bot <info@asyncapi.io>
+            author: asyncapi-bot <info@asyncapi.io>
+            title: 'chore: update meetings.json and newsrooom_videos.json'
+            branch: update-meetings/${{ github.job }}
+        - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
+          name: Report workflow run status to Slack
+          uses: 8398a7/action-slack@v3
+          with:
+            status: ${{ job.status }}
+            fields: repo,action,workflow
+            text: 'AsyncAPI Meetings and Videos workflow failed'
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_CI_FAIL_NOTIFY }}

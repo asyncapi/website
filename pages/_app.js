@@ -21,25 +21,27 @@ import DocsButton from '../components/buttons/DocsButton';
 import { DocsCards } from '../components/docs/DocsCards'
 import AppContext from '../context/AppContext'
 import Footer from "../components/Footer";
+import AlgoliaSearch from '../components/AlgoliaSearch';
 import '../css/styles.css'
 
 export default function MyApp({ Component, pageProps, router }) {
-
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <Head>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
       <MDXProvider components={getMDXComponents()}>
-        <div className="flex flex-col min-h-screen">
-          <Banner />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-          <div className="mt-auto">
-            <Footer />
+        <AlgoliaSearch>
+          <div className="flex flex-col min-h-screen">
+            <Banner />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            <div className="mt-auto">
+              <Footer />
+            </div>
           </div>
-        </div>
+        </AlgoliaSearch>
       </MDXProvider>
     </AppContext.Provider>
   )
