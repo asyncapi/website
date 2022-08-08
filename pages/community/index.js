@@ -191,7 +191,7 @@ function CommunityIndexPage() {
           </div>
         </div>
       </div>
-      <div className="text-center relative h-screen z-40">
+      <div className="text-center relative h-half-screen z-40">
         <div className="gh-bg absolute">
           <img
             className="gh-img"
@@ -200,7 +200,7 @@ function CommunityIndexPage() {
           />
         </div>
       </div>
-      <div className="text-center flex justify-center flex-col items-center">
+      <div className="text-center flex justify-center flex-col items-center md:mt-72">
         <Heading level="h1" typeStyle="heading-xl" className="md:text-5xl z-40">
           Home of #CommunityOps
         </Heading>
@@ -211,9 +211,8 @@ function CommunityIndexPage() {
             textColor="text-gray-700"
             className="text-slate-500 text-sm"
           >
-            Decrease the burde n of managing active work in issues and pull
-            requests by providing a separate space to host ongoing discussions,
-            questions, and ideas.
+            Join the conversation with over 10k+ developers from literally
+            everywhere.
           </Heading>
         </div>
         <div className="mt-32 z-40">
@@ -251,9 +250,10 @@ function CommunityIndexPage() {
                 textColor="text-gray-700"
                 className="text-slate-500 text-sm mt-10"
               >
-                A powerful and flexible tool for tracking community members
-                information, resources, and activities. All of it is stored in
-                real time, so that your team can access it and act on it.
+                AsyncAPI’s incredible community of developers, designers,
+                technical writers, hail from over 83 countries, actively
+                contributing, collaborating and mentoring others to build with
+                AsyncAPI.
               </Heading>
               <div className="mt-10"></div>
             </div>
@@ -282,10 +282,9 @@ function CommunityIndexPage() {
                 textColor="text-white"
                 className="text-slate-500 text-sm mt-10"
               >
-                The easiest way to create, manage, and schedule events and
-                meetups for your community, built for team collaboration. No
-                spreadsheets, or back to back copy-pasting. Track tasks,
-                speakers, event copy and documents all in one place.
+                Join a AsyncAPI event, from anywhere in the world. <br />
+                 Learn more about our live and recorded events below. <br />
+                  You can also sign up to our community newsletter to <br /> stay up-to-date on our events.
               </Heading>
               <div className="mt-10"></div>
             </div>
