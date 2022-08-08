@@ -3,6 +3,8 @@ import Head from '../Head';
 import Container from './Container';
 import IconAsyncAPI from '../icons/AsyncAPI';
 import Link from 'next/link';
+import NavBar from '../navigation/NavBar';
+import StickyNavbar from '../navigation/StickyNavbar';
 
 const links = [
   {
@@ -53,35 +55,13 @@ export default function CommunityLayout({
   children,
   wide = true,
 }) {
-  const [showNavShadow, setShowNavShadow] = useState(false)
-  if (!title || !description)
-    throw new Error(
-      'Props `title`, `description`, and `image` are required at GenericLayout component.'
-    );
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 0) {
-          setShowNavShadow(true)
-        } else {
-          setShowNavShadow(false);
-        }
-        
-        console.log(window.scrollY);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
   return (
     <>
       <Head title={title} description={description} />
-      <Container wide={wide}>
-        <CommunityNav addShadow={showNavShadow} />
-        {children}
-      </Container>
+      <StickyNavbar>
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
+      <Container wide={wide}>{children}</Container>
     </>
   );
 }
