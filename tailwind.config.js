@@ -151,6 +151,7 @@ module.exports = {
         120: '30rem',
         130: '40rem',
         'half-screen': '50vh',
+        'full-screen': '100vh',
         beforeHalf: '49%',
       },
       width: {

@@ -229,8 +229,8 @@ function CommunityIndexPage() {
             ))}
           </ul>
         </div>
-        <div className="z-40 mt-28 bg-white w-full h-130 rounded-lg shadow-xl flex justify-between">
-          <div className="p-10 flex justify-between w-2/5 h-full flex-col text-left">
+        <div className="z-40 mt-28 bg-white w-full h-full-screen md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
+          <div className="p-10 h-half-screen md:flex justify-between md:w-2/5 md:h-full flex-col text-center md:text-left">
             <div>
               <Heading
                 level="h2"
@@ -241,7 +241,11 @@ function CommunityIndexPage() {
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg">
+              <Heading
+                level="h2"
+                typeStyle="heading-lg"
+                className="mt-10 md:mt-0"
+              >
                 Community Platform
               </Heading>
               <Heading
@@ -258,11 +262,11 @@ function CommunityIndexPage() {
               <div className="mt-10"></div>
             </div>
           </div>
-          <div className="w-3/6 flex justify-end bg-channelCover bg-left bg-cover"></div>
+          <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
         </div>
 
-        <div className="z-40 mt-10 w-full h-130 shadow-xl flex justify-between">
-          <div className="p-10 bg-primary-500 rounded-l-lg flex justify-between w-3/5 h-full flex-col text-left">
+        <div className="z-40 mt-10 w-full h-full-screen md:h-130 shadow-xl md:flex md:justify-between">
+          <div className="p-10 bg-primary-500 rounded-l-lg md:flex justify-between w-full md:w-3/5 h-half-screen md:h-full md:flex-col text-center md:text-left">
             <div className="">
               <Heading
                 level="h2"
@@ -273,7 +277,7 @@ function CommunityIndexPage() {
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg" textColor="text-white">
+              <Heading level="h2" typeStyle="heading-lg" textColor="text-white" className="mt-10 md:mt-0">
                 Events & Meetups
               </Heading>
               <Heading
@@ -282,25 +286,28 @@ function CommunityIndexPage() {
                 textColor="text-white"
                 className="text-slate-500 text-sm mt-10"
               >
-                Join a AsyncAPI event, from anywhere in the world. <br />
-                 Learn more about our live and recorded events below. <br />
-                  You can also sign up to our community newsletter to <br /> stay up-to-date on our events.
+                Join a AsyncAPI event, from anywhere in the world.
+                Learn more about our live and recorded events below.
+                You can also sign up to our community newsletter to stay
+                up-to-date on our events.
               </Heading>
               <div className="mt-10"></div>
             </div>
           </div>
-          <div className="w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
-            <div className="bg-primary-500 w-full h-full opacity-25 rounded-r-lg" />
-            <div className="absolute h-full w-full flex flex-col justify-center items-end item-right">
-              <div className="w-4/5">
+          <div className="w-full h-half-screen md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
+            <div className="bg-primary-500 w-full opacity-25 md:rounded-r-lg" />
+            <div className="absolute h-full w-full flex flex-col md:justify-center items-end item-right">
+              <div className="w-4/5 mt-10">
                 <div className="bg-white w-full p-4 rounded-l-md">
                   <div className="flex">
-                    <div className="w-40 bg-pink-400 p-4 rounded-md text-sm font-semibold text-white">
-                      Conference 2022
+                    <div className="w-24 md:w-40 bg-pink-400 p-4 rounded-md text-xs md:text-sm font-semibold text-white">
+                      Conference
                     </div>
                     <div className="ml-4 text-left">
-                      <h1 className="text-xl">AsyncAPI Conference</h1>
-                      <span className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-xl">
+                        AsyncAPI Conference
+                      </h1>
+                      <span className="text-gray-500 text-xs md:text-sm">
                         3rd Nov, 2022 - 5th Nov, 2022
                       </span>
                     </div>
@@ -311,28 +318,28 @@ function CommunityIndexPage() {
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">91</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Days until <br /> event
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">40</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-lg md:text-2xl">40</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Talks
                         <br /> submitted
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">1.4k</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">1.4k</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Attendees
                         <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
-                      <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">91</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Days until <br /> event
                       </div>
                     </div>
@@ -340,12 +347,12 @@ function CommunityIndexPage() {
                 </div>
                 <div className="bg-white w-full p-4 mt-10 rounded-l-md">
                   <div className="flex">
-                    <div className="w-40 bg-secondary-500 p-4 rounded-md text-sm font-semibold text-white">
-                      Spec 3.0 👋
+                    <div className="w-24 md:w-40 bg-secondary-500 p-4 rounded-md text-xs md:text-sm font-semibold text-white">
+                      Spec 3.0
                     </div>
                     <div className="ml-4 text-left">
-                      <h1 className="text-xl">Spec 3.0 Meeting</h1>
-                      <span className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-xl">Spec 3.0 Meeting</h1>
+                      <span className="text-gray-500 text-xs md:text-sm">
                         3rd Nov, 2022 - 5th Nov, 2022
                       </span>
                     </div>
@@ -356,28 +363,28 @@ function CommunityIndexPage() {
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">91</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Days until <br /> event
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">40</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-lg md:text-2xl">40</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Talks
                         <br /> submitted
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-2xl">1.4k</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">1.4k</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Attendees
                         <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
-                      <h1 className="text-2xl">91</h1>
-                      <div className="text-gray-500 text-sm">
+                      <h1 className="text-md md:text-2xl">91</h1>
+                      <div className="text-gray-500 text-xs md:text-sm">
                         Days until <br /> event
                       </div>
                     </div>
