@@ -37,7 +37,7 @@ In other words, it [gives equal power to individual and corporate contributors](
 
 **Committers** (also known as **Maintainers**) are the decision-makers at the repository/project level. They regularly contribute to the project and are invited by other maintainers to manage the repository, have more privileges, and approve pull requests.
 
-The committers rule the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
+The committers run the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
 
 You can see the list of maintainers who are also part of the [AsyncAPI TSC here](/community/tsc).
 
