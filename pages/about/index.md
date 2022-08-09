@@ -93,7 +93,7 @@ All the information about the project's economy, the amount of the donations, th
 
 - Press & communications info:
 [**press@asyncapi.io**](mailto:press@asyncapi.io).
-- [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all the news and information regarding the project, but also for resolving user queries and sharing news of projects related to technology.
+- [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/subscribe/): To learn about the status of the project, news, actualizations, recorded events, and meetings.
 - [**Blog**](/blog): It’s used to disseminate information related to the project. It's also open to collaborations.
