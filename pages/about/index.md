@@ -83,7 +83,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 
 ## Funding
 
-AsyncAPI is an open source project and is therefore funded by talent and voluntary contributions. It relies on the expertise and dedication of the **Community developers** who believe in the project and contribute to its evolution.
+AsyncAPI is an open-source project funded by both talent and voluntary contributions. It relies on the expertise and dedication of the **Community developers** who believe in the project and contribute to its evolution.
 
 Financially, there are individual donations and contributions made by users of the project, and others that come from different companies and initiatives that trust and support AsyncAPI through sponsorship. The main sponsors that contribute to sustain this initiative are Postman, IBM, IQVIA Technology and Solace. On different levels project receives contribution from companies like Red Hat and Slack, just to name few.
 
