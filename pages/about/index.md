@@ -4,7 +4,7 @@ title: About
 ---
 ## AsyncAPI
 
-AsyncAPI is an Apache License 2.0 library under the Linux Foundation that seeks to improve the current state of Event-Driven Architectures (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define asynchronous APIs, and build and maintain event-driven architectures. 
+AsyncAPI is an Apache License 2.0 library under the Linux Foundation that seeks to improve the current state of event-driven architecture (EDA). The AsyncAPI Initiative is a specification and growing set of open-source tools to help developers define, build, and maintain asynchronous APIs and EDAs. 
 
 Developers familiar with OpenAPI (aka Swagger) for RESTful APIs will see strong similarities when using AsyncAPI. One common use case is generating asynchronous API documentation (HTML or Markdown). The specification is both platform and language agnostic. The current tooling includes support for common message brokers such as Apache Kafka and RabbitMQ and languages including Python, Java, and Nodejs. 
 
