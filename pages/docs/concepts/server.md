@@ -13,7 +13,7 @@ flowchart TD
     c[Client Mobile] --> b[(server)]
     b --> c 
 ```
-The diagram above describes a bi-directional relationship between `clients` and `server`. When we create an AsyncAPI `server` file, the AsyncAPI server object holds information that includes the physical location of the `server`.
+The diagram above describes a bi-directional communication between several **clients** and one **server**. In this case, the `Server Object` holds information about the actual server, including physical location.
 
 
 * Broker Centric
