@@ -48,7 +48,7 @@ We do our best to recognize every contribution to the project. We do it individu
 We apologize in advance if we failed to recognize your work. Feel free to contact us on [Slack](https://www.asyncapi.com/slack-invite/), and we will fix it immediately, or just talk to our [All Contributors bot](https://allcontributors.org).
 
 ## AsyncAPI, in numbers
-We, at AsynAPI, are trying to build the future of Event-Driven Architectures. We are steadily progressing towards our mission and we are growing as a strong community. Interested to know more about our growth? Feel free to check our annual summary report: 
+Interested to know more about our growth? Feel free to check our annual summary report: 
 - [Summary report 2020](/blog/2020-summary)
 - [Summary report 2021](/blog/2021-summary)
           
