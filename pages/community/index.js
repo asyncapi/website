@@ -201,7 +201,7 @@ function CommunityIndexPage() {
         </div>
       </div>
       <div className="text-center flex justify-center flex-col items-center md:mt-72">
-        <Heading level="h1" typeStyle="heading-xl" className="md:text-5xl z-40">
+        <Heading level="h1" typeStyle="heading-xl" className="text- z-40">
           Home of #CommunityOps
         </Heading>
         <div className="w-3/6 z-40">
