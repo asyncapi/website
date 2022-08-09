@@ -102,7 +102,7 @@ All the information about the project's economy, the amount of the donations, th
 - [**GitHub**](https://github.com/asyncapi): Issues (bugs, feature requests, etc.) and pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
 - [**AsyncAPI Open Meetings**](https://github.com/asyncapi): AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us! [Learn more about our meetings](/community/meetings)
 
-## Frequently asked questions
+## FAQs
 
 - **What is the goal of the project?** To make asynchronous APIs as successful and mature as REST APIs.
 - **What protocols does it support?** AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
