@@ -39,7 +39,7 @@ In other words, it [gives equal power to individual and corporate contributors](
 
 The committers run the repository, but for issues that go beyond that, there is a [Technical Steering Committee (TSC)](/community/tsc). This committee comprises all the maintainers who voluntarily want to be part of this committee, thus taking responsibility for overseeing the initiative.
 
-You can see the list of maintainers who are also part of the [AsyncAPI TSC here](/community/tsc).
+You can see the list of maintainers who also form part of the [AsyncAPI TSC here](/community/tsc).
 
 ## Contributors
 
