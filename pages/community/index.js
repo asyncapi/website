@@ -216,13 +216,13 @@ function CommunityIndexPage() {
           </Heading>
         </div>
         <div className="mt-32 z-40">
-          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
               <li
                 key={link.title}
-                className={`h-72 w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
+                className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
               >
-                <h1 className={`text-3xl font-black text-${link.color}`}>
+                <h1 className={`text:lg md:text-3xl font-black text-${link.color}`}>
                   {link.title}
                 </h1>
               </li>
@@ -320,7 +320,7 @@ function CommunityIndexPage() {
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-md md:text-2xl">91</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
-                        Days until <br /> event
+                        Days left
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
@@ -334,13 +334,12 @@ function CommunityIndexPage() {
                       <h1 className="text-md md:text-2xl">1.4k</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
                         Attendees
-                        <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
                       <h1 className="text-md md:text-2xl">91</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
-                        Days until <br /> event
+                        Days left
                       </div>
                     </div>
                   </div>
@@ -365,27 +364,25 @@ function CommunityIndexPage() {
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-md md:text-2xl">91</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
-                        Days until <br /> event
+                        Days left 
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-lg md:text-2xl">40</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
                         Talks
-                        <br /> submitted
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-md md:text-2xl">1.4k</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
                         Attendees
-                        <br /> registered
                       </div>
                     </div>
                     <div className="text-left">
                       <h1 className="text-md md:text-2xl">91</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
-                        Days until <br /> event
+                        Days left
                       </div>
                     </div>
                   </div>
@@ -395,8 +392,8 @@ function CommunityIndexPage() {
           </div>
         </div>
         <div className="community-pattern absolute"></div>
-        <div className="z-40 mt-10 bg-white w-full h-130 rounded-lg shadow-xl flex justify-between">
-          <div className="p-10 flex justify-between w-2/5 h-full flex-col text-left">
+        <div className="z-40 mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
+          <div className="p-10 flex justify-between w-full md:w-2/5 h-full flex-col text-center md:text-left">
             <div>
               <Heading
                 level="h2"
@@ -407,7 +404,7 @@ function CommunityIndexPage() {
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg">
+              <Heading level="h2" typeStyle="heading-lg" className='mt-10'>
                 Advocate Programs
               </Heading>
               <Heading
@@ -424,7 +421,7 @@ function CommunityIndexPage() {
               <div className="mt-10"></div>
             </div>
           </div>
-          <div className="w-3/6 flex justify-end rounded-lg">
+          <div className="w-full h-half-screen md:h-full md:w-3/6 flex justify-end rounded-lg">
             <img
               src="/img/homepage/ambassador.jpeg"
               alt="slack-cover"
@@ -432,8 +429,8 @@ function CommunityIndexPage() {
             />
           </div>
         </div>
-        <div className="mt-10 flex justify-between w-full h-130">
-          <div className="w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-full bg-center">
+        <div className="mt-10 md:flex justify-between w-full h-full-screen md:h-130">
+          <div className="w-full md:w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-half-screen md:h-full bg-center">
             <div className="w-full h-full bg-primary-500 opacity-25 absolute rounded-lg" />
             <div className="w-full h-full flex flex-col justify-end absolute">
               <div className="bg-primary-400 text-left rounded-b-lg p-5 ">
@@ -456,8 +453,8 @@ function CommunityIndexPage() {
               </div>
             </div>
           </div>
-          <div className="w-2/4 flex flex-col justify-around">
-            <div className="h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative">
+          <div className="h-half-screen md:h-full w-full md:w-2/4 md:flex md:flex-col md:justify-around mt-10 md:mt-0">
+            <div className="h-4/6 md:h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative">
               <div className="w-full h-full bg-pink-500 opacity-25 absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-pink-300 text-left rounded-b-lg p-5 ">
@@ -480,7 +477,7 @@ function CommunityIndexPage() {
                 </div>
               </div>
             </div>
-            <div className="h-beforeHalf mt-5 rounded-lg shadow-lg bg-roadmapCover bg-cover h-full bg-center relative">
+            <div className="h-4/6 md:h-beforeHalf mt-5 rounded-lg shadow-lg bg-roadmapCover bg-cover md:h-full bg-center relative">
               <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
@@ -506,8 +503,8 @@ function CommunityIndexPage() {
           </div>
         </div>
       </div>
-      <div className="mt-36 flex justify-center">
-        <div className="p-5 w-3/5 text-center flex justify-center flex-col items-center">
+      <div className="mt-72 md:mt-36 flex justify-center">
+        <div className="md:p-5 w-full md:w-3/5 text-center flex justify-center flex-col items-center">
           <Heading
             level="h1"
             typeStyle="heading-sm"
@@ -515,7 +512,7 @@ function CommunityIndexPage() {
           >
             Stay up to date!
           </Heading>
-          <div className="flex border-2 rounded-lg mt-10 w-9/12 p-2">
+          <div className="flex border-2 rounded-lg mt-10 w-full md:w-9/12 p-2">
             <input
               className="border-none bg-transparent w-10/12 focus:outline-none"
               placeholder="Enter email"
