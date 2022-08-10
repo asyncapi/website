@@ -128,7 +128,7 @@ function CommunityIndexPage() {
       description="The home for developer communities"
       wide
     >
-      <div className="">
+      <div className="overflow-hidden">
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
             {orbit1.map((orbit) => (
@@ -146,7 +146,7 @@ function CommunityIndexPage() {
                   AsyncAPI Community
                 </Heading>
                 <div className="mt-10">
-                  <Heading level="h1" typeStyle="heading-xl">
+                  <Heading level="h1" typeStyle="heading-xl" className="">
                     <span className="title block md:-mt-1 leading-[3rem]">
                       The home <br /> for developer <br /> communities
                     </span>
@@ -201,7 +201,7 @@ function CommunityIndexPage() {
         </div>
       </div>
       <div className="text-center flex justify-center flex-col items-center md:mt-72">
-        <Heading level="h1" typeStyle="heading-xl" className="text- z-40">
+        <Heading level="h1" typeStyle="heading-xl" className="z-40">
           Home of #CommunityOps
         </Heading>
         <div className="w-3/6 z-40">
