@@ -157,7 +157,7 @@ function CommunityIndexPage() {
                     level="h2"
                     typeStyle="body-md"
                     textColor="text-gray-700"
-                    className="text-slate-500 text-sm"
+                    className="text-slate-500 text-xs md:text-sm"
                   >
                     We're a community of great people who are passionate about
                     AsyncAPI. Join us in building the future of Event Driven
