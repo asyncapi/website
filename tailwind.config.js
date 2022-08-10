@@ -138,6 +138,9 @@ module.exports = {
         '12ch': '12ch',
         '14ch': '14ch',
       },
+      width:{
+         'fit': 'fit-content'
+      },
       height: {
         72: '18rem',
         80: '20rem',
@@ -166,17 +169,19 @@ module.exports = {
         184: '46rem',
       },
       minWidth: {
-        72: '18rem',
-        40: '10rem',
-        12: '3rem',
+        '76': '28rem',
+        '72': '18rem',
+        '40': '10rem',
+        '12': '3rem',
       },
       minHeight: {
         108: '27rem',
       },
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
-        108: '27rem',
+        '108': '27rem',
         '(screen-14)': 'calc(100vh - 81px)',
+        '120': '37rem'
       },
       marginRight: {
         36: '9rem',
@@ -223,7 +228,15 @@ module.exports = {
         '.font-ligatures-contextual': {
           'font-variant-ligatures': 'contextual',
         },
-      });
-    }),
+        '.scroll-none':{
+          'scrollbar-width': 'none',
+          '-ms-overflow-style': 'none', 
+        },
+        '.scroll-none::-webkit-scrollbar':{
+          'display':'none',
+          'scroll-behavior':'smooth',
+        }
+      })
+    })
   ],
 };
