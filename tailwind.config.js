@@ -184,7 +184,7 @@ module.exports = {
         body: '-0.01em'
       },
       spacing: {
-        '23': '5.7rem'
+        '22': '5.5rem'
       },
       borderRadius: {
         'xl': '1rem',

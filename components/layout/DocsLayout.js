@@ -109,7 +109,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
 
-      <div className="sticky top-23 lg:top-20 right-0 px-3 sm:px-6 lg:px-8 pt-3 pb-3 z-10 bg-white opacity-100 border-b border-gray-200 w-full overflow-auto lg:hidden">
+      <div className="sticky top-22 lg:top-20 right-0 px-3 sm:px-6 lg:px-8 pt-3 pb-3 z-10 bg-white opacity-100 border-b border-gray-200 w-full overflow-auto lg:hidden">
         <div className="block bg-white text-gray-500">
           <button onClick={() => {(showMenu)?setShowMenu(false):setShowMenu(true)}} className="flex items-center w-full justify-between focus:outline-none " aria-label="Open sidebar">
             <span className='flex justify-between'>
