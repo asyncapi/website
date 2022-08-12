@@ -9,7 +9,7 @@ export default function DocsMobileMenu({
   onClickClose = () => { },
 }) {
   return (
-    <div className="z-60 lg:hidden">
+    <div className="z-60 max-h-(screen-12) overflow-y-scroll lg:hidden">
       <div className="relative inset-0 flex z-40">
         <div className=" flex-1 flex flex-col max-w-xs w-full bg-white">
             <div className='w-full my-4 px-2'>

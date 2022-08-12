@@ -167,7 +167,8 @@ module.exports = {
         '(screen-16)': 'calc(100vh - 4rem)',
         '108': '27rem',
         '(screen-14)': 'calc(100vh - 81px)',
-        '120': '37rem'
+        '120': '37rem',
+        '(screen-12)': 'calc(100vh - 130px)'
       },
       marginRight: {
         '36': '9rem'
@@ -182,10 +183,12 @@ module.exports = {
         heading: '-0.03em',
         body: '-0.01em'
       },
+      spacing: {
+        '23': '5.7rem'
+      },
       borderRadius: {
         'xl': '1rem',
       },
-
       zIndex: {
         '60': 60,
       },
