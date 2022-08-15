@@ -73,7 +73,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 
 ## Values of AsyncAPI
 
-- **Innovative**. There is no other specification that covers the messaging needs in the event-driven architecture that AsyncAPI is covering. What it tries to do is to integrate with the existing tools and remove walls for communication.
+- **Innovative**. There is no other specification that covers the messaging needs in event-driven architecture that AsyncAPI is covering. What it tries to do is to integrate with the existing tools and remove walls for communication.
 - **Free**. It’s a free software project: it seeks the user's liberty by offering a tool that can be used and enhanced without restrictions.
 - **Open**. As it's an open-source project and not a company or a product, it works in a change of paradigm: it does not sell anything, it moves away from fierce competition and bets for cooperation.
 - **Multicultural and inclusive**. It’s an initiative with an international and multicultural vision. It’s organic, always in constant mutation and change. It also actively demands compliance with human rights, respect for racial, sexual, and cultural diversity equality. And, of course, the equality between women and men.
