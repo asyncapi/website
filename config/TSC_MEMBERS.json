@@ -382,7 +382,8 @@
 		"github": "ron-debajyoti",
 		"twitter": "rondebajyoti",
 		"linkedin": "rondebajyoti",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Narvar",
 		"repos": [
 			"modelina"
 		]
