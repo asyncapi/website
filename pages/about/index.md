@@ -60,7 +60,7 @@ This is the list of companies that either provide a significant financial suppor
 
 Would you like to get on the list and support us financially? Check out all [AsyncAPI sponsoring options](https://opencollective.com/asyncapi).
 
-Would you like to help us with the maintainance? Contact us on [Slack](https://www.asyncapi.com/slack-invite/).
+Would you like to help us with the maintenance? Contact us on [AsyncAPI Slack](https://www.asyncapi.com/slack-invite/).
 
 ## Brands and companies using AsyncAPI
 The total number of companies and projects using AsyncAPI as well as their identity is impossible to know. So far, we are aware that the following ones operate with it.
