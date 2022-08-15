@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/ycdtoaNrWdw/hqdefault.jpg",
+    "title": "Conference Meeting round 5 - August 11, 2022",
+    "description": "https://github.com/asyncapi/community/issues/431.",
+    "videoId": "ycdtoaNrWdw"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/YQMgxKhMrQA/hqdefault.jpg",
+    "title": "Community Meeting - August 9 2022",
+    "description": "https://github.com/asyncapi/community/issues/426.",
+    "videoId": "YQMgxKhMrQA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/tMqmADw2lck/hqdefault.jpg",
     "title": "AsyncAPI spec 3.0 meeting",
     "description": "https://github.com/asyncapi/community/issues/427.",
@@ -16,17 +28,5 @@
     "title": "Community Meeting - July 26 2022",
     "description": "https://github.com/asyncapi/community/issues/413.",
     "videoId": "czEJN-kmW1Q"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/7CymWygvWwI/hqdefault.jpg",
-    "title": "Spec 3.0 meeting",
-    "description": "https://github.com/asyncapi/community/issues/410.",
-    "videoId": "7CymWygvWwI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/xDjGNJWz_Gc/hqdefault.jpg",
-    "title": "AsyncAPI Onboarding - Part 4 - AsyncAPI in Action",
-    "description": "https://github.com/asyncapi/community/issues/415 - Creating AsyncAPI file - What can you do with the file, some possible use ...",
-    "videoId": "xDjGNJWz_Gc"
   }
 ]
