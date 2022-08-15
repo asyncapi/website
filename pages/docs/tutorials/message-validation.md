@@ -31,7 +31,50 @@ Before you proceed to the next stage, you'll need to download a few things:
     - [Install Git on Windows](https://git-scm.com/download/win)
     - [Install Git on Linux](https://git-scm.com/download/linux)
 
-# # Generating code
+# Creating the AsyncAPI file
+
+In this step, we will create an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
+
+<CodeBlock>
+{`asyncapi: '2.4.0'
+info:
+  title: Streetlights API
+  version: '1.0.0'
+  description: |
+    The Smartylighting Streetlights API allows you
+    to remotely manage the city lights.
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+servers:
+  mosquitto:
+    url: mqtt://test.mosquitto.org
+    protocol: mqtt
+channels:
+  light/measured:
+    publish:
+      summary: Inform about environmental lighting conditions for a particular streetlight.
+      operationId: onLightMeasured
+      message:
+        name: LightMeasured
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the streetlight.
+            lumens:
+              type: integer
+              minimum: 0
+              description: Light intensity measured in lumens.
+            sentAt:
+              type: string
+              format: date-time
+              description: Date and time when the message was sent.`}
+</CodeBlock>
+
+# Generating code
 
 In this step, we will generate your code, you'll use the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
 
