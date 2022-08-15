@@ -58,7 +58,7 @@ This is the list of companies that either provide a significant financial suppor
 
 <Sponsors className="mt-8" />
 
-Would you like to get on the list and support us financially? Check out the [sponsoring options](https://opencollective.com/asyncapi).
+Would you like to get on the list and support us financially? Check out all [AsyncAPI sponsoring options](https://opencollective.com/asyncapi).
 
 Would you like to help us with the maintainance? Contact us on [Slack](https://www.asyncapi.com/slack-invite/).
 
