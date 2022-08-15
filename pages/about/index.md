@@ -79,7 +79,7 @@ The total number of companies and projects using AsyncAPI as well as their ident
 - **Multicultural and inclusive**. It’s an initiative with an international and multicultural vision. It’s organic, always in constant mutation and change. It also actively demands compliance with human rights, respect for racial, sexual, and cultural diversity equality. And, of course, the equality between women and men.
 - **Transparent**. The initiative it’s built on transparency, being one of the main values of AsyncAPI, both internally and externally including its financing. All the relevant data of the project is public. The tasks that are being and will be worked on are public and participatory through Slack and GitHub.
 - **Horizontal and participative**. Its structure is based on horizontality; most of the decisions are defined as a group, including the Community. Anyone can submit improvements, lines of action, or elements to be taken into account to strengthen AsyncAPI.
-- **User-friendly**. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API within minutes without prior knowledge of AsyncAPI. It has to be natural, simple, and intuitive.
+- **User-friendly**. AsyncAPI bets for a seamless API development experience. Users should be able to create their first API even without prior knowledge of AsyncAPI. It has to be natural, simple, and intuitive.
 
 ## Funding
 
