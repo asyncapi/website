@@ -123,13 +123,53 @@ const quickLinks = [
 ];
 
 function CommunityIndexPage() {
+  const heading = (
+    <div className="text-center flex justify-center flex-col items-center">
+      <Heading
+        className="countdown-text-gradient font-bold"
+        level="h6"
+        typeStyle="heading-xs"
+      >
+        AsyncAPI Community
+      </Heading>
+      <div className="mt-10">
+        <Heading level="h1" typeStyle="heading-xl" className="">
+          <span className="title block md:-mt-1 leading-[3rem]">
+            The home <br /> for developer <br /> communities
+          </span>
+        </Heading>
+      </div>
+      <div className="mt-5 w-5/6">
+        <Heading
+          level="h2"
+          typeStyle="body-md"
+          textColor="text-gray-700"
+          className="text-slate-500 text-xs md:text-sm"
+        >
+          We're a community of great people who are passionate about AsyncAPI.
+          Join us in building the future of Event Driven APIs by asking
+          questions, share ideas and build connection with each other
+        </Heading>
+      </div>
+      <div className="mt-10">
+        <Button
+          className="block md:inline-block focus:outline-none"
+          text="Explore Discussions"
+          icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
+        />
+      </div>
+    </div>
+  );
   return (
     <CommunityLayout
       title="AsyncAPI Meetings"
       description="The home for developer communities"
       wide
     >
-      <div className="overflow-hidden">
+      <div className='md:hidden mt-15'>
+        {heading}
+      </div>
+      <div className="overflow-hidden orbits">
         <div className="orbit-container">
           <div id="first-orbit" className="orbit">
             {orbit1.map((orbit) => (
@@ -138,42 +178,7 @@ function CommunityIndexPage() {
               </div>
             ))}
             <div className="w-full absolute h-full flex justify-center z-40">
-              <div className="text-center flex justify-center flex-col items-center">
-                <Heading
-                  className="countdown-text-gradient font-bold"
-                  level="h6"
-                  typeStyle="heading-xs"
-                >
-                  AsyncAPI Community
-                </Heading>
-                <div className="mt-10">
-                  <Heading level="h1" typeStyle="heading-xl" className="">
-                    <span className="title block md:-mt-1 leading-[3rem]">
-                      The home <br /> for developer <br /> communities
-                    </span>
-                  </Heading>
-                </div>
-                <div className="mt-5 w-5/6">
-                  <Heading
-                    level="h2"
-                    typeStyle="body-md"
-                    textColor="text-gray-700"
-                    className="text-slate-500 text-xs md:text-sm"
-                  >
-                    We're a community of great people who are passionate about
-                    AsyncAPI. Join us in building the future of Event Driven
-                    APIs by asking questions, share ideas and build connection
-                    with each other
-                  </Heading>
-                </div>
-                <div className="mt-10">
-                  <Button
-                    className="block md:inline-block focus:outline-none"
-                    text="Explore Discussions"
-                    icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
-                  />
-                </div>
-              </div>
+              {heading}
             </div>
           </div>
           <div id="second-orbit" className="orbit">
@@ -192,7 +197,7 @@ function CommunityIndexPage() {
           </div>
         </div>
       </div>
-      <div className="text-center relative h-half-screen z-40">
+      <div className="text-center relative md:h-half-screen z-40 mt-15 md:mt-0">
         <div className="gh-bg absolute">
           <img
             className="gh-img"
@@ -201,7 +206,7 @@ function CommunityIndexPage() {
           />
         </div>
       </div>
-      <div className="text-center flex justify-center flex-col items-center md:mt-72">
+      <div className="text-center flex justify-center flex-col items-center mt-72">
         <Heading level="h1" typeStyle="heading-xl" className="z-40">
           Home of #CommunityOps
         </Heading>
@@ -216,7 +221,7 @@ function CommunityIndexPage() {
             everywhere.
           </Heading>
         </div>
-        <div className="mt-32 z-40">
+        <div className="mt-10 md:mt-32 z-40">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
               <li
@@ -512,23 +517,6 @@ function CommunityIndexPage() {
       </div>
       <div className="mt-72 md:mt-36 flex justify-center">
         <NewsletterSubscribe formName="form 2" />
-        {/* <div className="md:p-5 w-full md:w-3/5 text-center flex justify-center flex-col items-center">
-          <Heading
-            level="h1"
-            typeStyle="heading-sm"
-            className="md:text-5xl z-40"
-          >
-            Stay up to date!
-          </Heading>
-          <div className="flex border-2 rounded-lg mt-10 w-full md:w-9/12 p-2">
-            <input
-              className="border-none bg-transparent w-10/12 focus:outline-none"
-              placeholder="Enter email"
-              type="email"
-            />{' '}
-            <Button className="block md:inline-block" text="Subscribe" />
-          </div>
-        </div> */}
       </div>
     </CommunityLayout>
   );

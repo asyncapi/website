@@ -85,6 +85,11 @@ abbr[title] {
 
 /*! purgecss end ignore */
 
+@media (max-width: 767px){
+  .orbits{
+    display: none;
+  }
+}
 .orbit-container {
   position: relative;
   margin: 0 auto;
