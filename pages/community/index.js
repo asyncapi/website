@@ -4,6 +4,7 @@ import Heading from '../../components/typography/Heading';
 import Button from '../../components/buttons/Button';
 import CommunityLayout from '../../components/layout/CommunityLayout';
 import IconRocket from '../../components/icons/Rocket';
+import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 
 const orbit1 = [
   {
@@ -167,7 +168,7 @@ function CommunityIndexPage() {
                 </div>
                 <div className="mt-10">
                   <Button
-                    className="block md:inline-block"
+                    className="block md:inline-block focus:outline-none"
                     text="Explore Discussions"
                     icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
                   />
@@ -222,7 +223,9 @@ function CommunityIndexPage() {
                 key={link.title}
                 className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
               >
-                <h1 className={`text:lg md:text-3xl font-black text-${link.color}`}>
+                <h1
+                  className={`text:lg md:text-3xl font-black text-${link.color}`}
+                >
                   {link.title}
                 </h1>
               </li>
@@ -277,7 +280,12 @@ function CommunityIndexPage() {
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg" textColor="text-white" className="mt-10 md:mt-0">
+              <Heading
+                level="h2"
+                typeStyle="heading-lg"
+                textColor="text-white"
+                className="mt-10 md:mt-0"
+              >
                 Events & Meetups
               </Heading>
               <Heading
@@ -286,10 +294,9 @@ function CommunityIndexPage() {
                 textColor="text-white"
                 className="text-slate-500 text-sm mt-10"
               >
-                Join a AsyncAPI event, from anywhere in the world.
-                Learn more about our live and recorded events below.
-                You can also sign up to our community newsletter to stay
-                up-to-date on our events.
+                Join a AsyncAPI event, from anywhere in the world. Learn more
+                about our live and recorded events below. You can also sign up
+                to our community newsletter to stay up-to-date on our events.
               </Heading>
               <div className="mt-10"></div>
             </div>
@@ -364,7 +371,7 @@ function CommunityIndexPage() {
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
                       <h1 className="text-md md:text-2xl">91</h1>
                       <div className="text-gray-500 text-xs md:text-sm">
-                        Days left 
+                        Days left
                       </div>
                     </div>
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
@@ -404,7 +411,7 @@ function CommunityIndexPage() {
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg" className='mt-10'>
+              <Heading level="h2" typeStyle="heading-lg" className="mt-10">
                 Advocate Programs
               </Heading>
               <Heading
@@ -504,7 +511,8 @@ function CommunityIndexPage() {
         </div>
       </div>
       <div className="mt-72 md:mt-36 flex justify-center">
-        <div className="md:p-5 w-full md:w-3/5 text-center flex justify-center flex-col items-center">
+        <NewsletterSubscribe formName="form 2" />
+        {/* <div className="md:p-5 w-full md:w-3/5 text-center flex justify-center flex-col items-center">
           <Heading
             level="h1"
             typeStyle="heading-sm"
@@ -520,7 +528,7 @@ function CommunityIndexPage() {
             />{' '}
             <Button className="block md:inline-block" text="Subscribe" />
           </div>
-        </div>
+        </div> */}
       </div>
     </CommunityLayout>
   );
