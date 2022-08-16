@@ -29,5 +29,5 @@ flowchart TD
     a1 --> B[consumer1]
     a2 --> C[consumer2]
 ```
-The above diagram shows the *Broker Centric Architecture*. We create 3 AsyncAPI document for `producer`, `consumer1`, and `consumer2`. The AsyncAPI files contain information about `servers` and in this case, the `server` is a representation of the `broker`. The `producer`, `consumer1`, and `consumer 2` can connect to the `broker` to send and receive messages related to their respective channels.
+The above diagram shows the *Broker Centric Architecture*. The `producer`, `consumer1`, and `consumer 2` can connect to the `broker` to send and receive messages related to their respective channels. In this case, you create three AsyncAPI files for `producer`, `consumer1`, and `consumer2`. In your AsyncAPI files, in [`Server Object`](https://www.asyncapi.com/docs/reference/specification/latest#serverObject) you provide information about the `broker`, so the API users know where to connect, to start receiving or sending messages.
 
