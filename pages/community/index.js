@@ -272,7 +272,7 @@ function CommunityIndexPage() {
         </div>
 
         <div className="z-40 mt-10 w-full h-full-screen md:h-130 shadow-xl md:flex md:justify-between">
-          <div className="p-10 bg-primary-500 rounded-t-lg md:rounded-l-lg md:flex justify-between w-full md:w-3/5 h-half-screen md:h-full md:flex-col text-center md:text-left">
+          <div className="p-10 bg-primary-500 rounded-t-lg md:rounded-t-none md:rounded-l-lg md:flex justify-between w-full md:w-3/5 h-half-screen md:h-full md:flex-col text-center md:text-left">
             <div className="">
               <Heading
                 level="h2"
@@ -305,7 +305,7 @@ function CommunityIndexPage() {
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
-            <div className="bg-primary-500 w-full opacity-25 rounded-b-lg md:rounded-r-lg" />
+            <div className="bg-primary-500 w-full opacity-25 rounded-b-lg md:rounded-b-none md:rounded-r-lg" />
             <div className="absolute h-full w-full flex flex-col md:justify-center items-end item-right">
               <div className="w-4/5 mt-10">
                 <div className="bg-white w-full p-2 md:p-4 rounded-l-md">
@@ -396,49 +396,6 @@ function CommunityIndexPage() {
                     </div>
                   </div>
                 </div>
-                {/* <div className="bg-white w-full p-4 mt-10 rounded-l-md">
-                  <div className="flex">
-                    <div className="w-24 md:w-40 bg-secondary-500 p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                      Spec 3.0
-                    </div>
-                    <div className="ml-4 text-left">
-                      <h1 className="text-md md:text-xl">Spec 3.0 Meeting</h1>
-                      <span className="text-gray-500 text-xs md:text-sm">
-                        3rd Nov, 2022 - 5th Nov, 2022
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    className="w-full bg-gray-200 mt-4"
-                    style={{ height: '1px' }}
-                  />
-                  <div className="flex mt-2 justify-between">
-                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-md md:text-2xl">91</h1>
-                      <div className="text-gray-500 text-xs md:text-sm">
-                        Days left
-                      </div>
-                    </div>
-                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-lg md:text-2xl">40</h1>
-                      <div className="text-gray-500 text-xs md:text-sm">
-                        Talks
-                      </div>
-                    </div>
-                    <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                      <h1 className="text-md md:text-2xl">1.4k</h1>
-                      <div className="text-gray-500 text-xs md:text-sm">
-                        Attendees
-                      </div>
-                    </div>
-                    <div className="text-left">
-                      <h1 className="text-md md:text-2xl">91</h1>
-                      <div className="text-gray-500 text-xs md:text-sm">
-                        Days left
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
