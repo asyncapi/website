@@ -9,16 +9,16 @@ export default function Paragraph({
     let classNames = ''
     switch (typeStyle) {
         case 'body-lg':
-            classNames = `body-lg font-regular ${className || ''}`
+            classNames = `text-lg font-regular ${className || ''}`
             break;
         case 'body-md':
-            classNames = `body-md font-regular ${className || ''}`
+            classNames = `text-md font-regular ${className || ''}`
             break;
         case 'body-sm':
-            classNames = `body-sm font-regular ${className || ''}`
+            classNames = `text-sm font-regular ${className || ''}`
             break;
         default:
-            classNames = `body-lg font-regular ${className || ''}`
+            classNames = `text-lg font-regular ${className || ''}`
     }
 
     return (
