@@ -10,6 +10,16 @@
 		]
 	},
 	{
+		"name": "Akshat Nema",
+		"github": "akshatnema",
+		"linkedin": "akshat-nema",
+		"twitter": "AksNema",
+		"availableForHire": true,
+		"repos": [
+			 "website"
+		]
+	},
+	{
 		"name": "Anand Sunderraman",
 		"github": "anandsunderraman",
 		"linkedin": "anand-sunderraman-a6b7a131",
@@ -225,7 +235,8 @@
 		"repos": [
 			"brand",
 			"design-system",
-			"studio"
+			"studio",
+			"website"
 		]
 	},
 	{
