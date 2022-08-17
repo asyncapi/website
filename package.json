@@ -8,7 +8,7 @@
     "write:blog": "node ./scripts/compose.js",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint",
+    "lint": "echo \"No linter configured yet\"",
     "generate:assets": "echo \"No assets to configure\"",
     "generate:meetings": "node scripts/build-meetings.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
