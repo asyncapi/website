@@ -72,7 +72,7 @@ export default function Newsroom() {
               <TwitterTimelineEmbed
                 sourceType="profile"
                 screenName="AsyncAPISpec"
-                options={{height: 570, width: '100%'}}
+                options={{ tweetLimit: 1, height: 570, width: '100%'}}
               />
             </div>
           </div>
