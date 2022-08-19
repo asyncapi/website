@@ -63,13 +63,13 @@ export default function Newsroom() {
             </TextLink>
           </div>
         </div>
-        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between">
-          <div className="w-full lg:w-1/2">
+        <div className="text-center md:text-left  lg:w-3/4 md:flex flex-row justify-between">
+          <div className="w-full lg:w-1/2 mb-10">
             <NewsroomArticle />
           </div>
-          <div className='w-full lg:w-1/2 px-2 md:pr-0 md:pl-4'>
+          <div className='w-full  lg:w-1/2  px-2  md:pr-0 md:pl-4  '>
             <div className="mt-0 w-full h-full mx-auto md:mt-0">
-              <TwitterTimelineEmbed
+              <TwitterTimelineEmbed                
                 sourceType="profile"
                 screenName="AsyncAPISpec"
                 options={{tweetLimit: '2',height: 560, width: '100%'}}
