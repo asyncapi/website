@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "Community Meeting",
+    "url": "https://github.com/asyncapi/community/issues/444",
+    "date": "Tue, 23 Aug 2022 16:00:00 GMT"
+  },
+  {
+    "title": "AsyncAPI Conference 2022 organization - round 6",
+    "url": "https://github.com/asyncapi/community/issues/445",
+    "date": "Thu, 25 Aug 2022 16:00:00 GMT"
+  }
+]
