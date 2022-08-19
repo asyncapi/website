@@ -68,11 +68,11 @@ export default function Newsroom() {
             <NewsroomArticle />
           </div>
           <div className='w-full lg:w-1/2 px-2 md:pr-0 md:pl-4'>
-            <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full mx-auto md:mt-0">
+            <div className="mt-0 w-full h-full mx-auto md:mt-0">
               <TwitterTimelineEmbed
                 sourceType="profile"
                 screenName="AsyncAPISpec"
-                options={{height: 570, width: '100%'}}
+                options={{tweetLimit: '2',height: 560, width: '100%'}}
               />
             </div>
           </div>
