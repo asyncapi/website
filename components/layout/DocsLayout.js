@@ -108,9 +108,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
-        { showMenu && (
+        {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
-        ) }
+        )}
         <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">

@@ -75,8 +75,10 @@ function getColors(color, shades) {
 }
 
 module.exports = {
-  content: ["./pages/**/*.{js,jsx}",
-  "./components/**/*.{js,jsx}",],
+  content: [
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+  ],
   theme:{
     fontWeight: {
       'extra-light': 200,
