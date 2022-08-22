@@ -1,16 +1,16 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
+
+@import "swiper/swiper.min";
+@import "swiper/modules/a11y/a11y.min";
+@import "swiper/modules/navigation/navigation.min";
+@import "swiper/modules/pagination/pagination.min";
+@import "swiper/modules/scrollbar/scrollbar.min";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import 'swiper/css/scrollbar';
-
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-@import url(https://cdn.jsdelivr.net/npm/@docsearch/css@3);
-
 
 html,
 body {
@@ -68,6 +68,43 @@ abbr[title] {
 
 .swiper-slide {
   height: auto !important;
+}
+
+/* adjust DocsSearch input styles */
+.DocSearch-Input {
+  border-width: 0;
+  background-color: transparent;
+}
+
+.DocSearch-Input:focus {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.DocSearch-Screen-Icon {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.DocSearch-Help > a {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 1em;
+  color: var(--docsearch-highlight-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0;
+}
+
+.DocSearch-Help > a:focus, .DocSearch-Help > a:hover {
+  outline: none;
+  text-decoration: underline;
 }
 
 /* adjust DocsSearch mobile styles */

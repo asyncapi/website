@@ -129,7 +129,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                       <kbd className="font-sans font-semibold">
                         <abbr
                           title={actionKey.key}
-                          className="no-underline text-slate-300"
+                          className="no-underline"
                         >
                           {actionKey.shortKey}
                         </abbr>{' '}
