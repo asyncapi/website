@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/quYi8SYMpA8/hqdefault.jpg",
+    "title": "Spec 3.0 - August 17 2022",
+    "description": "https://github.com/asyncapi/community/issues/435.",
+    "videoId": "quYi8SYMpA8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/ycdtoaNrWdw/hqdefault.jpg",
     "title": "Conference Meeting round 5 - August 11, 2022",
     "description": "https://github.com/asyncapi/community/issues/431.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Conference 2022 organization - round 4",
     "description": "https://github.com/asyncapi/community/issues/415.",
     "videoId": "_59k06LMDRA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/czEJN-kmW1Q/hqdefault.jpg",
-    "title": "Community Meeting - July 26 2022",
-    "description": "https://github.com/asyncapi/community/issues/413.",
-    "videoId": "czEJN-kmW1Q"
   }
 ]
