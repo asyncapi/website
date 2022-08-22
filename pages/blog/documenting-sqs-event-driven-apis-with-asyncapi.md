@@ -10,6 +10,7 @@ authors:
     link: https://www.linkedin.com/in/mauro-bosetti/?locale=en_US
     byline: Argentinian software explorer.
 excerpt: Documenting event-driven architectures is possible, and this post will show you how, using SQS as a (real world) example.
+featured: true
 ---
 
 > Hey, do you remember what this field looks like in GET /operations?
@@ -91,7 +92,7 @@ channels:
 The message properties are defined using [JSON Schema](https://www.asyncapi.com/docs/reference/specification/v2.4.0#schemaObject).
 
 ## Visualization and other tools
-Just like we have Swagger UI for RESTful API docs visualization, we can paste our AsyncAPI file into the AsynAPI Studio for pretty visualization, like this:
+Just like we have Swagger UI for RESTful API docs visualization, we can paste our AsyncAPI file into the [AsyncAPI Studio](https://studio.asyncapi.com/) for pretty visualization, like this:
 
 <Figure src="/img/posts/documenting-sqs-event-driven-apis-with-asyncapi/visualizer.webp"
 caption="Async API Studio"
