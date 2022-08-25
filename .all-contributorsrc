@@ -282,6 +282,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "starlightknown",
+      "name": "Karuna Tata",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74637789?v=4",
+      "profile": "https://starlightknown.github.io/",
+      "contributions": [
+        "a11y"
+      ]
     }
   ],
   "contributorsPerLine": 7,
