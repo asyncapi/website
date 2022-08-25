@@ -2,8 +2,6 @@ import IconTwitter from "./icons/Twitter"
 import IconGithub from "./icons/Github"
 import IconYoutubeGray from "./icons/YouTubeGray"
 import IconLinkedIn from "./icons/LinkedIn"
-import NewsletterSubscribe from "./NewsletterSubscribe"
-import Container from "./layout/Container"
 import Link from "next/link"
 import AsyncAPILogoLight from "./AsyncAPILogoLight"
 import IconSlack from "./icons/Slack"
@@ -25,7 +23,7 @@ export default function Footer() {
               </Link>
            </div>
             <div className="">
-              <Heading className="mt-12 mb-15 text-white" typeStyle="heading-sm-semibold">
+              <Heading className="mt-12 mb-14 text-white" typeStyle="heading-sm-semibold">
                 Building the future of <br/> Event-Driven Architectures.
               </Heading>
             </div>
@@ -70,7 +68,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className="px-15 sm:px-8 sm:ml-10 md:ml-5 mb-5">
+              <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
                 <div className="py-2">
                   <div className="text-white">
                     <Heading typeStyle="heading-sm-semibold">News</Heading>

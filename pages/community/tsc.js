@@ -177,7 +177,7 @@ function UserInfo({ user }) {
         {user.repos.map((repo) => (
           <a
             key={repo.name}
-            className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-teal-100 text-teal-800 hover:bg-teal-300"
+            className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-cyan-100 text-cyan-800 hover:bg-cyan-300"
             href={repo.url}
           >
             {repo.name}
