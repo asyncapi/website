@@ -254,7 +254,7 @@ export default function ModelinaPlaygroundPage() {
               Start using Modelina really quickly. Select one of the available languages we offer and start generating models from your AsyncAPI document in a few seconds.
             </Paragraph>
             <div className="mt-8">
-              <CodeBlock language="bash" showLineNumbers={false} className="mt-8">npm install @asyncapi/modelina</CodeBlock>
+              <CodeBlock language="bash" showLineNumbers={false} className="mt-8" textSizeClassName="text-sm">npm install @asyncapi/modelina</CodeBlock>
               <div className="mt-8">
                 <GithubButton
                   className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto mt-8"
