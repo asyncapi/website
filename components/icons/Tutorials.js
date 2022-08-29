@@ -1,4 +1,4 @@
-export default function IconUseCases({ className }) {
+export default function IconTutorials({ className }) {
   return (
     <svg
       className={className}
@@ -9,7 +9,7 @@ export default function IconUseCases({ className }) {
       version="1.1"
       viewBox="0 0 20 20"
       xmlSpace="preserve"
-    >
+      >
       <path d="M17.1,19c-1.2,0-2.2-1-2.2-2.2c0-0.8,0.7-1.8,1.9-3l0.3-0.3l0.3,0.3c1.3,1.2,1.9,2.2,1.9,3
       C19.3,18,18.4,19,17.1,19L17.1,19z M15.8,16.8c0,0.7,0.6,1.3,1.3,1.3s1.3-0.6,1.3-1.3c0-0.4-0.4-1.1-1.3-2
       C16.2,15.6,15.8,16.3,15.8,16.8L15.8,16.8z"/>

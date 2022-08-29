@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import Link from 'next/link'
 export default function Button({
   text,
@@ -7,14 +8,14 @@ export default function Button({
   icon,
   iconPosition = 'right',
   className,
-  bgClassName = 'bg-primary-500 hover:bg-primary-400',
-  textClassName = 'text-white',
+  bgClassName = twMerge(`bg-primary-500 hover:bg-primary-400`),
+  textClassName = twMerge(`text-white`),
   buttonSize,
   ...props
 }) {
 
-  const smallButtonClasses = `${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading text-white ${className || ''}`
-  const classNames = `${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading text-white ${className || ''}`
+  const smallButtonClasses = twMerge(` ${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`)
+  const classNames = twMerge(` ${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`)
 
   if (!href) {
     return (
