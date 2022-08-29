@@ -61,6 +61,7 @@ The following is a list of tools that generate code from an AsyncAPI document; n
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, Java code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | Node.js/Hermes, Java/Spring, Markdown, HTML, and more.
 | [Node-RED AsyncAPI plugin](https://github.com/dalelane/node-red-contrib-plugin-asyncapi) | Use your AsyncAPI definition to generate and configure Node-RED nodes. | [Node-RED](https://nodered.org) |
 | [MultiAPI Generator](https://github.com/corunet/scs-multiapi-plugin) | Use AsyncAPI definition, several of them at the same time, to generate Spring Cloud code with Maven. | Java/Spring, Maven |
+| [asyncapi_gencpp](https://github.com/hatchbed/asyncapi_gencpp) | Use an AsyncAPI definition to generate C++ code for serializing and deserializing components and messages | C++ |
 
 The language you're looking for is not here? You created a new code generator and want to list it here? [Let us know!](https://github.com/asyncapi/asyncapi/issues/new)
 
