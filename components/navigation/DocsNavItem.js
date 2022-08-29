@@ -7,9 +7,9 @@ function isActiveSlug(slug, activeSlug) {
   return activeParts.length === partialSlug.length;
 }
 
-export default function DocsNavItem({ title, slug, href, indexDocument, activeSlug, onClick = () => {}, className = '', activeClassName = '', bucket }) {
+export default function DocsNavItem({ title, slug, href, indexDocument, activeSlug, onClick = () => {}, defaultClassName = '', inactiveClassName = '', activeClassName = '', bucket }) {
   const isActive = slug === '/docs' || indexDocument ? slug === activeSlug : isActiveSlug(slug, activeSlug);
-  const classes = `${isActive ? activeClassName : ''} ${className} inline-block`;
+  const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block`;
 
   return (
     <div className='inline-block'>

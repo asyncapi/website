@@ -48,7 +48,7 @@ export default function Newsroom() {
 
       <hr />
 
-      <div className="lg:flex flex-row my-20">
+      <div className="flex flex-col lg:flex-row my-20">
         <div className="text-center lg:text-left lg:w-1/4 pt-4">
           <Heading level="h4" typeStyle="heading-md-semibold">
             Latest News
@@ -63,16 +63,21 @@ export default function Newsroom() {
             </TextLink>
           </div>
         </div>
-        <div className="text-center md:text-left lg:w-3/4 md:flex flex-row justify-between">
-          <div className="w-full lg:w-1/2">
-            <NewsroomArticle />
+
+        <div className='md:flex flex-row items-stretch justify-between w-full lg:w-3/4'>
+          <div className="flex flex-col w-full md:w-1/2 relative overflow-y-auto">
+            <div className='min-h-0'>
+              <div className='md:absolute md:t-0 md:b-0 md:l-0 md:r-0 w-full h-full max-h-120'>
+                <NewsroomArticle /> 
+              </div>
+            </div>
           </div>
-          <div className='w-full lg:w-1/2 px-2 md:pr-0 md:pl-4'>
-            <div className="rounded-lg py-2 border border-gray-200 shadow-md mt-4 w-full h-full mx-auto md:mt-0">
+          <div className='w-full md:w-1/2 px-2 md:pr-0 md:pl-4'>
+            <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0">
               <TwitterTimelineEmbed
                 sourceType="profile"
                 screenName="AsyncAPISpec"
-                options={{height: 570, width: '100%'}}
+                options={{ tweetLimit: '2' }}
               />
             </div>
           </div>
