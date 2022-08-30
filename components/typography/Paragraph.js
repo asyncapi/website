@@ -2,6 +2,7 @@
 export default function Paragraph({
     typeStyle = "body-lg",
     textColor = "text-gray-700",
+    fontWeight = 'font-regular',
     className,
     children
 }) {
@@ -9,20 +10,19 @@ export default function Paragraph({
     let classNames = ''
     switch (typeStyle) {
         case 'body-lg':
-            classNames = `text-lg leading-relaxed font-regular ${className || ''}`
+            classNames = `text-lg ${fontWeight} ${className || ''}`
             break;
         case 'body-md':
-            classNames = `text-base leading-relaxed font-regular ${className || ''}`
+            classNames = `text-md ${fontWeight} ${className || ''}`
             break;
         case 'body-sm':
-            classNames = `text-sm leading-relaxed font-regular ${className || ''}`
+            classNames = `text-sm ${fontWeight} ${className || ''}`
             break;
         default:
-            classNames = `text-lg leading-relaxed font-regular ${className || ''}`
+            classNames = `text-lg ${fontWeight} ${className || ''}`
     }
 
     return (
         <p className={`${textColor} ${classNames}`}>{children}</p>
     )
-
 }
