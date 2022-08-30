@@ -19,8 +19,8 @@ In some cases, an entity can be both a producer publishing messages to a specifi
 flowchart LR
     a[Producer]-- Message 1 --->c[(Broker)]
     b[Producer]-- Message 2 --->c
-    c -- Message 1 ---> d[Consumer]
-    c -- Message 2 ---> e[Consumer]
+    c -- Message 1 --> b
+    c -- Message 2 ---> d[Consumer]
 ```
 
 In the diagram above, we see a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. We also have a second producer who publishes to one channel but also subscribes to messages from another.
