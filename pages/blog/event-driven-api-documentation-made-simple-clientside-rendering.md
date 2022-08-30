@@ -29,7 +29,7 @@ All examples will use this same AsyncAPI sample file 👇
 
 ```json
 {
-  "asyncapi": "2.2.0",
+  "asyncapi": "2.4.0",
   "info": {
     "title": "Account Service",
     "version": "1.0.0",
