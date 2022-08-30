@@ -27,7 +27,7 @@ I will cover the usage for:
 
 All examples will use this same AsyncAPI sample file 👇
 
-```
+```json
 {
   "asyncapi": "2.2.0",
   "info": {
