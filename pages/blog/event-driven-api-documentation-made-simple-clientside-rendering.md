@@ -158,7 +158,7 @@ You can import this in your **main.js** file with `import './assets/asyncapi.min
 
 ### <a name="wc"></a>Web Components
 
-To generate documentation from your AsyncAPI file, you can use it as an element of an HTML webpage or as a web component in any other web framework you choose. You can do this by implementing [web-react-components](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/web-component.md).
+To generate documentation from your AsyncAPI file, you can use it as an element of an HTML webpage or as a web component in any other web framework you choose. You can do this by using [web-react-components](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/web-component.md).
 
 1️⃣ Just create a **.html** file then copy and paste this code 👇
 
