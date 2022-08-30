@@ -13,4 +13,14 @@ flowchart TD
 ```
 The diagram above depicts the communication between a **producer** publishing events to a specific channel in a **broker** and a consumer subscribed to the same channel.
 
-Sometimes the communication between a producer and a broker can be different.
+In some cases, an entity can be both a producer publishing messages to a specific channel in the broker and a consumer subscribing to messages from a different channel in the broker.
+
+```mermaid
+flowchart LR
+    a[Producer]-- Message 1 --->c[(Broker)]
+    b[Producer]-- Message 2 --->c
+    c -- Message 1 ---> d[Consumer]
+    c -- Message 2 ---> e[Consumer]
+```
+
+In the diagram above, we see a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. We also have a second producer who publishes to one channel but also subscribes to messages from another.
