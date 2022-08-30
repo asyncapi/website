@@ -45,14 +45,6 @@ technical:
       TODO: Can we have a snippet? 
 codegen: |
   Java models generation. Avro schemas used as a source.
-documentation: |
-  Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
-  Publishing is part of CI/CD pipeline for the product using GitLabCI.
-
-  Critical features of AsyncAPI related to documentation:
-  - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
-  - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
-  - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI
 schemas:
   description: Avro 1.9
   storage: Git repository where source code is.
@@ -68,14 +60,19 @@ asyncapi:
   storage: Git repository where source code is.
   maintainers:
     Developers
-  editing:
-    description:
-    editors: TODO:
-      VSCode:
-        plugins:
+  editing: TODO: please provide info
   audience:
     internal: true
     external: false
+  extensions: TODO: do you use any?
+  documentation: |
+    Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
+    Publishing is part of CI/CD pipeline for the product using GitLabCI.
+
+    Critical features of AsyncAPI related to documentation:
+    - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
+    - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
+    - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI
   bindings:
     kafka: |
       Kafka bindings are used on channel, operation and message level.
@@ -92,3 +89,4 @@ asyncapi:
        - avro-schema-parser
 contact: |
   TODO:
+example: TODO: please provide one full example

@@ -40,9 +40,11 @@ asyncapi:
     #Describe where you store AsyncAPI files and who maintains them on daily basis
   editing:
     #Specify how you edit AsyncAPI files, where do you edit them. Be very specific on IDEs and plugins names, if used.
-  audience:
+  audience: #Specify if AsyncAPI audience is internal or external or both
     internal: true
     external: false
+  extensions: |
+    #Explain if you use spec extension and how. Provide examples if possible.
   documentation: |
     #Explain processes around documentation generated with AsyncAPI. How you do it, what AsyncAPI fields are critical for you. Provide examples if possible.
   bindings:
