@@ -190,7 +190,7 @@ If you want to render documentation from your AsyncAPI file without the use of a
 
 3️⃣ In the **body** element type in:
 
-```
+```html
  <div id="asyncapi"></div>
 
     <script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></script>
