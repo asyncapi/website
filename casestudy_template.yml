@@ -1,4 +1,4 @@
-company:
+company: #This is optional, if company wants to provide case study data anonymously, they can definitely do it
   name: #Company name.
   description: #Shor description of most important things people should know about the company. 
   customers: #Amount of customers to indicate the impact that the company has.
