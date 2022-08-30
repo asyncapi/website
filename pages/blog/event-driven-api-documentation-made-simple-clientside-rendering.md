@@ -83,7 +83,7 @@ If you wish to render documentation from your AsyncAPI file in React application
 
 2️⃣ Now, create **index.js** file and type in:
 
-```
+```js
 import React from "react";
 import ReactDOM from "react-dom";
 
