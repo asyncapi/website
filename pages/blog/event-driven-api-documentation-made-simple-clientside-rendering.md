@@ -162,7 +162,7 @@ To generate documentation from your AsyncAPI file, you can use it as an element 
 
 1️⃣ Just create a **.html** file then copy and paste this code 👇
 
-```
+```html
 <script src="https://unpkg.com/@asyncapi/web-component@1.0.0-next.39/lib/asyncapi-web-component.js" defer></script>
 
 <asyncapi-component
