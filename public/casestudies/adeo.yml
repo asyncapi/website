@@ -1,0 +1,94 @@
+company:
+  name: Adeo Group
+  description: Owning different brands in retail industry focused on home improvement and DIY markets, like Leroy Merlin.
+  customers: 500M
+  industry: Retail
+  revenue: 25.6B EURO turnover, including 768M EURO online
+  website: https://www.adeo.com/
+  logo: https://www.adeo.com/assets-adeo/themes/adeo-refonte/dist/assets/images/logo-adeo-v3.svg
+challenges: |
+    Cost Component Repository product is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use differen information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
+
+    Initial solution was a developer portal with list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
+
+    There was a need for a standart way of describing event-driven architecture.
+solution: |
+    The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for different units and external partners.
+
+    Payloads are described with Avro schema. These schemas are used to generate models and they are also referenced directly in AsyncAPI files thanks to `schemaFormat` feature and `$ref`. This way they make sure code is aligned with docs.
+
+    Shift to using AsyncAPI also enables the team to implement more use cases using AsyncAPI files.
+technical:
+  language:
+    - Java
+  frameworks:
+    - Spring
+  protocol:
+    - Kafka
+  broker: TODO: size of cluster
+  testing: TODO: how is it done
+  architecture: |
+    The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied:
+    - [Request/reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html)
+      Described with `description` field in AsyncAPI. Reply goes to dedicated reply channel.
+      TODO: Can we have a snippet?  
+    - [Return address](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ReturnAddress.html)
+      Message Header object with `REPLY_TOPIC` header property. Info that needs to be provided by client, so producer knows where to send a response.
+      TODO: Can we have a snippet? 
+    - [Correlation identifier](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html)
+      Important to follow to be able to identify what request does the respons match.
+      `REQUEST_ID` in Message Header object, and pointed out with `correlationID` property. 
+      TODO: I could not figure out what role `CORRELATION_ID` is playing. Is it that once producer sends a message to reply channel, then info about request id is not in `REQUEST_ID` but `CORRELATION_ID`. So they both have the same info, but one is for request producer and the other for reply producer?
+      TODO: Can we have a snippet? 
+    - [DeadLetter channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DeadLetterChannel.html)
+      Also known as Dead Letter Queue. In Kafka it is just another channel where undelivered messages are sent. In AsyncAPI for now it is just part of channel description, channel that works as DeadLetter channel.
+      TODO: Can we have a snippet? 
+codegen: |
+  Java models generation. Avro schemas used as a source.
+documentation: |
+  Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
+  Publishing is part of CI/CD pipeline for the product using GitLabCI.
+
+  Critical features of AsyncAPI related to documentation:
+  - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
+  - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
+  - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI
+schemas:
+  description: Avro 1.9
+  storage: Git repository where source code is.
+  registry: Confluent Schema registry
+  versioning: TODO: how is it done?
+  validation: TODO: how is validation done in runtime
+asyncapi:
+  usecase: |
+    Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation for machine-readable document that describes the API.
+    The goal was to document API in a standardized way, so other internal products could follow to unify the way APIs are documented across the company.
+  versions:
+    - 2.0.0 TODO:
+  storage: Git repository where source code is.
+  maintainers:
+    Developers
+  editing:
+    description:
+    editors: TODO:
+      VSCode:
+        plugins:
+  audience:
+    internal: true
+    external: false
+  bindings:
+    kafka: |
+      Kafka bindings are used on channel, operation and message level.
+      TODO: but channel bindings that you use in your examples are not in https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object    
+  tools:
+    generator:
+      templates:
+        '@asyncapi/html':
+          parameters:
+           - sidebarOrganization=byTags
+           - version
+    parser:
+      plugins: 
+       - avro-schema-parser
+contact: |
+  TODO:

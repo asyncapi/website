@@ -1,0 +1,66 @@
+company:
+  name: #Company name.
+  description: #Shor description of most important things people should know about the company. 
+  customers: #Amount of customers to indicate the impact that the company has.
+  industry: #Is it retail? software development? put the same value that company has on their LinkedIn page.
+  revenue: #Specify company earnings to indicate to case study reader how critical online operations are.
+  website: #Link to main website.
+  logo: #Link to logo of the company in SVG format.
+challenges: |
+    #Describe want challanges company have, that faced them towards AsyncAPI. There is no limit here. Use [CommonMark](https://commonmark.org/).
+solution: |
+    #Describe the solution for the challange and what role AsyncAPI played in it.
+technical:
+  language:
+    - #Provide a list of programming lanugages people using AsyncAPI work on
+  frameworks:
+    - #Specify what frameworks they use, maybe Spring in Java or Nest.js in JavaScript
+  protocol:
+    - #What protocols are used by the company in relation to AsyncAPI
+  broker: |
+    #Provide some details about the broker that is used at the company and what is the setup, size, like of example cluster size, number of topics (in case of Kafka for example).
+  testing: |
+    #Explain how testing of the solution is done. How you ensure API works as expected after changes, that users are not affected. For example how do you know who will be affected if you stop sending some message? Provide examples if possible.
+  architecture: |
+    #Explain the setup of the EDA architecture. Perfect woudl be if you could point what [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) you applied. Provide examples if possible.
+codegen: |
+  #Explain if you use code generation, what you generate and how. Provide examples if possible.
+schemas:
+  description: #What spec and version do you use, is it JSON Schema? Avro? What version?
+  storage: #Where do you store your schemas
+  registry: #Are you using schema registry solution? which one?
+  versioning: #How do you handle versioning of schemas?
+  validation: #How do you handle events payload validation against schemas?
+asyncapi:
+  usecase: |
+    #Even though this section might be a kind of replication of what was explained in challenges/solution, please describe in short what specific use case you found for AsyncAPI and how you implement it.
+  versions:
+    - #Specify a list of versions of AsyncAPI that you use. It can be a list, some teams might use different versions.
+  storage: |
+    #Describe where you store AsyncAPI files and who maintains them on daily basis
+  editing:
+    #Specify how you edit AsyncAPI files, where do you edit them. Be very specific on IDEs and plugins names, if used.
+  audience:
+    internal: true
+    external: false
+  documentation: |
+    #Explain processes around documentation generated with AsyncAPI. How you do it, what AsyncAPI fields are critical for you. Provide examples if possible.
+  bindings:
+    kafka: |
+      #Specify what bindings are used by their name and provide description on what level you use bindings. Provide examples if possible.
+  tools: #specify what AsyncAPI tools you use, as detailed as possible
+    generator:
+      templates:
+        '@asyncapi/html':
+          parameters:
+           - sidebarOrganization=byTags
+           - version
+    parser:
+      plugins: 
+       - avro-schema-parser
+contact: |
+  #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able tools:
+  - validate long term if case study is still validate
+  - ping you when we know we plan to change some parts of AsyncAPI that you are already using
+example: |
+  #Provide full example of AsyncAPI file that you are using on production.
