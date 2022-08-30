@@ -116,7 +116,7 @@ If you wish to generate documentation from your AsyncAPI file in Vue application
 
 2️⃣ In your **App.vue** just add this code:
 
-```
+```vue
 <template>
   <div ref="asyncapi"></div>
 </template>
