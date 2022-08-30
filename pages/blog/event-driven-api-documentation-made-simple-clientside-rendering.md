@@ -98,7 +98,11 @@ ReactDOM.render(<AsyncApiComponent schema={specMock} />, rootElement);
 
 **React AsyncAPI component** is imported on the **line 4**.
 
-If you are happy with AsyncAPI styling then you need to import their CSS pattern with `import "@asyncapi/react-component/styles/default.min.css";`
+If you are happy with AsyncAPI styling then you need to import their CSS pattern with:
+
+\```js
+import "@asyncapi/react-component/styles/default.min.css";
+\```
 
 On the **line 7** is where AsyncAPI sample file is imported.
 
