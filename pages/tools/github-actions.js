@@ -55,7 +55,7 @@ export default function GithubActionsPage() {
               {renderButtons()}
             </div>
             
-            <CodeBlock hasWindow>{getCode()}</CodeBlock>
+            <CodeBlock hasWindow textSizeClassName="text-sm">{getCode()}</CodeBlock>
           </div>
         </div>
       </div>
