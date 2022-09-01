@@ -71,7 +71,7 @@ This is the expected look of the generated document 👇
 
 ![document-template](/img/posts/event-driven-API-documentation-made-simple/document-template.webp "Document template")
 
-All usage examples from this article are available to check on [asyncapi-docs-rendering-examples](https://github.com/m1ner79/asyncapi-docs-rendering-examples) repository.
+All usage examples from this article are available to check on the [asyncapi-docs-rendering-examples](https://github.com/m1ner79/asyncapi-docs-rendering-examples) repository.
 
 ---
 
