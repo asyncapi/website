@@ -218,6 +218,6 @@ My **Web Component** and **Standalone Bundle** usage examples have `config='{"sh
 
 This was only a sample of what could be done. AsyncAPI can do a lot more. Check out the [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to generate docs.
 
-I hope that you liked this quick guide through AsyncAPI Client-Side documents generation.
+I hope you liked this quick guide about the AsyncAPI client side document generation.
 
 Till next time 👋.
