@@ -212,7 +212,7 @@ If you want to render documentation from your AsyncAPI file without the use of a
 I almost forgot.
 
 There is one more way to configure the AsyncAPI component.
-You can do it through **config** props, this same as for normal React component.
+You can do it through **config** props; the same as for the normal React component.
 
 My **Web Component** and **Standalone Bundle** usage examples have `config='{"show": {"sidebar": false}}` which turns a sidebar off, but if you change it to _**true**_ then your rendered document will have a sidebar.
 
