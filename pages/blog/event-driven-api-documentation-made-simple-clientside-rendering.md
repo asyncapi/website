@@ -110,7 +110,7 @@ import "@asyncapi/react-component/styles/default.min.css";
 
 ### <a name="vue"></a>Vue
 
-If you wish to generate documentation from your AsyncAPI file in Vue application, then you need to use [AsyncApiStandalone bundle](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md).
+If you wish to generate documentation from your AsyncAPI file in a Vue application, you need to use the [AsyncApiStandalone bundle](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md).
 
 1️⃣ React AsyncAPI component is required here as well, so again you need to run `npm install --save @asyncapi/react-component@next` command.
 
