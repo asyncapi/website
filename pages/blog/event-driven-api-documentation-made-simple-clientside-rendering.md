@@ -96,7 +96,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<AsyncApiComponent schema={specMock} />, rootElement);
 ```
 
-**React AsyncAPI component** is imported on the **line 4**.
+Here we can see that the **React AsyncAPI component** is imported on **line 4**.
 
 If you are happy with AsyncAPI styling then you need to import their CSS pattern with:
 
