@@ -152,7 +152,7 @@ As you can see on **line 6**, you need to import the **AsyncApiStandalone** bund
 Copy that file and then paste it into your _**assets**_ folder.
 I renamed mine **asyncapi.min.css**.
 
-You can import this in your **main.js** file with `import './assets/asyncapi.min.css'` or, as I did, add it at the end of **App.vue** file with `<style scope src="@/assets/asyncapi.min.css"></style>`.
+You can import this in your **main.js** file with `import './assets/asyncapi.min.css'` or, as I did, add it at the end of the **App.vue** file with `<style scope src="@/assets/asyncapi.min.css"></style>`.
 
 ---
 
