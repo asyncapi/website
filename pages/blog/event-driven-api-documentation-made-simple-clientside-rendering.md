@@ -104,7 +104,7 @@ If you are happy with AsyncAPI styling then you need to import their CSS pattern
 import "@asyncapi/react-component/styles/default.min.css";
 \```
 
-On the **line 7** is where AsyncAPI sample file is imported.
+**Line 7** is where the sample AsyncAPI file is imported.
 
 ---
 
