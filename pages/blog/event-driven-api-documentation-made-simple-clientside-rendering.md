@@ -25,7 +25,8 @@ I will cover the usage for:
 - [Web Components](#wc)
 - [Standalone Bundle](#sb)
 
-All examples will use this same AsyncAPI sample file 👇
+The AsyncAPI sample file 👇 is used as JSON to make it easier to use on the JS side.
+All examples will use this same sample.
 
 ```json
 {
@@ -79,7 +80,10 @@ All usage examples from this article are available to check on the [asyncapi-doc
 
 If you wish to render documentation from your AsyncAPI file in React application, then you need to use the [AsyncAPI React component](https://github.com/asyncapi/asyncapi-react).
 
-1️⃣ To install the **React AsyncAPI component** run the command `npm install --save @asyncapi/react-component@next`.
+1️⃣ To install the **React AsyncAPI component** run the command
+```bash
+npm install --save @asyncapi/react-component@next
+```
 
 2️⃣ Now, create a **index.js** file and type the following:
 
@@ -112,7 +116,12 @@ import "@asyncapi/react-component/styles/default.min.css";
 
 If you wish to generate documentation from your AsyncAPI file in a Vue application, you need to use the [AsyncApiStandalone bundle](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/vue.md).
 
-1️⃣ The React AsyncAPI component is also required here, so you need to run the `npm install --save @asyncapi/react-component@next` command.
+The given instructions are for Vue 2.x.
+
+1️⃣ The React AsyncAPI component is also required here, so you need to run the command
+```bash
+npm install --save @asyncapi/react-component@next
+```
 
 2️⃣ In your **App.vue** just add this code:
 
@@ -145,14 +154,27 @@ export default {
 <style scope src="@/assets/asyncapi.min.css"></style>
 ```
 
-As you can see on **line 6**, you need to import the **AsyncApiStandalone** bundle with the `import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';` command.
+As you can see on **line 6**, you need to import the **AsyncApiStandalone** bundle with command
+```vue
+import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';
+```
 
-3️⃣ There is one more thing to do. If you like AsyncAPI styling then you need to go to 👉 `node_modules/@asyncapi/react-component/style/default.min.css`.
+3️⃣ If you like AsyncAPI styling, then there is one more thing to do. You can do it in few ways:
+
+◾ First way; you need to go to 👉 `node_modules/@asyncapi/react-component/style/default.min.css`.
 
 Copy that file and then paste it into your _**assets**_ folder.
 I renamed mine **asyncapi.min.css**.
 
-You can import this in your **main.js** file with `import './assets/asyncapi.min.css'` or, as I did, add it at the end of the **App.vue** file with `<style scope src="@/assets/asyncapi.min.css"></style>`.
+Then, you can import this in your **main.js** file with
+```js
+import './assets/asyncapi.min.css'
+```
+
+◾ Second way; add it at the end of the **App.vue** file with
+```Vue
+<style scope src='@asyncapi/react-component/style/default.min.css'></style>
+```
 
 ---
 
@@ -160,7 +182,7 @@ You can import this in your **main.js** file with `import './assets/asyncapi.min
 
 To generate documentation from your AsyncAPI file, you can use it as an element of an HTML webpage or as a web component in any other web framework you choose. You can do this by using [web-react-components](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/web-component.md).
 
-1️⃣ Just create an **.html** file, then copy and paste this code 
+1️⃣ Just create an **.html** file, then copy and paste this code
 
 ```html
 <script src="https://unpkg.com/@asyncapi/web-component@1.0.0-next.39/lib/asyncapi-web-component.js" defer></script>
@@ -174,7 +196,10 @@ To generate documentation from your AsyncAPI file, you can use it as an element 
 </asyncapi-component>
 ```
 
-2️⃣ If you need support for old browsers then you need to add this script as well `<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js"></script>`.
+2️⃣ If you need support for old browsers then you need to add this script as well
+```html
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js"></script>
+```
 
 That is it! 🤯 Just awesome!
 
@@ -186,9 +211,12 @@ If you want to render documentation from your AsyncAPI file without the use of a
 
 1️⃣ All you need is just a basic HTML template.
 
-2️⃣ In the **head** element enter `<link rel="stylesheet" href="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">` to get AsyncAPI document styling.
+2️⃣ To get AsyncAPI document styling, in the **head** element enter:
+```html
+<link rel="stylesheet" href="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">
+```
 
-3️⃣ In the **body** element type in:
+3️⃣ In the **body** element type the following:
 
 ```html
  <div id="asyncapi"></div>
@@ -200,23 +228,28 @@ If you want to render documentation from your AsyncAPI file without the use of a
             ,
             config: {
                 show: {
-                    sidebar: false,
+                    sidebar: true,
                 }
             },
         }, document.getElementById('asyncapi'));
     </script>
 ```
 
-`<script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></script>` fetches everything required from the bundle.
-
-I almost forgot.
+This fetches everything required from the bundle
+```html
+<script src="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/browser/standalone/index.js"></script>
+```
 
 There is one more way to configure the AsyncAPI component.
 You can do it through **config** props; the same as for the normal React component.
 
-My **Web Component** and **Standalone Bundle** usage examples have `config='{"show": {"sidebar": false}}` which turns a sidebar off, but if you change it to _**true**_ then your rendered document will have a sidebar.
+My **Web Component** and **Standalone Bundle** usage examples have `config='{"show": {"sidebar": true}}` which turns on the sidebar, but if you change it to _**false**_ then your rendered document will not have that sidebar. Whatever works best for you.
 
-This was only a sample of what could be done. AsyncAPI can do a lot more. Check out the [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to generate docs.
+I almost forgot.
+
+AsyncAPI Standalone Bundle can be used in Angular 2. Please check the [official docs](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) if that is something that you may need.
+
+This was only a sample of what could be done. AsyncAPI can do a lot more. Check out the [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to amend the sample so it will meet your expectations.
 
 I hope you liked this quick guide about the AsyncAPI client side document generation.
 
