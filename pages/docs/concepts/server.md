@@ -1,3 +1,8 @@
+---
+title: Server
+weight: 1
+---
+
 
 ## What is a server?
 A server represents a messaging broker system where connections and communication between a producer and a consumer are established. Unlike traditional API servers which are dependent on request/response, message broker interactions occur back and forth over different channels.
