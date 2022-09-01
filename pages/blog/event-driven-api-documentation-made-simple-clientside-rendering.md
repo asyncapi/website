@@ -81,7 +81,7 @@ If you wish to render documentation from your AsyncAPI file in React application
 
 1️⃣ To install the **React AsyncAPI component** run the command `npm install --save @asyncapi/react-component@next`.
 
-2️⃣ Now, create **index.js** file and type in:
+2️⃣ Now, create a **index.js** file and type the following:
 
 ```js
 import React from "react";
