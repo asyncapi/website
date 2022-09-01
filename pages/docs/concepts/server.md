@@ -8,7 +8,7 @@ weight: 1
 A server represents a messaging broker system where connections and communication between a producer and a consumer are established. Unlike traditional API servers which are dependent on request/response, message broker interactions occur back and forth over different channels.
 
 ## What is the purpose of servers?
-Servers play an important role in maintaining a relationship between producers and consumers. When designing and setting up an event-driven application, servers are in charge of delivering asynchronous messages from the producer to the consumers through the use of channels. By integrating different messaging protocols, servers can transmit and exchange messages between clients..
+Servers play an important role in maintaining a relationship between producers and consumers. When designing and setting up an event-driven application, servers are in charge of delivering asynchronous messages from the producer to the consumers through the use of channels. By integrating different messaging protocols, servers can transmit and exchange messages between clients.
 
 * Clients and Server
 ```mermaid
