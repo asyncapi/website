@@ -16,7 +16,7 @@ excerpt: A simple guide for programmers looking for instructions on how to gener
 
 This guide is directed toward folks seeking instructions on generating documentation using their AsyncAPI files. Event-driven APIs are not the same as the synchronous APIs you usually document with OpenAPI or GraphQL. Many people use AsyncAPI now, and it is time to provide the community with a guide that shows what options the community has to render documentation on the client side.
 
-Oh, if you are still not sure about Client-Side Rendering or Server-Side Rendering, then you can read all about it here 👉 [Website rendering for beginners](https://michals-corner.vercel.app/blog/website-rendering-for-beginners) (shameless plug 😉).
+Oh, if you are still not sure about client or server side rendering, then you can read all about it here  [Website rendering for beginners](https://michals-corner.vercel.app/blog/website-rendering-for-beginners) (shameless plug ).
 
 I will cover the usage for:
 
