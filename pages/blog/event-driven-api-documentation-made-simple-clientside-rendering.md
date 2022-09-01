@@ -145,7 +145,7 @@ export default {
 <style scope src="@/assets/asyncapi.min.css"></style>
 ```
 
-As you can see on **line 6**, you need to import **AsyncApiStandalone** bundle with `import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';` command.
+As you can see on **line 6**, you need to import the **AsyncApiStandalone** bundle with the `import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';` command.
 
 3️⃣ There is one more thing to do. If you like AsyncAPI styling then you need to go to 👉 `node_modules/@asyncapi/react-component/style/default.min.css`.
 
