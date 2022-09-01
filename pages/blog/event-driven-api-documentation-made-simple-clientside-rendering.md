@@ -216,7 +216,7 @@ You can do it through **config** props; the same as for the normal React compone
 
 My **Web Component** and **Standalone Bundle** usage examples have `config='{"show": {"sidebar": false}}` which turns a sidebar off, but if you change it to _**true**_ then your rendered document will have a sidebar.
 
-This was only a sample of what could be done. AsyncAPI can do a lot more. Check [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to generate docs.
+This was only a sample of what could be done. AsyncAPI can do a lot more. Check out the [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to generate docs.
 
 I hope that you liked this quick guide through AsyncAPI Client-Side documents generation.
 
