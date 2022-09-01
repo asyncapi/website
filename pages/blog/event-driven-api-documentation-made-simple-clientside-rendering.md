@@ -77,7 +77,7 @@ All usage examples from this article are available to check on the [asyncapi-doc
 
 ### <a name="react"></a>React
 
-If you wish to render documentation from your AsyncAPI file in React application, then you need to use [AsyncAPI React component](https://github.com/asyncapi/asyncapi-react).
+If you wish to render documentation from your AsyncAPI file in React application, then you need to use the [AsyncAPI React component](https://github.com/asyncapi/asyncapi-react).
 
 1️⃣ To install the **React AsyncAPI component** run the command `npm install --save @asyncapi/react-component@next`.
 
