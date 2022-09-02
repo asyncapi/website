@@ -247,7 +247,7 @@ My **Web Component** and **Standalone Bundle** usage examples have `config='{"sh
 
 I almost forgot.
 
-AsyncAPI Standalone Bundle can be used in Angular 2. Please check the [official docs](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) if that is something that you may need.
+AsyncAPI Standalone Bundle can be used in Angular 2+. Please check the [official docs](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/angular.md) if that is something that you may need.
 
 This was only a sample of what could be done. AsyncAPI can do a lot more. Check out the [AsyncAPI documentation](https://www.asyncapi.com/docs/tutorials/getting-started/asyncapi-documents) for more information on how to amend the sample so it will meet your expectations.
 
