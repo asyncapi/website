@@ -66,7 +66,7 @@ channels:
     subscribe:
 ```
 
-Once we have the basics, we can start documenting the operations as we see fit. For instance, we can add a description, expected message schema, even protocol information if necessary. For instance, following our example:
+Once we have the basics, we can start documenting the operations as we see fit. For instance, we can add a description, expected message schema, and even protocol information if necessary. For instance, following our example:
 
 ```yaml
 asyncapi: '2.4.0'
