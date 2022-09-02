@@ -118,7 +118,7 @@ If you wish to generate documentation from your AsyncAPI file in a Vue applicati
 
 The given instructions are for Vue 2.x.
 
-1️⃣ The React AsyncAPI component is also required here, so you need to run the command
+1️⃣ The React AsyncAPI component is also required here, so you need to run the command:
 ```bash
 npm install --save @asyncapi/react-component@next
 ```
