@@ -182,7 +182,7 @@ import './assets/asyncapi.min.css'
 
 To generate documentation from your AsyncAPI file, you can use it as an element of an HTML webpage or as a web component in any other web framework you choose. You can do this by using [web-react-components](https://github.com/asyncapi/asyncapi-react/blob/next/docs/usage/web-component.md).
 
-1️⃣ Just create an **.html** file, then copy and paste this code
+1️⃣ Just create an **.html** file, then copy and paste this code:
 
 ```html
 <script src="https://unpkg.com/@asyncapi/web-component@1.0.0-next.39/lib/asyncapi-web-component.js" defer></script>
