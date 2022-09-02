@@ -155,7 +155,7 @@ export default {
 ```
 
 As you can see on **line 6**, you need to import the **AsyncApiStandalone** bundle with command
-```vue
+```js
 import AsyncApiStandalone from '@asyncapi/react-component/browser/standalone';
 ```
 
