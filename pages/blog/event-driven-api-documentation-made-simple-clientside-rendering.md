@@ -171,7 +171,7 @@ Then, you can import this in your **main.js** file with
 import './assets/asyncapi.min.css'
 ```
 
-◾ Second way; add it at the end of the **App.vue** file with
+Second way; import styles from `@asyncapi/react-component` package:
 ```Vue
 <style scope src='@asyncapi/react-component/style/default.min.css'></style>
 ```
