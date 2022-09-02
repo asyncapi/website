@@ -9,7 +9,7 @@ authors:
     photo: /img/avatars/mbosetti.webp
     link: https://www.linkedin.com/in/mauro-bosetti/?locale=en_US
     byline: Argentinian software explorer.
-excerpt: Documenting event-driven architectures is possible, and this post will show you how, using SQS as a (real world) example.
+excerpt: This post demonstrates how documenting event-driven architectures is possible, using SQS as a (real-world) example.
 featured: true
 ---
 
@@ -19,14 +19,14 @@ Ever since I started working in a team, the answer to that first question has be
 
 > Sure, let’s check the OpenAPI documentation file.
 
-After two or three times, people who didn’t work with our codebase started remembering where the information was, and stopped asking altogether. At least when it came to synchronous HTTP APIs. But as the previous question disappeared, another, slightly different one arised:
+After two or three times, people who didn’t work with our codebase started remembering where the information was and stopped asking altogether. At least when it came to synchronous HTTP APIs. But as the previous question disappeared, another, slightly different one arose:
 
 > Which are the fields we need to send in this asynchronous message?
 
-And the answer was not as easy. Finding it involved diving into the code, looking at DTO and data mapping objects, or even ancient Slack messages. While the HTTP API documentation was stored in a well known file, everything event-driven API related was scrambled around. Wouldn’t it be nice if we could deal with both the synchronous and the asynchronous APIs in the same way? Turns out, we can!
+And the answer was not as easy. Finding it involved diving into the code, looking at DTO and data mapping objects, or even ancient Slack messages. While the HTTP API documentation was stored in a well-known file, everything event-driven API related was scrambled around. Wouldn’t it be nice if we could deal with both the synchronous and the asynchronous APIs in the same way? Turns out, we can!
 
 ## AsyncAPI
-Asking around, I stumbled upon AsyncAPI, a specification just like OpenAPI, but made for Event-Driven Architectures. Just like with OpenAPI, it is used to describe how to communicate with an application, defining channels and message formats. Let’s see how to use it with an example.
+Asking around, I stumbled upon AsyncAPI, a specification just like OpenAPI, but made for Event-Driven Architectures. Just like with OpenAPI, it describes how to communicate with an application, defining channels and message formats. Let’s see how to use it with an example.
 
 One of the requirements was a way to notify an event to our provider, only once. We decided to use [SQS](https://aws.amazon.com/sqs/?nc1=h_ls), an AWS message queueing service, into which our backend publishes messages with a specific format, and the provider listens to them.
 
@@ -52,9 +52,9 @@ info:
 channels:
   OperationCreationQueue:
 ```
-The next field we need is one I struggled a bit to wrap my head around. If this was an HTTP API, it would be obvious that the endpoints exposed are to be called by the client. But since our API works either by receiving or sending messages to client, we need a way to express how the clients will interact with the application. Will the clients **receive** messages through the SQS, or will they **send** them? Or, in other words, will the clients interact with the channel by **publishing messages**, or by **subscribing** to listen for new messages?
+The next field we need is one I struggled a bit to wrap my head around. If this were an HTTP API, it would be obvious that the endpoints exposed are to be called by the client. But since our API works either by receiving or sending messages to clients, we need a way to express how the clients will interact with the application. Will the clients **receive** messages through the SQS, or will they **send** them? Or, in other words, will the clients interact with the channel by **publishing messages**, or by **subscribing** to listen for new messages?
 
-In our example, operations are created in our backend and then forwarded to the provider, who will be listening for new messages. Since we are documenting how others can interact with our API, the correct operation for this queue is **subscribe**
+In our example, operations are created in our backend and then forwarded to the provider, who will listen for new messages. Since we are documenting how others can interact with our API, the correct operation for this queue is **subscribe**
 
 ```yaml
 asyncapi: '2.4.0'
@@ -100,7 +100,7 @@ caption="Async API Studio"
 
 This tool will even generate basic examples for our messages, if we don’t provide our own.
 
-Additional tools, such as code generation tools, parsers, other UI components and CI integrations can be found in [this site](https://www.asyncapi.com/docs/tools).
+Additional tools, such as code generation tools, parsers, other UI components, and CI integrations, can be found on the [AsyncAPI tools website page](https://www.asyncapi.com/docs/tools).
 
 There are many other features I have not explored in this article — I haven’t even tried most of them yet! — but this is enough to write a simple document. The question introduced in the beginning has, from now on, an answer which is easy to find!
 
