@@ -104,9 +104,9 @@ Here we can see that the **React AsyncAPI component** is imported on **line 4**.
 
 If you are happy with AsyncAPI styling then you need to import their CSS pattern with:
 
-\```js
+```js
 import "@asyncapi/react-component/styles/default.min.css";
-\```
+```
 
 **Line 7** is where the sample AsyncAPI file is imported.
 
@@ -172,9 +172,9 @@ import './assets/asyncapi.min.css'
 ```
 You can also import it at the end of the **App.vue** file with:
 
-/```Vue
+```Vue
 <style scope src='./assets/asyncapi.min.css'></style>
-/```
+```
 Second way; import styles from `@asyncapi/react-component` package:
 ```Vue
 <style scope src='@asyncapi/react-component/style/default.min.css'></style>
@@ -194,7 +194,7 @@ To generate documentation from your AsyncAPI file, you can use it as an element 
 <asyncapi-component
   schema='{"asyncapi":"2.4.0","info":{"title":"Account Service","version":"1.0.0","description":"This service is in charge of processing user signups"},"channels":{"user/signedup":{"subscribe":{"message":{"$ref":"#/components/messages/UserSignedUp"}}}},"components":{"messages":{"UserSignedUp":{"payload":{"type":"object","properties":{"displayName":{"type":"string","description":"Name of the user"},"email":{"type":"string","format":"email","description":"Email of the user"}}}}}}}'
 
-  config='{"show": {"sidebar": false}}'
+  config='{"show": {"sidebar": true}}'
 
   cssImportPath="https://unpkg.com/@asyncapi/react-component@1.0.0-next.39/styles/default.min.css">
 </asyncapi-component>
@@ -247,7 +247,11 @@ This fetches everything required from the bundle
 There is one more way to configure the AsyncAPI component.
 You can do it through **config** props; the same as for the normal React component.
 
-My **Web Component** and **Standalone Bundle** usage examples have `config='{"show": {"sidebar": true}}` which turns on the sidebar, but if you change it to _**false**_ then your rendered document will not have that sidebar. Whatever works best for you.
+My **Web Component** and **Standalone Bundle** usage examples have
+```js
+config='{"show": {"sidebar": true}}'
+```
+which turns on the sidebar, but if you change it to _**false**_ then your rendered document will not have that sidebar. Whatever works best for you.
 
 I almost forgot.
 
