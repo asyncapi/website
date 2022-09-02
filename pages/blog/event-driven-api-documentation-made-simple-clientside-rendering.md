@@ -200,7 +200,7 @@ To generate documentation from your AsyncAPI file, you can use it as an element 
 </asyncapi-component>
 ```
 
-2️⃣ If you need support for old browsers then you need to add this script as well
+2️⃣ If you need support for old browsers then you need to add this script as well:
 ```html
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.5.0/webcomponents-bundle.js"></script>
 ```
