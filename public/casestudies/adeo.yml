@@ -19,13 +19,13 @@ solution: |
 
     Shift to using AsyncAPI also enables the team to implement more use cases using AsyncAPI files.
 technical:
-  language:
+  languages:
     - Java
   frameworks:
     - Spring
-  protocol:
+  protocols:
     - Kafka
-  broker: TODO: size of cluster
+  brokers: TODO: size of cluster
   testing: TODO: how is it done
   architecture: |
     The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied:
