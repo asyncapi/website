@@ -13,7 +13,7 @@ challenges: |
 
     There was a need for a standart way of describing event-driven architecture.
 solution: |
-    The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for different units and external partners.
+    The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for other company units depending on the API.
 
     Payloads are described with Avro schema. These schemas are used to generate models and they are also referenced directly in AsyncAPI files thanks to `schemaFormat` feature and `$ref`. This way they make sure code is aligned with docs.
 
@@ -47,7 +47,7 @@ codegen: |
   Java models generation. Avro schemas used as a source.
 schemas:
   description: Avro 1.9
-  storage: Git repository where source code is.
+  storage: Git repository where source code is. During release they are published to Confluent Schema registry.
   registry: Confluent Schema registry
   versioning: TODO: how is it done?
   validation: TODO: how is validation done in runtime
