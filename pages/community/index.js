@@ -265,6 +265,12 @@ function CommunityIndexPage() {
                 contributing, collaborating and mentoring others to build with
                 AsyncAPI.
               </Heading>
+              <Button
+                text="Become part of the family"
+                buttonSize="small"
+                className="mt-3"
+                bgClassName='bg-primary-600'
+              />
               <div className="mt-10"></div>
             </div>
           </div>
@@ -324,7 +330,7 @@ function CommunityIndexPage() {
                   </div>
                   <div
                     className="w-full bg-gray-200 mt-4"
-                    style={{ height: "1px" }}
+                    style={{ height: '1px' }}
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
@@ -367,7 +373,7 @@ function CommunityIndexPage() {
                   </div>
                   <div
                     className="w-full bg-gray-200 mt-4"
-                    style={{ height: "1px" }}
+                    style={{ height: '1px' }}
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
