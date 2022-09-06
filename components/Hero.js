@@ -36,10 +36,10 @@ export default function Hero({ className = ''}) {
                 <IconLoupe />
                 <span className="flex-auto">Quick search...</span>
                 {actionKey && (
-                  <kbd className="font-sans font-semibold dark:text-slate-500">
+                  <kbd className="font-sans font-semibold">
                     <abbr
                       title={actionKey.key}
-                      className="no-underline text-slate-300 dark:text-slate-500"
+                      className="no-underline"
                     >
                       {actionKey.shortKey}
                     </abbr>{' '}
