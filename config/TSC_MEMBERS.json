@@ -398,5 +398,15 @@
 		"repos": [
 			"modelina"
 		]
+	},
+	{
+		"name": "Ivan Garcia Sainz-Aja",
+		"github": "ivangsa",
+		"linkedin": "ivangarciasainzaja",
+		"availableForHire": false,
+		"company": "SNGULAR",
+		"repos": [
+			"vs-asyncapi-preview"
+		]
 	}
 ]
