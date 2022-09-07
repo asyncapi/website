@@ -6,6 +6,7 @@ import TextLink from "../../components/typography/TextLink";
 import FilterIcon from "../../components/icons/Filter";
 import ArrowDown from "../../components/icons/ArrowDown";
 import SearchIcon from "../../components/icons/Search"
+import ToolsList from '../../components/tools/ToolsList';
 
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative'
@@ -39,6 +40,9 @@ export default function toolsDashboard() {
               <SearchIcon className="my-auto opacity-70"/>
               <input className="border-none outline-none flex-1" placeholder="Search by name" type="text" />
             </div>
+          </div>
+          <div className="mt-10">
+            <ToolsList />
           </div>
         </Container>
        </GenericLayout>  
