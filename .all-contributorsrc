@@ -282,6 +282,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "starlightknown",
+      "name": "Karuna Tata",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74637789?v=4",
+      "profile": "https://starlightknown.github.io/",
+      "contributions": [
+        "a11y"
+      ]
+    },
+    {
+      "login": "nibble0101",
+      "name": "Joseph Mawa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52580190?v=4",
+      "profile": "https://github.com/nibble0101",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
