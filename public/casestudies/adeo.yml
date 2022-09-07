@@ -36,9 +36,10 @@ technical:
       Message Header object with `REPLY_TOPIC` header property. Info that needs to be provided by client, so producer knows where to send a response.
       TODO: Can we have a snippet? 
     - [Correlation identifier](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html)
-      Important to follow to be able to identify what request does the respons match.
-      `REQUEST_ID` in Message Header object, and pointed out with `correlationID` property. 
-      TODO: I could not figure out what role `CORRELATION_ID` is playing. Is it that once producer sends a message to reply channel, then info about request id is not in `REQUEST_ID` but `CORRELATION_ID`. So they both have the same info, but one is for request producer and the other for reply producer?
+      This pattern enables identification of request given response was sent to. 
+      
+      `REQUEST_ID` property is in the request message header. `CORRELATION_ID` property is in response message header. Both headers are described in the AsyncAPI Message Header object and referred to in the AsyncAPI `correlationID` property.
+      This means that correlation identifier is represented by different property in the message header, depending if it is a request or reply.
       TODO: Can we have a snippet? 
     - [DeadLetter channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DeadLetterChannel.html)
       Also known as Dead Letter Queue. In Kafka it is just another channel where undelivered messages are sent. In AsyncAPI for now it is just part of channel description, channel that works as DeadLetter channel.
@@ -47,27 +48,132 @@ codegen: |
   Java models generation. Avro schemas used as a source.
 schemas:
   description: Avro 1.9
-  storage: Git repository where source code is. During release they are published to Confluent Schema registry.
-  registry: Confluent Schema registry
-  versioning: TODO: how is it done?
-  validation: TODO: how is validation done in runtime
+  storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
+  registry: Confluent Schema Registry.
+  versioning: Versioning is based on git tags. Schema version pushed to Confluent Schema Registry match the git tag version of the product. Every schema has a `version` information, that match with product tag version.
+  validation: Based on validation on a broker level using Confluent Schema Registry.
 asyncapi:
   usecase: |
     Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation for machine-readable document that describes the API.
     The goal was to document API in a standardized way, so other internal products could follow to unify the way APIs are documented across the company.
   versions:
-    - 2.0.0 TODO:
+    - 2.4.0
   storage: Git repository where source code is.
   maintainers:
     Developers
-  editing: TODO: please provide info
+  editing: IntelliJ without any special plugins
   audience:
     internal: true
     external: false
-  extensions: TODO: do you use any?
+  extensions: null
   documentation: |
     Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
     Publishing is part of CI/CD pipeline for the product using GitLabCI.
+
+    Related Maven configuration used to trigger docs generation with AsyncAPI Generator industry:
+
+    ```
+     <profile>
+            <id>generate-asyncapi-doc</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <!-- Use the latest released version:
+                        https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
+                        <version>${frontend-maven-plugin.version}</version>
+                        <configuration>
+                            <nodeVersion>v12.18.4</nodeVersion>
+                            <installDirectory>${node.installation.path}</installDirectory>
+                            <workingDirectory>${node.installation.path}</workingDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>install node and npm</id>
+                                <goals>
+                                    <goal>install-node-and-npm</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+                            </execution>
+                            <execution>
+                                <id>install @asyncapi/generator globally</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>install @asyncapi/generator@${asyncapi.generator.version}</arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+
+                        <executions>
+                            <execution>
+                                <id>execute-generation</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+
+                                <configuration>
+                                    <!-- Access binary file in node_modules because it doesn't work on windows otherwise. -->
+                                    <executable>${node.modules.installation.path}/${ag.binary.name}</executable>
+                                    <commandlineArgs>
+                                        ${project.basedir}/src/docs/asyncapi/asyncapi.yaml @asyncapi/html-template@${asyncapi.htmltemplate.version} -p sidebarOrganization=byTags -p
+                                        version=${project.version} -o ${asyncapi.generation.dir}
+                                    </commandlineArgs>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>execute-internal-generation</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>generate-resources</phase>
+
+                                <configuration>
+                                    <!-- Access binary file in node_modules because it doesn't work on windows otherwise. -->
+                                    <executable>${node.modules.installation.path}/${ag.binary.name}</executable>
+                                    <commandlineArgs>
+                                        ${project.basedir}/src/docs/asyncapi/asyncapi-internal.yaml @asyncapi/html-template@${asyncapi.htmltemplate.version} -p sidebarOrganization=byTags -p
+                                        version=${project.version} -o ${asyncapi.generation.dir}/internal
+                                    </commandlineArgs>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <!-- here the phase you need -->
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${asyncapi.generation.dir}/assets</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/docs/asyncapi/assets</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    ```
 
     Critical features of AsyncAPI related to documentation:
     - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
