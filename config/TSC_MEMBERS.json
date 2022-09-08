@@ -207,9 +207,12 @@
 		]
 	},
 	{
+		"name": "Azeez Elegbede",
+		"linkedin": "acebuild",
 		"github": "AceTheCreator",
 		"twitter": "_acebuild",
-		"availableForHire": true,
+		"company": "Postman",
+		"availableForHire": false,
 		"repos": [
 			"chatbot"
 		]
@@ -397,6 +400,16 @@
 		"company": "Narvar",
 		"repos": [
 			"modelina"
+		]
+	},
+	{
+		"name": "Ivan Garcia Sainz-Aja",
+		"github": "ivangsa",
+		"linkedin": "ivangarciasainzaja",
+		"availableForHire": false,
+		"company": "SNGULAR",
+		"repos": [
+			"vs-asyncapi-preview"
 		]
 	}
 ]
