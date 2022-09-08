@@ -13,11 +13,6 @@ Our long-term goal is to make working with EDAs as easy as working with REST API
 
 The AsyncAPI project started at Hitch (a.k.a. API Changelog). Hitch needed a machine-readable format to describe internal message-driven microservices architecture. The goal was to benefit from it in the same way they had used OpenAPI for their HTTP APIs. Inspired by OpenAPI, [Fran Méndez](https://twitter.com/fmvilas), who worked at Hitch at the time, created the AsyncAPI specification. After publishing the first version, he noticed that he solved not only his problems but the problems of the wider community. Eventually, the AsyncAPI specification and community evolved into the AsyncAPI Initiative, a project now under the umbrella of the Linux Foundation.
 
-This project started at Hitch (a.k.a. API Changelog). We are in love with API machine-readable documentation formats (OpenAPI, RAML, etc.) and always encouraged our customers to use a machine-readable definition for their APIs because it allows them to get extra benefits. From documentation and code generation to setup their own [API Assistant](http://apiassistant.com).
-
-Internally, we used a message-driven microservices architecture and we couldn't have all those tools that we have with the HTTP APIs. All those things you get because you have your API defined with a machine-readable documentation format. And, on top of that, we noticed that some of our customers were creating IoT APIs over MQTT and they couldn't get all the benefits from Hitch because the existing specifications don't support message-driven APIs.
-
-**It was time to come up with something good enough for everyone instead of having every company doing its own battle. We can learn a lot together if we join forces, so we decided to create AsyncAPI!**
 
 ## Open governance model
 
