@@ -60,9 +60,9 @@ asyncapi:
     parser:
       plugins: 
        - avro-schema-parser
+  fullExample: #should be url to full example of the case study. So later in the UI we can show it as "https://studio.asyncapi.com/?url=https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml" so the example can be previewed in the AsyncAPI Studio easily.
 contact: |
   #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able tools:
   - validate long term if case study is still validate
   - ping you when we know we plan to change some parts of AsyncAPI that you are already using
-example: |
-  #Provide full example of AsyncAPI file that you are using on production.
+additionalResources: #provide some additional resources if there are such. Just block of text with links to articles or videos about the case study.
