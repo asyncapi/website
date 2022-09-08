@@ -55,7 +55,7 @@
     "gray-matter": "^4.0.2",
     "jgexml": "^0.4.4",
     "lodash": "^4.17.21",
-    "markdown-to-txt": "^1.0.1",
+    "markdown-to-txt": "^2.0.1",
     "markdown-toc": "1.2.0",
     "moment": "^2.29.4",
     "monaco-editor": "^0.20.0",
