@@ -7,7 +7,7 @@ company:
   website: https://www.adeo.com/
   logo: https://www.adeo.com/assets-adeo/themes/adeo-refonte/dist/assets/images/logo-adeo-v3.svg
 challenges: |
-    Cost Component Repository product is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use differen information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
+    Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
 
     Initial solution was a developer portal with list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
 
@@ -107,7 +107,7 @@ asyncapi:
   extensions: null
   documentation: |
     Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
-    Publishing is part of CI/CD pipeline for the product using GitLabCI.
+    Publishing is part of CI/CD pipeline for the product using GithubActions.
 
     Related Maven configuration used to trigger docs generation with AsyncAPI Generator industry:
 
