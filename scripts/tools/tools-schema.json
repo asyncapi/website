@@ -1,0 +1,82 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "JSON Schema for AsyncAPI tool discovery file.", 
+	"type": "object",
+	"required": [
+		"title",
+		"description",
+		"maintainers",
+		"links",
+		"filters"
+	],
+	"properties": {
+		"title": {
+			"type": "string",
+            "description": "Human-readable name of the tool that will be visible to people in the list of tools",
+            "examples" : [ "AsyncAPI Generator", "Cupid" ]  
+		},
+		"description": {
+			"type": "string"
+		},
+		"maintainers": {
+			"type": "array",
+			"items":{
+				"type": "string"
+			}
+
+		},
+		"links": {
+			"type": "object",
+			"required": [
+				"websiteUrl",
+				"docsUrl",
+				"iconUrl"
+			],
+			"properties": {
+				"websiteUrl": {
+					"type": "string"
+				},
+				"docsUrl": {
+					"type": "string"
+				},
+				"iconUrl": {
+					"type": "string"
+				}
+			}
+		}
+,
+		"filters": {
+			"type": "object",
+			"required": [
+				"language",
+				"technology",
+				"categories",
+				"hasCommercial"
+			],
+			"properties": {
+				"language": {
+					"type": "string"
+				},
+				"technology": {
+					"type": "array",
+					"items":{
+						"type": "string"
+					}
+				},
+				"categories": {
+					"type": "array",
+					"items":{
+						"type": "string"
+					}
+				},
+				"hasCommercial": {
+					"type": "boolean",
+					"examples": [
+						true
+					],
+					"default": false
+				}
+			}
+		}
+	}
+} 
