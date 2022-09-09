@@ -5,6 +5,7 @@ import Button from '../../components/buttons/Button';
 import CommunityLayout from '../../components/layout/CommunityLayout';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import Link from 'next/link';
 
 const orbit1 = [
   {
@@ -116,10 +117,30 @@ const orbit3 = [
 ];
 
 const quickLinks = [
-  { title: "Advocate Programs", bg: "white", color: "primary-600" },
-  { title: "Events & Meetups", bg: "white", color: "primary-600" },
-  { title: "Community Members", bg: "white", color: "primary-600" },
-  { title: "Start Contributing", bg: "white", color: "primary-600" },
+  {
+    title: 'Ambassador Programs',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/ambasador-progam',
+  },
+  {
+    title: 'Events & Meetups',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/events&meetups',
+  },
+  {
+    title: 'Community Members',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/community-members',
+  },
+  {
+    title: 'Docs & Resources',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/docs',
+  },
 ];
 
 function CommunityIndexPage() {
@@ -222,16 +243,17 @@ function CommunityIndexPage() {
         <div className="mt-10 md:mt-32 z-40">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
-              <li
-                key={link.title}
-                className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
-              >
-                <h1
-                  className={`text:lg md:text-3xl font-black text-${link.color}`}
+              <Link key={link.title} href={link.link}>
+                <li
+                  className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end cursor-pointer`}
                 >
-                  {link.title}
-                </h1>
-              </li>
+                  <h1
+                    className={`text:lg md:text-3xl font-black text-${link.color}`}
+                  >
+                    {link.title}
+                  </h1>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -269,7 +291,7 @@ function CommunityIndexPage() {
                 text="Become part of the family"
                 buttonSize="small"
                 className="mt-3"
-                bgClassName='bg-primary-600'
+                bgClassName="bg-primary-600"
               />
               <div className="mt-10"></div>
             </div>
