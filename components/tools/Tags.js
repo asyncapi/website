@@ -1,7 +1,7 @@
-export default function SelectTags({name='', color='', borderColor=''}) {
+export default function SelectTags({name='', bgColor, borderColor}) {
   return (
-    <div className={``}>
-
+    <div className={`text-center text-sm py-1 px-2 rounded-lg bg-[${bgColor}] border border-[${borderColor}]`}>
+      {name} 
     </div>
   )
 }
