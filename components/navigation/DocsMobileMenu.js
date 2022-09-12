@@ -1,5 +1,7 @@
 import ClickableLogo from '../ClickableLogo'
-import DocsNavItem from './DocsNavItem'
+import DocsNav from './DocsNav'
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 
 export default function DocsMobileMenu({
   post,
@@ -7,7 +9,7 @@ export default function DocsMobileMenu({
   onClickClose = () => { },
 }) {
   return (
-    <div className="z-60 md:hidden">
+    <div className="z-60 lg:hidden">
       <div className="fixed inset-0 flex z-40">
         <div className="fixed inset-0">
           <div className="absolute inset-0 bg-gray-600 opacity-75" onClick={onClickClose}></div>
@@ -22,15 +24,26 @@ export default function DocsMobileMenu({
             </button>
           </div>
           <div className="flex-1 h-0 pt-5 overflow-y-auto">
-            <ClickableLogo logoClassName="h-8 w-auto ml-3" />
+            <div className='pl-2.5'>
+              <ClickableLogo logoClassName="h-8 w-auto ml-3" />
+            </div>
+
+            <div className='w-full my-4 px-2'>
+              <SearchButton 
+                className="flex w-full items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
+              >
+                <IconLoupe />
+                <span className="flex-auto">Search docs...</span>
+              </SearchButton>
+            </div>
+
             <nav className="mt-5 px-2 mb-4">
-              {
-                navigation.map((item, i) => (
-                  <div key={`mobile-menu-item-${i}`}>
-                    <DocsNavItem item={item} active={post.slug === item.slug} onClick={onClickClose} />
-                  </div>
-                ))
-              }
+              <ul>
+                {Object.values(navigation).map(navItem => (
+                  <DocsNav item={navItem} active={post.slug} onClick={onClickClose} />
+                ))}
+              </ul>
             </nav>
           </div>
         </div>

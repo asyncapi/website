@@ -1,6 +1,13 @@
+const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('@tailwindcss/ui/colors')
 const plugin = require('tailwindcss/plugin')
+
+// delete deprecated colors that we don't use
+delete colors['lightBlue'];
+delete colors['warmGray'];
+delete colors['trueGray'];
+delete colors['coolGray'];
+delete colors['blueGray'];
 
 const colorPrimary = {
   100: '#F4EFFC',
@@ -68,54 +75,53 @@ function getColors(color, shades) {
 }
 
 module.exports = {
-  purge: false,
-  theme: {
-    colors: {
-      ...colors,
-      primary: colorPrimary, 
-      secondary: colorSecondary, 
-      pink: colorPink,
-      yellow: colorYellow,
-      gray: colorGray,
-      'code-editor': {
-        dark: '#252f3f',
-        'dark-highlight': '#3e4d64',
-      },
-      hub: '#252f3f',
-      slack: '#371038',
-      'mac-window': {
-        'close': '#ff5f56',
-        'minimize': '#ffbd2e',
-        'maximize': '#28c93f',
-      },
-    },
+  content: [
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+  ],
+  theme:{
     fontWeight: {
       'extra-light': 200,
       light: 300,
       regular: 400,
       medium: 500,
-      'semibold': 600,
+      semibold: 600,
       bold: 700,
-      'extrabold': 800,
+      extrabold: 800,
       black: 900
     },
-    animations: {
-      blink: {
-        from: {
-          opacity: 1,
-        },
-        '50%': {
-          opacity: 0,
-        },
-        to: {
-          opacity: 1,
-        },
-      },
+    fontFamily: {
+      'sans': ['Inter', ...defaultTheme.fontFamily.sans], 
+      'heading': ['Work Sans', ...defaultTheme.fontFamily.sans],
+      'body': ['Inter', ...defaultTheme.fontFamily.sans], 
+      'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
     },
-    animationTimingFunction: {
-      'step-end': 'step-end',
+    minWidth: {
+      '72': '18rem',
+      '40': '10rem',
+      '12': '3rem',
     },
     extend: {
+      colors: {
+        'gray': colorGray,
+        'primary': colorPrimary,
+        'secondary': colorSecondary,
+        'pink': colorPink,
+        'yellow': colorYellow,
+        'code-editor': {
+          'dark' : '#252f3f',
+          'dark-highlight': '#3e4d64',
+        },
+        'dark': '#1B1130',
+        'cool-gray':'#9C96A8',
+        'hub': '#252f3f',
+        'slack': '#371038',
+        'mac-window': {
+          'close': '#ff5f56',
+          'minimize': '#ffbd2e',
+          'maximize': '#28c93f',
+        },
+      },
       scale: {
         '25': '.25',
       },
@@ -128,11 +134,11 @@ module.exports = {
         '12ch': '12ch',
         '14ch': '14ch',
       },
+      width:{
+         'fit': 'fit-content'
+      },
       height: {
-        '72': '18rem',
-        '80': '20rem',
         '88': '22rem',
-        '96': '24rem',
         '100': '25rem',
         '104': '26rem',
         '108': '27rem',
@@ -149,36 +155,25 @@ module.exports = {
         '172': '43rem',
         '184': '46rem',
       },
-      minWidth: {
-        '72': '18rem',
-        '40': '10rem',
-        '12': '3rem',
-      },
       minHeight: {
         '108': '27rem',
       },
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
         '108': '27rem',
-        '(screen-14)': 'calc(100vh - 81px)'
+        '(screen-14)': 'calc(100vh - 81px)',
+        '120': '37rem'
       },
-      marginRight: {
+      margin: {
         '36': '9rem'
-      },
-      fontFamily: {
-        'sans': ['Inter', ...defaultTheme.fontFamily.sans], 
-        'heading': ['Work Sans', ...defaultTheme.fontFamily.sans],
-        'body': ['Inter', ...defaultTheme.fontFamily.sans], 
-        'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+      },  
+      borderRadius: {
+        'xl': '1rem',
       },
       letterSpacing: {
         heading: '-0.03em',
         body: '-0.01em'
       },
-      borderRadius: {
-        'xl': '1rem',
-      },
-
       zIndex: {
         '60': 60,
       },
@@ -186,13 +181,23 @@ module.exports = {
         '-15': '-7deg'
       },
       fontSize: {
-        'xxs': ['0.6rem', '0.6rem']
+        'xxs': ['0.6rem', '0.6rem'],
+        'heading-xs': ['16px', '1.375'],
+        'heading-sm': ['20px', '1.375'],
+        'heading-md': ['24px', '1.375'],
+        'heading-lg': ['36px', '1.375'],
+        'heading-xl': ['64px', '1.375'],
+        'body-sm': ['14px', '1.625'],
+        'body-md': ['16px', '1.625'],
+        'body-lg': ['18px', '1.625']
       },
-    },
+    }
   },
   plugins: [
-    require('@tailwindcss/ui'),
-    require('tailwindcss-animations'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.hljs-asyncapi-file': {
@@ -207,7 +212,14 @@ module.exports = {
         '.font-ligatures-contextual': {
           'font-variant-ligatures': 'contextual',
         },
-      })
-    })
+        '.scroll-none':{
+          'scrollbar-width': 'none',
+          '-ms-overflow-style': 'none', 
+        },
+        '.scroll-none::-webkit-scrollbar':{
+          'display':'none',
+          'scroll-behavior':'smooth',
+        }
+      })})
   ],
 }

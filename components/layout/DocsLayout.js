@@ -5,23 +5,89 @@ import sortBy from 'lodash/sortBy'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
-import ClickableLogo from '../ClickableLogo'
-import DocsNavItem from '../navigation/DocsNavItem'
+import DocsNav from '../navigation/DocsNav'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
-import AnnouncementRemainingDays from '../campaigns/AnnouncementRamainingDays'
-import AnnouncementHero from '../campaigns/AnnoucementHero'
-import Footer from '../Footer'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
     return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
   } 
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+}
+
+function buildNavTree(navItems) {
+  const tree = {
+    'welcome': {
+      item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
+      children: {}
+    }
+  }
+  
+  //first we make sure that list of items lists main section items and then sub sections, documents last
+  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+
+  sortedItems.forEach(item => {
+    //identify main sections
+    if (item.isRootSection) {
+      tree[item.rootSectionId] = { item, children: {} }
+    }
+
+    //identify subsections
+    if (item.parent) {
+      tree[item.parent].children[item.sectionId] = { item, children: [] }
+    }
+
+    if (!item.isSection) {
+      if (item.sectionId) {
+        let section = tree[item.rootSectionId].children[item.sectionId];
+        if (!section) {
+          tree[item.rootSectionId].children[item.sectionId] = { item, children: [] }
+        }
+        tree[item.rootSectionId].children[item.sectionId].children.push(item)
+      } else {
+        tree[item.rootSectionId].children[item.title] = { item };
+      }
+    }
+  })
+
+  for (const [rootKey, rootValue] of Object.entries(tree)) {
+    const allChildren = rootValue.children;
+    const allChildrenKeys = Object.keys(allChildren);
+
+    rootValue.children = allChildrenKeys
+      .sort((prev, next) => {
+        return allChildren[prev].item.weight - allChildren[next].item.weight;
+      }).reduce(
+        (obj, key) => { 
+          obj[key] = allChildren[key]; 
+          return obj;
+        }, 
+        {}
+      );
+
+    //handling subsections
+    if (allChildrenKeys.length > 1) {
+      for (const key of allChildrenKeys) {
+        allChildren[key].children?.sort((prev, next) => {
+          return prev.weight - next.weight;
+        });
+
+        // point in slug for specification subgroup to the latest specification version
+        if (rootKey === 'reference' && key === 'specification') {
+          allChildren[key].item.href = allChildren[key].children[0].slug;
+        }
+      }
+    }
+  }
+
+  return tree;
 }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
@@ -34,46 +100,59 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   }
 
   const [showMenu, setShowMenu] = useState(false)
-
-  const navigation = sortBy(navItems.map(item => {
-    const sortWeight = item.isSection ? (item.weight + 1) * 1000 : (item.sectionWeight + 1) * 1000 + (item.weight || 0)
-    return {
-      ...item,
-      sortWeight: sortWeight,
-    }
-  }), ['sortWeight'])
-  
+  const navigation = buildNavTree(navItems);
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
       <StickyNavbar>
-            <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-        </StickyNavbar>
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
-        { showMenu && (
+        {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
-        ) }
+        )}
         <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
-          <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
+          <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+
+              <SearchButton 
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
+              >
+                {({ actionKey }) => (
+                  <>
+                    <IconLoupe />
+                    <span className="flex-auto">Search docs...</span>
+                    {actionKey && (
+                      <kbd className="font-sans font-semibold">
+                        <abbr
+                          title={actionKey.key}
+                          className="no-underline"
+                        >
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
+              </SearchButton>
               
-              <nav className="flex-1 mt-3 pb-8 bg-white">
-                {
-                  navigation.map((item, i) => (
-                    <div key={`menu-item-${i}`}>
-                      <DocsNavItem item={item} active={post.slug === item.slug} />
-                    </div>
-                  ))
-                }
+              <nav className="flex-1 bg-white">
+                <ul>
+                  {Object.values(navigation).map(navItem => (
+                    <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
+                  ))}
+                </ul>
               </nav>
+
             </div>
           </div>
         </div>
         <div className="flex flex-col w-0 flex-1 max-w-full lg:max-w-(screen-16)">
           <main className="relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabIndex="0">
-            <AnnouncementHero className="text-center mx-4" small={true} />
             {!showMenu && (
               <div className="lg:hidden">
                 <button onClick={() => setShowMenu(true)} className="flex text-gray-500 px-4 sm:px-6 md:px-8 hover:text-gray-900 focus:outline-none" aria-label="Open sidebar">
