@@ -12,24 +12,24 @@ const categories = [
     description:
       'The essential guide to start using Commerce Layer"s REST API. Keep it as your reference for all the operations that you can perform on the API resources.',
     icon: <Book />,
-    link: '/',
+    link: 'docs/getting-started',
   },
   {
-    title: 'API reference',
+    title: 'Governance',
     description:
       'A comprehensive list of all Commerce Layer"s core resources. Check the structure of the objects and the allowed CRUD operations you can perform on each endpoint.',
     icon: <Book />,
     link: '/',
   },
   {
-    title: 'Changelog',
+    title: 'Writing Documentation',
     description:
       'A curated, regularly updated, and chronologically ordered list of notable changes for Commerce Layer APIs and apps, including product releases, new features, and general improvements.',
     icon: <Book />,
     link: '/',
   },
   {
-    title: 'Automation',
+    title: 'CI/CD',
     description:
       'A React based application that provides you with a production-ready, self-contained store. Each microstore will be accessible at a unique URL and configurable via URL query strings, with no development required.',
     icon: <GH />,
@@ -80,7 +80,7 @@ function Index() {
               </div>
               <div>
                 <Link href={category.link} className="text">
-                  <div className='flex items-center text-gray-600 hover:text-gray-800 cursor-pointer'>
+                  <div className='flex items-center text-gray-600 hover:text-gray-900 cursor-pointer'>
                     <span>Learn more </span>
                     <span>
                       <ArrowRight className="w-8" />
