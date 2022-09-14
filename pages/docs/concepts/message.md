@@ -4,7 +4,7 @@ weight: 2
 ---
 
 ## What is a message?
-A message is a technique used to transmit or exchange information from servers and application through channels. Each message contains a payload that contains the data sent to the server when making an API call.
+A message is a method of communication used to transmit or exchange information from either a server (sender) to an application (receiver) through the use of channels.
 
 ## What is the purpose of message?
 
