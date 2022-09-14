@@ -6,6 +6,7 @@ import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import JobsContext from '../../context/JobsContext'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
+import CommunityDocsLayout from './CommunityDocsLayout'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
@@ -18,7 +19,14 @@ export default function Layout({ children }) {
         {children}
       </DocsLayout>
     )
-  } else if (pathname.startsWith('/blog/')) {
+  }else if(pathname.startsWith('/community/docs/')){
+        const posts = getAllPosts();
+        const post = getPostBySlug(pathname);
+    return <CommunityDocsLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/community/docs/'))}>
+      {children}
+    </CommunityDocsLayout>
+  }
+   else if (pathname.startsWith('/blog/')) {
     const posts = getAllPosts()
     const post = getPostBySlug(pathname)
     return (
