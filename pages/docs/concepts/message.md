@@ -4,7 +4,7 @@ weight: 2
 ---
 
 ## What is a message?
-A message is a method of communication used to transmit or exchange information from either a server (sender) to an application (receiver) through the use of channels.
+A message is a method of communication used to transmit or exchange information from a sender to the receiver through the use of channels.
 
 ## What is the purpose of message?
 
@@ -13,10 +13,8 @@ A message is a method of communication used to transmit or exchange information 
 
 ``` mermaid
 graph LR
-    A[(Server)] --> b[message]
-    b -->  D([channel1])
-    b --> E([channel2])
-    D --> F[application A]
-    E --> G[application B]
+    A[(Sender Application )] --> B[message]
+    B --> D([channel])
+    D --> F[(Receiver Application)]
   
 ```
