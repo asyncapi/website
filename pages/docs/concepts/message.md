@@ -4,7 +4,7 @@ weight: 2
 ---
 
 ## What is a message?
-A message is a method of communication used to transmit or exchange information from a sender to the receiver through the use of channels.
+Message is a method of communication used to transmit or exchange information from a sender to the receiver through the use of channels. A message is generic and can also be defined as an event, command, or request.
 
 ## What is the purpose of message?
 
