@@ -13,8 +13,10 @@ A message is a method of communication used to transmit or exchange information 
 
 ``` mermaid
 graph LR
-    A[(Sender Application )] --> B[message]
-    B --> D([channel])
-    D --> F[(Receiver Application)]
+subgraph one[message]
+b([channel])
+end
+
+A{{sender application}} --> b --> C{{receiver application}}
   
 ```
