@@ -10,6 +10,7 @@ export default function CommunityLayout({
   description,
   children,
   wide = true,
+  className
 }) {
   return (
     <>
@@ -17,7 +18,7 @@ export default function CommunityLayout({
       <StickyNavbar>
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      <Container wide={wide}>{children}</Container>
+      <Container wide={wide} className={className}>{children}</Container>
     </>
   );
 }
