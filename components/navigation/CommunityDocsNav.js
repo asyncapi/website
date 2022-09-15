@@ -10,7 +10,8 @@ function CommunityDocsNav({navlist, post}) {
     useEffect(() => {
         const newLists = navlist.filter(
           (p) => {
-            if(p.isIndex){
+            if(p.isIndex && pathname.includes(p.sectionSlug)){
+              console.log(p)
               setTitle(p.title)
             }
             return p.sectionSlug && p.sectionSlug.includes(section);
