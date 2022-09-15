@@ -15,8 +15,7 @@ function CommunityDocsLayout({
       className='flex mt-20'
     >
         <div className="w-4/12 sticky top-40 self-start">
-          <h4 className="text-lg text-primary-600">Getting started</h4>
-          <div className="mt-5">
+          <div>
             <CommunityDocsNav navlist={navItems} post={post} />
           </div>
         </div>

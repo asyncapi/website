@@ -1,3 +1,7 @@
+---
+title: 'How to create new repository'
+weight: 1
+---
 # How to create new repository
 
 This document is not about creating a repository on GitHub. If this is what you were looking for, then [read GitHub guides on repository creation](https://docs.github.com/en/get-started/quickstart/create-a-repo).

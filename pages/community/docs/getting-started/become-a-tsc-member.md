@@ -1,3 +1,7 @@
+---
+title: 'Become a tsc member'
+weight: 1
+---
 # BECOME A  TSC MEMBER!
 
 In this article, you will learn how to become a member of the AsyncAPI Technical Steering Committee (TSC). You will know how to contribute, how to become a committer(maintainer), and realize the benefits of being a TSC member.
