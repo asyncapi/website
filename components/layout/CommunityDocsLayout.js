@@ -7,8 +7,6 @@ function CommunityDocsLayout({
   post,
   navItems
 }) {
-  console.log(navItems)
-  console.log(post)
   return (
     <CommunityLayout
       title="Community docs and resources"
