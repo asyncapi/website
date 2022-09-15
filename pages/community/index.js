@@ -176,6 +176,8 @@ function CommunityIndexPage() {
         <Button
           className="block md:inline-block focus:outline-none"
           text="Explore Discussions"
+          href="https://github.com/orgs/asyncapi/discussions"
+          target='_blank'
           icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
         />
       </div>
@@ -287,12 +289,15 @@ function CommunityIndexPage() {
                 contributing, collaborating and mentoring others to build with
                 AsyncAPI.
               </Heading>
-              <Button
-                text="Become part of the family"
-                buttonSize="small"
-                className="mt-3"
-                bgClassName="bg-primary-600"
-              />
+              <div className='mt-4'>
+                <Button
+                  text="Become part of the family"
+                  buttonSize="small"
+                  href="https://asyncapi.com/slack-invite"
+                  target="_blank"
+                  bgClassName="bg-primary-600"
+                />
+              </div>
               <div className="mt-10"></div>
             </div>
           </div>
