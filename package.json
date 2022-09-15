@@ -58,7 +58,7 @@
     "markdown-to-txt": "^2.0.1",
     "markdown-toc": "1.2.0",
     "mermaid": "^9.1.6",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "monaco-editor": "^0.20.0",
     "next": "^12.0.0",
     "node-fetch": "^2.6.7",
