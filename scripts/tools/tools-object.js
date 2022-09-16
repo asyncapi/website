@@ -8,14 +8,14 @@ let appendData = {
 
 const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
     let resultantObject = {
-      title: object.title,
-      description: object.description,
+      title: toolFile.title,
+      description: toolFile.description,
       links: {
-        ...object.links,
+        ...toolFile.links,
         repoUrl: repositoryUrl,
       },
       filters: {
-        ...object.filters,
+        ...toolFile.filters,
         isAsyncAPIOwner: isAsyncAPIrepo,
       },
     };
@@ -25,15 +25,13 @@ const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
   const getContent = async (result_object) => {
     let reference_id = result_object.url.split("=")[1];
     let download_url = `https://raw.githubusercontent.com/${result_object.repository.full_name}/${reference_id}/${result_object.path}`;
-    //   console.log(download_url);
-    let toolObject;
-    const resp = await axios.get(download_url);
-    if (!validate(resp.data, schema).errors.length) {
-      let repositoryUrl = result_object.html_url;
+    const { data } = await axios.get(download_url);
+    if (!validate(data, schema).errors.length) {
+      let repositoryUrl = result_object.repository.html_url;
       let isAsyncAPIrepo =
         result_object.repository.owner.login === "asyncapi";
-      toolObject = makeObject(resp.data, repositoryUrl, isAsyncAPIrepo);
-      resp.data.filters.categories.forEach((category) => {
+      let toolObject = createToolObject(data, repositoryUrl, isAsyncAPIrepo);
+      data.filters.categories.forEach((category) => {
         appendData[category].push(toolObject);
       });
     }

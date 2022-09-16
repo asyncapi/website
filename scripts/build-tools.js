@@ -3,13 +3,10 @@ const { convertTools } = require('./tools/tools-object');
 const fs = require('fs');
 const { resolve } = require('path');
 
-let githubExtractData = {};
-let toolsData = {};
-
 const buildTools = async () => {
   try {
-    githubExtractData = await getData();
-    toolsData = await convertTools(githubExtractData);
+    let githubExtractData = await getData();
+    let toolsData = await convertTools(githubExtractData);
     fs.writeFileSync(
       resolve(__dirname, '../config', 'tools.json'),
       JSON.stringify(toolsData)
