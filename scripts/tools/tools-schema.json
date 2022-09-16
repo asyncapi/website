@@ -61,13 +61,15 @@
 					"type": "array",
 					"items":{
 						"type": "string"
-					}
+					},
+					"minItems": 1
 				},
 				"categories": {
 					"type": "array",
 					"items":{
 						"type": "string"
-					}
+					},
+					"minItems": 1
 				},
 				"hasCommercial": {
 					"type": "boolean",

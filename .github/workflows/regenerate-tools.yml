@@ -27,8 +27,8 @@ jobs:
             commit-message: 'chore: update tools.json'
             committer: asyncapi-bot <info@asyncapi.io>
             author: asyncapi-bot <info@asyncapi.io>
-            title: 'chore: update meetings.json and newsrooom_videos.json'
-            branch: update-meetings/${{ github.job }}
+            title: 'chore: update tools.json'
+            branch: update-tools/${{ github.job }}
         - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
           name: Report workflow run status to Slack
           uses: 8398a7/action-slack@v3

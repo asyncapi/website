@@ -6,21 +6,16 @@ let appendData = {
     generator: [],
 };
 
-const makeObject = (object, repositoryUrl, isAsyncAPIrepo) => {
+const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
     let resultantObject = {
       title: object.title,
       description: object.description,
       links: {
-        websiteUrl: object.links.websiteUrl,
-        docsUrl: object.links.docsUrl,
-        iconUrl: object.links.iconUrl,
+        ...object.links,
         repoUrl: repositoryUrl,
       },
       filters: {
-        languages: object.filters.language,
-        technology: object.filters.technology,
-        categories: object.filters.categories,
-        hasCommercial: object.filters.hasCommercial,
+        ...object.filters,
         isAsyncAPIOwner: isAsyncAPIrepo,
       },
     };
@@ -36,7 +31,7 @@ const makeObject = (object, repositoryUrl, isAsyncAPIrepo) => {
     if (!validate(resp.data, schema).errors.length) {
       let repositoryUrl = result_object.html_url;
       let isAsyncAPIrepo =
-        result_object.repository.owner.login === "asyncapi" ? true : false;
+        result_object.repository.owner.login === "asyncapi";
       toolObject = makeObject(resp.data, repositoryUrl, isAsyncAPIrepo);
       resp.data.filters.categories.forEach((category) => {
         appendData[category].push(toolObject);
