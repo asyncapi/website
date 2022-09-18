@@ -27,11 +27,6 @@
 		},
 		"links": {
 			"type": "object",
-			"required": [
-				"websiteUrl",
-				"docsUrl",
-				"iconUrl"
-			],
 			"properties": {
 				"websiteUrl": {
 					"type": "string"
@@ -43,8 +38,7 @@
 					"type": "string"
 				}
 			}
-		}
-,
+		},
 		"filters": {
 			"type": "object",
 			"required": [
