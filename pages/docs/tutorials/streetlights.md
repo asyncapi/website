@@ -215,4 +215,4 @@ EOT`}
 You've learned how to create an AsyncAPI description file and how to generate code from it. The code is a bootstrap and you'll need to add your business logic into it. Take some time to play with it.
 There are still lots of things to be covered but intent of this tutorial is to be simple so you get an idea of the potential.
 
-We would also like to see what you create with AsyncAPI. As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand [creating a issue in our Github repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy :)
+We would also like to see what you create with AsyncAPI. As an open-source project, we're open to proposals, questions, suggestions, and contributions. If you don't feel in the mood to contribute but you're using AsyncAPI, just raise your hand [creating a issue in our GitHub repo](https://github.com/asyncapi/asyncapi/issues/new) or [join our Slack channel](https://www.asyncapi.com/slack-invite/). Don't be shy :)

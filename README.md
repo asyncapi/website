@@ -60,7 +60,7 @@ This repository has the following structure:
 <!-- If you make any changes in the project structure, remember to update it. -->
 
 ```text
-  ├── .github                     # Definitions of Github workflows, pull request and issue templates
+  ├── .github                     # Definitions of GitHub workflows, pull request and issue templates
   ├── components                  # Various generic components such as "Button", "Figure", etc.
   ├── config                      # Transformed static data to display on the pages such as blog posts etc.
   ├── context                     # Various React's contexts used in website
