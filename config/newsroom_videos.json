@@ -1,32 +1,32 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/RVGZ4ANo-x0/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (September 14, 2022)",
+    "description": "https://github.com/asyncapi/community/issues/453.",
+    "videoId": "RVGZ4ANo-x0"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/mN1aJfwSUik/hqdefault.jpg",
+    "title": "AsyncAPI Conference 2022 organization - round 7",
+    "description": "https://github.com/asyncapi/community/issues/456.",
+    "videoId": "mN1aJfwSUik"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/eKwLDcTsnPY/hqdefault.jpg",
+    "title": "Community Meeting - September 6th 2022",
+    "description": "https://github.com/asyncapi/community/issues/455.",
+    "videoId": "eKwLDcTsnPY"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/FWdeJxn9C4Q/hqdefault.jpg",
+    "title": "Spec 3.0 meeting 1 (August 31, 2022)",
+    "description": "https://github.com/asyncapi/community/issues/443.",
+    "videoId": "FWdeJxn9C4Q"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Pfe3gLZBgSQ/hqdefault.jpg",
     "title": "AsyncAPI Conference 2022 organization - round 6",
     "description": "https://github.com/asyncapi/community/issues/445.",
     "videoId": "Pfe3gLZBgSQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/xPvH7Xmi5VQ/hqdefault.jpg",
-    "title": "Community Meeting - August 23rd 2022",
-    "description": "https://github.com/asyncapi/community/issues/444.",
-    "videoId": "xPvH7Xmi5VQ"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/quYi8SYMpA8/hqdefault.jpg",
-    "title": "Spec 3.0 - August 17 2022",
-    "description": "https://github.com/asyncapi/community/issues/435.",
-    "videoId": "quYi8SYMpA8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ycdtoaNrWdw/hqdefault.jpg",
-    "title": "Conference Meeting round 5 - August 11, 2022",
-    "description": "https://github.com/asyncapi/community/issues/431.",
-    "videoId": "ycdtoaNrWdw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/YQMgxKhMrQA/hqdefault.jpg",
-    "title": "Community Meeting - August 9 2022",
-    "description": "https://github.com/asyncapi/community/issues/426.",
-    "videoId": "YQMgxKhMrQA"
   }
 ]
