@@ -291,6 +291,15 @@
       "contributions": [
         "a11y"
       ]
+    },
+    {
+      "login": "nibble0101",
+      "name": "Joseph Mawa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52580190?v=4",
+      "profile": "https://github.com/nibble0101",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
