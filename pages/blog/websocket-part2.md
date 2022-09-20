@@ -133,7 +133,7 @@ Is it reasonable to describe API that has two different production servers in on
 
 For **automation** road described in [Choosing the right road to Rome](#choosing-the-right-road-to-rome) section, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to specify that the given message can be published only to the **private** server. It is exactly the case with Kraken API.
 
-Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server **ws.kraken.com**. The only way to emit errors like `Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com` is by writing the code that handles validation manually. You can't generate that as the AsyncAPI file does not specif what messages can go to **ws.kraken.com** and what messages can't.
+Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server **ws.kraken.com**. The only way to emit errors like `Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com` is by writing the code that handles validation manually. You can't generate that as the AsyncAPI file does not specify what messages can go to **ws.kraken.com** and what messages can't.
 
 Why?
 
@@ -434,7 +434,7 @@ Websocket protocol is very flexible, and therefore you can implement the server 
 
 For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**. Another solution would be to use specification extensions to describe relations between messages and servers.
 
-> You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
+> You can open this document directly in AsyncAPI Studio by clicking [this](https://studio.asyncapi.com?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [original documentation](https://docs.kraken.com/websockets/).
 
 ```yml
 asyncapi: 2.0.0
