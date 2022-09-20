@@ -1,6 +1,6 @@
 ---
 title: Documenting SQS event-driven APIs with AsyncAPI
-date: 2022-08-18T12:40:20-03:00
+date: 2022-09-22T06:00:00-00:00
 type: Engineering
 tags: ['Getting Started','SQS']
 cover: /img/posts/documenting-sqs-event-driven-apis-with-asyncapi/cover.webp
