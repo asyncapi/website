@@ -10,7 +10,7 @@ export default function OpenAPIComparison({ className = '' }) {
               </div>
               <div className="flex flex-wrap flex-1">
                 <div className="flex-1 bg-green-100 border border-black p-2 m-2">
-                  Hosts
+                  Servers
                 </div>
                 <div className="flex-1 bg-gray-200 border border-black p-2 m-2">
                   Security
