@@ -127,7 +127,7 @@ const quickLinks = [
     title: 'Events & Meetups',
     bg: 'white',
     color: 'primary-600',
-    link: '/community/events&meetups',
+    link: '/community/events',
   },
   {
     title: 'Community Members',
