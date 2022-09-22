@@ -77,7 +77,7 @@ that the resolution is done as defined by the [JSON Reference](https://tools.iet
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support 2.5.0 version of the specification:
-- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `<version>`, and it contains the 2.4.0 JSON Schema.
+- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `<version>`, and it contains the JSON Schema document for AsyncAPI Spec 2.5.0.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) uses latest **@asyncapi/specs** package and can be used to parse and validate 2.5.0 documents. Upgrade to `<version>` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgrade to `<version>` version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.5.0 version of the spec. Upgrade to `<version>` version.
