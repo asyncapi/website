@@ -9,7 +9,7 @@ An event indicates a state change or update that is triggered by a user's/device
 
 ## Why do we need Producers? 
 
-One of the core concepts of an event driven architecture is the publish/subscribe communication model. Producers are essentially publishers in this model, they are the first logical layer in an event driven architecture, and are responsible for publishing messages to the broker so that any consumer subscribed to that event can handle it.
+One of the core concepts of event-driven architecture is the publish/subscribe communication model. Producers are publishers in this model and the first logical layer responsible for publishing messages to the broker. This way, any consumer subscribed to that event can handle the published messages.
 
 ```mermaid
 flowchart TD
