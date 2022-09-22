@@ -230,6 +230,6 @@ A vast variety of low-price devices (sensors, thermostats, robots, etc.) with in
 
 EDA enables a loose coupling between the components/apps in order regain agility, increases innovation pace and reduces time-to-market for new features/services.
 > # In general, I’m studying API Design Patterns and how various kinds of APIs expedite R&D adoption. What business results are accelerated from these kinds of patterns?
-> Thanks for suggesting topics and connecting with feedback. You can also reach me via Twitter @lifewingmate DM or via the AsyncAPI community via our [Github](https://github.com/asyncapi) or [Slack channel](http://asyncapi.slack.com).
+> Thanks for suggesting topics and connecting with feedback. You can also reach me via Twitter @lifewingmate DM or via the AsyncAPI community via our [GitHub](https://github.com/asyncapi) or [Slack channel](http://asyncapi.slack.com).
 
 Disclaimer: The professional opinions of those interviewed do not necessarily reflect the organizations they represent. These interviewees volunteered their time and contributions to support the AsyncAPI initiative and community.

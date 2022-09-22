@@ -173,10 +173,10 @@ export default function RoadmapPage() {
             <Warning
               className="lg:w-1/2 mt-8 mx-auto"
               title="Warning for Contributors"
-              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding Github issue so we can discuss what's the best way to proceed and implement it yourself."
+              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue so we can discuss what's the best way to proceed and implement it yourself."
             />
             <p className="text-xs text-center text-gray-600 mt-8">
-              <strong>Attention:</strong> this road map is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3AOutcome" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+              <strong>Attention:</strong> this road map is synchronized with the GitHub issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3AOutcome" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
             </p>
           </div>
         </div>

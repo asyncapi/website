@@ -17,7 +17,7 @@ Postman’s Open Technologies function was created to establish Postman as a lea
 
 Through our collaboration with the AsyncAPI Initiative, we are looking for a Developer Advocate to work closely with the AsyncAPI team within our Open Technologies function to help shape and build the future of API tooling. Everything is open-source and, therefore, much of your work will be open-source too.
 
-We believe that building a strong community and investing in their success is essential to our own success as a company. You will engage with open source communities on Github while collaborating within the AsyncAPI team to drive API better practices throughout the broader API ecosystem. In addition to advocacy, you will also have shared responsibilities for user education and community engagement.
+We believe that building a strong community and investing in their success is essential to our own success as a company. You will engage with open source communities on GitHub while collaborating within the AsyncAPI team to drive API better practices throughout the broader API ecosystem. In addition to advocacy, you will also have shared responsibilities for user education and community engagement.
 
 ## Responsibilities
 

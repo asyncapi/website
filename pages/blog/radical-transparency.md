@@ -58,7 +58,7 @@ Of course, I'm still happy to take private calls and emails when they make sense
 
 Whether you are a user, a contributor, or a code owner, everyone must make decisions in public. For code, we use pull requests. Use issues or discussions on the related repo when it's something else. And, if there's no related repo, use [the community one](https://www.github.com/asyncapi/community).  
 
-Whatever we do, needs to have its associated public record. That doesn't mean we don't do video calls to discuss complex topics. We actually encourage them when the writing form is not enough or too difficult. We never take decisions on meetings because that would be leaving many people out. E.g., those in other time zones, having other meetings at the same time, those on holidays or sick, etc. In any case, whatever is discussed in the meetings should be reflected in its correspondent issue or discussion on Github.
+Whatever we do, needs to have its associated public record. That doesn't mean we don't do video calls to discuss complex topics. We actually encourage them when the writing form is not enough or too difficult. We never take decisions on meetings because that would be leaving many people out. E.g., those in other time zones, having other meetings at the same time, those on holidays or sick, etc. In any case, whatever is discussed in the meetings should be reflected in its correspondent issue or discussion on GitHub.
 
 Of course, the "downside" of this is that the whole process becomes slower and more bureaucratic, but I don't think it's really a downside but a feature. By doing this, we make sure to behave as a community, as a group, as a huge team. And you don't want to leave any teammate out, right? It's a matter of respect, after all.
 

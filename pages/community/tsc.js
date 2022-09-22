@@ -143,7 +143,7 @@ function UserInfo({ user }) {
                 href={user.github}
                 className="text-gray-600 hover:text-gray-500"
               >
-                <span className="sr-only">Github</span>
+                <span className="sr-only">GitHub</span>
                 <GithubSVG />
               </a>
             </li>

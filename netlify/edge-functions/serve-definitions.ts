@@ -14,7 +14,7 @@ const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-js
 //   Patterns: /<source>/<randompath>/*
 //   Examples: /definitions/asyncapi.yaml OR /schema-store/2.4.0.JSON (uppercase)
 //
-// Non-legitimate requests should not use our Github Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
+// Non-legitimate requests should not use our GitHub Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
 const legitimateRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-\.]*\.json))?$/
 
 export default async (request: Request, context: Context) => {

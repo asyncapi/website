@@ -13,7 +13,7 @@ export default [
   { href: '/tools/cli', icon: TerminalIcon, title: 'CLI', description: 'Interact with AsyncAPI from the comfort of your CLI.' },
   { href: '/tools/modelina', icon: IconModelina, title: 'Modelina', description: 'Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents' },
   // { href: '/react', icon: IconReact, title: 'React Component', description: 'Embed your AsyncAPI documentation in your React application.' },
-  { href: '/tools/github-actions', icon: IconGithubActions, title: 'Github Actions', description: 'Automate the validation and generation of documentation.' },
+  { href: '/tools/github-actions', icon: IconGithubActions, title: 'GitHub Actions', description: 'Automate the validation and generation of documentation.' },
   { href: '/tools/parsers', icon: IconParser, title: 'Parsers', description: 'Parse AsyncAPI documents right inside your tools and products.' },
   // { href: '/ide-plugins', icon: IconPlugins, title: 'IDE plugins and extensions', description: 'Edit your AsyncAPI files right inside your favourite code editor.' },
 ]

@@ -291,7 +291,7 @@ But our journey doesn’t stop here. The AsyncAPI project brings in a rich set o
 
 Application developers can speed up their work by automatically generating scaffoldings by specifying the specification file. This design-first strategy provides boilerplate code for dealing with brokers and marshaling/unmarshalling messages over the wire.
 
-Generators are available for mainstream applications like Java, .NET, Javascript, etc. You can check out [this](https://github.com/asyncapi/generator) repo for more information.
+Generators are available for mainstream applications like Java, .NET, JavaScript, etc. You can check out [this](https://github.com/asyncapi/generator) repo for more information.
 
 ## Validators
 

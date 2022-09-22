@@ -40,7 +40,7 @@ components:
 ```
 
 This new feature was contributed by [Waleed Ashraf](https://github.com/WaleedAshraf).
-For more detail, see [Waleed's `/spec #751`pull request](https://github.com/asyncapi/spec/pull/751) and the [Github issue where Waleed's `MessageId` feature addition was discussed](https://github.com/asyncapi/spec/issues/458).
+For more detail, see [Waleed's `/spec #751`pull request](https://github.com/asyncapi/spec/pull/751) and the [GitHub issue where Waleed's `MessageId` feature addition was discussed](https://github.com/asyncapi/spec/issues/458).
 
 ## Server Variables can be now referenced from components
 
@@ -75,7 +75,7 @@ components:
 
 These are added to the many other aspects of the AsyncAPI specification which can be declared as reusable components. You can see the full list in the [Components Object section of the AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.4.0#componentsObject).
 
-This new feature was contributed by [Daniel Kocot](https://github.com/danielkocot). For more detail, see [Daniel's `/spec #717` pull request](https://github.com/asyncapi/spec/pull/717) and the [Github issue where Daniel's change to `serverVariables ` was discussed](https://github.com/asyncapi/spec/issues/707).
+This new feature was contributed by [Daniel Kocot](https://github.com/danielkocot). For more detail, see [Daniel's `/spec #717` pull request](https://github.com/asyncapi/spec/pull/717) and the [GitHub issue where Daniel's change to `serverVariables ` was discussed](https://github.com/asyncapi/spec/issues/707).
 
 ## Security can now be defined at Operation level
 
@@ -108,14 +108,14 @@ channels:
           - auth:read  
 ```
 
-Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is now possible to increase security granularity by defining a set of security requirements at Operation level. For more detail, see [Sekharban's `/spec #584` pull request](https://github.com/asyncapi/spec/pull/584) and the [Github issue where Sekharban's suggested feature was discussed](https://github.com/asyncapi/spec/issues/584).
+Thanks to [Sekharbans](https://github.com/sekharbans-ebay), is now possible to increase security granularity by defining a set of security requirements at Operation level. For more detail, see [Sekharban's `/spec #584` pull request](https://github.com/asyncapi/spec/pull/584) and the [GitHub issue where Sekharban's suggested feature was discussed](https://github.com/asyncapi/spec/issues/584).
 
 ## Reusability of Servers defined in Components is clarified in the specification
 
 Reusability of Servers was introduced in [AsyncAPI 2.3.0](https://www.asyncapi.com/blog/release-notes-2.3.0#servers-and-channels-can-now-be-defined-as-reusable-components). However, the change was not fully clarified in the specification, leading to confusion.
 
 Thanks to [Vladimir Gorej](https://github.com/char0n), this is now clarified by mentioning that elements for the Servers Object can be either Server Object or a Reference Object.
-For more detail, see [Vladimir's `/spec #706`pull request](https://github.com/asyncapi/spec/pull/706) and the [Github issue where Vladimir's Servers Object change was discussed](https://github.com/asyncapi/spec/issues/705).
+For more detail, see [Vladimir's `/spec #706`pull request](https://github.com/asyncapi/spec/pull/706) and the [GitHub issue where Vladimir's Servers Object change was discussed](https://github.com/asyncapi/spec/issues/705).
 
 ## Tooling support
 
