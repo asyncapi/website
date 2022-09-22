@@ -28,4 +28,4 @@ flowchart LR
     c -- Message 2 ---> d[Consumer]
 ```
 
-In the diagram above, we see a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. We also have a second producer who publishes to one channel but also subscribes to messages from another.
+In the diagram above, we see a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. We also have a second producer who publishes to one channel but subscribes to messages from another.
