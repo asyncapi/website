@@ -10,6 +10,16 @@
 		]
 	},
 	{
+		"name": "Akshat Nema",
+		"github": "akshatnema",
+		"linkedin": "akshat-nema",
+		"twitter": "AksNema",
+		"availableForHire": true,
+		"repos": [
+			 "website"
+		]
+	},
+	{
 		"name": "Anand Sunderraman",
 		"github": "anandsunderraman",
 		"linkedin": "anand-sunderraman-a6b7a131",
@@ -197,9 +207,12 @@
 		]
 	},
 	{
+		"name": "Azeez Elegbede",
+		"linkedin": "acebuild",
 		"github": "AceTheCreator",
 		"twitter": "_acebuild",
-		"availableForHire": true,
+		"company": "Postman",
+		"availableForHire": false,
 		"repos": [
 			"chatbot"
 		]
@@ -225,7 +238,8 @@
 		"repos": [
 			"brand",
 			"design-system",
-			"studio"
+			"studio",
+			"website"
 		]
 	},
 	{
@@ -382,9 +396,20 @@
 		"github": "ron-debajyoti",
 		"twitter": "rondebajyoti",
 		"linkedin": "rondebajyoti",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Narvar",
 		"repos": [
 			"modelina"
+		]
+	},
+	{
+		"name": "Ivan Garcia Sainz-Aja",
+		"github": "ivangsa",
+		"linkedin": "ivangarciasainzaja",
+		"availableForHire": false,
+		"company": "SNGULAR",
+		"repos": [
+			"vs-asyncapi-preview"
 		]
 	}
 ]

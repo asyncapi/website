@@ -2,7 +2,7 @@
 
 ---
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
 
@@ -18,8 +18,8 @@ This repository contains the sources of AsyncAPI website:
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/) v12.16+
-- [npm](https://www.npmjs.com/) v6.13.7+
+- [Node.js](https://nodejs.org/) v16.0.0+
+- [npm](https://www.npmjs.com/) v7.10.0+
 
 ## Usage
 
@@ -138,6 +138,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://juanarce.me"><img src="https://avatars.githubusercontent.com/u/30204147?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juan A.</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=jaas666" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/luphieanza"><img src="https://avatars.githubusercontent.com/u/20577131?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muhammad Rafly Andrianza</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=luphieanza" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Harish-b-03"><img src="https://avatars.githubusercontent.com/u/69810789?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Harish</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Harish-b-03" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/paulgoldsmith"><img src="https://avatars.githubusercontent.com/u/471550?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paul Goldsmith</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=paulgoldsmith" title="Code">💻</a> <a href="https://github.com/asyncapi/website/issues?q=author%3Apaulgoldsmith" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://www.twitter.com/dulemartins"><img src="https://avatars.githubusercontent.com/u/33032530?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tabah Baridule</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Dule-mart" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://starlightknown.github.io/"><img src="https://avatars.githubusercontent.com/u/74637789?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Karuna Tata</b></sub></a><br /><a href="#a11y-starlightknown" title="Accessibility">️️️️♿️</a></td>
+    <td align="center"><a href="https://github.com/nibble0101"><img src="https://avatars.githubusercontent.com/u/52580190?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joseph Mawa</b></sub></a><br /><a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3Anibble0101" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 

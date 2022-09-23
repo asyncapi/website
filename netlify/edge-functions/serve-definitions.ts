@@ -18,10 +18,12 @@ const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-js
 const legitimateRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-\.]*\.json))?$/
 
 export default async (request: Request, context: Context) => {
-  const rewriteRequest = buildRewrite(request);
+  let rewriteRequest = buildRewrite(request);
 
   let response: Response;
   if (rewriteRequest === null) {
+    rewriteRequest = request;
+
     response = await context.next();
   } else {
     // Fetching the definition file
@@ -39,7 +41,7 @@ export default async (request: Request, context: Context) => {
       response.headers.set("Content-Type", "application/schema+json");
 
       // Sending metrics to NR.
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request)
+      const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request, rewriteRequest)
 
       await sendMetricToNR(context, metric);
     } else {
@@ -48,7 +50,7 @@ export default async (request: Request, context: Context) => {
         "responseStatus": response.status,
         "responseStatusText": response.statusText,
       };
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, attributes);
+      const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, rewriteRequest, attributes);
 
       await sendMetricToNR(context, metric);
     }
@@ -62,7 +64,7 @@ function buildRewrite(originalRequest: Request): (Request | null) {
   if (extractResult === null) {
     return null;
   }
-  
+
   const definitionVersion = extractResult[1];
   const file = extractResult[2];
   let url: string;
@@ -73,7 +75,7 @@ function buildRewrite(originalRequest: Request): (Request | null) {
   } else {
     url = URL_DEST_DEFINITIONS + `/${definitionVersion}${file}`;
   }
-  
+
   return new Request(url, {
     method: originalRequest.method,
     headers: new Headers({
@@ -122,16 +124,24 @@ async function sendMetricToNR(context: Context, metric: NRMetric) {
   }
 }
 
-function newNRMetricCount(name: string, request: Request, attributes: any = {}): NRMetric {
+function newNRMetricCount(name: string, originalRequest: Request, rewriteRequest: Request, attributes: any = {}): NRMetric {
   var metric = new NRMetric(name, NRMetricType.Count, 1);
   metric["interval.ms"] = 1;
 
-  const splitPath = new URL(request.url).pathname.split("/");
+  const splitPath = new URL(originalRequest.url).pathname.split("/");
+  // Examples: 
+  //   /definitions/2.4.0/info.json => file = info.json
+  //   /definitions/2.4.0.json      => file = 2.4.0.json
+  const file = splitPath.slice(-1).pop();
+  const version = splitPath[2].replace(".json", "");
 
   metric.attributes = {
     "source": splitPath[1],
-    "file": splitPath[2],
-    "url": request.url,
+    "file": file,
+    "url": originalRequest.url,
+    "url_rewrite": rewriteRequest.url,
+    "version": version,
+    "file_type": rewriteRequest.url.startsWith(URL_DEST_SCHEMAS) ? "schema" : "definition",
     ...attributes,
   };
 
