@@ -1,7 +1,7 @@
 ---
 title: Streetlights
 description: In this tutorial, you'll start with IoT code samples and pretend you have a company called Smarty Lighting that engineers smart-city lighting systems.
-
+weight: 115
 ---
 
 # Introduction
