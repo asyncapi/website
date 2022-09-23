@@ -10,7 +10,7 @@ A server represents a messaging broker system where connections and communicatio
 ## What is the purpose of servers?
 Servers play an important role in maintaining a relationship between producers and consumers. When designing and setting up an event-driven application, servers are in charge of delivering asynchronous messages from the producer to the consumers through the use of channels. By integrating different messaging protocols, servers can transmit and exchange messages between clients.
 
-* Clients and Server
+### Clients and Server
 ```mermaid
 flowchart TD
     a[Client Browser] --> b[(server)]
@@ -21,7 +21,7 @@ flowchart TD
 The diagram above describes a bi-directional communication between several **clients** and one **server**. In this case, in your AsyncAPI file, you describe the `server`, and therefore the [`Server Object`](https://www.asyncapi.com/docs/reference/specification/latest#serverObject) holds information about the actual server, including its physical location.
 
 
-* Broker Centric
+### Broker Centric
 ```mermaid
 flowchart TD
     A[producer]
