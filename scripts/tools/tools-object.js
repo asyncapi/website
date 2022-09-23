@@ -6,50 +6,62 @@ const ajv = new Ajv()
 const validate = ajv.compile(schema)
 
 let appendData = {
-    generator: [],
+  "generator": [],
+  "code-first": [],
+  "converters": [],
+  "validators": [],
+  "directories": [],
+  "documentation generators": [],
+  "dls": [],
+  "frameworks": [],
+  "ui components": [],
+  "mocking and testing": [],
+  "diff": [],
+  "ci&cd": [],
+  "editors": [],
+  "others": []
 };
 
 const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
-    let resultantObject = {
-      title: toolFile.title,
-      description: toolFile.description,
-      links: {
-        ...toolFile.links,
-        repoUrl: repositoryUrl,
-      },
-      filters: {
-        ...toolFile.filters,
-        isAsyncAPIOwner: isAsyncAPIrepo,
-      },
-    };
-    return resultantObject;
+  let resultantObject = {
+    title: toolFile.title,
+    description: toolFile.description,
+    links: {
+      ...toolFile.links,
+      repoUrl: repositoryUrl,
+    },
+    filters: {
+      ...toolFile.filters,
+      isAsyncAPIOwner: isAsyncAPIrepo,
+    },
   };
-  
-  const getContent = async (result_object) => {
-    let reference_id = result_object.url.split("=")[1];
-    let download_url = `https://raw.githubusercontent.com/${result_object.repository.full_name}/${reference_id}/${result_object.path}`;
-    const { data } = await axios.get(download_url);
-    const valid = validate(data)
-    if (valid) {
-      let repositoryUrl = result_object.repository.html_url;
-      let isAsyncAPIrepo = result_object.repository.owner.login === "asyncapi";
-      let toolObject = createToolObject(data, repositoryUrl, isAsyncAPIrepo);
-      data.filters.categories.forEach((category) => {
-        appendData[category].push(toolObject);
-      });
-    }else{
-       console.log(validate.errors)
-    }
+  return resultantObject;
 };
 
 async function convertTools(data) {
-    const dataArray = data.items;
-    let len = dataArray.length;
-    for(let i =0;i<len;i++){
-      if(dataArray[i].name === '.asyncapi-tool')
-        await getContent(dataArray[i]);
+  const dataArray = data.items;
+  let len = dataArray.length;
+  for (let i = 0; i < len; i++) {
+    if (dataArray[i].name === '.asyncapi-tool') {
+      let result_object = dataArray[i];
+      let reference_id = result_object.url.split("=")[1];
+      let download_url = `https://raw.githubusercontent.com/${result_object.repository.full_name}/${reference_id}/${result_object.path}`;
+      const { data: toolFileContent } = await axios.get(download_url);
+      const valid = validate(toolFileContent)
+      if (valid) {
+        let repositoryUrl = result_object.repository.html_url;
+        let isAsyncAPIrepo = result_object.repository.owner.login === "asyncapi";
+        let toolObject = createToolObject(toolFileContent, repositoryUrl, isAsyncAPIrepo);
+        toolFileContent.filters.categories.forEach((category) => {
+          appendData[category].push(toolObject);
+        });
+      } else {
+        console.log("Repository: " + result_object.repository.html_url)
+        console.log("Error: " + validate.errors)
+      }
     }
-    return appendData;
+  }
+  return appendData;
 }
 
-module.exports = {convertTools}
+module.exports = { convertTools }

@@ -18,13 +18,6 @@
 		"description": {
 			"type": "string"
 		},
-		"maintainers": {
-			"type": "array",
-			"items":{
-				"type": "string"
-			}
-
-		},
 		"links": {
 			"type": "object",
 			"properties": {
@@ -32,9 +25,6 @@
 					"type": "string"
 				},
 				"docsUrl": {
-					"type": "string"
-				},
-				"iconUrl": {
 					"type": "string"
 				}
 			}
@@ -44,7 +34,7 @@
 			"required": [
 				"language",
 				"technology",
-				"categories",
+				"categories"
 			],
 			"properties": {
 				"language": {
