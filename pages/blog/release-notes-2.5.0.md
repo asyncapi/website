@@ -29,7 +29,7 @@ AsyncAPI 2.5.0 remedies this deficiency by allowing to use `Reference Object` wh
 Following example is now fully compliant with the specification:
 
 ```yaml
-asyncapi: 2.4.0
+asyncapi: 2.5.0
 servers:
   development:
     $ref: '#/components/servers/myserver'
@@ -57,7 +57,46 @@ This new feature was contributed by [Vladimír Gorej](https://github.com/char0n)
 
 ## Decorating Server Object with tags
 
-placeholder for description
+Tags are used to categorize or group resources. 2.5.0 introduces support for defining tags at Server level, which can be used for many use cases like grouping servers by their features: environment name, cluster name, visibility, owner, etc.
+
+For example:
+
+```yaml
+asyncapi: '2.5.0'
+info:
+  title: Streetlights Kafka API
+  version: '1.0.0'
+servers:
+  scram-connections:
+    url: test.mykafkacluster.org:18092
+    protocol: kafka-secure
+    description: Test broker secured with scramSha256
+    security:
+      - saslScram: []
+    tags:
+      - name: "env:test-scram"
+        description: "This environment is meant for running internal tests through scramSha256"
+      - name: "kind:remote"
+        description: "This server is a remote server. Not exposed by the application"
+      - name: "visibility:private"
+        description: "This resource is private and only available to certain users"  
+  mtls-connections:
+    url: test.mykafkacluster.org:28092
+    protocol: kafka-secure
+    description: Test broker secured with X509
+    security:
+      - certs: []
+    tags:
+      - name: "env:test-mtls"
+        description: "This environment is meant for running internal tests through mtls"
+      - name: "kind:remote"
+        description: "This server is a remote server. Not exposed by the application"
+      - name: "visibility:private"
+        description: "This resource is private and only available to certain users"
+channels: {}
+```
+
+This new feature was contributed by [Sergio Moya](https://github.com/smoya). For more detail, see [Sergio's `/spec #809` pull request](https://github.com/asyncapi/spec/pull/809) and the [GitHub issue where Sergio's change was discussed](https://github.com/asyncapi/spec/issues/654).
 
 ## Clarifications
 
