@@ -35,7 +35,7 @@ export default function RoadmapPage() {
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
             <div className="lg:w-2/3 lg:mx-auto lg:text-center">
-              <Paragraph textColor="text-secondary-500" className="text-center uppercase font-bold">
+              <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="text-center uppercase font-bold">
                 Vision
               </Paragraph>
               <Heading level="h1" className="text-center">
@@ -53,7 +53,7 @@ export default function RoadmapPage() {
               <div className="grid lg:grid-cols-3 lg:gap-8">
                 <div>
                   <div className="mb-2 lg:my-0 lg:text-center">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
@@ -68,8 +68,8 @@ export default function RoadmapPage() {
                   </Paragraph>
                 </div>
                 <div>
-                  <div className="mt-6 mb-2 lg:my-0 lg:text-center lg:text-2xl">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                  <div className="mt-6 mb-2 lg:my-0 lg:text-center">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
@@ -84,8 +84,8 @@ export default function RoadmapPage() {
                   </Paragraph>
                 </div>
                 <div>
-                  <div className="mt-6 mb-2 lg:my-0 lg:text-center lg:text-2xl">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                  <div className="mt-6 mb-2 lg:my-0 lg:text-center">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
