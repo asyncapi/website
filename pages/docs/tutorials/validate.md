@@ -1,3 +1,9 @@
+---
+title: "Validate AsyncAPI Files"
+description: In this tutorial we'll learn how to validate AsyncAPI files.
+weight: 120
+---
+
 # Introduction
 We'll discuss what it means to validate AsyncAPI files in this tutorial. AsyncAPI files can be validated in two different ways; by validating the AsyncAPI document and by validating messages or events in runtime. 
 
