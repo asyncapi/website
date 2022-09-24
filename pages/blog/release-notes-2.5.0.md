@@ -96,11 +96,11 @@ servers:
 channels: {}
 ```
 
+This new feature was contributed by [Sergio Moya](https://github.com/smoya). For more detail, see [Sergio's `/spec #809` pull request](https://github.com/asyncapi/spec/pull/809) and the [GitHub issue where Sergio's change was discussed](https://github.com/asyncapi/spec/issues/654).
+
 ## Added missing IBMMQ Operation Binding
 
 content placeholder
-
-This new feature was contributed by [Sergio Moya](https://github.com/smoya). For more detail, see [Sergio's `/spec #809` pull request](https://github.com/asyncapi/spec/pull/809) and the [GitHub issue where Sergio's change was discussed](https://github.com/asyncapi/spec/issues/654).
 
 ## Clarifications
 
