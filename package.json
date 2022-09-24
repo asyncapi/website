@@ -12,7 +12,7 @@
     "generate:assets": "echo \"No assets to configure\"",
     "generate:meetings": "node scripts/build-meetings.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
-    "generate:tools": "node scripts/build-tools.js",
+    "generate:tools": "node scripts/build-tools.js && node scripts/tools/combine-tools.js",
     "test": "echo \"No tests configured yet\"",
     "release": "echo \"No release to npm for this project\""
   },
@@ -54,6 +54,7 @@
     "clsx": "^1.1.1",
     "cssnano": "^5.1.12",
     "dotenv": "^8.2.0",
+    "fuse.js": "^6.6.2",
     "googleapis": "^100.0.0",
     "gray-matter": "^4.0.2",
     "jgexml": "^0.4.4",

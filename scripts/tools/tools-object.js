@@ -1,9 +1,19 @@
 const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
-
+const Fuse = require("fuse.js")
 const ajv = new Ajv()
 const validate = ajv.compile(schema)
+
+const options = {
+  includeScore: true,
+  shouldSort: true,
+  threshold: 0.2,
+}
+
+let categoryList = ["generator", "code-first", "converters", "validators", "directories", "documentation generators", "dls", "frameworks", "ui components", "mocking and testing", "diff", "ci&cd", "editors"]
+
+const fuse = new Fuse(categoryList, options)
 
 let appendData = {
   "generator": [],
@@ -53,7 +63,15 @@ async function convertTools(data) {
         let isAsyncAPIrepo = result_object.repository.owner.login === "asyncapi";
         let toolObject = createToolObject(toolFileContent, repositoryUrl, isAsyncAPIrepo);
         toolFileContent.filters.categories.forEach((category) => {
-          appendData[category].push(toolObject);
+          const categorySearch = fuse.search(category);
+          if (categorySearch.length) {
+            console.log(categorySearch[0].item)
+            if (!appendData[categorySearch[0].item].find((element => element === toolObject)))
+              appendData[categorySearch[0].item].push(toolObject);
+          } else {
+            if (!appendData['others'].find((element => element === toolObject)))
+              appendData['others'].push(toolObject);
+          }
         });
       } else {
         console.log("Repository: " + result_object.repository.html_url)

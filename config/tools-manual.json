@@ -1,0 +1,36 @@
+{
+    "generator": [],
+    "code-first": [],
+    "converters": [],
+    "validators": [],
+    "directories": [],
+    "documentation generators": [{
+        "title": "asyncapi-asciidoc-template",
+        "description": "Asciidoc template for the asyncapi generator",
+        "links": {
+            "websiteUrl": "",
+            "docsUrl": "",
+            "iconUrl": "",
+            "repoUrl": "https://gitlab.com/djencks/asyncapi-asciidoc-template"
+        },
+        "filters": {
+            "language": "javascript",
+            "technology": [
+                "react"
+            ],
+            "categories": [
+                "documentation generators"
+            ],
+            "hasCommercial": false,
+            "isAsyncAPIOwner": false
+        }
+    }],
+    "dls": [],
+    "frameworks": [],
+    "ui components": [],
+    "mocking and testing": [],
+    "diff": [],
+    "ci&cd": [],
+    "editors": [],
+    "others": []
+}

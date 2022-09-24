@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "JSON Schema for AsyncAPI tool discovery file.", 
+	"title": "JSON Schema for AsyncAPI tool discovery file.",
 	"type": "object",
 	"required": [
 		"title",
@@ -12,8 +12,11 @@
 	"properties": {
 		"title": {
 			"type": "string",
-            "description": "Human-readable name of the tool that will be visible to people in the list of tools",
-            "examples" : [ "AsyncAPI Generator", "Cupid" ]  
+			"description": "Human-readable name of the tool that will be visible to people in the list of tools",
+			"examples": [
+				"AsyncAPI Generator",
+				"Cupid"
+			]
 		},
 		"description": {
 			"type": "string"
@@ -42,14 +45,14 @@
 				},
 				"technology": {
 					"type": "array",
-					"items":{
+					"items": {
 						"type": "string"
 					},
 					"minItems": 1
 				},
 				"categories": {
 					"type": "array",
-					"items":{
+					"items": {
 						"type": "string"
 					},
 					"minItems": 1
@@ -61,4 +64,4 @@
 			}
 		}
 	}
-} 
+}
