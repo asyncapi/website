@@ -1,6 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
 const { join, resolve, basename } = require('path')
-const { inspect } = require('util')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -79,9 +78,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
           const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-2021-06-release
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
 
-          if(fileBaseName.includes('release')) {
+          if(fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
             details.isPrerelease = true
-            details.releaseDate = getReleaseDate(fileBaseName)
           }
 
           details.weight = specWeight--
@@ -123,11 +121,4 @@ function isDirectory(dir) {
 
 function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
-}
-
-function getReleaseDate(text) {
-  // ex. filename = v2.1.0-2021-06-release
-  const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
-  const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
-  return releaseDate
 }
