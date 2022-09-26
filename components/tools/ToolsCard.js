@@ -32,7 +32,7 @@ export default function toolsCard() {
       <div className="flex flex-col gap-2 mx-6">
         <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
         <div className="flex gap-2">
-            <Tag name='Javascript' bgColor='#C8F2C7' borderColor='#bfbe86' />
+            <Tag name='Javascript' bgColor='bg-[#C8F2C7]' borderColor='border-[#bfbe86]' />
         </div>
       </div>
       <div className="flex flex-col gap-2 my-4 mx-6">
