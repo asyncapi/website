@@ -81,7 +81,7 @@ function buildNavTree(navItems) {
 
         // point in slug for specification subgroup to the latest specification version
         if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.href = allChildren[key].children[0].slug;
+          allChildren[key].item.href = allChildren[key].children.find(c => c.isPrerelease === undefined).slug;
         }
       }
     }
