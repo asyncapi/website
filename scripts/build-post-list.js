@@ -1,6 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
 const { join, resolve, basename } = require('path')
-const { inspect } = require('util')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -76,13 +75,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
         if(details.slug.includes('/reference/specification/') && !details.title) {
-          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-2021-06-release
+          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
-
-          if(fileBaseName.includes('release')) {
-            details.isPrerelease = true
-            details.releaseDate = getReleaseDate(fileBaseName)
-          }
 
           details.weight = specWeight--
 
@@ -92,7 +86,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title = capitalize(fileName)
           }
 
-          if(details.isPrerelease) {
+          if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+            details.isPrerelease = true
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
@@ -123,11 +118,4 @@ function isDirectory(dir) {
 
 function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
-}
-
-function getReleaseDate(text) {
-  // ex. filename = v2.1.0-2021-06-release
-  const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
-  const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
-  return releaseDate
 }
