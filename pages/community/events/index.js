@@ -82,6 +82,9 @@ function index() {
           </div>
         </div>
       </div>
+      <div className='mt-20'>
+        more
+      </div>
     </CommunityLayout>
   );
 }
