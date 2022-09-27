@@ -168,22 +168,6 @@ asyncapi:
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>execute-internal-generation</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-
-                                <configuration>
-                                    <!-- Access binary file in node_modules because it doesn't work on windows otherwise. -->
-                                    <executable>${node.modules.installation.path}/${ag.binary.name}</executable>
-                                    <commandlineArgs>
-                                        ${project.basedir}/src/docs/asyncapi/asyncapi-internal.yaml @asyncapi/html-template@${asyncapi.htmltemplate.version} -p sidebarOrganization=byTags -p
-                                        version=${project.version} -o ${asyncapi.generation.dir}/internal
-                                    </commandlineArgs>
-                                </configuration>
-                            </execution>
                         </executions>
                     </plugin>
                     <plugin>
