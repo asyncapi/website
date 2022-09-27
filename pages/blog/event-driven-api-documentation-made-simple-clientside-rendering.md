@@ -1,6 +1,6 @@
 ---
 title: Event driven API documentation made simple (Client-Side Rendering).
-date: 2022-08-22T9:43:15+01:00
+date: 2022-09-28T06:00:00+01:00
 featured: true
 type: Engineering
 tags: ['documentation','guide']
