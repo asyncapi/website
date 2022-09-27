@@ -105,6 +105,12 @@ In AsyncAPI 2.5.0, the definition is empty, but its name is reserved for future 
 
 This change was contributed by [Maciej Urbańczyk](https://github.com/magicmatatjahu). For more detail, see [Maciej's `/spec #840` pull request](https://github.com/asyncapi/spec/pull/840).
 
+## Added new Google Cloud Pub/Sub Bindings
+
+`content placeholder`
+
+This new binding was contributed by [Jeremy Whitlock](https://github.com/whitlockjc). For more detail, see [Jeremy's `/spec #836` pull request](https://github.com/asyncapi/spec/pull/836).
+
 ## Clarifications
 
 Here are notable clarifications that got into AsyncAPI 2.5.0 release. Here is the list of notable clarifications that may have
