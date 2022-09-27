@@ -98,9 +98,12 @@ channels: {}
 
 This new feature was contributed by [Sergio Moya](https://github.com/smoya). For more detail, see [Sergio's `/spec #809` pull request](https://github.com/asyncapi/spec/pull/809) and the [GitHub issue where Sergio's change was discussed](https://github.com/asyncapi/spec/issues/654).
 
-## Added missing IBMMQ Operation Binding
+## Added missing IBM MQ Operation Binding
 
-content placeholder
+We noticed that we overlooked and did not define Operation Bindings Object in the case of IBM MQ. 
+In AsyncAPI 2.5.0, the definition is empty, but its name is reserved for future use to be consistent with the rest of the bindings.
+
+This change was contributed by [Maciej Urbańczyk](https://github.com/magicmatatjahu). For more detail, see [Maciej's `/spec #840` pull request](https://github.com/asyncapi/spec/pull/840).
 
 ## Clarifications
 
