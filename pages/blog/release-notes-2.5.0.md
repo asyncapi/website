@@ -109,7 +109,7 @@ This change was contributed by [Maciej Urbańczyk](https://github.com/magicmatat
 
 The specification is now extended to support another custom protocol through the bindings feature:
 
-Google Cloud Pub/Sub, thanks to [Jeremy Whitlock](https://github.com/whitlockjc). For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/836) and [binding definition](https://github.com/asyncapi/bindings/tree/master/googlepubsub).
+Google Cloud Pub/Sub, thanks to [Jeremy Whitlock](https://github.com/whitlockjc). For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/836) and the [binding definition](https://github.com/asyncapi/bindings/tree/master/googlepubsub).
 
 ## Clarifications
 
