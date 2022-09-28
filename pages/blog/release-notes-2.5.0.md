@@ -132,7 +132,7 @@ The following official AsyncAPI tools are already updated to support the 2.5.0 s
 - [AsyncAPI React Component](https://github.com/asyncapi/asyncapi-react) allows you to render and validate the documentation of your asynchronous API provided in the AsyncAPI specification format. Upgraded to the `v1.0.0-next.43` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgraded to the `0.26.0` version.
 - [JavaScript Converter](https://github.com/asyncapi/converter-js/) enables conversion from any AsyncAPI version into the 2.5.0 version of the spec. Upgraded to the `1.1.0` version.
-- [Generator](https://github.com/asyncapi/generator/) uses the latest @asyncapi/parser package, so while generating output, it can validate 2.5.0 documents. Upgrade to `1.10.0` version.
+- [Generator](https://github.com/asyncapi/generator/) uses the latest @asyncapi/parser package, so while generating output, it can validate 2.5.0 documents. Upgraded to the `1.10.0` version.
 
 Last but not least is the AsyncAPI Studio. [Check out the Studio with this example](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/spec/v2.5.0/examples/websocket-gemini.yml).
 
