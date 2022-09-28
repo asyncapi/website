@@ -113,8 +113,7 @@ Google Cloud Pub/Sub, thanks to [Jeremy Whitlock](https://github.com/whitlockjc)
 
 ## Clarifications
 
-Here are notable clarifications that got into AsyncAPI 2.5.0 release. Here is the list of notable clarifications that may have
-impact on the tooling authors:
+Here are notable clarifications that got into the AsyncAPI 2.5.0 release. Here is the list of notable clarifications that may have an impact on the tooling authors:
 
 **ChannelItem.$ref resolution rules**
 
