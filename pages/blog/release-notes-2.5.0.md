@@ -11,7 +11,7 @@ authors:
     photo: /img/avatars/char0n.webp
     link: https://twitter.com/vladimirgorej
     byline: Open Source Software Engineer, OSS contributor, author and content creator.
-excerpt: "AsyncAPI 2.5 is now released. This brings really helpful additions, such as extended Server Variables reusability, and many clarifications"
+excerpt: "The release of AsyncAPI 2.5 brings helpful additions, such as extended Server Variables reusability and many clarifications."
 featured: true
 ---
 
