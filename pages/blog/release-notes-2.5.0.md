@@ -75,7 +75,7 @@ servers:
       - saslScram: []
     tags:
       - name: "env:test-scram"
-        description: "This environment is meant for running internal tests through scramSha256"
+        description: "This environment is for running internal tests through scramSha256"
       - name: "kind:remote"
         description: "This server is a remote server. Not exposed by the application"
       - name: "visibility:private"
