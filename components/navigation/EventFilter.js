@@ -28,7 +28,7 @@ function EventFilter({ data, setData }) {
     }
   }, [active]);
   return (
-    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-[400px] text-secondary-600">
+    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600">
       {filterList.map((list) => (
         <div
           key={list}
