@@ -46,11 +46,11 @@ export default function Layout({ children }) {
     );
   } else if (pathname.startsWith('/community/events')) {
     const posts = getAllPosts();
-    const post = getPostBySlug(pathname);
     return (
       <EventsContext.Provider
-        post={post}
-        navItems={posts.filter((p) => p.slug.startsWith('/community/events/'))}
+        value={{
+          navItems: posts.filter((p) => p.slug.startsWith('/community/events/')),
+        }}
       >
         {children}
       </EventsContext.Provider>

@@ -1,12 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Button from '../../../components/buttons/Button';
 import CommunityLayout from '../../../components/layout/CommunityLayout'
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
+import EventsContext from '../../../context/EventsContext';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import EventPostItem from '../../../components/navigation/EventPostItem';
 
 function index() {
+  let {navItems} = useContext(EventsContext)
+  // const [events, setEvents] = useState([])
+  // useEffect(() => {
+  //   const newList = navItems.filter((list) => {
+  //     return list.isIndex === false;
+  //   });
+  //   setEvents(newList)
+  // },[])
   return (
     <CommunityLayout
       title="AsyncAPI events"
@@ -82,9 +92,18 @@ function index() {
         </div>
       </div>
       <div className="mt-20">
-        <Heading level="h2" typeStyle="heading-sm">
-          More Events
-        </Heading>
+        <div>
+          <Heading level="h2" typeStyle="heading-sm">
+            More Events
+          </Heading>
+        </div>
+        <div className="mt-10">
+          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {navItems.map((event, i) => {
+              return <EventPostItem key={i} post={event} />;
+            })}
+          </ul>
+        </div>
       </div>
     </CommunityLayout>
   );
