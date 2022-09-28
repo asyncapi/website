@@ -57,7 +57,7 @@ This new feature was contributed by [Vladimír Gorej](https://github.com/char0n)
 
 ## Decorating Server Object with tags
 
-Tags are used to categorize or group resources. 2.5.0 introduces support for defining tags at Server level, which can be used for many use cases like grouping servers by their features: environment name, cluster name, visibility, owner, etc.
+Tags categorize or group resources. 2.5.0 introduces support for defining tags at the Server level, which can be used for many use cases such as grouping servers by their features: environment name, cluster name, visibility, owner, etc.
 
 For example:
 
