@@ -127,7 +127,7 @@ The resolution rules around `ChannelItem.$ref` field were not clearly defined. A
 ## Tooling support
 
 The following official AsyncAPI tools are already updated to support the 2.5.0 specification version:
-- JSON Schema that supports validation of AsyncAPI documents is updated in [this](https://github.com/asyncapi/spec-json-schemas) repository. Also **@asyncapi/specs** package has been updated on NPM to version `3.2.0`, and it contains the JSON Schema document for AsyncAPI Spec 2.5.0.
+- JSON Schema that supports validation of AsyncAPI documents is updated in our [specification JSON schema repository](https://github.com/asyncapi/spec-json-schemas). We updated the **@asyncapi/specs** package on NPM to version `3.2`, containing the JSON Schema document for AsyncAPI Spec 2.5.0.
 - [JavaScript Parser](https://github.com/asyncapi/parser-js/) can be used to parse and validate 2.5.0 documents. Upgraded to `the 1.17.0` version.
 - [AsyncAPI React Component](https://github.com/asyncapi/asyncapi-react) allows you to render and validate the documentation of your asynchronous API provided in the AsyncAPI specification format. Upgraded to the `v1.0.0-next.43` version.
 - [HTML template](https://github.com/asyncapi/html-template) uses the latest **@asyncapi/react-component** package. Upgraded to the `0.26.0` version.
