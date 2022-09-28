@@ -122,8 +122,7 @@ The meaning of `absolute URL` is now defined by [RFC3986, section 4.3](https://d
 
 **Clarification around URL resolution rules**
 
-The resolution rules around `ChannelItem.$ref` field were not clearly defined. AsyncAPI 2.5.0 comes with explicit clarification
-that the resolution is done as defined by the [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03).
+The resolution rules around `ChannelItem.$ref` field were not clearly defined. AsyncAPI 2.5.0 comes with explicit clarification that the resolution is done as defined by the [JSON Reference](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03).
 
 ## Tooling support
 
