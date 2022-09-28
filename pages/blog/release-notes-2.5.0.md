@@ -107,9 +107,9 @@ This change was contributed by [Maciej Urbańczyk](https://github.com/magicmatat
 
 ## Added new Google Cloud Pub/Sub Bindings
 
-`content placeholder`
+The specification is now extended to support another custom protocol through the bindings feature:
 
-This new binding was contributed by [Jeremy Whitlock](https://github.com/whitlockjc). For more detail, see [Jeremy's `/spec #836` pull request](https://github.com/asyncapi/spec/pull/836).
+Google Cloud Pub/Sub, thanks to [Jeremy Whitlock](https://github.com/whitlockjc). For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/836) and [binding definition](https://github.com/asyncapi/bindings/tree/master/googlepubsub).
 
 ## Clarifications
 
