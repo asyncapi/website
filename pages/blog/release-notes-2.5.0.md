@@ -88,7 +88,7 @@ servers:
       - certs: []
     tags:
       - name: "env:test-mtls"
-        description: "This environment is meant for running internal tests through mtls"
+        description: "This environment is for running internal tests through mTLS"
       - name: "kind:remote"
         description: "This server is a remote server. Not exposed by the application"
       - name: "visibility:private"
