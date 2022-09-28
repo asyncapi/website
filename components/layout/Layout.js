@@ -44,12 +44,17 @@ export default function Layout({ children }) {
         {children}
       </CommunityDocsContext.Provider>
     );
+  } else if (pathname.startsWith('/community/events/')) {
+    const post = getPostBySlug(pathname);
+    return <JobsLayout post={post} extend={true}>{children}</JobsLayout>;
   } else if (pathname.startsWith('/community/events')) {
     const posts = getAllPosts();
     return (
       <EventsContext.Provider
         value={{
-          navItems: posts.filter((p) => p.slug.startsWith('/community/events/')),
+          navItems: posts.filter((p) =>
+            p.slug.startsWith('/community/events/')
+          ),
         }}
       >
         {children}

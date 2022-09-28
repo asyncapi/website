@@ -1,7 +1,8 @@
 import Button from './Button'
-
-export default function ApplyJobButton({ job,  className = '' }) {
-
+import moment from 'moment';
+export default function ApplyJobButton({ job,  className = '', extend }) {
+    const localTime = moment().format('YYYY-MM-DD'); // store localTime
+    const currentDate = localTime + 'T00:00:00.000Z';
   const getHref = (contact) => {
 
     try {
@@ -17,7 +18,7 @@ export default function ApplyJobButton({ job,  className = '' }) {
     <Button
       href={getHref(job.contact)}
       target="_blank"
-      text="Apply for this job"
+      text={extend ? currentDate < job.date ? "Add to Calender" : "View Recording" : "Apply for this job"}
       className={className}
     />
   )
