@@ -24,7 +24,7 @@ The new version of the AsyncAPI specification - 2.5.0 - is now available.
 Previous AsyncAPI 2.4.0 release came with the support of [defining Server Variable Objects as reusable components](https://www.asyncapi.com/blog/release-notes-2.4.0#server-variables-can-be-now-referenced-from-components).
 Unfortunately, AsyncAPI 2.4.0 doesn't allow referencing reusable _server variable objects_ from within the `Server Object`.
 So we ended up in a situation where reusable server variable objects can be defined but cannot be reused.
-AsyncAPI 2.5.0 remedies this deficiency by allowing to use `Reference Object` whenever `Server Variable Object` can be used inside `Server.variables` field.
+AsyncAPI 2.5.0 remedies this deficiency by allowing the use of `Reference Object`s whenever `Server Variable Object`s can be used inside the `Server.variables` field.
 
 Following example is now fully compliant with the specification:
 
