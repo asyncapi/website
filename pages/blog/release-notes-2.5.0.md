@@ -138,7 +138,7 @@ The following official AsyncAPI tools are already updated to support the 2.5.0 s
 
 ## Look ahead
 
-We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
+We aim to have a quarterly cadence of releases of the AsyncAPI specification. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
 
 We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see [work on the 3.0 release issue](https://github.com/asyncapi/spec/issues/691).
 
