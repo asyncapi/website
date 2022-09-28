@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Button from '../../../components/buttons/Button';
-import Architecture from '../../../components/illustrations/architecture';
 import CommunityLayout from '../../../components/layout/CommunityLayout'
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
@@ -82,8 +81,10 @@ function index() {
           </div>
         </div>
       </div>
-      <div className='mt-20'>
-        more
+      <div className="mt-20">
+        <Heading level="h2" typeStyle="heading-sm">
+          More Events
+        </Heading>
       </div>
     </CommunityLayout>
   );

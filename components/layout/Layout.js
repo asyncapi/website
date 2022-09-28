@@ -5,10 +5,10 @@ import JobsLayout from './JobsLayout'
 import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import JobsContext from '../../context/JobsContext'
+import EventsContext from '../../context/EventsContext';
 import CommunityDocsContext from '../../context/CommunityDocsContext'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import CommunityDocsLayout from './CommunityDocsLayout'
-import CommunityLayout from './CommunityLayout'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
@@ -43,6 +43,17 @@ export default function Layout({ children }) {
       >
         {children}
       </CommunityDocsContext.Provider>
+    );
+  } else if (pathname.startsWith('/community/events')) {
+    const posts = getAllPosts();
+    const post = getPostBySlug(pathname);
+    return (
+      <EventsContext.Provider
+        post={post}
+        navItems={posts.filter((p) => p.slug.startsWith('/community/events/'))}
+      >
+        {children}
+      </EventsContext.Provider>
     );
   } else if (pathname.startsWith('/blog/')) {
     const posts = getAllPosts();
