@@ -26,7 +26,7 @@ Unfortunately, AsyncAPI 2.4.0 doesn't allow referencing reusable _server variabl
 So we ended up in a situation where reusable server variable objects can be defined but cannot be reused.
 AsyncAPI 2.5.0 remedies this deficiency by allowing the use of `Reference Object`s whenever `Server Variable Object`s can be used inside the `Server.variables` field.
 
-Following example is now fully compliant with the specification:
+The following example is now fully compliant with the updated specification:
 
 ```yaml
 asyncapi: 2.5.0
