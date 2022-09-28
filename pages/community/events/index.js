@@ -7,10 +7,11 @@ import IconRocket from '../../../components/icons/Rocket';
 import EventsContext from '../../../context/EventsContext';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
+import EventFilter from '../../../components/navigation/EventFilter';
 
 function index() {
   let {navItems} = useContext(EventsContext)
-  // const [events, setEvents] = useState([])
+  const [events, setEvents] = useState(navItems)
   // useEffect(() => {
   //   const newList = navItems.filter((list) => {
   //     return list.isIndex === false;
@@ -92,14 +93,15 @@ function index() {
         </div>
       </div>
       <div className="mt-20">
-        <div>
+        <div className='flex justify-between items-center'>
           <Heading level="h2" typeStyle="heading-sm">
             More Events
           </Heading>
+          <div><EventFilter data={navItems} setData={setEvents} /></div>
         </div>
         <div className="mt-10">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {navItems.map((event, i) => {
+            {events.map((event, i) => {
               return <EventPostItem key={i} post={event} />;
             })}
           </ul>

@@ -5,6 +5,5 @@ description: 'Join us for our upcoming community call to see what’s on our roa
 '
 weight: 1
 cover: https://cdn.dribbble.com/users/2320033/screenshots/9527306/media/babdb75d298843429590fa788b672bfd.png?compress=1&resize=840x630&vertical=top
-date: SEP 29, 2022
-time: 8AM UTC
+date: 2022-02-07T06:00:00+01:00
 ---

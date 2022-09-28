@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import React from 'react';
+import moment from 'moment';
 import IconCalendar from '../icons/Calendar';
 import Community from '../icons/Community';
 import Conference from '../icons/Conference';
@@ -8,6 +9,8 @@ import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 function EventPostItem({ post, className, id }) {
+    const localTime = moment().format('YYYY-MM-DD'); // store localTime
+    const currentDate = localTime + 'T00:00:00.000Z';
   let color = 'text-orange-800';
   let icon = <Conference />;
   switch (post.type) {
@@ -43,8 +46,11 @@ function EventPostItem({ post, className, id }) {
                 </Heading>
               </div>
               <div className="flex items-center">
-                <IconCalendar className='' />{' '}
-                <span className="text-sm font-semibold ml-4">{post.date}</span>{' '}
+                <IconCalendar className="" />{' '}
+                <span className="text-sm font-semibold ml-4">
+                  {' '}
+                  {currentDate > post.date ? "View Recording" : moment(post.date).format('MMMM D, YYYY')}
+                </span>{' '}
                 <ArrowRightIcon className="w-4 ml-3" />
               </div>
             </div>

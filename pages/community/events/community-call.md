@@ -5,6 +5,5 @@ description: 'Join us for our upcoming community call to see what’s on our roa
 '
 weight: 1
 cover: https://cdn.dribbble.com/users/499731/screenshots/6648311/viceland_assets.png
-date: SEP 29, 2022
-time: 8AM UTC
+date: 2022-10-04T06:00:00+01:00
 ---
