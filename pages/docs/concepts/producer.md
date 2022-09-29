@@ -5,13 +5,18 @@ weight: 3
 
 ## What is a Producer? 
 
-An event indicates a state change or update that is triggered by a user's/device's action; this could be something like an item being placed in a shopping cart on an e-commerce website, clicking the subscribe button on a YouTube channel, or a temperature change in a sensor. 
+An event indicates a state change or update triggered by a user's/device's action; 
 
-A producer is a type of application that senses that state change and then publishes that event as a message.
+It could be something like:
+* Placing an item in a shopping cart on an e-commerce website.
+* Clicking the subscribe button on a YouTube channel.
+* A temperature change in a sensor.
+
+A producer is an application that senses that state change and then publishes that event as a message.
 
 ## Why do we need Producers? 
 
-One of the core concepts of event-driven architecture is the publish/subscribe communication model. Producers are publishers in this model and the first logical layer responsible for publishing to the broker messages that others can subscribe to receive.
+One of the core concepts of event-driven architecture is the publish/subscribe communication model. Producers are publishers in this model, and the first logical layer responsible for distributing messages to the broker so that others can subscribe to receive.
 
 ```mermaid
 flowchart TD
