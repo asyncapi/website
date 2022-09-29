@@ -52,9 +52,9 @@ export default function ambassadors() {
       <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <div className="grid lg:grid-cols-3 lg:gap-8">
           <div>
-            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
-            What is an AsyncAPI ambassador?
-            </h3>
+            <Heading level="h3" typeStyle="heading-md-semibold" className="mb-2 lg:text-center">
+              What is an AsyncAPI ambassador?
+            </Heading>
             <p className="my-4 text-base text-gray-500 lg:text-center">
             The AsyncAPI Ambassador brings AsyncAPI closer to the users and potential users of the project. It provides users and community members with the necessary tools and resources.
 They promote cooperation between users and disseminate the necessary tools to any specification user.
