@@ -411,5 +411,16 @@
 		"repos": [
 			"vs-asyncapi-preview"
 		]
+	},
+	{
+		"name": "Jeremy Whitlock",
+		"github": "whitlockjc",
+		"linkedin": "whitlockjc",
+		"twitter": "whitlockjc",
+		"availableForHire": false,
+		"company": "Google",
+		"repos": [
+			"bindings"
+		]
 	}
 ]
