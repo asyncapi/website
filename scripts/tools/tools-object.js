@@ -2,6 +2,7 @@ const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
 const Fuse = require("fuse.js")
+const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 const validate = ajv.compile(schema)
 
@@ -11,26 +12,7 @@ const options = {
   threshold: 0.2,
 }
 
-let categoryList = ["generator", "code-first", "converters", "validators", "directories", "documentation generators", "dls", "frameworks", "ui components", "mocking and testing", "diff", "ci&cd", "editors"]
-
 const fuse = new Fuse(categoryList, options)
-
-let appendData = {
-  "generator": [],
-  "code-first": [],
-  "converters": [],
-  "validators": [],
-  "directories": [],
-  "documentation generators": [],
-  "dls": [],
-  "frameworks": [],
-  "ui components": [],
-  "mocking and testing": [],
-  "diff": [],
-  "ci&cd": [],
-  "editors": [],
-  "others": []
-};
 
 const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
   let resultantObject = {
@@ -49,23 +31,27 @@ const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
 };
 
 async function convertTools(data) {
+  let appendData = {};
+  for(var index in categoryList){
+    appendData[categoryList[index]] = [];
+  }
   const dataArray = data.items;
-  let len = dataArray.length;
-  for (let i = 0; i < len; i++) {
-    if (dataArray[i].name === '.asyncapi-tool') {
-      let result_object = dataArray[i];
-      let reference_id = result_object.url.split("=")[1];
-      let download_url = `https://raw.githubusercontent.com/${result_object.repository.full_name}/${reference_id}/${result_object.path}`;
+  for (let tool of dataArray) {
+    if (tool.name === '.asyncapi-tool') {
+      // extracting the reference id of the repository which will be used to extract the path of the .asyncapi-tool file in the Tools repository
+      // ex: for a url = "https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873"
+      // the text (id) present after '=' gives us a reference id for the repo
+      let reference_id = tool.url.split("=")[1];
+      let download_url = `https://raw.githubusercontent.com/${tool.repository.full_name}/${reference_id}/${tool.path}`;
       const { data: toolFileContent } = await axios.get(download_url);
       const valid = validate(toolFileContent)
       if (valid) {
-        let repositoryUrl = result_object.repository.html_url;
-        let isAsyncAPIrepo = result_object.repository.owner.login === "asyncapi";
+        let repositoryUrl = tool.repository.html_url;
+        let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
         let toolObject = createToolObject(toolFileContent, repositoryUrl, isAsyncAPIrepo);
         toolFileContent.filters.categories.forEach((category) => {
           const categorySearch = fuse.search(category);
           if (categorySearch.length) {
-            console.log(categorySearch[0].item)
             if (!appendData[categorySearch[0].item].find((element => element === toolObject)))
               appendData[categorySearch[0].item].push(toolObject);
           } else {
@@ -74,7 +60,7 @@ async function convertTools(data) {
           }
         });
       } else {
-        console.log("Repository: " + result_object.repository.html_url)
+        console.log("Repository: " + tool.repository.html_url)
         console.log("Error: " + validate.errors)
       }
     }

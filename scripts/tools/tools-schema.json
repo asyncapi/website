@@ -1,67 +1,54 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "JSON Schema for AsyncAPI tool discovery file.",
-	"type": "object",
-	"required": [
-		"title",
-		"description",
-		"maintainers",
-		"links",
-		"filters"
-	],
-	"properties": {
-		"title": {
-			"type": "string",
-			"description": "Human-readable name of the tool that will be visible to people in the list of tools",
-			"examples": [
-				"AsyncAPI Generator",
-				"Cupid"
-			]
-		},
-		"description": {
-			"type": "string"
-		},
-		"links": {
-			"type": "object",
-			"properties": {
-				"websiteUrl": {
-					"type": "string"
-				},
-				"docsUrl": {
-					"type": "string"
-				}
-			}
-		},
-		"filters": {
-			"type": "object",
-			"required": [
-				"language",
-				"technology",
-				"categories"
-			],
-			"properties": {
-				"language": {
-					"type": "string"
-				},
-				"technology": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					},
-					"minItems": 1
-				},
-				"categories": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					},
-					"minItems": 1
-				},
-				"hasCommercial": {
-					"type": "boolean",
-					"default": false
-				}
-			}
-		}
-	}
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSON Schema for AsyncAPI tool discovery file.",
+  "type": "object",
+  "required": ["title", "description", "maintainers", "links", "filters"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Human-readable name of the tool that will be visible to people in the list of tools",
+      "examples": ["AsyncAPI Generator", "Cupid"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "websiteUrl": {
+          "type": "string"
+        },
+        "docsUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "filters": {
+      "type": "object",
+      "required": ["language", "technology", "categories"],
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "technology": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "hasCommercial": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
 }

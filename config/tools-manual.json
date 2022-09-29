@@ -10,7 +10,6 @@
         "links": {
             "websiteUrl": "",
             "docsUrl": "",
-            "iconUrl": "",
             "repoUrl": "https://gitlab.com/djencks/asyncapi-asciidoc-template"
         },
         "filters": {
