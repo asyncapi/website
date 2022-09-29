@@ -84,7 +84,8 @@ channels:
             userEmail:
               type: string
             userId:
-              type: string`}
+              type: string
+              EOT`}
               </CodeBlock>
 
 2. Now by using `asyncapi-validator`.To validate incoming MQTT messages, you have to load the AsyncAPI schema definition using the `fromSource` method and then you can validate any message with its key and payload using the validate method.
