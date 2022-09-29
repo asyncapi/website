@@ -8,7 +8,6 @@ import JobsContext from '../../context/JobsContext'
 import EventsContext from '../../context/EventsContext';
 import CommunityDocsContext from '../../context/CommunityDocsContext'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import CommunityDocsLayout from './CommunityDocsLayout'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
@@ -33,12 +32,6 @@ export default function Layout({ children }) {
       >
         {children}
       </DocsLayout>
-      // <CommunityDocsLayout
-      //   post={post}
-      //   navItems={posts.filter((p) => p.slug.startsWith('/community/docs/'))}
-      // >
-      //   {children}
-      // </CommunityDocsLayout>
     );
   } else if (pathname.startsWith('/community/docs')) {
     const posts = getAllPosts();

@@ -4,8 +4,8 @@ import Heading from '../../components/typography/Heading';
 import Button from '../../components/buttons/Button';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
-import Link from 'next/link';
 import GenericLayout from '../../components/layout/GenericLayout';
+import TextLink from '../../components/typography/TextLink';
 
 const orbit1 = [
   {
@@ -248,7 +248,7 @@ function CommunityIndexPage() {
         <div className="mt-10 md:mt-32 z-40">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
-              <Link key={link.title} href={link.link}>
+              <TextLink key={link.title} href={link.link} className='no-underline'>
                 <li
                   className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end cursor-pointer`}
                 >
@@ -258,7 +258,7 @@ function CommunityIndexPage() {
                     {link.title}
                   </h1>
                 </li>
-              </Link>
+              </TextLink>
             ))}
           </ul>
         </div>

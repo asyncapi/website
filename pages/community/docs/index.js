@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import Heading from '../../../components/typography/Heading';
 import ArrowRight from '../../../components/icons/ArrowRight';
-import Link from 'next/link';
+
 import CommunityDocsContext from '../../../context/CommunityDocsContext';
 import GenericLayout from '../../../components/layout/GenericLayout';
+import TextLink from '../../../components/typography/TextLink';
 
 function Index() {
     const image = '/img/social/website-card.png';
@@ -57,14 +58,14 @@ function Index() {
                 </p>
               </div>
               <div>
-                <Link href={category.defaultLink} className="text">
+                <TextLink href={category.defaultLink} className="no-underline">
                   <div className="flex items-center text-gray-600 hover:text-gray-900 cursor-pointer">
                     <span>Learn more </span>
                     <span>
                       <ArrowRight className="w-8" />
                     </span>
                   </div>
-                </Link>
+                </TextLink>
               </div>
             </li>
           ))}
