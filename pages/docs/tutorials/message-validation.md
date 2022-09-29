@@ -276,6 +276,7 @@ Light intensity measured in lumens.
 
 sentAt      string format: date-time `uid: sentAt`
 Date and time when the message was sent.`}
+
 </CodeBlock>
 
 3. It returns the error when it detects the following invalid message `invalidMessage`
