@@ -88,12 +88,12 @@ Be active in your role as an ambassador.
         </div>
         <div className="mt-10">
           <div className="mb-5 text-primary-800 text-center">
-            <h3 className="font-semibold text-2xl">
+            <Heading level="h3" typeStyle="heading-lg">
               Current AsyncAPI ambassadors
-            </h3>
-            <span className="font-thin text-sm">
+            </Heading>
+            <Paragraph className="mt-2">
               (in alphabetical order)
-            </span>
+            </Paragraph>
           </div>
 
           <ul
