@@ -74,16 +74,16 @@ Be active in your role as an ambassador.
             </Paragraph>
           </div>
           <div>
-            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            <Heading level="h3" typeStyle="heading-md-semibold" className="mb-2 lg:text-center">
             What are the benefits of becoming an ambassador?
-            </h3>
-            <p className="my-4 text-base text-gray-500 lg:text-center">
+            </Heading>
+            <Paragraph className="my-4 lg:text-center">
     Special Ambassador swag.
     Conference and workshop swag. 
     Free entry to AsyncAPI conferences.
     Community-wide recognition.
     All our respects for your contribution!
-            </p>
+            </Paragraph>
           </div>
         </div>
         <div className="mt-10">
