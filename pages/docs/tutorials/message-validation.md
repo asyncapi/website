@@ -43,24 +43,27 @@ Validation of messages can be done is several ways
 
 It is a message validator through AsyncAPI schema. 
 1. In order to validate messages, you need to install this package
-<CodeBlock> npm i asyncapi-validator </CodeBlock>
+<CodeBlock language="bash"> 
+{`npm i asyncapi-validator`} 
+</CodeBlock>
 
 2. To validate messages using `messageId`
 Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
 <CodeBlock>
-.validateByMessageId(key, payload)
+{`.validateByMessageId(key, payload)`}
 </CodeBlock>
 
 3. To validate messages using `.validate()` method you should provide `msgIdentifier` in AsyncApiValidator `options`.
 
 <CodeBlock>
-.validate(key, payload, channel, operation)
+{`.validate(key, payload, channel, operation)`}
 </CodeBlock>
 
 # Here's an example usecase with `.validateByMessageId()` method
 
 1. Let's first create the AsyncAPI file
-<CodeBlock>
+<CodeBlock language="yaml">
+{`cat <<EOT >> asyncapi.yaml
 asyncapi: 2.0.0
 
 info:
@@ -80,28 +83,28 @@ channels:
             userEmail:
               type: string
             userId:
-              type: string
+              type: string`}
               </CodeBlock>
 
 2. Now by using `asyncapi-validator`.To validate incoming MQTT messages, you have to load the AsyncAPI schema definition using the `fromSource` method and then you can validate any message with its key and payload using the validate method.
 
 <CodeBlock>
-const AsyncApiValidator = require('asyncapi-validator')
+{`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml')
 
 // validate messageId 'UserRemoved'
 va.validateByMessageId('UserRemoved', {
   userId: '123456789',
   userEmail: 'alex@mail.com',
-})
+})`}
 </CodeBlock>
 
 # Here's an example usecase with .validate() method
 
 1. Let's create another AsyncAPI file
 
-<CodeBlock>
-asyncapi: 2.0.0
+<CodeBlock language="yaml">
+{`asyncapi: 2.0.0
 
 info:
   title: User Events
@@ -120,20 +123,20 @@ channels:
             userEmail:
               type: string
             userId:
-              type: string
+              type: string`}
               </CodeBlock>
 
 2. Now by using `asyncapi-validator`. here "msgIdentifier" is "x-custom-key". That is why, "UserDeleted" is used as "key" in "va.validate()" method.
 
 <CodeBlock>
-const AsyncApiValidator = require('asyncapi-validator')
+{`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml', {msgIdentifier: 'x-custom-key'})
 
 // validate 'UserDeleted' on channel 'user-events' with operation 'publish'
 va.validate('UserDeleted', {
   userId: '123456789',
   userEmail: 'alex@mail.com',
-}, 'user-events', 'publish')
+}, 'user-events', 'publish')`}
 </CodeBlock>
 
 # Validation using AsyncAPI gateway
@@ -144,8 +147,8 @@ AsyncAPI gateway intercepts all incoming messages moving them into a pipeline of
 
 1. Let's create the AsyncAPI file. Expected messages are based on a small portion of the StreetLights tutorial.
 
-<CodeBlock>
-asyncapi: '2.4.0'
+<CodeBlock language="yaml">
+{`asyncapi: '2.4.0'
 info:
   title: AsyncAPI Event-Gateway demo API
   version: 1.0.0-alpha
@@ -260,27 +263,27 @@ components:
           my-app-header:
             type: integer
             minimum: 0
-            maximum: 100
+            maximum: 100`}
 </CodeBlock>
 
 2. The gateway accepts the light measured `lightMeasured` as a message to inform about environmental lighting conditions of a particular streetlight.
 
 <CodeBlock>
-lumens      integer >= 0
+{`lumens      integer >= 0
 Light intensity measured in lumens.
 
 sentAt      string format: date-time `uid: sentAt`
-Date and time when the message was sent.
+Date and time when the message was sent.`}
 </CodeBlock>
 
 3. It returns the error when it detects the following invalid message `invalidMessage`
 
 <CodeBlock>
-UUID       string
+{`UUID       string
            Unique identifier of message. I.e. Kafka message key.
 
 Payload    string
-           Message value. I.e. Kafka message (base64).
+           Message value. I.e. Kafka message (base64).`}
 </CodeBlock>
 
 # Summary
