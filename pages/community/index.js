@@ -2,10 +2,10 @@
 import React from 'react';
 import Heading from '../../components/typography/Heading';
 import Button from '../../components/buttons/Button';
-import CommunityLayout from '../../components/layout/CommunityLayout';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Link from 'next/link';
+import GenericLayout from '../../components/layout/GenericLayout';
 
 const orbit1 = [
   {
@@ -144,6 +144,7 @@ const quickLinks = [
 ];
 
 function CommunityIndexPage() {
+  const image = '/img/social/website-card.png';
   const heading = (
     <div className="text-center flex justify-center flex-col items-center">
       <Heading
@@ -184,9 +185,11 @@ function CommunityIndexPage() {
     </div>
   );
   return (
-    <CommunityLayout
+    <GenericLayout
       title="AsyncAPI Meetings"
       description="The home for developer communities"
+      image={image}
+      hideBanner={true}
       wide
     >
       <div className="md:hidden mt-15">{heading}</div>
@@ -289,7 +292,7 @@ function CommunityIndexPage() {
                 contributing, collaborating and mentoring others to build with
                 AsyncAPI.
               </Heading>
-              <div className='mt-4'>
+              <div className="mt-4">
                 <Button
                   text="Become part of the family"
                   buttonSize="small"
@@ -548,7 +551,7 @@ function CommunityIndexPage() {
       <div className="mt-72 md:mt-36 flex justify-center">
         <NewsletterSubscribe formName="form 2" />
       </div>
-    </CommunityLayout>
+    </GenericLayout>
   );
 }
 

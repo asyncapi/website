@@ -1,27 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from '../../../components/buttons/Button';
-import CommunityLayout from '../../../components/layout/CommunityLayout'
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
 import EventsContext from '../../../context/EventsContext';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
+import GenericLayout from '../../../components/layout/GenericLayout';
 
 function index() {
+      const image = '/img/social/website-card.png';
   let {navItems} = useContext(EventsContext)
   const [events, setEvents] = useState(navItems)
-  // useEffect(() => {
-  //   const newList = navItems.filter((list) => {
-  //     return list.isIndex === false;
-  //   });
-  //   setEvents(newList)
-  // },[])
   return (
-    <CommunityLayout
+    <GenericLayout
       title="AsyncAPI events"
       description="Our catalogs of events and meetups"
+      image={image}
+      hideBanner={true}
       wide
     >
       <div className="mt-10 sm:mt-28">
@@ -113,7 +110,7 @@ function index() {
           </ul>
         </div>
       </div>
-    </CommunityLayout>
+    </GenericLayout>
   );
 }
 

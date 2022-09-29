@@ -10,7 +10,8 @@ export default function GenericLayout({
   description,
   image,
   children,
-  wide = true
+  wide = true,
+  hideBanner = false
 }) {
   if (!title || !description || !image) throw new Error('Props `title`, `description`, and `image` are required at GenericLayout component.')
   
@@ -25,7 +26,7 @@ export default function GenericLayout({
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
      </StickyNavbar>
       <Container wide={wide}>
-        <AnnouncementHero className="text-center m-4" small={true} />
+        <AnnouncementHero className={`text-center m-4 ${hideBanner && "hidden"}`} small={true} />
         {children}
       </Container>
     </>

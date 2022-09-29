@@ -1,23 +1,25 @@
-import {useContext, useEffect, useState} from 'react'
-import CommunityLayout from '../../../components/layout/CommunityLayout'
+import { useContext, useEffect, useState } from 'react';
 import Heading from '../../../components/typography/Heading';
-import ArrowRight from "../../../components/icons/ArrowRight";
+import ArrowRight from '../../../components/icons/ArrowRight';
 import Link from 'next/link';
 import CommunityDocsContext from '../../../context/CommunityDocsContext';
+import GenericLayout from '../../../components/layout/GenericLayout';
 
 function Index() {
-  let {navItems} = useContext(CommunityDocsContext)
-  const [categories, setCategories] = useState([])
+    const image = '/img/social/website-card.png';
+  let { navItems } = useContext(CommunityDocsContext);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     const newList = navItems.filter((list) => {
-      return list.isIndex && list.isIndex === true
-    })
-    setCategories(newList)
-  },[])
+      return list.isIndex && list.isIndex === true;
+    });
+    setCategories(newList);
+  }, []);
   return (
-    <CommunityLayout
+    <GenericLayout
       title="Community docs and resources"
       description="The home for developer communities"
+      image={image}
       wide
     >
       <div>
@@ -68,8 +70,8 @@ function Index() {
           ))}
         </ul>
       </div>
-    </CommunityLayout>
+    </GenericLayout>
   );
 }
 
-export default Index
+export default Index;
