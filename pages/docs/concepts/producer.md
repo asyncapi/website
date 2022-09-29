@@ -11,7 +11,7 @@ A producer is a type of application that senses that state change and then publi
 
 ## Why do we need Producers? 
 
-One of the core concepts of event-driven architecture is the publish/subscribe communication model. Producers are publishers in this model and the first logical layer responsible for publishing messages to the broker. This way, any consumer subscribed to that event can handle the published messages.
+One of the core concepts of event-driven architecture is the publish/subscribe communication model. Producers are publishers in this model and the first logical layer responsible for publishing to the broker messages that others can subscribe to receive.
 
 ```mermaid
 flowchart TD
