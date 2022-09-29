@@ -47,17 +47,20 @@ It is a message validator through AsyncAPI schema.
 
 2. To validate messages using `messageId`
 Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
-<CodeBlock>/**
+<CodeBlock>
+/**
  * Method to validate the Payload against schema definition.
  * @param {string} key - required - messageId
  * @param {Object} payload - required - payload of the message
  * @returns {boolean}
  */
-.validateByMessageId(key, payload)</CodeBlock>
+.validateByMessageId(key, payload)
+</CodeBlock>
 
 3. To validate messages using `.validate()` method you should provide `msgIdentifier` in AsyncApiValidator `options`.
 
-<CodeBlock>/**
+<CodeBlock>
+/**
  * Method to validate the Payload against schema definition.
  * @param {string} key - required - message key
  * @param {Object} payload - required - payload of the message
@@ -65,12 +68,14 @@ Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyn
  * @param {string} operation - required - publish | subscribe
  * @returns {boolean}
  */
-.validate(key, payload, channel, operation)</CodeBlock>
+.validate(key, payload, channel, operation)
+</CodeBlock>
 
 # Here's an example usecase with .validateByMessageId() method
 
 1. Let's first create the AsyncAPI file
-<CodeBlock>asyncapi: 2.0.0
+<CodeBlock>
+asyncapi: 2.0.0
 
 info:
   title: User Events
@@ -89,24 +94,28 @@ channels:
             userEmail:
               type: string
             userId:
-              type: string</CodeBlock>
+              type: string
+              </CodeBlock>
 
 2. Now by using `asyncapi-validator`
 
-<CodeBlock>const AsyncApiValidator = require('asyncapi-validator')
+<CodeBlock>
+const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml')
 
 // validate messageId 'UserRemoved'
 va.validateByMessageId('UserRemoved', {
   userId: '123456789',
   userEmail: 'alex@mail.com',
-})</CodeBlock>
+})
+</CodeBlock>
 
 # Here's an example usecase with .validate() method
 
 1. Let's create another AsyncAPI file
 
-<CodeBlock>asyncapi: 2.0.0
+<CodeBlock>
+asyncapi: 2.0.0
 
 info:
   title: User Events
@@ -125,18 +134,21 @@ channels:
             userEmail:
               type: string
             userId:
-              type: string</CodeBlock>
+              type: string
+              </CodeBlock>
 
 2. Now by using `asyncapi-validator`. here "msgIdentifier" is "x-custom-key". That is why, "UserDeleted" is used as "key" in "va.validate()" method.
 
-<CodeBlock>const AsyncApiValidator = require('asyncapi-validator')
+<CodeBlock>
+const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml', {msgIdentifier: 'x-custom-key'})
 
 // validate 'UserDeleted' on channel 'user-events' with operation 'publish'
 va.validate('UserDeleted', {
   userId: '123456789',
   userEmail: 'alex@mail.com',
-}, 'user-events', 'publish')</CodeBlock>
+}, 'user-events', 'publish')
+</CodeBlock>
 
 # Validation using AsyncAPI gateway
 
@@ -146,7 +158,8 @@ AsyncAPI gateway intercepts all incoming messages moving them into a pipeline of
 
 1. Let's create the AsyncAPI file. Expected messages are based on a small portion of the StreetLights tutorial.
 
-<CodeBlock>asyncapi: '2.4.0'
+<CodeBlock>
+asyncapi: '2.4.0'
 info:
   title: AsyncAPI Event-Gateway demo API
   version: 1.0.0-alpha
