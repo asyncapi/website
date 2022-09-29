@@ -55,12 +55,12 @@ export default function ambassadors() {
             <Heading level="h3" typeStyle="heading-md-semibold" className="mb-2 lg:text-center">
               What is an AsyncAPI ambassador?
             </Heading>
-            <p className="my-4 text-base text-gray-500 lg:text-center">
-            The AsyncAPI Ambassador brings AsyncAPI closer to the users and potential users of the project. It provides users and community members with the necessary tools and resources.
+             <Paragraph className="my-4 lg:text-center">
+             The AsyncAPI Ambassador brings AsyncAPI closer to the users and potential users of the project. It provides users and community members with the necessary tools and resources.
 They promote cooperation between users and disseminate the necessary tools to any specification user.
 They are engaged with the project in some way, either as a contributor, blogger, speaker, etc.
 They should also be willing to speak at community events or write technical content (i.e. blog posts, docs, etc.) that solves community needs.
-            </p>
+             </Paragraph>
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
