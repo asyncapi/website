@@ -4,7 +4,8 @@ import TwitterSVG from "../../components/icons/twitter_2";
 import GithubSVG from "../../components/icons/github_2";
 import LinkedInSVG from "../../components/icons/linkedin_2";
 import {sortBy} from 'lodash';
-
+import Heading from "../../components/typography/Heading";
+import Paragraph from "../../components/typography/Paragraph";
 function addAdditionalUserInfo(user) {
   const userData = {
     ...user,
