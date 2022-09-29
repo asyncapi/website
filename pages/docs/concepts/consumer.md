@@ -1,6 +1,6 @@
 ---
 title: Server
-weight: 5
+weight: 3
 ---
 
 ## What is a Consumer?
