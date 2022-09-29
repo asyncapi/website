@@ -274,7 +274,7 @@ components:
 {`lumens      integer >= 0
 Light intensity measured in lumens.
 
-sentAt      string format: date-time `uid: sentAt`
+sentAt      string format: date-time uid: sentAt
 Date and time when the message was sent.`}
 
 </CodeBlock>
