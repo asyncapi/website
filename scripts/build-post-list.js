@@ -15,8 +15,7 @@ const postDirectories = [
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
-  [`${basePath}/community`, '/docs'],
-  [`${basePath}/community`, '/events'],
+  [`${basePath}/community`, '/community'],
 ];
 
 module.exports = async function buildPostList() {
