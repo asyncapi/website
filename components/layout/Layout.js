@@ -24,7 +24,6 @@ export default function Layout({ children }) {
   else if (pathname.startsWith('/community/docs/')) {
     const posts = getAllPosts();
     const post = getPostBySlug(pathname);
-    console.log(posts.filter((p) => p.slug.startsWith('/community/docs/')));
     return (
       <DocsLayout
         post={post}
@@ -35,7 +34,6 @@ export default function Layout({ children }) {
     );
   } else if (pathname.startsWith('/community/docs')) {
     const posts = getAllPosts();
-    console.log(posts)
     return (
       <CommunityDocsContext.Provider
         value={{
