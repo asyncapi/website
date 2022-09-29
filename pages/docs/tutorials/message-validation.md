@@ -36,42 +36,28 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 Validation of messages can be done is several ways
 
-- [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator), it validates your messages against your AsyncApi Document
+- [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator), it validates your messages against your AsyncAPI schema.
 - [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway), it is not a library that you intergrate in an App, but validation is done before the message gets into the app, on a gateway.
 
 # Validation using AsyncAPI Validator
 
 It is a message validator through AsyncAPI schema. 
 1. In order to validate messages, you need to install this package
-<CodeBlock>npm i asyncapi-validator</CodeBlock>
+<CodeBlock> npm i asyncapi-validator </CodeBlock>
 
 2. To validate messages using `messageId`
 Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
 <CodeBlock>
-/**
- * Method to validate the Payload against schema definition.
- * @param {string} key - required - messageId
- * @param {Object} payload - required - payload of the message
- * @returns {boolean}
- */
 .validateByMessageId(key, payload)
 </CodeBlock>
 
 3. To validate messages using `.validate()` method you should provide `msgIdentifier` in AsyncApiValidator `options`.
 
 <CodeBlock>
-/**
- * Method to validate the Payload against schema definition.
- * @param {string} key - required - message key
- * @param {Object} payload - required - payload of the message
- * @param {string} channel - required - name of the channel/topic
- * @param {string} operation - required - publish | subscribe
- * @returns {boolean}
- */
 .validate(key, payload, channel, operation)
 </CodeBlock>
 
-# Here's an example usecase with .validateByMessageId() method
+# Here's an example usecase with `.validateByMessageId()` method
 
 1. Let's first create the AsyncAPI file
 <CodeBlock>
@@ -97,7 +83,7 @@ channels:
               type: string
               </CodeBlock>
 
-2. Now by using `asyncapi-validator`
+2. Now by using `asyncapi-validator`.To validate incoming MQTT messages, you have to load the AsyncAPI schema definition using the `fromSource` method and then you can validate any message with its key and payload using the validate method.
 
 <CodeBlock>
 const AsyncApiValidator = require('asyncapi-validator')
