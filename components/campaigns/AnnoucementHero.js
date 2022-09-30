@@ -23,7 +23,7 @@ export default function AnnouncementHero({ className = '', small = false}) {
         AsyncAPI Conference 2022
       </Heading>
       <Paragraph typeStyle="body-lg">
-        November 3-5, 2022 | Barcelona, Spain
+        November 3-5, 2022 | Virtual
       </Paragraph>
       <div className="mt-8 pb-2 space-x-2">
         <Button
