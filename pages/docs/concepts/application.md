@@ -20,4 +20,4 @@ flowchart LR
         C --> D[message] 
         D --> F[CONSUMER application]
 ```
-The diagram above describes a bi-directional communication between a **producer application** and a **consumer application**. In this case, in your AsyncAPI file, you describe the `channel` via the [`Channel Bindings Object`](https://www.asyncapi.com/docs/reference/specification/v2.4.0#channelBindingsObject), which describes the protocol-specific definitions for `channel`s.
+The diagram above describes the communication between a **producer application** and a **consumer application**. In this case, in your AsyncAPI file, you describe the `channel` via the [`Channel Bindings Object`](https://www.asyncapi.com/docs/reference/specification/v2.4.0#channelBindingsObject), which describes the protocol-specific definitions for `channel`s.
