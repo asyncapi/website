@@ -10,6 +10,7 @@ const options = {
   includeScore: true,
   shouldSort: true,
   threshold: 0.2,
+  keys: ["tag"]
 }
 
 const fuse = new Fuse(categoryList, options)
@@ -33,7 +34,10 @@ const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
 async function convertTools(data) {
   let appendData = {};
   for(var index in categoryList){
-    appendData[categoryList[index]] = [];
+    appendData[categoryList[index].name] = {
+      description: categoryList[index].description,
+      toolsList: []
+    };
   }
   const dataArray = data.items;
   for (let tool of dataArray) {
@@ -52,11 +56,11 @@ async function convertTools(data) {
         toolFileContent.filters.categories.forEach((category) => {
           const categorySearch = fuse.search(category);
           if (categorySearch.length) {
-            if (!appendData[categorySearch[0].item].find((element => element === toolObject)))
-              appendData[categorySearch[0].item].push(toolObject);
+            if (!appendData[categorySearch[0].item.name].toolsList.find((element => element === toolObject)))
+              appendData[categorySearch[0].item.name].toolsList.push(toolObject);
           } else {
-            if (!appendData['others'].find((element => element === toolObject)))
-              appendData['others'].push(toolObject);
+            if (!appendData['Others'].toolsList.find((element => element === toolObject)))
+              appendData['Others'].toolsList.push(toolObject);
           }
         });
       } else {

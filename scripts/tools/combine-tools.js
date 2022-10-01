@@ -8,7 +8,10 @@ const Fuse = require("fuse.js")
 
 let finalTools = {};
 for (var category of categoryList) {
-    finalTools[category] = [];
+    finalTools[category.name] = {
+        description: category.description,
+        toolsList: []
+    };
 }
 
 const options = {
@@ -41,18 +44,18 @@ const getFinalTool = async (toolObject) => {
 
 const main = async () => {
     for (const key in automatedTools) {
-        let toolsList = [];
-        if (automatedTools[key].length) {
-            for (const tool of automatedTools[key]) {
-                toolsList.push(await getFinalTool(tool))
+        let finalToolsList = [];
+        if (automatedTools[key].toolsList.length) {
+            for (const tool of automatedTools[key].toolsList) {
+                finalToolsList.push(await getFinalTool(tool))
             }
         }
-        if (manualTools[key].length) {
-            for (const tool of manualTools[key]) {
-                toolsList.push(await getFinalTool(tool))
+        if (manualTools[key].toolsList.length) {
+            for (const tool of manualTools[key].toolsList) {
+                finalToolsList.push(await getFinalTool(tool))
             }
         }
-        finalTools[key] = toolsList
+        finalTools[key].toolsList = finalToolsList
     }
     fs.writeFileSync(
         resolve(__dirname, '../../config', 'tools.json'),
