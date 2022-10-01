@@ -1,4 +1,5 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ToolsData from '../../config/tools.json'
 import FilterIcon from '../icons/Filter';
 import ArrowDown from '../icons/ArrowDown';
@@ -12,11 +13,45 @@ export default function ToolDashboard() {
         filter: false,
         category: false
     })
+    const {isPaid, isAsyncAPIOwner, languages, technologies, categories} = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('')
-    const [toolsList, setToolsList] = useState(ToolsData)
-    // useEffect(()=> {
+    const [toolsList, setToolsList] = useState()
+    useEffect(()=> {
+        let tempToolsList = {}
+        if(categories.length >0){
+            for(let category of categories){
+                Object.keys(ToolsData).forEach((key) => {
+                    if(key===category) tempToolsList[key] = ToolsData[key]
+                })
+            }
+        }else{
+            tempToolsList = JSON.parse(JSON.stringify(ToolsData));
+        }
+        Object.keys(tempToolsList).forEach((category) => {
+            tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
+                let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true;
+                if(languages.length){
+                    isLanguageTool = false;
+                    for(let language of languages){
+                        if(language === tool.filters.language.name) isLanguageTool = true;
+                    }
+                }
+                if(technologies.length){
+                    isTechnologyTool = false;
+                    for(let technology of technologies){
+                        if(tool.filters.technology.find((item) => item.name === technology)) isTechnologyTool = true;
+                    }
+                }
+                if(searchName){
+                    isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase())
+                }
+                
+                return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
+            })
 
-    // })
+            setToolsList(tempToolsList)
+        })
+    }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
     
     const setFilter = (filterType) => {
         let newFilterObject = { ...openFilter };
@@ -29,7 +64,6 @@ export default function ToolDashboard() {
             newFilterObject.filter = false;
         }
         setopenFilter(newFilterObject)
-        console.log(newFilterObject)
     }
 
     return (
@@ -66,11 +100,12 @@ export default function ToolDashboard() {
                         placeholder="Search by name"
                         type="text"
                         value={searchName}
+                        onChange={(e) => setSearchName(e.target.value)}
                     />
                 </div>
             </div>
             <div className="mt-10">
-                <ToolsList toolsData={ToolsData}/>
+                {toolsList ? <ToolsList toolsData={toolsList}/> : 'No Tools Found'}
             </div>
         </div>
     )
