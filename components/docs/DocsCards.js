@@ -5,6 +5,7 @@ import Paragraph from '../typography/Paragraph';
 import IconGettingStarted from '../icons/GettingStarted'
 import IconTutorials from '../icons/Tutorials'
 import IconUseCases from '../icons/UseCases'
+import IconGuide from '../icons/Guide'
 import IconSpec from '../icons/Spec'
 
 const cards = [
@@ -30,6 +31,18 @@ const cards = [
     Icon: IconUseCases,
   },
   {
+    title: 'Guides',
+    description: 'Our Guides section shows at a high level how stuff work.',
+    link: '/docs/guides',
+    className: 'bg-primary-200',
+    iconProps: { 
+      style: {
+        stroke: '#E0D1FC',
+      }
+    },
+    Icon: IconGuide,
+  },
+  {
     title: 'Reference',
     description: 'Our Reference section documents the AsyncAPI specification.',
     link: '/docs/reference',
@@ -48,7 +61,7 @@ export function DocsCards() {
   );
 }
 
-function Card({ title, description, link, className, Icon }) {
+function Card({ title, description, link, className, iconProps = {}, Icon }) {
   return (
     <Link href={link}>
       <a href={link} className='cursor-pointer'>
@@ -61,7 +74,7 @@ function Card({ title, description, link, className, Icon }) {
             >
               <div className='flex flex-row items-center'>
                 <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
-                  <Icon className="h-6 w-6" />
+                  <Icon className="h-6 w-6" {...iconProps} />
                 </div>
                 <span className='ml-4'>{title}</span>
               </div>
