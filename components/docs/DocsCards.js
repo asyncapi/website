@@ -35,11 +35,6 @@ const cards = [
     description: 'Our Guides section shows at a high level how stuff work.',
     link: '/docs/guides',
     className: 'bg-primary-200',
-    iconProps: { 
-      style: {
-        stroke: '#E0D1FC',
-      }
-    },
     Icon: IconGuide,
   },
   {
@@ -61,7 +56,7 @@ export function DocsCards() {
   );
 }
 
-function Card({ title, description, link, className, iconProps = {}, Icon }) {
+function Card({ title, description, link, className, Icon }) {
   return (
     <Link href={link}>
       <a href={link} className='cursor-pointer'>
@@ -74,7 +69,7 @@ function Card({ title, description, link, className, iconProps = {}, Icon }) {
             >
               <div className='flex flex-row items-center'>
                 <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
-                  <Icon className="h-6 w-6" {...iconProps} />
+                  <Icon className="h-6 w-6"/>
                 </div>
                 <span className='ml-4'>{title}</span>
               </div>
