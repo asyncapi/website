@@ -3,7 +3,7 @@
 const categoryList = [
     {
         name: "Code-first tools",
-        tag: "code first",
+        tag: "code-first",
         description: "The following is a list of tools that generate AsyncAPI documents from your code."
     },
     {
