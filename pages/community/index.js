@@ -166,7 +166,7 @@ function CommunityIndexPage() {
           level="h2"
           typeStyle="body-md"
           textColor="text-gray-700"
-          className="text-slate-500 text-xs md:text-sm"
+          className="text-slate-500 text-sm"
         >
           We"re a community of great people who are passionate about AsyncAPI.
           Join us in building the future of Event Driven APIs by asking
@@ -248,7 +248,11 @@ function CommunityIndexPage() {
         <div className="mt-10 md:mt-32 z-40">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
-              <TextLink key={link.title} href={link.link} className='no-underline'>
+              <TextLink
+                key={link.title}
+                href={link.link}
+                className="no-underline"
+              >
                 <li
                   className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end cursor-pointer`}
                 >
@@ -292,16 +296,15 @@ function CommunityIndexPage() {
                 contributing, collaborating and mentoring others to build with
                 AsyncAPI.
               </Heading>
-              <div className="mt-4">
+              <div className="mt-10">
                 <Button
                   text="Become part of the family"
-                  buttonSize="small"
+                  buttonSize="medium"
                   href="https://asyncapi.com/slack-invite"
                   target="_blank"
                   bgClassName="bg-primary-600"
                 />
               </div>
-              <div className="mt-10"></div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
@@ -337,7 +340,14 @@ function CommunityIndexPage() {
                 about our live and recorded events below. You can also sign up
                 to our community newsletter to stay up-to-date on our events.
               </Heading>
-              <div className="mt-10"></div>
+              <div className="mt-10">
+                <Button
+                  text="Explore more events"
+                  buttonSize="medium"
+                  href="/community/events"
+                  bgClassName="bg-pink-600"
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
@@ -450,7 +460,7 @@ function CommunityIndexPage() {
             </div>
             <div>
               <Heading level="h2" typeStyle="heading-lg" className="mt-10">
-                Advocate Programs
+                Ambassador Programs
               </Heading>
               <Heading
                 level="h2"
@@ -463,7 +473,14 @@ function CommunityIndexPage() {
                 it easy to track and reward you contributors and build thriving
                 communities.
               </Heading>
-              <div className="mt-10"></div>
+              <div className="mt-10">
+                <Button
+                  text="Become an ambassador"
+                  buttonSize="medium"
+                  href="/community/events"
+                  bgClassName="bg-primary-600"
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/6 flex justify-end rounded-lg">
