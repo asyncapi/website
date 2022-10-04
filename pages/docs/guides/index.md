@@ -3,13 +3,13 @@ title: 'Overview'
 weight: 1
 ---
 
-## Guides: Define AsyncAPI features and capabilities
+## Guides: Teaches AsyncAPI's capabilities at a high level
 
-Welcome to AsyncAPI **Concepts**! Our Concepts section will define the concepts of AsyncAPI features and capabilities.
+Welcome to AsyncAPI **Guides**! Our Guides section teaches AsyncAPI's capabilities and features at a high level.
 
 <Remember>
 
-## Contribute to AsyncAPI Concepts
+## Contribute to AsyncAPI Guides
 Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:
