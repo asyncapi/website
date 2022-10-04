@@ -113,12 +113,12 @@ The `payload` object defines how the message must be structured. In this example
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/coming-from-openapi',
+      href: '/docs/tutorials/getting-started/coming-from-openapi',
       title: 'Coming from OpenAPI',
       type:'back',
     },
     {
-      href: '/docs/getting-started/asyncapi-documents',
+      href: '/docs/tutorials/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
       type:'next',
     }
