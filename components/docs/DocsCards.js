@@ -18,7 +18,7 @@ const cards = [
   },
   {
     title: 'Tutorials',
-    description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing.',
+    description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     Icon: IconTutorials,
@@ -32,7 +32,7 @@ const cards = [
   },
   {
     title: 'Guides',
-    description: 'Our Guides section shows at a high level how stuff work.',
+    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
     className: 'bg-primary-200',
     Icon: IconGuide,
