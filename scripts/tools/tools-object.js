@@ -56,8 +56,9 @@ async function convertTools(data) {
         toolFileContent.filters.categories.forEach((category) => {
           const categorySearch = fuse.search(category);
           if (categorySearch.length) {
-            if (!appendData[categorySearch[0].item.name].toolsList.find((element => element === toolObject)))
-              appendData[categorySearch[0].item.name].toolsList.push(toolObject);
+            let searchedCategoryName = categorySearch[0].item.name
+            if (!appendData[searchedCategoryName].toolsList.find((element => element === toolObject)))
+              appendData[searchedCategoryName].toolsList.push(toolObject);
           } else {
             if (!appendData['Others'].toolsList.find((element => element === toolObject)))
               appendData['Others'].toolsList.push(toolObject);

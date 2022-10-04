@@ -1,4 +1,3 @@
-const automatedTools = require("../../config/tools-automated.json")
 const manualTools = require("../../config/tools-manual.json")
 const { languages, technologies } = require("./tags-color")
 const { categoryList } = require("./categorylist.js")
@@ -42,7 +41,7 @@ const getFinalTool = async (toolObject) => {
 
 }
 
-const main = async () => {
+const combineTools = async (automatedTools) => {
     for (const key in automatedTools) {
         let finalToolsList = [];
         if (automatedTools[key].toolsList.length) {
@@ -62,4 +61,5 @@ const main = async () => {
         JSON.stringify(finalTools)
     );
 }
-main()
+
+module.exports = { combineTools}
