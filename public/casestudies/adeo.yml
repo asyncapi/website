@@ -6,6 +6,9 @@ company:
   revenue: 25.6B EURO turnover, including 768M EURO online
   website: https://www.adeo.com/
   logo: https://www.adeo.com/assets-adeo/themes/adeo-refonte/dist/assets/images/logo-adeo-v3.svg
+  contact:
+    - name: Ludovic Dussart
+      twitter: ldussart
 challenges: |
     Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
 
@@ -83,8 +86,8 @@ technical:
       Invalid messages are routed to dedicated channel for rejected requests.  Not part of AsyncAPI file as API consumers will not listen to this channel. Consumers just know what happens with wrong events.
 
     ![Architecture Diagram](/img/casestudies/adeo/architecture.webp)
-codegen: |
-  Java models generation. Avro schemas used as a source.
+  codegen: |
+    Java models generation. Avro schemas used as a source.
 schemas:
   description: Avro 1.9
   storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
@@ -262,6 +265,4 @@ asyncapi:
       plugins: 
        - avro-schema-parser
   fullExample: https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml
-contact: |
-  - [Ludovic Dussart](https://twitter.com/ldussart)
 additionalResources: Watch [this video presentation about AsyncAPI case study](https://www.youtube.com/watch?v=WwhRbvrf6Rs) from Ludovic Dussart, Ineat & Antoine Delequeuche, Adeo.

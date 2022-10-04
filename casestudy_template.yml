@@ -6,6 +6,12 @@ company: #This is optional, if company wants to provide case study data anonymou
   revenue: #Specify company earnings to indicate to case study reader how critical online operations are.
   website: #Link to main website.
   logo: #Link to logo of the company in SVG format.
+  contact:
+  #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able tools:
+  #- validate long term if case study is still validate
+  #- ping you when we know we plan to change some parts of AsyncAPI that you are already using
+  - name: #full name of the contact person
+    twitter: #specify if twitter, linkedin, email, so we can nicely render
 challenges: |
     #Describe want challanges company have, that faced them towards AsyncAPI. There is no limit here. Use [CommonMark](https://commonmark.org/).
 solution: |
@@ -23,8 +29,8 @@ technical:
     #Explain how testing of the solution is done. How you ensure API works as expected after changes, that users are not affected. For example how do you know who will be affected if you stop sending some message? Provide examples if possible.
   architecture: |
     #Explain the setup of the EDA architecture. Perfect woudl be if you could point what [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) you applied. Provide examples if possible.
-codegen: |
-  #Explain if you use code generation, what you generate and how. Provide examples if possible.
+  codegen: |
+    #Explain if you use code generation, what you generate and how. Provide examples if possible.
 schemas:
   description: #What spec and version do you use, is it JSON Schema? Avro? What version?
   storage: #Where do you store your schemas
@@ -61,8 +67,4 @@ asyncapi:
       plugins: 
        - avro-schema-parser
   fullExample: #should be url to full example of the case study. So later in the UI we can show it as "https://studio.asyncapi.com/?url=https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml" so the example can be previewed in the AsyncAPI Studio easily.
-contact: |
-  #Let us know who we can contact you, some generic email or just a name and link to some social media. We need this to be able tools:
-  - validate long term if case study is still validate
-  - ping you when we know we plan to change some parts of AsyncAPI that you are already using
 additionalResources: #provide some additional resources if there are such. Just block of text with links to articles or videos about the case study.
