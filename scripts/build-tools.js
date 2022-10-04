@@ -1,5 +1,6 @@
 const { getData } = require('./tools/extract-tools-github');
 const { convertTools } = require('./tools/tools-object');
+const { combineTools } = require('./tools/combine-tools');
 const fs = require('fs');
 const { resolve } = require('path');
 
@@ -11,9 +12,10 @@ const buildTools = async () => {
       resolve(__dirname, '../config', 'tools-automated.json'),
       JSON.stringify(toolsData)
     );
-    
+    combineTools(toolsData);
   } catch (err) {
     console.log(err);
+    throw err
   }
 };
 

@@ -12,7 +12,7 @@
     "generate:assets": "echo \"No assets to configure\"",
     "generate:meetings": "node scripts/build-meetings.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
-    "generate:tools": "node scripts/build-tools.js && node scripts/tools/combine-tools.js",
+    "generate:tools": "node scripts/build-tools.js",
     "test": "echo \"No tests configured yet\"",
     "release": "echo \"No release to npm for this project\""
   },

@@ -22,8 +22,6 @@
                 "title": "asyncapi-asciidoc-template",
                 "description": "Asciidoc template for the asyncapi generator",
                 "links": {
-                    "websiteUrl": "",
-                    "docsUrl": "",
                     "repoUrl": "https://gitlab.com/djencks/asyncapi-asciidoc-template"
                 },
                 "filters": {
