@@ -153,6 +153,7 @@ The following is a list of tools that validate AsyncAPI documents.
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
 | [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
+| [AsyncAPI Parser Wrapper](https://github.com/AsyncAPITools/parser-java-wrapper) | It parses and validates AsyncAPI documents. | Java
 
 ## Compare tools {#diff}
 

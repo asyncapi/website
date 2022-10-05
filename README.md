@@ -18,8 +18,8 @@ This repository contains the sources of AsyncAPI website:
 
 Use the following tools to set up the project:
 
-- [Node.js](https://nodejs.org/) v12.16+
-- [npm](https://www.npmjs.com/) v6.13.7+
+- [Node.js](https://nodejs.org/) v16.0.0+
+- [npm](https://www.npmjs.com/) v7.10.0+
 
 ## Usage
 
