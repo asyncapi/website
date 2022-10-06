@@ -2,7 +2,7 @@
 export default function Paragraph({
     typeStyle = "body-lg",
     textColor = "text-gray-700",
-    fontWeight = 'font-regular',
+    fontWeight,
     className,
     children
 }) {
@@ -19,7 +19,7 @@ export default function Paragraph({
             classNames = `text-sm ${fontWeight} ${className || ''}`
             break;
         default:
-            classNames = `text-lg ${fontWeight} ${className || ''}`
+            classNames = `text-lg font-regular ${className || ''}`
     }
 
     return (
