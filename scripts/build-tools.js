@@ -12,7 +12,7 @@ const buildTools = async () => {
       resolve(__dirname, '../config', 'tools-automated.json'),
       JSON.stringify(toolsData)
     );
-    combineTools(toolsData);
+    await combineTools(toolsData);
   } catch (err) {
     console.log(err);
     throw err
