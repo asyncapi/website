@@ -56,10 +56,7 @@ export default function ambassadors() {
               What is an AsyncAPI ambassador?
             </Heading>
              <Paragraph className="my-4 lg:text-center">
-             The AsyncAPI Ambassador brings AsyncAPI closer to the users and potential users of the project. It provides users and community members with the necessary tools and resources.
-They promote cooperation between users and disseminate the necessary tools to any specification user.
-They are engaged with the project in some way, either as a contributor, blogger, speaker, etc.
-They should also be willing to speak at community events or write technical content (i.e. blog posts, docs, etc.) that solves community needs.
+             The AsyncAPI Ambassador brings AsyncAPI closer to the project users and potential users. They promote cooperation between users and disseminate the necessary tools to any specification user. They are engaged with the project in some way, either as a contributor, blogger, speaker, etc.
              </Paragraph>
           </div>
           <div>
