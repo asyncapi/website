@@ -171,7 +171,7 @@ channels:
       message:
         $ref: '#/components/messages/invalidMessage'
   event-gateway-demo-validation:
-    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via `event-gateway-demo-validation-events` channel (`asyncapi-event-gateway-demo-validation` ws server).
+    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
     x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-kafka-test
     subscribe:
