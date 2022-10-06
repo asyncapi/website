@@ -5,7 +5,7 @@ description: In this guide, you'll learn how to validate messages/events in Asyn
 
 # Introduction
 
-In this tutorial, you will learn how to validate the messages in your AsyncAPI document after creating your application in runtime.
+In this guide, you will learn how to validate the messages in your AsyncAPI document after creating your application in runtime.
 You will create an application using Node.js.
 - Your application will connect to the message broker and receive a stream of events/ messages.
 - Message validator will check the message name, payload, channel and operation (publish/subscribe)
@@ -14,7 +14,7 @@ You will learn about application run time, messages and creating an AsyncAPI fil
 
 # Prerequisites
 
-You'll use Node.js to code the API. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
+You'll use Node.js to code the API. The selected technology is irrelevant here, since everything explained in this guide is applicable to any other programming language and message brokers.
 
 Before you proceed to the next stage, you'll need to download a few things:
 
