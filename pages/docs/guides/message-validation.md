@@ -157,7 +157,7 @@ servers:
     description: AsyncAPI Kafka test broker. Private.
 channels:
   event-gateway-demo:
-    description: Demo Kafka topic for asyncapi-event-gateway-demo server. Users can send their events to this topic and see how message validation happens on the fly based on this right AsyncAPI file by connecting to `event-gateway-demo-validation-events` channel (`asyncapi-event-gateway-demo-validation` ws server).
+    description: Demo Kafka topic for asyncapi-event-gateway-demo server. Users can send their events to this topic and see how message validation happens on the fly based on this right AsyncAPI file by connecting to \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
     x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-event-gateway-demo
     publish:
