@@ -1,72 +1,89 @@
 ---
-title: "Validate AsyncAPI Files"
-description: In this tutorial we'll learn how to validate AsyncAPI files.
+title: "Validate AsyncAPI Documents"
+description: In this guide, we'll learn multiple ways to validate AsyncAPI documents.
 weight: 120
 ---
 
 # Introduction
-In this guide, we'll discuss what it means to validate AsyncAPI documents. When people talk about AsyncAPI validation they sometimes mean completely different things: validation of AsyncAPI documents or validation of messages in runtime, messages that have their schemas provided in the AsyncAPI document. 
+In this guide, we'll learn multiple ways to validate AsyncAPI documents. 
 
-# Background context
+When people talk about AsyncAPI validation, sometimes they mean completely different things: **validation of AsyncAPI documents** or **validation of messages in runtime** _(message schemas provided in the AsyncAPI document)_.  
 
-AsyncAPI is an open-source specification standard that seeks to improve the current state of Event-Driven Architecture (EDA) by making it as easy to work with as REST APIs. That goes from documentation to code generation, from discovery to event management. 
+# Prequisites
+Because this guide covers multiple options for validating AsyncAPI documents, there are different tool options you might choose to install:
+- [AsyncAPI CLI](https://github.com/asyncapi/cli#installation)
+- [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation)
 
-With AsyncAPI, you can create specifications that allows developers, architects, and product managers to define the interfaces of an event API the same way, [OpenAPI (formerly known as Swagger)](https://github.com/OAI/OpenAPI-Specification) does for REST APIs.
+# Create AsyncAPI documents
+An AsyncAPI document is a machine-readable definition of your Event-Driven API that can be used to generate documentation and code. You can create an AsyncAPI document with the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation).
 
-# Create an AsyncAPI Document
-An AsyncAPI document is a machine-readable definition of your Event-Driven API that can be used to generate documentation and code.
-
-With the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation), you can create an AsyncAPI document. You can also validate your document and use a generator in the future. To quickly generate an example AsyncAPI document run the CLI command below. It will generate an example `asyncapi.yaml` file for you
+Generate a sample `asyncapi.yaml` file (AsyncAPI document) with the following CLI command: 
 
 ```
 asyncapi new --example=default-example.yaml --no-tty
 ```
 
+# Validate AsyncAPI documents
+Validating an AsyncAPI document requires two different pieces:
+1. Validation against the specification.
+2. Validation against the best practices or company governance rules.
 
-# Scope of validation
-When validating an AsyncAPI document, it means two things:
-- Validation against the specification.
-- Validation against the best practices or company governance rules.
+## Validate against specification
+Let's discuss options for validating against the specification. (This ensures that every content of the document is written in accordance with the AsyncAPI specification.) 
 
-## Validation against the specification
-This entails making sure that every content of the document is written in accordance with the AsyncAPI specification. Here, validation can be done through;
-### AsyncAPI studio
-This is a quick and easy way to validate against the specification.  It uses [AsyncAPI parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and see if a document is valid or not. 
+There are several tool options you may select for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
 
-A red underline appears when an AsyncAPI document is invalid. The console provides feedback quickly, allowing you to check the format of your AsyncAPI document.
+### AsyncAPI Studio validation 
+[AsyncAPI Studio](https://github.com/asyncapi/studio#readme) provides a visual and easy way to validate your AsyncAPI documents against the specification. 
 
-In addition, the right-side of the studio is where changes made are seen and if a document is invalid, it gives the error `Empty or invalid document please fix errors / define AsyncAPI document`.
+(It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.)
 
-### AsyncAPI CLI
-This can be done on your local computer or in automation by simply running the command below against your generated asyncapi document;
+Errors in your document are highlighted with a red underline, showing which lines are invalid. The console also provides feedback, allowing you to further troubleshoot with detailed error messages.
+
+When a document is invalid, it provides the following error: `Empty or invalid document please fix errors / define AsyncAPI document`.
+
+### AsyncAPI CLI validation 
+The following [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) command validates AsyncAPI documents in your local computer or in automation:
 
  ```
  asyncapi validate asyncapi.yaml
 
  ```
 
-### Code
-AsyncAPI provides official [JavaScript](https://github.com/asyncapi/parser-js) and [Go](https://github.com/asyncapi/parser-go) parsers which parses and validates AsyncAPI documents according to dedicated schemas. 
+### Parsers (code) validation 
+AsyncAPI provides official [JavaScript](https://github.com/asyncapi/parser-js) and [Go](https://github.com/asyncapi/parser-go) parsers for validating the JSON schema in your AsyncAPI documents. 
 
-Also, AsyncAPI provides JSON Schemas that makes custom validation easier. Note that if you decide to bypass parsers, JSON Schemas do not cover specification validation 100%. You can learn more [here](https://github.com/asyncapi/spec-json-schemas#custom-validation-needs).
+<Remember>
+If you do not run your schemas through the parsers, the JSON schemas alone cannot complete the entire validation. 
+
+Learn more about [custom JSON Schemas validation needs](https://github.com/asyncapi/spec-json-schemas#custom-validation-needs).
+</Remember>
 
 ## Validation against company best practices or governance
+Now let's discuss options for validating against company best practices or governance.
+
 When AsyncAPI is used by various members of the team in an organization, API management policies can be applied to your messages before they arrive to your broker.
 
-This can be done using **Spectral**, an API linting tool which has a built-in "asyncapi" ruleset for the AsyncAPI specification and helps to define best practices for your Event-Driven APIs. 
+One way this can be done is by using **Spectral**, an API linting tool which has a built-in [custom ruleset properties](https://meta.stoplight.io/docs/spectral/e5b9616d6d50c-custom-rulesets) with [AsyncAPI rules](https://meta.stoplight.io/docs/spectral/1e63ffd0220f3-async-api-rules) for the AsyncAPI specification; these help define best practices for your Event-Driven APIs. 
 
-To get started, the first step is to install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). Then, create a file named `.spectral.yaml` so you can begin to write your API descriptions. Below is a basic sample of rules that applies to an AsyncAPI document;
+To get started:
+1. Install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). 
+2. Create a file named `.spectral.yaml` to begin writing your API description and document rules. 
+
+Example:
 
 ```
 {
   "formats": ["asyncapi2"],
   "extends": "spectral:asyncapi",
   "rules": {
-    // you can add your own rules here
+    // add your own rules here
   }
 }
 ```
-To create and add your custom ruleset, an example is shown below;
+
+3. Create and add your own custom ruleset:
+
 ```
 {
   "formats": [
@@ -74,7 +91,7 @@ To create and add your custom ruleset, an example is shown below;
   ],
   "extends": "spectral:asyncapi",
   "rules": {
-    //your added rules here
+    //add your rules here
     "valid-document-version": {
       "message": "Version must match 2.x.x",
       "severity": "hint",
@@ -96,4 +113,11 @@ To create and add your custom ruleset, an example is shown below;
   }
 }
 ```
-You can learn about more [custom ruleset](https://meta.stoplight.io/docs/spectral/e5b9616d6d50c-custom-rulesets) properties and [AsyncAPI rules](https://meta.stoplight.io/docs/spectral/1e63ffd0220f3-async-api-rules) built-in to Spectral.
+
+---
+
+## Additional resources
+- [AsyncAPI **Studio READme**](https://github.com/asyncapi/studio#readme)
+- [AsyncAPI **CLI READme**](https://github.com/asyncapi/cli#readme)
+- [AsyncAPI **JavaScript Parsers READme**](https://github.com/asyncapi/parser-js#readme) 
+- [AsyncAPI **Go Parsers READme**](https://github.com/asyncapi/parser-go#readme) 
