@@ -32,8 +32,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
 
     for (let file of files) {
       let details
-      const fileName = join(directory, file)
-      const fileNameWithSection = join(fileName, '_section.md')
+      const fileName = [directory, file].join('/')
+      const fileNameWithSection = [fileName, '_section.md'].join('/')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
       const slugElements = slug.split('/');
       if (isDirectory(fileName)) {
