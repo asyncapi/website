@@ -34,7 +34,7 @@ Because this guide covers multiple options for validating AsyncAPI messages, the
 
 2. Install AsyncAPI event gateway from source
 
-This project is built with [Go](https://go.dev/), and it uses [Go Modules)](https://go.dev/ref/mod) for managing dependencies.
+This project is built with [Go](https://go.dev/), and it uses [Go Modules](https://go.dev/ref/mod) for managing dependencies.
 The Minimum required version of Go is set in [go.mod](https://github.com/asyncapi/event-gateway/blob/master/go.mod) file.
 - Clone this [event-gateway](https://github.com/asyncapi/event-gateway) repository.
 - Run make build. The binary will be placed at bin/out/event-gateway.
