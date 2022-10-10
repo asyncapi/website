@@ -1,6 +1,6 @@
 ---
 title: Message
-weight: 5
+weight: 10
 ---
 
 ## What is a message?
