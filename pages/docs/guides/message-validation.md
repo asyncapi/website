@@ -14,25 +14,39 @@ You will learn about application run time, messages and creating an AsyncAPI fil
 
 # Prerequisites
 
-You'll use Node.js to code the API. The selected technology is irrelevant here, since everything explained in this guide is applicable to any other programming language and message brokers.
+You'll use Node.js and npm to code and install the packages(if necessary).
 
 Before you proceed to the next stage, you'll need to download a few things:
 
 1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
 
-2. Install Git based on your Operating System:
-    - [Install Git on MacOs](https://git-scm.com/download/mac)
-    - [Install Git on Windows](https://git-scm.com/download/win)
-    - [Install Git on Linux](https://git-scm.com/download/linux)
+2. To download the latest version of npm, on the command line, run the following command:
+<CodeBlock language="bash">
+{`npm install -g npm`}
+</CodeBlock>
+
+You can follow this [guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install the above tools too:
+
+
+Because this guide covers multiple options for validating AsyncAPI messages, there are different tool options you might choose to install:
+
+1. Install [AsyncAPI Validator](https://www.npmjs.com/package/asyncapi-validator)
+
+2. Install AsyncAPI event gateway from source
+
+This project is built with [Go](https://go.dev/), and it uses [Go Modules)](https://go.dev/ref/mod) for managing dependencies.
+The Minimum required version of Go is set in [go.mod](https://github.com/asyncapi/event-gateway/blob/master/go.mod) file.
+- Clone this [event-gateway](https://github.com/asyncapi/event-gateway) repository.
+- Run make build. The binary will be placed at bin/out/event-gateway.
 
 # Validation of messages
 
-Validation of messages can be done in these scenarios
+Validation of messages can be done in two different ways:
 
 - [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator), it validates your messages against your AsyncAPI schema.
 - [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway), it is not a library that you intergrate in an App, but validation is done before the message gets into the app, on a gateway.
 
-# Validation using AsyncAPI Validator
+## Validation using AsyncAPI Schema Validator
 
 It is a message validator through AsyncAPI schema. 
 1. In order to validate messages, you need to install this package
@@ -52,7 +66,7 @@ Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyn
 {`.validate(key, payload, channel, operation)`}
 </CodeBlock>
 
-# Here's an example usecase with `.validateByMessageId()` method
+### `.validateByMessageId()` method example
 
 1. Let's first create the AsyncAPI file
 <CodeBlock language="yaml">
@@ -90,7 +104,7 @@ va.validateByMessageId('UserRemoved', {
 })`}
 </CodeBlock>
 
-# Here's an example usecase with .validate() method
+### `.validate()` method example
 
 1. Let's create another AsyncAPI file
 
@@ -127,11 +141,11 @@ va.validate('UserDeleted', {
 }, 'user-events', 'publish')`}
 </CodeBlock>
 
-# Validation using AsyncAPI gateway
+## Validation using AsyncAPI gateway
 
 AsyncAPI gateway intercepts all incoming messages moving them into a pipeline of middlewares and handlers such as Message validator.As per today, only the Kafka protocol is supported.
 
-# Here's an example usecase using AsyncAPI gateway
+### AsyncAPI gateway example
 
 1. Let's create the AsyncAPI file. Expected messages are based on a small portion of the StreetLights tutorial.
 
