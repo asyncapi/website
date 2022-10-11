@@ -1,5 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { join, resolve, basename } = require('path')
+const { resolve, basename } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
