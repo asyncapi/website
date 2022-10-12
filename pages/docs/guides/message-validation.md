@@ -1,74 +1,39 @@
 ---
-title: How to validate Messages/Events in runtime
-description: In this guide, you'll learn how to validate messages/events in AsyncAPI in runtime.
+title: Validate Messages/Events
+description: This guide explains two ways to validate messages/events in AsyncAPI documents.
 ---
 
 # Introduction
 
 In this guide, you will learn how to validate the messages in your AsyncAPI document after creating your application in runtime.
-You will create an application using Node.js.
-- Your application will connect to the message broker and receive a stream of events/ messages.
-- Message validator will check the message name, payload, channel and operation (publish/subscribe)
-- Message validator reads the AsyncAPI document if it is valid or not and returns an error if it is invalid.
-You will learn about application run time, messages and creating an AsyncAPI file to describe your API and generate code from it.
 
 # Prerequisites
+Because this guide covers two different options for validating AsyncAPI messages, there are different tool options you might choose to install:
 
-You'll use Node.js and npm to code and install the packages(if necessary).
+- [Node.js](https://nodejs.org/en/download/) (v15 or newer).
+- [AsyncAPI validator](https://www.npmjs.com/package/asyncapi-validator)
+- [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway)
 
-Before you proceed to the next stage, you'll need to download a few things:
+# Message validation
+There are two tools to validate AsyncAPI message (events); [AsyncAPI validator](https://github.com/WaleedAshraf/asyncapi-validator) validates your messages against your AsyncAPI schema and [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway) validates messages on a gateway, before they reach the app.
 
-1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
+Let's further break down how validation works for both.
 
-2. To download the latest version of npm, on the command line, run the following command:
-<CodeBlock language="bash">
-{`npm install -g npm`}
-</CodeBlock>
+## AsyncAPI schema validation
+The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator for AsyncAPI schema. 
 
-You can follow this [guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install the above tools too:
-
-
-Because this guide covers multiple options for validating AsyncAPI messages, there are different tool options you might choose to install:
-
-1. Install [AsyncAPI Validator](https://www.npmjs.com/package/asyncapi-validator)
-
-2. Install AsyncAPI event gateway from source
-
-This project is built with [Go](https://go.dev/), and it uses [Go Modules](https://go.dev/ref/mod) for managing dependencies.
-The Minimum required version of Go is set in [go.mod](https://github.com/asyncapi/event-gateway/blob/master/go.mod) file.
-- Clone this [event-gateway](https://github.com/asyncapi/event-gateway) repository.
-- Run make build. The binary will be placed at bin/out/event-gateway.
-
-# Validation of messages
-
-Validation of messages can be done in two different ways:
-
-- [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator), it validates your messages against your AsyncAPI schema.
-- [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway), it is not a library that you intergrate in an App, but validation is done before the message gets into the app, on a gateway.
-
-## Validation using AsyncAPI Schema Validator
-
-It is a message validator through AsyncAPI schema. 
-1. In order to validate messages, you need to install this package
+Run the following command to install AsyncAPI schema validator:
 <CodeBlock language="bash"> 
-{`npm i asyncapi-validator`} 
+`npm i asyncapi-validator`
 </CodeBlock>
 
-2. To validate messages using `messageId`
-Here messageId should be as defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
+### Validate messages using `messageId`
+The messageId is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
 <CodeBlock>
-{`.validateByMessageId(key, payload)`}
+`.validateByMessageId(key, payload)`
 </CodeBlock>
 
-3. To validate messages using `.validate()` method you should provide `msgIdentifier` in AsyncApiValidator `options`.
-
-<CodeBlock>
-{`.validate(key, payload, channel, operation)`}
-</CodeBlock>
-
-### `.validateByMessageId()` method example
-
-1. Let's first create the AsyncAPI file
+1. Create an AsyncAPI document:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
 asyncapi: 2.0.0
@@ -90,9 +55,9 @@ channels:
             userId:
               type: string
               EOT`}
-              </CodeBlock>
+</CodeBlock>
 
-2. Now by using `asyncapi-validator`.To validate incoming MQTT messages, you have to load the AsyncAPI schema definition using the `fromSource` method and then you can validate any message with its key and payload using the validate method.
+2. Validate incoming MQTT messages by loading the AsyncAPI schema definition via the `fromSource` method. 
 
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
@@ -104,9 +69,14 @@ va.validateByMessageId('UserRemoved', {
 })`}
 </CodeBlock>
 
-### `.validate()` method example
+### Validate messages using `.validate()` 
+In this method, you must provide the `msgIdentifier` in the AsyncApiValidator `options`.
 
-1. Let's create another AsyncAPI file
+<CodeBlock>
+`.validate(key, payload, channel, operation)`
+</CodeBlock>
+
+1. Create an AsyncAPI file:
 
 <CodeBlock language="yaml">
 {`asyncapi: 2.0.0
@@ -127,9 +97,9 @@ channels:
               type: string
             userId:
               type: string`}
-              </CodeBlock>
+</CodeBlock>
 
-2. Now by using `asyncapi-validator`. here "msgIdentifier" is "x-custom-key". That is why, "UserDeleted" is used as "key" in "va.validate()" method.
+In this example, the `msgIdentifier` is the `x-custom-key`, and `UserDeleted` is the _key_ used in the `va.validate()` method.
 
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
@@ -141,13 +111,14 @@ va.validate('UserDeleted', {
 }, 'user-events', 'publish')`}
 </CodeBlock>
 
-## Validation using AsyncAPI gateway
+## AsyncAPI gateway validation
+AsyncAPI gateway intercepts all incoming messages by passing them through middleware and handler pipelines. 
 
-AsyncAPI gateway intercepts all incoming messages moving them into a pipeline of middlewares and handlers such as Message validator.As per today, only the Kafka protocol is supported.
+<Remember>
+Currently, only the Kafka protocol is supported.
+</Remember>
 
-### AsyncAPI gateway example
-
-1. Let's create the AsyncAPI file. Expected messages are based on a small portion of the StreetLights tutorial.
+1. Create an AsyncAPI document. 
 
 <CodeBlock language="yaml">
 {`asyncapi: '2.4.0'
@@ -268,17 +239,20 @@ components:
             maximum: 100`}
 </CodeBlock>
 
-2. The gateway accepts the light measured `lightMeasured` as a message to inform about environmental lighting conditions of a particular streetlight.
+2. AsyncAPI gateway accepts `lightMeasured` as a message that informs about the environmental lighting conditions of a particular streetlight.
 
 <CodeBlock>
-{`lumens      integer >= 0
+{`lumens      
+integer >= 0
 Light intensity measured in lumens.
-sentAt      string format: date-time uid: sentAt
-Date and time when the message was sent.`}
-
+sentAt      
+    string format: date-time 
+    uid: sentAt
+Date and time when the message was sent.
+`}
 </CodeBlock>
 
-3. It returns the error when it detects the following invalid message `invalidMessage`
+3. Invalid messages (`invalidMessage`) return an error:
 
 <CodeBlock>
 {`UUID       string
@@ -286,3 +260,6 @@ Date and time when the message was sent.`}
 Payload    string
            Message value. I.e. Kafka message (base64).`}
 </CodeBlock>
+
+# Additional Resources
+- tbd
