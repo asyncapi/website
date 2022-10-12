@@ -36,17 +36,18 @@ The messageId is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/do
 1. Create an AsyncAPI document:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: 2.0.0
+asyncapi: 2.4.0
+
 info:
   title: User Events
   version: 1.0.0
+
 channels:
   user-events:
     description: user related events
     publish:
       message:
-        name: UserDeletedMessage
-        x-custom-key: UserDeleted
+        messageId: UserRemoved
         payload:
           type: object
           properties:
@@ -62,6 +63,7 @@ channels:
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml')
+
 // validate messageId 'UserRemoved'
 va.validateByMessageId('UserRemoved', {
   userId: '123456789',
@@ -80,9 +82,11 @@ In this method, you must provide the `msgIdentifier` in the AsyncApiValidator `o
 
 <CodeBlock language="yaml">
 {`asyncapi: 2.0.0
+
 info:
   title: User Events
   version: 1.0.0
+
 channels:
   user-events:
     description: user related events
@@ -104,6 +108,7 @@ In this example, the `msgIdentifier` is the `x-custom-key`, and `UserDeleted` is
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml', {msgIdentifier: 'x-custom-key'})
+
 // validate 'UserDeleted' on channel 'user-events' with operation 'publish'
 va.validate('UserDeleted', {
   userId: '123456789',
@@ -262,4 +267,6 @@ Payload    string
 </CodeBlock>
 
 # Additional Resources
-- tbd
+- AsyncAPI file and demo can be opened with [Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
+
+- You can check out other AsyncAPI validators [here](https://www.asyncapi.com/docs/tools#validators)
