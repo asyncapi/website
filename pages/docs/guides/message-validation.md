@@ -36,18 +36,17 @@ The messageId is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/do
 1. Create an AsyncAPI document:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: 2.4.0
-
+asyncapi: 2.0.0
 info:
   title: User Events
   version: 1.0.0
-
 channels:
   user-events:
     description: user related events
     publish:
       message:
-        messageId: UserRemoved
+        name: UserDeletedMessage
+        x-custom-key: UserDeleted
         payload:
           type: object
           properties:
@@ -63,7 +62,6 @@ channels:
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml')
-
 // validate messageId 'UserRemoved'
 va.validateByMessageId('UserRemoved', {
   userId: '123456789',
@@ -82,11 +80,9 @@ In this method, you must provide the `msgIdentifier` in the AsyncApiValidator `o
 
 <CodeBlock language="yaml">
 {`asyncapi: 2.0.0
-
 info:
   title: User Events
   version: 1.0.0
-
 channels:
   user-events:
     description: user related events
@@ -108,7 +104,6 @@ In this example, the `msgIdentifier` is the `x-custom-key`, and `UserDeleted` is
 <CodeBlock>
 {`const AsyncApiValidator = require('asyncapi-validator')
 let va = await AsyncApiValidator.fromSource('./api.yaml', {msgIdentifier: 'x-custom-key'})
-
 // validate 'UserDeleted' on channel 'user-events' with operation 'publish'
 va.validate('UserDeleted', {
   userId: '123456789',
@@ -154,13 +149,14 @@ channels:
       message:
         $ref: '#/components/messages/lightMeasured'
   event-gateway-demo-validation-events:
-    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
+    description: Validation errors are published here, so users can see how message validation happens on the fly based on this right AsyncAPI file.
+    x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-event-gateway-demo-validation
     subscribe:
       message:
         $ref: '#/components/messages/invalidMessage'
   event-gateway-demo-validation:
-    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via `event-gateway-demo-validation-events` channel (`asyncapi-event-gateway-demo-validation` ws server).
+    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
     x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-kafka-test
     subscribe:
@@ -240,8 +236,7 @@ components:
           my-app-header:
             type: integer
             minimum: 0
-            maximum: 100
-`}
+            maximum: 100`}
 </CodeBlock>
 
 2. AsyncAPI gateway accepts `lightMeasured` as a message that informs about the environmental lighting conditions of a particular streetlight.
