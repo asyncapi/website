@@ -1,6 +1,6 @@
 ---
-title: Validate Messages/Events
-description: This guide explains two ways to validate messages/events in AsyncAPI documents.
+title: Validate Messages/Events in runtime
+description: This guide explains different use cases for messages/events validation using AsyncAPI.
 ---
 
 # Introduction
