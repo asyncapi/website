@@ -27,7 +27,7 @@ Run the following command to install AsyncAPI schema validator:
 `npm i asyncapi-validator`
 </CodeBlock>
 
-### Validate messages using `messageId`
+### `messageId` validation method
 The messageId is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
 <CodeBlock>
 `.validateByMessageId(key, payload)`
@@ -69,7 +69,7 @@ va.validateByMessageId('UserRemoved', {
 })`}
 </CodeBlock>
 
-### Validate messages using `.validate()` 
+### `.validate()` validation method 
 In this method, you must provide the `msgIdentifier` in the AsyncApiValidator `options`.
 
 <CodeBlock>
