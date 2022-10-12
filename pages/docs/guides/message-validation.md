@@ -147,7 +147,7 @@ servers:
     description: AsyncAPI Kafka test broker. Private.
 channels:
   event-gateway-demo:
-    description: Demo Kafka topic for asyncapi-event-gateway-demo server. Users can send their events to this topic and see how message validation happens on the fly based on this right AsyncAPI file by connecting to \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
+    description: Demo Kafka topic for asyncapi-event-gateway-demo server. Users can send their events to this topic and see how message validation happens on the fly based on this right AsyncAPI file by connecting to `event-gateway-demo-validation-events` channel (`asyncapi-event-gateway-demo-validation` ws server).
     x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-event-gateway-demo
     publish:
@@ -161,7 +161,7 @@ channels:
       message:
         $ref: '#/components/messages/invalidMessage'
   event-gateway-demo-validation:
-    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via \`event-gateway-demo-validation-events\` channel (\`asyncapi-event-gateway-demo-validation\` ws server).
+    description: Validation errors are published to and consumed from it. AsyncAPI Event-gateway is the only user of this channel. It can be consumed and exposed via `event-gateway-demo-validation-events` channel (`asyncapi-event-gateway-demo-validation` ws server).
     x-servers: # Based on https://github.com/asyncapi/spec/pull/531
       - asyncapi-kafka-test
     subscribe:
@@ -241,7 +241,8 @@ components:
           my-app-header:
             type: integer
             minimum: 0
-            maximum: 100`}
+            maximum: 100
+`}
 </CodeBlock>
 
 2. AsyncAPI gateway accepts `lightMeasured` as a message that informs about the environmental lighting conditions of a particular streetlight.
