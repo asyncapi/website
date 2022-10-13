@@ -1,36 +1,36 @@
 const languages = [
     {
         name: "Go",
-        color: "#F2F1C7",
-        borderColor: "#BFBE86"
+        color: "bg-[#F2F1C7]",
+        borderColor: "border-[#BFBE86]"
     },
     {
         name: "Java",
-        color: "#C7E0F2",
-        borderColor: "#96BCD7"
+        color: "bg-[#C7E0F2]",
+        borderColor: "border-[#96BCD7]"
     },
     {
         name: "Javascript",
-        color: "#F2F1C7",
-        borderColor: "#BFBE86"
+        color: "bg-[#F2F1C7]",
+        borderColor: "border-[#BFBE86]"
     },
     {
         name: "HTML",
-        color: "#C8F2C7",
-        borderColor: "#91CB90"
+        color: "bg-[#C8F2C7]",
+        borderColor: "border-[#91CB90]"
     }
 ]
 
 const technologies = [
     {
         name: "Node.js",
-        color: "#C7F2EA",
-        borderColor: "#C7F2EA"
+        color: "bg-[#C7F2EA]",
+        borderColor: "border-[#C7F2EA]"
     },
     {
         name: "Hermes",
-        color: "#D7C7F2",
-        borderColor: "#A387D2"
+        color: "bg-[#D7C7F2]",
+        borderColor: "border-[#A387D2]"
     }
 ]
 

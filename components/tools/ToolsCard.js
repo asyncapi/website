@@ -34,8 +34,8 @@ export default function toolsCard({toolData}) {
         <div className="flex gap-2">
           <Tag
             name={toolData.filters.language.name}
-            bgColor={`bg-[${toolData.filters.language.color}]`}
-            borderColor={`border-[${toolData.filters.language.borderColor}]`}
+            bgColor={toolData.filters.language.color}
+            borderColor={toolData.filters.language.borderColor}
           />
         </div>
       </div>
