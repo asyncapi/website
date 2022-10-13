@@ -60,7 +60,7 @@ In the next chapter, you'll learn how to add security requirements to your serve
     },
     {
       href: '/docs/tutorials/getting-started/security',
-      title: 'Security',
+      title: 'Adding Security',
       type:'next',
     }
   ]}

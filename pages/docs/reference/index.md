@@ -29,8 +29,8 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tools',
-      title: 'Tools - Overview',
+      href: '/docs/guides',
+      title: 'Guides - Overview',
       type:'back',
     },
     {
