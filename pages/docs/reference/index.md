@@ -34,8 +34,8 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
       type:'back',
     },
     {
-      href: '/docs/reference/specification/v2.5.0',
-      title: 'Specification - v2.5.0',
+      href: '/docs/reference/specification/latest',
+      title: 'Specification - latest',
       type:'next',
     }
   ]}
