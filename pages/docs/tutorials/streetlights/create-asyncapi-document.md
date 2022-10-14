@@ -1,5 +1,5 @@
 ---
-title: Streetlights
+title: Streetlights - Create an AsyncAPI Document
 description: In this tutorial, you'll learn how to create an AsyncAPI document.
 weight: 120
 ---
