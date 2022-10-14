@@ -1,0 +1,17 @@
+---
+title: "Validate AsyncAPI document"
+description: In this tutorial we'll learn how to validate AsyncAPI document using Studio
+weight: 120
+---
+
+# Introduction
+In this tutorial, we will use [Studio](https://studio.asyncapi.com/) to validate an AsyncAPI document.
+Validating AsyncAPI documents can be done in two ways: by validating the AsyncAPI document and by validating messages or events in runtime.
+
+Here in this tutorial, we will go over various aspects of an AsyncAPI document and attempt to fix an invalid document using Studio which will always work for you no matter what operating system you have. 
+
+# Background context
+An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API. The format of the file must be JSON or YAML.
+This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.
+AsyncAPI studio allows you to develop an AsyncAPI document, validate it, convert it to the latest version, preview the documentation and visualize the events flow.
+
