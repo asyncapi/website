@@ -162,6 +162,8 @@ This tutorial is only a bootstrap; you'll need to add your own business logic in
 
 # Next steps
 Now that you've completed this tutorial, let's learn how to [generate code]() from our specification document using the AsyncAPI generator.
+
+
 ---
 
 <DocsButton
