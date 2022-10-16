@@ -46,9 +46,13 @@ Before you proceed to the next stage, you'll need to download a few things:
     - [Install Git on Windows](https://git-scm.com/download/win)
     - [Install Git on Linux](https://git-scm.com/download/linux)
 
-# Creating the AsyncAPI Document
+# Create the AsyncAPI Document
 
 In this step, we will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
+
+To create one, you can either use the [AsyncAPI studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli) depending on your project need.
+
+Let's go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
 
 <CodeBlock>
 {`asyncapi: '2.5.0'
