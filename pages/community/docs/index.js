@@ -28,8 +28,7 @@ function Index() {
           We are developers.
         </Heading>
         <Heading level="h2" typeStyle="body-lg" className="mt-8">
-          Join our growing community and help us shape the future of event
-          driven architecture.
+          Join our growing community and help us shape the future of event-driven architecture.
         </Heading>
       </div>
       <div className="md:flex md:justify-between md:items-center mt-48">
