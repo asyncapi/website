@@ -571,7 +571,7 @@ It is pretty clear that what you liked the most this year is that we are hiring 
 
 We are still hiring!
 
-<NewsletterSubscribe className="my-8" formName="form 1" type="jobs" title="Receive an email when we publish a new job offer:" />
+<NewsletterSubscribe className="my-8" type="jobs" title="Receive an email when we publish a new job offer:" />
 
 ### What's next with Twitter
 

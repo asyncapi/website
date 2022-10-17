@@ -46,7 +46,6 @@ export default function meetings() {
         </div>
         <div className="mt-8">
           <NewsletterSubscribe
-            formName="meetings-subscribe-form"
             type="meetings-email"
             title="Get a weekly email in your inbox"
             subtitle="You'll receive a weekly email with a summary of all the planned meetings for this week."
