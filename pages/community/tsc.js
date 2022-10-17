@@ -1,6 +1,7 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
+import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -117,6 +118,13 @@ export default function TSC() {
             ))}
             <QuestionCard />
           </ul>
+        </div>
+        <div className="mt-8">
+          <NewsletterSubscribe
+            type="tsc-voting-email"
+            title="Get notified when TSC is voting"
+            subtitle="You'll receive an email whenever someone requests the TSC to vote."
+          />
         </div>
       </div>
     </GenericLayout>
