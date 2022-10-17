@@ -7,6 +7,7 @@ export default function NewsletterSubscribe ({
   className = 'p-8 text-center',
   dark = false,
   title = 'Subscribe to our newsletter to receive news about AsyncAPI.',
+  subtitle = 'We respect your inbox. No spam, promise ✌️',
   type,
 }) {
   if (!formName) throw new Error('Parameter formName is required for the NewsletterSubscribe component.')
@@ -25,7 +26,7 @@ export default function NewsletterSubscribe ({
         {title}
       </Heading>
       <Paragraph className="mb-8" textColor={paragraphTextColor}>
-        We respect your inbox. No spam, promise ✌️
+        {subtitle}
       </Paragraph>
       <form className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value={formName} />
