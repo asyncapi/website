@@ -14,7 +14,7 @@ In Event-Driven Architecture (EDA), an application must be a producer, a consume
 
 ### Applications: producers and consumers
 ```mermaid
-flowchart LR
+flowchart TD
         A[PRODUCER application] --> B[message] 
         B --> C[channel] 
         C --> D[message] 
