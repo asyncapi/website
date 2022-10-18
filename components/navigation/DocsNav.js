@@ -1,16 +1,16 @@
-import Link from 'next/link';
 import DocsNavItem from './DocsNavItem';
 
 import IconHome from '../icons/Home'
 import IconRocket from '../icons/Rocket'
 import IconGradCap from '../icons/GradCap'
 import IconPlant from '../icons/Plant'
+import IconGuide from '../icons/Guide'
 import IconPaper from '../icons/Paper'
 
 const buckets = {
   'welcome': {
     icon: IconHome,
-    className: 'bg-primary-200 border-primary-200',
+    className: 'bg-gray-300 border-gray-300',
   },
   'concepts': {
     icon: IconRocket,
@@ -23,6 +23,10 @@ const buckets = {
   'tools': {
     icon: IconPlant,
     className: 'bg-green-200 border-green-200',
+  },
+  'guides': {
+    icon: IconGuide,
+    className: 'bg-primary-200 border-primary-200',
   },
   'reference': {
     icon: IconPaper,
