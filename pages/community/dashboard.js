@@ -13,7 +13,7 @@ export default function Home() {
     >
       <title>AsyncAPI - Dashboard</title>
 
-      <div className="pt-16">
+      <div className="pt-8">
         <Header />
         <div className="flex flex-col gap-6 md:flex-row  w-full  mt-8">
           <Table
