@@ -12,6 +12,8 @@ import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -79,7 +81,7 @@ function buildNavTree(navItems) {
 
         // point in slug for specification subgroup to the latest specification version
         if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.href = allChildren[key].children[0].slug;
+          allChildren[key].item.href = allChildren[key].children.find(c => c.isPrerelease === undefined).slug;
         }
       }
     }
@@ -106,16 +108,39 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
-        { showMenu && (
+        {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
-        ) }
+        )}
         <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+
+              <SearchButton 
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
+              >
+                {({ actionKey }) => (
+                  <>
+                    <IconLoupe />
+                    <span className="flex-auto">Search docs...</span>
+                    {actionKey && (
+                      <kbd className="font-sans font-semibold">
+                        <abbr
+                          title={actionKey.key}
+                          className="no-underline"
+                        >
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
+              </SearchButton>
               
-              <nav className="flex-1 pt-8 pb-8 bg-white">
+              <nav className="flex-1 bg-white">
                 <ul>
                   {Object.values(navigation).map(navItem => (
                     <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
@@ -143,11 +168,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               <Heading level="h1" typeStyle="heading-lg">
                 {post.title}
               </Heading>
-            {
-              post.isPrerelease 
-              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
-              : null
-            }
             <div>
               <p className="text-sm font-normal text-gray-600 font-sans antialiased">
                 Found an error? Have a suggestion? 

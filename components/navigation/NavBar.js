@@ -11,11 +11,13 @@ import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
 import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
+import { SearchButton } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
 import Link from 'next/link';
 
 const isMobile = isMobileDevice();
 
-export default function NavBar ({
+export default function NavBar({
   className = '',
   hideLogo = false,
 }) {
@@ -64,7 +66,12 @@ export default function NavBar ({
           </div>
         )}
 
-        <div className="-mr-2 -my-2 lg:hidden">
+        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden">
+          <SearchButton 
+            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+          >
+            <IconLoupe />
+          </SearchButton>
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
@@ -109,7 +116,15 @@ export default function NavBar ({
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2" inNav="true" />
+          <div className="flex flex-row items-center justify-content">
+            <SearchButton 
+              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            >
+              <IconLoupe />
+            </SearchButton>
+
+            <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
+          </div>
         </nav>
 
       </div>

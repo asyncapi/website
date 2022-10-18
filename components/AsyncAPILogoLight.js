@@ -1,7 +1,7 @@
-export default function AsyncAPILogoLight({ className }) {
+export default function AsyncAPILogoLight({ className='' }) {
     return (
         <svg className={className} width="624" height="138" viewBox="0 0 624 138" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_54_246)">
+        <g clipPath="url(#clip0_54_246)">
         <path d="M241.85 105.98H232.29L224.42 85.4H190.85L182.98 105.98H173.53L202.43 31.76H213.11L241.85 105.98ZM194.06 76.98H221.16L207.55 40.42L194.06 76.98Z" fill="white"/>
         <path d="M271.04 107.11C265.795 107.159 260.613 105.963 255.92 103.62C251.47 101.452 247.768 98.0051 245.29 93.72L252.94 88.21C254.5 91.5691 257.024 94.3885 260.19 96.31C263.682 98.3389 267.673 99.3503 271.71 99.23C275.71 99.23 278.8 98.47 281.05 96.93C281.902 96.4156 282.634 95.7255 283.198 94.9057C283.763 94.0859 284.145 93.1553 284.321 92.1758C284.497 91.1963 284.463 90.1906 284.219 89.2257C283.976 88.2607 283.53 87.3588 282.91 86.58C281.89 85.2467 279.96 84.29 277.12 83.71L263.62 80.87C258.14 79.75 254.223 77.8767 251.87 75.25C249.481 72.5628 248.211 69.0637 248.32 65.47C248.301 62.449 249.227 59.4977 250.97 57.03C252.888 54.3513 255.488 52.2348 258.5 50.9C262.127 49.2923 266.064 48.5068 270.03 48.6C274.921 48.448 279.768 49.5752 284.09 51.87C287.839 53.967 290.831 57.1934 292.64 61.09L285.1 66.09C284.002 62.9924 281.797 60.4103 278.91 58.84C276.192 57.3341 273.137 56.5395 270.03 56.53C267.674 56.476 265.329 56.8557 263.11 57.65C261.395 58.265 259.88 59.3369 258.73 60.75C257.714 62.0387 257.175 63.6396 257.206 65.2804C257.237 66.9212 257.836 68.5007 258.9 69.75C260.02 71.1367 262.117 72.1367 265.19 72.75L279.25 75.68C284.503 76.7267 288.17 78.45 290.25 80.85C292.36 83.2762 293.484 86.4055 293.4 89.62C293.465 92.9322 292.481 96.1801 290.59 98.9C288.605 101.652 285.874 103.779 282.72 105.03C279.004 106.494 275.033 107.201 271.04 107.11V107.11Z" fill="white"/>
         <path d="M341.6 49.75H351.27L324.85 115.43C323.727 118.546 322.154 121.48 320.18 124.14C318.706 126.108 316.778 127.689 314.56 128.75C312.309 129.728 309.874 130.209 307.42 130.16C305.044 130.181 302.681 129.82 300.42 129.09C298.39 128.433 296.473 127.465 294.74 126.22L297.21 118.35C298.602 119.64 300.223 120.658 301.99 121.35C303.581 121.987 305.276 122.326 306.99 122.35C308.969 122.338 310.895 121.709 312.5 120.55C314.22 119.35 315.793 116.913 317.22 113.24L320.14 105.93L314.52 92.55L296.64 49.81H306.85L324.39 92.65L341.6 49.75Z" fill="white"/>
@@ -21,34 +21,34 @@ export default function AsyncAPILogoLight({ className }) {
         </g>
         <defs>
         <linearGradient id="paint0_linear_54_246" x1="124.86" y1="12.88" x2="15.96" y2="121.79" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#2DCCFD"/>
-        <stop offset="1" stop-color="#AD20E2"/>
+        <stop stopColor="#2DCCFD"/>
+        <stop offset="1" stopColor="#AD20E2"/>
         </linearGradient>
         <linearGradient id="paint1_linear_54_246" x1="124.86" y1="124.86" x2="15.95" y2="15.95" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#A829E2"/>
-        <stop offset="0.05" stop-color="#A829E2" stop-opacity="0.84"/>
-        <stop offset="0.11" stop-color="#A829E2" stop-opacity="0.67"/>
-        <stop offset="0.18" stop-color="#A829E2" stop-opacity="0.51"/>
-        <stop offset="0.25" stop-color="#A829E2" stop-opacity="0.38"/>
-        <stop offset="0.33" stop-color="#A829E2" stop-opacity="0.28"/>
-        <stop offset="0.43" stop-color="#A829E2" stop-opacity="0.2"/>
-        <stop offset="0.54" stop-color="#A829E2" stop-opacity="0.14"/>
-        <stop offset="0.68" stop-color="#A829E2" stop-opacity="0.11"/>
-        <stop offset="1" stop-color="#A829E2" stop-opacity="0.1"/>
+        <stop stopColor="#A829E2"/>
+        <stop offset="0.05" stopColor="#A829E2" stopOpacity="0.84"/>
+        <stop offset="0.11" stopColor="#A829E2" stopOpacity="0.67"/>
+        <stop offset="0.18" stopColor="#A829E2" stopOpacity="0.51"/>
+        <stop offset="0.25" stopColor="#A829E2" stopOpacity="0.38"/>
+        <stop offset="0.33" stopColor="#A829E2" stopOpacity="0.28"/>
+        <stop offset="0.43" stopColor="#A829E2" stopOpacity="0.2"/>
+        <stop offset="0.54" stopColor="#A829E2" stopOpacity="0.14"/>
+        <stop offset="0.68" stopColor="#A829E2" stopOpacity="0.11"/>
+        <stop offset="1" stopColor="#A829E2" stopOpacity="0.1"/>
         </linearGradient>
         <linearGradient id="paint2_linear_54_246" x1="12.89" y1="124.86" x2="121.79" y2="15.95" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#E50E99"/>
-        <stop offset="1" stop-color="#A829E2" stop-opacity="0.1"/>
+        <stop stopColor="#E50E99"/>
+        <stop offset="1" stopColor="#A829E2" stopOpacity="0.1"/>
         </linearGradient>
         <linearGradient id="paint3_linear_54_246" x1="124.86" y1="12.89" x2="15.95" y2="121.79" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#21D4FD"/>
-        <stop offset="0.03" stop-color="#27CDFC" stop-opacity="0.96"/>
-        <stop offset="0.23" stop-color="#4E9CF4" stop-opacity="0.7"/>
-        <stop offset="0.43" stop-color="#6E73EE" stop-opacity="0.49"/>
-        <stop offset="0.61" stop-color="#8753E9" stop-opacity="0.32"/>
-        <stop offset="0.77" stop-color="#993CE5" stop-opacity="0.2"/>
-        <stop offset="0.9" stop-color="#A42EE3" stop-opacity="0.13"/>
-        <stop offset="1" stop-color="#A829E2" stop-opacity="0.1"/>
+        <stop stopColor="#21D4FD"/>
+        <stop offset="0.03" stopColor="#27CDFC" stopOpacity="0.96"/>
+        <stop offset="0.23" stopColor="#4E9CF4" stopOpacity="0.7"/>
+        <stop offset="0.43" stopColor="#6E73EE" stopOpacity="0.49"/>
+        <stop offset="0.61" stopColor="#8753E9" stopOpacity="0.32"/>
+        <stop offset="0.77" stopColor="#993CE5" stopOpacity="0.2"/>
+        <stop offset="0.9" stopColor="#A42EE3" stopOpacity="0.13"/>
+        <stop offset="1" stopColor="#A829E2" stopOpacity="0.1"/>
         </linearGradient>
         <clipPath id="clip0_54_246">
         <rect width="623.7" height="137.75" fill="white"/>

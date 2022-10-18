@@ -3,6 +3,7 @@
 .idea
 node_modules
 .next
+.swc
 out
 config/posts.json
 public/rss.xml
