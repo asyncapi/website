@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
+import { twMerge } from "tailwind-merge";
 import ArrowRight from './icons/ArrowRight'
 
 export default function TOC({
@@ -18,20 +19,20 @@ export default function TOC({
     //MDX takes these "a" tags and uses them to render the "id" for headers like a-namedefinitionsapplicationaapplication
     //slugWithATag contains transformed heading name that is later used for scroll spy identification
     slugWithATag: item.content.replace(/<|>|"|\\|\/|=/gi, '').replace(/\s/gi, '-').toLowerCase()
-}))
-  const [open, setOpen] = useState(false)
+  }));
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className={`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:block md:top-24 md:max-h-(screen-14) z-20`} onClick={() => setOpen(!open)}>
-      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint}:cursor-auto xl:mt-2`}>
-        <h5 className={`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint}:mb-4 ${cssBreakingPoint}:text-xs ${cssBreakingPoint}:text-gray-900 ${cssBreakingPoint}:font-bold`}>
+    <div className={twMerge(`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) z-20`)} onClick={() => setOpen(!open)}>
+      <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:cursor-auto' : 'lg:cursor-auto'} xl:mt-2`}>
+        <h5 className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint === 'xl' ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold' : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'}`)}>
           On this page
         </h5>
-        <div className={`text-underline text-center p4 ${cssBreakingPoint}:hidden`}>
+        <div className={`text-underline text-center p4 ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
           <ArrowRight className={`${ open ? '-rotate-90' : 'rotate-90' } transform transition duration-200 ease-in-out h-6 -mt-0.5 text-primary-500`} />
         </div>
       </div>
-      <div className={`${!open && 'hidden'} ${cssBreakingPoint}:block`}>
+      <div className={`${!open && 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'}`}>
         <Scrollspy
           items={tocItems.map(item => item.slugWithATag)}
           currentClassName="text-primary-500 font-bold"
