@@ -198,13 +198,15 @@ function UserWorkStatus({ user }) {
 import { Link } from 'react-router-dom';
 function QuestionCard() {
   return (
-    <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4">
+  <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4">
       <img
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <Link to={"https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#requirements-to-become-an-asyncapi-ambassador"}><div className="my-4">Become an ambassador!</div>
-    </li>
-     </Link>
+    <Link to={'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#requirements-to-become-an-asyncapi-ambassador'}>
+     <Card>
+      <Card text="Become an ambassador!"/>
+     </Card>
+    </Link>
   );
 }
