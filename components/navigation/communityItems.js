@@ -14,6 +14,6 @@ export default [
   { icon: IconContributing, title: 'Contributing', href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi', target: '_blank', description: `We are always welcoming and looking for contributions. If you are interested check out our contribution guide.` },
   { icon: IconTSC, title: 'Technical Steering Committee', href: '/community/tsc', description: 'Get to know what is a TSC member, how you can become one, and meet our current TSC members.' },
   { icon: IconTSC, title: 'Ambassadors', href: '/community/ambassador', description: 'Learn about the AsyncAPI ambassador program, how to become an ambassador, and meet our current ambassadors.' },
-  { icon: IconMeetings, title: 'Meetings', href: '/community/meetings', description: 'See what meetings are organized under AsyncAPI umbrella and join one of them.' }
+  { icon: IconMeetings, title: 'Meetings', href: '/community/meetings', description: 'See what meetings are organized under AsyncAPI umbrella and join one of them.' },
   { icon: IconNewsroom, title: 'Newsroom', href: '/community/newsroom', description: 'Get upto date with the recent activity in the initiative.' }
 ]
