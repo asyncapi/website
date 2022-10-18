@@ -20,4 +20,8 @@ flowchart TD
         C --> D[message] 
         D --> F[CONSUMER application]
 ```
-The diagram above describes the communication between a **PRODUCER application** and a **CONSUMER application**.
+The above diagram describes a message communication traveling through a channel between a **PRODUCER application** and a **CONSUMER application**. 
+
+<Remember>
+When writing your AsyncAPI document, make sure to describe what a user can do with your application; not what the application does. In other words, if your application is a `producer`, your AsyncAPI document should describe where users can subscribe to your producer application.
+</Remember>
