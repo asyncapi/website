@@ -56,7 +56,7 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="relative bg-white pt-16">
+    <section className="relative bg-white pt-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <Heading
           level="h2"
@@ -69,9 +69,9 @@ export default function Features() {
           Improving the current state of Event-Driven Architectures (EDA)
         </Paragraph>
         <div className="mt-12 text-left">
-          <div className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
+              <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
                 <div>
                   <Heading 
                   level="h3"
@@ -97,11 +97,11 @@ export default function Features() {
                     );
                   })}
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

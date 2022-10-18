@@ -168,8 +168,8 @@ We are very noisy :sweat_smile:
 - [Maciej Urbanczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/) and [I](https://twitter.com/derberq) (I mean me :smiley:) pushed some features to the AsyncAPI Generator:
   - It supports the latest Node.js 15 and npm 7
   - You can now install generator templates globally. For more details, read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
-  - It is now much easier to generate multiple files using the new React render engine. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#react) or have a look at it [here](https://github.com/asyncapi/template-for-generator-templates/blob/master/template/schemas/schema.js#L10)
-  - Some parts of templates can be written in TypeScript. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#typescript-support). We still cannot use TS in main template code. For more details read [this](https://github.com/asyncapi/generator-react-sdk/issues/3).
+  - It is now much easier to generate multiple files using the new React render engine. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/react-render-engine.md) or have a look at it [here](https://github.com/asyncapi/template-for-generator-templates/blob/master/template/schemas/schema.js#L10)
+  - Some parts of templates can be written in TypeScript. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/typescript-support.md). We still cannot use TS in main template code. For more details read [this](https://github.com/asyncapi/generator-react-sdk/issues/3).
 
 Check out all the [releases](https://github.com/asyncapi/generator/releases)
 

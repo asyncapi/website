@@ -91,7 +91,7 @@ Spoiler alert -> number of developers using AsyncAPI in production tripled in 20
 
 ## TypeScript NATS template
 
-We have a [new template](https://github.com/asyncapi/ts-nats-template) available. You can use this template to generate [NATS](https://nats.io/) client based on the AsyncAPI document for Node.js. Interesting fact: it is already using the new [React render engine](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#react) from the AsyncAPI Generator.
+We have a [new template](https://github.com/asyncapi/ts-nats-template) available. You can use this template to generate [NATS](https://nats.io/) client based on the AsyncAPI document for Node.js. Interesting fact: it is already using the new [React render engine](https://github.com/asyncapi/generator/blob/master/docs/react-render-engine.md) from the AsyncAPI Generator.
 
 ## Next major feature is data model generation
 

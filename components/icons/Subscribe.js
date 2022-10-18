@@ -7,6 +7,3 @@ export default function IconSubscribe() {
     )
 }
 
-
-
-

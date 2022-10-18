@@ -10,6 +10,16 @@
 		]
 	},
 	{
+		"name": "Akshat Nema",
+		"github": "akshatnema",
+		"linkedin": "akshat-nema",
+		"twitter": "AksNema",
+		"availableForHire": true,
+		"repos": [
+			 "website"
+		]
+	},
+	{
 		"name": "Anand Sunderraman",
 		"github": "anandsunderraman",
 		"linkedin": "anand-sunderraman-a6b7a131",
@@ -197,9 +207,12 @@
 		]
 	},
 	{
+		"name": "Azeez Elegbede",
+		"linkedin": "acebuild",
 		"github": "AceTheCreator",
 		"twitter": "_acebuild",
-		"availableForHire": true,
+		"company": "Postman",
+		"availableForHire": false,
 		"repos": [
 			"chatbot"
 		]
@@ -213,6 +226,20 @@
 			"java-spring-cloud-stream-template",
 			"python-paho-template",
 			"bindings"
+		]
+	},
+	{
+		"name": "Missy Turco",
+		"github": "mcturco",
+		"twitter": "missyturco",
+		"linkedin": "missy-turco-a476a6126",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			"brand",
+			"design-system",
+			"studio",
+			"website"
 		]
 	},
 	{
@@ -369,9 +396,31 @@
 		"github": "ron-debajyoti",
 		"twitter": "rondebajyoti",
 		"linkedin": "rondebajyoti",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Narvar",
 		"repos": [
 			"modelina"
+		]
+	},
+	{
+		"name": "Ivan Garcia Sainz-Aja",
+		"github": "ivangsa",
+		"linkedin": "ivangarciasainzaja",
+		"availableForHire": false,
+		"company": "SNGULAR",
+		"repos": [
+			"vs-asyncapi-preview"
+		]
+	},
+	{
+		"name": "Jeremy Whitlock",
+		"github": "whitlockjc",
+		"linkedin": "whitlockjc",
+		"twitter": "whitlockjc",
+		"availableForHire": false,
+		"company": "Google",
+		"repos": [
+			"bindings"
 		]
 	}
 ]
