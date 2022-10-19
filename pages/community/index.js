@@ -121,7 +121,7 @@ const quickLinks = [
     title: 'Ambassador Programs',
     bg: 'white',
     color: 'primary-600',
-    link: '/community/ambasador-progam',
+    link: '/community/ambassador-program',
   },
   {
     title: 'Events & Meetups',
