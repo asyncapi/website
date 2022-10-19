@@ -300,6 +300,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "aeworxet",
+      "name": "Viacheslav Turovskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16149591?v=4",
+      "profile": "https://github.com/aeworxet",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
