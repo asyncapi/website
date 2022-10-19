@@ -99,6 +99,13 @@ export default function TSC() {
             </p>
           </div>
         </div>
+        <div className="mt-8">
+          <NewsletterSubscribe
+            type="tsc-voting-email"
+            title="Get notified when TSC is voting"
+            subtitle="You'll receive an email whenever someone requests the TSC to vote."
+          />
+        </div>
         <div className="mt-10">
           <div className="mb-5 text-primary-800 text-center">
             <h3 className="font-semibold text-2xl">
@@ -118,13 +125,6 @@ export default function TSC() {
             ))}
             <QuestionCard />
           </ul>
-        </div>
-        <div className="mt-8">
-          <NewsletterSubscribe
-            type="tsc-voting-email"
-            title="Get notified when TSC is voting"
-            subtitle="You'll receive an email whenever someone requests the TSC to vote."
-          />
         </div>
       </div>
     </GenericLayout>
