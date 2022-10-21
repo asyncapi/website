@@ -88,13 +88,13 @@ At this point, you know AsyncAPI well enough to create a simple `Hello world app
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/servers',
+      href: '/docs/tutorials/getting-started/servers',
       title: 'Servers',
       type:'back',
     },
     {
-      href: '/docs/tutorials',
-      title: 'Tutorials Overview',
+      href: '/docs/tutorials/streetlights-interactive',
+      title: 'Streetlights - Interactive (Alpha)',
       type:'next',
     }
   ]}

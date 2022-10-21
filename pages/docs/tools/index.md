@@ -169,9 +169,14 @@ The following is a list of tools that compare AsyncAPI documents.
 <DocsButton
   suggestions={[
     {
-      href: '/docs/specifications/v2.0.0',
-      title: 'Specifications - Release 2.0.0',
+      href: '/docs/tutorials/streetlights',
+      title: 'Tutorials - Streetlights',
       type:'back',
+    },
+    {
+      href: '/docs/guides',
+      title: 'Guides - Overview',
+      type:'next',
     }
   ]}
 />
