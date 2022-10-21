@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/LRjgy_xXYb8/hqdefault.jpg",
+    "title": "AsyncAPI Conference 2022 organization - round 10 last?",
+    "description": "Usual discussion about stuff from https://github.com/orgs/asyncapi/discussions/381.",
+    "videoId": "LRjgy_xXYb8"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/9x8dR8pQu8E/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - Hacktoberfest at AsyncAPI",
+    "description": "Learn how to contribute to AsyncAPI Initiative as a designer https://github.com/asyncapi/community/issues/495.",
+    "videoId": "9x8dR8pQu8E"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/81RrSxwdxy4/hqdefault.jpg",
+    "title": "Community Meeting, 16:00 UTC Tuesday October 18th 2022",
+    "description": "https://github.com/asyncapi/community/issues/490.",
+    "videoId": "81RrSxwdxy4"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/l4X2U7547cY/hqdefault.jpg",
     "title": "Let&#39;s talk about contributing - Hacktoberfest at AsyncAPI",
     "description": "Learn how to contribute to AsyncAPI Initiative with our contributor guide https://github.com/orgs/asyncapi/discussions/487.",
@@ -10,23 +28,5 @@
     "title": "Spec 3.0 meeting (October 12, 2022)",
     "description": "https://github.com/asyncapi/community/issues/476.",
     "videoId": "JsalpKiWsP4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/tvXQSEpGd0o/hqdefault.jpg",
-    "title": "AsyncAPI Conference 2022 organization - round 9",
-    "description": "Usual discussion about stuff from https://github.com/orgs/asyncapi/discussions/381.",
-    "videoId": "tvXQSEpGd0o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/oWTmzGTEi58/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing - Hacktoberfest at AsyncAPI",
-    "description": "Learn how to contribute to AsyncAPI Initiative with our contributor guide https://github.com/orgs/asyncapi/discussions/483.",
-    "videoId": "oWTmzGTEi58"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/z68UVAa__Lc/hqdefault.jpg",
-    "title": "Community Meeting",
-    "description": "https://github.com/asyncapi/community/issues/474.",
-    "videoId": "z68UVAa__Lc"
   }
 ]
