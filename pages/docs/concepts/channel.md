@@ -7,7 +7,7 @@ weight: 20
 A `channel` is a mechanism created by the server for the organization and transmission of messages. Users can define channels as a _topic, queue, routing key, path,_  or _ subject_ depending on the protocol used.
 
 # Why do we need channels?
-Channels play a crucial role when it comes to the communication between `producers` and `consumers`. A producer can send a message through the channel and the consumer receives messages from a particular channel. A channel's sole purpose is to make sure that the right messages route to the right consumers.
+Channels play a crucial role in communication between `producers` and `consumers`. A producer can send a message through the channel, and the consumer receives messages from a particular channel. A channel's sole purpose is to ensure the right messages route to the right consumers.
 
 
 
