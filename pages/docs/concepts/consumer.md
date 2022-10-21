@@ -27,6 +27,5 @@ flowchart LR
 ```
 The above diagram depicts a sample flow of events from producer to broker and consumer. In this instance, the producer publishes two events, A & B, and sends them to the broker. Then each consumer subscribes to receive those events.
 
-<Remember>
-`Subscribers` can also be [`producers`](https://www.asyncapi.com/docs/concepts/producer).
-</Remember>
+> `Subscribers` can also be [`producers`](https://www.asyncapi.com/docs/concepts/producer).
+
