@@ -19,4 +19,4 @@ graph LR
     C --> E[Consumer]
     C --> F[Consumer]
 ```
-The diagram above shows the communication between the producer and the consumer. The producer sends a message through the channel and the channel queues the message to the specific consumer.
+The diagram above shows the communication between the producer and the consumer. The producer sends a message through the channel, and the channel queues the message to the specific consumer.
