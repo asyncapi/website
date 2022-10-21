@@ -54,13 +54,13 @@ In the next chapter, you'll learn how to add security requirements to your serve
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/asyncapi-documents',
+      href: '/docs/tutorials/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
       type:'back',
     },
     {
-      href: '/docs/getting-started/security',
-      title: 'Security',
+      href: '/docs/tutorials/getting-started/security',
+      title: 'Adding Security',
       type:'next',
     }
   ]}
