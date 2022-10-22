@@ -1,139 +1,84 @@
 ---
-title: Streetlights - Generating Code 
+title: Streetlights - Generate Code 
 description: In this tutorial, you'll learn how to generate your code from an AsyncAPI document.
 weight: 130
 ---
 
 # Introduction
 
-In this tutorial, you'll learn how to generate your code from an AsyncAPI document using the AsyncAPI generator
+In this tutorial, you'll learn how to generate your code from an AsyncAPI document using the AsyncAPI generator tool.
 
 # Background Context
-The [AsyncAPI Generator](https://github.com/asyncapi/generator) tool is used to create the documentation from the specification file. It is built in JavaScript and can be accessible using npm or Docker. 
+The [AsyncAPI Generator](https://github.com/asyncapi/generator) is a tool that you can use to generate whatever you want based on the AsyncAPI document. You can generate docs and code. It can be used as a library in Nodejs application or through the [AsyncAPI CLI](https://github.com/asyncapi/cli).
 
-The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates helps to specify what exactly must be generated and for this tutorial, a Nodejs template will be specified.
+The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates help to specify what exactly must be generated, and in this tutorial, you use [Nodejs template](https://github.com/asyncapi/nodejs-template).
 
 # Installation Guide
-Before proceeding to the next step, make sure the following are still actively installed on your local PC:
+Before proceeding to the next step, install the generator tool to use it as a command-line(CLI);
 
-1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
-
-2. Install Git on your Operating System:
-    - [Install Git on MacOs](https://git-scm.com/download/mac)
-    - [Install Git on Windows](https://git-scm.com/download/win)
-    - [Install Git on Linux](https://git-scm.com/download/linux)
-
-# Generating code
-
-In this section, we will go ahead with the steps to enable us generate our code from the document;
-
-### 1. Install the generator to use it as a command-line(CLI) tool
 <CodeBlock language="bash">
 {`npm install -g @asyncapi/generator`}
 </CodeBlock>
 
-The command above helps install the generator tool globally.
+The command above helps you install the generator tool globally.
 
-### 2. Create a directory for your projects and enter it:
+
+# Generate code
+
+To generate code from the AsyncAPI document created from the [previous tutorial]("), follow the steps listed below;
+
+<!--Using the AsyncAPI document created from the [previous tutorial]("), generate your code by following the steps listed below;-->
+
+1. Trigger generation of the Node.js code:
+
 <CodeBlock language="bash">
-{`mkdir streetlights && cd "$_"`}
+{`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
 </CodeBlock>
 
-### 3. Create a file with the AsyncAPI machine-readable description you defined before using terminal. 
-The `cat` command below is a utility command in Linux. On Windows use `type` instead of `cat`:
-<CodeBlock language="yaml">
-{`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.5.0'
-info:
-  title: Streetlights API
-  version: '1.0.0'
-  description: |
-    The Smartylighting Streetlights API allows you
-    to remotely manage the city lights.
-  license:
-    name: Apache 2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0'
-servers:
-  mosquitto:
-    url: mqtt://test.mosquitto.org
-    protocol: mqtt
-channels:
-  light/measured:
-    publish:
-      summary: Inform about environmental lighting conditions for a particular streetlight.
-      operationId: onLightMeasured
-      message:
-        name: LightMeasured
-        payload:
-          type: object
-          properties:
-            id:
-              type: integer
-              minimum: 0
-              description: Id of the streetlight.
-            lumens:
-              type: integer
-              minimum: 0
-              description: Light intensity measured in lumens.
-            sentAt:
-              type: string
-              format: date-time
-              description: Date and time when the message was sent.
-EOT`}
-</CodeBlock>
+The command `asyncapi generate fromTemplate asyncapi.yaml` allowed code to be generated from the AsyncAPI document that was created. The Node.js template was specified by the `@asyncapi/nodejs-template` command.
+ 
+The `-o` determined where to output the result, and the `-p` defined additional parameters you want to pass to the template, in this instance, the `server`.
 
-### 4. Trigger generation of the Node.js code:
-<CodeBlock language="bash">
-{`ag asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
-</CodeBlock>
-
-From the command above, the `-o` specifies where to output the result.
-
-### 5. And voilà! List all files in directory and check that Node.js application is generated:
+2. List all files in directory and check that Node.js application is generated:
 <CodeBlock language="bash">
 {`cd output && ls`}
 </CodeBlock>
 
-# Running your code
 
-### 1. Install dependencies of newly generated application:
+# Run your code
+
+1. Install dependencies of newly generated application:
 <CodeBlock language="bash">
 {`npm install`}
 </CodeBlock>
 
-### 2. Start the application:
+2. Start the application:
 <CodeBlock language="bash">
 {`npm start`}
 </CodeBlock>
 
-### 3. In another terminal install the MQTT.js library:
+3. In another terminal install the MQTT.js library:
+With the MQTT client, which must first be installed, you can create messages.
 <CodeBlock language="bash">
 {`npm install mqtt -g`}
 </CodeBlock>
 
-### 4. Send a correct message to your application:
+4. Send a message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 5. Send an incorrect message to your application:
-<CodeBlock language="bash">
-{`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
-</CodeBlock>
-
-### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
-
+6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent.
 
 # Summary
 
-In this tutorial, we learned how to generate our code from the Streetlights API specification document created in the [previous tutorial]() using the AsyncAPI generator tool. 
+In this tutorial, you learned how to generate your code from the Streetlights API specification document created in the [previous tutorial]() using the AsyncAPI generator tool. 
 
-Additionally, we learnt how to run our code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT library.
+Additionally, you have learned how to run your code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT client.
 
 
 # Next steps
-Now that you've completed this tutorial, let's learn how to [validate]() our code through the validation techniques supported by AsyncAPI.
-
+Now that you've completed this tutorial, go ahead to learn how to [validate]() your code through the validation techniques supported by AsyncAPI.
 
 ---
 
