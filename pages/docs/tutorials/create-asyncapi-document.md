@@ -48,11 +48,11 @@ Before you proceed to the next stage, you'll need to download a few things:
 
 # Create the AsyncAPI Document
 
-In this step, we will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
+In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
 To create one, you can either use the [AsyncAPI studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli) depending on your project need.
 
-Let's go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
+Go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
 
 <CodeBlock>
 {`asyncapi: '2.5.0'
@@ -110,9 +110,9 @@ info:
 
 - The `asyncapi` field indicates you use the AsyncAPI version 2.5.0.
 
-- The `info` field holds information about the Streetlights API. Here we defined its title, version, description and license.
+- The `info` field holds information about the Streetlights API. Here, the title, version, description and license were defined.
 
-Moving on, tet's talk about the `servers` section.
+Moving on, let's talk about the `servers` section.
 <CodeBlock>
 {`servers:
   mosquitto:
@@ -120,7 +120,7 @@ Moving on, tet's talk about the `servers` section.
     protocol: mqtt`}
 </CodeBlock> 
 
-This is the section we defined the mosquitto message broker. The `url` object defines that of Mosquitto and the `protocol` as MQTT.
+In this section, you point to the Eclipse Mosquitto message broker. The `url` point to a real instance of the broker [hosted by the Mosquitto community](https://test.mosquitto.org/) and the `protocol` as MQTT. If you do not want to use the test instance, you can spin up your own broker locally with `docker run -it -p 1883:1883 eclipse-mosquitto:1.5`. But remember to change `url` to `mqtt://localhost`
 
 Now lets move on to the `channels` section. This section is used to describe the event names your API will be publishing and/or subscribing to.
 
@@ -160,12 +160,12 @@ The `payload` property defines the content of the event using AsyncAPI schemas. 
 
 # Summary
 
-In this tutorial, we learned how to create an AsyncAPI specification document in a real-life example i.e IoT use case.
+In this tutorial, you've learned how to create an AsyncAPI specification document in a real-life example i.e IoT use case.
 
 This tutorial is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 # Next steps
-Now that you've completed this tutorial, let's learn how to [generate code]() from our specification document using the AsyncAPI generator.
+Now that you've completed this tutorial, go ahead to learn how to [generate code]() from the specification document using the AsyncAPI generator tool.
 
 
 ---
