@@ -89,7 +89,7 @@ export default function ToolDashboard() {
                         <ArrowDown className="my-auto" />
                     </div>
                     {openFilter.category && (
-                        <div className="z-10 p-2 absolute left-0 top-12 w-full min-w-[20rem] rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
+                        <div className="z-10 p-2 absolute left-0 top-14 w-full min-w-[20rem] rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
                             <FiltersDropdown />
                         </div>
                     )}

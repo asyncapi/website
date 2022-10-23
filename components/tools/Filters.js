@@ -2,6 +2,9 @@ import { useState } from 'react';
 import {twMerge} from 'tailwind-merge'
 import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
+import Button from '../buttons/Button'
+import {languages, technologies} from '../../scripts/tools/tags-color'
+
 export default function Filters() {
   
   const [openLanguage, setopenLanguage] = useState(false)
@@ -10,9 +13,9 @@ export default function Filters() {
   return (
     <div className="bg-white z-10 py-4 border rounded-lg border-gray-300">
       <div className="flex flex-col gap-2 mx-4">
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-baseline">
           <div className="text-sm text-gray-500">PRICING</div>
-          <div className="text-xs mb-0 flex items-center">Clear Filters</div>
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline">Clear Filters</div>
         </div>
         <div className="flex gap-2">
           <div className={twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${isPaid==0 ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => setIsPaid(0)}>
@@ -49,7 +52,7 @@ export default function Filters() {
             <ArrowDown className="my-auto" />
           </div>
           {openLanguage && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown />
+            <FiltersDropdown dataList={languages} />
           </div>} 
         </div>
       </div>
@@ -64,9 +67,12 @@ export default function Filters() {
           <ArrowDown className="my-auto" />
         </div>
         {openTechnology && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown />
+            <FiltersDropdown dataList={technologies} />
           </div>}
         </div>
+      </div>
+      <div className='w-auto m-4 mb-0'>
+        <Button text='Apply Filters' className='w-full' />
       </div>
     </div>
   );
