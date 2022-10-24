@@ -180,4 +180,4 @@ Check out all the [releases](https://github.com/asyncapi/generator/releases)
 - Fran Mendez was a part of Postman's live stream. Learn how to get from zero to AsyncAPI in just about 1h 30min. I hope it can be done faster, and Fran was just having too much small talk with Kevin and Kin :sweat_smile:
 <YouTube id="g2pqCIhXQ3k" />
 
-> Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="/s/photos/traffic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="https://unsplash.com/">Unsplash</a>
