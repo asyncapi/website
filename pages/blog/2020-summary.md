@@ -571,8 +571,6 @@ It is pretty clear that what you liked the most this year is that we are hiring 
 
 We are still hiring!
 
-<NewsletterSubscribe className="my-8" type="jobs" title="Receive an email when we publish a new job offer:" />
-
 ### What's next with Twitter
 
 We should get more insights into how Twitter activity converts into visits to our website. Twitter offers something called **conversion tracking** which seems like a perfect fit, and this is something we will enable for next year.
