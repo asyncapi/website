@@ -1,15 +1,15 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/LRjgy_xXYb8/hqdefault.jpg",
-    "title": "AsyncAPI Conference 2022 organization - round 10 last?",
-    "description": "Usual discussion about stuff from https://github.com/orgs/asyncapi/discussions/381.",
-    "videoId": "LRjgy_xXYb8"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/9x8dR8pQu8E/hqdefault.jpg",
     "title": "Let&#39;s talk about contributing - Hacktoberfest at AsyncAPI",
     "description": "Learn how to contribute to AsyncAPI Initiative as a designer https://github.com/asyncapi/community/issues/495.",
     "videoId": "9x8dR8pQu8E"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/LRjgy_xXYb8/hqdefault.jpg",
+    "title": "AsyncAPI Conference 2022 organization - round 10 last?",
+    "description": "Usual discussion about stuff from https://github.com/orgs/asyncapi/discussions/381.",
+    "videoId": "LRjgy_xXYb8"
   },
   {
     "image_url": "https://i.ytimg.com/vi/81RrSxwdxy4/hqdefault.jpg",
