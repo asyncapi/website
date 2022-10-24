@@ -1,13 +1,13 @@
 const languages = [
     {
         name: "Go",
-        color: "bg-[#F2F1C7]",
-        borderColor: "border-[#BFBE86]"
+        color: "bg-[#8ECFDF]",
+        borderColor: "border-[#00AFD9]"
     },
     {
         name: "Java",
-        color: "bg-[#C7E0F2]",
-        borderColor: "border-[#96BCD7]"
+        color: "bg-[#ECA2A4]",
+        borderColor: "border-[#EC2125]"
     },
     {
         name: "Javascript",
@@ -16,151 +16,131 @@ const languages = [
     },
     {
         name: "HTML",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#E2A291]",
+        borderColor: "border-[#E44D26]"
     },
     {
         name: "C/C++",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#93CDEF]",
+        borderColor: "border-[#0080CC]"
     },
     {
         name: "C#",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#E3AFE0]",
+        borderColor: "border-[#9B4F96]"
     },
     {
         name: "Python",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#A8D0EF]",
+        borderColor: "border-[#3878AB]"
     },
     {
         name: "Typescript",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#7DBCFE]",
+        borderColor: "border-[#2C78C7]"
     },
     {
         name: "Kotlin",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#B1ACDF]",
+        borderColor: "border-[#756BD9]"
     },
     {
         name: "Scala",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#FFA299]",
+        borderColor: "border-[#DF301F]"
     },
     {
         name: "Markdown",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#BABEBF]",
+        borderColor: "border-[#445B64]"
     },
     {
         name: "YAML",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#FFB764]",
+        borderColor: "border-[#F1901F]"
     },
     {
         name: "R",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#84B5ED]",
+        borderColor: "border-[#246BBE]"
     },
     {
         name: "Ruby",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#FF8289]",
+        borderColor: "border-[#FF000F]"
     },
     {
         name: "Rust",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#FFB8AA]",
+        borderColor: "border-[#E43716]"
     },
     {
         name: "Shell",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        color: "bg-[#87D4FF]",
+        borderColor: "border-[#389ED7]"
     },
     {
-        name: "Perl",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
-    },
-    {
-        name: "Haskell",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
-    },
-    {
-        name: "SQL",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
-    },
-    {
-        name: "Delphi",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
-    },
-    {
-        name: "PHP",
-        color: "bg-[#C8F2C7]",
-        borderColor: "border-[#91CB90]"
+        name: "Groovy",
+        color: "bg-[#B6D5E5]",
+        borderColor: "border-[#609DBC]"
     }
 ]
 
 const technologies = [
     {
         name: "Node js",
-        color: "bg-[#C7F2EA]",
-        borderColor: "border-[#C7F2EA]"
+        color: "bg-[#BDFF67]",
+        borderColor: "border-[#84CE24]"
     },
     {
         name: "Hermes",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#8AEEBD]",
+        borderColor: "border-[#2AB672]"
     },
     {
         name: "React JS",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#9FECFA]",
+        borderColor: "border-[#08D8FE]"
     },
     {
         name: ".NET",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#A184FF]",
+        borderColor: "border-[#5026D4]"
     },
     {
         name: "ASP.NET",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#71C2FB]",
+        borderColor: "border-[#1577BC]"
     },
     {
         name: "Springboot",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#98E279]",
+        borderColor: "border-[#68BC44]"
     },
     {
         name: "AWS",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#FF9F59]",
+        borderColor: "border-[#EF6703]"
     },
     {
         name: "Docker",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#B8E0FF]",
+        borderColor: "border-[#2596ED]"
     },
     {
         name: "Node-red",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#FF7474]",
+        borderColor: "border-[#8F0101]"
     },
     {
         name: "Maven",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#FF6B80]",
+        borderColor: "border-[#CA1A33]"
     },
     {
         name: "Saas",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#6AB8EC]",
+        borderColor: "border-[#2275AD]"
     },
     {
         name: "Kubernetes-native",
@@ -173,24 +153,9 @@ const technologies = [
         borderColor: "border-[#A387D2]"
     },
     {
-        name: "Django",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
-    },
-    {
-        name: "Angular",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
-    },
-    {
-        name: "Vue",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
-    },
-    {
         name: "Azure",
-        color: "bg-[#D7C7F2]",
-        borderColor: "border-[#A387D2]"
+        color: "bg-[#4B93FF]",
+        borderColor: "border-[#015ADF]"
     },
     {
         name: "Jenkins",
