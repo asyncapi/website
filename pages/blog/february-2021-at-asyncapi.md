@@ -119,12 +119,6 @@ export interface Address {
 }
 ```
 
-Some important resources to follow:
-- [How processing data from input works](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/input_processing.md)
-- [How **generator-model-sdk** simplify JSON Schema](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/simplification.md)
-- [How model generator works and how to write a new one](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/generators.md)
-- [How presets (customization) works and how to write a custom preset](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/customization.md)
-
 ## Community continues to grow
 
 In February we reached 1600 followers on Twitter.

@@ -8,16 +8,7 @@
       "pattern": "^https://www.postman.com/company/careers/"
     },
     {
-      "pattern": "^https://twitter.com/"
-    },
-    {
-      "pattern": "^https://calendar.google.com/"
-    },
-    {
-      "pattern": "^http://localhost"
-    },
-    {
-      "pattern": "^https://www.pexels.com/"
+      "pattern": "^(http://localhost|http://www.fmvilas.com)"
     }
   ],
   "replacementPatterns": [
