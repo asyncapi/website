@@ -1,7 +1,7 @@
 import GenericLayout from '../../components/layout/GenericLayout';
 import Header from '../../components/dashboard/Header';
 import Table from '../../components/dashboard/table/Table';
-import data from '../../issues.json';
+import data from '../../dashboard.json';
 import GoodFirstIssues from '../../components/dashboard/GoodFirstIssues';
 export default function Home() {
   return (

@@ -3,9 +3,6 @@ const { resolve } = require('path');
 const { graphql } = require('@octokit/graphql');
 const { Promise } = require('node-fetch');
 const { Queries } = require('./issue-queries');
-require('dotenv').config({
-  path: resolve(process.cwd(), '.env.local'),
-});
 
 async function getHotDiscussions(discussions) {
   const result = await Promise.all(
@@ -61,7 +58,7 @@ async function getHotDiscussions(discussions) {
 }
 async function writeToFile(content) {
   writeFileSync(
-    resolve(__dirname, '..', 'issues.json'),
+    resolve(__dirname, '..', 'dashboard.json'),
     JSON.stringify(content, null, '  ')
   );
 }
@@ -88,24 +85,7 @@ function getLabel(issue, filter) {
   );
   return result && result.name.split('/')[1];
 }
-module.exports = async function start() {
-  try {
-    const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
-      getDiscussions(Queries.hotDiscussionsIssues, 100),
-      getDiscussions(Queries.hotDiscussionsPullRequests, 50),
-      getDiscussions(Queries.goodFirstIssues, 50),
-    ]);
-    const discussions = issues.concat(PRs);
-    const [hotDiscussions, goodFirstIssues] = await Promise.all([
-      getHotDiscussions(discussions),
-      mapGoodFirstIssues(rawGoodFirstIssues),
-    ]);
-    writeToFile({ hotDiscussions, goodFirstIssues });
-  } catch (e) {
-    writeToFile({ hotDiscussions: [], goodFirstIssues: [] });
-    console.log(e);
-  }
-};
+
 
 function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
@@ -147,3 +127,22 @@ async function getDiscussionByID(isPR, id) {
     console.error(e);
   }
 }
+async function start() {
+  try {
+    const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
+      getDiscussions(Queries.hotDiscussionsIssues, 100),
+      getDiscussions(Queries.hotDiscussionsPullRequests, 50),
+      getDiscussions(Queries.goodFirstIssues, 50),
+    ]);
+    const discussions = issues.concat(PRs);
+    const [hotDiscussions, goodFirstIssues] = await Promise.all([
+      getHotDiscussions(discussions),
+      mapGoodFirstIssues(rawGoodFirstIssues),
+    ]);
+    writeToFile({ hotDiscussions, goodFirstIssues });
+  } catch (e) {
+    writeToFile({ hotDiscussions: [], goodFirstIssues: [] });
+    console.log(e);
+  }
+}
+start();
