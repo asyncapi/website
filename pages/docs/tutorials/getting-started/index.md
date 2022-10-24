@@ -22,7 +22,12 @@ If you are looking for a solution to automate and formalize the documentation or
 <DocsButton
  suggestions={[
    {
-      href:'/docs/getting-started/event-driven-architectures',
+      href:'/docs/tutorials',
+      type: 'back',  
+      title: 'Tutorials - Overview',
+   },
+   {
+      href:'/docs/tutorials/getting-started/event-driven-architectures',
       type: 'next',  
       title: 'Event-Driven Architectures',
    }

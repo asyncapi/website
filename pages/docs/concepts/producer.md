@@ -32,3 +32,20 @@ flowchart LR
 ```
 
 In the diagram above, we see a producer publishing messages to a specific channel and a consumer subscribing to messages from that channel. We also have a second producer who publishes to one channel, but subscribes to messages from another.
+
+---
+
+<DocsButton
+ suggestions={[
+    {
+      href:'/docs/concepts/server',
+      type: 'back',  
+      title: 'Server',
+   },
+   {
+      href:'/docs/tutorials',
+      type: 'next',  
+      title: 'Tutorials - Overview',
+   }
+ ]}
+/>
