@@ -1,4 +1,5 @@
 {
+  "aliveStatusCodes":[200,429],
   "ignorePatterns": [
     {
       "pattern": "^https://www.postman.com/company/careers/"
@@ -14,9 +15,6 @@
     },
     {
       "pattern": "^https://calendar.google.com/"
-    },
-    {
-      "pattern": "^https://github.com/issues"
     },
     {
       "pattern": "^http://localhost"
