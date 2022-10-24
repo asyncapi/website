@@ -22,13 +22,13 @@ Please become our alpha testers of the tutorial:
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials/streetlights',
-      title: 'Streetlights',
+      href: '/docs/tutorials/getting-started/security',
+      title: 'Getting Started - Adding Security',
       type:'back',
     },
     {
-      href: '/docs/specifications/v2.5.0',
-      title: 'Specifications 2.5.0',
+      href: '/docs/tutorials/streetlights',
+      title: 'Streetlights',
       type:'next',
     }
   ]}

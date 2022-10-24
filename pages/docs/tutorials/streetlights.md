@@ -252,13 +252,13 @@ We would love to see what you create with AsyncAPI! As an open-source project, w
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials',
-      title: 'Tutorials - Overview',
+      href: '/docs/tutorials/streetlights-interactive',
+      title: 'Streetlights - Interactive (Alpha)',
       type:'back',
     },
     {
-      href: '/docs/tutorials/streetlights-interactive',
-      title: 'Streetlights - Interactive (Alpha)',
+      href: '/docs/tools',
+      title: 'Tools - Overview',
       type:'next',
     }
   ]}
