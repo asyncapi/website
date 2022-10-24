@@ -1,5 +1,5 @@
 ---
-title: Streetlights - Generate Code 
+title: Generate Code 
 description: In this tutorial, you'll learn how to generate your code from an AsyncAPI document.
 weight: 130
 ---
@@ -26,8 +26,6 @@ The command above helps you install the generator tool globally.
 # Generate code
 
 To generate code from the AsyncAPI document created from the [previous tutorial]("), follow the steps listed below;
-
-<!--Using the AsyncAPI document created from the [previous tutorial]("), generate your code by following the steps listed below;-->
 
 1. Trigger generation of the Node.js code:
 
@@ -78,7 +76,7 @@ Additionally, you have learned how to run your code by installing the generated
 
 
 # Next steps
-Now that you've completed this tutorial, go ahead to learn how to [validate]() your code through the validation techniques supported by AsyncAPI.
+Now that you've completed this tutorial, go ahead to learn how to [validate your document using the AsyncAPI studio]() through the validation techniques supported by AsyncAPI.
 
 ---
 
