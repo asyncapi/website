@@ -11,7 +11,7 @@
     "lint": "echo \"No linter configured yet\"",
     "generate:assets": "echo \"No assets to configure\"",
     "generate:meetings": "node scripts/build-meetings.js",
-    "generate:dashboard": "node scripts/build-dashboard.js",
+    "generate:dashboard": "node scripts/dashboard/build-dashboard.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
     "test": "echo \"No tests configured yet\"",
