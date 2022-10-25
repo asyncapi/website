@@ -81,7 +81,7 @@ function buildNavTree(navItems) {
 
         // point in slug for specification subgroup to the latest specification version
         if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.href = allChildren[key].children[0].slug;
+          allChildren[key].item.href = allChildren[key].children.find(c => c.isPrerelease === undefined).slug;
         }
       }
     }
@@ -168,11 +168,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               <Heading level="h1" typeStyle="heading-lg">
                 {post.title}
               </Heading>
-            {
-              post.isPrerelease 
-              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
-              : null
-            }
             <div>
               <p className="text-sm font-normal text-gray-600 font-sans antialiased">
                 Found an error? Have a suggestion? 

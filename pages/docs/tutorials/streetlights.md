@@ -52,7 +52,7 @@ Before you proceed to the next stage, you'll need to download a few things:
 In this step, we will create an AsyncAPI file to describe your API. It will help you generate the code and the documentation later on.
 
 <CodeBlock>
-{`asyncapi: '2.4.0'
+{`asyncapi: '2.5.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -93,7 +93,7 @@ channels:
 Let's break it down into pieces:
 
 <CodeBlock>
-{`asyncapi: '2.4.0'
+{`asyncapi: '2.5.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -105,7 +105,7 @@ info:
     url: 'https://www.apache.org/licenses/LICENSE-2.0'`}
 </CodeBlock>
 
-- The `asyncapi` field indicates you use the AsyncAPI version 2.4.0.
+- The `asyncapi` field indicates you use the AsyncAPI version 2.5.0.
 - The `info` field holds information about the API, such as its name, version, description, and license.
 
 Now lets move all the way to the `channels` section. This section is used to describe the event names your API will be publishing and/or subscribing to.
@@ -161,7 +161,7 @@ In this step, we will generate your code, you'll use the [AsyncAPI Generator](ht
 ### 3. Create a file with the AsyncAPI machine-readable description you defined before using terminal. The `cat` command is a utility command in Linux. On Windows use `type` instead of `cat`:
 <CodeBlock language="yaml">
 {`cat <<EOT >> asyncapi.yaml
-asyncapi: '2.4.0'
+asyncapi: '2.5.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -222,27 +222,22 @@ EOT`}
 {`npm start`}
 </CodeBlock>
 
-### 3. In another terminal start MQTT broker:
-<CodeBlock language="bash">
-{`docker run -it -p 1883:1883 eclipse-mosquitto:1.5`}
-</CodeBlock>
-
-### 4. In another terminal install the MQTT.js library:
+### 3. In another terminal install the MQTT.js library:
 <CodeBlock language="bash">
 {`npm install mqtt -g`}
 </CodeBlock>
 
-### 5. Send a correct message to your application:
+### 4. Send a correct message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 6. Send an incorrect message to your application:
+### 5. Send an incorrect message to your application:
 <CodeBlock language="bash">
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-### 7. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
+### 6. Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
 
 # Summary
 
@@ -257,13 +252,13 @@ We would love to see what you create with AsyncAPI! As an open-source project, w
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials',
-      title: 'Tutorials - Overview',
+      href: '/docs/tutorials/streetlights-interactive',
+      title: 'Streetlights - Interactive (Alpha)',
       type:'back',
     },
     {
-      href: '/docs/tutorials/streetlights-interactive',
-      title: 'Streetlights - Interactive (Alpha)',
+      href: '/docs/tools',
+      title: 'Tools - Overview',
       type:'next',
     }
   ]}

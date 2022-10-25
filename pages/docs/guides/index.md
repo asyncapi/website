@@ -1,16 +1,15 @@
 ---
-title: Overview
-weight: 2
+title: 'Overview'
+weight: 1
 ---
 
-## Tutorials: Learn how AsyncAPI works
+## Guides: Teaches AsyncAPI's capabilities at a high level
 
-Welcome to AsyncAPI **Tutorials**! Our Tutorials section teaches beginner processes with AsyncAPI by doing.
-
+Welcome to AsyncAPI **Guides**! Our Guides section teaches AsyncAPI's capabilities and features at a high level.
 
 <Remember>
 
-## Contribute to AsyncAPI Tutorials
+## Contribute to AsyncAPI Guides
 Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:
@@ -28,16 +27,16 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
 ---
 
 <DocsButton
- suggestions={[
+  suggestions={[
     {
-      href:'/docs/concepts/producer',
-      type: 'back',  
-      title: 'Concepts - Producer',
-   },
-   {
-      href:'/docs/tutorials/getting-started',
-      type: 'next',  
-      title: 'Getting Started - Introduction',
-   }
- ]}
+      href: '/docs/tools',
+      title: 'Tools - Overview',
+      type:'back',
+    },
+    {
+      href: '/docs/reference',
+      title: 'Reference - Overview',
+      type:'next',
+    }
+  ]}
 />

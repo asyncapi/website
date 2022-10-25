@@ -12,7 +12,7 @@ In the previous lesson, you learned how to create the definition of a simple [He
 In this article, you'll learn how to add `servers` to your AsyncAPI document. Adding and defining servers is useful, because it specifies where and how to connect. The connection facilitates where to send and receive messages.
 
 <CodeBlock highlightedLines={[5,6,7,8,9]}>
-{`asyncapi: 2.2.0
+{`asyncapi: 2.5.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -54,13 +54,13 @@ In the next chapter, you'll learn how to add security requirements to your serve
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/asyncapi-documents',
+      href: '/docs/tutorials/getting-started/asyncapi-documents',
       title: 'AsyncAPI Documents',
       type:'back',
     },
     {
-      href: '/docs/getting-started/security',
-      title: 'Security',
+      href: '/docs/tutorials/getting-started/security',
+      title: 'Adding Security',
       type:'next',
     }
   ]}
