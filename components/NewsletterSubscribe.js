@@ -25,7 +25,7 @@ export default function NewsletterSubscribe ({
       <Paragraph className="mb-8" textColor={paragraphTextColor}>
         {subtitle}
       </Paragraph>
-      <form className="md:flex" data-netlify="true">
+      <form name="form 1" className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value="form 1" />
         <input type="hidden" name="type" value={type} />
         <input type="text" name="name" placeholder="Your name" className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required />
