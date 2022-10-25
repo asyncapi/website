@@ -13,7 +13,7 @@ export default function NewsletterIndexPage() {
       </StickyNavbar>
       <div className="py-12 mt-12">
         <Container wide>
-          <NewsletterSubscribe formName="form 1" />
+          <NewsletterSubscribe />
         </Container>
       </div>
     </div>
