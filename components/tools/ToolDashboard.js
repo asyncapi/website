@@ -32,7 +32,7 @@ export default function ToolDashboard() {
         if(categories.length >0){
             for(let category of categories){
                 Object.keys(ToolsData).forEach((key) => {
-                    if(key===category) tempToolsList[key] = ToolsData[key]
+                    if(key===category) tempToolsList[key] = JSON.parse(JSON.stringify(ToolsData[key]))
                 })
             }
         }else{
@@ -56,17 +56,14 @@ export default function ToolDashboard() {
                 if(searchName){
                     isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase())
                 }
-                 console.log(isLanguageTool)
                 return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
             })
-
             setToolsList(tempToolsList)
         })
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
     
     const setFilter = (filterType) => {
         let newFilterObject = { ...openFilter };
-        console.log(typeof filterType)
         if (filterType === 'filter') {
             newFilterObject.filter = !newFilterObject.filter
             newFilterObject.category = false
