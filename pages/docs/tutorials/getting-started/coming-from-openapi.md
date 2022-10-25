@@ -33,12 +33,12 @@ Enough reading, it's time to get your hands dirty with some actual examples. Let
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/event-driven-architectures',
+      href: '/docs/tutorials/getting-started/event-driven-architectures',
       title: 'Event-Driven Architectures',
       type:'back',
     },
     {
-      href: '/docs/getting-started/hello-world',
+      href: '/docs/tutorials/getting-started/hello-world',
       title: 'Hello World',
       type:'next',
     }
