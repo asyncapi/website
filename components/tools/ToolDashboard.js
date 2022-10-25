@@ -1,5 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import {ToolFilterContext} from '../../context/ToolFilterContext'
+import {categoryList} from '../../scripts/tools/categorylist'
+import Button from '../buttons/Button'
 import ToolsData from '../../config/tools.json'
 import FilterIcon from '../icons/Filter';
 import ArrowDown from '../icons/ArrowDown';
@@ -13,9 +15,18 @@ export default function ToolDashboard() {
         filter: false,
         category: false
     })
-    const {isPaid, isAsyncAPIOwner, languages, technologies, categories} = useContext(ToolFilterContext)
+    const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories} = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('')
     const [toolsList, setToolsList] = useState()
+    const [checkedCategory, setCheckedCategory] = useState(categories)
+
+    const handleApplyCategory = () => {
+        setCategories(checkedCategory)
+        setopenFilter({
+            filter: false,
+            category: false
+        })
+    }
     useEffect(()=> {
         let tempToolsList = {}
         if(categories.length >0){
@@ -45,7 +56,7 @@ export default function ToolDashboard() {
                 if(searchName){
                     isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase())
                 }
-                
+                 console.log(isLanguageTool)
                 return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
             })
 
@@ -79,20 +90,24 @@ export default function ToolDashboard() {
                     </div>
                     {openFilter.filter && (
                         <div className="z-10 absolute top-14 min-w-[20rem]">
-                            <Filters />
+                            <Filters setOpenFilter={setopenFilter} />
                         </div>
                     )}
                 </div>
-                <div className="py-1 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer" onClick={() => setFilter("category")}>
+                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer" onClick={() => setFilter("category")}>
                     <div className="relative top-1/2 -translate-y-1/2 flex items-center justify-between gap-2">
-                        <div className="">Jump to Category</div>
+                        <div className="">Select Category</div>
                         <ArrowDown className="my-auto" />
                     </div>
                     {openFilter.category && (
-                        <div className="z-10 p-2 absolute left-0 top-14 w-full min-w-[20rem] rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
-                            <FiltersDropdown />
+                        <div className="z-10 p-2 absolute -left-1/2 lg:left-0 top-14 w-full min-w-[20rem] rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
+                            <FiltersDropdown dataList = {categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
+                            <div className='w-auto my-6 mx-2 mb-0' onClick={handleApplyCategory}>
+                                <Button text='Apply Filters' className='w-full' />
+                            </div>
                         </div>
                     )}
+                    
                 </div>
                 </div>
                 <div className="py-1 px-4 flex rounded-lg border w-full lg:w-2/3 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">

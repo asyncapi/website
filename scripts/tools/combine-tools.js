@@ -1,5 +1,5 @@
 const manualTools = require("../../config/tools-manual.json")
-const { languages, technologies } = require("./tags-color")
+const { languagesColor, technologiesColor } = require("./tags-color")
 const { categoryList } = require("./categorylist.js")
 const fs = require('fs')
 const { resolve } = require('path');
@@ -20,7 +20,7 @@ const options = {
     keys: ['name']
 }
 
-let list = [...languages, ...technologies]
+let list = [...languagesColor, ...technologiesColor]
 const fuse = new Fuse(list, options)
 
 const getFinalTool = async (toolObject) => {

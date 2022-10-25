@@ -1,4 +1,4 @@
-const languages = [
+const languagesColor = [
     {
         name: "Go",
         color: "bg-[#8ECFDF]",
@@ -86,7 +86,7 @@ const languages = [
     }
 ]
 
-const technologies = [
+const technologiesColor = [
     {
         name: "Node js",
         color: "bg-[#BDFF67]",
@@ -169,4 +169,4 @@ const technologies = [
     }
 ]
 
-module.exports = {languages, technologies}
+module.exports = {languagesColor, technologiesColor}
