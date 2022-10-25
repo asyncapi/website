@@ -123,7 +123,7 @@ export default function NavBar({
               <IconLoupe />
             </SearchButton>
 
-            <GithubButton text="Star on Github" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
+            <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
         </nav>
 
