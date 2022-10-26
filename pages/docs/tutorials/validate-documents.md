@@ -1,5 +1,5 @@
 ---
-title: "Validate AsyncAPI document using Studio"
+title: "Studio AsyncAPI document validation"
 description: This tutorial will teach us how to validate AsyncAPI documents using the AsyncAPI Studio tool.
 weight: 120
 ---
@@ -9,12 +9,12 @@ This tutorial will teach you how to validate AsyncAPI documents using the [Async
 
 We will start with a broken AsyncAPI document and troubleshoot via console errors step-by-step until we end up with a valid AsyncAPI document. This process will illustrate how to identify [`REQUIRED` properties in AsyncAPI documents](https://www.asyncapi.com/docs/reference/specification/v2.5.0#A2SObject).
 
-## Background context
+# Background context
 An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API. The format of the file must be JSON or YAML. You can use this document to generate both documentation and code.
 
 The AsyncAPI Studio tool allows you to develop an AsyncAPI document, validate it, preview it, convert it to the latest version, and visualize event flows.
 
-## Copy invalid AsyncAPI document
+# Copy invalid AsyncAPI document
 Let's pretend we have an invalid AsyncAPI document.
 
 1. Open [Studio](https://studio.asyncapi.com/).
@@ -33,7 +33,7 @@ channels:
   user/signedup:
     subscribe:
       message:
-      $ref: 'UserSignedUp'
+      $ref: 'UsersSignedUp'
 components:
   messages:
     UserSignedUp:
@@ -49,7 +49,7 @@ components:
             description: Email of the user
  ``` 
 
-## Troubleshoot Studio console errors
+# Troubleshoot Studio console errors
 Let's fix the errors one by one until we end up with a valid AsyncAPI document.
 
 1. In Studio, open the **visualizer** found on the left-side menu.
@@ -92,5 +92,5 @@ The <b>channels</b> section is used to describe the event names your API will be
 
 7. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
 
-## Summary
+# Summary
 This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the console error message directions. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
