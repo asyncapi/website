@@ -32,7 +32,7 @@ You'd spend your time improving the user experience of existing and new tools, f
 - Designing delightful experiences for our documentation and website.
 - Researching how our users use AsyncAPI, what they would love to do with it that's not yet possible, etc.
 
-Everything we do is open-source and, therefore, all your work will be 100% open-source too. We do everything on Github, however, we're not rigid as to what tools you should use, as long as you keep your work public, open, and accessible to everyone.
+Everything we do is open-source and, therefore, all your work will be 100% open-source too. We do everything on GitHub, however, we're not rigid as to what tools you should use, as long as you keep your work public, open, and accessible to everyone.
 
 We're just a team of four people at the time of this writing. We plan to triple the size of the team on the first half of 2021.
 
@@ -46,16 +46,17 @@ In case you're curious, here are a few projects we've been working on during the
 
 We're looking for someone who meets some or all of the following points:
 
-- You have an eye for well-designed developer tools.
-- You can visually communicate an idea by creating quick, low fidelity mockups such as pencil sketches.
-- You can create high fidelity mockups and prototypes to articulate detailed screen flows and user interactions that need to be developed.
-- Good at collaborating across teams and locations, especially remote work across time zones.
-- Comfortable using the latest design mockup and prototyping tools. We aren’t rigid about design tools though, so we are open to suggestions always.
-- A good understanding of how APIs work and what AsyncAPI does is important. It’s okay if you’re not an expert as long as you take initiative and are excited to learn about how things work together.
-- Detailed understanding of quantitative research techniques.
-- Ability to plan ahead and expand UX Research into a mature practice.
-- Experience with team collaboration, product management, and support processes (Github and Zenhub helpful).
-- Advanced experience in multiple and mixed methods of research including but not limited to surveys, polls, interjection and in-app surveys, interviews, and log file analysis.
+
+* You have an eye for well-designed developer tools.
+* You can visually communicate an idea by creating quick, low fidelity mockups such as pencil sketches.
+* You can create high fidelity mockups and prototypes to articulate detailed screen flows and user interactions that need to be developed.
+* Good at collaborating across teams and locations, especially remote work across time zones.
+* Comfortable using the latest design mockup and prototyping tools. We aren’t rigid about design tools though, so we are open to suggestions always.
+* A good understanding of how APIs work and what AsyncAPI does is important. It’s okay if you’re not an expert as long as you take initiative and are excited to learn about how things work together.
+* Detailed understanding of quantitative research techniques.
+* Ability to plan ahead and expand UX Research into a mature practice.
+* Experience with team collaboration, product management, and support processes (GitHub and Zenhub helpful).
+* Advanced experience in multiple and mixed methods of research including but not limited to surveys, polls, interjection and in-app surveys, interviews, and log file analysis.
 
 ## Pay and benefits
 
