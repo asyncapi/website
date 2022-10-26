@@ -2,7 +2,7 @@ export default function Row({ item }) {
   return (
     <li>
       <div className=" p-4 bg-white rounded-md border border-gray-200">
-        <a href={`https://github.com/${item.resourcePath}`}>
+        <a target='_blank' rel='noreferrer' href={`https://github.com/${item.resourcePath}`}>
           <div className="flex justify-between">
             <div className="flex flex-col gap-2">
               <div className="flex gap-1 items-center underline">
@@ -16,6 +16,7 @@ export default function Row({ item }) {
                   }
                 />
                 <a
+                  target='_blank' rel='noreferrer'
                   className="text-gray-900 text-sm lowercase font-light"
                   href={`https://github.com/${item.repo}`}
                 >

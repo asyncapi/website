@@ -14,12 +14,12 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 46.23510878863066
+      "score": 47.95815632112621
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
       "isPR": false,
-      "isAssigned": false,
+      "isAssigned": true,
       "title": "Create New page for /tools/",
       "author": "iamVP7",
       "resourcePath": "/asyncapi/website/issues/383",
@@ -68,26 +68,6 @@
       "score": 27.28158593117958
     },
     {
-      "id": "MDU6SXNzdWU4Mjc0MTg2NDk=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Press tab",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/website/issues/195",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 24.984189221185513
-    },
-    {
       "id": "I_kwDOFLhIt85D8sXS",
       "isPR": false,
       "isAssigned": true,
@@ -117,9 +97,95 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
+    },
+    {
+      "id": "PR_kwDOFLhIt849RhNn",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: docs folder for new asyncapi community section",
+      "author": "Dule-martins",
+      "resourcePath": "/asyncapi/community/pull/442",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 21.538094156194408
+    },
+    {
+      "id": "PR_kwDOFdFGUs4x5bH2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Video 2 - draft script",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/training/pull/9",
+      "repo": "asyncapi/training",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOCoBobc4xN9Px",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: throw meaningful errors",
+      "author": "ritik307",
+      "resourcePath": "/asyncapi/parser-js/pull/449",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 19.527872034949596
+    },
+    {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 18.953522857451077
+    },
+    {
+      "id": "PR_kwDOFXtyC849zwGo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Components, Security Requirement(s) models and other improvements",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/parser-api/pull/71",
+      "repo": "asyncapi/parser-api",
+      "labels": [],
+      "score": 18.953522857451077
+    },
+    {
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 16.943300736206268
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODyzcIc5Uso2Q",
+      "title": "Add support for minimum amount of approvals before merge",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/.github/issues/190",
+      "repo": "asyncapi/.github",
+      "author": "fmvilas",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh385UFEXW",
       "title": "Add Support for CPP language ",
@@ -370,6 +436,10 @@
       "author": "derberg",
       "area": "ci-cd",
       "labels": [
+        {
+          "name": "stale",
+          "color": "819cd3"
+        },
         {
           "name": "enhancement",
           "color": "a2eeef"
@@ -735,6 +805,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Hacktoberfest",

@@ -54,11 +54,12 @@ async function getHotDiscussions(discussions) {
     })
   );
   result.sort((ElemA, ElemB) => ElemB.score - ElemA.score);
-  return result.slice(0, 7);
+  const filteredResult = result.filter(issue => issue.author !== 'asyncapi-bot');
+  return filteredResult.slice(0, 12);
 }
 async function writeToFile(content) {
   writeFileSync(
-    resolve(__dirname, '..', 'dashboard.json'),
+    resolve(__dirname,'..', '..', 'dashboard.json'),
     JSON.stringify(content, null, '  ')
   );
 }

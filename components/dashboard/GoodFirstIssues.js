@@ -41,7 +41,7 @@ function GoodFirstIssues({ issues }) {
           />
         </div>
       }
-      data={filteredIssues.slice(0, 10)}
+      data={filteredIssues.slice(0, 24)}
       className="flex-grow"
       listClassName="lg:grid-cols-2"
     />

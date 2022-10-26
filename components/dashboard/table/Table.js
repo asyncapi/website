@@ -13,7 +13,7 @@ export default function Table({
       <div className="inline-flex bg-white w-full p-5 rounded">
         <h2 className="font-semibold text-base w-full">{title}</h2>
       </div>
-      <div className="inline-block min-w-full overflow-y-scroll max-h-120">
+      <div className="inline-block min-w-full overflow-y-scroll">
         <ul className={`grid gap-4 m-4  ${listClassName}`}>
           {data.map((item) => (
             <Row key={item.id} item={item} />
