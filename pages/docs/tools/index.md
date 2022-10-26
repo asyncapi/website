@@ -71,7 +71,7 @@ The following is a list of tools that do not yet belong to any specific category
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | Javascript
+| [Converter](https://github.com/asyncapi/converter) | Converts old versions of AsyncAPI files into the latest version. | JavaScript
 | [Converter Go](https://github.com/asyncapi/converter-go) | Converts old versions of AsyncAPI files into the latest version. Thanks to [@Kyma team](https://kyma-project.io/). | Go
 | [AsyncAPI-format](https://github.com/thim81/asyncapi-format) | Format an AsyncAPI document by ordering, casing, formatting, and filtering fields. | NodeJS
 
@@ -90,10 +90,10 @@ The following is a list of tools that generate human-readable documentation from
 
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
-| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | CLI / Javascript
-| [Bump](https://bump.sh) | OpenApi 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
-| [Widdershins](https://github.com/Mermade/widdershins) | OpenApi 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / Javascript
-| [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | Javascript
+| [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | CLI / JavaScript
+| [Bump](https://bump.sh) | OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
+| [Widdershins](https://github.com/Mermade/widdershins) | OpenAPI 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / JavaScript
+| [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | JavaScript
 
 ## UI components {#UI}
 
@@ -101,8 +101,8 @@ The following is a list of UI components to view AsyncAPI documents.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | Javascript/React
-| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [@udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer--async-api) | Javascript/React
+| [AsyncAPI React](https://github.com/asyncapi/asyncapi-react) | React component for rendering documentation from your specification in real-time in the browser. Thanks to [@Kyma team](https://kyma-project.io/). | JavaScript/React
+| [api-diff-viewer](https://github.com/udamir/api-diff-viewer) | React component to view difference between two API specifications. Thanks to [@udamir](https://github.com/udamir). [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://api-diff-viewer.vercel.app/?path=/story/apidiffviewer--async-api) | JavaScript/React
 
 ## DSL
 
@@ -126,10 +126,10 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 
 | Link           | Description    |
 | :------------- | :------------- |
-| [AsyncAPI Github Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
+| [AsyncAPI GitHub Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
-| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this Github Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
-| [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this Github Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM. |
+| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this GitHub Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
+| [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this GitHub Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM. |
 
 ## Mocking and Testing {#mocking}
 
@@ -147,11 +147,11 @@ The following is a list of tools that validate AsyncAPI documents.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [AsyncAPI Parser](https://github.com/asyncapi/parser-js) | It parses and validates AsyncAPI documents. | Javascript
-| [Check-API](https://github.com/Mermade/check_api) | It allows you to validate a local file or remote URL with a single command-line or programmatic invocation. It returns an exitCode of 0 on success and 1 on failure, making it suitable for use in Continuous Integration environments. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | Javascript
-| [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate the schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | Javascript
+| [AsyncAPI Parser](https://github.com/asyncapi/parser-js) | It parses and validates AsyncAPI documents. | JavaScript
+| [Check-API](https://github.com/Mermade/check_api) | It allows you to validate a local file or remote URL with a single command-line or programmatic invocation. It returns an exitCode of 0 on success and 1 on failure, making it suitable for use in Continuous Integration environments. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | JavaScript
+| [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) | It allows you to validate the schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue. Thanks to [@waleedashraf](https://twitter.com/@waleedashraf01). | JavaScript
 | [AsyncAPI Parser](https://github.com/asyncapi/parser) | It parses and validates AsyncAPI documents. | Go
-| [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | Javascript
+| [Spectral](https://github.com/stoplightio/spectral) | A command-line linter for AsyncAPI & OpenAPI documents. | JavaScript
 | [AMF](https://github.com/aml-org/amf) | Unified RAML / OAS / AsyncAPI parser and validator, including linting | ScalaJS / JVM and JS support
 | [AsyncAPI Parser Wrapper](https://github.com/AsyncAPITools/parser-java-wrapper) | It parses and validates AsyncAPI documents. | Java
 
@@ -161,8 +161,8 @@ The following is a list of tools that compare AsyncAPI documents.
 
 | Link           | Description    | Language/Framework |
 | :------------- | :------------- | :----------------- |
-| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI documents and provides information about the differences by pointing out explicitly information like breaking changes. | Javascript
-| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema. Thanks to [@udamir](https://github.com/udamir). | Javascript
+| [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI documents and provides information about the differences by pointing out explicitly information like breaking changes. | JavaScript
+| [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema. Thanks to [@udamir](https://github.com/udamir). | JavaScript
 
 ---
 
