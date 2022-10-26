@@ -44,7 +44,7 @@ components:
 
 These are added to the many other aspects of the AsyncAPI specification which can be declared as reusable components. You can see the full list in the [Components Object section of the AsyncAPI specification](https://www.asyncapi.com/docs/specifications/v2.3.0#componentsObject).
 
-This new feature was contributed by [Sergio Moya](https://www.linkedin.com/in/smoya). For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/665) and the [Github issue where this change was discussed](https://github.com/asyncapi/spec/issues/660).
+This new feature was contributed by [Sergio Moya](https://www.linkedin.com/in/smoya). For more detail, see this [pull request](https://github.com/asyncapi/spec/pull/665) and the [GitHub issue where this change was discussed](https://github.com/asyncapi/spec/issues/660).
 
 
 ## New protocol bindings
@@ -68,7 +68,7 @@ The `$ref` field in [Channel Item Object](#https://www.asyncapi.com/docs/specifi
 
 The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0, and replaced with [Reference Object](https://www.asyncapi.com/docs/specifications/v2.3.0#referenceObject).
 
-For more detail, you can see the [discussion about this issue in Github](https://github.com/asyncapi/spec/issues/607).
+For more detail, you can see the [discussion about this issue in GitHub](https://github.com/asyncapi/spec/issues/607).
 
 
 ## Tooling support
@@ -89,7 +89,7 @@ Big thanks to [Maciej Urbanczyk](https://github.com/magicmatatjahu) and [Jonas L
 
 We aim to have a regular cadence of releases of the AsyncAPI specification, four times a year. For more information about when to expect future releases, you can see our [release process document](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence).
 
-We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see the [milestone on Github](https://github.com/asyncapi/spec/milestone/18).
+We're also working on the next major release of the AsyncAPI specification: 3.0.0. If you'd like to contribute, or just follow the discussions, you can see the [milestone on GitHub](https://github.com/asyncapi/spec/milestone/18).
 
 
 > Photo by <a href="https://unsplash.com/@aridley88?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Ridley</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

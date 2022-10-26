@@ -7,6 +7,7 @@ import SubscribeButton from '../../components/buttons/SubscribeButton';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import Heading from "../../components/typography/Heading";
+import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 
 export default function meetings() {
   const description =
@@ -34,10 +35,6 @@ export default function meetings() {
                 </TextLink>.
             </Paragraph>
             <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
-            <SubscribeButton 
-              href="/newsletter" 
-              className="mt-2 md:mt-0 md:ml-2"
-            />
             <ICSFileButton 
               href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics" 
               className="mt-2 md:mt-0 md:ml-2"
@@ -46,6 +43,13 @@ export default function meetings() {
                 <Calendar text="text-center"/>
             </div>
           </div>
+        </div>
+        <div className="mt-8">
+          <NewsletterSubscribe
+            type="meetings-email"
+            title="Get a weekly email in your inbox"
+            subtitle="You'll receive a weekly email with a summary of all the planned meetings for this week."
+          />
         </div>
         <div className="pt-10 grid lg:grid-cols-2 lg:gap-8 lg:text-center">
           <div>
