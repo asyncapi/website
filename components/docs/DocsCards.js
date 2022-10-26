@@ -5,6 +5,7 @@ import Paragraph from '../typography/Paragraph';
 import IconGettingStarted from '../icons/GettingStarted'
 import IconTutorials from '../icons/Tutorials'
 import IconUseCases from '../icons/UseCases'
+import IconGuide from '../icons/Guide'
 import IconSpec from '../icons/Spec'
 
 const cards = [
@@ -17,7 +18,7 @@ const cards = [
   },
   {
     title: 'Tutorials',
-    description: 'Our Tutorials section teaches beginner processes with AsyncAPI by doing.',
+    description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     Icon: IconTutorials,
@@ -28,6 +29,13 @@ const cards = [
     link: '/docs/tools',
     className: 'bg-green-200',
     Icon: IconUseCases,
+  },
+  {
+    title: 'Guides',
+    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
+    link: '/docs/guides',
+    className: 'bg-primary-200',
+    Icon: IconGuide,
   },
   {
     title: 'Reference',
@@ -61,7 +69,7 @@ function Card({ title, description, link, className, Icon }) {
             >
               <div className='flex flex-row items-center'>
                 <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
-                  <Icon className="h-6 w-6" />
+                  <Icon className="h-6 w-6"/>
                 </div>
                 <span className='ml-4'>{title}</span>
               </div>
