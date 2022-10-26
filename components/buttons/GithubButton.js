@@ -2,7 +2,7 @@ import Button from './Button'
 import IconGithub from '../icons/Github'
 
 export default function GithubButton({
-  text = 'View on Github',
+  text = 'View on GitHub',
   href,
   target = '_blank',
   iconPosition = 'left',

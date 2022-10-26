@@ -72,7 +72,7 @@ function HomePage() {
 
         <div className="bg-dark py-12 mt-8">
           <Container wide as="section">
-            <NewsletterSubscribe formName="form 1" dark />
+            <NewsletterSubscribe dark />
           </Container>
         </div>
 
