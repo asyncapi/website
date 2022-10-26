@@ -72,12 +72,12 @@ We've seen what an Event-Driven Architecture is, how it works, and explained its
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/',
-      title: 'Introduction',
+      href: '/docs/tutorials/getting-started/',
+      title: 'Getting Started - Introduction',
       type:'back',
     },
     {
-      href: '/docs/getting-started/coming-from-openapi',
+      href: '/docs/tutorials/getting-started/coming-from-openapi',
       title: 'Coming from OpenAPI',
       type:'next',
     }
