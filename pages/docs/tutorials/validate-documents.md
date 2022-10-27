@@ -33,7 +33,7 @@ channels:
   user/signedup:
     subscribe:
       message:
-      $ref: 'UsersSignedUp'
+        $ref: 'UsersSignedUp'
 components:
   messages:
     UserSignedUp:
