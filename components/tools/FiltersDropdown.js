@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-export default function FiltersDropdown({dataList=[], checkedOptions=[], setStateFunction}) {
+export default function FiltersDropdown({dataList=[], checkedOptions=[], setStateFunction, className=''}) {
 
   const handleClickOption = (e, data) => {
     let tempValueArray = [...checkedOptions]
@@ -14,7 +14,7 @@ export default function FiltersDropdown({dataList=[], checkedOptions=[], setStat
     e.stopPropagation();
   }
   return (
-    <div className='max-w-lg flex gap-2 flex-wrap p-2'>
+    <div className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 ${className}`)}>
       {dataList.map((data, index) => {
         let checked = checkedOptions.indexOf(data.name)!=-1 ? true : false
         return (

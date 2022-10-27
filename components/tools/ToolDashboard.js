@@ -91,16 +91,16 @@ export default function ToolDashboard() {
                         </div>
                     )}
                 </div>
-                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer" onClick={() => setFilter("category")}>
+                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer" onClick={() => (setCheckedCategory(categories),setFilter("category"))}>
                     <div className="relative top-1/2 -translate-y-1/2 flex items-center justify-between gap-2">
                         <div className="">Select Category</div>
                         <ArrowDown className="my-auto" />
                     </div>
                     {openFilter.category && (
-                        <div className="z-10 p-2 absolute -left-1/2 lg:left-0 top-14 w-full min-w-[20rem] rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
-                            <FiltersDropdown dataList = {categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
-                            <div className='w-auto my-6 mx-2 mb-0' onClick={handleApplyCategory}>
-                                <Button text='Apply Filters' className='w-full' />
+                        <div className="z-10 p-2 absolute md:min-w-[20rem] left-0 top-14 w-full rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
+                            <FiltersDropdown dataList = {categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} className="min-w-[18rem] w-full overflow-x-auto" />
+                            <div className='w-auto min-w-[18rem] min-w-0 my-6 mb-0' onClick={handleApplyCategory}>
+                                <Button text='Apply Category' className=' w-full' />
                             </div>
                         </div>
                     )}
