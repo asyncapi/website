@@ -23,7 +23,7 @@ Let's pretend we have an invalid AsyncAPI document.
 
 3. Copy and paste the below invalid AsyncAPI document:
 
-```
+```yaml
 asyncapi: '2.7.0'
 info:
   title: Account Service
