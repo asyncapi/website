@@ -81,7 +81,7 @@ channels:
   user/signedup:
     subscribe:
       message:
-      $ref: 'UserSignedUp'
+        $ref: 'UserSignedUp'
 ```
 
 This allows the consumer applications to subscribe to the _user/signedup_ channel and receive `userSignUp` messages. 
