@@ -61,7 +61,7 @@ Let's fix the errors one by one until we end up with a valid AsyncAPI document.
 4. Fix the incorrect AsyncAPI specification number to `2.4.0` and the `version`number to `1.0.0`.
  
 ```yaml
- asyncapi: '2.4.0'
+asyncapi: '2.4.0'
 info:
   title: Account Service
   version: 1.0.0
