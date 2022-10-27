@@ -76,7 +76,7 @@ Notice how <b>description</b> property is missing; that doesn't make the AsyncAP
 
 6. Fix the `$ref` by changing it to: `'#/components/messages/UserSignedUp'`.
 
-```
+```yaml
 channels:
   user/signedup:
     subscribe:
