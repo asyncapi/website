@@ -4,6 +4,7 @@ const gemoji = require('remark-gemoji-to-emoji')
 const a11yEmoji = require('@fec/remark-a11y-emoji')
 const slug = require('remark-slug')
 const headingId = require('remark-heading-id')
+const withVideos = require('next-videos');
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -36,3 +37,5 @@ module.exports = withMDX({
     return config
   },
 })
+
+module.exports = withVideos();
