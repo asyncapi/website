@@ -1,20 +1,18 @@
-import IconTools from '../icons/Tools'
-import IconGithubOrganization from '../icons/GithubOrganization'
-import IconSlack from '../icons/Slack'
-import IconContributing from '../icons/Contributing'
-import IconTSC from '../icons/TSC'
-import IconMeetings from '../icons/Meetings'
-import IconOverview from '../icons/Overview'
-import IconNewsroom from '../icons/Newsroom'
-
+import IconTools from '../icons/Tools';
+import IconGithubOrganization from '../icons/GithubOrganization';
+import IconSlack from '../icons/Slack';
+import IconContributing from '../icons/Contributing';
+import IconTSC from '../icons/TSC';
+import IconMeetings from '../icons/Meetings';
+import IconOverview from '../icons/Overview';
+import IconNewsroom from '../icons/Newsroom';
 
 export default [
   {
     icon: IconOverview,
     title: 'Overview',
     href: '/community',
-    description:
-      'Connect, share and learn',
+    description: 'Connect, share and learn',
   },
   {
     icon: IconTools,
@@ -25,11 +23,11 @@ export default [
   },
   {
     icon: IconGithubOrganization,
-    title: 'Github Organization',
+    title: 'GitHub Organization',
     href: 'https://github.com/asyncapi',
     target: '_blank',
     description:
-      'Want to sneak in the code? Everything we do is open-sourced in our Github organization.',
+      'Want to sneak in the code? Everything we do is open-sourced in our GitHub organization.',
   },
   {
     icon: IconSlack,
@@ -59,5 +57,10 @@ export default [
     description:
       'See what meetings are organized under AsyncAPI umbrella and join one of them.',
   },
-   { icon: IconNewsroom, title: 'Newsroom', href: '/community/newsroom', description: 'Get upto date with the recent activity in the initiative.' }
+  {
+    icon: IconNewsroom,
+    title: 'Newsroom',
+    href: '/community/newsroom',
+    description: 'Get upto date with the recent activity in the initiative.',
+  },
 ];
