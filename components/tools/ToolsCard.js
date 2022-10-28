@@ -14,18 +14,16 @@ export default function toolsCard({toolData}) {
               {toolData.filters.hasCommercial=== false ? 'FREE' : 'PAID'}
             </div>
           </div>
-          <div className="flex">
             <Paragraph typeStyle="body-sm">
               <TextTruncate
                 element="span"
                 line={2}
                 text={toolData.description}
               />
-            </Paragraph>
-          </div>
-          <div className="text-secondary-500 cursor-pointer inline underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300">
-            Show More
-          </div>
+              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular mx-2 text-sm transition ease-in-out duration-300">
+                Show More
+              </div>
+            </Paragraph> 
         </div>
       </div>
       <hr className="my-6 mx-6" />
@@ -41,7 +39,15 @@ export default function toolsCard({toolData}) {
       </div>
       <div className="flex flex-col gap-2 my-4 mx-6">
         <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
-        <div className="flex gap-2"></div>
+        <div className="flex gap-2 flex-wrap">
+          {toolData.filters.technology.map((item, index) => (
+            <Tag
+            name={item.name}
+            bgColor={item.color}
+            borderColor={item.borderColor}
+            />
+          ))}
+        </div>
       </div>
       <hr className="" />
       <div className="flex">
@@ -61,8 +67,7 @@ export default function toolsCard({toolData}) {
               </div>
             </a>
           </>
-        )}
-        
+        )} 
       </div>
     </div>
   );
