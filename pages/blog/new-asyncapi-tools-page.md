@@ -92,3 +92,29 @@ If you don't get your tool properly presented in this file, kindly inform us by 
 Ohh! wait a minute, have you told you about new Tools Dashboard? Then, let me present you with new AsyncAPI brand new and astonishing Tools Dashboard, which has list of Tools presented in the form of cards. Do checkout that out right now - [AsyncAPI Tools Dashboard](/tools). Preview of the UI is as follows:
 
 ![Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.png)
+
+The Dashboard consists of various features like the overall information about the tools inside ToolCard, filters to sort out the tools according to your needs, and search for tools specific to its name and type. 
+
+## Tool Card
+
+Taking the Tools Card under consideration, you have following sections to detail about a Tool:
+
+![Tools Card](/img/posts/new-asyncapi-tools-page/tool-preview.svg)
+
+<ol>
+  <li> Specifies the Name of the Tool.</li>
+  <li> Specifies whether the Tool is Free to use or requires commercial access to use it.</li>
+  <li> Specifies the Description of the Tool. Clicking on the `Show More` button will open a small box to show full description of the Tool.</li>
+  <li> Specifies the Primary Language of the Tool in which it is built.</li>
+  <li> Specifies the list of Technologies used to create the Tool.</li>
+  <li> <b>View on Github</b> Button directs the user to the Github repository of the Tool.</li>
+  <li> <b>Visit Website</b> Button directs the user to the official website of the Tool.</li>
+</ol>
+
+## Filters for Tools
+
+The Dashboard also contain various filters to search for a specific Tool according to your needs. You can now search according to the Name, Languages, Technologies, etc.. as provided in respective dropdowns and radio buttons. Filters are mostly divided in 3 sections - Filter Menu, `Select Category` DropDown and search bar. The use of each menu is explained below under respective subheadings. 
+
+![Filters Preview](/img/posts/new-asyncapi-tools-page/filters.png)
+
+### Filter Menu
