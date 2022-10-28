@@ -4,7 +4,7 @@ weight: 10
 ---
 
 ## What is a message?
-A `message` is a method of communication used to transmit or exchange information from a sender to the receiver through `channels`. A single `message` can be consumed by multiple independent receivers and can also be defined as an _event_ or _command_. The sender includes a payload of data that needs to be processed and serialized by the receiver into an appropriate format, e.g., JSON, XML, binary, etc.
+A `message` is a communication asset used to transmit or exchange information from a sender to the receiver through `channels`. A single `message` can be consumed by multiple independent receivers and can also be defined as an _event_ or _command_. The sender includes a payload of data that needs to be processed and serialized by the receiver into an appropriate format, e.g., JSON, XML, binary, etc. It may also include metadata, i.e., information that describes the message itself. This metadata is often known as _headers_ or _properties_.
 
 
 ``` mermaid
