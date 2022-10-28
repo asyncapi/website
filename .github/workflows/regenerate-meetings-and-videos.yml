@@ -1,4 +1,4 @@
-name: List everyday latest list of AsyncAPI Meetings and Newsroom Videos
+name: List everyday latest list of AsyncAPI Meetings, Newsroom Videos and Dashboard data.
 
 on: 
   workflow_dispatch:
@@ -13,7 +13,8 @@ jobs:
         CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
         CALENDAR_SERVICE_ACCOUNT: ${{ secrets.CALENDAR_SERVICE_ACCOUNT }}
         YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
-      name: Regenerate meetings.json
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      name: Regenerate meetings.json and dashboard.json
       runs-on: ubuntu-latest
       steps:
         - name: Checkout repository
@@ -21,12 +22,12 @@ jobs:
         - name: Install dependencies
           run: npm install
         - name: Regenerate
-          run: npm run generate:meetings && npm run generate:videos
-        - name: Create Pull Request with new meetings.json and newsroom-videos.json version
+          run: npm run generate:meetings && npm run generate:videos && npm run generate:dashboard
+        - name: Create Pull Request with new meetings.json, newsroom-videos.json and dashboard.json version
           uses: peter-evans/create-pull-request@v3
           with:
             token: ${{ secrets.GH_TOKEN }}
-            commit-message: 'chore: update meetings.json and newsrooom_videos.json'
+            commit-message: 'chore: update meetings.json, newsrooom_videos.json and dashboard.json'
             committer: asyncapi-bot <info@asyncapi.io>
             author: asyncapi-bot <info@asyncapi.io>
             title: 'chore: update meetings.json and newsrooom_videos.json'
