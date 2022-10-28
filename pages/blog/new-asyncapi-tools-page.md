@@ -1,5 +1,5 @@
 ---
-title: "New Tools Dashboard for AsyncAPI"
+title: 'New Tools Dashboard for AsyncAPI'
 date: 2022-11-27T06:00:00+01:00
 type: Communication
 tags:
@@ -15,33 +15,33 @@ excerpt: "We haven't come up with some exciting features in AsyncAPI in recent, 
 featured: true
 ---
 
-We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the Github repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have, how to filter the tools according to our interest 🤔, like languages, technolgies used in it, open source tools, etc. Also, what if you want to add your tool in the list, what you will do 🤔? Will make a PR? 
+We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the Github repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have, how to filter the tools according to our interest 🤔, like languages, technolgies used in it, open source tools, etc. Also, what if you want to add your tool in the list, what you will do 🤔? Will make a PR?
 
 What if I say, you don't need to make a mess of PR now 😉. Yepp, we introduce you with something new to add tools in our website. For this, stay tuned in the blog 👇.
 
 # AsyncAPI Tool File
-
 We have introduced a new concept of `.asyncapi-tool` file which describes the type and details of a tool related to AsyncAPI. This file will follow certain schema and fields to describe your tool appropriately according to the needs of a user and it will then automatically being added to our website within a week. But the question comes, where this file will exist? inside AsyncAPI repositories? Definitely not!. Here comes the twist, this file will be created and maintained in your Tool's repository, and it won't ask for our approval. This file will follow certain schema which you have to follow to successfully and appropriately add your tool to our brand new [Tools Dashboard](/tools). The proper schema of the file is described [here](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json). You can use the tools like [Online JSON Validator](https://www.liquid-technologies.com/online-json-schema-validator) to validate your JSON data for Tool against the schema given above.
 
 ## Tool File Structure
 
-Here's the sample `.asyncapi-tool` file structure, which can be used to structurise your tool configuration.
+Here's the sample `.asyncapi-tool` file structure, which can be used to
+structurise your tool configuration.
 
 ```JSON
 {
-    "title": "Sample Tool",
-    "description": "Tool for testing", 
-    "links": {
-      "websiteUrl": "https://akshatnema.netlify.app", 
-      "docsUrl": ""
-    },
-    "filters": {
-      "language": "javascript",
-      "technology": ["react"],
-      "categories": ["code generator"], 
-      "hasCommercial": false
-    }
+  "title": "Sample Tool",
+  "description": "Tool for testing",
+  "links": {
+    "websiteUrl": "https://akshatnema.netlify.app",
+    "docsUrl": ""
+  },
+  "filters": {
+    "language": "javascript",
+    "technology": ["react"],
+    "categories": ["code generator"],
+    "hasCommercial": false
   }
+}
 ```
 
 This file structure should be used to insert your tool in website. The fields specified above are explained below:
@@ -58,7 +58,37 @@ This file structure should be used to insert your tool in website. The fields sp
   - **`hasCommercial`** - Specifies whether the tool is a commercial product or is open source.
 
 The predefined list of technologies can be found in our repository and are listed as:
- - [Languages and Technologies](https://github.com/asyncapi/website/blob/master/scripts/tools/tags-color.js)
- - [Categories](https://github.com/asyncapi/website/blob/master/scripts/tools/categorylist.js)
+
+- [Languages and Technologies](https://github.com/asyncapi/website/blob/master/scripts/tools/tags-color.js)
+- [Categories](https://github.com/asyncapi/website/blob/master/scripts/tools/categorylist.js)
 
 ## JSON Tool Structure
+
+After creation of the `.asyncapi-tool` file, you can surely check your tool configuration inside our database json file as [automated-tools.json](https://github.com/asyncapi/website/blob/master/config/tools-automated.json) in GitHub repository. The ideal JSON object for a Tool will look like like the following:
+
+```JSON
+{
+  "title": "Sample Tool",
+  "description": "Tool for testing",
+  "links": {
+    "websiteUrl": "https://akshatnema.netlify.app",
+    "docsUrl": "",
+    "repoUrl": "https://github.com/akshatnema/Login-Registration-project"
+  },
+  "filters": {
+    "language": "javascript",
+    "technology": ["react"],
+    "categories": ["code generator"],
+    "hasCommercial": false,
+    "isAsyncAPIOwner": false
+  }
+}
+```
+
+If you don't get your tool properly presented in this file, kindly inform us by creating an [Issue on GitHub](https://github.com/asyncapi/website/issues/new/choose) or contact us at [Slack](https://asyncapi.com/slack-invite).
+
+# AsyncAPI Tools Dashboard
+
+Ohh! wait a minute, have you told you about new Tools Dashboard? Then, let me present you with new AsyncAPI brand new and astonishing Tools Dashboard, which has list of Tools presented in the form of cards. Do checkout that out right now - [AsyncAPI Tools Dashboard](/tools). Preview of the UI is as follows:
+
+![Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.png)
