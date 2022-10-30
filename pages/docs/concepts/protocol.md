@@ -14,3 +14,4 @@ A few examples of a Protocol are:
 * MQTT
 
 ## Why do we need Protocols?
+Whenever a producer detects a state change (events) and publishes those events as messages, a protocol carries those messages to the channel and then to a consumer. Protocol plays a vital role in message transmission.
