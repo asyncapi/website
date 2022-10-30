@@ -27,7 +27,7 @@ Let's pretend we have an invalid AsyncAPI document.
 asyncapi: '2.7.0'
 info:
   title: Account Service
-  version: 2.0.0
+  version: 1.0.0
   
 channels:
   user/signedup:
@@ -58,7 +58,7 @@ Let's fix the errors one by one until we end up with a valid AsyncAPI document.
 
 3. Open the console box that says `PROBLEMS`, so you can read all console errors.
 
-4. Fix the incorrect AsyncAPI specification number to `2.4.0` and the `version`number to `1.0.0`.
+4. Fix the incorrect AsyncAPI specification number to `2.4.0`.
  
 ```yaml
 asyncapi: '2.4.0'
