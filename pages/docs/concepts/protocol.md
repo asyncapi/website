@@ -13,5 +13,5 @@ A protocol is a mechanism that handles the exchange of messages. It provides a w
 * Kafka
 * MQTT
 
-## Why do we need Protocols?
+## Why do we need protocols?
 Whenever a producer detects a state change (events) and publishes those events as messages, a protocol carries those messages to the channel and then to a consumer. Protocol plays a vital role in message transmission.
