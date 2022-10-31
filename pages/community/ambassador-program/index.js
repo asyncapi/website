@@ -4,7 +4,6 @@ import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
 import TwitterSVG from '../../../components/icons/Twitter_2';
-import Asteriks from '../../../components/icons/Asteriks';
 
 const data = [
   {
@@ -187,7 +186,6 @@ function Index() {
           {data.map((link) => (
             <li
               key={link.title}
-              b
               className="flex flex-col justify-center items-center"
             >
               <img
