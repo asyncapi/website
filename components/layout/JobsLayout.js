@@ -9,7 +9,11 @@ import JobSummary from '../JobSummary'
 import ApplyJobButton from '../buttons/ApplyJob'
 import StickyNavbar from '../navigation/StickyNavbar'
 
-export default function JobsLayout({ post, children }) {
+// added the extend props because the UI looks similar
+// to what i want to achieve in the events/ path.
+// anywhere you see the extend props is basically me using it
+// to tweak the existing job UI
+export default function JobsLayout({ post, children, extend }) {
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -26,7 +30,7 @@ export default function JobsLayout({ post, children }) {
       
       <Container cssBreakingPoint="lg" flex flexReverse>
         <div className="">
-          <JobSummary job={post} className="hidden mt-24 max-w-xs sticky top-4 lg:block" />
+          <JobSummary job={post} extend={extend} className="hidden mt-24 max-w-xs sticky top-4 lg:block" />
         </div>
         <main className="mt-8 px-4 sm:px-6 lg:pr-8 lg:pl-0 lg:flex-1">
           <header className="pr-4 sm:pr-6 md:pr-8">
@@ -37,7 +41,7 @@ export default function JobsLayout({ post, children }) {
             <article className="mb-32">
               <Head title={`${post.title} | Jobs`} />
               {children}
-              <ApplyJobButton job={post} className="mt-4 inline-block" />
+              <ApplyJobButton job={post} extend={extend} className="mt-4 inline-block" />
             </article>
           </div>
         </main>

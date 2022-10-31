@@ -2,127 +2,149 @@
 import React from 'react';
 import Heading from '../../components/typography/Heading';
 import Button from '../../components/buttons/Button';
-import CommunityLayout from '../../components/layout/CommunityLayout';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import GenericLayout from '../../components/layout/GenericLayout';
+import TextLink from '../../components/typography/TextLink';
 
 const orbit1 = [
   {
-    id: "item",
-    img: "/img/homepage/reaction.png",
-    alt: "reaction",
+    id: 'item',
+    img: '/img/homepage/reaction.png',
+    alt: 'reaction',
   },
   {
-    id: "item",
-    img: "/img/homepage/ale.jpeg",
-    alt: "ale",
+    id: 'item',
+    img: '/img/homepage/ale.jpeg',
+    alt: 'ale',
   },
   {
-    id: "item",
-    img: "/img/homepage/idea.png",
-    alt: "idea",
+    id: 'item',
+    img: '/img/homepage/idea.png',
+    alt: 'idea',
   },
   {
-    id: "item",
-    img: "/img/homepage/lukasz-homepage-slack.jpg",
-    alt: "lukasz",
+    id: 'item',
+    img: '/img/homepage/lukasz-homepage-slack.jpg',
+    alt: 'lukasz',
   },
   {
-    id: "item",
-    img: "/img/homepage/comment.png",
-    alt: "comment",
+    id: 'item',
+    img: '/img/homepage/comment.png',
+    alt: 'comment',
   },
   {
-    id: "item",
-    img: "/img/homepage/fran.png",
-    alt: "fran",
+    id: 'item',
+    img: '/img/homepage/fran.png',
+    alt: 'fran',
   },
 ];
 
 const orbit2 = [
   {
-    id: "item-2",
-    img: "/img/homepage/jonas.jpeg",
-    alt: "jonas",
+    id: 'item-2',
+    img: '/img/homepage/jonas.jpeg',
+    alt: 'jonas',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/slack.png",
-    alt: "slack",
+    id: 'item-2',
+    img: '/img/homepage/slack.png',
+    alt: 'slack',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/missy.jpeg",
-    alt: "missy",
+    id: 'item-2',
+    img: '/img/homepage/missy.jpeg',
+    alt: 'missy',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/check.png",
-    alt: "check",
+    id: 'item-2',
+    img: '/img/homepage/check.png',
+    alt: 'check',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/eve-and-chan.png",
-    alt: "eve-chan",
+    id: 'item-2',
+    img: '/img/homepage/eve-and-chan.png',
+    alt: 'eve-chan',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/maciej.png",
-    alt: "maciej",
+    id: 'item-2',
+    img: '/img/homepage/maciej.png',
+    alt: 'maciej',
   },
   {
-    id: "item-2",
-    img: "/img/homepage/git.png",
-    alt: "git",
+    id: 'item-2',
+    img: '/img/homepage/git.png',
+    alt: 'git',
   },
 ];
 
 const orbit3 = [
   {
-    id: "item-3",
-    img: "/img/homepage/ace.jpeg",
-    alt: "ace",
+    id: 'item-3',
+    img: '/img/homepage/ace.jpeg',
+    alt: 'ace',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/star.png",
-    alt: "star",
+    id: 'item-3',
+    img: '/img/homepage/star.png',
+    alt: 'star',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/barbano.jpeg",
-    alt: "barbano",
+    id: 'item-3',
+    img: '/img/homepage/barbano.jpeg',
+    alt: 'barbano',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/dale.jpeg",
-    alt: "dale",
+    id: 'item-3',
+    img: '/img/homepage/dale.jpeg',
+    alt: 'dale',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/kuda.jpeg",
-    alt: "kuda",
+    id: 'item-3',
+    img: '/img/homepage/kuda.jpeg',
+    alt: 'kuda',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/yash.jpeg",
-    alt: "yash",
+    id: 'item-3',
+    img: '/img/homepage/yash.jpeg',
+    alt: 'yash',
   },
   {
-    id: "item-3",
-    img: "/img/homepage/sergio.jpeg",
-    alt: "sergio",
+    id: 'item-3',
+    img: '/img/homepage/sergio.jpeg',
+    alt: 'sergio',
   },
 ];
 
 const quickLinks = [
-  { title: "Advocate Programs", bg: "white", color: "primary-600" },
-  { title: "Events & Meetups", bg: "white", color: "primary-600" },
-  { title: "Community Members", bg: "white", color: "primary-600" },
-  { title: "Start Contributing", bg: "white", color: "primary-600" },
+  {
+    title: 'Ambassador Programs',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/ambassador-program',
+  },
+  {
+    title: 'Events & Meetups',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/events',
+  },
+  {
+    title: 'Community Members',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/community-members',
+  },
+  {
+    title: 'Docs & Resources',
+    bg: 'white',
+    color: 'primary-600',
+    link: '/community/docs',
+  },
 ];
 
 function CommunityIndexPage() {
+  const image = '/img/social/website-card.png';
   const heading = (
     <div className="text-center flex justify-center flex-col items-center">
       <Heading
@@ -144,7 +166,7 @@ function CommunityIndexPage() {
           level="h2"
           typeStyle="body-md"
           textColor="text-gray-700"
-          className="text-slate-500 text-xs md:text-sm"
+          className="text-slate-500 text-sm"
         >
           We"re a community of great people who are passionate about AsyncAPI.
           Join us in building the future of Event Driven APIs by asking
@@ -155,15 +177,19 @@ function CommunityIndexPage() {
         <Button
           className="block md:inline-block focus:outline-none"
           text="Explore Discussions"
+          href="https://github.com/orgs/asyncapi/discussions"
+          target="_blank"
           icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
         />
       </div>
     </div>
   );
   return (
-    <CommunityLayout
+    <GenericLayout
       title="AsyncAPI Meetings"
       description="The home for developer communities"
+      image={image}
+      hideBanner={true}
       wide
     >
       <div className="md:hidden mt-15">{heading}</div>
@@ -222,16 +248,21 @@ function CommunityIndexPage() {
         <div className="mt-10 md:mt-32 z-40">
           <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
-              <li
+              <TextLink
                 key={link.title}
-                className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end`}
+                href={link.link}
+                className="no-underline"
               >
-                <h1
-                  className={`text:lg md:text-3xl font-black text-${link.color}`}
+                <li
+                  className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end cursor-pointer`}
                 >
-                  {link.title}
-                </h1>
-              </li>
+                  <h1
+                    className={`text:lg md:text-3xl font-black text-${link.color}`}
+                  >
+                    {link.title}
+                  </h1>
+                </li>
+              </TextLink>
             ))}
           </ul>
         </div>
@@ -265,7 +296,15 @@ function CommunityIndexPage() {
                 contributing, collaborating and mentoring others to build with
                 AsyncAPI.
               </Heading>
-              <div className="mt-10"></div>
+              <div className="mt-10">
+                <Button
+                  text="Become part of the family"
+                  buttonSize="medium"
+                  href="https://asyncapi.com/slack-invite"
+                  target="_blank"
+                  bgClassName="bg-primary-600"
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
@@ -301,7 +340,14 @@ function CommunityIndexPage() {
                 about our live and recorded events below. You can also sign up
                 to our community newsletter to stay up-to-date on our events.
               </Heading>
-              <div className="mt-10"></div>
+              <div className="mt-10">
+                <Button
+                  text="Explore more events"
+                  buttonSize="medium"
+                  href="/community/events"
+                  bgClassName="bg-pink-600"
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
@@ -324,7 +370,7 @@ function CommunityIndexPage() {
                   </div>
                   <div
                     className="w-full bg-gray-200 mt-4"
-                    style={{ height: "1px" }}
+                    style={{ height: '1px' }}
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
@@ -367,7 +413,7 @@ function CommunityIndexPage() {
                   </div>
                   <div
                     className="w-full bg-gray-200 mt-4"
-                    style={{ height: "1px" }}
+                    style={{ height: '1px' }}
                   />
                   <div className="flex mt-2 justify-between">
                     <div className="text-left border-r-2 border-r-gray-400 pr-5">
@@ -414,7 +460,7 @@ function CommunityIndexPage() {
             </div>
             <div>
               <Heading level="h2" typeStyle="heading-lg" className="mt-10">
-                Advocate Programs
+                Ambassador Programs
               </Heading>
               <Heading
                 level="h2"
@@ -427,7 +473,14 @@ function CommunityIndexPage() {
                 it easy to track and reward you contributors and build thriving
                 communities.
               </Heading>
-              <div className="mt-10"></div>
+              <div className="mt-10">
+                <Button
+                  text="Become an ambassador"
+                  buttonSize="medium"
+                  href="/community/events"
+                  bgClassName="bg-primary-600"
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/6 flex justify-end rounded-lg">
@@ -515,7 +568,7 @@ function CommunityIndexPage() {
       <div className="mt-72 md:mt-36 flex justify-center">
         <NewsletterSubscribe formName="form 2" />
       </div>
-    </CommunityLayout>
+    </GenericLayout>
   );
 }
 
