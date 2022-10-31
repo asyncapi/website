@@ -120,6 +120,26 @@ const tokens = [
     details:
       'Ambassadors are provided with a budget plan that they use for personal development.',
   },
+  {
+    title: 'Education',
+    details:
+      'Ambassadors are provided with a budget plan that they use for personal development.',
+  },
+  {
+    title: 'Education',
+    details:
+      'Ambassadors are provided with a budget plan that they use for personal development.',
+  },
+  {
+    title: 'Education',
+    details:
+      'Ambassadors are provided with a budget plan that they use for personal development.',
+  },
+  {
+    title: 'Education',
+    details:
+      'Ambassadors are provided with a budget plan that they use for personal development.',
+  },
 ];
 
 function Index() {
@@ -240,46 +260,66 @@ function Index() {
           ))}
         </div>
       </div>
-      <div className="flex mt-20">
-        <div className="w-[60%] justify-between items-center">
-          <img src="/img/homepage/reach.jpeg" />
-        </div>
-        <div className="mt-20 w-[50%]">
-          <Heading typeStyle="heading-lg">Tokens of our appreciation</Heading>
-          <Heading
-            typeStyle="body-sm"
-            textColor="text-gray-700"
-            className="text-slate-500 mt-5"
-          >
-            We appreciate and value your commitment and passion to share your
-            knowledge with your communities and we would like to support you in
-            doing so.
-          </Heading>
-          <div className="mt-10">
-            <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2">
-              {tokens.map((token) => (
-                <li
-                  key={token}
-                  className="bg-white p-2 shadow-lg rounded-lg flex items-center"
-                >
-                  <div>
-                    <div className="bg-pink-200 rounded-full w-[30px] h-[30px] flex flex-col items-center justify-center">
-                      <span className="text-sm">😍</span>
-                    </div>
-                  </div>
-                  <div className="ml-[10px]">
-                    <Heading typeStyle="heading-xs">{token.title}</Heading>
-                    <p className="text-xs mt-[5px] text-slate-600">{token.details}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+      <div className="mt-20">
+        <div className="flex justify-center">
+          <div className="text-center mt-10 w-[55%]">
+            <Heading typeStyle="heading-lg">Tokens of our appreciation</Heading>
+            <Heading
+              typeStyle="body-sm"
+              textColor="text-gray-700"
+              className="text-slate-500 mt-5"
+            >
+              We appreciate and value your commitment and passion to share your
+              knowledge with your communities and we would like to support you
+              in doing so.
+            </Heading>
           </div>
-          <Button
-            className="block md:inline-block focus:outline-none mt-10 text-center sm:text-left"
-            text="Become an Ambassador now"
-            href="https://github.com/orgs/asyncapi/discussions"
-            target="_blank"
+        </div>
+        <div className="mt-10">
+          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-4">
+            {tokens.map((token) => (
+              <li
+                key={token}
+                className="mt-4 bg-white p-2 shadow-lg rounded-lg flex items-center"
+              >
+                <div>
+                  <div className="bg-pink-200 rounded-full w-[30px] h-[30px] flex flex-col items-center justify-center">
+                    <span className="text-sm">😍</span>
+                  </div>
+                </div>
+                <div className="ml-[10px]">
+                  <Heading typeStyle="heading-xs">{token.title}</Heading>
+                  <p className="text-xs mt-[5px] text-slate-600">
+                    {token.details}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-dark w-full h-auto p-4 mt-20 rounded-lg">
+          <div className="flex justify-center">
+            <div className="text-center p-4 text-white w-[65%]">
+              <Heading typeStyle="heading-lg">
+                Become an AsycnAPI Ambassador
+              </Heading>
+              <Heading typeStyle="body-sm">
+                The AsyncAPI Ambassador is now open for nominations! If you’re
+                selected, you’ll be asked to join AsyncAPI on our mission to help
+                developers all over the world to build the future of Event Driven APIs, in an easy and empowering way.
+              </Heading>
+              <Button
+                className="block md:inline-block focus:outline-none mt-10 text-center sm:text-left"
+                text="Become an Ambassador now"
+                href="https://github.com/orgs/asyncapi/discussions"
+                target="_blank"
+              />
+            </div>
+          </div>
+          <img
+            src="/img/homepage/mapbase.png"
+            alt="mapbase"
+            className="mt-10"
           />
         </div>
       </div>
