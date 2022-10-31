@@ -99,7 +99,8 @@ module.exports = {
       officeHourCover:
         "url('https://images.pexels.com/photos/7388883/pexels-photo-7388883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       patternCover: "url('/img/illustrations/pattern.png')",
-      ambassadorCover: "url('/img/homepage/gathering.jpg')"
+      ambassadorCover: "url('/img/homepage/gathering.jpg')",
+      mapCover: "url('/img/homepage/mapbase.png')"
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],

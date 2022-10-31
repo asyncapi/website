@@ -3,7 +3,7 @@ import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
-import TwitterSVG from '../../../components/icons/Twitter_2';
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 
 const data = [
   {
@@ -54,50 +54,6 @@ const data = [
   },
 ];
 
-const ambassadors = [
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-2 left-36',
-  },
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[10rem] left-[10rem]',
-  },
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[8rem] left-[33rem]',
-  },
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[2rem] left-[40rem]',
-  },
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[8rem] left-[50rem]',
-  },
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: '-top-[2rem] left-[22rem]',
-  },
-
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[0rem] left-[50rem]',
-  },
-
-  {
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra',
-    className: 'top-[15rem] left-[65rem]',
-  },
-];
 
 const tokens = [
   {
@@ -232,32 +188,64 @@ function Index() {
         >
           Learn, share the knowledge with community members
         </Heading>
-        <div className="mt-20 grid grid-cols-2 gap-0 sm:grid-cols-2 lg:grid-cols-4">
-          {ambassadors.map((ambassador, i) => (
-            <div
-              key={i}
-              className="bg-gray-100 hover:bg-white hover:shadow-lg hover:shadow-slate-400 border border-l-0 hover:border-0 p-4 flex flex-col justify-center items-center"
-            >
-              <div className="w-[60px] p-1 rounded-full border border-gray-100">
-                <img
-                  src={ambassador.img}
-                  alt={ambassador.name}
-                  className="rounded-full"
-                />
+        <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {Array(8)
+            .fill({
+              img: '/img/homepage/ale.jpeg',
+              name: 'Alejandra Quatzelli',
+              country: '🇲🇽 ',
+              className: 'top-[2rem] left-[40rem]',
+              title: 'DevRel & DevDocs @AsyncAPI',
+              bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
+              twitter: 'https://twitter.com/QuetzalliAle',
+              github: 'https://github.com/alequetzalli',
+              linkedin: 'https://www.linkedin.com/in/alejandra-quat',
+            })
+            .map((ambassador, i) => (
+              <div key={i} className="rounded-md border text-left mt-6 pb-2">
+                <div className="flex justify-between p-2">
+                  <div>{ambassador.name}</div>
+                  <div>{ambassador.country}</div>
+                </div>
+                <div className="p-2">
+                  <div
+                    className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[300px] bg-center bg-center rounded-md`}
+                  ></div>
+                  <div className="mt-2 w-full rounded-lg border p-2 text-sm">
+                    {ambassador.title}
+                  </div>
+                </div>
+                <div>
+                  <div className="p-2 text-sm">{ambassador.bio}</div>
+                  <div className="border-t p-2 flex">
+                    <a
+                      href={ambassador.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline"
+                    >
+                      Twitter ↗
+                    </a>
+                    <a
+                      href={ambassador.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline ml-3"
+                    >
+                      Github ↗
+                    </a>
+                    <a
+                      href={ambassador.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline ml-3"
+                    >
+                      Linkedin ↗
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="mt-2 flex flex-col items-center">
-                <span className="font-bold text-sm">@{ambassador.name}</span>
-                <span className="text-sm text-gray-600">
-                  Alejandra Quatzelli
-                </span>
-              </div>
-              <div className="mt-2">
-                <span>
-                  <TwitterSVG />
-                </span>
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
       <div className="mt-20">
@@ -297,7 +285,7 @@ function Index() {
             ))}
           </ul>
         </div>
-        <div className="bg-dark w-full h-auto p-4 mt-20 rounded-lg">
+        <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg">
           <div className="flex justify-center">
             <div className="text-center p-4 text-white w-[65%]">
               <Heading typeStyle="heading-lg">
@@ -305,8 +293,9 @@ function Index() {
               </Heading>
               <Heading typeStyle="body-sm">
                 The AsyncAPI Ambassador is now open for nominations! If you’re
-                selected, you’ll be asked to join AsyncAPI on our mission to help
-                developers all over the world to build the future of Event Driven APIs, in an easy and empowering way.
+                selected, you’ll be asked to join AsyncAPI on our mission to
+                help developers all over the world to build the future of Event
+                Driven APIs, in an easy and empowering way.
               </Heading>
               <Button
                 className="block md:inline-block focus:outline-none mt-10 text-center sm:text-left"
@@ -316,13 +305,9 @@ function Index() {
               />
             </div>
           </div>
-          <img
-            src="/img/homepage/mapbase.png"
-            alt="mapbase"
-            className="mt-10"
-          />
         </div>
       </div>
+      <NewsletterSubscribe className="mt-20 text-center" />
     </GenericLayout>
   );
 }
