@@ -2,7 +2,7 @@
 
 ---
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
 
@@ -80,7 +80,7 @@ This repository has the following structure:
 <!-- If you make any changes in the project structure, remember to update it. -->
 
 ```text
-  ├── .github                     # Definitions of Github workflows, pull request and issue templates
+  ├── .github                     # Definitions of GitHub workflows, pull request and issue templates
   ├── components                  # Various generic components such as "Button", "Figure", etc.
   ├── config                      # Transformed static data to display on the pages such as blog posts etc.
   ├── context                     # Various React's contexts used in website
@@ -145,7 +145,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/nibble0101"><img src="https://avatars.githubusercontent.com/u/52580190?v=4?s=100" width="100px;" alt="Joseph Mawa"/><br /><sub><b>Joseph Mawa</b></sub></a><br /><a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3Anibble0101" title="Reviewed Pull Requests">👀</a></td>
     </tr>
     <tr>
-      <td align="center"><a href="https://github.com/aeworxet"><img src="https://avatars.githubusercontent.com/u/16149591?v=4?s=100" width="100px;" alt="Viacheslav Turovskyi"/><br /><sub><b>Viacheslav Turovskyi</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=aeworxet" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/aeworxet"><img src="https://avatars.githubusercontent.com/u/16149591?v=4?s=100" width="100px;" alt="Viacheslav Turovskyi"/><br /><sub><b>Viacheslav Turovskyi</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=aeworxet" title="Documentation">📖</a> <a href="https://github.com/asyncapi/website/commits?author=aeworxet" title="Code">💻</a></td>
+      <td align="center"><a href="https://www.linkedin.com/in/helen-kosova/"><img src="https://avatars.githubusercontent.com/u/8576823?v=4?s=100" width="100px;" alt="Helen Kosova"/><br /><sub><b>Helen Kosova</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=hkosova" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://linktr.ee/thulieblack"><img src="https://avatars.githubusercontent.com/u/66913810?v=4?s=100" width="100px;" alt="V Thulisile Sibanda"/><br /><sub><b>V Thulisile Sibanda</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=thulieblack" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/manavdesai27"><img src="https://avatars.githubusercontent.com/u/74018438?v=4?s=100" width="100px;" alt="Manav Desai"/><br /><sub><b>Manav Desai</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=manavdesai27" title="Documentation">📖</a></td>
+      <td align="center"><a href="http://www.toukir.co"><img src="https://avatars.githubusercontent.com/u/88899011?v=4?s=100" width="100px;" alt="Mohd Toukir Khan"/><br /><sub><b>Mohd Toukir Khan</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=toukirkhan" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://annysah.hashnode.dev"><img src="https://avatars.githubusercontent.com/u/52763841?v=4?s=100" width="100px;" alt="Anisat Akinbani"/><br /><sub><b>Anisat Akinbani</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Annysah" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

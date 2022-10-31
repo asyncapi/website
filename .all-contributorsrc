@@ -307,6 +307,52 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/16149591?v=4",
       "profile": "https://github.com/aeworxet",
       "contributions": [
+        "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "hkosova",
+      "name": "Helen Kosova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8576823?v=4",
+      "profile": "https://www.linkedin.com/in/helen-kosova/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "thulieblack",
+      "name": "V Thulisile Sibanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66913810?v=4",
+      "profile": "https://linktr.ee/thulieblack",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "manavdesai27",
+      "name": "Manav Desai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74018438?v=4",
+      "profile": "https://github.com/manavdesai27",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "toukirkhan",
+      "name": "Mohd Toukir Khan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88899011?v=4",
+      "profile": "http://www.toukir.co",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Annysah",
+      "name": "Anisat Akinbani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52763841?v=4",
+      "profile": "https://annysah.hashnode.dev",
+      "contributions": [
         "doc"
       ]
     }
