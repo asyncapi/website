@@ -4,7 +4,7 @@ weight: 25
 ---
 
 
-## What is a Protocol?
+## What is a protocol?
 A protocol is a mechanism that handles the exchange of messages. It provides a way of getting messages from one point in an event-driven architecture to another. A protocol could either be wired or API.
 
 A few examples of a Protocol are:
