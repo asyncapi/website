@@ -57,45 +57,33 @@ const data = [
 
 const tokens = [
   {
+    emoji: '📚',
     title: 'Education',
     details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
+      'Ambassadors are provided with a budget plan that they use for personal development tools, like books, courses, and other learning methods.',
   },
   {
-    title: 'Education',
+    emoji: '🗺️',
+    title: 'Travel',
     details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
+      'Ambassadors are provided with Free entry to AsyncAPI conferences.',
   },
   {
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
+    emoji: '🌟',
+    title: 'Recognition',
+    details: 'Ambassadors have a Community-wide recognition.',
   },
   {
-    title: 'Education',
+    emoji: '🎁',
+    title: 'Special Swags',
     details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
+      'Community members will recognize you as a leading voice for AsyncAPI by your exclusive AsyncAPI Ambassador swag you’ll have.',
   },
   {
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
-  },
-  {
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
-  },
-  {
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
-  },
-  {
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development.',
-  },
+    emoji: '🧰',
+    title: 'Workshop Swags',
+    details: 'Ambassadors are provided with a Conference and workshop swag.',
+  }
 ];
 
 function Index() {
@@ -270,11 +258,11 @@ function Index() {
             {tokens.map((token) => (
               <li
                 key={token}
-                className="mt-4 bg-white p-2 shadow-lg rounded-lg flex items-center"
+                className="mt-4 bg-white p-2 shadow-lg rounded-lg flex"
               >
                 <div>
                   <div className="bg-pink-200 rounded-full w-[30px] h-[30px] flex flex-col items-center justify-center">
-                    <span className="text-sm">😍</span>
+                    <span className="text-sm">{token.emoji}</span>
                   </div>
                 </div>
                 <div className="ml-[10px]">
