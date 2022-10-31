@@ -108,9 +108,9 @@ function Index() {
       hideBanner={true}
       wide
     >
-      <div className="flex justify-between items-center">
-        <div className="w-[45%]">
-          <h1 className="font-semibold  text-3xl lg:text-5xl leading-[8rem] md:text-4xl">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
+        <div className="lg:w-[45%] w-full lg:text-left text-center">
+          <h1 className="font-semibold  text-3xl lg:text-5xl md:text-4xl mt-10">
             Teachers. Champions.{' '}
             <span className="countdown-text-gradient">Ambassadors!</span>
           </h1>
@@ -123,15 +123,17 @@ function Index() {
             Become an AsyncAPI Ambassador and help the development community
             build the future of APIs.
           </Heading>
-          <Button
-            className="block md:inline-block focus:outline-none mt-10 text-center sm:text-left"
-            text="Apply to become one"
-            href="https://github.com/orgs/asyncapi/discussions"
-            target="_blank"
-            icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
-          />
+          <div>
+            <Button
+              className="block md:inline-block focus:outline-none mt-10 text-center"
+              text="Apply to become one"
+              href="https://github.com/orgs/asyncapi/discussions"
+              target="_blank"
+              icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
+            />
+          </div>
         </div>
-        <div className="w-[50%]">
+        <div className="w-[50%] lg:block hidden">
           <img
             src="/img/homepage/ambassador-cover.svg"
             alt="ambassador-cover"
@@ -142,7 +144,7 @@ function Index() {
       <div className="mt-20">
         <div className="w-full h-[400px] bg-ambassadorCover bg-cover bg-center rounded-lg" />
         <div className="flex justify-center">
-          <div className="text-center mt-10 w-[55%]">
+          <div className="text-center mt-10 lg:w-[55%]">
             <Heading typeStyle="heading-lg">
               AsyncAPI Ambassador Contributions
             </Heading>
@@ -250,7 +252,7 @@ function Index() {
       </div>
       <div className="mt-20">
         <div className="flex justify-center">
-          <div className="text-center mt-10 w-[55%]">
+          <div className="text-center mt-10 lg:w-[55%]">
             <Heading typeStyle="heading-lg">Tokens of our appreciation</Heading>
             <Heading
               typeStyle="body-sm"
@@ -264,7 +266,7 @@ function Index() {
           </div>
         </div>
         <div className="mt-10">
-          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {tokens.map((token) => (
               <li
                 key={token}
@@ -287,7 +289,7 @@ function Index() {
         </div>
         <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg">
           <div className="flex justify-center">
-            <div className="text-center p-4 text-white w-[65%]">
+            <div className="text-center p-4 text-white lg:w-[65%]">
               <Heading typeStyle="heading-lg">
                 Become an AsycnAPI Ambassador
               </Heading>
@@ -298,7 +300,7 @@ function Index() {
                 Driven APIs, in an easy and empowering way.
               </Heading>
               <Button
-                className="block md:inline-block focus:outline-none mt-10 text-center sm:text-left"
+                className="block md:inline-block focus:outline-none mt-10 text-center"
                 text="Become an Ambassador now"
                 href="https://github.com/orgs/asyncapi/discussions"
                 target="_blank"
