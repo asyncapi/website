@@ -477,7 +477,7 @@ function CommunityIndexPage() {
                 <Button
                   text="Become an ambassador"
                   buttonSize="medium"
-                  href="/community/events"
+                  href="/community/ambassador-program"
                   bgClassName="bg-primary-600"
                 />
               </div>
