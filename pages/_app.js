@@ -10,7 +10,7 @@ import '../styles/globals.css'
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <AppContext.Provider value={{ path: router.asPath }}> 
+    <AppContext.Provider value={{ path: router.asPath }}>
       <Head>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
       </Head>
