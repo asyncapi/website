@@ -94,3 +94,20 @@ The <b>channels</b> section is used to describe the event names your API will be
 
 # Summary
 This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the console error message directions. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tutorials/create-asyncapi-document',
+      title: 'Create AsyncAPI document',
+      type:'back',
+    },
+    {
+      href: '/docs/tutorials/generate-code',
+      title: 'Generate Code',
+      type:'next',
+    }
+  ]}
+/>
