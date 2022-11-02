@@ -133,7 +133,7 @@ const quickLinks = [
     title: 'Community Members',
     bg: 'white',
     color: 'primary-600',
-    link: '/community/community-members',
+    link: '/community/contributors',
   },
   {
     title: 'Docs & Resources',
