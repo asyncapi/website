@@ -50,12 +50,14 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           <Button
             href="https://asyncapi.slack.com/archives/C047CGM2D2N"
             target="_blank"
-            text="Comment in #conference2022 Slack channel"
+            text="Comment in #conference2022"
+            className={hideVideo ? 'bg-white border-secondary-500 border box-border text-secondary-500 hover:text-white bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out' : undefined}
           />
           <Button
             href="https://conference.asyncapi.com/schedule"
             target="_blank"
             text="Check schedule"
+            className={!hideVideo ? 'bg-white border-secondary-500 border box-border text-secondary-500 hover:text-white bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out' : undefined}
           />
         </div>
       </div>
