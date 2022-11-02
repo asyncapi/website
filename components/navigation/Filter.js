@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Select from "../form/Select";
 import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
 
-export default function Filter({ data, onFilter, checks, className }) {
+export default function Filter({ data, onFilter, checks, className, placeholder }) {
   const route = useRouter();
   const [filters, setFilters] = useState({});
   const [query, setQuery] = useState({});
@@ -26,7 +26,7 @@ export default function Filter({ data, onFilter, checks, className }) {
     const selectOptions = [
       {
         value: "",
-        text: `Filter by ${check.name}...`,
+        text: `${placeholder ? placeholder : `Filter by ${check.name}...`}`,
       },
       ...(filters[check.name] || []),
     ];
