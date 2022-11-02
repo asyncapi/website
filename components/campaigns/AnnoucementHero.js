@@ -6,8 +6,11 @@ import Container from '../layout/Container'
 function getConferenceDetails() {
   const day = new Date().getUTCDate();
   switch (day) {
-    case 3: return { day: 1, ytId: 'NTHsezlKBh8' };  
+    // 3rd November
+    case 3: return { day: 1, ytId: 'NTHsezlKBh8' };
+    // 4th November
     case 4: return { day: 2, ytId: '8khuAfL7TSE' };
+    // 5th November
     case 5: return { day: 3, ytId: 'R8PYWXDDZbI' };
   }
 }
