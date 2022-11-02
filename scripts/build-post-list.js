@@ -38,7 +38,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
       const slugElements = slug.split('/');
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
-          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8')).data
+          // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data
           details.title = details.title || capitalize(basename(fileName))
         } else {
           details = {
@@ -61,7 +62,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
         const fileContent = readFileSync(fileName, 'utf-8')
-        const { data, content } = frontMatter(fileContent)
+        // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+        const { data, content } = frontMatter(fileContent, {})
         details = data
         details.toc = toc(content, { slugify: slugifyToC }).json
         details.readingTime = Math.ceil(readingTime(content).minutes)

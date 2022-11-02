@@ -68,6 +68,17 @@
       "score": 27.28158593117958
     },
     {
+      "id": "PR_kwDOFLhIt8492uNA",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: how to become tsc member",
+      "author": "Dindihub",
+      "resourcePath": "/asyncapi/community/pull/449",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.9739670999407
+    },
+    {
       "id": "I_kwDOFLhIt85D8sXS",
       "isPR": false,
       "isAssigned": true,
@@ -88,17 +99,6 @@
       "score": 22.68679251119144
     },
     {
-      "id": "PR_kwDOFLhIt8492uNA",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: how to become tsc member",
-      "author": "Dindihub",
-      "resourcePath": "/asyncapi/community/pull/449",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
       "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
       "isAssigned": true,
@@ -107,7 +107,7 @@
       "resourcePath": "/asyncapi/community/pull/442",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 21.538094156194408
+      "score": 22.112443333692923
     },
     {
       "id": "PR_kwDOFdFGUs4x5bH2",
@@ -119,6 +119,17 @@
       "repo": "asyncapi/training",
       "labels": [],
       "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOFXtyC849zwGo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Components, Security Requirement(s) models and other improvements",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/parser-api/pull/71",
+      "repo": "asyncapi/parser-api",
+      "labels": [],
+      "score": 20.102221212448114
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -148,17 +159,6 @@
       "score": 18.953522857451077
     },
     {
-      "id": "PR_kwDOFXtyC849zwGo",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Components, Security Requirement(s) models and other improvements",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/parser-api/pull/71",
-      "repo": "asyncapi/parser-api",
-      "labels": [],
-      "score": 18.953522857451077
-    },
-    {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
@@ -171,6 +171,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFLhIt85U9FIY",
+      "title": "[📑 Docs]: We need new docs that describes how to financially support the initiative",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/505",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDODyzcIc5Uso2Q",
       "title": "Add support for minimum amount of approvals before merge",
@@ -349,21 +364,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c5S_Rmy",
-      "title": "Unnecessary assertion since it does not change the type of the expression",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/445",
-      "repo": "asyncapi/studio",
-      "author": "AceTheCreator",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "hacktoberfest",
-          "color": "5B0291"
         }
       ]
     },
@@ -567,25 +567,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85C72E6",
-      "title": "Parameter defines it's own reference property",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/165",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
         }
       ]
     },
