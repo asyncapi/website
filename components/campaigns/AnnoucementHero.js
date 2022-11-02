@@ -15,7 +15,7 @@ function getConferenceDetails() {
   }
 }
 
-export default function AnnouncementHero({ className = '', small = false }) {
+export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   const details = getConferenceDetails();
   if (!details) return null;
 
@@ -34,14 +34,23 @@ export default function AnnouncementHero({ className = '', small = false }) {
         >
           AsyncAPI Conference 2022 Day {day} is running!
         </Heading>
+        {!hideVideo && (
           <div className='px-4 mt-4 mx-auto max-w-5xl'>
             <YouTube id={ytId} />
           </div>
+        )}
         <div className="mt-8 pb-2 space-x-2">
+          {hideVideo && (
+            <Button
+              href={`https://youtu.be/${ytId}`}
+              target="_blank"
+              text="Watch live"
+            />
+          )}
           <Button
-            href="https://www.asyncapi.com/slack-invite"
+            href="https://asyncapi.slack.com/archives/C047CGM2D2N"
             target="_blank"
-            text="Comment and ask questions"
+            text="Comment in #conference2022 Slack channel"
           />
           <Button
             href="https://conference.asyncapi.com/schedule"
