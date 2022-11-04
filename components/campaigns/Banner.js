@@ -14,7 +14,7 @@ export default function Banner({}) {
   const year = new Date().getUTCFullYear();
 
   // month=10 is November. Show only between 6-30 November.
-  if (year !== 2022 || month !== 10 || day < 6) {
+  if (year > 2022 || month !== 10 || day < 6) {
     return null;
   }
 
@@ -46,7 +46,7 @@ export default function Banner({}) {
           <div className="w-0 flex-1 flex items-center text-xs">
             <p className="font-medium text-gray-700">
               <span className="md:inline">
-                AsyncAPI Conference 2021 has ended. Good news: you can still watch the recording! ⭐️
+                AsyncAPI Conference 2022 has ended. Good news: you can still watch the recording! ⭐️
               </span>
             </p>
           </div>

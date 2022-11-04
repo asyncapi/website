@@ -9,7 +9,7 @@ function getConferenceDetails() {
   const year = new Date().getUTCFullYear();
 
   // month=10 is November
-  if (year !== 2022 || month !== 10) {
+  if (year > 2022 || month !== 10) {
     return;
   }
 
