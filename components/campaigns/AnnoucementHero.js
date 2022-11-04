@@ -5,6 +5,14 @@ import Container from '../layout/Container'
 
 function getConferenceDetails() {
   const day = new Date().getUTCDate();
+  const month = new Date().getUTCMonth();
+  const year = new Date().getUTCFullYear();
+
+  // month=10 is November
+  if (year > 2022 || month !== 10) {
+    return;
+  }
+
   switch (day) {
     // 3rd November
     case 3: return { day: 1, ytId: 'NTHsezlKBh8' };
