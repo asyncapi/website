@@ -52,6 +52,17 @@
       "score": 27.28158593117958
     },
     {
+      "id": "PR_kwDOCHlHJM4_rG5j",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: provide docs content for template",
+      "author": "pratik2315",
+      "resourcePath": "/asyncapi/generator/pull/843",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 23.26114168868996
+    },
+    {
       "id": "PR_kwDOFLhIt8492uNA",
       "isPR": true,
       "isAssigned": true,
@@ -61,37 +72,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.9739670999407
-    },
-    {
-      "id": "I_kwDOFLhIt85D8sXS",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "An interface/project for describing errors/problems in tools in our organization.",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/community/issues/266",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDOCHlHJM4_rG5j",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: provide docs content for template",
-      "author": "pratik2315",
-      "resourcePath": "/asyncapi/generator/pull/843",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 22.68679251119144
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -168,6 +148,17 @@
         }
       ],
       "score": 18.82437864307893
+    },
+    {
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 16.943300736206268
     }
   ],
   "goodFirstIssues": [
