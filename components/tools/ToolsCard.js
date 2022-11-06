@@ -1,29 +1,37 @@
+import {useState} from 'react'
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import Tag from './Tags';
 import TextTruncate from 'react-text-truncate';
 
 export default function toolsCard({toolData}) {
+  const [showDescription, setShowDescription] = useState(false)
   return (
     <div className="border shadow-md rounded-lg">
-      <div className="flex gap-4 pt-8 px-6">
+      <div className="pt-8 px-6">
         <div className="flex flex-col gap-2">
-          <div className="flex gap-4">
+          <div className="flex gap-4 justify-between w-full">
             <Heading typeStyle="heading-sm-semibold">{toolData.title}</Heading>
             <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit h-fit rounded-md'>
               {toolData.filters.hasCommercial=== false ? 'FREE' : 'PAID'}
             </div>
           </div>
+          <div>
             <Paragraph typeStyle="body-sm">
               <TextTruncate
                 element="span"
                 line={2}
                 text={toolData.description}
-              />
-              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular mx-2 text-sm transition ease-in-out duration-300">
+              />...
+              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300">
                 Show More
               </div>
-            </Paragraph> 
+            </Paragraph>
+            {showDescription && <div className="p-2">
+
+              </div>}
+            
+          </div>
         </div>
       </div>
       <hr className="my-6 mx-6" />

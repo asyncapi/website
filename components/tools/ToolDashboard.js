@@ -17,7 +17,7 @@ export default function ToolDashboard() {
     })
     const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories} = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('')
-    const [toolsList, setToolsList] = useState()
+    const [toolsList, setToolsList] = useState({})
     const [checkedCategory, setCheckedCategory] = useState(categories)
 
     const handleApplyCategory = () => {
@@ -58,8 +58,8 @@ export default function ToolDashboard() {
                 }
                 return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
             })
-            setToolsList(tempToolsList)
         })
+        setToolsList(tempToolsList)
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
     
     const setFilter = (filterType) => {
@@ -80,31 +80,30 @@ export default function ToolDashboard() {
                 <div className='w-full flex lg:w-1/3 gap-5 h-auto'>
                 <div className="relative w-1/3 h-auto my-2 lg:my-0">
                     <div
-                        className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer"
+                        className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                         onClick={() => setFilter("filter")}>
                         <FilterIcon />
                         <div>Filter</div>
                     </div>
                     {openFilter.filter && (
-                        <div className="z-10 absolute top-14 min-w-[20rem]">
+                        <div className="z-10 absolute top-16 min-w-[20rem]">
                             <Filters setOpenFilter={setopenFilter} />
                         </div>
                     )}
                 </div>
-                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:bg-gray-300 text-gray-700 shadow text-sm cursor-pointer" onClick={() => (setCheckedCategory(categories),setFilter("category"))}>
+                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer" onClick={() => (setCheckedCategory(categories),setFilter("category"))}>
                     <div className="relative top-1/2 -translate-y-1/2 flex items-center justify-between gap-2">
-                        <div className="">Select Category</div>
+                        <div className="">Select Categories</div>
                         <ArrowDown className="my-auto" />
                     </div>
                     {openFilter.category && (
-                        <div className="z-10 p-2 absolute md:min-w-[20rem] left-0 top-14 w-full rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300">
+                        <div className="z-10 p-2 absolute md:min-w-[20rem] left-0 top-16 w-full rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300 shadow">
                             <FiltersDropdown dataList = {categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} className="min-w-[18rem] w-full overflow-x-auto" />
                             <div className='w-auto min-w-[18rem] min-w-0 my-6 mb-0' onClick={handleApplyCategory}>
                                 <Button text='Apply Category' className=' w-full' />
                             </div>
                         </div>
                     )}
-                    
                 </div>
                 </div>
                 <div className="py-1 px-4 flex rounded-lg border w-full lg:w-2/3 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">
@@ -119,7 +118,7 @@ export default function ToolDashboard() {
                 </div>
             </div>
             <div className="mt-10">
-                {toolsList ? <ToolsList toolsData={toolsList}/> : 'No Tools Found'}
+                {Object.keys(toolsList).length ? <ToolsList toolsData={toolsList}/> : <div>No Tools Found</div>}
             </div>
         </div>
     )

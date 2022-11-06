@@ -13,7 +13,7 @@ export default function toolsDashboard() {
   return (
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
-        <Container wide>
+        <div>
           <div className="text-center mt-12">
             <Heading level="h1" typeStyle="heading-lg">
               AsyncAPI Tools Dashboard
@@ -31,7 +31,7 @@ export default function toolsDashboard() {
           <ToolFilter>
             <ToolDashboard />
         </ToolFilter>
-        </Container>
+        </div>
       </GenericLayout>
     </div>
   );

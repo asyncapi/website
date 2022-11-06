@@ -37,11 +37,13 @@ export default function Filters({setOpenFilter}) {
     })
   }
   return (
-    <div className="bg-white z-10 py-4 border rounded-lg border-gray-300">
+    <div className="bg-white z-10 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
-        <div className="flex gap-2 items-baseline">
+        <div className="flex gap-2 items-baseline justify-between">
           <div className="text-sm text-gray-500">PRICING</div>
-          <div className="text-xs mb-0 flex cursor-pointer hover:underline" onClick={clearFilters}>Clear Filters</div>
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
+            Clear Filters
+          </div>
         </div>
         <div className="flex gap-2">
           <div className={twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==false ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => setCheckPaid(false)}>
