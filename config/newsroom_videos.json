@@ -1,14 +1,20 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/R8PYWXDDZbI/hqdefault.jpg",
+    "title": "AsyncAPI Conf - Day 3 - 5th Nov 2022",
+    "description": "https://conference.asyncapi.com/",
+    "videoId": "R8PYWXDDZbI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/8khuAfL7TSE/hqdefault.jpg",
     "title": "AsyncAPI Conf - Day 2 - 4th Nov 2022",
-    "description": "https://conference.asyncapi.com/",
+    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:04:43 Opening 00:05:33 My Journey from Contributor ...",
     "videoId": "8khuAfL7TSE"
   },
   {
     "image_url": "https://i.ytimg.com/vi/NTHsezlKBh8/hqdefault.jpg",
     "title": "AsyncAPI Conf - Day 1 - 3rd Nov 2022",
-    "description": "https://conference.asyncapi.com/ Contents: 00:02:20 Opening 00:03:45 Next Generation of AsyncAPI - Jonas Lagoni, Postman ...",
+    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:02:20 Opening 00:03:45 Next Generation of AsyncAPI ...",
     "videoId": "NTHsezlKBh8"
   },
   {
@@ -22,11 +28,5 @@
     "title": "Let&#39;s talk about contributing - Hacktoberfest at AsyncAPI",
     "description": "Join us in today's live stream dedicated to #hacktoberfest 2022 We'll be talking about how to start contributing to one of ...",
     "videoId": "KNPIl0YxzMI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/H5P-gBwdFs0/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (October 26, 2022)",
-    "description": "Agenda: https://github.com/asyncapi/community/issues/491.",
-    "videoId": "H5P-gBwdFs0"
   }
 ]
