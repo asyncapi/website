@@ -15,6 +15,7 @@ export default function Filters({setOpenFilter}) {
   const [checkedTechnology, setCheckedTechnology] = useState(technologies)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
   
+
   const handleApplyFilters = () => {
     setLanguages(checkedLanguage);
     setTechnologies(checkedTechnology)
@@ -77,7 +78,7 @@ export default function Filters({setOpenFilter}) {
             <div className="flex items-center text-dark">
               Select Languages...
             </div>
-            <ArrowDown className="my-auto" />
+            <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
           {openLanguage && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languagesColor} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
@@ -92,7 +93,7 @@ export default function Filters({setOpenFilter}) {
           <div className="flex items-center text-dark">
             Select technologies...
           </div>
-          <ArrowDown className="my-auto" />
+          <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
         {openTechnology && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologiesColor} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />

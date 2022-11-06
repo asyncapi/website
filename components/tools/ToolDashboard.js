@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import {categoryList} from '../../scripts/tools/categorylist'
 import Button from '../buttons/Button'
@@ -11,6 +11,8 @@ import Filters from './Filters';
 import FiltersDropdown from './FiltersDropdown';
 
 export default function ToolDashboard() {
+    const filterRef = useRef()
+    const categoryRef = useRef()
     const [openFilter, setopenFilter] = useState({
         filter: false,
         category: false
@@ -28,6 +30,20 @@ export default function ToolDashboard() {
             category: false
         })
     }
+    useEffect(() => {
+        const checkIfClickOutside = (e) => {
+            if((openFilter.filter && filterRef.current && !filterRef.current.contains(e.target)) || openFilter.category && categoryRef.current && !categoryRef.current.contains(e.target))
+                setopenFilter({
+                    filter: false,
+                    category: false
+                })             
+        }
+        document.addEventListener("mousedown", checkIfClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickOutside)
+        }
+    })
+
     useEffect(()=> {
         let tempToolsList = {}
         if(categories.length >0){
@@ -81,7 +97,7 @@ export default function ToolDashboard() {
         <div>
             <div className="lg:flex flex-row gap-5 my-10">
                 <div className='w-full flex lg:w-1/3 gap-5 h-auto'>
-                <div className="relative w-1/3 h-auto my-2 lg:my-0">
+                <div className="relative w-1/3 h-auto my-2 lg:my-0" ref={filterRef}>
                     <div
                         className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                         onClick={() => setFilter("filter")}>
@@ -94,10 +110,10 @@ export default function ToolDashboard() {
                         </div>
                     )}
                 </div>
-                <div className="py-4 px-4 my-2 lg:my-0 rounded-lg relative border w-2/3 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer" onClick={() => (setCheckedCategory(categories),setFilter("category"))}>
-                    <div className="relative top-1/2 -translate-y-1/2 flex items-center justify-between gap-2">
+                <div className="my-2 lg:my-0 rounded-lg relative w-2/3" ref={categoryRef}>
+                    <div className="relative top-1/2 -translate-y-1/2 flex items-center border border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer rounded-lg py-4 px-4 justify-between gap-2" onClick={() => (setCheckedCategory(categories),setFilter("category"))}>
                         <div className="">Select Categories</div>
-                        <ArrowDown className="my-auto" />
+                        <ArrowDown className={`my-auto ${openFilter.category ? 'rotate-180' : ''}`} />
                     </div>
                     {openFilter.category && (
                         <div className="z-10 p-2 absolute md:min-w-[20rem] left-0 top-16 w-full rounded-lg duration-150 overflow-x-auto bg-white border border-gray-300 shadow">

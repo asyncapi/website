@@ -16,21 +16,26 @@ export default function toolsCard({toolData}) {
               {toolData.filters.hasCommercial=== false ? 'FREE' : 'PAID'}
             </div>
           </div>
-          <div>
+          <div className='relative'>
             <Paragraph typeStyle="body-sm">
               <TextTruncate
                 element="span"
                 line={2}
                 text={toolData.description}
               />...
-              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300">
+              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300" onClick={() => setShowDescription(true)}>
                 Show More
               </div>
             </Paragraph>
-            {showDescription && <div className="p-2">
-
+            {showDescription && <div className="absolute top-0 p-2 z-10 bg-white w-full border border-gray-200 shadow-md">
+                <div className='flex gap-2 cursor-pointer text-gray-500 hover:bg-gray-200 p-1 rounded hover:text-dark w-fit' onClick={() => setShowDescription(false)}>
+                  <img src='/img/illustrations/icons/close-icon.svg' width='10' />
+                  <div className='text-sm'>Close</div>
+                </div>
+                <Paragraph typeStyle="body-sm" className='mt-4'>
+                  {toolData.description}
+                </Paragraph>
               </div>}
-            
           </div>
         </div>
       </div>
@@ -49,7 +54,7 @@ export default function toolsCard({toolData}) {
         <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
         <div className="flex gap-2 flex-wrap">
           {toolData.filters.technology.map((item, index) => (
-            <Tag
+            <Tag key={index}
             name={item.name}
             bgColor={item.color}
             borderColor={item.borderColor}
