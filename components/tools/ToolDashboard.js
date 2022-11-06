@@ -19,6 +19,7 @@ export default function ToolDashboard() {
     const [searchName, setSearchName] = useState('')
     const [toolsList, setToolsList] = useState({})
     const [checkedCategory, setCheckedCategory] = useState(categories)
+    const [checkToolsList, setcheckToolsList] = useState(true)
 
     const handleApplyCategory = () => {
         setCategories(checkedCategory)
@@ -38,6 +39,7 @@ export default function ToolDashboard() {
         }else{
             tempToolsList = JSON.parse(JSON.stringify(ToolsData));
         }
+        setcheckToolsList(false)
         Object.keys(tempToolsList).forEach((category) => {
             tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
                 let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true;
@@ -58,6 +60,7 @@ export default function ToolDashboard() {
                 }
                 return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
             })
+            if(tempToolsList[category].toolsList.length) setcheckToolsList(true)
         })
         setToolsList(tempToolsList)
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
@@ -115,10 +118,13 @@ export default function ToolDashboard() {
                         value={searchName}
                         onChange={(e) => setSearchName(e.target.value)}
                     />
+                    {searchName && <button className="hover:bg-gray-100 p-2 rounded-full h-fit my-auto" onClick={() => setSearchName('')}>
+                        <img src="/img/illustrations/icons/close-icon.svg" width="10" />
+                    </button>}
                 </div>
             </div>
             <div className="mt-10">
-                {Object.keys(toolsList).length ? <ToolsList toolsData={toolsList}/> : <div>No Tools Found</div>}
+                {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div>None from tools list meet the search requirements</div>}
             </div>
         </div>
     )
