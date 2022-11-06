@@ -25,8 +25,25 @@ flowchart LR
     f
     end
 ```
-The above diagram depicts a sample flow of events from `producer` to `broker` to `consumer`. In this instance, the `producer` publishes two events _(A and B)_ and sends them to the `broker`. Then each `consumer` subscribes to receive those events.
 
+The above diagram depicts a sample flow of events from `producer` to `broker` to `consumer`. In this instance, the `producer` publishes two events _(A and B)_ and sends them to the `broker`. Then each `consumer` subscribes to receive those events.
 <Remember>
 <b>Subscribers</b> can also be <a href="https://www.asyncapi.com/docs/concepts/producer">producers</a>.
 </Remember>
+---
+
+
+<DocsButton
+ suggestions={[
+    {
+      href:'/docs/concepts/producer',
+      type: 'back',  
+      title: 'Producer',
+   },
+   {
+      href:'/docs/concepts/channel',
+      type: 'next',  
+      title: 'Channel - Overview',
+   }
+ ]}
+/>
