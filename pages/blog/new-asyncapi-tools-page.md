@@ -89,9 +89,9 @@ If you don't get your tool properly presented in this file, kindly inform us by 
 
 # AsyncAPI Tools Dashboard
 
-Ohh! wait a minute, have you told you about new Tools Dashboard? Then, let me present you with new AsyncAPI brand new and astonishing Tools Dashboard, which has list of Tools presented in the form of cards. Do checkout that out right now - [AsyncAPI Tools Dashboard](/tools). Preview of the UI is as follows:
+Ohh! wait a minute, have I told you about new Tools Dashboard? Then, let me present you with brand new and astonishing AsyncAPI Tools Dashboard, which has list of Tools presented in the form of cards. Do checkout that out right now - [AsyncAPI Tools Dashboard](/tools). Preview of the UI is as follows:
 
-![Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.png)
+![Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.webp)
 
 The Dashboard consists of various features like the overall information about the tools inside ToolCard, filters to sort out the tools according to your needs, and search for tools specific to its name and type. 
 
@@ -99,7 +99,7 @@ The Dashboard consists of various features like the overall information about th
 
 Taking the Tools Card under consideration, you have following sections to detail about a Tool:
 
-![Tools Card](/img/posts/new-asyncapi-tools-page/tool-preview.svg)
+![Tools Card](/img/posts/new-asyncapi-tools-page/tool-preview.webp)
 
 <ol>
   <li> Specifies the Name of the Tool.</li>
@@ -113,8 +113,32 @@ Taking the Tools Card under consideration, you have following sections to detail
 
 ## Filters for Tools
 
-The Dashboard also contain various filters to search for a specific Tool according to your needs. You can now search according to the Name, Languages, Technologies, etc.. as provided in respective dropdowns and radio buttons. Filters are mostly divided in 3 sections - Filter Menu, `Select Category` DropDown and search bar. The use of each menu is explained below under respective subheadings. 
+The Dashboard also contain various filters to search for a specific Tool according to your needs. You can now search according to the Name, Languages, Technologies, etc.. as provided in respective dropdowns and radio buttons. Filters are mostly divided in 3 sections - Filter Menu, `Select Category` DropDown and Search bar. The use of each menu is explained below under respective subheadings. 
 
-![Filters Preview](/img/posts/new-asyncapi-tools-page/filters.png)
+![Filters Preview](/img/posts/new-asyncapi-tools-page/filters.webp)
 
 ### Filter Menu
+
+Taking the Tools Filter Menu under consideration, you have following filters to search a Tool:
+
+![Filter Menu](/img/posts/new-asyncapi-tools-page/filter-menu.webp)
+
+<ol>
+  <li> This radio filter button allows to search for either free tools available on internet or Github, or search for the Paid Tools.</li>
+  <li> The slider filter button allows to search for the tools owned or maintained by AsyncAPI organization. </li>
+  <li> The <b>Language Filter</b> allows you to select the languages from the dropdown on which you want to search for Tools. </li>
+  <li> The <b>Technology Filter</b> allows you to select the technologies from the dropdown on which you want to search for Tools. </li>
+  <li> The <b>Clear Filters</b> button allows you to clear all filters inside the Filters Modal and will show you all the tools of selected categories (or all categories).</li>
+</ol>
+
+Do remember to click on `Apply Filter` Button before closing the `Filters` Modal so that filters will be applied on the Dashboard.
+
+### Select Categories Filter
+
+This Filter allows you to filter out the tools on the basis of the category (or categories) from the list of categories. The dropdown contains the list of predefined list of categories, from which you can select the categories and click `Apply Category` to apply the filter on Tools.
+
+![Category-filter](/img/posts/new-asyncapi-tools-page/category-filter.webp)
+
+### Search Bar
+
+The Search Bar will allow you to search the tools on the basis of their names.

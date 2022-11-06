@@ -14,7 +14,6 @@ export default function Filters({setOpenFilter}) {
   const [checkedLanguage, setCheckedLanguage] = useState(languages)
   const [checkedTechnology, setCheckedTechnology] = useState(technologies)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
-  
 
   const handleApplyFilters = () => {
     setLanguages(checkedLanguage);
