@@ -41,22 +41,6 @@
       "score": 44.512061256135105
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 39.34291865864845
-    },
-    {
       "id": "PR_kwDOCHlHJM48mj3W",
       "isPR": true,
       "isAssigned": false,
@@ -68,6 +52,17 @@
       "score": 27.28158593117958
     },
     {
+      "id": "PR_kwDOCHlHJM4_rG5j",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: provide docs content for template",
+      "author": "pratik2315",
+      "resourcePath": "/asyncapi/generator/pull/843",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 23.548316277439216
+    },
+    {
       "id": "PR_kwDOFLhIt8492uNA",
       "isPR": true,
       "isAssigned": true,
@@ -77,26 +72,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.9739670999407
-    },
-    {
-      "id": "I_kwDOFLhIt85D8sXS",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "An interface/project for describing errors/problems in tools in our organization.",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/community/issues/266",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 22.68679251119144
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -159,6 +134,22 @@
       "score": 18.953522857451077
     },
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 18.82437864307893
+    },
+    {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
@@ -171,6 +162,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5VJhjH",
+      "title": "[Docs Bug 🐞 report]:  Producer page wrong link.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1060",
+      "repo": "asyncapi/website",
+      "author": "vasucp1207",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "🐞 docs bug",
+          "color": "FFD23F"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFLhIt85U9FIY",
       "title": "[📑 Docs]: We need new docs that describes how to financially support the initiative",
@@ -788,10 +794,6 @@
           "color": "a2eeef"
         },
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
         }
@@ -932,6 +934,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Epic",
