@@ -32,7 +32,7 @@ The diagram above shows the communication between a `producer` and `consumer`, w
    {
       href:'/docs/tutorials',
       type: 'next',  
-      title: 'Tutorial - Overview',
+      title: 'Tutorials - Overview',
    }
  ]}
 />

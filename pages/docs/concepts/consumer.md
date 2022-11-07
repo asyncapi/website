@@ -43,7 +43,7 @@ The above diagram depicts a sample flow of events from `producer` to `broker` to
    {
       href:'/docs/concepts/channel',
       type: 'next',  
-      title: 'Channel - Overview',
+      title: 'Channel',
    }
  ]}
 />

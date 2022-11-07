@@ -45,7 +45,7 @@ In the diagram above, we see a producer publishing messages to a specific channe
    {
       href:'/docs/concepts/consumer',
       type: 'next',  
-      title: 'Consumer - Overview',
+      title: 'Consumer',
    }
  ]}
 />
