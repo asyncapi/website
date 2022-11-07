@@ -24,6 +24,8 @@ function getConferenceDetails() {
 }
 
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
+  return null;
+
   const details = getConferenceDetails();
   if (!details) return null;
 
