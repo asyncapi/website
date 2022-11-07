@@ -32,7 +32,7 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
     {
       href:'/docs/concepts/channel',
       type: 'back',  
-      title: 'Channel',
+      title: 'Concepts - Channel',
    },
    {
       href:'/docs/tutorials/getting-started',
