@@ -1,6 +1,6 @@
 ---
 title: Application
-weight: 20
+weight: 23
 ---
 
 
@@ -25,3 +25,18 @@ The above diagram describes a message communication traveling through a channel 
 <Remember>
 When writing your AsyncAPI document, make sure to describe what a user can do with your application; not what the application does. In other words, if your <em>application</em> is a <b>producer</b>, your AsyncAPI document should describe where users can subscribe to, to receive messages produced by your <b>producer</b> application. 
 </Remember>
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/concepts/channel',
+      title: 'Channel',
+      type:'back',
+    },
+    {
+      href: '/docs/concepts',
+      title: 'Protocol',
+      type:'next',
+    }
+  ]}
+/>
