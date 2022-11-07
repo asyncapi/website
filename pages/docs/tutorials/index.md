@@ -30,9 +30,9 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
 <DocsButton
  suggestions={[
     {
-      href:'/docs/concepts/producer',
+      href:'/docs/concepts/channel',
       type: 'back',  
-      title: 'Concepts - Producer',
+      title: 'Concepts - Channel',
    },
    {
       href:'/docs/tutorials/getting-started',
