@@ -1,14 +1,12 @@
 # This action is centrally managed in https://github.com/asyncapi/.github/
 # Don't make changes to this file in this repo as they will be overwritten with changes made to the same file in above mentioned repo
 
-
-
 name: Lint PR title
 
 on:
   pull_request_target:
     types: [opened, reopened, synchronize, edited, ready_for_review]
-    
+
 jobs:
   lint-pr-title:
    name: Lint PR title
@@ -24,7 +22,7 @@ jobs:
           subjectPattern: ^(?![A-Z]).+$
           subjectPatternError: |
             The subject "{subject}" found in the pull request title "{title}" should start with a lowercase character.
-            
+
       # Comments the error message from the above lint_pr_title action 
       - if: ${{ always() && steps.lint_pr_title.outputs.error_message != null && !contains(fromJson('["asyncapi-bot", "dependabot[bot]", "dependabot-preview[bot]", "allcontributors"]'), github.actor)}}
         name: Comment on PR
@@ -33,7 +31,7 @@ jobs:
           header: pr-title-lint-error
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN}}
           message: |
-                   
+
                    We require all PRs to follow [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/). 
                    More details 👇🏼
                    ```

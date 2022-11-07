@@ -1,3 +1,4 @@
+
 export default function IconSlack({ className }){
   return(
       <svg 
@@ -13,4 +14,4 @@ export default function IconSlack({ className }){
 
       </svg>
   )
-} 
+}
