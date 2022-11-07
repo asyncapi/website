@@ -37,7 +37,10 @@ function Index() {
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {posts.map((contributor, i) => {
             return (
-              <div key={i} className="rounded-md border text-left mt-4 pb-2">
+              <div
+                key={i}
+                className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300"
+              >
                 <div className="flex justify-between p-2">
                   <div>{contributor.username}</div>
                   <div>{contributor.countryFlag}</div>
