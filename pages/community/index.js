@@ -334,7 +334,7 @@ function CommunityIndexPage() {
                 level="h2"
                 typeStyle="body-lg"
                 textColor="text-white"
-                className="text-slate-500 text-sm mt-10"
+                className="text-sm mt-10"
               >
                 Join a AsyncAPI event, from anywhere in the world. Learn more
                 about our live and recorded events below. You can also sign up
