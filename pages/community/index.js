@@ -186,7 +186,7 @@ function CommunityIndexPage() {
   );
   return (
     <GenericLayout
-      title="AsyncAPI Meetings"
+      title="AsyncAPI Community"
       description="The home for developer communities"
       image={image}
       hideBanner={true}
