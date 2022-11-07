@@ -34,16 +34,16 @@ function Index() {
         <Heading typeStyle="heading-xl">Meet the stars</Heading>
         <div className="mt-10">
           <Search data={data} posts={posts} setPosts={setPosts} />
-          <hr className="mt-20" />
+          <hr className="mt-10 md:mt-[20]" />
         </div>
-        <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {posts.map((contributor, i) => {
             return (
               <Link
                 key={i}
                 href={{
                   pathname: `/community/contributors/${contributor.username}`,
-                  query: contributor
+                  query: contributor,
                 }}
               >
                 <div className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300">
@@ -52,9 +52,10 @@ function Index() {
                     <div>{contributor.countryFlag}</div>
                   </div>
                   <div className="p-2">
-                    <div
-                      className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[150px] bg-center bg-cover rounded-md`}
-                    ></div>
+                    <div className="">
+                      <div className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[300px] md:h-[150px] bg-center bg-cover rounded-md`}>
+                      </div>
+                    </div>
                     <div className="text-center mt-2">{contributor.name}</div>
                     <div className="mt-2 w-full rounded-lg border p-2 text-xs font-bold">
                       {contributor.title}
@@ -91,8 +92,8 @@ function Search({ data, posts, setPosts }) {
    setPosts(result)
   };
   return (
-    <div className="flex justify-between items-center">
-      <div className="w-[40%]">
+    <div className="flex flex-col justify-between items-center md:flex-row lg:flex-row">
+      <div className="w-full md:w-[40%] lg:w-[40%]">
         <input
           type="search"
           placeholder="Search..."
@@ -100,14 +101,14 @@ function Search({ data, posts, setPosts }) {
           className="rounded-lg border-primary-600 w-full"
         />
       </div>
-      <div className="flex items-center">
+      <div className="flex flex-col items-center mt-5 w-full md:w-[auto] md:mt-0 md:flex-row">
         <Filter
           data={data}
           posts={posts}
           onFilter={onFilter}
           checks={countryFilter}
           placeholder="All countries"
-          className="w-[200px]"
+          className="w-full md:w-[200px]"
         />
         <Filter
           data={data}
@@ -115,7 +116,7 @@ function Search({ data, posts, setPosts }) {
           onFilter={onFilter}
           checks={contributionFilter}
           placeholder="All contributions"
-          className="w-[200px]"
+          className="w-full mt-5 md:w-[200px] md:mt-0"
         />
       </div>
     </div>
