@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Filter from '../../../components/navigation/Filter';
@@ -8,16 +9,17 @@ function Index() {
   const data = Array(5).fill({
     img: '/img/homepage/ale.jpeg',
     name: 'Alejandra Quatzelli',
-    username: '@alejandra',
+    username: 'alejandra',
     countryFlag: '🇲🇽',
     country: 'Mexico',
     className: 'top-[2rem] left-[40rem]',
-    contributions: ['Documentation', 'Articles'],
+    tags: ['Documentation', 'Articles'],
     title: 'DevRel & DevDocs @AsyncAPI',
     bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
     twitter: 'https://twitter.com/QuetzalliAle',
     github: 'https://github.com/alequetzalli',
     linkedin: 'https://www.linkedin.com/in/alejandra-quat',
+    contributions: []
   });
   const [posts, setPosts] = useState(data);
   return (
@@ -37,24 +39,29 @@ function Index() {
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {posts.map((contributor, i) => {
             return (
-              <div
+              <Link
                 key={i}
-                className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300"
+                href={{
+                  pathname: `/community/contributors/${contributor.username}`,
+                  query: contributor
+                }}
               >
-                <div className="flex justify-between p-2">
-                  <div>{contributor.username}</div>
-                  <div>{contributor.countryFlag}</div>
-                </div>
-                <div className="p-2">
-                  <div
-                    className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[150px] bg-center bg-cover rounded-md`}
-                  ></div>
-                  <div className="text-center mt-2">{contributor.name}</div>
-                  <div className="mt-2 w-full rounded-lg border p-2 text-xs font-bold">
-                    {contributor.title}
+                <div className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300">
+                  <div className="flex justify-between p-2">
+                    <div>@{contributor.username}</div>
+                    <div>{contributor.countryFlag}</div>
+                  </div>
+                  <div className="p-2">
+                    <div
+                      className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[150px] bg-center bg-cover rounded-md`}
+                    ></div>
+                    <div className="text-center mt-2">{contributor.name}</div>
+                    <div className="mt-2 w-full rounded-lg border p-2 text-xs font-bold">
+                      {contributor.title}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -72,7 +79,7 @@ function Search({ data, posts, setPosts }) {
   ];
   const contributionFilter = [
     {
-      name: 'contributions',
+      name: 'tags',
     },
   ];
   const onSearch = (target) => {
