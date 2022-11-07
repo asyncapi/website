@@ -21,19 +21,24 @@ export default function Banner({}) {
   return (
     <div className="bg-gray-100">
       <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8">
-
-        {/* mobile view */}
-        <div className="flex md:hidden items-center justify-between flex-wrap">
-          <div className="w-0 flex-1 flex items-center text-xs">
+        <div className="flex items-center justify-between flex-wrap">
+          <div className="flex md:hidden w-0 flex-1 flex items-center text-xs">
             <p className="font-medium text-gray-700">
               <span className="md:inline">
                 AsyncAPI Conference 2022 has ended! ⭐️
               </span>
             </p>
           </div>
-          <div className="order-3 flex-shrink-0 sm:order-2 smmd:block">
+          <div className="hidden md:flex w-0 flex-1 flex items-center text-xs">
+            <p className="font-medium text-gray-700">
+              <span className="md:inline">
+                AsyncAPI Conference 2022 has ended. Good news: you can still watch the recording! ⭐️
+              </span>
+            </p>
+          </div>
+          <div className="flex">
             <a
-              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijq9F5eYsJomWc7Zf6EYVTZ"
+              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50"
               target="_blank" rel="noopener noreferrer"
             >
@@ -41,42 +46,6 @@ export default function Banner({}) {
             </a>
           </div>
         </div>
-
-        <div className="hidden md:flex items-center justify-between flex-wrap">
-          <div className="w-0 flex-1 flex items-center text-xs">
-            <p className="font-medium text-gray-700">
-              <span className="md:inline">
-                AsyncAPI Conference 2022 has ended. Good news: you can still watch the recording! ⭐️
-              </span>
-            </p>
-          </div>
-          <div className="order-3 flex-shrink-0 sm:order-2 smmd:block">
-            <div className="flex">
-              <a
-                href={`https://www.youtube.com/watch?v=${recordings['1']}`}
-                className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50"
-                target="_blank" rel="noopener noreferrer"
-              >
-                Day 1
-              </a>
-              <a
-                href={`https://www.youtube.com/watch?v=${recordings['2']}`}
-                className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50 ml-1"
-                target="_blank" rel="noopener noreferrer"
-              >
-                Day 2
-              </a>
-              <a
-                href={`https://www.youtube.com/watch?v=${recordings['3']}`}
-                className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50 ml-1"
-                target="_blank" rel="noopener noreferrer"
-              >
-                Day 3
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   );
