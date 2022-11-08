@@ -25,9 +25,9 @@ flowchart LR
 <DocsButton
  suggestions={[
     {
-      href:'/docs/concepts/channel',
+      href:'/docs/concepts/application',
       type: 'back',  
-      title: 'Channel',
+      title: 'Application',
    },
    {
       href:'/docs/tutorials',
