@@ -157,7 +157,7 @@ function CommunityIndexPage() {
       <div className="mt-10">
         <Heading level="h1" typeStyle="heading-xl" className="">
           <span className="title block md:-mt-1 leading-[3rem]">
-            The home <br /> for developer <br /> communities
+            Welcome to <br /> the Community
           </span>
         </Heading>
       </div>
@@ -493,30 +493,35 @@ function CommunityIndexPage() {
         </div>
         <div className="mt-10 md:flex justify-between w-full h-full-screen md:h-130">
           <div className="w-full md:w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-half-screen md:h-full bg-center">
-            <div className="w-full h-full bg-primary-500 opacity-25 absolute rounded-lg" />
-            <div className="w-full h-full flex flex-col justify-end absolute">
-              <div className="bg-primary-400 text-left rounded-b-lg p-5 ">
-                <Heading
-                  level="h2"
-                  typeStyle="heading-lg"
-                  className="text-white"
-                >
-                  Browse our Tutorials
-                </Heading>
-                <Heading
-                  level="h2"
-                  typeStyle="body-lg"
-                  textColor="text-gray-900"
-                  className="text-slate-500 text-sm"
-                >
-                  We have thousands of tutorials covering a wide range of
-                  topics. Jump into our catalog!
-                </Heading>
+            <a href="/docs/tutorials">
+              <div className="w-full h-full bg-primary-500 opacity-25 absolute rounded-lg" />
+              <div className="w-full h-full flex flex-col justify-end absolute">
+                <div className="bg-primary-400 text-left rounded-b-lg p-5 ">
+                  <Heading
+                    level="h2"
+                    typeStyle="heading-lg"
+                    className="text-white"
+                  >
+                    Browse our Tutorials
+                  </Heading>
+                  <Heading
+                    level="h2"
+                    typeStyle="body-lg"
+                    textColor="text-gray-900"
+                    className="text-slate-500 text-sm"
+                  >
+                    We have thousands of tutorials covering a wide range of
+                    topics. Jump into our catalog!
+                  </Heading>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div className="h-half-screen md:h-full w-full md:w-2/4 md:flex md:flex-col md:justify-around mt-10 md:mt-0">
             <div className="h-4/6 md:h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative">
+              <div className="absolute bg-green-400 p-2 rounded-lg text-white">
+                coming soon
+              </div>
               <div className="w-full h-full bg-pink-500 opacity-25 absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-pink-300 text-left rounded-b-lg p-5 ">
@@ -533,34 +538,38 @@ function CommunityIndexPage() {
                     textColor="text-gray-900"
                     className="text-slate-500 text-sm"
                   >
-                    We have thousands of tutorials covering a wide range of
-                    topics. Jump into our catalog!
+                    See how AsyncAPI helps transform businesses
                   </Heading>
                 </div>
               </div>
             </div>
             <div className="h-4/6 md:h-beforeHalf mt-5 rounded-lg shadow-lg bg-roadmapCover bg-cover md:h-full bg-center relative">
-              <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
-              <div className="w-full h-full flex flex-col justify-end absolute">
-                <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
-                  <Heading
-                    level="h2"
-                    typeStyle="heading-md"
-                    className="text-white"
-                  >
-                    Look into our Roadmap
-                  </Heading>
-                  <Heading
-                    level="h2"
-                    typeStyle="body-md"
-                    textColor="text-gray-900"
-                    className="text-slate-500 text-sm"
-                  >
-                    We have thousands of tutorials covering a wide range of
-                    topics. Jump into our catalog!
-                  </Heading>
+              <a
+                href="https://github.com/asyncapi/community/discussions/513"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
+                <div className="w-full h-full flex flex-col justify-end absolute">
+                  <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
+                    <Heading
+                      level="h2"
+                      typeStyle="heading-md"
+                      className="text-white"
+                    >
+                      Look into our community goals
+                    </Heading>
+                    <Heading
+                      level="h2"
+                      typeStyle="body-md"
+                      textColor="text-gray-900"
+                      className="text-slate-500 text-sm"
+                    >
+                      AsyncAPI community building/maintenance goals for 2023
+                    </Heading>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
