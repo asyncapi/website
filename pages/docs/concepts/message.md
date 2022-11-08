@@ -23,7 +23,7 @@ In the diagram above, the sender application transmits a `message` to the receiv
 A `message` carries information from one application to the other, while an `event` is a message that provides details of something that has already occurred. `Messages` contain all necessary information required to perform the request, while `events` only contain data of the changed state.
 Overall, `events` are `messages` but not all `messages` are `events`.
 
-
+---
 <DocsButton
  suggestions={[
     {
