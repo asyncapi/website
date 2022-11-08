@@ -1,18 +1,11 @@
 ---
 title: Validate Messages/Events in runtime
 description: This guide explains different use cases for messages/events validation using AsyncAPI.
+weight: 120
 ---
 
 # Introduction
-
-In this guide, you will learn how to validate the messages in your AsyncAPI document after creating your application in runtime.
-
-# Prerequisites
-Because this guide covers two different options for validating AsyncAPI messages, there are different tool options you might choose to install:
-
-- [Node.js](https://nodejs.org/en/download/) (v15 or newer).
-- [AsyncAPI validator](https://www.npmjs.com/package/asyncapi-validator)
-- [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway)
+In this guide, you will learn how to validate the messages in in runtime after creating your application using AsyncAPI.
 
 # Message validation
 In order to understand message validation, we need to first understand the basic components involved.
@@ -29,7 +22,7 @@ stateDiagram-v2
     Broker --> Consumer : valid message
     Broker --> Fail : invalid message
 ```
-There are two tools to validate AsyncAPI message (events); [AsyncAPI validator](https://github.com/WaleedAshraf/asyncapi-validator) validates your messages against your AsyncAPI schema and [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway) validates messages on a gateway, before they reach the app.
+To validate AsyncAPI messages (events), we have two options: [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) validates your messages against your AsyncAPI schema, and [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway) validates messages on a gateway, before they reach the app. 
 
 Let's further break down how validation works for both.
 
@@ -134,3 +127,20 @@ Native broker validation can also be implemented using methods other than AsyncA
 - AsyncAPI file and demo can be opened with [Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
 
 - You can check out other AsyncAPI validators [here](https://www.asyncapi.com/docs/tools#validators)
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/guides/validate',
+      title: 'Validate AsyncAPI Documents',
+      type:'back',
+    },
+    {
+      href: '/docs/reference',
+      title: 'Overview',
+      type:'next',
+    }
+  ]}
+/>
