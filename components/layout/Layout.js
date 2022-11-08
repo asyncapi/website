@@ -21,23 +21,23 @@ export default function Layout({ children }) {
       </DocsLayout>
     )
   }
-  else if (pathname.startsWith('/community/docs/')) {
+  else if (pathname.startsWith('/community/community-docs/')) {
     const posts = getAllPosts();
     const post = getPostBySlug(pathname);
     return (
       <DocsLayout
         post={post}
-        navItems={posts.filter((p) => p.slug.startsWith('/community/docs'))}
+        navItems={posts.filter((p) => p.slug.startsWith('/community/community-docs'))}
       >
         {children}
       </DocsLayout>
     );
-  } else if (pathname.startsWith('/community/docs')) {
+  } else if (pathname.startsWith('/community/community-docs')) {
     const posts = getAllPosts();
     return (
       <CommunityDocsContext.Provider
         value={{
-          navItems: posts.filter((p) => p.slug.startsWith('/community/docs/')),
+          navItems: posts.filter((p) => p.slug.startsWith('/community/community-docs/')),
         }}
       >
         {children}

@@ -142,11 +142,11 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </SearchButton>
               
               <nav className="flex-1 bg-white">
-                <ul>
+                <u l>
                   {Object.values(navigation).map(navItem => (
                     <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
                   ))}
-                </ul>
+                </u>
               </nav>
 
             </div>

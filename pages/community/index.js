@@ -139,7 +139,7 @@ const quickLinks = [
     title: 'Docs & Resources',
     bg: 'white',
     color: 'primary-600',
-    link: '/community/docs',
+    link: '/community/community-docs',
   },
 ];
 
