@@ -20,7 +20,18 @@ A{{sender application}} --> b --> C{{receiver application}}
 In the diagram above, the sender application transmits a `message` to the receiver application.
 
 ## Messages vs Events
-A `message` carries information from one application to the other, while an `event` is a message that provides details of something that has already occurred. `Messages` contain all necessary information required to perform the request, while `events` only contain data of the changed state.
+A `message` carries information from one application to the other, while an `event` is a message that provides details of something that has already occurred. One important aspect to note is that depending on the type of information a `message` contains, it can fall under an _event_, _query_, or _command_. 
+*See the diagram below.*
+
+``` mermaid
+graph TD
+    A(Message)
+    A --> B(Event)
+    A --> C(Request)
+    C --> D(Query)
+    C --> E(Command)
+```
+
 Overall, `events` are `messages` but not all `messages` are `events`.
 
 ---
