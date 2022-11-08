@@ -15,3 +15,24 @@ A protocol is a mechanism that handles the exchange of messages. It provides a w
 
 ## Why do we need protocols?
 Whenever a producer detects a state change (events) and publishes those events as messages, a protocol carries those messages to the channel and then to a consumer. Protocol plays a vital role in message transmission.
+
+```mermaid
+flowchart LR
+    a[Producer]-- Message 1 --->c[(Broker)]
+    c-- Message 1 ---> b[Consumer]
+```
+
+<DocsButton
+ suggestions={[
+    {
+      href:'/docs/concepts/channel',
+      type: 'back',  
+      title: 'Channel',
+   },
+   {
+      href:'/docs/tutorials',
+      type: 'next',  
+      title: 'Tutorials - Overview',
+   }
+ ]}
+/>
