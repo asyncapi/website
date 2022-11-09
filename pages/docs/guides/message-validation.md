@@ -5,7 +5,7 @@ weight: 120
 ---
 
 # Introduction
-In this guide, you will learn how to validate the messages in in runtime after creating your application using AsyncAPI.
+This guide will teach you how to validate the messages in runtime after creating your application using AsyncAPI.
 
 # Message validation
 To understand message validation, we must first understand the basic components involved.
