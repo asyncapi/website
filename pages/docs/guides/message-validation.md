@@ -30,7 +30,7 @@ Let's further break down how validation works for both.
 The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator for AsyncAPI schema. 
 
 ### `messageId` validation method
-The messageId is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
+The `messageId` is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
 <CodeBlock>
 `.validateByMessageId(key, payload)`
 </CodeBlock>
