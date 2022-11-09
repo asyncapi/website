@@ -201,7 +201,7 @@
 			"parser-js",
 			"parser-go",
 			"playground",
-                        "server-api",
+			"server-api",
 			"template-for-go-projects",
 			"website"
 		]
@@ -437,6 +437,14 @@
 			"bindings",
 			"spec",
 			"spec-json-schemas"
+		]
+	},
+	{
+		"name": "Viacheslav Turovskyi",
+		"github": "aeworxet",
+		"availableForHire": false,
+		"repos": [
+			"bundler"
 		]
 	}
 ]
