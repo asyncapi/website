@@ -72,8 +72,7 @@ va.validateByMessageId('UserRemoved', {
 </CodeBlock>
 
 ## AsyncAPI gateway validation
-All incoming messages are intercepted by the AsyncAPI gateway and routed through middleware and handler pipelines.
-The AsyncAPI gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
+AsyncAPI gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The AsyncAPI gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
 
 <Remember>
 Currently, only the Kafka protocol is supported.
