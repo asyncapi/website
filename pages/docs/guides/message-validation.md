@@ -110,7 +110,7 @@ properties:
  "_asyncapi_eg_validation_error": "{\"ts\":\"2021-12-20T11:33:26.583143572Z\",\"errors\":[\"lumens: Invalid type. Expected: integer, given: boolean\"]}",
  ```
 ## Native broker validation
-Native broker Validation enables the broker to verify that message produced to a consumer is using a valid schema ID in Schema Registry that is registered in your environment. If it is valid, messages are allowed to consumer.
+Native broker validation enables the broker to verify that messages produced by a consumer use a valid schema ID in the Schema Registry of your environment. If it is valid, messages are passed on to the consumer.
  
 ```mermaid
 stateDiagram-v2
