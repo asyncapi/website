@@ -126,7 +126,7 @@ Native broker validation can also be implemented using methods other than AsyncA
 # Additional Resources
 - AsyncAPI file and demo can be opened with [Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
 
-- You can check out other AsyncAPI validators [here](https://www.asyncapi.com/docs/tools#validators)
+- Check out other [AsyncAPI validators](https://www.asyncapi.com/docs/tools#validators)
 
 ---
 
