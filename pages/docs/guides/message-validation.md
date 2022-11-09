@@ -1,5 +1,5 @@
 ---
-title: Validate Messages/Events in runtime
+title: Validate Messages/Events
 description: This guide explains different use cases for messages/events validation using AsyncAPI.
 weight: 120
 ---
