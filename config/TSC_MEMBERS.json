@@ -201,7 +201,7 @@
 			"parser-js",
 			"parser-go",
 			"playground",
-                        "server-api",
+			"server-api",
 			"template-for-go-projects",
 			"website"
 		]
@@ -278,6 +278,7 @@
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
+			"bindings",
 			"converter-go",
 			"event-gateway",
 			"go-watermill-template",
@@ -285,6 +286,8 @@
 			"parser-api",
 			"parser-go",
 			"server-api",
+			"spec",
+			"spec-json-schemas",
 			"template-for-go-projects"
 		]
 	},
@@ -421,6 +424,27 @@
 		"company": "Google",
 		"repos": [
 			"bindings"
+		]
+	},
+	{
+		"name": "Vladimír Gorej",
+		"github": "char0n",
+		"linkedin": "vladimirgorej",
+		"twitter": "vladimirgorej",
+		"availableForHire": false,
+		"company": "SmartBear",
+		"repos": [
+			"bindings",
+			"spec",
+			"spec-json-schemas"
+		]
+	},
+	{
+		"name": "Viacheslav Turovskyi",
+		"github": "aeworxet",
+		"availableForHire": false,
+		"repos": [
+			"bundler"
 		]
 	}
 ]

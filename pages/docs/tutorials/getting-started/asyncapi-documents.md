@@ -44,12 +44,12 @@ Your API documentation is now machine-readable –easily parseable by code— so
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/hello-world',
+      href: '/docs/tutorials/getting-started/hello-world',
       title: 'Hello World',
       type:'back',
     },
     {
-      href: '/docs/getting-started/servers',
+      href: '/docs/tutorials/getting-started/servers',
       title: 'Servers',
       type:'next',
     }

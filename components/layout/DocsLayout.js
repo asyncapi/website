@@ -12,14 +12,15 @@ import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
-    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
+    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on GitHub</a>
   } 
-  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
+  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
 }
 
 function buildNavTree(navItems) {
@@ -162,18 +163,20 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </div>
             )}
             
+            <AnnouncementHero className='ml-6' hideVideo={true} />
+
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
               <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
               <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
               <Heading level="h1" typeStyle="heading-lg">
                 {post.title}
               </Heading>
-            <div>
-              <p className="text-sm font-normal text-gray-600 font-sans antialiased">
-                Found an error? Have a suggestion? 
-                {generateEditLink(post)}
-              </p>
-            </div>
+              <div>
+                <p className="text-sm font-normal text-gray-600 font-sans antialiased">
+                  Found an error? Have a suggestion? 
+                  {generateEditLink(post)}
+                </p>
+              </div>
                 <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
