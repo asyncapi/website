@@ -88,7 +88,7 @@ graph TD
     INV -->|Yes| ERR[/Fail/] -- Produce request errored --> PR
     INV -->|No| BR
 ```
-You can spin up AsyncAPI gateway using AsyncAPI file. All the messages are forwarded to a websocket endpoint and in case the message/payload is invalid, it will include validation error message.
+You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
 ### UseCase
 You can use Kafka consumer/producer((kcat))[https://github.com/edenhill/kcat] ,a broker and a simple websocket to run AsyncAPI gateway in your machine.
