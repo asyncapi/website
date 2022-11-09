@@ -104,8 +104,7 @@ properties:
     format: date-time
     description: Date and time when the message was sent.
  ```
- Here the expected payload `lightMeasured` is an integer.
- If producer sends a message with type boolean, a validation error will be included in the message.
+Here the expected payload `lightMeasured` is an integer. A validation error will be included if the producer sends a message with the type boolean.
  ```
  "_asyncapi_eg_validation_error": "{\"ts\":\"2021-12-20T11:33:26.583143572Z\",\"errors\":[\"lumens: Invalid type. Expected: integer, given: boolean\"]}",
  ```
