@@ -22,7 +22,9 @@ stateDiagram-v2
     Broker --> Consumer : valid message
     Broker --> Fail : invalid message
 ```
-To validate AsyncAPI messages (events), we have two options: [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) validates your messages against your AsyncAPI schema, and [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway) validates messages on a gateway, before they reach the app. 
+To validate AsyncAPI messages (events), we have two options: 
+- [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator): validates your messages against your AsyncAPI schema 
+- [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway): validates messages on a gateway before they reach the app. 
 
 Let's further break down how validation works for both.
 
