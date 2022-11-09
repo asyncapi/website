@@ -1,6 +1,7 @@
 ---
 title: messages/events validation
-description: In this tutorial, you'll learn how to validate messages/events using AsyncAPI.
+description: In this tutorial, you'll learn how to validate AsyncAPI messages (events).
+
 weight: 130
 ---
 
