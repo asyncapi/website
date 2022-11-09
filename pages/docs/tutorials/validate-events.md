@@ -5,7 +5,8 @@ weight: 130
 ---
 
 # Introduction
-In this tutorial, you'll learn how to validate messages/events which are sent to your application using AsyncAPI.
+In this tutorial, you'll learn how to validate messages (events) that are sent to your AsyncAPI application.
+
 
 # Background context
 
