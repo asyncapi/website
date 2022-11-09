@@ -124,7 +124,7 @@ stateDiagram-v2
 Native broker validation can also be implemented using methods other than AsyncAPI. AsyncAPI will still work even if your payload is stored somewhere other than the schema registry; you don't need to create separate applications.
 
 # Additional Resources
-- AsyncAPI file and demo can be opened with [Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
+- Check out an [AsyncAPI file demo with Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
 
 - Check out other [AsyncAPI validators](https://www.asyncapi.com/docs/tools#validators)
 
