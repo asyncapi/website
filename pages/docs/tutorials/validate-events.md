@@ -35,7 +35,7 @@ In this step, we will send a message to our application using MQTT broker and ch
   
  Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
  
- <CodeBlock language="yaml">
+ <CodeBlock language="yaml" highlightedLines={[10,11]}>
   {`  message:
         name: lumensInfo
         payload:
