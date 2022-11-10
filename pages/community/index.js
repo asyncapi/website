@@ -5,7 +5,6 @@ import Button from '../../components/buttons/Button';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import GenericLayout from '../../components/layout/GenericLayout';
-import TextLink from '../../components/typography/TextLink';
 
 const orbit1 = [
   {
@@ -116,37 +115,10 @@ const orbit3 = [
   },
 ];
 
-const quickLinks = [
-  {
-    title: 'Ambassador Programs',
-    bg: 'white',
-    color: 'primary-600',
-    link: '/community/ambassador-program',
-  },
-  {
-    title: 'Events & Meetups',
-    bg: 'white',
-    color: 'primary-600',
-    link: '/community/events',
-  },
-  {
-    title: 'Community Members',
-    bg: 'white',
-    color: 'primary-600',
-    link: '/community/contributors',
-  },
-  {
-    title: 'Docs & Resources',
-    bg: 'white',
-    color: 'primary-600',
-    link: '/community/community-docs',
-  },
-];
-
 function CommunityIndexPage() {
   const image = '/img/social/website-card.png';
   const heading = (
-    <div className="text-center flex justify-center flex-col items-center">
+    <div className="text-center flex justify-center flex-col items-center mt-10 md:mt-0">
       <Heading
         className="countdown-text-gradient font-bold"
         level="h6"
@@ -168,7 +140,7 @@ function CommunityIndexPage() {
           textColor="text-gray-700"
           className="text-slate-500 text-sm"
         >
-          We"re a community of great people who are passionate about AsyncAPI.
+          We are a community of great people who are passionate about AsyncAPI.
           Join us in building the future of Event Driven APIs by asking
           questions, share ideas and build connection with each other
         </Heading>
@@ -221,16 +193,14 @@ function CommunityIndexPage() {
           </div>
         </div>
       </div>
-      <div className="text-center relative md:h-half-screen z-40 mt-15 md:mt-0">
-        <div className="gh-bg absolute">
-          <img
-            className="gh-img"
-            src="/img/homepage/discuss-page.png"
-            alt="github-discussion"
-          />
-        </div>
+      <div className="gh-img mt-10 md:mt-0 w-full h-auto w-full object-contain">
+        <img
+          className="gh-img object-contain"
+          src="/img/homepage/discuss-page.png"
+          alt="github-discussion"
+        />
       </div>
-      <div className="text-center flex justify-center flex-col items-center mt-72">
+      <div className="text-center flex justify-center flex-col items-center mt-[10rem]">
         <Heading level="h1" typeStyle="heading-xl" className="z-40">
           Home of #CommunityOps
         </Heading>
@@ -245,45 +215,20 @@ function CommunityIndexPage() {
             everywhere.
           </Heading>
         </div>
-        <div className="mt-10 md:mt-32 z-40">
-          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {quickLinks.map((link) => (
-              <TextLink
-                key={link.title}
-                href={link.link}
-                className="no-underline"
-              >
-                <li
-                  className={`h-44 w-54 md:h-72 md:w-72 justify-between border border-primary-100 shadow-xl hover:shadow-lg transition-all duration-300 ease-in-out rounded-xl px-3 pb-5 bg-${link.bg} text-left flex justify-end items-end cursor-pointer`}
-                >
-                  <h1
-                    className={`text:lg md:text-3xl font-black text-${link.color}`}
-                  >
-                    {link.title}
-                  </h1>
-                </li>
-              </TextLink>
-            ))}
-          </ul>
-        </div>
-        <div className="z-40 mt-28 bg-white w-full h-full-screen md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
-          <div className="p-10 h-half-screen md:flex justify-between md:w-2/5 md:h-full flex-col text-center md:text-left">
+        <div className="z-40 mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
+          <div className="p-10 flex justify-between w-full md:w-2/5 h-auto flex-col text-center md:text-left">
             <div>
               <Heading
                 level="h2"
                 typeStyle="heading-md"
                 textColor="text-gray-200"
               >
-                All community info, tracked
+                Support your rockstars
               </Heading>
             </div>
             <div>
-              <Heading
-                level="h2"
-                typeStyle="heading-lg"
-                className="mt-10 md:mt-0"
-              >
-                Community Platform
+              <Heading level="h2" typeStyle="heading-lg" className="mt-10">
+                Ambassador Programs
               </Heading>
               <Heading
                 level="h2"
@@ -291,27 +236,30 @@ function CommunityIndexPage() {
                 textColor="text-gray-700"
                 className="text-slate-500 text-sm mt-10"
               >
-                AsyncAPI’s incredible community of developers, designers,
-                technical writers, hail from over 83 countries, actively
-                contributing, collaborating and mentoring others to build with
-                AsyncAPI.
+                Launch community advocate programs that your members are proud
+                to be a part of. Powerful ambassador engagement analytics make
+                it easy to track and reward you contributors and build thriving
+                communities.
               </Heading>
               <div className="mt-10">
                 <Button
-                  text="Become part of the family"
+                  text="Become an ambassador"
                   buttonSize="medium"
-                  href="https://asyncapi.com/slack-invite"
-                  target="_blank"
-                  bgClassName="bg-primary-600"
+                  href="/community/ambassador-program"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
+          <div className="w-full h-fit-content md:w-3/6 flex justify-end rounded-lg">
+            <img
+              src="/img/homepage/ambassador.jpeg"
+              alt="slack-cover"
+              className="md:rounded-r-lg object-fit "
+            />
+          </div>
         </div>
-
-        <div className="z-40 mt-10 w-full h-full-screen md:h-130 shadow-xl md:flex md:justify-between">
-          <div className="p-10 bg-primary-500 rounded-t-lg md:rounded-t-none md:rounded-l-lg md:flex justify-between w-full md:w-3/5 h-half-screen md:h-full md:flex-col text-center md:text-left">
+        <div className="z-40 mt-10 w-full md:h-130 shadow-xl md:flex md:justify-between">
+          <div className="p-10 bg-primary-500 rounded-t-lg md:rounded-t-none md:rounded-l-lg md:flex justify-between w-full md:w-3/5 md:h-full md:flex-col text-center md:text-left">
             <div className="">
               <Heading
                 level="h2"
@@ -328,7 +276,7 @@ function CommunityIndexPage() {
                 textColor="text-white"
                 className="mt-10 md:mt-0"
               >
-                Events & Meetups
+                Meetings & Events
               </Heading>
               <Heading
                 level="h2"
@@ -345,12 +293,12 @@ function CommunityIndexPage() {
                   text="Explore more events"
                   buttonSize="medium"
                   href="/community/events"
-                  bgClassName="bg-pink-600"
+                  bgClassName="bg-secondary-500 hover:bg-secondary-400"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full h-half-screen md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
+          <div className="w-full md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
             <div className="bg-primary-500 w-full opacity-25 rounded-b-lg md:rounded-b-none md:rounded-r-lg" />
             <div className="absolute h-full w-full flex flex-col md:justify-center items-end item-right">
               <div className="w-4/5 mt-10">
@@ -448,19 +396,23 @@ function CommunityIndexPage() {
         </div>
         <div className="community-pattern absolute"></div>
         <div className="z-40 mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
-          <div className="p-10 flex justify-between w-full md:w-2/5 h-full flex-col text-center md:text-left">
+          <div className="p-10 md:flex justify-between md:w-2/5 md:h-full flex-col text-center md:text-left">
             <div>
               <Heading
                 level="h2"
                 typeStyle="heading-md"
                 textColor="text-gray-200"
               >
-                Support your rockstars
+                All community info, tracked
               </Heading>
             </div>
             <div>
-              <Heading level="h2" typeStyle="heading-lg" className="mt-10">
-                Ambassador Programs
+              <Heading
+                level="h2"
+                typeStyle="heading-lg"
+                className="mt-10 md:mt-0"
+              >
+                AsyncAPI Slack
               </Heading>
               <Heading
                 level="h2"
@@ -468,114 +420,84 @@ function CommunityIndexPage() {
                 textColor="text-gray-700"
                 className="text-slate-500 text-sm mt-10"
               >
-                Launch community advocate programs that your members are proud
-                to be a part of. Powerful ambassador engagement analytics make
-                it easy to track and reward you contributors and build thriving
-                communities.
+                AsyncAPI’s incredible community of developers, designers,
+                technical writers, hail from over 83 countries, actively
+                contributing, collaborating and mentoring others to build with
+                AsyncAPI.
               </Heading>
               <div className="mt-10">
                 <Button
-                  text="Become an ambassador"
+                  text="Join us on slack"
                   buttonSize="medium"
-                  href="/community/ambassador-program"
-                  bgClassName="bg-primary-600"
+                  href="https://asyncapi.com/slack-invite"
+                  target="_blank"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full h-half-screen md:h-full md:w-3/6 flex justify-end rounded-lg">
-            <img
-              src="/img/homepage/ambassador.jpeg"
-              alt="slack-cover"
-              className="rounded-r-lg"
-            />
-          </div>
+          <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
         </div>
-        <div className="mt-10 md:flex justify-between w-full h-full-screen md:h-130">
-          <div className="w-full md:w-3/4 mr-5 rounded-lg relative shadow-xl bg-tutorialCover bg-cover h-half-screen md:h-full bg-center">
-            <a href="/docs/tutorials">
-              <div className="w-full h-full bg-primary-500 opacity-25 absolute rounded-lg" />
+        <div className="mt-10 md:flex justify-between w-full h-half-screen">
+          <div className="h-full rounded-lg shadow-lg bg-roadmapCover bg-cover bg-center relative md:w-[49%]">
+            <a
+              href="https://github.com/asyncapi/community/discussions/513"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="w-full h-full absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
-                <div className="bg-primary-400 text-left rounded-b-lg p-5 ">
-                  <Heading
-                    level="h2"
-                    typeStyle="heading-lg"
-                    className="text-white"
-                  >
-                    Browse our Tutorials
-                  </Heading>
-                  <Heading
-                    level="h2"
-                    typeStyle="body-lg"
-                    textColor="text-gray-900"
-                    className="text-slate-500 text-sm"
-                  >
-                    We have thousands of tutorials covering a wide range of
-                    topics. Jump into our catalog!
-                  </Heading>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="h-half-screen md:h-full w-full md:w-2/4 md:flex md:flex-col md:justify-around mt-10 md:mt-0">
-            <div className="h-4/6 md:h-beforeHalf rounded-lg shadow-lg bg-usecases bg-cover bg-center relative">
-              <div className="absolute bg-green-400 p-2 rounded-lg text-white">
-                coming soon
-              </div>
-              <div className="w-full h-full bg-pink-500 opacity-25 absolute rounded-lg" />
-              <div className="w-full h-full flex flex-col justify-end absolute">
-                <div className="bg-pink-300 text-left rounded-b-lg p-5 ">
+                <div className="bg-primary-600 text-left rounded-b-lg p-5 ">
                   <Heading
                     level="h2"
                     typeStyle="heading-md"
                     className="text-white"
                   >
-                    Explore our Use-cases
+                    Community Goals 2023
                   </Heading>
                   <Heading
                     level="h2"
                     typeStyle="body-md"
-                    textColor="text-gray-900"
-                    className="text-slate-500 text-sm"
+                    textColor="text-white"
+                    className="text-sm"
                   >
-                    See how AsyncAPI helps transform businesses
+                    Look into the AsyncAPI community building/maintenance goals
+                    for 2023
                   </Heading>
                 </div>
               </div>
+            </a>
+          </div>
+          <div className="h-full rounded-lg shadow-lg bg-usecases bg-cover bg-center mt-10 relative md:w-[49%] md:mt-0">
+            <div className="absolute bg-white p-2">
+              <div className="countdown-text-gradient font-bold text-xl">
+                coming soon
+              </div>
             </div>
-            <div className="h-4/6 md:h-beforeHalf mt-5 rounded-lg shadow-lg bg-roadmapCover bg-cover md:h-full bg-center relative">
-              <a
-                href="https://github.com/asyncapi/community/discussions/513"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="w-full h-full bg-secondary-500 opacity-25 absolute rounded-lg" />
-                <div className="w-full h-full flex flex-col justify-end absolute">
-                  <div className="bg-secondary-300 text-left rounded-b-lg p-5 ">
-                    <Heading
-                      level="h2"
-                      typeStyle="heading-md"
-                      className="text-white"
-                    >
-                      Look into our community goals
-                    </Heading>
-                    <Heading
-                      level="h2"
-                      typeStyle="body-md"
-                      textColor="text-gray-900"
-                      className="text-slate-500 text-sm"
-                    >
-                      AsyncAPI community building/maintenance goals for 2023
-                    </Heading>
-                  </div>
-                </div>
-              </a>
+            <div className="w-full h-full absolute rounded-lg" />
+            <div className="w-full h-full flex flex-col justify-end absolute">
+              <div className="bg-pink-600 text-left rounded-b-lg p-5 ">
+                <Heading
+                  level="h2"
+                  typeStyle="heading-md"
+                  className="text-white"
+                >
+                  Explore Use-cases
+                </Heading>
+                <Heading
+                  level="h2"
+                  typeStyle="body-md"
+                  textColor="text-white"
+                  className="text-sm"
+                >
+                  See how AsyncAPI helps transform businesses
+                </Heading>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-72 md:mt-36 flex justify-center">
-        <NewsletterSubscribe formName="form 2" />
+        <div className="bg-dark py-12 mt-8 mt-[35rem] md:mt-20 rounded-lg">
+          <NewsletterSubscribe dark />
+        </div>
       </div>
     </GenericLayout>
   );
