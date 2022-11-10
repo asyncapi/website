@@ -7,20 +7,6 @@ import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
 
 function Index() {
   const image = '/img/social/website-card.png';
-  // const data = Array(5).fill({
-  //   img: '/img/homepage/ale.jpeg',
-  //   name: 'Alejandra Quatzelli',
-  //   username: 'alejandra',
-  //   countryFlag: '🇲🇽',
-  //   country: 'Mexico',
-  //   tags: ['Documentation', 'Articles'],
-  //   title: 'DevRel & DevDocs @AsyncAPI',
-  //   bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
-  //   twitter: 'https://twitter.com/QuetzalliAle',
-  //   github: 'https://github.com/alequetzalli',
-  //   linkedin: 'https://www.linkedin.com/in/alejandra-quat',
-  //   contributions: []
-  // });
   const [posts, setPosts] = useState(ambassadors);
   return (
     <GenericLayout
@@ -38,12 +24,15 @@ function Index() {
         </div>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {posts.map((contributor, i) => {
+            console.log(contributor)
             return (
               <Link
                 key={i}
                 href={{
                   pathname: `/community/contributors/${contributor.github}`,
-                  query: contributor,
+                  query: {
+                    data: JSON.stringify(contributor),
+                  },
                 }}
               >
                 <div className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300">

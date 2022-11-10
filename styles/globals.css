@@ -318,6 +318,10 @@ abbr[title] {
   box-shadow: 5px 20px 18px 10px #e8e8e8;
   background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
 }
+.c-profile-line {
+  border-radius: 10px;
+  background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
+}
 .community-pattern {
   background: url('/img/homepage/circular-pattern.png');
   width: 100%;
