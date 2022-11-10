@@ -116,4 +116,5 @@ function Search({ data, posts, setPosts }) {
   );
 }
 
+
 export default Index;

@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react'
 import IconGithub from '../../../../components/icons/Github';
 import IconLinkedIn from '../../../../components/icons/LinkedIn';
@@ -6,10 +5,27 @@ import IconTwitter from '../../../../components/icons/Twitter';
 import GenericLayout from '../../../../components/layout/GenericLayout'
 import Heading from '../../../../components/typography/Heading';
 
-function Index() {
+
+export async function getServerSideProps({query}) {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+    const profile = JSON.parse(query.data);
+     const contributor = await profile;
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      contributor,
+    },
+  };
+}
+
+function Index({contributor}) {
     const image = '/img/social/website-card.png';
-    const routeData = useRouter()
-    const profile = JSON.parse(routeData.query.data);
+    if(!contributor) {
+      return <div>djkbfkj</div>
+    }
   return (
     <GenericLayout
       title="AsyncAPI Ambassador Program"
@@ -21,18 +37,18 @@ function Index() {
       <div className="mt-20 flex justify-between items-center">
         <div className="w-[65%]">
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
-            {profile.name}
+            {contributor.name}
           </Heading>
           <div className="mt-4 flex items-center">
-            <span>{profile.countryFlag}</span>
-            <span className="font-bold ml-2">{profile.country}</span>
+            <span>{contributor.countryFlag}</span>
+            <span className="font-bold ml-2">{contributor.country}</span>
           </div>
           <div className="mt-10">
-            <Heading typeStyle="body-lg">{profile.bio}</Heading>
+            <Heading typeStyle="body-lg">{contributor.bio}</Heading>
           </div>
           <div className="mt-10 flex items-center">
             <a
-              href={`https://www.twitter.com/${profile.twitter}`}
+              href={`https://www.twitter.com/${contributor.twitter}`}
               target="_blank"
               rel="noreferrer"
               className="underline"
@@ -42,7 +58,7 @@ function Index() {
               </div>
             </a>
             <a
-              href={`https://www.github.com/${profile.github}`}
+              href={`https://www.github.com/${contributor.github}`}
               target="_blank"
               rel="noreferrer"
               className="underline"
@@ -52,7 +68,7 @@ function Index() {
               </div>
             </a>
             <a
-              href={`https://www.linkedin.com/in/${profile.linkedin}`}
+              href={`https://www.linkedin.com/in/${contributor.linkedin}`}
               target="_blank"
               rel="noreferrer"
               className="underline"
@@ -65,18 +81,18 @@ function Index() {
         </div>
         <div>
           <img
-            src={profile.img}
-            alt={profile.name}
+            src={contributor.img}
+            alt={contributor.name}
             className="w-[350px] rounded-lg"
           />
         </div>
       </div>
-      <div className="c-profile-line h-[1px] mt-20" />
+      <div className="c-contributor-line h-[1px] mt-20" />
       <Heading typeStyle="heading-lg" className="mt-8">
         Contributions
       </Heading>
       <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
-        {profile.contributions.map((contribution) => {
+        {contributor.contributions.map((contribution) => {
           return (
             <div
               key={contribution.title}
