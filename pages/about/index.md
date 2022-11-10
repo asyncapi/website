@@ -91,7 +91,7 @@ All the information about the project's economy, the amount of the donations, th
 - [**Twitter**](https://twitter.com/asyncapispec?lang=es): It's used for disseminating all news and information regarding the project, resolving user queries, and sharing the latest updates within AsyncAPI.
 - [**Slack workspace**](https://www.asyncapi.com/slack-invite): The main place of encounter for the whole community of AsyncAPI.
 - [**Newsletter**](https://www.asyncapi.com/newsletter): To learn about the status of the project, news, actualizations, recorded events, and meetings.
-- [**Blog**](/blog): It’s used to disseminate information related to the project. It's also open to collaborations.
+- [**Blog**](https://www.asyncapi.com/blog): It’s used to disseminate information related to the project. It's also open to collaborations.
 - [**LinkedIn**](https://es.linkedin.com/company/asyncapi): It's used to publish news related to the project or its environment. It’s also used as a source of information.
 - [**YouTube Channel**](https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"): Where you can find conferences, AsyncAPI Open Meetings, and much more.
 - [**GitHub**](https://github.com/asyncapi): Issues (bugs, feature requests, etc.) and pull requests (PRs) for fixes or new features already discussed, as per the contributing guidelines.
