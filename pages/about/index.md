@@ -26,7 +26,7 @@ In doing so, we achieve:
 - Making the project as democratic as possible.
 - Relying on an asynchronous decision-making process that empowers the people who "work," not the companies who "pay." 
 
-In other words, it [gives equal power to individual and corporate contributors](/blog/governance-motivation).
+In other words, it [gives equal power to individual and corporate contributors](https://www.asyncapi.com/blog/governance-motivation).
 
 ## Maintainers 
 
@@ -44,8 +44,8 @@ We apologize in advance if we failed to recognize your work. Feel free to contac
 
 ## AsyncAPI, in numbers
 Interested to know more about our growth? Feel free to check our annual summary report: 
-- [Summary report 2020](/blog/2020-summary)
-- [Summary report 2021](/blog/2021-summary)
+- [Summary report 2020](https://www.asyncapi.com/blog/2020-summary)
+- [Summary report 2021](https://www.asyncapi.com/blog/2021-summary)
           
 ## Companies support
 

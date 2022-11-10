@@ -4,5 +4,11 @@
     {
       "pattern": "^(https://www.postman.com/company/careers/|#|http://localhost|http://www.fmvilas.com|https://github.com/issues?)"
     }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://www.asyncapi.com/"
+    }
   ]
 }
