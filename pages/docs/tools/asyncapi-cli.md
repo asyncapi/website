@@ -86,7 +86,7 @@ curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with th
 
 All releases of the CLI archived files are listed [here](https://github.com/asyncapi/cli/releases).
 
-Once you have downloaded the archived file, untar the it by running this command in your terminal:
+Once you have downloaded the archived file, untar it by running this command in your terminal:
 ```sh
 tar -xzf asyncapi.tar.gz
 ```
