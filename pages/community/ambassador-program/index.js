@@ -4,6 +4,7 @@ import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import IconRocket from '../../../components/icons/Rocket';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
+import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
 
 const data = [
   {
@@ -179,18 +180,7 @@ function Index() {
           Learn, share the knowledge with community members
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {Array(8)
-            .fill({
-              img: '/img/homepage/ale.jpeg',
-              name: 'Alejandra Quatzelli',
-              country: '🇲🇽 ',
-              className: 'top-[2rem] left-[40rem]',
-              title: 'DevRel & DevDocs @AsyncAPI',
-              bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
-              twitter: 'https://twitter.com/QuetzalliAle',
-              github: 'https://github.com/alequetzalli',
-              linkedin: 'https://www.linkedin.com/in/alejandra-quat',
-            })
+          {ambassadors
             .map((ambassador, i) => (
               <div key={i} className="rounded-md border text-left mt-6 pb-2">
                 <div className="flex justify-between p-2">
@@ -199,8 +189,10 @@ function Index() {
                 </div>
                 <div className="p-2">
                   <div
-                    className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[300px] bg-center bg-center rounded-md`}
-                  ></div>
+                    className= "w-full h-auto bg-center bg-center rounded-md"
+                  >
+                    <img src={ambassador.img} alt={ambassador.name} className='h-auto rounded-lg' />
+                  </div>
                   <div className="mt-2 w-full rounded-lg border p-2 text-sm">
                     {ambassador.title}
                   </div>
