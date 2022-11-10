@@ -23,7 +23,6 @@ function EventPostItem({ post, className, id }) {
     color = 'text-blue-400'
       break;
   }
-  console.log(post)
   return (
     <li key={id} className={`${className}`}>
       <article className="h-full rounded-lg shadow-md hover:shadow-lg">
