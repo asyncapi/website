@@ -25,12 +25,12 @@ The diagram above shows the communication between a `producer` and `consumer`, w
 <DocsButton
  suggestions={[
     {
-      href:'/docs/concepts/channel',
+      href:'/docs/concepts/consumer',
       type: 'back',  
-      title: 'Channel',
+      title: 'Consumer',
    },
    {
-      href:'/docs/tutorials',
+      href:'/docs/concepts/message',
       type: 'next',  
       title: 'Message',
    }
