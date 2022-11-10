@@ -17,7 +17,7 @@ This article is a continuation of a tradition where once a year, we summarize al
 
 It is good to see how we are doing, how are we growing :rocket:
 
-If you are interested in previous years, look at [this 2020 summary article](/blog/2020-summary).
+If you are interested in previous years, look at [this 2020 summary article](https://www.asyncapi.com/blog/2020-summary).
 
 ## Slack
 
