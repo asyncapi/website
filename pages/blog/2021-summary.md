@@ -529,7 +529,7 @@ The increase in numbers is insanely huge. People automatically say that it is be
 Let me challenge you:
 - Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit internal proxy. Not included in downloads.
 - Most build systems cache packages that are downloaded already to improve performance. Not included in downloads.
-  When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
+ When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
 An interesting observation is that Generator uses Parser and Parser uses the package with AsyncAPI specs. So you can read from this data that packages with specs are primarily used in the AsyncAPI Parser. You can also see that Parser is a backbone for many more projects than just the AsyncAPI Generator.
 
