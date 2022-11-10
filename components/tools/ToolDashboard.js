@@ -140,7 +140,10 @@ export default function ToolDashboard() {
                 </div>
             </div>
             <div className="mt-10">
-                {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div>None from tools list meet the search requirements</div>}
+                {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
+                   <img src='/img/illustrations/not-found.webp' className='w-1/2 m-auto' />
+                   <div className='text-center text-lg'> Sorry, we don't have tools according to your needs. </div>
+                </div>}
             </div>
         </div>
     )
