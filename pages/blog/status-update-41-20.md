@@ -18,7 +18,7 @@ I'm super excited to share with you that last week we released [a new AsyncAPI w
 
 - On a home page, we now promote [Studio](https://studio.asyncapi.com) more and put much more emphasis on the different ways you can engage with AsyncAPI Community,
 - Documentation view got additional navigation per document so, for example, it is now much better to navigate through different sections of [the specification document](/docs/specifications/2.0.0),
-- The tools section is now dedicated to AsyncAPI's official tools to clarify the AsyncAPI initiative is not just the spec. Just have a look how much detailed is, for example, the [generator view](/tools/generator),
+- The tools section is now dedicated to AsyncAPI's official tools to clarify the AsyncAPI initiative is not just the spec. Just have a look how much detailed is, for example, the [generator view](https://www.asyncapi.com/tools/generator),
 - Don't worry, all the other tools are still there, under [the Tools section](https://github.com/asyncapi/website/tree/master/pages/tools)
 - The cherry on the cake is a much more appealing [Blog view](https://www.asyncapi.com/blog)
 
