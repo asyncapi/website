@@ -91,7 +91,8 @@ module.exports = {
       eventCover: "url('/img/homepage/event-cover.png')",
       channelCover: "url('/img/homepage/slack-cover.png')",
       tutorialCover: "url('/img/homepage/tutorials.png')",
-      usecases: "url('/img/homepage/usecases.png')",
+      usecases:
+        "url('https://cdn.dribbble.com/users/499731/screenshots/6648311/viceland_assets.png')",
       roadmapCover: "url('/img/homepage/roadmap.png')",
       confBg: "url('/img/homepage/confBlurBg.png')",
       eventGradient:
@@ -100,7 +101,7 @@ module.exports = {
         "url('https://images.pexels.com/photos/7388883/pexels-photo-7388883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       patternCover: "url('/img/illustrations/pattern.png')",
       ambassadorCover: "url('/img/homepage/gathering.jpg')",
-      mapCover: "url('/img/homepage/mapbase.png')"
+      mapCover: "url('/img/homepage/mapbase.png')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],

@@ -5,6 +5,7 @@ import Button from '../../components/buttons/Button';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import GenericLayout from '../../components/layout/GenericLayout';
+import Link from 'next/link';
 
 const orbit1 = [
   {
@@ -395,6 +396,64 @@ function CommunityIndexPage() {
           </div>
         </div>
         <div className="community-pattern absolute"></div>
+        <div className="mt-10 md:flex justify-between w-full h-half-screen">
+          <div className="h-full rounded-lg shadow-lg bg-roadmapCover bg-cover bg-center relative md:w-[49%]">
+            <a
+              href="https://github.com/asyncapi/community/discussions/513"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="w-full h-full absolute rounded-lg" />
+              <div className="w-full h-full flex flex-col justify-end absolute">
+                <div className="bg-primary-600 text-left rounded-b-lg p-5 ">
+                  <Heading
+                    level="h2"
+                    typeStyle="heading-md"
+                    className="text-white"
+                  >
+                    Community Goals 2023
+                  </Heading>
+                  <Heading
+                    level="h2"
+                    typeStyle="body-md"
+                    textColor="text-white"
+                    className="text-sm"
+                  >
+                    Look into the AsyncAPI community building/maintenance goals
+                    for 2023 and help us improve
+                  </Heading>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div className="h-full cursor-pointer rounded-lg shadow-lg bg-usecases bg-cover bg-center mt-10 relative md:w-[49%] md:mt-0">
+            <Link href="/community/contributors">
+              <div>
+                <div className="w-full h-full absolute rounded-lg" />
+                <div className="w-full h-full flex flex-col justify-end absolute">
+                  <div className="bg-yellow-600 text-left rounded-b-lg p-5 ">
+                    <Heading
+                      level="h2"
+                      typeStyle="heading-md"
+                      className="text-white"
+                    >
+                      Go above and beyond
+                    </Heading>
+                    <Heading
+                      level="h2"
+                      typeStyle="body-md"
+                      textColor="text-white"
+                      className="text-sm"
+                    >
+                      Recognize and lift up the people who inspire and contribute to our
+                      community
+                    </Heading>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
         <div className="z-40 mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
           <div className="p-10 md:flex justify-between md:w-2/5 md:h-full flex-col text-center md:text-left">
             <div>
@@ -436,64 +495,6 @@ function CommunityIndexPage() {
             </div>
           </div>
           <div className="w-full h-half-screen md:h-full md:w-3/6 md:flex md:justify-end bg-channelCover md:bg-left bg-cover"></div>
-        </div>
-        <div className="mt-10 md:flex justify-between w-full h-half-screen">
-          <div className="h-full rounded-lg shadow-lg bg-roadmapCover bg-cover bg-center relative md:w-[49%]">
-            <a
-              href="https://github.com/asyncapi/community/discussions/513"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="w-full h-full absolute rounded-lg" />
-              <div className="w-full h-full flex flex-col justify-end absolute">
-                <div className="bg-primary-600 text-left rounded-b-lg p-5 ">
-                  <Heading
-                    level="h2"
-                    typeStyle="heading-md"
-                    className="text-white"
-                  >
-                    Community Goals 2023
-                  </Heading>
-                  <Heading
-                    level="h2"
-                    typeStyle="body-md"
-                    textColor="text-white"
-                    className="text-sm"
-                  >
-                    Look into the AsyncAPI community building/maintenance goals
-                    for 2023
-                  </Heading>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="h-full rounded-lg shadow-lg bg-usecases bg-cover bg-center mt-10 relative md:w-[49%] md:mt-0">
-            <div className="absolute bg-white p-2">
-              <div className="countdown-text-gradient font-bold text-xl">
-                coming soon
-              </div>
-            </div>
-            <div className="w-full h-full absolute rounded-lg" />
-            <div className="w-full h-full flex flex-col justify-end absolute">
-              <div className="bg-pink-600 text-left rounded-b-lg p-5 ">
-                <Heading
-                  level="h2"
-                  typeStyle="heading-md"
-                  className="text-white"
-                >
-                  Explore Use-cases
-                </Heading>
-                <Heading
-                  level="h2"
-                  typeStyle="body-md"
-                  textColor="text-white"
-                  className="text-sm"
-                >
-                  See how AsyncAPI helps transform businesses
-                </Heading>
-              </div>
-            </div>
-          </div>
         </div>
         <div className="bg-dark py-12 mt-8 mt-[35rem] md:mt-20 rounded-lg">
           <NewsletterSubscribe dark />
