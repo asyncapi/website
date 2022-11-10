@@ -4,7 +4,7 @@ weight: 1
 ---
 
 ## Install CLI Using NPM and Node
-To use the AsynAPI CLI tool, you must have Node.js version 10 or higher and NPM installed on your PC. To check if you already have Node installed, run this in your terminal:
+To use the AsynAPI CLI tool, you must have Node.js version 10 or higher and NPM installed on your PC. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
 # check if node is installed
@@ -60,7 +60,7 @@ sudo installer -pkg asyncapi.pkg -target /
 The mode of installing AsyncAPI CLI tool on your Linux operating system depends on the Linux distro you are using.
 
 ### Debian Based Distros
-For Debian based distros, you can install the AsycAPI CLI using the `dpkg` package manager for debian.
+For Debian based distros, you can install the AsycAPI CLI using the `dpkg` package manager for Debian.
 To download the latest release of the CLI, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb
@@ -86,12 +86,12 @@ curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with th
 
 All releases of the CLI archived files are listed [here](https://github.com/asyncapi/cli/releases).
 
-Untar the archive file by running this command in your terminal:
+Once you have downloaded the archived file, untar the it by running this command in your terminal:
 ```sh
 tar -xzf asyncapi.tar.gz
 ```
 
-The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you will have to create a `symlink`. If the current path you are on is `/usr/local/bin` for example, you will have to create the `symlink` in the `/usr/local/bin` directory by following these steps:
+The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you will have to create a `symlink`. If the current path you are on is `/user/local/bin` for example, you will have to create the `symlink` in the `/user/local/bin` directory by following these steps:
 ```sh
 # cd into the unarchived directory
 cd asyncapi
@@ -100,14 +100,14 @@ cd asyncapi
 pwd
 
 # Create a symlink
-ln -s <absolute-path>/bin/asyncapi /usr/local/bin/asyncapi
+ln -s <absolute-path>/bin/asyncapi /user/local/bin/asyncapi
 
 # The "asyncapi" command should be available to be used
 asyncapi
 ```
 
 ## Usage
-AsyncAPI CLI makes it easier to work with AsyncAPI files. There has a well-documented help command if you need one. To get help, run this command in your terminal:
+AsyncAPI CLI makes it easier to work with AsyncAPI files. There is a well-documented help command for the CLI if you need one. To get help, run this command in your terminal:
 ```sh
 asyncapi --help
 ```
