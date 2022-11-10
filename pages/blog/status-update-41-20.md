@@ -14,7 +14,7 @@ authors:
 
 ## New Website
 
-I'm super excited to share with you that last week we released [a new AsyncAPI website](/):
+I'm super excited to share with you that last week we released [a new AsyncAPI website](https://www.asyncapi.com/):
 
 - On a home page, we now promote [the Playground](https://playground.asyncapi.io) more and put much more emphasis on the different ways you can engage with AsyncAPI Community,
 - Documentation view got additional navigation per document so, for example, it is now much better to navigate through different sections of [the specification document](/docs/specifications/2.0.0),
