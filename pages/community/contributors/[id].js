@@ -1,31 +1,36 @@
-import React from 'react'
-import IconGithub from '../../../../components/icons/Github';
-import IconLinkedIn from '../../../../components/icons/LinkedIn';
-import IconTwitter from '../../../../components/icons/Twitter';
-import GenericLayout from '../../../../components/layout/GenericLayout'
-import Heading from '../../../../components/typography/Heading';
+import React from 'react';
+import IconGithub from '../../../components/icons/Github';
+import IconLinkedIn from '../../../components/icons/LinkedIn';
+import IconTwitter from '../../../components/icons/Twitter';
+import GenericLayout from '../../../components/layout/GenericLayout';
+import Heading from '../../../components/typography/Heading';
+import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
 
-
-export async function getServerSideProps({query}) {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-    const profile = JSON.parse(query.data);
-     const contributor = await profile;
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+export async function getStaticProps({ params }) {
+  const data = ambassadors.filter(p => p.github === params.id);
   return {
     props: {
-      contributor,
-    },
-  };
+        contributor: data[0]
+    }
+  }
 }
 
-function Index({contributor}) {
-    const image = '/img/social/website-card.png';
-    if(!contributor) {
-      return <div>djkbfkj</div>
+export async function getStaticPaths (){
+    const paths = ambassadors.map(user => ({
+        params: {id: user.github}
+    }))
+    return {
+        paths,
+        fallback: false
     }
+
+}
+
+function Index({ contributor }) {
+  const image = '/img/social/website-card.png';
+  if (!contributor) {
+    return <div>djkbfkj</div>;
+  }
   return (
     <GenericLayout
       title="AsyncAPI Ambassador Program"
@@ -122,4 +127,4 @@ function Index({contributor}) {
   );
 }
 
-export default Index
+export default Index;
