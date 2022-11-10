@@ -20,7 +20,7 @@ I'm super excited to share with you that last week we released [a new AsyncAPI w
 - Documentation view got additional navigation per document so, for example, it is now much better to navigate through different sections of [the specification document](/docs/specifications/2.0.0),
 - The tools section is now dedicated to AsyncAPI's official tools to clarify the AsyncAPI initiative is not just the spec. Just have a look how much detailed is, for example, the [generator view](/tools/generator),
 - Don't worry, all the other tools are still there, under [the Community section](/docs/community/tooling)
-- The cherry on the cake is a much more appealing [Blog view](/blog)
+- The cherry on the cake is a much more appealing [Blog view](https://www.asyncapi.com/blog)
 
 [Fran Méndez](https://twitter.com/fmvilas) did all this fantastic job. Well done, Bro! Sources of the website are [here](https://github.com/asyncapi/website). Feel free to use it as a template for your website and let us know if you need help reusing it.
 
