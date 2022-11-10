@@ -7,6 +7,7 @@
     "title": "DevRel & DevDocs @AsyncAPI",
     "github": "alequetzalli",
     "twitter": "QuetzalliAle",
+	"tags": ["presentation", "workshop", "article", "iniciative_driver"],
     "linkedin": "alejandra-quetzalli",
     "company": "Postman",
     "contributions": [
@@ -58,6 +59,7 @@
     "title": "Chief Software Architect @Red Hat",
     "linkedin": "hugo-guerrero",
     "company": "Red Hat",
+	"tags": ["presentation"],
     "contributions": [
       {
         "type": "presentation",
@@ -116,6 +118,7 @@
     "company": "Solace",
     "title": "Architect, Office of the CTO at Solace",
     "img": "/img/avatars/jesse.jpeg",
+	"tags": ["article", "presentation"],
     "contributions": [
       {
         "type": "article",

@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Filter from '../../../components/navigation/Filter';
 import Heading from '../../../components/typography/Heading';
+import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
 
 function Index() {
   const image = '/img/social/website-card.png';
-  const data = Array(5).fill({
-    img: '/img/homepage/ale.jpeg',
-    name: 'Alejandra Quatzelli',
-    username: 'alejandra',
-    countryFlag: '🇲🇽',
-    country: 'Mexico',
-    className: 'top-[2rem] left-[40rem]',
-    tags: ['Documentation', 'Articles'],
-    title: 'DevRel & DevDocs @AsyncAPI',
-    bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
-    twitter: 'https://twitter.com/QuetzalliAle',
-    github: 'https://github.com/alequetzalli',
-    linkedin: 'https://www.linkedin.com/in/alejandra-quat',
-    contributions: []
-  });
-  const [posts, setPosts] = useState(data);
+  // const data = Array(5).fill({
+  //   img: '/img/homepage/ale.jpeg',
+  //   name: 'Alejandra Quatzelli',
+  //   username: 'alejandra',
+  //   countryFlag: '🇲🇽',
+  //   country: 'Mexico',
+  //   tags: ['Documentation', 'Articles'],
+  //   title: 'DevRel & DevDocs @AsyncAPI',
+  //   bio: 'Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones',
+  //   twitter: 'https://twitter.com/QuetzalliAle',
+  //   github: 'https://github.com/alequetzalli',
+  //   linkedin: 'https://www.linkedin.com/in/alejandra-quat',
+  //   contributions: []
+  // });
+  const [posts, setPosts] = useState(ambassadors);
   return (
     <GenericLayout
       title="AsyncAPI Ambassador Program"
@@ -33,7 +33,7 @@ function Index() {
       <div className="mt-20">
         <Heading typeStyle="heading-xl">Meet the stars</Heading>
         <div className="mt-10">
-          <Search data={data} posts={posts} setPosts={setPosts} />
+          <Search data={ambassadors} posts={posts} setPosts={setPosts} />
           <hr className="mt-10 md:mt-[20]" />
         </div>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
@@ -42,18 +42,23 @@ function Index() {
               <Link
                 key={i}
                 href={{
-                  pathname: `/community/contributors/${contributor.username}`,
+                  pathname: `/community/contributors/${contributor.github}`,
                   query: contributor,
                 }}
               >
                 <div className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300">
                   <div className="flex justify-between p-2">
-                    <div>@{contributor.username}</div>
-                    <div>{contributor.countryFlag}</div>
+                    <div>@{contributor.github}</div>
+                    <div>{contributor.country}</div>
                   </div>
                   <div className="p-2">
                     <div className="">
-                      <div className={`bg-[url('/img/homepage/ale.jpeg')] w-full h-[300px] md:h-[150px] bg-center bg-cover rounded-md`}>
+                      <div className={`w-full`}>
+                        <img
+                          src={contributor.img}
+                          alt={contributor.name}
+                          className="h-[300px] md:h-[150px] w-full object-cover rounded-md"
+                        />
                       </div>
                     </div>
                     <div className="text-center mt-2">{contributor.name}</div>

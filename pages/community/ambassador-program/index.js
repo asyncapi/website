@@ -191,7 +191,7 @@ function Index() {
                   <div
                     className= "w-full h-auto bg-center bg-center rounded-md"
                   >
-                    <img src={ambassador.img} alt={ambassador.name} className='h-auto rounded-lg' />
+                    <img src={ambassador.img} alt={ambassador.name} className='h-auto w-full rounded-lg object-contain' />
                   </div>
                   <div className="mt-2 w-full rounded-lg border p-2 text-sm">
                     {ambassador.title}
