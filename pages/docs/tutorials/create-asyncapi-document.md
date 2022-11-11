@@ -33,7 +33,7 @@ Futhermore, the [Pub/sub](https://deploy-preview-601--asyncapi-website.netlify.a
 
 [MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
-## Create the AsyncAPI document
+## Create AsyncAPI document
 
 In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
