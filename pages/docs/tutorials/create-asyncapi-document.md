@@ -1,10 +1,10 @@
 ---
-title: Create AsyncAPI Document
+title: Create AsyncAPI document
 description: In this tutorial, you'll learn how to create an AsyncAPI document.
 weight: 120
 ---
 
-# Introduction
+## Introduction
 
 In this tutorial, you'll learn how to create an AsyncAPI document based on a sample real-world use case. Additionally, you will learn about event-driven architecture, message brokers, pub/sub pattern.
 
@@ -23,7 +23,7 @@ You want to build a system that can turn streetlights on and off based on their 
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events.
 
 
-# Background Context
+## Background Context
 
 Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time. In this pattern, a message broker, event publishers and subscribers are its main components for event exchange within microservices.
 
@@ -33,20 +33,7 @@ Futhermore, the [Pub/sub](https://deploy-preview-601--asyncapi-website.netlify.a
 
 [MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
-# Installation Guide
-
-You'll use Node.js to code the APIs and [Mosquitto](https://mosquitto.org/) MQTT service as the message broker. The selected technology is irrelevant here, since everything explained in this tutorial is applicable to any other programming language and message brokers.
-
-Before you proceed to the next stage, you'll need to download a few things:
-
-1. Install [Node.js](https://nodejs.org/en/download/) (v15 or newer).
-
-2. Install Git on your Operating System:
-    - [Install Git on MacOs](https://git-scm.com/download/mac)
-    - [Install Git on Windows](https://git-scm.com/download/win)
-    - [Install Git on Linux](https://git-scm.com/download/linux)
-
-# Create the AsyncAPI Document
+## Create the AsyncAPI Document
 
 In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
@@ -156,15 +143,15 @@ Next is the `payload` property which is used to understand how the event should 
 
 The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain an `id` and a `lumens` property —which are integers bigger than zero—, and a `sentAt` property that should be a string containing a date and time.
 
-> JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas.
+>  JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, like, for example [Avro](https://github.com/asyncapi/avro-schema-parser#usage).
 
-# Summary
+## Summary
 
 In this tutorial, you've learned how to create an AsyncAPI specification document in a real-life example i.e IoT use case.
 
 This tutorial is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
-# Next steps
+## Next steps
 Now that you've completed this tutorial, go ahead to learn how to [generate code]() from the specification document using the AsyncAPI generator tool.
 
 
