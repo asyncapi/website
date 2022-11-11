@@ -23,7 +23,7 @@ You want to build a system that can turn streetlights on and off based on their 
 - Your application is not aware of how many streetlights are publishing events - it just connects to the broker and receives all events.
 
 
-## Background Context
+## Background context
 
 Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time. In this pattern, a message broker, event publishers and subscribers are its main components for event exchange within microservices.
 
@@ -33,7 +33,7 @@ Futhermore, the [Pub/sub](https://deploy-preview-601--asyncapi-website.netlify.a
 
 [MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
-## Create the AsyncAPI Document
+## Create the AsyncAPI document
 
 In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
