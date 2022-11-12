@@ -21,7 +21,7 @@ graph LR
 ```
 The diagram above shows the communication between a `producer` and `consumer`, with the producer sending a `message` through the `channel`. The channel then queues the message to the specific consumer.
 
-
+---
 <DocsButton
  suggestions={[
     {
@@ -30,9 +30,9 @@ The diagram above shows the communication between a `producer` and `consumer`, w
       title: 'Consumer',
    },
    {
-      href:'/docs/tutorials',
+      href:'/docs/concepts/message',
       type: 'next',  
-      title: 'Tutorials - Overview',
+      title: 'Message',
    }
  ]}
 />
