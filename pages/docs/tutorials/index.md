@@ -35,9 +35,9 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
       title: 'Message',
    },
    {
-      href:'/docs/tutorials/getting-started',
+      href:'/docs/tutorials/',
       type: 'next',  
-      title: 'Getting Started - Introduction',
+      title: 'Getting Started',
    }
  ]}
 />
