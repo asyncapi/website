@@ -19,12 +19,11 @@ export default function toolsDashboard() {
               AsyncAPI Tools Dashboard
             </Heading>
             <Paragraph className="my-3 sm:mt-4 max-w-2xl mx-auto">
-              Here you can quickly discover various tools to optimize your
-              journey with AsyncAPI! These tools are made by the community, for
-              the community. Have an AsyncAPI tool that you want featured on
-              this list?
+              Discover various AsyncAPI tools to optimize your journey! 
+              These tools are made by the community, for the community.
+              Have an AsyncAPI tool you want to be featured on this list?
               <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
-                Submit it here!
+                Submit new AsyncAPI tools here!
               </TextLink>
             </Paragraph>
           </div>
