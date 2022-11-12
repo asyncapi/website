@@ -3,8 +3,10 @@ title: AsyncAPI CLI
 weight: 1
 ---
 
-## Install CLI Using NPM and Node
-To use the AsynAPI CLI tool, you must have Node.js version 10 or higher and NPM installed on your PC. To check if you already have both installed, run the following commands in your terminal:
+The AsyncAPI CLI is one of the tools you will need to work with your AsyncAPI documents. You can use the CLI to validate AsyncAPI documents, use the Generator tool, and even for creating new AsyncAPI documents.
+
+## Installation
+To use the AsynAPI CLI tool, you must install NPM and a Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
 # check if node is installed
@@ -18,18 +20,18 @@ npm -v
 npm --version
 ```
 
-If you don’t have Node.js or NPM installed, [install both with this package manager](https://nodejs.org/en/download/package-manager/).
+If you don’t have Node.js or NPM installed, you can install both with this [Node.js package manager](https://nodejs.org/en/download/package-manager/).
 
-After installing Node.js and NPM, run the following command to install the AsyncAPI CLI globally on your PC:
+After installing Node.js and NPM, run the following command to install the AsyncAPI CLI globally:
 ```sh
 npm install -g @asyncapi/cli
 ```
 
-## Install CLI on MacOS
-There are two ways to install the AsyncAPI CLI on your MacOS:
+### Mac
+There are two ways to install the AsyncAPI CLI on your macOS: using the `brew` package manager or `pkg` files.
 
-### Using `brew`
-To install the AsyncAPI CLI using `brew` package manager, run the following commands in your terminal:
+#### `brew` installation
+To install the AsyncAPI CLI using the `brew` package manager, run the following commands in your terminal:
 ```sh
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -38,30 +40,33 @@ To install the AsyncAPI CLI using `brew` package manager, run the following comm
 brew install asyncapi
 ```
 
-### Using `pkg`
-Every release of the AsyncAPI CLI has its own MacOS dedicated `pkg` file that enables you to install the CLI tool as a MacOS application. 
-To download the latest release of the CLI, run this command in your terminal:
+#### `pkg` installation
+Every release of the AsyncAPI CLI has its own macOS dedicated `pkg` file that enables you to install the CLI tool as a macOS application. 
+To download the latest CLI release, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg
 ```
 
-To download a specific release of the CLI, run this command in your terminal:
+To download a specific CLI release, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.pkg
 ```
 
-All AsynAPI CLI releases are listed [here](https://github.com/asyncapi/cli/releases).
-After downloading the Async CLI, you can install it by running this in your terminal:
+<Remember>
+Follow this link for all <a href="https://github.com/asyncapi/cli/releases">AsynAPI CLI releases</a>.
+</Remember>
+
+After downloading the AsyncAPI CLI, install it via the following command:
+
 ```sh
 sudo installer -pkg asyncapi.pkg -target /
 ```
 
-## Install CLI on Linux
-The mode of installing AsyncAPI CLI tool on your Linux operating system depends on the Linux distro you are using.
+### Linux
+Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.
 
-### Debian Based Distros
+#### Debian based distros
 For Debian based distros, you can install the AsycAPI CLI using the `dpkg` package manager for Debian.
-To download the latest release of the CLI, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb
 ```
@@ -71,10 +76,8 @@ To download a specific release of the CLI, run this command in your terminal:
 curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.deb
 ```
 
-All AsynAPI CLI releases are listed [here](https://github.com/asyncapi/cli/releases)
-
-### Other Distros
-For other Linux distros, you can install the AsyncAPI CLI using the archive `tar.gz` file. To download the latest release of the CLI, run this command in your terminal:
+#### Other distros
+You can install the AsyncAPI CLI for other Linux distros using the archive `tar.gz` file. To download the latest release of the CLI, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.tar.gz
 ```
@@ -84,14 +87,12 @@ To download a specific release of the CLI, run this command in your terminal:
 curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.tar.gz
 ```
 
-All releases of the CLI archived files are listed [here](https://github.com/asyncapi/cli/releases).
-
 Once you have downloaded the archived file, untar it by running this command in your terminal:
 ```sh
 tar -xzf asyncapi.tar.gz
 ```
 
-The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you will have to create a `symlink`. If the current path you are on is `/user/local/bin` for example, you will have to create the `symlink` in the `/user/local/bin` directory by following these steps:
+The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
 ```sh
 # cd into the unarchived directory
 cd asyncapi
@@ -107,7 +108,9 @@ asyncapi
 ```
 
 ## Usage
-AsyncAPI CLI makes it easier to work with AsyncAPI files. There is a well-documented help command for the CLI if you need one. To get help, run this command in your terminal:
+The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
+
+To get **help**, run this command in your terminal:
 ```sh
 asyncapi --help
 ```
@@ -135,3 +138,20 @@ COMMANDS
       dart          generate the models for Dart
     fromTemplate    generate whatever you want using templates compatible with AsyncAPI Generator 
 ```
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools',
+      title: 'Tools - Overview',
+      type:'back',
+    },
+    {
+      href: '/docs/guides',
+      title: 'Guides - Overview',
+      type:'next',
+    }
+  ]}
+/>

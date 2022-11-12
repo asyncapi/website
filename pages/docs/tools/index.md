@@ -174,8 +174,8 @@ The following is a list of tools that compare AsyncAPI documents.
       type:'back',
     },
     {
-      href: '/docs/guides',
-      title: 'Guides - Overview',
+      href: '/docs/tools/asyncapi-cli',
+      title: 'Tools - AsyncAPI CLI',
       type:'next',
     }
   ]}
