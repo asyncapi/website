@@ -43,9 +43,9 @@ In the diagram above, we see a producer publishing messages to a specific channe
       title: 'Server',
    },
    {
-      href:'/docs/tutorials',
+      href:'/docs/concepts/consumer',
       type: 'next',  
-      title: 'Tutorials - Overview',
+      title: 'Consumer',
    }
  ]}
 />
