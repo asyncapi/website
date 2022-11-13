@@ -1,16 +1,14 @@
 ---
-title: "Validate AsyncAPI Documents"
+title: "Validate AsyncAPI documents"
 description: In this guide, you'll learn multiple ways to validate AsyncAPI documents.
 weight: 120
 ---
 
-# Introduction
-When people talk about AsyncAPI validation, sometimes they mean completely different things: **validation of AsyncAPI documents** or **validation of messages in runtime** _(message validation against schemas provided in the AsyncAPI document)_. 
+## Introduction
+This guide teaches multiple ways to validate AsyncAPI documents. 
 
-This guide is about validating AsyncAPI documents to make sure they are correct. 
-
-# Create AsyncAPI documents
-To validate an AsyncAPI document, you first need to have one. If you did not create one for your app yet, you can easily do so by using the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation).
+## Create AsyncAPI document
+To validate an AsyncAPI document, you must first create one. You can create one using the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation).
 
 Generate a sample `asyncapi.yaml` file (AsyncAPI document) with the following CLI command: 
 
@@ -18,52 +16,50 @@ Generate a sample `asyncapi.yaml` file (AsyncAPI document) with the following CL
 asyncapi new --example=default-example.yaml --no-tty
 ```
 
-# Validate AsyncAPI documents
+## Validate AsyncAPI documents
 Validating an AsyncAPI document can mean one of two things: 
-1. Validation against the specification.
-2. Validation against the best practices or company governance rules.
+- Validation against the specification.
+- Validation against the best practices or company governance rules also known as linting.
 
-## Validate against specification
-Let's discuss options for validating against the specification. 
+### Validate against specification
+Validating against the specification ensures that every content of the document is written in accordance with the AsyncAPI specification. Several tool options exist for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
 
-This ensures that every content of the document is written in accordance with the AsyncAPI specification.
+#### AsyncAPI Studio validation 
+[AsyncAPI Studio](https://github.com/asyncapi/studio#readme) provides a visual and easy way to validate your AsyncAPI documents against the specification. (It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.)
 
-There are several tool options you may select for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
+Errors in your document are highlighted with a red underline, showing which lines are invalid. The console also provides feedback, allowing you to further troubleshoot with detailed error messages. When a document is invalid, it provides the following error: `Empty or invalid document please fix errors / define AsyncAPI document`.
 
-### AsyncAPI Studio validation 
-[AsyncAPI Studio](https://github.com/asyncapi/studio#readme) provides a visual and easy way to validate your AsyncAPI documents against the specification. 
-
-It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.
-
-Errors in your document are highlighted with a red underline, showing which lines are invalid. The console also provides feedback, allowing you to further troubleshoot with detailed error messages.
-
-When a document is invalid, it provides the following error: `Empty or invalid document please fix errors / define AsyncAPI document`.
-
-### AsyncAPI CLI validation 
-The following [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) command validates AsyncAPI documents in your local computer or in automation:
+#### AsyncAPI CLI validation 
+The following [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) command validates AsyncAPI documents in your local computer or in CI/CD automation:
 
  ```
  asyncapi validate asyncapi.yaml
 
  ```
 
-> You can also open the AsyncAPI Studio from the CLI by running the command `asyncapi start studio`
-
-### Parsers (code) validation 
-AsyncAPI provides official [JavaScript](https://github.com/asyncapi/parser-js) and [Go](https://github.com/asyncapi/parser-go) parsers for validating the JSON schema in your AsyncAPI documents. 
-
 <Remember>
-If you do not run your schemas through the parsers, the JSON schemas alone cannot complete the entire validation. 
 
-Learn more about [custom JSON Schemas validation needs](https://github.com/asyncapi/spec-json-schemas#custom-validation-needs).
+You can also open AsyncAPI Studio from the CLI by running the command `asyncapi start studio`.
+
 </Remember>
 
-## Validation against best practices or company governance rules
-Now let's discuss options for validating against best practices or company governance rules also known as **linting**.
+#### Parsers (code) validation 
+AsyncAPI provides official [JavaScript](https://github.com/asyncapi/parser-js) and [Go](https://github.com/asyncapi/parser-go) parsers for validating AsyncAPI documents. 
 
-When AsyncAPI is used by various teams, you want to make sure they follow the same rules and are consistent across the organization. It is not enough to validate AsyncAPI documents against official specification rules. 
+<Remember>
+Official parsers use <a href='https://github.com/asyncapi/spec-json-schemas/'>JSON Schema</a> created for AsyncAPI specification. JSON Schema is not enough to fully validate AsyncAPI documents. Learn more about <a href='https://github.com/asyncapi/spec-json-schemas#custom-validation-needs'>custom JSON Schemas validation needs</a>. Official JavaScript parser supports and validates these special needs.
 
-An example would be that officially, `summary` property is optional, but in your organization, you want to make sure that it is always provided. You need a solution that enables you to enforce internal rules on AsyncAPI documents' providers.
+Take it into account if you're thinking about writing your own parser using official JSON Schema.
+</Remember>
+
+### Validation against best practices or company governance rules
+Now let's discuss options for validating against best practices or company governance rules, also known as **linting**. When various teams use AsyncAPI, you want to ensure they follow the same rules and are consistent across the organization. It is not enough to validate AsyncAPI documents against official specification rules. 
+
+<Remember>
+
+Let's discuss an example. While the `summary` property is optional in an AsyncAPI document, you could choose to require it for your organization. You would then implement a solution that enables you to enforce internal rules on AsyncAPI documents' providers.
+
+</Remember>
 
 One way this can be done is by using **Spectral**, an API linting tool which has a built-in [custom ruleset properties](https://meta.stoplight.io/docs/spectral/e5b9616d6d50c-custom-rulesets) with [AsyncAPI rules](https://meta.stoplight.io/docs/spectral/1e63ffd0220f3-async-api-rules) for the AsyncAPI specification. It also enables you to define company-specific rules that you can use internally.  
 
@@ -114,7 +110,7 @@ Example:
   }
 }
 ```
-4. After setting up spectral and creating custom rules in accordance with steps 1 - 3, you can validate your AsyncAPI document by using the spectral cli command below.
+4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
 
 ```
 spectral lint asyncapi.yaml
