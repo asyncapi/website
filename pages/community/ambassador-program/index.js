@@ -149,7 +149,7 @@ function Index() {
             </Heading>
           </div>
         </div>
-        <ul className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {data.map((link) => (
             <li
               key={link.title}
@@ -247,11 +247,11 @@ function Index() {
           </div>
         </div>
         <div className="mt-10">
-          <ul className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+          <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
             {tokens.map((token) => (
               <li
                 key={token}
-                className="mt-4 bg-white p-2 shadow-lg rounded-lg flex"
+                className="mt-4 bg-white p-3 shadow-lg rounded-lg flex"
               >
                 <div>
                   <div className="bg-pink-200 rounded-full w-[30px] h-[30px] flex flex-col items-center justify-center">

@@ -223,7 +223,7 @@ function CommunityIndexPage() {
             <Heading
               level="h2"
               typeStyle="heading-md"
-              textColor="text-gray-200"
+              textColor="text-purple-300"
             >
               Support your rockstars
             </Heading>
@@ -266,7 +266,7 @@ function CommunityIndexPage() {
             <Heading
               level="h2"
               typeStyle="heading-md"
-              textColor="text-gray-400"
+              textColor="text-purple-200"
             >
               Community heartbeat
             </Heading>
@@ -302,12 +302,12 @@ function CommunityIndexPage() {
         </div>
         <div className="w-full md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
           <div className="bg-primary-500 w-full opacity-25 rounded-b-lg md:rounded-b-none md:rounded-r-lg" />
-          <div className="absolute h-full w-full flex flex-col md:justify-center items-end item-right hidden md:block">
+          <div className="absolute h-full w-full hidden md:flex justify-end">
             <div className="w-4/5 mt-10">
               <div className="bg-white w-full p-2 md:p-4 rounded-l-md">
                 <div className="flex">
                   <div className="flex justify-center flex-col w-24 md:w-40 bg-pink-400 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                    <span>Conference</span>
+                    <span className="text-center">Conference</span>
                   </div>
                   <div className="ml-4 text-left">
                     <h1 className="text-md md:text-xl">AsyncAPI Conference</h1>
@@ -350,7 +350,7 @@ function CommunityIndexPage() {
               <div className="bg-white mt-10 w-full p-2 md:p-4 rounded-l-md">
                 <div className="flex">
                   <div className="flex w-24 md:w-40 justify-center flex-col w-24 md:w-40 bg-secondary-500 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                    <span>Spec 3.0</span>
+                    <span className="text-center">Spec 3.0</span>
                   </div>
                   <div className="ml-4 text-left">
                     <h1 className="text-md md:text-xl">Spec 3.0</h1>
@@ -458,7 +458,7 @@ function CommunityIndexPage() {
             <Heading
               level="h2"
               typeStyle="heading-md"
-              textColor="text-gray-200"
+              textColor="text-purple-300"
             >
               All community info, tracked
             </Heading>
