@@ -322,11 +322,3 @@ abbr[title] {
   border-radius: 10px;
   background: linear-gradient(225deg, #2dccfd 9.35%, #ad20e2 88.41%);
 }
-.community-pattern {
-  background: url('/img/homepage/circular-pattern.png');
-  width: 100%;
-  height: 90%;
-  background-position: center;
-  background-size: cover;
-  margin-top: -1900px;
-}
