@@ -74,17 +74,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDOFdFGUs4x5bH2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Video 2 - draft script",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/training/pull/9",
-      "repo": "asyncapi/training",
-      "labels": [],
-      "score": 21.25091956744515
-    },
-    {
       "id": "PR_kwDOFXtyC849zwGo",
       "isPR": true,
       "isAssigned": false,
@@ -171,6 +160,17 @@
           "color": "7B5DB8"
         }
       ],
+      "score": 16.943300736206268
+    },
+    {
+      "id": "PR_kwDOCHlHJM49b_FE",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add installation guide",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/818",
+      "repo": "asyncapi/generator",
+      "labels": [],
       "score": 16.65612614745701
     }
   ],
