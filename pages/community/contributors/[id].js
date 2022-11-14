@@ -28,9 +28,6 @@ export async function getStaticPaths (){
 
 function Index({ contributor }) {
   const image = '/img/social/website-card.png';
-  if (!contributor) {
-    return <div>djkbfkj</div>;
-  }
   return (
     <GenericLayout
       title="AsyncAPI Ambassador Program"
@@ -39,8 +36,8 @@ function Index({ contributor }) {
       hideBanner={true}
       wide
     >
-      <div className="mt-20 flex justify-between items-center">
-        <div className="w-[65%]">
+      <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
+        <div className="w-full md:w-[65%]">
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {contributor.name}
           </Heading>
@@ -84,7 +81,7 @@ function Index({ contributor }) {
             </a>
           </div>
         </div>
-        <div>
+        <div className='mt-10 md:mt-0'>
           <img
             src={contributor.img}
             alt={contributor.name}
