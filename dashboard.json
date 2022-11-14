@@ -3,7 +3,6 @@
     {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
-      "lastUpdate": "2022-11-09T21:13:53Z",
       "isAssigned": true,
       "title": "Proposal to solve publish/subscribe confusion",
       "author": "fmvilas",
@@ -20,7 +19,6 @@
     {
       "id": "I_kwDOBW5R_c47-31p",
       "isPR": false,
-      "lastUpdate": "2022-10-25T07:13:02Z",
       "isAssigned": true,
       "title": "Create New page for /tools/",
       "author": "iamVP7",
@@ -45,7 +43,6 @@
     {
       "id": "PR_kwDOCHlHJM48mj3W",
       "isPR": true,
-      "lastUpdate": "2022-11-10T06:34:56Z",
       "isAssigned": false,
       "title": "docs: add introduction and new AsyncAPI document ",
       "author": "Florence-Njeri",
@@ -57,7 +54,6 @@
     {
       "id": "PR_kwDOCHlHJM4_rG5j",
       "isPR": true,
-      "lastUpdate": "2022-11-10T17:54:28Z",
       "isAssigned": false,
       "title": "docs: provide docs content for template",
       "author": "pratik2315",
@@ -69,7 +65,6 @@
     {
       "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
-      "lastUpdate": "2022-11-09T22:23:38Z",
       "isAssigned": true,
       "title": "docs: docs folder for new asyncapi community section",
       "author": "Dule-martins",
@@ -81,7 +76,6 @@
     {
       "id": "PR_kwDOFXtyC849zwGo",
       "isPR": true,
-      "lastUpdate": "2022-11-08T09:16:10Z",
       "isAssigned": false,
       "title": "feat: add Components, Security Requirement(s) models and other improvements",
       "author": "smoya",
@@ -93,7 +87,6 @@
     {
       "id": "PR_kwDOCoBobc4xN9Px",
       "isPR": true,
-      "lastUpdate": "2022-10-25T10:30:42Z",
       "isAssigned": false,
       "title": "fix: throw meaningful errors",
       "author": "ritik307",
@@ -105,7 +98,6 @@
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
-      "lastUpdate": "2022-10-25T11:04:57Z",
       "isAssigned": false,
       "title": "Epic roadmap to the new AsyncAPI community section",
       "author": "AceTheCreator",
@@ -122,7 +114,6 @@
     {
       "id": "MDU6SXNzdWUzNjkwNDExMDc=",
       "isPR": false,
-      "lastUpdate": "2022-10-04T11:54:20Z",
       "isAssigned": false,
       "title": "Support request/reply pattern",
       "author": "adrianhopebailie",
@@ -139,7 +130,6 @@
     {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
-      "lastUpdate": "2022-11-10T20:35:53Z",
       "isAssigned": false,
       "title": "feat: request/response support",
       "author": "GreenRover",
@@ -151,7 +141,6 @@
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
       "isPR": true,
-      "lastUpdate": "2022-11-09T01:44:05Z",
       "isAssigned": true,
       "title": "docs: new guide for validation of AsyncAPI files",
       "author": "Annysah",
@@ -171,12 +160,10 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDOCHlHJM49b_FE",
       "isPR": true,
-      "lastUpdate": "2022-11-10T06:34:33Z",
       "isAssigned": false,
       "title": "docs: add installation guide",
       "author": "Florence-Njeri",
