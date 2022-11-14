@@ -13,6 +13,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
         ...event,
         date: moment(event.date),
       }));
+      console.log(meetingsWithDates)
       meetingsWithDates.sort((a, b) => a.date - b.date);
       return meetingsWithDates
         .filter((meeting) => meeting.date > new Date())
