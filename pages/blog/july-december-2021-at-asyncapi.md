@@ -37,7 +37,7 @@ Hosting these live streams is all possible thanks to the great support from the 
 All official meetings are always listed in our:
 
 - [Community repository](https://github.com/asyncapi/community/labels/meeting)
-- [official Google Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com)
+- [official Google Calendar](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com)
 
 The best way to learn about a new event is to join [our official Google Group](https://groups.google.com/u/1/g/asyncapi-users) that we use as a mailing list for invites.
 

@@ -79,7 +79,7 @@ Trust me when I write that every pull request is crucial for us.
 Trust me when I write that we are a welcoming community.
 Don't be afraid that you will waste our time. If we would think about it this way, we would not even join the Hacktoberfest.
 
-Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different time zones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) and then on the following days:
+Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different time zones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) and then on the following days:
 
 - Tuesday 6th, 8AM UTC
 - Thursday 8th, 4PM UTC

@@ -43,7 +43,7 @@ Remember that throughout the entire October me and Fran, we'll be hosting office
 - https://www.youtube.com/asyncapi
 - https://twitter.com/AsyncAPISpec
 
-Look into [this](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) calendar for the schedule.
+Look into [this](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) calendar for the schedule.
 
 ## Apidays Live Hong Kong
 
@@ -67,7 +67,7 @@ The next meeting is scheduled for next [Tuesday, 13th of October, 4PM UTC](https
 
 We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/451). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Some Good Read
 

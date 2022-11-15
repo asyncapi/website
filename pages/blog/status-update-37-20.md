@@ -69,7 +69,7 @@ The next meeting is scheduled for next [Tuesday, 15th of September, 4PM UTC](htt
 
 We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/435). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Curated Content
 
