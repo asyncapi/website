@@ -3,6 +3,7 @@ title: AsyncAPI CLI
 weight: 1
 ---
 
+# Introduction
 The AsyncAPI CLI is one of the tools you will need to work with your AsyncAPI documents. You can use the CLI to validate AsyncAPI documents, use the Generator tool, and even for creating new AsyncAPI documents.
 
 ## Installation
