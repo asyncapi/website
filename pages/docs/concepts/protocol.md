@@ -18,9 +18,11 @@ Whenever a producer detects a state change (events) and publishes those events a
 
 ```mermaid
 flowchart LR
-    a[Producer]-- Message 1 --->c[(Broker)]
-    c-- Message 1 ---> b[Consumer]
+    a[Producer]-- "Publish(Qos2, Message 1)" --->c[(Broker)]
+    c-- "Publish(Qos2, Message 1)" ---> b[Consumer]
 ```
+
+The diagram above depicts the message exchange flow from `producer` to `broker` to `consumer` using the MQTT protocol with QoS2 (quality of service 2). This means that information exchanged from `producer` to `broker` to `consumer` is delivered only once.
 
 <DocsButton
  suggestions={[
