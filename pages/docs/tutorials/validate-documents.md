@@ -102,13 +102,13 @@ Now that you've completed this tutorial, go ahead to learn how to [validate mess
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials/generate-code',
-      title: 'Generate code',
+      href: '/docs/tutorials/create-asyncapi-document',
+      title: 'Create AsyncAPI document',
       type:'back',
     },
     {
-      href: '/docs/tutorials/message-validation',
-      title: 'Message validation',
+      href: '/docs/tutorials/generate-code',
+      title: 'Generate code',
       type:'next',
     }
   ]}
