@@ -4,7 +4,7 @@ weight: 1
 ---
 
 # Introduction
-The AsyncAPI CLI is one of the tools you will need to work with your AsyncAPI documents. You can use the CLI to validate AsyncAPI documents, use the Generator tool, and even for creating new AsyncAPI documents.
+The AsyncAPI CLI is a tool you can use to work with your AsyncAPI documents. You can use the CLI to validate AsyncAPI documents, use the Generator tool, and even create new AsyncAPI documents.
 
 ## Installation
 To use the AsynAPI CLI tool, you must install NPM and a Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
