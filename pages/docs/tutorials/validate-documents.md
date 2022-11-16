@@ -107,8 +107,8 @@ Now that you've completed this tutorial, go ahead to learn how to [validate mess
       type:'back',
     },
     {
-      href: '/docs/tutorials/validate-events',
-      title: 'Messages/events validation',
+      href: '/docs/tutorials/message-validation',
+      title: 'Message validation',
       type:'next',
     }
   ]}
