@@ -1,6 +1,6 @@
 ---
 title: Validate messages
-description: This guide explains different use cases for messages/events validation using AsyncAPI.
+description: This guide explains different use cases for message (event) validation using AsyncAPI.
 weight: 120
 ---
 
