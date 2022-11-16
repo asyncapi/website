@@ -103,7 +103,7 @@ Now that you've completed this tutorial, go ahead to learn how to [validate mess
   suggestions={[
     {
       href: '/docs/tutorials/generate-code',
-      title: 'Generate Code',
+      title: 'Generate code',
       type:'back',
     },
     {
