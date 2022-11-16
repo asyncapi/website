@@ -90,7 +90,7 @@ export default function Features() {
                   {feature.links.map((link) => {
                     return (
                       <Link href={link.href} key={link.label}>
-                        <TextLink href={link.href} className="mt-6 inline-block">
+                        <TextLink id={link.id} href={link.href} className="mt-6 inline-block">
                           {link.label}
                         </TextLink>
                       </Link>
