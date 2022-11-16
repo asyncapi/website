@@ -1,5 +1,5 @@
 ---
-title: messages/events validation
+title: Message validation
 description: In this tutorial, you'll learn how to validate AsyncAPI messages (events).
 
 weight: 130
@@ -7,7 +7,6 @@ weight: 130
 
 # Introduction
 In this tutorial, you'll learn how to validate messages (events) that are sent to your AsyncAPI application.
-
 
 # Background context
 Message validation can be performed at both the producer and consumer levels. Message validation requires the participation of the producer, consumer, and broker. We will learn how to validate messages at the consumer level by discarding invalid messages based on the parameters provided.
@@ -19,9 +18,9 @@ In previous tutorial, you have generated your application using [AsyncAPI Genera
 Now you will be validating the messages/events which you will be sending to your application using Mosquitto broker and MQTT client.
 
 #  Validate messages
-In this step, we will send a message to our application using MQTT broker and check the error logged if we send an invalid message
+In this step, we will send a message to our application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
 
-1. Start your generated application
+1. Start your generated application.
 
 <CodeBlock language="bash">
 {`npm start`}
@@ -51,7 +50,7 @@ In this step, we will send a message to our application using MQTT broker and ch
               description: Light intensity measured in lumens.`}
   </CodeBlock>
   
-Here, you can see that the property `lumens` has type `integer` but you are sending a message with type `string`
+Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
 
 3. Send a correct message to your application:
 
@@ -69,4 +68,21 @@ You can see that your generated application received a message in the terminal:
 This indicates that your message is valid and it is recieved by the application correctly.
 
 # Summary 
-In this tutorial, you learnt how to connect your generated application to MQTT broker,send messages through it,how to identify when an invalid message is sent to your application and how you can correct the invalid message. 
+In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, how to identify when an invalid message is sent to your application, and how you can correct the invalid message. 
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tutorials/generate-code',
+      title: 'Generate code',
+      type:'back',
+    },
+    {
+      href: '/docs/guides',
+      title: 'Overview',
+      type:'next',
+    }
+  ]}
+/>
