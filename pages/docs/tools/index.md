@@ -91,7 +91,7 @@ The following is a list of tools that generate human-readable documentation from
 | Link           | Description    | Language/Kind |
 | :------------- | :------------- | :------------- |
 | [AsyncAPI Generator](https://github.com/asyncapi/generator) | Use your AsyncAPI definition to generate literally anything. Markdown documentation, Node.js code, HTML documentation, anything! **[Click here](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate) to get a list of the existing templates**. | CLI / JavaScript
-| [Bump](https://bump.sh) | OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
+| [Bump.sh](https://bump.sh) | OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff. | SaaS
 | [Widdershins](https://github.com/Mermade/widdershins) | OpenAPI 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown. Thanks to [@PermittedSoc](https://twitter.com/@Permittedsoc). | CLI / JavaScript
 | [Cupid](https://github.com/asyncapi/cupid) | A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture. | JavaScript
 
@@ -128,7 +128,7 @@ The following is a list of [GitHub Actions](https://github.com/features/actions)
 | :------------- | :------------- |
 | [AsyncAPI GitHub Action](https://github.com/marketplace/actions/asyncapi-github-action) | This action validates if the AsyncAPI schema file is valid or not.
 | [Generator for AsyncAPI documents](https://github.com/marketplace/actions/generator-for-asyncapi-documents) | This action generates whatever you want using your AsyncAPI document. It uses [AsyncAPI Generator](https://github.com/asyncapi/generator).
-| [API documentation on Bump](https://github.com/marketplace/actions/api-documentation-on-bump) | With this GitHub Action you can automatically generate your API reference (with the changelog and diff) on [Bump](https://bump.sh) from any AsyncAPI file.
+| [API documentation generation on Bump.sh](https://github.com/marketplace/actions/api-documentation-on-bump) | With this GitHub Action you can automatically generate your API reference (with the changelog and diff) on [Bump.sh](https://bump.sh) from any AsyncAPI file.
 | [Automated version bump for AsyncAPI documents](https://github.com/marketplace/actions/automated-version-bump-for-asyncapi) | With this GitHub Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM. |
 
 ## Mocking and Testing {#mocking}
