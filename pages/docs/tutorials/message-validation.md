@@ -80,7 +80,8 @@ In this tutorial, you learned how to connect your generated application to an MQ
       type:'back',
     },
     {
-      href: '/docs/guides',
+      href: '/docs/tools',
+
       title: 'Overview',
       type:'next',
     }
