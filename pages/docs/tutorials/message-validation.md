@@ -82,7 +82,8 @@ In this tutorial, you learned how to connect your generated application to an MQ
     {
       href: '/docs/tools',
 
-      title: 'Overview',
+      title: 'Tools - Overview',
+
       type:'next',
     }
   ]}
