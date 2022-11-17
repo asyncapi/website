@@ -41,20 +41,15 @@
       "score": 44.512061256135105
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
+      "id": "PR_kwDOCHlHJM48mj3W",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 39.63009324739771
+      "title": "docs: add introduction and new AsyncAPI document ",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/812",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 27.8559351086781
     },
     {
       "id": "PR_kwDOCHlHJM4_rG5j",
@@ -76,7 +71,7 @@
       "resourcePath": "/asyncapi/community/pull/442",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.399617922442182
+      "score": 22.112443333692923
     },
     {
       "id": "PR_kwDOFXtyC849zwGo",
@@ -87,7 +82,7 @@
       "resourcePath": "/asyncapi/parser-api/pull/71",
       "repo": "asyncapi/parser-api",
       "labels": [],
-      "score": 20.67657038994663
+      "score": 20.102221212448114
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -117,6 +112,22 @@
       "score": 18.953522857451077
     },
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 18.82437864307893
+    },
+    {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
@@ -125,7 +136,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 18.091999091203302
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -148,58 +159,21 @@
           "name": "gsod",
           "color": "7B5DB8"
         }
-      ],
-      "score": 18.091999091203302
+      ]
     },
     {
-      "id": "PR_kwDOBW5R_c5CDXVB",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: added all required sub pages UI for the community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/pull/1071",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.517649913704783
-    },
-    {
-      "id": "PR_kwDODtSOs84xcJjh",
+      "id": "PR_kwDOCHlHJM49b_FE",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: switch-to-jsx-renderer",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/html-template/pull/316",
-      "repo": "asyncapi/html-template",
+      "title": "docs: add installation guide",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/818",
+      "repo": "asyncapi/generator",
       "labels": [],
       "score": 16.65612614745701
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDODyzcIc5WV_4D",
-      "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/195",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5WSi6q",
-      "title": "Improve email sent to TSC members to include the title of the topic",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/194",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": []
-    },
     {
       "id": "I_kwDOFLhIt85U9FIY",
       "title": "[📑 Docs]: We need new docs that describes how to financially support the initiative",
@@ -363,6 +337,21 @@
         {
           "name": "hacktoberfest",
           "color": "5B0291"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOEOBLdM5TCZxh",
+      "title": "Update to version 1.0.1 of Nats.net ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/dotnet-nats-template/issues/293",
+      "repo": "asyncapi/dotnet-nats-template",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
@@ -532,10 +521,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -886,6 +871,21 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "MDU6SXNzdWU2NzYxMTY2NDM=",
+      "title": "Throw meaningfull error when parser of specific schemaFormat is not available",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/157",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
