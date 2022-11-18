@@ -34,7 +34,6 @@ The following [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) comma
 
  ```
  asyncapi validate asyncapi.yaml
-
  ```
 
 <Remember>
@@ -66,50 +65,46 @@ One way this can be done is by using **Spectral**, an API linting tool which has
 To get started:
 1. Install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). 
 2. Create a file named `.spectral.yaml` to begin writing your API description and document rules. 
-
-Example:
-
-```
-{
-  "formats": ["asyncapi2"],
-  "extends": "spectral:asyncapi",
-  "rules": {
-    // add your own rules here
-  }
-}
-```
+    Example:
+    ```js
+    {
+      "formats": ["asyncapi2"],
+      "extends": "spectral:asyncapi",
+      "rules": {
+        // add your own rules here
+      }
+    }
+    ```
 
 3. Create and add your own custom ruleset:
-
-```
-{
-  "formats": [
-    "asyncapi2"
-  ],
-  "extends": "spectral:asyncapi",
-  "rules": {
-    //add your rules here
-    "valid-document-version": {
-      "message": "Version must match 2.x.x",
-      "severity": "hint",
-      "given": "$.info",
-      "then": [
-        {
-          "field": "version",
-          "function": "defined"
-        },
-        {
-          "field": "version",
-          "function": "pattern",
-          "functionOptions": {
-            "match": "^[0-9]+$"
-          }
+ ```js
+    {
+      "formats": ["asyncapi2"],
+      "extends": "spectral:asyncapi",
+      "rules": {
+        // add your own rules here
+        "valid-document-version": {
+          "message": "Version must match 2.x.x",
+          "severity": "hint",
+          "given": "$.info",
+          "then": [
+            {
+              "field": "version",
+              "function": "defined"
+            },
+            {
+              "field": "version",
+              "function": "pattern",
+              "functionOptions": {
+                "match": "^[0-9]+$"
+              }
+            }
+          ]
         }
-      ]
+      }
     }
-  }
-}
-```
+  ```
+
 4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
 
 ```
@@ -123,3 +118,21 @@ spectral lint asyncapi.yaml
 - [AsyncAPI **CLI READme**](https://github.com/asyncapi/cli#readme)
 - [AsyncAPI **JavaScript Parsers READme**](https://github.com/asyncapi/parser-js#readme) 
 - [AsyncAPI **Go Parsers READme**](https://github.com/asyncapi/parser-go#readme) 
+
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/guides',
+      title: 'Guides - Overview',
+      type:'back',
+    },
+    {
+      href: '/docs/guides/message-validation.md',
+      title: 'Guides - Validate messages',
+      type:'next',
+    }
+  ]}
+/>

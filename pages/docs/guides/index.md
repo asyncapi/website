@@ -34,8 +34,8 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
       type:'back',
     },
     {
-      href: '/docs/reference',
-      title: 'Reference - Overview',
+      href: '/docs/guides/validate.md',
+      title: 'Guides - Validate documents',
       type:'next',
     }
   ]}
