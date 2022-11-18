@@ -1,7 +1,7 @@
 ---
 title: Generate code 
 description: In this tutorial, you'll learn how to generate code from your AsyncAPI document.
-weight: 130
+weight: 100
 ---
 
 ## Introduction
@@ -14,15 +14,13 @@ The [AsyncAPI Generator](https://github.com/asyncapi/generator) is a tool that y
 The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates help to specify what exactly must be generated, and in this tutorial, you use [Nodejs template](https://github.com/asyncapi/nodejs-template).
 
 ## Installation guide
-Before proceeding to the next step, 
-
 <Remember>
 
-It is important to have [Node.js](https://nodejs.org/en/download/) installed which will enable the installation of the required dependencies using <b>npm</b>.
+It is important to have <a href='https://nodejs.org/en/download/'>Node.js</a> installed which will enable the installation of the required dependencies using <b>npm</b>.
 
 </Remember>
 
-- Install the generator tool to use it as a command-line(CLI);
+- Install the generator tool to use it as a command-line (CLI):
 
 <CodeBlock language="bash">
 {`npm install -g @asyncapi/cli`}
@@ -89,7 +87,7 @@ package.json
 {`npm start`}
 </CodeBlock>
 
-## Send a message to the broker
+## Send message to broker
 
 1. In another terminal install the MQTT.js library:
 <CodeBlock language="bash">
@@ -123,13 +121,13 @@ Now that you've completed this tutorial, go ahead to learn how to [validate your
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials',
-      title: 'Tutorials - Overview',
+      href: '/docs/tutorials/validate-documents.md',
+      title: 'Validate AsyncAPI document',
       type:'back',
     },
     {
-      href: '/docs/tutorials/streetlights-interactive',
-      title: 'Streetlights - Interactive (Alpha)',
+      href: '/docs/tutorials/message-validation.md',
+      title: 'Validate messages/events',
       type:'next',
     }
   ]}
