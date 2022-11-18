@@ -162,7 +162,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
   }, [onInput, searchButtonRef]);
 
   return (
-    <button 
+    <button
       type="button" 
       ref={searchButtonRef} 
       onClick={() => {

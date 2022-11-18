@@ -28,7 +28,7 @@ export default function Hero({ className = ''}) {
             <strong>industry standard</strong> for defining asynchronous APIs.
           </Heading>
           <div className='flex flex-row items-center justify-center'>
-            <Button className="block md:inline-block" text="Read the docs" href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
+            <Button className="block md:inline-block"  tabIndex="1" text="Read the docs" href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />} />
             <SearchButton 
               className="hidden sm:flex items-center text-left space-x-3 px-4 py-3 ml-2 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
             >

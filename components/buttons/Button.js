@@ -1,6 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import Link from 'next/link'
 export default function Button({
+  tabIndex='0',
   text,
   href,
   type = 'button',
@@ -16,7 +17,7 @@ export default function Button({
 
   const smallButtonClasses = twMerge(` ${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`)
   const classNames = twMerge(` ${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`)
-
+  const tabI = tabIndex > 0 ? 2 : 0;
   if (!href) {
     return (
       <button {...props} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames}>
@@ -37,7 +38,7 @@ export default function Button({
 
   return (
     <Link href={href} passHref>
-      <a {...props} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames}>
+      <a {...props} target={target} tabIndex={tabI} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames}>
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
