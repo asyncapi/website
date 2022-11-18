@@ -94,6 +94,7 @@ module.exports = {
       usecases: "url('/img/homepage/usecases.png')",
       roadmapCover: "url('/img/homepage/roadmap.png')",
       ambassadorCover: "url('/img/homepage/gathering.jpg')",
+      mapCover: "url('/img/homepage/mapbase.png')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
