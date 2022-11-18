@@ -1,7 +1,7 @@
 ---
 title: Create AsyncAPI document
 description: In this tutorial, you'll learn how to create an AsyncAPI document.
-weight: 120
+weight: 80
 ---
 
 ## Introduction
@@ -37,7 +37,7 @@ Futhermore, the [Pub/sub](https://deploy-preview-601--asyncapi-website.netlify.a
 
 In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
-To create one, you can either use the [AsyncAPI studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli) depending on your project need.
+To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli), depending on your project need.
 
 Go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
 
@@ -165,8 +165,8 @@ Now that you've completed this tutorial, go ahead to learn how to [generate code
       type:'back',
     },
     {
-      href: '/docs/tutorials/streetlights-interactive',
-      title: 'Streetlights - Interactive (Alpha)',
+      href: '/docs/tutorials/validate-documents.md',
+      title: 'Validate AsyncAPI document',
       type:'next',
     }
   ]}
