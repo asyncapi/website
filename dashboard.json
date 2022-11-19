@@ -135,21 +135,8 @@
       "author": "Annysah",
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 18.091999091203302
+      "labels": [],
+      "score": 18.37917367995256
     },
     {
       "id": "PR_kwDOBW5R_c5CDXVB",
@@ -311,21 +298,6 @@
       "title": "Add support for JetStream push subscribe",
       "isAssigned": false,
       "resourcePath": "/asyncapi/dotnet-nats-template/issues/296",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5TFYjM",
-      "title": "Add support for JetStream publish",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/295",
       "repo": "asyncapi/dotnet-nats-template",
       "author": "jonaslagoni",
       "area": "Unknown",
