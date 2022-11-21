@@ -90,6 +90,17 @@
       "score": 20.67657038994663
     },
     {
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 19.527872034949596
+    },
+    {
       "id": "PR_kwDOCoBobc4xN9Px",
       "isPR": true,
       "isAssigned": false,
@@ -114,17 +125,6 @@
           "color": "0D67D3"
         }
       ],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "PR_kwDOBGu-185AIQgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
-      "labels": [],
       "score": 18.953522857451077
     },
     {
