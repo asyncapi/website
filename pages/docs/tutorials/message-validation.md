@@ -32,7 +32,7 @@ In this step, we will send a message to our application using an MQTT broker and
   {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
   </CodeBlock>
   
- Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message.
+ Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message. You should see something like this displayed in the terminal:
  
  <CodeBlock language="yaml" highlightedLines={[10,11]}>
   {`  message:
