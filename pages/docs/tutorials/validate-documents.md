@@ -1,6 +1,6 @@
 ---
 title: "Studio AsyncAPI document validation"
-description: This tutorial will teach us how to validate AsyncAPI documents using the AsyncAPI Studio tool.
+description: This tutorial will teach you how to validate AsyncAPI documents using the AsyncAPI Studio tool.
 weight: 120
 ---
 
