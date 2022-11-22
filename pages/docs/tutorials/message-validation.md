@@ -1,5 +1,5 @@
 ---
-title: Message validation
+title: Message validation in runtime
 description: In this tutorial, you'll learn how to validate AsyncAPI messages (events).
 
 weight: 130
