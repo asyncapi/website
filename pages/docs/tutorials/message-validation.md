@@ -81,9 +81,7 @@ In this tutorial, you learned how to connect your generated application to an MQ
     },
     {
       href: '/docs/tools',
-
       title: 'Tools - Overview',
-
       type:'next',
     }
   ]}
