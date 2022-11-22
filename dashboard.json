@@ -147,16 +147,16 @@
       "resourcePath": "/asyncapi/website/pull/1071",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 17.804824502454043
     },
     {
-      "id": "PR_kwDODtSOs84xcJjh",
+      "id": "PR_kwDOFLhIt85AY9Ib",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: switch-to-jsx-renderer",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/html-template/pull/316",
-      "repo": "asyncapi/html-template",
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
       "labels": [],
       "score": 16.65612614745701
     }
