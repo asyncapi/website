@@ -1,13 +1,21 @@
 ## CLI Installation
+<details>
+<summary>MacOS</summary>
 
-Install AsyncAPI CLI _globally_ with the following command:
+You can install in MacOS via brew: `brew install asyncapi`.
+</details>
 
-<CodeBlock language="bash">
-{`npm install -g @asyncapi/cli`}
-</CodeBlock>
+<details>
+<summary>Linux</summary>
 
-To install a specific version of the AsyncAPI CLI, pass the `verion` during installation:
+You can install in Linux via `dpkg`, a debian package manager:
 
-<CodeBlock language="bash">
-{`npm install -g @asyncapi/cli@{version}`}
-</CodeBlock>
+1. 'curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
+2. `sudo dpkg -i asyncapi.deb`
+</details>
+
+<details>
+<summary>Other OS</summary>
+
+For further installation instructions for different operating systems, read the [`AsyncAPI CLI` readME file](https://github.com/asyncapi/cli#installation).
+</details>
