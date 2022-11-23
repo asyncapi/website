@@ -67,7 +67,7 @@ You can see that your generated application received a message in the terminal:
 
 This indicates that your message is valid and it is recieved by the application correctly.
 
-# Summary 
+## Summary
 In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, how to identify when an invalid message is sent to your application, and how you can correct the invalid message. 
 
 ---
