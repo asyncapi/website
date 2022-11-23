@@ -1,5 +1,5 @@
 ---
-title: "Studio AsyncAPI document validation"
+title: "Validate AsyncAPI document with Studio"
 description: This tutorial will teach you how to validate AsyncAPI documents using the AsyncAPI Studio tool.
 weight: 120
 ---
@@ -14,6 +14,8 @@ An AsyncAPI document is a file that defines and annotates the different componen
 
 The AsyncAPI Studio tool allows you to develop an AsyncAPI document, validate it, preview it, convert it to the latest version, and visualize event flows.
 
+If you are following tutorial without doing the previous tutorial [Create AsyncAPI document]() then quickly generate an AsyncAPI file using `asyncapi new --example=tutorial.yml --no-tty`. You can see that the documentation is now rendered and you don't see any errors which means your file is valid. Now let's experiment with an invalid file to see how errors are displayed and how to make that file valid again.
+
 # Copy invalid AsyncAPI document
 Let's pretend we have an invalid AsyncAPI document.
 
@@ -24,39 +26,50 @@ Let's pretend we have an invalid AsyncAPI document.
 3. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
-asyncapi: '2.7.0'
+{`asyncapi: '2.5.0'
 info:
-  title: Account Service
-  version: 1.0.0
-  
+  title: Streetlights API
+  version: '1.0.0'
+  description: |
+    The Smartylighting Streetlights API allows you
+    to remotely manage the city lights.
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+servers:
+  mosquitto:
+    url: mqtt://test.mosquitto.org
+    protocol: mqtt
 channels:
-  user/signedup:
-    subscribe:
+  light/measured:
+    publish:
+      summary: Inform about environmental lighting conditions for a particular streetlight.
+      operationId: onLightMeasured
       message:
-        $ref: 'UsersSignedUp'
-components:
-  messages:
-    UserSignedUp:
-      payload:
-        type: object
-        properties:
-          displayName:
-            type: string
-            description: Name of the user
-          email:
-            type: string
-            format: email
-            description: Email of the user
+        name: LightMeasured
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the streetlight.
+            lumens:
+              type: integer
+              minimum: 0
+              description: Light intensity measured in lumens.
+            sentAt:
+              type: string
+              format: date-time
+              description: Date and time when the message was sent.`}
  ``` 
 
-# Troubleshoot Studio console errors
+# Troubleshoot Studio errors
 Let's fix the errors one by one until we end up with a valid AsyncAPI document.
-
-1. In Studio, open the **visualizer** found on the left-side menu.
  
-2. Read the error message on the visualizer preview screen: `Empty or invalid document. Please fix errors/define AsyncAPI document.`
+1. You can see the error message on the screen: `Empty or invalid document. Please fix errors/define AsyncAPI document.`
 
-3. Open the console box that says `PROBLEMS`, so you can read all console errors.
+3. Open diagnostics, you can see more information related to your errors.
 
 4. Fix the incorrect AsyncAPI specification number to `2.4.0`.
  
@@ -71,7 +84,7 @@ info:
 Notice how <b>description</b> property is missing; that doesn't make the AsyncAPI document invalid, but it's always better to include.
 </Remember>
 
-5. Read the next studio console error: `Error downloading https://studio.asyncapi.com/UserSignedUp HTTP ERROR 404`.
+5. Read the next error: `Error downloading https://studio.asyncapi.com/UserSignedUp HTTP ERROR 404`.
 
 
 6. Fix the `$ref` by changing it to: `'#/components/messages/UserSignedUp'`.
@@ -93,7 +106,7 @@ The <b>channels</b> section is used to describe the event names your API will be
 7. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
 
 # Summary
-This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the console error message directions. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
+This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the error message directions in diagnostics. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
 
 # Next steps
 Now that you've completed this tutorial, go ahead to learn how to [validate messages/events]() which you will be sending to your application.
