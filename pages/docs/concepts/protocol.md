@@ -7,7 +7,7 @@ weight: 25
 ## What is a protocol?
 A protocol is a set of rules that specifies how information is exchanged between applications and/or servers.
 
-`Protocol` examples:
+Protocol examples:
 * [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
 * [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 * [Kafka](https://kafka.apache.org/)
