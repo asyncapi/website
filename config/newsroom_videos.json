@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/OYi4zYXKiYw/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - AsyncAPI &amp; MQTT Part 1",
+    "description": "AsyncAPI & MQTT.",
+    "videoId": "OYi4zYXKiYw"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/49UXkuckKpA/hqdefault.jpg",
+    "title": "Community Meeting, 8:00 UTC Tuesday November 15th 2022",
+    "description": "https://github.com/asyncapi/community/issues/522.",
+    "videoId": "49UXkuckKpA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/koLWWoBnIMo/hqdefault.jpg",
     "title": "Spec 3.0 meeting (November 9, 2022)",
     "description": "https://github.com/asyncapi/community/issues/502.",
@@ -16,17 +28,5 @@
     "title": "AsyncAPI Conf - Day 2 - 4th Nov 2022",
     "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:04:43 Opening 00:05:33 My Journey from Contributor ...",
     "videoId": "8khuAfL7TSE"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/NTHsezlKBh8/hqdefault.jpg",
-    "title": "AsyncAPI Conf - Day 1 - 3rd Nov 2022",
-    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:02:20 Opening 00:03:45 Next Generation of AsyncAPI ...",
-    "videoId": "NTHsezlKBh8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/3GZfQCrDrh8/hqdefault.jpg",
-    "title": "Conference Dry-Run",
-    "description": "This stream is for folks volunteering for the conference to make sure everything runs smoothly.",
-    "videoId": "3GZfQCrDrh8"
   }
 ]
