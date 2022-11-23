@@ -22,7 +22,11 @@ flowchart LR
     c-- "Publish(Qos2, Message 1)" ---> b[Consumer]
 ```
 
-The diagram above depicts the message exchange flow from `producer` to `broker` to `consumer` using the MQTT protocol with QoS2 (quality of service 2). This means that information exchanged from `producer` to `broker` to `consumer` is delivered only once.
+The diagram above depicts the message exchange flow from `producer` to `broker` to `consumer` using the MQTT protocol with QoS0 (quality of service 0). This means that information exchanged from `producer` to `broker` to `consumer` is delivered at most once.
+
+The quality of service information rule is specified on a protocol level. Broker implementations and other involved actors must act accordingly.
+
+In AsyncAPI documents, all protocol-specific details that the application follows can be described using [bindings](/docs/reference/specification/v2.5.0#definitionsBindings).
 
 <DocsButton
  suggestions={[
