@@ -90,6 +90,17 @@
       "score": 20.67657038994663
     },
     {
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 19.527872034949596
+    },
+    {
       "id": "PR_kwDOCoBobc4xN9Px",
       "isPR": true,
       "isAssigned": false,
@@ -117,17 +128,6 @@
       "score": 18.953522857451077
     },
     {
-      "id": "PR_kwDOBGu-185AIQgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 18.953522857451077
-    },
-    {
       "id": "PR_kwDOBW5R_c5AL1kI",
       "isPR": true,
       "isAssigned": true,
@@ -135,21 +135,8 @@
       "author": "Annysah",
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 18.091999091203302
+      "labels": [],
+      "score": 18.37917367995256
     },
     {
       "id": "PR_kwDOBW5R_c5CDXVB",
@@ -160,16 +147,16 @@
       "resourcePath": "/asyncapi/website/pull/1071",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 17.804824502454043
     },
     {
-      "id": "PR_kwDODtSOs84xcJjh",
+      "id": "PR_kwDOFLhIt85AY9Ib",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: switch-to-jsx-renderer",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/html-template/pull/316",
-      "repo": "asyncapi/html-template",
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
       "labels": [],
       "score": 16.65612614745701
     }
@@ -311,21 +298,6 @@
       "title": "Add support for JetStream push subscribe",
       "isAssigned": false,
       "resourcePath": "/asyncapi/dotnet-nats-template/issues/296",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5TFYjM",
-      "title": "Add support for JetStream publish",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/295",
       "repo": "asyncapi/dotnet-nats-template",
       "author": "jonaslagoni",
       "area": "Unknown",
