@@ -21,9 +21,7 @@ Let's pretend we have an invalid AsyncAPI document.
 
 1. Open [Studio](https://studio.asyncapi.com/).
 
-2. Navigate to the left side bar and click on **new file**.
-
-3. Copy and paste the below invalid AsyncAPI document:
+2. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
 {`asyncapi: '1.0.0'
@@ -90,7 +88,8 @@ Notice how <b>description</b> property is missing; that doesn't make the AsyncAP
 5. You see three errors:
 - must be equal to one of the allowed values
 - must be array
-- must match a schema in anyOf
+- must match a schema in `anyOf`
+
 `anyOf` means it should match any one the above schemas then it is valid.
 
 Now let's fix this error by changing the type to `string`
