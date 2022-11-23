@@ -26,13 +26,10 @@ Let's pretend we have an invalid AsyncAPI document.
 3. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
-{`asyncapi: '2.5.0'
+{`asyncapi: '1.0.0'
 info:
   title: Streetlights API
   version: '1.0.0'
-  description: |
-    The Smartylighting Streetlights API allows you
-    to remotely manage the city lights.
   license:
     name: Apache 2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0'
@@ -52,58 +49,60 @@ channels:
           properties:
             id:
               type: integer
-              minimum: 0
+              minimum: true
               description: Id of the streetlight.
             lumens:
               type: integer
               minimum: 0
               description: Light intensity measured in lumens.
             sentAt:
-              type: string
+              type: integer
               format: date-time
               description: Date and time when the message was sent.`}
  ``` 
-
 # Troubleshoot Studio errors
 Let's fix the errors one by one until we end up with a valid AsyncAPI document.
  
 1. You can see the error message on the screen: `Empty or invalid document. Please fix errors/define AsyncAPI document.`
 
-3. Open diagnostics, you can see more information related to your errors.
+2. Open diagnostics, you can see more information related to your errors.
 
-4. Fix the incorrect AsyncAPI specification number to `2.4.0`.
+3. Fix the incorrect AsyncAPI specification number to `2.5.0`.
  
 ```yaml
-asyncapi: '2.4.0'
+asyncapi: '2.5.0'
 info:
   title: Account Service
   version: 1.0.0
   ```
-
 <Remember>
 Notice how <b>description</b> property is missing; that doesn't make the AsyncAPI document invalid, but it's always better to include.
 </Remember>
 
-5. Read the next error: `Error downloading https://studio.asyncapi.com/UserSignedUp HTTP ERROR 404`.
-
-
-6. Fix the `$ref` by changing it to: `'#/components/messages/UserSignedUp'`.
+4. Read the next error: `must be number`. Fix the `minimum` by changing it to: `0`.
 
 ```yaml
-channels:
-  user/signedup:
-    subscribe:
-      message:
-        $ref: 'UserSignedUp'
+          properties:
+            id:
+              type: integer
+              minimum: 0
+``` 
+5. You see three errors:
+- must be equal to one of the allowed values
+- must be array
+- must match a schema in anyOf
+`anyOf` means it should match any one the above schemas then it is valid.
+
+Now let's fix this error by changing the type to `string`
+
+```yaml
+            sentAt:
+              type: string
+              format: date-time
+              description: Date and time when the message was sent.`}
 ```
 
-This allows the consumer applications to subscribe to the _user/signedup_ channel and receive `userSignUp` messages. 
-
-<Remember>
-The <b>channels</b> section is used to describe the event names your API will be publishing and/or subscribing to.
-</Remember>
-
-7. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
+6. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
 
 # Summary
 This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the error message directions in diagnostics. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
