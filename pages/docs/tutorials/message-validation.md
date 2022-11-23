@@ -17,7 +17,7 @@ You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQ
 In the previous tutorial, you generated your application using the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template. Now you will be validating the messages (events) which you will be sending to your application using a Mosquitto broker and MQTT client.
 
 
-#  Validate messages
+## Validate messages
 In this step, we will send a message to our application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
 
 1. Start your generated application.
