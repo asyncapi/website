@@ -13,9 +13,20 @@ Message validation can be performed at both the producer and consumer levels. Me
 
 You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here publishers and subscribers are MQTT clients. The publisher and subscriber labels refer to whether the client is publishing or subscribing to receive messages.
 
+In the previous tutorial, you generated your application using the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
+If you are following this tutorial without finishing the previous tutorial then follow these instructions to quickly setup our application:
+- Generate AsyncAPI document:
+<CodeBlock language="bash">
+{`asyncapi new --example=tutorial.yml --no-tty`}
+</CodeBlock>
 
-In the previous tutorial, you generated your application using the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template. Now you will be validating the messages (events) which you will be sending to your application using a Mosquitto broker and MQTT client.
+- Generate server:
+<CodeBlock language="bash">
+{`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
+cd output && npm install`}
+</CodeBlock>
 
+Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and MQTT client.
 
 ## Validate messages
 In this step, we will send a message to our application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
