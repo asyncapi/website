@@ -14,7 +14,7 @@ To understand message validation, we must first understand the basic components 
 - Broker: The broker acts as a bridge between the consumer and the producer because messages travel through the broker.
 
 Both producers and consumers can do validation. Consumer-side validation happens by discarding invalid messages based on provided parameters.
-Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI file also tells the consumer about the message's properties.
+Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 
 ```mermaid
 stateDiagram-v2
