@@ -98,7 +98,7 @@ Now let's fix this error by changing the type to `string`
             sentAt:
               type: string
               format: date-time
-              description: Date and time when the message was sent.`}
+              description: Date and time when the message was sent.
 ```
 
 6. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
