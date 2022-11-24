@@ -1,5 +1,5 @@
 ---
-title: Message validation
+title: Messages validation
 description: This guide explains different use cases for message validation using AsyncAPI.
 weight: 120
 ---
