@@ -13,7 +13,7 @@ To validate an AsyncAPI document, you must first create one. You can create one 
 Generate a sample `asyncapi.yaml` file (AsyncAPI document) with the following CLI command: 
 
 ```
-asyncapi new --example=default-example.yaml --no-tty
+asyncapi new --example=tutorial.yml --no-tty
 ```
 
 ## Validate AsyncAPI documents
@@ -25,9 +25,9 @@ Validating an AsyncAPI document can mean one of two things:
 Validating against the specification ensures that every content of the document is written in accordance with the AsyncAPI specification. Several tool options exist for validating against the specification: _AsyncAPI Studio_, _AsyncAPI CLI_, and _Parsers_.
 
 #### AsyncAPI Studio validation 
-[AsyncAPI Studio](https://github.com/asyncapi/studio#readme) provides a visual and easy way to validate your AsyncAPI documents against the specification. (It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.)
+[AsyncAPI Studio](https://studio.asyncapi.com/) provides a visual and easy way to validate your AsyncAPI documents against the specification. (It uses the [AsyncAPI JavaScript parser](https://github.com/asyncapi/parser-js) behind the scenes to perform syntax checks and validate documents.)
 
-Errors in your document are highlighted with a red underline, showing which lines are invalid. The console also provides feedback, allowing you to further troubleshoot with detailed error messages. When a document is invalid, it provides the following error: `Empty or invalid document please fix errors / define AsyncAPI document`.
+Errors in your document are highlighted with a red underline, showing which lines are invalid. The `Diagnostics` section also provides feedback, allowing you to further troubleshoot with detailed error messages. When a document is invalid, it provides the following error: `Empty or invalid document please fix errors / define AsyncAPI document`.
 
 #### AsyncAPI CLI validation 
 The following [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) command validates AsyncAPI documents in your local computer or in CI/CD automation:
