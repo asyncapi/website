@@ -39,6 +39,12 @@ The command above helps you install the generator tool globally.
 
 To generate code from the AsyncAPI document created from the [previous tutorial](""), follow the steps listed below;
 
+<Remember>
+
+If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one using `asyncapi new --example=tutorial.yml --no-tty` command.
+
+</Remember>
+
 1. Trigger generation of the Node.js code:
 
 <CodeBlock language="bash">
@@ -99,21 +105,21 @@ package.json
 {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
 
-3. Go back to the previous terminal and check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal;
+3. Go back to the previous terminal and check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
 
 ```
 light/measured was received:
 { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
 ```
 
-# Summary
+## Summary
 
 In this tutorial, you learned how to generate your code from the Streetlights API specification document created in the [previous tutorial]() using the AsyncAPI generator tool. 
 
 Additionally, you have learned how to run your code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT client.
 
 
-# Next steps
+## Next steps
 Now that you've completed this tutorial, go ahead to learn how to [validate your document using the AsyncAPI studio]() through the validation techniques supported by AsyncAPI.
 
 ---
@@ -121,12 +127,12 @@ Now that you've completed this tutorial, go ahead to learn how to [validate your
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tutorials/validate-documents.md',
+      href: '/docs/tutorials/validate-documents',
       title: 'Validate AsyncAPI document',
       type:'back',
     },
     {
-      href: '/docs/tutorials/message-validation.md',
+      href: '/docs/tutorials/message-validation',
       title: 'Validate messages/events',
       type:'next',
     }
