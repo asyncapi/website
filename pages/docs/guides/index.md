@@ -30,7 +30,7 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
   suggestions={[
     {
       href: '/docs/tools/asyncapi-cli',
-      title: 'Tools - AsyncAPI',
+      title: 'Tools - AsyncAPI CLI',
       type:'back',
     },
     {
