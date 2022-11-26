@@ -65,10 +65,10 @@ async function convertTools(data) {
           }
         });
       } else {
-        console.log('Invalid .asyncapi-tool file.');
-        console.log(`Located in: ${tool.repository.html_url}`);
-        console.log('Validation errors:', JSON.stringify(validate.errors, null, 2));
-        console.log('Not failing, dropping errors for further investigation');
+        console.error('Invalid .asyncapi-tool file.');
+        console.error(`Located in: ${tool.html_url}`);
+        console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+        console.error('Not failing, dropping errors for further investigation');
       }
     }
   }
