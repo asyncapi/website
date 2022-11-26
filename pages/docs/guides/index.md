@@ -29,8 +29,8 @@ Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/async
 <DocsButton
   suggestions={[
     {
-      href: '/docs/tools',
-      title: 'Tools - Overview',
+      href: '/docs/tools/asyncapi-cli',
+      title: 'Tools - AsyncAPI',
       type:'back',
     },
     {
