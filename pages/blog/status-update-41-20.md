@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 41, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 41, 2020)'
 date: 2020-10-07T06:00:00+01:00
 type: Communication
 tags:
@@ -12,16 +12,15 @@ authors:
     byline: AsyncAPI Maintainer and Community Guardian
 ---
 
-
-
 ## New Website
 
-I'm super excited to share with you that last week we released [a new AsyncAPI website](/):
-- On a home page, we now promote [the Playground](https://playground.asyncapi.io) more and put much more emphasis on the different ways you can engage with AsyncAPI Community,
+I'm super excited to share with you that last week we released [a new AsyncAPI website](https://www.asyncapi.com/):
+
+- On a home page, we now promote [Studio](https://studio.asyncapi.com) more and put much more emphasis on the different ways you can engage with AsyncAPI Community,
 - Documentation view got additional navigation per document so, for example, it is now much better to navigate through different sections of [the specification document](/docs/specifications/2.0.0),
-- The tools section is now dedicated to AsyncAPI's official tools to clarify the AsyncAPI initiative is not just the spec. Just have a look how much detailed is, for example, the [generator view](/generator),
-- Don't worry, all the other tools are still there, under [the Community section](/docs/community/tooling)
-- The cherry on the cake is a much more appealing [Blog view](/blog)
+- The tools section is now dedicated to AsyncAPI's official tools to clarify the AsyncAPI initiative is not just the spec. Just have a look how much detailed is, for example, the [generator view](https://www.asyncapi.com/tools/generator),
+- Don't worry, all the other tools are still there, under [the Tools section](/docs/tools)
+- The cherry on the cake is a much more appealing [Blog view](https://www.asyncapi.com/blog)
 
 [Fran Méndez](https://twitter.com/fmvilas) did all this fantastic job. Well done, Bro! Sources of the website are [here](https://github.com/asyncapi/website). Feel free to use it as a template for your website and let us know if you need help reusing it.
 
@@ -32,17 +31,19 @@ AsyncAPI Initiative joined Hacktoberfest. We decided to join the event at the en
 Do we regret we engaged with event participants? Hell no! So far, we got only 2 spam PRs, but we also got many issues addressed (26 in 7 days) that we listed for the event.
 
 We had two primary goals to join the event:
+
 - Show the community that AsyncAPI Initiative is not just the spec but a lot of great tooling.
-- Help out people to take their first baby steps in open-source contributions with a welcoming community. We not only prepared issues with different levels of difficulty but also created a set of videos that explain how to contribute and what the issues are about. 
+- Help out people to take their first baby steps in open-source contributions with a welcoming community. We not only prepared issues with different levels of difficulty but also created a set of videos that explain how to contribute and what the issues are about.
 
 Anyway. We share the summary of how Hacktoberfest ended up for us in the next status update. So far, so good though.
 
 Remember that throughout the entire October me and Fran, we'll be hosting office hours so anyone can join and ask for help or even do a pair programming session with us. Feel invited! More details in the blog post about the event. We will stream to our official media accounts:
+
 - https://www.twitch.tv/asyncapi
 - https://www.youtube.com/asyncapi
-- https://twitter.com/AsyncAPISpec 
+- https://twitter.com/AsyncAPISpec
 
-Look into [this](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) calendar for the schedule.
+Look into [this](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) calendar for the schedule.
 
 ## Apidays Live Hong Kong
 
@@ -50,7 +51,7 @@ The AsyncAPI founder, [Fran Méndez](https://twitter.com/fmvilas), was invited t
 
 Our regular community member, Paul Taylor from Mulesoft, will talk about `Getting Started with AsyncAPI`. His talk is scheduled for tomorrow, 6:10 AM CEST (12:10 PM Hong Kong timezone).
 
- To join the event, register [here](https://www.eventbrite.com/e/apidays-live-hong-kong-the-open-api-economy-finance-as-a-service-api-ecosystems-tickets-104511637120). 
+To join the event, register [here](https://www.eventbrite.com/e/apidays-live-hong-kong-the-open-api-economy-finance-as-a-service-api-ecosystems-tickets-104511637120).
 
 ## React Component Improvements
 
@@ -60,13 +61,13 @@ Don't think that server-side docs generation dies. So far generation of docs usi
 
 ## AsyncAPI Special Interest Group (SIG) open meeting
 
-The last meeting took place on Tuesday, 15th of September, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/443). 
+The last meeting took place on Tuesday, 15th of September, 4PM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/443).
 
-The next meeting is scheduled for next [Tuesday, 13th of October, 4PM UTC](https://everytimezone.com/s/89b676b6). 
+The next meeting is scheduled for next [Tuesday, 13th of October, 4PM UTC](https://everytimezone.com/s/89b676b6).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/451). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/451). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Some Good Read
 
