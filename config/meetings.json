@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "Community Meeting",
+    "url": "https://github.com/asyncapi/community/issues/536",
+    "date": "Tue, 29 Nov 2022 16:00:00 GMT"
+  },
+  {
+    "title": "Let's talk about contributing Developer Documentation",
+    "url": "https://github.com/asyncapi/community/issues/537",
+    "date": "Thu, 01 Dec 2022 12:00:00 GMT"
+  }
+]
