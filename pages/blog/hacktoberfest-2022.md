@@ -1,0 +1,207 @@
+---
+title: "Is Hacktoberfest Good For Maintainers?"
+date: 2020-11-05T06:00:00+01:00
+type: Community
+tags:
+  - Hacktoberfest
+cover: /img/posts/asyncapiXhacktoberfest.webp
+authors:
+  - name: Azeez Elegbede
+    photo: /img/avatars/ace.webp
+    link: https://twitter.com/_acebuild
+    byline: Preacher at AsyncAPI
+---
+
+Hacktoberfest was a blast this year! We can't believe it's over already. We had a great time participating with you all and wanted to share a bit of our experience in a review.
+
+## Why Hacktoberfest
+
+Hacktoberfest is an annual event that encourages people to contribute to open source throughout October. AsyncAPI is an open-source project and, like many other open-source projects, built and maintained by passionate people who often don't have the staff or budgets to do much more than keep the project alive. Hacktoberfest is all about giving back to those projects, sharpening skills, and celebrating all things open source, especially those who make open source so special.
+
+## Planting the seed
+
+For us, contributions come in all shapes and sizes. From typo fixes, bug reporting to more significant improvements. But that's not all! AsyncAPI also creates time to help onboard contributors that are finding it difficult to start contributing to the project or provide help to contributors that get stuck while contributing. 
+
+## How we prepared
+
+Not gonna lie, this year's Hacktoberfest snuck up on us like Batman in Gotham City, and as soon as we realized this, we immediately started planning. We kicked off by defining our goals for Hacktoberfest as we've always done. 
+
+- Promote [AsyncAPI Initiative](https://www.asyncapi.com/) as a place where we work not only on the AsyncAPI specification but also lots of tools
+- Help members of the broader open-source community make their first contributions in a friendly environment
+
+We spent time writing a how-to-contribute guide for folks participating for the first time and also wrote a maintainers guide for potential maintainers.
+
+AsyncAPI is a great project to contribute to because you can learn about AsyncAPI while fixing an issue. That's why we carefully curated issues and prepared especially for Hacktoberfest. And because most of these issues are existing issues, we made sure we reached out to project maintainers to identify which of them is a good one for Hacktoberfest contributors to look into
+
+## Was it worth it?
+
+Absolutely! Even despite the fact that we kicked off late, we still received an amazing contribution. AsyncAPI merged 18 PRs from 12 contributors as part of this year's Hacktoberfest! I know it's less than the previous years but let's look on the bright side because some of these contributions were fun to make.
+
+## Meet the heroes
+
+This is a huge amount of work, and we are really proud that so many wonderful people have come to help AsyncAPI to produce better software.
+
+We want to thank everyone personally who submitted improvements to our repositories. Here are the names of our heroes:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Amishakumari544">
+        <img src="https://avatars.githubusercontent.com/u/49230384?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+            Amishakumari544 -  1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/toukirkhan">
+        <img src="https://avatars.githubusercontent.com/u/88899011?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+            toukirkhan -  1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/aeworxet">
+        <img src="https://avatars.githubusercontent.com/u/16149591?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           aeworxet - 2 PRs
+          </b>
+        </sub>
+      </a>
+    </td>
+         <td align="center">
+      <a href="https://github.com/manavdesai27">
+        <img src="https://avatars.githubusercontent.com/u/74018438?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           manavdesai27 - 1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+      <tr>
+    <td align="center">
+      <a href="https://github.com/Ankitchaudharyy">
+        <img src="https://avatars.githubusercontent.com/u/46367738?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           Ankitchaudharyy -  2 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/nawed2611">
+        <img src="https://avatars.githubusercontent.com/u/83456083?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+            nawed2611 -  1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/dhfherna">
+        <img src="https://avatars.githubusercontent.com/u/104927849?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           dhfherna - 1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+         <td align="center">
+      <a href="https://github.com/amit-ksh">
+        <img src="https://avatars.githubusercontent.com/u/91947037?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           amit-ksh - 1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+          <tr>
+    <td align="center">
+      <a href="https://github.com/mastdev">
+        <img src="https://avatars.githubusercontent.com/u/44112399?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+          mastdev -  2 PRs
+          </b>
+        </sub>
+      </a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/codingtenshi">
+        <img src="https://avatars.githubusercontent.com/u/116377630?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+            codingtenshi -  4 PRs
+          </b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/akshatnema">
+        <img src="https://avatars.githubusercontent.com/u/76521428?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           akshatnema - 1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+         <td align="center">
+      <a href="https://github.com/Mayaleeeee">
+        <img src="https://avatars.githubusercontent.com/u/105395613?v=4" width="100px;" alt=""/>
+        <br />
+        <sub>
+          <b>
+           Mayaleeeee - 1 PR
+          </b>
+        </sub>
+      </a>
+    </td>
+    </tr>
+</table>
+
+## Late to the party?
+
+Not a problem. We've got tons of issues you can explore and start contributing to in no time. Because we are a community-first open-source project, we've made it our responsibility to make it easier for contributors to navigate through issues easily. That's why we've built the AsyncAPI [community dashboard](https://www.asyncapi.com/community/dashboard) to help you explore some exciting good first issues.
+
+## Things to learn from
+
+We were overwhelmed and weren't fully prepared to handle the enthusiastic response from the community. Because we needed to curate more issues tagged Hacktoberfest, many of the issues were claimed before the mid of October, which left other contributors interested left out because of the lack of more issues.
+
+Once beaten twice shy. In other to avoid these potential pitfalls next year, we're gonna put some things in place, which include the following.
+
+- Start planning earlier
+- Create more accessible Hacktoberfest issues
+- Usage of social media as an advantage to bring in more folks
+
+## Wrap up
+
+Thank you so much to everyone who took part! We welcomed new contributors but were just as happy to see our existing contributors join in the fun, too. We hope you all enjoyed participating in Hacktoberfest as much as we did.
+
+## Hacktoberfest is over, but Open Source is for life
+
+Are you interested in getting involved with AsyncAPI? You can always find us on [GitHub](https://github.com/asyncapi) or [Slack](https://asyncapi.com/slack-invite). Can't wait to meet you and merge your PR!
