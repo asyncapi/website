@@ -38,10 +38,6 @@ APIs act as an intercommunicator, linking one or more programs. Let's say they c
 
 We can classify them into two main groups, depending on their use or their type of architecture.
 
-<p align="center">
-  <img src="https://media.giphy.com/media/9V5nPRejlJB20I2TDo/giphy.gif" alt="animated" />
-</p>
-
 #####Types of APIs according to their use:
  
 - **Internal APIs** are those used at a local level. They focus on communicating with each other within the same system or the same computer. An excellent example of them might be the pipes contained in a house. They connect the sink to the bathroom and the washing machine to the dryer, for example.
@@ -71,10 +67,6 @@ It is essential to choose the architecture style or pattern that best fits the d
 Now that we have seen the classification of APIs, let's focus on the most representative types of architecture. 
 
 In my opinion, this is the most interesting part. Understanding different construction models bring us closer to the skeleton of the system. By understanding this part, we can better sustain the concepts of APIs, supporting them on fundamental pillars.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/d3MLMng2ZPrRpdXq/giphy.gif" />
-</p>
 
 -  **Monolithic architecture**
 
