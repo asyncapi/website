@@ -1,30 +1,30 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-export default function DocsNavItem({
-  item,
-  active,
-  onClick = () => {},
-}) {
-  const { slug, title, isSection } = item
-  const commonClassNames = 'flex px-2 transition ease-in-out duration-150 focus:outline-none'
-  const sectionClassNames = `mt-8 mb-2 text-primary-800 text-xs font-bold uppercase hover:text-primary-800 ${commonClassNames}`
-  const activeItemClassNames = 'font-medium text-primary-600'
-  const nonActiveItemClassNames = 'font-normal text-gray-700 hover:text-primary-800 hover:font-normal'
-  const itemClassNames = `mb-3 text-sm ${commonClassNames} ${active ? activeItemClassNames : nonActiveItemClassNames}`
+function isActiveSlug(slug, activeSlug) {
+  const partialSlug = slug.split('/');
+  const partialActiveSlug = activeSlug.split('/');
+  const activeParts = partialActiveSlug.filter((a, idx) => a === partialSlug[idx]);
+  return activeParts.length === partialSlug.length;
+}
 
-  if (isSection) {
-    return (
-      <a className={sectionClassNames} onClick={onClick}>
-        {title}
-      </a>
-    )
-  }
+export default function DocsNavItem({ title, slug, href, indexDocument, activeSlug, onClick = () => {}, defaultClassName = '', inactiveClassName = '', activeClassName = '', bucket }) {
+  const isActive = slug === '/docs' || indexDocument ? slug === activeSlug : isActiveSlug(slug, activeSlug);
+  const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block`;
 
   return (
-    <Link href={slug}>
-      <a className={itemClassNames} onClick={onClick}>
-        {title}
-      </a>
-    </Link>
-  )
+    <div className='inline-block'>
+      <div className={classes}>
+        <Link href={href || slug}>
+          <a href={href || slug} onClick={onClick}>
+            {bucket && (
+              <div className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`} style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}>
+                <bucket.icon className='h-5 w-5' />
+              </div>
+            )}
+            <span>{title}</span>
+          </a>
+        </Link>
+      </div>
+    </div>
+  );
 }

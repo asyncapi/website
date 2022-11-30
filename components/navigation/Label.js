@@ -11,7 +11,7 @@ export default function Label ({ text, color = 'gray' }) {
   }
 
   return (
-    <span className={`text-xs uppercase py-0.5 px-1 ml-2 rounded ${colorClasses}`}>
+    <span className={`inline-block text-xs uppercase py-0 px-1 ml-2 rounded transform -translate-y-0.5 ${colorClasses}`}>
       {text}
     </span>
   )

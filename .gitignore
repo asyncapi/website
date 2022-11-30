@@ -3,8 +3,11 @@
 .idea
 node_modules
 .next
+.swc
+out
 config/posts.json
 public/rss.xml
 .env.local
 roadmap.json
 yarn.lock
+meetings.json

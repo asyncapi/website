@@ -4,7 +4,6 @@ date: 2019-04-19T16:56:52+01:00
 type: Engineering
 tags:
   - Getting Started
-  - Event-Driven Architectures
   - EDA
 cover: /img/posts/getting-started-with-event-driven-architectures.webp
 authors:

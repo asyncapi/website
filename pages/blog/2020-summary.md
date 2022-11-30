@@ -3,8 +3,7 @@ title: "Awesome 2020 and What Can Get Better In 2021"
 date: 2020-12-23T06:00:00+01:00
 type: Communication
 tags:
-  - Postman
-  - Announcement
+  - Project Status
 cover: /img/posts/2020-summary/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -26,11 +25,11 @@ This post is not 100% just in numbers and analytics. It is also a summary of all
 
 ## Important moments
 
-1. Our first ever <a href="/blog/asyncapi-conference-kick-off">AsyncAPI Online Conference</a>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
-1. We took active part in <a href="/blog/hacktoberfest-summary-2020">Hacktoberfest</a> as maintainers and increased the number of contributions to the project
-1. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1963 new users to the AsyncAPI website
-1. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that took 1051 users directly to the AsyncAPI website
-1. Our two core tools reached their first major release
+1. Our first ever <Link href="/blog/asyncapi-conference-kick-off" passHref><a>AsyncAPI Online Conference</a></Link>. This pandemic edition turned out to be a very successful event that powered us up for the rest of the year
+2. We took active part in <Link href="/blog/hacktoberfest-summary-2020" passHref><a>Hacktoberfest</a></Link> as maintainers and increased the number of contributions to the project
+3. AsyncAPI was featured in InfoQ's [Software Architecture and Design InfoQ Trends Report—April 2020](https://www.infoq.com/articles/architecture-trends-2020/) that directly brought 1963 new users to the AsyncAPI website
+4. AsyncAPI showed up on [Technology Radar](https://www.thoughtworks.com/radar/tools/asyncapi) that took 1051 users directly to the AsyncAPI website
+5. Our two core tools reached their first major release
     * [JavaScript Parser](https://github.com/asyncapi/parser-js/)
     * [Generator](https://github.com/asyncapi/generator/)
   
@@ -309,9 +308,9 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/automated-releases">
+      <Link href="/blog/automated-releases" passHref><a>
       Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits
-      </a> (March 2020)
+      </a></Link> (March 2020)
     </td>
     <td align="center">
       9 318
@@ -324,9 +323,10 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/asyncapi_codegen_scst">
+    <Link href="/blog/asyncapi_codegen_scst" passHref>
+      <a>
       AsyncAPI Code Generation: Microservices Using Spring Cloud Stream
-      </a> (June 2020)
+      </a></Link> (June 2020)
     </td>
     <td align="center">
       8 508
@@ -339,9 +339,10 @@ What is the benefit of writing/republishing on the AsyncAPI blog? Visibility amo
   </tr>
   <tr>
     <td align="center">
-      <a href="/blog/an-api-strategist-explores-event-driven-apis">
+    <Link href="/blog/an-api-strategist-explores-event-driven-apis" passHref>
+      <a>
       An API Strategist Explores Event-Driven APIs
-      </a> (May 2019)
+      </a></Link> (May 2019)
     </td>
     <td align="center">
       3 451
@@ -569,8 +570,6 @@ There is only one tweet that shows up in the top 3 for each category.
 It is pretty clear that what you liked the most this year is that we are hiring :muscle: 
 
 We are still hiring!
-
-<NewsletterSubscribe className="my-8" formName="form 1" type="jobs" title="Receive an email when we publish a new job offer:" />
 
 ### What's next with Twitter
 

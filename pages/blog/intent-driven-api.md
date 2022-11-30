@@ -3,9 +3,7 @@ title: Designing a unified Intent-driven API for all AsyncAPI's parsers
 date: 2021-05-07T06:00:00+01:00
 type: Engineering
 tags:
-  - API design
-  - AsyncAPI tooling
-  - Processes
+  - API Design
 cover: /img/posts/intent-driven-api/cover.webp
 authors:
   - name: Sergio Moya
@@ -13,7 +11,6 @@ authors:
     link: https://twitter.com/smoyac
     byline: Pilot at AsyncAPI Airlines
 excerpt: Afraid because of breaking changes? Learn how do we plan to reduce breaking changes in our tooling APIs by introducing a new design approach called Intent-driven. 
-featured: true
 ---
 
 The **Free and Open-Source Software** (FOSS) model, since its inception, has brought a flurry of libraries and applications available to everyone. 
@@ -131,7 +128,7 @@ components:
             description: Light intensity measured in lumens.
 ```
 
-By the time of this post, there is only one implementation of the parser, which is written in Javascript. 
+By the time of this post, there is only one implementation of the parser, which is written in JavaScript. 
 [Parser-js][parser-js] parses AsyncAPI spec documents and provides functions to work with them and access the different objects and their values.
 
 In the hypothetical case a user wants to parse this document and *get all the messages a consumer of the application can consume*, this is needed: 
@@ -225,7 +222,7 @@ We then wrote down a draft of our first list of intents.
 
 ## 3. Build a mock API
 
-After getting a list of intents to implement, we built a simple mock API in Javascript with that list. 
+After getting a list of intents to implement, we built a simple mock API in JavaScript with that list. 
 
 Methods were returning hardcoded data but were enough for getting an idea of how difficult it would be to create such API from the point of view of a maintainer.
 
@@ -238,7 +235,7 @@ At this point, we faced up some API design decisions, such as:
 
 ## 4. Validate the intents and their UX
 
-With the new API mock built-in Javascript, we chose some of the most used [generator templates][templates] and replaced all the calls made to the old [Parser-js][parser-js] API with the new ones.
+With the new API mock built-in JavaScript, we chose some of the most used [generator templates][templates] and replaced all the calls made to the old [Parser-js][parser-js] API with the new ones.
 
 This step made us realize that some of the intents we mocked up worked like a charm: We were pretty happy seeing how the code got simplified.
 
@@ -257,7 +254,7 @@ You can find the new repository holding the new Parsers API specification [here]
 # What's next?
 
 Even though we do now have an alpha version of the new parser API, work is pending around implementation.
-We are actively asking for feedback. Please submit yours via Github Discussions [here][api-discussions].
+We are actively asking for feedback. Please submit yours via GitHub Discussions [here][api-discussions].
 
 Our next steps are going to be:
 

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import Typing from 'react-typing-animation'
 import MacWindow from './MacWindow'
 import ArrowRight from './icons/ArrowRight'
-import OpenInPlaygroundButton from './buttons/OpenInPlaygroundButton'
+import OpenInStudioButton from './buttons/OpenInStudioButton'
+import Heading from './typography/Heading'
 
 export default function DemoAnimation({ className = '' }) {
   const [started, setStarted] = useState(true)
@@ -43,7 +44,7 @@ export default function DemoAnimation({ className = '' }) {
     const common = (
       <>
         <div>
-          <span className="text-teal-400">asyncapi:</span> 2.0.0
+          <span className="text-teal-400">asyncapi:</span> 2.5.0
         </div>
         <div>
           <span className="text-teal-400">info:</span>
@@ -201,7 +202,7 @@ export default function DemoAnimation({ className = '' }) {
   return (
     <div className={`${className} relative`}>
       <div className="md:flex transition-all duration-500 ease-in-out" style={showControls ? { filter: '', opacity: '1' } : null }>
-        <div className="mb-2 z-50 md:flex-1 md:mr-1 md:mb-0">
+        <div className="mb-2 z-20 md:flex-1 md:mr-1 md:mb-0">
           <MacWindow
             className="bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out"
             contentClassName="text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108"
@@ -214,15 +215,19 @@ export default function DemoAnimation({ className = '' }) {
             { (showDisplayName || showDisplayNameDescription) && renderEmail(() => setShowEmail(true)) }
           </MacWindow>
         </div>
-        <div className={`relative md:flex-1 md:ml-1 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
-          <div className={`text-center mt-8 lg:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
-            <h3 className="text-primary-800 text-2xl font-bold md:text-2xl mb-4">
+        <div className={`relative md:flex-1 md:ml-6 md:mb-0 transition-all duration-500 ease-in-out z-10`}>
+          <div className={`md:text-left text-center mt-8 md:mt-0 lg:absolute lg:left-0 lg:top-0 lg:right-0 lg:ml-48 lg:mr-8 ${showControls ? 'block' : 'hidden'}`}>
+            <Heading
+              typeStyle="heading-md"
+              level="h3"
+              className="mb-4"
+            >
               Play with it!
-            </h3>
-            <p className="text-gray-500 text-lg font-normal mb-6 max-w-3xl mx-auto mb-8">
-              Open this example on AsyncAPI Playground to get a better taste of the specification. No signup is required!
+            </Heading>
+            <p className="text-gray-700 text-lg font-normal tracking mb-6 max-w-3xl mx-auto mb-8">
+              Open this example on AsyncAPI Studio to get a better taste of the specification. No signup is required!
             </p>
-            <OpenInPlaygroundButton />
+            <OpenInStudioButton />
           </div>
           <MacWindow
             className={`bg-gray-50 border-gray-200 border shadow-lg min-h-full transition-all duration-500 ease-in-out ${showControls ? 'transform -translate-x-full h-0 opacity-0 lg:h-auto lg:opacity-100 lg:-translate-x-3/4' : ''}`}

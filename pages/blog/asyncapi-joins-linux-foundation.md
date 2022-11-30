@@ -8,12 +8,11 @@ tags:
 cover: /img/posts/asyncapi-joins-linux-foundation.webp
 coverCaption: Background vector created by starline.
 authors:
-  - name: Fran Mendez
+  - name: Fran Méndez
     photo: /img/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder
 excerpt: "Today marks a delightful milestone for us at AsyncAPI: I'm proud to share with you that we're now a Linux Foundation project 🎉"
-featured: true
 ---
 
 Today marks a delightful milestone for us at AsyncAPI: **I'm proud to share with you that we're now a Linux Foundation project** 🎉

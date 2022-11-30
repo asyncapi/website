@@ -3,11 +3,11 @@ title: "AsyncAPI partners with Postman to boost development of Asynchronous APIs
 date: 2020-12-08T17:00:00+01:00
 type: Communication
 tags:
-  - Postman
+  - Partnership
   - Announcement
 cover: /img/posts/asyncapi-partners-with-postman.webp
 authors:
-  - name: Fran Mendez
+  - name: Fran Méndez
     photo: /img/avatars/fmvilas.webp
     link: https://twitter.com/fmvilas
     byline: AsyncAPI Founder
@@ -25,8 +25,6 @@ Since the very beginning, I knew the duty we had at hand was challenging. And st
 We want to make the AsyncAPI Initiative a neutral and independent place for collaborating on defining the future of Asynchronous APIs. Next step for us is to host the project in a neutral foundation to guarantee the long-term success of the initiative. We're currently in conversations with different actors of the OSS world to make sure the initiative remains independent.
 
 Also, we want you to work with us. [We are hiring](/jobs) at Postman to work full-time on AsyncAPI. In the first half of 2021, we'll open a bunch of positions, including Software Engineers, Graphic Designers, Technical Writers, and more. Make sure you don't miss them!
-
-<NewsletterSubscribe className="my-8" formName="form 1" type="jobs" title="Receive an email when we publish a new job offer:" />
 
 Before I finish, I would love to thank [Kin Lane](https://twitter.com/kinlane/) and [Abhinav Asthana](https://twitter.com/a85) for being so supportive. And of course, a huge shout out to [Łukasz Gornicki](https://twitter.com/derberq) and [Eva Morcillo](https://twitter.com/e_morcillo) for their tireless support. None of these would be possible without their help.
 

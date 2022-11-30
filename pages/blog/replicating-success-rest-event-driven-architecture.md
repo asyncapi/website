@@ -3,8 +3,7 @@ title: "Replicating the Success of REST in Event-Driven Architecture"
 date: 2019-04-04T13:56:52+01:00
 type: Engineering
 tags:
-  - REST
-  - Event-Driven Architectures
+  - REST APIs
   - EDA
 cover: /img/posts/replicating-success-of-rest.webp
 authors:

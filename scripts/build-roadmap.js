@@ -6,7 +6,7 @@ require('dotenv').config({
   path: resolve(process.cwd(), '.env.local')
 })
 
-async function start() {
+module.exports = async function buildRoadMap() {
   try {
     const outcomesAndSolutionsQuery = await graphql(`
       query outcomesAndSolutions($owner: String!, $repo: String!) {
@@ -116,6 +116,4 @@ async function start() {
     console.error(e)
     writeFileSync(resolve(__dirname, '..', 'roadmap.json'), '{}')
   }
-}
-
-start()
+};

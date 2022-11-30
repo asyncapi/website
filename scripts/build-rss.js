@@ -15,9 +15,10 @@ function clean(s) {
   return s
 }
 
-function rssFeed() {
+module.exports = function rssFeed(type, title, desc, outputPath) {
+
   const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
+    .filter(p => p.slug.startsWith(`/${type}/`))
     .sort((i1, i2) => {
       const i1Date = new Date(i1.date)
       const i2Date = new Date(i2.date)
@@ -35,13 +36,13 @@ function rssFeed() {
   rss['@version'] = '2.0'
   rss["@xmlns:atom"] = 'http://www.w3.org/2005/Atom'
   rss.channel = {}
-  rss.channel.title = 'AsyncAPI Initiative Blog RSS Feed'
-  rss.channel.link = base+'/rss.xml'
+  rss.channel.title = title
+  rss.channel.link = `${base}/${outputPath}`
   rss.channel["atom:link"] = {}
   rss.channel["atom:link"]["@rel"] = 'self'
   rss.channel["atom:link"]["@href"] = rss.channel.link
   rss.channel["atom:link"]["@type"] = 'application/rss+xml'
-  rss.channel.description = 'AsyncAPI Initiative Blog'
+  rss.channel.description = desc
   rss.channel.language = 'en-gb';
   rss.channel.copyright = 'Made with :love: by the AsyncAPI Initiative.';
   rss.channel.webMaster = 'info@asyncapi.io (AsyncAPI Initiative)'
@@ -51,7 +52,7 @@ function rssFeed() {
 
   for (let post of posts) {
     const link = `${base}${post.slug}${tracking}`;
-    const item = { title: post.title, description: clean(post.excerpt), link, category: 'blog', guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
+    const item = { title: post.title, description: clean(post.excerpt), link, category: type, guid: { '@isPermaLink': true, '': link }, pubDate: new Date(post.date).toUTCString() }
     if (post.cover) {
       const enclosure = {};
       enclosure["@url"] = base+post.cover;
@@ -71,7 +72,5 @@ function rssFeed() {
   feed.rss = rss
 
   const xml = json2xml.getXml(feed,'@','',2)
-  fs.writeFileSync('./public/rss.xml',xml,'utf8')
-}
-
-rssFeed()
+  fs.writeFileSync(`./public/${outputPath}`, xml, 'utf8')
+};

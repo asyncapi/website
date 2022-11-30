@@ -3,16 +3,14 @@ title: "Designing your APIs with AsyncAPI (Part 1)"
 date: 2021-06-01T12:00:00+01:00
 type: Engineering
 tags:
-  - tools
-  - code generation
-  - design 
+  - Code Generation
+  - API Design 
 cover: /img/posts/jonaslagoni-miniseries-part1/blog-miniseries-cover.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
     byline: AsyncAPI Maintainer
-featured: true
 ---
 
 How can you utilize code generation to speed up the development process and only focus on what is important - the business logic? In this miniseries, I will explore the ways AsyncAPI and code generation can work hand in hand beyond generating documentation.

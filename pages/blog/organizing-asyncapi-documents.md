@@ -3,8 +3,7 @@ title: "Organizing your AsyncAPI documents"
 date: 2019-03-01T13:56:52+01:00
 type: Engineering
 tags:
-  - Organization
-  - Documents
+  - Specification
 cover: /img/posts/organizing-asyncapi-documents.webp
 authors:
   - name: Fran Méndez

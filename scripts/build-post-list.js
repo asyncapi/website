@@ -1,6 +1,5 @@
 const { readdirSync, statSync, existsSync, readFileSync, writeFileSync } = require('fs')
-const { join, resolve, basename } = require('path')
-const { inspect } = require('util')
+const { resolve, basename } = require('path')
 const frontMatter = require('gray-matter')
 const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
@@ -16,26 +15,31 @@ const postDirectories = [
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
 ]
-walkDirectories(postDirectories, result)
-if (process.env.NODE_ENV === 'production') {
-  console.log(inspect(result, { depth: null, colors: true }))
-}
-writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
 
-function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
+module.exports = async function buildPostList() {
+  walkDirectories(postDirectories, result)
+  if (process.env.NODE_ENV === 'production') {
+    // console.log(inspect(result, { depth: null, colors: true }))
+  }
+  writeFileSync(resolve(__dirname, '..', 'config', 'posts.json'), JSON.stringify(result, null, '  '))
+}
+
+function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, sectionId, rootSectionId) {
   for (let dir of directories) {
     let directory = dir[0]
     let sectionSlug = dir[1] || ''
-    let files = readdirSync(directory)
+    let files = readdirSync(directory);
 
     for (let file of files) {
       let details
-      const fileName = join(directory, file)
-      const fileNameWithSection = join(fileName, '_section.md')
+      const fileName = [directory, file].join('/')
+      const fileNameWithSection = [fileName, '_section.md'].join('/')
       const slug = fileName.replace(new RegExp(`^${basePath}`), '')
+      const slugElements = slug.split('/');
       if (isDirectory(fileName)) {
         if (existsSync(fileNameWithSection)) {
-          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8')).data
+          // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+          details = frontMatter(readFileSync(fileNameWithSection, 'utf-8'), {}).data
           details.title = details.title || capitalize(basename(fileName))
         } else {
           details = {
@@ -43,12 +47,23 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
           }
         }
         details.isSection = true
+        if (slugElements.length > 3) {
+           details.parent = slugElements[slugElements.length - 2]
+           details.sectionId = slugElements[slugElements.length - 1]
+        }
+        if (!details.parent) { 
+          details.isRootSection = true
+          details.rootSectionId = slugElements[slugElements.length - 1]
+        }
+        details.sectionWeight = sectionWeight
         details.slug = slug
         result.push(details)
-        walkDirectories([[fileName, slug]], result, details.weight, details.title)
+        const rootId = details.parent || details.rootSectionId
+        walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
         const fileContent = readFileSync(fileName, 'utf-8')
-        const { data, content } = frontMatter(fileContent)
+        // Passing a second argument to frontMatter disables cache. See https://github.com/asyncapi/website/issues/1057
+        const { data, content } = frontMatter(fileContent, {})
         details = data
         details.toc = toc(content, { slugify: slugifyToC }).json
         details.readingTime = Math.ceil(readingTime(content).minutes)
@@ -56,16 +71,14 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
         details.sectionSlug = sectionSlug || slug.replace(/\.md$/, '')
         details.sectionWeight = sectionWeight
         details.sectionTitle = sectionTitle
+        details.sectionId = sectionId
+        details.rootSectionId = rootSectionId
+        details.id = fileName
         details.isIndex = fileName.endsWith('/index.md')
         details.slug = details.isIndex ? sectionSlug : slug.replace(/\.md$/, '')
-        if(details.slug.includes('/specifications/') && !details.title) {
-          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-2021-06-release
+        if(details.slug.includes('/reference/specification/') && !details.title) {
+          const fileBaseName = basename(data.slug)  // ex. v2.0.0 | v2.1.0-next-spec.1
           const fileName = fileBaseName.split('-')[0] // v2.0.0 | v2.1.0
-
-          if(fileBaseName.includes('release')) {
-            details.isPrerelease = true
-            details.releaseDate = getReleaseDate(fileBaseName)
-          }
 
           details.weight = specWeight--
 
@@ -75,12 +88,13 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
             details.title = capitalize(fileName)
           }
 
-          if(details.isPrerelease) {
+          if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
+            details.isPrerelease = true
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
         }
-        result.push(details)
+        result.push(details);
       }
     }
   }
@@ -88,8 +102,15 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle) {
 
 function slugifyToC(str) {
   let slug
+  // Try to match heading ids like {# myHeadingId}
   const headingIdMatch = str.match(/[\s]?\{\#([\w\d\-_]+)\}/)
-  if (headingIdMatch && headingIdMatch.length >= 2) slug = headingIdMatch[1]
+  if (headingIdMatch && headingIdMatch.length >= 2) {
+    slug = headingIdMatch[1]
+  } else {
+    // Try to match heading ids like {<a name="myHeadingId"/>}
+    const anchorTagMatch = str.match(/[\s]*<a[\s]+name="([\w\d\s\-_]+)"/)
+    if (anchorTagMatch && anchorTagMatch.length >= 2) slug = anchorTagMatch[1]
+  }
   return slug || slugify(str, { firsth1: true, maxdepth: 6 })
 }
 
@@ -99,11 +120,4 @@ function isDirectory(dir) {
 
 function capitalize(text) {
   return text.split(/[\s\-]/g).map(word => `${word[0].toUpperCase()}${word.substr(1)}`).join(' ')
-}
-
-function getReleaseDate(text) {
- // ex. filename = v2.1.0-2021-06-release
- const splittedText = text.split('-') // ['v2.1.0', '2021', '06', 'release']
- const releaseDate = `${splittedText[1]}-${splittedText[2]}` // '2021-06'
- return releaseDate
 }

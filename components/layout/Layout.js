@@ -10,7 +10,7 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 export default function Layout({ children }) {
   const { pathname } = useRouter()
 
-  if (pathname.startsWith('/docs/')) {
+  if (pathname.startsWith('/docs')) {
     const posts = getAllPosts()
     const post = getPostBySlug(pathname)
     return (

@@ -1,9 +1,9 @@
 ---
 title: Creating AsyncAPI for WebSocket API - Step by Step
 date: 2021-04-21T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
-  - websocket
+  - WebSocket
 cover: /img/posts/websocket-part2/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: Learn how to create a complex AsyncAPI document using WebSocket API as an example. 
-featured: true
 ---
 
 >  This step-by-step guide is a continuation of a series of articles about WebSockets. I recommend reading [WebSocket, Shrek, and AsyncAPI - An Opinionated Intro](/blog/websocket-part1) first.
@@ -134,7 +133,7 @@ Is it reasonable to describe API that has two different production servers in on
 
 For **automation** road described in [Choosing the right road to Rome](#choosing-the-right-road-to-rome) section, you need a machine-readable structure. In case you have messages that can be consumed only by the **private** server, you need a way to specify that the given message can be published only to the **private** server. It is exactly the case with Kraken API.
 
-Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server **ws.kraken.com**. The only way to emit errors like `Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com` is by writing the code that handles validation manually. You can't generate that as the AsyncAPI file does not specif what messages can go to **ws.kraken.com** and what messages can't.
+Imagine you want to read the AsyncAPI document in real-time in your server and validate all incoming messages. Take server **ws.kraken.com**. The only way to emit errors like `Private data and trading are unavailable on this endpoint. Try ws-auth.kraken.com` is by writing the code that handles validation manually. You can't generate that as the AsyncAPI file does not specify what messages can go to **ws.kraken.com** and what messages can't.
 
 Why?
 
@@ -215,7 +214,7 @@ channels:
 
 Hold on! Where did these **publish** and **subscribe** keywords came from. 
 
-When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://tools.ietf.org/html/rfc6455). We are used to **sending** and **receiving** messages.
+When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://www.rfc-editor.org/rfc/rfc6455). We are used to **sending** and **receiving** messages.
 
 Let me present to you an unofficial AsyncAPI vocabulary translator for WebSocket users :smiley:
 
@@ -435,7 +434,7 @@ Websocket protocol is very flexible, and therefore you can implement the server 
 
 For **automation** road described in section [Choosing the right road to Rome](#choosing-the-right-road-to-rome), the document should be split into two documents: one for private and one for public servers. Common parts, like common messages and schemas, should be stored in separate files and referred from these two AsyncAPI documents using **$ref**. Another solution would be to use specification extensions to describe relations between messages and servers.
 
-> You can open this document directly in Playground by clicking [this](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [oryginal documentation](https://docs.kraken.com/websockets/).
+> You can open this document directly in AsyncAPI Studio by clicking [this](https://studio.asyncapi.com?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) link. Compare it also with the [original documentation](https://docs.kraken.com/websockets/).
 
 ```yml
 asyncapi: 2.0.0

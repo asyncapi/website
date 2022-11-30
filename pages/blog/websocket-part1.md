@@ -1,9 +1,9 @@
 ---
 title: WebSocket, Shrek, and AsyncAPI - An Opinionated Intro
 date: 2021-04-16T06:00:00+01:00
-type: Communication
+type: Engineering
 tags:
-  - websocket
+  - WebSocket
 cover: /img/posts/websocket-part1/cover.webp
 authors:
   - name: Lukasz Gornicki
@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
 excerpt: WebSocket is a protocol, an industry standard for building client applications that users love to use. What does AsyncAPI have to do with it?
-featured: true
 ---
 
 This is a pretty subjective post. I'm sharing my perspective, taking into account years of experience building backend and frontend with user experience in mind. 
@@ -32,7 +31,7 @@ So why do I even mention it in 2021?
 
 It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate. It would not happen without the strong support and push from all the big players. 
 
-Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
+Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://www.rfc-editor.org/rfc/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
 
 Anyway, the future of WebSocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the protocol's future.
 
@@ -119,7 +118,7 @@ Now you know how to interact with the Kraken API. Now let's try to describe it u
 
 I'll explain, in detail, how to describe Websocket API with AsyncAPI in another blog post that will be part of the series. Why? I don't want to make this post super lengthy and discourage others from reading it. Let us learn step by step. 
 
-For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Playground](https://playground.asyncapi.io?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
+For now, I will throw here a full AsyncAPI document I created for the Kraken API. You can also open it up in the [AsyncAPI Studio](https://studio.asyncapi.com/?url=https://gist.githubusercontent.com/derberg/4e419d6ff5870c7c3f5f443e8bd30535/raw/5e9b733b80a0209ba5520e5f41ab18c2a112e0a9/asyncapi-websocket-kraken.yml) and compare with their [current documentation](https://docs.kraken.com/websockets/)
 
 Familiarize with below before you look at the AsyncAPI document:
 - AsyncAPI describes the API interface between the client and the server. In other words, the AsyncAPI document is for the user of the API. It does not describe what the server does but what the user can do with the API.

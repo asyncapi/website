@@ -1,9 +1,11 @@
 import { join } from "lodash";
+import Link from 'next/link'
 
 export default function JobPostItem({ job }) {
   return (
     <li>
-      <a href={job.slug} className="block hover:bg-gray-50">
+     <Link href={job.slug} passHref>
+      <a className="block hover:bg-gray-50">
         <div className="px-4 py-4 sm:px-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
@@ -82,6 +84,7 @@ export default function JobPostItem({ job }) {
           </div>
         </div>
       </a>
+     </Link> 
     </li>
   );
 }

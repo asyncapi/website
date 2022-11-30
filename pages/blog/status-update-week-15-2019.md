@@ -26,7 +26,7 @@ I’ll be speaking about AsyncAPI and event-driven architectures in a few confer
 
 * API Days Madrid (April 26): http://apidaysmad.apiaddicts.org/schedule/#session-2
 * Gartner AADI (May 20–21): https://www.gartner.com/en/conferences/emea/applications-uk
-* KubeCon Europe (Barcelona, May 22–23). Not speaking but let’s meet there! https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/
+* KubeCon Europe (Barcelona, May 22–23). Not speaking but let’s meet there!
 * REST Fest Europe (Wrocław, May 31): http://2019.restfest.org/eu/schedule
 * API Days Finland (Helsinki, June 4–5): https://www.apidays.fi/
 
