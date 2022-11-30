@@ -214,7 +214,7 @@ channels:
 
 Hold on! Where did these **publish** and **subscribe** keywords came from. 
 
-When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://tools.ietf.org/html/rfc6455). We are used to **sending** and **receiving** messages.
+When we talk about WebSocket, we usually do not use words like subscribe and publish, as we do not think about producers and consumers. Just check out [the protocol RfC](https://www.rfc-editor.org/rfc/rfc6455). We are used to **sending** and **receiving** messages.
 
 Let me present to you an unofficial AsyncAPI vocabulary translator for WebSocket users :smiley:
 
