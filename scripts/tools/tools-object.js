@@ -78,8 +78,10 @@ async function convertTools(data) {
           }
         });
       } else {
-        console.log("Repository: " + tool.repository.html_url)
-        console.log("Error: " + validate.errors)
+        console.error('Invalid .asyncapi-tool file.');
+        console.error(`Located in: ${tool.html_url}`);
+        console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+        console.error('Not failing, dropping errors for further investigation');
       }
     }
   }

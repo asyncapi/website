@@ -22,7 +22,7 @@ I'm happy to share that AsyncAPI specification 2.2.0 is here. Check out all the 
 
 This feature allows the definition of AsyncAPI documents for applications with more selective use of channels and servers. An example is message protocol adapters that consume messages from one server (say, Kafka) and publish those messages to another server (say, Anypoint MQ).
 
-Now you can add a new **servers** property to [Channel Item Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#channel-item-object). It must be a list of server names provided as a string.
+Now you can add a new **servers** property to [Channel Item Object](https://github.com/asyncapi/spec/blob/v2.2.0/spec/asyncapi.md#channel-item-object). It must be a list of server names provided as a string.
 
 ```yaml
 description: This application publishes WebUICommand messages to an AMQP queue on RabbitMQ brokers in the Staging and Production environments.
@@ -37,7 +37,7 @@ bindings:
     is: queue
 ```
 
-Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/2021-09-release/spec/asyncapi.md#serversObject). This new property is optional, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. If **servers** is absent or empty, the given channel must be available on all servers defined in the Servers Object, like the previous version.
+Names of servers must match the names of the servers defined in the [Servers Object](https://github.com/asyncapi/spec/blob/v2.2.0/spec/asyncapi.md#serversObject). This new property is optional, so moving from 2.1.0 to 2.2.0 is as easy as changing the specification version in your current AsyncAPI file. If **servers** is absent or empty, the given channel must be available on all servers defined in the Servers Object, like the previous version.
 
 For more details, check out [this pull request](https://github.com/asyncapi/spec/pull/531).
 
