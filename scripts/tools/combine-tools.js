@@ -1,4 +1,3 @@
-const manualTools = require("../../config/tools-manual.json")
 const { languagesColor, technologiesColor } = require("./tags-color")
 const { categoryList } = require("./categorylist.js")
 const fs = require('fs')
@@ -25,9 +24,14 @@ const fuse = new Fuse(list, options)
 
 const getFinalTool = async (toolObject) => {
     let finalObject = toolObject;
-    const languageSearch = await fuse.search(toolObject.filters.language)
-    if (languageSearch.length) {
-        finalObject.filters.language = languageSearch[0].item;
+
+    //there might be a tool without language
+    if(toolObject.filters.language) {
+    
+        const languageSearch = await fuse.search(toolObject.filters.language)
+        if (languageSearch.length) {
+            finalObject.filters.language = languageSearch[0].item;
+        }
     }
     let technologyArray = [];
     for (const technology of toolObject.filters.technology) {
@@ -41,7 +45,7 @@ const getFinalTool = async (toolObject) => {
 
 }
 
-const combineTools = async (automatedTools) => {
+const combineTools = async (automatedTools, manualTools) => {
     for (const key in automatedTools) {
         let finalToolsList = [];
         if (automatedTools[key].toolsList.length) {
@@ -49,7 +53,7 @@ const combineTools = async (automatedTools) => {
                 finalToolsList.push(await getFinalTool(tool))
             }
         }
-        if (manualTools[key].toolsList.length) {
+        if (manualTools[key] && manualTools[key].toolsList.length) {
             for (const tool of manualTools[key].toolsList) {
                 finalToolsList.push(await getFinalTool(tool))
             }
