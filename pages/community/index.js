@@ -22,7 +22,7 @@ function CommunityIndexPage() {
       <div className="mt-10">
         <Heading level="h1" typeStyle="heading-xl" className="">
           <span className="title block md:-mt-1 leading-[3rem]">
-            Welcome to <br /> the Community
+            Welcome to the<br /> AsyncAPI Community
           </span>
         </Heading>
       </div>
