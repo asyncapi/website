@@ -130,10 +130,8 @@ function CommunityIndexPage() {
               textColor="text-gray-700"
               className="text-slate-500 text-sm mt-10"
             >
-              Launch community advocate programs that your members are proud to
-              be a part of. Powerful ambassador engagement analytics make it
-              easy to track and reward you contributors and build thriving
-              communities.
+              Launch OSS community programs that your community is proud to
+              participate in. Let's build thriving OSS communities together!
             </Heading>
             <div className="mt-10">
               <Button
