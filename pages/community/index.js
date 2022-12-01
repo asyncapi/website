@@ -335,8 +335,8 @@ function CommunityIndexPage() {
                     textColor="text-white"
                     className="text-sm"
                   >
-                    Recognize and lift up the people who inspire and contribute
-                    to our community
+                    Recognize the people who inspire and contribute
+                    to our OSS community.
                   </Heading>
                 </div>
               </div>
