@@ -117,7 +117,7 @@ function CommunityIndexPage() {
               typeStyle="heading-md"
               textColor="text-purple-300"
             >
-              Support your rockstars
+              Thanking our AsyncAPI Ambassadors
             </Heading>
           </div>
           <div>
