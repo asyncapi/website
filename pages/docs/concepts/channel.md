@@ -20,3 +20,19 @@ graph LR
     C --> F[Consumer]
 ```
 The diagram above shows the communication between a `producer` and `consumer`, with the producer sending a `message` through the `channel`. The channel then queues the message to the specific consumer.
+
+---
+<DocsButton
+ suggestions={[
+    {
+      href:'/docs/concepts/consumer',
+      type: 'back',  
+      title: 'Consumer',
+   },
+   {
+      href:'/docs/concepts/message',
+      type: 'next',  
+      title: 'Message',
+   }
+ ]}
+/>
