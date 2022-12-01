@@ -35,7 +35,7 @@ function CommunityIndexPage() {
         >
           We are a community of great people who are passionate about AsyncAPI.
           Join us in building the future of Event Driven APIs by asking
-          questions, share ideas and build connection with each other
+          questions, sharing ideas, and building connections.
         </Heading>
       </div>
       <div className="mt-10">
