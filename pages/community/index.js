@@ -327,7 +327,7 @@ function CommunityIndexPage() {
                     typeStyle="heading-md"
                     className="text-white"
                   >
-                    Go above and beyond
+                    Recognize AsyncAPI OSS contributors
                   </Heading>
                   <Heading
                     level="h2"
