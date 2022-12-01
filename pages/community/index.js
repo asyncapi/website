@@ -33,7 +33,7 @@ function CommunityIndexPage() {
           textColor="text-gray-700"
           className="text-slate-500 text-sm"
         >
-          We are a community of great people who are passionate about AsyncAPI.
+          We're an OSS community that's passionate about AsyncAPI.
           Join us in building the future of Event Driven APIs by asking
           questions, sharing ideas, and building connections.
         </Heading>
