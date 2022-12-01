@@ -16,8 +16,11 @@ You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQ
 In the previous tutorial, you generated your application using the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
 <Remember>
 
-If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one using `asyncapi new --example=tutorial.yml --no-tty` command and generate server using `asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
-cd output && npm install`
+If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one using `asyncapi new --example=tutorial.yml --no-tty` command and generate server using below commands:
+    ```
+    asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
+    cd output && npm install
+    ```
 
 </Remember>
 
