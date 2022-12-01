@@ -125,7 +125,18 @@ function Index() {
         </div>
       </div>
       <div className="mt-20">
-        <div className="w-full h-[400px] bg-ambassadorCover bg-cover bg-center rounded-lg" />
+        <div className="w-full h-[400px] bg-ambassadorCover bg-cover bg-center rounded-lg flex flex-col justify-end">
+          <div className='text-gray-700 p-2'>
+            Photo by{' '}
+            <a href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              Headway
+            </a>{' '}
+            on{' '}
+            <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+              Unsplash
+            </a>
+          </div>
+        </div>
         <div className="flex justify-center">
           <div className="text-center mt-10 lg:w-[55%]">
             <Heading typeStyle="heading-lg">
