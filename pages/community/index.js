@@ -41,7 +41,7 @@ function CommunityIndexPage() {
       <div className="mt-10">
         <Button
           className="block md:inline-block focus:outline-none"
-          text="Explore Discussions"
+          text="AsyncAPI Discussions"
           href="https://github.com/orgs/asyncapi/discussions"
           target="_blank"
           icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
