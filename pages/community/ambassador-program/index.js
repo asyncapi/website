@@ -126,13 +126,21 @@ function Index() {
       </div>
       <div className="mt-20">
         <div className="w-full h-[400px] bg-ambassadorCover bg-cover bg-center rounded-lg flex flex-col justify-end">
-          <div className='text-gray-700 p-2'>
+          <div className="text-gray-700 p-2">
             Photo by{' '}
-            <a href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            <a
+              href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noreferrer"
+            >
               Headway
             </a>{' '}
             on{' '}
-            <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            <a
+              href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noreferrer"
+            >
               Unsplash
             </a>
           </div>
