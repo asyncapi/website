@@ -168,7 +168,7 @@ function CommunityIndexPage() {
               textColor="text-white"
               className="mt-10 md:mt-0"
             >
-              Meetings & Events
+              AsyncAPI Community Meetings & Events
             </Heading>
             <Heading
               level="h2"
