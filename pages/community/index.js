@@ -176,9 +176,9 @@ function CommunityIndexPage() {
               textColor="text-white"
               className="text-sm mt-10"
             >
-              Join a AsyncAPI event, from anywhere in the world. Learn more
-              about our live and recorded events below. You can also sign up to
-              our community newsletter to stay up-to-date on our events.
+              Join an AsyncAPI meeting from anywhere in the world! We host both
+              live and recorded community events. You can also sign up for
+              our community newsletter to stay up-to-date on all meetings and events.
             </Heading>
             <div className="mt-10">
               <Button
