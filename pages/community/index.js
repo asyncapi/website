@@ -368,8 +368,8 @@ function CommunityIndexPage() {
               className="text-slate-500 text-sm mt-10"
             >
               AsyncAPI’s incredible community of developers, designers,
-              technical writers, hail from over 83 countries, actively
-              contributing, collaborating and mentoring others to build with
+              technical writers, and more hail from over 83 countries. We actively
+              contribute, collaborate, and mentor others on how to build with
               AsyncAPI.
             </Heading>
             <div className="mt-10">
