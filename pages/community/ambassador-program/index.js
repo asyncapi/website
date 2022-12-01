@@ -58,12 +58,6 @@ const data = [
 
 const tokens = [
   {
-    emoji: '📚',
-    title: 'Education',
-    details:
-      'Ambassadors are provided with a budget plan that they use for personal development tools, like books, courses, and other learning methods.',
-  },
-  {
     emoji: '🗺️',
     title: 'Travel',
     details:
