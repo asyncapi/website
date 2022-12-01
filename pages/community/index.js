@@ -374,7 +374,7 @@ function CommunityIndexPage() {
             </Heading>
             <div className="mt-10">
               <Button
-                text="Join us on slack"
+                text="Join AsyncAPI slack"
                 buttonSize="medium"
                 href="https://asyncapi.com/slack-invite"
                 target="_blank"
