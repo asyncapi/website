@@ -31,7 +31,7 @@ So why do I even mention it in 2021?
 
 It is very widely adopted and will not go away anytime soon because tooling support is excellent and serves its purpose well. Just remind yourself when HTTP/2 showed up and how many years it took everyone to migrate. It would not happen without the strong support and push from all the big players. 
 
-Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://tools.ietf.org/html/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
+Sure, there is [HTTP/2 multiplexing](https://developers.google.com/web/fundamentals/performance/http2/#request_and_response_multiplexing) and protocols like [Mercure](https://mercure.rocks/docs/mercure) or [GraphQL Subscription](https://spec.graphql.org/June2018/#sec-Subscription). There is also [RFC8441](https://www.rfc-editor.org/rfc/rfc8441) for WebSocket and HTTP/2 and some tools already adopted it, like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/upgrades) or [Jetty](https://github.com/eclipse/jetty.project/issues/3537). Nevertheless, WebSocket is here to stay.
 
 Anyway, the future of WebSocket has nothing to do with this post. This post is for the AsyncAPI community looking into the AsyncAPI spec because of WebSockets now, no matter the protocol's future.
 
