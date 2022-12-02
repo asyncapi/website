@@ -1,5 +1,3 @@
-// const categoryList = ["generator", "code-first", "converters", "validators", "directories", "documentation generators", "dls", "frameworks", "ui components", "mocking and testing", "diff", "ci&cd", "editors"]
-
 const categoryList = [
     {
         name: "Code-first tools",
@@ -66,6 +64,11 @@ const categoryList = [
         tag: "other",
         description: "The following is a list of tools that comes under Other category"
     },
+    {
+        name: "CLIs",
+        tag: "cli",
+        description: "The following is a list of tools that you can work with in terminal or do some CI/CD automation"
+    }
 ]
 
 module.exports = {categoryList}
