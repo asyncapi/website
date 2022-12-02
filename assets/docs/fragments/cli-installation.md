@@ -10,12 +10,13 @@ You can install in MacOS via brew: `brew install asyncapi`.
 
 You can install in Linux via `dpkg`, a debian package manager:
 
-1. 'curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
+1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb`
 2. `sudo dpkg -i asyncapi.deb`
+
 </details>
 
 <details>
 <summary>Other OS</summary>
 
-For further installation instructions for different operating systems, read the [`AsyncAPI CLI` readME file](https://github.com/asyncapi/cli#installation).
+[Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
 </details>
