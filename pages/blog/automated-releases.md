@@ -1,5 +1,5 @@
 ---
-title: "Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits"
+title: 'Full automation of release to NPM and Docker Hub with GitHub Actions and Conventional Commits'
 date: 2020-03-20T06:00:00+01:00
 type: Engineering
 tags:
@@ -15,15 +15,15 @@ excerpt: Repetitive tasks are tedious. If what you do manually can be automated,
 ---
 
 > tl;dr
-from now on, we release [generator](https://github.com/asyncapi/generator/) in an automated way. We roll-out this setup to the rest when we see it is needed.
+> from now on, we release [generator](https://github.com/asyncapi/generator/) in an automated way. We roll-out this setup to the rest when we see it is needed.
 
-Repetitive tasks are tedious. If what you do manually can be automated, then what are you waiting for! 
+Repetitive tasks are tedious. If what you do manually can be automated, then what are you waiting for!
 
 > _But these tasks take only a couple of minutes from time to time, gimme a break_
 
 A couple of minutes here, a couple of minutes there and all of a sudden you do not have time on more important things, on innovation. Automation makes it easier to scale and eliminates errors. Distractions consume time and make you less productive.
 
-We kick ass at [AsyncAPI Initiative](https://www.asyncapi.com/) at the moment. We started to improve our tooling regularly. We are now periodically sharing project status in our [newsletter](https://www.asyncapi.com/subscribe), and host [bi-weekly open meetings](https://github.com/asyncapi/asyncapi/issues/115), but most important is that we just recently updated our roadmap.
+We kick ass at [AsyncAPI Initiative](https://www.asyncapi.com/) at the moment. We started to improve our tooling regularly. We are now periodically sharing project status in our [newsletter](https://www.asyncapi.com/newsletter), and host [bi-weekly open meetings](https://github.com/asyncapi/asyncapi/issues/115), but most important is that we just recently updated our roadmap.
 
 Am I just showing off? It sounds like, but that is not my intention. I wish to point out we are productive, and we want to continue this trend and automation helps here a lot. If you have libraries that you want to release regularly and you plan additional ones to come, you need to focus on release automation.
 
@@ -33,7 +33,7 @@ Full automation means that the release process if fully automated with no manual
 
 <iframe src="https://giphy.com/embed/6uGhT1O4sxpi8" width="480" height="240" frameBorder="0" className="giphy-embed" allowFullScreen />
 
-Your responsibility is just to merge a pull request. The automation handles the rest. 
+Your responsibility is just to merge a pull request. The automation handles the rest.
 
 You might say: _but I do not want to release on every merge, sometimes I merge changes that are not related to the functionality of the library_.
 
@@ -51,7 +51,6 @@ This is how the version of the library looks like when it follows semantic versi
 - Commit message prefix `feat: ` indicates `MINOR` release,
 - Commit message prefix `{ANY_PREFIX}!: ` so for example `feat!:` or even `refactor!: ` indicate `MAJOR` release.
 
-
 It other words, assume your version was 1.0.0, and you made a commit like `feat: add a new parameter to test endpoint`. You can have a script that picks up `feat: ` and triggers release that eventually bumps to version 1.1.0.
 
 ## Workflow design
@@ -68,15 +67,15 @@ This is how the design looks like:
 
 ![npm docker release workflow](/img/posts/release-workflow.webp)
 
-There are two workflows designed here. 
+There are two workflows designed here.
 
 The first workflow reacts to changes in the release branch (`master` in this case), decides if release should be triggered, and triggers it. The last step of the workflow is a pull request creation with changes in `package.json` and `package-lock.json`. Why are changes not committed directly to the release branch? Because we use branch protection rules and do not allow direct commits to release branches.
 
 You can extend this workflow with additional steps, like:
 
-* Integration testing
-* Deployment
-* Notifications
+- Integration testing
+- Deployment
+- Notifications
 
 The second workflow is just for handling changes in `package.json`. To fulfill branch protection settings, we had to auto-approve the pull request so we can automatically merge it.
 
@@ -88,7 +87,7 @@ We used the GitHub-provided actions and the following awesome actions built by t
 
 - [Create Pull Request](ttps://github.com/marketplace/actions/create-pull-request)
 - [Auto Approve](https://github.com/marketplace/actions/auto-approve)
-- [Merge Pull Request](https://github.com/marketplace/actions/merge-pull-requests)
+- [Merge Pull Request](https://github.com/marketplace/actions/merge-pull-requests-automerge-action)
 
 ### Release workflow
 
@@ -124,7 +123,7 @@ For releases to GitHub and NPM, the most convenient solution is to integrate [se
 ]
 ```
 
-Conveniently, functional automation uses a [technical bot rather than a real user](https://www.thinkautomation.com/bots-and-ai/what-are-software-bots/). GitHub actions allow you to encrypt the credentials of different systems at the repository level. Referring to them in actions looks as follows: 
+Conveniently, functional automation uses a [technical bot rather than a real user](https://www.thinkautomation.com/bots-and-ai/what-are-software-bots/). GitHub actions allow you to encrypt the credentials of different systems at the repository level. Referring to them in actions looks as follows:
 
 ```yaml
 - name: Release to NPM and GitHub
@@ -150,7 +149,7 @@ For handling Docker, you can use some community-provided GitHub action that abst
 ```yaml
 - name: Release to Docker
   if: steps.initversion.outputs.version != steps.extractver.outputs.version
-  run: | 
+  run: |
     echo ${{secrets.DOCKER_PASSWORD}} | docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin
     npm run docker-build
     docker tag asyncapi/generator:latest asyncapi/generator:${{ steps.extractver.outputs.version }}
@@ -188,9 +187,10 @@ GitHub Actions has two excellent features:
 - You can set conditions for specific steps
 - You can share the output of one step with another
 
-These features are used in the release workflow to check the version of the package, before and after the GitHub/NPM release step. 
+These features are used in the release workflow to check the version of the package, before and after the GitHub/NPM release step.
 
 To share the output, you must assign an `id` to the step and declare a variable and assign any value to it.
+
 ```yaml
 - name: Get version from package.json after release step
   id: extractver
@@ -246,7 +246,7 @@ jobs:
         run: echo "::set-output name=version::$(npm run get-version --silent)"
       - name: Release to Docker
         if: steps.initversion.outputs.version != steps.extractver.outputs.version
-        run: | 
+        run: |
           echo ${{secrets.DOCKER_PASSWORD}} | docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin
           npm run docker-build
           docker tag asyncapi/generator:latest asyncapi/generator:${{ steps.extractver.outputs.version }}
@@ -271,9 +271,9 @@ You may be asking yourself:
 
 > _Why automated approving and merging is handled in a separate workflow and not as part of release workflow_
 
-One reason is that the time between pull request creation and its readiness to be merged is hard to define. Pull requests always include some automated checks, like testing, linting, and others. These are long-running checks. You should not make such an asynchronous step a part of your synchronous release workflow. 
+One reason is that the time between pull request creation and its readiness to be merged is hard to define. Pull requests always include some automated checks, like testing, linting, and others. These are long-running checks. You should not make such an asynchronous step a part of your synchronous release workflow.
 
-Another reason is that you can also extend such an automated merging flow to handle not only pull requests coming from the release-handling bot but also other bots, that, for example, update your dependencies for security reasons. 
+Another reason is that you can also extend such an automated merging flow to handle not only pull requests coming from the release-handling bot but also other bots, that, for example, update your dependencies for security reasons.
 
 You should divide automation into separate jobs that enable you to define their dependencies. There is no point to run the **automerge** job until the **autoapprove** one ends. GitHub Actions allows you to express this with `needs: [autoapprove]`
 
@@ -296,13 +296,12 @@ on:
   pull_request_review:
     types:
       - submitted
-  check_suite: 
+  check_suite:
     types:
       - completed
   status: {}
-  
-jobs:
 
+jobs:
   autoapprove:
     runs-on: ubuntu-latest
     steps:
@@ -310,7 +309,7 @@ jobs:
         uses: hmarr/auto-approve-action@v2.0.0
         if: github.actor == 'asyncapi-bot'
         with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
 
   automerge:
     needs: [autoapprove]
@@ -320,13 +319,13 @@ jobs:
         uses: pascalgn/automerge-action@v0.7.5
         if: github.actor == 'asyncapi-bot'
         env:
-          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GITHUB_TOKEN: '${{ secrets.GH_TOKEN }}'
           GITHUB_LOGIN: asyncapi-bot
-          MERGE_LABELS: ""
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "pull-request-title"
-          MERGE_RETRIES: "10"
-          MERGE_RETRY_SLEEP: "10000"
+          MERGE_LABELS: ''
+          MERGE_METHOD: 'squash'
+          MERGE_COMMIT_MESSAGE: 'pull-request-title'
+          MERGE_RETRIES: '10'
+          MERGE_RETRY_SLEEP: '10000'
 ```
 
 For a detailed reference, you can look into [this pull request](https://github.com/asyncapi/generator/pull/242) that introduces the above-described workflow in the [generator](https://github.com/asyncapi/generator/).
@@ -339,4 +338,4 @@ Automate all the things, don't waste time. Automate releases, even if you are a 
 
 In the end, you can always use something different, custom approach, like reacting to merges from pull requests with the specific label only. If you have time to reinvent the wheel, go for it.
 
-*Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash.*
+_Cover photo by [Franck V.](https://unsplash.com/@franckinjapan) taken from Unsplash._

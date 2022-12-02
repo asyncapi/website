@@ -17,6 +17,30 @@
       "score": 47.95815632112621
     },
     {
+      "id": "I_kwDOBW5R_c47-31p",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Create New page for /tools/",
+      "author": "iamVP7",
+      "resourcePath": "/asyncapi/website/issues/383",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 44.512061256135105
+    },
+    {
       "id": "MDU6SXNzdWUzNjkwNDExMDc=",
       "isPR": false,
       "isAssigned": false,
@@ -41,7 +65,7 @@
       "resourcePath": "/asyncapi/generator/pull/843",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 23.835490866188476
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -55,28 +79,15 @@
       "score": 22.399617922442182
     },
     {
-      "id": "I_kwDOBW5R_c47-31p",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Create New page for /tools/",
-      "author": "iamVP7",
-      "resourcePath": "/asyncapi/website/issues/383",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 21.454255071156133
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 21.825268744943667
     },
     {
       "id": "PR_kwDOFXtyC849zwGo",
@@ -90,15 +101,26 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOBGu-185AIQgf",
+      "id": "PR_kwDODCuNRs5CojIa",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
+      "title": "feat: apache Pulsar bindings",
+      "author": "VisualBean",
+      "resourcePath": "/asyncapi/bindings/pull/173",
+      "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 20.102221212448114
+    },
+    {
+      "id": "PR_kwDOCoBobc4xN9Px",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: throw meaningful errors",
+      "author": "ritik307",
+      "resourcePath": "/asyncapi/parser-js/pull/449",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 19.815046623698855
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -109,7 +131,7 @@
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 19.527872034949596
     },
     {
       "id": "PR_kwDOBW5R_c5CDXVB",
@@ -144,45 +166,25 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 17.230475324955524
-    },
+      "score": 17.804824502454043
+    }
+  ],
+  "goodFirstIssues": [
     {
-      "id": "I_kwDOG115t85D93P0",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Website UI Kit design/dev project",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/design-system/issues/4",
-      "repo": "asyncapi/design-system",
+      "id": "I_kwDOIUldZc5XXsGH",
+      "title": "Filter out application which are not in use",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "jonaslagoni",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
         }
-      ],
-      "score": 16.943300736206268
+      ]
     },
-    {
-      "id": "PR_kwDODCuNRs5CojIa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: apache Pulsar bindings",
-      "author": "VisualBean",
-      "resourcePath": "/asyncapi/bindings/pull/173",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 16.943300736206268
-    }
-  ],
-  "goodFirstIssues": [
     {
       "id": "I_kwDODyzcIc5WV_4D",
       "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
@@ -647,6 +649,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -813,7 +819,12 @@
       "repo": "asyncapi/spec-json-schemas",
       "author": "c-pius",
       "area": "docs",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2ODQ4MjI5ODQ=",
@@ -865,6 +876,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "JSON Schema for AsyncAPI tool discovery file.",
   "type": "object",
-  "required": ["title", "description", "maintainers", "links", "filters"],
+  "required": ["title", "description", "links", "filters"],
   "properties": {
     "title": {
       "type": "string",
@@ -25,7 +25,7 @@
     },
     "filters": {
       "type": "object",
-      "required": ["language", "technology", "categories"],
+      "required": ["technology", "categories"],
       "properties": {
         "language": {
           "type": "string"
