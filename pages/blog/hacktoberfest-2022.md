@@ -1,10 +1,11 @@
 ---
-title: "Is Hacktoberfest Good For Maintainers?"
-date: 2020-11-05T06:00:00+01:00
+title: "Hacktoberfest was a blast!"
+date: 2022-11-28T10:00:00+01:00
 type: Community
 tags:
   - Hacktoberfest
 cover: /img/posts/asyncapiXhacktoberfest.webp
+featured: true
 authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
@@ -47,7 +48,7 @@ We want to thank everyone personally who submitted improvements to our repositor
   <tr>
     <td align="center">
       <a href="https://github.com/Amishakumari544">
-        <img src="https://avatars.githubusercontent.com/u/49230384?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/Amishakumari544" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -58,7 +59,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
         <td align="center">
       <a href="https://github.com/toukirkhan">
-        <img src="https://avatars.githubusercontent.com/u/88899011?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/toukirkhan" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -69,7 +70,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
      <td align="center">
       <a href="https://github.com/aeworxet">
-        <img src="https://avatars.githubusercontent.com/u/16149591?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/aeworxet" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -80,7 +81,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
          <td align="center">
       <a href="https://github.com/manavdesai27">
-        <img src="https://avatars.githubusercontent.com/u/74018438?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/manavdesai27" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -93,7 +94,7 @@ We want to thank everyone personally who submitted improvements to our repositor
       <tr>
     <td align="center">
       <a href="https://github.com/Ankitchaudharyy">
-        <img src="https://avatars.githubusercontent.com/u/46367738?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/Ankitchaudharyy" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -104,7 +105,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
         <td align="center">
       <a href="https://github.com/nawed2611">
-        <img src="https://avatars.githubusercontent.com/u/83456083?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/nawed2611" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -115,7 +116,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
      <td align="center">
       <a href="https://github.com/dhfherna">
-        <img src="https://avatars.githubusercontent.com/u/104927849?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/dhfherna" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -126,7 +127,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
          <td align="center">
       <a href="https://github.com/amit-ksh">
-        <img src="https://avatars.githubusercontent.com/u/91947037?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/amit-ksh" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -139,7 +140,7 @@ We want to thank everyone personally who submitted improvements to our repositor
           <tr>
     <td align="center">
       <a href="https://github.com/mastdev">
-        <img src="https://avatars.githubusercontent.com/u/44112399?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/mastdev" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -150,7 +151,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
         <td align="center">
       <a href="https://github.com/codingtenshi">
-        <img src="https://avatars.githubusercontent.com/u/116377630?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/codingtenshi" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -161,7 +162,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
      <td align="center">
       <a href="https://github.com/akshatnema">
-        <img src="https://avatars.githubusercontent.com/u/76521428?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/akshatnema" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
@@ -172,7 +173,7 @@ We want to thank everyone personally who submitted improvements to our repositor
     </td>
          <td align="center">
       <a href="https://github.com/Mayaleeeee">
-        <img src="https://avatars.githubusercontent.com/u/105395613?v=4" width="100px;" alt=""/>
+        <img src="https://avatars.githubusercontent.com/Mayaleeeee" width="100px;" alt=""/>
         <br />
         <sub>
           <b>
