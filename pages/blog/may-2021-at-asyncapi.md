@@ -86,6 +86,6 @@ All the official Slack channels are listed below:
   className="text-center"
 />
 
-I think that actually, the most important thing is that we defined our first version of the [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md).
+I think that actually, the most important thing is that we defined our first version of the [Slack etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md).
 
 > Photo by <a href="https://unsplash.com/@lazyartistgallery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rahul Pandit</a> on <a href="https://unsplash.com/s/photos/may?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

@@ -7,7 +7,7 @@ on:
   - cron: "15 0 * * 1"
 
 jobs:
-  meetings:
+  regenerateTools:
       if: github.repository == 'asyncapi/website'
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
