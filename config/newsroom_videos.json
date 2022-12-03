@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/koLWWoBnIMo/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (November 9, 2022)",
-    "description": "https://github.com/asyncapi/community/issues/502.",
-    "videoId": "koLWWoBnIMo"
+    "image_url": "https://i.ytimg.com/vi/kn_oQiZ-ZXU/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - Documentation",
+    "description": "https://github.com/asyncapi/community.",
+    "videoId": "kn_oQiZ-ZXU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/R8PYWXDDZbI/hqdefault.jpg",
-    "title": "AsyncAPI Conf - Day 3 - 5th Nov 2022",
-    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:04:13 Opening 00:05:45 Let Me In: Open the Doors of ...",
-    "videoId": "R8PYWXDDZbI"
+    "image_url": "https://i.ytimg.com/vi/4i_N_I4IT34/hqdefault.jpg",
+    "title": "Community Meeting, 16:00 UTC Tuesday November 29, 2022",
+    "description": "https://github.com/asyncapi/community/issues/536.",
+    "videoId": "4i_N_I4IT34"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8khuAfL7TSE/hqdefault.jpg",
-    "title": "AsyncAPI Conf - Day 2 - 4th Nov 2022",
-    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:04:43 Opening 00:05:33 My Journey from Contributor ...",
-    "videoId": "8khuAfL7TSE"
+    "image_url": "https://i.ytimg.com/vi/gQByRAjhpKA/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - AsyncAPI &amp; MQTT Part 2",
+    "description": "AsyncAPI and MQTT https://github.com/AceTheCreator/Virtual-houses.",
+    "videoId": "gQByRAjhpKA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/NTHsezlKBh8/hqdefault.jpg",
-    "title": "AsyncAPI Conf - Day 1 - 3rd Nov 2022",
-    "description": "https://conference.asyncapi.com/ Contents: 00:00:00 Waiting for starting 00:02:20 Opening 00:03:45 Next Generation of AsyncAPI ...",
-    "videoId": "NTHsezlKBh8"
+    "image_url": "https://i.ytimg.com/vi/3faqDCnzlHU/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (November 23, 2022)",
+    "description": "https://github.com/asyncapi/community/issues/518.",
+    "videoId": "3faqDCnzlHU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/3GZfQCrDrh8/hqdefault.jpg",
-    "title": "Conference Dry-Run",
-    "description": "This stream is for folks volunteering for the conference to make sure everything runs smoothly.",
-    "videoId": "3GZfQCrDrh8"
+    "image_url": "https://i.ytimg.com/vi/OYi4zYXKiYw/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - AsyncAPI &amp; MQTT Part 1",
+    "description": "AsyncAPI & MQTT https://github.com/AceTheCreator/Virtual-houses.",
+    "videoId": "OYi4zYXKiYw"
   }
 ]
