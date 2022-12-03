@@ -17,7 +17,7 @@ This article is a continuation of a tradition where once a year, we summarize al
 
 It is good to see how we are doing, how are we growing :rocket:
 
-If you are interested in previous years, look at [this 2020 summary article](2020-summary).
+If you are interested in previous years, look at [this 2020 summary article](https://www.asyncapi.com/blog/2020-summary).
 
 ## Slack
 
@@ -529,7 +529,7 @@ The increase in numbers is insanely huge. People automatically say that it is be
 Let me challenge you:
 - Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit internal proxy. Not included in downloads.
 - Most build systems cache packages that are downloaded already to improve performance. Not included in downloads.
-When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
+ When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
 An interesting observation is that Generator uses Parser and Parser uses the package with AsyncAPI specs. So you can read from this data that packages with specs are primarily used in the AsyncAPI Parser. You can also see that Parser is a backbone for many more projects than just the AsyncAPI Generator.
 
@@ -663,6 +663,7 @@ We grow. Numbers just confirm our observation. We grow not only because people l
 If you want to look at more data, some of it is available [in this spreadsheet](https://docs.google.com/spreadsheets/d/1KxEkX9BqtJ4WIkh-NMftq5pDTcBStV_pHqa6P6-7bfM/edit?usp=sharing) and for others you just need to contact me directly. 
 
 In 2022, we need to establish a stronger bond with the community. We have many folks that give back a lot of time into the project, and it is time to give back. The main goals we have:
+
 - Meet in person for AsyncAPI Conference
 - Setup Ambassador program to give back to most active community members
 - Get involved in more events like Google Summer of Code
