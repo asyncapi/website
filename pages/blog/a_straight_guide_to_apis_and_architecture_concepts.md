@@ -49,7 +49,7 @@ We can classify them into two main groups, depending on their use or their type 
 
   A good example might be when we invite friends over, and they bring their controllers to play the game console. Or when a friend comes over and connects to our wifi network.
 
-#### According to its architectural style: 
+#### According to its architectural style 
 
 It is essential to choose the architecture style or pattern that best fits the desired use case for the API if specific functional capabilities are required. There are several architecture styles for APIs, as well as different data formats. The following are the most common: 
 
