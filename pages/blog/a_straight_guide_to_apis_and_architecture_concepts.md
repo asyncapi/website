@@ -38,7 +38,7 @@ APIs act as an intercommunicator, linking one or more programs. Let's say they c
 
 We can classify them into two main groups, depending on their use or their type of architecture.
 
-#####Types of APIs according to their use:
+#### Types of APIs according to their use:
  
 - **Internal APIs** are those used at a local level. They focus on communicating with each other within the same system or the same computer. An excellent example of them might be the pipes contained in a house. They connect the sink to the bathroom and the washing machine to the dryer, for example.
  
