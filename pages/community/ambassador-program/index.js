@@ -195,24 +195,28 @@ function Index() {
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, i) => (
-            <Link key={i} href>
-              <div className="rounded-md border text-left mt-6 pb-2">
+              <div key={i} className="rounded-md border text-left mt-6 pb-2">
                 <div className="flex justify-between p-2">
                   <div>{ambassador.name}</div>
                   <div>{ambassador.country}</div>
                 </div>
-                <div className="p-2">
-                  <div className="w-full h-auto bg-center bg-center rounded-md">
-                    <img
-                      src={ambassador.img}
-                      alt={ambassador.name}
-                      className="h-auto w-full rounded-lg object-contain"
-                    />
+                <Link
+                  href={`/community/ambassador-program/${ambassador.github}`}
+                  as={`/community/ambassador-program/${ambassador.github}`}
+                >
+                  <div className="p-2">
+                    <div className="w-full h-auto bg-center bg-center rounded-md cursor-pointer">
+                      <img
+                        src={ambassador.img}
+                        alt={ambassador.name}
+                        className="h-auto w-full rounded-lg object-contain"
+                      />
+                    </div>
+                    <div className="mt-2 w-full rounded-lg border p-2 text-sm">
+                      {ambassador.title}
+                    </div>
                   </div>
-                  <div className="mt-2 w-full rounded-lg border p-2 text-sm">
-                    {ambassador.title}
-                  </div>
-                </div>
+                </Link>
                 <div>
                   <div className="p-2 text-sm">{ambassador.bio}</div>
                   <div className="border-t p-2 flex">
@@ -243,7 +247,6 @@ function Index() {
                   </div>
                 </div>
               </div>
-            </Link>
           ))}
         </div>
       </div>
