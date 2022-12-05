@@ -54,7 +54,7 @@ It is essential to choose the architecture style or pattern that best fits the d
 
 - **REST** (representational transfer state), this architecture style separates the needs of the API user from those of the provider, thanks to commands embedded in the underlying network protocol. For example, Twitter provides a REST API that you can query for the latest tweets.
 
-- **RPCs** (remote procedure calls), are styles that usually demands developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent, making them potentially compatible with many protocols, although they do not include the benefits of using native protocol features. 
+- **RPCs** (remote procedure calls), are styles that usually demand developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent, making them potentially compatible with many protocols, although they do not include the benefits of using native protocol features. 
  
   For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if he had them on his computer.
 
