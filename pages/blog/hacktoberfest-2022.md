@@ -21,7 +21,7 @@ Hacktoberfest is an annual event that encourages people to contribute to open so
 
 ## Planting the seed
 
-For us, contributions come in all shapes and sizes. From typo fixes, bug reporting to more significant improvements. But that's not all! AsyncAPI also creates time to help onboard contributors that are finding it difficult to start contributing to the project or provide help to contributors that get stuck while contributing. 
+For us, contributions come in all shapes and sizes. From typo fixes and bug reporting to more significant improvements. But that's not all! AsyncAPI also creates time to help onboard contributors who find it difficult to start contributing to the project or provide help to contributors who get stuck while contributing. 
 
 ## How we prepared
 
