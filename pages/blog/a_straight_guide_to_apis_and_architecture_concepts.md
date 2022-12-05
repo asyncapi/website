@@ -56,7 +56,7 @@ It is essential to choose the architecture style or pattern that best fits the d
 
 - **RPCs** (remote procedure calls), are styles that usually demand developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent, making them potentially compatible with many protocols, although they do not include the benefits of using native protocol features. 
  
-  For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if he had them on his computer.
+  For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
 
 - **Event-driven**, real-time, asynchronous, do not wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
 
