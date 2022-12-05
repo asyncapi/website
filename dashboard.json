@@ -14,7 +14,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 47.95815632112621
+      "score": 48.24533090987547
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
@@ -65,7 +65,18 @@
       "resourcePath": "/asyncapi/generator/pull/843",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 25.845712987433288
+      "score": 26.707236753681066
+    },
+    {
+      "id": "PR_kwDODCuNRs5CojIa",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: apache Pulsar bindings",
+      "author": "VisualBean",
+      "resourcePath": "/asyncapi/bindings/pull/173",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 23.835490866188476
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -87,7 +98,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 21.825268744943667
+      "score": 22.112443333692923
     },
     {
       "id": "PR_kwDOFXtyC849zwGo",
@@ -101,15 +112,15 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDODCuNRs5CojIa",
+      "id": "PR_kwDOBW5R_c5AL1kI",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: apache Pulsar bindings",
-      "author": "VisualBean",
-      "resourcePath": "/asyncapi/bindings/pull/173",
-      "repo": "asyncapi/bindings",
+      "isAssigned": true,
+      "title": "docs: new guide for validation of AsyncAPI files",
+      "author": "Annysah",
+      "resourcePath": "/asyncapi/website/pull/1002",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.102221212448114
+      "score": 19.815046623698855
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -123,26 +134,15 @@
       "score": 19.815046623698855
     },
     {
-      "id": "PR_kwDOBW5R_c5AL1kI",
+      "id": "PR_kwDOBW5R_c5AyxaN",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 19.527872034949596
-    },
-    {
-      "id": "PR_kwDOBW5R_c5CDXVB",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: added all required sub pages UI for the community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/pull/1071",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.804824502454043
+      "score": 19.240697446200336
     },
     {
       "id": "PR_kwDOBW5R_c5A3jNS",
@@ -166,10 +166,25 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.091999091203302
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOCHlHJM5XfhdE",
+      "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/873",
+      "repo": "asyncapi/generator",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "🐞 docs bug",
+          "color": "FFD23F"
+        }
+      ]
+    },
     {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
@@ -423,6 +438,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
