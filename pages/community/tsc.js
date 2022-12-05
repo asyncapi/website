@@ -74,7 +74,7 @@ export default function TSC() {
               yet in our GitHub organization and donate it (we'll ask you to
               stay as a maintainer).
               Follow this
-              <TextLink href="https://www.youtube.com/watch?v=uG_aLF9Z1F0" target="_blank" className="text-base text-blue-500 hover:text-sky-400 no-underline">
+              <TextLink href="https://www.youtube.com/watch?v=uG_aLF9Z1F0" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
                 Link
               </TextLink>
               &nbsp;to know more!
@@ -234,7 +234,7 @@ function QuestionCard() {
       <div className="my-4">
         Want to become a member?
         Follow this
-        <TextLink href="https://www.youtube.com/watch?v=uG_aLF9Z1F0" target="_blank" className="text-sky-600 hover:text-sky-400 no-underline">
+        <TextLink href="https://www.youtube.com/watch?v=uG_aLF9Z1F0" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
           Link
         </TextLink>
         &nbsp;to know more!
