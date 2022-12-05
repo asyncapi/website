@@ -2,7 +2,7 @@ import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
-import Link from 'next/link'
+import TextLink from '../../components/typography/TextLink';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -228,11 +228,11 @@ function QuestionCard() {
       />
       <div className="my-4">
         Want to become a member?
-        Follow this
-        <Link href='https://www.youtube.com/watch?v=uG_aLF9Z1F0'>
-          <span className="text-sky-600 cursor-pointer"> Link </span>
-        </Link>
-        to know more!
+        Follow this &nbsp;
+        <TextLink href="https://www.youtube.com/watch?v=uG_aLF9Z1F0" target="_blank">
+          Link
+        </TextLink>
+        &nbsp;to know more!
       </div>
     </li>
   );
