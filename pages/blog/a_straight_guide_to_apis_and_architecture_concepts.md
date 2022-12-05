@@ -58,7 +58,7 @@ It is essential to choose the architecture style or pattern that best fits the d
  
   For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
 
-- **Event-driven**, real-time, asynchronous, do not wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
+- **Event-driven**, real-time, asynchronous, doesn't wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
 
   A simple example is when you enter a page on the Internet, the browser makes a request to a server, and the server responds with the content you have requested.
  
