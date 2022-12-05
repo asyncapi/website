@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Filter from '../../../components/navigation/Filter';
@@ -25,10 +24,10 @@ function Index() {
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {posts.map((contributor, i) => {
             return (
-              <Link
+              <a
                 key={i}
-                href={`/community/contributors/${contributor.github}`}
-                as={`/community/contributors/${contributor.github}`}
+                href={`https://github.com/${contributor.github}`}
+                target="_blank" rel="noreferrer"
               >
                 <div className="rounded-md border cursor-pointer text-left mt-4 pb-2 hover:bg-primary-600 hover:text-white transition hover:ease-in-out duration:300">
                   <div className="flex justify-between p-2">
@@ -51,7 +50,7 @@ function Index() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </a>
             );
           })}
         </div>
