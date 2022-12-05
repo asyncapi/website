@@ -193,7 +193,7 @@ Not a problem. We've got tons of issues you can explore and start contributing t
 
 We were overwhelmed and weren't fully prepared to handle the enthusiastic response from the community. Because we needed to curate more issues tagged Hacktoberfest, many of the issues were claimed before the mid of October, which left other contributors interested left out because of the lack of more issues.
 
-Once beaten twice shy. In other to avoid these potential pitfalls next year, we're gonna put some things in place, which include the following.
+Once beaten twice shy. In order to avoid these potential pitfalls next year, we're gonna put some things in place, which include the following.
 
 - Start planning earlier
 - Create more accessible Hacktoberfest issues
