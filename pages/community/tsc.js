@@ -3,7 +3,6 @@ import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from '../../components/typography/TextLink';
-import { twMerge } from "tailwind-merge";
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -75,7 +74,7 @@ export default function TSC() {
               yet in our GitHub organization and donate it (we'll ask you to
               stay as a maintainer).
               Follow this
-              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className={twMerge(`text-base font-normal text-blue-500 hover:text-sky-400 no-underline`)}>
+              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
                 Link
               </TextLink>
               &nbsp;to know more!
@@ -235,7 +234,7 @@ function QuestionCard() {
       <div className="my-4">
         Want to become a member?
         Follow this
-        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className={twMerge("text-base font-normal text-sky-600 hover:text-sky-400 no-underline")}>
+        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
           Link
         </TextLink>
         &nbsp;to know more!
