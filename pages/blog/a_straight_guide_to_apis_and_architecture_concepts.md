@@ -14,7 +14,7 @@ authors:
 excerpt: Basic concepts about APIs and architectures for beginners and non-developers.
 ---
 
-It has not been such a long journey into the technology realm for me. Then I started to work at AsyncAPI, and suddenly, I needed to understand a complex world. New terms, codes, and ways of seeing things were waiting for me. Coming from other fields of knowledge, the challenge was huge. How to begin? How to have a clue?
+It has not been such a long journey into the technology realm for me. Then I started to work at AsyncAPI, and suddenly, I needed to understand a complex world. New terms, code, and ways of seeing things were waiting for me. Coming from other fields of knowledge, the challenge was huge. How to begin? How to have a clue?
 
 I decided to start with the basics: trying to find a way to catch the meaning of some key ideas related to APIs. I read and reread over and over again definitions and more definitions. They were full of technical terms that, rather than bringing me closer to understanding the concepts, distanced me from them. I found myself diving into a deep and dark ocean. And I was too squared to flow in those turbulent currents. The alphabetical order is not a natural one. A dictionary for itself is not such a good tool for starting to know a language.
  
