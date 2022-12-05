@@ -50,7 +50,7 @@ We can classify them into two main groups, depending on their use or their type 
 
 #### According to its **architectural style**: 
 
-It is essential to choose the architecture style or pattern that best fits the desired use case for the API if specific functional capabilities are required. There are several architecture styles for APIs, as well as different data formats; the following are the most common: 
+It is essential to choose the architecture style or pattern that best fits the desired use case for the API if specific functional capabilities are required. There are several architecture styles for APIs, as well as different data formats. The following are the most common: 
 
 - **REST** (representational transfer state), this architecture style separates the needs of the API user from those of the provider, thanks to commands embedded in the underlying network protocol. For example, Twitter provides a REST API that you can query for the latest tweets.
 
