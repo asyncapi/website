@@ -2,6 +2,7 @@ import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
+import Link from 'next/link'
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -225,7 +226,14 @@ function QuestionCard() {
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <div className="my-4">Become a member!</div>
+      <div className="my-4">
+        Want to become a member?
+        Follow this
+        <Link href='https://www.youtube.com/watch?v=uG_aLF9Z1F0'>
+          <span className="text-sky-600 cursor-pointer"> Link </span>
+        </Link>
+        to know more!
+      </div>
     </li>
   );
 }
