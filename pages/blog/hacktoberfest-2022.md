@@ -36,7 +36,7 @@ AsyncAPI is a great project to contribute to because you can learn about AsyncAP
 
 ## Was it worth it?
 
-Absolutely! Even despite the fact that we kicked off late, we still received an amazing contribution. AsyncAPI merged 23 PRs from 12 contributors as part of this year's Hacktoberfest! I know it's less than the previous years but let's look on the bright side because some of these contributions were fun to make.
+Absolutely! Even though we kicked off late, we still received an amazing contribution. AsyncAPI merged 23 PRs from 12 contributors as part of this year's Hacktoberfest! I know it's less than the previous years but let's look on the bright side because some of these contributions were fun to make.
 
 ## Meet the heroes
 
