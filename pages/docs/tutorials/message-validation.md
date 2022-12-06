@@ -17,9 +17,10 @@ In the previous tutorial, you generated your application using the [AsyncAPI Gen
 <Remember>
 
 If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one by running: 
-`asyncapi new --example=tutorial.yml --no-tty`
+`asyncapi new --example=tutorial.yml --no-tty`.
 
 Next, generate a server by running:
+
     asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
     cd output && npm install
 
