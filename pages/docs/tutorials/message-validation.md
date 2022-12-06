@@ -41,7 +41,7 @@ In this step, you will send a message to your application using an MQTT broker a
 
 <CodeBlock language="bash">
   {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
-  </CodeBlock>
+</CodeBlock>
   
 Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message. You should see something displayed in the terminal similar to the following:
 
@@ -49,7 +49,7 @@ Go back to the previous terminal and check if your application logged the street
   {`light/measured was received:
 { id: 1, lumens: '3', sentAt: '2017-06-07T12:34:32.000Z' }
 ❗  Message Rejected. data.lumens should be integer`}
-  </CodeBlock>
+</CodeBlock>
  
  <CodeBlock language="yaml" highlightedLines={[10,11]}>
   {`  message:
@@ -65,7 +65,7 @@ Go back to the previous terminal and check if your application logged the street
               type: integer
               minimum: 0
               description: Light intensity measured in lumens.`}
-  </CodeBlock>
+</CodeBlock>
   
 Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
 
@@ -73,14 +73,14 @@ Here, you can see that the property `lumens` has type `integer`, but you are sen
 
 <CodeBlock language="bash">
   {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
-  </CodeBlock>
+</CodeBlock>
 
 You can see that your generated application received a message in the terminal:
 
 <CodeBlock language="bash">
   {`light/measured was received:
 { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
-  </CodeBlock>
+</CodeBlock>
 
 This indicates that your message is valid and the application recieved it correctly.
 
