@@ -121,4 +121,4 @@ You can also comment on [this](https://github.com/asyncapi/.github/pull/37) pull
 
 Cheers :beers:
 
-> Photo by <a href="https://unsplash.com/@unitednations">United Nations COVID-19 Response</a> on <a href="https://unsplash.com/photos/gMPsl1ez-Ts">Unsplash</a>
+> Photo by <a href="">United Nations COVID-19 Response</a> on <a href="">Unsplash</a>

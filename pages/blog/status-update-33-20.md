@@ -15,7 +15,7 @@ authors:
 
 ## Parser First Release Candidate is Alive
 
-Since the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the [AsyncAPI JSON Schema](https://github.com/asyncapi/asyncapi/blob/master/versions/2.0.0/schema.json) that the parser is using for most of the validations. In case you have a Node.js application, you can also easily access the schema through [a dedicated dependency](https://github.com/asyncapi/asyncapi-node). It was important not only to fix all those bugs but also to stop relying on our fork of the [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser). Now we use the latest version of the upstream so it will be easier to bump into the latest versions. 
+Since the last update, we jumped from release 0.28.0 to 0.33.1. In the last two weeks we fixed a few bugs, in the parser and in the [AsyncAPI JSON Schema](https://github.com/asyncapi/spec-json-schemas/blob/master/schemas/2.0.0.json) that the parser is using for most of the validations. In case you have a Node.js application, you can also easily access the schema through [a dedicated dependency](https://github.com/asyncapi/asyncapi-node). It was important not only to fix all those bugs but also to stop relying on our fork of the [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser). Now we use the latest version of the upstream so it will be easier to bump into the latest versions. 
 
 Because of all those recent fixes, now was the moment to release our first release candidate for the parser. Give it a try and let us know what is missing!
 
@@ -55,7 +55,7 @@ The next meeting is scheduled for next [Tuesday, 18th of August, 4PM UTC](https:
 
 We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/425). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Curated Content
 
