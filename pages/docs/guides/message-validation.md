@@ -19,6 +19,13 @@ Message validation can occur in different places in your system. This guide high
 - Validation of messages can be a native solution implemented by the broker.
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 
+Let's further break down how validation works for all.
+
+## Validation in runtime
+Messages produced and messages consumed are both necessary to do message validation in runtime. Here,the AsyncAPI document should contain descriptions of payload schemas, so you can read these in your application, and validate messages that are consumed by the application and also produced.
+Runtime validation ensures that any errors are resolved and valid messages are sent to your application before messages reach the consumer.
+The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator which validates messages produced/consumed in your application against your AsyncAPI document.
+
 ```mermaid
 graph TD
     subgraph Producer
@@ -32,11 +39,6 @@ graph TD
     E -->|Yes| H[Message consumed]
     end
 ```
-
-Let's further break down how validation works for all.
-
-## Validation in runtime
-The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator for AsyncAPI schema. 
 
 ### `messageId` validation method
 The `messageId` is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
@@ -96,7 +98,7 @@ graph TD
     INV -->|Yes| ERR[/Fail/] -- Produce request errored --> PR
     INV -->|No| BR
 ```
-The AsyncAPI document is important in this case because payload schemas are taken from it as a source of truth.
+The AsyncAPI document is important in this case because payload schemas are taken from it and messages as validated against it in your application.
 You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
 ### UseCase
