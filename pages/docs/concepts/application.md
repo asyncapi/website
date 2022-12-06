@@ -34,7 +34,7 @@ When writing your AsyncAPI document, make sure to describe what a user can do wi
       type:'back',
     },
     {
-      href: '/docs/concepts',
+      href: '/docs/concepts/protocol',
       title: 'Protocol',
       type:'next',
     }
