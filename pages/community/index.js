@@ -308,7 +308,7 @@ function CommunityIndexPage() {
                   className="text-sm"
                 >
                   Look into the AsyncAPI community building/maintenance goals
-                  for 2023 and help us improve
+                  for 2023 and help us improve.
                 </Heading>
               </div>
             </div>
