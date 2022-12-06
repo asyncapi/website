@@ -22,9 +22,13 @@ Because consumers and producers cannot communicate directly, the AsyncAPI file d
 Let's further break down how validation works for all.
 
 ## Validation in runtime
-Messages produced and messages consumed are both necessary to do message validation in runtime. Here,the AsyncAPI document should contain descriptions of payload schemas, so you can read these in your application, and validate messages that are consumed by the application and also produced.
-Runtime validation ensures that any errors are resolved and valid messages are sent to your application before messages reach the consumer.
+Messages produced and consumed are both required for runtime message validation.
+The AsyncAPI document should include descriptions of payload schemas so that you can read them in your application and validate messages that are consumed and produced by the application.
+
+Before messages reach the consumer, runtime validation ensures that any errors are resolved and valid messages are sent to your application.
+
 The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator which validates messages produced/consumed in your application against your AsyncAPI document.
+Check out the Message validation in runtime() tutorial if you want to get your hands dirty with message validation. 
 
 ```mermaid
 graph TD
