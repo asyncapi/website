@@ -64,7 +64,7 @@ This improves compatibility with some JSON Schema parsers. For more details, che
 
 ## Deprecations
 
-The `$ref` field in [Channel Item Object](#https://www.asyncapi.com/docs/specifications/v2.3.0#channelItemObject) is now deprecated from AsyncAPI 2.3.0.
+The `$ref` field in [Channel Item Object](https://www.asyncapi.com/docs/specifications/v2.3.0#channelItemObject) is now deprecated from AsyncAPI 2.3.0.
 
 The current plan is that the `$ref` field will be removed from **Channel Item Object** in AsyncAPI 3.0, and replaced with [Reference Object](https://www.asyncapi.com/docs/specifications/v2.3.0#referenceObject).
 
