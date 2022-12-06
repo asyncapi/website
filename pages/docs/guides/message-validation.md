@@ -81,7 +81,7 @@ va.validateByMessageId('UserRemoved', {
 </CodeBlock>
 
 ## Validation in a gateway
-AsyncAPI gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The AsyncAPI gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
+A gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
 
 <Remember>
 Currently, only the Kafka protocol is supported.
@@ -96,6 +96,7 @@ graph TD
     INV -->|Yes| ERR[/Fail/] -- Produce request errored --> PR
     INV -->|No| BR
 ```
+The AsyncAPI document is important in this case because payload schemas are taken from it as a source of truth.
 You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
 ### UseCase
@@ -117,8 +118,16 @@ Here the expected payload `lightMeasured` is an integer. A validation error will
  "_asyncapi_eg_validation_error": "{\"ts\":\"2021-12-20T11:33:26.583143572Z\",\"errors\":[\"lumens: Invalid type. Expected: integer, given: boolean\"]}",
  ```
 ## Validation handled by the broker
-Native broker validation enables the broker to verify that messages produced by a consumer use a valid schema ID in the Schema Registry of your environment. If it is valid, messages are passed on to the consumer.
- 
+As producers and consumers do not communicate with each other directly, but rather information transfer happens via Kafka topic. At the same time, the consumer still needs to know the type of data the producer is sending. Imagine if the producer starts sending bad data to Kafka or if the data type of your data gets changed. We need a way to have a common data type that must be agreed upon.
+
+That’s where Schema Registry comes into the picture. It is an application that resides outside of your Kafka cluster and handles the distribution of schemas to the producer and consumer by storing a copy of schema in its local cache.
+
+```mermaid
+graph LR
+    A([Producer]) --->|send schemaID| B(Schema Registry) & C{Kafka Cluster}--->|recieve schemaID| D([Consumer])
+```
+With the schema registry in place, the producer first talks to the schema registry and checks if the schema is available before sending the data to Kafka. If it cannot locate the schema, it registers and caches it in the schema registry. When the producer receives the schema,to sends it to Kafka prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the schema registry using the schema ID obtained from the producer. If there is a schema mismatch, the schema registry will throw an error, informing the producer that it is violating the schema agreement.
+
 ```mermaid
 stateDiagram-v2
     Producer --> Broker : messages
@@ -128,7 +137,21 @@ stateDiagram-v2
     Schema_registry --> Fail : invalid message
 ```
 
-Native broker validation can also be implemented using methods other than AsyncAPI. AsyncAPI will still work even if your payload is stored somewhere other than the schema registry; you don't need to create separate applications.
+Broker validation can also be implemented using other methods. AsyncAPI is not involved in validation here but the schemas that are stored in Schema registry can be referenced from AsyncAPI documents.
+Here's an example of AsyncAPI document where you can see `schemaFormat` and `payload` 
+```
+asyncapi: 2.0.0
+info:
+  title: Example with Avro
+  version: 0.1.0
+channels:
+  example:
+    publish:
+      message:
+        schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+        payload:
+          $ref: 'https://example.europe-west3.gcp.confluent.cloud/subjects/test/versions/1/schema'
+```
 
 # Additional Resources
 - Check out an [AsyncAPI file demo with Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
