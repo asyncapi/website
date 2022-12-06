@@ -38,9 +38,9 @@ Overall, `events` are `messages` but not all `messages` are `events`.
 <DocsButton
  suggestions={[
     {
-      href:'/docs/concepts/channel',
+      href:'/docs/concepts/protocol',
       type: 'back',  
-      title: 'Channel',
+      title: 'Protocol',
    },
    {
       href:'/docs/tutorials',
