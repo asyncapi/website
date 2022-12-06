@@ -37,9 +37,9 @@ In AsyncAPI documents, all protocol-specific details that the application follow
       title: 'Application',
    },
    {
-      href:'/docs/tutorials',
+      href:'/docs/concepts/message',
       type: 'next',  
-      title: 'Tutorials - Overview',
+      title: 'Message',
    }
  ]}
 />
