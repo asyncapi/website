@@ -78,7 +78,7 @@ The solution with the highest score wins! 😀
 
 ### How do I get help? Who can help with further understanding of AsyncAPI and the entire tooling landscape?
 
-- Join one of `Contributor First` meetings. These will be streamed throughout the entire month of October, 2021. Add this calendar with [Google Calendar format](https://calendar.google.com/calendar/embed?src=tbrbfq4de5bcngt8okvev4lstk%40group.calendar.google.com) or [iCal format](https://calendar.google.com/calendar/ical/tbrbfq4de5bcngt8okvev4lstk%40group.calendar.google.com/public/basic.ics).  The `Contributor First` meetings will take place every Wednesday, twice a day, at 8AM UTC and 4PM UTC.
+- Join one of `Contributor First` meetings. These will be streamed throughout the entire month of October, 2021. Add this calendar with [Google Calendar format](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) or [iCal format](https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com/public/basic.ics).  The `Contributor First` meetings will take place every Wednesday, twice a day, at 8AM UTC and 4PM UTC.
 - Join our [Slack](https://www.asyncapi.com/slack-invite). We are a very friendly and responsive community.
 - Create an issue in [one of the repositories](https://github.com/asyncapi/) and explain what help you need.
 

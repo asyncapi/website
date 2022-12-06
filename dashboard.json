@@ -14,7 +14,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 47.95815632112621
+      "score": 48.24533090987547
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
@@ -65,6 +65,17 @@
       "resourcePath": "/asyncapi/generator/pull/843",
       "repo": "asyncapi/generator",
       "labels": [],
+      "score": 26.707236753681066
+    },
+    {
+      "id": "PR_kwDODCuNRs5CojIa",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: apache Pulsar bindings",
+      "author": "VisualBean",
+      "resourcePath": "/asyncapi/bindings/pull/173",
+      "repo": "asyncapi/bindings",
+      "labels": [],
       "score": 23.835490866188476
     },
     {
@@ -79,6 +90,17 @@
       "score": 22.399617922442182
     },
     {
+      "id": "PR_kwDOBGu-185AIQgf",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
       "id": "PR_kwDOFXtyC849zwGo",
       "isPR": true,
       "isAssigned": false,
@@ -90,15 +112,15 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOBGu-185AIQgf",
+      "id": "PR_kwDOBW5R_c5AL1kI",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
+      "isAssigned": true,
+      "title": "docs: new guide for validation of AsyncAPI files",
+      "author": "Annysah",
+      "resourcePath": "/asyncapi/website/pull/1002",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 19.527872034949596
+      "score": 19.815046623698855
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -109,59 +131,75 @@
       "resourcePath": "/asyncapi/parser-js/pull/449",
       "repo": "asyncapi/parser-js",
       "labels": [],
-      "score": 19.527872034949596
+      "score": 19.815046623698855
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
+      "id": "PR_kwDOBW5R_c5AyxaN",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 19.240697446200336
+    },
+    {
+      "id": "PR_kwDOBW5R_c5A3jNS",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"generate code\"",
+      "author": "Annysah",
+      "resourcePath": "/asyncapi/website/pull/1025",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "🎨 design",
-          "color": "0D67D3"
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
         }
       ],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 18.37917367995256
-    },
-    {
-      "id": "PR_kwDOBW5R_c5CDXVB",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: added all required sub pages UI for the community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/pull/1071",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "PR_kwDOFLhIt85AY9Ib",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: how changes in the spec are introduced",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/488",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
+      "score": 18.091999091203302
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOCHlHJM5XfhdE",
+      "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/873",
+      "repo": "asyncapi/generator",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "🐞 docs bug",
+          "color": "FFD23F"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5XXsGH",
+      "title": "Filter out application which are not in use",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/14",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDODyzcIc5WV_4D",
       "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
@@ -176,16 +214,6 @@
           "color": "FFD23F"
         }
       ]
-    },
-    {
-      "id": "I_kwDODyzcIc5WSi6q",
-      "title": "Improve email sent to TSC members to include the title of the topic",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/194",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": []
     },
     {
       "id": "I_kwDOFLhIt85U9FIY",
@@ -410,6 +438,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -576,21 +608,6 @@
       ]
     },
     {
-      "id": "I_kwDOGQYLdM5Bp1ew",
-      "title": "Would love to get some marketing materials for `Let's talk about contributing` live stream",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/brand/issues/21",
-      "repo": "asyncapi/brand",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": ":art: design",
-          "color": "0D67D3"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5AXInF",
       "title": "Improve help message with list of available examples",
       "isAssigned": false,
@@ -651,6 +668,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -670,25 +691,6 @@
         {
           "name": "keep-open",
           "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOGIfWhs49AQuD",
-      "title": "Test Issue #1 (Please Ignore)",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/temp-repo-test-for-website/issues/18",
-      "repo": "asyncapi/temp-repo-test-for-website",
-      "author": "KhudaDad414",
-      "area": "github actions",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "complexity/easy",
-          "color": "0E8A16"
         }
       ]
     },
@@ -836,7 +838,12 @@
       "repo": "asyncapi/spec-json-schemas",
       "author": "c-pius",
       "area": "docs",
-      "labels": []
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ]
     },
     {
       "id": "MDU6SXNzdWU2ODQ4MjI5ODQ=",
@@ -888,6 +895,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
