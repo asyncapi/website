@@ -42,7 +42,7 @@ In this step, you will send a message to your application using an MQTT broker a
 <CodeBlock language="bash">
   {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
 </CodeBlock>
-  
+
 Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message. You should see something displayed in the terminal similar to the following:
 
 <CodeBlock language="bash">
@@ -51,7 +51,9 @@ Go back to the previous terminal and check if your application logged the street
 ❗  Message Rejected. data.lumens should be integer`}
 </CodeBlock>
  
- <CodeBlock language="yaml" highlightedLines={[10,11]}>
+Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
+
+<CodeBlock language="yaml" highlightedLines={[10,11]}>
   {`  message:
         name: lumensInfo
         payload:
@@ -66,8 +68,6 @@ Go back to the previous terminal and check if your application logged the street
               minimum: 0
               description: Light intensity measured in lumens.`}
 </CodeBlock>
-  
-Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
 
 3. Send a correct message to your application:
 
