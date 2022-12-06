@@ -50,7 +50,7 @@ Go back to the previous terminal and check if your application logged the street
 { id: 1, lumens: '3', sentAt: '2017-06-07T12:34:32.000Z' }
 ❗  Message Rejected. data.lumens should be integer`}
 </CodeBlock>
- 
+
 Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
 
 <CodeBlock language="yaml" highlightedLines={[10,11]}>
