@@ -30,9 +30,9 @@ The diagram above shows the communication between a `producer` and `consumer`, w
       title: 'Consumer',
    },
    {
-      href:'/docs/concepts/message',
+      href:'/docs/concepts/application',
       type: 'next',  
-      title: 'Message',
+      title: 'Application',
    }
  ]}
 />
