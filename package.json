@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/modelina": "^0.49.0",
+    "@asyncapi/modelina": "^1.0.0-next.33",
     "@docsearch/react": "^3.1.0",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@floating-ui/react-dom-interactions": "^0.1.1",
