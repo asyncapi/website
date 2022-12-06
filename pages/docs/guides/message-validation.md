@@ -13,26 +13,29 @@ To understand message validation, we must first understand the basic components 
 - Consumer: The consumer is responsible for getting the producer's messages.
 - Broker: The broker acts as a bridge between the consumer and the producer because messages travel through the broker.
 
-Message validation can occur in different places in your system. This guy highlights three of those:
+Message validation can occur in different places in your system. This guide highlights three of those:
 - Both producers and consumers can do validation internally in runtime. 
 - Validation of the message can be handled by API Gateway
 - Validation of messages can be a native solution implemented by the broker.
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 
 ```mermaid
-stateDiagram-v2
-    Producer --> Broker : messages
-    Producer --> Fail : error
-    Broker --> Consumer : valid message
-    Broker --> Fail : invalid message
+graph TD
+    subgraph Producer
+    G[Message produced] -->|Message| B{Is Message valid?}
+    B -->|No| A[Logs]
+    end
+    B -->|Yes| C[Broker]
+    C -->|Message| E{Is Message valid?}
+    subgraph Consumer
+    E -->|No| F[Logs]
+    E -->|Yes| H[Message consumed]
+    end
 ```
-To validate AsyncAPI messages (events), we have two options: 
-- [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator): validates your messages against your AsyncAPI schema 
-- [AsyncAPI event gateway](https://github.com/asyncapi/event-gateway): validates messages on a gateway before they reach the app. 
 
-Let's further break down how validation works for both.
+Let's further break down how validation works for all.
 
-## AsyncAPI schema validation
+## Validation in runtime
 The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator for AsyncAPI schema. 
 
 ### `messageId` validation method
@@ -77,7 +80,7 @@ va.validateByMessageId('UserRemoved', {
 })`}
 </CodeBlock>
 
-## AsyncAPI gateway validation
+## Validation in a gateway
 AsyncAPI gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The AsyncAPI gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
 
 <Remember>
@@ -113,7 +116,7 @@ Here the expected payload `lightMeasured` is an integer. A validation error will
  ```
  "_asyncapi_eg_validation_error": "{\"ts\":\"2021-12-20T11:33:26.583143572Z\",\"errors\":[\"lumens: Invalid type. Expected: integer, given: boolean\"]}",
  ```
-## Native broker validation
+## Validation handled by the broker
 Native broker validation enables the broker to verify that messages produced by a consumer use a valid schema ID in the Schema Registry of your environment. If it is valid, messages are passed on to the consumer.
  
 ```mermaid
