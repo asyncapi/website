@@ -17,6 +17,7 @@ Message validation can occur in different places in your system. This guide high
 - Both producers and consumers can do validation internally in runtime. 
 - Validation of the message can be handled by API Gateway
 - Validation of messages can be a native solution implemented by the broker.
+
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 
 Let's further break down how validation works for all.
