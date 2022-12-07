@@ -1,4 +1,5 @@
 ---
+
 title: "Automate AsyncAPI workflows with GitHub Actions"
 date: 2020-04-02T06:00:00+01:00
 type: Engineering
@@ -15,7 +16,7 @@ excerpt: AsyncAPI community got rich with two GitHub Actions that you can use fo
 ---
 
 > tl;dr
-AsyncAPI community got rich with two GitHub Actions that you can use for [validation](https://github.com/marketplace/actions/asyncapi-github-action) and [generation](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
+> AsyncAPI community got rich with two GitHub Actions that you can use for [validation](https://github.com/marketplace/actions/asyncapi-github-action) and [generation](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
 
 GitHub organized a [hackathon for GitHub Actions](https://githubhackathon.com/#hackathon). There is no better reason to work on a solution if there is a bag of swags waiting for you <img className="inline-block w-5 h-5 ml-1" src="https://emojipedia-us.s3.amazonaws.com:443/content/2020/04/05/trollface-github-emojipedia.png"/>
 
@@ -28,13 +29,13 @@ Two AsyncAPI related actions we crafted in March are:
 
 ## Writing a GitHub Action
 
-Our actions are both [written in JavaScript](https://help.github.com/en/actions/building-actions/creating-a-javascript-action). The other way of writing action is to do a [Docker container action](https://help.github.com/en/actions/building-actions/creating-a-docker-container-action). The best way to start writing your action is to:
+Our actions are both [written in JavaScript](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action). The other way of writing action is to do a [Docker container action](https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action). The best way to start writing your action is to:
 
-1. Follow [this](https://help.github.com/en/actions/building-actions/creating-a-javascript-action) tutorial to create a simple action to understand its components.
-1. Get familiar with the [official toolkit](https://github.com/actions/toolkit) that you can use to simplify writing an action. 
+1. Follow [this](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action) tutorial to create a simple action to understand its components.
+1. Get familiar with the [official toolkit](https://github.com/actions/toolkit) that you can use to simplify writing an action.
 1. Create your custom action with [this template](https://github.com/actions/javascript-action) that has many things plugged in already, like eslint, testing, and most important, distro generation, so you do not have to commit `node_modules` directory to your repository.
 
-These are all the resources I used to write my first action, and to master it, I only had to read the official docs, like the [reference docs for the "action.yml" file](https://help.github.com/en/actions/building-actions/metadata-syntax-for-github-actions). Well done GitHub!
+These are all the resources I used to write my first action, and to master it, I only had to read the official docs, like the [reference docs for the "action.yml" file](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions). Well done GitHub!
 
 ## What I can do today with AsyncAPI GitHub Actions
 
@@ -44,14 +45,14 @@ Those two actions can help you a lot already, together or separately. I present 
 
 You can make sure that whenever someone makes a Pull Request to propose a change in the AsyncAPI document, you can validate it automatically using [Waleed's](https://twitter.com/WaleedAshraf01/) action `WaleedAshraf/asyncapi-github-action@v0.0.3`.
 
-Actions can be triggered by [multiple types of events](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions). In this example, we will trigger the action on any `pull_request` event.
+Actions can be triggered by [multiple types of events](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions). In this example, we will trigger the action on any `pull_request` event.
 
 ```yaml
 name: Validate AsyncAPI document
 
 on:
   pull_request:
-  
+
 jobs:
   validation:
     runs-on: ubuntu-latest
@@ -63,14 +64,14 @@ jobs:
 
 ### Generating HTML and publishing it to GitHub Pages
 
-One of the AsyncAPI use cases is to define your application and generate docs out of this definition, best in HTML. The typical workflow here would be to have a GitHub Action that your trigger on every push to the `master` branch. 
+One of the AsyncAPI use cases is to define your application and generate docs out of this definition, best in HTML. The typical workflow here would be to have a GitHub Action that your trigger on every push to the `master` branch.
 
 ```yaml
 name: AsyncAPI documentation publishing
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 ```
 
 To generate HTML from your AsyncAPI definition, you need to use `asyncapi/github-action-for-generator@v0.2.0` action. You also need to specify a few more things:
@@ -78,13 +79,13 @@ To generate HTML from your AsyncAPI definition, you need to use `asyncapi/github
 - The template you want to use for generation. In this example, you can see the official [AsyncAPI HTML Template](https://github.com/asyncapi/html-template). You can also write your custom template but hosting it on npm is not mandatory.
 - Path to the AsyncAPI file, in case it is not in the root of the working directory and its name is not `asyncapi.yml`
 - The template specific parameters. The crucial part here is the `baseHref` parameter. When enabling [GitHub Pages](https://pages.github.com/) for a regular repository, the URL of the Web page is `https://{GITHUB_PROFILE}.github.io/{REPO_NAME}/`. Specifying `baseHref` parameter helps the browser to properly resolve the URLs of relative links to resources like CSS and JS files. You do not have to hardcode the name of the repo in workflow configuration. Your workflow has access to information about the repository it is running in. You could do this: `${baseHref=/{github.repository}}/`
-- The output directory where the generator creates files. You might access those files in other steps of the workflow. 
+- The output directory where the generator creates files. You might access those files in other steps of the workflow.
 
 ```yaml
 - name: Generating HTML from my AsyncAPI document
   uses: asyncapi/github-action-for-generator@v0.2.0
   with:
-    template: '@asyncapi/html-template@0.3.0'  #In case of template from npm, because of @ it must be in quotes
+    template: '@asyncapi/html-template@0.3.0' #In case of template from npm, because of @ it must be in quotes
     filepath: docs/api/my-asyncapi.yml
     parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
     output: generated-html
@@ -108,45 +109,45 @@ name: AsyncAPI documentation publishing
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-    #"standard step" where repo needs to be checked-out first
-    - name: Checkout repo
-      uses: actions/checkout@v2
-      
-    #Using another action for AsyncAPI for validation
-    - name: Validating AsyncAPI document
-      uses: WaleedAshraf/asyncapi-github-action@v0.0.3
-      with:
-        filepath: docs/api/my-asyncapi.yml
-      
-    #In case you do not want to use defaults, you, for example, want to use a different template
-    - name: Generating HTML from my AsyncAPI document
-      uses: asyncapi/github-action-for-generator@v0.2.0
-      with:
-        template: '@asyncapi/html-template@0.3.0'  #In case of template from npm, because of @ it must be in quotes
-        filepath: docs/api/my-asyncapi.yml
-        parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
-        output: generated-html
-      
-    #Using another action that takes generated HTML and pushes it to GH Pages
-    - name: Deploy GH page
-      uses: JamesIves/github-pages-deploy-action@3.4.2
-      with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: generated-html
+      #"standard step" where repo needs to be checked-out first
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      #Using another action for AsyncAPI for validation
+      - name: Validating AsyncAPI document
+        uses: WaleedAshraf/asyncapi-github-action@v0.0.3
+        with:
+          filepath: docs/api/my-asyncapi.yml
+
+      #In case you do not want to use defaults, you, for example, want to use a different template
+      - name: Generating HTML from my AsyncAPI document
+        uses: asyncapi/github-action-for-generator@v0.2.0
+        with:
+          template: '@asyncapi/html-template@0.3.0' #In case of template from npm, because of @ it must be in quotes
+          filepath: docs/api/my-asyncapi.yml
+          parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
+          output: generated-html
+
+      #Using another action that takes generated HTML and pushes it to GH Pages
+      - name: Deploy GH page
+        uses: JamesIves/github-pages-deploy-action@3.4.2
+        with:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: generated-html
 ```
 
 ## Conclusion
 
 First of all, huge thank you to [Waleed Ashraf](https://twitter.com/WaleedAshraf01/) for creating an action to validate AsyncAPI documents.
 
-Please try out the above-described actions and let us know what you think. Feel free to leave an issue to suggest improvements or ideas for other actions. 
+Please try out the above-described actions and let us know what you think. Feel free to leave an issue to suggest improvements or ideas for other actions.
 
 In case you are interested with other GitHub Actions related posts you might have a look at:
 

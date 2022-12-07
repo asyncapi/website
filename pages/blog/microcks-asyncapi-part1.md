@@ -25,7 +25,7 @@ Our communities clearly validate that it makes sense to have the same tool manag
 
 ![microcks-supported-standards](/img/posts/microcks-asyncapi-part1/microcks-supported-standards.webp)
 
-It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tooling/#mocking) :wink: 
+It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tools#mocking) :wink: 
 
 ![asyncapi-tool-tweet](/img/posts/microcks-asyncapi-part1/asyncapi-tool-tweet.webp)
 

@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI @Hacktoberfest"
+title: 'AsyncAPI @Hacktoberfest'
 date: 2020-09-30T06:00:00+01:00
 type: Community
 tags:
@@ -14,10 +14,10 @@ authors:
 ---
 
 <Warning
-  title="HacktoberFest 2020 has finished"
-  description={
-    <span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
-  }
+title="HacktoberFest 2020 has finished"
+description={
+<span>Check out our <Link href="/blog/hacktoberfest-summary-2020" passHref><a>summary blog post</a></Link>. There are lots of good insights!</span>
+}
 />
 
 ## What is AsyncAPI
@@ -39,7 +39,7 @@ AsyncAPI Initiative joins the Hacktoberfest for two main reasons:
 
 In the past, we were also there where you are now, shy and uncertain if we can impact open source community. We want to give you an easy path to take the first baby steps in the world of open source in a welcoming and friendly environment.
 
-> Don't forget to [sign up](https://hacktoberfest.digitalocean.com/login) to the Hacktoberfest
+> Don't forget to [sign up](https://hacktoberfest.digitalocean.com/) to the Hacktoberfest
 
 <YouTube id="_1WRr3Ml9t4" />
 
@@ -55,9 +55,9 @@ There is always a lot of work waiting out there. For the sake of this special ev
 
 ### 2. Setup Your Environment And Create A First Pull Request
 
-Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI. 
+Once you [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine and get a [GitHub account](https://github.com/join), you need first to decide if you are here just for Hacktoberfest or longer, and make sure if your issue is easy and maybe you can complete it in the GitHub UI.
 
-In case you are here just for the Hacktoberfest, and you picked easy issues that involve changes only to a single file, there is no need to install Git and complicate your life. GitHub UI enables you to [make changes to a single file online](https://docs.github.com/en/free-pro-team@latest/github/managing-files-in-a-repository/editing-files-in-your-repository).
+In case you are here just for the Hacktoberfest, and you picked easy issues that involve changes only to a single file, there is no need to install Git and complicate your life. GitHub UI enables you to [make changes to a single file online](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
 
 In case you:
 
@@ -65,7 +65,7 @@ In case you:
 - you picked up an issue where you need to make changes to more than just one file,
 - you also need to run the project locally to check if it works
 
-Then follow [this](https://github.com/asyncapi/.github/blob/master/git-workflow.md) short instruction on how to fork the repository and set it up locally.
+Then follow [this](https://github.com/asyncapi/community/blob/master/git-workflow.md) short instruction on how to fork the repository and set it up locally.
 
 Once you are ready with your changes, submit a pull request. Be nice and follow our [code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and make sure your pull request is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits).
 
@@ -73,13 +73,13 @@ Once you are ready with your changes, submit a pull request. Be nice and follow 
 
 ## Office Hours
 
-Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously. 
+Do you feel overwhelmed? No need. You can do it. Just take this blog post seriously.
 
 Trust me when I write that every pull request is crucial for us.
 Trust me when I write that we are a welcoming community.
 Don't be afraid that you will waste our time. If we would think about it this way, we would not even join the Hacktoberfest.
 
-Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different time zones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) and then on the following days:
+Still not sure if you can make it? Don't worry. We want to host office hours throughout the event, 2x a week, 1h long, and different time zones. You can join whenever you want and ask us anything, or do pair programming with us. We start with the first meeting on [Tuesday 6th, 8AM UTC](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) and then on the following days:
 
 - Tuesday 6th, 8AM UTC
 - Thursday 8th, 4PM UTC
@@ -94,9 +94,9 @@ We stream to our official media accounts:
 
 - https://www.twitch.tv/asyncapi
 - https://www.youtube.com/asyncapi
-- https://twitter.com/AsyncAPISpec 
+- https://twitter.com/AsyncAPISpec
 
-You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec). 
+You can also join us in a more asynchronous discussion on [Slack](https://www.asyncapi.com/slack-invite/). For updates and latest news, the best is to follow our [Twitter account](https://twitter.com/AsyncAPISpec).
 
 ## Blooper Reel
 
