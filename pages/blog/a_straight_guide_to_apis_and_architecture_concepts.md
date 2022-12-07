@@ -30,6 +30,8 @@ So, let’s talk some basic concepts:
 ### What is an API?
 
 APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
+
+![Picture 1, pipes](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
  
 ### How does an API work?
  
@@ -39,7 +41,7 @@ APIs act as an intercommunicator, linking one or more programs. Let's say they c
 
 We can classify them into two main groups, depending on their use or their type of architecture.
 
-#### Types of APIs according to their use:
+#### Types of APIs according to their use
  
 - **Internal APIs** are those used at a local level. They focus on communicating with each other within the same system or the same computer. An excellent example of them might be the pipes contained in a house. They connect the sink to the bathroom and the washing machine to the dryer, for example.
  
@@ -74,23 +76,37 @@ In my opinion, this is the most interesting part. Understanding different constr
 Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
+![Picture 2, menhirs](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp)
+
 -  **Microservices architecture**
 
 Microservices architecture is a method for developing software applications that consist of small, autonomous services. Each microservice's code can be written in a different language and perform specific functions. Microservices communicate with each other through APIs and have their own storage systems, which avoid overloading and crashing the application.
  
  An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
 
+We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
+
+![Picture 3, swarm of bees](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
+
 - **Serverless architecture**
 
 It is a computing model that uses the cloud as the environment for executing applications and processes, dispensing with traditional servers. In this way, the Serverless architecture facilitates the work of developers. They can dispense with tasks such as allocating server resources, and focusing solely on application development. With Serverless, the code runs directly in containers. 
  
- Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required.
+ Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
+
+There isn't a better graphic example than a cloud.
+
+![Picture 4, cloud](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
 
 -  **Event-driven architecture**
 
 Event-driven architecture, also known as EDA, is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes, or 5 hours later just because the server was attending to other deliveries.
 
 This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
+
+A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
+
+  ![Picture 5, message in bottle](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
 
 ## So, what is an API, ultimately…
 
