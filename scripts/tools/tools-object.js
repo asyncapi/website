@@ -19,7 +19,7 @@ const fuse = new Fuse(categoryList, options)
 const createToolObject = (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
   let resultantObject = {
     title: toolFile.title,
-    description: repoDescription || toolFile.description,
+    description: toolFile.description || repoDescription,
     links: {
       ...toolFile.links,
       repoUrl: repositoryUrl,
