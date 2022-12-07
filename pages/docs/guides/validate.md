@@ -7,15 +7,6 @@ weight: 120
 ## Introduction
 This guide teaches multiple ways to validate AsyncAPI documents. 
 
-## Create AsyncAPI document
-To validate an AsyncAPI document, you must first create one. You can create one using the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation).
-
-Generate a sample `asyncapi.yaml` file (AsyncAPI document) with the following CLI command: 
-
-```
-asyncapi new --example=tutorial.yml --no-tty
-```
-
 ## Validate AsyncAPI documents
 Validating an AsyncAPI document can mean one of two things: 
 - Validation against the specification.
@@ -107,9 +98,9 @@ To get started:
 
 4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
 
-```
-spectral lint asyncapi.yaml
-```
+  ```
+    spectral lint asyncapi.yaml
+  ```
 
 ---
 
