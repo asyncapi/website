@@ -146,7 +146,7 @@ stateDiagram-v2
 
 Broker validation can also be implemented using other methods. AsyncAPI is not involved in validation here but the schemas that are stored in Schema registry can be referenced from AsyncAPI documents.
 Here's an example of AsyncAPI document where you can see `schemaFormat` and `payload` 
-```
+```yml
 asyncapi: 2.0.0
 info:
   title: Example with Avro
