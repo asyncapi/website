@@ -12,7 +12,7 @@ export default [
     icon: IconOverview,
     title: 'Overview',
     href: '/community',
-    description: 'Connect, share and learn',
+    description: 'Connect, share, and learn.',
   },
   {
     icon: IconTools,
