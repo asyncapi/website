@@ -28,7 +28,7 @@ The AsyncAPI document should include descriptions of payload schemas so that you
 
 Before messages reach the consumer, runtime validation ensures that any errors are resolved and valid messages are sent to your application.
 
-The [AsyncAPI schema validator](https://github.com/WaleedAshraf/asyncapi-validator) is a message validator which validates messages produced/consumed in your application against your AsyncAPI document.
+An example implementation of message validation in runtime is [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) library that enables you to validate messages produced/consumed in your application against schemas provided in your AsyncAPI document.
 Check out the Message validation in runtime() tutorial if you want to get your hands dirty with message validation. 
 
 ```mermaid
