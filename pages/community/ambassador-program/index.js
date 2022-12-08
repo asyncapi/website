@@ -110,7 +110,7 @@ function Index() {
           <div>
             <Button
               className="block md:inline-block focus:outline-none mt-10 text-center"
-              text="Apply to become one"
+              text="Get started now"
               href="https://github.com/orgs/asyncapi/discussions"
               target="_blank"
               icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
@@ -195,58 +195,58 @@ function Index() {
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, i) => (
-              <div key={i} className="rounded-md border text-left mt-6 pb-2">
-                <div className="flex justify-between p-2">
-                  <div>{ambassador.name}</div>
-                  <div>{ambassador.country}</div>
+            <div key={i} className="rounded-md border text-left mt-6 pb-2">
+              <div className="flex justify-between p-2">
+                <div>{ambassador.name}</div>
+                <div>{ambassador.country}</div>
+              </div>
+              <Link
+                href={`/community/ambassador-program/${ambassador.github}`}
+                as={`/community/ambassador-program/${ambassador.github}`}
+              >
+                <div className="p-2">
+                  <div className="w-full h-auto bg-center bg-center rounded-md cursor-pointer">
+                    <img
+                      src={ambassador.img}
+                      alt={ambassador.name}
+                      className="h-auto w-full rounded-lg object-contain"
+                    />
+                  </div>
+                  <div className="mt-2 w-full rounded-lg border p-2 text-sm">
+                    {ambassador.title}
+                  </div>
                 </div>
-                <Link
-                  href={`/community/ambassador-program/${ambassador.github}`}
-                  as={`/community/ambassador-program/${ambassador.github}`}
-                >
-                  <div className="p-2">
-                    <div className="w-full h-auto bg-center bg-center rounded-md cursor-pointer">
-                      <img
-                        src={ambassador.img}
-                        alt={ambassador.name}
-                        className="h-auto w-full rounded-lg object-contain"
-                      />
-                    </div>
-                    <div className="mt-2 w-full rounded-lg border p-2 text-sm">
-                      {ambassador.title}
-                    </div>
-                  </div>
-                </Link>
-                <div>
-                  <div className="p-2 text-sm">{ambassador.bio}</div>
-                  <div className="border-t p-2 flex">
-                    <a
-                      href={`https://www.twitter.com/${ambassador.twitter}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline"
-                    >
-                      Twitter ↗
-                    </a>
-                    <a
-                      href={`https://www.github.com/${ambassador.github}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline ml-3"
-                    >
-                      Github ↗
-                    </a>
-                    <a
-                      href={`https://www.linkedin.com/in/${ambassador.linkedin}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline ml-3"
-                    >
-                      Linkedin ↗
-                    </a>
-                  </div>
+              </Link>
+              <div>
+                <div className="p-2 text-sm">{ambassador.bio}</div>
+                <div className="border-t p-2 flex">
+                  <a
+                    href={`https://www.twitter.com/${ambassador.twitter}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
+                    Twitter ↗
+                  </a>
+                  <a
+                    href={`https://www.github.com/${ambassador.github}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline ml-3"
+                  >
+                    Github ↗
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/in/${ambassador.linkedin}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline ml-3"
+                  >
+                    Linkedin ↗
+                  </a>
                 </div>
               </div>
+            </div>
           ))}
         </div>
       </div>
@@ -294,7 +294,7 @@ function Index() {
                 Become an AsycnAPI Ambassador
               </Heading>
               <Heading typeStyle="body-sm">
-                The AsyncAPI Ambassador is now open for nominations! If you’re
+                The AsyncAPI Ambassador is now open for applications! If you’re
                 selected, you’ll be asked to join AsyncAPI on our mission to
                 help developers all over the world to build the future of Event
                 Driven APIs, in an easy and empowering way.
@@ -302,7 +302,7 @@ function Index() {
               <Button
                 className="block md:inline-block focus:outline-none mt-10 text-center"
                 text="Become an Ambassador now"
-                href="https://github.com/orgs/asyncapi/discussions"
+                href="https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador"
                 target="_blank"
               />
             </div>
