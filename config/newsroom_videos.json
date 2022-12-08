@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/qgcRg5sVOKg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (December 7, 2022)",
+    "description": "https://github.com/asyncapi/community/issues/531.",
+    "videoId": "qgcRg5sVOKg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/kn_oQiZ-ZXU/hqdefault.jpg",
     "title": "Let&#39;s talk about contributing - Documentation",
     "description": "https://github.com/asyncapi/community.",
@@ -22,11 +28,5 @@
     "title": "Spec 3.0 meeting (November 23, 2022)",
     "description": "https://github.com/asyncapi/community/issues/518.",
     "videoId": "3faqDCnzlHU"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/OYi4zYXKiYw/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing - AsyncAPI &amp; MQTT Part 1",
-    "description": "AsyncAPI & MQTT https://github.com/AceTheCreator/Virtual-houses.",
-    "videoId": "OYi4zYXKiYw"
   }
 ]
