@@ -16,10 +16,10 @@ const options = {
 
 const fuse = new Fuse(categoryList, options)
 
-const createToolObject = (toolFile, repositoryUrl, isAsyncAPIrepo) => {
+const createToolObject = (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
   let resultantObject = {
     title: toolFile.title,
-    description: toolFile.description,
+    description: toolFile.description || repoDescription,
     links: {
       ...toolFile.links,
       repoUrl: repositoryUrl,
@@ -62,8 +62,9 @@ async function convertTools(data) {
 
         if (isValid) {
           let repositoryUrl = tool.repository.html_url;
+          let repoDescription = tool.repository.description;
           let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
-          let toolObject = createToolObject(jsonToolFileContent, repositoryUrl, isAsyncAPIrepo);
+          let toolObject = createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
           jsonToolFileContent.filters.categories.forEach((category) => {
             const categorySearch = fuse.search(category);
@@ -78,10 +79,10 @@ async function convertTools(data) {
             }
           });
         } else {
+          console.error('Script is not failing, it is just dropping errors for further investigation');
           console.error('Invalid .asyncapi-tool file.');
           console.error(`Located in: ${tool.html_url}`);
           console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
-          console.error('Not failing, dropping errors for further investigation');
         }
       }
     } catch (err) {
