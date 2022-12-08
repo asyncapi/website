@@ -4,10 +4,10 @@ description: This guide explains different use cases for message validation usin
 weight: 120
 ---
 
-# Introduction
+## Introduction
 This guide explains different concepts of validating messages. You will also learn what role AsyncAPI documents play in validation.
 
-# Message validation
+## Message validation
 To understand message validation, we must first understand the basic components involved.
 - Producer: The producer is responsible for producing messages.
 - Consumer: The consumer is responsible for getting the producer's messages.
@@ -22,7 +22,7 @@ Because consumers and producers cannot communicate directly, the AsyncAPI file d
 
 Let's further break down how validation works for all.
 
-## Validation in runtime
+### Validation in runtime
 Messages produced and consumed are both required for runtime message validation.
 The AsyncAPI document should include descriptions of payload schemas so that you can read them in your application and validate messages that are consumed and produced by the application.
 
@@ -45,50 +45,11 @@ graph TD
     end
 ```
 
-### `messageId` validation method
-The `messageId` is defined in [AsyncAPI Schema v2.4.0](https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject).
-<CodeBlock>
-`.validateByMessageId(key, payload)`
-</CodeBlock>
-
-1. Create an AsyncAPI document:
-<CodeBlock language="yaml">
-{`cat <<EOT >> asyncapi.yaml
-asyncapi: 2.0.0
-info:
-  title: User Events
-  version: 1.0.0
-channels:
-  user-events:
-    description: user related events
-    publish:
-      message:
-        name: UserDeletedMessage
-        x-custom-key: UserDeleted
-        payload:
-          type: object
-          properties:
-            userEmail:
-              type: string
-            userId:
-              type: string
-              EOT`}
-</CodeBlock>
-
-2. Validate incoming MQTT messages by loading the AsyncAPI schema definition via the `fromSource` method. 
-
-<CodeBlock>
-{`const AsyncApiValidator = require('asyncapi-validator')
-let va = await AsyncApiValidator.fromSource('./api.yaml')
-// validate messageId 'UserRemoved'
-va.validateByMessageId('UserRemoved', {
-  userId: '123456789',
-  userEmail: 'alex@mail.com',
-})`}
-</CodeBlock>
-
-## Validation in a gateway
+### Validation in a gateway
 A gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The gateway sits between the producer and the broker. The messages are routed through the gateway first, and the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
+
+An example implementation of message validation in a gateway is the [AsyncAPI gateway](https://github.com/asyncapi/event-gateway). It intercepts all incoming messages moving them into a pipeline of middlewares and handlers such as message validation. You can use a Kafka consumer/producer[(kcat)](https://github.com/edenhill/kcat), a broker, and a simple WebSocket to run the AsyncAPI gateway in your machine.
+Check out an [AsyncAPI file demo with Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
 
 <Remember>
 Currently, only the Kafka protocol is supported.
@@ -106,24 +67,6 @@ graph TD
 The AsyncAPI document is important in this case because payload schemas are taken from it and messages as validated against it in your application.
 You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
-### UseCase
-You can use a Kafka consumer/producer[(kcat)](https://github.com/edenhill/kcat), a broker, and a simple WebSocket to run the AsyncAPI gateway in your machine.
-```
-type: object
-properties:
-  lumens:
-    type: integer
-    minimum: 0
-    description: Light intensity measured in lumens.
-  sentAt:
-    type: s
-    format: date-time
-    description: Date and time when the message was sent.
- ```
-Here the expected payload `lightMeasured` is an integer. A validation error will be included if the producer sends a message with the type boolean.
- ```
- "_asyncapi_eg_validation_error": "{\"ts\":\"2021-12-20T11:33:26.583143572Z\",\"errors\":[\"lumens: Invalid type. Expected: integer, given: boolean\"]}",
- ```
 ## Validation handled by the broker
 As producers and consumers do not communicate with each other directly, but rather information transfer happens via Kafka topic. At the same time, the consumer still needs to know the type of data the producer is sending. Imagine if the producer starts sending bad data to Kafka or if the data type of your data gets changed. We need a way to have a common data type that must be agreed upon.
 
@@ -159,11 +102,6 @@ channels:
         payload:
           $ref: 'https://example.europe-west3.gcp.confluent.cloud/subjects/test/versions/1/schema'
 ```
-
-# Additional Resources
-- Check out an [AsyncAPI file demo with Studio.](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/asyncapi/event-gateway/master/deployments/k8s/event-gateway-demo/event-gateway-demo.asyncapi.yaml)
-
-- Check out other [AsyncAPI validators](https://www.asyncapi.com/docs/tools#validators)
 
 ---
 
