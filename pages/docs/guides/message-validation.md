@@ -14,22 +14,19 @@ To understand message validation, we must first understand the basic components 
 - Broker: The broker acts as a bridge between the consumer and the producer because messages travel through the broker.
 
 Message validation can occur in different places in your system. This guide highlights three of those:
-- Both producers and consumers can do validation internally in runtime. 
+- Both producers and consumers can do validation internally in runtime.
 - Validation of the message can be handled by API Gateway
 - Validation of messages can be a native solution implemented by the broker.
-
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
-
 Let's further break down how validation works for all.
 
 ### Validation in runtime
-Messages produced and consumed are both required for runtime message validation.
-The AsyncAPI document should include descriptions of payload schemas so that you can read them in your application and validate messages that are consumed and produced by the application.
+Messages produced and consumed are both required for runtime message validation. The AsyncAPI document should include descriptions of payload schemas so that you can read them in your application and validate messages that are consumed and produced by the application.
 
 Before messages reach the consumer, runtime validation ensures that any errors are resolved and valid messages are sent to your application.
 
 An example implementation of message validation in runtime is [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) library that enables you to validate messages produced/consumed in your application against schemas provided in your AsyncAPI document.
-Check out the Message validation in runtime() tutorial if you want to get your hands dirty with message validation. 
+Check out the Message validation in the runtime() tutorial if you want to get your hands dirty with message validation. 
 
 ```mermaid
 graph TD
