@@ -44,146 +44,68 @@ This is a huge amount of work, and we are really proud that so many wonderful pe
 
 We want to thank everyone personally who submitted improvements to our repositories. Here are the names of our heroes:
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Amishakumari544">
-        <img src="https://avatars.githubusercontent.com/Amishakumari544" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-            Amishakumari544 -  1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-        <td align="center">
-      <a href="https://github.com/toukirkhan">
-        <img src="https://avatars.githubusercontent.com/toukirkhan" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-            toukirkhan -  2 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/aeworxet">
-        <img src="https://avatars.githubusercontent.com/aeworxet" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           aeworxet - 2 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-         <td align="center">
-      <a href="https://github.com/manavdesai27">
-        <img src="https://avatars.githubusercontent.com/manavdesai27" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           manavdesai27 - 1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-    </tr>
-      <tr>
-    <td align="center">
-      <a href="https://github.com/Ankitchaudharyy">
-        <img src="https://avatars.githubusercontent.com/Ankitchaudharyy" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           Ankitchaudharyy -  3 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-        <td align="center">
-      <a href="https://github.com/nawed2611">
-        <img src="https://avatars.githubusercontent.com/nawed2611" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-            nawed2611 -  1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/dhfherna">
-        <img src="https://avatars.githubusercontent.com/dhfherna" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           dhfherna - 1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-         <td align="center">
-      <a href="https://github.com/amit-ksh">
-        <img src="https://avatars.githubusercontent.com/amit-ksh" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           amit-ksh - 1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-    </tr>
-          <tr>
-    <td align="center">
-      <a href="https://github.com/mastdev">
-        <img src="https://avatars.githubusercontent.com/mastdev" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-          mastdev -  2 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-        <td align="center">
-      <a href="https://github.com/codingtenshi">
-        <img src="https://avatars.githubusercontent.com/codingtenshi" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-            codingtenshi -  4 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/akshatnema">
-        <img src="https://avatars.githubusercontent.com/akshatnema" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           akshatnema - 1 PR
-          </b>
-        </sub>
-      </a>
-    </td>
-         <td align="center">
-      <a href="https://github.com/Mayaleeeee">
-        <img src="https://avatars.githubusercontent.com/Mayaleeeee" width="100px;" alt=""/>
-        <br />
-        <sub>
-          <b>
-           Mayaleeeee - 4 PRs
-          </b>
-        </sub>
-      </a>
-    </td>
-    </tr>
-</table>
+<Profile profiles={[
+  {
+    name: 'Amishakumari544 -  1 PR',
+    avatar: 'https://avatars.githubusercontent.com/Amishakumari544',
+    link: 'https://github.com/Amishakumari544'
+  },
+  {
+    name: 'toukirkhan -  2 PRs',
+    avatar: 'https://avatars.githubusercontent.com/toukirkhan',
+    link: 'https://github.com/toukirkhan'
+  },
+  {
+    name: 'aeworxet - 2 PRs',
+    avatar: 'https://avatars.githubusercontent.com/aeworxet',
+    link: 'https://github.com/aeworxet'
+  },
+  {
+    name: 'manavdesai27 - 1 PR',
+    avatar: 'https://avatars.githubusercontent.com/manavdesai27',
+    link: 'https://github.com/manavdesai27'
+  },
+  {
+    name: 'Ankitchaudharyy -  3 PRs',
+    avatar: 'https://avatars.githubusercontent.com/Ankitchaudharyy',
+    link: 'https://github.com/Ankitchaudharyy'
+  },
+  {
+    name: 'nawed2611 -  1 PR',
+    avatar: 'https://avatars.githubusercontent.com/nawed2611',
+    link: 'https://github.com/nawed2611'
+  },
+  {
+    name: 'dhfherna - 1 PR',
+    avatar: 'https://avatars.githubusercontent.com/dhfherna',
+    link: 'https://github.com/dhfherna'
+  },
+  {
+    name: 'amit-ksh - 1 PR',
+    avatar: 'https://avatars.githubusercontent.com/amit-ksh',
+    link: 'https://github.com/amit-ksh'
+  }, 
+  {
+    name: 'mastdev -  2 PRs',
+    avatar: 'https://avatars.githubusercontent.com/mastdev',
+    link: 'https://github.com/mastdev'
+  }, 
+  {
+    name: 'codingtenshi -  4 PRs',
+    avatar: 'https://avatars.githubusercontent.com/codingtenshi',
+    link: 'https://github.com/codingtenshi'
+  },
+  {
+    name: 'akshatnema - 1 PR',
+    avatar: 'https://avatars.githubusercontent.com/akshatnema',
+    link: 'https://github.com/akshatnema'
+  }, 
+  {
+    name: 'Mayaleeeee - 4 PRs',
+    avatar: 'https://avatars.githubusercontent.com/Mayaleeeee',
+    link: 'https://github.com/Mayaleeeee'
+  }, 
+]} />
 
 ## Late to the party?
 
