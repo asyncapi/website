@@ -43,9 +43,9 @@ Overall, `events` are `messages` but not all `messages` are `events`.
       title: 'Protocol',
    },
    {
-      href:'/docs/tutorials',
+      href:'/docs/concepts/bindings',
       type: 'next',  
-      title: 'Tutorials - Overview',
+      title: 'Bindings',
    }
  ]}
 />
