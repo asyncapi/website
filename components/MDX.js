@@ -15,6 +15,7 @@ import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
 import Figure from '../components/Figure'
+import Profile from '../components/Profile'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import DocsButton from '../components/buttons/DocsButton';
@@ -88,7 +89,8 @@ function getMDXComponents() {
     TwitterMomentShare,
     TwitterDMButton,
     TwitterVideoEmbed,
-    TwitterOnAirButton
+    TwitterOnAirButton,
+    Profile
   }
 }
 
