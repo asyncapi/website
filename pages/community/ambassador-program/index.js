@@ -195,7 +195,7 @@ function Index() {
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, i) => (
-            <div key={i} className="rounded-md border text-left mt-6 pb-2">
+            <div key={i} className="rounded-md border flex flex-col justify-between text-left mt-6 pb-2">
               <div className="flex justify-between p-2">
                 <div>{ambassador.name}</div>
                 <div>{ambassador.country}</div>
