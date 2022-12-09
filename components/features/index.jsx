@@ -8,7 +8,7 @@ const features = [
     name: "Specification",
     description:
       "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
-    links: [{ label: "Documentation", href: "docs/specifications/latest", id:'whyasyncapi-spec-documentation-link' }],
+    links: [{ label: "Documentation", href: "docs/reference/specification/v2.5.0", id:'whyasyncapi-spec-documentation-link' }],
   },
   {
     name: "Document APIs",
