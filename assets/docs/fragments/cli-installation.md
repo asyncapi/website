@@ -1,4 +1,6 @@
-## CLI Installation
+### CLI Installation
+Follow the [AsyncAPI CLI installation](https://github.com/asyncapi/cli#installation) instructions below, based on your computer’s operating system.
+
 <details>
 <summary>MacOS</summary>
 
@@ -34,4 +36,27 @@ You can install in Linux via `dpkg`, a debian package manager:
 
 [Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
 </details>
+
+#### Using NPM and Node.js
+Alternitavely, you can install the [AsyncAPI CLI](https://github.com/asyncapi/cli#installation) with Node.js `>=v10` and [NPM](https://nodejs.org/en/download/package-manager/).
+
+<details>
+<summary>Install CLI globally</summary>
+
+Install AsyncAPI CLI _globally_ with the following command:
+
+```
+npm install -g @asyncapi/cli
+```
+</details>
+
+<details>
+<summary>Install specific CLI version</summary>
+
+To install a specific version of the AsyncAPI CLI, pass the `verion` during installation:
+
+```
+npm install -g @asyncapi/cli@{version}
+```
+
 </details>
