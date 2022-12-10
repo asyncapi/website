@@ -29,7 +29,7 @@ I’m not going to go into great detail about the specification, but for context
 
 The first step in doing code generation with AsyncAPI is obtaining an AsyncAPI document that defines the application that you want to develop. Per the specification, this document is represented as JSON objects and must conform to the JSON standards. YAML, being a superset of JSON, can also be used. There are two main ways of going about obtaining this document: manually create the document or use an event portal.
 
-If you decide to manually create the document after familiarizing yourself with the specification, don’t worry – you won’t be starting with a blank slate. The AsyncAPI initiative has provided a handy, interactive tool called the [AsyncAPI Hub](https://hub.asyncapi.io/) to make this easier. On the left side of the Hub you can familiarize yourself with the specification and make changes to a real AsyncAPI document, and as you do so the right side of the screen updates to show how the document is parsed into a more human-readable format.
+If you decide to manually create the document after familiarizing yourself with the specification, don’t worry – you won’t be starting with a blank slate. The AsyncAPI initiative has provided a handy, interactive tool called the [AsyncAPI Studio](https://studio.asyncapi.com/) to make this easier. On the left side of the Studio you can familiarize yourself with the specification and make changes to a real AsyncAPI document, and as you do so the right side of the screen updates to show how the document is parsed into a more human-readable format.
 
 ![asyncapi playground for creating microservices using spring cloud stream](/img/posts/asyncapi-codegen_pic-01.webp)
 

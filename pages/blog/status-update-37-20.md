@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI Initiative Status Update (week 37, 2020)"
+title: 'AsyncAPI Initiative Status Update (week 37, 2020)'
 date: 2020-09-09T06:00:00+01:00
 type: Communication
 tags:
@@ -17,9 +17,9 @@ We canceled the previous status update due to the vacation cucumber season, so t
 
 ## Template for templates development
 
-We’ve spent a lot of time recently on tooling development. Now it is time to start working on some docs! Last few weeks, we worked on a template, a boilerplate that one can use to create a new repository to start writing their template for the AsyncAPI Generator. 
+We’ve spent a lot of time recently on tooling development. Now it is time to start working on some docs! Last few weeks, we worked on a template, a boilerplate that one can use to create a new repository to start writing their template for the AsyncAPI Generator.
 
-The work is still in progress and will take a few weeks more, but you can already see a preview [here](https://github.com/derberg/template-for-generator-templates). All the Generator features are showcased there already. We are missing only example tests and readme there. 
+The work is still in progress and will take a few weeks more, but you can already see a preview [here](https://github.com/asyncapi/template-for-generator-templates). All the Generator features are showcased there already. We are missing only example tests and readme there.
 
 The next steps are writing a set of interactive tutorials that can explain all the features step by step, help create a super basic template, and then a more complex one.
 
@@ -63,13 +63,13 @@ Please have a look at [this](https://github.com/asyncapi/asyncapi/issues/432) is
 
 ## AsyncAPI Special Interest Group (SIG) open meeting
 
-The last meeting took place on Tuesday, 1st of September, 8AM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/430). 
+The last meeting took place on Tuesday, 1st of September, 8AM UTC. Meeting notes and recording are available [here](https://github.com/asyncapi/asyncapi/issues/430).
 
-The next meeting is scheduled for next [Tuesday, 15th of September, 4PM UTC](https://everytimezone.com/s/4347f3c8). 
+The next meeting is scheduled for next [Tuesday, 15th of September, 4PM UTC](https://everytimezone.com/s/4347f3c8).
 
-We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/435). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
+We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/435). At the moment, there is nothing in the agenda so you can sneak in your topic easily.
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Curated Content
 
