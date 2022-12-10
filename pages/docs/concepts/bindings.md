@@ -3,7 +3,7 @@ title: Bindings
 weight: 35
 ---
 
-## What is binding?
+## What are bindings?
 
 
 ## Why do we need bindings?
