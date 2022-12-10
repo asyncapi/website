@@ -3,7 +3,7 @@ title: Bindings
 weight: 35
 ---
 
-## What is binding?
+## What are bindings?
 A binding is a way of connecting an event with a piece of code that should be executed in response to that event. When an event occurs, the binding ensures that the associated code is triggered and executed, allowing the system to respond to the event in an appropriate way. 
 
 Bindings are typically used to handle user input, network events, and other kinds of asynchronous occurrences that require a system to take some action.
@@ -15,7 +15,7 @@ Here are a few examples of binding in an event-driven architecture:
 
 In each of these examples, the binding connects the event to the appropriate event handling function, allowing the system to respond to user actions or system events in a specific and predictable way.
 
-## Why do we need a binding?
+## Why do we need bindings?
 Without bindings, the system would not know how to respond to events, and the user experience would be unpredictable and potentially frustrating. By establishing bindings between events and event handling functions, the system can respond to user actions and system events in a consistent and expected manner.
 
 <DocsButton
