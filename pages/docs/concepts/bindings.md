@@ -6,7 +6,7 @@ weight: 35
 ## What is binding?
 
 
-## Why do we need a binding?
+## Why do we need bindings?
 
 <DocsButton
  suggestions={[
