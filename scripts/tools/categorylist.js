@@ -62,12 +62,22 @@ const categoryList = [
     {
         name: "Others",
         tag: "other",
-        description: "The following is a list of tools that comes under Other category"
+        description: "The following is a list of tools that comes under Other category."
     },
     {
         name: "CLIs",
         tag: "cli",
-        description: "The following is a list of tools that you can work with in terminal or do some CI/CD automation"
+        description: "The following is a list of tools that you can work with in terminal or do some CI/CD automation."
+    },
+    {
+        name: "Bundlers",
+        tag: "bundler",
+        description: "The following is a list of tools that you can work with to bundle AsyncAPI documents."
+    },
+    {
+        name: "IDE Extensions",
+        tag: "ide-extension",
+        description: "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others"
     }
 ]
 
