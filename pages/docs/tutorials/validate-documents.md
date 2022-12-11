@@ -30,7 +30,7 @@ Let's pretend we have an invalid AsyncAPI document.
 2. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
-{`asyncapi: '1.0.0'
+asyncapi: '1.0.0'
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -62,7 +62,7 @@ channels:
             sentAt:
               type: integer
               format: date-time
-              description: Date and time when the message was sent.`}
+              description: Date and time when the message was sent.
  ``` 
 ## Troubleshoot Studio errors
 Let's fix the errors one by one until we end up with a valid AsyncAPI document.
