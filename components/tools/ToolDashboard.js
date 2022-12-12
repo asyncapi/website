@@ -58,7 +58,7 @@ export default function ToolDashboard() {
         setcheckToolsList(false)
         Object.keys(tempToolsList).forEach((category) => {
             tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
-                let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true;
+                let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true, isAsyncAPITool = true;
                 if(languages.length){
                     isLanguageTool = false;
                     for(let language of languages){
@@ -74,7 +74,11 @@ export default function ToolDashboard() {
                 if(searchName){
                     isSearchTool = tool.title.toLowerCase().includes(searchName.toLowerCase())
                 }
-                return isLanguageTool && isTechnologyTool && isSearchTool && tool.filters.isAsyncAPIOwner === isAsyncAPIOwner && tool.filters.hasCommercial === isPaid;
+                if(isAsyncAPIOwner)
+                    isAsyncAPITool = tool.filters.isAsyncAPIOwner === isAsyncAPIOwner ? true : false
+                if(category === 'Bundlers')
+                 console.log(tool.filters.hasCommercial === isPaid)
+                return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && tool.filters.hasCommercial === isPaid;
             })
             if(tempToolsList[category].toolsList.length) setcheckToolsList(true)
         })

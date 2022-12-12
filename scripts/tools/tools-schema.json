@@ -20,6 +20,9 @@
         },
         "docsUrl": {
           "type": "string"
+        },
+        "repoUrl": {
+          "type": "string"
         }
       }
     },

@@ -19,15 +19,16 @@ const fuse = new Fuse(categoryList, options)
 const createToolObject = (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
   let resultantObject = {
     title: toolFile.title,
-    description: toolFile.description || repoDescription,
+    description: typeof(toolFile.description) !== 'undefined' ? '' : toolFile.description || repoDescription,
     links: {
       ...toolFile.links,
-      repoUrl: repositoryUrl,
+      repoUrl: typeof(toolFile.links.repoUrl) !== 'undefined' ? toolFile.links.repoUrl : repositoryUrl
     },
     filters: {
       ...toolFile.filters,
+      hasCommmercial: typeof(toolFile.filters.hasCommmercial) !== "undefined" ? toolFile.filters.hasCommercial : false,
       isAsyncAPIOwner: isAsyncAPIrepo
-    },
+    }
   };
   return resultantObject;
 };
