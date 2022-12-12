@@ -1,6 +1,6 @@
 ---
 title: "Hacktoberfest was a blast!"
-date: 2022-11-28T10:00:00+01:00
+date: 2022-12-13T10:00:00+01:00
 type: Community
 tags:
   - Hacktoberfest
