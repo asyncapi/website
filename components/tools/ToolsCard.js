@@ -58,7 +58,7 @@ export default function toolsCard({ toolData }) {
           />
         </div>
       </div>}
-      <div className="flex flex-col gap-2 my-4 mx-6">
+      {toolData.filters.technology.length && <><div className="flex flex-col gap-2 my-4 mx-6">
         <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
         <div className="flex gap-2 flex-wrap">
           {toolData.filters.technology.map((item, index) => (
@@ -69,8 +69,7 @@ export default function toolsCard({ toolData }) {
             />
           ))}
         </div>
-      </div>
-      <hr className="" />
+      </div><hr className="" /></>}
       {(toolData.links.repoUrl || toolData.links.websiteUrl) &&
         <div className="flex">
           {onGithub ?
