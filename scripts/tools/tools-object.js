@@ -26,7 +26,7 @@ const createToolObject = (toolFile, repositoryUrl, repoDescription, isAsyncAPIre
     },
     filters: {
       ...toolFile.filters,
-      isAsyncAPIOwner: isAsyncAPIrepo,
+      isAsyncAPIOwner: isAsyncAPIrepo
     },
   };
   return resultantObject;

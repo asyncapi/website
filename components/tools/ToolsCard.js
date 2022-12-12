@@ -30,7 +30,7 @@ export default function toolsCard({ toolData }) {
                 element="span"
                 line={2}
                 text={toolData.description}
-              />...
+              /> {' '}
               <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300" onClick={() => setShowDescription(true)}>
                 Show More
               </div>
@@ -48,7 +48,7 @@ export default function toolsCard({ toolData }) {
         </div>
       </div>
       <hr className="my-6 mx-6" />
-      <div className="flex flex-col gap-2 mx-6">
+      {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
         <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
         <div className="flex gap-2">
           <Tag
@@ -57,7 +57,7 @@ export default function toolsCard({ toolData }) {
             borderColor={toolData.filters.language.borderColor}
           />
         </div>
-      </div>
+      </div>}
       <div className="flex flex-col gap-2 my-4 mx-6">
         <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
         <div className="flex gap-2 flex-wrap">
