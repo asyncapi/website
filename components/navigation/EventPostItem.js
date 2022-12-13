@@ -9,20 +9,26 @@ import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 function EventPostItem({ post, className, id }) {
-    const localTime = moment().format('YYYY-MM-DD'); // store localTime
-    const currentDate = localTime + 'T00:00:00.000Z';
-  let color = 'text-orange-800';
-  let icon = <Conference />;
-  // switch (post.type) {
-  //   case 'COMMUNITY CALL':
-  //     icon = <Community />;
-  //     color = 'text-green-800'
-  //     break;
-  //   case 'WEBINAR':
-  //   icon = <Webinar />;
-  //   color = 'text-blue-400'
-  //     break;
-  // }
+  const localTime = moment().format('YYYY-MM-DD'); // store localTime
+  const currentDate = localTime + 'T00:00:00.000Z';
+  const summary = post.summary || '';
+  let color = '';
+  let icon = '';
+  let type = '';
+  if (summary.includes('community')) {
+    icon = <Community />;
+    color = 'text-green-800';
+    type = 'COMMUNITY';
+  } else if (summary.includes('conference')) {
+    icon = <Conference />;
+    color = 'text-orange-800';
+    type = 'CONFERENCE';
+  } else if (summary.includes('workshop')) {
+    icon = <Webinar />;
+    color = 'text-blue-400';
+    type = 'WORKSHOP';
+  }
+
   const defaultCover = '/img/homepage/confBlurBg.png';
   return (
     <li key={id} className={`${className}`}>
@@ -44,9 +50,7 @@ function EventPostItem({ post, className, id }) {
               <div>
                 <div className="flex items-center">
                   {icon}{' '}
-                  <p className={`ml-3 font-bold text-md ${color}`}>
-                    {post.type}
-                  </p>
+                  <p className={`ml-3 font-bold text-md ${color}`}>{type}</p>
                 </div>
                 <Heading level="h3" typeStyle="body-lg" className="mt-4">
                   {post.summary}

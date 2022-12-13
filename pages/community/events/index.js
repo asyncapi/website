@@ -8,17 +8,18 @@ import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
 import GenericLayout from '../../../components/layout/GenericLayout';
 
-function index({meetings}) {
+function index({ meetings }) {
   const image = '/img/social/website-card.png';
-  const [events, setEvents] = useState(meetings.sort((i1, i2) => {
-    const i1Date = new Date(i1.start.dateTime)
-    const i2Date = new Date(i2.start.dateTime);
-
+  const [events, setEvents] = useState(
+    meetings.sort((i1, i2) => {
+      const i1Date = new Date(i1.start.dateTime);
+      const i2Date = new Date(i2.start.dateTime);
 
       if (i1.featured && !i2.featured) return -1;
       if (!i1.featured && i2.featured) return 1;
       return i2Date - i1Date;
-  }));
+    })
+  );
 
   return (
     <GenericLayout
@@ -63,16 +64,16 @@ function index({meetings}) {
               typeStyle="heading-sm-semibold"
               className="mt-10"
             >
-              Join us at the AsyncAPI 2022 conference with thousands around the
-              world for free
+              Watch the AsyncAPI 2022 conference recordings from anywhere around
+              the world for free
             </Heading>
             <a
-              href="https://conference.asyncapi.com/"
+              href="https://www.youtube.com/watch?v=NTHsezlKBh8&list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               target="_blank"
               rel="noreferrer"
             >
               <div className="mt-5 flex items-center">
-                <span>Join us now </span>
+                <span>Watch now</span>
                 <ArrowRightIcon className="w-[20px] ml-3 mt-1" />
               </div>
             </a>
@@ -144,10 +145,18 @@ export async function getServerSideProps() {
 
   const calendar = google.calendar({ version: 'v3', auth });
   let meetings = null;
+  const currentTime = new Date(Date.now()).toISOString();
+  const timeMin = new Date(
+    Date.parse(currentTime) - 100 * 24 * 60 * 60 * 1000
+  ).toISOString();
+  const timeMax = new Date(
+    Date.parse(currentTime) + 50 * 24 * 60 * 60 * 1000
+  ).toISOString();
   try {
     const eventsList = await calendar.events.list({
       calendarId: 'acebuild404@gmail.com',
-      // calendarId: process.env.CALENDAR_ID,
+      timeMax: timeMax,
+      timeMin: timeMin,
     });
     meetings = eventsList.data.items;
   } catch (error) {
