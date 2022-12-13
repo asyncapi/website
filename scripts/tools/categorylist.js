@@ -2,7 +2,7 @@ const categoryList = [
     {
         name: "APIs",
         tag: "api",
-        description: "The following is a list of apis that process the AsyncAPI document."
+        description: "The following is a list of APIs that expose functionality related to AsyncAPI."
     },
     {
         name: "Code-first tools",
