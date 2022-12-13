@@ -84,7 +84,7 @@ stateDiagram-v2
     Schema_registry --> Fail : invalid message
 ```
 
-Broker validation can also be implemented using other methods. AsyncAPI is not involved in validation here but the schemas that are stored in Schema registry can be referenced from AsyncAPI documents.
+AsyncAPI is not directly involved in validation based on Schema Registry. The good thing is that you do not have to duplicate in your AsyncAPI document the schemas that are stored in Schema Registry. You can reference schemas from Schema Registry in your AsyncAPI documents.
 Here's an example of AsyncAPI document where you can see `schemaFormat` and `payload` referenced from Schema Registry.
 ```yml
 asyncapi: 2.0.0
