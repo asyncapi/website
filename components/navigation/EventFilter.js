@@ -14,14 +14,14 @@ function EventFilter({ data, setData }) {
       case 'Upcoming':
         setData(
           data.filter((a) => {
-            return a.date > currentDate;
+            return a.start.dateTime > currentDate;
           })
         );
         break;
       case 'Recorded':
         setData(
           data.filter((a) => {
-            return a.date < currentDate;
+            return a.start.dateTime < currentDate;
           })
         );
         break;
