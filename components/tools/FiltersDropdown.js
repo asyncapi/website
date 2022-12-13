@@ -4,14 +4,13 @@ export default function FiltersDropdown({dataList=[], checkedOptions=[], setStat
 
   const handleClickOption = (e, option) => {
     let tempValueArray = [...checkedOptions]
-    let index = checkedOptions.indexOf(data)
+    let index = checkedOptions.indexOf(option)
     if(index>-1){
       tempValueArray.splice(index, 1);
     }else{
-      tempValueArray.push(data);
+      tempValueArray.push(option);
     }
     setStateFunction(tempValueArray)
-    e.stopPropagation();
   }
   return (
     <div className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}>

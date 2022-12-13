@@ -6,13 +6,10 @@ import TextTruncate from 'react-text-truncate';
 
 export default function ToolsCard({ toolData }) {
   const [showDescription, setShowDescription] = useState(false)
-  const [onGithub, setOnGithub] = useState(false)
-
-  useEffect(() => {
-    const url = new URL(toolData.links.repoUrl)
-    if (url.host == 'github.com') setonGithub(true)
-    else setonGithub(false)
-  }, [])
+  let onGit = false;
+  const url = new URL(toolData.links.repoUrl)
+  if (url.host == 'github.com') onGit = true
+  else onGit = false
 
   return (
     <div className="border shadow-md rounded-lg">
@@ -76,7 +73,7 @@ export default function ToolsCard({ toolData }) {
       {(toolData.links.repoUrl || toolData.links.websiteUrl) && <>
         <hr className="" />
         <div className="flex">
-          {onGithub ?
+          {onGit ?
             <a className="w-full text-center py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
               <div className="m-auto flex w-fit gap-2">
                 <img src="/img/logos/github-black.svg" className="w-5" />

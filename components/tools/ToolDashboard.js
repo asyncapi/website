@@ -25,7 +25,7 @@ export default function ToolDashboard() {
 
     const handleApplyCategory = () => {
         setCategories(checkedCategory)
-        setopenFilter({
+        setOpenFilter({
             filter: false,
             category: false
         })
@@ -33,7 +33,7 @@ export default function ToolDashboard() {
     useEffect(() => {
         const checkIfClickOutside = (e) => {
             if ((openFilter.filter && filterRef.current && !filterRef.current.contains(e.target)) || openFilter.category && categoryRef.current && !categoryRef.current.contains(e.target))
-                setopenFilter({
+                setOpenFilter({
                     filter: false,
                     category: false
                 })
@@ -44,7 +44,7 @@ export default function ToolDashboard() {
         }
     })
 
-    useEffect(() => {
+    const updateToolsList = () => {
         let tempToolsList = {}
         if (categories.length > 0) {
             for (let category of categories) {
@@ -55,7 +55,7 @@ export default function ToolDashboard() {
         } else {
             tempToolsList = JSON.parse(JSON.stringify(ToolsData));
         }
-        setcheckToolsList(false)
+        setCheckToolsList(false)
         Object.keys(tempToolsList).forEach((category) => {
             tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
                 let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true, isAsyncAPITool = true, isPaidTool = true;
@@ -77,15 +77,19 @@ export default function ToolDashboard() {
                 if (isAsyncAPIOwner)
                     isAsyncAPITool = tool.filters.isAsyncAPIOwner === isAsyncAPIOwner ? true : false
                 if (isPaid !== "all") {
-                    if (isPaid === "free") isPaidTool = tools.filters.hasCommercial === false;
-                    else isPaidTool = tools.filters.hasCommercial === true;
+                    if (isPaid === "free") isPaidTool = tool.filters.hasCommercial === false;
+                    else isPaidTool = tool.filters.hasCommercial === true;
                 }
 
                 return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && isPaidTool;
             })
-            if (tempToolsList[category].toolsList.length) setcheckToolsList(true)
+            if (tempToolsList[category].toolsList.length) setCheckToolsList(true)
         })
         setToolsList(tempToolsList)
+    }
+
+    useEffect(() => {
+        updateToolsList()
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
 
     const setFilter = (filterType) => {
@@ -99,7 +103,7 @@ export default function ToolDashboard() {
             newFilterObject.category = !newFilterObject.category
             newFilterObject.filter = false;
         }
-        setopenFilter(newFilterObject)
+        setOpenFilter(newFilterObject)
     }
 
     return (
@@ -115,7 +119,7 @@ export default function ToolDashboard() {
                         </div>
                         {openFilter.filter && (
                             <div className="z-10 absolute top-16 min-w-[20rem]">
-                                <Filters setOpenFilter={setopenFilter} />
+                                <Filters setOpenFilter={setOpenFilter} />
                             </div>
                         )}
                     </div>
