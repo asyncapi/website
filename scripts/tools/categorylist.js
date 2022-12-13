@@ -78,7 +78,7 @@ const categoryList = [
         name: "Others",
         tag: "other",
         description: "The following is a list of tools that comes under Other category."
-    },
+    }
 ]
 
 module.exports = {categoryList}

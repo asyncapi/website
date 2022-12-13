@@ -76,7 +76,9 @@ export default function ToolDashboard() {
                 }
                 if(isAsyncAPIOwner)
                     isAsyncAPITool = tool.filters.isAsyncAPIOwner === isAsyncAPIOwner ? true : false
-                
+                    if(category === 'IDE Extensions'){
+                        console.log(tool.filters.hasCommercial, isPaid)
+                    }
                 return isLanguageTool && isTechnologyTool && isSearchTool && isAsyncAPITool && tool.filters.hasCommercial === isPaid;
             })
             if(tempToolsList[category].toolsList.length) setcheckToolsList(true)

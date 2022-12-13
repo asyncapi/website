@@ -3,8 +3,6 @@ const { categoryList } = require("./categorylist.js")
 const fs = require('fs')
 const { resolve } = require('path');
 const Fuse = require("fuse.js")
-const automatedTools = require('../../config/tools-automated.json')
-const manualTools = require('../../config/tools-manual.json')
 
 let finalTools = {};
 for (var category of categoryList) {
