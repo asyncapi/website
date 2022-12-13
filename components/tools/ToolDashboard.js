@@ -13,7 +13,7 @@ import FiltersDropdown from './FiltersDropdown';
 export default function ToolDashboard() {
     const filterRef = useRef()
     const categoryRef = useRef()
-    const [openFilter, setopenFilter] = useState({
+    const [openFilter, setOpenFilter] = useState({
         filter: false,
         category: false
     })
@@ -21,7 +21,7 @@ export default function ToolDashboard() {
     const [searchName, setSearchName] = useState('')
     const [toolsList, setToolsList] = useState({})
     const [checkedCategory, setCheckedCategory] = useState(categories)
-    const [checkToolsList, setcheckToolsList] = useState(true)
+    const [checkToolsList, setCheckToolsList] = useState(true)
 
     const handleApplyCategory = () => {
         setCategories(checkedCategory)
@@ -91,8 +91,10 @@ export default function ToolDashboard() {
     const setFilter = (filterType) => {
         let newFilterObject = { ...openFilter };
         if (filterType === 'filter') {
-            newFilterObject.filter = !newFilterObject.filter
-            newFilterObject.category = false
+            newFilterObject = {
+              filter: !newFilterObject.filter,
+              category: false,
+            };
         } else {
             newFilterObject.category = !newFilterObject.category
             newFilterObject.filter = false;

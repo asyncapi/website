@@ -40,7 +40,7 @@ export default function Filters({setOpenFilter}) {
     <div className="bg-white z-10 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
         <div className="flex gap-2 items-baseline justify-between">
-          <div className="text-sm text-gray-500">PRICING</div>
+          <div className="text-sm text-gray-500 uppercase">Pricing</div>
           <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
             Clear Filters
           </div>

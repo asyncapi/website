@@ -4,9 +4,9 @@ import Paragraph from '../typography/Paragraph';
 import Tag from './Tags';
 import TextTruncate from 'react-text-truncate';
 
-export default function toolsCard({ toolData }) {
+export default function ToolsCard({ toolData }) {
   const [showDescription, setShowDescription] = useState(false)
-  const [onGithub, setonGithub] = useState(false)
+  const [onGithub, setOnGithub] = useState(false)
 
   useEffect(() => {
     const url = new URL(toolData.links.repoUrl)

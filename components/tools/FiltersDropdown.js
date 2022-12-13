@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 
 export default function FiltersDropdown({dataList=[], checkedOptions=[], setStateFunction, className=''}) {
 
-  const handleClickOption = (e, data) => {
+  const handleClickOption = (e, option) => {
     let tempValueArray = [...checkedOptions]
     let index = checkedOptions.indexOf(data)
     if(index>-1){
