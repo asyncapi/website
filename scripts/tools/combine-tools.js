@@ -3,6 +3,8 @@ const { categoryList } = require("./categorylist.js")
 const fs = require('fs')
 const { resolve } = require('path');
 const Fuse = require("fuse.js")
+const automatedTools = require('../../config/tools-automated.json')
+const manualTools = require('../../config/tools-manual.json')
 
 let finalTools = {};
 for (var category of categoryList) {
@@ -15,19 +17,18 @@ for (var category of categoryList) {
 const options = {
     includeScore: true,
     shouldSort: true,
-    threshold: 0.2,
-    keys: ['name']
+    threshold: 0.5,
+    keys: ['name', 'color', 'borderColor']
 }
 
 let list = [...languagesColor, ...technologiesColor]
-const fuse = new Fuse(list, options)
+let fuse = new Fuse(list, options)
 
 const getFinalTool = async (toolObject) => {
     let finalObject = toolObject;
 
     //there might be a tool without language
-    if(toolObject.filters.language) {
-    
+    if (toolObject.filters.language) {
         const languageSearch = await fuse.search(toolObject.filters.language)
         if (languageSearch.length) {
             finalObject.filters.language = languageSearch[0].item;
@@ -35,14 +36,23 @@ const getFinalTool = async (toolObject) => {
     }
     let technologyArray = [];
     for (const technology of toolObject.filters.technology) {
-        const technologySearch = await fuse.search(technology)
-        if (technologySearch.length) {
+        const technologySearch = await fuse.search(technology) 
+        if (technologySearch.length > 0) {
             technologyArray.push(technologySearch[0].item);
+        } 
+        else {
+            let technologyObject = {
+                name: technology,
+                color: 'bg-[#2074fa]',
+                borderColor: 'border-[#0364ff]'
+            }
+            list.push(technologyObject);
+            technologyArray.push(technologyObject);
+            fuse = new Fuse(list, options)
         }
     }
     finalObject.filters.technology = technologyArray;
     return finalObject;
-
 }
 
 const combineTools = async (automatedTools, manualTools) => {
@@ -66,4 +76,4 @@ const combineTools = async (automatedTools, manualTools) => {
     );
 }
 
-module.exports = { combineTools}
+module.exports = { combineTools }

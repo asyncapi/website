@@ -16,7 +16,7 @@ export default function toolsCard({ toolData }) {
 
   return (
     <div className="border shadow-md rounded-lg">
-      <div className="pt-8 px-6">
+      <div className="pt-8 px-6 mb-6">
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
             <Heading typeStyle="heading-sm-semibold">{toolData.title}</Heading>
@@ -47,30 +47,34 @@ export default function toolsCard({ toolData }) {
           </div>
         </div>
       </div>
-      <hr className="my-6 mx-6" />
-      {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
-        <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
-        <div className="flex gap-2">
-          <Tag
-            name={toolData.filters.language.name}
-            bgColor={toolData.filters.language.color}
-            borderColor={toolData.filters.language.borderColor}
-          />
-        </div>
-      </div>}
-      {toolData.filters.technology.length && <><div className="flex flex-col gap-2 my-4 mx-6">
-        <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
-        <div className="flex gap-2 flex-wrap">
-          {toolData.filters.technology.map((item, index) => (
-            <Tag key={index}
-              name={item.name}
-              bgColor={item.color}
-              borderColor={item.borderColor}
-            />
-          ))}
-        </div>
-      </div><hr className="" /></>}
-      {(toolData.links.repoUrl || toolData.links.websiteUrl) &&
+      <hr className="mx-6" />
+      {(toolData?.filters?.language || toolData?.filters?.technology?.length>0) &&
+        <div className="my-6">
+          {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
+            <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
+            <div className="flex gap-2">
+              <Tag
+                name={toolData.filters.language.name}
+                bgColor={toolData.filters.language.color}
+                borderColor={toolData.filters.language.borderColor}
+              />
+            </div>
+          </div>}
+          {toolData.filters.technology.length > 0 && <><div className="flex flex-col gap-2 my-4 mx-6">
+            <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
+            <div className="flex gap-2 flex-wrap">
+              {toolData.filters.technology.map((item, index) => (
+                <Tag key={index}
+                  name={item.name}
+                  bgColor={item.color}
+                  borderColor={item.borderColor}
+                />
+              ))}
+            </div>
+          </div></>}
+        </div>}
+      {(toolData.links.repoUrl || toolData.links.websiteUrl) && <>
+        <hr className="" />
         <div className="flex">
           {onGithub ?
             <a className="w-full text-center py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
@@ -97,7 +101,7 @@ export default function toolsCard({ toolData }) {
             </>
           )}
         </div>
-      }
+      </>}
     </div>
   );
 }

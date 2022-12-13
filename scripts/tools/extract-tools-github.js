@@ -7,7 +7,7 @@ const getData = async () => {
       {
         headers: {
           accept: 'application/vnd.github.text-match+json',
-          authorization: `token ${process.env.GITHUB_TOKEN}`,
+          authorization: `token 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`,
         },
       }
     );
