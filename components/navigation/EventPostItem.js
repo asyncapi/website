@@ -8,6 +8,7 @@ import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
 
 function EventPostItem({ post, className, id }) {
+<<<<<<< HEAD
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
   const currentDate = localTime + 'T00:00:00.000Z';
   const title = post.title || '';
@@ -41,6 +42,34 @@ function EventPostItem({ post, className, id }) {
               src={
                 post.banner
                   ? post.banner
+=======
+    const localTime = moment().format('YYYY-MM-DD'); // store localTime
+    const currentDate = localTime + 'T00:00:00.000Z';
+  let color = 'text-orange-800';
+  let icon = <Conference />;
+  // switch (post.type) {
+  //   case 'COMMUNITY CALL':
+  //     icon = <Community />;
+  //     color = 'text-green-800'
+  //     break;
+  //   case 'WEBINAR':
+  //   icon = <Webinar />;
+  //   color = 'text-blue-400'
+  //     break;
+  // }
+  const defaultCover = '/img/homepage/confBlurBg.png';
+  return (
+    <li key={id} className={`${className}`}>
+      <article className="h-full rounded-lg shadow-md hover:shadow-lg">
+        <Link href={post.id} passHref>
+          <a>
+            <img
+              src={
+                post.extendedProperties
+                  ? post.extendedProperties.private
+                    ? post.extendedProperties.private.banner
+                    : defaultCover
+>>>>>>> f1d1b66 (integrated events with google cal)
                   : defaultCover
               }
               alt={post.title}
@@ -52,6 +81,7 @@ function EventPostItem({ post, className, id }) {
                   {icon}{' '}
                   <p className={`ml-3 font-bold text-md ${color}`}>{type}</p>
                 </div>
+<<<<<<< HEAD
                 <Heading level='h3' typeStyle='body-lg' className='mt-4'>
                   {post.title}
                 </Heading>
@@ -63,6 +93,19 @@ function EventPostItem({ post, className, id }) {
                     ? moment(post.date).format('MMMM D, YYYY')
                     : 'View Recording'
                   }
+=======
+                <Heading level="h3" typeStyle="body-lg" className="mt-4">
+                  {post.summary}
+                </Heading>
+              </div>
+              <div className="flex items-center">
+                <IconCalendar className="" />{' '}
+                <span className="text-sm font-semibold ml-4">
+                  {' '}
+                  {currentDate > post.start.dateTime
+                    ? 'View Recording'
+                    : moment(post.start.dateTime).format('MMMM D, YYYY')}
+>>>>>>> f1d1b66 (integrated events with google cal)
                 </span>{' '}
                 <ArrowRightIcon className='w-4 ml-3' />
               </div>
