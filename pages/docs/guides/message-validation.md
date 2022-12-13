@@ -85,7 +85,7 @@ stateDiagram-v2
 ```
 
 AsyncAPI is not directly involved in validation based on Schema Registry. The good thing is that you do not have to duplicate in your AsyncAPI document the schemas that are stored in Schema Registry. You can reference schemas from Schema Registry in your AsyncAPI documents.
-Here's an example of AsyncAPI document where you can see `schemaFormat` and `payload` referenced from Schema Registry.
+Here's an example of AsyncAPI document where you can see `schemaFormat` and `payload` referenced from Schema Registry:
 ```yml
 asyncapi: 2.5.0
 info:
