@@ -29,7 +29,7 @@ export default function Filters({setOpenFilter}) {
   const clearFilters =() => {
     setLanguages([]);
     setTechnologies([])
-    setisPaid(false)
+    setisPaid("all")
     setAsyncAPIOwner(false)
     setOpenFilter({
       filter: false,
@@ -46,11 +46,11 @@ export default function Filters({setOpenFilter}) {
           </div>
         </div>
         <div className="flex gap-2">
-          <div className={twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==false ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => setCheckPaid(false)}>
+          <div className={twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="free" ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => setCheckPaid("free")}>
             <div>Free</div>
             <img src="/img/illustrations/icons/FreeIcon.svg" />
           </div>
-          <div className={`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==true ? 'bg-secondary-100 border-secondary-500' : ''}`} onClick={() => setCheckPaid(true)}>
+          <div className={`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="paid" ? 'bg-secondary-100 border-secondary-500' : ''}`} onClick={() => setCheckPaid("paid")}>
             <div>Paid</div>
             <img src="/img/illustrations/icons/PaidIcon.svg" />
           </div>
@@ -80,7 +80,7 @@ export default function Filters({setOpenFilter}) {
             <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
           {openLanguage && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown dataList={languagesColor} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
+            <FiltersDropdown dataList={languagesColor} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} className='border border-gray-400' />
           </div>} 
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function Filters({setOpenFilter}) {
           <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
         {openTechnology && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown dataList={technologiesColor} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
+            <FiltersDropdown dataList={technologiesColor} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} className='border border-gray-400' />
           </div>}
         </div>
       </div>

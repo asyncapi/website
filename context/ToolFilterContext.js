@@ -2,7 +2,7 @@ import { createContext, useState } from 'react'
 export const ToolFilterContext = createContext()
 
 export default function ToolFilter({ children }) {
-    const [isPaid, setisPaid] = useState(false); // paid, free, all
+    const [isPaid, setisPaid] = useState("all");
     const [isAsyncAPIOwner, setAsyncAPIOwner] = useState(false)
     const [languages, setLanguages] = useState([])
     const [technologies, setTechnologies] = useState([])
