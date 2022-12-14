@@ -138,7 +138,7 @@ function index({ meetings }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { google } = require('googleapis');
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
