@@ -13,31 +13,15 @@ function EventFilter({ data, setData }) {
         break;
       case 'Upcoming':
         setData(
-<<<<<<< HEAD
           data && data.filter((a) => {
             return a.date > currentDate;
-<<<<<<< HEAD
-=======
-          data.filter((a) => {
-            return a.start.dateTime > currentDate;
->>>>>>> f1d1b66 (integrated events with google cal)
-=======
->>>>>>> a817c70 (extended build-meeting script)
           })
         );
         break;
       case 'Recorded':
         setData(
-<<<<<<< HEAD
           data && data.filter((a) => {
             return a.date < currentDate;
-<<<<<<< HEAD
-=======
-          data.filter((a) => {
-            return a.start.dateTime < currentDate;
->>>>>>> f1d1b66 (integrated events with google cal)
-=======
->>>>>>> a817c70 (extended build-meeting script)
           })
         );
         break;
