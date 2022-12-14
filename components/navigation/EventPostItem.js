@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
 import React from 'react';
 import moment from 'moment';
 import IconCalendar from '../icons/Calendar';
@@ -40,8 +39,8 @@ function EventPostItem({ post, className, id }) {
   }
   return (
     <li key={id} className={`${className}`}>
-      <article className="h-full rounded-lg shadow-md hover:shadow-lg">
-          <a href={active ? post.htmlLink : url } target="_blank">
+      <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
+          <a href={active ? post.htmlLink : url } target='_blank'>
             <img
               src={
                 post.extendedProperties
@@ -51,27 +50,27 @@ function EventPostItem({ post, className, id }) {
                   : defaultCover
               }
               alt={post.title}
-              className="w-full h-52 object-cover rounded-t-lg"
+              className='w-full h-52 object-cover rounded-t-lg'
             />
-            <div className="mt-2 p-5 flex flex-col justify-between h-52 ">
+            <div className='mt-2 p-5 flex flex-col justify-between h-52 '>
               <div>
-                <div className="flex items-center">
+                <div className='flex items-center'>
                   {icon}{' '}
                   <p className={`ml-3 font-bold text-md ${color}`}>{type}</p>
                 </div>
-                <Heading level="h3" typeStyle="body-lg" className="mt-4">
+                <Heading level='h3' typeStyle='body-lg' className='mt-4'>
                   {post.summary}
                 </Heading>
               </div>
-              <div className="flex items-center">
-                <IconCalendar className="" />{' '}
-                <span className="text-sm font-semibold ml-4">
+              <div className='flex items-center'>
+                <IconCalendar className='' />{' '}
+                <span className='text-sm font-semibold ml-4'>
                   {active
                     ? moment(post.start.dateTime).format('MMMM D, YYYY')
                     : 'View Recording'
                   }
                 </span>{' '}
-                <ArrowRightIcon className="w-4 ml-3" />
+                <ArrowRightIcon className='w-4 ml-3' />
               </div>
             </div>
           </a>

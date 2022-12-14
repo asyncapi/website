@@ -7,20 +7,21 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
 import GenericLayout from '../../../components/layout/GenericLayout';
-import Empty from '../../../components/illustrations/empty';
 import Paragraph from '../../../components/typography/Paragraph';
 
 function index({ meetings }) {
   const image = '/img/social/website-card.png';
   const [events, setEvents] = useState(
-    meetings.sort((i1, i2) => {
-      const i1Date = new Date(i1.start.dateTime);
-      const i2Date = new Date(i2.start.dateTime);
+    meetings
+      ? meetings.sort((i1, i2) => {
+          const i1Date = new Date(i1.start.dateTime);
+          const i2Date = new Date(i2.start.dateTime);
 
-      if (i1.featured && !i2.featured) return -1;
-      if (!i1.featured && i2.featured) return 1;
-      return i2Date - i1Date;
-    })
+          if (i1.featured && !i2.featured) return -1;
+          if (!i1.featured && i2.featured) return 1;
+          return i2Date - i1Date;
+        })
+      : meetings
   );
 
   return (
@@ -115,15 +116,12 @@ function index({ meetings }) {
         <div className='mt-10'>
           {!events || events.length === 0 ? (
             <div className='flex content-center justify-center'>
-              <div>
-                <Empty className='mt-5' />
                 <Paragraph
                   typeStyle='body-md'
                   className='mt-5 max-w-2xl mx-auto'
                 >
                   No Events. Check back later!
                 </Paragraph>
-              </div>
             </div>
           ) : (
             <ul className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
@@ -142,7 +140,7 @@ export async function getStaticProps() {
   const { google } = require('googleapis');
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
-    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT)
+    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
   });
 
   const calendar = google.calendar({ version: 'v3', auth });
@@ -156,7 +154,7 @@ export async function getStaticProps() {
   ).toISOString();
   try {
     const eventsList = await calendar.events.list({
-      calendarId: 'acebuild404@gmail.com',
+      calendarId: process.env.CALENDAR_ID,
       timeMax: timeMax,
       timeMin: timeMin,
     });
