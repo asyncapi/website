@@ -1,1 +1,96 @@
-[]
+[
+  {
+    "title": "API Specifications Conference 2022",
+    "calLink": "https://www.google.com/calendar/event?eid=N29qMGh0NXZsNjVkMGU5cjVwMWZoNzBhaGIgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-19T16:00:00.000Z"
+  },
+  {
+    "title": "Head to the bank",
+    "calLink": "https://www.google.com/calendar/event?eid=MmVnbzFsb2Jpc2M4Y2M5ZG5pcmI1cHU4ZGUgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-13T08:00:00.000Z"
+  },
+  {
+    "title": "Complete the community docs section",
+    "calLink": "https://www.google.com/calendar/event?eid=NGV1bnJqY2dzM2c2M3IwdGl1NDJjMG1yaDUgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-13T11:00:00.000Z"
+  },
+  {
+    "title": "Plan next meetings and mentorship meeting agenda",
+    "calLink": "https://www.google.com/calendar/event?eid=NzJodGsxanJzbm92Y21saWhvcTZmZG9idmwgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-13T18:00:00.000Z"
+  },
+  {
+    "title": "Look into chatbot restructuring",
+    "calLink": "https://www.google.com/calendar/event?eid=M2M2Zzdwc3BlZWpvaGo4MDBwZWVpcTVmdDEgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-13T07:00:00.000Z"
+  },
+  {
+    "title": "Reach out to machine repairer",
+    "calLink": "https://www.google.com/calendar/event?eid=MHIxZTZmMG1tN2o1cWh2bW1tZWJ1ODhmOGUgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-13T15:00:00.000Z"
+  },
+  {
+    "title": "Work on community docs page",
+    "calLink": "https://www.google.com/calendar/event?eid=M3A4YmZqaXBkb3JkdDJncXY1YTBiNjllbmMgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-14T09:15:00.000Z"
+  },
+  {
+    "title": "Study",
+    "calLink": "https://www.google.com/calendar/event?eid=NWV1bm92azJkbWRmbjkzM2swbjdwMHNzaHAgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-14T12:00:00.000Z"
+  },
+  {
+    "title": "Mentorship meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NmlrZDc1MmU3am1hc2pwcTBlZzU2dHZydDQgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-14T13:15:00.000Z"
+  },
+  {
+    "title": "Make washing machine repair",
+    "calLink": "https://www.google.com/calendar/event?eid=N2FocTlwM2plNmlybzRnNDBmaDhndDc3OGsgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-14T15:00:00.000Z"
+  },
+  {
+    "title": "More intense coding",
+    "calLink": "https://www.google.com/calendar/event?eid=MW0yOGtkc2plbHNqNDZkNW5tNmE1dGVwZDIgYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-09-14T16:00:00.000Z"
+  },
+  {
+    "title": "CarbonHack22 Webinar 2",
+    "calLink": "https://www.google.com/calendar/event?eid=azZzZG51MTMzNDN2MWdmYTFvY25ybG9maTggYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-10-06T10:30:00.000Z"
+  },
+  {
+    "title": "Podcast/Audio book session",
+    "calLink": "https://www.google.com/calendar/event?eid=MXU2OTlmYzRybDBjN2RvajcyOWZxbDU5OHNfMjAyMjA4MDlUMDUwMDAwWiBhY2VidWlsZDQwNEBt",
+    "date": "2022-08-09T05:00:00.000Z"
+  },
+  {
+    "title": "Seamsville Brushups",
+    "calLink": "https://www.google.com/calendar/event?eid=NGwycDNsbjlydHQ3ZDZ2OTg0M21oNWZpdm1fMjAyMTEwMjhUMjAwMDAwWiBhY2VidWlsZDQwNEBt",
+    "date": "2021-10-28T20:00:00.000Z"
+  },
+  {
+    "title": "vfggh",
+    "calLink": "https://www.google.com/calendar/event?eid=NTI3bXZvcWRsYmt0dnF0bWhscTZjcjNtbW0gYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-11-14T16:00:00.000Z"
+  },
+  {
+    "title": "CITYJSCONF LAGOS WORKSHOP - VONAGE -CityJS Web Components Workshop",
+    "calLink": "https://www.google.com/calendar/event?eid=ZW81M3ZhZ3JlNW9hOXVuZ2NudHM0cHFmcjggYWNlYnVpbGQ0MDRAbQ",
+    "date": "2022-10-20T16:00:00.000Z"
+  },
+  {
+    "title": "process.env.MEETING_NAME process.env.MEETING_NAME_SUFFIX",
+    "calLink": "https://www.google.com/calendar/event?eid=OGptbGFuZzh0NGJmdmZvbjg0bHJqdmdqNmMgYWNlYnVpbGQ0MDRAbQ",
+    "url": "https://github.com/asyncapi/community/issues/jndf5",
+    "banner": "https://cdn.dribbble.com/users/499731/screenshots/6648311/viceland_assets.png",
+    "date": "2023-01-12T16:00:00.000Z"
+  },
+  {
+    "title": "process.env.MEETING_NAME process.env.MEETING_NAME_SUFFIX",
+    "calLink": "https://www.google.com/calendar/event?eid=Z2VvbXNzcGE2MnQyZGp2cmhycjZmNWxuc28gYWNlYnVpbGQ0MDRAbQ",
+    "url": "https://github.com/asyncapi/community/issues/jndf5",
+    "banner": "https://cdn.dribbble.com/users/499731/screenshots/6648311/viceland_assets.png",
+    "date": "2022-12-14T16:00:00.000Z"
+  }
+]

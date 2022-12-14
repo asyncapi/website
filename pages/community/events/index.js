@@ -7,15 +7,17 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
 import GenericLayout from '../../../components/layout/GenericLayout';
+import meetings from '../../../config/meetings.json';
+
 import Paragraph from '../../../components/typography/Paragraph';
 
-function index({ meetings }) {
+function index() {
   const image = '/img/social/website-card.png';
   const [events, setEvents] = useState(
     meetings
       ? meetings.sort((i1, i2) => {
-          const i1Date = new Date(i1.start.dateTime);
-          const i2Date = new Date(i2.start.dateTime);
+          const i1Date = new Date(i1.date);
+          const i2Date = new Date(i2.date);
 
           if (i1.featured && !i2.featured) return -1;
           if (!i1.featured && i2.featured) return 1;
@@ -134,35 +136,6 @@ function index({ meetings }) {
       </div>
     </GenericLayout>
   );
-}
-
-export async function getStaticProps() {
-  const { google } = require('googleapis');
-  const auth = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/calendar'],
-    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
-  });
-
-  const calendar = google.calendar({ version: 'v3', auth });
-  let meetings = null;
-  const currentTime = new Date(Date.now()).toISOString();
-  const timeMin = new Date(
-    Date.parse(currentTime) - 100 * 24 * 60 * 60 * 1000
-  ).toISOString();
-  const timeMax = new Date(
-    Date.parse(currentTime) + 50 * 24 * 60 * 60 * 1000
-  ).toISOString();
-  try {
-    const eventsList = await calendar.events.list({
-      calendarId: process.env.CALENDAR_ID,
-      timeMax: timeMax,
-      timeMin: timeMin,
-    });
-    meetings = eventsList.data.items;
-  } catch (error) {
-    console.log(error);
-  }
-  return { props: { meetings } };
 }
 
 export default index;
