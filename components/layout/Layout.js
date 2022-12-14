@@ -5,7 +5,6 @@ import JobsLayout from './JobsLayout'
 import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import JobsContext from '../../context/JobsContext'
-import EventsContext from '../../context/EventsContext';
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 
 export default function Layout({ children }) {
@@ -21,26 +20,6 @@ export default function Layout({ children }) {
       >
         {children}
       </DocsLayout>
-    );
-  } else if (pathname.startsWith('/community/events/')) {
-    const post = getPostBySlug(pathname);
-    return (
-      <JobsLayout post={post} extend={true}>
-        {children}
-      </JobsLayout>
-    );
-  } else if (pathname.startsWith('/community/events')) {
-    const posts = getAllPosts();
-    return (
-      <EventsContext.Provider
-        value={{
-          navItems: posts.filter((p) =>
-            p.slug.startsWith('/community/events/')
-          ),
-        }}
-      >
-        {children}
-      </EventsContext.Provider>
     );
   } else if (pathname.startsWith('/blog/')) {
     const posts = getAllPosts();

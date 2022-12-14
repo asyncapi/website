@@ -30,11 +30,18 @@ function EventPostItem({ post, className, id }) {
   }
 
   const defaultCover = '/img/homepage/confBlurBg.png';
+  let active = true;
+  if(currentDate > post.start.dateTime){
+    active = false
+  }
+  let url;
+  if(post.extendedProperties?.private){
+    url = `https://github.com/asyncapi/community/issues/${post.extendedProperties.private.ISSUE_ID}`
+  }
   return (
     <li key={id} className={`${className}`}>
       <article className="h-full rounded-lg shadow-md hover:shadow-lg">
-        <Link href={post.id} passHref>
-          <a>
+          <a href={active ? post.htmlLink : url } target="_blank">
             <img
               src={
                 post.extendedProperties
@@ -59,16 +66,16 @@ function EventPostItem({ post, className, id }) {
               <div className="flex items-center">
                 <IconCalendar className="" />{' '}
                 <span className="text-sm font-semibold ml-4">
-                  {' '}
-                  {currentDate > post.start.dateTime
-                    ? 'View Recording'
-                    : moment(post.start.dateTime).format('MMMM D, YYYY')}
+                  {active
+                    ? moment(post.start.dateTime).format('MMMM D, YYYY')
+                    : 'View Recording'
+                  }
                 </span>{' '}
                 <ArrowRightIcon className="w-4 ml-3" />
               </div>
             </div>
           </a>
-        </Link>
+
       </article>
     </li>
   );
