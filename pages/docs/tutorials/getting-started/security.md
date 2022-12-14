@@ -20,7 +20,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 <CodeBlock highlightedLines={[10,11,42,43,44]}>
-{`asyncapi: '2.2.0'
+{`asyncapi: '2.5.0'
 info:
   title: Hello world application
   version: '0.1.0'
@@ -73,7 +73,7 @@ The example above shows how to specify that your server (a Kafka broker) require
 
 <Remember title="Hint">
 
-There are many more security schemes. Learn more about them <Link href="/docs/specifications/2.2.0/#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
+There are many more security schemes. Learn more about them <Link href="/docs/reference/specification/v2.5.0#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
 
 </Remember>
 
@@ -88,13 +88,13 @@ At this point, you know AsyncAPI well enough to create a simple `Hello world app
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/servers',
+      href: '/docs/tutorials/getting-started/servers',
       title: 'Servers',
       type:'back',
     },
     {
-      href: '/docs/tutorials',
-      title: 'Tutorials Overview',
+      href: '/docs/tutorials/streetlights-interactive',
+      title: 'Streetlights - Interactive (Alpha)',
       type:'next',
     }
   ]}

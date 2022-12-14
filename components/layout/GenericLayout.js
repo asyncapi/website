@@ -25,7 +25,7 @@ export default function GenericLayout({
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
      </StickyNavbar>
       <Container wide={wide}>
-        <AnnouncementHero className="text-center m-4" small={true} />
+        <AnnouncementHero className="text-center my-4" small={true} />
         {children}
       </Container>
     </>

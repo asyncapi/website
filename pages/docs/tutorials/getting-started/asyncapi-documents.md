@@ -12,7 +12,7 @@ An AsyncAPI document is a file that defines and annotates the different componen
 The format of the file must be JSON or YAML; however, only the subset of YAML that matches the JSON capabilities is allowed.
 
 <CodeBlock>
-{`asyncapi: 2.2.0
+{`asyncapi: 2.5.0
 info:
   title: Example
   version: 0.1.0
@@ -44,12 +44,12 @@ Your API documentation is now machine-readable –easily parseable by code— so
 <DocsButton
   suggestions={[
     {
-      href: '/docs/getting-started/hello-world',
+      href: '/docs/tutorials/getting-started/hello-world',
       title: 'Hello World',
       type:'back',
     },
     {
-      href: '/docs/getting-started/servers',
+      href: '/docs/tutorials/getting-started/servers',
       title: 'Servers',
       type:'next',
     }

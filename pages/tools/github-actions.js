@@ -23,12 +23,12 @@ export default function GithubActionsPage() {
     )
   }
 
-  const description = 'Generate docs and code on your Github Actions pipeline.'
+  const description = 'Generate docs and code on your GitHub Actions pipeline.'
   const image = '/img/social/githubactions-card.jpg'
 
   return (
     <GenericLayout
-      title="Github Actions"
+      title="GitHub Actions"
       description={description}
       image={image}
       wide
@@ -37,7 +37,7 @@ export default function GithubActionsPage() {
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
             <Heading level="h1" typeStyle="heading-lg" className="text-center">
-              Automate using Github Actions
+              Automate using GitHub Actions
             </Heading>
             <Paragraph className="mt-4 max-w-3xl mx-auto text-center">
               {description}
@@ -50,7 +50,7 @@ export default function GithubActionsPage() {
                 Generate docs
               </Heading>
               <Paragraph className="mt-3 lg:pr-4">
-                Seamlessly integrate the docs generation process with your Github pipeline. Make sure your documentation is always up to date. It will be a gift to your team and your future self.
+                Seamlessly integrate the docs generation process with your GitHub pipeline. Make sure your documentation is always up to date. It will be a gift to your team and your future self.
               </Paragraph>
               {renderButtons()}
             </div>

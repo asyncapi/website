@@ -35,7 +35,7 @@ Coming to the basics of AsyncAPI: How does an AsyncAPI definition look? AsyncAPI
   <img src="/img/posts/asyncapi-and-apicurio-for-asynchronous-apis/asyncapi.webp" alt="Elements of an AsyncAPI document"/>
 </p>
 
-In practice, the definition can become quite long. Consider the below example from AsyncAPI’s Github to get an impression of how such a definition can look:
+In practice, the definition can become quite long. Consider the below example from AsyncAPI’s GitHub to get an impression of how such a definition can look:
 
     asyncapi: '2.2.0'
     info:
@@ -105,7 +105,7 @@ In practice, the definition can become quite long. Consider the below example fr
           schema:
             type: string
 
-If you want to look at it in a more readable way, you can copy and paste the definition to the [AsyncAPI Studio](https://studio.asyncapi.com/) or the [AsyncAPI playground](https://playground.asyncapi.io)(*Remark*: AsyncAPI Playground will soon be archived and replaced by AsyncAPI Studio). More examples are available on [Github](https://github.com/asyncapi/spec/tree/master/examples).
+If you want to look at it in a more readable way, you can copy and paste the definition to the [AsyncAPI Studio](https://studio.asyncapi.com/) or the [AsyncAPI playground](https://playground.asyncapi.io)(*Remark*: AsyncAPI Playground will soon be archived and replaced by AsyncAPI Studio). More examples are available on [GitHub](https://github.com/asyncapi/spec/tree/master/examples).
 
 I do not want to dive too deep into the exact details of the specification because the [documentation](https://www.asyncapi.com/docs/specifications/v2.2.0) is already helpful enough for this. But I want to highlight some parts of the specification that could be the icing on the cake when considering it.
 
@@ -192,9 +192,9 @@ Apicurio Registry allows registering AsyncAPI definitions, which can then be sea
 
 At the same time, Apicurio also offers the [Data Models Library](https://github.com/Apicurio/apicurio-data-models), which allows reading, writing, and modifying AsyncAPI and OpenAPI documents. The [Dereferencer-class](https://github.com/Apicurio/apicurio-data-models/blob/master/src/main/java/io/apicurio/datamodels/openapi/visitors/dereference/Dereferencer.java) resolves external references to other documents and inserts them into the definition. It is also possible to add your implementations of the [IReferenceResolver](https://github.com/Apicurio/apicurio-data-models/blob/master/src/main/java/io/apicurio/datamodels/core/util/IReferenceResolver.java) interface for custom resolution of references.  
 When testing the library, I noticed that it cannot resolve all references in a document yet: The AsyncAPI specification also allows references in the payload object of a message (as shown in the example above). The library only checks objects for links that also implement the [IReferenceNode](https://github.com/Apicurio/apicurio-data-models/blob/master/src/main/java/io/apicurio/datamodels/core/models/IReferenceNode.java) interface. However, the [payload object](https://github.com/Apicurio/apicurio-data-models/blob/master/src/main/java/io/apicurio/datamodels/asyncapi/models/AaiMessage.java) does not yet implement this interface, and therefore, references in this object remain unresolved.  
-There already is a [Github issue](https://github.com/Apicurio/apicurio-data-models/issues/327) which will hopefully resolve this soon.
+There already is a [GitHub issue](https://github.com/Apicurio/apicurio-data-models/issues/327) which will hopefully resolve this soon.
 
-For Avro schemas, Apicurio Registry supports schema validation and a compatibility check. However, this seems to be still missing for AsyncAPI, even when the user interface suggests the opposite (see screenshot below). I tested this feature with syntactically invalid AsyncAPI definitions (which were classified as invalid by AsyncAPI playground), which were not recognized as wrong by Apicurio Registry. Also, definition updates, including breaking changes, were not recognized as so. Nevertheless, this [Github issue](https://github.com/Apicurio/apicurio-registry/issues/16) suggests that support is planned.
+For Avro schemas, Apicurio Registry supports schema validation and a compatibility check. However, this seems to be still missing for AsyncAPI, even when the user interface suggests the opposite (see screenshot below). I tested this feature with syntactically invalid AsyncAPI definitions (which were classified as invalid by AsyncAPI playground), which were not recognized as wrong by Apicurio Registry. Also, definition updates, including breaking changes, were not recognized as so. Nevertheless, this [GitHub issue](https://github.com/Apicurio/apicurio-registry/issues/16) suggests that support is planned.
 
 ![Screenshot of the details overview for artifacts in Apicurio](/img/posts/asyncapi-and-apicurio-for-asynchronous-apis/apicurio_registry_details.webp)
 
@@ -210,9 +210,9 @@ If you want to test how Apicurio works, check out this small [quick start guide]
 The Roadmap: What is Next to Come
 =================================
 
-If you take a closer look at the [Github repositories](https://github.com/asyncapi) of AsyncAPI, you will quickly notice that a lot is happening here right now. There are many exciting and promising ideas, and the community seems to grow steadily. For example, an [event gateway](https://github.com/asyncapi/event-gateway) is currently being developed that will make it possible to validate and modify messages even before they arrive at the broker. Another idea is the [Glee framework](https://github.com/asyncapi/glee), which ensures that AsyncAPI definition and code match. At first glance, an unexpected project is the [AsyncAPI Chatbot](https://github.com/asyncapi/chatbot). It helps to create an AsyncAPI document without having to know the specification yourself.
+If you take a closer look at the [GitHub repositories](https://github.com/asyncapi) of AsyncAPI, you will quickly notice that a lot is happening here right now. There are many exciting and promising ideas, and the community seems to grow steadily. For example, an [event gateway](https://github.com/asyncapi/event-gateway) is currently being developed that will make it possible to validate and modify messages even before they arrive at the broker. Another idea is the [Glee framework](https://github.com/asyncapi/glee), which ensures that AsyncAPI definition and code match. At first glance, an unexpected project is the [AsyncAPI Chatbot](https://github.com/asyncapi/chatbot). It helps to create an AsyncAPI document without having to know the specification yourself.
 
-Besides these innovative ideas, there are also tools to enable validation and compatibility checks. The [CLI](https://github.com/asyncapi/cli) tool validates AsyncAPI files. Also, the [Diff](https://github.com/asyncapi/diff) tool points out breaking changes to ensure backward compatibility. A combination of these projects would be helpful, as it is already requested on [Github](https://github.com/asyncapi/cli/issues/58). These two tools could also be integrated into Apicurio Registry to add missing features.
+Besides these innovative ideas, there are also tools to enable validation and compatibility checks. The [CLI](https://github.com/asyncapi/cli) tool validates AsyncAPI files. Also, the [Diff](https://github.com/asyncapi/diff) tool points out breaking changes to ensure backward compatibility. A combination of these projects would be helpful, as it is already requested on [GitHub](https://github.com/asyncapi/cli/issues/58). These two tools could also be integrated into Apicurio Registry to add missing features.
 
 The AsyncAPI website also lists tools [developed by the community](https://www.asyncapi.com/docs/community/tooling). Many of these and several tools by the core team mainly support JavaScript - so ideally, you should not have a problem with that. Nevertheless, it is to be hoped that other programming languages will be supported in the future. This would make it easier for the community to access them.  
 Many other official projects of the AsyncAPI team are still in the alpha or beta phase. Therefore, most of them cannot yet be used to their full potential. But since companies like eBay and Slack already use AsyncAPI, we can expect a lot more to come.

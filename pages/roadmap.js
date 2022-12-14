@@ -35,7 +35,7 @@ export default function RoadmapPage() {
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative">
             <div className="lg:w-2/3 lg:mx-auto lg:text-center">
-              <Paragraph textColor="text-secondary-500" className="text-center uppercase font-bold">
+              <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="text-center uppercase font-bold">
                 Vision
               </Paragraph>
               <Heading level="h1" className="text-center">
@@ -53,7 +53,7 @@ export default function RoadmapPage() {
               <div className="grid lg:grid-cols-3 lg:gap-8">
                 <div>
                   <div className="mb-2 lg:my-0 lg:text-center">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
@@ -68,8 +68,8 @@ export default function RoadmapPage() {
                   </Paragraph>
                 </div>
                 <div>
-                  <div className="mt-6 mb-2 lg:my-0 lg:text-center lg:text-2xl">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                  <div className="mt-6 mb-2 lg:my-0 lg:text-center">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
@@ -84,8 +84,8 @@ export default function RoadmapPage() {
                   </Paragraph>
                 </div>
                 <div>
-                  <div className="mt-6 mb-2 lg:my-0 lg:text-center lg:text-2xl">
-                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-semibold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
+                  <div className="mt-6 mb-2 lg:my-0 lg:text-center">
+                    <Paragraph typeStyle="body-md" textColor="text-secondary-500" className="uppercase font-bold inline-block p-1.5 mr-2 lg:block lg:bg-transparent lg:p-0 lg:mr-0 lg:mb-2">
                       Goal
                     </Paragraph>
                     <Heading typeStyle="heading-md-semibold">
@@ -173,10 +173,10 @@ export default function RoadmapPage() {
             <Warning
               className="lg:w-1/2 mt-8 mx-auto"
               title="Warning for Contributors"
-              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding Github issue so we can discuss what's the best way to proceed and implement it yourself."
+              description="This roadmap reflects the priorities of the AsyncAPI Initiative. If you want to contribute a feature from the roadmap, feel free to let us know on the corresponding GitHub issue so we can discuss what's the best way to proceed and implement it yourself."
             />
             <p className="text-xs text-center text-gray-600 mt-8">
-              <strong>Attention:</strong> this road map is synchronized with the Github issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3AOutcome" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
+              <strong>Attention:</strong> this road map is synchronized with the GitHub issues in the <a href="https://github.com/asyncapi/shape-up-process/issues?q=is%3Aopen+is%3Aissue+label%3AOutcome" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-900">asyncapi/shape-up-process</a> repository.
             </p>
           </div>
         </div>
