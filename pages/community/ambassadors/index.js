@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
-import IconRocket from '../../../components/icons/Rocket';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
 import Link from 'next/link';
@@ -11,47 +10,48 @@ const data = [
   {
     title: 'Written content',
     details:
-      'Write guides, step-by-step tutorials, or best practice cheat sheets for the AsyncAPI blog or your own.',
+      'Write guides, step-by-step tutorials, community documentation, AsyncAPI blog posts, and beyond.',
     icon: '/img/illustrations/blog.svg',
   },
   {
     title: 'Video content',
     details:
-      'Produce educational videos or AsyncAPI developer training for AsyncAPI’s YouTube channel or your own.',
+      'Produce educational videos on YouTube and other platforms for AsyncAPI.',
     icon: '/img/illustrations/video-creation.svg',
   },
   {
     title: 'Live streams',
-    details:
-      'Moderate or host videos and live streams that demo AsyncAPI and promote the ecosystem.',
+    details: 'Moderate or host live streams that demo the AsyncAPI ecosystem.',
     icon: '/img/illustrations/live.svg',
   },
   {
     title: 'Give talks',
     details:
-      'Speak at meetups and conferences, and we’ll help with slides, abstract submissions, and travel budget.',
+      'Speak at meetups and conferences; we’ll help with slides, abstract submissions, and travel budget.',
     icon: '/img/illustrations/speaking.svg',
   },
   {
-    title: 'Learning apps',
+    title: 'Interactive Learning',
     details:
-      'Build educational applications and games to teach developers about AsycnAPI and event driven architectures.',
+      'Gamify educational content and create interactive learning paths for teaching AsycnAPI and event-driven architectures.',
     icon: '/img/illustrations/learning-app.svg',
   },
   {
-    title: 'Build educational apps',
-    details: 'Develop applications for hands-on learning in any language.',
+    title: 'Build real-life usecases example',
+    details:
+      'Develop real-life usecase project example using the AsyncaAPI specification',
     icon: '/img/illustrations/codes.svg',
   },
   {
-    title: 'AsyncAPI Advisor',
+    title: 'AsyncAPI Contributions',
     details:
-      'Collaborate with the AsyncAPI team to boost awareness of open source.',
+      'Collaborate with the AsyncAPI community via diverse contributions and improvements.',
     icon: '/img/illustrations/advisor.svg',
   },
   {
-    title: 'Gather Usecases',
-    details: 'Collect data from existing AsyncAPI users ',
+    title: 'Gather Use-Cases',
+    details:
+      'Collect data from existing AsyncAPI users and create use-case studies.',
     icon: '/img/illustrations/meeting.jpg',
   },
 ];
@@ -61,25 +61,25 @@ const tokens = [
   {
     emoji: '🗺️',
     title: 'Travel',
-    details:
-      'Ambassadors are provided with Free entry to AsyncAPI conferences.',
+    details: 'Ambassadors are provided free entry to AsyncAPI conferences.',
   },
   {
     emoji: '🌟',
     title: 'Recognition',
-    details: 'Ambassadors have a Community-wide recognition.',
+    details: 'Ambassadors receive community-wide recognition.',
   },
   {
     emoji: '🎁',
     title: 'Special Swags',
     details:
-      'Community members will recognize you as a leading voice for AsyncAPI by your exclusive AsyncAPI Ambassador swag you’ll have.',
+      'Community members recognize you by gifting you exclusive AsyncAPI Ambassador swag.',
   },
   {
     emoji: '🧰',
     title: 'Workshop Swags',
-    details: 'Ambassadors are provided with a Conference and workshop swag.',
-  }
+    details:
+      'Ambassadors are gifted swag from AsyncAPI conferences and workshops.',
+  },
 ];
 
 function Index() {
@@ -103,17 +103,16 @@ function Index() {
             textColor="text-gray-700"
             className="text-slate-500 mt-5"
           >
-            Passionate about event driven architectures or message driven apis?
-            Become an AsyncAPI Ambassador and help the development community
-            build the future of APIs.
+            Passionate about event-driven architectures or message-driven APIs?
+            Become an AsyncAPI Ambassador and help the OSS community build the
+            future of APIs.
           </Heading>
           <div>
             <Button
               className="block md:inline-block focus:outline-none mt-10 text-center"
-              text="Get started now"
-              href="https://github.com/orgs/asyncapi/discussions"
+              text="Become an AsyncAPI Ambassador"
+              href="https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador"
               target="_blank"
-              icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" />}
             />
           </div>
         </div>
@@ -156,10 +155,9 @@ function Index() {
               textColor="text-gray-700"
               className="text-slate-500 mt-5"
             >
-              AsyncAPI Ambassadors are just as passionate about APIs as AsyncAPI
-              is — and they share their interest, expertise, and excitement
-              within their communities to help other developers and engineers
-              build better software. Here are few ways to contribute
+              AsyncAPI Ambassadors are passionate about APIs and AsyncAPI. They
+              share their interest, expertise, and excitement within their
+              communities to help others build better software.
             </Heading>
           </div>
         </div>
@@ -191,7 +189,7 @@ function Index() {
           textColor="text-gray-700"
           className="text-slate-500 mt-5"
         >
-          Learn, share the knowledge with community members
+          Learn and share knowledge with community members
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {ambassadors.map((ambassador, i) => (
@@ -205,8 +203,8 @@ function Index() {
                   <div>{ambassador.country}</div>
                 </div>
                 <Link
-                  href={`/community/ambassador-program/${ambassador.github}`}
-                  as={`/community/ambassador-program/${ambassador.github}`}
+                  href={`ambassadors/${ambassador.github}`}
+                  as={`ambassadors/${ambassador.github}`}
                 >
                   <div className="p-2">
                     <div className="w-full h-auto bg-center bg-center rounded-md cursor-pointer">
@@ -264,9 +262,8 @@ function Index() {
               textColor="text-gray-700"
               className="text-slate-500 mt-5"
             >
-              We appreciate and value your commitment and passion to share your
-              knowledge with your communities and we would like to support you
-              in doing so.
+              We appreciate your commitment and passion for sharing your
+              knowledge with your communities. Let us support you!
             </Heading>
           </div>
         </div>
@@ -299,10 +296,10 @@ function Index() {
                 Become an AsycnAPI Ambassador
               </Heading>
               <Heading typeStyle="body-sm">
-                The AsyncAPI Ambassador is now open for applications! If you’re
-                selected, you’ll be asked to join AsyncAPI on our mission to
-                help developers all over the world to build the future of Event
-                Driven APIs, in an easy and empowering way.
+                The AsyncAPI Ambassador program is now open for applications! If
+                you’re selected, you’ll join AsyncAPI's mission of helping
+                community members all over the world, build the future of
+                Event-Driven APIs.
               </Heading>
               <Button
                 className="block md:inline-block focus:outline-none mt-10 text-center"
