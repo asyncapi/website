@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
 export default function TextLink({
     href,
     className,
@@ -7,7 +8,7 @@ export default function TextLink({
     id
 }) {
 
-    const classNames = `text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`
+    const classNames = twMerge(`text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`)
 
     return (
         <>

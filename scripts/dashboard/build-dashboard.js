@@ -142,7 +142,7 @@ async function start() {
     ]);
     writeToFile({ hotDiscussions, goodFirstIssues });
   } catch (e) {
-    writeToFile({ hotDiscussions: [], goodFirstIssues: [] });
+    console.log('There were some issues parsing data from github.')
     console.log(e);
   }
 }
