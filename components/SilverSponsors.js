@@ -9,7 +9,7 @@ export default function SilverSponsors({ className = '', showSupportBanner = tru
             rel="noopener noreferrer"
            >
             <img
-            className="inline-block sm:h-16"
+            className="inline-block sm:h-10"
             src="/img/sponsors/bumpsh.svg"
             alt="Bump.sh"
           />
