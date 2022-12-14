@@ -166,7 +166,7 @@ function HomePage() {
             <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
-          <Container className="text-center pyb-6" wide as="section">
+          <Container className="text-center pb-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -176,7 +176,7 @@ function HomePage() {
             </Heading>
             <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
-
+          
           <Container className="text-center pyb-6" wide as="section">
             <Heading
               level="h3"
