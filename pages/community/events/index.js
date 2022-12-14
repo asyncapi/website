@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Button from '../../../components/buttons/Button';
 import Heading from '../../../components/typography/Heading';
-import IconRocket from '../../../components/icons/Rocket';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
@@ -117,7 +116,6 @@ function index({meetings}) {
                 text='Create TSC discussion'
                 href='https://github.com/orgs/asyncapi/discussions'
                 target='_blank'
-                icon={<IconRocket className='w-5 h-5 -mb-1 ml-1' />}
               />
             </div>
           </div>
