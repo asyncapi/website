@@ -6,6 +6,7 @@ async function buildMeetings() {
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
 <<<<<<< HEAD
+<<<<<<< HEAD
     credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
 =======
     credentials: {
@@ -24,6 +25,9 @@ async function buildMeetings() {
     },
     // credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
 >>>>>>> a817c70 (extended build-meeting script)
+=======
+    credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
+>>>>>>> 17b3552 (completed meeting script extension)
   });
 
   const calendar = google.calendar({ version: 'v3', auth });
@@ -37,6 +41,7 @@ async function buildMeetings() {
     ).toISOString();
     const timeMax = new Date(
 <<<<<<< HEAD
+<<<<<<< HEAD
       Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000
     ).toISOString();
     const eventsList = await calendar.events.list({
@@ -48,6 +53,12 @@ async function buildMeetings() {
       calendarId: 'acebuild404@gmail.com',
       // calendarId:  process.env.CALENDAR_ID,
 >>>>>>> a817c70 (extended build-meeting script)
+=======
+      Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000
+    ).toISOString();
+    const eventsList = await calendar.events.list({
+      calendarId:  process.env.CALENDAR_ID,
+>>>>>>> 17b3552 (completed meeting script extension)
       timeMax: timeMax,
       timeMin: timeMin,
     });
@@ -57,15 +68,21 @@ async function buildMeetings() {
         title: e.summary,
         calLink: e.htmlLink,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 17b3552 (completed meeting script extension)
         url:
           e.extendedProperties?.private &&
           `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
         banner:
           e.extendedProperties?.private && e.extendedProperties.private.banner,
+<<<<<<< HEAD
 =======
         url: e.extendedProperties?.private && `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
         banner: e.extendedProperties?.private && e.extendedProperties.private.banner,
 >>>>>>> a817c70 (extended build-meeting script)
+=======
+>>>>>>> 17b3552 (completed meeting script extension)
         date: new Date(e.start.dateTime),
       };
     });
@@ -82,7 +99,10 @@ async function buildMeetings() {
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> a817c70 (extended build-meeting script)
+=======
+>>>>>>> 17b3552 (completed meeting script extension)
 buildMeetings();
