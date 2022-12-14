@@ -12,6 +12,9 @@ import meetings from '../../../config/meetings.json';
 import Paragraph from '../../../components/typography/Paragraph';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a817c70 (extended build-meeting script)
 function index() {
   const image = '/img/social/website-card.png';
   const [events, setEvents] = useState(
@@ -157,6 +160,7 @@ function index({meetings}) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 export async function getServerSideProps() {
   const { google } = require('googleapis');
@@ -194,4 +198,6 @@ export async function getServerSideProps() {
 }
 
 >>>>>>> f1d1b66 (integrated events with google cal)
+=======
+>>>>>>> a817c70 (extended build-meeting script)
 export default index;

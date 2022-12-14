@@ -38,6 +38,7 @@ function EventPostItem({ post, className, id }) {
     <li key={id} className={`${className}`}>
       <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
           <a href={active ? post.calLink : post.url } target='_blank'>
+<<<<<<< HEAD
             <img
               src={
                 post.banner
@@ -70,6 +71,12 @@ function EventPostItem({ post, className, id }) {
                     ? post.extendedProperties.private.banner
                     : defaultCover
 >>>>>>> f1d1b66 (integrated events with google cal)
+=======
+            <img
+              src={
+                post.banner
+                  ? post.banner
+>>>>>>> a817c70 (extended build-meeting script)
                   : defaultCover
               }
               alt={post.title}
