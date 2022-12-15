@@ -4,7 +4,7 @@ import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
 import Button from '../buttons/Button'
-import {languagesColor, technologiesColor} from '../../scripts/tools/tags-color'
+import tags from '../../config/all-tags.json'
 import {categoryList} from '../../scripts/tools/categorylist'
 
 export default function Filters({setOpenFilter}) {
@@ -17,6 +17,8 @@ export default function Filters({setOpenFilter}) {
   const [checkedTechnology, setCheckedTechnology] = useState(technologies)
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
+  let languageList = tags["languages"]
+  let technologyList = tags["technologies"]
 
   const handleApplyFilters = () => {
     setLanguages(checkedLanguage);
@@ -79,7 +81,7 @@ export default function Filters({setOpenFilter}) {
             <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
           {openLanguage && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown dataList={languagesColor} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} className='border border-gray-400' />
+            <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} className='border border-gray-400' />
           </div>} 
         </div>
       </div>
@@ -94,7 +96,7 @@ export default function Filters({setOpenFilter}) {
           <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
         {openTechnology && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
-            <FiltersDropdown dataList={technologiesColor} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} className='border border-gray-400' />
+            <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} className='border border-gray-400' />
           </div>}
         </div>
       </div>
