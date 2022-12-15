@@ -5,36 +5,35 @@ import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
 import Button from '../buttons/Button'
 import {languagesColor, technologiesColor} from '../../scripts/tools/tags-color'
+import {categoryList} from '../../scripts/tools/categorylist'
 
 export default function Filters({setOpenFilter}) {
-  const {isPaid, isAsyncAPIOwner, languages, technologies, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
+  const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
   const [openLanguage, setopenLanguage] = useState(false)
   const [openTechnology, setopenTechnology] = useState(false)
+  const [openCategory, setopenCategory] = useState(false)
   const [checkPaid, setCheckPaid] = useState(isPaid)
   const [checkedLanguage, setCheckedLanguage] = useState(languages)
   const [checkedTechnology, setCheckedTechnology] = useState(technologies)
+  const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
   const handleApplyFilters = () => {
     setLanguages(checkedLanguage);
     setTechnologies(checkedTechnology)
+    setCategories(checkedCategory)
     setisPaid(checkPaid)
     setAsyncAPIOwner(checkOwner)
-    setOpenFilter({
-      filter: false,
-      category: false
-    })
+    setOpenFilter(false)
   }
 
   const clearFilters =() => {
-    setLanguages([]);
+    setLanguages([])
     setTechnologies([])
+    setCategories([])
     setisPaid("all")
     setAsyncAPIOwner(false)
-    setOpenFilter({
-      filter: false,
-      category: false
-    })
+    setOpenFilter(false)
   }
   return (
     <div className="bg-white z-10 py-4 border rounded-lg border-gray-300 shadow-md">
@@ -96,6 +95,21 @@ export default function Filters({setOpenFilter}) {
         </div>
         {openTechnology && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologiesColor} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} className='border border-gray-400' />
+          </div>}
+        </div>
+      </div>
+      <hr className="my-4" />
+      <div className="flex flex-col gap-2 mx-4">
+        <div className="text-sm text-gray-500">Category</div>
+        <div className="w-full">
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
+          <div className="flex items-center text-dark">
+            Select categories...
+          </div>
+          <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
+        </div>
+        {openCategory && <div className="bg-gray-200 w-auto rounded-b-lg duration-150 overflow-x-auto">
+            <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} className='border border-gray-400' />
           </div>}
         </div>
       </div>
