@@ -8,7 +8,6 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "commitConvention": "none",
   "contributors": [
     {
       "login": "fmvilas",
