@@ -3,7 +3,6 @@ import ToolFilter from '../../context/ToolFilterContext';
 import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
-import Container from '../../components/layout/Container';
 import TextLink from '../../components/typography/TextLink';
 
 export default function toolsDashboard() {
@@ -21,10 +20,10 @@ export default function toolsDashboard() {
             <Paragraph className="my-3 sm:mt-4 max-w-2xl mx-auto">
               Discover various AsyncAPI tools to optimize your journey! 
               These tools are made by the community, for the community.
-              Have an AsyncAPI tool you want to be featured on this list?
-              <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
-                Submit new AsyncAPI tools here!
-              </TextLink>
+              Have an AsyncAPI tool you want to be featured on this list? Then follow the procedure given in the
+              <TextLink href="https://github.com/asyncapi/community/blob/master/new-tool-documentation.md" target="_blank">
+                Tool Documentation
+              </TextLink> file, and show up your AsyncAPI Tool card in the website.
             </Paragraph>
           </div>
           <ToolFilter>
