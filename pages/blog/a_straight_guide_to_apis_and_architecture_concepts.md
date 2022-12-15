@@ -31,13 +31,13 @@ So, let’s talk some basic concepts:
 
 APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
 
-![Picture 1, pipes](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
+![Picture 1, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
  
 ### How does an API work?
  
 APIs act as an intercommunicator, linking one or more programs. Let's say they could be seen as a bridge between different places connecting them and transferring the required information through them. It’s a way to exchange data or give commands to each other.
  
-### Types of APIs? 
+### Types of APIs
 
 We can classify them into two main groups, depending on their use or their type of architecture.
 
@@ -76,7 +76,7 @@ In my opinion, this is the most interesting part. Understanding different constr
 Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
-![Picture 2, menhirs](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp)
+![Picture 2, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp)
 
 -  **Microservices architecture**
 
@@ -86,7 +86,7 @@ Microservices architecture is a method for developing software applications that
 
 We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
 
-![Picture 3, swarm of bees](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
+![Picture 3, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
 
 - **Serverless architecture**
 
@@ -96,7 +96,7 @@ It is a computing model that uses the cloud as the environment for executing app
 
 There isn't a better graphic example than a cloud.
 
-![Picture 4, cloud](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
+![Picture 4, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
 
 -  **Event-driven architecture**
 
@@ -106,7 +106,7 @@ This is the kind of architecture that AsyncAPI works with. Its main goal is to m
 
 A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
 
-  ![Picture 5, message in bottle](/img/posts/a_traight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
+¡![Picture 5, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
 
 ## So, what is an API, ultimately…
 
@@ -117,3 +117,8 @@ Every concept, even the hardest to get, might always be communicated to everyone
 Following the path I walked before, it was my turn to explain the essential concepts of the API world without technicalities, creating simple comparisons that place us in the function of each thing. Just to make us understand the place of each piece in the puzzle. In case my experience is helpful to anyone. That’s the way I get it. And once you get it, it is forever.
 
 _* Cover photo by [Shane Rounce](https://unsplash.com/es/@shanerounce) on Unsplash_
+_* Photo 1, [Azka Rayhansyah](https://unsplash.com/es/@azka_ryhns) on Unsplash_
+_* Photo 2, [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_
+_* Photo 3, [Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_
+_* Photo 4, [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_
+_* Photo 5, [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_
