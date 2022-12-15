@@ -31,7 +31,7 @@ So, let’s talk some basic concepts:
 
 APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
 
-![Picture 1, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
+![Picture 1, pipes](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
  
 ### How does an API work?
  
