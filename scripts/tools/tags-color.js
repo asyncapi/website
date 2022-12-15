@@ -10,7 +10,7 @@ const languagesColor = [
         borderColor: "border-[#EC2125]"
     },
     {
-        name: "Javascript",
+        name: "JavaScript",
         color: "bg-[#F2F1C7]",
         borderColor: "border-[#BFBE86]"
     },
@@ -35,7 +35,7 @@ const languagesColor = [
         borderColor: "border-[#3878AB]"
     },
     {
-        name: "Typescript",
+        name: "TypeScript",
         color: "bg-[#7DBCFE]",
         borderColor: "border-[#2C78C7]"
     },
