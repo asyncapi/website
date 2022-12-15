@@ -1,7 +1,7 @@
 ---
 title: "A straight guide to APIs and architecture concepts"
 subtitle: From a newcomer experience
-date: 2022-11-29T06:00:00+01:00
+date: 2022-12-15T06:00:00+01:00
 type: Communication
 tags:
   - APIs
@@ -86,7 +86,7 @@ Microservices architecture is a method for developing software applications that
 
 We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
 
-![Picture 3, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
+![Picture 3, bees](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
 
 - **Serverless architecture**
 
@@ -96,7 +96,7 @@ It is a computing model that uses the cloud as the environment for executing app
 
 There isn't a better graphic example than a cloud.
 
-![Picture 4, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
+![Picture 4, cloud](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
 
 -  **Event-driven architecture**
 
@@ -106,7 +106,7 @@ This is the kind of architecture that AsyncAPI works with. Its main goal is to m
 
 A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
 
-¡![Picture 5, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
+¡![Picture 5, message in bottle](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
 
 ## So, what is an API, ultimately…
 
@@ -116,9 +116,9 @@ Every concept, even the hardest to get, might always be communicated to everyone
 
 Following the path I walked before, it was my turn to explain the essential concepts of the API world without technicalities, creating simple comparisons that place us in the function of each thing. Just to make us understand the place of each piece in the puzzle. In case my experience is helpful to anyone. That’s the way I get it. And once you get it, it is forever.
 
-_* Cover photo by [Shane Rounce](https://unsplash.com/es/@shanerounce) on Unsplash_
-_* Photo 1, [Azka Rayhansyah](https://unsplash.com/es/@azka_ryhns) on Unsplash_
-_* Photo 2, [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_
-_* Photo 3, [Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_
-_* Photo 4, [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_
-_* Photo 5, [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_
+_* Cover photo by [Shane Rounce](https://unsplash.com/es/@shanerounce) on Unsplash_;
+_* Photo 1, [Azka Rayhansyah](https://unsplash.com/es/@azka_ryhns) on Unsplash_;
+_* Photo 2, [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_;
+_* Photo 3, [Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_;
+_* Photo 4, [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_;
+_* Photo 5, [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_.
