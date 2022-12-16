@@ -1,4 +1,8 @@
 {
+    "APIs": {
+        "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
+        "toolsList": []
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
         "toolsList": []
@@ -38,6 +42,10 @@
             }
         ]
     },
+    "Editors": {
+        "description": "The following is a list of editors or related tools that allow editing of AsyncAPI document.",
+        "toolsList": []
+    },
     "UI components": {
         "description": "The following is a list of UI components to view AsyncAPI documents.",
         "toolsList": []
@@ -68,6 +76,18 @@
     },
     "Others": {
         "description": "The following is a list of tools that comes under Other category",
+        "toolsList": []
+    },
+    "CLIs": {
+        "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation",
+        "toolsList": []
+    },
+    "Bundlers": {
+        "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
+        "toolsList": []
+    },
+    "IDE Extensions": {
+        "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
         "toolsList": []
     }
 }

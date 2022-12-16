@@ -44,7 +44,7 @@ We did it. AsyncAPI initiative joined Linux Foundation (LF). No more excuses for
 
 I don't want to write about this too much as everything was described in different articles about us joining LF:
 - [AsyncAPI joins Linux Foundation](https://www.asyncapi.com/blog/asyncapi-joins-linux-foundation)
-- [Linux Foundation Will Host AsyncAPI to Support Growth and Collaboration for Industry's Fastest-Growing API Spec](https://www.linuxfoundation.org/en/press-release/linux-foundation-will-host-asyncapi-to-support-growth-and-collaboration-for-industrys-fastest-growing-api-spec/)
+- [Linux Foundation Will Host AsyncAPI to Support Growth and Collaboration for Industry's Fastest-Growing API Spec](https://www.linuxfoundation.org/press/press-release/linux-foundation-will-host-asyncapi-to-support-growth-and-collaboration-for-industrys-fastest-growing-api-spec)
 - [The Linux Foundation Announces Hosting of AsyncAPI](https://www.infoq.com/news/2021/03/linux-foundation-hosts-asyncapi/)
 - [AsyncAPI Looks to Unify API Workflow under Linux Foundation](https://thenewstack.io/asyncapi-looks-to-unify-api-workflow-under-linux-foundation/)
 
@@ -54,7 +54,7 @@ Let me provide more context in FAQ style:
 
 #### Is Linux Foundation taking control over AsyncAPI
 
-No. AsyncAPI Initiative runs under [open governance model](https://github.com/asyncapi/.github/blob/master/CHARTER.md) and is community-driven. LF assures the project's intellectual property (IP), and related assets do not belong to any company or individual. [Fran Mendez](https://twitter.com/fmvilas) does not retire. He only handed over rights to the project to the foundation to assure the community that it is completely safe for all to use the spec and its tooling.
+No. AsyncAPI Initiative runs under [open governance model](https://github.com/asyncapi/community/blob/master/CHARTER.md) and is community-driven. LF assures the project's intellectual property (IP), and related assets do not belong to any company or individual. [Fran Mendez](https://twitter.com/fmvilas) does not retire. He only handed over rights to the project to the foundation to assure the community that it is completely safe for all to use the spec and its tooling.
 
 It also means our [GitHub organization](https://github.com/asyncapi) is not going anywhere. Nothing changes.
 
