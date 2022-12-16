@@ -446,5 +446,15 @@
 		"repos": [
 			"bundler"
 		]
+	},
+	{
+		"name": "Alexander Wichmann",
+		"github": "VisualBean",
+		"linkedin": "alexcarlsen",
+		"availableForHire": false,
+		"company": "The LEGO Group",
+		"repos": [
+			"bindings"
+		]
 	}
 ]

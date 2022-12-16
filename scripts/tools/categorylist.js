@@ -1,5 +1,10 @@
 const categoryList = [
     {
+        name: "APIs",
+        tag: "api",
+        description: "The following is a list of APIs that expose functionality related to AsyncAPI."
+    },
+    {
         name: "Code-first tools",
         tag: "code-first",
         description: "The following is a list of tools that generate AsyncAPI documents from your code."
@@ -23,6 +28,11 @@ const categoryList = [
         name: "Documentation Generators",
         tag: "documentation generator",
         description: "The following is a list of tools that generate human-readable documentation from an AsyncAPI document."
+    },
+    {
+        name: "Editors",
+        tag: "editor",
+        description: "The following is a list of editors or related tools that allow editing of AsyncAPI document."
     },
     {
         name: "UI components",
