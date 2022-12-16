@@ -5,11 +5,11 @@ Follow the [AsyncAPI CLI installation](https://github.com/asyncapi/cli#installat
 <summary>MacOS</summary>
 
 `brew`
-</br>
+<br/>
 You can install in MacOS via brew: `brew install asyncapi`.
 
 `pkg`
-</br>
+<br/>
 Each release of CLI produces a MacOS dedicated pkg file that enables you to install this CLI as MacOS application.
 
 ```
