@@ -8,7 +8,6 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "commitConvention": "none",
   "contributors": [
     {
       "login": "fmvilas",
@@ -354,6 +353,15 @@
       "profile": "https://annysah.hashnode.dev",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "sambhavgupta0705",
+      "name": "sambhavgupta0705",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81870866?v=4",
+      "profile": "https://github.com/sambhavgupta0705",
+      "contributions": [
+        "code"
       ]
     }
   ],
