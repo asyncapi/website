@@ -1,4 +1,8 @@
 {
+    "APIs": {
+        "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
+        "toolsList": []
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
         "toolsList": []
@@ -37,6 +41,10 @@
                 }
             }
         ]
+    },
+    "Editors": {
+        "description": "The following is a list of editors or related tools that allow editing of AsyncAPI document.",
+        "toolsList": []
     },
     "UI components": {
         "description": "The following is a list of UI components to view AsyncAPI documents.",

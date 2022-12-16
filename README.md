@@ -3,9 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -157,6 +155,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/manavdesai27"><img src="https://avatars.githubusercontent.com/u/74018438?v=4?s=100" width="100px;" alt="Manav Desai"/><br /><sub><b>Manav Desai</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=manavdesai27" title="Documentation">📖</a></td>
       <td align="center"><a href="http://www.toukir.co"><img src="https://avatars.githubusercontent.com/u/88899011?v=4?s=100" width="100px;" alt="Mohd Toukir Khan"/><br /><sub><b>Mohd Toukir Khan</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=toukirkhan" title="Documentation">📖</a></td>
       <td align="center"><a href="https://annysah.hashnode.dev"><img src="https://avatars.githubusercontent.com/u/52763841?v=4?s=100" width="100px;" alt="Anisat Akinbani"/><br /><sub><b>Anisat Akinbani</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Annysah" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/sambhavgupta0705"><img src="https://avatars.githubusercontent.com/u/81870866?v=4?s=100" width="100px;" alt="sambhavgupta0705"/><br /><sub><b>sambhavgupta0705</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=sambhavgupta0705" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
