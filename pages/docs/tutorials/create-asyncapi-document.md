@@ -147,12 +147,12 @@ The `payload` property defines the content of the event using AsyncAPI schemas. 
 
 ## Summary
 
-In this tutorial, you've learned how to create an AsyncAPI specification document in a real-life example i.e IoT use case.
+In this tutorial, you learned how to create an AsyncAPI specification document via a real-life example with an IoT use case.
 
 This tutorial is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 ## Next steps
-Now that you've completed this tutorial, go ahead to learn how to [generate code]() from the specification document using the AsyncAPI generator tool.
+Now that you've completed this tutorial, go ahead to learn how to [generate code](https://www.asyncapi.com/docs/tutorials/create-asyncapi-document) from the specification document using the AsyncAPI generator tool.
 
 
 ---
