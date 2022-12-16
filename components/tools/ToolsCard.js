@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import Tag from './Tags';
@@ -6,6 +6,15 @@ import TextTruncate from 'react-text-truncate';
 
 export default function ToolsCard({ toolData }) {
   const [showDescription, setShowDescription] = useState(false)
+  const [showMoreDescription, setShowMoreDescription] = useState(false)
+  const descriptionRef = useRef(null)
+  useEffect(() => {
+    let divHeight = descriptionRef.current.offsetHeight;
+    let numberOfLines = divHeight/20;
+    if(numberOfLines > 3) setShowMoreDescription(true)
+    else setShowMoreDescription(false)
+  }, [])
+
   let onGit = false;
   const url = new URL(toolData.links.repoUrl)
   if (url.host == 'github.com') onGit = true
@@ -23,21 +32,15 @@ export default function ToolsCard({ toolData }) {
           </div>
           <div className='relative'>
             <Paragraph typeStyle="body-sm">
+              <div ref={descriptionRef} className={`w-full ${showMoreDescription ? 'cursor-pointer': '' }`} onMouseEnter={() =>(setTimeout(() => {if(showMoreDescription) setShowDescription(true)}, 500))}>
               <TextTruncate
                 element="span"
-                line={2}
+                line={3}
                 text={toolData.description}
-              /> {' '}
-              <div className="text-secondary-500 cursor-pointer inline-block underline hover:text-gray-800 font-regular text-sm transition ease-in-out duration-300" onClick={() => setShowDescription(true)}>
-                Show More
-              </div>
+              /></div>
             </Paragraph>
-            {showDescription && <div className="absolute top-0 p-2 z-10 bg-white w-full border border-gray-200 shadow-md">
-              <div className='flex gap-2 cursor-pointer text-gray-500 hover:bg-gray-200 p-1 rounded hover:text-dark w-fit' onClick={() => setShowDescription(false)}>
-                <img src='/img/illustrations/icons/close-icon.svg' width='10' />
-                <div className='text-sm'>Close</div>
-              </div>
-              <Paragraph typeStyle="body-sm" className='mt-4'>
+            {showDescription && <div className="absolute top-0 p-2 z-10 bg-white w-full border border-gray-200 shadow-md" onMouseLeave={() => (setShowDescription(false))}>
+              <Paragraph typeStyle="body-sm" className=''>
                 {toolData.description}
               </Paragraph>
             </div>}
