@@ -12,16 +12,21 @@ for (var category of categoryList) {
     };
 }
 
+// Config options set for the Fuse object
 const options = {
     includeScore: true,
     shouldSort: true,
-    threshold: 0.5,
+    threshold: 0.39,
     keys: ['name', 'color', 'borderColor']
 }
 
+// Two seperate lists and Fuse objects initialised to search languages and technologies tags 
+// from specified list of same.
 let languageList = [...languagesColor], technologyList = [...technologiesColor];
 let languageFuse = new Fuse(languageList, options), technologyFuse = new Fuse(technologyList, options)
 
+// takes individual tool object and inserts borderColor and backgroundColor of the tags of 
+// languages and technologies, for Tool Card in website.
 const getFinalTool = async (toolObject) => {
     let finalObject = toolObject;
 
@@ -31,6 +36,8 @@ const getFinalTool = async (toolObject) => {
         if (languageSearch.length) {
             finalObject.filters.language = languageSearch[0].item;
         }else{
+             // adds a new language object in the Fuse list as well as in tool object
+             // so that it isn't missed out in the UI.
             let languageObject = {
                 name: language,
                 color: 'bg-[#57f281]',
@@ -48,6 +55,8 @@ const getFinalTool = async (toolObject) => {
             technologyArray.push(technologySearch[0].item);
         } 
         else {
+            // adds a new technology object in the Fuse list as well as in tool object 
+            // so that it isn't missed out in the UI.
             let technologyObject = {
                 name: technology,
                 color: 'bg-[#61d0f2]',
@@ -62,6 +71,9 @@ const getFinalTool = async (toolObject) => {
     return finalObject;
 }
 
+
+// Combine the automated tools and manual tools list into single JSON object file, and 
+// lists down all the language and technology tags in one JSON file.
 const combineTools = async (automatedTools, manualTools) => {
     for (const key in automatedTools) {
         let finalToolsList = [];

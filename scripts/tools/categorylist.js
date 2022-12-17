@@ -1,3 +1,4 @@
+// Various categories to define the category in which a tool has to be listed
 const categoryList = [
     {
         name: "APIs",

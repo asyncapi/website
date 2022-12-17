@@ -7,15 +7,21 @@ const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 const validate = ajv.compile(schema)
 
+// Config options set for the Fuse object
 const options = {
   includeScore: true,
   shouldSort: true,
-  threshold: 0.2,
+  threshold: 0.4,
   keys: ["tag"]
 }
 
 const fuse = new Fuse(categoryList, options)
 
+// using the contents of each toolFile (extracted from Github), along with Github URL 
+// (repositoryUrl) of the tool, it's repository description (repoDescription) and 
+// isAsyncAPIrepo boolean variable to define whether the tool repository is under 
+// AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
+// side to show ToolCard.
 const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
   let resultantObject = {
     title: toolFile.title,
@@ -33,12 +39,17 @@ const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyn
   return resultantObject;
 };
 
+// Each result obtained from the Github API call will be tested and verified 
+// using the defined JSON schema, categorising each tool inside their defined categories
+// and creating a JSON tool object in which all the tools are listed in defined 
+// categories order, which is then updated in `automated-tools.json` file.
 async function convertTools(data) {
-  let appendData = {};
+  let finalToolsObject = {};
   const dataArray = data.items;
 
+  // initialising finalToolsObject with all categories inside it with proper elements in each category
   for (var index in categoryList) {
-    appendData[categoryList[index].name] = {
+    finalToolsObject[categoryList[index].name] = {
       description: categoryList[index].description,
       toolsList: []
     };
@@ -67,16 +78,18 @@ async function convertTools(data) {
           let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
           let toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
+          // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
           jsonToolFileContent.filters.categories.forEach(async (category) => {
             const categorySearch = await fuse.search(category);
 
             if (categorySearch.length) {
               let searchedCategoryName = categorySearch[0].item.name
-              if (!appendData[searchedCategoryName].toolsList.find((element => element === toolObject)))
-                appendData[searchedCategoryName].toolsList.push(toolObject);
+              if (!finalToolsObject[searchedCategoryName].toolsList.find((element => element === toolObject)))
+                finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
             } else {
-              if (!appendData['Others'].toolsList.find((element => element === toolObject)))
-                appendData['Others'].toolsList.push(toolObject);
+              // if Tool object has a category, not defined in our categorylist, then this provides a `other` category to the tool.
+              if (!finalToolsObject['Others'].toolsList.find((element => element === toolObject)))
+                finalToolsObject['Others'].toolsList.push(toolObject);
             }
           });
         } else {
@@ -91,7 +104,7 @@ async function convertTools(data) {
       throw err;
     }
   }
-  return appendData;
+  return finalToolsObject;
 }
 
 async function convertToJson(contentYAMLorJSON) {

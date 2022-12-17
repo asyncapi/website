@@ -1,3 +1,4 @@
+// Language and Technology tags along with their colors in UI are defined here.
 const languagesColor = [
     {
         name: "Go",
