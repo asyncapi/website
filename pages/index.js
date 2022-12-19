@@ -54,19 +54,19 @@ function HomePage() {
           </Paragraph>
           <ul className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
             <li className="justify-center flex">
-              <AdidasLogo className="h-8 text-gray-400" />
+              <AdidasLogo className="h-8 text-gray-400 transition ease-in-out hover:text-gray-700 hover:scale-110" />
             </li>
             <li className="justify-center flex">
-              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
+              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400 transition ease-in-out hover:text-gray-700 hover:scale-110" />
             </li>
             <li className="justify-center flex">
-              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
+              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400 transition ease-in-out hover:text-gray-700 hover:scale-110" />
             </li>
             <li className="justify-center flex">
-              <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
+              <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400 transition ease-in-out hover:text-gray-700 hover:scale-110" />
             </li>
             <li className="justify-center flex">
-              <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
+              <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400 transition ease-in-out hover:text-gray-700 hover:scale-110" />
             </li>
           </ul>
         </Container>
