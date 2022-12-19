@@ -7,13 +7,15 @@ import ToolsList from './ToolsList';
 import Filters from './Filters';
 
 export default function ToolDashboard() {
-    const filterRef = useRef()
+    const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
     const [openFilter, setOpenFilter] = useState(false)
+    // filter parameters extracted from the context
     const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext)
-    const [searchName, setSearchName] = useState('')
-    const [toolsList, setToolsList] = useState({})
-    const [checkToolsList, setCheckToolsList] = useState(true)
+    const [searchName, setSearchName] = useState('') // state variable used to get the search name
+    const [toolsList, setToolsList] = useState({}) // state variable used to set the list of tools according to the filters applied
+    const [checkToolsList, setCheckToolsList] = useState(true) // state variable used to check whether any tool is available according to the needs of user.
 
+    // useEffect function to enable the close Modal feature when clicked outside of the modal
     useEffect(() => {
         const checkIfClickOutside = (e) => {
             if ((openFilter.filter && filterRef.current && !filterRef.current.contains(e.target)))
@@ -25,8 +27,12 @@ export default function ToolDashboard() {
         }
     })
 
+    // Function to update the list of tools according to the current filters applied
     const updateToolsList = () => {
         let tempToolsList = {}
+        
+        // Tools data list is first filtered according to the category filter if applied by the user.
+        // Hence if any category is selected, then only respective tools will be selected for further check on filters
         if (categories.length > 0) {
             for (let category of categories) {
                 Object.keys(ToolsData).forEach((key) => {
@@ -34,11 +40,22 @@ export default function ToolDashboard() {
                 })
             }
         } else {
+            // if no category is selected, then all tools are selected for further check on filters
             tempToolsList = JSON.parse(JSON.stringify(ToolsData));
         }
+
+        // checkToolsList is initially made false to check whether any tools are present according to the filters.
         setCheckToolsList(false)
+
+        // Each tool selected, is then traversed to check against each filter variable (only if the filter is applied), 
+        // whether they match with the filter applied or not.
         Object.keys(tempToolsList).forEach((category) => {
             tempToolsList[category].toolsList = tempToolsList[category].toolsList.filter((tool) => {
+
+                // These are filter check variable for respective filters, which is initially made true.
+                // If the particular filter is applied by user, the respective check variable is made false first, 
+                // and then tool parameters are checked against the filter variable value to decide it matches the filter 
+                // criteria or not.
                 let isLanguageTool = true, isTechnologyTool = true, isSearchTool = true, isAsyncAPITool = true, isPaidTool = true;
                 if (languages.length) {
                     isLanguageTool = false;
