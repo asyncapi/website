@@ -1,4 +1,5 @@
 import React from 'react';
+import {sortBy} from 'lodash';
 import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
@@ -82,12 +83,37 @@ const tokens = [
   },
 ];
 
+function addAdditionalUserInfo(user) {
+  const userData = {
+    ...user,
+  };
+
+  // add social links
+  if (userData.github)
+    userData.github = `https://www.github.com/${userData.github}`;
+  if (userData.linkedin)
+    userData.linkedin = `https://www.linkedin.com/in/${userData.linkedin}`;
+  if (userData.twitter)
+    userData.twitter = `https://www.twitter.com/${userData.twitter}`;
+
+  // add img url
+  // github redirects to avatar url using `https://www.github.com/<username>.png`
+  userData.img = userData.github + '.png';
+
+  return userData;
+}
+
 function Index() {
   const image = '/img/social/website-card.png';
+  const asyncapiAmbassadors = sortBy(
+    ambassadors.map((user) => addAdditionalUserInfo(user)),
+    ['name']
+  );
+
   return (
     <GenericLayout
       title="AsyncAPI Ambassador Program"
-      description="The home for developer communities"
+      description="The AsyncAPI Ambassador Program"
       image={image}
       hideBanner={true}
       wide
@@ -192,7 +218,7 @@ function Index() {
           Learn and share knowledge with community members
         </Heading>
         <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {ambassadors.map((ambassador, i) => (
+          {asyncapiAmbassadors.map((ambassador, i) => (
             <div
               key={i}
               className="rounded-md border flex flex-col justify-between text-left mt-6 pb-2"

@@ -1,8 +1,6 @@
 [
   {
     "name": "Alejandra Quetzalli",
-    "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "bio": "Hecha en 🇲🇽 • 📑OSS DevDocs & Community @asyncAPIspec• 📚Autora @Apress(2023) • Canela🐕‍🦺 es mi #actuallyautistic #ServiceDog • Rebelde🤟🏽• mis opiniones",
     "title": "DevRel & DevDocs @AsyncAPI",
     "github": "alequetzalli",
     "twitter": "QuetzalliAle",
@@ -49,8 +47,6 @@
   },
   {
     "name": "Hugo Guerrero",
-    "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
-    "bio": "",
     "github": "hguerrero",
     "twitter": "hguerreroo",
     "title": "Chief Software Architect @Red Hat",
@@ -108,11 +104,9 @@
     "name": "Jesse Menning",
     "github": "jessemenning",
     "twitter": "JesseMenning",
-    "bio": "",
     "linkedin": "jesse-menning",
     "company": "Solace",
     "title": "Architect, Office of the CTO at Solace",
-    "img": "https://avatars.githubusercontent.com/u/62108913?v=4",
     "contributions": [
       {
         "type": "article",
