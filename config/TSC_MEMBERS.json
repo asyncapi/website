@@ -126,7 +126,8 @@
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
 		"linkedin": "khudadadnomani",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
 			"optimizer",
 			"bindings"
@@ -445,6 +446,16 @@
 		"availableForHire": false,
 		"repos": [
 			"bundler"
+		]
+	},
+	{
+		"name": "Alexander Wichmann",
+		"github": "VisualBean",
+		"linkedin": "alexcarlsen",
+		"availableForHire": false,
+		"company": "The LEGO Group",
+		"repos": [
+			"bindings"
 		]
 	}
 ]
