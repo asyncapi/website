@@ -20,12 +20,18 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 
 </Remember>
 
-You can see that the documentation is now rendered and you don't see any errors which means your file is valid. Now let's experiment with an invalid file to see how errors are displayed and how to make that file valid again.
+Now let's experiment with an invalid file to see how errors are displayed and how to make that file valid again.
 
 ## Copy invalid AsyncAPI document
 Let's pretend we have an invalid AsyncAPI document.
 
 1. Open [Studio](https://studio.asyncapi.com/).
+
+<Remember>
+
+You can also skip the step below by clicking on New File in Studio and opening the Invalid Example template in the tutorials section.
+
+</Remember>
 
 2. Copy and paste the below invalid AsyncAPI document:
 
@@ -64,6 +70,7 @@ channels:
               format: date-time
               description: Date and time when the message was sent.
  ``` 
+ 
 ## Troubleshoot Studio errors
 Let's fix the errors one by one until we end up with a valid AsyncAPI document.
  
