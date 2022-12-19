@@ -14,7 +14,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 49.39402926487251
+      "score": 51.11707679736806
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
@@ -41,20 +41,15 @@
       "score": 44.512061256135105
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 39.91726783614697
+      "id": "PR_kwDOBW5R_c5ARCuj",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new guide for message validation",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1005",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.122665454937735
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -65,7 +60,18 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 24.122665454937735
+    },
+    {
+      "id": "PR_kwDOBW5R_c5AyxaN",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 23.26114168868996
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -79,28 +85,6 @@
       "score": 22.68679251119144
     },
     {
-      "id": "PR_kwDOBW5R_c5ARCuj",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for message validation",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1005",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 21.25091956744515
-    },
-    {
       "id": "PR_kwDOBW5R_c5AL1kI",
       "isPR": true,
       "isAssigned": true,
@@ -109,7 +93,18 @@
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOFdFGUs4x5bH2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Video 2 - draft script",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/training/pull/9",
+      "repo": "asyncapi/training",
+      "labels": [],
+      "score": 21.25091956744515
     },
     {
       "id": "PR_kwDOFLhIt85AY9Ib",
@@ -120,7 +115,18 @@
       "resourcePath": "/asyncapi/community/pull/488",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 20.102221212448114
+      "score": 20.67657038994663
+    },
+    {
+      "id": "PR_kwDOFXtyC849zwGo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Components, Security Requirement(s) models and other improvements",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/parser-api/pull/71",
+      "repo": "asyncapi/parser-api",
+      "labels": [],
+      "score": 20.67657038994663
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -134,42 +140,33 @@
       "score": 19.815046623698855
     },
     {
-      "id": "PR_kwDOBW5R_c5Ckknf",
+      "id": "PR_kwDOBW5R_c4-vMid",
       "isPR": true,
-      "isAssigned": true,
-      "title": "docs: add CLI docs under tools content bucket",
-      "author": "activus-d",
-      "resourcePath": "/asyncapi/website/pull/1097",
+      "isAssigned": false,
+      "title": "feat: added new /tools page",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/940",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 18.37917367995256
+      "score": 19.527872034949596
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBGu-185ZLGtq",
+      "title": "Cleanup readme with icons of sponsors",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/spec/issues/883",
+      "repo": "asyncapi/spec",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOCHlHJM5XfhdE",
       "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
