@@ -1,7 +1,7 @@
 ---
 title: "Conference 2022 Was Amazing!"
-date: 2022-12-13T10:00:00+01:00
-type: Community
+date: 2022-12-19T10:00:00+01:00
+type: Conference
 tags:
   - Conference
 cover: /img/posts/conference-2022.webp
