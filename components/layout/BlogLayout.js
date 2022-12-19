@@ -70,6 +70,7 @@ export default function BlogLayout({ post, children }) {
                 #at4-share {
                     left: 50%;
                     margin-left: -500px !important;
+                    position: absolute;
 
                     &amp;.addthis-animated {
                       animation-duration: 0s !important;
