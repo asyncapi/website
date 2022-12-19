@@ -14,7 +14,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 48.24533090987547
+      "score": 49.39402926487251
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
@@ -57,26 +57,15 @@
       "score": 39.91726783614697
     },
     {
-      "id": "PR_kwDOCHlHJM4_rG5j",
+      "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: provide docs content for template",
-      "author": "pratik2315",
-      "resourcePath": "/asyncapi/generator/pull/843",
-      "repo": "asyncapi/generator",
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
       "labels": [],
-      "score": 26.707236753681066
-    },
-    {
-      "id": "PR_kwDODCuNRs5CojIa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: apache Pulsar bindings",
-      "author": "VisualBean",
-      "resourcePath": "/asyncapi/bindings/pull/173",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 23.835490866188476
+      "score": 23.548316277439216
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -87,29 +76,29 @@
       "resourcePath": "/asyncapi/community/pull/442",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 22.399617922442182
+      "score": 22.68679251119144
     },
     {
-      "id": "PR_kwDOBGu-185AIQgf",
+      "id": "PR_kwDOBW5R_c5ARCuj",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
+      "isAssigned": true,
+      "title": "docs: new guide for message validation",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1005",
+      "repo": "asyncapi/website",
       "labels": [],
       "score": 22.112443333692923
     },
     {
-      "id": "PR_kwDOFXtyC849zwGo",
+      "id": "PR_kwDOBW5R_c5AyxaN",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Components, Security Requirement(s) models and other improvements",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/parser-api/pull/71",
-      "repo": "asyncapi/parser-api",
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.67657038994663
+      "score": 21.25091956744515
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -120,7 +109,18 @@
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 19.815046623698855
+      "score": 20.38939580119737
+    },
+    {
+      "id": "PR_kwDOFLhIt85AY9Ib",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.102221212448114
     },
     {
       "id": "PR_kwDOCoBobc4xN9Px",
@@ -134,15 +134,15 @@
       "score": 19.815046623698855
     },
     {
-      "id": "PR_kwDOBW5R_c5AyxaN",
+      "id": "PR_kwDOBW5R_c5Ckknf",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
+      "title": "docs: add CLI docs under tools content bucket",
+      "author": "activus-d",
+      "resourcePath": "/asyncapi/website/pull/1097",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 19.240697446200336
+      "score": 18.953522857451077
     },
     {
       "id": "PR_kwDOBW5R_c5A3jNS",
@@ -166,7 +166,7 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.37917367995256
     }
   ],
   "goodFirstIssues": [
@@ -177,6 +177,21 @@
       "resourcePath": "/asyncapi/generator/issues/873",
       "repo": "asyncapi/generator",
       "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODyzcIc5WV_4D",
+      "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/.github/issues/195",
+      "repo": "asyncapi/.github",
+      "author": "derberg",
       "area": "docs",
       "labels": [
         {
@@ -197,21 +212,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5WV_4D",
-      "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/195",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
         }
       ]
     },
@@ -337,21 +337,6 @@
       ]
     },
     {
-      "id": "I_kwDOEtVKb85TDMpe",
-      "title": "unnecessary assertion since it does not change the type of the expression.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator-react-sdk/issues/154",
-      "repo": "asyncapi/generator-react-sdk",
-      "author": "AceTheCreator",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODou01c5TDLWP",
       "title": "Unnecessary assertion since it does not change the type of the expression.",
       "isAssigned": true,
@@ -408,21 +393,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5KrRV3",
-      "title": "Add to TSC page link to YT video that explains how to join TSC",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/809",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
         }
       ]
     },
