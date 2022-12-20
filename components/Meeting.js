@@ -15,7 +15,7 @@ export default function Meeting({
 
   return (
     <div
-      className={`meeting-card overflow-hidden p-4 bg-${bg} w-[300px] h-[300px] cursor-pointer hover:bg-black hover:text-white flex flex-col justify-between`}
+      className={`meeting-card overflow-hidden p-4 bg-${bg} w-full lg:w-[300px] h-[300px] cursor-pointer hover:bg-black hover:text-white flex flex-col justify-between`}
     >
       <div>
         <h3 className="text-xl">{name}</h3>

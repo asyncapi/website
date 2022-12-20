@@ -113,14 +113,18 @@ function index() {
           </div>
         </div>
       </div>
-      <div className="mt-24 flex justify-between">
-        <div className="w-[40%]">
-          <Heading level="h2" typeStyle="heading-md">
-            Featured Events
-          </Heading>
-        </div>
-        <div>
-          <div className="flex justify-end items-center">
+      <div className="mt-24">
+        <div className="lg:flex lg:justify-between">
+          <div className="lg:w-[30%]">
+            <Heading level="h2" typeStyle="heading-md">
+              Featured Events
+            </Heading>
+            <Paragraph typeStyle="body-md" className="mt-4">
+              Explore over 100s of AsyncAPI's livestreams specifically curated
+              for you
+            </Paragraph>
+          </div>
+          <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
             <div className="">
               <Meeting
                 name="Community Meeting"
@@ -141,35 +145,35 @@ function index() {
               />
             </div>
           </div>
-          <div className="flex">
-            <div className="">
-              <Meeting
-                name="Thinking Out Loud"
-                bg="gray-100"
-                purpose="This is a live stream about different topics related to AsyncAPI Initiative and Event Driven Architectures. It is always an open discussion between a host and a guest."
-                host="Fran Mendez"
-                hostProfile="https://github.com/fmvilas"
-                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ"
-              />
-            </div>
-            <div className="">
-              <Meeting
-                name="Let's talk about contributing"
-                purpose="This live stream focuses on contributors, focuses on people that want to contribute to AsyncAPI Initiative but do not know how to do it."
-                host="Lukasz Gornicki"
-                hostProfile="https://github.com/derberg"
-                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY"
-              />
-            </div>
-            <div className="">
-              <Meeting
-                name="Ad Hoc Meeting"
-                bg="gray-100"
-                purpose="Do you want to discuss something with community and other meeting formats won't work? This is what this meeting is for, to schedule something specific with the community."
-                host="Any of the hosts"
-                youtube="https://www.youtube.com/asyncapi"
-              />
-            </div>
+        </div>
+        <div className="flex lg:flex-row flex-col lg:justify-end lg:items-center">
+          <div className="">
+            <Meeting
+              name="Thinking Out Loud"
+              bg="gray-100"
+              purpose="This is a live stream about different topics related to AsyncAPI Initiative and Event Driven Architectures. It is always an open discussion between a host and a guest."
+              host="Fran Mendez"
+              hostProfile="https://github.com/fmvilas"
+              youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ"
+            />
+          </div>
+          <div className="">
+            <Meeting
+              name="Let's talk about contributing"
+              purpose="This live stream focuses on contributors, focuses on people that want to contribute to AsyncAPI Initiative but do not know how to do it."
+              host="Lukasz Gornicki"
+              hostProfile="https://github.com/derberg"
+              youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY"
+            />
+          </div>
+          <div className="">
+            <Meeting
+              name="Ad Hoc Meeting"
+              bg="gray-100"
+              purpose="Do you want to discuss something with community and other meeting formats won't work? This is what this meeting is for, to schedule something specific with the community."
+              host="Any of the hosts"
+              youtube="https://www.youtube.com/asyncapi"
+            />
           </div>
         </div>
       </div>
