@@ -42,7 +42,7 @@ Look at the number of views we had on Youtube alone; don't forget numbers don't 
 
 - Day 1: 584 views
 - Day 2: 325 views
-- On day 3, we had 247
+- Day 3: 247 views
 
 But hold on, we celebrated too early because two weeks after the conference, the number of views doubled.
 
