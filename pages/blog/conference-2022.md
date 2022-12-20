@@ -30,7 +30,7 @@ But despite these challenges, AsyncAPI still reached the top of the mountain by 
 
 AsyncAPI proved how much you can do when you have an amazing and strong community behind you.
 
-Despite AsyncAPI leveraging on the experience they have hosting online events, they also created a conference support squad where so many amazing folks from the community volunteered, including me. This squad involves two categories of volunteers, the on-stage and the off-stage squad. 
+Despite AsyncAPI leveraging their experience hosting online events, they also created a conference support squad where so many amazing folks from the community volunteered, including me. This squad involves two categories of volunteers: on-stage and off-stage. 
 
 This approach worked like a charm, bringing over 15 members of the community to help coordinate the conference in a collaborative way which, in my opinion, was what made the conference a blast!
 
