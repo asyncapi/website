@@ -60,8 +60,6 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
-
-            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
