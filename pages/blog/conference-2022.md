@@ -46,9 +46,9 @@ Look at the number of views we had on Youtube alone; don't forget numbers don't 
 
 But hold on, we celebrated too early because two weeks after the conference, the number of views doubled.
 
-- Day 1 view grew to 1403
--  Day 2 views grew to 1181
--  Day 3 views grew to 400
+- Day 1 views grew to 1403
+- Day 2 views grew to 1181
+- Day 3 views grew to 400
 
 AsyncAPI also had significant women speakers & stream hosts. Isn't this an important move in the right direction for true diversity?
 
