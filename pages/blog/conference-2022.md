@@ -160,7 +160,7 @@ Thanks to the conference sponsors, we were able to get some money to fund the co
 - Ably - $2,882.70 (Gold Sponsor)
 - Leftovers from conference 2021 - $7,951.71
 
-A total sum of $15,689.11 was raised for the 2022 conference.
+A total sum of $15,689.11 was raised for the 2022 AsyncAPI Conference.
 
 #### Spendings
 -   Swags for speakers and people that helped to run the event - $2,847.81
