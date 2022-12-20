@@ -36,7 +36,7 @@ This approach worked like a charm, bringing over 15 members of the community to 
 
 ## Was it worth it? 
 
-If it wasn't worth it, I wouldn't say it was amazing and thanks to the contributions from the organization, community, speakers and sponsors.
+I wouldn't say it was amazing if it weren't worth it! The conference was amazing thanks to the contributions from the organization, community, speakers, and sponsors.
 
 Take a look at the number of views we had on Youtube alone, don't forget numbers don't lie.
 
