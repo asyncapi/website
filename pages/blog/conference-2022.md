@@ -1,5 +1,5 @@
 ---
-title: "Conference 2022 Was Amazing!"
+title: "2022 AsyncAPI Conference was amazing!"
 date: 2022-12-19T10:00:00+01:00
 type: Conference
 tags:
