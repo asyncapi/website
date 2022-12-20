@@ -22,8 +22,7 @@ Because AsycnAPI is a community-first organization, I was able to follow along w
 Here are a few of the challenges:
 
 - **Went from hybrid to online**: The event was supposed to be an in-person and virtual event held in Barcelona, Spain. But because the foundation they partnered with couldn't find a venue within the provided date, they had to scrap the in-person idea.
-- Fewer Sponsors
-    I believe the whole planning for the 2022 conference started quite late, which made it difficult to get a budget for the event in such a short time.
+- **Fewer Sponsors**: I believe the whole planning for the 2022 AsyncAPI Conference started quite late, which made it difficult to get a budget for the event in such a short time.
 
 But despite these challenges, AsyncAPI still reaches the top of the mountain by giving a blast conference with the power of the community. 
 
