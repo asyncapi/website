@@ -90,15 +90,15 @@ function addAdditionalUserInfo(user) {
 
   // add social links
   if (userData.github)
-    userData.github = `https://www.github.com/${userData.github}`;
+    userData.githubUrl = `https://www.github.com/${userData.github}`;
   if (userData.linkedin)
-    userData.linkedin = `https://www.linkedin.com/in/${userData.linkedin}`;
+    userData.linkedinUrl = `https://www.linkedin.com/in/${userData.linkedin}`;
   if (userData.twitter)
-    userData.twitter = `https://www.twitter.com/${userData.twitter}`;
+    userData.twitterUrl = `https://www.twitter.com/${userData.twitter}`;
 
   // add img url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
-  userData.img = userData.github + '.png';
+  userData.img = userData.githubUrl + '.png';
 
   return userData;
 }
@@ -250,7 +250,7 @@ function Index() {
                 <div className="p-2 text-sm">{ambassador.bio}</div>
                 <div className="border-t p-2 flex">
                   <a
-                    href={`https://www.twitter.com/${ambassador.twitter}`}
+                    href={`https://www.twitter.com/${ambassador.twitterUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     className="underline"
@@ -258,7 +258,7 @@ function Index() {
                     Twitter ↗
                   </a>
                   <a
-                    href={`https://www.github.com/${ambassador.github}`}
+                    href={`https://www.github.com/${ambassador.githubUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     className="underline ml-3"
@@ -266,7 +266,7 @@ function Index() {
                     Github ↗
                   </a>
                   <a
-                    href={`https://www.linkedin.com/in/${ambassador.linkedin}`}
+                    href={`https://www.linkedin.com/in/${ambassador.linkedinUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     className="underline ml-3"
