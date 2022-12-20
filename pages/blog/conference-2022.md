@@ -41,7 +41,7 @@ I wouldn't say it was amazing if it weren't worth it! The conference was amazing
 Look at the number of views we had on Youtube alone; don't forget numbers don't lie.
 
 - Day 1: 584 views
-- On day 2, we had 325
+- Day 2: 325 views
 - On day 3, we had 247
 
 But hold on, we celebrated too early because two weeks after the conference, the number of views doubled.
