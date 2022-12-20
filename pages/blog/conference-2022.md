@@ -73,7 +73,7 @@ Gold Sponsor
 
 Special thanks to Restream for supporting us with their amazing product for media coverage.
 <a href='https://restream.io/' target='_blank'>
-<img src='/img/sponsors/restream.png' alt='postman' width='200px' />
+<img src='/img/sponsors/restream.png' alt='restream' width='200px' />
 </a>
 
 ### Meet the volunteers
