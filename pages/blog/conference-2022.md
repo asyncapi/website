@@ -163,11 +163,11 @@ Thanks to the conference sponsors, we were able to get some money to fund the co
 A total sum of $15,689.11 was raised for the 2022 AsyncAPI Conference.
 
 #### Spendings
--   Swags for speakers and people that helped to run the event - $2,847.81
-- Facebook conference add - $114.40
--   Linux Foundation services (registration, schedapp) - $10,000.00
--   Descript licenses for speakers to provide good quality recordings - $696.79
--   Headphones for Anisat - $21.74
+- Swags for speakers and people that helped run the event - $2,847.81
+- Facebook ad - $114.40
+- Linux Foundation services (registration and schedapp) - $10,000.00
+- Descript licenses for speakers to provide high quality recordings - $696.79
+- Headphones for Anisat - $21.74
 
 A total sum of $13,680.74 was spent on the conference needs. 
 
