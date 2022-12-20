@@ -38,7 +38,7 @@ This approach worked like a charm, bringing over 15 members of the community to 
 
 I wouldn't say it was amazing if it weren't worth it! The conference was amazing thanks to the contributions from the organization, community, speakers, and sponsors.
 
-Take a look at the number of views we had on Youtube alone, don't forget numbers don't lie.
+Look at the number of views we had on Youtube alone; don't forget numbers don't lie.
 
 - On day 1, we had 584
 - On day 2, we had 325
