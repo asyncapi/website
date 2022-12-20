@@ -10,7 +10,7 @@ authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
     link: https://twitter.com/_acebuild
-    byline: Preacher at AsyncAPI
+    byline: AsyncAPI DevRel
 ---
 
 The 2022 Conference was an amazing, and I had a great time. I volunteered at this conference, not knowing what to expect, and I must say, I left with a new resolve. The organization was top-notch, from interesting sessions to an amazing community. 
