@@ -49,7 +49,7 @@
       "resourcePath": "/asyncapi/website/pull/1005",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 24.409840043686994
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -60,7 +60,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 24.409840043686994
     },
     {
       "id": "PR_kwDOBW5R_c5AyxaN",
@@ -71,7 +71,7 @@
       "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 23.26114168868996
+      "score": 23.548316277439216
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -152,21 +152,6 @@
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOBGu-185ZLGtq",
-      "title": "Cleanup readme with icons of sponsors",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/883",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
     {
       "id": "I_kwDOCHlHJM5XfhdE",
       "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
