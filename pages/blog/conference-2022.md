@@ -174,7 +174,7 @@ A total sum of $13,680.74 was spent on the conference needs.
 
 ## What's Next?
 
-Because the AsyncAPI conference happens once every year, then it means there will be another one next year(2023), and I can't wait for it to happen because the community happens to have learned from its mistake by deciding to kick off the planning as early as possible and I believe this is a big step in the right direction. So I would say so many lessons learned to put in play next year! 
+Because the AsyncAPI Conference happens yearly, it means there will be another one next year(2023). I can't wait for it to happen because the community happens to have learned from its mistake by deciding to kick off the planning as early as possible and I believe this is a big step in the right direction. So many lessons learned to put into play for next year! 
 
 ## Wrap up
 
