@@ -2,33 +2,45 @@ import YoutubeButton from './buttons/YoutubeButton';
 import Paragraph from './typography/Paragraph';
 import TextLink from './typography/TextLink';
 import Heading from './typography/Heading';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 export default function Meeting({ 
     name = '', 
     purpose = '',
     host = '',
     hostProfile = '',
-    youtube = '' 
+    youtube = '', 
+    bg = ''
 }) {
 
   return (
-    <div className="rounded-md border border-gray-200 overflow-hidden bg-white p-4">
-        <Heading level="h2" typeStyle="heading-md-semibold">
-            { name }
-        </Heading>   
+    <div
+      className={`meeting-card overflow-hidden p-4 bg-${bg} w-[300px] h-[300px] cursor-pointer hover:bg-black hover:text-white flex flex-col justify-between`}
+    >
+      <div>
+        <h3 className="text-xl">{name}</h3>
+        <div className="hidden">
+          <Paragraph typeStyle="body-sm" className="my-4" textColor="white">
+            {purpose}
+          </Paragraph>
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
         <Paragraph typeStyle="body-md" className="my-4">
-            <strong>Purpose:</strong> { purpose }
+          <strong>Host:</strong>
+          {hostProfile ? (
+            <TextLink href={hostProfile} target="_blank">
+              {host}
+            </TextLink>
+          ) : (
+            ` ${host}.`
+          )}
         </Paragraph>
-        <Paragraph typeStyle="body-md" className="my-4">
-            <strong>Host:</strong> 
-            { hostProfile 
-                ? (<TextLink href={ hostProfile } target="_blank">
-                { host }
-                </TextLink>)
-                : ` ${host}.`
-            }
-        </Paragraph>
-        <YoutubeButton text="Watch recordings" href={ youtube }/>
+        <div>
+          <ArrowRightIcon className="w-[20px] ml-3 mt-1 text-slate-400" />
+        </div>
+        {/* <YoutubeButton text="c" href={youtube} /> */}
+      </div>
     </div>
   );
 }

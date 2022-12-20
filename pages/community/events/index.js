@@ -8,6 +8,7 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
 import GenericLayout from '../../../components/layout/GenericLayout';
+import Meeting from '../../../components/Meeting';
 import meetings from '../../../config/meetings.json';
 
 import Paragraph from '../../../components/typography/Paragraph';
@@ -107,6 +108,66 @@ function index() {
                 text="Create TSC discussion"
                 href="https://github.com/orgs/asyncapi/discussions"
                 target="_blank"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-24 flex justify-between">
+        <div className="w-[40%]">
+          <Heading level="h2" typeStyle="heading-md">
+            Featured Events
+          </Heading>
+        </div>
+        <div>
+          <div className="flex justify-end items-center">
+            <div className="">
+              <Meeting
+                name="Community Meeting"
+                purpose="This is a community meeting to regularly talk in open about important topics around AsyncAPI Initiative. We organize it every two weeks in different time zones."
+                host="Lukasz Gornicki"
+                bg="gray-100"
+                hostProfile="https://github.com/derberg"
+                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"
+              />
+            </div>
+            <div className="">
+              <Meeting
+                name="Spec 3.0 Meeting"
+                purpose="This is the meeting for community member involved in works related to 3.0 release of AsyncAPI Specification. We organize it every two weeks at the same time."
+                host="Jonas Lagoni"
+                hostProfile="https://github.com/jonaslagoni"
+                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV"
+              />
+            </div>
+          </div>
+          <div className="flex">
+            <div className="">
+              <Meeting
+                name="Thinking Out Loud"
+                bg="gray-100"
+                purpose="This is a live stream about different topics related to AsyncAPI Initiative and Event Driven Architectures. It is always an open discussion between a host and a guest."
+                host="Fran Mendez"
+                hostProfile="https://github.com/fmvilas"
+                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ"
+              />
+            </div>
+            <div className="">
+              <Meeting
+                name="Let's talk about contributing"
+                purpose="This live stream focuses on contributors, focuses on people that want to contribute to AsyncAPI Initiative but do not know how to do it."
+                host="Lukasz Gornicki"
+                hostProfile="https://github.com/derberg"
+                youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY"
+              />
+            </div>
+            <div className="">
+              <Meeting
+                name="Ad Hoc Meeting"
+                bg="gray-100"
+                purpose="Do you want to discuss something with community and other meeting formats won't work? This is what this meeting is for, to schedule something specific with the community."
+                host="Any of the hosts"
+                youtube="https://www.youtube.com/asyncapi"
               />
             </div>
           </div>

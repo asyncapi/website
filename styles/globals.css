@@ -330,3 +330,8 @@ abbr[title] {
   background-size: cover;
   margin-top: -1900px;
 }
+
+.meeting-card:hover > div:nth-child(1) > div {
+  display: block;
+  color: white;
+}
