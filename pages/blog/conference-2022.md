@@ -65,7 +65,7 @@ Platinum Sponsor
 Gold Sponsor
 
 <a href='https://ably.com/' target='_blank'>
-<img src='/img/sponsors/ably.png' alt='postman' width='400px' />
+<img src='/img/sponsors/ably.png' alt='ably' width='400px' />
 </a>
 
 
