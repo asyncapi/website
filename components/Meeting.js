@@ -14,33 +14,34 @@ export default function Meeting({
 }) {
 
   return (
-    <div
-      className={`meeting-card overflow-hidden p-4 bg-${bg} w-full lg:w-[300px] h-[300px] cursor-pointer hover:bg-black hover:text-white flex flex-col justify-between`}
-    >
-      <div>
-        <h3 className="text-xl">{name}</h3>
-        <div className="hidden">
-          <Paragraph typeStyle="body-sm" className="my-4" textColor="white">
-            {purpose}
-          </Paragraph>
-        </div>
-      </div>
-      <div className="flex items-center justify-between">
-        <Paragraph typeStyle="body-md" className="my-4">
-          <strong>Host:</strong>
-          {hostProfile ? (
-            <TextLink href={hostProfile} target="_blank">
-              {host}
-            </TextLink>
-          ) : (
-            ` ${host}.`
-          )}
-        </Paragraph>
+    <a href={youtube} target="_blank" rel="noreferrer">
+      <div
+        className={`meeting-card overflow-hidden p-4 bg-${bg} w-full lg:w-[300px] h-[300px] cursor-pointer hover:bg-dark hover:text-white flex flex-col justify-between`}
+      >
         <div>
-          <ArrowRightIcon className="w-[20px] ml-3 mt-1 text-slate-400" />
+          <h3 className="text-xl">{name}</h3>
+          <div className="hidden">
+            <Paragraph typeStyle="body-sm" className="my-4" textColor="white">
+              {purpose}
+            </Paragraph>
+          </div>
         </div>
-        {/* <YoutubeButton text="c" href={youtube} /> */}
+        <div className="flex items-center justify-between">
+          <Paragraph typeStyle="body-md" className="my-4">
+            <strong>Host:</strong>
+            {hostProfile ? (
+              <TextLink href={hostProfile} target="_blank">
+                {host}
+              </TextLink>
+            ) : (
+              ` ${host}.`
+            )}
+          </Paragraph>
+          <div>
+            <ArrowRightIcon className="w-[20px] ml-3 mt-1 text-slate-400" />
+          </div>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }

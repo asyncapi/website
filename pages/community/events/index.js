@@ -9,7 +9,10 @@ import EventPostItem from '../../../components/navigation/EventPostItem';
 import EventFilter from '../../../components/navigation/EventFilter';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Meeting from '../../../components/Meeting';
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
+import TextLink from '../../../components/typography/TextLink';
 import meetings from '../../../config/meetings.json';
+
 
 import Paragraph from '../../../components/typography/Paragraph';
 
@@ -57,9 +60,15 @@ function index() {
               textColor="text-gray-700"
               className="text-slate-500"
             >
-              'All events/meetings are live streamed to all AsyncAPI social
+              “All events/meetings are live streamed to all AsyncAPI social
               media accounts. To learn more about meetings setup and automation
-              read our FAQ.'
+              <TextLink
+                href="https://github.com/asyncapi/community/blob/master/MEETINGS_ORGANIZATION.md"
+                target="_blank"
+              >
+                read our FAQ
+              </TextLink>
+              .”
             </Heading>
           </div>
         </div>
@@ -201,6 +210,14 @@ function index() {
             </ul>
           )}
         </div>
+      </div>
+      <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg">
+        <NewsletterSubscribe
+          dark={true}
+          type="meetings-email"
+          title="Get a weekly email in your inbox"
+          subtitle="You'll receive a weekly email with a summary of all the planned meetings for this week."
+        />
       </div>
     </GenericLayout>
   );
