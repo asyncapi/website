@@ -178,6 +178,6 @@ Because the AsyncAPI Conference happens yearly, it means there will be another o
 
 ## Wrap up
 
-I am truly honored that the community "come together." This was 100% done with the community in mind, and each party involved in the conference has been thoughtfully and intentionally positioned to ensure that the project is successful! Cheers to that success!
+I am truly honored that the community "came together." This was 100% done with the community in mind, and each party involved in the conference has been thoughtfully and intentionally positioned to ensure the project is successful! Cheers to that success!
 
 We had a great time and learned a lot from this year's conference thanks to everyone who attended, was involved and got behind AsyncAPI in putting this event on. We value and appreciate each and every one of you for making it a blast, and we can't wait to see you all next year. 
