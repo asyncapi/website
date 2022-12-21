@@ -12,7 +12,7 @@ const categoryList = [
     },
     {
         name: "Code Generators",
-        tag: "code generator",
+        tag: "code-generator",
         description: "The following is a list of tools that generate code from an AsyncAPI document; not the other way around."
     },
     {
@@ -27,7 +27,7 @@ const categoryList = [
     },
     {
         name: "Documentation Generators",
-        tag: "documentation generator",
+        tag: "documentation-generator",
         description: "The following is a list of tools that generate human-readable documentation from an AsyncAPI document."
     },
     {
@@ -37,7 +37,7 @@ const categoryList = [
     },
     {
         name: "UI components",
-        tag: "ui component",
+        tag: "ui-component",
         description: "The following is a list of UI components to view AsyncAPI documents."
     },
     {
@@ -57,7 +57,7 @@ const categoryList = [
     },
     {
         name: "Mocking and Testing",
-        tag: "mocking and testing",
+        tag: "mocking-and-testing",
         description: "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas."
     },
     {
