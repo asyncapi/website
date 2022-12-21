@@ -49,7 +49,7 @@
       "resourcePath": "/asyncapi/website/pull/1005",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 24.697014632436254
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -60,7 +60,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 24.409840043686994
     },
     {
       "id": "PR_kwDOBW5R_c5AyxaN",
@@ -71,7 +71,7 @@
       "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 23.26114168868996
+      "score": 23.835490866188476
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -129,17 +129,6 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOCoBobc4xN9Px",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: throw meaningful errors",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/parser-js/pull/449",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 19.815046623698855
-    },
-    {
       "id": "PR_kwDOBW5R_c4-vMid",
       "isPR": true,
       "isAssigned": false,
@@ -148,40 +137,21 @@
       "resourcePath": "/asyncapi/website/pull/940",
       "repo": "asyncapi/website",
       "labels": [],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "PR_kwDOBW5R_c5DWzbr",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: ambassador program page",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/pull/1123",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 19.527872034949596
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOBGu-185ZLGtq",
-      "title": "Cleanup readme with icons of sponsors",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/883",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5XfhdE",
-      "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/873",
-      "repo": "asyncapi/generator",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
     {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
@@ -390,10 +360,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -458,6 +424,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
