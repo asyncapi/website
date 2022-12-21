@@ -1,14 +1,26 @@
 import Link from 'next/link';
 
-function isActiveSlug(slug, activeSlug) {
+function isCurrentSlugTheActiveSlug(slug, activeSlug) {
+  return slug === activeSlug;
+}
+
+function isActiveSlug(slug, activeSlug, sectionSlug) {
+  if(slug === '/docs') {
+    return isCurrentSlugTheActiveSlug(slug, activeSlug);
+  }
+  
+  if(sectionSlug !== undefined && slug === sectionSlug) {
+    return isCurrentSlugTheActiveSlug(slug, activeSlug);
+  }
+  
   const partialSlug = slug.split('/');
   const partialActiveSlug = activeSlug.split('/');
   const activeParts = partialActiveSlug.filter((a, idx) => a === partialSlug[idx]);
   return activeParts.length === partialSlug.length;
 }
 
-export default function DocsNavItem({ title, slug, href, indexDocument, activeSlug, onClick = () => {}, defaultClassName = '', inactiveClassName = '', activeClassName = '', bucket }) {
-  const isActive = slug === '/docs' || indexDocument ? slug === activeSlug : isActiveSlug(slug, activeSlug);
+export default function DocsNavItem({ title, slug, href, indexDocument, activeSlug, sectionSlug, onClick = () => {}, defaultClassName = '', inactiveClassName = '', activeClassName = '', bucket }) {
+  const isActive = isActiveSlug(slug, activeSlug, sectionSlug);
   const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block`;
 
   return (
