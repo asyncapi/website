@@ -27,7 +27,7 @@ export default function ToolsCard({ toolData }) {
           <div className="flex gap-4 justify-between w-full">
             <Heading typeStyle="heading-sm-semibold">{toolData.title}</Heading>
             <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit h-fit rounded-md'>
-              {toolData.filters.hasCommercial === false ? 'FREE' : 'PAID'}
+              {toolData.filters.hasCommercial === false ? 'Open Source' : 'Commercial'}
             </div>
           </div>
           <div className='relative'>

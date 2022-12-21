@@ -18,7 +18,7 @@ export default function ToolDashboard() {
     // useEffect function to enable the close Modal feature when clicked outside of the modal
     useEffect(() => {
         const checkIfClickOutside = (e) => {
-            if ((openFilter.filter && filterRef.current && !filterRef.current.contains(e.target)))
+            if ((openFilter && filterRef.current && !filterRef.current.contains(e.target)))
                 setOpenFilter(false)
         }
         document.addEventListener("mousedown", checkIfClickOutside)
