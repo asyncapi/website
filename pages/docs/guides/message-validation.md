@@ -16,7 +16,7 @@ To understand message validation, we must first understand the basic components 
 Message validation can occur in different places in your system. This guide highlights three of those:
 - Both producers and consumers can do validation internally in runtime.
 - Validation of the message can be handled by API Gateway
-- Validation of messages can be a native solution implemented by the broker.
+- Validation of messages can be a native solution implemented by the schema registry.
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 Let's further break down how validation works for all.
 
@@ -64,10 +64,10 @@ graph TD
 The AsyncAPI document is important in this case because payload schemas are taken from it and messages as validated against it in your application.
 You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
-### Validation handled by the broker
-As producers and consumers do not communicate with each other directly, but rather information transfer happens via Kafka topic. At the same time, the consumer still needs to know the type of data the producer is sending. Imagine if the producer starts sending bad data to Kafka or if the data type of your data gets changed. We need a way to have a common data type that must be agreed upon.
+### Validation using Schema Registry
+As producers and consumers do not communicate with each other directly, but rather information transfer happens via Kafka. At the same time, the consumer still needs to know the type of data the producer is sending. Imagine if the producer starts sending bad data to Kafka or if the data type of your data gets changed. We need a way to have a common data type that must be agreed upon.
 
-That’s where Schema Registry comes into the picture. It is an application that resides outside of your Kafka cluster and handles the distribution of schemas to the producer and consumer by storing a copy of schema in its local cache.
+This is where Schema Registry comes into play. It is an application that runs outside of your Kafka and handles schema distribution to producers and consumers by storing a copy of the schema in its local cache and validating them in Kafka.
 
 With the schema registry in place, the producer first talks to the schema registry and checks if the schema is available before sending the data to Kafka. If it cannot locate the schema, it registers and caches it in the schema registry. When the producer receives the schema,to sends it to Kafka prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the schema registry using the schema ID obtained from the producer. If there is a schema mismatch, the schema registry will throw an error, informing the producer that it is violating the schema agreement.
 
