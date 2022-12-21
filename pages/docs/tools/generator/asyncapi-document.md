@@ -85,3 +85,20 @@ In the sample code snippet below, notice how you can access the contents of the 
 ```
 
 > To learn about the various instances you can use to access the documents' content, look at the API of the AsyncAPI JavaScript Parser and the structure of [AsyncAPIDocument](https://github.com/asyncapi/parser-js/blob/master/API.md#module_@asyncapi/parser+AsyncAPIDocument)
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/usage',
+      title: 'Usage',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/template',
+      title: 'Template',
+      type:'next',
+    }
+  ]}
+/>

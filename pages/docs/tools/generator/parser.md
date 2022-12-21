@@ -94,3 +94,19 @@ graph TD
 
 > To learn more about the Parser and access all of its features, check out the AsyncAPI [Parser’s GitHub repository](https://github.com/asyncapi/parser-js).
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/template',
+      title: 'Template',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/versioning',
+      title: 'Generator version vs template version',
+      type:'next',
+    }
+  ]}
+/>

@@ -71,3 +71,20 @@ Template Name | Description | Source code
 
 > Check out all our community [generator templates](https://github.com/search?q=topic%3Aasyncapi+topic%3Agenerator+topic%3Atemplate)
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/asyncapi-document',
+      title: 'AsyncAPI document',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/parser',
+      title: 'Parser',
+      type:'next',
+    }
+  ]}
+/>
+

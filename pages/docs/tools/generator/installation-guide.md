@@ -79,3 +79,20 @@ npm uninstall @asyncapi/cli -g
 Use the generator library in your Node.js projects by installing it via the following command: `npm install @asyncapi/generator`.
 
 > Don't include the `-g` flag in the installation command above since you're not installing the generator library globally but in your Node.js project.
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/',
+      title: 'Introduction',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/usage',
+      title: 'Usage',
+      type:'next',
+    }
+  ]}
+/>

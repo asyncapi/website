@@ -75,4 +75,20 @@ There are some template parameters that have a special meaning:
 |---|---|
 |`server`| It is used to let the template know which server from the AsyncAPI specification file you want to use. In some cases, this may be required. For instance, when generating code that connects to a specific server. Use this parameter in case your template relies on users' information about what server from the specification file they want to use during generation. You also need this parameter if you want to use `server.protocol` notation within `conditionalFiles` configuration option. Once you decide to specify this parameter for your template, it is recommended you make it a mandatory parameter otherwise a feature like `conditionalFiles` is not going to work if your users do not use this parameter obligatory.
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/template-development',
+      title: 'Template development',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/template-context',
+      title: 'Template context',
+      type:'next',
+    }
+  ]}
+/>
 

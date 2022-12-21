@@ -51,3 +51,20 @@ graph LR
   D --> K[Anything else]
   ```
 **`params`** are template-specific options passed to the `asyncapi generate fromTemplate` CLI command to customize the generated output.
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/',
+      title: 'Overview',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/installation-guide',
+      title: 'Installation guide',
+      type:'next',
+    }
+  ]}
+/>

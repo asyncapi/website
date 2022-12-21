@@ -149,3 +149,20 @@ try {
 ```
 
 See the [API documentation](api.md) for more examples and full API reference information.
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/installation-guide',
+      title: 'Installation guide',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/asyncapi-document',
+      title: 'AsyncAPI document',
+      type:'next',
+    }
+  ]}
+/>

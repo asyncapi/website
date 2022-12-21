@@ -75,4 +75,20 @@ async function asyncCamelCase(str, callback) {
 
 In case you have more than one template and want to reuse filters, you can put them in a single library. You can configure such a library in the template configuration under `filters` property. You can also use the official AsyncAPI [filters library](https://github.com/asyncapi/generator-filters). To learn how to add such filters to configuration [read more about the configuration file](#configuration-file).
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/react-render-engine',
+      title: 'React render engine',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/hooks',
+      title: 'Hooks',
+      type:'next',
+    }
+  ]}
+/>
 

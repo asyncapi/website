@@ -39,3 +39,20 @@ The extra context passed to the render engine during the generation process and 
 - **`originalAsyncAPI`** is a stringified version of the original AsyncAPI document that the user passed to the Generator.
 - **`asyncapi`** is a parsed AsyncAPI document with helper functions and properties. You should use it to access document contents e.g `asyncapi.title`.
 - **`params`** is an object with all the parameters passed to the Generator by the user.
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/configuration-file',
+      title: 'Configuration file',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/react-render-engine',
+      title: 'React render engine',
+      type:'next',
+    }
+  ]}
+/>

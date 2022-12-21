@@ -77,4 +77,21 @@ With React, it enables you to debug your templates. For Visual Studio Code, we h
 
 Now replace `./asyncapi.yml` with your document of choice. Replace `./template` with the path to your React template. You can now debug your template by adding any breakpoints you want and inspect your code.
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/template-context',
+      title: 'Template context',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/nunjucks-render-engine',
+      title: 'Nunjucks render engine',
+      type:'next',
+    }
+  ]}
+/>
+
 

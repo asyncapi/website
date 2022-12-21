@@ -79,3 +79,20 @@ module.exports = {
 	};
 };
 ```
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/nunjucks-render-engine',
+      title: 'Nunjucks render engine',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/file-templates',
+      title: 'File templates',
+      type:'next',
+    }
+  ]}
+/>

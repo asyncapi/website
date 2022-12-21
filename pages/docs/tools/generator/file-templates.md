@@ -65,3 +65,20 @@ export default function({ asyncapi }) {
   ]
 }
 ```
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/hooks',
+      title: 'Hooks',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/typescript-support',
+      title: 'TypeScript support',
+      type:'next',
+    }
+  ]}
+/>

@@ -342,3 +342,20 @@ const content = await Generator.getTemplateFile('@asyncapi/html-template', 'part
 const Generator = require('@asyncapi/generator');
 const content = await Generator.getTemplateFile('@asyncapi/html-template', 'partials/content.html', '~/my-templates');
 ```
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/versioning',
+      title: 'Generator version vs template version',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/template-development',
+      title: 'Template development',
+      type:'next',
+    }
+  ]}
+/>

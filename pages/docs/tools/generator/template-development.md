@@ -151,3 +151,20 @@ The updated template looks like the following:
 <Text>App name: **{ asyncapi.info().title() }**</Text>
 <Text>Version: **{asyncapi.info.version()}**</Text>
 ```
+
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/api',
+      title: 'Library API',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/configuration-file',
+      title: 'Configuration file',
+      type:'next',
+    }
+  ]}
+/>

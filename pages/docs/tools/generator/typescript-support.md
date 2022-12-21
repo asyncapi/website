@@ -10,4 +10,20 @@ The AsyncAPI generator has TypeScript support for [hooks](#hooks) and Nunjucks's
 - Each package related to the typings for TypeScript like `@types/node` must be installed in the template under `dependencies` array. This is because the Generator transpiles the TypeScript code on-the-fly while rendering the template, and cannot use packages under `devDependencies`.
 - Each template should have `@types/node` package installed to enable support for typings for Node.
 
+---
+
+<DocsButton
+  suggestions={[
+    {
+      href: '/docs/tools/generator/file-templates',
+      title: 'File templates',
+      type:'back',
+    },
+    {
+      href: '/docs/tools/generator/special-file-names',
+      title: 'Special file names',
+      type:'next',
+    }
+  ]}
+/>
 
