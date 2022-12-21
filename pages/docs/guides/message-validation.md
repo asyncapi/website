@@ -69,10 +69,6 @@ As producers and consumers do not communicate with each other directly, but rath
 
 That’s where Schema Registry comes into the picture. It is an application that resides outside of your Kafka cluster and handles the distribution of schemas to the producer and consumer by storing a copy of schema in its local cache.
 
-```mermaid
-graph LR
-    A([Producer]) --->|send schemaID| B(Schema Registry) & C{Kafka Cluster}--->|recieve schemaID| D([Consumer])
-```
 With the schema registry in place, the producer first talks to the schema registry and checks if the schema is available before sending the data to Kafka. If it cannot locate the schema, it registers and caches it in the schema registry. When the producer receives the schema,to sends it to Kafka prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the schema registry using the schema ID obtained from the producer. If there is a schema mismatch, the schema registry will throw an error, informing the producer that it is violating the schema agreement.
 
 ```mermaid
