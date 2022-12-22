@@ -60,7 +60,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
           />
         </div>
         :
-        <div className="text-gray-700">
+        <div className="mt-2 text-gray-700">
           There are no meetings scheduled for next few days.
         </div>
       }
