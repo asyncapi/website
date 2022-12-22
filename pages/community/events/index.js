@@ -102,25 +102,6 @@ function index() {
             </a>
           </div>
         </div>
-        {/* <div className="h-full mt-10 sm:mt-0 w-full sm:w-[43%] bg-secondary-600 rounded-md flex">
-          <div className="w-[50%] h-full hidden sm:flex sm:flex-col">
-            <div className="h-[50%] bg-officeHourCover bg-center bg-cover rounded-tl-md"></div>
-            <div className="h-[50%]  bg-patternCover bg-center bg-cover rounded-bl-md" />
-          </div>
-          <div className="text-white w-full sm:w-[50%] p-5 flex flex-col items-center justify-center h-full">
-            <div>
-              <Heading level="h2" typeStyle="heading-md-semibold">
-                Start a discussion with Technical Steering Committee members
-              </Heading>
-              <Button
-                className="block md:inline-block focus:outline-none mt-10 bg-black text-center sm:text-left"
-                text="Create TSC discussion"
-                href="https://github.com/orgs/asyncapi/discussions"
-                target="_blank"
-              />
-            </div>
-          </div>
-        </div> */}
       </div>
       <div className="mt-20">
         <div className="sm:flex justify-between items-center">
