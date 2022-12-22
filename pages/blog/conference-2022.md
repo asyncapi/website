@@ -55,9 +55,11 @@ AsyncAPI also had significant women speakers & stream hosts. Isn't this an impor
 ## A sneak peek
 
 The AsyncAPI conference was so great that some of the sessions were not all technical; we had sessions where folks talked about their journey into Opensource and shared their experiences as a part of the AsyncAPI community.
-<YouTube id="SB15GgnEocE" />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLbi1gRlP7pih0-GkQeQnkI_pQrTwlKrXZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 We've carefully curated this type of session for you, and it can be found in this youtube playlist called [Inspire & Aspire with AsyncAPI](https://www.youtube.com/playlist?list=PLbi1gRlP7pih0-GkQeQnkI_pQrTwlKrXZ).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 We also have all sessions from the conference recorded and available publicly. Feel free to check it out and share [AsyncAPI Conf 2022](https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl).
 
