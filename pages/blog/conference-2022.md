@@ -1,6 +1,6 @@
 ---
 title: "2022 AsyncAPI Conference was amazing!"
-date: 2022-12-19T10:00:00+01:00
+date: 2022-12-23T10:00:00+01:00
 type: Conference
 tags:
   - Conference
@@ -51,6 +51,15 @@ But hold on, we celebrated too early because two weeks after the conference, the
 - Day 3 views grew to 400
 
 AsyncAPI also had significant women speakers & stream hosts. Isn't this an important move in the right direction for true diversity?
+
+## A sneak peek
+
+The AsyncAPI conference was so great that some of the sessions were not all technical; we had sessions where folks talked about their journey into Opensource and shared their experiences as a part of the AsyncAPI community.
+<YouTube id="SB15GgnEocE" />
+
+We've carefully curated this type of session for you, and it can be found in this youtube playlist called [Inspire & Aspire with AsyncAPI](https://www.youtube.com/playlist?list=PLbi1gRlP7pih0-GkQeQnkI_pQrTwlKrXZ).
+
+We also have all sessions from the conference recorded and available publicly. Feel free to check it out and share [AsyncAPI Conf 2022](https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl).
 
 ## Meet the heroes 
 
@@ -110,14 +119,14 @@ Special thanks to Restream for supporting us with their amazing product for medi
     link: 'https://github.com/dalelane'
   },
   {
+    name: 'Deepak Verma',
+    avatar: 'https://avatars.githubusercontent.com/deepaknverma',
+    link: 'https://github.com/deepaknverma'
+  },
+  {
     name: 'Fran Méndez',
     avatar: 'https://avatars.githubusercontent.com/fmvilas',
     link: 'https://github.com/fmvilas'
-  },
-    {
-    name: 'Jeremy Whitlock',
-    avatar: 'https://avatars.githubusercontent.com/whitlockjc',
-    link: 'https://github.com/whitlockjc'
   },
   {
     name: 'Karuna Tata',
@@ -134,6 +143,16 @@ Special thanks to Restream for supporting us with their amazing product for medi
     avatar: 'https://avatars.githubusercontent.com/derberg',
     link: 'https://github.com/derberg'
   },
+    {
+    name: 'Maciej Urbańczyk',
+    avatar: 'https://avatars.githubusercontent.com/magicmatatjahu',
+    link: 'https://github.com/magicmatatjahu'
+  },
+  {
+    name: 'Missy Turco',
+    avatar: 'https://avatars.githubusercontent.com/mcturco',
+    link: 'https://github.com/mcturco'
+  },
   {
     name: 'Sergio Moya',
     avatar: 'https://avatars.githubusercontent.com/smoya',
@@ -148,7 +167,12 @@ Special thanks to Restream for supporting us with their amazing product for medi
     name: 'V Thulisile Sibanda',
     avatar: 'https://avatars.githubusercontent.com/thulieblack',
     link: 'https://github.com/thulieblack'
-  }
+  },
+  {
+    name: 'WeeProducciones',
+    avatar: 'https://avatars.githubusercontent.com/WeeProducciones',
+    link: 'https://github.com/WeeProducciones'
+  },
 ]} />
 
 ## A glance at the budget
