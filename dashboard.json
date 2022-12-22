@@ -14,7 +14,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 47.95815632112621
+      "score": 51.11707679736806
     },
     {
       "id": "I_kwDOBW5R_c47-31p",
@@ -41,42 +41,15 @@
       "score": 44.512061256135105
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 39.91726783614697
-    },
-    {
-      "id": "PR_kwDOCHlHJM4_rG5j",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: provide docs content for template",
-      "author": "pratik2315",
-      "resourcePath": "/asyncapi/generator/pull/843",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 25.845712987433288
-    },
-    {
-      "id": "PR_kwDOFLhIt849RhNn",
+      "id": "PR_kwDOBW5R_c5ARCuj",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: docs folder for new asyncapi community section",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/community/pull/442",
-      "repo": "asyncapi/community",
+      "title": "docs: new guide for message validation",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1005",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 22.399617922442182
+      "score": 27.28158593117958
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -87,7 +60,73 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 21.825268744943667
+      "score": 24.409840043686994
+    },
+    {
+      "id": "PR_kwDOBW5R_c5AyxaN",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.122665454937735
+    },
+    {
+      "id": "PR_kwDOFLhIt849RhNn",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: docs folder for new asyncapi community section",
+      "author": "Dule-martins",
+      "resourcePath": "/asyncapi/community/pull/442",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.68679251119144
+    },
+    {
+      "id": "PR_kwDOBW5R_c4-vMid",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: added new /tools page",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/940",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 22.112443333692923
+    },
+    {
+      "id": "PR_kwDOFLhIt85AY9Ib",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOBW5R_c5AL1kI",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new guide for validation of AsyncAPI files",
+      "author": "Annysah",
+      "resourcePath": "/asyncapi/website/pull/1002",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOFdFGUs4x5bH2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Video 2 - draft script",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/training/pull/9",
+      "repo": "asyncapi/training",
+      "labels": [],
+      "score": 21.25091956744515
     },
     {
       "id": "PR_kwDOFXtyC849zwGo",
@@ -101,72 +140,15 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDODCuNRs5CojIa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: apache Pulsar bindings",
-      "author": "VisualBean",
-      "resourcePath": "/asyncapi/bindings/pull/173",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOCoBobc4xN9Px",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: throw meaningful errors",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/parser-js/pull/449",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 19.815046623698855
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
+      "id": "PR_kwDOBW5R_c5DWzbr",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 19.527872034949596
-    },
-    {
-      "id": "PR_kwDOBW5R_c5CDXVB",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "feat: added all required sub pages UI for the community section",
+      "title": "feat: ambassador program page",
       "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/pull/1071",
+      "resourcePath": "/asyncapi/website/pull/1123",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 17.804824502454043
-    },
-    {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 17.804824502454043
+      "score": 20.38939580119737
     }
   ],
   "goodFirstIssues": [
@@ -182,21 +164,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5WV_4D",
-      "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/195",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
         }
       ]
     },
@@ -254,21 +221,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385T6fcd",
-      "title": "Add example to generate all models within the same file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/949",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOB5hCo85Ttv6g",
       "title": "Traits can be defined as double arrays",
       "isAssigned": false,
@@ -318,21 +270,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEtVKb85TDMpe",
-      "title": "unnecessary assertion since it does not change the type of the expression.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator-react-sdk/issues/154",
-      "repo": "asyncapi/generator-react-sdk",
-      "author": "AceTheCreator",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
         }
       ]
     },
@@ -393,21 +330,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5KrRV3",
-      "title": "Add to TSC page link to YT video that explains how to join TSC",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/809",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
         }
       ]
     },
@@ -487,6 +409,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
