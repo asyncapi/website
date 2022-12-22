@@ -1,16 +1,8 @@
 import Link from 'next/link';
 
-function isEqual(currentSlug, activeSlug) {
-  return currentSlug === activeSlug;
-}
-
 function isActiveSlug(slug, activeSlug, sectionSlug) {
-  if(slug === '/docs') {
-    return isEqual(slug, activeSlug);
-  }
-  
-  if(sectionSlug !== undefined && slug === sectionSlug) {
-    return isEqual(slug, activeSlug);
+  if(slug === '/docs' || (sectionSlug !== undefined && slug === sectionSlug)) {
+    return (slug == activeSlug)
   }
   
   const partialSlug = slug.split('/');
