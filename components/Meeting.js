@@ -30,7 +30,11 @@ export default function Meeting({
           <Paragraph typeStyle="body-md" className="my-4">
             <strong>Host:</strong>
             {hostProfile ? (
-              <TextLink href={hostProfile} target="_blank">
+              <TextLink
+                href={hostProfile}
+                target="_blank"
+                className="hover:text-primary-500"
+              >
                 {host}
               </TextLink>
             ) : (

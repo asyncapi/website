@@ -93,10 +93,7 @@ module.exports = {
       tutorialCover: "url('/img/homepage/tutorials.png')",
       usecases: "url('/img/homepage/usecases.png')",
       roadmapCover: "url('/img/homepage/roadmap.png')",
-      officeHourCover:
-        "url('https://images.pexels.com/photos/7388883/pexels-photo-7388883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       confBg: "url('/img/homepage/confBlurBg.png')",
-      patternCover: "url('/img/illustrations/pattern.png')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],

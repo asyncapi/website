@@ -335,3 +335,7 @@ abbr[title] {
   display: block;
   color: white;
 }
+
+.meeting-card:hover > div:nth-child(2) > p  {
+  color: white;
+}

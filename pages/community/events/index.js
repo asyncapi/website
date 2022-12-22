@@ -74,8 +74,8 @@ function index() {
         </div>
         <hr className="mt-20 border-dotted border-t-2 border-black " />
       </div>
-      <div className="mt-24 sm:flex justify-between items-center h-auto sm:h-[400px]">
-        <div className="w-full sm:w-[55%] h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
+      <div className="mt-24 w-full h-auto sm:h-[400px]">
+        <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
           <img
             src="/img/logos/conflogo.png"
             alt="conf-logo"
@@ -85,7 +85,7 @@ function index() {
             <Heading
               level="h2"
               typeStyle="heading-sm-semibold"
-              className="mt-10"
+              className="mt-10 lg:text-2xl"
             >
               Watch the AsyncAPI 2022 conference recordings from anywhere around
               the world for free
@@ -102,7 +102,7 @@ function index() {
             </a>
           </div>
         </div>
-        <div className="h-full mt-10 sm:mt-0 w-full sm:w-[43%] bg-secondary-600 rounded-md flex">
+        {/* <div className="h-full mt-10 sm:mt-0 w-full sm:w-[43%] bg-secondary-600 rounded-md flex">
           <div className="w-[50%] h-full hidden sm:flex sm:flex-col">
             <div className="h-[50%] bg-officeHourCover bg-center bg-cover rounded-tl-md"></div>
             <div className="h-[50%]  bg-patternCover bg-center bg-cover rounded-bl-md" />
@@ -120,17 +120,42 @@ function index() {
               />
             </div>
           </div>
+        </div> */}
+      </div>
+      <div className="mt-20">
+        <div className="sm:flex justify-between items-center">
+          <Heading level="h2" typeStyle="heading-md">
+            All Events
+          </Heading>
+          <div className="mt-5 sm:mt-0">
+            <EventFilter data={meetings} setData={setEvents} />
+          </div>
+        </div>
+        <div className="mt-10">
+          {!events || events.length === 0 ? (
+            <div className="flex content-center justify-center">
+              <Paragraph typeStyle="body-md" className="mt-5 max-w-2xl mx-auto">
+                No Events. Check back later!
+              </Paragraph>
+            </div>
+          ) : (
+            <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {events.map((event, i) => {
+                return <EventPostItem key={i} post={event} />;
+              })}
+            </ul>
+          )}
         </div>
       </div>
       <div className="mt-24">
         <div className="lg:flex lg:justify-between">
           <div className="lg:w-[30%]">
             <Heading level="h2" typeStyle="heading-md">
-              Featured Events
+              Event Types
             </Heading>
             <Paragraph typeStyle="body-md" className="mt-4">
               Explore over 100s of AsyncAPI's livestreams specifically curated
-              for you
+              for you.
             </Paragraph>
           </div>
           <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
@@ -184,31 +209,6 @@ function index() {
               youtube="https://www.youtube.com/asyncapi"
             />
           </div>
-        </div>
-      </div>
-      <div className="mt-20">
-        <div className="sm:flex justify-between items-center">
-          <Heading level="h2" typeStyle="heading-md">
-            More Events
-          </Heading>
-          <div className="mt-5 sm:mt-0">
-            <EventFilter data={meetings} setData={setEvents} />
-          </div>
-        </div>
-        <div className="mt-10">
-          {!events || events.length === 0 ? (
-            <div className="flex content-center justify-center">
-              <Paragraph typeStyle="body-md" className="mt-5 max-w-2xl mx-auto">
-                No Events. Check back later!
-              </Paragraph>
-            </div>
-          ) : (
-            <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {events.map((event, i) => {
-                return <EventPostItem key={i} post={event} />;
-              })}
-            </ul>
-          )}
         </div>
       </div>
       <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg">
