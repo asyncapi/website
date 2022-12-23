@@ -82,20 +82,3 @@ There are many more security schemes. Learn more about them <Link href="/docs/re
 You're now able to define what security mechanisms your application needs to connect to the server. You've seen how to define the requirement of a user and a password, which is the most common use case.
 
 At this point, you know AsyncAPI well enough to create a simple `Hello world application`. However, real use cases are more complicated than that. The following tutorials can teach you how to create real-world use cases, from zero to production.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/servers',
-      title: 'Servers',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/streetlights-interactive',
-      title: 'Streetlights - Interactive (Alpha)',
-      type:'next',
-    }
-  ]}
-/>
