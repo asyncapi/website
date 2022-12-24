@@ -1,14 +1,15 @@
+id: adeogroup
 company:
   name: Adeo Group
-  description: Owning different brands in retail industry focused on home improvement and DIY markets, like Leroy Merlin.
+  description: Adeo owns different brands in retail industry focused on home improvement and DIY markets, like Leroy Merlin.
   customers: 500M
   industry: Retail
-  revenue: 25.6B EURO turnover, including 768M EURO online
+  revenue: 25.6B EURO turnover, including 768M EURO online.
   website: https://www.adeo.com/
-  logo: https://www.adeo.com/assets-adeo/themes/adeo-refonte/dist/assets/images/logo-adeo-v3.svg
+  logo: /img/casestudies/adeo/logo.svg
   contact:
     - name: Ludovic Dussart
-      twitter: ldussart
+      link: https://twitter.com/ldussart
 challenges: |
     Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
 
@@ -93,7 +94,7 @@ schemas:
   storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
   registry: Confluent Schema Registry.
   versioning: Versioning is based on git tags. Schema version pushed to Confluent Schema Registry match the git tag version of the product. Every schema has a `version` information, that match with product tag version.
-  validation: Based on validation on a broker level using Confluent Schema Registry.
+  validation: Based on validation using Confluent Schema Registry.
 asyncapi:
   usecase: |
     Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from machine-readable document that describes the API.
@@ -101,13 +102,21 @@ asyncapi:
   versions:
     - 2.4.0
   storage: Git repository where source code is.
-  maintainers:
-    Developers
+  maintainers: Developers
   editing: IntelliJ without any special plugins. Sometimes people use AsyncAPI Studio, but not regularly because of lack of support for references to local drive.
   audience:
     internal: true
     external: false
-  extensions: null
+  extensions: |
+    Extensions are used to describe details about custom security:
+    ```yml
+      x-sasl.jaas.config: >-
+        org.apache.kafka.common.security.plain.PlainLoginModule required
+        username="<CLUSTER_API_KEY>" password="<CLUSTER_API_SECRET>";
+      x-security.protocol: SASL_SSL
+      x-ssl.endpoint.identification.algorithm: https
+      x-sasl.mechanism: PLAIN
+    ````
   documentation: |
     Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
     Publishing is part of CI/CD pipeline for the product using GithubActions.
@@ -254,15 +263,9 @@ asyncapi:
             $ref: "https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/CostingResponseKey.avsc"
       ```
 
-  tools:
-    generator:
-      templates:
-        '@asyncapi/html':
-          parameters:
-           - sidebarOrganization=byTags
-           - version
-    parser:
-      plugins: 
-       - avro-schema-parser
-  fullExample: https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml
+  tools: |
+    * [AsyncAPI Generator](https://github.com/asyncapi/generator):
+      * [HTML Template](https://github.com/asyncapi/html-template) with parameters like `sidebarOrganization=byTags` and `version`.
+    * [AsyncAPI JavaScript Parser](https://github.com/asyncapi/parser-js) with [Avro Schema Parser](https://github.com/asyncapi/avro-schema-parser).
+  fullExample: resources/casestudies/adeo/asyncapi.yaml
 additionalResources: Watch [this video presentation about AsyncAPI case study](https://www.youtube.com/watch?v=WwhRbvrf6Rs) from Ludovic Dussart, Ineat & Antoine Delequeuche, Adeo.
