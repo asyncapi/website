@@ -1,8 +1,13 @@
 const { languagesColor, technologiesColor } = require("./tags-color")
 const { categoryList } = require("./categorylist.js")
+const { createToolObject } = require("./tools-object")
 const fs = require('fs')
+const schema = require("./tools-schema.json");
+const Ajv = require("ajv")
 const { resolve } = require('path');
 const Fuse = require("fuse.js")
+const ajv = new Ajv()
+const validate = ajv.compile(schema)
 
 let finalTools = {};
 for (var category of categoryList) {
@@ -84,7 +89,21 @@ const combineTools = async (automatedTools, manualTools) => {
         }
         if (manualTools[key] && manualTools[key].toolsList.length) {
             for (const tool of manualTools[key].toolsList) {
-                finalToolsList.push(await getFinalTool(tool))
+                let isAsyncAPIrepo;
+                const isValid = await validate(tool)
+                if(isValid) {
+                    if(tool?.links?.repoUrl){
+                        const url = new URL(tool.links.repoUrl)
+                        isAsyncAPIrepo = url.href.startsWith("https://github.com/asyncapi/")
+                    }else isAsyncAPIrepo = false
+                    let toolObject = await createToolObject(tool, "", "", isAsyncAPIrepo)
+                    finalToolsList.push(await getFinalTool(toolObject))
+                }else{
+                    console.error('Script is not failing, it is just dropping errors for further investigation');
+                    console.error(`Invalid ${tool.title} .asyncapi-tool file.`);
+                    console.error(`Located in manual-tools.json file`);
+                    console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
+                }
             }
         }
         finalTools[key].toolsList = finalToolsList

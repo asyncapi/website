@@ -5,7 +5,119 @@
     },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Go AsyncAPI",
+                "description": "This library helps to create AsyncAPI spec from your Go message structures. It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema.",
+                "links": {
+                    "repoUrl": "https://github.com/swaggest/go-asyncapi"
+                },
+                "filters": {
+                    "language": "Go",
+                    "technology": [],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Saunter",
+                "description": "Saunter is an AsyncAPI documentation generator for dotnet. Generates (and hosts) an AsyncAPI schema document from your code.",
+                "links": {
+                    "repoUrl": "https://github.com/tehmantra/saunter"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": [".NET", "ASP.NET"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Java AsyncAPI",
+                "description": "This tool stores modules, which simplifies interacting with AsyncAPI in jvm ecosystem.",
+                "links": {
+                    "repoUrl": "https://github.com/Pakisan/jasyncapi"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Kotlin", "Maven"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Kotlin AsyncAPI",
+                "description": "The Kotlin AsyncAPI project aims to provide convenience tools for generating and serving AsyncAPI documentation. The core of this project is a Kotlin DSL for building the specification in a typesafe way.",
+                "links": {
+                    "repoUrl": "https://github.com/OpenFolder/kotlin-asyncapi"
+                },
+                "filters": {
+                    "language": "Kotlin",
+                    "technology": ["Springboot", "Maven"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Springwolf",
+                "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://springwolf.github.io/",
+                    "repoUrl": "https://github.com/springwolf/springwolf-core"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "KnstEventBus",
+                "description": "AsyncApi code-first tools for c#. Generates document and view.",
+                "links": {
+                    "repoUrl": "https://github.com/d0972058277/KnstEventBus"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": ["ASP.NET", ".NET"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "sttp tapir",
+                "description": "Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation",
+                "links": {
+                    "websiteUrl": "https://tapir.softwaremill.com/",
+                    "repoUrl": "https://github.com/softwaremill/tapir"
+                },
+                "filters": {
+                    "language": "Scala",
+                    "technology": [],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "EventBridge Atlas",
+                "description": "Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://eventbridge-atlas.netlify.app/",
+                    "repoUrl": "https://github.com/boyney123/eventbridge-atlas"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Neuroglia AsyncAPI",
+                "description": "A .NET SDK for the Async API specification. Automatically generates and serves AsyncAPI documents based on your code. Includes fluent-builders to create AsyncAPI documents from scratch, and provides a web-based GUI to browse generated documents.",
+                "links": {
+                    "repoUrl": "https://github.com/neuroglia-io/AsyncApi"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": [".NET"],
+                    "categories": ["code-first"]
+                }
+            }
+        ]
     },
     "Code Generators": {
         "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
@@ -29,15 +141,39 @@
                     "repoUrl": "https://gitlab.com/djencks/asyncapi-asciidoc-template"
                 },
                 "filters": {
-                    "language": "javascript",
+                    "language": "JavaScript",
                     "technology": [
                         "react"
                     ],
                     "categories": [
-                        "documentation generator"
+                        "documentation-generator"
                     ],
-                    "hasCommercial": false,
-                    "isAsyncAPIOwner": false
+                    "hasCommercial": false
+                }
+            },
+            {
+                "title": "Springwolf",
+                "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://springwolf.github.io/",
+                    "repoUrl": "https://github.com/springwolf/springwolf-core"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "KnstEventBus",
+                "description": "AsyncApi code-first tools for c#. Generates document and view.",
+                "links": {
+                    "repoUrl": "https://github.com/d0972058277/KnstEventBus"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": ["ASP.NET", ".NET"],
+                    "categories": ["code-first", "documentation-generator"]
                 }
             }
         ]

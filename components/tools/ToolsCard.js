@@ -21,7 +21,7 @@ export default function ToolsCard({ toolData }) {
   else onGit = false
 
   return (
-    <div className="border shadow-md rounded-lg">
+    <div className="border shadow-md flex flex-col rounded-lg">
       <div className="pt-8 px-6 mb-6">
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
@@ -49,7 +49,7 @@ export default function ToolsCard({ toolData }) {
       </div>
       <hr className="mx-6" />
       {(toolData?.filters?.language || toolData?.filters?.technology?.length>0) &&
-        <div className="my-6">
+        <div className="my-6 grow">
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
             <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
             <div className="flex gap-2">
@@ -73,32 +73,29 @@ export default function ToolsCard({ toolData }) {
             </div>
           </div></>}
         </div>}
-      {(toolData.links.repoUrl || toolData.links.websiteUrl) && <>
+      {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
         <hr className="" />
         <div className="flex">
           {onGit ?
-            <a className="w-full text-center py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+            <a className="w-full text-center border-x py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
               <div className="m-auto flex w-fit gap-2">
                 <img src="/img/logos/github-black.svg" className="w-5" />
                 <div className="text-gray-700 text-sm">View on Github</div>
               </div>
             </a> :
-            <a className="w-full text-center py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+            <a className="w-full text-center border-x border-gray-200 py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
               <div className="m-auto flex w-fit gap-2">
                 <div className="text-gray-700 text-sm">View Source Code</div>
               </div>
             </a>
           }
           {toolData.links.websiteUrl && (
-            <>
-              <div className='border border-gray-200 h-auto'></div>
-              <a className="w-full text-center py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/illustrations/icons/share.svg" className="w-5" />
                   <div className="text-gray-700 text-sm">Visit Website</div>
                 </div>
               </a>
-            </>
           )}
         </div>
       </>}

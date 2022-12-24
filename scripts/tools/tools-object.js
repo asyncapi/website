@@ -22,7 +22,7 @@ const fuse = new Fuse(categoryList, options)
 // isAsyncAPIrepo boolean variable to define whether the tool repository is under 
 // AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
 // side to show ToolCard.
-const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
+const createToolObject = async (toolFile, repositoryUrl='', repoDescription='', isAsyncAPIrepo='') => {
   let resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
@@ -120,4 +120,4 @@ async function convertToJson(contentYAMLorJSON) {
   return yaml.parse(contentYAMLorJSON);
 }
 
-module.exports = { convertTools }
+module.exports = { convertTools, createToolObject }
