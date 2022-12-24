@@ -17,30 +17,6 @@
       "score": 51.11707679736806
     },
     {
-      "id": "I_kwDOBW5R_c47-31p",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Create New page for /tools/",
-      "author": "iamVP7",
-      "resourcePath": "/asyncapi/website/issues/383",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 44.512061256135105
-    },
-    {
       "id": "PR_kwDOBW5R_c5ARCuj",
       "isPR": true,
       "isAssigned": true,
@@ -50,6 +26,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 27.28158593117958
+    },
+    {
+      "id": "PR_kwDOBW5R_c5AyxaN",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.697014632436254
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -63,17 +50,6 @@
       "score": 24.409840043686994
     },
     {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 24.122665454937735
-    },
-    {
       "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
       "isAssigned": true,
@@ -83,17 +59,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDOBW5R_c4-vMid",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: added new /tools page",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/pull/940",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
     },
     {
       "id": "PR_kwDOFLhIt85AY9Ib",
@@ -149,9 +114,71 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 20.38939580119737
+    },
+    {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 19.378036838463604
+    },
+    {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 19.240697446200336
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5Z22jm",
+      "title": "when there are no upcoming meeting we should write something and not leave whitespace",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1183",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5Z2zWN",
+      "title": "update subscribe for meetings link on landing page",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1182",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
     {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",

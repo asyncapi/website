@@ -33,6 +33,11 @@
                     "type": "string",
                     "description": "You can provide URL to project documentation in case you have more than just a readme file.",
                     "format": "uri"
+                },
+               "repoUrl": {
+                  "type": "string",
+                  "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository.",
+                  "format": "uri"
                 }
             }
         },
@@ -87,16 +92,16 @@
                         "enum": [
                           "api",
                           "code-first",
-                          "code generator",
+                          "code-generator",
                           "converter",
                           "directory",
-                          "documentation generator",
+                          "documentation-generator",
                           "editor",
-                          "ui component",
+                          "ui-component",
                           "dsl",
                           "framework",
                           "github-actions",
-                          "mocking and testing",
+                          "mocking-and-testing",
                           "validator",
                           "compare-tool",
                           "other",
