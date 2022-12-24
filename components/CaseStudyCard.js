@@ -12,13 +12,11 @@ export default function CaseStudyCard({
           <a key={index} href={`casestudies/${study.id}`}>
             <div className="rounded-md border border-gray-200 overflow-hidden bg-white p-4">
               <span className="inline-block mr-2">                  
-                <a href={study.company.website} target='_blank' rel='noopener noreferrer'>
                   <img
                     className="inline-block sm:h-16"
                     src={study.company.logo}
                     alt={study.company.name}
                   />
-                </a>
               </span>
               <Paragraph typeStyle="body-md" className="my-4">
                   { study.company.description }
