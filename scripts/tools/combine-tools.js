@@ -27,7 +27,7 @@ const options = {
 
 // Two seperate lists and Fuse objects initialised to search languages and technologies tags 
 // from specified list of same.
-let languageList = [...languagesColor], technologyList = [...languagesColor, ...technologiesColor];
+let languageList = [...languagesColor], technologyList = [...technologiesColor];
 let languageFuse = new Fuse(languageList, options), technologyFuse = new Fuse(technologyList, options)
 
 // takes individual tool object and inserts borderColor and backgroundColor of the tags of 

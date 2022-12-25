@@ -24,7 +24,7 @@ export default function ToolsCard({ toolData }) {
   }
 
   return (
-    <div className="border shadow-md flex flex-col rounded-lg">
+    <div className="border shadow-md h-auto flex flex-col rounded-lg">
       <div className="pt-8 px-6 mb-6">
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
@@ -51,8 +51,8 @@ export default function ToolsCard({ toolData }) {
         </div>
       </div>
       <hr className="mx-6" />
-      <div className="my-6 grow">
-        {(toolData?.filters?.language || toolData?.filters?.technology?.length > 0) && <>
+      <div className="grow">
+        {(toolData?.filters?.language || toolData?.filters?.technology?.length > 0) ? <div className="my-6">
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
             <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
             <div className="flex gap-2">
@@ -75,7 +75,10 @@ export default function ToolsCard({ toolData }) {
               ))}
             </div>
           </div>}
-        </>}
+        </div> :
+        <div className="w-full relative p-8 text-center h-full text-gray-700">
+          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'> No Content to Display </div>
+        </div>}
       </div>
         {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
           <hr className="" />

@@ -48,7 +48,7 @@ export default function Filters({setOpenFilter}) {
   }
   
   return (
-    <div className="bg-white z-10 py-4 border rounded-lg border-gray-300 shadow-md">
+    <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
         <div className="flex gap-2 items-baseline justify-between">
           <div className="text-sm text-gray-500 uppercase">Pricing</div>
