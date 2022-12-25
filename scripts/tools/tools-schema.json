@@ -42,7 +42,6 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "technology",
                 "categories"
             ],
             "properties": {

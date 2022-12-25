@@ -10,15 +10,18 @@ export default function ToolsCard({ toolData }) {
   const descriptionRef = useRef(null)
   useEffect(() => {
     let divHeight = descriptionRef.current.offsetHeight;
-    let numberOfLines = divHeight/20;
-    if(numberOfLines > 3) setShowMoreDescription(true)
+    let numberOfLines = divHeight / 20;
+    if (numberOfLines > 3) setShowMoreDescription(true)
     else setShowMoreDescription(false)
   }, [])
 
+
   let onGit = false;
-  const url = new URL(toolData.links.repoUrl)
-  if (url.host == 'github.com') onGit = true
-  else onGit = false
+  if (toolData.links.repoUrl) {
+    const url = new URL(toolData.links.repoUrl)
+    if (url.host == 'github.com') onGit = true
+    else onGit = false
+  }
 
   return (
     <div className="border shadow-md flex flex-col rounded-lg">
@@ -32,12 +35,12 @@ export default function ToolsCard({ toolData }) {
           </div>
           <div className='relative'>
             <Paragraph typeStyle="body-sm">
-              <div ref={descriptionRef} className={`w-full ${showMoreDescription ? 'cursor-pointer': '' }`} onMouseEnter={() =>(setTimeout(() => {if(showMoreDescription) setShowDescription(true)}, 500))}>
-              <TextTruncate
-                element="span"
-                line={3}
-                text={toolData.description}
-              /></div>
+              <div ref={descriptionRef} className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`} onMouseEnter={() => (setTimeout(() => { if (showMoreDescription) setShowDescription(true) }, 500))}>
+                <TextTruncate
+                  element="span"
+                  line={3}
+                  text={toolData.description}
+                /></div>
             </Paragraph>
             {showDescription && <div className="absolute top-0 p-2 z-10 bg-white w-full border border-gray-200 shadow-md" onMouseLeave={() => (setShowDescription(false))}>
               <Paragraph typeStyle="body-sm" className=''>
@@ -48,8 +51,8 @@ export default function ToolsCard({ toolData }) {
         </div>
       </div>
       <hr className="mx-6" />
-      {(toolData?.filters?.language || toolData?.filters?.technology?.length>0) &&
-        <div className="my-6 grow">
+      <div className="my-6 grow">
+        {(toolData?.filters?.language || toolData?.filters?.technology?.length > 0) && <>
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
             <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
             <div className="flex gap-2">
@@ -60,7 +63,7 @@ export default function ToolsCard({ toolData }) {
               />
             </div>
           </div>}
-          {toolData.filters.technology.length > 0 && <><div className="flex flex-col gap-2 my-4 mx-6">
+          {toolData.filters.technology.length > 0 && <div className="flex flex-col gap-2 my-4 mx-6">
             <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
             <div className="flex gap-2 flex-wrap">
               {toolData.filters.technology.map((item, index) => (
@@ -71,34 +74,45 @@ export default function ToolsCard({ toolData }) {
                 />
               ))}
             </div>
-          </div></>}
-        </div>}
-      {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
-        <hr className="" />
-        <div className="flex">
-          {onGit ?
-            <a className="w-full text-center border-x py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
-              <div className="m-auto flex w-fit gap-2">
-                <img src="/img/logos/github-black.svg" className="w-5" />
-                <div className="text-gray-700 text-sm">View on Github</div>
-              </div>
-            </a> :
-            <a className="w-full text-center border-x border-gray-200 py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
-              <div className="m-auto flex w-fit gap-2">
-                <div className="text-gray-700 text-sm">View Source Code</div>
-              </div>
-            </a>
-          }
-          {toolData.links.websiteUrl && (
+          </div>}
+        </>}
+      </div>
+        {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
+          <hr className="" />
+          <div className="flex">
+            {toolData.links.repoUrl && <>
+              {onGit ?
+                <a className="w-full text-center border-x py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+                  <div className="m-auto flex w-fit gap-2">
+                    <img src="/img/logos/github-black.svg" className="w-5" />
+                    <div className="text-gray-700 text-sm">View on Github</div>
+                  </div>
+                </a> :
+                <a className="w-full text-center border-x border-gray-200 py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+                  <div className="m-auto flex w-fit gap-2">
+                    <div className="text-gray-700 text-sm">View Source Code</div>
+                  </div>
+                </a>
+              }
+            </>}
+            {toolData.links.websiteUrl && (
               <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/illustrations/icons/share.svg" className="w-5" />
                   <div className="text-gray-700 text-sm">Visit Website</div>
                 </div>
               </a>
-          )}
-        </div>
-      </>}
-    </div>
-  );
+            )}
+            {toolData.links.docsUrl && (
+              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
+                <div className="m-auto flex w-fit gap-2">
+                  <img src="/img/illustrations/icons/docs-icon.svg" className="w-5" />
+                  <div className="text-gray-700 text-sm">Visit Docs</div>
+                </div>
+              </a>
+            )}
+          </div>
+        </>}
+      </div>
+    );
 }

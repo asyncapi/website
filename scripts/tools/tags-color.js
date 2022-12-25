@@ -129,7 +129,7 @@ const technologiesColor = [
         borderColor: "border-[#2596ED]"
     },
     {
-        name: "Node-red",
+        name: "Node-RED",
         color: "bg-[#FF7474]",
         borderColor: "border-[#8F0101]"
     },

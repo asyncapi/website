@@ -1,7 +1,31 @@
 {
     "APIs": {
         "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI-Directory by APIs.guru",
+                "description": "Directory of asynchronous API specifications in AsyncAPI format.",
+                "links": {
+                    "websiteUrl": "https://apis.guru/asyncapi-directory/",
+                    "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js", "Liquid"],
+                    "categories": ["api", "directory"]
+                }
+            },
+            {
+                "title": "API Tracker - AsyncAPI specs",
+                "description": "Explore APIs and companies with public AsyncAPI specifications.",
+                "links": {
+                    "websiteUrl": "https://apitracker.io/specifications/asyncapi"
+                },
+                "filters": {
+                    "categories": ["api", "directory"]
+                }
+            }
+        ]
     },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
@@ -14,7 +38,6 @@
                 },
                 "filters": {
                     "language": "Go",
-                    "technology": [],
                     "categories": ["code-first"]
                 }
             },
@@ -88,7 +111,6 @@
                 },
                 "filters": {
                     "language": "Scala",
-                    "technology": [],
                     "categories": ["code-first"]
                 }
             },
@@ -121,15 +143,113 @@
     },
     "Code Generators": {
         "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI Generator",
+                "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
+                "links": {
+                    "docsUrl": "https://www.asyncapi.com/docs/tools/generator",
+                    "repoUrl": "https://github.com/asyncapi/generator"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js", "Markdown"],
+                    "categories": ["code-generator", "documentation-generator"]
+                }
+            },
+            {
+                "title": "Node-RED AsyncAPI plugin",
+                "description": "A plugin for generating and configuring nodes for Kafka, MQTT, AMQP, etc. automatically from an AsyncAPI specification.",
+                "links": {
+                    "repoUrl": "https://github.com/dalelane/node-red-contrib-plugin-asyncapi"
+                },
+                "filters": {
+                    "language": "HTML",
+                    "technology": ["Node-RED"],
+                    "categories": ["code-generator"]
+                }
+            },
+            {
+                "title": "MultiAPI Generator",
+                "description": "This is a plugin designed to help developers automatizing the creation of code classes from YML files based on AsyncApi and OpenAPI. It is presented in 2 flavours Maven and Gradle",
+                "links": {
+                    "repoUrl": "https://github.com/corunet/scs-multiapi-plugin"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Groovy", "Maven"],
+                    "categories": ["code-generator"]
+                }
+            }
+        ]
     },
     "Converters": {
         "description": "The following is a list of tools that do not yet belong to any specific category but are also useful for the community.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Converter",
+                "description": "Converts old versions of AsyncAPI files into the latest version.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-js"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Node js"],
+                    "categories": ["converter"]
+                }
+            },
+            {
+                "title": "Converter-Go",
+                "description": "The AsyncAPI Converter converts AsyncAPI documents from versions 1.0.0, 1.1.0 and 1.2.0 to version 2.0.0. It supports both json and yaml formats on input and output. By default, the AsyncAPI Converter converts a document into the json format.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                },
+                "filters": {
+                    "language": "Go",
+                    "categories": ["converter"]
+                }
+            },
+            {
+                "title": "AsyncAPI-format",
+                "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js"],
+                    "categories": ["converter", "cli"]
+                }
+            }
+        ]
     },
     "Directories": {
         "description": "The following is a list of directories that index public AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI-Directory by APIs.guru",
+                "description": "Directory of asynchronous API specifications in AsyncAPI format.",
+                "links": {
+                    "websiteUrl": "https://apis.guru/asyncapi-directory/",
+                    "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js", "Liquid"],
+                    "categories": ["api", "directory"]
+                }
+            },
+            {
+                "title": "API Tracker - AsyncAPI specs",
+                "description": "Explore APIs and companies with public AsyncAPI specifications.",
+                "links": {
+                    "websiteUrl": "https://apitracker.io/specifications/asyncapi"
+                },
+                "filters": {
+                    "categories": ["api", "directory"]
+                }
+            }
+        ]
     },
     "Documentation Generators": {
         "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
@@ -175,6 +295,55 @@
                     "technology": ["ASP.NET", ".NET"],
                     "categories": ["code-first", "documentation-generator"]
                 }
+            },
+            {
+                "title": "AsyncAPI Generator",
+                "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
+                "links": {
+                    "docsUrl": "https://www.asyncapi.com/docs/tools/generator",
+                    "repoUrl": "https://github.com/asyncapi/generator"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js", "Markdown"],
+                    "categories": ["code-generator", "documentation-generator"]
+                }
+            },
+            {
+                "title": "Bump.sh",
+                "description": "OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff.",
+                "links": {
+                    "websiteUrl": "https://bump.sh/",
+                    "repoUrl": "https://github.com/bump-sh"
+                },
+                "filters": {
+                    "categories": ["documentation-generator"]
+                }
+            },
+            {
+                "title": "Widdershins",
+                "description": "OpenAPI 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown.",
+                "links": {
+                    "websiteUrl": "https://mermade.github.io/reslate/",
+                    "repoUrl": "https://github.com/Mermade/widdershins"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js", "Shell"],
+                    "categories": ["documentation-generator"]
+                }
+            },
+            {
+                "title": "Cupid",
+                "description": "A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/cupid"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js"],
+                    "categories": ["documentation-generator"]
+                }
             }
         ]
     },
@@ -216,7 +385,20 @@
     },
     "CLIs": {
         "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI-format",
+                "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node js"],
+                    "categories": ["converter", "cli"]
+                }
+            }
+        ]
     },
     "Bundlers": {
         "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",

@@ -27,7 +27,7 @@ const options = {
 
 // Two seperate lists and Fuse objects initialised to search languages and technologies tags 
 // from specified list of same.
-let languageList = [...languagesColor], technologyList = [...technologiesColor];
+let languageList = [...languagesColor], technologyList = [...languagesColor, ...technologiesColor];
 let languageFuse = new Fuse(languageList, options), technologyFuse = new Fuse(technologyList, options)
 
 // takes individual tool object and inserts borderColor and backgroundColor of the tags of 
@@ -54,7 +54,8 @@ const getFinalTool = async (toolObject) => {
         }
     }
     let technologyArray = [];
-    for (const technology of toolObject.filters.technology) {
+    if(toolObject.filters.technology){
+    for (const technology of toolObject?.filters?.technology) {
         const technologySearch = await technologyFuse.search(technology) 
         if (technologySearch.length > 0) {
             technologyArray.push(technologySearch[0].item);
@@ -71,6 +72,7 @@ const getFinalTool = async (toolObject) => {
             technologyArray.push(technologyObject);
             technologyFuse = new Fuse(technologyList, options)
         }
+    }
     }
     finalObject.filters.technology = technologyArray;
     return finalObject;
