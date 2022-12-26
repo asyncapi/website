@@ -448,7 +448,45 @@
     },
     "Mocking and Testing": {
         "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Microcks",
+                "description": "Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements.",
+                "links": {
+                    "websiteUrl": "https://microcks.io/",
+                    "repoUrl": "https://github.com/microcks/microcks"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["TypeScript", "Kubernetes-Native", "Saas"],
+                    "categories": ["mocking-and-testing"]
+                }
+            },
+            {
+                "title": "Virtualan",
+                "description": "Mocking and testing platform for API and microservices. Allows you to create and setup mocks for OpenAPI and AsyncAPI contracts. Shows how to setup and create AsyncAPI GitHub Reference Examples and OpenAPI GitHub Reference Examples.",
+                "links": {
+                    "websiteUrl": "https://www.virtualan.io/index.html",
+                    "repoUrl": "https://github.com/virtualansoftware"
+                },
+                "filters": {
+                    "technology": ["Kubernetes-Native"],
+                    "categories": ["mocking-and-testing"]
+                }
+            },
+            {
+                "title": "MultiAPI Converter",
+                "description": "Use AsyncAPI definition, to generate Spring Cloud Contract producer validation or consumer stubs, using maven.",
+                "links": {
+                    "repoUrl": "https://github.com/sngular/scc-multiapi-converter"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["mocking-and-testing"]
+                }
+            }
+        ]
     },
     "Validators": {
         "description": "The following is a list of tools that validate AsyncAPI documents.",
@@ -470,7 +508,19 @@
     },
     "Compare tools": {
         "description": "The following is a list of tools that compare AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Api-Smart-Diff",
+                "description": "It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema.",
+                "links": {
+                    "repoUrl": "https://github.com/udamir/api-smart-diff"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "categories": ["compare-tool"]
+                }
+            }
+        ]
     },
     "Others": {
         "description": "The following is a list of tools that comes under Other category",
