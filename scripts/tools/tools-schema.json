@@ -95,7 +95,7 @@
                           "ui-component",
                           "dsl",
                           "framework",
-                          "github-actions",
+                          "github-action",
                           "mocking-and-testing",
                           "validator",
                           "compare-tool",
