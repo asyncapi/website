@@ -107,7 +107,7 @@ export default function ToolsCard({ toolData }) {
               </a>
             )}
             {toolData.links.docsUrl && (
-              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
+              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.docsUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/illustrations/icons/docs-icon.svg" className="w-5" />
                   <div className="text-gray-700 text-sm">Visit Docs</div>
