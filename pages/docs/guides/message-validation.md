@@ -69,6 +69,17 @@ As producers and consumers do not communicate with each other directly, but rath
 
 This is where Schema Registry comes into play. It is an application that runs outside of your Kafka and handles schema distribution to producers and consumers by storing a copy of the schema in its local cache and validating them in Kafka.
 
+```mermaid
+sequenceDiagram
+Producer ->> Schema Registry: Validate message schema
+Schema Registry ->> Producer: Return validation result
+
+Producer ->> Kafka: Publish message
+Kafka ->> Consumer: Recieves message
+Consumer ->> Schema Registry: Validate message schema
+Schema Registry ->> Consumer: Return validation result
+```
+
 With the schema registry in place, the producer first talks to the schema registry and checks if the schema is available before sending the data to Kafka. If it cannot locate the schema, it registers and caches it in the schema registry. When the producer receives the schema,to sends it to Kafka prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the schema registry using the schema ID obtained from the producer. If there is a schema mismatch, the schema registry will throw an error, informing the producer that it is violating the schema agreement.
 
 ```mermaid
