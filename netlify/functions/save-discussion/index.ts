@@ -7,7 +7,7 @@ import { HandlerEvent, HandlerContext } from '@netlify/functions';
 
 const client = new WebClient(process.env.SLACK_TOKEN);
 let githubReposity: GitHubRepository;
-let discussions: Map<string, Discussion> = new Map();
+let discussion: Discussion;
 
 const handler = async (event: HandlerEvent, context: HandlerContext) => {
   if (event.httpMethod != 'POST' || !event.body) {
@@ -20,7 +20,7 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
   );
   if (payload.type === 'message_action') {
     console.log(payload);
-    const discussion = new Discussion(
+    discussion = new Discussion(
       payload.message.ts,
       payload.channel.id,
       payload.response_url
@@ -31,10 +31,8 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
       });
       console.error(err);
     });
-    discussions.set(payload.user.id, discussion);
     showPrompt(payload.trigger_id);
   } else if (payload.type === 'dialog_submission') {
-    const discussion = discussions.get(payload.user.id);
     if (!discussion) return;
     discussion.setTitle(payload.submission.title);
     discussion.setCategory(payload.submission.category);
@@ -46,7 +44,6 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
           'this discussion has been preserved here: ' + url
         );
       }
-      discussions.delete(payload.user.id);
     });
   }
   return {
