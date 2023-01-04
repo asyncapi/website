@@ -127,20 +127,24 @@
       "score": 20.38939580119737
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "id": "I_kwDOBGu-184_rP6l",
       "isPR": false,
       "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
       "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "keep-open",
-          "color": "fce250"
+          "name": "stale",
+          "color": "819cd3"
+        },
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
         }
       ],
-      "score": 19.378036838463604
+      "score": 20.102221212448114
     }
   ],
   "goodFirstIssues": [
@@ -371,6 +375,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -383,6 +391,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
