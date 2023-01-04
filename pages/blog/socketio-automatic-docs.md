@@ -19,15 +19,15 @@ If you are reading this blog you probably already familiar with SocketIO, [pytho
 ## The problem
 Imagine that you are working on a large project that uses a Flask-SocketIO server to handle real-time communication between the client and server. The server was originally well-documented, but over time the documentation has become out of date as the server has evolved and new features have been added.
 
-I found myself in the same situation where I needed to maintain and constantly add more documentation to a Flask-SocketIO server. To make this process more efficient, I sought a solution to automate the generation of documentation from the existing codebase. This would eliminate the need for team members to manually edit the AsyncAPI specification file every time there was a change, which can be a challenging task for those unfamiliar with AsyncAPI. By automating this process, we hoped to save time and reduce the workload for the team.
+I found myself in the same situation. I needed to maintain and constantly add more documentation to a Flask-SocketIO server. To make this process more efficient, I sought a solution to automate the generation of documentation from the existing codebase. This would eliminate the need for team members to manually edit the AsyncAPI specification file every time there was a change, a challenging task for those unfamiliar with AsyncAPI. By automating this process, we hoped to save time and reduce the workload for the team.
 
-To address this issue, I decided to implement SIO-AsyncAPI. This tool allows you to generate an AsyncAPI specification from your SocketIO server and validate incoming and outgoing messages against it. This functionality is similar to how FastAPI, Flask-RESTful, and other frameworks have long provided it for RESTful servers. Now, with [SIO-AsyncAPI](https://github.com/daler-rahimov/sio-asyncapi), we can apply this approach to SocketIO servers as well.
+To address this issue, I decided to implement SIO-AsyncAPI. This tool allows you to generate an AsyncAPI specification from your SocketIO server and validate incoming and outgoing messages against it. This functionality is similar to how FastAPI, Flask-RESTful, and other frameworks have long provided it for RESTful servers. Now, with [SIO-AsyncAPI](https://github.com/daler-rahimov/sio-asyncapi), it is possible to apply this approach to SocketIO servers as well.
 
 ## How to use SIO-AsyncAPI
-Instead of giving you a detailed, step-by-step guide, we'll use a more exciting approach. We'll take the exiting Flask-SocketIO server and add SIO-AsyncAPI to it. To make things even more interesting, we'll ask [ChatGPT](https://chat.openai.com/chat) to generate a server for us and use it as a real-world Flask-SocketIO server.
+Instead of giving you a detailed, step-by-step guide, we'll use a more exciting approach. We'll take the existing Flask-SocketIO server and add SIO-AsyncAPI. To make things even more interesting, we'll ask [ChatGPT](https://chat.openai.com/chat) to generate a server for us and use it as a real-world Flask-SocketIO server.
 
 ### Generate a Flask-SocketIO server
-I had to ask ChatGPT for multiple alterations in order to get desired result. Here are my quires to ChatGPT:
+I had to ask ChatGPT for multiple alterations in order to get the desired result. Here are my quires to ChatGPT:
 
 >- create python flask-socket server that provides tick tac toe game api
 >- change previous code and add type hints
@@ -111,11 +111,11 @@ if __name__ == '__main__':
 It's not quite correct (e.g. data in make_move will be passed as a dictionary not a Pydantic model), but it's good enough for our purposes.
 
 ### Generate Mermaid diagram
-Now let's ask ChatGPT to generate a Mermaid diagram for us as well, so we get better illustration of our server:
+Now let's ask ChatGPT to generate a Mermaid diagram for us as well, so we can get a better illustration of our server:
 
 >- create mermaid diagram for previous example
 
-I had to alter given diagram a bit, but here is the final result:
+I had to alter the given diagram a bit, but here is the final result:
 
 ```mermaid
 sequenceDiagram
@@ -183,12 +183,12 @@ def create_game():
 ```
 
 ### Get AsyncAPI specification
-Now we can get AsyncAPI specification by calling `socketio.asyncapi_doc.get_yaml()` function. Here how rendered specification looks like:
+Now we can get AsyncAPI specification by calling `socketio.asyncapi_doc.get_yaml()` function. Here is how rendered specification looks like:
 
 ![Figure 1:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic1.webp)
 
 ### Validation and Error handling
-SIO-AsyncAPI will automatically validate incoming and outgoing messages. If message is not valid, it will raise one out of these 3 exceptions: `EmitValidationError`, `RequestValidationError` or `ResponseValidationError`.
+SIO-AsyncAPI will automatically validate incoming and outgoing messages. If a message is not valid, it will raise one of these 3 exceptions: `EmitValidationError`, `RequestValidationError` or `ResponseValidationError`.
 
 Flask-SocketIO has a decorator for default error handling `@socketio.on_error_default` that we can use. E.g.:
 ```python
@@ -211,9 +211,9 @@ def default_error_handler(e: Exception):
         logger.critical(f"Unknown error: {e}")
         raise e
 ```
-Instead of re-raising exceptions, we can return some error which is interpreted as `acknowledge` value sent to client. That's what we are doing in the example above when there is RequestValidationError.
+Instead of re-raising exceptions, we can return some error which is interpreted as `acknowledge` value sent to the client. That's what we are doing in the example above when there is a RequestValidationError.
 
-Let's take a how it looks like in FireCamp if we do not provide "game_id" in "make_move" request:
+This is how it looks like in FireCamp if we do not provide "game_id" in "make_move" request:
 
 ![Figure 2:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic2.webp)
 
@@ -229,7 +229,7 @@ def make_move(data: MakeMoveData) -> MakeMoveAckData:
 ```
 
 ### Final Code and Specification
-Here is the final code of the server. I also added examples to Pydantic models to make specification more readable.
+Here is the final code of the server. I also added examples to Pydantic models to make the specification more readable.
 ```python
 import pathlib
 from typing import List, Union, Optional
@@ -374,7 +374,7 @@ if __name__ == '__main__':
 
 ```
 
-And here is auto generated specification:
+And here is the auto generated specification:
 ```yaml
 asyncapi: 2.5.0
 channels:
