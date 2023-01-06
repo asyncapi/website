@@ -14,47 +14,29 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 49.39402926487251
+      "score": 51.11707679736806
     },
     {
-      "id": "I_kwDOBW5R_c47-31p",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c5ARCuj",
+      "isPR": true,
       "isAssigned": true,
-      "title": "Create New page for /tools/",
-      "author": "iamVP7",
-      "resourcePath": "/asyncapi/website/issues/383",
+      "title": "docs: new guide for message validation",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1005",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 44.512061256135105
+      "labels": [],
+      "score": 27.28158593117958
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 39.91726783614697
+      "id": "PR_kwDOBW5R_c5AyxaN",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
+      "author": "starlightknown",
+      "resourcePath": "/asyncapi/website/pull/1022",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.697014632436254
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -65,7 +47,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 24.409840043686994
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -79,24 +61,13 @@
       "score": 22.68679251119144
     },
     {
-      "id": "PR_kwDOBW5R_c5ARCuj",
+      "id": "PR_kwDOFLhIt85AY9Ib",
       "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for message validation",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1005",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
+      "isAssigned": false,
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
       "labels": [],
       "score": 21.25091956744515
     },
@@ -109,82 +80,74 @@
       "resourcePath": "/asyncapi/website/pull/1002",
       "repo": "asyncapi/website",
       "labels": [],
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOFdFGUs4x5bH2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Video 2 - draft script",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/training/pull/9",
+      "repo": "asyncapi/training",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
+      "id": "PR_kwDOFXtyC849zwGo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Components, Security Requirement(s) models and other improvements",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/parser-api/pull/71",
+      "repo": "asyncapi/parser-api",
+      "labels": [],
+      "score": 20.96374497869589
+    },
+    {
+      "id": "PR_kwDOFi_gUM45K4cp",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: automatically generate docs",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/glee/pull/318",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 20.67657038994663
+    },
+    {
+      "id": "PR_kwDOBW5R_c5DWzbr",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "feat: ambassador program page",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/pull/1123",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 20.38939580119737
     },
     {
-      "id": "PR_kwDOFLhIt85AY9Ib",
-      "isPR": true,
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: how changes in the spec are introduced",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/488",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOCoBobc4xN9Px",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: throw meaningful errors",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/parser-js/pull/449",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 19.815046623698855
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Ckknf",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: add CLI docs under tools content bucket",
-      "author": "activus-d",
-      "resourcePath": "/asyncapi/website/pull/1097",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
+          "name": "stale",
+          "color": "819cd3"
         },
         {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
         }
       ],
-      "score": 18.37917367995256
+      "score": 20.102221212448114
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOCHlHJM5XfhdE",
-      "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/873",
-      "repo": "asyncapi/generator",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
     {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
@@ -250,21 +213,6 @@
         {
           "name": "generator",
           "color": "fef2c0"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385T6fcd",
-      "title": "Add example to generate all models within the same file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/949",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -393,10 +341,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -431,6 +375,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -443,6 +391,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -461,6 +413,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -608,6 +564,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
