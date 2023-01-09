@@ -19,7 +19,6 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
     querystring.parse(event.body || '{}')?.payload as string
   );
   if (payload.type === 'message_action') {
-    console.log(payload);
     discussion = new Discussion(
       payload.message.ts,
       payload.channel.id,
