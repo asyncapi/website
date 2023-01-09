@@ -24,7 +24,7 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
       payload.channel.id,
       payload.response_url
     );
-    discussion.parseReplies().catch((err) => {
+    await discussion.parseReplies().catch((err) => {
       axios.post(discussion.responseUrl, {
         text: err.message,
       });
