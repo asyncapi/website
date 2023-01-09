@@ -74,8 +74,8 @@ export default class GitHubRepository {
   ): Promise<boolean> {
     if (!discussion.replies) return true;
     try {
+      console.log('adding comments to discussion:', gitHubDiscussionId);
       for (const reply of discussion.replies) {
-        console.log('adding comment to discussion:', gitHubDiscussionId);
         const { addDiscussionComment } = await fetchGraphql(
           `
             mutation {
