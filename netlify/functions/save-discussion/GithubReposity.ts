@@ -98,27 +98,25 @@ export default class GitHubRepository {
         }
       }
     } catch (err) {
-      console.error(err);
+     // console.error(err);
       return false;
     }
     return true;
   }
   private markAnswer(commentId: string) {
-    console.log('marking the answer.');
-    try {
+    console.log('marking the answer...');
       fetchGraphql(
-        `
-  mutation {
-    markDiscussionCommentAsAnswer(input: {id: "${commentId}" }) {
-      discussion {
-        id
+      `
+      mutation {
+        markDiscussionCommentAsAnswer(input: {id: "${commentId}" }) {
+          discussion {
+            id
+          }
+        }
       }
-    }
-  }
-  `
-      );
-    } catch (err) {
+      `
+      ).catch((err) => {
       // do nothing since the type of discussion does not accept answers.
-    }
+      })
   }
 }

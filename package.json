@@ -93,6 +93,7 @@
     "@slack/web-api": "^6.5.1"
   },
   "devDependencies": {
+    "@netlify/functions": "^1.4.0",
     "dedent": "^0.7.0",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.20.0",
