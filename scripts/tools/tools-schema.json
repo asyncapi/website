@@ -26,15 +26,18 @@
             "properties": {
                 "websiteUrl": {
                     "type": "string",
-                    "description": "You can provide URL to the website where your project hosts some demo or project landing page."
+                    "description": "You can provide URL to the website where your project hosts some demo or project landing page.",
+                    "format": "uri"
                 },
                 "docsUrl": {
                     "type": "string",
-                    "description": "You can provide URL to project documentation in case you have more than just a readme file."
+                    "description": "You can provide URL to project documentation in case you have more than just a readme file.",
+                    "format": "uri"
                 },
                "repoUrl": {
                   "type": "string",
-                  "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository."
+                  "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository.",
+                  "format": "uri"
                 }
             }
         },
@@ -107,8 +110,24 @@
                     },
                     "minItems": 1,
                     "examples": [
-                        "Express.js",
-                        "Kafka"
+                        "api",
+                          "code-first",
+                          "code-generator",
+                          "converter",
+                          "directory",
+                          "documentation-generator",
+                          "editor",
+                          "ui-component",
+                          "dsl",
+                          "framework",
+                          "github-action",
+                          "mocking-and-testing",
+                          "validator",
+                          "compare-tool",
+                          "other",
+                          "cli",
+                          "bundler",
+                          "ide-extension"
                     ]
                 },
                 "hasCommercial": {

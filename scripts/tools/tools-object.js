@@ -1,11 +1,14 @@
 const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
+const addFormats = require("ajv-formats")
 const Fuse = require("fuse.js")
 const yaml = require('yaml');
 const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
+addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
+
 
 // Config options set for the Fuse object
 const options = {

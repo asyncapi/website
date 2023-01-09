@@ -4,9 +4,11 @@ const { createToolObject } = require("./tools-object")
 const fs = require('fs')
 const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
+const addFormats = require("ajv-formats")
 const { resolve } = require('path');
 const Fuse = require("fuse.js")
 const ajv = new Ajv()
+addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
 
 let finalTools = {};
