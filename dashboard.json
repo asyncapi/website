@@ -39,17 +39,6 @@
       "score": 24.697014632436254
     },
     {
-      "id": "PR_kwDOBGu-185AIQgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 24.409840043686994
-    },
-    {
       "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
       "isAssigned": true,
@@ -125,6 +114,26 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "819cd3"
+        },
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.102221212448114
     },
     {
       "id": "MDU6SXNzdWUzNjkwNDExMDc=",
@@ -371,6 +380,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -424,6 +437,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
