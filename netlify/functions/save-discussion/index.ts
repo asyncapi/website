@@ -25,9 +25,9 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
       payload.response_url
     );
     await discussion.parseReplies().catch((err) => {
-      axios.post(discussion.responseUrl, {
+      await axios.post(discussion.responseUrl, {
         text: err.message,
-      });
+      }).catch(console.error);
       console.error(err);
     });
     showPrompt(payload.trigger_id);
