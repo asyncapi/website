@@ -36,14 +36,12 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
     discussion.setTitle(payload.submission.title);
     discussion.setCategory(payload.submission.category);
 
-    const discussionUrl = githubReposity.createDiscussion(discussion);
-    discussionUrl.then((url) => {
-      if (url) {
-        discussion.postMessage(
-          'this discussion has been preserved here: ' + url
-        );
-      }
-    });
+    const discussionUrl = await githubReposity.createDiscussion(discussion);
+    if (url) {
+      discussion.postMessage(
+        'this discussion has been preserved here: ' + url
+      );
+    }
   }
   return {
     statusCode: 200,
