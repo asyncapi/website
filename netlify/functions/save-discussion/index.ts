@@ -8,7 +8,7 @@ import { HandlerEvent, HandlerContext } from '@netlify/functions';
 const client = new WebClient(process.env.SLACK_TOKEN);
 let githubReposity: GitHubRepository;
 
-const handler = async (event: HandlerEvent, context: HandlerContext) => {
+const handler = async (event: HandlerEvent) => {
   if (event.httpMethod != 'POST' || !event.body) {
     return {
       statusCode: 400,
@@ -21,6 +21,7 @@ const handler = async (event: HandlerEvent, context: HandlerContext) => {
 
     showPrompt(payload);
   } else if (payload.type === 'dialog_submission') {
+    // can't use await here since slack needs a response within 3 seconds and this operation can take more than three seconds to complete.
     parseDiscussion(payload).then(async (discussion) => {
       discussion.setTitle(payload.submission.title);
       discussion.setCategory(payload.submission.category);
