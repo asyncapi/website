@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
 import { twMerge } from "tailwind-merge";
 import ArrowRight from './icons/ArrowRight'
+var string = require("string-sanitizer");
 
 export default function TOC({
   className,
@@ -46,7 +47,7 @@ export default function TOC({
                 href={`#${item.slug}`}
                 key={index}
               >
-                {item.content}
+                {string.sanitize.keepSpace(item.content)}
               </a>
             ))
           }
