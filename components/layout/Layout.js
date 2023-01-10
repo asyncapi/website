@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   let structuredPosts = []
   const convertDocPosts = (docObject) => {
     let docsArray = []
-    docsArray.push(docObject?.item ? docObject.item : docObject)
+    docsArray.push(docObject?.item || docObject)
     if(docObject.children){
       let children = docObject.children
       Object.keys(children).forEach((child) => {
