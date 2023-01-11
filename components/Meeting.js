@@ -20,7 +20,7 @@ export default function Meeting({
       >
         <div>
           <h3 className="text-xl">{name}</h3>
-          <div className="hidden">
+          <div>
             <Paragraph typeStyle="body-sm" className="my-4" textColor="white">
               {purpose}
             </Paragraph>

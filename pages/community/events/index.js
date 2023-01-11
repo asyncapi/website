@@ -60,15 +60,15 @@ function index() {
               textColor="text-gray-700"
               className="text-slate-500"
             >
-              “All events/meetings are live streamed to all AsyncAPI social
-              media accounts. To learn more about meetings setup and automation
+              All events/meetings are live streamed to all AsyncAPI social media
+              accounts. To learn more about meetings setup and automation
               <TextLink
                 href="https://github.com/asyncapi/community/blob/master/MEETINGS_ORGANIZATION.md"
                 target="_blank"
               >
                 read our FAQ
               </TextLink>
-              .”
+              .
             </Heading>
           </div>
         </div>
@@ -91,7 +91,7 @@ function index() {
               the world for free
             </Heading>
             <a
-              href="https://www.youtube.com/watch?v=NTHsezlKBh8&list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
+              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               target="_blank"
               rel="noreferrer"
             >
