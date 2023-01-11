@@ -1,7 +1,7 @@
 ---
 title: "A straight guide to APIs and architecture concepts"
 subtitle: From a newcomer experience
-date: 2022-12-15T06:00:00+01:00
+date: 2023-01-11T06:00:00+01:00
 type: Communication
 tags:
   - APIs
@@ -29,9 +29,15 @@ So, let’s talk some basic concepts:
 
 ### What is an API?
 
-APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
+APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. 
 
-![Picture 1, pipes](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp)
+<Figure
+  src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp"
+  caption="Pipes, by [Azka Rayhansyah](https://unsplash.com/es/@azka_ryhns) on Unsplash_"
+  widthClass="w-1/2 mr-4 float-left"
+/>
+
+As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
  
 ### How does an API work?
  
@@ -74,9 +80,14 @@ In my opinion, this is the most interesting part. Understanding different constr
 -  **Monolithic architecture**
 
 Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
-The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
-![Picture 2, menhirs](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp)
+<Figure
+  src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp"
+  caption="Menhirs, by [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_"
+  widthClass="w-1/2 mr-4 float-right"
+/>
+
+The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
 -  **Microservices architecture**
 
@@ -84,9 +95,13 @@ Microservices architecture is a method for developing software applications that
  
  An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
 
-We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
+<Figure
+  src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp"
+  caption="Bees, by Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_"
+  widthClass="w-1/2 mr-4 float-left"
+/>
 
-![Picture 3, bees](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp)
+We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
 
 - **Serverless architecture**
 
@@ -94,9 +109,13 @@ It is a computing model that uses the cloud as the environment for executing app
  
  Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
 
-There isn't a better graphic example than a cloud.
+ <Figure
+  src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp"
+  caption="Picture 4, Cloud, by [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_"
+  widthClass="w-1/2 mr-4 float-right"
+/>
 
-![Picture 4, cloud](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp)
+There isn't a better graphic example than a cloud.
 
 -  **Event-driven architecture**
 
@@ -104,9 +123,13 @@ Event-driven architecture, also known as EDA, is a software model and architectu
 
 This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
 
-A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
+<Figure
+  src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
+  caption="Message in bottle, by [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_"
+  widthClass="w-1/2 mr-4 float-left"
+/>
 
-¡![Picture 5, message in bottle](/public/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp)
+A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
 
 ## So, what is an API, ultimately…
 
