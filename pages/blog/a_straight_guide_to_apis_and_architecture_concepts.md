@@ -33,7 +33,6 @@ APIs are program connectors. Synchronous or asynchronous, they act as glue betwe
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp"
-  caption="Pipes, by [Azka Rayhansyah](https://unsplash.com/es/@azka_ryhns) on Unsplash_"
   widthClass="w-1/2 mr-4 float-left"
 />
 
@@ -83,7 +82,6 @@ Monolithic architecture describes a kind of construction made from a single piec
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp"
-  caption="Menhirs, by [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_"
   widthClass="w-1/2 mr-4 float-right"
 />
 
@@ -97,7 +95,6 @@ Microservices architecture is a method for developing software applications that
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp"
-  caption="Bees, by Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_"
   widthClass="w-1/2 mr-4 float-left"
 />
 
@@ -111,7 +108,6 @@ It is a computing model that uses the cloud as the environment for executing app
 
  <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp"
-  caption="Picture 4, Cloud, by [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_"
   widthClass="w-1/2 mr-4 float-right"
 />
 
@@ -125,7 +121,6 @@ This is the kind of architecture that AsyncAPI works with. Its main goal is to m
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
-  caption="Message in bottle, by [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_"
   widthClass="w-1/2 mr-4 float-left"
 />
 
