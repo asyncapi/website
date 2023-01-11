@@ -19,7 +19,7 @@ It has not been such a long journey into the technology realm for me. Then I sta
 
 I decided to start with the basics: trying to find a way to catch the meaning of some key ideas related to APIs. I read and reread over and over again definitions and more definitions. They were full of technical terms that distanced me from them rather than bringing me closer to understanding the concepts. I found myself diving into a deep and dark ocean. And I was too squared to flow in those turbulent currents. The alphabetical order is not a natural one. A dictionary is not a good tool for starting to know a language.
  
- Then, I decided to change direction, looking for data. I thought that checking some visual and intelligible sources might clarify my head. So I could understand where to put the information, helping me start weaving a tapestry. Nevertheless, not knowing the code made it difficult for me, if not impossible, to interpret rough data. 
+Then, I decided to change direction, looking for data. I thought that checking some visual and intelligible sources might clarify my head. So I could understand where to put the information, helping me start weaving a tapestry. Nevertheless, not knowing the code made it difficult for me, if not impossible, to interpret rough data. 
 
 Third attempt… I just remembered that someone said that practice makes perfect. So, the next try was in that direction. Playing an instrument is a better way to understand it than reading definitions or pentagrams. See it and touch it; feel the shape directly, the stage, the environment. It was time to take action: a colleague volunteered to guide me, practicing somehow with these concepts without prior knowledge. Just making fun, as a child, looking for references, playing, and understanding the technique while finding similarities and comparisons with real situations that anyone could understand pretty well. 
  
@@ -54,7 +54,7 @@ We can classify them into two main groups, depending on their use or their type 
 
 - **Partner APIs** are a middle ground between internal and external APIs. This is because they are accessible to people outside the organization but only to those with exclusive permissions. Typically, this special access is granted to certain third parties to facilitate collaboration. 
 
-  A good example might be when we invite friends over, and they bring their controllers to play the game console. Or when a friend comes over and connects to our wifi network.
+A good example might be when we invite friends over, and they bring their controllers to play the game console. Or when a friend comes over and connects to our wifi network.
 
 #### According to its architectural style 
 
@@ -64,11 +64,11 @@ It is essential to choose the architecture style or pattern that best fits the d
 
 - **RPCs** (remote procedure calls), are styles that usually demand developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent, making them potentially compatible with many protocols, although they do not include the benefits of using native protocol features. 
  
-  For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
+For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
 
 - **Event-driven**, real-time, asynchronous, doesn't wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
 
-  A simple example is when you enter a page on the Internet, the browser makes a request to a server, and the server responds with the content you have requested.
+A simple example is when you enter a page on the Internet, the browser makes a request to a server, and the server responds with the content you have requested.
  
 ## Architectures 
 
@@ -96,20 +96,20 @@ Microservices architecture is a method for developing software applications that
   widthClass="w-1/2 mr-4 float-left"
 />
  
- An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
+An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
 
 We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
 
 - **Serverless architecture**
 
 It is a computing model that uses the cloud as the environment for executing applications and processes, dispensing with traditional servers. In this way, the Serverless architecture facilitates the work of developers. They can dispense with tasks such as allocating server resources, and focusing solely on application development. With Serverless, the code runs directly in containers. 
- 
- Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
 
  <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp"
   widthClass="w-1/2 mr-4 float-right"
 />
+ 
+Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
 
 There isn't a better graphic example than a cloud.
 
@@ -117,12 +117,12 @@ There isn't a better graphic example than a cloud.
 
 Event-driven architecture, also known as EDA, is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes, or 5 hours later just because the server was attending to other deliveries.
 
-This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
-
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
   widthClass="w-1/2 mr-4 float-left"
 />
+
+This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
 
 A good simile could be to send a message in a bottle. The information takes more or less to reach its destination depending on the currents of the sea.
 
