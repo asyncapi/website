@@ -52,14 +52,18 @@ export default function Calendar({ className = '', size, text="text-left" }) {
           </li>
         ))}
       </ul>
-      {eventsExist && (
+      {eventsExist ? 
         <div className='pt-4'>
           <GoogleCalendarButton 
             href={CALENDAR_URL}
             text="View Calendar"
           />
         </div>
-      )}
+        :
+        <div className="mt-2 text-gray-700">
+          There are no meetings scheduled for next few days.
+        </div>
+      }
     </div>
   );
 }

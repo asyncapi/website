@@ -131,7 +131,7 @@ function HomePage() {
                       </li>
                       <li>
                         <SubscribeButton
-                          href="/newsletter"
+                          href="/community/meetings"
                           className="mt-2 md:mt-0 md:ml-2"
                         />
                       </li>
