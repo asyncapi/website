@@ -1,6 +1,6 @@
 ---
 title: "2022 AsyncAPI Conference was amazing!"
-date: 2022-12-23T10:00:00+01:00
+date: 2023-01-12T10:00:00+01:00
 type: Conference
 tags:
   - Conference
@@ -84,7 +84,7 @@ Gold Sponsor
 
 Special thanks to Restream for supporting us with their amazing product for media coverage.
 <a href='https://restream.io/' target='_blank'>
-<img src='/img/sponsors/restream.png' alt='restream' width='200px' />
+<img src='/img/supportus/restream.webp' alt='restream' width='200px' />
 </a>
 
 ### Meet the volunteers
