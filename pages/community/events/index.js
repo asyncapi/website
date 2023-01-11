@@ -144,9 +144,9 @@ function index() {
               <Meeting
                 name="Community Meeting"
                 purpose="This is a community meeting to regularly talk in open about important topics around AsyncAPI Initiative. We organize it every two weeks in different time zones."
-                host="Lukasz Gornicki"
+                host="Azeez Elegbede"
                 bg="gray-100"
-                hostProfile="https://github.com/derberg"
+                hostProfile="https://github.com/AceTheCreator"
                 youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"
               />
             </div>
@@ -176,8 +176,8 @@ function index() {
             <Meeting
               name="Let's talk about contributing"
               purpose="This live stream focuses on contributors, focuses on people that want to contribute to AsyncAPI Initiative but do not know how to do it."
-              host="Lukasz Gornicki"
-              hostProfile="https://github.com/derberg"
+              host="Azeez Elegbede"
+              hostProfile="https://github.com/AceTheCreator"
               youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY"
             />
           </div>
