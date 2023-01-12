@@ -1,7 +1,7 @@
 ---
 title: "A straight guide to APIs and architecture concepts"
 subtitle: From a newcomer experience
-date: 2023-01-12T06:00:00+01:00
+date: 2023-01-19T06:00:00+01:00
 type: Communication
 tags:
   - APIs
