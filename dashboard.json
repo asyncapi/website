@@ -36,7 +36,7 @@
       "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 24.984189221185513
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -50,6 +50,17 @@
       "score": 22.68679251119144
     },
     {
+      "id": "PR_kwDOFi_gUM45K4cp",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: automatically generate docs",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/glee/pull/318",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 22.68679251119144
+    },
+    {
       "id": "PR_kwDOFLhIt85AY9Ib",
       "isPR": true,
       "isAssigned": false,
@@ -58,7 +69,7 @@
       "resourcePath": "/asyncapi/community/pull/488",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 21.25091956744515
+      "score": 22.399617922442182
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -94,15 +105,20 @@
       "score": 20.96374497869589
     },
     {
-      "id": "PR_kwDOFi_gUM45K4cp",
-      "isPR": true,
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: automatically generate docs",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/glee/pull/318",
-      "repo": "asyncapi/glee",
-      "labels": [],
-      "score": 20.67657038994663
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.38939580119737
     },
     {
       "id": "PR_kwDOBW5R_c5DWzbr",
@@ -114,26 +130,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 20.38939580119737
-    },
-    {
-      "id": "I_kwDOBGu-184_rP6l",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Let channels be identified by an ID rather than their address.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec/issues/663",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.102221212448114
     },
     {
       "id": "MDU6SXNzdWUzNjkwNDExMDc=",
