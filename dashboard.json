@@ -154,54 +154,6 @@
   ],
   "goodFirstIssues": [
     {
-<<<<<<< HEAD
-      "id": "I_kwDOBGu-185ZLGtq",
-      "title": "Cleanup readme with icons of sponsors",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/883",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5XfhdE",
-      "title": "[Docs Bug 🐞 report]: Links in main readme files are dead",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/873",
-      "repo": "asyncapi/generator",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5WV_4D",
-      "title": "[Docs Bug 🐞 report]: update link to slack etiquette",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/195",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "🐞 docs bug",
-          "color": "FFD23F"
-        }
-      ]
-    },
-    {
-=======
->>>>>>> c4d57fcf95262778242d82b4f88a9a3214d3c5d3
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
