@@ -80,14 +80,14 @@ In my opinion, this is the most interesting part. Understanding different constr
 
 -  **Monolithic architecture**
 
-Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
-
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp"
   widthClass="w-1/2"
   float="right"
   altOnly="This image shows menhirs"
 />
+
+Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
 
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
@@ -108,14 +108,16 @@ We can do a simile with the work of bees. Among other things, they extract the n
 
 - **Serverless architecture**
 
-It is a computing model that uses the cloud as the environment for executing applications and processes, dispensing with traditional servers. In this way, the Serverless architecture facilitates the work of developers. They can dispense with tasks such as allocating server resources, and focusing solely on application development. With Serverless, the code runs directly in containers. 
+It is a computing model that uses the cloud as the environment for executing applications and processes, dispensing with traditional servers. In this way, the Serverless architecture facilitates the work of developers. 
 
- <Figure
+<Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp"
   widthClass="w-1/2"
   float="right"
   altOnly="This image shows a cloud"
 />
+
+They can dispense with tasks such as allocating server resources, and focusing solely on application development. With Serverless, the code runs directly in containers. 
  
 Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
 
@@ -123,7 +125,7 @@ There isn't a better graphic example than a cloud.
 
 -  **Event-driven architecture**
 
-Event-driven architecture, also known as EDA, is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes, or 5 hours later just because the server was attending to other deliveries.
+Event-driven architecture, also known as EDA, is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. 
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
@@ -131,6 +133,8 @@ Event-driven architecture, also known as EDA, is a software model and architectu
   float="left"
   altOnly="This image shows a message in a bottle"
 />
+
+That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes, or 5 hours later just because the server was attending to other deliveries.
 
 This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
 
