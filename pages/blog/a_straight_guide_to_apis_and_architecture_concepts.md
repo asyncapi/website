@@ -1,7 +1,7 @@
 ---
 title: "A straight guide to APIs and architecture concepts"
 subtitle: From a newcomer experience
-date: 2023-01-11T06:00:00+01:00
+date: 2023-01-12T06:00:00+01:00
 type: Communication
 tags:
   - APIs
@@ -80,14 +80,14 @@ In my opinion, this is the most interesting part. Understanding different constr
 
 -  **Monolithic architecture**
 
-Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
-
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp"
   widthClass="w-1/2"
   float="right"
   altOnly="This image shows menhirs"
 />
+
+Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
 
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
 
