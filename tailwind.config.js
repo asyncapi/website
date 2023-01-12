@@ -75,17 +75,12 @@ function getColors(color, shades) {
 }
 
 module.exports = {
-<<<<<<< HEAD
-  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
-  theme: {
-=======
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
     "./config/tools.json"
   ],
   theme:{
->>>>>>> c4d57fcf95262778242d82b4f88a9a3214d3c5d3
     fontWeight: {
       'extra-light': 200,
       light: 300,
