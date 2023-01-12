@@ -33,7 +33,9 @@ APIs are program connectors. Synchronous or asynchronous, they act as glue betwe
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp"
-  widthClass="w-1/2 mr-4 float-left"
+  widthClass="w-1/2"
+  float="left"
+  altOnly="This image shows a pipeline system"
 />
 
 As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
@@ -82,7 +84,9 @@ Monolithic architecture describes a kind of construction made from a single piec
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._02.webp"
-  widthClass="w-1/2 mr-4 float-right"
+  widthClass="w-1/2"
+  float="right"
+  altOnly="This image shows menhirs"
 />
 
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
@@ -93,8 +97,11 @@ Microservices architecture is a method for developing software applications that
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp"
-  widthClass="w-1/2 mr-4 float-left"
+  widthClass="w-1/2"
+  float="left"
+  altOnly="This image shows a honeycomb with bees"
 />
+
 An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
 
 We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
@@ -105,7 +112,9 @@ It is a computing model that uses the cloud as the environment for executing app
 
  <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._04.webp"
-  widthClass="w-1/2 mr-4 float-right"
+  widthClass="w-1/2"
+  float="right"
+  altOnly="This image shows a cloud"
 />
  
 Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
@@ -118,7 +127,9 @@ Event-driven architecture, also known as EDA, is a software model and architectu
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
-  widthClass="w-1/2 mr-4 float-left"
+  widthClass="w-1/2"
+  float="left"
+  altOnly="This image shows a message in a bottle"
 />
 
 This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
