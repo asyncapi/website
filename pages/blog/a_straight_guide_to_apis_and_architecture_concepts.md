@@ -95,7 +95,6 @@ Microservices architecture is a method for developing software applications that
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._03.webp"
   widthClass="w-1/2 mr-4 float-left"
 />
- 
 An example of the use of this kind of architecture could be Netflix. This platform has a generalized microservices architecture. Every day it receives an average of one billion calls to its different services and can adapt to more than 800 types of devices through its video streaming API, which offers a more stable service. For each request we ask, it makes five requests to different servers to never lose the continuity of the transmission.
 
 We can do a simile with the work of bees. Among other things, they extract the nectar from the flowers that each hole in the comb needs, supplying every micro need of the beehive.
