@@ -106,9 +106,9 @@ export default function RoadmapPage() {
                 We'll be regularly setting outcomes or key results that will allow us to accomplish the goals above. You can find a categorization of the outcomes in the roadmap below. They are split by priority and some of them show the related features.
               </Paragraph>
               <Paragraph className="mt-4 mb-14 lg:pr-4">
-                Please bear in mind <strong>this is an outcome-based roadmap</strong>. We don't maintain a long-term release plan. If you want to find more specific and actionable items, head to the related repository issues or our
-                <TextLink target="_blank" href="https://shapeup.asyncapi.io">
-                  Shape Up dashboard
+                Please bear in mind <strong>this is an outcome-based roadmap</strong>. We don't maintain a long-term release plan. If you want to find more specific and actionable items, head to the related repository issues or start an issue/discussion at
+                <TextLink target="_blank" href="https://github.com/asyncapi/community">
+                  github.com/asyncapi/community
                 </TextLink>.
               </Paragraph>
 
