@@ -111,7 +111,25 @@
   },
   "GitHub Actions": {
     "description": "The following is a list of GitHub Actions that you can use in your workflows",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "GitHub Action for Generator",
+        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI Generator"
+          ],
+          "categories": [
+            "github-actions"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
   },
   "Mocking and Testing": {
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
@@ -195,6 +213,25 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
       }
     ]
   },
@@ -246,6 +283,26 @@
   },
   "Others": {
     "description": "The following is a list of tools that comes under Other category.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
   }
 }

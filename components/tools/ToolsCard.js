@@ -85,13 +85,13 @@ export default function ToolsCard({ toolData }) {
           <div className="flex">
             {toolData.links.repoUrl && <>
               {onGit ?
-                <a className="w-full text-center border-x py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+                <a className="w-full text-center border-x py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
                   <div className="m-auto flex w-fit gap-2">
                     <img src="/img/logos/github-black.svg" className="w-5" />
-                    <div className="text-gray-700 text-sm">View on Github</div>
+                    <div className="text-gray-700 text-sm">View Github</div>
                   </div>
                 </a> :
-                <a className="w-full text-center border-x border-gray-200 py-6 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+                <a className="w-full text-center border-x border-gray-200 py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
                   <div className="m-auto flex w-fit gap-2">
                     <div className="text-gray-700 text-sm">View Source Code</div>
                   </div>
@@ -99,7 +99,7 @@ export default function ToolsCard({ toolData }) {
               }
             </>}
             {toolData.links.websiteUrl && (
-              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
+              <a className="w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/illustrations/icons/share.svg" className="w-5" />
                   <div className="text-gray-700 text-sm">Visit Website</div>
@@ -107,7 +107,7 @@ export default function ToolsCard({ toolData }) {
               </a>
             )}
             {toolData.links.docsUrl && (
-              <a className="w-full text-center py-6 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.docsUrl} target='_blank' rel='noreferrer'>
+              <a className="w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.docsUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/illustrations/icons/docs-icon.svg" className="w-5" />
                   <div className="text-gray-700 text-sm">Visit Docs</div>
