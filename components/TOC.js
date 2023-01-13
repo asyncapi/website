@@ -47,7 +47,7 @@ export default function TOC({
                 href={`#${item.slug}`}
                 key={index}
               >
-                {string.sanitize.keepSpace(item.content)}
+                {stringSanitizer.sanitize.keepSpace(item.content)}
               </a>
             ))
           }
