@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
 import { twMerge } from "tailwind-merge";
 import ArrowRight from './icons/ArrowRight'
-var string = require("string-sanitizer");
+import stringSanitizer from 'string-sanitizer'
 
 export default function TOC({
   className,
