@@ -17,30 +17,6 @@
       "score": 51.11707679736806
     },
     {
-      "id": "I_kwDOBW5R_c47-31p",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Create New page for /tools/",
-      "author": "iamVP7",
-      "resourcePath": "/asyncapi/website/issues/383",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 44.512061256135105
-    },
-    {
       "id": "PR_kwDOBW5R_c5ARCuj",
       "isPR": true,
       "isAssigned": true,
@@ -49,18 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/1005",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.697014632436254
-    },
-    {
-      "id": "PR_kwDOBGu-185AIQgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 24.409840043686994
+      "score": 27.28158593117958
     },
     {
       "id": "PR_kwDOBW5R_c5AyxaN",
@@ -71,7 +36,7 @@
       "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 23.835490866188476
+      "score": 24.984189221185513
     },
     {
       "id": "PR_kwDOFLhIt849RhNn",
@@ -83,6 +48,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.68679251119144
+    },
+    {
+      "id": "PR_kwDOFi_gUM45K4cp",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: automatically generate docs",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/glee/pull/318",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 22.68679251119144
+    },
+    {
+      "id": "PR_kwDOFLhIt85AY9Ib",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: how changes in the spec are introduced",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/pull/488",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 22.399617922442182
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -107,17 +94,6 @@
       "score": 21.25091956744515
     },
     {
-      "id": "PR_kwDOFLhIt85AY9Ib",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: how changes in the spec are introduced",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/488",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 20.67657038994663
-    },
-    {
       "id": "PR_kwDOFXtyC849zwGo",
       "isPR": true,
       "isAssigned": false,
@@ -126,18 +102,23 @@
       "resourcePath": "/asyncapi/parser-api/pull/71",
       "repo": "asyncapi/parser-api",
       "labels": [],
-      "score": 20.67657038994663
+      "score": 20.96374497869589
     },
     {
-      "id": "PR_kwDOBW5R_c4-vMid",
-      "isPR": true,
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: added new /tools page",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/pull/940",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.102221212448114
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.38939580119737
     },
     {
       "id": "PR_kwDOBW5R_c5DWzbr",
@@ -148,7 +129,23 @@
       "resourcePath": "/asyncapi/website/pull/1123",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 19.527872034949596
+      "score": 20.38939580119737
+    },
+    {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 19.378036838463604
     }
   ],
   "goodFirstIssues": [
@@ -217,21 +214,6 @@
         {
           "name": "generator",
           "color": "fef2c0"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385T6fcd",
-      "title": "Add example to generate all models within the same file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/949",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -394,6 +376,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -406,6 +392,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -443,6 +433,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -575,6 +569,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
