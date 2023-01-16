@@ -39,28 +39,6 @@
       "score": 24.984189221185513
     },
     {
-      "id": "PR_kwDOFLhIt849RhNn",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: docs folder for new asyncapi community section",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/community/pull/442",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDOFi_gUM45K4cp",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: automatically generate docs",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/glee/pull/318",
-      "repo": "asyncapi/glee",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
       "id": "PR_kwDOFLhIt85AY9Ib",
       "isPR": true,
       "isAssigned": false,
@@ -146,6 +124,28 @@
         }
       ],
       "score": 19.378036838463604
+    },
+    {
+      "id": "PR_kwDOBW5R_c5A3jNS",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: new tutorial \"generate code\"",
+      "author": "Annysah",
+      "resourcePath": "/asyncapi/website/pull/1025",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 19.240697446200336
+    },
+    {
+      "id": "PR_kwDOFi_gUM5AcAeR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: Kafka Adapter ",
+      "author": "Ruchip16",
+      "resourcePath": "/asyncapi/glee/pull/342",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 19.240697446200336
     }
   ],
   "goodFirstIssues": [
@@ -683,6 +683,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
