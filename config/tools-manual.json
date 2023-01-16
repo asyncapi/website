@@ -178,6 +178,18 @@
                     "technology": ["Node-RED"],
                     "categories": ["code-generator"]
                 }
+            },
+            {
+                "title": "MultiAPI Generator",
+                "description": "This is a plugin designed to help developers automatizing the creation of code classes from YML files based on AsyncApi and OpenAPI. It is presented in 2 flavours Maven and Gradle",
+                "links": {
+                    "repoUrl": "https://github.com/sngular/scs-multiapi-plugin"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Groovy", "Maven"],
+                    "categories": ["code-generator"]
+                }
             }
         ]
     },
@@ -469,6 +481,18 @@
                 },
                 "filters": {
                     "technology": ["Kubernetes-Native"],
+                    "categories": ["mocking-and-testing"]
+                }
+            },
+            {
+                "title": "MultiAPI Converter",
+                "description": "Use AsyncAPI definition, to generate Spring Cloud Contract producer validation or consumer stubs, using maven.",
+                "links": {
+                    "repoUrl": "https://github.com/sngular/scc-multiapi-converter"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
                     "categories": ["mocking-and-testing"]
                 }
             }

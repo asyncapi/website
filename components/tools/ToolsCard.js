@@ -29,7 +29,7 @@ export default function ToolsCard({ toolData }) {
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
             <Heading typeStyle="heading-sm-semibold">{toolData.title}</Heading>
-            <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit h-fit rounded-md'>
+            <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit min-w-[5.3rem] h-fit rounded-md'>
               {toolData.filters.hasCommercial === false ? 'Open Source' : 'Commercial'}
             </div>
           </div>
