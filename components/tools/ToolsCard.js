@@ -77,7 +77,7 @@ export default function ToolsCard({ toolData }) {
           </div>}
         </div> :
         <div className="w-full relative p-8 text-center h-full text-gray-700">
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'> No Content to Display </div>
+          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'> No further details provided </div>
         </div>}
       </div>
         {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>

@@ -311,8 +311,7 @@
                 "title": "Bump.sh",
                 "description": "OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff.",
                 "links": {
-                    "websiteUrl": "https://bump.sh/",
-                    "repoUrl": "https://github.com/bump-sh"
+                    "websiteUrl": "https://bump.sh/"
                 },
                 "filters": {
                     "categories": ["documentation-generator"],
