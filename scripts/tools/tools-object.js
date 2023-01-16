@@ -35,7 +35,7 @@ const createToolObject = async (toolFile, repositoryUrl='', repoDescription='', 
     },
     filters: {
       ...toolFile.filters,
-      hasCommercial: toolFile?.filters?.hasCommmercial ? toolFile.filters.hasCommercial : false,
+      hasCommercial: toolFile?.filters?.hasCommercial ? toolFile.filters.hasCommercial : false,
       isAsyncAPIOwner: isAsyncAPIrepo
     }
   };
