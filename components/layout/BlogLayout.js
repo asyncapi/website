@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import HtmlHead from 'next/head'
 import ErrorPage from 'next/error'
 import moment from 'moment'
 import Head from '../Head'
@@ -60,6 +61,26 @@ export default function BlogLayout({ post, children }) {
               description={post.excerpt}
               image={post.cover}
             />
+            <HtmlHead>
+              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cb852c7b57ed596" async />
+              <style>{`
+                /* AddThis hack */
+
+                #at4-share {
+                    left: 50%;
+                    margin-left: -500px !important;
+                    position: absolute;
+
+                    &amp;.addthis-animated {
+                      animation-duration: 0s !important;
+                    }
+                }
+
+                #at4-scc {
+                    display: none !important;
+                }
+              `}</style>
+            </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className="mt-6 mb-6 w-full" />
             {children}
           </article>
