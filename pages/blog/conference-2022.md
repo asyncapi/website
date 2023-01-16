@@ -1,6 +1,6 @@
 ---
 title: "2022 AsyncAPI Conference was amazing!"
-date: 2023-01-12T10:00:00+01:00
+date: 2023-01-17T10:00:00+01:00
 type: Conference
 tags:
   - Conference
