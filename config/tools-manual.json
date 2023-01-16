@@ -11,7 +11,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js", "Liquid"],
+                    "technology": ["Node.js", "Liquid"],
                     "categories": ["api", "directory"]
                 }
             },
@@ -33,7 +33,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["api","validator"]
                 }
             }
@@ -134,8 +134,7 @@
                     "repoUrl": "https://github.com/boyney123/eventbridge-atlas"
                 },
                 "filters": {
-                    "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["code-first"]
                 }
             },
@@ -176,20 +175,7 @@
                     "repoUrl": "https://github.com/dalelane/node-red-contrib-plugin-asyncapi"
                 },
                 "filters": {
-                    "language": "HTML",
                     "technology": ["Node-RED"],
-                    "categories": ["code-generator"]
-                }
-            },
-            {
-                "title": "MultiAPI Generator",
-                "description": "This is a plugin designed to help developers automatizing the creation of code classes from YML files based on AsyncApi and OpenAPI. It is presented in 2 flavours Maven and Gradle",
-                "links": {
-                    "repoUrl": "https://github.com/corunet/scs-multiapi-plugin"
-                },
-                "filters": {
-                    "language": "Java",
-                    "technology": ["Groovy", "Maven"],
                     "categories": ["code-generator"]
                 }
             }
@@ -206,7 +192,7 @@
                 },
                 "filters": {
                     "language": "TypeScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["converter"]
                 }
             },
@@ -225,11 +211,11 @@
                 "title": "AsyncAPI-format",
                 "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
                 "links": {
-                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                    "repoUrl": "https://github.com/thim81/asyncapi-format"
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["converter", "cli"]
                 }
             }
@@ -247,7 +233,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js", "Liquid"],
+                    "technology": ["Node.js", "Liquid"],
                     "categories": ["api", "directory"]
                 }
             },
@@ -317,7 +303,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js", "Markdown"],
+                    "technology": ["Node.js", "Markdown"],
                     "categories": ["code-generator", "documentation-generator"]
                 }
             },
@@ -329,7 +315,8 @@
                     "repoUrl": "https://github.com/bump-sh"
                 },
                 "filters": {
-                    "categories": ["documentation-generator"]
+                    "categories": ["documentation-generator"],
+                    "hasCommercial": true
                 }
             },
             {
@@ -341,7 +328,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js", "Shell"],
+                    "technology": ["Node.js", "Shell"],
                     "categories": ["documentation-generator"]
                 }
             },
@@ -353,7 +340,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["documentation-generator"]
                 }
             }
@@ -391,7 +378,7 @@
                 },
                 "filters": {
                     "language": "TypeScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["dsl"]
                 }
             }
@@ -427,7 +414,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["github-action", "validator"]
                 }
             },
@@ -452,7 +439,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["github-action"]
                 }
             }
@@ -485,18 +472,6 @@
                     "technology": ["Kubernetes-Native"],
                     "categories": ["mocking-and-testing"]
                 }
-            },
-            {
-                "title": "MultiAPI Converter",
-                "description": "Use AsyncAPI definition, to generate Spring Cloud Contract producer validation or consumer stubs, using maven.",
-                "links": {
-                    "repoUrl": "https://github.com/sngular/scc-multiapi-converter"
-                },
-                "filters": {
-                    "language": "Java",
-                    "technology": ["Springboot"],
-                    "categories": ["mocking-and-testing"]
-                }
             }
         ]
     },
@@ -512,7 +487,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["github-action", "validator"]
                 }
             },
@@ -524,7 +499,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["validator"]
                 }
             },
@@ -536,7 +511,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["api","validator"]
                 }
             },
@@ -548,7 +523,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["validator"]
                 }
             },
@@ -571,7 +546,7 @@
                 },
                 "filters": {
                     "language": "TypeScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["validator"]
                 }
             },
@@ -631,7 +606,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js"],
+                    "technology": ["Node.js"],
                     "categories": ["converter", "cli"]
                 }
             }
