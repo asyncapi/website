@@ -69,7 +69,7 @@
                 "title": "Java AsyncAPI",
                 "description": "This tool stores modules, which simplifies interacting with AsyncAPI in jvm ecosystem.",
                 "links": {
-                    "repoUrl": "https://github.com/Pakisan/jasyncapi"
+                    "repoUrl": "https://github.com/asyncapi/jasyncapi"
                 },
                 "filters": {
                     "language": "Java",
@@ -85,7 +85,7 @@
                 },
                 "filters": {
                     "language": "Kotlin",
-                    "technology": ["Springboot", "Maven"],
+                    "technology": ["Spring Boot", "Maven"],
                     "categories": ["code-first"]
                 }
             },
@@ -165,7 +165,7 @@
                 },
                 "filters": {
                     "language": "JavaScript",
-                    "technology": ["Node js", "Markdown"],
+                    "technology": ["Node.js"],
                     "categories": ["code-generator", "documentation-generator"]
                 }
             },
