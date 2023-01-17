@@ -5,7 +5,7 @@ weight: 120
 ---
 
 ## Introduction
-This guide explains different concepts of validating messages. You will also learn what role AsyncAPI documents play in validation.
+This guide explains different concepts of validating AsyncAPI messages. You will also learn what role AsyncAPI documents play in validation.
 
 ## Message validation
 To understand message validation, we must first understand the basic components involved.
