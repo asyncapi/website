@@ -16,7 +16,7 @@ To understand AsyncAPI message validation, we must first understand the basic co
 Message validation can occur in different places in your system. This guide highlights three of those:
 - Both producers and consumers can do validation internally during runtime.
 - API Gateway can handle message validation.
-- Validation of messages can be a native solution implemented by the schema registry.
+- Validation of messages can be a native solution implemented by the Schema Registry.
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 Let's further break down how validation works for all.
 
