@@ -14,7 +14,7 @@ To understand AsyncAPI message validation, we must first understand the basic co
 - Broker: acts as a bridge between the consumer and the producer because messages travel through the broker.
 
 Message validation can occur in different places in your system. This guide highlights three of those:
-- Both producers and consumers can do validation internally in runtime.
+- Both producers and consumers can do validation internally during runtime.
 - Validation of the message can be handled by API Gateway
 - Validation of messages can be a native solution implemented by the schema registry.
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
