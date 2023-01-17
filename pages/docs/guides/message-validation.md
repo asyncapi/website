@@ -26,7 +26,7 @@ Messages produced and consumed are both required for runtime message validation.
 Before messages reach the consumer, runtime validation ensures that any errors are resolved and valid messages are sent to your application.
 
 An example implementation of message validation in runtime is the [asyncapi-validator](https://github.com/WaleedAshraf/asyncapi-validator) library that enables you to validate messages produced/consumed in your application against schemas provided in your AsyncAPI document.
-Check out the message validation in the runtime tutorial if you want to get your hands dirty with message validation. 
+Check out the [message validation in the runtime](https://www.asyncapi.com/docs/tutorials/message-validation) tutorial if you want to get your hands dirty with message validation. 
 
 ```mermaid
 graph TD
