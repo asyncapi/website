@@ -17,7 +17,7 @@ export default [
   {
     icon: IconTools,
     title: 'Tools & Services',
-    href: '/docs/community/tooling',
+    href: '/docs/tools',
     description:
       'Explore the tools and services our awesome community has created.',
   },
