@@ -49,7 +49,7 @@ export default function Layout({ children }) {
   structuredPosts = structuredPosts.map((post, index) => {
     // post item specifying the root Section or sub-section in the docs are excluded as 
     // they doesn't comprise any Doc Page or content to be shown in website. 
-    if(post?.isRootElement || post?.isSection) 
+    if(post?.isRootElement || post?.isSection || index==0) 
       return post
 
     let nextPage = {}, prevPage = {}
