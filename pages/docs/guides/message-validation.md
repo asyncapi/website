@@ -20,7 +20,7 @@ Message validation can occur in different places in your system. This guide high
 Because consumers and producers cannot communicate directly, the AsyncAPI file dictates what should be included in the payload when a service produces a message. The AsyncAPI document also tells the consumer about the message's properties.
 Let's further break down how validation works for all.
 
-### Validation in runtime
+### Runtime validation
 Messages produced and consumed are both required for runtime message validation. The AsyncAPI document should include descriptions of payload schemas so that you can read them in your application and validate messages that are consumed and produced by the application.
 
 Before messages reach the consumer, runtime validation ensures that any errors are resolved and valid messages are sent to your application.
