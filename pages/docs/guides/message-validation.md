@@ -42,7 +42,7 @@ graph TD
     end
 ```
 
-### Validation in a gateway
+### Gateway validation
 A gateway intercepts all incoming messages and routes them through the middleware and handler pipelines. The gateway sits between the producer and the broker. First, the messages are routed through the gateway, and then the gateway determines whether the message is valid. If the message is invalid, it displays an error and is not forwarded to the broker.
 
 An example implementation of message validation in a gateway is the [AsyncAPI gateway](https://github.com/asyncapi/event-gateway). It intercepts all incoming messages moving them into a pipeline of middlewares and handlers such as message validation. You can use a Kafka consumer/producer[(kcat)](https://github.com/edenhill/kcat), a broker, and a simple WebSocket to run the AsyncAPI gateway in your machine.
