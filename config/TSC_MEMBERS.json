@@ -126,7 +126,8 @@
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
 		"linkedin": "khudadadnomani",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
 			"optimizer",
 			"bindings"

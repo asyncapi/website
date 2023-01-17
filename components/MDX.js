@@ -38,7 +38,7 @@ function getMDXComponents() {
     h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h2: props => <h2 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h3: props => <h3 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-medium tracking-heading text-gray-900 text-lg`} />,
-    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-medium text-lg text-gray-900`} />,
+    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-medium text-md text-gray-900`} />,
     h5: props => <h5 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-md font-bold`} />,
     h6: props => <h6 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-sm font-bold text-gray-900 uppercase`} />,
     blockquote: props => <blockquote {...props} className={`${props.className || ''} italic font-body antialiased text-gray-700 border-l-4 border-gray-400 pl-4 pt-1 pb-1 pr-1 my-4 bg-white`} />,
