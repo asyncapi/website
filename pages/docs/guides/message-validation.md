@@ -61,7 +61,7 @@ graph TD
     INV -->|Yes| ERR[/Fail/] -- Produce request errored --> PR
     INV -->|No| BR
 ```
-The AsyncAPI document is important in this case because payload schemas are taken from it and messages as validated against it in your application.
+The AsyncAPI document is important because payload schemas are taken from it, and messages are validated against it in your application.
 You can spin up the AsyncAPI gateway using an AsyncAPI file. All the messages are forwarded to a WebSocket endpoint; if the message/payload is invalid, it includes a validation error message.
 
 ### Validation using Schema Registry
