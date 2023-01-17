@@ -8,7 +8,7 @@ weight: 120
 This guide explains different concepts of validating AsyncAPI messages. You will also learn what role AsyncAPI documents play in validation.
 
 ## Message validation
-To understand message validation, we must first understand the basic components involved.
+To understand AsyncAPI message validation, we must first understand the basic components involved.
 - Producer: The producer is responsible for producing messages.
 - Consumer: The consumer is responsible for getting the producer's messages.
 - Broker: The broker acts as a bridge between the consumer and the producer because messages travel through the broker.
