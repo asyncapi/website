@@ -262,6 +262,16 @@
 		]
 	},
 	{
+		"name": "Pratik Haldankar",
+		"github": "pratik2315",
+		"linkedin": "pratik-haldankar-1b237a205",
+		"twitter": "PratikHaldankr",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Richard Coppen",
 		"github": "rcoppen",
 		"linkedin": "richard-coppen",
