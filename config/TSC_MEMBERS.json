@@ -10,6 +10,15 @@
 		]
 	},
 	{
+		"name": "Abir Pal",
+		"linkedin": "imabp",
+		"twitter": "imabptweets",
+		"availableForHire": false,
+		"repos": [
+			 "problem"
+		]
+	},
+	{
 		"name": "Akshat Nema",
 		"github": "akshatnema",
 		"linkedin": "akshat-nema",
