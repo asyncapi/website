@@ -8,7 +8,7 @@ on:
 
 jobs:
   regenerateTools:
-      if: github.repository == 'asyncapi/website'
+      # if: github.repository == 'asyncapi/website'
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       name: Regenerate tools.json
