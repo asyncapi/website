@@ -8,10 +8,12 @@ const { markdownToTxt } = require('markdown-to-txt')
 
 let specWeight = 100
 const result = []
+const releaseNotes = []
 const basePath = 'pages'
 const postDirectories = [
-  [`${basePath}/docs`, '/docs'],
+  // order of these directories are important, as blog should come before docs, in order to create a list of available release notes, later which will be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
+  [`${basePath}/docs`, '/docs'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
 ]
@@ -88,12 +90,23 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title = capitalize(fileName)
           }
 
+          if(releaseNotes.includes(details.title)){
+            details.releaseNoteLink = `/blog/release-notes-${details.title}`
+          }
+
           if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
             details.isPrerelease = true
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
         }
+        
+        if(file.startsWith("release-notes") && dir[1] === "/blog"){
+          const fileName_without_extension = file.slice(0,-3)
+          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+          releaseNotes.push(version)
+        }
+
         result.push(details);
       }
     }
