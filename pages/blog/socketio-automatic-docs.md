@@ -544,7 +544,7 @@ info:
   title: Tic-Tac-Toe API
   version: 1.0.0
 servers:
-  TICK_TACK_TOE_BACKEND:
+  TIC_TAC_TOE_BACKEND:
     protocol: socketio
     url: http://localhost:5000
 ```
