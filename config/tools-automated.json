@@ -54,27 +54,7 @@
   },
   "UI components": {
     "description": "The following is a list of UI components to view AsyncAPI documents.",
-    "toolsList": [
-      {
-        "title": "AsyncAPI React component",
-        "description": "React component for rendering documentation from your specification in real-time in the browser. It also provides a WebComponent and bundle for Angular and Vue",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/asyncapi-react"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "React js",
-            "WebComponents"
-          ],
-          "categories": [
-            "ui-component"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      }
-    ]
+    "toolsList": []
   },
   "DSL": {
     "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
@@ -148,26 +128,7 @@
   },
   "Compare tools": {
     "description": "The following is a list of tools that compare AsyncAPI documents.",
-    "toolsList": [
-      {
-        "title": "AsyncAPI Diff",
-        "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/diff"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "compare-tool"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      }
-    ]
+    "toolsList": []
   },
   "CLIs": {
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
