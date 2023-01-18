@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
 ```
 
-It's not quite correct (e.g. data in make_move will be passed as a dictionary not a Pydantic model), but it's good enough for our purposes.
+It's not quite correct (e.g. data in `make_move` will be passed as a dictionary, not a Pydantic model), but it's good enough for our purposes.
 
 ### Generate Mermaid diagram
 Now let's ask ChatGPT to generate a Mermaid diagram for us as well, so we can get a better illustration of our server:
