@@ -1,5 +1,5 @@
 ---
-title: Flask-SocketIO Automatic Documentation and Validation
+title: Flask-SocketIO Automated Documentation and Validation
 type: Engineering
 tags: ['Python','SocketIO','Flask-SocketIO']
 cover: /img/posts/socketio-automatic-docs/cover.webp
