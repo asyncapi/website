@@ -14,7 +14,7 @@ export default function toolsList({ toolsData }) {
             {toolsData[categoryName].description}
           </Paragraph>
           <hr className='my-8' />
-          <div className="lg:grid grid-cols-3 gap-8">
+          <div className="flex flex-col lg:grid grid-cols-3 gap-8">
             {toolsData[categoryName].toolsList.map((tool, toolIndex) => (
               <ToolsCard key={toolIndex} toolData={tool} />
             ))}
