@@ -164,7 +164,7 @@ socketio = SocketIO(
 )
 ```
 5. Tell the `@socketio.on` decorator to get models from the type hint.
-> Note: you can also pass `request_model` and `response_model` arguments to `@socketio.on` decorator instead of using typehints.
+> Note: you can also pass `request_model` and `response_model` arguments to the `@socketio.on` decorator instead of using type hints.
 ```python
 @socketio.on('make_move', get_from_typehint=True)
 ```
