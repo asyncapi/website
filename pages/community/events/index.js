@@ -53,7 +53,7 @@ function index() {
           </div>
         </div>
         <div className="flex justify-end mt-10">
-          <div className="w-[80%] sm:w-1/3">
+          <div className="w-full sm:w-1/3">
             <Heading
               level="h2"
               typeStyle="body-lg"
@@ -135,15 +135,14 @@ function index() {
               Event Types
             </Heading>
             <Paragraph typeStyle="body-md" className="mt-4">
-              Explore over 100s of AsyncAPI's livestreams specifically curated
-              for you.
+              Explore numerous AsyncAPI's livestreams, specifically curated
             </Paragraph>
           </div>
           <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
             <div className="">
               <Meeting
                 name="Community Meeting"
-                purpose="This is a community meeting to regularly talk in open about important topics around AsyncAPI Initiative. We organize it every two weeks in different time zones."
+                purpose="This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones."
                 host="Azeez Elegbede"
                 bg="gray-100"
                 hostProfile="https://github.com/AceTheCreator"
@@ -153,7 +152,7 @@ function index() {
             <div className="">
               <Meeting
                 name="Spec 3.0 Meeting"
-                purpose="This is the meeting for community member involved in works related to 3.0 release of AsyncAPI Specification. We organize it every two weeks at the same time."
+                purpose="This is the meeting for community members involved in work related to the 3.0 release of AsyncAPI Specification. We organize it every two weeks at the same time."
                 host="Jonas Lagoni"
                 hostProfile="https://github.com/jonaslagoni"
                 youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV"
@@ -166,7 +165,7 @@ function index() {
             <Meeting
               name="Thinking Out Loud"
               bg="gray-100"
-              purpose="This is a live stream about different topics related to AsyncAPI Initiative and Event Driven Architectures. It is always an open discussion between a host and a guest."
+              purpose="This is a live stream about diverse topics related to the AsyncAPI Initiative and Event-Driven Architectures. It is always an open discussion between a host and a guest."
               host="Fran Mendez"
               hostProfile="https://github.com/fmvilas"
               youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPxRRylHGCvpdppYLmSKfJ"
@@ -175,7 +174,7 @@ function index() {
           <div className="">
             <Meeting
               name="Let's talk about contributing"
-              purpose="This live stream focuses on contributors, focuses on people that want to contribute to AsyncAPI Initiative but do not know how to do it."
+              purpose="This live stream focuses on contributors, people that want to contribute to AsyncAPI Initiative but do not know how to get started."
               host="Azeez Elegbede"
               hostProfile="https://github.com/AceTheCreator"
               youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pigPBrBMaNQhUeniR1pdDMiY"
@@ -185,7 +184,7 @@ function index() {
             <Meeting
               name="Ad Hoc Meeting"
               bg="gray-100"
-              purpose="Do you want to discuss something with community and other meeting formats won't work? This is what this meeting is for, to schedule something specific with the community."
+              purpose="Do you want to discuss something with the community and our other meeting formats don't apply? Use this meeting to schedule ad hoc topics with the community."
               host="Any of the hosts"
               youtube="https://www.youtube.com/asyncapi"
             />
