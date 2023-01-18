@@ -144,7 +144,7 @@ sequenceDiagram
 
 Now let's imagine that this is our old server written in Flask-SocketIO and we want to add SIO-AsyncAPI. Here is how we would do it:
 
-1. Install SIO-AsyncAPI `pip install sio-asyncapi`
+1. Install SIO-AsyncAPI via `pip install sio-asyncapi`
 2. Change import statements
 ```python
 # instead of `from flask_socketio import SocketIO`
