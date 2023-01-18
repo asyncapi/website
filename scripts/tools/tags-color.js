@@ -89,7 +89,7 @@ const languagesColor = [
 
 const technologiesColor = [
     {
-        name: "Node js",
+        name: "Node.js",
         color: "bg-[#BDFF67]",
         borderColor: "border-[#84CE24]"
     },
@@ -129,7 +129,7 @@ const technologiesColor = [
         borderColor: "border-[#2596ED]"
     },
     {
-        name: "Node-red",
+        name: "Node-RED",
         color: "bg-[#FF7474]",
         borderColor: "border-[#8F0101]"
     },
