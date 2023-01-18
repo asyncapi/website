@@ -150,7 +150,7 @@ Now let's imagine that this is our old server written in Flask-SocketIO and we w
 # instead of `from flask_socketio import SocketIO`
 from sio_asyncapi import AsyncAPISocketIO as SocketIO
 ```
-3. Add additional argument to `AsyncAPISocketIO` constructor
+3. Add an additional argument to the `AsyncAPISocketIO` constructor
 ```python
 socketio = SocketIO(
     app,
