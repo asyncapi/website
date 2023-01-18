@@ -111,25 +111,7 @@
   },
   "GitHub Actions": {
     "description": "The following is a list of GitHub Actions that you can use in your workflows",
-    "toolsList": [
-      {
-        "title": "GitHub Action for Generator",
-        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
-        },
-        "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-actions"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      }
-    ]
+    "toolsList": []
   },
   "Mocking and Testing": {
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
@@ -166,7 +148,26 @@
   },
   "Compare tools": {
     "description": "The following is a list of tools that compare AsyncAPI documents.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "AsyncAPI Diff",
+        "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/diff"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "compare-tool"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
   },
   "CLIs": {
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
@@ -218,26 +219,7 @@
   },
   "Bundlers": {
     "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
-    "toolsList": [
-      {
-        "title": "AsyncAPI Bundler",
-        "description": "Combine multiple AsyncAPI specification files into one",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/bundler"
-        },
-        "filters": {
-          "language": "TypeScript",
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "bundler"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      }
-    ]
+    "toolsList": []
   },
   "IDE Extensions": {
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
