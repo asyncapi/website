@@ -183,7 +183,7 @@ def create_game():
 ```
 
 ### Get AsyncAPI specification
-Now we can get AsyncAPI specification by calling `socketio.asyncapi_doc.get_yaml()` function. Here is how rendered specification looks like:
+Now we can get the AsyncAPI specification by calling the `socketio.asyncapi_doc.get_yaml()` function. Here is what the rendered specification looks like:
 
 ![Figure 1:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic1.webp)
 
