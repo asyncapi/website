@@ -126,7 +126,8 @@
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
 		"linkedin": "khudadadnomani",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
 			"optimizer",
 			"bindings"
@@ -258,6 +259,16 @@
 		"availableForHire": false,
 		"repos": [
 			"jasyncapi"
+		]
+	},
+	{
+		"name": "Pratik Haldankar",
+		"github": "pratik2315",
+		"linkedin": "pratik-haldankar-1b237a205",
+		"twitter": "PratikHaldankr",
+		"availableForHire": true,
+		"repos": [
+			"generator"
 		]
 	},
 	{

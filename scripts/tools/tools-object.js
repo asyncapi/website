@@ -7,37 +7,49 @@ const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 const validate = ajv.compile(schema)
 
+// Config options set for the Fuse object
 const options = {
   includeScore: true,
   shouldSort: true,
-  threshold: 0.2,
+  threshold: 0.4,
   keys: ["tag"]
 }
 
 const fuse = new Fuse(categoryList, options)
 
-const createToolObject = (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
+// using the contents of each toolFile (extracted from Github), along with Github URL 
+// (repositoryUrl) of the tool, it's repository description (repoDescription) and 
+// isAsyncAPIrepo boolean variable to define whether the tool repository is under 
+// AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
+// side to show ToolCard.
+const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
   let resultantObject = {
     title: toolFile.title,
-    description: toolFile.description || repoDescription,
+    description: toolFile?.description ? toolFile.description : repoDescription,
     links: {
       ...toolFile.links,
-      repoUrl: repositoryUrl,
+      repoUrl: toolFile?.links?.repoUrl ? toolFile.links.repoUrl : repositoryUrl
     },
     filters: {
       ...toolFile.filters,
-      isAsyncAPIOwner: isAsyncAPIrepo,
-    },
+      hasCommercial: toolFile?.filters?.hasCommmercial ? toolFile.filters.hasCommercial : false,
+      isAsyncAPIOwner: isAsyncAPIrepo
+    }
   };
   return resultantObject;
 };
 
+// Each result obtained from the Github API call will be tested and verified 
+// using the defined JSON schema, categorising each tool inside their defined categories
+// and creating a JSON tool object in which all the tools are listed in defined 
+// categories order, which is then updated in `automated-tools.json` file.
 async function convertTools(data) {
-  let appendData = {};
+  let finalToolsObject = {};
   const dataArray = data.items;
 
+  // initialising finalToolsObject with all categories inside it with proper elements in each category
   for (var index in categoryList) {
-    appendData[categoryList[index].name] = {
+    finalToolsObject[categoryList[index].name] = {
       description: categoryList[index].description,
       toolsList: []
     };
@@ -55,27 +67,29 @@ async function convertTools(data) {
         const { data: toolFileContent } = await axios.get(download_url);
 
         //some stuff can be YAML
-        const jsonToolFileContent = convertToJson(toolFileContent)
+        const jsonToolFileContent = await convertToJson(toolFileContent)
 
         //validating against JSON Schema for tools file
-        const isValid = validate(jsonToolFileContent)
+        const isValid = await validate(jsonToolFileContent)
 
         if (isValid) {
           let repositoryUrl = tool.repository.html_url;
           let repoDescription = tool.repository.description;
           let isAsyncAPIrepo = tool.repository.owner.login === "asyncapi";
-          let toolObject = createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
+          let toolObject = await createToolObject(jsonToolFileContent, repositoryUrl, repoDescription, isAsyncAPIrepo);
 
-          jsonToolFileContent.filters.categories.forEach((category) => {
-            const categorySearch = fuse.search(category);
+          // Tool Object is appended to each category array according to Fuse search for categories inside Tool Object
+          jsonToolFileContent.filters.categories.forEach(async (category) => {
+            const categorySearch = await fuse.search(category);
 
             if (categorySearch.length) {
               let searchedCategoryName = categorySearch[0].item.name
-              if (!appendData[searchedCategoryName].toolsList.find((element => element === toolObject)))
-                appendData[searchedCategoryName].toolsList.push(toolObject);
+              if (!finalToolsObject[searchedCategoryName].toolsList.find((element => element === toolObject)))
+                finalToolsObject[searchedCategoryName].toolsList.push(toolObject);
             } else {
-              if (!appendData['Others'].toolsList.find((element => element === toolObject)))
-                appendData['Others'].toolsList.push(toolObject);
+              // if Tool object has a category, not defined in our categorylist, then this provides a `other` category to the tool.
+              if (!finalToolsObject['Others'].toolsList.find((element => element === toolObject)))
+                finalToolsObject['Others'].toolsList.push(toolObject);
             }
           });
         } else {
@@ -90,10 +104,10 @@ async function convertTools(data) {
       throw err;
     }
   }
-  return appendData;
+  return finalToolsObject;
 }
 
-function convertToJson(contentYAMLorJSON) {
+async function convertToJson(contentYAMLorJSON) {
 
   //Axios handles conversion to JSON by default, if data returned for the server allows it
   //So if returned content is not string (not YAML) we just return JSON back
