@@ -158,7 +158,7 @@ socketio = SocketIO(
     generate_docs=True,
     version="1.0.0",
     title="Tic-Tac-Toe API",
-    description="Tick-Tack-Toe Game API",
+    description="Tic-Tac-Toe Game API",
     server_url="http://localhost:5000",
     server_name="TICK_TACK_TOE_BACKEND",
 )
