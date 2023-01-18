@@ -168,7 +168,7 @@ socketio = SocketIO(
 ```python
 @socketio.on('make_move', get_from_typehint=True)
 ```
-Now type annotations will be used to generate AsyncAPI specification and validate incoming and outgoing messages. Note that the return value from a function is not data sent by `emit` function but rather `acknowledge` value that is received by the client.
+Now type annotations will be used to generate the AsyncAPI specification and validate incoming/outgoing messages. Note that the return value from a function is not data sent by the `emit` function but rather the `acknowledge` value that the client receives.
 
 6. Add `on_emit` decorator to register/document a SocketIO emit event. Since we are not defining `emit` and only calling it as a function, we need to tell SIO-AsyncAPI what to expect when `emit` is called. E.g
 ```python
