@@ -33,7 +33,7 @@ I had to ask ChatGPT for multiple alterations to get the desired result. Here ar
 >- change previous code and add type hints
 >- for previous example use pydantic models instead of dictionaries
 
-And here is final code that ChatGPT generated for us:
+And here is the final code that ChatGPT generated for us:
 
 ```python
 from typing import List, Union
