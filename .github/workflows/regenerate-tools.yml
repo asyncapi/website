@@ -13,15 +13,22 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       name: Regenerate tools.json
       runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [16.x]
       steps:
         - name: Checkout repository
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
         - name: Install dependencies
           run: npm install
         - name: Regenerate
           run: npm run generate:tools
         - name: Create Pull Request with new tools.json version
-          uses: peter-evans/create-pull-request@v3
+          uses: peter-evans/create-pull-request@v4
           with:
             token: ${{ secrets.GH_TOKEN }}
             commit-message: 'chore: update tools.json'
