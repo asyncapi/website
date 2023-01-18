@@ -217,7 +217,7 @@ This is how it looks like in FireCamp if we do not provide `game_id` in the `mak
 
 ![Figure 2:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic2.webp)
 
-Because the make_move request may return an error in the acknowledge value now, we should add a new MakeMoveAckData model and annotate the make_move function accordingly. This will automatically update the documentation in our AsyncAPI specification.
+Because the `make_move` request may return an error in the acknowledged value now, we should add a new `MakeMoveAckData` model and annotate the `make_move` function accordingly. This will automatically update the documentation in our AsyncAPI specification.
 ```python
 class MakeMoveAckData(BaseModel):
     error: Optional[str] = Field(None, description='The error message', example='Invalid move')
