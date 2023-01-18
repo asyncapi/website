@@ -541,7 +541,7 @@ info:
     This documentation should **NOT** be used for generating code due to these limitations.
 
     '
-  title: Tick-Tack-Toe API
+  title: Tic-Tac-Toe API
   version: 1.0.0
 servers:
   TICK_TACK_TOE_BACKEND:
