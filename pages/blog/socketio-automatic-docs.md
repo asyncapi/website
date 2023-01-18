@@ -211,7 +211,7 @@ def default_error_handler(e: Exception):
         logger.critical(f"Unknown error: {e}")
         raise e
 ```
-Instead of re-raising exceptions, we can return some error which is interpreted as `acknowledge` value sent to the client. That's what we are doing in the example above when there is a RequestValidationError.
+Instead of re-raising exceptions, we can return some error interpreted as an `acknowledge` value sent to the client. That's what we do in the example above when there is a `RequestValidationError`.
 
 This is how it looks like in FireCamp if we do not provide "game_id" in "make_move" request:
 
