@@ -36,18 +36,18 @@
       "resourcePath": "/asyncapi/website/pull/1022",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 24.984189221185513
     },
     {
-      "id": "PR_kwDOFLhIt849RhNn",
+      "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
-      "isAssigned": true,
-      "title": "docs: docs folder for new asyncapi community section",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/community/pull/442",
-      "repo": "asyncapi/community",
+      "isAssigned": false,
+      "title": "feat: request/response support",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/847",
+      "repo": "asyncapi/spec",
       "labels": [],
-      "score": 22.68679251119144
+      "score": 24.697014632436254
     },
     {
       "id": "PR_kwDOFLhIt85AY9Ib",
@@ -58,18 +58,7 @@
       "resourcePath": "/asyncapi/community/pull/488",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 21.25091956744515
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 21.25091956744515
+      "score": 22.399617922442182
     },
     {
       "id": "PR_kwDOFdFGUs4x5bH2",
@@ -94,15 +83,20 @@
       "score": 20.96374497869589
     },
     {
-      "id": "PR_kwDOFi_gUM45K4cp",
-      "isPR": true,
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: automatically generate docs",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/glee/pull/318",
-      "repo": "asyncapi/glee",
-      "labels": [],
-      "score": 20.67657038994663
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.38939580119737
     },
     {
       "id": "PR_kwDOBW5R_c5DWzbr",
@@ -116,43 +110,60 @@
       "score": 20.38939580119737
     },
     {
-      "id": "I_kwDOBGu-184_rP6l",
-      "isPR": false,
+      "id": "PR_kwDOFi_gUM5AcAeR",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Let channels be identified by an ID rather than their address.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec/issues/663",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.102221212448114
+      "title": "feat: Kafka Adapter ",
+      "author": "Ruchip16",
+      "resourcePath": "/asyncapi/glee/pull/342",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 19.240697446200336
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "keep-open",
-          "color": "fce250"
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ],
-      "score": 19.378036838463604
+      "score": 18.953522857451077
+    },
+    {
+      "id": "PR_kwDOBW5R_c5GLDV9",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: manual tools added to the Tools Dashboard",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/1191",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.36895155870775
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFi_gUM5beg1A",
+      "title": "support for both js and ts file for glee config",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/375",
+      "repo": "asyncapi/glee",
+      "author": "Souvikns",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
@@ -581,25 +592,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc4_NF0N",
-      "title": "feat: create a parser plugin to support RAML 1.0 data types as a schema format",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/142",
-      "repo": "asyncapi/cli",
-      "author": "GeraldLoeffler",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFGbvC84_LkcI",
       "title": "Create better Kubernetes liveness, readiness and startup Probes",
       "isAssigned": false,
@@ -672,21 +664,6 @@
         {
           "name": "keep-open",
           "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU5NDc4NzA2NTE=",
-      "title": "Support different asyncapi file names: asyncapi.json and asyncapi.yml",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/23",
-      "repo": "asyncapi/glee",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
