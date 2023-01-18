@@ -42,7 +42,7 @@ export default function TOC({
           {
             tocItems.map((item, index) => (
               <a
-                className={`pl-${(item.lvl - minLevel) * 2} block mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline`}
+                className={`pl-${Math.pow(2, item.lvl-1)} block mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline`}
                 href={`#${item.slug}`}
                 key={index}
               >
