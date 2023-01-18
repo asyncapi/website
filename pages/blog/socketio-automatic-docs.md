@@ -27,7 +27,7 @@ To address this issue, I decided to implement SIO-AsyncAPI. This tool allows you
 Instead of giving you a detailed, step-by-step guide, we'll use a more exciting approach. We'll take the existing Flask-SocketIO server and add SIO-AsyncAPI. To make things even more interesting, we'll ask [ChatGPT](https://chat.openai.com/chat) to generate a server for us and use it as a real-world Flask-SocketIO server.
 
 ### Generate a Flask-SocketIO server
-I had to ask ChatGPT for multiple alterations in order to get the desired result. Here are my quires to ChatGPT:
+I had to ask ChatGPT for multiple alterations to get the desired result. Here are my queries to ChatGPT:
 
 >- create python flask-socket server that provides tick tac toe game api
 >- change previous code and add type hints
