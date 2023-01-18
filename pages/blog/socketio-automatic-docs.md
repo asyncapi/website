@@ -188,7 +188,7 @@ Now we can get the AsyncAPI specification by calling the `socketio.asyncapi_doc.
 ![Figure 1:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic1.webp)
 
 ### Validation and Error handling
-SIO-AsyncAPI will automatically validate incoming and outgoing messages. If a message is not valid, it will raise one of these 3 exceptions: `EmitValidationError`, `RequestValidationError` or `ResponseValidationError`.
+SIO-AsyncAPI will automatically validate incoming and outgoing messages. If a message is invalid, it will raise one of these 3 exceptions: `EmitValidationError`, `RequestValidationError`, or `ResponseValidationError`.
 
 Flask-SocketIO has a decorator for default error handling `@socketio.on_error_default` that we can use. E.g.:
 ```python
