@@ -111,7 +111,25 @@
   },
   "GitHub Actions": {
     "description": "The following is a list of GitHub Actions that you can use in your workflows",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "GitHub Action for Generator",
+        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI Generator"
+          ],
+          "categories": [
+            "github-actions"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
   },
   "Mocking and Testing": {
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
@@ -219,7 +237,26 @@
   },
   "Bundlers": {
     "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "AsyncAPI Bundler",
+        "description": "Combine multiple AsyncAPI specification files into one",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/bundler"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
   },
   "IDE Extensions": {
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
