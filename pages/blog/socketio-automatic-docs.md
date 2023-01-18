@@ -530,7 +530,7 @@ components:
       deprecated: false
       description: Specification is not provided
 info:
-  description: 'Tick-Tack-Toe Game API
+  description: 'Tic-Tac-Toe Game API
 
     <br/> AsyncAPI currently does not support Socket.IO binding and Web Socket like
     syntax used for now.
