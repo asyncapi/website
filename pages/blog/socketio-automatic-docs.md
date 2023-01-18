@@ -213,7 +213,7 @@ def default_error_handler(e: Exception):
 ```
 Instead of re-raising exceptions, we can return some error interpreted as an `acknowledge` value sent to the client. That's what we do in the example above when there is a `RequestValidationError`.
 
-This is how it looks like in FireCamp if we do not provide "game_id" in "make_move" request:
+This is how it looks like in FireCamp if we do not provide `game_id` in the `make_move` request:
 
 ![Figure 2:](/img/posts/socketio-automatic-docs/sio-asycnapi-pic2.webp)
 
