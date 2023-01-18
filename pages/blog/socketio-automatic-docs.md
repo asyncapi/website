@@ -11,7 +11,7 @@ authors:
 ---
 
 ## What is Flask-SocketIO, SocketIO?
-If you are reading this blog you probably already familiar with SocketIO, [python-socketio](https://github.com/miguelgrinberg/python-socketio) and [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/). If you want to learn more about them, please check the following resources:
+If you are reading this blog, you are probably already familiar with SocketIO [python-socketio](https://github.com/miguelgrinberg/python-socketio) and [Flask-SocketIO](https://flask-socketio.readthedocs.io/en/latest/). If you want to learn more about them, please check the following resources:
  - https://socket.io/docs/v4/
  - https://www.asyncapi.com/blog/socketio-part1
  - https://www.asyncapi.com/blog/socketio-part2
