@@ -196,7 +196,7 @@ Flask-SocketIO has the `@socketio.on_error_default` decorator for default error 
 def default_error_handler(e: Exception):
     """
     Default error handler. It is called if no other error handler is defined.
-    Handles RequestValidationError, EmitValidationError and ResponseValidationError errors.
+    Handles RequestValidationError, EmitValidationError, and ResponseValidationError errors.
     """
     if isinstance(e, RequestValidationError):
         logger.error(f"Request validation error: {e}")
