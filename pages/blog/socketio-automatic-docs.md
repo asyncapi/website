@@ -17,7 +17,7 @@ If you are reading this blog, you are probably already familiar with SocketIO [p
  - https://www.asyncapi.com/blog/socketio-part2
 
 ## The problem
-Imagine that you are working on a large project that uses a Flask-SocketIO server to handle real-time communication between the client and server. The server was originally well-documented, but over time the documentation has become out of date as the server has evolved and new features have been added.
+Imagine that you are working on a large project that uses a Flask-SocketIO server to handle real-time communication between the client and the server. The server was originally well-documented, but over time the documentation has become out of date as the server has evolved and new features have been added.
 
 I found myself in the same situation. I needed to maintain and constantly add more documentation to a Flask-SocketIO server. To make this process more efficient, I sought a solution to automate the generation of documentation from the existing codebase. This would eliminate the need for team members to manually edit the AsyncAPI specification file every time there was a change, a challenging task for those unfamiliar with AsyncAPI. By automating this process, we hoped to save time and reduce the workload for the team.
 
