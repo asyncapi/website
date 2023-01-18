@@ -253,7 +253,7 @@ socketio = SocketIO(
     title="Tic-Tac-Toe API",
     description="Tic-Tac-Toe Game API",
     server_url="http://localhost:5000",
-    server_name="TICK_TACK_TOE_BACKEND",
+    server_name="TIC_TAC_TOE_BACKEND",
 )
 
 games: dict[int, 'Game'] = {}
