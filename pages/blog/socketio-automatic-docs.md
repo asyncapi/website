@@ -29,7 +29,7 @@ Instead of giving you a detailed, step-by-step guide, we'll use a more exciting 
 ### Generate a Flask-SocketIO server
 I had to ask ChatGPT for multiple alterations to get the desired result. Here are my queries to ChatGPT:
 
->- create python flask-socket server that provides tick tac toe game api
+>- create python flask-socket server that provides tic tac toe game api
 >- change previous code and add type hints
 >- for previous example use pydantic models instead of dictionaries
 
