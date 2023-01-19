@@ -7,7 +7,7 @@ import Button from '../buttons/Button'
 import tags from '../../config/all-tags.json'
 import {categoryList} from '../../scripts/tools/categorylist'
 
-export default function Filters({setOpenFilter}) {
+export default function Filters({setOpenFilter, clearFilters, setIsFiltered}) {
   // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
   const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
   
@@ -29,21 +29,12 @@ export default function Filters({setOpenFilter}) {
 
   // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
+    setIsFiltered(true);
     setLanguages(checkedLanguage);
     setTechnologies(checkedTechnology)
     setCategories(checkedCategory)
     setisPaid(checkPaid)
     setAsyncAPIOwner(checkOwner)
-    setOpenFilter(false)
-  }
-
-  // function to clear all the filters when `Clear Filters` is clicked.
-  const clearFilters =() => {
-    setLanguages([])
-    setTechnologies([])
-    setCategories([])
-    setisPaid("all")
-    setAsyncAPIOwner(false)
     setOpenFilter(false)
   }
   
