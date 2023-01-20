@@ -52,7 +52,7 @@ const categoryList = [
     },
     {
         name: "GitHub Actions",
-        tag: "github-actions",
+        tag: "github-action",
         description: "The following is a list of GitHub Actions that you can use in your workflows"
     },
     {

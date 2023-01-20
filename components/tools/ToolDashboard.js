@@ -103,7 +103,7 @@ export default function ToolDashboard() {
                             <div>Filter</div>
                         </div>
                         {openFilter && (
-                            <div className="z-10 absolute top-16 min-w-[20rem]">
+                            <div className="z-20 absolute top-16 min-w-[20rem]">
                                 <Filters setOpenFilter={setOpenFilter} />
                             </div>
                         )}
