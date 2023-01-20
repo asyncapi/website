@@ -18,7 +18,6 @@ import Figure from '../components/Figure'
 import Profile from '../components/Profile'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import DocsButton from '../components/buttons/DocsButton';
 import { DocsCards } from '../components/docs/DocsCards'
 
 let mermaidInitialized = false;
@@ -68,7 +67,6 @@ function getMDXComponents() {
     CodeBlock,
     ChapterSuggestions,
     YouTube,
-    DocsButton,
     Remember,
     Warning,
     Sponsors,
