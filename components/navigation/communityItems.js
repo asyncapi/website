@@ -1,11 +1,12 @@
-import IconTools from '../icons/Tools';
-import IconGithubOrganization from '../icons/GithubOrganization';
-import IconSlack from '../icons/Slack';
-import IconContributing from '../icons/Contributing';
-import IconTSC from '../icons/TSC';
-import IconMeetings from '../icons/Meetings';
-import IconOverview from '../icons/Overview';
-import IconNewsroom from '../icons/Newsroom';
+import IconTools from '../icons/Tools'
+import IconGithubOrganization from '../icons/GithubOrganization'
+import IconSlack from '../icons/Slack'
+import IconContributing from '../icons/Contributing'
+import IconDashboard from '../icons/Dashboard'
+import IconTSC from '../icons/TSC'
+import IconMeetings from '../icons/Meetings'
+import IconNewsroom from '../icons/Newsroom'
+
 
 export default [
 
