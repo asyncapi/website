@@ -23,20 +23,3 @@ Do you have a documentation contributor question and you're wondering how to tag
 
 Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`alequetzalli`](https://github.com/alequetzalli) 🐙.
 </Remember>
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tools',
-      title: 'Tools - Overview',
-      type:'back',
-    },
-    {
-      href: '/docs/reference',
-      title: 'Reference - Overview',
-      type:'next',
-    }
-  ]}
-/>

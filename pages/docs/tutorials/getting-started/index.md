@@ -16,20 +16,3 @@ To make this happen, the first step has been to create a specification that allo
 **The AsyncAPI specification settles the base for a greater and better tooling ecosystem for EDA's**.
 
 If you are looking for a solution to automate and formalize the documentation or code generation of your event-driven (micro)services, you are in the right place. Likewise, if you are aiming to establish solid standards for your events and improve the governance of your asynchronous APIs, welcome to your new home.
-
----
-
-<DocsButton
- suggestions={[
-   {
-      href:'/docs/tutorials',
-      type: 'back',  
-      title: 'Tutorials - Overview',
-   },
-   {
-      href:'/docs/tutorials/getting-started/event-driven-architectures',
-      type: 'next',  
-      title: 'Event-Driven Architectures',
-   }
- ]}
-/>

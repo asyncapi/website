@@ -163,20 +163,3 @@ The following is a list of tools that compare AsyncAPI documents.
 | :------------- | :------------- | :----------------- |
 | [diff](https://github.com/asyncapi/diff) | Diff is a library that compares two AsyncAPI documents and provides information about the differences by pointing out explicitly information like breaking changes. | JavaScript
 | [api-smart-diff](https://github.com/udamir/api-smart-diff) | It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema. Thanks to [@udamir](https://github.com/udamir). | JavaScript
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/streetlights',
-      title: 'Tutorials - Streetlights',
-      type:'back',
-    },
-    {
-      href: '/docs/guides',
-      title: 'Guides - Overview',
-      type:'next',
-    }
-  ]}
-/>
