@@ -3,6 +3,7 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import Tag from './Tags';
 import TextTruncate from 'react-text-truncate';
+import Data from "../../scripts/tools/tools-schema.json"
 
 export default function ToolsCard({ toolData }) {
   const [showDescription, setShowDescription] = useState(false)
@@ -54,7 +55,14 @@ export default function ToolsCard({ toolData }) {
       <div className="grow">
         {(toolData?.filters?.language || toolData?.filters?.technology?.length > 0) ? <div className="my-6">
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
-            <div className="text-gray-700 text-sm font-semibold">LANGUAGES</div>
+            <div className="text-gray-700 text-sm font-semibold">
+              <span className="group relative">
+                <span className="w-48 bg-slate-400 text-white text-xs pointer-events-none absolute -top-10 left-1/2 translate-x-1/2 rounded px-2 py-1  transition opacity-0 group-hover:opacity-100">
+                  {Data.properties.filters.properties.language.description}
+                </span>
+                LANGUAGES
+              </span>            
+            </div>
             <div className="flex gap-2">
               <Tag
                 name={toolData.filters.language.name}
@@ -64,7 +72,14 @@ export default function ToolsCard({ toolData }) {
             </div>
           </div>}
           {toolData.filters.technology.length > 0 && <div className="flex flex-col gap-2 my-4 mx-6">
-            <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES</div>
+            <div className="text-gray-700 text-sm font-semibold">
+            <span className="group relative">
+                <span className="w-48 bg-slate-400 text-white text-xs pointer-events-none absolute -top-2 left-1/2 translate-x-1/3 rounded px-2 py-1  transition opacity-0 group-hover:opacity-100">
+                  {Data.properties.filters.properties.technology.description}
+                </span>
+                TECHNOLOGIES
+              </span>
+            </div>
             <div className="flex gap-2 flex-wrap">
               {toolData.filters.technology.map((item, index) => (
                 <Tag key={index}
