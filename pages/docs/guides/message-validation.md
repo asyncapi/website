@@ -109,17 +109,3 @@ channels:
 
 ---
 
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/guides/validate',
-      title: 'Validate AsyncAPI Documents',
-      type:'back',
-    },
-    {
-      href: '/docs/reference',
-      title: 'Reference - Overview',
-      type:'next',
-    }
-  ]}
-/>
