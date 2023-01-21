@@ -101,10 +101,15 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
           }
         }
         
+
+        // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if(file.startsWith("release-notes") && dir[1] === "/blog"){
           const fileName_without_extension = file.slice(0,-3)
+          // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
           const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
           releaseNotes.push(version)
+          // releaseNotes is the list of all available releaseNotes
         }
 
         result.push(details);
