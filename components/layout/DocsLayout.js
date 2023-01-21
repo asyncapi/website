@@ -179,7 +179,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   {generateEditLink(post)}
                 </p>
               </div>
-              { (post.releaseNoteLink !== undefined)? 
+              { post.releaseNoteLink &&
                 // show only when it is related to specification (/docs/reference/specification) AND is not a pre-release 
                 // for example, if the post's title is "3.0.0 (Pre-release)", which will not have RN, so do not render this section. 
                 <div className="w-full mt-5 p-3 text-center rounded-lg bg-secondary-100">
@@ -189,9 +189,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   <Link href={post.releaseNoteLink}> 
                     <a target="_blank" rel="noopener noreferrer" className={`font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> Release Notes </a> 
                   </Link> 
-                </div> 
-                : 
-                <></> 
+                </div>
                 }
                 <article className="mb-12 mt-12">
                   <Head
