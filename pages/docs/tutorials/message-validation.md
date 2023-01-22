@@ -88,18 +88,3 @@ This indicates that your message is valid and the application recieved it correc
 In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message. 
 
 ---
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/generate-code',
-      title: 'Generate code',
-      type:'back',
-    },
-    {
-      href: '/docs/tools',
-      title: 'Tools - Overview',
-      type:'next',
-    }
-  ]}
-/>
