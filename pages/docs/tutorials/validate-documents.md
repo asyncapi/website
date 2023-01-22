@@ -123,18 +123,3 @@ This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI 
 Now that you have completed this tutorial, go ahead to learn how to [validate messages/events]() which you will be sending to your application.
 
 ---
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/create-asyncapi-document',
-      title: 'Create AsyncAPI document',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/generate-code',
-      title: 'Generate code',
-      type:'next',
-    }
-  ]}
-/>
