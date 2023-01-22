@@ -5,6 +5,8 @@ import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
 import ToolsList from './ToolsList';
 import Filters from './Filters';
+import Button from '../buttons/Button';
+import Cross from '../icons/Cross';
 
 export default function ToolDashboard() {
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
@@ -136,9 +138,15 @@ export default function ToolDashboard() {
                 </div>
             </div>
             {isFiltered &&
-                <div className="my-2 cursor-pointer font-xs text-blue-600 hover:font-bold" onClick={clearFilters}> 
-                    Clear filters 
-                </div>
+                <Button
+                    text="Clear filters"
+                    type="button"
+                    icon={<Cross />}
+                    iconPosition="left"
+                    className="flex justify-center items-center my-4 py-2 px-4 font-normal bg-gray-100 cursor-pointer hover:bg-neutral-900"
+                    textClassName="text-neutral-900 hover:text-gray-100"
+                    onClick={clearFilters}
+                />
             }
             <div className="mt-0">
                 {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
