@@ -1,11 +1,14 @@
 const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
+const addFormats = require("ajv-formats")
 const Fuse = require("fuse.js")
 const yaml = require('yaml');
 const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
+addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
+
 
 // Config options set for the Fuse object
 const options = {
@@ -22,7 +25,7 @@ const fuse = new Fuse(categoryList, options)
 // isAsyncAPIrepo boolean variable to define whether the tool repository is under 
 // AsyncAPI organization or not, to create a JSON tool object as required in the frontend 
 // side to show ToolCard.
-const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyncAPIrepo) => {
+const createToolObject = async (toolFile, repositoryUrl='', repoDescription='', isAsyncAPIrepo='') => {
   let resultantObject = {
     title: toolFile.title,
     description: toolFile?.description ? toolFile.description : repoDescription,
@@ -32,7 +35,7 @@ const createToolObject = async (toolFile, repositoryUrl, repoDescription, isAsyn
     },
     filters: {
       ...toolFile.filters,
-      hasCommercial: toolFile?.filters?.hasCommmercial ? toolFile.filters.hasCommercial : false,
+      hasCommercial: toolFile?.filters?.hasCommercial ? toolFile.filters.hasCommercial : false,
       isAsyncAPIOwner: isAsyncAPIrepo
     }
   };
@@ -120,4 +123,4 @@ async function convertToJson(contentYAMLorJSON) {
   return yaml.parse(contentYAMLorJSON);
 }
 
-module.exports = { convertTools }
+module.exports = { convertTools, createToolObject }
