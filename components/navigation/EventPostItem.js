@@ -28,7 +28,7 @@ function EventPostItem({ post, className, id }) {
     type = 'WORKSHOP';
   }
 
-  const defaultCover = '/img/homepage/confBlurBg.png';
+  const defaultCover = '/img/homepage/confBlurBg.webp';
   let active = true;
   if(currentDate > post.date){
     active = false
