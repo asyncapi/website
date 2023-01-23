@@ -7,6 +7,7 @@ import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
 import DocsNav from '../navigation/DocsNav'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
+import DocsButton from '../buttons/DocsButton'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
@@ -23,7 +24,7 @@ function generateEditLink(post) {
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
 }
 
-function buildNavTree(navItems) {
+export function buildNavTree(navItems) {
   const tree = {
     'welcome': {
       item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
@@ -185,6 +186,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   />
                   { children }
                 </article>
+                <div>
+                  <DocsButton post={post} />
+                </div>
                 <div className="">
                   <Feedback />
                 </div>

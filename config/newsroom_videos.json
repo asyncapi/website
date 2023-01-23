@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/6hltg01w004/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (January 18, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/564.",
+    "videoId": "6hltg01w004"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/aLDkeuTQU8o/hqdefault.jpg",
+    "title": "Design Meeting, 16:00 UTC Tuesday January 16, 2023",
+    "description": "https://github.com/asyncapi/community/issues/563.",
+    "videoId": "aLDkeuTQU8o"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/DnJv6Qm1pl8/hqdefault.jpg",
     "title": "Community Meeting, 08:00 UTC Tuesday January 10, 2023",
     "description": "https://github.com/asyncapi/community/issues/562.",
@@ -16,17 +28,5 @@
     "title": "Spec 3.0 meeting (December 7, 2022)",
     "description": "https://github.com/asyncapi/community/issues/531.",
     "videoId": "qgcRg5sVOKg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/kn_oQiZ-ZXU/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing - Documentation",
-    "description": "https://github.com/asyncapi/community.",
-    "videoId": "kn_oQiZ-ZXU"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/4i_N_I4IT34/hqdefault.jpg",
-    "title": "Community Meeting, 16:00 UTC Tuesday November 29, 2022",
-    "description": "https://github.com/asyncapi/community/issues/536.",
-    "videoId": "4i_N_I4IT34"
   }
 ]
