@@ -33,10 +33,11 @@ function EventPostItem({ post, className, id }) {
   if(currentDate > post.date){
     active = false
   }
+  console.log(post);
   return (
     <li key={id} className={`${className}`}>
-      <article className="h-full rounded-lg shadow-md hover:shadow-lg">
-          <a>
+      <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
+          <a href={post.url} target='_blank' rel='noreferrer'>
             <img
               src={
                 post.banner
