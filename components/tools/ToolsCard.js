@@ -67,7 +67,7 @@ export default function ToolsCard({ toolData }) {
                 {lang && <span className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-1/2 absolute translate-x-1/3 -top-10 rounded px-2 py-1">
                   {Data.properties.filters.properties.language.description}
                 </span>}
-                <button className='border-2 border-gray-700 px-1 rounded-[45%] mx-1' onClick={() => { setLang(!lang); setTech(false) }}>i</button>
+                <button className='border-2 border-gray-700 px-1 rounded-[45%] mx-1' onClick={() =>{setLang(!lang); setTech(false) }}>i</button>
               </span>
             </div>
             <div className="flex gap-2">
