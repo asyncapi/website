@@ -11,7 +11,7 @@ const result = []
 const releaseNotes = []
 const basePath = 'pages'
 const postDirectories = [
-  // order of these directories are important, as blog should come before docs, in order to create a list of available release notes, later which will be used to release-note-link for spec docs
+  // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/docs`, '/docs'],
   [`${basePath}/about`, '/about'],
