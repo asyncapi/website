@@ -34,6 +34,9 @@ The command above helps you install the generator tool globally.
 {`npm install -g @asyncapi/cli@{version}`}
 </CodeBlock>
 
+import CliInstallation from '../../../assets/docs/fragments/cli-installation.md' 
+
+<CliInstallation/>
 
 ## Generate code
 
