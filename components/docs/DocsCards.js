@@ -7,6 +7,7 @@ import IconTutorials from '../icons/Tutorials'
 import IconUseCases from '../icons/UseCases'
 import IconGuide from '../icons/Guide'
 import IconSpec from '../icons/Spec'
+import IconUsers from '../icons/Users'
 
 const cards = [
   {
@@ -38,12 +39,19 @@ const cards = [
     Icon: IconGuide,
   },
   {
+    title: 'Community',
+    description: 'Our Community section documents the community guidelines and resources.',
+    link: '/docs/community',
+    className: 'bg-red-200',
+    Icon: IconUsers,
+  },
+  {
     title: 'Reference',
     description: 'Our Reference section documents the AsyncAPI specification.',
     link: '/docs/reference',
     className: 'bg-yellow-200',
     Icon: IconSpec,
-  }
+  },
 ];
 
 export function DocsCards() {

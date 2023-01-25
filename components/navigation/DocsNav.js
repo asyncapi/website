@@ -6,6 +6,7 @@ import IconGradCap from '../icons/GradCap'
 import IconPlant from '../icons/Plant'
 import IconGuide from '../icons/Guide'
 import IconPaper from '../icons/Paper'
+import IconUsers from '../icons/Users'
 
 const buckets = {
   'welcome': {
@@ -27,6 +28,10 @@ const buckets = {
   'guides': {
     icon: IconGuide,
     className: 'bg-primary-200 border-primary-200',
+  },
+  'community': {
+    icon: IconUsers,
+    className: 'bg-red-200 border-red-200',
   },
   'reference': {
     icon: IconPaper,
