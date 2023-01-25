@@ -7,7 +7,7 @@ weight: 120
 ## Introduction
 This tutorial will teach you how to validate AsyncAPI documents using the [AsyncAPI Studio tool](https://studio.asyncapi.com/).
 
-You will start with a broken AsyncAPI document and troubleshoot via console errors step-by-step until we end up with a valid AsyncAPI document. This process will illustrate how to identify [`REQUIRED` properties in AsyncAPI documents](https://www.asyncapi.com/docs/reference/specification/v2.5.0#A2SObject).
+You will start with a broken AsyncAPI document and troubleshoot via console errors step-by-step until we end up with a valid AsyncAPI document. This process will illustrate how to identify [`REQUIRED` properties in AsyncAPI documents](https://www.asyncapi.com/docs/reference/specification/latest#A2SObject).
 
 ## Background context
 An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API. The format of the file must be JSON or YAML. You can use this document to generate both documentation and code.
