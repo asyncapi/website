@@ -78,6 +78,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
+    "./config/tools.json"
   ],
   theme:{
     fontWeight: {
