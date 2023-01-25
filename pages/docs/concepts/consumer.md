@@ -30,19 +30,3 @@ The above diagram depicts a sample flow of events from `producer` to `broker` to
 <Remember>
 <b>Subscribers</b> can also be <a href="https://www.asyncapi.com/docs/concepts/producer">producers</a>.
 </Remember>
-
----
-<DocsButton
- suggestions={[
-    {
-      href:'/docs/concepts/producer',
-      type: 'back',  
-      title: 'Producer',
-   },
-   {
-      href:'/docs/concepts/channel',
-      type: 'next',  
-      title: 'Channel',
-   }
- ]}
-/>

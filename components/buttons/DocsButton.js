@@ -1,24 +1,12 @@
 import Link from 'next/link';
 
-export default function DocsButton({ suggestions = [], className }) {
-  if (suggestions.length === 0) {
-    return null;
-  }
-
-  const backPages = suggestions.filter(
-    (suggestion) => suggestion.type === 'back'
-  );
-  const nextPages = suggestions.filter(
-    (suggestion) => suggestion.type === 'next'
-  );
-
+export default function DocsButton({ post, className='' }) {
   return (
-    <div className={`flex flex-row ${className}`}>
-      <div className="pr-2 flex flex-col grow w-full">
-        {backPages.map((suggestion, key) => (
-          <Link href={suggestion.href} key={key} passHref>
+    <div className={`flex flex-row gap-4 mb-4 h-full ${className}`}>
+      <div className="w-1/2 h-auto">
+        { post?.prevPage && <Link href={post.prevPage.href} passHref>
             <a>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-left cursor-pointer">
+            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-left cursor-pointer">
               <div className="text-secondary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -38,17 +26,16 @@ export default function DocsButton({ suggestions = [], className }) {
                   Go Back
                 </div>
               </div>
-              <div className="font-medium text-base my-2">{suggestion.title}</div>
+              <div className="font-medium text-base my-2">{post.prevPage.title}</div>
             </div>
             </a>
           </Link>
-        ))}
+        }
       </div>
-      <div className="pl-2 flex flex-col grow w-full">
-        {nextPages.map((suggestion, key) => (
-          <Link href={suggestion.href} key={key} passHref>
+      <div className="w-1/2 h-auto">
+        { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 mb-4 text-center lg:text-right cursor-pointer">
+            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
               <div className="text-secondary-500">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
@@ -68,11 +55,11 @@ export default function DocsButton({ suggestions = [], className }) {
                   />
                 </svg>
               </div>
-              <div className="font-medium text-base my-2">{suggestion.title}</div>
+              <div className="font-medium text-base my-2">{post.nextPage.title}</div>
             </div>
             </a>
           </Link>
-        ))}
+        }
       </div>
     </div>
   );
