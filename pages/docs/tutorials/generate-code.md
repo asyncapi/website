@@ -16,7 +16,7 @@ The generator tool supports a number of templates to generate code for a variety
 ## Installation guide
 <Remember>
 
-It is important to have <a href='https://nodejs.org/en/download/'>Node.js</a> installed which will enable the installation of the required dependencies using <b>npm</b>.
+It is important to have [Node.js](https://nodejs.org/en/download/) installed which will enable the installation of the required dependencies using <b>npm</b>.
 
 </Remember>
 
