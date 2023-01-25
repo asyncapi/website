@@ -28,18 +28,3 @@ The diagram above depicts the message exchange flow from `producer` to `broker` 
 The quality of service information rule is specified on a protocol level. Broker implementations and other involved actors must act accordingly.
 
 In AsyncAPI documents, all protocol-specific details that the application follows can be described using [bindings](/docs/reference/specification/v2.5.0#definitionsBindings).
-
-<DocsButton
- suggestions={[
-    {
-      href:'/docs/concepts/application',
-      type: 'back',  
-      title: 'Application',
-   },
-   {
-      href:'/docs/concepts/message',
-      type: 'next',  
-      title: 'Message',
-   }
- ]}
-/>

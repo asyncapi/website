@@ -33,6 +33,11 @@
                     "type": "string",
                     "description": "You can provide URL to project documentation in case you have more than just a readme file.",
                     "format": "uri"
+                },
+               "repoUrl": {
+                  "type": "string",
+                  "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository.",
+                  "format": "uri"
                 }
             }
         },
@@ -40,40 +45,72 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "technology",
                 "categories"
             ],
             "properties": {
                 "language": {
                     "type": "string",
                     "description": "Provide information on how other can integrate with the tool in case it is possible. If your code generator generates Python code, then specify Python, even if code generator itself is written in JavaScript. If we forgot about some language then please add it through a pull request to AsyncAPI website repository.",
-                    "enum": [
-                        "Go",
-                        "Java",
-                        "JavaScript",
-                        "HTML",
-                        "C/C++",
-                        "C#",
-                        "Python",
-                        "TypeScript",
-                        "Kotlin",
-                        "Scala",
-                        "Markdown",
-                        "YAML",
-                        "R",
-                        "Rubby",
-                        "Rust",
-                        "Shell",
-                        "Groovy"
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "Go",
+                                "Java",
+                                "JavaScript",
+                                "HTML",
+                                "C/C++",
+                                "C#",
+                                "Python",
+                                "TypeScript",
+                                "Kotlin",
+                                "Scala",
+                                "Markdown",
+                                "YAML",
+                                "R",
+                                "Rubby",
+                                "Rust",
+                                "Shell",
+                                "Groovy"
+                            ]
+                        },
+                        {
+                            "type": "string"
+                        }
                     ]
                 },
                 "technology": {
                     "type": "array",
                     "description": "Provide a list of different technologies used in the tool. Put details useful for tool user and tool contributor.",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "Node js",
+                                    "Hermes",
+                                    "React JS",
+                                    ".NET",
+                                    "ASP.NET",
+                                    "Springboot",
+                                    "AWS",
+                                    "Docker",
+                                    "Node-red",
+                                    "Maven",
+                                    "Saas",
+                                    "Kubernetes-native",
+                                    "Scala",
+                                    "Azure",
+                                    "Jenkins",
+                                    "Flask"
+                                ]
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
                     },
-                    "minItems": 1,
                     "examples": [
                         "Express.js",
                         "Kafka"
@@ -84,31 +121,55 @@
                     "description": "Categories are used to group tools by different use case, like documentation or code generation. If have a list of fixed categories. If you use different one that your tool lands under \"other\" category. Feel free to add your category through a pull request to AsyncAPI website repository.",
                     "items": {
                         "type": "string",
-                        "enum": [
-                          "api",
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "enum": [
+                                    "api",
+                                    "code-first",
+                                    "code-generator",
+                                    "converter",
+                                    "directory",
+                                    "documentation-generator",
+                                    "editor",
+                                    "ui-component",
+                                    "dsl",
+                                    "framework",
+                                    "github-action",
+                                    "mocking-and-testing",
+                                    "validator",
+                                    "compare-tool",
+                                    "other",
+                                    "cli",
+                                    "bundler",
+                                    "ide-extension"
+                                ]
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "examples": [
+                        "api",
                           "code-first",
-                          "code generator",
+                          "code-generator",
                           "converter",
                           "directory",
-                          "documentation generator",
+                          "documentation-generator",
                           "editor",
-                          "ui component",
+                          "ui-component",
                           "dsl",
                           "framework",
-                          "github-actions",
-                          "mocking and testing",
+                          "github-action",
+                          "mocking-and-testing",
                           "validator",
                           "compare-tool",
                           "other",
                           "cli",
                           "bundler",
                           "ide-extension"
-                      ]
-                    },
-                    "minItems": 1,
-                    "examples": [
-                        "Express.js",
-                        "Kafka"
                     ]
                 },
                 "hasCommercial": {

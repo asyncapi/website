@@ -1,3 +1,4 @@
+// Various categories to define the category in which a tool has to be listed
 const categoryList = [
     {
         name: "APIs",
@@ -11,7 +12,7 @@ const categoryList = [
     },
     {
         name: "Code Generators",
-        tag: "code generator",
+        tag: "code-generator",
         description: "The following is a list of tools that generate code from an AsyncAPI document; not the other way around."
     },
     {
@@ -26,7 +27,7 @@ const categoryList = [
     },
     {
         name: "Documentation Generators",
-        tag: "documentation generator",
+        tag: "documentation-generator",
         description: "The following is a list of tools that generate human-readable documentation from an AsyncAPI document."
     },
     {
@@ -36,7 +37,7 @@ const categoryList = [
     },
     {
         name: "UI components",
-        tag: "ui component",
+        tag: "ui-component",
         description: "The following is a list of UI components to view AsyncAPI documents."
     },
     {
@@ -51,12 +52,12 @@ const categoryList = [
     },
     {
         name: "GitHub Actions",
-        tag: "github-actions",
+        tag: "github-action",
         description: "The following is a list of GitHub Actions that you can use in your workflows"
     },
     {
         name: "Mocking and Testing",
-        tag: "mocking and testing",
+        tag: "mocking-and-testing",
         description: "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas."
     },
     {
@@ -68,11 +69,6 @@ const categoryList = [
         name: "Compare tools",
         tag: "compare-tool",
         description: "The following is a list of tools that compare AsyncAPI documents."
-    },
-    {
-        name: "Others",
-        tag: "other",
-        description: "The following is a list of tools that comes under Other category."
     },
     {
         name: "CLIs",
@@ -88,6 +84,11 @@ const categoryList = [
         name: "IDE Extensions",
         tag: "ide-extension",
         description: "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others"
+    },
+    {
+        name: "Others",
+        tag: "other",
+        description: "The following is a list of tools that comes under Other category."
     }
 ]
 

@@ -10,7 +10,7 @@ import IconNewsroom from '../icons/Newsroom'
 
 export default [
 
-  { icon: IconTools, title: 'Tools & Services', href: '/docs/community/tooling', description: 'Explore the tools and services our awesome community has created.' },
+  { icon: IconTools, title: 'Tools & Services', href: '/tools', description: 'Explore the tools and services our awesome community has created.' },
   { icon: IconGithubOrganization, title: 'GitHub Organization', href: 'https://github.com/asyncapi', target: '_blank', description: 'Want to sneak in the code? Everything we do is open-sourced in our GitHub organization.' },
   { icon: IconSlack, title: 'Slack Workspace', href: 'https://asyncapi.com/slack-invite', target: '_blank', description: `Need help? Want to share something? Join our Slack workspace. We're nice people :)` },
   { icon: IconContributing, title: 'Contributing', href: 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi', target: '_blank', description: `We are always welcoming and looking for contributions. If you are interested check out our contribution guide.` },
