@@ -153,21 +153,3 @@ This tutorial is only a bootstrap; you'll need to add your own business logic in
 
 ## Next steps
 Now that you've completed this tutorial, go ahead to learn how to [generate code](https://www.asyncapi.com/docs/tutorials/create-asyncapi-document) from the specification document using the AsyncAPI generator tool.
-
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials',
-      title: 'Tutorials - Overview',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/validate-documents.md',
-      title: 'Validate AsyncAPI document',
-      type:'next',
-    }
-  ]}
-/>
