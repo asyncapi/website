@@ -9,9 +9,9 @@ weight: 100
 In this tutorial, you'll learn how to generate code from your AsyncAPI document using the AsyncAPI generator tool.
 
 ## Background context
-The [AsyncAPI Generator](https://github.com/asyncapi/generator) is a tool that you can use to generate whatever you want based on the AsyncAPI document. You can generate docs and code. It can be used as a library in Nodejs application or through the [AsyncAPI CLI](https://github.com/asyncapi/cli).
+The [AsyncAPI Generator](https://github.com/asyncapi/generator) is a tool that you can use to generate whatever you want based on the AsyncAPI document. You can generate docs and code. It can be used as a library in Node.js application or through the [AsyncAPI CLI](https://github.com/asyncapi/cli).
 
-The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates help to specify what exactly must be generated, and in this tutorial, you use [Nodejs template](https://github.com/asyncapi/nodejs-template).
+The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates help to specify what exactly must be generated, and in this tutorial, you use [Node.js template](https://github.com/asyncapi/nodejs-template).
 
 ## Installation guide
 <Remember>
@@ -40,7 +40,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 ## Generate code
 
-To generate code from the AsyncAPI document created from the [previous tutorial](""), follow the steps listed below;
+To generate code from the AsyncAPI document created from the [previous tutorial](""), follow the steps listed below:
 
 <Remember>
 
@@ -124,20 +124,3 @@ Additionally, you have learned how to run your code by installing the generated
 
 ## Next steps
 Now that you've completed this tutorial, go ahead to learn how to [validate your document using the AsyncAPI studio]() through the validation techniques supported by AsyncAPI.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/validate-documents',
-      title: 'Validate AsyncAPI document',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/message-validation',
-      title: 'Validate messages/events',
-      type:'next',
-    }
-  ]}
-/>
