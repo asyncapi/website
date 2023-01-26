@@ -186,8 +186,10 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   <span className="text-sm font-sans antialiased text-gray-800"> 
                     {`What is new in v${post.title}? Have a look at the `} 
                   </span> 
-                  <Link href={post.releaseNoteLink}> 
-                    <a target="_blank" rel="noopener noreferrer" className={`font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes </a>.                     
+                  <Link href={post.releaseNoteLink}>
+                    <span>
+                      <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes</a>.
+                    </span>        
                   </Link> 
                 </div>
                 }
