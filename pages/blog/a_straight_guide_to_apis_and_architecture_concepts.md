@@ -6,7 +6,7 @@ type: Communication
 tags:
   - APIs
   - Architectures
-cover: /img/posts/a_straight_guide_to_APIs_and_architecture_concepts/cover.webp
+cover: /img/posts/a_straight_guide_to_apis_and_architecture_concepts/cover.webp
 authors:
   - name: Barbaño González
     photo: /img/avatars/barbano.webp
