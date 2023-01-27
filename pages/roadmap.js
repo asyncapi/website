@@ -416,18 +416,21 @@ const outcomes = {
   },
   numberContributorsAbove100: {
     title: 'Number of contributors go above 100 in top repos',
+    description: <p>We make top repos grow to a point where we go over 100 contributors in the whole history of the project.</p>,
     solutions: [
       solutions.createOutstandingContributingGuide
     ]
   },
   numberProjectsAbove100: {
     title: 'The number of community and community-donated projects go above 100',
+    description: <p>We already have a bunch of tools and spec-related repos. This outcome will be done when we're over 100. That said, we shouldn't accept projects just for the sake of increasing that number.</p>,
     solutions: [
       solutions.createSupportProgram
     ]
   },
   yearlyNumberPresentersWritersAbove50: {
     title: 'The yearly number of community members presenting and/or writing about AsyncAPI goes above 50',
+    description: <p>A community is not made of programmers only. People producing content in form of blog posts, videos, live streams, podcasts, and conference talks are super important as well. We should help to make it grow. The more people speak about the project the more people will hear about us.</p>,
     solutions: [
       solutions.createSupportProgram
     ]
