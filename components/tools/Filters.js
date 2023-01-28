@@ -47,6 +47,26 @@ export default function Filters({setOpenFilter}) {
     setOpenFilter(false)
   }
   
+  // function to display filtered domain
+  const FilterDisplay = (props) => {
+    return (
+      <div className="max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150">
+        {props.checkedDomain.map((items, index) => {
+          return (
+            <div
+              key={index}
+              className={twMerge(
+                `border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start`
+              )}
+            >
+              <div className="text-xs -mt-[1px] mb-[1px]">{items}</div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
@@ -93,6 +113,7 @@ export default function Filters({setOpenFilter}) {
           {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
+          <FilterDisplay checkedDomain={checkedLanguage}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -108,6 +129,7 @@ export default function Filters({setOpenFilter}) {
         {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
+          <FilterDisplay checkedDomain={checkedTechnology}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -123,6 +145,7 @@ export default function Filters({setOpenFilter}) {
         {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
+          <FilterDisplay checkedDomain={checkedCategory}/>
         </div>
       </div>
       <hr className="my-4" />
