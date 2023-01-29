@@ -24,7 +24,7 @@ function generateEditLink(post) {
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
 }
 
-export function buildNavTree(navItems) {
+export function buildNavTree(allNavItems) {
   const tree = {
     'welcome': {
       item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
@@ -33,7 +33,7 @@ export function buildNavTree(navItems) {
   }
   
   //first we make sure that list of items lists main section items and then sub sections, documents last
-  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
+  const sortedItems = sortBy(allNavItems, ['isRootSection', 'weight', 'isSection']);
 
   sortedItems.forEach(item => {
     //identify main sections
