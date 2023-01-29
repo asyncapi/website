@@ -86,6 +86,7 @@ const convertDocPosts = (docObject) => {
 
  function addDocButtons(docPosts, treePosts){ 
   structuredPosts = []
+  rootSections = []
 
   // Traversing the whole DocTree and storing each post inside them in sequential order
   Object.keys(treePosts).forEach((rootElement) => {    
@@ -106,8 +107,11 @@ const convertDocPosts = (docObject) => {
   structuredPosts = structuredPosts.map((post, index) => {
     // post item specifying the root Section or sub-section in the docs are excluded as 
     // they doesn't comprise any Doc Page or content to be shown in website. 
-    if(post?.isRootElement || post?.isSection || index==0) 
+    if(post?.isRootSection || post?.isSection || index==0){ 
+      if(post?.isRootSection || index==0) 
+        rootSections.push(post.title)
       return post
+    }
 
     let nextPage = {}, prevPage = {}
     let docPost = post;
@@ -123,7 +127,7 @@ const convertDocPosts = (docObject) => {
         }
       }else{
         nextPage = {
-          title: structuredPosts[index+2].title,
+          title: `${structuredPosts[index+1].title} - ${structuredPosts[index+2].title}`,
           href: structuredPosts[index+2].slug
         }
       }
@@ -144,7 +148,7 @@ const convertDocPosts = (docObject) => {
         // additonal check for the first page of Docs so that it doesn't give any Segementation fault
         if(index-2>=0){
           prevPage = {
-            title: structuredPosts[index-2].title,
+            title: `${structuredPosts[index-1]?.isRootSection ? rootSections[rootSections.length - 2] : rootSections[rootSections.length - 1]} - ${structuredPosts[index-2].title}`,
             href: structuredPosts[index-2].slug
           }
           docPost = {...docPost, prevPage}
