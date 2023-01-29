@@ -10,6 +10,7 @@ export default function ToolsCard({ toolData }) {
   const [showMoreDescription, setShowMoreDescription] = useState(false)
   const [lang, setLang] = useState(false)
   const [tech, setTech] = useState(false)
+  const [readMore, setReadMore] = useState(false)
   const descriptionRef = useRef(null)
   useEffect(() => {
     let divHeight = descriptionRef.current.offsetHeight;
@@ -17,7 +18,6 @@ export default function ToolsCard({ toolData }) {
     if (numberOfLines > 3) setShowMoreDescription(true)
     else setShowMoreDescription(false)
   }, [])
-
 
   let onGit = false;
   if (toolData.links.repoUrl) {
@@ -64,10 +64,14 @@ export default function ToolsCard({ toolData }) {
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
             <div className="text-gray-700 text-sm font-semibold">LANGUAGES
               <span className="group relative">
-                {lang && <span className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-1/2 absolute translate-x-1/3 -top-10 rounded px-2 py-1">
-                  {Data.properties.filters.properties.language.description}
+                {lang && <span className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-2/3 absolute translate-x-1/3 -top-4 rounded px-2 font-light py-1">
+                  {Data.properties.filters.properties.language.description.length >= 130 ?
+                    <div>{!readMore ? Data.properties.filters.properties.language.description.slice(0, 118) + "... " : Data.properties.filters.properties.language.description}<button className='cursor-pointer text-cyan-600' onClick={() => { setReadMore(!readMore) }} >{readMore ? " Show Less" : " Show More"}</button></div> :
+                    Data.properties.filters.properties.language.description}
                 </span>}
-                <button className='border-2 border-gray-700 px-1 rounded-[45%] mx-1' onClick={() =>{setLang(!lang); setTech(false) }}>i</button>
+                <button onClick={() => { setLang(!lang); setTech(false) }} className="mx-1" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 translate-y-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg></button>
               </span>
             </div>
             <div className="flex gap-2">
@@ -81,10 +85,13 @@ export default function ToolsCard({ toolData }) {
           {toolData.filters.technology.length > 0 && <div className="flex flex-col gap-2 my-4 mx-6">
             <div className="text-gray-700 text-sm font-semibold">TECHNOLOGIES
               <span className="group relative">
-                {tech && <span className="w-48 text-xs bg-white absolute -left-1/4 -top-2 border border-gray-200 shadow-md rounded px-2 py-1 translate-x-8 z-10">
+                {tech && <span className="w-48 text-xs bg-white absolute left-1 font-light -top-2 border border-gray-200 shadow-md rounded px-2 py-1 translate-x-8 z-10">
                   {Data.properties.filters.properties.technology.description}
                 </span>}
-                <button className='border-2 border-gray-700 px-1 rounded-[45%] mx-1' onClick={() => { setTech(!tech); setLang(false) }}>i</button>
+                <button onClick={() => { setTech(!tech); setLang(false) }} className="mx-1" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 translate-y-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg>
+                </button>
               </span>
             </div>
             <div className="flex gap-2 flex-wrap">
