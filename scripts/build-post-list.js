@@ -12,7 +12,8 @@ const result = {
   docs: [],
   blog: [], 
   about: [],
-  jobs: []
+  jobs: [],
+  docsTree: {}
 }
 const basePath = 'pages'
 const postDirectories = [
@@ -37,6 +38,7 @@ const addItem = (details) => {
 module.exports = async function buildPostList() {
   walkDirectories(postDirectories, result)
   const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
+  result["docsTree"] = treePosts
   result["docs"] = addDocButtons(result["docs"], treePosts)
   if (process.env.NODE_ENV === 'production') {
     // console.log(inspect(result, { depth: null, colors: true }))
