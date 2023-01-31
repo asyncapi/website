@@ -50,7 +50,7 @@
             "properties": {
                 "language": {
                     "type": "string",
-                    "description": "Provide information on how other can integrate with the tool in case it is possible. If your code generator generates Python code, then specify Python, even if code generator itself is written in JavaScript. If we forgot about some language then please add it through a pull request to AsyncAPI website repository.",
+                    "description": "Refers to the language that users can use in the 'runtime'. That is, for generators it should be the language that the generator generates, not the language the generator is written in, itself. But, for example, for Bundler library, even though it operates on YAML and JSON files, more important for users is the fact that the library is written in TypeScript as this information tells them if they can integrate this library into their 'runtime'. In other words, if users have TypeScript codebase and they would like to have a bundling mechanism, they need to know if they can integrate Bundler library into their TypeScript codebase. This property provides information if a user can use given library/script/API specifically in his code. If we forgot about some language then please add it through a pull request to AsyncAPI's 'website' repository.",
                     "anyOf": [
                         {
                             "type": "string",
