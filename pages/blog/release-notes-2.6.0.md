@@ -1,0 +1,29 @@
+---
+title: AsyncAPI Spec 2.6.0 Release Notes
+date: 2023-01-31T16:00:00+01:00
+type: Communication
+tags:
+  - Specification
+  - Release Notes
+cover: /img/posts/release-notes-2.6.0/cover.webp
+authors:
+  - name: Azeez Elegbede
+    photo: /img/avatars/ace.webp
+    link: https://twitter.com/acethecreator
+    byline: A Software Engineer & An Advocate For Opensource Projects.
+excerpt: "The release of AsyncAPI 2.6 added an exciting feature which is the support for Apache Pulsar"
+featured: true
+---
+
+The new version of the AsyncAPI specification - 2.6.0 - is now available.
+
+> This is a minor release and doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.5.0'` into `asyncapi: '2.6.0'`
+
+## Added Pulsar Bindings and Protocol to the Specification
+
+The specification now supports a new custom protocol through the bindings feature called [Pulsar](https://pulsar.apache.org/)
+
+Thanks to [Alex Wichmann](https://github.com/VisualBean) for this incredible feature.  For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/882) and the [binding definition](https://github.com/asyncapi/bindings/tree/master/pulsar).
+
+
+> Photo by Clem Onojeghuo: https://www.pexels.com/photo/low-angle-photography-of-metal-building-on-grayscale-175771/
