@@ -47,6 +47,16 @@ export default function Filters({setOpenFilter}) {
     setOpenFilter(false)
   }
   
+  // function to clear selected filters
+  const handleClickOption = (e, option, checkedDomain, setDomain) => {
+    let tempValueArray = [...checkedDomain]
+    let index = checkedDomain.indexOf(option)
+    if(index>-1){
+      tempValueArray.splice(index, 1);
+    }
+    setDomain(tempValueArray)
+  }
+
   // function to display filtered domain
   const FilterDisplay = (props) => {
     return (
@@ -56,10 +66,12 @@ export default function Filters({setOpenFilter}) {
             <div
               key={index}
               className={twMerge(
-                `border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start`
+                `hover:bg-neutral-600 border border-gray-600 text-gray-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start `
               )}
             >
               <div className="text-xs -mt-[1px] mb-[1px]">{items}</div>
+              <button className="hover:bg-gray-100 p-0.5 rounded-full" onClick={(e) => handleClickOption(e, items, props.checkedDomain, props.setDomain)}>
+              <img src="/img/illustrations/icons/close-icon.svg" width="10" /></button>
             </div>
           );
         })}
@@ -106,14 +118,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
           <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
             <div className="flex items-center text-dark">
-              Select Languages...
+              {checkedLanguage.length>0 ? (checkedLanguage.length===1 ? `1 option selected` : `${checkedLanguage.length} options selected`) : `Select Languages...`}
             </div>
             <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
           {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
-          <FilterDisplay checkedDomain={checkedLanguage}/>
+          <FilterDisplay checkedDomain={checkedLanguage} setDomain={setCheckedLanguage}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -122,14 +134,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
           <div className="flex items-center text-dark">
-            Select technologies...
+          {checkedTechnology.length>0 ? (checkedTechnology.length===1 ? `1 option selected` : `${checkedTechnology.length} options selected`) : `Select Technologies...`}
           </div>
           <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
         {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
-          <FilterDisplay checkedDomain={checkedTechnology}/>
+          <FilterDisplay checkedDomain={checkedTechnology} setDomain={setCheckedTechnology}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -138,14 +150,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
           <div className="flex items-center text-dark">
-            Select categories...
+          {checkedCategory.length>0 ? (checkedCategory.length===1 ? `1 option selected` : `${checkedCategory.length} options selected`) : `Select Categories...`}
           </div>
           <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
         </div>
         {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
-          <FilterDisplay checkedDomain={checkedCategory}/>
+          <FilterDisplay checkedDomain={checkedCategory} setDomain={setCheckedCategory}/>
         </div>
       </div>
       <hr className="my-4" />
