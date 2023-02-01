@@ -42,7 +42,7 @@ export default function Meeting({
             )}
           </Paragraph>
           <div>
-            <ArrowRightIcon className="w-[20px] ml-3 mt-1 text-slate-400" />
+            <ArrowRightIcon className="w-[20px] ml-3 text-slate-400" />
           </div>
         </div>
       </div>
