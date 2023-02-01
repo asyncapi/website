@@ -95,9 +95,9 @@ function index() {
               target="_blank"
               rel="noreferrer"
             >
-              <div className="mt-5 flex items-center">
+              <div className="mt-5 flex gap-3 items-center">
                 <span>Watch now</span>
-                <ArrowRightIcon className="w-[20px] ml-3 mt-1" />
+                <ArrowRightIcon className="w-[20px]" />
               </div>
             </a>
           </div>
