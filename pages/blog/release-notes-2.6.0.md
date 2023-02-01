@@ -21,7 +21,39 @@ The new version of the AsyncAPI specification - 2.6.0 - is now available.
 
 ## Added Pulsar Bindings and Protocol to the Specification
 
-The specification now supports a new custom protocol through the bindings feature called [Pulsar](https://pulsar.apache.org/)
+The specification now supports a new custom protocol through the bindings feature called [Pulsar](https://pulsar.apache.org/).
+
+Here is an example of the server representation in Pulsar
+
+```yaml
+servers:
+  production:
+    bindings:
+      pulsar:
+        tenant: contoso
+        bindingVersion: '0.1.0'
+```
+
+And also an example of the channel representation in Pulsar
+
+```yaml
+channels:
+  user-signedup:
+    bindings:
+      pulsar:
+        namespace: 'staging'
+        persistence: 'persistent'
+        compaction: 1000
+        geo-replication:
+          - 'us-east1'
+          - 'us-west1'
+        retention:
+          time: 7
+          size: 1000
+        ttl: 360
+        deduplication: false
+        bindingVersion: '0.1.0'
+```
 
 Thanks to [Alex Wichmann](https://github.com/VisualBean) for this incredible feature.  For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/882) and the [binding definition](https://github.com/asyncapi/bindings/tree/master/pulsar).
 
