@@ -34,7 +34,7 @@ servers:
         bindingVersion: '0.1.0'
 ```
 
-And also an example of the channel representation in Pulsar
+And also an example of the channel representation in Pulsar:
 
 ```yaml
 channels:
