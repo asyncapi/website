@@ -55,7 +55,7 @@ channels:
         bindingVersion: '0.1.0'
 ```
 
-Thanks to [Alex Wichmann](https://github.com/VisualBean) for this incredible feature.  For more details, check out this [pull request](https://github.com/asyncapi/spec/pull/882) and the [binding definition](https://github.com/asyncapi/bindings/tree/master/pulsar).
+Thanks to [Alex Wichmann](https://github.com/VisualBean) for this incredible feature.  For more details, check out this [Pulsar bindings pull request](https://github.com/asyncapi/spec/pull/882) and the [binding definition](https://github.com/asyncapi/bindings/tree/master/pulsar).
 
 
 > Photo by Clem Onojeghuo: https://www.pexels.com/photo/low-angle-photography-of-metal-building-on-grayscale-175771/
