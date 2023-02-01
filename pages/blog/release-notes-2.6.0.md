@@ -10,7 +10,7 @@ authors:
   - name: Azeez Elegbede
     photo: /img/avatars/ace.webp
     link: https://twitter.com/acethecreator
-    byline: A Software Engineer & An Advocate For Opensource Projects.
+    byline: Software Engineer & Open-Source Advocate 
 excerpt: "The release of AsyncAPI 2.6 added an exciting feature which is the support for Apache Pulsar"
 featured: true
 ---
