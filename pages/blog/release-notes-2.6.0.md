@@ -23,7 +23,7 @@ The new version of the AsyncAPI specification - 2.6.0 - is now available.
 
 The specification now supports a new custom protocol through the bindings feature called [Pulsar](https://pulsar.apache.org/).
 
-Here is an example of the server representation in Pulsar
+Here is an example of the server representation in Pulsar:
 
 ```yaml
 servers:
