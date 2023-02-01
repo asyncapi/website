@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/s4C8xRUmPxE/hqdefault.jpg",
+    "title": "Design meeting #2",
+    "description": "How to contribute to design at AsyncAPI.",
+    "videoId": "s4C8xRUmPxE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/qav2X7qb-_E/hqdefault.jpg",
     "title": "Let&#39;s talk about contributing - Specification",
     "description": "How to start contributing to the AsyncAPI specification.",
@@ -22,11 +28,5 @@
     "title": "Design Meeting, 16:00 UTC Tuesday January 16, 2023",
     "description": "https://github.com/asyncapi/community/issues/563.",
     "videoId": "aLDkeuTQU8o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/DnJv6Qm1pl8/hqdefault.jpg",
-    "title": "Community Meeting, 08:00 UTC Tuesday January 10, 2023",
-    "description": "https://github.com/asyncapi/community/issues/562.",
-    "videoId": "DnJv6Qm1pl8"
   }
 ]
