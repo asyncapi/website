@@ -97,7 +97,7 @@ function index() {
             >
               <div className="mt-5 flex gap-3 items-center">
                 <span>Watch now</span>
-                <ArrowRightIcon className="w-[20px]" />
+                <ArrowRightIcon className="w-[20px] mt-1" />
               </div>
             </a>
           </div>
