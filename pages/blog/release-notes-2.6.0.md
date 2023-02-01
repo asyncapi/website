@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI Spec 2.6.0 Release Notes
-date: 2023-02-01T21:00:00+01:00
+date: 2023-02-01T23:00:00+01:00
 type: Communication
 tags:
   - Specification
