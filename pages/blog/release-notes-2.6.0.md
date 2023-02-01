@@ -19,7 +19,7 @@ The new version of the AsyncAPI specification - 2.6.0 - is now available.
 
 > This is a minor release and doesn't bring any breaking changes. You can switch to it by modifying the following value in your AsyncAPI file `asyncapi: '2.5.0'` into `asyncapi: '2.6.0'`
 
-## Added Pulsar Bindings and Protocol to the Specification
+## Added Pulsar Bindings and Protocol to AsyncAPI specification
 
 The specification now supports a new custom protocol through the bindings feature called [Pulsar](https://pulsar.apache.org/).
 
