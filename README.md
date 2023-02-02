@@ -23,6 +23,7 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
+
 ## Run Locally
 
 1. Open Command Prompt in your local computer
@@ -54,8 +55,7 @@ npm run dev
 6. Access the live development server at [localhost:3000](http://localhost:3000).
 
 
-
-#### Compose a new blog post
+## Compose a new blog post
 
 To bootstrap a new post, run this command:
 
