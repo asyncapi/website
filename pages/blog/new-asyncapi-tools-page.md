@@ -132,3 +132,5 @@ This project is under my Mentorship program 2022 and was mentored by [Lukasz Gor
 - [feat: manual tools added to the Tools Dashboard](https://github.com/asyncapi/website/pull/1191)
 
 You are welcomed to review my work in the program and I will love to get your feedbacks on this. You can contact me via [mail](mailto:akshatnema.official@gmail.com) or using DMs in [AsyncAPI Slack](https://asyncapi.com/slack-invite). Thanks to AsyncAPI and their community members for proividing me with this opportunity and I'll be looking for more such activities to contribute to the organization. Also, we are close to announce the next AsyncAPI Mentorship Program in year 2023 so stay tuned with us on [Slack](https://asyncapi.com/slack-invite).
+
+> Photo by DEWALT hand tools: https://www.dewalt.com/products/hand-tools
