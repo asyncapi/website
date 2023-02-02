@@ -11,17 +11,17 @@ authors:
     photo: /img/avatars/akshatnema.webp
     link: https://twitter.com/AksNema
     byline: AsyncAPI Maintainer and Dev Akshat Nema
-excerpt: "We haven't come up with some exciting features in AsyncAPI in recent, but now we come up with something new and special"
+excerpt: "Announcing our newly released AsyncAPI tools dashboard!"
 featured: true
 ---
 
-We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the Github repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have, how to filter the tools according to our interest 🤔, like languages, technolgies used in it, open source tools, etc. Also, what if you want to add your tool in the list, what you will do 🤔? Will make a PR?
+We already know that the present list of tools used inside AsyncAPI is presented on [AsyncAPI Tools Overview](/docs/tools) and it is manually maintained inside the GitHub repository. All the tools are sorted according to the different categories in which they are used and maintained by the contributors. But we don't have a way to filter the tools according to our interest 🤔, like languages, technologies used in it, open-source tools, etc. Also, what if you want to add your tool to the list, what you will do 🤔? Do you have to create a PR?
 
-What if I say, you don't need to make a mess of PR now 😉. Yepp, we introduce you with something new to add tools in our website. For this, stay tuned in the blog 👇.
+What if I say, you don't need to make a mess of PR now 😉. Yep, we're introducing a new way to add tools to our website! Keep reading below to learn all about it👇.
 
 # AsyncAPI Tool File
 
-We have introduced a new concept of `.asyncapi-tool` file which describes the type and details of a tool related to AsyncAPI. This file will follow certain schema and fields to describe your tool appropriately according to the needs of a user and it will then automatically being added to our website within a week. But the question comes, where this file will exist? inside AsyncAPI repositories? Definitely not!. Here comes the twist, this file will be created and maintained in your Tool's repository, and it won't ask for our approval. This file will follow certain schema which you have to follow to successfully and appropriately add your tool to our brand new [Tools Dashboard](/tools). The proper schema of the file is described [here](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json). You can use the tools like [Online JSON Validator](https://www.liquid-technologies.com/online-json-schema-validator) to validate your JSON data for Tool against the schema given above. For more detailed explanation, you can refer to our [official documentation](https://github.com/asyncapi/community/blob/master/new-tool-documentation.md) of `.asyncapi-tool` file. 
+We have introduced a new concept of the `.asyncapi-tool` file which describes the type and details of a tool related to AsyncAPI. This file will follow certain schema and fields to describe your tool appropriately according to the needs of a user and it will then automatically be added to our website within a week. But the question comes, where this file will exist? Inside AsyncAPI repositories? Definitely not! Here comes the twist, this file will be created and maintained in your Tool's repository, and it won't ask for our approval. This file will follow a certain schema that you have to follow to successfully and appropriately add your tool to our brand new [AsyncAPI Tools Dashboard](/tools). The [proper schema of the file is described here](https://github.com/asyncapi/website/blob/master/scripts/tools/tools-schema.json). You can use the tools like the [Online JSON Validator](https://www.liquid-technologies.com/online-json-schema-validator) to validate your JSON data for Tools against the schema given above. For a more detailed explanation, you can refer to our [official `.asyncapi-tool` file documentation](https://github.com/asyncapi/community/blob/master/new-tool-documentation.md). 
 
 ## Tool File Structure
 
@@ -53,9 +53,9 @@ Here's the sample `.asyncapi-tool` file structure, which can be used to structur
 }
 ```
 
-This file structure should be used to insert your tool in website. The fields specified above are explained below:
+This file structure should be used to insert your tool into the website. The fields specified above are explained below:
 
-- **`title`** - Specifies the title or name of the Tool. Remember this name will be used as official name of your tool in website.
+- **`title`** - Specifies the title or name of the Tool. Remember this name will be used as the official name of your tool on the website.
 - **`description`** - Specifies the description of the tool you want to add. Make sure it should be precise, upto 30 words only.
 - **`links`** - Object which contains important links related to the tool.
   - **`websiteUrl`** - This is an optional field which specifies URL of the website of the tool.
@@ -74,17 +74,17 @@ The predefined list of technologies can be found in our repository and are liste
 
 # AsyncAPI Tools Dashboard
 
-Ohh! wait a minute, have I told you about new Tools Dashboard? Then, let me present you with brand new and astonishing AsyncAPI Tools Dashboard, which has list of Tools presented in the form of cards. Do checkout that out right now - [AsyncAPI Tools Dashboard](/tools). Preview of the UI is as follows:
+Ohh! Wait a minute, have I told you about the new AsyncAPI Tools Dashboard? Then, let me present you with a brand new and astonishing AsyncAPI Tools Dashboard, which has a list of Tools presented in the form of cards. Do check it out right now - [AsyncAPI Tools Dashboard](/tools). The preview of the UI is as follows:
 
-![Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.webp)
+![AsyncAPI Dashboard UI](/img/posts/new-asyncapi-tools-page/dashboard-preview.webp)
 
-The Dashboard consists of various features like the overall information about the tools inside ToolCard, filters to sort out the tools according to your needs, and search for tools specific to its name and type.
+The Dashboard consists of various features like the overall information about the tools inside the ToolCard, filters to sort out the tools according to your needs, and a search bar for finding tools specific to name/type.
 
 ## Tool Card
 
-Taking the Tools Card under consideration, you have following sections to detail about a Tool:
+Taking the Tools Card under consideration, you have the following sections to detail about a Tool:
 
-![Tools Card](/img/posts/new-asyncapi-tools-page/tool-preview.webp)
+![AsyncAPI Tools Card](/img/posts/new-asyncapi-tools-page/tool-preview.webp)
 
 <ol>
   <li> Specifies the Name of the Tool.</li>
@@ -99,25 +99,25 @@ Taking the Tools Card under consideration, you have following sections to detail
 
 ## Filters for Tools
 
-The Dashboard also contain various filters to search for a specific Tool according to your needs. You can now search according to the Name, Languages, Technologies, Categories, etc.. as provided in respective dropdowns and radio buttons. Filters are mostly divided in 2 sections - Filter Menu and Search bar. The use of each menu is explained below under respective subheadings.
+The Dashboard also contains various filters to search for a specific Tool according to your needs. You can now search according to the Name, Languages, Technologies, Categories, and more, as provided in respective dropdowns and radio buttons. Filters are mostly divided into 2 sections - Filter Menu and Search bar. The use of each menu is explained below under respective subheadings.
 
-![Filters Preview](/img/posts/new-asyncapi-tools-page/filters.webp)
+![AsyncAPI tool's filters preview](/img/posts/new-asyncapi-tools-page/filters.webp)
 
 ### Filter Menu
 
 Taking the Tools Filter Menu under consideration, you have following filters to search a Tool:
 
-![Filter Menu](/img/posts/new-asyncapi-tools-page/filter-menu.webp)
+![AsyncAPI tool's filters menu](/img/posts/new-asyncapi-tools-page/filter-menu.webp)
 
 <ol>
-  <li> This radio filter button allows to search for either free tools available on internet or Github, or search for the Paid Tools.</li>
-  <li> The slider filter button allows to search for the tools owned or maintained by AsyncAPI organization. </li>
+  <li> This radio filter button allows you to search for either free tools available on the internet or GitHub, or search for Paid Tools.</li>
+  <li> The slider filter button allows searching for the tools owned or maintained by the AsyncAPI organization. </li>
   <li> The <b>Language Filter</b> allows you to select the languages from the dropdown on which you want to search for Tools. </li>
   <li> The <b>Technology Filter</b> allows you to select the technologies from the dropdown on which you want to search for Tools. </li>
   <li> The <b>Clear Filters</b> button allows you to clear all filters inside the Filters Modal and will show you all the tools of selected categories (or all categories).</li>
 </ol>
 
-Do remember to click on `Apply Filter` Button before closing the `Filters` Modal so that filters will be applied on the Dashboard.
+Do remember to click on the `Apply Filter` Button before closing the `Filters` Modal so that filters will be applied on the Dashboard.
 
 ### Search Bar
 
@@ -125,12 +125,12 @@ The Search Bar will allow you to search the tools on the basis of their names.
 
 ## Summary
 
-This project is under my Mentorship program 2022 and was mentored by [Lukasz Gornicki](https://github.com/derberg) and [Maciej Urbańczyk](https://github.com/magicmatatjahu). It was an amazing experience to work in this project and create such an automation for AsyncAPI tools. Quite a good learning experience as I researched about GitHub APIs, JSON Schema, GitHub Actions and lot more stuff. Moreover, I became the maintainer of AsyncAPI website repository and started contributing to organization in lot many ways. My work in the project consists of following Pull Requests: 
+I completed this project during the 2022 AsyncAPI Mentorship program, mentored by [Lukasz Gornicki](https://github.com/derberg) and [Maciej Urbańczyk](https://github.com/magicmatatjahu). It was an amazing experience to work on this project and create an automation for AsyncAPI tools. Quite a good learning experience as I researched GitHub APIs, JSON Schema, GitHub Actions, and a lot more stuff. Moreover, I became a maintainer of the AsyncAPI website repository and started contributing to the organization in lot many ways. My work in the project consists of the following Pull Requests: 
 
 - [feat: tools backend implementation](https://github.com/asyncapi/website/pull/939)
 - [feat: added new /tools page](https://github.com/asyncapi/website/pull/940)
 - [feat: manual tools added to the Tools Dashboard](https://github.com/asyncapi/website/pull/1191)
 
-You are welcomed to review my work in the program and I will love to get your feedbacks on this. You can contact me via [mail](mailto:akshatnema.official@gmail.com) or using DMs in [AsyncAPI Slack](https://asyncapi.com/slack-invite). Thanks to AsyncAPI and their community members for proividing me with this opportunity and I'll be looking for more such activities to contribute to the organization. Also, we are close to announce the next AsyncAPI Mentorship Program in year 2023 so stay tuned with us on [Slack](https://asyncapi.com/slack-invite).
+You are welcome to review my work in the program and I will love to get your feedback on this. You can contact me via [my email](mailto:akshatnema.official@gmail.com) or DM me in [AsyncAPI Slack](https://asyncapi.com/slack-invite). Thank you to AsyncAPI and its community members for providing me with this opportunity and I'll be looking for more such activities to contribute to the organization. Also, we are close to announcing the next AsyncAPI Mentorship Program in the year 2023, so stay tuned with us on [AsyncAPI Slack](https://asyncapi.com/slack-invite).
 
 > Photo by DEWALT hand tools: https://www.dewalt.com/products/hand-tools
