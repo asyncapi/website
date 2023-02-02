@@ -3,6 +3,7 @@ import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
+import FiltersDisplay from './FiltersDisplay';
 import Button from '../buttons/Button'
 import tags from '../../config/all-tags.json'
 import {categoryList} from '../../scripts/tools/categorylist'
@@ -46,38 +47,6 @@ export default function Filters({setOpenFilter}) {
     setAsyncAPIOwner(false)
     setOpenFilter(false)
   }
-  
-  // function to clear selected filters
-  const handleClickOption = (e, option, checkedDomain, setDomain) => {
-    let tempValueArray = [...checkedDomain]
-    let index = checkedDomain.indexOf(option)
-    if(index>-1){
-      tempValueArray.splice(index, 1);
-    }
-    setDomain(tempValueArray)
-  }
-
-  // function to display filtered domain
-  const FilterDisplay = (props) => {
-    return (
-      <div className="max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150">
-        {props.checkedDomain.map((items, index) => {
-          return (
-            <div
-              key={index}
-              className={twMerge(
-                `hover:bg-neutral-600 border border-gray-600 text-gray-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start `
-              )}
-            >
-              <div className="text-xs -mt-[1px] mb-[1px]">{items}</div>
-              <button className="hover:bg-gray-100 p-0.5 rounded-full" onClick={(e) => handleClickOption(e, items, props.checkedDomain, props.setDomain)}>
-              <img src="/img/illustrations/icons/close-icon.svg" width="10" /></button>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
 
   return (
     <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
@@ -125,7 +94,7 @@ export default function Filters({setOpenFilter}) {
           {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
-          <FilterDisplay checkedDomain={checkedLanguage} setDomain={setCheckedLanguage}/>
+          <FiltersDisplay checkedDomain={checkedLanguage} setDomain={setCheckedLanguage}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -141,7 +110,7 @@ export default function Filters({setOpenFilter}) {
         {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
-          <FilterDisplay checkedDomain={checkedTechnology} setDomain={setCheckedTechnology}/>
+          <FiltersDisplay checkedDomain={checkedTechnology} setDomain={setCheckedTechnology}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -157,7 +126,7 @@ export default function Filters({setOpenFilter}) {
         {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
-          <FilterDisplay checkedDomain={checkedCategory} setDomain={setCheckedCategory}/>
+          <FiltersDisplay checkedDomain={checkedCategory} setDomain={setCheckedCategory}/>
         </div>
       </div>
       <hr className="my-4" />
