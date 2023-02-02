@@ -56,12 +56,12 @@ Here's the sample `.asyncapi-tool` file structure, which can be used to structur
 This file structure should be used to insert your tool into the website. The fields specified above are explained below:
 
 - **`title`** - Specifies the title or name of the Tool. Remember this name will be used as the official name of your tool on the website.
-- **`description`** - Specify your the tool description.  It should be precise, up to 30 words only.
+- **`description`** - Specify the tool description. It should be precise, up to 30 words only.
 - **`links`** - Object which contains important links related to the tool.
   - **`websiteUrl`** - This is an optional field that specifies the URL of the tool's website.
   - **`docsUrl`** - This is an optional field that specifies the URL of the tool's documentation.
   - **`repoUrl`** - This is an optional field that specifies the URL of the tool's GitHub repository.
-- **`filters`** - Object which contains various fields like language, technologies, and categories to provide information about the tool.
+- **`filters`** - Object that contains various fields like language, technologies, and categories to provide information about the tool.
   - **`language`** - Specifies the primary Language in which the tool has been created. There are predefined languages listed in our documentation that are available right now and will be expanded to add new languages if needed.
   - **`technology`** - Specifies the list of technologies that are used to create the tool. There are predefined technologies listed in our documentation that are available right now and will be expanded to add new languages if needed.
   - **`categories`** - Specifies the list of categories that defines the type of tool. There are predefined categories listed in our documentation that can be used to list down your tool under the proper category.
