@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/6zImMBBxUwI/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (February 1, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/575.",
+    "videoId": "6zImMBBxUwI"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/s4C8xRUmPxE/hqdefault.jpg",
+    "title": "Design meeting #2",
+    "description": "How to contribute to design at AsyncAPI.",
+    "videoId": "s4C8xRUmPxE"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/qav2X7qb-_E/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing - Specification",
+    "description": "How to start contributing to the AsyncAPI specification.",
+    "videoId": "qav2X7qb-_E"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/yLIBWf3WPGY/hqdefault.jpg",
     "title": "Community Meeting (January 24, 2023)",
     "description": "https://github.com/asyncapi/community/issues/569.",
@@ -10,23 +28,5 @@
     "title": "Spec 3.0 meeting (January 18, 2023)",
     "description": "https://github.com/asyncapi/community/issues/564.",
     "videoId": "6hltg01w004"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/aLDkeuTQU8o/hqdefault.jpg",
-    "title": "Design Meeting, 16:00 UTC Tuesday January 16, 2023",
-    "description": "https://github.com/asyncapi/community/issues/563.",
-    "videoId": "aLDkeuTQU8o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/DnJv6Qm1pl8/hqdefault.jpg",
-    "title": "Community Meeting, 08:00 UTC Tuesday January 10, 2023",
-    "description": "https://github.com/asyncapi/community/issues/562.",
-    "videoId": "DnJv6Qm1pl8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Va1iQLjEM4s/hqdefault.jpg",
-    "title": "Community Meeting (December 13, 2022)",
-    "description": "https://github.com/asyncapi/community/issues/549.",
-    "videoId": "Va1iQLjEM4s"
   }
 ]
