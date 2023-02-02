@@ -23,25 +23,37 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
-## Usage
+## Run Locally
 
-### Install dependencies
+1. Open Command Prompt in your local computer
 
-To install all dependencies, run this command:
+2. Clone the repository, 
+
+```bash
+git clone https://github.com/asyncapi/website/
+```
+
+3. Navigate to the website directory
+
+```bash
+cd website
+```
+
+4. Install all website dependencies 
 
 ```bash
 npm install
 ```
 
-### Develop
-
-Launch the development server with the hot reloading functionality that allows any change in files to be immediately visible in the browser. Use this command:
+5. Run the website locally
 
 ```bash
 npm run dev
 ```
 
-You can access the live development server at [localhost:3000](http://localhost:3000).
+6. Access the live development server at [localhost:3000](http://localhost:3000).
+
+
 
 #### Compose a new blog post
 
