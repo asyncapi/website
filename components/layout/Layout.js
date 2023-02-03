@@ -100,44 +100,46 @@ export default function Layout({ children }) {
   if (pathname.startsWith('/docs')) {
     const post = getDocBySlug(structuredPosts, pathname)
     return (
-      <DocsLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/docs/'))}>
+      <DocsLayout
+        post={post}
+        navItems={posts.filter((p) => p.slug.startsWith('/docs/'))}
+      >
         {children}
       </DocsLayout>
-    )
+    );
   } else if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname)
     return (
-      <BlogLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/blog/'))}>
+      <BlogLayout
+        post={post}
+        navItems={posts.filter((p) => p.slug.startsWith('/blog/'))}
+      >
         {children}
       </BlogLayout>
-    )
+    );
   } else if (pathname === '/blog') {
     return (
-      <BlogContext.Provider value={{ navItems: posts.filter(p => p.slug.startsWith('/blog/')) }}>
+      <BlogContext.Provider
+        value={{ navItems: posts.filter((p) => p.slug.startsWith('/blog/')) }}
+      >
         {children}
       </BlogContext.Provider>
-    )
+    );
   } else if (pathname === '/jobs') {
     return (
-      <JobsContext.Provider value={{ navItems: posts.filter(p => p.slug.startsWith('/jobs/')) }}>
+      <JobsContext.Provider
+        value={{ navItems: posts.filter((p) => p.slug.startsWith('/jobs/')) }}
+      >
         {children}
       </JobsContext.Provider>
-    )
+    );
   } else if (pathname.startsWith('/jobs/')) {
-    const post = getPostBySlug(pathname)
-    return (
-      <JobsLayout post={post}>
-        {children}
-      </JobsLayout>
-    )
+    const post = getPostBySlug(pathname);
+    return <JobsLayout post={post}>{children}</JobsLayout>;
   } else {
-    const post = getPostBySlug(pathname)
+    const post = getPostBySlug(pathname);
     if (post) {
-      return (
-        <GenericPostLayout post={post}>
-          {children}
-        </GenericPostLayout>
-      )
+      return <GenericPostLayout post={post}>{children}</GenericPostLayout>;
     }
   }
   
