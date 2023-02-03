@@ -22,7 +22,9 @@
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -91,7 +93,9 @@
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -146,7 +150,9 @@
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -202,7 +208,9 @@
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
