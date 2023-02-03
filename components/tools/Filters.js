@@ -94,7 +94,7 @@ export default function Filters({setOpenFilter}) {
           {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
-          <FiltersDisplay checkedDomain={checkedLanguage} setDomain={setCheckedLanguage}/>
+          <FiltersDisplay checkedValues={checkedLanguage} setValues={setCheckedLanguage}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -110,7 +110,7 @@ export default function Filters({setOpenFilter}) {
         {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
-          <FiltersDisplay checkedDomain={checkedTechnology} setDomain={setCheckedTechnology}/>
+          <FiltersDisplay checkedValues={checkedTechnology} setValues={setCheckedTechnology}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -126,7 +126,7 @@ export default function Filters({setOpenFilter}) {
         {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
-          <FiltersDisplay checkedDomain={checkedCategory} setDomain={setCheckedCategory}/>
+          <FiltersDisplay checkedValues={checkedCategory} setValues={setCheckedCategory}/>
         </div>
       </div>
       <hr className="my-4" />
