@@ -1,100 +1,89 @@
-import { Discussion } from './Discussion';
-import GitHubRepository from './GithubReposity';
+import { Repository } from './Reposity';
 import { WebClient } from '@slack/web-api';
 import axios from 'axios';
 import querystring from 'querystring';
 import { HandlerEvent, HandlerContext } from '@netlify/functions';
+import { Slack } from './Slack';
 
-const client = new WebClient(process.env.SLACK_TOKEN);
-let githubReposity: GitHubRepository;
+enum REQUEST_TYPE {
+  MESSAGE_ACTION = 'message_action',
+  DIALOG_SUBMISSION = 'dialog_submission',
+}
+const REPO_OWNER = process.env.REPO_OWNER;
+const REPO_NAME = process.env.REPO_NAME;
 
+// Function to handle the main request handling logic.
 const handler = async (event: HandlerEvent) => {
+  // since slack always sends Only POST methods along with a body, we can ignore all other requests.
   if (event.httpMethod != 'POST' || !event.body) {
-    return {
-      statusCode: 400,
-    };
+    return { statusCode: 400 };
   }
+
+  // Slack encodes the body in application/x-www-form-urlencoded
   const payload = JSON.parse(
     querystring.parse(event.body || '{}')?.payload as string
   );
-  if (payload.type === 'message_action') {
 
-    showPrompt(payload);
-  } else if (payload.type === 'dialog_submission') {
-    // can't use await here since slack needs a response within 3 seconds and this operation can take more than three seconds to complete.
-    parseDiscussion(payload).then(async (discussion) => {
-      discussion.setTitle(payload.submission.title);
-      discussion.setCategory(payload.submission.category);
-      const discussionUrl = await githubReposity.createDiscussion(discussion);
-      if (discussionUrl) {
-        discussion.postMessage(
-          'this discussion has been preserved here: ' + discussionUrl
-        );
-      }
-    }).catch((err) => {
-      console.error(err);
-    });
+  // When the `Save Discussion` option selected in slack.
+  if (payload.type === REQUEST_TYPE.MESSAGE_ACTION) {
+    handleMessageAction(payload);
+    //When the user submits the dialog.
+  } else if (payload.type === REQUEST_TYPE.DIALOG_SUBMISSION) {
+    handleDialogSubmission(payload);
   }
-  return {
-    statusCode: 200,
-  };
+  return { statusCode: 200 };
 };
 
-export { handler };
-async function parseDiscussion(payload: any): Promise<Discussion> {
-  const discussion = new Discussion(
-    payload.state.split(' ')[1],
-    payload.state.split(' ')[0],
-    payload.response_url
+async function handleMessageAction(payload: any) {
+  const discussionTS = payload.message.ts;
+  const channelId = payload.channel.id;
+  const threadTS = await Slack.getThreadTS(discussionTS, channelId);
+
+  if (!threadTS) {
+    const errorMessage =
+      'Unable to save this discussion since it has no replies.';
+    Slack.sendResponse(payload.response_url, errorMessage);
+    return;
+  }
+
+  const discussionCategories = await Repository.getDiscussionCategories(
+    REPO_OWNER!,
+    REPO_NAME!
   );
+  const state = `${channelId} ${threadTS}`;
+  Slack.openSaveDialog(state, discussionCategories, payload.trigger_id);
+}
 
-  await discussion.parseReplies().catch(async (err) => {
-    await axios.post(discussion.responseUrl, {
-      text: err.message,
-    }).catch(console.error);
-    console.error(err);
-  });
+async function handleDialogSubmission(payload: any) {
+  const dialogState = payload.state.split(' ');
+  const channelId = dialogState[0];
+  const threadTS = dialogState[1];
+  const discussion = await Slack.getSlackDiscussion(channelId, threadTS);
+  const categoryId = payload.submission.category;
+  if (!discussion) return;
+  discussion.title = payload.submission.title;
+  const repositoryId = await Repository.getRepositoryId(
+    process.env.REPO_OWNER!,
+    process.env.REPO_NAME!
+  );
+  const { discussionId, discussionURL } = await Repository.createDiscussion(
+    discussion,
+    repositoryId,
+    categoryId
+  );
+  if (discussion.replies) {
+    for (const reply of discussion.replies) {
+      const replyId = await Repository.createDicussionReply(
+        discussionId,
+        reply
+      );
+      if (reply.isAnswer) {
+        Repository.markAnswer(replyId);
+      }
+    }
+  }
+  const message = `This discussion has been preserved here: ${discussionURL}`;
+  Slack.postReplyInThread(message, channelId, threadTS);
+}
 
-  return discussion;
-}
-async function showPrompt(payload: any) {
-    githubReposity = await GitHubRepository.getInstance(
-      process.env.REPO_OWNER!,
-      process.env.REPO_NAME!
-    );
-  client.dialog.open({
-    dialog: {
-      callback_id: 'ryde-46e2b0',
-      title: 'Save to GitHub',
-      submit_label: 'Save',
-      notify_on_cancel: false,
-      state: `${payload.channel.id} ${payload.message.ts}`, // The state of the dialog is used to preserve the discussion details between calls.
-      elements: [
-        {
-          type: 'text',
-          label: 'Title',
-          name: 'title',
-        },
-        {
-          type: 'select',
-          options: Object.entries(githubReposity.discussionCategories).map(
-            ([category, id]) => {
-              return { label: toTitleCase(category), value: id as string };
-            }
-          ),
-          label: 'Category',
-          name: 'category',
-        },
-      ],
-    },
-    trigger_id: payload.trigger_id,
-  }).catch(console.error);
-}
-function toTitleCase(title: string) {
-  return title
-    .split(' ')
-    .map((word: string) => {
-      return word[0].toUpperCase() + word.substring(1);
-    })
-    .join(' ');
-}
+export { handler };
