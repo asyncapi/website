@@ -48,20 +48,3 @@ The `servers` section defines where your application should connect to start sen
 Now you know where `Hello world application` connects to and you can start receiving `hello {name}` messages.
 
 In the next chapter, you'll learn how to add security requirements to your server.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/asyncapi-documents',
-      title: 'AsyncAPI Documents',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/getting-started/security',
-      title: 'Adding Security',
-      type:'next',
-    }
-  ]}
-/>

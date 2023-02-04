@@ -437,6 +437,16 @@
 		]
 	},
 	{
+		"name": "Florence Njeri",
+		"github": "Florence-Njeri",
+		"linkedin": "florencenjeri",
+		"twitter": "njericodes",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Jeremy Whitlock",
 		"github": "whitlockjc",
 		"linkedin": "whitlockjc",

@@ -110,6 +110,7 @@ const combineTools = async (automatedTools, manualTools) => {
                 }
             }
         }
+        finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
         finalTools[key].toolsList = finalToolsList
     }
     fs.writeFileSync(
