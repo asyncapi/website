@@ -169,6 +169,19 @@
                 }
             },
             {
+                "title": "AsyncAPI Modelina",
+                "description": "Modelina is a tool you can use to generate data models to represent the message payloads in a highly customizable manner.",
+                "links": {
+                    "docsUrl": "https://github.com/asyncapi/modelina",
+                    "repoUrl": "https://github.com/asyncapi/modelina"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Kotlin", "Java", "TypeScript", "JavaScript", "Rust", "Go", "Dart", "C#", "Python"],
+                    "categories": ["code-generator"]
+                }
+            },
+            {
                 "title": "Node-RED AsyncAPI plugin",
                 "description": "A plugin for generating and configuring nodes for Kafka, MQTT, AMQP, etc. automatically from an AsyncAPI specification.",
                 "links": {
