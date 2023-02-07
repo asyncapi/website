@@ -1,5 +1,8 @@
-import {buildImageUrl } from 'cloudinary-build-url'
+import {setConfig,buildImageUrl } from 'cloudinary-build-url'
 
+setConfig({
+  cloudName: ''
+});
 
 export default function AuthorAvatars({ authors = [] }) {
   return (

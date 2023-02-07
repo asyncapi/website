@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
@@ -16,7 +16,15 @@ import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 import Button from "../../components/buttons/Button";
 
+import {setConfig,buildImageUrl } from 'cloudinary-build-url'
+
+setConfig({
+  cloudName: ''
+});
+
+
 export default function BlogIndexPage() {
+  
   const router = useRouter();
   const { navItems } = useContext(BlogContext);
   const [posts, setPosts] = useState(
@@ -119,9 +127,24 @@ export default function BlogIndexPage() {
               </div>
             ) : (
               <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-                {posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
+                {posts.map((post, index) => {
+                  
+                  const coverUrl = `https://www.asyncapi.com${post.cover}`;
+                  const coverImage = buildImageUrl(coverUrl, {
+                    cloud: {
+                      storageType: 'fetch'
+                    },
+                    transformations: {
+                      resize: {
+                        type: 'fill',
+                        width: 412,
+                        height: 192
+                      }
+                    }
+                  });
+                  return <BlogPostItem key={index} post={post} coverImage={coverImage} />
+                }  
+                )}
               </ul>
             )}
           </div>
@@ -130,3 +153,4 @@ export default function BlogIndexPage() {
     </div>
   );
 }
+
