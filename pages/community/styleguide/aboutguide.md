@@ -19,10 +19,11 @@ Before creating your first draft, it is beneficial to research similar resources
 When writing our content or documentation, we aim to achieve the following:
 - **Clear** - It is very important that your writing is as clear as possible. Avoid using jargon or ambiguous words. 
 Explain any technical terms in simple and easy-to-understand words while considering your target audience. Additionally, keep your sentences short and sweet.
-- **Concise** - When conveying information, it is crucial to be concise when writing content/documentation. This reduces redundancy and caters to the needs of the reader while providing value.
+- **Concise** - When conveying information, it is crucial to be concise. This reduces redundancy and caters to the needs of the reader while providing value.
 - **Consistent** - Maintaining consistency makes it easy for multiple collaborators to work together efficiently. This ensures professionalism while making it easy to implement updates and changes.
-- **Friendly** -
-- **Accurate** - 
+- **Friendly** - Your content/documentation should be relatable. Always use an active voice instead of a passive tone when writing. Moreover, adding some visual graphics and real-life examples helps the reader better understand the information more practically.
+
+- **Accurate** - Lastly, your content/documentation must be accurate and precise. The information provided should be well-researched, appropriate, and not misleading. Readers rely on our content/documentation to solve their needs while saving them time doing unnecessary research.
 
 
 ### Prune and polish 
