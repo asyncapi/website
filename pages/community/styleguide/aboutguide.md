@@ -16,6 +16,13 @@ This will help you in strategizing and simplifying your writing process.
 Before creating your first draft, it is beneficial to research similar resources and use them as references. Avoid plagiarism or copying and pasting from other websites unless the content already exists on our site.
 
 ### Follow the writing principles
+When writing our content or documentation, we aim to achieve the following:
+- **Clear** - It is very important that your writing is as clear as possible. Avoid using jargon or ambiguous words. 
+Explain any technical terms in simple and easy-to-understand words while considering your target audience. Additionally, keep your sentences short and sweet.
+- **Concise** - When conveying information, it is crucial to be concise when writing content/documentation. This reduces redundancy and caters to the needs of the reader while providing value.
+- **Consistent** - Maintaining consistency makes it easy for multiple collaborators to work together efficiently. This ensures professionalism while making it easy to implement updates and changes.
+- **Friendly** -
+- **Accurate** - 
 
 
 ### Prune and polish 
