@@ -5,7 +5,6 @@ import Button from '../../components/buttons/Button';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import GenericLayout from '../../components/layout/GenericLayout';
-import Link from 'next/link';
 import orbitData from '../../config/orbitData.json';
 import { getEvents } from '../../lib/staticHelpers';
 import eventsData from '../../config/meetings.json';
@@ -255,8 +254,15 @@ function CommunityIndexPage() {
           </a>
         </div>
         <div className="h-full cursor-pointer rounded-lg shadow-lg bg-usecases bg-cover bg-center mt-10 relative md:w-[49%] md:mt-0">
-          <Link href="/community/contributors">
+          <a
+            href="https://github.com/orgs/asyncapi/discussions/593"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div>
+              <div className="absolute p-2 bg-primary-600 text-white font-bold rounded-tl-lg">
+                Coming Soon
+              </div>
               <div className="w-full h-full absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-yellow-600 text-left rounded-b-lg p-5 ">
@@ -279,7 +285,7 @@ function CommunityIndexPage() {
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="z-40 mt-[30rem] md:mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
