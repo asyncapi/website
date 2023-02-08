@@ -98,8 +98,8 @@ module.exports = {
       usecases: "url('/img/homepage/usecases.png')",
       roadmapCover: "url('/img/homepage/roadmap.png')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
-      ambassadorCover: "url('/img/homepage/gathering.jpg')",
-      mapCover: "url('/img/homepage/mapbase.png')",
+      ambassadorCover: "url('/img/homepage/gathering.webp')",
+      mapCover: "url('/img/homepage/mapbase.webp')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
