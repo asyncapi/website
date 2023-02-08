@@ -40,7 +40,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 ## Generate code
 
-To generate code from the AsyncAPI document created from the [previous tutorial](""), follow the steps listed below:
+To generate code from the [AsyncAPI document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document), follow the steps listed below:
 
 <Remember>
 
@@ -117,10 +117,10 @@ light/measured was received:
 
 ## Summary
 
-In this tutorial, you learned how to generate your code from the Streetlights API specification document created in the [previous tutorial]() using the AsyncAPI generator tool. 
+In this tutorial, you learned how to generate your code from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document) using the AsyncAPI generator tool. 
 
 Additionally, you have learned how to run your code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT client.
 
 
 ## Next steps
-Now that you've completed this tutorial, go ahead to learn how to [validate your document using the AsyncAPI studio]() through the validation techniques supported by AsyncAPI.
+Now that you've completed this tutorial, go ahead to learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation.md) through the message validation techniques supported by AsyncAPI.
