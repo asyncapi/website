@@ -90,7 +90,7 @@ function CommunityIndexPage() {
       <div className="gh-img mt-10 md:mt-0 w-full h-auto w-full object-contain">
         <img
           className="gh-img object-contain"
-          src="/img/homepage/discuss-page.png"
+          src="/img/homepage/discuss-page.webp"
           alt="github-discussion"
         />
       </div>
