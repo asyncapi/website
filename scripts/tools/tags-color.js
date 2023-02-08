@@ -1,7 +1,7 @@
 // Language and Technology tags along with their colors in UI are defined here.
 const languagesColor = [
     {
-        name: "Go",
+        name: "Go/Golang",
         color: "bg-[#8ECFDF]",
         borderColor: "border-[#00AFD9]"
     },
