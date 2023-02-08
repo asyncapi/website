@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
   const image = '/img/social/meetings.png';
-  const loader = 'img/loaders/logo-primary.png';
+  const loader = 'img/loaders/logo-primary-dark.png';
   // const loader='spinning-circle.svg';
 
   const [loading, setLoading] = useState(false);
@@ -23,12 +23,13 @@ export default function toolsDashboard() {
 
   return (
     <div>
+      <GenericLayout title="Tools" description={description} image={image}>
       {loading ? (
         <div>
-          <image src={loader}></image>
+          <img src={loader}/>
         </div>
       ) : (
-        <GenericLayout title="Tools" description={description} image={image}>
+      
           <div>
             <div className="text-center mt-12">
               <Heading level="h1" typeStyle="heading-lg">
@@ -52,8 +53,8 @@ export default function toolsDashboard() {
               <ToolDashboard />
             </ToolFilter>
           </div>
+          )}
         </GenericLayout>
-      )}
     </div>
   );
 }
