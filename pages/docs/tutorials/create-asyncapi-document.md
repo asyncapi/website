@@ -164,4 +164,4 @@ In this tutorial, you learned how to create an AsyncAPI specification document v
 This tutorial is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 ## Next steps
-Now that you've completed this tutorial, go ahead to learn how to [generate code](https://www.asyncapi.com/docs/tutorials/create-asyncapi-document) from the specification document using the AsyncAPI generator tool.
+Now that you've completed this tutorial, go ahead to learn how to [validate your AsyncAPI document with Studio](https://www.asyncapi.com/docs/tutorials/studio-document-validation).
