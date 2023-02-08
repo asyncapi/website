@@ -76,11 +76,11 @@ function getColors(color, shades) {
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./config/tools.json"
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './config/tools.json',
   ],
-  theme:{
+  theme: {
     fontWeight: {
       'extra-light': 200,
       light: 300,
@@ -98,6 +98,8 @@ module.exports = {
       usecases: "url('/img/homepage/usecases.png')",
       roadmapCover: "url('/img/homepage/roadmap.png')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
+      ambassadorCover: "url('/img/homepage/gathering.jpg')",
+      mapCover: "url('/img/homepage/mapbase.png')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
