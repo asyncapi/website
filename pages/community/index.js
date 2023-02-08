@@ -145,7 +145,7 @@ function CommunityIndexPage() {
         </div>
         <div className="w-full h-fit-content md:w-3/6 flex justify-end rounded-lg">
           <img
-            src="/img/homepage/ambassador.png"
+            src="/img/homepage/ambassador.webp"
             alt="slack-cover"
             className="md:rounded-r-lg object-fit "
           />
