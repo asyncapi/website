@@ -82,15 +82,6 @@ Schema Registry ->> Consumer: Return validation result
 
 With the Schema Registry in place, the producer first talks to the Schema Registry and checks if the schema of the message it wants to send is available before sending it to the broker. If it cannot locate the schema, it registers it in the Schema Registry. Then the producer sends a message to the broker prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the Schema Registry using the schema ID obtained from the producer. If there is a schema mismatch, the Schema Registry will throw an error, informing the producer that it violates the schema agreement.
 
-```mermaid
-stateDiagram-v2
-    Producer --> Broker : messages
-    Producer --> Fail : error
-    Broker --> Schema_registry : validation request
-    Schema_registry --> consumer : valid message
-    Schema_registry --> Fail : invalid message
-```
-
 AsyncAPI is not directly involved in validation based on the Schema Registry. The good thing is that you do not have to duplicate schemas in your AsyncAPI document stored in Schema Registry. You can reference schemas from Schema Registry in your AsyncAPI documents.
 Here's an example of an AsyncAPI document where you can see both `schemaFormat` and `payload` referenced from the Schema Registry:
 ```yml
