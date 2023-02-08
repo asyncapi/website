@@ -71,7 +71,7 @@ This is where Schema Registry comes into play. It is an application that runs ou
 
 ```mermaid
 sequenceDiagram
-Producer ->> Schema Registry: Validate message schema
+Producer ->> Schema Registry: Register/checks message schema
 Schema Registry ->> Producer: Return registration result
 
 Producer ->> Kafka: Publish message
