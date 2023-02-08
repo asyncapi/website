@@ -80,7 +80,7 @@ Consumer ->> Schema Registry: Validate message schema
 Schema Registry ->> Consumer: Return validation result
 ```
 
-With the Schema Registry in place, the producer first talks to the Schema Registry and checks if the schema is available before sending the data to Kafka. If it cannot locate the schema, it registers and caches it in the Schema Registry. When the producer receives the schema, it sends it to Kafka prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the Schema Registry using the schema ID obtained from the producer. If there is a schema mismatch, the Schema Registry will throw an error, informing the producer that it violates the schema agreement.
+With the Schema Registry in place, the producer first talks to the Schema Registry and checks if the schema of the message it wants to send is available before sending it to the broker. If it cannot locate the schema, it registers it in the Schema Registry. Then the producer sends a message to the broker prefixed with a unique schema ID. When the consumer processes this message, it will communicate with the Schema Registry using the schema ID obtained from the producer. If there is a schema mismatch, the Schema Registry will throw an error, informing the producer that it violates the schema agreement.
 
 ```mermaid
 stateDiagram-v2
