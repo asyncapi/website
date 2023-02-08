@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import Button from '../../../components/buttons/Button';
 import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../../components/buttons/ICSFileButton';
 import Heading from '../../../components/typography/Heading';
