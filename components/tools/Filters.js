@@ -3,6 +3,7 @@ import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
+import FiltersDisplay from './FiltersDisplay';
 import Button from '../buttons/Button'
 import tags from '../../config/all-tags.json'
 import {categoryList} from '../../scripts/tools/categorylist'
@@ -46,7 +47,7 @@ export default function Filters({setOpenFilter}) {
     setAsyncAPIOwner(false)
     setOpenFilter(false)
   }
-  
+
   return (
     <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
@@ -86,13 +87,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
           <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
             <div className="flex items-center text-dark">
-              Select Languages...
+              {checkedLanguage.length>0 ? (checkedLanguage.length===1 ? `1 option selected` : `${checkedLanguage.length} options selected`) : `Select Languages...`}
             </div>
             <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
           {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
+          <FiltersDisplay checkedValues={checkedLanguage} setValues={setCheckedLanguage}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -101,13 +103,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
           <div className="flex items-center text-dark">
-            Select technologies...
+          {checkedTechnology.length>0 ? (checkedTechnology.length===1 ? `1 option selected` : `${checkedTechnology.length} options selected`) : `Select Technologies...`}
           </div>
           <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
         {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
+          <FiltersDisplay checkedValues={checkedTechnology} setValues={setCheckedTechnology}/>
         </div>
       </div>
       <hr className="my-4" />
@@ -116,13 +119,14 @@ export default function Filters({setOpenFilter}) {
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
           <div className="flex items-center text-dark">
-            Select categories...
+          {checkedCategory.length>0 ? (checkedCategory.length===1 ? `1 option selected` : `${checkedCategory.length} options selected`) : `Select Categories...`}
           </div>
           <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
         </div>
         {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
+          <FiltersDisplay checkedValues={checkedCategory} setValues={setCheckedCategory}/>
         </div>
       </div>
       <hr className="my-4" />
