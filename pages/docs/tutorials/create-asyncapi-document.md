@@ -39,6 +39,18 @@ In this step, you will create an AsyncAPI document to describe the Streelights A
 
 To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli), depending on your project need.
 
+<Remember>
+
+If you do not have an `asyncapi.yaml` file ready, then generate one by running: 
+`asyncapi new --example=tutorial.yml --no-tty`.
+
+Next, generate a server by running:
+
+    asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
+    cd output && npm install
+
+</Remember>
+
 Go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
 
 <CodeBlock>
