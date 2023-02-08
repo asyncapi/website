@@ -58,7 +58,7 @@ export default function CodeBlock({
         )}
         <div className={`pr-8 relative overflow-y-auto ${highlightClassName}`}>
           <Highlight
-            className={`pt-px pb-0 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
+            className={`pt-px pb-2 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
             language={codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
             style={theme}
             showLineNumbers={showLineNumbers}
@@ -93,7 +93,7 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative max-w-full rounded overflow-y-auto overflow-x-auto py-2 bg-code-editor-dark z-10 ${className}`}>
+      <div className={`relative max-w-full rounded overflow-y-auto overflow-x-auto pt-2 bg-code-editor-dark z-10 ${className}`}>
         {hasWindow && (
           <div className="pl-4 pb-2">
             <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>

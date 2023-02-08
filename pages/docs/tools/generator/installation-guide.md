@@ -13,12 +13,13 @@ Before you install and use the AsyncAPI CLI and the generator library, ensure yo
 2. Npm v6.13.7 and higher
    
 To verify the versions of Node and Npm you have, run the following command on your terminal:
-```
-npm -v
-```
-```
-node -v
-```
+<CodeBlock language="bash">
+{`npm -v`}
+</CodeBlock>
+<br/>
+<CodeBlock language="bash">
+{`node -v`}
+</CodeBlock>
 
 If you don't have either Node or Npm installed, use the [official node.js installer](https://nodejs.org/en/download/).
 
@@ -32,14 +33,14 @@ The AsyncAPI CLI tool allows you to do many different things with the [AsyncAPI 
 #### Install AsyncAPI CLI using NPM
 
 The AsyncAPI CLI is a NodeJS project, so the easiest way to install it is by using the following `npm` command:
-```
-npm install -g @asyncapi/cli
-```
+<CodeBlock language="bash">
+{`npm install -g @asyncapi/cli`}
+</CodeBlock>
 
 To install a specific version of the generator tool, pass the version during installation:
-```
-npm install -g @asyncapi/cli@{version}
-```
+<CodeBlock language="bash">
+{`npm install -g @asyncapi/cli@{version}`}
+</CodeBlock>
 
 #### MacOS 
 You can install in MacOS by using brew: `brew install asyncapi`. 
@@ -58,20 +59,26 @@ For further installation instructions for different operating systems, read the 
 ### Update AsyncAPI CLI
 There are several reasons why you might want to update your generator version:
 * You have the generator tool installed but want to use the latest released features. To upgrade to the latest version, use the command below:
-```
-npm install -g @asyncapi/cli
-```
+
+<br/>
+<CodeBlock language="bash">
+{`npm install -g @asyncapi/cli`}
+</CodeBlock>
+
 * If your template isn't compatible with the latest generator version, you can update it to a specific version of the generator. Check the [version you need](https://github.com/asyncapi/cli/releases) and specify the version you want by using the **@** symbol as shown in the command below:
-```
-npm install -g @asyncapi/cli@{version}
-```
+
+<br/>
+<CodeBlock language="bash">
+{`npm install -g @asyncapi/cli@{version}`}
+</CodeBlock>
+
 > Sometimes you have to force additional npm installation like this: `npm install -g --force @asyncapi/cli`
 
 ### Uninstall AsyncAPI CLI
 To uninstall the generator, use the following command:
-```
-npm uninstall @asyncapi/cli -g
-``` 
+<CodeBlock language="bash">
+{`npm uninstall @asyncapi/cli -g`}
+</CodeBlock>
 
 > :memo: **Note:**  To use the generator in your CI/CD pipeline to automate whatever you generate for your event-driven architecture apps, install the AsyncAPI CLI in your pipeline. If you are using GitHub Actions, use [Github Actions for Generator](https://github.com/marketplace/actions/generator-for-asyncapi-documents).
 
