@@ -26,9 +26,10 @@ Explain any technical terms in simple and easy-to-understand words while conside
 - **Accurate** - Lastly, your content/documentation must be accurate and precise. The information provided should be well-researched, appropriate, and not misleading. Readers rely on our content/documentation to solve their needs while saving them time doing unnecessary research.
 
 
-### Prune and polish 
+### Prune and polish
+At this point, it is very important to check grammar, punctuation, and spelling. View your work with a constructive eye while putting yourself in the shoes of the reader. Thoroughly proofread your work and make use of tools such as Grammarly to help polish up your work.
 
 ### Ask for feedback
-
+There's a whole community of contributors who are willing to support you, so don't be shy to ask for feedback. You'll probably go through a lot of rounds of editing and proofreading before you can finally get your docs merged.
 
 
