@@ -7,7 +7,6 @@ import BlogContext from '../../context/BlogContext'
 import TOC from '../TOC'
 import NavBar from '../navigation/NavBar'
 import Container from './Container'
-import Footer from '../Footer'
 import AuthorAvatars from '../AuthorAvatars'
 import StickyNavbar from '../navigation/StickyNavbar'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
@@ -70,6 +69,7 @@ export default function BlogLayout({ post, children }) {
                 #at4-share {
                     left: 50%;
                     margin-left: -500px !important;
+                    position: absolute;
 
                     &amp;.addthis-animated {
                       animation-duration: 0s !important;
