@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/OdkIsyjpomA/hqdefault.jpg",
+    "title": "Community meeting (February 7, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/589.",
+    "videoId": "OdkIsyjpomA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/6zImMBBxUwI/hqdefault.jpg",
     "title": "Spec 3.0 meeting (February 1, 2023)",
     "description": "https://github.com/asyncapi/community/issues/575.",
@@ -22,11 +28,5 @@
     "title": "Community Meeting (January 24, 2023)",
     "description": "https://github.com/asyncapi/community/issues/569.",
     "videoId": "yLIBWf3WPGY"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/6hltg01w004/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (January 18, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/564.",
-    "videoId": "6hltg01w004"
   }
 ]
