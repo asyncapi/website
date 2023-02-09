@@ -52,7 +52,7 @@ Let's break down the previous command:
 </CodeBlock>
 
 Upon execution of the command above, the following is an example of the expected result:
-<CodeBlock language="bash">
+```
 $ ls
 Dockerfile
 asyncapi.yaml
@@ -61,7 +61,7 @@ src
 README.md
 config
 package.json
-</CodeBlock>
+```
 
 ## Start generated application
 1. Install dependencies of the newly generated application:
