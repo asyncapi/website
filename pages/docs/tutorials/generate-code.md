@@ -20,19 +20,6 @@ It is important to have [Node.js](https://nodejs.org/en/download/) installed whi
 
 </Remember>
 
-- Install the generator tool to use it as a command-line (CLI):
-
-<CodeBlock language="bash">
-{`npm install -g @asyncapi/cli`}
-</CodeBlock>
-
-The command above helps you install the generator tool globally.
-
-- To install a specific version of the generator tool, pass the version during installation:
-
-<CodeBlock language="bash">
-{`npm install -g @asyncapi/cli@{version}`}
-</CodeBlock>
 
 import CliInstallation from '../../../assets/docs/fragments/cli-installation.md' 
 
