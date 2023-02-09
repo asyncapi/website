@@ -33,7 +33,9 @@ export default function Filters({setOpenFilter}) {
   const [visible, setVisible] = useState({
     lang : false,
     tech: false,
-    category: false
+    category: false,
+    pricing : false,
+    ownership: false
   })
 
   // For showing the read more content of Language and Category information
@@ -63,7 +65,9 @@ export default function Filters({setOpenFilter}) {
     <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
         <div className="flex gap-2 items-baseline justify-between">
-          <div className="text-sm text-gray-500 uppercase">Pricing</div>
+          <div className="text-sm text-gray-500">
+          <Carddata heading="PRICING" data ={Data.properties.filters.properties.hasCommercial.description}  type="pricing" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
+          </div>
           <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
             Clear Filters
           </div>
@@ -81,7 +85,9 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">OWNERSHIP</div>
+        <div className="text-sm text-gray-500">
+        <Carddata heading="OWNERSHIP" data = "It describes whether the tools are maintained by AsyncAPI organization or not."  type="ownership" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
+        </div>
         <div className="flex gap-4">
           <label className="inline-flex relative items-center cursor-pointer">
             <input type="checkbox" value={checkOwner} className="sr-only peer" onChange={() => setCheckOwner(!checkOwner)} />
