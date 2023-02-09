@@ -41,13 +41,8 @@ To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.
 
 <Remember>
 
-If you do not have an `asyncapi.yaml` file ready, then generate one by running: 
+You can also generate `asyncapi.yaml` document by running: 
 `asyncapi new --example=tutorial.yml --no-tty`.
-
-Next, generate a server by running:
-
-    asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
-    cd output && npm install
 
 </Remember>
 
