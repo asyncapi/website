@@ -41,7 +41,7 @@ To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.
 
 <Remember>
 
-You can also generate `asyncapi.yaml` document by running: 
+You can create a new `asyncapi.yaml` document by running: 
 `asyncapi new --example=tutorial.yml --no-tty`.
 
 </Remember>
