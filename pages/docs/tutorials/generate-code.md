@@ -86,10 +86,10 @@ package.json
 </CodeBlock>
 
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
-<CodeBlock language="bash">
-light/measured was received:
-{ id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
-</CodeBlock>
+    ```bash
+    light/measured was received:
+    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
+    ```
 
 ## Summary
 In this tutorial, you learned how to generate your code from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document) using the AsyncAPI generator tool. 
