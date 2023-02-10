@@ -40,7 +40,7 @@ git clone https://github.com/asyncapi/website/
 cd website
 ```
 
-4. Install all website dependencies 
+4. Install all website dependencies. 
 
 ```bash
 npm install
