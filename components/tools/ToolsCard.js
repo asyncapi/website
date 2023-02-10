@@ -76,7 +76,7 @@ export default function ToolsCard({ toolData }) {
             </div>
           </div>}
           {toolData.filters.technology.length > 0 && <div className="flex flex-col gap-2 my-4 mx-6">
-          <Carddata classes= 'text-sm text-gray-700' heading="TECHNOLOGIES" data = {Data.properties.filters.properties.technology.description} type="tech" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
+          <Carddata classes= 'text-sm text-gray-700' heading="TECHNOLOGIES" data={Data.properties.filters.properties.technology.description} type="tech" visible={visible} setVisible={setVisible} read={readMore} setRead={setReadMore} />
             <div className="flex gap-2 flex-wrap">
               {toolData.filters.technology.map((item, index) => (
                 <Tag key={index}
