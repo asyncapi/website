@@ -28,7 +28,7 @@ Use the following tools to set up the project:
 
 1. Open Command Prompt in your local computer
 
-2. Clone the repository, 
+2. Clone the repository.
 
 ```bash
 git clone https://github.com/asyncapi/website/
