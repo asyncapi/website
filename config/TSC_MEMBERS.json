@@ -487,5 +487,15 @@
 		"repos": [
 			"bindings"
 		]
+	},
+	{
+		"name": "Louis Xhaferi",
+		"github": "LouisXhaferi",
+		"linkedin": "louis-xhaferi-45608b1a3",
+		"availableForHire": false,
+		"company": "Mercedes-Benz Tech Innovation",
+		"repos": [
+			"modelina"
+		]
 	}
 ]
