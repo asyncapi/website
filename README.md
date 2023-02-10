@@ -24,7 +24,7 @@ Use the following tools to set up the project:
 - [npm](https://www.npmjs.com/) v7.10.0+
 
 
-## Run Locally
+## Run locally
 
 1. Open Command Prompt on your local computer.
 
