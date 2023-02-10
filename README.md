@@ -55,7 +55,7 @@ npm run dev
 6. Access the live development server at [localhost:3000](http://localhost:3000).
 
 
-## Compose a new blog post
+## Compose new blog post
 
 To bootstrap a new post, run this command:
 
