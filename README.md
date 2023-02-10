@@ -34,7 +34,7 @@ Use the following tools to set up the project:
 git clone https://github.com/asyncapi/website/
 ```
 
-3. Navigate to the website directory
+3. Navigate to the website directory.
 
 ```bash
 cd website
