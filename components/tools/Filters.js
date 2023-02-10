@@ -28,6 +28,14 @@ export default function Filters({setOpenFilter}) {
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
 
+  // function to open only one filter at a time
+  const handleOpen = (setopenX, openX) => {
+    setopenLanguage(false);
+    setopenTechnology(false);
+    setopenCategory(false);
+    setopenX(!openX);
+  }
+
   // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
     setLanguages(checkedLanguage);
@@ -85,7 +93,7 @@ export default function Filters({setOpenFilter}) {
       <div className="flex flex-col gap-2 mx-4">
         <div className="text-sm text-gray-500">LANGUAGE</div>
         <div className="w-full">
-          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
+          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenLanguage, openLanguage)}>
             <div className="flex items-center text-dark">
               {checkedLanguage.length>0 ? (checkedLanguage.length===1 ? `1 option selected` : `${checkedLanguage.length} options selected`) : `Select Languages...`}
             </div>
@@ -101,7 +109,7 @@ export default function Filters({setOpenFilter}) {
       <div className="flex flex-col gap-2 mx-4">
         <div className="text-sm text-gray-500">TECHNOLOGY</div>
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenTechnology, openTechnology)}>
           <div className="flex items-center text-dark">
           {checkedTechnology.length>0 ? (checkedTechnology.length===1 ? `1 option selected` : `${checkedTechnology.length} options selected`) : `Select Technologies...`}
           </div>
@@ -117,7 +125,7 @@ export default function Filters({setOpenFilter}) {
       <div className="flex flex-col gap-2 mx-4">
         <div className="text-sm text-gray-500">CATEGORY</div>
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenCategory, openCategory)}>
           <div className="flex items-center text-dark">
           {checkedCategory.length>0 ? (checkedCategory.length===1 ? `1 option selected` : `${checkedCategory.length} options selected`) : `Select Categories...`}
           </div>

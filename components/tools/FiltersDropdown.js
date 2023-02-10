@@ -13,7 +13,7 @@ export default function FiltersDropdown({dataList=[], checkedOptions=[], setStat
     setStateFunction(tempValueArray)
   }
   return (
-    <div className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}>
+    <div className={twMerge(`max-w-lg max-h-[6rem] flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}>
       {dataList.map((data, index) => {
         let checked = checkedOptions.indexOf(data.name)!=-1 ? true : false
         return (
