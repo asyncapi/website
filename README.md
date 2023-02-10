@@ -26,7 +26,7 @@ Use the following tools to set up the project:
 
 ## Run Locally
 
-1. Open Command Prompt in your local computer
+1. Open Command Prompt on your local computer.
 
 2. Clone the repository.
 
