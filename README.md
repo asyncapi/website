@@ -31,13 +31,13 @@ Use the following tools to set up the project:
 2. Open Command Prompt on your local computer.
 
 3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
-   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md)
+   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
 ```bash
 git clone https://github.com/<username>/website/
 ```
 
-4. Check if NPM Package is already installed on your local computer. If it shows details details of the package then the NPM package is already installed. 
+4. Check if NPM Package is already installed on your local computer. If it shows the details of the package then the NPM package is already installed. 
    Otherwise you can install [NPM Package](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ```bash
