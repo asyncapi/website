@@ -12,6 +12,6 @@ When it comes to APIs, validation is inevitable because it helps you keep them
 An AsyncAPI document is a file that defines and describes the various components of a message-based or event-driven API. Event-driven APIs are a type of asynchronous API that allows consumers to subscribe to events of interest. It adheres to an architecture in which events are fired or triggered. These triggers occur when a producer detects a state change caused by a user's device or an action taken by the user. The producer is an application that sense state changes and produces these changes as messages.
 
 AsyncAPI document  enables people or machines communicating with one another to comprehend the capabilities of an event-driven API without requiring access to the source code, documentation, or network traffic inspection.
-The document allows developers to define the structure of their API, the format of the API, the events to which consumers can subscribe, and the response they receive when these events are triggered or an action is taken. AsyncAPI documents are represented as JSON objects that follow the JSON specifications.
+The document allows developers to define the structure of their API, the format of the API, the events to which consumers can subscribe, and the response they receive when these events are triggered or an action is taken. AsyncAPI documents are represented as JSON objects that follow the JSON .
 
 ## Installation Guide
