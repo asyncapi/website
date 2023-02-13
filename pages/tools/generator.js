@@ -36,7 +36,7 @@ export default function GeneratorPage() {
       image={image}
       wide
     >
-      <div className="py-12 overflow-hidden">
+      <div className="py-12 overflow-hidden" id="main-content">
         <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
           <div className="relative text-center">
             <Heading level="h1" typeStyle="heading-lg">
