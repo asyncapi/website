@@ -50,7 +50,7 @@
             "properties": {
                 "language": {
                     "type": "string",
-                    "description": "Refers to the language that users can use in the 'runtime'. That is, for generators it should be the language that the generator generates, not the language the generator is written in, itself. But, for example, for Bundler library, even though it operates on YAML and JSON files, more important for users is the fact that the library is written in TypeScript as this information tells them if they can integrate this library into their 'runtime'. In other words, if users have TypeScript codebase and they would like to have a bundling mechanism, they need to know if they can integrate Bundler library into their TypeScript codebase. This property provides information if a user can use given library/script/API specifically in his code. If we forgot about some language then please add it through a pull request to AsyncAPI's 'website' repository.",
+                    "description": "The language referred to is the runtime language selected by the user, not the generator or library language. For example, the Generator written in JavaScript generates Python code from the JavaScript template and the result of generation is a Python app, so the language for Generator is specified as Python. But for the Bundler library, users need to know if it can be integrated into their TypeScript codebase, so its language is specified as TypeScript. If some language in the schema's enum is omitted, it can be added through a pull request to the AsyncAPI website repository.",
                     "anyOf": [
                         {
                             "type": "string",
