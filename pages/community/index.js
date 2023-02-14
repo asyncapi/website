@@ -5,8 +5,9 @@ import Button from '../../components/buttons/Button';
 import IconRocket from '../../components/icons/Rocket';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import GenericLayout from '../../components/layout/GenericLayout';
-import Link from 'next/link';
 import orbitData from '../../config/orbitData.json';
+import { getEvents } from '../../lib/staticHelpers';
+import eventsData from '../../config/meetings.json';
 
 function CommunityIndexPage() {
   const image = '/img/social/website-card.png';
@@ -89,7 +90,7 @@ function CommunityIndexPage() {
       <div className="gh-img mt-10 md:mt-0 w-full h-auto w-full object-contain">
         <img
           className="gh-img object-contain"
-          src="/img/homepage/discuss-page.png"
+          src="/img/homepage/discuss-page.webp"
           alt="github-discussion"
         />
       </div>
@@ -137,14 +138,14 @@ function CommunityIndexPage() {
               <Button
                 text="Become an ambassador"
                 buttonSize="medium"
-                href="/community/ambassador-program"
+                href="/community/ambassadors"
               />
             </div>
           </div>
         </div>
         <div className="w-full h-fit-content md:w-3/6 flex justify-end rounded-lg">
           <img
-            src="/img/homepage/ambassador.png"
+            src="/img/homepage/ambassador.webp"
             alt="slack-cover"
             className="md:rounded-r-lg object-fit "
           />
@@ -177,8 +178,9 @@ function CommunityIndexPage() {
               className="text-sm mt-10"
             >
               Join an AsyncAPI meeting from anywhere in the world! We host both
-              live and recorded community events. You can also sign up for
-              our community newsletter to stay up-to-date on all meetings and events.
+              live and recorded community events. You can also sign up for our
+              community newsletter to stay up-to-date on all meetings and
+              events.
             </Heading>
             <div className="mt-10">
               <Button
@@ -193,94 +195,31 @@ function CommunityIndexPage() {
         <div className="w-full md:h-full md:w-3/5 flex relative justify-end  bg-eventCover bg-cover bg-center">
           <div className="bg-primary-500 w-full opacity-25 rounded-b-lg md:rounded-b-none md:rounded-r-lg" />
           <div className="absolute h-full w-full hidden md:flex justify-end">
-            <div className="w-4/5 mt-10">
-              <div className="bg-white w-full p-2 md:p-4 rounded-l-md">
-                <div className="flex">
-                  <div className="flex justify-center flex-col w-24 md:w-40 bg-pink-400 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                    <span className="text-center">Conference</span>
-                  </div>
-                  <div className="ml-4 text-left">
-                    <h1 className="text-md md:text-xl">AsyncAPI Conference</h1>
-                    <span className="text-gray-500 text-xs md:text-sm">
-                      3rd Nov, 2022 - 5th Nov, 2022
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="w-full bg-gray-200 mt-4"
-                  style={{ height: '1px' }}
-                />
-                <div className="flex mt-2 justify-between">
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">91</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Days left
-                    </div>
-                  </div>
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">40</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Talks
-                    </div>
-                  </div>
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">1.4k</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Attendees
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <h1 className="text-sm md:text-2xl">91</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Days left
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white mt-10 w-full p-2 md:p-4 rounded-l-md">
-                <div className="flex">
-                  <div className="flex w-24 md:w-40 justify-center flex-col w-24 md:w-40 bg-secondary-500 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                    <span className="text-center">Spec 3.0</span>
-                  </div>
-                  <div className="ml-4 text-left">
-                    <h1 className="text-md md:text-xl">Spec 3.0</h1>
-                    <span className="text-gray-500 text-xs md:text-sm">
-                      3rd Nov, 2022 - 5th Nov, 2022
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="w-full bg-gray-200 mt-4"
-                  style={{ height: '1px' }}
-                />
-                <div className="flex mt-2 justify-between">
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">91</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Days left
-                    </div>
-                  </div>
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">40</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Talks
-                    </div>
-                  </div>
-                  <div className="text-left border-r-2 border-r-gray-400 pr-5">
-                    <h1 className="text-sm md:text-2xl">1.4k</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Attendees
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <h1 className="text-sm md:text-2xl">91</h1>
-                    <div className="text-gray-500 text-xs md:text-sm">
-                      Days left
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ul className="w-4/5 mt-10">
+              {getEvents(eventsData, 3).map((event, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="bg-white w-full p-2 md:p-4 rounded-l-md"
+                  >
+                    <a href={event.url} className="flex">
+                      <div className="flex justify-center flex-col w-24 md:w-40 bg-pink-400 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
+                        <span className="text-center">
+                          {event.title.split(' ')[0]}
+                        </span>
+                      </div>
+                      <div className="ml-4 text-left">
+                        <h1 className="text-md md:text-xl">{event.title}</h1>
+                        <span className="text-gray-500 text-xs md:text-sm">
+                          {event.date.local().format('LLLL')} UTC
+                          {event.date.local().format('Z')}
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
@@ -315,8 +254,15 @@ function CommunityIndexPage() {
           </a>
         </div>
         <div className="h-full cursor-pointer rounded-lg shadow-lg bg-usecases bg-cover bg-center mt-10 relative md:w-[49%] md:mt-0">
-          <Link href="/community/contributors">
+          <a
+            href="https://github.com/orgs/asyncapi/discussions/593"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div>
+              <div className="absolute p-2 bg-primary-600 text-white font-bold rounded-tl-lg">
+                Coming Soon
+              </div>
               <div className="w-full h-full absolute rounded-lg" />
               <div className="w-full h-full flex flex-col justify-end absolute">
                 <div className="bg-yellow-600 text-left rounded-b-lg p-5 ">
@@ -333,13 +279,13 @@ function CommunityIndexPage() {
                     textColor="text-white"
                     className="text-sm"
                   >
-                    Recognize the people who inspire and contribute
-                    to our OSS community.
+                    Recognize the people who inspire and contribute to our OSS
+                    community.
                   </Heading>
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="z-40 mt-[30rem] md:mt-10 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
@@ -368,9 +314,9 @@ function CommunityIndexPage() {
               className="text-slate-500 text-sm mt-10"
             >
               AsyncAPI’s incredible community of developers, designers,
-              technical writers, and more hail from over 83 countries. We actively
-              contribute, collaborate, and mentor others on how to build with
-              AsyncAPI.
+              technical writers, and more hail from over 83 countries. We
+              actively contribute, collaborate, and mentor others on how to
+              build with AsyncAPI.
             </Heading>
             <div className="mt-10">
               <Button

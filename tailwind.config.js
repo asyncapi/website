@@ -76,11 +76,11 @@ function getColors(color, shades) {
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./config/tools.json"
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './config/tools.json',
   ],
-  theme:{
+  theme: {
     fontWeight: {
       'extra-light': 200,
       light: 300,
@@ -92,12 +92,13 @@ module.exports = {
       black: 900,
     },
     backgroundImage: {
-      eventCover: "url('/img/homepage/event-cover.png')",
-      channelCover: "url('/img/homepage/slack-cover.png')",
-      tutorialCover: "url('/img/homepage/tutorials.png')",
-      usecases: "url('/img/homepage/usecases.png')",
-      roadmapCover: "url('/img/homepage/roadmap.png')",
+      eventCover: "url('/img/homepage/event-cover.webp')",
+      channelCover: "url('/img/homepage/slack-cover.webp')",
+      usecases: "url('/img/homepage/usecases.webp')",
+      roadmapCover: "url('/img/homepage/roadmap.webp')",
       confBg: "url('/img/homepage/confBlurBg.webp')",
+      ambassadorCover: "url('/img/homepage/gathering.webp')",
+      mapCover: "url('/img/homepage/mapbase.webp')",
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
