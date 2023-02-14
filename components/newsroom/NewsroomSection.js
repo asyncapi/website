@@ -6,8 +6,7 @@ import Link from 'next/link';
 import { getAllPosts } from '../../lib/api';
 
 export default function NewsroomSection() {
-  const posts = getAllPosts()
-    .filter((p) => p.slug.startsWith('/blog/'))
+  const posts = getAllPosts()['blog']
     .sort((i1, i2) => {
       const i1Date = new Date(i1.date);
       const i2Date = new Date(i2.date);
