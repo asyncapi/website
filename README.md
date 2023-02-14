@@ -37,10 +37,6 @@ Use the following tools to set up the project:
     git clone https://github.com/<username>/website/
 ```
 
-```bash
-    npm
-```
-
 4. Navigate to the website directory.
 
 ```bash
