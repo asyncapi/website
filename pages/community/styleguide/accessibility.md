@@ -6,11 +6,28 @@ At AsyncAPI, we strive to make our documentation/content inclusive, accessible, 
 - Be clear and concise when writing. Avoid the use of complex language, technical jargon, and verbose explanations.
 - Keep paragraphs and sentences short, simple, and on point.
 - Always maintain a uniform structure. Use descriptive headings and subheadings to make navigation easy.
+- Use inclusive language and always keep the reader in mind when writing. 
+
+
+## Text
+- Use the appropriate heading hierarchy. H1 is used for the main heading while H2 to H6 are used for subsection headings. 
+- Properly align text for easy readability.
 - Avoid using camel case or any unnecessary fonts and formatting.
-- Always have the reader in mind when writing. Use appropriate and approved terminologies when describing disabilities.
+- Define acronyms or abbreviations and always spell out any signs or symbols.
+- Structure your text in a uniform format. 
 
-## Text and Links
+## Links
+- Use descriptive and meaningful link text. For example, do not use phrases like *click here* or *follow this link*.
+- Always use an external link icon if a link opens up in a new tab.
+- Make sure your links or URLs are valid and redirect to the correct destination.
 
-## Images
+## Multimedia
+- Alt text must be clear and descriptive. Not more than 50 characters.
+- Always use text rather than images, unless necessary.
+- Use SVG instead of PNG or JPEG. It retains quality.
+- Provide transcripts and captions for video content.
+- Make sure your captions can be translated into various languages.
+- Avoid auto-playing media, always provide controls.
 
-## Graphics and Colors
+## UI 
+- 
