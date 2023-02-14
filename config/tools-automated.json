@@ -11,18 +11,35 @@
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
       {
-        "title": "ZenWave Code Generator",
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Ready to use, but still in development: any help/comment is welcome!\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-code-generator/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-code-generator"
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -80,18 +97,20 @@
     "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
     "toolsList": [
       {
-        "title": "ZenWave Code Generator",
+        "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-code-generator/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-code-generator"
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -123,7 +142,7 @@
             "AsyncAPI Generator"
           ],
           "categories": [
-            "github-actions"
+            "github-action"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
@@ -135,18 +154,20 @@
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
       {
-        "title": "ZenWave Code Generator",
+        "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-code-generator/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-code-generator"
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
@@ -191,18 +212,20 @@
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
       {
-        "title": "ZenWave Code Generator",
+        "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
           "websiteUrl": "https://zenwave360.github.io/",
-          "docsUrl": "https://zenwave360.github.io/zenwave-code-generator/plugins/asyncapi-spring-cloud-streams3/",
-          "repoUrl": "https://github.com/zenwave360/zenwave-code-generator"
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
         },
         "filters": {
           "language": "Java",
           "technology": [
             "Maven",
-            "Spring Cloud Streams"
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
           ],
           "categories": [
             "code-generator",
