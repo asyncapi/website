@@ -34,35 +34,32 @@ Use the following tools to set up the project:
    For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
 ```bash
-git clone https://github.com/<username>/website/
+    git clone https://github.com/<username>/website/
 ```
-
-4. Check if NPM Package is already installed on your local computer. If it shows the details of the package then the NPM package is already installed. 
-   Otherwise you can install [NPM Package](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
 ```bash
-npm
+    npm
 ```
 
-3. Navigate to the website directory.
+4. Navigate to the website directory.
 
 ```bash
-cd website
+    cd website
 ```
 
-4. Install all website dependencies. 
+5. Install all website dependencies. 
 
 ```bash
-npm install
+    npm install
 ```
 
-5. Run the website locally.
+6. Run the website locally.
 
 ```bash
-npm run dev
+    npm run dev
 ```
 
-6. Access the live development server at [localhost:3000](http://localhost:3000).
+7. Access the live development server at [localhost:3000](http://localhost:3000).
 
 
 ## Compose new blog post
@@ -70,7 +67,7 @@ npm run dev
 To bootstrap a new post, run this command:
 
 ```bash
-npm run write:blog
+    npm run write:blog
 ```
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
