@@ -7,7 +7,7 @@ import TextLink from '../../components/typography/TextLink';
 
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
-  const image = '/img/social/meetings.png';
+  const image = '/img/social/tools-dashboard-card.webp';
   
   return (
     <div>
