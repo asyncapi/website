@@ -44,7 +44,7 @@ export default function DemoAnimation({ className = '' }) {
     const common = (
       <>
         <div>
-          <span className="text-teal-400">asyncapi:</span> 2.5.0
+          <span className="text-teal-400">asyncapi:</span> 2.6.0
         </div>
         <div>
           <span className="text-teal-400">info:</span>
