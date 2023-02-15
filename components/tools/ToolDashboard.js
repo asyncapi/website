@@ -10,6 +10,7 @@ import ArrowDown from '../icons/ArrowDown';
 
 export default function ToolDashboard() {
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
+    const categoryRef = useRef() // used to provide ref to the Category menu and outside click close feature
     const [openFilter, setOpenFilter] = useState(false)
     const [openCategory, setopenCategory] = useState(false)
     // filter parameters extracted from the context
@@ -23,6 +24,18 @@ export default function ToolDashboard() {
         const checkIfClickOutside = (e) => {
             if ((openFilter && filterRef.current && !filterRef.current.contains(e.target)))
                 setOpenFilter(false)
+        }
+        document.addEventListener("mousedown", checkIfClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickOutside)
+        }
+    })
+
+    // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
+    useEffect(() => {
+        const checkIfClickOutside = (e) => {
+            if ((openCategory && categoryRef.current && !categoryRef.current.contains(e.target)))
+                setopenCategory(false)
         }
         document.addEventListener("mousedown", checkIfClickOutside)
         return () => {
@@ -113,11 +126,11 @@ export default function ToolDashboard() {
                     </div>
                 </div>
                 <div className='flex w-1/3 lg:w-1/5 gap-5 h-auto'>
-                    <div className="relative w-full h-auto">
+                    <div className="relative w-full h-auto" ref={categoryRef}>
                         <div
-                            className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
+                            className="flex p-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                             onClick={() => setopenCategory(!openCategory)}>
-                            <div>Category</div>
+                            <div>Jump to Category</div>
                             <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
                         </div>
                         {openCategory && (
