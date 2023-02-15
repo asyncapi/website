@@ -28,6 +28,7 @@ export default function ToolsCard({ toolData }) {
   const [visible, setVisible] = useState({
     lang : false,
     tech: false,
+    desc : false
   })
 
   return (
@@ -36,12 +37,12 @@ export default function ToolsCard({ toolData }) {
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
             <Heading typeStyle="heading-sm-semibold">{toolData.title}</Heading>
-            <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit min-w-[5.3rem] h-fit rounded-md'>
-              <span className="group relative">
-                <span className="w-48 absolute top-8 border border-gray-200 shadow-md rounded px-2 py-1 -translate-x-12 text-gray-700 -left-2/3 transition delay-300 bg-white z-10 hidden group-hover:inline">
-                  {Data.properties.filters.properties.hasCommercial.description}
-                </span>
+            <div className='bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs w-fit min-w-[5.3rem] h-fit rounded-md' onMouseEnter={()=> (setTimeout(()=>{if (!visible.desc) setVisible({...visible, "desc": true})}, 400))}>
+              <span className="group relative" onMouseLeave={()=>(setTimeout(()=>{if (visible.desc) setVisible({...visible, "desc": false})}, 300))}>
                 {toolData.filters.hasCommercial === false ? 'Open Source' : 'Commercial'}
+                {visible.desc && <span className="w-48 absolute text-left top-8 border border-gray-200 shadow-md rounded px-2 py-1 -translate-x-12 text-gray-700 -left-2/3 bg-white z-10">
+                  {Data.properties.filters.properties.hasCommercial.description}
+                </span>}
               </span>
             </div>
           </div>
