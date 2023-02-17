@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 51.404251386117316
-    },
-    {
       "id": "PR_kwDOBW5R_c5ARCuj",
       "isPR": true,
       "isAssigned": true,
@@ -25,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/1005",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 38.19422030365141
+      "score": 38.48139489240067
     },
     {
       "id": "PR_kwDOBGu-185AIQgf",
@@ -36,7 +20,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 34.46095064991105
+      "score": 35.609649004908086
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -64,6 +48,22 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 27.56876051992884
+    },
+    {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 24.914618792310346
     },
     {
       "id": "PR_kwDOFLhIt85AY9Ib",
@@ -96,7 +96,7 @@
       "resourcePath": "/asyncapi/website/pull/1025",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 22.399617922442182
+      "score": 22.68679251119144
     },
     {
       "id": "PR_kwDOBW5R_c5AL1kI",
@@ -123,18 +123,7 @@
           "color": "0D67D3"
         }
       ],
-      "score": 21.25091956744515
-    },
-    {
-      "id": "PR_kwDOFdFGUs4x5bH2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Video 2 - draft script",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/training/pull/9",
-      "repo": "asyncapi/training",
-      "labels": [],
-      "score": 21.25091956744515
+      "score": 21.538094156194408
     },
     {
       "id": "PR_kwDOBW5R_c5B0oU6",
@@ -159,6 +148,17 @@
         }
       ],
       "score": 18.666348268701817
+    },
+    {
+      "id": "PR_kwDOBW5R_c5GeFJh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: blog post on SIO-AsyncAPI",
+      "author": "daler-rahimov",
+      "resourcePath": "/asyncapi/website/pull/1196",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.36895155870775
     }
   ],
   "goodFirstIssues": [
@@ -184,36 +184,6 @@
       "resourcePath": "/asyncapi/website/issues/1318",
       "repo": "asyncapi/website",
       "author": "akshatnema",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5d9-NS",
-      "title": "Make `Tools` element in top navigation redirecting to `/tools`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1313",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5d95rn",
-      "title": "Improve `share link` image for AsyncAPI Tools view",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1311",
-      "repo": "asyncapi/website",
-      "author": "derberg",
       "area": "javascript",
       "labels": [
         {
@@ -419,6 +389,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -453,21 +427,6 @@
         {
           "name": "hacktoberfest",
           "color": "5B0291"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385TB-nX",
-      "title": "Document C# preset CSHARP_JSON_SERIALIZER_PRESET require Microsoft.CSharp dependency",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/915",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -509,6 +468,21 @@
       "repo": "asyncapi/parser-js",
       "author": "derberg",
       "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385I5ryn",
+      "title": "Implement PHP generator",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/744",
+      "repo": "asyncapi/modelina",
+      "author": "Leamsi9",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -581,6 +555,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
