@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
-
 import ArrowLeft from '../icons/ArrowLeft';
 import ArrowRight from '../icons/ArrowRight';
 import BlogPostItem from '../navigation/BlogPostItem'
@@ -14,8 +13,7 @@ export default function NewsroomBlogPosts() {
   const [prevEl, prevElRef] = useSwiperRef();
   const [current, setCurrent] = useState(0);
 
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
+  const posts = getAllPosts()['blog']
     .sort((i1, i2) => {
       const i1Date = new Date(i1.date)
       const i2Date = new Date(i2.date)

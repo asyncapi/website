@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/uwSIXviDuOE/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (February 15, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/587.",
+    "videoId": "uwSIXviDuOE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/OdkIsyjpomA/hqdefault.jpg",
     "title": "Community meeting (February 7, 2023)",
     "description": "https://github.com/asyncapi/community/issues/589.",
@@ -22,11 +28,5 @@
     "title": "Let&#39;s talk about contributing - Specification",
     "description": "How to start contributing to the AsyncAPI specification.",
     "videoId": "qav2X7qb-_E"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/yLIBWf3WPGY/hqdefault.jpg",
-    "title": "Community Meeting (January 24, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/569.",
-    "videoId": "yLIBWf3WPGY"
   }
 ]
