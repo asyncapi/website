@@ -138,7 +138,7 @@ export default function ToolDashboard() {
                 </div>
             </div>
             {isFiltered &&
-                <div className="flex items-center mt-4 text-gray-600 hover:text-black">
+                <div className="flex items-center mt-4 text-gray-600 cursor-pointer hover:text-black" onClick={clearFilters}>
                     <Cross />
                     <span className="ml-3">
                         Clear Filters
