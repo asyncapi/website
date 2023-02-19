@@ -138,15 +138,12 @@ export default function ToolDashboard() {
                 </div>
             </div>
             {isFiltered &&
-                <Button
-                    text="Clear filters"
-                    type="button"
-                    icon={<Cross />}
-                    iconPosition="left"
-                    className="flex justify-center items-center my-4 py-2 px-4 font-normal bg-gray-100 cursor-pointer hover:bg-neutral-900"
-                    textClassName="text-neutral-900 hover:text-gray-100"
-                    onClick={clearFilters}
-                />
+                <div className="flex items-center mt-4 text-gray-600 hover:text-black">
+                    <Cross />
+                    <span className="ml-3">
+                        Clear Filters
+                    </span>
+                </div>
             }
             <div className="mt-0">
                 {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
