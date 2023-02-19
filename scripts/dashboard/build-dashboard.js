@@ -104,7 +104,18 @@ async function getDiscussions(query, pageSize, endCursor = null) {
       },
     });
 
+    if (result.rateLimit.remaining <= 100) {
+      console.log(
+        `[WARNING] GitHub GraphQL rateLimit`,
+        `cost = ${result.rateLimit.cost}`,
+        `limit = ${result.rateLimit.limit}`,
+        `remaining = ${result.rateLimit.remaining}`,
+        `resetAt = ${result.rateLimit.resetAt}`
+      )
+    }
+
     const hasNextPage = result.search.pageInfo.hasNextPage;
+
     if (!hasNextPage) {
       return result.search.nodes;
     } else {
@@ -131,9 +142,9 @@ async function getDiscussionByID(isPR, id) {
 async function start() {
   try {
     const [issues, PRs, rawGoodFirstIssues] = await Promise.all([
-      getDiscussions(Queries.hotDiscussionsIssues, 100),
-      getDiscussions(Queries.hotDiscussionsPullRequests, 50),
-      getDiscussions(Queries.goodFirstIssues, 50),
+      getDiscussions(Queries.hotDiscussionsIssues, 20),
+      getDiscussions(Queries.hotDiscussionsPullRequests, 20),
+      getDiscussions(Queries.goodFirstIssues, 20),
     ]);
     const discussions = issues.concat(PRs);
     const [hotDiscussions, goodFirstIssues] = await Promise.all([
