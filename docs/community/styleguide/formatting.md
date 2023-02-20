@@ -61,3 +61,9 @@ Code blocks are used to display code examples or snippets.
   title: Account Service
   version: 1.0.0
   ```
+## Spacing
+
+Line spacing, or the amount of vertical space between lines of text in a paragraph, can aid or hinder reading. Adequate line spacing aids readers in navigating from the end of one line to the start of the next.
+
+- Use appropriate line spacing to make the content more readable. A single line spacing is usually sufficient for most cases.
+- Use consistent indentation to show the hierarchy of the content.
