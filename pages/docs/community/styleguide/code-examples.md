@@ -46,4 +46,3 @@ Make no assumptions about the readers' familiarity with any libraries, framework
 Write your code to be as clean and understandable as possible
 
 Add links of the library or documentation for better understanding.
-
