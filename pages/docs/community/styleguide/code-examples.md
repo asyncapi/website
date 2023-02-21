@@ -41,7 +41,7 @@ Add proper spacing between code blocks
 After adding comments ,start writing code from the next line.
 ## General
 
-Make no assumptions about the readers' familiarity with any libraries, frameworks, preprocessors, or other non-native features. 
+Make no assumptions about the reader's familiarity with any libraries, frameworks, preprocessors, or other non-native features. 
 
 Write your code to be as clean and understandable as possible
 
