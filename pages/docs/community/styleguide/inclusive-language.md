@@ -3,7 +3,7 @@
 While writing documentation we are indirectly reaching out to thousands of people all around the globe. 
 Thus, we must ensure that our diverse audience can connect with our information. 
 
-### 1. Culturally Inclusive Language - 
+### 1. Culturally Inclusive Language
 
 Some phrases and words are popularly used only in specific regions of the world, thus our audience from other parts 
 of the world might need help to relate to the same. Hence, we should try to avoid using such phrases in our documentation. 
