@@ -1,4 +1,4 @@
-# Style Docs - Inclusive Language:
+# Inclusive Language
 
 While writing documentation we are indirectly reaching out to thousands of people all around the globe. 
 Thus, we must ensure that our diverse audience can connect with our information. 
