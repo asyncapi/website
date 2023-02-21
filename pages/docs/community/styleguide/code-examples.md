@@ -39,7 +39,7 @@ In all code samples, the indentation should be two spaces per tab.
 Add proper spacing between code blocks
 
 After adding comments ,start writing code from the next line.
-## General
+### General
 
 Make no assumptions about the reader's familiarity with any libraries, frameworks, preprocessors, or other non-native features. 
 
