@@ -34,7 +34,7 @@ You different colors for bracket to know the starting and ending bracket of code
 
 Put the characters for the open-brace ("") on the same line as the sentence that opens the block.
 
-In all code samples, the indentation should be two spaces per tab.]
+In all code samples, the indentation should be two spaces per tab.
 
 Add proper spacing between code blocks
 
