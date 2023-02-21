@@ -4,7 +4,7 @@
 
 Code examples which you add must be simple enough to understand and with good details to do something interesting and useful.
 
-You need to add pratical code examples which adheres to industry standards as users will copy the sample code and run it in production.Be sure to include any warnings thriugh comments which might occur during code run.
+You need to add practical code examples which adhere to industry standards as users will copy the sample code and run it in production. Be sure to include any warnings through comments which might occur during the code run.
 Make it clear if it is a snippet and not a full example.Provide information about any packages or dependencies which would be required to run the sample code.
 
 The code example should be self explanatory and easy to understand. The goal is to provide simplified working examples that can be understood as soon as possible, not necessarily to create efficient, brilliant code that impresses experts and has outstanding utility.
