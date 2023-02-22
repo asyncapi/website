@@ -27,6 +27,6 @@ When writing documentation, we aim to achieve the following:
 It is crucial always to check grammar, punctuation, and spelling. View your work with a constructive eye while putting yourself in the reader's shoes. Thoroughly proofread your work and use writing tools such as Grammarly to polish up your work.
 
 ### Adress feedback
-There's a whole community of contributors who are willing to support you, so don't be shy to ask for feedback. You'll probably go through a lot of rounds of editing and proofreading before you can finally get your docs merged.
+A whole community of contributors is willing to support you via detailed feedback. All documentation pull requests go through several rewriting, editing, and proofreading rounds before they're ready to merge.
 
 
