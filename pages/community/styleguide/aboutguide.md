@@ -1,5 +1,3 @@
-# AsyncAPI Style Guide
-
 ## Introduction
 Welcome to the AsyncAPI Style Guide. This page serves as a guideline to contributors on how to write, structure, and format content/documentation.
 
