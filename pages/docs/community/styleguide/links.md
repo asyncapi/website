@@ -36,7 +36,7 @@ Linking to assets such as images, videos, and documents is an important part of 
 Instead of using `image.jpg`, you can use `Link-structure.jpg`. 
 - Always use `alt` text for images and other assets to make them accessible to users with disabilities. The alt text should describe the content of the asset. 
 For example: Instead of using `<img src="assets/Link-structure.jpg">`, you can use `<img src="assets/Link-structure.jpg" alt="A workflow of how link should be structured">`
-- Use `Target="_blank"` carefully to open the asset in a new window only when necessary. This can be helpful for certain file types, such as PDFs or external links, but should be used judiciously.>
+- Use `Target="_blank"` carefully to open the asset in a new window only when necessary. This can be helpful for certain file types, such as PDFs or external links, but should be used judiciously.
 > The decision to use `Target="_blank"` should be made carefully because not all users may prefer to have links open in a new tab or window.  whether or not to open a link in a new tab or window ultimately depends on the specific needs and preferences of the website and its users.
 
 ### Link Structure 
