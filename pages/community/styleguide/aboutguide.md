@@ -7,7 +7,7 @@ These guidelines help us maintain language, tone, and voice throughout the websi
 Below are some recommendations to consider when writing your pages.
 
 ### Identify target audience
-Before you begin planning and constructing your content, it is important to know who you are writing for and how the readers will benefit from your content.
+Before you begin planning and constructing your content, knowing who you are writing for and how the readers will benefit from your content is important.
 This will help you in strategizing and simplifying your writing process.
 
 ### Research
