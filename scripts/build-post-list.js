@@ -5,9 +5,16 @@ const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
+const { buildNavTree, addDocButtons } = require('./build-docs')
 
 let specWeight = 100
-const result = []
+const result = {
+  docs: [],
+  blog: [], 
+  about: [],
+  jobs: [],
+  docsTree: {}
+}
 const basePath = 'pages'
 const postDirectories = [
   [`${basePath}/docs`, '/docs'],
@@ -16,8 +23,23 @@ const postDirectories = [
   [`${basePath}/jobs`, '/jobs'],
 ]
 
+const addItem = (details) => {
+  if(details.slug.startsWith('/docs'))
+    result["docs"].push(details)
+  else if(details.slug.startsWith('/blog'))
+    result["blog"].push(details)
+  else if(details.slug.startsWith('/about'))
+    result["about"].push(details)
+  else if(details.slug.startsWith('/jobs'))
+    result["jobs"].push(details)
+  else {}
+}
+
 module.exports = async function buildPostList() {
   walkDirectories(postDirectories, result)
+  const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
+  result["docsTree"] = treePosts
+  result["docs"] = addDocButtons(result["docs"], treePosts)
   if (process.env.NODE_ENV === 'production') {
     // console.log(inspect(result, { depth: null, colors: true }))
   }
@@ -57,7 +79,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         }
         details.sectionWeight = sectionWeight
         details.slug = slug
-        result.push(details)
+        addItem(details)
         const rootId = details.parent || details.rootSectionId
         walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
@@ -94,7 +116,8 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title += " (Pre-release)"
           }
         }
-        result.push(details);
+
+        addItem(details)
       }
     }
   }
