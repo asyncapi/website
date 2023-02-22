@@ -1,5 +1,5 @@
 ## Introduction
-Welcome to the AsyncAPI Style Guide. This page serves as a guideline to contributors on how to write, structure, and format content/documentation.
+Welcome to the AsyncAPI Style Guide. This page guides contributors on how to write, structure, and format content in documentation.
 
 These guidelines help us in maintaining language, tone, and voice throughout the website. It also makes it easier for multiple contributors to work together on a single doc while ensuring consistency, accuracy, and clarity. 
 
