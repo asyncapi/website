@@ -40,7 +40,6 @@ Below you can see how many members joined our Slack every year. The numbers are 
 
 <Figure
   src="/img/posts/2022-summary/slack-people-joining.webp"
-  widthClass="w-3/4"
 />
 
 My prediction is that it will be growing and growing cause existing members will tell others what place it is and why it is worth joining.
@@ -51,7 +50,6 @@ Below I'm showing the average and median activity throughout the years. I think 
 
 <Figure
   src="/img/posts/2022-summary/slack-weekly.webp"
-  widthClass="w-3/4"
 />
 
 Last year was the first time the median value was much lower than the average. It is higher than the previous year, but not something we got used to so far. We noticed a significant increase in Slack members, but I think we can say that this number doesn't correlate well with median activity.
@@ -68,7 +66,6 @@ The `General` channel is the oldest, and yeah, it is generally for general stuff
 
 <Figure
   src="/img/posts/2022-summary/slack-channel-usage.webp"
-  widthClass="w-3/4"
 />
 
 Remember that AsyncAPI Initiative cares for both the specification and the tooling ecosystem.
@@ -81,7 +78,6 @@ Below you can see the top three members that joined the community in 2022 and we
 
 <Figure
   src="/img/posts/2022-summary/slack-most-active-new-2022.webp"
-  widthClass="w-3/4"
 />
 
 ## Social media
@@ -98,103 +94,17 @@ I'm so damn tired of LinkedIn. Seriously, a platform that drains so much data fr
 
 We had 2139 followers at the end of 2022. Every year's data since account creation looks like below.
 
-<table>
-  <tr>
-    <td align="center">
-    </td>
-    <td align="center">
-      2020
-    </td>
-    <td align="center">
-      2021
-    </td>
-    <td align="center">
-      2022
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Followers
-    </td>
-    <td align="center">
-      611<br/>
-    </td>
-    <td align="center">
-      745<br/>
-    </td>
-    <td align="center">
-      783<br/>
-    </td>
-  </tr>
-</table>
+<Figure
+  src="/img/posts/2022-summary/linkedin-followers.webp"
+/>
 
 We are not active on LinkedIn. We only republish whatever we publish on Twitter. No engagement is created. We treat it as a news feed, although LinkedIn != Twitter.
 
 Numbers went down a lot compared to last year, but when you look two years back, numbers are very similar. Why? in 2021 we spent $1200 on LinkedIn marketing; thus the number spike for one year.
 
-<table>
-  <tr>
-    <td align="center">
-    </td>
-    <td align="center">
-      2020
-    </td>
-    <td align="center">
-      2021 (including payed marketing)
-    </td>
-    <td align="center">
-      2022
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Users
-    </td>
-    <td align="center">
-       715
-    </td>
-    <td align="center">
-       1 857<br/>
-       (160% increase)
-    </td>
-    <td align="center">
-       660<br/>
-       (64% decrease)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      New Users
-    </td>
-    <td align="center">
-       656
-    </td>
-    <td align="center">
-       1 699<br/>
-       (159% increase)
-    </td>
-    <td align="center">
-       562<br/>
-       (66% decrease)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Sessions
-    </td>
-    <td align="center">
-       1 042
-    </td>
-    <td align="center">
-       2 511<br/>
-       (141% increase)
-    </td>
-    <td align="center">
-       1 028<br/>
-       (58% decrease)
-    </td>
-  </tr>
-</table>
+<Figure
+  src="/img/posts/2022-summary/linkedin-referrals.webp"
+/>
 
 My statement doesn't change. LinkedIn is an important presence, and even without dedicated moderation, simple reposting brings people to the project. We should continue our work there.
 
@@ -206,69 +116,9 @@ Forget about the number of followers. We have over 3.5k followers, over 500 more
 
 Let's see how Twitter's presence converts to visits to the AsyncAPI website.
 
-<table>
-  <tr>
-    <td align="center">
-    </td>
-    <td align="center">
-      2020
-    </td>
-    <td align="center">
-      2021 (including paid marketing)
-    </td>
-    <td align="center">
-      2022
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Users
-    </td>
-    <td align="center">
-       1 426
-    </td>
-    <td align="center">
-       2 728<br/>
-       (91% increase)
-    </td>
-    <td align="center">
-       1 422<br/>
-       (47% decrease)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      New Users
-    </td>
-    <td align="center">
-       1 276
-    </td>
-    <td align="center">
-       2 478<br/>
-       (94% increase)
-    </td>
-    <td align="center">
-       1 283<br/>
-       (48% decrease)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Sessions
-    </td>
-    <td align="center">
-       2 221
-    </td>
-    <td align="center">
-       3 874<br/>
-       (74% increase)
-    </td>
-    <td align="center">
-       1 856<br/>
-       (52% decrease)
-    </td>
-  </tr>
-</table>
+<Figure
+  src="/img/posts/2022-summary/twitter-referrals.webp"
+/>
 
 Exactly the same situation as with LinkedIn. Numbers drop between 2021 and 2022, but again because 2021 was a special year. We experimented that year with paid marketing on Twitter too. So the numbers we should compare are for the years 2020 and 2022. As we can see no change, and it is pretty stable. It looks like Twitter was not really abandoned, at least not for now :smiley:.
 
@@ -290,84 +140,9 @@ Unfortunately, with Netlify we do not have access to data older than seven days.
 
 The "quality" of the user visiting the website is much better. In 2022 we had no paid marketing nor any viral blog posts, and finally, data are more reliable and natural.
 
-<table>
-  <tr>
-    <td align="center">
-    </td>
-    <td align="center">
-      2019
-    </td>
-    <td align="center">
-      2020
-    </td>
-    <td align="center">
-      2021
-    </td>
-    <td align="center">
-      2022
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Users visits
-    </td>
-    <td align="center">
-      27 090
-    </td>
-    <td align="center">
-      83 655<br/>
-      (208% increase)
-    </td>
-    <td align="center">
-      131 802<br/>
-      (57% increase)
-    </td>
-    <td align="center">
-      135 980<br/>
-      (3% increase)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Sessions
-    </td>
-    <td align="center">
-      50 405
-    </td>
-    <td align="center">
-      147 409<br/>
-      (192% increase)
-    </td>
-    <td align="center">
-      235 321<br/>
-      (60% increase)
-    </td>
-    <td align="center">
-      270 696<br/>
-      (15% increase)
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Pageviews
-    </td>
-    <td align="center">
-      143 059
-    </td>
-    <td align="center">
-      362 686<br/>
-      (153% increase)
-    </td>
-    <td align="center">
-      590 501<br/>
-      (63% increase)
-    </td>
-    <td align="center">
-      741 272<br/>
-      (25% increase)
-    </td>
-  </tr>
-</table>
+<Figure
+  src="/img/posts/2022-summary/ga-views.webp"
+/>
 
 There is a much larger increase in the amount of **Pageviews** and **Sessions** but no significant increase in **User visits**. My theory: in 2022 we didn't have a single super viral blog post like in previous years that would bring a few thousand people in just a few days (like September 9, 2021 - over 5k readers), people that are interested in an article, and not the AsyncAPI in general. 
 
@@ -385,7 +160,6 @@ Concepts were published to the website on different dates, some in September, so
 
 <Figure
   src="/img/posts/2022-summary/google-concepts.webp"
-  widthClass="w-3/4"
 />
 
 As you can see, more technical content, which was not even released at the beginning of the year, converted into many additional pageviews. In 2023 this content will perform even better. I know it for sure, as only in the case of Generator docs, in January 2023, Google Analytics noted 4 668 views! Well, you must admit that 48k **Pageviews** for 2023 would be huge!
@@ -396,7 +170,6 @@ I believe that numbers from GSC can show how many more people hear about AsyncAP
 
 <Figure
   src="/img/posts/2022-summary/google-search.webp"
-  widthClass="w-3/4"
 />
 
 In 2022 we didn't perform any specific modifications on the website to improve SEO. So the only explanation for the increase in impressions and clicks is the increased volume of documentation I wrote about in the previous section. More useful content, better ranking in search.
@@ -459,75 +232,9 @@ The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive i
 
 YouTube is just another channel where we can see the audience is growing. The conference and other regular live streams bring a lot of watchers. In 2023 numbers might drop because we do not want to do the online conference, but yeah, let's see.
 
-<table>
-  <tr>
-    <td align="center">
-    </td>
-    <td align="center">
-      2019
-    </td>
-    <td align="center">
-      2020
-    </td>
-    <td align="center">
-      2021
-    </td>
-    <td align="center">
-      2022
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Views
-    </td>
-    <td align="center">
-      527
-    </td>
-    <td align="center">
-      8 830
-    </td>
-    <td align="center">
-      10 444
-    </td>
-    <td align="center">
-      21 694
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      Watch time
-    </td>
-    <td align="center">
-      29.9h
-    </td>
-    <td align="center">
-      1 900h
-    </td>
-    <td align="center">
-      1 672.9h
-    </td>
-    <td align="center">
-      2 198.5h
-    </td>
-  </tr>
-    <tr>
-    <td align="center">
-      Subscribers
-    </td>
-    <td align="center">
-      35
-    </td>
-    <td align="center">
-      396
-    </td>
-    <td align="center">
-      292
-    </td>
-    <td align="center">
-      365
-    </td>
-  </tr>
-</table>
+<Figure
+  src="/img/posts/2022-summary/yt.webp"
+/>
 
 ## Final words
 
