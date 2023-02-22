@@ -35,16 +35,15 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 </Remember>
 
 1. Trigger generation of the Node.js code:
-<CodeBlock language="bash">
-{`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
-</CodeBlock>
-
-Let's break down the previous command:
-- `asyncapi generate fromTemplate` is how you use AsyncAPI Generator via the AsyncAPI CLI. 
-- ` asyncapi.yaml` is how you point to your AsyncAPI document and can be a URL. 
-- `@asyncapi/nodejs-template` is how you specify the Node.js template.
-- `-o` determines where to output the result.
-- `-p` defines additional parameters you want to pass to the template. Here, the `server` parameter specifies the server's name as it is defined in AsyncAPI document.
+    <CodeBlock language="bash">
+    {`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
+    </CodeBlock>
+    Let's break down the previous command:
+    - `asyncapi generate fromTemplate` is how you use AsyncAPI Generator via the AsyncAPI CLI. 
+    - ` asyncapi.yaml` is how you point to your AsyncAPI document and can be a URL. 
+    - `@asyncapi/nodejs-template` is how you specify the Node.js template.
+    - `-o` determines where to output the result.
+    - `-p` defines additional parameters you want to pass to the template. Here, the `server` parameter specifies the server's name as it is defined in AsyncAPI document.
 
 2. List all files in directory and check that the Node.js application is generated:
 <CodeBlock language="bash">
