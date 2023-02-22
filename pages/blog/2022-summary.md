@@ -77,7 +77,7 @@ Remember that AsyncAPI Initiative cares for both the specification and the tooli
 
 As I wrote in the intro, each community must be welcoming to new people and give them space inside so they feel comfortable interacting with others and feeling safe.
 
-Below you can see the top three members that joined the community in 2022 and were most active among other new joiners. Their activity was clearly reflected in their contributions. In the end, all the people you can see below are now members of the [AsyncAPI Technical Steering Committee](https://www.asyncapi.com/community/tsc).
+Below you can see the top three members that joined the community in 2022 and were most active among other new-joiners. Their activity was clearly reflected in their contributions. In the end, all the people you can see below are now members of the [AsyncAPI Technical Steering Committee](https://www.asyncapi.com/community/tsc).
 
 <Figure
   src="/img/posts/2022-summary/slack-most-active-new-2022.webp"
