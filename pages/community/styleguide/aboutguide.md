@@ -15,8 +15,7 @@ Before creating your first draft, it is beneficial to research similar resources
 
 ### Follow writing principles
 When writing documentation, we aim to achieve the following:
-- **Clear** - It is very important that your writing is as clear as possible. Avoid using jargon or ambiguous words. 
-Explain any technical terms in simple and easy-to-understand words while considering your target audience. Additionally, keep your sentences short and sweet.
+- **Clear** - It is very important that your writing is as clear as possible. Avoid using jargon or ambiguous words. Explain technical terms in simple and easy-to-understand words while considering your target audience. Additionally, keep your sentences short and sweet.
 - **Concise** - It is crucial to be concise when conveying information. Removing redundancy caters to the reader's needs while providing value.
 - **Consistent** - Maintaining consistency makes it easy for multiple collaborators to work together efficiently. This ensures professionalism while making it easy to implement updates and changes.
 - **Friendly** - Your content/documentation should be relatable. Always use an active voice instead of a passive tone when writing. Moreover, adding some visual graphics and real-life examples helps the reader better understand the information more practically.
