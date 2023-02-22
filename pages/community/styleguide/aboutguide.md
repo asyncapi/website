@@ -13,6 +13,14 @@ This will help you in strategizing and simplifying your writing process.
 ### Research
 Before creating your first draft, it is beneficial to research similar resources and use them as references. Avoid plagiarism or copying and pasting from other websites unless the content already exists on our site.
 
+### Plagiarism
+Plagiarism can be defined as an act of using someone else's work as your own, without giving any acknowledgment or credit. These are some examples of plagiarism:
+- Copying and pasting content word for word.
+- Paraphrasing or making changes to the text without crediting the source.
+- Using content written by someone else i.e ChatGPT.
+
+
+
 ### Follow writing principles
 When writing documentation, we aim to achieve the following:
 - **Clear** - It is very important that your writing is as clear as possible. Avoid using jargon or ambiguous words. Explain technical terms in simple and easy-to-understand words while considering your target audience. Additionally, keep your sentences short and sweet.
@@ -26,7 +34,7 @@ When writing documentation, we aim to achieve the following:
 ### Prune and polish
 It is crucial always to check grammar, punctuation, and spelling. View your work with a constructive eye while putting yourself in the reader's shoes. Thoroughly proofread your work and use writing tools such as Grammarly to polish up your work.
 
-### Adress feedback
+### Address feedback
 A whole community of contributors is willing to support you via detailed feedback. All documentation pull requests go through several rewriting, editing, and proofreading rounds before they're ready to merge.
 
 
