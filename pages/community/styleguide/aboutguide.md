@@ -6,7 +6,7 @@ These guidelines help us maintain language, tone, and voice throughout the websi
 ## Writing Style
 Below are some recommendations to consider when writing your pages.
 
-### Have your target audience in mind
+### Identify target audience
 Before you begin planning and constructing your content, it is important to know who you are writing for and how the readers will benefit from your content.
 This will help you in strategizing and simplifying your writing process.
 
