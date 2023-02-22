@@ -24,7 +24,7 @@ When writing documentation, we aim to achieve the following:
 
 
 ### Prune and polish
-At this point, it is very important to check grammar, punctuation, and spelling. View your work with a constructive eye while putting yourself in the shoes of the reader. Thoroughly proofread your work and make use of tools such as Grammarly to help polish up your work.
+It is crucial always to check grammar, punctuation, and spelling. View your work with a constructive eye while putting yourself in the reader's shoes. Thoroughly proofread your work and use writing tools such as Grammarly to polish up your work.
 
 ### Ask for feedback
 There's a whole community of contributors who are willing to support you, so don't be shy to ask for feedback. You'll probably go through a lot of rounds of editing and proofreading before you can finally get your docs merged.
