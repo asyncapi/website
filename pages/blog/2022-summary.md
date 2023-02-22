@@ -56,9 +56,9 @@ Below I'm showing the average and median activity throughout the years. I think 
 
 Last year was the first time the median value was much lower than the average. It is higher than the previous year, but not something we got used to so far. We noticed a significant increase in Slack members, but I think we can say that this number doesn't correlate well with median activity.
 
-We should look into the data more deeply and understand what happened between April 23 and June 21 when numbers got much higher than usual. For example, what the heck happened on Apring 29 when we had 583 active members? Was AsyncAPI Mentorship the reason?
+We should look into the data more deeply and understand what happened between April 23 and June 21 when numbers got much higher than usual. For example, what the heck happened on April 29 when we had 583 active members? Was AsyncAPI Mentorship the reason?
 
-Anyway, I definitely predict that data for 2023 will show an increas in activity as we plan to do a series of meetups around the world that will bring more and more people into Slack.
+Anyway, I definitely predict that data for 2023 will show an increase in activity as we plan to do a series of meetups around the world that will bring more and more people into Slack.
 
 ### Channels popularity
 
