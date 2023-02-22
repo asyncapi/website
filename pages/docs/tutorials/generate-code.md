@@ -76,14 +76,14 @@ package.json
 
 ## Send message to broker
 1. In another terminal install the MQTT.js library:
-<CodeBlock language="bash">
+    <CodeBlock language="bash">
 {`npm install mqtt -g`}
-</CodeBlock>
+    </CodeBlock>
 
 2. Send a message to the MQTT broker that's connected to your generated application. Run the following MQTT client command:
-<CodeBlock language="bash">
-{`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
-</CodeBlock>
+    <CodeBlock language="bash">
+    {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": 3, "sentAt": "2017-06-07T12:34:32.000Z"}'`}
+    </CodeBlock>
 
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
     ```bash
