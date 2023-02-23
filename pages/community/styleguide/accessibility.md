@@ -1,3 +1,8 @@
+---
+title: Accessibility
+weight: 10
+---
+
 # Accessibility
 
 At AsyncAPI, we strive to make our documentation/content inclusive, accessible, and unbiased to everyone. We encourage all contributors to have diversity and inclusivity in mind when writing. To ensure this, we have provided an overview of general guidelines to follow.
@@ -17,7 +22,7 @@ At AsyncAPI, we strive to make our documentation/content inclusive, accessible, 
 - Structure your text in a uniform format. 
 
 ## Links
-- Use descriptive and meaningful link text. For example, do not use phrases like *click here* or *follow this link*.
+- Use descriptive and meaningful link text. For example, do not use phrases like *click here* or *follow this link* instead use *see*.
 - Always use an external link icon if a link opens up in a new tab.
 - Make sure your links or URLs are valid and redirect to the correct destination.
 
