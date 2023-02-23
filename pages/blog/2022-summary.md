@@ -16,7 +16,7 @@ featured: true
 
 It is a good practice to sometimes stop and turn back. Sometimes you need to see what you left behind, what successes made you go that far, and what things you missed and never had time to enjoy or explore. The more often you do it, the better your decisions may be in the future. It is essential to do it at least once a year in open source.
 
-Omg, I don't recall when I last wrote something so clever. At least, I think it sounds clever :smiley:
+Omg, I don't recall when I last wrote something so clever. At least, I think it sounds clever. :smiley:
 
 This article will take you on a journey to the past to see what happened in 2022 at AsyncAPI Initiative.
 
@@ -24,15 +24,15 @@ If you are interested in previous project updates [check other `Project Status` 
 
 ## Slack
 
-At the end of 2022, we had **3114** members in the AsyncAPI workspace. But what does it really mean? Don't get me wrong, I like when the numbers are high, especially if I see them in my bank account. 
+At the end of 2022, we had **3114** members in the AsyncAPI workspace. But what does that really mean? Don't get me wrong; I like when the numbers are high, especially if I see them in my bank account. 
 
 The thing is that some accounts might belong to people that joined three years ago but don't even remember that they had an account in the AsyncAPI workspace. It would be good to check how this number relates to people's activity.
 
-Also important is to understand how come we have **3114** members. Did all of them join in 2016? And then we had no new joiners since then? That would be a disaster and a clear indication we are doing something wrong :sweat_smile:
+Another important item to understand is how come we have **3114** members. Did all of them join in 2016? Have we had no new people join since then? That would be a disaster and a clear indication we are doing something wrong. :sweat_smile:
 
 ### Workspace size
 
-Below you can see how many members joined our Slack every year. The numbers are pretty neat! People join Slack only if it is worth it, that they know:
+Below you can see how many members have joined AsyncAPI Slack in past years. The numbers are pretty neat! People join AsyncAPI Slack because they know:
 - someone will answer their call for help
 - it is a welcoming place for first-time contributors
 - we participate in many mentorship programs
@@ -68,7 +68,7 @@ The `General` channel is the oldest, and yeah, it is generally for general stuff
   src="/img/posts/2022-summary/slack-channel-usage.webp"
 />
 
-Remember that AsyncAPI Initiative cares for both the specification and the tooling ecosystem.
+Remember that AsyncAPI Initiative cares about both the specification and the tooling ecosystem.
 
 ### New members' activity
 
@@ -82,17 +82,17 @@ Below you can see the top three members that joined the community in 2022 and we
 
 ## Social media
 
-Social media are not a silver bullet. I think it should only be a news interface with the community, not a marketing tool.
+Social media is not a silver bullet. I think social media should only be a news interface with the community, not a marketing tool.
 
-Below data will show you that these channels should not be treated as promotion channels that convert to new users. You will see that LinkedIn and Twitter brought together 2 082 users to the AsyncAPI website. Now, compare it to [this single documentation article from Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) that referred to our website 5 542 users.
+Below data will show you that these channels should not be treated as promotion channels that convert to new users. You will see that LinkedIn and Twitter brought together 2,082 users to the AsyncAPI website. Now, compare it to this single [Mozilla documentation article](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) that referred to our website 5,542 users.
 
 Social media is suitable for communication with the community. Promotion should target people in a location where they look for help. In other words, mentioning AsyncAPI on a WebSocket-related website performs much better than hundreds of social media posts. So we should also try to make sure AsyncAPI is mentioned in other locations. Why not mention AsyncAPI in official docs for Kafka, MQTT, and other protocols?
 
 ### LinkedIn
 
-I'm so damn tired of LinkedIn. Seriously, a platform that drains so much data from others and earns money from job marketing cannot afford and give users access to historical data and see more than one year-old stats. Like seriously...
+I'm so damn tired of LinkedIn. Seriously, a platform that drains so much data from others and earns money from job marketing cannot afford to give users access to historical data and see more than one-year-old stats. Like seriously...
 
-We had 2139 followers at the end of 2022. Every year's data since account creation looks like below.
+We had 2,139 followers at the end of 2022. Every year's data since account creation looks like below.
 
 <Figure
   src="/img/posts/2022-summary/linkedin-followers.webp"
@@ -100,7 +100,7 @@ We had 2139 followers at the end of 2022. Every year's data since account creati
 
 We are not active on LinkedIn. We only republish whatever we publish on Twitter. No engagement is created. We treat it as a news feed, although LinkedIn != Twitter.
 
-Numbers went down a lot compared to last year, but when you look two years back, numbers are very similar. Why? in 2021 we spent $1200 on LinkedIn marketing; thus the number spike for one year.
+Numbers went down a lot compared to last year, but when you look two years back, numbers are very similar. Why? In 2021, we spent $1,200 on LinkedIn marketing; thus, the number spike for one year.
 
 <Figure
   src="/img/posts/2022-summary/linkedin-referrals.webp"
@@ -110,7 +110,7 @@ My statement doesn't change. LinkedIn is an important presence, and even without
 
 ### Twitter
 
-Twitter? Seriously, the most unreliable tool ever :smiley: but of course, I'm biased; I do not like it. So let's look at the data. Are people really leaving Twitter because of Elon Musk?
+Twitter? Seriously, the most unreliable tool ever. :smiley: But of course, I'm biased; I do not like it. So let's look at the data. Are people really leaving Twitter because of Elon Musk?
 
 Forget about the number of followers. We have over 3.5k followers, over 500 more than last year. For me, followers number are as reliable as GitHub stars on a repository. Not much...
 
@@ -120,31 +120,31 @@ Let's see how Twitter's presence converts to visits to the AsyncAPI website.
   src="/img/posts/2022-summary/twitter-referrals.webp"
 />
 
-Exactly the same situation as with LinkedIn. Numbers drop between 2021 and 2022, but again because 2021 was a special year. We experimented that year with paid marketing on Twitter too. So the numbers we should compare are for the years 2020 and 2022. As we can see no change, and it is pretty stable. It looks like Twitter was not really abandoned, at least not for now :smiley:.
+Exactly the same situation as with LinkedIn. Numbers drop between 2021 and 2022, but again because 2021 was a special year. We experimented that year with paid marketing on Twitter too. So the numbers we should compare are for the years 2020 and 2022. As we can see no change, and it is pretty stable. It looks like Twitter was not really abandoned, at least not for now :smiley: .
 
-My take on it. This is acceptable. I do not think we have to do more there. My observation is that tweets that perform there are not technical tweets that could bring more people to the project, but "thank you" tweets, and "appreciation" tweets. And do not get me wrong, we should still create such tweets, no question about it. It proves it is a social media, not a "technical geeks knowledge exchange center". I do not think any additional investment in the platform makes sense.
+My take on it. This is acceptable. I do not think we have to do more there. My observation is that tweets that perform there are not technical tweets that could bring more people to the project, but "thank you" tweets and "appreciation" tweets. And do not get me wrong, we should still create such tweets, no question about it. It proves it is a social media, not a "technical geeks knowledge exchange center." I do not think any additional investment in the platform makes sense.
 
 ## Google Analytics
 
-We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) to understand what content is most valuable for you and learn how the interest is growing. The data we get doesn't 100% reflect reality because AsyncAPI is for technical people, and many technical people use plugins in browsers to block  Google Analytics, or browsers that block it natively.
+We use Google Analytics on [AsyncAPI website](https://www.asyncapi.com/) to understand the most valuable content for you and learn how the interest is growing. The data we get doesn't 100% reflect reality because AsyncAPI is for technical people, and many technical people use plugins in browsers to block Google Analytics or browsers that block it natively.
 
 We also have numbers that confirm that. I checked the last seven days of data from Google Analytics and compared it with the raw traffic data we get from Netlify servers. The dates I checked were February 13-20:
 
 - Google Analytics noted over 24k page views.
 - Netlify noted over 26k page views.
 
-This means we are losing around 7% of data if I calculated it right :smiley:
+This means we are losing around 7% of the data if I calculated it right. :smiley:
 Unfortunately, with Netlify we do not have access to data older than seven days. We can dump this data for future analytics, but we need New Relic or some other service to sponsor the storage for us :smiley:
 
 ### Confusing data
 
-The "quality" of the user visiting the website is much better. In 2022 we had no paid marketing nor any viral blog posts, and finally, data are more reliable and natural.
+The "quality" of the user visiting the website is much better. In 2022, we had no paid marketing nor any viral blog posts, and finally, data is more reliable and natural.
 
 <Figure
   src="/img/posts/2022-summary/ga-views.webp"
 />
 
-There is a much larger increase in the amount of **Pageviews** and **Sessions** but no significant increase in **User visits**. My theory: in 2022 we didn't have a single super viral blog post like in previous years that would bring a few thousand people in just a few days (like September 9, 2021 - over 5k readers), people that are interested in an article, and not the AsyncAPI in general. 
+There is a much larger increase in the amount of **Pageviews** and **Sessions** but no significant increase in **User visits**. My theory: In 2022, we didn't have a single super viral blog post like in previous years that would bring a few thousand people in just a few days (like September 9, 2021 - over 5k readers), people that are interested in an article, and not AsyncAPI in general. 
 
 I think we can say that it is the first time we have had a regular increase in users and that this increase is valuable as these users generate a lot of sessions and navigate through the website a lot. In other words, the bigger difference between **User visits** and **Pageviews**, the better.
 
@@ -152,21 +152,21 @@ It would make sense to retake the above table and check it against Google Analyt
 
 ### The more docs we get, the more traffic increase we will see
 
-One of the top goals for the AsyncAPI website should be to increase the content and benefit from the SEO. This happened in 2022 thanks to participation in Google Season of Docs. We had six dedicated docs contributors. We gained new [`Concepts`](https://www.asyncapi.com/docs/concepts) and [`Generator`](https://www.asyncapi.com/docs/tools/generator) documentation in the website.
+One of the top goals for the AsyncAPI website should be to increase the content and benefit from the SEO. This happened in 2022, thanks to participation in Google Season of Docs. We had six dedicated docs contributors. We gained new [`Concepts`](https://www.asyncapi.com/docs/concepts) and [`Generator`](https://www.asyncapi.com/docs/tools/generator) documentation in the website.
 
-In the case of Generator documentation, Florence and Pratik refactored all the documentation from the Generator repository and made sure it is published in an automated way on the website. The day it was published on the website was 20th of December, almost the end of the year, Christmas break, a dead season for the website. Yet new content managed to generate additional 1 053 Pageviews to the website!
+In the case of Generator documentation, Florence and Pratik refactored all the documentation from the Generator repository and made sure it was published in an automated way on the website. It was published on the website on the 20th of December, almost the end of the year during Christmas break, a dead season for the website. Yet the new content managed to generate an additional 1,053 Pageviews to the website!
 
-Concepts were published to the website on different dates, some in September, some in early December. In more than three months this new content generated more than 17 646 Pageviews.
+Concepts were published to the website on different dates, some in September and some in early December. This new content generated more than 17,646 Pageviews in over three months.
 
 <Figure
   src="/img/posts/2022-summary/google-concepts.webp"
 />
 
-As you can see, more technical content, which was not even released at the beginning of the year, converted into many additional pageviews. In 2023 this content will perform even better. I know it for sure, as only in the case of Generator docs, in January 2023, Google Analytics noted 4 668 views! Well, you must admit that 48k **Pageviews** for 2023 would be huge!
+As you can see, more technical content, which was not even released at the beginning of the year, converted into many additional pageviews. In 2023, this content will perform even better. I know it for sure, as only in the case of Generator docs, in January 2023, Google Analytics noted 4,668 views! Well, you must admit that 48k **Pageviews** for 2023 would be huge!
 
 ### Google Search Console
 
-I believe that numbers from GSC can show how many more people hear about AsyncAPI and gain interest in the topic. In other words, the assumption is that the more people google, the more people are aware of AsyncAPI. And yes, the below numbers of impressions indicate a number that is higher than a milion :wink:
+I believe that numbers from GSC can show how many more people hear about AsyncAPI and gain interest in the topic. In other words, the assumption is that the more people google, the more people are aware of AsyncAPI. And yes, the below numbers of impressions indicate a number higher than a million. :wink:
 
 <Figure
   src="/img/posts/2022-summary/google-search.webp"
@@ -180,9 +180,9 @@ Like on other channels, we notice growing traffic in [our GitHub organization](h
 
 ### Total contributions
 
-In the last three years, we increased from 301 contributors in Q1 2020 to 1520 in Q4 2022.
+In the last three years, we increased from 301 contributors in Q1 2020 to 1,520 in Q4 2022.
 
-From 301 to 1520 contributors for things like commits, pull requests authoring and review, or issues participation. In just three years!!!
+From 301 to 1,520 contributors for things like commits, pull requests authoring and review, or issues participation. In just three years!!!
 
 <Figure
   src="/img/posts/2022-summary/github-contrib.webp"
@@ -214,15 +214,15 @@ Our most essential packages are [the project that provides AsyncAPI JSON Schema 
 
 You do not believe in this data? Lemme repeat what I wrote last year:
 
-> The increase in numbers is insanely huge. People automatically say that it is because of build systems, local development, or some single corporation started using it at scale. In other words, the increase could result from just one project that uses these tools as a dependency.
+> The increase in numbers is insanely huge. People automatically say that it is because of build systems, local development, or that some single corporation started using it at scale. In other words, the increase could result from just one project that uses these tools as a dependency.
 <br/>Let me challenge you:<br/>
-- Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit internal proxy. Not included in downloads.<br/>
-- Most build systems cache packages that are downloaded already to improve performance. Not included in downloads.<br/>
+- Corporations always use mirrored versions in npm. When you work on a project in a corporate network, you will always hit the internal proxy. Not included in downloads.<br/>
+- Most build systems cache packages downloaded are ready to improve performance. Not included in downloads.<br/>
 - When you work with npm locally, you also have a local cache that is used if you want to install something that you already installed. Not included in downloads.
 
-An interesting observation is that in 2021 AsyncAPI Parser was the only user of the AsyncAPI spec JSON schemas project (`@asyncapi/specs`) as the number of downloads was almost the same. In 2022 AsyncAPI spec JSON schemas project was downloaded five million times, three more than the parser. This means many more tools are being dependent on the project.
+An interesting observation is that in 2021 AsyncAPI Parser was the only user of the AsyncAPI spec JSON schemas project (`@asyncapi/specs`), as the number of downloads was almost the same. In 2022, the AsyncAPI spec JSON schemas project was downloaded five million times, three times more than the parser. This means many more tools are dependent on the project.
 
-In 2021 we could see AsyncAPI Parser is not only Generator's dependency; now we see AsyncAPI spec JSON schemas project is not only Parser's dependency. This means that the increase in traffic in different channels and the growing user base also reflect the number of tools being built on top of AsyncAPI tools. One of big users of `@asyncapi/specs` is now Spectral. Also GitHub tells us that `@asyncapi/specs` is used in 1 329 public repositories 
+In 2021 we could see that the AsyncAPI Parser is not only a Generator dependency; today we see the AsyncAPI spec JSON schemas project is not only a Parser dependency. This means that the increase in traffic in different channels and the growing user base also reflect the number of tools built on top of AsyncAPI tools. One of the big users of `@asyncapi/specs` is now Spectral. Also, GitHub tells us that `@asyncapi/specs` is used in 1,329 public repositories 
 
 ## YouTube
 
@@ -230,7 +230,7 @@ The [AsyncAPI YouTube channel](https://www.youtube.com/asyncapi) had a massive i
 
 ### Watch time
 
-YouTube is just another channel where we can see the audience is growing. The conference and other regular live streams bring a lot of watchers. In 2023 numbers might drop because we do not want to do the online conference, but yeah, let's see.
+YouTube is just another channel where we can see the audience is growing. The conference and other regular live streams bring a lot of watchers. In 2023, numbers might drop because we do not want to do the online conference, but yeah, let's see.
 
 <Figure
   src="/img/posts/2022-summary/yt.webp"
@@ -241,7 +241,7 @@ YouTube is just another channel where we can see the audience is growing. The co
 We grow. Numbers just confirm our observation.
 
 - If you plan to invest in AsyncAPI Initiative, don't worry. It is still an on-top project.
-- It was the right call if you already invested in AsyncAPI Initiative. The community is growing
+- It was the right call if you already invested in AsyncAPI Initiative. The community is growing.
 
 We do not see any negative trends indicating that the interest in the project got stale and that the community is not growing anymore.
 
