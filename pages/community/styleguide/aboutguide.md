@@ -14,12 +14,20 @@ This will help you in strategizing and simplifying your writing process.
 Before creating your first draft, it is beneficial to research similar resources and use them as references. Avoid plagiarism or copying and pasting from other websites unless the content already exists on our site.
 
 ### Plagiarism
-Plagiarism can be defined as an act of using someone else's work as your own, without giving any acknowledgment or credit. These are some examples of plagiarism:
-- Copying and pasting content word for word.
-- Paraphrasing or making changes to the text without crediting the source.
-- Using content written by someone else i.e ChatGPT.
+Plagiarism can be defined as an act of using someone else's work as your own, without giving any acknowledgment or credit. Below are some scenarios that show plagiarism:
 
+**Scenario 1**
 
+Jane Doe is writing a docs page about APIs. She copies and pastes the content generated from ChatGPT word for word.
+
+**Scenario 2**
+
+John Doe is assigned a task to update graphics. He replicates some diagrams from an engineering book and doesn't give any credit to the author.
+
+You can avoid plagiarism by:
+- Paraphrasing and adding your own thoughts. For instance, in the first scenario, you can use content generated from ChatGPT for research and reference purposes.
+- Quoting or citing your sources.
+- Using plagiarism checker tools such as Grammarly, SmallSEOTools, and Plagiarism Detector.
 
 ### Follow writing principles
 When writing documentation, we aim to achieve the following:
