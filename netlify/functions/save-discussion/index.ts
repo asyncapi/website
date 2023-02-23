@@ -1,16 +1,14 @@
 import { Repository } from './Reposity';
-import { WebClient } from '@slack/web-api';
-import axios from 'axios';
 import querystring from 'querystring';
-import { HandlerEvent, HandlerContext } from '@netlify/functions';
+import { HandlerEvent } from '@netlify/functions';
 import { Slack } from './Slack';
 
 enum REQUEST_TYPE {
   MESSAGE_ACTION = 'message_action',
   DIALOG_SUBMISSION = 'dialog_submission',
 }
-const REPO_OWNER = process.env.REPO_OWNER;
-const REPO_NAME = process.env.REPO_NAME;
+const REPO_OWNER = process.env.DISCUSSION_TARGET_REPO_OWNER;
+const REPO_NAME = process.env.DISCUSSION_TARGET_REPO_NAME;
 
 // Function to handle the main request handling logic.
 const handler = async (event: HandlerEvent) => {
@@ -38,6 +36,7 @@ async function handleMessageAction(payload: any) {
   const discussionTS = payload.message.ts;
   const channelId = payload.channel.id;
   const threadTS = await Slack.getThreadTS(discussionTS, channelId);
+  console.log(payload);
 
   if (!threadTS) {
     const errorMessage =
@@ -53,7 +52,6 @@ async function handleMessageAction(payload: any) {
   const state = `${channelId} ${threadTS}`;
   Slack.openSaveDialog(state, discussionCategories, payload.trigger_id);
 }
-
 async function handleDialogSubmission(payload: any) {
   const dialogState = payload.state.split(' ');
   const channelId = dialogState[0];
@@ -63,13 +61,14 @@ async function handleDialogSubmission(payload: any) {
   if (!discussion) return;
   discussion.title = payload.submission.title;
   const repositoryId = await Repository.getRepositoryId(
-    process.env.REPO_OWNER!,
-    process.env.REPO_NAME!
+    process.env.DISCUSSION_TARGET_REPO_OWNER!,
+    process.env.DISCUSSION_TARGET_REPO_NAME!
   );
   const { discussionId, discussionURL } = await Repository.createDiscussion(
     discussion,
     repositoryId,
-    categoryId
+    categoryId,
+    discussion.slackURL || ''
   );
   if (discussion.replies) {
     for (const reply of discussion.replies) {
@@ -82,7 +81,8 @@ async function handleDialogSubmission(payload: any) {
       }
     }
   }
-  const message = `This discussion has been preserved here: ${discussionURL}`;
+  console.log(payload);
+  const message = `Thanks to <@${payload.user.id}>, this discussion has been preserved here: ${discussionURL}`;
   Slack.postReplyInThread(message, channelId, threadTS);
 }
 

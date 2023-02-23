@@ -57,15 +57,21 @@ export namespace Repository {
   export async function createDiscussion(
     discussion: Discussion,
     repositoryId: string,
-    categoryId: string
+    categoryId: string,
+    slackURL: string
   ) {
+    const body = `${discussion.body}
+
+---
+_This discussion has been created from a [slack discussion](${slackURL}). Please [open an issue](https://github.com/asyncapi/website/issues) if something is wrong here :)_
+    `;
     const query = `
       mutation {
         createDiscussion(
           input: {
             repositoryId: "${repositoryId}"
             title: "${discussion.title}"
-            body: "${discussion.body}"
+            body: "${body}"
             categoryId: "${categoryId}"
           }
         ) {

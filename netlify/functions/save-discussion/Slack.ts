@@ -98,7 +98,6 @@ export namespace Slack {
     channelId: string,
     threadTS: string
   ): Promise<Discussion | undefined> {
-    const client = new WebClient(process.env.SLACK_TOKEN);
     const { messages } = await slackClient.conversations.replies({
       channel: channelId,
       ts: threadTS,
@@ -112,8 +111,11 @@ export namespace Slack {
 
     const body = messages[0].text;
     const replies = parseReplies(messages.slice(1));
-
-    return { body, replies };
+    const { permalink } = await slackClient.chat.getPermalink({
+      channel: channelId,
+      message_ts: threadTS,
+    });
+    return { body, replies, slackURL: permalink };
   }
 
   function parseReplies(messages: any): Reply[] {
