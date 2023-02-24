@@ -38,6 +38,7 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
     <CodeBlock language="bash">
     {`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
     </CodeBlock>
+
     Let's break down the previous command:
     - `asyncapi generate fromTemplate` is how you use AsyncAPI Generator via the AsyncAPI CLI. 
     - ` asyncapi.yaml` is how you point to your AsyncAPI document and can be a URL. 
@@ -46,37 +47,37 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
     - `-p` defines additional parameters you want to pass to the template. Here, the `server` parameter specifies the server's name as it is defined in AsyncAPI document.
 
 2. List all files in directory and check that the Node.js application is generated:
-<CodeBlock language="bash">
-{`cd output && ls`}
-</CodeBlock>
+    <CodeBlock language="bash">
+    {`cd output && ls`}
+    </CodeBlock>
 
-Upon execution of the command above, the following is an example of the expected result:
-```
-$ ls
-Dockerfile
-asyncapi.yaml
-docs
-src
-README.md
-config
-package.json
-```
+    Upon execution of the command above, the following is an example of the expected result:
+    <CodeBlock language="bash">
+    {`$ ls
+    Dockerfile
+    asyncapi.yaml
+    docs
+    src
+    README.md
+    config
+    package.json`}
+    </CodeBlock>
 
 ## Start generated application
 1. Install dependencies of the newly generated application:
-<CodeBlock language="bash">
-{`npm install`}
-</CodeBlock>
+    <CodeBlock language="bash">
+    {`npm install`}
+    </CodeBlock>
 
 2. Start the application:
-<CodeBlock language="bash">
-{`npm start`}
-</CodeBlock>
+    <CodeBlock language="bash">
+    {`npm start`}
+    </CodeBlock>
 
 ## Send message to broker
 1. In another terminal install the MQTT.js library:
     <CodeBlock language="bash">
-{`npm install mqtt -g`}
+    {`npm install mqtt -g`}
     </CodeBlock>
 
 2. Send a message to the MQTT broker that's connected to your generated application. Run the following MQTT client command:
@@ -85,11 +86,10 @@ package.json
     </CodeBlock>
 
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
-    ```bash
-    light/measured was received:
-    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
-    ```
-
+    <CodeBlock language="bash">
+    {`light/measured was received:
+    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
+    </CodeBlock>
 ## Summary
 In this tutorial, you learned how to generate your code from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document) using the AsyncAPI generator tool. 
 
