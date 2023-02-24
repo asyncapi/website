@@ -110,10 +110,10 @@ export default function ToolDashboard() {
     return (
         <div>
             <div className="flex flex-wrap lg:flex-nowrap gap-4 my-10">
-                <div className='flex w-[45%] lg:w-1/5 gap-5 h-auto'>
+                <div className='flex w-[46%] lg:w-1/5 gap-5 h-auto'>
                     <div className="relative w-full h-auto" ref={filterRef}>
                         <div
-                            className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
+                            className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                             onClick={() => setOpenFilter(!openFilter)}>
                             <FilterIcon />
                             <div>Filter</div>
@@ -125,10 +125,10 @@ export default function ToolDashboard() {
                         )}
                     </div>
                 </div>
-                <div className='flex w-[45%] lg:w-1/5 gap-5 h-auto'>
+                <div className='flex w-[46%] lg:w-1/5 gap-5 h-auto'>
                     <div className="relative w-full h-auto">
                         <div
-                            className="flex p-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
+                            className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                             onClick={() => setopenCategory(!openCategory)}>
                             <div>Jump to Category</div>
                             <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
@@ -140,7 +140,7 @@ export default function ToolDashboard() {
                         )}
                     </div>
                 </div>
-                <div className="py-1 px-4 flex rounded-lg border w-[100%] lg:w-4/5 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">
+                <div className="py-1 px-4 flex rounded-lg border w-[100%] lg:w-4/5 h-14 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">
                     <SearchIcon className="my-auto opacity-70" />
                     <input
                         className="border-none outline-none flex-1 w-11/12 focus:ring-0"
