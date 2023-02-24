@@ -94,7 +94,8 @@ export default function NavBar({
 
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={toolingRef}>
             <NavItem 
-              text="Tools" 
+              text="Tools"
+              href='/tools' 
               onClick={() => showOnClickMenu('tooling')} 
               onMouseEnter={() => showMenu('tooling')} 
               hasDropdown 
