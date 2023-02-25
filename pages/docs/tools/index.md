@@ -51,6 +51,7 @@ The following is a list of tools that generate AsyncAPI documents from your code
 | [sttp tapir](https://github.com/softwaremill/tapir) | Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation | Scala
 | [EventBridge Atlas](https://github.com/boyney123/eventbridge-atlas) | Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI | Node
 | [Neuroglia AsyncAPI](https://github.com/neuroglia-io/AsyncApi) | Automatically generates and serves AsyncAPI documents based on your code. Includes fluent-builders to create AsyncAPI documents from scratch, and provides a web-based GUI to browse generated documents, | C# / .NET 5.0
+| [nestjs-asyncapi](https://github.com/flamewow/nestjs-asyncapi) | Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and serve a web UI. | Node, NestJS
 
 ## Code Generators
 
