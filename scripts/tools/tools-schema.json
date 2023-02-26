@@ -50,7 +50,7 @@
             "properties": {
                 "language": {
                     "type": "string",
-                    "description": "Provide information on how other can integrate with the tool in case it is possible. If your code generator generates Python code, then specify Python, even if code generator itself is written in JavaScript. If we forgot about some language then please add it through a pull request to AsyncAPI website repository.",
+                    "description": "The language referred to is the runtime language selected by the user, not the generator or library language. For example, the Generator written in JavaScript generates Python code from the JavaScript template and the result of generation is a Python app, so the language for Generator is specified as Python. But for the Bundler library, users need to know if it can be integrated into their TypeScript codebase, so its language is specified as TypeScript. If some language in the schema's enum is omitted, it can be added through a pull request to the AsyncAPI website repository.",
                     "anyOf": [
                         {
                             "type": "string",

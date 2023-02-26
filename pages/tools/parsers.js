@@ -68,10 +68,10 @@ function getCode() {
   return `import { parse } from '@asyncapi/parser'
 
 const doc = await parse(\`
-  asyncapi: '2.0.0'
+  asyncapi: '2.6.0'
   info:
     title: Example
-    version: '0.1.0'
+    version: '1.0.0'
   channels:
     example-channel:
       subscribe:
