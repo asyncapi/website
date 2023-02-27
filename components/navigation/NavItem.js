@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 export default function NavItem ({
   text,
   href,
+  route='',
   target = '_self',
   onClick = () => {},
   onMouseEnter = () => {},
@@ -29,7 +30,7 @@ export default function NavItem ({
           </a>
         </Link>
       ) : (
-        <span>{text}</span>
+        <span className={`${router.pathname.startsWith(route) ? "text-black" :"text-gray-700"}`}>{text}</span>
       )}
       {hasDropdown && (
         <div className='inline-block'>
