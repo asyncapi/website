@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5ARCuj",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for message validation",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1005",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 38.48139489240067
-    },
-    {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
@@ -39,17 +28,6 @@
       "score": 30.153331818672168
     },
     {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 27.56876051992884
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -66,28 +44,6 @@
       "score": 24.914618792310346
     },
     {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.9739670999407
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
@@ -102,30 +58,6 @@
         }
       ],
       "score": 21.538094156194408
-    },
-    {
-      "id": "PR_kwDOBW5R_c5B0oU6",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial validation of messages/events",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1061",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 18.666348268701817
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -194,6 +126,61 @@
         }
       ],
       "score": 15.507427792459973
+    },
+    {
+      "id": "PR_kwDOBW5R_c5KdHS5",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): new post about asyncapi status after 2022",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/pull/1360",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.507427792459973
+    },
+    {
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOFi_gUM46XnQo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: adding http header",
+      "author": "ritik307",
+      "resourcePath": "/asyncapi/glee/pull/320",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOFDnrNc5IOkCK",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add kotlin support for model generation",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/435",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
