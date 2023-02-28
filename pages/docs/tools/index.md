@@ -31,6 +31,6 @@ ___
 
 ## AsyncAPI Tools List
 
-We have a great list of AsyncAPI Tools in our website. Check it out here - [AsyncAPI Tools Dashboard](/tools).
+[Check out the complete list of AsyncAPI tools in our AsyncAPI Tools Dashboard](/tools).
 
 **Would you like to add your tool to this list?** Here's the way to add your tool in our Dashboard. Check the official Documentation [here](https://github.com/asyncapi/community/blob/master/new-tool-documentation.md).
