@@ -12,7 +12,7 @@
     "toolsList": [
       {
         "title": "Golang AsyncAPI Code Generator",
-        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Ready to use, but still in development: any help/comment is welcome!\n",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
         "links": {
           "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
         },
@@ -263,7 +263,7 @@
     "toolsList": [
       {
         "title": "AsyncAPI Bundler",
-        "description": "Combine multiple AsyncAPI specification files into one",
+        "description": "Combine multiple AsyncAPI specification files into one.",
         "links": {
           "repoUrl": "https://github.com/asyncapi/bundler"
         },
@@ -284,6 +284,27 @@
   "IDE Extensions": {
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
     "toolsList": [
+      {
+        "title": "jAsyncAPI - IDEA plugin",
+        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "links": {
+          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
+          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
+          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
+        },
+        "filters": {
+          "language": "Kotlin",
+          "technology": [
+            "JetBrains",
+            "IntelliJ IDEA"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
       {
         "title": "asyncapi-preview",
         "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
