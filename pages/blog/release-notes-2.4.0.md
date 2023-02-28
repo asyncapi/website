@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/smoyac
     byline: Pilot at AsyncAPI Airlines
 excerpt: 'AsyncAPI 2.4 is now released. This brings really helpful additions, such as the new `messageId` field, Server Variables reusability, and security at Operation level'
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 2.4.0 - is now available.
