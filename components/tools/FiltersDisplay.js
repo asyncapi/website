@@ -12,6 +12,8 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
   };
 
   return (
+    <>
+    {checkedValues.length>0 && 
     <div className="max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150">
       {checkedValues.map((items, index) => {
         return (
@@ -27,6 +29,7 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
           </div>
         );
       })}
-    </div>
+    </div> }
+    </>
   );
 }

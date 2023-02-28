@@ -1,17 +1,20 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 export default function NavItem ({
   text,
   href,
+  route='',
   target = '_self',
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
   className = '',
 }) {
+  const router = useRouter();
   if (href && !hasDropdown) {
     return (
       <Link href={href}>
-        <a target={target} rel="noopener noreferrer" className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>
+        <a target={target} rel="noopener noreferrer" className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150 ${router.pathname.startsWith(href) ? "text-black" :"text-gray-700"}`}>
           {text}
         </a>
       </Link>
@@ -22,12 +25,12 @@ export default function NavItem ({
     <button type="button" onClick={href ? undefined : onClick} onMouseEnter={onMouseEnter} className={`${className} group text-gray-700 inline-flex items-center space-x-2 text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`}>
       {href ? (
         <Link href={href}>
-          <a target={target} rel="noopener noreferrer" className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>
+          <a target={target} rel="noopener noreferrer" className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150 ${router.pathname.startsWith(href) ? "text-black" :"text-gray-700"}`}>
             {text}
           </a>
         </Link>
       ) : (
-        <span>{text}</span>
+        <span className={`${router.pathname.startsWith(route) ? "text-black" :"text-gray-700"}`}>{text}</span>
       )}
       {hasDropdown && (
         <div className='inline-block'>
