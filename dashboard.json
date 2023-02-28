@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 37.332696537403635
+      "score": 37.907045714902154
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -76,6 +76,33 @@
       "score": 16.08177696995849
     },
     {
+      "id": "PR_kwDOBW5R_c5KdHS5",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): new post about asyncapi status after 2022",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/pull/1360",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.08177696995849
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 15.794602381209232
+    },
+    {
       "id": "I_kwDOE8Qh385Dy329",
       "isPR": false,
       "isAssigned": false,
@@ -112,33 +139,6 @@
       "score": 15.507427792459973
     },
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 15.507427792459973
-    },
-    {
-      "id": "PR_kwDOBW5R_c5KdHS5",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): new post about asyncapi status after 2022",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/pull/1360",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
       "id": "PR_kwDOGPFxkc5Ey7vh",
       "isPR": true,
       "isAssigned": false,
@@ -158,7 +158,7 @@
       "resourcePath": "/asyncapi/glee/pull/320",
       "repo": "asyncapi/glee",
       "labels": [],
-      "score": 13.78438025996442
+      "score": 14.07155484871368
     },
     {
       "id": "MDU6SXNzdWUxMjMwODQwMDM4",
