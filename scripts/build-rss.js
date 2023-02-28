@@ -17,8 +17,7 @@ function clean(s) {
 
 module.exports = function rssFeed(type, title, desc, outputPath) {
 
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith(`/${type}/`))
+  const posts = getAllPosts()[`${type}`]
     .sort((i1, i2) => {
       const i1Date = new Date(i1.date)
       const i2Date = new Date(i2.date)
