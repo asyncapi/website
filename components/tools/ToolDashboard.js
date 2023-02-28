@@ -126,7 +126,7 @@ export default function ToolDashboard() {
                     </div>
                 </div>
                 <div className='flex w-[46%] lg:w-1/5 gap-5 h-auto'>
-                    <div className="relative w-full h-auto">
+                    <div className="relative w-full h-auto" ref={categoryRef}>
                         <div
                             className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                             onClick={() => setopenCategory(!openCategory)}>
@@ -134,7 +134,7 @@ export default function ToolDashboard() {
                             <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
                         </div>
                         {openCategory && (
-                            <div className="z-20 absolute top-16 min-w-[20rem]" ref={categoryRef}>
+                            <div className="z-20 absolute top-16">
                                 <CategoryDropdown setopenCategory={setopenCategory} />
                             </div>
                         )}
