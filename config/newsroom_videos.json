@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/6hltg01w004/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (January 18, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/564.",
-    "videoId": "6hltg01w004"
+    "image_url": "https://i.ytimg.com/vi/hQ7dV5P1bDU/hqdefault.jpg",
+    "title": "Community meeting (February 21, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/603.",
+    "videoId": "hQ7dV5P1bDU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/aLDkeuTQU8o/hqdefault.jpg",
-    "title": "Design Meeting, 16:00 UTC Tuesday January 16, 2023",
-    "description": "https://github.com/asyncapi/community/issues/563.",
-    "videoId": "aLDkeuTQU8o"
+    "image_url": "https://i.ytimg.com/vi/uwSIXviDuOE/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (February 15, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/587.",
+    "videoId": "uwSIXviDuOE"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/DnJv6Qm1pl8/hqdefault.jpg",
-    "title": "Community Meeting, 08:00 UTC Tuesday January 10, 2023",
-    "description": "https://github.com/asyncapi/community/issues/562.",
-    "videoId": "DnJv6Qm1pl8"
+    "image_url": "https://i.ytimg.com/vi/OdkIsyjpomA/hqdefault.jpg",
+    "title": "Community meeting (February 7, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/589.",
+    "videoId": "OdkIsyjpomA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Va1iQLjEM4s/hqdefault.jpg",
-    "title": "Community Meeting (December 13, 2022)",
-    "description": "https://github.com/asyncapi/community/issues/549.",
-    "videoId": "Va1iQLjEM4s"
+    "image_url": "https://i.ytimg.com/vi/6zImMBBxUwI/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (February 1, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/575.",
+    "videoId": "6zImMBBxUwI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/qgcRg5sVOKg/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (December 7, 2022)",
-    "description": "https://github.com/asyncapi/community/issues/531.",
-    "videoId": "qgcRg5sVOKg"
+    "image_url": "https://i.ytimg.com/vi/s4C8xRUmPxE/hqdefault.jpg",
+    "title": "Design meeting #2",
+    "description": "How to contribute to design at AsyncAPI.",
+    "videoId": "s4C8xRUmPxE"
   }
 ]

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import sortBy from 'lodash/sortBy'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
@@ -16,6 +15,7 @@ import Heading from '../typography/Heading'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
+import { getAllPosts } from '../../lib/api'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -24,75 +24,8 @@ function generateEditLink(post) {
   return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
 }
 
-export function buildNavTree(navItems) {
-  const tree = {
-    'welcome': {
-      item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
-      children: {}
-    }
-  }
-  
-  //first we make sure that list of items lists main section items and then sub sections, documents last
-  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
-
-  sortedItems.forEach(item => {
-    //identify main sections
-    if (item.isRootSection) {
-      tree[item.rootSectionId] = { item, children: {} }
-    }
-
-    //identify subsections
-    if (item.parent) {
-      tree[item.parent].children[item.sectionId] = { item, children: [] }
-    }
-
-    if (!item.isSection) {
-      if (item.sectionId) {
-        let section = tree[item.rootSectionId].children[item.sectionId];
-        if (!section) {
-          tree[item.rootSectionId].children[item.sectionId] = { item, children: [] }
-        }
-        tree[item.rootSectionId].children[item.sectionId].children.push(item)
-      } else {
-        tree[item.rootSectionId].children[item.title] = { item };
-      }
-    }
-  })
-
-  for (const [rootKey, rootValue] of Object.entries(tree)) {
-    const allChildren = rootValue.children;
-    const allChildrenKeys = Object.keys(allChildren);
-
-    rootValue.children = allChildrenKeys
-      .sort((prev, next) => {
-        return allChildren[prev].item.weight - allChildren[next].item.weight;
-      }).reduce(
-        (obj, key) => { 
-          obj[key] = allChildren[key]; 
-          return obj;
-        }, 
-        {}
-      );
-
-    //handling subsections
-    if (allChildrenKeys.length > 1) {
-      for (const key of allChildrenKeys) {
-        allChildren[key].children?.sort((prev, next) => {
-          return prev.weight - next.weight;
-        });
-
-        // point in slug for specification subgroup to the latest specification version
-        if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.href = allChildren[key].children.find(c => c.isPrerelease === undefined).slug;
-        }
-      }
-    }
-  }
-
-  return tree;
-}
-
 export default function DocsLayout({ post, navItems = {}, children }) {
+  const posts = getAllPosts()
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -102,7 +35,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   }
 
   const [showMenu, setShowMenu] = useState(false)
-  const navigation = buildNavTree(navItems);
+  const navigation = posts["docsTree"]
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
