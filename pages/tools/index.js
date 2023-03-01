@@ -5,12 +5,12 @@ import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 // import loader from '../public/img/loaders/log-primary.png';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
   const image = '/img/social/meetings.png';
-  const loader = 'img/loaders/logo-primary-dark.png';
+  const loader = 'img/loaders/logo-white.png';
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -23,7 +23,11 @@ export default function toolsDashboard() {
   return (
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
-        <Suspense fallback={<img src={loader}/>}>
+      {loading ? (
+        <div>
+          <img src={loader} className="my-10"/>
+        </div>
+      ) : (
           <div>
             <div className="text-center mt-12">
               <Heading level="h1" typeStyle="heading-lg">
@@ -47,8 +51,7 @@ export default function toolsDashboard() {
               <ToolDashboard />
             </ToolFilter>
           </div>
-          </Suspense>
-          )
+          )}
         </GenericLayout>
     </div>
   );
