@@ -4,7 +4,7 @@ const { resolve } = require('path');
 
 const dirWithCaseStudy = 'config/casestudies';
 
-const buildCaseStudiesList = async () => {
+module.exports = async function buildCaseStudiesList() {
     let files = await readdir(dirWithCaseStudy);
     let caseStudiesList = [];
     try {
@@ -24,5 +24,3 @@ const buildCaseStudiesList = async () => {
         throw err
     }
 };
-
-buildCaseStudiesList();
