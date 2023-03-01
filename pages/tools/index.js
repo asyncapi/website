@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
-  const image = '/img/social/meetings.png';
+  const image = '/img/social/tools-dashboard-card.webp';
   const loader = 'img/loaders/logo-white.png';
 
   const [loading, setLoading] = useState(false);
