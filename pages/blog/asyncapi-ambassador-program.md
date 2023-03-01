@@ -35,7 +35,7 @@ The premises to be followed by anyone who wishes to become an ambassador are:
 
 As we know, each person's way of looking at things is unique. Each person's abilities differ. Following that line, each ambassador can offer a different approach. They bring part of their essence into the content or the program where they are involved and disseminate. This is what brings human value enriching the conception and possibilities of the project.
 
-! [heart&brain-gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTgzODZhZDM1MWZhMDJiODNkODFhZTI3MWRjZDExZGQyYzBlNzMwYiZjdD1z/NfBApd81ooX87Od5hk/giphy.gif)
+![heart&brain-gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTgzODZhZDM1MWZhMDJiODNkODFhZTI3MWRjZDExZGQyYzBlNzMwYiZjdD1z/NfBApd81ooX87Od5hk/giphy.gif)
 
 We are in a time of fast expansion, which means that everything is moving very fast in the community. Last year we not only started the ambassador program, but also the AsyncAPI Mentorship program and participated in the GSoD for the first time. So, the needs of the community are changing and the initiative react being dynamic and open, driving new ideas and proposals.
 
@@ -43,7 +43,7 @@ We are in a time of fast expansion, which means that everything is moving very f
 
 Like any other management issue related to the initiative, the Ambassador Program is approached as a transparent system, where diversity, inclusiveness, and integration are key concepts that are wanted to be materialized in the program.
 
-! [together-gif](https://media.giphy.com/media/eEh1lwAYtnmwDWSirZ/giphy.gif)
+![together-gif](https://media.giphy.com/media/eEh1lwAYtnmwDWSirZ/giphy.gif)
 
 Thus, the process of recruiting ambassadors is completely open. If a person meets the requirements, they only have to add themselves to this [document](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.json), attaching their personal information along with their contributions. The TSC members will then approve the proposal. 
 
