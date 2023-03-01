@@ -216,8 +216,7 @@ asyncapi:
     - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
     - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
     - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI
-  bindings:
-    kafka: |
+  bindings: |
       All Kafka bindings are used. Server, channel, operation and message bindings.
       
       Example of server bindings:

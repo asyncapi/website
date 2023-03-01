@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
       asyncapiEditing: await serialize(data[0].asyncapi.editing),
       asyncapiExtensions: await serialize(data[0].asyncapi.extensions),
       asyncapiDocumentation: await serialize(data[0].asyncapi.documentation),
-      asyncapiBindings: await serialize(data[0].asyncapi.bindings.kafka),
+      asyncapiBindings: await serialize(data[0].asyncapi.bindings),
       asyncapiTools: await serialize(data[0].asyncapi.tools),
       additionalResources: await serialize(data[0].additionalResources),
     },
