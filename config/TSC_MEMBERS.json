@@ -332,7 +332,9 @@
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
-			"website"
+			"website",
+			"training",
+			"community"
 		]
 	},
 	{
@@ -496,6 +498,18 @@
 		"company": "Mercedes-Benz Tech Innovation",
 		"repos": [
 			"modelina"
+		]
+	},
+	{
+		"name": "Barbaño González",
+		"linkedin": "barbano-gonzalez-moreno",
+		"twitter": "BarbanoGonzalez",
+		"github":"Barbanio",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			 "training",
+			 "community"
 		]
 	}
 ]
