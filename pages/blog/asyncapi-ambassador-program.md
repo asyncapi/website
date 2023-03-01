@@ -4,7 +4,7 @@ date: 2023-03-10T06:00:00+01:00
 type: Communication
 tags:
   - Ambassador Program
-cover: /img/posts/asyncapi-ambassador-program/cover.webp
+cover: /img/posts/ambassador-program/cover.webp
 authors:
   - name: Barbaño González
     photo: /img/avatars/barbano.webp
