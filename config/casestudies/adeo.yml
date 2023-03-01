@@ -29,8 +29,10 @@ technical:
     - Spring
   protocols:
     - Kafka
-  brokers: Kafka with Kafka Connect component. There are 15 production brokers with 47 topics. 
-  testing: For Kafka e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.
+  brokers: |
+    Kafka with Kafka Connect component. There are 15 production brokers with 47 topics. 
+  testing: |
+    For Kafka e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.
   architecture: |
     The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied:
     - [Request/Reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html)
@@ -102,8 +104,8 @@ asyncapi:
   versions:
     - 2.4.0
   storage: Git repository where source code is.
-  maintainers: Developers
   editing: IntelliJ without any special plugins. Sometimes people use AsyncAPI Studio, but not regularly because of lack of support for references to local drive.
+  maintainers: Developers
   audience:
     internal: true
     external: false

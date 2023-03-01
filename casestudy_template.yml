@@ -1,4 +1,5 @@
-company: #This is optional, if company wants to provide case study data anonymously, they can definitely do it
+id: #Unique id that will be used on website. So in case of id that is "test" people will navigate to /casestudies/test to read about "test" case study
+company: #We need basic information about a company so people know the case study is real and creditable
   name: #Company name.
   description: #Shor description of most important things people should know about the company. 
   customers: #Amount of customers to indicate the impact that the company has.
@@ -11,19 +12,19 @@ company: #This is optional, if company wants to provide case study data anonymou
   #- validate long term if case study is still validate
   #- ping you when we know we plan to change some parts of AsyncAPI that you are already using
   - name: #full name of the contact person
-    twitter: #specify if twitter, linkedin, email, so we can nicely render
+    link: #specify where people can find contact person
 challenges: |
     #Describe want challanges company have, that faced them towards AsyncAPI. There is no limit here. Use [CommonMark](https://commonmark.org/).
 solution: |
     #Describe the solution for the challange and what role AsyncAPI played in it.
 technical:
-  language:
+  languages:
     - #Provide a list of programming lanugages people using AsyncAPI work on
   frameworks:
     - #Specify what frameworks they use, maybe Spring in Java or Nest.js in JavaScript
-  protocol:
+  protocols:
     - #What protocols are used by the company in relation to AsyncAPI
-  broker: |
+  brokers: |
     #Provide some details about the broker that is used at the company and what is the setup, size, like of example cluster size, number of topics (in case of Kafka for example).
   testing: |
     #Explain how testing of the solution is done. How you ensure API works as expected after changes, that users are not affected. For example how do you know who will be affected if you stop sending some message? Provide examples if possible.
@@ -44,8 +45,10 @@ asyncapi:
     - #Specify a list of versions of AsyncAPI that you use. It can be a list, some teams might use different versions.
   storage: |
     #Describe where you store AsyncAPI files and who maintains them on daily basis
-  editing:
+  editing: |
     #Specify how you edit AsyncAPI files, where do you edit them. Be very specific on IDEs and plugins names, if used.
+  maintainers: | 
+    #share information who is a primary maintainer of AsyncAPI documents, Developer? Tech writers? Product owners?
   audience: #Specify if AsyncAPI audience is internal or external or both
     internal: true
     external: false
@@ -56,15 +59,7 @@ asyncapi:
   bindings:
     kafka: |
       #Specify what bindings are used by their name and provide description on what level you use bindings. Provide examples if possible.
-  tools: #specify what AsyncAPI tools you use, as detailed as possible
-    generator:
-      templates:
-        '@asyncapi/html':
-          parameters:
-           - sidebarOrganization=byTags
-           - version
-    parser:
-      plugins: 
-       - avro-schema-parser
+  tools: |
+    #specify what AsyncAPI tools you use, as detailed as possible
   fullExample: #should be url to full example of the case study. So later in the UI we can show it as "https://studio.asyncapi.com/?url=https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/asyncapi.yaml" so the example can be previewed in the AsyncAPI Studio easily.
 additionalResources: #provide some additional resources if there are such. Just block of text with links to articles or videos about the case study.
