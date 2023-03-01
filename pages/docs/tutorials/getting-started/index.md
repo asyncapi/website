@@ -1,6 +1,9 @@
 ---
 title: "Introduction"
 date: 2019-02-16T13:56:52+01:00
+menu:
+  docs:
+    parent: 'getting-started'
 weight: 10
 aliases:
 - '/v1/guide/'
