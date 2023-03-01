@@ -6,7 +6,7 @@ type: Communication
 tags:
   - APIs
   - Architectures
-cover: /img/posts/a_straight_guide_to_APIs_and_architecture_concepts/cover.webp
+cover: /img/posts/a_straight_guide_to_apis_and_architecture_concepts/cover.webp
 authors:
   - name: Barbaño González
     photo: /img/avatars/barbano.webp
@@ -70,7 +70,7 @@ For example, the Network File System (NFS) plays an essential role in Unix and L
 
 - **Event-driven**, real-time, asynchronous, doesn't wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
 
-A simple example is when you enter a page on the Internet, the browser makes a request to a server, and the server responds with the content you have requested.
+A simple example might be LinkedIn notifying us that someone wants to connect with us.
  
 ## Architectures 
 

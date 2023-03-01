@@ -4,7 +4,6 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-// import loader from '../public/img/loaders/log-primary.png';
 import { useEffect, useState } from 'react';
 
 export default function toolsDashboard() {
@@ -19,7 +18,6 @@ export default function toolsDashboard() {
       setLoading(false);
     }, 1000);
   }, []);
-
   return (
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
