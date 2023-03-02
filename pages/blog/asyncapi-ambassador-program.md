@@ -15,7 +15,7 @@ featured: true
 
 AsyncAPI and its community have grown exponentially during the last few months. As a feedback exercise, both the project and the community are getting stronger with one another. The community is the driving force that leads the initiative and the bigger it gets, the greater the consistency and potential it has. It’s amazing to see a vast number of people who invest their time in disseminating and promoting the initiative through talks, articles, workshops, and program direction... 
 
-To follow that line, the AsyncAPI Ambassador Program has been thought of as one of the latest additions to the initiative to keep the loop going. 
+To follow that line, the AsyncAPI Ambassador Program is one of the latest additions to the initiative to keep the community going. 
 
 The program is, after all, a reaction to the natural impulse of the community. Thus, in this case, the ambassadors came before the Ambassadors Program itself. This proposal was born based on the recognition of the work of the community members who invest part of their time in bringing AsyncAPI to the community or new potential users. 
 
