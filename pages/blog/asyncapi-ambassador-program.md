@@ -59,7 +59,7 @@ The minimum enrollment period for ambassadors is one year with the option to ren
 
 Ambassadors are entrusted with some amount of responsibilities. As a token of appreciation for their work, we try to compensate them with certain perks, including exclusive swags and  conference passes.
 
-If you want to know more about the Ambassador Program, click [here](https://github.com/asyncapi/community/blob/6c066e0eab6c778d1a37d1beebb1418a4bc700f6/AMBASSADOR_ORGANIZATION.md).
+Learn more about the [Ambassador Program here](https://github.com/asyncapi/community/blob/6c066e0eab6c778d1a37d1beebb1418a4bc700f6/AMBASSADOR_ORGANIZATION.md).
 
 We are waiting for you on board! 🚀
 
