@@ -33,7 +33,7 @@ The premises to be followed by anyone who wishes to become an ambassador are:
 
 ## Why create an ambassador program?
 
-As we know, each person's way of looking at things is unique. Each person's abilities differ. Following that line, each ambassador can offer a different approach. They bring part of their essence into the content or the program where they are involved and disseminate. This is what brings human value enriching the conception and possibilities of the project.
+As we know, everyone has a unique way of looking at things and a person's abilities differ. Following that line, each ambassador can offer a different approach. They bring part of their essence into the content or the program where they are involved and disseminate. This is what brings human value to the project, enriching the conception and possibilities.
 
 <p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTgzODZhZDM1MWZhMDJiODNkODFhZTI3MWRjZDExZGQyYzBlNzMwYiZjdD1z/NfBApd81ooX87Od5hk/giphy.gif" alt="heart&brain" />
