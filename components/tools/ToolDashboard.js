@@ -5,8 +5,13 @@ import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
 import ToolsList from './ToolsList';
 import Filters from './Filters';
+<<<<<<< HEAD
 import CategoryDropdown from './CategoryDropdown';
 import ArrowDown from '../icons/ArrowDown';
+=======
+import Button from '../buttons/Button';
+import Cross from '../icons/Cross';
+>>>>>>> master
 
 export default function ToolDashboard() {
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
@@ -14,10 +19,11 @@ export default function ToolDashboard() {
     const [openFilter, setOpenFilter] = useState(false)
     const [openCategory, setopenCategory] = useState(false)
     // filter parameters extracted from the context
-    const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext)
+    const { isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner } = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('') // state variable used to get the search name
     const [toolsList, setToolsList] = useState({}) // state variable used to set the list of tools according to the filters applied
     const [checkToolsList, setCheckToolsList] = useState(true) // state variable used to check whether any tool is available according to the needs of user.
+    const [isFiltered, setIsFiltered] = useState(false);
 
     // useEffect function to enable the close Modal feature when clicked outside of the modal
     useEffect(() => {
@@ -103,14 +109,30 @@ export default function ToolDashboard() {
         setToolsList(tempToolsList)
     }
 
+    // function to clear all the filters when `Clear Filters` is clicked.
+    const clearFilters = () => {
+        setIsFiltered(false);
+        setLanguages([])
+        setTechnologies([])
+        setCategories([])
+        setisPaid("all")
+        setAsyncAPIOwner(false)
+        setOpenFilter(false)
+    }
+
     useEffect(() => {
         updateToolsList()
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
 
     return (
         <div>
+<<<<<<< HEAD
             <div className="flex flex-wrap lg:flex-nowrap gap-4 my-10">
                 <div className='flex w-[46%] lg:w-1/5 gap-5 h-auto'>
+=======
+            <div className="flex flex-row gap-4 mt-10">
+                <div className='flex w-1/3 lg:w-1/5 gap-5 h-auto'>
+>>>>>>> master
                     <div className="relative w-full h-auto" ref={filterRef}>
                         <div
                             className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
@@ -120,7 +142,7 @@ export default function ToolDashboard() {
                         </div>
                         {openFilter && (
                             <div className="z-20 absolute top-16 min-w-[20rem]">
-                                <Filters setOpenFilter={setOpenFilter} />
+                                <Filters setOpenFilter={setOpenFilter} clearFilters={clearFilters} setIsFiltered={setIsFiltered} />
                             </div>
                         )}
                     </div>
@@ -154,7 +176,15 @@ export default function ToolDashboard() {
                     </button>}
                 </div>
             </div>
-            <div className="mt-10">
+            {isFiltered &&
+                <div className="flex items-center mt-4 text-gray-600 cursor-pointer hover:text-black" onClick={clearFilters}>
+                    <Cross />
+                    <span className="ml-3">
+                        Clear Filters
+                    </span>
+                </div>
+            }
+            <div className="mt-0">
                 {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
                     <img src='/img/illustrations/not-found.webp' className='w-1/2 m-auto' />
                     <div className='text-center text-lg'> Sorry, we don't have tools according to your needs. </div>
