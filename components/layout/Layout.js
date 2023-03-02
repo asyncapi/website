@@ -1,47 +1,45 @@
 import { useRouter } from 'next/router'
-import DocsLayout from './DocsLayout'
+import DocsLayout, {buildNavTree} from './DocsLayout'
 import BlogLayout from './BlogLayout'
 import JobsLayout from './JobsLayout'
 import GenericPostLayout from './GenericPostLayout'
 import BlogContext from '../../context/BlogContext'
 import JobsContext from '../../context/JobsContext'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts, getDocBySlug } from '../../lib/api'
 
 export default function Layout({ children }) {
   const { pathname } = useRouter()
+  const posts = getAllPosts()
+  const allDocPosts = posts["docs"].filter(p => p.slug.startsWith('/docs/'))
 
   if (pathname.startsWith('/docs')) {
-    const posts = getAllPosts()
-    const post = getPostBySlug(pathname)
+    const post = getDocBySlug(posts["docs"], pathname)
     return (
-      <DocsLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/docs/'))}>
+      <DocsLayout post={post} navItems={allDocPosts}>
         {children}
       </DocsLayout>
     )
   } else if (pathname.startsWith('/blog/')) {
-    const posts = getAllPosts()
-    const post = getPostBySlug(pathname)
+    const post = getPostBySlug(pathname, 'blog')
     return (
-      <BlogLayout post={post} navItems={posts.filter(p => p.slug.startsWith('/blog/'))}>
+      <BlogLayout post={post} navItems={posts["blog"]}>
         {children}
       </BlogLayout>
     )
   } else if (pathname === '/blog') {
-    const posts = getAllPosts()
     return (
-      <BlogContext.Provider value={{ navItems: posts.filter(p => p.slug.startsWith('/blog/')) }}>
+      <BlogContext.Provider value={{ navItems: posts["blog"] }}>
         {children}
       </BlogContext.Provider>
     )
   } else if (pathname === '/jobs') {
-    const posts = getAllPosts()
     return (
-      <JobsContext.Provider value={{ navItems: posts.filter(p => p.slug.startsWith('/jobs/')) }}>
+      <JobsContext.Provider value={{ navItems: posts["jobs"] }}>
         {children}
       </JobsContext.Provider>
     )
   } else if (pathname.startsWith('/jobs/')) {
-    const post = getPostBySlug(pathname)
+    const post = getPostBySlug(pathname, 'jobs')
     return (
       <JobsLayout post={post}>
         {children}

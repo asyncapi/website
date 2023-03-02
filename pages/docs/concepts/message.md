@@ -33,19 +33,3 @@ graph TD
 ```
 
 Overall, `events` are `messages` but not all `messages` are `events`.
-
----
-<DocsButton
- suggestions={[
-    {
-      href:'/docs/concepts/protocol',
-      type: 'back',  
-      title: 'Protocol',
-   },
-   {
-      href:'/docs/tutorials',
-      type: 'next',  
-      title: 'Tutorials - Overview',
-   }
- ]}
-/>

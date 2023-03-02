@@ -10,6 +10,16 @@
 		]
 	},
 	{
+		"name": "Abir Pal",
+		"linkedin": "imabp",
+		"twitter": "imabptweets",
+		"github":"imabp",
+		"availableForHire": false,
+		"repos": [
+			 "problem"
+		]
+	},
+	{
 		"name": "Akshat Nema",
 		"github": "akshatnema",
 		"linkedin": "akshat-nema",
@@ -126,7 +136,8 @@
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
 		"linkedin": "khudadadnomani",
-		"availableForHire": true,
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
 			"optimizer",
 			"bindings"
@@ -261,6 +272,16 @@
 		]
 	},
 	{
+		"name": "Pratik Haldankar",
+		"github": "pratik2315",
+		"linkedin": "pratik-haldankar-1b237a205",
+		"twitter": "PratikHaldankr",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Richard Coppen",
 		"github": "rcoppen",
 		"linkedin": "richard-coppen",
@@ -311,7 +332,9 @@
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
-			"website"
+			"website",
+			"training",
+			"community"
 		]
 	},
 	{
@@ -416,6 +439,16 @@
 		]
 	},
 	{
+		"name": "Florence Njeri",
+		"github": "Florence-Njeri",
+		"linkedin": "florencenjeri",
+		"twitter": "njericodes",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Jeremy Whitlock",
 		"github": "whitlockjc",
 		"linkedin": "whitlockjc",
@@ -455,6 +488,28 @@
 		"company": "The LEGO Group",
 		"repos": [
 			"bindings"
+		]
+	},
+	{
+		"name": "Louis Xhaferi",
+		"github": "LouisXhaferi",
+		"linkedin": "louis-xhaferi-45608b1a3",
+		"availableForHire": false,
+		"company": "Mercedes-Benz Tech Innovation",
+		"repos": [
+			"modelina"
+		]
+	},
+	{
+		"name": "Barbaño González",
+		"linkedin": "barbano-gonzalez-moreno",
+		"twitter": "BarbanoGonzalez",
+		"github":"Barbanio",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			 "training",
+			 "community"
 		]
 	}
 ]

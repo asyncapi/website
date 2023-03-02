@@ -1,7 +1,7 @@
 ---
 title: 'Streetlights - Interactive (Alpha)'
 description: Interactive version of the original Streetlights tutorial.
-weight: 110
+weight: 180
 ---
 
 >tl;dr
@@ -15,20 +15,3 @@ Please become our alpha testers of the tutorial:
    - [Slack](https://www.asyncapi.com/slack-invite/)
    - [Twitter](https://twitter.com/AsyncAPISpec)
    - [GitHub Issue](https://github.com/asyncapi/website/issues/)
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/security',
-      title: 'Getting Started - Adding Security',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/streetlights',
-      title: 'Streetlights',
-      type:'next',
-    }
-  ]}
-/>

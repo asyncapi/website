@@ -27,20 +27,3 @@ Aside from structural differences you must know that:
 As you have seen above, OpenAPI and AsyncAPI are very similar. In a real-world environment, systems don't have just REST APIs or events but a mix of both. Most of the time, the information flowing in the events is very similar to the one the REST APIs have to handle in requests and responses; thus, being able to reuse schemas is a huge win.
 
 Enough reading, it's time to get your hands dirty with some actual examples. Let's learn how to create an AsyncAPI document that defines a "Hello world" application.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/event-driven-architectures',
-      title: 'Event-Driven Architectures',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/getting-started/hello-world',
-      title: 'Hello World',
-      type:'next',
-    }
-  ]}
-/>

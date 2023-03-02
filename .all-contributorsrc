@@ -8,7 +8,6 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "commitConvention": "none",
   "contributors": [
     {
       "login": "fmvilas",
@@ -355,8 +354,36 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "sambhavgupta0705",
+      "name": "sambhavgupta0705",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81870866?v=4",
+      "profile": "https://github.com/sambhavgupta0705",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Ankitchaudharyy",
+      "name": "Ankit Chaudhary",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46367738?v=4",
+      "profile": "https://github.com/Ankitchaudharyy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Amzani",
+      "name": "samz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/554438?v=4",
+      "profile": "https://github.com/Amzani",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": false
+  "skipCi": false,
+  "commitConvention": "angular"
 }

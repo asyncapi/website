@@ -9,6 +9,5 @@ config/posts.json
 config/case-studies.json
 public/rss.xml
 .env.local
-roadmap.json
 yarn.lock
 meetings.json

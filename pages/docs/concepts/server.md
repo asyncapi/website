@@ -36,20 +36,3 @@ flowchart TD
 ```
 
 The diagram above shows the *Broker Centric Architecture*. In this case, we created three AsyncAPI files for the `producer`, `consumer1`, and `consumer2`. In these AsyncAPI files, the [`Server Object`](https://www.asyncapi.com/docs/reference/specification/latest#serverObject) provides information about the `broker`, so that API users know where to connect to start receiving or sending messages.
-
----
-
-<DocsButton
- suggestions={[
-    {
-      href:'/docs/concepts',
-      type: 'back',  
-      title: 'Overview',
-   },
-   {
-      href:'/docs/concepts/producer',
-      type: 'next',  
-      title: 'Producer',
-   }
- ]}
-/>
