@@ -51,7 +51,7 @@ The Ambassador Program is a transparent system, just like any other management i
 
 The process of recruiting ambassadors is completely open. If anyone meets the requirements, they only need to add themselves to this [document](https://github.com/asyncapi/community/blob/master/AMBASSADORS_MEMBERS.json), attaching their personal information along with their contributions. The TSC members will then approve the proposal. 
 
-Subsequently, all ambassador information is displayed on the AsyncAPI website once the PR has been merged. Like this, the process try to be as simple, collaborative, and transparent as possible.
+Subsequently, all ambassador information will be displayed on the AsyncAPI website once the PR has been merged. The process tries to be simple, collaborative, and transparent as possible.
 
 ## More about AsyncAPI Ambassador Program
 
