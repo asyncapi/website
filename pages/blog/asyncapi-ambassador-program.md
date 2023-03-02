@@ -55,7 +55,7 @@ Subsequently, all ambassador information will be displayed on the AsyncAPI websi
 
 ## More about AsyncAPI Ambassador Program
 
-The minimum period of enrollment in the program is one year, with the possibility of renewal on an annual basis. At the end of each period, the number of participants will be determined and verified on a yearly basis. The minimum requirement to be an ambassador is to make four contributions per year in the form of articles, talks, videos, podcasts, presentations, drive initiatives, etc.
+The minimum enrollment period for ambassadors is one year with the option to renew annually. At the end of each period, the number of participants will be assessed and confirmed on a yearly basis. To qualify as an ambassador, individuals must make at least four contributions per year, which may include articles, talks, videos, podcasts, presentations, or driving initiatives, etc.
 
 Ambassadors acquire some smooth amount of responsibilities on holding this degree. In return, to thank the participants for their work, we try to reward their effort with some benefits, such as special swag and free conference tickets.  
 
