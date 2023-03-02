@@ -39,7 +39,7 @@ As we know, everyone has a unique way of looking at things and a person's abilit
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTgzODZhZDM1MWZhMDJiODNkODFhZTI3MWRjZDExZGQyYzBlNzMwYiZjdD1z/NfBApd81ooX87Od5hk/giphy.gif" alt="heart&brain" />
 </p>
 
-We are in a time of fast expansion, which means that everything is moving very fast in the community. Last year we not only started the ambassador program, but also the AsyncAPI Mentorship program and participated in the GSoD for the first time. So, the needs of the community are changing and the initiative react being dynamic and open, driving new ideas and proposals.
+The community is experiencing rapid growth. Over the past year, we started the Ambassadors Program and the AsyncAPI Mentorship program and participated in GSoD for the first time. As the community evolves, the initiative remains dynamic and open, driving new ideas and proposals.
 
 ## How does the program work?
 
