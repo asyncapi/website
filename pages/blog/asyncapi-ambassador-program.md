@@ -21,7 +21,7 @@ The program is, after all, a reaction to the natural impulse of the community. T
 
 AsyncAPI Ambassadors are passionate about open source. They are committed to making AsyncAPI an inclusive place for everyone and participate in leading and mentoring the community.
 
-The premises to be followed by anyone who wishes to become an ambassador are:
+Below are guidelines to be followed by anyone who wishes to become an ambassador:
 
 - Promote user cooperation and disseminate the tools needed for any specific user.
 
