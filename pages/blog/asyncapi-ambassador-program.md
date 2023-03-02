@@ -43,7 +43,7 @@ The community is experiencing rapid growth. Over the past year, we started the A
 
 ## How does the program work?
 
-Like any other management issue related to the initiative, the Ambassador Program is approached as a transparent system, where diversity, inclusiveness, and integration are key concepts that are wanted to be materialized in the program.
+The Ambassador Program is a transparent system, just like any other management issue related to the initiative. Its success relies on diversity, inclusiveness, and integration. The goal is to materialize these concepts within the program.
 
 <p align="center">
   <img src="https://media.giphy.com/media/eEh1lwAYtnmwDWSirZ/giphy.gif" alt="heart&brain" />
