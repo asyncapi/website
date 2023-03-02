@@ -17,7 +17,7 @@ AsyncAPI and its community have grown exponentially during the last few months. 
 
 To follow that line, the AsyncAPI Ambassador Program is one of the latest additions to the initiative to keep the community going. 
 
-The program is, after all, a reaction to the natural impulse of the community. Thus, in this case, the ambassadors came before the Ambassadors Program itself. This proposal was born based on the recognition of the work of the community members who invest part of their time in bringing AsyncAPI to the community or new potential users. 
+The program is, after all, a reaction to the natural impulse of the community. Thus, in this case, the ambassadors came before the Ambassadors Program itself. This proposal was born based on the recognition of the work of community members who invest their time in bringing AsyncAPI to the community and new potential users. 
 
 AsyncAPI Ambassadors are passionate about open source and AsyncAPI. Committed to making AsyncAPI a place for everyone, thus participating in the leadership and mentoring of the community.
 
