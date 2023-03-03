@@ -106,7 +106,7 @@ export default function NavBar({
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
             <NavItem 
               text="Community"
-              route="/community" 
+              href="/community" 
               onClick={() => showOnClickMenu('community')} 
               onMouseEnter={() => showMenu('community')} 
               hasDropdown
