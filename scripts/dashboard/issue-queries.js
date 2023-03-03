@@ -44,6 +44,12 @@ query IssueByID($id: ID!) {
       }
     }
   }
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
 }`,
   issueById: ` 
 query IssueByID($id: ID!) {
@@ -87,6 +93,12 @@ query IssueByID($id: ID!) {
       }
     }
   }
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
+  }
 }`,
   goodFirstIssues: `
 query($first: Int!, $after: String) {
@@ -123,6 +135,12 @@ query($first: Int!, $after: String) {
         }
       }
     }
+  }
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
   }
 }
 `,
@@ -178,6 +196,12 @@ query($first: Int!, $after: String) {
         }
       }
     }
+  }
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
   }
 }
 `,
@@ -242,6 +266,12 @@ query($first: Int!, $after: String) {
         }
       }
     }
+  }
+  rateLimit {
+    limit
+    cost
+    remaining
+    resetAt
   }
 }
 `,
