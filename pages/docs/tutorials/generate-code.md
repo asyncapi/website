@@ -62,7 +62,6 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
     config
     package.json`}
     </CodeBlock>
-    ```
 
 ## Start generated application
 1. Install dependencies of the newly generated application:
