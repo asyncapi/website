@@ -47,21 +47,21 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
     - `-p` defines additional parameters you want to pass to the template. Here, the `server` parameter specifies the server's name as it is defined in AsyncAPI document.
 
 2. List all files in directory and check that the Node.js application is generated:
-    <CodeBlock language="bash">
-    {`cd output && ls`}
-    </CodeBlock>
+    ```
+    cd output && ls
+    ```
 
     Upon execution of the command above, the following is an example of the expected result:
-    <CodeBlock language="bash">
-    {`$ ls
+    ```
+    $ ls
     Dockerfile
     asyncapi.yaml
     docs
     src
     README.md
     config
-    package.json`}
-    </CodeBlock>
+    package.json
+    ```
 
 ## Start generated application
 1. Install dependencies of the newly generated application:
