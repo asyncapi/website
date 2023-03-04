@@ -1,7 +1,7 @@
 export default function Row({ item }) {
   return (
     <li>
-      <div className=" p-4 bg-white rounded-md border border-gray-200">
+      <div className=" p-4 bg-white rounded-md border border-gray-200 overflow-auto">
         <a target='_blank' rel='noreferrer' href={`https://github.com/${item.resourcePath}`}>
           <div className="flex justify-between">
             <div className="flex flex-col gap-2">
@@ -29,13 +29,13 @@ export default function Row({ item }) {
               </span>
 
               {item.labels.length > 0 && (
-                <div className="inline-flex items-center gap-1">
+                <div className="inline-flex two-liner items-center gap-1">
                   {item.labels.map((label) => (
                     <span
                       key={label.name}
                       className={`bg-secondary-300 text-sm leading-5 px-2 rounded-full`}
                     >
-                      {label.name}
+                      {label.name} 
                     </span>
                   ))}
                 </div>

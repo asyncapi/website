@@ -35,7 +35,8 @@ export default function Home() {
               </div>
             }
             data={data.hotDiscussions}
-            className="lg:w-1/3"
+            className="lg:w-1/3 "
+            listClassName="lg:grid-cols-1"
           />
           <GoodFirstIssues issues={data.goodFirstIssues} />
         </div>
