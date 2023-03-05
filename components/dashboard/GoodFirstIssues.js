@@ -17,6 +17,7 @@ function GoodFirstIssues({ issues }) {
   //Get current issues
 
   let filteredIssues = issues;
+  let allIssues=issues
   if (selectedRepo !== 'All')
     filteredIssues = filteredIssues.filter(
       (issue) => issue.repo === selectedRepo
@@ -34,6 +35,7 @@ function GoodFirstIssues({ issues }) {
           <Filters
             className="ml-auto"
             issues={filteredIssues}
+            allIssues={issues}
             setSelectedRepo={setSelectedRepo}
             setSelectedArea={setSelectedArea}
             selectedArea={selectedArea}
