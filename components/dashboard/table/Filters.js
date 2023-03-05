@@ -28,6 +28,7 @@ export default function Filters({
   className,
   issues,
   setSelectedRepo,
+  allIssues,
   setSelectedArea,
   selectedArea,
   selectedRepo,
@@ -39,13 +40,13 @@ export default function Filters({
   });
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setOpen);
-  const areas = issues.map((issue) => issue.area);
+  const areas = allIssues.map((issue) => issue.area);
   const uniqueAreas = ['All', ...new Set(areas)].map((area) => ({
     key: area,
     text: area,
   }));
 
-  const repos = issues.map((issue) => issue.repo);
+  const repos = allIssues.map((issue) => issue.repo);
   const uniqueRepos = ['All', ...new Set(repos)].map((repo) => ({
     key: repo,
     text: repo,
