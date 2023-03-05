@@ -128,9 +128,8 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   </div>
                   <div>
                     <span className="text-sm font-sans antialiased text-gray-800"> 
-                      Are you interested in release notes of other versions of the specification?
+                      Interested in release notes of other versions of the specification?&nbsp;
                     </span> 
-                    <br/>
                     <Link href="https://www.asyncapi.com/blog?tags=Release+Notes">
                       <span className="text-sm font-sans antialiased text-gray-800">
                         Check&nbsp;
