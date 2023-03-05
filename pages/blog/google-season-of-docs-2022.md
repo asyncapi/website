@@ -12,7 +12,6 @@ authors:
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: Our proposal? Update Docs Information Architecture
 excerpt: Check out the Docs project proposal we're submitting to GSoD 2022! You won't want to miss out.
-featured: true
 ---
 
 ## ¡Hola, AsyncAPI community! 
@@ -20,7 +19,7 @@ For today's blog post about AsyncAPI Docs 📑, I wanted to share with all techn
 
 As some of you may remember from my [Gist Docs update for 31 Jan - 11 Feb 2022](https://gist.github.com/alequetzalli/94ca1ffb5d123b450501e40a4a3b56e2), I noted that GSoD 2022 was coming up and that AsyncAPI wanted to participate in the application process once it opened on February 23, 2022.  
 
-In anticipation of this, I also created a new AsyncAPI Slack channel named `#temp-gsod-2022` that anyone can join! First, [join our Slack workspace](https://www.asyncapi.com/slack-invite) ☎️  and please respect [our slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md).🙂 Then join the `temp-gsod-2022` channel, our temporary channel to coordinate GSoC 2022 setup. I'll publish regular updates on where we are in the application process, so stay tuned as the process continues. 😄
+In anticipation of this, I also created a new AsyncAPI Slack channel named `#temp-gsod-2022` that anyone can join! First, [join our Slack workspace](https://www.asyncapi.com/slack-invite) ☎️  and please respect [our slack etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md).🙂 Then join the `temp-gsod-2022` channel, our temporary channel to coordinate GSoC 2022 setup. I'll publish regular updates on where we are in the application process, so stay tuned as the process continues. 😄
 
 Join the `#temp-gsod-2022` slack channel for:
 - mentees identification

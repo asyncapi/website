@@ -55,7 +55,7 @@ export default function BlogIndexPage() {
       <StickyNavbar>
        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      <AnnouncementHero className="text-center m-4" small={true} />
+      <AnnouncementHero className="text-center my-4 mx-8" small={true} />
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
@@ -102,7 +102,7 @@ export default function BlogIndexPage() {
             {showClearFilters && (
               <button 
                 type="button" 
-                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none py- text-white transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading text-white md:mt-0 mt-1 md:py-0 py-2"
+                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading md:mt-0 mt-1 md:py-0 py-2"
                 onClick={clearFilters}
               >
                 <span className="inline-block">Clear filters</span>

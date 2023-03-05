@@ -20,7 +20,7 @@ If you're using AsyncAPI to define an API that connects to a message broker, you
 Continuing with the `hello world` application example, let's learn how to define a simple security scheme (mechanism) for it.
 
 <CodeBlock highlightedLines={[10,11,42,43,44]}>
-{`asyncapi: '2.2.0'
+{`asyncapi: '2.5.0'
 info:
   title: Hello world application
   version: '0.1.0'
@@ -73,7 +73,7 @@ The example above shows how to specify that your server (a Kafka broker) require
 
 <Remember title="Hint">
 
-There are many more security schemes. Learn more about them <Link href="/docs/specifications/2.2.0/#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
+There are many more security schemes. Learn more about them <Link href="/docs/reference/specification/v2.5.0#securitySchemeObject" passHref><a className="text-teal-600 font-medium hover:underline cursor-pointer">here</a></Link>.
 
 </Remember>
 
@@ -82,20 +82,3 @@ There are many more security schemes. Learn more about them <Link href="/docs/sp
 You're now able to define what security mechanisms your application needs to connect to the server. You've seen how to define the requirement of a user and a password, which is the most common use case.
 
 At this point, you know AsyncAPI well enough to create a simple `Hello world application`. However, real use cases are more complicated than that. The following tutorials can teach you how to create real-world use cases, from zero to production.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/getting-started/servers',
-      title: 'Servers',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials',
-      title: 'Tutorials Overview',
-      type:'next',
-    }
-  ]}
-/>
