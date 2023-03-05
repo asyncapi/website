@@ -5,13 +5,10 @@ import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
 import ToolsList from './ToolsList';
 import Filters from './Filters';
-<<<<<<< HEAD
 import CategoryDropdown from './CategoryDropdown';
 import ArrowDown from '../icons/ArrowDown';
-=======
 import Button from '../buttons/Button';
 import Cross from '../icons/Cross';
->>>>>>> master
 
 export default function ToolDashboard() {
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
@@ -126,13 +123,8 @@ export default function ToolDashboard() {
 
     return (
         <div>
-<<<<<<< HEAD
             <div className="flex flex-wrap lg:flex-nowrap gap-4 my-10">
                 <div className='flex w-[46%] lg:w-1/5 gap-5 h-auto'>
-=======
-            <div className="flex flex-row gap-4 mt-10">
-                <div className='flex w-1/3 lg:w-1/5 gap-5 h-auto'>
->>>>>>> master
                     <div className="relative w-full h-auto" ref={filterRef}>
                         <div
                             className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
