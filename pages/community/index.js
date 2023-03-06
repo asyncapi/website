@@ -58,14 +58,14 @@ function CommunityIndexPage() {
           className="bg-ambassador"
         />
       </div>
-      <div className="md:flex md:justify-between w-full mt-10">
+      <div className="md:flex md:justify-between w-full mt-20">
         <div className="md:w-[50%]">
           <Card
             taglineBg="bg-pink-100"
             bg="bg-code-editor-dark"
             heading="Explore and Contribute to Hot Issues"
             description="Discover over 100s of interesting issues, suitable for both new
-          contributors and existing contributors"
+          contributors and existing contributors."
             tagline="Issues"
             icon="🔥"
             btnText="Explore issues"
@@ -80,7 +80,7 @@ function CommunityIndexPage() {
               tagline="Newsroom"
               icon="📣"
               heading="Never Get Left Behind"
-              description=" Do you want to get the latest news with recent activities happening in the community?"
+              description="Do you want to get the latest news with recent activities happening in the community?"
               link="/community/newsroom"
             />
           </div>
@@ -91,7 +91,7 @@ function CommunityIndexPage() {
               tagline="Toolings"
               icon="🧰"
               heading="Check out our collection of Toolings"
-              description="Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the community"
+              description="Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the community."
               bg="bg-pink-200"
               link="/tools"
             />
@@ -138,7 +138,7 @@ function CommunityIndexPage() {
           </ul>
         </div>
       </div>
-      <div className="md:flex md:justify-between w-full mt-10">
+      <div className="md:flex md:justify-between w-full mt-20">
         <div className="md:w-[45%] flex flex-col justify-between mt-10 md:mt-0">
           <div>
             <Card
@@ -169,7 +169,7 @@ function CommunityIndexPage() {
           <Card
             taglineBg="bg-primary-200"
             heading="Meet Folks that are Redefining the Initiative"
-            description="Learn how to become a technical steering committee member and see our current tsc memebrs"
+            description="Learn how to become a technical steering committee member and see our current tsc members."
             tagline="Projection"
             icon="🎯"
             btnText="Meet all TSC members"
