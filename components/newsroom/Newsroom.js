@@ -10,7 +10,7 @@ import TextLink from '../typography/TextLink'
 export default function Newsroom() {
   return (
     <> 
-      <div className="text-center" id="main-content">
+      <div className="text-center">
         <Heading
           level="h2"
           typeStyle="heading-lg"

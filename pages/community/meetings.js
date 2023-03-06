@@ -22,7 +22,7 @@ export default function meetings() {
       wide
     >
 
-      <div className="py-10 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl" id="main-content">
+      <div className="py-10 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center">
           <div className="col-start-3 col-span-5">       
             <Heading level="h1" typeStyle="heading-lg">

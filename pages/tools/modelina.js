@@ -235,7 +235,7 @@ export default function ModelinaPlaygroundPage() {
       image={image}
       wide
     >
-      <div className="py-16 overflow-hidden lg:py-24" id="main-content">
+      <div className="py-16 overflow-hidden lg:py-24">
         <div className="relative text-center">
           <Heading level="h1" typeStyle="heading-lg">
             Modelina

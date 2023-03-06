@@ -13,7 +13,7 @@ export default function toolsDashboard() {
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
         <div>
-          <div className="text-center mt-12" id="main-content">
+          <div className="text-center mt-12">
             <Heading level="h1" typeStyle="heading-lg">
               AsyncAPI Tools Dashboard
             </Heading>

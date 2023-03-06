@@ -12,7 +12,7 @@ import IconLoupe from './icons/Loupe';
 export default function Hero({ className = ''}) {
   return (
     <>
-      <AnnouncementHero id='main-content' className='my-4' />
+      <AnnouncementHero className='my-4' />
       <header className={`px-2 mt-12 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">

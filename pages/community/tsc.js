@@ -47,7 +47,7 @@ export default function TSC() {
       image={image}
       wide
     >
-      <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl" id="main-content">
+      <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <div className="grid lg:grid-cols-3 lg:gap-8">
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
