@@ -21,10 +21,9 @@ export default function App({ Component, pageProps, router }) {
             <Banner />
             <Layout>
               <Component {...pageProps} />
-            <ScrollButton/>
+              <ScrollButton/>
             </Layout>
             <div className="mt-auto">
-              
               <Footer />
             </div>
           </div>
