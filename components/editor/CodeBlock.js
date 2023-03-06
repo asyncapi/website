@@ -58,7 +58,7 @@ export default function CodeBlock({
         )}
         <div className={`pr-8 relative overflow-y-auto ${highlightClassName}`}>
           <Highlight
-            className={`pt-px pb-0 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
+            className={`pt-px pb-2 text-sm font-medium font-ligatures-contextual ${showLineNumbers ? 'ml-0' : 'ml-3'} ${textSizeClassName}`}
             language={codeBlocks[activeBlock].language ? codeBlocks[activeBlock].language : language}
             style={theme}
             showLineNumbers={showLineNumbers}
@@ -93,7 +93,7 @@ export default function CodeBlock({
 
   return (
     <>
-      <div className={`relative max-w-full rounded overflow-y-auto overflow-x-auto py-2 bg-code-editor-dark z-10 ${className}`}>
+      <div className={`relative max-w-full rounded overflow-y-auto overflow-x-auto pt-2 bg-code-editor-dark z-10 my-8 ${className}`}>
         {hasWindow && (
           <div className="pl-4 pb-2">
             <span className="inline-block rounded-full w-2.5 h-2.5 bg-mac-window-close mr-2"></span>
@@ -103,7 +103,7 @@ export default function CodeBlock({
         )}
         {
           showCopy && (
-            <div className={`${ !showLineNumbers && codeBlocks[activeBlock].code.split('/n').length < 2 ? 'absolute top-0 bottom-0 right-0 pl-5 pr-2 bg-code-editor-dark' : ''} z-10`}>
+            <div className="z-10">
               <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
                 {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2">Copied!</span>}
                 <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
@@ -124,7 +124,7 @@ const theme = {
   'hljs': {
     'display': 'inline-block',
     'background': '#252f3f',
-    'color': '#d6deeb'
+    'color': '#c0e2a3'
   },
   'hljs-subst': {
     'color': '#d6deeb'
