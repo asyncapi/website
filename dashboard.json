@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5ARCuj",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for message validation",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1005",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 38.48139489240067
-    },
-    {
       "id": "PR_kwDOBGu-185AIQgf",
       "isPR": true,
       "isAssigned": false,
@@ -20,7 +9,7 @@
       "resourcePath": "/asyncapi/spec/pull/847",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 37.332696537403635
+      "score": 37.907045714902154
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -39,17 +28,6 @@
       "score": 30.153331818672168
     },
     {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 27.56876051992884
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -64,28 +42,6 @@
         }
       ],
       "score": 24.914618792310346
-    },
-    {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.9739670999407
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -104,28 +60,15 @@
       "score": 21.538094156194408
     },
     {
-      "id": "PR_kwDOBW5R_c5B0oU6",
+      "id": "PR_kwDOBW5R_c5GeFJh",
       "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial validation of messages/events",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1061",
+      "isAssigned": false,
+      "title": "feat: blog post on SIO-AsyncAPI",
+      "author": "daler-rahimov",
+      "resourcePath": "/asyncapi/website/pull/1196",
       "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 18.666348268701817
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -142,6 +85,33 @@
         }
       ],
       "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOFi_gUM46XnQo",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: adding http header",
+      "author": "ritik307",
+      "resourcePath": "/asyncapi/glee/pull/320",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 16.08177696995849
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 15.794602381209232
     },
     {
       "id": "I_kwDOE8Qh385Dy329",
@@ -180,20 +150,37 @@
       "score": 15.507427792459973
     },
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
       "isPR": false,
       "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 15.507427792459973
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOFDnrNc5IOkCK",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add kotlin support for model generation",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/435",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [

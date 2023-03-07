@@ -13,7 +13,7 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
   }
 
   return (
-    <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+    <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
       <span className="text-xs xs:text-sm text-gray-900">
         Showing {lowerBound} to {upperBound} {''}
         of {totalIssues} Issues
