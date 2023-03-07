@@ -23,32 +23,47 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
-## Usage
 
-### Install dependencies
+## Run locally
 
-To install all dependencies, run this command:
+1. Fork the repository by clicking on `Fork` option on top right of the main repository.
 
-```bash
-npm install
-```
+2. Open Command Prompt on your local computer.
 
-### Develop
-
-Launch the development server with the hot reloading functionality that allows any change in files to be immediately visible in the browser. Use this command:
+3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
+   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
 ```bash
-npm run dev
+    git clone https://github.com/<username>/website/
 ```
 
-You can access the live development server at [localhost:3000](http://localhost:3000).
+4. Navigate to the website directory.
 
-#### Compose a new blog post
+```bash
+    cd website
+```
+
+5. Install all website dependencies. 
+
+```bash
+    npm install
+```
+
+6. Run the website locally.
+
+```bash
+    npm run dev
+```
+
+7. Access the live development server at [localhost:3000](http://localhost:3000).
+
+
+## Compose new blog post
 
 To bootstrap a new post, run this command:
 
 ```bash
-npm run write:blog
+    npm run write:blog
 ```
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
