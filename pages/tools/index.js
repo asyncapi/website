@@ -4,13 +4,12 @@ import GenericLayout from '../../components/layout/GenericLayout';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
-// import loader from '../public/img/loaders/log-primary.png';
 import { useEffect, useState } from 'react';
 
 export default function toolsDashboard() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
   const image = '/img/social/tools-dashboard-card.webp';
-  const loader = 'img/loaders/logo-white.png';
+  const loader = 'img/loaders/loader.png';
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function toolsDashboard() {
       <GenericLayout title="Tools" description={description} image={image}>
       {loading ? (
         <div>
-          <img src={loader} className="my-10"/>
+          <img src={loader} className="block ml-auto mr-auto mt-24" />
         </div>
       ) : (
           <div>
