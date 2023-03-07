@@ -10,7 +10,7 @@ import {categoryList} from '../../scripts/tools/categorylist'
 import Data from "../../scripts/tools/tools-schema.json"
 import { Carddata } from './Carddata';
 
-export default function Filters({setOpenFilter}) {
+export default function Filters({setOpenFilter, setIsFiltered}) {
   // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
   const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
   
@@ -44,6 +44,7 @@ export default function Filters({setOpenFilter}) {
 
   // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
+    setIsFiltered(true);
     setLanguages(checkedLanguage);
     setTechnologies(checkedTechnology)
     setCategories(checkedCategory)
