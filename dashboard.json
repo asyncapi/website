@@ -60,6 +60,17 @@
       "score": 21.538094156194408
     },
     {
+      "id": "PR_kwDOBW5R_c5GeFJh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: blog post on SIO-AsyncAPI",
+      "author": "daler-rahimov",
+      "resourcePath": "/asyncapi/website/pull/1196",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 17.230475324955524
+    },
+    {
       "id": "I_kwDOGJ23c85V9C3c",
       "isPR": false,
       "isAssigned": true,
@@ -76,13 +87,13 @@
       "score": 16.08177696995849
     },
     {
-      "id": "PR_kwDOBW5R_c5KdHS5",
+      "id": "PR_kwDOFi_gUM46XnQo",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore(blog): new post about asyncapi status after 2022",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/pull/1360",
-      "repo": "asyncapi/website",
+      "title": "feat: adding http header",
+      "author": "ritik307",
+      "resourcePath": "/asyncapi/glee/pull/320",
+      "repo": "asyncapi/glee",
       "labels": [],
       "score": 16.08177696995849
     },
@@ -146,17 +157,6 @@
       "author": "AceTheCreator",
       "resourcePath": "/asyncapi/server-api/pull/213",
       "repo": "asyncapi/server-api",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOFi_gUM46XnQo",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: adding http header",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/glee/pull/320",
-      "repo": "asyncapi/glee",
       "labels": [],
       "score": 14.07155484871368
     },
