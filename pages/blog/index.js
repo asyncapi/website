@@ -19,7 +19,7 @@ import Button from "../../components/buttons/Button";
 import {setConfig,buildImageUrl } from 'cloudinary-build-url'
 
 setConfig({
-  cloudName: ''
+  cloudName: 'dimfh6eps'
 });
 
 

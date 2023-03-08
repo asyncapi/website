@@ -1,7 +1,7 @@
 import {setConfig,buildImageUrl } from 'cloudinary-build-url'
 
 setConfig({
-  cloudName: ''
+  cloudName: 'dimfh6eps'
 });
 
 export default function AuthorAvatars({ authors = [] }) {
