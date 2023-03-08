@@ -18,7 +18,6 @@ export default function toolsDashboard() {
       setLoading(false);
     }, 1000);
   }, []);
-
   return (
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
