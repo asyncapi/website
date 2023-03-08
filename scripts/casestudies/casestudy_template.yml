@@ -25,11 +25,11 @@ technical: #We need some more technical information related to case study.
   protocols:
     - #What protocols are used by the company in relation to AsyncAPI.
   brokers: |
-    #Provide some details about the broker that is used at the company and what is the setup, size, like of example cluster size, number of topics (in case of Kafka for example).
+    #Provide some details about the broker that is used at the company and what is the setup, size, example cluster size, and a number of topics (in the case of Kafka for example).
   testing: |
-    #Explain how testing of the solution is done. How you ensure API works as expected after changes, that users are not affected. For example how do you know who will be affected if you stop sending some message? Provide examples if possible.
+    #Explain how testing of the solution is done. How do you ensure an API works as expected after changes and that users are unaffected? For example, how do you know who will be affected if you stop sending some messages? Provide examples if possible.
   architecture: |
-    #Explain the setup of the EDA architecture. Perfect woudl be if you could point what [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) you applied. Provide examples if possible.
+    #Explain the setup of the EDA architecture. It would be perfect if you could point out what [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) you applied. Provide examples if possible.
   codegen: |
     #Explain if you use code generation, what you generate and how. Provide examples if possible.
 schemas: #It is useful and interesting to learn how teams handle messages schemas.
@@ -46,16 +46,16 @@ asyncapi: #More specific details about AsyncAPI itself and how is it used.
   storage: |
     #Describe where you store AsyncAPI files and who maintains them on daily basis.
   editing: |
-    #Specify how you edit AsyncAPI files, where do you edit them. Be very specific on IDEs and plugins names, if used.
+    #Specify how you edit AsyncAPI files and where you edit them. Be very specific on IDEs and plugin names if used.
   maintainers: | 
-    #share information who is a primary maintainer of AsyncAPI documents, Developer? Tech writers? Product owners?
+    #Share information; who is the primary maintainer of AsyncAPI documents? Developers? Tech writers? Product owners?
   audience: #Specify if AsyncAPI audience is internal or external or both.
     internal: true
     external: false
   extensions: |
     #Explain if you use spec extension and how. Provide examples if possible.
   documentation: |
-    #Explain processes around documentation generated with AsyncAPI. How you do it, what AsyncAPI fields are critical for you. Provide examples if possible.
+    #Explain processes around documentation generated with AsyncAPI. How do you do it? What AsyncAPI fields are critical for you? Provide examples if possible.
   bindings: |
     #Specify what bindings are used by their name and provide description on what level you use bindings. Provide examples if possible.
   tools: |

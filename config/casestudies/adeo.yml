@@ -11,15 +11,15 @@ company:
     - name: Ludovic Dussart
       link: https://twitter.com/ldussart
 challenges: |
-    Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.
+    Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations globally. Different business units use different information systems. It is hard to learn how each business unit shares information about its systems, API and accuracy.
 
-    Initial solution was a developer portal with list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
+    The initial solution was a developer portal with a list of all applications and reference to dedicated documentation. Some legacy systems had docs written in MS Excel.
 
     There was a need for a standart way of describing event-driven architecture.
 solution: |
-    The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for other company units depending on the API.
+    The API is now described with AsyncAPI. The AsyncAPI file, stored with the source code, generates HTML documentation in the same release pipeline for the product. Documentation is exposed internally as part of the product for other company units depending on the API.
 
-    Payloads are described with Avro schema. These schemas are used to generate models and they are also referenced directly in AsyncAPI files thanks to `schemaFormat` feature and `$ref`. This way they make sure code is aligned with docs.
+    Payloads are described with Avro schema. These schemas generate models and are referenced directly in AsyncAPI files thanks to the `schemaFormat` feature and `$ref`. This way, they make sure the code is aligned with the docs.
 
     Shift to using AsyncAPI also enables the team to implement more use cases using AsyncAPI files.
 technical:
@@ -32,7 +32,7 @@ technical:
   brokers: |
     Kafka with Kafka Connect component. There are 15 production brokers with 47 topics. 
   testing: |
-    For Kafka e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.
+    For Kafka, e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with the [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.
   architecture: |
     The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied:
     - [Request/Reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html)
@@ -45,7 +45,7 @@ technical:
       `REPLY_TOPIC` header.
       ```
     - [Return Address](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ReturnAddress.html)
-      Info that needs to be provided by client, so producer knows where to send a response. Information is sent in message header with `REPLY_TOPIC` property. In the AsyncAPI file, information is documented as part of Message Header object.
+      Info that needs to be provided by the client so producer knows where to send a response. Information is sent in the message header with the `REPLY_TOPIC` property. The AsyncAPI file documents information as part of the Message Header object.
       
       Example of request message header with `REPLY_TOPIC`:
       ```
@@ -58,9 +58,9 @@ technical:
             $ref: "#/components/schemas/ReplyTopic"
       ```
     - [Correlation Identifier](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html)
-      This pattern enables identification of request given response was sent to. 
+      This pattern enables the identification of the request given to the sent response. 
       
-      `REQUEST_ID` property is in the request message header. `CORRELATION_ID` property is in response message header. Both headers are described in the AsyncAPI Message Header object and referred to in the AsyncAPI `correlationID` property.
+      The `REQUEST_ID` property is in the request message header. The `CORRELATION_ID` property is in the response message header. Both headers are described in the AsyncAPI Message Header object and referred to in the AsyncAPI `correlationID` property.
       This means that correlation identifier is represented by different property in the message header, depending if it is a request or reply.
       
       Example of request message header with `REQUEST_ID`:
@@ -76,6 +76,7 @@ technical:
 
       Example of how `correlationId` points to `REQUEST_ID`:
       ```
+  correlationId:
       description: >
         This correlation ID is used for message tracing and messages
         correlation.
@@ -84,9 +85,9 @@ technical:
       location: $message.header#/REQUEST_ID
       ````
     - [DeadLetter Channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DeadLetterChannel.html)
-      Also known as Dead Letter Queue. In Kafka it is just another channel where undelivered messages are sent. Not part of AsyncAPI file as API consumers will not listen to this channel. Consumers just know what happens with wrong events.
+      Also known as Dead Letter Queue. In Kafka, it is just another channel where undelivered messages are sent. Not part of the AsyncAPI file, as API consumers will not listen to this channel. Consumers know what happens with wrong events.
     - [Invalid Message Channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/InvalidMessageChannel.html)
-      Invalid messages are routed to dedicated channel for rejected requests.  Not part of AsyncAPI file as API consumers will not listen to this channel. Consumers just know what happens with wrong events.
+      Invalid messages are routed to the dedicated channel for rejected requests but are not part of the AsyncAPI file, as API consumers will not listen to this channel. Consumers know what happens with wrong events.
 
     ![Architecture Diagram](/img/casestudies/adeo/architecture.webp)
   codegen: |
@@ -95,12 +96,12 @@ schemas:
   description: Avro 1.9
   storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
   registry: Confluent Schema Registry.
-  versioning: Versioning is based on git tags. Schema version pushed to Confluent Schema Registry match the git tag version of the product. Every schema has a `version` information, that match with product tag version.
+  versioning: Versioning is based on git tags. The schema version pushed to Confluent Schema Registry matches the git tag version of the product. Every schema has a `version` information that matches with product tag version.
   validation: Based on validation using Confluent Schema Registry.
 asyncapi:
   usecase: |
-    Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from machine-readable document that describes the API.
-    The goal was to document API in a standardized way, so other internal products could follow to unify the way APIs are documented across the company.
+    Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API.
+    The goal was to document API in a standardized way, so other internal products could follow to unify how APIs are documented across the company.
   versions:
     - 2.4.0
   storage: Git repository where source code is.
@@ -120,8 +121,8 @@ asyncapi:
       x-sasl.mechanism: PLAIN
     ````
   documentation: |
-    Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller. 
-    Publishing is part of CI/CD pipeline for the product using GithubActions.
+    Documentation generated from AsyncAPI is hosted as part of the product on a dedicated endpoint using Spring controller. 
+    Publishing is part of the CI/CD pipeline for the product using GithubActions.
 
     Related Maven configuration used to trigger docs generation with AsyncAPI Generator industry:
 
@@ -213,6 +214,7 @@ asyncapi:
     ```
 
     Critical features of AsyncAPI related to documentation:
+    - use of `version` parameter in the generator command to display the release version from the `Maven` pom 
     - `descriptions` that support `CommonMark` (Markdown) as they allow to put detailed structured descriptions and screenshots inside generated docs
     - examples and validation information. In this case converted from Avro to JSON Schema to show it in documentation and have examples generated
     - `Tags` for tagging operations to categorize them to make it easier to navigate in documentation UI

@@ -1,9 +1,9 @@
 asyncapi: 2.4.0
 info:
-  title: Adeo Async API Case Study
+  title: Adeo AsyncAPI Case Study
   version: "%REPLACED_BY_MAVEN%"
   description: >
-    This Adeo specification illustrates how ADEO uses Async API to document some of their exchanges
+    This Adeo specification illustrates how ADEO uses AsyncAPI to document some of their exchanges.
   contact:
     name: AsyncApi team
     email: case-study@asyncapi.com
