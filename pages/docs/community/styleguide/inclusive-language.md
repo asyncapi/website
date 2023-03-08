@@ -1,3 +1,9 @@
+---
+title: Inclusive Language style guide
+description: This style guide outlines the guideline for using inclusive languages in documentation.
+weight:
+---
+
 # Inclusive Language
 
 While writing documentation we are indirectly reaching out to thousands of people all around the globe. 
