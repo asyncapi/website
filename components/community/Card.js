@@ -8,9 +8,9 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
   if(type === "small"){
     return (
       <Link href={link} target="_blank">
-        <a target={link.includes("http") && "_blank"}>
+        <a target={link.includes('http') && '_blank'}>
           <div
-            className={`p-3 cursor-pointer border border-black rounded w-full ${bg}`}
+            className={`p-3 cursor-pointer border shadow-xl rounded w-full border-[#ad20e2] ${bg}`}
           >
             <div className="p-2 rounded-xl bg-gray-100 text-center w-min text-xs flex justify-between">
               <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
@@ -37,7 +37,11 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
     );
   }
   return (
-    <div className={`h-140 w-full rounded p-6 border border-black ${bg}`}>
+    <div
+      className={`h-140 w-full shadow-xl rounded p-6 border ${
+        !bg && 'border-[#ad20e2]'
+      } ${bg}`}
+    >
       <div
         className={`p-2 rounded-xl text-center w-min text-xs flex justify-between ${taglineBg}`}
       >
