@@ -36,18 +36,14 @@ technical:
   architecture: |
     The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied:
     - [Request/Reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html)
-      Described with `description` field in AsyncAPI. Reply goes to dedicated reply channel.
-      
-      Example description of response channel:
+      Described with `description` field in AsyncAPI. Reply goes to dedicated reply channel. Example description of response channel:
       ```
       description: >
       This topic is used to REPLY Costing Requests and is targeted by the
       `REPLY_TOPIC` header.
       ```
     - [Return Address](https://www.enterpriseintegrationpatterns.com/patterns/messaging/ReturnAddress.html)
-      Info that needs to be provided by the client so producer knows where to send a response. Information is sent in the message header with the `REPLY_TOPIC` property. The AsyncAPI file documents information as part of the Message Header object.
-      
-      Example of request message header with `REPLY_TOPIC`:
+      Info that needs to be provided by the client so producer knows where to send a response. Information is sent in the message header with the `REPLY_TOPIC` property. The AsyncAPI file documents information as part of the Message Header object. Example of request message header with `REPLY_TOPIC`:
       ```
       headers:
         type: object
@@ -58,12 +54,8 @@ technical:
             $ref: "#/components/schemas/ReplyTopic"
       ```
     - [Correlation Identifier](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CorrelationIdentifier.html)
-      This pattern enables the identification of the request given to the sent response. 
-      
-      The `REQUEST_ID` property is in the request message header. The `CORRELATION_ID` property is in the response message header. Both headers are described in the AsyncAPI Message Header object and referred to in the AsyncAPI `correlationID` property.
-      This means that correlation identifier is represented by different property in the message header, depending if it is a request or reply.
-      
-      Example of request message header with `REQUEST_ID`:
+      This pattern enables the identification of the request given to the sent response. The `REQUEST_ID` property is in the request message header. The `CORRELATION_ID` property is in the response message header. Both headers are described in the AsyncAPI Message Header object and referred to in the AsyncAPI `correlationID` property.
+      This means that correlation identifier is represented by different property in the message header, depending if it is a request or reply. Example of request message header with `REQUEST_ID`:
       ```
       headers:
         type: object
@@ -73,16 +65,15 @@ technical:
           REQUEST_ID:
             $ref: "#/components/schemas/RequestId"
       ```
-
       Example of how `correlationId` points to `REQUEST_ID`:
       ```
-  correlationId:
-      description: >
-        This correlation ID is used for message tracing and messages
-        correlation.
-        This correlation ID is generated at runtime based on the `REQUEST_ID`
-        and sent to the RESPONSE message.
-      location: $message.header#/REQUEST_ID
+      correlationId:
+        description: >
+          This correlation ID is used for message tracing and messages
+          correlation.
+          This correlation ID is generated at runtime based on the `REQUEST_ID`
+          and sent to the RESPONSE message.
+        location: $message.header#/REQUEST_ID
       ````
     - [DeadLetter Channel](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DeadLetterChannel.html)
       Also known as Dead Letter Queue. In Kafka, it is just another channel where undelivered messages are sent. Not part of the AsyncAPI file, as API consumers will not listen to this channel. Consumers know what happens with wrong events.
