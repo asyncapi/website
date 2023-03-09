@@ -3,7 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-36-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -23,32 +23,47 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
-## Usage
 
-### Install dependencies
+## Run locally
 
-To install all dependencies, run this command:
+1. Fork the repository by clicking on `Fork` option on top right of the main repository.
 
-```bash
-npm install
-```
+2. Open Command Prompt on your local computer.
 
-### Develop
-
-Launch the development server with the hot reloading functionality that allows any change in files to be immediately visible in the browser. Use this command:
+3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
+   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
 ```bash
-npm run dev
+    git clone https://github.com/<username>/website/
 ```
 
-You can access the live development server at [localhost:3000](http://localhost:3000).
+4. Navigate to the website directory.
 
-#### Compose a new blog post
+```bash
+    cd website
+```
+
+5. Install all website dependencies. 
+
+```bash
+    npm install
+```
+
+6. Run the website locally.
+
+```bash
+    npm run dev
+```
+
+7. Access the live development server at [localhost:3000](http://localhost:3000).
+
+
+## Compose new blog post
 
 To bootstrap a new post, run this command:
 
 ```bash
-npm run write:blog
+    npm run write:blog
 ```
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
@@ -93,7 +108,8 @@ This repository has the following structure:
   ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
   │    ├── about                  # Raw blog for /about page
   │    ├── blog                   # Blog posts
-  │    └── docs                   # Blog for /docs/* pages
+  │    ├── docs                   # Blog for /docs/* pages
+  │    └── tools                  # Various pages to describe tools
   ├── public                      # Data for site metadata and static blog such as images
   ├── scripts                     # Scripts used in the build and dev processes
   ├── next.config.js              # Next.js configuration file
@@ -159,6 +175,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ankitchaudharyy"><img src="https://avatars.githubusercontent.com/u/46367738?v=4?s=100" width="100px;" alt="Ankit Chaudhary"/><br /><sub><b>Ankit Chaudhary</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Ankitchaudharyy" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Amzani"><img src="https://avatars.githubusercontent.com/u/554438?v=4?s=100" width="100px;" alt="samz"/><br /><sub><b>samz</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Amzani" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/"><img src="https://avatars.githubusercontent.com/u/78029145?v=4?s=100" width="100px;" alt="Bhaswati Roy "/><br /><sub><b>Bhaswati Roy </b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=BhaswatiRoy" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
