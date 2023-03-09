@@ -29,7 +29,7 @@ export default function Row({ item }) {
               </span>
 
               {item.labels.length > 0 && (
-                <div className="inline-flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-1">
                   {item.labels.map((label) => (
                     <span
                       key={label.name}
