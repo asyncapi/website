@@ -3,7 +3,7 @@ title: "Status update (week 17, 2019)"
 date: 2019-04-25T13:56:52+01:00
 type: Communication
 tags:
-  - Status Update
+  - Project Status
 cover: /img/posts/status-update-week-17-2019.webp
 authors:
   - name: Fran Méndez
