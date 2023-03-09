@@ -69,8 +69,8 @@ function Index({
   const allComponents = getMDXComponents();
   return (
     <GenericLayout
-      title="AsyncAPI Ambassador Program"
-      description="The home for developer communities"
+      title="AsyncAPI Case Studies"
+      description="The home for all case studies related to AsyncAPI."
       image={image}
       hideBanner={true}
       wide
