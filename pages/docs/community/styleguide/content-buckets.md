@@ -1,3 +1,8 @@
+---
+title: Content Buckets
+weight: 15
+---
+
 # Content Buckets
 To structure our documentation, we adopt a systematic approach from the Diátaxis framework. We ensure our docs are presented in a manner that is easy to understand by organizing and classifying them into content buckets.
 
