@@ -13,7 +13,6 @@ authors:
     link: https://twitter.com/fmvilas
     byline: Executive Director at AsyncAPI Initiative
 excerpt: ''
-featured: true
 ---
 
 There are multiple ways to manage an open-source project. At AsyncAPI, we chose the Open Governance model for many good reasons that Lukasz explained in his article [Finding a Good Open Governance Model for AsyncAPI](/blog/governance-motivation).

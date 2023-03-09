@@ -46,12 +46,12 @@ const getFinalTool = async (toolObject) => {
              // adds a new language object in the Fuse list as well as in tool object
              // so that it isn't missed out in the UI.
             let languageObject = {
-                name: language,
+                name: finalObject.filters.language,
                 color: 'bg-[#57f281]',
                 borderColor: 'border-[#37f069]'
             }
             languageList.push(languageObject);
-            finalObject.filters.language = languaeObject;
+            finalObject.filters.language = languageObject;
             languageFuse = new Fuse(languageList, options)
         }
     }
