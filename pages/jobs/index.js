@@ -11,6 +11,7 @@ import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Heading from "../../components/typography/Heading";
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
+import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function JobsIndexPage() {
   let { navItems } = useContext(JobsContext);
@@ -71,17 +72,18 @@ Join us!
 `;
   const jobPostUrl = encodeURIComponent(body);
   const hasPosts = Object.keys(posts).length;
+
+  const description = 'Browse through available job offers!';
+  const image = '/img/social/website-card.jpg'
+
   return (
-    <div>
-      <Head
-        title="Jobs"
-        rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board"
-        rssLink="/jobs/rss.xml"
-      />
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-      <AnnouncementHero className="text-center my-4 mx-8" small={true} />
+    <GenericLayout
+      title="Jobs"
+      description={description}
+      image={image}
+      wide
+    >
+      
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
@@ -171,6 +173,6 @@ Join us!
           </div>
         </div>
       </div>
-    </div>
+    </GenericLayout>
   );
 }

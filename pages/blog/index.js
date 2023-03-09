@@ -15,6 +15,7 @@ import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 import Button from "../../components/buttons/Button";
+import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function BlogIndexPage() {
   const router = useRouter();
@@ -49,13 +50,18 @@ export default function BlogIndexPage() {
     });
   };
   const showClearFilters = Object.keys(router.query).length > 0;
+
+  const description = 'Find the latest and greatest stories from our community';
+  const image = '/img/social/website-card.jpg';
+
   return (
-    <div>
-      <Head title="Blog" />
-      <StickyNavbar>
-       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-      <AnnouncementHero className="text-center my-4 mx-8" small={true} />
+    <GenericLayout
+      title="Blog"
+      description={description}
+      image={image}
+      wide    
+    >
+
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
@@ -127,6 +133,6 @@ export default function BlogIndexPage() {
           </div>
         </div>
       </div>
-    </div>
+    </GenericLayout>
   );
 }
