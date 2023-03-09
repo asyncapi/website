@@ -4,7 +4,7 @@ date: 2019-04-01T10:56:52+01:00
 menu:
   docs:
     parent: 'getting-started'
-weight: 10
+weight: 11
 ---
 
 Many developers, architects, and product managers have used REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL (e.g., www.google.com) in the browser's address bar and it sends a request to the server. The server then sends the response with the website content. **The web is the greatest implementation of a REST API.**
@@ -66,20 +66,3 @@ talk ["the many meanings of Event-Driven Architecture"](https://www.youtube.com/
 ## Conclusion
 
 We've seen what an Event-Driven Architecture is, how it works, and explained its components. AsyncAPI defines and documents each of these components. We'll cover each of the components during the rest of this guide. To continue, choose your next step:
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/',
-      title: 'Getting Started - Introduction',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/getting-started/coming-from-openapi',
-      title: 'Coming from OpenAPI',
-      type:'next',
-    }
-  ]}
-/>
