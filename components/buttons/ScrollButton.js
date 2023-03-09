@@ -3,7 +3,7 @@ import React ,{useEffect,useState} from 'react';
 
 function ScrollButton(){
     const [backToTopButton,setBackToTopButton]=useState(false);
-    const scrollImage = '/img/loaders/images.png'
+    const scrollImage = '/img/loaders/scroll.png'
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
             if(window.scrollY>100){
@@ -23,9 +23,9 @@ function ScrollButton(){
 
         })
     }
-    return <div className="fixed bottom-12 right-4 h-12 w-12">
+    return <div className="fixed bottom-12 right-4  h-12 w-12">
         {backToTopButton &&(
-            <button className=""onClick={scrollUp}> <img src={scrollImage}/></button>
+            <button className="rounded-full shadow-md bg-white " onClick={scrollUp}> <img src={scrollImage}/></button>
         )}
     </div>
 }
