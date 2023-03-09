@@ -16,6 +16,7 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 li>p {
@@ -121,3 +122,4 @@ abbr[title] {
     position: fixed !important;
   }
 }
+
