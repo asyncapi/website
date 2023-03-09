@@ -21,11 +21,7 @@ export default function toolsDashboard() {
   return (
     <div>
       <GenericLayout title="Tools" description={description} image={image}>
-      {loading ? (
-        <div>
-          <img src={loader} className="block ml-auto mr-auto mt-24" />
-        </div>
-      ) : (
+      
           <div>
             <div className="text-center mt-12">
               <Heading level="h1" typeStyle="heading-lg">
@@ -44,12 +40,17 @@ export default function toolsDashboard() {
                 </TextLink>{' '}
                 file, and show up your AsyncAPI Tool card in the website.
               </Paragraph>
-            </div>
-            <ToolFilter>
+            </div> 
+            {loading ? (
+        <div>
+          <img src={loader} className="block ml-auto mr-auto mt-24" />
+        </div>
+      ) : (
+              <ToolFilter>
               <ToolDashboard />
-            </ToolFilter>
-          </div>
-          )}
+              </ToolFilter>
+      )}
+          </div> 
         </GenericLayout>
     </div>
   );
