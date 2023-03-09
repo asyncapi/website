@@ -15,10 +15,10 @@ export default function Header() {
           </p>
         </div>
       </div>
-      <div className="self-end flex gap-x-4">
-        <Button text='Contribution Guide' href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi' target='_blank' className="my-2.5 translate-y-2.5"/>
-        <GithubButton className="mt-5 lg:mt--1" />
-        <SlackButton className="mt-5 lg:mt--1" />
+      <div className="self-end flex gap-x-2 mt-3">
+        <Button text='Contribution Guide' href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi' target='_blank' />
+        <GithubButton className="lg:mt-0" />
+        <SlackButton className="lg:mt-0" />
       </div>
     </div>
   );
