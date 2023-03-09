@@ -1,3 +1,8 @@
+---
+title: About Guide
+weight: 1
+---
+
 ## Introduction
 Welcome to the AsyncAPI Style Guide. This page guides contributors on how to write, structure, and format content in documentation.
 
