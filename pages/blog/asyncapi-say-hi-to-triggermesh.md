@@ -174,7 +174,7 @@ You'll also need to create a file called `serviceaccountkey.json` with a GCP [se
 
 You can visit the TriggerMesh documentation for the [Kafka source](https://docs.triggermesh.io/sources/kafka/), [HTTP Poller source](https://docs.triggermesh.io/sources/httppoller/), and [Google Pub/Sub source](https://docs.triggermesh.io/sources/googlecloudpubsub/) for more information on parameters and usage.
 
-We can now execute these `tmctl` commands to create the TriggerMesh components. You can either copy/paste them into your terminal, or run the generated script e.g.:
+We can now execute these `tmctl` commands to create the TriggerMesh components. You can either copy/paste them into your terminal or run the generated script:
 
 ```sh
 sh tmctl.sh
