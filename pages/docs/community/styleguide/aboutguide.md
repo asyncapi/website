@@ -1,5 +1,5 @@
 ---
-title: About Guide
+title: About Style Guide
 weight: 1
 ---
 
