@@ -32,7 +32,7 @@ The placement of the word “People” matters a lot when it comes to writing do
 Using the word “People” in the beginning makes it more pleasant as the problem is not displayed in the beginning.
 Some examples of Gender Neutral Language are -
 - Using “People with a mental health condition” instead of “Mentally Unstable People”.
-- Using “People with Audio Impairment” instead of “Deaf People”.
+- Using “Deaf” instead of “Person with deafness”.
 
 ### 4. Slang Free Language -
 
