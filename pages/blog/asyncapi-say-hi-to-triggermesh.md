@@ -62,7 +62,7 @@ One of the order management systems is producing `orders` on a Kafka topic calle
 
 Here we provide an easy way to start one using [Redpanda](https://redpanda.com/) and Docker Compose, but you could use any Kafka distribution you like (self-hosted or managed).
 
-The provided [docker-compose file](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/docker-compose.yml) will start a single node Redpanda cluster and a handy console. It is configured to work with docker desktop and could require some adjustments to the listeners and advertised listeners for it to work on other environments. Reach out to us on Slack or GitHub if you need help, or see [here](https://www.confluent.io/blog/kafka-listeners-explained/) if you want to deep dive on this.
+The provided [docker-compose file](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/docker-compose.yml) will start a single node Redpanda cluster and a handy console. It is configured to work with the docker desktop and could require some adjustments to the listeners and advertised listeners for it to work on other environments. Reach out to us on Slack or GitHub if you need help, or read this [kafka listeners blog post](https://www.confluent.io/blog/kafka-listeners-explained/) if you want to dive deep into this.
 
 Run the following command in the same directory as the docker compose file to start Redpanda:
 
