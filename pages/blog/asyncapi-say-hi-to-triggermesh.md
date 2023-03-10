@@ -91,7 +91,7 @@ asyncapi start studio &
 
 ### Servers
 
-Lets see what is in our [AsyncAPI definition](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/asyncapi.yaml). We've defined three servers that represent the three order management systems. These definitions contain information that we'll need in order to create the TriggerMesh source components that will read from these servers.
+Let's see what is in our [AsyncAPI definition](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/asyncapi.yaml). We've defined three servers that represent the three order management systems. These definitions contain information we'll need to create the TriggerMesh source components that will read from these servers.
 
 ```yaml
 servers:
