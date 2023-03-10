@@ -200,7 +200,7 @@ The first thing you'll notice is that the HTTP poller is starting to produce eve
   caption="A CloudEvent that originates from the HTTP poller"
 />
 
-The poller is configured to fetch an event every 10 seconds. You can adjust the endpoint and other parameters depending on your environment and needs. I’m using host.docker.internal because I’m running on Docker Desktop.
+The poller is configured to fetch an event every 10 seconds. You can adjust the endpoint and other parameters depending on your environment and needs. I’m using `host.docker.internal` because I’m running on Docker Desktop.
 
 ## Ingest orders from Kafka
 
