@@ -11,3 +11,4 @@ public/rss.xml
 .env.local
 yarn.lock
 meetings.json
+.env

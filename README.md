@@ -129,7 +129,8 @@ This repository has the following structure:
   ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
   │    ├── about                  # Raw blog for /about page
   │    ├── blog                   # Blog posts
-  │    └── docs                   # Blog for /docs/* pages
+  │    ├── docs                   # Blog for /docs/* pages
+  │    └── tools                  # Various pages to describe tools
   ├── public                      # Data for site metadata and static blog such as images
   ├── scripts                     # Scripts used in the build and dev processes
   ├── next.config.js              # Next.js configuration file
