@@ -36,7 +36,7 @@ The following schema illustrates what we'll build in this tutorial.
   caption="Schema shows the event flow we'll build during the tutorial"
 />
 
-Please reach out to the TriggerMesh team on [Slack](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA) or [GitHub](https://github.com/triggermesh/tutorials/issues/new) if you need help getting this to work or have any feedback.
+Please reach out to the TriggerMesh team on the [TriggerMesh Slack workspace](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA) or [GitHub TriggerMesh](https://github.com/triggermesh/tutorials/issues/new) if you need help getting this to work or have any feedback.
 
 ## Prerequisites
 
