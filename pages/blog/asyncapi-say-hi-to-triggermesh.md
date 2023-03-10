@@ -27,7 +27,7 @@ The tutorial leverages the TriggerMesh open-source command-line interface called
   caption="The main components of TriggerMesh"
 />
 
-The project includes a [prototype parser](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/parser.js) built with AsyncAPI's [js-parser](https://github.com/asyncapi/parser-js). It parses the [provided AsyncAPI definition](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/asyncapi.yaml) and generates `tmctl` CLI commands that create TriggerMesh event sources that will ingest events from the various channels into a TriggerMesh broker for further processing. You could of course write the `tmctl` commands manually too, but this parser shows how a well-documented AsyncAPI definition can be used alongside TriggerMesh.
+The project includes a [prototype parser](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/parser.js) built with AsyncAPI's [js-parser](https://github.com/asyncapi/parser-js). It parses the [provided AsyncAPI definition](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/asyncapi.yaml) and generates `tmctl` CLI commands that create TriggerMesh event sources that ingest events from various channels into a TriggerMesh broker for further processing. You could write the `tmctl` commands manually too, but this parser shows how a well-documented AsyncAPI definition can be used alongside TriggerMesh.
 
 The following schema illustrates what we'll build in this tutorial.
 
