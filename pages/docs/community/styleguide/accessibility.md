@@ -1,5 +1,6 @@
 ---
 title: Accessibility
+Description: This accessstyle guide explains how to include accessibility into the documentation.
 weight: 10
 ---
 
