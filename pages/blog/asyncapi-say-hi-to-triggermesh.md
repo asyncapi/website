@@ -263,7 +263,7 @@ tmctl create trigger --target unified-orders-target --eventTypes io.triggermesh.
 
 ## Wrap-up
 
-We made quick work of piping events from multiple AsyncAPI channels into a single Kafka topic. By pairing AsyncAPI together with TriggerMesh, we can generate the TriggerMesh source components that will ingest and centralise the events into a broker. From there, we can start creating routes that will deliver filtered sets of events to different targets. We did this with a Kafka target but there are [many other targets available](https://docs.triggermesh.io/targets/kafka/).
+We quickly piped events from multiple AsyncAPI channels into a single Kafka topic. By pairing AsyncAPI with TriggerMesh, we can generate the TriggerMesh source components that will ingest and centralize the events into a broker. From there, we can start creating routes to deliver filtered sets of events to different targets. We did this with a Kafka target, but there are [many other Kafka targets available](https://docs.triggermesh.io/targets/kafka/).
 
 If you wanted to take this example further, you could implement some [JSON transformations](https://docs.triggermesh.io/transformation/jsontransformation/) that would standardise legacy order formats coming from some of the sources, or could customise the format for a specific consumer on a new Kafka topic (as show in the initial diagram). You could also model other parts of the architecture with their own AsyncAPI definitions.
 
