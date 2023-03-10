@@ -54,7 +54,7 @@ Some examples include -
 ### 6. Knowledge Assumption Free Language - 
 
 While building the documentation, we should always assure that we don’t presume the knowledge of the readers. 
-This is because if we assume that our readers are highly skilled in front-end development, 
+This is because if we assume that our readers are highly skilled or have advanced experience, 
 we might skip explaining or linking some important concepts. Also, we should avoid labeling some steps as “easy”, 
 because this might make some readers question their technical abilities.
 Some examples include -
