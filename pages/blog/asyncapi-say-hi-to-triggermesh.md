@@ -144,7 +144,7 @@ channels:
 
 There is nothing overly special about the `order` message and schema so we don't need to go into detail on it here (but you can see it at the end of the [AsyncAPI definition](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/asyncapi.yaml)).
 
-We can see that by combining information from the servers and the channels, we have everything we need (except in some cases auth credentials) to create TriggerMesh source components that can subscribe to and read from these channels. Lets do that!
+We can see that by combining information from the servers and the channels, we have everything we need (except, in some cases, auth credentials) to create TriggerMesh source components that can subscribe to and read from these channels. Let's do that!
 
 ## Generating the TriggerMesh source components
 
