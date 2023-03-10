@@ -5,12 +5,16 @@ import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
 import ToolsList from './ToolsList';
 import Filters from './Filters';
+import CategoryDropdown from './CategoryDropdown';
+import ArrowDown from '../icons/ArrowDown';
 import Button from '../buttons/Button';
 import Cross from '../icons/Cross';
 
 export default function ToolDashboard() {
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
+    const categoryRef = useRef() // used to provide ref to the Category menu and outside click close feature
     const [openFilter, setOpenFilter] = useState(false)
+    const [openCategory, setopenCategory] = useState(false)
     // filter parameters extracted from the context
     const { isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner } = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('') // state variable used to get the search name
@@ -23,6 +27,18 @@ export default function ToolDashboard() {
         const checkIfClickOutside = (e) => {
             if ((openFilter && filterRef.current && !filterRef.current.contains(e.target)))
                 setOpenFilter(false)
+        }
+        document.addEventListener("mousedown", checkIfClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickOutside)
+        }
+    })
+
+    // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
+    useEffect(() => {
+        const checkIfClickOutside = (e) => {
+            if ((openCategory && categoryRef.current && !categoryRef.current.contains(e.target)))
+                setopenCategory(false)
         }
         document.addEventListener("mousedown", checkIfClickOutside)
         return () => {
@@ -107,11 +123,11 @@ export default function ToolDashboard() {
 
     return (
         <div>
-            <div className="flex flex-row gap-4 mt-10">
-                <div className='flex w-1/3 lg:w-1/5 gap-5 h-auto'>
+            <div className="flex flex-wrap lg:flex-nowrap gap-4 my-10 justify-between">
+                <div className='flex w-[47%] lg:w-1/5 gap-5 h-auto'>
                     <div className="relative w-full h-auto" ref={filterRef}>
                         <div
-                            className="flex py-2 justify-center items-center gap-2 rounded-lg border w-full h-full border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
+                            className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
                             onClick={() => setOpenFilter(!openFilter)}>
                             <FilterIcon />
                             <div>Filter</div>
@@ -123,7 +139,22 @@ export default function ToolDashboard() {
                         )}
                     </div>
                 </div>
-                <div className="py-1 px-4 flex rounded-lg border w-2/3 lg:w-4/5 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">
+                <div className='flex w-[47%] lg:w-1/5 gap-5 h-auto'>
+                    <div className="relative w-full h-auto" ref={categoryRef}>
+                        <div
+                            className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
+                            onClick={() => setopenCategory(!openCategory)}>
+                            <div>Jump to Category</div>
+                            <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
+                        </div>
+                        {openCategory && (
+                            <div className="z-20 absolute top-16 right-52">
+                                <CategoryDropdown setopenCategory={setopenCategory} />
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div className="py-1 px-4 flex rounded-lg border w-[100%] lg:w-4/5 h-14 border-gray-300 hover:border-gray-600 focus:border-gray-600 text-gray-700 shadow text-sm">
                     <SearchIcon className="my-auto opacity-70" />
                     <input
                         className="border-none outline-none flex-1 w-11/12 focus:ring-0"
