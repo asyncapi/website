@@ -1,6 +1,6 @@
 ---
 title: Overview
-weight: 3
+weight: 2
 ---
 
 ## Community: Guidelines and resources around community.
