@@ -20,7 +20,7 @@ If you want access to the source files for this tutorial, head to the [dedicated
 
 The scenario is based on the perspective of a DevOps engineer that has been provided with an AsyncAPI definition that describes an application (or set of applications) that produce `order` events over various channels, including a **Kafka topic**, a **Google pub/sub topic**, and an **HTTP service**.  The engineer's task is to ingest `orders` from these channels and route them to a single downstream **Kafka topic** called `unified-orders.`
 
-The tutorial leverages the TriggerMesh open-source command-line interface called `tmctl` to create the TriggerMesh **sources**, **brokers**, **triggers** and **targets** that make up the event flow. `tmctl` lets you run these components locally on any laptop that has Docker.
+The tutorial leverages the TriggerMesh open-source command-line interface called `tmctl` to create the TriggerMesh **sources**, **brokers**, **triggers**, and **targets** that make up the event flow. `tmctl` lets you run these components locally on any laptop that has Docker.
 
 <Figure
   src="/img/posts/asyncapi-say-hi-to-triggermesh/triggermesh-concepts.webp"
