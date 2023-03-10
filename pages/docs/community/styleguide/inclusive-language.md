@@ -51,7 +51,7 @@ Some examples include -
 - Using “lively” instead of “young”.
 - Not to mention the exact age like “60 years” old.
 
-### 6. Knowledge Assumption Free Language - 
+### 6. Knowledge level assumption free language
 
 While building the documentation, we should always assure that we don’t presume the knowledge of the readers. 
 This is because if we assume that our readers are highly skilled or have advanced experience, 
