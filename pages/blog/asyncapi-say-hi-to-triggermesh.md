@@ -148,7 +148,7 @@ We can see that by combining information from the servers and the channels, we h
 
 ## Generating the TriggerMesh source components
 
-Lets use [the parser](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/parser.js) to generate some TriggerMesh components that will consume events from the channels defined in the AsyncAPI definition.
+Let's use [the parser](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/parser.js) to generate some TriggerMesh components that will consume events from the channels defined in the AsyncAPI definition.
 
 Make sure you're in the same directory as the JS file and try running the following command:
 
