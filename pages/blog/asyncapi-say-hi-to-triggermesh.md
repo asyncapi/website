@@ -1,6 +1,6 @@
 ---
 title: Automatically pipe events from AsyncAPI channels with TriggerMesh
-date: 2023-02-01T5:28:08+01:00
+date: 2023-03-15T5:28:08+01:00
 type: Engineering
 tags: ['Serverless','CloudEvents']
 cover: /img/posts/asyncapi-say-hi-to-triggermesh/blog-graphic-asyncapi-triggermesh.webp
