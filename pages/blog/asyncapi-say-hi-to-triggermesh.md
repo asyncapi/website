@@ -179,7 +179,7 @@ We can now execute these `tmctl` commands to create the TriggerMesh components. 
 ```sh
 sh tmctl.sh
 ```
-Or you can pipe the output of the parser into the shell e.g:
+Or you can pipe the output of the parser into the shell:
 
 ```sh
 node parser.js | sh
