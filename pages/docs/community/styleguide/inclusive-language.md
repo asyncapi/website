@@ -31,7 +31,7 @@ Some examples of Gender Neutral Language are -
 The placement of the word “People” matters a lot when it comes to writing documentation. 
 Using the word “People” in the beginning makes it more pleasant as the problem is not displayed in the beginning.
 Some examples of Gender Neutral Language are -
-- Using “People with Mental Instability” instead of “Mentally Unstable People”.
+- Using “People with a mental health condition” instead of “Mentally Unstable People”.
 - Using “People with Audio Impairment” instead of “Deaf People”.
 
 ### 4. Slang Free Language -
