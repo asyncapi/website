@@ -16,7 +16,7 @@ excerpt: This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It sho
 
 This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It shows how the two play nicely together because TriggerMesh can easily ingest, transform, filter, and route events from channels defined in an AsyncAPI definition. This is one of many possible ways to use the two technologies together. This post assumes you have basic knowledge of AsyncAPI already, but are potentially new to TriggerMesh.
 
-If you want access to the source files for this tutorial, head to the [dedicated GitHub repo](https://github.com/triggermesh/tutorials/tree/main/asyncAPI).
+If you want access to the source files for this tutorial, head to the [dedicated GitHub TriggerMesh repo](https://github.com/triggermesh/tutorials/tree/main/asyncAPI).
 
 The scenario is based on the perspective of a DevOps engineer that has been provided with an AsyncAPI definition that describes an application (or set of applications) that produce `order` events over various channels including a **Kafka topic**, a **Google pub/sub topic**, and an **HTTP service**.  The engineer's task is to ingest `orders` from these different channels and route them to a single downstream **Kafka topic** called `unified-orders`.
 
