@@ -72,7 +72,7 @@ docker-compose up -d
 
 ### Start a mock HTTP service
 
-We'll start a mock HTTP service locally to simulate the order management system that provides `orders` through an HTTP API. Copy the [order.json](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/order.json) file to the current directory, it we be used as a mock event. Run the mock HTTP server, ideally in a new terminal (requires python 2 or 3):
+We'll start a mock HTTP service locally to simulate the order management system that provides `orders` through an HTTP API. Copy the [order.json](https://github.com/triggermesh/tutorials/blob/main/asyncAPI/order.json) file to the current directory, it will be used as a mock event. Run the mock HTTP server, ideally in a new terminal (requires python 2 or 3):
 
 ```sh
 python3 -m http.server 8000
