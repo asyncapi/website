@@ -1,18 +1,16 @@
 ---
-title: AsyncAPI, say hi to TriggerMesh
+title: Automatically pipe events from AsyncAPI channels with TriggerMesh
 date: 2023-02-01T5:28:08+01:00
 type: Engineering
 tags: ['Serverless','CloudEvents']
-cover: /img/posts/asyncapi-say-hi-to-triggermesh/hero-stablediff.webp
+cover: /img/posts/asyncapi-say-hi-to-triggermesh/blog-graphic-asyncapi-triggermesh.webp
 authors:
   - name: Jonathan Michaux
     photo: /img/avatars/jmichaux.webp
     link: https://twitter.com/j_michaux
     byline: Product at TriggerMesh
-excerpt: This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It shows how the two play nicely together because TriggerMesh can easily ingest, transform, filter, and route events from channels defined in an AsyncAPI definition.
+excerpt: TriggerMesh makes it easy to reliably pipe events from any source to any destination. Let's use it to read from AsyncAPI channels, and see how to autogenerate the TriggerMesh config.
 ---
-
-> Cover image generated using <a href="https://beta.dreamstudio.ai/">DreamStudio</a>. AsyncAPI and TriggerMesh logos, "Kandinsky and clouds"
 
 This tutorial demonstrates how to use AsyncAPI with TriggerMesh. It shows how the two play nicely together because TriggerMesh can easily ingest, transform, filter, and route events from channels defined in an AsyncAPI definition. This is one of many possible ways to use the two technologies together. This post assumes you have basic knowledge of AsyncAPI already, but are potentially new to TriggerMesh.
 
@@ -165,9 +163,9 @@ tmctl create source httppoller --name ordersorderjson-httppollersource --method 
 tmctl create source googlecloudpubsub --name orders-gcp-pubsubsource --topic projects/jmcx-asyncapi/topics/ordersgcp --serviceAccountKey $(cat serviceaccountkey.json)
 ```
 
-The first command creates a lightweight event broker, the central component that will decouple event producers and consumers, and provide pub/sub style reliable delivery of events to their targets. The name of the broker is derived from the title of the AsyncAPI definition.
+The first command creates a lightweight event broker, the central component that will decouple event producers and consumers, and provide pub/sub-style reliable delivery of events to their targets. The name of the broker is derived from the title of the AsyncAPI definition.
 
-Next, one source component is created per `channel` that provides a `subscribe` operation and has a reference to a `server` with a support protocol such as `http`, `kafka`, or `googlepubsub`.
+Next, one source component is created per `channel` that provides a `subscribe` operation and has a reference to a `server` with a supported protocol such as `http`, `kafka`, or `googlepubsub`.
 
 To get this working on your environment, you may want to play with the `bootstrapServers` value for the Kafka source, and the endpoint `host` for the HTTP poller source. You can change them in the AsyncAPI definition and then re-run the parser.
 You'll also need to create a file called `serviceaccountkey.json` with a GCP [service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys), if you want to get the Google Pub/Sub channel working. If not, you can delete the Pub/Sub channel in the asyncAPI definition.
@@ -261,12 +259,14 @@ Although we generally recommend being more specific when creating triggers by ad
 tmctl create trigger --target unified-orders-target --eventTypes io.triggermesh.httppoller.event
 ```
 
+Now take a look at the RedPanda console and you should see all orders arriving on the `unified-orders topic`. You can send more orders into GCP Pub/Sub and AWS SQS and see them get routed to the Kafka topic. 
+
 ## Wrap-up
 
-We quickly piped events from multiple AsyncAPI channels into a single Kafka topic. By pairing AsyncAPI with TriggerMesh, we can generate the TriggerMesh source components that will ingest and centralize the events into a broker. From there, we can start creating routes to deliver filtered sets of events to different targets. We did this with a Kafka target, but there are [many other Kafka targets available](https://docs.triggermesh.io/targets/kafka/).
+In this post, we piped events from multiple AsyncAPI channels into a single Kafka topic. By pairing AsyncAPI with TriggerMesh, we can generate the TriggerMesh source components that will ingest and centralize the events into a broker. From there, we can start creating routes to deliver filtered sets of events to different targets. We did this with a Kafka target, but there are [many other targets available](https://docs.triggermesh.io/targets/).
 
 If you wanted to take this example further, you could implement some [JSON transformations](https://docs.triggermesh.io/transformation/jsontransformation/) that would standardize legacy order formats coming from some of the sources or could customize the format for a specific consumer on a new Kafka topic (as shown in the initial diagram). You could also model other parts of the architecture with their own AsyncAPI definitions.
 
 Oh and one more thing, try the `tmctl dump` command. It will produce Kubernetes manifests that you can deploy onto a Kubernetes cluster [with TriggerMesh installed](https://docs.triggermesh.io/installation/kubernetes-yaml/) and run these event flows as a Kubernetes-native application.
 
-Head to [AsyncAPI.com](https://www.asyncapi.com/) to learn more about AsyncAPI, and the [TriggerMesh quickstart](https://docs.triggermesh.io/get-started/quickstart/) if you want to try out `tmctl` for yourself. You can also reach the [TriggerMesh community on Slack](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA) if you want to speak to engineers there directly.
+Head to [AsyncAPI.com](https://www.asyncapi.com/) to learn more about AsyncAPI, and the [TriggerMesh quickstart](https://docs.triggermesh.io/get-started/quickstart/) if you want to try out `tmctl` for yourself. You can also reach the [TriggerMesh community on Slack](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA), we'd love to hear from you!
