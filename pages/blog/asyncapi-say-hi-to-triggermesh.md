@@ -204,7 +204,7 @@ The poller is configured to fetch an event every 10 seconds. You can adjust the 
 
 ## Ingest orders from Kafka
 
-Now we can send an order to the `orders` topic and watch it land in the broker too. To do this you can open the Redpanda console that was started in the docker compose and should be available at http://localhost:8080/ by default.
+Now we can send an order to the `orders` topic and watch it land in the broker too. To do this, you can open the Redpanda console that was started in the docker compose and should be available at `http://localhost:8080/` by default.
 
 Go to the orders topic and publish this:
 
