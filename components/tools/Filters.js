@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
@@ -26,6 +26,15 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
+  // useEffect hook used to update the UI elements when the Clear Filters button is clicked and then corresponding state variables are set to empty values
+  useEffect(() => {
+    setCheckedLanguage(languages);
+    setCheckedTechnology(technologies);
+    setCheckedCategory(categories);
+    setCheckPaid(isPaid);
+    setCheckOwner(isAsyncAPIOwner);
+  }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
+  
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
@@ -60,7 +69,7 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
     setCategories([])
     setisPaid("all")
     setAsyncAPIOwner(false)
-    setOpenFilter(false)
+    setOpenFilter(true)
   }
 
   return (
