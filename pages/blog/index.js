@@ -52,14 +52,14 @@ export default function BlogIndexPage() {
   const showClearFilters = Object.keys(router.query).length > 0;
 
   const description = 'Find the latest and greatest stories from our community';
-  const image = '/img/social/website-card.jpg';
+  const image = '/img/social/blog.webp';
 
   return (
     <GenericLayout
       title="Blog"
       description={description}
       image={image}
-      wide    
+      wide
     >
 
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
@@ -84,7 +84,7 @@ export default function BlogIndexPage() {
               </TextLink>
             </Paragraph>
             <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-1">
-                We have an<img
+              We have an<img
                 className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
@@ -106,8 +106,8 @@ export default function BlogIndexPage() {
               checks={toFilter}
             />
             {showClearFilters && (
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading md:mt-0 mt-1 md:py-0 py-2"
                 onClick={clearFilters}
               >
