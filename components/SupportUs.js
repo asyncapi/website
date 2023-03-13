@@ -5,7 +5,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         <a
           href="https://slack.com/media-kit"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
@@ -18,7 +18,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://toast.ninja/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
@@ -31,7 +31,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://www.netlify.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
@@ -46,7 +46,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://sonarcloud.io/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 md:h-14"
@@ -57,7 +57,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         <a
           href="https://www.digitalocean.com/press/"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
@@ -70,7 +70,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://restream.io/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-6"
