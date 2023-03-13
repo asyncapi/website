@@ -44,22 +44,6 @@
       "score": 29.004633463675134
     },
     {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 21.538094156194408
-    },
-    {
       "id": "I_kwDOBGu-184_rP6l",
       "isPR": false,
       "isAssigned": false,
@@ -84,7 +68,7 @@
       "resourcePath": "/asyncapi/glee/pull/320",
       "repo": "asyncapi/glee",
       "labels": [],
-      "score": 19.527872034949596
+      "score": 20.102221212448114
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -186,6 +170,17 @@
         }
       ],
       "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOFDnrNc5IOkCK",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add kotlin support for model generation",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/435",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
@@ -737,6 +732,10 @@
       "author": "jonaslagoni",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "819cd3"
+        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
