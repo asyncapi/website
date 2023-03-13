@@ -10,6 +10,7 @@ To structure our documentation, we adopt a systematic approach from the Diátaxi
 ![Diátaxis framework](https://www.asyncapi.com/img/posts/changes-coming-docs/diataxis.webp)
 
 > Documentation structure based on the [Diátaxis framework](https://diataxis.fr/).
+
 At AsyncAPI our docs are classified into the following content buckets:
 
 - **Concepts** - This section is where we define various features and capabilities AsyncAPI offers. All docs pages under this bucket need to be accurate, easy to understand and accompanied by an engineering diagram. We utilize [Mermaid.js](https://mermaid.js.org/) syntax to create diagrams and visualizations.
