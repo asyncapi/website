@@ -11,3 +11,4 @@ public/rss.xml
 yarn.lock
 meetings.json
 .netlify
+.env
