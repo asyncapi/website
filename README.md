@@ -2,11 +2,19 @@
 
 ---
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
+<br/>
+<p align="center">
+<a href="https://github.com/asyncapi/website" alt="GitHub contributors">
+<img src="https://img.shields.io/github/contributors/asyncapi/website.svg?color=orange" /></a>
+<a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First issue">
+<img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" /></a>
+<a href="https://asyncapi.slack.com/" alt="Slack">
+<img src="https://img.shields.io/badge/Slack-@website.svg?logo=slack" /></a>
+<a href="https://app.netlify.com/sites/asyncapi-website/deploys">
+<img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" /></a>
+<a href="https://github.com/asyncapi/website" alt="License">
+<img src="https://img.shields.io/github/license/asyncapi/website.svg" /></a>
+</p>
 
 ## Overview
 
@@ -118,6 +126,15 @@ This repository has the following structure:
   ├── postcss.config.js           # PostCSS configuration file
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
+
+## Connect with us 
+
+[![Slack](https://img.shields.io/badge/Slack-@asyncAPI.slack.com-yellow.svg)](https://asyncapi.slack.com)
+[![Twitter](https://img.shields.io/badge/Twitter-@asyncAPIspec-9cf.svg)](https://twitter.com/asyncapispec)
+[![LinkedIN](https://img.shields.io/badge/LinkedIn-@asyncAPI-lightgray.svg)](https://www.linkedin.com/company/asyncapi)
+[![YouTube](https://img.shields.io/badge/YouTube-@asyncAPI-red.svg)](https://www.youtube.com/c/AsyncAPI)
+[![Twitch](https://img.shields.io/badge/Twitch-@asyncAPI-blueviolet.svg)](https://www.twitch.tv/asyncapi)
+
 
 ## Contributors ✨
 
