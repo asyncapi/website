@@ -25,13 +25,12 @@ Code examples should be self-explanatory and easy to understand. The goal is to 
 
 
 ### Colors
+Color plays an important role in syntax highlighting, making code samples easier to read and understand code. Use color in a consistent and accessible way to make code examples accessible to everyone.
 
-- Using different colors for making the code more readable and understandable.
-Add different color to `tags` and `code` is a good practice.
+- Use a color scheme that is accessible: Ensure the color scheme meets accessibility standards. This means using colors that have enough contrast to be easily distinguishable from each other. 
+- Use color to differentiate between elements: Color can be used to differentiate between different elements in your code, such as keywords, variables, and comments. This makes it easier to quickly identify and understand the different parts of the code.
+- Test your code with color blindness simulators: There are many different types of color blindness, and it's important to ensure your code is readable for people with all types of color blindness. Use color blindness simulators to test how your code appears to users with different types of color blindness.
 
-- Code blocks that show good habits to adopt are shown with a green check mark in the right corner, while those that show bad habits are shown with a white cross inside a red circle.
-
-- You different colors for bracket to know the starting and ending bracket of code block.
 
 ### Spacing and Indentation
 
