@@ -168,7 +168,7 @@ function CommunityIndexPage() {
           <Card
             taglineBg="bg-primary-200"
             heading="Meet Folks Redefining the Initiative"
-            description="Learn how to become a Technical Steering Committee  (TSC) member and see our current members."
+            description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
             tagline="TSC"
             icon="🚀"
             btnText="Meet all TSC members"
