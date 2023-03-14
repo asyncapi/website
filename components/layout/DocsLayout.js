@@ -46,7 +46,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         )}
-        <div className="flex flex-row">
+        <div className="flex flex-row" id="main-content">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
