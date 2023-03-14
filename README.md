@@ -3,7 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -177,6 +177,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ankitchaudharyy"><img src="https://avatars.githubusercontent.com/u/46367738?v=4?s=100" width="100px;" alt="Ankit Chaudhary"/><br /><sub><b>Ankit Chaudhary</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Ankitchaudharyy" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Amzani"><img src="https://avatars.githubusercontent.com/u/554438?v=4?s=100" width="100px;" alt="samz"/><br /><sub><b>samz</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Amzani" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/"><img src="https://avatars.githubusercontent.com/u/78029145?v=4?s=100" width="100px;" alt="Bhaswati Roy "/><br /><sub><b>Bhaswati Roy </b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=BhaswatiRoy" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.behance.net/muibudeenaisha"><img src="https://avatars.githubusercontent.com/u/105395613?v=4?s=100" width="100px;" alt="AISHAT MUIBUDEEN"/><br /><sub><b>AISHAT MUIBUDEEN</b></sub></a><br /><a href="#design-Mayaleeeee" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
