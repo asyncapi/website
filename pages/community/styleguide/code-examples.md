@@ -4,7 +4,6 @@ weight: 20
 ---
 
 
-## Guidelines
 
 Code examples which you add must be simple enough to understand and with good details to do something interesting and useful.
 
