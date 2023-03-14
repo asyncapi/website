@@ -1,3 +1,8 @@
+---
+title: Code examples
+weight: 20
+---
+
 # Code Examples
 
 ## Guidelines
