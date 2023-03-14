@@ -5,7 +5,7 @@ weight: 20
 
 
 
-Code examples which you add must be simple enough to understand and with good details to do something interesting and useful.
+Code examples added must be straightforward enough to understand for all audiences and include line-by-line comments.
 
 You need to add practical code examples which adhere to industry standards as users will copy the sample code and run it in production. Be sure to include any warnings through comments which might occur during the code run.
 Make it clear if it is a snippet and not a complete example. Provide information about any packages or dependencies required to run the sample code.
