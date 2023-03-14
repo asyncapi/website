@@ -109,6 +109,34 @@
       "score": 16.943300736206268
     },
     {
+      "id": "I_kwDOBW5R_c5DkdBH",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[📑 Docs]: AsyncAPI CLI Documentation ",
+      "author": "imabp",
+      "resourcePath": "/asyncapi/website/issues/602",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 16.65612614745701
+    },
+    {
       "id": "I_kwDOBGu-185CELGB",
       "isPR": false,
       "isAssigned": false,
@@ -170,20 +198,54 @@
         }
       ],
       "score": 16.08177696995849
-    },
-    {
-      "id": "PR_kwDOFDnrNc5IOkCK",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add kotlin support for model generation",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/cli/pull/435",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFi_gUM5gradR",
+      "title": "add prettier configuration",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/398",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5grOC6",
+      "title": "Refactor mqtt `_connect()` method",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/397",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5grMtS",
+      "title": "Refactor ws adapter to reduce its cognitive complexity",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/396",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFDnrNc5gDYPo",
       "title": "Change the collection type for arrays for C# models",
@@ -747,21 +809,6 @@
       ]
     },
     {
-      "id": "I_kwDOFi_gUM5Ahc3G",
-      "title": "Add docs on how Glee works",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/206",
-      "repo": "asyncapi/glee",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFGbvC85AWog3",
       "title": "Automate Helm chart release version bump",
       "isAssigned": false,
@@ -883,10 +930,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         },
         {
           "name": "Hacktoberfest",
