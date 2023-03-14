@@ -1,5 +1,5 @@
 ---
-Title: Inclusive Language style guide
+title: Inclusive Language style guide
 Description: This style guide outlines the guideline for using inclusive languages in documentation.
 ---
 
