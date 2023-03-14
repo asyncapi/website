@@ -40,7 +40,7 @@ export default function NavBar({
   }
 
   function showOnClickMenu(menu) {
-    if (!isMobile) return ;
+    if (!isMobile) return;
     if (open === menu) return setOpen(null);
     setOpen(menu);
   }
@@ -52,7 +52,7 @@ export default function NavBar({
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <Button className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0" text="Skip to main content" href="#" bgClassName="bg-gray-100" textClassName="text-gray-700"/>
+      <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a>
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
@@ -67,7 +67,7 @@ export default function NavBar({
         )}
 
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden">
-          <SearchButton 
+          <SearchButton
             className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
           >
             <IconLoupe />
@@ -75,38 +75,40 @@ export default function NavBar({
           <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
-               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
 
         <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
-            <NavItem 
-              text="Docs" 
-              href='/docs' 
-              onClick={() => showOnClickMenu('learning')} 
-              onMouseEnter={() => showMenu('learning')} 
+            <NavItem
+              text="Docs"
+              href='/docs'
+              onClick={() => showOnClickMenu('learning')}
+              onMouseEnter={() => showMenu('learning')}
               hasDropdown
             />
             {open === 'learning' && <LearningPanel />}
           </div>
 
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={toolingRef}>
-            <NavItem 
-              text="Tools" 
-              onClick={() => showOnClickMenu('tooling')} 
-              onMouseEnter={() => showMenu('tooling')} 
-              hasDropdown 
+            <NavItem
+              text="Tools"
+              href='/tools'
+              onClick={() => showOnClickMenu('tooling')}
+              onMouseEnter={() => showMenu('tooling')}
+              hasDropdown
             />
-            { open === 'tooling' && <ToolsPanel /> }
+            {open === 'tooling' && <ToolsPanel />}
           </div>
 
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
-            <NavItem 
-              text="Community" 
-              onClick={() => showOnClickMenu('community')} 
-              onMouseEnter={() => showMenu('community')} 
+            <NavItem
+              text="Community"
+              route="/community"
+              onClick={() => showOnClickMenu('community')}
+              onMouseEnter={() => showMenu('community')}
               hasDropdown
             />
             {open === 'community' && <CommunityPanel />}
@@ -117,7 +119,7 @@ export default function NavBar({
           ))}
 
           <div className="flex flex-row items-center justify-content">
-            <SearchButton 
+            <SearchButton
               className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             >
               <IconLoupe />

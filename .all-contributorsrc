@@ -372,6 +372,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Amzani",
+      "name": "samz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/554438?v=4",
+      "profile": "https://github.com/Amzani",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "BhaswatiRoy",
+      "name": "Bhaswati Roy ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78029145?v=4",
+      "profile": "https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
