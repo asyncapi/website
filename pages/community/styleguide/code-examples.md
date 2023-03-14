@@ -17,7 +17,7 @@ The code example should be self explanatory and easy to understand. The goal is 
 
 ### Code Length
 
-- Code lines shouldn't be so lengthy that reading them horizontally requires scrolling.
+- Ideally, code lines shouldn't be so long that reading them horizontally requires scrolling.
 
 - For the sake of readability, break large lines at appropriate moments, but never at the price of acceptable practises.
 
