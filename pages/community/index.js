@@ -64,8 +64,7 @@ function CommunityIndexPage() {
             taglineBg="bg-pink-100"
             bg="bg-code-editor-dark"
             heading="Explore and Contribute to Hot Issues"
-            description="Discover over 100s of interesting issues, suitable for both new
-          contributors and existing contributors."
+            description="Discover over 100s of interesting issues, suitable for new and existing contributors."
             tagline="Issues"
             icon="🔥"
             btnText="Explore issues"
@@ -143,8 +142,8 @@ function CommunityIndexPage() {
           <div>
             <Card
               type="small"
-              tagline="Community"
-              icon="🚀"
+              tagline="Goals"
+              icon="🎯"
               heading="Community Goals 2023"
               description="Look into the AsyncAPI community building/maintenance goals for
               2023 and help us improve."
@@ -155,7 +154,7 @@ function CommunityIndexPage() {
             <Card
               type="small"
               taglineBg=""
-              tagline="Rockstars"
+              tagline="Contributors"
               icon="🏅"
               heading="Recognize AsyncAPI OSS contributors"
               description="Recognize the people who inspire and contribute to our OSS
@@ -168,10 +167,10 @@ function CommunityIndexPage() {
         <div className="md:w-[50%] mt-10 md:mt-0">
           <Card
             taglineBg="bg-primary-200"
-            heading="Meet Folks that are Redefining the Initiative"
-            description="Learn how to become a technical steering committee member and see our current tsc members."
-            tagline="Projection"
-            icon="🎯"
+            heading="Meet Folks Redefining the Initiative"
+            description="Learn how to become a Technical Steering Committee  (TSC) member and see our current members."
+            tagline="TSC"
+            icon="🚀"
             btnText="Meet all TSC members"
             btnBg="fill-primary-500 text-primary-500"
             link="/community/tsc"

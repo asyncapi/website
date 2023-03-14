@@ -62,10 +62,12 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
       </div>
       <div className="mt-10">
         <Link href={link}>
-          <div className={`flex ${btnBg} cursor-pointer`}>
-            <IconArrowUp className={`w-[20px] ${btnBg}`} />{' '}
-            <span className="ml-2 text-sm">{btnText}</span>
-          </div>
+          <a>
+            <div className={`flex ${btnBg} cursor-pointer`}>
+              <IconArrowUp className={`w-[20px] ${btnBg}`} />{' '}
+              <span className="ml-2 text-sm">{btnText}</span>
+            </div>
+          </a>
         </Link>
       </div>
     </div>
