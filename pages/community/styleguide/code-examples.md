@@ -41,7 +41,7 @@ Add different color to `tags` and `code` is a good practice.
 
 - Add proper spacing between code blocks
 
-- After adding comments ,start writing code from the next line.
+- After adding comments, start writing code from the next line.
 ### General
 
 Make no assumptions about the reader's familiarity with any libraries, frameworks, preprocessors, or other non-native features. 
