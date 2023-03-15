@@ -271,3 +271,6 @@ If you wanted to take this example further, you could implement some [JSON trans
 Oh and one more thing, try the `tmctl dump` command. It will produce Kubernetes manifests that you can deploy onto a Kubernetes cluster [with TriggerMesh installed](https://docs.triggermesh.io/installation/kubernetes-yaml/) and run these event flows as a Kubernetes-native application.
 
 Head to [AsyncAPI.com](https://www.asyncapi.com/) to learn more about AsyncAPI, and the [TriggerMesh quickstart](https://docs.triggermesh.io/get-started/quickstart/) if you want to try out `tmctl` for yourself. You can also reach the [TriggerMesh community on Slack](https://join.slack.com/t/triggermesh-community/shared_invite/zt-1kngevosm-MY7kqn9h6bT08hWh8PeltA), we'd love to hear from you!
+
+
+> _All graphics by [Jonathan Michaux](https://github.com/jmcx)._
