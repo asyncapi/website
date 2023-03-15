@@ -7,13 +7,13 @@ export default function CaseStudyCard({
       return null;
     }
     return (
-      <div className="pt-10 grid lg:grid-cols-3 lg:gap-8 lg:text-center">
+      <div className="pt-10 flex flex-wrap lg:grid lg:grid-cols-3 lg:gap-8 lg:text-center">
         {studies.map((study, index) => (
           <a key={index} href={`casestudies/${study.id}`}>
-            <div className="rounded-md border border-gray-200 overflow-hidden bg-white p-4">
-              <span className="inline-block mr-2">                  
+            <div className="rounded-md border border-gray-200 overflow-hidden bg-white p-4 max-w-sm">
+              <span className="mr-2">                  
                   <img
-                    className="inline-block sm:h-16"
+                    className="m-auto h-16"
                     src={study.company.logo}
                     alt={study.company.name}
                   />
