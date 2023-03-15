@@ -1,6 +1,6 @@
 ---
 title: Accessibility
-description: This style guide explains how to include accessibility into the documentation.
+description: This style guide explains how to include accessibility in the documentation.
 weight: 20
 ---
 
