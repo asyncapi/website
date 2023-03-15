@@ -92,6 +92,7 @@ module.exports = {
       black: 900,
     },
     backgroundImage: {
+      ambassador: "url('/img/homepage/ambassador.webp')",
       eventCover: "url('/img/homepage/event-cover.webp')",
       channelCover: "url('/img/homepage/slack-cover.webp')",
       usecases: "url('/img/homepage/usecases.webp')",

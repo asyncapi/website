@@ -2,106 +2,106 @@
 [
   {
     "id": "item",
-    "img": "/img/homepage/reaction.png",
+    "img": "/img/homepage/reaction.webp",
     "alt": "reaction"
   },
   {
     "id": "item",
-    "img": "/img/homepage/ale.jpeg",
+    "img": "/img/homepage/ale.webp",
     "alt": "ale"
   },
   {
     "id": "item",
-    "img": "/img/homepage/idea.png",
+    "img": "/img/homepage/idea.webp",
     "alt": "idea"
   },
   {
     "id": "item",
-    "img": "/img/homepage/lukasz-homepage-slack.jpg",
+    "img": "/img/homepage/lukasz-homepage-slack.webp",
     "alt": "lukasz"
   },
   {
     "id": "item",
-    "img": "/img/homepage/comment.png",
+    "img": "/img/homepage/comment.webp",
     "alt": "comment"
   },
   {
     "id": "item",
-    "img": "/img/homepage/fran.png",
+    "img": "/img/homepage/fran.webp",
     "alt": "fran"
   }
 ],
 [
   {
     "id": "item-2",
-    "img": "/img/homepage/jonas.jpeg",
+    "img": "/img/homepage/jonas.webp",
     "alt": "jonas"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/slack.png",
+    "img": "/img/homepage/slack.webp",
     "alt": "slack"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/missy.jpeg",
+    "img": "/img/homepage/missy.webp",
     "alt": "missy"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/check.png",
+    "img": "/img/homepage/check.webp",
     "alt": "check"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/eve-and-chan.png",
+    "img": "/img/homepage/eve-and-chan.webp",
     "alt": "eve-chan"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/maciej.png",
+    "img": "/img/homepage/maciej.webp",
     "alt": "maciej"
   },
   {
     "id": "item-2",
-    "img": "/img/homepage/git.png",
+    "img": "/img/homepage/git.webp",
     "alt": "git"
   }
 ],
 [
   {
     "id": "item-3",
-    "img": "/img/homepage/ace.jpeg",
+    "img": "/img/homepage/ace.webp",
     "alt": "ace"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/star.png",
+    "img": "/img/homepage/star.webp",
     "alt": "star"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/barbano.jpeg",
+    "img": "/img/homepage/barbano.webp",
     "alt": "barbano"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/dale.jpeg",
+    "img": "/img/homepage/dale.webp",
     "alt": "dale"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/kuda.jpeg",
+    "img": "/img/homepage/kuda.webp",
     "alt": "kuda"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/yash.jpeg",
+    "img": "/img/homepage/yash.webp",
     "alt": "yash"
   },
   {
     "id": "item-3",
-    "img": "/img/homepage/sergio.jpeg",
+    "img": "/img/homepage/sergio.webp",
     "alt": "sergio"
   }
 ]
