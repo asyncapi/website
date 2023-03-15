@@ -28,6 +28,7 @@ Some examples of Gender Neutral Language are -
 - Using “Chairperson” instead of “Chairman” or “Chairwoman”.
 - Using "people", "guests" or "folks" instead of "ladies and gentlemen".
 - Using "Mx" or "Ms" instead of using "Mr" or "Mrs".
+- Avoid using sterotypes such as linking "male" with "strength", "women" with "care work", "male homosexuality" with "sensitivity".
 
 ## 3. People first language 
 
