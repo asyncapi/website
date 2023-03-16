@@ -32,9 +32,6 @@ function generateEditLink(post) {
 
   }
 
-
-
-
 export default function DocsLayout({ post, navItems = {}, children }) {
   const posts = getAllPosts()
   if (!post) return <ErrorPage statusCode={404} />
