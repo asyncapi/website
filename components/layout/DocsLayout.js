@@ -16,14 +16,11 @@ import AnnouncementHero from '../campaigns/AnnoucementHero'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import { getAllPosts } from '../../lib/api'
-import editOptions from '../../config/edit-button-config.json'
+import editOptions from '../../config/edit-page-config.json'
 
 function generateEditLink(post) {
 
   var target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
-
-  console.log(post.slug)
-  console.log(target)
 
   if(target.value==""){
     return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
