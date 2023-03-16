@@ -3,6 +3,7 @@
 		"name": "Aayush Sahu",
 		"github": "aayushmau5",
 		"linkedin": "aayushmau5",
+		"slack": "U01QRHR1ABH",
 		"twitter": "aayushmau5",
 		"availableForHire": false,
 		"repos": [
@@ -10,9 +11,21 @@
 		]
 	},
 	{
+		"name": "Abir Pal",
+		"linkedin": "imabp",
+		"slack": "U01S8EQ9LQ2",
+		"twitter": "imabptweets",
+		"github":"imabp",
+		"availableForHire": false,
+		"repos": [
+			 "problem"
+		]
+	},
+	{
 		"name": "Akshat Nema",
 		"github": "akshatnema",
 		"linkedin": "akshat-nema",
+		"slack": "U02TAMG2VKN",
 		"twitter": "AksNema",
 		"availableForHire": true,
 		"repos": [
@@ -23,6 +36,7 @@
 		"name": "Anand Sunderraman",
 		"github": "anandsunderraman",
 		"linkedin": "anand-sunderraman-a6b7a131",
+		"slack": "U0231F9KXNK",
 		"availableForHire": false,
 		"repos": [
 			"go-watermill-template"
@@ -32,6 +46,7 @@
 		"name": "Arjun Garg",
 		"github": "arjungarg07",
 		"linkedin": "arjungarg17",
+		"slack": "U01QX79S734",
 		"twitter": "ArjunGarg07",
 		"availableForHire": true,
 		"repos": [
@@ -41,6 +56,7 @@
 	{
 		"name": "Cameron Rushton",
 		"github": "CameronRushton",
+		"slack": "U01DVKKAV5K",
 		"availableForHire": false,
 		"company": "Solace",
 		"repos": [
@@ -53,6 +69,7 @@
 		"name": "Dale Lane",
 		"github": "dalelane",
 		"linkedin": "dalelane",
+		"slack": "U01EYAFR5BR",
 		"twitter": "dalelane",
 		"availableForHire": false,
 		"company": "IBM",
@@ -66,6 +83,7 @@
 		"name": "Emiliano Zublena",
 		"github": "emilianozublena",
 		"linkedin": "emilianozublena",
+		"slack": "U01LYC8PW0M",
 		"availableForHire": false,
 		"repos": [
 			"asyncapi-php-template"
@@ -74,6 +92,7 @@
 	{
 		"name": "Fran Méndez",
 		"github": "fmvilas",
+		"slack": "U34F2JRRS",
 		"availableForHire": false,
 		"company": "Postman",
 		"linkedin": "fmvilas",
@@ -98,6 +117,7 @@
 		"name": "Gerald Loeffler",
 		"github": "GeraldLoeffler",
 		"linkedin": "geraldloeffler",
+		"slack": "U01P5QDLP0X",
 		"availableForHire": false,
 		"company": "Salesforce",
 		"repos": [
@@ -108,6 +128,7 @@
 		"name": "Jonas Lagoni",
 		"github": "jonaslagoni",
 		"linkedin": "jonaslagoni",
+		"slack": "UQ2ANBG1E",
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
@@ -126,7 +147,9 @@
 		"github": "KhudaDad414",
 		"twitter": "KhudaDadNomani",
 		"linkedin": "khudadadnomani",
-		"availableForHire": true,
+		"slack": "U01RVRD1TCL",
+		"availableForHire": false,
+		"company": "Postman",
 		"repos": [
 			"optimizer",
 			"bindings"
@@ -137,6 +160,7 @@
 		"github": "lbroudoux",
 		"twitter": "lbroudoux",
 		"linkedin": "laurentbroudoux",
+		"slack": "U018NLDV5E1",
 		"availableForHire": false,
 		"repos": [
 			"bindings"
@@ -146,6 +170,7 @@
 		"name": "Ludovic Dussart",
 		"github": "m3lkior",
 		"linkedin": "ludovic-dussart-846a8063",
+		"slack": "U01BM49KL3Z",
 		"twitter": "ldussart",
 		"availableForHire": false,
 		"company": "Ineat",
@@ -157,6 +182,7 @@
 		"name": "Lukasz Gornicki",
 		"github": "derberg",
 		"linkedin": "lukasz-gornicki-a621914",
+		"slack": "UD698Q5LM",
 		"twitter": "derberq",
 		"availableForHire": false,
 		"company": "Postman",
@@ -186,6 +212,7 @@
 		"github": "magicmatatjahu",
 		"availableForHire": false,
 		"linkedin": "maciej-urbańczyk-909547164",
+		"slack": "U01EB02BP7A",
 		"company": "Postman",
 		"repos": [
 			"asyncapi-react",
@@ -211,6 +238,7 @@
 		"linkedin": "acebuild",
 		"github": "AceTheCreator",
 		"twitter": "_acebuild",
+		"slack": "U01RWDD69PZ",
 		"company": "Postman",
 		"availableForHire": false,
 		"repos": [
@@ -221,6 +249,7 @@
 		"name": "Michael Davis",
 		"github": "damaru-inc",
 		"availableForHire": false,
+		"slack": "UH3B166TD",
 		"company": "Solace",
 		"repos": [
 			"java-spring-cloud-stream-template",
@@ -232,6 +261,7 @@
 		"name": "Missy Turco",
 		"github": "mcturco",
 		"twitter": "missyturco",
+		"slack":"U02JVEQ6S9W",
 		"linkedin": "missy-turco-a476a6126",
 		"availableForHire": false,
 		"company": "Postman",
@@ -246,6 +276,7 @@
 		"name": "Nektarios Fifes",
 		"github": "NektariosFifes",
 		"linkedin": "nektarios-fifes-372740220",
+		"slack": "U01SE93Q48N",
 		"availableForHire": true,
 		"repos": [
 			"simulator"
@@ -254,6 +285,7 @@
 	{
 		"name": "Pavel Bodiachevskii",
 		"github": "Pakisan",
+		"slack": "U0132LQU8C9",
 		"twitter": "pbodiachevskii",
 		"availableForHire": false,
 		"repos": [
@@ -261,9 +293,21 @@
 		]
 	},
 	{
+		"name": "Pratik Haldankar",
+		"github": "pratik2315",
+		"slack": "U03ADC8FD2S",
+		"linkedin": "pratik-haldankar-1b237a205",
+		"twitter": "PratikHaldankr",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Richard Coppen",
 		"github": "rcoppen",
 		"linkedin": "richard-coppen",
+		"slack": "U01L3FH3BUH",
 		"availableForHire": false,
 		"company": "IBM",
 		"repos": [
@@ -274,6 +318,7 @@
 		"name": "Sergio Moya",
 		"github": "smoya",
 		"linkedin": "smoya",
+		"slack": "UN22ZTLHG",
 		"twitter": "smoyac",
 		"availableForHire": false,
 		"company": "Postman",
@@ -294,6 +339,7 @@
 	{
 		"name": "Souvik De",
 		"github": "Souvikns",
+		"slack": "U01SGCZMJKW",
 		"twitter": "souvik_ns",
 		"linkedin": "souvik-de-a2b941169",
 		"availableForHire": false,
@@ -307,17 +353,21 @@
 		"name": "Alejandra Quetzalli",
 		"github": "alequetzalli",
 		"twitter": "QuetzalliAle",
+		"slack": "U02AKC14WAJ",
 		"linkedin": "alejandra-quetzalli",
 		"availableForHire": false,
 		"company": "Postman",
 		"repos": [
-			"website"
+			"website",
+			"training",
+			"community"
 		]
 	},
 	{
 		"name": "David Pereira",
 		"github": "BOLT04",
 		"twitter": "BOLT2938",
+		"slack": "U02EC8BT0TX",
 		"linkedin": "josé-david-pereira-13ba5315a",
 		"availableForHire": false,
 		"company": "Create IT",
@@ -328,6 +378,7 @@
 	{
 		"name": "Daniel Raper",
 		"github": "dan-r",
+		"slack": "U02FP8WBFQE",
 		"linkedin": "danielr",
 		"availableForHire": false,
 		"company": "IBM",
@@ -340,6 +391,7 @@
 		"github": "KieranM1999",
 		"linkedin": "kieran-murphy-175b0412b",
 		"availableForHire": false,
+		"slack": "U02FT2TKM37",
 		"company": "IBM",
 		"repos": [
 			"java-template"
@@ -349,6 +401,7 @@
 		"name": "Tom Jefferson",
 		"github": "JEFFLUFC",
 		"linkedin": "t-jefferson",
+		"slack": "U02FPPCEH6H",
 		"availableForHire": false,
 		"company": "IBM",
 		"repos": [
@@ -359,6 +412,7 @@
 		"name": "Lewis Relph",
 		"github": "lewis-relph",
 		"availableForHire": false,
+		"slack": "U02G8MDDEF3",
 		"company": "IBM",
 		"repos": [
 			"java-template"
@@ -368,6 +422,7 @@
 		"name": "David Boyne",
 		"github": "boyney123",
 		"twitter": "boyney123",
+		"slack": "U020GN9C6FM",
 		"availableForHire": false,
 		"company": "AWS",
 		"repos": [
@@ -380,6 +435,7 @@
 		"github": "Tenischev",
 		"linkedin": "semen-tenishchev",
 		"availableForHire": true,
+		"slack": "U011D1DAU6S",
 		"repos": [
 			"java-spring-template"
 		]
@@ -387,6 +443,7 @@
 	{
 		"name": "Samridhi Agrawal",
 		"github": "Samridhi-98",
+		"slack": "U02T2MY9W5T",
 		"linkedin": "samridhi-agrawal-1713201ab",
 		"availableForHire": false,
 		"company": "ThoughtWorks",
@@ -398,6 +455,7 @@
 		"name": "Debajyoti Halder",
 		"github": "ron-debajyoti",
 		"twitter": "rondebajyoti",
+		"slack": "U02UK9RUPGQ",
 		"linkedin": "rondebajyoti",
 		"availableForHire": false,
 		"company": "Narvar",
@@ -409,6 +467,7 @@
 		"name": "Ivan Garcia Sainz-Aja",
 		"github": "ivangsa",
 		"linkedin": "ivangarciasainzaja",
+		"slack": "UTCN3ET4M",
 		"availableForHire": false,
 		"company": "SNGULAR",
 		"repos": [
@@ -416,9 +475,21 @@
 		]
 	},
 	{
+		"name": "Florence Njeri",
+		"github": "Florence-Njeri",
+		"linkedin": "florencenjeri",
+		"slack": "U03D18YKX2M",
+		"twitter": "njericodes",
+		"availableForHire": true,
+		"repos": [
+			"generator"
+		]
+	},
+	{
 		"name": "Jeremy Whitlock",
 		"github": "whitlockjc",
 		"linkedin": "whitlockjc",
+		"slack": "U03HBC08EBB",
 		"twitter": "whitlockjc",
 		"availableForHire": false,
 		"company": "Google",
@@ -430,6 +501,7 @@
 		"name": "Vladimír Gorej",
 		"github": "char0n",
 		"linkedin": "vladimirgorej",
+		"slack": "U03NV5L4S49",
 		"twitter": "vladimirgorej",
 		"availableForHire": false,
 		"company": "SmartBear",
@@ -442,9 +514,56 @@
 	{
 		"name": "Viacheslav Turovskyi",
 		"github": "aeworxet",
+		"slack": "U01G3U01SVC",
 		"availableForHire": false,
 		"repos": [
 			"bundler"
+		]
+	},
+	{
+		"name": "Alexander Wichmann",
+		"github": "VisualBean",
+		"linkedin": "alexcarlsen",
+		"slack": "U04C58GB8TF",
+		"availableForHire": false,
+		"company": "The LEGO Group",
+		"repos": [
+			"bindings"
+		]
+	},
+	{
+		"name": "Louis Xhaferi",
+		"github": "LouisXhaferi",
+		"slack": "U04KYP1BH09",
+		"linkedin": "louis-xhaferi-45608b1a3",
+		"availableForHire": false,
+		"company": "Mercedes-Benz Tech Innovation",
+		"repos": [
+			"modelina"
+		]
+	},
+	{
+		"name": "Barbaño González",
+		"linkedin": "barbano-gonzalez-moreno",
+		"twitter": "BarbanoGonzalez",
+		"github":"Barbanio",
+		"slack":"U01J42QDSLU",
+		"availableForHire": false,
+		"company": "Postman",
+		"repos": [
+			 "training",
+			 "community"
+		]
+	},
+		{
+		"name": "Kenneth Aasan",
+		"github": "kennethaasan",
+		"slack": "U037S2HK4TS",
+		"twitter": "kennethaasan",
+		"availableForHire": false,
+		"company": "Sportradar",
+		"repos": [
+			"modelina"
 		]
 	}
 ]

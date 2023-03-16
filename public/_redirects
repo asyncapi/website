@@ -14,15 +14,17 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /docs/getting-started/asyncapi-documents /docs/tutorials/getting-started/asyncapi-documents 301!
 /docs/getting-started/servers /docs/tutorials/getting-started/servers 301!
 /docs/getting-started/security /docs/tutorials/getting-started/security 301!
+/docs/tutorials/streetlights /docs/tutorials/create-asyncapi-document 301!
 /docs/community/tooling /docs/tools 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/reference/specification/latest /docs/reference/specification/v2.5.0 302!
+/docs/reference/specification/latest /docs/reference/specification/v2.6.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/reference/specification/3.0.0-next-major-spec.5 /docs/reference/specification/v3.0.0-next-major-spec.5 302!
+/docs/reference/specification/3.0.0-next-major-spec.10 /docs/reference/specification/v3.0.0-next-major-spec.10 302!
+/docs/reference/specification/2.6.0 /docs/reference/specification/v2.6.0 302!
 /docs/reference/specification/2.5.0 /docs/reference/specification/v2.5.0 302!
 /docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
 /docs/reference/specification/2.3.0 /docs/reference/specification/v2.3.0 302!

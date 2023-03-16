@@ -17,6 +17,7 @@ import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
 import GoldSponsors from '../components/GoldSponsors'
+import SilverSponsors from '../components/SilverSponsors'
 import SupportUs from '../components/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
@@ -130,7 +131,7 @@ function HomePage() {
                       </li>
                       <li>
                         <SubscribeButton
-                          href="/newsletter"
+                          href="/community/meetings"
                           className="mt-2 md:mt-0 md:ml-2"
                         />
                       </li>
@@ -165,7 +166,7 @@ function HomePage() {
             <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
-          <Container className="text-center pyb-6" wide as="section">
+          <Container className="text-center pb-6" wide as="section">
             <Heading
               level="h3"
               typeStyle="heading-lg"
@@ -175,6 +176,18 @@ function HomePage() {
             </Heading>
             <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
+          
+          <Container className="text-center pyb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Silver Sponsors
+            </Heading>
+            <SilverSponsors className="mt-4" showSupportBanner={false} />
+          </Container>
+
 
           <Container className="text-center py-6" wide as="section">
             <Heading

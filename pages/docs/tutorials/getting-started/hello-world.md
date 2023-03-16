@@ -10,7 +10,7 @@ weight: 30
 Let's define an application that's capable of receiving a "hello {name}" message.
 
 <CodeBlock>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -26,7 +26,7 @@ channels:
 Let's get into the details of this sample specification:
 
 <CodeBlock highlightedLines={[1]}>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -39,10 +39,10 @@ channels:
           pattern: '^hello .+$'`}
 </CodeBlock>
 
-The first line of the specification starts with the document type `asyncapi` and the version (2.5.0). This line doesn't have to be the first one, but it's a recommended practice.
+The first line of the specification starts with the document type `asyncapi` and the version (2.6.0). This line doesn't have to be the first one, but it's a recommended practice.
 
 <CodeBlock highlightedLines={[2,3,4]}>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -58,7 +58,7 @@ channels:
 The `info` object contains the minimum required information about the application. It contains the `title`, which is a memorable name for the API, and the `version`. While it's not mandatory, it's strongly recommended to change the version whenever you make changes to the API.
 
 <CodeBlock highlightedLines={[5,6,7,8,9,10,11]}>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -76,7 +76,7 @@ The `channels` section of the specification houses all of the mediums where mess
 In this example, you only have one channel called `hello`. The sample application subscribes to this channel to receive `hello {name}` messages.
 
 <CodeBlock highlightedLines={[6,7,8,9]}>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -93,7 +93,7 @@ You can read the highlighted lines as:
 > This is the `payload` of the `message` that the `Hello world application` is subscribed to. You can `publish` the `message` to the `hello` channel and the `Hello world application` will receive it.
 
 <CodeBlock highlightedLines={[9,10,11]}>
-{`asyncapi: 2.5.0
+{`asyncapi: 2.6.0
 info:
   title: Hello world application
   version: '0.1.0'
@@ -107,20 +107,3 @@ channels:
 </CodeBlock>
 
 The `payload` object defines how the message must be structured. In this example, the message must be a string and match the given regular expression in the format `hello {name}` string.
-
----
-
-<DocsButton
-  suggestions={[
-    {
-      href: '/docs/tutorials/getting-started/coming-from-openapi',
-      title: 'Coming from OpenAPI',
-      type:'back',
-    },
-    {
-      href: '/docs/tutorials/getting-started/asyncapi-documents',
-      title: 'AsyncAPI Documents',
-      type:'next',
-    }
-  ]}
-/>

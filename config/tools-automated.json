@@ -1,1 +1,352 @@
-{"Code-first tools":{"description":"The following is a list of tools that generate AsyncAPI documents from your code.","toolsList":[]},"Code Generators":{"description":"The following is a list of tools that generate code from an AsyncAPI document; not the other way around.","toolsList":[{"title":"Sample Tool","description":"Tool for testing","links":{"websiteUrl":"https://akshatnema.netlify.app","docsUrl":"","repoUrl":"https://github.com/akshatnema/Login-Registration-project"},"filters":{"language":"javascript","technology":["react"],"categories":["code generator"],"hasCommercial":false,"isAsyncAPIOwner":false}}]},"Converters":{"description":"The following is a list of tools that do not yet belong to any specific category but are also useful for the community.","toolsList":[]},"Directories":{"description":"The following is a list of directories that index public AsyncAPI documents.","toolsList":[]},"Documentation Generators":{"description":"The following is a list of tools that generate human-readable documentation from an AsyncAPI document.","toolsList":[]},"UI components":{"description":"The following is a list of UI components to view AsyncAPI documents.","toolsList":[]},"DSL":{"description":"Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.","toolsList":[]},"Frameworks":{"description":"The following is a list of API/application frameworks that make use of AsyncAPI.","toolsList":[]},"GitHub Actions":{"description":"The following is a list of GitHub Actions that you can use in your workflows","toolsList":[]},"Mocking and Testing":{"description":"The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.","toolsList":[]},"Validators":{"description":"The following is a list of tools that validate AsyncAPI documents.","toolsList":[]},"Compare tools":{"description":"The following is a list of tools that compare AsyncAPI documents.","toolsList":[]},"Others":{"description":"The following is a list of tools that comes under Other category","toolsList":[]}}
+{
+  "APIs": {
+    "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
+    "toolsList": []
+  },
+  "Code-first tools": {
+    "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
+    "toolsList": []
+  },
+  "Code Generators": {
+    "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
+    "toolsList": [
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
+  },
+  "Converters": {
+    "description": "The following is a list of tools that do not yet belong to any specific category but are also useful for the community.",
+    "toolsList": []
+  },
+  "Directories": {
+    "description": "The following is a list of directories that index public AsyncAPI documents.",
+    "toolsList": []
+  },
+  "Documentation Generators": {
+    "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
+    "toolsList": []
+  },
+  "Editors": {
+    "description": "The following is a list of editors or related tools that allow editing of AsyncAPI document.",
+    "toolsList": []
+  },
+  "UI components": {
+    "description": "The following is a list of UI components to view AsyncAPI documents.",
+    "toolsList": [
+      {
+        "title": "AsyncAPI React component",
+        "description": "React component for rendering documentation from your specification in real-time in the browser. It also provides a WebComponent and bundle for Angular and Vue",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/asyncapi-react"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "React js",
+            "WebComponents"
+          ],
+          "categories": [
+            "ui-component"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "DSL": {
+    "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
+    "toolsList": [
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
+  },
+  "Frameworks": {
+    "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
+    "toolsList": []
+  },
+  "GitHub Actions": {
+    "description": "The following is a list of GitHub Actions that you can use in your workflows",
+    "toolsList": [
+      {
+        "title": "GitHub Action for Generator",
+        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI Generator"
+          ],
+          "categories": [
+            "github-action"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "Mocking and Testing": {
+    "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
+    "toolsList": [
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
+  },
+  "Validators": {
+    "description": "The following is a list of tools that validate AsyncAPI documents.",
+    "toolsList": []
+  },
+  "Compare tools": {
+    "description": "The following is a list of tools that compare AsyncAPI documents.",
+    "toolsList": [
+      {
+        "title": "AsyncAPI Diff",
+        "description": "Diff is a library that compares two AsyncAPI Documents and provides information about the differences by pointing out explicitly information like breaking changes.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/diff"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "compare-tool"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "CLIs": {
+    "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
+    "toolsList": [
+      {
+        "title": "ZenWave SDK",
+        "description": "DDD and API-First for Event-Driven Microservices",
+        "links": {
+          "websiteUrl": "https://zenwave360.github.io/",
+          "docsUrl": "https://zenwave360.github.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/",
+          "repoUrl": "https://github.com/zenwave360/zenwave-sdk"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven",
+            "CLI",
+            "Spring Cloud Streams",
+            "JHipster JDL"
+          ],
+          "categories": [
+            "code-generator",
+            "dsl",
+            "mocking-and-testing",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "Bundlers": {
+    "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
+    "toolsList": [
+      {
+        "title": "AsyncAPI Bundler",
+        "description": "Combine multiple AsyncAPI specification files into one.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/bundler"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "bundler"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "IDE Extensions": {
+    "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
+    "toolsList": [
+      {
+        "title": "jAsyncAPI - IDEA plugin",
+        "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
+        "links": {
+          "websiteUrl": "https://plugins.jetbrains.com/plugin/15673-asyncapi",
+          "docsUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin#usage",
+          "repoUrl": "https://github.com/asyncapi/jasyncapi-idea-plugin"
+        },
+        "filters": {
+          "language": "Kotlin",
+          "technology": [
+            "JetBrains",
+            "IntelliJ IDEA"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+        },
+        "filters": {
+          "technology": [
+            "VSCode",
+            "SmartPaste"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  },
+  "Others": {
+    "description": "The following is a list of tools that comes under Other category.",
+    "toolsList": [
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  }
+}

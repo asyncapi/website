@@ -15,9 +15,9 @@ import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
 import Figure from '../components/Figure'
+import Profile from '../components/Profile'
 import GeneratorInstallation from '../components/GeneratorInstallation'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import DocsButton from '../components/buttons/DocsButton';
 import { DocsCards } from '../components/docs/DocsCards'
 
 let mermaidInitialized = false;
@@ -37,7 +37,7 @@ function getMDXComponents() {
     h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h2: props => <h2 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h3: props => <h3 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-medium tracking-heading text-gray-900 text-lg`} />,
-    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-medium text-lg text-gray-900`} />,
+    h4: props => <h4 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-medium text-md text-gray-900`} />,
     h5: props => <h5 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-md font-bold`} />,
     h6: props => <h6 {...props} className={`${props.className || ''} my-4 font-heading antialiased text-sm font-bold text-gray-900 uppercase`} />,
     blockquote: props => <blockquote {...props} className={`${props.className || ''} italic font-body antialiased text-gray-700 border-l-4 border-gray-400 pl-4 pt-1 pb-1 pr-1 my-4 bg-white`} />,
@@ -67,7 +67,6 @@ function getMDXComponents() {
     CodeBlock,
     ChapterSuggestions,
     YouTube,
-    DocsButton,
     Remember,
     Warning,
     Sponsors,
@@ -88,7 +87,8 @@ function getMDXComponents() {
     TwitterMomentShare,
     TwitterDMButton,
     TwitterVideoEmbed,
-    TwitterOnAirButton
+    TwitterOnAirButton,
+    Profile
   }
 }
 

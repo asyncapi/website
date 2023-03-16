@@ -1,19 +1,253 @@
 {
+    "APIs": {
+        "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
+        "toolsList": [
+            {
+                "title": "AsyncAPI-Directory by APIs.guru",
+                "description": "Directory of asynchronous API specifications in AsyncAPI format.",
+                "links": {
+                    "websiteUrl": "https://apis.guru/asyncapi-directory/",
+                    "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js", "Liquid"],
+                    "categories": ["api", "directory"]
+                }
+            },
+            {
+                "title": "API Tracker - AsyncAPI specs",
+                "description": "Explore APIs and companies with public AsyncAPI specifications.",
+                "links": {
+                    "websiteUrl": "https://apitracker.io/specifications/asyncapi"
+                },
+                "filters": {
+                    "categories": ["api", "directory"]
+                }
+            }
+        ]
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Go AsyncAPI",
+                "description": "This library helps to create AsyncAPI spec from your Go message structures. It uses reflection to translate Go structures in JSON Schema definitions and arrange them in AsyncAPI schema.",
+                "links": {
+                    "repoUrl": "https://github.com/swaggest/go-asyncapi"
+                },
+                "filters": {
+                    "language": "Go",
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Saunter",
+                "description": "Saunter is an AsyncAPI documentation generator for dotnet. Generates (and hosts) an AsyncAPI schema document from your code.",
+                "links": {
+                    "repoUrl": "https://github.com/tehmantra/saunter"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": [".NET", "ASP.NET"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Java AsyncAPI",
+                "description": "This tool stores modules, which simplifies interacting with AsyncAPI in jvm ecosystem.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/jasyncapi"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Kotlin", "Maven"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Kotlin AsyncAPI",
+                "description": "The Kotlin AsyncAPI project aims to provide convenience tools for generating and serving AsyncAPI documentation. The core of this project is a Kotlin DSL for building the specification in a typesafe way.",
+                "links": {
+                    "repoUrl": "https://github.com/OpenFolder/kotlin-asyncapi"
+                },
+                "filters": {
+                    "language": "Kotlin",
+                    "technology": ["Spring Boot", "Maven"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Springwolf",
+                "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://springwolf.github.io/",
+                    "repoUrl": "https://github.com/springwolf/springwolf-core"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "KnstEventBus",
+                "description": "AsyncApi code-first tools for c#. Generates document and view.",
+                "links": {
+                    "repoUrl": "https://github.com/d0972058277/KnstEventBus"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": ["ASP.NET", ".NET"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "sttp tapir",
+                "description": "Library for describing HTTP endpoints, and then interpreting them as a server, client, or documentation",
+                "links": {
+                    "websiteUrl": "https://tapir.softwaremill.com/",
+                    "repoUrl": "https://github.com/softwaremill/tapir"
+                },
+                "filters": {
+                    "language": "Scala",
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "EventBridge Atlas",
+                "description": "Tool that translates your AWS EventBridge Schemas into an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://eventbridge-atlas.netlify.app/",
+                    "repoUrl": "https://github.com/boyney123/eventbridge-atlas"
+                },
+                "filters": {
+                    "technology": ["Node.js"],
+                    "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "Neuroglia AsyncAPI",
+                "description": "A .NET SDK for the Async API specification. Automatically generates and serves AsyncAPI documents based on your code. Includes fluent-builders to create AsyncAPI documents from scratch, and provides a web-based GUI to browse generated documents.",
+                "links": {
+                    "repoUrl": "https://github.com/neuroglia-io/AsyncApi"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": [".NET"],
+                    "categories": ["code-first"]
+                }
+            }
+        ]
     },
     "Code Generators": {
         "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI Generator",
+                "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
+                "links": {
+                    "docsUrl": "https://www.asyncapi.com/docs/tools/generator",
+                    "repoUrl": "https://github.com/asyncapi/generator"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["code-generator", "documentation-generator"]
+                }
+            },
+            {
+                "title": "Node-RED AsyncAPI plugin",
+                "description": "A plugin for generating and configuring nodes for Kafka, MQTT, AMQP, etc. automatically from an AsyncAPI specification.",
+                "links": {
+                    "repoUrl": "https://github.com/dalelane/node-red-contrib-plugin-asyncapi"
+                },
+                "filters": {
+                    "technology": ["Node-RED"],
+                    "categories": ["code-generator"]
+                }
+            },
+            {
+                "title": "MultiAPI Generator",
+                "description": "This is a plugin designed to help developers automatizing the creation of code classes from YML files based on AsyncApi and OpenAPI. It is presented in 2 flavours Maven and Gradle",
+                "links": {
+                    "repoUrl": "https://github.com/sngular/scs-multiapi-plugin"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Groovy", "Maven"],
+                    "categories": ["code-generator"]
+                }
+            }
+        ]
     },
     "Converters": {
         "description": "The following is a list of tools that do not yet belong to any specific category but are also useful for the community.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Converter",
+                "description": "Converts old versions of AsyncAPI files into the latest version.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-js"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Node.js"],
+                    "categories": ["converter"]
+                }
+            },
+            {
+                "title": "Converter-Go",
+                "description": "The AsyncAPI Converter converts AsyncAPI documents from versions 1.0.0, 1.1.0 and 1.2.0 to version 2.0.0. It supports both json and yaml formats on input and output. By default, the AsyncAPI Converter converts a document into the json format.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                },
+                "filters": {
+                    "language": "Go",
+                    "categories": ["converter"]
+                }
+            },
+            {
+                "title": "AsyncAPI-format",
+                "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
+                "links": {
+                    "repoUrl": "https://github.com/thim81/asyncapi-format"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["converter", "cli"]
+                }
+            }
+        ]
     },
     "Directories": {
         "description": "The following is a list of directories that index public AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI-Directory by APIs.guru",
+                "description": "Directory of asynchronous API specifications in AsyncAPI format.",
+                "links": {
+                    "websiteUrl": "https://apis.guru/asyncapi-directory/",
+                    "repoUrl": "https://github.com/APIs-guru/asyncapi-directory"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js", "Liquid"],
+                    "categories": ["api", "directory"]
+                }
+            },
+            {
+                "title": "API Tracker - AsyncAPI specs",
+                "description": "Explore APIs and companies with public AsyncAPI specifications.",
+                "links": {
+                    "websiteUrl": "https://apitracker.io/specifications/asyncapi"
+                },
+                "filters": {
+                    "categories": ["api", "directory"]
+                }
+            }
+        ]
     },
     "Documentation Generators": {
         "description": "The following is a list of tools that generate human-readable documentation from an AsyncAPI document.",
@@ -25,49 +259,364 @@
                     "repoUrl": "https://gitlab.com/djencks/asyncapi-asciidoc-template"
                 },
                 "filters": {
-                    "language": "javascript",
+                    "language": "JavaScript",
                     "technology": [
                         "react"
                     ],
                     "categories": [
-                        "documentation generator"
+                        "documentation-generator"
                     ],
-                    "hasCommercial": false,
-                    "isAsyncAPIOwner": false
+                    "hasCommercial": false
+                }
+            },
+            {
+                "title": "Springwolf",
+                "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
+                "links": {
+                    "websiteUrl": "https://springwolf.github.io/",
+                    "repoUrl": "https://github.com/springwolf/springwolf-core"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "KnstEventBus",
+                "description": "AsyncApi code-first tools for c#. Generates document and view.",
+                "links": {
+                    "repoUrl": "https://github.com/d0972058277/KnstEventBus"
+                },
+                "filters": {
+                    "language": "C#",
+                    "technology": ["ASP.NET", ".NET"],
+                    "categories": ["code-first", "documentation-generator"]
+                }
+            },
+            {
+                "title": "AsyncAPI Generator",
+                "description": "Generator is a tool that you can use to generate whatever you want basing on the AsyncAPI specification file as an input.",
+                "links": {
+                    "docsUrl": "https://www.asyncapi.com/docs/tools/generator",
+                    "repoUrl": "https://github.com/asyncapi/generator"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js", "Markdown"],
+                    "categories": ["code-generator", "documentation-generator"]
+                }
+            },
+            {
+                "title": "Bump.sh",
+                "description": "OpenAPI 2 & 3 / AsyncAPI 2 documentation generator, with automatic changelog and visual diff.",
+                "links": {
+                    "websiteUrl": "https://bump.sh/"
+                },
+                "filters": {
+                    "categories": ["documentation-generator"],
+                    "hasCommercial": true
+                }
+            },
+            {
+                "title": "Widdershins",
+                "description": "OpenAPI 3.0 / Swagger 2.0 / AsyncAPI 1.0 definition to Slate / Shins compatible markdown.",
+                "links": {
+                    "websiteUrl": "https://mermade.github.io/reslate/",
+                    "repoUrl": "https://github.com/Mermade/widdershins"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js", "Shell"],
+                    "categories": ["documentation-generator"]
+                }
+            },
+            {
+                "title": "Cupid",
+                "description": "A library that focuses on finding and analyzing the relationships between AsyncAPI documents. It outputs a map of the system architecture.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/cupid"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["documentation-generator"]
                 }
             }
         ]
     },
+    "Editors": {
+        "description": "The following is a list of editors or related tools that allow editing of AsyncAPI document.",
+        "toolsList": []
+    },
     "UI components": {
         "description": "The following is a list of UI components to view AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Api-Diff-Viewer",
+                "description": "React component to view the difference between two Json based API documents. Supported specifications: JsonSchema, OpenAPI 3.x, AsyncAPI 2.x.",
+                "links": {
+                    "repoUrl": "https://github.com/udamir/api-diff-viewer"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["React js", "Babel", "Storybook"],
+                    "categories": ["ui-component"]
+                }
+            }
+        ]
     },
     "DSL": {
         "description": "Writing YAML by hand is no fun, and maybe you don't want a GUI, so use a Domain Specific Language to write AsyncAPI in your language of choice.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "BOATS",
+                "description": "Compile your single AsyncAPI file from multiple YAML files with BOATS and with the help of the template engine Nunjucks, plus a many extra helpers to automate much of the donkey work.",
+                "links": {
+                    "repoUrl": "https://github.com/j-d-carmichael/boats"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Node.js"],
+                    "categories": ["dsl"]
+                }
+            }
+        ]
     },
     "Frameworks": {
         "description": "The following is a list of API/application frameworks that make use of AsyncAPI.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Asynction",
+                "description": "SocketIO server framework driven by the AsyncAPI specification. Asynction guarantees that your API will work in accordance with its AsyncAPI documentation. Built on top of Flask-SocketIO.",
+                "links": {
+                    "websiteUrl": "https://pypi.org/project/asynction/",
+                    "repoUrl": "https://github.com/dedoussis/asynction"
+                },
+                "filters": {
+                    "language": "Python",
+                    "technology": ["Flask"],
+                    "categories": ["framework"]
+                }
+            }
+        ]
     },
     "GitHub Actions": {
         "description": "The following is a list of GitHub Actions that you can use in your workflows",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI GitHub Action",
+                "description": "This action validates if the AsyncAPI schema file is valid or not.",
+                "links": {
+                    "websiteUrl": "https://github.com/marketplace/actions/asyncapi-github-action",
+                    "repoUrl": "https://github.com/WaleedAshraf/asyncapi-github-action"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["github-action", "validator"]
+                }
+            },
+            {
+                "title": "API documentation generation on Bump.sh",
+                "description": "With this GitHub Action you can automatically generate your API reference (with the changelog and diff) on Bump.sh from any AsyncAPI file.",
+                "links": {
+                    "websiteUrl": "https://github.com/marketplace/actions/api-documentation-on-bump",
+                    "repoUrl": "https://github.com/bump-sh/github-action"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "categories": ["github-action"]
+                }
+            },
+            {
+                "title": "Automated version bump for AsyncAPI documents",
+                "description": "With this GitHub Action, you can automatically bump the version based on commit messages, which is similar to what semantic-release is for NPM.",
+                "links": {
+                    "websiteUrl": "https://github.com/marketplace/actions/automated-version-bump-for-asyncapi",
+                    "repoUrl": "https://github.com/bump-sh/github-action"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["github-action"]
+                }
+            }
+        ]
     },
     "Mocking and Testing": {
         "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Microcks",
+                "description": "Mocking and testing platform for API and microservices. Turn your AsyncAPI, OpenAPI contract examples, or Postman collections into ready-to-use mocks. Use examples to simulate and validate received messages according to schema elements.",
+                "links": {
+                    "websiteUrl": "https://microcks.io/",
+                    "repoUrl": "https://github.com/microcks/microcks"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["TypeScript", "Kubernetes-Native", "Saas"],
+                    "categories": ["mocking-and-testing"]
+                }
+            },
+            {
+                "title": "Virtualan",
+                "description": "Mocking and testing platform for API and microservices. Allows you to create and setup mocks for OpenAPI and AsyncAPI contracts. Shows how to setup and create AsyncAPI GitHub Reference Examples and OpenAPI GitHub Reference Examples.",
+                "links": {
+                    "websiteUrl": "https://www.virtualan.io/index.html",
+                    "repoUrl": "https://github.com/virtualansoftware"
+                },
+                "filters": {
+                    "technology": ["Kubernetes-Native"],
+                    "categories": ["mocking-and-testing"]
+                }
+            },
+            {
+                "title": "MultiAPI Converter",
+                "description": "Use AsyncAPI definition, to generate Spring Cloud Contract producer validation or consumer stubs, using maven.",
+                "links": {
+                    "repoUrl": "https://github.com/sngular/scc-multiapi-converter"
+                },
+                "filters": {
+                    "language": "Java",
+                    "technology": ["Springboot"],
+                    "categories": ["mocking-and-testing"]
+                }
+            }
+        ]
     },
     "Validators": {
         "description": "The following is a list of tools that validate AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "AsyncAPI GitHub Action",
+                "description": "This action validates if the AsyncAPI schema file is valid or not.",
+                "links": {
+                    "websiteUrl": "https://github.com/marketplace/actions/asyncapi-github-action",
+                    "repoUrl": "https://github.com/WaleedAshraf/asyncapi-github-action"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["github-action", "validator"]
+                }
+            },
+            {
+                "title": "AsyncAPI Parser",
+                "description": "Use this package to parse and validate AsyncAPI documents —either YAML or JSON— in your Node.js or browser application. Updated bundle for the browser is always attached to the GitHub Release.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/parser-js"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["validator"]
+                }
+            },
+            {
+                "title": "asyncapi-validator",
+                "description": "It allows you to validate the schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue.",
+                "links": {
+                    "repoUrl": "https://github.com/WaleedAshraf/asyncapi-validator"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["validator"]
+                }
+            },
+            {
+                "title": "AsyncAPI Parser",
+                "description": "The AsyncAPI Parser validates AsyncAPI documents according to dedicated schemas.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/parser-go"
+                },
+                "filters": {
+                    "language": "Go",
+                    "categories": ["validator"]
+                }
+            },
+            {
+                "title": "Spectral",
+                "description": "A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v3.1, v3.0, and v2.0 as well as AsyncAPI v2.x.",
+                "links": {
+                    "repoUrl": "https://github.com/stoplightio/spectral"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["Node.js"],
+                    "categories": ["validator"]
+                }
+            },
+            {
+                "title": "AMF",
+                "description": "AMF (AML Modeling Framework) is an open-source library capable of parsing and validating AML metadata documents.",
+                "links": {
+                    "docsUrl": "https://a.ml/docs/",
+                    "repoUrl": "https://github.com/aml-org/amf"
+                },
+                "filters": {
+                    "language": "Scala",
+                    "categories": ["validator"]
+                }
+            },
+            {
+                "title": "AsyncAPI Parser Wrapper",
+                "description": "Use this library to parse and validate AsyncAPI documents — either YAML or JSON — in your Java application. It is a Java wrapper over JavaScript Parser implemented using J2V8.",
+                "links": {
+                    "repoUrl": "https://github.com/AsyncAPITools/parser-java-wrapper"
+                },
+                "filters": {
+                    "language": "Java",
+                    "categories": ["validator"]
+                }
+            }
+        ]
     },
     "Compare tools": {
         "description": "The following is a list of tools that compare AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Api-Smart-Diff",
+                "description": "It allows you to compare two API documents and classify changes. Supported API specifications: OpenAPI, AsyncAPI, JsonSchema.",
+                "links": {
+                    "repoUrl": "https://github.com/udamir/api-smart-diff"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "categories": ["compare-tool"]
+                }
+            }
+        ]
     },
     "Others": {
         "description": "The following is a list of tools that comes under Other category",
+        "toolsList": []
+    },
+    "CLIs": {
+        "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation",
+        "toolsList": [
+            {
+                "title": "AsyncAPI-format",
+                "description": "Format an AsyncAPI document by ordering, casing, formatting, and filtering fields.",
+                "links": {
+                    "repoUrl": "https://github.com/asyncapi/converter-go"
+                },
+                "filters": {
+                    "language": "JavaScript",
+                    "technology": ["Node.js"],
+                    "categories": ["converter", "cli"]
+                }
+            }
+        ]
+    },
+    "Bundlers": {
+        "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
+        "toolsList": []
+    },
+    "IDE Extensions": {
+        "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
         "toolsList": []
     }
 }

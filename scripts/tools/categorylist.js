@@ -1,6 +1,10 @@
-// const categoryList = ["generator", "code-first", "converters", "validators", "directories", "documentation generators", "dls", "frameworks", "ui components", "mocking and testing", "diff", "ci&cd", "editors"]
-
+// Various categories to define the category in which a tool has to be listed
 const categoryList = [
+    {
+        name: "APIs",
+        tag: "api",
+        description: "The following is a list of APIs that expose functionality related to AsyncAPI."
+    },
     {
         name: "Code-first tools",
         tag: "code-first",
@@ -8,7 +12,7 @@ const categoryList = [
     },
     {
         name: "Code Generators",
-        tag: "code generator",
+        tag: "code-generator",
         description: "The following is a list of tools that generate code from an AsyncAPI document; not the other way around."
     },
     {
@@ -23,12 +27,17 @@ const categoryList = [
     },
     {
         name: "Documentation Generators",
-        tag: "documentation generator",
+        tag: "documentation-generator",
         description: "The following is a list of tools that generate human-readable documentation from an AsyncAPI document."
     },
     {
+        name: "Editors",
+        tag: "editor",
+        description: "The following is a list of editors or related tools that allow editing of AsyncAPI document."
+    },
+    {
         name: "UI components",
-        tag: "ui component",
+        tag: "ui-component",
         description: "The following is a list of UI components to view AsyncAPI documents."
     },
     {
@@ -43,12 +52,12 @@ const categoryList = [
     },
     {
         name: "GitHub Actions",
-        tag: "github-actions",
+        tag: "github-action",
         description: "The following is a list of GitHub Actions that you can use in your workflows"
     },
     {
         name: "Mocking and Testing",
-        tag: "mocking and testing",
+        tag: "mocking-and-testing",
         description: "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas."
     },
     {
@@ -62,10 +71,25 @@ const categoryList = [
         description: "The following is a list of tools that compare AsyncAPI documents."
     },
     {
+        name: "CLIs",
+        tag: "cli",
+        description: "The following is a list of tools that you can work with in terminal or do some CI/CD automation."
+    },
+    {
+        name: "Bundlers",
+        tag: "bundler",
+        description: "The following is a list of tools that you can work with to bundle AsyncAPI documents."
+    },
+    {
+        name: "IDE Extensions",
+        tag: "ide-extension",
+        description: "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others"
+    },
+    {
         name: "Others",
         tag: "other",
-        description: "The following is a list of tools that comes under Other category"
-    },
+        description: "The following is a list of tools that comes under Other category."
+    }
 ]
 
 module.exports = {categoryList}

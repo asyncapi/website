@@ -2,6 +2,7 @@ import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
+import TextLink from '../../components/typography/TextLink';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -59,6 +60,8 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
+
+            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
@@ -72,6 +75,11 @@ export default function TSC() {
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
               stay as a maintainer).
+              Follow this
+              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
+                Link
+              </TextLink>
+              &nbsp;to know more!
             </p>
           </div>
           <div>
@@ -225,7 +233,14 @@ function QuestionCard() {
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <div className="my-4">Become a member!</div>
+      <div className="my-4">
+        Want to become a member?
+        Follow this
+        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
+          Link
+        </TextLink>
+        &nbsp;to know more!
+      </div>
     </li>
   );
 }
