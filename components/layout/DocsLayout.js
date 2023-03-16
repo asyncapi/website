@@ -16,13 +16,24 @@ import AnnouncementHero from '../campaigns/AnnoucementHero'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import { getAllPosts } from '../../lib/api'
+import editOptions from '../../config/edit-button-config.json'
 
 function generateEditLink(post) {
-  if (post.slug.includes('/specifications/')) {
-    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on GitHub</a>
-  } 
-  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
-}
+
+  var target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
+
+  console.log(post.slug)
+  console.log(target)
+
+  if(target.value==""){
+    return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
+  }
+  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}`} className="ml-1 underline">Edit this page on GitHub</a>
+
+  }
+
+
+
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   const posts = getAllPosts()
@@ -46,7 +57,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         )}
-        <div className="flex flex-row" id="main-content">
+        <div className="flex flex-row">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
@@ -134,3 +145,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
     </DocsContext.Provider>
   )
 }
+
+
+
