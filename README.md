@@ -129,12 +129,12 @@ This repository has the following structure:
 
 ## Connect with us 
 
-[![Slack](https://img.shields.io/badge/Slack-@asyncAPI.slack.com-yellow.svg)](https://asyncapi.slack.com)
-[![Twitter](https://img.shields.io/badge/Twitter-@asyncAPIspec-9cf.svg)](https://twitter.com/asyncapispec)
-[![LinkedIN](https://img.shields.io/badge/LinkedIn-@asyncAPI-lightgray.svg)](https://www.linkedin.com/company/asyncapi)
-[![YouTube](https://img.shields.io/badge/YouTube-@asyncAPI-red.svg)](https://www.youtube.com/c/AsyncAPI)
-[![Twitch](https://img.shields.io/badge/Twitch-@asyncAPI-blueviolet.svg)](https://www.twitch.tv/asyncapi)
-
+<p align="left">
+<a href="https://twitter.com/https://twitter.com/asyncapispec" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="asyncapispec" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/https://www.linkedin.com/company/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="asyncapi" height="30" width="40" /></a>
+<a href="https://www.youtube.com/c/https://www.youtube.com/c/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="asyncapi" height="30" width="40" /></a>
+<a href="https://www.twitch.tv/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="asyncapi" height="30" width="40" /></a>
+</p>
 
 ## Contributors ✨
 
