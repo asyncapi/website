@@ -31,7 +31,7 @@ export default function casestudies() {
             </Paragraph>
             <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
                 Feel free to submit your case study. We have a template for you. For more details
-                <TextLink href="https://www.youtube.com/watch?v=s8Px2LI2Frs" target="_blank">
+                <TextLink href="https://github.com/asyncapi/website/blob/master/README.md#case-studies" target="_blank">
                   read our FAQ
                 </TextLink>.
             </Paragraph>
