@@ -9,6 +9,9 @@ import Button from '../buttons/Button';
 import Cross from '../icons/Cross';
 
 export default function ToolDashboard() {
+    const loader = 'img/loaders/loader.png'; // preloader image for the tools
+
+    const [loading, setLoading] = useState(false); // used to handle the preloader on the page
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
     const [openFilter, setOpenFilter] = useState(false)
     // filter parameters extracted from the context
@@ -25,10 +28,19 @@ export default function ToolDashboard() {
                 setOpenFilter(false)
         }
         document.addEventListener("mousedown", checkIfClickOutside)
+        
         return () => {
             document.removeEventListener("mousedown", checkIfClickOutside)
         }
     })
+    
+    // sets the preloader on the page for 1 second
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+    }, []);
 
     // Function to update the list of tools according to the current filters applied
     const updateToolsList = () => {
@@ -145,12 +157,16 @@ export default function ToolDashboard() {
                     </span>
                 </div>
             }
-            <div className="mt-0">
+           {loading ? <div className='flex animate-pulse w-fit mx-auto my-24 gap-4 text-black'>
+          <img src={loader} className="mx-auto w-16" />
+          <div className='text-xl my-auto'>Loading Tools...</div>
+        </div> : <div className="mt-0">
                 {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
                     <img src='/img/illustrations/not-found.webp' className='w-1/2 m-auto' />
                     <div className='text-center text-lg'> Sorry, we don't have tools according to your needs. </div>
                 </div>}
             </div>
+}
         </div>
     )
 }
