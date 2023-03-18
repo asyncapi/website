@@ -1,15 +1,21 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/7fzIoGbRn0c/hqdefault.jpg",
-    "title": "Community meeting (March 7, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/629.",
-    "videoId": "7fzIoGbRn0c"
+    "image_url": "https://i.ytimg.com/vi/BiP-0zkXelw/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (March 15, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/624.",
+    "videoId": "BiP-0zkXelw"
   },
   {
     "image_url": "https://i.ytimg.com/vi/IboLZzLU40o/hqdefault.jpg",
     "title": "Career Empowerment and Embracing Equity in Tech",
     "description": "Panel discussion on the challenges women face in tech and strategies that can be put in place to improve equity and ...",
     "videoId": "IboLZzLU40o"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/7fzIoGbRn0c/hqdefault.jpg",
+    "title": "Community meeting (March 7, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/629.",
+    "videoId": "7fzIoGbRn0c"
   },
   {
     "image_url": "https://i.ytimg.com/vi/Bo3iLu7D_Qw/hqdefault.jpg",
@@ -22,11 +28,5 @@
     "title": "Triage of issues and PRs in website repo (February 28, 2023)",
     "description": "https://github.com/asyncapi/community/issues/619.",
     "videoId": "ZtUxSPIKBEI"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/hQ7dV5P1bDU/hqdefault.jpg",
-    "title": "Community meeting (February 21, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/603.",
-    "videoId": "hQ7dV5P1bDU"
   }
 ]
