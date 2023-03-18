@@ -29,7 +29,9 @@ export default function GenericLayout({
           className={`text-center m-4 ${hideBanner && 'hidden'}`}
           small={true}
         />
-        {children}
+        <div id="main-content">
+          {children}
+        </div>
       </Container>
     </>
   );

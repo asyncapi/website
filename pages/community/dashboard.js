@@ -36,6 +36,7 @@ export default function Home() {
             }
             data={data.hotDiscussions}
             className="lg:w-1/3"
+            listClassName="lg:grid-cols-1"
           />
           <GoodFirstIssues issues={data.goodFirstIssues} />
         </div>

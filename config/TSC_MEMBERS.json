@@ -554,5 +554,16 @@
 			 "training",
 			 "community"
 		]
+	},
+		{
+		"name": "Kenneth Aasan",
+		"github": "kennethaasan",
+		"slack": "U037S2HK4TS",
+		"twitter": "kennethaasan",
+		"availableForHire": false,
+		"company": "Sportradar",
+		"repos": [
+			"modelina"
+		]
 	}
 ]
