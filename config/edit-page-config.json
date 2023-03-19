@@ -1,13 +1,14 @@
 [
-
-    { "value": "/tools/generator", "href": "https://github.com/asyncapi/generator/tree/master/docs" },
-
-
-    { "value": "reference/specification/", "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md" },
-
-    
-    {"value": "","href":"https://github.com/asyncapi/website/blob/master/pages"}
-
-
+    {
+        "value": "/tools/generator",
+        "href": "https://github.com/asyncapi/generator/tree/master/docs"
+    },
+    {
+        "value": "reference/specification/",
+        "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md"
+    },
+    {
+        "value": "",
+        "href": "https://github.com/asyncapi/website/blob/master/pages"
+    }
 ]
-
