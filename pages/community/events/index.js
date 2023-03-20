@@ -25,7 +25,7 @@ function index() {
 
           if (i1.featured && !i2.featured) return -1;
           if (!i1.featured && i2.featured) return 1;
-          return i2Date - i1Date;
+          return i1Date - i2Date;
         })
       : meetings
   );

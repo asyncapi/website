@@ -115,12 +115,12 @@ function CommunityIndexPage() {
               return (
                 <li
                   key={index}
-                  className="bg-white w-full p-2 md:p-4 rounded-l-md"
+                  className="bg-white w-full mt-2 p-2 md:p-10 rounded-l-md"
                 >
                   <a href={event.url} className="flex">
-                    <div className="flex justify-center flex-col w-24 md:w-40 bg-pink-400 p-1 md:p-4 rounded-md text-xs md:text-sm font-semibold text-white">
-                      <span className="text-center">
-                        {event.title.split(' ')[0]}
+                    <div className="inline-flex flex-row h-12 min-w-12 rounded-full bg-pink-500 text-white font-bold">
+                      <span className="flex-1 text-center self-center">
+                        {event.date.format('D')}
                       </span>
                     </div>
                     <div className="ml-4 text-left">
