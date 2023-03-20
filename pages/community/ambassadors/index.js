@@ -5,83 +5,9 @@ import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import ambassadors from '../../../config/AMBASSADORS_MEMBERS.json';
+import ambassadorList from '../../../config/ambassador_lists.json'
 import Link from 'next/link';
 
-const data = [
-  {
-    title: 'Written content',
-    details:
-      'Write guides, step-by-step tutorials, community documentation, AsyncAPI blog posts, and beyond.',
-    icon: '/img/illustrations/blog.svg',
-  },
-  {
-    title: 'Video content',
-    details:
-      'Produce educational videos on YouTube and other platforms for AsyncAPI.',
-    icon: '/img/illustrations/video-creation.svg',
-  },
-  {
-    title: 'Live streams',
-    details: 'Moderate or host live streams that demo the AsyncAPI ecosystem.',
-    icon: '/img/illustrations/live.svg',
-  },
-  {
-    title: 'Give talks',
-    details:
-      'Speak at meetups and conferences; we’ll help with slides, abstract submissions, and travel budget.',
-    icon: '/img/illustrations/speaking.svg',
-  },
-  {
-    title: 'Interactive Learning',
-    details:
-      'Gamify educational content and create interactive learning paths for teaching AsycnAPI and event-driven architectures.',
-    icon: '/img/illustrations/learning-app.svg',
-  },
-  {
-    title: 'Build real-life usecases example',
-    details:
-      'Develop real-life usecase project example using the AsyncaAPI specification',
-    icon: '/img/illustrations/codes.svg',
-  },
-  {
-    title: 'AsyncAPI Contributions',
-    details:
-      'Collaborate with the AsyncAPI community via diverse contributions and improvements.',
-    icon: '/img/illustrations/advisor.svg',
-  },
-  {
-    title: 'Gather Use-Cases',
-    details:
-      'Collect data from existing AsyncAPI users and create use-case studies.',
-    icon: '/img/illustrations/meeting.jpg',
-  },
-];
-
-
-const tokens = [
-  {
-    emoji: '🗺️',
-    title: 'Travel',
-    details: 'Ambassadors are provided free entry to AsyncAPI conferences.',
-  },
-  {
-    emoji: '🌟',
-    title: 'Recognition',
-    details: 'Ambassadors receive community-wide recognition.',
-  },
-  {
-    emoji: '🎁',
-    title: 'Special Swags',
-    details:
-      'Community members recognize you by gifting you exclusive AsyncAPI Ambassador swag.',
-  },
-  {
-    emoji: '🧰',
-    title: 'Workshop Swags',
-    details:
-      'Ambassadors are gifted swag from AsyncAPI conferences and workshops.',
-  },
-];
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -188,7 +114,7 @@ function Index() {
           </div>
         </div>
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {data.map((link) => (
+          {ambassadorList.contents.map((link) => (
             <li
               key={link.title}
               className="flex flex-col justify-center items-center"
@@ -295,7 +221,7 @@ function Index() {
         </div>
         <div className="mt-10">
           <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-            {tokens.map((token) => (
+            {ambassadorList.tokens.map((token) => (
               <li
                 key={token}
                 className="mt-4 bg-white p-3 shadow-lg rounded-lg flex"
