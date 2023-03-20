@@ -8,7 +8,7 @@ import CaseStudiesList from "../../config/case-studies.json";
 export default function casestudies() {
   const description =
     "Learn about different case studies based on AsyncAPI spec and related tools.";
-  const image = "/img/social/meetings.png";
+  const image = "/img/social/case-studies.webp";
   const title = "Case Studies";
 
   return (
