@@ -1,6 +1,6 @@
 ---
 title: "Community Update: March 2023"
-date: 2023-03-20T06:00:00+01:00
+date: 2023-03-28T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
@@ -10,6 +10,8 @@ authors:
     photo: img\avatars\Thulie.webp
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
-excerpt: 'Find out what went down this March'
+excerpt: 'Community update for March'
 featured: true
 ---
+
+Hey everyone Thulie here!
