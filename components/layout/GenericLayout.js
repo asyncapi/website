@@ -26,7 +26,9 @@ export default function GenericLayout({
      </StickyNavbar>
       <Container wide={wide}>
         <AnnouncementHero className="text-center my-4" small={true} />
-        {children}
+        <div id="main-content">
+          {children}
+        </div>
       </Container>
     </>
   )
