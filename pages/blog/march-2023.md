@@ -15,3 +15,15 @@ featured: true
 ---
 
 Hey everyone Thulie here!
+
+### Introduction
+### New CM and Ex Director
+### Case Studies
+### Spec Issues
+### GSoC Announcement
+### Ambassador Program
+### Fund Redistribution
+### GSoD announcement
+### TSC members joined
+### AACoT Madrid Edition
+
