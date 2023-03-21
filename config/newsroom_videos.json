@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/ECe592525p4/hqdefault.jpg",
+    "title": "Make Your GSoC Proposal Stand Out (March 20th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/639.",
+    "videoId": "ECe592525p4"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/BiP-0zkXelw/hqdefault.jpg",
     "title": "Spec 3.0 meeting (March 15, 2023)",
     "description": "https://github.com/asyncapi/community/issues/624.",
@@ -22,11 +28,5 @@
     "title": "Spec 3.0 meeting (March 1, 2023)",
     "description": "https://github.com/asyncapi/community/issues/599.",
     "videoId": "Bo3iLu7D_Qw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ZtUxSPIKBEI/hqdefault.jpg",
-    "title": "Triage of issues and PRs in website repo (February 28, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/619.",
-    "videoId": "ZtUxSPIKBEI"
   }
 ]
