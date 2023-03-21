@@ -1,0 +1,61 @@
+{
+	"id":"adeogroup",
+	"company":{
+		"name":"Adeo Group",
+		"description":"Adeo owns different brands in retail industry focused on home improvement and DIY markets, like Leroy Merlin.",
+		"customers":"500M",
+		"industry":"Retail",
+		"revenue":"25.6B EURO turnover, including 768M EURO online.",
+		"website":"https://www.adeo.com/",
+		"logo":"/img/casestudies/adeo/logo.svg",
+		"contact":[
+			{
+				"name":"Ludovic Dussart",
+				"link":"https://twitter.com/ldussart"
+			}
+		]
+	},
+	"challenges":"Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations on the globe. Different business units use different information systems. It is hard to learn how each business unit share information about their systems, their API and accuracy.",
+	"solution":"The API is now described with AsyncAPI. AsyncAPI file, stored together with the source code, is used to generate HTML documentation in the same release pipeline for the product. Documentation is exposed as part of the product internally for other company units depending on the API.",
+	"technical":{
+		"languages":[
+			"Java"
+		],
+		"frameworks":[
+			"Spring"
+		],
+		"protocols":[
+			"Kafka"
+		],
+		"brokers":"Kafka with Kafka Connect component. There are 15 production brokers with 47 topics.",
+		"testing":"For Kafka e2e tests are done with [Zerocode](https://github.com/authorjapps/zerocode). Load tests are handled with [JMeter](https://jmeter.apache.org/) with [kloadgen](https://github.com/corunet/kloadgen) plugin that supports Kafka and Avro.",
+		"architecture":"The following [enterprise integration patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging) are applied.",
+		"codegen":"Java models generation. Avro schemas used as a source."
+	},
+	"schemas":{
+		"description":"Avro 1.9",
+		"storage":"Git repository where source code is. During release they are published to Confluent Schema Registry.",
+		"registry":"Confluent Schema Registry.",
+		"versioning":"Versioning is based on git tags. Schema version pushed to Confluent Schema Registry match the git tag version of the product. Every schema has a `version` information, that match with product tag version.",
+		"validation":"Based on validation using Confluent Schema Registry."
+	},
+	"asyncapi":{
+		"usecase":"Document the API of the product so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from machine-readable document that describes the API.",
+		"versions":[
+			"2.4.0"
+		],
+		"storage":"Git repository where source code is.",
+		"editing":"IntelliJ without any special plugins. Sometimes people use AsyncAPI Studio, but not regularly because of lack of support for references to local drive.",
+		"maintainers":"Developers",
+		"audience":{
+			"internal":false,
+			"external":false
+		},
+		"extensions":"Extensions are used to describe details about custom security.",
+		"documentation":"Documentation generated from AsyncAPI is hosted as part of the product on dedicated endpoint using Spring controller.",
+		"bindings":"All Kafka bindings are used. Server, channel, operation and message bindings.",
+		"tools":"[AsyncAPI Generator](https://github.com/asyncapi/generator) and [HTML Template](https://github.com/asyncapi/html-template) with parameters like `sidebarOrganization=byTags` and `version`.",
+		"fullExample":"resources/casestudies/adeo/asyncapi.yaml"
+	},
+	"additionalResources":"Watch [this video presentation about AsyncAPI case study](https://www.youtube.com/watch?v=WwhRbvrf6Rs) from Ludovic Dussart, Ineat & Antoine Delequeuche, Adeo. - better for data interchange"
+}

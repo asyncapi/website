@@ -1,7 +1,12 @@
 [
   {
-    "title": "Spec 3.0 Meeting",
-    "url": "https://github.com/asyncapi/community/issues/624",
-    "date": "Wed, 15 Mar 2023 16:00:00 GMT"
+    "title": "Adding support for non-JSON schemas",
+    "url": "https://github.com/asyncapi/community/issues/637",
+    "date": "Tue, 21 Mar 2023 15:00:00 GMT"
+  },
+  {
+    "title": "Community Meeting",
+    "url": "https://github.com/asyncapi/community/issues/640",
+    "date": "Tue, 21 Mar 2023 16:00:00 GMT"
   }
 ]

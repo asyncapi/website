@@ -33,31 +33,15 @@
       "score": 32.16355393991698
     },
     {
-      "id": "PR_kwDOBW5R_c4-DcKb",
+      "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: case studies content setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/pull/921",
-      "repo": "asyncapi/website",
+      "isAssigned": true,
+      "title": "docs: docs folder for new asyncapi community section",
+      "author": "Dule-martins",
+      "resourcePath": "/asyncapi/community/pull/442",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 29.004633463675134
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 21.538094156194408
+      "score": 24.409840043686994
     },
     {
       "id": "I_kwDOBGu-184_rP6l",
@@ -84,7 +68,7 @@
       "resourcePath": "/asyncapi/glee/pull/320",
       "repo": "asyncapi/glee",
       "labels": [],
-      "score": 19.527872034949596
+      "score": 20.38939580119737
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -100,7 +84,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 18.091999091203302
+      "score": 19.815046623698855
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -111,7 +95,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 16.943300736206268
+      "score": 17.804824502454043
     },
     {
       "id": "PR_kwDODtSOs84xcJjh",
@@ -125,6 +109,34 @@
       "score": 16.943300736206268
     },
     {
+      "id": "I_kwDOBW5R_c5DkdBH",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "[📑 Docs]: AsyncAPI CLI Documentation ",
+      "author": "imabp",
+      "resourcePath": "/asyncapi/website/issues/602",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 16.65612614745701
+    },
+    {
       "id": "I_kwDOBGu-185CELGB",
       "isPR": false,
       "isAssigned": false,
@@ -136,59 +148,138 @@
       "score": 16.65612614745701
     },
     {
-      "id": "I_kwDOE8Qh385Dy329",
-      "isPR": false,
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Modelina website",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/issues/637",
-      "repo": "asyncapi/modelina",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 16.36895155870775
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 14.933078614961456
     },
     {
-      "id": "I_kwDOGJ23c85V9C3c",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Support `referenceIntoComponents` for other components than `message`",
-      "author": "thake",
-      "resourcePath": "/asyncapi/bundler/issues/97",
-      "repo": "asyncapi/bundler",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.08177696995849
+      "id": "PR_kwDOB5hCo85FYPwk",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: extend bundling to create another schemas without $id",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh385hIzoy",
+      "title": "Add enum type selection in the playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1162",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5hAZlI",
+      "title": "Better logging for MQTT adapter",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/406",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5gy-rP",
+      "title": "Extends metadata of blog documents to enable people to provide canonical URL",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1430",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5gx6CN",
+      "title": "error when running `npm install` in glee",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/403",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5gradR",
+      "title": "add prettier configuration",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/398",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5grOC6",
+      "title": "Refactor mqtt `_connect()` method",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/397",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5grMtS",
+      "title": "Refactor ws adapter to reduce its cognitive complexity",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/396",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFDnrNc5gDYPo",
       "title": "Change the collection type for arrays for C# models",
@@ -468,21 +559,6 @@
       ]
     },
     {
-      "id": "I_kwDODyzcIc5Xq_8W",
-      "title": "Testing workflow could skip earlier",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/200",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
@@ -585,10 +661,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -649,10 +721,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -738,27 +806,16 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "819cd3"
+        },
+        {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
         },
         {
           "name": "❔ Question",
           "color": "54B65C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5Ahc3G",
-      "title": "Add docs on how Glee works",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/206",
-      "repo": "asyncapi/glee",
-      "author": "fmvilas",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -886,10 +943,6 @@
           "color": "a2eeef"
         },
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
         }
@@ -926,6 +979,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
