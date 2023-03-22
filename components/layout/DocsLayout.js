@@ -121,21 +121,19 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                       {`What is new in v${post.title}? Have a look at the `} 
                     </span> 
                     <Link href={post.releaseNoteLink}>
-                      <span>
-                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes</a>.
-                      </span>        
-                    </Link> 
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes</a>
+                    </Link>.
                   </div>
                   <div>
                     <span className="text-sm font-sans antialiased text-gray-800"> 
                       Interested in release notes of other versions of the specification?&nbsp;
                     </span> 
-                    <Link href="https://www.asyncapi.com/blog?tags=Release+Notes">
-                      <span className="text-sm font-sans antialiased text-gray-800">
-                        Check&nbsp;
-                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>list of release notes</a>.
-                      </span>        
-                    </Link> 
+                    <span className="text-sm font-sans antialiased text-gray-800">
+                      Check&nbsp;
+                      <Link href="https://www.asyncapi.com/blog?tags=Release+Notes">
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>list of release notes</a>
+                      </Link>.
+                    </span>        
                   </div>
                 </div>
                 }
