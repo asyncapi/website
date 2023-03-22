@@ -11,7 +11,7 @@ export default function HeadComponent({
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
   rssLink = '/rss.xml'
 }) {
-  const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL
+  const url = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL || "http://localhost:3000"
   const { path = '' } = useContext(AppContext)
   const permalink = `${url}${path}`
   let type = 'website'

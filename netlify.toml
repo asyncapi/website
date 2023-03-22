@@ -2,6 +2,7 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
+    Access-Control-Allow-Origin = "*"
 
 [build]
   command = "npm run build && npm run export"

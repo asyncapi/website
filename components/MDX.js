@@ -24,7 +24,7 @@ let mermaidInitialized = false;
 initializeMermaid();
 const mdxComponents = getMDXComponents();
 
-export default function MDXProvider({ children }) {
+export function MDXProvider({ children }) {
   return (
     <CoreMDXProvider components={mdxComponents}>
       {children}
@@ -32,7 +32,7 @@ export default function MDXProvider({ children }) {
   );
 }
 
-function getMDXComponents() {
+export function getMDXComponents() {
   return {
     h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h2: props => <h2 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
