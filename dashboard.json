@@ -167,15 +167,15 @@
       "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
       "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOE8Qh385hIzoy",
-      "title": "Add enum type selection in the playground",
+      "id": "I_kwDOE8Qh385hcCbL",
+      "title": "Add different array types in the Playground",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1162",
+      "resourcePath": "/asyncapi/modelina/issues/1180",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "typescript",
@@ -183,6 +183,217 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb-2N",
+      "title": "Add auto-implemented support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1179",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9vo",
+      "title": "Add overwriting GetHashCode method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1178",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9W5",
+      "title": "Add overwriting Equal method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1177",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8cG",
+      "title": "Add Newtonsoft serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1176",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8C2",
+      "title": "Add System.Text.Json serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1175",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb2gI",
+      "title": "Add description and example support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1174",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb1a-",
+      "title": "Add module system selection in the playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1173",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbz9R",
+      "title": "Add example data function support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1172",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbxvG",
+      "title": "Add jsonbinpack support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1171",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
         },
         {
           "name": "website",
