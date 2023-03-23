@@ -22,7 +22,10 @@ One of our goals this year is to host [AACoT](https://opencollective.com/asyncap
 ## Case Studies
 We recently added a new [case studies](https://www.asyncapi.com/casestudies) section on our website. It showcases real-world production scenarios and how different individuals adopt and integrate our specifications and tools. On this note, we are glad to have our first official case study from Adeo featured on the website. You can read more about it [here](https://www.asyncapi.com/casestudies/adeogroup).
 
-## Spec Issues
+## Spec x Tooling
+[Modelina](https://modelina.org/) website has been merged and if you are interested in generating data models for your payloads, do try it out.
+Spec 3.0 meetings will now incorporate various discussions and will be the best place to ask about v3, how to use [non-JSON schemas](https://github.com/asyncapi/spec/pull/910) within AsyncAPI, and [documentation](https://github.com/asyncapi/website/issues/1433).
+
 
 ## Google Summer of Code
 As a community, we are always looking for initiatives to drive diversity and bring more people passionate about open-source. In this regard, we applied to GSoC'23. Although our application didn't make it to the final organization selection, we are privileged to participate in GSoC'23 under Postman. 
@@ -31,10 +34,14 @@ Contributor applications open on the 20th of March and close on the 4th of April
 
 
 ## Ambassador Program
+One of our latest additions to the initiatives in the community is the Ambassador's Program. This program is dedicated to foster collaboration between users and community members. It is a method to promote and nurture community growth.
+The best part is, anyone can join the Ambassador's Program as long as they meet the requirements. You can read this [article](https://www.asyncapi.com/blog/asyncapi-ambassador-program) for more details.
 
-## TSC members joined
+## TSC members
+Our [technical steering committee](https://www.asyncapi.com/community/tsc) has grown exponentially over the last few months. We now have a total of 44 members and a 12% increase in women maintainers so far. Shout out to our newest members, [Barbano Gonzalez](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Kenneth Aasan](https://www.twitter.com/kennethaasan) we are thrilled to have you.
 
 ## Newsletter
+
 
 ## Coming up next month
 ### AsyncAPI Bounty Program
