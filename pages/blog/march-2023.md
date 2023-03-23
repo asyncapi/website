@@ -40,10 +40,8 @@ The best part is, anyone can join the Ambassador's Program as long as they meet 
 ## TSC members
 Our [technical steering committee](https://www.asyncapi.com/community/tsc) has grown exponentially over the last few months. We now have a total of 44 members and a 12% increase in women maintainers so far. Shout out to our newest members, [Barbano Gonzalez](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Kenneth Aasan](https://www.twitter.com/kennethaasan) we are thrilled to have you.
 
-## Newsletter
-
-
 ## Coming up next month
+### Newsletter
 ### AsyncAPI Bounty Program
 ### GSoD announcement
 
