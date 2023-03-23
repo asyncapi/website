@@ -116,7 +116,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title += " (Pre-release)"
           }
         }
-
+        
         addItem(details)
       }
     }

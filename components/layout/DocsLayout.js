@@ -20,12 +20,17 @@ import editOptions from '../../config/edit-page-config.json'
 
 function generateEditLink(post) {
 
+  var last=post.id.substring(post.id.lastIndexOf("/") + 1);
   var target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
+  
+ 
 
   if(target.value==""){
     return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
+
   }
-  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}`} className="ml-1 underline">Edit this page on GitHub</a>
+  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}/${target.value=="reference/specification/" ?'asyncapi.md':last}`} className="ml-1 underline">Edit this page on GitHub</a>
+  
 
   }
 
