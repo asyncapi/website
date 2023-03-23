@@ -13,7 +13,7 @@ authors:
 excerpt: 'Community update for March'
 featured: true
 ---
-March came with some ecstatic news in the AsyncAPI community. We welcomed [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/) as our new Community Manager. And to top it all, our beloved community guardian, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) stepped up to become the new [Executive Director](https://github.com/orgs/asyncapi/discussions/615) for AsyncAPI.
+March came with some ecstatic news for the AsyncAPI community. We welcomed [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/) as our new Community Manager. And to top it all, our beloved community guardian, [Lukasz Gornicki](https://www.linkedin.com/in/lukasz-gornicki-a621914/) stepped up to become the new [Executive Director](https://github.com/orgs/asyncapi/discussions/615) for AsyncAPI.
 This is such an incredible milestone for the community and we can't wait to see the amazing things to follow in the next few months.
 
 ## AsyncAPI Conf on Tour 2023
