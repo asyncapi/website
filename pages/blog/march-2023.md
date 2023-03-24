@@ -34,15 +34,17 @@ Contributor applications open on the 20th of March and close on the 4th of April
 
 
 ## Ambassador Program
-One of our latest additions to the initiatives in the community is the Ambassador's Program. This program is dedicated to foster collaboration between users and community members. It is a method to promote and nurture community growth.
+One of our latest additions to the initiatives in the community is the Ambassador's Program. This program is dedicated to fostering collaboration between users and community members. It is a method to promote and nurture community growth.
 The best part is, anyone can join the Ambassador's Program as long as they meet the requirements. You can read this [article](https://www.asyncapi.com/blog/asyncapi-ambassador-program) for more details.
 
 ## TSC members
 Our [technical steering committee](https://www.asyncapi.com/community/tsc) has grown exponentially over the last few months. We now have a total of 44 members and a 12% increase in women maintainers so far. Shout out to our newest members, [Barbano Gonzalez](https://www.linkedin.com/in/barbano-gonzalez-moreno) and [Kenneth Aasan](https://www.twitter.com/kennethaasan) we are thrilled to have you.
 
-## Coming up next month
-### Newsletter
-### AsyncAPI Bounty Program
-### GSoD announcement
+## Coming up in April
+We have some exciting things to look forward to in April, for instance:
 
+- **Newsletter** - We are launching a monthly AsyncAPI community updates newsletter. This is where we will be keeping you in the loop of the activities happening in the community such as discussions, meetings, and updates.
+- **AsyncAPI Bounty Program** - We are launching a trial for the AsyncAPI bounty program. This program is a way to appreciate and support maintainers for the work they are doing to push the initiative forward. You can read all about it in this [discussion](https://github.com/orgs/asyncapi/discussions/513).
+- **Google Season of Docs** - After the success of [GSoD'22](https://github.com/orgs/asyncapi/discussions/303), we have applied to participate again this year. You can check out the project proposal in this [discussion]().
 
+Till next time, keep your head held high. **You got this!**
