@@ -4,7 +4,7 @@ date: 2023-03-30T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
-cover: img/posts/2023-summary/blog-banner-march.webp
+cover: /img/posts/2023-summary/blog-banner-march.webp
 authors:
   - name: Thulisile Sibanda
     photo: img/avatars/thulieblack.webp
