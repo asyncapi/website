@@ -7,7 +7,7 @@ tags:
 cover: /img/posts/2023-summary/blog-banner-march.webp
 authors:
   - name: Thulisile Sibanda
-    photo: img/avatars/thulieblack.webp
+    photo: /img/avatars/thulieblack.webp
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'Community update for March'
