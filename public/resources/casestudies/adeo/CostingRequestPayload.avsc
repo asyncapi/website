@@ -1,0 +1,126 @@
+{
+  "namespace": "com.adeo.casestudy.costingrequest",
+  "type": "record",
+  "name": "CostingRequestPayload",
+  "version": "1.1.0",
+  "fields": [
+    {
+      "name": "ProductId",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Product identifier."
+    },
+    {
+      "name": "ShortProductDescription",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "doc": "A short product description.",
+      "example": "BOTTLE RACK, STACKABLE, 2 TIER, 10 BOTTLES"
+    },
+    {
+      "name": "SupplierCode",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Supplier code, used to get parameter values that depend on the supplier.",
+      "example": "12345678"
+    },
+    {
+      "name": "SupplierPrice",
+      "type": "float",
+      "doc": "Product price (purchasing price)."
+    },
+    {
+      "name": "Unit",
+      "doc": "Unit characteristics",
+      "type": {
+        "name": "UnitItem",
+        "namespace": "com.adeo.casestudy.costingrequest",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Length",
+            "type": "float",
+            "example": 1.11,
+            "exclusiveMinimum": 0
+          },
+          {
+            "name": "Width",
+            "type": "float",
+            "example": 1.11,
+            "exclusiveMinimum": 0
+          },
+          {
+            "name": "Height",
+            "type": "float",
+            "example": 1.11,
+            "exclusiveMinimum": 0
+          },
+          {
+            "name": "WeightGross",
+            "type": "float",
+            "example": 6.68,
+            "exclusiveMinimum": 0
+          },
+          {
+            "name": "WeightNet",
+            "type": "float",
+            "example": 6.68,
+            "exclusiveMinimum": 0,
+            "doc": "The unit of net weight is the kilogram"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BusInputs",
+      "type": {
+        "type": "array",
+        "doc": "Business units specific data required to deduce the right BU context.",
+        "minItems": 1,
+        "items": {
+          "name": "CostingRequestBUItem",
+          "namespace": "com.adeo.casestudy.costingrequest",
+          "type": "record",
+          "fields": [
+            {
+              "name": "ClientCode",
+              "type": {
+                "type": "string",
+                "avro.java.string": "String"
+              },
+              "doc": "The client (Business Unit) code.",
+              "example": "1"
+            },
+            {
+              "name": "ContainerType",
+              "type": [
+                "null",
+                {
+                  "type": "enum",
+                  "namespace": "com.adeo.casestudy.model",
+                  "name": "ContainerTypeItems",
+                  "doc": "Container selected for transportation. Required to determinate parameter values that rely on transportation. **Will be deleted (because deduced) in future versions**",
+                  "symbols": [
+                    "FT20",
+                    "FT40",
+                    "FT40HC",
+                    "TRUCK"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -84,6 +84,27 @@ npm run build
 
 Generated files of the website go to the `.next` folder.
 
+## Case studies
+
+### Overview
+
+A case study is a special document that any end-user company can provide. An end-user company is a company that uses AsyncAPI to solve technical challenges. A case study is not a document where a vendor company can describe how they build their commercial AsyncAPI-based product. On the other hand, it is completely fine if a case study of some end-user mentions some commercial tools that helped them to work with AsyncAPI or event-driven architecture. An example of such a case can be a case study from an end-user where at some point, Confluent Schema Registry is mentioned in an explanation about schemas and runtime message validation.
+
+### How to add a case study
+
+A case study is documented in the form of a YAML file. Anyone can open a pull request with a new case study.
+
+- YAML file must be located in `config/casestudies`.
+- To make it easier for you to create such a YAML file you can use:
+  - [Template YAML with comments explaining every section](scripts/casestudies/casestudy_template.yml)
+  - [JSON Schema that describes all YAML fields](scripts/casestudies/schema.json)
+- All additional files for the case study, like complete AsyncAPI document examples, should be located in the `public/resources/casestudies` directory.
+- Company logo and other images that will be rendered in the website should be located in `public/img/casestudies`.
+
+Once you collect all information and create a case study, open a pull request. It must be authored or at least approved by a representative of the given company. Such a representative is probably already a contact person mentioned in the case study.
+
+A case study becomes publicly available right after merging and rebuilding the website.
+
 ## JSON Schema definitions
 
 All AsyncAPI JSON Schema definition files are being served within the `/definitions/<file>` path. The content is being served from GH, in particular from https://github.com/asyncapi/spec-json-schemas/tree/master/schemas.
@@ -119,7 +140,7 @@ This repository has the following structure:
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
 
-## Contributors ✨
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

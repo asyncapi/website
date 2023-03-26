@@ -33,15 +33,15 @@
       "score": 32.16355393991698
     },
     {
-      "id": "PR_kwDOBW5R_c4-DcKb",
+      "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: case studies content setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/pull/921",
-      "repo": "asyncapi/website",
+      "isAssigned": true,
+      "title": "docs: docs folder for new asyncapi community section",
+      "author": "Dule-martins",
+      "resourcePath": "/asyncapi/community/pull/442",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 29.004633463675134
+      "score": 24.409840043686994
     },
     {
       "id": "I_kwDOBGu-184_rP6l",
@@ -60,17 +60,6 @@
       "score": 20.96374497869589
     },
     {
-      "id": "PR_kwDOFi_gUM46XnQo",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add http adapter support for glee",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/glee/pull/320",
-      "repo": "asyncapi/glee",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
       "isPR": false,
       "isAssigned": false,
@@ -84,7 +73,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 18.091999091203302
+      "score": 19.815046623698855
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -95,7 +84,35 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 16.943300736206268
+      "score": 17.804824502454043
+    },
+    {
+      "id": "I_kwDOG115t85D93P0",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website UI Kit design/dev project",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/design-system/issues/4",
+      "repo": "asyncapi/design-system",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDODtSOs84xcJjh",
@@ -148,59 +165,296 @@
       "score": 16.65612614745701
     },
     {
-      "id": "I_kwDOE8Qh385Dy329",
-      "isPR": false,
+      "id": "PR_kwDOB5hCo85FYPwk",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Modelina website",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/issues/637",
-      "repo": "asyncapi/modelina",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 16.36895155870775
+      "title": "feat: extend bundling to create another schemas without $id",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 15.794602381209232
     },
     {
-      "id": "I_kwDOGJ23c85V9C3c",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Support `referenceIntoComponents` for other components than `message`",
-      "author": "thake",
-      "resourcePath": "/asyncapi/bundler/issues/97",
-      "repo": "asyncapi/bundler",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.08177696995849
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 15.220253203710714
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "title": "Improve kafka adapter",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb-2N",
+      "title": "Add auto-implemented support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1179",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9vo",
+      "title": "Add overwriting GetHashCode method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1178",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9W5",
+      "title": "Add overwriting Equal method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1177",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8cG",
+      "title": "Add Newtonsoft serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1176",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8C2",
+      "title": "Add System.Text.Json serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1175",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb2gI",
+      "title": "Add description and example support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1174",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb1a-",
+      "title": "Add module system selection in the playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1173",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbz9R",
+      "title": "Add example data function support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1172",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbxvG",
+      "title": "Add jsonbinpack support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1171",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5hAZlI",
+      "title": "Better logging for MQTT adapter",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/406",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5gy-rP",
+      "title": "Extends metadata of blog documents to enable people to provide canonical URL",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1430",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5gx6CN",
+      "title": "error when running `npm install` in glee",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/403",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFi_gUM5gradR",
       "title": "add prettier configuration",
@@ -525,21 +779,6 @@
       ]
     },
     {
-      "id": "I_kwDODyzcIc5Xq_8W",
-      "title": "Testing workflow could skip earlier",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/200",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
@@ -642,10 +881,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -706,10 +941,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -968,6 +1199,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
