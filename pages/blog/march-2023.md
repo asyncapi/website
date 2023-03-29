@@ -32,6 +32,8 @@ As a community, we are always looking for initiatives to drive diversity and bri
 
 Contributor applications open on the 20th of March and close on the 4th of April. If you are looking to participate we have some exciting [projects](https://github.com/postman-open-technologies/gsoc-2023/issues?q=is%3Aissue+is%3Aopen+label%3Afinal+label%3Aasyncapi+) and if you want to make your proposal outshine do watch this [session](https://www.youtube.com/live/ECe592525p4?feature=share) for tips.
 
+## AsyncAPI Mentorship Program
+It's almost a year since we launched the AsyncAPI Mentorship Program and our first cohort produced [six amazing mentees](https://github.com/orgs/asyncapi/discussions/577) that truly impressed us. Several of them joined our technical steering commitee and became mentors for GSoC. With that being said, we are delighted to share that our second cohort will begin soon after GSoC'23 commences. Keep an eye out on our `#mentorship` channel for the official announcement.
 
 ## Ambassador Program
 One of our latest additions to the initiatives in the community is the Ambassador's Program. This program is dedicated to fostering collaboration between users and community members. It is a method to promote and nurture community growth. Presently we have a total of [5 ambassadors](https://deploy-preview-917--asyncapi-website.netlify.app/community/ambassadors) and the best part is, anyone can join the program as long as they meet the requirements. You can read this [article](https://www.asyncapi.com/blog/asyncapi-ambassador-program) for more details.
