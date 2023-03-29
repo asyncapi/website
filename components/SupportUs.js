@@ -78,6 +78,20 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
             title="Restream - Free professional plan subscription."
           />
         </a>
+        </div>
+        <div className="flex flex-wrap mb-4 items-center justify-center md:px-2">
+        <a
+          href="https://sessionize.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-4 sm:h-9"
+            src="/img/supportus/sessionize.png"
+            title="Sessionize-Free community license for AACoT Madrid."
+          />
+        </a>
       </div>
 
     </div>
