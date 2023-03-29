@@ -47,5 +47,6 @@ We have some exciting things to look forward to in April, for instance:
 - **Newsletter** - We are launching a monthly AsyncAPI community updates newsletter. This is where we will be keeping you in the loop of the activities happening in the community such as discussions, meetings, and updates. Do [subscribe](https://www.asyncapi.com/newsletter)!
 - **AsyncAPI Bounty Program** - We are launching a trial for the AsyncAPI bounty program. This program is a way to appreciate and support maintainers for the work they are doing to push the initiative forward. You can read all about it in this [discussion](https://github.com/orgs/asyncapi/discussions/513).
 - **Google Season of Docs** - After the success of [GSoD'22](https://github.com/orgs/asyncapi/discussions/303), we have applied to participate again this year. You can check out the project proposal in this [discussion]().
+- **Call for Speakers for AACoT Madrid Edition** -  Call for Speakers for Madrid will be opening soon. You can expect a keynote from [Fran](https://www.linkedin.com/in/fmvilas/) about the history of AsyncAPI Initiative. Bookmark this [page](https://sessionize.com/aacot-madrid), and get ready to submit that talk!
 
 Till next time, keep your head held high. **You got this!**
