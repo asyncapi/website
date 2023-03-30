@@ -24,7 +24,7 @@ export default function Slack({
       </div>
       <div className="flex-1 py-2">
         <SlackMessage
-          avatar="/img/homepage/lukasz-homepage-slack.jpg"
+          avatar="/img/homepage/lukasz-homepage-slack.webp"
           name="Lukasz Gornicki"
           text={
             <>
@@ -41,7 +41,7 @@ export default function Slack({
           ]}
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <span className="text-gray-500">
