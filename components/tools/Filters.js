@@ -26,7 +26,7 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
-  // useEffect hook used to update the UI elements when the Clear Filters button is clicked and then corresponding state variables are set to empty values
+  // useEffect hook used to update the UI elements 
   useEffect(() => {
     setCheckedLanguage(languages);
     setCheckedTechnology(technologies);
@@ -62,14 +62,13 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
     setOpenFilter(false)
   }
 
-  // function to clear all the filters when `Clear Filters` is clicked.
-  const clearFilters =() => {
-    setLanguages([])
-    setTechnologies([])
-    setCategories([])
-    setisPaid("all")
-    setAsyncAPIOwner(false)
-    setOpenFilter(true)
+  // function to undo all the filters when `Undo Changes` is clicked.
+  const undoChanges =() => {
+      setCheckedLanguage(languages);
+      setCheckedTechnology(technologies);
+      setCheckedCategory(categories);
+      setCheckPaid(isPaid);
+      setCheckOwner(isAsyncAPIOwner);
   }
 
   return (
@@ -79,8 +78,8 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
           <div className="text-sm text-gray-500">
           <Carddata heading="PRICING" data ={Data.properties.filters.properties.hasCommercial.description}  type="pricing" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
           </div>
-          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
-            Clear Filters
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={undoChanges}>
+            Undo Changes
           </div>
         </div>
         <div className="flex gap-2">
