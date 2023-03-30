@@ -21,7 +21,8 @@ const postDirectories = [
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
-]
+  [`${basePath}/community`, '/community'],
+];
 
 const addItem = (details) => {
   if(details.slug.startsWith('/docs'))
