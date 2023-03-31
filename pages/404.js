@@ -6,16 +6,16 @@ import AnnouncementHero from '../components/campaigns/AnnoucementHero';
 import Button from '../components/buttons/Button';
 
 function ErrorPage() {
-  const image = '/img/illustrations/not-found.webp';
+  const image = '/img/illustrations/illustration.psd';
   return (
     <div className="text-center">
       <StickyNavbar>
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
      
-      <div className='flex items-center justify-center mt-20 flex-col'>
+      <div className='flex-col items-center justify-center mt-20 flex md:flex-row'>
           <div>
-            <img src={image} className="mx-auto w-64" />
+            <img src={image} className="mx-auto w-52" />
           </div>
           <div>
             <AnnouncementHero className="my-4" />
