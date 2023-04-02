@@ -16,6 +16,8 @@ Some examples of Region Specific Language are -
 - “It’s not rocket science” is commonly used in the USA, and non-US people might not be able to relate to it properly.
 - Phrases written in regional languages instead of English.
 - “It’s not a piece of cake” is commonly used in the USA, and non-US people might not be able to relate to it properly.
+- Terms like "gypsy" is considered derogatory in Romani community, "eskimo" is considered offensive in artic community.
+- Terms like "tipping point" is considered offensive in African American cultures.
 
 ## 2. Gender neutral language 
 
@@ -28,18 +30,23 @@ Some examples of Gender Neutral Language are -
 - Using “Chairperson” instead of “Chairman” or “Chairwoman”.
 - Using "people", "guests" or "folks" instead of "ladies and gentlemen".
 - Using "Mx" or "Ms" instead of using "Mr" or "Mrs".
+- Using "humankind" instead of "mankind".
 - Avoid using sterotypes such as linking "male" with "strength", "women" with "care work", "male homosexuality" with "sensitivity".
 
-## 3. People first language 
+## 3. Accessibility and Disability 
 
 The placement of the word “People” matters a lot when it comes to writing documentation. 
 Using the word “People” in the beginning makes it more pleasant as the problem is not displayed in the beginning.
+The phrasing of sentences should not be in a manner that depicts Ableism or discrimination against individuals with disabilities or 
+the assumption that people with disabilities are inferior to those without disabilitie.
 Some examples of Gender Neutral Language are -
 - Using “People with a mental health condition” instead of “Mentally Unstable People”.
 - Using “Deaf” instead of “Person with deafness”.
 - Using "People with a disability" instead of "Disabled eople".
 - Using "Wheelchair Users" instead of "Wheelchair bound".
 - Using "People experiencing homelessness" instead of "Homeless people"
+- Avoid using derogatory terms that refer to people with disabilities like "crazy", "retarded", "lame".
+- Try using phrases like "overlook" or "ignore" instead of "turn a blind eye", or using "unheard" or "unnoticed" instead of saying "falling on deaf ears".
 
 ## 4. Slang free language 
 
@@ -73,3 +80,5 @@ because this might make some readers question their technical abilities.
 Some examples include -
 - Using “fixing the navbar is good to start with” instead of “fixing the navbar is very easy”.
 - Linking complex topics which most of our audience won’t be able to understand.
+- Avoid using phrases like "As you already know, the Fourier series is a mathematical method used to represent periodic functions."
+- Avoid including phrases like "You're probably familiar with the concept of compound interest, so I won't go into too much detail about it."
