@@ -11,11 +11,12 @@ import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Heading from "../../components/typography/Heading";
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
+import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function JobsIndexPage() {
   let { navItems } = useContext(JobsContext);
 
-  const closedJobPosts =  navItems.filter((job) => {
+  const closedJobPosts = navItems.filter((job) => {
     return new Date() > new Date(job.closingOn)
   });
 
@@ -71,18 +72,19 @@ Join us!
 `;
   const jobPostUrl = encodeURIComponent(body);
   const hasPosts = Object.keys(posts).length;
+
+  const description = 'Browse through available job offers!';
+  const image = '/img/social/job.webp'
+
   return (
-    <div>
-      <Head
-        title="Jobs"
-        rssTitle="RSS Feed for AsyncAPI Initiative Jobs Board"
-        rssLink="/jobs/rss.xml"
-      />
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-      <AnnouncementHero className="text-center my-4 mx-8" small={true} />
-      <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
+    <GenericLayout
+      title="Jobs"
+      description={description}
+      image={image}
+      wide
+    >
+
+      <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
         </div>
@@ -152,25 +154,25 @@ Join us!
             )}
           </div>
           <div className="text-center mt-3 p-4">
-            { !checkOldPost ? (
+            {!checkOldPost ? (
               <button className="btn btn-outline btn-lg text-gray-600" onClick={onClickOldPost}>
                 Show closed jobs
               </button>
             ) : (
-            <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
-              <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
-                {closedJobPosts.map((post, index) => (
-                  <JobPostItem key={index} job={post} />
-                ))}
-              </ul>
-              <button className="btn btn-outline-dark back-to-top mt-1 text-gray-600" onClick={onClickOldPost}>
-                Back
-              </button>
-            </div>
+              <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
+                <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                  {closedJobPosts.map((post, index) => (
+                    <JobPostItem key={index} job={post} />
+                  ))}
+                </ul>
+                <button className="btn btn-outline-dark back-to-top mt-1 text-gray-600" onClick={onClickOldPost}>
+                  Back
+                </button>
+              </div>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </GenericLayout>
   );
 }
