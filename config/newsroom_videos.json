@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/O4TQWBEaXy0/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (March 29th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/640.",
+    "videoId": "O4TQWBEaXy0"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/tKYyL_DiLds/hqdefault.jpg",
     "title": "Community Meeting (March 21th 2023)",
     "description": "https://github.com/asyncapi/community/issues/640.",
@@ -22,11 +28,5 @@
     "title": "Spec 3.0 meeting (March 15, 2023)",
     "description": "https://github.com/asyncapi/community/issues/624.",
     "videoId": "BiP-0zkXelw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/IboLZzLU40o/hqdefault.jpg",
-    "title": "Career Empowerment and Embracing Equity in Tech",
-    "description": "Panel discussion on the challenges women face in tech and strategies that can be put in place to improve equity and ...",
-    "videoId": "IboLZzLU40o"
   }
 ]

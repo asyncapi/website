@@ -74,7 +74,9 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
               <MenuBlocks items={toolingItems} />
           </div>
           <div className="py-2 px-5 space-y-2">
-            <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
+            <Link href="/community" className="flex">
+              <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
+            </Link>
             <MenuBlocks items={communityItems} />
             <div className="grid gap-4">
               <div>
