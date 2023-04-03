@@ -3,7 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-40-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -23,32 +23,47 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
-## Usage
 
-### Install dependencies
+## Run locally
 
-To install all dependencies, run this command:
+1. Fork the repository by clicking on `Fork` option on top right of the main repository.
 
-```bash
-npm install
-```
+2. Open Command Prompt on your local computer.
 
-### Develop
-
-Launch the development server with the hot reloading functionality that allows any change in files to be immediately visible in the browser. Use this command:
+3. Clone the forked repository by adding your own GitHub username in place of `<username>`.
+   For multiple contributions it is recommended to have [proper configuration of forked repo](https://github.com/asyncapi/community/blob/master/git-workflow.md).
 
 ```bash
-npm run dev
+    git clone https://github.com/<username>/website/
 ```
 
-You can access the live development server at [localhost:3000](http://localhost:3000).
+4. Navigate to the website directory.
 
-#### Compose a new blog post
+```bash
+    cd website
+```
+
+5. Install all website dependencies. 
+
+```bash
+    npm install
+```
+
+6. Run the website locally.
+
+```bash
+    npm run dev
+```
+
+7. Access the live development server at [localhost:3000](http://localhost:3000).
+
+
+## Compose new blog post
 
 To bootstrap a new post, run this command:
 
 ```bash
-npm run write:blog
+    npm run write:blog
 ```
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
@@ -68,6 +83,27 @@ npm run build
 ```
 
 Generated files of the website go to the `.next` folder.
+
+## Case studies
+
+### Overview
+
+A case study is a special document that any end-user company can provide. An end-user company is a company that uses AsyncAPI to solve technical challenges. A case study is not a document where a vendor company can describe how they build their commercial AsyncAPI-based product. On the other hand, it is completely fine if a case study of some end-user mentions some commercial tools that helped them to work with AsyncAPI or event-driven architecture. An example of such a case can be a case study from an end-user where at some point, Confluent Schema Registry is mentioned in an explanation about schemas and runtime message validation.
+
+### How to add a case study
+
+A case study is documented in the form of a YAML file. Anyone can open a pull request with a new case study.
+
+- YAML file must be located in `config/casestudies`.
+- To make it easier for you to create such a YAML file you can use:
+  - [Template YAML with comments explaining every section](scripts/casestudies/casestudy_template.yml)
+  - [JSON Schema that describes all YAML fields](scripts/casestudies/schema.json)
+- All additional files for the case study, like complete AsyncAPI document examples, should be located in the `public/resources/casestudies` directory.
+- Company logo and other images that will be rendered in the website should be located in `public/img/casestudies`.
+
+Once you collect all information and create a case study, open a pull request. It must be authored or at least approved by a representative of the given company. Such a representative is probably already a contact person mentioned in the case study.
+
+A case study becomes publicly available right after merging and rebuilding the website.
 
 ## JSON Schema definitions
 
@@ -93,7 +129,8 @@ This repository has the following structure:
   ├── pages                       # Website's pages source. It includes raw markdown files and React page templates.
   │    ├── about                  # Raw blog for /about page
   │    ├── blog                   # Blog posts
-  │    └── docs                   # Blog for /docs/* pages
+  │    ├── docs                   # Blog for /docs/* pages
+  │    └── tools                  # Various pages to describe tools
   ├── public                      # Data for site metadata and static blog such as images
   ├── scripts                     # Scripts used in the build and dev processes
   ├── next.config.js              # Next.js configuration file
@@ -103,7 +140,7 @@ This repository has the following structure:
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
 
-## Contributors ✨
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -160,6 +197,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ankitchaudharyy"><img src="https://avatars.githubusercontent.com/u/46367738?v=4?s=100" width="100px;" alt="Ankit Chaudhary"/><br /><sub><b>Ankit Chaudhary</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Ankitchaudharyy" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Amzani"><img src="https://avatars.githubusercontent.com/u/554438?v=4?s=100" width="100px;" alt="samz"/><br /><sub><b>samz</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Amzani" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/"><img src="https://avatars.githubusercontent.com/u/78029145?v=4?s=100" width="100px;" alt="Bhaswati Roy "/><br /><sub><b>Bhaswati Roy </b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=BhaswatiRoy" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.behance.net/muibudeenaisha"><img src="https://avatars.githubusercontent.com/u/105395613?v=4?s=100" width="100px;" alt="AISHAT MUIBUDEEN"/><br /><sub><b>AISHAT MUIBUDEEN</b></sub></a><br /><a href="#design-Mayaleeeee" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://nawedali.tech"><img src="https://avatars.githubusercontent.com/u/83456083?v=4?s=100" width="100px;" alt="Nawed Ali"/><br /><sub><b>Nawed Ali</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=nawed2611" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
