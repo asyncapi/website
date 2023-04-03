@@ -60,15 +60,15 @@
       "score": 20.96374497869589
     },
     {
-      "id": "PR_kwDOFi_gUM46XnQo",
+      "id": "PR_kwDOB5hCo85FYPwk",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: add http adapter support for glee",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/glee/pull/320",
-      "repo": "asyncapi/glee",
+      "title": "feat!: extend bundling to create another schemas without $id",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
+      "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 20.96374497869589
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -84,7 +84,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 19.815046623698855
+      "score": 20.67657038994663
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -95,7 +95,46 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 17.804824502454043
+      "score": 18.091999091203302
+    },
+    {
+      "id": "I_kwDOBGu-185CELGB",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Work on 3.0 release",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/spec/issues/691",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 17.517649913704783
+    },
+    {
+      "id": "I_kwDOG115t85D93P0",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website UI Kit design/dev project",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/design-system/issues/4",
+      "repo": "asyncapi/design-system",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDODtSOs84xcJjh",
@@ -137,45 +176,58 @@
       "score": 16.65612614745701
     },
     {
-      "id": "I_kwDOBGu-185CELGB",
+      "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
+      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
       "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOGPFxkc5Ey7vh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: share spec feature",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/server-api/pull/213",
-      "repo": "asyncapi/server-api",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
-      "id": "PR_kwDOB5hCo85FYPwk",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: extend bundling to create another schemas without $id",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOE8Qh385hIzoy",
-      "title": "Add enum type selection in the playground",
+      "id": "I_kwDODyzcIc5iNvCl",
+      "title": "skipping workflows for `allcontributors` bot do not work",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1162",
+      "resourcePath": "/asyncapi/.github/issues/223",
+      "repo": "asyncapi/.github",
+      "author": "derberg",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "title": "Improve kafka adapter",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9vo",
+      "title": "Add overwriting GetHashCode method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1178",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "typescript",
@@ -183,6 +235,148 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb9W5",
+      "title": "Add overwriting Equal method support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1177",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8cG",
+      "title": "Add Newtonsoft serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1176",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb8C2",
+      "title": "Add System.Text.Json serialization support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1175",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hb1a-",
+      "title": "Add module system selection in the playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1173",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbz9R",
+      "title": "Add example data function support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1172",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hbxvG",
+      "title": "Add jsonbinpack support in the Playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1171",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
         },
         {
           "name": "website",
@@ -281,36 +475,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5gDYPo",
-      "title": "Change the collection type for arrays for C# models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/469",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDUoH",
-      "title": "Generate auto-implemented properties for C# models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/468",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5gDTaN",
       "title": "Generate overwritten GetHashCode method for C# models",
       "isAssigned": false,
@@ -390,21 +554,6 @@
       "title": "Generate example function for TypeScript models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/462",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDI1L",
-      "title": "Generate jsonbinpack support for TypeScript models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/461",
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
       "area": "Unknown",
@@ -529,21 +678,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5cV4aC",
-      "title": "make a preloader for Tools Dashboard",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1228",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5bqInA",
       "title": "Add Kotlin support for model generation",
       "isAssigned": false,
@@ -570,6 +704,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -995,44 +1133,6 @@
       "author": "AgustinBettati",
       "area": "Unknown",
       "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU5OTU3MDg4OTM=",
-      "title": "Documentation of MessageObject \"deprecated\" property",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/92",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "c-pius",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2ODQ4MjI5ODQ=",
-      "title": "Integrate eslint plugin for jsdoc validation and fix potential issues",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/164",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
         {
           "name": "stale",
           "color": "ededed"
