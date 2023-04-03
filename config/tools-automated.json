@@ -1,11 +1,76 @@
 {
   "APIs": {
     "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
   },
   "Code-first tools": {
     "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
-    "toolsList": []
+    "toolsList": [
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "nestjs-asyncapi",
+        "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
+        "links": {
+          "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
+        },
+        "filters": {
+          "language": "Typescript",
+          "technology": [
+            "Node.js",
+            "NestJS"
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      }
+    ]
   },
   "Code Generators": {
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
@@ -133,9 +198,9 @@
     "toolsList": [
       {
         "title": "GitHub Action for Generator",
-        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
+        "description": null,
         "links": {
-          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
+          "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
         },
         "filters": {
           "technology": [
@@ -145,7 +210,7 @@
             "github-action"
           ],
           "hasCommercial": false,
-          "isAsyncAPIOwner": true
+          "isAsyncAPIOwner": false
         }
       }
     ]
