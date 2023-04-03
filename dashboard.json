@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 51.978600563615835
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -33,6 +17,22 @@
       "score": 32.16355393991698
     },
     {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 25.053033341156514
+    },
+    {
       "id": "PR_kwDOFLhIt849RhNn",
       "isPR": true,
       "isAssigned": true,
@@ -42,6 +42,22 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 24.409840043686994
+    },
+    {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 22.112443333692923
     },
     {
       "id": "I_kwDOBGu-184_rP6l",
@@ -171,22 +187,6 @@
         {
           "name": "gsod",
           "color": "7B5DB8"
-        }
-      ],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ],
       "score": 16.65612614745701
@@ -678,21 +678,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5bqInA",
-      "title": "Add Kotlin support for model generation",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/432",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOIUldZc5XXsGH",
       "title": "Filter out application which are not in use",
       "isAssigned": false,
@@ -969,25 +954,6 @@
         {
           "name": "keep-open",
           "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt84_RlG5",
-      "title": "we should have a GH workflow that posts a welcome message to the PR that is merged that contained new TSC member",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/178",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
