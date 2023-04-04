@@ -390,6 +390,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Mayaleeeee",
+      "name": "AISHAT MUIBUDEEN",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105395613?v=4",
+      "profile": "https://www.behance.net/muibudeenaisha",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "nawed2611",
+      "name": "Nawed Ali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83456083?v=4",
+      "profile": "https://nawedali.tech",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
