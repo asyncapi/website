@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
@@ -7,8 +7,10 @@ import FiltersDisplay from './FiltersDisplay';
 import Button from '../buttons/Button'
 import tags from '../../config/all-tags.json'
 import {categoryList} from '../../scripts/tools/categorylist'
+import Data from "../../scripts/tools/tools-schema.json"
+import { Carddata } from './Carddata';
 
-export default function Filters({setOpenFilter}) {
+export default function Filters({setOpenFilter, setIsFiltered}) {
   // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
   const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
   
@@ -24,12 +26,34 @@ export default function Filters({setOpenFilter}) {
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
+  // useEffect hook used to update the UI elements 
+  useEffect(() => {
+    setCheckedLanguage(languages);
+    setCheckedTechnology(technologies);
+    setCheckedCategory(categories);
+    setCheckPaid(isPaid);
+    setCheckOwner(isAsyncAPIOwner);
+  }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
+  
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
 
+  // For Showing language, technology and category information
+  const [visible, setVisible] = useState({
+    lang : false,
+    tech: false,
+    category: false,
+    pricing : false,
+    ownership: false
+  })
+
+  // For showing the read more content of Language and Category information
+  const [readMore , setReadMore] = useState(false)
+
   // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
+    setIsFiltered(true);
     setLanguages(checkedLanguage);
     setTechnologies(checkedTechnology)
     setCategories(checkedCategory)
@@ -38,23 +62,24 @@ export default function Filters({setOpenFilter}) {
     setOpenFilter(false)
   }
 
-  // function to clear all the filters when `Clear Filters` is clicked.
-  const clearFilters =() => {
-    setLanguages([])
-    setTechnologies([])
-    setCategories([])
-    setisPaid("all")
-    setAsyncAPIOwner(false)
-    setOpenFilter(false)
+  // function to undo all the filters when `Undo Changes` is clicked.
+  const undoChanges =() => {
+      setCheckedLanguage(languages);
+      setCheckedTechnology(technologies);
+      setCheckedCategory(categories);
+      setCheckPaid(isPaid);
+      setCheckOwner(isAsyncAPIOwner);
   }
 
   return (
     <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
       <div className="flex flex-col gap-2 mx-4">
         <div className="flex gap-2 items-baseline justify-between">
-          <div className="text-sm text-gray-500 uppercase">Pricing</div>
-          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
-            Clear Filters
+          <div className="text-sm text-gray-500">
+          <Carddata heading="PRICING" data ={Data.properties.filters.properties.hasCommercial.description}  type="pricing" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
+          </div>
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={undoChanges}>
+            Undo Changes
           </div>
         </div>
         <div className="flex gap-2">
@@ -70,7 +95,9 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">OWNERSHIP</div>
+        <div className="text-sm text-gray-500">
+        <Carddata heading="OWNERSHIP" data = "It describes whether the tools are maintained by AsyncAPI organization or not."  type="ownership" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
+        </div>
         <div className="flex gap-4">
           <label className="inline-flex relative items-center cursor-pointer">
             <input type="checkbox" value={checkOwner} className="sr-only peer" onChange={() => setCheckOwner(!checkOwner)} />
@@ -83,7 +110,7 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">LANGUAGE</div>
+        <Carddata heading="LANGUAGE" data = {Data.properties.filters.properties.language.description} type="lang" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
           <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
             <div className="flex items-center text-dark">
@@ -99,7 +126,7 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">TECHNOLOGY</div>
+      <Carddata heading="TECHNOLOGY" data = {Data.properties.filters.properties.technology.description} type="tech" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
           <div className="flex items-center text-dark">
@@ -115,7 +142,7 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">CATEGORY</div>
+      <Carddata heading="CATEGORY" data = {Data.properties.filters.properties.categories.description} type="category" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
         <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
           <div className="flex items-center text-dark">

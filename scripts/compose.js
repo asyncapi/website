@@ -22,6 +22,7 @@ const genFrontMatter = (answers) => {
   title: ${answers.title ? answers.title : 'Untitled'}
   date: ${moment().format("YYYY-MM-DDTh:mm:ssZ")}
   type: ${answers.type}
+  canonical: ${answers.canonical ? answers.canonical : ''}
   tags: [${answers.tags ? tags : ''}]
   cover: /img/posts/may-2021-at-asyncapi/cover.webp
   authors:
@@ -118,6 +119,11 @@ inquirer
       message: 'Enter the post type:',
       type: 'list',
       choices: ['Communication', 'Community', 'Engineering', 'Marketing', 'Strategy', 'Video'],
+    },
+    {
+      name: 'canonical',
+      message: 'Enter the canonical URL if any:',
+      type: 'input',
     },
   ])
   .then((answers) => {
