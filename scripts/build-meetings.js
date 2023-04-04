@@ -34,7 +34,7 @@ async function buildMeetings() {
           e.extendedProperties?.private &&
           `https://github.com/asyncapi/community/issues/${e.extendedProperties.private.ISSUE_ID}`,
         banner:
-          e.extendedProperties?.private && e.extendedProperties.private.banner,
+          e.extendedProperties?.private && e.extendedProperties.private.BANNER,
         date: new Date(e.start.dateTime),
       };
     });
