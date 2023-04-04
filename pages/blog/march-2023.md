@@ -23,7 +23,7 @@ One of our goals this year is to host [AACoT](https://opencollective.com/asyncap
 We recently added a new [case studies](https://www.asyncapi.com/casestudies) section on our website. It showcases real-world production scenarios and how different individuals adopt and integrate our specifications and tools. On this note, we are glad to have our first official case study from [Adeo](https://www.adeo.com/en/) featured on the website. You can read more about it [here](https://www.asyncapi.com/casestudies/adeogroup).
 
 ## Spec x Tooling
-[Modelina](https://modelina.org/) website has been merged and if you are interested in generating data models for your payloads, do try it out.
+The [Modelina](https://modelina.org/) website has been merged and if you are interested in generating data models for your payloads, do try it out.
 Spec 3.0 meetings will now incorporate various discussions and will be the best place to ask about v3, how to use [non-JSON schemas](https://github.com/asyncapi/spec/pull/910) within AsyncAPI, and [documentation](https://github.com/asyncapi/website/issues/1433).
 
 
