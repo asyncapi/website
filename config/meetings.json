@@ -1,7 +1,122 @@
 [
   {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=MWJrazMzbHNqZGJsaGdnZWxxMjRxa250ZmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/562",
+    "date": "2023-01-10T08:00:00.000Z"
+  },
+  {
+    "title": "Design planning meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bjlhNGg1OTRpZmQ0Mm42Zjg2a25kbGlyOWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/563",
+    "date": "2023-01-16T16:00:00.000Z"
+  },
+  {
     "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=azF2Z2pxdm0wMDlkOGFrZ2ZiNnRvYzczajggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/564",
+    "date": "2023-01-18T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=dms5aDV0NDNoZnFpa3Q4YnRjM3Bzc3Jvb2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/569",
+    "date": "2023-01-24T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=dmVxczhpNjQzdm5tYWFoYnVtZHY1NW9vMWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/575",
+    "date": "2023-02-01T16:00:00.000Z"
+  },
+  {
+    "title": "Let's talk about contributing Contributing to the Specification ",
+    "calLink": "https://www.google.com/calendar/event?eid=bWhrcWdtajZpNXJhaGswN3Z2cWlxaG51dWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/579",
+    "date": "2023-01-26T13:00:00.000Z"
+  },
+  {
+    "title": "Design meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bmRoazVvYjFqbnFoaGI2Y2N1N2liMGNvMWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/580",
+    "date": "2023-01-31T15:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZzIwZHNiczh1dnNqdTVkc212Y3I3YmZrcGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/587",
+    "date": "2023-02-15T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=cTd2bGZodXU1YnVzY2Ywa2Y4aG5sZGJzYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/589",
+    "date": "2023-02-07T08:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=M2swdGhkaG9mbmpndGZqNzQ1czY1cmd1YjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/599",
+    "date": "2023-03-01T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Z3NuN29kOTBvNmZyc29yaDJscGc1YmhuMzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/603",
+    "date": "2023-02-21T16:00:00.000Z"
+  },
+  {
+    "title": "Triage of issues and PRs in website repo",
+    "calLink": "https://www.google.com/calendar/event?eid=bTV0bzl0YzAzMmtoa24yOWI3YmFvbW9ncHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/619",
+    "date": "2023-02-28T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YTNvaDExZGQ0dmwzZmxsdTU2dHZ1OW5iZzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/624",
-    "date": "Wed, 15 Mar 2023 16:00:00 GMT"
+    "date": "2023-03-15T16:00:00.000Z"
+  },
+  {
+    "title": "Career Empowerment and Embracing Equity in Tech",
+    "calLink": "https://www.google.com/calendar/event?eid=aGc1cDIybTM5MWtsdGFmMjNhOWdqY2MwYzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/625",
+    "date": "2023-03-08T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NmRyanI0ZGd2cHNqOG5qb3FvMWRlZG9oMmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/629",
+    "date": "2023-03-07T08:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bjE2ZTdnZGJ1bHNxMWhrcW9rcjh0bGRxN3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/635",
+    "date": "2023-03-29T16:00:00.000Z"
+  },
+  {
+    "title": "Adding support for non-JSON schemas",
+    "calLink": "https://www.google.com/calendar/event?eid=dmU0Ym5wZWplZnZpZXM3dG0yNzUyYWJsZDAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/637",
+    "date": "2023-03-21T15:00:00.000Z"
+  },
+  {
+    "title": "Make Your GSoC Proposal Stand Out",
+    "calLink": "https://www.google.com/calendar/event?eid=MGxsbzg1dWdjNmJkZTlzbmpkNms5bjVsMDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/639",
+    "date": "2023-03-20T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NXM3ZWNraGQzNGMwcjUwM2MxdGtib3VuaWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/640",
+    "date": "2023-03-21T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=czRmMG5maHRsYjduM2g3dmwxMDM1Z3R0NzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/645",
+    "date": "2023-04-04T08:00:00.000Z"
   }
 ]

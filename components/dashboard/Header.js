@@ -4,7 +4,7 @@ import SlackButton from '../buttons/SlackButton';
 
 export default function Header() {
   return (
-    <div className="sm:flex sm:justify-between">
+    <div className="sm:flex sm:justify-between" id="main-content">
       <div className="lg:flex lg:justify-between">
         <div className="max-w-xl">
           <h2 className="text-4xl leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none sm:tracking-tight">
