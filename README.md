@@ -2,7 +2,6 @@
 
 ---
 
-<<<<<<< HEAD
 <br/>
 <p align="center">
 <a href="https://github.com/asyncapi/website" alt="GitHub contributors">
@@ -16,13 +15,6 @@
 <a href="https://github.com/asyncapi/website" alt="License">
 <img src="https://img.shields.io/github/license/asyncapi/website.svg" /></a>
 </p>
-=======
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-40-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
->>>>>>> master
 
 ## Overview
 
@@ -156,7 +148,6 @@ This repository has the following structure:
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
 
-<<<<<<< HEAD
 ## Connect with us 
 
 <p align="left">
@@ -168,9 +159,6 @@ This repository has the following structure:
 </p>
 
 ## Contributors ✨
-=======
-## Contributors
->>>>>>> master
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
