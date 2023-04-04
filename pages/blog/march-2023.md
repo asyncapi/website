@@ -20,7 +20,7 @@ This is such an incredible milestone for the community and we can't wait to see 
 One of our goals this year is to host [AACoT](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1), a series of micro-conferences in different locations around the world. We are glad that our first location has been confirmed and we'll be in Madrid on the 18th - 19th of October 2023. [Call for speakers](https://sessionize.com/aacot-madrid) will be open soon and we are eagerly waiting to receive your submissions. For more details about other AACoT locations, keep an eye out for this [discussion](https://github.com/orgs/asyncapi/discussions/598).
 
 ## Case Studies
-We recently added a new [case studies](https://www.asyncapi.com/casestudies) section on our website. It showcases real-world production scenarios and how different individuals adopt and integrate our specifications and tools. On this note, we are glad to have our first official case study from Adeo featured on the website. You can read more about it [here](https://www.asyncapi.com/casestudies/adeogroup).
+We recently added a new [case studies](https://www.asyncapi.com/casestudies) section on our website. It showcases real-world production scenarios and how different individuals adopt and integrate our specifications and tools. On this note, we are glad to have our first official case study from [Adeo](https://www.adeo.com/en/) featured on the website. You can read more about it [here](https://www.asyncapi.com/casestudies/adeogroup).
 
 ## Spec x Tooling
 [Modelina](https://modelina.org/) website has been merged and if you are interested in generating data models for your payloads, do try it out.
