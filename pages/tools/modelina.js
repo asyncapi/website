@@ -264,11 +264,8 @@ export default function ModelinaPlaygroundPage() {
                   className="hidden mt-2 md:mt-0 lg:inline-block md:ml-2" 
                   text="Try it now"
                   icon={<IconRocket className="inline-block -mt-1 w-6 h-6" />}
-                  onClick={() => {
-                    const element = tryItOutRef.current;
-                    element && typeof element.scrollIntoView === 'function' && element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                />
+                  href="https://modelina.org/playground" target='blank'
+                           />
               </div>
             </div>
           </div>
@@ -277,9 +274,9 @@ export default function ModelinaPlaygroundPage() {
           </div>
         </div>
 
-        <div ref={tryItOutRef}>
+        {/* <div ref={tryItOutRef}>
           {playground}
-        </div>
+        </div> */}
 
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative" role="alert">
