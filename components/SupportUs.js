@@ -88,7 +88,7 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         >
           <img
             className="inline-block px-4 sm:h-9"
-            src="/img/supportus/sessionize.png"
+            src="/img/supportus/sessionize.webp"
             title="Sessionize-Free community license for AACoT Madrid."
           />
         </a>
