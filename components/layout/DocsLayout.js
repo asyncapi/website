@@ -16,6 +16,7 @@ import AnnouncementHero from '../campaigns/AnnoucementHero'
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import { getAllPosts } from '../../lib/api'
+import Link from 'next/link'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
@@ -46,7 +47,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
         )}
-        <div className="flex flex-row">
+        <div className="flex flex-row" id="main-content">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
@@ -111,6 +112,31 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   {generateEditLink(post)}
                 </p>
               </div>
+              { post.releaseNoteLink &&
+                // show only when it is related to specification (/docs/reference/specification) AND is not a pre-release 
+                // for example, if the post's title is "3.0.0 (Pre-release)", which will not have RN, so do not render this section. 
+                <div className="w-full mt-5 py-3 px-2 text-center rounded-lg bg-secondary-100">
+                  <div>
+                    <span className="text-sm font-sans antialiased text-gray-800"> 
+                      {`What is new in v${post.title}? Have a look at the `} 
+                    </span> 
+                    <Link href={post.releaseNoteLink}>
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes</a>
+                    </Link>.
+                  </div>
+                  <div>
+                    <span className="text-sm font-sans antialiased text-gray-800"> 
+                      Interested in release notes of other versions of the specification?&nbsp;
+                    </span> 
+                    <span className="text-sm font-sans antialiased text-gray-800">
+                      Check&nbsp;
+                      <Link href="https://www.asyncapi.com/blog?tags=Release+Notes">
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>list of release notes</a>
+                      </Link>.
+                    </span>        
+                  </div>
+                </div>
+                }
                 <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
