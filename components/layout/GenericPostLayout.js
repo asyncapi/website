@@ -10,7 +10,8 @@ import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function GenericPostLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
-  if (post.title === undefined) throw new Error('Post title is required')
+  if (post.title === undefined & post.slug!="/about") throw new Error('Post title is required')
+
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {

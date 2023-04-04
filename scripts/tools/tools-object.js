@@ -109,3 +109,5 @@ async function convertTools(data) {
   }
   return finalToolsObject;
 }
+
+module.exports = {convertTools, createToolObject}
