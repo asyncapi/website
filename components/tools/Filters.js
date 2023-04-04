@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
@@ -26,6 +26,15 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
+  // useEffect hook used to update the UI elements 
+  useEffect(() => {
+    setCheckedLanguage(languages);
+    setCheckedTechnology(technologies);
+    setCheckedCategory(categories);
+    setCheckPaid(isPaid);
+    setCheckOwner(isAsyncAPIOwner);
+  }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
+  
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
@@ -53,14 +62,13 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
     setOpenFilter(false)
   }
 
-  // function to clear all the filters when `Clear Filters` is clicked.
-  const clearFilters =() => {
-    setLanguages([])
-    setTechnologies([])
-    setCategories([])
-    setisPaid("all")
-    setAsyncAPIOwner(false)
-    setOpenFilter(false)
+  // function to undo all the filters when `Undo Changes` is clicked.
+  const undoChanges =() => {
+      setCheckedLanguage(languages);
+      setCheckedTechnology(technologies);
+      setCheckedCategory(categories);
+      setCheckPaid(isPaid);
+      setCheckOwner(isAsyncAPIOwner);
   }
 
   return (
@@ -70,8 +78,8 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
           <div className="text-sm text-gray-500">
           <Carddata heading="PRICING" data ={Data.properties.filters.properties.hasCommercial.description}  type="pricing" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
           </div>
-          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
-            Clear Filters
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={undoChanges}>
+            Undo Changes
           </div>
         </div>
         <div className="flex gap-2">
