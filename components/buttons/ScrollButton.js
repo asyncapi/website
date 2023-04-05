@@ -6,7 +6,7 @@ function ScrollButton(){
     const scrollImage = '/img/loaders/scroll.svg'
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
-            if(window.scrollY>100){
+            if(window.scrollY>150){
                 setBackToTopButton(true)
             }
             else{
