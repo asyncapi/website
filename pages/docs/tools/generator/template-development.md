@@ -13,18 +13,20 @@ Let's break down the minimum template requirements: the `template` directory and
 
 The `template` directory holds all the files that will be used for generating the output. The generator will process all the files stored in this directory.
 
+The following code is an example of a `index.js` file inside the `template` folder.
 ```js
 import { File, Text } from "@asyncapi/generator-react-sdk";
 
-export default function({ asyncapi, params, originalAsyncAPI }) {
-return (
+export default function ({ asyncapi, params, originalAsyncAPI }) {
+  return (
     <File name="asyncapi.md">
-    <Text>My application's markdown file.</Text>
-    <Text>App name: **{ asyncapi.info().title() }**</Text>
+      <Text>My application's markdown file.</Text>
+      <Text>App name: **{asyncapi.info().title()}**</Text>
     </File>
-);
+  );
 }
 ```
+
 ### `package.json` file
 
 Before the generation process begins, the generator installs the template into its dependencies. A `package.json` file is necessary to identify the template name.
@@ -95,7 +97,9 @@ Additionally, we can also have a configuration called `parameters`, which is an 
   "name": "myTemplate",
   "generator": {
     "renderer": "react",
-    "supportedProtocols": "mqtt",
+    "supportedProtocols": [
+      "mqtt"
+    ],
     "parameters": {
         "version": {
           "description": "Overrides application version under `info.version` in the AsyncAPI document.",
