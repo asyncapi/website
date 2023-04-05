@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+import { getEvents } from '../../lib/staticHelpers';
 
 function EventFilter({ data, setData }) {
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
@@ -9,26 +10,26 @@ function EventFilter({ data, setData }) {
   useEffect(() => {
     switch (active) {
       case 'All':
-        setData(data);
+        setData(getEvents(data));
         break;
       case 'Upcoming':
         setData(
-          data && data.filter((a) => {
-            return a.date > currentDate;
-          })
+            getEvents(data).filter((a) => {
+              return a.date.format() > currentDate;
+            })
         );
         break;
       case 'Recorded':
         setData(
-          data && data.filter((a) => {
-            return a.date < currentDate;
+          getEvents(data).filter((a) => {
+            return a.date.format() < currentDate;
           })
         );
         break;
     }
   }, [active]);
   return (
-    <div className='p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600'>
+    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600">
       {filterList.map((list) => (
         <div
           key={list}

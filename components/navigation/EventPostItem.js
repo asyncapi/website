@@ -30,7 +30,7 @@ function EventPostItem({ post, className, id }) {
 
   const defaultCover = '/img/homepage/confBlurBg.webp';
   let active = true;
-  if(currentDate > post.date){
+  if(currentDate > post.date.format()){
     active = false
   }
   return (
