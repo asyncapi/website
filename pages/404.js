@@ -6,7 +6,7 @@ import AnnouncementHero from '../components/campaigns/AnnoucementHero';
 import Button from '../components/buttons/Button';
 
 function ErrorPage() {
-  const image = '/img/illustrations/illustration.psd';
+  const image = '/img/illustrations/illustration.webp';
   return (
     <div className="text-center">
       <StickyNavbar>
