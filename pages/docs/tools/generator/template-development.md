@@ -11,7 +11,7 @@ Let's break down the minimum template requirements: the `template` directory and
 
 ### `template` directory
 
-The `template` directory stores generated outputs in files. In other words, the generator processes all the files stored in this directory.
+The `template` directory holds all the files that will be used for generating the output. The generator will process all the files stored in this directory.
 
 ```js
 import { File, Text } from "@asyncapi/generator-react-sdk";
@@ -73,14 +73,16 @@ The following examples show some advanced configurations that we can use in our 
   "name": "myTemplate",
   "generator": {
     "renderer": "react",
-    "supportedProtocols": "mqtt"
+    "supportedProtocols": [
+      "mqtt"
+    ]
   },
   "dependencies": {
     "@asyncapi/generator-react-sdk": "^0.2.25"
   }
 }
 ```
-The above `package.json` file has a newly added configuration called `supportedProtocols` which is set to `mqtt`. This configuration displays all the protocols that this template supports. You can have multiple supported protocols in our template. 
+The above `package.json` file has a newly added configuration called `supportedProtocols` which is set to a list containing only `mqtt`. This configuration displays all the protocols that this template supports. You can have multiple supported protocols in our template. 
 
 For example, if you want to generate an output using the above template, you need to have an AsyncAPI document with servers that use `mqtt` to generate your desired output. If your AsyncAPI document has server connections with `kafka`, the generation process will be terminated since the only supported protocol mentioned is `mqtt`. 
 
