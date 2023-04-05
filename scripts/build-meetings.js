@@ -18,7 +18,7 @@ async function buildMeetings() {
       Date.parse(currentTime) - 100 * 24 * 60 * 60 * 1000
     ).toISOString();
     const timeMax = new Date(
-      Date.parse(currentTime) + 8 * 24 * 60 * 60 * 1000
+      Date.parse(currentTime) + 30 * 24 * 60 * 60 * 1000
     ).toISOString();
     const eventsList = await calendar.events.list({
       calendarId:  process.env.CALENDAR_ID,
