@@ -13,10 +13,7 @@ function ErrorPage() {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
      
-      <div className='flex-col items-center justify-center mt-20 flex md:flex-row'>
-          <div>
-            <img src={image} className="mx-auto w-52" />
-          </div>
+      <div className='items-center justify-center mt-20 flex-col md:flex-row'>
           <div>
             <AnnouncementHero className="my-4" />
             <header className='px-2 mt-12 '>
@@ -31,6 +28,9 @@ function ErrorPage() {
               </div>
             </header>
             <AnnouncementHero />
+          </div>
+          <div>
+            <img src={image} className="mx-auto w-52" />
           </div>
         </div>
    
