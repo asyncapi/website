@@ -24,18 +24,6 @@
                 "filters": {
                     "categories": ["api", "directory"]
                 }
-            },
-            {
-                "title": "Check-API",
-                "description": "Check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.",
-                "links": {
-                    "repoUrl": "https://github.com/Mermade/check_api"
-                },
-                "filters": {
-                    "language": "JavaScript",
-                    "technology": ["Node.js"],
-                    "categories": ["api","validator"]
-                }
             }
         ]
     },
@@ -524,18 +512,6 @@
                     "language": "JavaScript",
                     "technology": ["Node.js"],
                     "categories": ["validator"]
-                }
-            },
-            {
-                "title": "Check-API",
-                "description": "Check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.",
-                "links": {
-                    "repoUrl": "https://github.com/Mermade/check_api"
-                },
-                "filters": {
-                    "language": "JavaScript",
-                    "technology": ["Node.js"],
-                    "categories": ["api","validator"]
                 }
             },
             {

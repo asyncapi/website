@@ -38,6 +38,7 @@ export default function TOC({
           currentClassName="text-primary-500 font-bold"
           componentTag="div"
           rootEl={contentSelector}
+          offset={-120}
         >
           {
             tocItems.map((item, index) => (
