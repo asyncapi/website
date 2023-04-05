@@ -18,7 +18,7 @@ import Paragraph from '../../../components/typography/Paragraph';
 import { getEvents } from '../../../lib/staticHelpers';
 
 function index() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community-events.webp';
   const [events, setEvents] = useState(getEvents(meetings));
 
   return (

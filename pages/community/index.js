@@ -11,7 +11,7 @@ import HomeCards from '../../components/community/HomeCard';
 import Card from '../../components/community/Card';
 
 function CommunityIndexPage() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community.webp';
   return (
     <GenericLayout
       title="AsyncAPI Community Meetings"
