@@ -80,6 +80,7 @@ export default function BlogLayout({ post, children }) {
                     display: none !important;
                 }
               `}</style>
+              {post.canonical && <link rel="canonical" href={post.canonical} />}
             </HtmlHead>
             <img src={post.cover} alt={post.coverCaption} title={post.coverCaption} className="mt-6 mb-6 w-full" />
             {children}
