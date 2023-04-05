@@ -18,26 +18,26 @@ export default function Layout({ children }) {
       <DocsLayout post={post} navItems={allDocPosts}>
         {children}
       </DocsLayout>
-    )
+    );
   } else if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname, 'blog')
     return (
       <BlogLayout post={post} navItems={posts["blog"]}>
         {children}
       </BlogLayout>
-    )
+    );
   } else if (pathname === '/blog') {
     return (
       <BlogContext.Provider value={{ navItems: posts["blog"] }}>
         {children}
       </BlogContext.Provider>
-    )
+    );
   } else if (pathname === '/jobs') {
     return (
       <JobsContext.Provider value={{ navItems: posts["jobs"] }}>
         {children}
       </JobsContext.Provider>
-    )
+    );
   } else if (pathname.startsWith('/jobs/')) {
     const post = getPostBySlug(pathname, 'jobs')
     return (
@@ -46,13 +46,9 @@ export default function Layout({ children }) {
       </JobsLayout>
     )
   } else {
-    const post = getPostBySlug(pathname)
+    const post = getPostBySlug(pathname);
     if (post) {
-      return (
-        <GenericPostLayout post={post}>
-          {children}
-        </GenericPostLayout>
-      )
+      return <GenericPostLayout post={post}>{children}</GenericPostLayout>;
     }
   }
   
