@@ -1,7 +1,7 @@
-import GenericLayout from "../../components/layout/GenericLayout";
-import TSCMembersList from "../../config/TSC_MEMBERS.json";
-import {sortBy} from 'lodash';
-import NewsletterSubscribe from "../../components/NewsletterSubscribe";
+import GenericLayout from '../../components/layout/GenericLayout';
+import TSCMembersList from '../../config/TSC_MEMBERS.json';
+import { sortBy } from 'lodash';
+import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import TextLink from '../../components/typography/TextLink';
 
 function addAdditionalUserInfo(user) {
@@ -22,7 +22,7 @@ function addAdditionalUserInfo(user) {
 
   // add avatar url
   // github redirects to avatar url using `https://www.github.com/<username>.png`
-  userData.avatarUrl = userData.github + ".png";
+  userData.avatarUrl = userData.github + '.png';
 
   // make repo links
   userData.repos = userData.repos.map((repoName) => ({
@@ -35,10 +35,13 @@ function addAdditionalUserInfo(user) {
 
 export default function TSC() {
   const description =
-    "Meet the current AsyncAPI TSC members and learn how you can become one.";
-  const image = "/img/social/website-card.jpg";
+    'Meet the current AsyncAPI TSC members and learn how you can become one.';
+  const image = '/img/social/website-card.jpg';
 
-  const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
+  const tscMembers = sortBy(
+    TSCMembersList.map((user) => addAdditionalUserInfo(user)),
+    ['name']
+  );
 
   return (
     <GenericLayout
@@ -47,10 +50,10 @@ export default function TSC() {
       image={image}
       wide
     >
-      <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
+      <div className="relative max-w-xl px-4 py-12 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <div className="grid lg:grid-cols-3 lg:gap-8">
           <div>
-            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            <h3 className="mb-2 font-semibold text-primary-800 lg:text-2xl lg:text-center">
               What is a TSC?
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
@@ -60,11 +63,9 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
-
-            
           </div>
           <div>
-            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            <h3 className="mb-2 font-semibold text-primary-800 lg:text-2xl lg:text-center">
               How can I become a TSC member?
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
@@ -74,35 +75,38 @@ export default function TSC() {
               projects and then other maintainers will invite you to join. You
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
-              stay as a maintainer).
-              Follow this
-              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
+              stay as a maintainer). Follow this
+              <TextLink
+                href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
+                target="_blank"
+                className="text-base font-normal text-blue-500 no-underline hover:text-sky-400"
+              >
                 Link
               </TextLink>
               &nbsp;to know more!
             </p>
           </div>
           <div>
-            <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
+            <h3 className="mb-2 font-semibold text-primary-800 lg:text-2xl lg:text-center">
               Our governance model
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
-              AsyncAPI Initiative runs under an{" "}
+              AsyncAPI Initiative runs under an{' '}
               <a
                 href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
                 className="text-blue-500 hover:text-blue-400"
               >
                 Open Governance Model
-              </a>{" "}
+              </a>{' '}
               that gives power to the people actively involved and working on
               the project. No matter if you are an individual contributor or
-              backed by a company, you have equal rights. Read{" "}
+              backed by a company, you have equal rights. Read{' '}
               <a
                 href="https://www.asyncapi.com/blog/governance-motivation"
                 className="text-blue-500 hover:text-blue-400"
               >
                 this
-              </a>{" "}
+              </a>{' '}
               article to learn more.
             </p>
           </div>
@@ -115,13 +119,9 @@ export default function TSC() {
           />
         </div>
         <div className="mt-10">
-          <div className="mb-5 text-primary-800 text-center">
-            <h3 className="font-semibold text-2xl">
-              Current TSC members
-            </h3>
-            <span className="font-thin text-sm">
-              (in alphabetical order)
-            </span>
+          <div className="mb-5 text-center text-primary-800">
+            <h3 className="text-2xl font-semibold">Current TSC members</h3>
+            <span className="text-sm font-thin">(in alphabetical order)</span>
           </div>
 
           <ul
@@ -142,21 +142,24 @@ export default function TSC() {
 function UserInfo({ user }) {
   return (
     <li
-      className="p-4 text-center border rounded-md border-gray-200 shadow-md"
+      className="p-4 text-center border border-gray-200 rounded-md shadow-md"
       key={user.github}
     >
       <div className="flex flex-row">
         <img
           src={user.avatarUrl}
-          className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
+          className="w-20 h-20 mx-auto rounded-full xl:w-28 xl:h-28"
         />
         <div className="flex-1">
-          <div className="font-bold text-lg my-3">{user.name}</div>
+          <div className="my-3 text-lg font-bold">{user.name}</div>
           <UserWorkStatus user={user} />
-          <ul role="list" className="flex justify-center space-x-5 my-5">
+          <ul role="list" className="flex justify-center my-5 space-x-5">
             <li>
               <a
                 href={user.github}
+                rel="noopener"
+                rel="noreferrer"
+                target="_blank"
                 className="text-gray-600 hover:text-gray-500"
               >
                 <span className="sr-only">GitHub</span>
@@ -167,6 +170,9 @@ function UserInfo({ user }) {
               <li>
                 <a
                   href={user.twitter}
+                  rel="noopener"
+                  rel="noreferrer"
+                  target="_blank"
                   className="text-gray-600 hover:text-gray-500"
                 >
                   <span className="sr-only">Twitter</span>
@@ -178,6 +184,9 @@ function UserInfo({ user }) {
               <li>
                 <a
                   href={user.linkedin}
+                  rel="noopener"
+                  rel="noreferrer"
+                  target="_blank"
                   className="text-gray-600 hover:text-gray-500"
                 >
                   <span className="sr-only">LinkedIn</span>
@@ -188,7 +197,7 @@ function UserInfo({ user }) {
           </ul>
         </div>
       </div>
-      <div className="flex flex-wrap gap-1 items-center">
+      <div className="flex flex-wrap items-center gap-1">
         Maintainer of:
         {user.repos.map((repo) => (
           <a
@@ -207,19 +216,19 @@ function UserInfo({ user }) {
 function UserWorkStatus({ user }) {
   if (user.availableForHire) {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-green-100 text-green-800">
+      <div className="inline-flex items-center px-3 py-1 font-medium leading-5 text-green-800 bg-green-100 rounded-full text-md">
         Available for hire
       </div>
     );
   } else if (user.company) {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-orange-100 text-orange-800">
+      <div className="inline-flex items-center px-3 py-1 font-medium leading-5 text-orange-800 bg-orange-100 rounded-full text-md">
         {user.company}
       </div>
     );
   } else {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-blue-100 text-blue-800">
+      <div className="inline-flex items-center px-3 py-1 font-medium leading-5 text-blue-800 bg-blue-100 rounded-full text-md">
         Individual Member
       </div>
     );
@@ -228,15 +237,18 @@ function UserWorkStatus({ user }) {
 
 function QuestionCard() {
   return (
-    <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4">
+    <li className="p-4 px-6 py-10 text-center border border-gray-200 rounded-md shadow-md">
       <img
         src="/img/avatars/questionmark.webp"
-        className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
+        className="w-20 h-20 mx-auto rounded-full xl:w-28 xl:h-28"
       />
       <div className="my-4">
-        Want to become a member?
-        Follow this
-        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
+        Want to become a member? Follow this
+        <TextLink
+          href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
+          target="_blank"
+          className="text-base font-normal no-underline text-sky-600 hover:text-sky-400"
+        >
           Link
         </TextLink>
         &nbsp;to know more!
