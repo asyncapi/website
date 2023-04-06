@@ -111,7 +111,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 18.091999091203302
+      "score": 18.666348268701817
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -122,7 +122,7 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDOG115t85D93P0",
@@ -153,17 +153,6 @@
       "score": 17.230475324955524
     },
     {
-      "id": "PR_kwDODtSOs84xcJjh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: switch-to-jsx-renderer",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/html-template/pull/316",
-      "repo": "asyncapi/html-template",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOBW5R_c5DkdBH",
       "isPR": false,
       "isAssigned": true,
@@ -190,21 +179,37 @@
         }
       ],
       "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.65612614745701
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODyzcIc5iNvCl",
-      "title": "skipping workflows for `allcontributors` bot do not work",
+      "id": "I_kwDOBW5R_c5iuXE6",
+      "title": "TSC member social links aren't opening in new tab",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/223",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "ci-cd",
+      "resourcePath": "/asyncapi/website/issues/1496",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "javascript",
       "labels": [
         {
           "name": "bug",
-          "color": "d73a4a"
+          "color": "ee0701"
         }
       ]
     },
@@ -400,21 +405,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5gy-rP",
-      "title": "Extends metadata of blog documents to enable people to provide canonical URL",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1430",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFi_gUM5gx6CN",
       "title": "error when running `npm install` in glee",
       "isAssigned": false,
@@ -537,7 +527,7 @@
     {
       "id": "I_kwDOFDnrNc5gDL_c",
       "title": "Generate documentation with example for TypeScript models",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/cli/issues/463",
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
@@ -572,21 +562,6 @@
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt85e_5PI",
-      "title": "store slack memberID of TSC members",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/606",
-      "repo": "asyncapi/community",
-      "author": "KhudaDad414",
-      "area": "javascript",
       "labels": [
         {
           "name": "enhancement",
@@ -922,16 +897,12 @@
     {
       "id": "I_kwDOBGu-185B-xnK",
       "title": "What do we define as a breaking change?",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/spec/issues/688",
       "repo": "asyncapi/spec",
       "author": "jonaslagoni",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
