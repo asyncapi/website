@@ -30,7 +30,7 @@ An Event-Driven Architecture (EDA) uses events to trigger and communicate betwee
 
 ![](/img/diagrams/simple-event-driven.png)
 
-In most cases, EDAs are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
+In most cases, EDAs are broker-centric, as seen in the diagram above. There are some new concepts in the above diagram, so let's go through them now.
 
 ### Message broker
 
