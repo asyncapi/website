@@ -111,7 +111,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 18.953522857451077
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -199,9 +199,24 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c5iyUQe",
+      "title": "Simple CI workflow on PR level that validates case study structure",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1501",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOBW5R_c5iuXE6",
       "title": "TSC member social links aren't opening in new tab",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1496",
       "repo": "asyncapi/website",
       "author": "akshatnema",
@@ -323,7 +338,7 @@
     {
       "id": "I_kwDOE8Qh385hb1a-",
       "title": "Add module system selection in the playground",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/modelina/issues/1173",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
