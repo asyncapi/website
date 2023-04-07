@@ -158,7 +158,6 @@ function UserInfo({ user }) {
               <a
                 href={user.github}
                 className="text-gray-600 hover:text-gray-500"
-                target = "_blank"
               >
                 <span className="sr-only">GitHub</span>
                 <GithubSVG />
@@ -169,7 +168,6 @@ function UserInfo({ user }) {
                 <a
                   href={user.twitter}
                   className="text-gray-600 hover:text-gray-500"
-                  target = "_blank"
                 >
                   <span className="sr-only">Twitter</span>
                   <TwitterSVG />
@@ -181,7 +179,6 @@ function UserInfo({ user }) {
                 <a
                   href={user.linkedin}
                   className="text-gray-600 hover:text-gray-500"
-                  target = "_blank"
                 >
                   <span className="sr-only">LinkedIn</span>
                   <LinkedInSVG />
