@@ -141,7 +141,9 @@ Here are the Spec 3.0 release changes requiring documentation:
 - [More reusable objects in components](https://github.com/asyncapi/spec/pull/792)
 
 ## Contributor growth
-We are pleased to report that **three new docs contributors** are already working on the _AsyncAPI Docs Style Guide_. We are thrilled to have new contributors working with us to help ensure consistency and clarity across all documentation.
+We are pleased to report that **new docs contributors** are already working on the _AsyncAPI Docs Style Guide_, such as [Bhaswati Roy](https://github.com/BhaswatiRoy). Bhaswati impressed us with her research strength and ability to break down new topics into managable tasks. 
+
+We are thrilled to have new contributors working with us to help ensure consistency and clarity across all documentation. 
 
 ## Conclusion
 Overall, Q1 2023 saw many sessions and unique users visiting the new AsyncAPI Docs after their information architecture makeover from the GSoD 2022 program. For the second time, we were accepted into Google Season of Docs 2023 for two projects that will help improve the quality of our documentation and provide valuable opportunities for contributors to develop new skills. We have also begun planning documentation updates for the upcoming Spec 3.0 release and started work on our first style guide, which will ensure that our documentation remains consistent and relevant.
