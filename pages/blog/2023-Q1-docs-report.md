@@ -10,7 +10,7 @@ authors:
   - name: Alejandra Quetzalli
     photo: /img/avatars/canela-ale.webp
     link: https://www.linkedin.com/in/alejandra-quetzalli/
-    byline: AsyncAPI Dev Docs are getting a makeover!
+    byline: During Q1 2023, AsyncAPI Docs had 26,875 sessions and 13,506 unique users!
 excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
 ---
 
@@ -77,9 +77,10 @@ style N fill:#T3EFB8,stroke:#000000,stroke-width:2px;
   A--> N[WasmEdge]
 ```
 
-[AsyncAPI was accepted into Google Season of Docs 2023 for two projects](https://developers.google.com/season-of-docs/docs/participants): **documenting the AsyncAPI document in detail** and **creating interactive learning paths**. We received a total budget of $10,350.
+[AsyncAPI is one of 13 OSS organizations accepted into Google Season of Docs 2023!](https://developers.google.com/season-of-docs/docs/participants) Selected technical writers will work on two projects: **documenting the AsyncAPI document in detail** and **creating interactive learning paths**. 
 
 ### GSoD 2023 budget at AsyncAPI:
+- We received a total budget of $10,350.
 - $5,000 for documenting the AsyncAPI document section details
 - $5,000 for creating interactive learning paths
 - $350 for participant swag+shipping costs
@@ -87,7 +88,7 @@ style N fill:#T3EFB8,stroke:#000000,stroke-width:2px;
 ### GSoD technical writer applications are open
 Alejandra Quetzalli is currently accepting applications for technical writers who want to participate in GSoD 2023 at AsyncAPI. **The deadline for applications is April 15.** Interested participants must complete this [AsyncAPI GSoD 2023 written application available in a public Google form](https://forms.gle/Lb4ELK78R1WY2z9MA). We have received 18 applications to date. 
 
-If selected, the next step in the process for candidates will be to receive a direct follow-up message (DM) on AsyncAPI Slack and an email from Alejandra to schedule a LIVE editing exercise interview. Up to 6 technical writers will be selected no later than April 21st.
+If selected, the next step in the process for candidates will be to receive a direct follow-up message (DM) on AsyncAPI Slack and an email from Alejandra to schedule a LIVE editing and writing exercise interview. Up to 6 technical writers will be selected no later than April 21st.
 
 ```mermaid
 graph TD
@@ -100,7 +101,7 @@ style F fill:#FF6EC7,stroke:#000000,stroke-width:2px;
 A[GSoD Technical Writer Applications]--> B[Applications OPEN until April 15]
 B--> C[Complete AsyncAPI's written application via google form]
 C--> D[best applicants receive follow-up Slack DM & email for next steps]
-D--> E[LIVE editing exercise interviews are scheduled]
+D--> E[LIVE editing & writing exercise interviews are scheduled]
 E--> F[Maximum of 6 writers are selected by April 21st]
 ```
 
