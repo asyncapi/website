@@ -91,7 +91,6 @@ export default function TSC() {
               <a
                 href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
                 className="text-blue-500 hover:text-blue-400"
-                
               >
                 Open Governance Model
               </a>{" "}
@@ -101,7 +100,6 @@ export default function TSC() {
               <a
                 href="https://www.asyncapi.com/blog/governance-motivation"
                 className="text-blue-500 hover:text-blue-400"
-                
               >
                 this
               </a>{" "}
