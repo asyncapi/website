@@ -1,0 +1,219 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "company": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "customers": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "revenue": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              }
+            },
+            "required": ["name", "link"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "customers",
+        "industry",
+        "revenue",
+        "website",
+        "logo",
+        "contact"
+      ],
+      "additionalProperties": false
+    },
+    "challenges": {
+      "type": "string"
+    },
+    "solution": {
+      "type": "string"
+    },
+    "technical": {
+      "type": "object",
+      "properties": {
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protocols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "brokers": {
+          "type": "string"
+        },
+        "testing": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "codegen": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "languages",
+        "frameworks",
+        "protocols",
+        "brokers",
+        "testing",
+        "architecture",
+        "codegen"
+      ],
+      "additionalProperties": false
+    },
+    "schemas": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "storage": {
+          "type": "string"
+        },
+        "registry": {
+          "type": "string"
+        },
+        "versioning": {
+          "type": "string"
+        },
+        "validation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "storage",
+        "registry",
+        "versioning",
+        "validation"
+      ],
+      "additionalProperties": false
+    },
+    "asyncapi": {
+      "type": "object",
+      "properties": {
+        "usecase": {
+          "type": "string"
+        },
+        "versions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "storage": {
+          "type": "string"
+        },
+        "editing": {
+          "type": "string"
+        },
+        "maintainers": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "object",
+          "properties": {
+            "internal": {
+              "type": "boolean"
+            },
+            "external": {
+              "type": "boolean"
+            }
+          },
+          "required": ["internal", "external"],
+          "additionalProperties": false
+        },
+        "extensions": {
+          "type": "string"
+        },
+        "documentation": {
+          "type": "string"
+        },
+        "bindings": {
+          "type": "string"
+        },
+        "tools": {
+          "type": "string"
+        },
+        "fullExample": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "usecase",
+        "versions",
+        "storage",
+        "editing",
+        "maintainers",
+        "audience",
+        "extensions",
+        "documentation",
+        "bindings",
+        "tools",
+        "fullExample"
+      ],
+      "additionalProperties": false
+    },
+    "additionalResources": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "company",
+    "challenges",
+    "solution",
+    "technical",
+    "schemas",
+    "asyncapi",
+    "additionalResources"
+  ],
+  "additionalProperties": false
+}
