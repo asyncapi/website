@@ -8,6 +8,7 @@ A `message` is a communication asset used to transmit or exchange information fr
 
 
 ``` mermaid
+
 graph LR
 subgraph one[channel]
 b([message])
@@ -21,7 +22,11 @@ In the diagram above, the sender application transmits a `message` to the receiv
 
 ## Messages vs Events
 A `message` carries information from one application to the other, while an `event` is a message that provides details of something that has already occurred. One important aspect to note is that depending on the type of information a `message` contains, it can fall under an _event_, _query_, or _command_. 
-*See the diagram below.*
+
+
+<p align="center">
+    *Check the diagram below.*
+</p>
 
 ``` mermaid
 graph TD
@@ -31,5 +36,7 @@ graph TD
     C --> D(Query)
     C --> E(Command)
 ```
-
-Overall, `events` are `messages` but not all `messages` are `events`.
+<Remember>
+ 
+In nutshell, all `events` are `messages` but not all `messages` are `events`.
+</Remember>
