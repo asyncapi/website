@@ -3,9 +3,9 @@ title: Overview
 weight: 2
 ---
 
-## Tutorials: Learn how AsyncAPI works
+## Learn how to contribute at AsyncAPI 
 
-Welcome to AsyncAPI **Tutorials**! Our Tutorials section teaches beginner processes with AsyncAPI by doing.
+Welcome to AsyncAPI. This section teaches beginner processes with AsyncAPI by doing.
 
 
 <Remember>
