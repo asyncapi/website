@@ -1,5 +1,5 @@
 ---
-title: 'Overview'
+title: 'Contributor Guidelines'
 weight: 1
 ---
 
