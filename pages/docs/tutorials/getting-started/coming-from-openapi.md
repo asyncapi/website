@@ -1,5 +1,5 @@
 ---
-title: "Coming from OpenAPI"
+title: "Similiarities between OpenAPI and AsyncAPI"
 date: 2019-04-01T10:56:52+01:00
 menu:
   docs:
