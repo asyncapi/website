@@ -32,9 +32,11 @@ An Event-Driven Architecture (EDA) uses events to trigger and communicate betwee
 
 In most cases, EDAs are broker-centric, as seen in the diagram above. There are some new concepts in that diagram, so let's go through them now.
 
-### Message broker
+### Message
 
-A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
+A message is a piece of information that is sent by publishers to the broker, and received by all interested subscribers. Messages can contain anything and are frequently cataloged as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very similar to _requests_ in REST APIs. They instruct the subscribers to "do this."
+
+**To be precise, _events_ and _commands_ share the same structure but differ conceptually.**
 
 ### Publisher/Subscriber
 
@@ -42,11 +44,9 @@ A publisher (a.k.a. _producer_) is an application that sends messages to the _br
 
 A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_, manifests an interest in a certain type of message, and leaves the connection open so the _broker_ can push messages to them.
 
-### Message
+### Message broker
 
-A message is a piece of information that is sent by publishers to the broker, and received by all interested subscribers. Messages can contain anything and are frequently cataloged as _events_ and _commands_. As you saw above, _events_ communicate a fact that occurred. On the other hand, _commands_ are very similar to _requests_ in REST APIs. They instruct the subscribers to "do this."
-
-**To be precise, _events_ and _commands_ share the same structure but differ conceptually.**
+A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
 
 ### Channels
 
