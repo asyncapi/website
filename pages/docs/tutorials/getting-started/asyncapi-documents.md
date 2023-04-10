@@ -37,4 +37,4 @@ channels:
 
 The AsyncAPI document is a machine-readable definition of your Event-Driven API. This document can be used afterward to generate documentation and code, validate the messages your application receives, and even apply API management policies to your messages before they arrive to your broker.
 
-Your API documentation is now machine-readable –easily parseable by code— so the myriad of useful applications is endless.
+Your API documentation is now machine-readable, and easily parseable by code, so the myriad of useful applications is endless.
