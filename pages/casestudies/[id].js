@@ -81,6 +81,16 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
+          <div >
+            <Heading typeStyle="body-lg">
+                    <Link href={casestudy.company.contact[0].link}>
+                      <a className="  text-md leading-5 font-medium text-gray-900 
+                      hover:underline" target="_blank">
+                        {casestudy.company.contact[0].name}
+                      </a>
+                    </Link>
+            </Heading>
+          </div>
           <div className="mt-4 items-center">
             <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
@@ -274,20 +284,7 @@ function Index({
 
         </div>
       </div>
-      <div className="mt-10">
-            <Heading typeStyle="body-lg">
-                Contact points for more details:
-                <ul className="list-disc list-inside">
-                  <li>
-                    <Link href={casestudy.company.contact[0].link}>
-                      <a className="text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                        {casestudy.company.contact[0].name}
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-            </Heading>
-          </div>
+      
     </div>
     </GenericLayout>
   );
