@@ -77,25 +77,13 @@ function Index() {
         </div>
       </div>
       <div className="mt-20">
-        <div className="w-full h-[400px] bg-ambassadorCover bg-cover bg-center rounded-lg flex flex-col justify-end">
-          <div className="text-gray-700 p-2">
-            Photo by{' '}
-            <a
-              href="https://unsplash.com/@headwayio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Headway
-            </a>{' '}
-            on{' '}
-            <a
-              href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Unsplash
-            </a>
-          </div>
+      <div className="aspect-w-16 aspect-h-9 bg-center">
+          <iframe
+            src="https://www.youtube.com/embed/3rg_7hIb9PQ"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          >
+          </iframe>
+        </div>
         </div>
         <div className="flex justify-center">
           <div className="text-center mt-10 lg:w-[55%]">
@@ -159,7 +147,7 @@ function Index() {
                   as={`ambassadors/${ambassador.github}`}
                 >
                   <div className="p-2">
-                    <div className="w-full h-auto bg-center bg-center rounded-md cursor-pointer">
+                    <div className="w-full h-auto bg-center rounded-md cursor-pointer">
                       <img
                         src={ambassador.img}
                         alt={ambassador.name}
@@ -249,7 +237,7 @@ function Index() {
               </Heading>
               <Heading typeStyle="body-sm">
                 The AsyncAPI Ambassador program is now open for applications! If
-                you’re selected, you’ll join AsyncAPI's mission of helping
+                you&rsquo;re selected, you&rsquo;ll join AsyncAPI&apos;s mission of helping
                 community members all over the world, build the future of
                 Event-Driven APIs.
               </Heading>
