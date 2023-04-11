@@ -5,7 +5,7 @@ type: Engineering
 tags:
   - Documentation
   - Communication
-cover: /img/posts/gsod-2022/SeasonofDocs_Logo.webp
+cover: /img/posts/Q1-asyncapidocs-report.webp
 authors:
   - name: Alejandra Quetzalli
     photo: /img/avatars/canela-ale.webp
