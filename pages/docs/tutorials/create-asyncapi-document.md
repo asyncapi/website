@@ -31,7 +31,7 @@ Event-driven architecture (EDA) is a design pattern built around the production,
 
 Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
 
-[MQTT](https://mqtt.org/) a very well-known protocol, widely used in IoT applications as it was created particularly to address machine-to-machine (M2M) communication.
+[MQTT](https://mqtt.org/) ia a very well-known protocol that is widely used in IoT applications as it was particularly created to address machine-to-machine (M2M) communication.
 
 ## Create AsyncAPI document
 
