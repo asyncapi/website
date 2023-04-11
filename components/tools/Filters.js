@@ -105,7 +105,7 @@ export default function Filters({ setOpenFilter }) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 text-left">
         <Carddata heading="OWNERSHIP" data = "It describes whether the tools are maintained by AsyncAPI organization or not."  type="ownership" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         </div>
         <div className="flex gap-4">
