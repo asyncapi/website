@@ -6,9 +6,9 @@ weight: 80
 
 ## Introduction
 
-In this tutorial, you'll learn how to create an AsyncAPI document based on a sample real-world use case. Additionally, you will learn about event-driven architecture, message brokers, pub/sub pattern.
+In this tutorial, you'll learn how to create an AsyncAPI document based on a sample real-world use case. Additionally, you will learn about event-driven architecture, message brokers, [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) pattern.
 
-Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. This smart lighting system is a use case of the Internet of things (IoT).You will create a Smartylighting Streetlights API using Node.js and Mosquitto (MQTT) as the message broker. This API will allow you to manage city lights remotely. 
+Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. This smart lighting system is a use case of the Internet of Things (IoT). You will create a Smartylighting Streetlights API using Node.js and Mosquitto (MQTT) as the message broker. This API will allow you to manage city lights remotely. 
 
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
@@ -25,13 +25,13 @@ You want to build a system that can turn streetlights on and off based on their 
 
 ## Background context
 
-Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events that take place in time. In this pattern, a message broker, event publishers and subscribers are its main components for event exchange within microservices.
+Event-driven architecture (EDA) is a design pattern built around the production, detection, and reaction to events which take place in time. In this pattern, a message broker, event publishers and subscribers are its main components for event exchange within microservices.
 
-[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) enables asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
+[Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) enabled asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
 
-Futhermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
+Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
 
-[MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
+[MQTT](https://mqtt.org/) a very well-known protocol, widely used in IoT applications as it was created particularly to address machine-to-machine (M2M) communication.
 
 ## Create AsyncAPI document
 
@@ -148,7 +148,7 @@ Next is the `payload` property which is used to understand how the event should 
             description: Date and time when the message was sent.`}
 </CodeBlock>
 
-The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain an `id` and a `lumens` property —which are integers bigger than zero—, and a `sentAt` property that should be a string containing a date and time.
+The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain an `id` and a `lumens` property containing integers bigger than zero and a `sentAt` property that should be a string containing a date and time.
 
 >  JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, like, for example [Avro](https://github.com/asyncapi/avro-schema-parser#usage).
 
