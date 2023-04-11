@@ -18,7 +18,7 @@ The generator parses:
 
 ### Examples
 
-> Some of the examples have names of hook functions provided and some not. Keep in mind that hook functions kept in template in default location do not require a name. Name is required only if you keep hooks in non default location or in a separate library, because such hooks need to be explicitly configured in the configuration file. For more details on hooks configuration [read more about the configuration file](#https://www.asyncapi.com/docs/tools/generator/configuration-file).
+> Some of the examples have names of hook functions provided and some not. Keep in mind that hook functions kept in template in default location do not require a name. Name is required only if you keep hooks in non default location or in a separate library, because such hooks need to be explicitly configured in the configuration file. For more details on hooks configuration [read more about the configuration file](https://www.asyncapi.com/docs/tools/generator/configuration-file).
 
 Most basic modules with hooks look like this:
 ```js
