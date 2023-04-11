@@ -281,10 +281,8 @@ function Index({
               <MDXRemote {...additionalResources} components={allComponents} />
             </Paragraph>
           </div>
-
         </div>
       </div>
-      
     </div>
     </GenericLayout>
   );
