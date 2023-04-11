@@ -1,5 +1,5 @@
 import React from 'react';
-import {sortBy} from 'lodash';
+import { sortBy } from 'lodash';
 import Button from '../../../components/buttons/Button';
 import GenericLayout from '../../../components/layout/GenericLayout';
 import Heading from '../../../components/typography/Heading';
@@ -77,13 +77,10 @@ function Index() {
         </div>
       </div>
       <div className="mt-20">
-      <div className="aspect-w-16 aspect-h-9 bg-center">
-          <iframe
-            src="https://www.youtube.com/embed/3rg_7hIb9PQ"
+        <div className="aspect-w-16 aspect-h-9 bg-center">
+          <iframe src="https://www.youtube.com/embed/3rg_7hIb9PQ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          >
-          </iframe>
-        </div>
+          ></iframe>
         </div>
         <div className="flex justify-center">
           <div className="text-center mt-10 lg:w-[55%]">
