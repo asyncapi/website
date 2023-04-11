@@ -30,7 +30,7 @@ function addAdditionalUserInfo(user) {
 }
 
 function Index() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community-ambassadors.webp';
   const asyncapiAmbassadors = sortBy(
     ambassadors.map((user) => addAdditionalUserInfo(user)),
     ['name']

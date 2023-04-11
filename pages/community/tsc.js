@@ -36,7 +36,7 @@ function addAdditionalUserInfo(user) {
 export default function TSC() {
   const description =
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
-  const image = "/img/social/website-card.jpg";
+  const image = "/img/social/community-tsc.webp";
 
   const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
 
