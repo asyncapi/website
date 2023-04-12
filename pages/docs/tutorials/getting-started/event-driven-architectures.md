@@ -38,15 +38,15 @@ A message is a piece of information that is sent by publishers to the broker, an
 
 **To be precise, _events_ and _commands_ share the same structure but differ conceptually.**
 
+### Message broker
+
+A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
+
 ### Publisher/Subscriber
 
 A publisher (a.k.a. _producer_) is an application that sends messages to the _broker_.
 
 A subscriber (a.k.a. _consumer_) is an application that connects to the _broker_, manifests an interest in a certain type of message, and leaves the connection open so the _broker_ can push messages to them.
-
-### Message broker
-
-A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
 
 ### Channels
 
