@@ -31,6 +31,7 @@ export async function getStaticProps({ params }) {
       asyncapiBindings: await serialize(data[0].asyncapi.bindings),
       asyncapiTools: await serialize(data[0].asyncapi.tools),
       additionalResources: await serialize(data[0].additionalResources),
+      examples: await serialize(data[0].examples),
     },
   };
 }
@@ -63,7 +64,8 @@ function Index({
   asyncapiDocumentation,
   asyncapiBindings,
   asyncapiTools,
-  additionalResources
+  additionalResources,
+  examples,
 }) {
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
@@ -270,6 +272,14 @@ function Index({
             <Paragraph typeStyle="body-md" className="my-4">
               <MDXRemote {...additionalResources} components={allComponents} />
             </Paragraph>
+            <Heading typeStyle="heading-md" className="mt-8">
+              Production-used AsyncAPI document
+            </Heading>
+            <Paragraph typeStyle="body-md" className="my-4">
+              <MDXRemote {...examples} components={allComponents} />
+            </Paragraph>
+
+
           </div>
 
         </div>
