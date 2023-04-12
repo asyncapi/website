@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 32.16355393991698
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -41,7 +25,7 @@
       "resourcePath": "/asyncapi/community/pull/442",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 24.409840043686994
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -60,22 +44,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBGu-184_rP6l",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Let channels be identified by an ID rather than their address.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec/issues/663",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.96374497869589
-    },
-    {
       "id": "PR_kwDOB5hCo85FYPwk",
       "isPR": true,
       "isAssigned": false,
@@ -84,7 +52,7 @@
       "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
       "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 20.96374497869589
+      "score": 21.25091956744515
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -100,7 +68,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 20.67657038994663
+      "score": 20.96374497869589
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -111,7 +79,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 18.953522857451077
+      "score": 19.527872034949596
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -195,13 +163,55 @@
         }
       ],
       "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c5jJLzD",
+      "title": "[📑 Docs]: new fragment for contributor questions section",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1555",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOBW5R_c5iyUQe",
       "title": "Simple CI workflow on PR level that validates case study structure",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1501",
       "repo": "asyncapi/website",
       "author": "derberg",
@@ -328,29 +338,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385hb1a-",
-      "title": "Add module system selection in the playground",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1173",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
         },
         {
           "name": "website",
@@ -849,29 +836,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85C_oCM",
-      "title": "Cleaning up how sub schemas are defined with references",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/167",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
