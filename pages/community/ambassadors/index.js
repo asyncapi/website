@@ -234,7 +234,7 @@ function Index() {
               </Heading>
               <Heading typeStyle="body-sm">
                 The AsyncAPI Ambassador program is now open for applications! If
-                you&rsquo;re selected, you&rsquo;ll join AsyncAPI&apos;s mission of helping
+                you’re selected, you’ll join AsyncAPI's mission of helping
                 community members all over the world, build the future of
                 Event-Driven APIs.
               </Heading>
