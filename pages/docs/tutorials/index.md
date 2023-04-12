@@ -10,7 +10,7 @@ Welcome to AsyncAPI **Tutorials**! Our Tutorials section teaches beginner proces
 
 <Remember>
 
-## Contribute to AsyncAPI Tutorials
+##  How to contribute to AsyncAPI Docs
 Code isn't the only way to contribute to OSS; Dev Docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:
