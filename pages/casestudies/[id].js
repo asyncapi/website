@@ -142,7 +142,7 @@ function Index({
         <Heading typeStyle="heading-lg" className="mt-8">
             More details
         </Heading>
-        <div className="mt-4 flex flex-wrap items-center">
+        <div className="mt-4 flex flex-wrap items-center  justify-start">
           <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Languages: {casestudy.technical.languages[0]}
           </span>
@@ -180,7 +180,7 @@ function Index({
             <Heading typeStyle="heading-md" className="mt-8">
               More details about AsyncAPI
             </Heading>
-            <div className="mt-4 items-center">
+            <div className="mt-4 flex flex-wrap">
               <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Versions: {casestudy.asyncapi.versions[0]}
               </span>
