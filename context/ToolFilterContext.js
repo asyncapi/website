@@ -10,7 +10,7 @@ export default function ToolFilter({ children }) {
     const [technologies, setTechnologies] = useState([])
     const [categories, setCategories] = useState([])
 
-
+    // useEffect has been used to apply filters to the tool on each change of router query
     useEffect(() => {
       if(!router.isReady) return;
 
