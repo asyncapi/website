@@ -13,12 +13,12 @@ export default function FiltersDropdown({dataList=[], checkedOptions=[], setStat
     setStateFunction(tempValueArray)
   }
   return (
-    <div className={twMerge(`max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150 ${className}`)}>
+    <div className={twMerge(` border w-full max-h-[6rem] z-10  bg-gray-200 text-gray-00  text-bold cursor-pointer ${className}`)}>
       {dataList.map((data, index) => {
         let checked = checkedOptions.indexOf(data.name)!=-1 ? true : false
         return (
-          <div key={index} className={twMerge(`border border-secondary-600 text-secondary-600 p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`)} onClick={(e) => handleClickOption(e, data.name)}>
-            {checked ? <img src='/img/illustrations/icons/CheckedIcon.svg' /> : <img src='/img/illustrations/icons/UncheckedIcon.svg' />}
+          <div key={index} className={twMerge(`border  p-1 pb-0 rounded-2xl flex gap-1 cursor-pointer items-start ${checked ? 'bg-secondary-600 text-white' : ''}`)} onClick={(e) => handleClickOption(e, data.name)}>
+            
             <div className='text-xs -mt-[1px] mb-[1px]'>{data.name}</div>
         </div>
         )})}

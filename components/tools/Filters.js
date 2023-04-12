@@ -35,6 +35,14 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
     setCheckOwner(isAsyncAPIOwner);
   }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
   
+
+   // function to open only one filter at a time
+   const handleOpen = (setopenX, openX) => {
+    setopenLanguage(false);
+    setopenTechnology(false);
+    setopenCategory(false);
+    setopenX(!openX);
+  }
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
@@ -112,7 +120,7 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
       <div className="flex flex-col gap-2 mx-4">
         <Carddata heading="LANGUAGE" data = {Data.properties.filters.properties.language.description} type="lang" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
+          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenLanguage, openLanguage)}>
             <div className="flex items-center text-dark">
               {checkedLanguage.length>0 ? (checkedLanguage.length===1 ? `1 option selected` : `${checkedLanguage.length} options selected`) : `Select Languages...`}
             </div>
@@ -128,7 +136,7 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
       <div className="flex flex-col gap-2 mx-4">
       <Carddata heading="TECHNOLOGY" data = {Data.properties.filters.properties.technology.description} type="tech" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenTechnology, openTechnology)}>
           <div className="flex items-center text-dark">
           {checkedTechnology.length>0 ? (checkedTechnology.length===1 ? `1 option selected` : `${checkedTechnology.length} options selected`) : `Select Technologies...`}
           </div>
@@ -144,7 +152,7 @@ export default function Filters({setOpenFilter, setIsFiltered}) {
       <div className="flex flex-col gap-2 mx-4">
       <Carddata heading="CATEGORY" data = {Data.properties.filters.properties.categories.description} type="category" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenCategory, openCategory)}>
           <div className="flex items-center text-dark">
           {checkedCategory.length>0 ? (checkedCategory.length===1 ? `1 option selected` : `${checkedCategory.length} options selected`) : `Select Categories...`}
           </div>
