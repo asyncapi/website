@@ -30,7 +30,7 @@ function addAdditionalUserInfo(user) {
 }
 
 function Index() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community-ambassadors.webp';
   const asyncapiAmbassadors = sortBy(
     ambassadors.map((user) => addAdditionalUserInfo(user)),
     ['name']
@@ -245,7 +245,7 @@ function Index() {
           <div className="flex justify-center">
             <div className="text-center p-4 text-white lg:w-[65%]">
               <Heading typeStyle="heading-lg">
-                Become an AsycnAPI Ambassador
+                Become an AsyncAPI Ambassador
               </Heading>
               <Heading typeStyle="body-sm">
                 The AsyncAPI Ambassador program is now open for applications! If
