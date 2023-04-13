@@ -34,7 +34,7 @@ jobs:
             });
 
             try {
-              const schema = await readFile(".github/workflows/case-studies/schema.json", "utf-8");
+              const schema = await readFile("config/casestudies/schema.json", "utf-8");
               const fileNames = `${{steps.changed-files.outputs.all_changed_files}}`.trim().split(" ");
 
               const validate = ajv.compile(JSON.parse(schema));
