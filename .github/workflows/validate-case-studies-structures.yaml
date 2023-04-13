@@ -33,19 +33,23 @@ jobs:
               allErrors: true,
             });
 
-            const schema = await readFile(".github/workflows/case-studies/schema.json", "utf-8");
-            const fileNames = `${{steps.changed-files.outputs.all_changed_files}}`.trim().split(" ");
+            try {
+              const schema = await readFile(".github/workflows/case-studies/schema.json", "utf-8");
+              const fileNames = `${{steps.changed-files.outputs.all_changed_files}}`.trim().split(" ");
 
-            const validate = ajv.compile(JSON.parse(schema));
+              const validate = ajv.compile(JSON.parse(schema));
 
-            for (const fileName of fileNames) {
-              const study = await readFile(fileName, "utf-8");
-              const valid = validate(YAML.parse(study));
+              for (const fileName of fileNames) {
+                const study = await readFile(fileName, "utf-8");
+                const valid = validate(YAML.parse(study));
 
-              if (valid === true) {
-                core.info(`${fileName} is valid`);
-              } else {
-                core.setFailed(`${fileName} is invalid:`);
-                core.setFailed(validate.errors);
+                if (valid === true) {
+                  core.info(`${fileName} is valid`);
+                } else {
+                  core.setFailed(`${fileName} is invalid:`);
+                  core.setFailed(validate.errors);
+                }
               }
+            } catch (error) {
+              core.setFailed(error);
             }
