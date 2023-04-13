@@ -143,7 +143,7 @@ function Index({
             More details
         </Heading>
         <div className="mt-4 items-center">
-          <div className='flex flex-wrap'>
+          <div className='flex flex-wrap gap-2'>
           <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Languages: {casestudy.technical.languages[0]}
           </span>
@@ -182,7 +182,7 @@ function Index({
             <Heading typeStyle="heading-md" className="mt-8">
               More details about AsyncAPI
             </Heading>
-            <div className="mt-4  flex flex-wrap">
+            <div className="mt-4  flex flex-wrap gap-2">
               <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Versions: {casestudy.asyncapi.versions[0]}
               </span>
