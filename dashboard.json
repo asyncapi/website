@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 32.16355393991698
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -41,7 +25,7 @@
       "resourcePath": "/asyncapi/community/pull/442",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 24.409840043686994
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -60,22 +44,6 @@
       "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBGu-184_rP6l",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Let channels be identified by an ID rather than their address.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec/issues/663",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.96374497869589
-    },
-    {
       "id": "PR_kwDOB5hCo85FYPwk",
       "isPR": true,
       "isAssigned": false,
@@ -84,7 +52,7 @@
       "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
       "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 20.96374497869589
+      "score": 21.25091956744515
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -100,7 +68,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 20.67657038994663
+      "score": 20.96374497869589
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -111,7 +79,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 18.091999091203302
+      "score": 19.527872034949596
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -122,7 +90,7 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDOG115t85D93P0",
@@ -153,17 +121,6 @@
       "score": 17.230475324955524
     },
     {
-      "id": "PR_kwDODtSOs84xcJjh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: switch-to-jsx-renderer",
-      "author": "ritik307",
-      "resourcePath": "/asyncapi/html-template/pull/316",
-      "repo": "asyncapi/html-template",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOBW5R_c5DkdBH",
       "isPR": false,
       "isAssigned": true,
@@ -190,21 +147,94 @@
         }
       ],
       "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [],
+      "score": 15.507427792459973
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODyzcIc5iNvCl",
-      "title": "skipping workflows for `allcontributors` bot do not work",
+      "id": "I_kwDOBW5R_c5jJLzD",
+      "title": "[📑 Docs]: new fragment for contributor questions section",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/223",
-      "repo": "asyncapi/.github",
+      "resourcePath": "/asyncapi/website/issues/1555",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5iyUQe",
+      "title": "Simple CI workflow on PR level that validates case study structure",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1501",
+      "repo": "asyncapi/website",
       "author": "derberg",
       "area": "ci-cd",
       "labels": [
         {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5iuXE6",
+      "title": "TSC member social links aren't opening in new tab",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1496",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "javascript",
+      "labels": [
+        {
           "name": "bug",
-          "color": "d73a4a"
+          "color": "ee0701"
         }
       ]
     },
@@ -316,29 +346,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385hb1a-",
-      "title": "Add module system selection in the playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1173",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh385hbz9R",
       "title": "Add example data function support in the Playground",
       "isAssigned": false,
@@ -396,21 +403,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5gy-rP",
-      "title": "Extends metadata of blog documents to enable people to provide canonical URL",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1430",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
         }
       ]
     },
@@ -537,7 +529,7 @@
     {
       "id": "I_kwDOFDnrNc5gDL_c",
       "title": "Generate documentation with example for TypeScript models",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/cli/issues/463",
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
@@ -572,21 +564,6 @@
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
       "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt85e_5PI",
-      "title": "store slack memberID of TSC members",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/606",
-      "repo": "asyncapi/community",
-      "author": "KhudaDad414",
-      "area": "javascript",
       "labels": [
         {
           "name": "enhancement",
@@ -863,29 +840,6 @@
       ]
     },
     {
-      "id": "I_kwDOB5hCo85C_oCM",
-      "title": "Cleaning up how sub schemas are defined with references",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/167",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOEOBLdM5C-CyC",
       "title": "Provide mirror client for testing",
       "isAssigned": false,
@@ -922,16 +876,12 @@
     {
       "id": "I_kwDOBGu-185B-xnK",
       "title": "What do we define as a breaking change?",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/spec/issues/688",
       "repo": "asyncapi/spec",
       "author": "jonaslagoni",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
