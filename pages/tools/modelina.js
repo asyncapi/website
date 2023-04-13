@@ -33,21 +33,6 @@ export default function ModelinaPlaygroundPage() {
     />
   );
 
-  const playground = (
-    <div>
-      <div className="relative pt-16 pb-8 hidden lg:block">
-        <Heading level="h4" typeStyle="heading-md-semibold" className="text-center">
-          Try it now
-        </Heading>
-
-    
-      </div>
-      <Paragraph className="text-center block lg:hidden mt-8 max-w-3xl mx-auto">
-        Modelina Playground works only on the desktop devices.
-      </Paragraph>
-    </div>
-  );
-
   return (
     <GenericLayout
       title="Modelina"
