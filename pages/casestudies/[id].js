@@ -81,7 +81,7 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
-          <div className="mt-4 flex flex-wrap">
+          <div className="mt-4 flex flex-wrap gap-2">
             <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
             </span>
