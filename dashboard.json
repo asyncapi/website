@@ -93,6 +93,22 @@
       "score": 18.091999091203302
     },
     {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 17.230475324955524
+    },
+    {
       "id": "I_kwDOG115t85D93P0",
       "isPR": false,
       "isAssigned": true,
@@ -121,34 +137,6 @@
       "score": 17.230475324955524
     },
     {
-      "id": "I_kwDOBW5R_c5DkdBH",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "[📑 Docs]: AsyncAPI CLI Documentation ",
-      "author": "imabp",
-      "resourcePath": "/asyncapi/website/issues/602",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 16.65612614745701
-    },
-    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -165,22 +153,6 @@
       "score": 16.65612614745701
     },
     {
-      "id": "I_kwDOGJ23c85V9C3c",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support `referenceIntoComponents` for other components than `message`",
-      "author": "thake",
-      "resourcePath": "/asyncapi/bundler/issues/97",
-      "repo": "asyncapi/bundler",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.36895155870775
-    },
-    {
       "id": "PR_kwDOGPFxkc5Ey7vh",
       "isPR": true,
       "isAssigned": false,
@@ -190,13 +162,59 @@
       "repo": "asyncapi/server-api",
       "labels": [],
       "score": 15.507427792459973
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 15.502429470770883
     }
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c5jSPTM",
+      "title": "filter section is overflowing for small screen in dashboard section",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1564",
+      "repo": "asyncapi/website",
+      "author": "sambhavgupta0705",
+      "area": "design",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5jMA8s",
+      "title": "[📑 Docs]: add the 2022 blog summary in the about section",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1559",
+      "repo": "asyncapi/website",
+      "author": "sambhavgupta0705",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOBW5R_c5jJLzD",
       "title": "[📑 Docs]: new fragment for contributor questions section",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1555",
       "repo": "asyncapi/website",
       "author": "alequetzalli",
@@ -230,7 +248,7 @@
       "resourcePath": "/asyncapi/website/issues/1496",
       "repo": "asyncapi/website",
       "author": "akshatnema",
-      "area": "javascript",
+      "area": "Unknown",
       "labels": [
         {
           "name": "bug",
@@ -593,7 +611,7 @@
       "resourcePath": "/asyncapi/website/issues/1318",
       "repo": "asyncapi/website",
       "author": "akshatnema",
-      "area": "javascript",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
