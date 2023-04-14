@@ -25,7 +25,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { readFile, readdir } = require("fs/promises");
+            const { readFile } = require("fs/promises");
             const Ajv = require("ajv");
             const YAML = require("yaml");
 
