@@ -15,7 +15,7 @@ export default function Header() {
           </p>
         </div>
       </div>
-      <div className="self-end flex flex-col sm:flex-row gap-y-1 text-center gap-x-2 mt-3">
+      <div className="self-end flex flex-col xs:flex-row gap-y-1 text-center gap-x-2 mt-3">
         <Button text='Contribution Guide' href='https://github.com/asyncapi?type=source#-contribute-to-asyncapi' target='_blank' />
         <GithubButton className="lg:mt-0" />
         <SlackButton className="lg:mt-0" />
