@@ -139,6 +139,28 @@ export default function TSC() {
   );
 }
 
+const socials = {
+  "Github": <GithubSVG />,
+  "Twitter": <TwitterSVG />,
+  "Linkedin": <LinkedInSVG />,
+}
+
+function SocialLink({ href, social }) {
+  return (
+    <li>
+      <a
+        href={href}
+        className="text-gray-600 hover:text-gray-500"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <span className="sr-only">{social}</span>
+        {socials[social]}
+      </a>
+    </li>
+  )
+}
+
 function UserInfo({ user }) {
   return (
     <li
@@ -154,37 +176,9 @@ function UserInfo({ user }) {
           <div className="font-bold text-lg my-3">{user.name}</div>
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
-            <li>
-              <a
-                href={user.github}
-                className="text-gray-600 hover:text-gray-500"
-              >
-                <span className="sr-only">GitHub</span>
-                <GithubSVG />
-              </a>
-            </li>
-            {user.twitter ? (
-              <li>
-                <a
-                  href={user.twitter}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">Twitter</span>
-                  <TwitterSVG />
-                </a>
-              </li>
-            ) : null}
-            {user.linkedin ? (
-              <li>
-                <a
-                  href={user.linkedin}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">LinkedIn</span>
-                  <LinkedInSVG />
-                </a>
-              </li>
-            ) : null}
+            <SocialLink href={user.github} social="Github" />
+            {user.twitter ? <SocialLink href={user.twitter} social="Twitter" /> : null}
+            {user.linkedin ? <SocialLink href={user.linkedin} social="Linkedin" /> : null}
           </ul>
         </div>
       </div>
