@@ -93,12 +93,14 @@ function Index({
           </div>
           <div className="mt-4 items-center">
             <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
             </span>
-            <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Customers: {casestudy.company.customers}
             </span>
-            <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Revenue: {casestudy.company.revenue}
             </span>
           </div>
@@ -153,15 +155,17 @@ function Index({
             More details
         </Heading>
         <div className="mt-4 items-center">
-          <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+          <div className='flex flex-wrap gap-2'>
+          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Languages: {casestudy.technical.languages[0]}
           </span>
-          <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Frameworks: {casestudy.technical.frameworks[0]}
           </span>
-          <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+          <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Protocols: {casestudy.technical.protocols[0]}
           </span>
+          </div>
           <div className="mt-10">
             <Heading typeStyle="heading-md" className="mt-8">
                 Testing strategy
@@ -190,17 +194,17 @@ function Index({
             <Heading typeStyle="heading-md" className="mt-8">
               More details about AsyncAPI
             </Heading>
-            <div className="mt-4 items-center">
-              <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            <div className="mt-4  flex flex-wrap gap-2">
+              <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Versions: {casestudy.asyncapi.versions[0]}
               </span>
-              <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+              <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Who maintains documents: {casestudy.asyncapi.maintainers}
               </span>
-              <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+              <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Internal users: {casestudy.asyncapi.audience.internal.toString()}
               </span>
-              <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+              <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 External users: {casestudy.asyncapi.audience.external.toString()}
               </span>
             </div>
@@ -246,7 +250,7 @@ function Index({
               Schemas
             </Heading>
             <div className="mt-4 items-center">
-              <span className="mr-2 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+              <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Spec: {casestudy.schemas.description}
               </span>
             </div>
