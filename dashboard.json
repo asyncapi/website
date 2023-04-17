@@ -17,17 +17,6 @@
       "score": 25.053033341156514
     },
     {
-      "id": "PR_kwDOFLhIt849RhNn",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: docs folder for new asyncapi community section",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/community/pull/442",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 24.697014632436254
-    },
-    {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
@@ -106,7 +95,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 17.230475324955524
+      "score": 17.804824502454043
     },
     {
       "id": "I_kwDOG115t85D93P0",
@@ -153,15 +142,24 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOGPFxkc5Ey7vh",
-      "isPR": true,
+      "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: share spec feature",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/server-api/pull/213",
-      "repo": "asyncapi/server-api",
-      "labels": [],
-      "score": 15.507427792459973
+      "title": "Integrate or re-implement APIs.guru asyncapi-directory",
+      "author": "MikeRalphson",
+      "resourcePath": "/asyncapi/website/issues/204",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -178,6 +176,26 @@
         }
       ],
       "score": 15.502429470770883
+    },
+    {
+      "id": "I_kwDOCoBobc5FCvW6",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Road to v2.0.0",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/parser-js/issues/481",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "fce14b"
+        }
+      ],
+      "score": 15.220253203710714
     }
   ],
   "goodFirstIssues": [
@@ -238,21 +256,6 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5iuXE6",
-      "title": "TSC member social links aren't opening in new tab",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1496",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
