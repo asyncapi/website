@@ -1,9 +1,8 @@
 ---
 title: 'Usage'
-weight: 30
+weight: 40
 ---
 
-## Usage
 The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
 
 To get **help**, run this command in your terminal:
