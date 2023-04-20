@@ -1,9 +1,10 @@
 ---
-title: 'Installation'
-weight: 20
+title: 'Installation guide'
+weight: 30
 ---
 
-## Installation Guide
+## Node and npm
+
 To use the AsynAPI CLI tool, you must install NPM and a Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
@@ -25,10 +26,11 @@ After installing Node.js and NPM, run the following command to install the Async
 npm install -g @asyncapi/cli
 ```
 
-### Mac
+## Mac
 There are two ways to install the AsyncAPI CLI on your macOS: using the `brew` package manager or `pkg` files.
 
-#### `brew` installation
+### brew
+
 To install the AsyncAPI CLI using the `brew` package manager, run the following commands in your terminal:
 ```sh
 # Install brew
@@ -38,7 +40,8 @@ To install the AsyncAPI CLI using the `brew` package manager, run the following 
 brew install asyncapi
 ```
 
-#### `pkg` installation
+### pkg
+
 Every release of the AsyncAPI CLI has two macOS dedicated `pkg` file that enables you to install the CLI tool as a macOS application for x64 as well as arm64 architecture.
 To download the latest CLI release, run this command in your terminal:
 ```sh
@@ -64,10 +67,11 @@ After downloading the AsyncAPI CLI, install it via the following command:
 sudo installer -pkg asyncapi.pkg -target /
 ```
 
-### Linux
+## Linux
 Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.
 
-#### Debian based distros
+### Debian based distros
+
 For Debian based distros, you can install the AsycAPI CLI using the `dpkg` package manager for Debian.
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb
@@ -78,7 +82,7 @@ To download a specific release of the CLI, run this command in your terminal:
 curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.deb
 ```
 
-#### Other distros
+### Other distros
 You can install the AsyncAPI CLI for other Linux distros using the archive `tar.gz` file. To download the latest release of the CLI, run this command in your terminal:
 ```sh
 curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.tar.gz
