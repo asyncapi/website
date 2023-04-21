@@ -512,15 +512,6 @@
 		]
 	},
 	{
-		"name": "Viacheslav Turovskyi",
-		"github": "aeworxet",
-		"slack": "U01G3U01SVC",
-		"availableForHire": false,
-		"repos": [
-			"bundler"
-		]
-	},
-	{
 		"name": "Alexander Wichmann",
 		"github": "VisualBean",
 		"linkedin": "alexcarlsen",
@@ -555,7 +546,7 @@
 			 "community"
 		]
 	},
-		{
+	{
 		"name": "Kenneth Aasan",
 		"github": "kennethaasan",
 		"slack": "U037S2HK4TS",
@@ -565,5 +556,16 @@
 		"repos": [
 			"modelina"
 		]
+	},
+	{
+		"name": "Heiko Henning",
+		"github": "GreenRover",
+		"slack": "U03AC4G51H8",
+		"availableForHire": false,
+		"company": "mtrail GmbH",
+		"repos": [
+			"protobuf-schema-parser"
+		]
 	}
+	
 ]
