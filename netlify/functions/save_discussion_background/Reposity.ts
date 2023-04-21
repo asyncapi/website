@@ -1,5 +1,5 @@
 import { fetchGraphql } from './helpers';
-import { Discussion, DiscussionCategory, Reply } from './index.d';
+import { Discussion, DiscussionCategory, Reply } from '.';
 
 export namespace Repository {
   /**

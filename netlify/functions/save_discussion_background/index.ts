@@ -17,7 +17,7 @@ const handler = async (event: HandlerEvent) => {
     return {
       statusCode: 400,
       body: JSON.stringify({
-        message: "The specified HTTP method is either not allowed or used with incomplete parameters."
+        message: "The specified HTTP method is either not allowed or the method is called in incomplete manner."
       })
     }
   }
