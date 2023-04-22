@@ -161,7 +161,7 @@ function Index() {
                 <div className="p-2 text-sm">{ambassador.bio}</div>
                 <div className="border-t p-2 flex">
                   <a
-                    href={`${ambassador.twitterUrl}`}
+                    href={ambassador.twitterUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="underline"
@@ -169,7 +169,7 @@ function Index() {
                     Twitter ↗
                   </a>
                   <a
-                    href={`${ambassador.githubUrl}`}
+                    href={ambassador.githubUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="underline ml-3"
@@ -177,7 +177,7 @@ function Index() {
                     Github ↗
                   </a>
                   <a
-                    href={`${ambassador.linkedinUrl}`}
+                    href={ambassador.linkedinUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="underline ml-3"
