@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { ToolFilterContext } from '../../context/ToolFilterContext'
 import ToolsData from '../../config/tools.json'
 import FilterIcon from '../icons/Filter';
@@ -11,16 +12,19 @@ import Button from '../buttons/Button';
 import Cross from '../icons/Cross';
 
 export default function ToolDashboard() {
+    const router = useRouter();
+    const loader = 'img/loaders/loader.png'; // preloader image for the tools
+
+    const [loading, setLoading] = useState(false); // used to handle the preloader on the page
     const filterRef = useRef() // used to provide ref to the Filter menu and outside click close feature
     const categoryRef = useRef() // used to provide ref to the Category menu and outside click close feature
     const [openFilter, setOpenFilter] = useState(false)
     const [openCategory, setopenCategory] = useState(false)
     // filter parameters extracted from the context
-    const { isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner } = useContext(ToolFilterContext)
+    const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext)
     const [searchName, setSearchName] = useState('') // state variable used to get the search name
     const [toolsList, setToolsList] = useState({}) // state variable used to set the list of tools according to the filters applied
     const [checkToolsList, setCheckToolsList] = useState(true) // state variable used to check whether any tool is available according to the needs of user.
-    const [isFiltered, setIsFiltered] = useState(false);
 
     // useEffect function to enable the close Modal feature when clicked outside of the modal
     useEffect(() => {
@@ -29,10 +33,19 @@ export default function ToolDashboard() {
                 setOpenFilter(false)
         }
         document.addEventListener("mousedown", checkIfClickOutside)
+        
         return () => {
             document.removeEventListener("mousedown", checkIfClickOutside)
         }
     })
+    
+    // sets the preloader on the page for 1 second
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+    }, []);
 
     // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
     useEffect(() => {
@@ -106,20 +119,16 @@ export default function ToolDashboard() {
         setToolsList(tempToolsList)
     }
 
-    // function to clear all the filters when `Clear Filters` is clicked.
     const clearFilters = () => {
-        setIsFiltered(false);
-        setLanguages([])
-        setTechnologies([])
-        setCategories([])
-        setisPaid("all")
-        setAsyncAPIOwner(false)
         setOpenFilter(false)
+        router.push("/tools", undefined, {shallow: true})
     }
 
     useEffect(() => {
         updateToolsList()
     }, [isPaid, isAsyncAPIOwner, languages, technologies, categories, searchName])
+
+    const isFiltered = Boolean(isPaid !== "all" || isAsyncAPIOwner || languages.length || technologies.length || categories.length)
 
     return (
         <div>
@@ -133,9 +142,9 @@ export default function ToolDashboard() {
                             <div>Filter</div>
                         </div>
                         {openFilter && (
-                            <div className="z-20 absolute top-16 min-w-[20rem]">
-                                <Filters setOpenFilter={setOpenFilter} clearFilters={clearFilters} setIsFiltered={setIsFiltered} />
-                            </div>
+                            <button className="z-20 absolute top-16 min-w-[20rem]">
+                                <Filters setOpenFilter={setOpenFilter} clearFilters={clearFilters} />
+                            </button>
                         )}
                     </div>
                 </div>
@@ -176,12 +185,16 @@ export default function ToolDashboard() {
                     </span>
                 </div>
             }
-            <div className="mt-0">
+           {loading ? <div className='flex animate-pulse w-fit mx-auto my-24 gap-4 text-black'>
+          <img src={loader} className="mx-auto w-16" />
+          <div className='text-xl my-auto'>Loading Tools...</div>
+        </div> : <div className="mt-0">
                 {checkToolsList ? <ToolsList toolsData={toolsList} /> : <div className='p-4'>
                     <img src='/img/illustrations/not-found.webp' className='w-1/2 m-auto' />
                     <div className='text-center text-lg'> Sorry, we don't have tools according to your needs. </div>
                 </div>}
             </div>
+}
         </div>
     )
 }

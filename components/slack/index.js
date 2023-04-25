@@ -50,7 +50,7 @@ export default function Slack({
           }
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <>

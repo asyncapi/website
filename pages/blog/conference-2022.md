@@ -17,7 +17,7 @@ The 2022 AsyncAPI Conference was amazing, and I had a great time. I volunteered 
 
 ## The challenges 
 
-Because AsycnAPI is a community-first organization, I was able to follow along with the whole process of planning the conference, and I could see some of the challenges the community faced when planning to organize the conference. 
+Because AsyncAPI is a community-first organization, I was able to follow along with the whole process of planning the conference, and I could see some of the challenges the community faced when planning to organize the conference. 
 
 Here are a few of the challenges:
 

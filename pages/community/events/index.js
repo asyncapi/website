@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
+import moment from 'moment';
 import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../../components/buttons/ICSFileButton';
 import Heading from '../../../components/typography/Heading';
@@ -14,21 +15,11 @@ import meetings from '../../../config/meetings.json';
 
 
 import Paragraph from '../../../components/typography/Paragraph';
+import { getEvents } from '../../../lib/staticHelpers';
 
 function index() {
-  const image = '/img/social/website-card.png';
-  const [events, setEvents] = useState(
-    meetings
-      ? meetings.sort((i1, i2) => {
-          const i1Date = new Date(i1.date);
-          const i2Date = new Date(i2.date);
-
-          if (i1.featured && !i2.featured) return -1;
-          if (!i1.featured && i2.featured) return 1;
-          return i1Date - i2Date;
-        })
-      : meetings
-  );
+  const image = '/img/social/community-events.webp';
+  const [events, setEvents] = useState(getEvents(meetings));
 
   return (
     <GenericLayout

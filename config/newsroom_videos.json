@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/0CPWCJv4nho/hqdefault.jpg",
+    "title": "Community Meeting (April 18th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/659.",
+    "videoId": "0CPWCJv4nho"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/JFPERXh2ZUY/hqdefault.jpg",
+    "title": "Adding support for non-JSON schemas (April 18th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/668.",
+    "videoId": "JFPERXh2ZUY"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/hN6aE3Ebn08/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (April 13th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/649.",
+    "videoId": "hN6aE3Ebn08"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/O4TQWBEaXy0/hqdefault.jpg",
     "title": "Spec 3.0 meeting (March 29th 2023)",
     "description": "https://github.com/asyncapi/community/issues/640.",
@@ -10,23 +28,5 @@
     "title": "Community Meeting (March 21th 2023)",
     "description": "https://github.com/asyncapi/community/issues/640.",
     "videoId": "tKYyL_DiLds"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/8Yjles2pEHo/hqdefault.jpg",
-    "title": "Adding support for non-JSON schemas (March 21th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/637.",
-    "videoId": "8Yjles2pEHo"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/ECe592525p4/hqdefault.jpg",
-    "title": "Make Your GSoC Proposal Stand Out (March 20th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/639.",
-    "videoId": "ECe592525p4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/BiP-0zkXelw/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (March 15, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/624.",
-    "videoId": "BiP-0zkXelw"
   }
 ]
