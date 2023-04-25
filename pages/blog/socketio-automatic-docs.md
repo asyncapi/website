@@ -378,7 +378,7 @@ if __name__ == '__main__':
 
 And here is the auto generated specification:
 ```yaml
-asyncapi: 2.5.0
+asyncapi: 2.6.0
 channels:
   /:
     publish:
