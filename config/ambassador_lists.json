@@ -1,0 +1,66 @@
+{
+    "contents": [
+      {
+        "title": "Written content",
+        "details": "Write guides, step-by-step tutorials, community documentation, AsyncAPI blog posts, and beyond.",
+        "icon": "/img/illustrations/blog.svg"
+      },
+      {
+        "title": "Video content",
+        "details": "Produce educational videos on YouTube and other platforms for AsyncAPI.",
+        "icon": "/img/illustrations/video-creation.svg"
+      },
+      {
+        "title": "Live streams",
+        "details": "Moderate or host live streams that demo the AsyncAPI ecosystem.",
+        "icon": "/img/illustrations/live.svg"
+      },
+      {
+        "title": "Give talks",
+        "details": "Speak at meetups and conferences; we’ll help with slides, abstract submissions, and travel budget.",
+        "icon": "/img/illustrations/speaking.svg"
+      },
+      {
+        "title": "Interactive Learning",
+        "details": "Gamify educational content and create interactive learning paths for teaching AsyncAPI and event-driven architectures.",
+        "icon": "/img/illustrations/learning-app.svg"
+      },
+      {
+        "title": "Build real-life usecases example",
+        "details": "Develop real-life usecase project example using the AsyncaAPI specification",
+        "icon": "/img/illustrations/codes.svg"
+      },
+      {
+        "title": "AsyncAPI Contributions",
+        "details": "Collaborate with the AsyncAPI community via diverse contributions and improvements.",
+        "icon": "/img/illustrations/advisor.svg"
+      },
+      {
+        "title": "Gather Use-Cases",
+        "details": "Collect data from existing AsyncAPI users and create use-case studies.",
+        "icon": "/img/illustrations/meeting.jpg"
+      }
+    ],
+    "tokens": [
+      {
+        "emoji": "🗺️",
+        "title": "Travel",
+        "details": "Ambassadors are provided free entry to AsyncAPI conferences."
+      },
+      {
+        "emoji": "🌟",
+        "title": "Recognition",
+        "details": "Ambassadors receive community-wide recognition."
+      },
+      {
+        "emoji": "🎁",
+        "title": "Special Swags",
+        "details": "Community members recognize you by gifting you exclusive AsyncAPI Ambassador swag."
+      },
+      {
+        "emoji": "🧰",
+        "title": "Workshop Swags",
+        "details": "Ambassadors are gifted swag from AsyncAPI conferences and workshops."
+      }
+    ]
+}

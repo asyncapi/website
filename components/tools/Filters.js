@@ -1,4 +1,5 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import {twMerge} from 'tailwind-merge'
 import {ToolFilterContext} from '../../context/ToolFilterContext'
 import ArrowDown from '../icons/ArrowDown';
@@ -10,9 +11,10 @@ import {categoryList} from '../../scripts/tools/categorylist'
 import Data from "../../scripts/tools/tools-schema.json"
 import { Carddata } from './Carddata';
 
-export default function Filters({setOpenFilter}) {
+export default function Filters({ setOpenFilter }) {
+  const router = useRouter();
   // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
-  const {isPaid, isAsyncAPIOwner, languages, technologies, categories, setCategories, setLanguages, setTechnologies, setisPaid, setAsyncAPIOwner} = useContext(ToolFilterContext)
+  const {isPaid, isAsyncAPIOwner, languages, technologies, categories} = useContext(ToolFilterContext)
   
   // State variables to operate dropdowns of respective filters
   const [openLanguage, setopenLanguage] = useState(false)
@@ -26,6 +28,15 @@ export default function Filters({setOpenFilter}) {
   const [checkedCategory, setCheckedCategory] = useState(categories)
   const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
+  // useEffect hook used to update the UI elements 
+  useEffect(() => {
+    setCheckedLanguage(languages);
+    setCheckedTechnology(technologies);
+    setCheckedCategory(categories);
+    setCheckPaid(isPaid);
+    setCheckOwner(isAsyncAPIOwner);
+  }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
+  
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
@@ -44,22 +55,30 @@ export default function Filters({setOpenFilter}) {
 
   // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
-    setLanguages(checkedLanguage);
-    setTechnologies(checkedTechnology)
-    setCategories(checkedCategory)
-    setisPaid(checkPaid)
-    setAsyncAPIOwner(checkOwner)
     setOpenFilter(false)
+
+    const searchParams = new URLSearchParams();
+    // Set the params key only when the default value of the key changes. This is to know when the user actually applies filter(s).
+    if(checkOwner) searchParams.set('owned', checkOwner);
+    
+    if(checkPaid !== "all") searchParams.set("pricing", checkPaid)
+    if(checkedLanguage.length > 0) searchParams.set('langs', checkedLanguage);
+    if(checkedTechnology.length > 0) searchParams.set('techs', checkedTechnology);
+    if(checkedCategory.length > 0) searchParams.set('categories', checkedCategory);
+
+    router.push({
+      pathname: '/tools',
+      query: searchParams.toString()
+    }, undefined, { shallow: true })
   }
 
-  // function to clear all the filters when `Clear Filters` is clicked.
-  const clearFilters =() => {
-    setLanguages([])
-    setTechnologies([])
-    setCategories([])
-    setisPaid("all")
-    setAsyncAPIOwner(false)
-    setOpenFilter(false)
+  // function to undo all the filters when `Undo Changes` is clicked.
+  const undoChanges =() => {
+      setCheckedLanguage(languages);
+      setCheckedTechnology(technologies);
+      setCheckedCategory(categories);
+      setCheckPaid(isPaid);
+      setCheckOwner(isAsyncAPIOwner);
   }
 
   return (
@@ -69,8 +88,8 @@ export default function Filters({setOpenFilter}) {
           <div className="text-sm text-gray-500">
           <Carddata heading="PRICING" data ={Data.properties.filters.properties.hasCommercial.description}  type="pricing" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
           </div>
-          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={clearFilters}>
-            Clear Filters
+          <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={undoChanges}>
+            Undo Changes
           </div>
         </div>
         <div className="flex gap-2">
@@ -86,7 +105,7 @@ export default function Filters({setOpenFilter}) {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-2 mx-4">
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 text-left">
         <Carddata heading="OWNERSHIP" data = "It describes whether the tools are maintained by AsyncAPI organization or not."  type="ownership" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         </div>
         <div className="flex gap-4">

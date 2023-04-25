@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Gardener
 excerpt: 'New AsyncAPI brand. AsyncAPI 2.4 and work on the 3.0 spec release. Meetings organization change. 2022 conference organization. AND SO MUCH MORE!'
-featured: true
 ---
 
 <iframe src="https://anchor.fm/asyncapi/embed/episodes/Summary-of-things-that-happened-at-AsyncAPI-Initiative-from-January-to-April--2022-e1hqbi1" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
