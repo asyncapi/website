@@ -17,6 +17,17 @@
       "score": 25.053033341156514
     },
     {
+      "id": "PR_kwDOB5hCo85FYPwk",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat!: extend bundling to create another schemas without $id",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 22.399617922442182
+    },
+    {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
@@ -31,17 +42,6 @@
         }
       ],
       "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOB5hCo85FYPwk",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: extend bundling to create another schemas without $id",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 21.825268744943667
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -68,18 +68,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 19.815046623698855
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 18.091999091203302
+      "score": 20.38939580119737
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -95,51 +84,18 @@
           "color": "a2eeef"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.091999091203302
     },
     {
-      "id": "I_kwDOG115t85D93P0",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Website UI Kit design/dev project",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/design-system/issues/4",
-      "repo": "asyncapi/design-system",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
+      "id": "I_kwDOBGu-185CELGB",
       "isPR": false,
       "isAssigned": false,
-      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.65612614745701
+      "title": "Work on 3.0 release",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/spec/issues/691",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 18.091999091203302
     },
     {
       "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
@@ -196,6 +152,37 @@
         }
       ],
       "score": 15.220253203710714
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDODyzcIc5NDHYS",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci:  new github action which logs all the reactions in prs and issues",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/.github/pull/220",
+      "repo": "asyncapi/.github",
+      "labels": [],
+      "score": 14.933078614961456
     }
   ],
   "goodFirstIssues": [
