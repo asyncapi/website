@@ -25,6 +25,15 @@ AsyncAPI has been growing exponentially and to maintain a safe and inclusive env
 ## Call for Speakers Madrid 
 AsyncAPI Conf on Tour 2023 (AACoT) is coming to Madrid on the 18th - 19th of October. The [Call for Speakers of AACoT Madrid Edition](https://sessionize.com/aacot-madrid/) is now open and we looking for diverse talks ranging from community, API design, and best practices. We welcome both first-time and returning speakers to submit their proposals. We can't wait to see you there!
 
+## Spec x Tooling
+We are excited to announce the release of the new [Parser-API v1.0.0](https://github.com/asyncapi/parser-api). The API follows an intent-driven design approach that prioritizes the user's purpose over technical mechanics. To learn more about the functionalities, please refer to [this detailed article](https://www.asyncapi.com/blog/intent-driven-api).
+
+## AsyncAPI Mentorship Program
+The AsyncAPI Mentorship Program Cohort 2 is now ready for kickoff. This year we are excited to not only accept code-related projects but also expand to technical writing and design. Whether you are interested in participating or have project ideas, we encourage you to engage [in the discussions](https://github.com/orgs/asyncapi/discussions/689).
+
+## Ambassador Program
+Are you passionate about the work of AsyncAPI community and interested in becoming part of it? Look no further, you are invited to join the Ambassador Program, which is designed to foster partnership,  community engagement, and development. As long as you meet the minimum requirements, everyone is welcome to join. To learn more about the program, please refer to [this article](https://www.asyncapi.com/blog/asyncapi-ambassador-program) or watch [this video](https://youtu.be/3rg_7hIb9PQ).
+
 ## Women in Open Source
 [Barbano](https://www.linkedin.com/in/barbano-gonzalez-moreno) Lead Education Program Manager and Ambassador Program Lead is currently working on an article that highlights the contributions of women in the open-source community. Through her research, she's focusing on exploring various case studies to gain deeper insights into the number of women involved in the field, where they're located and the specific work they do. Barbano aims to increase community visibility of women in open source and to showcase the valuable impact they have in the industry. Do have recommendations on communities that should be included in the case study? Please do [reach out to her](https://www.linkedin.com/in/barbano-gonzalez-moreno).
 
@@ -33,6 +42,8 @@ Please help us in welcoming our newest AsyncAPI TSC member [Heiko Henning](https
 
 ## Coming in May
 We have some exciting things planned for May, such as:
+
+- **Parser-JS v2** - We are eagerly anticipating the release of the main implementation of the Parser API, the Parser-JS v2. You can follow the process on [GitHub](https://github.com/asyncapi/parser-js/issues/585) and join the conversation in the `#tooling` channel on Slack.
 - **AsyncAPI Podcast** - Did you know that AsyncAPI has a podcast? If you didn't, now you know and the best part, we are dropping an episode in May. Get to know the community builders and the work they do. [Be sure to subscribe](https://open.spotify.com/show/73BrcNwJ5ZI9ygR8nfElZi).
 - **AsyncAPI Community Updates Newsletter** - We will be dropping the next issue in the first week of May. Be sure to [subscribe](https://www.asyncapi.com/newsletter) if you like to stay on top of the latest activities happening across the community.
 
