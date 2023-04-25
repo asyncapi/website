@@ -28,6 +28,8 @@ AsyncAPI Conf on Tour 2023 (AACoT) is coming to Madrid on the 18th - 19th of Oct
 ## Spec x Tooling
 We are excited to announce the release of the new [Parser-API v1.0.0](https://github.com/asyncapi/parser-api). The API follows an intent-driven design approach that prioritizes the user's purpose over technical mechanics. To learn more about the functionalities, please refer to [this detailed article](https://www.asyncapi.com/blog/intent-driven-api).
 
+There won't be any spec v2.7 release as the April release window was not used. We haven't pushed any specific features and we are still on the lookout for a release coordinator. If you are interested please indicate in the `#spec` channel on Slack. We are hands-on in completing Spec v3.0 and hopefully, this will be done in June. You can follow all the [updates on this issue](https://github.com/asyncapi/spec/issues/691#issuecomment-1488873682).
+
 ## AsyncAPI Mentorship Program
 The AsyncAPI Mentorship Program Cohort 2 is now ready for kickoff. This year we are excited to not only accept code-related projects but also expand to technical writing and design. Whether you are interested in participating or have project ideas, we encourage you to engage [in the discussions](https://github.com/orgs/asyncapi/discussions/689).
 
