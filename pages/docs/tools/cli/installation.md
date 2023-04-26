@@ -67,6 +67,11 @@ After downloading the AsyncAPI CLI, install it via the following command:
 sudo installer -pkg asyncapi.pkg -target /
 ```
 
+## Windows 
+For Windows just install the appropriate installer and simply follow the default installation steps to complete the installation process.
+
+Download [aynscapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+
 ## Linux
 Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.
 
