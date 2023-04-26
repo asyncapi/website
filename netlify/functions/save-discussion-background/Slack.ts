@@ -1,6 +1,6 @@
 import { WebClient } from '@slack/web-api';
 import axios from 'axios';
-import { Discussion, DiscussionCategory, Reply } from '.';
+import { Discussion, DiscussionCategory, Reply } from './index.d';
 
 export namespace Slack {
   const slackClient = new WebClient(process.env.SLACK_TOKEN);
