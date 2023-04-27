@@ -17,17 +17,6 @@
       "score": 25.053033341156514
     },
     {
-      "id": "PR_kwDOB5hCo85FYPwk",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: extend bundling to create another schemas without $id",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 22.399617922442182
-    },
-    {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
@@ -41,7 +30,7 @@
           "color": "0D67D3"
         }
       ],
-      "score": 22.112443333692923
+      "score": 22.399617922442182
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -84,7 +73,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -96,6 +85,17 @@
       "repo": "asyncapi/spec",
       "labels": [],
       "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDODCuNRs4r1oNL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
+      "author": "iancooper",
+      "resourcePath": "/asyncapi/bindings/pull/84",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 16.36895155870775
     },
     {
       "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
@@ -186,6 +186,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5kbYkc",
+      "title": "[📑 Docs]: improve adeo case study",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1615",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5jSPTM",
       "title": "filter section is overflowing for small screen in dashboard section",
@@ -675,21 +690,6 @@
         {
           "name": "hacktoberfest",
           "color": "5B0291"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5M4GpA",
-      "title": "Help validate Windows installer publishing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/302",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
