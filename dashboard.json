@@ -30,7 +30,7 @@
           "color": "0D67D3"
         }
       ],
-      "score": 22.112443333692923
+      "score": 22.399617922442182
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -186,6 +186,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5kbYkc",
+      "title": "[📑 Docs]: improve adeo case study",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1615",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5jSPTM",
       "title": "filter section is overflowing for small screen in dashboard section",

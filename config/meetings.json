@@ -1,11 +1,5 @@
 [
   {
-    "title": "Design planning meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=bjlhNGg1OTRpZmQ0Mm42Zjg2a25kbGlyOWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/563",
-    "date": "2023-01-16T16:00:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=azF2Z2pxdm0wMDlkOGFrZ2ZiNnRvYzczajggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/564",
