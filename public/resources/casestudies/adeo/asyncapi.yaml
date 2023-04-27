@@ -179,7 +179,7 @@ components:
           REQUESTER_CODE:
             $ref: "#/components/schemas/RequesterCode"
       payload:
-        $ref: "https://deploy-preview-921--asyncapi-website.netlify.app/resources/casestudies/adeo/CostingRequestPayload.avsc"
+        $ref: "https://asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc"
     costingResponse:
       name: CostingResponse
       title: Costing Response
