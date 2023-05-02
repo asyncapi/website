@@ -1,17 +1,5 @@
 [
   {
-    "title": "Design planning meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=bjlhNGg1OTRpZmQ0Mm42Zjg2a25kbGlyOWcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/563",
-    "date": "2023-01-16T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=azF2Z2pxdm0wMDlkOGFrZ2ZiNnRvYzczajggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/564",
-    "date": "2023-01-18T16:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=dms5aDV0NDNoZnFpa3Q4YnRjM3Bzc3Jvb2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/569",
@@ -146,5 +134,19 @@
     "url": "https://github.com/asyncapi/community/issues/681",
     "banner": "https://user-images.githubusercontent.com/66913810/233324999-bce12c6f-6e8e-4aca-acf5-053cfa22378a.png",
     "date": "2023-04-26T09:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YjcwZ2ZmOXNmMmU1YmRybXB0azk1Y2prb3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/688",
+    "banner": "https://user-images.githubusercontent.com/40604284/233369404-38892fbe-7082-4492-8aed-0a97ee8df011.png",
+    "date": "2023-05-02T08:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI x Google Season of Doc's 2023",
+    "calLink": "https://www.google.com/calendar/event?eid=Yzdyb2F1c3RjOXVvcTh2NXFiZGpyNjgzN3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/692",
+    "banner": "https://user-images.githubusercontent.com/66913810/234268392-10a4c02d-60e6-46ec-abcc-74c5aa6088dd.png",
+    "date": "2023-05-09T16:00:00.000Z"
   }
 ]

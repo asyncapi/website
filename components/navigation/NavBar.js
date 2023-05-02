@@ -58,7 +58,7 @@ export default function NavBar({
           <div className="lg:w-auto lg:flex-1">
             <div className="flex">
               <Link href="/">
-                <a className="cursor-pointer">
+                <a className="cursor-pointer" aria-label="AsyncAPI">
                   <AsyncAPILogo className="h-8 w-auto sm:h-8" />
                 </a>
               </Link>
@@ -69,6 +69,7 @@ export default function NavBar({
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden">
           <SearchButton
             className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            aria-label="Open Search"
           >
             <IconLoupe />
           </SearchButton>
@@ -121,6 +122,7 @@ export default function NavBar({
           <div className="flex flex-row items-center justify-content">
             <SearchButton
               className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+              aria-label="Open Search"
             >
               <IconLoupe />
             </SearchButton>
