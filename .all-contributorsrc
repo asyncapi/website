@@ -408,6 +408,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Olaleye-Blessing",
+      "name": "Olaleye Blessing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70102539?v=4",
+      "profile": "https://www.blessingolaleye.xyz/",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
     }
   ],
   "contributorsPerLine": 7,
