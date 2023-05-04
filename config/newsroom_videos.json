@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/Z8lnRHL-lCM/hqdefault.jpg",
+    "title": "Community meeting (May 2nd 2023)",
+    "description": "https://github.com/asyncapi/community/issues/688.",
+    "videoId": "Z8lnRHL-lCM"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/WcmH9ySIX9o/hqdefault.jpg",
     "title": "Tackling Interoperability Challenges In Open-Source",
     "description": "Interoperability refers to the ability of different systems and software applications to communicate and exchange data seamlessly.",
@@ -22,11 +28,5 @@
     "title": "Adding support for non-JSON schemas (April 18th 2023)",
     "description": "https://github.com/asyncapi/community/issues/668.",
     "videoId": "JFPERXh2ZUY"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/hN6aE3Ebn08/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (April 13th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/649.",
-    "videoId": "hN6aE3Ebn08"
   }
 ]
