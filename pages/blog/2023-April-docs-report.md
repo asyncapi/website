@@ -40,8 +40,8 @@ For the editing exercise, Alejandra used the same [old commit from the 2022 GSoD
 - Use the `replace all` keyboard shortcut to fix repeated mistakes.
 - Think to check and confirm the correct spelling of AsyncAPI during an AsyncAPI interview.
 
-#### Selection Criteria for Candidates
-The following factors were considered when selecting the candidates:
+#### Candidate Selection Criteria
+The following factors were considered when assessing candidates:
 - A humble attitude that actively listens and incorporates feedback.
 - Strong collaborative abilities.
 - A clear writing style.
