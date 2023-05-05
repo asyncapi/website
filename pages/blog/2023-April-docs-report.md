@@ -53,7 +53,7 @@ The following factors were considered when assessing candidates:
 ## Spec 3.0 Release
 AsyncAPI community members, including Jonas Lagoni and Sergio Moya, have started the process of identifying Spec 3.0 Subject Matter Experts (SMEs) who can provide the necessary background context for our technical writers to begin updating our documentation.
 
-While Alejandra and Sergio are currently the only ones sharing the Spec 3.0 **writing** efforts, we're actively seeking more contributors to join the writing efforts.
+While Alejandra and Sergio are currently the only ones sharing the Spec 3.0 **writing work**, we're actively seeking more contributors to join their writing efforts.
 
 The following Spec 3.0 release changes require documentation updates:
 - [Request/reply](https://github.com/asyncapi/spec/pull/847)
