@@ -1,38 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 25.053033341156514
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 22.399617922442182
-    },
-    {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
       "isPR": false,
       "isAssigned": false,
@@ -95,7 +63,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 17.517649913704783
+      "score": 18.091999091203302
     },
     {
       "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
@@ -174,30 +142,77 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDOE8Qh385L_vbE",
+      "id": "PR_kwDODyzcIc5NDHYS",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: add basic C++ support",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/pull/1156",
-      "repo": "asyncapi/modelina",
+      "title": "ci:  new github action which logs all the reactions in prs and issues",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/.github/pull/220",
+      "repo": "asyncapi/.github",
       "labels": [],
-      "score": 15.220253203710714
+      "score": 14.933078614961456
+    },
+    {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 14.926933240618364
+    },
+    {
+      "id": "PR_kwDOCoBobc4-9B_v",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: add migration guide",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/parser-js/pull/611",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5kbYkc",
-      "title": "[📑 Docs]: improve adeo case study",
+      "id": "I_kwDOBW5R_c5lGICH",
+      "title": "Make group dropdown for each section in Navbar",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1615",
+      "resourcePath": "/asyncapi/website/issues/1625",
       "repo": "asyncapi/website",
-      "author": "derberg",
+      "author": "akshatnema",
       "area": "Unknown",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5lGBkX",
+      "title": "Fix the spacing of heading in Newsroom page",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1624",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
         }
       ]
     },
@@ -633,29 +648,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385UFEXW",
-      "title": "Add Support for CPP language ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/953",
-      "repo": "asyncapi/modelina",
-      "author": "Willena",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "generator",
-          "color": "fef2c0"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOEOBLdM5TFZp2",
       "title": "Add support for JetStream push subscribe",
       "isAssigned": false,
@@ -1012,25 +1004,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "title": "Improve overall performance of the website but especially Blog",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
         }
       ]
     }
