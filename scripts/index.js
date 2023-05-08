@@ -1,9 +1,8 @@
 const rssFeed = require('./build-rss');
-const buildRoadMap = require('./build-roadmap');
 const buildPostList = require('./build-post-list');
+const buildCaseStudiesList = require('./casestudies');
 
 async function start() {
-  buildRoadMap();
   await buildPostList();
   rssFeed(
     'blog',
@@ -17,6 +16,7 @@ async function start() {
     'AsyncAPI Initiative Jobs Board',
     'jobs/rss.xml'
   );
+  await buildCaseStudiesList();
 }
 
 start();

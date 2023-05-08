@@ -1,6 +1,8 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import {sortBy} from 'lodash';
+import NewsletterSubscribe from "../../components/NewsletterSubscribe";
+import TextLink from '../../components/typography/TextLink';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -34,7 +36,7 @@ function addAdditionalUserInfo(user) {
 export default function TSC() {
   const description =
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
-  const image = "/img/social/website-card.jpg";
+  const image = "/img/social/community-tsc.webp";
 
   const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
 
@@ -58,6 +60,8 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
+
+            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
@@ -71,6 +75,11 @@ export default function TSC() {
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
               stay as a maintainer).
+              Follow this
+              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
+                Link
+              </TextLink>
+              &nbsp;to know more!
             </p>
           </div>
           <div>
@@ -98,6 +107,13 @@ export default function TSC() {
             </p>
           </div>
         </div>
+        <div className="mt-8">
+          <NewsletterSubscribe
+            type="tsc-voting-email"
+            title="Get notified when TSC is voting"
+            subtitle="You'll receive an email whenever someone requests the TSC to vote."
+          />
+        </div>
         <div className="mt-10">
           <div className="mb-5 text-primary-800 text-center">
             <h3 className="font-semibold text-2xl">
@@ -123,6 +139,28 @@ export default function TSC() {
   );
 }
 
+const socials = {
+  "Github": <GithubSVG />,
+  "Twitter": <TwitterSVG />,
+  "Linkedin": <LinkedInSVG />,
+}
+
+function SocialLink({ href, social }) {
+  return (
+    <li>
+      <a
+        href={href}
+        className="text-gray-600 hover:text-gray-500"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <span className="sr-only">{social}</span>
+        {socials[social]}
+      </a>
+    </li>
+  )
+}
+
 function UserInfo({ user }) {
   return (
     <li
@@ -138,37 +176,9 @@ function UserInfo({ user }) {
           <div className="font-bold text-lg my-3">{user.name}</div>
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
-            <li>
-              <a
-                href={user.github}
-                className="text-gray-600 hover:text-gray-500"
-              >
-                <span className="sr-only">Github</span>
-                <GithubSVG />
-              </a>
-            </li>
-            {user.twitter ? (
-              <li>
-                <a
-                  href={user.twitter}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">Twitter</span>
-                  <TwitterSVG />
-                </a>
-              </li>
-            ) : null}
-            {user.linkedin ? (
-              <li>
-                <a
-                  href={user.linkedin}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">LinkedIn</span>
-                  <LinkedInSVG />
-                </a>
-              </li>
-            ) : null}
+            <SocialLink href={user.github} social="Github" />
+            {user.twitter ? <SocialLink href={user.twitter} social="Twitter" /> : null}
+            {user.linkedin ? <SocialLink href={user.linkedin} social="Linkedin" /> : null}
           </ul>
         </div>
       </div>
@@ -177,7 +187,7 @@ function UserInfo({ user }) {
         {user.repos.map((repo) => (
           <a
             key={repo.name}
-            className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-teal-100 text-teal-800 hover:bg-teal-300"
+            className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-cyan-100 text-cyan-800 hover:bg-cyan-300"
             href={repo.url}
           >
             {repo.name}
@@ -217,7 +227,14 @@ function QuestionCard() {
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
-      <div className="my-4">Become a member!</div>
+      <div className="my-4">
+        Want to become a member?
+        Follow this
+        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
+          Link
+        </TextLink>
+        &nbsp;to know more!
+      </div>
     </li>
   );
 }

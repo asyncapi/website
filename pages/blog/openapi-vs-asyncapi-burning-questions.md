@@ -3,13 +3,14 @@ type: Engineering
 cover: /img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-15.webp
 title: "AsyncAPI vs OpenAPI: Answers to Your Burning Questions About Two Leading API Specs"
 date: 2021-09-08T06:00:00+01:00
+canonical: https://solace.com/blog/asyncapi-vs-openapi/
 tags:
    - Specification
    - OpenAPI
 authors:
    - name: Jesse Menning
      photo: /img/avatars/jmenning.webp
-     link: https://linkedin.com/in/jmenning
+     link: https://www.linkedin.com/in/jmenning
      byline: CTO Architect at Solace
 ---
 

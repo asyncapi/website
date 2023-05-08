@@ -52,11 +52,11 @@ export default function ParsersPage() {
               <Paragraph className="mt-3 lg:pr-4">
                 Parse AsyncAPI documents in your JavaScript tooling and products. It works on <strong>Node.js</strong> and <strong>browsers</strong>.
               </Paragraph>
-              <CodeBlock language="bash" showLineNumbers={false} className="mt-8">npm install @asyncapi/parser</CodeBlock>
+              <CodeBlock language="bash" showLineNumbers={false} className="mt-8" textSizeClassName="text-sm">npm install @asyncapi/parser</CodeBlock>
               {renderButtons()}
             </div>
             
-            <CodeBlock language="javascript" hasWindow>{getCode()}</CodeBlock>
+            <CodeBlock language="javascript" hasWindow textSizeClassName="text-sm">{getCode()}</CodeBlock>
           </div>
         </div>
       </div>
@@ -68,10 +68,10 @@ function getCode() {
   return `import { parse } from '@asyncapi/parser'
 
 const doc = await parse(\`
-  asyncapi: '2.0.0'
+  asyncapi: '2.6.0'
   info:
     title: Example
-    version: '0.1.0'
+    version: '1.0.0'
   channels:
     example-channel:
       subscribe:

@@ -8,7 +8,6 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "commitConvention": "none",
   "contributors": [
     {
       "login": "fmvilas",
@@ -273,8 +272,155 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "Dule-mart",
+      "name": "Tabah Baridule",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33032530?v=4",
+      "profile": "http://www.twitter.com/dulemartins",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "starlightknown",
+      "name": "Karuna Tata",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74637789?v=4",
+      "profile": "https://starlightknown.github.io/",
+      "contributions": [
+        "a11y"
+      ]
+    },
+    {
+      "login": "nibble0101",
+      "name": "Joseph Mawa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52580190?v=4",
+      "profile": "https://github.com/nibble0101",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "aeworxet",
+      "name": "Viacheslav Turovskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16149591?v=4",
+      "profile": "https://github.com/aeworxet",
+      "contributions": [
+        "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "hkosova",
+      "name": "Helen Kosova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8576823?v=4",
+      "profile": "https://www.linkedin.com/in/helen-kosova/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "thulieblack",
+      "name": "V Thulisile Sibanda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66913810?v=4",
+      "profile": "https://linktr.ee/thulieblack",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "manavdesai27",
+      "name": "Manav Desai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74018438?v=4",
+      "profile": "https://github.com/manavdesai27",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "toukirkhan",
+      "name": "Mohd Toukir Khan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88899011?v=4",
+      "profile": "http://www.toukir.co",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Annysah",
+      "name": "Anisat Akinbani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52763841?v=4",
+      "profile": "https://annysah.hashnode.dev",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "sambhavgupta0705",
+      "name": "sambhavgupta0705",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81870866?v=4",
+      "profile": "https://github.com/sambhavgupta0705",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Ankitchaudharyy",
+      "name": "Ankit Chaudhary",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46367738?v=4",
+      "profile": "https://github.com/Ankitchaudharyy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Amzani",
+      "name": "samz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/554438?v=4",
+      "profile": "https://github.com/Amzani",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "BhaswatiRoy",
+      "name": "Bhaswati Roy ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78029145?v=4",
+      "profile": "https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Mayaleeeee",
+      "name": "AISHAT MUIBUDEEN",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105395613?v=4",
+      "profile": "https://www.behance.net/muibudeenaisha",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "nawed2611",
+      "name": "Nawed Ali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83456083?v=4",
+      "profile": "https://nawedali.tech",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Olaleye-Blessing",
+      "name": "Olaleye Blessing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70102539?v=4",
+      "profile": "https://www.blessingolaleye.xyz/",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": false
+  "skipCi": false,
+  "commitConvention": "angular"
 }

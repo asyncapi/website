@@ -12,7 +12,6 @@ authors:
     photo: /img/avatars/harsh.webp
     link: https://www.linkedin.com/in/harshcasper/
 excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Check out all the potential new features coming to AsyncAPI 3.0 and how you can get involved!'
-featured: false
 ---
 
 AsyncAPI is a specification for describing your event-driven architecture. Our specification allows you to describe and document your message-driven APIs into a human-readable format. The AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements, and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.
@@ -46,11 +45,11 @@ AsyncAPI is a community-driven project and we welcome all kinds of contributions
 
 To better understand AsyncAPI and how the Spec 3.0 release will play out, we recommend watching our [past meeting recordings](https://www.youtube.com/watch?v=CLNgLB4-UnA&list=PLbi1gRlP7pihClJY-kXuTRRJ8n1awb0VV). To know how you can contribute, we recommend checking out our [contributing guidelines](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md). If you wish to keep track of all the work that is happening on the Spec 3.0 release, we recommend checking out our [GitHub issue](https://github.com/asyncapi/spec/issues/691).
 
-Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/.github/blob/master/git-workflow.md) that we have developed for contributors.
+Before landing in your contributions, make sure you follow our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md) and the pull request you raised is [described properly](https://github.com/asyncapi/.github/blob/master/CONTRIBUTING.md#conventional-commits). To know how we collaborate using Git & GitHub, follow the [Git workflow](https://github.com/asyncapi/community/blob/master/git-workflow.md) that we have developed for contributors.
 
 ## When will the release happen?
 
-We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 16, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=tbrbfq4de5bcngt8okvev4lstk@group.calendar.google.com) and explore our upcoming meetings.
+We are yet to arrive at a date but the community is working towards releasing this by the end of 2022. Currently, we meet every two weeks to discuss the upcoming Spec 3.0 release and share updates and you are welcome to join it! We are going to have our next meeting on [UTC 16:00 on March 16, 2022](https://github.com/asyncapi/community/issues/270). You can access the [AsyncAPI Calendar](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com) and explore our upcoming meetings.
 
 The release will happen gradually, where the new specification and tooling will live in coexistence until there is a collective consensus that everything is ready. This gives everyone an easy way to test out the new changes and provide feedback before the release. Finally, after rigorous testing, we will make an official announcement about our release!
 

@@ -1,94 +1,32 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import sortBy from 'lodash/sortBy'
 import Head from '../Head'
 import DocsContext from '../../context/DocsContext'
 import TOC from '../TOC'
 import DocsNav from '../navigation/DocsNav'
 import DocsMobileMenu from '../navigation/DocsMobileMenu'
+import DocsButton from '../buttons/DocsButton'
 import NavBar from '../navigation/NavBar'
 import ArrowRight from '../icons/ArrowRight'
 import Feedback from '../Feedback'
 import StickyNavbar from '../navigation/StickyNavbar'
 import Heading from '../typography/Heading'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
+import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
+import IconLoupe from '../icons/Loupe';
+import { getAllPosts } from '../../lib/api'
+import Link from 'next/link'
 
 function generateEditLink(post) {
   if (post.slug.includes('/specifications/')) {
-    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on Github</a>
+    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on GitHub</a>
   } 
-  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on Github</a>
-}
-
-function buildNavTree(navItems) {
-  const tree = {
-    'welcome': {
-      item: { title: 'Welcome', weight: 0, isRootSection: true, isSection: true, rootSectionId: 'welcome', sectionWeight: 0, slug: '/docs' },
-      children: {}
-    }
-  }
-  
-  //first we make sure that list of items lists main section items and then sub sections, documents last
-  const sortedItems = sortBy(navItems, ['isRootSection', 'weight', 'isSection']);
-
-  sortedItems.forEach(item => {
-    //identify main sections
-    if (item.isRootSection) {
-      tree[item.rootSectionId] = { item, children: {} }
-    }
-
-    //identify subsections
-    if (item.parent) {
-      tree[item.parent].children[item.sectionId] = { item, children: [] }
-    }
-
-    if (!item.isSection) {
-      if (item.sectionId) {
-        let section = tree[item.rootSectionId].children[item.sectionId];
-        if (!section) {
-          tree[item.rootSectionId].children[item.sectionId] = { item, children: [] }
-        }
-        tree[item.rootSectionId].children[item.sectionId].children.push(item)
-      } else {
-        tree[item.rootSectionId].children[item.title] = { item };
-      }
-    }
-  })
-
-  for (const [rootKey, rootValue] of Object.entries(tree)) {
-    const allChildren = rootValue.children;
-    const allChildrenKeys = Object.keys(allChildren);
-
-    rootValue.children = allChildrenKeys
-      .sort((prev, next) => {
-        return allChildren[prev].item.weight - allChildren[next].item.weight;
-      }).reduce(
-        (obj, key) => { 
-          obj[key] = allChildren[key]; 
-          return obj;
-        }, 
-        {}
-      );
-
-    //handling subsections
-    if (allChildrenKeys.length > 1) {
-      for (const key of allChildrenKeys) {
-        allChildren[key].children?.sort((prev, next) => {
-          return prev.weight - next.weight;
-        });
-
-        // point in slug for specification subgroup to the latest specification version
-        if (rootKey === 'reference' && key === 'specification') {
-          allChildren[key].item.href = allChildren[key].children[0].slug;
-        }
-      }
-    }
-  }
-
-  return tree;
+  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
 }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
+  const posts = getAllPosts()
   if (!post) return <ErrorPage statusCode={404} />
   if (post.title === undefined) throw new Error('Post title is required')
 
@@ -98,7 +36,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
   }
 
   const [showMenu, setShowMenu] = useState(false)
-  const navigation = buildNavTree(navItems);
+  const navigation = posts["docsTree"]
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
@@ -106,16 +44,39 @@ export default function DocsLayout({ post, navItems = {}, children }) {
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
-        { showMenu && (
+        {showMenu && (
           <DocsMobileMenu onClickClose={() => setShowMenu(false)} post={post} navigation={navigation} />
-        ) }
-        <div className="flex flex-row">
+        )}
+        <div className="flex flex-row" id="main-content">
         {/* <!-- Static sidebar for desktop --> */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
             <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
+
+              <SearchButton 
+                className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
+                indexName={DOCS_INDEX_NAME}
+              >
+                {({ actionKey }) => (
+                  <>
+                    <IconLoupe />
+                    <span className="flex-auto">Search docs...</span>
+                    {actionKey && (
+                      <kbd className="font-sans font-semibold">
+                        <abbr
+                          title={actionKey.key}
+                          className="no-underline"
+                        >
+                          {actionKey.shortKey}
+                        </abbr>{' '}
+                        K
+                      </kbd>
+                    )}
+                  </>
+                )}
+              </SearchButton>
               
-              <nav className="flex-1 pt-8 pb-8 bg-white">
+              <nav className="flex-1 bg-white">
                 <ul>
                   {Object.values(navigation).map(navItem => (
                     <DocsNav key={navItem.item.title} item={navItem} active={post.slug} onClick={() => setShowMenu(false)} />
@@ -137,23 +98,45 @@ export default function DocsLayout({ post, navItems = {}, children }) {
               </div>
             )}
             
+            <AnnouncementHero className='ml-6' hideVideo={true} />
+
             <div className={`xl:flex ${post.toc && post.toc.length ? 'xl:flex-row-reverse' : ''}`}>
               <TOC toc={post.toc} depth={3} className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen xl:bg-transparent xl:mt-0 xl:pb-8 xl:w-72" />
               <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-184">
               <Heading level="h1" typeStyle="heading-lg">
                 {post.title}
               </Heading>
-            {
-              post.isPrerelease 
-              ? <h3 className="text-lxl font-normal text-gray-800 font-sans antialiased">To be released on {post.releaseDate}</h3> 
-              : null
-            }
-            <div>
-              <p className="text-sm font-normal text-gray-600 font-sans antialiased">
-                Found an error? Have a suggestion? 
-                {generateEditLink(post)}
-              </p>
-            </div>
+              <div>
+                <p className="text-sm font-normal text-gray-600 font-sans antialiased">
+                  Found an error? Have a suggestion? 
+                  {generateEditLink(post)}
+                </p>
+              </div>
+              { post.releaseNoteLink &&
+                // show only when it is related to specification (/docs/reference/specification) AND is not a pre-release 
+                // for example, if the post's title is "3.0.0 (Pre-release)", which will not have RN, so do not render this section. 
+                <div className="w-full mt-5 py-3 px-2 text-center rounded-lg bg-secondary-100">
+                  <div>
+                    <span className="text-sm font-sans antialiased text-gray-800"> 
+                      {`What is new in v${post.title}? Have a look at the `} 
+                    </span> 
+                    <Link href={post.releaseNoteLink}>
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}> release notes</a>
+                    </Link>.
+                  </div>
+                  <div>
+                    <span className="text-sm font-sans antialiased text-gray-800"> 
+                      Interested in release notes of other versions of the specification?&nbsp;
+                    </span> 
+                    <span className="text-sm font-sans antialiased text-gray-800">
+                      Check&nbsp;
+                      <Link href="https://www.asyncapi.com/blog?tags=Release+Notes">
+                        <a target="_blank" rel="noopener noreferrer" className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}>list of release notes</a>
+                      </Link>.
+                    </span>        
+                  </div>
+                </div>
+                }
                 <article className="mb-12 mt-12">
                   <Head
                     title={post.title}
@@ -162,6 +145,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   />
                   { children }
                 </article>
+                <div>
+                  <DocsButton post={post} />
+                </div>
                 <div className="">
                   <Feedback />
                 </div>

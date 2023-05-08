@@ -11,7 +11,6 @@ authors:
     link: https://twitter.com/derberq
     byline: AsyncAPI Gardener
 excerpt: 'New AsyncAPI brand. AsyncAPI 2.4 and work on the 3.0 spec release. Meetings organization change. 2022 conference organization. AND SO MUCH MORE!'
-featured: true
 ---
 
 <iframe src="https://anchor.fm/asyncapi/embed/episodes/Summary-of-things-that-happened-at-AsyncAPI-Initiative-from-January-to-April--2022-e1hqbi1" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
@@ -56,7 +55,7 @@ We need to have a special task force that will focus on the subject. Please join
 Because of the community's growth and the growing number of topic-specific meetings, we had to spend some time improving things and automating as much as possible. After some initial discussions, such as [this discussion about Google-services](https://github.com/asyncapi/community/discussions/236), some initial requirements were defined, called [Meeting as a Service](https://github.com/asyncapi/community/issues/245).
 
 - A week ago, we stopped using our `asyncapi-users` Google Group. We removed it, and all the members were migrated as subscribers to the AsyncAPI Newsletter. This newsletter is the new place where we'll send email notifications every Monday morning with a list of upcoming meetings.
-- We switched to the new Google Calendar instance managed by the official AsyncAPI Google account. You should remove/unsubscribe from the old calendar and [subscribe to the new calendar](https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t),
+- We switched to the new Google Calendar instance managed by the official AsyncAPI Google account. You should remove/unsubscribe from the old calendar and [subscribe to the new calendar](https://calendar.google.com/calendar/u/0/embed?src=c_q9tseiglomdsj6njuhvbpts11c@group.calendar.google.com),
 - [Our Technical Steering Committee (TSC)](https://github.com/asyncapi/community/discussions/295) approved to sponsor 8 Zoom licenses to host official AsyncAPI meetings. So far, only 3 licenses have been assigned. We have lots of room for more meetings and hosts, if there is a need.
 
 Huge thanks to [Krishna Kumar](https://github.com/Krishks369) and [Shreyansh Jain](https://github.com/sudoshreyansh), who helped research the implementation. :heart:
