@@ -3,10 +3,11 @@ import IconGithub from '../icons/Github'
 
 export default function GithubButton({
   text = 'View on Github',
-  href,
+  href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = 'left',
   className,
+  inNav = "false"
 }) {
   return (
     <Button
@@ -16,7 +17,8 @@ export default function GithubButton({
       iconPosition={iconPosition}
       target={target}
       className={className}
-      bgClassName="bg-gray-800 hover:bg-gray-600"
+      bgClassName="bg-gray-800 hover:bg-gray-700"
+      buttonSize={ inNav == "true" ? "small" : "default" }
     />
   )
 }

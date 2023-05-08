@@ -1,11 +1,9 @@
-import { getAllPosts } from '../lib/api'
 import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/Sponsors'
 import Head from '../components/Head'
-import Footer from '../components/Footer'
 import Slack from '../components/slack'
 import Button from '../components/buttons/Button'
 import Calendar from '../components/Calendar'
@@ -15,116 +13,215 @@ import SlackLogo from '../components/logos/Slack'
 import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
 import Testimonial from '../components/Testimonial'
-import BlogPostItem from '../components/navigation/BlogPostItem'
+import Heading from '../components/typography/Heading'
+import Paragraph from '../components/typography/Paragraph'
+import TextLink from '../components/typography/TextLink'
+import GoldSponsors from '../components/GoldSponsors'
+import SilverSponsors from '../components/SilverSponsors'
+import SupportUs from '../components/SupportUs'
+import StickyNavbar from '../components/navigation/StickyNavbar'
+import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
+import ICSFileButton from '../components/buttons/ICSFileButton';
+import SubscribeButton from '../components/buttons/SubscribeButton';
+import NewsroomSection from '../components/newsroom/NewsroomSection'
 
 function HomePage() {
-  const posts = getAllPosts()
-    .filter(p => p.slug.startsWith('/blog/'))
-    .sort((i1, i2) => {
-      const i1Date = new Date(i1.date)
-      const i2Date = new Date(i2.date)
-
-      if (i1.featured && !i2.featured) return -1
-      if (!i1.featured && i2.featured) return 1
-      return i2Date - i1Date
-    })
-    .slice(0, 3)
-
   return (
     <>
-      <Container wide>
-        <Head title="Home" />
-        <NavBar className="z-50" />
-        <Hero className="mb-24" />
-      </Container>
+      <Head />
+      <StickyNavbar>
+        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
+      </StickyNavbar>
 
-      <div className="bg-primary-900 py-12 mt-8">
+      <main id="main-content" className="scroll-mt-5">
         <Container wide>
-          <NewsletterSubscribe formName="form 1" dark />
+          <Hero className="mb-24" />
         </Container>
-      </div>
 
-      <Container className="text-center mt-12 pt-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Platinum Sponsors</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These great organizations are already supporting AsyncAPI. Want to become a sponsor? <a href="https://opencollective.com/asyncapi" target="_blank" className="text-primary-600 font-medium">Support us!</a>
-        </p>
-        <Sponsors className="mt-8" showSupportBanner={false} />
-      </Container>
+        <Container className="text-center pb-12" wide as="section">
+          <Heading
+            level="h3"
+            typeStyle="heading-lg"
+            className="mb-4"
+          >
+            Adopted by the world leading brands
+          </Heading>
+          <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
+            These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?
+            <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
+              Let us know here!
+            </TextLink>
+          </Paragraph>
+          <ul className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
+            <li className="justify-center flex">
+              <AdidasLogo className="h-8 text-gray-400" />
+            </li>
+            <li className="justify-center flex">
+              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
+            </li>
+            <li className="justify-center flex">
+              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
+            </li>
+            <li className="justify-center flex">
+              <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
+            </li>
+            <li className="justify-center flex">
+              <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
+            </li>
+          </ul>
+        </Container>
 
-      <Container className="text-center mt-24 py-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Join our great community!</h3>
-        <p className="mt-2 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
-        </p>
-        <div className="py-2 lg:py-12">
-          <Container wide>
-            <div className="lg:flex">
-              <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Slack />
-              </div>
-              <div className="lg:text-left lg:max-w-xl lg:ml-8">
-                <div className="mt-5">
-                  <h5 className="text-lg leading-6 font-medium text-gray-900">Join our Slack workspace</h5>
-                  <p className="mt-2 text-base leading-6 text-gray-500">
-                    We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
-                  </p>
-                </div>
-                <div className="mt-5">
-                  <Button className="block md:inline" text="Join us!" href="/slack-invite" />
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 lg:flex lg:flex-row-reverse">
-              <div className="mt-10 lg:mt-0 lg:flex-1">
-                <Calendar />
-              </div>
-              <div className="lg:text-left lg:max-w-xl lg:mr-8">
-                <div className="mt-5">
-                  <h5 className="text-lg leading-6 font-medium text-gray-900">Join our public meetings</h5>
-                  <p className="mt-2 text-base leading-6 text-gray-500">
-                    We meet every two weeks to discuss about the current state of the art, future releases, and everything AsyncAPI. We alternate the time of the meeting to adapt to different world regions, choose the one that suites you best. Or join both!
-                  </p>
-                  <div className="mt-5 md:flex">
-                    <Button className="block md:inline-block md:flex-1 md:text-center" text="Add to Google Calendar" href="https://calendar.google.com/calendar?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-indigo-500 hover:bg-indigo-400" text="Join mailing list to get invite" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
-                    <Button className="mt-2 md:mt-0 md:ml-2 block md:inline-block md:flex-1 md:text-center" bgClassName="bg-red-500 hover:bg-red-400" text="Watch previous recordings" href="https://groups.google.com/forum/#!forum/asyncapi-users" target="_blank" />
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="bg-dark py-12 mt-8">
+          <Container wide as="section">
+            <NewsletterSubscribe dark />
           </Container>
         </div>
-      </Container>
-      
-      <Container className="text-center pb-12" wide>
-        <h3 className="text-primary-800 text-3xl font-bold md:text-4xl mb-4">Adopted by the world leading brands</h3>
-        <p className="mt-2 mb-20 text-base leading-6 text-gray-500 md:w-1/2 md:mx-auto">
-          These brands are already using AsyncAPI in production. Is your company using AsyncAPI and want to get it listed? <a href="https://github.com/asyncapi/website/issues/new" target="_blank" className="text-primary-500 font-medium">Let us know here!</a>
-        </p>
-        <div className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
-          <div className="justify-center flex">
-            <AdidasLogo className="h-8 text-gray-400" />
+
+        <Container className="text-center py-12" wide as="section">
+          <Heading
+            level="h3"
+            typeStyle="heading-lg"
+            className="mb-4"
+          >
+            Join our great community!
+          </Heading>
+          <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
+            We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
+          </Paragraph>
+          <div className="py-2 lg:py-12">
+            <Container wide>
+              <div className="lg:flex">
+                <div className="mt-10 lg:mt-0 lg:w-1/2">
+                  <Slack />
+                </div>
+                <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-12">
+                  <div className="mt-5">
+                    <Heading level="h4" typeStyle="heading-md-semibold">
+                      Join our Slack workspace
+                    </Heading>
+                    <Paragraph className="mt-2">
+                      We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
+                    </Paragraph>
+                  </div>
+                  <div className="mt-5 flex justify-center lg:justify-start">
+                    <Button className="w-full md:w-auto" text="Join us!" href="/slack-invite" />
+                  </div>
+                </section>
+              </div>
+
+              <div className="mt-12 lg:flex lg:flex-row-reverse">
+                <section className="mt-10 lg:mt-0 lg:flex-1">
+                  <Calendar size="2" className="float-left" />
+                </section>
+                <section className="lg:text-left lg:max-w-xl lg:mr-12">
+                  <div className="mt-5 lg:mr-12">
+                    <Heading level="h3" typeStyle="heading-md-semibold">
+                      Join our public meetings
+                    </Heading>
+                    <Paragraph className="mt-2">
+                      AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
+
+                      <TextLink href="/community/meetings">
+                        Learn more about our meetings.
+                      </TextLink>
+                    </Paragraph>
+                    <ul className="mt-5 md:flex justify-center">
+                      <li>
+                        <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
+                      </li>
+                      <li>
+                        <SubscribeButton
+                          href="/community/meetings"
+                          className="mt-2 md:mt-0 md:ml-2"
+                        />
+                      </li>
+                      <li>
+                        <ICSFileButton
+                          href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics"
+                          className="mt-2 md:mt-0 md:ml-2"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </Container>
+            <Container wide>
+                <NewsroomSection />
+            </Container>
           </div>
-          <div className="justify-center flex">
-            <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
-          </div>
-          <div className="justify-center flex">
-            <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
-          </div>
-        </div>
-      </Container>
-      
-      <Container className="text-center pb-12" wide>
-        <section>
-          <div className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
+
+        </Container>
+
+
+        <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
+          <Container className="text-center pb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Platinum Sponsors
+            </Heading>
+            <Sponsors className="mt-4" showSupportBanner={false} />
+          </Container>
+
+          <Container className="text-center pb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Gold Sponsors
+            </Heading>
+            <GoldSponsors className="mt-4" showSupportBanner={false} />
+          </Container>
+          
+          <Container className="text-center pyb-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-lg"
+              className="mb-4"
+            >
+              Silver Sponsors
+            </Heading>
+            <SilverSponsors className="mt-4" showSupportBanner={false} />
+          </Container>
+
+
+          <Container className="text-center py-6" wide as="section">
+            <Heading
+              level="h3"
+              typeStyle="heading-md-semibold"
+              className="mb-4"
+            >
+              Want to Sponsor Us?
+            </Heading>
+            <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
+              These great organizations are already supporting AsyncAPI. Want to become a sponsor?
+              <TextLink href="https://opencollective.com/asyncapi" target="_blank">
+                Support us!
+              </TextLink>
+            </Paragraph>
+          </Container>
+        </section>
+        <Container className="text-center py-6 pb-20" wide>
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            Supported by
+          </Heading>
+          <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
+            The following companies support us by letting us use their products for free. Interested in supporting us too?
+            <TextLink href="mailto:info@asyncapi.io" target="_blank">
+              Email us
+            </TextLink> for more info.
+          </Paragraph>
+          <SupportUs className="mt-4" showSupportBanner={false} />
+        </Container>
+        <Container className="text-center pb-20 mt-8" wide as="section">
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+            What the experts are saying
+          </Heading>
+          <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
             <Testimonial
               className="md:pr-10 lg:pr-16"
               text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
@@ -153,31 +250,9 @@ function HomePage() {
               authorName="Eric Horesnyi"
               authorDescription="CEO at Streamdata.io"
             />
-          </div>
-        </section>
-      </Container>
-      <Container wide>
-        <div className="text-center">
-          <h2 className="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-            Latest stories from our blog
-          </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-            Find the latest and greatest stories from our community.
-          </p>
-          <p className="max-w-2xl mx-auto text-md leading-7 text-gray-400">
-            Want to publish a blog post? We love community stories.
-            <a className="ml-1 text-primary-500 hover:text-primary-400" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">Submit yours!</a>
-          </p>
-        </div>
-        <div className="mt-12 mx-auto md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:max-w-none lg:px-8">
-          {
-            posts.map((post, index) => (
-              <BlogPostItem className="mb-8 md:mb-0" key={index} post={post} />
-            ))
-          }
-        </div>
-      </Container>
-      <Footer />
+          </ul>
+        </Container>
+      </main>
     </>
   )
 }

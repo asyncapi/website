@@ -2,11 +2,9 @@
 title: "Simplify code generation with React"
 date: 2021-01-26T00:07:00+01:00
 type: Engineering
-featured: true
 tags:
-  - Tools
-  - Generator
-  - Templating
+  - Code Generation
+  - Docs Generation
   - React
   - Nunjucks
 cover: /img/posts/react-as-generator-engine.webp
@@ -56,7 +54,7 @@ The [Generator](https://github.com/asyncapi/generator) doesn't use React rendere
 }
 ```
 
-You can find more information about the Generator configuration [here](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#configuration-file).	 
+You can find more information about the Generator configuration [here](https://github.com/asyncapi/generator/blob/master/docs/configuration-file.md).	 
 
 ## How it works
 
@@ -148,7 +146,7 @@ Looking at both examples we see that in Nujucks we operate on string literals, i
 
 ### Using third party packages
 
-Using helper functions from third-party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#filters). For example, you want to use one function from [Underscore.string](https://github.com/esamattis/underscore.string) library like **cleanDiacritics**, which replaces diacritic characters with closest ASCII equivalents. To do this, you must create a function inside **filters** folder to convert the function to Nunjucks's filter:
+Using helper functions from third-party packages, in Nunjucks you must apply them as [filters](https://github.com/asyncapi/generator/blob/master/docs/nunjucks-render-engine.md#filters). For example, you want to use one function from [Underscore.string](https://github.com/esamattis/underscore.string) library like **cleanDiacritics**, which replaces diacritic characters with closest ASCII equivalents. To do this, you must create a function inside **filters** folder to convert the function to Nunjucks's filter:
 
 ```js
 // filters/cleanDiacritics.js

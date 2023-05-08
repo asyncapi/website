@@ -3,8 +3,7 @@ title: "AsyncAPI Initiative Status Update (week 29, 2020)"
 date: 2020-07-14T06:00:00+01:00
 type: Communication
 tags:
-  - Status
-  - Community
+  - Project Status
 cover: /img/posts/asyncapi-sonarcloud.webp
 weight: 10
 authors:
@@ -66,7 +65,7 @@ The next meeting is scheduled for next Tuesday, 21st of July, 4PM UTC.
 
 We work on the agenda for the next meeting [here](https://github.com/asyncapi/asyncapi/issues/404). At the moment, there is nothing in the agenda so you can sneak in your topic easily. 
 
-We host the meeting on [Zoom](https://zoom.us/j/165106914). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
+We host the meeting on [Zoom](https://zoom.us/j/83140549308). Do not forget about future meetings and always have up to date invitations in your calendar by adding your email to [this](https://groups.google.com/forum/#!forum/asyncapi-users) mailing list.
 
 ## Curated Content
 

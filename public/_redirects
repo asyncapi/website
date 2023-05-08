@@ -1,22 +1,71 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
 
 https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
+https://asyncapi.org/* https://www.asyncapi.com/:splat 301!
+https://www.asyncapi.org/* https://www.asyncapi.com/:splat 301!
+https://asyncapi.io/* https://www.asyncapi.com/:splat 301!
+https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Docs
-/docs /docs/getting-started 301!
-/docs/tooling /docs/community/tooling 301!
-/docs/specifications/latest /docs/specifications/2.0.0 302!
+/docs/getting-started /docs/tutorials/getting-started 301!
+/docs/getting-started/event-driven-architectures /docs/tutorials/getting-started/event-driven-architectures 301!
+/docs/getting-started/coming-from-openapi /docs/tutorials/getting-started/coming-from-openapi 301!
+/docs/getting-started/hello-world /docs/tutorials/getting-started/hello-world 301!
+/docs/getting-started/asyncapi-documents /docs/tutorials/getting-started/asyncapi-documents 301!
+/docs/getting-started/servers /docs/tutorials/getting-started/servers 301!
+/docs/getting-started/security /docs/tutorials/getting-started/security 301!
+/docs/tutorials/streetlights /docs/tutorials/create-asyncapi-document 301!
+/docs/community/tooling /docs/tools 301!
+
+# Redirection will be handled automatically by Action.
+# LATEST-SPEC-REDIRECTION:START
+/docs/reference/specification/latest /docs/reference/specification/v2.6.0 302!
+# LATEST-SPEC-REDIRECTION:END
+
+# SPEC-REDIRECTION:START
+/docs/reference/specification/3.0.0-next-major-spec.10 /docs/reference/specification/v3.0.0-next-major-spec.10 302!
+/docs/reference/specification/2.6.0 /docs/reference/specification/v2.6.0 302!
+/docs/reference/specification/2.5.0 /docs/reference/specification/v2.5.0 302!
+/docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/reference/specification/2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/reference/specification/2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/reference/specification/2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/reference/specification/2.0.0 /docs/reference/specification/v2.0.0 302!
+# SPEC-REDIRECTION:END
+
+/docs/specifications/latest /docs/reference/specification/latest 302!
+/docs/specifications/2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/specifications/v2.4.0 /docs/reference/specification/v2.4.0 302!
+/docs/specifications/v2.3.0 /docs/reference/specification/v2.3.0 302!
+/docs/specifications/v2.2.0 /docs/reference/specification/v2.2.0 302!
+/docs/specifications/v2.1.0 /docs/reference/specification/v2.1.0 302!
+/docs/specifications/v2.0.0 /docs/reference/specification/v2.0.0 302!
+
 /docs/specifications/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
 /docs/specifications/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
 /docs/specifications/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
+/docs/reference/specification/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
+/docs/reference/specification/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
+/docs/reference/specification/1.2.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.2.0/asyncapi.md 302!
 
 # Old React Playground
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/enQtNDY3MzI0NjU5OTQyLTM5NTlkYzFmZDQyMGVkNzVkOTRhMGU2N2VmMWRlOTdkNWE0YzdjMGQ2NzRlOWU1NGJkYjUyZDEzMzM3ZGYzYzM 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-153ifujzl-fD4W~~LxiRroF8E5bx80qA 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
 # Central Gradle repository verification
 /asyncapi-gradle-plugin https://plugins.gradle.org/plugin/com.asyncapi.asyncapi-gradle-plugin
+
+# TOOLS-REDIRECTION:START
+/parsers /tools/parsers 301!
+/modelina /tools/modelina 301!
+/generator /tools/generator 301!
+/github-actions /tools/github-actions 301!
+# TOOLS-REDIRECTION:END

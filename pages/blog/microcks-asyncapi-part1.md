@@ -3,9 +3,7 @@ title: "How Microcks Can Speed-Up Your AsyncAPI Adoption - Part 1"
 date: 2020-11-11T19:00:00+01:00
 type: Engineering
 tags:
-  - Community
   - Testing
-  - Tools
 cover: /img/posts/microcks-asyncapi-part1/microcks-1.0.0-loves-asyncapi.webp
 authors:
   - name: Laurent Broudoux
@@ -27,7 +25,7 @@ Our communities clearly validate that it makes sense to have the same tool manag
 
 ![microcks-supported-standards](/img/posts/microcks-asyncapi-part1/microcks-supported-standards.webp)
 
-It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tooling/#mocking) :wink: 
+It took us a year to make, which explains why Microcks 1.0.0 release is already GA and the first tool on [this topic](https://www.asyncapi.com/docs/tools#mocking) :wink: 
 
 ![asyncapi-tool-tweet](/img/posts/microcks-asyncapi-part1/asyncapi-tool-tweet.webp)
 

@@ -3,8 +3,8 @@ title: "API documentation in event-driven applications"
 date: 2020-05-18T10:00:10+01:00
 type: Engineering
 tags:
-  - Event-Driven Architectures
   - EDA
+  - Documentation
 cover: /img/posts/doc-event-driven-api.webp
 authors:
   - name: Héctor Valls

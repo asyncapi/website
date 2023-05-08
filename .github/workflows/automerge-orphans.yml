@@ -1,5 +1,5 @@
-#This action is centrally managed in https://github.com/asyncapi/.github/
-#Don't make changes to this file in this repo as they will be overwritten with changes made to the same file in above mentioned repo
+# This action is centrally managed in https://github.com/asyncapi/.github/
+# Don't make changes to this file in this repo as they will be overwritten with changes made to the same file in above mentioned repo
 
 name: 'Notify on failing automerge'
 
@@ -9,25 +9,27 @@ on:
 
 jobs:
   identify-orphans:
+    if: startsWith(github.repository, 'asyncapi/')
     name: Find orphans and notify
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Get list of orphans
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         id: orphans
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const query = `query($owner:String!, $name:String!) {
               repository(owner:$owner, name:$name){
-                pullRequests(first: 100){
+                pullRequests(first: 100, states: OPEN){
                   nodes{
                     title
                     url
                     author {
                       resourcePath
                     }
-                    state
                   }
                 }
               }
@@ -38,7 +40,7 @@ jobs:
             };
             const { repository: { pullRequests: { nodes } } } = await github.graphql(query, variables);
 
-            let orphans = nodes.filter((pr)=> pr.state === 'OPEN' && (pr.author.resourcePath === '/asyncapi-bot' || pr.author.resourcePath === '/apps/dependabot'))
+            let orphans = nodes.filter( (pr) => pr.author.resourcePath === '/asyncapi-bot' || pr.author.resourcePath === '/apps/dependabot')
 
             if (orphans.length) {
               core.setOutput('found', 'true');
@@ -50,15 +52,15 @@ jobs:
             }
       - if: steps.orphans.outputs.found == 'true'
         name: Convert markdown to slack markdown
-        uses: LoveToKnow/slackify-markdown-action@v1.0.0
+        uses: asyncapi/.github/.github/actions/slackify-markdown@master
         id: issuemarkdown
         with:
-          text: "-> [${{steps.orphans.outputs.title}}](${{steps.orphans.outputs.url}})"
+          markdown: "-> [${{steps.orphans.outputs.title}}](${{steps.orphans.outputs.url}})"
       - if: steps.orphans.outputs.found == 'true'
         name: Send info about orphan to slack
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{secrets.SLACK_GITHUB_NEWISSUEPR}}
+          SLACK_WEBHOOK: ${{secrets.SLACK_CI_FAIL_NOTIFY}}
           SLACK_TITLE: 🚨 Not merged PR that should be automerged 🚨
           SLACK_MESSAGE: ${{steps.issuemarkdown.outputs.text}}
           MSG_MINIMAL: true

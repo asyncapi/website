@@ -24,24 +24,24 @@ export default function Slack({
       </div>
       <div className="flex-1 py-2">
         <SlackMessage
-          avatar="/img/homepage/lukasz-homepage-slack.jpg"
+          avatar="/img/homepage/lukasz-homepage-slack.webp"
           name="Lukasz Gornicki"
           text={
             <>
               Good Morning
-              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/grain.png" />
-              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/coffee.png" />
+              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/grain.png" alt="grain"/>
+              <img className="inline-block ml-1 w-5 h-5" src="/img/homepage/coffee.png" alt="coffee"/>
             </>
           }
           reactions={[
-            { icon: '/img/homepage/coffee.png', count: 6, mine: true },
-            { icon: '/img/homepage/coffee-parrot.gif', count: 4, mine: true },
-            { icon: '/img/homepage/coffee-bean.png', count: 6, mine: true },
-            { icon: '/img/homepage/parrotsleep.gif', count: 1, mine: false },
+            { icon: '/img/homepage/coffee.png', name: 'coffee', count: 6, mine: true },
+            { icon: '/img/homepage/coffee-parrot.gif', name: 'coffee-parrot', count: 4, mine: true },
+            { icon: '/img/homepage/coffee-bean.png', name: 'coffee-bean', count: 6, mine: true },
+            { icon: '/img/homepage/parrotsleep.gif', name: 'parrotsleep', count: 1, mine: false },
           ]}
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <span className="text-gray-500">
@@ -50,7 +50,7 @@ export default function Slack({
           }
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <>

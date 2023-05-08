@@ -22,8 +22,8 @@ const renderHighlightedRanges = (highlightedRanges) => {
   return editor.deltaDecorations(editor.getModel().getAllDecorations(), highlightedRanges.map(range => ({
     range: new Monaco.Range(range.startLine, range.startCol, range.endLine, range.endCol),
     options: {
-      className: 'bg-code-editor-dark-highlight',
-      marginClassName: 'bg-code-editor-dark-highlight',
+      className: 'bg-code-editor-dark',
+      marginClassName: 'bg-code-editor-dark',
       ...range.options
     },
   })))
@@ -31,7 +31,7 @@ const renderHighlightedRanges = (highlightedRanges) => {
 
 export default function MonacoEditorWrapper ({
   language,
-  theme,
+  theme = 'asyncapi-theme',
   onChange = () => {},
   value,
   highlightedLines = [],
@@ -77,7 +77,9 @@ export default function MonacoEditorWrapper ({
           rules: [],
           colors: {
             'editor.background': '#252f3f',
+            'editor.lineHighlightBackground': '#1f2a37',
           },
+          rules: [{ token: '', background: '#252f3f' }],
         })
       })
       .catch(console.error)
@@ -94,7 +96,7 @@ export default function MonacoEditorWrapper ({
     <Editor
       editorDidMount={handleEditorDidMount}
       language={language}
-      theme={theme}
+      theme={theme} 
       value={value}
       options={options}
       {...props}
