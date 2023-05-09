@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import NavBar from "../../components/navigation/NavBar";
 import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
@@ -13,8 +14,11 @@ import Heading from "../../components/typography/Heading";
 import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
+import Button from "../../components/buttons/Button";
+import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function BlogIndexPage() {
+  const router = useRouter();
   const { navItems } = useContext(BlogContext);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
@@ -40,20 +44,31 @@ export default function BlogIndexPage() {
       name: "tags",
     },
   ];
+  const clearFilters = () => {
+    router.push(`${router.pathname}`, undefined, {
+      shallow: true,
+    });
+  };
+  const showClearFilters = Object.keys(router.query).length > 0;
+
+  const description = 'Find the latest and greatest stories from our community';
+  const image = '/img/social/blog.webp';
+
   return (
-    <div>
-      <Head title="Blog" />
-      <StickyNavbar>
-       <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-      <AnnouncementHero className="text-center m-4" small={true} />
-      <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
+    <GenericLayout
+      title="Blog"
+      description={description}
+      image={image}
+      wide
+    >
+
+      <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
           <div className="bg-white h-1/3 sm:h-2/3"></div>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <Heading 
+            <Heading
               level="h1"
               typeStyle="heading-lg"
             >
@@ -69,10 +84,11 @@ export default function BlogIndexPage() {
               </TextLink>
             </Paragraph>
             <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-1">
-                We have an<img
+              We have an<img
                 className="ml-1 text-primary-500 hover:text-primary-300"
                 style={{ display: "inline" }}
                 src="/img/logos/rss.svg"
+                alt="RSS feed"
                 height="18px"
                 width="18px"
               />
@@ -86,12 +102,18 @@ export default function BlogIndexPage() {
             <Filter
               data={navItems}
               onFilter={onFilter}
-              className="w-full mx-px md:mt-0 md:w-1/5 md: md:text-sm"
+              className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
-            <span className="text-sm leading-10">
-              <Link href="/blog" passHref><a> Clear filters </a></Link>
-            </span>
+            {showClearFilters && (
+              <button
+                type="button"
+                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading md:mt-0 mt-1 md:py-0 py-2"
+                onClick={clearFilters}
+              >
+                <span className="inline-block">Clear filters</span>
+              </button>
+            )}
           </div>
           <div>
             {!Object.keys(posts).length ? (
@@ -102,15 +124,15 @@ export default function BlogIndexPage() {
                 </p>
               </div>
             ) : (
-              <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+              <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
                 {posts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </GenericLayout>
   );
 }

@@ -12,7 +12,6 @@ authors:
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: AsyncAPI Dev Docs are getting a makeover!
 excerpt: Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; Dev Docs are a huge help that benefit the entire OSS ecosystem.
-featured: true
 ---
 
 ## 🦄 Hola, soy Alejandra Quetzalli

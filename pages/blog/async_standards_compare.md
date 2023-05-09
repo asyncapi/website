@@ -3,6 +3,7 @@ type: Engineering
 cover: /img/posts/async_standards_compare/devops-specs_pic-01.webp
 title: "AsyncAPI, CloudEvents, OpenTelemetry: Which Event-Driven Specs Should Your DevOps Include?"
 date: 2021-05-25T06:00:00+01:00
+canonical: https://solace.com/blog/asyncapi-cloudevents-opentelemetry-event-driven-specs-devops/
 tags:
    - OpenTelemetry
    - Specification
@@ -11,7 +12,7 @@ tags:
 authors:
    - name: Jesse Menning
      photo: /img/avatars/jmenning.webp
-     link: https://linkedin.com/in/jmenning
+     link: https://www.linkedin.com/in/jmenning
      byline: CTO Architect at Solace
 ---
 
@@ -93,4 +94,4 @@ Once completed, OpenTelemetry helps to answer the classic event-driven question 
 
 It’s a great time for event-driven architecture. Challenges that used to be overcome in different ways in every implementation are now being addressed by standard, open-source solutions. While OpenTelemetry, AsyncAPI and CloudEvents do have overlapping capabilities, they are distinct enough to all warrant a place in your DevOps processes.
 
-If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://asyncapi.com/slack-inviteyou) or the [Solace Community Forum](http://solace.community/). 
+If you have more questions or want to share your experience with these standards, you can let us know in the [AsyncAPI Slack](https://www.asyncapi.com/slack-invite) or the [Solace Community Forum](http://solace.community/). 

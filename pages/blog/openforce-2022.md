@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/lpgornicki.webp
     link: https://twitter.com/derberq
     byline: AsyncAPI Maintainer and Community Guardian
-featured: true
 ---
 
 Two years ago, the AsyncAPI Initiative participated in Hacktoberfest to help folks start their journey in open source. Hacktoberfest was a very successful event. We got feedback that the level of commitment that we presented makes us perfect candidates for Google Summer of Code. 
@@ -32,7 +31,7 @@ In exchange, every person that completes these tasks will get an AsyncAPI t-shir
 
 ## How to connect
 
-Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Just make sure to follow our [Slack etiquette](https://github.com/asyncapi/.github/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
+Join [our Slack workspace](https://www.asyncapi.com/slack-invite). Just make sure to follow our [Slack etiquette](https://github.com/asyncapi/community/blob/master/slack-etiquette.md) and [the code of conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 
 We will also have [Abir Pal](https://twitter.com/imabptweets) present in the OpenForce Discord channel, in case you need help on your way to AsyncAPI.
 

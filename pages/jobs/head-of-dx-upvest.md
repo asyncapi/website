@@ -3,7 +3,7 @@ title: 'Head of Developer Experience'
 date: 2021-07-30T06:00:00+01:00
 category: Engineering
 closingOn: 09/30/2021
-contact: https://joinupvest.recruitee.com/o/head-of-engineering-developer-experience-fmd
+contact: ""
 company: 
   name: 'Upvest GmbH'
   logoUrl: /img/logos/companies/Upvest.png

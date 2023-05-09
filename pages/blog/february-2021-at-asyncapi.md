@@ -119,12 +119,6 @@ export interface Address {
 }
 ```
 
-Some important resources to follow:
-- [How processing data from input works](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/input_processing.md)
-- [How **generator-model-sdk** simplify JSON Schema](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/simplification.md)
-- [How model generator works and how to write a new one](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/generators.md)
-- [How presets (customization) works and how to write a custom preset](https://github.com/asyncapi/generator-model-sdk/blob/master/docs/customization.md)
-
 ## Community continues to grow
 
 In February we reached 1600 followers on Twitter.
@@ -168,8 +162,8 @@ We are very noisy :sweat_smile:
 - [Maciej Urbanczyk](https://www.linkedin.com/in/maciej-urba%C5%84czyk-909547164/) and [I](https://twitter.com/derberq) (I mean me :smiley:) pushed some features to the AsyncAPI Generator:
   - It supports the latest Node.js 15 and npm 7
   - You can now install generator templates globally. For more details, read [this](https://github.com/asyncapi/generator/#global-templates-installed-with-yarn-or-npm) new section in the readme.
-  - It is now much easier to generate multiple files using the new React render engine. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#react) or have a look at it [here](https://github.com/asyncapi/template-for-generator-templates/blob/master/template/schemas/schema.js#L10)
-  - Some parts of templates can be written in TypeScript. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/authoring.md#typescript-support). We still cannot use TS in main template code. For more details read [this](https://github.com/asyncapi/generator-react-sdk/issues/3).
+  - It is now much easier to generate multiple files using the new React render engine. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/react-render-engine.md) or have a look at it [here](https://github.com/asyncapi/template-for-generator-templates/blob/master/template/schemas/schema.js#L10)
+  - Some parts of templates can be written in TypeScript. For more details, read [this](https://github.com/asyncapi/generator/blob/master/docs/typescript-support.md). We still cannot use TS in main template code. For more details read [this](https://github.com/asyncapi/generator-react-sdk/issues/3).
 
 Check out all the [releases](https://github.com/asyncapi/generator/releases)
 
@@ -180,4 +174,4 @@ Check out all the [releases](https://github.com/asyncapi/generator/releases)
 - Fran Mendez was a part of Postman's live stream. Learn how to get from zero to AsyncAPI in just about 1h 30min. I hope it can be done faster, and Fran was just having too much small talk with Kevin and Kin :sweat_smile:
 <YouTube id="g2pqCIhXQ3k" />
 
-> Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="/s/photos/traffic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@dnevozhai?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denys Nevozhai</a> on <a href="https://unsplash.com/">Unsplash</a>

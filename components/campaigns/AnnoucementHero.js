@@ -1,26 +1,76 @@
-// import { useRouter } from 'next/router'
-// import YouTube from 'react-youtube-embed'
-// import Button from '../buttons/Button'
+import YouTube from 'react-youtube-embed'
+import Button from '../buttons/Button'
+import Heading from '../typography/Heading'
+import Container from '../layout/Container'
 
-export default function AnnouncementHero({ className = '', small = false }) {
+function getConferenceDetails() {
+  const day = new Date().getUTCDate();
+  const month = new Date().getUTCMonth();
+  const year = new Date().getUTCFullYear();
+
+  // month=10 is November
+  if (year > 2022 || month !== 10) {
+    return;
+  }
+
+  switch (day) {
+    // 3rd November
+    case 3: return { day: 1, ytId: 'NTHsezlKBh8' };
+    // 4th November
+    case 4: return { day: 2, ytId: '8khuAfL7TSE' };
+    // 5th November
+    case 5: return { day: 3, ytId: 'R8PYWXDDZbI' };
+  }
+}
+
+export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   return null;
 
-  // const { pathname } = useRouter()
+  const details = getConferenceDetails();
+  if (!details) return null;
 
-  // if (pathname === '/blog/events2021') return null
-
-  // return (
-  //   <div className={`bg-gray-50 border border-gray-200 py-6  ${className} ${small ? 'mb-0' : 'mb-12'}`}>
-  //     <h2 className="text-xl md:text-3xl font-bold countdown-text-gradient">AsyncAPI Conference Day 3 is running!</h2>
-  //     <div className='px-4 mt-4 mx-auto max-w-7xl'>
-  //       <YouTube
-  //         id="3EeMHhbwyOQ"
-  //       />
-  //     </div>
-  //     <div className="mt-8 pb-2 space-x-2">
-  //       <Button href="https://www.asyncapi.com/slack-invite" target="_blank" text="Comment and ask questions" />
-  //       <Button bgClassName="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none" href="https://conference.asyncapi.com/#schedule" target="_blank" text="Check schedule" />
-  //     </div>
-  //   </div>
-  // )
+  const { day, ytId } = details;
+  return (
+    <Container wide as="section" padding='' className='text-center'>
+      <div
+        className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
+          small ? 'mb-4' : 'mb-12'
+        }`}
+      >
+        <Heading
+          className="countdown-text-gradient"
+          level="h2"
+          typeStyle="heading-lg"
+        >
+          AsyncAPI Conference 2022 Day {day} is running!
+        </Heading>
+        {!hideVideo && (
+          <div className='px-4 mt-4 mx-auto max-w-5xl'>
+            <YouTube id={ytId} />
+          </div>
+        )}
+        <div className="mt-8 pb-2 space-x-2">
+          {hideVideo && (
+            <Button
+              href={`https://youtu.be/${ytId}`}
+              target="_blank"
+              text="Watch live"
+            />
+          )}
+          <Button
+            href="https://asyncapi.slack.com/archives/C047CGM2D2N"
+            target="_blank"
+            text="Comment in #conference2022"
+            className={hideVideo ? 'bg-white border-secondary-500 border box-border text-secondary-500 hover:text-white bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out' : undefined}
+          />
+          <Button
+            href="https://conference.asyncapi.com/schedule"
+            target="_blank"
+            text="Check schedule"
+            className={!hideVideo ? 'bg-white border-secondary-500 border box-border text-secondary-500 hover:text-white bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out' : undefined}
+          />
+        </div>
+      </div>
+    </Container>
+  );
 }

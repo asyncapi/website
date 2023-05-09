@@ -1,4 +1,4 @@
 ---
-title: Tutorials
-weight: 1
+title: 'Tutorials'
+weight: 2
 ---

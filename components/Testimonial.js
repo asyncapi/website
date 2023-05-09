@@ -8,7 +8,7 @@ export default function Testimonial({
   authorAvatar,
 }) {
   return (
-    <div className={`py-12 px-4 sm:px-6 md:flex md:flex-row md:py-16 md:pr-0 ${className}`}>
+    <li className={`py-4 px-4 sm:px-6 md:flex md:flex-row md:py-4 md:pr-0 ${className}`}>
       <blockquote className="mt-8 md:flex-grow md:flex md:flex-col">
         <div className="relative text-lg leading-7 font-medium text-gray-600 md:flex-1">
           <svg className="absolute top-0 left-0 transform -translate-y-2 h-8 w-8 text-primary-500" fill="currentColor" viewBox="0 0 32 32">
@@ -20,16 +20,16 @@ export default function Testimonial({
         </div>
         <footer className="mt-6">
           <div className="flex">
-            <div className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-              <img className="h-12 w-12 rounded-full" src={authorAvatar} />
-            </div>
+            <figure className="flex-shrink-0 inline-flex rounded-full border-2 border-white">
+              <img className="h-12 w-12 rounded-full" src={authorAvatar} alt={authorName}/>
+            </figure>
             <div className="ml-4 text-left">
-              <div className="text-base leading-6 font-bold text-gray-900">{authorName}</div>
-              <div className="text-base leading-6 font-medium text-primary-500">{authorDescription}</div>
+              <p className="text-base leading-6 font-bold text-gray-900">{authorName}</p>
+              <p className="text-base leading-6 font-medium text-primary-500">{authorDescription}</p>
             </div>
           </div>
         </footer>
       </blockquote>
-    </div>
+    </li>
   )
 }

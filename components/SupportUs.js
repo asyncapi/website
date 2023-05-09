@@ -5,25 +5,25 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
         <a
           href="https://slack.com/media-kit"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/slack.webp"
-            title="Free standard subscription."
+            title="Slack - Free Standard Subscription."
           />
         </a>
         <a
           href="https://toast.ninja/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/toast.webp"
-            title="Free services."
+            title="Toast - Free services."
           />
         </a>
 
@@ -31,12 +31,12 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://www.netlify.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-10"
             src="/img/supportus/netlify.webp"
-            title="Free website deployment."
+            title="Netlify - Free website deployment."
           />
         </a>
 
@@ -46,36 +46,50 @@ export default function SupportUs({ className = '', showSupportBanner = true }) 
           href="https://sonarcloud.io/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 md:h-14"
             src="/img/supportus/sonarcloud.webp"
-            title="Free tier for automated project scanning."
+            title="Sonarcloud - Free tier for automated project scanning."
           />
         </a>
         <a
           href="https://www.digitalocean.com/press/"
           target="_blank"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
           rel="noopener noreferrer"
         >
           <img
             className="inline-block px-2 sm:h-8"
             src="/img/supportus/digitalocean.webp"
-            title="$500 on cloud services."
+            title="DigitalOcean - 500 dollars on cloud services."
           />
         </a>
         <a
-          href="https://drive.google.com/drive/folders/1vNetE3qaQJ52fk5jdVwcbTs8GOcKuwbi"
+          href="https://restream.io/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative text-center w-2/3 px-14 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
         >
           <img
             className="inline-block px-4 sm:h-6"
             src="/img/supportus/restream.webp"
-            title="Free professional plan subscription."
+            title="Restream - Free professional plan subscription."
+          />
+        </a>
+        </div>
+        <div className="flex flex-wrap mb-4 items-center justify-center md:px-2">
+        <a
+          href="https://sessionize.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative text-center w-2/3 px-4 py-4 sm:p-0 sm:w-1/3 md:w-1/3 lg:w-1/5"
+        >
+          <img
+            className="inline-block px-4 sm:h-9"
+            src="/img/supportus/sessionize.webp"
+            title="Sessionize-Free community license for AACoT Madrid."
           />
         </a>
       </div>
