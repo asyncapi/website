@@ -71,9 +71,6 @@ export function Asyncapi3Comparison({ className = '' }) {
               </div>
             </div>
           </div>
-          <div className={(hoverState.Components ? `bg-gray-100` : ' ') + ` flex-1 border border-black p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Components: true }))} onMouseLeave={() => setHoverState({ Components: false })}>
-            Components
-          </div>
         </div>
       </div>
       <div className="flex-1 border border-black p-2 ml-1">
@@ -137,15 +134,9 @@ export function Asyncapi3Comparison({ className = '' }) {
                   <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2">
                     messages
                   </div>
-                  <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2">
-                    reply
-                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className={(hoverState.Components ? `bg-gray-100` : ' ') + ` flex-1 border border-black p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Components: true }))} onMouseLeave={() => setHoverState({ Components: false })}>
-            Components
           </div>
         </div>
       </div>
