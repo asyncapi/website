@@ -70,8 +70,8 @@ export default function MobileNavMenu({ onClickClose = () => { } }) {
                 </button>
               </div>
             </div>
-            <div className="pt-2 space-y-2" onClick={() => showMenu('learning')}>
-              <h4 className="text-gray-800 font-medium mb-4 flex justify-between">
+            <div className="pt-2 pb-2 space-y-2" onClick={() => showMenu('learning')}>
+              <h4 className="text-gray-800 font-medium flex justify-between">
                 <a className="cursor-pointer">Docs</a>
                 <NavItemDropdown />
               </h4>

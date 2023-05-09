@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label'
 import Link from 'next/link'
@@ -5,10 +6,17 @@ import Link from 'next/link'
 export default function MenuBlocks({
   items = [],
 }) {
+  const [height, setHeight] = useState(0);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    setHeight(contentRef.current.clientHeight);
+  }, []);
+
   return (
-    <>
-      {
-        items.map((item, index) => {
+    <div className="transition-height duration-500 ease-in-out overflow-hidden" style={{ height: height }}>
+      <div ref={contentRef}>
+        {items.map((item, index) => {
           const isExternalHref = item.href && item.href.startsWith('http');
           return (
             <div className="!mt-6">
@@ -33,8 +41,8 @@ export default function MenuBlocks({
               </Link>
             </div>
           )
-        })
-      }
-    </>
-  )
+        })}
+      </div>
+    </div>
+  );
 }
