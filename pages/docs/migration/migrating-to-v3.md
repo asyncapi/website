@@ -22,6 +22,44 @@ For any message broker, for example kafka, this is the same as defining topics a
 
 This change makes the channels reusable across multiple AsyncAPI documents, each performing a slightly different action.
 
+```
+asyncapi: 2.6.0
+...
+channels: 
+  user/signedup:
+    publish:
+      message:
+        payload:
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the user
+```
+
+```
+asyncapi: 3.0.0
+...
+channels:
+  UserSignup:
+    address: user/signedup
+    messages: 
+      UserMessage: 
+        payload:
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the user
+operations:
+  ConsumeUserSignups:
+    action: receive
+    channel: 
+      $ref: "#/channels/UserSignup"
+```
+
+Read more about the publish and subscribe confusion under [Operation keywords](#operation-keywords).
+
 ### Channel address and object id's
 
 Another breaking change is that the object id of a channel, is no longer the channel path, instead it's an arbitrary unique id, and instead channel paths are described in `address` property.
