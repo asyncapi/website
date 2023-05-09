@@ -14,7 +14,12 @@ const REPO_NAME = process.env.DISCUSSION_TARGET_REPO_NAME;
 const handler = async (event: HandlerEvent) => {
   // since slack always sends Only POST methods along with a body, we can ignore all other requests.
   if (event.httpMethod != 'POST' || !event.body) {
-    return { statusCode: 400 };
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: "The specified HTTP method is either not allowed or the method is called in incomplete manner."
+      })
+    }
   }
 
   // Slack encodes the body in application/x-www-form-urlencoded
@@ -29,13 +34,11 @@ const handler = async (event: HandlerEvent) => {
   } else if (payload.type === REQUEST_TYPE.DIALOG_SUBMISSION) {
     handleDialogSubmission(payload);
   }
-  return { statusCode: 200 };
 };
 
 async function handleMessageAction(payload: any) {
-  const discussionTS = payload.message.ts;
   const channelId = payload.channel.id;
-  const threadTS = await Slack.getThreadTS(discussionTS, channelId);
+  const threadTS = payload.message.thread_ts;
   console.log(payload);
 
   if (!threadTS) {
