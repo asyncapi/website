@@ -3,6 +3,7 @@ title: "Migrating to v3"
 ---
 Migration to any new version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible, and this is where this document comes in. It shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner as well as providing some guidance on why it happened.
 
+For a detailed read through about all the changes (non-breaking as well), please do read X before this, at it might give you some more context about the full list of features in v3.
 
 import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison} from '../../../components/Asyncapi3Comparison'
 
