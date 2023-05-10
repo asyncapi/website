@@ -10,7 +10,7 @@ To get **help**, run this command in your terminal:
 asyncapi --help
 ```
 
-It should print something like this:
+It should print something similar to this:
 ```sh
 All in one CLI for all AsyncAPI tools
 
