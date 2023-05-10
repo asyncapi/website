@@ -5,7 +5,7 @@ weight: 30
 
 ## Node and npm
 
-To use the AsynAPI CLI tool, you must install NPM and a Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
+To use the AsyncAPI CLI tool, you must install NPM and Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
 # check if node is installed
@@ -58,7 +58,7 @@ curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with th
 ```
 
 <Remember>
-Follow this link for all <a href="https://github.com/asyncapi/cli/releases">AsynAPI CLI releases</a>.
+Follow this link for all <a href="https://github.com/asyncapi/cli/releases">AsyncAPI CLI releases</a>.
 </Remember>
 
 After downloading the AsyncAPI CLI, install it via the following command:
@@ -70,7 +70,7 @@ sudo installer -pkg asyncapi.pkg -target /
 ## Windows 
 For Windows just install the appropriate installer and simply follow the default installation steps to complete the installation process.
 
-Download [aynscapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
 
 ## Linux
 Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.
@@ -103,7 +103,7 @@ Once you have downloaded the archived file, untar it by running this command in 
 tar -xzf asyncapi.tar.gz
 ```
 
-The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
+The step above will create an `AsyncAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
 ```sh
 # cd into the unarchived directory
 cd asyncapi
