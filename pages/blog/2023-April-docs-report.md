@@ -21,7 +21,7 @@ In April 2023, the AsyncAPI documentation experienced significant growth with **
 We are thrilled to introduce this year's selected technical writing candidates for the 2023 Google Season of Docs (GSoD) at AsyncAPI!
 
 ### 2023 GSoD Accepted Technical Writer Candidates
-Alejandra Quetzalli has chosen five outstanding candidates to collaborate with us for GSoD this year: [Mahfuza](https://github.com/mhmohona), [Bhaswati](https://github.com/BhaswatiRoy), [Rohit](https://github.com/TRohit20), and [Hridyesh](https://github.com/kakabisht).
+Alejandra Quetzalli has chosen four outstanding candidates to collaborate with us for GSoD this year: [Mahfuza](https://github.com/mhmohona), [Bhaswati](https://github.com/BhaswatiRoy), [Rohit](https://github.com/TRohit20), and [Hridyesh](https://github.com/kakabisht).
 
 ### Overview of the LIVE Writing/Editing Interviews
 During the LIVE interview session, Alejandra divided the exercises into two parts: writing and editing. Candidates were given a document and asked to identify issues and potential solutions, then rewrite or edit the document as needed. Some candidates faced challenges with staying focused on writing, while others struggled to generate ideas due to nerves or the live format of the exercise. A few candidates had difficulty spotting errors and completing the editing task. 
