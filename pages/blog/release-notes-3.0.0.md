@@ -16,10 +16,8 @@ featured: true
 
 The new version of the AsyncAPI specification - 3.0.0 - is now available.
 
-# Overview
-
-## Specification changes
-
+## Overview
+This release is packed with goodies! Some which clears up confusions, some adding features, others improving maintainability. 
 
 ### Operation, channel and message decoupling
 
@@ -43,12 +41,13 @@ components:
 ```
 
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+
 ### Publish and subscribe confusion
-For eternity, the publish and subscribe operation keywords have always been a subject of great confusion. Does it mean I publishes to the channel? Does it mean you publish to me? Who are you in this context? 
+For eternity, the `publish` and `subscribe` operation keywords have been a subject of great confusion. Does it mean I publishes to the channel? Does it mean you publish to me? Who are you in this context? 
 
 In v3, you define your application behavior directly, no more confusion about what and who does what. This is achieved with two new operation keywords, `send` and `receive`, i.e. you application either send's or receive something.
 
-This description of course changes based on protocol, for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
+This description of course alters slightly based on protocol, for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
 ```
 asyncapi: 3.0.0
@@ -61,6 +60,7 @@ operations:
 ```
 
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+
 ### Request/Reply
 A long, long requested feature, is request and reply and it's finally here. 
 
@@ -84,31 +84,81 @@ reply:
   messages:
     - $ref: '#/components/messages/userSignedUpReply'
 ```
-Read more about the [Operation Reply Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationReplyObject).
+Read more about the [Operation Reply Object here](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationReplyObject).
 
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
 
 ### Unified referencing behaviors
 
-In v2, there was two instances, where we used implicit references, for server security configuration, by name referencing security requirement Object in components, for channels to reference global servers by name. In an effort to stay as consistent as possible, we wanted to unify how references was used, that means that in v3, we ONLY use explicit references. 
+In v2, there was two instances, where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. In an effort to stay as consistent as possible, we wanted to unify how references was used, that means that in v3, we ONLY use explicit references. 
 
 The server security information is also now an array instead of an object.
 
-Issues: [#94](https://github.com/asyncapi/spec/issues/94), [#558](https://github.com/asyncapi/spec/issues/558) | Pull request: https://github.com/asyncapi/spec/pull/852
+```
+asyncapi: 3.0.0
+servers: 
+  SomeServer:
+    security:
+      - $ref: '#/components/securitySchemes/SomeSecurity'
+channels:
+  SomeChannel: 
+    servers: 
+      - $ref: '#/servers/SomeServer'
+...  
+components:
+  securitySchemes:
+    SomeSecurity:
+      ...
+      scopes: [...]
+```
+
+Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/852
 ### Common metadata fields
+There have been some inconsistency between which type of metadata fields are available in the different objects. Now we have added a few extra fields 
+- added `title`, `summary`, and `externalDocs` fields in Server Object
+- added `title`, and `summary` fields in Channel Object
+- added `title` field in Operation Object and Operation Trait Object
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+Issues: [#795](https://github.com/asyncapi/spec/issues/795) | Pull request: https://github.com/asyncapi/spec/pull/796
 ### Cleaning up the root object
+There was two meta information lingering in the root of the AsyncAPI object, which did not make much sense since we have the `info` object for all the meta information.
 
-Moving root properties tags and externalDocs to info
+Therefore the root `tags` and `externalDocs` have been moved to the info object.
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+Pull request: https://github.com/asyncapi/spec/pull/794
 ### Splitting out server URL into host and pathname
+There have been some confusion about what `url` of a server should contain, is it both protocol + host + path? What about the protocol field then? Therefore the host, path, and protocol are all individual fields you defined.
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+```
+asyncapi: 3.0.0
+servers:
+  localhost:
+    host: localhost
+    path: /api/v1,
+    protocol: mqtt
+```
+
+Issues: [#547](https://github.com/asyncapi/spec/issues/547), [#274](https://github.com/asyncapi/spec/issues/274) | Pull request: https://github.com/asyncapi/spec/pull/888
 ### More reusable objects in components
+This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under components:
+- External docs
+- Tags
+- replyAddresses
+- replies
+- operations
+- channels
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847, https://github.com/asyncapi/spec/pull/792, https://github.com/asyncapi/spec/pull/806,  https://github.com/asyncapi/spec/pull/827
+
+### New trait behavior
+
+TODO
+
+### Schema format and payload definition
+
+TODO
+
+
 ## Tooling support
 The following official AsyncAPI tools are already updated to support 3.0.0 version of the specification:
 
