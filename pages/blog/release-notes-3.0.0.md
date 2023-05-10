@@ -29,6 +29,27 @@ For any message broker, for example kafka, this is the same as defining topics a
 
 This change makes the channels reusable across multiple AsyncAPI documents, each performing a slightly different action.
 
+```
+asyncapi: 3.0.0
+...
+channels:
+  UserSignup:
+    address: user/signedup
+    messages: 
+      UserMessage: 
+        payload:
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Name of the user
+operations:
+  ConsumeUserSignups:
+    action: receive
+    channel: 
+      $ref: "#/channels/UserSignup"
+```
+
 Issues: [#94](https://github.com/asyncapi/spec/issues/94) | Pull request: https://github.com/asyncapi/spec/pull/806, https://github.com/asyncapi/spec/pull/827
 
 ### Optional channels
@@ -86,7 +107,7 @@ reply:
 ```
 Read more about the [Operation Reply Object here](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationReplyObject).
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
+Issues: [#94](https://github.com/asyncapi/spec/issues/94), [#558](https://github.com/asyncapi/spec/issues/558) | Pull request: https://github.com/asyncapi/spec/pull/847
 
 ### Unified referencing behaviors
 
@@ -119,11 +140,42 @@ There have been some inconsistency between which type of metadata fields are ava
 - added `title`, and `summary` fields in Channel Object
 - added `title` field in Operation Object and Operation Trait Object
 
+```
+asyncapi: 3.0.0
+servers:
+  SomeServer:
+    title: Some Server title
+    summary: This some server is for something
+    externalDocs:
+      ...
+channels:
+  SomeChannel:
+    title: Some channel title
+    summary: Some channel summary
+operations:
+  SomeOperation:
+    title: Some operation title
+    traits:
+      - title: Some operation traits title
+```
+
 Issues: [#795](https://github.com/asyncapi/spec/issues/795) | Pull request: https://github.com/asyncapi/spec/pull/796
 ### Cleaning up the root object
 There was two meta information lingering in the root of the AsyncAPI object, which did not make much sense since we have the `info` object for all the meta information.
 
 Therefore the root `tags` and `externalDocs` have been moved to the info object.
+
+```
+asyncapi: 3.0.0
+info:
+  ...
+  externalDocs:
+    description: Find more info here
+    url: https://www.asyncapi.org
+  tags:
+    - name: e-commerce
+...
+```
 
 Pull request: https://github.com/asyncapi/spec/pull/794
 ### Splitting out server URL into host and pathname
@@ -148,25 +200,42 @@ This is a bit of a mixture between some of the features, that all added a little
 - operations
 - channels
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847, https://github.com/asyncapi/spec/pull/792, https://github.com/asyncapi/spec/pull/806,  https://github.com/asyncapi/spec/pull/827
+```
+asyncapi: 3.0.0
+components:
+  ...
+  replies:
+    ...
+  replyAddresses:
+    ...
+  tags: 
+    ...
+  externalDocs:
+    ...
+  operations:
+    ...
+  channels:
+    ...
+```
+
+Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847, https://github.com/asyncapi/spec/pull/792, https://github.com/asyncapi/spec/pull/806,  https://github.com/asyncapi/spec/pull/827 | Migration details: 
 
 ### New trait behavior
 
 TODO
 
 ### Schema format and payload definition
+With schemas, one thing that has always been impossible was reusing schemas with different schema formats. Thats because the schema format information is part of the message object, and the schema object, well schema object. That means that if you reference a Schema object, it has no information about the schema format.
+
 
 TODO
 
+Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: https://github.com/asyncapi/spec/pull/847
 
 ## Tooling support
 The following official AsyncAPI tools are already updated to support 3.0.0 version of the specification:
 
-    JSON Schema that supports validation of AsyncAPI documents is updated in this repository. Also @asyncapi/specs package has been updated on NPM to version 2.14.0, and it contains the 2.4.0 JSON Schema.
-    JavaScript Parser uses latest @asyncapi/specs package and can be used to parse and validate 2.4.0 documents. Upgrade to 1.15.0 version.
-    HTML template uses the latest @asyncapi/react-component package. Upgrade to 0.24.9 version.
-    JavaScript Converter enables conversion from any AsyncAPI version into the 2.4.0 version of the spec. Upgrade to 0.11.0 version.
-    Generator uses the latest @asyncapi/parser package, so while generating output, it can validate 2.4.0 documents. Upgrade to 1.9.3 version.
+TODO
 
 Last but not least is the AsyncAPI Studio. Check out the Studio with this example.
 
