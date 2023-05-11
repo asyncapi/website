@@ -6,12 +6,6 @@
     "date": "2023-02-01T16:00:00.000Z"
   },
   {
-    "title": "Let's talk about contributing Contributing to the Specification ",
-    "calLink": "https://www.google.com/calendar/event?eid=bWhrcWdtajZpNXJhaGswN3Z2cWlxaG51dWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/579",
-    "date": "2023-01-26T13:00:00.000Z"
-  },
-  {
     "title": "Design meeting",
     "calLink": "https://www.google.com/calendar/event?eid=bmRoazVvYjFqbnFoaGI2Y2N1N2liMGNvMWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/580",
@@ -149,5 +143,12 @@
     "url": "https://github.com/asyncapi/community/issues/698",
     "banner": "https://user-images.githubusercontent.com/66913810/234862423-48c98c43-ab13-476c-a232-955e8dfdd3cc.png",
     "date": "2023-05-17T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZGZhNjR2bXJ2Zzg1aW4zZ3ZpYWpuZTY3ZTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/699",
+    "banner": "",
+    "date": "2023-05-10T16:00:00.000Z"
   }
 ]
