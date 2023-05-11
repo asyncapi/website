@@ -523,17 +523,6 @@
 		]
 	},
 	{
-		"name": "Louis Xhaferi",
-		"github": "LouisXhaferi",
-		"slack": "U04KYP1BH09",
-		"linkedin": "louis-xhaferi-45608b1a3",
-		"availableForHire": false,
-		"company": "Mercedes-Benz Tech Innovation",
-		"repos": [
-			"modelina"
-		]
-	},
-	{
 		"name": "Barbaño González",
 		"linkedin": "barbano-gonzalez-moreno",
 		"twitter": "BarbanoGonzalez",
@@ -567,5 +556,5 @@
 			"protobuf-schema-parser"
 		]
 	}
-	
+
 ]
