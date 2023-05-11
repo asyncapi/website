@@ -83,18 +83,20 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
-          {cont.map(item=>
-          <div >
-            <Heading typeStyle="body-lg">
+          <div className='flex flex-wrap gap-1'>
+              {contacts.map((item, index) => (
+                <div key={index}>
+                  <Heading typeStyle="body-lg">
                     <Link href={item.link}>
-                      <a className="  text-md leading-5 font-medium text-gray-900 
+                      <a className="text-md leading-5 font-medium text-gray-900 
                       hover:underline" target="_blank">
-                        {item.name}
+                        {item.name}{index != contact.length - 1 ? ', ' : ' '}
                       </a>
                     </Link>
-            </Heading>
-          </div>
-          )}
+                  </Heading>
+                </div>)
+              )}
+            </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
