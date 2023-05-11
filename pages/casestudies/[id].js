@@ -68,7 +68,7 @@ function Index({
 }) {
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
- var contacts = casestudy.company.contact
+  var contacts = casestudy.company.contact
   return (
     <GenericLayout
       title="AsyncAPI Case Studies"
