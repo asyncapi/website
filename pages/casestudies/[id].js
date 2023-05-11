@@ -90,7 +90,7 @@ function Index({
                     <Link href={item.link}>
                       <a className="text-md leading-5 font-medium text-gray-900 
                       hover:underline" target="_blank">
-                        {item.name}{index != contact.length - 1 ? ', ' : ' '}
+                        {item.name}{index != contacts.length - 1 ? ', ' : ' '}
                       </a>
                     </Link>
                   </Heading>
