@@ -1,49 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 25.053033341156514
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "PR_kwDOB5hCo85FYPwk",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: extend bundling to create another schemas without $id",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/298",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 21.25091956744515
-    },
-    {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
       "isPR": false,
       "isAssigned": false,
@@ -68,18 +25,7 @@
       "resourcePath": "/asyncapi/.github/pull/159",
       "repo": "asyncapi/.github",
       "labels": [],
-      "score": 19.527872034949596
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 18.091999091203302
+      "score": 20.38939580119737
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -95,51 +41,29 @@
           "color": "a2eeef"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.37917367995256
     },
     {
-      "id": "I_kwDOG115t85D93P0",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Website UI Kit design/dev project",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/design-system/issues/4",
-      "repo": "asyncapi/design-system",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        },
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
+      "id": "I_kwDOBGu-185CELGB",
       "isPR": false,
       "isAssigned": false,
-      "title": "Nice to have: \"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.65612614745701
+      "title": "Work on 3.0 release",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/spec/issues/691",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDODCuNRs4r1oNL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
+      "author": "iancooper",
+      "resourcePath": "/asyncapi/bindings/pull/84",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 18.091999091203302
     },
     {
       "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
@@ -196,9 +120,102 @@
         }
       ],
       "score": 15.220253203710714
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDODyzcIc5NDHYS",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci:  new github action which logs all the reactions in prs and issues",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/.github/pull/220",
+      "repo": "asyncapi/.github",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 14.926933240618364
+    },
+    {
+      "id": "PR_kwDOCoBobc4-9B_v",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "refactor: add migration guide",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/parser-js/pull/611",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5lGICH",
+      "title": "Make group dropdown for each section in Navbar",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1625",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5lGBkX",
+      "title": "Fix the spacing of heading in Newsroom page",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1624",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5jSPTM",
       "title": "filter section is overflowing for small screen in dashboard section",
@@ -211,21 +228,6 @@
         {
           "name": "bug",
           "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5jMA8s",
-      "title": "[📑 Docs]: add the 2022 blog summary in the about section",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1559",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -458,36 +460,6 @@
       ]
     },
     {
-      "id": "I_kwDOFi_gUM5grOC6",
-      "title": "Refactor mqtt `_connect()` method",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/397",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5grMtS",
-      "title": "Refactor ws adapter to reduce its cognitive complexity",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/396",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5gDTaN",
       "title": "Generate overwritten GetHashCode method for C# models",
       "isAssigned": false,
@@ -537,21 +509,6 @@
       "title": "Generate Newtonsoft support for C# models",
       "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/464",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDL_c",
-      "title": "Generate documentation with example for TypeScript models",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/cli/issues/463",
       "repo": "asyncapi/cli",
       "author": "jonaslagoni",
       "area": "Unknown",
@@ -619,25 +576,6 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385d5_27",
-      "title": "Add Python JSON serialization preset",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1130",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
         }
       ]
     },
@@ -710,29 +648,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385UFEXW",
-      "title": "Add Support for CPP language ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/953",
-      "repo": "asyncapi/modelina",
-      "author": "Willena",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "generator",
-          "color": "fef2c0"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOEOBLdM5TFZp2",
       "title": "Add support for JetStream push subscribe",
       "isAssigned": false,
@@ -771,21 +686,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5M4GpA",
-      "title": "Help validate Windows installer publishing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/302",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOCoBobc5KYpv0",
       "title": "Document how to fix randomly failing tests during development",
       "isAssigned": false,
@@ -797,6 +697,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -1100,29 +1004,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "title": "Improve overall performance of the website but especially Blog",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
         }
       ]
     }
