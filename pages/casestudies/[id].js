@@ -84,18 +84,18 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
+          <div className='flex flex-row gap-x-3'>
           {cont.map(item=>
-          <div >
             <Heading typeStyle="body-lg">
                     <Link href={item.link}>
                       <a className="  text-md leading-5 font-medium text-gray-900 
-                      hover:underline" target="_blank">
+                      underline" target="_blank">
                         {item.name}
                       </a>
                     </Link>
             </Heading>
-          </div>
           )}
+          </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}

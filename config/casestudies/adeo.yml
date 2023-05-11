@@ -10,7 +10,7 @@ company:
   contact:
     - name: Ludovic Dussart
       link: https://twitter.com/ldussart
-    - name: mr. xyz hello
+    - name: Mr. xyz hello
       link: https://twitter.com/
 challenges: |
     Cost Component Repository product, part of the ADEO tech products, is used to calculate and publish transfer prices between different internal locations globally. Different business units use different information systems. It is hard to learn how each business unit shares information about its systems, API and accuracy.
