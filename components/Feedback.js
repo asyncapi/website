@@ -96,7 +96,7 @@ export default function Feedback(className = '') {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-col my-4'>
-                    <textarea className='w-full h-20 border rounded-md bg-gray-50 text-sm px-2 py-1 text-gray-700 inline-block align-top focus:border-0' placeholder='Write your suggestions here' onChange={(e) => setFeedback(e.target.value)} required />
+                    <textarea className='w-full h-20 border rounded-md bg-gray-50 text-sm px-2 py-1 text-gray-700 inline-block align-top focus:border-0 resize-none' placeholder='Write your suggestions here' onChange={(e) => setFeedback(e.target.value)} required />
                     <div className='block lg:flex lg:flex-row mt-4 text-sm'>
                         <button className='bg-primary-500 text-white w-full lg:w-6/12 py-2 shadow-md hover:shadow-lg transition-all duration-500 ease-in-out rounded' type='submit'>Submit feedback</button>
                         <div className='my-2 text-center font-medium w-full lg:w-1/12 lg:my-auto'>OR</div>
