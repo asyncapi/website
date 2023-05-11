@@ -9,7 +9,7 @@ import LearningPanel from './LearningPanel'
 import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
-import Button from '../buttons/Button'
+// import Button from '../buttons/Button'
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
@@ -49,6 +49,12 @@ export default function NavBar({
     setMobileMenuOpen(false);
     setOpen(null);
   }, [asPath])
+
+  useEffect(() => {
+    mobileMenuOpen ? 
+    document.body.style.overflow = 'hidden' :
+    document.body.style.overflow = 'auto';
+  }, [mobileMenuOpen])
 
   return (
     <div className={`bg-white ${className} z-50`}>
@@ -137,4 +143,9 @@ export default function NavBar({
       {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
     </div>
   )
+}
+
+NavBar.propTypes = {
+  className: '',
+  hideLogo: false,
 }
