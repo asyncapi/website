@@ -45,6 +45,7 @@ export async function getStaticPaths() {
   };
 }
 
+
 function Index({ 
   casestudy,
   challenges,
@@ -67,6 +68,8 @@ function Index({
 }) {
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
+  var cont=casestudy.company.contact
+  console.log(cont)
   return (
     <GenericLayout
       title="AsyncAPI Case Studies"
@@ -81,16 +84,18 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
+          {cont.map(item=>
           <div >
             <Heading typeStyle="body-lg">
-                    <Link href={casestudy.company.contact[0].link}>
+                    <Link href={item.link}>
                       <a className="  text-md leading-5 font-medium text-gray-900 
                       hover:underline" target="_blank">
-                        {casestudy.company.contact[0].name}
+                        {item.name}
                       </a>
                     </Link>
             </Heading>
           </div>
+          )}
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
@@ -110,7 +115,7 @@ function Index({
                     tl;dr just go and have a look at
                     <Link href={'/'+casestudy.asyncapi.fullExample}>
                       <a className="ml-2 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                         full production-used AsyncAPI document
+                        full production-used AsyncAPI document
                       </a>
                     </Link>
             </Heading>
