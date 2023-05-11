@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (May 10th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/699.",
+    "videoId": "7urTb207V-8"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/nyEu2un3Xkg/hqdefault.jpg",
+    "title": "AsyncAPI x Google Season of Doc&#39;s 2023",
+    "description": "https://github.com/asyncapi/community/issues/692.",
+    "videoId": "nyEu2un3Xkg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Z8lnRHL-lCM/hqdefault.jpg",
     "title": "Community meeting (May 2nd 2023)",
     "description": "https://github.com/asyncapi/community/issues/688.",
@@ -16,17 +28,5 @@
     "title": "Spec 3.0 meeting (April 26th 2023)",
     "description": "https://github.com/asyncapi/community/issues/670.",
     "videoId": "82xkJmn-bAc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/0CPWCJv4nho/hqdefault.jpg",
-    "title": "Community Meeting (April 18th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/659.",
-    "videoId": "0CPWCJv4nho"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/JFPERXh2ZUY/hqdefault.jpg",
-    "title": "Adding support for non-JSON schemas (April 18th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/668.",
-    "videoId": "JFPERXh2ZUY"
   }
 ]
