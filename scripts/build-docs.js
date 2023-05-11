@@ -85,8 +85,8 @@ const convertDocPosts = (docObject) => {
   
 
  function addDocButtons(docPosts, treePosts){ 
-  structuredPosts = []
-  rootSections = []
+  let structuredPosts = [];
+  let rootSections = [];
 
   // Traversing the whole DocTree and storing each post inside them in sequential order
   Object.keys(treePosts).forEach((rootElement) => {    
