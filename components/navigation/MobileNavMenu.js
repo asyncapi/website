@@ -20,7 +20,10 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
                 </a>
               </Link>
               <div className="flex flex-row items-center justify-content -mr-2">
-                <SearchButton className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                <SearchButton
+                  className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                  aria-label="Open Search"
+                >
                   <svg
                     width="24"
                     height="24"
