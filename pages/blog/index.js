@@ -19,6 +19,8 @@ import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function BlogIndexPage() {
   const router = useRouter();
+  const query = router.query
+  const [queryData, setQueryData] = useState()
   const { navItems } = useContext(BlogContext);
   const [posts, setPosts] = useState(
     navItems.sort((i1, i2) => {
@@ -31,7 +33,7 @@ export default function BlogIndexPage() {
     })
   );
 
-  const onFilter = (data) => setPosts(data);
+  const onFilter = (data) => setQueryData(data);
   const toFilter = [
     {
       name: "type",
@@ -125,9 +127,13 @@ export default function BlogIndexPage() {
               </div>
             ) : (
               <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-                {posts.map((post, index) => (
+                {!query?posts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
-                ))}
+                )): 
+                queryData && queryData.map((post, index) => (
+                  <BlogPostItem key={index} post={post} />
+                ))
+                }
               </ul>
             )}
           </div>

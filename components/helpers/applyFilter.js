@@ -78,10 +78,10 @@ export const applyFilterList = (checks, data, setFilters) => {
                 }
               });
             } else {
-                 const newData = {
-                   value: result,
-                   text: result,
-                 };
+              const newData = {
+                value: result,
+                text: result,
+              };
               lists[key].push(newData);
             }
           }
@@ -114,6 +114,6 @@ export const onFilterApply = (data, onFilter, query) => {
       });
       result = res;
     }
+    onFilter(result)
   }
-  onFilter(result);
 };
