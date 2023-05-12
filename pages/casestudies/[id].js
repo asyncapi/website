@@ -45,6 +45,7 @@ export async function getStaticPaths() {
   };
 }
 
+
 function Index({ 
   casestudy,
   challenges,
@@ -67,6 +68,7 @@ function Index({
 }) {
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
+  var contacts = casestudy.company.contact
   return (
     <GenericLayout
       title="AsyncAPI Case Studies"
@@ -81,6 +83,20 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
+          <div className='flex flex-wrap gap-1'>
+              {contacts.map((item, index) => (
+                <div key={index}>
+                  <Heading typeStyle="body-lg">
+                    <Link href={item.link}>
+                      <a className="text-md leading-5 font-medium text-gray-900 
+                      hover:underline" target="_blank">
+                        {item.name}{index != contacts.length - 1 ? ', ' : ' '}
+                      </a>
+                    </Link>
+                  </Heading>
+                </div>)
+              )}
+            </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
@@ -100,7 +116,7 @@ function Index({
                     tl;dr just go and have a look at
                     <Link href={'/'+casestudy.asyncapi.fullExample}>
                       <a className="ml-2 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                         full production-used AsyncAPI document
+                        full production-used AsyncAPI document
                       </a>
                     </Link>
             </Heading>
@@ -273,23 +289,8 @@ function Index({
               <MDXRemote {...additionalResources} components={allComponents} />
             </Paragraph>
           </div>
-
         </div>
       </div>
-      <div className="mt-10">
-            <Heading typeStyle="body-lg">
-                Contact points for more details:
-                <ul className="list-disc list-inside">
-                  <li>
-                    <Link href={casestudy.company.contact[0].link}>
-                      <a className="text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                        {casestudy.company.contact[0].name}
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-            </Heading>
-          </div>
     </div>
     </GenericLayout>
   );
