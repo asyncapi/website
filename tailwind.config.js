@@ -208,6 +208,9 @@ module.exports = {
         'body-md': ['16px', '1.625'],
         'body-lg': ['18px', '1.625'],
       },
+      screens: {
+        'xs':'475px'
+      }
     },
   },
   plugins: [

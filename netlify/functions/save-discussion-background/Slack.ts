@@ -64,36 +64,6 @@ export namespace Slack {
     }
   }
 
-  /**
-   * Parse the thread timestamp.
-   * @param discussionTS ts(timestamp) of the discussion.
-   * @param channelId the ID of the channel which contains the message.
-   * @returns {string} the timestamp of the discussion thread.
-   */
-  export async function getThreadTS(discussionTS: string, channelId: string) {
-    try {
-      const conversationHistoryOptions = {
-        channel: channelId,
-        latest: discussionTS,
-        limit: 1,
-        inclusive: true,
-      };
-      const { messages } = await slackClient.conversations.history(
-        conversationHistoryOptions
-      );
-      if (!messages) {
-        throw new Error(
-          `conversation with ts: ${discussionTS} doesn't exist in channel: ${channelId}.`
-        );
-      }
-      return messages[0].thread_ts;
-    } catch (err) {
-      err.message =
-        'Unable to preserve this conversation. It is possible that I am not a memeber of this channel, you can invite me to this channel by using the command `/invite @Chan`.';
-      throw err;
-    }
-  }
-
   export async function getSlackDiscussion(
     channelId: string,
     threadTS: string

@@ -10,7 +10,7 @@ async function getHotDiscussions(discussions) {
       try {
         const isPR = discussion.__typename === 'PullRequest';
         if (discussion.comments.pageInfo.hasNextPage) {
-          fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
+          let fetchedDiscussion = await getDiscussionByID(isPR, discussion.id);
           discussion = fetchedDiscussion.node;
         }
 
