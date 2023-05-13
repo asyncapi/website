@@ -20,7 +20,7 @@ export default function DocsNavItem({ title, slug, href, activeSlug, sectionSlug
   useEffect(() => {
     if (activeRef.current) {
       activeRef.current.scrollIntoView({ 
-        behavior: 'auto', 
+        behavior: 'smooth', 
         block: 'center', 
         inline: 'start',
     }
