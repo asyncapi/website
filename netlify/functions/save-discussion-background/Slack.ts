@@ -18,7 +18,7 @@ export namespace Slack {
     discussionCategories: DiscussionCategory[],
     triggerId: string
   ) {
-    slackClient.dialog
+    await slackClient.dialog
       .open({
         dialog: {
           callback_id: 'ryde-46e2b0',
@@ -123,7 +123,7 @@ export namespace Slack {
     threadTS: string
   ) {
     try {
-      slackClient.chat.postMessage({
+      await slackClient.chat.postMessage({
         channel: channelId,
         text: message,
         as_user: true,
