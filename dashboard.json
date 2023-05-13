@@ -1,22 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.96374497869589
-    },
-    {
       "id": "PR_kwDODyzcIc42qjdx",
       "isPR": true,
       "isAssigned": false,
@@ -26,6 +10,37 @@
       "repo": "asyncapi/.github",
       "labels": [],
       "score": 20.38939580119737
+    },
+    {
+      "id": "PR_kwDODCuNRs4r1oNL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
+      "author": "iancooper",
+      "resourcePath": "/asyncapi/bindings/pull/84",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 19.815046623698855
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 19.240697446200336
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -55,15 +70,20 @@
       "score": 18.091999091203302
     },
     {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 18.091999091203302
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.65612614745701
     },
     {
       "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
@@ -86,6 +106,22 @@
       "score": 16.08177696995849
     },
     {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 15.507427792459973
+    },
+    {
       "id": "I_kwDOCoBobc5FCvW6",
       "isPR": false,
       "isAssigned": false,
@@ -101,26 +137,6 @@
         {
           "name": "keep-open",
           "color": "fce14b"
-        }
-      ],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
       "score": 15.220253203710714
@@ -153,40 +169,15 @@
       "score": 14.926933240618364
     },
     {
-      "id": "PR_kwDOCoBobc4-9B_v",
+      "id": "PR_kwDOBGu-185L4xgg",
       "isPR": true,
       "isAssigned": false,
-      "title": "refactor: add migration guide",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/parser-js/pull/611",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
+      "title": "#622 allow defining schema format other than default",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/910",
+      "repo": "asyncapi/spec",
+      "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Improve overall performance of the website but especially Blog",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        }
-      ],
-      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
