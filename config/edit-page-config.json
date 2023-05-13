@@ -5,7 +5,11 @@
     },
     {
         "value": "reference/specification/",
-        "href": "https://github.com/asyncapi/spec/blob/master/spec"
+        "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md"
+    },
+    {
+        "value":"/tools/cli",
+        "href":"https://github.com/asyncapi/cli/tree/master/docs"
     },
     {
         "value": "",
