@@ -60,7 +60,7 @@ export default function ModelinaPlaygroundPage() {
             </Paragraph>
             <div className="mt-8">
               <CodeBlock language="bash" showLineNumbers={false} className="mt-8" textSizeClassName="text-sm">npm install @asyncapi/modelina</CodeBlock>
-              <div className="flex gap-x-1 justify-center lg:justify-start">
+              <div className="flex gap-x-2 justify-center lg:justify-start">
                 <GithubButton
                   className="block md:mt-0 md:inline-block mt-2"
                   href="https://www.github.com/asyncapi/modelina"
