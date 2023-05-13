@@ -1,27 +1,32 @@
 import Link from 'next/link';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
+import { useEffect, useRef } from 'react';
 
-import IconGettingStarted from '../icons/GettingStarted'
-import IconTutorials from '../icons/Tutorials'
-import IconUseCases from '../icons/UseCases'
-import IconGuide from '../icons/Guide'
-import IconSpec from '../icons/Spec'
+import IconGettingStarted from '../icons/GettingStarted';
+import IconTutorials from '../icons/Tutorials';
+import IconUseCases from '../icons/UseCases';
+import IconGuide from '../icons/Guide';
+import IconSpec from '../icons/Spec';
 
 const cards = [
   {
     title: 'Concepts',
-    description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
+    description:
+      'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
     link: '/docs/concepts',
     className: 'bg-secondary-200',
     Icon: IconGettingStarted,
+    subitemSelector: '#concepts',
   },
   {
     title: 'Tutorials',
-    description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
+    description:
+      'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     Icon: IconTutorials,
+    subitemSelector: '#tutorials',
   },
   {
     title: 'Tools',
@@ -29,13 +34,16 @@ const cards = [
     link: '/docs/tools',
     className: 'bg-green-200',
     Icon: IconUseCases,
+    subitemSelector: '#tools',
   },
   {
     title: 'Guides',
-    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
+    description:
+      "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
     className: 'bg-primary-200',
     Icon: IconGuide,
+    subitemSelector: '#guides',
   },
   {
     title: 'Reference',
@@ -43,35 +51,60 @@ const cards = [
     link: '/docs/reference',
     className: 'bg-yellow-200',
     Icon: IconSpec,
-  }
+    subitemSelector: '#reference',
+  },
 ];
 
 export function DocsCards() {
   return (
-    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
-      {cards.map(card => (
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+      {cards.map((card) => (
         <Card key={card.title} {...card} />
       ))}
     </div>
   );
 }
 
-function Card({ title, description, link, className, Icon }) {
+function Card({ title, description, link, className, Icon, subitemSelector }) {
+  const linkRef = useRef(null);
+
+  const handleClick = () => {
+    const subitem = document.querySelector(subitemSelector);
+    if (subitem) {
+      const subitemOffset = subitem.getBoundingClientRect().top;
+      window.scrollTo({
+        top: subitemOffset,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    const linkEl = linkRef.current;
+    linkEl.addEventListener('click', handleClick);
+
+    return () => {
+      linkEl.removeEventListener('click', handleClick);
+    };
+  }, [linkRef, handleClick, subitemSelector]);
+
   return (
     <Link href={link}>
-      <a href={link} className='cursor-pointer'>
+      <a href={link} ref={linkRef} className="cursor-pointer">
         <div className="h-full border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg p-6">
           <div>
-            <Heading 
+            <Heading
               level="h3"
               typeStyle="heading-sm-semibold"
-              className='pb-4 border-b border-gray-300'
+              className="pb-4 border-b border-gray-300"
             >
-              <div className='flex flex-row items-center'>
-                <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
-                  <Icon className="h-6 w-6"/>
+              <div className="flex flex-row items-center">
+                <div
+                  className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}
+                >
+                  <Icon className="h-6 w-6" />
                 </div>
-                <span className='ml-4'>{title}</span>
+                <span className="ml-4">{title}</span>
               </div>
             </Heading>
             <Paragraph typeStyle="body-sm" className="mt-5">
