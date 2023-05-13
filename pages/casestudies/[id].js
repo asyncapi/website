@@ -69,7 +69,7 @@ function Index({
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
   var contacts = casestudy.company.contact
-  var language= casestudy.technical.languages
+  var languages= casestudy.technical.languages
   var frameworks=casestudy.technical.frameworks
   var protocols=casestudy.technical.protocols
   var versions=casestudy.asyncapi.versions 
@@ -166,9 +166,9 @@ function Index({
           <div className='flex flex-wrap gap-2'>
               <span className="flex flex-wrap gap-1  bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
             Languages:
-            {language.map((item, index) => (
+            {languages.map((item, index) => (
                 <div key={index}>
-                        {item}{index != language.length - 1 ? ', ' : ' '} 
+                        {item}{index != languages.length - 1 ? ', ' : ' '} 
                 </div>)
               )}
           </span>
