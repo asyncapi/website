@@ -1,6 +1,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Cache-Control = "public, max-age=3600"
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
     Access-Control-Allow-Origin = "*"
 
