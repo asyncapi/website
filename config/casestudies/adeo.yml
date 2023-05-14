@@ -570,4 +570,3 @@ examples: |
           encryption](https://docs.confluent.io/platform/current/security/security_tutorial.html#configure-clients)
           to connect to the ADEO Broker.
   ```
-

@@ -296,8 +296,6 @@ function Index({
             <Paragraph typeStyle="body-md" className="my-4">
               <MDXRemote {...examples} components={allComponents} />
             </Paragraph>
-
-
           </div>
         </div>
       </div>
