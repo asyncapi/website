@@ -32,6 +32,3 @@ path = "/definitions/*"
 [[edge_functions]]
 function = "serve-definitions"
 path = "/schema-store/*"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
