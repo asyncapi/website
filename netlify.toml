@@ -1,6 +1,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Cache-Control = "public, max-age=3600"
     X-Frame-Options = "ALLOW-FROM https://www.youtube.com/"
     Access-Control-Allow-Origin = "*"
 
@@ -10,6 +11,7 @@
   publish = "out"
 
 [build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "16.13.2"
   NPM_VERSION = "8.1.2"
 
