@@ -119,7 +119,7 @@ export default function Filters({ setOpenFilter }) {
         <div className="flex gap-4">
           <label className="inline-flex relative items-center cursor-pointer">
             <input type="checkbox" value={checkOwner} className="sr-only peer" onChange={() => setCheckOwner(!checkOwner)} />
-            <div className={twMerge(`bg-gray-100 w-11 h-6  peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checkOwner ? "after:translate-x-full after:border-white bg-secondary-500" : ''}`)}></div>
+            <div className={twMerge(`bg-gray-100  w-11 h-6  peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checkOwner ? "after:translate-x-full after:border-white bg-secondary-500" : ''}`)}></div>
           </label>
           <div className="font-medium text-sm">
             Show only AsyncAPI-owned tools
