@@ -1,7 +1,7 @@
-import { Repository } from './Reposity';
+import * as Repository from './Reposity';
 import querystring from 'querystring';
 import { HandlerEvent } from '@netlify/functions';
-import { Slack } from './Slack';
+import * as Slack from './Slack';
 
 enum REQUEST_TYPE {
   MESSAGE_ACTION = 'message_action',

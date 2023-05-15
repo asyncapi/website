@@ -1,29 +1,29 @@
-import Container from '../components/layout/Container'
-import NavBar from '../components/navigation/NavBar'
-import Hero from '../components/Hero'
-import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import Sponsors from '../components/Sponsors'
-import Head from '../components/Head'
-import Slack from '../components/slack'
-import Button from '../components/buttons/Button'
-import Calendar from '../components/Calendar'
-import AdidasLogo from '../components/logos/Adidas'
-import AxwayLogo from '../components/logos/Axway'
-import SlackLogo from '../components/logos/Slack'
-import SalesforceLogo from '../components/logos/Salesforce'
-import SapLogo from '../components/logos/SAP'
-import Testimonial from '../components/Testimonial'
-import Heading from '../components/typography/Heading'
-import Paragraph from '../components/typography/Paragraph'
-import TextLink from '../components/typography/TextLink'
-import GoldSponsors from '../components/GoldSponsors'
-import SilverSponsors from '../components/SilverSponsors'
-import SupportUs from '../components/SupportUs'
-import StickyNavbar from '../components/navigation/StickyNavbar'
+import Container from '../components/layout/Container';
+import NavBar from '../components/navigation/NavBar';
+import Hero from '../components/Hero';
+import NewsletterSubscribe from '../components/NewsletterSubscribe';
+import Sponsors from '../components/Sponsors';
+import Head from '../components/Head';
+import Slack from '../components/slack';
+import Button from '../components/buttons/Button';
+import Calendar from '../components/Calendar';
+import AdidasLogo from '../components/logos/Adidas';
+import AxwayLogo from '../components/logos/Axway';
+import SlackLogo from '../components/logos/Slack';
+import SalesforceLogo from '../components/logos/Salesforce';
+import SapLogo from '../components/logos/SAP';
+import Testimonial from '../components/Testimonial';
+import Heading from '../components/typography/Heading';
+import Paragraph from '../components/typography/Paragraph';
+import TextLink from '../components/typography/TextLink';
+import GoldSponsors from '../components/GoldSponsors';
+import SilverSponsors from '../components/SilverSponsors';
+import SupportUs from '../components/SupportUs';
+import StickyNavbar from '../components/navigation/StickyNavbar';
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
-import NewsroomSection from '../components/newsroom/NewsroomSection'
+import NewsroomSection from '../components/newsroom/NewsroomSection';
 
 function HomePage() {
   return (
@@ -39,16 +39,16 @@ function HomePage() {
         </Container>
 
         <Container className="text-center pb-12" wide as="section">
-          <Heading
-            level="h3"
-            typeStyle="heading-lg"
-            className="mb-4"
-          >
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Adopted by the world leading brands
           </Heading>
           <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
-            These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?
-            <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
+            These brands are already using AsyncAPI in production. Is your
+            company using AsyncAPI and wants to be included in this list?
+            <TextLink
+              href="https://github.com/asyncapi/website/issues/new"
+              target="_blank"
+            >
               Let us know here!
             </TextLink>
           </Paragraph>
@@ -78,15 +78,12 @@ function HomePage() {
         </div>
 
         <Container className="text-center py-12" wide as="section">
-          <Heading
-            level="h3"
-            typeStyle="heading-lg"
-            className="mb-4"
-          >
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Join our great community!
           </Heading>
           <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-            We're a community of great people who are passionate about AsyncAPI and event-driven architectures.
+            We're a community of great people who are passionate about AsyncAPI
+            and event-driven architectures.
           </Paragraph>
           <div className="py-2 lg:py-12">
             <Container wide>
@@ -100,11 +97,18 @@ function HomePage() {
                       Join our Slack workspace
                     </Heading>
                     <Paragraph className="mt-2">
-                      We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂
+                      We welcome everyone to join our Slack workspace. If you
+                      have a question on how to use AsyncAPI, want to
+                      contribute, or simply want to say hello 👋 &nbsp;you're
+                      welcome to join us. We're nice people 🙂
                     </Paragraph>
                   </div>
                   <div className="mt-5 flex justify-center lg:justify-start">
-                    <Button className="w-full md:w-auto" text="Join us!" href="/slack-invite" />
+                    <Button
+                      className="w-full md:w-auto"
+                      text="Join us!"
+                      href="/slack-invite"
+                    />
                   </div>
                 </section>
               </div>
@@ -119,8 +123,9 @@ function HomePage() {
                       Join our public meetings
                     </Heading>
                     <Paragraph className="mt-2">
-                      AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
-
+                      AsyncAPI hosts different meetings every week. They are
+                      focused on different topic, sometimes purely technical and
+                      sometimes about community building. Pick one and join us!
                       <TextLink href="/community/meetings">
                         Learn more about our meetings.
                       </TextLink>
@@ -147,47 +152,32 @@ function HomePage() {
               </div>
             </Container>
             <Container wide>
-                <NewsroomSection />
+              <NewsroomSection />
             </Container>
           </div>
-
         </Container>
 
-
-        <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
+        <section className="pb-20" role="contentinfo" aria-label="Our Sponsors">
           <Container className="text-center pb-6" wide as="section">
-            <Heading
-              level="h3"
-              typeStyle="heading-lg"
-              className="mb-4"
-            >
+            <Heading level="h3" typeStyle="heading-lg" className="mb-4">
               Platinum Sponsors
             </Heading>
             <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
           <Container className="text-center pb-6" wide as="section">
-            <Heading
-              level="h3"
-              typeStyle="heading-lg"
-              className="mb-4"
-            >
+            <Heading level="h3" typeStyle="heading-lg" className="mb-4">
               Gold Sponsors
             </Heading>
             <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
-          
+
           <Container className="text-center pyb-6" wide as="section">
-            <Heading
-              level="h3"
-              typeStyle="heading-lg"
-              className="mb-4"
-            >
+            <Heading level="h3" typeStyle="heading-lg" className="mb-4">
               Silver Sponsors
             </Heading>
             <SilverSponsors className="mt-4" showSupportBanner={false} />
           </Container>
-
 
           <Container className="text-center py-6" wide as="section">
             <Heading
@@ -198,8 +188,12 @@ function HomePage() {
               Want to Sponsor Us?
             </Heading>
             <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
-              These great organizations are already supporting AsyncAPI. Want to become a sponsor?
-              <TextLink href="https://opencollective.com/asyncapi" target="_blank">
+              These great organizations are already supporting AsyncAPI. Want to
+              become a sponsor?
+              <TextLink
+                href="https://opencollective.com/asyncapi"
+                target="_blank"
+              >
                 Support us!
               </TextLink>
             </Paragraph>
@@ -210,10 +204,12 @@ function HomePage() {
             Supported by
           </Heading>
           <Paragraph className="mt-3 max-w-2xl mx-auto sm:mt-4 pb-4">
-            The following companies support us by letting us use their products for free. Interested in supporting us too?
+            The following companies support us by letting us use their products
+            for free. Interested in supporting us too?
             <TextLink href="mailto:info@asyncapi.io" target="_blank">
               Email us
-            </TextLink> for more info.
+            </TextLink>{' '}
+            for more info.
           </Paragraph>
           <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
@@ -254,7 +250,7 @@ function HomePage() {
         </Container>
       </main>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
