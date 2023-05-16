@@ -39,7 +39,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         </Heading>
         <Heading
           className="countdown-text-gradient"
-          level="h4"
+          level="h3"
           typeStyle="heading-sm"
         >
           Madrid Edition
