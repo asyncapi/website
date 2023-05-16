@@ -6,7 +6,8 @@ import CaseStudiesList from "../../config/case-studies.json";
 import { MDXRemote } from "next-mdx-remote";
 import { getMDXComponents } from "../../components/MDX.js";
 import { serialize } from "next-mdx-remote/serialize";
-import CaseStudyLayout from "../../components/layout/CaseStudyLayout";
+import GenericLayout from "../../components/layout/GenericLayout";
+import CaseTOC from "../../components/CaseTOC";
 
 const renderContent = (content, allComponents, level) => {
   const typeStyle =
@@ -17,12 +18,11 @@ const renderContent = (content, allComponents, level) => {
       <div
         className="mt-10"
         key={item.title}
-        id={item.title
+      >
+        <Heading typeStyle={typeStyle} className="mt-8"  id={item.title
           .replace(/<|>|"|\\|\/|=/gi, "")
           .replace(/\s/gi, "-")
-          .toLowerCase()}
-      >
-        <Heading typeStyle={typeStyle} className="mt-8">
+          .toLowerCase()}>
           {item.title}
         </Heading>
         {item.content && (
@@ -211,15 +211,15 @@ function Index({
   ];
 
   return (
-    <CaseStudyLayout
+    <GenericLayout
       title="AsyncAPI Case Studies"
       description="The home for all case studies related to AsyncAPI."
-      content={content}
       image={image}
       hideBanner={true}
       wide
     >
-      <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-5xl">
+      <div className="flex">
+      <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-5xl case-study">
         <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-[65%]">
             <Heading typeStyle="heading-xl" className="countdown-text-gradient">
@@ -274,7 +274,9 @@ function Index({
         </div>
         {renderContent(content, allComponents, 0)}
         </div>
-    </CaseStudyLayout>
+        <CaseTOC contentSelector={'.case-study'} toc={content} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
+      </div>
+    </GenericLayout>
   );
 }
 
