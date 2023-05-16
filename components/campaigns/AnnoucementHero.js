@@ -21,7 +21,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const showBanner = shouldShowBanner();
   if (!showBanner) return null;
 
-  const cfpDeadline = '2023-06-01T06:00:00Z'
+  const cfpDeadline = '2023-05-31T06:00:00Z'
   
   return (
     <Container wide as="section" padding='' className='text-center'>
