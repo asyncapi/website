@@ -36,7 +36,7 @@ You can install in Linux via `dpkg`, a debian package manager:
 
 For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
 
-Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/download/v0.40.5/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/download/v0.40.5/asyncapi.x86.exe) for 32-bit Windows.
+Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
 
 
 </details>
