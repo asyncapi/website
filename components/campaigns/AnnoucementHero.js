@@ -47,7 +47,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         <Paragraph typeStyle="body-lg">
           October, 2023 | Madrid, Spain
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="end of call for speakers" />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end for Call for Speakers." />
         <div className="mt-6 pb-2 space-x-2">
           <Button
             href="https://sessionize.com/aacot-madrid/"
