@@ -1,54 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 25.053033341156514
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "🎨 design",
-          "color": "0D67D3"
-        }
-      ],
-      "score": 22.399617922442182
-    },
-    {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 20.96374497869589
-    },
-    {
       "id": "PR_kwDODyzcIc42qjdx",
       "isPR": true,
       "isAssigned": false,
@@ -58,6 +10,37 @@
       "repo": "asyncapi/.github",
       "labels": [],
       "score": 20.38939580119737
+    },
+    {
+      "id": "PR_kwDODCuNRs4r1oNL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
+      "author": "iancooper",
+      "resourcePath": "/asyncapi/bindings/pull/84",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 19.240697446200336
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -76,62 +59,47 @@
       "score": 18.37917367995256
     },
     {
-      "id": "I_kwDOBGu-185CELGB",
+      "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 18.091999091203302
-    },
-    {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 17.517649913704783
-    },
-    {
-      "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Integrate or re-implement APIs.guru asyncapi-directory",
-      "author": "MikeRalphson",
-      "resourcePath": "/asyncapi/website/issues/204",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.08177696995849
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         }
       ],
-      "score": 15.502429470770883
+      "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOBGu-185L4xgg",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "#622 allow defining schema format other than default",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/910",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 15.507427792459973
     },
     {
       "id": "I_kwDOCoBobc5FCvW6",
@@ -154,50 +122,82 @@
       "score": 15.220253203710714
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 14.926933240618364
+    },
+    {
+      "id": "PR_kwDOCoBobc4-9B_v",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
+      "title": "refactor: add migration guide",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/parser-js/pull/611",
+      "repo": "asyncapi/parser-js",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
-      "score": 15.220253203710714
+      "score": 14.645904026212197
     },
     {
-      "id": "PR_kwDOE8Qh385L_vbE",
+      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve overall performance of the website but especially Blog",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/89",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDODCuNRs5Nh35U",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: add basic C++ support",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/modelina/pull/1156",
-      "repo": "asyncapi/modelina",
+      "title": "feat: first draft of JMS Binding Objects",
+      "author": "adamretter",
+      "resourcePath": "/asyncapi/bindings/pull/193",
+      "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 15.220253203710714
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5kbYkc",
-      "title": "[📑 Docs]: improve adeo case study",
+      "id": "I_kwDOBW5R_c5lGICH",
+      "title": "Make group dropdown for each section in Navbar",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1615",
+      "resourcePath": "/asyncapi/website/issues/1625",
       "repo": "asyncapi/website",
-      "author": "derberg",
+      "author": "akshatnema",
       "area": "Unknown",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ]
     },
@@ -565,21 +565,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5dvrae",
-      "title": "Integrate CLI docs with asyncapi website",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/448",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh385dme8W",
       "title": "Add Jackson annotations and a preset to the Kotlin generator",
       "isAssigned": false,
@@ -629,29 +614,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385UFEXW",
-      "title": "Add Support for CPP language ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/953",
-      "repo": "asyncapi/modelina",
-      "author": "Willena",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "generator",
-          "color": "fef2c0"
         }
       ]
     },
@@ -1012,25 +974,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "title": "Improve overall performance of the website but especially Blog",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
         }
       ]
     }

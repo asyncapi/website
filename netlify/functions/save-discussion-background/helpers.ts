@@ -15,12 +15,11 @@ export function toTitleCase(title: string): string {
  * @param query the graphql query.
  * @returns {GraphQlResponse} the GitHub response object.
  */
-export function fetchGraphql(query: string): Promise<any> {
+export async function fetchGraphql(query: string): Promise<any> {
   const parameters = {
     headers: {
       authorization: `token ${process.env.GITHUB_TOKEN}`,
     },
   };
-
-  return graphql(query, parameters);
+  return await graphql(query, parameters);
 }
