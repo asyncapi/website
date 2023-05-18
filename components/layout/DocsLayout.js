@@ -21,17 +21,19 @@ import editOptions from '../../config/edit-page-config.json'
 
 
 function generateEditLink(post) {
+  let last=post.id.substring(post.id.lastIndexOf("/") + 1);
+  const target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
+  const editHref = target.href;
+  const hrefList = editHref.split('/');
+  const lastListElement = hrefList[hrefList.length - 1].split('.');
+  const isHrefToFile = lastListElement.length > 1;
+  const EditPage="Edit this page on GitHub"
 
-  var last=post.id.substring(post.id.lastIndexOf("/") + 1);
-  var target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
-  
   if(target.value==""){
-    return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
-
+    return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">{EditPage}</a>
   }
-  if (target.value=="reference/specification/") last=""
-  
-  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}/${last}`} className="ml-1 underline">Edit this page on GitHub</a>
+  if (isHrefToFile) last=""
+  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}/${last}`} className="ml-1 underline">{EditPage}</a>
   
 
   }
