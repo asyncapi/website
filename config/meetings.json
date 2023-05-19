@@ -6,12 +6,6 @@
     "date": "2023-02-15T16:00:00.000Z"
   },
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cTd2bGZodXU1YnVzY2Ywa2Y4aG5sZGJzYmcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/589",
-    "date": "2023-02-07T08:00:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=M2swdGhkaG9mbmpndGZqNzQ1czY1cmd1YjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/599",
