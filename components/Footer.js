@@ -28,9 +28,9 @@ export default function Footer() {
               </Heading>
             </div>
           </div>
-        
+
           <div className="flex flex-col sm:flex-row">
-            
+
             <div className="flex">
 
               <div className="px-0 lg:px-10 lg:ml-5 mb-5">
@@ -63,6 +63,11 @@ export default function Footer() {
                   <li className="py-2">
                     <a href="https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
                       Brand
+                    </a>
+                  </li>
+                  <li className="py-2">
+                    <a href="/about" target="_blank" rel="noopener noreferrer" className="text-base leading-6 text-gray-500 hover:text-white transition ease-in-out duration-300">
+                      FAQs
                     </a>
                   </li>
                 </ul>
@@ -132,7 +137,7 @@ export default function Footer() {
                   <a href="https://youtube.com/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Subscribe AsyncAPI on YouTube</span>
-                      <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <IconYoutubeGray className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-2 hidden sm:block">YouTube</span>
                     </div>
                   </a>
@@ -141,7 +146,7 @@ export default function Footer() {
                   <a href="https://asyncapi.com/slack-invite" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Join AsyncAPI on Slack</span>
-                      <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <IconSlack className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-8 hidden sm:block">Slack</span>
                     </div>
                   </a>
@@ -150,7 +155,7 @@ export default function Footer() {
                   <a href="https://www.twitch.tv/asyncapi" target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <span className="sr-only">Follow AsyncAPI on Twitch</span>
-                      <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" /> 
+                      <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" />
                       <span className="absolute pl-8 pr-6 hidden sm:block">Twitch</span>
                     </div>
                   </a>
@@ -159,7 +164,7 @@ export default function Footer() {
             </div>
           </div>
         </nav>
-        
+
         <div className="sm:flex justify-between xl:mt-20 py-8 sm:py-12">
           <div className="w-full sm:w-2/3">
             <p className="text-left text-base leading-6 mb-3 text-cool-gray">
