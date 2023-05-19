@@ -125,6 +125,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         }
         
 
+
         // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
         if(file.startsWith("release-notes") && dir[1] === "/blog"){
           const fileName_without_extension = file.slice(0,-3)
@@ -134,8 +135,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
           releaseNotes.push(version)
           // releaseNotes is the list of all available releaseNotes
         }
-
-
+        
         addItem(details)
       }
     }
