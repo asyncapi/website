@@ -45,7 +45,7 @@ export default function Carousel({
     <div
       className={`flex mx-auto mb-5 overflow-hidden justify-center ${
         isFullscreen
-          ? "fixed top-0 left-0 z-50 h-screen bg-white dark:bg-slate-700"
+          ? "fixed top-0 left-0 z-50 h-screen bg-white dark:bg-slate-100"
           : "w-[80vw] relative"
       }`}
     >
@@ -58,7 +58,7 @@ export default function Carousel({
             index !== current && index < current ? "-translate-x-full" : ""
           } w-full transition-all duration-700`}
         >
-          {!item.video ? item.element : null}
+          {!item.video ? React.cloneElement(item.element, { alt: "Carousel Image" }) : null}
           {index === current && item.video ? item.element : null}
           <div
             className={`${
@@ -116,7 +116,7 @@ export default function Carousel({
           <button
             key={"Carousel-screen"}
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="opacity-75 hover:opacity-100 hover:scale-110 transition-all"
+            className="opacity-95 hover:opacity-100 hover:scale-110 transition-all"
           >
             {isFullscreen ? (
               <svg
