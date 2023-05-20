@@ -12,7 +12,6 @@ import AxwayLogo from '../components/logos/Axway'
 import SlackLogo from '../components/logos/Slack'
 import SalesforceLogo from '../components/logos/Salesforce'
 import SapLogo from '../components/logos/SAP'
-import Testimonial from '../components/Testimonial'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
@@ -24,6 +23,7 @@ import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
 import NewsroomSection from '../components/newsroom/NewsroomSection'
+import Carousel from '../components/Carousel'
 
 function HomePage() {
   return (
@@ -221,34 +221,90 @@ function HomePage() {
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             What the experts are saying
           </Heading>
-          <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
-            <Testimonial
-              className="md:pr-10 lg:pr-16"
-              text="Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs."
-              authorAvatar="/img/testimonials/matt-mclarty.jpg"
-              authorName="Matt McLarty"
-              authorDescription="Global Leader of API Strategy at MuleSoft"
-            />
-            <Testimonial
-              className="md:pl-10 lg:pl-16"
-              text="Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches."
-              authorAvatar="/img/testimonials/bill-doerrfeld.jpg"
-              authorName="Bill Doerrfeld"
-              authorDescription="Editor in Chief at Nordic APIs"
-            />
-            <Testimonial
-              className="md:pr-10 lg:pr-16"
-              text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event driven world, and that is exactly what the AsyncAPI initiative is making a reality."
-              authorAvatar="/img/testimonials/jonathan-schabowsky.jpg"
-              authorName="Jonathan Schabowsky"
-              authorDescription="Sr. Architect, Office of the CTO at Solace"
-            />
-            <Testimonial
-              className="md:pl-10 lg:pl-16"
-              text="We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community towards common standards."
-              authorAvatar="/img/testimonials/eric-horesnyi.jpg"
-              authorName="Eric Horesnyi"
-              authorDescription="CEO at Streamdata.io"
+          <ul className="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 w-full h-[70vh]">
+            <Carousel
+              timer
+              fullscreen
+              arrows
+              dots
+              data={[
+                  {
+                  element: (
+                    <section className="text-gray-600 body-font w-[500px] object-contain mx-auto -mt-12">
+                    <div className="container px-5 py-24 mx-auto">
+                      <div className="flex flex-wrap -m-4">
+                        <div className="mb-6 p-4">
+                          <div className="h-full text-center">
+                            <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/img/testimonials/matt-mclarty.jpg"/>
+                            <p className="leading-relaxed">Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs.</p>
+                            <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Matt McLarty</h2>
+                            <p className="text-gray-500">Global Leader of API Strategy at MuleSoft</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   </section>
+                  ),
+                  },
+                  {
+                    element: (
+                      <section className="text-gray-600 body-font w-[500px] object-contain mx-auto -mt-12">
+                      <div className="container px-5 py-24 mx-auto">
+                        <div className="flex flex-wrap -m-4">
+                          <div className="mb-6 p-4">
+                            <div className="h-full text-center">
+                              <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/img/testimonials/bill-doerrfeld.jpg"/>
+                              <p className="leading-relaxed">Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches.</p>
+                              <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                              <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Bill Doerrfeld</h2>
+                              <p className="text-gray-500">Editor in Chief at Nordic APIs</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     </section>
+                    ),
+                  },
+                  {
+                  element: (
+                    <section className="text-gray-600 body-font w-[500px] object-contain mx-auto -mt-12">
+                    <div className="container px-5 py-24 mx-auto">
+                      <div className="flex flex-wrap -m-4">
+                        <div className="mb-6 p-4">
+                          <div className="h-full text-center">
+                            <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/img/testimonials/jonathan-schabowsky.jpg"/>
+                            <p className="leading-relaxed">Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event driven world, and that is exactly what the AsyncAPI initiative is making a reality.</p>
+                            <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Jonathan Schabowsky</h2>
+                            <p className="text-gray-500">Sr. Architect, Office of the CTO at Solace</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </section>
+                  ),
+                  },
+                  {
+                  element: (
+                    <section className="text-gray-600 body-font w-[500px] object-contain mx-auto -mt-12">
+                    <div className="container px-5 py-24 mx-auto">
+                      <div className="flex flex-wrap -m-4">
+                        <div className="mb-6 p-4">
+                          <div className="h-full text-center">
+                            <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="/img/testimonials/eric-horesnyi.jpg"/>
+                            <p className="leading-relaxed">We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community towards common standards.</p>
+                            <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Eric Horesnyi</h2>
+                            <p className="text-gray-500">CEO at Streamdata.io</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </section>
+                  ),
+                  },
+              ]}
             />
           </ul>
         </Container>
