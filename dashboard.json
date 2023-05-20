@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDODCuNRs4r1oNL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
+      "author": "iancooper",
+      "resourcePath": "/asyncapi/bindings/pull/84",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 20.67657038994663
+    },
+    {
       "id": "PR_kwDODyzcIc42qjdx",
       "isPR": true,
       "isAssigned": false,
@@ -10,17 +21,6 @@
       "repo": "asyncapi/.github",
       "labels": [],
       "score": 20.38939580119737
-    },
-    {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 19.815046623698855
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -59,17 +59,6 @@
       "score": 18.37917367995256
     },
     {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 18.091999091203302
-    },
-    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -86,24 +75,15 @@
       "score": 16.65612614745701
     },
     {
-      "id": "MDU6SXNzdWU4MzM2NTY1ODc=",
-      "isPR": false,
+      "id": "PR_kwDOBGu-185L4xgg",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Integrate or re-implement APIs.guru asyncapi-directory",
-      "author": "MikeRalphson",
-      "resourcePath": "/asyncapi/website/issues/204",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 16.08177696995849
+      "title": "#622 allow defining schema format other than default",
+      "author": "GreenRover",
+      "resourcePath": "/asyncapi/spec/pull/910",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 16.65612614745701
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -142,17 +122,6 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDODyzcIc5NDHYS",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "ci:  new github action which logs all the reactions in prs and issues",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/.github/pull/220",
-      "repo": "asyncapi/.github",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -169,18 +138,114 @@
       "score": 14.926933240618364
     },
     {
-      "id": "PR_kwDOBGu-185L4xgg",
+      "id": "PR_kwDOCoBobc4-9B_v",
       "isPR": true,
       "isAssigned": false,
-      "title": "#622 allow defining schema format other than default",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/910",
-      "repo": "asyncapi/spec",
-      "labels": [],
+      "title": "refactor: add migration guide",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/parser-js/pull/611",
+      "repo": "asyncapi/parser-js",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
       "score": 14.645904026212197
+    },
+    {
+      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve overall performance of the website but especially Blog",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/89",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDODCuNRs5Nh35U",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: first draft of JMS Binding Objects",
+      "author": "adamretter",
+      "resourcePath": "/asyncapi/bindings/pull/193",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh385mL9Lx",
+      "title": "Add runtime testing for Rust",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1295",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "rust",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5mKmgQ",
+      "title": "Add docs buttons to CLI and Generator landing pages",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1684",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5mJnw8",
+      "title": "extend release workflow to throw errors when it fails",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/563",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5mIyyz",
+      "title": "[📑 Docs]: Update CLI installation instruction with info about windows",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1681",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5lGICH",
       "title": "Make group dropdown for each section in Navbar",
@@ -556,21 +621,6 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5dvrae",
-      "title": "Integrate CLI docs with asyncapi website",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/448",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
