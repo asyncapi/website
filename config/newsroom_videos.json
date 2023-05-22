@@ -1,15 +1,15 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/4Zo59cOcFUw/hqdefault.jpg",
-    "title": "Community meeting (May 16th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/705.",
-    "videoId": "4Zo59cOcFUw"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
     "title": "Community Health in Open-source",
     "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
     "videoId": "l9Tp5eMTol4"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/4Zo59cOcFUw/hqdefault.jpg",
+    "title": "Community meeting (May 16th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/705.",
+    "videoId": "4Zo59cOcFUw"
   },
   {
     "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
