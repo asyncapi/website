@@ -62,7 +62,11 @@ export function getMDXComponents() {
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-700 tracking-tight`} />,
     pre: props => <div {...props} className={`${props.className || ''} my-8`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
-    
+    details: (props) => 
+      <details {...props} className={`${ props.className || ''} mb-1 font-heading antialiased font-medium text-gray-900`}/>,
+    summary: (props) => 
+      <summary {...props} className={`${props.className || ''} my-2 font-heading antialiased font-semibold text-gray-900`}/>,
+      
     code: CodeComponent,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
     CodeBlock,
