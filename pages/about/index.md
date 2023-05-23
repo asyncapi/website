@@ -105,42 +105,42 @@ All the information about the project's economy, the amount of the donations, th
 <details class="cursor-pointer">
 <summary>What is the goal of the project?</summary>
 
-- To make asynchronous APIs as successful and mature as REST APIs.
+To make asynchronous APIs as successful and mature as REST APIs.
 
 </details>
 
-<details>
+<details class="cursor-pointer ">
 <summary>What protocols does it support?</summary>
 
-- AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
+AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
 
 </details>
 
-<details>
+<details class="cursor-pointer">
 <summary>Who are the users of AsyncAPI?</summary>
 
-- AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka.
+AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka.
 
 </details>
 
-<details>
+<details class="cursor-pointer">
 <summary>What is the AsyncAPI Community?</summary>
 
-- It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
+It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
 
 </details>
 
-<details>
+<details class="cursor-pointer">
 <summary>Who can use it?</summary>
 
-- Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
+Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
 
 </details>
 
-<details>
+<details class="cursor-pointer">
 <summary>Where can I find more information?</summary>
 
-- [Official AsyncAPI Documentation](/docs)
-- [Presentation by Fran Méndez, explaining the project](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
+[Official AsyncAPI Documentation](/docs)
+[Presentation by Fran Méndez, explaining the project](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
 
 </details>
