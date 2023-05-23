@@ -3,7 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-42-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-43-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -202,6 +202,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://nawedali.tech"><img src="https://avatars.githubusercontent.com/u/83456083?v=4?s=100" width="100px;" alt="Nawed Ali"/><br /><sub><b>Nawed Ali</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=nawed2611" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.blessingolaleye.xyz/"><img src="https://avatars.githubusercontent.com/u/70102539?v=4?s=100" width="100px;" alt="Olaleye Blessing"/><br /><sub><b>Olaleye Blessing</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Olaleye-Blessing" title="Code">💻</a> <a href="#a11y-Olaleye-Blessing" title="Accessibility">️️️️♿️</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/niranjan-kurhade"><img src="https://avatars.githubusercontent.com/u/97905637?v=4?s=100" width="100px;" alt="niranjan-kurhade"/><br /><sub><b>niranjan-kurhade</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=niranjan-kurhade" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://linkfree.eddiehub.io/rukundob451"><img src="https://avatars.githubusercontent.com/u/67878128?v=4?s=100" width="100px;" alt="Benjamin Rukundo"/><br /><sub><b>Benjamin Rukundo</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=rukundob451" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
