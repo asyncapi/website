@@ -111,7 +111,11 @@ function Index({
 }) {
   const image = "/img/social/website-card.png";
   const allComponents = getMDXComponents();
-  var contacts = casestudy.company.contact
+  const contacts = casestudy.company.contact
+  const languages= casestudy.technical.languages
+  const frameworks=casestudy.technical.frameworks
+  const protocols=casestudy.technical.protocols
+  const versions=casestudy.asyncapi.versions 
 
   const content = [
     {
@@ -129,9 +133,9 @@ function Index({
     {
       title: "More Details",
       items: [
-        `Languages: ${casestudy.technical.languages[0]}`,
-        `Frameworks: ${casestudy.technical.frameworks[0]}`,
-        `Protocols: ${casestudy.technical.protocols[0]}`,
+        `Languages: ${languages.join(", ")}`,
+        `Frameworks: ${frameworks.join(", ")}`,
+        `Protocols: ${protocols.join(", ")}`,
       ],
       children: [
         {
@@ -149,7 +153,7 @@ function Index({
         {
           title: "More Details about AsyncAPI",
           items: [
-            `Version: ${casestudy.asyncapi.versions[0]}`,
+            `Version: ${versions.join(", ")}`,
             `Who maintains documents: ${casestudy.asyncapi.maintainers}}`,
             `Internal users: ${casestudy.asyncapi.audience.internal.toString()}`,
             `External users: ${casestudy.asyncapi.audience.external.toString()}`,
