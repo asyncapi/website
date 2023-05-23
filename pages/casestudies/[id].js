@@ -69,6 +69,10 @@ function Index({
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
   var contacts = casestudy.company.contact
+  var languages= casestudy.technical.languages
+  var frameworks=casestudy.technical.frameworks
+  var protocols=casestudy.technical.protocols
+  var versions=casestudy.asyncapi.versions 
   return (
     <GenericLayout
       title="AsyncAPI Case Studies"
@@ -160,14 +164,27 @@ function Index({
         </Heading>
         <div className="mt-4 items-center">
           <div className='flex flex-wrap gap-2'>
-          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Languages: {casestudy.technical.languages[0]}
+              <span className="flex flex-wrap gap-1  bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Languages:
+            {languages.map((item, index) => (
+                <div key={index}>
+                        {item}{index != languages.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
-          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Frameworks: {casestudy.technical.frameworks[0]}
+          <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Frameworks: {frameworks.map((item, index) => (
+                <div key={index}>
+                        {item}{index != frameworks.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
-          <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Protocols: {casestudy.technical.protocols[0]}
+          <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Protocols:  {protocols.map((item, index) => (
+                <div key={index}>
+                        {item}{index != protocols.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
           </div>
           <div className="mt-10">
@@ -199,8 +216,12 @@ function Index({
               More details about AsyncAPI
             </Heading>
             <div className="mt-4  flex flex-wrap gap-2">
-              <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-                Versions: {casestudy.asyncapi.versions[0]}
+              <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+                Versions:  {versions.map((item, index) => (
+                <div key={index}>
+                        {item}{index != versions.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
               </span>
               <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Who maintains documents: {casestudy.asyncapi.maintainers}
