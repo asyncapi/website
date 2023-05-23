@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 20.67657038994663
+      "score": 21.825268744943667
     },
     {
       "id": "PR_kwDODyzcIc42qjdx",
@@ -57,6 +57,30 @@
         }
       ],
       "score": 18.37917367995256
+    },
+    {
+      "id": "I_kwDOG115t85D93P0",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website UI Kit design/dev project",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/design-system/issues/4",
+      "repo": "asyncapi/design-system",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 17.517649913704783
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -171,17 +195,6 @@
           "color": "3E4B9E"
         }
       ],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDODCuNRs5Nh35U",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: first draft of JMS Binding Objects",
-      "author": "adamretter",
-      "resourcePath": "/asyncapi/bindings/pull/193",
-      "repo": "asyncapi/bindings",
-      "labels": [],
       "score": 13.210031082465903
     }
   ],
@@ -954,25 +967,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU4NjM2OTUzMjM=",
-      "title": "Move to JSX renderer",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/html-template/issues/185",
-      "repo": "asyncapi/html-template",
-      "author": "magicmatatjahu",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
