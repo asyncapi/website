@@ -8,6 +8,7 @@ import { getMDXComponents } from "../../components/MDX.js";
 import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
+import Container from "../../components/layout/Container";
 
 const renderContent = (content, allComponents, level) => {
   const typeStyle =
@@ -26,7 +27,7 @@ const renderContent = (content, allComponents, level) => {
           {item.title}
         </Heading>
         {item.content && (
-          <Paragraph typeStyle="body-md" className="my-4">
+          <Paragraph typeStyle="body-md" className="my-4 sm:max-w-full lg:max-w-[650px] xl:max-w-[720px]">
             <MDXRemote {...item.content} components={allComponents} />
           </Paragraph>
         )}
@@ -218,7 +219,8 @@ function Index({
       hideBanner={true}
       wide
     >
-      <div className="flex">
+    <Container cssBreakingPoint="lg" flex flexReverse className="px-0">
+      <CaseTOC toc={content} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-72 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
       <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-5xl case-study">
         <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-[65%]">
@@ -274,8 +276,7 @@ function Index({
         </div>
         {renderContent(content, allComponents, 0)}
         </div>
-        <CaseTOC toc={content} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-64 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
-      </div>
+      </Container>
     </GenericLayout>
   );
 }
