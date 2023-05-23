@@ -48,7 +48,7 @@ const Testimonial = () => {
       styleObj.transform = 'scale(1)';
     } else {
       styleObj.left =
-        distance > 0 ? `${16.7 + distance * 40}%` : `${50 + distance * 40}%`;
+        distance > 0 ? `${14.7 + distance * 40}%` : `${52 + distance * 40}%`;
     }
 
     if (Math.abs(distance) >= 2) {
@@ -64,12 +64,12 @@ const Testimonial = () => {
       <div className="h-[460px] lg:h-[500px] overflow-hidden">
         {testimonials.map(({ imgUrl, name, salutation, text }, index) => (
           <div
-            className="h-[440px] lg:h-[480px] w-[35%] transition-all duration-500 absolute opacity-80 scale-90 cursor-pointer select-none flex flex-col items-center justify-center border border-gray-300 rounded-lg bg-white shadow-xl z-1}"
+            className="h-[440px] lg:h-[480px] w-[35%] transition-all duration-500 absolute opacity-80 scale-90 cursor-pointer select-none flex flex-col items-center justify-center border border-gray-300 rounded-lg  bg-zinc-50 shadow-xl z-1}"
             key={index}
             onClick={() => setActive(index)}
             style={getStyle(index)}
           >
-            <div className="rounded-full h-16 w-16 lg:h-32 lg:w-32 overflow-hidden mt-[-1rem] mb-2 lg:mb-4 lg:mt-[-2rem]">
+            <div className="rounded-full border-gray-500 shadow-2xl h-16 w-16 lg:h-32 lg:w-32 overflow-hidden mt-[-1rem] mb-2 lg:mb-4 lg:mt-[-2rem] ">
               <img src={imgUrl} className="h-full w-full" alt={name} />
             </div>
             <p className="text-[14px] lg:text-base lg:leading-6 font-bold text-gray-900 mb-2">
@@ -78,7 +78,7 @@ const Testimonial = () => {
             <p className="text-[12px] lg:text-base lg:leading-6 font-medium text-primary-500 mb-2 lg:mb-4">
               {salutation}
             </p>
-            <p className="h-[200px] text-[10px] px-1 lg:px-6  lg:text-lg">
+            <p className="h-[200px] text-[12px]  px-1 lg:px-6  lg:text-lg overflow-scroll lg:overflow-hidden">
               {text}
             </p>
           </div>
@@ -90,8 +90,8 @@ const Testimonial = () => {
             key={index}
             className={
               activeIndex === index
-                ? 'h-[10px] w-[10px] bg-[#c62f2f] rounded-full mr-2 cursor-pointer '
-                : 'h-[10px] w-[10px] rounded-full bg-[#ddd] mr-2 cursor-pointer'
+                ? 'h-[12px] w-[12px] bg-[#c62f2f] rounded-full mr-2 cursor-pointer '
+                : 'h-[12px] w-[12px] rounded-full bg-[#ddd] mr-2 cursor-pointer'
             }
             onClick={() => setActive(index)}
           />
