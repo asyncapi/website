@@ -150,5 +150,20 @@
     "url": "https://github.com/asyncapi/community/issues/699",
     "banner": "",
     "date": "2023-05-10T16:00:00.000Z"
+   
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Nm9qbjFoNGJ1dmppaGM5bTFmdnZzZDFxNzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/705",
+    "banner": "https://user-images.githubusercontent.com/40604284/238269236-93dda2ae-732c-4aab-b71e-18d077b987e7.png",
+    "date": "2023-05-16T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=a3JnNnJibDAzNW9ja3ZnMXZ0OGJtcjBqMWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/714",
+    "banner": "",
+    "date": "2023-05-24T16:00:00.000Z"
   }
 ]
