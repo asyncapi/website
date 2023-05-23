@@ -6,11 +6,13 @@ weight: 40
 The AsyncAPI CLI makes it easier to work with AsyncAPI documents.
 
 To get **help**, run this command in your terminal:
+
 ```sh
 asyncapi --help
 ```
 
 It should print something similar to this:
+
 ```sh
 All in one CLI for all AsyncAPI tools
 
@@ -39,5 +41,7 @@ COMMANDS
       dart          generate the models for Dart
       rust          generate the models for Rust
       kotlin        generate the models for Kotlin
-    fromTemplate    generate whatever you want using templates compatible with AsyncAPI Generator 
+      php           generate the models for PHP
+      cplusplus     generate the models for C++
+    fromTemplate    generate whatever you want using templates compatible with AsyncAPI Generator
 ```
