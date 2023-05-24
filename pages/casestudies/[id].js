@@ -45,6 +45,7 @@ export async function getStaticPaths() {
   };
 }
 
+
 function Index({ 
   casestudy,
   challenges,
@@ -67,6 +68,11 @@ function Index({
 }) {
   const image = '/img/social/website-card.png';
   const allComponents = getMDXComponents();
+  var contacts = casestudy.company.contact
+  var languages= casestudy.technical.languages
+  var frameworks=casestudy.technical.frameworks
+  var protocols=casestudy.technical.protocols
+  var versions=casestudy.asyncapi.versions 
   return (
     <GenericLayout
       title="AsyncAPI Case Studies"
@@ -81,6 +87,20 @@ function Index({
           <Heading typeStyle="heading-xl" className="countdown-text-gradient">
             {casestudy.company.name}
           </Heading>
+          <div className='flex flex-wrap gap-1'>
+              {contacts.map((item, index) => (
+                <div key={index}>
+                  <Heading typeStyle="body-lg">
+                    <Link href={item.link}>
+                      <a className="text-md leading-5 font-medium text-gray-900 
+                      hover:underline" target="_blank">
+                        {item.name}{index != contacts.length - 1 ? ', ' : ' '}
+                      </a>
+                    </Link>
+                  </Heading>
+                </div>)
+              )}
+            </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Industry: {casestudy.company.industry}
@@ -100,7 +120,7 @@ function Index({
                     tl;dr just go and have a look at
                     <Link href={'/'+casestudy.asyncapi.fullExample}>
                       <a className="ml-2 text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                         full production-used AsyncAPI document
+                        full production-used AsyncAPI document
                       </a>
                     </Link>
             </Heading>
@@ -144,14 +164,27 @@ function Index({
         </Heading>
         <div className="mt-4 items-center">
           <div className='flex flex-wrap gap-2'>
-          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Languages: {casestudy.technical.languages[0]}
+              <span className="flex flex-wrap gap-1  bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Languages:
+            {languages.map((item, index) => (
+                <div key={index}>
+                        {item}{index != languages.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
-          <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Frameworks: {casestudy.technical.frameworks[0]}
+          <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Frameworks: {frameworks.map((item, index) => (
+                <div key={index}>
+                        {item}{index != frameworks.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
-          <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-            Protocols: {casestudy.technical.protocols[0]}
+          <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+            Protocols:  {protocols.map((item, index) => (
+                <div key={index}>
+                        {item}{index != protocols.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
           </span>
           </div>
           <div className="mt-10">
@@ -183,8 +216,12 @@ function Index({
               More details about AsyncAPI
             </Heading>
             <div className="mt-4  flex flex-wrap gap-2">
-              <span className="bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
-                Versions: {casestudy.asyncapi.versions[0]}
+              <span className="flex flex-wrap gap-1 bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
+                Versions:  {versions.map((item, index) => (
+                <div key={index}>
+                        {item}{index != versions.length - 1 ? ', ' : ' '} 
+                </div>)
+              )}
               </span>
               <span className=" bg-green-100 border border-green-600 text-green-600 p-1 text-center text-xs rounded-md ">
                 Who maintains documents: {casestudy.asyncapi.maintainers}
@@ -273,23 +310,8 @@ function Index({
               <MDXRemote {...additionalResources} components={allComponents} />
             </Paragraph>
           </div>
-
         </div>
       </div>
-      <div className="mt-10">
-            <Heading typeStyle="body-lg">
-                Contact points for more details:
-                <ul className="list-disc list-inside">
-                  <li>
-                    <Link href={casestudy.company.contact[0].link}>
-                      <a className="text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300" target="_blank">
-                        {casestudy.company.contact[0].name}
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-            </Heading>
-          </div>
     </div>
     </GenericLayout>
   );
