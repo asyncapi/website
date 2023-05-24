@@ -71,7 +71,7 @@ export default function Filters({
               left: x>0? x??'':"14px",
             }}
           >
-            <div className="bg-white shadow-xl rounded" style={{width: "19rem"}}>
+            <div className="bg-white shadow-xl rounded w-[19rem]">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
                 <button onClick={() => setOpen(!open)} className="ml-auto">
