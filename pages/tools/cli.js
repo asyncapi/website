@@ -131,7 +131,7 @@ export default function CliPage() {
                       code: setUpWin()
                     },
                     {
-                      language: 'Linux',
+                      language: 'linux',
                       code: setUpLinux() 
                     }
                   ]}
