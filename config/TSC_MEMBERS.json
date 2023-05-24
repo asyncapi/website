@@ -295,6 +295,16 @@
 		]
 	},
 	{
+		"name": "Philip Schlesinger",
+		"github": "theschles",
+		"slack": "U054UUYBNLF",
+		"twitter": "philschlesinger",
+		"availableForHire": false,
+		"repos": [
+			"jasyncapi-idea-plugin"
+		]
+	},
+	{
 		"name": "Pratik Haldankar",
 		"github": "pratik2315",
 		"slack": "U03ADC8FD2S",

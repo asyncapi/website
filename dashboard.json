@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDODyzcIc42qjdx",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: validate workflow schema",
-      "author": "Namyalg",
-      "resourcePath": "/asyncapi/.github/pull/159",
-      "repo": "asyncapi/.github",
-      "labels": [],
-      "score": 20.38939580119737
-    },
-    {
       "id": "PR_kwDODCuNRs4r1oNL",
       "isPR": true,
       "isAssigned": false,
@@ -19,6 +8,17 @@
       "author": "iancooper",
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 21.825268744943667
+    },
+    {
+      "id": "PR_kwDODyzcIc42qjdx",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: validate workflow schema",
+      "author": "Namyalg",
+      "resourcePath": "/asyncapi/.github/pull/159",
+      "repo": "asyncapi/.github",
       "labels": [],
       "score": 20.38939580119737
     },
@@ -57,6 +57,30 @@
         }
       ],
       "score": 18.37917367995256
+    },
+    {
+      "id": "I_kwDOG115t85D93P0",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Website UI Kit design/dev project",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/design-system/issues/4",
+      "repo": "asyncapi/design-system",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 17.517649913704783
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -172,20 +196,69 @@
         }
       ],
       "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDODCuNRs5Nh35U",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: first draft of JMS Binding Objects",
-      "author": "adamretter",
-      "resourcePath": "/asyncapi/bindings/pull/193",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh385mL9Lx",
+      "title": "Add runtime testing for Rust",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1295",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "rust",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5mKmgQ",
+      "title": "Add docs buttons to CLI and Generator landing pages",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1684",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5mJnw8",
+      "title": "extend release workflow to throw errors when it fails",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/563",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5mIyyz",
+      "title": "[📑 Docs]: Update CLI installation instruction with info about windows",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1681",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5lGICH",
       "title": "Make group dropdown for each section in Navbar",
@@ -894,25 +967,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU4NjM2OTUzMjM=",
-      "title": "Move to JSX renderer",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/html-template/issues/185",
-      "repo": "asyncapi/html-template",
-      "author": "magicmatatjahu",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
