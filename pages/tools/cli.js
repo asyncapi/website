@@ -70,6 +70,15 @@ export default function CliPage() {
 		return `# Download latest PKG file\ncurl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg\n# Install application on MacOS\nsudo installer -pkg asyncapi.pkg -target /`;
 	};
 
+  const setUpWin = () => {
+    return `# Download latest asyncapi.x64.exe for 64-bit Windows\n https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe\n# Download asyncapi.x86.exe for 32-bit Windows\n https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe`;
+  };
+
+  const setUpLinux = () => {
+    return `# For Debian based distros, you can install the AsycAPI CLI using the dpkg package manager for Debian\ncurl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb\n# To download a specific release of the CLI, run this command in your terminal\ncurl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.deb /`;
+  };
+  
+
   return (
     <GenericLayout title="CLI" description={description} image={image} wide>
       <div className="py-12 overflow-hidden">
@@ -119,7 +128,15 @@ export default function CliPage() {
 										{
 											language: '.pkg',
 											code: getPkgCode()
-										}
+										},
+                    {
+                      language: 'windows',
+                      code: setUpWin()
+                    },
+                    {
+                      language: 'linux',
+                      code: setUpLinux() 
+                    }
                   ]}
                 />
               </div>
