@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/e0pQClU6QqU/hqdefault.jpg",
+    "title": "Spec 3.0 (May 24th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/714.",
+    "videoId": "e0pQClU6QqU"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
     "title": "Community Health in Open-source",
     "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI x Google Season of Doc&#39;s 2023",
     "description": "https://github.com/asyncapi/community/issues/692.",
     "videoId": "nyEu2un3Xkg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Z8lnRHL-lCM/hqdefault.jpg",
-    "title": "Community meeting (May 2nd 2023)",
-    "description": "https://github.com/asyncapi/community/issues/688.",
-    "videoId": "Z8lnRHL-lCM"
   }
 ]
