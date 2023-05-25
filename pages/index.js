@@ -218,7 +218,7 @@ function HomePage() {
           <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
-          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
+          <Heading level="h3" typeStyle="heading-lg" className="mb-8">
             What the experts are saying
           </Heading>
           <Testimonial />

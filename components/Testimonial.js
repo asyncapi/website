@@ -1,3 +1,5 @@
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+
 const testimonials = [
   {
     imgUrl: '/img/testimonials/matt-mclarty.jpg',
@@ -42,13 +44,14 @@ const Testimonial = () => {
     const styleObj = {};
 
     if (distance === 0) {
-      styleObj.left = '33.3%';
+      styleObj.left = '30%';
       styleObj.zIndex = 1;
       styleObj.opacity = 1;
       styleObj.transform = 'scale(1)';
     } else {
       styleObj.left =
-        distance > 0 ? `${12.7 + distance * 40}%` : `${54 + distance * 40}%`;
+        distance > 0 ? `${12 + distance * 35}%` : `${48 + distance * 35}%`;
+      styleObj.filter = 'blur(2px)';  
     }
 
     if (Math.abs(distance) >= 2) {
@@ -59,18 +62,30 @@ const Testimonial = () => {
     return styleObj;
   };
 
+  const goToPrevious = () => {
+    setActive((prevIndex) => (prevIndex === 0 ? len - 1 : prevIndex - 1));
+  };
+
+  const goToNext = () => {
+    setActive((prevIndex) => (prevIndex === len - 1 ? 0 : prevIndex + 1));
+  };
+
   return (
-    <div>
-      <div className="h-[460px] lg:h-[500px] overflow-hidden">
-        {testimonials.map(({ imgUrl, name, salutation, text }, index) => (
-          <div
-            className="h-[440px] lg:h-[480px] w-[35%] transition-all duration-500 absolute opacity-80 scale-90 cursor-pointer select-none flex flex-col items-center justify-center border border-gray-300 rounded-lg bg-white shadow-xl z-1}"
-            key={index}
-            onClick={() => setActive(index)}
-            style={getStyle(index)}
+    <div className="flex flex-row justify-between items-center gap-3 h-full"> 
+      <div className="h-8 w-8 rounded-full bg-[#ddd] cursor-pointer mb-2" onClick={goToPrevious}>
+        <FaArrowLeft className="mt-[20%] m-auto"/>
+      </div>
+      <div className="flex flex-col">
+      <div className="h-[460px] lg:h-[500px]">
+         {testimonials.map(({ imgUrl, name, salutation, text }, index) => (
+           <div
+             className="h-[440px] lg:h-[480px] w-[40%] transition-all duration-500 absolute opacity-80 scale-90 cursor-pointer select-none flex flex-col items-center justify-center border border-gray-300 rounded-lg bg-white shadow-xl z-1}"
+             key={index}
+             onClick={() => setActive(index)}
+             style={getStyle(index)}
           >
-            <div className="rounded-full h-16 w-16 lg:h-32 lg:w-32 overflow-hidden mt-[-1rem] mb-2 lg:mb-4 lg:mt-[-2rem]">
-              <img src={imgUrl} className="h-full w-full" alt={name} />
+             <div className="rounded-full h-16 w-16 lg:h-32 lg:w-32 overflow-hidden mt-[-1rem] mb-2 lg:mb-4 lg:mt-[-2rem]">
+               <img src={imgUrl} className="h-full w-full" alt={name} />
             </div>
             <p className="text-[14px] lg:text-base lg:leading-6 font-bold text-gray-900 mb-2">
               {name}
@@ -82,9 +97,11 @@ const Testimonial = () => {
               {text}
             </p>
           </div>
-        ))}
+         ))}
+      
       </div>
       <div className="h-[20px] flex justify-center items-center">
+    
         {testimonials.map((value, index) => (
           <div
             key={index}
@@ -97,6 +114,13 @@ const Testimonial = () => {
           />
         ))}
       </div>
+      </div>
+          <div
+            className="h-8 w-8 rounded-full bg-[#ddd] cursor-pointer mb-2"
+            onClick={goToNext}
+          >
+            <FaArrowRight className="mt-[20%] m-auto"/>
+          </div>
     </div>
   );
 };
