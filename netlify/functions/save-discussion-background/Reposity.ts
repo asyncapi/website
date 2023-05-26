@@ -116,7 +116,7 @@ _This discussion has been created from a [slack discussion](${slackURL}). Please
    */
   export async function markAnswer(commentId: string) {
     console.log('marking the answer...');
-    fetchGraphql(
+    await fetchGraphql(
       `
       mutation {
         markDiscussionCommentAsAnswer(input: {id: "${commentId}" }) {
