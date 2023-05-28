@@ -66,6 +66,8 @@ export function getMDXComponents() {
       <details {...props} className={`${ props.className || ''} mb-1 font-heading antialiased font-medium text-gray-900`}/>,
     summary: (props) => 
       <summary {...props} className={`${props.className || ''} my-2 font-heading antialiased font-semibold text-gray-900`}/>,
+    p: (props) => 
+    <p {...props} className={`${props.className || ''} ml-4 cursor-pointer`}/>,
       
     code: CodeComponent,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
