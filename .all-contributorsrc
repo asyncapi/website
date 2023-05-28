@@ -427,9 +427,37 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "rukundob451",
+      "name": "Benjamin Rukundo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67878128?v=4",
+      "profile": "https://linkfree.eddiehub.io/rukundob451",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tthijm",
+      "name": "tthijm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59415467?v=4",
+      "profile": "https://github.com/tthijm",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "CynthiaPeter",
+      "name": "Cynthia Peter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33583060?v=4",
+      "profile": "http://cynthiapeter.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "skipCi": false,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
