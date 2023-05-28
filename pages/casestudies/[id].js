@@ -223,7 +223,7 @@ function Index({
       hideBanner={true}
       wide
     >
-    <Container cssBreakingPoint="lg" flex flexReverse className="px-0">
+    <Container cssBreakingPoint="lg" flex flexReverse fluid className="px-0">
       <CaseTOC toc={content} cssBreakingPoint="lg" className="bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-40 lg:max-w-72 lg:-mr-20 xl:min-w-72 xl:-mr-36" />
       <div className="px-4 sm:px-6 xl:px-8 xl:flex-1 xl:max-w-5xl case-study">
         <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
