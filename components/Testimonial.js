@@ -7,6 +7,9 @@ const Testimonial = () => {
   const len = TestimonialData.length;
   const [activeIndex, setActive] = useState(0);
 
+    //The "distanceLeft"  variable represents the distance of a testimonial from the active index when moving to the left (previous   
+    //testimonials).
+    // Similarly distanceRight is also checked. 
   const getStyle = (idx) => {
     const distanceLeft = idx - activeIndex;
     const distanceRight =
@@ -17,18 +20,27 @@ const Testimonial = () => {
         : distanceLeft;
 
     const styleObj = {};
-
+    // If the distance is 0 (testimonial is the active one): Set left to '30%' to position the testimonial in the center.Set zIndex to 1      
+    //to ensure the active testimonial is displayed above others.Set opacity to 1 to make it fully visible.
+    // Set transform to 'scale(1)' to maintain the original scale.
     if (distance === 0) {
       styleObj.left = '30%';
       styleObj.zIndex = 1;
       styleObj.opacity = 1;
       styleObj.transform = 'scale(1)';
-    } else {
+    } else
+    // If the distance is not 0 (testimonial is not the active one):
+    // Set left dynamically based on the distance to create a sliding effect. Testimonials to the right will have increasing left values,     
+    // while testimonials to the left will have decreasing left values.
+    // Set filter to 'blur(2px)' to apply a blur effect to non-active testimonials.
+    {
       styleObj.left =
         distance > 0 ? `${12 + distance * 35}%` : `${48 + distance * 35}%`;
       styleObj.filter = 'blur(2px)';  
     }
-
+    // If the absolute value of the distance is greater than or equal to 2:
+    // Set opacity to 0 to make the testimonial fully transparent.
+    // Set transform to 'scale(0)' to scale the testimonial down to 0, making it invisible.
     if (Math.abs(distance) >= 2) {
       styleObj.opacity = 0;
       styleObj.transform = 'scale(0)';
