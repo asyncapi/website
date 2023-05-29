@@ -1,26 +1,20 @@
-const frontmatter = require('remark-frontmatter')
-const images = require('remark-images')
-const gemoji = require('remark-gemoji-to-emoji')
-const a11yEmoji = require('@fec/remark-a11y-emoji')
-const slug = require('remark-slug')
-const headingId = require('remark-heading-id')
+const frontmatter = require("remark-frontmatter");
+const images = require("remark-images");
+const gemoji = require("remark-gemoji-to-emoji");
+const a11yEmoji = require("@fec/remark-a11y-emoji");
+const slug = require("remark-slug");
+const headingId = require("remark-heading-id");
 
-const withMDX = require('@next/mdx')({
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [
-      frontmatter,
-      gemoji,
-      headingId,
-      slug,
-      images,
-      a11yEmoji,
-    ],
+    remarkPlugins: [frontmatter, gemoji, headingId, slug, images, a11yEmoji],
     rehypePlugins: [],
   },
-})
+});
+
 module.exports = withMDX({
-  pageExtensions: ['js', 'md'],
+  pageExtensions: ["js", "md"],
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -33,6 +27,12 @@ module.exports = withMDX({
     // config.resolve.alias["react/jsx-dev-runtime"] = require.resolve('react/jsx-dev-runtime');
     // config.resolve.alias["react/jsx-runtime"] = require.resolve('react/jsx-runtime');
 
-    return config
+    // Add the loader configuration for the problematic file type
+    config.module.rules.push({
+      test: /\.yaml/, // Replace `your-file-extension` with the actual file extension causing the error
+      use: "raw-loader",
+    });
+
+    return config;
   },
-})
+});

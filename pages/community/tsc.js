@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import GenericLayout from "../../components/layout/GenericLayout";
-import TSCMembersList from "../../config/TSC_MEMBERS.json";
-import {sortBy} from 'lodash';
+import { sortBy } from "lodash";
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
-import TextLink from '../../components/typography/TextLink';
+import TextLink from "../../components/typography/TextLink";
+import YAML from "js-yaml";
+import TSC_MEMBERS from "../../config/TSC_MEMBERS.yaml";
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -25,9 +27,9 @@ function addAdditionalUserInfo(user) {
   userData.avatarUrl = userData.github + ".png";
 
   // make repo links
-  userData.repos = userData.repos.map((repoName) => ({
-    name: repoName,
-    url: `https://www.github.com/asyncapi/${repoName}`,
+  userData.repos = userData.repos.map((repo) => ({
+    name: repo,
+    url: `https://www.github.com/asyncapi/${repo}`,
   }));
 
   return userData;
@@ -37,8 +39,21 @@ export default function TSC() {
   const description =
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/community-tsc.webp";
+  const [tscMembers, setTSCMembers] = useState([]);
 
-  const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
+  useEffect(() => {
+    const data = YAML.load(TSC_MEMBERS);
+
+    if (!Array.isArray(data)) {
+      console.error("YAML data is not an array.");
+      return;
+    }
+
+    const processedData = data.map((user) => addAdditionalUserInfo(user));
+    const sortedData = sortBy(processedData, "name");
+
+    setTSCMembers(sortedData);
+  }, []);
 
   return (
     <GenericLayout
@@ -60,8 +75,6 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
-
-            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
@@ -74,9 +87,12 @@ export default function TSC() {
               projects and then other maintainers will invite you to join. You
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
-              stay as a maintainer).
-              Follow this
-              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
+              stay as a maintainer). Follow this
+              <TextLink
+                href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
+                target="_blank"
+                className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline"
+              >
                 Link
               </TextLink>
               &nbsp;to know more!
@@ -116,12 +132,8 @@ export default function TSC() {
         </div>
         <div className="mt-10">
           <div className="mb-5 text-primary-800 text-center">
-            <h3 className="font-semibold text-2xl">
-              Current TSC members
-            </h3>
-            <span className="font-thin text-sm">
-              (in alphabetical order)
-            </span>
+            <h3 className="font-semibold text-2xl">Current TSC members</h3>
+            <span className="font-thin text-sm">(in alphabetical order)</span>
           </div>
 
           <ul
@@ -140,10 +152,10 @@ export default function TSC() {
 }
 
 const socials = {
-  "Github": <GithubSVG />,
-  "Twitter": <TwitterSVG />,
-  "Linkedin": <LinkedInSVG />,
-}
+  Github: <GithubSVG />,
+  Twitter: <TwitterSVG />,
+  Linkedin: <LinkedInSVG />,
+};
 
 function SocialLink({ href, social }) {
   return (
@@ -158,7 +170,7 @@ function SocialLink({ href, social }) {
         {socials[social]}
       </a>
     </li>
-  )
+  );
 }
 
 function UserInfo({ user }) {
@@ -177,8 +189,12 @@ function UserInfo({ user }) {
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
             <SocialLink href={user.github} social="Github" />
-            {user.twitter ? <SocialLink href={user.twitter} social="Twitter" /> : null}
-            {user.linkedin ? <SocialLink href={user.linkedin} social="Linkedin" /> : null}
+            {user.twitter ? (
+              <SocialLink href={user.twitter} social="Twitter" />
+            ) : null}
+            {user.linkedin ? (
+              <SocialLink href={user.linkedin} social="Linkedin" />
+            ) : null}
           </ul>
         </div>
       </div>
@@ -228,9 +244,12 @@ function QuestionCard() {
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
       <div className="my-4">
-        Want to become a member?
-        Follow this
-        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
+        Want to become a member? Follow this
+        <TextLink
+          href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
+          target="_blank"
+          className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline"
+        >
           Link
         </TextLink>
         &nbsp;to know more!
