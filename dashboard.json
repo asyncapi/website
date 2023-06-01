@@ -59,34 +59,6 @@
       "score": 18.666348268701817
     },
     {
-      "id": "I_kwDOFLhIt85joCJA",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Poster/Graphic/Infograph that highlights what AsyncAPI does with sponsor's money",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/community/issues/672",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "area/design",
-          "color": "0d67d3"
-        },
-        {
-          "name": "bounty",
-          "color": "FD6F9E"
-        },
-        {
-          "name": "level/advanced",
-          "color": "FFFF00"
-        }
-      ],
-      "score": 18.37917367995256
-    },
-    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -100,17 +72,6 @@
           "color": "a2eeef"
         }
       ],
-      "score": 18.091999091203302
-    },
-    {
-      "id": "PR_kwDOBGu-185L4xgg",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "#622 allow defining schema format other than default",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/910",
-      "repo": "asyncapi/spec",
-      "labels": [],
       "score": 18.091999091203302
     },
     {
@@ -174,22 +135,6 @@
       "score": 15.220253203710714
     },
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 14.926933240618364
-    },
-    {
       "id": "PR_kwDOCoBobc4-9B_v",
       "isPR": true,
       "isAssigned": false,
@@ -204,13 +149,131 @@
         }
       ],
       "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDODCuNRs5Nh35U",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: first draft of JMS Binding Objects",
+      "author": "adamretter",
+      "resourcePath": "/asyncapi/bindings/pull/193",
+      "repo": "asyncapi/bindings",
+      "labels": [],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve overall performance of the website but especially Blog",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/89",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOE8Qh385nTcHt",
+      "title": "Add package name option for playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1352",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385nTb8J",
+      "title": "Add namespace option for playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1351",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385nTDiB",
+      "title": "Add descriptions for options in playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1347",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385nTCST",
+      "title": "Improve layout of playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1346",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOE8Qh385m6KFQ",
       "title": "Add runtime testing for PHP",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/modelina/issues/1336",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
@@ -486,98 +549,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385hb9W5",
-      "title": "Add overwriting Equal method support in the Playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1177",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "C# generator",
-          "color": "c5def5"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385hb8cG",
-      "title": "Add Newtonsoft serialization support in the Playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1176",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "C# generator",
-          "color": "c5def5"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385hbz9R",
-      "title": "Add example data function support in the Playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1172",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385hbxvG",
-      "title": "Add jsonbinpack support in the Playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1171",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFi_gUM5hAZlI",
       "title": "Better logging for MQTT adapter",
       "isAssigned": false,
@@ -766,25 +737,6 @@
       ]
     },
     {
-      "id": "I_kwDOEOBLdM5TFZp2",
-      "title": "Add support for JetStream push subscribe",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/296",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODou01c5TDLWP",
       "title": "Unnecessary assertion since it does not change the type of the expression.",
       "isAssigned": true,
@@ -872,21 +824,6 @@
       "title": "Provide mirror client for testing",
       "isAssigned": false,
       "resourcePath": "/asyncapi/dotnet-nats-template/issues/215",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5C9YVz",
-      "title": "Make namespace part of the template parameters",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/214",
       "repo": "asyncapi/dotnet-nats-template",
       "author": "jonaslagoni",
       "area": "Unknown",
