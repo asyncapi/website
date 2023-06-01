@@ -15,7 +15,9 @@
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
     "test": "echo \"No tests configured yet\"",
-    "release": "echo \"No release to npm for this project\""
+    "release": "echo \"No release to npm for this project\"",
+    "cypress": "cypress open",
+    "cypress-run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -35,7 +37,6 @@
   },
   "homepage": "https://github.com/asyncapi/website#readme",
   "dependencies": {
-    "@asyncapi/modelina": "^0.49.0",
     "@docsearch/react": "^3.1.0",
     "@fec/remark-a11y-emoji": "^1.0.0",
     "@floating-ui/react-dom-interactions": "^0.1.1",
@@ -46,6 +47,7 @@
     "@monaco-editor/react": "^3.3.0",
     "@next/mdx": "^9.4.2",
     "@octokit/graphql": "^4.6.0",
+    "@slack/web-api": "^6.5.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/line-clamp": "^0.4.0",
@@ -58,6 +60,7 @@
     "clsx": "^1.1.1",
     "cssnano": "^5.1.12",
     "dotenv": "^8.2.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "fuse.js": "^6.6.2",
     "googleapis": "^100.0.0",
     "gray-matter": "^4.0.2",
@@ -91,11 +94,12 @@
     "swiper": "^8.3.2",
     "tailwind-merge": "^1.3.0",
     "tailwindcss": "^3.1.4",
-    "yaml": "^2.2.2",
-    "@slack/web-api": "^6.5.1"
+    "yaml": "^2.2.2"
   },
   "devDependencies": {
     "@netlify/functions": "^1.4.0",
+    "@netlify/plugin-nextjs": "^4.37.2",
+    "cypress": "^10.11.0",
     "dedent": "^0.7.0",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.20.0",

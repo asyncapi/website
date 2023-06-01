@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/0X7wnn41Vho/hqdefault.jpg",
+    "title": "Community Meeting (May 30th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/715.",
+    "videoId": "0X7wnn41Vho"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
+    "title": "Community Health in Open-source",
+    "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
+    "videoId": "l9Tp5eMTol4"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
     "title": "Spec 3.0 meeting (May 10th 2023)",
     "description": "https://github.com/asyncapi/community/issues/699.",
@@ -12,21 +24,9 @@
     "videoId": "nyEu2un3Xkg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Z8lnRHL-lCM/hqdefault.jpg",
-    "title": "Community meeting (May 2nd 2023)",
-    "description": "https://github.com/asyncapi/community/issues/688.",
-    "videoId": "Z8lnRHL-lCM"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/WcmH9ySIX9o/hqdefault.jpg",
     "title": "Tackling Interoperability Challenges In Open-Source",
     "description": "Interoperability refers to the ability of different systems and software applications to communicate and exchange data seamlessly.",
     "videoId": "WcmH9ySIX9o"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/82xkJmn-bAc/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (April 26th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/670.",
-    "videoId": "82xkJmn-bAc"
   }
 ]
