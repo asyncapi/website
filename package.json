@@ -99,6 +99,7 @@
   },
   "devDependencies": {
     "@netlify/functions": "^1.4.0",
+    "@netlify/plugin-nextjs": "^4.37.2",
     "cypress": "^10.11.0",
     "dedent": "^0.7.0",
     "eslint": "^7.0.0",
