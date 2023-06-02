@@ -25,7 +25,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 19.527872034949596
+      "score": 19.815046623698855
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -72,7 +72,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOG115t85D93P0",
@@ -113,26 +113,6 @@
         }
       ],
       "score": 15.507427792459973
-    },
-    {
-      "id": "I_kwDOCoBobc5FCvW6",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Road to v2.0.0",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/parser-js/issues/481",
-      "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "fce14b"
-        }
-      ],
-      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOCoBobc4-9B_v",
@@ -189,6 +169,17 @@
       "author": "mcturco",
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "PR_kwDOFDnrNc5RUbi_",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: help command",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/593",
+      "repo": "asyncapi/cli",
       "labels": [],
       "score": 12.348507316218127
     }
@@ -926,6 +917,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
