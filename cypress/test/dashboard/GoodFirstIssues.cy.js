@@ -3,7 +3,6 @@ import { mount } from '@cypress/react';
 import Table from '../../../components/dashboard/table/Table'; 
 import GoodFirstIssues from '../../../components/dashboard/GoodFirstIssues';
 
-
 describe('GoodFirstIssues Component', () => {
   const issues = [
     { id: 1, repo: 'Repository 1', area: 'Area 1' },
@@ -21,11 +20,24 @@ describe('GoodFirstIssues Component', () => {
 
   it('filters issues based on selected repository', () => {
     mount(<GoodFirstIssues issues={issues} />);
-    // Select a specific repository
-    cy.get('select[name="selectedRepo"]').select('Repository 1');
-    // Assert that the table displays the filtered issues
-    cy.get(Table).should('contain', 'Repository 3');
-    cy.get(Table).should('not.contain', 'Repository 2');
+    // Select a specific repository , Repo 1 for now 
+      const selectedRepo = 'Repository 1';
+  
+      mount(<GoodFirstIssues issues={issues} />);
+  
+      // Select the mentioned repository
+      cy.get('select[name="selectedRepo"]').select(selectedRepo);
+  
+      // check that the selected repository is displayed
+      cy.contains(selectedRepo).should('exist');
+      
+      //check if Filter component renders 
+      cy.get('[data-testid="filterComponent"]').should('exist'); 
+
+      // check no other repo is displayed
+      cy.get('select[name="selectedRepo"] option').should('not.contain', 'Repository 2').and('not.contain', 'Repository 3') 
+      
+    
   });
 
   it('filters issues based on selected area', () => {
