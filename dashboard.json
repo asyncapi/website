@@ -382,25 +382,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385mvqkC",
-      "title": "404 page",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1319",
-      "repo": "asyncapi/modelina",
-      "author": "sambhavgupta0705",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOE8Qh385mYD76",
       "title": "docs: add website setup commands in readme",
       "isAssigned": false,
@@ -408,21 +389,6 @@
       "repo": "asyncapi/modelina",
       "author": "sambhavgupta0705",
       "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385mL9Lx",
-      "title": "Add runtime testing for Rust",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1295",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "rust",
       "labels": [
         {
           "name": "enhancement",
