@@ -6,12 +6,6 @@
     "date": "2023-03-01T16:00:00.000Z"
   },
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Z3NuN29kOTBvNmZyc29yaDJscGc1YmhuMzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/603",
-    "date": "2023-02-21T16:00:00.000Z"
-  },
-  {
     "title": "Triage of issues and PRs in website repo",
     "calLink": "https://www.google.com/calendar/event?eid=bTV0bzl0YzAzMmtoa24yOWI3YmFvbW9ncHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/619",
@@ -154,5 +148,12 @@
     "url": "https://github.com/asyncapi/community/issues/716",
     "banner": "https://user-images.githubusercontent.com/40604284/240259984-a4ce1ebd-653a-4a61-818f-6707b33b0777.png",
     "date": "2023-06-08T12:00:00.000Z"
+  },
+  {
+    "title": "Studio plans",
+    "calLink": "https://www.google.com/calendar/event?eid=M3NudjU3MG1obmh1MGJxaXBvY2F0dDU4ZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/728",
+    "banner": "",
+    "date": "2023-06-05T10:00:00.000Z"
   }
 ]
