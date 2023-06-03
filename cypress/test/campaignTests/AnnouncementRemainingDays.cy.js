@@ -28,7 +28,8 @@ describe('AnnouncementRemainingDays', () => {
       }
     }
 
-    cy.get('.countdown-text-gradient').should('have.text', `${text} until ${eventName}`);
+    cy.get('span').should('have.text', `${text} until ${eventName}`);
+    cy.get('span').should('have.class', 'font-extrabold');
   });
 });
 

@@ -12,10 +12,12 @@ describe('Banner Component', () => {
     if (year > 2022 || month !== 10 || day < 6) {
       mount(<Banner />);
       cy.get('.bg-gray-100').should('not.exist');
+ 
     } else {
       mount(<Banner />);
      // cy.wait(1000); // Adjust the wait time as needed
-      cy.get('.bg-gray-100').should('be.visible');
+     cy.get('.bg-gray-100').should('be.visible');
+    
     }
   });
 
@@ -54,5 +56,24 @@ describe('Banner Component', () => {
       cy.get('a').should('not.exist');
     }
   });
+
+
+  //check to see if max-w-screen is present or not , for full width element
+  it('should have the max-w-screen-xl class in the div element', () => {
+    const today = new Date();
+    const day = today.getUTCDate();
+    const month = today.getUTCMonth();
+    const year = today.getUTCFullYear();
+
+    if (year === 2022 && month === 10 && day >= 6) {
+      mount(<Banner />);
+      cy.get('.max-w-screen-xl').should('exist');
+    } else {
+      mount(<Banner />);
+      cy.get('.max-w-screen-xl').should('not.exist');
+    }
+  });
+
+
 });
 
