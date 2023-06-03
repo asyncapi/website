@@ -12,18 +12,12 @@ describe('Filters', () => {
   ];
 
   it('displays the filter menu correctly', () => {
-   // const setSelectedRepo = cy.stub();
-   // const setSelectedArea = cy.stub();
-   
-    // cy.viewport(1200, 1200);
 
     mount(
       <Filters
         className="test-class"
         issues={sampleIssues}
-       // setSelectedRepo={setSelectedRepo}
         allIssues={sampleIssues}
-      //  setSelectedArea={setSelectedArea}
         selectedArea="Area 1"
         selectedRepo="Repo 1"
       />

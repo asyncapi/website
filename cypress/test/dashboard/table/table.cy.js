@@ -34,7 +34,7 @@ describe('Table Component', () => {
     cy.get('.test-list-class').should('be.visible');
   
     cy.get('.test-list-class [data-testid="row"]').each((row, index) => {
-    //  cy.wrap(row).should('contain', data[index]?.name);
+       cy.wrap(row).should('contain', data[index].title);
     });
   });
   

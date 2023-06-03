@@ -9,10 +9,10 @@ describe('GoodFirstIssuesTip', () => {
 
   it('toggles the tip when hovering over the icon', () => {
     cy.get('img').trigger('mouseenter');
-   // cy.get('.bg-white').should('have.css', 'visibility', 'visible');
+  
 
     cy.get('img').trigger('mouseleave');
- //   cy.get('.bg-white').should('have.css', 'visibility', 'hidden');
+
   });
 
   it('renders the tip content with the correct text', () => {
