@@ -1,6 +1,7 @@
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import ArrowLeft from '../components/icons/ArrowLeft'
+import ArrowRight from '../components/icons/ArrowRight'
 import { useState } from 'react';
-import testimonials from '../config/content/Testimonial';
+import testimonials from './TestimonialData';
 
 const TestimonialCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,8 +21,8 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
-      <div className="h-8 w-8 rounded-full bg-[#ddd] cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100" onClick={goToPrevious}>
-        <FaArrowLeft className="mt-[20%] m-auto"/>
+      <div className="h-8 w-8 rounded-full bg-[#ddd] cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
+       <ArrowLeft className='w-4'/>
       </div>
       <div className="flex flex-col justify-center items-center">
         <div className="relative h-[300px] w-[300px] md:w-[600px] md:h-[450px] overflow-hidden">
@@ -41,7 +42,7 @@ const TestimonialCarousel = () => {
               <p className="text-[12px] lg:text-base lg:leading-6 font-medium text-primary-500 mb-2 md:mb-4">
                 {testimonial.salutation}
               </p>
-              <p className="h-[200px] text-[12px] px-1 lg:px-6 overflow-clip md:text-lg">
+              <p className="h-[200px] text-base px-2 lg:px-6 overflow-clip md:text-lg">
                 {testimonial.text}
               </p>
             </div>
@@ -63,7 +64,7 @@ const TestimonialCarousel = () => {
             className="h-8 w-8 rounded-full bg-[#ddd] cursor-pointer mb-2 z-10 absolute right-0 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100"
             onClick={goToNext}
           >
-            <FaArrowRight className="mt-[20%] m-auto"/>
+            <ArrowRight />
           </div>
     </div>
   );

@@ -9,7 +9,7 @@ const TestimonialData = [
       imgUrl: '/img/testimonials/bill-doerrfeld.jpg',
       name: 'Bill Doerrfeld',
       salutation: 'Editor in Chief at Nordic APIs',
-      text: 'Microservices underline the need for event-based communication in distributed architectures. AsyncAPI brings the richness of the REST API ecosystem to asynchronous APIs.',
+      text: 'Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches.',
     },
     {
       imgUrl: '/img/testimonials/jonathan-schabowsky.jpg',
