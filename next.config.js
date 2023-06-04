@@ -12,7 +12,6 @@ const withMDX = require("@next/mdx")({
     rehypePlugins: [],
   },
 });
-
 module.exports = withMDX({
   pageExtensions: ["js", "md"],
   eslint: {
@@ -26,12 +25,6 @@ module.exports = withMDX({
 
     // config.resolve.alias["react/jsx-dev-runtime"] = require.resolve('react/jsx-dev-runtime');
     // config.resolve.alias["react/jsx-runtime"] = require.resolve('react/jsx-runtime');
-
-    // Add the loader configuration for the problematic file type
-    config.module.rules.push({
-      test: /\.yaml/, // Replace `your-file-extension` with the actual file extension causing the error
-      use: "raw-loader",
-    });
 
     return config;
   },
