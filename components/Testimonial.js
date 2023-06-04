@@ -1,6 +1,6 @@
 import ArrowLeft from '../components/icons/ArrowLeft'
 import ArrowRight from '../components/icons/ArrowRight'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import testimonials from './TestimonialData';
 
 const TestimonialCarousel = () => {
@@ -18,6 +18,13 @@ const TestimonialCarousel = () => {
   const goToIndex = (index) => {
     setActiveIndex(index);
   };
+
+  useEffect(() => {
+    const interval = setInterval(goToNext, 3000); 
+    return () => {
+      clearInterval(interval); 
+    };
+  }, []);
 
   return (
     <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
