@@ -12,6 +12,7 @@ const withMDX = require("@next/mdx")({
     rehypePlugins: [],
   },
 });
+
 module.exports = withMDX({
   pageExtensions: ["js", "md"],
   eslint: {
@@ -23,8 +24,12 @@ module.exports = withMDX({
       config.resolve.fallback.fs = false;
     }
 
-    // config.resolve.alias["react/jsx-dev-runtime"] = require.resolve('react/jsx-dev-runtime');
-    // config.resolve.alias["react/jsx-runtime"] = require.resolve('react/jsx-runtime');
+    // Add support for YAML files using yaml-loader
+    config.module.rules.unshift({
+      test: /\.ya?ml$/,
+      use: ["yaml-loader"],
+      type: "json",
+    });
 
     return config;
   },
