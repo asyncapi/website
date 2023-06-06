@@ -5,7 +5,7 @@ weight: 30
 
 ## Node and npm
 
-To use the AsynAPI CLI tool, you must install NPM and a Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
+To use the AsyncAPI CLI tool, you must install NPM and Node.js version 10 or higher. To check if you already have both installed, run the following commands in your terminal:
 
 ```sh
 # check if node is installed
@@ -25,6 +25,30 @@ After installing Node.js and NPM, run the following command to install the Async
 ```sh
 npm install -g @asyncapi/cli
 ```
+## Docker
+
+Install [Docker](https://docs.docker.com/get-docker/) first, then use docker to build the image using the following command :
+``` 
+docker build -t asyncapi/cli:latest . 
+``` 
+and run the image using the following command :
+
+```bash
+docker run --rm -it \
+--user=root \
+-v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
+-v [GENERATED FILES LOCATION]:/app/output \
+asyncapi/cli [COMMAND HERE]
+
+# Example that you can run inside the cli directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
+docker run --rm -it \
+   --user=root \
+   -v ${PWD}/test/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+   -v ${PWD}/output:/app/output \
+   asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+```
+Note: Use ``` ` ``` instead of `\` for Windows.
+
 
 ## Mac
 There are two ways to install the AsyncAPI CLI on your macOS: using the `brew` package manager or `pkg` files.
@@ -58,7 +82,7 @@ curl -OL https://github.com/asyncapi/cli/releases/download/<replace this with th
 ```
 
 <Remember>
-Follow this link for all <a href="https://github.com/asyncapi/cli/releases">AsynAPI CLI releases</a>.
+Follow this link for all <a href="https://github.com/asyncapi/cli/releases">AsyncAPI CLI releases</a>.
 </Remember>
 
 After downloading the AsyncAPI CLI, install it via the following command:
@@ -66,6 +90,11 @@ After downloading the AsyncAPI CLI, install it via the following command:
 ```sh
 sudo installer -pkg asyncapi.pkg -target /
 ```
+
+## Windows 
+For Windows just install the appropriate installer and simply follow the default installation steps to complete the installation process.
+
+Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
 
 ## Linux
 Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.
@@ -98,7 +127,7 @@ Once you have downloaded the archived file, untar it by running this command in 
 tar -xzf asyncapi.tar.gz
 ```
 
-The step above will create an `AsynAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
+The step above will create an `AsyncAPI` directory in the current path. To run the CLI from anywhere, you must create a `symlink`. If the current path you are on is `/user/local/bin`, for example, you must create the `symlink` in the `/user/local/bin` directory by following these steps:
 ```sh
 # cd into the unarchived directory
 cd asyncapi
