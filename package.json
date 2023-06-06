@@ -97,6 +97,7 @@
     "yaml": "^2.2.2"
   },
   "devDependencies": {
+    "@cypress/react": "^7.0.3",
     "@netlify/functions": "^1.4.0",
     "@netlify/plugin-nextjs": "^4.37.2",
     "cypress": "^10.11.0",

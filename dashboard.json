@@ -56,7 +56,7 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 19.240697446200336
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -115,19 +115,14 @@
       "score": 15.507427792459973
     },
     {
-      "id": "PR_kwDOCoBobc4-9B_v",
+      "id": "PR_kwDOCoBobc5I0WzT",
       "isPR": true,
       "isAssigned": false,
-      "title": "refactor: add migration guide",
+      "title": "docs: document rules",
       "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/parser-js/pull/611",
+      "resourcePath": "/asyncapi/parser-js/pull/700",
       "repo": "asyncapi/parser-js",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
+      "labels": [],
       "score": 14.645904026212197
     },
     {
@@ -190,25 +185,6 @@
       "title": "Add package name option for playground",
       "isAssigned": false,
       "resourcePath": "/asyncapi/modelina/issues/1352",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385nTb8J",
-      "title": "Add namespace option for playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1351",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
@@ -551,21 +527,6 @@
       ]
     },
     {
-      "id": "I_kwDOFDnrNc5gDSyx",
-      "title": "Generate overwritten Equal method for C# models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/466",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5gDKCJ",
       "title": "Generate example function for TypeScript models",
       "isAssigned": false,
@@ -637,6 +598,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         },
         {
           "name": "Kotlin generator",
