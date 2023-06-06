@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/cIK6V28Rv3g/hqdefault.jpg",
+    "title": "Studio Vision &amp; Plans (June 5th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/728.",
+    "videoId": "cIK6V28Rv3g"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/0X7wnn41Vho/hqdefault.jpg",
     "title": "Community Meeting (May 30th 2023)",
     "description": "https://github.com/asyncapi/community/issues/715.",
@@ -22,11 +28,5 @@
     "title": "Community meeting (May 16th 2023)",
     "description": "https://github.com/asyncapi/community/issues/705.",
     "videoId": "4Zo59cOcFUw"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (May 10th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/699.",
-    "videoId": "7urTb207V-8"
   }
 ]
