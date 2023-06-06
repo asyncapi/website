@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
 import GenericLayout from "../../components/layout/GenericLayout";
+import TSCMembersList from "../../config/TSC_MEMBERS.json";
 import { sortBy } from "lodash";
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from "../../components/typography/TextLink";
-import YAML from "js-yaml";
-import TSC_MEMBERS from "../../config/TSC_MEMBERS.json";
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -27,9 +25,9 @@ function addAdditionalUserInfo(user) {
   userData.avatarUrl = userData.github + ".png";
 
   // make repo links
-  userData.repos = userData.repos.map((repo) => ({
-    name: repo,
-    url: `https://www.github.com/asyncapi/${repo}`,
+  userData.repos = userData.repos.map((repoName) => ({
+    name: repoName,
+    url: `https://www.github.com/asyncapi/${repoName}`,
   }));
 
   return userData;
@@ -39,21 +37,11 @@ export default function TSC() {
   const description =
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/community-tsc.webp";
-  const [tscMembers, setTSCMembers] = useState([]);
 
-  useEffect(() => {
-    const data = YAML.load(TSC_MEMBERS);
-
-    if (!Array.isArray(data)) {
-      console.error("YAML data is not an array.");
-      return;
-    }
-
-    const processedData = data.map((user) => addAdditionalUserInfo(user));
-    const sortedData = sortBy(processedData, "name");
-
-    setTSCMembers(sortedData);
-  }, []);
+  const tscMembers = sortBy(
+    TSCMembersList.map((user) => addAdditionalUserInfo(user)),
+    ["name"]
+  );
 
   return (
     <GenericLayout
