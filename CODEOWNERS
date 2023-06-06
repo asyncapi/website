@@ -10,4 +10,7 @@
 # All .md files
 *.md @alequetzalli @asyncapi-bot-eve
 
+pages/blog/*.md @thulieblack @alequetzalli
+pages/community/*.md @thulieblack @alequetzalli
+
 README.md @alequetzalli @derberg @mcturco @akshatnema @magicmatatjahu @asyncapi-bot-eve

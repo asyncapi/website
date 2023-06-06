@@ -17,7 +17,6 @@ function CommunityIndexPage() {
       title="AsyncAPI Community Meetings"
       description="The home for developer communities"
       image={image}
-      hideBanner={true}
       wide
     >
       <div className="md:hidden mt-15">
