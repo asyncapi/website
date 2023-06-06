@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync } from "fs";
 import { load } from "js-yaml";
 
-const inputFile = "./config/TSC_MEMBERS.yaml";
-const outputFile = "./config/TSC_MEMBERS.json";
+const inputFile = "../config/TSC_MEMBERS.yml";
+const outputFile = "../config/TSC_MEMBERS.json";
 
 try {
   // Read YAML file

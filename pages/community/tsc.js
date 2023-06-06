@@ -4,7 +4,7 @@ import { sortBy } from "lodash";
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from "../../components/typography/TextLink";
 import YAML from "js-yaml";
-import TSC_MEMBERS from "../../config/TSC_MEMBERS.yaml";
+import TSC_MEMBERS from "../../config/TSC_MEMBERS.json";
 
 function addAdditionalUserInfo(user) {
   const userData = {
