@@ -44,7 +44,7 @@ May witnessed another remarkable increase in sessions with a total of 9,453 comm
 
 We are grateful for the dedication and contributions of our community members, both new and existing, who have played a pivotal role in this progress. The enthusiasm and support from our community continue to inspire us to provide high-quality documentation, and we appreciate the trust you place in us.
 
-Furthermore, we are excited about the future endeavors and collaborations within the AsyncAPI ecosystem. The selected technical writing candidates for the 2023 Google Season of Docs (GSoD) program, along with their projects, promise to bring further enhancements to our documentation. Additionally, the community vote for the host platform of AsyncAPI Interactive Learning Paths empowers our users to shape the future of our learning experience.
+Furthermore, we are excited about the future endeavors and collaborations within the AsyncAPI ecosystem. The selected technical writing candidates for the 2023 Google Season of Docs (GSoD) program, along with their projects, promise to bring further enhancements to our documentation. Additionally, the community vote for the host platform of AsyncAPI Interactive Learning Paths empowers our community members to shape the future of our learning experience.
 
 
 ```mermaid
