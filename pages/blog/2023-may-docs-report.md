@@ -33,7 +33,7 @@ Additionally, we want to highlight an upcoming change in the Spec 3.0 release th
 Thank you for your active participation and dedication to advancing the AsyncAPI ecosystem. Let's strive for excellence in our Spec 3.0 documentation!
 
 ## Contributor Growth
-We are thrilled to share the exciting news of welcoming a new contributor to our documentation team! Please join us in extending a warm welcome to [Cynthia Peter](https://github.com/CynthiaPeter)! Cynthia is eager to enhance her technical writing skills and contribute to the growth of the AsyncAPI documentation.
+We are thrilled to share the exciting news of welcoming a new contributor to our documentation community! Please join us in extending a warm welcome to [Cynthia Peter](https://github.com/CynthiaPeter)! Cynthia is eager to enhance her technical writing skills and contribute to the growth of the AsyncAPI documentation.
 
 To start her journey, Cynthia will be working on her first task, which involves completing the [*AsyncAPI Docs Style Guide* Glossary task](https://github.com/asyncapi/website/issues/1294). Once she successfully completes this task, we will swiftly onboard her with a Spec 3.0-related assignment. We are excited to see her skills flourish and her valuable contributions to the documentation.
 
