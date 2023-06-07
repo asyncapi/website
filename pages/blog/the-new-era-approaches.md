@@ -6,7 +6,7 @@ tags:
   - Specification
   - Announcement
   - Release
-cover: /img/posts/async-api-spec-3.0-update.webp
+cover: /img/posts/the-new-era-approaches.webp
 authors:
   - name: Jonas Lagoni 
     photo: /img/avatars/jonaslagoni.webp
@@ -15,16 +15,14 @@ excerpt: "An update around AsyncAPI 3.0, where we are, what is remaining, releas
 featured: true
 ---
 
-Back in [March 2022](https://www.asyncapi.com/blog/async-api-spec-3.0-release), you heard the first official words around AsyncAPI 3.0, since then a lot of people have been working diligently across many expertise's to bring it to life. And with it's current state, it's finally time to give an update on the progress.
+Back in [March 2022](https://www.asyncapi.com/blog/async-api-spec-3.0-release), you heard the first official words around AsyncAPI 3.0, since then a lot of people have been working diligently across many expertise to bring it to life. And with its current state, it's finally time to give an update on the progress.
 
 ## Show me the money!
-I am not going to give any lengthy description of features, fixes and changes done to the spec up until this point in time, I will instead just show you the money as a teaser :wink:
+We are not going to give any lengthy description of features, fixes, and changes, instead, I will just show you the money as a teaser :wink:
 
-Below is an AsyncAPI v3 document that defines how you, a public application, can interact my Smartylighting Streetlights system, where you can turn on a specific streetlight through WebSocket, and get real-time information about environmental lighting conditions through Kafka.
+Below is an AsyncAPI v3 document that defines how you, a public application, can interact with my Smartylighting Streetlights system, where you can turn on a specific streetlight through WebSocket, and get real-time information about environmental lighting conditions through Kafka.
 
-As of the pre-release `v3.0.0-next-major-spec.12`, this is a valid AsyncAPI document. You can always find the most recent pre-release version here: https://www.asyncapi.com/docs/reference
-
-This example is not the full capabilities of 3.0, but only a fraction of what you can do in the upcoming version.
+See how many features you can spot just from this example, some changes are not present within the example, but I tried to cramp as many of the changes into it as possible. Below the example, there is a short list of changes that you can fact-check your guess with.
 
 ```yml
 asyncapi: "3.0.0"
@@ -188,18 +186,32 @@ components:
         kafka:
           clientId: public
 ```
+As of the pre-release `v3.0.0-next-major-spec.12`, this is a valid AsyncAPI document. You can always find the most recent pre-release version here: https://www.asyncapi.com/docs/reference
 
-In due time we will give you a complete rundown about all the changes in 3.0, as well as extended documentation that explains the features more in depth. This of course also includes migration guide.
+All the changes in 3.0 up until now are the following:
 
-## Remaining effort
+- Request/reply pattern
+- Introduce the new Channel Object, detached from operations
+- Introduce the new Operation object, detached from channels
+- Channels are no longer identified with address/topic/path.
+- Optional channels
+- Schemas and schema formats are now naturally bound
+- Cleaned up the root object
+- Added additional meta fields for Server Object, Channel Object, Operation Object, and Operation Trait Object,
+- External Documentation Object and Tag Object can now be reused and referenced.
+- Unified referencing behavior
 
-The specification work is nearly done, very few tasks remaining there.
+In due time we will give you a complete rundown about all the changes in 3.0, as well as extended documentation that explains the features in more in-depth, including a migration guide and release blog post.
 
-However, at AsyncAPI, a specification is nothing if there are no tools available to work with it. Thats why the remaining effort are mainly resolving around documentation and tooling. 
+## The Remaining Effort
 
-For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another.
+The specification work is nearly done, only one change is still being discussed which is changing traits behavior to an inheritance that can be overwritten.
 
-When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has specific priorities. So if you want to see a tool support 3.0, please do head over to the issue and voice the need, add a :thumbsup: or write a comment, maybe even contribute the needed changes! 
+However, at AsyncAPI, a specification is nothing without documentation and tools, which is why the majority of the remaining effort resolves just that.
+
+For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another. Some more 
+
+When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has specific priorities. So if you want a tool to support 3.0 right out the gate, please do head over to the issue and voice the need, add a :thumbsup:, write a comment, or maybe even contribute the needed changes! 
 
 - [AsyncAPI CLI](https://github.com/asyncapi/cli/issues/629)
 - [AsyncAPI bundler](https://github.com/asyncapi/bundler/issues/133)
@@ -224,16 +236,19 @@ When it comes to tooling, it's impossible to give you a clear overview of what e
 - [AsyncAPI markdown-template](https://github.com/asyncapi/markdown-template/issues/341)
 - [AsyncAPI html-template](https://github.com/asyncapi/html-template/issues/430)
 
-The only tools I can say for sure that will support 3.0 right out the gate are the JS parser and the specification JSON Schema documents, well because they need to be updated for any specification change :laughing:
-## Release date
+The only tools we can say for sure that will support 3.0 right out the gate are the JS parser and the specification JSON Schema documents because they need to be updated for any specification change to be accepted :laughing:
 
-The big question... When is the release then?
+## Release Date
 
-Honestly, we tried to stick with a release date, and more specifically, we thought the July release period (yes, next month :laughing:). However as you can probably guess with the remaining work, thats most likely not going to happen. As we are learning, major changes take time, and schedules in Open source is, hard, to say the least :smile: 
+That leaves the big question... When is the release then?
 
-While all the spec changes, are most likely done by July, my best guess, right now, is for everything to be released in September.
+Honestly, we tried to stick with a release date, and more specifically, we thought the July release period (yes, next month). However as you can probably guess with the remaining work, that's most likely not going to happen. As we are learning, major changes take time, and schedules in open source are, hard, to say the least :smile: 
 
-The more people that helps, the faster it gets done :wink:
+While all the specification changes are most likely done by July, my best guess, right now, is for everything to be released in September.
+
+The more people that help, the faster it gets done :wink:
+
+The next time you will hear from me is going to be the release blog post for 3.0 :wave:
 
 > Photo by <a href="https://unsplash.com/fr/@timmarshall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tim Marshall</a> on <a href="https://unsplash.com/photos/mWqE5OD15wk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
