@@ -199,7 +199,7 @@ However, at AsyncAPI, a specification is nothing if there are no tools available
 
 For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another.
 
-When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has specific priorities. So if you want to see a tool support 3.0, please do head over to the issue and voice the need, add a :thumbs_up: or write a comment, maybe even contribute the needed changes! 
+When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has specific priorities. So if you want to see a tool support 3.0, please do head over to the issue and voice the need, add a :thumbsup: or write a comment, maybe even contribute the needed changes! 
 
 - [AsyncAPI CLI](https://github.com/asyncapi/cli/issues/629)
 - [AsyncAPI bundler](https://github.com/asyncapi/bundler/issues/133)
@@ -225,7 +225,6 @@ When it comes to tooling, it's impossible to give you a clear overview of what e
 - [AsyncAPI html-template](https://github.com/asyncapi/html-template/issues/430)
 
 The only tools I can say for sure that will support 3.0 right out the gate are the JS parser and the specification JSON Schema documents, well because they need to be updated for any specification change :laughing:
-
 ## Release date
 
 The big question... When is the release then?
