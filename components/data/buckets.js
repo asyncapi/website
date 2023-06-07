@@ -25,15 +25,6 @@ export const buckets = [
     Icon: IconTutorials,
   },
   {
-    name: 'tools',
-    title: 'Tools',
-    description: 'Our Tools section documents the AsyncAPI tools ecosystem.',
-    link: '/docs/tools',
-    className: 'bg-green-200',
-    borderClassName: 'border-green-200',
-    Icon: IconUseCases,
-  },
-  {
     name: 'guides',
     title: 'Guides',
     description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
@@ -43,13 +34,13 @@ export const buckets = [
     Icon: IconGuide,
   },
   {
-    name: 'community',
-    title: 'Community',
-    description: 'Our Community section documents the community guidelines and resources.',
-    link: '/docs/community',
-    className: 'bg-orange-200',
-    borderClassName: 'border-orange-200',
-    Icon: IconUsers,
+    name: 'tools',
+    title: 'Tools',
+    description: 'Our Tools section documents the AsyncAPI tools ecosystem.',
+    link: '/docs/tools',
+    className: 'bg-green-200',
+    borderClassName: 'border-green-200',
+    Icon: IconUseCases,
   },
   {
     name: 'reference',
@@ -59,6 +50,15 @@ export const buckets = [
     className: 'bg-yellow-200',
     borderClassName: 'border-yellow-200',
     Icon: IconSpec,
+  },
+    {
+    name: 'community',
+    title: 'Community',
+    description: 'Our Community section documents the community guidelines and resources.',
+    link: '/docs/community',
+    className: 'bg-orange-200',
+    borderClassName: 'border-orange-200',
+    Icon: IconUsers,
   },
 ].map(bucket => {
   // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc. 
