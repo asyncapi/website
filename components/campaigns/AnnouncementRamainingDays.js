@@ -17,7 +17,7 @@ export default function AnnouncementRemainingDays({ dateTime, eventName }) {
   }
 
   return (
-    <span className="font-extrabold countdown-text-gradient block">
+    <span className="font-extrabold countdown-text-gradient block" data-cy="span-text">
       {text} until {eventName}
     </span>
   )

@@ -28,10 +28,10 @@ describe('AnnouncementRemainingDays', () => {
       }
     }
 
-    cy.get('span').should('have.text', `${text} until ${eventName}`);
+    cy.get('[data-cy="span-text"]').should('have.text', `${text} until ${eventName}`);
 
     //check class font-extrabold 
-    cy.get('span').should('have.class', 'font-extrabold');
+    cy.get('[data-cy="span-text"]').should('have.class', 'font-extrabold');
   });
 });
 

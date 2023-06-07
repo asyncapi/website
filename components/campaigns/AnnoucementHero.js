@@ -29,11 +29,13 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
           small ? 'mb-4' : 'mb-12'
         }`}
+        data-cy = "container-div"
       >
         <Heading
           className="countdown-text-gradient"
           level="h2"
           typeStyle="heading-lg"
+        
         >
           AsyncAPI Conf on Tour 2023
         </Heading>
@@ -41,10 +43,10 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           className="countdown-text-gradient"
           level="h3"
           typeStyle="heading-sm"
-        >
+          data-cy="sub-heading "     >
           Madrid Edition
         </Heading>
-        <Paragraph typeStyle="body-lg">
+        <Paragraph typeStyle="body-lg" >
           October, 2023 | Madrid, Spain
         </Paragraph>
         <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end for Call for Speakers." />
@@ -53,6 +55,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
             href="https://sessionize.com/aacot-madrid/"
             target="_blank"
             text="Submit a session"
+            data-cy="submit-session"
           />
         </div>
       </div>

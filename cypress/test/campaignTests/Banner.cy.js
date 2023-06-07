@@ -11,12 +11,12 @@ describe('Banner Component', () => {
 
     if (year > 2022 || month !== 10 || day < 6) {
       mount(<Banner />);
-      cy.get('.bg-gray-100').should('not.exist');
+      cy.get('[data-cy="main-div-banner"]').should('not.exist');
  
     } else {
       mount(<Banner />);
  
-     cy.get('.bg-gray-100').should('be.visible');
+      cy.get('[data-cy="main-div-banner"]').should('be.visible');
     
     }
   });
@@ -29,6 +29,8 @@ describe('Banner Component', () => {
 
     if (year > 2022 || month !== 10 || day < 6) {
       mount(<Banner />);
+
+      //checking css class that font is medium or not 
       cy.contains('.font-medium', 'AsyncAPI Conference 2022 has ended').should('not.exist');
     } else {
       mount(<Banner />);
@@ -46,14 +48,14 @@ describe('Banner Component', () => {
     if (year === 2022 && month === 10 && day >= 6) {
       mount(<Banner />);
      
-      cy.get('a')
+      cy.get('[data-cy="linkTorecordings"]')
         .should('have.attr', 'href', 'https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl')
         .should('have.attr', 'target', '_blank')
         .should('have.attr', 'rel', 'noopener noreferrer');
     } else {
       mount(<Banner />);
    
-      cy.get('a').should('not.exist');
+      cy.get('[data-cy="linkTorecordings"]').should('not.exist');
     }
   });
 
@@ -67,7 +69,10 @@ describe('Banner Component', () => {
 
     if (year === 2022 && month === 10 && day >= 6) {
       mount(<Banner />);
+
+      //check for max-w-screen-xl class, since it is an imp check
       cy.get('.max-w-screen-xl').should('exist');
+     
     } else {
       mount(<Banner />);
       cy.get('.max-w-screen-xl').should('not.exist');
