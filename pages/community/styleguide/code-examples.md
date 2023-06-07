@@ -3,8 +3,6 @@ title: Code examples
 weight: 20
 ---
 
-
-
 Code examples added must be straightforward enough to understand for all audiences and include line-by-line comments.
 
 Add practical code examples adhering to industry standards, as users may copy and run the sample code in production. Be sure to include comments with warnings on what may occur when running that code. Make no assumptions about the reader's familiarity with libraries, frameworks, preprocessors, or other non-native features.
