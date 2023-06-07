@@ -209,7 +209,7 @@ The specification work is nearly done, only one change is still being discussed 
 
 However, at AsyncAPI, a specification is nothing without documentation and tools, which is why the majority of the remaining effort resolves just that.
 
-For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another. Some more 
+For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another.  
 
 When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has their own priorities. So if you want a tool to support 3.0 right out the gate, please do head over to the issue and voice the need, add a :thumbsup:, write a comment, or maybe even contribute the needed changes! 
 
