@@ -1,5 +1,6 @@
 ---
 title: Code examples
+description : This guide illustrates the standards for adding examples of code in the documentation.
 weight: 20
 ---
 
