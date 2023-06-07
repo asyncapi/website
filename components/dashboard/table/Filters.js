@@ -5,6 +5,7 @@ import Select from '../../form/Select';
 /**
  * Hook that alerts clicks outside of the passed ref
  */
+
 function useOutsideAlerter(ref, setOpen) {
   useEffect(() => {
     /**
@@ -38,6 +39,7 @@ export default function Filters({
     placement: 'left-start',
     open,
   });
+  
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setOpen);
   const areas = allIssues.map((issue) => issue.area);
@@ -61,7 +63,7 @@ export default function Filters({
         src="/img/illustrations/icons/filters-icon.svg"
         className={`cursor-pointer ${className}`}
       />
-      <div ref={wrapperRef}>
+      <div ref={wrapperRef} data-cy="filter-wrapper">
         {open && (
           <div
             ref={floating}
@@ -70,6 +72,7 @@ export default function Filters({
               top: y ?? '',
               left: x ?? '',
             }}
+            data-cy="filter-menu"
           >
             <div className="bg-white w-96 shadow-xl rounded">
               <div className="flex p-4">

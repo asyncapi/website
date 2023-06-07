@@ -34,12 +34,13 @@ function GoodFirstIssues({ issues }) {
           <GoodFirstIssuesTip />
           <Filters
             className="ml-auto"
+            data-testid="filterComponent"
             issues={filteredIssues}
             allIssues={issues}
             setSelectedRepo={setSelectedRepo}
             setSelectedArea={setSelectedArea}
             selectedArea={selectedArea}
-            selectedRepo={selectedRepo}
+            selectedRepo={selectedRepo}   
           />
         </div>
       }

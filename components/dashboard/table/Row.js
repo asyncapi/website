@@ -24,11 +24,11 @@ export default function Row({ item }) {
                 </a>
               </div>
 
-              <span className="text-base font-medium text-gray-900 w-full leading-5 two-liner">
+              <span className="text-base font-medium text-gray-900 w-full leading-5 two-liner" data-testid="row">
                 {item.title}
               </span>
 
-              {item.labels.length > 0 && (
+              {item.labels && item.labels.length > 0 && (
                 <div className="flex flex-wrap items-center gap-1">
                   {item.labels.map((label) => (
                     <span
