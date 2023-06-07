@@ -16,7 +16,9 @@
     "generate:tools": "node scripts/build-tools.js",
     "test": "echo \"No tests configured yet\"",
     "release": "echo \"No release to npm for this project\"",
-    "build:tsc-members": "node scripts/build-tsc-members.js"
+    "build:tsc-members": "node scripts/build-tsc-members.js",
+    "cypress": "cypress open",
+    "cypress-run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -59,6 +61,7 @@
     "clsx": "^1.1.1",
     "cssnano": "^5.1.12",
     "dotenv": "^8.2.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "fuse.js": "^6.6.2",
     "googleapis": "^100.0.0",
     "gray-matter": "^4.0.2",
@@ -97,7 +100,10 @@
     "yaml": "^2.3.1"
   },
   "devDependencies": {
+    "@cypress/react": "^7.0.3",
     "@netlify/functions": "^1.4.0",
+    "@netlify/plugin-nextjs": "^4.37.2",
+    "cypress": "^10.11.0",
     "dedent": "^0.7.0",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.20.0",
