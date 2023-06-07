@@ -23,8 +23,7 @@ describe('Row component', () => {
     cy.get('a').should('have.attr', 'href', 'https://github.com/asyncapi');
 
     // Assert the content within the component
-    //cy.get('.flex > .flex-col > .flex > .gap-1 > .text-gray-900') // Updated selector
-      //.should('have.text', 'asyncapi');
+   
     cy.get('.text-base').should('have.text', 'Example Issue');
    cy.get('.flex-wrap > :nth-child(1)').should('have.text', 'bug');
     cy.get('.flex-wrap > :nth-child(2)').should('have.text', 'feature');
@@ -34,8 +33,8 @@ describe('Row component', () => {
     mount(<Row item={item} />);
 
     // Assert that the link opens in a new tab
-    cy.get('a').should('have.attr', 'target', '_blank');
-    cy.get('a').should('have.attr', 'rel', 'noreferrer');
+    cy.get('[data-testid="github-redirect"]').should('have.attr', 'target', '_blank');
+    cy.get('[data-testid="github-redirect"]').should('have.attr', 'rel', 'noreferrer');
   });
 
   it('renders the correct icon based on isPR prop', () => {
@@ -43,12 +42,12 @@ describe('Row component', () => {
     mount(<Row item={item} />);
 
     // Assert that the correct icon is rendered for a PR
-    cy.get('img[alt="issue or pull-request icon"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
+    cy.get('[data-testid="img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
 
     item.isPR = false;
     mount(<Row item={item} />);
 
     // Assert that the correct icon is rendered for an issue
-    cy.get('img[alt="issue or pull-request icon"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
+    cy.get('[data-testid="img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
   });
 });

@@ -24,10 +24,10 @@ describe('Filters', () => {
     );
 
     // Click on the filter icon to open the menu
-    cy.get('img[alt="filter menu"]').click();
+    cy.get('[data-testid="img-cont"]').click();
 
     // Verify that the menu is displayed
-    cy.get('div[data-cy="filter-menu"]').should('be.visible');
+    cy.get('div[data-testid="filter-menu"]').should('be.visible');
 
     // Verify the heading "Filter Issues"
     cy.contains('h4', 'Filter Issues').should('be.visible');
@@ -37,7 +37,7 @@ describe('Filters', () => {
     cy.contains('BY AREA').should('be.visible');
 
     // Verify that the menu is closed
-    cy.get('div[data-cy="filter-menu"]').should('exist');
+    cy.get('div[data-testid="filter-menu"]').should('exist');
 
   });
 });

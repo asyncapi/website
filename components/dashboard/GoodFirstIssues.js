@@ -29,7 +29,7 @@ function GoodFirstIssues({ issues }) {
   return (
     <Table
       title={
-        <div className="flex gap-3">
+        <div className="flex gap-3" data-testid="main-div">
           <span>Good First Issues</span>
           <GoodFirstIssuesTip />
           <Filters

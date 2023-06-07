@@ -14,12 +14,13 @@ export default function Row({ item }) {
                       ? '/img/illustrations/icons/pull-request.svg'
                       : '/img/illustrations/icons/issue.svg'
                   }
+                  data-testid="img-issue"
                 />
                 <a
                   target='_blank' rel='noreferrer'
                   className="text-gray-900 text-sm lowercase font-light"
                   href={`https://github.com/${item.repo}`}
-                >
+                  data-testid="github-redirect"> 
                   {item.repo}
                 </a>
               </div>
@@ -28,7 +29,7 @@ export default function Row({ item }) {
                 {item.title}
               </span>
 
-              {item.labels && item.labels.length > 0 && (
+              {item.labels && item?.labels?.length > 0 && (
                 <div className="flex flex-wrap items-center gap-1">
                   {item.labels.map((label) => (
                     <span

@@ -62,8 +62,10 @@ export default function Filters({
         alt='filter menu'
         src="/img/illustrations/icons/filters-icon.svg"
         className={`cursor-pointer ${className}`}
+        data-testid="img-cont"
       />
-      <div ref={wrapperRef} data-cy="filter-wrapper">
+        
+        <div ref={wrapperRef} data-testid="filter-wrapper">
         {open && (
           <div
             ref={floating}
@@ -72,7 +74,7 @@ export default function Filters({
               top: y ?? '',
               left: x ?? '',
             }}
-            data-cy="filter-menu"
+            data-testid="filter-menu"
           >
             <div className="bg-white w-96 shadow-xl rounded">
               <div className="flex p-4">

@@ -9,6 +9,7 @@ export default function Table({
   return (
     <div
       className={`bg-gray-50 lg:w-1/2 border  border-gray-200 rounded ${className}`}
+     
     >
       <div className="inline-flex bg-white w-full p-5 rounded">
         <h2 className="font-semibold text-base w-full">{title}</h2>
