@@ -211,20 +211,20 @@ However, at AsyncAPI, a specification is nothing without documentation and tools
 
 For documentation, you have probably noticed that since the first release of 2.0, we now have concepts, tutorials, and guides, and almost all is going to change for 3.0 in some way or another. Some more 
 
-When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has specific priorities. So if you want a tool to support 3.0 right out the gate, please do head over to the issue and voice the need, add a :thumbsup:, write a comment, or maybe even contribute the needed changes! 
+When it comes to tooling, it's impossible to give you a clear overview of what exactly will support 3.0 right out the gate, because there are many different code owners and contributors that each has their own priorities. So if you want a tool to support 3.0 right out the gate, please do head over to the issue and voice the need, add a :thumbsup:, write a comment, or maybe even contribute the needed changes! 
 
 - [AsyncAPI CLI](https://github.com/asyncapi/cli/issues/629)
+- [AsyncAPI asyncapi-react](https://github.com/asyncapi/asyncapi-react/issues/733)
+- [AsyncAPI generator](https://github.com/asyncapi/generator/issues/979)
+- [AsyncAPI studio](https://github.com/asyncapi/studio/issues/641)
+- [AsyncAPI converter-js](https://github.com/asyncapi/converter-js/issues/110)
+- [AsyncAPI vs-asyncapi-preview](https://github.com/asyncapi/vs-asyncapi-preview/issues/181)
 - [AsyncAPI bundler](https://github.com/asyncapi/bundler/issues/133)
 - [AsyncAPI diff](https://github.com/asyncapi/diff/issues/154)
 - [AsyncAPI cupid](https://github.com/asyncapi/cupid/issues/171)
-- [AsyncAPI studio](https://github.com/asyncapi/studio/issues/641)
-- [AsyncAPI vs-asyncapi-preview](https://github.com/asyncapi/vs-asyncapi-preview/issues/181)
 - [AsyncAPI glee](https://github.com/asyncapi/glee/issues/457)
-- [AsyncAPI converter-js](https://github.com/asyncapi/converter-js/issues/110)
 - [AsyncAPI server-api](https://github.com/asyncapi/server-api/issues/294)
 - [AsyncAPI modelina](https://github.com/asyncapi/modelina/issues/1376)
-- [AsyncAPI asyncapi-react](https://github.com/asyncapi/asyncapi-react/issues/733)
-- [AsyncAPI generator](https://github.com/asyncapi/generator/issues/979)
 - [AsyncAPI dotnet-nats-template](https://github.com/asyncapi/dotnet-nats-template/issues/384)
 - [AsyncAPI ts-nats-template](https://github.com/asyncapi/ts-nats-template/issues/545)
 - [AsyncAPI python-paho-template](https://github.com/asyncapi/python-paho-template/issues/189)
@@ -237,6 +237,8 @@ When it comes to tooling, it's impossible to give you a clear overview of what e
 - [AsyncAPI html-template](https://github.com/asyncapi/html-template/issues/430)
 
 The only tools we can say for sure that will support 3.0 right out the gate are the JS parser and the specification JSON Schema documents because they need to be updated for any specification change to be accepted :laughing:
+
+At the moment we are discussing using a set of tasks as the release date, so when are completed, we release it, [you can checkout this proposal here](https://github.com/asyncapi/spec/issues/944).
 
 ## Release Date
 
