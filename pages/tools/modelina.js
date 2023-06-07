@@ -1,194 +1,14 @@
 import GenericLayout from '../../components/layout/GenericLayout'
 import React, { useRef, useState } from 'react'
-import Select from '../../components/form/Select'
 import CodeBlock from '../../components/editor/CodeBlock'
-import Tabs from '../../components/tabs/Tabs'
-import modelinaLanguageOptions from '../../config/modelina-language-options.json'
 import GithubButton from '../../components/buttons/GithubButton'
 import Button from '../../components/buttons/Button'
 import IconRocket from '../../components/icons/Rocket'
-import MonacoEditorWrapper from '../../components/editor/MonacoEditorWrapper'
-import {parse} from '@asyncapi/parser'
-import TypeScriptOptions from '../../components/modelina/TypeScriptGenerator'
-import JavaOptions from '../../components/modelina/JavaGenerator'
-import JavaScriptOptions from '../../components/modelina/JavaScriptGenerator'
-import GoOptions from '../../components/modelina/GoGenerator'
-import CSharpOptions from '../../components/modelina/CSharpGenerator'
 import Heading from '../../components/typography/Heading'
 import Paragraph from '../../components/typography/Paragraph'
 
-class ModelinaPlayground extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      input: JSON.stringify(playgroundAsyncAPIDocument, null, 4),
-      codeblockModels: [], 
-      generatorCode: '', 
-      rawGeneratorCode: '',
-      generator: undefined,
-      generatorOptions: undefined, 
-      language: 'java',
-      loaded: false,
-    }
-
-    this.generateOutput = this.generateOutput.bind(this)
-    this.onGeneratorChange = this.onGeneratorChange.bind(this)
-    this.setNewLanguageOptions = this.setNewLanguageOptions.bind(this)
-  }
-
-  componentDidMount(){
-    this.setNewLanguageOptions(this.state.language)
-  }
-
-  async generateOutput() {
-    try {
-      const parsedInput = await parse(this.state.input, {path: './'}) 
-      //generator.generate(input, {processorOptions: {asyncapi: {path: './'}}}).then((models) => {
-      const models = await this.state.generator.generate(parsedInput)
-      const newCodeblockModels = [] 
-      for (const model of models) {
-        newCodeblockModels.push({
-          language: this.state.language,
-          title: model.modelName,
-          code: `${model.dependencies.join('\n')}\n\n${model.result}`.trim(),
-        });
-      }
-      const newGeneratorCode = `${this.state.rawGeneratorCode}
-
-// const input = ...AsyncAPI document
-const models = await generator.generate(input)`
-      this.setState({...this.state, codeblockModels: newCodeblockModels, generatorCode: newGeneratorCode})
-      this.props.onError(undefined)
-    } catch(e){
-      console.log(e)
-      this.props.onError(e)
-    }
-  }
-
-  async onGeneratorChange({generator, generatorCode: rawGeneratorCode}){
-    this.setState({...this.state, generator, rawGeneratorCode})
-    await this.generateOutput()
-  }
-
-  setNewLanguageOptions(newLanguage){
-    let generatorOptions
-    if(newLanguage === 'typescript'){
-      generatorOptions = <TypeScriptOptions key={"typescript"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
-    } else if(newLanguage === 'javascript'){
-      generatorOptions = <JavaScriptOptions key={"javascript"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
-    } else if(newLanguage === 'go'){
-      generatorOptions = <GoOptions key={"go"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
-    } else if(newLanguage === 'csharp'){
-      generatorOptions = <CSharpOptions key={"csharp"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
-    } else if(newLanguage === 'java'){
-      generatorOptions = <JavaOptions key={"java"} onGeneratorChange={this.onGeneratorChange} onInit={this.onGeneratorChange}/>
-    }
-    this.setState({...this.state, generatorOptions: generatorOptions, language: newLanguage})
-  }
-
-  render() {
-    const { loaded, generatorOptions } = this.state;
-
-    const tabs = [
-      {
-        id: 'AsyncAPI Document',
-        content: (
-          <div className="h-full bg-code-editor-dark text-white px-4 rounded-b shadow-lg">
-            <MonacoEditorWrapper
-              value={this.state.input}
-              onChange={(_,change) => {
-                this.setState({ input: change });
-                this.generateOutput();
-              }}
-              editorDidMount={() => {
-                this.setState({ loaded: true });
-              }}
-              language="yaml"
-            />
-          </div>
-        )
-      },
-      {
-        id: 'Generator Code',
-        content: (
-          <CodeBlock
-            textSizeClassName="text-sm"
-            className="shadow-lg h-full w-full rounded-t-none"
-            highlightClassName="h-full"
-            codeBlocks={[{
-              language:'js',
-              title: 'Generator code',
-              code: this.state.generatorCode || ''
-            }]}
-          />
-        )
-      },
-      {
-        id: 'Options',
-        content: (
-          <div className="h-full bg-code-editor-dark text-white px-4 rounded-b shadow-lg font-bold">
-            {generatorOptions}
-          </div>
-        )
-      },
-    ];
-
-    return (
-      <div className="relative">            
-        {!loaded && (
-          <div className="mt-12 text-2xl absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-            Loading Modelina Playground. Please wait...
-          </div>
-        )}
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 ${loaded ? '' : 'invisible'}`}>
-          <div className="col-span-2 mb-4">
-            <div className="grid grid-cols-1 gap-4">
-              <div className="col-span-1 text-center">
-                <div>
-                  <div className="inline-flex items-center ml-6">
-                    <Paragraph typeStyle="body-md" className="mr-2">
-                      Select the desired language:
-                    </Paragraph>
-                    <Select
-                      options={modelinaLanguageOptions}
-                      selected={this.state.language}
-                      onChange={this.setNewLanguageOptions}
-                      className="shadow-outline-blue cursor-pointer"
-                    />
-                  </div>
-                  <Paragraph typeStyle="body-sm" className="underline mt-2 hover:text-secondary-500 transition duration-300 ease">
-                    <a href="https://github.com/asyncapi/modelina/issues/new?assignees=&labels=enhancement&template=enhancement.md" target="_blank" rel="noopener noreferrer">
-                      Missing a language? Please let us know!
-                    </a>
-                  </Paragraph>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-1">
-            <div className="h-full">
-              <Tabs tabs={tabs} className="h-full" />
-            </div>
-          </div>
-          <div className="col-span-1">
-            <CodeBlock
-              language="javascript"
-              textSizeClassName="text-sm"
-              className="shadow-lg w-full"
-              highlightClassName="h-half-screen"
-              codeBlocks={this.state.codeblockModels === undefined || this.state.codeblockModels.length === 0 ? [{code: ''}] : this.state.codeblockModels}
-            />
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
 export default function ModelinaPlaygroundPage() {
   const [error, setError] = useState();
-  const tryItOutRef = useRef(null);
-
   const description = 'Sometimes you just want to generate data models for your payload. Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents.';
   const image = '/img/social/modelina-card.jpg';
 
@@ -211,21 +31,6 @@ export default function ModelinaPlaygroundPage() {
         },
       ]}
     />
-  );
-
-  const playground = (
-    <div>
-      <div className="relative pt-16 pb-8 hidden lg:block">
-        <Heading level="h4" typeStyle="heading-md-semibold" className="text-center">
-          Try it now
-        </Heading>
-
-        <ModelinaPlayground onError={setError} />
-      </div>
-      <Paragraph className="text-center block lg:hidden mt-8 max-w-3xl mx-auto">
-        Modelina Playground works only on the desktop devices.
-      </Paragraph>
-    </div>
   );
 
   return (
@@ -255,30 +60,23 @@ export default function ModelinaPlaygroundPage() {
             </Paragraph>
             <div className="mt-8">
               <CodeBlock language="bash" showLineNumbers={false} className="mt-8" textSizeClassName="text-sm">npm install @asyncapi/modelina</CodeBlock>
-              <div className="mt-8">
+              <div className="flex gap-x-2 justify-center lg:justify-start">
                 <GithubButton
-                  className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto mt-8"
+                  className="block md:mt-0 md:inline-block mt-2"
                   href="https://www.github.com/asyncapi/modelina"
                 />
                 <Button 
-                  className="hidden mt-2 md:mt-0 lg:inline-block md:ml-2" 
+                  className="block md:mt-0 text-center md:inline-block mt-2 " 
                   text="Try it now"
                   icon={<IconRocket className="inline-block -mt-1 w-6 h-6" />}
-                  onClick={() => {
-                    const element = tryItOutRef.current;
-                    element && typeof element.scrollIntoView === 'function' && element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                />
+                  href="https://modelina.org/playground" target='blank'
+                      />
               </div>
             </div>
           </div>
           <div className="relative lg:mt-8">
             {tabs}
           </div>
-        </div>
-
-        <div ref={tryItOutRef}>
-          {playground}
         </div>
 
         {error && (
@@ -355,78 +153,3 @@ public class LightMeasured {
   }
 }`;
 
-const playgroundAsyncAPIDocument = {
-  "asyncapi": "2.3.0",
-  "info": {
-    "title": "Streetlights API",
-    "version": "1.0.0",
-    "description": "The Smartylighting Streetlights API allows you\nto remotely manage the city lights.\n",
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0"
-    }
-  },
-  "servers": {
-    "mosquitto": {
-      "url": "mqtt://test.mosquitto.org",
-      "protocol": "mqtt"
-    }
-  },
-  "channels": {
-    "light/measured": {
-      "publish": {
-        "summary": "Inform about environmental lighting conditions for a particular streetlight.",
-        "operationId": "onLightMeasured",
-        "message": {
-          "name": "LightMeasured",
-          "payload": {
-            "type": "object",
-            "$id": "LightMeasured",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Id of the streetlight."
-              },
-              "lumens": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Light intensity measured in lumens."
-              },
-              "sentAt": {
-                "type": "string",
-                "format": "date-time",
-                "description": "Date and time when the message was sent."
-              }
-            }
-          }
-        }
-      }
-    },
-    "turn/on": {
-      "subscribe": {
-        "summary": "Command a particular streetlight to turn the lights on or off.",
-        "operationId": "turnOn",
-        "message": {
-          "name": "TurnOn",
-          "payload": {
-            "type": "object",
-            "$id": "TurnOn",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Id of the streetlight."
-              },
-              "sentAt": {
-                "type": "string",
-                "format": "date-time",
-                "description": "Date and time when the message was sent."
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}

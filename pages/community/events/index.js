@@ -12,13 +12,14 @@ import Meeting from '../../../components/Meeting';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import TextLink from '../../../components/typography/TextLink';
 import meetings from '../../../config/meetings.json';
+import AnnouncementHero from '../../../components/campaigns/AnnoucementHero';
 
 
 import Paragraph from '../../../components/typography/Paragraph';
 import { getEvents } from '../../../lib/staticHelpers';
 
 function index() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community-events.webp';
   const [events, setEvents] = useState(getEvents(meetings));
 
   return (
@@ -26,10 +27,10 @@ function index() {
       title="AsyncAPI events"
       description="Our catalogs of events and meetups"
       image={image}
-      hideBanner={true}
       wide
     >
       <div className="mt-10 sm:mt-28">
+
         <div className="w-full sm:w-9/12">
           <h1 className="countdown-text-gradient font-semibold text-3xl lg:text-7xl leading-tight md:text-4xl">
             Join an AsyncAPI event from anywhere in the world.

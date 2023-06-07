@@ -5,7 +5,7 @@ import NewsroomSection from "../../components/newsroom/Newsroom"
 function Newsroom() {
     const description =
     "Learn about what's happening in AsyncAPI.";
-  const image = "/img/social/meetings.png";
+  const image = "/img/social/community-newsroom.webp";
   return (
     <GenericLayout
       title="AsyncAPI Newsroom"
