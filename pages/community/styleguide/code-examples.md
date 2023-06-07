@@ -20,8 +20,6 @@ Code examples should be self-explanatory and easy to understand. The goal is to 
 
 - For the sake of readability, break large lines at appropriate moments, but never at the price of acceptable practises.
 
-- Add bullet points for better readability and understandability.
-
 
 ### Colors
 Color plays an important role in syntax highlighting, making code samples easier to read and understand code. Use color in a consistent and accessible way to make code examples accessible to everyone.
