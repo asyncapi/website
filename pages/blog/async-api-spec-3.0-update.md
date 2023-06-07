@@ -191,7 +191,7 @@ components:
 
 In due time we will give you a complete rundown about all the changes in 3.0, as well as extended documentation that explains the features more in depth. This of course also includes migration guide.
 
-### Remaining effort
+## Remaining effort
 
 The specification work is nearly done, very few tasks remaining there.
 
@@ -226,7 +226,7 @@ When it comes to tooling, it's impossible to give you a clear overview of what e
 
 The only tools I can say for sure that will support 3.0 right out the gate are the JS parser and the specification JSON Schema documents, well because they need to be updated for any specification change :laughing:
 
-### Release date
+## Release date
 
 The big question... When is the release then?
 
