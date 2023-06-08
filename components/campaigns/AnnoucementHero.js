@@ -29,7 +29,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
           small ? 'mb-4' : 'mb-12'
         }`}
-        data-cy = "container-div"
+        data-testid = "container-div"
       >
         <Heading
           className="countdown-text-gradient"
@@ -43,7 +43,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           className="countdown-text-gradient"
           level="h3"
           typeStyle="heading-sm"
-          data-cy="sub-heading "     >
+          data-testid="sub-heading "     >
           Madrid Edition
         </Heading>
         <Paragraph typeStyle="body-lg" >
@@ -55,7 +55,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
             href="https://sessionize.com/aacot-madrid/"
             target="_blank"
             text="Submit a session"
-            data-cy="submit-session"
+            data-testid="submit-session"
           />
         </div>
       </div>

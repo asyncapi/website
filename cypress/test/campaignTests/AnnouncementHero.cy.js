@@ -23,7 +23,7 @@ describe('AnnouncementHero Component', () => {
     mount(<AnnouncementHero />);
 
     // Assert that the component is not rendered
-    cy.get('[data-cy="container-div"]').should('not.exist');
+    cy.get('[data-testid="container-div"]').should('not.exist');
   });
 
   it('should display the correct event information', () => {
@@ -33,9 +33,9 @@ describe('AnnouncementHero Component', () => {
     mount(<AnnouncementHero />);
 
     // Assert the event details
-    cy.get('[data-cy="container-div"]').contains( 'AsyncAPI Conf on Tour 2023').should('exist');
-    cy.get('[data-cy="container-div"]').contains( 'Madrid Edition').should('exist');
-    cy.get('[data-cy="container-div"]').contains('October, 2023 | Madrid, Spain').should('exist');
+    cy.get('[data-testid="container-div"]').contains( 'AsyncAPI Conf on Tour 2023').should('exist');
+    cy.get('[data-testid="container-div"]').contains( 'Madrid Edition').should('exist');
+    cy.get('[data-testid="container-div"]').contains('October, 2023 | Madrid, Spain').should('exist');
     cy.contains('Submit a session').should('exist');
   });
 
@@ -46,7 +46,7 @@ describe('AnnouncementHero Component', () => {
     mount(<AnnouncementHero />);
 
     // Assert the link
-    cy.get('[data-cy="submit-session"]')
+    cy.get('[data-testid="submit-session"]')
       .should('have.attr', 'href', 'https://sessionize.com/aacot-madrid/')
       .should('have.attr', 'target', '_blank')
       .contains('Submit a session');
@@ -60,7 +60,7 @@ describe('AnnouncementHero Component', () => {
 
     mount(<AnnouncementHero small />);
 
-    cy.get('[data-cy="container-div"]').should('have.class', 'mb-4');
+    cy.get('[data-testid="container-div"]').should('have.class', 'mb-4');
   });
 
   it('should render a large announcement when "small" prop is false', () => {
@@ -69,6 +69,6 @@ describe('AnnouncementHero Component', () => {
 
     mount(<AnnouncementHero small={false} />);
 
-    cy.get('[data-cy="container-div"]').should('have.class', 'mb-12');
+    cy.get('[data-testid="container-div"]').should('have.class', 'mb-12');
   });
 });

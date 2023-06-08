@@ -11,12 +11,12 @@ describe('Banner Component', () => {
 
     if (year > 2022 || month !== 10 || day < 6) {
       mount(<Banner />);
-      cy.get('[data-cy="main-div-banner"]').should('not.exist');
+      cy.get('[data-testid="main-div-banner"]').should('not.exist');
  
     } else {
       mount(<Banner />);
  
-      cy.get('[data-cy="main-div-banner"]').should('be.visible');
+      cy.get('[data-testid="main-div-banner"]').should('be.visible');
     
     }
   });
@@ -48,14 +48,14 @@ describe('Banner Component', () => {
     if (year === 2022 && month === 10 && day >= 6) {
       mount(<Banner />);
      
-      cy.get('[data-cy="linkTorecordings"]')
+      cy.get('[data-testid="linkTorecordings"]')
         .should('have.attr', 'href', 'https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl')
         .should('have.attr', 'target', '_blank')
         .should('have.attr', 'rel', 'noopener noreferrer');
     } else {
       mount(<Banner />);
    
-      cy.get('[data-cy="linkTorecordings"]').should('not.exist');
+      cy.get('[data-testid="linkTorecordings"]').should('not.exist');
     }
   });
 
