@@ -69,14 +69,16 @@ export default function Features() {
           Improving the current state of Event-Driven Architectures (EDA)
         </Paragraph>
         <div className="mt-12 text-left">
-          <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" data-testid="feature-ul">
             {features.map((feature) => (
-              <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8">
-                <div>
+              <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8" 
+              data-testid="feature-li">
+                <div >
                   <Heading 
                   level="h3"
                   typeStyle="heading-md-semibold"
                   className="mt-8"
+                 
                 >
                   {feature.name}
                 </Heading>
@@ -86,7 +88,7 @@ export default function Features() {
                     </Paragraph>
                   )}
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between" >
                   {feature.links.map((link) => {
                     return (
                       <Link href={link.href} key={link.label}>
