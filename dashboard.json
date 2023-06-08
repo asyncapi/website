@@ -9,7 +9,34 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.399617922442182
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.96374497869589
+    },
+    {
+      "id": "I_kwDOBGu-185CELGB",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Work on 3.0 release",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/spec/issues/691",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -45,17 +72,6 @@
           "color": "ededed"
         }
       ],
-      "score": 19.240697446200336
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
       "score": 19.240697446200336
     },
     {
@@ -115,6 +131,26 @@
       "score": 15.507427792459973
     },
     {
+      "id": "PR_kwDOBW5R_c5KIyGW",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: code-examples",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/website/pull/1349",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
+      "score": 15.220253203710714
+    },
+    {
       "id": "PR_kwDOCoBobc5I0WzT",
       "isPR": true,
       "isAssigned": false,
@@ -134,7 +170,7 @@
       "resourcePath": "/asyncapi/bindings/pull/193",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     },
     {
       "id": "MDU6SXNzdWU2MDYzODgzNzM=",
@@ -155,50 +191,9 @@
         }
       ],
       "score": 13.210031082465903
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 12.635681904967385
-    },
-    {
-      "id": "PR_kwDOFDnrNc5RUbi_",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: help command",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/cli/pull/593",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOE8Qh385nTcHt",
-      "title": "Add package name option for playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1352",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        }
-      ]
-    },
     {
       "id": "I_kwDOE8Qh385nTDiB",
       "title": "Add descriptions for options in playground",
@@ -234,25 +229,6 @@
         {
           "name": "website",
           "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385m6KFQ",
-      "title": "Add runtime testing for PHP",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1336",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "PHP generator",
-          "color": "20DC39"
         }
       ]
     },
