@@ -21,3 +21,4 @@ describe('HomeCards Component', () => {
     cy.get('.sample-class').should('exist');
   });
 });
+// note : props passed can be changed according to the user 

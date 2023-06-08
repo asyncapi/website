@@ -9,10 +9,10 @@ describe('Header Component', () => {
     cy.get('[data-testid="heading-1"]').should('exist');
     cy.get('[data-testid="heading-2"]').should('exist');
     cy.contains('AsyncAPI Discussions').should('exist');
-    cy.get('[data-testid="IconRocket"]').should('exist');
+
   });
 
-  it('displays the correct text in the Heading components and proper', () => {
+  it('displays the correct text in the Heading components and styles ', () => {
     mount(<Header />);
     cy.get('[data-testid="hero-heading"]').contains('AsyncAPI Community').should('have.class', 'font-bold');
     cy.get('[data-testid="heading-1"]').contains('Welcome to the AsyncAPI Community').should('have.class','title block md:-mt-1 leading-[3rem]');
@@ -25,6 +25,7 @@ describe('Header Component', () => {
     cy.contains('AsyncAPI Discussions')
       .should('have.attr', 'href', 'https://github.com/orgs/asyncapi/discussions')
       .and('have.attr', 'target', '_blank');
+      cy.get('[data-testid="IconRocket"]').should('exist');
 
   });
 });

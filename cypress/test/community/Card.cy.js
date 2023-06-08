@@ -23,6 +23,7 @@ describe('SmallHomeCards', () => {
         <SmallHomeCards {...props} />
  
     );
+    // Testing for small prop classes and styles
 
     cy.get('[data-testid="heading"]').contains('Heading').should('exist');
     cy.get('[data-testid="desc"]').contains('Description').should('exist');
@@ -50,7 +51,7 @@ describe('SmallHomeCards', () => {
     
     );
 
-    // Assertions
+    // Testing for large prop classes and styles
     cy.get('[data-testid="heading-lg"]').contains('Heading').should('exist');
     cy.get('[data-testid="desc-lg"]').contains('Description').should('exist');
     cy.get('[data-testid="heading-lg"]').should('have.class','mt-10');
@@ -59,3 +60,4 @@ describe('SmallHomeCards', () => {
     
   });
 });
+// note : props passed can be changed according to the user 
