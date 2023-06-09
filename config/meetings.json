@@ -6,12 +6,6 @@
     "date": "2023-03-01T16:00:00.000Z"
   },
   {
-    "title": "Triage of issues and PRs in website repo",
-    "calLink": "https://www.google.com/calendar/event?eid=bTV0bzl0YzAzMmtoa24yOWI3YmFvbW9ncHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/619",
-    "date": "2023-02-28T16:00:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=YTNvaDExZGQ0dmwzZmxsdTU2dHZ1OW5iZzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/624",
@@ -162,5 +156,26 @@
     "url": "https://github.com/asyncapi/community/issues/734",
     "banner": "",
     "date": "2023-06-07T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bXJoZ24wcG5jbzM3dTR2cGxuYnQxbHA0Y3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/737",
+    "banner": "",
+    "date": "2023-06-21T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bmZkbWxjNnZlb2tvYzRidWVsZTgyczR1MTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/738",
+    "banner": "https://user-images.githubusercontent.com/40604284/244367862-a1120d1c-4e71-4a8f-b291-857344f15a5f.png",
+    "date": "2023-06-13T16:00:00.000Z"
+  },
+  {
+    "title": "Let's talk about contributing Mentorship Program FAQ",
+    "calLink": "https://www.google.com/calendar/event?eid=N25kZjVhYjNyZ2oyZG5lam05bTJyMWR1NmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/739",
+    "banner": "https://user-images.githubusercontent.com/40604284/244369872-dc5b89e4-526f-4605-a09a-835e0bf93797.png",
+    "date": "2023-06-14T13:00:00.000Z"
   }
 ]
