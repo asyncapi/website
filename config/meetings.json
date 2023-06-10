@@ -1,12 +1,6 @@
 [
   {
     "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=M2swdGhkaG9mbmpndGZqNzQ1czY1cmd1YjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/599",
-    "date": "2023-03-01T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=YTNvaDExZGQ0dmwzZmxsdTU2dHZ1OW5iZzggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/624",
     "date": "2023-03-15T16:00:00.000Z"
@@ -177,5 +171,19 @@
     "url": "https://github.com/asyncapi/community/issues/739",
     "banner": "https://user-images.githubusercontent.com/40604284/244369872-dc5b89e4-526f-4605-a09a-835e0bf93797.png",
     "date": "2023-06-14T13:00:00.000Z"
+  },
+  {
+    "title": "Studio plans",
+    "calLink": "https://www.google.com/calendar/event?eid=Ym4ybG5nNnJrN2NjcnRjdXZ1MGIxMTlydm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/744",
+    "banner": "",
+    "date": "2023-06-05T10:00:00.000Z"
+  },
+  {
+    "title": "Studio planning",
+    "calLink": "https://www.google.com/calendar/event?eid=aGNmNDl0c2pzZGxoam5iNXBnY3RyczE5OTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/745",
+    "banner": "",
+    "date": "2023-06-15T10:00:00.000Z"
   }
 ]
