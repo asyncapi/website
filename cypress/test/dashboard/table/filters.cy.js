@@ -24,7 +24,7 @@ describe('Filters', () => {
     );
 
     // Click on the filter icon to open the menu
-    cy.get('[data-testid="img-cont"]').click();
+    cy.get('[data-testid="Filters-img-container"]').click();
 
     // Verify that the menu is displayed
     cy.get('div[data-testid="filter-menu"]').should('be.visible');

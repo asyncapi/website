@@ -14,7 +14,7 @@ describe('GoodFirstIssues Component', () => {
   it('renders the GoodFirstIssues component', () => {
     mount(<GoodFirstIssues issues={issues} />);
     // Assert that the component is rendered successfully
-    cy.get('[data-testid="main-div"]').should('exist');
+    cy.get('[data-testid="GoodFirstIssues-main-div"]').should('exist');
     cy.get(Table).should('exist');
   });
 

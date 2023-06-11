@@ -33,8 +33,8 @@ describe('Row component', () => {
     mount(<Row item={item} />);
 
     // Assert that the link opens in a new tab
-    cy.get('[data-testid="github-redirect"]').should('have.attr', 'target', '_blank');
-    cy.get('[data-testid="github-redirect"]').should('have.attr', 'rel', 'noreferrer');
+    cy.get('[data-testid="Row-github-redirect"]').should('have.attr', 'target', '_blank');
+    cy.get('[data-testid="Row-github-redirect"]').should('have.attr', 'rel', 'noreferrer');
   });
 
   it('renders the correct icon based on isPR prop', () => {
@@ -42,12 +42,12 @@ describe('Row component', () => {
     mount(<Row item={item} />);
 
     // Assert that the correct icon is rendered for a PR
-    cy.get('[data-testid="img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
+    cy.get('[data-testid="Row-img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
 
     item.isPR = false;
     mount(<Row item={item} />);
 
     // Assert that the correct icon is rendered for an issue
-    cy.get('[data-testid="img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
+    cy.get('[data-testid="Row-img-issue"]').should('have.attr', 'src', '/img/illustrations/icons/issue.svg');
   });
 });

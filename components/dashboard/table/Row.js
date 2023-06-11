@@ -14,13 +14,13 @@ export default function Row({ item }) {
                       ? '/img/illustrations/icons/pull-request.svg'
                       : '/img/illustrations/icons/issue.svg'
                   }
-                  data-testid="img-issue"
+                  data-testid="Row-img-issue"
                 />
                 <a
                   target='_blank' rel='noreferrer'
                   className="text-gray-900 text-sm lowercase font-light"
                   href={`https://github.com/${item.repo}`}
-                  data-testid="github-redirect"> 
+                  data-testid="Row-github-redirect"> 
                   {item.repo}
                 </a>
               </div>

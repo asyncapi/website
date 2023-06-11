@@ -15,7 +15,7 @@ export default function GoodFirstIssuesTip() {
         onMouseEnter={() => setOpen(true)}
         ref={reference}
         src="/img/illustrations/icons/tip-icon.svg"
-        data-testid="hover-icon"
+        data-testid="GoodFirstIssuesTip-hover-icon"
       />
 
       {open && (
@@ -27,7 +27,7 @@ export default function GoodFirstIssuesTip() {
             left: x ?? '',
           }}
         >
-          <div className="bg-white max-w-xs p-4 shadow-xl rounded" data-testid="main-div">
+          <div className="bg-white max-w-xs p-4 shadow-xl rounded">
             <h4 className="text-base font-bold mb-3 ">
               Is this your first contribution?
             </h4>

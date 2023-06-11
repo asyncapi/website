@@ -8,15 +8,15 @@ describe('GoodFirstIssuesTip', () => {
   });
 
   it('toggles the tip when hovering over the icon', () => {
-    cy.get('[data-testid="hover-icon"]').trigger('mouseenter');
+    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseenter');
   
 
-    cy.get('[data-testid="hover-icon"]').trigger('mouseleave');
+    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseleave');
 
   });
 
   it('renders the tip content with the correct text', () => {
-    cy.get('[data-testid="hover-icon"]').trigger('mouseenter');
+    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseenter');
    //checking for the available class here
     cy.get('.bg-white').should('have.css', 'visibility', 'visible');
 
