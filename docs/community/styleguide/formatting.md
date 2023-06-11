@@ -1,5 +1,5 @@
 ---
-title: Formatting style guide
+title: Formatting
 description: This guide illustrates the standards for formatting and writing our documentation.
 weight: 
 ---
