@@ -13,7 +13,7 @@ Notes and warning blocks are used to draw attention to important information. Us
 - Use short paragraphs or bullet points to convey the information.
 - Keep the language simple and direct.
 - Use an `>` in markdown to indicate the nature of the note or warning. 
-- Use the following Use the following syntax to apply a style. Currently our documenation supports **Remember** `<Remember>`:
+- Use the following syntax to apply a style. Currently our documenation supports **Remember** `<Remember>`:
   * Surround the text with an opening and closing tag.
   * Use the following syntax to apply a style:
   ` <Remember> 
@@ -42,10 +42,22 @@ Code blocks are used to display code examples or snippets.
   </CodeBlock>
   
 - Use code style for filenames, directories, and paths. For example: Go to the `/docs/tutorials` directory.
-- Use indentation to show the structure of the code.
+- Use a specific number of spaces for indentation, such as 2 or 4 spaces, consistently throughout the document.
+- Indent the code properly to show the structure and hierarchy of the code. Each level of indentation should align with the appropriate scope.
+- Avoid using tabs for indentation, as they may not render consistently across different platforms or text editors.
+For example, when writing code in Markdown, use four spaces for each level of indentation:
+```
+function myFunction() {
+    if (condition) {
+        console.log("Condition is true.");
+    } else {
+        console.log("Condition is false.");
+    }
+}
+```
 - Use single backticks to enclose inline code. For example, `asyncapi new --example=tutorial.yml --no-tty`
-- Remove trailing spaces in the code.
-- For yaml document, enclose with triple backticks and specify `yaml`. (```)
+- Remove any trailing spaces in the code. Trailing spaces can disrupt the readability and formatting of the code, so ensure they are removed.
+- Use triple backticks to enclose YAML code blocks. Specify the language as "yaml" within the backticks. This syntax is specifically for displaying code blocks that contain YAML content.
   * Use this syntax:
   ` ```yaml
   asyncapi: '2.5.0'
@@ -65,5 +77,10 @@ Code blocks are used to display code examples or snippets.
 
 Line spacing, or the amount of vertical space between lines of text in a paragraph, can aid or hinder reading. Adequate line spacing aids readers in navigating from the end of one line to the start of the next.
 
-- Use appropriate line spacing to make the content more readable. A single line spacing is usually sufficient for most cases.
+- Leave a blank line between paragraphs to visually separate them. This helps readers distinguish between different sections of content.
+- For headings and subheadings, leave a single blank line above and below them to provide clear visual separation.
+- Leave a single line spacing after bullet points or numbered lists to enhance readability.
 - Use consistent indentation to show the hierarchy of the content.
+- Indentation can be achieved with either 2 or 4 spaces, depending on your preference or the coding style guidelines of your project. Choose one and use it consistently throughout the document.
+- Use indentation to show nested content, such as code blocks, lists, or paragraphs within a list item.
+- Indent code blocks by an additional level of indentation to differentiate them from regular text.
