@@ -52,16 +52,16 @@ describe('DocsCards', () => {
 
 
   it('renders the correct number of cards', () => {
-    cy.get('[data-testid="main-div"] [data-testid="link"]').should('have.length', cards.length);
+    cy.get('[data-testid="Docs-main-div"] [data-testid="Docs-link"]').should('have.length', cards.length);
   });
   
   
    it('renders card titles and descriptions correctly', () => {
-    cy.get('[data-testid="main-div"] ').each(($card, index) => {
+    cy.get('[data-testid="Docs-main-div"] ').each(($card, index) => {
       const card = cards[index];
       cy.wrap($card).within(() => {
-        cy.get('[data-testid="div-contents"]').should('contain', card.title);
-        cy.get('[data-testid="div-contents"]').should('contain', card.description);
+        cy.get('[data-testid="Docs-div-contents"]').should('contain', card.title);
+        cy.get('[data-testid="Docs-div-contents"]').should('contain', card.description);
        
       });
     });
@@ -69,14 +69,14 @@ describe('DocsCards', () => {
   
 
   it('navigates to the correct link on card click', () => {
-    cy.get('[data-testid="main-div"]').each(($card) => {
-      cy.wrap($card).get('[data-testid="link"]').should('exist');
+    cy.get('[data-testid="Docs-main-div"]').each(($card) => {
+      cy.wrap($card).get('[data-testid="Docs-link"]').should('exist');
     });
   });
 
   it('renders each icon correctly', () => {
-    cy.get('[data-testid="main-div"] ').each(($card) => {
-      cy.wrap($card).get('[data-testid="icon"]').should('exist');
+    cy.get('[data-testid="Docs-main-div"] ').each(($card) => {
+      cy.wrap($card).get('[data-testid="Docs-icon"]').should('exist');
     });
   });
   
