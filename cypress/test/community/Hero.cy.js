@@ -12,18 +12,18 @@ describe('Hero Component', () => {
     cy.get('[data-testid="orbit-div"]').should('exist')
   })
   it('renders the first orbit with orbitData', () => {
-    cy.get('[data-testid="first"]').should('exist');
-    cy.get('[data-testid="firstimg"]').should('have.length', orbitData[0].length);
+    cy.get('[data-testid="Hero-first"]').should('exist');
+    cy.get('[data-testid="Hero-firstimg"]').should('have.length', orbitData[0].length);
   });
 
   it('renders the second orbit with orbitData', () => {
-    cy.get('[data-testid="second"]').should('exist');
-    cy.get('[data-testid="secondimg"]').should('have.length', orbitData[1].length);
+    cy.get('[data-testid="Hero-second"]').should('exist');
+    cy.get('[data-testid="Hero-secondimg"]').should('have.length', orbitData[1].length);
   });
 
   it('renders the third orbit with orbitData', () => {
-    cy.get('[data-testid="third"]').should('exist');
-    cy.get('[data-testid="thirdimg"]').should('have.length', orbitData[2].length);
+    cy.get('[data-testid="Hero-third"]').should('exist');
+    cy.get('[data-testid="Hero-thirdimg"]').should('have.length', orbitData[2].length);
   });
 
   

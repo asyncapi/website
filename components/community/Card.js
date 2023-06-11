@@ -15,12 +15,12 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
             <div className="p-2 rounded-xl bg-gray-100 text-center w-min text-xs flex justify-between">
               <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
             </div>
-            <div className="mt-3" data-testid="heading">
+            <div className="mt-3" data-testid="Card-heading">
               <Heading level="h1" typeStyle="heading-md">
                 {heading}
               </Heading>
             </div>
-            <div className="mt-2" data-testid="desc">
+            <div className="mt-2" data-testid="Card-desc">
               <Paragraph
                 textColor={bg ? 'text-black' : 'text-gray-600'}
                 typeStyle="body-sm"
@@ -28,7 +28,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
                 {description}
               </Paragraph>
             </div>
-            <div className="text-right w-full flex justify-end" data-testid="icon">
+            <div className="text-right w-full flex justify-end" data-testid="Card-icon">
               <IconArrowUp className="w-[20px]" />
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
         <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
       </div>
 
-      <div className="mt-10" data-testid="heading-lg">
+      <div className="mt-10" data-testid="Card-heading-lg">
         <Heading
           level="h1"
           typeStyle="heading-lg"
@@ -57,7 +57,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
           {heading}
         </Heading>
       </div>
-      <div className="mt-6" data-testid="desc-lg">
+      <div className="mt-6" data-testid="Card-desc-lg">
         <Paragraph textColor={bg && 'text-gray-400'}>{description}</Paragraph>
       </div>
       <div className="mt-10">

@@ -14,9 +14,9 @@ describe('HomeCards Component', () => {
     };
 
     mount(<HomeCards {...props} />);
-    cy.get('[data-testid="hero"]').should('exist');
-    cy.get('[data-testid="title"]').should('exist');
-    cy.get('[data-testid="button"]').should('exist');
+    cy.get('[data-testid="HomeCard-main"]').should('exist');
+    cy.get('[data-testid="HomeCard-title"]').should('exist');
+    cy.get('[data-testid="HomeCard-button"]').should('exist');
     cy.get(`[href="https://sample.com"]`).should('exist');
     cy.get('.sample-class').should('exist');
   });

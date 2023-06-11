@@ -6,7 +6,7 @@ export default function HomeCards({headline, title, description, btnText, link, 
   return (
     <div className="z-40 mt-20 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
       <div className="p-10 flex justify-between w-full md:w-2/5 h-auto flex-col text-center md:text-left">
-        <div  data-testid="hero">
+        <div  data-testid="HomeCard-main">
           <Heading
             level="h2"
             typeStyle="heading-md"
@@ -16,7 +16,7 @@ export default function HomeCards({headline, title, description, btnText, link, 
             {headline}
           </Heading>
         </div>
-        <div data-testid="title">
+        <div data-testid="HomeCard-title">
           <Heading level="h2" typeStyle="heading-lg" className="mt-10" >
             {title}
           </Heading>
@@ -28,7 +28,7 @@ export default function HomeCards({headline, title, description, btnText, link, 
           >
             {description}
           </Heading>
-          <div className="mt-10" data-testid="button">
+          <div className="mt-10" data-testid="HomeCard-button">
             <Button text={btnText} buttonSize="medium" href={link} />
           </div>
         </div>

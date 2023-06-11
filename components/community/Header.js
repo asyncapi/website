@@ -5,7 +5,7 @@ import Button from '../buttons/Button';
 
 export default function Header({className = ''}) {
   return (
-      <div className="text-center flex justify-center flex-col items-center mt-10 md:mt-0" data-testid="hero-heading">
+      <div className="text-center flex justify-center flex-col items-center mt-10 md:mt-0" data-testid="Header-hero-heading">
         <Heading
           className="countdown-text-gradient font-bold"
           level="h6"
@@ -13,7 +13,7 @@ export default function Header({className = ''}) {
         >
           AsyncAPI Community
         </Heading>
-        <div className="mt-10" data-testid="heading-1">
+        <div className="mt-10" data-testid="Header-heading-1">
           <Heading level="h1" typeStyle="heading-xl" className="">
             <span className="title block md:-mt-1 leading-[3rem]">
               Welcome to the
@@ -21,7 +21,7 @@ export default function Header({className = ''}) {
             </span>
           </Heading>
         </div>
-        <div className="mt-5 w-5/6" data-testid="heading-2">
+        <div className="mt-5 w-5/6" data-testid="Header-heading-2">
           <Heading
             level="h2"
             typeStyle="body-md"
@@ -40,8 +40,7 @@ export default function Header({className = ''}) {
             text="AsyncAPI Discussions"
             href="https://github.com/orgs/asyncapi/discussions"
             target="_blank"
-            icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" data-testid="IconRocket" />}
-            data-testid="linktodiscuss"
+            icon={<IconRocket className="w-5 h-5 -mb-1 ml-1" data-testid="Header-IconRocket" />}
           />
         </div>
       </div>
