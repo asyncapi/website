@@ -1,6 +1,6 @@
 ---
 title: Formatting style guide
-description: This style guide explains using correct formats when writing documentation.
+description: This guide illustrates the standards for formatting and writing our documentation.
 weight: 
 ---
 ## Documentation formatting
