@@ -1,7 +1,7 @@
 ---
 title: Formatting
 description: This guide illustrates the standards for formatting and writing our documentation.
-weight: 
+weight: 2
 ---
 ## Documentation formatting
 
@@ -14,15 +14,16 @@ Notes and warning blocks are used to draw attention to important information. Us
 - Keep the language simple and direct.
 - Use an `>` in markdown to indicate the nature of the note or warning. 
 - Use the following syntax to apply a style. Currently our documenation supports **Remember** `<Remember>`:
-  * Surround the text with an opening and closing tag.
+  * Surround the text you want to style with an opening <Remember> tag and a closing </Remember> tag.
+  * It is important to note that you don't need to include the word "Remember" within the tags. The tag itself automatically provides the necessary styling.
   * Use the following syntax to apply a style:
   ` <Remember> 
-  No need to add a prefix (Remember); the tag automatically provides one
+  No need to add a prefix; the tag automatically provides one
   </Remember>`
   
   The output: 
   <Remember> 
-  No need to add a prefix (Remember); the tag automatically provides one
+  No need to add a prefix; the tag automatically provides one
   </Remember>
 
 ## Code blocks
