@@ -25,7 +25,7 @@ Notes and warning blocks are used to draw attention to important information. Us
   No need to add a prefix (Remember); the tag automatically provides one
   </Remember>
 
-## Code Blocks
+## Code blocks
 
 Code blocks are used to display code examples or snippets. 
 
