@@ -4,7 +4,7 @@
   "description": "AsyncAPI website",
   "scripts": {
     "dev": "node scripts/index.js && next -p 3000",
-    "build": "node scripts/build-tsc-members.js && node scripts/index.js && next build",
+    "build": "node scripts/index.js && next build",
     "write:blog": "node ./scripts/compose.js",
     "start": "next start",
     "export": "next export",
