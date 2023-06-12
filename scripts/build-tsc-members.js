@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { convertToJson } = require("./utils");
 
-const inputFile = "config/tsc-members.yaml";
-const outputFile = "config/tsc-members.json";
+const inputFile = "config/Maintainers.yaml";
+const outputFile = "config/Maintainers.json";
 
 module.exports = async function buildTscMembers() {
   try {
@@ -18,9 +18,9 @@ module.exports = async function buildTscMembers() {
     await fs.promises.mkdir(outputFileDir, { recursive: true });
     await fs.promises.writeFile(outputFile, JSON.stringify(jsonData, null, 2));
 
-    console.log("TSC members list generated successfully.");
+    console.log("Maintainers list generated successfully.");
   } catch (error) {
-    console.error("Error generating TSC members list:", error);
+    console.error("Error generating Maintainers list:", error);
     throw error;
   }
 };
