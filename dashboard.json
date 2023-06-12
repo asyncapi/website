@@ -9,7 +9,34 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.68679251119144
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 20.96374497869589
+    },
+    {
+      "id": "I_kwDOBGu-185CELGB",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Work on 3.0 release",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/spec/issues/691",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 20.67657038994663
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -26,37 +53,6 @@
         }
       ],
       "score": 19.815046623698855
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 19.240697446200336
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 19.240697446200336
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -99,20 +95,24 @@
       "score": 17.517649913704783
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
+      "id": "PR_kwDOBW5R_c5KIyGW",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: code-examples",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/website/pull/1349",
+      "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
         }
       ],
-      "score": 15.507427792459973
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOCoBobc5I0WzT",
@@ -134,38 +134,7 @@
       "resourcePath": "/asyncapi/bindings/pull/193",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Improve overall performance of the website but especially Blog",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
-        }
-      ],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 12.635681904967385
+      "score": 14.358729437462937
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -176,15 +145,52 @@
       "resourcePath": "/asyncapi/cli/pull/593",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 12.348507316218127
+      "score": 13.497205671215161
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 12.922856493716644
+    },
+    {
+      "id": "PR_kwDOBGu-185BJZf7",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add info about breaking changes to contributing guide",
+      "author": "Dule-martins",
+      "resourcePath": "/asyncapi/spec/pull/854",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 11.48698354997035
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOE8Qh385nTcHt",
-      "title": "Add package name option for playground",
+      "id": "I_kwDOFLhIt85oSfWg",
+      "title": "As A user, the CI should prevent me schedule an adhoc meeting in the past",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1352",
+      "resourcePath": "/asyncapi/community/issues/746",
+      "repo": "asyncapi/community",
+      "author": "Amzani",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385oPFUl",
+      "title": "Add Java options to the playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1396",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
       "area": "Unknown",
@@ -192,6 +198,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "Java generator",
+          "color": "d4c5f9"
         },
         {
           "name": "website",
@@ -234,25 +244,6 @@
         {
           "name": "website",
           "color": "57A793"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385m6KFQ",
-      "title": "Add runtime testing for PHP",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1336",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "PHP generator",
-          "color": "20DC39"
         }
       ]
     },
@@ -354,21 +345,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385mYD76",
-      "title": "docs: add website setup commands in readme",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1299",
-      "repo": "asyncapi/modelina",
-      "author": "sambhavgupta0705",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -706,6 +682,10 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -905,48 +885,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU3OTEzNDUxNTI=",
-      "title": "Incorrect test case for Schema Object with additional keys",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/tck/issues/52",
-      "repo": "asyncapi/tck",
-      "author": "AgustinBettati",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU5NTI5MzE1MjY=",
-      "title": "Issues with the machine readable file for AsyncAPI 2.0.0",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/81",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     }
