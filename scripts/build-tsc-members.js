@@ -1,20 +1,26 @@
 const fs = require("fs");
+const path = require("path");
 const { convertToJson } = require("./utils");
 
-const inputFile = "config/Maintainers.yaml";
-const outputFile = "config/Maintainers.json";
+const inputFile = "config/tsc-members.yaml";
+const outputFile = "config/tsc-members.json";
 
-try {
-  // Read YAML file
-  const yamlData = fs.readFileSync(inputFile, "utf8");
+module.exports = async function buildTscMembers() {
+  try {
+    // Read YAML file
+    const yamlData = await fs.promises.readFile(inputFile, "utf8");
 
-  // Convert YAML to JSON
-  const jsonData = convertToJson(yamlData);
+    // Convert YAML to JSON
+    const jsonData = convertToJson(yamlData);
 
-  // Write JSON file
-  fs.writeFileSync(outputFile, JSON.stringify(jsonData, null, 2));
+    // Write JSON file
+    const outputFileDir = path.dirname(outputFile);
+    await fs.promises.mkdir(outputFileDir, { recursive: true });
+    await fs.promises.writeFile(outputFile, JSON.stringify(jsonData, null, 2));
 
-  console.log("YAML to JSON conversion completed successfully.");
-} catch (error) {
-  console.error("Error converting YAML to JSON:", error);
-}
+    console.log("TSC members list generated successfully.");
+  } catch (error) {
+    console.error("Error generating TSC members list:", error);
+    throw error;
+  }
+};
