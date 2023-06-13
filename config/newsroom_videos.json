@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/O4TQWBEaXy0/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (March 29th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/640.",
-    "videoId": "O4TQWBEaXy0"
+    "image_url": "https://i.ytimg.com/vi/52qqKE8jFlI/hqdefault.jpg",
+    "title": "Spec 3.0  (June 7th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/734.",
+    "videoId": "52qqKE8jFlI"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/tKYyL_DiLds/hqdefault.jpg",
-    "title": "Community Meeting (March 21th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/640.",
-    "videoId": "tKYyL_DiLds"
+    "image_url": "https://i.ytimg.com/vi/cIK6V28Rv3g/hqdefault.jpg",
+    "title": "Studio Vision &amp; Plans (June 5th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/728.",
+    "videoId": "cIK6V28Rv3g"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8Yjles2pEHo/hqdefault.jpg",
-    "title": "Adding support for non-JSON schemas (March 21th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/637.",
-    "videoId": "8Yjles2pEHo"
+    "image_url": "https://i.ytimg.com/vi/0X7wnn41Vho/hqdefault.jpg",
+    "title": "Community Meeting (May 30th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/715.",
+    "videoId": "0X7wnn41Vho"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/ECe592525p4/hqdefault.jpg",
-    "title": "Make Your GSoC Proposal Stand Out (March 20th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/639.",
-    "videoId": "ECe592525p4"
+    "image_url": "https://i.ytimg.com/vi/e0pQClU6QqU/hqdefault.jpg",
+    "title": "Spec 3.0 (May 24th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/714.",
+    "videoId": "e0pQClU6QqU"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/BiP-0zkXelw/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (March 15, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/624.",
-    "videoId": "BiP-0zkXelw"
+    "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
+    "title": "Community Health in Open-source",
+    "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
+    "videoId": "l9Tp5eMTol4"
   }
 ]

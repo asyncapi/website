@@ -17,13 +17,26 @@ import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import { getAllPosts } from '../../lib/api'
 import Link from 'next/link'
+import editOptions from '../../config/edit-page-config.json'
+
 
 function generateEditLink(post) {
-  if (post.slug.includes('/specifications/')) {
-    return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md`} className="ml-1 underline">Edit this page on GitHub</a>
-  } 
-  return <a target="_blank" rel="noopener noreferrer" href={`https://github.com/asyncapi/website/blob/master/pages${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">Edit this page on GitHub</a>
-}
+  let last=post.id.substring(post.id.lastIndexOf("/") + 1);
+  const target=editOptions.find(edit=>{ return post.slug.includes(edit.value)});
+  const editHref = target.href;
+  const hrefList = editHref.split('/');
+  const lastListElement = hrefList[hrefList.length - 1].split('.');
+  const isHrefToFile = lastListElement.length > 1;
+  const EditPage="Edit this page on GitHub"
+
+  if(target.value==""){
+    return <a target="_blank" rel="noopener noreferrer" href={`${target.href}${post.isIndex ? post.slug + '/index' : post.slug}.md`} className="ml-1 underline">{EditPage}</a>
+  }
+  if (isHrefToFile) last=""
+  return <a target="_blank" rel="noopener noreferrer" href={`${target.href}/${last}`} className="ml-1 underline">{EditPage}</a>
+  
+
+  }
 
 export default function DocsLayout({ post, navItems = {}, children }) {
   const posts = getAllPosts()
