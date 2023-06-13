@@ -55,6 +55,17 @@
       "score": 19.815046623698855
     },
     {
+      "id": "PR_kwDOE8Qh385SnNFz",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(website): add info for the general options",
+      "author": "SumantxD",
+      "resourcePath": "/asyncapi/modelina/pull/1398",
+      "repo": "asyncapi/modelina",
+      "labels": [],
+      "score": 19
+    },
+    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -148,26 +159,15 @@
       "score": 13.497205671215161
     },
     {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "PR_kwDOBGu-185BJZf7",
+      "id": "PR_kwDOE8Qh385SsTxJ",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: add info about breaking changes to contributing guide",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/spec/pull/854",
-      "repo": "asyncapi/spec",
+      "title": "chore: added java options to playground #1396",
+      "author": "SumantxD",
+      "resourcePath": "/asyncapi/modelina/pull/1400",
+      "repo": "asyncapi/modelina",
       "labels": [],
-      "score": 11.48698354997035
+      "score": 13
     }
   ],
   "goodFirstIssues": [
