@@ -1,0 +1,28 @@
+name: Validate Maintainers
+
+on:
+  pull_request:
+    paths:
+      - "Maintainers.yaml"
+    types:
+      - opened
+      - reopened
+      - edited
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check author of last commit in Maintainers.yaml
+        run: |
+          if [ "$(git log -1 --pretty=format:'%an' Maintainers.yaml)" != "asyncapi-bot" ]; then
+            echo "Error: Changes to Maintainers.yaml file must be made by the bot."
+            # Close the pull request using the GitHub REST API
+            curl -X PATCH -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} \
+              -d '{"state":"closed"}'
+            exit 1
+          fi
