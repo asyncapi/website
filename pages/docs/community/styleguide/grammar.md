@@ -4,6 +4,7 @@ description: This document provides grammar usage guidelines for clear and effec
 ---
 ## Grammar
 
+This style guide defines standards for AsyncAPI documentation for grammar across topics such as abbreviations and acronyms, active voice, capitalization, spelling, and verb tense. If you are a part of the AsyncAPI Slack, use the #13_docs channel for any queries. Please make sure to go through the style guide before contributing to AsyncAPI documentation.
 
 ## Abbreviations and Acronyms
 
