@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="mr-14 w-full md:w-auto">
             <div className="">
               <Link href="/">
-                <a className="cursor-pointer">
+                <a className="cursor-pointer" aria-label="AsyncAPI">
                   <AsyncAPILogoLight className="h-10 w-auto mt-3" />
                 </a>
               </Link>

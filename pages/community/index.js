@@ -11,13 +11,12 @@ import HomeCards from '../../components/community/HomeCard';
 import Card from '../../components/community/Card';
 
 function CommunityIndexPage() {
-  const image = '/img/social/website-card.png';
+  const image = '/img/social/community.webp';
   return (
     <GenericLayout
       title="AsyncAPI Community Meetings"
       description="The home for developer communities"
       image={image}
-      hideBanner={true}
       wide
     >
       <div className="md:hidden mt-15">
