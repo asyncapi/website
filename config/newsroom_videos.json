@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/_zdXm90KvF0/hqdefault.jpg",
+    "title": "Community Meeting, Tuesday June 13th 2023",
+    "description": "https://github.com/asyncapi/community/issues/738.",
+    "videoId": "_zdXm90KvF0"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/52qqKE8jFlI/hqdefault.jpg",
+    "title": "Spec 3.0  (June 7th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/734.",
+    "videoId": "52qqKE8jFlI"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/cIK6V28Rv3g/hqdefault.jpg",
     "title": "Studio Vision &amp; Plans (June 5th 2023)",
     "description": "https://github.com/asyncapi/community/issues/728.",
@@ -16,17 +28,5 @@
     "title": "Spec 3.0 (May 24th 2023)",
     "description": "https://github.com/asyncapi/community/issues/714.",
     "videoId": "e0pQClU6QqU"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
-    "title": "Community Health in Open-source",
-    "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
-    "videoId": "l9Tp5eMTol4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/4Zo59cOcFUw/hqdefault.jpg",
-    "title": "Community meeting (May 16th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/705.",
-    "videoId": "4Zo59cOcFUw"
   }
 ]
