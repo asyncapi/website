@@ -15,7 +15,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Check author of last commit in Maintainers.yaml
+      - name: Check last committer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           if [ "$(git log -1 --pretty=format:'%an' Maintainers.yaml)" != "asyncapi-bot" ]; then
             echo "Error: Changes to Maintainers.yaml file must be made by the bot."
