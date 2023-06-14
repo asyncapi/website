@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Check author of last commit in Maintainers.yaml
         run: |
           if [ "$(git log -1 --pretty=format:'%an' Maintainers.yaml)" != "asyncapi-bot" ]; then
