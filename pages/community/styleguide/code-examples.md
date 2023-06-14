@@ -14,7 +14,7 @@ Code examples should be self-explanatory and easy to understand. The goal is to 
 
 ## Formatting 
 
-### Code Length
+### Code length
 
 - Ideally, code lines shouldn't be so long that reading them horizontally requires scrolling.
 
@@ -29,7 +29,7 @@ Color plays an important role in syntax highlighting, making code samples easier
 - Test your code with color blindness simulators: There are many different types of color blindness, and it's important to ensure your code is readable for people with all types of color blindness. Use color blindness simulators to test how your code appears to users with different types of color blindness.
 
 
-### Spacing and Indentation
+### Spacing and indentation
 
 - Put the characters for the open-brace ("") on the same line as the sentence that opens the block.
 
