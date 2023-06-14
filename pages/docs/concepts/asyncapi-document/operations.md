@@ -3,7 +3,7 @@ title: Operations
 weight: 60
 ---
 
-## Meaning of Operations
+## Operations Meaning
 
 - In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. 
 
@@ -13,7 +13,7 @@ weight: 60
 
 - The purpose of these operations is to provide a standardized means for describing the process of publishing, subscribing to, requesting, or replying to messages within the messaging system.
 
-## Steps for Adding Operations
+## Steps to Add Operations
 
 For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. The step-by-step guide on how to add operations to an AsyncAPI document is as follows - 
 
@@ -27,7 +27,8 @@ For adding operations to an AsyncAPI document, we need to define them within the
 
 - For each operation, define its details using the appropriate keywords and properties. These details include the operation type, payload schema, headers, bindings, and other relevant information.
 
-## Types of Operations 
+
+## Operations Types
 
 The operations of the AsyncAPI document are divided into the following different categories based on the purpose they serve -
 
@@ -41,3 +42,30 @@ The operations of the AsyncAPI document are divided into the following different
 
 - <b> Publish-Subscribe: </b> With the publishSubscribe operation, messages published to a channel are distributed to multiple subscribers in a publish-subscribe pattern. Messages can be broadcast to a number of consumers interested in a particular topic or event at the same time.
 
+
+```mermaid
+flowchart TD
+style A fill:#E5EE8C, stroke:#333, stroke-width:2px;
+style E fill:#F3A06A, stroke:#333, stroke-width:2px;
+style C fill:#CBF399, stroke:#333, stroke-width:2px;
+style D fill:#F5B5EF, stroke:#333, stroke-width:2px;
+style B fill:#DAB5F5, stroke:#333, stroke-width:2px;
+style F fill:#DE68F5, stroke:#333, stroke-width:2px; 
+style G fill:#9197F3, stroke:#333, stroke-width:2px;
+style H fill:#91F3E0, stroke:#333, stroke-width:2px;
+style I fill:#F7A24C, stroke:#333, stroke-width:2px;
+style J fill:#F568A8, stroke:#333, stroke-width:2px;
+    A[Publishing] -->|Messages| B[Specific Channels]
+    B --> C{Consumers}
+    C --> D[Components]
+    E[Subscribing] -->|Messages| B
+    F[Request-Reply] -->|Request| G[Server]
+    G -->|Response| F
+    H[Request] -->|Request| G
+    I[Publish-Subscribe] -->|Messages| B
+    I --> J{Consumers}
+    J --> D
+
+ classDef labelStyle color:#000000;
+    class A,B,C,D,E,F,G,H,I,J labelStyle;
+```
