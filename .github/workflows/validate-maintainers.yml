@@ -1,3 +1,4 @@
+name: Validate Maintainers
 on:
   pull_request:
     paths:
