@@ -1,7 +1,7 @@
 import { mount } from '@cypress/react';
 import TextLink from '../../../components/typography/TextLink'
 describe('TextLink Component', () => {
-    it('renders a link with the provided props and content', () => {
+    it('renders a Textlink with the provided props and content', () => {
       const href = '/test';
       const className = 'custom-class';
       const target = '_blank';

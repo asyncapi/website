@@ -5,13 +5,13 @@ describe('Heading Component', () => {
       cy.mount(<Heading>Default Heading</Heading>);
     });
   
-    it('renders the heading with the default style', () => {
+    it('renders the heading with the  default props', () => {
       cy.get('h2').should('have.class', 'text-primary-800');
       cy.get('h2').should( 'have.class','font-heading text-heading-md font-bold tracking-heading md:text-heading-lg' );
       cy.get('h2').should('contain', 'Default Heading');
     });
   
-    it('renders the heading with custom style', () => {
+    it('renders the heading with custom props', () => {
       cy.mount(
         <Heading typeStyle="heading-sm-semibold" level="h3" textColor="text-red-500">
           Heading with custom styles
