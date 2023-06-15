@@ -15,7 +15,7 @@ export default function RoadmapItem({
   const connectorClasses = 'border-l-2 border-dashed border-gray-300'
   const classNames = `pt-2 ${showConnector && connectorClasses}`
   return (
-    <li className={classNames}>
+    <li className={classNames} data-testid="RoadmapItem-list">
       <div className="flex">
         { showConnector && (
           <div className="flex flex-col justify-center">
