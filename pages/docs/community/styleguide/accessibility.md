@@ -43,4 +43,4 @@ At AsyncAPI, we strive to make our documentation/content inclusive, accessible, 
 
 ## Colors
 - It is important to choose color contrasts that ensure user-readability.
-- Diagrams and images must always [follow and respect the accessibility rules](https://webaim.org/resources/contrastchecker/).
+- Diagrams and images must always follow and respect [color contrast accessibility rules](https://webaim.org/resources/contrastchecker/).
