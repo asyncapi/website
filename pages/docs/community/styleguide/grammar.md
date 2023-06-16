@@ -4,7 +4,7 @@ description: This document provides grammar usage guidelines for clear and effec
 ---
 ## Grammar
 
-This style guide defines standards for AsyncAPI documentation for grammar across topics such as abbreviations and acronyms, active voice, capitalization, spelling, and verb tense. 
+This document defines grammar standards for AsyncAPI documentation across abbreviations and acronyms, active voice, capitalization, spelling, and verb tense. 
 
 ## Abbreviations and acronyms
 
