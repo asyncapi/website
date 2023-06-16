@@ -23,7 +23,7 @@ At AsyncAPI, we strive to make our documentation/content inclusive, accessible, 
 - Structure your text in a uniform format by maintaining consistent structure throughout your docs. Accurately provide clear and concise descriptions of AsyncAPI concepts and elements as referenced throughout the documentation. 
 
 ### Links
-- Use descriptive and meaningful link text. For example, do not use phrases like *click here* or *follow this link* instead use *see*.
+- Use descriptive and meaningful link text. Avoid using phrases like *click here* or *follow this link*. Instead, opt for more specific and informative options like *read more about asynchronous API* or *view our content roadmap*.
 - Make sure your links or URLs are valid and redirect to the correct destination.
 - Use internal links when referring to a section within the same documentation. External links, on the other hand, should be utilized when referencing additional resources from different websites.
 - When using external links, ensure your referencing information is relevant to your documentation. If you're referring to external resources or documentation, please ensure they meet the appropriate standards for AsyncAPI.
