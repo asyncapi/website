@@ -44,7 +44,7 @@ Some examples of Gender Neutral Language are -
 - Using "People with a disability" instead of "Disabled people".
 - Using "Wheelchair Users" instead of "Wheelchair bound".
 - Using "People experiencing homelessness" instead of "Homeless people"
-- Avoid using derogatory terms that refer to people with disabilities like "crazy", "retarded", "lame".
+- Avoid using derogatory terms that refer to people with disabilities like "crazy", "retarded", and "lame".
 - Try using phrases like "overlook" or "ignore" instead of "turn a blind eye", or using "unheard" or "unnoticed" instead of saying "falling on deaf ears".
 
 ## 4. Slang free language 
