@@ -20,8 +20,7 @@ Some examples of Region Specific Language are -
 
 ## 2. Gender neutral language 
 
-Some phrases and words are targeting men or men/women specifically. This might result in other gender groups feeling 
-left out while reading our documentation. Using only male pronouns, can make women in technology feel left out. 
+Some phrases and words target men or men/women specifically, resulting in other gender groups feeling left out while reading our documentation. Using only male pronouns also make women in technology feel excluded or overlooked.
 Similarly, we should also try to include non binary group of people with our writing.
 Some examples of Gender Neutral Language are -
 - Using “they/them” instead of “his/him” or “she/her”.
