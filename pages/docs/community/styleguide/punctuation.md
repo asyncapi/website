@@ -5,7 +5,7 @@ Description: This style guide outlines the guideline for using punctuation in th
 
 # Punctuation
 
-Writing documentation helps us communicate indirectly with millions of people worldwide. Punctuation essential part for conveying meaning, clarity, and consistency in writing. To preserve industry standards and ensure uniformity among documents, it is important to stick to established style guides. 
+Writing documentation is important because it allows us to indirectly communicate with many people around the world. Punctuation is a crucial part of writing because it helps us to make our message clear and consistent. To make sure our documents follow the same standards and are consistent with others in the industry, it's important to use the style guides that have already been recognised.
 
 ## 1. Period (.)
 
