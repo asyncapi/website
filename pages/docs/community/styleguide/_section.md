@@ -1,4 +1,4 @@
 ---
 title: 'Styleguide'
-weight: 6
+weight: 5
 ---
