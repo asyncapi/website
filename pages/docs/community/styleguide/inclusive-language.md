@@ -72,7 +72,7 @@ Some examples include -
 
 While building the documentation, we should always assure that we don’t presume the knowledge level of the readers. 
 This is because if we assume that our readers are highly skilled or have advanced experience, 
-we might skip explaining or linking some important concepts. Also, we should avoid labeling some steps as “easy”, 
+we might inadvertently skip explaining or linking some important concepts. Also, we should avoid labeling some steps as “easy”, 
 because this might make some readers question their technical abilities.
 Some examples include -
 - Using “fixing the navbar is good to start with” instead of “fixing the navbar is very easy”.
