@@ -60,8 +60,7 @@ Some examples include -
 
 ## 5. Ageism free language   
 
-While constructing the documentation, we need to make sure to avoid words or phrases that might emphasize more 
-on a specific age group that can make the other age groups feel left out. 
+When constructing the documentation, avoiding words or phrases that may disproportionately emphasize a specific age group is important, making other age groups feel excluded.
 Some examples include -
 - Avoid mentioning the exact age like “60 years” old.
 - Using "experienced" instead of "old-timer"
