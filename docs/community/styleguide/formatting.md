@@ -15,7 +15,7 @@ Notes and warning blocks are used to draw attention to important information. Us
 - Use an `>` in markdown to indicate the nature of the note or warning. 
 - Use the following syntax to apply a style. Currently our documenation supports **Remember** `<Remember>`:
   * Surround the text you want to style with an opening <Remember> tag and a closing </Remember> tag.
-  * It is important to note that you don't need to include the word "Remember" within the tags. The tag itself automatically provides the necessary styling.
+  * Note that the word 'Remember' does not need to be included within the tags, as it automatically provides the necessary styling.
   * Use the following syntax to apply a style:
   ` <Remember> 
   No need to add a prefix; the tag automatically provides one
@@ -43,7 +43,7 @@ Code blocks are used to display code examples or snippets.
   </CodeBlock>
   
 - Use code style for filenames, directories, and paths. For example: Go to the `/docs/tutorials` directory.
-- Use a specific number of spaces for indentation, such as 2 or 4 spaces, consistently throughout the document.
+- Choose a consistent number of spaces for indentation, such as 2 or 4 spaces, and use it consistently throughout the document.
 - Indent the code properly to show the structure and hierarchy of the code. Each level of indentation should align with the appropriate scope.
 - Avoid using tabs for indentation, as they may not render consistently across different platforms or text editors.
 For example, when writing code in Markdown, use four spaces for each level of indentation:
