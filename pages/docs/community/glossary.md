@@ -14,13 +14,20 @@ The general definition of "Application Program Interface" can refer to different
 ## AsyncAPI
 AsyncAPI is an open specification that allows you to describe and document asynchronous APIs (Application Programming Interfaces). It focuses on the communication patterns and message-driven architectures commonly found in event-driven systems, such as message queues, publish-subscribe systems, and streaming platforms.
 
+<Remember>
+It is not asyncAPI or Async API.
+</Remember>
 
 ## AsyncAPI document
 An AsyncPI document is a file that defines and annotates the different components of a specific Event-Driven API.
 
+## AsyncAPI specification
+
 
 ## Bindings
 A "binding" (or "protocol binding") is a mechanism to define protocol-specific information. Therefore, a protocol binding MUST define protocol-specific information only.
+
+## CLI 
 
 
 ## Consumer
@@ -36,6 +43,10 @@ An event is a message that provides details of something that has already occurr
 
 An Event-Driven Architecture (EDA) uses events to trigger and communicate between services and is common in modern applications built with microservices.
 
+
+## Generator
+
+## Github Actions
 
 ## Identifier
 This field represents a unique universal identifier of the application the AsyncAPI document defines. It must conform to the URI format, according to RFC3986.
@@ -53,6 +64,9 @@ Microservices are a software architecture approach where applications are divide
 Modelina is a library for generating data models based on inputs such as AsyncAPI, OpenAPI, or JSON Schema documents.
 
 
+## Parsers 
+
+
 ## Producer
 A producer is an application that senses state changes (events) and publishes those events as messages. An event indicates a state change or update triggered by a user's/device's action.
 
@@ -67,39 +81,3 @@ The version of the protocol used for the connection.
 
 ## Studio
 Also known as the AsyncAPI studio is a tool that allows you to develop an AsyncAPI document, validate it, preview it, convert it to the latest version, and visualise event flows.
-
-
-
-
-<!---
-TODO: I need help deciding what these terms could be fit for and will appreciate any help or suggestions I can get.
-
-AsyncAPI specification
-AsyncAPI spec
-AsyncAPI file
-AsyncAPI specification file
-AsyncAPI instance
-AsyncAPI definition
-AsyncAPI contract
-
-Secondly, in writing AsyncAPI, are there any variants? like these:
-
--  asyncAPI
--  Async API
-
-I noticed that in different cases, it is spelt differently. Do we want to specify anything?
-
-Finally, I'll apprecite new words to be added. Thanks
-
--->
-
-
-
-
-
-
-
-
-
-
-
