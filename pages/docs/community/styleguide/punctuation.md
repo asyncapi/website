@@ -1,11 +1,11 @@
 ---
 title: Punctuation style guide
-Description: This style guide outlines the guideline for using punctuation in documentation.
+Description: This style guide outlines the guideline for using punctuation in the documentation.
 ---
 
 # Punctuation
 
-Writing documentation help us to communicate indirectly with millions of people worldwide. Punctuation is so important for conveying meaning, clarity, and consistency in writing. In order to preserve industry standards and ensure uniformity amongst papers, it is important to stick to established style guides. 
+Writing documentation helps us communicate indirectly with millions of people worldwide. Punctuation essential part for conveying meaning, clarity, and consistency in writing. To preserve industry standards and ensure uniformity among documents, it is important to stick to established style guides. 
 
 ## 1. Period (.)
 
@@ -35,7 +35,7 @@ Some examples include:
 Use a Colon to introduce a list, explanation, or an example.
 Some examples include:
 - "Please bring the following items: a pen, a notebook, and a calculator."
-- "There are three primary colors: red, blue, and yellow."
+- "There are three primary colours: red, blue, and yellow."
 
 ## 5. Dash (— or -)
 
@@ -53,7 +53,7 @@ Example:
 Use a Question mark at the end of a direct question.
 Some examples include:
 - "What time is the meeting?"
-- "What is your favorite movie?"
+- "What is your favourite movie?"
 
 ## 7. Exclamation Point (!)
 
