@@ -64,5 +64,5 @@ The present tense is more appropriate when speaking about facts.
 Future tense might be needed when referring to experiments or improvements that are yet to come.
 ‘We will incorporate user feedback to address any problems in the documentation.’
 
-Past tense is used while talking about events that have previously occurred:
+Past tense is used while talking about events that have previously occurred.
 ‘Tutorials were added to the documentation as an entry point for new users.’
