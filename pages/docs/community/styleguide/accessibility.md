@@ -39,7 +39,7 @@ At AsyncAPI, we strive to make our documentation/content inclusive, accessible, 
 ### User Interface (UI)
 - Use the correct terminologies for UI elements. Avoid using phrases like "*click here*" or "*this button*", and instead opt for descriptive labels such as "*next button*" or "*Go back*". This will allow users to understand the functionality of each UI element better.
 - Format tables correctly and keep the text within the grid. This involves using table headers and row/column headers. Make sure tables are user-friendly, easy to navigate, and understandable.
--  Add icons to describe a function. Use the aria-label attribute when unsure of the icon name. This attribute provides a text alternative to elements that lack accurate descriptions.
+-  Add icons to describe a function. Use the aria-label attribute when unsure of the icon name to provide a text alternative to elements that lack accurate descriptions.
 
 ## Colors
 - It is important to choose color contrasts that ensure user-readability.
