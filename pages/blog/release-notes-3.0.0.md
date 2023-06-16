@@ -16,11 +16,10 @@ featured: true
 
 The new version of the AsyncAPI specification - 3.0.0 - is now available and is packed with goodies! Some which clears up confusions, some adding features, others improving maintainability.
 
-To make the information as digestible as possible, we have split it up related information into different use-cases
+To make the information as digestible as possible, we have split it up related information into different digestible chunks.
 
-- If you want to get an overview of all the changes done in v3 - Read the [AsyncAPI 3.0.0 Release Notes](/blog/release-notes-3.0.0)
-- I want to get an overview of breaking changes, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](/)
-- I want to get an overview of tooling support - 
+- If you want to get an overview of all the changes done in v3 - Then you are in the right place! 
+- If you want to get an overview of all the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](https://deploy-preview-660--asyncapi-website.netlify.app/docs/migration/migrating-to-v3) 
 
 ## Overview
 This post will give you an overview of all the changes done in v3.
