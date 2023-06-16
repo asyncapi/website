@@ -7,7 +7,6 @@ Description: This style guide outlines the guideline for using punctuation in do
 
 Writing documentation help us to communicate indirectly with millions of people worldwide. Punctuation is so important for conveying meaning, clarity, and consistency in writing. In order to preserve industry standards and ensure uniformity amongst papers, it is important to stick to established style guides. 
 
-
 ## 1. Period (.)
 
 Use a Period to end a declarative sentence or a statement.
