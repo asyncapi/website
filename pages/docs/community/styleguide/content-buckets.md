@@ -29,4 +29,4 @@ At AsyncAPI, our docs are classified into the following content buckets:
 
 - **Guides** - In the guides section, individuals can learn how to troubleshoot AsyncAPI issues at a more advanced level. It provides various problem-solving techniques and knowledge enhancement.  
 
-- **Reference** - Here, you can find detailed technical information about the specification. It includes release notes, API, and internal documents that provide function definitions and parameter descriptions.
+- **Reference** - Here, you can find detailed technical information about the specification. It includes release notes, APIs, and internal documents that provide function definitions and parameter descriptions.
