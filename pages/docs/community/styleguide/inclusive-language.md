@@ -15,7 +15,7 @@ of the world might need help to relate to the same. Hence, we should try to avoi
 Some examples of Region Specific Language are -
 - “It’s not rocket science” is commonly used in the USA, and non-US people might not be able to relate to it properly.
 - Phrases written in regional languages instead of English.
-- “It’s not a piece of cake” is commonly used in the USA, and non-US people might not be able to relate to it properly.
+- “It’s a piece of cake” is commonly used in the USA, and non-US people might not be able to relate to it properly.
 - Terms like "gypsy" is considered derogatory in Romani community, "eskimo" is considered offensive in artic community.
 - Terms like "tipping point" is considered offensive in African American cultures.
 
