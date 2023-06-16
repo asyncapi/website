@@ -50,8 +50,7 @@ Some examples of Gender Neutral Language are -
 ## 4. Slang free language 
 
 While framing the documentation, we must ensure that we are not including any vulgar language even if those are 
-included indirectly in our work. Often we don’t realize that slang words are included within phrases which have 
-don’t have collaborative slang meanings. 
+included indirectly in our work. We should be mindful of inadvertently including slang words within phrases that may have unintended or inappropriate connotations.
 Some examples include -
 - Using “simple” or “easy" instead of “no-brainer”.
 - Using "simple" or "straightforward" instead of "easy-peasy".
