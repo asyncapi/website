@@ -4,13 +4,13 @@ description: This document provides grammar usage guidelines for clear and effec
 ---
 ## Grammar
 
-This style guide defines standards for AsyncAPI documentation for grammar across topics such as abbreviations and acronyms, active voice, capitalization, spelling, and verb tense. If you are a part of the AsyncAPI Slack, use the #13_docs channel for any queries. Please make sure to go through the style guide before contributing to AsyncAPI documentation.
+This document defines grammar standards for AsyncAPI documentation across abbreviations and acronyms, active voice, capitalization, spelling, and verb tense. 
 
 ## Abbreviations and acronyms
 
 When you use an abbreviation or acronym for the first time, spell it out and include the shortest form in parentheses. 
 
-Abbreviations are meant to be used to save the reader’s time. They make your documentation look clean. However, using abbreviations may come with some downsides. Abbreviations add a layer of abstraction to text, which requires the reader to spend some mental energy to expand. Thus, it is best to add abbreviations in case of words that have been repeatedly used throughout your document. Abbreviations or acronyms, once defined in a document, should be used consistently to ensure clarity and avoid confusion for readers.
+Abbreviations are meant to be used to save the reader’s time. They make your documentation look clean. However, using abbreviations may come with some downsides. Abbreviations add a layer of abstraction to text, which requires the reader to spend some mental energy to expand. Thus, it is best to add abbreviations in case of words that have been repeatedly used throughout your document. Once defined in a document, abbreviations or acronyms should be used consistently to ensure clarity and avoid confusion for readers
 
 Here are some examples of abbreviations:
 - ‘Event-driven architecture’ can be abbreviated as ‘EDA’.
@@ -61,7 +61,7 @@ Stick with the present tense wherever possible. However, in some cases, using th
 The present tense is more appropriate when speaking about facts.
 ‘An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.’
 
-Future tense might be needed when referring to experiments or improvements that are yet to come.
+The future tense might be needed when referring to future enhancements, experiments, or planned improvements.
 ‘We will incorporate user feedback to address any problems in the documentation.’
 
 Past tense is used while talking about events that have previously occurred.
