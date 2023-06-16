@@ -42,7 +42,7 @@ the assumption that people with disabilities are inferior to those without disab
 Some examples of Gender Neutral Language are -
 - Using “People with a mental health condition” instead of “Mentally Unstable People”.
 - Using “Deaf” instead of “Person with deafness”.
-- Using "People with a disability" instead of "Disabled eople".
+- Using "People with a disability" instead of "Disabled people".
 - Using "Wheelchair Users" instead of "Wheelchair bound".
 - Using "People experiencing homelessness" instead of "Homeless people"
 - Avoid using derogatory terms that refer to people with disabilities like "crazy", "retarded", "lame".
