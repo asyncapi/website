@@ -69,7 +69,7 @@ export default function Features() {
           Improving the current state of Event-Driven Architectures (EDA)
         </Paragraph>
         <div className="mt-12 text-left">
-          <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" data-testid="feature-ul">
+          <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" data-testid="Feature-ul">
             {features.map((feature) => (
               <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8" 
               data-testid="feature-li">

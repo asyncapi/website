@@ -6,9 +6,10 @@ import { buckets } from '../data/buckets';
 
 export function DocsCards() {
   return (
-    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2' data-testid="Docs-main-div">
+    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2' data-testid="Docs-main-div" >
       {buckets.map(card => (
         <Card key={card.title} {...card} />
+
       ))}
 
     </div>
