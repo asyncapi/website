@@ -49,38 +49,66 @@ The operations of the AsyncAPI document are divided into the following different
 
 - <b> Publishing: </b> In the publish operation, components are able to send messages to specific channels. This operation allows publishers to publish messages or events for consumption by other components.
 
+```mermaid
+flowchart TD
+style A fill:#E5EE8C,stroke:#333,stroke-width:2px
+style B fill:#CBF399,stroke:#333,stroke-width:2px
+style C fill:#F5B5EF,stroke:#333,stroke-width:2px
+style D fill:#F568A8,stroke:#333,stroke-width:2px
+    A[Components] -- Send messages --> B(Publish Operation)
+    B -- Messages/Events --> C[Specific Channels]
+    C --> D[Consumption by Other Components]
+ classDef labelStyle color:#000000;
+    class A,B,C,D,E,F,G,H,I,J labelStyle;
+```  
+
 - <b> Subscribing: </b> By using the subscribe operation, components are able to receive messages from a particular channel. The subscriber can use this operation to indicate whether they are interested in receiving messages from a particular channel.
-
-- <b> Request-Reply: </b> RequestReply establishes a pattern of request-response communication between components. The client can send a request message, and the server will respond with a corresponding reply message. Typically, this operation is used for synchronous communication in which the client anticipates a response from the server.
-
-- <b> Request: </b> A request operation allows components to submit a request message without requiring a response from the server. This is typically used in situations where the client does not need a direct response from the server, such as fire-and-forget or one-way communication.
-
-- <b> Publish-Subscribe: </b> With the publishSubscribe operation, messages published to a channel are distributed to multiple subscribers in a publish-subscribe pattern. Messages can be broadcast to a number of consumers interested in a particular topic or event at the same time.
-
 
 ```mermaid
 flowchart TD
-style A fill:#E5EE8C, stroke:#333, stroke-width:2px;
-style E fill:#F3A06A, stroke:#333, stroke-width:2px;
-style C fill:#CBF399, stroke:#333, stroke-width:2px;
-style D fill:#F5B5EF, stroke:#333, stroke-width:2px;
-style B fill:#DAB5F5, stroke:#333, stroke-width:2px;
-style F fill:#DE68F5, stroke:#333, stroke-width:2px; 
-style G fill:#9197F3, stroke:#333, stroke-width:2px;
-style H fill:#91F3E0, stroke:#333, stroke-width:2px;
-style I fill:#F7A24C, stroke:#333, stroke-width:2px;
-style J fill:#F568A8, stroke:#333, stroke-width:2px;
-    A[Publishing] -->|Messages| B[Specific Channels]
-    B --> C{Consumers}
-    C --> D[Components]
-    E[Subscribing] -->|Messages| B
-    F[Request-Reply] -->|Request| G[Server]
-    G -->|Response| F
-    H[Request] -->|Request| G
-    I[Publish-Subscribe] -->|Messages| B
-    I --> J{Consumers}
-    J --> D
-
- classDef labelStyle color:#000000;
+style A fill:#E5EE8C,stroke:#333,stroke-width:2px
+style B fill:#CBF399,stroke:#333,stroke-width:2px
+style C fill:#F5B5EF,stroke:#333,stroke-width:2px
+style D fill:#F568A8,stroke:#333,stroke-width:2px
+    A[Particular Channels] -- Messages --> B(Subscribe Operation)
+    B --> D[Indicate Interest in Receiving]
+    D -- Receive messages--> C[Components]
+classDef labelStyle color:#000000;
     class A,B,C,D,E,F,G,H,I,J labelStyle;
+```  
+
+- <b> Request-Reply: </b> RequestReply establishes a pattern of request-response communication between components. The client can send a request message, and the server will respond with a corresponding reply message. Typically, this operation is used for synchronous communication in which the client anticipates a response from the server.
+
+```mermaid
+flowchart TD
+style A fill:#E5EE8C,stroke:#333,stroke-width:2px
+style B fill:#F5B5EF,stroke:#333,stroke-width:2px    
+    A[Client] -- Request message --> B(Server)
+    B -- Reply message --> A
+classDef labelStyle color:#000000;
+    class A,B,C,D,E,F,G,H,I,J labelStyle;
+```
+
+- <b> Request: </b> A request operation allows components to submit a request message without requiring a response from the server. This is typically used in situations where the client does not need a direct response from the server, such as fire-and-forget or one-way communication.
+
+```mermaid
+flowchart TD
+style A fill:#CBF399,stroke:#333,stroke-width:2px
+style B fill:#F568A8,stroke:#333,stroke-width:2px
+    A[Client] -- Request message --> B[Server]
+classDef labelStyle color:#000000;
+    class A,B,C,D,E,F,G,H,I,J labelStyle;
+``` 
+
+- <b> Publish-Subscribe: </b> With the publishSubscribe operation, messages published to a channel are distributed to multiple subscribers in a publish-subscribe pattern. Messages can be broadcast to a number of consumers interested in a particular topic or event at the same time.
+
+```mermaid
+flowchart TD
+style A fill:#FFD700,stroke:#333,stroke-width:2px
+style B fill:#F3A06A,stroke:#333,stroke-width:2px
+style C fill:#3386FF,stroke:#333,stroke-width:2px
+    A(Publisher) -- Publish messages --> B[Channel]
+    B -- Messages --> C[Subscribers]
+    classDef labelStyle color:#000000;
+        class A,B,C,D,E,F,G,H,I,J labelStyle;
 ```
