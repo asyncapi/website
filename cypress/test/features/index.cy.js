@@ -1,67 +1,16 @@
 import React from 'react';
 import { mount } from 'cypress/react';
 import Features from '../../../components/features/index';
-const features = [
-    {
-      name: "Specification",
-      description:
-        "Allows you to define the interfaces of asynchronous APIs and is protocol agnostic.",
-      links: [{ label: "Documentation", href: "docs/specifications/latest", id:'whyasyncapi-spec-documentation-link' }],
-    },
-    {
-      name: "Document APIs",
-      description:
-        "Use our tools to generate documentation at the build level, on a server, and on a client.",
-      links: [
-        {
-          label: "HTML Template",
-          href: "https://github.com/asyncapi/html-template",
-          id:'whyasyncapi-apis-htmltemplate-link'
-        },
-        {
-          label: "React Component",
-          href: "https://github.com/asyncapi/asyncapi-react/",
-          id:'whyasyncapi-apis-reactcomponents-link'
-        },
-      ],
-    },
-    {
-      name: "Code Generation",
-      description:
-        "Generate documentation, Code (TypeScript, Java, C#, etc), and more out of your AsyncAPI files.",
-      links: [{ label: "Generator", href: "tools/generator", id:'whyasyncapi-generation-generator-link' }, { label: "Modelina", href: "tools/modelina", id:'whyasyncapi-generation-modelina-link' }],
-    },
-    {
-      name: "Community",
-      description: "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
-      links: [
-        { label: "Join our Slack", href: "https://asyncapi.com/slack-invite", id:'whyasyncapi-community-slack-link' },
-      ],
-    },
-    {
-      name: "Open Governance",
-      description:
-        "Our Open-Source project is part of Linux Foundation and works under an Open Governance model.",
-      links: [{ label: "Read more about Open Governance", href: "blog/governance-motivation", id:'whyasyncapi-governance-more-link' }, { label: "TSC Members", href: "community/tsc", id:'whyasyncapi-governance-tsc-link' }],
-    },
-    {
-      name: "And much more...",
-      description:
-        "We have many different tools and welcome you to explore our ideas and propose new ideas to AsyncAPI.",
-      links: [{ label: "View GitHub Discussions", href: "https://github.com/asyncapi/community/discussions", id:'whyasyncapi-muchmore-github-link' }],
-    },
-  ];
-  
-
+import { features } from '../../../components/features/FeatureList';
 describe('Features Component', () => {
   it('renders all features with their names, descriptions, and links', () => {
     mount(<Features />);
     
     //check number of features rendered is equal to features array
-    cy.get('[data-testid="feature-ul"] [data-testid="feature-li"]').should('have.length', features.length); // there are 6 features in the list
+    cy.get('[data-testid="Feature-ul"] [data-testid="Feature-li"]').should('have.length', features.length); // there are 6 features in the list
        
     features.forEach((feature, index) => {
-      cy.get('[data-testid="feature-ul"] [data-testid="feature-li"]').eq(index).as('feature');
+      cy.get('[data-testid="Feature-ul"] [data-testid="Feature-li"]').eq(index).as('feature');
 
       cy.get('@feature').within(() => {
         cy.get('h3').should('have.text', feature.name);
