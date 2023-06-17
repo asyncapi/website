@@ -37,7 +37,7 @@ export default function Banner({}) {
             </p>
           </div>
           <div className="flex">
-            <a data-testid="banner-link"
+            <a data-testid="Banner-link"
               href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50"
               target="_blank" rel="noopener noreferrer"
