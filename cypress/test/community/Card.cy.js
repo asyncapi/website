@@ -45,11 +45,7 @@ describe('SmallHomeCards', () => {
       link: '/path'
     };
 
-    mount(
-   
-        <SmallHomeCards {...props} />
-    
-    );
+    mount(<SmallHomeCards {...props} />);
 
     // Testing for large prop classes and styles
     cy.get('[data-testid="Card-heading-lg"]').contains('Heading').should('exist');
