@@ -10,7 +10,7 @@ describe('AnnouncementHero Component', () => {
     mount(<AnnouncementHero />);
     // Assert that the component is rendered 
     //check for background color 
-    cy.get('.bg-gray-50').should('exist');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class','bg-gray-50');
   });
 
   it('should not render the component when the date is outside the valid range', () => {
