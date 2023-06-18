@@ -25,7 +25,7 @@ export default function Row({ item }) {
                 </a>
               </div>
 
-              <span className="text-base font-medium text-gray-900 w-full leading-5 two-liner" data-testid="row">
+              <span className="text-base font-medium text-gray-900 w-full leading-5 two-liner" data-testid="Row-spanText">
                 {item.title}
               </span>
 

@@ -17,13 +17,13 @@ describe('Header', () => {
   });
 
   it('renders the header correctly', () => {
-    cy.get('[data-testid="header-heading"]').should('contain', 'Dashboard');
-    cy.get('[data-testid="header-paragraph-1"]').should(
+    cy.get('[data-testid="Header-heading"]').should('contain', 'Dashboard');
+    cy.get('[data-testid="Header-paragraph-1"]').should(
       'contain',
       'Visualize our progress. Get involved.'
     );
-    cy.get('[data-testid="github-button"]').should('exist');
-    cy.get('[data-testid="slack-button"]').should('exist');
+    cy.get('[data-testid="Github-button"]').should('exist');
+    cy.get('[data-testid="Slack-button"]').should('exist');
     cy.contains('Contribution Guide')
       .should('have.attr', 'href', 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi')
       .should('have.attr', 'target', '_blank');
