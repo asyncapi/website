@@ -74,7 +74,7 @@ export default function Filters({
               top: y ?? '',
               left: x ?? '',
             }}
-            data-testid="filter-menu">
+            data-testid="Filter-menu">
             <div className="bg-white w-96 shadow-xl rounded">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
