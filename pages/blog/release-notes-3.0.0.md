@@ -55,6 +55,9 @@ operations:
 
 Issues: [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | Pull request: [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
 
+### Message `oneOf` no longer
+
+
 ### Publish and subscribe confusion
 In v2, the `publish` and `subscribe` operation keywords has always been a subject of great confusion. Does it mean my application publishes to the channel? Does it mean you publish to me? Who are you in this context? 
 
