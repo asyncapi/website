@@ -109,7 +109,7 @@ You can also document some server **protocol-specific configurations** using fre
 
 Each channel represents one single broker topic, channel, or queue... where you are about to publish or subscribe to.
 
-Use table above to understand which section, publish or subscribe, you may want to use.
+Use the table above to understand which section, publish or subscribe, you may want to use.
 
 In a nutshell: 
 
