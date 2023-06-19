@@ -1,5 +1,5 @@
 ---
-title: API-First with AsyncAPI
+title: API-First with AsyncAPI and ZenWave SDK
 date: 2023-06-17T06:00:00+01:00
 type: Engineering
 tags:
