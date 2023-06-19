@@ -24,7 +24,7 @@ describe('Footer component', () => {
     cy.get('[data-testid=Footer-social-media-links] a').should('have.length', socialMediaLinks.length)
   })
 
-  it('displays correct social media link labels, URLs, and icons', () => {
+  it('displays correct social media link', () => {
     cy.get('[data-testid=Footer-social-media-links] a').each(($link, index) => {
       const { url } = socialMediaLinks[index]
       expect($link).to.have.attr('href', url)

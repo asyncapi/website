@@ -5,7 +5,7 @@ import NavBar from "../../components/navigation/NavBar";
 import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
 import BlogPostItem from "../../components/navigation/BlogPostItem";
-import Footer from '../components/footer/Footer'
+import Footer from "../../components/footer/Footer";
 import Head from "../../components/Head";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
