@@ -166,7 +166,7 @@ components:
 
 Operation Traits, Message Traits are an excellent way to reuse chunks of configuration between different operations or messages.
 
-For instance if various messages share some common headers, you can configure them as Message Traits:
+For instance, if various messages share some common headers, you can configure them as Message Traits:
 ```yml
 components:
   messages:
