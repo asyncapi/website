@@ -59,7 +59,7 @@ Some definitions:
 
 - SERVICE: An independent piece of software, typically a microservice, that provides a set of capabilities to other services.
 - PROVIDER: The service that implements the functionality of the API. It may be accepting asynchronous command requests or publishing business domain events.
-- CLIENT/s: The service/s that makes use of the functionality of the API. It may be requesting asynchronous commands or subscribing to business domain events.
+- CLIENT/s: The service/s that uses the API's functionality. It may be requesting asynchronous commands or subscribing to business domain events.
 - PRODUCER: A service that writes a given message.
 - CONSUMER: A service that reads a given message.
 
