@@ -346,7 +346,7 @@ Here's a code example of the components object in an AsyncAPI document:
   }
 }
 ```
-
+```mermaid
 graph LR
 A[components]
 B[schemas]
@@ -381,3 +381,4 @@ H -->|15| N
 I -->|16| C
 I -->|17| D
 E -->|18| F
+```
