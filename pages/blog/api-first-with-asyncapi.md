@@ -97,7 +97,7 @@ If you are familiar with OpenAPI, you may find useful the following image borrow
 
 ### Info
 
-Document your API: name, purpose, contact details, license...
+Document your API: name, purpose, contact details, and license...
 
 ### Servers
 
