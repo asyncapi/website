@@ -107,7 +107,7 @@ You can also document some server **protocol-specific configurations** using fre
 
 ### Channels: Publish / Subscribe
 
-Each channel represent one single broker topic, channel, queue... where you are about to publish or subscribe to.
+Each channel represents one single broker topic, channel, or queue... where you are about to publish or subscribe to.
 
 Use table above to understand which section, publish or subscribe, you may want to use.
 
