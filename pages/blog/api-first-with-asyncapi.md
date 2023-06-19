@@ -115,7 +115,7 @@ In a nutshell:
 
 > Providers publish events and subscribe to commands/queries/requests.
 
-If you still find confusing which is a provider and a client just use this rule: In a given messaging scenario, there can be only one provider of a message, while there can be multiple clients.. If the provider is producing messages, use the `publish` section. If the provider is consuming messages, use the `subscribe` section.
+If you still find it confusing which is a provider and a client, use this rule: In a given messaging scenario, there can be only one provider of a message, while there can be multiple clients. If the provider is producing messages, use the `publish` section. If the provider is consuming messages, use the `subscribe` section.
 
 ### Messages
 
