@@ -14,7 +14,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://www.linkedin.com/in/ivangarciasainzaja/
     byline: Software Architect at Sngular. Speaker. Building ZenWave 360º
-excerpt: 'With ZenWave SDK plugins you can generate strongly typed business interfaces, payload and header DTOs and several integration patterns like Transactional Outbox, DeadLetter Queue... from AsyncAPI definitions.'
+excerpt: 'With ZenWave SDK plugins, you can generate strongly typed business interfaces, payload and header DTOs and several integration patterns like Transactional Outbox, DeadLetter Queue... from AsyncAPI definitions.'
 ---
 
 ## API-First with AsyncAPI and ZenWave SDK
