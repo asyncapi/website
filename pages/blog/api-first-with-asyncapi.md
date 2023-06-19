@@ -85,7 +85,7 @@ There are two types of messages in a messaging system: events and commands. An e
 - **Event:** A message describing a change that has already happened.
 - **Command:** A message describing an operation that has to be carried out.
 
-Also, while there can be only one provider that produces a given event, but commands can be issued for one or many client producers.
+Also, while there can be only one provider that produces a given event, commands can be issued for one or many client producers.
 
 ## Understanding AsyncAPI Definition
 
