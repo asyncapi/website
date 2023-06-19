@@ -23,6 +23,6 @@ export default function Paragraph({
     }
 
     return (
-        <p className={`${textColor} ${classNames}`}>{children}</p>
+        <p data-testid="Paragraph-test" className={`${textColor} ${classNames}`}>{children}</p>
     )
 }
