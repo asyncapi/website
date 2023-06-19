@@ -115,7 +115,7 @@ On the producer side generates:
 - Interface `ICustomerEventsProducer` to produce typed messages that uses your domain names: `onCustomerEvent`, `CustomerEventPayload`, and `CustomerEventPayloadHeaders`.
 - Producer `@Component` `CustomerEventsProducer` to use autowire in your services.
 
-**In order to produce messages all you need to do is @Autowire the generated producer as part of your code.**
+**To produce messages, all you need to do is @Autowire the generated producer, as part of your code.**
 
 This producer component, because sits behind a business oriented interface, can be implemented in different flavors and integration patterns like transactional outbox (for mongodb and sql) or enterprise envelop depending on how you configure zenwave maven generator.
 
