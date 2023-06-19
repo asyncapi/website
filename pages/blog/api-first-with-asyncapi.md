@@ -80,7 +80,7 @@ If you still find confusing which one is a provider and a client just use this r
 
 ## Events, Commands, and Messages
 
-In a messaging system, there are two types of messages: events and commands. An event message describes a change that has already happened, while a command message describes an operation that needs to be carried out. In other words, events are used to notify subscribers about something that has already occurred, while commands are used to initiate an action or process.
+There are two types of messages in a messaging system: events and commands. An event message describes a change that has already happened, while a command message describes an operation that needs to be carried out. In other words, events are used to notify subscribers about something that has already occurred, while commands are used to initiate an action or process.
 
 - **Event:** A message describing a change that has already happened.
 - **Command:** A message describing an operation that has to be carried out.
