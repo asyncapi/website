@@ -218,7 +218,7 @@ An Event Notification **contains minimal information about the event** and enoug
 
 ### State Transfer Messages
 
-On the other hand a State Transfer message **contains the entire state of the aggregate** so consumer does not need to make additional calls. This can be useful in situations where subscribers need to maintain a synchronized view of the data. Compacted keyed topics typically use this style of messages.
+On the other hand, a State Transfer message **contains the entire state of the aggregate**, so a consumer does not need to make additional calls. This can be useful in situations where subscribers need to maintain a synchronized view of the data. Compacted keyed topics typically use this style of messages.
 
 ```json
 {
