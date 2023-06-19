@@ -76,7 +76,7 @@ Use the table to understand which section of AsyncAPI (publish or subscribe) to 
 If you still find confusing which one is a provider and a client just use this rule: it can be only one provider of a given message while clients of a given message there can be many:
 
 - If the provider is the producer, use publish section
-- If is the consumer use subscribe section.
+- If it is the consumer, use subscribe section.
 
 ## Events, Commands, and Messages
 
