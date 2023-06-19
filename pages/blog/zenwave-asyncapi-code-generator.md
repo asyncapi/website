@@ -233,7 +233,7 @@ class DoCustomerRequestConsumerService implements IDoCustomerRequestConsumerServ
 
 ### Exception Handling with Business Dead Letter Queue
 
-ZenWave SDK consumers can be configured to route exceptions to different error queues. This is useful to manage non-retryable business exceptions so the stream processing is not interrupted. If your code throws an exception not configured for error routing it will be rethrow and it will follow the standard error handling mechanism for your particular Spring Cloud Stream binder.
+ZenWave SDK consumers can be configured to route exceptions to different error queues. This is useful to manage non-retrayable business exceptions so the stream processing is not interrupted. If your code throws an exception not configured for error routing, it will be rethrown and follow the standard error handling mechanism for your particular Spring Cloud Stream binder.
 
 ```yaml
 spring.cloud.stream.bindings:
