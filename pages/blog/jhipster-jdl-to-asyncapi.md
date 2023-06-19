@@ -77,7 +77,7 @@ You can also filter which entities you want to include Messages for in your Asyn
 
 **UPDATE:**
 
-As of ZenWave SDK version 1.0.6 now it supports also generating AsyncAPI v3 format. Use `asyncapiVersion=v3` as:
+ZenWave SDK version 1.0.6 now supports generating AsyncAPI v3 format. Use `asyncapiVersion=v3` as:
 
 ```shell
 jbang zw -p io.zenwave360.sdk.plugins.JDLToAsyncAPIPlugin \
