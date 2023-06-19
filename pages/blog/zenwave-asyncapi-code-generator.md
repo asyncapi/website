@@ -305,7 +305,7 @@ public class ProducerInMemoryContext {
 }
 ```
 
-And use it in your tests to instantiate your service and perform assertions in your tests. You can find [a working example here](https://github.com/ivangsa/spring-boot-mongodb-elasticsearch-kafka-example/blob/e8fa9c89e5f3d72b90ac23749f636fc7640bdf39/src/test/java/io/zenwave360/example/core/implementation/CustomerUseCasesTest.java#L70).
+And you can use it in your tests to instantiate your service and perform assertions. You can find [a working example here](https://github.com/ivangsa/spring-boot-mongodb-elasticsearch-kafka-example/blob/e8fa9c89e5f3d72b90ac23749f636fc7640bdf39/src/test/java/io/zenwave360/example/core/implementation/CustomerUseCasesTest.java#L70).
 
 ```java
 // example of how you can instantiate your service using the in-memory producer captor
