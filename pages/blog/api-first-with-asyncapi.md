@@ -103,7 +103,7 @@ Document your API: name, purpose, contact details, and license...
 
 Document where your API will be deployed and required security...
 
-You can also document some server **protocol specific configurations** using free-form **bindings** property
+You can also document some server **protocol-specific configurations** using free-form **bindings** property
 
 ### Channels: Publish / Subscribe
 
