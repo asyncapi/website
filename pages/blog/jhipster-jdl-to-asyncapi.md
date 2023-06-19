@@ -55,7 +55,7 @@ relationship OneToOne {
 
 > See [JDL To AsyncAPI Generator](https://zenwave360.github.io/zenwave-sdk/plugins/jdl-to-asyncapi/) for a complete list of options and [GitHub repository](https://github.com/zenwave360/zenwave-sdk) for install instructions.
 
-Because JDL can only describe static aspects of your models and doesn't cover dynamic behaviour, ZenWave SDK can only infer CRUD operations from your entities, generating:
+Because JDL can only describe static aspects of your models and doesn't cover dynamic behavior, ZenWave SDK can only infer CRUD operations from your entities, generating:
 
 - One channel for each entity for both publishing Domain Events and subscribing to Commands/Requests.
 - Messages and payloads for each entity Create/Update/Delete events (AVRO and AsyncAPI schema)
