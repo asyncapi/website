@@ -43,7 +43,7 @@ If you are familiar with OpenAPI and OpenAPI Generator API-First workflow:
 
 When doing API-First with AsyncAPI, the process is similar. After you generate some interfaces and DTOs from your API definition, you use the generated interfaces to produce messages, send them to the broker, and implement them to consume messages from the broker.
 
-There is still a fundamental difference between OpenAPI and AsyncAPI: OpenAPI is used to document Request-Response / Client-Server APIs, while AsyncAPI is used to document Event-Driven APIs which, except for websockets, are Broker-based. 
+There is still a fundamental difference between OpenAPI and AsyncAPI: OpenAPI is used to document Request-Response / Client-Server APIs, while AsyncAPI is used to document Event-Driven APIs which, except for WebSockets, are Broker-based. 
 
 And broker-based APIs, unlike Client-Server, are inherently **symmetric**.
 
