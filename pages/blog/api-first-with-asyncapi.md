@@ -51,7 +51,7 @@ And broker-based APIs, unlike Client-Server, are inherently **symmetric**.
 
 ![Client-server vs broker-based EDAs](/img/posts/zenwave/client-server-vs-broker-eda.excalidraw.svg)
 
-Because APIs mediated by a broker are inherently **symmetric** it's difficult to establish the roles of client/server: what represents a `publish` operation from one side will be a `subscribe` operation seen from the other side. Also, a given service can act as a publisher and subscriber on the same API.
+Because APIs mediated by a broker are inherent **symmetric**, it's difficult to establish the roles of the client/server: what represents a `publish` operation from one side will be a `subscribe` operation seen from the other side. Also, a given service can act as a publisher and subscriber on the same API.
 
 For these reasons, to avoid defining the same API operations multiple times from each perspective, we propose to define the API only once from the perspective of the provider of the functionality, which may be a producer, a consumer or both. 
 
