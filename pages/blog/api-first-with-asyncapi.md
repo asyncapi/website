@@ -119,7 +119,7 @@ If you still find it confusing which is a provider and a client, use this rule: 
 
 ### Messages
 
-Use Messages to describe **Headers**, **Payload Schema** and **Content Type**. You can also include examples, descriptions and protocol-specific binding documentation... 
+Use Messages to describe **Headers**, **Payload Schema**, and **Content-Type**. You can also include examples, descriptions, and protocol-specific binding documentation... 
 
 ```yml
 components:
