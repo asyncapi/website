@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import NavBar from "../../components/navigation/NavBar";
 import JobsContext from "../../context/JobsContext";
 import JobPostItem from "../../components/navigation/JobPostItem";
-import Footer from "../../components/Footer";
+import Footer from '../components/footer/Footer'
 import Head from "../../components/Head";
 import Filter from "../../components/navigation/Filter";
 import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
