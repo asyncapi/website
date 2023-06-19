@@ -102,7 +102,7 @@ See [AsyncAPI and Spring Cloud Streams 3 Configuration Options](https://zenwave3
 
 ### Provider vs Client
 
-Because broker based API definitions are inherently **symmetrical** it's difficult to establish the roles of client/server. ZenWave generates code based on `provider` and `client` roles, where a `provider` "produces events" and "consumes commands". See [API-First with AsyncAPI](API-First-with-AsyncAPI) page for more details on "publish/subscribe", "producer/consumer" and "provider/client" roles.
+Because broker-based API definitions are inherently **symmetrical**, it's difficult to establish the roles of client/server. ZenWave generates code based on `provider` and `client` roles, where a `provider` "produces events" and "consumes commands". See [API-First with AsyncAPI](API-First-with-AsyncAPI) page for more details on "publish/subscribe", "producer/consumer," and "provider/client" roles.
 
 > Write your AsyncAPI definitions from the `provider` perspective and then configure the code generator to generate either a `provider` or a `client`.
 
