@@ -13,7 +13,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://www.linkedin.com/in/ivangarciasainzaja/
     byline: Software Architect at Sngular. Speaker. Building ZenWave 360º
-excerpt: 'If you are familiar with OpenAPI and OpenAPI Generator API-First process, doing API-First with AsyncAPI is a similar process.'
+excerpt: 'If you are familiar with OpenAPI and OpenAPI Generator API-First process, doing API-First with AsyncAPI is similar.'
 ---
 
 # API-First with AsyncAPI
