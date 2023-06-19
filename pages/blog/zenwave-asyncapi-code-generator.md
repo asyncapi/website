@@ -26,7 +26,7 @@ With ZenWave's `spring-cloud-streams3` and `jsonschema2pojo` plugins, you can ge
 
 It uses Spring Cloud Streams as the default implementation, so it can connect to many different brokers via provided binders.
 
-And because everything is hidden behind interfaces we can encapsulate many Enterprise Integration Patterns:
+And because everything is hidden behind interfaces, we can encapsulate many Enterprise Integration Patterns:
 
 - Transactional Outbox: with MongoDB ChangeStreams, Plain SQL and Debezium SQL flavors
 - Business DeadLetter Queues: allowing you to route different business Exceptions to different DeadLetter queues for non-retrayable errors.
