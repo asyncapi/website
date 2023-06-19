@@ -89,7 +89,7 @@ Also, while there can be only one provider that produces a given event, commands
 
 ## Understanding AsyncAPI Definition
 
-While OpenAPI and AsyncAPI come to document completely different architectural styles, they are similar in many aspects, in fact AsyncAPI YAML format was originaly based on OpenAPI format and structure.
+While OpenAPI and AsyncAPI come to document completely different architectural styles, they are similar in many aspects; in fact, AsyncAPI YAML format was initially based on OpenAPI format and structure.
 
 If you are familiar with OpenAPI, you may find useful the following image borrowed from AsyncAPI documentation (click image to follow):
 
