@@ -14,7 +14,7 @@ authors:
     photo: /img/avatars/ivangsa.webp
     link: https://www.linkedin.com/in/ivangarciasainzaja/
     byline: Software Architect at Sngular. Speaker. Building ZenWave 360º
-excerpt: 'Because writting YAML by hand is now fun... You can generate AsyncAPI v2/v3 from  JHipster JDL models with ZenWave SDK.'
+excerpt: 'Because writing YAML by hand is now fun... You can generate AsyncAPI v2/v3 from  JHipster JDL models with ZenWave SDK.'
 ---
 
 # Generating AsyncAPI definition files from JDL with ZenWaveSDK
