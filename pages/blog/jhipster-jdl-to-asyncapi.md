@@ -23,7 +23,7 @@ Writing YAML by hand is no fun, but you can simplify the process of writing Asyn
 
 [JHipster Domain Language (JDL)](https://www.jhipster.tech/jdl/intro) is a Domain Specific Language (DSL) used to define the domain model of a web application. With JDL, you can describe the entities, relationships, and constraints of your system in a concise and readable way.
 
-[Zenwave SDK](https://zenwave360.github.io/zenwave-sdk/) is set of tools to generate (and reverse engineering) code from JDL and API-First models like AsyncAPI and OpenAPI.
+[Zenwave SDK](https://zenwave360.github.io/zenwave-sdk/) is a set of tools to generate (and reverse engineering) code from JDL and API-First models like AsyncAPI and OpenAPI.
 
 Thanks to ZenWave SDK, you can convert JDL models into AsyncAPI definition files. This can save time and effort in the development process while ensuring that your APIs follow best practices and standards.
 
