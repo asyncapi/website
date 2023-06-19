@@ -177,7 +177,7 @@ On the consumer side generates:
 - Functional Consumer `DoCustomerRequestConsumer`  for Spring Cloud Streams bindings.
 - Business Interface `IDoCustomerRequestConsumerService` you need to implement in order to receive strongly typed messages.
 
-This Functional Consumer can abstract away different integration patterns like Business Dead Letter Queue and others... depending on how you configure zenwave maven generator.
+This Functional Consumer can abstract away different integration patterns like Business Dead Letter Queue and others... depending on how you configure the Zenwave maven generator.
 
 **To consume messages you need to implement generated business interface and register it as a Spring bean.**
 
