@@ -609,25 +609,6 @@
       ]
     },
     {
-      "id": "I_kwDODou01c5TDLWP",
-      "title": "Unnecessary assertion since it does not change the type of the expression.",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/447",
-      "repo": "asyncapi/studio",
-      "author": "AceTheCreator",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "hacktoberfest",
-          "color": "5B0291"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5IRxcq",
       "title": "[📑 Docs]: update docs issues in ALL repos that are missing the `area/docs` label ",
       "isAssigned": true,
