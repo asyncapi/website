@@ -112,7 +112,7 @@ If you still find it confusing which is a provider and a client, use this rule: 
 
 On the producer side generates:
 
-- Interface `ICustomerEventsProducer` to produce typed messages that uses your domain names: `onCustomerEvent`, `CustomerEventPayload` and `CustomerEventPayloadHeaders`.
+- Interface `ICustomerEventsProducer` to produce typed messages that uses your domain names: `onCustomerEvent`, `CustomerEventPayload`, and `CustomerEventPayloadHeaders`.
 - Producer `@Component` `CustomerEventsProducer` you can autowire in your services.
 
 **In order to produce messages all you need to do is @Autowire the generated producer as part of your code.**
