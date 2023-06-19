@@ -56,7 +56,18 @@ operations:
 Issues: [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | Pull request: [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
 
 ### Message `oneOf` no longer
+As you probably noticed above, messages in channels are no longer singular and with `oneOf`, instead messages are defined as key/value pairs. This was part of the request reply feature to enable easier referencing of messages.
 
+```
+asyncapi: 3.0.0
+...
+channels:
+  UserSignup:
+    address: user/signedup
+    messages: 
+      UserMessage: 
+        ...
+```
 
 ### Publish and subscribe confusion
 In v2, the `publish` and `subscribe` operation keywords has always been a subject of great confusion. Does it mean my application publishes to the channel? Does it mean you publish to me? Who are you in this context? 
@@ -116,8 +127,6 @@ components:
 
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847)
 
-
-
 ### Unified referencing behaviors
 
 In v2, there was two instances, where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. In an effort to stay as consistent as possible, we wanted to unify how references was used, that means that in v3, we ONLY use explicit references. 
@@ -169,6 +178,7 @@ operations:
 ```
 
 Issues: [#795](https://github.com/asyncapi/spec/issues/795) | Pull request: [#796](https://github.com/asyncapi/spec/pull/796)
+
 ### Cleaning up the root object
 There was two meta information lingering in the root of the AsyncAPI object, which did not make much sense since we have the `info` object for all the meta information.
 
@@ -187,6 +197,7 @@ info:
 ```
 
 Pull request: [#794](https://github.com/asyncapi/spec/pull/794)
+
 ### Splitting out server URL into host and pathname
 There have been some confusion about what `url` of a server should contain, is it both protocol + host + path? What about the protocol field then? Therefore each field now has their own field for the host, path, and protocol.
 
@@ -200,6 +211,7 @@ servers:
 ```
 
 Issues: [#547](https://github.com/asyncapi/spec/issues/547), [#274](https://github.com/asyncapi/spec/issues/274) | Pull request: [#888](https://github.com/asyncapi/spec/pull/888)
+
 ### More reusable objects in components
 This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under components:
 - Replies
@@ -288,17 +300,6 @@ In v2, it was possible to use the full power of JSON Schema to define parameters
 Parameters can now only have the following properties: `enum`, `default`, `description`, `examples`, and `location`. 
 
 ```
-asyncapi: 2.6.0
-channels:
-  user/{userId}/signup:
-    parameters:
-      userId:
-        description: Id of the user.
-        schema:
-          type: string
-```
-
-```
 asyncapi: 3.0.0
 channels: 
   userSignup:
@@ -318,8 +319,6 @@ We have [removed the note that stated we strived to be compatibility with OpenAP
 The following official AsyncAPI tools are already updated to support 3.0.0 version of the specification:
 
 TODO
-
-Last but not least is the AsyncAPI Studio. Check out the Studio with this example.
 
 ## Acknowledgements
 Spec 3.0 have been a massive undertaking, so I would like to say a huge thank you! to everyone who have been involved, maybe you commented on your views, added to discussions, joined the live meetings, championed changes, reviewed proposed changes, list goes on, this section is for you!
