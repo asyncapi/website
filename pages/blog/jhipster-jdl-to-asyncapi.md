@@ -100,7 +100,7 @@ You can generate AsyncAPI definition files with the following options:
   - State Transfer message contains the entire state of the aggregate, so a consumer does not need to make additional calls.
   - Domain Event Messages contain information about the event and interesting portions of the underlying aggregate, but not the entire state of the aggregate.
 
-By using JDL to define your domain model and ZenWave SDK to convert it into an AsyncAPI definition file, you can simplify the process of designing and documenting your APIs. This can improve the overall quality and consistency of your APIs, while also reducing errors and inconsistencies.
+By using JDL to define your domain model and ZenWave SDK to convert it into an AsyncAPI definition file, you can simplify the process of designing and documenting your APIs. This can improve your APIs' overall quality and consistency while reducing errors and inconsistencies.
 
 ---
 Originally published at [https://zenwave360.github.io](https://zenwave360.github.io/Domain-Driven-Design/JDL-Domain-Language/JHipster-As-IDL-for-AsyncAPIv2).
