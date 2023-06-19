@@ -73,7 +73,7 @@ jbang zw -p io.zenwave360.sdk.plugins.JDLToAsyncAPIPlugin \
 
 You can choose to generate only Events or Commands using `includeEvents`  (default: true) and `includeCommands` (default: false) to filter which channels you want to include in your AsyncAPI definition file.
 
-You can also filter which entities you want to include Messages for in your AsyncAPI definition file using: `entities`, `skipEntities`, `annotations` and `skipForAnnotations`.
+You can also filter which entities you want to include Messages for in your AsyncAPI definition file using: `entities`, `skipEntities`, `annotations`, and `skipForAnnotations`.
 
 **UPDATE:**
 
