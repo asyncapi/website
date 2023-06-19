@@ -36,7 +36,7 @@ excerpt: 'If you are familiar with OpenAPI and OpenAPI Generator API-First proce
 
 If you are familiar with OpenAPI and OpenAPI Generator API-First workflow:
 
-- First write the OpenAPI definition, collaborating between API providers and API consumers.
+- First, write the OpenAPI definition, collaborating between API providers and API consumers.
 - Then use OpenAPI Generator, either the maven plugin or a CLI, to generate some DTOs and interfaces from your OpenAPI definition.
 - Implementing the generated interfaces you can create a service for the API.
 - As a client, you can use generated the interfaces to consume the API with some HTTP client generated behind the scenes.
