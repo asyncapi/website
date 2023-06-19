@@ -19,7 +19,7 @@ excerpt: 'With ZenWave SDK plugins, you can generate strongly typed business int
 
 ## API-First with AsyncAPI and ZenWave SDK
 
-With ZenWave's `spring-cloud-streams3` and `jsonschema2pojo` plugins you can generate:
+With ZenWave's `spring-cloud-streams3` and `jsonschema2pojo` plugins, you can generate:
 - Strongly typed **business interfaces**
 - **Payload DTOs** and 
 - **Header objects** from AsyncAPI definitions.
