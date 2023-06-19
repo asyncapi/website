@@ -65,7 +65,7 @@ Some definitions:
 
 > Define your AsyncAPI from the perspective of the **PROVIDER** of the functionality, which may be a producer, a consumer, or both. Share this definition with your **CLIENTS**.
 
-Use the table to understand which section of AsyncAPI (publish or subscribe) to use for each topic, and which role (provider or client) to use on the plugin configuration.
+Use the table to understand which section of AsyncAPI (publish or subscribe) to use for each topic and which role (provider or client) to use on the plugin configuration.
 
 |                              | Events                | Commands                |
 |------------------------------|-----------------------|-------------------------|
