@@ -19,7 +19,7 @@ The new version of the AsyncAPI specification - 3.0.0 - is now available and is 
 To make the information as digestible as possible, we have split up related information into different digestible chunks.
 
 - If you want to get an overview of all the changes done in v3 - Then you are in the right place! 
-- If you want to get an overview of all the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](https://deploy-preview-660--asyncapi-website.netlify.app/docs/migration/migrating-to-v3) 
+- If you want to get an overview of all the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](/docs/migration/migrating-to-v3) 
 
 ## Overview
 This post will give you an overview of all the changes done in v3.
