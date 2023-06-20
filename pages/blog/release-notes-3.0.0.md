@@ -55,7 +55,7 @@ operations:
 
 Issues: [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | Pull request: [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
 
-### Message `oneOf` no longer
+### Messages instead of message
 As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs. This was part of the request-reply feature to enable easier referencing of messages.
 
 ```
