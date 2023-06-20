@@ -11,8 +11,6 @@ describe('SupportUs Component', () => {
       cy.wrap($item).should('have.attr', 'href', supportItem.href);
       cy.wrap($item).should('have.attr', 'target', supportItem.target);
       cy.wrap($item).should('have.attr', 'rel', supportItem.rel);
-      
-        
       cy.get('[data-testid="SupportUs-img"]', { withinSubject: $item }).should('have.attr', 'src', supportItem.src);
       cy.get('[data-testid="SupportUs-img"]', { withinSubject: $item }).should('have.attr', 'title', supportItem.title);
     });

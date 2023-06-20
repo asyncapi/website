@@ -9,7 +9,6 @@ describe('Testimonial Component', () => {
       authorDescription: 'CEO at Company',
       authorAvatar: '/img/avatar.jpg',
     };
-
     mount(
       <Testimonial
         text={testimonialData.text}
