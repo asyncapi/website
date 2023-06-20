@@ -240,7 +240,7 @@ components:
     ...
 ```
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847), [#792](https://github.com/asyncapi/spec/pull/792), [#806](https://github.com/asyncapi/spec/pull/806),  [#827](https://github.com/asyncapi/spec/pull/827)
+Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847), [#792](https://github.com/asyncapi/spec/pull/792), [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
 
 ### New trait behavior
 Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
@@ -271,7 +271,7 @@ payload:
   $ref: '#/components/schemas/userSignupPayload'
 ```
 
-Issues: [#505](https://github.com/asyncapi/spec/issues/505) | Pull request: [#517](https://github.com/asyncapi/spec/pull/517), [#532](https://github.com/asyncapi/spec/pull/532), [#907](https://github.com/asyncapi/spec/pull/907) | Migration details: 
+Issues: [#505](https://github.com/asyncapi/spec/issues/505) | Pull request: [#517](https://github.com/asyncapi/spec/pull/517), [#532](https://github.com/asyncapi/spec/pull/532), [#907](https://github.com/asyncapi/spec/pull/907)
 
 ### Schema format and payload definition
 With schemas, one thing that has always been impossible was reusing schemas with different schema formats. That's because the schema format information is part of the message object. That means that if you reference a Schema object, it has no information about the schema format because it's not located together.
