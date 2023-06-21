@@ -46,7 +46,7 @@ export const Carddata = (props) => {
                 /></div>}
           {description && <button className='cursor-pointer text-cyan-600' onClick={() => {setOutsideClick(true);setRead(!read)}}>{read ? " Show Less" : " Show More"}</button>}
         </span>}
-        <button onClick={() =>{setRead(false);setVisible({ ...initial, [type]: !visible[type] }) }} className="mx-1" >
+        <button onClick={() =>{setRead(false);setVisible({ ...initial, [type]: !visible[type] }) }} className="mx-1" data-testid="Carddata-button">
           <InfoIcon />
         </button>
       </span>
