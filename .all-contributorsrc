@@ -454,6 +454,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Florence-Njeri",
+      "name": "Florence Njeri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40742916?v=4",
+      "profile": "https://florence-njeri.github.io/NjeriPortfolio",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

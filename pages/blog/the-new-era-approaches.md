@@ -64,7 +64,7 @@ channels:
       - $ref: "#/servers/websocket"
 
   turnStreetlightOnReplyChannel:
-    address: null
+    address: "/"
     messages:
       turnOnReply: 
         $ref: "#/components/messages/turnOnReply"
