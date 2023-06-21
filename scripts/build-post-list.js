@@ -15,13 +15,16 @@ const result = {
   jobs: [],
   docsTree: {}
 }
+const releaseNotes = []
 const basePath = 'pages'
 const postDirectories = [
-  [`${basePath}/docs`, '/docs'],
+  // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
+  [`${basePath}/docs`, '/docs'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
-]
+  [`${basePath}/community`, '/community'],
+];
 
 const addItem = (details) => {
   if(details.slug.startsWith('/docs'))
@@ -110,13 +113,29 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title = capitalize(fileName)
           }
 
+          if(releaseNotes.includes(details.title)){
+            details.releaseNoteLink = `/blog/release-notes-${details.title}`
+          }
+
           if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
             details.isPrerelease = true
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
         }
+        
 
+
+        // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
+        if(file.startsWith("release-notes") && dir[1] === "/blog"){
+          const fileName_without_extension = file.slice(0,-3)
+          // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
+          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
+          releaseNotes.push(version)
+          // releaseNotes is the list of all available releaseNotes
+        }
+        
         addItem(details)
       }
     }
