@@ -19,7 +19,7 @@ export default function Button({
 
   if (!href) {
     return (
-      <button {...props} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames}>
+      <button {...props} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid="Button-main" > 
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
@@ -37,7 +37,7 @@ export default function Button({
 
   return (
     <Link href={href} passHref>
-      <a {...props} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames}>
+      <a {...props} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid="Button-link">
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>
