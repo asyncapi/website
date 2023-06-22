@@ -41,7 +41,7 @@ export default function TSC() {
   const tscMembers = sortBy(
     TSCMembersList.map((user) => addAdditionalUserInfo(user)),
     ["name"]
-  );
+  ).filter((user) => user.isTscMember);
 
   return (
     <GenericLayout
