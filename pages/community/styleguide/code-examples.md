@@ -31,8 +31,8 @@ Color plays an important role in syntax highlighting, making code samples easier
 
 ### Spacing and indentation
 
-- Put the characters for the open-brace ("") on the same line as the sentence that opens the block.
-
+- Place the characters for the open-brace ("") on the same line.
+  
 - In all code samples, the indentation should be two spaces per tab.
 
 - Add proper spacing between code blocks
