@@ -88,6 +88,6 @@ This indicates that your message is valid and the application recieved it correc
 In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message. 
 
 ## Next steps
-Now that you've completed this tutorial, enjoy our [AsyncAPI message validation guide](pages/docs/guides/message-validation).
+Now that you've completed this tutorial, enjoy our [AsyncAPI message validation guide](https://www.asyncapi.com/docs/guides/message-validation).
 
 ---
