@@ -472,6 +472,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "SumantxD",
+      "name": "Sumant.xD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65810424?v=4",
+      "profile": "https://github.com/SumantxD",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
