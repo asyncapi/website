@@ -18,7 +18,8 @@ function shouldShowBanner() {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-  const showBanner = shouldShowBanner();
+    const cfpDeadline = '2023-07-28T06:00:00Z'
+    const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
   const cfpDeadline = '2023-07-28T06:00:00Z'
