@@ -44,9 +44,9 @@ servers:
   kafka:
     host: test.mykafkacluster.org:8092
     protocol: kafka-secure
-    description: Test kafka broker
+    description: Test Kafka broker
     security:
-      - saslScram: []
+      - $ref: '#/components/securitySchemes/saslScram'
   websocket:
     host: test.websocket.org:1999
     protocol: ws
@@ -57,15 +57,17 @@ defaultContentType: application/json
 channels:
   turnStreetlightOnChannel:
     address: "/"
-    message:
-      $ref: "#/components/messages/turnOn"
+    messages:
+      turnOn: 
+        $ref: "#/components/messages/turnOn"
     servers:
       - $ref: "#/servers/websocket"
 
   turnStreetlightOnReplyChannel:
-    address: null
-    message:
-      $ref: "#/components/messages/turnOnReply"
+    address: "/"
+    messages:
+      turnOnReply: 
+        $ref: "#/components/messages/turnOnReply"
     servers:
       - $ref: "#/servers/websocket"
 
@@ -75,8 +77,9 @@ channels:
     parameters:
       streetlightId:
         $ref: "#/components/parameters/streetlightId"
-    message:
-      $ref: "#/components/messages/lightMeasured"
+    messages:
+      lightMeasured: 
+        $ref: "#/components/messages/lightMeasured"
     servers:
       - $ref: "#/servers/kafka"
 
@@ -129,16 +132,13 @@ components:
     turnOnPayload:
       type: object
       properties:
-        command:
-          type: string
-          enum:
-            - on
-          description: Whether to turn on the light.
         streetlightId:
           description: The ID of the streetlight.
           type: string
         sentAt:
-          $ref: "#/components/schemas/sentAt"
+          type: string
+          format: date-time
+          description: Date and time when the request was sent
 
     turnOnReplyPayload:
       type: object
