@@ -42,7 +42,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-          Madrid Edition
+          London Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
           20th of September, 2023 | London, UK
