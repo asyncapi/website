@@ -8,8 +8,8 @@ function shouldShowBanner() {
   const month = new Date().getUTCMonth();
   const year = new Date().getUTCFullYear();
   
-  //month=4 is May
-  if (year > 2023 || month !== 4) {
+  //month=6 is June
+  if (year > 2023 || month !== 6) {
     return false;
   }
   return true;
@@ -21,7 +21,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const showBanner = shouldShowBanner();
   if (!showBanner) return null;
 
-  const cfpDeadline = '2023-05-31T06:00:00Z'
+  const cfpDeadline = '2023-07-28T06:00:00Z'
   
   return (
     <Container wide as="section" padding='' className='text-center'>
@@ -45,12 +45,12 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           Madrid Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          October, 2023 | Madrid, Spain
+          20th of September, 2023 | London, UK
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end for Call for Speakers." />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers." />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://sessionize.com/aacot-madrid/"
+            href="https://conference.asyncapi.com/"
             target="_blank"
             text="Submit a session"
           />
