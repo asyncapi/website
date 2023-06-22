@@ -4,17 +4,17 @@ import Heading from '../typography/Heading'
 import Container from '../layout/Container'
 import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
-function shouldShowBanner() {
-  const month = new Date().getUTCMonth();
-  const year = new Date().getUTCFullYear();
-  
-  //month=6 is June
-  if (year > 2023 || month !== 6) {
+function shouldShowBanner(cfpDeadline) {
+  const currentDate = new Date(); // Get the current date
+  const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
+
+  // Check if the current date is after the deadline
+  if (currentDate > deadline) {
     return false;
   }
+
   return true;
 }
-
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
