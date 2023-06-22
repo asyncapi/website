@@ -1,7 +1,6 @@
 const rssFeed = require("./build-rss");
 const buildPostList = require("./build-post-list");
 const buildCaseStudiesList = require("./casestudies");
-const buildTscMembers = require("./build-tsc-members");
 
 async function start() {
   await buildPostList();
@@ -18,7 +17,6 @@ async function start() {
     "jobs/rss.xml"
   );
   await buildCaseStudiesList();
-  await buildTscMembers();
 }
 
 start();
