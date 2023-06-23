@@ -408,9 +408,84 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Olaleye-Blessing",
+      "name": "Olaleye Blessing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70102539?v=4",
+      "profile": "https://www.blessingolaleye.xyz/",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
+    },
+    {
+      "login": "niranjan-kurhade",
+      "name": "niranjan-kurhade",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97905637?v=4",
+      "profile": "https://github.com/niranjan-kurhade",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rukundob451",
+      "name": "Benjamin Rukundo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67878128?v=4",
+      "profile": "https://linkfree.eddiehub.io/rukundob451",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tthijm",
+      "name": "tthijm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59415467?v=4",
+      "profile": "https://github.com/tthijm",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "CynthiaPeter",
+      "name": "Cynthia Peter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33583060?v=4",
+      "profile": "http://cynthiapeter.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Florence-Njeri",
+      "name": "Florence Njeri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40742916?v=4",
+      "profile": "https://florence-njeri.github.io/NjeriPortfolio",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anshgoyalevil",
+      "name": "Ansh Goyal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94157520?v=4",
+      "profile": "https://ansh.live",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "SumantxD",
+      "name": "Sumant.xD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65810424?v=4",
+      "profile": "https://github.com/SumantxD",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "skipCi": false,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }

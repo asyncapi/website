@@ -152,7 +152,9 @@
 		"company": "Postman",
 		"repos": [
 			"optimizer",
-			"bindings"
+			"bindings",
+			"glee",
+			".github"
 		]
 	},
 	{
@@ -293,6 +295,16 @@
 		]
 	},
 	{
+		"name": "Philip Schlesinger",
+		"github": "theschles",
+		"slack": "U054UUYBNLF",
+		"twitter": "philschlesinger",
+		"availableForHire": false,
+		"repos": [
+			"jasyncapi-idea-plugin"
+		]
+	},
+	{
 		"name": "Pratik Haldankar",
 		"github": "pratik2315",
 		"slack": "U03ADC8FD2S",
@@ -346,7 +358,8 @@
 		"company": "Postman",
 		"repos": [
 			"cli",
-			"bundler"
+			"bundler",
+			"glee"
 		]
 	},
 	{
@@ -512,15 +525,6 @@
 		]
 	},
 	{
-		"name": "Viacheslav Turovskyi",
-		"github": "aeworxet",
-		"slack": "U01G3U01SVC",
-		"availableForHire": false,
-		"repos": [
-			"bundler"
-		]
-	},
-	{
 		"name": "Alexander Wichmann",
 		"github": "VisualBean",
 		"linkedin": "alexcarlsen",
@@ -529,17 +533,6 @@
 		"company": "The LEGO Group",
 		"repos": [
 			"bindings"
-		]
-	},
-	{
-		"name": "Louis Xhaferi",
-		"github": "LouisXhaferi",
-		"slack": "U04KYP1BH09",
-		"linkedin": "louis-xhaferi-45608b1a3",
-		"availableForHire": false,
-		"company": "Mercedes-Benz Tech Innovation",
-		"repos": [
-			"modelina"
 		]
 	},
 	{
@@ -555,7 +548,7 @@
 			 "community"
 		]
 	},
-		{
+	{
 		"name": "Kenneth Aasan",
 		"github": "kennethaasan",
 		"slack": "U037S2HK4TS",
@@ -565,5 +558,16 @@
 		"repos": [
 			"modelina"
 		]
+	},
+	{
+		"name": "Heiko Henning",
+		"github": "GreenRover",
+		"slack": "U03AC4G51H8",
+		"availableForHire": false,
+		"company": "mtrail GmbH",
+		"repos": [
+			"protobuf-schema-parser"
+		]
 	}
+
 ]
