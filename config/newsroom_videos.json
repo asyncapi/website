@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/dRu9itGfJ1E/hqdefault.jpg",
+    "title": "AsyncAPI Spec 3.0 Docs Meeting",
+    "description": "https://github.com/asyncapi/community/issues/749.",
+    "videoId": "dRu9itGfJ1E"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/DUB3XL_APgs/hqdefault.jpg",
     "title": "Spec 3.0 (July 21th 2023)",
     "description": "https://github.com/asyncapi/community/issues/737.",
@@ -22,11 +28,5 @@
     "title": "Let&#39;s talk about contributing: Mentorship Program FAQ",
     "description": "https://github.com/asyncapi/community/issues/739.",
     "videoId": "LfKYDiqZDNA"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/_zdXm90KvF0/hqdefault.jpg",
-    "title": "Community Meeting, Tuesday June 13th 2023",
-    "description": "https://github.com/asyncapi/community/issues/738.",
-    "videoId": "_zdXm90KvF0"
   }
 ]
