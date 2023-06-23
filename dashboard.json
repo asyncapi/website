@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 22.68679251119144
+      "score": 22.9739670999407
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 21.538094156194408
+      "score": 22.68679251119144
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -36,7 +36,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 20.96374497869589
+      "score": 21.25091956744515
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -71,6 +71,17 @@
       "score": 18.37917367995256
     },
     {
+      "id": "PR_kwDOBW5R_c5TUuUu",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: adding 3 New Articles as Blog Posts",
+      "author": "ivangsa",
+      "resourcePath": "/asyncapi/website/pull/1805",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 18.37917367995256
+    },
+    {
       "id": "PR_kwDOBW5R_c5KIyGW",
       "isPR": true,
       "isAssigned": true,
@@ -79,7 +90,7 @@
       "resourcePath": "/asyncapi/website/pull/1349",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.36895155870775
+      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDODCuNRs5Nh35U",
@@ -90,7 +101,7 @@
       "resourcePath": "/asyncapi/bindings/pull/193",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 14.933078614961456
     },
     {
       "id": "PR_kwDOBW5R_c5Jw5C6",
@@ -102,6 +113,28 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOFDnrNc5RUbi_",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: help command",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/593",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDOBGu-185KHmXZ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: new traits merge mechanism",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/pull/907",
+      "repo": "asyncapi/spec",
+      "labels": [],
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDOBW5R_c5J9Eji",
@@ -122,42 +155,19 @@
         }
       ],
       "score": 13.78438025996442
-    },
-    {
-      "id": "PR_kwDOFDnrNc5RUbi_",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: help command",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/cli/pull/593",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "PR_kwDOBGu-185KHmXZ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: new traits merge mechanism",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/pull/907",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N85pN-Dg",
+      "title": "Date button is not clickable",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/146",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOFLhIt85o9dDJ",
       "title": "Add 2023 mentorship directory",
