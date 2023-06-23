@@ -73,7 +73,7 @@ Use the table to understand which section of AsyncAPI (publish or subscribe) to 
 | Client                       | Consumes (subscribe)  | Produces (publish)      |
 | OperationId Suggested Prefix | **on**&lt;Event Name> | **do**&lt;Command Name> |
 
-If you still find confusing which one is a provider and a client just use this rule: it can be only one provider of a given message while clients of a given message there can be many:
+If you still find it confusing which one is a provider and a client, just use this rule: it can be only one provider of a given message, while clients of a given message there can be many:
 
 - If the provider is the producer, use publish section
 - If it is the consumer, use subscribe section.
@@ -107,7 +107,7 @@ You can also document some server **protocol-specific configurations** using fre
 
 ### Channels: Publish / Subscribe
 
-Each channel represents one single broker topic, channel, or queue... where you are about to publish or subscribe to.
+Each channel represents one single broker topic, channel, or queue... where you are about to publish or subscribe.
 
 Use the table above to understand which section, publish or subscribe, you may want to use.
 
