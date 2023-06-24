@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/1jiRDmuA-zg/hqdefault.jpg",
+    "title": "Fran AMA AsyncAPI",
+    "description": "https://github.com/asyncapi/community/issues/764.",
+    "videoId": "1jiRDmuA-zg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/dRu9itGfJ1E/hqdefault.jpg",
     "title": "AsyncAPI Spec 3.0 Docs Meeting",
     "description": "https://github.com/asyncapi/community/issues/749.",
@@ -22,11 +28,5 @@
     "title": "Headless Commerce: Streamlining Architecture",
     "description": "https://github.com/asyncapi/community/issues/716.",
     "videoId": "V3Op2A08UQs"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/LfKYDiqZDNA/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing: Mentorship Program FAQ",
-    "description": "https://github.com/asyncapi/community/issues/739.",
-    "videoId": "LfKYDiqZDNA"
   }
 ]

@@ -55,6 +55,17 @@
       "score": 19.815046623698855
     },
     {
+      "id": "PR_kwDOBW5R_c5TUuUu",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: adding 3 New Articles as Blog Posts",
+      "author": "ivangsa",
+      "resourcePath": "/asyncapi/website/pull/1805",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 18.666348268701817
+    },
+    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -68,17 +79,6 @@
           "color": "a2eeef"
         }
       ],
-      "score": 18.37917367995256
-    },
-    {
-      "id": "PR_kwDOBW5R_c5TUuUu",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: adding 3 New Articles as Blog Posts",
-      "author": "ivangsa",
-      "resourcePath": "/asyncapi/website/pull/1805",
-      "repo": "asyncapi/website",
-      "labels": [],
       "score": 18.37917367995256
     },
     {
@@ -101,7 +101,7 @@
       "resourcePath": "/asyncapi/bindings/pull/193",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 14.933078614961456
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOBW5R_c5Jw5C6",
