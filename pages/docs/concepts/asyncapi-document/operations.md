@@ -3,9 +3,9 @@ title: Operations
 weight: 60
 ---
 
-## Operations Meaning
+In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. 
 
-- In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. 
+## Operations Features
 
 - Operations describe the behaviors and capabilities of the messaging channels described in the document.
 
