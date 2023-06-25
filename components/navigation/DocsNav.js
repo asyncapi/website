@@ -25,16 +25,22 @@ export default function DocsNav({
   const bucket = serializedBuckets[item.item.rootSectionId];
 
   return (
-    <li className='mb-4' key={item.item.title}>
-      <DocsNavItem {...item.item} activeSlug={active} defaultClassName='font-body text-sm text-black hover:font-semibold' inactiveClassName='font-regular' activeClassName='font-semibold' bucket={bucket} onClick={onClick} />
+    <li className='mb-4' key={item.item.title} >
+      <a style={{width:"100%",cursor:"pointer"}} onClick={onClick}>
+        <DocsNavItem {...item.item} activeSlug={active} defaultClassName='font-body text-sm text-black hover:font-semibold' inactiveClassName='font-regular' activeClassName='font-semibold' bucket={bucket} />
+      </a>
       <ul className='border-l border-gray-200 pl-4 ml-3 mt-1'>
         {Object.values(subCategories).map((subCategory) => (
           <li key={subCategory.item.title}>
-            <DocsNavItem {...subCategory.item} activeSlug={active} defaultClassName={`font-body text-sm text-black leading-8 ${subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'}`} inactiveClassName='font-regular' activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'} onClick={onClick} />
+            <a className='block' onClick={onClick}>
+              <DocsNavItem {...subCategory.item} activeSlug={active} defaultClassName={`font-body text-sm text-black leading-8 ${subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'}`} inactiveClassName='font-regular' activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'} />
+            </a>
             <ul className='border-l border-gray-200 pl-4'>
               {subCategory.children && subCategory.children.map(subItem => (
                 <li key={subItem.title}>
-                  <DocsNavItem {...subItem} activeSlug={active} defaultClassName='font-body text-sm text-gray-700 leading-7 hover:text-secondary-600' inactiveClassName='font-regular' activeClassName='text-secondary-600' onClick={onClick} />
+                  <a className='block' onClick={onClick}>
+                    <DocsNavItem {...subItem} activeSlug={active} defaultClassName='font-body text-sm text-gray-700 leading-7 hover:text-secondary-600' inactiveClassName='font-regular' activeClassName='text-secondary-600' />
+                  </a>
                 </li>
               ))}
             </ul>
