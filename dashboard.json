@@ -159,6 +159,21 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOE8Qh385pckK7",
+      "title": "Improve the example display name",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1417",
+      "repo": "asyncapi/modelina",
+      "author": "sambhavgupta0705",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODwv8N85pN-Dg",
       "title": "Date button is not clickable",
       "isAssigned": false,
@@ -190,25 +205,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385nTDiB",
-      "title": "Add descriptions for options in playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1347",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "design",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
         }
       ]
     },
@@ -755,29 +751,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3848ZA4u",
-      "title": "Show how to change the naming format for properties",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/414",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
