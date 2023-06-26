@@ -470,7 +470,17 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/94157520?v=4",
       "profile": "https://ansh.live",
       "contributions": [
-        "code"
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "SumantxD",
+      "name": "Sumant.xD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65810424?v=4",
+      "profile": "https://github.com/SumantxD",
+      "contributions": [
+        "infra"
       ]
     }
   ],
