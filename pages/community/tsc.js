@@ -75,7 +75,7 @@ export default function TSC() {
               projects and then other maintainers will invite you to join. You
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
-              stay as a maintainer). 
+              stay as a maintainer).
               Follow this
               <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
                 Link
@@ -178,12 +178,8 @@ function UserInfo({ user }) {
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
             <SocialLink href={user.github} social="Github" />
-            {user.twitter ? (
-              <SocialLink href={user.twitter} social="Twitter" />
-            ) : null}
-            {user.linkedin ? (
-              <SocialLink href={user.linkedin} social="Linkedin" />
-            ) : null}
+            {user.twitter ? <SocialLink href={user.twitter} social="Twitter" /> : null}
+            {user.linkedin ? <SocialLink href={user.linkedin} social="Linkedin" /> : null}
           </ul>
         </div>
       </div>
@@ -233,12 +229,9 @@ function QuestionCard() {
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
       <div className="my-4">
-        Want to become a member? Follow this
-        <TextLink
-          href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
-          target="_blank"
-          className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline"
-        >
+        Want to become a member? 
+        Follow this
+        <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
           Link
         </TextLink>
         &nbsp;to know more!
