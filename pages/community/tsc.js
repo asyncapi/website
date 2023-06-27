@@ -76,11 +76,7 @@ export default function TSC() {
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
               stay as a maintainer). Follow this
-              <TextLink
-                href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"
-                target="_blank"
-                className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline"
-              >
+              <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
                 Link
               </TextLink>
               &nbsp;to know more!
