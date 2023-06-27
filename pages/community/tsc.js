@@ -229,7 +229,7 @@ function QuestionCard() {
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
       <div className="my-4">
-        Want to become a member? 
+        Want to become a member?
         Follow this
         <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-sky-600 hover:text-sky-400 no-underline">
           Link
