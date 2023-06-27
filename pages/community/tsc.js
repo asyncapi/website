@@ -75,7 +75,8 @@ export default function TSC() {
               projects and then other maintainers will invite you to join. You
               can also build a great AsyncAPI-based project that we don't have
               yet in our GitHub organization and donate it (we'll ask you to
-              stay as a maintainer). Follow this
+              stay as a maintainer). 
+              Follow this
               <TextLink href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md" target="_blank" className="text-base font-normal text-blue-500 hover:text-sky-400 no-underline">
                 Link
               </TextLink>
@@ -116,8 +117,12 @@ export default function TSC() {
         </div>
         <div className="mt-10">
           <div className="mb-5 text-primary-800 text-center">
-            <h3 className="font-semibold text-2xl">Current TSC members</h3>
-            <span className="font-thin text-sm">(in alphabetical order)</span>
+            <h3 className="font-semibold text-2xl">
+              Current TSC members
+            </h3>
+            <span className="font-thin text-sm">
+              (in alphabetical order)
+            </span>
           </div>
 
           <ul
@@ -135,11 +140,11 @@ export default function TSC() {
   );
 }
 
-  const socials = {
-    "Github": <GithubSVG />,
-    "Twitter": <TwitterSVG />,
-    "Linkedin": <LinkedInSVG />,
-  }
+const socials = {
+  "Github": <GithubSVG />,
+  "Twitter": <TwitterSVG />,
+  "Linkedin": <LinkedInSVG />,
+}
 
 function SocialLink({ href, social }) {
   return (
@@ -154,7 +159,7 @@ function SocialLink({ href, social }) {
         {socials[social]}
       </a>
     </li>
-  );
+  )
 }
 
 function UserInfo({ user }) {
