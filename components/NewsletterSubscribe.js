@@ -20,6 +20,7 @@ export default function NewsletterSubscribe ({
         typeStyle="heading-lg"
         className="mb-4"
       >
+        
         {title}
       </Heading>
       <Paragraph className="mb-8" textColor={paragraphTextColor}>
