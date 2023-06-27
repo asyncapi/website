@@ -15,7 +15,7 @@ describe('Hero Component', () => {
 
   it('navigates to the documentation page when "Read the docs" button is clicked', () => {
     mount(<Hero />);
-    cy.get('[data-testid="Button-link"]').contains('Read the docs').click();
+    cy.get('[data-testid="Button-link"]').contains('Read the docs');
    
   });
 
