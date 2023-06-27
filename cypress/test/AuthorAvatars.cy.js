@@ -32,10 +32,10 @@ describe('AuthorAvatars', () => {
     ];
     mount(<AuthorAvatars authors={authorsWithoutLinks} />);
     authorsWithoutLinks.forEach((author, index) => {
-      cy.get('a')
+      cy.get('[data-testid="AuthorAvatars-link"]')
         .should('not.exist');
 
-      cy.get('img')
+      cy.get('[data-testid="AuthorAvatars-img"]')
         .eq(index)
         .should('have.attr', 'src', author.photo)
         .should('have.attr', 'title', author.name)
@@ -50,10 +50,10 @@ describe('AuthorAvatars', () => {
   it('renders the author avatars with links', () => {
     mount(<AuthorAvatars authors={authors} />);
     authors.forEach((author, index) => {
-      cy.get(`a[alt="${author.name}"][href="${author.link}"]`)
+      cy.get(`[data-testid="AuthorAvatars-link"][alt="${author.name}"][href="${author.link}"]`)
         .should('have.length', 1)
         .within(() => {
-          cy.get('img')
+          cy.get('[data-testid="AuthorAvatars-img"]')
             .should('have.attr', 'src', author.photo)
             .should('have.attr', 'title', author.name)
             .should('have.class', index > 0 ? `absolute left-${index * 7} top-0` : `relative mr-${(authors.length - 1) * 7}`)

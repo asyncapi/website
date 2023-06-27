@@ -43,8 +43,8 @@ describe('TOC', () => {
     mount(<TOC toc={toc} />);
 
     // Add assertions to verify the rendering of TOC items
-    cy.get('h5').should('contain', 'On this page');
-    cy.get('a').should('have.length', toc.length);
+    cy.get('[data-testid="TOC-Heading"]').should('contain', 'On this page');
+    cy.get('[data-testid="TOC-Link"]').should('have.length', toc.length);
   });
 
   it('expands and collapses the TOC on click', () => {
@@ -54,13 +54,13 @@ describe('TOC', () => {
     cy.get('.hidden').should('exist'); // TOC content should be hidden
 
     // Click on the TOC header
-    cy.get('h5').click();
+    cy.get('[data-testid="TOC-Heading"]').click();
 
     // Verify expanded state
     cy.get('.hidden').should('not.exist'); // TOC content should be visible
 
     // Click again on the TOC header
-    cy.get('h5').click();
+    cy.get('[data-testid="TOC-Heading"]').click();
 
     // Verify collapsed state
     cy.get('.hidden').should('exist'); // TOC content should be hidden
