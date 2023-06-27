@@ -18,3 +18,5 @@ async function start() {
   );
   await buildCaseStudiesList();
 }
+
+start();
