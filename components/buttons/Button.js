@@ -37,7 +37,7 @@ export default function Button({
 
   return (
     <Link href={href} passHref>
-      <a {...props} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid="Button-link">
+      <a {...props} target={target} rel="noopener noreferrer" className={buttonSize === 'small' ? smallButtonClasses : classNames}>
         {
           icon && iconPosition === 'left' && (
             <span className="inline-block mr-2">{icon}</span>

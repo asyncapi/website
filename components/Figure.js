@@ -12,9 +12,9 @@ export default function Figure ({ src, caption, widthClass, className, float, al
   }
 
   return (
-    <figure className={`${className} ${floatClassNames} ${widthClass || 'w-full'}`} data-testid="Figure-div">
+    <figure className={`${className} ${floatClassNames} ${widthClass || 'w-full'}`}>
       <div className='flex flex-col'>
-        <img className={`${imageClass}`} src={src} alt={alt} data-testid="Figure-img" />
+        <img className={`${imageClass}`} src={src} alt={alt} />
         { caption && (<Caption>{caption}</Caption>) }
       </div>
     </figure>
