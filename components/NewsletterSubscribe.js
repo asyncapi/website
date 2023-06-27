@@ -13,7 +13,7 @@ export default function NewsletterSubscribe ({
   const paragraphTextColor = dark ? 'text-gray-300' : ''
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="NewsletterSubscribe-div">
       <Heading 
         level="h3"
         textColor={headTextColor}

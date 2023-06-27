@@ -17,7 +17,7 @@ describe('MacWindow Component', () => {
         {children}
       </MacWindow>
     );
-    cy.get('div')
+    cy.get('[data-testid="MacWindow-main"]')
       .should('have.class', className)
       .within(() => {
         cy.get('[data-testid="MacWindow-div"]').should('exist');
@@ -29,7 +29,7 @@ describe('MacWindow Component', () => {
           .should('exist')
           .and('have.attr', 'title', title)
           .and('have.text', title);
-        cy.get('div.hidden.sm\\:block').should('exist').and('have.length', 1);
+        cy.get('[data-testid="MacWindow-title"]').should('exist').and('have.length', 1);
       });
   });
 });
