@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /definitions/
-Disallow: /schema-store/
+Disallow: /
