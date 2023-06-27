@@ -1,8 +1,8 @@
 import GenericLayout from "../../components/layout/GenericLayout";
 import TSCMembersList from "../../config/MAINTAINERS.json";
-import { sortBy } from "lodash";
+import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
-import TextLink from "../../components/typography/TextLink";
+import TextLink from '../../components/typography/TextLink';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -139,11 +139,11 @@ export default function TSC() {
   );
 }
 
-const socials = {
-  Github: <GithubSVG />,
-  Twitter: <TwitterSVG />,
-  Linkedin: <LinkedInSVG />,
-};
+  const socials = {
+    "Github": <GithubSVG />,
+    "Twitter": <TwitterSVG />,
+    "Linkedin": <LinkedInSVG />,
+  }
 
 function SocialLink({ href, social }) {
   return (
