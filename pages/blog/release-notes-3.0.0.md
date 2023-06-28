@@ -16,10 +16,11 @@ featured: true
 
 The new version of the AsyncAPI specification - 3.0.0 - is now available and is packed with goodies! Some clear up confusion, some add features, and others improve maintainability.
 
-To make the information as digestible as possible, we have split up related information into different digestible chunks.
+To make the information as clear as possible, we have split up the information into digestible chunks.
 
-- If you want to get an overview of all the changes done in v3 - Then you are in the right place! 
-- If you want to get an overview of all the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](/docs/migration/migrating-to-v3) 
+If you want to get an overview of:
+- All the changes done in v3, you are in the right place! 
+- All the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](/docs/migration/migrating-to-v3) 
 
 ## Overview
 This post will give you an overview of all the changes done in v3.
@@ -28,7 +29,7 @@ This post will give you an overview of all the changes done in v3.
 
 In v2, it has never been possible to re-use channels, because it was directly coupled with operations of an application.
 
-In v3, this is now possible, with the mindset, a channel and message should be detached from the operations performed. This means for any message broker, for example for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
+In v3, this is now possible, with the mindset a channel and message should be detached from the operations performed. This means for any message broker, for example, for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces, it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
 
 This change makes the channels reusable across multiple AsyncAPI documents.
 
@@ -70,11 +71,11 @@ channels:
 ```
 
 ### Publish and subscribe confusion
-In v2, the `publish` and `subscribe` operation keywords have always been a subject of great confusion. Does it mean my application publishes to the channel? Does it mean you publish to me? Who are you in this context? 
+In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application publishes to the channel? Does it mean you publish for me? Who are you in this context? 
 
-In v3 we try to clear this up. The only thing you need to worry about is your and your application's behavior. No more confusion about what and who does what. We achieve this through two new operation keywords, `send` and `receive`, i.e. your application either sends or receives something.
+In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new operation keywords, `send` and `receive`, i.e. your application either sends or receives something.
 
-This description of course alters slightly based on protocol, for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
+This description of course alters slightly based on protocol; for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
 ```
 asyncapi: 3.0.0
@@ -91,13 +92,13 @@ Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#84
 ### Request/Reply
 One of the longest requested features is request and reply... and it's finally here! 
 
-One thorn in the eye of this feature has always been the publish and subscribe confusion, which complicated any efforts to achieve a workable solution. However, with that out of the way, we now have a solution :fire:
+One thorn in the eye of this feature has always been the publish and subscribe confusion, which complicated any efforts to achieve a workable solution. However, we now have a solution with that out of the way. :fire:
 
-This feature has been designed with the following use cases in mind.
+This feature has been designed with the following use cases in mind:
 
 - Broker-based messaging with well-defined response topic + "correlationId".
-- Broker-based messaging with per process individual inbox aka. "replyTopic" + "correlationId".
-- Broker-based messaging with a temporary reply topic for an individual response
+- Broker-based messaging with per process individual inbox aka "replyTopic" + "correlationId".
+- Broker-based messaging with a temporary reply topic for an individual response.
 - WebSocket, which has no topics, where the channel is a TCP connection where messages flow.
 
 ```
@@ -117,7 +118,7 @@ Read more about the [Operation Reply Object here](https://www.asyncapi.com/docs/
 Issues: [#94](https://github.com/asyncapi/spec/issues/94), [#558](https://github.com/asyncapi/spec/issues/558) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847)
 
 ### Optional channels
-We have seen many use cases where an AsyncAPI document, has been used as a form of menu or collection of definitions. To do this in v2 would require a bit of a hack to achieve this. But in v3 channels are now entirely optional. This means that it's now possible to have a valid AsyncAPI document as such:
+We have seen many use cases where an AsyncAPI document has been used as a form of menu or collection of definitions. To do this in v2 would require a bit of a hack. But in v3, channels are now entirely optional. This means that it's now possible to have a valid AsyncAPI document as such:
 
 ```
 asyncapi: 3.0.0
@@ -129,7 +130,7 @@ Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#84
 
 ### Unified referencing behaviors
 
-In v2, there were two instances, where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. To stay as consistent as possible, we wanted to unify how references were used, which means that in v3, we ONLY use explicit references. 
+In v2, there were two instances where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. To stay as consistent as possible, we wanted to unify how references were used, which means that in v3, we ONLY use explicit references. 
 
 The server security information is also now an array instead of an object.
 
@@ -154,9 +155,9 @@ components:
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#852](https://github.com/asyncapi/spec/pull/852)
 
 ### Common metadata fields
-There has been some inconsistency between which type of metadata fields are available in the different objects. Now we have added a few extra fields 
+There has been some inconsistency between which metadata fields are available in the different objects. Now we have added a few extra fields:
 - added `title`, `summary`, and `externalDocs` fields in Server Object
-- added `title`, and `summary` fields in Channel Object
+- added `title` and `summary` fields in Channel Object
 - added `title` field in Operation Object and Operation Trait Object
 
 ```
@@ -200,7 +201,7 @@ info:
 Pull request: [#794](https://github.com/asyncapi/spec/pull/794)
 
 ### Splitting out server URL into host and pathname
-There has been some confusion about what the `url` of a server should contain, is it both protocol + host + path? What about the protocol field then? Therefore each field now has its own field for the host, path, and protocol.
+There has been some confusion about what the `url` of a server should contain; is it both protocol + host + path? What about the protocol field, then? Therefore each field now has its field for the host, path, and protocol.
 
 ```
 asyncapi: 3.0.0
@@ -243,7 +244,7 @@ components:
 Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847), [#792](https://github.com/asyncapi/spec/pull/792), [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
 
 ### New trait behavior
-Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
+Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant, for example, if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
 
 In v3, this has now been changed so that main objects have a higher priority than what ever you define in traits.
 
@@ -276,7 +277,7 @@ Issues: [#505](https://github.com/asyncapi/spec/issues/505) | Pull request: [#51
 ### Schema format and payload definition
 With schemas, one thing that has always been impossible was reusing schemas with different schema formats. That's because the schema format information is part of the message object. That means that if you reference a Schema object, it has no information about the schema format because it's not located together.
 
-In v3, schemaFormat has been removed from the message object and message trait object, and a new schema Object called `Multi Format Schema Object` has been introduced which pairs a schema together with its schema format. Which now enables much better reusability:
+In v3, schemaFormat has been removed from the message object and message trait object, and a new schema Object called `Multi Format Schema Object` has been introduced, which pairs a schema together with its schema format. Which now enables much better reusability:
 
 ```
 asyncapi: 3.0.0
@@ -314,7 +315,7 @@ Issues: [#583](https://github.com/asyncapi/spec/issues/583) | Pull request: [#93
 
 ### Editorial changes
 
-We have [removed the note that stated we strived to be compatible with OpenAPI where possible]([#933](https://github.com/asyncapi/spec/pull/933)), because, with the recent changes, this is no longer the case. That said we of course still strive to make the different specs as interoperable as possible i.e. with Avro, RAML, OpenAPI Schema, etc. 
+We have [removed the note that stated we strived to be compatible with OpenAPI where possible]([#933](https://github.com/asyncapi/spec/pull/933)) because, with the recent changes, this is no longer the case. That said, we still strive to make the different specs as interoperable as possible i.e., with Avro, RAML, OpenAPI Schema, etc. 
 
 ## Tooling support
 The following official AsyncAPI tools are already updated to support v3:
