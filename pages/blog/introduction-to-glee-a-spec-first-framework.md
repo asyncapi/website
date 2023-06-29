@@ -65,8 +65,11 @@ asyncapi new glee
 Once the process is complete you should have a new Glee app ready for development and see these files that were made.
 
 <center>
-![Glee File Structure](/static/images/glee-file-structure.png)
+
+![Glee File Structure](/img/posts/glee-introduction/glee-file-structure.webp)
+
 </center>
+
 
 
 #### Define our Spec for our API.
@@ -155,7 +158,7 @@ npm run start
 
 Then open Postman and checkout the endpoint: 
 
-![postman](/static/images/postman-glee-greet.png)
+![postman](/img/posts/glee-introduction/postman-glee-greet.webp)
 
 
 # Conclusion
