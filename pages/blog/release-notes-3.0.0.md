@@ -317,13 +317,8 @@ Issues: [#583](https://github.com/asyncapi/spec/issues/583) | Pull request: [#93
 
 We have [removed the note that stated we strived to be compatible with OpenAPI where possible]([#933](https://github.com/asyncapi/spec/pull/933)) because, with the recent changes, this is no longer the case. That said, we still strive to make the different specs as interoperable as possible i.e., with Avro, RAML, OpenAPI Schema, etc. 
 
-## Tooling support
-The following official AsyncAPI tools are already updated to support v3:
-
-TODO
-
 ## Acknowledgements
-Spec 3.0 have been a massive undertaking, so I would like to say a huge "thank you!" to everyone who has been involved, maybe you commented on your views, added to discussions, joined the live meetings, championed changes, reviewed proposed changes, the list goes on, this section is for you!
+Spec 3.0 have been a massive undertaking, so I would like to say a huge "thank you!" to everyone who has been involved; maybe you commented on your views, added to discussions, joined the live meetings, championed changes, or reviewed proposed changes; this section is for you!
 
 Thank you, xxxxxxxxxxxxxxxxx
 
