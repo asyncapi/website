@@ -18,7 +18,7 @@ export default function Container ({
   const Tag = as || 'div';
   
   return (
-    <Tag className={fluid ? fluidClassNames : normalClassNames}>
+    <Tag className={fluid ? fluidClassNames : normalClassNames} data-testid="Container-div">
       {children}
     </Tag>
   )

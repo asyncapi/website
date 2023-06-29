@@ -4,6 +4,7 @@ import Container from './Container';
 import Footer from '../Footer';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 import StickyNavbar from '../navigation/StickyNavbar';
+import { useRouter } from "next/router";
 
 export default function GenericLayout({
   title,

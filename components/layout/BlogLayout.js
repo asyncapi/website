@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useRouter as useRouterFromNext } from 'next/router';
 import HtmlHead from 'next/head'
 import ErrorPage from 'next/error'
 import moment from 'moment'
@@ -11,13 +11,14 @@ import AuthorAvatars from '../AuthorAvatars'
 import StickyNavbar from '../navigation/StickyNavbar'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
 
-export default function BlogLayout({ post, children }) {
-  if (!post) return <ErrorPage statusCode={404} />
-  if (post.title === undefined) throw new Error('Post title is required')
 
-  const router = useRouter()
+export default function BlogLayout({ post, children, useRouter = useRouterFromNext }) {
+  if (!post) return <ErrorPage statusCode={404} />;
+  if (post.title === undefined) throw new Error('Post title is required');
+
+  const router = useRouter();
   if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
 
   return (
