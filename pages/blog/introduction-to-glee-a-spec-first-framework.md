@@ -4,7 +4,7 @@ date: 2023-06-28T4:52:19+05:30
 type: Engineering
 canonical: https://souvikns.com/blog/AsyncAPI/Introduction-to-glee
 tags: ['guide']
-cover: /img/posts/may-2021-at-asyncapi/cover.webp
+cover: /img/posts/glee-banner.webp
 authors:
   - name: Souvik De
     photo: /img/avatars/souvikns.webp
