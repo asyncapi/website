@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/EvC2PZXEM0M/hqdefault.jpg",
+    "title": "Community Meeting, Tuesday June 27th 2023",
+    "description": "https://github.com/asyncapi/community/issues/762.",
+    "videoId": "EvC2PZXEM0M"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/1jiRDmuA-zg/hqdefault.jpg",
     "title": "Fran AMA AsyncAPI — 23 June 2023",
     "description": "https://github.com/asyncapi/community/issues/764 AI-generated summary: - Fran and Benjamin discussed the release of version ...",
@@ -22,11 +28,5 @@
     "title": "Studio planning",
     "description": "https://github.com/asyncapi/community/issues/745.",
     "videoId": "mAISwYCZa2I"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/V3Op2A08UQs/hqdefault.jpg",
-    "title": "Headless Commerce: Streamlining Architecture",
-    "description": "https://github.com/asyncapi/community/issues/716.",
-    "videoId": "V3Op2A08UQs"
   }
 ]
