@@ -3,7 +3,7 @@
 ---
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-45-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-48-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
@@ -207,6 +207,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://linkfree.eddiehub.io/rukundob451"><img src="https://avatars.githubusercontent.com/u/67878128?v=4?s=100" width="100px;" alt="Benjamin Rukundo"/><br /><sub><b>Benjamin Rukundo</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=rukundob451" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/tthijm"><img src="https://avatars.githubusercontent.com/u/59415467?v=4?s=100" width="100px;" alt="tthijm"/><br /><sub><b>tthijm</b></sub></a><br /><a href="#infra-tthijm" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://cynthiapeter.com"><img src="https://avatars.githubusercontent.com/u/33583060?v=4?s=100" width="100px;" alt="Cynthia Peter"/><br /><sub><b>Cynthia Peter</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=CynthiaPeter" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://florence-njeri.github.io/NjeriPortfolio"><img src="https://avatars.githubusercontent.com/u/40742916?v=4?s=100" width="100px;" alt="Florence Njeri"/><br /><sub><b>Florence Njeri</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Florence-Njeri" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ansh.live"><img src="https://avatars.githubusercontent.com/u/94157520?v=4?s=100" width="100px;" alt="Ansh Goyal"/><br /><sub><b>Ansh Goyal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=anshgoyalevil" title="Code">💻</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3Aanshgoyalevil" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SumantxD"><img src="https://avatars.githubusercontent.com/u/65810424?v=4?s=100" width="100px;" alt="Sumant.xD"/><br /><sub><b>Sumant.xD</b></sub></a><br /><a href="#infra-SumantxD" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     </tr>
   </tbody>
 </table>
