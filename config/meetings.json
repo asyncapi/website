@@ -6,24 +6,6 @@
     "date": "2023-03-29T16:00:00.000Z"
   },
   {
-    "title": "Adding support for non-JSON schemas",
-    "calLink": "https://www.google.com/calendar/event?eid=dmU0Ym5wZWplZnZpZXM3dG0yNzUyYWJsZDAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/637",
-    "date": "2023-03-21T15:00:00.000Z"
-  },
-  {
-    "title": "Make Your GSoC Proposal Stand Out",
-    "calLink": "https://www.google.com/calendar/event?eid=MGxsbzg1dWdjNmJkZTlzbmpkNms5bjVsMDQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/639",
-    "date": "2023-03-20T14:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NXM3ZWNraGQzNGMwcjUwM2MxdGtib3VuaWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/640",
-    "date": "2023-03-21T16:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=czRmMG5maHRsYjduM2g3dmwxMDM1Z3R0NzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/645",
@@ -209,5 +191,19 @@
     "url": "https://github.com/asyncapi/community/issues/764",
     "banner": "",
     "date": "2023-06-23T10:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YmhiaTQxNDBicDA0NjgyZmk3M3ZocTJxbGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/774",
+    "banner": "",
+    "date": "2023-07-06T14:30:00.000Z"
+  },
+  {
+    "title": "Open Standards and Private Products: A DevRel's Dream or Nightmare",
+    "calLink": "https://www.google.com/calendar/event?eid=dHMzZ3Q0b2h2NDRuaTVrMTQ3cmsxYzk2bzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/775",
+    "banner": "https://user-images.githubusercontent.com/66913810/249772860-0b6c73a5-a740-4fac-a22d-2d95f823ae07.png",
+    "date": "2023-07-13T09:00:00.000Z"
   }
 ]
