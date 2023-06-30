@@ -25,12 +25,7 @@ describe('FiltersDisplay', () => {
       <FiltersDisplay checkedValues={checkedValues} setValues={setValues} />
     ).then(() => {
       cy.get('.max-w-lg > div').should('have.length', checkedValues.length);
-      
-      cy.get('.max-w-lg > div')
-        .first()
-        .find('button')
-        .click();
-        
+      cy.get('.max-w-lg > div').first().find('[data-testid="Filters-Display-Button"]').click();
       cy.wrap(setValues).should('have.been.calledOnceWith', ['Filter2', 'Filter3']);
   
       

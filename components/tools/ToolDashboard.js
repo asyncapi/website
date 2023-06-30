@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { ToolFilterContext } from '../../context/ToolFilterContext';
+import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
 import ToolsData from '../../config/tools.json';
 import FilterIcon from '../icons/Filter';
 import SearchIcon from '../icons/Search';
@@ -135,6 +135,7 @@ export default function ToolDashboard() {
   const isFiltered = Boolean(isPaid !== "all" || isAsyncAPIOwner || languages.length || technologies.length || categories.length);
 
   return (
+   <ToolFilter>
     <div>
       <div className="flex flex-wrap lg:flex-nowrap gap-4 my-10 justify-between">
         <div className="flex w-[47%] lg:w-1/5 gap-5 h-auto">
@@ -209,6 +210,7 @@ export default function ToolDashboard() {
         </div>
       )}
     </div>
+    </ToolFilter>
   );
 }
 
