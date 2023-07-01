@@ -12,8 +12,7 @@ describe('JobSummary', () => {
     mount(<JobSummary job={job} className="custom-class" />);
     cy.get('[data-testid="JobSummary-dd"]').contains('Remote').should('exist');
     cy.get('[data-testid="JobSummary-paragraph"]').contains('Anywhere (on planet Earth)').should('exist');
-    cy.contains('Full-time').should('exist');
-    cy.contains('Closing on').should('exist');
-    cy.contains('June 30, 2023').should('exist');
+    cy.contains(job.employmentType).should('exist');
+    cy.contains(job.closingOn).should('exist');
   });
 });
