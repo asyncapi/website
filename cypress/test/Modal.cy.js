@@ -8,7 +8,7 @@ describe('Modal', () => {
       const onModalClose = cy.stub().as('onModalClose');
       mount(<Modal title="Test Modal" onModalClose={onModalClose} />);
       
-      cy.get('button').click();
+      cy.get('[data-testid="Modal-close"]').click();
   
       cy.get('@onModalClose').should('have.been.calledOnce');
     });
