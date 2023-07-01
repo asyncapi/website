@@ -20,8 +20,8 @@ describe('GithubButton', () => {
         />
       );
       cy.contains('Custom Text').should('be.visible');
-      cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', 'https://example.com');
-      cy.get('[ data-testid="Button-link"]').should('have.attr', 'target', '_self');
+      cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://example.com');
+      cy.get('[data-testid="Button-link"]').should('have.attr', 'target', '_self');
     });
   });
   

@@ -10,9 +10,9 @@ describe('Button component', () => {
     mount(
       <Button text={text} type={type} icon={icon} />
     );
-    cy.get('[ data-testid="Button-main"]').should('have.text', text);
-    cy.get('[ data-testid="Button-main"]').should('have.attr', 'type', type);
-    cy.get('[ data-testid="Button-link"]').should('not.exist');
+    cy.get('[data-testid="Button-main"]').should('have.text', text);
+    cy.get('[data-testid="Button-main"]').should('have.attr', 'type', type);
+    cy.get('[data-testid="Button-link"]').should('not.exist');
   });
 
   it('renders a button with href', () => {
@@ -22,10 +22,10 @@ describe('Button component', () => {
     mount(
       <Button text={text} href={href} target={target} />
     );
-    cy.get('[ data-testid="Button-link"]').should('have.text', text);
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', href);
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'target', target);
-    cy.get('[ data-testid="Button-main"]').should('not.exist');
+    cy.get('[data-testid="Button-link"]').should('have.text', text);
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', href);
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'target', target);
+    cy.get('[data-testid="Button-main"]').should('not.exist');
   });
 
   it('renders a small button', () => {
@@ -34,7 +34,7 @@ describe('Button component', () => {
     mount(
       <Button text={text} buttonSize={buttonSize} />
     );
-    cy.get('[ data-testid="Button-main"]').should('have.class', 'px-3 py-2 text-sm');
+    cy.get('[data-testid="Button-main"]').should('have.class', 'px-3 py-2 text-sm');
   });
   it('renders a button with custom class', () => {
     const text = 'Click me';
@@ -43,6 +43,6 @@ describe('Button component', () => {
     mount(
       <Button text={text} className={className} />
     );
-    cy.get('[ data-testid="Button-main"]').should('have.class', className);
+    cy.get('[data-testid="Button-main"]').should('have.class', className);
   });
 });

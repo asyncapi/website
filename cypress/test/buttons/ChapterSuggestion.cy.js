@@ -18,19 +18,19 @@ describe('ChapterSuggestion', () => {
     cy.contains(chapter.title).should('exist');
     cy.contains(chapter.description).should('exist');
     cy.contains(chapter.linkText).should('exist');
-    cy.get('[ data-testid="ChapterSuggestion-link"]').should('have.attr', 'href', chapter.href);
+    cy.get('[data-testid="ChapterSuggestion-link"]').should('have.attr', 'href', chapter.href);
   });
 
   it('applies the correct className', () => {
-    cy.get('[ data-testid="ChapterSuggestion-link"]').should('have.class', chapter.className);
+    cy.get('[data-testid="ChapterSuggestion-link"]').should('have.class', chapter.className);
   });
 
   it('sets the target attribute', () => {
-    cy.get('[ data-testid="ChapterSuggestion-link"]').should('have.attr', 'target', chapter.target);
+    cy.get('[data-testid="ChapterSuggestion-link"]').should('have.attr', 'target', chapter.target);
   });
 
   it('sets the title attribute', () => {
-    cy.get('[ data-testid="ChapterSuggestion-link"]').should('have.attr', 'title', chapter.description);
+    cy.get('[data-testid="ChapterSuggestion-link"]').should('have.attr', 'title', chapter.description);
   });
 
   it('renders the link text and IconArrowRight', () => {

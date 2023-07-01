@@ -17,7 +17,7 @@ describe('GoogleCalendarButton', () => {
         />
       );
       cy.contains('Custom Text').should('be.visible');
-      cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', 'https://example.com').and('have.attr', 'target', '_self');
+      cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://example.com').and('have.attr', 'target', '_self');
     });
   });
   

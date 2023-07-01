@@ -15,8 +15,8 @@ describe('GoogleCalendarButton', () => {
       />
     );
     cy.contains('Custom Text').should('be.visible');
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', customHref);
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'target', '_self');
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', customHref);
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'target', '_self');
   });
 
   it('renders correctly with default props', () => {

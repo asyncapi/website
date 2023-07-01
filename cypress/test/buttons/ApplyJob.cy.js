@@ -17,7 +17,7 @@ describe('ApplyJobButton', () => {
   });
 
   it('sets the correct href and target attributes', () => {
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', 'https://www.asyncapi.com/');
-    cy.get('[ data-testid="Button-link"]').should('have.attr', 'target', '_blank');
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://www.asyncapi.com/');
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'target', '_blank');
   });
 });
