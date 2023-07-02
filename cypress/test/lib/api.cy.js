@@ -1,0 +1,41 @@
+import { getAllPosts, getPostBySlug, getDocBySlug } from '../../../lib/api';
+import posts from '../../../config/posts.json'
+describe('getAllPosts', () => {
+  it('should return all posts', () => {
+    const allPosts = getAllPosts();
+    expect(allPosts).to.deep.equal(posts);
+  });
+});
+
+describe('getPostBySlug', () => {
+  it('should return the post with the given slug', () => {
+    const slug = 'example-post';
+    const post = getPostBySlug(slug);
+    const expectedPost = posts.blog.find((p) => p.slug === slug && !p.isSection);
+    expect(post).to.deep.equal(expectedPost);
+  });
+
+  it('should return the post of a specific type with the given slug', () => {
+    const slug = 'example-post';
+    const type = 'blog';
+    const post = getPostBySlug(slug, type);
+    const expectedPost = posts[type].find((p) => p.slug === slug && !p.isSection);
+    expect(post).to.deep.equal(expectedPost);
+  });
+});
+
+describe('getDocBySlug', () => {
+    it('should return the document with the given slug', () => {
+      const structuredPosts = [
+        { slug: 'doc1', isSection: false },
+        { slug: 'doc2', isSection: false },
+        { slug: 'doc3', isSection: false }
+      ];
+      const slug = 'doc2';
+      const doc = getDocBySlug(structuredPosts, slug);
+      const expectedDoc = structuredPosts.find((post) => post.slug === slug && !post.isSection);
+      expect(doc).to.deep.equal(expectedDoc);
+    });
+
+  });
+
