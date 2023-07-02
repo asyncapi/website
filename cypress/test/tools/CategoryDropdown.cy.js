@@ -3,11 +3,11 @@ import { mount } from 'cypress/react';
 import CategoryDropdown from '../../../components/tools/CategoryDropdown';
 describe('CategoryDropdown', () => {
   beforeEach(() => {
-    mount(<CategoryDropdown setopenCategory={cy.stub().as('setopenCategory')} />);
+    mount(<CategoryDropdown setopenCategory={ cy.stub().as('setopenCategory') } />);
   });
 
   it('renders the dropdown menu with category names', () => {
-    cy.get('[data-testid="CategoryDropdown-div"]').should('have.class','absolute z-10');
+    cy.get('[data-testid="CategoryDropdown-div"]').should('have.class', 'absolute z-10');
     cy.get('[data-testid="CategoryDropdown-div"]')
       .find('[data-testid="CategoryDropdown-link"]')
       .each((categoryLink) => {
@@ -17,8 +17,8 @@ describe('CategoryDropdown', () => {
 
   it('calls setopenCategory when a category is clicked', () => {
     cy.get('@setopenCategory').as('setopenCategoryStub');
-    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]') .first() .click().then(() => {
-     cy.get('@setopenCategoryStub').should('have.been.calledOnceWith', false);
-      });
+    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]').first().click().then(() => {
+      cy.get('@setopenCategoryStub').should('have.been.calledOnceWith', false);
+    });
   });
 });

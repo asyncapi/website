@@ -14,9 +14,9 @@ describe('FiltersDropdown', () => {
 
     mount(
       <FiltersDropdown
-        dataList={dataList}
-        checkedOptions={checkedOptions}
-        setStateFunction={setStateFunction}
+        dataList={ dataList }
+        checkedOptions={ checkedOptions }
+        setStateFunction={ setStateFunction }
       />
     );
 
@@ -27,6 +27,6 @@ describe('FiltersDropdown', () => {
     cy.get('@setStateFunction').should('have.been.calledThrice');
     cy.get('@setStateFunction').should('have.been.calledWith', ['Option 2']);
 
-    
+
   });
 });

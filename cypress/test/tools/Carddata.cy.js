@@ -19,7 +19,7 @@ describe('Carddata Component', () => {
       setVisible: cy.stub(),
       type: 'lang'
     };
-    mount(<Carddata {...props} />);
+    mount(<Carddata { ...props } />);
     cy.get('.custom-class').should('exist');
     cy.get('button').click();
     cy.get('button').click();
@@ -43,9 +43,9 @@ describe('Carddata Component', () => {
       setVisible: cy.stub(),
       type: 'lang'
     };
-      mount(<Carddata {...props} />);
-      cy.contains('Show More').should('exist').click();
-      cy.get('.custom-class button').then((buttons) => {
+    mount(<Carddata { ...props } />);
+    cy.contains('Show More').should('exist').click();
+    cy.get('.custom-class button').then((buttons) => {
       const showLessButton = buttons.toArray().find((button) => button.innerText.includes('Show Less'));
       expect(showLessButton).to.exist;
     });

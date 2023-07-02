@@ -1,36 +1,34 @@
-import { useState, useContext, useEffect, useRef } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { twMerge } from 'tailwind-merge';
-import { ToolFilterContext } from '../../context/ToolFilterContext';
+import { twMerge } from 'tailwind-merge'
+import ToolFilter, { ToolFilterContext } from '../../context/ToolFilterContext';
 import ArrowDown from '../icons/ArrowDown';
 import FiltersDropdown from './FiltersDropdown';
 import FiltersDisplay from './FiltersDisplay';
-import Button from '../buttons/Button';
-import tags from '../../config/all-tags.json';
-import { categoryList } from '../../scripts/tools/categorylist';
-import Data from "../../scripts/tools/tools-schema.json";
+import Button from '../buttons/Button'
+import tags from '../../config/all-tags.json'
+import { categoryList } from '../../scripts/tools/categorylist'
+import Data from "../../scripts/tools/tools-schema.json"
 import { Carddata } from './Carddata';
 
 export default function Filters({ setOpenFilter }) {
   const router = useRouter();
-  const {
-    isPaid,
-    isAsyncAPIOwner,
-    languages,
-    technologies,
-    categories,
-  } = useContext(ToolFilterContext);
+  // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
+  const { isPaid, isAsyncAPIOwner, languages, technologies, categories } = useContext(ToolFilterContext)
 
-  const [openLanguage, setOpenLanguage] = useState(false);
-  const [openTechnology, setOpenTechnology] = useState(false);
-  const [openCategory, setOpenCategory] = useState(false);
+  // State variables to operate dropdowns of respective filters
+  const [openLanguage, setopenLanguage] = useState(false)
+  const [openTechnology, setopenTechnology] = useState(false)
+  const [openCategory, setopenCategory] = useState(false)
 
-  const [checkPaid, setCheckPaid] = useState(isPaid);
-  const [checkedLanguage, setCheckedLanguage] = useState(languages);
-  const [checkedTechnology, setCheckedTechnology] = useState(technologies);
-  const [checkedCategory, setCheckedCategory] = useState(categories);
-  const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner);
+  // Filter state variables for user checked values are created, initialising it with the values already set by user. 
+  const [checkPaid, setCheckPaid] = useState(isPaid)
+  const [checkedLanguage, setCheckedLanguage] = useState(languages)
+  const [checkedTechnology, setCheckedTechnology] = useState(technologies)
+  const [checkedCategory, setCheckedCategory] = useState(categories)
+  const [checkOwner, setCheckOwner] = useState(isAsyncAPIOwner)
 
+  // useEffect hook used to update the UI elements 
   useEffect(() => {
     setCheckedLanguage(languages);
     setCheckedTechnology(technologies);
@@ -39,123 +37,141 @@ export default function Filters({ setOpenFilter }) {
     setCheckOwner(isAsyncAPIOwner);
   }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
 
-  const languageList = tags["languages"];
-  const technologyList = tags["technologies"];
+  // contains the list of languages and technologies
+  let languageList = tags["languages"]
+  let technologyList = tags["technologies"]
 
+  // For Showing language, technology and category information
   const [visible, setVisible] = useState({
     lang: false,
     tech: false,
     category: false,
     pricing: false,
-    ownership: false,
-  });
+    ownership: false
+  })
 
-  const [readMore, setReadMore] = useState(false);
+  // For showing the read more content of Language and Category information
+  const [readMore, setReadMore] = useState(false)
 
+  // function to apply all the filters, which are selected, when `Apply Filters` is clicked.
   const handleApplyFilters = () => {
-    setOpenFilter(false);
+    setOpenFilter(false)
 
     const searchParams = new URLSearchParams();
+    // Set the params key only when the default value of the key changes. This is to know when the user actually applies filter(s).
     if (checkOwner) searchParams.set('owned', checkOwner);
 
-    if (checkPaid !== "all") searchParams.set("pricing", checkPaid);
+    if (checkPaid !== "all") searchParams.set("pricing", checkPaid)
     if (checkedLanguage.length > 0) searchParams.set('langs', checkedLanguage);
     if (checkedTechnology.length > 0) searchParams.set('techs', checkedTechnology);
     if (checkedCategory.length > 0) searchParams.set('categories', checkedCategory);
 
-    router.push(
-      {
-        pathname: '/tools',
-        query: searchParams.toString(),
-      },
-      undefined,
-      { shallow: true }
-    );
-  };
+    router.push({
+      pathname: '/tools',
+      query: searchParams.toString()
+    }, undefined, { shallow: true })
+  }
 
+  // function to undo all the filters when `Undo Changes` is clicked.
   const undoChanges = () => {
     setCheckedLanguage(languages);
     setCheckedTechnology(technologies);
     setCheckedCategory(categories);
     setCheckPaid(isPaid);
     setCheckOwner(isAsyncAPIOwner);
-  };
-
-  const languageRef = useRef(null);
-  const technologyRef = useRef(null);
-  const categoryRef = useRef(null);
-
-  useEffect(() => {
-    if (languageRef.current) {
-      // Perform any necessary actions with languageRef here
-    }
-    if (technologyRef.current) {
-      // Perform any necessary actions with technologyRef here
-    }
-    if (categoryRef.current) {
-      // Perform any necessary actions with categoryRef here
-    }
-  }, []);
+  }
 
   return (
-    <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md">
-      <div className="flex flex-col gap-2 mx-4">
-        <FiltersDisplay
-          title="Languages"
-          selectedOptions={checkedLanguage}
-          onClick={() => setOpenLanguage(!openLanguage)}
-        />
-        <FiltersDropdown
-          open={openLanguage}
-          setOpen={setOpenLanguage}
-          visible={visible.lang}
-          setVisible={(value) => setVisible((prevState) => ({ ...prevState, lang: value }))}
-          list={languageList}
-          checked={checkedLanguage}
-          setChecked={setCheckedLanguage}
-          ref={languageRef}
-          cypressRef="languageRef" // Add a custom attribute for Cypress to target
-        />
-        <FiltersDisplay
-          title="Technologies"
-          selectedOptions={checkedTechnology}
-          onClick={() => setOpenTechnology(!openTechnology)}
-        />
-        <FiltersDropdown
-          open={openTechnology}
-          setOpen={setOpenTechnology}
-          visible={visible.tech}
-          setVisible={(value) => setVisible((prevState) => ({ ...prevState, tech: value }))}
-          list={technologyList}
-          checked={checkedTechnology}
-          setChecked={setCheckedTechnology}
-          ref={technologyRef}
-          cypressRef="technologyRef" // Add a custom attribute for Cypress to target
-        />
-        <FiltersDisplay
-          title="Categories"
-          selectedOptions={checkedCategory}
-          onClick={() => setOpenCategory(!openCategory)}
-        />
-        <FiltersDropdown
-          open={openCategory}
-          setOpen={setOpenCategory}
-          visible={visible.category}
-          setVisible={(value) => setVisible((prevState) => ({ ...prevState, category: value }))}
-          list={categoryList}
-          checked={checkedCategory}
-          setChecked={setCheckedCategory}
-          ref={categoryRef}
-          cypressRef="categoryRef" // Add a custom attribute for Cypress to target
-        />
-        <div className="flex items-center justify-between my-4">
-          <Button variant="secondary" onClick={undoChanges}>
-            Undo changes
-          </Button>
-          <Button onClick={handleApplyFilters}>Apply filters</Button>
+    <ToolFilter>
+      <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md" data-testid="Filters-div">
+        <div className="flex flex-col gap-2 mx-4">
+          <div className="flex gap-2 items-baseline justify-between">
+            <div className="text-sm text-gray-500">
+              <Carddata heading="PRICING" data={ Data.properties.filters.properties.hasCommercial.description } type="pricing" visible={ visible } setVisible={ setVisible } read={ readMore } setRead={ setReadMore } />
+            </div>
+            <div className="text-xs mb-0 flex cursor-pointer hover:underline gap-0.5" onClick={ undoChanges }>
+              Undo Changes
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className={ twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${ checkPaid === "free" ? 'bg-secondary-100 border-secondary-500' : '' }`) } onClick={ () => (checkPaid === "free" ? setCheckPaid("all") : setCheckPaid("free")) }>
+              <div className='text-sm'>Open Source</div>
+              <img src="/img/illustrations/icons/FreeIcon.svg" />
+            </div>
+            <div className={ `bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${ checkPaid === "paid" ? 'bg-secondary-100 border-secondary-500' : '' }` } onClick={ () => (checkPaid === "paid" ? setCheckPaid("all") : setCheckPaid("paid")) }>
+              <div className='text-sm'>Commercial</div>
+              <img src="/img/illustrations/icons/PaidIcon.svg" />
+            </div>
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className="flex flex-col gap-2 mx-4">
+          <div className="text-sm text-gray-500 text-left">
+            <Carddata heading="OWNERSHIP" data="It describes whether the tools are maintained by AsyncAPI organization or not." type="ownership" visible={ visible } setVisible={ setVisible } read={ readMore } setRead={ setReadMore } />
+          </div>
+          <div className="flex gap-4">
+            <label className="inline-flex relative items-center cursor-pointer">
+              <input type="checkbox" value={ checkOwner } className="sr-only peer" onChange={ () => setCheckOwner(!checkOwner) } />
+              <div className={ twMerge(`w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${ checkOwner ? "after:translate-x-full after:border-white bg-secondary-500" : '' }`) }></div>
+            </label>
+            <div className="font-medium text-sm">
+              Show only AsyncAPI-owned tools
+            </div>
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className="flex flex-col gap-2 mx-4" data-testid="Filters-Language-dropdown">
+          <Carddata heading="LANGUAGE" data={ Data.properties.filters.properties.language.description } type="lang" visible={ visible } setVisible={ setVisible } read={ readMore } setRead={ setReadMore } />
+          <div className="w-full">
+            <div className={ twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${ openLanguage ? 'rounded-b-none' : '' }`) } onClick={ () => setopenLanguage(!openLanguage) }>
+              <div className="flex items-center text-dark">
+                { checkedLanguage.length > 0 ? (checkedLanguage.length === 1 ? `1 option selected` : `${ checkedLanguage.length } options selected`) : `Select Languages...` }
+              </div>
+              <ArrowDown className={ `my-auto ${ openLanguage ? 'rotate-180' : '' }` } />
+            </div>
+            { openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+              <FiltersDropdown dataList={ languageList } checkedOptions={ checkedLanguage } setStateFunction={ setCheckedLanguage } />
+            </div> }
+            <FiltersDisplay checkedValues={ checkedLanguage } setValues={ setCheckedLanguage } />
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className="flex flex-col gap-2 mx-4" data-testid="Filters-Technology-dropdown">
+          <Carddata heading="TECHNOLOGY" data={ Data.properties.filters.properties.technology.description } type="tech" visible={ visible } setVisible={ setVisible } read={ readMore } setRead={ setReadMore } />
+          <div className="w-full">
+            <div className={ twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${ openTechnology ? 'rounded-b-none' : '' }`) } onClick={ () => setopenTechnology(!openTechnology) }>
+              <div className="flex items-center text-dark">
+                { checkedTechnology.length > 0 ? (checkedTechnology.length === 1 ? `1 option selected` : `${ checkedTechnology.length } options selected`) : `Select Technologies...` }
+              </div>
+              <ArrowDown className={ `my-auto ${ openTechnology ? 'rotate-180' : '' }` } />
+            </div>
+            { openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+              <FiltersDropdown dataList={ technologyList } checkedOptions={ checkedTechnology } setStateFunction={ setCheckedTechnology } />
+            </div> }
+            <FiltersDisplay checkedValues={ checkedTechnology } setValues={ setCheckedTechnology } />
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className="flex flex-col gap-2 mx-4" data-testid="Filters-Category-dropdown">
+          <Carddata heading="CATEGORY" data={ Data.properties.filters.properties.categories.description } type="category" visible={ visible } setVisible={ setVisible } read={ readMore } setRead={ setReadMore } />
+          <div className="w-full">
+            <div className={ twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${ openCategory ? 'rounded-b-none' : '' }`) } onClick={ () => setopenCategory(!openCategory) }>
+              <div className="flex items-center text-dark">
+                { checkedCategory.length > 0 ? (checkedCategory.length === 1 ? `1 option selected` : `${ checkedCategory.length } options selected`) : `Select Categories...` }
+              </div>
+              <ArrowDown className={ `my-auto ${ openCategory ? 'rotate-180' : '' }` } />
+            </div>
+            { openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+              <FiltersDropdown dataList={ categoryList } checkedOptions={ checkedCategory } setStateFunction={ setCheckedCategory } />
+            </div> }
+            <FiltersDisplay checkedValues={ checkedCategory } setValues={ setCheckedCategory } />
+          </div>
+        </div>
+        <hr className="my-4" />
+        <div className='w-auto my-6 mx-4 mb-0' onClick={ handleApplyFilters }>
+          <Button text='Apply Filters' className='w-full' />
         </div>
       </div>
-    </div>
+    </ToolFilter>
   );
 }
-

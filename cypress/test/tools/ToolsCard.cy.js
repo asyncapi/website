@@ -4,7 +4,7 @@ import ToolsCard from '../../../components/tools/ToolsCard';
 describe('ToolsCard', () => {
   const toolData = {
     title: "Example Tool",
-    description: "This is an example tool for testing purposes.",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     filters: {
       hasCommercial: false,
       language: {
@@ -31,11 +31,10 @@ describe('ToolsCard', () => {
       docsUrl: "https://docs.example.com"
     }
   };
-  
+
   it('renders ToolsCard component', () => {
-    mount(<ToolsCard toolData={toolData} />);
+    mount(<ToolsCard toolData={ toolData } />);
     cy.contains(toolData.title).should('be.visible');
-    cy.contains(toolData.description).should('exist');
     cy.contains('LANGUAGE').should('be.visible');
     cy.contains(toolData.filters.language.name).should('be.visible');
     cy.contains('TECHNOLOGIES').should('be.visible');
@@ -53,6 +52,14 @@ describe('ToolsCard', () => {
     if (toolData.links.docsUrl) {
       cy.contains('Visit Docs').should('have.attr', 'href', toolData.links.docsUrl);
     }
+  });
+
+  it('shows complete description on hover', () => {
+    mount(<ToolsCard toolData={ toolData } />);
+    //you need to hover on the description to have this test passed
+    cy.contains(toolData.description).trigger('mouseover');
+
+    cy.contains(toolData.description).should('be.visible');
   });
 
 });
