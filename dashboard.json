@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 23.26114168868996
+      "score": 23.548316277439216
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -149,7 +149,7 @@
       "resourcePath": "/asyncapi/spec-json-schemas/pull/370",
       "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 13.210031082465903
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
