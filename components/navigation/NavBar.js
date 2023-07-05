@@ -9,7 +9,7 @@ import LearningPanel from './LearningPanel'
 import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
-import Button from '../buttons/Button'
+
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
@@ -135,6 +135,7 @@ export default function NavBar({
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
       {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+
     </div>
   )
 }

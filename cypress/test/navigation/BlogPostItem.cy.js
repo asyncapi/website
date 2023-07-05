@@ -1,5 +1,5 @@
 import React from 'react'
-import {mount} from 'cypress/react'
+import { mount } from 'cypress/react'
 import BlogPostItem from '../../../components/navigation/BlogPostItem'
 describe('BlogPostItem', () => {
   const post = {
@@ -88,7 +88,7 @@ describe('BlogPostItem', () => {
   }
 
   it('renders the blog post item correctly', () => {
-    mount(<BlogPostItem post={post} />)
+    mount(<BlogPostItem post={ post } />)
 
     // Verify the rendered elements and their contents
 
@@ -96,10 +96,10 @@ describe('BlogPostItem', () => {
     cy.get('[data-testid="BlogPostItem-Img"]').should('have.attr', 'src', post.cover)
     cy.contains(post.excerpt)
     cy.contains(post.title)
-    cy.contains(post.type) 
+    cy.contains(post.type)
     post.authors.forEach(author => {
-        cy.contains(author.name)
-      })
+      cy.contains(author.name)
+    })
 
   })
 })

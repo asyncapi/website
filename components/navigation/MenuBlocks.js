@@ -12,7 +12,7 @@ export default function MenuBlocks ({
           const isExternalHref = item.href && item.href.startsWith('http');
           return (
             <Link href={item.comingSoon ? '' : item.href} key={index}>
-              <a 
+              <a data-testid="MenuBlocks-Link"
                 className="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150" 
                 target={isExternalHref ? "_blank" : undefined} 
                 rel={isExternalHref ? "noopener noreferrer" : undefined}
@@ -22,7 +22,7 @@ export default function MenuBlocks ({
                 </div>
                 <div className="space-y-1">
                   <Paragraph typeStyle="body-md" textColor="text-gray-900" fontWeight="font-semibold">
-                    <span className={item.comingSoon && 'opacity-50'}>{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
+                    <span className={item.comingSoon && 'opacity-50'} >{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
                   </Paragraph>
                   <Paragraph typeStyle="body-sm" className={item.comingSoon && 'opacity-50'}>
                     {item.description}
