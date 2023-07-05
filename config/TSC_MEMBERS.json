@@ -422,6 +422,19 @@
 		]
 	},
 	{
+		"name": "Thulisile Sibanda",
+		"github": "thulieblack",
+		"linkedin": "v-thulisile-sibanda",
+		"twitter": "thulieblack",
+		"slack": "U03CNJPMT7C",
+		"availableForHire": false,
+		"company": "AsyncAPI Initiative",
+		"repos": [
+			"website",
+			"community"
+		]
+	},
+	{
 		"name": "Lewis Relph",
 		"github": "lewis-relph",
 		"availableForHire": false,
