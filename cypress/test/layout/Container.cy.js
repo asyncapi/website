@@ -11,7 +11,8 @@ describe('Container component', () => {
     );
     cy.get('[data-testid="Container-div"]').should('exist');
 
-    cy.get('[data-testid="Container-div"]').should( 'contain.text',
+    cy.get('[data-testid="Container-div"]').should(
+      'contain.text',
       'Children content'
     );
   });

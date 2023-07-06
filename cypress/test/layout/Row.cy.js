@@ -5,11 +5,7 @@ describe('Row', () => {
   it('renders children correctly', () => {
     const children = <p>Sample content</p>;
 
-    mount(
-      <Row>
-        {children}
-      </Row>
-    );
+    mount(<Row>{children}</Row>);
     cy.contains('Sample content').should('exist');
   });
 });
