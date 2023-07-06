@@ -29,7 +29,7 @@
       "resourcePath": "/asyncapi/generator/pull/978",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 24.697014632436254
     },
     {
       "id": "PR_kwDODCuNRs4r1oNL",
@@ -703,21 +703,6 @@
       ]
     },
     {
-      "id": "I_kwDOFi_gUM5gradR",
-      "title": "add prettier configuration",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/398",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5gDKCJ",
       "title": "Generate example function for TypeScript models",
       "isAssigned": false,
@@ -850,21 +835,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Gl6TS",
-      "title": "Validate workflow on PR level",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/150",
-      "repo": "asyncapi/.github",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
