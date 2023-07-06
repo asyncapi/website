@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/hc0Lxr3G8T4/hqdefault.jpg",
+    "title": "Spec 3.0 (July 5th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/760.",
+    "videoId": "hc0Lxr3G8T4"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/EvC2PZXEM0M/hqdefault.jpg",
     "title": "Community Meeting, Tuesday June 27th 2023",
     "description": "https://github.com/asyncapi/community/issues/762.",
@@ -22,11 +28,5 @@
     "title": "Spec 3.0 (July 21th 2023)",
     "description": "https://github.com/asyncapi/community/issues/737.",
     "videoId": "DUB3XL_APgs"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/mAISwYCZa2I/hqdefault.jpg",
-    "title": "Studio planning",
-    "description": "https://github.com/asyncapi/community/issues/745.",
-    "videoId": "mAISwYCZa2I"
   }
 ]
