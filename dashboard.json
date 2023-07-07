@@ -10,15 +10,31 @@
       "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
           "name": "💭 Strawman (RFC 0)",
           "color": "C2E0C6"
         }
       ],
-      "score": 52.265775152365094
+      "score": 52.84012432986361
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 32.45072852866624
     },
     {
       "id": "PR_kwDOCHlHJM5SLlyl",
@@ -29,7 +45,7 @@
       "resourcePath": "/asyncapi/generator/pull/978",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 25.55853839868403
     },
     {
       "id": "PR_kwDODCuNRs4r1oNL",
@@ -108,6 +124,17 @@
       "score": 16.65612614745701
     },
     {
+      "id": "PR_kwDOFLhIt85RTiHb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add flowchart for GSoC23 project in README.md",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/719",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
       "id": "PR_kwDOBGu-185KHmXZ",
       "isPR": true,
       "isAssigned": false,
@@ -128,28 +155,6 @@
       "repo": "asyncapi/cli",
       "labels": [],
       "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Jw5C6",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new style guide - Inclusive Language",
-      "author": "BhaswatiRoy",
-      "resourcePath": "/asyncapi/website/pull/1327",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOB5hCo85NWLAa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: allow multi format schemas",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/370",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
