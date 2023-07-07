@@ -85,7 +85,7 @@ graph LR
 
 
 ## AsyncAPI Docs - June Summary
-June 2023 was a pivotal month for AsyncAPI's vibrant documentation community. The month marked the introduction of our **AsyncAPI Docs' Hall of Fame**, with [Florence Njeri](https://github.com/Florence-Njeri) being the inaugural inductee for her exceptional contribution. We've also unveiled the **'Technical Writing'** category as part of our 2023 Mentorship Program, welcoming Cynthia Peter, Arya Gupta, Joy Almeida, and Vaishnavi Nandakumar.
+June 2023 was a pivotal month for AsyncAPI's vibrant documentation community. The month marked the introduction of our **AsyncAPI Docs' Hall of Fame**, with [Florence Njeri](https://github.com/Florence-Njeri) being the inaugural inductee for her exceptional contribution. We've also unveiled the **`Technical Writing`** category as part of our 2023 Mentorship Program, welcoming Cynthia Peter, Arya Gupta, Joy Almeida, and Vaishnavi Nandakumar.
 
 In our ongoing series of **`OPEN` Spec 3.0 Docs Meetings**, held biweekly, we continued to foster collaboration and knowledge-sharing. Our Google Season of Docs (GSoD) 2023 witnessed significant progress, with writers focusing on creating a 100-level interactive learning path on the Killercoda platform. The website sessions for June were at **7,827** with **4,203 unique users**, indicating a healthy and growing engagement.
 
