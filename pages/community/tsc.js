@@ -1,5 +1,5 @@
 import GenericLayout from "../../components/layout/GenericLayout";
-import TSCMembersList from "../../config/TSC_MEMBERS.json";
+import TSCMembersList from "../../config/MAINTAINERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from '../../components/typography/TextLink';
@@ -38,7 +38,10 @@ export default function TSC() {
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
   const image = "/img/social/community-tsc.webp";
 
-  const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
+  const tscMembers = sortBy(
+    TSCMembersList.map((user) => addAdditionalUserInfo(user)),
+    ["name"]
+  ).filter((user) => user.isTscMember);
 
   return (
     <GenericLayout
@@ -60,8 +63,6 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
-
-            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
