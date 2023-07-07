@@ -14,5 +14,9 @@
     {
         "value": "",
         "href": "https://github.com/asyncapi/website/blob/master/pages"
+    },
+    {
+        "value": "migration/migrating-to-v3",
+        "href": "https://github.com/asyncapi/website/blob/master/pages/docs/migration/migrating-to-v3.md"
     }
 ]
