@@ -55,7 +55,7 @@ graph LR
     A(("AsyncAPI Docs' Hall of Fame"))
     B["Inaugural Member"]
     C["Florence Njeri"]
-    D["Role: Core Generator Tools Docs Maintainer"]
+    D["Role: Core Maintainer of Generator Tool Docs"]
     E["Key Contribution: Creation & Maintenance of Generator Tool Docs"]
     F["Active Member of AsyncAPI TSC"]
     G["Impecable Responsiveness as Core Docs Maintainer"]
@@ -94,7 +94,7 @@ Congratulations to all members for this productive month, and let's continue thi
 ```mermaid
 graph LR
 A[June Accomplishments: AsyncAPI Docs] -->B(AsyncAPI Docs' Hall of Fame)
-A --> C['OPEN' Spec 3.0 Docs Meetings]
+A --> C[OPEN Spec 3.0 Docs Meetings]
 A --> D[Technical Writing Category in Mentorship Program]
 A --> E[Google Season of Docs 2023]
 A --> F[Docs Sessions: 7,827]
@@ -126,8 +126,9 @@ Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the on
 To get started as a Docs contributor:
 1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
 2. Head over to our Docs GH Board [here](https://github.com/orgs/asyncapi/projects/12).
-3. Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you June have on how to get started. 
+3. Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you may have on how to get started. 
 4. If there is no work done in that Docs issue yet, feel free to open a PR and get started!
+5. Send me a DM in Slack! 
 
 #### Tag me in your AsyncAPI Doc PRs
 Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
