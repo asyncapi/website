@@ -1,12 +1,26 @@
+import { useState } from 'react';
+
 export default function SapLogo({ className }) {
-  return (
-    <svg className={className || 'inline-block'} fill="currentColor" viewBox="0 0 1024 522">
-      <linearGradient id="path3060_1_" gradientUnits="userSpaceOnUse" x1="-127.4302" y1="661.6777" x2="-126.4722" y2="661.6777" gradientTransform="matrix(0 513.7015 -513.7015 0 340415.5625 65474.9453)">
-        <stop offset="0" style={{ stopColor:'currentColor' }} />
-        <stop offset="1" style={{ stopColor:'currentColor' }} />
-      </linearGradient>
-      <path id="path3060" fill="url(#path3060_1_)" d="M13.43,13.621v491.971h502.559l491.915-491.915l0,0H13.43V13.621z" />
-      <path id="path5384" fill="currentColor" d="M649.993,455.304v36.691h5.538v-15.923h6.229l10.039,15.923h6.23l-10.731-15.923
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleMouseEnter = () => {
+		setIsHovered(true);
+	};
+	const handleMouseLeave = () => {
+		setIsHovered(false);
+	};
+
+	return (
+		<svg className={className || 'inline-block'} fill="currentColor" viewBox="0 0 1024 522"
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+		>
+			<linearGradient id="path3060_1_" gradientUnits="userSpaceOnUse" x1="-127.4302" y1="661.6777" x2="-126.4722" y2="661.6777" gradientTransform="matrix(0 513.7015 -513.7015 0 340415.5625 65474.9453)">
+				<stop offset="0" style={{ stopColor: !isHovered ? 'currentColor' : '#1661BE' }} />
+				<stop offset="1" style={{ stopColor: !isHovered ? 'currentColor' : '#019CE0' }} />
+			</linearGradient>
+			<path id="path3060" fill="url(#path3060_1_)" d="M13.43,13.621v491.971h502.559l491.915-491.915l0,0H13.43V13.621z" />
+			<path id="path5384" fill="url(#path3060_1_)" d="M649.993,455.304v36.691h5.538v-15.923h6.229l10.039,15.923h6.23l-10.731-15.923
 	c5.362-0.665,9.692-3.783,9.692-10.385c0-7.232-4.427-10.384-13.152-10.384H649.993z M655.531,460.149h7.614
 	c3.745,0,7.962,0.609,7.962,5.191c0,5.728-4.271,6.232-9,6.232h-6.576V460.149z M662.454,441.803
 	c-17.567,0-32.539,13.537-32.539,31.846c0,18.442,14.971,32.192,32.539,32.192c17.324,0,31.846-13.747,31.846-32.192
