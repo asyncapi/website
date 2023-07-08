@@ -17,7 +17,7 @@ export default function NewsroomYoutube({ className = '' }) {
   const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
   return (
-    <div className="flex-col overflow-auto" data-testid="NewsroomYoutube-div">
+    <div className="flex-col overflow-auto" data-testid="NewsroomYoutube-main">
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={8}
