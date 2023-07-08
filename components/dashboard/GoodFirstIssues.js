@@ -34,7 +34,7 @@ function GoodFirstIssues({ issues }) {
           <GoodFirstIssuesTip />
           <Filters
             className="ml-auto"
-            data-testid="filterComponent"
+            data-testid="GoodFirstIssues-filter-component"
             issues={filteredIssues}
             allIssues={issues}
             setSelectedRepo={setSelectedRepo}
