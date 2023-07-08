@@ -15,7 +15,7 @@ export default function YouTubeCard({ video }) {
             className="h-60 w-full object-cover"
           />
           
-          <div className="flex-1 bg-white p-6 flex flex-col justify-between" data-testid="YoutubeCard-main-div">
+          <div className="flex-1 bg-white p-6 flex flex-col justify-between" data-testid="YoutubeCard-main">
             <div>
               <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
                 {video.title}
