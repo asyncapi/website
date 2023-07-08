@@ -5,7 +5,6 @@ import Select from '../../form/Select';
 /**
  * Hook that alerts clicks outside of the passed ref
  */
-
 function useOutsideAlerter(ref, setOpen) {
   useEffect(() => {
     /**
