@@ -9,7 +9,7 @@ describe('Features Component', () => {
 
     it('checks if swiper component is present', () => {
         mount(<NewsroomYoutube />);
-        cy.get('[data-testid="NewsroomYoutube-div"]').should('exist')
+        cy.get('[ data-testid="NewsroomYoutube-main"]').should('exist')
 
     });
     it('slides to the next slide', () => {

@@ -11,7 +11,7 @@ const video = {
 describe('Features Component', () => {
     it('renders without errors', () => {
         mount(<YouTubeCard video={ video } />);
-        cy.get('[ data-testid="YoutubeCard-main-div"]').contains(video.title);
-        cy.get('[ data-testid="YoutubeCard-main-div"]').contains(video.description);
+        cy.get('[data-testid="YoutubeCard-main"]').contains(video.title);
+        cy.get('[data-testid="YoutubeCard-main"]').contains(video.description);
     });
 });

@@ -19,16 +19,16 @@ describe('Features Component', () => {
     });
     it('checks link href', () => {
         mount(<Newsroom />);
-        cy.get('[data-testid="Newsroom-BlogLink"]').find('a').should('have.attr', 'href', '/blog') // Check the blog href attribute
-        cy.get('[data-testid="Newsroom-TwitterLink"]').find('a').should('have.attr', 'href', 'https://twitter.com/AsyncAPISpec') //check twitter
-        cy.get('[data-testid="NewsRoomYoutube"]').find('a').should('have.attr', 'href', 'https://www.youtube.com/c/AsyncAPI') //check youtube link
+        cy.get('[data-testid="Newsroom-Blog-Link"]').find('a').should('have.attr', 'href', '/blog') // Check the blog href attribute
+        cy.get('[ data-testid="Newsroom-Twitter-Link"]').find('a').should('have.attr', 'href', 'https://twitter.com/AsyncAPISpec') //check twitter
+        cy.get('[data-testid="Newsroom-Youtube"]').find('a').should('have.attr', 'href', 'https://www.youtube.com/c/AsyncAPI') //check youtube link
 
     });
 
     it('checks TwitterTimelineEmbed', () => {
         mount(
             <div className='w-full md:w-1/2 px-2 md:pr-0 md:pl-4'>
-                <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0" data-testid="NewsroomTwitter">
+                <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0" data-testid="Newsroom-Twitter">
                     <TwitterTimelineEmbed
                         sourceType="profile"
                         screenName="AsyncAPISpec"
@@ -38,7 +38,7 @@ describe('Features Component', () => {
             </div>
         );
 
-        cy.get('[data-testid="NewsroomTwitter"]').should('exist');  // data-test was not working
+        cy.get('[data-testid="Newsroom-Twitter"]').should('exist');  // data-test was not working
 
     });
 

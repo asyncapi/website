@@ -8,14 +8,14 @@ describe('Features Component', () => {
     });
     it('check if Features Blog Post exists', () => {
         mount(<NewsroomSection />);
-        cy.get('[data-testid="NewsroomSection-div"]').should('exist');
+        cy.get('[data-testid="NewsroomSection-Featured"]').should('exist');
 
     });
 
     it('check content of Newsroom component', () => {
         mount(<NewsroomSection />);
-        cy.get('[data-testid="Newsroom-sectionDiv"]').contains(newsroom[0]);
-        cy.get('[data-testid="Newsroom-sectionDiv"]').contains(newsroom[1]);
+        cy.get('[data-testid="NewsroomSection-main"]').contains(newsroom[0]);
+        cy.get('[data-testid="NewsroomSection-main"]').contains(newsroom[1]);
         cy.get('[data-testid="NewsroomSection-Link"]').should('have.attr', 'href', '/community/newsroom')
 
 
