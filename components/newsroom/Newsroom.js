@@ -33,7 +33,7 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Check out these articles written by community members
           </Paragraph>
-          <div className="my-5" data-testid="Newsroom-BlogLink">
+          <div className="my-5" data-testid="Newsroom-Blog-Link">
             <TextLink href="/blog" className="mt-5">
               Read all blog posts
               <ArrowRight className="inline w-6" />
