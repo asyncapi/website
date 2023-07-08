@@ -35,7 +35,7 @@ We're delighted to welcome and congratulate our accepted writers into this year'
 ## Join our `OPEN` Spec 3.0 Docs Meetings
 Calling all AsyncAPI community members! We're continuing our series of **Spec 3.0 documentation** community meetings, happening **biweekly on Thursdays at 14:30 UTC**.
 
-Whether you're eager to contribute to Spec 3.0 docs, or you have questions that need answers, these open meetings are your gateway to connect and collaborate with our expert spec contributors. We especially encourage our GSoD and Mentorship Program writers to attend to ensure their contributions align flawlessly with Spec 3.0.
+Whether you're eager to contribute to Spec 3.0 docs, or you have questions that need answers, these open meetings are your gateway to connect and collaborate with our expert spec contributors. We especially encourage our GSoD and Mentorship Program writers to attend so as to ensure that their contributions align flawlessly with Spec 3.0.
 
 ### Missed our June Meetings?
 No worries! You can watch the previous June **Spec 3.0 documentation** community meetings on the AsyncAPI YouTube channel.
