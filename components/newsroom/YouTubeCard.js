@@ -29,7 +29,6 @@ export default function YouTubeCard({ video }) {
               <TextLink
                 href={`https://youtube.com/watch?v=${video.videoId}`}
                 target="_blank"
-              
               >
                 Watch on Youtube
                 <ArrowRight className="inline w-6" />
