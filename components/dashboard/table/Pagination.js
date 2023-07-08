@@ -29,7 +29,7 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
         />
         {pageNumbers.map((number) => (
           <Button
-          data-testid={`page-button-${number}`}
+          data-testid={`Pagination-page-button-${number}`}
             key={number}
             text={number}
             onClick={(event) => {
