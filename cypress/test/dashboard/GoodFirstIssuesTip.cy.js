@@ -9,8 +9,6 @@ describe('GoodFirstIssuesTip', () => {
 
   it('toggles the tip when hovering over the icon', () => {
     cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseenter');
-  
-
     cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseleave');
 
   });
