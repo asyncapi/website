@@ -93,7 +93,7 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Watch our latest videos and live streams on the AsyncAPI YouTube channel
           </Paragraph>
-          <div className="my-5" data-testid="NewsRoomYoutube">
+          <div className="my-5" data-testid="Newsroom-Youtube">
             <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
               Visit our YouTube channel
               <ArrowRight className="inline w-6" />
