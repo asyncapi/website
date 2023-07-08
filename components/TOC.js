@@ -47,7 +47,7 @@ export default function TOC({
                 href={`#${item.slug}`}
                 key={index}
               >
-                {item.content}
+                {item.content.replaceAll('`', '')}
               </a>
             ))
           }
