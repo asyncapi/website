@@ -10,7 +10,7 @@ export default function RoadmapList({
 }) {
   return (
     items && items.length && (
-      <ul className={className}>
+      <ul className={className} data-testid="RoadmapList-list">
         { !collapsed && (
           items.map((item, index) => (
             <RoadmapItem
