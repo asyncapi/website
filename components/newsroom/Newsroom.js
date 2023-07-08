@@ -72,7 +72,7 @@ export default function Newsroom() {
             </div>
           </div>
           <div className='w-full md:w-1/2 px-2 md:pr-0 md:pl-4'>
-            <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0" data-testid="NewsroomTwitter">
+            <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0" data-testid="Newsroom-Twitter">
               <TwitterTimelineEmbed
                 sourceType="profile"
                 screenName="AsyncAPISpec"
