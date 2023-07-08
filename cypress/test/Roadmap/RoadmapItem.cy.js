@@ -1,24 +1,56 @@
-import React from 'react';
 import { mount } from '@cypress/react';
-import RoadmapItem from '../../../components/roadmap/RoadmapItem'
+import RoadmapItem from '../../../components/roadmap/RoadmapItem';
 
 describe('RoadmapItem', () => {
-  it('renders the component and displays item title', () => {
-    const item = {
-      title: 'Example Item',
-      url: 'https://example.com',
-      done: false,
-      description: 'Lorem ipsum dolor sit amet.',
-      solutions: [],
-      implementations: [],
-    };
+  const item = {
+    title: 'Sample Item',
+    solutions: [{ title: 'Solution 1' }, { title: 'Solution 2' }],
+    implementations: [
+      { title: 'Implementation 1' },
+      { title: 'Implementation 2' },
+    ],
+    description: 'Lorem ipsum dolor sit amet.',
+  };
 
-    mount(<RoadmapItem item={item} colorClass="your-color-class" />);
+  it('renders the collapsed RoadmapItem correctly', () => {
+    mount(<RoadmapItem item={item} colorClass="bg-blue-400" />);
 
-    // Assert that the component is rendered
-    cy.get('[data-testid="RoadmapItem-list"]').should('exist');
+    // Assert that the collapsed RoadmapItem is rendered correctly
+    cy.get('[data-testid="RoadmapItem-list"]').should(
+      'have.class',
+      'border-l-2 border-dashed border-gray-300'
+    );
+    cy.contains('Sample Item').should('be.visible');
+  });
 
-    // Assert that the item title is displayed correctly
-    cy.contains('[data-testid="RoadmapItem-list"]', item.title).should('exist');
+  it('expands the RoadmapItem when clicked', () => {
+    mount(<RoadmapItem item={item} colorClass="bg-blue-400" />);
+
+    // Click on the collapse button
+    cy.get('[data-testid="RoadmapItem-button"]').click();
+
+    // Assert that the expanded RoadmapItem is rendered correctly
+    cy.get('[data-testid="RoadmapItem-list"]').should(
+      'have.class',
+      'border-l-2 border-dashed border-gray-300'
+    );
+    cy.contains('Sample Item').should('be.visible');
+    cy.contains('Solution 1').should('be.visible');
+    cy.contains('Solution 2').should('be.visible');
+    cy.contains('Implementation 1').should('be.visible');
+    cy.contains('Implementation 2').should('be.visible');
+  });
+  it('opens the description modal when clicked', () => {
+    mount(<RoadmapItem item={item} colorClass="bg-blue-400" />);
+    cy.contains('a', item.title).click();
+
+    // Assert that the description modal is opened
+    cy.contains(item.title).should('be.visible');
+    cy.contains(item.description).should('be.visible');
+
+    // Close the description modal
+
+    cy.contains(item.title).should('be.visible');
+    cy.contains(item.description).should('be.visible');
   });
 });

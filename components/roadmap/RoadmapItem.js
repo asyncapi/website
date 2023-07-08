@@ -82,7 +82,7 @@ function Pill ({
               </a>
             </div>
             {isCollapsible && (
-              <button className="mr-2" onClick={onClickCollapse}>
+              <button className="mr-2" onClick={onClickCollapse} data-testid="RoadmapItem-button">
                 <IconArrowRight className={`h-4 transform ${isCollapsed ? 'rotate-90' : '-rotate-90'}`} />
               </button>
             )}
