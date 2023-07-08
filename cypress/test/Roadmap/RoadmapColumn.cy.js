@@ -1,6 +1,5 @@
 import { mount } from '@cypress/react';
 import RoadmapColumn from '../../../components/roadmap/RoadmapColumn';
-import RoadmapItem from '../../../components/roadmap/RoadmapItem';
 import RoadmapList from '../../../components/roadmap/RoadmapList';
 
 describe('RoadmapColumn Component', () => {
