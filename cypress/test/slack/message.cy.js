@@ -26,7 +26,7 @@ describe('SlackMessage component', () => {
       cy.get('[data-testid="SlackMessage-reaction"]').eq(index).as('reactionElement') 
 
       if (reaction.icon) {
-        cy.get('@reactionElement').find('[data-testid="SlackMessage-img2"]').should('have.attr', 'src', reaction.icon) 
+        cy.get('@reactionElement').find('[data-testid="SlackMessage-reactionIcon"]').should('have.attr', 'src', reaction.icon) 
       } else {
         cy.get('@reactionElement').find('[data-testid="SlackMessage-span"]').should('contain', reaction.emoji) 
       }
