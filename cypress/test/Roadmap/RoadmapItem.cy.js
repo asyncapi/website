@@ -26,7 +26,7 @@ describe('RoadmapItem', () => {
   it('expands the RoadmapItem when clicked', () => {
     mount(<RoadmapItem item={item} colorClass="bg-blue-400" />);
 
-    // Click on the collapse button
+    
     cy.get('[data-testid="RoadmapItem-button"]').click();
 
     // Assert that the expanded RoadmapItem is rendered correctly
@@ -47,9 +47,6 @@ describe('RoadmapItem', () => {
     // Assert that the description modal is opened
     cy.contains(item.title).should('be.visible');
     cy.contains(item.description).should('be.visible');
-
-    // Close the description modal
-
     cy.contains(item.title).should('be.visible');
     cy.contains(item.description).should('be.visible');
   });
