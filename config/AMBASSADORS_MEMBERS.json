@@ -225,7 +225,7 @@
     "github": "M3lkior",
     "twitter": "ldussart",
     "country": "🇫🇷",
-    "bio": "Ludovic is an Ineat employee since 10 years. Starting as java developer, he is now Solutions Architect and work with his customers to build digital products, EDA oriented when possible. His first contributions on AsyncAPI was in 2020 around the kafka and avro specifications. Since this day, Ludovic talk about AsyncAPI in the North of France compagnies in order to speedup the initiative adoption.",
+    "bio": "Ludovic has been working for Ineat for the last 10 years. Starting as a java developer, he is now a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
     "linkedin": "ludovic-dussart-846a8063",
     "company": "Ineat",
     "title": "Solutions Architect",
@@ -317,6 +317,15 @@
         "date": {
           "year": 2023,
           "month": "March"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Standardisez votre monde d'événements en documentant vos EDA avec AsyncAPI ! - Cloud Nord 2023",
+        "date": {
+          "year": 2023,
+          "month": "October"
         },
         "link": ""
       }
