@@ -19,7 +19,6 @@ describe('Sponsors Component', () => {
       });
     });
   });
-
   it('shows support banner when showSupportBanner prop is true', () => {
     mount(<Sponsors sponsors={sponsors} showSupportBanner={true} />);
     cy.contains('Want to become a sponsor?');
