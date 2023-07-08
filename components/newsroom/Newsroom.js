@@ -55,7 +55,7 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
-          <div className="my-5" data-testid="Newsroom-TwitterLink">
+          <div className="my-5" data-testid="Newsroom-Twitter-Link">
             <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
               Follow us on Twitter
               <ArrowRight className="inline w-6" />
