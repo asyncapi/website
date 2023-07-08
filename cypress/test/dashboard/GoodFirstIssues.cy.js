@@ -32,7 +32,7 @@ describe('GoodFirstIssues Component', () => {
       cy.contains(selectedRepo).should('exist');
       
       //check if Filter component renders 
-      cy.get('[data-testid="filterComponent"]').should('exist'); 
+      cy.get('[data-testid="GoodFirstIssues-filter-component"]').should('exist'); 
 
       // check no other repo is displayed
       cy.get('select[name="selectedRepo"] option').should('not.contain', 'Repository 2').and('not.contain', 'Repository 3') 
