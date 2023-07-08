@@ -41,7 +41,7 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
         ))}
         <Button
           text="Next"
-          data-testid="next-button"
+          data-testid="Pagination-next-button"
           onClick={(event) => {
             event.preventDefault();
             if (currentPage < totalIssues / issuesPerPage)
