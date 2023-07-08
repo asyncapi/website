@@ -7,15 +7,15 @@ describe('Slack Component', () => {
     mount(<Slack />);
 
     // Verify the first Slack message
-    cy.get('[data-testid="SlackMessage"]').eq(0).as('message1').should('exist')
+    cy.get('[data-testid="SlackMessage"]').eq(0).as('message-1').should('exist')
 
     // Verify the second Slack message
-    cy.get('[data-testid="SlackMessage"]').eq(0).as('message2').should('exist')
+    cy.get('[data-testid="SlackMessage"]').eq(0).as('message-2').should('exist')
 
     // Verify the third Slack message
-    cy.get('[data-testid="SlackMessage"]').eq(0).as('message3').should('exist')
+    cy.get('[data-testid="SlackMessage"]').eq(0).as('message-3').should('exist')
 
     // Verify the fourth Slack message
-    cy.get('[data-testid="SlackMessage"]').eq(0).as('message4').should('exist')
+    cy.get('[data-testid="SlackMessage"]').eq(0).as('message-4').should('exist')
   });
 });
