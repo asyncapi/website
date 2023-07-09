@@ -16,7 +16,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
       </Heading> 
       <ul>
         {getEvents(eventsData, size).map((event, index) => (
-          <li key={index} data-testid="Calender-list-item">
+          <li key={index} data-testid="Calendar-list-item">
             <a
               href={event.url}
               className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
@@ -40,7 +40,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
         ))}
       </ul>
       {eventsExist ? 
-        <div className='pt-4' data-testid="Calender-button">
+        <div className='pt-4' data-testid="Calendar-button">
           <GoogleCalendarButton 
             href={CALENDAR_URL}
             text="View Calendar"
