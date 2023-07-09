@@ -10,7 +10,7 @@ export default function Header() {
           <h2 className="text-4xl leading-10 font-extrabold text-gray-900 sm:text-4xl sm:leading-none sm:tracking-tight" data-testid="Header-heading">
             Dashboard
           </h2>
-          <p className="mt-5 text-xl leading-7 text-gray-700" data-testid="Header-paragraph-1">
+          <p className="mt-5 text-xl leading-7 text-gray-700" data-testid="Header-paragraph">
             Visualize our progress. Get involved.{' '}
           </p>
         </div>
