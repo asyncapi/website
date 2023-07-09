@@ -5,8 +5,8 @@ describe('JobSummary', () => {
     const job = {
       location: 'remote',
       region: 'Anywhere (on planet Earth)',
-      employmentType: 'full-time',
-      closingOn: '2023-06-30',
+      employmentType: 'Full-time',
+      closingOn: 'Closing on June 30, 2023',
     };
 
     mount(<JobSummary job={job} className="custom-class" />);
