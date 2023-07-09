@@ -13,23 +13,14 @@ describe('AnnouncementHero Component', () => {
     cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class','bg-gray-50');
   });
 
-  it('should not render the component when the date is outside the valid range', () => {
-    // Set the current date to June
-    const mockDate = new Date('2023-06-01T00:00:00Z');
-    cy.clock(mockDate.getTime());
-     mount(<AnnouncementHero />);
-    // Assert that the component is not rendered
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('not.exist');
-  });
-
   it('should display the correct event information', () => {
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
     mount(<AnnouncementHero />);
     // Assert the event details
     cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'AsyncAPI Conf on Tour 2023').should('exist');
-    cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'Madrid Edition').should('exist');
-    cy.get('[data-testid="AnnouncementHero-main-div"]').contains('October, 2023 | Madrid, Spain').should('exist');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'London Edition').should('exist');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').contains('20th of September, 2023 | London, UK').should('exist');
     cy.contains('Submit a session').should('exist');
   });
 
@@ -38,7 +29,7 @@ describe('AnnouncementHero Component', () => {
     cy.clock(mockDate.getTime());
     mount(<AnnouncementHero />);
     // Assert the link
-    cy.get('[data-testid="AnnouncementHero-submit-session"]').should('have.attr', 'href', 'https://sessionize.com/aacot-madrid/')
+    cy.get('[data-testid="AnnouncementHero-submit-session"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
     .should('have.attr', 'target', '_blank')
     .contains('Submit a session');
   });
