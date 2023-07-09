@@ -9,14 +9,14 @@ describe('getAllPosts', () => {
 
 describe('getPostBySlug', () => {
   it('should return the post with the given slug', () => {
-    const slug = 'example-post';
+    const slug = '/blog/2023-may-docs-report';
     const post = getPostBySlug(slug);
     const expectedPost = posts.blog.find((p) => p.slug === slug && !p.isSection);
     expect(post).to.deep.equal(expectedPost);
   });
 
   it('should return the post of a specific type with the given slug', () => {
-    const slug = 'example-post';
+    const slug = '/blog/2023-may-docs-report';
     const type = 'blog';
     const post = getPostBySlug(slug, type);
     const expectedPost = posts[type].find((p) => p.slug === slug && !p.isSection);
