@@ -14,7 +14,7 @@ describe('Calendar component', () => {
 
   it('renders the "View Calendar" button if events exist', () => {
     if (eventsData.length > 0) {
-      cy.get('[data-testid="Calender-button"]').should('be.visible');
+      cy.get('[data-testid="Calendar-button"]').should('be.visible');
     } else {
         cy.get('[data-testid="Calender-button"]').should('not.exist');
     }
