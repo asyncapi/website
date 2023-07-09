@@ -9,14 +9,14 @@ describe('Calendar component', () => {
   });
 
   it('renders the upcoming events', () => {
-    cy.get('[data-testid="Calender-list"]').should('have.length', eventsData.length);
+    cy.get('[data-testid="Calendar-list-item"]').should('have.length', eventsData.length);
   });
 
   it('renders the "View Calendar" button if events exist', () => {
     if (eventsData.length > 0) {
       cy.get('[data-testid="Calendar-button"]').should('be.visible');
     } else {
-        cy.get('[data-testid="Calender-button"]').should('not.exist');
+        cy.get('[data-testid="Calendar-button"]').should('not.exist');
     }
   });
 
