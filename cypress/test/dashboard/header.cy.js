@@ -18,7 +18,7 @@ describe('Header', () => {
 
   it('renders the header correctly', () => {
     cy.get('[data-testid="Header-heading"]').should('contain', 'Dashboard');
-    cy.get('[data-testid="Header-paragraph-1"]').should(
+    cy.get('[data-testid="Header-paragraph"]').should(
       'contain',
       'Visualize our progress. Get involved.'
     );
