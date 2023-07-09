@@ -1,8 +1,7 @@
 import Link from "next/link"
 import AsyncAPILogoLight from "../AsyncAPILogoLight"
 import Heading from "../typography/Heading" 
-import { socialMediaLinks } from "./FooterList"
-import { initiativeLinks } from "./FooterList2"
+import { socialMediaLinks,initiativeLinks} from "./FooterList"
 
 export default function Footer() {
   return (
@@ -13,7 +12,7 @@ export default function Footer() {
           <div className="mr-14 w-full md:w-auto">
             <div className="">
               <Link href="/">
-                <a className="cursor-pointer" aria-label="AsyncAPI">
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Footer-logo-link">
                   <AsyncAPILogoLight className="h-10 w-auto mt-3" />
                 </a>
               </Link>

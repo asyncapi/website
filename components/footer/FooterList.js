@@ -37,3 +37,26 @@ export const socialMediaLinks = [
       icon: <IconTwitch className="h-8 w-8 sm:h-6 sm:w-6" />,
     },
   ]; 
+
+  export const initiativeLinks = [
+    {
+      label: "About",
+      url: "/about",
+    },
+    {
+      label: "Blog",
+      url: "/blog",
+    },
+    {
+      label: "Shop",
+      url: "https://asyncapi.threadless.com",
+    },
+    {
+      label: "Jobs",
+      url: "/jobs",
+    },
+    {
+      label: "Brand",
+      url: "https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md",
+    },
+  ];
