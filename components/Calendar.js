@@ -16,7 +16,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
       </Heading> 
       <ul>
         {getEvents(eventsData, size).map((event, index) => (
-          <li key={index} data-testid="Calender-list">
+          <li key={index} data-testid="Calender-list-item">
             <a
               href={event.url}
               className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
