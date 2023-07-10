@@ -1,6 +1,6 @@
 import { mount } from '@cypress/react'
 import Footer from '../../../components/footer/Footer'
-import { socialMediaLinks,initiativeLinks} from '../../../components/footer/FooterList'
+import { socialMediaLinks, initiativeLinks } from '../../../components/footer/FooterList'
 
 describe('Footer component', () => {
   beforeEach(() => {
@@ -33,10 +33,10 @@ describe('Footer component', () => {
   it('displays the end content', () => {
     cy.get('[data-testid="Footer-content"]').should('be.visible')
   })
- 
-  it('checks for logo and link associated with it' , () => {
+
+  it('checks for logo and link associated with it', () => {
     cy.get('[data-testid="Footer-logo-link"]').should('exist')
-    cy.get('[data-testid="Footer-logo-link"]').should('have.attr','href','/')
+    cy.get('[data-testid="Footer-logo-link"]').should('have.attr', 'href', '/')
 
   })
 })

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import AsyncAPILogoLight from "../AsyncAPILogoLight"
-import Heading from "../typography/Heading" 
-import { socialMediaLinks,initiativeLinks} from "./FooterList"
+import Heading from "../typography/Heading"
+import { socialMediaLinks, initiativeLinks } from "./FooterList"
 
 export default function Footer() {
   return (
@@ -16,10 +16,10 @@ export default function Footer() {
                   <AsyncAPILogoLight className="h-10 w-auto mt-3" />
                 </a>
               </Link>
-           </div>
+            </div>
             <div className="">
               <Heading className="mt-12 mb-14 text-white" typeStyle="heading-sm-semibold">
-                Building the future of <br/> Event-Driven Architectures.
+                Building the future of <br /> Event-Driven Architectures.
               </Heading>
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function Footer() {
 
             <div className="flex">
 
-            <div className="px-0 lg:px-10 lg:ml-5 mb-5">
+              <div className="px-0 lg:px-10 lg:ml-5 mb-5">
                 <div className="py-2">
                   <div className="text-white">
                     <Heading typeStyle="heading-sm-semibold">The Initiative</Heading>
@@ -71,26 +71,26 @@ export default function Footer() {
 
             </div>
 
-    <div className="px-0 sm:px-10 sm:ml-5 mb-5" >
-            <div className="py-2 hidden sm:block">
-              <div className="mr-12 text-white">
-                <Heading typeStyle="heading-sm-semibold">Social</Heading>
+            <div className="px-0 sm:px-10 sm:ml-5 mb-5" >
+              <div className="py-2 hidden sm:block">
+                <div className="mr-12 text-white">
+                  <Heading typeStyle="heading-sm-semibold">Social</Heading>
+                </div>
               </div>
+              <ul className="justify-start flex sm:flex-col" aria-label="AsyncAPI social media links">
+                {socialMediaLinks.map((link, index) => (
+                  <li className="py-2 mr-3 sm:mr-0" key={index} data-testid="Footer-social-media-links">
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                      <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
+                        <span className="sr-only">{`Follow AsyncAPI on ${link.label}`}</span>
+                        {link.icon}
+                        <span className="absolute pl-8 pr-5 hidden sm:block">{link.label}</span>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="justify-start flex sm:flex-col" aria-label="AsyncAPI social media links">
-              {socialMediaLinks.map((link, index) => (
-                <li className="py-2 mr-3 sm:mr-0" key={index} data-testid="Footer-social-media-links">
-                  <a href={link.url} target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <span className="sr-only">{`Follow AsyncAPI on ${link.label}`}</span>
-                      {link.icon}
-                      <span className="absolute pl-8 pr-5 hidden sm:block">{link.label}</span>
-                    </div>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
           </div>
         </nav>
 
@@ -107,7 +107,7 @@ export default function Footer() {
           <div className="block mt-8 sm:mt-0">
             <p className="block text-sm leading-6">
               <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
-                <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify"/>
+                <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify" />
               </a>
             </p>
           </div>
