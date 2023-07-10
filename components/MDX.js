@@ -10,7 +10,7 @@ import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
 import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
 import Warning from '../components/Warning'
-import Sponsors from '../components/Sponsors'
+import Sponsors from "./sponsors/Sponsors";
 import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
