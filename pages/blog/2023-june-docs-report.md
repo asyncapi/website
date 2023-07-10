@@ -58,7 +58,7 @@ graph LR
     D["Role: Core Maintainer of Generator Tool Docs"]
     E["Key Contribution: Creation & Maintenance of Generator Tool Docs"]
     F["Active Member of AsyncAPI TSC"]
-    G["Impecable Responsiveness as Core Docs Maintainer"]
+    G["Impeccable Responsiveness as Core Docs Maintainer"]
     H["Graduate of 2022 Google Season of Docs (AsyncAPI)"]
     I["Created Most Documentation in 2022 GSoD"]
     J["Automated Generator Docs Copying via asyncapi/generator#872"]
