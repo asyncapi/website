@@ -1,4 +1,3 @@
-import { mount } from 'cypress/react';
 import SupportUs from '../../components/SupportUs/SupportUs';
 describe('SupportUs component', () => {
   beforeEach(() => {
