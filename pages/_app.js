@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout'
 import Banner from '../components/campaigns/Banner'
 import AppContext from '../context/AppContext'
-import Footer from "../components/Footer";
+import Footer from '../components/footer/Footer'
 import { MDXProvider } from '../components/MDX';
 import AlgoliaSearch from '../components/AlgoliaSearch';
 import ScrollButton from '../components/buttons/ScrollButton';
