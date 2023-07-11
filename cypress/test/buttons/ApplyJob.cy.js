@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'cypress/react';
 import ApplyJobButton from '../../../components/buttons/ApplyJob';
-import Button from '../../../components/buttons/Button';
 
 describe('ApplyJobButton', () => {
   const job = {
