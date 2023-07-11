@@ -1,7 +1,7 @@
 ---
 title: Formatting
 description: This guide illustrates the standards for formatting and writing our documentation.
-weight: 2
+weight: 11
 ---
 ## Documentation formatting
 
@@ -33,10 +33,12 @@ Notes and warning blocks are used to draw attention to important information. Us
 Code blocks are used to display code examples or snippets. 
 
 - In a Markdown document, use the `<CodeBlock>` tag and specify the language.
-  * Use the following syntax to apply a codeblock:
-  `<CodeBlock language="bash">
+  Use the following syntax to apply a codeblock:
+  ```
+  <CodeBlock language="bash">
   {`npm start`}
-  </CodeBlock>`
+  </CodeBlock>
+  ```
   
   The output:
   
