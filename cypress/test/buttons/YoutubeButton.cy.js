@@ -1,7 +1,7 @@
 import {mount} from 'cypress/react';
 import YoutubeButton from '../../../components/buttons/YoutubeButton';
 
-describe('Slack Button', () => {
+describe('Youtube Button', () => {
     it('renders correctly with default props', () => {
       mount(<YoutubeButton/>);
       cy.contains('Watch on YouTube').should('be.visible');
