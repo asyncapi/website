@@ -5,6 +5,8 @@ weight: 2
 ---
 ## Documentation formatting
 
+Documentation formatting refers to how the document appears on the page and how the content is organized, which includes font selection, font size and presentation (such as bold or italics), spacing, margins, alignment, columns, indentation, and lists. Formatting is crucial because it helps the reader perceive the information and makes it more accessible. 
+
 ### Notes and warning blocks
 
 Notes and warning blocks are used to draw attention to important information. Use the following markdown features when necessary:
@@ -79,7 +81,7 @@ function myFunction() {
 Line spacing, or the amount of vertical space between lines of text in a paragraph, can aid or hinder reading. Adequate line spacing aids readers in navigating from the end of one line to the start of the next.
 
 - Leave a blank line between paragraphs to visually separate them. This helps readers distinguish between different sections of content.
-- For headings and subheadings, leave a single blank line above and below them to provide clear visual separation.
+- For headings and subheadings, leave a single blank line before and after them to provide clear visual separation.
 - Leave a single line spacing after bullet points or numbered lists to enhance readability.
 - Use consistent indentation to show the hierarchy of the content.
 - Indentation can be achieved with either 2 or 4 spaces, depending on your preference or the coding style guidelines of your project. Choose one and use it consistently throughout the document.
