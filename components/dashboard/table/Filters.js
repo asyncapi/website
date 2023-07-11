@@ -38,6 +38,7 @@ export default function Filters({
     placement: 'left-start',
     open,
   });
+  
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setOpen);
   const areas = allIssues.map((issue) => issue.area);
@@ -60,8 +61,10 @@ export default function Filters({
         alt='filter menu'
         src="/img/illustrations/icons/filters-icon.svg"
         className={`cursor-pointer ${className}`}
+        data-testid="Filters-img-container"
       />
-      <div ref={wrapperRef}>
+        
+        <div ref={wrapperRef} >
         {open && (
           <div
             ref={floating}
@@ -70,7 +73,7 @@ export default function Filters({
               top: y ?? '',
               left: x ?? '',
             }}
-          >
+            data-testid="Filter-menu">
             <div className="bg-white w-96 shadow-xl rounded">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
