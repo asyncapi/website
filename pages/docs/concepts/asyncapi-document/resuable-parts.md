@@ -5,7 +5,7 @@ weight: 149
 
 Reusable parts provide flexibility, modularity, and code reusability. Making it easier to generate code and validate the specification. You can reuse specific document sections such as Messages or schema definitions.
 
-Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the Reference Object ($ref).
+Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the Reference Object ($ref). You can use the ref keyword to reference external files or refere to messages defined in another AsyncAPI document.
 
 ## External files
 
@@ -13,8 +13,6 @@ You can use the ref keyword to reference external files within the document. For
 
 ```yaml
 ##### ./asyncapi.yaml
-asyncapi: 2.3.0
----
 channels:
 user/signedup:
 subscribe:
@@ -39,8 +37,6 @@ You can use the ref keyword to reference messages defined in another AsyncAPI do
 ```yaml
 ##### ./asyncapi.A.yaml
 
-asyncapi: 2.3.0
----
 channels:
 user/signedup:
 subscribe:
