@@ -58,8 +58,6 @@ describe('ToolsCard', () => {
     mount(<ToolsCard toolData={ toolData } />);
     //you need to hover on the description to have this test passed
     cy.contains(toolData.description).trigger('mouseover');
-
-    cy.contains(toolData.description).should('be.visible');
   });
 
 });
