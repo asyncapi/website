@@ -14,10 +14,10 @@ You can use the ref keyword to reference external files within the document. For
 ```yaml
 ##### ./asyncapi.yaml
 channels:
-user/signedup:
-subscribe:
-message:
-$ref: './messages/userSignedUp.yaml'
+  user/signedup:
+    subscribe:
+      message:
+        $ref: './messages/userSignedUp.yaml'
 ```
 
 ```yaml
@@ -38,27 +38,27 @@ You can use the ref keyword to reference messages defined in another AsyncAPI do
 ##### ./asyncapi.A.yaml
 
 channels:
-user/signedup:
-subscribe:
-message:
-$ref: '#/components/messages/userSignedUp'
-components:
-messages:
-UserSignup:
-name: UserSignup
-title: User signup
-summary: Action to sign a user up.
-description: A longer description
-contentType: application/json
-payload:
+  user/signedup:
+    subscribe:
+      message:
+        $ref: '#/components/messages/userSignedUp'
+        components:
+          messages:
+            UserSignup:
+              name: UserSignup
+              title: User signup
+              summary: Action to sign a user up.
+              description: A longer description
+              contentType: application/json
+              payload:
 ```
 
 ```yaml
 ##### ./asyncapi.B.yaml
 ---
 channels:
-user/signedup:
-publish:
-message:
-$ref: './asyncapi.A.yaml#/components/messages/userSignedUp'
+  user/signedup:
+    publish:
+      message:
+        $ref: './asyncapi.A.yaml#/components/messages/userSignedUp'
 ```
