@@ -1,7 +1,7 @@
 import {mount} from 'cypress/react';
 import SubscribeButton from '../../../components/buttons/SubscribeButton';
 
-describe('Slack Button', () => {
+describe('Subscribe Button', () => {
     it('renders correctly with default props', () => {
       mount(<SubscribeButton/>);
       cy.contains('Subscribe').should('be.visible');
