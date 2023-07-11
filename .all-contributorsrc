@@ -454,6 +454,43 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Florence-Njeri",
+      "name": "Florence Njeri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40742916?v=4",
+      "profile": "https://florence-njeri.github.io/NjeriPortfolio",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anshgoyalevil",
+      "name": "Ansh Goyal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94157520?v=4",
+      "profile": "https://ansh.live",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "SumantxD",
+      "name": "Sumant.xD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65810424?v=4",
+      "profile": "https://github.com/SumantxD",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "Shriansh2002",
+      "name": "Shriansh Agarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41548480?v=4",
+      "profile": "http://shrianshagarwal.in",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
