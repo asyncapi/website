@@ -2,10 +2,11 @@
 title: AsyncAPI Structure
 weight: 32
 ---
-The structure of a AsyncAPI document can be defined as a specific format in which the document of the specification is to be written. An AsyncAPI document may be made up of a single document or be divided into multiple, connected parts at the discretion of the developer. In the latter case, Reference Objects are used. The structure of a AsyncAPI document has certain fields that need to be followed and implemented.
+The structure of a AsyncAPI document can be defined as a specific format in which the document of the specification is to be written. An AsyncAPI document may be made up of a single document or be divided into multiple, connected parts at your discretion. In the latter case, Reference Objects are used. The structure of a AsyncAPI document has certain fields that need to be followed and implemented.
+Structure of a AsyncAPI document lays out the blueprint for you to write down your specification based on your application. 
 
 ## Root Elements 
-Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior.These root elements collectively define the structure, metadata, endpoints, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
+Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the structure, metadata, endpoints, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
 
 ```mermaid
 graph LR
@@ -30,15 +31,16 @@ The purpose of the `info` object is to provide descriptive and contact informati
 
 The `info` object includes properties such as:
 
-- title: The title of the API.
-- version: The version of the API.
-- description: A brief description explaining the purpose and features of the API.
-- termsOfService: The URL or document specifying the terms of service for using the API.
-- contact: Contact information for the owner or maintainer of the API, including name, email, and URL.
-- license: Information about the license under which the API is provided, including name and URL.
-- tags: A list of tags for application API documentation control. Tags can be used for logical grouping of applications.
-- externalDocs: Additional external documentation of the exposed API.
+- `title`: The title of the API.
+- `version`: The version of the API.
+- `description`: A brief description explaining the purpose and features of the API.
+- `termsOfService`: The URL or document specifying the terms of service for using the API.
+- `contact`: Contact information for the owner or maintainer of the API, including name, email, and URL.
+- `license`: Information about the license under which the API is provided, including name and URL.
+- `tags`: A list of tags for application API documentation control. Tags can be used for logical grouping of applications.
+- `externalDocs`: Additional external documentation of the exposed API.
 
+Here's a visual representation of the `info` object and its properties:
 ```mermaid
 graph LR
   B(info)
@@ -92,18 +94,19 @@ The purpose of the `servers` object is to provide the necessary information for 
 
 The `servers` object typically includes the following properties(few are mandatory, few are optional) for each server:
 
-- host: The server host name. It may include the port. This field supports Server Variables. 
-- protocol: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
-- protocolVersion: The version of the protocol used for connection.
-- pathname: The path to a resource in the host.
-- description: An optional string describing the server.
-- title: A human-friendly title for the server.
-- summary: A short summary of the server.
-- security: A declaration of which security schemes can be used with this server. 
-- tags: A list of tags for logical grouping and categorization of servers.
-- externalDocs: Additional external documentation for this server.
-- bindings: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the server.
+- `host`: The server host name. It may include the port. This field supports Server Variables. 
+- `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
+- `protocolVersion`: The version of the protocol used for connection.
+- `pathname`: The path to a resource in the host.
+- `description`: An optional string describing the server.
+- `title`: A human-friendly title for the server.
+- `summary`: A short summary of the server.
+- `security`: A declaration of which security schemes can be used with this server. 
+- `tags`: A list of tags for logical grouping and categorization of servers.
+- `externalDocs`: Additional external documentation for this server.
+- `bindings`: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the server.
 
+Here's a visual representation of the `server` object and its properties:
 ```mermaid
 graph LR
   A[server]
@@ -133,17 +136,18 @@ The purpose of the `channels` object is to provide a structured way to define th
 
 The `channels` object typically includes properties for each channel, such as:
 
-- address: An optional string representation of this channel's address. The address is typically the "topic name", "routing key", "event type", or "path".
-- messages: A map of the messages that will be sent to this channel by any application at any time.
-- title: A human-friendly title for the channel.
-- summary: A short summary of the channel.
-- description: A optional description of the channel, providing additional context and details of the message.
-- servers: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers is absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
-- parameters: A map of the parameters included in the channel address.
-- tags: A list of tags for logical grouping of channels.
-- externalDocs: Additional external documentation for this channel.
-- bindings: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the channel.
+- `address`: An *optional* string representation of this channel's address.
+- `messages`: A map of the messages that will be sent to this channel by any application at any time.
+- `title`: A human-readable title for the channel.
+- `summary`: A short yet brief summary of the channel.
+- `description`: A *optional* description of the channel, providing additional context and details of the message.
+- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers is absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
+- `parameters`: A map of the parameters included in the channel address.
+- `tags`: A list of tags for logical grouping of channels.
+- `externalDocs`: Additional external documentation for this channel.
+- `bindings`: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the channel.
 
+Here's a visual representation of the `channels` object and its properties:
 ```mermaid
 graph LR
   A[channels]
@@ -202,19 +206,20 @@ The `operations` object holds a dictionary with all the operations the applicati
 The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API. It serves as a reference for developers, tools, and libraries to understand the required operations and their associated properties, allowing for better implementation, documentation, and code generation.
 
 The `operations` object typically include properties for each `operation` object, such as:
-- action: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect receiving messages from the given channel.
-- channel: A `$ref` pointer to the definition of the channel in which this operation is performed. 
-- title:	A human-friendly title for the operation.
-- summary: A short summary of what the operation is about.
-- description: A verbose explanation of the operation. 
-- security:	A declaration of which security schemes are associated with this operation.
-- tags:	A list of tags for logical grouping and categorization of operations.
-- externalDocs:	Additional external documentation for this operation.
-- bindings	A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
-- traits:	A list of traits to apply to the operation object. 
-- messages:	A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
-- reply:	The definition of the reply in a request-reply operation.
+- `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect receiving messages from the given channel.
+- `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
+- `title`:	A human-friendly title for the operation.
+- `summary`: A short summary of what the operation is about.
+- `description`: A verbose explanation of the operation. 
+- `security`:	A declaration of which security schemes are associated with this operation.
+- `tags`:	A list of tags for logical grouping and categorization of operations.
+- `externalDocs`:	Additional external documentation for this operation.
+- `bindings`	A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
+- `traits`:	A list of traits to apply to the operation object. 
+- `messages`:	A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
+- `reply`:	The definition of the reply in a request-reply operation.
 
+Here's a visual representation of the `operations` object and its properties:
 ```mermaid
 graph LR
   A[operations]
@@ -288,26 +293,27 @@ The purpose of the `components` object is to promote reusability and maintainabi
 
 The `components` object includes properties such as:
 
-- schemas: An object to hold reusable Schema Object. 
-- servers: An object to hold reusable Server Objects.
-- channels: An object to hold reusable Channel Objects.
-- operations: An object to hold reusable Operation Item Objects.
-- messages: An object to hold reusable Message Objects.
-- securitySchemes: An object to hold reusable Security Scheme Objects.
-- serverVariables: An object to hold reusable Server Variable Objects.
-- parameters: Contains reusable parameter objects that can be used in various parts of the AsyncAPI document.
-- correlationIds: An object to hold reusable Correlation ID Objects.
-- replies: An object to hold reusable Operation Reply Objects.
-- replyAddresses: An object to hold reusable Operation Reply Address Objects.
-- externalDocs: An object to hold reusable External Documentation Objects.
-- tags: An object to hold reusable Tag Objects.
-- operationTraits: An object to hold reusable Operation Trait Objects.
-- messageTraits: Represents common traits or characteristics that can be applied to messages.
-- serverBindings: An object to hold reusable Server Bindings Objects.
-- channelBindings: An object to hold reusable Channel Bindings Objects.
-- operationBindings: An object to hold reusable Operation Bindings Objects.
-- messageBindings: An object to hold reusable Message Bindings Objects.
+- `schemas`: An object to hold reusable Schema Object. 
+- `servers`: An object to hold reusable Server Objects.
+- `channels`: An object to hold reusable Channel Objects.
+- `operations`: An object to hold reusable Operation Item Objects.
+- `messages`: An object to hold reusable Message Objects.
+- `securitySchemes`: An object to hold reusable Security Scheme Objects.
+- `serverVariables`: An object to hold reusable Server Variable Objects.
+- `parameters`: Contains reusable parameter objects that can be used in various parts of the AsyncAPI document.
+- `correlationIds`: An object to hold reusable Correlation ID Objects.
+- `replies`: An object to hold reusable Operation Reply Objects.
+- `replyAddresses`: An object to hold reusable Operation Reply Address Objects.
+- `externalDocs`: An object to hold reusable External Documentation Objects.
+- `tags`: An object to hold reusable Tag Objects.
+- `operationTraits`: An object to hold reusable Operation Trait Objects.
+- `messageTraits`: Represents common traits or characteristics that can be applied to messages.
+- `serverBindings`: An object to hold reusable Server Bindings Objects.
+- `channelBindings`: An object to hold reusable Channel Bindings Objects.
+- `operationBindings`: An object to hold reusable Operation Bindings Objects.
+- `messageBindings`: An object to hold reusable Message Bindings Objects.
 
+Here's a visual representation of the `components` object and its properties:
 ```mermaid
 graph LR
   A[components]
