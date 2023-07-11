@@ -5,9 +5,9 @@ describe('Testimonial Component', () => {
   it('should render the testimonial with correct data', () => {
     const testimonialData = {
       text: 'This is a test testimonial.',
-      authorName: 'John Doe',
+      authorName: 'Lukasz Gornicki',
       authorDescription: 'CEO at Company',
-      authorAvatar: '../../public/img/avatars/ace.webp',
+      authorAvatar: '/img/avatars/lpgornicki.webp',
     };
     mount(
       <Testimonial
