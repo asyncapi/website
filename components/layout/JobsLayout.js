@@ -1,13 +1,12 @@
-import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
-import Head from '../Head';
-import JobsContext from '../../context/JobsContext';
-import NavBar from '../navigation/NavBar';
-import Container from './Container';
-import Footer from '../Footer';
-import JobSummary from '../JobSummary';
-import ApplyJobButton from '../buttons/ApplyJob';
-import StickyNavbar from '../navigation/StickyNavbar';
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
+import Head from '../Head'
+import JobsContext from '../../context/JobsContext'
+import NavBar from '../navigation/NavBar'
+import Container from './Container'
+import JobSummary from '../JobSummary'
+import ApplyJobButton from '../buttons/ApplyJob'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function JobsLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />;

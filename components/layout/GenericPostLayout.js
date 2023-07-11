@@ -1,17 +1,15 @@
-import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
-import Head from '../Head';
-import GenericPostContext from '../../context/GenericPostContext';
-import NavBar from '../navigation/NavBar';
-import Container from './Container';
-import Footer from '../Footer';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
-import StickyNavbar from '../navigation/StickyNavbar';
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
+import Head from '../Head'
+import GenericPostContext from '../../context/GenericPostContext'
+import NavBar from '../navigation/NavBar'
+import Container from './Container'
+import AnnouncementHero from '../campaigns/AnnoucementHero'
+import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function GenericPostLayout({ post, children }) {
-  if (!post) return <ErrorPage statusCode={404} />;
-  if ((post.title === undefined) & (post.slug != '/about'))
-    throw new Error('Post title is required');
+  if (!post) return <ErrorPage statusCode={404} />
+  if (post.title === undefined & post.slug != "/about") throw new Error('Post title is required')
 
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
