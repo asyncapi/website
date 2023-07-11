@@ -4,10 +4,10 @@ import MacWindow from '../../components/MacWindow';
 
 describe('MacWindow Component', () => {
   it('renders the component props', () => {
-    const className = 'my-mac-window';
-    const contentClassName = 'my-content';
-    const title = '';
-    const children = '';
+    const className = 'bg-code-editor-dark h-full border-gray-800 border shadow-lg transition-all duration-500 ease-in-out';
+    const contentClassName = "text-left text-white text-sm font-mono font-medium transition-all duration-500 ease-in-out break-words md:min-h-108";
+    const title="asyncapi.yaml";
+    const children = 'This is the children component for testing can be replaced';
     mount(
       <MacWindow
         className={className}
@@ -29,7 +29,7 @@ describe('MacWindow Component', () => {
           .should('exist')
           .and('have.attr', 'title', title)
           .and('have.text', title);
-        cy.get('[data-testid="MacWindow-title"]').should('exist').and('have.length', 1);
+        cy.get('[data-testid="MacWindow-title-center"]').should('exist').and('have.length', 1);
       });
   });
 });

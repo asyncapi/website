@@ -16,12 +16,12 @@ describe('Profile Component', () => {
       {
         name: 'John Doe',
         link: 'https://example.com/john',
-        avatar: 'john-avatar.png',
+        avatar: '../../public/img/avatars/ace.webp',
       },
       {
         name: 'Jane Doe ',
         link: 'https://example.com/jane',
-        avatar: 'jane-avatar.png',
+        avatar: '../../public/img/avatars/canela-ale.webp',
       },
     ];
     const props = {
@@ -29,7 +29,7 @@ describe('Profile Component', () => {
       className: 'my-profiles',
     };
     mount(<Profile {...props} />);
-   cy.get('[data-testid="Profiles-div"]').find('[data-testid="Profiles-link"]').should('have.length', profiles.length)
+   cy.get('[data-testid="Profiles-main"]').find('[data-testid="Profiles-link"]').should('have.length', profiles.length)
       .each(($profileLink, index) => {
         const profile = profiles[index];
         cy.wrap($profileLink)

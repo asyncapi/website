@@ -12,7 +12,7 @@ describe('Remember Component', () => {
         {children}
       </Remember>
     );
-  cy.get('[data-testid="Remember-div"]')
+  cy.get('[data-testid="Remember-main"]')
       .should('exist')
       .within(() => {
         cy.get('[data-testid="Remember-heading"]')

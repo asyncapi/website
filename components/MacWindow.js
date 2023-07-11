@@ -17,7 +17,7 @@ export default function MacWindow({
         <div className="flex-1 text-gray-400 text-sm px-2 truncate text-left sm:text-center" title={title} data-testid="MacWindow-title-div">
           {title}
         </div>
-        <div className="hidden sm:block" data-testid="MacWindow-title"> {/* This block is used for aligning the title on the center */}
+        <div className="hidden sm:block" data-testid="MacWindow-title-center"> {/* This block is used for aligning the title on the center */}
           <span className="inline-block w-2.5 h-2.5 mr-2"></span>
           <span className="inline-block w-2.5 h-2.5 mr-2"></span>
           <span className="inline-block w-2.5 h-2.5 mr-2"></span>
