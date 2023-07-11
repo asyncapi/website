@@ -17,6 +17,7 @@ export default function GithubButton({
       iconPosition={iconPosition}
       target={target}
       className={className}
+      data-testid="Github-button"
       bgClassName="bg-gray-800 hover:bg-gray-700"
       buttonSize={ inNav == "true" ? "small" : "default" }
     />
