@@ -3,17 +3,31 @@ title: Variables in URL
 weight: 135
 ---
 
-# Dynamic URL variables
+Event-driven architecture benefits from a defined base URL and rules for URL variables. You can easily manage multiple API endpoints, handling various server configurations and environments.
 
-Event-driven architecture benefits from a defined base URL and rules for URL variables. This approach simplifies the management of multiple API endpoints, handling various server configurations and environments.
-
-URL variables are placeholders for values that you can replace during runtime. This enables you to construct dynamic URLs with query parameters and additional information, enhancing the flexibility and maintainability of your API specifications.
+URL variables are placeholders for values that you can replace during runtime. Enabling you to construct dynamic URLs with query parameters and additional information. While enhancing the flexibility and maintainability of your API specifications.
 
 This article assumes that you have a basic understanding of AsyncAPI. If you need more information, refer to the [Event-Driven Architectures](https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures).
 
-## Add dynamic variables to the server URL
+## Add Dynamic Variables
 
-To add variables to the URL using AsyncAPI between two servers, you can use the `server.url` field along with the `components.serverVariables` field to allow reusable variables across multiple servers.
+To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` field to enable reusable variables across multiple servers.
+
+```mermaid
+graph LR
+A[AsyncAPI Document]
+B[Servers Section]
+C[Base URLs]
+D[components.serverVariables Section]
+E[Domain Variable]
+F[Port Variable]
+
+A -->|contains| B
+A -->|contains| D
+B -->|includes| C
+D -->|defines| E
+D -->|defines| F
+```
 
 ### Servers section:
 
@@ -28,7 +42,7 @@ servers:
     description: Staging server
 ```
 
-### Components serverVariables section
+### ServerVariables section
 
 Define the components.serverVariables section in your AsyncAPI document. For each variable used in the server URLs, provide a default value and an optional description:
 
@@ -45,7 +59,7 @@ components:
 
 ### Define domain and port variables
 
-Both servers will use the components.serverVariables definitions for the domain and port variables. If you need to change the values of these variables, you can update their default values in the components.serverVariables section, and the changes will be reflected in both servers' URLs.
+Both servers use the components.serverVariables definitions for the domain and port variables. To change the values of these variables, update their default values in the components.serverVariables section. Both servers' URLs will reflect the changes.
 
 Here's the complete AsyncAPI document with the server URL variables:
 
