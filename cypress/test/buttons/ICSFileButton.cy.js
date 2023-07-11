@@ -1,13 +1,13 @@
 import { mount } from 'cypress/react';
-import GoogleCalendarButton from '../../../components/buttons/ICSFileButton';
+import ICSFButton from '../../../components/buttons/ICSFileButton';
 
-describe('GoogleCalendarButton', () => {
+describe('ICSFButton', () => {
 
   it('renders correctly with custom props', () => {
     const customHref = 'https://example.com';
   
     mount(
-      <GoogleCalendarButton
+      < ICSFButton
         text="Custom Text"
         href={customHref}
         target="_self"
@@ -20,7 +20,7 @@ describe('GoogleCalendarButton', () => {
   });
 
   it('renders correctly with default props', () => {
-    mount(<GoogleCalendarButton />);
+    mount(<ICSFButton />);
     cy.contains('Download ICS File').should('be.visible');
   });
 });

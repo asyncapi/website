@@ -22,13 +22,13 @@ export default function Button({
       <button {...props} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid="Button-main" > 
         {
           icon && iconPosition === 'left' && (
-            <span className="inline-block mr-2">{icon}</span>
+            <span className="inline-block mr-2" data-testid="Button-icon-left">{icon}</span>
           )
         }
         <span className="inline-block">{text}</span>
         {
           icon && iconPosition === 'right' && (
-            <span className="inline-block ml-2">{icon}</span>
+            <span className="inline-block ml-2" data-testid="Button-icon-right">{icon}</span>
           )
         }
       </button>

@@ -45,4 +45,20 @@ describe('Button component', () => {
     );
     cy.get('[data-testid="Button-main"]').should('have.class', className);
   });
+
+  it('does not render an icon with position left in the button', () => {
+    const text = 'Click me';
+    mount(
+      <Button text={text} />
+    );
+    cy.get('[data-testid="Button-icon-left"]').should('not.exist');
+  });
+
+  it('does not render an icon with position left in the button', () => {
+    const text = 'Click me';
+    mount(
+      <Button text={text} />
+    );
+    cy.get('[data-testid="Button-icon-right"]').should('not.exist');
+  });
 });
