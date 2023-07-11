@@ -1,24 +1,38 @@
 ---
-title: Home
-weight: 159
+title: Add servers
+weight: 199
 ---
 
-By defining and connecting to servers in AsyncAPI, you can effectively describe the communication infrastructure of your event-driven system and ensure seamless message exchange between different components.
+Defining and connecting to servers in AsyncAPI allows you to describe the communication infrastructure of your event-driven system enabling smooth message exchange among various components.
 
-## Define the server
+```mermaid
+graph LR
+A[AsyncAPI Specification File]
+B[Servers Section]
+C[Server Reference]
+D[Channels or Components]
+E[x-server Extension Field]
 
-Define the servers in your AsyncAPI specification file. The servers section is used to describe the servers that your API connects to. Here's an example of how to define a server in AsyncAPI:
-servers:
-
-```yaml
-url: mqtt://test.mosquitto.org
-protocol: mqtt
-description: Test MQTT server
+A -->|contains| B
+A -->|references| D
+B -->|describes| C
+D -->|has| E
 ```
 
-In this example, we define a server with the URL mqtt://test.mosquitto.org, using the MQTT protocol, and provide a description for the server.
+## Define Servers
 
-## Define server reference
+Define the servers in your AsyncAPI specification file. The servers section is used to describe the servers that your API connects to. Here's an example of how to define a server in AsyncAPI:
+
+```yaml
+servers:
+  url: mqtt://test.mosquitto.org
+  protocol: mqtt
+  description: Test MQTT server
+```
+
+In this example, you define a server with the URL, using the MQTT protocol, and provide a description for the server.
+
+## Define Server reference
 
 Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component by using the x-server extension field.
 
@@ -26,14 +40,11 @@ Here's an example of how to add a server reference to a channel:
 
 ```yaml
 channels:
-myChannel:
-publish:
-x-server: mqttServer
-message:
-$ref: '#/components/messages/myMessage'
+  myChannel:
+    publish:
+      x-server: mqttServer
+      message:
+        $ref: '#/components/messages/myMessage'
 ```
 
-In this example, we specify the server reference mqttServer for the myChannel channel.
-
-Repeat the above steps for each server you want to connect to in your AsyncAPI specification.
-Once you have defined and added the servers in your AsyncAPI specification, you can use tools like code generators or frameworks that support AsyncAPI to generate client or server code based on your specification.
+In this example, you specify the server reference mqttServer for the myChannel channel.
