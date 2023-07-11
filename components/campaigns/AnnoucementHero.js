@@ -27,7 +27,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     <Container wide as="section" padding='' className='text-center'>
       <div
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
-          small ? 'mb-4' : 'mb-12'
+          small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
         }`}
       >
         <Heading
