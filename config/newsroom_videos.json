@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/tKYyL_DiLds/hqdefault.jpg",
-    "title": "Community Meeting (March 21th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/640.",
-    "videoId": "tKYyL_DiLds"
+    "image_url": "https://i.ytimg.com/vi/Lunp8eSLONc/hqdefault.jpg",
+    "title": "Spec 3.0 DOCS Meeting (July 6th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/774.",
+    "videoId": "Lunp8eSLONc"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/8Yjles2pEHo/hqdefault.jpg",
-    "title": "Adding support for non-JSON schemas (March 21th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/637.",
-    "videoId": "8Yjles2pEHo"
+    "image_url": "https://i.ytimg.com/vi/hc0Lxr3G8T4/hqdefault.jpg",
+    "title": "Spec 3.0 (July 5th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/760.",
+    "videoId": "hc0Lxr3G8T4"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/ECe592525p4/hqdefault.jpg",
-    "title": "Make Your GSoC Proposal Stand Out (March 20th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/639.",
-    "videoId": "ECe592525p4"
+    "image_url": "https://i.ytimg.com/vi/EvC2PZXEM0M/hqdefault.jpg",
+    "title": "Community Meeting, Tuesday June 27th 2023",
+    "description": "https://github.com/asyncapi/community/issues/762.",
+    "videoId": "EvC2PZXEM0M"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/BiP-0zkXelw/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (March 15, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/624.",
-    "videoId": "BiP-0zkXelw"
+    "image_url": "https://i.ytimg.com/vi/1jiRDmuA-zg/hqdefault.jpg",
+    "title": "Fran AMA AsyncAPI — 23 June 2023",
+    "description": "https://github.com/asyncapi/community/issues/764 AI-generated summary: - Fran and Benjamin discussed the release of version ...",
+    "videoId": "1jiRDmuA-zg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/IboLZzLU40o/hqdefault.jpg",
-    "title": "Career Empowerment and Embracing Equity in Tech",
-    "description": "Panel discussion on the challenges women face in tech and strategies that can be put in place to improve equity and ...",
-    "videoId": "IboLZzLU40o"
+    "image_url": "https://i.ytimg.com/vi/dRu9itGfJ1E/hqdefault.jpg",
+    "title": "AsyncAPI Spec 3.0 Docs Meeting",
+    "description": "https://github.com/asyncapi/community/issues/749.",
+    "videoId": "dRu9itGfJ1E"
   }
 ]

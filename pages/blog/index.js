@@ -1,20 +1,12 @@
 import { useContext, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import NavBar from "../../components/navigation/NavBar";
-import Container from "../../components/layout/Container";
 import BlogContext from "../../context/BlogContext";
 import BlogPostItem from "../../components/navigation/BlogPostItem";
-import Footer from "../../components/Footer";
-import Head from "../../components/Head";
-import AnnouncementHero from "../../components/campaigns/AnnoucementHero";
 import Filter from "../../components/navigation/Filter";
 import Empty from "../../components/illustrations/empty";
 import Heading from "../../components/typography/Heading";
-import StickyNavbar from "../../components/navigation/StickyNavbar"
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
-import Button from "../../components/buttons/Button";
 import GenericLayout from "../../components/layout/GenericLayout";
 
 export default function BlogIndexPage() {
@@ -125,7 +117,7 @@ export default function BlogIndexPage() {
               </div>
             ) : (
               <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-                {posts.map((post, index) => (
+                {router.isReady && posts.map((post, index) => (
                   <BlogPostItem key={index} post={post} />
                 ))}
               </ul>

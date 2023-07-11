@@ -29,17 +29,18 @@ function GoodFirstIssues({ issues }) {
   return (
     <Table
       title={
-        <div className="flex gap-3">
+        <div className="flex gap-3" data-testid="GoodFirstIssues-main-div">
           <span>Good First Issues</span>
           <GoodFirstIssuesTip />
           <Filters
             className="ml-auto"
+            data-testid="GoodFirstIssues-filter-component"
             issues={filteredIssues}
             allIssues={issues}
             setSelectedRepo={setSelectedRepo}
             setSelectedArea={setSelectedArea}
             selectedArea={selectedArea}
-            selectedRepo={selectedRepo}
+            selectedRepo={selectedRepo}   
           />
         </div>
       }

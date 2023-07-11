@@ -96,4 +96,4 @@ In this tutorial, you learned how to generate your code from the [Streetlights A
 Additionally, you've learned how to run your code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT client.
 
 ## Next steps
-Now that you've completed this tutorial, go ahead and learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation.md) through the message validation techniques supported by AsyncAPI.
+Now that you've completed this tutorial, go ahead and learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation) through the message validation techniques supported by AsyncAPI.
