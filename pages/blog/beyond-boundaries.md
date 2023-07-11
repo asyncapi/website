@@ -1,5 +1,5 @@
 ---
-title: 'Beyond Boundaries - Empowering through OSS Mentorship'
+title: 'Beyond Boundaries - Empowering Through OSS Mentorship'
 date: 2023-07-12T06:00:00+01:00
 type: Community
 tags:
@@ -57,7 +57,9 @@ All of AsyncAPI's mentors are all core members of the AsyncAPI community and pro
 
 ## How We Engage Contributors In The Community During The Mentorship Program
 
-We value every single contribution at AsyncAPI, and there is a nearly immediate value to people using and contributing to AsyncAPI. If and when they contribute code, the quicker it gets integrated into the main codebase, the happier the contributor will be. We also know contributors like to be challenged and to learn new things, and they like to work on code that's known to be of high quality and work with projects that positively impact the industry. This quality makes AsyncAPI stand out and will encourage contributors to be involved in the community during the program. Furthermore, we also ensure contributors are heard and respected and give them public credit for their work to encourage them to keep contributing. We ensure contributors have direct access to the main maintainer(s) and can have meaningful discussions with them.
+We value every single contribution at AsyncAPI, and there is a nearly immediate value to people using and contributing to AsyncAPI. If and when they contribute code, the quicker it gets integrated into the main codebase, the happier the contributor will be. We also know contributors like to be challenged and to learn new things, and they like to work on code that's known to be of high quality and work with projects that positively impact the industry.
+
+This quality makes AsyncAPI stand out and will encourage contributors to be involved in the community during the program. Furthermore, we also ensure contributors are heard and respected and give them public credit for their work to encourage them to keep contributing. We ensure contributors have direct access to the main maintainer(s) and can have meaningful discussions with them.
 
 ## Where Are We?
 
