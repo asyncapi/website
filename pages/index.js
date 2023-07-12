@@ -18,7 +18,7 @@ import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
 import GoldSponsors from '../components/sponsors/GoldSponsors'
 import SilverSponsors from '../components/sponsors/SilverSponsors'
-import SupportUs from '../components/SupportUs'
+import SupportUs from '../components/SupportUs/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
@@ -147,7 +147,7 @@ function HomePage() {
               </div>
             </Container>
             <Container wide>
-                <NewsroomSection />
+              <NewsroomSection />
             </Container>
           </div>
 
@@ -163,7 +163,7 @@ function HomePage() {
             >
               Platinum Sponsors
             </Heading>
-            <Sponsors className="mt-4" showSupportBanner={false} />
+            <Sponsors className="mt-4" showSupportBanner={ false } />
           </Container>
 
           <Container className="text-center pb-6" wide as="section">
@@ -174,9 +174,9 @@ function HomePage() {
             >
               Gold Sponsors
             </Heading>
-            <GoldSponsors className="mt-4" showSupportBanner={false} />
+            <GoldSponsors className="mt-4" showSupportBanner={ false } />
           </Container>
-          
+
           <Container className="text-center pyb-6" wide as="section">
             <Heading
               level="h3"
@@ -185,7 +185,7 @@ function HomePage() {
             >
               Silver Sponsors
             </Heading>
-            <SilverSponsors className="mt-4" showSupportBanner={false} />
+            <SilverSponsors className="mt-4" showSupportBanner={ false } />
           </Container>
 
 
@@ -215,7 +215,7 @@ function HomePage() {
               Email us
             </TextLink> for more info.
           </Paragraph>
-          <SupportUs className="mt-4" showSupportBanner={false} />
+          <SupportUs className="mt-4" showSupportBanner={ false } />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
