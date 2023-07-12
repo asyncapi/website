@@ -1,9 +1,9 @@
 ---
-title: AsyncAPI Structure
+title: AsyncAPI document structure
 weight: 32
 ---
 The structure of a AsyncAPI document can be defined as a specific format in which the document of the specification is to be written. An AsyncAPI document may be made up of a single document or be divided into multiple, connected parts at your discretion. In the latter case, Reference Objects are used. The structure of a AsyncAPI document has certain fields that need to be followed and implemented.
-Structure of a AsyncAPI document lays out the blueprint for you to write down your specification based on your application. 
+This document lays out the blueprint for you to write down your specification based on your application. 
 
 ## Root Elements 
 Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the structure, metadata, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
@@ -29,7 +29,7 @@ The `info` object in an AsyncAPI document provides essential information about t
 
 The purpose of the `info` object is to provide descriptive and contact information about the specific API. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
 
-The `info` object includes properties such as:
+The `info` object includes fields such as:
 
 - `title`: The title of the API.
 - `version`: The version of the API.
@@ -150,7 +150,7 @@ The `channels` object typically includes properties for each channel, such as:
 Here's a visual representation of the `channels` object and its properties:
 ```mermaid
 graph LR
-  A[channels]
+  A[channel]
   B(address)
   C(title)
   D(description)
@@ -201,7 +201,7 @@ externalDocs:
   url: 'https://example.com'
 ```
 ### `Operations` object
-The `operations` object holds a dictionary with all the operations the application must implement. Each `operation` object define the specific operation that needs to be implemented. The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
+The `operations` object holds a dictionary with all the operations the application must implement. The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
 
 The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API. It serves as a reference for developers, tools, and libraries to understand the required operations and their associated properties, allowing for better implementation, documentation, and code generation.
 
@@ -222,7 +222,7 @@ The `operations` object typically include properties for each `operation` object
 Here's a visual representation of the `operations` object and its properties:
 ```mermaid
 graph LR
-  A[operations]
+  A[operation]
   B(title)
   C(summary)
   D(description)
