@@ -29,7 +29,7 @@ The `info` object in an AsyncAPI document provides essential information about t
 
 The purpose of the `info` object is to provide descriptive and contact information about the specific API. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
 
-The `info` object includes fields such as:
+Some of the fields `info` object holds are:
 
 - `title`: The title of the API.
 - `version`: The version of the API.
@@ -92,7 +92,7 @@ The `servers` object in an AsyncAPI document is a map of `server` objects that d
 
 The purpose of the `servers` object is to provide the necessary information for clients to connect to the message broker or server and participate in the message exchange or listen to the events. By defining multiple servers, the AsyncAPI document can accommodate different environments or deployment scenarios, such as production, staging, or development.
 
-The `servers` object typically includes the following properties for each server:
+Some of the fields `servers` object holds for each server object are:
 
 - `host`: The server host name. It may include the port. This field supports Server Variables. 
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
@@ -134,7 +134,7 @@ The `channels` object in an AsyncAPI document hold the relative paths to the ind
 
 The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
-The `channels` object typically includes properties for each channel, such as:
+Some of the fields `channels` object holds for each channel object are:
 
 - `address`: An string representation of this channel's address.
 - `messages`: A map of the messages that will be sent to this channel by any application at any time.
@@ -205,7 +205,8 @@ The `operations` object holds a dictionary with all the operations the applicati
 
 The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API. It serves as a reference for developers, tools, and libraries to understand the required operations and their associated properties, allowing for better implementation, documentation, and code generation.
 
-The `operations` object typically include properties for each `operation` object, such as:
+Some of the fields `operations` object holds for each `operation` object are:
+
 - `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect receiving messages from the given channel.
 - `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
 - `title`:	A human-friendly title for the operation.
@@ -291,7 +292,7 @@ All objects defined within the `components` object will have no effect on the sp
 
 The purpose of the `components` object is to promote reusability and maintainability of the AsyncAPI document. By centralizing common definitions in the components section, you can avoid duplicating code and ensure consistency across different parts of the API specification. It also enhances the readability and understandability of the document by providing a clear separation of concerns.
 
-The `components` object includes properties such as:
+Some of the fields `components` object holds are:
 
 - `schemas`: An object to hold reusable Schema Object. 
 - `servers`: An object to hold reusable Server Objects.
