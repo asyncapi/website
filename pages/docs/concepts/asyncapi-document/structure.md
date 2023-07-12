@@ -136,11 +136,11 @@ The purpose of the `channels` object is to provide a structured way to define th
 
 The `channels` object typically includes properties for each channel, such as:
 
-- `address`: An *optional* string representation of this channel's address.
+- `address`: An string representation of this channel's address.
 - `messages`: A map of the messages that will be sent to this channel by any application at any time.
 - `title`: A human-readable title for the channel.
 - `summary`: A short yet brief summary of the channel.
-- `description`: A *optional* description of the channel, providing additional context and details of the message.
+- `description`: A description of the channel, providing additional context and details of the message.
 - `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers is absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
 - `parameters`: A map of the parameters included in the channel address.
 - `tags`: A list of tags for logical grouping of channels.
