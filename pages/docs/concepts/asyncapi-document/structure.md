@@ -6,7 +6,7 @@ The structure of a AsyncAPI document can be defined as a specific format in whic
 Structure of a AsyncAPI document lays out the blueprint for you to write down your specification based on your application. 
 
 ## Root Elements 
-Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the structure, metadata, endpoints, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
+Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the structure, metadata, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
 
 ```mermaid
 graph LR
