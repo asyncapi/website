@@ -92,7 +92,7 @@ The `servers` object in an AsyncAPI document is a map of `server` objects that d
 
 The purpose of the `servers` object is to provide the necessary information for clients to connect to the message broker or server and participate in the message exchange or listen to the events. By defining multiple servers, the AsyncAPI document can accommodate different environments or deployment scenarios, such as production, staging, or development.
 
-The `servers` object typically includes the following properties(few are mandatory, few are optional) for each server:
+The `servers` object typically includes the following properties for each server:
 
 - `host`: The server host name. It may include the port. This field supports Server Variables. 
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
