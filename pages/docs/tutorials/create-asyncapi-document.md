@@ -49,7 +49,7 @@ You can create a new `asyncapi.yaml` document by running:
 Go ahead to create the specification documents titled `asyncapi` with a `.yaml` extension.
 
 <CodeBlock>
-{`asyncapi: '2.5.0'
+{`asyncapi: '2.6.0'
 info:
   title: Streetlights API
   version: '1.0.0'
