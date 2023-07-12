@@ -130,7 +130,7 @@ description: Production RabbitMQ broker (uses the `production` vhost).
 ```
 
 ### `Channels` object
-The `channels` object in an AsyncAPI document hold the relative paths to the individual channels and their operations. Channel paths are relative to servers. The `channels` represents the communication pathways through which messages are exchanged. The `channel` object sescribes a shared communication channel. 
+The `channels` object in an AsyncAPI document hold the relative paths to the individual channels. Channel paths are relative to servers. The `channels` represents the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
 
 The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
