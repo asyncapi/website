@@ -1,7 +1,6 @@
 import { mount } from 'cypress/react'
 import NewsroomBlogPosts from '../../../components/newsroom/NewsroomBlogPosts';
 
-
 describe('Features Component', () => {
     it('renders without errors', () => {
         mount(<NewsroomBlogPosts />);
