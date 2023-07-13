@@ -180,7 +180,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                             rel="noopener noreferrer"
                             className={`cursor-pointer font-body text-sm leading-6 underline font-medium text-secondary-500 hover:text-secondary-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150`}
                           >
-                            {' '}
                             release notes
                           </a>
                         </Link>
