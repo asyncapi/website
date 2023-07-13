@@ -26,7 +26,7 @@ export default function Modal({
       <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl sm:p-6">
         <div className="flex justify-between mb-6">
           <h1 className="text-lg font-bold truncate mr-4">{title}</h1>
-          <button onClick={() => onModalClose()}>
+          <button onClick={() => onModalClose()} data-testid="Modal-close">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
