@@ -13,7 +13,7 @@ describe('Blog Layout Component', () => {
         <Layout post={ post } navItems={ allDocPosts } />
       </MockRouter>
     );
-    cy.get('[data-testid="Docs-container-main"]').should('exist');
+    cy.get('[data-testid="Docs-main-container"]').should('exist');
   });
   it('renders correct BlogLayout component when pathname is /blog/', () => {
     const posts = getAllPosts();
@@ -23,7 +23,7 @@ describe('Blog Layout Component', () => {
         <Layout post={post} navItems={posts['blog']} />
       </MockRouter>
     );
-    cy.get('[data-testid="Blogs-main-div" ]').should('exist')
+    cy.get('[data-testid="Blogs-main-container" ]').should('exist')
   });
   it('renders correct Blog component when pathname is /blog' , () => {
     const posts = getAllPosts();
@@ -33,7 +33,7 @@ describe('Blog Layout Component', () => {
         <Layout post={post} navItems={posts['blog']} />
       </MockRouter>
     )
-    cy.get('[data-testid="Blogs-sub-div"]').should('exist');
+    cy.get('[data-testid="Blogs-sub-container"]').should('exist');
   })
   it('renders correct Jobs component when pathname is /jobs/' , () => {
     const posts = getAllPosts();
@@ -43,6 +43,6 @@ describe('Blog Layout Component', () => {
         <Layout post={post} navItems={posts['job']} />
       </MockRouter>
     )
-    cy.get('[data-testid="jobs-main-div"]').should('exist');
+    cy.get('[data-testid="Jobs-main-container"]').should('exist');
   });
 });

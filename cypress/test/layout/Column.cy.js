@@ -8,8 +8,8 @@ describe('Column component', () => {
         <p>Children content</p>
       </Column>
     );
-    cy.get('[data-testid="Column-div"]').should('exist');
-    cy.get('[data-testid="Column-div"]').should(
+    cy.get('[data-testid="Column-main"]').should('exist');
+    cy.get('[data-testid="Column-main"]').should(
       'have.text',
       'Children content'
     );

@@ -252,14 +252,14 @@ const post = {
   slug: '/blog/2020-summary',
 };
 
-describe('Jobs Layout Component', () => {
+describe('Blog Layout Component', () => {
   it('renders correct BlogLayout component', () => {
     cy.mount(
       <MockRouter asPath="/blog/2020-summary">
         <BlogLayout post={post} />
       </MockRouter>
     );
-    cy.get('[data-testid="BlogLayout-head"]').contains(post.title);
+    cy.get('[data-testid="BlogLayout-main"]').contains(post.title);
   });
 
   it('renders Error Page , if post is not found ', () => {

@@ -47,7 +47,7 @@ export default function JobsLayout({ post, children }) {
               <ApplyJobButton
                 job={post}
                 className="mt-4 inline-block"
-                data-testid="ApplyJobLayout"
+                data-testid="ApplyJobButton"
               />
             </article>
           </div>

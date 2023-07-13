@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   if (pathname.startsWith('/docs')) {
     const post = getDocBySlug(posts['docs'], pathname);
     return (
-      <div data-testid="Docs-container-main">
+      <div data-testid="Docs-main-container">
       <DocsLayout post={post} navItems={allDocPosts}>
         {children}
       </DocsLayout>
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
   } else if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname, 'blog');
     return (
-      <div data-testid="Blogs-main-div" >
+      <div data-testid="Blogs-main-container" >
       <BlogLayout post={post} navItems={posts['blog']}>
         {children}
       </BlogLayout>
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
     );
   } else if (pathname === '/blog') {
     return (
-      <div data-testid='Blogs-sub-div'>
+      <div data-testid='Blogs-sub-container'>
       <BlogContext.Provider value={{ navItems: posts['blog'] }}>
         {children}
       </BlogContext.Provider>
@@ -46,7 +46,7 @@ export default function Layout({ children }) {
     );
   } else if (pathname.startsWith('/jobs/')) {
     const post = getPostBySlug(pathname, 'jobs');
-    return <div data-testid="jobs-main-div"><JobsLayout post={post}>{children}</JobsLayout></div>;
+    return <div data-testid="Jobs-main-container"><JobsLayout post={post}>{children}</JobsLayout></div>;
   } else {
     const post = getPostBySlug(pathname);
     if (post) {

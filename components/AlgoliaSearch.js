@@ -11,13 +11,7 @@ export const DOCS_INDEX_NAME = 'asyncapi-docs';
 const APP_ID = 'Z621OGRI9Y';
 const API_KEY = '5a4122ae46ce865146d23d3530595d38';
 
-const SearchContext = createContext({
-  isOpen: false,
-  onOpen: () => {},
-  onClose: () => {},
-  onInput: () => {},
-});
-
+const SearchContext = createContext({});
 
 export default function AlgoliaSearch({ children }) {
   const [isOpen, setIsOpen] = useState(false);

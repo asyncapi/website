@@ -53,7 +53,7 @@ describe('DocsLayout Component', () => {
         <DocsLayout post={post} />
       </MockRouter>,
     )
-    cy.get('[data-testid="DocsLayout-main-div"]').should('exist');
+    cy.get('[data-testid="DocsLayout-main"]').should('exist');
   })
 
   it('renders Error Page , if post is not found ', () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 const createRouter = (params) => ({
@@ -23,10 +22,6 @@ const MockRouter = ({ children, ...props }) => {
   return (
     <RouterContext.Provider value={router}>{children}</RouterContext.Provider>
   );
-};
-
-MockRouter.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default MockRouter;

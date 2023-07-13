@@ -58,7 +58,7 @@ const post = {
   isIndex: false,
   slug: '/jobs/apiture-api-architect',
 };
-describe('Blog Layout Component', () => {
+describe('Job Layout Component', () => {
   it('renders correct JobLayout component', () => {
     cy.mount(
       <MockRouter asPath="/jobs/apiture-api-architect">

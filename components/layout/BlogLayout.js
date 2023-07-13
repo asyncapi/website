@@ -36,7 +36,7 @@ export default function BlogLayout({ post, children }) {
           <header className="pr-4 sm:pr-6 md:pr-8">
             <h1
               className="text-4xl font-normal text-gray-800 font-sans antialiased"
-              data-testid="BlogLayout-head"
+              data-testid="BlogLayout-main"
             >
               {post.title}
             </h1>

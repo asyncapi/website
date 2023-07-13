@@ -87,7 +87,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
           {/* <!-- Static sidebar for desktop --> */}
           <div
             className="hidden lg:flex lg:flex-shrink-0"
-            data-testid="DocsLayout-main-div"
+            data-testid="DocsLayout-main"
           >
             <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
               <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
