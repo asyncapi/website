@@ -24,10 +24,12 @@ export default function GenericLayout({
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
       <Container wide={wide}>
+        <div data-testid="Generic-banner">
         <AnnouncementHero
           className={`text-center m-4 ${hideBanner && 'hidden'}`}
           small={true}
         />
+        </div>
         <div id="main-content" data-testid="Generic-main">
           {children}
         </div>

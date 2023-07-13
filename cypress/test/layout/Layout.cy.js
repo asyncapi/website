@@ -1,4 +1,3 @@
-import DocsLayout from '../../../components/layout/DocsLayout';
 import Layout from '../../../components/layout/Layout';
 import MockRouter from '../../utils/router';
 import { getPostBySlug, getAllPosts, getDocBySlug } from '../../../lib/api';
