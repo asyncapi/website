@@ -87,6 +87,7 @@ schemas:
   description: Avro 1.9
   storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
   registry: Confluent Schema Registry.
+  validation: Based on validation using Confluent Schema Registry.
   versioning: |
     Versioning is based on git tags. The schema version pushed to Confluent Schema Registry 
     matches the git tag version of the product. Every schema has a `version` information 
