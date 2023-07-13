@@ -37,7 +37,6 @@ describe('Newsroom Component', () => {
         );
 
         cy.get('[data-testid="Newsroom-Twitter"]').should('exist');  // data-test was not working
-
     });
 
 
