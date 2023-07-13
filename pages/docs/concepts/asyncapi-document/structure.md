@@ -94,7 +94,7 @@ The purpose of the `servers` object is to provide the necessary information for 
 
 Some of the fields `servers` object holds for each server object are:
 
-- `host`: The server host name. It may include the port. This field supports Server Variables. 
+- `host`: The server host name. It may include the port. 
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
 - `protocolVersion`: The version of the protocol used for connection.
 - `pathname`: The path to a resource in the host.
@@ -294,25 +294,25 @@ The purpose of the `components` object is to promote reusability and maintainabi
 
 Some of the fields `components` object holds are:
 
-- `schemas`: An object to hold reusable Schema Object. 
-- `servers`: An object to hold reusable Server Objects.
-- `channels`: An object to hold reusable Channel Objects.
-- `operations`: An object to hold reusable Operation Item Objects.
-- `messages`: An object to hold reusable Message Objects.
-- `securitySchemes`: An object to hold reusable Security Scheme Objects.
-- `serverVariables`: An object to hold reusable Server Variable Objects.
-- `parameters`: Contains reusable parameter objects that can be used in various parts of the AsyncAPI document.
-- `correlationIds`: An object to hold reusable Correlation ID Objects.
-- `replies`: An object to hold reusable Operation Reply Objects.
-- `replyAddresses`: An object to hold reusable Operation Reply Address Objects.
-- `externalDocs`: An object to hold reusable External Documentation Objects.
-- `tags`: An object to hold reusable Tag Objects.
-- `operationTraits`: An object to hold reusable Operation Trait Objects.
-- `messageTraits`: Represents common traits or characteristics that can be applied to messages.
-- `serverBindings`: An object to hold reusable Server Bindings Objects.
-- `channelBindings`: An object to hold reusable Channel Bindings Objects.
-- `operationBindings`: An object to hold reusable Operation Bindings Objects.
-- `messageBindings`: An object to hold reusable Message Bindings Objects.
+- `schemas`: An object to hold reusable [Schema Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#schemaObject). 
+- `servers`: An object to hold reusable [Server Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject).
+- `channels`: An object to hold reusable [Channel Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
+- `operations`: An object to hold reusable [Operation Item Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
+- `messages`: An object to hold reusable [Messages Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageObject).
+- `securitySchemes`: An object to hold reusable [Security Scheme Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#securitySchemeObject).
+- `serverVariables`: An object to hold reusable [Server Variable Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverVariableObject).
+- `parameters`: Contains reusable [parameter objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#parameterObject) that can be used in various parts of the AsyncAPI document.
+- `correlationIds`: An object to hold reusable [Correlation ID Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#correlationIdObject).
+- `replies`: An object to hold reusable [Operation Reply Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationReplyObject).
+- `replyAddresses`: An object to hold reusable [Operation Reply Address Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationReplyAddressObject).
+- `externalDocs`: An object to hold reusable [External Documentation Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#externalDocumentationObject).
+- `tags`: An object to hold reusable [Tag Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#tagObject).
+- `operationTraits`: An object to hold reusable [Operation Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationTraitObject).
+- `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusuable [Message Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageTraitObject).
+- `serverBindings`: An object to hold reusable [Server Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverBindingsObject).
+- `channelBindings`: An object to hold reusable [Channel Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelBindingsObject).
+- `operationBindings`: An object to hold reusable [Operation Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationBindingsObject).
+- `messageBindings`: An object to hold reusable [Message Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageBindingsObject).
 
 Here's a visual representation of the `components` object and its properties:
 ```mermaid
