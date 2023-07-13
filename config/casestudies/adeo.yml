@@ -87,8 +87,22 @@ schemas:
   description: Avro 1.9
   storage: Git repository where source code is. During release they are published to Confluent Schema Registry.
   registry: Confluent Schema Registry.
-  versioning: Versioning is based on git tags. The schema version pushed to Confluent Schema Registry matches the git tag version of the product. Every schema has a `version` information that matches with product tag version.
   validation: Based on validation using Confluent Schema Registry.
+  versioning: |
+    Versioning is based on git tags. The schema version pushed to Confluent Schema Registry 
+    matches the git tag version of the product. Every schema has a `version` information 
+    that matches with product tag version.
+
+    Example Avro schema with version information:
+        ```json
+        {
+          "namespace": "com.adeo.casestudy.costingrequest",
+          "type": "record",
+          "name": "CostingRequestPayload",
+          "version": "1.1.0",
+          "fields": [ ... ]
+        }
+        ```
 asyncapi:
   usecase: |
     Document the API of the product, so its users know how it works and how to use it. AsyncAPI was selected as the standard that allows you to generate documentation from a machine-readable document that describes the API.
