@@ -15,7 +15,5 @@ describe('Features Component', () => {
         cy.get('[data-testid="FeaturedBlog-Authorimg"]').should('exist', post.authors)
         cy.get('[ data-testid="FeaturedBlogPost-date"]').should('exist', post.date)
         cy.get('[ data-testid="FeaturedBlogPost-RT"]').should('exist', post.readingTime)
-
-
     });
 });
