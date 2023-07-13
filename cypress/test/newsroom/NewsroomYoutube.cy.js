@@ -1,26 +1,27 @@
 import { mount } from 'cypress/react'
 import NewsroomYoutube from '../../../components/newsroom/NewsroomYoutube';
 
-describe('Features Component', () => {
-    it('renders without errors', () => {
+describe('Newsroom Youtube', () => {
+    beforeEach(() => {
         mount(<NewsroomYoutube />);
+      });
+    it('renders without errors', () => {
+       
     });
 
-
     it('checks if swiper component is present', () => {
-        mount(<NewsroomYoutube />);
         cy.get('[ data-testid="NewsroomYoutube-main"]').should('exist')
 
     });
+    it('checks if the first slide is active', () => {
+        cy.get('.swiper-slide-active').should('exist')
+    });
     it('slides to the next slide', () => {
-        mount(<NewsroomYoutube />);
-        cy.get('[data-testid="Youtube-Next"]').click();
-
+        cy.get('[data-testid="Youtube-Next-button"]').click({force: true })
+        cy.get('.swiper-slide-active').should('exist')
     });
 
     it('slides to the previous slide', () => {
-        mount(<NewsroomYoutube />);
-        cy.get('[data-testid="Youtube-Prev"]').click();
-
+        cy.get('[data-testid="Youtube-Prev-button"]').click({force: true })
     });
 });

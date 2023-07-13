@@ -8,7 +8,7 @@ const video = {
     "videoId": "EvC2PZXEM0M"
 }
 
-describe('Features Component', () => {
+describe('Youtube Card Component', () => {
     it('renders without errors', () => {
         mount(<YouTubeCard video={ video } />);
         cy.get('[data-testid="YoutubeCard-main"]').contains(video.title);

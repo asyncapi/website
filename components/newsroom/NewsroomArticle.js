@@ -12,7 +12,7 @@ export default function NewsroomArticle() {
             href={ article.url }
             target="_blank"
             rel="noopener noreferrer"
-            data-testid={ `article-${ index }` }
+            data-testid={ `NewsroomArticle-${ index }` }
           >
             <div>
               <Paragraph typeStyle="body-sm" textColor="text-gray-600">{ article.publishDate }</Paragraph>
