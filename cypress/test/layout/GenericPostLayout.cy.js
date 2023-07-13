@@ -1,4 +1,3 @@
-import { mount } from 'cypress/react';
 import MockRouter from '../../utils/router';
 import GenericPostLayout from '../../../components/layout/GenericPostLayout';
 const post = {
