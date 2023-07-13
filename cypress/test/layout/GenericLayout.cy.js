@@ -4,7 +4,6 @@ describe('GenericLayout Component', () => {
   it('renders correct GenericLayout component', () => {
     cy.mount(
       <MockRouter asPath="/">
-        {' '}
         <GenericLayout
           title="Test Title"
           description="Test Description"
