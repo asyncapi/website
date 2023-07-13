@@ -4,6 +4,7 @@ const gemoji = require('remark-gemoji-to-emoji')
 const a11yEmoji = require('@fec/remark-a11y-emoji')
 const slug = require('remark-slug')
 const headingId = require('remark-heading-id')
+const { i18n } = require('./next-i18next.config')
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -35,4 +36,5 @@ module.exports = withMDX({
 
     return config
   },
+  i18n
 })

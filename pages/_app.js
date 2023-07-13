@@ -6,10 +6,11 @@ import Footer from "../components/Footer";
 import { MDXProvider } from '../components/MDX';
 import AlgoliaSearch from '../components/AlgoliaSearch';
 import ScrollButton from '../components/buttons/ScrollButton';
+import { appWithTranslation } from 'next-i18next'
 
 import '../styles/globals.css'
 
-export default function App({ Component, pageProps, router }) {
+function App({ Component, pageProps, router }) {
   return (
     <AppContext.Provider value={{ path: router.asPath }}>
       <Head>
@@ -32,3 +33,5 @@ export default function App({ Component, pageProps, router }) {
     </AppContext.Provider>
   )
 }
+
+export default appWithTranslation(App);

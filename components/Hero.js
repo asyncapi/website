@@ -8,18 +8,22 @@ import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 import { SearchButton } from './AlgoliaSearch';
 import IconLoupe from './icons/Loupe';
+import { useTranslation } from 'next-i18next'
 
 export default function Hero({ className = ''}) {
+
+  const { t } = useTranslation('common');
+
   return (
     <>
       <AnnouncementHero className='my-4' />
       <header className={`px-2 mt-12 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">
-            Building the future of {` `}
+            {t('homepageH1_1')} {` `}
             <span className="block md:-mt-4">
               {" "}
-              Event-Driven Architectures (EDA)
+              {t('homepageH1_2')}
             </span>
           </Heading>
           <Heading level="h2" typeStyle="body-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">
