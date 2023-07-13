@@ -36,7 +36,7 @@ export default function FeaturedBlogPost({ post, className = ''}) {
                     </span>
                   </Paragraph>
                   <Link href={post.slug}>
-                    <a className="block">
+                    <a className="block" data-testid="FeaturedBlog-title">
                       <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
                         {post.title}
                       </Heading>
@@ -52,7 +52,7 @@ export default function FeaturedBlogPost({ post, className = ''}) {
                   </div>
                   <div className="ml-3">
                     <Heading level="h3" typeStyle="heading-xs-semibold" textColor="text-gray-900">
-                      <span className="hover:underline">
+                      <span className="hover:underline" data-testid="FeaturedBlogPost-AuthorName">
                         {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link} onClick={e => { e.stopPropagation() }} target="_blank" rel="noreferrer">{author.name}</a> : author.name).reduce((prev, curr) => [prev, ' & ', curr])}
                       </span>
                     </Heading>
