@@ -10,15 +10,31 @@
       "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
           "name": "💭 Strawman (RFC 0)",
           "color": "C2E0C6"
         }
       ],
-      "score": 52.265775152365094
+      "score": 53.41447350736213
+    },
+    {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 32.45072852866624
     },
     {
       "id": "PR_kwDOCHlHJM5SLlyl",
@@ -29,7 +45,7 @@
       "resourcePath": "/asyncapi/generator/pull/978",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 27.28158593117958
     },
     {
       "id": "PR_kwDODCuNRs4r1oNL",
@@ -40,7 +56,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 23.835490866188476
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -86,6 +102,22 @@
       "score": 22.399617922442182
     },
     {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 21.538094156194408
+    },
+    {
       "id": "PR_kwDOBW5R_c5TUuUu",
       "isPR": true,
       "isAssigned": false,
@@ -108,6 +140,17 @@
       "score": 16.65612614745701
     },
     {
+      "id": "PR_kwDOFLhIt85RTiHb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add flowchart for GSoC23 project in README.md",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/719",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOBGu-185KHmXZ",
       "isPR": true,
       "isAssigned": false,
@@ -116,43 +159,100 @@
       "resourcePath": "/asyncapi/spec/pull/907",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "PR_kwDOFDnrNc5RUbi_",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: help command",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/cli/pull/593",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Jw5C6",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new style guide - Inclusive Language",
-      "author": "BhaswatiRoy",
-      "resourcePath": "/asyncapi/website/pull/1327",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOB5hCo85NWLAa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: allow multi format schemas",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/370",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 13.497205671215161
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOCHlHJM5rH7-B",
+      "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1007",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM5rH6bF",
+      "title": "[📑 Docs]: Update usage doc with info about new docker image",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1006",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5rHafV",
+      "title": "Glee crashes when body is not proper json in http request",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/476",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5rHSAR",
+      "title": "Show server url",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/475",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt85q_THl",
+      "title": "[📑 Docs]: A Typo in the Contributing Guideline",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/795",
+      "repo": "asyncapi/community",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5q1B5J",
+      "title": "Overlay bug in the `/roadmap`",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1906",
+      "repo": "asyncapi/website",
+      "author": "codingmickey",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBGu-185qGt6A",
       "title": "Ensure consistency when using either `Application` or `API` terms",
@@ -424,31 +524,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385pckK7",
-      "title": "Improve the example display name",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1417",
-      "repo": "asyncapi/modelina",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N85pN-Dg",
-      "title": "Date button is not clickable",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/146",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
       "id": "I_kwDOFLhIt85o9dDJ",
       "title": "Add 2023 mentorship directory",
       "isAssigned": false,
@@ -703,21 +778,6 @@
       ]
     },
     {
-      "id": "I_kwDOFi_gUM5gradR",
-      "title": "add prettier configuration",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/398",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFDnrNc5gDKCJ",
       "title": "Generate example function for TypeScript models",
       "isAssigned": false,
@@ -850,21 +910,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Gl6TS",
-      "title": "Validate workflow on PR level",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/150",
-      "repo": "asyncapi/.github",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
