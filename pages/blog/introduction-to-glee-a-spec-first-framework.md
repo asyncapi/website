@@ -10,7 +10,7 @@ authors:
     photo: /img/avatars/souvikns.webp
     link: https://twitter.com/souvik_ns
     byline: AsyncAPI Maintainer
-excerpt: Glee is a powerful spec-first framework that streamlines the process of building server-side applications. By integrating your code with the spec, Glee takes care of the heavy lifting involved in creating and managing connections, allowing you to focus on the business logic that truly matters.
+excerpt: Glee is a powerful spec-first framework that streamlines the building of server-side applications. By integrating your code with the spec, Glee takes care of the heavy lifting involved in creating and managing connections, allowing you to focus on the business logic that truly matters.
 ---
 
 For the last year, I have been working full-time on AsyncAPI, where I have actively taken part in building a new framework called [Glee](https://github.com/asyncapi/glee). This is the first of many blogs to come where I will be talking about Glee and all the cool stuff we can build with it. In this blog, I will introduce Glee and give a broad overview of how to get started and keep up with Glee's development.
@@ -21,7 +21,7 @@ For the last year, I have been working full-time on AsyncAPI, where I have activ
 
  - It makes sure your code, specification, and documentation are synchronized. Glee eliminates the possibility of straying from the spec, which compels you to embrace a spec-first methodology, ensuring that your API is always entirely defined and coherent. When your API evolves, it includes the specification and documentation.
 
- - Glee simplifies creating and maintaining connections, allowing you to concentrate solely on developing code that meets your business needs. By handling performance, scalability, resilience, and all other aspects necessary for production-readiness, Glee frees you from the burden of managing these technicalities, enabling you to focus on delivering a high-quality application that meets the demands of your users.
+ - Glee simplifies creating and maintaining connections, allowing you to concentrate solely on developing code that meets your business needs. By handling performance, scalability, resilience, and all other aspects necessary for production readiness, Glee frees you from the burden of managing these technicalities, enabling you to focus on delivering a high-quality application that meets the demands of your users.
 
 
 # Getting Started With Glee
@@ -49,13 +49,13 @@ If you don't have any of the above tools missing, go ahead and install them.
 
 
 
-#### Create glee project 
+#### Create a Glee project 
 
 We recommend creating a new Glee app using our official [CLI](https://github.com/asyncapi/cli), which sets up everything automatically. (You don't need to create an empty directory, create-glee-app will make one for you.) To create a project, run:
 
 ```bash
 
-asyncapi new glee 
+asyncapi new Glee 
 
 ```
 
@@ -116,7 +116,7 @@ One thing to note here is the `operationId`; this is needed and is a crucial par
 
 #### Define Our Operation Function.
 
-Now for our case, we will be adding a file `functions/onGreet.js` and writing up the logic for parsing our time and sending a response.
+Now for our case, we will add a file `functions/onGreet.js` and write up the logic for parsing our time and sending a response.
 
 ```js:functions/onGreet.js
 export default async function (event) {
