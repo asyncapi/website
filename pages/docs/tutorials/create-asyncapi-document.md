@@ -125,13 +125,14 @@ defined as a Server Object:
     	protocol: mqtt
 `}
 </CodeBlock>
-You have defined a Server Object named `mosquitto`, which
+
+You have defined a Server Object named **mosquitto**, which
 refers to the Eclipse Mosquitto message broker. In a Server Object, the `host`
 field is used to specify the hostname of the server, and the `protocol` field is
 used to specify the protocol the server supports. The `host` is
 set as a real instance of the broker
 [hosted by the Mosquitto community](https://test.mosquitto.org/) and the
-`protocol` is set as MQTT. If you do not want to use the test instance, you can run
+`protocol` is set as **MQTT**. If you do not want to use the test instance, you can run
 a broker on your local machine with `docker run -it -p 1883:1883 eclipse-mosquitto:1.5`.
 But remember to change `host` to `localhost:1883`
 
@@ -163,19 +164,19 @@ identifier that follow common programming naming conventions:
 							description: Date and time when the message was sent.`}
 </CodeBlock>
 
-You have defined one Channel Object named `lightMeasured`. In the `address`
+You have defined one Channel Object named **lightMeasured**. In the `address`
 field of a Channel Object, you define the "topic name", "routing key", "event
 type", or "path" of the channel and then in the `messages` field, you define
 Message Objects to describe the messages that can be sent to the channel by an
 application at any time. In the example, you have set `address` as
-`'light/measured'` and `messages` has one defined Message Object named
-`lightMeasuredMessage`.
+**'light/measured'** and `messages` has one defined Message Object named
+**lightMeasuredMessage**.
 
-In the Message Object `lightMeasuredMessage` two fields are defined; `name` and
+In the Message Object **lightMeasuredMessage** two fields are defined; `name` and
 `payload`. The `name` field of a Message Object is used to specify a
 machine-friendly name for the message, and the `payload` field is used to
 define how the message should look like when it is sent to the channel. In the
-example, `name` is set as *LightMeasured* and `payload` defines the event using
+example, `name` is set as **LightMeasured** and `payload` defines the event using
 AsyncAPI schemas that means the message should contain an `id` and a `lumens`
 property-which are integers bigger than zero-, and a `sentAt` property that should be a
 string containing a date and time.
@@ -198,12 +199,13 @@ conventions:
 		channel:
 			$ref: '#/channels/lightMeasured'`}
 </CodeBlock>
-You have defined one Operation Object named `onLightMeasured`. In the `action`
-field of Operation Object, you define how your application should
+
+You have defined one Operation Object named **onLightMeasured**. In the `action`
+field of an Operation Object, you define how your application should
 interact with a message. You use the `summary` field to provide a short summary of
 what the operation is about and, then its `channel` field is used to provide a
 reference point to the channel in which the operation is performed. In the example,
-`action` is set as *receive* (which is an operation keyword) because your
+`action` is set as `receive` (which is an operation keyword) because your
 application expects to receive messages from channel it is subscribed to. The
 `summary` field is set with a clear summary of the nature of the messages the
 operation expects to receive and the `channel` field is set with a reference
