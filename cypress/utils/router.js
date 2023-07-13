@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
-import { useRouter } from 'next/router';
 
 const createRouter = (params) => ({
   route: '/',
