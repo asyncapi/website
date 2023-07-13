@@ -3,7 +3,6 @@ import NavBar from '../navigation/NavBar';
 import Container from './Container';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 import StickyNavbar from '../navigation/StickyNavbar';
-import { useRouter } from 'next/router';
 
 export default function GenericLayout({
   title,
