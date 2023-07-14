@@ -11,12 +11,12 @@ describe('Warning Component', () => {
     mount(
       <Warning className={className} title={title} description={description} />
     );
-    cy.get('[data-testid="Warning-div"]')
+    cy.get('[data-testid="Warning-main"]')
       .should('exist')
       .within(() => {
         cy.get(IconExclamation).should('exist');
-        cy.contains('[data-testid="Warning-heading"]', title).should('exist');
-        cy.contains('[data-testid="Warning-paragraph"]', description).should('exist');
+        cy.contains('[data-testid="Warning-title"]', title).should('exist');
+        cy.contains('[data-testid="Warning-description"]', description).should('exist');
       });
   });
 });
