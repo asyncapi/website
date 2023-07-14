@@ -4,7 +4,7 @@ import FiltersDisplay from '../../../components/tools/FiltersDisplay';
 
 describe('FiltersDisplay', () => {
   it('should render selected filters correctly', () => {
-    const checkedValues = ['Filter1', 'Filter2', 'Filter3'];
+    let checkedValues = ['Filter-1', 'Filter-2', 'Filter-3'];
     const setValues = cy.stub().as('setValues');
 
     mount(
@@ -18,18 +18,20 @@ describe('FiltersDisplay', () => {
   });
 
   it('should remove selected filter on filter click', () => {
-    let checkedValues = ['Filter1', 'Filter2', 'Filter3'];
-    let setValues = cy.stub().as('setValues');
-
+    let checkedValues = ['Filter-1', 'Filter-2', 'Filter-3'];
+    const setValues = cy.stub().as('setValues');
+  
     mount(
-      <FiltersDisplay checkedValues={ checkedValues } setValues={ setValues } />
+      <FiltersDisplay checkedValues={checkedValues} setValues={setValues} />
     ).then(() => {
       cy.get('.max-w-lg > div').should('have.length', checkedValues.length);
-      cy.get('.max-w-lg > div').first().find('[data-testid="Filters-Display-Button"]').click();
-      cy.wrap(setValues).should('have.been.calledOnceWith', ['Filter2', 'Filter3']);
-
-
-
+      cy.get('.max-w-lg > div').first().find('[data-testid="Filters-Display-Button"]').click().then(() => {
+        const expectedFilteredValues = ['Filter-2', 'Filter-3'];
+        cy.wrap(setValues).should('have.been.calledOnceWith', expectedFilteredValues);
+      });
     });
   });
+  
+  
+  
 });

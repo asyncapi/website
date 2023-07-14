@@ -17,7 +17,8 @@ describe('CategoryDropdown', () => {
 
   it('calls setopenCategory when a category is clicked', () => {
     cy.get('@setopenCategory').as('setopenCategoryStub');
-    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]').first().click().then(() => {
+    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]').first().click();
+    cy.get('[data-testid="CategoryDropdown-div"]').then(() => {
       cy.get('@setopenCategoryStub').should('have.been.calledOnceWith', false);
     });
   });
