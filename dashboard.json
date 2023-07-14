@@ -56,7 +56,7 @@
       "resourcePath": "/asyncapi/bindings/pull/84",
       "repo": "asyncapi/bindings",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 23.835490866188476
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -111,15 +111,11 @@
       "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
           "name": "💭 Strawman (RFC 0)",
           "color": "C2E0C6"
         }
       ],
-      "score": 21.25091956744515
+      "score": 21.538094156194408
     },
     {
       "id": "PR_kwDOBW5R_c5TUuUu",
@@ -144,6 +140,17 @@
       "score": 16.65612614745701
     },
     {
+      "id": "PR_kwDOFLhIt85RTiHb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add flowchart for GSoC23 project in README.md",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/719",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOBGu-185KHmXZ",
       "isPR": true,
       "isAssigned": false,
@@ -153,17 +160,6 @@
       "repo": "asyncapi/spec",
       "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOFLhIt85RTiHb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add flowchart for GSoC23 project in README.md",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/community/pull/719",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
@@ -524,21 +520,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385pckK7",
-      "title": "Improve the example display name",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1417",
-      "repo": "asyncapi/modelina",
-      "author": "sambhavgupta0705",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
