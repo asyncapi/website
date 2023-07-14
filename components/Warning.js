@@ -11,7 +11,7 @@ export default function Warning({ className = '', title, description }) {
           <h3 className="text-sm leading-5 font-medium text-yellow-800 uppercase" data-testid="Warning-title">
             {title}
           </h3>
-          <div className="mt-2 text-sm leading-5 text-yellow-700" data-testid="Warning-paragraph">
+          <div className="mt-2 text-sm leading-5 text-yellow-700" data-testid="Warning-description">
             <p>{description}</p>
           </div>
         </div>
