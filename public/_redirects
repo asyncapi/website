@@ -71,4 +71,4 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # TOOLS-REDIRECTION:END
 
 # Additional redirection
-https://deploy-preview-1949--asyncapi-website.netlify.app/community/meetings https://deploy-preview-1949--asyncapi-website.netlify.app/community/events 301!
+/community/meetings /community/events 301!
