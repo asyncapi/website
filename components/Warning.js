@@ -2,7 +2,7 @@ import IconExclamation from "./icons/Exclamation";
 
 export default function Warning({ className = '', title, description }) {
   return (
-    <div className={`${className} rounded-md bg-yellow-50 p-4`} data-testid="Warning-div">
+    <div className={`${className} rounded-md bg-yellow-50 p-4`} data-testid="Warning-main">
       <div className="flex">
         <div className="flex-shrink-0">
           <IconExclamation className="h-5 w-5" />
