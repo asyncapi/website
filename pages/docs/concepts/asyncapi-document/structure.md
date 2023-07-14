@@ -6,7 +6,7 @@ The structure of a AsyncAPI document can be defined as a specific format in whic
 This document lays out the blueprint for you to write down your specification based on your application. 
 
 ## Root Elements 
-Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the structure, metadata, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
+Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the metadata, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
 
 ```mermaid
 graph LR
@@ -130,7 +130,7 @@ description: Production RabbitMQ broker (uses the `production` vhost).
 ```
 
 ### `Channels` object
-The `channels` object in an AsyncAPI document hold the relative paths to the individual channels. Channel paths are relative to servers. The `channels` represents the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
+The `channels` object in an AsyncAPI document holds all the individual `channel` objects definitions that the application must use during runtime. The `channels` represents the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
 
 The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
@@ -201,9 +201,9 @@ externalDocs:
   url: 'https://example.com'
 ```
 ### `Operations` object
-The `operations` object holds a dictionary with all the operations the application must implement. The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
+The `operations` object holds a dictionary with all the operations the application must implement. The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API.
 
-The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API. It serves as a reference for developers, tools, and libraries to understand the required operations and their associated properties, allowing for better implementation, documentation, and code generation.
+The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
 
 Some of the fields `operations` object holds for each `operation` object are:
 
@@ -386,10 +386,6 @@ components:
       enum: [5671, 5672]
       default: 5672
   channels:
-    user/signedup:
-      subscribe:
-        message:
-          $ref: "#/components/messages/userSignUp"
   messages:
     userSignUp:
       summary: Action to sign a user up.
