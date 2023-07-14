@@ -281,6 +281,7 @@ const solutions = {
   },
   createSupportProgram: {
     title: 'Create a support program to give back to the community',
+    done: true,
     description: <>
       <p>We are very fortunate with the support we got at AsyncAPI. There are many people out there creating great stuff. Some of these things power AsyncAPI and others augment it, making it easier for the end-user to adopt AsyncAPI. We should create a program to give support to these community members. It should consist —at least— of the following things:</p>
       <ul>
@@ -418,7 +419,8 @@ const outcomes = {
     title: 'Number of contributors go above 100 in top repos',
     description: <p>We make top repos grow to a point where we go over 100 contributors in the whole history of the project.</p>,
     solutions: [
-      solutions.createOutstandingContributingGuide
+      solutions.createOutstandingContributingGuide,
+      solutions.createSupportProgram
     ]
   },
   numberProjectsAbove100: {
