@@ -1,5 +1,3 @@
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
 https://asyncapi.com/* https://www.asyncapi.com/:splat 301!
 https://asyncapi.org/* https://www.asyncapi.com/:splat 301!
 https://www.asyncapi.org/* https://www.asyncapi.com/:splat 301!
@@ -69,3 +67,6 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /generator /tools/generator 301!
 /github-actions /tools/github-actions 301!
 # TOOLS-REDIRECTION:END
+
+# Additional redirection
+https://www.asyncapi.com/community/meetings https://www.asyncapi.com/community/events 301!
