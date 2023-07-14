@@ -26,7 +26,5 @@ describe('FiltersDropdown', () => {
     cy.get('[data-testid="FiltersDropdown-div"] > :nth-child(1)').click();
     cy.get('@setStateFunction').should('have.been.calledThrice');
     cy.get('@setStateFunction').should('have.been.calledWith', ['Option 2']);
-
-
   });
 });
