@@ -61,7 +61,7 @@ export default function HeadComponent({
       <meta itemProp="image" content={image} />
 
       {/* Twitter Card data */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" value="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
