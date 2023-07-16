@@ -1,13 +1,16 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 import AnnouncementHero from '../../../components/campaigns/AnnoucementHero';
+beforeEach(() => {
+  mount(<AnnouncementHero />);
+});
+
 
 describe('AnnouncementHero Component', () => {
   it('should render the component when the date is within the valid range', () => {
     // Set the current date to May
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
-    mount(<AnnouncementHero />);
     // Assert that the component is rendered 
     //check for background color 
     cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class','bg-gray-50');
@@ -16,7 +19,6 @@ describe('AnnouncementHero Component', () => {
   it('should display the correct event information', () => {
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
-    mount(<AnnouncementHero />);
     // Assert the event details
     cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'AsyncAPI Conf on Tour 2023').should('exist');
     cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'London Edition').should('exist');
@@ -27,7 +29,6 @@ describe('AnnouncementHero Component', () => {
   it('should have a link to submit a session', () => {
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
-    mount(<AnnouncementHero />);
     // Assert the link
     cy.get('[data-testid="AnnouncementHero-submit-session"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
     .should('have.attr', 'target', '_blank')
@@ -49,6 +50,6 @@ it('should render a small announcement when "small" prop is true', () => {
 
     mount(<AnnouncementHero small={false} />);
 
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class', 'mb-12');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class', 'mx-3 mt-3 p-3 mb-6');
   });
 });
