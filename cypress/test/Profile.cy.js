@@ -14,15 +14,15 @@ describe('Profile Component', () => {
  it('renders profile links and names when profiles array is not empty', () => {
     const profiles = [
       {
-        name: 'John Doe',
-        link: 'https://example.com/john',
-        avatar: '../../public/img/avatars/ace.webp',
+        name: 'Alejandra Quetzalli',
+        avatar: 'https://avatars.githubusercontent.com/alequetzalli',
+        link: 'https://github.com/alequetzalli'
       },
       {
-        name: 'Jane Doe ',
-        link: 'https://example.com/jane',
-        avatar: '../../public/img/avatars/canela-ale.webp',
-      },
+        name: 'Azeez Elegbede',
+        avatar: 'https://avatars.githubusercontent.com/acethecreator',
+        link: 'https://github.com/acethecreator'
+      }
     ];
     const props = {
       profiles,
