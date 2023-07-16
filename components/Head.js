@@ -29,12 +29,13 @@ export default function HeadComponent({
   const permTitle = 'AsyncAPI Initiative for event-driven APIs';
   title = title ? `${title} | ${permTitle}` : permTitle;
 
-  useEffect(() => {
-    // Enable Google Analytics
-    TagManager.initialize({ gtmId: 'GTM-T58BTVQ' });
-    ReactGA.initialize('UA-109278936-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  //enable google analytics
+  if (typeof window !== 'undefined') {
+    TagManager.initialize({gtmId: 'GTM-T58BTVQ'})
+    ReactGA.initialize('UA-109278936-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
+
 
   return (
     <Head>
