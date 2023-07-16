@@ -13,15 +13,15 @@ describe('AnnouncementHero Component', () => {
     cy.clock(mockDate.getTime());
     // Assert that the component is rendered 
     //check for background color 
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class','bg-gray-50');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').should('have.class', 'bg-gray-50');
   });
 
   it('should display the correct event information', () => {
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
     // Assert the event details
-    cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'AsyncAPI Conf on Tour 2023').should('exist');
-    cy.get('[data-testid="AnnouncementHero-main-div"]').contains( 'London Edition').should('exist');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').contains('AsyncAPI Conf on Tour 2023').should('exist');
+    cy.get('[data-testid="AnnouncementHero-main-div"]').contains('London Edition').should('exist');
     cy.get('[data-testid="AnnouncementHero-main-div"]').contains('20th of September, 2023 | London, UK').should('exist');
     cy.contains('Submit a session').should('exist');
   });
@@ -31,11 +31,11 @@ describe('AnnouncementHero Component', () => {
     cy.clock(mockDate.getTime());
     // Assert the link
     cy.get('[data-testid="AnnouncementHero-submit-session"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
-    .should('have.attr', 'target', '_blank')
-    .contains('Submit a session');
+      .should('have.attr', 'target', '_blank')
+      .contains('Submit a session');
   });
-//check if announcement rendered is small or large .
-it('should render a small announcement when "small" prop is true', () => {
+  //check if announcement rendered is small or large .
+  it('should render a small announcement when "small" prop is true', () => {
     const mockDate = new Date('2023-05-01T00:00:00Z');
     cy.clock(mockDate.getTime());
 
