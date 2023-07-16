@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import DocsLayout, { buildNavTree } from './DocsLayout';
+import DocsLayout from './DocsLayout';
 import BlogLayout from './BlogLayout';
 import JobsLayout from './JobsLayout';
 import GenericPostLayout from './GenericPostLayout';

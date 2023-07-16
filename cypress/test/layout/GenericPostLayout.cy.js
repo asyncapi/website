@@ -4,6 +4,7 @@ describe('Generic Post Layout Component', () => {
   beforeEach(() => {
     cy.fixture('blogpost.json').as('blogsData');
   });
+  
   it('renders correct component', () => {
     cy.get('@blogsData').then((blogsData) => {
       cy.mount(
@@ -23,5 +24,4 @@ describe('Generic Post Layout Component', () => {
       </MockRouter>
     );
   });
-
 });

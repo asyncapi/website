@@ -23,6 +23,7 @@ describe('GenericLayout Component', () => {
   it('renders Generic-main element', () => {
     cy.get('[data-testid="Generic-main"]').should('exist');
   });
+  
   it('does not apply wide class when wide is false', () => {
     cy.get('[data-testid="GenericLayout"]').should('not.have.class', 'wide');
   });
@@ -39,6 +40,6 @@ describe('GenericLayout Component', () => {
         />
       </MockRouter>
     );
-    cy.get('[data-testid="Generic-banner"]').should('exist');
+    cy.get('[data-testid="GenericLayout-banner"]').should('exist');
   });
 });

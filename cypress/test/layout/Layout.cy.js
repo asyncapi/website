@@ -14,6 +14,7 @@ describe('Blog Layout Component', () => {
     );
     cy.get('[data-testid="Docs-main-container"]').should('exist');
   });
+
   it('renders correct BlogLayout component when pathname is /blog/', () => {
     const posts = getAllPosts();
     const post = getPostBySlug("/blog/2021-summary", 'blog');
@@ -24,6 +25,7 @@ describe('Blog Layout Component', () => {
     );
     cy.get('[data-testid="Blogs-main-container" ]').should('exist')
   });
+
   it('renders correct Blog component when pathname is /blog' , () => {
     const posts = getAllPosts();
     const post = getPostBySlug("/blog", 'blog');
@@ -34,6 +36,7 @@ describe('Blog Layout Component', () => {
     )
     cy.get('[data-testid="Blogs-sub-container"]').should('exist');
   })
+  
   it('renders correct Jobs component when pathname is /jobs/' , () => {
     const posts = getAllPosts();
     const post = getPostBySlug('/jobs/apiture-api-architect', 'jobs');
