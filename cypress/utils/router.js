@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
-const createRouter = (params) => ({
+export const createRouter = (params) => ({
   route: '/',
   pathname: '/',
   query: {},
