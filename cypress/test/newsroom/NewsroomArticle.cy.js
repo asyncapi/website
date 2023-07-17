@@ -9,7 +9,6 @@ describe('Newsroom Article Component', () => {
             cy.get(`[data-testid="NewsroomArticle-${ index }"]`).should('have.attr', 'href', article.url);
             cy.get(`[data-testid="NewsroomArticle-${ index }"]`).should('contain.text', article.title);
             cy.get(`[data-testid="NewsroomArticle-${ index }"]`).should('contain.text', article.publishDate);
-
         });
     });
 });
