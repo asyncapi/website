@@ -1,7 +1,7 @@
 import Button from './Button';
 import IconCalendar from '../icons/Calendar';
 
-export default function GoogleCalendarButton({
+export default function ICSFButton({
   text = 'Download ICS File',
   href,
   target = '_blank',
