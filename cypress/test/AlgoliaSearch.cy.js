@@ -1,6 +1,7 @@
 import { mount } from 'cypress/react'
 import AlgoliaSearch from '../../components/AlgoliaSearch'
 import { SearchButton } from '../../components/AlgoliaSearch';
+import { DocSearchModal } from '@docsearch/react'
 
 describe('AlgoliaSearch component', () => {
   it('renders without errors', () => {
@@ -21,6 +22,10 @@ describe('AlgoliaSearch component', () => {
 
     cy.get('input[placeholder="Search resources"]').type('welcome')
     cy.should('have.value', 'welcome')
+    // Check if the docsearch-list element contains the text 'Welcome'
+    cy.get('#docsearch-list').contains('Welcome')
+
+
   });
 
 });
