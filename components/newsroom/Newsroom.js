@@ -10,7 +10,7 @@ import TextLink from '../typography/TextLink'
 export default function Newsroom() {
   return (
     <> 
-      <div className="text-center mt-12">
+      <div className="text-center mt-12" data-testid="Newsroom-main">
         <Heading
           level="h2"
           typeStyle="heading-lg"
@@ -25,7 +25,7 @@ export default function Newsroom() {
         </Paragraph>
       </div>
 
-      <div className="lg:flex flex-row my-20 -mr-2">
+      <div className="lg:flex flex-row my-20 -mr-2" data-testid="Newsroom-sub-div">
         <div className="text-center lg:text-left lg:w-1/4 pt-4">
           <Heading level="h4" typeStyle="heading-md-semibold">
             From the blog
@@ -33,14 +33,14 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Check out these articles written by community members
           </Paragraph>
-          <div className="my-5">
+          <div className="my-5" data-testid="Newsroom-Blog-Link">
             <TextLink href="/blog" className="mt-5">
               Read all blog posts
               <ArrowRight className="inline w-6" />
             </TextLink>
           </div>
         </div>
-        <div className='lg:w-3/4'>
+        <div className='lg:w-3/4' data-testid="Newsroom-Blog">
           <NewsroomBlogPosts />
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
-          <div className="my-5">
+          <div className="my-5" data-testid="Newsroom-Twitter-Link">
             <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
               Follow us on Twitter
               <ArrowRight className="inline w-6" />
@@ -72,7 +72,7 @@ export default function Newsroom() {
             </div>
           </div>
           <div className='w-full md:w-1/2 px-2 md:pr-0 md:pl-4'>
-            <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0">
+            <div className="rounded-xl shadow-md mt-8 w-full mx-auto md:mt-0" data-testid="Newsroom-Twitter">
               <TwitterTimelineEmbed
                 sourceType="profile"
                 screenName="AsyncAPISpec"
@@ -93,7 +93,7 @@ export default function Newsroom() {
           <Paragraph typeStyle="body-md" className="mt-5">
             Watch our latest videos and live streams on the AsyncAPI YouTube channel
           </Paragraph>
-          <div className="my-5">
+          <div className="my-5" data-testid="Newsroom-Youtube">
             <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
               Visit our YouTube channel
               <ArrowRight className="inline w-6" />
