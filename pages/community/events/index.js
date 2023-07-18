@@ -18,7 +18,7 @@ import AnnouncementHero from '../../../components/campaigns/AnnoucementHero';
 import Paragraph from '../../../components/typography/Paragraph';
 import { getEvents } from '../../../lib/staticHelpers';
 
-function index() {
+function Eventindex() {
   const image = '/img/social/community-events.webp';
   const [events, setEvents] = useState(getEvents(meetings));
 
@@ -29,13 +29,13 @@ function index() {
       image={image}
       wide
     >
-      <div className="mt-10 sm:mt-28">
+      <div className="mt-10 sm:mt-28" data-testid="Events-main">
 
         <div className="w-full sm:w-9/12">
-          <h1 className="countdown-text-gradient font-semibold text-3xl lg:text-7xl leading-tight md:text-4xl">
+          <h1 className="countdown-text-gradient font-semibold text-3xl lg:text-7xl leading-tight md:text-4xl" >
             Join an AsyncAPI event from anywhere in the world.
           </h1>
-          <div className="mt-10">
+          <div className="mt-10" data-testid="Events-Button">
             <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
             <ICSFileButton
               href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics"
@@ -194,4 +194,4 @@ function index() {
   );
 }
 
-export default index;
+export default Eventindex;
