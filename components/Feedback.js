@@ -71,7 +71,7 @@ export default function Feedback(className = '') {
             <div className='block mx-auto w-fit'>
                 <img src='/img/illustrations/icons/icon-x.svg' className='md:w-14' />
             </div>
-            <div className='text-center mx-auto text-lg mt-4' data-testid="Feedback-div2">
+            <div className='text-center mx-auto text-lg mt-4' data-testid="Feedback-error">
                 Oops! Something went wrong...
             </div>
             <div className='text-center mx-auto text-md text-gray-500'>
