@@ -270,6 +270,25 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
+      },
+      {
+        "title": "jasyncapicmp",
+        "description": "Tool/library/maven-plugin for comparing two AsyncAPI versions and evaluating compatibility.",
+        "links": {
+          "websiteUrl": "https://siom79.github.io/jasyncapicmp/",
+          "repoUrl": "https://github.com/siom79/jasyncapicmp"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven"
+          ],
+          "categories": [
+            "compare-tool"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
