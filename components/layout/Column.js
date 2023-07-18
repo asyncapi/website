@@ -1,7 +1,7 @@
-export default function Column ({children}) {
+export default function Column({ children }) {
   return (
-    <div className="mb-4 md:mb-0 md:flex-1 md:mx-1">
+    <div className="mb-4 md:mb-0 md:flex-1 md:mx-1" data-testid="Column-main">
       {children}
     </div>
-  )
+  );
 }
