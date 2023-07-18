@@ -23,7 +23,6 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="Card-heading-lg"]').should('exist');
     cy.get('[data-testid="Card-desc-lg"]').should('exist');
     cy.get(`[href="/community/dashboard"]`).should('exist');
-
   });
 
   it('should display the Newsroom Card', () => {
@@ -34,6 +33,7 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="Card-desc-lg"]').should('exist');
     cy.get('[href="/community/newsroom"]').should('exist');
   });
+
   it('should display the Toolings Card', () => {
     cy.get('[data-testid="CommunityIndex-Toolings-Card"]').should('exist');
     cy.get('[data-testid="Card-lg-tagline"]').should('exist')
@@ -41,6 +41,7 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="Card-desc-lg"]').should('exist')
     cy.get('[href="/tools"]').should('exist');
   });
+
   it('should display other cards correctly', () => {
    cy.get('[data-testid="CommunityCards-Goals"]').should('exist');
    cy.get('[href="https://github.com/asyncapi/community/discussions/513"]').should('exist');
@@ -48,7 +49,8 @@ describe('CommunityIndexPage', () => {
    cy.get('[href="https://github.com/orgs/asyncapi/discussions/593"]').should('exist');
    cy.get('[data-testid="CommunityCards-TSC"]').should('exist');
    cy.get('[href="/community/tsc"]').should('exist');  
-  })
+  });
+
   it('should display slack card ' ,() => {
     cy.get('[data-testid="CommunityCards-Slack"]').should('exist');
     cy.get('[data-testid="CommunityIndex-HomeCard"]').should('exist')
@@ -58,6 +60,7 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="HomeCard-button"]').should('exist');
     cy.get(".bg-channelCover").should('exist')
   });
+  
   it('should display NewsletterSubscribe',()=>{
    cy.get('[data-testid="CommunityCard-subscribe"]').should('exist');
    cy.get('[data-testid="NewsletterSubscribe-main"]').should('exist');

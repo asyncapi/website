@@ -21,7 +21,7 @@ describe('Test for Ambassadors', () => {
     it('renders the ambassador list with correct data', () => {
         ambassadorList.contents.forEach((link) => {
             cy.get('[data-testid="Ambassadors-list"]')
-                .find(`img[alt="${ link.title }"]`)
+                .find(`img[alt="${link.title}"]`)
                 .should('exist')
                 .and('have.attr', 'src', link.icon);
 
@@ -34,6 +34,7 @@ describe('Test for Ambassadors', () => {
                 .should('exist');
         });
     });
+
     it('renders the ambassadors with correct data', () => {
         const asyncapiAmbassadors = sortBy(
             ambassadors.map((user) => addAdditionalUserInfo(user)),
@@ -48,7 +49,7 @@ describe('Test for Ambassadors', () => {
                 .contains('div', ambassador.name)
 
             cy.get('[data-testid="Ambassadors-members-img"]')
-                .find(`img[alt="${ ambassador.name }"]`)
+                .find(`img[alt="${ambassador.name}"]`)
 
                 .and('have.attr', 'src', ambassador.img);
 
@@ -58,29 +59,31 @@ describe('Test for Ambassadors', () => {
         });
 
     });
+
     it('displays the Tokens of our appreciation section with correct data', () => {
         cy.contains('Tokens of our appreciation').should('exist');
-    
+
         cy.contains('We appreciate your commitment and passion for sharing your knowledge with your communities. Let us support you!')
-          .should('exist');
-    
+            .should('exist');
+
         ambassadorList.tokens.forEach((token) => {
-          cy.contains('.mt-20 li', token.emoji).should('exist');
-          cy.contains('.mt-20 li', token.title).should('exist');
-          cy.contains('.mt-20 li', token.details).should('exist');
+            cy.contains('.mt-20 li', token.emoji).should('exist');
+            cy.contains('.mt-20 li', token.title).should('exist');
+            cy.contains('.mt-20 li', token.details).should('exist');
         });
-      });
-    
-      it('displays the Become an AsyncAPI Ambassador section with correct data', () => {
+    });
+
+    it('displays the Become an AsyncAPI Ambassador section with correct data', () => {
         cy.contains('Become an AsyncAPI Ambassador').should('exist');
-    
+
         cy.contains('The AsyncAPI Ambassador program is now open for applications! If you’re selected, you’ll join AsyncAPI\'s mission of helping community members all over the world, build the future of Event-Driven APIs.')
-          .should('exist');
-    
+            .should('exist');
+
         cy.contains('Become an Ambassador now')
-          .should('have.attr', 'href', 'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador');
-      });
-      it('should display NewsletterSubscribe',()=>{
+            .should('have.attr', 'href', 'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador');
+    });
+
+    it('should display NewsletterSubscribe', () => {
         cy.get('[data-testid="NewsletterSubscribe-main"]').should('exist');
         cy.get('[data-testid="NewsletterSubscribe-text-input"]').type("name");
         cy.get('[data-testid="NewsletterSubscribe-email-input"]').type("test@gmail.com")
@@ -88,6 +91,5 @@ describe('Test for Ambassadors', () => {
         cy.get('input[name="type"]').should('exist');
         cy.get('input[name="name"]').should('exist');
         cy.get('input[name="email"]').should('exist');
-       });
-
+    });
 });
