@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'cypress/react';
 import Filters from '../../../components/tools/Filters';
 import ToolFilter from '../../../context/ToolFilterContext';
-import MockRouter from '../../utils/router';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 describe('Filters Component', () => {
   //filter types and their data-testid attributes
@@ -12,25 +12,39 @@ describe('Filters Component', () => {
     { name: 'Category', id: 'Filters-Category-dropdown' },
   ];
 
-  // helper function to select filters from a dropdown
+  // select from dropwdown
   const selectFilters = (filterType) => {
     cy.get(`[data-testid="${ filterType.id }"]`).click();
   };
 
   // helper function to verify the applied filters
   const verifyFilters = (filterType) => {
-    // chck that applied filters contain the selected filters from the dropdown
-    cy.get('[data-testid="Applied-filters"]').should('exist'
-    );
+    // check that applied filters contain the selected filters from the dropdown
+    cy.get('[data-testid="Applied-filters"]').should('exist');
   };
 
   beforeEach(() => {
+    const routerStub = {
+      route: '/',
+      pathname: '/',
+      query: {},
+      asPath: '/',
+      basePath: '',
+      back: cy.stub(),
+      beforePopState: cy.stub(),
+      prefetch: cy.stub().resolves(),
+      reload: cy.stub(),
+      push: cy.stub(),
+      isFallback: false,
+      defaultLocale: 'en',
+    };
+
     mount(
-      <MockRouter>
+      <RouterContext.Provider value={ routerStub }>
         <ToolFilter>
           <Filters setOpenFilter={ () => { } } />
         </ToolFilter>
-      </MockRouter>
+      </RouterContext.Provider>
     );
   });
 
@@ -42,7 +56,7 @@ describe('Filters Component', () => {
 
   filterTypes.forEach((filterType) => {
     it(`allows selecting and displaying ${ filterType.name } options`, () => {
-      // Using helper function to select filters from the dropdown
+      // Using  function to select filters from the dropdown
       selectFilters(filterType);
     });
   });
@@ -51,8 +65,7 @@ describe('Filters Component', () => {
     filterTypes.forEach((filterType) => {
       selectFilters(filterType);
     });
-   cy.get('.w-full').click({ multiple: true },{force:true});
-    // Using helper function to verify the applied filters for each type
+    cy.get('.w-full').click({ multiple: true }, { force: true });
     filterTypes.forEach((filterType) => {
       verifyFilters(filterType);
     });

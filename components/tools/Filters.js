@@ -11,6 +11,7 @@ import { categoryList } from '../../scripts/tools/categorylist'
 import Data from "../../scripts/tools/tools-schema.json"
 import { Carddata } from './Carddata';
 
+
 export default function Filters({ setOpenFilter }) {
   const router = useRouter();
   // all the filter state variables and functions are extracted from the Context to set filters according to the UI.
@@ -169,7 +170,8 @@ export default function Filters({ setOpenFilter }) {
         </div>
         <hr className="my-4" />
         <div className='w-auto my-6 mx-4 mb-0' onClick={ handleApplyFilters }>
-          <Button text='Apply Filters' className='w-full' />
+        <Button text='Apply Filters' className='w-full' />
+        
         </div>
       </div>
     </ToolFilter>
