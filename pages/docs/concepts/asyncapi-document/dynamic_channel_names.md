@@ -75,17 +75,25 @@ graph LR
 Here is an example for parameter context -
 
 ```yml
+asyncapi: 3.0.0
+info:
+  title: Cool Example
+  vesion: 0.1.0
+
 channels:
-  user/{userId}/signup:
-    parameters:
-      userId:
+  userSignedUp:
+    address: user/{userId}/signup
+    messages:
+      userSignedUp:
         description: "Id of the user."
-        context: "payload"
-        schema:
+        payload:
           type: "string"
-    subscribe:
-      message:
-        $ref: "#/components/messages/UserSignedUp"
+
+operations:
+  userSignedUp:
+    action: send
+    channel:
+      $ref: '#/channels/userSignedUp'
 ```
 
 In this example, the `userId` parameter in the channel name `user/{userId}/signup` is populated from the payload of the UserSignedUp event. The (context: "payload") line indicates this.
