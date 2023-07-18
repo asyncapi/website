@@ -69,11 +69,13 @@ export default function ToolsCard({ toolData }) {
           {toolData.filters.language && <div className="flex flex-col gap-2 mx-6">
           <Carddata  classes= 'text-sm text-gray-700'  heading="LANGUAGE" data = {Data.properties.filters.properties.language.description} type="lang" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
             <div className="flex gap-2">
-              <Tag
-                name={toolData.filters.language.name}
-                bgColor={toolData.filters.language.color}
-                borderColor={toolData.filters.language.borderColor}
-              />
+            {toolData.filters.language.map((item, index) => (
+                <Tag key={index}
+                  name={item.name}
+                  bgColor={item.color}
+                  borderColor={item.borderColor}
+                />
+              ))}
             </div>
           </div>}
           {toolData.filters.technology.length > 0 && <div className="flex flex-col gap-2 my-4 mx-6">
