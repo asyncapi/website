@@ -15,7 +15,7 @@ export default function RoadmapItem({
   const connectorClasses = 'border-l-2 border-dashed border-gray-300'
   const classNames = `pt-2 ${showConnector && connectorClasses}`
   return (
-    <li className={classNames}>
+    <li className={classNames} data-testid="RoadmapItem-list">
       <div className="flex">
         { showConnector && (
           <div className="flex flex-col justify-center">
@@ -82,7 +82,7 @@ function Pill ({
               </a>
             </div>
             {isCollapsible && (
-              <button className="mr-2" onClick={onClickCollapse}>
+              <button className="mr-2" onClick={onClickCollapse} data-testid="RoadmapItem-button">
                 <IconArrowRight className={`h-4 transform ${isCollapsed ? 'rotate-90' : '-rotate-90'}`} />
               </button>
             )}
