@@ -26,12 +26,8 @@ describe('getPostBySlug', () => {
 
 describe('getDocBySlug', () => {
     it('should return the document with the given slug', () => {
-      const structuredPosts = [
-        { slug: 'doc1', isSection: false },
-        { slug: 'doc2', isSection: false },
-        { slug: 'doc3', isSection: false }
-      ];
-      const slug = 'doc2';
+      const structuredPosts = posts['docs']
+      const slug = '/docs/concepts';
       const doc = getDocBySlug(structuredPosts, slug);
       const expectedDoc = structuredPosts.find((post) => post.slug === slug && !post.isSection);
       expect(doc).to.deep.equal(expectedDoc);
