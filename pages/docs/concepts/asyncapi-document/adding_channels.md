@@ -7,7 +7,7 @@ Adding [channels](../channel.md) in AsyncAPI specification, allows to organize a
 
 In addition to the term "channel," alternative names can be used to refer to the concept of channels in asynchronous messaging systems. These names may vary depending on the messaging protocol or system being used. Some examples include "topic," "queue," "routing key," and "path." These alternative names represent the same underlying concept of organizing and transmitting messages between producers and consumers.
 
-Here's an example of how to define channels:
+Here's an example of how to define channels -
 
 ```yml
 channels: 
@@ -65,7 +65,7 @@ graph TD
   c1 --> s2
 ```
 
-Here's an example on how channels and servers can be intertwined:
+Here's an example on how channels and servers can be intertwined -
 
 ```yml
 asyncapi: 3.0.0
@@ -114,7 +114,7 @@ graph TD
   s3 --- ch
 ```
 
-Here is an example of how you might specify that a channel is available only on certain servers:
+Here is an example of how you might specify that a channel is available only on certain servers -
 
 ```yml
 channels:
@@ -156,7 +156,7 @@ graph TD
   s1 --> c3
 ```
 
-Here is an example of multiple channels are available on certain servers:
+Here is an example of multiple channels are available on certain servers -
 
 ```yml
 channels:
