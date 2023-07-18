@@ -1,8 +1,4 @@
-import { mount } from '@cypress/react';
-
-import {
-getEvents
-} from '../../../lib/staticHelpers';
+import { getEvents } from '../../../lib/staticHelpers';
 
 describe('getEvents', () => {
   it('should return sorted events in ascending order', () => {
