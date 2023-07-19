@@ -348,7 +348,7 @@ Generates typed models
 USAGE
   $ asyncapi generate models LANGUAGE FILE [-h] [-o <value>] [--tsModelType class|interface] [--tsEnumType
     enum|union] [--tsModuleSystem ESM|CJS] [--tsIncludeComments] [--tsExportType default|named] [--tsJsonBinPack]
-    [--tsMarshalling] [--packageName <value>] [--namespace <value>] [--csharpAutoImplement] [--csharpNewtonsoft]
+    [--tsMarshalling] [--tsExampleInstance] [--packageName <value>] [--namespace <value>] [--csharpAutoImplement] [--csharpNewtonsoft]
     [--csharpArrayType Array|List] [--csharpHashcode] [--csharpEqual] [--csharpSystemJson] [--log-diagnostics]
     [--diagnostics-format json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
 
@@ -398,6 +398,8 @@ FLAGS
                                                                        serializing to and from binary with jsonbinpack.
   --tsMarshalling                                                      TypeScript specific, generate the models with
                                                                        marshalling functions.
+  --tsExampleInstance                                                  Typescript specific, generate examples with 
+                                                                       the models
   --tsModelType=<option>                                               [default: class] TypeScript specific, define
                                                                        which type of model needs to be generated.
                                                                        <options: class|interface>
