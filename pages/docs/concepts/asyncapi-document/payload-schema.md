@@ -13,11 +13,13 @@ Use npm or yarn to install the `@asyncapi/avro-schema-parser` package to enable 
 
 ## Define Avro schema
 
-Define the Avro schema for the message payload: You can choose one of the following methods:
+Define the Avro schema for the message payload. You can choose one of the following method,
 
 - Embedded notation: Define the Avro schema within the message payload property.
-- Remote reference: Specify the schema using an absolute remote endpoint, such as $ref: 'https://schemas.example.com/user'.
-- Local reference: Specify the schema using a relative reference, such as $ref: './user-signedup.avsc#/User'.
+- Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
+- Local reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc#/User'`.
+
+The diagram below depicts defining AsyncAPI specification file usingg local reference method.
 
 ```mermaid
 graph LR
@@ -33,7 +35,7 @@ E -->|Uses local reference method| C
 C-->|Defines structure of message payload| D
 ```
 
-Here is an example of an AsyncAPI specification file that uses the local reference method:
+Here is an example of an AsyncAPI specification file that uses the local reference method,
 
 ```yaml
 asyncapi: '2.0.0'
@@ -64,7 +66,7 @@ Create a separate Avro schema file with a .avsc extension. The file should defin
 
 ## Attach examples
 
-Although optional, it is highly recommended to attach examples to the AsyncAPI specification. For a binary encoding like Avro, you can use JSON or YAML format. Attach the examples to the examples property within the message payload definition. Here is an example:
+Although optional, it is highly recommended to attach examples to the AsyncAPI specification. For a binary encoding like Avro, you can use JSON or YAML format. Attach the examples to the examples property within the message payload definition. Here is an example,
 
 ```yaml
 asyncapi: '2.0.0'
@@ -82,7 +84,7 @@ You can use a Schema Registry to separate the Avro schema from the message paylo
 
 ## Reuse schema
 
-To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the $ref keyword. Using $ref helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
+To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
 
 ```yaml
 asyncapi: '2.0.0'
