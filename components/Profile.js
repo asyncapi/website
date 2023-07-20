@@ -3,9 +3,10 @@ export default function Profile({profiles = [], className}) {
     return null;
   }
     return (
-      <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-5 border border-slate-100 mt-4 rounded drop-shadow-md">
+      <div className="p-4 grid grid-cols-2 sm:grid-cols-4 gap-5 border border-slate-100 mt-4 rounded drop-shadow-md" data-testid="Profiles-main">
         {profiles.map((profile) => (
-          <a
+          <a  
+            data-testid="Profiles-link"
             href={profile.link}
             key={profile.name}
             target="_blank"
