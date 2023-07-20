@@ -44,7 +44,7 @@ export default function DemoAnimation({ className = '' }) {
     const common = (
       <>
         <div>
-          <span className="text-teal-400">asyncapi:</span> 2.6.0
+          <span className="text-teal-400">asyncapi:</span> 3.0.0
         </div>
         <div>
           <span className="text-teal-400">info:</span>
@@ -85,10 +85,34 @@ export default function DemoAnimation({ className = '' }) {
           <span className="text-teal-400">channels:</span>
         </div>
         <div>
-          <span className="text-yellow-300">&nbsp;&nbsp;user/signedup:</span>
+          <span className="text-yellow-300">&nbsp;&nbsp;userSignedup:</span>
         </div>
         <div>
-          <span className="text-purple-400">&nbsp;&nbsp;&nbsp;&nbsp;subscribe:</span>
+          <span className="text-purple-400">&nbsp;&nbsp;&nbsp;&nbsp;address:</span><span className="text-teal-200">'user/signedup'</span>
+        </div>
+        <div>
+          <span className="text-teal-400">&nbsp;&nbsp;&nbsp;&nbsp;messages:</span>
+        </div>
+        <div>
+          <span className="text-yellow-300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSignedupMessage:</span>
+        </div>
+        <div>
+          <span className="text-teal-200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span><span className="text-teal-200">'#/components/messages/UserSignedUp'</span>
+        </div>
+        <div>
+          <span className="text-teal-400">operations:</span>
+        </div>
+        <div>
+          <span className="text-yellow-300">&nbsp;&nbsp;processUserSignups:</span>
+        </div>
+        <div>
+          <span className="text-purple-400">&nbsp;&nbsp;&nbsp;&nbsp;action:</span><span className="text-teal-200">'receive'</span>
+        </div>
+        <div>
+          <span className="text-teal-400">&nbsp;&nbsp;&nbsp;&nbsp;channel:</span>
+        </div>
+        <div>
+          <span className="text-teal-200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span><span className="text-teal-200"> '#/channels/userSignedup'</span>
         </div>
         <Typing.Delay ms={500} />
       </>,
@@ -99,12 +123,6 @@ export default function DemoAnimation({ className = '' }) {
   function renderUntilMessagePayload(callback) {
     return renderTyping(
       <>
-        <div>
-          <span className="text-teal-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message:</span>
-        </div>
-        <div>
-          <span className="text-teal-200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ref:</span><span className="text-teal-200"> '#/components/messages/UserSignedUp'</span>
-        </div>
         <div>
           <span className="text-teal-400">components:</span>
         </div>
