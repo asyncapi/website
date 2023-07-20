@@ -1,4 +1,4 @@
-import MockApp from "../../../../utils/mockApp";
+import MockApp from "../../../../utils/MockApp"
 import Index from '../../../../../pages/community/ambassadors/index'
 import ambassadorList from '../../../../../config/ambassador_lists.json'
 import ambassadors from '../../../../../config/AMBASSADORS_MEMBERS.json'
@@ -50,14 +50,11 @@ describe('Test for Ambassadors', () => {
 
             cy.get('[data-testid="Ambassadors-members-img"]')
                 .find(`img[alt="${ambassador.name}"]`)
-
-                .and('have.attr', 'src', ambassador.img);
+                .should('have.attr', 'src', ambassador.img);
 
             cy.get('[data-testid="Ambassadors-members"]')
                 .contains('div', ambassador.title);
-
         });
-
     });
 
     it('displays the Tokens of our appreciation section with correct data', () => {

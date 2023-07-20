@@ -1,6 +1,6 @@
-import MockApp from "../../../utils/mockApp";
+import MockApp from "../../../utils/MockApp";
 import { mount } from "@cypress/react";
-import NewsroomSection from '../../../../components/newsroom/NewsroomSection'
+import NewsroomSection from '../../../../pages/community/newsroom'
 
 describe('Test for Newsroom Section Pages', () => {
  it('renders correctly', () => {
@@ -9,6 +9,5 @@ describe('Test for Newsroom Section Pages', () => {
              <NewsroomSection/>
             </MockApp>
            );
-        
       });
 });

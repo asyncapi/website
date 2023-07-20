@@ -1,5 +1,5 @@
-import MockApp from "../../../utils/mockApp";
-import Home from "../../../../pages/community/dashboard";
+import MockApp from "../../../utils/MockApp";
+import DashboardHome from "../../../../pages/community/dashboard";
 import Header from "../../../../components/dashboard/Header";
 import { mount } from '@cypress/react'
 describe('Integration Test for Dashboard ', () => {
@@ -7,7 +7,7 @@ describe('Integration Test for Dashboard ', () => {
     it('should filter GoodFirstIssues and check dashboard render ', () => {
         mount(
             <MockApp>
-                <Home />
+                <DashboardHome />
             </MockApp>
         );
         // Click on the first filter option
