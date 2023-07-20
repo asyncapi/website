@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Heading from '../../components/typography/Heading';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';

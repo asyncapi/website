@@ -1,4 +1,4 @@
-import MockApp from "../../../utils/mockApp";
+import MockApp from "../../../utils/MockApp";
 import CommunityIndexPage from "../../../../pages/community";
 
 describe('CommunityIndexPage', () => {
