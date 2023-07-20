@@ -3,6 +3,7 @@ import Eventindex from "../../../../../pages/community/events";
 import meetings from "../../../../../config/meetings.json";
 import MockApp from "../../../../utils/mockApp";
 
+
 describe('CommunityIndexPage', () => {
   beforeEach(() => {
     cy.mount(<MockApp><Eventindex /></MockApp>)
@@ -22,4 +23,22 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="Recordings-Link"]').should('have.attr','href','https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl')
     cy.get('[data-testid="Recordings-text"]').should('exist');
   });
+
+  it('Community Meeting Card', () => {
+    cy.get('[data-testid="EventTypesCard"]').should('exist')
+      cy.get('[data-testid="Meeting-heading"]').should('exist')
+      cy.get('[ data-testid="Meeting-paragraph"]').should('exist')
+      cy.get('[ data-testid="Meeting-host"]').should('exist')
+      cy.get('[ data-testid="Meeting-link"]').should('exist')
+  });
+
+  
+  it('Other Meeting Cards', () => {
+    cy.get('[data-testid="EventTypesCard-others"]').should('exist')
+      cy.get('[data-testid="Meeting-heading"]').should('exist')
+      cy.get('[ data-testid="Meeting-paragraph"]').should('exist')
+      cy.get('[ data-testid="Meeting-host"]').should('exist')
+      cy.get('[ data-testid="Meeting-link"]').should('exist')
+  });
+
 });

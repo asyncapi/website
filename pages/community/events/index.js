@@ -120,7 +120,7 @@ function Eventindex() {
         </div>
       </div>
       <div className="mt-24">
-        <div className="lg:flex lg:justify-between">
+        <div className="lg:flex lg:justify-between" data-testid="EventTypesCard">
           <div className="lg:w-[30%]">
             <Heading level="h2" typeStyle="heading-md">
               Event Types
@@ -130,7 +130,7 @@ function Eventindex() {
             </Paragraph>
           </div>
           <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
-            <div className="">
+            <div className="" data-testid="CommunityMeeting-Card">
               <Meeting
                 name="Community Meeting"
                 purpose="This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones."
@@ -151,7 +151,7 @@ function Eventindex() {
             </div>
           </div>
         </div>
-        <div className="flex lg:flex-row flex-col lg:justify-end lg:items-center">
+        <div className="flex lg:flex-row flex-col lg:justify-end lg:items-center" data-testid="EventTypesCard-others">
           <div className="">
             <Meeting
               name="Thinking Out Loud"
