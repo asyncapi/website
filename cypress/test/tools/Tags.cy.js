@@ -11,6 +11,6 @@ describe('SelectTags', () => {
     mount(
       <SelectTags name={ name } bgColor={ bgColor } borderColor={ borderColor } />
     );
-    cy.get('[data-testid="Tags-div"]').should('have.class', bgColor).should('have.class', borderColor).contains(name);
+    cy.get('[data-testid="Tags-main"]').should('have.class', bgColor).should('have.class', borderColor).contains(name);
   });
 });

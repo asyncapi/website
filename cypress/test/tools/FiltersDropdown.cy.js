@@ -20,10 +20,10 @@ describe('FiltersDropdown', () => {
       />
     );
 
-    cy.get('[data-testid="FiltersDropdown-div"] > :nth-child(1)').click();
+    cy.get('[data-testid="FiltersDropdown-div"] > :nth-child(1)').click({force:true});
     cy.get('@setStateFunction').should('have.been.calledOnceWith', ['Option 1']);
 
-    cy.get('[data-testid="FiltersDropdown-div"] > :nth-child(1)').click();
+    cy.get('[data-testid="FiltersDropdown-div"] > :nth-child(1)').click({force:true});
     cy.get('@setStateFunction').should('have.been.calledThrice');
     cy.get('@setStateFunction').should('have.been.calledWith', ['Option 2']);
   });

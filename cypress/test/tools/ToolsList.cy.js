@@ -4,7 +4,7 @@ import toolsData from '../../../config/tools.json';
 describe('ToolsList Component', () => {
   it('renders correctly with toolsData', () => {
     mount(<ToolsList toolsData={ toolsData } />);
-    cy.get('[data-testid="Tools-list"]').should('exist');
+    cy.get('[data-testid="ToolsList-main"]').should('exist');
     Object.keys(toolsData).forEach((categoryName, index) => {
       cy.contains(categoryName);
       cy.contains(toolsData[categoryName].description);

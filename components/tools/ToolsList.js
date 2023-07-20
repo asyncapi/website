@@ -3,7 +3,7 @@ import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 export default function toolsList({ toolsData }) {
   return (
-    <div className="" data-testid="Tools-list" >
+    <div className="" data-testid="ToolsList-main" >
       {Object.keys(toolsData).map((categoryName, index) => {
         if(toolsData[categoryName].toolsList.length > 0) return (
         <div className='my-8' key={index} id={categoryName}>
