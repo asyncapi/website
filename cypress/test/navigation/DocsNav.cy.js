@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'cypress/react';
 import DocsNav from '../../../components/navigation/DocsNav';
+import MockRouter from '../../utils/router';
 
 describe('DocsNav', () => {
   it('renders the navigation menu correctly', () => {
@@ -26,11 +27,12 @@ describe('DocsNav', () => {
     const activeSlug = '/docs/concepts'; // Replace with the appropriate activeSlug value
 
     mount(
-      <DocsNav
-        item={item}
-        active={activeSlug}
-        onClick={() => {}}
-      />
+      <MockRouter>      <DocsNav
+      item={item}
+      active={activeSlug}
+      onClick={() => {}}
+    /></MockRouter>
+
     );
   });
 });

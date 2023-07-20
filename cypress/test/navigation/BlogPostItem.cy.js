@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount } from 'cypress/react'
 import BlogPostItem from '../../../components/navigation/BlogPostItem'
+import MockRouter from '../../utils/router'
 describe('BlogPostItem', () => {
   const post = {
     "title": "New Tools Dashboard for AsyncAPI",
@@ -88,7 +89,9 @@ describe('BlogPostItem', () => {
   }
 
   it('renders the blog post item correctly', () => {
-    mount(<BlogPostItem post={ post } />)
+    mount(
+    <MockRouter> <BlogPostItem post={ post } /></MockRouter>
+   )
 
     // Verify the rendered elements and their contents
 
