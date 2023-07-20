@@ -67,7 +67,7 @@ function Eventindex() {
       </div>
       <div className="mt-24 w-full h-auto sm:h-[400px]">
         <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
-          <img
+          <img data-testid="RecordingsCard-img"
             src="/img/logos/confLogo.webp"
             alt="conf-logo"
             className="w-[100px] sm:w-[150px]"
@@ -81,13 +81,13 @@ function Eventindex() {
               Watch the AsyncAPI 2022 conference recordings from anywhere around
               the world for free
             </Heading>
-            <a
+            <a data-testid="Recordings-Link"
               href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               target="_blank"
               rel="noreferrer"
             >
               <div className="mt-5 flex gap-3 items-center">
-                <span>Watch now</span>
+                <span data-testid="Recordings-text">Watch now</span>
                 <ArrowRightIcon className="w-[20px]" />
               </div>
             </a>
