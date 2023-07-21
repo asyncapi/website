@@ -21,6 +21,28 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -67,6 +89,28 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "SIO-AsyncAPI",
+        "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
+        "links": {
+          "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+          "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+        },
+        "filters": {
+          "language": "Python",
+          "technology": [
+            "Socket.IO",
+            "Flask"
+          ],
+          "categories": [
+            "code-first",
+            "api"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -94,6 +138,21 @@
             "dsl",
             "mocking-and-testing",
             "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -343,6 +402,25 @@
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
       {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -366,25 +444,6 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
         }
       }
     ]
