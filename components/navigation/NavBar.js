@@ -48,13 +48,7 @@ export default function NavBar({
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpen(null);
-  }, [asPath])
-
-  useEffect(() => {
-    mobileMenuOpen ? 
-    document.body.style.overflow = 'hidden' :
-    document.body.style.overflow = 'auto';
-  }, [mobileMenuOpen])
+  }, [asPath]);
 
   return (
     <div className={`bg-white ${className} z-50`}>
@@ -143,9 +137,4 @@ export default function NavBar({
       {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
     </div>
   )
-}
-
-NavBar.propTypes = {
-  className: '',
-  hideLogo: false,
 }

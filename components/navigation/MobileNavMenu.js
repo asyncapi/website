@@ -104,7 +104,3 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
     </div>
   );
 }
-
-MobileNavMenu.propTypes = {
-  onClickClose: () => {},
-};
