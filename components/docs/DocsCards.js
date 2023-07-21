@@ -2,56 +2,16 @@ import Link from 'next/link';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-import IconGettingStarted from '../icons/GettingStarted'
-import IconTutorials from '../icons/Tutorials'
-import IconUseCases from '../icons/UseCases'
-import IconGuide from '../icons/Guide'
-import IconSpec from '../icons/Spec'
-
-const cards = [
-  {
-    title: 'Concepts',
-    description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.',
-    link: '/docs/concepts',
-    className: 'bg-secondary-200',
-    Icon: IconGettingStarted,
-  },
-  {
-    title: 'Tutorials',
-    description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.',
-    link: '/docs/tutorials',
-    className: 'bg-pink-100',
-    Icon: IconTutorials,
-  },
-  {
-    title: 'Tools',
-    description: 'Our Tools section documents the AsyncAPI tools ecosystem.',
-    link: '/docs/tools',
-    className: 'bg-green-200',
-    Icon: IconUseCases,
-  },
-  {
-    title: 'Guides',
-    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
-    link: '/docs/guides',
-    className: 'bg-primary-200',
-    Icon: IconGuide,
-  },
-  {
-    title: 'Reference',
-    description: 'Our Reference section documents the AsyncAPI specification.',
-    link: '/docs/reference',
-    className: 'bg-yellow-200',
-    Icon: IconSpec,
-  }
-];
+import { buckets } from '../data/buckets';
 
 export function DocsCards() {
   return (
-    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
-      {cards.map(card => (
+    <div className='grid gap-4 grid-cols-1 sm:grid-cols-2' data-testid="Docs-main-div" >
+      {buckets.map(card => (
         <Card key={card.title} {...card} />
+
       ))}
+
     </div>
   );
 }
@@ -59,17 +19,17 @@ export function DocsCards() {
 function Card({ title, description, link, className, Icon }) {
   return (
     <Link href={link}>
-      <a href={link} className='cursor-pointer'>
+      <a href={link} className='cursor-pointer' data-testid="Docs-link">
         <div className="h-full border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg p-6">
-          <div>
+          <div data-testid="Docs-div-contents">
             <Heading 
               level="h3"
               typeStyle="heading-sm-semibold"
               className='pb-4 border-b border-gray-300'
             >
               <div className='flex flex-row items-center'>
-                <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`}>
-                  <Icon className="h-6 w-6"/>
+                <div className={`flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg ${className} text-gray-900 sm:h-12 sm:w-12`} data-testid="Docs-icon">
+                  <Icon className="h-6 w-6" />
                 </div>
                 <span className='ml-4'>{title}</span>
               </div>
