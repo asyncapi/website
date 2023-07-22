@@ -2,7 +2,7 @@ const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const { google } = require('googleapis');
 
-async function buildMeetings() {
+export async function buildMeetings() {
   const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/calendar'],
     credentials: JSON.parse(process.env.CALENDAR_SERVICE_ACCOUNT),
