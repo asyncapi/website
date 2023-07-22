@@ -3,7 +3,11 @@ title: Add servers
 weight: 199
 ---
 
-Defining and connecting to servers in AsyncAPI allows you to describe the communication infrastructure of your event-driven system enabling smooth message exchange among various components.
+A server represents a message broker handling communication between producers and consumers. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+
+A unique key identifies the server and contains information about the server's connection details, such as the URL, protocol, and authentication.
+
+Defining and connecting to servers allows you to describe the communication infrastructure of your system enabling smooth message exchange among various components.
 
 ```mermaid
 graph LR
@@ -21,7 +25,7 @@ D -->|has| E
 
 ## Define Servers
 
-Define the servers in your AsyncAPI specification file. The servers section is used to describe the servers that your API connects to. Here's an example of how to define a server in AsyncAPI:
+Define the servers in your AsyncAPI specification file. Server definitions specify the server to which a channel or operation is connected. Here's an example of how to define a server in AsyncAPI:
 
 ```yaml
 servers:
@@ -30,11 +34,11 @@ servers:
   description: Test MQTT server
 ```
 
-In this example, you define a server with the URL, using the MQTT protocol, and provide a description for the server.
+In this example, you define a server with the URL using the MQTT protocol and describe the server.
 
 ## Define Server reference
 
-Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component by using the x-server extension field.
+Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component using the x-server extension field.
 
 Here's an example of how to add a server reference to a channel:
 
@@ -47,4 +51,4 @@ channels:
         $ref: '#/components/messages/myMessage'
 ```
 
-In this example, you specify the server reference mqttServer for the myChannel channel.
+In this example, specify the server reference mqttServer for the myChannel channel.
