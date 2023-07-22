@@ -14,7 +14,18 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 53.41447350736213
+      "score": 53.988822684860644
+    },
+    {
+      "id": "PR_kwDOCHlHJM5SLlyl",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: create generator template tutorial",
+      "author": "Florence-Njeri",
+      "resourcePath": "/asyncapi/generator/pull/978",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 33.02507770616476
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -37,28 +48,6 @@
       "score": 32.45072852866624
     },
     {
-      "id": "PR_kwDOCHlHJM5SLlyl",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: create generator template tutorial",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/978",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 27.28158593117958
-    },
-    {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 23.835490866188476
-    },
-    {
       "id": "I_kwDOBGu-185CELGB",
       "isPR": false,
       "isAssigned": false,
@@ -67,6 +56,22 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
+      "score": 22.68679251119144
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
       "score": 22.68679251119144
     },
     {
@@ -81,22 +86,6 @@
         {
           "name": "🎨 design",
           "color": "0D67D3"
-        }
-      ],
-      "score": 22.399617922442182
-    },
-    {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
         }
       ],
       "score": 22.399617922442182
@@ -121,12 +110,36 @@
       "id": "PR_kwDOBW5R_c5TUuUu",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: adding 3 New Articles as Blog Posts",
+      "title": "chore(blog): adding 3 New Articles as Blog Posts",
       "author": "ivangsa",
       "resourcePath": "/asyncapi/website/pull/1805",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 20.67657038994663
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VAjCE",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDOBW5R_c5KIyGW",
@@ -148,21 +161,36 @@
       "resourcePath": "/asyncapi/community/pull/719",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.645904026212197
+      "score": 16.36895155870775
     },
     {
-      "id": "PR_kwDOBGu-185KHmXZ",
+      "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: new traits merge mechanism",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/pull/907",
-      "repo": "asyncapi/spec",
+      "title": "fix: help command",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/593",
+      "repo": "asyncapi/cli",
       "labels": [],
       "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5rh81V",
+      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1945",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
     {
       "id": "I_kwDOCHlHJM5rH7-B",
       "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
@@ -220,36 +248,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt85q_THl",
-      "title": "[📑 Docs]: A Typo in the Contributing Guideline",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/795",
-      "repo": "asyncapi/community",
-      "author": "AnimeshKumar923",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5q1B5J",
-      "title": "Overlay bug in the `/roadmap`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1906",
-      "repo": "asyncapi/website",
-      "author": "codingmickey",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -669,21 +667,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5kbYkc",
-      "title": "[📑 Docs]: improve adeo case study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1615",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5jSPTM",
       "title": "filter section is overflowing for small screen in dashboard section",
       "isAssigned": false,
@@ -774,21 +757,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDKCJ",
-      "title": "Generate example function for TypeScript models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/462",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -891,6 +859,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -967,6 +939,21 @@
         {
           "name": "❔ Question",
           "color": "54B65C"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5AXInF",
+      "title": "Improve help message with list of available examples",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/162",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
