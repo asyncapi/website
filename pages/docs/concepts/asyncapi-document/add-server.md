@@ -7,7 +7,7 @@ A server represents a message broker handling communication between producers an
 
 A unique key identifies the server and contains information about the server's connection details, such as the URL, protocol, and authentication.
 
-Defining and connecting to servers allows you to describe the communication infrastructure of your system enabling smooth message exchange among various components.
+The diagram below depicts how to define and add servers.
 
 ```mermaid
 graph LR
@@ -22,6 +22,8 @@ A -->|references| D
 B -->|describes| C
 D -->|has| E
 ```
+
+For more information, refer [introduction to servers](../server.md)
 
 ## Define Servers
 
