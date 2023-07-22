@@ -115,7 +115,7 @@ In the example below, you reference the component from the message-schema.yaml f
 
 You can use the ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON.
 
-The image below defines the process of referencing external URL.
+The image below defines the process of referencing an external URL.
 
 ```mermaid
 graph LR
