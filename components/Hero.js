@@ -20,10 +20,10 @@ export default function Hero({ className = ''}) {
       <header className={`px-2 mt-12 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">
-            {t('homepageH1_1')} {` `}
+            {t('landingPageHeroHeading_1')} {` `}
             <span className="block md:-mt-4">
               {" "}
-              {t('homepageH1_2')}
+              {t('landingPageHeroHeading_2')}
             </span>
           </Heading>
           <Heading level="h2" typeStyle="body-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">
