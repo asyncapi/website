@@ -8,11 +8,15 @@ import Heading from './typography/Heading'
 import Paragraph from './typography/Paragraph'
 import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import IconLoupe from './icons/Loupe';
-import { useTranslation } from 'next-i18next'
+import {
+  getAllLanguageSlugs,
+  getLanguage,
+  useTranslation,
+} from "next-i18next-static-site";
 
 export default function Hero({ className = ''}) {
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   return (
     <>
@@ -74,4 +78,3 @@ export default function Hero({ className = ''}) {
     </>
   );
 }
-

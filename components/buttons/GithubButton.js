@@ -2,7 +2,7 @@ import Button from './Button'
 import IconGithub from '../icons/Github'
 
 export default function GithubButton({
-  text = 'View on Github',
+  text = 'Github',
   href = 'https://github.com/asyncapi',
   target = '_blank',
   iconPosition = 'left',

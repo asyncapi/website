@@ -1,33 +1,35 @@
-import Container from '../components/layout/Container'
-import NavBar from '../components/navigation/NavBar'
-import Hero from '../components/Hero'
-import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import Sponsors from '../components/sponsors/Sponsors'
-import Head from '../components/Head'
-import Slack from '../components/slack'
-import Button from '../components/buttons/Button'
-import Calendar from '../components/Calendar'
-import AdidasLogo from '../components/logos/Adidas'
-import AxwayLogo from '../components/logos/Axway'
-import SlackLogo from '../components/logos/Slack'
-import SalesforceLogo from '../components/logos/Salesforce'
-import SapLogo from '../components/logos/SAP'
-import Testimonial from '../components/Testimonial'
-import Heading from '../components/typography/Heading'
-import Paragraph from '../components/typography/Paragraph'
-import TextLink from '../components/typography/TextLink'
-import GoldSponsors from '../components/sponsors/GoldSponsors'
-import SilverSponsors from '../components/sponsors/SilverSponsors'
-import SupportUs from '../components/SupportUs/SupportUs'
-import StickyNavbar from '../components/navigation/StickyNavbar'
-import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
-import ICSFileButton from '../components/buttons/ICSFileButton';
-import SubscribeButton from '../components/buttons/SubscribeButton';
-import NewsroomSection from '../components/newsroom/NewsroomSection'
-import { languageDetection } from "next-i18next-static-site";
+import Container from '../../components/layout/Container'
+import NavBar from '../../components/navigation/NavBar'
+import Hero from '../../components/Hero'
+import NewsletterSubscribe from '../../components/NewsletterSubscribe'
+import Sponsors from '../../components/sponsors/Sponsors'
+import Head from '../../components/Head'
+import Slack from '../../components/slack'
+import Button from '../../components/buttons/Button'
+import Calendar from '../../components/Calendar'
+import AdidasLogo from '../../components/logos/Adidas'
+import AxwayLogo from '../../components/logos/Axway'
+import SlackLogo from '../../components/logos/Slack'
+import SalesforceLogo from '../../components/logos/Salesforce'
+import SapLogo from '../../components/logos/SAP'
+import Testimonial from '../../components/Testimonial'
+import Heading from '../../components/typography/Heading'
+import Paragraph from '../../components/typography/Paragraph'
+import TextLink from '../../components/typography/TextLink'
+import GoldSponsors from '../../components/sponsors/GoldSponsors'
+import SilverSponsors from '../../components/sponsors/SilverSponsors'
+import SupportUs from '../../components/SupportUs/SupportUs'
+import StickyNavbar from '../../components/navigation/StickyNavbar'
+import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
+import ICSFileButton from '../../components/buttons/ICSFileButton';
+import SubscribeButton from '../../components/buttons/SubscribeButton';
+import NewsroomSection from '../../components/newsroom/NewsroomSection'
+import {
+  getAllLanguageSlugs,
+  getLanguage,
+} from "next-i18next-static-site";
 
 function HomePage() {
-  languageDetection();
   return (
     <>
       <Head />
@@ -260,3 +262,20 @@ function HomePage() {
 }
 
 export default HomePage
+
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      language,
+    },
+  };
+}
