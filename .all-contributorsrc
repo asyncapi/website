@@ -482,6 +482,43 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "Shriansh2002",
+      "name": "Shriansh Agarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41548480?v=4",
+      "profile": "http://shrianshagarwal.in",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "reachaadrika",
+      "name": "Aadrika Bhargava",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64789514?v=4",
+      "profile": "https://github.com/reachaadrika",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vishvamsinh28",
+      "name": "Vishvamsinh Vaghela",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90895835?v=4",
+      "profile": "https://github.com/vishvamsinh28",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AnimeshKumar923",
+      "name": "Animesh Kumar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99868037?v=4",
+      "profile": "https://github.com/AnimeshKumar923",
+      "contributions": [
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,

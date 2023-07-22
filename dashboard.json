@@ -10,15 +10,11 @@
       "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
           "name": "💭 Strawman (RFC 0)",
           "color": "C2E0C6"
         }
       ],
-      "score": 52.265775152365094
+      "score": 53.988822684860644
     },
     {
       "id": "PR_kwDOCHlHJM5SLlyl",
@@ -29,18 +25,27 @@
       "resourcePath": "/asyncapi/generator/pull/978",
       "repo": "asyncapi/generator",
       "labels": [],
-      "score": 24.122665454937735
+      "score": 33.02507770616476
     },
     {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 23.26114168868996
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 32.45072852866624
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -51,6 +56,22 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
+      "score": 22.68679251119144
+    },
+    {
+      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
+      "author": "magicmatatjahu",
+      "resourcePath": "/asyncapi/spec/issues/622",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
       "score": 22.68679251119144
     },
     {
@@ -70,12 +91,12 @@
       "score": 22.399617922442182
     },
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "id": "I_kwDOBGu-184_rP6l",
       "isPR": false,
       "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
       "repo": "asyncapi/spec",
       "labels": [
         {
@@ -83,18 +104,42 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 22.399617922442182
+      "score": 21.538094156194408
     },
     {
       "id": "PR_kwDOBW5R_c5TUuUu",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: adding 3 New Articles as Blog Posts",
+      "title": "chore(blog): adding 3 New Articles as Blog Posts",
       "author": "ivangsa",
       "resourcePath": "/asyncapi/website/pull/1805",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.666348268701817
+      "score": 20.67657038994663
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VAjCE",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDOBW5R_c5KIyGW",
@@ -108,15 +153,15 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOBGu-185KHmXZ",
+      "id": "PR_kwDOFLhIt85RTiHb",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: new traits merge mechanism",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/pull/907",
-      "repo": "asyncapi/spec",
+      "title": "docs: add flowchart for GSoC23 project in README.md",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/719",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 16.36895155870775
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -127,32 +172,85 @@
       "resourcePath": "/asyncapi/cli/pull/593",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Jw5C6",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new style guide - Inclusive Language",
-      "author": "BhaswatiRoy",
-      "resourcePath": "/asyncapi/website/pull/1327",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOB5hCo85NWLAa",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat!: allow multi format schemas",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/370",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 13.210031082465903
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5rh81V",
+      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1945",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM5rH7-B",
+      "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1007",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM5rH6bF",
+      "title": "[📑 Docs]: Update usage doc with info about new docker image",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1006",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5rHafV",
+      "title": "Glee crashes when body is not proper json in http request",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/476",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5rHSAR",
+      "title": "Show server url",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/475",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBGu-185qGt6A",
       "title": "Ensure consistency when using either `Application` or `API` terms",
@@ -424,31 +522,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385pckK7",
-      "title": "Improve the example display name",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1417",
-      "repo": "asyncapi/modelina",
-      "author": "sambhavgupta0705",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N85pN-Dg",
-      "title": "Date button is not clickable",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/146",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
       "id": "I_kwDOFLhIt85o9dDJ",
       "title": "Add 2023 mentorship directory",
       "isAssigned": false,
@@ -594,21 +667,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5kbYkc",
-      "title": "[📑 Docs]: improve adeo case study",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1615",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5jSPTM",
       "title": "filter section is overflowing for small screen in dashboard section",
       "isAssigned": false,
@@ -699,36 +757,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5gradR",
-      "title": "add prettier configuration",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/398",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDKCJ",
-      "title": "Generate example function for TypeScript models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/462",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -831,6 +859,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -850,21 +882,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Gl6TS",
-      "title": "Validate workflow on PR level",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/150",
-      "repo": "asyncapi/.github",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -922,6 +939,21 @@
         {
           "name": "❔ Question",
           "color": "54B65C"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5AXInF",
+      "title": "Improve help message with list of available examples",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/162",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
