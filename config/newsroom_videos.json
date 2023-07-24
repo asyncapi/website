@@ -6,12 +6,6 @@
     "videoId": "a2luTxpmkfs"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/5ldSHhDI95E/hqdefault.jpg",
-    "title": "Spec 3.0 (July 19th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/761.",
-    "videoId": "5ldSHhDI95E"
-  },
-  {
     "image_url": "https://i.ytimg.com/vi/GAjlJFXjMh8/hqdefault.jpg",
     "title": "Design meeting #2",
     "description": "Meeting issue: https://github.com/asyncapi/community/issues/800 Summary: Here's a summary of what we discussed: * Fran and ...",
@@ -28,5 +22,11 @@
     "title": "Community Meeting (July 11th 2023)",
     "description": "https://github.com/asyncapi/community/issues/784.",
     "videoId": "5o5BHJqGxIg"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/Lunp8eSLONc/hqdefault.jpg",
+    "title": "Spec 3.0 DOCS Meeting (July 6th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/774.",
+    "videoId": "Lunp8eSLONc"
   }
 ]
