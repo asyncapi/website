@@ -118,17 +118,6 @@
       "score": 20.67657038994663
     },
     {
-      "id": "PR_kwDOBW5R_c5KIyGW",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: code-examples",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/website/pull/1349",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
       "id": "PR_kwDOBW5R_c5VAjCE",
       "isPR": true,
       "isAssigned": true,
@@ -150,7 +139,18 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 16.36895155870775
+      "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOBW5R_c5KIyGW",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: code-examples",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/website/pull/1349",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.65612614745701
     },
     {
       "id": "PR_kwDOFLhIt85RTiHb",
@@ -161,7 +161,7 @@
       "resourcePath": "/asyncapi/community/pull/719",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 16.08177696995849
+      "score": 16.36895155870775
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -176,21 +176,6 @@
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOBW5R_c5sCU2m",
-      "title": "Remove @monaco-editor/react and @monaco-editor from package.json",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1970",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
     {
       "id": "I_kwDOBW5R_c5rh81V",
       "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
