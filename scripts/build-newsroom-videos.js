@@ -1,23 +1,23 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const fetch = require('node-fetch')
-export async  function  buildNewsroomVideos () {
-    
-    try{
+export async function buildNewsroomVideos() {
+
+    try {
         let data;
         const response = await fetch('https://youtube.googleapis.com/youtube/v3/search?' + new URLSearchParams({
-          key: process.env.YOUTUBE_TOKEN,
-          part: 'snippet',
-          channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
-          eventType: 'completed',
-          type:'video',
-          order: 'Date',
-          maxResults: 5,
+            key: process.env.YOUTUBE_TOKEN,
+            part: 'snippet',
+            channelId: 'UCIz9zGwDLbrYQcDKVXdOstQ',
+            eventType: 'completed',
+            type: 'video',
+            order: 'Date',
+            maxResults: 5,
         }))
         data = await response.json()
-        const videoDataItems = data.items.map((video) =>{
+        const videoDataItems = data.items.map((video) => {
             return {
-                image_url:video.snippet.thumbnails.high.url,
+                image_url: video.snippet.thumbnails.high.url,
                 title: video.snippet.title,
                 description: video.snippet.description,
                 videoId: video.id.videoId,
@@ -30,7 +30,7 @@ export async  function  buildNewsroomVideos () {
             resolve(__dirname, '../config', 'newsroom_videos.json'),
             videoData
         );
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }

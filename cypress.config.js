@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+require('dotenv').config()
 
 module.exports = defineConfig({
   component: {
@@ -7,4 +8,8 @@ module.exports = defineConfig({
       bundler: "webpack",
     },
   },
+  "env": {
+    YOUTUBE_TOKEN: "FAKE_YOUTUBE_API_KEY"
+  }
 });
+
