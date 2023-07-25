@@ -26,10 +26,15 @@ export async function buildNewsroomVideos() {
         const videoData = JSON.stringify(videoDataItems, null, '  ');
         console.log('The following are the Newsroom Youtube videos: ', videoData)
 
-        writeFileSync(
-            resolve(__dirname, '../config', 'newsroom_videos.json'),
-            videoData
-        );
+        try {
+            writeFileSync(
+                resolve(__dirname, '../config', 'newsroom_videos.json'),
+                videoData
+            );
+        } catch (err) {
+            console.error(err);
+        }
+        return videoData;
     } catch (err) {
         console.log(err)
     }

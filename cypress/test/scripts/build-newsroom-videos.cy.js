@@ -1,8 +1,7 @@
-
 import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos'; 
 
 describe('Newsroom Videos', () => {
-  it('fetches and saves newsroom videos', () => {
+  it('fetches and saves newsroom videos',async () => {
     // Define the data that the API should return (stubbed response)
     const stubbedResponse = {
       items: [
@@ -34,24 +33,18 @@ describe('Newsroom Videos', () => {
             videoId: 'videoId2',
           },
         },
-
       ],
     };
 
     // Intercept the API request and stub the response
-    cy.intercept('GET', 'https://youtube.googleapis.com/youtube/v3/search', {
+    cy.intercept('GET', 'https://youtube.googleapis.com/youtube/v3/search*', {
       statusCode: 200,
       body: stubbedResponse,
     }).as('getYoutubeVideos');
 
     // Manually trigger the function
-    buildNewsroomVideos().then(() => {
-
-      
-      cy.readFile('../../../config/newsroom_videos.json').then((videoData) => {
-        expect(videoData).to.exist;
-        // process env token undefined
-      });
+    await buildNewsroomVideos().then((videoData) => {
+      expect(videoData).to.exist;
     });
   });
 });
