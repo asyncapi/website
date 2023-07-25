@@ -13,7 +13,7 @@ export default function NewsletterSubscribe ({
   const paragraphTextColor = dark ? 'text-gray-300' : ''
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="NewsletterSubscribe-main">
       <Heading 
         level="h3"
         textColor={headTextColor}
@@ -28,8 +28,8 @@ export default function NewsletterSubscribe ({
       <form name="form 1" method="POST" className="md:flex" data-netlify="true">
         <input type="hidden" name="form-name" value="form 1" />
         <input type="hidden" name="type" value={type} />
-        <input type="text" name="name" placeholder="Your name" className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required />
-        <input type="email" name="email" placeholder="Your email" className="form-input block w-full mt-2 sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required />
+        <input type="text" name="name" placeholder="Your name" className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-text-input"/>
+        <input type="email" name="email" placeholder="Your email" className="form-input block w-full mt-2 sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-email-input"/>
         <Button type="submit" text="Subscribe" className="w-full mt-2 md:mr-2 md:mt-0 md:flex-1" />
       </form>
     </div>

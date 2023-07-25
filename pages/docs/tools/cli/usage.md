@@ -29,7 +29,7 @@ $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
 $ asyncapi (--version)
-@asyncapi/cli/0.48.7 linux-x64 node-v18.16.0
+@asyncapi/cli/0.51.1 linux-x64 node-v18.16.1
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
@@ -91,7 +91,7 @@ EXAMPLES
   $ asyncapi bundle ./asyncapi.yaml ./features.yaml --base ./asyncapi.yaml --reference-into-components
 ```
 
-_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/bundle.ts)_
+_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/bundle.ts)_
 
 ## `asyncapi config`
 
@@ -105,7 +105,7 @@ DESCRIPTION
   CLI config settings
 ```
 
-_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/config/index.ts)_
+_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/config/index.ts)_
 
 ## `asyncapi config context`
 
@@ -234,7 +234,7 @@ DESCRIPTION
   Convert asyncapi documents older to newer versions
 ```
 
-_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/convert.ts)_
+_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/convert.ts)_
 
 ## `asyncapi diff OLD NEW`
 
@@ -242,35 +242,54 @@ Find diff between two asyncapi files
 
 ```
 USAGE
-  $ asyncapi diff OLD NEW [-h] [-f json|yaml|yml] [-t breaking|non-breaking|unclassified|all] [-o <value>]
-    [--no-error] [-w] [--log-diagnostics] [--diagnostics-format json|stylish|junit|html|text|teamcity|pretty]
-    [--fail-severity error|warn|info|hint]
+  $ asyncapi diff OLD NEW [-h] [-f json|yaml|yml|md] [-t breaking|non-breaking|unclassified|all]
+    [--markdownSubtype json|yaml|yml] [-o <value>] [--no-error] [-w] [--log-diagnostics] [--diagnostics-format
+    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
 
 ARGUMENTS
   OLD  old spec path, URL or context-name
   NEW  new spec path, URL or context-name
 
 FLAGS
-  -f, --format=<option>                                                [default: yaml] format of the output
-                                                                       <options: json|yaml|yml>
-  -h, --help                                                           Show CLI help.
-  -o, --overrides=<value>                                              path to JSON file containing the override
-                                                                       properties
-  -t, --type=<option>                                                  [default: all] type of the output
-                                                                       <options: breaking|non-breaking|unclassified|all>
-  -w, --watch                                                          Enable watch mode
-  --diagnostics-format=(json|stylish|junit|html|text|teamcity|pretty)  [default: stylish] format to use for validation
-                                                                       diagnostics
-  --fail-severity=(error|warn|info|hint)                               [default: error] diagnostics of this level or
-                                                                       above will trigger a failure exit code
-  --[no-]log-diagnostics                                               log validation diagnostics or not
-  --no-error                                                           don't show error on breaking changes
+  -f, --format=<option>
+      [default: yaml] format of the output
+      <options: json|yaml|yml|md>
+
+  -h, --help
+      Show CLI help.
+
+  -o, --overrides=<value>
+      path to JSON file containing the override properties
+
+  -t, --type=<option>
+      [default: all] type of the output
+      <options: breaking|non-breaking|unclassified|all>
+
+  -w, --watch
+      Enable watch mode
+
+  --diagnostics-format=(json|stylish|junit|html|text|teamcity|pretty)
+      [default: stylish] format to use for validation diagnostics
+
+  --fail-severity=(error|warn|info|hint)
+      [default: error] diagnostics of this level or above will trigger a failure exit code
+
+  --[no-]log-diagnostics
+      log validation diagnostics or not
+
+  --markdownSubtype=<option>
+      the format of changes made to AsyncAPI document. It works only when diff is generated using md type. For example,
+      when you specify subtype as json, then diff information in markdown is dumped as json structure.
+      <options: json|yaml|yml>
+
+  --no-error
+      don't show error on breaking changes
 
 DESCRIPTION
   Find diff between two asyncapi files
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/diff.ts)_
 
 ## `asyncapi generate`
 
@@ -284,7 +303,7 @@ DESCRIPTION
   Generate typed models or other things like clients, applications or docs using AsyncAPI Generator templates.
 ```
 
-_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/generate/index.ts)_
+_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/generate/index.ts)_
 
 ## `asyncapi generate fromTemplate ASYNCAPI TEMPLATE`
 
@@ -329,9 +348,10 @@ Generates typed models
 USAGE
   $ asyncapi generate models LANGUAGE FILE [-h] [-o <value>] [--tsModelType class|interface] [--tsEnumType
     enum|union] [--tsModuleSystem ESM|CJS] [--tsIncludeComments] [--tsExportType default|named] [--tsJsonBinPack]
-    [--packageName <value>] [--namespace <value>] [--csharpAutoImplement] [--csharpNewtonsoft] [--csharpArrayType
-    Array|List] [--csharpHashcode] [--csharpEqual] [--csharpSystemJson] [--log-diagnostics] [--diagnostics-format
-    json|stylish|junit|html|text|teamcity|pretty] [--fail-severity error|warn|info|hint]
+    [--tsMarshalling] [--tsExampleInstance] [--packageName <value>] [--namespace <value>] [--csharpAutoImplement]
+    [--csharpNewtonsoft] [--csharpArrayType Array|List] [--csharpHashcode] [--csharpEqual] [--csharpSystemJson]
+    [--log-diagnostics] [--diagnostics-format json|stylish|junit|html|text|teamcity|pretty] [--fail-severity
+    error|warn|info|hint]
 
 ARGUMENTS
   LANGUAGE  (typescript|csharp|golang|java|javascript|dart|python|rust|kotlin|php|cplusplus) The language you want the
@@ -370,6 +390,8 @@ FLAGS
   --tsEnumType=<option>                                                [default: enum] TypeScript specific, define which
                                                                        type of enums needs to be generated.
                                                                        <options: enum|union>
+  --tsExampleInstance                                                  Typescript specific, generate example of the
+                                                                       model
   --tsExportType=<option>                                              [default: default] TypeScript specific, define
                                                                        which type of export needs to be generated.
                                                                        <options: default|named>
@@ -377,6 +399,8 @@ FLAGS
                                                                        while generating models.
   --tsJsonBinPack                                                      TypeScript specific, define basic support for
                                                                        serializing to and from binary with jsonbinpack.
+  --tsMarshalling                                                      TypeScript specific, generate the models with
+                                                                       marshalling functions.
   --tsModelType=<option>                                               [default: class] TypeScript specific, define
                                                                        which type of model needs to be generated.
                                                                        <options: class|interface>
@@ -408,7 +432,7 @@ DESCRIPTION
   Creates a new asyncapi file
 ```
 
-_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/new/index.ts)_
+_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/new/index.ts)_
 
 ## `asyncapi new file`
 
@@ -496,7 +520,7 @@ EXAMPLES
   $ asyncapi optimize ./asyncapi.yaml --optimization=remove-components,reuse-components,move-to-components --output=terminal --no-tty
 ```
 
-_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/optimize.ts)_
+_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/optimize.ts)_
 
 ## `asyncapi start`
 
@@ -510,7 +534,7 @@ DESCRIPTION
   Start asyncapi studio
 ```
 
-_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/start/index.ts)_
+_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/start/index.ts)_
 
 ## `asyncapi start studio`
 
@@ -554,5 +578,5 @@ DESCRIPTION
   validate asyncapi file
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v0.48.7/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v0.51.1/src/commands/validate.ts)_
 <!-- commandsstop -->

@@ -1,7 +1,6 @@
 import Head from '../Head';
 import NavBar from '../navigation/NavBar';
 import Container from './Container';
-import Footer from '../Footer';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 import StickyNavbar from '../navigation/StickyNavbar';
 
@@ -19,20 +18,22 @@ export default function GenericLayout({
     );
 
   return (
-    <>
+    <div data-testid="GenericLayout">
       <Head title={title} description={description} image={image} />
       <StickyNavbar>
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
       <Container wide={wide}>
+        <div data-testid="GenericLayout-banner">
         <AnnouncementHero
           className={`text-center m-4 ${hideBanner && 'hidden'}`}
           small={true}
         />
-        <div id="main-content">
+        </div>
+        <div id="main-content" data-testid="Generic-main">
           {children}
         </div>
       </Container>
-    </>
+    </div>
   );
 }
