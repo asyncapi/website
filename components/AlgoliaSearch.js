@@ -11,7 +11,7 @@ export const DOCS_INDEX_NAME = 'asyncapi-docs';
 const APP_ID = 'Z621OGRI9Y';
 const API_KEY = '5a4122ae46ce865146d23d3530595d38';
 
-const SearchContext = createContext()
+const SearchContext = createContext({});
 
 export default function AlgoliaSearch({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,14 +47,7 @@ export default function AlgoliaSearch({ children }) {
       <Head>
         <link rel="preconnect" href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin="true" />
       </Head>
-      <SearchContext.Provider
-        value={{
-          isOpen,
-          onOpen,
-          onClose,
-          onInput,
-        }}
-      >
+      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
         {children}
       </SearchContext.Provider>
       {isOpen && <AlgoliaModal initialQuery={initialQuery} onClose={onClose} indexName={indexName} />}
@@ -169,6 +162,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
         onOpen(indexName);
       }} 
       {...props}
+      data-testid="Search-Button"
     >
       {typeof children === 'function' ? children({ actionKey }) : children}
     </button>

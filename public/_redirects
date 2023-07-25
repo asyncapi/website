@@ -69,3 +69,6 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /generator /tools/generator 301!
 /github-actions /tools/github-actions 301!
 # TOOLS-REDIRECTION:END
+
+# Additional redirection
+/community/meetings /community/events 301!
