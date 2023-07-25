@@ -17,17 +17,6 @@
       "score": 53.988822684860644
     },
     {
-      "id": "PR_kwDOCHlHJM5SLlyl",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: create generator template tutorial",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/978",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 33.02507770616476
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -46,17 +35,6 @@
         }
       ],
       "score": 32.45072852866624
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 22.68679251119144
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -142,26 +120,20 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOBW5R_c5KIyGW",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: code-examples",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/website/pull/1349",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOFLhIt85RTiHb",
+      "id": "PR_kwDOGPFxkc5Ey7vh",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: add flowchart for GSoC23 project in README.md",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/community/pull/719",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.36895155870775
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.794602381209232
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -173,6 +145,44 @@
       "repo": "asyncapi/cli",
       "labels": [],
       "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOFLhIt85TFWOL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: verify changes to Maintainers.yaml made by the bot",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/750",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "do-not-merge",
+          "color": "B60205"
+        }
+      ],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
@@ -183,36 +193,6 @@
       "resourcePath": "/asyncapi/website/issues/1945",
       "repo": "asyncapi/website",
       "author": "AnimeshKumar923",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5rH7-B",
-      "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1007",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5rH6bF",
-      "title": "[📑 Docs]: Update usage doc with info about new docker image",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1006",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
       "area": "docs",
       "labels": [
         {
@@ -727,6 +707,21 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hfhvh",
+      "title": "[📑 Docs]: Use code to represent the internal models",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1182",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
         }
       ]
     },
