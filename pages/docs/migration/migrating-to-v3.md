@@ -1,17 +1,19 @@
 ---
 title: "Migrating to v3"
 ---
-Migration to any new version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible, and this is where this document comes in. It shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner as well as providing some guidance on why it happened.
+Migration to any new version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible, and this is where this document comes in. It shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
 
-For a detailed read through about all the changes (non-breaking as well), please do read X before this, at it might give you some more context about the full list of features in v3.
+For a detailed read through about all the changes (non-breaking as well), please do read [the release notes for v3](/blog/release-notes-3.0.0) before this, at it will give you some more context about the changes in v3.
 
-import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison} from '../../../components/Asyncapi3Comparison'
+If you just want to convert your AsyncAPI document from v2 to v3, then we suggest to use [our converter](https://github.com/asyncapi/converter-js).
+
+import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison} from '../../../components/Asyncapi3Comparison'
 
 <Asyncapi3Comparison className="my-8" />
 
 ### Operation, Channel and message decoupling
 
-This is by far the most intrusive breaking change in v3 that completely splits out how operations, channels and messages are related to each other.
+The decoupling between operations, channels and messages, is by far the most intrusive breaking change in v3 that completely splits out how they are related to each other.
 
 <Asyncapi3ChannelComparison className="my-8" />
 
@@ -23,7 +25,7 @@ For any message broker, for example kafka, this is the same as defining topics a
 
 This change makes the channels reusable across multiple AsyncAPI documents, each performing a slightly different action.
 
-```
+```yml
 asyncapi: 2.6.0
 ...
 channels: 
@@ -38,12 +40,12 @@ channels:
               description: Name of the user
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 ...
 channels:
   UserSignup:
-    address: user/signedup
+    address: "user/signedup"
     messages: 
       UserMessage: 
         payload:
@@ -67,7 +69,7 @@ Another breaking change is that the object id of a channel, is no longer the cha
 
 <Asyncapi3IdAndAddressComparison className="my-8" />
 
-```
+```yml
 asyncapi: 2.6.0
 ...
 channels: 
@@ -75,11 +77,11 @@ channels:
     ...
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 channels:
   testPathChannel:
-    address: test/path
+    address: "test/path"
 ```
 
 ### Operation keywords
@@ -92,12 +94,11 @@ For more information about this publish and subscribe confusion here is some mor
 - Fran Méndez's [Proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
 - Nic Townsend's blog post [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics)
 
+#### `subscribe` becomes `send`
 
-#### Subscribe -> Send
+Any `subscribe` operation become the action `send`, because the `subscribe` keyword meant, "you can subscribe to this, because I, this application, publishes on this channel". 
 
-Any `subscribe` operation become an action `send`.
-
-```
+```yml
 asyncapi: 2.6.0
 ...
 channels: 
@@ -106,23 +107,23 @@ channels:
       ...
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 channels:
   testPathChannel:
-    address: test/path
+    address: "test/path"
     ...
 operations: 
   publishToTestPath:
     action: send
     channel: 
-      $ref: #/channels/testPathChannel
+      $ref: "#/channels/testPathChannel"
 ```
 
-#### Publish -> Receive
+#### `publish` becomes `receive`
 
-Any `publish` operation become an action `receive`.
-```
+Any `publish` operation become the action `receive`, because the `publish` keyword meant, "you can publish to this, because I, this application, subscribes to this channel".
+```yml
 asyncapi: 2.6.0
 ...
 channels: 
@@ -131,17 +132,17 @@ channels:
       ...
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 channels:
   testPathChannel:
-    address: test/path
+    address: "test/path"
     ...
 operations: 
   consumeFromTestPath:
     action: receive
     channel: 
-      $ref: #/channels/testPathChannel
+      $ref: "#/channels/testPathChannel"
 ```
 
 ### Meta data being moved
@@ -150,8 +151,7 @@ In v2 two properties, `tags` and `externalDocs` was placed outside of the meta i
 
 <Asyncapi3MetaComparison className="my-8" />
 
-
-```
+```yml
 asyncapi: 2.6.0
 info: 
   ...
@@ -163,7 +163,7 @@ tags:
 
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 info:
   externalDocs:
@@ -172,6 +172,8 @@ info:
   tags:
     - name: e-commerce
 ```
+### Messages instead of message
+Messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs.
 
 ### Unifying explicit and implicit references
 
@@ -179,7 +181,7 @@ In v2, it was possible to do implicit references, for server security configurat
 
 In v3, this information MUST be explicit references. The server security information is also now an array instead of an object.
 
-```
+```yml
 asyncapi: 2.6.0
 servers:
   production:
@@ -197,7 +199,7 @@ components:
       ...
 ```
 
-```
+```yml
 asyncapi: 3.0.0
 servers:
   production:
@@ -213,13 +215,74 @@ components:
   securitySchemes:
     user_pass: 
       ...
-      scopes: [<potential scopes>]
+      availableScopes: [<potential scopes>]
 ```
 
 ### New trait behavior
+Traits in v2, always replaced any duplicate properties that was defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied, because it overwrote anything you wrote in the message object.
 
-TODO
+In v3, this have now been changed so that main objects has a higher priority that what ever you define in traits. This applies to traits in both operation and message object.
 
-### Schema format and payload definition
+Lets go through a few examples, for example here with the message object and associated traits:
+```yml
+messageId: userSignup
+description: A longer description.
+payload:
+  $ref: '#/components/schemas/userSignupPayload'
+traits:
+  - summary: Action to sign a user up.
+    description: Description from trait.
+```
 
-TODO
+After traits has been applied in v2, the full message object would look like this, take notice how the `description` was overwritten:
+```yml
+messageId: userSignup
+summary: Action to sign a user up.
+description: Description from trait.
+payload:
+  $ref: '#/components/schemas/userSignupPayload'
+```
+This is the default behavior of the [JSON Merge Patch](https://tools.ietf.org/html/rfc7386) algorithm we use.
+
+However, in v3, we enforce a rule that `A property on a trait MUST NOT override the same property on the target object`. This means that in v3, after traits has been applied this is the full message object in v3:
+```yml
+messageId: userSignup
+summary: Action to sign a user up.
+description: A longer description. # it's still description from "main" object
+payload:
+  $ref: '#/components/schemas/userSignupPayload'
+```
+Take notice how the `description` are now no longer overwritten.
+
+### Schema format and schemas
+
+In v2, the information about which schema the payload is defined with is located under the message object and not directly associated with the schema itself. This makes reusability impossible, because the two pieces of information is not directly associated with each other.
+
+So in v3, we add [a multi format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#multiFormatSchemaObject), encapsulating this information together. That means that if you anywhere use `schemaFormat`, you have to change the schema like below.
+
+<Asyncapi3SchemaFormatComparison className="my-8" />
+
+```yml
+schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+payload:
+  type: record
+  name: User
+  namespace: com.company
+  doc: User information
+  fields:
+    - name: displayName
+      type: string
+```
+
+```yml
+payload:
+  schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+  schema:
+    type: record
+    name: User
+    namespace: com.company
+    doc: User information
+    fields:
+      - name: displayName
+        type: string
+```

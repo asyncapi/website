@@ -423,3 +423,81 @@ export function Asyncapi3OperationComparison({ className = '' }) {
     </div >
   )
 }
+
+
+// eslint-disable-next-line react/prop-types
+export function Asyncapi3SchemaFormatComparison({ className = '' }) {
+  const [hoverState, setHoverState] = useState({
+    Info: false,
+    Servers: false,
+    Paths: false,
+    PathItem: true,
+    Summary: false,
+    Operation: false,
+    Message: false,
+    Tags: false,
+    External: false,
+    Components: false,
+    Id: false
+  });
+
+  return (
+    <div className={`${className} flex flex-wrap text-center`}>
+      <div className="flex-1 border border-black p-2 ml-1">
+        <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
+
+        <div>
+          <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
+            components
+
+            <div className="flex flex-wrap flex-1">
+              <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+                messages
+
+                <div className="flex flex-wrap flex-1">
+                  <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+                  schemaFormat
+                  </div>
+                  <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+                  payload
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 border border-black p-2 ml-1">
+        <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 3.0</h3>
+
+        <div>
+          <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
+            components
+
+            <div className="flex flex-wrap flex-1">
+              <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+                messages
+
+                <div className="flex flex-wrap flex-1">
+
+                  <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+                    payload
+
+                    <div className="flex flex-wrap flex-1">
+                      <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+                      schemaFormat
+                      </div>
+                      <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+                      schema
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div >
+  )
+}
