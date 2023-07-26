@@ -147,6 +147,17 @@
       "score": 14.645904026212197
     },
     {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
       "id": "PR_kwDOFLhIt85TFWOL",
       "isPR": true,
       "isAssigned": false,
@@ -172,17 +183,6 @@
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
@@ -605,16 +605,6 @@
           "color": "c5def5"
         }
       ]
-    },
-    {
-      "id": "I_kwDOBGu-185myWAv",
-      "title": "update release workflow in release branch",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/938",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": []
     },
     {
       "id": "I_kwDOBW5R_c5mwLzC",
