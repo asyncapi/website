@@ -155,7 +155,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 13.497205671215161
+      "score": 14.07155484871368
     },
     {
       "id": "PR_kwDOFLhIt85TFWOL",
@@ -186,6 +186,40 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5sqLtN",
+      "title": "[📑 Docs]: import Glee docs under tools folder",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2003",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5soAAM",
+      "title": "Create a research page to have participants sign up for the research study",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1991",
+      "repo": "asyncapi/website",
+      "author": "Mayaleeeee",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5rh81V",
       "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
