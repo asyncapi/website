@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/e0pQClU6QqU/hqdefault.jpg",
-    "title": "Spec 3.0 (May 24th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/714.",
-    "videoId": "e0pQClU6QqU"
+    "image_url": "https://i.ytimg.com/vi/CagY5otdY14/hqdefault.jpg",
+    "title": "Community Meeting (July 25th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/798.",
+    "videoId": "CagY5otdY14"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
-    "title": "Community Health in Open-source",
-    "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
-    "videoId": "l9Tp5eMTol4"
+    "image_url": "https://i.ytimg.com/vi/GAjlJFXjMh8/hqdefault.jpg",
+    "title": "Design meeting #2",
+    "description": "Meeting issue: https://github.com/asyncapi/community/issues/800 Summary: Here's a summary of what we discussed: * Fran and ...",
+    "videoId": "GAjlJFXjMh8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/4Zo59cOcFUw/hqdefault.jpg",
-    "title": "Community meeting (May 16th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/705.",
-    "videoId": "4Zo59cOcFUw"
+    "image_url": "https://i.ytimg.com/vi/WlD5rqmfezw/hqdefault.jpg",
+    "title": "Open Standards and Private Products: A DevRel&#39;s Dream or Nightmare",
+    "description": "We are discussing the impact of open standards and working with private products as a DevRel.",
+    "videoId": "WlD5rqmfezw"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (May 10th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/699.",
-    "videoId": "7urTb207V-8"
+    "image_url": "https://i.ytimg.com/vi/5o5BHJqGxIg/hqdefault.jpg",
+    "title": "Community Meeting (July 11th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/784.",
+    "videoId": "5o5BHJqGxIg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/nyEu2un3Xkg/hqdefault.jpg",
-    "title": "AsyncAPI x Google Season of Doc&#39;s 2023",
-    "description": "https://github.com/asyncapi/community/issues/692.",
-    "videoId": "nyEu2un3Xkg"
+    "image_url": "https://i.ytimg.com/vi/Lunp8eSLONc/hqdefault.jpg",
+    "title": "Spec 3.0 DOCS Meeting (July 6th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/774.",
+    "videoId": "Lunp8eSLONc"
   }
 ]

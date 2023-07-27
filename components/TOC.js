@@ -25,7 +25,7 @@ export default function TOC({
   return (
     <div className={twMerge(`${className} ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:block' : 'lg:block'} md:top-24 md:max-h-(screen-14) z-20`)} onClick={() => setOpen(!open)}>
       <div className={`flex cursor-pointer ${tocItems.length ? '' : 'hidden'} ${cssBreakingPoint === 'xl' ? 'xl:cursor-auto' : 'lg:cursor-auto'} xl:mt-2`}>
-        <h5 className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint === 'xl' ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold' : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'}`)}>
+        <h5 className={twMerge(`${open && 'mb-4'} flex-1 text-primary-500 font-medium uppercase tracking-wide text-sm font-sans antialiased ${cssBreakingPoint === 'xl' ? 'xl:mb-4 xl:text-xs xl:text-gray-900 xl:font-bold' : 'lg:mb-4 lg:text-xs lg:text-gray-900 lg:font-bold'}`)} data-testid="TOC-Heading">
           On this page
         </h5>
         <div className={`text-underline text-center p4 ${cssBreakingPoint === 'xl' ? 'xl:hidden' : 'lg:hidden'}`}>
@@ -42,12 +42,13 @@ export default function TOC({
         >
           {
             tocItems.map((item, index) => (
-              <a
+              <a 
                 className={`pl-${Math.pow(2, item.lvl-1)} block mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline`}
                 href={`#${item.slug}`}
                 key={index}
+                data-testid="TOC-Link"
               >
-                {item.content}
+                {item.content.replaceAll('`', '')}
               </a>
             ))
           }
