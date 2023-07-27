@@ -23,13 +23,15 @@ export default function AxwayLogo({ className }) {
 					C370.57,205.816,380.632,200.295,380.632,184.834"/>
               <path id="Fill-9" d="M419.65,256.613l20.858-47.239l-38.159-79.019h27.239l24.54,53.62l21.841-53.62h26.38l-57.301,126.381
 					H419.65V256.613z"/>
-              <g id="Group-13" transform="translate(56.41 .062)">
-                <path id="Fill-11" fill="currentColor" d="M685.952,97.241v-30.92l-46.381-22.699v46.38L462.394,5.462v30.92l202.699,96.319V87.302
+              <g className="group-hover:text-[#de262c]">
+                <g id="Group-13" transform="translate(56.41 .062)">
+                  <path id="Fill-11" fill="currentColor" d="M685.952,97.241v-30.92l-46.381-22.699v46.38L462.394,5.462v30.92l202.699,96.319V87.302
 						L685.952,97.241z"/>
+                </g>
+                <path id="Fill-14" fill="currentColor" d="M564.19,119.436v30.92l32.761,15.461l-52.761,55.46h34.479l61.84-65.399L564.19,119.436z"
+                />
+                <path id="Fill-16" fill="currentColor" d="M721.368,148.516L543.209,63.116v30.921l141.718,68.098L721.368,148.516z" />
               </g>
-              <path id="Fill-14" fill="currentColor" d="M564.19,119.436v30.92l32.761,15.461l-52.761,55.46h34.479l61.84-65.399L564.19,119.436z"
-              />
-              <path id="Fill-16" fill="currentColor" d="M721.368,148.516L543.209,63.116v30.921l141.718,68.098L721.368,148.516z" />
             </g>
           </g>
         </g>
