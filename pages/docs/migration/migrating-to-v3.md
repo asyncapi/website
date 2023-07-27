@@ -15,7 +15,7 @@ This is by far the most intrusive breaking change in v3 that completely splits o
 
 <Asyncapi3ChannelComparison className="my-8" />
 
-In v2, it was impossible to reuse channels, and impossible to have more then one operation per channel, i.e. operation variants.
+In v2, it was impossible to reuse channels, and impossible to have more than one operation per channel, i.e. operation variants.
 
 In v3, this is now possible, with the mindset, a channel and message should be detached from the operations performed. 
 
