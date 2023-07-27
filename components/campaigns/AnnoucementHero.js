@@ -27,16 +27,16 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     <Container wide as="section" padding='' className='text-center'>
       <div
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
-          small ? 'mb-4' : 'mb-12'
-        }`}
+          small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
+        }`} data-testid = "AnnouncementHero-main-div"
       >
         <Heading
           className="countdown-text-gradient"
           level="h2"
-          typeStyle="heading-lg"
-        >
+          typeStyle="heading-lg" >
           AsyncAPI Conf on Tour 2023
         </Heading>
+
         <Heading
           className="countdown-text-gradient"
           level="h3"
@@ -53,6 +53,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
             href="https://conference.asyncapi.com/"
             target="_blank"
             text="Submit a session"
+            data-testid="AnnouncementHero-submit-session"
           />
         </div>
       </div>

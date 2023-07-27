@@ -1,5 +1,17 @@
 [
     {
+        "name": "Aishat Muibudeen",
+        "github": "mayaleeeee",
+        "linkedin": "aishatmuibudeen",
+        "slack": "U03CNHGEUR1",
+        "twitter": "maya_ux_ui",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "website"
+        ]
+    },
+    {
         "name": "Aayush Sahu",
         "github": "aayushmau5",
         "linkedin": "aayushmau5",
