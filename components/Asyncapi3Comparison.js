@@ -447,19 +447,30 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
         <div>
-          <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
+          <div className={'border border-yellow-300 p-2 m-2'}>
             components
 
             <div className="flex flex-wrap flex-1">
-              <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+              <div className={'bg-white border border-yellow-600 p-2 m-2'}>
                 messages
 
                 <div className="flex flex-wrap flex-1">
-                  <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
-                  schemaFormat
-                  </div>
-                  <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
-                  payload
+                  <div className={'bg-white border border-yellow-600 p-2 m-2'}>
+                    message
+                    <div className="flex flex-wrap flex-1">
+                      <div className={(hoverState.SchemaFormat ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: true }))} onMouseLeave={() => setHoverState({ SchemaFormat: false })}>
+                      schemaFormat
+                      </div>
+
+                      <div className={(hoverState.Payload ? `bg-yellow-300` : 'bg-white') + ` flex-1 border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Payload: true }))} onMouseLeave={() => setHoverState({ Payload: false })}>
+                        payload
+                        <div className="flex flex-wrap flex-1">
+                          <div className={'bg-white flex-1 border border-orange-300 p-2 m-2'}>
+                          schema
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -471,24 +482,28 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 3.0</h3>
 
         <div>
-          <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
+          <div className={'border border-yellow-300 p-2 m-2'}>
             components
 
             <div className="flex flex-wrap flex-1">
-              <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+              <div className={'bg-white border border-yellow-600 p-2 m-2'}>
                 messages
 
                 <div className="flex flex-wrap flex-1">
-
-                  <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
-                    payload
-
+                  <div className={'bg-white border border-yellow-600 p-2 m-2'}>
+                    message
                     <div className="flex flex-wrap flex-1">
-                      <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
-                      schemaFormat
-                      </div>
-                      <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
-                      schema
+                      <div className={(hoverState.Payload ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Payload: true }))} onMouseLeave={() => setHoverState({ Payload: false })}>
+                        payload
+
+                        <div className="flex flex-wrap flex-1">
+                          <div className={(hoverState.SchemaFormat ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: true }))} onMouseLeave={() => setHoverState({ SchemaFormat: false })}>
+                          schemaFormat
+                          </div>
+                          <div className={'bg-white flex-1 border border-orange-300 p-2 m-2'}>
+                          schema
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

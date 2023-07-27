@@ -1,7 +1,7 @@
 ---
 title: "Migrating to v3"
 ---
-Migration to any new version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible, and this is where this document comes in. It shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
+Migration to a new major version is always difficult, and AsyncAPI is no exception, but we want to provide as smooth a transition as possible, and this is where this document comes in. It shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
 
 For a detailed read through about all the changes (non-breaking as well), please do read [the release notes for v3](/blog/release-notes-3.0.0) before this, at it will give you some more context about the changes in v3.
 
@@ -83,6 +83,19 @@ channels:
   testPathChannel:
     address: "test/path"
 ```
+### Optional channels
+In v3 channels are now completely optional, that means that you dont have to define channels as an empty object as you did in v2.
+
+```yml
+asyncapi: 2.6.0
+...
+channels: {}
+```
+
+```yml
+asyncapi: 3.0.0
+...
+```
 
 ### Operation keywords
 
@@ -94,7 +107,7 @@ For more information about this publish and subscribe confusion here is some mor
 - Fran Méndez's [Proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
 - Nic Townsend's blog post [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics)
 
-#### `subscribe` becomes `send`
+#### Subscribe becomes send
 
 Any `subscribe` operation become the action `send`, because the `subscribe` keyword meant, "you can subscribe to this, because I, this application, publishes on this channel". 
 
@@ -120,7 +133,7 @@ operations:
       $ref: "#/channels/testPathChannel"
 ```
 
-#### `publish` becomes `receive`
+#### Publish becomes receive
 
 Any `publish` operation become the action `receive`, because the `publish` keyword meant, "you can publish to this, because I, this application, subscribes to this channel".
 ```yml
@@ -160,7 +173,6 @@ externalDocs:
   url: https://www.asyncapi.org
 tags:
   - name: e-commerce
-
 ```
 
 ```yml
@@ -172,8 +184,42 @@ info:
   tags:
     - name: e-commerce
 ```
+
 ### Messages instead of message
-Messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs.
+In v2, if you wanted to define channels to have one of more messages, you would do it with `oneOf`, or if just a single message.
+
+In v3, messages are now defined with an object, if you want a channel to have one or more messages, you just define multiple key/value pairs, or if a single message, its just a single key/value pair.
+
+```yml
+asyncapi: 2.6.0
+...
+channels:
+  user/signedup:
+    message: 
+      oneOf:
+        - ...
+        - ...
+
+asyncapi: 2.6.0
+...
+channels:
+  user/signedup:
+    message: 
+      ...
+```
+
+```yml
+asyncapi: 3.0.0
+...
+channels:
+  UserSignup:
+    address: user/signedup
+    messages: 
+      UserMessage: 
+        ...
+      UserMessage2:
+        ...
+```
 
 ### Unifying explicit and implicit references
 
@@ -285,4 +331,25 @@ payload:
     fields:
       - name: displayName
         type: string
+```
+
+### Server URL splitting up
+In v2, to connect to a server was always defined as one long URL, sometimes even duplicating information such as protocol.
+
+In v3, the `url` property have now been split up into `host`, `pathname` and as in v2 `protocol`. Making the information explicit.
+```yml
+asyncapi: 2.6.0
+servers:
+  production:
+    url: "amqp://rabbitmq.in.mycompany.com:5672/production"
+    protocol: "amqp"
+```
+
+```yml
+asyncapi: 3.0.0
+servers:
+  production:
+    host: "rabbitmq.in.mycompany.com:5672",
+    pathname: "/production",
+    protocol: "amqp",
 ```
