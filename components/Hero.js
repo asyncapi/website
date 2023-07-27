@@ -9,8 +9,6 @@ import Paragraph from './typography/Paragraph'
 import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import AlgoliaSearch component
 import IconLoupe from './icons/Loupe';
 import {
-  getAllLanguageSlugs,
-  getLanguage,
   useTranslation,
 } from "next-i18next-static-site";
 
@@ -24,10 +22,10 @@ export default function Hero({ className = ''}) {
       <header className={`px-2 mt-12 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">
-            {t('landingPageHeroHeading_1')} {` `}
+            {t('main.header')} {` `}
             <span className="block md:-mt-4">
               {" "}
-              {t('landingPageHeroHeading_2')}
+              {t('main.subHeader')}
             </span>
           </Heading>
           <Heading level="h2" typeStyle="body-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">

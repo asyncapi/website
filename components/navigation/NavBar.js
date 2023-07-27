@@ -168,7 +168,8 @@ export default function NavBar({
               <IconLoupe />
             </SearchButton>
 
-            <LanguageSelect
+            {/* // Language Picker Component */}
+            {/* <LanguageSelect
               options={uniqueLangs}
               onChange={(value) => {
                 setLang(value.toLowerCase());
@@ -176,7 +177,7 @@ export default function NavBar({
               }}
               className=""
               selected={i18n.language.toLocaleUpperCase()}
-            />
+            /> */}
 
             <GithubButton text="GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
 
