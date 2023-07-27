@@ -55,7 +55,7 @@ export default function ParsersPage() {
               <CodeBlock language="bash" showLineNumbers={false} className="mt-8" textSizeClassName="text-sm">npm install @asyncapi/parser</CodeBlock>
               {renderButtons()}
             </div>
-            
+
             <CodeBlock language="javascript" hasWindow textSizeClassName="text-sm">{getCode()}</CodeBlock>
           </div>
         </div>
@@ -68,24 +68,30 @@ function getCode() {
   return `import { parse } from '@asyncapi/parser'
 
 const doc = await parse(\`
-  asyncapi: '2.6.0'
-  info:
-    title: Example
-    version: '1.0.0'
-  channels:
-    example-channel:
-      subscribe:
-        message:
-          payload:
-            type: object
-            properties:
-              exampleField:
-                type: string
-              exampleNumber:
-                type: number
-              exampleDate:
-                type: string
-                format: date-time
+asyncapi: '3.0.0'
+info:
+  title: Example
+  version: '1.0.0'
+channels:
+  example:
+    address: example-channel
+    messages:
+      example:
+        payload:
+          type: object
+          properties:
+            exampleField:
+              type: string
+            exampleNumber:
+              type: number
+            exampleDate:
+              type: string
+              format: date-time
+operations:
+  example:
+    action: send
+    channel:
+      $ref: '#/channels/example'
 \`)
 
 console.log(doc.info().title())
