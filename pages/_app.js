@@ -2,9 +2,10 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout'
 import Banner from '../components/campaigns/Banner'
 import AppContext from '../context/AppContext'
-import Footer from "../components/Footer";
-import MDXProvider from '../components/MDX';
+import Footer from '../components/footer/Footer'
+import { MDXProvider } from '../components/MDX';
 import AlgoliaSearch from '../components/AlgoliaSearch';
+import ScrollButton from '../components/buttons/ScrollButton';
 
 import '../styles/globals.css'
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps, router }) {
             <Banner />
             <Layout>
               <Component {...pageProps} />
+              <ScrollButton/>
             </Layout>
             <div className="mt-auto">
               <Footer />

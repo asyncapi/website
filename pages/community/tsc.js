@@ -1,5 +1,5 @@
 import GenericLayout from "../../components/layout/GenericLayout";
-import TSCMembersList from "../../config/TSC_MEMBERS.json";
+import TSCMembersList from "../../config/MAINTAINERS.json";
 import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from '../../components/typography/TextLink';
@@ -36,9 +36,12 @@ function addAdditionalUserInfo(user) {
 export default function TSC() {
   const description =
     "Meet the current AsyncAPI TSC members and learn how you can become one.";
-  const image = "/img/social/website-card.jpg";
+  const image = "/img/social/community-tsc.webp";
 
-  const tscMembers = sortBy(TSCMembersList.map((user) => addAdditionalUserInfo(user)),['name']);
+  const tscMembers = sortBy(
+    TSCMembersList.map((user) => addAdditionalUserInfo(user)),
+    ["name"]
+  ).filter((user) => user.isTscMember);
 
   return (
     <GenericLayout
@@ -60,8 +63,6 @@ export default function TSC() {
               helps to make decisions on a higher level, or when maintainers
               cannot find a consensus.
             </p>
-
-            
           </div>
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
@@ -139,6 +140,28 @@ export default function TSC() {
   );
 }
 
+const socials = {
+  "Github": <GithubSVG />,
+  "Twitter": <TwitterSVG />,
+  "Linkedin": <LinkedInSVG />,
+}
+
+function SocialLink({ href, social }) {
+  return (
+    <li>
+      <a
+        href={href}
+        className="text-gray-600 hover:text-gray-500"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <span className="sr-only">{social}</span>
+        {socials[social]}
+      </a>
+    </li>
+  )
+}
+
 function UserInfo({ user }) {
   return (
     <li
@@ -154,37 +177,9 @@ function UserInfo({ user }) {
           <div className="font-bold text-lg my-3">{user.name}</div>
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
-            <li>
-              <a
-                href={user.github}
-                className="text-gray-600 hover:text-gray-500"
-              >
-                <span className="sr-only">GitHub</span>
-                <GithubSVG />
-              </a>
-            </li>
-            {user.twitter ? (
-              <li>
-                <a
-                  href={user.twitter}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">Twitter</span>
-                  <TwitterSVG />
-                </a>
-              </li>
-            ) : null}
-            {user.linkedin ? (
-              <li>
-                <a
-                  href={user.linkedin}
-                  className="text-gray-600 hover:text-gray-500"
-                >
-                  <span className="sr-only">LinkedIn</span>
-                  <LinkedInSVG />
-                </a>
-              </li>
-            ) : null}
+            <SocialLink href={user.github} social="Github" />
+            {user.twitter ? <SocialLink href={user.twitter} social="Twitter" /> : null}
+            {user.linkedin ? <SocialLink href={user.linkedin} social="Linkedin" /> : null}
           </ul>
         </div>
       </div>

@@ -29,7 +29,7 @@ Reference API documentation for AsyncAPI Generator library.
         * [.originalAsyncAPI](#Generator+originalAsyncAPI) : `String`
         * [.generate(asyncapiDocument)](#Generator+generate) ⇒ `Promise`
         * [.configureTemplate()](#Generator+configureTemplate)
-        * [.generateFromString(asyncapiString, [parserOptions])](#Generator+generateFromString) ⇒ `Promise`
+        * [.generateFromString(asyncapiString, [parseOptions])](#Generator+generateFromString) ⇒ `Promise`
         * [.generateFromURL(asyncapiURL)](#Generator+generateFromURL) ⇒ `Promise`
         * [.generateFromFile(asyncapiFile)](#Generator+generateFromFile) ⇒ `Promise`
         * [.installTemplate([force])](#Generator+installTemplate)
@@ -47,7 +47,7 @@ Instantiates a new Generator object.
 - templateName `String` - Name of the template to generate.
 - targetDir `String` - Path to the directory where the files will be generated.
 - options `Object`
-    - [.templateParams] `String` - Optional parameters to pass to the template. Each template define their own params.
+    - [.templateParams] `Object.<string, string>` - Optional parameters to pass to the template. Each template define their own params.
     - [.entrypoint] `String` - Name of the file to use as the entry point for the rendering process. Use in case you want to use only a specific template file. Note: this potentially avoids rendering every file in the template.
     - [.noOverwriteGlobs] `Array.<String>` - List of globs to skip when regenerating the template.
     - [.disabledHooks] `Object.<String, (Boolean|String|Array.<String>)>` - Object with hooks to disable. The key is a hook type. If key has "true" value, then the generator skips all hooks from the given type. If the value associated with a key is a string with the name of a single hook, then the generator skips only this single hook name. If the value associated with a key is an array of strings, then the generator skips only hooks from the array.
@@ -215,7 +215,7 @@ Generates files from a given template and AsyncAPI string.
 **Params**
 
 - asyncapiString `String` - AsyncAPI string to use as source.
-- [parserOptions] `Object` ` = {}` - AsyncAPI parser options. Check out [@asyncapi/parser](https://www.github.com/asyncapi/parser-js) for more information.
+- [parseOptions] `Object` ` = {}` - AsyncAPI Parser parse options. Check out [@asyncapi/parser](https://www.github.com/asyncapi/parser-js) for more information.
 
 **Example**  
 ```js

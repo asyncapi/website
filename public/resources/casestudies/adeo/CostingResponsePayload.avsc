@@ -1,0 +1,79 @@
+{
+    "namespace": "com.adeo.casestudy.costingresponse",
+    "type": "record",
+    "name": "CostingResponsePayload",
+    "version": 1,
+    "fields": [
+        {"name": "CostingResult", "type": ["null",
+            {
+                "name": "CostingResultItem",
+                "namespace": "com.adeo.casestudy.costingresponse",
+                "type": "record",
+                "doc": "Costing result data",
+                "fields" : [
+                   {"name": "CalculationPrice", "type": "float", "doc": "The calculated price.", "example": 1.136},
+                   {"name": "CalculationCurrency", "doc": "The currency for the calculation price.", "type":
+                        {
+                           "name": "CalculationCurrencyItems",
+                           "namespace": "com.adeo.casestudy.costingresponse",
+                           "type": "enum",
+                           "symbols": ["USD", "EUR", "CNY"],
+                           "default": "EUR"
+                        }
+                   },
+                   {"name": "CalculationDetails", "type": {
+                        "name": "CostingResultDetailsItems",
+                        "namespace": "com.adeo.casestudy.costingresponse",
+                        "type": "array",
+                        "items":
+                            {
+                                "name": "CostingResultDetailsItem",
+                                "namespace": "com.adeo.casestudy.costingresponse",
+                                "type": "record",
+                                "doc": "Cost Component used during the calculation",
+                                "fields": [
+                                     {"name": "Code", "type": {"type": "string", "avro.java.string": "String"}, "doc": "The Cost Component Code.", "example": "CODE1"},
+                                     {"name": "Formula", "type": {"type": "string", "avro.java.string": "String"}, "doc": "The Cost Component Formula.", "example": "PARAM1 / PARAM2"},
+                                     {"name": "Value", "type": "float", "doc": "Cost component calculated value.", "example": 1.145}
+                                ]
+                            }
+                       }
+                   }
+                ]
+            }]
+        },
+        {"name": "CostingErrors", "doc": "Technical or functional errors occurred during calculation", "type": ["null", {
+            "type": "array",
+            "name": "CostingErrorItems",
+            "namespace": "com.adeo.casestudy.costingresponse",
+            "items":
+                {
+                 "name": "CostingErrorItem",
+                 "namespace": "com.adeo.casestudy.costingresponse",
+                 "type": "record",
+                 "doc": "Costing errors data",
+                 "fields": [
+                     {"name": "Type", "type":
+                          {
+                             "name": "CostingErrorTypeItems",
+                             "namespace": "com.adeo.casestudy.costingresponse",
+                             "type": "enum",
+                             "symbols": ["TECHNICAL", "FUNCTIONAL"],
+                             "default": "FUNCTIONAL"
+                          }
+                     },
+                     {
+                        "name" : "Code",
+                        "type" : {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        },
+                        "doc" : "Error codification"
+                     },
+                     {"name": "Step", "type": {"type": "string", "avro.java.string": "String"}, "doc": "Costing step where the error occurred"},
+                     {"name": "Description", "type": {"type": "string", "avro.java.string": "String"}, "doc": "Error description"}
+                 ]}
+            }]
+         }
+    ]
+}

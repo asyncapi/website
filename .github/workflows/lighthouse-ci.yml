@@ -10,19 +10,43 @@ jobs:
   lighthouse-ci:
     name: Lighthouse CI
     runs-on: ubuntu-latest
-    if: "github.repository == 'asyncapi/website' && github.event.pull_request.draft == false &&!((github.actor == 'asyncapi-bot' && startsWith(github.event.pull_request.title, 'ci: update global workflows')) || (github.actor == 'asyncapi-bot' && startsWith(github.event.pull_request.title, 'chore(release):')) || (github.actor == 'allcontributors' && startsWith(github.event.pull_request.title, 'docs: add')))"
 
     steps:
-      - uses: actions/checkout@v3
+      - if: >
+          !github.event.pull_request.draft && !(
+            (github.actor == 'asyncapi-bot' && (
+              startsWith(github.event.pull_request.title, 'ci: update global workflows') || 
+              startsWith(github.event.pull_request.title, 'chore: update code of conduct') || 
+              startsWith(github.event.pull_request.title, 'ci: update global contribution guide') || 
+              startsWith(github.event.pull_request.title, 'ci: update workflows for go projects') || 
+              startsWith(github.event.pull_request.title, 'ci: update workflows for nodejs projects') || 
+              startsWith(github.event.pull_request.title, 'ci: update release-related workflows for nodejs projects') || 
+              startsWith(github.event.pull_request.title, 'ci: update semantic release config file') || 
+              startsWith(github.event.pull_request.title, 'ci: update generic workflows') || 
+              startsWith(github.event.pull_request.title, 'ci: update workflows for docker-based projects') ||
+              startsWith(github.event.pull_request.title, 'chore(release):')
+            )) ||
+            (github.actor == 'allcontributors[bot]' && 
+              startsWith(github.event.pull_request.title, 'docs: add')
+            )
+          )
+        id: should_run
+        name: Should Run
+        run: echo "shouldrun=true" >> $GITHUB_OUTPUT
+        
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        uses: actions/checkout@v3
 
-      - name: Await Netlify Preview
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Await Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
         id: netlify
         with:
           site_name: asyncapi-website
           max_timeout: 600
 
-      - name: Lighthouse Audit
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Lighthouse Audit
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@9.3.0
         with:
@@ -34,7 +58,8 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
 
-      - name: Lighthouse Score Report
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: Lighthouse Score Report
         id: lighthouse_score_report
         uses: actions/github-script@v6
         with:
@@ -59,7 +84,8 @@ jobs:
             ].join('\n')
              core.setOutput("comment", comment);
 
-      - name: LightHouse Statistic Comment
+      - if: steps.should_run.outputs.shouldrun == 'true'
+        name: LightHouse Statistic Comment
         id: lighthouse_statistic_comment
         uses: marocchino/sticky-pull-request-comment@v2.2.0
         with:

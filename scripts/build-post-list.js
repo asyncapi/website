@@ -5,19 +5,44 @@ const toc = require('markdown-toc')
 const { slugify } = require('markdown-toc/lib/utils')
 const readingTime = require('reading-time')
 const { markdownToTxt } = require('markdown-to-txt')
+const { buildNavTree, addDocButtons } = require('./build-docs')
 
 let specWeight = 100
-const result = []
+const result = {
+  docs: [],
+  blog: [], 
+  about: [],
+  jobs: [],
+  docsTree: {}
+}
+const releaseNotes = []
 const basePath = 'pages'
 const postDirectories = [
-  [`${basePath}/docs`, '/docs'],
+  // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
+  [`${basePath}/docs`, '/docs'],
   [`${basePath}/about`, '/about'],
   [`${basePath}/jobs`, '/jobs'],
-]
+  [`${basePath}/community`, '/community'],
+];
+
+const addItem = (details) => {
+  if(details.slug.startsWith('/docs'))
+    result["docs"].push(details)
+  else if(details.slug.startsWith('/blog'))
+    result["blog"].push(details)
+  else if(details.slug.startsWith('/about'))
+    result["about"].push(details)
+  else if(details.slug.startsWith('/jobs'))
+    result["jobs"].push(details)
+  else {}
+}
 
 module.exports = async function buildPostList() {
   walkDirectories(postDirectories, result)
+  const treePosts = buildNavTree(result["docs"].filter((p) => p.slug.startsWith('/docs/')))
+  result["docsTree"] = treePosts
+  result["docs"] = addDocButtons(result["docs"], treePosts)
   if (process.env.NODE_ENV === 'production') {
     // console.log(inspect(result, { depth: null, colors: true }))
   }
@@ -57,7 +82,7 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
         }
         details.sectionWeight = sectionWeight
         details.slug = slug
-        result.push(details)
+        addItem(details)
         const rootId = details.parent || details.rootSectionId
         walkDirectories([[fileName, slug]], result, details.weight, details.title, details.sectionId, rootId)
       } else if (file.endsWith('.md') && !fileName.endsWith('/_section.md')) {
@@ -88,13 +113,30 @@ function walkDirectories(directories, result, sectionWeight = 0, sectionTitle, s
             details.title = capitalize(fileName)
           }
 
+          if(releaseNotes.includes(details.title)){
+            details.releaseNoteLink = `/blog/release-notes-${details.title}`
+          }
+
           if (fileBaseName.includes('next-spec') || fileBaseName.includes('next-major-spec')) {
             details.isPrerelease = true
             // this need to be separate because the `-` in "Pre-release" will get removed by `capitalize()` function
             details.title += " (Pre-release)"
           }
         }
-        result.push(details);
+        
+
+
+        // To create a list of available ReleaseNotes list, which will be used to add details.releaseNoteLink attribute.
+        if(file.startsWith("release-notes") && dir[1] === "/blog"){
+          const fileName_without_extension = file.slice(0,-3)
+          // removes the file extension. For example, release-notes-2.1.0.md -> release-notes-2.1.0
+          const version = fileName_without_extension.slice(fileName_without_extension.lastIndexOf("-")+1)
+          // gets the version from the name of the releaseNote .md file (from /blog). For example, version = 2.1.0 if fileName_without_extension = release-notes-2.1.0
+          releaseNotes.push(version)
+          // releaseNotes is the list of all available releaseNotes
+        }
+        
+        addItem(details)
       }
     }
   }

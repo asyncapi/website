@@ -24,18 +24,6 @@
                 "filters": {
                     "categories": ["api", "directory"]
                 }
-            },
-            {
-                "title": "Check-API",
-                "description": "Check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.",
-                "links": {
-                    "repoUrl": "https://github.com/Mermade/check_api"
-                },
-                "filters": {
-                    "language": "JavaScript",
-                    "technology": ["Node.js"],
-                    "categories": ["api","validator"]
-                }
             }
         ]
     },
@@ -368,7 +356,8 @@
                 "title": "Api-Diff-Viewer",
                 "description": "React component to view the difference between two Json based API documents. Supported specifications: JsonSchema, OpenAPI 3.x, AsyncAPI 2.x.",
                 "links": {
-                    "repoUrl": "https://github.com/udamir/api-diff-viewer"
+                    "repoUrl": "https://github.com/udamir/api-diff-viewer",
+                    "websiteUrl": "https://api-diff-viewer.vercel.app/"
                 },
                 "filters": {
                     "language": "TypeScript",
@@ -527,18 +516,6 @@
                 }
             },
             {
-                "title": "Check-API",
-                "description": "Check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.",
-                "links": {
-                    "repoUrl": "https://github.com/Mermade/check_api"
-                },
-                "filters": {
-                    "language": "JavaScript",
-                    "technology": ["Node.js"],
-                    "categories": ["api","validator"]
-                }
-            },
-            {
                 "title": "asyncapi-validator",
                 "description": "It allows you to validate the schema of your messages against your AsyncAPI schema definition. You can use it with Kafka, RabbitMQ or any other messaging/queue.",
                 "links": {
@@ -611,7 +588,25 @@
                     "language": "TypeScript",
                     "categories": ["compare-tool"]
                 }
-            }
+            },
+            {
+                "title": "jasyncapicmp",
+                "description": "Tool/library/maven-plugin for comparing two AsyncAPI versions and evaluating compatibility.",
+                "links": {
+                  "websiteUrl": "https://siom79.github.io/jasyncapicmp/",
+                  "repoUrl": "https://github.com/siom79/jasyncapicmp"
+                },
+                "filters": {
+                  "language": "Java",
+                  "technology": [
+                    "Maven"
+                  ],
+                  "categories": [
+                    "compare-tool"
+                  ],
+                  "hasCommercial": false
+                }
+              }
         ]
     },
     "Others": {
@@ -637,7 +632,20 @@
     },
     "Bundlers": {
         "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Api-ref-bundler",
+                "description": "It allows you bundle/dereference external/internal $refs in Json based API document. Supported specifications: OpenAPI, AsyncAPI, JsonSchema.",
+                "links": {
+                    "repoUrl": "https://github.com/udamir/api-ref-bundler"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["TypeScript"],
+                    "categories": ["bundler"]
+                }
+            }
+        ]
     },
     "IDE Extensions": {
         "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
