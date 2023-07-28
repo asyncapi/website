@@ -27,7 +27,7 @@ info:
   ...
 externalDocs:
   description: Find more info here
-  url: https://www.asyncapi.org
+  url: https://www.asyncapi.com
 tags:
   - name: e-commerce
 ```
@@ -37,7 +37,7 @@ asyncapi: 3.0.0
 info:
   externalDocs:
     description: Find more info here
-    url: https://www.asyncapi.org
+    url: https://www.asyncapi.com
   tags:
     - name: e-commerce
 ```
