@@ -136,6 +136,17 @@
       "score": 15.794602381209232
     },
     {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
@@ -147,14 +158,19 @@
       "score": 14.645904026212197
     },
     {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
       "score": 14.07155484871368
     },
     {
@@ -172,17 +188,6 @@
         }
       ],
       "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
