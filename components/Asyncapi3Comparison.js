@@ -13,7 +13,9 @@ export function Asyncapi3Comparison({ className = '' }) {
     Tags: false,
     External: false,
     Components: false,
-    Id: false
+    Id: false,
+    Path: false,
+    Host: false
   });
 
   return (
@@ -33,9 +35,17 @@ export function Asyncapi3Comparison({ className = '' }) {
               <p>External Docs</p>
             </div>
           </div>
-          <div className="flex flex-wrap flex-1">
-            <div className={(hoverState.Servers ? `bg-green-100` : ' ') + ' flex-1 border border-green-300 p-2 m-2'} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Servers: true }))} onMouseLeave={() => setHoverState({ Servers: false })}>
-              Servers (hosts + security)
+          <div className="border border-blue-300 p-2 m-2">
+            Servers
+            <div className="flex flex-col flex-wrap flex-1">
+              <div className="border border-blue-600 p-2 m-2">
+                Server
+                <div className="flex flex-wrap flex-1">
+                  <div className={(hoverState.Host || hoverState.Path ? `bg-pink-300` : ' ') + ` flex items-center justify-center flex-1 border border-black p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true, Path: true }))} onMouseLeave={() => setHoverState({ Host: false, Path: false })}>
+                    <p>Url</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
@@ -88,8 +98,21 @@ export function Asyncapi3Comparison({ className = '' }) {
               </div>
             </div>
           </div>
-          <div className={(hoverState.Servers ? `bg-green-100` : ' ') + ' flex-1 border border-green-300 p-2 m-2'} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Servers: true }))} onMouseLeave={() => setHoverState({ Servers: false })}>
-            Servers (hosts + security)
+          <div className="border border-blue-300 p-2 m-2">
+            Servers
+            <div className="flex flex-col flex-wrap flex-1">
+              <div className="border border-blue-600 p-2 m-2">
+                Server
+                <div className="flex flex-wrap flex-1">
+                  <div className={(hoverState.Host ? `bg-pink-300` : ' ') + ` flex-1 border border-black box-border mr-1 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true }))} onMouseLeave={() => setHoverState({ Host: false })}>
+                    <p>Host</p>
+                  </div>
+                  <div className={(hoverState.Path ? `bg-pink-300` : ' ') + ` flex-1 border border-black box-border mr-1 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Path: true }))} onMouseLeave={() => setHoverState({ Path: false })}>
+                    <p>Pathname</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
             Channels
@@ -147,17 +170,10 @@ export function Asyncapi3Comparison({ className = '' }) {
 // eslint-disable-next-line react/prop-types
 export function Asyncapi3ChannelComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
-    Info: false,
-    Servers: false,
     Paths: false,
-    PathItem: true,
-    Summary: false,
+    PathItem: false,
     Operation: false,
     Message: false,
-    Tags: false,
-    External: false,
-    Components: false,
-    Id: false
   });
 
   return (
@@ -236,10 +252,10 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
                   <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2" >
                     action (send or receive)
                   </div>
-                  <div className={(hoverState.Summary ? 'bg-blue-200' : 'bg-white') + ` border border-blue-500 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Summary: true }))} onMouseLeave={() => setHoverState({ Summary: false })} >
+                  <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2" >
                     channel
                   </div>
-                  <div className={(hoverState.Summary ? 'bg-blue-200' : 'bg-white') + ` border border-blue-500 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Summary: true }))} onMouseLeave={() => setHoverState({ Summary: false })} >
+                  <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2" >
                     messages
                   </div>
                 </div>
@@ -255,17 +271,8 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
 // eslint-disable-next-line react/prop-types
 export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
-    Info: false,
-    Servers: false,
     Paths: false,
-    PathItem: true,
-    Summary: false,
-    Operation: false,
-    Message: false,
-    Tags: false,
-    External: false,
-    Components: false,
-    Id: false
+    PathItem: false,
   });
 
   return (
@@ -305,19 +312,66 @@ export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   )
 }
 
+
+export function Asyncapi3ServerComparison({ className = '' }) {
+  const [hoverState, setHoverState] = useState({
+    Host: false,
+    path: false,
+    Servers: false,
+  });
+
+  return (
+    <div className={`${className} flex flex-wrap text-center`}>
+      <div className="flex-1 border border-black p-2 ml-1">
+        <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
+
+        <div>
+          <div className="border border-blue-300 p-2 m-2">
+            Servers
+            <div className="flex flex-col flex-wrap flex-1">
+              <div className="border border-blue-600 p-2 m-2">
+                Server
+                <div className="flex flex-wrap flex-1">
+                  <div className={(hoverState.Host || hoverState.Path ? `bg-pink-300` : ' ') + ` flex items-center justify-center flex-1 border border-black p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true, Path: true }))} onMouseLeave={() => setHoverState({ Host: false, Path: false })}>
+                    <p>Url</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 border border-black p-2 ml-1">
+        <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 3.0</h3>
+
+        <div>
+          <div className="border border-blue-300 p-2 m-2">
+            Servers
+            <div className="flex flex-col flex-wrap flex-1">
+              <div className="border border-blue-600 p-2 m-2">
+                Server
+                <div className="flex flex-wrap flex-1">
+                  <div className={(hoverState.Host ? `bg-pink-300` : ' ') + ` flex-1 border border-black box-border mr-1 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Host: true }))} onMouseLeave={() => setHoverState({ Host: false })}>
+                    <p>Host</p>
+                  </div>
+                  <div className={(hoverState.Path ? `bg-pink-300` : ' ') + ` flex-1 border border-black box-border mr-1 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Path: true }))} onMouseLeave={() => setHoverState({ Path: false })}>
+                    <p>Pathname</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div >
+  )
+}
+
 export function Asyncapi3MetaComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Info: false,
-    Servers: false,
-    Paths: false,
-    PathItem: true,
-    Summary: false,
-    Operation: false,
-    Message: false,
     Tags: false,
-    External: false,
-    Components: false,
-    Id: false
+    External: false
   });
 
   return (
@@ -363,35 +417,21 @@ export function Asyncapi3MetaComparison({ className = '' }) {
 
 // eslint-disable-next-line react/prop-types
 export function Asyncapi3OperationComparison({ className = '' }) {
-  const [hoverState, setHoverState] = useState({
-    Info: false,
-    Servers: false,
-    Paths: false,
-    PathItem: true,
-    Summary: false,
-    Operation: false,
-    Message: false,
-    Tags: false,
-    External: false,
-    Components: false,
-    Id: false
-  });
-
   return (
     <div className={`${className} flex flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
         <div>
-          <div className={(hoverState.Paths ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Paths: true }))} onMouseLeave={() => setHoverState({ Paths: false })}>
+          <div className="border border-yellow-300 p-2 m-2">
             Channels
 
             <div className="flex flex-wrap flex-1">
-              <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
+              <div className="border border-yellow-600 p-2 m-2">
                 Channel Item
 
                 <div className="flex flex-wrap flex-1">
-                  <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+                  <div className="flex-1 border border-orange-300 p-2 m-2">
                     Operation (Publish and Subscribe)
                   </div>
                 </div>
@@ -404,14 +444,14 @@ export function Asyncapi3OperationComparison({ className = '' }) {
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 3.0</h3>
 
         <div>
-          <div className={(hoverState.Operation ? `bg-yellow-100` : ' ') + ` border border-yellow-300 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
+          <div className="border border-yellow-300 p-2 m-2">
             Operations
             <div className="flex flex-wrap flex-1">
               <div className="flex-1 border border-orange-300 p-2 m-2">
                 Operation
 
                 <div className="flex flex-col flex-wrap flex-1">
-                  <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2">
+                  <div className="border border-blue-500 bg-white p-2 m-2">
                     action (send or receive)
                   </div>
                 </div>
@@ -428,17 +468,8 @@ export function Asyncapi3OperationComparison({ className = '' }) {
 // eslint-disable-next-line react/prop-types
 export function Asyncapi3SchemaFormatComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
-    Info: false,
-    Servers: false,
-    Paths: false,
-    PathItem: true,
-    Summary: false,
-    Operation: false,
-    Message: false,
-    Tags: false,
-    External: false,
-    Components: false,
-    Id: false
+    SchemaFormat: false,
+    Payload: false
   });
 
   return (
@@ -448,7 +479,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
 
         <div>
           <div className={'border border-yellow-300 p-2 m-2'}>
-            components
+            components | channels
 
             <div className="flex flex-wrap flex-1">
               <div className={'bg-white border border-yellow-600 p-2 m-2'}>
@@ -483,7 +514,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
 
         <div>
           <div className={'border border-yellow-300 p-2 m-2'}>
-            components
+            components | channels
 
             <div className="flex flex-wrap flex-1">
               <div className={'bg-white border border-yellow-600 p-2 m-2'}>
