@@ -17,7 +17,7 @@ import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressCo
 
 ### Metadata being moved
 
-In v2 two properties, `tags` and `externalDocs` was placed outside of the meta information object `info`, this has been moved in v3 to stay consistent.
+In v2 two properties, `tags` and `externalDocs` was placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#infoObject) `info`, this has been moved in v3 to stay consistent.
 
 <Asyncapi3MetaComparison className="my-8" />
 
@@ -43,11 +43,11 @@ info:
 ```
 
 ### Server URL splitting up
-A confusion that arrived from time to time, was what the URL of a server should include.
+A confusion that arrived from time to time, was what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) should include.
 
 <Asyncapi3ServerComparison className="my-8" />
 
-In v2, connecting to a server was always defined as one long URL, sometimes even duplicating information such as protocol.
+In v2, defining the URL was always as one long URL, sometimes even duplicating information such as protocol.
 
 In v3, the `url` property has now been split up into `host`, `pathname`, and as in v2 `protocol`. Making the information explicit.
 ```yml
@@ -67,7 +67,7 @@ servers:
     protocol: "amqp",
 ```
 
-### Operation, Channel, and message decoupling
+### Operation, channel, and message decoupling
 
 The decoupling between operations, channels, and messages, is by far the most intrusive breaking change in v3 that completely splits out how they are related to each other.
 
@@ -119,9 +119,9 @@ operations:
 
 Read more about the publish and subscribe confusion under [Operation keywords](#operation-keywords).
 
-### Channel address and object id's
+### Channel address and channel key
 
-Another breaking change is that the object id of a channel is no longer the channel path, instead, it's an arbitrary unique id, and instead, channel paths are described with the `address` property.
+Another breaking change is that the channel key is no longer the channel path, instead, it's an arbitrary unique id, and instead, channel paths are described with the `address` property as part of the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
 
 <Asyncapi3IdAndAddressComparison className="my-8" />
 
@@ -146,7 +146,7 @@ channels:
 
 ### Operation keywords
 
-Another breaking change is that operations no longer are defined with `publish` and `subscribe` and their opposite meaning for your application. Instead, you define your application behavior directly, with `send` and `receive` through an `action` property. 
+Another breaking change is that operations no longer are defined with `publish` and `subscribe` and their opposite meaning for your application. Instead, you define your application behavior directly, with `send` and `receive` through an `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
 
 <Asyncapi3OperationComparison className="my-8" />
 
@@ -193,7 +193,7 @@ operations:
 ### Messages instead of message
 In v2, if you wanted to define channels to have one or more messages, you would do it with `oneOf`, or if just a single message.
 
-In v3, messages are now defined with an object, if you want a channel to have one or more messages, you just define multiple key/value pairs, or if a single message, it's just a single key/value pair.
+In v3, messages are now defined with the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messagesObject), if you want a channel to have one or more messages, you just define multiple key/value pairs, or if a single message, it's just a single key/value pair.
 
 ```yml
 asyncapi: 2.6.0
@@ -237,9 +237,9 @@ channels:
 
 ### Unifying explicit and implicit references
 
-In v2, it was possible to do implicit references in some places, for example for server security configuration, it was by name which referred to a security requirement Object in components - And for a channel to reference global servers by name.
+In v2, it was possible to do implicit references in some places, for example for server security configuration, it was by name which referred to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) in components - And for a channel to reference global servers by name.
 
-In v3, this information MUST be explicit references. This did mean that we had to slightly change the Server Object `security` property, which is now an array instead of an object. We then moved the information about needed scopes for OAuth and OpenID Connect to the Security Scheme Object.
+In v3, this information MUST be explicit references. This did mean that we had to slightly change the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) `security` property, which is now an array instead of an object. We then moved the information about needed scopes for OAuth and OpenID Connect to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#securitySchemeObject).
 
 ```yml
 asyncapi: 2.6.0
@@ -294,7 +294,7 @@ components:
 ```
 
 ### New trait behavior
-Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
+Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the Message Object.
 
 In v3, this has now been changed so that main objects have a higher priority than what ever you define in traits. This applies to traits in both operation and message objects.
 
