@@ -5,7 +5,7 @@ type: Communication
 tags:
   - Specification
   - Release Notes
-cover: /img/posts/release-notes-2.4.0/cover.webp
+cover: /img/posts/release-notes-3.0.0/cover.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
@@ -70,6 +70,8 @@ channels:
         ...
 ```
 
+Related to: [#94](https://github.com/asyncapi/spec/issues/94) | Pull request: [#827](https://github.com/asyncapi/spec/pull/827)
+
 ### Publish and subscribe confusion
 In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application publishes to the channel? Does it mean you publish for me? Who are you in this context? 
 
@@ -122,6 +124,7 @@ We have seen many use cases where an AsyncAPI document has been used as a form o
 
 ```
 asyncapi: 3.0.0
+...
 components:
   ...
 ```
@@ -136,6 +139,7 @@ The server security information is also now an array instead of an object.
 
 ```
 asyncapi: 3.0.0
+...
 servers: 
   SomeServer:
     security:
@@ -144,7 +148,6 @@ channels:
   SomeChannel: 
     servers: 
       - $ref: '#/servers/SomeServer'
-...  
 components:
   securitySchemes:
     SomeSecurity:
@@ -162,6 +165,7 @@ There has been some inconsistency between which metadata fields are available in
 
 ```
 asyncapi: 3.0.0
+...
 servers:
   SomeServer:
     title: Some Server title
@@ -188,6 +192,7 @@ Therefore the root `tags` and `externalDocs` have been moved to the info object.
 
 ```
 asyncapi: 3.0.0
+...
 info:
   ...
   externalDocs:
@@ -205,6 +210,7 @@ There has been some confusion about what the `url` of a server should contain; i
 
 ```
 asyncapi: 3.0.0
+...
 servers:
   localhost:
     host: localhost
@@ -225,6 +231,7 @@ This is a bit of a mixture between some of the features, that all added a little
 
 ```
 asyncapi: 3.0.0
+...
 components:
   ...
   replies:
@@ -281,6 +288,7 @@ In v3, schemaFormat has been removed from the message object and message trait o
 
 ```
 asyncapi: 3.0.0
+...
 components:
   schemas:
     avroSchema:
@@ -303,6 +311,7 @@ Parameters can now only have the following properties: `enum`, `default`, `descr
 
 ```
 asyncapi: 3.0.0
+...
 channels: 
   userSignup:
     address: user/{userId}/signedup
@@ -313,7 +322,7 @@ channels:
 
 Issues: [#583](https://github.com/asyncapi/spec/issues/583) | Pull request: [#935](https://github.com/asyncapi/spec/pull/935) | Specification information: https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#parameterObject
 
-### Editorial changes
+### Editorial Changes
 
 We have [removed the note that stated we strived to be compatible with OpenAPI where possible]([#933](https://github.com/asyncapi/spec/pull/933)) because, with the recent changes, this is no longer the case. That said, we still strive to make the different specs as interoperable as possible i.e., with Avro, RAML, OpenAPI Schema, etc. 
 
@@ -322,4 +331,5 @@ Spec 3.0 have been a massive undertaking, so I would like to say a huge "thank y
 
 Thank you, xxxxxxxxxxxxxxxxx
 
-> Photo by <a href="https://unsplash.com/@andurache?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandru Tudorache</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Photo by <a href="https://unsplash.com/@jonathanborba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Borba</a> on <a href="https://unsplash.com/images/nature/sun?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
