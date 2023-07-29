@@ -1,7 +1,8 @@
-import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos'; 
+import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos';
 
 describe('Newsroom Videos', () => {
-  it('fetches and saves newsroom videos',async () => {
+  // eslint-disable-next-line cypress/no-async-tests
+  it('fetches and saves newsroom videos', async () => {
     // Define the data that the API should return (stubbed response)
     const stubbedResponse = {
       items: [
