@@ -1,19 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MzgwdmZiMTc4cnBmbTUzdWVlbmM4aWYyM2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/659",
-    "banner": "https://user-images.githubusercontent.com/40604284/229763606-c0b6ed3b-e120-427c-b87d-357856d92777.png",
-    "date": "2023-04-18T16:00:00.000Z"
-  },
-  {
-    "title": "Adding support for non-JSON schemas",
-    "calLink": "https://www.google.com/calendar/event?eid=dTlrM2s3Nmpqcjk2bWszYW83NmJzNnN0cm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/668",
-    "banner": "",
-    "date": "2023-04-18T14:00:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=Z2l0am1xbTBhcm8xa2sxc2dyOGdoaXRmZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/670",
@@ -229,5 +215,19 @@
     "url": "https://github.com/asyncapi/community/issues/800",
     "banner": "",
     "date": "2023-07-18T08:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aTBkZHJ2YWczcG1hZWFqbTFlMWowZjZnbzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/812",
+    "banner": "",
+    "date": "2023-08-02T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=YmlybTZwODdmMzBnNGg0b3J1OWxmdnBxNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/818",
+    "banner": "https://user-images.githubusercontent.com/40604284/256949583-958c34c8-4256-4ac5-852b-e00ec094fad0.png",
+    "date": "2023-08-08T16:00:00.000Z"
   }
 ]
