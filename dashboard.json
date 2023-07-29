@@ -136,6 +136,17 @@
       "score": 15.794602381209232
     },
     {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
@@ -145,6 +156,22 @@
       "repo": "asyncapi/cli",
       "labels": [],
       "score": 14.645904026212197
+    },
+    {
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 14.07155484871368
     },
     {
       "id": "PR_kwDOFLhIt85TFWOL",
@@ -161,31 +188,43 @@
         }
       ],
       "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.922856493716644
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5sqLtN",
+      "title": "[📑 Docs]: import Glee docs under tools folder",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2003",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5soAAM",
+      "title": "Create a research page to have participants sign up for the research study",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1991",
+      "repo": "asyncapi/website",
+      "author": "Mayaleeeee",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5rh81V",
       "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
@@ -605,16 +644,6 @@
           "color": "c5def5"
         }
       ]
-    },
-    {
-      "id": "I_kwDOBGu-185myWAv",
-      "title": "update release workflow in release branch",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/938",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": []
     },
     {
       "id": "I_kwDOBW5R_c5mwLzC",
