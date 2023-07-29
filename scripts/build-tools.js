@@ -6,7 +6,7 @@ const manualTools = require('../config/tools-manual.json')
 const fs = require('fs');
 const { resolve } = require('path');
 
-const buildTools = async () => {
+export const buildTools = async () => {
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
@@ -15,6 +15,7 @@ const buildTools = async () => {
       JSON.stringify(automatedTools, null, '  ')
     );
     await combineTools(automatedTools, manualTools);
+   
   } catch (err) {
     console.log(err);
     throw err

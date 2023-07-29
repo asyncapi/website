@@ -13,7 +13,9 @@ const getData = async () => {
       }
     );
     
-    return result.data;
+    const response = result.data
+    return response;
+    
   } catch (err) {
     console.log(err);
     throw err;

@@ -2,7 +2,7 @@ const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
-const Fuse = require("fuse.js")
+import Fuse from 'fuse.js'
 const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
@@ -102,6 +102,7 @@ async function convertTools(data) {
           console.error('Validation errors:', JSON.stringify(validate.errors, null, 2));
         }
       }
+       
     } catch (err) {
       console.error(err)
       throw err;

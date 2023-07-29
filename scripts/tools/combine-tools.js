@@ -6,10 +6,10 @@ const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
 const { resolve } = require('path');
-const Fuse = require("fuse.js");
+import Fuse from "fuse.js";
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
-const validate = ajv.compile(schema)
+export const validate = ajv.compile(schema)
 
 let finalTools = {};
 for (var category of categoryList) {
@@ -135,10 +135,12 @@ const combineTools = async (automatedTools, manualTools) => {
         }
         finalToolsList.sort((tool, anotherTool) => tool.title.localeCompare(anotherTool.title));
         finalTools[key].toolsList = finalToolsList
+       
     }
     fs.writeFileSync(
         resolve(__dirname, '../../config', 'tools.json'),
         JSON.stringify(finalTools)
+        
     );
     fs.writeFileSync(
         resolve(__dirname, '../../config', 'all-tags.json'),
@@ -146,4 +148,4 @@ const combineTools = async (automatedTools, manualTools) => {
     )
 }
 
-module.exports = { combineTools }
+module.exports = { combineTools , getFinalTool }
