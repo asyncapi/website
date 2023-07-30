@@ -36,7 +36,9 @@ describe('ToolsCard', () => {
   it('renders ToolsCard component', () => {
     cy.contains(toolData.title).should('be.visible');
     cy.contains('LANGUAGE').should('be.visible');
-    cy.contains(toolData.filters.language.name).should('be.visible');
+    toolData.filters.language.forEach((lang) => {
+      cy.contains(lang.name).should('be.visible');
+    });
     cy.contains('TECHNOLOGIES').should('be.visible');
     toolData.filters.technology.forEach((tech) => {
       cy.contains(tech.name).should('be.visible');
