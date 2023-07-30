@@ -142,7 +142,7 @@ export default function ToolDashboard() {
           <div className="relative w-full h-auto" ref={filterRef}>
             <div
               className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
-              onClick={() => setOpenFilter(!openFilter)}
+              onClick={() => setOpenFilter(!openFilter)} data-testid="ToolsDashboard-Filters-Click"
             >
               <FilterIcon />
               <div>Filter</div>
@@ -159,6 +159,7 @@ export default function ToolDashboard() {
             <div
               className="flex py-1 px-4 justify-center items-center gap-2 rounded-lg border w-full h-14 border-gray-300 hover:shadow-md hover:border-gray-600 text-gray-700 shadow text-sm cursor-pointer"
               onClick={() => setopenCategory(!openCategory)}
+              data-testid="ToolsDashboard-category"
             >
               <div>Jump to Category</div>
               <ArrowDown className={`my-auto ${openCategory ? "rotate-180" : ""}`} />
