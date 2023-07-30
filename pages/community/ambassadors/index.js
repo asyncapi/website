@@ -194,7 +194,7 @@ function Index() {
       </div>
       <div className="mt-20">
         <div className="flex justify-center">
-          <div className="text-center mt-10 lg:w-[55%]">
+          <div className="text-center mt-10 lg:w-[55%]" data-testid="Events-token">
             <Heading typeStyle="heading-lg">Tokens of our appreciation</Heading>
             <Heading
               typeStyle="body-sm"
@@ -228,7 +228,7 @@ function Index() {
             ))}
           </ul>
         </div>
-        <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg">
+        <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg" data-testid="Events-ambassadors">
           <div className="flex justify-center">
             <div className="text-center p-4 text-white lg:w-[65%]">
               <Heading typeStyle="heading-lg">

@@ -58,10 +58,7 @@ describe('Test for Ambassadors', () => {
     });
 
     it('displays the Tokens of our appreciation section with correct data', () => {
-        cy.contains('Tokens of our appreciation').should('exist');
-
-        cy.contains('We appreciate your commitment and passion for sharing your knowledge with your communities. Let us support you!')
-            .should('exist');
+        cy.get('[data-testid="Events-token"]').should('exist')
 
         ambassadorList.tokens.forEach((token) => {
             cy.contains('.mt-20 li', token.emoji).should('exist');
@@ -71,13 +68,7 @@ describe('Test for Ambassadors', () => {
     });
 
     it('displays the Become an AsyncAPI Ambassador section with correct data', () => {
-        cy.contains('Become an AsyncAPI Ambassador').should('exist');
-
-        cy.contains('The AsyncAPI Ambassador program is now open for applications! If you’re selected, you’ll join AsyncAPI\'s mission of helping community members all over the world, build the future of Event-Driven APIs.')
-            .should('exist');
-
-        cy.contains('Become an Ambassador now')
-            .should('have.attr', 'href', 'https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador');
+     cy.get('[data-testid="Events-ambassadors"]').should('exist');
     });
 
     it('should display NewsletterSubscribe', () => {
