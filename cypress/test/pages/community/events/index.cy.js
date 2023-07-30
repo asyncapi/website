@@ -1,6 +1,4 @@
-import { getEvents } from "../../../../../lib/staticHelpers";
 import Eventindex from "../../../../../pages/community/events";
-import meetings from "../../../../../config/meetings.json";
 import MockApp from "../../../../utils/mockApp";
 
 
