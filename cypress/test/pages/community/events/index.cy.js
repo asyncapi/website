@@ -1,7 +1,6 @@
 import Eventindex from "../../../../../pages/community/events";
 import MockApp from "../../../../utils/mockApp";
 
-
 describe('CommunityIndexPage', () => {
   beforeEach(() => {
     cy.mount(<MockApp><Eventindex /></MockApp>)
@@ -21,6 +20,14 @@ describe('CommunityIndexPage', () => {
     cy.get('[data-testid="Recordings-Link"]').should('have.attr','href','https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl')
     cy.get('[data-testid="Recordings-text"]').should('exist');
   });
+  
+  it('check for Events Filters' , () => {
+   cy.get('[data-testid="EventFilters-main"]').should('exist');
+  })
+
+  it('check for Events Post Item' , () => {
+    cy.get('[data-testid="EventPostItem-main"]').should('exist');
+   })
 
   it('Community Meeting Card', () => {
     cy.get('[data-testid="EventTypesCard"]').should('exist')
