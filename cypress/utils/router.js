@@ -1,3 +1,5 @@
+//this file was create to mock the useRouter hook from next.js which is not available otherwise in cypress and enables 
+//cypress to access router properties like asPath and links .
 import React from 'react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 

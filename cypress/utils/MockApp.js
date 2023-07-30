@@ -1,3 +1,8 @@
+
+//this file was created to mock the root "_app.js" , so that cypress could directly access refs , contexts and scripts present 
+//in the "Head" tags , thus by wrapping up pages into MockApp we enable to cypress to access routes , and can mount the required pages
+//easily 
+
 import AppContext from "../../context/AppContext";
 import { MDXProvider } from "../../components/MDX";
 import Layout from "../../components/layout/Layout";
