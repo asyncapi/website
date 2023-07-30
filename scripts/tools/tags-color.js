@@ -167,6 +167,11 @@ const technologiesColor = [
         name: "Flask",
         color: "bg-[#D7C7F2]",
         borderColor: "border-[#A387D2]"
+    },
+    {
+        name: "Nest Js",
+        color: "bg-[#E1224E]",
+        borderColor: "border-[#B9012b]"
     }
 ]
 

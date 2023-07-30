@@ -37,39 +37,6 @@
       "score": 32.45072852866624
     },
     {
-      "id": "PR_kwDOCHlHJM5SLlyl",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: create generator template tutorial",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/978",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 30.727680996170687
-    },
-    {
-      "id": "PR_kwDODCuNRs4r1oNL",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: proposed set of bindings for AWS - SNS and SQS",
-      "author": "iancooper",
-      "resourcePath": "/asyncapi/bindings/pull/84",
-      "repo": "asyncapi/bindings",
-      "labels": [],
-      "score": 24.984189221185513
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
       "isPR": false,
       "isAssigned": false,
@@ -126,83 +93,109 @@
       "resourcePath": "/asyncapi/website/pull/1805",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Uj1dR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: adding unit tests for newsroom component",
-      "author": "reachaadrika",
-      "resourcePath": "/asyncapi/website/pull/1891",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "PR_kwDOBW5R_c5KIyGW",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: code-examples",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/website/pull/1349",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.65612614745701
+      "score": 20.67657038994663
     },
     {
       "id": "PR_kwDOBW5R_c5VAjCE",
       "isPR": true,
-      "isAssigned": false,
+      "isAssigned": true,
       "title": "docs: structure of a AsyncAPI document",
       "author": "TRohit20",
       "resourcePath": "/asyncapi/website/pull/1922",
       "repo": "asyncapi/website",
-      "labels": [],
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 16.65612614745701
+    },
+    {
+      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
       "score": 15.794602381209232
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOFDnrNc5RUbi_",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "fix: help command",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/593",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOFLhIt85TFWOL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: verify changes to Maintainers.yaml made by the bot",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/750",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "do-not-merge",
+          "color": "B60205"
+        }
+      ],
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5rjzKd",
-      "title": "Bug: Incorrect link to meetings page",
+      "id": "I_kwDOBW5R_c5sqLtN",
+      "title": "[📑 Docs]: import Glee docs under tools folder",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1947",
-      "repo": "asyncapi/website",
-      "author": "CynthiaPeter",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5rjLlc",
-      "title": "add `.prettierignore` to prevent autoformatting ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/682",
-      "repo": "asyncapi/cli",
-      "author": "chinma-yyy",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5rh81V",
-      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1945",
+      "resourcePath": "/asyncapi/website/issues/2003",
       "repo": "asyncapi/website",
       "author": "AnimeshKumar923",
       "area": "docs",
@@ -214,27 +207,31 @@
       ]
     },
     {
-      "id": "I_kwDOCHlHJM5rH7-B",
-      "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
+      "id": "I_kwDOBW5R_c5soAAM",
+      "title": "Create a research page to have participants sign up for the research study",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1007",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
-      "area": "docs",
+      "resourcePath": "/asyncapi/website/issues/1991",
+      "repo": "asyncapi/website",
+      "author": "Mayaleeeee",
+      "area": "design",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
         }
       ]
     },
     {
-      "id": "I_kwDOCHlHJM5rH6bF",
-      "title": "[📑 Docs]: Update usage doc with info about new docker image",
+      "id": "I_kwDOBW5R_c5rh81V",
+      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1006",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/1945",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
       "area": "docs",
       "labels": [
         {
@@ -270,21 +267,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5q1B5J",
-      "title": "Overlay bug in the `/roadmap`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1906",
-      "repo": "asyncapi/website",
-      "author": "codingmickey",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -664,16 +646,6 @@
       ]
     },
     {
-      "id": "I_kwDOBGu-185myWAv",
-      "title": "update release workflow in release branch",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/938",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": []
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -768,6 +740,21 @@
       ]
     },
     {
+      "id": "I_kwDOE8Qh385hfhvh",
+      "title": "[📑 Docs]: Use code to represent the internal models",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1182",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOFi_gUM5hAZlI",
       "title": "Better logging for MQTT adapter",
       "isAssigned": false,
@@ -794,21 +781,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5gDKCJ",
-      "title": "Generate example function for TypeScript models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/462",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -991,6 +963,21 @@
         {
           "name": "❔ Question",
           "color": "54B65C"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5AXInF",
+      "title": "Improve help message with list of available examples",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/162",
+      "repo": "asyncapi/cli",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
