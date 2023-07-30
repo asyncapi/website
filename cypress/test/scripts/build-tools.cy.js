@@ -1,9 +1,8 @@
-import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos'; 
 import { buildTools } from '../../../scripts/build-tools';
 
-describe('Newsroom Videos', () => {
+describe('Build Tools', () => {
   // eslint-disable-next-line cypress/no-async-tests
-  it('fetches and saves newsroom videos',async () => {
+  it('fetches and saves in tools.json ',async () => {
     // Define the data that the API should return (stubbed response)
     const stubbedResponse = {
         "filters": {
