@@ -4,6 +4,7 @@ import ambassadorList from '../../../../../config/ambassador_lists.json'
 import ambassadors from '../../../../../config/AMBASSADORS_MEMBERS.json'
 import { addAdditionalUserInfo } from "../../../../../pages/community/ambassadors/index";
 import { sortBy } from 'lodash';
+
 describe('Test for Ambassadors', () => {
     beforeEach(() => {
         cy.mount(<MockApp><Index /></MockApp>)
