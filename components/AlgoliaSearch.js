@@ -162,6 +162,7 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }) {
         onOpen(indexName);
       }} 
       {...props}
+      data-testid="Search-Button"
     >
       {typeof children === 'function' ? children({ actionKey }) : children}
     </button>

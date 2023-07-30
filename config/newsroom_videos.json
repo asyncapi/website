@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/CagY5otdY14/hqdefault.jpg",
+    "title": "Community Meeting (July 25th 2023)",
+    "description": "https://github.com/asyncapi/community/issues/798.",
+    "videoId": "CagY5otdY14"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/GAjlJFXjMh8/hqdefault.jpg",
+    "title": "Design meeting #2",
+    "description": "Meeting issue: https://github.com/asyncapi/community/issues/800 Summary: Here's a summary of what we discussed: * Fran and ...",
+    "videoId": "GAjlJFXjMh8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/WlD5rqmfezw/hqdefault.jpg",
     "title": "Open Standards and Private Products: A DevRel&#39;s Dream or Nightmare",
     "description": "We are discussing the impact of open standards and working with private products as a DevRel.",
@@ -16,17 +28,5 @@
     "title": "Spec 3.0 DOCS Meeting (July 6th 2023)",
     "description": "https://github.com/asyncapi/community/issues/774.",
     "videoId": "Lunp8eSLONc"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/hc0Lxr3G8T4/hqdefault.jpg",
-    "title": "Spec 3.0 (July 5th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/760.",
-    "videoId": "hc0Lxr3G8T4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/EvC2PZXEM0M/hqdefault.jpg",
-    "title": "Community Meeting, Tuesday June 27th 2023",
-    "description": "https://github.com/asyncapi/community/issues/762.",
-    "videoId": "EvC2PZXEM0M"
   }
 ]
