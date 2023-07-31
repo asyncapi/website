@@ -17,6 +17,13 @@ The diagram below depicts how to construct dynamic URLs with query parameters.
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style E fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+style F fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[AsyncAPI Document]
 B[Servers Section]
 C[Base URLs]
