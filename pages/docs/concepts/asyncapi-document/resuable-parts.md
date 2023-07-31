@@ -13,6 +13,11 @@ You can use the ref keyword to reference a component within the same document. T
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[MyMessageSchema]
 B[components]
 C[myChannel]
@@ -25,27 +30,23 @@ B -->|references| A
 
 In the example below, you define a component called MyMessageSchema under the schemas section to describe the structure of a message. Under the publish operation of myChannel, you reference the MyMessageSchema component using the $ref keyword.
 
-```yaml
+```json
 {
-  'channels':
-    {
-      'myChannel':
-        {
-          'publish':
-            { 'message': { '$ref': '#/components/schemas/MyMessageSchema' } },
-        },
-    },
-  'components':
-    {
-      'schemas':
-        {
-          'MyMessageSchema':
-            {
-              'type': 'object',
-              'properties': { 'message': { 'type': 'string' } },
-            },
-        },
-    },
+  "channels": {
+    "myChannel": {
+      "publish": {
+        "message": { "$ref": "#/components/schemas/MyMessageSchema" }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MyMessageSchema": {
+        "type": "object",
+        "properties": { "message": { "type": "string" } }
+      }
+    }
+  }
 }
 ```
 
@@ -57,6 +58,11 @@ The image below defines the process of referencing another local document.
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[Main AsyncAPI Document]
 B[message-schema.yaml]
 C[components/schemas]
@@ -69,7 +75,7 @@ C -->|defines| D
 
 In the example below, you reference the component from the message-schema.yaml file.
 
-```yaml
+```json
 ##### ./message-schema.yaml
 
 {
@@ -91,7 +97,7 @@ In the example below, you reference the component from the message-schema.yaml f
 }
 ```
 
-```yaml
+```json
 ##### ./asyncapi.B.yaml
 ---
 {
@@ -119,6 +125,11 @@ The image below defines the process of referencing an external URL.
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[AsyncAPI Document]
 B[https://example.com/my-component.yaml]
 C[components/schemas]
@@ -131,11 +142,21 @@ C -->|defines| D
 
 In the example below, you reference the component from an external URL. The $ref value specifies the full URL to the external resource and the component's location.
 
-```yaml
+```json
 ##### ./asyncapi.A.yaml
-channels:
-  myChannel:
-    publish:
-      message:
-        $ref: 'https://example.com/my-component.yaml#/components/schemas/MyComponent'
+{
+  'channels':
+    {
+      'myChannel':
+        {
+          'publish':
+            {
+              'message':
+                {
+                  '$ref': 'https://example.com/my-component.yaml#/components/schemas/MyComponent',
+                },
+            },
+        },
+    },
+}
 ```
