@@ -49,7 +49,7 @@ A confusion that arrived from time to time, was what the URL of a [Server Object
 
 In v2, defining the URL was always as one long URL, sometimes even duplicating information such as protocol.
 
-In v3, the `url` property has now been split up into `host`, `pathname`, and as in v2 `protocol`. Making the information explicit.
+In v3, the `url` property has now been split up into `host`, `pathname`, and as in v2 `protocol`, making the information explicit.
 ```yml
 asyncapi: 2.6.0
 servers:
