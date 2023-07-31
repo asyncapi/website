@@ -23,6 +23,12 @@ The diagram below defines the AsyncAPI specification file using the local refere
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+style E fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[Define Avro Schema]
 B[Local Reference]
 C[Avro Schema File]
@@ -37,19 +43,18 @@ C-->|Defines structure of message payload| D
 
 Here is an example of an AsyncAPI specification file that uses the local reference method,
 
-```yaml
+```json
 {
-  'messageId': 'userSignup',
-  'name': 'UserSignup',
-  'title': 'User signup',
-  'summary': 'Action to sign a user up.',
-  'description': 'A longer description',
-  'tags': [{ 'name': 'user' }, { 'name': 'signup' }],
-  'payload':
-    {
-      'schemaFormat': 'application/vnd.apache.avro+json;version=1.9.0',
-      'schema': { '$ref': 'path/to/user-create.avsc#/UserCreate' },
-    },
+  "messageId": "userSignup",
+  "name": "UserSignup",
+  "title": "User signup",
+  "summary": "Action to sign a user up.",
+  "description": "A longer description",
+  "tags": [{ "name": "user" }, { "name": "signup" }],
+  "payload": {
+    "schemaFormat": "application/vnd.apache.avro+json;version=1.9.0",
+    "schema": { "$ref": "path/to/user-create.avsc#/UserCreate" }
+  }
 }
 ```
 
@@ -71,7 +76,7 @@ Create a separate Avro schema file with a .avsc extension. The file should defin
 
 Although optional, it is highly recommended to attach examples to the AsyncAPI specification. You can use JSON or YAML format for binary encodings, like Avro. Attach the examples to the examples property within the message payload definition. Here is an example,
 
-```yaml
+```json
 {
   "examples": [
     {
@@ -91,32 +96,25 @@ You can use a Schema Registry to separate the Avro schema from the message paylo
 
 To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
 
-```yaml
+```json
 {
-  'channels':
-    {
-      'user/signedup':
-        {
-          'subscribe':
-            {
-              'message': { 'payload': { '$ref': '#/components/schemas/User' } },
-            },
-        },
-    },
-  'components':
-    {
-      'schemas':
-        {
-          'User':
-            {
-              'type': 'object',
-              'properties':
-                {
-                  'fullName': { 'type': 'string' },
-                  'email': { 'type': 'string' },
-                },
-            },
-        },
-    },
+  "channels": {
+    "user/signedup": {
+      "subscribe": {
+        "message": { "payload": { "$ref": "#/components/schemas/User" } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "fullName": { "type": "string" },
+          "email": { "type": "string" }
+        }
+      }
+    }
+  }
 }
 ```
