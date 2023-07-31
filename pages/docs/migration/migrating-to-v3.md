@@ -121,7 +121,7 @@ Read more about the publish and subscribe confusion under [Operation keywords](#
 
 ### Channel address and channel key
 
-Another breaking change is that the channel key is no longer the channel path, instead, it's an arbitrary unique id, and instead, channel paths are described with the `address` property as part of the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
+Another breaking change is that the channel key is no longer the channel path, instead, it's an arbitrary unique ID, and instead, channel paths are described with the `address` property as part of the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
 
 <Asyncapi3IdAndAddressComparison className="my-8" />
 
@@ -146,7 +146,7 @@ channels:
 
 ### Operation keywords
 
-Another breaking change is that operations no longer are defined with `publish` and `subscribe` and their opposite meaning for your application. Instead, you define your application behavior directly, with `send` and `receive` through an `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
+Another breaking change is that operations no longer are defined with `publish` and `subscribe` and their opposite meaning for your application. Instead, you define your application behavior directly with `send` and `receive` through an `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
 
 <Asyncapi3OperationComparison className="my-8" />
 
@@ -156,7 +156,7 @@ Because if you define `publish` it means others may `publish` to this channel be
 
 In v3, the two operations are completely removed and replaced with an `action` property, that explicitly says what you (the application) do. Nothing about `others` and different perspectives to take into account.
 
-For more information about this publish and subscribe confusion here are some more reading materials:
+For more information about this publish and subscribe confusion, here are some more reading materials:
 - Fran Méndez's [Proposal to solve publish/subscribe confusion](https://github.com/asyncapi/spec/issues/618)
 - Nic Townsend's blog post [Demystifying the Semantics of Publish and Subscribe](https://www.asyncapi.com/blog/publish-subscribe-semantics)
 
@@ -191,9 +191,9 @@ operations:
 ```
 
 ### Messages instead of message
-In v2, if you wanted to define channels to have one or more messages, you would do it with `oneOf`, or if just a single message.
+In v2, if you wanted to define channels to have one or more messages, you would do it with `oneOf`.
 
-In v3, messages are now defined with the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messagesObject), if you want a channel to have one or more messages, you just define multiple key/value pairs, or if a single message, it's just a single key/value pair.
+In v3, messages are now defined with the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messagesObject). If you want a channel to have one or more messages, you just define multiple key-value pairs, or if a single message, it's just a single key-value pair.
 
 ```yml
 asyncapi: 2.6.0
@@ -237,7 +237,7 @@ channels:
 
 ### Unifying explicit and implicit references
 
-In v2, it was possible to do implicit references in some places, for example for server security configuration, it was by name which referred to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) in components - And for a channel to reference global servers by name.
+In v2, it was possible to do implicit references in some places. For example, for server security configuration, it was by name which referred to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) in components - And for a channel to reference global servers by name.
 
 In v3, this information MUST be explicit references. This did mean that we had to slightly change the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) `security` property, which is now an array instead of an object. We then moved the information about needed scopes for OAuth and OpenID Connect to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#securitySchemeObject).
 
@@ -294,11 +294,11 @@ components:
 ```
 
 ### New trait behavior
-Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the Message Object.
+Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant for example, if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the Message Object.
 
 In v3, this has now been changed so that main objects have a higher priority than what ever you define in traits. This applies to traits in both operation and message objects.
 
-Let's go through a few examples, for example here with the message object and associated traits:
+Let's go through a few examples. Here with the message object and associated traits:
 ```yml
 messageId: userSignup
 description: A longer description.
@@ -319,7 +319,7 @@ payload:
 ```
 This is the default behavior of the [JSON Merge Patch](https://tools.ietf.org/html/rfc7386) algorithm we use.
 
-However, in v3, we enforce a rule that `A property on a trait MUST NOT override the same property on the target object`. This means that in v3, after traits have been applied this is the full message object in v3:
+However, in v3, we enforce a rule that `A property on a trait MUST NOT override the same property on the target object`. This means that in v3, after traits have been applied, this is the full message object in v3:
 ```yml
 messageId: userSignup
 summary: Action to sign a user up.
@@ -337,7 +337,7 @@ With schemas, one thing that has always been impossible was reusing schemas with
 
 In v2, the information about which schema the payload is defined with is located under the message object and not directly associated with the schema itself. This makes reusability impossible because the two pieces of information are not directly associated with each other.
 
-So in v3, we add [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#multiFormatSchemaObject), encapsulating this information together. That means that if you anywhere use `schemaFormat`, you have to change the schema like below.
+So in v3, we add [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#multiFormatSchemaObject), encapsulating this information together. This means that if you anywhere use `schemaFormat`, you have to change the schema like below:
 
 
 ```yml
@@ -379,7 +379,7 @@ channels:
 ```
 
 ### Optional channels
-In v3 channels are now completely optional, which means that you dont have to define channels as an empty object as you did in v2.
+In v3, channels are now completely optional. It means that you don't have to define channels as an empty object as you did in v2.
 
 ```yml
 asyncapi: 2.6.0
