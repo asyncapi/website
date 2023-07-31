@@ -11,6 +11,12 @@ The diagram below depicts how to define and add servers.
 
 ```mermaid
 graph LR
+style A fill:#47BCEE, stroke:#333, stroke-width:2px;
+style E fill:#47BCEE, stroke:#333, stroke-width:2px;
+style C fill:#47BCEE, stroke:#333, stroke-width:2px;
+style D fill:#47BCEE, stroke:#333, stroke-width:2px;
+style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+
 A[AsyncAPI Specification File]
 B[Servers Section]
 C[Server Reference]
