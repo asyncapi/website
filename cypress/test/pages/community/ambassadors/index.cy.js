@@ -69,7 +69,7 @@ describe('Test for Ambassadors', () => {
     });
 
     it('displays the Become an AsyncAPI Ambassador section with correct data', () => {
-     cy.get('[data-testid="Events-ambassadors"]').should('exist');
+        cy.get('[data-testid="Events-ambassadors"]').should('exist');
     });
 
     it('should display NewsletterSubscribe', () => {

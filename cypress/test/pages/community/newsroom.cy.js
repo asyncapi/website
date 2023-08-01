@@ -3,11 +3,11 @@ import { mount } from "@cypress/react";
 import NewsroomSection from '../../../../pages/community/newsroom'
 
 describe('Test for Newsroom Section Pages', () => {
- it('renders correctly', () => {
+    it('renders correctly', () => {
         mount(
             <MockApp>
-             <NewsroomSection/>
+                <NewsroomSection />
             </MockApp>
-           );
-      });
+        );
+    });
 });

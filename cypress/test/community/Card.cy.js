@@ -26,7 +26,6 @@ describe('SmallHomeCards', () => {
     cy.get('[data-testid="Card-heading"]').should('have.class','mt-3');
     cy.get('[data-testid="Card-desc"]').should('have.class','mt-2');
     cy.get('[href="/path"]').should('exist');
-    
   });
 
   it('renders large card correctly', () => {

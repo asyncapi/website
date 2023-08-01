@@ -13,6 +13,7 @@ describe('TSC', () => {
         cy.get('[data-testid="TSC-Article-Link"]').should('have.attr', 'href', 'https://www.asyncapi.com/blog/governance-motivation')
         cy.get('[data-testid="NewsletterSubscribe-main"]').should('exist')
     });
+    
     it("should display TSC members", () => {
         // Check if the "Current TSC members" section is visible
         cy.contains("Current TSC members").should("be.visible");
@@ -34,6 +35,7 @@ describe('TSC', () => {
         });
 
     });
+
     it("should have valid social links", () => {
         // Check if each TSC member card's social links are valid
         cy.get('[data-testid="UserInfo-list"]').each((member) => {
@@ -46,12 +48,11 @@ describe('TSC', () => {
             });
         });
     });
+
     it('displays Question Card ', () => {
         cy.get('[data-testid="Question-card"]').should('exist');
         cy.get('[data-testid="Question-card-img"]').should('exist');
         cy.get(`[href="https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md"]`).should('exist');
-
     });
-
 });
 

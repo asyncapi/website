@@ -26,7 +26,7 @@ describe('Header', () => {
     cy.contains('Contribution Guide')
       .should('have.attr', 'href', 'https://github.com/asyncapi?type=source#-contribute-to-asyncapi')
       .should('have.attr', 'target', '_blank');
-      cy.get('[data-testid="Button-link"]').should('exist');
-      cy.get('[data-testid="Button-link"]').should('exist');
+    cy.get('[data-testid="Button-link"]').should('exist');
+    cy.get('[data-testid="Button-link"]').should('exist');
   });
 });
