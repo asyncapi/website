@@ -27,7 +27,7 @@ operations:
     channel:
       $ref: '#/channels/hello'`}
 </CodeBlock>
-Let's get into the details of this sample specification:
+Let's get into the details of this sample AsyncAPI document:
 
 <CodeBlock highlightedLines={[1]}>
 {`asyncapi: 3.0.0
