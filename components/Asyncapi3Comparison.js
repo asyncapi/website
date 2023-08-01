@@ -19,7 +19,7 @@ export function Asyncapi3Comparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -177,7 +177,7 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -276,7 +276,7 @@ export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -321,7 +321,7 @@ export function Asyncapi3ServerComparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -375,7 +375,7 @@ export function Asyncapi3MetaComparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -418,7 +418,7 @@ export function Asyncapi3MetaComparison({ className = '' }) {
 // eslint-disable-next-line react/prop-types
 export function Asyncapi3OperationComparison({ className = '' }) {
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
@@ -473,7 +473,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
   });
 
   return (
-    <div className={`${className} flex flex-wrap text-center`}>
+    <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
       <div className="flex-1 border border-black p-2 ml-1">
         <h3 className="text-lg font-sans font-medium mb-4 ml-2">AsyncAPI 2.x</h3>
 
