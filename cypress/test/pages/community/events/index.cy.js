@@ -1,6 +1,7 @@
 import Eventindex from "../../../../../pages/community/events";
 import MockApp from "../../../../utils/mockApp";
-
+import meetings from '../../../../../config/meetings.json';
+import moment from 'moment';
 describe('CommunityIndexPage', () => {
   beforeEach(() => {
     cy.mount(<MockApp><Eventindex /></MockApp>)
@@ -23,6 +24,24 @@ describe('CommunityIndexPage', () => {
   
   it('check for Events Filters' , () => {
    cy.get('[data-testid="EventFilters-main"]').should('exist');
+   cy.get('[data-testid="EventFilter-click"]').contains('All').click({force:true});
+   meetings.forEach((event) => {
+    cy.contains(event.title).should('be.visible');
+  });
+   cy.get('[data-testid="EventFilter-click"]').contains('Upcoming').click({force:true});
+   const currentDate = moment().format('YYYY-MM-DD');
+   meetings.forEach((event) => {
+     if (moment(event.date).isAfter(currentDate)) {
+       cy.contains(event.title).should('be.visible');
+     }
+    });
+    cy.get('[data-testid="EventFilter-click"]').contains('Recorded').click({force:true});
+   const currentDate1 = moment().format('YYYY-MM-DD');
+   meetings.forEach((event) => {
+     if (moment(event.date).isBefore(currentDate1)) {
+       cy.contains(event.title).should('be.visible');
+     }
+    });
   })
 
   it('check for Events Post Item' , () => {
