@@ -180,8 +180,6 @@ export default function NavBar({
             /> */}
 
             <GithubButton text="GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
-
-
           </div>
         </nav>
 
