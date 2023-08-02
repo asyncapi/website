@@ -36,10 +36,15 @@ export default function NavBar({
   const { pathname, query, asPath } = router;
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
-  const [lang, setLang] = useState("en");
   const { i18n } = useTranslation();
 
-  const changeLanguage = async (locale) => {
+  const changeLanguage = async (locale, langPicker) => {
+
+    // Verifies if the language change is from langPicker or the browser-api
+    if(langPicker){
+      localStorage.setItem('i18nLang', locale);
+    }
+
     // Detect current language
     const slug = asPath.split("/")[1];
     const langSlug = languages.includes(slug) && slug;
@@ -67,9 +72,10 @@ export default function NavBar({
     router.push(href);
   };
 
-  useEffect(() => {
-    changeLanguage(browserLanguageDetector());
-  }, []);
+  // To be enabled on the last PR
+  // useEffect(() => {
+  //   changeLanguage(browserLanguageDetector(), false);
+  // }, []);
 
   function outsideClick(menu) {
     if (open !== menu) return;
@@ -174,15 +180,14 @@ export default function NavBar({
             </SearchButton>
 
             {/* // Language Picker Component */}
-            {/* <LanguageSelect
+            <LanguageSelect
               options={uniqueLangs}
               onChange={(value) => {
-                setLang(value.toLowerCase());
-                changeLanguage(value.toLowerCase());
+                changeLanguage(value.toLowerCase(), true);
               }}
               className=""
               selected={i18n.language.toLocaleUpperCase()}
-            /> */}
+            />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
