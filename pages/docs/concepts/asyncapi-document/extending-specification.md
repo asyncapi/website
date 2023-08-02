@@ -1,6 +1,6 @@
 ---
 title: Extending Specification
-weight: 220
+weight: 240
 ---
 
 Extending the AsyncAPI specification is a technique that allows developers to include domain-specific or use-case-specific information not supported by the base specification. This extension capability provides customization, enabling APIs to accommodate unique details that would not otherwise fit within the confines of the standard AsyncAPI specification.
@@ -18,7 +18,8 @@ flowchart TD
     subgraph "AsyncAPI Specification"
         A[Specification] --> B[Custom Properties]
     end
-    subgraph "Custom Properties"
+    style B fill:#47BCEE,stroke:#47BCEE;
+    subgraph "Custom Properties" 
         B --> C[Patterned fields prefixed with x-]
         C --> D[User-defined properties]
         C --> E[Reserved for user definitions]
@@ -54,17 +55,19 @@ All available tooling might not support AsyncAPI extensions. The tooling can be 
 When encountering a case where the AsyncAPI specification does not support the required feature, that functionality can be extended using these extensions. If the extended part also benefits other developers, contributing to the AsyncAPI specification can be advisable. This contribution can be made by [creating an issue](https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&projects=&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+) on the AsyncAPI GitHub repository.
 
 ```mermaid
-graph TD
-A[Encounter Unsupported Feature]
-B[Extend using Extensions]
-C[Beneficial to Others?]
-D[Contribute to Specification]
-E[Create an issue on GitHub]
+  graph TD
+  A[Encounter Unsupported Feature]
+  B[Extend using Extensions]
+  C[Beneficial to Others?]
+  D[Contribute to Specification]
+  E[Create an issue on GitHub]
 
-A --> B
-B --> C
-C -->|Yes| D
-C -->|No| E
+  style A fill:#47BCEE,stroke:#47BCEE;
+
+  A --> B
+  B --> C
+  C -->|Yes| D
+  C -->|No| E
 ```
 
 ## Using the AsyncAPI Studio
