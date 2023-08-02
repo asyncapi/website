@@ -7,10 +7,10 @@ const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metr
 const URL_DEST_SCHEMAS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas";
 const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/definitions";
 
-// Legitimate request: 
+// Legitimate request:
 //   Patterns: /<source> OR /<source>/<file> OR /<source>/<version>/<file>
 //   Examples: /definitions OR /schema-store/2.5.0-without-$id.json OR /definitions/2.4.0/info.json
-// Non-legitimate request: 
+// Non-legitimate request:
 //   Patterns: /<source>/<randompath>/*
 //   Examples: /definitions/asyncapi.yaml OR /schema-store/2.4.0.JSON (uppercase)
 //
@@ -32,6 +32,7 @@ export default async (request: Request, context: Context) => {
 
   const isRequestingAFile = request.url.endsWith('.json');
   if (isRequestingAFile) {
+    var metricName: string
     if (response.ok) {
       // Manually cloning the response so we can modify the headers as they are immutable
       response = new Response(response.body, response);
@@ -40,20 +41,19 @@ export default async (request: Request, context: Context) => {
       // This lets tooling fetch the schemas directly from their URL.
       response.headers.set("Content-Type", "application/schema+json");
 
-      // Sending metrics to NR.
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.success", request, rewriteRequest)
-
-      await sendMetricToNR(context, metric);
+      metricName = "asyncapi.jsonschema.download.success";
     } else {
       // Notifying NR of the error.
-      const attributes = {
-        "responseStatus": response.status,
-        "responseStatusText": response.statusText,
-      };
-      const metric = newNRMetricCount("asyncapi.jsonschema.download.error", request, rewriteRequest, attributes);
-
-      await sendMetricToNR(context, metric);
+      metricName = "asyncapi.jsonschema.download.error";
     }
+
+    const metricAttributes = {
+      "responseStatus": response.status,
+      "responseStatusText": response.statusText,
+    };
+
+    // Sending metrics to NR.
+    await sendMetricToNR(context, newNRMetricCount(metricName, request, rewriteRequest, metricAttributes));
   }
 
   return response;
@@ -129,7 +129,7 @@ function newNRMetricCount(name: string, originalRequest: Request, rewriteRequest
   metric["interval.ms"] = 1;
 
   const splitPath = new URL(originalRequest.url).pathname.split("/");
-  // Examples: 
+  // Examples:
   //   /definitions/2.4.0/info.json => file = info.json
   //   /definitions/2.4.0.json      => file = 2.4.0.json
   const file = splitPath.slice(-1).pop();
