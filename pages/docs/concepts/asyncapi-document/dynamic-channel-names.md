@@ -1,32 +1,24 @@
 ---
 title: Dynamic Channel Names
-weight: 220
+weight: 80
 ---
 
 Dynamic channel names, also known as channel address expressions, are a key feature of AsyncAPI. Dynamic channel names in AsyncAPI are pivotal for enhancing the flexibility, interoperability, reusability, and standardization of asynchronous APIs. They allow for variable usage in channel names that can be adapted to multiple APIs, used across different protocols, and reused across channels, thus preventing redundancy and maintaining consistency. This adaptability to different APIs aids in creating a unified view of the API, making it easier to comprehend and utilize. Dynamic channel names contribute to code and documentation generation and event management tooling, thereby improving APIs' overall efficiency and usability.
 
 ```mermaid
-flowchart TD
-    subgraph "Dynamic Channel Names"
-        A[Key Feature] --> B[Enhanced Flexibility]
-        A --> C[Improved Interoperability]
-        A --> D[Increased Reusability]
-        A --> E[Promotes Standardization]
-    end
-    subgraph "Benefits"
-        B --> F[Adaptable to Multiple APIs]
-        B --> G[Supports Different Protocols]
-        D --> H[Prevents Redundancy]
-        D --> I[Maintains Consistency]
-        F --> J[Unified API View]
-        F --> K[Easier Comprehension and Utilization]
-    end
-    subgraph "Contributions"
-        H --> L[Code and Documentation Generation]
-        I --> M[Event Management Tooling]
-        J --> N[Improved API Efficiency]
-        K --> O[Enhanced API Usability]
-    end
+graph TD
+A[AsyncAPI]
+B[Dynamic Channel Names]
+D[Variable Usage in Channel Names]
+E[Adapted to Multiple APIs and Protocols]
+F[Reused Across Channels]
+
+style B fill:#47BCEE,stroke:#47BCEE;
+
+A --> B
+B --> D
+D --> E
+D --> F
 ```
 
 ## Parameter Context
@@ -40,6 +32,9 @@ flowchart TB
     subgraph "AsyncAPI Specification"
         A[Channel Names] --> B[Parameters]
         B --> C[Parameter Context]
+
+        style C fill:#47BCEE,stroke:#47BCEE;
+
     end
     subgraph "Parameter Context"
         C --> D[Indicate the origin of parameter value]
@@ -58,7 +53,7 @@ Here is an example of parameter context:
 address: user/{userId}/signedup
 parameters:
   userId:
-    description: Id of the user.
+    description: Id of the user
 ```
 
 ## Reusing Parameters
@@ -66,10 +61,6 @@ parameters:
 An important thing about parameters is that they can be reused. If there is another event, for example, a `UserUpdated` event, which also requires the userId, the parameter can be reused like the following example:
 
 ```yml
-asyncapi: 3.0.0
-info:
-  title: Cool Example
-  version: 0.1.0
 channels:
   userSignedUp:
     address: user/{userId}/signedup
