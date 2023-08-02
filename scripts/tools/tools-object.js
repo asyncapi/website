@@ -2,7 +2,7 @@ const schema = require("./tools-schema.json");
 const axios = require('axios')
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
-import Fuse from 'fuse.js'
+const Fuse = require("fuse.js");
 const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])

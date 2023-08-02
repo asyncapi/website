@@ -6,10 +6,10 @@ const schema = require("./tools-schema.json");
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
 const { resolve } = require('path');
-import Fuse from "fuse.js";
+const Fuse = require("fuse.js");
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
-export const validate = ajv.compile(schema)
+const validate = ajv.compile(schema)
 
 let finalTools = {};
 for (var category of categoryList) {

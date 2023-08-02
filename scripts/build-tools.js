@@ -6,7 +6,7 @@ const manualTools = require('../config/tools-manual.json')
 const fs = require('fs');
 const { resolve } = require('path');
 
-export const buildTools = async () => {
+const buildTools = async () => {
   try {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
