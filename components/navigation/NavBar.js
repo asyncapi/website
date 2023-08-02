@@ -20,6 +20,7 @@ import {
   languages,
   useTranslation,
 } from "next-i18next-static-site";
+import browserLanguageDetector from "../../lib/browserLanguageDetector";
 
 const isMobile = isMobileDevice();
 const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
@@ -65,6 +66,10 @@ export default function NavBar({
 
     router.push(href);
   };
+
+  useEffect(() => {
+    changeLanguage(browserLanguageDetector());
+  }, []);
 
   function outsideClick(menu) {
     if (open !== menu) return;
