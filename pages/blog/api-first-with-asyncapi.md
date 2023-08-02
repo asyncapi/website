@@ -1,6 +1,6 @@
 ---
 title: API-First with AsyncAPI
-date: 2023-06-17T06:00:00+01:00
+date: 2023-08-10T06:00:00+01:00
 type: Engineering
 tags:
   - API-First
