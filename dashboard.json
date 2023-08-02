@@ -17,17 +17,6 @@
       "score": 53.988822684860644
     },
     {
-      "id": "PR_kwDOCHlHJM5SLlyl",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: create generator template tutorial",
-      "author": "Florence-Njeri",
-      "resourcePath": "/asyncapi/generator/pull/978",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 33.02507770616476
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -46,17 +35,6 @@
         }
       ],
       "score": 32.45072852866624
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 22.68679251119144
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -142,26 +120,31 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOBW5R_c5KIyGW",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: code-examples",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/website/pull/1349",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOFLhIt85RTiHb",
+      "id": "PR_kwDOGPFxkc5Ey7vh",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: add flowchart for GSoC23 project in README.md",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/community/pull/719",
+      "title": "feat: share spec feature",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/server-api/pull/213",
+      "repo": "asyncapi/server-api",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.794602381209232
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 16.36895155870775
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -173,14 +156,46 @@
       "repo": "asyncapi/cli",
       "labels": [],
       "score": 14.645904026212197
+    },
+    {
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOFLhIt85TFWOL",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci: verify changes to Maintainers.yaml made by the bot",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/community/pull/750",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "do-not-merge",
+          "color": "B60205"
+        }
+      ],
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5rh81V",
-      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
+      "id": "I_kwDOBW5R_c5sqLtN",
+      "title": "[📑 Docs]: import Glee docs under tools folder",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1945",
+      "resourcePath": "/asyncapi/website/issues/2003",
       "repo": "asyncapi/website",
       "author": "AnimeshKumar923",
       "area": "docs",
@@ -192,27 +207,31 @@
       ]
     },
     {
-      "id": "I_kwDOCHlHJM5rH7-B",
-      "title": "[📑 Docs]: Update versioning docs with info how to check generator version",
+      "id": "I_kwDOBW5R_c5soAAM",
+      "title": "Create a research page to have participants sign up for the research study",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1007",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
-      "area": "docs",
+      "resourcePath": "/asyncapi/website/issues/1991",
+      "repo": "asyncapi/website",
+      "author": "Mayaleeeee",
+      "area": "design",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
         }
       ]
     },
     {
-      "id": "I_kwDOCHlHJM5rH6bF",
-      "title": "[📑 Docs]: Update usage doc with info about new docker image",
+      "id": "I_kwDOBW5R_c5rh81V",
+      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1006",
-      "repo": "asyncapi/generator",
-      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/1945",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
       "area": "docs",
       "labels": [
         {
@@ -627,16 +646,6 @@
       ]
     },
     {
-      "id": "I_kwDOBGu-185myWAv",
-      "title": "update release workflow in release branch",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/938",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": []
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -727,6 +736,21 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385hfhvh",
+      "title": "[📑 Docs]: Use code to represent the internal models",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1182",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
         }
       ]
     },

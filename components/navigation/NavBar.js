@@ -14,16 +14,57 @@ import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
 import Link from 'next/link';
+import LanguageSelect from '../languageSelector/LanguageSelect';
+import {
+  defaultLanguage,
+  languages,
+  useTranslation,
+} from "next-i18next-static-site";
 
 const isMobile = isMobileDevice();
+const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
+  key: repo,
+  text: repo,
+}));
 
 export default function NavBar({
   className = '',
   hideLogo = false,
 }) {
-  const { asPath } = useRouter();
+  const router = useRouter();
+  const { pathname, query, asPath } = router;
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
+  const [lang, setLang] = useState("en");
+  const { i18n } = useTranslation();
+
+  const changeLanguage = async (locale) => {
+    // Detect current language
+    const slug = asPath.split("/")[1];
+    const langSlug = languages.includes(slug) && slug;
+    const language = query.lang || langSlug || defaultLanguage;
+
+    let href = pathname;
+
+    if (locale) {
+      if (pathname.startsWith("/404")) {
+        href = `/${locale}`;
+      } else {
+        href = pathname.replace("[lang]", locale);
+      }
+    } else {
+      if (language) {
+        href = `/${language}${href}`;
+      } else {
+        href = `/${href}`;
+      }
+    }
+
+    // Fix double slashes
+    href = href.replace(/([^:]\/)\/+/g, "$1").replace("//", "/");
+
+    router.push(href);
+  };
 
   function outsideClick(menu) {
     if (open !== menu) return;
@@ -107,9 +148,9 @@ export default function NavBar({
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
             <NavItem
               text="Community"
-              href="/community" 
-              onClick={() => showOnClickMenu('community')} 
-              onMouseEnter={() => showMenu('community')} 
+              href="/community"
+              onClick={() => showOnClickMenu('community')}
+              onMouseEnter={() => showMenu('community')}
               hasDropdown
             />
             {open === 'community' && <CommunityPanel />}
@@ -126,6 +167,17 @@ export default function NavBar({
             >
               <IconLoupe />
             </SearchButton>
+
+            {/* // Language Picker Component */}
+            {/* <LanguageSelect
+              options={uniqueLangs}
+              onChange={(value) => {
+                setLang(value.toLowerCase());
+                changeLanguage(value.toLowerCase());
+              }}
+              className=""
+              selected={i18n.language.toLocaleUpperCase()}
+            /> */}
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
