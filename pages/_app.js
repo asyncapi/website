@@ -13,7 +13,7 @@ import {
   namespaces,
   defaultNamespace,
 } from "next-i18next-static-site";
-import locales from "../lib/locales";
+import loadLocales from "../lib/locales";
 import '../styles/globals.css'
 
 function App({ Component, pageProps, router }) {
@@ -23,12 +23,11 @@ function App({ Component, pageProps, router }) {
     defaultLanguage,
     namespaces,
     defaultNamespace,
-    locales,
+    locales: loadLocales(),
   };
 
   return (
     <I18nProvider i18n={i18n} /* Pass the i18n options to the i18n provider */>
-
       <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
           <script async defer src="https://buttons.github.io/buttons.js"></script>
