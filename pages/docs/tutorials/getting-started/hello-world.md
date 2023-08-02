@@ -115,8 +115,9 @@ operations:
 </CodeBlock>
 
 You can read the highlighted lines as:
-> This is the `payload` of the `message` that the `Hello world application` is subscribed to. You can pass the value of `address` to the `messages` to the `hello` channel and the `Hello world application` will receive it through `operations` object.
+> The `channels` section of a configuration file defines the different channels that are available in a system. Each channel has a unique name, and it can have one or more messages. The messages in a channel define the types of messages that can be sent and received on that channel.
 
+In this case, the hello channel has a single message called `sayHelloMessage`. This message has a string payload that must match the pattern `^hello .+$`. This means that the `sayHelloMessage` can be used to send messages that start with the word "hello" followed by any number of other characters.
 <CodeBlock highlightedLines={[10,11,12]}>
 {`asyncapi: 3.0.0
 info:
