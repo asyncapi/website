@@ -179,7 +179,7 @@ export default function NavBar({
               selected={i18n.language.toLocaleUpperCase()}
             /> */}
 
-            <GithubButton text="GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
+            <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>
         </nav>
 
