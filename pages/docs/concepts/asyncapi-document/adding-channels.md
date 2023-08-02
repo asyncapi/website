@@ -1,12 +1,12 @@
 ---
 title: Adding Channels
-weight: 200
+weight: 60
 ---
 
 Adding [channels](../channel.md) in AsyncAPI specification allows organizing and categorizing messages, routing messages to the appropriate consumers, decoupling producers and consumers, scaling and extending the API, and providing clear documentation and communication about API's communication patterns. Additionally, alternative names for channels can be user-defined to suit specific context and preferences.
 
 ```mermaid
-graph TD
+graph LR
   A[AsyncAPI Specification]
   B[Channels]
   C[Organizing and Categorizing Messages]
