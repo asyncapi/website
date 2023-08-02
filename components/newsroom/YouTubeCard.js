@@ -9,13 +9,13 @@ export default function YouTubeCard({ video }) {
     <li className={`rounded-lg min-w-full max-w-md h-full px-2 pb-6`}>
       <article className='h-full rounded-lg'>
         <div className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
-          <img
+          <img data-testid="YoutubeCard-img"
             src={video.image_url}
             alt="video"
             className="h-60 w-full object-cover"
           />
           
-          <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+          <div className="flex-1 bg-white p-6 flex flex-col justify-between" data-testid="YoutubeCard-main">
             <div>
               <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
                 {video.title}

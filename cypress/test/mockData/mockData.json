@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "summary": "Event 1",
+      "start": {
+        "dateTime": "2023-07-23T10:00:00Z"
+      },
+      "htmlLink": "https://www.example.com/event1"
+    },
+    {
+      "summary": "Event 2",
+      "start": {
+        "dateTime": "2023-07-24T15:30:00Z"
+      },
+      "htmlLink": "https://www.example.com/event2"
+    }
+  ]
+}

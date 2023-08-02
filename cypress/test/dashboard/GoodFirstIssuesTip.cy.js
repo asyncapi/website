@@ -8,14 +8,12 @@ describe('GoodFirstIssuesTip', () => {
   });
 
   it('toggles the tip when hovering over the icon', () => {
-    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseenter');
-    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseleave');
-
+    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').click({ force: true });
   });
 
   it('renders the tip content with the correct text', () => {
-    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').trigger('mouseenter');
-   //checking for the available class here
+    cy.get('[data-testid="GoodFirstIssuesTip-hover-icon"]').click({ force: true });
+    //checking for the available class here
     cy.get('.bg-white').should('have.css', 'visibility', 'visible');
 
     cy.contains('Is this your first contribution?').should('exist');

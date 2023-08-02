@@ -24,8 +24,10 @@ import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
 import NewsroomSection from '../components/newsroom/NewsroomSection'
+import { languageDetection } from "next-i18next-static-site";
 
 function HomePage() {
+  languageDetection();
   return (
     <>
       <Head />
