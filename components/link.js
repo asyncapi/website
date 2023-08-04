@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { defaultLanguage, languages } from "next-i18next-static-site";
+import { defaultLanguage, languages } from "i18n-static-site";
 
 const LinkComponent = ({ children, locale, ...props }) => {
   const router = useRouter();

@@ -4,7 +4,6 @@ const gemoji = require('remark-gemoji-to-emoji');
 const a11yEmoji = require('@fec/remark-a11y-emoji');
 const slug = require('remark-slug');
 const headingId = require('remark-heading-id');
-const { i18n } = require("./next-i18next-static-site.config");
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -21,7 +20,7 @@ const withMDX = require('@next/mdx')({
   },
 });
 
-const withTM = require("next-transpile-modules")(["next-i18next-static-site"]);
+const withTM = require("next-transpile-modules")(["i18n-static-site"]);
 
 module.exports = withTM(withMDX({
   pageExtensions: ['js', 'md'],
@@ -38,8 +37,5 @@ module.exports = withTM(withMDX({
     // config.resolve.alias["react/jsx-runtime"] = require.resolve('react/jsx-runtime');
 
     return config;
-  },
-  publicRuntimeConfig: {
-    i18n,
   },
 }));

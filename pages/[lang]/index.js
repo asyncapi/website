@@ -28,7 +28,7 @@ import NewsroomSection from '../../components/newsroom/NewsroomSection';
 import {
   getAllLanguageSlugs,
   getLanguage,
-} from "next-i18next-static-site";
+} from "i18n-static-site";
 
 function HomePage() {
   return (

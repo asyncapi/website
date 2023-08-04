@@ -19,7 +19,7 @@ import {
   defaultLanguage,
   languages,
   useTranslation,
-} from "next-i18next-static-site";
+} from "i18n-static-site";
 
 const isMobile = isMobileDevice();
 const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({

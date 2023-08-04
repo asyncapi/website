@@ -24,7 +24,7 @@ import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
 import NewsroomSection from '../components/newsroom/NewsroomSection'
-import { languageDetection } from "next-i18next-static-site";
+import { languageDetection } from "i18n-static-site";
 
 function HomePage() {
   languageDetection();
@@ -165,7 +165,7 @@ function HomePage() {
             >
               Platinum Sponsors
             </Heading>
-            <Sponsors className="mt-4" showSupportBanner={ false } />
+            <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
           <Container className="text-center pb-6" wide as="section">
@@ -176,7 +176,7 @@ function HomePage() {
             >
               Gold Sponsors
             </Heading>
-            <GoldSponsors className="mt-4" showSupportBanner={ false } />
+            <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
           <Container className="text-center pyb-6" wide as="section">
@@ -187,7 +187,7 @@ function HomePage() {
             >
               Silver Sponsors
             </Heading>
-            <SilverSponsors className="mt-4" showSupportBanner={ false } />
+            <SilverSponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
 
@@ -217,7 +217,7 @@ function HomePage() {
               Email us
             </TextLink> for more info.
           </Paragraph>
-          <SupportUs className="mt-4" showSupportBanner={ false } />
+          <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">

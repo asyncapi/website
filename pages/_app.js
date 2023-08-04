@@ -12,7 +12,7 @@ import {
   defaultLanguage,
   namespaces,
   defaultNamespace,
-} from "next-i18next-static-site";
+} from "i18n-static-site";
 import loadLocales from "../lib/locales";
 import '../styles/globals.css'
 
