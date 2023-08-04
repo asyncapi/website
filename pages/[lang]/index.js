@@ -1,33 +1,36 @@
-import Container from '../components/layout/Container'
-import NavBar from '../components/navigation/NavBar'
-import Hero from '../components/Hero'
-import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import Sponsors from '../components/sponsors/Sponsors'
-import Head from '../components/Head'
-import Slack from '../components/slack'
-import Button from '../components/buttons/Button'
-import Calendar from '../components/Calendar'
-import AdidasLogo from '../components/logos/Adidas'
-import AxwayLogo from '../components/logos/Axway'
-import SlackLogo from '../components/logos/Slack'
-import SalesforceLogo from '../components/logos/Salesforce'
-import SapLogo from '../components/logos/SAP'
-import Testimonial from '../components/Testimonial'
-import Heading from '../components/typography/Heading'
-import Paragraph from '../components/typography/Paragraph'
-import TextLink from '../components/typography/TextLink'
-import GoldSponsors from '../components/sponsors/GoldSponsors'
-import SilverSponsors from '../components/sponsors/SilverSponsors'
-import SupportUs from '../components/SupportUs/SupportUs'
-import StickyNavbar from '../components/navigation/StickyNavbar'
-import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
-import ICSFileButton from '../components/buttons/ICSFileButton';
-import SubscribeButton from '../components/buttons/SubscribeButton';
-import NewsroomSection from '../components/newsroom/NewsroomSection'
-import { languageDetection } from "next-i18next-static-site";
+import React from 'react';
+import Container from '../../components/layout/Container';
+import NavBar from '../../components/navigation/NavBar';
+import Hero from '../../components/Hero';
+import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import Sponsors from '../../components/sponsors/Sponsors';
+import Head from '../../components/Head';
+import Slack from '../../components/slack';
+import Button from '../../components/buttons/Button';
+import Calendar from '../../components/Calendar';
+import AdidasLogo from '../../components/logos/Adidas';
+import AxwayLogo from '../../components/logos/Axway';
+import SlackLogo from '../../components/logos/Slack';
+import SalesforceLogo from '../../components/logos/Salesforce';
+import SapLogo from '../../components/logos/SAP';
+import Testimonial from '../../components/Testimonial';
+import Heading from '../../components/typography/Heading';
+import Paragraph from '../../components/typography/Paragraph';
+import TextLink from '../../components/typography/TextLink';
+import GoldSponsors from '../../components/sponsors/GoldSponsors';
+import SilverSponsors from '../../components/sponsors/SilverSponsors';
+import SupportUs from '../../components/SupportUs/SupportUs';
+import StickyNavbar from '../../components/navigation/StickyNavbar';
+import GoogleCalendarButton from '../../components/buttons/GoogleCalendarButton';
+import ICSFileButton from '../../components/buttons/ICSFileButton';
+import SubscribeButton from '../../components/buttons/SubscribeButton';
+import NewsroomSection from '../../components/newsroom/NewsroomSection';
+import {
+  getAllLanguageSlugs,
+  getLanguage,
+} from "next-i18next-static-site";
 
 function HomePage() {
-  languageDetection();
   return (
     <>
       <Head />
@@ -41,11 +44,7 @@ function HomePage() {
         </Container>
 
         <Container className="text-center pb-12" wide as="section">
-          <Heading
-            level="h3"
-            typeStyle="heading-lg"
-            className="mb-4"
-          >
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Adopted by the world leading brands
           </Heading>
           <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
@@ -80,11 +79,7 @@ function HomePage() {
         </div>
 
         <Container className="text-center py-12" wide as="section">
-          <Heading
-            level="h3"
-            typeStyle="heading-lg"
-            className="mb-4"
-          >
+          <Heading level="h3" typeStyle="heading-lg" className="mb-4">
             Join our great community!
           </Heading>
           <Paragraph className="mt-2 md:w-1/2 md:mx-auto">
@@ -121,7 +116,7 @@ function HomePage() {
                       Join our public meetings
                     </Heading>
                     <Paragraph className="mt-2">
-                      AsyncAPI hosts different meetings every week. They are focused on different topic, sometimes purely technical and sometimes about community building. Pick one and join us!
+                      AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!
 
                       <TextLink href="/community/meetings">
                         Learn more about our meetings.
@@ -152,9 +147,7 @@ function HomePage() {
               <NewsroomSection />
             </Container>
           </div>
-
         </Container>
-
 
         <section className="pb-20" role="contentinfo" aria-label='Our Sponsors'>
           <Container className="text-center pb-6" wide as="section">
@@ -165,7 +158,7 @@ function HomePage() {
             >
               Platinum Sponsors
             </Heading>
-            <Sponsors className="mt-4" showSupportBanner={ false } />
+            <Sponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
           <Container className="text-center pb-6" wide as="section">
@@ -176,7 +169,7 @@ function HomePage() {
             >
               Gold Sponsors
             </Heading>
-            <GoldSponsors className="mt-4" showSupportBanner={ false } />
+            <GoldSponsors className="mt-4" showSupportBanner={false} />
           </Container>
 
           <Container className="text-center pyb-6" wide as="section">
@@ -187,9 +180,8 @@ function HomePage() {
             >
               Silver Sponsors
             </Heading>
-            <SilverSponsors className="mt-4" showSupportBanner={ false } />
+            <SilverSponsors className="mt-4" showSupportBanner={false} />
           </Container>
-
 
           <Container className="text-center py-6" wide as="section">
             <Heading
@@ -217,7 +209,7 @@ function HomePage() {
               Email us
             </TextLink> for more info.
           </Paragraph>
-          <SupportUs className="mt-4" showSupportBanner={ false } />
+          <SupportUs className="mt-4" showSupportBanner={false} />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-4">
@@ -233,21 +225,21 @@ function HomePage() {
             />
             <Testimonial
               className="md:pl-10 lg:pl-16"
-              text="Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human readable specification to these nuanced approaches."
+              text="Event-driven APIs need love too! AsyncAPI brings the many benefits of a machine/human-readable specification to these nuanced approaches."
               authorAvatar="/img/testimonials/bill-doerrfeld.jpg"
               authorName="Bill Doerrfeld"
               authorDescription="Editor in Chief at Nordic APIs"
             />
             <Testimonial
               className="md:pr-10 lg:pr-16"
-              text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event driven world, and that is exactly what the AsyncAPI initiative is making a reality."
+              text="Developers need to be able to quickly and consistently create event-driven applications that provide business value and react to customer needs in realtime. I can't count how many times I've heard developers ask for OpenAPI/Swagger style tools for the asynchronous and event-driven world, and that is exactly what the AsyncAPI initiative is making a reality."
               authorAvatar="/img/testimonials/jonathan-schabowsky.jpg"
               authorName="Jonathan Schabowsky"
               authorDescription="Sr. Architect, Office of the CTO at Solace"
             />
             <Testimonial
               className="md:pl-10 lg:pl-16"
-              text="We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors everyday for driving the community towards common standards."
+              text="We’ve been focusing on event-driven APIs since 2014 and thank the AsyncAPI contributors every day for driving the community towards common standards."
               authorAvatar="/img/testimonials/eric-horesnyi.jpg"
               authorName="Eric Horesnyi"
               authorDescription="CEO at Streamdata.io"
@@ -256,7 +248,24 @@ function HomePage() {
         </Container>
       </main>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
+
+export async function getStaticPaths() {
+  const paths = getAllLanguageSlugs();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const language = getLanguage(params.lang);
+  return {
+    props: {
+      language,
+    },
+  };
+}
