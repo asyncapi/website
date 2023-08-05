@@ -51,7 +51,7 @@ export default function TSC() {
       wide
     >
       <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-        <div className="grid lg:grid-cols-3 lg:gap-8">
+        <div className="grid lg:grid-cols-3 lg:gap-8" data-testid="TSC-content">
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
               What is a TSC?
@@ -89,7 +89,7 @@ export default function TSC() {
             </h3>
             <p className="my-4 text-base text-gray-500 lg:text-center">
               AsyncAPI Initiative runs under an{" "}
-              <a
+              <a data-testid="TSC-Governance-Link"
                 href="https://github.com/asyncapi/community/blob/master/CHARTER.md"
                 className="text-blue-500 hover:text-blue-400"
               >
@@ -98,7 +98,7 @@ export default function TSC() {
               that gives power to the people actively involved and working on
               the project. No matter if you are an individual contributor or
               backed by a company, you have equal rights. Read{" "}
-              <a
+              <a data-testid="TSC-Article-Link"
                 href="https://www.asyncapi.com/blog/governance-motivation"
                 className="text-blue-500 hover:text-blue-400"
               >
@@ -149,7 +149,7 @@ const socials = {
 function SocialLink({ href, social }) {
   return (
     <li>
-      <a
+      <a data-testid="Social-Links"
         href={href}
         className="text-gray-600 hover:text-gray-500"
         target="_blank"
@@ -164,17 +164,17 @@ function SocialLink({ href, social }) {
 
 function UserInfo({ user }) {
   return (
-    <li
+    <li data-testid="UserInfo-list"
       className="p-4 text-center border rounded-md border-gray-200 shadow-md"
       key={user.github}
     >
       <div className="flex flex-row">
-        <img
+        <img data-testid="UserInfo-avatar"
           src={user.avatarUrl}
           className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
         />
         <div className="flex-1">
-          <div className="font-bold text-lg my-3">{user.name}</div>
+          <div className="font-bold text-lg my-3" data-testid="UserInfo-name">{user.name}</div>
           <UserWorkStatus user={user} />
           <ul role="list" className="flex justify-center space-x-5 my-5">
             <SocialLink href={user.github} social="Github" />
@@ -186,7 +186,7 @@ function UserInfo({ user }) {
       <div className="flex flex-wrap gap-1 items-center">
         Maintainer of:
         {user.repos.map((repo) => (
-          <a
+          <a data-testid="Repo-Links"
             key={repo.name}
             className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-cyan-100 text-cyan-800 hover:bg-cyan-300"
             href={repo.url}
@@ -202,19 +202,19 @@ function UserInfo({ user }) {
 function UserWorkStatus({ user }) {
   if (user.availableForHire) {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-green-100 text-green-800">
+      <div data-testid="status-element" className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-green-100 text-green-800">
         Available for hire
       </div>
     );
   } else if (user.company) {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-orange-100 text-orange-800">
+      <div data-testid="status-element" className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-orange-100 text-orange-800">
         {user.company}
       </div>
     );
   } else {
     return (
-      <div className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-blue-100 text-blue-800">
+      <div data-testid="status-element" className="inline-flex items-center px-3 py-1 rounded-full text-md font-medium leading-5 bg-blue-100 text-blue-800">
         Individual Member
       </div>
     );
@@ -223,8 +223,8 @@ function UserWorkStatus({ user }) {
 
 function QuestionCard() {
   return (
-    <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4">
-      <img
+    <li className="py-10 px-6 text-center border rounded-md border-gray-200 shadow-md p-4" data-testid="Question-card">
+      <img data-testid="Question-card-img"
         src="/img/avatars/questionmark.webp"
         className="mx-auto rounded-full h-20 w-20 xl:w-28 xl:h-28"
       />
