@@ -5,8 +5,8 @@ describe('Hero Component', () => {
   it('displays the correct content', () => {
     mount(<Hero />);
 
-    cy.contains('Building the future of');
-    cy.contains('Event-Driven Architectures (EDA)');
+    cy.contains('main.header');
+    cy.contains('main.subHeader');
     cy.contains('Open-Source tools to easily build and maintain your event-driven architecture.');
     cy.contains('Read the docs');
     cy.contains('Quick search...');
