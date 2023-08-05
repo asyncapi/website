@@ -1,15 +1,15 @@
 ---
-title: Dynamic Channel Names
+title: Dynamic Channel Address
 weight: 80
 ---
 
-Dynamic channel names, also known as channel address expressions, are a key feature of AsyncAPI. Dynamic channel names in AsyncAPI are pivotal for enhancing the flexibility, interoperability, reusability, and standardization of asynchronous APIs. They allow for variable usage in channel names that can be adapted to multiple APIs, used across different protocols, and reused across channels, thus preventing redundancy and maintaining consistency. This adaptability to different APIs aids in creating a unified view of the API, making it easier to comprehend and utilize. Dynamic channel names contribute to code and documentation generation and event management tooling, thereby improving APIs' overall efficiency and usability.
+Dynamic channel address in AsyncAPI provide flexibility, reusability, and standardization in asynchronous APIs. They allow for the use of variable values in channel address, enabling the creation of parameterized channel templates. This feature has real-world use cases such as supporting API versioning, facilitating multi-tenancy, and enabling event filtering and routing. By incorporating dynamic channel address, developers can enhance the scalability, personalization, and efficiency of their APIs.
 
 ```mermaid
 graph TD
 A[AsyncAPI]
-B[Dynamic Channel Names]
-D[Variable Usage in Channel Names]
+B[Dynamic Channel Address]
+D[Variable Usage in Channel Address]
 E[Adapted to Multiple APIs and Protocols]
 F[Reused Across Channels]
 
@@ -23,14 +23,12 @@ D --> F
 
 ## Parameter Context
 
-The Parameter Context clarifies the origin of parameters, ensuring consistent understanding across teams. It also enables efficient code generation, thereby accelerating development and enhancing the developer experience.
-
-In AsyncAPI, the context of parameters in channel names often refers to where the parameter value comes from. For example, the parameter might be populated from the runtime event payload. This context can be noted in the AsyncAPI document, and code generators can use it to make the developer experience easier.
+The parameter context in AsyncAPI clarifies the origin of parameters, ensuring consistent understanding across teams. It enables efficient code generation, accelerating development and enhancing the developer experience. By noting the context in the AsyncAPI document, code generators can simplify the developer experience by automatically handling parameter values.
 
 ```mermaid
 flowchart TB
     subgraph "AsyncAPI Specification"
-        A[Channel Names] --> B[Parameters]
+        A[Channel Address] --> B[Parameters]
         B --> C[Parameter Context]
 
         style C fill:#47BCEE,stroke:#47BCEE;
@@ -50,7 +48,7 @@ flowchart TB
 Here is an example of parameter context:
 
 ```yml
-address: user/{userId}/signedup
+address: 'user/{userId}/signedup'
 parameters:
   userId:
     description: Id of the user
@@ -58,16 +56,16 @@ parameters:
 
 ## Reusing Parameters
 
-An important thing about parameters is that they can be reused. If there is another event, for example, a `UserUpdated` event, which also requires the userId, the parameter can be reused like the following example:
+An important thing about parameters is that they can be reused. If there is another message, for example, a `UserUpdated` message, which also requires the userId, the parameter can be reused like the following example:
 
 ```yml
 channels:
   userSignedUp:
-    address: user/{userId}/signedup
+    address: 'user/{userId}/signedup'
     parameters:
       userId:
         description: Id of the user.
-        location: $message.payload#/userid
+        location: '$message.payload#/userid'
     parameters:
       userId:
         description: Id of the user.
@@ -79,6 +77,6 @@ operations:
       $ref: '#/channels/userSignedUp'  
 ```
 
-In this code, the previously defined userId parameter is reused to form the channel name for `UserUpdated` event.
+In this AsyncAPI document, the previously defined userId parameter is reused to form the channel address for `UserUpdated` event.
 
 Defining and reusing parameters in this way can make your API definition cleaner, more maintainable, and less likely to contain errors.
