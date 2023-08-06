@@ -34,11 +34,112 @@ function AsyncAPISummary() {
             they may involve greater effort. Contribute <br/>monetarily using the following channels.
           </Paragraph>
         </div>
+        {/* images are remaining to add*/}
       </Container>
     );
-  }
-  
-  
+}
+
+function SponsorshipTiers() {
+    return (
+      <Container wide>
+        <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
+          <div className="col-start-3 col-span-5 my-12">
+            <Heading level="h1" typeStyle="heading-md">Sponsorship Tiers</Heading>
+            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+              AsyncAPI offers various sponsorship tiers, each with its own set
+              of benefits and privileges. These tiers include Bronze, Silver,
+              Gold, and Platinum.
+            </Paragraph>
+            <table className="my-8 w-full mx-auto max-w-full border-collapse border border-gray-500">
+              <thead style={{ backgroundColor: '#805CDA' }} className="text-lg text-white">
+                <tr>
+                  <th className="border border-white-500 px-10 py-6">Tiers</th>
+                  <th className="border border-white-500 px-10 py-6">Benefits</th>
+                  <th className="border border-white-500 px-10 py-6">Amounts</th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                <tr>
+                  <td className="border border-gray-500 px-10 py-2">Bronze</td>
+                  <td className="border border-gray-500 px-10 py-2">$100/month</td>
+                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-500 px-10 py-2">Silver</td>
+                  <td className="border border-gray-500 px-10 py-2">$500/month</td>
+                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-500 px-10 py-2">Gold</td>
+                  <td className="border border-gray-500 px-10 py-2">$1000/month</td>
+                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-500 px-10 py-2">Platinum</td>
+                  <td className="border border-gray-500 px-10 py-2">$2000/month</td>
+                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com. Up to 2
+                    hours of support per month. Support will be remote with the
+                    option of a shared screen or via private chat. Support hours do not
+                    accumulate.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Container>
+    );
+}
+
+function OtherFormsOfFinancialSupport() {
+  return (
+    <Container wide>
+      <div className="flex flex-wrap lg:justify-center lg:items-start my-8">
+        <div className="flex flex-col flex-wrap gap-2">
+          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="150px" height="150px" />
+          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 2" width="150px" height="150px" />
+          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 3" width="150px" height="150px" />
+        </div>
+
+
+        <div className="flex flex-col gap-4 max-w-4xl lg:w-3/5">
+          <div className="my-2">
+            <Heading level="h1" typeStyle="heading-md">Other forms of financial support</Heading>
+          </div>
+
+          <div className="my-2">
+            <Heading level="h2" typeStyle="heading-sm">Employee involvement</Heading>
+            <Paragraph typeStyle="body-md" className="my-2">
+              Assign your employees to contribute to projects under the AsyncAPI Initiative
+              on a regular basis, and we'll welcome them as new maintainers. You can
+              also provide direct assistance to a member of the Technical Steering Committee
+              (TSC) through contracts or employment for specific tasks.
+            </Paragraph>
+          </div>
+
+          <div className="my-2">
+            <Heading level="h2" typeStyle="heading-sm">Event organization</Heading>
+            <Paragraph typeStyle="body-md" className="my-2">
+              Host AsyncAPI conferences by sponsoring and organizing events under the AsyncAPI
+              brand at your provided venue.
+            </Paragraph>
+          </div>
+
+          <div className="my-2">
+            <Heading level="h2" typeStyle="heading-sm">Service provision</Heading>
+            <Paragraph typeStyle="body-md" className="my-2">
+              AsyncAPI Initiative relies on numerous tools, many of which incur costs. Your
+              organization can provide services such as hosting or storage to support our efforts.
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
+}
+
+
+
+
 
 function FinancialSummary() {
   const title="AsyncAPI Finance Summary";
@@ -53,6 +154,8 @@ function FinancialSummary() {
     >
         <Container wide>
             <AsyncAPISummary/>
+            <SponsorshipTiers/>
+            <OtherFormsOfFinancialSupport/>
         </Container>
 
     </GenericLayout>
