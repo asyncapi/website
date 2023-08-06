@@ -40,44 +40,45 @@ function AsyncAPISummary() {
 }
 
 function SponsorshipTiers() {
-    return (
-      <Container wide>
-        <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
-          <div className="col-start-3 col-span-5 my-12">
-            <Heading level="h1" typeStyle="heading-md">Sponsorship Tiers</Heading>
-            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
-              AsyncAPI offers various sponsorship tiers, each with its own set
-              of benefits and privileges. These tiers include Bronze, Silver,
-              Gold, and Platinum.
-            </Paragraph>
+  return (
+    <Container wide>
+      <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
+        <div className="col-start-2 col-span-7 my-12">
+          <Heading level="h1" typeStyle="heading-md">Sponsorship Tiers</Heading>
+          <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+            AsyncAPI offers various sponsorship tiers, each with its own set
+            of benefits and privileges. These tiers include Bronze, Silver,
+            Gold, and Platinum.
+          </Paragraph>
+          <div className="overflow-x-auto">
             <table className="my-8 w-full mx-auto max-w-full border-collapse border border-gray-500">
               <thead style={{ backgroundColor: '#805CDA' }} className="text-lg text-white">
                 <tr>
-                  <th className="border border-white-500 px-10 py-6">Tiers</th>
-                  <th className="border border-white-500 px-10 py-6">Benefits</th>
-                  <th className="border border-white-500 px-10 py-6">Amounts</th>
+                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Tiers</th>
+                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Benefits</th>
+                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Amounts</th>
                 </tr>
               </thead>
               <tbody className="text-sm">
                 <tr>
-                  <td className="border border-gray-500 px-10 py-2">Bronze</td>
-                  <td className="border border-gray-500 px-10 py-2">$100/month</td>
-                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Bronze</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$100/month</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-500 px-10 py-2">Silver</td>
-                  <td className="border border-gray-500 px-10 py-2">$500/month</td>
-                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Silver</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$500/month</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-500 px-10 py-2">Gold</td>
-                  <td className="border border-gray-500 px-10 py-2">$1000/month</td>
-                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Gold</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$1000/month</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-500 px-10 py-2">Platinum</td>
-                  <td className="border border-gray-500 px-10 py-2">$2000/month</td>
-                  <td className="border border-gray-500 px-10 py-2">Company logo in README on GitHub and asyncapi.com. Up to 2
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Platinum</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$2000/month</td>
+                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com. Up to 2
                     hours of support per month. Support will be remote with the
                     option of a shared screen or via private chat. Support hours do not
                     accumulate.</td>
@@ -86,9 +87,11 @@ function SponsorshipTiers() {
             </table>
           </div>
         </div>
-      </Container>
-    );
+      </div>
+    </Container>
+  );
 }
+
 
 function OtherFormsOfFinancialSupport() {
   return (
