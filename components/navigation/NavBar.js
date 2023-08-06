@@ -19,7 +19,7 @@ import {
   defaultLanguage,
   languages,
   useTranslation,
-} from "next-i18next-static-site";
+} from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
 
 const isMobile = isMobileDevice();

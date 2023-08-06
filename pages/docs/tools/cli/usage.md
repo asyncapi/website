@@ -29,7 +29,7 @@ $ npm install -g @asyncapi/cli
 $ asyncapi COMMAND
 running command...
 $ asyncapi (--version)
-@asyncapi/cli/0.51.6 linux-x64 node-v18.17.0
+@asyncapi/cli/0.51.12 linux-x64 node-v18.17.0
 $ asyncapi --help [COMMAND]
 USAGE
   $ asyncapi COMMAND
@@ -91,7 +91,7 @@ EXAMPLES
   $ asyncapi bundle ./asyncapi.yaml ./features.yaml --base ./asyncapi.yaml --reference-into-components
 ```
 
-_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/bundle.ts)_
+_See code: [src/commands/bundle.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/bundle.ts)_
 
 ## `asyncapi config`
 
@@ -105,7 +105,7 @@ DESCRIPTION
   CLI config settings
 ```
 
-_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/config/index.ts)_
+_See code: [src/commands/config/index.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/config/index.ts)_
 
 ## `asyncapi config context`
 
@@ -234,7 +234,7 @@ DESCRIPTION
   Convert asyncapi documents older to newer versions
 ```
 
-_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/convert.ts)_
+_See code: [src/commands/convert.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/convert.ts)_
 
 ## `asyncapi diff OLD NEW`
 
@@ -289,7 +289,7 @@ DESCRIPTION
   Find diff between two asyncapi files
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/diff.ts)_
 
 ## `asyncapi generate`
 
@@ -303,7 +303,7 @@ DESCRIPTION
   Generate typed models or other things like clients, applications or docs using AsyncAPI Generator templates.
 ```
 
-_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/generate/index.ts)_
+_See code: [src/commands/generate/index.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/generate/index.ts)_
 
 ## `asyncapi generate fromTemplate ASYNCAPI TEMPLATE`
 
@@ -432,7 +432,7 @@ DESCRIPTION
   Creates a new asyncapi file
 ```
 
-_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/new/index.ts)_
+_See code: [src/commands/new/index.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/new/index.ts)_
 
 ## `asyncapi new file`
 
@@ -520,7 +520,7 @@ EXAMPLES
   $ asyncapi optimize ./asyncapi.yaml --optimization=remove-components,reuse-components,move-to-components --output=terminal --no-tty
 ```
 
-_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/optimize.ts)_
+_See code: [src/commands/optimize.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/optimize.ts)_
 
 ## `asyncapi start`
 
@@ -534,7 +534,7 @@ DESCRIPTION
   Start asyncapi studio
 ```
 
-_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/start/index.ts)_
+_See code: [src/commands/start/index.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/start/index.ts)_
 
 ## `asyncapi start studio`
 
@@ -578,5 +578,5 @@ DESCRIPTION
   validate asyncapi file
 ```
 
-_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v0.51.6/src/commands/validate.ts)_
+_See code: [src/commands/validate.ts](https://github.com/asyncapi/cli/blob/v0.51.12/src/commands/validate.ts)_
 <!-- commandsstop -->

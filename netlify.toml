@@ -23,7 +23,6 @@
 [[edge_functions]]
 function = "serve-definitions"
 path = "/definitions/*"
-cache = "manual"
 
 # Used by JSON Schema definitions fetched from schemastore.org
 [[redirects]]
@@ -34,7 +33,6 @@ cache = "manual"
 [[edge_functions]]
 function = "serve-definitions"
 path = "/schema-store/*"
-cache = "manual"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

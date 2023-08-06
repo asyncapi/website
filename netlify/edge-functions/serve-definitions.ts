@@ -19,7 +19,6 @@ const legitimateRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json
 
 export default async (request: Request, context: Context) => {
   let rewriteRequest = buildRewrite(request);
-
   let response: Response;
   if (rewriteRequest === null) {
     rewriteRequest = request;
@@ -33,6 +32,12 @@ export default async (request: Request, context: Context) => {
   const isRequestingAFile = request.url.endsWith('.json');
   if (isRequestingAFile) {
     var metricName: string
+    const metricAttributes = {
+      'responseStatus': response.status,
+      'responseStatusText': response.statusText,
+      'cached': false,
+    };
+
     if (response.ok) {
       // Manually cloning the response so we can modify the headers as they are immutable
       response = new Response(response.body, response);
@@ -43,14 +48,17 @@ export default async (request: Request, context: Context) => {
 
       metricName = "asyncapi.jsonschema.download.success";
     } else {
-      // Notifying NR of the error.
-      metricName = "asyncapi.jsonschema.download.error";
+      switch (response.status) {
+        case 304:
+          metricName = "asyncapi.jsonschema.download.success";
+          metricAttributes["cached"] = true;
+          break;
+        default:
+          // Notifying NR of the error.
+          metricName = "asyncapi.jsonschema.download.error";
+          break;
+      }
     }
-
-    const metricAttributes = {
-      "responseStatus": response.status,
-      "responseStatusText": response.statusText,
-    };
 
     // Sending metrics to NR.
     await sendMetricToNR(context, newNRMetricCount(metricName, request, rewriteRequest, metricAttributes));
@@ -76,12 +84,11 @@ function buildRewrite(originalRequest: Request): (Request | null) {
     url = URL_DEST_DEFINITIONS + `/${definitionVersion}${file}`;
   }
 
+  originalRequest.headers.set('Authorization', 'token ' + GITHUB_TOKEN);
+
   return new Request(url, {
     method: originalRequest.method,
-    headers: new Headers({
-      // Setting GH Token to increase GH rate limit to 5,000 req/h.
-      'Authorization': "token " + GITHUB_TOKEN,
-    }),
+    headers: originalRequest.headers,
   });
 }
 
