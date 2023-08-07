@@ -6,33 +6,33 @@ import Button from '../components/buttons/Button'
 
 const cardsData = [
   {
-    title: "Card 1",
-    body: "This is the content of card 1. is the content of card 2 is the content of card 2",
+    title: "fffef",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
   {
-    title: "Card 2",
-    body: "This is the content of card 2. is the content of card 2 is the content of card 2 is the content of card 2",
+    title: "fwfwfc",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
   {
-    title: "Card 3",
-    body: "This is the content of card 3. is the content of card 2 is the content of card 2",
+    title: "khjhb",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
   {
-    title: "Card 4",
-    body: "This is the content of card 4. is the content of card 2 is the content of card 2 is the content of card 2",
+    title: "fugv",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy fdwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy fdwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
   {
-    title: "Card 5",
-    body: "This is the content of card 5. is the content of card 2 is the content of card 2",
+    title: "veuvei",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
   {
-    title: "Card 6",
-    body: "This is the content of card 6.",
+    title: "egef",
+    body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
     image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
   },
 ];
@@ -275,6 +275,28 @@ function SuccessStories() {
   )
 }
 
+function ContactUs() {
+  return (
+    <Container wide>
+      <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8">
+        <div className="col-start-3 col-span-5">
+          <Heading level="h1" typeStyle="heading-md">Interested in getting in touch?</Heading>
+          <Paragraph typeStyle="body-sm" className="my-2 max-w-4xl">
+            Feel free to contact us if you need more explanation. We are happy to hop on a call and help with
+            onboarding to the project as a sponsor. Write email to <span style={{color:"#8054F2" ,fontWeight:900}}>info@asyncapi.io.</span>
+          </Paragraph>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <Button
+          text="Contact Us"
+          href="#"
+        />
+      </div>
+    </Container>
+  )
+}
+
 function FinancialSummary() {
   const title = "AsyncAPI Finance Summary";
   const description = "Financial Summary of AsyncAPI";
@@ -292,6 +314,7 @@ function FinancialSummary() {
         <OtherFormsOfFinancialSupport />
         <ExpenseBreakdown />
         <SuccessStories />
+        <ContactUs/>
       </Container>
 
     </GenericLayout>
