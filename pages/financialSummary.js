@@ -4,6 +4,49 @@ import Container from '../components/layout/Container'
 import Paragraph from '../components/typography/Paragraph'
 import Button from '../components/buttons/Button'
 
+const cardsData = [
+  {
+    title: "Card 1",
+    body: "This is the content of card 1. is the content of card 2 is the content of card 2",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+  {
+    title: "Card 2",
+    body: "This is the content of card 2. is the content of card 2 is the content of card 2 is the content of card 2",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+  {
+    title: "Card 3",
+    body: "This is the content of card 3. is the content of card 2 is the content of card 2",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+  {
+    title: "Card 4",
+    body: "This is the content of card 4. is the content of card 2 is the content of card 2 is the content of card 2",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+  {
+    title: "Card 5",
+    body: "This is the content of card 5. is the content of card 2 is the content of card 2",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+  {
+    title: "Card 6",
+    body: "This is the content of card 6.",
+    image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
+  },
+];
+
+function Card({ title, body, image }) {
+  return (
+    <div className="bg-white rounded-lg shadow-md p-4">
+      {image && <img src={image} alt={title} className="w-full h-32 object-cover rounded-md mb-4" />}
+      <h2 className="text-lg font-semibold mb-2">{title}</h2>
+      <p className="text-gray-600">{body}</p>
+    </div>
+  );
+}
+
 function AsyncAPISummary() {
   return (
     <Container wide>
@@ -125,7 +168,7 @@ function OtherFormsOfFinancialSupport() {
   return (
     <Container wide>
       <div className="flex flex-wrap lg:justify-center lg:items-start my-8">
-      <div className="flex sm:flex-col gap-2 flex-row">
+        <div className="flex sm:flex-col gap-2 flex-row">
           <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="150px" height="150px" />
           <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 2" width="150px" height="150px" />
           <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 3" width="150px" height="150px" />
@@ -168,6 +211,28 @@ function OtherFormsOfFinancialSupport() {
   );
 }
 
+function ExpenseBreakdown() {
+  return (
+    <Container wide>
+      <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16" style={{ backgroundColor: "#EFFAFE" }}>
+        <div className="col-start-2 col-span-7 my-12">
+          <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3">Expense Breakdown</Heading>
+          <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
+            Funds from GitHub Sponsors are directly transferred to our AsyncAPI Open
+            Collective account. We maintain transparency in all expenses, and the TSC approves
+            anticipated expenses.
+          </Paragraph>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mx-3">
+            {cardsData.map((card, index) => (
+              <Card key={index} title={card.title} body={card.body} image={card.image} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  )
+}
+
 
 function FinancialSummary() {
   const title = "AsyncAPI Finance Summary";
@@ -184,6 +249,7 @@ function FinancialSummary() {
         <AsyncAPISummary />
         <SponsorshipTiers />
         <OtherFormsOfFinancialSupport />
+        <ExpenseBreakdown />
       </Container>
 
     </GenericLayout>
