@@ -5,38 +5,42 @@ import Paragraph from '../components/typography/Paragraph'
 import Button from '../components/buttons/Button'
 
 function AsyncAPISummary() {
-    return (
-      <Container wide>
-        <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8">
-          <div className="col-start-3 col-span-5">
-            <Heading level="h1" typeStyle="heading-md">AsyncAPI Finance Summary</Heading>
-            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
-              To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
-              the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
+  return (
+    <Container wide>
+      <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8">
+        <div className="col-start-3 col-span-5">
+          <Heading level="h1" typeStyle="heading-md">AsyncAPI Finance Summary</Heading>
+          <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+            To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
+            the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
               Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
-              while Linux Foundation Crowdfunding operates separately.
-            </Paragraph>
-          </div>
-        </div>
-        <div className="flex justify-center my-4">
-          <Button
-            text="Become a Sponsor"
-            href="#"
-          />
-        </div>
-        <hr className="my-12 border-t border-gray-300"/>
-        <div className="text-center text-sm">
-          <Heading level="h1" typeStyle="heading-md">Ways to Support Us?</Heading>
-        </div>
-        <div className="text-center my-4 text-sm max-width">
-          <Paragraph typeStyle="body-md" className="my-4">
-            The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br/>there are alternative options, 
-            they may involve greater effort. Contribute <br/>monetarily using the following channels.
+            while Linux Foundation Crowdfunding operates separately.
           </Paragraph>
         </div>
-        {/* images are remaining to add*/}
-      </Container>
-    );
+      </div>
+      <div className="flex justify-center my-4">
+        <Button
+          text="Become a Sponsor"
+          href="#"
+        />
+      </div>
+      <hr className="my-12 border-t border-gray-300" />
+      <div className="text-center text-sm">
+        <Heading level="h1" typeStyle="heading-md">Ways to Support Us?</Heading>
+      </div>
+      <div className="text-center my-4 text-sm max-width">
+        <Paragraph typeStyle="body-md" className="my-4">
+          The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br />there are alternative options,
+          they may involve greater effort. Contribute <br />monetarily using the following channels.
+        </Paragraph>
+      </div>
+      <div className="text-center">
+        <img className="mx-2 inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="50px" height="50px" />
+        <img className="mx-2 inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="50px" height="50px" />
+        <img className="mx-2 inline " src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="50px" height="50px" />
+      </div>
+    </Container>
+  );
 }
 
 function SponsorshipTiers() {
@@ -44,47 +48,71 @@ function SponsorshipTiers() {
     <Container wide>
       <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
         <div className="col-start-2 col-span-7 my-12">
-          <Heading level="h1" typeStyle="heading-md">Sponsorship Tiers</Heading>
-          <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+          <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3">Sponsorship Tiers</Heading>
+          <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
             AsyncAPI offers various sponsorship tiers, each with its own set
             of benefits and privileges. These tiers include Bronze, Silver,
             Gold, and Platinum.
           </Paragraph>
           <div className="overflow-x-auto">
-            <table className="my-8 w-full mx-auto max-w-full border-collapse border border-gray-500">
-              <thead style={{ backgroundColor: '#805CDA' }} className="text-lg text-white">
-                <tr>
-                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Tiers</th>
-                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Benefits</th>
-                  <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Amounts</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                <tr>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Bronze</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$100/month</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Silver</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$500/month</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Gold</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$1000/month</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
-                </tr>
-                <tr>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Platinum</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$2000/month</td>
-                  <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com. Up to 2
-                    hours of support per month. Support will be remote with the
-                    option of a shared screen or via private chat. Support hours do not
-                    accumulate.</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="my-3 mx-3">
+              <table className="my-8 w-full max-w-full border-collapse border border-gray-500">
+                <thead style={{ backgroundColor: '#805CDA' }} className="text-lg text-white">
+                  <tr>
+                    <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Tiers</th>
+                    <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Benefits</th>
+                    <th className="border border-white-500 px-6 py-4 md:px-10 md:py-6">Amounts</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  <tr>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Bronze</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$100/month</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Silver</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$500/month</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Gold</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$1000/month</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Platinum</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">$2000/month</td>
+                    <td className="border border-gray-500 px-6 py-2 md:px-10 md:py-2">Company logo in README on GitHub and asyncapi.com. Up to 2
+                      hours of support per month. Support will be remote with the
+                      option of a shared screen or via private chat. Support hours do not
+                      accumulate.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <style>
+              {`
+          @media (max-width: 768px) {
+            /* Add custom styles for mobile devices here */
+            /* For example, you can reduce the font size or adjust the table layout */
+            .text-lg {
+              font-size: 14px;
+            }
+            .text-sm {
+              font-size: 12px;
+            }
+            .px-6 {
+              padding-left: 4px;
+              padding-right: 4px;
+            }
+            .py-2 {
+              padding-top: 2px;
+              padding-bottom: 2px;
+            }
+          }
+        `}
+            </style>
           </div>
         </div>
       </div>
@@ -97,10 +125,10 @@ function OtherFormsOfFinancialSupport() {
   return (
     <Container wide>
       <div className="flex flex-wrap lg:justify-center lg:items-start my-8">
-        <div className="flex flex-col flex-wrap gap-2">
-          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="150px" height="150px" />
-          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 2" width="150px" height="150px" />
-          <img className="mx-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 3" width="150px" height="150px" />
+      <div className="flex sm:flex-col gap-2 flex-row">
+          <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="150px" height="150px" />
+          <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 2" width="150px" height="150px" />
+          <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 3" width="150px" height="150px" />
         </div>
 
 
@@ -141,11 +169,8 @@ function OtherFormsOfFinancialSupport() {
 }
 
 
-
-
-
 function FinancialSummary() {
-  const title="AsyncAPI Finance Summary";
+  const title = "AsyncAPI Finance Summary";
   const description = "Financial Summary of AsyncAPI";
   const image = "/";
   return (
@@ -155,11 +180,11 @@ function FinancialSummary() {
       image={image}
       wide
     >
-        <Container wide>
-            <AsyncAPISummary/>
-            <SponsorshipTiers/>
-            <OtherFormsOfFinancialSupport/>
-        </Container>
+      <Container wide>
+        <AsyncAPISummary />
+        <SponsorshipTiers />
+        <OtherFormsOfFinancialSupport />
+      </Container>
 
     </GenericLayout>
   )
