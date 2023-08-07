@@ -4,9 +4,10 @@
 
 <br/>
 <p align="center">
-<a href="https://github.com/asyncapi/website" alt="AsyncAPI GitHub website contributors">
-<img src="https://img.shields.io/github/contributors/asyncapi/website.svg?color=orange" /></a>
-<a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
+     <a href="https://github.com/asyncapi/website/graphs/contributors" alt="AsyncAPI GitHub website contributors">
+        <img src="https://img.shields.io/github/contributors/asyncapi/website?color=orange" />
+     </a>
+     <a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
 <img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" /></a>
 <a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
 <img src="https://img.shields.io/badge/Slack-@website.svg?logo=slack" /></a>
@@ -153,7 +154,7 @@ This repository has the following structure:
 <p align="left">
 <a href="https://asyncapi.slack.com/" target="blank"><img align="center" src="https://img.icons8.com/color/48/null/slack-new.png" alt="AsyncAPI Slack" height="30" width="40" /></a>
 <a href="https://twitter.com/asyncapispec" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="AsyncAPI Twitter" height="30" width="40" /></a>
-<a href="https://www.linkedin.com/company/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="asyncapi" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/company/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="AsyncAPI LinkedIn" height="30" width="40" /></a>
 <a href="https://www.youtube.com/c/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="AsyncAPI YouTube" height="30" width="40" /></a>
 <a href="https://www.twitch.tv/asyncapi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="AsyncAPI Twitch" height="30" width="40" /></a>
 </p>
