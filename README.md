@@ -4,17 +4,21 @@
 
 <br/>
 <p align="center">
-     <a href="https://github.com/asyncapi/website/graphs/contributors" alt="AsyncAPI GitHub website contributors">
-        <img src="https://img.shields.io/github/contributors/asyncapi/website?color=orange" />
-     </a>
-     <a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
-<img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" /></a>
-<a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
-<img src="https://img.shields.io/badge/Slack-@website.svg?logo=slack" /></a>
-<a href="https://app.netlify.com/sites/asyncapi-website/deploys">
-<img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" /></a>
-<a href="https://github.com/asyncapi/website" alt="AsyncAPI Apache License">
-<img src="https://img.shields.io/github/license/asyncapi/website.svg" /></a>
+    <a href="https://github.com/asyncapi/website/graphs/contributors" alt="AsyncAPI GitHub website contributors">
+      <img src="https://img.shields.io/github/contributors/asyncapi/website?color=orange" />
+    </a>
+    <a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
+      <img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" />
+    </a>
+    <a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+      <img src="https://img.shields.io/badge/Slack-@website.svg?logo=slack" />
+    </a>
+    <a href="https://app.netlify.com/sites/asyncapi-website/deploys">
+      <img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" />
+    </a>
+    <a href="https://github.com/asyncapi/website" alt="AsyncAPI Apache License">
+      <img src="https://img.shields.io/github/license/asyncapi/website.svg" />
+    </a>
 </p>
 
 ## Overview
