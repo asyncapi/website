@@ -69,10 +69,10 @@ const BarChartComponent = ({ data }) => {
     const barHeight = windowWidth < 900 ? null : 400;
 
     return (
-        <div className="flex justify-center mt-8">
-            <div className="w-full lg:w-2/3 px-4">
+        <div className="flex justify-center items-center mt-8">
+            <div className="w-full lg:w-2/3 px-4 text-center">
                 <div style={{ marginBottom: '20px' }}>
-                    <h1 id="budget-analysis" className="text-4xl font-semibold mb-2 my-2">Budget Analysis</h1>
+                    <h1 id="budget-analysis" className="text-4xl font-semibold mb-4 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
                     <h4 className="text-sm font-semibold mb-2 my-4">Total Expenses: ${totalExpenses.toFixed(2)}</h4>
                     {/* Select for category filter */}
@@ -114,6 +114,19 @@ const BarChartComponent = ({ data }) => {
                     <Legend />
                     <Bar dataKey="Amount" fill="rgba(123,93,211,1)" />
                 </BarChart>
+                <button
+                    style={{ backgroundColor: "rgb(123,93,211)", color: "white", fontWeight: 700, borderRadius:"10px" }}
+                    className="p-2 mt-6"
+                >
+                    <a
+                        href="https://docs.google.com/spreadsheets/u/0/d/1zvhwNlBhf3A4NMIRzuhIaCS1uQkKT-DTCBbKogt8OBo/htmlview"
+                        className="text-white font-semibold"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Click here to know more
+                    </a>
+                </button>
             </div>
         </div>
     );

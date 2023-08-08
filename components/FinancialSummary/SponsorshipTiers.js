@@ -14,7 +14,7 @@ function SponsorshipTiers() {
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
                 <div className="col-start-2 col-span-7 my-12">
-                    <Heading><h1 level="h1" typeStyle="heading-md" id="sponsorship-tiers" className="my-3 mx-3">Sponsorship Tiers</h1></Heading>
+                    <Heading><h1 level="h3" typeStyle="heading-md" id="sponsorship-tiers" className="my-3 mx-3">Sponsorship Tiers</h1></Heading>
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
                         AsyncAPI offers various sponsorship tiers, each with its own set
                         of benefits and privileges. These tiers include Bronze, Silver,
