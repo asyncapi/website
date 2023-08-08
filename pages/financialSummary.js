@@ -5,7 +5,6 @@ import Paragraph from '../components/typography/Paragraph'
 import Button from '../components/buttons/Button'
 import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
-import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark"
 
 const Expenses = [{
   Link: "https://opencollective.com/asyncapi/expenses/116776",
