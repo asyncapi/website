@@ -11,31 +11,14 @@ Traits are defined under the `components` section of your AsyncAPI document, wit
 
 ```mermaid
 graph TD
-  A[components]
-  B[operationTraits]
-  C[kafka]
-  D[bindings]
-  E[kafka]
-  F[clientId]
-  A --> B
-  B --> C
-  C --> D
-  D --> E
-  E --> F
+    A[AsyncAPI Document] --> B{Components}
+    B --> C[operationTraits]
+    B --> D[messageTraits]
+    C --> E{Trait 1}
+    D --> G{Trait 2}
+    E --> I[Properties]
+    G --> K[Properties]
 ```
-
-Here's an example of a trait named `kafka`:
-
-```yml
-components:
-  operationTraits:
-    kafka:
-      bindings:
-        kafka:
-          clientId: my-app-id
-```
-
-In this example, the `kafka` trait includes the `clientId` property for Kafka bindings.
 
 ## Applying Traits to Operations
 
@@ -60,14 +43,11 @@ tags:
   - name: user
   - name: signup
   - name: register
-bindings:
-  amqp:
-    ack: false
 traits:
   - $ref: '#/components/operationTraits/kafka'
 ```
 
-In this case, the `userSignup` operation in the `userSignup` channel applies the `kafka` trait, which includes the `clientId` property for Kafka bindings.
+In this case, the `userSignup` operation in the `userSignup` channel applies the `kafka` trait.
 
 ## Applying Traits to Messages
 
@@ -75,23 +55,13 @@ Traits can also be applied to `message` objects in the messages section of the A
 
 ```mermaid
 graph TD
-  A[messages]
-  B[myMessage]
-  C[traits]
-  D[$ref]
-  E[payload]
-  F[type: object]
-  G[properties]
-  H[message]
-  I[type: string]
-  A --> B
-  B --> C
-  C --> D
-  B --> E
-  E --> F
-  F --> G
-  G --> H
-  H --> I
+    subgraph AsyncAPI Document
+        traitsSection[traits]
+        messagesSection[messages]
+    end
+
+    traitsSection --> messageObject["$ref"]
+    messageObject --> messagesSection
 ```
 
 For example, let's say we have a trait named commonHeaders defined in messageTraits:
@@ -101,84 +71,35 @@ components:
   messageTraits:
     commonHeaders:
       headers:
-        - name: Content-Type
-          type: string
+        type: object
+        properties:
+          Content-Type:
+            type: integer
 ```
 
 To apply this trait to a message object, you can do:
 
 ```yml
-channels:
-  userSignup:
-    publish:
-      message:
-        $ref: '#/components/messages/commonMessage'
-        traits:
-          - $ref: '#/components/messageTraits/commonHeaders'
+traits:
+  - $ref: '#/components/messageTraits/commonHeaders'
 ```
 
-In this example, the `commonHeaders` trait, which includes a `Content-Type` header, is applied to the `commonMessage` within the `userSignup` operation.
+In this example, the `commonHeaders` trait, which includes a `Content-Type` header, is applied to the `commonMessage`.
 
-## Trait Merging and Overriding
+## Trait Merging
 
-Traits in AsyncAPI are merged into the message object using the [JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7386) protocol, which means that traits are merged into the operation or message object, and any conflicting properties will be overridden based on the order of evaluation.
+Traits in AsyncAPI are merged into the message object using the [JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7386) protocol, which means that traits are merged into the operation or message object.
 
 ```mermaid
 graph TD
-  A[channels]
-  B[userSignup]
-  C[publish]
-  D[operationId]
-  E[bindings]
-  F[kafka]
-  G[clientId]
-  H[traits]
-  I[$ref]
-  A --> B
+  A[Traits]
+  B[Operation/Message]
+  C[Trait Merging]
+  
+  subgraph JSON Merge Patch
+    C
+  end
+  
+  A --> C
   B --> C
-  C --> D
-  C --> E
-  E --> F
-  F --> G
-  C --> H
-  H --> I
-
 ```
-
-For example, let's consider the following trait and operation:
-
-```yml
-components:
-  operationTraits:
-    kafka:
-      bindings:
-        kafka:
-          clientId: my-app-id
-          groupId: default-group
-
-channels:
-  userSignup:
-    publish:
-      operationId: userSignup
-      traits:
-        - $ref: '#/components/operationTraits/kafka'
-      bindings:
-        kafka:
-          groupId: custom-group
-```
-
-In this case, the operation applies the `kafka` trait, which provides the default `clientId` and `groupId` properties. However, in the operation itself, the `groupId` property is overridden with a custom value. The final result would be:
-
-```yml
-channels:
-  userSignup:
-    publish:
-      operationId: userSignup
-      bindings:
-        kafka:
-          clientId: my-custom-app-id # this will override the clientId defined in trait
-      traits:
-        - $ref: '#/components/operationTraits/kafka'
-```
-
-As demonstrated, the `groupId` property defined in the operation overrides the value defined in the trait.
