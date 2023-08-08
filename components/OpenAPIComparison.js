@@ -72,7 +72,7 @@ export default function OpenAPIComparison({ className = '' }) {
 
                         <div className="grid grid-cols-2 grid-gap-2 flex-1 mt-1">
                             <div className="bg-gray-100 border border-black p-2 m-2">
-                                Definitions
+                                Schemas
                             </div>
                             <div className="bg-gray-100 border border-black p-2 m-2">
                                 Responses
@@ -81,16 +81,22 @@ export default function OpenAPIComparison({ className = '' }) {
                                 Parameters
                             </div>
                             <div className="bg-gray-100 border border-black p-2 m-2">
-                                Response Headers
+                                Examples
                             </div>
                             <div className="bg-gray-100 border border-black p-2 m-2">
-                                Security Definitions
+                                Request Bodies
                             </div>
                             <div className="bg-gray-100 border border-black p-2 m-2">
-                                Callbacks
+                                Headers
+                            </div>
+                            <div className="bg-gray-100 border border-black p-2 m-2">
+                                Security Schemes
                             </div>
                             <div className="bg-gray-100 border border-black p-2 m-2">
                                 Links
+                            </div>
+                            <div className="bg-gray-100 border border-black p-2 m-2">
+                                Callbacks
                             </div>
                         </div>
                     </div>
