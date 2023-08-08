@@ -1,0 +1,9 @@
+{
+    "newsletterCTA": {
+        "title": "Abonnieren Sie unseren Newsletter, um Neuigkeiten über AsyncAPI zu erhalten.",
+        "subtitle": "Wir respektieren Ihren Posteingang. Kein Spam, versprochen ✌️",
+        "nameInput": "Ihr Name",
+        "emailInput": "Deine E-Mail",
+        "subscribeBtn": "Abonnieren"
+    }
+}
