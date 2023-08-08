@@ -5,33 +5,33 @@ import Paragraph from '../typography/Paragraph'
 
 const cardsData = [
     {
-        title: "fffef",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
+        title: "Mentorship Program",
+        body: "Our AsyncAPI Mentorship program offers paid guidance to develop valuable features, investing in tools and motivated individuals for community benefit.",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
     {
-        title: "fwfwfc",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
+        title: "Bounty Program",
+        body: "Rewarding contributors regardless of affiliation or volunteer status. Free mentoring and support for newcomers to build portfolios and unlock tech prospects.",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
     {
-        title: "khjhb",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9",
+        title: "Events",
+        body: "Supporting AsyncAPI conferences incurs costs for services and travel arrangements. Your contributions facilitate event hosting and community growth.",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
     {
-        title: "fugv",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy fdwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy fdwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
+        title: "Swag Store",
+        body: "Creating a swag store for seamless distribution to contributors, mentees, ambassadors, and community members. Store profits can fund complimentary swag expenses.",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
     {
-        title: "veuvei",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
+        title: "Hiring",
+        body: "To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. Thulie joins as community manager, with plans to expand the team. our team",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
     {
-        title: "egef",
-        body: "dwsdhwdug dwu dw ydw wdy wy wf wyf f wyf9 wyf wfywdy f",
+        title: "Services",
+        body: "Occasionally, we must pay for services such as Zoom or Descript, as they are not available through specific Open Source support programs.",
         image: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4",
     },
 ];

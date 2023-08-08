@@ -1,3 +1,4 @@
+import { getFontDefinitionFromNetwork } from 'next/dist/server/font-utils'
 import Container from '../layout/Container'
 import Heading from "../typography/Heading"
 import Paragraph from '../typography/Paragraph'
@@ -33,7 +34,7 @@ function SuccessStories() {
                             <Heading level="h6" typeStyle="heading-sm" className="mb-2">AsyncAPI Conference</Heading>
                             <Paragraph typeStyle="body-sm" className="text-gray-600">Every year we organize a conference that
                                 attracts many participants. Only last year
-                                the conference generated . We
+                                the conference generated <span><a href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" style={{ color: "rgb(128,92,218)", fontWeight: 700, textDecoration: "underline" }}>3k views</a></span>. We
                                 plan to do a series of events in different
                                 locations every year.</Paragraph>
                         </div>

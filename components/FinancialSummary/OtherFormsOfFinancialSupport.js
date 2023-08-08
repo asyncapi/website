@@ -23,7 +23,7 @@ function OtherFormsOfFinancialSupport() {
                         <Paragraph typeStyle="body-md" className="my-2">
                             Assign your employees to contribute to projects under the AsyncAPI Initiative
                             on a regular basis, and we'll welcome them as new maintainers. You can
-                            also provide direct assistance to a member of the Technical Steering Committee
+                            also provide direct assistance to a member of the <span style={{color:"rgb(128,92,218)", fontWeight:700}}>Technical Steering Committee</span>
                             (TSC) through contracts or employment for specific tasks.
                         </Paragraph>
                     </div>

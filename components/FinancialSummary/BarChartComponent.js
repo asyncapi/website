@@ -57,8 +57,8 @@ const BarChartComponent = ({ data }) => {
         };
     }, []);
 
-    const barWidth = windowWidth < 900 ? 300 : 800;
-    const barHeight = windowWidth < 900 ? 200 : 400;
+    const barWidth = windowWidth < 900 ? null : 800;
+    const barHeight = windowWidth < 900 ? null : 400;
 
     return (
         <div className="flex justify-center mt-8">
