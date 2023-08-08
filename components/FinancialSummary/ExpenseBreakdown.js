@@ -47,11 +47,18 @@ function Card({ title, body, image }) {
 }
 
 function ExpenseBreakdown() {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     return (
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16" style={{ backgroundColor: "#EFFAFE" }}>
                 <div className="col-start-2 col-span-7 my-12">
-                    <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3">Expense Breakdown</Heading>
+                    <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3"><h1 id="expense-breakdown">Expense Breakdown</h1></Heading>
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
                         Funds from GitHub Sponsors are directly transferred to our AsyncAPI Open
                         Collective account. We maintain transparency in all expenses, and the TSC approves

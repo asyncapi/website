@@ -3,6 +3,13 @@ import Heading from "../typography/Heading"
 import Paragraph from '../typography/Paragraph'
 
 function OtherFormsOfFinancialSupport() {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     return (
         <Container wide>
             <div className="flex flex-wrap lg:justify-center lg:items-start my-8">
@@ -15,7 +22,7 @@ function OtherFormsOfFinancialSupport() {
 
                 <div className="flex flex-col gap-4 max-w-4xl lg:w-3/5">
                     <div className="my-2">
-                        <Heading level="h1" typeStyle="heading-md">Other forms of financial support</Heading>
+                        <Heading level="h1" typeStyle="heading-md"><h1 id="financial-support">Other forms of financial support</h1></Heading>
                     </div>
 
                     <div className="my-2">

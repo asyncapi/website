@@ -57,6 +57,14 @@ const BarChartComponent = ({ data }) => {
         };
     }, []);
 
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     const barWidth = windowWidth < 900 ? null : 800;
     const barHeight = windowWidth < 900 ? null : 400;
 
@@ -64,7 +72,7 @@ const BarChartComponent = ({ data }) => {
         <div className="flex justify-center mt-8">
             <div className="w-full lg:w-2/3 px-4">
                 <div style={{ marginBottom: '20px' }}>
-                    <h1 className="text-4xl font-semibold mb-2 my-2">Budget Analysis</h1>
+                    <h1 id="budget-analysis" className="text-4xl font-semibold mb-2 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
                     <h4 className="text-sm font-semibold mb-2 my-4">Total Expenses: ${totalExpenses.toFixed(2)}</h4>
                     {/* Select for category filter */}

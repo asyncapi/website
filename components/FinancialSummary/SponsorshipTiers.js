@@ -3,11 +3,18 @@ import Heading from "../typography/Heading"
 import Paragraph from '../typography/Paragraph'
 
 function SponsorshipTiers() {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     return (
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
                 <div className="col-start-2 col-span-7 my-12">
-                    <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3">Sponsorship Tiers</Heading>
+                    <Heading><h1 level="h1" typeStyle="heading-md" id="sponsorship-tiers" className="my-3 mx-3">Sponsorship Tiers</h1></Heading>
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
                         AsyncAPI offers various sponsorship tiers, each with its own set
                         of benefits and privileges. These tiers include Bronze, Silver,

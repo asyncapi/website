@@ -4,11 +4,18 @@ import Heading from "../typography/Heading"
 import Paragraph from '../typography/Paragraph'
 
 function SuccessStories() {
+    const hash = window.location.hash;
+    if (hash) {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     return (
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
                 <div className="col-start-2 col-span-7 my-12">
-                    <Heading level="h1" typeStyle="heading-lg" className="my-3 mx-3">Success Stories</Heading>
+                    <Heading level="h1" typeStyle="heading-lg" className="my-3 mx-3"><h1 id="success-stories">Success Stories</h1></Heading>
                     <Paragraph typeStyle="body-sm" className="my-3 max-w-4xl mx-3">
                         Thanks to financial support we can already see many success stories in
                         the project.
