@@ -20,7 +20,7 @@ function AsyncAPISummary() {
             <div className="flex justify-center my-4">
                 <Button
                     text="Become a Sponsor"
-                    href="https://github.com/sponsors/asyncapi"
+                    href="https://opencollective.com/asyncapi#category-CONTRIBUTE"
                 />
             </div>
             <hr className="my-12 border-t border-gray-300" />
@@ -35,13 +35,13 @@ function AsyncAPISummary() {
             </div>
             <div className="text-center">
                 <a href="https://opencollective.com/asyncapi">
-                    <img className="mx-2 inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Open Collective" width="50px" height="50px" />
+                    <img className="mx-2 inline" src="/img/finance/OpenCollective.png" alt="Open Collective" width="60px" height="60px" />
                 </a>
                 <a href="https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc">
-                    <img className="mx-2 inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Linux Foundation" width="50px" height="50px" />
+                    <img className="mx-2 inline" src="/img/finance/LFX.png" alt="Linux Foundation" width="50px" height="50px" />
                 </a>
                 <a href="https://github.com/sponsors/asyncapi">
-                    <img className="mx-2 inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Github" width="50px" height="50px" />
+                    <img className="mx-2 inline" src="/img/finance/GitHub.png" alt="Github" width="60px" height="60px" />
                 </a>
             </div>
 

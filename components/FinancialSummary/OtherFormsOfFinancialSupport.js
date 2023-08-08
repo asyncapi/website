@@ -7,9 +7,9 @@ function OtherFormsOfFinancialSupport() {
         <Container wide>
             <div className="flex flex-wrap lg:justify-center lg:items-start my-8">
                 <div className="flex sm:flex-col gap-2 flex-row">
-                    <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 1" width="150px" height="150px" />
-                    <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 2" width="150px" height="150px" />
-                    <img className="mx-2 hidden lg:block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/800px-Square_-_black_simple.svg.png" alt="Image 3" width="150px" height="150px" />
+                    <img className="mx-6 my-7 hidden lg:block" src="/img/finance/other_1.png" alt="Image 1" width="100px" height="100px" />
+                    <img className="mx-6 my-7 hidden lg:block" src="/img/finance/other_2.png" alt="Image 2" width="100px" height="100px" />
+                    <img className="mx-6 my-7 hidden lg:block" src="/img/finance/other_3.png" alt="Image 3" width="100px" height="100px" />
                 </div>
 
 
