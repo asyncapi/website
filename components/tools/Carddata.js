@@ -37,7 +37,7 @@ export const Carddata = (props) => {
     <div className={className || "text-sm text-gray-500 text-left"}>
       {heading}
       <span className="group relative" >
-        {outsideClick && visible[type] && <span ref={domNode} className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-2/3 absolute translate-x-1/3 -top-4 rounded px-2 py-1">
+        {outsideClick && visible[type] && <span ref={domNode}   data-testid="Carddata-description" className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-2/3 absolute translate-x-1/3 -top-4 rounded px-2 py-1">
        {read ? data :<div >
                 <TextTruncate
                   element="span"

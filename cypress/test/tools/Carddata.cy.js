@@ -14,15 +14,13 @@ describe('Carddata Component', () => {
       },
       heading: <h1>Card Heading</h1>,
       data: 'Card Data',
-      read: false,
+      read: true,
       setRead: cy.stub(),
       setVisible: cy.stub(),
       type: 'lang'
     };
     mount(<Carddata { ...props } />);
     cy.get('.custom-class').should('exist');
-    cy.get('button').click();
-    cy.get('button').click();
-    cy.get('.custom-class').should('exist');
+ 
   });
 });

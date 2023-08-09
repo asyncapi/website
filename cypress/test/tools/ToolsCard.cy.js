@@ -1,34 +1,39 @@
 import { mount } from '@cypress/react';
 import ToolsCard from '../../../components/tools/ToolsCard';
 const toolData = {
-  title: "Example Tool",
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  filters: {
-    hasCommercial: false,
-    language: [{
-      name: "JavaScript",
-      color: "yellow",
-      borderColor: "black"
-    }],
-    technology: [
+  "title": "SIO-AsyncAPI",
+  "description": "This is a code-first approach to generate AsyncAPI specification from Socket.IO server.",
+  "links": {
+    "websiteUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+    "docsUrl": "https://github.com/daler-rahimov/sio-asyncapi",
+    "repoUrl": "https://github.com/daler-rahimov/sio-asyncapi"
+  },
+  "filters": {
+    "language": [
       {
-        name: "React",
-        color: "blue",
-        borderColor: "white"
+        "name": "Python",
+        "color": "bg-[#A8D0EF]",
+        "borderColor": "border-[#3878AB]"
+      }
+    ],
+    "technology": [
+      {
+        "name": "Socket.IO",
+        "color": "bg-[#61d0f2]",
+        "borderColor": "border-[#40ccf7]"
       },
       {
-        name: "Node.js",
-        color: "green",
-        borderColor: "white"
+        "name": "Flask",
+        "color": "bg-[#D7C7F2]",
+        "borderColor": "border-[#A387D2]"
       }
-    ]
-  },
-  links: {
-    repoUrl: "https://github.com/example/tool",
-    websiteUrl: "https://example.com",
-    docsUrl: "https://docs.example.com"
+    ],
+    "categories": ["code-first", "api"],
+    "hasCommercial": false,
+    "isAsyncAPIOwner": false
   }
 };
+
 describe('ToolsCard', () => {
   beforeEach(() => {
     mount(<ToolsCard toolData={ toolData }/>);
@@ -44,15 +49,15 @@ describe('ToolsCard', () => {
       cy.contains(tech.name).should('be.visible');
     });
     if (toolData.links.repoUrl) {
-      cy.contains('View Github').should('have.attr', 'href', toolData.links.repoUrl);
+      cy.get('[data-testid="ToolsCard-repoUrl"]').should('have.attr', 'href', toolData.links.repoUrl);
     }
 
     if (toolData.links.websiteUrl) {
-      cy.contains('Visit Website').should('have.attr', 'href', toolData.links.websiteUrl);
+      cy.get('[data-testid="ToolsCard-websiteUrl"]').should('have.attr', 'href', toolData.links.websiteUrl);
     }
 
     if (toolData.links.docsUrl) {
-      cy.contains('Visit Docs').should('have.attr', 'href', toolData.links.docsUrl);
+     cy.get('[data-testid="ToolsCard-docsUrl"]').should('have.attr', 'href', toolData.links.docsUrl);
     }
   });
 

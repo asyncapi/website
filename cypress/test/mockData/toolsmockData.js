@@ -1,29 +1,39 @@
 export const toolData = {
-    title: "Example Tool",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    filters: {
-      hasCommercial: false,
-      language: {
-        name: "JavaScript",
-        color: "yellow",
-        borderColor: "black"
-      },
-      technology: [
-        {
-          name: "React",
-          color: "blue",
-          borderColor: "white"
+  "APIs": {
+    "description": "The following is a list of APIs that expose functionality related to AsyncAPI.",
+    "toolsList": [
+      {
+        "title": "API Tracker - AsyncAPI specs",
+        "description": "Explore APIs and companies with public AsyncAPI specifications.",
+        "links": {
+          "websiteUrl": "https://apitracker.io/specifications/asyncapi",
+          "repoUrl": ""
         },
-        {
-          name: "Node.js",
-          color: "green",
-          borderColor: "white"
+        "filters": {
+          "categories": ["api", "directory"],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false,
+          "technology": []
         }
-      ]
-    },
-    links: {
-      repoUrl: "https://github.com/example/tool",
-      websiteUrl: "https://example.com",
-      docsUrl: "https://docs.example.com"
-    }
-  };
+      },
+      {
+        "title": "AsyncAPI Server API",
+        "description": "Server API providing official AsyncAPI tools",
+        "links": {
+          "websiteUrl": "https://api.asyncapi.com/v1",
+          "docsUrl": "https://api.asyncapi.com/v1/docs",
+          "repoUrl": "https://github.com/asyncapi/server-api"
+        },
+        "filters": {
+          "technology": [
+            { "name": "Node.js", "color": "bg-[#BDFF67]", "borderColor": "border-[#84CE24]" },
+            { "name": "TypeScript", "color": "bg-[#61d0f2]", "borderColor": "border-[#40ccf7]" }
+          ],
+          "categories": ["api"],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      }
+    ]
+  }
+};
