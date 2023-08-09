@@ -124,7 +124,7 @@ const BarChartComponent = ({ data }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Click here to know more
+                        Know more about Budget
                     </a>
                 </button>
             </div>

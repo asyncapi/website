@@ -8,7 +8,9 @@ function AsyncAPISummary() {
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8">
                 <div className="col-start-3 col-span-5">
-                    <Heading level="h1" typeStyle="heading-md">AsyncAPI Finance Summary</Heading>
+                <Heading level="h1" typeStyle="heading-md my-3 mx-3" style={{ fontSize: '48px' }}>
+                        <h1>AsyncAPI Financial Summary</h1>
+                    </Heading>
                     <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
                         To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
                         the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub

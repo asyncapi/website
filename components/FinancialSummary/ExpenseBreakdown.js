@@ -26,7 +26,7 @@ const cardsData = [
     },
     {
         title: "Hiring",
-        body: "To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. Thulie joins as community manager, with plans to expand the team. our team",
+        body: (<p>To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{textDecoration:"underline"}} href="https://www.linkedin.com/in/v-thulisile-sibanda/">Thulie</a> joins as community manager, with plans to expand the team. our team</p>),
         image: "/img/finance/expense_5.png",
     },
     {
@@ -38,10 +38,12 @@ const cardsData = [
 
 function Card({ title, body, image }) {
     return (
-        <div className="bg-white rounded-lg shadow-md p-4">
-            {image && <img src={image} alt={title} className="w-full h-32 object-cover rounded-md mb-4" />}
-            <h2 className="text-lg font-semibold mb-2">{title}</h2>
-            <p className="text-gray-600">{body}</p>
+        <div className="bg-white rounded-md shadow-md p-4 flex items-center">
+            {image && <img src={image} alt={title} className="w-1/6 h-auto object-cover rounded-md mr-4" />}
+            <div  style={{color: "#212526" }}>
+                <h2 className="text-lg font-semibold mb-1">{title}</h2>
+                <p className="text-sm text-gray-600">{body}</p>
+            </div>
         </div>
     );
 }
@@ -58,13 +60,15 @@ function ExpenseBreakdown() {
         <Container wide>
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16" style={{ backgroundColor: "#EFFAFE" }}>
                 <div className="col-start-2 col-span-7 my-12">
-                    <Heading level="h1" typeStyle="heading-md" className="my-3 mx-3"><h1 id="expense-breakdown">Expense Breakdown</h1></Heading>
-                    <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3">
+                    <Heading level="h1" typeStyle="heading-md my-3 mx-3" style={{ fontSize: '32px' }}>
+                        <h1 id="expense-breakdown">Expense Breakdown</h1>
+                    </Heading>
+                    <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-3" style={{color: "#212526" }}>
                         Funds from GitHub Sponsors are directly transferred to our AsyncAPI Open
                         Collective account. We maintain transparency in all expenses, and the TSC approves
                         anticipated expenses.
                     </Paragraph>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mx-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mx-3">
                         {cardsData.map((card, index) => (
                             <Card key={index} title={card.title} body={card.body} image={card.image} />
                         ))}
