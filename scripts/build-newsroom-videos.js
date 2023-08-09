@@ -1,7 +1,7 @@
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 const fetch = require('node-fetch')
-export async function buildNewsroomVideos() {
+async function buildNewsroomVideos() {
 
     try {
         let data;
@@ -41,3 +41,4 @@ export async function buildNewsroomVideos() {
 }
 
 buildNewsroomVideos()
+module.exports={buildNewsroomVideos}
