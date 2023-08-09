@@ -114,19 +114,6 @@ const BarChartComponent = ({ data }) => {
                     <Legend />
                     <Bar dataKey="Amount" fill="rgba(123,93,211,1)" />
                 </BarChart>
-                <button
-                    style={{ backgroundColor: "rgb(123,93,211)", color: "white", fontWeight: 700, borderRadius:"10px" }}
-                    className="p-2 mt-6"
-                >
-                    <a
-                        href="https://docs.google.com/spreadsheets/u/0/d/1zvhwNlBhf3A4NMIRzuhIaCS1uQkKT-DTCBbKogt8OBo/htmlview"
-                        className="text-white font-semibold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Know more about Budget
-                    </a>
-                </button>
             </div>
         </div>
     );
