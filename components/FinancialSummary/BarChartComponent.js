@@ -1,5 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import ExpensesLink from './ExpensesLinkObject'
+
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        const data = payload[0].payload;
+        const tooltipStyle = {
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            border: '1px solid #ccc',
+            padding: '10px',
+            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+            borderRadius: '4px',
+        };
+        const labelStyle = {
+            fontSize: '14px',
+            fontWeight: 'bold',
+            marginBottom: '5px',
+        };
+        const amountStyle = {
+            fontSize: '12px',
+            color: '#555',
+        };
+
+        return (
+            <div className="custom-tooltip" style={tooltipStyle}>
+                <p className="tooltip-label" style={labelStyle}>{data.Category}</p>
+                <p className="tooltip-amount" style={amountStyle}>${data.Amount.toFixed(2)}</p>
+            </div>
+        );
+    }
+    return null;
+};
+
+
 
 const BarChartComponent = ({ data }) => {
     // State for selected filters
@@ -108,12 +141,25 @@ const BarChartComponent = ({ data }) => {
                 {/* Recharts BarChart */}
                 <BarChart width={barWidth} height={barHeight} data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    {windowWidth > 900 ? <XAxis dataKey="Category" /> : null}
                     <YAxis />
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} />
                     <Legend />
-                    <Bar dataKey="Amount" fill="rgba(123,93,211,1)" />
+                    <Bar
+                        dataKey="Amount"
+                        fill="rgba(123,93,211,1)"
+                        onClick={(data) => {
+                            // Get the category from the clicked bar's payload
+                            const category = data.payload.Category;
+                            // Replace the URL with the external website URL you want to open
+                            const matchedLinkObject = ExpensesLink.find(obj => obj.category === category)
+                            if (matchedLinkObject) {
+                                // Extract the link from the matched object and open it in a new tab/window
+                                window.open(matchedLinkObject.link, '_blank');
+                            };
+                        }}
+                    />
                 </BarChart>
+
             </div>
         </div>
     );
