@@ -18,10 +18,10 @@ export default function InlineHelp({
     <div className={className}>
       {
         isHelpVisible && (
-          <div className="absolute left-0 right-0 mt-6 p-2 bg-gray-800 text-center text-white text-xs rounded normal-case lg:-ml-4 lg:w-48">{text}</div>
+          <div className="absolute left-0 right-0 mt-6 p-2 bg-gray-800 text-center text-white text-xs rounded normal-case lg:-ml-4 lg:w-48" data-testid="InlineHelp">{text}</div>
         )
       }
-      <QuestionMark className="cursor-pointer h-4 -mt-0.5 inline-block text-gray-500" onClick={() => setIsHelpVisible(!isHelpVisible)} onMouseEnter={() => setIsHelpVisible(true)} onMouseLeave={() => setIsHelpVisible(false)} />
+      <QuestionMark className="cursor-pointer h-4 -mt-0.5 inline-block text-gray-500" onClick={() => setIsHelpVisible(!isHelpVisible)} onMouseEnter={() => setIsHelpVisible(true)} onMouseLeave={() => setIsHelpVisible(false)} data-testid="InlineHelp-icon" />
     </div>
   )
 }

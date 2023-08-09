@@ -25,6 +25,7 @@ describe('SmallHomeCards', () => {
     cy.get('[data-testid="Card-desc"]').contains('Description').should('exist');
     cy.get('[data-testid="Card-heading"]').should('have.class','mt-3');
     cy.get('[data-testid="Card-desc"]').should('have.class','mt-2');
+    cy.get('[href="/path"]').should('exist');
   });
 
   it('renders large card correctly', () => {
@@ -46,6 +47,7 @@ describe('SmallHomeCards', () => {
     // Testing for large prop classes and styles
     cy.get('[data-testid="Card-heading-lg"]').contains('Heading').should('exist');
     cy.get('[data-testid="Card-desc-lg"]').contains('Description').should('exist');
+    cy.get('[href="/path"]').should('exist');
     cy.get('[data-testid="Card-heading-lg"]').should('have.class','mt-10');
     cy.get('[data-testid="Card-desc-lg"]').should('have.class','mt-6');
    
