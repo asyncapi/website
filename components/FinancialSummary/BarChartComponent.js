@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import ExpensesLink from './ExpensesLinkObject'
+import Expenses from './ExpenseObject';
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -32,7 +33,82 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+const ExpensesTable = () => {
+    const uniqueMonths = [...new Set(Expenses.map(item => item.Month))];
+    const uniqueCategories = [...new Set(Expenses.map(item => item.Category))];
 
+    return (
+        <div className="expenses-table-container">
+            <table className="expenses-table">
+                <thead>
+                    <tr>
+                        <th className="empty-cell"></th>
+                        {uniqueCategories.map(category => (
+                            <th key={category} className="category-cell">
+                                {category}
+                            </th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                    {uniqueMonths.map(month => (
+                        <tr key={month}>
+                            <td className="month-cell">{month}</td>
+                            {uniqueCategories.map(category => {
+                                const matchingExpense = Expenses.find(
+                                    item => item.Month === month && item.Category === category
+                                );
+                                return (
+                                    <td key={`${month}-${category}`} className="expense-cell">
+                                        {matchingExpense ? `$${matchingExpense.Amount}` : '-'}
+                                    </td>
+                                );
+                            })}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <style>{`
+            .expenses-table-container {
+                max-width: 800px;
+                margin: 0 auto;
+                overflow-x: auto;
+            }
+            
+            .expenses-table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            .expenses-table th,
+            .expenses-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            
+            .expenses-table th {
+                background-color: #f2f2f2;
+            }
+            
+            .expenses-table th.empty-cell,
+            .expenses-table td.month-cell {
+                background-color: #e0e0e0;
+                font-weight: bold;
+            }
+            
+            .expenses-table td.expense-cell {
+                color: #333;
+            }
+            
+            .expenses-table td.expense-cell:hover {
+                background-color: #f7f7f7;
+            }
+            
+            `}</style>
+        </div>
+    );
+};
 
 const BarChartComponent = ({ data }) => {
     // State for selected filters
@@ -159,7 +235,7 @@ const BarChartComponent = ({ data }) => {
                         }}
                     />
                 </BarChart>
-
+                {windowWidth < 900 ? (<ExpensesTable expenses={Expenses} />) :null}
             </div>
         </div>
     );
