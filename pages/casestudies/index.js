@@ -4,8 +4,6 @@ import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
-import {
-} from "next-i18next-static-site";
 
 export default function casestudies() {
   const description =
