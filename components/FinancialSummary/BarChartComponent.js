@@ -16,7 +16,7 @@ const CustomTooltip = ({ active, payload }) => {
         const labelStyle = {
             fontSize: '14px',
             fontWeight: 'bold',
-            marginBottom: '5px'
+            marginBottom: '5px',
         };
         const amountStyle = {
             fontSize: '12px',
@@ -242,7 +242,7 @@ const BarChartComponent = ({ data }) => {
                         }}
                     />
                 </BarChart>
-                {windowWidth < 900 ? (<ExpensesTable expenses={Expenses} />) : null}
+                {windowWidth < 900 ? (<ExpensesTable expenses={Expenses} />) :null}
             </div>
         </div>
     );
