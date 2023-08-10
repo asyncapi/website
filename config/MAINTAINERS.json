@@ -177,8 +177,7 @@
         "repos": [
             "bindings",
             "glee",
-            ".github",
-            "optimizer"
+            ".github"
         ]
     },
     {
