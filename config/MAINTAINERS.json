@@ -660,5 +660,13 @@
             "website",
             "community"
         ]
+    },
+    {
+        "github": "khudadad414",
+        "twitter": null,
+        "isTscMember": false,
+        "repos": [
+            "optimizer"
+        ]
     }
 ]
