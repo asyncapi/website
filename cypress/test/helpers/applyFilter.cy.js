@@ -16,10 +16,11 @@ describe('sortFilter function', () => {
     expect(output).to.deep.equal(expected);
   });
 });
-
-//this function is designed to generate filter lists based on the provided data and filter conditions.
-// It iterates through the data and creates filter entries in the lists according to certain rules, 
-// including checking for duplicates and sorting the filter values.
+/**
+ * this function is designed to generate filter lists based on the provided data and filter conditions. 
+ * It iterates through the data and creates filter entries in the lists according to certain rules, 
+ *  including checking for duplicates and sorting the filter values. 
+ */
 
 describe('applyFilterList function', () => {
   it('should apply filters to a list of data and sort them by value', () => {
@@ -67,14 +68,18 @@ describe('applyFilterList function', () => {
 });
 
 describe('onFilterApply function', () => {
-  //function onFilterApply that is intended to filter data based on a given query 
-  // and then call a specified callback function (onFilter) with the filtered result.
-
+  /**
+   * function onFilterApply that is intended to filter data based on a given query 
+   * and then call a specified callback function (onFilter) with the filtered result.
+   */
   it('should filter a list of data by a query object and return the filtered result', () => {
-    // mock data (an array of data to be filtered),
-    // mock onFilter (a callback function to be called with the filtered data)
-    // mock query (an object containing filter criteria).
-    const data = [
+
+    /**
+     * mock data (an array of data to be filtered),
+     * mock onFilter (a callback function to be called with the filtered data)
+     * mock query (an object containing filter criteria).
+     */
+      const data = [
       { name: 'Alice', age: 25, gender: 'female', hobbies: ['reading', 'writing'] },
       { name: 'Bob', age: 30, gender: 'male', hobbies: ['gaming', 'coding'] },
       { name: 'Eve', age: 27, gender: 'female', hobbies: ['sports', 'dancing'] },
