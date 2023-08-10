@@ -8,8 +8,6 @@ describe('buildNavTree function', () => {
   it('should return a tree object with the correct structure and order of nav items', () => {
     // call the function with the mock data
     const actualTree = buildNavTree(mockNavItems);
-    console.log("hfhuf", actualTree);
-    console.log(expectedTree)
     expect(actualTree).to.deep.equal(expectedTree);
   });
 
@@ -34,6 +32,7 @@ describe('addDocButtons function', () => {
     expect(actualStructuredPosts).to.deep.equal(expectedStructuredPosts);
 
   });
+
   // a second test case for when there is only one root section and no subsections
   it('should return an array of structured posts with the correct next and prev page buttons when there is only one root section and no subsections', () => {
 
@@ -44,5 +43,4 @@ describe('addDocButtons function', () => {
     expect(actualStructuredPostsOneRoot).to.deep.equal(expectedStructuredPostsOneRoot);
 
   });
-
 });

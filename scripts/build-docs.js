@@ -161,4 +161,4 @@ function addDocButtons(docPosts, treePosts){
 }
 
 
-module.exports = {buildNavTree, addDocButtons,convertDocPosts}
+module.exports = {buildNavTree, addDocButtons, convertDocPosts}
