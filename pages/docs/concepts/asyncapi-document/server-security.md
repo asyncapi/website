@@ -25,7 +25,7 @@ Here are some security schemes that can be applied to operations:
   type: userPassword
   ```
 
-- API key (either as user or as password)
+- API key (either as a user or as a password)
 
  ```yml
 type: apiKey
