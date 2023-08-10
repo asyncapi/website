@@ -16,7 +16,7 @@ const CustomTooltip = ({ active, payload }) => {
         const labelStyle = {
             fontSize: '14px',
             fontWeight: 'bold',
-            marginBottom: '5px',
+            marginBottom: '5px'
         };
         const amountStyle = {
             fontSize: '12px',
@@ -46,7 +46,13 @@ const ExpensesTable = () => {
                         <th className="empty-cell"></th>
                         {uniqueCategories.map(category => (
                             <th key={category} className="category-cell">
-                                {category}
+                                {ExpensesLink.find(linkObj => linkObj.category === category)?.link ? (
+                                    <a target='_blank' href={ExpensesLink.find(linkObj => linkObj.category === category).link}>
+                                        {category}
+                                    </a>
+                                ) : (
+                                    category
+                                )}
                             </th>
                         ))}
                     </tr>
@@ -236,7 +242,7 @@ const BarChartComponent = ({ data }) => {
                         }}
                     />
                 </BarChart>
-                {windowWidth < 900 ? (<ExpensesTable expenses={Expenses} />) :null}
+                {windowWidth < 900 ? (<ExpensesTable expenses={Expenses} />) : null}
             </div>
         </div>
     );
