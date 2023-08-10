@@ -1,7 +1,7 @@
 import { buildNavTree } from '../../../scripts/build-docs';
 import { convertDocPosts } from '../../../scripts/build-docs';
 import { addDocButtons } from '../../../scripts/build-docs';
-import { mockNavItems, expectedTree, mockDocObject, expectedDocsArray, mockDocPosts, mockTreePosts, expectedStructuredPosts, mockTreePostsOneRoot, mockDocPostsOneRoot, expectedStructuredPostsOneRoot } from '../../utils/MockData-scripts';
+import { mockNavItems, expectedTree, mockDocObject, expectedDocsArray, mockDocPosts, mockTreePosts, expectedStructuredPosts, mockTreePostsOneRoot, mockDocPostsOneRoot, expectedStructuredPostsOneRoot } from '../../fixtures/MockData-scripts';
 
 
 describe('buildNavTree function', () => {
