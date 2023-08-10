@@ -3,7 +3,7 @@ title: Adding Bindings
 weight: 260
 ---
 
-Bindings in AsyncAPI provide a way to add protocol-specific information to the AsyncAPI documentation. They can be added to different parts of the document, such as servers, channels, or messages, to specify common details specific to a particular protocol. The purpose of bindings is to enhance the understanding and usage of the API by providing additional context and configuration options for different protocols.
+Bindings in AsyncAPI provide a way to add protocol-specific information to the AsyncAPI documentation. They can be added to different document parts, such as servers, channels, or messages, to specify standard details specific to a particular protocol. The purpose of bindings is to enhance the understanding and usage of the API by providing additional context and configuration options for different protocols.
 
 ```mermaid
 graph TD
@@ -17,7 +17,7 @@ E --> G{Message Bindings}
 
 ## Server Bindings
 
-Server bindings provide protocol-specific information related to the server configuration. For example, if you are using RabbitMQ as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
+Server bindings provide protocol-specific information related to the server configuration. For example, if you use RabbitMQ as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
 
 ```mermaid
 graph LR
@@ -25,7 +25,7 @@ A[AsyncAPI Document] --> B((Servers))
 B --> C{Server Bindings}
 ```
 
-Here is an example of how to use server bindings in the AsyncAPI document to specify protocol-specific information related to the server configuration.
+Here is an example of using server bindings in the AsyncAPI document to specify protocol-specific information related to the server configuration.
 
 ```yml
 servers:
@@ -51,7 +51,7 @@ A[AsyncAPI Document] --> D((Channels))
 D --> E{Channel Bindings}
 ```
 
- Here is an example of how to use channel bindings in the AsyncAPI document to define protocol-specific configurations for a specific channel.
+ Here is an example of using channel bindings in the AsyncAPI document to define protocol-specific configurations for a specific channel.
 
 ```yml
 channels:
@@ -69,7 +69,7 @@ channels:
 
 Message bindings provide protocol-specific information for a specific message. You can define properties like the timestamp and acknowledgment settings for a message in the bindings.
 
-Here is an example of how to use message bindings in the AsyncAPI document to provide protocol-specific information for a specific message.
+Here is an example of using message bindings in the AsyncAPI document to provide protocol-specific information for a specific message.
 
 ```mermaid
 graph LR
@@ -77,7 +77,7 @@ A[AsyncAPI Document] --> F((Channels))
 F --> G{Message Bindings}
 ```
 
-Here is an example of how to use message bindings in the AsyncAPI document to provide protocol-specific information for a specific message.
+Here is an example of using message bindings in the AsyncAPI document to provide protocol-specific information for a specific message.
 
 ```yml
 channels:
