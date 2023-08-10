@@ -37,7 +37,7 @@ Determined to overcome this unexpected obstacle, we regrouped and brainstormed a
 
 We knew piloting an in-house mentorship program would be challenging, so we made the initial program a way to collect feedback. We approached the program flexibly, avoiding rigid decisions or commitments.
 
-During the project ideas phase, [we received 19 project ideas](https://github.com/asyncapi/community/blob/master/mentorship/asyncapi-mentorship/2022/project-ideas.md) and [ten of these projects made it to the final phase](https://github.com/asyncapi/community/blob/master/mentorship/asyncapi-mentorship/2022/README.md) but out of the ten selected candidates for the program only [six](https://github.com/orgs/asyncapi/discussions/577) were able to complete their project. This program addresses the real needs of the open-source community. It ensures the program leaders forge meaningful relationships with the participants to ensure their diverse voices are heard and provide them with resources, advice, and networking opportunities.
+During the project ideas phase, [we received 19 project ideas](https://github.com/asyncapi/community/blob/master/mentorship/asyncapi-mentorship/2022/project-ideas.md), and [ten of these projects made it to the final phase](https://github.com/asyncapi/community/blob/master/mentorship/asyncapi-mentorship/2022/README.md) but out of the ten selected candidates for the program only [six](https://github.com/orgs/asyncapi/discussions/577) were able to complete their project. This program addresses the real needs of the open-source community. It ensures the program leaders forge meaningful relationships with the participants to ensure their diverse voices are heard and provide them with resources, advice, and networking opportunities.
 
 ## How We Are Approaching These Challenges For The Next Cohorts
 
@@ -65,7 +65,7 @@ This quality makes AsyncAPI stand out and will encourage contributors to be invo
 
 With the next cohort kicking off, we put things such as the [program guidline] in place, including the **Evaluation Period**. And we received a significant surge in this current cohort(2023) application phase! We received 29 project ideas, 10 of which were selected for the program, over 90+ proposals were received across all of these ten projects, and 13 candidates made it to the final selection phase. Unlike the previous year(2022), we were not only accepting code-related projects but also design and technical writing, which means anyone can be a part of the program this year.
 
-Compare this to the previous year, we are proud of this current trajectory and can't wait to see the numbers for the coming years, how much growth awaits us as a community, and how fantastic the projects under this great initiative will become with all of these contributions.
+Comparing this to the previous year, we are proud of this current trajectory and can't wait to see the numbers for the coming years, how much growth awaits us as a community, and how fantastic the projects under this great initiative will become with all of these contributions.
 
 ## Current Cohort Projects
 
