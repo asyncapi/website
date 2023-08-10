@@ -1,19 +1,5 @@
 [
   {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Z2l0am1xbTBhcm8xa2sxc2dyOGdoaXRmZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/670",
-    "banner": "",
-    "date": "2023-04-26T15:00:00.000Z"
-  },
-  {
-    "title": "Tackling interoperability challenges in open-source",
-    "calLink": "https://www.google.com/calendar/event?eid=M2Njb2dib2VvMXF1dmR1bGJ0ZG1tb2txMWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/681",
-    "banner": "https://user-images.githubusercontent.com/66913810/233324999-bce12c6f-6e8e-4aca-acf5-053cfa22378a.png",
-    "date": "2023-04-26T09:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=YjcwZ2ZmOXNmMmU1YmRybXB0azk1Y2prb3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/688",
@@ -190,17 +176,17 @@
   },
   {
     "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aWhzNWwxZWkxdWVlMWhvbGs4aWY2YzU1am8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/791",
-    "banner": "",
-    "date": "2023-08-03T14:30:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=cG9iOHNqZGlrbmg4cnUxanMzMTgyN3AxdnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/792",
     "banner": "",
     "date": "2023-08-17T14:30:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/793",
+    "banner": "",
+    "date": "2023-08-31T14:30:00.000Z"
   },
   {
     "title": "Community Meeting",
@@ -217,17 +203,17 @@
     "date": "2023-07-18T08:00:00.000Z"
   },
   {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aTBkZHJ2YWczcG1hZWFqbTFlMWowZjZnbzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/812",
-    "banner": "",
-    "date": "2023-08-02T16:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=YmlybTZwODdmMzBnNGg0b3J1OWxmdnBxNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/818",
     "banner": "https://user-images.githubusercontent.com/40604284/256949583-958c34c8-4256-4ac5-852b-e00ec094fad0.png",
     "date": "2023-08-08T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NG9lc2RwN3A2djFmNmRxaHZoaWRjMnRhaDAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/823",
+    "banner": "",
+    "date": "2023-08-02T16:00:00.000Z"
   }
 ]
