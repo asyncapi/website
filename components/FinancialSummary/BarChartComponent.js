@@ -27,6 +27,7 @@ const CustomTooltip = ({ active, payload }) => {
             <div className="custom-tooltip" style={tooltipStyle}>
                 <p className="tooltip-label" style={labelStyle}>{data.Category}</p>
                 <p className="tooltip-amount" style={amountStyle}>${data.Amount.toFixed(2)}</p>
+                <p>Click on the bar to know more</p>
             </div>
         );
     }
