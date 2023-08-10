@@ -34,6 +34,7 @@ describe('addDocButtons function', () => {
     expect(actualStructuredPosts).to.deep.equal(expectedStructuredPosts);
 
   });
+
   // a second test case for when there is only one root section and no subsections
   it('should return an array of structured posts with the correct next and prev page buttons when there is only one root section and no subsections', () => {
 
@@ -44,5 +45,4 @@ describe('addDocButtons function', () => {
     expect(actualStructuredPostsOneRoot).to.deep.equal(expectedStructuredPostsOneRoot);
 
   });
-
 });
