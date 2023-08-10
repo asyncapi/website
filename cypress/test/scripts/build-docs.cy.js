@@ -8,8 +8,6 @@ describe('buildNavTree function', () => {
   it('should return a tree object with the correct structure and order of nav items', () => {
     // call the function with the mock data
     const actualTree = buildNavTree(mockNavItems);
-    console.log("hfhuf", actualTree);
-    console.log(expectedTree)
     expect(actualTree).to.deep.equal(expectedTree);
   });
 
