@@ -3,11 +3,11 @@ title: Reusing Traits
 weight: 200
 ---
 
-Traits are a powerful way to define a group of properties that can be reused across multiple message objects within the specification. Reusing traits promotes code maintainability, reduces duplication, and makes your AsyncAPI documents cleaner and easier to manage.
+Traits are a powerful way to define properties that can be reused across multiple message objects within the specification. Reusing traits promotes code maintainability, reduces duplication, and makes your AsyncAPI documents cleaner and easier to manage.
 
 ## Defining Traits
 
-Traits are defined under the `components` section of your AsyncAPI document, within `operationTraits`or `messageTraits`, depending on whether you want to apply them to operations or messages, respectively. Each trait is given a unique name and contains the properties that will be applied.
+Traits are defined under the `components` section of your AsyncAPI document, within `operationTraits` or `messageTraits`, depending on whether you want to apply them to operations or messages, respectively. Each trait is given a unique name and contains the properties that will be applied.
 
 ```mermaid
 graph TD
@@ -64,7 +64,7 @@ graph TD
     messageObject --> messagesSection
 ```
 
-For example, let's say we have a trait named commonHeaders defined in messageTraits:
+For example, let's say we have a trait named `commonHeaders` defined in messageTraits:
 
 ```yml
 components:
