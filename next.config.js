@@ -4,7 +4,6 @@ const gemoji = require('remark-gemoji-to-emoji');
 const a11yEmoji = require('@fec/remark-a11y-emoji');
 const slug = require('remark-slug');
 const headingId = require('remark-heading-id');
-const { i18n } = require("./next-i18next-static-site.config");
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -21,9 +20,7 @@ const withMDX = require('@next/mdx')({
   },
 });
 
-const withTM = require("next-transpile-modules")(["next-i18next-static-site"]);
-
-module.exports = withTM(withMDX({
+module.exports = withMDX({
   pageExtensions: ['js', 'md'],
   eslint: {
     ignoreDuringBuilds: true,
@@ -39,7 +36,4 @@ module.exports = withTM(withMDX({
 
     return config;
   },
-  publicRuntimeConfig: {
-    i18n,
-  },
-}));
+});

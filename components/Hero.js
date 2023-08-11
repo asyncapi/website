@@ -10,7 +10,7 @@ import AlgoliaSearch, { SearchButton } from './AlgoliaSearch'; // Import Algolia
 import IconLoupe from './icons/Loupe';
 import {
   useTranslation,
-} from "next-i18next-static-site";
+} from "../lib/i18n";
 
 export default function Hero({ className = ''}) {
 
