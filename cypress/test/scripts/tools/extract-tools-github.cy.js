@@ -3,183 +3,90 @@ describe('Get Data', () => {
     // eslint-disable-next-line cypress/no-async-tests
     it('fetches AsyncAPI tools from Github', async () => {
         // Define the data that the API should return (stubbed response) // this is mock data from tools.schema{}
-        const stubbedResponse = {
-            "filters": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                    "categories"
-                ],
-                "properties": {
-                    "language": {
-                        "description": "The language referred to is the runtime language selected by the user, not the generator or library language. For example, the Generator written in JavaScript generates Python code from the JavaScript template and the result of generation is a Python app, so the language for Generator is specified as Python. But for the Bundler library, users need to know if it can be integrated into their TypeScript codebase, so its language is specified as TypeScript. If some language in the schema's enum is omitted, it can be added through a pull request to the AsyncAPI website repository.",
-                        "anyOf": [
-                            {
-                                "type": "string",
-                                "anyOf": [
-                                    {
-                                        "type": "string",
-                                        "enum": [
-                                            "Go",
-                                            "Java",
-                                            "JavaScript",
-                                            "HTML",
-                                            "C/C++",
-                                            "C#",
-                                            "Python",
-                                            "TypeScript",
-                                            "Kotlin",
-                                            "Scala",
-                                            "Markdown",
-                                            "YAML",
-                                            "R",
-                                            "Rubby",
-                                            "Rust",
-                                            "Shell",
-                                            "Groovy"
-                                        ]
-                                    },
-                                    {
-                                        "type": "string"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "type": "string",
-                                    "anyOf": [
-                                        {
-                                            "type": "string",
-                                            "enum": [
-                                                "Go",
-                                                "Java",
-                                                "JavaScript",
-                                                "HTML",
-                                                "C/C++",
-                                                "C#",
-                                                "Python",
-                                                "TypeScript",
-                                                "Kotlin",
-                                                "Scala",
-                                                "Markdown",
-                                                "YAML",
-                                                "R",
-                                                "Rubby",
-                                                "Rust",
-                                                "Shell",
-                                                "Groovy"
-                                            ]
-                                        },
-                                        {
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+        const stubbedResponse = 
+            {
+                "total_count": 18,
+                "incomplete_results": false,
+                "items": [
+                  {
+                    "name": ".asyncapi-tool",
+                    "path": ".asyncapi-tool",
+                    "sha": "c15324ea8e92cfa873de90a3c91e9866e208537a",
+                    "url": "https://api.github.com/repositories/442113220/contents/.asyncapi-tool?ref=4b17fadbc95df6197fb057e4b50287834e2ab486",
+                    "git_url": "https://api.github.com/repositories/442113220/git/blobs/c15324ea8e92cfa873de90a3c91e9866e208537a",
+                    "html_url": "https://github.com/LEGO/AsyncAPI.NET/blob/4b17fadbc95df6197fb057e4b50287834e2ab486/.asyncapi-tool",
+                    "repository": {
+                      "id": 442113220,
+                      "node_id": "R_kgDOGlocxA",
+                      "name": "AsyncAPI.NET",
+                      "full_name": "LEGO/AsyncAPI.NET",
+                      "private": false,
+                      "owner": {
+                        "login": "LEGO",
+                        "id": 4530164,
+                        "node_id": "MDEyOk9yZ2FuaXphdGlvbjQ1MzAxNjQ=",
+                        "avatar_url": "https://avatars.githubusercontent.com/u/4530164?v=4",
+                        "gravatar_id": "",
+                        "url": "https://api.github.com/users/LEGO",
+                        "html_url": "https://github.com/LEGO",
+                        "followers_url": "https://api.github.com/users/LEGO/followers",
+                        "following_url": "https://api.github.com/users/LEGO/following{/other_user}",
+                        "gists_url": "https://api.github.com/users/LEGO/gists{/gist_id}",
+                        "starred_url": "https://api.github.com/users/LEGO/starred{/owner}{/repo}",
+                        "subscriptions_url": "https://api.github.com/users/LEGO/subscriptions",
+                        "organizations_url": "https://api.github.com/users/LEGO/orgs",
+                        "repos_url": "https://api.github.com/users/LEGO/repos",
+                        "events_url": "https://api.github.com/users/LEGO/events{/privacy}",
+                        "received_events_url": "https://api.github.com/users/LEGO/received_events",
+                        "type": "Organization",
+                        "site_admin": false
+                      },
+                      "html_url": "https://github.com/LEGO/AsyncAPI.NET",
+                      "description": "The AsyncAPI.NET SDK contains a useful object model for AsyncAPI documents in .NET",
+                      "fork": false,
+                      "url": "https://api.github.com/repos/LEGO/AsyncAPI.NET",
+                      "forks_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/forks",
+                      "keys_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/keys{/key_id}",
+                      "collaborators_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/collaborators{/collaborator}",
+                      "teams_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/teams",
+                      "hooks_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/hooks",
+                      "issue_events_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/issues/events{/number}",
+                      "events_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/events",
+                      "assignees_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/assignees{/user}",
+                      "branches_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/branches{/branch}",
+                      "tags_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/tags",
+                      "blobs_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/git/blobs{/sha}",
+                      "git_tags_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/git/tags{/sha}",
+                      "git_refs_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/git/refs{/sha}",
+                      "trees_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/git/trees{/sha}",
+                      "statuses_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/statuses/{sha}",
+                      "languages_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/languages",
+                      "stargazers_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/stargazers",
+                      "contributors_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/contributors",
+                      "subscribers_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/subscribers",
+                      "subscription_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/subscription",
+                      "commits_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/commits{/sha}",
+                      "git_commits_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/git/commits{/sha}",
+                      "comments_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/comments{/number}",
+                      "issue_comment_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/issues/comments{/number}",
+                      "contents_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/contents/{+path}",
+                      "compare_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/compare/{base}...{head}",
+                      "merges_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/merges",
+                      "archive_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/{archive_format}{/ref}",
+                      "downloads_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/downloads",
+                      "issues_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/issues{/number}",
+                      "pulls_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/pulls{/number}",
+                      "milestones_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/milestones{/number}",
+                      "notifications_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/notifications{?since,all,participating}",
+                      "labels_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/labels{/name}",
+                      "releases_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/releases{/id}",
+                      "deployments_url": "https://api.github.com/repos/LEGO/AsyncAPI.NET/deployments"
                     },
-                    "technology": {
-                        "type": "array",
-                        "description": "Provide a list of different technologies used in the tool. Put details useful for tool user and tool contributor.",
-                        "items": {
-                            "type": "string",
-                            "anyOf": [
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "Node js",
-                                        "Hermes",
-                                        "React JS",
-                                        ".NET",
-                                        "ASP.NET",
-                                        "Springboot",
-                                        "AWS",
-                                        "Docker",
-                                        "Node-red",
-                                        "Maven",
-                                        "Saas",
-                                        "Kubernetes-native",
-                                        "Scala",
-                                        "Azure",
-                                        "Jenkins",
-                                        "Flask"
-                                    ]
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        "examples": [
-                            "Express.js",
-                            "Kafka"
-                        ]
-                    },
-                    "categories": {
-                        "type": "array",
-                        "description": "Categories are used to group tools by different use case, like documentation or code generation. If have a list of fixed categories. If you use different one that your tool lands under \"other\" category. Feel free to add your category through a pull request to AsyncAPI website repository.",
-                        "items": {
-                            "type": "string",
-                            "anyOf": [
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "api",
-                                        "code-first",
-                                        "code-generator",
-                                        "converter",
-                                        "directory",
-                                        "documentation-generator",
-                                        "editor",
-                                        "ui-component",
-                                        "dsl",
-                                        "framework",
-                                        "github-action",
-                                        "mocking-and-testing",
-                                        "validator",
-                                        "compare-tool",
-                                        "other",
-                                        "cli",
-                                        "bundler",
-                                        "ide-extension"
-                                    ]
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        "minItems": 1,
-                        "examples": [
-                            "api",
-                            "code-first",
-                            "code-generator",
-                            "converter",
-                            "directory",
-                            "documentation-generator",
-                            "editor",
-                            "ui-component",
-                            "dsl",
-                            "framework",
-                            "github-action",
-                            "mocking-and-testing",
-                            "validator",
-                            "compare-tool",
-                            "other",
-                            "cli",
-                            "bundler",
-                            "ide-extension"
-                        ]
-                    },
-                    "hasCommercial": {
-                        "type": "boolean",
-                        "description": "Indicate if your tool is open source or commercial offering, like SAAS for example",
-                        "default": false
-                    }
-                }
-            }
-        };
+                    "score": 1.0
+                  },
+              ]
+              };
+        
 
         // Intercept the API request and stub the response
         cy.intercept('GET', 'https://api.github.com/search/code?q=filename:.asyncapi-tool*', {
