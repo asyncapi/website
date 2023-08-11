@@ -9,7 +9,7 @@ import ambassadorList from '../../../config/ambassador_lists.json'
 import Link from 'next/link';
 
 
-function addAdditionalUserInfo(user) {
+export function addAdditionalUserInfo(user) {
   const userData = {
     ...user,
   };
@@ -43,9 +43,9 @@ function Index() {
       image={image}
       wide
     >
-      <div className="flex flex-col lg:flex-row justify-between items-center">
-        <div className="lg:w-[45%] w-full lg:text-left text-center">
-          <h1 className="font-semibold  text-3xl lg:text-5xl md:text-4xl mt-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center" data-testid="Ambassadors-main">
+        <div className="lg:w-[45%] w-full lg:text-left text-center" data-testid="Ambassadors-content">
+          <h1 className="font-semibold  text-3xl lg:text-5xl md:text-4xl mt-10" data-testid="Ambassadors-title">
             Teachers. Champions.{' '}
             <span className="countdown-text-gradient">Ambassadors!</span>
           </h1>
@@ -58,7 +58,7 @@ function Index() {
             Become an AsyncAPI Ambassador and help the OSS community build the
             future of APIs.
           </Heading>
-          <div>
+          <div data-testid="Ambassadors-button">
             <Button
               className="block md:inline-block focus:outline-none mt-10 text-center"
               text="Become an AsyncAPI Ambassador"
@@ -79,10 +79,10 @@ function Index() {
         <div className="aspect-w-16 aspect-h-9 bg-center">
           <iframe src="https://www.youtube.com/embed/3rg_7hIb9PQ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
+          data-testid="Ambassadors-Iframe"></iframe>
         </div>
         <div className="flex justify-center">
-          <div className="text-center mt-10 lg:w-[55%]">
+          <div className="text-center mt-10 lg:w-[55%]" data-testid="Ambassadors-contributions">
             <Heading typeStyle="heading-lg">
               AsyncAPI Ambassador Contributions
             </Heading>
@@ -102,6 +102,7 @@ function Index() {
             <li
               key={link.title}
               className="flex flex-col justify-center items-center"
+              data-testid="Ambassadors-list"
             >
               <img
                 src={link.icon}
@@ -127,23 +128,24 @@ function Index() {
         >
           Learn and share knowledge with community members
         </Heading>
-        <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3" data-testid="Ambassadors-members-main">
           {asyncapiAmbassadors.map((ambassador, i) => (
             <div
               key={i}
               className="rounded-md border flex flex-col justify-between text-left mt-6 pb-2"
-            >
+              data-testid="Ambassadors-members"
+          >
               <div>
-                <div className="flex justify-between p-2">
+                <div className="flex justify-between p-2" data-testid="Ambassadors-members-details">
                   <div>{ambassador.name}</div>
-                  <div>{ambassador.country}</div>
+                  <div data-testid="Ambassadors-members-country" >{ambassador.country}</div>
                 </div>
                 <Link
                   href={`ambassadors/${ambassador.github}`}
                   as={`ambassadors/${ambassador.github}`}
                 >
                   <div className="p-2">
-                    <div className="w-full h-auto bg-center rounded-md cursor-pointer">
+                    <div className="w-full h-auto bg-center rounded-md cursor-pointer" data-testid="Ambassadors-members-img">
                       <img
                         src={ambassador.img}
                         alt={ambassador.name}
@@ -158,12 +160,13 @@ function Index() {
               </div>
               <div>
                 <div className="p-2 text-sm">{ambassador.bio}</div>
-                <div className="border-t p-2 flex">
+                <div className="border-t p-2 flex" data-testid="Ambassadors-members-socials">
                   <a
                     href={ambassador.twitterUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="underline"
+                    data-testid="Ambassadors-members-twitter"
                   >
                     Twitter ↗
                   </a>
@@ -191,7 +194,7 @@ function Index() {
       </div>
       <div className="mt-20">
         <div className="flex justify-center">
-          <div className="text-center mt-10 lg:w-[55%]">
+          <div className="text-center mt-10 lg:w-[55%]" data-testid="Events-token">
             <Heading typeStyle="heading-lg">Tokens of our appreciation</Heading>
             <Heading
               typeStyle="body-sm"
@@ -225,7 +228,7 @@ function Index() {
             ))}
           </ul>
         </div>
-        <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg">
+        <div className="bg-mapCover bg-dark bg-blend-soft-light bg-center bg-cover w-full h-auto p-4 mt-20 rounded-lg" data-testid="Events-ambassadors">
           <div className="flex justify-center">
             <div className="text-center p-4 text-white lg:w-[65%]">
               <Heading typeStyle="heading-lg">

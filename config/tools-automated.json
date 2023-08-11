@@ -72,25 +72,6 @@
         }
       },
       {
-        "title": "nestjs-asyncapi",
-        "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
-        "links": {
-          "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
-        },
-        "filters": {
-          "language": "Typescript",
-          "technology": [
-            "Node.js",
-            "NestJS"
-          ],
-          "categories": [
-            "code-first"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "SIO-AsyncAPI",
         "description": "This is code-first approach to generate AsyncAPI specification from Socket.IO server.",
         "links": {
@@ -111,12 +92,46 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "nestjs-asyncapi",
+        "description": "Utilize decorators to generate AsyncAPI document utilizing DTOs (similar to @nestjs/swagger) and a web UI.",
+        "links": {
+          "repoUrl": "https://github.com/flamewow/nestjs-asyncapi"
+        },
+        "filters": {
+          "language": "Typescript",
+          "technology": [
+            "Node.js",
+            "NestJS"
+          ],
+          "categories": [
+            "code-first"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
   "Code Generators": {
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
@@ -138,21 +153,6 @@
             "dsl",
             "mocking-and-testing",
             "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
-        "title": "Golang AsyncAPI Code Generator",
-        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
-        "links": {
-          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
-        },
-        "filters": {
-          "language": "golang",
-          "categories": [
-            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -320,6 +320,26 @@
   "Mocking and Testing": {
     "description": "The tools below take specification documents as input, then publish fake messages to broker destinations for simulation purposes. They may also check that publisher messages are compliant with schemas.",
     "toolsList": [
+      {
+        "title": "Specmatic",
+        "description": "An API contract testing tool that helps ensure the correctness APIs by automatically generating test cases and verifying them against the API spec. It simplifies the process of testing APIs and reduces the likelihood of bugs and compatibility issues.",
+        "links": {
+          "websiteUrl": "https://specmatic.in",
+          "docsUrl": "https://specmatic.in/documentation/",
+          "repoUrl": "https://github.com/znsio/specmatic"
+        },
+        "filters": {
+          "language": "kotlin",
+          "technology": [
+            "maven"
+          ],
+          "categories": [
+            "mocking-and-testing"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
       {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",

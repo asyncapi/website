@@ -55,12 +55,12 @@
     "title": "Senior Solution Architect / Head of API Experience and Operations",
     "github": "danielkocot",
     "twitter": "dk_1977",
-    "linkedin": "daniel-kocot",
+    "linkedin": "danielkocot",
     "company": "Codecentric AG",
     "country": "🇩🇪",
     "contributions": [
       {
-        "type": "article",
+	"type": "article",
         "title": "AsyncAPI - Documentation of event and message-driven architectures",
         "date": {
           "year": 2021,
@@ -68,32 +68,32 @@
         },
         "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
       },
-      {
-        "type": "article",
+      {	
+       	"type": "article",
         "title": "AsyncAPI specification updates",
         "date": {
           "year": 2022,
           "month": "February"
         },
-        "link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
+       	"link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
       },
       {
         "type": "presentation",
-        "title": "AsyncAPI 101",
+       	"title": "AsyncAPI 101",
         "date": {
           "year": 2022,
           "month": "May"
-        },
+	},
         "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
       },
       {
         "type": "presentation",
-        "title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
+       	"title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
         "date": {
           "year": 2022,
           "month": "November"
-        },
-        "link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
+       	},
+       	"link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
       }
     ]
   },
