@@ -1,5 +1,5 @@
 import { getData } from "../../../../scripts/tools/extract-tools-github";
-describe('empty spec', () => {
+describe('det Data', () => {
     it('passes', () => {
       cy.visit('http://localhost:3000/tools');
       const stubbedResponse = 
