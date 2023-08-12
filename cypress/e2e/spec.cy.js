@@ -1,5 +1,7 @@
 describe('empty spec', () => {
   it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+    cy.origin('https://example.cypress.io', () => {
+      Cypress.require('')
+    });
+  });
+});
