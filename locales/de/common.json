@@ -5,5 +5,13 @@
         "nameInput": "Ihr Name",
         "emailInput": "Deine E-Mail",
         "subscribeBtn": "Abonnieren"
-    }
+    },
+    "newsroomSection": {
+        "title": "Aktuelle Nachrichten und Blogs",
+        "description": "Willkommen in unserem Newsroom-Bereich. Hier finden Sie die neuesten Informationen über unsere Blogs, Artikel, Ankündigungen und Youtube-Livestreams. Informieren Sie sich über die jüngsten Aktivitäten der Organisation.",
+        "newsroomBtn": "Besuchen Sie den Newsroom"
+    },
+    "googleCalendarBtn": "Zu Google Kalender hinzufügen",
+    "subscribeBtn": "Abonnieren",
+    "icsFileBtn": "ICS-Datei herunterladen"
 }

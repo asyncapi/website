@@ -4,8 +4,12 @@ import Paragraph from '../typography/Paragraph';
 import Button from '../buttons/Button';
 import Link from 'next/link';
 import { getAllPosts } from '../../lib/api';
+import { useTranslation } from '../../lib/i18n';
 
 export default function NewsroomSection() {
+
+  const { t } = useTranslation('common');
+
   const posts = getAllPosts()['blog']
     .sort((i1, i2) => {
       const i1Date = new Date(i1.date);
@@ -26,13 +30,13 @@ export default function NewsroomSection() {
       </section>
       <section className="lg:text-left lg:max-w-xl lg:w-1/2 lg:ml-12 mt-5 lg:my-auto" data-testid="NewsroomSection-main">
         <Heading typeStyle="heading-md-semibold" level="h3">
-          Latest news and blogs
+          {t("newsroomSection.title")}
         </Heading>
         <Paragraph typeStyle="body-lg" className="mt-5">
-          Welcome to our Newsroom section. Here, you'll get latest information about our blogs, articles, announcements and Youtube live-streams. Let's get upto date with the recent activities in the organization.
+        {t("newsroomSection.description")}
         </Paragraph>
         <div className='mt-7' >
-        <Button text='Visit the Newsroom' href='/community/newsroom' data-testid="NewsroomSection-Link"/>
+        <Button text={t("newsroomSection.newsroomBtn")} href='/community/newsroom' data-testid="NewsroomSection-Link"/>
         </div>
       </section>
     </div>
