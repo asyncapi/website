@@ -24,7 +24,7 @@ export default function NewsroomSection() {
     <div className="mt-12 lg:flex justify-between">
       <section className="mt-10 lg:mt-4 relative w-fit mx-auto lg:w-1/2" data-testid="NewsroomSection-Featured">
         <div className='absolute z-10 -mt-6'>
-            <Button className="text-center block md:inline-block border-secondary-500 border text-secondary-500 shadow-md p-2" text="FEATURED BLOG POST" bgClassName="bg-secondary-100" />
+            <Button className="text-center block md:inline-block border-secondary-500 border text-secondary-500 shadow-md p-2" text={t("newsroomSection.newsroomFeaturedPost")} bgClassName="bg-secondary-100" />
         </div>
         <FeaturedBlogPost post={posts[0]} />
       </section>
