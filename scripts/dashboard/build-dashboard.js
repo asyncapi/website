@@ -129,12 +129,16 @@ async function getDiscussions(query, pageSize, endCursor = null) {
 }
 async function getDiscussionByID(isPR, id) {
   try {
-    return await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
+    let result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
-    });
+     
+    }
+  
+    );
+    return result; 
   } catch (e) {
     console.error(e);
   }
@@ -158,3 +162,5 @@ async function start() {
   }
 }
 start();
+
+module.exports={getLabel , monthsSince ,mapGoodFirstIssues ,getHotDiscussions,getDiscussionByID}
