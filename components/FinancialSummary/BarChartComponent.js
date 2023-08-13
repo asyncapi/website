@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import ExpensesLink from './ExpensesLinkObject'
-import Expenses from './ExpenseObject';
+import Expenses from './ExpenseObject'
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
