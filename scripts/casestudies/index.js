@@ -1,4 +1,4 @@
-import { readdir, writeFile, readFile } from 'fs/promises';
+const { readdir, writeFile, readFile } = require('fs').promises;
 const { convertToJson } = require('../utils');
 const { resolve } = require('path');
 

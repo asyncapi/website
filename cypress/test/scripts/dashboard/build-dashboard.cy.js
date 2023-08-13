@@ -4,7 +4,7 @@ import Queries from '../../../../scripts/dashboard/issue-queries'
 import { mockIssue, mockIssues, expectedOutput, mockData } from "../../../fixtures/scripts-dashboard";
 describe('getLabel function', () => {
 
-it('returns the correct label name when filter matches', () => {
+  it('returns the correct label name when filter matches', () => {
     cy.wrap(mockIssue).then((issue) => {
       const filter = 'status/';
       const expectedResult = 'in-progress';
@@ -40,7 +40,7 @@ describe('monthsSince function', () => {
   });
 });
 
-describe('mapGoodFirstIssues', () => {
+describe('mapGoodFirstIssues function', () => {
   it('should map the issues correctly', async () => {
     // Call the function with the mock data
     const result = await mapGoodFirstIssues(mockIssues);
@@ -48,9 +48,7 @@ describe('mapGoodFirstIssues', () => {
   });
 });
 
-
-
-describe('Discussion Fetching', () => {
+describe('getDiscussionsById function', () => {
   it('should fetch a discussion (pull request or issue)', async () => {
     // Stub the GraphQL request with mock data
     const isPR = true;
