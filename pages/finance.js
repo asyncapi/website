@@ -1,4 +1,3 @@
-import Expenses from "../components/FinancialSummary/ExpenseObject"
 import BarChartComponent from "../components/FinancialSummary/BarChartComponent"
 import ExpenseBreakdown from "../components/FinancialSummary/ExpenseBreakdown"
 import SponsorshipTiers from "../components/FinancialSummary/SponsorshipTiers"
@@ -54,7 +53,7 @@ function FinancialSummary() {
           <SponsorshipTiers />
           <OtherFormsOfFinancialSupport />
           <ExpenseBreakdown />
-          <BarChartComponent data={Expenses} />
+          <BarChartComponent />
           <SuccessStories />
           <ContactUs />
         </Container>
@@ -71,7 +70,7 @@ function FinancialSummary() {
           <SponsorshipTiers />
           <OtherFormsOfFinancialSupport />
           <ExpenseBreakdown />
-          <BarChartComponent data={Expenses} />
+          <BarChartComponent />
           <SuccessStories />
           <ContactUs />
         </>
