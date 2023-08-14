@@ -9,8 +9,7 @@ describe('getLabel function', () => {
       const filter = 'status/';
       const expectedResult = 'in-progress';
       const actual = getLabel(issue, filter);
-      console.log(actual);
-      cy.wrap(getLabel(issue, filter)).should('equal', expectedResult);
+      cy.wrap(actual).should('equal', expectedResult);
     });
   });
 });
@@ -53,8 +52,8 @@ describe('getDiscussionsById function', () => {
     // Stub the GraphQL request with mock data
     const isPR = true;
     /**
-      if IsPr == true then we get Pull request if false we get issue 
-      for current situation we will be getting pull request 
+      * if IsPr == true then we get Pull request if false we get issue 
+      * for current situation we will be getting pull request 
     */
     cy.intercept('POST', 'https://api.github.com/graphql', (req) => {
       if (req.body.operationName === Queries.pullRequestById && isPR === true) {
@@ -65,7 +64,6 @@ describe('getDiscussionsById function', () => {
     }).as('graphqlRequest');
     await getDiscussionByID(mockData.isPr).then((result) => {
       expect(result).to.exist;
-      console.log("hsuhus", result);
     });
   });
 });
