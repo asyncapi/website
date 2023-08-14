@@ -6,5 +6,6 @@ module.exports = defineConfig({
       framework: "next",
       bundler: "webpack",
     },
+    
   },
 });
