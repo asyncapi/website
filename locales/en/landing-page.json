@@ -1,6 +1,47 @@
 {
     "main": {
         "header": "Building the future of",
-        "subHeader": "Event-Driven Architectures (EDA)"
+        "subHeader": "Event-Driven Architectures (EDA)",
+        "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
+        "body_boldtext": "industry standard",
+        "body_posttext": " for defining asynchronous APIs.",
+        "docs_btn": "Read the docs",
+        "search_btn": "Quick search...",
+        "slogan_text": "Proud to be part of the",
+        "slogan_link": "Linux Foundation"
+    },
+    "features": {
+        "title": "Why AsyncAPI?",
+        "description": "Improving the current state of Event-Driven Architectures (EDA)"
+    },
+    "adopters": {
+        "title": "Adopted by the world leading brands",
+        "description": "These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?",
+        "linkText": "Let us know here!"
+    },
+    "community": {
+        "title": "Join our great community!",
+        "subtitle": "We're a community of great people who are passionate about AsyncAPI and event-driven architectures.",
+        "slackCTATitle": "Join our Slack workspace",
+        "slackCTADesc": "We welcome everyone to join our Slack workspace. If you have a question on how to use AsyncAPI, want to contribute, or simply want to say hello 👋 &nbsp;you're welcome to join us. We're nice people 🙂",
+        "slackCTABtn": "Join us!",
+        "meetingTitle": "Join our public meetings",
+        "meetingDesc": "AsyncAPI hosts different meetings every week. They are focused on different topics, sometimes purely technical and sometimes about community building. Pick one and join us!",
+        "meetingLink": "Learn more about our meetings."
+    },
+    "sponsors": {
+        "platinumTitle": "Platinum Sponsors",
+        "goldTitle": "Gold Sponsors",
+        "silverTitle": "Silver Sponsors",
+        "sponsorCTATitle": "Want to Sponsor Us?",
+        "sponsorCTADesc": "These great organizations are already supporting AsyncAPI. Want to become a sponsor?",
+        "sponsorCTALink": "Support us!",
+        "supportedByTitle": "Supported by",
+        "supportedByPretext": "The following companies support us by letting us use their products for free. Interested in supporting us too?",
+        "supportedByLink": "Email us",
+        "supportedByPosttext": " for more info."
+    },
+    "testimonials": {
+        "title": "What the experts are saying"
     }
 }

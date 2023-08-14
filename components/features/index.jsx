@@ -3,8 +3,12 @@ import Paragraph from "../typography/Paragraph";
 import TextLink from "../typography/TextLink";
 import Link from 'next/link'
 import { features } from "./FeatureList";
+import { useTranslation } from "../../lib/i18n";
 
 export default function Features() {
+
+  const { t } = useTranslation('landing-page');
+
   return (
     <section className="relative bg-white pt-16">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
@@ -13,25 +17,25 @@ export default function Features() {
           typeStyle="heading-lg"
           className="mt-2"
         >
-          Why AsyncAPI?
+          {t('features.title')}
         </Heading>
         <Paragraph className="mt-2 max-w-prose mx-auto">
-          Improving the current state of Event-Driven Architectures (EDA)
+          {t('features.description')}
         </Paragraph>
         <div className="mt-12 text-left">
           <ul className="grid  grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" data-testid="Feature-ul">
             {features.map((feature) => (
-              <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8" 
-              data-testid="Feature-li">
+              <li key={feature.name} className="flex flex-col justify-between border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg px-6 pb-8"
+                data-testid="Feature-li">
                 <div >
-                  <Heading 
-                  level="h3"
-                  typeStyle="heading-md-semibold"
-                  className="mt-8"
-                 
-                >
-                  {feature.name}
-                </Heading>
+                  <Heading
+                    level="h3"
+                    typeStyle="heading-md-semibold"
+                    className="mt-8"
+
+                  >
+                    {feature.name}
+                  </Heading>
                   {feature.description && (
                     <Paragraph typeStyle="body-md" className="mt-5">
                       {feature.description}

@@ -1,6 +1,47 @@
 {
     "main": {
-        "header": "Die Zukunft gestalten",
-        "subHeader": "Ereignisgesteuerte Architekturen (EDA)"
+        "header": "Aufbau der Zukunft der",
+        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+        "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
+        "body_boldtext": "Industriestandard",
+        "body_posttext": " zur Definition asynchroner APIs.",
+        "docs_btn": "Lesen Sie die Dokumente",
+        "search_btn": "Schnellsuche...",
+        "slogan_text": "Wir sind stolz darauf, Teil der",
+        "slogan_link": "Linux Foundation"
+    },
+    "features": {
+        "title": "Warum AsyncAPI?",
+        "description": "Verbesserung des aktuellen Stands der ereignisgesteuerten Architekturen (EDA)"
+    },
+    "adopters": {
+        "title": "Von den weltweit führenden Marken übernommen",
+        "description": "Diese Marken verwenden AsyncAPI bereits in der Produktion. Nutzt Ihr Unternehmen AsyncAPI und möchte in diese Liste aufgenommen werden?",
+        "linkText": "Lassen Sie es uns hier wissen!"
+    },
+    "community": {
+        "title": "Werden Sie Mitglied unserer großartigen Gemeinschaft!",
+        "subtitle": "Wir sind eine Gemeinschaft von großartigen Menschen, die leidenschaftlich an AsyncAPI und ereignisgesteuerten Architekturen interessiert sind.",
+        "slackCTATitle": "Treten Sie unserem Slack-Arbeitsbereich bei",
+        "slackCTADesc": "Wir laden alle herzlich ein, unserem Slack-Arbeitsbereich beizutreten. Wenn Sie eine Frage zur Verwendung von AsyncAPI haben, beitragen möchten oder einfach nur hallo sagen möchten 👋, sind Sie herzlich willkommen. Wir sind nette Menschen 🙂",
+        "slackCTABtn": "Treten Sie bei!",
+        "meetingTitle": "Nehmen Sie an unseren öffentlichen Meetings teil",
+        "meetingDesc": "AsyncAPI veranstaltet jede Woche verschiedene Meetings. Sie konzentrieren sich auf verschiedene Themen, manchmal rein technisch und manchmal zum Aufbau der Gemeinschaft. Wählen Sie eins aus und schließen Sie sich uns an!",
+        "meetingLink": "Erfahren Sie mehr über unsere Meetings."
+    },
+    "sponsors": {
+        "platinumTitle": "Platin-Sponsoren",
+        "goldTitle": "Gold-Sponsoren",
+        "silverTitle": "Silber-Sponsoren",
+        "sponsorCTATitle": "Möchten Sie uns als Sponsor unterstützen?",
+        "sponsorCTADesc": "Diese großartigen Organisationen unterstützen bereits AsyncAPI. Möchten Sie Sponsor werden?",
+        "sponsorCTALink": "Unterstützen Sie uns!",
+        "supportedByTitle": "Unterstützt von",
+        "supportedByPretext": "Die folgenden Unternehmen unterstützen uns, indem sie uns erlauben, ihre Produkte kostenlos zu verwenden. Haben Sie Interesse daran, uns ebenfalls zu unterstützen?",
+        "supportedByLink": "Kontaktieren Sie uns per E-Mail",
+        "supportedByPosttext": " für weitere Informationen."
+    },
+    "testimonials": {
+        "title": "Was die Experten sagen"
     }
 }
