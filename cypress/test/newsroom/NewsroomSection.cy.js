@@ -1,6 +1,6 @@
 import { mount } from 'cypress/react'
 import NewsroomSection from '../../../components/newsroom/NewsroomSection';
-const newsroom = ["Latest news and blogs"]
+const newsroom = ["newsroomSection.title"]
 describe('Newsroom Section Component', () => {
     beforeEach(() => {
         mount(<NewsroomSection />);
