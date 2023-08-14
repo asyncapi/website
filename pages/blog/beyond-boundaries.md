@@ -29,7 +29,7 @@ In 2021, AsyncAPI participated in its first paid mentorship program alongside Po
 
 Postman is an established software development company committed to open-source initiatives. We received a lot of engagement from folks interested in our projects despite having just a few slots allocated to us by Postman.
 
-Fast forward to 2022, we applied for GSoC and got rejected again. This time, Postman also got rejected, leaving us in shock and disappointed because many folks were already looking forward to joining us. The shock and disappointment permeated the team's spirits, but they refused to let this setback deter them from their mission.
+Fast forward to 2022, we applied for GSoC and got rejected again. This time, Postman also got rejected, leaving us in shock because many folks were already looking forward to joining us. The shock and disappointment permeated the team's spirits, but they refused to let this setback deter them from their mission.
 
 Determined to overcome this unexpected obstacle, we regrouped and brainstormed alternative strategies to keep the program afloat. What had initially seemed like a devastating rejection transformed into an opportunity for growth and resilience. The team's unwavering passion and refusal to accept defeat turned their setback into a stepping stone toward even greater success.
 
