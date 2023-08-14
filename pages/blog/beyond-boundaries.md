@@ -19,7 +19,7 @@ In 2022 we piloted our innovative mentorship program that focuses on open-source
 
 ## Our Backstory
 
-At AsyncAPI, we value giving back to the community, giving us a sense of purpose as a community-first organization. We are always looking for ways to participate in open-source mentorship programs like Google Summer of Code(GSoC), Google Season of Docs(GSoD), and more because the fulfilling feeling of giving back and contributing to society gotten from these programs is unparalleled.
+At AsyncAPI, we value giving back to the community, giving us a sense of purpose as a community-first organization. We are always looking for ways to participate in open-source mentorship programs like Google Summer of Code(GSoC), Google Season of Docs(GSoD), and more because the fulfilling feeling of contributing to society gotten from these programs is unparalleled.
 
 As an open-source organization, we participate to collaborate with a broader reach of enthusiasts and help bring more folks into this world(which we are already doing). Furthermore, our reason for participating in these programs comes from our passion for open source and the care to support and encourage contributors by building and participating in mentorships.
 
