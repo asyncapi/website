@@ -1,41 +1,35 @@
-import { mount } from 'cypress/react'
+
 import NavItem from '../../../components/navigation/NavItem';
-describe('NavItem', () => {
+import MockRouter from '../../utils/router';
+describe('<NavItem />', () => {
+  it('renders a link without a dropdown', () => {
+    cy.mount(
+    <MockRouter > 
 
-    it('renders a button with dropdown correctly', () => {
-        const props = {
-            text: 'About',
-            href: null,
-            target: '_self',
-            onClick: () => { },
-            onMouseEnter: () => { },
-            hasDropdown: true,
-            className: '',
-        };
+<NavItem text="Home" href="/" />
+    </MockRouter>
+  )
+    cy.get('a').should('have.text', 'Home').and('have.attr', 'href', '/')
+    cy.get('a').find('svg').should('not.exist')
+  })
 
-        mount(<NavItem { ...props } />);
+  it('renders a link with a dropdown', () => {
+    cy.mount(
+        <MockRouter > 
+    <NavItem text="Products" href="/products" hasDropdown />
+    </MockRouter > )
+    cy.get('a').should('have.text', 'Products').and('have.attr', 'href', '/products')
+    cy.get('a').find('svg').should('exist')
+  })
 
-        cy.contains('About').should('exist');
-        cy.get('button').should('have.text', 'About');
+  it('renders a button with a dropdown', () => {
+    cy.mount(
+        <MockRouter > 
+ <NavItem text="More" hasDropdown />
+    </MockRouter>
 
-    });
-
-    it('renders a button without dropdown correctly', () => {
-        const props = {
-            text: 'Contact',
-            href: null,
-            target: '_self',
-            onClick: () => { },
-            onMouseEnter: () => { },
-            hasDropdown: false,
-            className: '',
-        };
-
-        mount(<NavItem { ...props } />);
-
-        cy.contains('Contact').should('exist');
-        cy.get('button').should('have.text', 'Contact');
-    });
-
-
-});
+   )
+    cy.get('button').should('have.text', 'More').and('have.attr', 'type', 'button')
+    cy.get('button').find('svg').should('exist')
+  })
+})

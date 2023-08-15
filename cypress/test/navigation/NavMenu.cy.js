@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 import NavMenu from '../../../components/navigation/NavMenu';
+import MockRouter from '../../utils/router';
 
 describe('NavMenu', () => {
     const items = [
@@ -21,7 +22,11 @@ describe('NavMenu', () => {
 
 
     it('renders the component correctly', () => {
-        mount(<NavMenu items={ items } />);
+        mount(
+        <MockRouter> <NavMenu items={ items } /> </MockRouter>
+       
+        
+        );
     });
 
 

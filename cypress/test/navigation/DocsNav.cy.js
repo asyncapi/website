@@ -4,35 +4,34 @@ import DocsNav from '../../../components/navigation/DocsNav';
 import MockRouter from '../../utils/router';
 
 describe('DocsNav', () => {
-  it('renders the navigation menu correctly', () => {
+  it('renders the nav items with the correct styles and icons', () => {
+
     const item = {
       item: {
-        title: 'Category',
-        rootSectionId: 'concepts',
-        slug:'/docs/concepts' // Replace with the appropriate rootSectionId
+        title: 'Getting Started',
+        rootSectionId: 'welcome',
+        slug: '/getting-started',
       },
       children: [
         {
           item: {
-            title: 'Subcategory',
+            title: 'Installation',
+            slug: '/getting-started/installation',
           },
-          children: [
-            {
-              title: 'Subitem',
-            },
-          ],
+        },
+        {
+          item: {
+            title: 'Writing Your First Test',
+            slug: '/getting-started/writing-your-first-test',
+          },
         },
       ],
     };
-    const activeSlug = '/docs/concepts'; // Replace with the appropriate activeSlug value
-
+    const active = '/getting-started/installation';
     mount(
-      <MockRouter>      <DocsNav
-      item={item}
-      active={activeSlug}
-      onClick={() => {}}
-    /></MockRouter>
+    <MockRouter> <DocsNav item={item} active={active}  /></MockRouter>
+   );
 
-    );
+ 
   });
 });
