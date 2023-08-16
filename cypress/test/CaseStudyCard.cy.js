@@ -7,7 +7,7 @@ describe('CaseStudyCard Component', () => {
   it('renders the CaseStudyCard component with study data', () => {
     mount(<CaseStudyCard studies={CaseStudiesList} />);
 
-    cy.get('[data-testid="CaseStudyCard-main"]').should('have.length', 1); 
+    cy.get('[data-testid="CaseStudyCard-main"]').should('have.length', CaseStudiesList.length); 
 
     CaseStudiesList.forEach((study, index) => {
       cy.get(`.rounded-md:eq(${index}) img`).should('have.attr', 'src', study.company.logo);
