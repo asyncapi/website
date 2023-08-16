@@ -23,6 +23,4 @@ describe('NavMenu', () => {
             <MockRouter> <NavMenu items={ items } /> </MockRouter>
         );
     });
-
-
 });
