@@ -11,7 +11,7 @@
       <img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" />
     </a>
     <a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
-      <img src="https://img.shields.io/badge/Slack-@website.svg?logo=slack" />
+      <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
     </a>
     <a href="https://app.netlify.com/sites/asyncapi-website/deploys">
       <img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" />
