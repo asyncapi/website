@@ -30,7 +30,7 @@ describe('AnnouncementHero Component', () => {
 
   it('should have a link to submit a session', () => {
     // Assert the link
-    cy.get('[data-testid="AnnouncementHero-submit-session"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
       .should('have.attr', 'target', '_blank')
       .contains('Submit a session');
   });
