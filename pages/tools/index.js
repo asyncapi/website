@@ -6,7 +6,7 @@ import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import { useEffect, useState } from 'react';
 
-export default function toolsDashboard() {
+export default function ToolsIndex() {
   const description = 'Tools Dashboard for AsyncAPI Initiative';
   const image = '/img/social/tools-dashboard-card.webp';
   
