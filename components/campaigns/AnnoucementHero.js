@@ -6,6 +6,7 @@ import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
 function shouldShowBanner(cfpDeadline) {
   const currentDate = new Date(); // Get the current date
+  console.log(currentDate)
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
