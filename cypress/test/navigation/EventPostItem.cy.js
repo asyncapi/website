@@ -13,6 +13,9 @@ describe('EventPostItem', () => {
     mount(
     <MockRouter> <EventPostItem post={ post } className="event-post" id="1" /></MockRouter>
    );
+   cy.get('[data-testid="EventPostItem-link"]').should('exist');
+   cy.get('[data-testid="EventPostItem-img"]').should('exist');
+   cy.get('[data-testid="EventPostItem-post"]').should('exist');
   });
 
   it('renders correctly with inactive status', () => {

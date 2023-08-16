@@ -20,7 +20,12 @@ describe('NavMenu', () => {
     ];
     it('renders the component correctly', () => {
         mount(
-            <MockRouter> <NavMenu items={ items } /> </MockRouter>
+            <MockRouter> <NavMenu items={items} /> </MockRouter>
         );
+        cy.get('[data-testid="Paragraph-test" ]').should('contain', 'Page 1');
+        cy.get('[data-testid="Paragraph-test" ]').should('contain', 'Page 2');
+        cy.get('[data-testid="Paragraph-test" ]').should('contain', 'Description for Page 1');
+        cy.get('[data-testid="Paragraph-test" ]').should('contain', 'Description for Page 2');
+       
     });
 });

@@ -42,13 +42,14 @@ function EventPostItem({ post, className, id }) {
   return (
     <li key={id} className={`${className}`} data-testid="EventPostItem-main">
       <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
-        <a href={post.url} target='_blank' rel='noreferrer'>
+        <a href={post.url} target='_blank' rel='noreferrer' data-testid="EventPostItem-link">
           <img
             src={post.banner ? post.banner : defaultCover}
             alt={post.title}
             className='w-full h-52 object-cover rounded-t-lg'
+            data-testid="EventPostItem-img"
           />
-          <div className='mt-2 p-5 flex flex-col justify-between h-52 '>
+          <div className='mt-2 p-5 flex flex-col justify-between h-52 ' data-testid="EventPostItem-post">
             <div>
               <div className='flex items-center'>
                 {icon}{' '}

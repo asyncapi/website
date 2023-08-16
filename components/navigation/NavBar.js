@@ -108,7 +108,7 @@ export default function NavBar({
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
-            <div className="flex">
+            <div className="flex" >
               <Link href="/">
                 <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
                   <AsyncAPILogo className="h-8 w-auto sm:h-8" />
