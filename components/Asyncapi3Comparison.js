@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// eslint-disable-next-line react/prop-types
+
 export function Asyncapi3Comparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Info: false,
@@ -167,7 +167,7 @@ export function Asyncapi3Comparison({ className = '' }) {
   )
 }
 
-// eslint-disable-next-line react/prop-types
+
 export function Asyncapi3ChannelComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Paths: false,
@@ -268,7 +268,7 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
   )
 }
 
-// eslint-disable-next-line react/prop-types
+
 export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Paths: false,
@@ -415,7 +415,7 @@ export function Asyncapi3MetaComparison({ className = '' }) {
 }
 
 
-// eslint-disable-next-line react/prop-types
+
 export function Asyncapi3OperationComparison({ className = '' }) {
   return (
     <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
@@ -465,7 +465,7 @@ export function Asyncapi3OperationComparison({ className = '' }) {
 }
 
 
-// eslint-disable-next-line react/prop-types
+
 export function Asyncapi3SchemaFormatComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     SchemaFormat: false,
