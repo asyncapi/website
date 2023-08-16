@@ -3,7 +3,7 @@ import JobPostItem from '../../../components/navigation/JobPostItem'
 import { mount } from '@cypress/react'
 import MockRouter from '../../utils/router'
 import { job } from '../../fixtures/navigation-mock'
-describe('<JobPostItem />', () => {
+describe('JobPostItem', () => {
 
   beforeEach(() => {
     mount(

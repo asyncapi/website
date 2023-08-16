@@ -1,7 +1,7 @@
 
 import NavItem from '../../../components/navigation/NavItem';
 import MockRouter from '../../utils/router';
-describe('<NavItem />', () => {
+describe('NavItem', () => {
   it('renders a link without a dropdown', () => {
     cy.mount(
       <MockRouter >
