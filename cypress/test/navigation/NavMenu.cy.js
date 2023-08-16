@@ -18,14 +18,9 @@ describe('NavMenu', () => {
             description: 'Description for Page 2',
         },
     ];
-
-
-
     it('renders the component correctly', () => {
         mount(
-        <MockRouter> <NavMenu items={ items } /> </MockRouter>
-       
-        
+            <MockRouter> <NavMenu items={ items } /> </MockRouter>
         );
     });
 
