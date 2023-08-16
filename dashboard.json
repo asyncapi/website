@@ -44,6 +44,17 @@
       "score": 22.68679251119144
     },
     {
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
       "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
@@ -159,7 +170,7 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 14.645904026212197
+      "score": 14.933078614961456
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -175,17 +186,6 @@
           "color": "84b6eb"
         }
       ],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOFDnrNc5RUbi_",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "fix: help command",
-      "author": "sambhavgupta0705",
-      "resourcePath": "/asyncapi/cli/pull/593",
-      "repo": "asyncapi/cli",
-      "labels": [],
       "score": 14.645904026212197
     }
   ],
