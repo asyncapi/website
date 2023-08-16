@@ -21,6 +21,6 @@ describe('ICSFButton', () => {
 
   it('renders correctly with default props', () => {
     mount(<ICSFButton />);
-    cy.contains('Download ICS File').should('be.visible');
+    cy.contains('icsFileBtn').should('be.visible');
   });
 });
