@@ -5,7 +5,7 @@ import TextLink from '../../components/typography/TextLink';
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
 
-export default function casestudies() {
+export default function Casestudies() {
   const description =
     "Learn about different case studies based on AsyncAPI spec and related tools.";
   const image = "/img/social/case-studies.webp";
@@ -19,13 +19,13 @@ export default function casestudies() {
       wide
     >
 
-      <div className="py-10 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
+      <div className="py-10 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl" data-testid="CaseStudy-main">
         <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center">
           <div className="col-start-3 col-span-5">
             <Heading level="h1" typeStyle="heading-lg">
               {title}
             </Heading>
-            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl" >
               The best way to learn how to use AsyncAPI is not only through documentation that usually is focused on recommendations and best practices.
               It is also good to confront with real-life case studies that explain how people really use AsyncAPI and what are their flows.
             </Paragraph>
@@ -37,7 +37,7 @@ export default function casestudies() {
             </Paragraph>
           </div>
         </div>
-        <div>
+        <div data-testid="CaseStudy-card">
           <CaseStudyCard studies={CaseStudiesList}
           />
         </div>
