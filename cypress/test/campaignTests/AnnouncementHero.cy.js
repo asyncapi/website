@@ -22,9 +22,9 @@ describe('AnnouncementHero Component', () => {
 
   it('should display the correct event information', () => {
     // Assert the event details
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('exist');
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('exist');
-    cy.get('[data-testid="AnnouncementHero-main-div"]').should('exist');
+    cy.get('[data-testid="Paragraph-test"]').should('exist');
+    cy.get('h2').should('exist');
+    cy.get('h3').should('exist');
   
   });
 
