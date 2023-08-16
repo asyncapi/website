@@ -1,15 +1,17 @@
 ---
-title: Request-reply in AsyncAPI
+title: Request and reply pattern
 weight: 20
 ---
 
-A quite common [messaging pattern is request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html), which describes a **requester**, which sends a request message and waits for a reply message and a **replier** which receives the request message and responds with a reply message.
+A quite common messaging pattern is [request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html), which describes a **requester**, which sends a request message and waits for a reply and a **replier** which receives the request and responds with a reply.
 
-This pattern is now available natively as of AsyncAPI v3.
+As of AsyncPAI v3, this pattern can be described natively.
  
 # Describing a requester
 
-To describe a requester in AsyncAPI we make use of an operation that `send`s the ping and expects a `reply` over `pong`.
+We are gonna use a very simple ping and pong example where a requestor sends the ping and responder respond with pong. Take notice this is an application-level ping and pong and is not related to ping/pong in standards such as WebSocket.
+
+To describe a **requester** in AsyncAPI we make use of an operation that `send`s the ping and expects a `reply` over `pong`.
 
 ```yml
 asyncapi: 3.0.0
@@ -41,11 +43,9 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-Take notice this is an application-level ping and pong and is not related to ping/pong in standards such as WebSocket.
-
 # Describing a replier
 
-To describe a replier, we take the same structure as for the requester, with the simple difference, of using the `receive` action instead.
+To describe a **replier**, we take the same structure as for the requester, with the simple difference, of using the `receive` action instead.
 
 ```yml
 asyncapi: 3.0.0
@@ -56,7 +56,7 @@ info:
   description: Simple example with a replier that replies to the request.
 
 channels:
-  //Same as for the requester
+  // Same as for the requester
 
 operations:
   pongReply:
@@ -68,18 +68,18 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-# Different patterns within request/reply
+# Sub-patterns in request and reply
 
-In the simple example above we saw how you could set up a request and reply pattern across two applications, where the request and reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP or WebSocket. 
+In the simple example above we saw how you could set up a request and reply pattern across two applications, where the request and reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka or WebSocket, in this simple example it does not really matter, cause the only difference would be how the server information is defined.
 
-However, there are sub-patterns to request/reply that AsyncAPI v3 supports, let's take a look at them.
+However, there are sub-patterns to request and reply that AsyncAPI v3 supports, let's take a look at them. 
 
 ## Request/reply over different channels
 If you come from a REST or WebSocket environment, this sub-pattern might seem weird, but in the event-driven world of Kafka or NATS this is a common pattern to utilize where you do the request over one channel, and reply on a different one.
 
-In this example, the reply is on a statically defined channel so you at design time know exactly where the reply comes.
+In this example, the reply is on a statically defined channel so you at design time know exactly where the reply is returned to.
 
-The only difference in this AsyncAPI document to the simple example is that each channel has now been given a different address `/ping` and `/pong` respectfully.
+The only difference in this AsyncAPI document, in relation to the simple example is that each channel has now been given a different address `/ping` and `/pong` respectively.
 
 ```yml
 asyncapi: 3.0.0
@@ -111,7 +111,7 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-Defining the replier is the same as for the requester, again using the `receive` action instead as the only difference.
+Defining the **replier** is the same as for the requester, again using the `receive` action instead as the only difference.
 
 ```yml
 asyncapi: 3.0.0
@@ -122,7 +122,7 @@ info:
   description: Example with a replier that returns the response on a different channel than the request happened on.
 
 channels:
-  //Same as for the requester
+  //.Same as for the requester
 
 operations:
   pongReply:
@@ -138,7 +138,7 @@ operations:
 
 A second sub-pattern is where we do not know the reply channel at design time, but instead, it's dynamic and determined at runtime. This could for example be using the request message payload or header to dictate the response channel.
 
-Take notice how we utilize `address: null` to define that we dont know the address.
+Take notice how we utilize `address: null` to define that we dont know the address and instead 
 
 ```yml
 asyncapi: 3.0.0
@@ -184,7 +184,7 @@ info:
   description: Example with a replier that returns the response on a channel determined by the header `replyTo` of the request.
 
 channels:
-  //Same as for the requester
+  //.Same as for the requester
 
 operations:
   pongReply:
