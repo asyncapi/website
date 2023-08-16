@@ -1,11 +1,10 @@
-
 import NavItem from '../../../components/navigation/NavItem';
 import MockRouter from '../../utils/router';
+
 describe('NavItem', () => {
   it('renders a link without a dropdown', () => {
     cy.mount(
       <MockRouter >
-
         <NavItem text="Home" href="/" />
       </MockRouter>
     )
@@ -27,7 +26,6 @@ describe('NavItem', () => {
       <MockRouter >
         <NavItem text="More" hasDropdown />
       </MockRouter>
-
     )
     cy.get('button').should('have.text', 'More').and('have.attr', 'type', 'button')
     cy.get('button').find('svg').should('exist')

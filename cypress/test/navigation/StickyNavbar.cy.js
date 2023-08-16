@@ -15,6 +15,5 @@ describe('StickyNavbar', () => {
         cy.get('[data-testid="Sticky-div"]').should('have.class', 'z-50');
         cy.get('[data-testid="Sticky-div"]').should('have.class', customClass);
         cy.contains(childText); 
-
     });
 });

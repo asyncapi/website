@@ -16,6 +16,4 @@ describe('JobPostItem', () => {
     cy.contains(job.title + ' at ' + job.company.name)
       .should('exist')
   })
-
-
 })

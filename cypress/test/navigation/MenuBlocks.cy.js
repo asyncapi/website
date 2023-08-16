@@ -20,7 +20,6 @@ describe('MenuBlocks', () => {
       cy.get('[data-testid="MenuBlocks-Link"]').should('have.length', items.length); 
       cy.contains('Menu Item 1'); 
       cy.contains('Description for Menu Item 1'); 
-   
     });
   });
   

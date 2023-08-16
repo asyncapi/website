@@ -13,7 +13,6 @@ describe('EventPostItem', () => {
     mount(
     <MockRouter> <EventPostItem post={ post } className="event-post" id="1" /></MockRouter>
    );
-
   });
 
   it('renders correctly with inactive status', () => {
@@ -26,10 +25,7 @@ describe('EventPostItem', () => {
     };
 
     mount(<EventPostItem post={ post } className="event-post" id="2" />);
-
-
     cy.get('[data-testid="Event-span"]').should('have.text', 'View Recording');
-
   });
 });
 
