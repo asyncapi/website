@@ -68,7 +68,7 @@ operations:
 
 # Sub-patterns in request/reply
 
-In the simple example above we saw how you could set up a request/reply pattern across two applications, where the request/reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka or WebSocket, in this simple example it does not really matter, cause the only difference would be how the server information is defined.
+In the simple example above we saw how you could set up a request/reply pattern across two applications, where the request/reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka, or WebSocket, in this simple example it does not matter, cause the only difference would be how the server information is defined.
 
 However, there are sub-patterns to request/reply that AsyncAPI v3 supports, let's take a look at them. 
 
@@ -136,7 +136,7 @@ operations:
 
 A second sub-pattern is where we do not know the reply channel at design time, but instead, it's dynamic and determined at runtime. This could for example be using the request message payload or header to dictate the response channel.
 
-Take notice how we utilize `address: null` to define that we don't know the address. This is just for illustration purpose as you can also omit the property entirely.
+Take notice how we utilize `address: null` to define that we don't know the address. This is just for illustration purposes as you can also omit the property entirely.
 
 ```yml
 asyncapi: 3.0.0
