@@ -19,7 +19,7 @@ asyncapi: 3.0.0
 info:
   title: Ping/pong example with requester
   version: 1.0.0
-  description: Simple example with a requester that initiates the request-reply pattern.
+  description: Requester example initiating the request-reply pattern.
 
 channels:
   ping:
@@ -45,7 +45,7 @@ operations:
 
 # Describing a replier
 
-To describe a **replier**, we take the same structure as for the requester, with the simple difference, of using the `receive` action instead.
+To describe a **replier**, we take the same structure as for the requester, with the simple difference of using the `receive` action instead.
 
 ```yml
 asyncapi: 3.0.0
@@ -75,9 +75,9 @@ In the simple example above we saw how you could set up a request and reply patt
 However, there are sub-patterns to request and reply that AsyncAPI v3 supports, let's take a look at them. 
 
 ## Request/reply over different channels
-If you come from a REST or WebSocket environment, this sub-pattern might seem weird, but in the event-driven world of Kafka or NATS this is a common pattern to utilize where you do the request over one channel, and reply on a different one.
+If you come from a REST or WebSocket environment, this sub-pattern might seem unfamiliar, but in the event-driven world of Kafka or NATS this is a common pattern to utilize where you do the request over one channel, and reply on a different one.
 
-In this example, the reply is on a statically defined channel so you at design time know exactly where the reply is returned to.
+In this example, the reply is on a statically defined channel, so you, at design time, know exactly where the reply is returned to.
 
 The only difference in this AsyncAPI document, in relation to the simple example is that each channel has now been given a different address `/ping` and `/pong` respectively.
 
@@ -205,13 +205,13 @@ You can use different types of `location` values here as it's not limited to hea
 
 In for example WebSocket, often you encounter that a channel will contain multiple messages over the same channel, but when you design the request/reply operations, you want to explicitly state which messages are "active". 
 
-In the following example it's very close to the first requester example, where the difference is that we merged the two ping and pong channels into a single one (because they use the same address). The request operation then explicitly defined the request message among the available channel messages and the same for the reply.
+The following example is very similar to the first requester example, with the difference being that we merged the two ping and pong channels into a single one (because they use the same address). The request operation then explicitly defined the request message among the available channel messages and the same for the reply.
 
 ```yml
 asyncapi: 3.0.0
 
 info:
-  title: Ping/pong example when a channel contains multiple multiples
+  title: Ping/pong example when a channel contains multiple messages
   version: 1.0.0
   description: Simple example with a requester that initiates the request-reply pattern, where the root channel contains multiple messages.
 
