@@ -12,7 +12,34 @@
     },
     "features": {
         "title": "Warum AsyncAPI?",
-        "description": "Verbesserung des aktuellen Stands der ereignisgesteuerten Architekturen (EDA)"
+        "description": "Verbesserung des aktuellen Stands der ereignisgesteuerten Architekturen (EDA)",
+        
+        "specification.name": "Spezifikation",
+        "specification.description": "Ermöglicht es Ihnen, die Schnittstellen von asynchronen APIs zu definieren und ist protokollunabhängig.",
+        "specification.links.whyasyncapi-spec-documentation-link": "Dokumentation",
+
+        "document-apis.name": "APIs dokumentieren",
+        "document-apis.description": "Verwenden Sie unsere Tools, um Dokumentation auf Build-Ebene, auf einem Server und auf einem Client zu generieren.",
+        "document-apis.links.whyasyncapi-apis-htmltemplate-link": "HTML-Vorlage",
+        "document-apis.links.whyasyncapi-apis-reactcomponents-link": "React-Komponente",
+
+        "code-generation.name": "Code-Generierung",
+        "code-generation.description": "Generieren Sie Dokumentation, Code (TypeScript, Java, C# usw.) und mehr aus Ihren AsyncAPI-Dateien.",
+        "code-generation.links.whyasyncapi-generation-generator-link": "Generator",
+        "code-generation.links.whyasyncapi-generation-modelina-link": "Modelina",
+
+        "community.name": "Gemeinschaft",
+        "community.description": "Wir sind eine Gemeinschaft von großartigen Menschen, die leidenschaftlich an AsyncAPI und ereignisgesteuerten Architekturen interessiert sind.",
+        "community.links.whyasyncapi-community-slack-link": "Treten Sie unserem Slack bei",
+
+        "open-governance.links.whyasyncapi-governance-more-link": "Erfahren Sie mehr über Offene Governance",
+        "open-governance.links.whyasyncapi-governance-tsc-link": "TSC-Mitglieder",
+        "open-governance.name": "Offene Governance",
+        "open-governance.description": "Unser Open-Source-Projekt ist Teil der Linux Foundation und arbeitet unter einem Modell der offenen Governance.",
+
+        "much-more.name": "Und noch viel mehr...",
+        "much-more.description": "Wir haben viele verschiedene Tools und laden Sie ein, unsere Ideen zu erkunden und neue Ideen für AsyncAPI vorzuschlagen.",
+        "much-more.links.whyasyncapi-muchmore-github-link": "GitHub-Diskussionen anzeigen"
     },
     "adopters": {
         "title": "Von den weltweit führenden Marken übernommen",
