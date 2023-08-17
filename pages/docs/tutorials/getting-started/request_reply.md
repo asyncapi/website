@@ -1,5 +1,5 @@
 ---
-title: Request and reply pattern
+title: Request/reply pattern
 weight: 20
 ---
 
