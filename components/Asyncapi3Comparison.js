@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-
+/**
+ * Main comparison that shows the full picture between v2 and v3
+ */
 export function Asyncapi3Comparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Info: false,
@@ -167,7 +169,9 @@ export function Asyncapi3Comparison({ className = '' }) {
   )
 }
 
-
+/**
+ * Used to compare how channels, operations and messages have changed
+ */
 export function Asyncapi3ChannelComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Paths: false,
@@ -268,7 +272,9 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
   )
 }
 
-
+/**
+ * Shows the comparison between v2 and v3 for the channel IDs and channel address
+ */
 export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Paths: false,
@@ -312,7 +318,9 @@ export function Asyncapi3IdAndAddressComparison({ className = '' }) {
   )
 }
 
-
+/**
+ * Compares how the server object changes from v2 to v3.
+ */
 export function Asyncapi3ServerComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Host: false,
@@ -367,6 +375,9 @@ export function Asyncapi3ServerComparison({ className = '' }) {
   )
 }
 
+/**
+ * Compare how the meta data moved place between v2 and v3
+ */
 export function Asyncapi3MetaComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     Info: false,
@@ -414,8 +425,9 @@ export function Asyncapi3MetaComparison({ className = '' }) {
   )
 }
 
-
-
+/**
+ * Compares how operations changed from v2 to v3
+ */
 export function Asyncapi3OperationComparison({ className = '' }) {
   return (
     <div className={`${className} flex flex-col md:flex-row gap-1 flex-wrap text-center`}>
@@ -464,8 +476,9 @@ export function Asyncapi3OperationComparison({ className = '' }) {
   )
 }
 
-
-
+/**
+ * Compares how the schema and schemaFormat changed location from v2 to v3
+ */
 export function Asyncapi3SchemaFormatComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     SchemaFormat: false,
