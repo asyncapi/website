@@ -17,7 +17,7 @@ To describe a **requester** in AsyncAPI we make use of an operation that `send`s
 asyncapi: 3.0.0
 
 info:
-  title: Ping/pong example with the requester
+  title: Ping/pong example with requester
   version: 1.0.0
   description: Simple example with a requester that initiates the request-reply pattern.
 
