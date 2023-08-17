@@ -68,7 +68,7 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-# Sub-patterns in request and reply
+# Sub-patterns in request/reply
 
 In the simple example above we saw how you could set up a request and reply pattern across two applications, where the request and reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka or WebSocket, in this simple example it does not really matter, cause the only difference would be how the server information is defined.
 
