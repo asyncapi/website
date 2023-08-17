@@ -138,7 +138,7 @@ operations:
 
 A second sub-pattern is where we do not know the reply channel at design time, but instead, it's dynamic and determined at runtime. This could for example be using the request message payload or header to dictate the response channel.
 
-Take notice how we utilize `address: null` to define that we dont know the address and instead 
+Take notice how we utilize `address: null` to define that we don't know the address:
 
 ```yml
 asyncapi: 3.0.0
