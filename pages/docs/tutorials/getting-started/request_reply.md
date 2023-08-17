@@ -201,7 +201,7 @@ You can use different types of `location` values here as it's not limited to hea
 
 ## Multiple messages over the same channel with request/reply
 
-In for example WebSocket, often you encounter that a channel will contain multiple messages over the same channel, but when you design the request/reply operations, you want to explicitly state which messages are "active". 
+In WebSocket, you often encounter that a channel will contain multiple messages, which means you will have to make your operations explicitly define which messages are used for each operation.
 
 The following example is very similar to the first requester example, with the difference being that we merged the two ping and pong channels into a single one (because they use the same address). The request operation then explicitly defined the request message among the available channel messages and the same for the reply.
 
