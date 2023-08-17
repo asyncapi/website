@@ -3,7 +3,7 @@ title: Request/reply pattern
 weight: 20
 ---
 
-A quite common messaging pattern is [request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html), which describes a **requester**, which sends a request message and waits for a reply and a **replier** which receives the request and responds with a reply.
+A quite common messaging pattern is [request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html). It describes a **requester**, which sends a request message and waits for a reply - and a **replier** which receives the request and responds with a reply.
  
 # Describing a requester
 
