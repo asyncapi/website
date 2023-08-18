@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/3shCvupVt_4/hqdefault.jpg",
+    "title": "Spec 3 Docs Meeting",
+    "description": "https://github.com/asyncapi/community/issues/818.",
+    "videoId": "3shCvupVt_4"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/1tyyLGAicyE/hqdefault.jpg",
     "title": "Community Meeting (August 8th 2023)",
     "description": "https://github.com/asyncapi/community/issues/818 Lukasz, Animesh, Maya, and others had a brief conversation where they ...",
@@ -22,11 +28,5 @@
     "title": "Design meeting #2",
     "description": "Meeting issue: https://github.com/asyncapi/community/issues/800 Summary: Here's a summary of what we discussed: * Fran and ...",
     "videoId": "GAjlJFXjMh8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/WlD5rqmfezw/hqdefault.jpg",
-    "title": "Open Standards and Private Products: A DevRel&#39;s Dream or Nightmare",
-    "description": "We are discussing the impact of open standards and working with private products as a DevRel.",
-    "videoId": "WlD5rqmfezw"
   }
 ]
