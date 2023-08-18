@@ -1,6 +1,6 @@
 ---
 title: 'Beyond Boundaries - Empowering Through OSS Mentorship'
-date: 2023-08-10T06:00:00+01:00
+date: 2023-08-21T06:00:00+01:00
 type: Community
 tags:
   - Mentorships
@@ -13,6 +13,7 @@ authors:
     photo: /img/avatars/ace.webp
     link: https://twitter.com/_acebuild
     byline: AsyncAPI Preacher
+featured: true    
 ---
 
 In 2022 we piloted our innovative mentorship program that focuses on open-source software(OSS). We envisioned a platform where aspiring developers could learn, grow, and contribute to exciting projects while receiving guidance from experienced mentors.
