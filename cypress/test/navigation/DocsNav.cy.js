@@ -10,7 +10,8 @@ describe('DocsNav', () => {
     mount(
     <MockRouter> <DocsNav item={Docsitem} active={active}  /></MockRouter>
    );
+   cy.get('[data-testid="DocsNav-item"]').should('exist');
+   cy.get('[data-testid="DocsNav-subitem"]').should('exist');
 
- 
   });
 });

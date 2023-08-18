@@ -12,5 +12,6 @@ describe('Navbar Component', () => {
       cy.get('[data-testid="Navbar-logo"]').should('exist')
       cy.get('[data-testid="Navbar-search"]').should('exist')
       cy.get('[data-testid="Navbar-main"]').should('exist')
+      cy.get('[data-testid="Navbar-logo"]').should('have.attr','href','/')
   })
 })
