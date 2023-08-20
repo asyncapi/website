@@ -1,0 +1,25 @@
+{
+    "cli": {
+        "title": "Interagieren Sie mit der AsyncAPI bequem von Ihrer CLI aus",
+        "description": "Interagieren Sie mit der AsyncAPI bequem von Ihrer CLI aus",
+        "installationTitle": "Installation und Verwendung",
+        "installationDescription": "Verwenden Sie AsyncAPI CLI innerhalb von Sekunden, indem Sie einen unserer Befehle auswählen, um loszulegen.",
+        "docsButton": "Docs anzeigen",
+        "installingTitle": "Installation von",
+        "exampleTitle": "Beispiel",
+        "exampleDescription": "Erstellen Sie eine neue AsyncAPI-Datei",
+        "featuresTitle": "Eigenschaften",
+        "featuresDescription": "Verwenden Sie das AsyncAPI-CLI-Tool, um Ihre AsyncAPI-Dateien zu erstellen, zu entwickeln und zu pflegen.",
+        "features": {
+            "new-files.name": "Neue Dateien",
+            "new-files.description": "Verwenden Sie das CLI-Tool, um schnell neue AsyncAPI-Dateien zu erstellen. Wählen Sie aus einer Reihe von Vorlagen (MQTT, WebSockets, Kafka und mehr).",
+            "validate.name": "Validieren Sie",
+            "validate.description": "Validieren Sie Ihre AsyncAPI-Dokumente mit der CLI. Erhalten Sie schnelles Feedback, um zu überprüfen, ob Ihr AsyncAPI-Dokument das richtige Format hat.",
+            "open-studio.name": "Offenes Atelier",
+            "open-studio.description_pretext": "Haben Sie eine lokale AsyncAPI-Datei? Führen Sie  aus.",
+            "open-studio.description_posttext": "um unser Studio in Sekundenschnelle zu öffnen",
+            "open-source.name": "Offene Quelle",
+            "open-source.description": "Alle unsere Tools sind quelloffen. Sie können gerne neue Befehle beisteuern oder bei der Weiterentwicklung der bestehenden helfen."
+        }
+    }
+}
