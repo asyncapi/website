@@ -13,7 +13,10 @@ import Heading from '../../../components/typography/Heading';
 import Paragraph from '../../../components/typography/Paragraph';
 import DocsButton from '../../../components/buttons/DocsButton';
 import Button from '../../../components/buttons/Button';
-import { useTranslation } from '../../../lib/i18n';
+import {
+    getAllLanguageSlugs,
+    getLanguage, useTranslation
+} from '../../../lib/i18n';
 
 const features = [
     {
@@ -219,4 +222,21 @@ export default function CliPage() {
             </div>
         </GenericLayout>
     );
+}
+
+export async function getStaticPaths() {
+    const paths = getAllLanguageSlugs();
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const language = getLanguage(params.lang);
+    return {
+        props: {
+            language,
+        },
+    };
 }
