@@ -12,6 +12,11 @@ describe('DocsNav', () => {
    );
    cy.get('[data-testid="DocsNav-item"]').should('exist');
    cy.get('[data-testid="DocsNav-subitem"]').should('exist');
+   cy.get('[data-testid="DocsNav-subitem"]').first().find('span').then(($span) => {
+    // Checking the color of the element
+    cy.wrap($span).should('have.css', 'color', 'rgb(26, 169, 201)'); // Check for the specific color value on active
+  });
 
   });
 });
+
