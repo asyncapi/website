@@ -5,6 +5,8 @@ weight: 60
 
 Adding [channels](../channel.md) in AsyncAPI specification allows organizing and categorizing messages, routing messages to the appropriate consumers, decoupling producers and consumers, scaling and extending the API, and providing clear documentation and communication about API's communication patterns. Additionally, alternative names for channels can be user-defined to suit specific context and preferences.
 
+Here is a flowchart to describe adding channels:
+
 ```mermaid
 graph LR
   A[AsyncAPI Specification]
@@ -31,23 +33,20 @@ The diagram above represents the flow of communication between producers, channe
 Here is an example of how to define channels:
 
 ```yml
-asyncapi: 3.0.0
-info:
-  title: Channel Example
-  version: 0.1.0
-channels:
-  userSignedUp:
-    address: user/signedup
-    messages:
-      userSignedUp:
-        description: An event describing that a user just signed up.
+userSignedUp:
+  address: 'user.signedup'
+  messages:
+    userSignedUp:
+      $ref: '#/components/messages/userSignedUp'
 ```
 
-This AsyncAPI specification sets up an interface for a `userSignedUp` channel, where the `address` field holds the actual address of the channel (`user/signedup`).
+This AsyncAPI specification sets up an interface for a `userSignedUp` channel, where the `address` field holds the actual address of the channel (`user.signedup`).
 
 ## Channel Server Relationship
 
 Channels and [servers](../server.md) have a close relationship in asynchronous messaging systems. Channels act as message communication pathways, while servers generate and publish messages to these channels. Channels serve as logical destinations where messages are organized based on purpose or topic. Acting as producers, Servers generate messages and publish them to specific channels. Consumers, including servers, send to channels to receive messages. Channels ensure that messages are routed to the appropriate consumers based on their subscriptions. This relationship between channels and servers forms the foundation for building scalable and flexible messaging systems.
+
+Here is a flowchart to show the relationship between channels and servers:
 
 ```mermaid
 graph TD
@@ -68,9 +67,13 @@ graph TD
   c1 --> s2
 ```
 
+In this flowchart, channels serve as communication pathways, receiving messages from servers and routing them to consumers, while servers generate and publish messages to these channels.
+
 ### Channel Availability on Specific Servers
 
 A channel can be designed to be available on all servers, which means that the channel is globally accessible, allowing messages published to it to reach all connected clients, regardless of their server connection.
+
+Here is a flowchart showing a channel is available on multiple servers and accessible by multiple clients:
 
 ```mermaid
 graph TD
@@ -101,6 +104,8 @@ graph TD
   s3 --- ch
 ```
 
+In the above flowchart, messages published to the channel to reach all connected clients, regardless of their server connection.
+
 Here is an example of how you might specify that a channel is available only on specific servers:
 
 ```yml
@@ -125,6 +130,8 @@ Specifying a channel and servers allows the AsyncAPI document to clarify where e
 
 Having multiple channels in one server allows for better organization and management of different events or messages within the same server instance, providing a more modular and scalable architecture for handling various functionalities. It enables clients to send to specific channels based on their interests or requirements, ensuring efficient message delivery and reducing complexity in the overall system design.
 
+Here is a diagram showing a single server hosting multiple channels:
+
 ```mermaid
 graph TD
   subgraph Server
@@ -145,6 +152,8 @@ graph TD
   s1 --> c2
   s1 --> c3
 ```
+
+Hosting multiple channels in single server allows user to organize and manage better in case for multiple events or messages by facilitating modular and scalable system architecture.
 
 Here is an example of multiple channels available on specific servers:
 
