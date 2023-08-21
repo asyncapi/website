@@ -14,7 +14,7 @@
     "generate:dashboard": "node scripts/dashboard/build-dashboard.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
-    "test": "echo \"No tests configured yet\"",
+    "test": "npx cypress run --component",
     "release": "echo \"No release to npm for this project\"",
     "cypress": "cypress open",
     "cypress-run": "cypress run"
