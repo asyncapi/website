@@ -86,30 +86,6 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOBW5R_c5VAjCE",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: structure of a AsyncAPI document",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/website/pull/1922",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 16.65612614745701
-    },
-    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -181,6 +157,22 @@
       "resourcePath": "/asyncapi/website/pull/2008",
       "repo": "asyncapi/website",
       "labels": [],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDODyzcIc5NDHYS",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci:  new github action which logs all the reactions in prs and issues",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/.github/pull/220",
+      "repo": "asyncapi/.github",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
       "score": 15.220253203710714
     }
   ],
