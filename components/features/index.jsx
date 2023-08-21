@@ -31,7 +31,7 @@ export default function Features() {
                   <Heading level="h3" typeStyle="heading-md-semibold" className="mt-8">
                     {t(`features.${feature.id}.name`)}
                   </Heading>
-                  {feature.description && (
+                  {(
                     <Paragraph typeStyle="body-md" className="mt-5">
                       {t(`features.${feature.id}.description`)}
                     </Paragraph>
