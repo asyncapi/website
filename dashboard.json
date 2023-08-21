@@ -52,7 +52,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.102221212448114
+      "score": 20.67657038994663
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -86,28 +86,20 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOBW5R_c5VAjCE",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c5BIl5P",
+      "isPR": false,
       "isAssigned": true,
-      "title": "docs: structure of a AsyncAPI document",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/website/pull/1922",
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ],
-      "score": 16.65612614745701
+      "score": 16.36895155870775
     },
     {
       "id": "PR_kwDOGPFxkc5Ey7vh",
@@ -146,6 +138,28 @@
       "score": 15.64084401961705
     },
     {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c5Worbr",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add v3 migration guide",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2008",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
       "id": "PR_kwDODyzcIc5NDHYS",
       "isPR": true,
       "isAssigned": false,
@@ -160,36 +174,24 @@
         }
       ],
       "score": 15.220253203710714
-    },
-    {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N85uVjld",
+      "title": "Add all speakers button",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/163",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBGu-185t3Fe8",
       "title": "Add logo of bronze sponsors to readme",
@@ -202,21 +204,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5tcrDS",
-      "title": "Add a new flag to set context when it is created ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/726",
-      "repo": "asyncapi/cli",
-      "author": "Souvikns",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
