@@ -32,13 +32,13 @@ export default function Hero({ className = '' }) {
             {t('main.body_pretext')}{" "}
             <strong>{t('main.body_boldtext')}</strong>{t('main.body_posttext')}
           </Heading>
-          <div className='flex flex-row items-center justify-center'>
+          <div className=' sm:flex flex-row items-center justify-center'>
             <Button className="block md:inline-block" text={t('main.docs_btn')} href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />}
               data-testid="Hero-Button" />
             {/* Wrap SearchButton with AlgoliaSearch component */}
             <AlgoliaSearch>
               <SearchButton
-                className="sm:flex items-center text-left space-x-3 px-4 py-3 ml-2 bg-white border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
+                className="flex items-center text-left mt-4 sm:mt-0  space-x-3 px-4 py-3 sm:ml-2  sm:w-auto w-full border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
               >
                 {({ actionKey }) => (
                   <>
