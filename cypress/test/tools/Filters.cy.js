@@ -5,42 +5,56 @@ import ToolFilter from '../../../context/ToolFilterContext';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 describe('Filters Component', () => {
-  //filter types and their data-testid attributes
+  // Filter types and their data-testid attributes
   const filterTypes = [
     { name: 'Language', id: 'Filters-Language-dropdown' },
     { name: 'Technology', id: 'Filters-Technology-dropdown' },
     { name: 'Category', id: 'Filters-Category-dropdown' },
   ];
 
-  // select from dropwdown
+  // Select from dropdown
   const selectFilters = (filterType) => {
     cy.get(`[data-testid="${ filterType.id }"]`).click();
   };
 
-  // helper function to verify the applied filters
+  // Helper function to verify the applied filters
   const verifyFilters = (filterType) => {
-    // check that applied filters contain the selected filters from the dropdown
+    // Check that applied filters contain the selected filters from the dropdown
     cy.get('[data-testid="Applied-filters"]').should('exist');
   };
 
-  beforeEach(() => {
-    const routerStub = {
-      route: '/',
-      pathname: '/',
-      query: {},
-      asPath: '/',
-      basePath: '',
-      back: cy.stub(),
-      beforePopState: cy.stub(),
-      prefetch: cy.stub().resolves(),
-      reload: cy.stub(),
-      push: cy.stub(),
-      isFallback: false,
-      defaultLocale: 'en',
-    };
 
+  beforeEach(() => {
+    // Context variables for router stub
+    const route = '/';
+    const pathname = '/';
+    const query = {};
+    const asPath = '/';
+    const basePath = '';
+    const back = cy.stub();
+    const beforePopState = cy.stub();
+    const prefetch = cy.stub().resolves();
+    const reload = cy.stub();
+    const push = cy.stub();
+    const isFallback = false;
+    const defaultLocale = 'en';
     mount(
-      <RouterContext.Provider value={ routerStub }>
+      <RouterContext.Provider
+        value={ {
+          route,
+          pathname,
+          query,
+          asPath,
+          basePath,
+          back,
+          beforePopState,
+          prefetch,
+          reload,
+          push,
+          isFallback,
+          defaultLocale,
+        } }
+      >
         <ToolFilter>
           <Filters setOpenFilter={ () => { } } />
         </ToolFilter>
@@ -56,7 +70,7 @@ describe('Filters Component', () => {
 
   filterTypes.forEach((filterType) => {
     it(`allows selecting and displaying ${ filterType.name } options`, () => {
-      // Using  function to select filters from the dropdown
+      // Using context variable to select filters from the dropdown
       selectFilters(filterType);
     });
   });
@@ -65,7 +79,9 @@ describe('Filters Component', () => {
     filterTypes.forEach((filterType) => {
       selectFilters(filterType);
     });
+
     cy.get('.w-full').click({ multiple: true }, { force: true });
+
     filterTypes.forEach((filterType) => {
       verifyFilters(filterType);
     });
