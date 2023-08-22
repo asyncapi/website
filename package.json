@@ -16,8 +16,8 @@
     "generate:tools": "node scripts/build-tools.js",
     "test": "npx cypress run --component",
     "release": "echo \"No release to npm for this project\"",
-    "cypress": "cypress open",
-    "cypress-run": "cypress run"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "repository": {
     "type": "git",
