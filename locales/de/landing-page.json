@@ -1,0 +1,74 @@
+{
+    "main": {
+        "header": "Aufbau der Zukunft der",
+        "subHeader": "Ereignisgesteuerte Architekturen (EDA)",
+        "body_pretext": "Open-Source-Tools zur einfachen Erstellung und Wartung Ihrer ereignisgesteuerten Architektur. Alle basieren auf der AsyncAPI-Spezifikation, der ",
+        "body_boldtext": "Industriestandard",
+        "body_posttext": " zur Definition asynchroner APIs.",
+        "docs_btn": "Lesen Sie die Dokumente",
+        "search_btn": "Schnellsuche...",
+        "slogan_text": "Wir sind stolz darauf, Teil der",
+        "slogan_link": "Linux Foundation"
+    },
+    "features": {
+        "title": "Warum AsyncAPI?",
+        "description": "Verbesserung des aktuellen Stands der ereignisgesteuerten Architekturen (EDA)",
+        
+        "specification.name": "Spezifikation",
+        "specification.description": "Ermöglicht es Ihnen, die Schnittstellen von asynchronen APIs zu definieren und ist protokollunabhängig.",
+        "specification.links.whyasyncapi-spec-documentation-link": "Dokumentation",
+
+        "document-apis.name": "APIs dokumentieren",
+        "document-apis.description": "Verwenden Sie unsere Tools, um Dokumentation auf Build-Ebene, auf einem Server und auf einem Client zu generieren.",
+        "document-apis.links.whyasyncapi-apis-htmltemplate-link": "HTML-Vorlage",
+        "document-apis.links.whyasyncapi-apis-reactcomponents-link": "React-Komponente",
+
+        "code-generation.name": "Code-Generierung",
+        "code-generation.description": "Generieren Sie Dokumentation, Code (TypeScript, Java, C# usw.) und mehr aus Ihren AsyncAPI-Dateien.",
+        "code-generation.links.whyasyncapi-generation-generator-link": "Generator",
+        "code-generation.links.whyasyncapi-generation-modelina-link": "Modelina",
+
+        "community.name": "Gemeinschaft",
+        "community.description": "Wir sind eine Gemeinschaft von großartigen Menschen, die leidenschaftlich an AsyncAPI und ereignisgesteuerten Architekturen interessiert sind.",
+        "community.links.whyasyncapi-community-slack-link": "Treten Sie unserem Slack bei",
+
+        "open-governance.links.whyasyncapi-governance-more-link": "Erfahren Sie mehr über Offene Governance",
+        "open-governance.links.whyasyncapi-governance-tsc-link": "TSC-Mitglieder",
+        "open-governance.name": "Offene Governance",
+        "open-governance.description": "Unser Open-Source-Projekt ist Teil der Linux Foundation und arbeitet unter einem Modell der offenen Governance.",
+
+        "much-more.name": "Und noch viel mehr...",
+        "much-more.description": "Wir haben viele verschiedene Tools und laden Sie ein, unsere Ideen zu erkunden und neue Ideen für AsyncAPI vorzuschlagen.",
+        "much-more.links.whyasyncapi-muchmore-github-link": "GitHub-Diskussionen anzeigen"
+    },
+    "adopters": {
+        "title": "Von den weltweit führenden Marken übernommen",
+        "description": "Diese Marken verwenden AsyncAPI bereits in der Produktion. Nutzt Ihr Unternehmen AsyncAPI und möchte in diese Liste aufgenommen werden?",
+        "linkText": "Lassen Sie es uns hier wissen!"
+    },
+    "community": {
+        "title": "Werden Sie Mitglied unserer großartigen Gemeinschaft!",
+        "subtitle": "Wir sind eine Gemeinschaft von großartigen Menschen, die leidenschaftlich an AsyncAPI und ereignisgesteuerten Architekturen interessiert sind.",
+        "slackCTATitle": "Treten Sie unserem Slack-Arbeitsbereich bei",
+        "slackCTADesc": "Wir laden alle herzlich ein, unserem Slack-Arbeitsbereich beizutreten. Wenn Sie eine Frage zur Verwendung von AsyncAPI haben, beitragen möchten oder einfach nur hallo sagen möchten 👋, sind Sie herzlich willkommen. Wir sind nette Menschen 🙂",
+        "slackCTABtn": "Treten Sie bei!",
+        "meetingTitle": "Nehmen Sie an unseren öffentlichen Meetings teil",
+        "meetingDesc": "AsyncAPI veranstaltet jede Woche verschiedene Meetings. Sie konzentrieren sich auf verschiedene Themen, manchmal rein technisch und manchmal zum Aufbau der Gemeinschaft. Wählen Sie eins aus und schließen Sie sich uns an!",
+        "meetingLink": "Erfahren Sie mehr über unsere Meetings."
+    },
+    "sponsors": {
+        "platinumTitle": "Platin-Sponsoren",
+        "goldTitle": "Gold-Sponsoren",
+        "silverTitle": "Silber-Sponsoren",
+        "sponsorCTATitle": "Möchten Sie uns als Sponsor unterstützen?",
+        "sponsorCTADesc": "Diese großartigen Organisationen unterstützen bereits AsyncAPI. Möchten Sie Sponsor werden?",
+        "sponsorCTALink": "Unterstützen Sie uns!",
+        "supportedByTitle": "Unterstützt von",
+        "supportedByPretext": "Die folgenden Unternehmen unterstützen uns, indem sie uns erlauben, ihre Produkte kostenlos zu verwenden. Haben Sie Interesse daran, uns ebenfalls zu unterstützen?",
+        "supportedByLink": "Kontaktieren Sie uns per E-Mail",
+        "supportedByPosttext": " für weitere Informationen."
+    },
+    "testimonials": {
+        "title": "Was die Experten sagen"
+    }
+}

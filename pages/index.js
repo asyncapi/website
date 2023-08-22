@@ -24,8 +24,11 @@ import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
 import NewsroomSection from '../components/newsroom/NewsroomSection'
+import { languageDetection } from "../lib/i18n";
 
 function HomePage() {
+  //To be enabled in a future PR
+  //languageDetection();
   return (
     <>
       <Head />
