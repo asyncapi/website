@@ -12,7 +12,7 @@ export default function NavMenu({ items = [] }) {
             {
               items.map((item, index) => (
                 <Link href={item.href} key={index}>
-                <a target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                <a target={item.target || '_self'} rel="noopener noreferrer" className="-m-3 p-3 block space-y-1 rounded-md hover:bg-gray-50 transition ease-in-out duration-150" data-testid="NavMenu-Link">
                   <Paragraph typeStyle="body-sm" textColor="text-gray-900" className="font-semibold">
                     {item.text}
                   </Paragraph>
