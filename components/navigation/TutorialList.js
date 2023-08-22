@@ -9,6 +9,7 @@ export default function TutorialList({ className = '' }) {
   const tutorials = navItems.filter(item => item.sectionSlug === post.slug && !item.isIndex)
 
   return (
+    <DocsContext.Consumer >
     <div className={`${className} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
       {
         tutorials.map((tuto, index) => (
@@ -27,5 +28,6 @@ export default function TutorialList({ className = '' }) {
         ))
       }
     </div>
+    </DocsContext.Consumer>
   )
 }

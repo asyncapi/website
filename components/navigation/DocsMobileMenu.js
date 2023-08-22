@@ -6,7 +6,7 @@ import IconLoupe from '../icons/Loupe';
 export default function DocsMobileMenu({
   post,
   navigation,
-  onClickClose = () => {},
+  onClickClose = () => { },
 }) {
   return (
     <div className="z-60 lg:hidden">
@@ -14,14 +14,14 @@ export default function DocsMobileMenu({
         <div className="fixed inset-0">
           <div
             className="absolute inset-0 bg-gray-600 opacity-75"
-            onClick={onClickClose}
+            onClick={ onClickClose }
           ></div>
         </div>
 
         <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
           <div className="absolute top-0 right-0 -mr-14 p-1">
             <button
-              onClick={onClickClose}
+              onClick={ onClickClose }
               className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
               aria-label="Close sidebar"
             >
@@ -48,7 +48,7 @@ export default function DocsMobileMenu({
             <div className="w-full mt-10 mb-4 px-2">
               <SearchButton
                 className="flex w-full items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
-                indexName={DOCS_INDEX_NAME}
+                indexName={ DOCS_INDEX_NAME }
               >
                 <IconLoupe />
                 <span className="flex-auto">Search docs...</span>
@@ -57,19 +57,19 @@ export default function DocsMobileMenu({
 
             <nav className="mt-5 px-2 mb-4">
               <ul>
-                {Object.values(navigation).map((navItem) => (
+                { Object.values(navigation).map((navItem) => (
                   <DocsNav
-                    item={navItem}
-                    active={post.slug}
-                    onClick={onClickClose}
+                    item={ navItem }
+                    active={ post.slug }
+                    onClick={ onClickClose }
                   />
-                ))}
+                )) }
               </ul>
             </nav>
           </div>
         </div>
         <div className="flex-shrink-0 w-14">
-          {/* Force sidebar to shrink to fit close icon */}
+          {/* Force sidebar to shrink to fit close icon */ }
         </div>
       </div>
     </div>
