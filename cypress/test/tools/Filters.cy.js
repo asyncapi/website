@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'cypress/react';
 import Filters from '../../../components/tools/Filters';
-import ToolFilter, { ToolFilterContext } from '../../../context/ToolFilterContext';
+import  { ToolFilterContext } from '../../../context/ToolFilterContext';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
 describe('Filters Component', () => {
