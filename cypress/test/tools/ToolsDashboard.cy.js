@@ -3,6 +3,7 @@ import ToolDashboard from '../../../components/tools/ToolDashboard';
 import ToolFilter from '../../../context/ToolFilterContext';
 import { ToolFilterContext } from '../../../context/ToolFilterContext';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { get } from 'lodash';
 
 describe('ToolDashboard Component', () => {
   it('renders the ToolDashboard component correctly', () => {
@@ -43,7 +44,12 @@ describe('ToolDashboard Component', () => {
     const push = cy.stub();
     const isFallback = false;
     const defaultLocale = 'en';
-    
+    let technologies = ['Node.js'];
+    const isPaid = "all";
+    const isAsyncAPIOwner = false;
+    const languages = [];
+    const categories = [];
+
     mount(
       <RouterContext.Provider
         value={{
@@ -61,26 +67,27 @@ describe('ToolDashboard Component', () => {
           defaultLocale,
         }}
       >
-<ToolFilter>
+<ToolFilterContext.Provider value={{ isPaid, isAsyncAPIOwner, languages, technologies, categories }} >
         <ToolDashboard />
-        </ToolFilter>
+        </ToolFilterContext.Provider>
       </RouterContext.Provider>
       
 
     ); 
-    
+    cy.wrap(technologies).as('technologies');
     cy.get('[data-testid="ToolsDashboard-Filters-Click"]').click();
 
     // Interact with filter options
     cy.get('[data-testid="Filters-Technology-dropdown"]').within(() => {
       cy.contains('Select Technologies..').click();
       cy.contains('Node.js').click();
-      
+      cy.get('@technologies').should('deep.equal', ['Node.js']); 
     });
     cy.get('[data-testid="Button-main"]').click({force:true});
+    cy.contains('SIO-AsyncAPI').should('not.exist') 
+    /**This tool contains "Python as technology and thus should not be rendered when Technology is Node.js" */
 
   });
-
-       
+    
 
   });

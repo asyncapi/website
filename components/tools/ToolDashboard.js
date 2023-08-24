@@ -96,7 +96,7 @@ export default function ToolDashboard() {
         if (languages.length) {
           isLanguageTool = false;
           for (let language of languages) {
-            if (tool?.filters?.language && language === tool.filters.language.name) isLanguageTool = true;
+            if (tool?.filters?.language && tool.filters.language.find((item) => item.name === language)) isLanguageTool = true;
           }
         }
         if (technologies.length) {
@@ -188,9 +188,9 @@ export default function ToolDashboard() {
         </div>
       </div>
       {isFiltered && (
-        <div className="flex items-center mt-4 text-gray-600 cursor-pointer hover:text-black" onClick={clearFilters}>
+        <div className="flex items-center mt-4 text-gray-600 cursor-pointer hover:text-black" onClick={clearFilters} >
           <Cross />
-          <span className="ml-3">Clear Filters</span>
+          <span className="ml-3" >Clear Filters</span>
         </div>
       )}
       {loading ? (
