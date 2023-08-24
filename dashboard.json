@@ -28,22 +28,6 @@
       "score": 22.9739670999407
     },
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
       "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
@@ -174,6 +158,26 @@
         }
       ],
       "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
+      "score": 14.933078614961456
     }
   ],
   "goodFirstIssues": [
