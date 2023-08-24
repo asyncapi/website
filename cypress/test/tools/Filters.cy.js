@@ -82,12 +82,13 @@ describe('Filters Component', () => {
   });
 
   it('allows selecting filters and applying them', () => {
-    cy.get('[data-testid="Applied-filters"]').click({force:true});
+
     // Check if context variables are updated after applying filters
     cy.get('@isPaid').should('be.false');                 // Replace with expected value
     cy.get('@isAsyncAPIOwner').should('be.false');        // Replace with expected value
     cy.get('@languages').should('deep.equal', ['Javascript']);        // Replace with expected value
     cy.get('@technologies').should('deep.equal', ['Node.js']);     // Replace with expected value
     cy.get('@categories').should('deep.equal', ['APIs']);       // Replace with expected value
+    cy.get('[data-testid="Button-main"]').click({force:true});
   });
 });
