@@ -37,6 +37,14 @@ export default function Filters({ setOpenFilter }) {
     setCheckOwner(isAsyncAPIOwner);
   }, [languages, technologies, categories, isPaid, isAsyncAPIOwner]);
   
+
+   // function to open only one filter at a time
+   const handleOpen = (setopenX, openX) => {
+    setopenLanguage(false);
+    setopenTechnology(false);
+    setopenCategory(false);
+    setopenX(!openX);
+  }
   // contains the list of languages and technologies
   let languageList = tags["languages"]
   let technologyList = tags["technologies"]
@@ -93,11 +101,11 @@ export default function Filters({ setOpenFilter }) {
           </div>
         </div>
         <div className="flex gap-2">
-          <div className={twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="free" ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => (checkPaid === "free" ? setCheckPaid("all") : setCheckPaid("free"))}>
+          <div className={twMerge(` px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="free" ? 'bg-secondary-100 border-secondary-500' : ''}`)} onClick={() => (checkPaid === "free" ? setCheckPaid("all") : setCheckPaid("free"))}>
             <div className='text-sm'>Open Source</div>
             <img src="/img/illustrations/icons/FreeIcon.svg" />
           </div>
-          <div className={`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="paid" ? 'bg-secondary-100 border-secondary-500' : ''}`} onClick={() => (checkPaid === "paid" ? setCheckPaid("all") : setCheckPaid("paid"))}>
+          <div className={` px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${checkPaid==="paid" ? 'bg-secondary-100 border-secondary-500' : ''}`} onClick={() => (checkPaid === "paid" ? setCheckPaid("all") : setCheckPaid("paid"))}>
             <div className='text-sm'>Commercial</div>
             <img src="/img/illustrations/icons/PaidIcon.svg" />
           </div>
@@ -111,7 +119,7 @@ export default function Filters({ setOpenFilter }) {
         <div className="flex gap-4">
           <label className="inline-flex relative items-center cursor-pointer">
             <input type="checkbox" value={checkOwner} className="sr-only peer" onChange={() => setCheckOwner(!checkOwner)} />
-            <div className={twMerge(`w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checkOwner ? "after:translate-x-full after:border-white bg-secondary-500" : ''}`)}></div>
+            <div className={twMerge(`bg-gray-100  w-11 h-6  peer-focus:outline-none rounded-full peer after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all ${checkOwner ? "after:translate-x-full after:border-white bg-secondary-500" : ''}`)}></div>
           </label>
           <div className="font-medium text-sm">
             Show only AsyncAPI-owned tools
@@ -122,13 +130,13 @@ export default function Filters({ setOpenFilter }) {
       <div className="flex flex-col gap-2 mx-4">
         <Carddata heading="LANGUAGE" data = {Data.properties.filters.properties.language.description} type="lang" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => setopenLanguage(!openLanguage)}>
+          <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full  text-gray-700 shadow text-sm cursor-pointer ${openLanguage ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenLanguage, openLanguage)}>
             <div className="flex items-center text-dark">
               {checkedLanguage.length>0 ? (checkedLanguage.length===1 ? `1 option selected` : `${checkedLanguage.length} options selected`) : `Select Languages...`}
             </div>
             <ArrowDown className={`my-auto ${openLanguage ? 'rotate-180' : ''}`} />
           </div>
-          {openLanguage && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+          {openLanguage && <div className=" border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={languageList} checkedOptions={checkedLanguage} setStateFunction={setCheckedLanguage} />
           </div>} 
           <FiltersDisplay checkedValues={checkedLanguage} setValues={setCheckedLanguage}/>
@@ -138,13 +146,13 @@ export default function Filters({ setOpenFilter }) {
       <div className="flex flex-col gap-2 mx-4">
       <Carddata heading="TECHNOLOGY" data = {Data.properties.filters.properties.technology.description} type="tech" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => setopenTechnology(!openTechnology)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full  text-gray-700 shadow text-sm cursor-pointer ${openTechnology ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenTechnology, openTechnology)}>
           <div className="flex items-center text-dark">
           {checkedTechnology.length>0 ? (checkedTechnology.length===1 ? `1 option selected` : `${checkedTechnology.length} options selected`) : `Select Technologies...`}
           </div>
           <ArrowDown className={`my-auto ${openTechnology ? 'rotate-180' : ''}`} />
         </div>
-        {openTechnology && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+        {openTechnology && <div className=" border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={technologyList} checkedOptions={checkedTechnology} setStateFunction={setCheckedTechnology} />
           </div>}
           <FiltersDisplay checkedValues={checkedTechnology} setValues={setCheckedTechnology}/>
@@ -154,13 +162,13 @@ export default function Filters({ setOpenFilter }) {
       <div className="flex flex-col gap-2 mx-4">
       <Carddata heading="CATEGORY" data = {Data.properties.filters.properties.categories.description} type="category" visible = {visible} setVisible = {setVisible} read={readMore} setRead ={setReadMore} />
         <div className="w-full">
-        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full bg-gray-200 text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => setopenCategory(!openCategory)}>
+        <div className={twMerge(`px-4 py-2 flex justify-between rounded-lg border border-gray-400 w-full  text-gray-700 shadow text-sm cursor-pointer ${openCategory ? 'rounded-b-none' : ''}`)} onClick={() => handleOpen(setopenCategory, openCategory)}>
           <div className="flex items-center text-dark">
           {checkedCategory.length>0 ? (checkedCategory.length===1 ? `1 option selected` : `${checkedCategory.length} options selected`) : `Select Categories...`}
           </div>
           <ArrowDown className={`my-auto ${openCategory ? 'rotate-180' : ''}`} />
         </div>
-        {openCategory && <div className="bg-gray-200 border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
+        {openCategory && <div className=" border border-gray-400 w-auto rounded-b-lg duration-150 overflow-x-auto">
             <FiltersDropdown dataList={categoryList} checkedOptions={checkedCategory} setStateFunction={setCheckedCategory} />
           </div>}
           <FiltersDisplay checkedValues={checkedCategory} setValues={setCheckedCategory}/>
