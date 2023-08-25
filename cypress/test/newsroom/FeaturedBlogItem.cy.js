@@ -1,6 +1,6 @@
 import { mount } from 'cypress/react'
 import FeaturedBlogPost from '../../../components/newsroom/FeaturedBlogPost'
-import { post } from '../mockData/blogmockData';
+import { post } from '../../utils/mockData/blogmockData';
 describe('Features Component', () => {
     it('renders without errors', () => {
         mount(<FeaturedBlogPost post={ post } />);
