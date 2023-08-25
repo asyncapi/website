@@ -1,16 +1,20 @@
 import Button from './Button';
 import IconGoogleCalendar from '../icons/GoogleCalendar';
+import { useTranslation } from '../../lib/i18n';
 
 export default function GoogleCalendarButton({
-  text = 'Add to Google Calendar',
+  text = 'googleCalendarBtn',
   href,
   target = '_blank',
   iconPosition = 'left',
   className,
 }) {
+
+  const { t } = useTranslation('common'); 
+
   return (
     <Button
-      text={text}
+      text={t(text)}
       icon={<IconGoogleCalendar />}
       href={href}
       iconPosition={iconPosition}

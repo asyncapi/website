@@ -6,6 +6,8 @@ module.exports = defineConfig({
       framework: "next",
       bundler: "webpack",
     },
+    video : false,
+    screenshotOnRunFailure : false
   },
 
   e2e: {
