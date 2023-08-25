@@ -3,7 +3,6 @@ import ToolDashboard from '../../../components/tools/ToolDashboard';
 import ToolFilter from '../../../context/ToolFilterContext';
 import { ToolFilterContext } from '../../../context/ToolFilterContext';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
-import { get } from 'lodash';
 
 describe('ToolDashboard Component', () => {
   it('renders the ToolDashboard component correctly', () => {
@@ -14,9 +13,9 @@ describe('ToolDashboard Component', () => {
     );
 
     //check category dropdown filters 
-    cy.get('[data-testid="ToolsDashboard-category"]').click({force:true})
+    cy.get('[data-testid="ToolsDashboard-category"]').click({ force: true })
     cy.get('[data-testid="CategoryDropdown-div"]').should('exist')
-    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]').first().click({force:true});
+    cy.get('[data-testid="CategoryDropdown-div"]').find('[data-testid="CategoryDropdown-link"]').first().click({ force: true });
     const desiredValue = 'APIs';
     // desired search value into the input field
     cy.get('input[placeholder="Search by name"]').type(desiredValue);
@@ -25,13 +24,13 @@ describe('ToolDashboard Component', () => {
     cy.get('input[placeholder="Search by name"]').should('have.value', desiredValue);
 
     //check for Filters 
-    cy.get('[data-testid="ToolsDashboard-Filters-Click"]').click({force:true})
+    cy.get('[data-testid="ToolsDashboard-Filters-Click"]').click({ force: true })
     cy.get('[data-testid="Filters-div"]').should('exist')
 
     //check for Tools List 
     cy.get('[data-testid="ToolsList-main"]').should('exist');
   });
-  it('checks if only selected tools are displayed' ,() => {
+  it('checks if only selected tools are displayed', () => {
     const route = '/';
     const pathname = '/';
     const query = {};
@@ -67,13 +66,13 @@ describe('ToolDashboard Component', () => {
           defaultLocale,
         }}
       >
-<ToolFilterContext.Provider value={{ isPaid, isAsyncAPIOwner, languages, technologies, categories }} >
-        <ToolDashboard />
+        <ToolFilterContext.Provider value={{ isPaid, isAsyncAPIOwner, languages, technologies, categories }} >
+          <ToolDashboard />
         </ToolFilterContext.Provider>
       </RouterContext.Provider>
-      
 
-    ); 
+
+    );
     cy.wrap(technologies).as('technologies');
     cy.get('[data-testid="ToolsDashboard-Filters-Click"]').click();
 
@@ -81,13 +80,11 @@ describe('ToolDashboard Component', () => {
     cy.get('[data-testid="Filters-Technology-dropdown"]').within(() => {
       cy.contains('Select Technologies..').click();
       cy.contains('Node.js').click();
-      cy.get('@technologies').should('deep.equal', ['Node.js']); 
+      cy.get('@technologies').should('deep.equal', ['Node.js']);
     });
-    cy.get('[data-testid="Button-main"]').click({force:true});
-    cy.contains('SIO-AsyncAPI').should('not.exist') 
+    cy.get('[data-testid="Button-main"]').click({ force: true });
+    cy.contains('SIO-AsyncAPI').should('not.exist')
     /**This tool contains "Python as technology and thus should not be rendered when Technology is Node.js" */
-
-  });
     
-
   });
+});
