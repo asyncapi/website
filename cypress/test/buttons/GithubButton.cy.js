@@ -3,7 +3,7 @@ import GithubButton from '../../../components/buttons/GithubButton'
 describe('GithubButton', () => {
     it('renders correctly with default props', () => {
       mount(<GithubButton />);
-      cy.contains('View on Github').should('be.visible');
+      cy.contains('githubButton').should('be.visible');
       cy.get('[ data-testid="Button-link"]').should('have.attr', 'href', 'https://github.com/asyncapi');
       cy.get('[ data-testid="Button-link"]').should('have.attr', 'target', '_blank');
 });
