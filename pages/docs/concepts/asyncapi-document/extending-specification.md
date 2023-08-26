@@ -7,11 +7,13 @@ Extending the AsyncAPI specification is a technique that allows developers to in
 
 The benefits of extending the AsyncAPI specification include enhanced specificity — delivering a clear encoding of necessary API details to applications, and consistency — allowing reusable components across the API. However, extensions should be used sparingly. Since they go beyond the Specification, they may not be universally understood.
 
-## AsyncAPI Specification Extensions
+## Specification Extensions
 
-The AsyncAPI Specification allows the addition of custom properties through patterned fields prefixed with `x-`. This feature enables the accommodation of specific functionalities not initially included in the AsyncAPI specification.
+The AsyncAPI Specification allows the addition of custom properties through patterned fields prefixed with `x-`. This helps you create unique things without causing problems with future updates.
 
-The `x-` prefix is used to define custom properties. These properties are user-defined and won't conflict with future specification versions because any property starting with `x-` is reserved for user definitions, and the AsyncAPI organization will not use this prefix for any of their future standard properties.
+The `x-` prefix is used to define custom properties. These properties are user-defined and won't conflict with future specification versions because any property starting with `x-` is reserved for user definitions.
+
+Here is a flowchart explaining specification extensions:
 
 ```mermaid
 flowchart TD
@@ -23,9 +25,10 @@ flowchart TD
         B --> C[Patterned fields prefixed with x-]
         C --> D[User-defined properties]
         C --> E[Reserved for user definitions]
-        E --> F[Avoid conflict with future versions]
     end
 ```
+
+The above diagram explains how AsyncAPI specification uses `x-` prefixed fields for custom properties.
 
 Here is a simple example of how to extend the AsyncAPI specification:
 
@@ -44,7 +47,7 @@ channels:
       x-custom-property: Custom Value        
 ```
 
-In the above example, under the `user/signedup` channel, a custom property `x-custom-property` is added. The value assigned to this property is `Custom Value`.
+In the above document, under the `user/signedup` channel, a custom property `x-custom-property` is added. The value assigned to this property is `Custom Value`.
 
 <Remember>
 All available tooling might not support AsyncAPI extensions. The tooling can be extended to understand and handle the added data, especially if the tools are internal or open source.
@@ -52,7 +55,7 @@ All available tooling might not support AsyncAPI extensions. The tooling can be 
 
 ## Extending Unsupported Features
 
-When encountering a case where the AsyncAPI specification does not support the required feature, that functionality can be extended using these extensions. If the extended part also benefits other developers, contributing to the AsyncAPI specification can be advisable. This contribution can be made by [creating an issue](https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&projects=&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+) on the AsyncAPI GitHub repository.
+When facing a case where the AsyncAPI specification does not support the required feature, that functionality can be extended using these extensions. If the extended part also benefits other developers, you could contribute to the AsyncAPI specification. This contribution can be made by [creating an issue](https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&projects=&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+) on the AsyncAPI GitHub repository.
 
 ```mermaid
   graph TD
@@ -75,20 +78,13 @@ When encountering a case where the AsyncAPI specification does not support the r
 When extending the AsyncAPI specification, you can use the[AsyncAPI Studio](https://studio.asyncapi.com/), a recommended dedicated editor for AsyncAPI specifications. The AsyncAPI Studio allows you to create, edit, and visualize specification files. It also performs validation checks to ensure the specifications are correct and renders them in a user-friendly manner.
 
 ```mermaid
-sequenceDiagram
-    participant User
-    participant AsyncAPI_Studio
+graph TD
+    A[Extend AsyncAPI Specification] --> B[Use AsyncAPI Studio]
+    B --> C[Create, Edit, Visualize]
+    B --> D[Perform Validation Checks]
+    B --> E[Renders User-Friendly Output]
 
-    User -> AsyncAPI_Studio: Open AsyncAPI Studio
-    User -> AsyncAPI_Studio: Add/Edit AsyncAPI Spec
-    AsyncAPI_Studio -> AsyncAPI_Studio: Perform Validation Checks
-    AsyncAPI_Studio -> AsyncAPI_Studio: Render Specifications
+    style B fill:#47BCEE,stroke:#47BCEE;
 ```
 
-Extending the AsyncAPI specification when it doesn't support something which is needed involves:
-
-* Using patterned fields prefixed with `x-`.
-* Specifying the version of AsyncAPI the extensions comply with.
-* Using the AsyncAPI Studio for easy visualization and validation of the specifications.
-  
-Contributions can be made to support the community by issuing the extension on the AsyncAPI GitHub repository.
+ The diagram shows the process of extending the AsyncAPI specification using the recommended AsyncAPI Studio editor.
