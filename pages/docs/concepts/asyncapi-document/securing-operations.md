@@ -1,5 +1,5 @@
 ---
-title: Operations
+title: Securing Operations
 weight: 70
 ---
 
