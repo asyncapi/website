@@ -1,5 +1,5 @@
 ---
-title: Operations
+title: Adding Operations
 weight: 60
 ---
 
