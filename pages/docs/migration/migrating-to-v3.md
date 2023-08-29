@@ -43,7 +43,7 @@ info:
 ```
 
 ### Server URL splitting up
-A confusion that arrived from time to time, was what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) should include.
+A confusion that arose from time to time was what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) should include.
 
 <Asyncapi3ServerComparison className="my-8" />
 
