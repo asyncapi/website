@@ -77,7 +77,7 @@ In v2, it was impossible to reuse channels, and impossible to have more than one
 
 In v3, this is now possible, with the mindset, a channel and message should be detached from the operations performed. 
 
-For any message broker, for example, Kafka, this is the same as defining topics and the messages it contains. For REST interfaces it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
+For any message broker, for example, Kafka, this is the same as defining topics and the messages it contains. For REST interfaces it's the path and request type (POST, GET, etc.) and the request and response messages. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
 
 This change makes the channels reusable across multiple AsyncAPI documents, each performing a slightly different action.
 
