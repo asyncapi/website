@@ -118,21 +118,6 @@
     "description": "The following is a list of tools that generate code from an AsyncAPI document; not the other way around.",
     "toolsList": [
       {
-        "title": "Golang AsyncAPI Code Generator",
-        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
-        "links": {
-          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
-        },
-        "filters": {
-          "language": "golang",
-          "categories": [
-            "code-generator"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": false
-        }
-      },
-      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -153,6 +138,21 @@
             "dsl",
             "mocking-and-testing",
             "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "Golang AsyncAPI Code Generator",
+        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "links": {
+          "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
+        },
+        "filters": {
+          "language": "golang",
+          "categories": [
+            "code-generator"
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
@@ -531,6 +531,24 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": true
+        }
+      },
+      {
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "links": {
+          "repoUrl": "https://github.com/Savio629/testing2"
+        },
+        "filters": {
+          "technology": [
+            "VSCode",
+            "SmartPaste"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
         }
       }
     ]

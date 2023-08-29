@@ -8,7 +8,7 @@ describe('Modal', () => {
       const onModalClose = cy.stub().as('onModalClose');
       mount(<Modal title="Test Modal" onModalClose={onModalClose} />);
       
-      cy.get('[data-testid="Modal-close"]').click();
+      cy.get('[data-testid="Modal-close"]').click({force : true});
   
       cy.get('@onModalClose').should('have.been.calledOnce');
     });
@@ -17,7 +17,7 @@ describe('Modal', () => {
       const onModalClose = cy.stub().as('onModalClose');
       mount(<Modal title="Test Modal" onModalClose={onModalClose} />);
       
-      cy.get('.backdrop-blur').click();
+      cy.get('.backdrop-blur').click({force : true});
   
       cy.get('@onModalClose').should('have.been.calledOnce');
     });

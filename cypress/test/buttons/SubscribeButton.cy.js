@@ -4,7 +4,7 @@ import SubscribeButton from '../../../components/buttons/SubscribeButton';
 describe('Subscribe Button', () => {
     it('renders correctly with default props', () => {
       mount(<SubscribeButton/>);
-      cy.contains('Subscribe').should('be.visible');
+      cy.contains('subscribeBtn').should('be.visible');
   
 });
   

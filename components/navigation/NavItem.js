@@ -32,7 +32,7 @@ export default function NavItem ({
   if(href) {
     return (
       <Link href={href}>
-        <a {...attrs} className={`${attrs.className} ${router.pathname.startsWith(href) ? "text-black" :"text-gray-700"}`} target={target}>
+        <a {...attrs} className={`${attrs.className} ${router.pathname.startsWith(href) ? "text-black" :"text-gray-700"}`} target={target} data-testid="NavItem-Link">
           <span>{text}</span>
           {hasDropdown && <NavItemDropdown />}
         </a>

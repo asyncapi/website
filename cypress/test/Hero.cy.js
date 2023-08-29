@@ -5,24 +5,24 @@ describe('Hero Component', () => {
   it('displays the correct content', () => {
     mount(<Hero />);
 
-    cy.contains('Building the future of');
-    cy.contains('Event-Driven Architectures (EDA)');
-    cy.contains('Open-Source tools to easily build and maintain your event-driven architecture.');
-    cy.contains('Read the docs');
-    cy.contains('Quick search...');
-    cy.contains('Proud to be part of the Linux Foundation');
+    cy.contains('main.header');
+    cy.contains('main.subHeader');
+    cy.contains('main.body_pretext');
+    cy.contains('main.docs_btn');
+    cy.contains('main.search_btn');
+    cy.contains('main.slogan_text main.slogan_link');
   });
 
   it('navigates to the documentation page when "Read the docs" button is clicked', () => {
     mount(<Hero />);
-    cy.get('[data-testid="Button-link"]').contains('Read the docs');
+    cy.get('[data-testid="Button-link"]').contains('main.docs_btn');
    
   });
 
   it('performs a search when the search button is clicked', () => {
     mount(<Hero />);
 
-    cy.get('[data-testid="Search-Button"]').contains('Quick search...').click();
+    cy.get('[data-testid="Search-Button"]').contains('main.search_btn').click();
 
     // Type a search query and validate the results
     const searchQuery = 'example';
