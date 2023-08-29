@@ -133,6 +133,26 @@
       "score": 15.507427792459973
     },
     {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
+      "score": 15.220253203710714
+    },
+    {
       "id": "PR_kwDOBW5R_c5Worbr",
       "isPR": true,
       "isAssigned": false,
@@ -158,26 +178,6 @@
         }
       ],
       "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 14.933078614961456
     }
   ],
   "goodFirstIssues": [
@@ -590,25 +590,6 @@
         {
           "name": "Kotlin generator",
           "color": "61A95C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385m6IJk",
-      "title": "Add runtime testing for Go",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1333",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Go generator",
-          "color": "fbca04"
         }
       ]
     },
