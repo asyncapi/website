@@ -1,17 +1,17 @@
 ---
 title: Variables in URL
-weight: 135
+weight: 235
 ---
 
 Event-driven architecture benefits from a defined base URL and rules for URL variables. You can easily manage multiple API endpoints, handling various server configurations and environments.
 
 URL variables are placeholders for values you can replace during runtime. Async API enables you to construct dynamic URLs with query parameters and additional information while enhancing the flexibility and maintainability of your API specifications.
 
-This article assumes that you have a basic understanding of AsyncAPI. For more information, refer to the [Event-Driven Architectures](https://www.asyncapi.com/docs/tutorials/getting-started/event-driven-architectures).
+This article assumes that you have a basic understanding of AsyncAPI. For more information, refer to the [Event-Driven Architectures](../../tutorials/getting-started/event-driven-architectures.md).
 
 ## Add Dynamic Variables
 
-To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` field to enable reusable variables across multiple servers.
+To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` fields to enable reusable variables across multiple servers.
 
 The diagram below depicts how to construct dynamic URLs with query parameters.
 
@@ -73,7 +73,6 @@ Both servers use the components.serverVariables definitions for the domain and p
 Here's the complete AsyncAPI document with the server URL variables:
 
 ```yaml
-asyncapi: '2.0.0'
 info:
   title: Example API
   version: '1.0.0'
