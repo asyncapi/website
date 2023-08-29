@@ -7,9 +7,9 @@ A quite common messaging pattern is [request-reply](https://www.enterpriseintegr
  
 # Describing a requester
 
-We are going to use a very simple ping and pong example where a requestor sends the ping and responder respond with pong. 
+We are going to use a very simple ping and pong example where a requester sends the ping and responder responds with a pong. 
 
-To describe a **requester** in AsyncAPI we make use of an operation that `send`s to the `ping` channel and expects a `reply` over `pong`.
+To describe a **requester** in AsyncAPI, we make use of an operation that `send`s to the `ping` channel and expects a `reply` over `pong`.
 
 ```yml
 asyncapi: 3.0.0
@@ -68,16 +68,16 @@ operations:
 
 # Sub-patterns in request/reply
 
-In the simple example above we saw how you could set up a request/reply pattern across two applications, where the request/reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka, or WebSocket, in this simple example it does not matter, cause the only difference would be how the server information is defined.
+In the simple example above, we saw how you could set up a request/reply pattern across two applications. The request/reply happened over the same channel `/` on an unknown server and protocol, which could have been HTTP, Kafka, or WebSocket. In this example, it does not matter because the only difference would be how the server information is defined.
 
-However, there are sub-patterns to request/reply that AsyncAPI v3 supports, let's take a look at them. 
+However, there are sub-patterns to request/reply that AsyncAPI v3 supports. Let's take a look at them below. 
 
 ## Request/reply over different channels
 If you come from a REST or WebSocket environment, this sub-pattern might seem unfamiliar, but in the event-driven world of Kafka or NATS this is a common pattern to utilize where you do the request over one channel, and reply on a different one.
 
-In this example, the reply is on a statically defined channel, so you, at design time, know exactly where the reply is returned to.
+In this example, the reply is on a statically defined channel, so you, at design time, know exactly where the reply is being returned to.
 
-The only difference in this AsyncAPI document, in relation to the simple example is that each channel has now been given a different address `/ping` and `/pong` respectively.
+The only difference in this AsyncAPI document, in relation to the simple example, is that each channel has now been given a different address `/ping` and `/pong` respectively.
 
 ```yml
 asyncapi: 3.0.0
@@ -134,9 +134,9 @@ operations:
 
 ## Request/reply with dynamic response channel
 
-A second sub-pattern is where we do not know the reply channel at design time, but instead, it's dynamic and determined at runtime. This could for example be using the request message payload or header to dictate the response channel.
+A second sub-pattern is where we do not know the reply channel at design time, but instead, it's dynamic and determined at runtime. This could, for example, be using the request message payload or header to dictate the response channel.
 
-Take notice how we utilize `address: null` to define that we don't know the address. This is just for illustration purposes as you can also omit the property entirely.
+Take a notice on how we utilize `address: null` to define that we don't know the address. This is just for illustration purposes as you can also omit the property entirely.
 
 ```yml
 asyncapi: 3.0.0
@@ -171,7 +171,7 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-Defining the replier is the same as for the requester, again using the `receive` action instead as the only difference.
+Defining the replier is the same as for the requester, again using the `receive` action instead is the only difference.
 
 ```yml
 asyncapi: 3.0.0
@@ -197,7 +197,7 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-You can use different types of `location` values here as it's not limited to headers specifically, you can also use payload properties with `$message.payload#/replyTo`. These types of values are [Runtime Expressions](https://www.asyncapi.com/docs/reference/specification/latest#runtimeExpression).
+You can use different types of `location` values here as it's not limited to headers specifically. You can also use payload properties with `$message.payload#/replyTo`. These types of values are [Runtime Expressions](https://www.asyncapi.com/docs/reference/specification/latest#runtimeExpression).
 
 ## Multiple messages over the same channel with request/reply
 
