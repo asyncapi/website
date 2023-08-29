@@ -1,9 +1,9 @@
 ---
 title: Payload Schema
-weight: 139
+weight: 239
 ---
 
-The payload schema defines a message's payload's format, data types, and properties. Ensure that the payload follows a specific structure and data format.
+The payload schema defines a message's format, data types, and properties to ensure that the payload follows a specific structure and data format.
 
 In the AsyncAPI specification, you can use schema languages such as JSON or Avro Schema to create the payload schema. Enabling consumers to gain insights into the structure and data types of the payload.
 
@@ -43,51 +43,46 @@ C-->|Defines structure of message payload| D
 
 Here is an example of an AsyncAPI specification file that uses the local reference method,
 
-```json
-{
-  "messageId": "userSignup",
-  "name": "UserSignup",
-  "title": "User signup",
-  "summary": "Action to sign a user up.",
-  "description": "A longer description",
-  "tags": [{ "name": "user" }, { "name": "signup" }],
-  "payload": {
-    "schemaFormat": "application/vnd.apache.avro+json;version=1.9.0",
-    "schema": { "$ref": "path/to/user-create.avsc#/UserCreate" }
-  }
-}
+```yaml
+messageId: userSignup
+name: UserSignup
+title: User signup
+summary: Action to sign a user up.
+description: A longer description
+tags:
+  - name: user
+  - name: signup
+payload:
+  schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+  schema:
+    $ref: path/to/user-create.avsc#/UserCreate
 ```
 
 Create a separate Avro schema file with a .avsc extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the User record type:
 
-```json
-{
-  "namespace": "UserCreate.avro",
-  "type": "record",
-  "name": "user",
-  "fields": [
-    { "name": "fullName", "type": "string" },
-    { "name": "email", "type": "string" }
-  ]
-}
+```yaml
+namespace: UserCreate.avro
+type: record
+name: user
+fields:
+  - name: fullName
+    type: string
+  - name: email
+    type: string
 ```
 
 ## Attach examples
 
 Although optional, it is highly recommended to attach examples to the AsyncAPI specification. You can use JSON or YAML format for binary encodings, like Avro. Attach the examples to the examples property within the message payload definition. Here is an example,
 
-```json
-{
-  "examples": [
-    {
-      "name": "SimpleSignup",
-      "summary": "A simple UserSignup example message",
-    }
-    "payload":{
-      "user": { 'fullName': 'Demo', 'email': 'demo@demo.io'}
-    }
-  ]
-}
+```yaml
+examples:
+  - name: SimpleSignup
+    summary: A simple UserSignup example message
+  - payload:
+      user:
+        fullName: Demo
+        email: demo@demo.io
 ```
 
 You can use a Schema Registry to separate the Avro schema from the message payload, making it easier to manage schema compatibility.
@@ -96,25 +91,20 @@ You can use a Schema Registry to separate the Avro schema from the message paylo
 
 To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
 
-```json
-{
-  "channels": {
-    "user/signedup": {
-      "subscribe": {
-        "message": { "payload": { "$ref": "#/components/schemas/User" } }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "User": {
-        "type": "object",
-        "properties": {
-          "fullName": { "type": "string" },
-          "email": { "type": "string" }
-        }
-      }
-    }
-  }
-}
+```yaml
+channels:
+  user/signedup:
+    subscribe:
+      message:
+        payload:
+          $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        fullName:
+          type: string
+        email:
+          type: string
 ```
