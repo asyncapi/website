@@ -19,7 +19,11 @@ As August comes to a close, many of us have had a slow month. Most of the commun
 Speakers for AACoT'23 London Edition have been selected and informed; we are currently working on the schedule for the day. We anticipate a jam-packed day of inspiring talks and networking with esteemed industry experts. If you know any communities in London or ways we can maximize the AACoT'23 London event happening on the 20th of September, please do reach out to [Thulie](https://asyncapi.slack.com/team/U03CNJPMT7C) or [Lukasz](https://asyncapi.slack.com/team/UD698Q5LM) via Slack.
 
 ## Financial Contributions
-We received new financial contributions this month. Please welcome our new Bronze sponsor, [Svix](https://www.svix.com/), who will contribute $500 monthly; Silver sponsor, [Rviewer](https://rviewer.io/), who will contribute $100 monthly; and a huge thank you to our one-time sponsor, [Simlot](https://www.simplot.com/), for donating $944.
+We received new financial contributions this month. Please welcome our:
+- new Silver sponsor, [Svix](https://www.svix.com/), who will contribute $500 monthly
+- new Bronze sponsor, [Rviewer](https://rviewer.io/), who will contribute $100 monthly
+
+Huge thank you to our one-time sponsor, [Simlot](https://www.simplot.com/), for donating $944.
 
 ## AsyncAPI Bounty Program Trial
 We're thrilled to share that the [AsyncAPI Bounty Program Trial](https://github.com/orgs/asyncapi/discussions/541) has been completed. We started the trial with a total of 7 projects consisting of coding, design, and technical writing tasks, categorized into medium and advanced levels. We had pre-set rules for the bounty trial, and everything went smoothly when it came to task assignment and completion. We also learned valuable insights during the trial, such as timeline extension and handling additional tasks necessary for task completion that will be implemented in the official program. Here are the accomplished tasks and the exceptional assignees:
