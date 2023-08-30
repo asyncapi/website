@@ -20,8 +20,8 @@ Speakers for AACoT'23 London Edition have been selected and informed; we are cur
 
 ## Financial Contributions
 We received new financial contributions this month. Please welcome our:
-- new Silver sponsor, [Svix](https://www.svix.com/), who will contribute $500 monthly
-- new Bronze sponsor, [Rviewer](https://rviewer.io/), who will contribute $100 monthly
+- new Silver sponsor, [Svix](https://www.svix.com/), who will contribute $500 monthly.
+- new Bronze sponsor, [Rviewer](https://rviewer.io/), who will contribute $100 monthly.
 
 Huge thank you to our one-time sponsor, [Simlot](https://www.simplot.com/), for donating $944.
 
