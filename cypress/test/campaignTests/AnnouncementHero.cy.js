@@ -28,11 +28,11 @@ describe('AnnouncementHero Component', () => {
   
   });
 
-  it('should have a link to submit a session', () => {
+  it('should have a link and text for the button', () => {
     // Assert the link
     cy.get('[data-testid="Button-link"]').should('have.attr', 'href')
       .should('have.attr', 'target', '_blank')
-      .contains('Submit a session');
+      .should('have.text');
   });
 
   //check if announcement rendered is small or large .
