@@ -91,7 +91,7 @@ channels:
   user/signedup:
     publish:
       message:
-        $ref: ./asyncapi.A.yaml#/components/messages/userSignedUp
+        $ref: ./asyncapi.A.yaml#/components/messages/UserSignup
 ```
 
 ## External URL
