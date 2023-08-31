@@ -11,7 +11,7 @@ This folder contains the test code of AsyncAPI website :
 
 ## Requirements 
 Use the following tools to set up the project:
--- [Cypress] (This is installed as a dev-dependency)
+- [Cypress] (This is installed as a dev-dependency).
 
 ## Run tests locally 
 
