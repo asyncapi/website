@@ -23,7 +23,7 @@ Assuming you have all the necessary website dependencies installed :
 ```
 (You can check out the tests and their outputs on the Cypress Window)
 
-2. Run on the local CLI  
+2. Run it on your local CLI  
 ```bash
     npm run test 
 ```
