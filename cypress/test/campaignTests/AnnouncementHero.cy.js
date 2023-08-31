@@ -34,7 +34,6 @@ describe('AnnouncementHero Component', () => {
       .should('have.attr', 'target', '_blank')
       .contains('Submit a session');
   });
-  });
 
   //check if announcement rendered is small or large .
   it('should render a small announcement when "small" prop is true', () => {
