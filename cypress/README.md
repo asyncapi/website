@@ -5,7 +5,7 @@
 
 This folder contains the test code of AsyncAPI website : 
 
-- It 's powered by [Cypress](https://docs.cypress.io/guides/overview/why-cypress) ,
+- It's powered by [Cypress](https://docs.cypress.io/guides/overview/why-cypress).
 
 -It utilises [Cypress/react] to provide some additional functionalites to Cypress . 
 
