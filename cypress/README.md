@@ -5,7 +5,7 @@
 
 This folder contains the test code of AsyncAPI website : 
 
-- It 's powered by [Cypress](https://docs.cypress.io/guides/overview/why-cypress) ,
+- It's powered by [Cypress](https://docs.cypress.io/guides/overview/why-cypress).
 
 - It utilises [Cypress/react] to provide some additional functionalites to Cypress . 
 
@@ -18,11 +18,11 @@ These tests can help ensure that components function as expected and interact co
 
 ## Requirements 
 Use the following tools to set up the project:
--- [Cypress] (This is installed as a dev-dependency)
+- [Cypress] (This is installed as a dev-dependency).
 
 ## Run tests locally 
 
-Assuming you have all the necessary website dependencies installed : 
+Assuming you have all the necessary website dependencies installed: 
 
 1. Run it and check on the Cypress Graphical User Interface 
 ```bash
@@ -30,7 +30,7 @@ Assuming you have all the necessary website dependencies installed :
 ```
 (You can check out the tests and their outputs on the Cypress Window)
 
-2. Run on the local CLI  
+2. Run it on your local CLI  
 ```bash
     npm run test 
 ```
