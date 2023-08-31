@@ -28,11 +28,12 @@ describe('AnnouncementHero Component', () => {
   
   });
 
-  it('should have a link and text for the button', () => {
+  it('should have a link to submit a session', () => {
     // Assert the link
-    cy.get('[data-testid="Button-link"]').should('have.attr', 'href')
+    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-61313')
       .should('have.attr', 'target', '_blank')
-      .should('have.text');
+      .contains('Submit a session');
+  });
   });
 
   //check if announcement rendered is small or large .
