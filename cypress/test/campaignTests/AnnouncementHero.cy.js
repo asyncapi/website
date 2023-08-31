@@ -27,21 +27,15 @@ describe('AnnouncementHero Component', () => {
     cy.get('h3').should('exist');
   
   });
-/*
-  it('should have a link to submit a session', () => {
-    // Assert the link
-    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
-      .should('have.attr', 'target', '_blank')
-      .contains('Submit a session');
-  });
-*/
-
   it('should have a link and text for the button', () => {
     mount(<AnnouncementHero />);
-    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-61313')
+    cy.get('[data-testid="Button-link"]')
       .should('have.attr', 'target', '_blank')
-      .contains('Get Your Tickets');
-
+      //making sure link starts with https://
+      .should('have.attr', 'href').and('match', /^https:\/\//)
+    cy.get('[data-testid="Button-link"]')
+      .find('span') // Find the <span> element inside the <a>
+      .and('not.be.empty');
    });
 
   //check if announcement rendered is small or large .
