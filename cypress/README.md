@@ -15,7 +15,7 @@ Use the following tools to set up the project:
 
 ## Run tests locally 
 
-Assuming you have all the necessary website dependencies installed : 
+Assuming you have all the necessary website dependencies installed: 
 
 1. Run it and check on the Cypress Graphical User Interface 
 ```bash
