@@ -6,6 +6,7 @@ import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
 function shouldShowBanner(cfpDeadline) {
   const currentDate = new Date(); // Get the current date
+  console.log(currentDate)
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
@@ -18,7 +19,7 @@ function shouldShowBanner(cfpDeadline) {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-07-28T06:00:00Z'
+    const cfpDeadline = '2023-09-20T06:00:00Z'
     const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
@@ -27,16 +28,16 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     <Container wide as="section" padding='' className='text-center'>
       <div
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
-          small ? 'mb-4' : 'mb-12'
-        }`}
+          small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
+        }`} data-testid = "AnnouncementHero-main-div"
       >
         <Heading
           className="countdown-text-gradient"
           level="h2"
-          typeStyle="heading-lg"
-        >
+          typeStyle="heading-lg" >
           AsyncAPI Conf on Tour 2023
         </Heading>
+
         <Heading
           className="countdown-text-gradient"
           level="h3"
@@ -47,12 +48,13 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         <Paragraph typeStyle="body-lg">
           20th of September, 2023 | London, UK
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers." />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 London Edition" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://conference.asyncapi.com/"
+            href="https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-61313"
             target="_blank"
-            text="Submit a session"
+            text="Get Your Tickets"
+            data-testid="AnnouncementHero-submit-session"
           />
         </div>
       </div>

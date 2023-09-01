@@ -16,6 +16,7 @@ export default function SlackButton({
       iconPosition={iconPosition}
       target={target}
       className={className}
+      data-testid="Slack-button"
       bgClassName="bg-slack  hover:bg-slack-light"
     />
   );

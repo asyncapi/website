@@ -1,4 +1,4 @@
-function sortFilter(arr) {
+export function sortFilter(arr) {
   return arr.sort((a, b) => {
     if (a.value < b.value) {
       return -1;
