@@ -3,7 +3,7 @@ title: Adding Messages
 weight: 140
 ---
 
-[Messages](../message.md) in AsyncAPI represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
+[Messages](../message.md) represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
 
 ```mermaid
 graph TD;
@@ -19,19 +19,15 @@ Here is an example of a simple message:
 
 ```yml
 channels:
-    user/signedup:
-    subscribe:
-        message:
-        $ref: "#/components/messages/userSignUp"
-messages:
-    userSignUp:
-    summary: Action to sign a user up.
-    description: |
-        Multiline description of what this action does.
-        Here you have another line.
+  user/signedup:
+      address: 'application/json'
+      messages:
+        userSignUp:
+          name: User SignUp
+          summary: Action to sign a user up.
 ```
 
-This document defines a `user/signedup` channel where a `subscription` to the `userSignUp` message can be made; with this `subscription`.
+This document defines a `user/signedup` channel where a `userSignUp` message can be made.
 
 ## Using `oneOf` for Multiple Message Types
 
@@ -44,9 +40,7 @@ graph TD;
     C --> D[Message Type 1]
     C --> E[Message Type 2]
 
-    style B fill:#47BCEE,stroke:#47BCEE;
-    style D fill:#47BCEE,stroke:#47BCEE;
-    style E fill:#47BCEE,stroke:#47BCEE;
+    style C fill:#47BCEE,stroke:#47BCEE;
 ```
 
 Here is an example document of how `oneOf` permits the use of multiple message types for a single operation:
@@ -55,12 +49,12 @@ Here is an example document of how `oneOf` permits the use of multiple message t
 channel:
 $ref: '#/channels/userSignupReply'
 messages:
-oneOf:
-    - $ref: '#/components/messages/userSignedUp'
-    - $ref: '#/components/messages/userSignedUpReply'
+  oneOf:
+      - $ref: '#/components/messages/userSignedUp'
+      - $ref: '#/components/messages/userSignedUpReply'
 ```
 
-The code denotes a channel `userSignupReply` under which two messages can be sent or received: `userSignedUp` or `userSignedUpReply`.
+The above document shows a channel `userSignupReply` under which two messages can be sent or received: `userSignedUp` or `userSignedUpReply`.
 
 ## Specifying `contentType` in Messages
 
@@ -84,15 +78,11 @@ title: User signup
 summary: Action to sign a user up.
 description: A longer description
 contentType: application/json
-tags:
-  - name: user
-  - name: signup
-  - name: register
 ```
 
 In this example, the `contentType` is specified as `application/json` for the `userSignup`.
 
-## Reusing Components in AsyncAPI
+## Reusing Components
 
 The components object in the AsyncAPI specification contains reusable objects, but they will only impact the API if they are specifically referred to outside the components object.
 
