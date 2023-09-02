@@ -1,12 +1,5 @@
 [
   {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=a3JnNnJibDAzNW9ja3ZnMXZ0OGJtcjBqMWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/714",
-    "banner": "",
-    "date": "2023-05-24T16:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NG5pMWJpajA2ODhjczhiY2doNjRudnVybzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/715",
@@ -222,5 +215,12 @@
     "url": "https://github.com/asyncapi/community/issues/862",
     "banner": "",
     "date": "2023-09-06T09:00:00.000Z"
+  },
+  {
+    "title": "Generator and new parser discussion",
+    "calLink": "https://www.google.com/calendar/event?eid=bnI2ZHBsa2ZxMDM3bmw5anFtY21pbjF0amMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/865",
+    "banner": "",
+    "date": "2023-09-06T15:00:00.000Z"
   }
 ]
