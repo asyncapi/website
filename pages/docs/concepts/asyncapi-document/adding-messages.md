@@ -5,6 +5,8 @@ weight: 140
 
 [Messages](../message.md) represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
 
+Here is a diagram explaining messages:
+
 ```mermaid
 graph TD;
     A[AsyncAPI Message] --> B[Headers]
@@ -15,23 +17,26 @@ graph TD;
     style A fill:#47BCEE,stroke:#47BCEE;
 ```
 
+The above diagram shows the components of AsyncAPI messages: headers and payload, which further contain header content and payload content.
+
 Here is an example of a simple message:
 
 ```yml
 channels:
   user/signedup:
-      address: 'application/json'
-      messages:
-        userSignUp:
-          name: User SignUp
-          summary: Action to sign a user up.
+    address: 'application/json'
+    messages:
+      userSignUp:
+        $ref: '#/components/messages/userSignUp'
 ```
 
 This document defines a `user/signedup` channel where a `userSignUp` message can be made.
 
-## Using `oneOf` for Multiple Message Types
+## Using `oneOf` for multiple message types
 
 AsyncAPI supports the use of `oneOf` for messages under operations, allowing you to define multiple possible message types for a single operation.
+
+Here is a diagram showing the use of `oneOf`:
 
 ```mermaid
 graph TD;
@@ -42,6 +47,8 @@ graph TD;
 
     style C fill:#47BCEE,stroke:#47BCEE;
 ```
+
+This diagram shows how AsyncAPI uses `oneOf` to define multiple message types for a single operation.
 
 Here is an example document of how `oneOf` permits the use of multiple message types for a single operation:
 
@@ -56,9 +63,11 @@ messages:
 
 The above document shows a channel `userSignupReply` under which two messages can be sent or received: `userSignedUp` or `userSignedUpReply`.
 
-## Specifying `contentType` in Messages
+## Specifying `contentType` in messages
 
 The `contentType` field specifies the format of the payload. If it's not provided, the default payload format is `application/json`. However, it's recommended always to specify the contentType for clarity and to avoid potential misinterpretations.
+
+Here is a diagram showing how to specify `contentType` in messages:
 
 ```mermaid
 graph TD;
@@ -68,6 +77,8 @@ graph TD;
 
     style A fill:#47BCEE,stroke:#47BCEE;
 ```
+
+The above diagram shows an AsyncAPI message consists of a payload, which can default to application/json but should ideally have a specified contentType for clarity and precision.
 
 The following code shows how `contentType` is added to the Message:
 
@@ -80,11 +91,13 @@ description: A longer description
 contentType: application/json
 ```
 
-In this example, the `contentType` is specified as `application/json` for the `userSignup`.
+In this document, the `contentType` is specified as `application/json` for the `userSignup`.
 
-## Reusing Components
+## Reusing components
 
 The components object in the AsyncAPI specification contains reusable objects, but they will only impact the API if they are specifically referred to outside the components object.
+
+Here is a diagram explaining how to reuse components:
 
 ```mermaid
 flowchart TB
@@ -104,15 +117,17 @@ subgraph API
 end
 ```
 
+The above diagram shows how components in the API implementation are used by various components, emphasizing their impact when referred to outside the components object.
+
 Here is an example demonstrating how components are reused in AsyncAPI:
 
 ```yml
 components:
   messages:
     user:
-      contentType: application/json
+      contentType: 'application/json'
       schema:
-        $ref: "#/components/schemas/User"
+        $ref: '#/components/schemas/User'
 
   schemas:
     User:
@@ -124,4 +139,4 @@ components:
           type: string
 ```
 
-This code enables the reuse of a component by defining a `User` schema.
+The above document shows reuse of a component by defining a `User` schema.
