@@ -5,6 +5,10 @@ weight: 140
 
 [Messages](./message.md) represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
 
+Adding [messages](./message.md) in an AsyncAPI document primarily involves defining channels, operations, and messages. This process is crucial for documenting the exchange of data between your applications.
+
+In AsyncAPI, you define the interaction of your application with a message broker in terms of channels and operations. Channels are the medium through which messages are sent or received, while operations represent the actions of publishing or subscribing to these channels.
+
 Here is a diagram explaining messages:
 
 ```mermaid
