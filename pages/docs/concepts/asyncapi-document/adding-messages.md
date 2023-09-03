@@ -3,7 +3,7 @@ title: Adding Messages
 weight: 140
 ---
 
-[Messages](../message.md) represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
+[Messages](./message.md) represent the data being transmitted between your systems. They always include a payload, which is the data the application is sending or receiving, and they may also include headers, which are used to provide additional context or information about the message exchange.
 
 Here is a diagram explaining messages:
 
