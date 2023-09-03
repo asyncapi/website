@@ -3,7 +3,7 @@ title: Adding Messages
 weight: 140
 ---
 
-Adding [messages](../message) in an AsyncAPI document primarily involves defining channels, operations, and messages. This process is crucial for documenting the exchange of data between your applications. In AsyncAPI, you define the interaction of your application with a message broker in terms of channels and operations. [Channels](../channel.md) are the medium through which messages are sent or received, while operations represent the actions of publishing or subscribing to these channels.
+Adding [messages](../message) in an AsyncAPI document primarily involves defining channels, operations, and messages. This process is crucial for documenting the exchange of data between your applications. In AsyncAPI, you define the interaction of your application with a message broker in terms of channels and operations. [Channels](../channel) are the medium through which messages are sent or received, while operations represent the actions of publishing or subscribing to these channels.
 
 Here is a diagram explaining messages:
 
