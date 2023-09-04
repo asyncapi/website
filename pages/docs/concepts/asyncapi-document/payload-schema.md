@@ -17,7 +17,7 @@ Define the Avro schema for the message payload. You can choose one of the follow
 
 - Embedded notation: Define the Avro schema within the message payload property.
 - Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
-- Local reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc#/User'`.
+- Local file reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc'`.
 
 The diagram below defines the AsyncAPI specification file using the local reference method.
 
