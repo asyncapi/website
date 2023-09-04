@@ -58,7 +58,7 @@ payload:
     $ref: path/to/user-create.avsc
 ```
 
-Create a separate Avro schema file with a .avsc extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the User record type:
+Create a separate Avro schema file with a `.avsc` extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the user record type:
 
 ```yaml
 namespace: UserCreate.avro
