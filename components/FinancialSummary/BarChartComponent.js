@@ -10,7 +10,7 @@ const CustomTooltip = ({ active, payload }) => {
             <div className="bg-opacity-90 bg-white border border-gray-300 p-2 shadow-md rounded-md">
                 <p className="text-14 font-bold mb-1">{data.Category}</p>
                 <p className="text-12 text-gray-900">${data.Amount.toFixed(2)}</p>
-                <p>Click on the bar to know more</p>
+                <p>Click the bar to learn more</p>
             </div>
         );
     }
@@ -34,14 +34,20 @@ const categories = getUniqueCategories();
 
 
 
-const Card = ({ month, data }) => {
+const Card = ({ month, data, links }) => {
     return (
         <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-52 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
             <div className="flex flex-col justify-center overflow-x-auto">
                 {data.map((item, index) => (
                     <div key={index} className="flex justify-between">
-                        <div className="text-sm m-2">{item.Category}</div>
+                        <div className="text-sm m-2" onClick={(links) => {
+                            const category = item.Category;
+                            const matchedLinkObject = ExpensesLink.find(obj => obj.category === category);
+                            if (matchedLinkObject) {
+                                window.open(matchedLinkObject.link, '_blank');
+                            }
+                        }}>{item.Category}</div>
                         <div className="text-sm m-2">${item.Amount}</div>
                     </div>
                 ))}

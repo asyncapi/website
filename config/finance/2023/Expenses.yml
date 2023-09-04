@@ -1,41 +1,67 @@
 January:
-  - {Category: "AsyncAPI Ambassador" , Amount: "68.95" }
-  - {Category: "Google Season of Docs 2022" , Amount: "35.62"}
-  - {Category: "Google Season of Docs 2022", Amount: "1666.67"}
-  - {Category: "AsyncAPI Mentorship 2022", Amount: "1500"}
-  - {Category: "AsyncAPI Mentorship 2022",Amount: "1500"}
-  - {Category: "AsyncAPI Mentorship 2022",Amount: "1500"}
+  - Category: AsyncAPI Ambassador
+    Amount: '68.95'
+  - Category: Google Season of Docs 2022
+    Amount: '35.62'
+  - Category: Google Season of Docs 2022
+    Amount: '1666.67'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
 
 February:
-  - {Category: "Community Manager Salary", Amount: "1000.39"}
-  - {Category: "AsyncAPI Mentorship 2022", Amount: "1500"}
+  - Category: Community Manager Salary
+    Amount: '1000.39'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
 
 March:
-  - {Category: "Community Manager Salary", Amount: "2000.39"}
-  - {Category: "AsyncAPI Mentorship 2022", Amount: "1500"}
-  - {Category: "AsyncAPI Mentorship 2022", Amount: "1500"}
+  - Category: Community Manager Salary
+    Amount: '2000.39'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
 
 April:
-  - {Category: "Community Manager Salary", Amount: "2000.39"}
+  - Category: Community Manager Salary
+    Amount: '2000.39'
 
 May:
-  - {Category: "Community Manager Salary", Amount: "2000.39"}
-  - {Category: "	AsyncAPI Webstore", Amount: "75.11"}
-  - {Category: "AsyncAPI Bounty", Amount: "400"}
+  - Category: Community Manager Salary
+    Amount: '2000.39'
+  - Category: "AsyncAPI Webstore"
+    Amount: '75.11'
+  - Category: AsyncAPI Bounty
+    Amount: '400'
 
 June:
-  - {Category: "Community Manager Salary", Amount: "2000.39"}
-  - {Category: "AsyncAPI Bounty", Amount: "200"}
-  - {Category: "3rd Party Services", Amount: "28.31"}
-  - {Category: "AsyncAPI Bounty", Amount: "200"}
-  - {Category: "AsyncAPI Bounty", Amount: "200"}
-  - {Category: "AsyncAPI Bounty", Amount: "200"}
+  - Category: Community Manager Salary
+    Amount: '2000.39'
+  - Category: AsyncAPI Bounty
+    Amount: '200'
+  - Category: 3rd Party Services
+    Amount: '28.31'
+  - Category: AsyncAPI Bounty
+    Amount: '200'
+  - Category: AsyncAPI Bounty
+    Amount: '200'
+  - Category: AsyncAPI Bounty
+    Amount: '200'
 
 July:
-  - {Category: "Community Manager Salary", Amount: "2000.39"}
-  - {Category: "3rd Party Services", Amount: "1088.27"}
-  - {Category: "AsyncAPI Bounty", Amount: "400"}
+  - Category: Community Manager Salary
+    Amount: '2000.39'
+  - Category: 3rd Party Services
+    Amount: '1088.27'
+  - Category: AsyncAPI Bounty
+    Amount: '400'
 
 August:
-  - {Category: "AsyncAPI Webstore", Amount: "15671.63"}
-  - {Category: "AsyncAPI Bounty", Amount: "400"}
+  - Category: AsyncAPI Webstore
+    Amount: '15671.63'
+  - Category: AsyncAPI Bounty
+    Amount: '400'
