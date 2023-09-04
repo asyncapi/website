@@ -55,7 +55,7 @@ tags:
 payload:
   schemaFormat: application/vnd.apache.avro+json;version=1.9.0
   schema:
-    $ref: path/to/user-create.avsc#/UserCreate
+    $ref: path/to/user-create.avsc
 ```
 
 Create a separate Avro schema file with a .avsc extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the User record type:
