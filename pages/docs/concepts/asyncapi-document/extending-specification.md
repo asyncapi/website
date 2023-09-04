@@ -7,13 +7,13 @@ Extending the AsyncAPI specification is a technique that allows developers to in
 
 The benefits of extending the AsyncAPI specification include enhanced specificity — delivering a clear encoding of necessary API details to applications, and consistency — allowing reusable components across the API. However, extensions should be used sparingly. Since they go beyond the Specification, they may not be universally understood.
 
-## Specification Extensions
+## Specification extensions
 
 The AsyncAPI Specification allows the addition of custom properties through patterned fields prefixed with `x-`. This helps you create unique things without causing problems with future updates.
 
 The `x-` prefix is used to define custom properties. These properties are user-defined and won't conflict with future specification versions because any property starting with `x-` is reserved for user definitions.
 
-Here is a flowchart explaining specification extensions:
+Here is a diagram explaining specification extensions:
 
 ```mermaid
 flowchart TD
@@ -53,9 +53,11 @@ In the above document, under the `user/signedup` channel, a custom property `x-c
 All available tooling might not support AsyncAPI extensions. The tooling can be extended to understand and handle the added data, especially if the tools are internal or open source.
 </Remember>
 
-## Extending Unsupported Features
+## Extending unsupported features
 
 When facing a case where the AsyncAPI specification does not support the required feature, that functionality can be extended using these extensions. If the extended part also benefits other developers, you could contribute to the AsyncAPI specification. This contribution can be made by [creating an issue](https://github.com/asyncapi/website/issues/new?assignees=alequetzalli+-&labels=%F0%9F%93%91+docs&projects=&template=docs.yml&title=%5B%F0%9F%93%91+Docs%5D%3A+) on the AsyncAPI GitHub repository.
+
+Here is a diagram showing details about extending extending unsupported features:
 
 ```mermaid
   graph TD
@@ -73,9 +75,13 @@ When facing a case where the AsyncAPI specification does not support the require
   C -->|No| E
 ```
 
-## Using the AsyncAPI Studio
+This diagram represents the process of extending AsyncAPI specifications when unsupported features are encountered, with an option to contribute to the specification if it benefits others.
+
+## Using the AsyncAPI studio
 
 When extending the AsyncAPI specification, you can use the[AsyncAPI Studio](https://studio.asyncapi.com/), a recommended dedicated editor for AsyncAPI specifications. The AsyncAPI Studio allows you to create, edit, and visualize specification files. It also performs validation checks to ensure the specifications are correct and renders them in a user-friendly manner.
+
+Here is a diagram showing when to use AsyncAPI studio:
 
 ```mermaid
 graph TD
