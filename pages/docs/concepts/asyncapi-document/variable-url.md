@@ -51,7 +51,7 @@ servers:
     description: Staging server
 ```
 
-### ServerVariables section
+### `serverVariables` section
 
 Define the components.serverVariables section in your AsyncAPI document. For each variable used in the server URLs, provide a default value and an optional description:
 
