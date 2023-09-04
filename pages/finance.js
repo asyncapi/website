@@ -14,11 +14,12 @@ import { useEffect, useState } from 'react'
 function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState(0);
 
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  
   // Update the window width when the component mounts and when the window is resized
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
 
     // Initial width
     handleResize();
