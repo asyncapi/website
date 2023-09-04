@@ -52,27 +52,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 20.67657038994663
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 19.240697446200336
+      "score": 20.96374497869589
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -112,6 +92,26 @@
           "color": "7B5DB8"
         }
       ],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
       "score": 16.943300736206268
     },
     {
@@ -123,7 +123,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 16.65612614745701
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -157,26 +157,6 @@
       "score": 15.64084401961705
     },
     {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 15.220253203710714
-    },
-    {
       "id": "PR_kwDOBW5R_c5Worbr",
       "isPR": true,
       "isAssigned": false,
@@ -186,9 +166,40 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDODyzcIc5NDHYS",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "ci:  new github action which logs all the reactions in prs and issues",
+      "author": "14Richa",
+      "resourcePath": "/asyncapi/.github/pull/220",
+      "repo": "asyncapi/.github",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.220253203710714
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5v5kNY",
+      "title": "Add logo of new silver sponsor and remove old platinum",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2109",
+      "repo": "asyncapi/website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBGu-185vky8A",
       "title": "Add logo of new silver sponsor and remove old platinum",
@@ -435,7 +446,7 @@
     },
     {
       "id": "I_kwDOBW5R_c5qCX8o",
-      "title": "[📑 Docs]: Adapt Servers tutorial for v3",
+      "title": "[📑 Docs]: Adapt Server Security tutorial for v3",
       "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1860",
       "repo": "asyncapi/website",
@@ -530,13 +541,8 @@
       "resourcePath": "/asyncapi/website/issues/1854",
       "repo": "asyncapi/website",
       "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
+      "area": "Unknown",
+      "labels": []
     },
     {
       "id": "I_kwDOBW5R_c5qCC_7",
@@ -545,13 +551,8 @@
       "resourcePath": "/asyncapi/website/issues/1853",
       "repo": "asyncapi/website",
       "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
+      "area": "Unknown",
+      "labels": []
     },
     {
       "id": "I_kwDOFLhIt85o9dDJ",
