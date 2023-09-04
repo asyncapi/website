@@ -9,7 +9,7 @@ URL variables are placeholders for values you can replace during runtime. AsyncA
 
 This article assumes that you have a basic understanding of AsyncAPI. For more information, refer to the [Event-Driven Architectures](../../tutorials/getting-started/event-driven-architectures.md).
 
-## Add Dynamic Variables
+## Add dynamic variables
 
 To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` fields to enable reusable variables across multiple servers.
 
