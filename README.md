@@ -104,6 +104,7 @@ AsyncAPI Financial Summary page aims to provide transparency and clarity regardi
 ### How to update information
 
 - YAML files must be stored in the `config/finance` directory.
+
 - Create separate folders for each year under `config/finance`, such as `config/finance/2023`. Inside each year's folder, include two YAML files: `Expenses.yml` and `ExpensesLink.yml`.
 
 - In `Expenses.yml`, record expenses for each month, specifying the `Category` and `Amount`.
