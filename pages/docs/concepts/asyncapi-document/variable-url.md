@@ -38,7 +38,7 @@ D -->|defines| E
 D -->|defines| F
 ```
 
-### Servers section:
+### Servers section
 
 Define the servers section in your AsyncAPI document, and include the base URLs for your API servers. Use placeholders enclosed in curly braces {} to represent the variables in the server URL. For example:
 
