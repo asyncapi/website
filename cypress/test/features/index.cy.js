@@ -13,8 +13,8 @@ describe('Features Component', () => {
       cy.get('[data-testid="Feature-ul"] [data-testid="Feature-li"]').eq(index).as('feature');
 
       cy.get('@feature').within(() => {
-        cy.get('h3').should('have.text', feature.name);
-        cy.get('p').should('have.text', feature.description);
+        cy.get('h3').should('have.text', `features.${feature.id}.name`);
+        cy.get('p').should('have.text', `features.${feature.id}.description`);
 
         feature.links.forEach((link, linkIndex) => {
             cy.get('a').eq(linkIndex).should('have.attr', 'href').then((hrefValue) => {

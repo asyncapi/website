@@ -2,8 +2,12 @@ import eventsData from '../config/meetings.json';
 import GoogleCalendarButton from './buttons/GoogleCalendarButton';
 import Heading from './typography/Heading';
 import { getEvents } from '../lib/staticHelpers';
+import { useTranslation } from '../lib/i18n';
 
 export default function Calendar({ className = '', size, text="text-left" }) {
+
+  const { t } = useTranslation('common');
+
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const eventsExist = eventsData.length > 0;
@@ -12,7 +16,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
       className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4`}
     >
       <Heading level="h2" typeStyle="heading-md-semibold">
-        Upcoming events
+        {t("calendar.title")}
       </Heading> 
       <ul>
         {getEvents(eventsData, size).map((event, index) => (
@@ -43,12 +47,12 @@ export default function Calendar({ className = '', size, text="text-left" }) {
         <div className='pt-4' data-testid="Calendar-button">
           <GoogleCalendarButton 
             href={CALENDAR_URL}
-            text="View Calendar"
+            text={t("calendar.viewCalendarBtn")}
           />
         </div>
         :
         <div className="mt-2 text-gray-700">
-          There are no meetings scheduled for next few days.
+        {t("calendar.noMeetingsMessage")}
         </div>
       }
     </div>
