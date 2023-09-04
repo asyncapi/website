@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/-GhugFCkjVg/hqdefault.jpg",
+    "title": "Spec 3 Docs OPEN Meeting (August 31, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/846.",
+    "videoId": "-GhugFCkjVg"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/AZl6-kMRMpE/hqdefault.jpg",
+    "title": "Let&#39;s talk about contributing:  Design Renaissance",
+    "description": "https://github.com/asyncapi/community/issues/846.",
+    "videoId": "AZl6-kMRMpE"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/PV3IEwq3WSU/hqdefault.jpg",
     "title": "AsyncAPI spec v3 support in Diff",
     "description": "https://github.com/asyncapi/diff/issues/154.",
@@ -16,17 +28,5 @@
     "title": "Community Meeting (August 22nd 2023)",
     "description": "https://github.com/asyncapi/community/issues/818.",
     "videoId": "F_kFlgdZfZ4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/3shCvupVt_4/hqdefault.jpg",
-    "title": "Spec 3 Docs Meeting",
-    "description": "https://github.com/asyncapi/community/issues/818.",
-    "videoId": "3shCvupVt_4"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/1tyyLGAicyE/hqdefault.jpg",
-    "title": "Community Meeting (August 8th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/818 Lukasz, Animesh, Maya, and others had a brief conversation where they ...",
-    "videoId": "1tyyLGAicyE"
   }
 ]
