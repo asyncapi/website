@@ -89,7 +89,7 @@ You can use a Schema Registry to separate the Avro schema from the message paylo
 
 ## Reuse schema
 
-To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
+To reuse a schema in your AsyncAPI specification, define it in the `components/schemas` section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
 
 ```yaml
 channels:
