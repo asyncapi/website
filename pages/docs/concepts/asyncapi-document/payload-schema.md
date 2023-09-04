@@ -5,7 +5,7 @@ weight: 239
 
 The payload schema defines a message's format, data types, and properties to ensure that the payload follows a specific structure and data format.
 
-In the AsyncAPI specification, you can use schema languages such as JSON or Avro Schema to create the payload schema. Enabling consumers to gain insights into the structure and data types of the payload.
+In the AsyncAPI specification, you can use schema languages such as JSON Schema or Avro to create the payload schema. Enabling consumers to gain insights into the structure and data types of the payload.
 
 You should use Avro schemas to handle complex messages and structured data models. Avro schemas support complex types like arrays and records. You can create Avro schemas by writing the JSON representation.
 
@@ -13,11 +13,11 @@ Use npm or yarn to install the `@asyncapi/avro-schema-parser` package to enable 
 
 ## Define Avro schema
 
-Define the Avro schema for the message payload. You can choose one of the following methods,
+Define the Avro schema for the message payload. You can choose one of the following methods:
 
 - Embedded notation: Define the Avro schema within the message payload property.
 - Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
-- Local reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc#/User'`.
+- Local file reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc'`.
 
 The diagram below defines the AsyncAPI specification file using the local reference method.
 
@@ -41,7 +41,7 @@ E -->|Uses local reference method| C
 C-->|Defines structure of message payload| D
 ```
 
-Here is an example of an AsyncAPI specification file that uses the local reference method,
+Here is an example of an AsyncAPI specification file that uses the local reference method:
 
 ```yaml
 messageId: userSignup
@@ -55,10 +55,10 @@ tags:
 payload:
   schemaFormat: application/vnd.apache.avro+json;version=1.9.0
   schema:
-    $ref: path/to/user-create.avsc#/UserCreate
+    $ref: path/to/user-create.avsc
 ```
 
-Create a separate Avro schema file with a .avsc extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the User record type:
+Create a separate Avro schema file with a `.avsc` extension. The file should define the structure of the message payload. Here is an example of an Avro schema file for the user record type:
 
 ```json
 {
@@ -96,7 +96,7 @@ You can use a Schema Registry to separate the Avro schema from the message paylo
 
 ## Reuse schema
 
-To reuse a schema in your AsyncAPI specification, define it in the components/schemas section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
+To reuse a schema in your AsyncAPI specification, define it in the `components/schemas` section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
 
 ```yaml
 channels:
