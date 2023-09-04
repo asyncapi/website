@@ -32,6 +32,36 @@ const getUniqueCategories = () => {
 const months = Object.keys(Expenses);
 const categories = getUniqueCategories();
 
+
+
+const Card = ({ month, data }) => {
+  return (
+    <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-52 overflow-hidden">
+      <div className="text-lg font-semibold mb-4">{month}</div>
+      <div className="flex flex-col justify-center overflow-x-auto">
+        {data.map((item, index) => (
+          <div key={index} className="flex justify-between">
+            <div className="text-sm m-2">{item.Category}</div>
+            <div className="text-sm m-2">${item.Amount}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ExpensesCard = () => {
+    return (
+      <div className="overflow-x-auto">
+        <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
+          {Object.keys(Expenses).map((month, index) => (
+            <Card key={index} month={month} data={Expenses[month]} />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
 const BarChartComponent = () => {
     // State for selected filters
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -119,7 +149,7 @@ const BarChartComponent = () => {
                 {/* Recharts BarChart */}
                 <BarChart width={barWidth} height={barHeight} data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <YAxis tickFormatter={(value) => `$${value}`}/>
+                    <YAxis tickFormatter={(value) => `$${value}`} />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend />
                     <Bar
@@ -137,8 +167,7 @@ const BarChartComponent = () => {
                         }}
                     />
                 </BarChart>
-                {/* replace null with cards for mobile deivces */}
-                {windowWidth < 900 ? null : null}
+                {windowWidth < 900 ? <ExpensesCard data={Expenses} /> : null}
             </div>
         </div>
     );
