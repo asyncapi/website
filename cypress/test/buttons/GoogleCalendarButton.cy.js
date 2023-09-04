@@ -3,7 +3,7 @@ import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButt
 describe('GoogleCalendarButton', () => {
     it('renders correctly with default props', () => {
       mount(<GoogleCalendarButton />);
-      cy.contains('Add to Google Calendar').should('be.visible');
+      cy.contains('googleCalendarBtn').should('be.visible');
     });
   
     it('renders correctly with custom props', () => {

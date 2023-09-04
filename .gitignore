@@ -13,3 +13,5 @@ yarn.lock
 meetings.json
 .netlify
 .env
+cypress/screenshots
+cypress/videos
