@@ -13,7 +13,7 @@ Use npm or yarn to install the `@asyncapi/avro-schema-parser` package to enable 
 
 ## Define Avro schema
 
-Define the Avro schema for the message payload. You can choose one of the following methods,
+Define the Avro schema for the message payload. You can choose one of the following methods:
 
 - Embedded notation: Define the Avro schema within the message payload property.
 - Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
