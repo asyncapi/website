@@ -41,7 +41,7 @@ E -->|Uses local reference method| C
 C-->|Defines structure of message payload| D
 ```
 
-Here is an example of an AsyncAPI specification file that uses the local reference method,
+Here is an example of an AsyncAPI specification file that uses the local reference method:
 
 ```yaml
 messageId: userSignup
