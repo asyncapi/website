@@ -10,7 +10,7 @@ function AsyncAPISummary() {
                     <Heading level="h2" className="text-5xl my-3 mx-3">
                         AsyncAPI Financial Summary
                     </Heading>
-                    <Paragraph typeStyle="body-md" className="my-4 max-w-4xl text-[#212526]">
+                    <Paragraph typeStyle="body-md" className="my-1 max-w-4xl text-[#212526]">
                         To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
                         the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
                             Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
@@ -18,20 +18,19 @@ function AsyncAPISummary() {
                     </Paragraph>
                 </div>
             </div>
-            <div className="flex justify-center my-1">
+            <div className="flex justify-center mb-4">
                 <Button
                     text="Become a Sponsor"
                     href="https://opencollective.com/asyncapi#category-CONTRIBUTE"
                     target='_blank'
                 />
             </div>
-            <hr className="my-12 border-t border-gray-300" />
-            <div className="text-center text-sm">
+            <div className="text-center text-sm mt-4">
                 <Heading level="h1" typeStyle="heading-md" className="4xl">
                     Ways to Support Us?
                 </Heading>
             </div>
-            <div className="text-center my-4 text-sm max-width text-[#212526]">
+            <div className="text-center my-4 text-base max-width text-[#212526]">
                 <Paragraph typeStyle="body-sm" className="my-4">
                     The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br />there are alternative options,
                     they may involve greater effort. Contribute <br />monetarily using the following channels.

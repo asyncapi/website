@@ -11,8 +11,8 @@ function SponsorshipTiers() {
                     </Heading>
 
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-auto text-base text-[#212526]">
-                        AsyncAPI offers various sponsorship tiers, each with its own set
-                        of benefits and privileges. These tiers include Bronze, Silver,
+                        AsyncAPI offers various sponsorship tiers, each with its own set<br></br>
+                        of benefits and privileges. These tiers include Bronze, Silver,<br></br>
                         Gold, and Platinum.
                     </Paragraph>
                 </div>
@@ -31,30 +31,30 @@ function SponsorshipTiers() {
 
                             <tbody className="text-sm font-normal">
                                 <tr>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">Bronze</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">$100/month</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 text-left md:text-base text-[#212526]">
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526] text-left">Bronze</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526]">$100/month</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 text-left md:text-base text-[#212526]">
                                         Company logo in README on GitHub
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">Silver</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">$500/month</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 text-left md:text-base text-[#212526]">
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526] text-left">Silver</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526]">$500/month</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 text-left md:text-base text-[#212526]">
                                         Company logo in README on GitHub and asyncapi.com
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">Gold</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">$1000/month</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-left text-base text-[#212526]">
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526] text-left">Gold</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526]">$1000/month</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-left text-base text-[#212526]">
                                         Company logo in README on GitHub and asyncapi.com
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">Platinum</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 md:text-base text-[#212526]">$2000/month</td>
-                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-2 text-left md:text-base text-[#212526]">
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526]">Platinum</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 md:text-base text-[#212526]">$2000/month</td>
+                                    <td className="border border-gray-500 p-2 md:px-6 md:py-2 md:px-10 md:py-4 text-left md:text-base text-[#212526]">
                                         Company logo in README on GitHub and asyncapi.com.
                                         Up to 2 hours of support per month. Support will be
                                         remote with the option of a shared screen or via private chat.

@@ -12,7 +12,7 @@ function OtherFormsOfFinancialSupport() {
                             Other Forms Of Financial Support
                         </Heading>
                         <Paragraph typeStyle="body-md" className="mb-3 max-w-4xl mx-auto text-center text-[#212526]">
-                            You can also support AsyncAPI initiative by getting involved through employment, providing services and organizing events
+                            You can also support AsyncAPI initiative by getting<br></br> involved through employment, providing services and<br></br> organizing events
                         </Paragraph>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8 mx-3">
@@ -46,7 +46,7 @@ function OtherFormsOfFinancialSupport() {
                                     <img src="/img/finance/ServiceProvision.webp" alt="Service provision" className="w-1/6 h-auto object-cover rounded-md m-2" />
                                     <h2 className="text-lg font-semibold my-2">Service provision</h2>
                                 </div>
-                                <p className="text-sm text-[#212526]">                            AsyncAPI Initiative relies on numerous tools, many of which incur costs. Your
+                                <p className="text-sm text-[#212526]">AsyncAPI Initiative relies on numerous tools, many of which incur costs. Your
                                     organization can provide services such as hosting or storage to support our efforts.</p>
                             </div>
                         </div>

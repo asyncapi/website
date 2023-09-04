@@ -35,32 +35,32 @@ const categories = getUniqueCategories();
 
 
 const Card = ({ month, data }) => {
-  return (
-    <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-52 overflow-hidden">
-      <div className="text-lg font-semibold mb-4">{month}</div>
-      <div className="flex flex-col justify-center overflow-x-auto">
-        {data.map((item, index) => (
-          <div key={index} className="flex justify-between">
-            <div className="text-sm m-2">{item.Category}</div>
-            <div className="text-sm m-2">${item.Amount}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-52 overflow-hidden">
+            <div className="text-lg font-semibold mb-4">{month}</div>
+            <div className="flex flex-col justify-center overflow-x-auto">
+                {data.map((item, index) => (
+                    <div key={index} className="flex justify-between">
+                        <div className="text-sm m-2">{item.Category}</div>
+                        <div className="text-sm m-2">${item.Amount}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 };
 
 const ExpensesCard = () => {
     return (
-      <div className="overflow-x-auto">
-        <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
-          {Object.keys(Expenses).map((month, index) => (
-            <Card key={index} month={month} data={Expenses[month]} />
-          ))}
+        <div className="overflow-x-auto">
+            <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
+                {Object.keys(Expenses).map((month, index) => (
+                    <Card key={index} month={month} data={Expenses[month]} />
+                ))}
+            </div>
         </div>
-      </div>
     );
-  };
+};
 
 const BarChartComponent = () => {
     // State for selected filters
@@ -119,32 +119,36 @@ const BarChartComponent = () => {
         <div className="flex justify-center items-center mt-8">
             <div className="w-full lg:w-2/3 px-4 text-center">
                 <div className='mb-5'>
-                    <h1 id="budget-analysis" className="text-4xl font-semibold mb-4 my-2">Budget Analysis</h1>
+                    <h1 id="budget-analysis" className="text-3xl font-semibold mb-4 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
-                    <h4 className="text-sm font-semibold mb-2 my-4">Total Expenses: ${totalAmount.toFixed(2)}</h4>
-                    {/* Select for category filter */}
-                    <select
-                        className="w-full p-2 border text-gray-600 font-semibold border-gray-300 rounded-md bg-[#f9f7f3]"
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                    >
-                        <option value="All Categories">All Categories</option>
-                        {categories.map(category => (
-                            <option key={category} value={category}>{category}</option>
-                        ))}
-                    </select>
+                    <div className="md:flex md:items-center md:justify-between md:m-8">
+                        <h4 className="text-md font-semibold my-4">Total Expenses:<br></br> ${totalAmount.toFixed(2)}</h4>
+                        {/* Select for category filter */}
+                        <div className="flex space-x-2">
+                            <select
+                                className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-[#8054F2] text-xs"
+                                value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
+                            >
+                                <option value="All Categories">All Categories</option>
+                                {categories.map(category => (
+                                    <option key={category} value={category}>{category}</option>
+                                ))}
+                            </select>
 
-                    {/* Select for month filter */}
-                    <select
-                        className="w-full mt-2 p-2 border border-gray-300 rounded-md text-gray-600 bg-[#f9f7f3] font-semibold"
-                        value={selectedMonth}
-                        onChange={(e) => setSelectedMonth(e.target.value)}
-                    >
-                        <option value="All Months">All Months</option>
-                        {months.map(month => (
-                            <option key={month} value={month}>{month}</option>
-                        ))}
-                    </select>
+                            {/* Select for month filter */}
+                            <select
+                                className="p-2 pr-8 border border-gray-600 rounded-md bg-[#8054F2] text-white font-semibold text-xs"
+                                value={selectedMonth}
+                                onChange={(e) => setSelectedMonth(e.target.value)}
+                            >
+                                <option value="All Months">All Months</option>
+                                {months.map(month => (
+                                    <option key={month} value={month}>{month}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 {/* Recharts BarChart */}
                 <BarChart width={barWidth} height={barHeight} data={chartData}>
