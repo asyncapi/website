@@ -97,6 +97,23 @@ npm run build
 
 Generated files of the website go to the `.next` folder.
 
+## Updating information about project finance
+
+AsyncAPI Financial Summary page aims to provide transparency and clarity regarding the organization's financial activities. It serves as a platform to showcase how donations are accepted, different sponsorship options, and how the generated funds are utilized.
+
+### How to update information
+
+- YAML files must be stored in the `config/finance` directory.
+- Create separate folders for each year under `config/finance`, such as `config/finance/2023`. Inside each year's folder, include two YAML files: `Expenses.yml` and `ExpensesLink.yml`.
+
+- In `Expenses.yml`, record expenses for each month, specifying the `Category` and `Amount`.
+
+- In `ExpensesLink.yml`, provide discussion links related to expense categories.
+
+- When a new year begins, create a corresponding folder for that year under both `config/finance` and `config/finance/json-data`, and place the YAML files inside the year's folder(not under json-data). For example, create folders `config/finance/2024` and `config/finance/json-data/2024`.
+
+- Modify the years within the `scripts/finance/expenses-json.js` script to handle data for different years effectively.
+
 ## Case studies
 
 ### Overview

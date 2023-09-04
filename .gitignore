@@ -15,5 +15,4 @@ meetings.json
 .env
 cypress/screenshots
 cypress/videos
-Expenses.json
-ExpensesLink.json
+config/finance/json-data
