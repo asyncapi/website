@@ -73,7 +73,7 @@
                 },
                 "filters": {
                     "language": "Kotlin",
-                    "technology": ["Spring Boot", "Maven"],
+                    "technology": ["Springboot", "Maven"],
                     "categories": ["code-first"]
                 }
             },
@@ -86,7 +86,7 @@
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Spring Boot", "Gradle"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
@@ -273,12 +273,12 @@
                 "title": "Springwolf",
                 "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
                 "links": {
-                    "websiteUrl": "https://springwolf.github.io/",
+                    "websiteUrl": "https://www.springwolf.dev",
                     "repoUrl": "https://github.com/springwolf/springwolf-core"
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Springboot"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
