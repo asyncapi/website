@@ -5,7 +5,7 @@ weight: 239
 
 The payload schema defines a message's format, data types, and properties to ensure that the payload follows a specific structure and data format.
 
-In the AsyncAPI specification, you can use schema languages such as JSON or Avro Schema to create the payload schema. Enabling consumers to gain insights into the structure and data types of the payload.
+In the AsyncAPI specification, you can use schema languages such as JSON Schema or Avro to create the payload schema. Enabling consumers to gain insights into the structure and data types of the payload.
 
 You should use Avro schemas to handle complex messages and structured data models. Avro schemas support complex types like arrays and records. You can create Avro schemas by writing the JSON representation or using tools like Avro4s UI to generate the schema from valid JSON.
 
