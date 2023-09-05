@@ -3,8 +3,6 @@ title: URL Variables
 weight: 235
 ---
 
-Event-driven architecture benefits from a defined base URL and rules for URL variables. You can easily manage multiple API endpoints, handling various server configurations and environments.
-
 URL variables are placeholders for values you can replace during runtime. AsyncAPI enables you to construct dynamic URLs with query parameters and additional information while enhancing the flexibility and maintainability of your API specifications.
 
 This article assumes that you have a basic understanding of AsyncAPI. For more information, refer to the [Event-Driven Architectures](../../tutorials/getting-started/event-driven-architectures.md).
