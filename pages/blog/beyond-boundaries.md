@@ -1,6 +1,6 @@
 ---
 title: 'Beyond Boundaries - Empowering Through OSS Mentorship'
-date: 2023-08-28T06:00:00+01:00
+date: 2023-09-06T06:00:00+01:00
 type: Community
 tags:
   - Mentorships
