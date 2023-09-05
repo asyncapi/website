@@ -15,7 +15,7 @@ D --> F{Channel Bindings}
 E --> G{Message Bindings}
 ```
 
-## Server Bindings
+## Server bindings
 
 Server bindings provide protocol-specific information related to the server configuration. For example, if you use RabbitMQ as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
 
@@ -40,8 +40,7 @@ servers:
             vhost: /
 ```
 
-
-## Channel Bindings
+## Channel bindings
 
 Channel bindings allow you to specify protocol-specific configurations for a particular channel. For example, you can define the exchange type, durability, and virtual host for a specific channel in RabbitMQ.
 
@@ -65,7 +64,7 @@ channels:
             vhost: /
 ```
 
-## Message Bindings
+## Message bindings
 
 Message bindings provide protocol-specific information for a specific message. You can define properties like the timestamp and acknowledgment settings for a message in the bindings.
 
