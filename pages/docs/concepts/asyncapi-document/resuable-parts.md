@@ -9,7 +9,7 @@ Reusable parts allow you to split up the AsyncAPI document into many files and r
 
 ## Same file
 
-You can use the ref keyword to reference a component within the same document. The image below defines referencing a component within the same document.
+You can use the $ref keyword to reference a component within the same document. The diagram below defines referencing a component within the same document.
 
 ```mermaid
 graph LR
@@ -28,7 +28,7 @@ D -->|references| B
 B -->|references| A
 ```
 
-In the example below, you define a component called MyMessageSchema under the schemas section to describe the structure of a message. Under the publish operation of myChannel, you reference the MyMessageSchema component using the $ref keyword.
+In the example below, you define a component called MyMessageSchema under the schemas section to describe the structure of a message. Under the publish operation of `myChannel`, you reference the `MyMessageSchema` component using the $ref keyword.
 
 ```yaml
 channels:
@@ -47,9 +47,9 @@ components:
 
 ## Another local document
 
-You can use the ref keyword to reference another local document. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
+You can use the $ref keyword to reference another local document. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
 
-The image below defines the process of referencing another local document.
+The diagram below defines the process of referencing another local document.
 
 ```mermaid
 graph LR
@@ -96,9 +96,9 @@ channels:
 
 ## External URL
 
-You can use the ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON.
+You can use the $ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON.
 
-The image below defines the process of referencing an external URL.
+The diagram below defines the process of referencing an external URL.
 
 ```mermaid
 graph LR
