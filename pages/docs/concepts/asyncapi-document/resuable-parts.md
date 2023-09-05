@@ -68,7 +68,7 @@ B -->|contains| C
 C -->|defines| D
 ```
 
-In the example below, you reference the component from the message-schema.yaml file.
+In the example below, you reference the component from the `message-schema.yaml` file.
 
 ```yaml
 ##### ./message-schema.yaml
