@@ -96,7 +96,7 @@ channels:
 
 ## External URL
 
-You can use the ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON.
+You can use the ref keyword to reference an external URL. Ensure the external URL provides the referenced component in a compatible format, such as YAML or JSON.
 
 The image below defines the process of referencing an external URL.
 
