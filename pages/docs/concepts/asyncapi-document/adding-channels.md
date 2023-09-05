@@ -3,9 +3,9 @@ title: Adding Channels
 weight: 60
 ---
 
-Adding [channels](../channel.md) in AsyncAPI specification allows organizing and categorizing messages, routing messages to the appropriate consumers, decoupling producers and consumers, scaling and extending the API, and providing clear documentation and communication about API's communication patterns. Additionally, alternative names for channels can be user-defined to suit specific context and preferences.
+Adding [channels](../channel) in AsyncAPI specification allows organizing and categorizing messages, routing messages to the appropriate consumers, decoupling producers and consumers, scaling and extending the API, and providing clear documentation and communication about API's communication patterns. Additionally, alternative names for channels can be user-defined to suit specific context and preferences.
 
-Here is a flowchart to describe adding channels:
+Here is a diagram to describe adding channels:
 
 ```mermaid
 graph LR
@@ -42,11 +42,11 @@ userSignedUp:
 
 This AsyncAPI specification sets up an interface for a `userSignedUp` channel, where the `address` field holds the actual address of the channel (`user.signedup`).
 
-## Channel Server Relationship
+## Channel server relationship
 
-Channels and [servers](../server.md) have a close relationship in asynchronous messaging systems. Channels act as message communication pathways, while servers generate and publish messages to these channels. Channels serve as logical destinations where messages are organized based on purpose or topic. Acting as producers, Servers generate messages and publish them to specific channels. Consumers, including servers, send to channels to receive messages. Channels ensure that messages are routed to the appropriate consumers based on their subscriptions. This relationship between channels and servers forms the foundation for building scalable and flexible messaging systems.
+Channels and [servers](../server) have a close relationship in asynchronous messaging systems. Channels act as message communication pathways, while servers generate and publish messages to these channels. Channels serve as logical destinations where messages are organized based on purpose or topic. Acting as producers, Servers generate messages and publish them to specific channels. Consumers, including servers, send to channels to receive messages. Channels ensure that messages are routed to the appropriate consumers based on their subscriptions. This relationship between channels and servers forms the foundation for building scalable and flexible messaging systems.
 
-Here is a flowchart to show the relationship between channels and servers:
+Here is a diagram to show the relationship between channels and servers:
 
 ```mermaid
 graph TD
@@ -67,13 +67,13 @@ graph TD
   c1 --> s2
 ```
 
-In this flowchart, channels serve as communication pathways, receiving messages from servers and routing them to consumers, while servers generate and publish messages to these channels.
+In this diagram, channels serve as communication pathways, receiving messages from servers and routing them to consumers, while servers generate and publish messages to these channels.
 
-### Channel Availability on Specific Servers
+### Channel availability on specific servers
 
 A channel can be designed to be available on all servers, which means that the channel is globally accessible, allowing messages published to it to reach all connected clients, regardless of their server connection.
 
-Here is a flowchart showing a channel is available on multiple servers and accessible by multiple clients:
+Here is a diagram showing a channel is available on multiple servers and accessible by multiple clients:
 
 ```mermaid
 graph TD
@@ -104,7 +104,7 @@ graph TD
   s3 --- ch
 ```
 
-In the above flowchart, messages published to the channel to reach all connected clients, regardless of their server connection.
+In the above diagram, messages published to the channel to reach all connected clients, regardless of their server connection.
 
 Here is an example of how you might specify that a channel is available only on specific servers:
 
@@ -126,7 +126,7 @@ The above code defines a channel `user/signedup` for subscribing to user signup 
 
 Specifying a channel and servers allows the AsyncAPI document to clarify where each channel can be found. This method is particularly beneficial in complex systems where different servers might be responsible for different operations.
 
-### Multiple Channels in Single Server
+### Multiple channels in single server
 
 Having multiple channels in one server allows for better organization and management of different events or messages within the same server instance, providing a more modular and scalable architecture for handling various functionalities. It enables clients to send to specific channels based on their interests or requirements, ensuring efficient message delivery and reducing complexity in the overall system design.
 
@@ -176,4 +176,4 @@ servers:
 
 The YAML code defines multiple channels, `user/signedup` and `user/activated`, within the `serverA` server, enabling clients to subscribe and receive user signup and activation events.
 
-To know more details on how to add server check [add servers](add-server.md).
+To know more details on how to add server check [add servers](add-server).
