@@ -1,20 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 26.021935183079695
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 23.548316277439216
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -44,17 +39,6 @@
       "score": 22.399617922442182
     },
     {
-      "id": "PR_kwDOBW5R_c5Xb72L",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.96374497869589
-    },
-    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -69,6 +53,37 @@
         }
       ],
       "score": 17.517649913704783
+    },
+    {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDOBW5R_c5VAjCE",
@@ -93,37 +108,6 @@
         }
       ],
       "score": 17.230475324955524
-    },
-    {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -157,6 +141,22 @@
       "score": 15.64084401961705
     },
     {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 15.504217951581506
+    },
+    {
       "id": "PR_kwDOBW5R_c5Worbr",
       "isPR": true,
       "isAssigned": false,
@@ -185,21 +185,6 @@
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOBW5R_c5v5kNY",
-      "title": "Add logo of new silver sponsor and remove old platinum",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2109",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
     {
       "id": "I_kwDOBGu-185vky8A",
       "title": "Add logo of new silver sponsor and remove old platinum",
