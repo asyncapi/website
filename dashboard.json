@@ -1,20 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 26.021935183079695
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 23.548316277439216
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -44,17 +39,6 @@
       "score": 22.399617922442182
     },
     {
-      "id": "PR_kwDOBW5R_c5Xb72L",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.96374497869589
-    },
-    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -68,7 +52,38 @@
           "color": "84b6eb"
         }
       ],
-      "score": 17.517649913704783
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        }
+      ],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "PR_kwDOBW5R_c5VAjCE",
@@ -95,37 +110,6 @@
       "score": 17.230475324955524
     },
     {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOCVQpZM5M_dcV",
       "isPR": false,
       "isAssigned": true,
@@ -137,24 +121,20 @@
       "score": 15.794602381209232
     },
     {
-      "id": "I_kwDOFLhIt84-OUI3",
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
         }
       ],
-      "score": 15.64084401961705
+      "score": 15.504217951581506
     },
     {
       "id": "PR_kwDOBW5R_c5Worbr",
@@ -163,6 +143,17 @@
       "title": "docs: add v3 migration guide",
       "author": "jonaslagoni",
       "resourcePath": "/asyncapi/website/pull/2008",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VN7QK",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: asyncapi mentorship program blog post",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/pull/1930",
       "repo": "asyncapi/website",
       "labels": [],
       "score": 15.220253203710714
@@ -186,17 +177,17 @@
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5v5kNY",
-      "title": "Add logo of new silver sponsor and remove old platinum",
+      "id": "I_kwDODtTERs5wDOAH",
+      "title": "Support decimal min and max",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2109",
-      "repo": "asyncapi/website",
-      "author": "derberg",
+      "resourcePath": "/asyncapi/java-spring-template/issues/326",
+      "repo": "asyncapi/java-spring-template",
+      "author": "Tenischev",
       "area": "Unknown",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "bug",
+          "color": "d73a4a"
         }
       ]
     },

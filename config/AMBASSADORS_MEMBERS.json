@@ -330,5 +330,72 @@
         "link": ""
       }
     ]
+  },
+  {
+    "name": "Mete Atamel",
+    "github": "meteatamel",
+    "twitter": "meteatamel",
+    "country": "🇬🇧",
+    "bio": "Mete is a Software Engineer and a Developer Advocate with 18+ years of experience. Currently, he works in the Developer Relations team at Google in London. He builds tools, demos, tutorials, and gives talks to educate and help developers to be successful on Google Cloud. As a regular speaker at tech conferences, he has spoken over 345+ events since 2016 on modern application development topics such as Kubernetes, Istio, Knative, serverless, event-driven architectures, and microservice orchestration. Prior to his current role, he was a Software Engineer/Architect/Tech Lead at Nokia, EMC, Adobe, Skype, and Microsoft building various client and server technologies, resulting in multiple patents.",
+    "linkedin": "mete-atamel",
+    "company": "Google",
+    "title": "Software Engineer and Developer Advocate at Google",
+    "img": "https://avatars.githubusercontent.com/u/1177542?v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "AsyncAPI Basics",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-basics-6e6394c9587"
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI Tools",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-tools-dd59f9236b20"
+      },
+      {
+        "type": "article",
+        "title": "Understanding AsyncAPI’s publish & subscribe semantics with an example",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/understanding-asyncapis-publish-subscribe-semantics-with-an-example-cfa1cc3faef5"
+      },
+      {
+        "type": "article",
+        "title": "CloudEvents + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/cloudevents-asyncapi-fa8ef63f28e0"
+      },
+      {
+        "type": "article",
+        "title": "Google Cloud Pub/Sub + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/google-cloud-pub-sub-asyncapi-6ea3c1ed3c49"
+      },
+      {
+        "type": "presentation",
+        "title": "Open standards for building event-driven applications in the cloud",
+        "date": {
+          "year": 2023,
+          "month": "June"
+        },
+        "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
+      }
+    ]
   }
 ]
