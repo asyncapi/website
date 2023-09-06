@@ -15,6 +15,7 @@
     "googleCalendarBtn": "Add to Google Calendar",
     "subscribeBtn": "Subscribe",
     "icsFileBtn": "Download ICS File",
+    "githubButton": "View on Github",
     "calendar": {
         "title": "Upcoming events",
         "viewCalendarBtn": "View Calendar",
