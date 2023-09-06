@@ -26,7 +26,7 @@ Assuming you have all the necessary website dependencies installed:
 
 1. Run it and check on the Cypress Graphical User Interface 
 ```bash
-    npm cypress open 
+    npm run cy:open
 ```
 (You can check out the tests and their outputs on the Cypress Window)
 
