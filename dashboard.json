@@ -52,7 +52,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 17.517649913704783
+      "score": 18.091999091203302
     },
     {
       "id": "PR_kwDOBW5R_c5YEren",
@@ -121,26 +121,6 @@
       "score": 15.794602381209232
     },
     {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 15.64084401961705
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -168,6 +148,17 @@
       "score": 15.220253203710714
     },
     {
+      "id": "PR_kwDOBW5R_c5VN7QK",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: asyncapi mentorship program blog post",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/pull/1930",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
       "id": "PR_kwDODyzcIc5NDHYS",
       "isPR": true,
       "isAssigned": false,
@@ -185,6 +176,21 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODtTERs5wDOAH",
+      "title": "Support decimal min and max",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/java-spring-template/issues/326",
+      "repo": "asyncapi/java-spring-template",
+      "author": "Tenischev",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBGu-185vky8A",
       "title": "Add logo of new silver sponsor and remove old platinum",
