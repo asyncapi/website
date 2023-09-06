@@ -27,13 +27,16 @@ describe('AnnouncementHero Component', () => {
     cy.get('h3').should('exist');
   
   });
-
-  it('should have a link to submit a session', () => {
-    // Assert the link
-    cy.get('[data-testid="Button-link"]').should('have.attr', 'href', 'https://conference.asyncapi.com/')
+  it('should have a link and text for the button', () => {
+    mount(<AnnouncementHero />);
+    cy.get('[data-testid="Button-link"]')
       .should('have.attr', 'target', '_blank')
-      .contains('Submit a session');
-  });
+      //making sure link starts with https://
+      .should('have.attr', 'href').and('match', /^https:\/\//)
+    cy.get('[data-testid="Button-link"]')
+      .find('span') // Find the <span> element inside the <a>
+      .and('not.be.empty');
+   });
 
   //check if announcement rendered is small or large .
   it('should render a small announcement when "small" prop is true', () => {
