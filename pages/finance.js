@@ -9,7 +9,7 @@ import NavBar from "../components/navigation/NavBar"
 import Head from "next/head"
 import StickyNavbar from "../components/navigation/StickyNavbar"
 import Container from "../components/layout/Container"
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
 function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState(0);

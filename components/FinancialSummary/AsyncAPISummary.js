@@ -39,13 +39,13 @@ function AsyncAPISummary() {
 
             <div className="text-center">
                 <a href="https://opencollective.com/asyncapi" target='_blank'>
-                    <img className="mx-2 inline w-15 h-10" src="/img/finance/OpenCollective.webp" alt="Open Collective" />
+                    <img className="mx-4 inline w-10 h-10" src="/img/logos/OpenCollective.svg" alt="Open Collective" />
                 </a>
                 <a href="https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc" target='_blank'>
-                    <img className="mx-2 inline w-15 h-10" src="/img/finance/LFX.webp" alt="Linux Foundation" />
+                    <img className="mx-4 inline w-10 h-10" src="/img/logos/LFX.svg" alt="Linux Foundation" />
                 </a>
                 <a href="https://github.com/sponsors/asyncapi" target='_blank'>
-                    <img className="mx-2 inline w-15 h-10" src="/img/finance/GitHub.webp" alt="Github" />
+                    <img className="mx-4 inline w-10 h-10" src="/img/logos/github-black.svg" alt="Github" />
                 </a>
             </div>
         </div>

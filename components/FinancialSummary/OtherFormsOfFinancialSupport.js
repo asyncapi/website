@@ -20,7 +20,7 @@ function OtherFormsOfFinancialSupport() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/EmployeeInvolvement.webp" alt="Employee involvement" className="w-1/6 h-auto object-cover rounded-md m-2" />
+                                    <img src="/img/illustrations/EmployeeInvolvement.webp" alt="Employee involvement" className="w-1/6 h-auto object-cover rounded-md m-2" />
                                     <h2 className="text-lg font-semibold my-2">Employee involvement</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Assign your employees to contribute to projects under the AsyncAPI Initiative
@@ -32,7 +32,7 @@ function OtherFormsOfFinancialSupport() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/EventOrganization.webp" alt="Event organization" className="w-1/6 h-auto object-cover rounded-md m-2" />
+                                    <img src="/img/illustrations/EventOrganization.webp" alt="Event organization" className="w-1/6 h-auto object-cover rounded-md m-2" />
                                     <h2 className="text-lg font-semibold my-2">Event organization</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Host AsyncAPI conferences by sponsoring and organizing events under the AsyncAPI
@@ -43,7 +43,7 @@ function OtherFormsOfFinancialSupport() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/ServiceProvision.webp" alt="Service provision" className="w-1/6 h-auto object-cover rounded-md m-2" />
+                                    <img src="/img/illustrations/ServiceProvision.webp" alt="Service provision" className="w-1/6 h-auto object-cover rounded-md m-2" />
                                     <h2 className="text-lg font-semibold my-2">Service provision</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">AsyncAPI Initiative relies on numerous tools, many of which incur costs. Your

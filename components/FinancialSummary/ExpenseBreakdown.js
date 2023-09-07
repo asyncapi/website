@@ -21,7 +21,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/MentorshipProgram.webp" alt="Mentorship Program" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/MentorshipProgram.webp" alt="Mentorship Program" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Mentorship Program</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Our AsyncAPI Mentorship program offers paid guidance to develop valuable features, investing in tools and motivated individuals for community benefit.</p>
@@ -31,7 +31,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/BountyProgram.webp" alt="Bounty Program" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/BountyProgram.webp" alt="Bounty Program" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Bounty Program</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Rewarding contributors regardless of affiliation or volunteer status. Free mentoring and support for newcomers to build portfolios and unlock tech prospects.</p>
@@ -41,7 +41,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/Events.webp" alt="Events" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/Events.webp" alt="Events" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Events</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Supporting AsyncAPI conferences incurs costs for services and travel arrangements. Your contributions facilitate event hosting and community growth.</p>
@@ -51,7 +51,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/SwagStore.webp" alt="Swag Store" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/SwagStore.webp" alt="Swag Store" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Swag Store</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Creating a swag store for seamless distribution to contributors, mentees, ambassadors, and community members. Store profits can fund complimentary swag expenses.</p>
@@ -61,7 +61,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/Hiring.webp" alt="Hiring" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/Hiring.webp" alt="Hiring" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Hiring</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand the team. our team</p>
@@ -71,7 +71,7 @@ function ExpenseBreakdown() {
                         <div className="bg-white rounded-md shadow-md p-4 flex items-center">
                             <div className="text-[#212526]">
                                 <div className="flex flex-col items-center">
-                                    <img src="/img/finance/Services.webp" alt="Services" className="w-1/6 h-auto object-cover rounded-md m-1" />
+                                    <img src="/img/illustrations/Services.webp" alt="Services" className="w-1/6 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-1 text-[#212526]">Services</h2>
                                 </div>
                                 <p className="text-sm text-[#212526]">Occasionally, we must pay for services such as Zoom or Descript, as they are not available through specific Open Source support programs.</p>
