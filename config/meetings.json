@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NG5pMWJpajA2ODhjczhiY2doNjRudnVybzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/715",
-    "banner": "https://user-images.githubusercontent.com/40604284/240259939-641b0476-1a80-41fa-9d3c-0701ad1dfff0.png",
-    "date": "2023-05-30T08:00:00.000Z"
-  },
-  {
     "title": "Headless Commerce: Streamlining Architecture",
     "calLink": "https://www.google.com/calendar/event?eid=ODE1aHU2YzByNXJ0MjNlNGNjYmZwbm03b28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/716",
