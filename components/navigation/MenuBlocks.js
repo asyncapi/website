@@ -1,3 +1,4 @@
+import LinkComponent from '../link';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label'
 import Link from 'next/link'
@@ -11,7 +12,7 @@ export default function MenuBlocks ({
         items.map((item, index) => {
           const isExternalHref = item.href && item.href.startsWith('http');
           return (
-            <Link href={item.comingSoon ? '' : item.href} key={index}>
+            <LinkComponent href={item.comingSoon ? '' : item.href} key={index}>
               <a data-testid="MenuBlocks-Link"
                 className="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150" 
                 target={isExternalHref ? "_blank" : undefined} 
@@ -29,7 +30,7 @@ export default function MenuBlocks ({
                   </Paragraph>
                 </div>
               </a>
-            </Link>
+            </LinkComponent>
           )
         })
       }

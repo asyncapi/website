@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { defaultLanguage, languages } from "../lib/i18n";
+import i18nPaths from "../lib/i18nPaths";
 
 const LinkComponent = ({ children, locale, ...props }) => {
   const router = useRouter();
@@ -12,6 +13,14 @@ const LinkComponent = ({ children, locale, ...props }) => {
   const language = query.lang || langSlug || defaultLanguage;
 
   let href = props.href || pathname;
+
+  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes("http", 0)) {
+    return (
+      <Link href={href} passHref>
+        {children}
+      </Link>
+    );
+  }
 
   if (locale) {
     if (props.href) {
