@@ -56,6 +56,7 @@
     "ajv-formats": "^2.1.1",
     "autoprefixer": "^10.4.7",
     "axios": "^0.27.2",
+    "cloudinary-build-url": "^0.2.4",
     "clsx": "^1.1.1",
     "cssnano": "^5.1.12",
     "dotenv": "^8.2.0",

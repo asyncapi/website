@@ -8,6 +8,11 @@ import Heading from "../../components/typography/Heading";
 import Paragraph from "../../components/typography/Paragraph";
 import TextLink from "../../components/typography/TextLink";
 import GenericLayout from "../../components/layout/GenericLayout";
+import { setConfig,buildImageUrl } from 'cloudinary-build-url';
+
+setConfig({
+  cloudName: 'dimfh6eps'
+});
 
 export default function BlogIndexPage() {
   const router = useRouter();
@@ -117,9 +122,22 @@ export default function BlogIndexPage() {
               </div>
             ) : (
               <ul className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-                {router.isReady && posts.map((post, index) => (
-                  <BlogPostItem key={index} post={post} />
-                ))}
+                {router.isReady && posts.map((post, index) => {
+                  const coverUrl = `https://www.asyncapi.com${post.cover}`;
+                  const coverImage = buildImageUrl(coverUrl, {
+                    cloud: {
+                      storageType: 'fetch'
+                    },
+                    transformations: {
+                      resize: {
+                        type: 'fill',
+                        width: 412,
+                        height: 192
+                      }
+                    }
+                  });
+                  return <BlogPostItem key={index} post={post} coverImage={coverImage}/>
+                })}
               </ul>
             )}
           </div>
