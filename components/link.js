@@ -5,6 +5,15 @@ import i18nPaths from "../lib/i18nPaths";
 
 const LinkComponent = ({ children, locale, ...props }) => {
   const router = useRouter();
+
+  if (!router) {
+    return (
+      <Link href={props.href} passHref>
+        {children}
+      </Link>
+    );
+  }
+
   const { pathname, query, asPath } = router;
 
   // Detect current language
