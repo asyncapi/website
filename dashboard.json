@@ -1,20 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 26.021935183079695
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -25,65 +20,23 @@
       "resourcePath": "/asyncapi/spec/issues/691",
       "repo": "asyncapi/spec",
       "labels": [],
-      "score": 22.9739670999407
+      "score": 23.26114168868996
     },
     {
-      "id": "MDU6SXNzdWU5OTMxODc5ODM=",
+      "id": "I_kwDOBW5R_c5Pi3rO",
       "isPR": false,
       "isAssigned": false,
-      "title": "Proposal to allow defining schema format other than default one (AsyncAPI Schema)",
-      "author": "magicmatatjahu",
-      "resourcePath": "/asyncapi/spec/issues/622",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Xb72L",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 20.67657038994663
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
+          "name": "🎨 design",
+          "color": "0D67D3"
         }
       ],
-      "score": 19.240697446200336
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
+      "score": 22.399617922442182
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -99,43 +52,62 @@
           "color": "84b6eb"
         }
       ],
-      "score": 16.36895155870775
+      "score": 18.091999091203302
     },
     {
-      "id": "PR_kwDOGPFxkc5Ey7vh",
+      "id": "PR_kwDOBW5R_c5YEren",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: share spec feature",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/server-api/pull/213",
-      "repo": "asyncapi/server-api",
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 15.794602381209232
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "📑 docs",
+          "color": "E50E99"
         },
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "area/docs",
+          "color": "e50e99"
         }
       ],
-      "score": 15.64084401961705
+      "score": 17.517649913704783
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VAjCE",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -146,7 +118,43 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 15.220253203710714
+      "score": 15.794602381209232
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.794602381209232
+    },
+    {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 15.504217951581506
     },
     {
       "id": "PR_kwDOBW5R_c5Worbr",
@@ -178,6 +186,36 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDODtTERs5wDOAH",
+      "title": "Support decimal min and max",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/java-spring-template/issues/326",
+      "repo": "asyncapi/java-spring-template",
+      "author": "Tenischev",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBGu-185vky8A",
+      "title": "Add logo of new silver sponsor and remove old platinum",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/spec/issues/966",
+      "repo": "asyncapi/spec",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODwv8N85uVjld",
       "title": "Add all speakers button",
       "isAssigned": false,
@@ -189,21 +227,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185t3Fe8",
-      "title": "Add logo of bronze sponsors to readme",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/961",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -423,7 +446,7 @@
     },
     {
       "id": "I_kwDOBW5R_c5qCX8o",
-      "title": "[📑 Docs]: Adapt Servers tutorial for v3",
+      "title": "[📑 Docs]: Adapt Server Security tutorial for v3",
       "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1860",
       "repo": "asyncapi/website",
@@ -518,13 +541,8 @@
       "resourcePath": "/asyncapi/website/issues/1854",
       "repo": "asyncapi/website",
       "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
+      "area": "Unknown",
+      "labels": []
     },
     {
       "id": "I_kwDOBW5R_c5qCC_7",
@@ -533,13 +551,8 @@
       "resourcePath": "/asyncapi/website/issues/1853",
       "repo": "asyncapi/website",
       "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
+      "area": "Unknown",
+      "labels": []
     },
     {
       "id": "I_kwDOFLhIt85o9dDJ",
@@ -590,44 +603,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385m6IJk",
-      "title": "Add runtime testing for Go",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1333",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Go generator",
-          "color": "fbca04"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385m6Hg8",
-      "title": "Add runtime testing for C#",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1332",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "C# generator",
-          "color": "c5def5"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -654,6 +629,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -949,21 +928,6 @@
         {
           "name": "❔ Question",
           "color": "54B65C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5AXInF",
-      "title": "Improve help message with list of available examples",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/162",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },

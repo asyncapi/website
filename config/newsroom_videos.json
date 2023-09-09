@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/3shCvupVt_4/hqdefault.jpg",
-    "title": "Spec 3 Docs Meeting",
-    "description": "https://github.com/asyncapi/community/issues/818.",
-    "videoId": "3shCvupVt_4"
+    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/857.",
+    "videoId": "OYcOkQhwVNg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/1tyyLGAicyE/hqdefault.jpg",
-    "title": "Community Meeting (August 8th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/818 Lukasz, Animesh, Maya, and others had a brief conversation where they ...",
-    "videoId": "1tyyLGAicyE"
+    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
+    "title": "Generator and new parser discussion (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/865.",
+    "videoId": "b4KcouHm958"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/WW5sLVHa0b8/hqdefault.jpg",
-    "title": "Spec 3.0 (Aug 2th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/823.",
-    "videoId": "WW5sLVHa0b8"
+    "image_url": "https://i.ytimg.com/vi/1BjJWxAQ4Uk/hqdefault.jpg",
+    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/862.",
+    "videoId": "1BjJWxAQ4Uk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/CagY5otdY14/hqdefault.jpg",
-    "title": "Community Meeting (July 25th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/798.",
-    "videoId": "CagY5otdY14"
+    "image_url": "https://i.ytimg.com/vi/JombHAj2p2o/hqdefault.jpg",
+    "title": "Community Meeting (September 5, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/868.",
+    "videoId": "JombHAj2p2o"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/GAjlJFXjMh8/hqdefault.jpg",
-    "title": "Design meeting #2",
-    "description": "Meeting issue: https://github.com/asyncapi/community/issues/800 Summary: Here's a summary of what we discussed: * Fran and ...",
-    "videoId": "GAjlJFXjMh8"
+    "image_url": "https://i.ytimg.com/vi/-GhugFCkjVg/hqdefault.jpg",
+    "title": "Spec 3 Docs OPEN Meeting (August 31, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/846.",
+    "videoId": "-GhugFCkjVg"
   }
 ]
