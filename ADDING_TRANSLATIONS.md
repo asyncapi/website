@@ -3,7 +3,10 @@
 We love your contributions to the AsyncAPI website by adding or improving the existing translations.
 
 ## Table of contents:
-
+- [Improving existing translations](https://github.com/anshgoyalevil/website/blob/i18n-docs/ADDING_TRANSLATIONS.md#improving-existing-translations)
+- [Adding translations to a partially localized page](https://github.com/anshgoyalevil/website/blob/i18n-docs/ADDING_TRANSLATIONS.md#adding-translations-to-a-partially-localized-page)
+- [Adding translations to a new page](https://github.com/anshgoyalevil/website/blob/i18n-docs/ADDING_TRANSLATIONS.md#adding-translations-to-a-new-page)
+- [Adding a new locale](https://github.com/anshgoyalevil/website/blob/i18n-docs/ADDING_TRANSLATIONS.md#adding-a-new-locale)
 
 ## Improving existing translations:
 
