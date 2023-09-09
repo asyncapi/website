@@ -5,7 +5,7 @@ We love your contributions to the AsyncAPI website by adding or improving the ex
 ## Table of contents:
 
 
-### Improving existing translations:
+## Improving existing translations:
 
 To improve/modify the existing translation for any page or component, navigate to the `locales` folder and modify the existing `JSON` files according to the language of your choice.
 
@@ -34,7 +34,7 @@ For example, you want to modify the `Landing Page`'s heading for the German Lang
 - Change the `main.header` and `main.subHeader` key's value according to what you want.
 - Create a pull request with the changes
 
-### Adding translations:
+## Adding translations to a partially localized page:
 
 Some parts of any page might not contain a translation for the available language.
 
@@ -89,20 +89,20 @@ Make sure to use the same name in all `locales/[lang]/[nameOfFile].json` files, 
 
 **You might also need to fix the cypress tests after adding a new translation key**
 
-### Adding translations to new pages:
+## Adding translations to a new page:
 
 The process for adding translations to a page that is not yet available in any existing locale is different from adding translations to a specific part of the page that is partially translated.
 
-**Step 1: Creating new JSON Files**
+**Step 1: Create new JSON Files**
 - Navigate to the `locales` folder
 - Create new `JSON` files with the same name in each of the `locales` folder. You may not need to create new `JSON` files in case there already exists a file with the same scope as your page. For example, all pages under the `tools/*` use the translation keys defined in `locales/[lang]/tools.json`.
 - Skip to `Step 3` in case you haven't created new `JSON` files.
 
-**Step 2: Modifying i18n configuration**
+**Step 2: Modify the i18n configuration**
 - Navigate to the `next-i18next-static-site.config.js` file in the root of the project folder.
 - Add the name of the newly added `JSON` file to the `namespaces` array.
 
-**Step 3: Adding static site functions**
+**Step 3: Add the static site functions**
 - Copy the page(s) that you want to be localized to the `pages/[lang]/` folder according to the appropriate directory structure.
 - Add the following functions at the bottom of the file for `i18n` to work.
 ```js
@@ -125,7 +125,7 @@ export async function getStaticProps({ params }) {
 ```
 - You may now follow the [Adding Translations](https://github.com/anshgoyalevil/website/blob/i18n-docs/ADDING_TRANSLATIONS.md#adding-translations) guide to start translating the components
 
-**Step 4: Configuring i18n routing**
+**Step 4: Configure i18n routing**
 With the addition of a new internationalized page, you would need to make sure it is being served on the website when someone visits it.
 - Replace the `next/link` component with the `LinkComponent` from `components/link.js` in the files where the page's `href` is being referenced.
 - Make sure to add the exact same `href` to the `lib/i18nPaths.js` in the respective locales which support that `href`.
@@ -231,4 +231,79 @@ export default i18nPaths;
 
 You are now done with adding the localization to the `newsletter` page.
 
-**Make sure to fix the cypress tests after using the `useTranslation()` hook inside any component which is being tested by cypress.**
+**Make sure to fix the Cypress tests after using the `useTranslation()` hook inside any component that is being tested by Cypress.**
+
+## Adding a new locale:
+
+AsyncAPI welcomes people from all over the world irrespective of their languages.
+There exist a few locales like `en` (English) and `de` (German) which have available localizations present.
+
+If you want to introduce a new locale like `fr` so that the AsyncAPI website can then serve pages in the French locale, you would need to follow a series of steps.
+
+**Step 1: Create new JSON Files**
+- Navigate to the `locales` folder
+- Create a new folder with the name of the locale you want to introduce.
+- Create new `JSON` files with the same name as present in each of the other `locales` folders.
+- You may copy the existing `JSON` files present in the `en` folder. Change the values of those translation keys according to the new localization.
+
+**Step 2: Modify i18n configuration**
+- Navigate to the `next-i18next-static-site.config.js` file in the root of the project folder.
+- Add the name of the newly added `locale` to the `languages` array.
+
+**Step 3: Configure i18n routing**
+With the addition of a new internationalized page, you would need to make sure it is being served on the website when someone visits it.
+- Make sure to add the exact same `href` to the `lib/i18nPaths.js` in the respective locales which support that `href`.
+
+For example, if you have added `fr` locale and have completed translating the `tools/cli` page so that if someone clicks Tools -> CLI from the navigation menu, it redirects the user to the `asyncapi.com/fr/tools/cli` href.
+
+`locales` folder structure
+```diff
+  locales
+   ┣ de
+   ┃ ┣ common.json
+   ┃ ┣ landing-page.json
+   ┃ ┗ tools.json
+   ┣ en
+   ┃ ┣ common.json
+   ┃ ┣ landing-page.json
+   ┃ ┗ tools.json
++  ┗ fr
++  ┃ ┣ common.json
++  ┃ ┣ landing-page.json
++  ┃ ┗ tools.json
+```
+
+- Change `next-i18next-static-site.config.js` config.
+
+`next-i18next-static-site.config.js`
+```diff
+module.exports = {
+    i18n: {
+-       languages: ["en", "de"],
++       languages: ["en", "de", "fr"],
+        defaultLanguage: "en",
+        namespaces: ["landing-page", "common", "tools"],
+        defaultNamespace: "landing-page",
+    },
+};
+```
+ - Add new locale routing
+
+`lib/i18nPaths.js`
+```diff
+const i18nPaths = {
+    en: [
+        "/tools/cli"
+    ],
+    de: [
+        "/tools/cli"
+    ],
++   fr: [
++       "/tools/cli"
++   ]
+};
+
+export default i18nPaths;
+```
+
+You are now done with adding a new locale. Congrats 🚀
