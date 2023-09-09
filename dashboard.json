@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 23.548316277439216
+      "score": 24.697014632436254
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -72,7 +72,7 @@
           "color": "e50e99"
         }
       ],
-      "score": 17.230475324955524
+      "score": 17.517649913704783
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -121,6 +121,26 @@
       "score": 15.794602381209232
     },
     {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 15.794602381209232
+    },
+    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -143,17 +163,6 @@
       "title": "docs: add v3 migration guide",
       "author": "jonaslagoni",
       "resourcePath": "/asyncapi/website/pull/2008",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOBW5R_c5VN7QK",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: asyncapi mentorship program blog post",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/pull/1930",
       "repo": "asyncapi/website",
       "labels": [],
       "score": 15.220253203710714
@@ -620,6 +629,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
