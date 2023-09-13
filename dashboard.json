@@ -55,6 +55,17 @@
       "score": 18.091999091203302
     },
     {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 18.091999091203302
+    },
+    {
       "id": "PR_kwDOBW5R_c5YEren",
       "isPR": true,
       "isAssigned": true,
@@ -72,17 +83,6 @@
           "color": "e50e99"
         }
       ],
-      "score": 17.517649913704783
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
       "score": 17.517649913704783
     },
     {
@@ -168,20 +168,20 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDODyzcIc5NDHYS",
-      "isPR": true,
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
       "isAssigned": false,
-      "title": "ci:  new github action which logs all the reactions in prs and issues",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/.github/pull/220",
-      "repo": "asyncapi/.github",
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
       "labels": [
         {
           "name": "stale",
           "color": "ededed"
         }
       ],
-      "score": 15.220253203710714
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
