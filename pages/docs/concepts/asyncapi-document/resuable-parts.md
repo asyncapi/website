@@ -1,6 +1,6 @@
 ---
 title: Reusable parts
-weight: 249
+weight: 280
 ---
 
 Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. Using reusable parts makes it easier to generate code and validate the specifications. You can reuse specific document sections such as Messages or schema definitions.
