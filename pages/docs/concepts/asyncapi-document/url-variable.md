@@ -1,10 +1,9 @@
 ---
 title: URL Variables
-weight: 235
+weight: 275
 ---
 
 URL variables are placeholders for values you can replace during runtime. AsyncAPI enables you to construct dynamic URLs with query parameters and additional information while enhancing the flexibility and maintainability of your API specifications.
-
 
 ## Add dynamic variables
 
@@ -41,11 +40,16 @@ Define the servers section in your AsyncAPI document, and include the base URLs 
 
 ```yaml
 servers:
- production:
-  url: 'https://{subdomain}.example.com:{port}/v1'
-  description:
-    Production server staging: url: 'https://{domain}.example.com:{port}/v1'
-    description: Staging server
+  production:
+    url: 'https://{subdomain}.example.com:{port}/v1'
+    description:
+      Production server:
+      variables:
+        domain:
+          enum:
+            - development
+            - staging
+            - production
 ```
 
 ### `serverVariables` section
@@ -57,10 +61,9 @@ components:
   serverVariables:
     domain:
       default: 'api'
-      description:
-        The domain of the API server port:
-          default: '8080'
-          description: The port of the API server
+      description: The domain of the API server port
+        default: '8080'
+        description: The port of the API server
 ```
 
 ### Define domain and port variables
@@ -77,15 +80,15 @@ info:
     production:
       url: 'https://{domain}.example.com:{port}/v1'
       description: Production server
-      staging:
-        url: 'https://{domain}.example.com:{port}/v1'
-        description: Staging server
-        components:
-          serverVariables:
-            domain:
-              default: 'api'
-              description: The domain of the API server
-              port:
-                default: '8080'
-                description: The port of the API server channels:# ...channel definitions...
+    staging:
+      url: 'https://{domain}.example.com:{port}/v1'
+      description: Staging server
+      components:
+        serverVariables:
+          domain:
+            default: 'api'
+            description: The domain of the API server
+            port:
+              efault: '8080'
+              description: The port of the API server channels:# ...channel definitions...
 ```
