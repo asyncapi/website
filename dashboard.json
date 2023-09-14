@@ -39,6 +39,17 @@
       "score": 22.399617922442182
     },
     {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -52,17 +63,6 @@
           "color": "84b6eb"
         }
       ],
-      "score": 18.091999091203302
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
       "score": 18.091999091203302
     },
     {
