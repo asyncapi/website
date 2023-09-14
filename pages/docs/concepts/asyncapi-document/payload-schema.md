@@ -1,6 +1,6 @@
 ---
 title: Payload Schema
-weight: 239
+weight: 270
 ---
 
 The payload schema defines a message's format, data types, and properties to ensure that the payload follows a specific structure and data format.
