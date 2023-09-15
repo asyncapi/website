@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 26.132887576182547
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -660,6 +660,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
