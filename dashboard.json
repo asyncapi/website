@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.697014632436254
+      "score": 26.132887576182547
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -37,6 +37,17 @@
         }
       ],
       "score": 22.399617922442182
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -75,17 +86,6 @@
       "score": 17.517649913704783
     },
     {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 17.230475324955524
-    },
-    {
       "id": "PR_kwDOBW5R_c5VAjCE",
       "isPR": true,
       "isAssigned": true,
@@ -118,7 +118,7 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 15.794602381209232
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -168,20 +168,20 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDODyzcIc5NDHYS",
-      "isPR": true,
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
       "isAssigned": false,
-      "title": "ci:  new github action which logs all the reactions in prs and issues",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/.github/pull/220",
-      "repo": "asyncapi/.github",
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
       "labels": [
         {
           "name": "stale",
           "color": "ededed"
         }
       ],
-      "score": 15.220253203710714
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
@@ -660,6 +660,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
