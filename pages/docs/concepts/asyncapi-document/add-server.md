@@ -1,6 +1,6 @@
 ---
 title: Add servers
-weight: 199
+weight: 295
 ---
 
 A server represents a message broker handling communication between producers and consumers. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
@@ -44,7 +44,7 @@ servers:
 
 In this example, you define a server with the URL using the MQTT protocol and describe the server.
 
-## Define Server reference
+### Define Server reference
 
 Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component using the x-server extension field.
 
@@ -60,3 +60,34 @@ channels:
 ```
 
 In this example, specify the server reference mqttServer for the myChannel channel.
+
+## AsyncAPI apps
+
+Servers interact with AsyncAPI apps by following configurations defined in the AsyncAPI document. They establish connections, subscribe to channels, publish and consume messages, handle errors, and enforce security measures based on the defined server configurations.
+
+Here's an example of a server to publish messages to a channel.
+
+1. The server establishes connections based on the server configurations in the AsyncAPI document.
+1. The server uses the publishMessage operation ID to publish messages to the channel. The message payload follows the defined schema in the ChatMessage message component.
+1. When an app subscribes to the chat.message channel, it receives the published messages.
+
+```yaml
+channels:
+  chat.message:
+    publish:
+      operationId: publishMessage
+      message:
+        $ref: '#/components/messages/ChatMessage'
+components:
+  messages:
+    ChatMessage:
+      payload:
+        type: object
+        properties:
+          sender:
+            type: string
+          content:
+            type: string
+```
+
+The server can also validate the incoming requests from the app.

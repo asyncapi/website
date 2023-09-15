@@ -1,4 +1,4 @@
 ---
 title: AsyncAPI-document
-weight: 0
+weight: 50
 ---
