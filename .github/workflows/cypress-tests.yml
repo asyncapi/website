@@ -24,7 +24,7 @@ jobs:
       - name: install playwright
         run: npx playwright install-deps webkit
       - name: Run Tests
-        run:  npx cypress run --env --spec $(node cypress-parallel.js ${{ matrix.containers }} 5) --browser chrome --headed
+        run:  npx cypress run --env --spec $(node /cypress-parallel.js ${{ matrix.containers }} 5) --browser chrome --headed
 
 #jobs:
 #  cypress-run:
