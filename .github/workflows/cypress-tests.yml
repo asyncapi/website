@@ -9,6 +9,10 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2, 3, 4 ]
 
     steps:
       - name: Checkout code
@@ -25,3 +29,6 @@ jobs:
 
       - name: Cypress Tests are running
         run : node  ./scripts/index.js && npm run test
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
