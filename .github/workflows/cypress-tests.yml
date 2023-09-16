@@ -7,28 +7,45 @@ on:
     types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
-  cypress-run:
+  job1:
+    name: cypress-run
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        containers: [ 1, 2, 3, 4 ]
-
+        containers: [0, 1, 2, 3, 4 ]
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Install Packages
+        run:  npm install
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
+      - name: install playwright
+        run: npx playwright install-deps webkit
+      - name: Run Tests
+        run:  npx cypress run --env --spec $(node cypress-parallel.js ${{ matrix.containers }} 5) --browser chrome --headed
 
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Cypress Tests are running
-        run : node  ./scripts/index.js && npm run test
-        env:
-          SPLIT: ${{ strategy.job-total }}
-          SPLIT_INDEX: ${{ strategy.job-index }}
+#jobs:
+#  cypress-run:
+#    runs-on: ubuntu-latest
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        containers: [ 1, 2, 3, 4 ]
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v3
+#
+#      - name: Use Node.js 16.x
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 16.x
+#      - name: Install dependencies
+#        run: npm install
+#      - name: Cypress Tests are running
+#        run : node  ./scripts/index.js && npm run test
+#        env:
+#          SPLIT: ${{ strategy.job-total }}
+#          SPLIT_INDEX: ${{ strategy.job-index }}
