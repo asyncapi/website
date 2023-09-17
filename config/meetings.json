@@ -1,90 +1,6 @@
 [
   {
     "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Z2l0am1xbTBhcm8xa2sxc2dyOGdoaXRmZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/670",
-    "banner": "",
-    "date": "2023-04-26T15:00:00.000Z"
-  },
-  {
-    "title": "Tackling interoperability challenges in open-source",
-    "calLink": "https://www.google.com/calendar/event?eid=M2Njb2dib2VvMXF1dmR1bGJ0ZG1tb2txMWsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/681",
-    "banner": "https://user-images.githubusercontent.com/66913810/233324999-bce12c6f-6e8e-4aca-acf5-053cfa22378a.png",
-    "date": "2023-04-26T09:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YjcwZ2ZmOXNmMmU1YmRybXB0azk1Y2prb3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/688",
-    "banner": "https://user-images.githubusercontent.com/40604284/233369404-38892fbe-7082-4492-8aed-0a97ee8df011.png",
-    "date": "2023-05-02T08:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI x Google Season of Doc's 2023",
-    "calLink": "https://www.google.com/calendar/event?eid=Yzdyb2F1c3RjOXVvcTh2NXFiZGpyNjgzN3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/692",
-    "banner": "https://user-images.githubusercontent.com/66913810/234268392-10a4c02d-60e6-46ec-abcc-74c5aa6088dd.png",
-    "date": "2023-05-09T16:00:00.000Z"
-  },
-  {
-    "title": "Community Health in Open-source",
-    "calLink": "https://www.google.com/calendar/event?eid=ZTNtYXFuN2d2bzZsMzBuOHYyc2kxY2ltb2sgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/698",
-    "banner": "https://user-images.githubusercontent.com/66913810/234862423-48c98c43-ab13-476c-a232-955e8dfdd3cc.png",
-    "date": "2023-05-17T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZGZhNjR2bXJ2Zzg1aW4zZ3ZpYWpuZTY3ZTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/699",
-    "banner": "",
-    "date": "2023-05-10T16:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Nm9qbjFoNGJ1dmppaGM5bTFmdnZzZDFxNzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/705",
-    "banner": "https://user-images.githubusercontent.com/40604284/238269236-93dda2ae-732c-4aab-b71e-18d077b987e7.png",
-    "date": "2023-05-16T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=a3JnNnJibDAzNW9ja3ZnMXZ0OGJtcjBqMWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/714",
-    "banner": "",
-    "date": "2023-05-24T16:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NG5pMWJpajA2ODhjczhiY2doNjRudnVybzQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/715",
-    "banner": "https://user-images.githubusercontent.com/40604284/240259939-641b0476-1a80-41fa-9d3c-0701ad1dfff0.png",
-    "date": "2023-05-30T08:00:00.000Z"
-  },
-  {
-    "title": "Headless Commerce: Streamlining Architecture",
-    "calLink": "https://www.google.com/calendar/event?eid=ODE1aHU2YzByNXJ0MjNlNGNjYmZwbm03b28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/716",
-    "banner": "https://user-images.githubusercontent.com/40604284/240259984-a4ce1ebd-653a-4a61-818f-6707b33b0777.png",
-    "date": "2023-06-08T12:00:00.000Z"
-  },
-  {
-    "title": "Studio plans",
-    "calLink": "https://www.google.com/calendar/event?eid=M3NudjU3MG1obmh1MGJxaXBvY2F0dDU4ZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/728",
-    "banner": "",
-    "date": "2023-06-05T10:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NnIxNnRnMmVoaXMxcGRvYnI1dTM4YXZocmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/734",
-    "banner": "",
-    "date": "2023-06-07T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=bXJoZ24wcG5jbzM3dTR2cGxuYnQxbHA0Y3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/737",
     "banner": "",
@@ -103,13 +19,6 @@
     "url": "https://github.com/asyncapi/community/issues/739",
     "banner": "https://user-images.githubusercontent.com/40604284/244369872-dc5b89e4-526f-4605-a09a-835e0bf93797.png",
     "date": "2023-06-14T13:00:00.000Z"
-  },
-  {
-    "title": "Studio plans",
-    "calLink": "https://www.google.com/calendar/event?eid=Ym4ybG5nNnJrN2NjcnRjdXZ1MGIxMTlydm8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/744",
-    "banner": "",
-    "date": "2023-06-05T10:00:00.000Z"
   },
   {
     "title": "Studio planning",
@@ -190,17 +99,17 @@
   },
   {
     "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aWhzNWwxZWkxdWVlMWhvbGs4aWY2YzU1am8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/791",
-    "banner": "",
-    "date": "2023-08-03T14:30:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=cG9iOHNqZGlrbmg4cnUxanMzMTgyN3AxdnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/792",
     "banner": "",
     "date": "2023-08-17T14:30:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Docs Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/793",
+    "banner": "",
+    "date": "2023-08-31T14:30:00.000Z"
   },
   {
     "title": "Community Meeting",
@@ -217,17 +126,73 @@
     "date": "2023-07-18T08:00:00.000Z"
   },
   {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aTBkZHJ2YWczcG1hZWFqbTFlMWowZjZnbzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/812",
-    "banner": "",
-    "date": "2023-08-02T16:00:00.000Z"
-  },
-  {
     "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=YmlybTZwODdmMzBnNGg0b3J1OWxmdnBxNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/818",
     "banner": "https://user-images.githubusercontent.com/40604284/256949583-958c34c8-4256-4ac5-852b-e00ec094fad0.png",
     "date": "2023-08-08T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NG9lc2RwN3A2djFmNmRxaHZoaWRjMnRhaDAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/823",
+    "banner": "",
+    "date": "2023-08-02T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Z3YzNDRwamprYzMwNTluYTdtNG1iaHA5NjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/845",
+    "banner": "https://user-images.githubusercontent.com/40604284/260686941-20c44493-65de-4a09-9dac-a8f7d1f0fcaf.png",
+    "date": "2023-08-22T08:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Y281MHE2dGo1ZmE1cmtobmtyOGYzb3VsazAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/847",
+    "banner": "",
+    "date": "2023-08-23T16:00:00.000Z"
+  },
+  {
+    "title": "Spec 3.0 Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=NDEzM2E1ZGE5YWttYXVpYW9zbTl1cWM1YWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/857",
+    "banner": "",
+    "date": "2023-09-06T16:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI spec v3 support in Diff",
+    "calLink": "https://www.google.com/calendar/event?eid=YnVvZWt1azlwcTQxNzZnNzNpZ2c3cjdmbzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/858",
+    "banner": "",
+    "date": "2023-08-29T13:30:00.000Z"
+  },
+  {
+    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster",
+    "calLink": "https://www.google.com/calendar/event?eid=bGx1dXBuc2x1a29mN3RzMmQzcGFjaWM4anMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/862",
+    "banner": "",
+    "date": "2023-09-06T09:00:00.000Z"
+  },
+  {
+    "title": "Generator and new parser discussion",
+    "calLink": "https://www.google.com/calendar/event?eid=bnI2ZHBsa2ZxMDM3bmw5anFtY21pbjF0amMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/865",
+    "banner": "",
+    "date": "2023-09-06T15:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aTNsZXN2YzkwbWdyanBxdDgwY2RrbGxnMTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/868",
+    "banner": "https://user-images.githubusercontent.com/40604284/264583319-519e721e-3112-43ca-adab-d68bac288666.png",
+    "date": "2023-09-05T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=b3MydnJrN2VuMjNjY3J1Z2IycW9qMDFmZTQgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/874",
+    "banner": "https://user-images.githubusercontent.com/40604284/266744714-511aeade-19df-4714-bb4e-980af5423171.png",
+    "date": "2023-09-19T08:00:00.000Z"
   }
 ]
