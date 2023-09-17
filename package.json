@@ -100,7 +100,6 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.34.0",
     "@cypress/react": "^7.0.3",
     "@netlify/functions": "^1.4.0",
     "@netlify/plugin-nextjs": "^4.37.2",
