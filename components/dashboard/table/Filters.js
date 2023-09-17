@@ -63,18 +63,19 @@ export default function Filters({
         className={`cursor-pointer ${className}`}
         data-testid="Filters-img-container"
       />
-        
+
         <div ref={wrapperRef} >
         {open && (
           <div
             ref={floating}
+            className={`${strategy} ${(x && x > 0) ? `left-[${x}px]` : "left-[14px]"}`}
             style={{
               position: strategy,
               top: y ?? '',
-              left: x ?? '',
+              left: x > 0 ? x : "",
             }}
             data-testid="Filter-menu">
-            <div className="bg-white w-96 shadow-xl rounded">
+            <div className="bg-white w-96 shadow-xl rounded max-w-[19rem]">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
                 <button onClick={() => setOpen(!open)} className="ml-auto">
