@@ -4,7 +4,7 @@ const path = require('path');
 const NODE_INDEX = Number(process.argv[2] || 1);
 const NODE_TOTAL = Number(process.argv[3] || 1);
 
-const TEST_FOLDER = './cypress/e2e';
+const TEST_FOLDER = './cypress/test';
 
 console.log(getSpecFiles().join(','))
 

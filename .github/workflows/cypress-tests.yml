@@ -24,7 +24,7 @@ jobs:
       - name: install playwright
         run: npx playwright install-deps webkit
       - name: Run Tests
-        run:  npx cypress run
+        run:  node ./scripts/index.js && npx cypress run
 
 #jobs:
 #  cypress-run:
