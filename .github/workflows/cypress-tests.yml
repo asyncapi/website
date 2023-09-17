@@ -21,6 +21,8 @@ jobs:
         run:  npm install
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
       - name: install playwright
         run: npx playwright install-deps webkit
       - name: Run Tests
