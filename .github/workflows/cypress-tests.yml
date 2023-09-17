@@ -25,8 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      - name: Run CMD
-        run: node cypress-parallel.js ${{ matrix.containers }} 5
       - name: Run Tests
         run:  node  ./scripts/index.js && npx cypress run --component --spec $(node cypress-parallel.js ${{ matrix.containers }} 5)
 
