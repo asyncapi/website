@@ -11,8 +11,11 @@ module.exports = defineConfig({
   },
 
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
     },
+    video: false,
+    screenshotOnRunFailure: false,
   },
 });
