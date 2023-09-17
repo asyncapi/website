@@ -15,7 +15,6 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-require('@shelex/cypress-allure-plugin');
 
 import { mount } from 'cypress/react'
 import '../../styles/globals.css'
