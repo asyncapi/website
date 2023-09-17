@@ -24,7 +24,7 @@ jobs:
       - name: install playwright
         run: npx playwright install-deps webkit
       - name: Run Tests
-        run:  node ./scripts/index.js && npx cypress run --env --spec $(node cypress-parallel.js ${{ matrix.containers }} 5)
+        run:  node ./scripts/index.js && npx run test --env --spec $(node cypress-parallel.js ${{ matrix.containers }} 5)
 
 #jobs:
 #  cypress-run:
