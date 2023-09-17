@@ -107,6 +107,7 @@
     "dedent": "^0.7.0",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.27.1",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "postcss-import": "^14.1.0"
   }
 }
