@@ -15,7 +15,7 @@ jobs:
       matrix:
         containers: [0, 1, 2, 3, 4]
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Packages
         run:  npm install
