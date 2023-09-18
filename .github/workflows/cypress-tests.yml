@@ -25,6 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
       - name: Run Tests
         uses: nick-fields/retry@v2
         with:
