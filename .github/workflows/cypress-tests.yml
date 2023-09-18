@@ -9,19 +9,25 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-     
+
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
 
-
       - name: Install dependencies
         run: npm install
 
       - name: Cypress Tests are running
-        run : node  ./scripts/index.js && npm run test
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: node ./scripts/index.js && npx cypress run --component --spec $(node cypress-parallel.js ${{ matrix.containers }} 8)
