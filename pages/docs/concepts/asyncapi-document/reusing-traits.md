@@ -18,6 +18,9 @@ graph TD
     D --> G{Trait 2}
     E --> I[Properties]
     G --> K[Properties]
+
+    style C fill:#47BCEE,stroke:#47BCEE;
+    style D fill:#47BCEE,stroke:#47BCEE;
 ```
 
 ## Applying traits to operations
@@ -31,6 +34,8 @@ graph LR
     C[$ref of kafka trait]
     A-->B
     B-->C
+
+    style B fill:#47BCEE,stroke:#47BCEE;
 ```
 
 Here's applying the `kafka` trait to an operation:
@@ -51,7 +56,7 @@ In this document, the `userSignup` operation in the `userSignup` channel applies
 
 ## Applying traits to messages
 
-Traits can also be applied to `message` objects in the messages section of the AsyncAPI document. This is done using the `$ref` keyword within the `traits` section of the message object.
+Traits can also be applied to `message` objects in the messages section of the AsyncAPI document, which is is done using the `$ref` keyword within the `traits` section of the message object.
 
 ```mermaid
 graph TD
@@ -62,6 +67,8 @@ graph TD
 
     traitsSection --> messageObject["$ref"]
     messageObject --> messagesSection
+
+    style traitsSection fill:#47BCEE,stroke:#47BCEE;
 ```
 
 For example, let's say we have a trait named `commonHeaders` defined in `messageTraits`:
@@ -102,4 +109,6 @@ graph TD
   
   A --> C
   B --> C
+
+  style C fill:#47BCEE,stroke:#47BCEE;
 ```
