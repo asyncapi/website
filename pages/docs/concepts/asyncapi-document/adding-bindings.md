@@ -42,7 +42,7 @@ style C fill:#47BCEE,stroke:#47BCEE;
 
 This diagram shows where server bindings fit into the AsyncAPI document structure.
 
-Here is an example of using server bindings in the AsyncAPI document to specify protocol-specific information related to the server configuration.
+Here is an example of using server bindings to specify protocol-specific information related to the server configuration:
 
 ```yml
 servers:
@@ -73,7 +73,7 @@ style G fill:#47BCEE,stroke:#47BCEE;
 
 This diagram shows where channel bindings fit into the AsyncAPI document structure.
 
-Here is an example of using channel bindings in the AsyncAPI document to specify protocol-specific information for a specific channel:
+Here is an example of using channel bindings to specify protocol-specific information for a specific channel:
 
 ```yml
 channels:
@@ -114,7 +114,7 @@ style G fill:#47BCEE,stroke:#47BCEE;
 
 This diagram shows where Message Bindings fit into the AsyncAPI document structure.
 
-Here is an example of using message bindings in the AsyncAPI document to provide protocol-specific information for a specific message.
+Here is an example of using message bindings to provide protocol-specific information for a specific message:
 
 ```yml
 channels:
@@ -146,9 +146,9 @@ style H fill:#47BCEE,stroke:#47BCEE;
 
 This diagram shows where operation bindings fit into the AsyncAPI document structure.
 
-Here is an example of using operation bindings in the AsyncAPI document to specify protocol-specific information for a specific operation.
+Here is an example of using operation bindings to specify protocol-specific information for a specific operation:
 
-```mermaid
+```yml
 channels:
   user/signedup:
     subscribe:
