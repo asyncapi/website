@@ -242,14 +242,14 @@ function Index() {
               </Heading>
               <div className="md:flex md:item-center w-full md:justify-between">
               <Button
-                className="block md:inline-block focus:outline-none mt-10 text-center md:w-[48%]"
+                className="block md:inline-block focus:outline-none mt-5 md:mt-10 text-center md:w-[48%]"
                 text="Become an Ambassador now"
                 href="https://github.com/asyncapi/community/blob/master/AMBASSADOR_ORGANIZATION.md#are-you-interested-in-becoming-an-official-asyncapi-ambassador"
                 target="_blank"
               />
               <Button
                 bgClassName="bg-transparent border border-primary-600 hover:bg-primary-400"
-                className="block md:inline-block focus:outline-none mt-10 text-center md:w-[48%]"
+                className="block md:inline-block focus:outline-none mt-5 md:mt-10 text-center md:w-[48%]"
                 text="Learn more"
                 href="https://www.asyncapi.com/blog/asyncapi-ambassador-program"
                 target="_blank"
