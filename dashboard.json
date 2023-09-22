@@ -9,18 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 26.132887576182547
-    },
-    {
-      "id": "I_kwDOBGu-185CELGB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Work on 3.0 release",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/spec/issues/691",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 23.26114168868996
+      "score": 31.302030173669205
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -47,7 +36,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 20.102221212448114
+      "score": 20.67657038994663
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -182,6 +171,26 @@
         }
       ],
       "score": 14.358729437462937
+    },
+    {
+      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve overall performance of the website but especially Blog",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/89",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
@@ -633,21 +642,6 @@
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5jSPTM",
-      "title": "filter section is overflowing for small screen in dashboard section",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1564",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "design",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
