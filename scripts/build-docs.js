@@ -81,10 +81,10 @@ const convertDocPosts = (docObject) => {
       })
     }
     return docsArray
-  }
+}
   
 
- function addDocButtons(docPosts, treePosts){ 
+function addDocButtons(docPosts, treePosts){ 
   let structuredPosts = [];
   let rootSections = [];
 
@@ -160,4 +160,5 @@ const convertDocPosts = (docObject) => {
   return structuredPosts
 }
 
-module.exports = {buildNavTree, addDocButtons}
+
+module.exports = {buildNavTree, addDocButtons, convertDocPosts}

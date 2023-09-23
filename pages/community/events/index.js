@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import moment from 'moment';
 import GoogleCalendarButton from '../../../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../../../components/buttons/ICSFileButton';
 import Heading from '../../../components/typography/Heading';
@@ -12,13 +11,10 @@ import Meeting from '../../../components/Meeting';
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe';
 import TextLink from '../../../components/typography/TextLink';
 import meetings from '../../../config/meetings.json';
-import AnnouncementHero from '../../../components/campaigns/AnnoucementHero';
-
-
 import Paragraph from '../../../components/typography/Paragraph';
 import { getEvents } from '../../../lib/staticHelpers';
 
-function index() {
+function Eventindex() {
   const image = '/img/social/community-events.webp';
   const [events, setEvents] = useState(getEvents(meetings));
 
@@ -29,13 +25,13 @@ function index() {
       image={image}
       wide
     >
-      <div className="mt-10 sm:mt-28">
+      <div className="mt-10 sm:mt-28" data-testid="Events-main">
 
         <div className="w-full sm:w-9/12">
-          <h1 className="countdown-text-gradient font-semibold text-3xl lg:text-7xl leading-tight md:text-4xl">
+          <h1 className="countdown-text-gradient font-semibold text-3xl lg:text-7xl leading-tight md:text-4xl" >
             Join an AsyncAPI event from anywhere in the world.
           </h1>
-          <div className="mt-10">
+          <div className="mt-10" data-testid="Events-Button">
             <GoogleCalendarButton href="https://calendar.google.com/calendar/u/3?cid=Y19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" />
             <ICSFileButton
               href="https://calendar.google.com/calendar/ical/c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com/public/basic.ics"
@@ -67,7 +63,7 @@ function index() {
       </div>
       <div className="mt-24 w-full h-auto sm:h-[400px]">
         <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
-          <img
+          <img data-testid="RecordingsCard-img"
             src="/img/logos/confLogo.webp"
             alt="conf-logo"
             className="w-[100px] sm:w-[150px]"
@@ -81,13 +77,13 @@ function index() {
               Watch the AsyncAPI 2022 conference recordings from anywhere around
               the world for free
             </Heading>
-            <a
+            <a data-testid="Recordings-Link"
               href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               target="_blank"
               rel="noreferrer"
             >
               <div className="mt-5 flex gap-3 items-center">
-                <span>Watch now</span>
+                <span data-testid="Recordings-text">Watch now</span>
                 <ArrowRightIcon className="w-[20px]" />
               </div>
             </a>
@@ -120,7 +116,7 @@ function index() {
         </div>
       </div>
       <div className="mt-24">
-        <div className="lg:flex lg:justify-between">
+        <div className="lg:flex lg:justify-between" data-testid="EventTypesCard">
           <div className="lg:w-[30%]">
             <Heading level="h2" typeStyle="heading-md">
               Event Types
@@ -130,7 +126,7 @@ function index() {
             </Paragraph>
           </div>
           <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
-            <div className="">
+            <div className="" data-testid="CommunityMeeting-Card">
               <Meeting
                 name="Community Meeting"
                 purpose="This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones."
@@ -151,7 +147,7 @@ function index() {
             </div>
           </div>
         </div>
-        <div className="flex lg:flex-row flex-col lg:justify-end lg:items-center">
+        <div className="flex lg:flex-row flex-col lg:justify-end lg:items-center" data-testid="EventTypesCard-others">
           <div className="">
             <Meeting
               name="Thinking Out Loud"
@@ -194,4 +190,4 @@ function index() {
   );
 }
 
-export default index;
+export default Eventindex;

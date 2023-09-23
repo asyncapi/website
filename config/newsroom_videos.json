@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/mAISwYCZa2I/hqdefault.jpg",
-    "title": "Studio planning",
-    "description": "https://github.com/asyncapi/community/issues/745.",
-    "videoId": "mAISwYCZa2I"
+    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
+    "title": "Community meeting (September 19, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/874.",
+    "videoId": "SfATYVwcSQk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/V3Op2A08UQs/hqdefault.jpg",
-    "title": "Headless Commerce: Streamlining Architecture",
-    "description": "https://github.com/asyncapi/community/issues/716.",
-    "videoId": "V3Op2A08UQs"
+    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/857.",
+    "videoId": "OYcOkQhwVNg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/LfKYDiqZDNA/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing: Mentorship Program FAQ",
-    "description": "https://github.com/asyncapi/community/issues/739.",
-    "videoId": "LfKYDiqZDNA"
+    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
+    "title": "Generator and new parser discussion (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/865.",
+    "videoId": "b4KcouHm958"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/_zdXm90KvF0/hqdefault.jpg",
-    "title": "Community Meeting, Tuesday June 13th 2023",
-    "description": "https://github.com/asyncapi/community/issues/738.",
-    "videoId": "_zdXm90KvF0"
+    "image_url": "https://i.ytimg.com/vi/1BjJWxAQ4Uk/hqdefault.jpg",
+    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/862.",
+    "videoId": "1BjJWxAQ4Uk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/52qqKE8jFlI/hqdefault.jpg",
-    "title": "Spec 3.0  (June 7th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/734.",
-    "videoId": "52qqKE8jFlI"
+    "image_url": "https://i.ytimg.com/vi/JombHAj2p2o/hqdefault.jpg",
+    "title": "Community Meeting (September 5, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/868.",
+    "videoId": "JombHAj2p2o"
   }
 ]
