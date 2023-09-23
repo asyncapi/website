@@ -29,9 +29,9 @@ function EventFilter({ data, setData }) {
     }
   }, [active]);
   return (
-    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600">
+    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600"  data-testid="EventFilters-main">
       {filterList.map((list) => (
-        <div
+        <div data-testid = "EventFilter-click"
           key={list}
           className={`p-3 w-[100px] cursor-pointer text-center ${
             active === list

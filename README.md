@@ -2,11 +2,24 @@
 
 ---
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-48-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status)](https://app.netlify.com/sites/asyncapi-website/deploys)
+<br/>
+<p align="center">
+    <a href="https://github.com/asyncapi/website/graphs/contributors" alt="AsyncAPI GitHub website contributors">
+      <img src="https://img.shields.io/github/contributors/asyncapi/website?color=orange" />
+    </a>
+    <a href="https://github.com/asyncapi/website/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" alt="Good First AsyncAPI issue">
+      <img src="https://img.shields.io/github/issues/asyncapi/website/good%20first%20issue.svg?color=%23DDDD00" />
+    </a>
+    <a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+      <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+    </a>
+    <a href="https://app.netlify.com/sites/asyncapi-website/deploys">
+      <img src="https://api.netlify.com/api/v1/badges/b2137407-b765-46c4-95b5-a72d9b1592ab/deploy-status" />
+    </a>
+    <a href="https://github.com/asyncapi/website" alt="AsyncAPI Apache License">
+      <img src="https://img.shields.io/github/license/asyncapi/website.svg" />
+    </a>
+</p>
 
 ## Overview
 
@@ -140,7 +153,27 @@ This repository has the following structure:
   └── tailwind.config.js          # TailwindCSS configuration file
 ```
 
-## Contributors
+## Connect with AsyncAPI Community
+
+<p align="left">
+    <a href="https://asyncapi.slack.com/" target="blank">
+      <img align="center" src="https://img.icons8.com/color/48/null/slack-new.png" alt="AsyncAPI Slack" height="30" width="40" />
+    </a>
+    <a href="https://twitter.com/asyncapispec" target="blank">
+      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="AsyncAPI Twitter" height="30" width="40" />
+    </a>
+    <a href="https://www.linkedin.com/company/asyncapi" target="blank">
+      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="AsyncAPI LinkedIn" height="30" width="40" />
+    </a>
+    <a href="https://www.youtube.com/c/asyncapi" target="blank">
+      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="AsyncAPI YouTube" height="30" width="40" />
+    </a>
+    <a href="https://www.twitch.tv/asyncapi" target="blank">
+      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="AsyncAPI Twitch" height="30" width="40" />
+    </a>
+</p>
+
+## AsyncAPI Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -210,6 +243,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://florence-njeri.github.io/NjeriPortfolio"><img src="https://avatars.githubusercontent.com/u/40742916?v=4?s=100" width="100px;" alt="Florence Njeri"/><br /><sub><b>Florence Njeri</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Florence-Njeri" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://ansh.live"><img src="https://avatars.githubusercontent.com/u/94157520?v=4?s=100" width="100px;" alt="Ansh Goyal"/><br /><sub><b>Ansh Goyal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=anshgoyalevil" title="Code">💻</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3Aanshgoyalevil" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SumantxD"><img src="https://avatars.githubusercontent.com/u/65810424?v=4?s=100" width="100px;" alt="Sumant.xD"/><br /><sub><b>Sumant.xD</b></sub></a><br /><a href="#infra-SumantxD" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://shrianshagarwal.in"><img src="https://avatars.githubusercontent.com/u/41548480?v=4?s=100" width="100px;" alt="Shriansh Agarwal"/><br /><sub><b>Shriansh Agarwal</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shriansh2002" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/reachaadrika"><img src="https://avatars.githubusercontent.com/u/64789514?v=4?s=100" width="100px;" alt="Aadrika Bhargava"/><br /><sub><b>Aadrika Bhargava</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=reachaadrika" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vishvamsinh28"><img src="https://avatars.githubusercontent.com/u/90895835?v=4?s=100" width="100px;" alt="Vishvamsinh Vaghela"/><br /><sub><b>Vishvamsinh Vaghela</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=vishvamsinh28" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/AnimeshKumar923"><img src="https://avatars.githubusercontent.com/u/99868037?v=4?s=100" width="100px;" alt="Animesh Kumar"/><br /><sub><b>Animesh Kumar</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=AnimeshKumar923" title="Documentation">📖</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3AAnimeshKumar923" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>

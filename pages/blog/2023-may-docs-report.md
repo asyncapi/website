@@ -11,7 +11,6 @@ authors:
     photo: /img/avatars/canela-ale.webp
     link: https://www.linkedin.com/in/alejandra-quetzalli/
     byline: In May 2023, the AsyncAPI documentation had 9,453 sessions and 4,876 unique users, including 2,895 new users.
-featured: true
 ---
 
 # AsyncAPI Docs Report - May 2023

@@ -28,8 +28,8 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
     <li className={`rounded-lg ${className}`} ref={ref} id={id}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
-            <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
-              <img className="h-48 w-full object-cover" src={post.cover} alt="" loading="lazy" />
+            <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`} data-testid="BlogPostItem-Link">
+              <img className="h-48 w-full object-cover" src={post.cover} alt="" loading="lazy" data-testid="BlogPostItem-Img"/>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
