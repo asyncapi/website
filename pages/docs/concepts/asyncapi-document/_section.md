@@ -1,4 +1,4 @@
 ---
-title: AsycnAPI-document
+title: AsycnAPI Document
 weight: 50
 ---
