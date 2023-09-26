@@ -519,6 +519,15 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "captain-Akshay",
+      "name": "Akshay Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59491379?v=4",
+      "profile": "https://github.com/captain-Akshay",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
