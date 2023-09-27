@@ -1,20 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 26.021935183079695
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 26.132887576182547
     },
     {
       "id": "I_kwDOBGu-185CELGB",
@@ -44,15 +39,15 @@
       "score": 22.399617922442182
     },
     {
-      "id": "PR_kwDOBW5R_c5Xb72L",
+      "id": "PR_kwDOFLhIt85Vmgtj",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
-      "repo": "asyncapi/website",
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 20.96374497869589
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -66,6 +61,26 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        }
+      ],
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDOBW5R_c5YEren",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: introducing request/reply ",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2071",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
         }
       ],
       "score": 17.517649913704783
@@ -95,37 +110,6 @@
       "score": 17.230475324955524
     },
     {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "PR_kwDOFLhIt85Vmgtj",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: youtube to anchor workflow",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/community/pull/805",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDOCVQpZM5M_dcV",
       "isPR": false,
       "isAssigned": true,
@@ -134,16 +118,16 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 15.794602381209232
+      "score": 16.08177696995849
     },
     {
-      "id": "I_kwDOFLhIt84-OUI3",
+      "id": "I_kwDODou01c5E_LV0",
       "isPR": false,
       "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
       "labels": [
         {
           "name": "enhancement",
@@ -154,7 +138,23 @@
           "color": "ededed"
         }
       ],
-      "score": 15.64084401961705
+      "score": 15.794602381209232
+    },
+    {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 15.504217951581506
     },
     {
       "id": "PR_kwDOBW5R_c5Worbr",
@@ -168,35 +168,35 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDODyzcIc5NDHYS",
-      "isPR": true,
+      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
+      "isPR": false,
       "isAssigned": false,
-      "title": "ci:  new github action which logs all the reactions in prs and issues",
-      "author": "14Richa",
-      "resourcePath": "/asyncapi/.github/pull/220",
-      "repo": "asyncapi/.github",
+      "title": "Usages of allOf within message payload could be flattened",
+      "author": "jamescrowley",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
+      "repo": "asyncapi/asyncapi-react",
       "labels": [
         {
           "name": "stale",
           "color": "ededed"
         }
       ],
-      "score": 15.220253203710714
+      "score": 14.358729437462937
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5v5kNY",
-      "title": "Add logo of new silver sponsor and remove old platinum",
+      "id": "I_kwDODtTERs5wDOAH",
+      "title": "Support decimal min and max",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2109",
-      "repo": "asyncapi/website",
-      "author": "derberg",
+      "resourcePath": "/asyncapi/java-spring-template/issues/326",
+      "repo": "asyncapi/java-spring-template",
+      "author": "Tenischev",
       "area": "Unknown",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "bug",
+          "color": "d73a4a"
         }
       ]
     },
@@ -629,6 +629,10 @@
         {
           "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -656,6 +660,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"

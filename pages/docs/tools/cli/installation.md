@@ -43,7 +43,7 @@ asyncapi/cli [COMMAND HERE]
 # Example that you can run inside the cli directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
 docker run --rm -it \
    --user=root \
-   -v ${PWD}/test/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+   -v ${PWD}/test/integration/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
    -v ${PWD}/output:/app/output \
    asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
 ```
