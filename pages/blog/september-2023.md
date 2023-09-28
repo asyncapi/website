@@ -18,7 +18,7 @@ Our first in-person AsyncAPI Conf on Tour took place on the 20th of September, h
 
 ## AACoT'23 Madrid Edition
 We're excited that AACoT'23 is heading to Madrid next on the 19th of October, and Sngular will host us. Our full-day agenda is now live on the [AsyncAPI conference website](https://conference.asyncapi.com/venue/Madrid), and we have excellent sessions and fantastic speakers lined up.
-If you know someone or are interested in joining us in person, please fill out the Free Ticket Form and get ready to learn more about EDAs and experience the culture in Madrid. We can't wait to see everyone there!
+If you know someone or are interested in joining us in person, please fill out the [Free Ticket Form](https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform) and get ready to learn more about EDAs and experience the culture in Madrid. We can't wait to see everyone there!
 
 ## Call for Proposals
 The Call for Speakers for both [AACoT'23 Bangalore](https://conference.asyncapi.com/venue/Bangalore) and [AACoT'23 Paris](https://conference.asyncapi.com/venue/Paris) are now open! If you have an idea for a talk that focuses on AsyncAPI spec or tools or an idea that will benefit the community, make sure to submit a session proposal. The deadline for AACoT'23 Bangalore will be on the 12th of October, so make sure to head over to the [AsyncAPI conference website](https://conference.asyncapi.com/) and share your ideas and insights with the community.
