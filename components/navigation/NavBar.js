@@ -41,7 +41,7 @@ export default function NavBar({
   const changeLanguage = async (locale, langPicker) => {
 
     // Verifies if the language change is from langPicker or the browser-api
-    if(langPicker){
+    if (langPicker) {
       localStorage.setItem('i18nLang', locale);
     }
 
@@ -185,7 +185,12 @@ export default function NavBar({
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=""
-              selected={i18n.language.toLocaleUpperCase()}
+              selected={() => {
+                if (i18n.language) {
+                  return i18n.language.toLocaleUpperCase();
+                }
+                return "EN";
+              }}
             />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
