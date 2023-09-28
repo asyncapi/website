@@ -19,7 +19,7 @@ function shouldShowBanner(cfpDeadline) {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-09-20T06:00:00Z'
+    const cfpDeadline = '2023-10-19T06:00:00Z'
     const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
@@ -43,17 +43,17 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-          London Edition
+          Madrid Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          20th of September, 2023 | London, UK
+          19th of October, 2023 | Madrid, Spain
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 London Edition" />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 Madrid Edition" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-61313"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform"
             target="_blank"
-            text="Get Your Tickets"
+            text="Get Free Tickets"
             data-testid="AnnouncementHero-submit-session"
           />
         </div>
