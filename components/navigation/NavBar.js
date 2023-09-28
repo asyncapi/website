@@ -72,10 +72,9 @@ export default function NavBar({
     router.push(href);
   };
 
-  // To be enabled on the last PR
-  // useEffect(() => {
-  //   changeLanguage(browserLanguageDetector(), false);
-  // }, []);
+  useEffect(() => {
+    changeLanguage(browserLanguageDetector(), false);
+  }, []);
 
   function outsideClick(menu) {
     if (open !== menu) return;
@@ -180,14 +179,14 @@ export default function NavBar({
             </SearchButton>
 
             {/* // Language Picker Component */}
-            {/* <LanguageSelect
+            <LanguageSelect
               options={uniqueLangs}
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=""
               selected={i18n.language.toLocaleUpperCase()}
-            /> */}
+            />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>

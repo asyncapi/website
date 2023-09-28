@@ -27,8 +27,8 @@ import NewsroomSection from '../components/newsroom/NewsroomSection'
 import { languageDetection } from "../lib/i18n";
 
 function HomePage() {
-  //To be enabled in a future PR
-  //languageDetection();
+  
+  languageDetection();
   return (
     <>
       <Head />
