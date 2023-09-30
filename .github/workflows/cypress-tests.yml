@@ -1,0 +1,27 @@
+name: Run tests
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+     
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Cypress Tests are running
+        run : node  ./scripts/index.js && npm run test

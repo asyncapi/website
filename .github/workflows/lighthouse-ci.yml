@@ -32,7 +32,7 @@ jobs:
           )
         id: should_run
         name: Should Run
-        run: echo "::set-output name=shouldrun::true"
+        run: echo "shouldrun=true" >> $GITHUB_OUTPUT
         
       - if: steps.should_run.outputs.shouldrun == 'true'
         uses: actions/checkout@v3

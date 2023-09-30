@@ -27,7 +27,6 @@ function ErrorPage() {
                 </Heading>
               </div>
             </header>
-            <AnnouncementHero />
           </div>
           <div>
             <img src={image} className="mx-auto w-52" />
