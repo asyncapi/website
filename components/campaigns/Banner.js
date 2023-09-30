@@ -19,8 +19,8 @@ export default function Banner({}) {
   }
 
   return (
-    <div className="bg-gray-100">
-      <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8">
+    <div className="bg-gray-100" data-testid="Banner-main-div">
+      <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8" >
         <div className="flex items-center justify-between flex-wrap">
           <div className="flex md:hidden w-0 flex-1 flex items-center text-xs">
             <p className="font-medium text-gray-700">
@@ -37,7 +37,7 @@ export default function Banner({}) {
             </p>
           </div>
           <div className="flex">
-            <a
+            <a data-testid="Banner-link"
               href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
               className="flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-600 focus:text-indigo-600 bg-white hover:bg-indigo-50"
               target="_blank" rel="noopener noreferrer"

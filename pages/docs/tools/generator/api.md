@@ -26,10 +26,10 @@ Reference API documentation for AsyncAPI Generator library.
         * [.hooks](#Generator+hooks) : `Object`
         * [.mapBaseUrlToFolder](#Generator+mapBaseUrlToFolder) : `Object`
         * [.templateParams](#Generator+templateParams) : `Object`
-        * [.originalAsyncAPI](#Generator+originalAsyncAPI) : `String`
-        * [.generate(asyncapiDocument)](#Generator+generate) ⇒ `Promise`
+        * [.generate(asyncapiDocument, [parseOptions])](#Generator+generate) ⇒ `Promise`
+        * [.parseInput()](#Generator+parseInput)
         * [.configureTemplate()](#Generator+configureTemplate)
-        * [.generateFromString(asyncapiString, [parseOptions])](#Generator+generateFromString) ⇒ `Promise`
+        * ~~[.generateFromString(asyncapiString, [parseOptions])](#Generator+generateFromString) ⇒ `Promise`~~
         * [.generateFromURL(asyncapiURL)](#Generator+generateFromURL) ⇒ `Promise`
         * [.generateFromFile(asyncapiFile)](#Generator+generateFromFile) ⇒ `Promise`
         * [.installTemplate([force])](#Generator+installTemplate)
@@ -47,7 +47,7 @@ Instantiates a new Generator object.
 - templateName `String` - Name of the template to generate.
 - targetDir `String` - Path to the directory where the files will be generated.
 - options `Object`
-    - [.templateParams] `String` - Optional parameters to pass to the template. Each template define their own params.
+    - [.templateParams] `Object.<string, string>` - Optional parameters to pass to the template. Each template define their own params.
     - [.entrypoint] `String` - Name of the file to use as the entry point for the rendering process. Use in case you want to use only a specific template file. Note: this potentially avoids rendering every file in the template.
     - [.noOverwriteGlobs] `Array.<String>` - List of globs to skip when regenerating the template.
     - [.disabledHooks] `Object.<String, (Boolean|String|Array.<String>)>` - Object with hooks to disable. The key is a hook type. If key has "true" value, then the generator skips all hooks from the given type. If the value associated with a key is a string with the name of a single hook, then the generator skips only this single hook name. If the value associated with a key is an array of strings, then the generator skips only hooks from the array.
@@ -163,13 +163,6 @@ The template parameters. The structure for this object is based on each individu
 
 **Kind**: instance property of [`Generator`](#Generator)  
 
-<a name="Generator+originalAsyncAPI"></a>
-
-* generator.originalAsyncAPI : `String`** :
-AsyncAPI string to use as a source.
-
-**Kind**: instance property of [`Generator`](#Generator)  
-
 <a name="Generator+generate"></a>
 
 ### generator.generate
@@ -178,7 +171,8 @@ Generates files from a given template and an AsyncAPIDocument object.
 **Kind**: instance method of [`Generator`](#Generator)  
 **Params**
 
-- asyncapiDocument `AsyncAPIDocument` - AsyncAPIDocument object to use as source.
+- asyncapiDocument `AsyncAPIDocument` | `string` - AsyncAPIDocument object to use as source.
+- [parseOptions] `Object` ` = {}` - AsyncAPI Parser parse options. Check out [@asyncapi/parser](https://www.github.com/asyncapi/parser-js) for more information. Remember to use the right options to the right parser depending on the template you are using.
 
 **Example**  
 ```js
@@ -199,6 +193,13 @@ try {
 }
 ```
 
+<a name="Generator+parseInput"></a>
+
+* generator.parseInput()** :
+Parse the generator input based on the template `templateConfig.apiVersion` value.
+
+**Kind**: instance method of [`Generator`](#Generator)  
+
 <a name="Generator+configureTemplate"></a>
 
 * generator.configureTemplate()** :
@@ -208,7 +209,9 @@ Configure the templates based the desired renderer.
 
 <a name="Generator+generateFromString"></a>
 
-### generator.generateFromString
+### ~~generator.generateFromString~~
+***Deprecated***
+
 Generates files from a given template and AsyncAPI string.
 
 **Kind**: instance method of [`Generator`](#Generator)  

@@ -8,7 +8,7 @@ weight: 80
 
 In this tutorial, you'll learn how to create an AsyncAPI document based on a sample real-world use case. Additionally, you will learn about event-driven architecture, message brokers, pub/sub pattern.
 
-Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. This smart lighting system is a use case of the Internet of things (IoT).You will create a Smartylighting Streetlights API using Node.js and Mosquitto (MQTT) as the message broker. This API will allow you to manage city lights remotely. 
+Let's pretend you have a company called Smarty Lighting, and you install smart-city streetlight lighting systems. This smart lighting system is a use case of the Internet of Things (IoT). You will create a Smarty Lighting Streetlights API using Node.js and Mosquitto (MQTT) as the message broker. This API will allow you to manage city lights remotely. 
 
 You want to build a system that can turn streetlights on and off based on their environmental conditions: 
 
@@ -29,7 +29,7 @@ Event-driven architecture (EDA) is a design pattern built around the production,
 
 [Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) enables asynchronous communications between services so that the sending service need not wait for the receiving service’s reply. This allows interdependent services to “talk” with one another directly, even if they were written in different languages or implemented on different platforms. 
 
-Futhermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
+Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
 
 [MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
@@ -37,7 +37,7 @@ Futhermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architect
 
 In this step, you will create an AsyncAPI document to describe the Streelights API. It will help you generate the code and the documentation later on.
 
-To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli), depending on your project need.
+To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli), depending on your project's needs..
 
 <Remember>
 
@@ -156,7 +156,7 @@ The `payload` property defines the content of the event using AsyncAPI schemas. 
 
 In this tutorial, you learned how to create an AsyncAPI specification document via a real-life example with an IoT use case.
 
-This tutorial is only a bootstrap; you'll need to add your own business logic into it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
+This tutorial is just a starting point; you'll need to add your own business logic to it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
 
 ## Next steps
-Now that you've completed this tutorial, go ahead to learn how to [validate your AsyncAPI document with Studio](https://www.asyncapi.com/docs/tutorials/studio-document-validation).
+Now that you've completed this tutorial, proceed to learn how to [validate your AsyncAPI document with AsyncAPI Studio](https://www.asyncapi.com/docs/tutorials/studio-document-validation).

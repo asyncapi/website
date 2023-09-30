@@ -73,7 +73,7 @@
                 },
                 "filters": {
                     "language": "Kotlin",
-                    "technology": ["Spring Boot", "Maven"],
+                    "technology": ["Springboot", "Maven"],
                     "categories": ["code-first"]
                 }
             },
@@ -81,12 +81,12 @@
                 "title": "Springwolf",
                 "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
                 "links": {
-                    "websiteUrl": "https://springwolf.github.io/",
+                    "websiteUrl": "https://www.springwolf.dev",
                     "repoUrl": "https://github.com/springwolf/springwolf-core"
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Springboot"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
@@ -273,12 +273,12 @@
                 "title": "Springwolf",
                 "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
                 "links": {
-                    "websiteUrl": "https://springwolf.github.io/",
+                    "websiteUrl": "https://www.springwolf.dev",
                     "repoUrl": "https://github.com/springwolf/springwolf-core"
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Springboot"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
@@ -356,7 +356,8 @@
                 "title": "Api-Diff-Viewer",
                 "description": "React component to view the difference between two Json based API documents. Supported specifications: JsonSchema, OpenAPI 3.x, AsyncAPI 2.x.",
                 "links": {
-                    "repoUrl": "https://github.com/udamir/api-diff-viewer"
+                    "repoUrl": "https://github.com/udamir/api-diff-viewer",
+                    "websiteUrl": "https://api-diff-viewer.vercel.app/"
                 },
                 "filters": {
                     "language": "TypeScript",
@@ -587,7 +588,25 @@
                     "language": "TypeScript",
                     "categories": ["compare-tool"]
                 }
-            }
+            },
+            {
+                "title": "jasyncapicmp",
+                "description": "Tool/library/maven-plugin for comparing two AsyncAPI versions and evaluating compatibility.",
+                "links": {
+                  "websiteUrl": "https://siom79.github.io/jasyncapicmp/",
+                  "repoUrl": "https://github.com/siom79/jasyncapicmp"
+                },
+                "filters": {
+                  "language": "Java",
+                  "technology": [
+                    "Maven"
+                  ],
+                  "categories": [
+                    "compare-tool"
+                  ],
+                  "hasCommercial": false
+                }
+              }
         ]
     },
     "Others": {
@@ -613,7 +632,20 @@
     },
     "Bundlers": {
         "description": "The following is a list of tools that you can work with to bundle AsyncAPI documents.",
-        "toolsList": []
+        "toolsList": [
+            {
+                "title": "Api-ref-bundler",
+                "description": "It allows you bundle/dereference external/internal $refs in Json based API document. Supported specifications: OpenAPI, AsyncAPI, JsonSchema.",
+                "links": {
+                    "repoUrl": "https://github.com/udamir/api-ref-bundler"
+                },
+                "filters": {
+                    "language": "TypeScript",
+                    "technology": ["TypeScript"],
+                    "categories": ["bundler"]
+                }
+            }
+        ]
     },
     "IDE Extensions": {
         "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",

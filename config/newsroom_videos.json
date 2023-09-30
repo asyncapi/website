@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/e0pQClU6QqU/hqdefault.jpg",
-    "title": "Spec 3.0 (May 24th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/714.",
-    "videoId": "e0pQClU6QqU"
+    "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
+    "title": "Spec 3.0 docs meeting (September 28, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/885.",
+    "videoId": "qjMojQ-fFew"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/l9Tp5eMTol4/hqdefault.jpg",
-    "title": "Community Health in Open-source",
-    "description": "Community health in open-source refers to the overall well-being of the individuals that contribute to a particular open-source ...",
-    "videoId": "l9Tp5eMTol4"
+    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
+    "title": "Community meeting (September 19, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/874.",
+    "videoId": "SfATYVwcSQk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/4Zo59cOcFUw/hqdefault.jpg",
-    "title": "Community meeting (May 16th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/705.",
-    "videoId": "4Zo59cOcFUw"
+    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/857.",
+    "videoId": "OYcOkQhwVNg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/7urTb207V-8/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (May 10th 2023)",
-    "description": "https://github.com/asyncapi/community/issues/699.",
-    "videoId": "7urTb207V-8"
+    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
+    "title": "Generator and new parser discussion (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/865.",
+    "videoId": "b4KcouHm958"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/nyEu2un3Xkg/hqdefault.jpg",
-    "title": "AsyncAPI x Google Season of Doc&#39;s 2023",
-    "description": "https://github.com/asyncapi/community/issues/692.",
-    "videoId": "nyEu2un3Xkg"
+    "image_url": "https://i.ytimg.com/vi/1BjJWxAQ4Uk/hqdefault.jpg",
+    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/862.",
+    "videoId": "1BjJWxAQ4Uk"
   }
 ]

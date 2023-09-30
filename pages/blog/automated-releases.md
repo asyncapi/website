@@ -194,7 +194,9 @@ To share the output, you must assign an `id` to the step and declare a variable 
 ```yaml
 - name: Get version from package.json after release step
   id: extractver
-  run: echo "::set-output name=version::$(npm run get-version --silent)"
+  run: |
+    version=$(npm run get-version --silent)
+    echo "version=$version" >> $GITHUB_OUTPUT
 ```
 
 You can access the shared value by the `id` and a variable name like `steps.extractver.outputs.version`. We use it, for example, in the condition that specifies if further steps of the workflow should be triggered or not. If the version in `package.json` changed after GitHub and NPM step, this means we should proceed with Docker publishing and pull request creation:
@@ -228,9 +230,14 @@ jobs:
           node-version: 13
       - name: Install dependencies
         run: npm ci
+        
       - name: Get version from package.json before release step
         id: initversion
-        run: echo "::set-output name=version::$(npm run get-version --silent)"
+        run: npm run get-version --silent
+
+      - name: Set output
+        run: echo "version=$(npm run get-version --silent)" >> $GITHUB_OUTPUT
+
       - name: Release to NPM and GitHub
         id: release
         env:
