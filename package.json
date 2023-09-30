@@ -15,7 +15,6 @@
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
     "test": "npx cypress run --component",
-    "test-workflow": "npx cypress run --component",
     "release": "echo \"No release to npm for this project\"",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
