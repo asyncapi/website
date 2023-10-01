@@ -8,7 +8,7 @@ import { getMDXComponents } from "../../components/MDX.js";
 import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
-import Container from "../../components/layout/Container";
+import { generateCaseStudyContent } from "../../lib/staticHelpers";
 
 const renderContent = (content, allComponents, level) => {
   const typeStyle =
@@ -113,7 +113,7 @@ function Index({
   const allComponents = getMDXComponents();
   const contacts = casestudy.company.contact;
 
-  const content = generateContent({
+  const content = generateCaseStudyContent({
     challenges,
     solution,
     usecase,
