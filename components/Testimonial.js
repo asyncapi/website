@@ -20,11 +20,11 @@ const TestimonialCarousel = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(goToNext, 3000); 
+    const interval = setInterval(goToNext, 10000); 
     return () => {
       clearInterval(interval); 
     };
-  }, []);
+  }, [activeIndex]);
 
   return (
     <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
