@@ -2,7 +2,7 @@ import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import Sponsors from '../components/Sponsors'
+import Sponsors from '../components/sponsors/Sponsors'
 import Head from '../components/Head'
 import Slack from '../components/slack'
 import Button from '../components/buttons/Button'
@@ -16,16 +16,19 @@ import Testimonial from '../components/Testimonial'
 import Heading from '../components/typography/Heading'
 import Paragraph from '../components/typography/Paragraph'
 import TextLink from '../components/typography/TextLink'
-import GoldSponsors from '../components/GoldSponsors'
-import SilverSponsors from '../components/SilverSponsors'
-import SupportUs from '../components/SupportUs'
+import GoldSponsors from '../components/sponsors/GoldSponsors'
+import SilverSponsors from '../components/sponsors/SilverSponsors'
+import SupportUs from '../components/SupportUs/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
 import NewsroomSection from '../components/newsroom/NewsroomSection'
+import { languageDetection } from "../lib/i18n";
 
 function HomePage() {
+  //To be enabled in a future PR
+  //languageDetection();
   return (
     <>
       <Head />
@@ -54,13 +57,13 @@ function HomePage() {
           </Paragraph>
           <ul className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
             <li className="justify-center flex">
-              <AdidasLogo className="h-8 text-gray-400" />
+              <AdidasLogo className="h-8 text-gray-400 hover:text-black" />
             </li>
             <li className="justify-center flex">
-              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400" />
+              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400 group hover:text-black" />
             </li>
             <li className="justify-center flex">
-              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400" />
+              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400 hover:text-black group" />
             </li>
             <li className="justify-center flex">
               <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
@@ -147,7 +150,7 @@ function HomePage() {
               </div>
             </Container>
             <Container wide>
-                <NewsroomSection />
+              <NewsroomSection />
             </Container>
           </div>
 
@@ -163,7 +166,7 @@ function HomePage() {
             >
               Platinum Sponsors
             </Heading>
-            <Sponsors className="mt-4" showSupportBanner={false} />
+            <Sponsors className="mt-4" showSupportBanner={ false } />
           </Container>
 
           <Container className="text-center pb-6" wide as="section">
@@ -174,9 +177,9 @@ function HomePage() {
             >
               Gold Sponsors
             </Heading>
-            <GoldSponsors className="mt-4" showSupportBanner={false} />
+            <GoldSponsors className="mt-4" showSupportBanner={ false } />
           </Container>
-          
+
           <Container className="text-center pyb-6" wide as="section">
             <Heading
               level="h3"
@@ -185,7 +188,7 @@ function HomePage() {
             >
               Silver Sponsors
             </Heading>
-            <SilverSponsors className="mt-4" showSupportBanner={false} />
+            <SilverSponsors className="mt-4" showSupportBanner={ false } />
           </Container>
 
 
@@ -215,7 +218,7 @@ function HomePage() {
               Email us
             </TextLink> for more info.
           </Paragraph>
-          <SupportUs className="mt-4" showSupportBanner={false} />
+          <SupportUs className="mt-4" showSupportBanner={ false } />
         </Container>
         <Container className="text-center pb-20 mt-8" wide as="section">
           <Heading level="h3" typeStyle="heading-lg" className="mb-8">

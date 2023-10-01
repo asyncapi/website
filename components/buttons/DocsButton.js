@@ -7,7 +7,7 @@ export default function DocsButton({ post, className='' }) {
         { post?.prevPage && <Link href={post.prevPage.href} passHref>
             <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-left cursor-pointer">
-              <div className="text-secondary-500">
+              <div className="text-secondary-500" data-testid="DocsButton-Prevdiv">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 inline mr-1"
@@ -26,7 +26,7 @@ export default function DocsButton({ post, className='' }) {
                   Go Back
                 </div>
               </div>
-              <div className="font-medium text-base my-2">{post.prevPage.title}</div>
+              <div className="font-medium text-base my-2" data-testid="DocsButton-PrevPage" >{post.prevPage.title}</div>
             </div>
             </a>
           </Link>
@@ -36,7 +36,7 @@ export default function DocsButton({ post, className='' }) {
         { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
-              <div className="text-secondary-500">
+              <div className="text-secondary-500" data-testid="DocsButton-Nextdiv">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
                 </div>
@@ -55,7 +55,7 @@ export default function DocsButton({ post, className='' }) {
                   />
                 </svg>
               </div>
-              <div className="font-medium text-base my-2">{post.nextPage.title}</div>
+              <div className="font-medium text-base my-2" data-testid="DocsButton-NextPage">{post.nextPage.title}</div>
             </div>
             </a>
           </Link>

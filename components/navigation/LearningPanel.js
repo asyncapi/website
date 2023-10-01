@@ -1,8 +1,8 @@
 import FlyoutMenu from './FlyoutMenu'
-import learningItems from './learningItems'
+import { buckets } from '../data/buckets'
 
 export default function LearningPanel () {
   return (
-    <FlyoutMenu items={learningItems} />
+    <FlyoutMenu items={buckets} />
   )
 }
