@@ -181,6 +181,25 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOBW5R_c5yduk_",
+      "title": "Single backtick is recognised as Codeblock",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2188",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODwv8N85yZpkH",
       "title": "Venue sub menu doesn't close",
       "isAssigned": false,
@@ -672,8 +691,8 @@
           "color": "84b6eb"
         },
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
         }
       ]
     },
