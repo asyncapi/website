@@ -48,6 +48,17 @@ export default function ToolDashboard() {
     }, 1000);
   }, []);
 
+  // useEffect to scroll particular div into view
+  useEffect(() => {
+    setTimeout(() => {
+      const path = router.asPath
+      const id = path.slice(path.indexOf("#") + 1).replace("%20", " ")
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: "nearest", inline: "nearest" })
+      }
+    }, 1000)
+  }, [])
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (e) => {
