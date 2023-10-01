@@ -26,6 +26,7 @@ async function buildNewsroomVideos() {
         const videoData = JSON.stringify(videoDataItems, null, '  ');
         console.log('The following are the Newsroom Youtube videos: ', videoData)
 
+        
         try {
             writeFileSync(
                 resolve(__dirname, '../config', 'newsroom_videos.json'),
