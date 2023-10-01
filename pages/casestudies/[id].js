@@ -225,7 +225,7 @@ function Index({
     >
     <div className="max-w-screen lg:flex-row-reverse lg:flex lg:justify-between">
       <CaseTOC toc={content} cssBreakingPoint="lg" className="lg:flex-1 bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-[250px] lg:max-w-72 lg:-mr-14" />
-      <div className="px-4 sm:px-6 xl:px-8 lg:flex-1 lg:max-w-[812px] xl:max-w-5xl case-study">
+      <div className="px-4 sm:px-6 xl:px-0 lg:flex-1 lg:max-w-[812px] xl:max-w-5xl case-study">
         <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-[65%]">
             <Heading typeStyle="heading-xl" className="countdown-text-gradient">
