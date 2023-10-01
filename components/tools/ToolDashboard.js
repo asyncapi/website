@@ -51,8 +51,8 @@ export default function ToolDashboard() {
   // useEffect to scroll particular div into view
   useEffect(() => {
     setTimeout(() => {
-      const path = router.asPath
-      const id = path.slice(path.indexOf("#") + 1).replace("%20", " ")
+      const path = router?.asPath
+      const id = path?.slice(path?.indexOf("#") + 1).replace("%20", " ")
       const element = document.getElementById(id)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: "nearest", inline: "nearest" })
