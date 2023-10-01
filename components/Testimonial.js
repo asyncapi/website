@@ -20,11 +20,11 @@ const TestimonialCarousel = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(goToNext, 3000); 
+    const interval = setInterval(goToNext, 10000); 
     return () => {
       clearInterval(interval); 
     };
-  }, []);
+  }, [activeIndex]);
 
   return (
     <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
@@ -32,29 +32,29 @@ const TestimonialCarousel = () => {
        <ArrowLeft className='w-4'/>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <div className="relative h-[300px] w-[300px] md:w-[600px] md:h-[450px] overflow-hidden">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`flex flex-col items-center justify-center absolute bg-slate-100 shadow-md rounded-md transform transition-transform ${
-                index === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-              }`}
-            >
-              <div className="rounded-full h-16 w-16 md:h-32 md:w-32 overflow-hidden my-4">
-                <img src={testimonial.imgUrl} className="h-full w-full" alt={testimonial.name} />
+        <div className="relative h-[15rem] w-[15rem] md:w-[30rem] md:h-[22.5rem] overflow-y-hidden">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center justify-center absolute bg-slate-100 shadow-md rounded-md transform transition-transform ${
+                  index === activeIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                }`}
+              >
+                <div className="rounded-full h-16 w-16 md:h-32 md:w-32 overflow-hidden my-4">
+                  <img src={testimonial.imgUrl} className="h-full w-full" alt={testimonial.name} />
+                </div>
+                <p className="text-[14px] lg:text-base lg:leading-6 font-bold text-gray-900 mb-2">
+                  {testimonial.name}
+                </p>
+                <p className="text-[12px] lg:text-base lg:leading-6 font-medium text-primary-500 mb-2 md:mb-4">
+                  {testimonial.salutation}
+                </p>
+                <p className="h-[400px] text-base px-2 lg:px-6 text-clip md:text-lg ">
+                  {testimonial.text}
+                </p>
               </div>
-              <p className="text-[14px] lg:text-base lg:leading-6 font-bold text-gray-900 mb-2">
-                {testimonial.name}
-              </p>
-              <p className="text-[12px] lg:text-base lg:leading-6 font-medium text-primary-500 mb-2 md:mb-4">
-                {testimonial.salutation}
-              </p>
-              <p className="h-[200px] text-base px-2 lg:px-6 overflow-clip md:text-lg">
-                {testimonial.text}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
       <div className="flex justify-center w-[400px] mt-4">
         {testimonials.map((testimonial, index) => (
           <div
