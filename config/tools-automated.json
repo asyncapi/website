@@ -553,6 +553,262 @@
       }
     ]
   },
+  "AsyncAPI Generator Templates": {
+    "description": "The following is a list of templates that specifies the generation process output by using the AsyncAPI generator and an AsyncAPI document.",
+    "toolsList": [
+        {
+            "title": "asyncapi/nodejs-template",
+            "description": "Generates Node.js service that uses Hermes package",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/nodejs-template"
+            },
+            "filters": {
+                "technology": [
+                    {
+                       "name": "Node.js",
+                        "color": "bg-[#BDFF67]",
+                        "borderColor": "border-[#84CE24]" 
+                    }
+                ],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/nodejs-ws-template",
+            "description": "Generates Node.js service that supports WebSocket protocol only",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/nodejs-ws-template"
+            },
+            "filters": {
+                "technology": [
+                    {
+                       "name": "Node.js",
+                        "color": "bg-[#BDFF67]",
+                        "borderColor": "border-[#84CE24]" 
+                    }
+                ],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": false
+            }
+        },
+        {
+            "title": "asyncapi/java-template",
+            "description": "Generates Java JMS application",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/java-template"
+            },
+            "filters": {
+                "language": [
+                {
+                    "name": "Java",
+                    "color": "bg-[#ECA2A4]",
+                    "borderColor": "border-[#EC2125]"
+                }
+            ],
+            "technology":[],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/java-spring-template",
+            "description": "Generates Java Spring service",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/java-spring-template"
+            },
+            "filters": {
+                "language": [
+                {
+                    "name": "Java",
+                    "color": "bg-[#ECA2A4]",
+                    "borderColor": "border-[#EC2125]"
+                }
+            ],
+            "technology":[], 
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/java-spring-cloud-stream-template",
+            "description": "Generates Java Spring Cloud Stream service",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/java-spring-cloud-stream-template"
+            },
+            "filters": {
+                "language": [
+                {
+                    "name": "Java",
+                    "color": "bg-[#ECA2A4]",
+                    "borderColor": "border-[#EC2125]"
+                }
+            ],
+            "technology":[],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/python-paho-template",
+            "description": "Generates Python service that uses Paho library",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/python-paho-template"
+            },
+            "filters": {
+                "language": [
+                    {
+                        "name": "Python",
+                        "color": "bg-[#A8D0EF]",
+                        "borderColor": "border-[#3878AB]"
+                    }
+                ],
+                "technology": [], 
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/html-template",
+            "description": "Generates HTML documentation site",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/html-template"
+            },
+            "filters": {
+                "language": [
+                    {
+                        "name": "HTML",
+                        "color": "bg-[#E2A291]",
+                        "borderColor": "border-[#E44D26]"
+                    }
+                ],
+                "technology":[],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/markdown-template",
+            "description": "Generates documentation in Markdown file",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/markdown-template"
+            },
+            "filters": {
+                "technology": [
+                {
+                    "name": "Markdown",
+                    "color": "bg-[#61d0f2]",
+                    "borderColor": "border-[#40ccf7]"
+                }
+            ],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/ts-nats-template",
+            "description": "Generates TypeScript NATS client",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/ts-nats-template/"
+            },
+            "filters": {
+                "language": [
+                    {
+                        "name": "TypeScript",
+                        "color": "bg-[#7DBCFE]",
+                        "borderColor": "border-[#2C78C7]"
+                    }
+                ],
+                "technology": [
+                    {
+                        "name": "Node.js",
+                        "color": "bg-[#BDFF67]",
+                        "borderColor": "border-[#84CE24]"
+                    }
+                ],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/go-watermill-template",
+            "description": "Generates Go client using Watermill",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/go-watermill-template"
+            },
+            "filters": {
+                "language": [
+                {
+                    "name": "Go/Golang",
+                    "color": "bg-[#8ECFDF]",
+                    "borderColor": "border-[#00AFD9]"
+                }
+            ],
+                "technology": [],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        },
+        {
+            "title": "asyncapi/dotnet-nats-template",
+            "description": "Generates .NET C# client using NATS",
+            "links": {
+                "repoUrl": "https://github.com/asyncapi/dotnet-nats-template"
+            },
+            "filters": {
+                "language": [
+                    {
+                        "name": "C#",
+                        "color": "bg-[#E3AFE0]",
+                        "borderColor": "border-[#9B4F96]"
+                    }
+                ],
+                "technology": [
+                    {
+                        "name": ".NET",
+                        "color": "bg-[#A184FF]",
+                        "borderColor": "border-[#5026D4]"
+                    }
+                ],
+                "categories": [
+                    "generator-template"
+                ],
+                "hasCommercial": false,
+                "isAsyncAPIOwner": true
+            }
+        }
+    ]
+},
   "Others": {
     "description": "The following is a list of tools that comes under Other category.",
     "toolsList": [
