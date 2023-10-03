@@ -24,7 +24,7 @@ However, you want to enforce OAuth2 authentication specifically for the getUser 
 
 You can achieve this by including the security property at the operation level, as shown in the following example:
 
-```
+```yaml
 channels:
   users:
     publish:
