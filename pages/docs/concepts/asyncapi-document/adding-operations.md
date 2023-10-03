@@ -23,7 +23,7 @@ For adding operations to an AsyncAPI document, we need to define them within the
 
 - Within the `channels` section, add a new channel using the desired channel name. Channels are represented as properties within the `channels` object, and their names are usually formatted as paths or topics, depending on the messaging protocol you are using (e.g. `/users/{userId}/notifications` or `user.notifications`).
 
-- Inside the channel definition, specify the desired operations by creating sub-properties for each operation. Common operations include `publish`, `subscribe`, `publishSubscribe`, `requestReply`, and request.
+- Inside the channel definition, specify the desired operations by creating sub-properties for each operation. Common operations include `publish`, `subscribe`, `publishSubscribe`, `requestReply`, and `request`.
 
 - For each operation, define its details using the appropriate keywords and properties. These details typically include the operation type, payload schema, headers, bindings, and other relevant information.
 
