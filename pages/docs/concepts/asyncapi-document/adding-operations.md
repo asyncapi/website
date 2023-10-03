@@ -76,7 +76,7 @@ classDef labelStyle color:#000000;
     class A,B,C,D,E,F,G,H,I,J labelStyle;
 ```  
 
-- <b> Request-Reply: </b> RequestReply establishes a pattern of request-response communication between components. The client can send a request message, and the server will respond with a corresponding reply message. Typically, this operation is used for synchronous communication in which the client anticipates a response from the server.
+- <b> Request-Reply: </b> Request/Reply establishes a pattern of request-response communication between components. The client can send a request message, and the server will respond with a corresponding reply message. Typically, this operation is used for synchronous communication in which the client anticipates a response from the server.
 
 ```mermaid
 flowchart TD
