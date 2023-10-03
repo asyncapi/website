@@ -41,6 +41,6 @@ channels:
         - OAuth2: []
 ```
 
-In this example, the security property is added under the getUser operation, indicating that the OAuth2 security requirement should be applied to that specific operation within the user's channel. The empty array [] signifies that no additional configuration is needed for the OAuth2 security mechanism.
+In the above example, the `security` property is added under the `getUser` operation, indicating that the OAuth2 security requirement should be applied to that specific operation within the user's channel. The empty array [] signifies that no additional configuration is needed for the OAuth2 security mechanism.
 
 Utilizing the security property at the operation level allows you to deviate from the server-level security settings and define unique security requirements for individual operations within your AsyncAPI document. The capability ensures that you can adequately secure your API operations, even if they require different security measures.
