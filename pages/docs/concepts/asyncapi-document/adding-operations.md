@@ -42,7 +42,7 @@ style E fill:#F568A8,stroke:#333,stroke-width:2px
     class A,B,C,D,E,F,G,H,I,J labelStyle;
 ```
 
-## Operations Types
+## Types
 
 The operations of the AsyncAPI document are divided into the following categories based on the purpose they serve -
 
