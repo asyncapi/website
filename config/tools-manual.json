@@ -264,7 +264,8 @@
                         "react"
                     ],
                     "categories": [
-                        "documentation-generator"
+                        "documentation-generator",
+                        "generator-templates"
                     ],
                     "hasCommercial": false
                 }
