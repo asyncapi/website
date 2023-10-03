@@ -7,7 +7,7 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 ## Features
 
-- Operations describe the behaviors and capabilities of the messaging channels described in the document.
+- Operations describe the behaviors and capabilities of the messaging channels described in the AsyncAPI document.
 
 - In a messaging channel, an operation represents a particular action or interaction that can be performed. 
 
