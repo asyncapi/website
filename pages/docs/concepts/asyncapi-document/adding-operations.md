@@ -19,7 +19,7 @@ For adding operations to an AsyncAPI document, we need to define them within the
 
 - Open your AsyncAPI document in a text editor or an AsyncAPI editor tool.
 
-- Locate the `channels` section in your AsyncAPI document. This section defines the messaging channels and their associated operations.
+- Locate the `channels` section in your AsyncAPI document. The `channels` section defines the messaging channels and their associated operations.
 
 - Within the `channels` section, add a new channel using the desired channel name. Channels are represented as properties within the `channels` object, and their names are usually formatted as paths or topics, depending on the messaging protocol you are using (e.g. `/users/{userId}/notifications` or `user.notifications`).
 
