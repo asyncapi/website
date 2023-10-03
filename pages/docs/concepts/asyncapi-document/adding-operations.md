@@ -15,7 +15,7 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 ## Steps to Add Operations
 
-For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. The step-by-step guide on how to add operations to an AsyncAPI document is as follows - 
+For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
 
 - Open your AsyncAPI document in a text editor or an AsyncAPI editor tool.
 
