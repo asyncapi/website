@@ -15,7 +15,7 @@ By using the `security` property at the `operation` level, you can override the 
 
 ## Specifying Security Requirement 
 
-To specify different security requirements for a specific operation, you can include the security property within the operation's definition. 
+To specify different security requirements for a specific operation, you can include the `security` property within the operation's definition. 
 The security property is an array where you can define one or more security requirement objects.
 
 For example, let's say you have an AsyncAPI document with a channel called users and two operations within that channel: createUser and getUser. 
