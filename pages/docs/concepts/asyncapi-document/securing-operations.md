@@ -7,7 +7,7 @@ In an AsyncAPI document, the concept of server security implies that the securit
 
 ## Features of Security in AsyncAPI Documents
 
-- The security requirements specified at the server level are enforced consistently across the entire API.
+- The security requirements specified at the server level are enforced consistently across the entire asyncapi document.
 
 - There may be situations where certain operations within specific channels require different security measures than the default server-level settings.
 
