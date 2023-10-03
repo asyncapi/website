@@ -44,7 +44,7 @@ style E fill:#F568A8,stroke:#333,stroke-width:2px
 
 ## Operations Types
 
-The operations of the AsyncAPI document are divided into the following different categories based on the purpose they serve -
+The operations of the AsyncAPI document are divided into the following categories based on the purpose they serve -
 
 - <b> Publishing: </b> In the publish operation, components are able to send messages to specific channels. This operation allows publishers to publish messages or events for consumption by other components.
 
