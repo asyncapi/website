@@ -9,17 +9,9 @@ In an AsyncAPI document, the concept of server security implies that the securit
 
 - The security requirements specified at the server level are enforced consistently across the entire asyncapi document.
 
-- There may be situations where certain operations within specific channels require different security measures than the default server-level settings.
+There may be situations where certain operations within specific channels require different security measures than the default server-level settings. To accommodate for such scenarios, AsyncAPI document allows you to use the `security` property at the `operation` level.
 
-- To accommodate such scenarios, AsyncAPI allows you to use the security property at the operation level.
-
-- By using the security property at the operation level, you can override the default server-level security and define unique security requirements for individual operations.
-
-- Gives the flexibility to tailor the security measures to the specific needs of each operation, even if they differ from the broader server-level settings.
-
-- When you include the security property at the operation level, it takes precedence over the server-level security settings for that particular operation.
-
-- The security measures specified at the operation level will be applied instead of the default server-level security.
+By using the `security` property at the `operation` level, you can override the default server-level security and define unique security requirements for individual operations. Thereby also giving you the flexibility to tailor the security measures to the specific needs of each operation, even if they differ from the broader server-level settings.
 
 ## Specifying Security Requirement 
 
