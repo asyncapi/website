@@ -13,7 +13,7 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 - The purpose of these operations is to provide a standardized means for describing the process of publishing, subscribing to, requesting, or replying to messages within the messaging system.
 
-## Steps to Add Operations
+## Adding Operations
 
 For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
 
