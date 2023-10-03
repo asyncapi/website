@@ -1,3 +1,8 @@
+---
+title: 'Securing Operations'
+weight: 120
+---
+
 In an AsyncAPI document, the concept of server security implies that the security measures defined at the server level apply to all operations within all channels by default. 
 
 ## Features of Security in AsyncAPI Documents
