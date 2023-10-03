@@ -88,7 +88,7 @@ const categoryList = [
     {
         name: "AsyncAPI Generator Templates",
         tag: "generator-template",
-        description: "The following is a list of templates that specifies the generation process output by using the AsyncAPI generator and an AsyncAPI document."
+        description: "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents."
     },
     {
         name: "Others",
