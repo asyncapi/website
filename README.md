@@ -97,6 +97,21 @@ npm run build
 
 Generated files of the website go to the `.next` folder.
 
+### Running the Docker image
+
+To run the Docker image, simply run the following command:
+
+### Steps to start server
+
+- `cd` into the repo
+- run command `./entrypoint.sh`
+- Visit localhost:3000 and the website should be live
+
+### Steps to shutdown this Docker Container
+
+- run `docker ps` get the list of containers running 
+- take the `container-id` and use the code `docker stop <container-id>`
+
 ## Case studies
 
 ### Overview
