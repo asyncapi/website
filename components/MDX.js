@@ -60,9 +60,8 @@ export function getMDXComponents() {
     th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium font-body text-gray-900 uppercase tracking-wider`} />,
     tr: props => <tr {...props} className={`${props.className || ''} bg-white`} />,
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-700 tracking-tight`} />,
-    pre: props => <div {...props} className={`${props.className || ''} my-8`} />,
-    inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
-    code: CodeComponent,
+    pre: CodeComponent,
+    code:  props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
     CodeBlock,
     ChapterSuggestions,
@@ -92,7 +91,11 @@ export function getMDXComponents() {
   }
 }
 
-function CodeComponent({ children, className = '', metastring = '', ...rest }) {
+function CodeComponent({ children, className, ...rest }) {
+  if (!children || !children.props || !children.type || children.type.name !== 'code') return <pre {...rest} className={`${className || ''} my-8`} />
+  let metastring = children.props.metastring || ''
+  className= children.props.className || ''
+  children = children.props.children
   let caption
   const meta = metastring.split(/([\w]+=[\w\d\s\-_:><.]+)/) || []
   meta.forEach(str => {
