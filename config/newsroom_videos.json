@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/91njwqsiKwg/hqdefault.jpg",
+    "title": "Community Meeting (October 3rd, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/894.",
+    "videoId": "91njwqsiKwg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
     "title": "Spec 3.0 docs meeting (September 28, 2023)",
     "description": "https://github.com/asyncapi/community/issues/885.",
@@ -22,11 +28,5 @@
     "title": "Generator and new parser discussion (September 6, 2023)",
     "description": "https://github.com/asyncapi/community/issues/865.",
     "videoId": "b4KcouHm958"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/1BjJWxAQ4Uk/hqdefault.jpg",
-    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/862.",
-    "videoId": "1BjJWxAQ4Uk"
   }
 ]
