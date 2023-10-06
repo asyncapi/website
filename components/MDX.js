@@ -60,7 +60,7 @@ export function getMDXComponents() {
     th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium font-body text-gray-900 uppercase tracking-wider`} />,
     tr: props => <tr {...props} className={`${props.className || ''} bg-white`} />,
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-700 tracking-tight`} />,
-    pre: PreComponent,
+    pre: props => CodeComponent(props.children.props),
     code:  props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
     CodeBlock,
@@ -89,15 +89,6 @@ export function getMDXComponents() {
     TwitterOnAirButton,
     Profile
   }
-}
-
-function PreComponent(props){
-  if (props.children && props.children.type.name === 'code'){
-    return CodeComponent(props.children.props)
-  }
-  return (
-    <div {...props} className={`${props.className || ''} my-8`} />
-  )
 }
 
 function CodeComponent({ children, className = '', metastring = '', ...rest }) {
