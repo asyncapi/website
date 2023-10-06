@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 25.27136380993477
+      "score": 25.845712987433288
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -77,30 +77,6 @@
         }
       ],
       "score": 17.517649913704783
-    },
-    {
-      "id": "PR_kwDOBW5R_c5VAjCE",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: structure of a AsyncAPI document",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/website/pull/1922",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -179,16 +155,107 @@
       "author": "jamescrowley",
       "resourcePath": "/asyncapi/asyncapi-react/issues/596",
       "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
+      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve overall performance of the website but especially Blog",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/89",
+      "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Epic",
+          "color": "3E4B9E"
         }
       ],
-      "score": 14.358729437462937
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c5yduk_",
+      "title": "Single backtick is recognised as Codeblock",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2188",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yZpkH",
+      "title": "Venue sub menu doesn't close",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/205",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yTwat",
+      "title": "venues addresses to be clickable links that take you you google map location",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/202",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM5yRiQ8",
+      "title": "Fix cognitive complexity issue",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1040",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
     {
       "id": "I_kwDODwv8N85xwvMi",
       "title": "Update `Get Free Tickets` on main page to link to proper google form",
@@ -197,7 +264,12 @@
       "repo": "asyncapi/conference-website",
       "author": "derberg",
       "area": "Unknown",
-      "labels": []
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
     },
     {
       "id": "I_kwDODtTERs5wDOAH",
@@ -211,36 +283,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185vky8A",
-      "title": "Add logo of new silver sponsor and remove old platinum",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/966",
-      "repo": "asyncapi/spec",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N85uVjld",
-      "title": "Add all speakers button",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/163",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -611,6 +653,10 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
@@ -645,8 +691,8 @@
           "color": "84b6eb"
         },
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
         }
       ]
     },
@@ -880,25 +926,6 @@
       "resourcePath": "/asyncapi/diff/issues/85",
       "repo": "asyncapi/diff",
       "author": "aayushmau5",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5C-CyC",
-      "title": "Provide mirror client for testing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/215",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
       "area": "Unknown",
       "labels": [
         {
