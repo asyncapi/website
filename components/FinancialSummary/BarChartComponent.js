@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import ExpensesLink from '../../config/finance/json-data/2023/ExpensesLink.json'
 import Expenses from '../../config/finance/json-data/2023/Expenses.json'
@@ -31,8 +31,6 @@ const getUniqueCategories = () => {
 
 const months = Object.keys(Expenses);
 const categories = getUniqueCategories();
-
-
 
 const Card = ({ month, data, links }) => {
     return (
@@ -105,17 +103,27 @@ const BarChartComponent = () => {
         Amount: categoryAmounts[category],
     }));
 
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-    };
+  // Create a ref for the handleResize function
+  const handleResizeRef = useRef(null);
 
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+  // Define the handleResize function
+  handleResizeRef.current = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  // Update the window width when the component mounts and when the window is resized
+  useEffect(() => {
+    // Initial width
+    handleResizeRef.current();
+
+    // Listen for window resize events
+    window.addEventListener("resize", handleResizeRef.current);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResizeRef.current);
+    };
+  }, []);
 
 
     const barWidth = windowWidth < 900 ? null : 800;
@@ -132,7 +140,7 @@ const BarChartComponent = () => {
                         {/* Select for category filter */}
                         <div className="flex space-x-2">
                             <select
-                                className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-[#8054F2] text-xs"
+                                className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs"
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                             >
@@ -144,7 +152,7 @@ const BarChartComponent = () => {
 
                             {/* Select for month filter */}
                             <select
-                                className="p-2 pr-8 border border-gray-600 rounded-md bg-[#8054F2] text-white font-semibold text-xs"
+                                className="p-2 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs"
                                 value={selectedMonth}
                                 onChange={(e) => setSelectedMonth(e.target.value)}
                             >

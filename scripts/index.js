@@ -1,7 +1,7 @@
 const rssFeed = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
-const {writeJson} = require("./finance/expenses-json")
+const {writeFinanceJsonFiles} = require('./finance/expenses-json')
 
 async function start() {
   await buildPostList();
@@ -18,7 +18,7 @@ async function start() {
     'jobs/rss.xml'
   );
   await buildCaseStudiesList();
+  await writeFinanceJsonFiles();
 }
 
-writeJson()
 start();
