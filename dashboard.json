@@ -23,22 +23,6 @@
       "score": 25.845712987433288
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -50,10 +34,22 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        },
+        }
+      ],
+      "score": 19.240697446200336
+    },
+    {
+      "id": "I_kwDOBW5R_c5BIl5P",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
+      "repo": "asyncapi/website",
+      "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ],
       "score": 18.666348268701817
@@ -110,22 +106,6 @@
       "score": 15.794602381209232
     },
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 15.504217951581506
-    },
-    {
       "id": "PR_kwDOBW5R_c5Worbr",
       "isPR": true,
       "isAssigned": false,
@@ -159,6 +139,17 @@
       "score": 14.358729437462937
     },
     {
+      "id": "PR_kwDOCoBobc42aMuI",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: release for version 3.0.0 of the spec",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/parser-js/pull/526",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 13.497205671215161
+    },
+    {
       "id": "MDU6SXNzdWU2MDYzODgzNzM=",
       "isPR": false,
       "isAssigned": false,
@@ -181,6 +172,145 @@
   ],
   "goodFirstIssues": [
     {
+      "id": "I_kwDOFDnrNc5yy6e0",
+      "title": "The new glee command is generating a 2.1.0 document",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/829",
+      "repo": "asyncapi/cli",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt85yyn4B",
+      "title": "Update tooling doc with info about new category",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/899",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yh95N",
+      "title": "would be nice if venue from past events is grayed out",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/208",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5ydv8_",
+      "title": "Remove this unused import of 'MiddlewareCallback'.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/527",
+      "repo": "asyncapi/glee",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "016479"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvwN",
+      "title": "Unexpected empty block",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/36",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvrx",
+      "title": "Remove this commented out code.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/35",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvh1",
+      "title": "Consider using \"forEach\" instead of \"map\" as its return value is not being used here.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/32",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5ydvaR",
+      "title": "Nested block is redundant.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/822",
+      "repo": "asyncapi/cli",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5ydvRt",
+      "title": "Nested block is redundant.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/820",
+      "repo": "asyncapi/cli",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOBW5R_c5yduk_",
       "title": "Single backtick is recognised as Codeblock",
       "isAssigned": false,
@@ -193,6 +323,36 @@
           "name": "bug",
           "color": "ee0701"
         },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385ydtaD",
+      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/modelina/issues/1529",
+      "repo": "asyncapi/modelina",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385ydtLO",
+      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1526",
+      "repo": "asyncapi/modelina",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
@@ -621,6 +781,25 @@
       "labels": []
     },
     {
+      "id": "I_kwDOFi_gUM5oKd1h",
+      "title": "Generating docs failes if project is a git repository. ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/461",
+      "repo": "asyncapi/glee",
+      "author": "Souvikns",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "016479"
+        }
+      ]
+    },
+    {
       "id": "I_kwDOE8Qh385nTCST",
       "title": "Improve layout of playground",
       "isAssigned": false,
@@ -750,21 +929,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385hfhvh",
-      "title": "[📑 Docs]: Use code to represent the internal models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1182",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOB5hCo85hBDME",
       "title": "Enable reusability of schemas between versions",
       "isAssigned": false,
@@ -776,21 +940,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5gx6CN",
-      "title": "error when running `npm install` in glee",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/403",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
