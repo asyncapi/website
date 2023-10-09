@@ -185,7 +185,7 @@ export default function NavBar({
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=""
-              selected={() => {
+              value={() => {
                 if (i18n.language) {
                   return i18n.language.toLocaleUpperCase();
                 }
