@@ -104,12 +104,22 @@ To run the Docker image, simply run the following command:
 ### Steps to start server
 
 - `cd` into the repo
-- run the following command `docker build -t async_image -f Dockerfile . && docker run -d -p 3000:3000 async_image`
+- run the following command `docker build -t async-website -f Dockerfile . && docker run -d -p 3000:3000 async-website`
 - Visit localhost:3000 and the website should be live
 
-### For Windows 
-- `cd` into the repo 
-- run the command one by one `docker build -t async_image -f Dockerfile.dev .` then `docker run -d -p 3000:3000 async_image`
+#### To run a Docker container from the image, mapping the local fork of the repo to the container, run the following command:
+
+`docker run -d -v "$PWD":/async -p 3000:3000 async-website`
+
+You can also develop your application in your IDE and make changes to the code. Whenever you make a change, rebuild the Docker image and restart the Docker container. The changes will be reflected in your website.
+
+#### To rebuild the Docker image, run the following command:
+
+`docker build -t async-website .`
+
+#### To restart the Docker container, run the following command:
+
+`docker restart async-website`
 
 ### Steps to shutdown this Docker Container
 
