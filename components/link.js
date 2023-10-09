@@ -25,7 +25,7 @@ const LinkComponent = ({ children, locale, ...props }) => {
 
   if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.startsWith("http")) {
     return (
-      <Link href={href} passHref>
+      <Link {...props} href={href} passHref>
         {children}
       </Link>
     );
@@ -53,14 +53,14 @@ const LinkComponent = ({ children, locale, ...props }) => {
   href = href.replace(/([^:]\/)\/+/g, "$1").replace("//", "/");
 
   return (
-    <Link href={href} passHref>
+    <Link {...props} href={href} passHref>
       {children}
     </Link>
   );
 };
 
 export const LinkText = ({ href, children, ...props }) => {
-  return <Link href={href || ""}>{children}</Link>;
+  return <Link {...props} href={href || ""}>{children}</Link>;
 };
 
 export default LinkComponent;
