@@ -23,7 +23,7 @@ const LinkComponent = ({ children, locale, ...props }) => {
 
   let href = props.href || pathname;
 
-  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.includes("http", 0)) {
+  if ((props.href && i18nPaths[language] && !i18nPaths[language].includes(href)) || href.startsWith("http")) {
     return (
       <Link href={href} passHref>
         {children}
