@@ -86,6 +86,11 @@ const categoryList = [
         description: "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others"
     },
     {
+        name: "AsyncAPI Generator Templates",
+        tag: "generator-template",
+        description: "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents."
+    },
+    {
         name: "Others",
         tag: "other",
         description: "The following is a list of tools that comes under Other category."
