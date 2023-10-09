@@ -1,24 +1,19 @@
-# Production Docker file 
-FROM node:18-alpine as builder
+# Development Docker file
+FROM node:18-alpine as development
 
 WORKDIR /async
 
-COPY package.json package-lock.json scripts ./
+# Install development dependencies
+COPY package.json package-lock.json ./
+RUN npm install
 
-RUN npm ci
-
+# Copy the rest of the application files
 COPY . .
-RUN npm run build
 
-FROM node:18-alpine AS PRODUCTION_STAGE
-WORKDIR /async
-
-COPY --from=builder /async/package*.json ./
-COPY --from=builder /async/scripts ./
-COPY --from=builder /async/.next ./.next
-COPY --from=builder /async/public ./public
-COPY --from=builder /async/node_modules ./node_modules
-
-ENV NODE_ENV=production
+# Expose the port for development (if needed)
 EXPOSE 3000
-CMD ["npm", "start"]
+
+# Set environment variables for development (optional)
+ENV NODE_ENV=development
+
+CMD ["npm", "run", "dev"]

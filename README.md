@@ -104,12 +104,12 @@ To run the Docker image, simply run the following command:
 ### Steps to start server
 
 - `cd` into the repo
-- run command `./entrypoint.sh`
+- run the following command `docker build -t async_image -f Dockerfile . && docker run -d -p 3000:3000 async_image`
 - Visit localhost:3000 and the website should be live
 
 ### For Windows 
 - `cd` into the repo 
-- run the command one by one `docker build -t async_image -f Dockerfile.dev .` & `docker run -d -p 3000:3000 async_image`
+- run the command one by one `docker build -t async_image -f Dockerfile.dev .` then `docker run -d -p 3000:3000 async_image`
 
 ### Steps to shutdown this Docker Container
 
