@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 31.87637935116772
+      "score": 33.02507770616476
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -36,7 +36,7 @@
           "color": "a2eeef"
         }
       ],
-      "score": 19.240697446200336
+      "score": 19.527872034949596
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -53,26 +53,6 @@
         }
       ],
       "score": 18.666348268701817
-    },
-    {
-      "id": "PR_kwDOBW5R_c5YEren",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        }
-      ],
-      "score": 17.517649913704783
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -104,17 +84,6 @@
         }
       ],
       "score": 15.794602381209232
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Worbr",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add v3 migration guide",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2008",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOFDnrNc5RUbi_",
@@ -168,6 +137,37 @@
         }
       ],
       "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOBW5R_c5RI5z2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add testimonial carousel",
+      "author": "Lucif3r-in",
+      "resourcePath": "/asyncapi/website/pull/1704",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 12.922856493716644
+    },
+    {
+      "id": "I_kwDODyzcIc5gD3jB",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Automate `paper work` around project governance",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/.github/issues/210",
+      "repo": "asyncapi/.github",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "gsoc",
+          "color": "F4D03F"
+        }
+      ],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
@@ -285,21 +285,6 @@
       "title": "Nested block is redundant.",
       "isAssigned": false,
       "resourcePath": "/asyncapi/cli/issues/822",
-      "repo": "asyncapi/cli",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5ydvRt",
-      "title": "Nested block is redundant.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/820",
       "repo": "asyncapi/cli",
       "author": "AceTheCreator",
       "area": "Unknown",
