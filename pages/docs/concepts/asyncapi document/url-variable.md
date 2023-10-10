@@ -52,6 +52,8 @@ servers:
             - development
             - staging
             - production
+        port:
+          default: '8080'
 ```
 
 ### `serverVariables` section
@@ -78,19 +80,29 @@ Here's the complete AsyncAPI document with the server URL variables:
 info:
   title: Example API
   version: '1.0.0'
-  servers:
-    production:
-      url: 'https://{domain}.example.com:{port}/v1'
-      description: Production server
-    staging:
-      url: 'https://{domain}.example.com:{port}/v1'
-      description: Staging server
-      components:
-        serverVariables:
-          domain:
-            default: 'api'
-            description: The domain of the API server
-            port:
-              efault: '8080'
-              description: The port of the API server channels:# ...channel definitions...
+servers:
+  production:
+    url: 'https://{domain}.example.com:{port}/v1'
+    description: Production server
+    variables:
+      domain:
+        $ref: '#/components/serverVariables/domain'
+      port:
+        $ref: '#/components/serverVariables/port'
+  staging:
+    url: 'https://{domain}.example.com:{port}/v1'
+    description: Staging server
+    variables:
+      domain:
+        $ref: '#/components/serverVariables/domain'
+      port:
+        $ref: '#/components/serverVariables/port'
+components:
+  serverVariables:
+    domain:
+      default: 'api'
+      description: The domain of the API server
+    port:
+      default: '8080'
+      description: The port of the API server
 ```
