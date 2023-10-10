@@ -3,7 +3,7 @@ title: Reusable parts
 weight: 280
 ---
 
-Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. Using reusable parts makes it easier to generate code and validate the specifications. You can reuse specific document sections such as Messages or schema definitions.
+Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. You can reuse specific document sections such as Messages or schema definitions.
 
 Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the Reference Object. You can use the $ref keyword to reference the same or another local file or external URL.
 
@@ -69,7 +69,7 @@ B -->|contains| C
 C -->|defines| D
 ```
 
-In the example below, you reference the component from the message-schema.yaml.
+In the code below, you reference the component from another local document, such as message-schema.yaml.
 
 ```yaml
 components:
@@ -83,7 +83,7 @@ components:
       payload: null
 ```
 
-To use message-schema.yaml in another local document such as consume-schema.yaml
+In the code below, you use another local document message-schema.yaml in another local document such as consume-schema.yaml.
 
 ```yaml
 channels:
