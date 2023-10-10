@@ -33,10 +33,10 @@ C[Avro Schema File]
 D[Message Payload]
 E[AsyncAPI Specification File]
 
-A -->|One of the following methods:| B
-B -->|Specify schema using relative reference| D
-E -->|Uses local reference method| C
-C-->|Defines structure of message payload| D
+A -->|Specifies| B
+B -->|Specifies schema| D
+E -->|Uses| C
+C -->|Defines structure| D
 ```
 
 Here is an example of an AsyncAPI specification file that uses the local reference method:
