@@ -35,7 +35,8 @@ channels:
   myChannel:
     publish:
       message:
-        $ref: '#/components/schemas/MyMessageSchema'
+        payload:
+          $ref: '#/components/schemas/MyMessageSchema'
 components:
   schemas:
     MyMessageSchema:
