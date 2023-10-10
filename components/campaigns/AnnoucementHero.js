@@ -16,17 +16,18 @@ function shouldShowBanner(cfpDeadline) {
 
   return true;
 }
+
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-10-19T06:00:00Z'
-    const showBanner = shouldShowBanner(cfpDeadline);
-  if (!showBanner) return null;
+    const cfpDeadlineIndia = '2023-10-19T06:00:00Z'
+    const cfpDeadlineFrance = '2023-10-26T06:00:00Z'
+    const showBannerIndia = shouldShowBanner(cfpDeadlineIndia);
+    const showBannerFrance = shouldShowBanner(cfpDeadlineFrance);
 
-  
-  return (
-    <Container wide as="section" padding='' className='text-center'>
-      <div
+    const Banner = ({title, dateLocation, cfaText, eventName, cfpDeadline, link, city}) => { 
+      return (
+        <div
         className={`bg-gray-50 border border-gray-200 py-6 rounded ${className} ${
           small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
         }`} data-testid = "AnnouncementHero-main-div"
@@ -35,29 +36,72 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           className="countdown-text-gradient"
           level="h2"
           typeStyle="heading-lg" >
-          AsyncAPI Conf on Tour 2023
+          {title}
         </Heading>
-
         <Heading
           className="countdown-text-gradient"
-          level="h3"
-          typeStyle="heading-sm"
-        >
-          Madrid Edition
+          level="h2"
+          typeStyle="heading-md" >
+          {city}
         </Heading>
         <Paragraph typeStyle="body-lg">
-          19th of October, 2023 | Madrid, Spain
+          {dateLocation}
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 Madrid Edition" />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName={eventName} />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform"
+            href={link}
             target="_blank"
-            text="Get Free Tickets"
+            text={cfaText}
             data-testid="AnnouncementHero-submit-session"
           />
         </div>
       </div>
+    )}
+
+    const banners = [
+      {
+        title: "AsyncAPI Conf",
+        city: "Bengaluru",
+        dateLocation: "30th of November, 2023 | Bengaluru, India",
+        cfaText: "Submit Talk Proposal",
+        eventName: "AACoT'23 Bengaluru Edition",
+        cfpDeadline: cfpDeadlineIndia,
+        link: "https://conference.asyncapi.com/venue/Bangalore",
+        show: showBannerIndia
+      },
+      {        
+        title: "AsyncAPI Conf",
+        city: "Paris",
+        dateLocation: "8th of December, 2023 | Paris, France",
+        cfaText: "Submit Talk Proposal",
+        eventName: "AACoT'23 Paris Edition",
+        cfpDeadline: cfpDeadlineFrance,
+        link: "https://conference.asyncapi.com/venue/Paris",
+        show: showBannerFrance
+      }
+    ];
+
+    // Calculate the number of banners that should be displayed
+    const numberOfVisibleBanners = banners.filter(banner => banner.show).length;
+    const isFlex = numberOfVisibleBanners > 1;
+    
+  return (
+    <Container flex={isFlex} as="section" padding='' className={`text-center ${isFlex ? 'space-x-4' : ''}`}>
+      {banners.map((banner, index) => (
+        banner.show && (
+          <Banner
+          key={index}
+          title={banner.title}
+          dateLocation={banner.dateLocation}
+          cfaText={banner.cfaText}
+          eventName={banner.eventName}
+          cfpDeadline={banner.cfpDeadline}
+          link={banner.link}
+          city={banner.city}
+          />
+        )
+      ))}
     </Container>
   );
 }
