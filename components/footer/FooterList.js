@@ -62,7 +62,8 @@ export const initiativeLinks = [
   {
     label:"Finance",
     url:"/finance"
-  }
+  },
+  {
     label: "FAQs",
     url: "/about#faqs",
   },
