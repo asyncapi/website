@@ -55,7 +55,7 @@ export const buckets = [
   {
     name: 'migration',
     title: 'Migration',
-    description: 'Our migration guides on how to newer AsyncAPI versions.',
+    description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.',
     link: '/docs/migration',
     className: 'bg-blue-400',
     borderClassName: 'border-blue-400',
