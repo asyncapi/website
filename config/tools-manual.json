@@ -27,6 +27,10 @@
             }
         ]
     },
+    "AsyncAPI Generator Templates": {
+        "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
+        "toolsList": []
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
         "toolsList": [
@@ -264,7 +268,8 @@
                         "react"
                     ],
                     "categories": [
-                        "documentation-generator"
+                        "documentation-generator",
+                        "generator-template"
                     ],
                     "hasCommercial": false
                 }
