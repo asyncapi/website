@@ -4,7 +4,7 @@ date: 2023-09-15T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
-cover: /public/img/posts/cover.webp
+cover: public/img/posts/cover.webp
 authors:
   - name: Aishat Muibudeen
     photo: /img/avatars/maya_picture.webp
