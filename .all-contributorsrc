@@ -519,6 +519,24 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "captain-Akshay",
+      "name": "Akshay Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59491379?v=4",
+      "profile": "https://github.com/captain-Akshay",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "yuvrxj-afk",
+      "name": "Yuvraj Singh Sisodiya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63532070?v=4",
+      "profile": "https://web-yuvrxj-afk.vercel.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

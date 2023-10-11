@@ -9,7 +9,7 @@ export const socialMediaLinks = [
   {
     url: "https://twitter.com/AsyncAPISpec",
     label: "Twitter",
-    icon: <IconTwitter className="h-8 w-8 sm:h-6 sm:w-6" />,
+    icon: <IconTwitter className="h-8 w-5 sm:h-4 sm:w-6" />,
   },
   {
     url: "https://github.com/asyncapi",
@@ -63,4 +63,7 @@ export const initiativeLinks = [
     label:"Finance",
     url:"/finance"
   }
+    label: "FAQs",
+    url: "/about#faqs",
+  },
 ];

@@ -30,7 +30,7 @@ export default function HeadComponent({
   title = title ? `${title} | ${permTitle}` : permTitle;
 
   //enable google analytics
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && window.location.hostname === 'asyncapi.com') {
     TagManager.initialize({gtmId: 'GTM-T58BTVQ'})
     ReactGA.initialize('UA-109278936-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
