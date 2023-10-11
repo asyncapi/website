@@ -11,10 +11,12 @@ function readYamlFromFile(filePath) {
         return parsedYaml;
     } catch (error) {
         console.error('Error reading YAML file:', error.message);
-        return null;
+        throw error;
     }
 }
 
+function buildFinanceInfoList() {
+    
 const ExpensesFilePath = path.join(__dirname, '../../config/finance/2023/Expenses.yml');
 const ExpensesLinkFilePath = path.join(__dirname, '../../config/finance/2023/ExpensesLink.yml');
 
@@ -26,11 +28,8 @@ const ExpensesLink = convertToJson(ExpensesLinkContent);
 
 // Specify the output directory for the JSON files
 const outputDirectory = path.join(__dirname, '../../config/finance/json-data/2023/');
-
-// Create new JSON files in the specified output directory
-function writeFinanceJsonFiles() {
     fs.writeFileSync(path.join(outputDirectory, 'Expenses.json'), JSON.stringify(Expenses, null, 2));
     fs.writeFileSync(path.join(outputDirectory, 'ExpensesLink.json'), JSON.stringify(ExpensesLink, null, 2));
 }
 
-module.exports = { writeFinanceJsonFiles }
+module.exports = { buildFinanceInfoList }

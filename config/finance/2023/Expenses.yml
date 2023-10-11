@@ -59,9 +59,16 @@ July:
     Amount: '1088.27'
   - Category: AsyncAPI Bounty
     Amount: '400'
-
 August:
   - Category: AsyncAPI Webstore
     Amount: '15671.63'
   - Category: AsyncAPI Bounty
     Amount: '400'
+  - Category: Community Manager Salary
+    Amount: '2000'
+    
+September:
+  - Category: AsyncAPI Ambassador
+    Amount: '129.48'
+  - Category: Community Manager Salary
+    Amount: '2000'
