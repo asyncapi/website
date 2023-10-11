@@ -145,7 +145,7 @@
       },
       {
         "title": "Golang AsyncAPI Code Generator",
-        "description": "Generate Go client and server boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
+        "description": "Generate Go user and application boilerplate from AsyncAPI specifications. Can be called from `go generate` without requirements.\n",
         "links": {
           "repoUrl": "https://github.com/lerenn/asyncapi-codegen"
         },
@@ -415,6 +415,26 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": true
         }
+      },
+      {
+        "title": "jasyncapicmp",
+        "description": "Tool for comparing two AsyncAPI versions and evaluating compatibility.",
+        "links": {
+          "websiteUrl": "https://siom79.github.io/jasyncapicmp/",
+          "docsUrl": "https://github.com/siom79/jasyncapicmp",
+          "repoUrl": "https://github.com/siom79/jasyncapicmp"
+        },
+        "filters": {
+          "language": "Java",
+          "technology": [
+            "Maven"
+          ],
+          "categories": [
+            "compare-tool"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -549,6 +569,29 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+        }
+      }
+    ]
+  },
+  "AsyncAPI Generator Templates": {
+    "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
+    "toolsList": [
+      {
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+        },
+        "filters": {
+          "language": "javascript",
+          "technology": [
+            "Node.js"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]

@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/-GhugFCkjVg/hqdefault.jpg",
-    "title": "Spec 3 Docs OPEN Meeting (August 31, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/846.",
-    "videoId": "-GhugFCkjVg"
+    "image_url": "https://i.ytimg.com/vi/KTnFoXY_evs/hqdefault.jpg",
+    "title": "Hacktoberfest (October 6th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/894.",
+    "videoId": "KTnFoXY_evs"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/AZl6-kMRMpE/hqdefault.jpg",
-    "title": "Let&#39;s talk about contributing:  Design Renaissance",
-    "description": "https://github.com/asyncapi/community/issues/846.",
-    "videoId": "AZl6-kMRMpE"
+    "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
+    "title": "Spec 3.0 docs meeting (September 28, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/885.",
+    "videoId": "qjMojQ-fFew"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/PV3IEwq3WSU/hqdefault.jpg",
-    "title": "AsyncAPI spec v3 support in Diff",
-    "description": "https://github.com/asyncapi/diff/issues/154.",
-    "videoId": "PV3IEwq3WSU"
+    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
+    "title": "Community meeting (September 19, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/874.",
+    "videoId": "SfATYVwcSQk"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/uE08_PpHiqg/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (23 Aug 2023)",
-    "description": "https://github.com/asyncapi/community/issues/847.",
-    "videoId": "uE08_PpHiqg"
+    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
+    "title": "Spec 3.0 meeting (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/857.",
+    "videoId": "OYcOkQhwVNg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/F_kFlgdZfZ4/hqdefault.jpg",
-    "title": "Community Meeting (August 22nd 2023)",
-    "description": "https://github.com/asyncapi/community/issues/818.",
-    "videoId": "F_kFlgdZfZ4"
+    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
+    "title": "Generator and new parser discussion (September 6, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/865.",
+    "videoId": "b4KcouHm958"
   }
 ]

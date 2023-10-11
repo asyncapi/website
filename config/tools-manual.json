@@ -27,6 +27,10 @@
             }
         ]
     },
+    "AsyncAPI Generator Templates": {
+        "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
+        "toolsList": []
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
         "toolsList": [
@@ -73,7 +77,7 @@
                 },
                 "filters": {
                     "language": "Kotlin",
-                    "technology": ["Spring Boot", "Maven"],
+                    "technology": ["Springboot", "Maven"],
                     "categories": ["code-first"]
                 }
             },
@@ -81,12 +85,12 @@
                 "title": "Springwolf",
                 "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
                 "links": {
-                    "websiteUrl": "https://springwolf.github.io/",
+                    "websiteUrl": "https://www.springwolf.dev",
                     "repoUrl": "https://github.com/springwolf/springwolf-core"
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Springboot"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
@@ -264,7 +268,8 @@
                         "react"
                     ],
                     "categories": [
-                        "documentation-generator"
+                        "documentation-generator",
+                        "generator-template"
                     ],
                     "hasCommercial": false
                 }
@@ -273,12 +278,12 @@
                 "title": "Springwolf",
                 "description": "Automated documentation for async APIs built with Spring Boot. Like Springfox for AsyncAPI. Auto-generates an AsyncAPI document and a web UI.",
                 "links": {
-                    "websiteUrl": "https://springwolf.github.io/",
+                    "websiteUrl": "https://www.springwolf.dev",
                     "repoUrl": "https://github.com/springwolf/springwolf-core"
                 },
                 "filters": {
                     "language": "Java",
-                    "technology": ["Springboot"],
+                    "technology": ["Springboot", "Gradle"],
                     "categories": ["code-first", "documentation-generator"]
                 }
             },
