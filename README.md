@@ -97,36 +97,28 @@ npm run build
 
 Generated files of the website go to the `.next` folder.
 
-### Running the Docker image
+### Run locally using Docker
+Prerequisites:
+- Docker installed
 
-To run the Docker image, simply run the following command:
-
-### Steps to start server
-
-- `cd` into the repo
-- run the following command `docker build -t async-website -f Dockerfile . && docker run -d -p 3000:3000 async-website`
-- Visit `localhost:3000` and the website should be live
-
-#### To run a Docker container from the image, mapping the local fork of the repo to the container, run the following command:
+#### Steps:
+1. Build the Docker image:
+    ```bash 
+    docker build -t asyncapi-website -f Dockerfile .`
+    ```
+2. Start the container:
+    ```bash
+    docker run -d -p 3000:3000 asyncapi-website
+    ```
+##### Note: To run a Docker container from the image, mapping the local fork of the repo to the container, run the following command (build the image first!)
 ```bash
-docker run -d -v "$PWD":/async -p 3000:3000 async-website
+docker run -d -v "$PWD":/async -p 3000:3000 asyncapi-website
 ```
 
-You can also develop your application in your IDE and make changes to the code. Whenever you make a change, rebuild the Docker image and restart the Docker container. The changes will be reflected in your website.
-
-#### To rebuild the Docker image, run the following command:
-
-`docker build -t async-website .`
-
-#### To restart the Docker container, run the following command:
-
-`docker restart async-website`
-
-### Steps to shutdown the Docker Container
-
-- run `docker ps` get the list of containers running 
-- take the `container-id` and use the code `docker stop <container-id>`
-
+##### To shutdown the Docker container:
+```bash
+docker run --rm
+```
 ## Case studies
 
 ### Overview
