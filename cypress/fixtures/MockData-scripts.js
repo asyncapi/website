@@ -7,6 +7,7 @@ export const mockNavItems = [
     { title: 'Getting Started', weight: 1, isSection: false, rootSectionId: 'introduction', slug: '/docs/introduction/getting-started' },
     { title: 'Reference', weight: 2, isRootSection: true, isSection: true, rootSectionId: 'reference', sectionWeight: 2, slug: '/docs/reference' },
     { title: 'Specification', weight: 0, isSection: true, parent: 'reference', sectionId: 'specification', slug: '/docs/reference/specification' },
+    { title: 'Extensions', weight: 0, isSection: true, parent: 'reference', sectionId: 'extensions', slug: '/docs/reference/extensions' },
     { title: 'Version 1.0', weight: 0, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/1.0' },
     { title: 'Version 2.0 (prerelease)', weight: 1, isSection: false, rootSectionId: 'reference', sectionId: 'specification', slug: '/docs/reference/specification/2.0', isPrerelease: true }
 ]

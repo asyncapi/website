@@ -14,5 +14,9 @@
     {
         "value": "",
         "href": "https://github.com/asyncapi/website/blob/master/pages"
+    },
+    {
+        "value": "/reference/extensions",
+        "href": "https://github.com/asyncapi/website/blob/master/pages"
     }
 ]
