@@ -1,26 +1,149 @@
 ---
-title: Request/Reply Info
+title: Adding reply Info
 weight: 210
 ---
 
-Introduction to Request-Reply pattern. 1 - 2 paras talking about it in asyncapi that it is now added on a operation level as a dedicated reply object. Solves two main use cases where you want to have a way to specify a static info, what is the reply given to a specific channel and then the dynamic way to specify the reply.
+Request/Reply is a common messaging or communication pattern where one component or service, known as the requestor, sends a request to another component or service, known as the replier and waits for a response. This pattern is often used when a component needs to initiate an action and receive a specific response in return either synchronously or asynchronously. This communication pattern is typically asynchronous, meaning that the requester does not block and wait for an immediate response. Instead, it can continue processing other tasks or even send out other requests while waiting for the reply to arrive. 
 
-What it is, how it works. Why is it important and how it matters now with respect to AsyncAPI
+In case of multiple requests made, each request is processed independently and sends the reply/response to the corresponding requestor when ready.
 
+The request/reply pattern in AsyncAPI works in the same fashion while supporting all the different sub-patterns. Irrespective of the sub-pattern you would like to implement, the Request/reply pattern can be implemented in the asyncAPI document using actions in the `Operation` object.
 
-Make a point that irrespective of the appraoch you can now implement the reply info now in operatiosn object
+You can add the reply info using the `Operation Reply` object under the `Operation` object. The `reply` object represents the response message.
 
-Use cases
-- Dynamic channels(Cost calculation)
-Start with explanation, Imagine where you have system that sends requests for cost calculation and has to respond to a given request to the given reqyester. 
-Make sure to talk about reply object in operations and that the expression is runtime when it comes to where the service can find the address as to where it should reply to
-Simple mermaid diagram replicating the use case
+Here is diagram to illustrate the working of a basic request/reply pattern:
+```mermaid
+sequenceDiagram
+    participant Requester as Requester
+    participant Responder as Responder
+    Requester->>Responder: Send Request
+    activate Responder
+    Responder-->>Requester: Send Reply
+    deactivate Responder
+```
 
+## Sub-patterns
 
-- Reply message(Webscoket use case-> Single channels with dif types of messages)(In aysncpi you can tell which messages are just reply and not messgaes that you actually send)
-Ping pong example with multiple channels(but the same address).
-Single channel with all messages defined and explain the operation(Message filter way)
+### Dynamic response Channel
+There are situations where you do not know the reply channel at the design time. Instead, the reply channel is dynamically determined at runtime, based on factors such as the request message payload or header. 
 
+In this case, since you don't know what the address of the reply channel is yet, you can either assign null to the `address` property or omit the property entirely indicating that the address is not known yet. You can now use `Operation Reply Address` object to dynamically specify where the reply has to be sent. The `Operation Reply Address` object has a property called `location` which essentially takes in a runtime expression that specifies the address of the reply channel.
 
-3 diagrams, One in the introduction -> Basic request reply flow
-One for each approach -> Message filtering, dynamic
+```yml
+asyncapi: 3.0.0
+
+info:
+  title: Ping/pong example for dynamic reply channel sub-pattern
+  version: 1.0.0
+  description: Example with a requester that initiates the request/reply pattern where the reply will happen on whatever is defined in the header `replyTo` of the request.
+
+channels:
+  ping:
+    address: /ping
+    messages:
+      ping:
+        $ref: '#/components/messages/ping'
+  pong:
+    address: null
+    messages:
+      pong:
+        $ref: '#/components/messages/pong'
+
+operations:
+  pingRequest:
+    action: send
+    channel: 
+      $ref: '#/channels/ping'
+    reply:
+      address:
+        description: The reply address is dynamically determined based on the request header `replyTo`
+        location: "$message.header#/replyTo"
+      channel: 
+        $ref: '#/channels/pong'
+  pongReply:
+    action: receive
+    channel: 
+      $ref: '#/channels/ping'
+    reply:
+      address:
+        description: The reply address is dynamically determined based on the request header `replyTo`
+        location: "$message.header#/replyTo"
+      channel: 
+        $ref: '#/channels/pong'
+```
+
+### Request/reply over the same channel
+The request/reply pattern can also be implemented over the same channel. You can do this by specifying the same address for both the requester and the replier.
+
+Here's a example of setting up both requestor and replier in the same channel:
+```yml
+asyncapi: 3.0.0
+
+info:
+  title: Ping/pong example with requester
+  version: 1.0.0
+  description: Requester example initiating the request-reply pattern.
+
+channels:
+  ping:
+    address: /
+    messages:
+      ping:
+        $ref: '#/components/messages/ping'
+  pong:
+    address: /
+    messages:
+      pong:
+        $ref: '#/components/messages/pong'
+
+operations:
+  pingRequest:
+    action: send
+    channel: 
+      $ref: '#/channels/ping'
+    reply:
+      channel: 
+        $ref: '#/channels/pong'
+  pongReply:
+    action: receive
+    channel: 
+      $ref: '#/channels/ping'
+    reply:
+      channel: 
+        $ref: '#/channels/pong'
+```
+
+### Multiple messages over the same channel
+When working with protocols like websockets, you can have multiple messages under the same channel. In such scenarios, you can use the `messages` property in the `Operation` object to explicitly define which message among the multiple messages available over the same channel is a request and which is a reply.  
+
+Here's a example where we have multiple messages over the same channel with the same address and we define in the `Operation` object explicitly which message among the available messages is a request and which is a reply:
+```yml
+asyncapi: 3.0.0
+
+info:
+  title: Ping/pong example when a channel contains multiple messages
+  version: 1.0.0
+  description: Simple example with a requester that initiates the request-reply pattern, where the root channel contains multiple messages.
+
+channels:
+  rootChannel:
+    address: /
+    messages:
+      ping:
+        $ref: '#/components/messages/ping'
+      pong:
+        $ref: '#/components/messages/pong'
+
+operations:
+  pingRequest:
+    action: send
+    channel: 
+      $ref: '#/channels/rootChannel'
+    messages:
+      - $ref: "/components/messages/ping"
+    reply:
+      messages:
+        - $ref: "/components/messages/pong"
+      channel: 
+        $ref: '#/channels/rootChannel'
+```
