@@ -11,7 +11,7 @@ Here is a diagram explaining binding:
 graph TD
 A[AsyncAPI Document] --> B((Servers))
 A --> D((Channels))
-D --> E((Operations))
+A --> E((Operations))
 D --> F((Messages))
 B --> C{Server Bindings}
 D --> G{Channel Bindings}
@@ -28,7 +28,7 @@ This diagram illustrates the structure of an AsyncAPI document and the areas whe
 
 ## Server bindings
 
-Server bindings provide protocol-specific information related to the server configuration. For example, if you use RabbitMQ as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
+Server bindings provide protocol-specific information related to the server configuration. For example, if you use RabbitMQ (AMQP protocol) as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
 
 Here is a diagram explaining server binding:
 
