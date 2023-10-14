@@ -1,0 +1,31 @@
+- companyName: Reiffeisen Bank
+  useCase: Continuous Integration and Continuous Delivery (CI/CD) pipeline based on GitOps to deploy a topology built on Async API definitions using a Kubernetes operator to an Apache Pulsar cluster.
+  resources:
+    videoLink: https://www.youtube.com/watch?v=_MwzLZMwFN8
+    videoTitle: From an AsyncAPI Definition to a Deployed Pulsar Topology Via GitOps
+
+- companyName: LEGO Group
+  useCase: Broker management, where developers do not access to the management console themselves, but rely on uploading AsyncAPI documents to a self service API that provisions access and topics specified in documents.
+  resources:
+    videoLink: https://www.youtube.com/watch?v=m8I0fYjx6Cc
+    videoTitle: Documentation as Configuration for Management of Apache Pulsar
+
+- companyName: LEGO Group
+  useCase: Define, document and distribute event-driven APIs. Ensuring consistency and governance
+  resources:
+    videoLink: https://www.youtube.com/watch?v=qjarcJQVLOg
+    videoTitle: Cross-Domain Events with AsyncAPI and AWS
+
+- companyName: Bank of New Zealand
+  useCase: Decentralized company-wide governance strategy for API. A self service for publishing APIs and docs.
+  resources:
+    videoLink: https://www.confluent.io/events/kafka-summit-apac-2021/self-service-events-and-decentralised-governance-with-asyncapi-a-real-world/
+    videoTitle: Self-service Events & Decentralised Governance with AsyncAPI :- A Real World Example
+
+- companyName: Zora Robotics
+  useCase: Documenting lot products public MQTT API and building a developers portal.
+  resources:
+    videoLink: https://www.youtube.com/watch?v=yjHgT0n2BtA
+    videoTitle: Buliding and managing an extensive API for Robotics and loT
+    docs: https://docs.zorabots.be/dev-mqtt-docs/latest/index.html
+    docsTitle: Buliding and managing an extensive API for Robotics and loT
