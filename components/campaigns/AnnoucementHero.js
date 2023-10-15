@@ -43,17 +43,17 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-          Madrid Edition
+          Bangalore Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          19th of October, 2023 | Madrid, Spain
+          30th of November, 2023 | Bangalore, India
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 Madrid Edition" />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform"
+            href="https://conference.asyncapi.com/venue/Bangalore"
             target="_blank"
-            text="Get Free Tickets"
+            text="Submit a Session"
             data-testid="AnnouncementHero-submit-session"
           />
         </div>
