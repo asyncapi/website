@@ -4,7 +4,7 @@ import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
-import AdoptorsList from "../../config/adoptors.json"
+import AdoptersList from "../../config/adopters.json"
 
 export default function Casestudies() {
   const description =
@@ -46,7 +46,7 @@ export default function Casestudies() {
         <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mt-8">
           <div className="col-start-3 col-span-5">
             <Heading level="h1" typeStyle="heading-lg">
-              Adoptors
+              Adopters
             </Heading>
             <Paragraph typeStyle="body-md" className="my-4 max-w-4xl" >
               Check out how different companies use AsyncAPI and what problems they solve.
@@ -71,23 +71,29 @@ export default function Casestudies() {
             </tr>
           </thead>
           <tbody>
-            {AdoptorsList[0].map((entry, index) => (
+            {AdoptersList[0].map((entry, index) => (
               <tr key={index}>
                 <td className="border-2 p-2">{entry.companyName}</td>
                 <td className="border-2 p-2">{entry.useCase}</td>
                 <td className="border-2 p-2">
                   <ul>
-                    <li className="p-2">Video: <a className="text-cyan-500 underline" href={entry.resources ? entry.resources.videoLink : '#'}>{entry.resources ? entry.resources.videoTitle : 'N/A'}</a></li>
-                    {entry.resources && entry.resources.docs && (
-                      <li className="p-2">Docs: <a className="text-cyan-500 underline" href={entry.resources.docs}>{entry.resources.docsTitle}</a></li>
-                    )}
+                    {entry.resources.map((resource, resourceIndex) => (
+                      <li className="p-2" key={resourceIndex}>
+                        <a className="text-cyan-500 underline" href={resource.link}>
+                          {resource.title}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+
       </center>
     </GenericLayout>
   );
 }
+
+
