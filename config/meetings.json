@@ -1,24 +1,10 @@
 [
   {
     "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MHBhZDRzZ2M0OXFqbDJhaXRxcnUwNm9hcmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/760",
-    "banner": "",
-    "date": "2023-07-05T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=aGdqYmk0NDdiMGE4cGo4NzFuaWxycjNiYmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/761",
     "banner": "",
     "date": "2023-07-19T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YmhiaTQxNDBicDA0NjgyZmk3M3ZocTJxbGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/774",
-    "banner": "",
-    "date": "2023-07-06T14:30:00.000Z"
   },
   {
     "title": "Open Standards and Private Products: A DevRel's Dream or Nightmare",
@@ -166,5 +152,12 @@
     "url": "https://github.com/asyncapi/community/issues/906",
     "banner": "",
     "date": "2023-10-19T14:30:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=Y3FhbWh0bzA5cTc5MnVscTJuZjIzMWg2MmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/912",
+    "banner": "https://user-images.githubusercontent.com/40604284/275363125-696a5c41-81b2-4e0b-a485-f108a7f525f0.png",
+    "date": "2023-10-17T08:00:00.000Z"
   }
 ]

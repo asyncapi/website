@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 33.02507770616476
+      "score": 37.619871126152894
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 25.845712987433288
+      "score": 27.56876051992884
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -55,6 +55,17 @@
       "score": 18.666348268701817
     },
     {
+      "id": "PR_kwDOBW5R_c5Worbr",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add v3 migration guide",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2008",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 16.65612614745701
+    },
+    {
       "id": "I_kwDOCVQpZM5M_dcV",
       "isPR": false,
       "isAssigned": true,
@@ -63,7 +74,7 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 16.08177696995849
+      "score": 16.36895155870775
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -108,6 +119,17 @@
       "score": 14.358729437462937
     },
     {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
       "id": "PR_kwDOCoBobc42aMuI",
       "isPR": true,
       "isAssigned": false,
@@ -119,58 +141,42 @@
       "score": 13.497205671215161
     },
     {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
+      "id": "I_kwDOBW5R_c5RVOOY",
       "isPR": false,
       "isAssigned": false,
-      "title": "Improve overall performance of the website but especially Blog",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/89",
+      "title": "Community cards implementation.",
+      "author": "Mayaleeeee",
+      "resourcePath": "/asyncapi/website/issues/930",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
         }
       ],
       "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOBW5R_c5RI5z2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add testimonial carousel",
-      "author": "Lucif3r-in",
-      "resourcePath": "/asyncapi/website/pull/1704",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDODyzcIc5gD3jB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Automate `paper work` around project governance",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/.github/issues/210",
-      "repo": "asyncapi/.github",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "gsoc",
-          "color": "F4D03F"
-        }
-      ],
-      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODwv8N85zcBHO",
+      "title": "Inconsistent styling of the subscribe button on the conference website",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/217",
+      "repo": "asyncapi/conference-website",
+      "author": "Mayaleeeee",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
     {
       "id": "I_kwDOFDnrNc5yy6e0",
       "title": "The new glee command is generating a 2.1.0 document",
@@ -214,36 +220,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5ydv8_",
-      "title": "Remove this unused import of 'MiddlewareCallback'.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/527",
-      "repo": "asyncapi/glee",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "016479"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5ydvwN",
-      "title": "Unexpected empty block",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/36",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
@@ -315,36 +291,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385ydtaD",
-      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1529",
-      "repo": "asyncapi/modelina",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385ydtLO",
-      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1526",
-      "repo": "asyncapi/modelina",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N85yZpkH",
       "title": "Venue sub menu doesn't close",
       "isAssigned": false,
@@ -369,25 +315,6 @@
       "isAssigned": false,
       "resourcePath": "/asyncapi/conference-website/issues/202",
       "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5yRiQ8",
-      "title": "Fix cognitive complexity issue",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1040",
-      "repo": "asyncapi/generator",
       "author": "derberg",
       "area": "javascript",
       "labels": [
