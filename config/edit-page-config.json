@@ -17,6 +17,6 @@
     },
     {
         "value": "/reference/extensions",
-        "href": "https://github.com/asyncapi/website/blob/master/pages"
+        "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions/"
     }
 ]
