@@ -151,7 +151,7 @@
                 },
                 "filters": {
                     "language": "Python",
-                    "categories": ["code-first"],
+                    "categories": ["code-first", "framework"],
                     "hasCommercial": false,
                     "isAsyncAPIOwner": false
                 }
