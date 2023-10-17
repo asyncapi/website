@@ -1,7 +1,8 @@
 ---
 title: AsyncAPI document structure
-weight: 32
+weight: 60
 ---
+
 The structure of an AsyncAPI document can be defined as a specific format in which the document of the specification is to be written and defined. The structure of an AsyncAPI document has certain fields that need to be followed and implemented.
 
 ## Root Elements 
@@ -23,7 +24,7 @@ A --> E
 A --> F
 ```
 
-### `Info` object
+### `Info` Object
 The `info` object in an AsyncAPI document provides essential information about the API in the form of fields such as title, version, description, contact details and license. It serves as metadata that gives consumers a high-level understanding of the API's purpose and functionality.
 
 The purpose of the `info` object is to provide descriptive and contact information about the specific API. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
@@ -86,7 +87,7 @@ info:
     url: https://example.com/docs
 ```
 
-### `Servers` object
+### `Servers` Object
 The `servers` object in an AsyncAPI document is a map of `server` objects that defines the network endpoints or brokers that applications can connect to for exchanging messages. It specifies the details necessary to establish a connection, such as the protocol, host, port, and additional connection options.
 
 The purpose of the `servers` object is to provide the necessary information for clients to connect to the message broker or server and participate in the message exchange or listen to the events. By defining multiple servers, the AsyncAPI document can accommodate different environments or deployment scenarios, such as production, staging, or development.
@@ -112,23 +113,72 @@ graph LR
   B(host)
   C(pathname)
   D(protocol)
-  E(description)
+  E(protocolVersion)
+  F(description)
+  G(title)
+  H(summary)
+  I(security)
+  J(tags)
+  K(externalDocs)
+  L(bindings)
 
   A --> B
   A --> C
   A --> D
   A --> E
+  A --> F
+  A --> G
+  A --> H
+  A --> I
+  A --> J
+  A --> K
+  A --> L
 ```
 
 Here's a code example of the servers object with multiple servers in an AsyncAPI document:
 ```yaml
-host: rabbitmq.in.mycompany.com:5672
-pathname: /production
-protocol: amqp
-description: Production RabbitMQ broker (uses the `production` vhost).
+servers:
+  - host: rabbitmq.in.mycompany.com:5672
+    pathname: /production
+    protocol: amqp
+    protocolVersion: 1.0
+    description: Production RabbitMQ broker (uses the `production` vhost).
+    title: Production Server
+    summary: Production environment server
+    security:
+      - apiKey: []
+    tags:
+      - name: production
+        description: Production environment
+    externalDocs:
+      description: Additional documentation for the production server
+      url: https://example.com/docs/production
+    bindings:
+      amqp:
+        exchange: my-exchange
+        queue: my-queue
+  - host: rabbitmq.in.mycompany.com:5672
+    pathname: /staging
+    protocol: amqp
+    protocolVersion: 1.0
+    description: Staging RabbitMQ broker (uses the `staging` vhost).
+    title: Staging Server
+    summary: Staging environment server
+    security:
+      - apiKey: []
+    tags:
+      - name: staging
+        description: Staging environment
+    externalDocs:
+      description: Additional documentation for the staging server
+      url: https://example.com/docs/staging
+    bindings:
+      amqp:
+        exchange: my-exchange
+        queue: my-queue
 ```
 
-### `Channels` object
+### `Channels` Object
 The `channels` object in an AsyncAPI document holds all the individual `channel` object definitions that the application must use during runtime. The `channels` represent the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
 
 The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
@@ -199,7 +249,8 @@ externalDocs:
   description: 'Find more info here'
   url: 'https://example.com'
 ```
-### `Operations` object
+
+### `Operations` Object
 The `operations` object holds a dictionary with all the operations the application must implement. The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API.
 
 The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
@@ -237,17 +288,17 @@ graph LR
   M(address)
   N(channel)
   
-  A -->B
+  A --> B
   A --> C
   A --> D
-  A -->E
+  A --> E
   A --> F
   A --> G
   A --> H
   A --> I
-  A -->J
+  A --> J
   A --> K
-  A -->L
+  A --> L
   L --> M
   L --> N
 ```
@@ -284,7 +335,7 @@ reply:
     - $ref: '#/components/messages/userSignedUpReply'
 ```
 
-### `Components` object
+### `Components` Object
 The `components` object in an AsyncAPI document serves as a container for reusable structures or definitions that can be used across different parts of the AsyncAPI document. It allows you to define and manage common elements such as message schemas, security schemes, headers, and other custom components that are referenced throughout the API specification.
 
 All objects defined within the `components` object will not affect the specific API unless they are explicitly referenced from properties outside the components object.
@@ -318,8 +369,8 @@ Here's a visual representation of the `components` object and its properties:
 graph LR
   A[components]
   B(schemas)
-  C(Category)
-  D(Tag)
+  C(category)
+  D(tag)
   G(servers)
   H(development)
   I(serverVariables)
