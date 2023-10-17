@@ -3,22 +3,20 @@ title: 'Tags'
 weight: 63
 ---
 
---- Unique Description about AsyncAPI document to be inserted here ---
+A tag is a label or category that helps you logically group related objects such as channels or servers within an event-driven system. The `tag` object enables you to group channels, operations or other components based on their functionality, purpose and/or any other relevant criteria.
 
-A `tag` is a label or category that helps you logically group related objects such as channels or servers within an event-driven system. The `tags` object provide a structured way to group channels, operations or other components based on their functionality, purpose and/or any other relevant criteria.
+In AyncAPI, the `tags` object is essentially a list of `tag` objects. Within the `tags` object, you can define individual `tag`s, specifying a name and providing an optional description that adds further context to the tag's purpose or usage.
 
-The `tags` object serves as a container for defining and managing tags in a systematic manner. Within the `tags` object, you can define individual tags, specifying a name and providing an optional description that adds further context to the tag's purpose or usage. 
+`tags` can be defined in the [`components` object](../../reference/specification/v3.0.0-next-major-spec.12.md#componentsObject) of an AsyncAPI document, which enables the reusability of the tags. `tags` included in the `components` object can be re-used by using [reference objects](../../reference/specification/v3.0.0-next-major-spec.12.md#referenceObject).
 
-Once tags are defined within the `tags` object, they can be assigned to channels, operations or any other component using the tags property. By including the relevant tag names in the tags property, objects such as channels, servers or components are associated with the appropriate tags, grouping them based on their shared characteristics.
-
-Additionally, `tags` can also be included in the [`components` object](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#componentsObject) of an AsyncAPI document, which enables the reusability of the tags. `tags` included in the `components` object can be re-used by [reference objects](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#referenceObject).
+Additionally, you can define a list of tags you wanna use across the document under the `tags` object on the `info` level and you can reuse those tags under individual components such as `servers` or `channels` allowing you to group components logically.
 
 ## `Tags` in AsyncAPI Document
-The `tags` object is a list of `tag` objects which can be referenced by [reference object](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#referenceObject).
+The `tags` object is a list of `tag` objects that can be referenced by [reference object](../../reference/specification/v3.0.0-next-major-spec.12.md#referenceObject).
 
-The `tags` object within the AsyncAPI specification contains some fields that define and describe individual tags.
+The `tags` object is a list of tags and individual `tag` objects contain some fields.
 
-The behaviour and impact of the `tags` object within the AsyncAPI document can vary depending on the context of the object in which it is being used. For instance, The way the `tags` object impacts a server object is different from when it is used under the channels object.
+The behaviour of tags inside the `tags` object in the AsyncAPI document can vary based on the context of the object it is being used in. For instance, you can use the `tags` object to have tags used consistently across the AsyncAPI document for logical grouping of components or you can use tags under individual components like on `servers` or `channels` for a specific purpose.
 
 Some of the fields that the `tags` object holds are:
 - `name`: The name of the tag.
@@ -26,7 +24,7 @@ Some of the fields that the `tags` object holds are:
 - `externalDocs`: Additional external documentation for this tag.
 
 ### `Tags` in `Info` Object
-Tags when defined within the `tags` property of the `info` object provides a high-level categorization and classification for the entire AsyncAPI document. These tags that are defined under the `info` object give a global context to the entire application, representing overarching themes or functional areas within the event-driven system. They serve as a way to group objects such as channels or servers based on their broader significance, providing a holistic understanding of the application's structure.
+When defined within the `tags` property of the info object, tags provide a high-level categorization and classification for the entire AsyncAPI document. These tags that are defined under the `info` object give a global context to the entire application, representing overarching themes or functional areas within the event-driven system. They serve as a way to group objects such as channels or servers based on their broader significance, providing a holistic understanding of the application's structure.
 
 Here's a visual representation of the `tags` object inside an `info` object in an AsyncAPI document:
 ```mermaid
@@ -39,6 +37,13 @@ graph LR
   F --> G[name]
   F --> I[description]
   F --> K[externalDocs]
+
+  style A fill:#47BCEE,stroke:#000;
+  style B fill:#47BCEE,stroke:#000;
+  style F fill:#47BCEE,stroke:#000;
+  style I fill:#47BCEE,stroke:#000;
+  style K fill:#47BCEE,stroke:#000;
+  style G fill:#47BCEE,stroke:#000;
 ```
 
 Below is an example of the `tags` object inside the `info` object in an AsyncAPI document:
@@ -48,19 +53,19 @@ info:
   title: AsyncAPI Documentation
   version: 1.0.0
   description: |
-    This AsyncAPI document provides a overview
+    This AsyncAPI document provides an overview
     of the event-driven system.
   tags:
-    - name: Finance
-      description: APIs related to financial transactions
-    - name: Customer
-      description: APIs related to customer interactions
-    - name: Inventory
-      description: APIs related to inventory management
+    - name: Applications
+      description: All applications related topics. 
+      url: https://applications.example.com/docs
+    - name: Time
+      description: All time related topics.
+      url: https://time.example.com/docs
 ```
 
 ### `Tags` in `Servers` Object
-Tags when used within the `tags` property of the `servers` object, are specific to the servers' configurations and relate to the server-level characteristics. These tags allow for the categorization of server instances based on their properties or criteria, such as geographical location, environment (e.g., production, development), or specific server capabilities. Using tags in servers object allows for the categorization and organization of servers based on specific tags or labels.
+Tags when used within the `tags` property of the `servers` object, are specific to the servers' configurations and relate to the server-level characteristics. These tags allow for the categorization of server instances based on their properties or criteria, such as geographical location, environment (e.g., production, development), or specific server capabilities. Using `tags` in `servers` object allows for the categorization and organization of servers based on specific tags or labels. Using `tags` object under the `servers` object is optional.
 
 Here's a visual representation of the `tags` object inside a `servers` object in an AsyncAPI document:
 ```mermaid
@@ -74,6 +79,12 @@ graph LR
   G --> H[name]
   G --> I[description]
   G --> J[externalDocs]
+  style A fill:#47BCEE,stroke:#000;
+  style B fill:#47BCEE,stroke:#000;
+  style G fill:#47BCEE,stroke:#000;
+  style I fill:#47BCEE,stroke:#000;
+  style H fill:#47BCEE,stroke:#000;
+  style J fill:#47BCEE,stroke:#000;
 ```
 
 Below is an example of the `tags` object inside the `servers` object in an AsyncAPI document:
@@ -86,7 +97,7 @@ servers:
         protocolVersion: 0-9-1
         tags:
             - name: "env:development"
-              description: "This environment is meant for developers to run their own tests."
+              description: "This environment is meant for developers to run their tests."
     production:
         host: rabbitmq.in.mycompany.com:5672
         description: RabbitMQ broker for the production environment.
@@ -98,7 +109,8 @@ servers:
 ```
 
 ### `Tags` in `Channels` object
-Tags are associated with individual channels allowing for logical grouping and categorization of channels based on specific functionalities or business domains. The `tags` object when used within a `channels` object, the context is restricted to the `channels` object and the individual `channel` of the AsyncAPI document, meaning they only impact the `channels` object of the AsyncAPI document. 
+Tags are associated with individual channels allowing for logical grouping and categorization of channels based on specific functionalities or business domains. The `tags` object when used within a `channels` object, the context is either restricted to the `channels` object and the individual `channel` of the AsyncAPI document, meaning they only affect the `channels` object of the AsyncAPI document or they could be used for consistency of tags across the document for logical grouping. Using `tags` object under the `channels` object is optional.
+
 
 Here's a visual representation of the `tags` object inside a `channels` object in an AsyncAPI document:
 ```mermaid
@@ -131,6 +143,12 @@ graph LR
   P --> F
   P --> G 
   P --> I 
+  style A fill:#47BCEE,stroke:#000;
+  style Z fill:#47BCEE,stroke:#000;
+  style P fill:#47BCEE,stroke:#000;
+  style F fill:#47BCEE,stroke:#000;
+  style G fill:#47BCEE,stroke:#000;
+  style I fill:#47BCEE,stroke:#000;
 ```
 
 Below is an example of the `tags` object inside the `channels` object in an AsyncAPI document:
@@ -147,7 +165,7 @@ channels:
 ```
 
 ### `Tags` in `Operations` Object
-The `tags` object within the `operations` object of the AsyncAPI document allows for logical grouping and categorization of individual `operation` objects based on the type of operation or functionality and more. The `tags` object when used within a `operations` object, the context is restricted to the `operations` object and the individual `operation` of the AsyncAPI document, meaning they only impact the `operations` object of the AsyncAPI document. 
+The `tags` object within the `operations` object of the AsyncAPI document allows for logical grouping and categorization of individual `operation` objects based on the type of operation or functionality and more. The `tags` object when used within an `operations` object, it can either only affect the `operations` object for a specific purpose or it could be to be in consistent use of tags for logical grouping of components. Using the `tags` object in `operations` object is optional.
 
 Here's a visual representation of the `tags` object inside a `operations` object in an AsyncAPI document:
 ```mermaid
@@ -188,6 +206,12 @@ graph LR
   H --> X
   H --> Y
   H --> Z
+  style A fill:#47BCEE,stroke:#000;
+  style Z fill:#47BCEE,stroke:#000;
+  style W fill:#47BCEE,stroke:#000;
+  style H fill:#47BCEE,stroke:#000;
+  style Y fill:#47BCEE,stroke:#000;
+  style X fill:#47BCEE,stroke:#000;
 ```
 
 Below is an example of the `tags` object inside the `operations` object in an AsyncAPI document:
@@ -215,7 +239,7 @@ operations:
 ```
 
 ### `Tags` in `message` object
-Tags are associated with individual message objects allowing for logical grouping and categorization of messages based on specific requirements or criteria or given channels and operations and more. The `tags` object when used within a `message` object, the context is restricted to the `message` object of the AsyncAPI document, meaning they only impact the `message` object of the AsyncAPI document. 
+Tags are associated with individual message objects allowing for logical grouping and categorization of messages based on specific requirements or criteria or given channels and operations and more. The `tags` object when used within a `message` object, the context is either restricted to the `message` object of the AsyncAPI document, meaning they only affect the `message` object of the AsyncAPI document or it could be a part of consistent use of tags across the document for logical grouping. 
 
 Here's a visual representation of a `tags` object inside a `message` object in an AsyncAPI document:
 ```mermaid
@@ -228,6 +252,12 @@ graph LR
   F --> G[correlationId]
   F --> H[applicationInstanceId]
   A --> I[payload]
+  C --> Y[externalDocs]
+  style A fill:#47BCEE,stroke:#000;
+  style D fill:#47BCEE,stroke:#000;
+  style C fill:#47BCEE,stroke:#000;
+  style E fill:#47BCEE,stroke:#000;
+  style Y fill:#47BCEE,stroke:#000;
 ```
 
 Below is an example of the `tags` object inside the `message` object in an AsyncAPI document:
@@ -246,4 +276,3 @@ payload:
   signup:
     someSignupKey: someSignupValue
 ```
-
