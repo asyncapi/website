@@ -65,7 +65,7 @@ info:
 ```
 
 ### `Tags` in `Servers` Object
-Tags when used within the `tags` property of the `servers` object, are specific to the servers' configurations and relate to the server-level characteristics. These tags allow for the categorization of server instances based on their properties or criteria, such as geographical location, environment (e.g., production, development), or specific server capabilities. Using `tags` in `servers` object allows for the categorization and organization of servers based on specific tags or labels. Using `tags` object under the `servers` object is optional.
+Tags when used within the `tags` property of the `servers` object, are specific to the servers' configurations and relate to the server-level characteristics. These tags allow for the categorization of server instances based on their properties or criteria, such as geographical location, environment (e.g., production, development), or specific server capabilities. Using `tags` in the `servers` object allows for the categorization and organization of servers based on specific tags or labels. Using the `tags` object under the `servers` object is optional.
 
 Here's a visual representation of the `tags` object inside a `servers` object in an AsyncAPI document:
 ```mermaid
@@ -109,7 +109,7 @@ servers:
 ```
 
 ### `Tags` in `Channels` object
-Tags are associated with individual channels allowing for logical grouping and categorization of channels based on specific functionalities or business domains. The `tags` object when used within a `channels` object, the context is either restricted to the `channels` object and the individual `channel` of the AsyncAPI document, meaning they only affect the `channels` object of the AsyncAPI document or they could be used for consistency of tags across the document for logical grouping. Using `tags` object under the `channels` object is optional.
+Tags are associated with individual channels allowing for logical grouping and categorization of channels based on specific functionalities or business domains. The `tags` object when used within a `channels` object, the context is either restricted to the `channels` object and the individual `channel` of the AsyncAPI document, meaning they only affect the `channels` object of the AsyncAPI document or they could be used for consistency of tags across the document for logical grouping. Using the `tags` object under the `channels` object is optional.
 
 
 Here's a visual representation of the `tags` object inside a `channels` object in an AsyncAPI document:
@@ -165,7 +165,7 @@ channels:
 ```
 
 ### `Tags` in `Operations` Object
-The `tags` object within the `operations` object of the AsyncAPI document allows for logical grouping and categorization of individual `operation` objects based on the type of operation or functionality and more. The `tags` object when used within an `operations` object, it can either only affect the `operations` object for a specific purpose or it could be to be in consistent use of tags for logical grouping of components. Using the `tags` object in `operations` object is optional.
+The `tags` object within the `operations` object of the AsyncAPI document allows for logical grouping and categorization of individual `operation` objects based on the type of operation or functionality and more. The `tags` object when used within an `operations` object, it can either only affect the `operations` object for a specific purpose or it could be to be in consistent use of tags for logical grouping of components. Using the `tags` object in the `operations` object is optional.
 
 Here's a visual representation of the `tags` object inside a `operations` object in an AsyncAPI document:
 ```mermaid
@@ -275,4 +275,82 @@ payload:
     someUserKey: someUserValue
   signup:
     someSignupKey: someSignupValue
+```
+
+## Example
+Here's an example illustrating all the tags being defined in the `components` object and then referenced in other components such as `servers`, `channels` and more:
+```yml
+asyncapi: 3.0.0
+
+components:
+  tags:
+    speech:
+      name: Speech
+      description: All speech related topics.
+    video:
+      name: Video
+      description: All video related topics.
+      
+info:
+  title: AsyncAPI Documentation
+  version: 1.0.0
+  description: |
+    This AsyncAPI document provides an overview
+    of the event-driven system.
+  tags:
+    - $ref: '#/components/tags/speech'
+    - $ref: '#/components/tags/audio'
+
+servers:
+  speech:
+    host: localhost:5672
+    description: RabbitMQ broker for sending speech data.
+    protocol: amqp
+    tags:
+      - $ref: '#/components/tags/speech'
+  video:
+    host: localhost:5673
+    description: RabbitMQ broker for audio information.
+    protocol: amqp
+    tags:
+       - $ref: '#/components/tags/video'
+
+channels:
+  getSpeech:
+      address: 'application/speech/get'
+      servers: 
+        - $ref: '#/servers/speech'
+      messages:
+        voice:
+          name: Voice
+          summary: Add info about the voice stream data.
+          tags:
+            - $ref: '#/components/tags/speech'
+  getVideo:
+      address: 'application/video/get'
+      servers: 
+        - $ref: '#/servers/video'
+      messages:
+        voice:
+          name: Video
+          summary: Add info about the video data live bitrate and others.
+          tags: 
+            - $ref: '#/components/tags/video'
+
+operations:
+  onVoiceStreamed:
+    title: Get speech data
+    channel:
+      $ref: '#/channels/getSpeech'
+    action: receive
+    tags:
+      - $ref: '#/components/tags/speech'
+
+  onVideoStreamed:
+    title: Get video data
+    channel:
+      $ref: '#/channels/getVideo'
+    action: receive
+    tags:
+      - $ref: '#/components/tags/video'
 ```
