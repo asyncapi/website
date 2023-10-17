@@ -2,11 +2,10 @@
 title: AsyncAPI document structure
 weight: 32
 ---
-The structure of a AsyncAPI document can be defined as a specific format in which the document of the specification is to be written. An AsyncAPI document may be made up of a single document or be divided into multiple, connected parts at your discretion. In the latter case, Reference Objects are used. The structure of a AsyncAPI document has certain fields that need to be followed and implemented.
-This document lays out the blueprint for you to write down your specification based on your application. 
+The structure of an AsyncAPI document can be defined as a specific format in which the document of the specification is to be written and defined. The structure of an AsyncAPI document has certain fields that need to be followed and implemented.
 
 ## Root Elements 
-Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the metadata, channels, components and more of a AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
+Root elements of an AsyncAPI document provide an overview of the API's characteristics and behaviour. These root elements collectively define the metadata, channels, components and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behaviour.
 
 ```mermaid
 graph LR
@@ -63,7 +62,7 @@ graph LR
   B --> P
 ```
 
-Below is a example of the `info` object in the AsyncAPI document:
+Below is an example of the `info` object in the AsyncAPI document:
 ```yaml
 asyncapi: 3.0.0
 info:
@@ -96,11 +95,11 @@ Some of the fields `servers` object holds for each server object are:
 
 - `host`: The server host name. It may include the port. 
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
-- `protocolVersion`: The version of the protocol used for connection.
+- `protocolVersion`: The version of the protocol used for the connection.
 - `pathname`: The path to a resource in the host.
 - `description`: An optional string describing the server.
 - `title`: A human-friendly title for the server.
-- `summary`: A short summary of the server.
+- `summary`: A summary of the server.
 - `security`: A declaration of which security schemes can be used with this server. 
 - `tags`: A list of tags for logical grouping and categorization of servers.
 - `externalDocs`: Additional external documentation for this server.
@@ -130,18 +129,18 @@ description: Production RabbitMQ broker (uses the `production` vhost).
 ```
 
 ### `Channels` object
-The `channels` object in an AsyncAPI document holds all the individual `channel` objects definitions that the application must use during runtime. The `channels` represents the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
+The `channels` object in an AsyncAPI document holds all the individual `channel` object definitions that the application must use during runtime. The `channels` represent the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
 
 The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
 Some of the fields `channels` object holds for each channel object are:
 
-- `address`: An string representation of this channel's address.
+- `address`: A string representation of this channel's address.
 - `messages`: A map of the messages that will be sent to this channel by any application at any time.
 - `title`: A human-readable title for the channel.
 - `summary`: A short yet brief summary of the channel.
 - `description`: A description of the channel, providing additional context and details of the message.
-- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers is absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
+- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers are absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
 - `parameters`: A map of the parameters included in the channel address.
 - `tags`: A list of tags for logical grouping of channels.
 - `externalDocs`: Additional external documentation for this channel.
@@ -207,7 +206,7 @@ The `operations` object is located within the AsyncAPI document and is separate 
 
 Some of the fields `operations` object holds for each `operation` object are:
 
-- `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect receiving messages from the given channel.
+- `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect to receive messages from the given channel.
 - `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
 - `title`:	A human-friendly title for the operation.
 - `summary`: A short summary of what the operation is about.
@@ -288,7 +287,7 @@ reply:
 ### `Components` object
 The `components` object in an AsyncAPI document serves as a container for reusable structures or definitions that can be used across different parts of the AsyncAPI document. It allows you to define and manage common elements such as message schemas, security schemes, headers, and other custom components that are referenced throughout the API specification.
 
-All objects defined within the `components` object will have no effect on the spcific API unless they are explicitly referenced from properties outside the components object.
+All objects defined within the `components` object will not affect the specific API unless they are explicitly referenced from properties outside the components object.
 
 The purpose of the `components` object is to promote reusability and maintainability of the AsyncAPI document. By centralizing common definitions in the components section, you can avoid duplicating code and ensure consistency across different parts of the API specification. It also enhances the readability and understandability of the document by providing a clear separation of concerns.
 
@@ -308,7 +307,7 @@ Some of the fields `components` object holds are:
 - `externalDocs`: An object to hold reusable [External Documentation Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#externalDocumentationObject).
 - `tags`: An object to hold reusable [Tag Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#tagObject).
 - `operationTraits`: An object to hold reusable [Operation Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationTraitObject).
-- `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusuable [Message Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageTraitObject).
+- `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusable [Message Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageTraitObject).
 - `serverBindings`: An object to hold reusable [Server Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverBindingsObject).
 - `channelBindings`: An object to hold reusable [Channel Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelBindingsObject).
 - `operationBindings`: An object to hold reusable [Operation Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationBindingsObject).
