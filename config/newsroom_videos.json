@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/zSbv4ibqYds/hqdefault.jpg",
+    "title": "Community Meeting(October 17th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/912.",
+    "videoId": "zSbv4ibqYds"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KTnFoXY_evs/hqdefault.jpg",
     "title": "Hacktoberfest (October 6th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/894.",
@@ -22,11 +28,5 @@
     "title": "Spec 3.0 meeting (September 6, 2023)",
     "description": "https://github.com/asyncapi/community/issues/857.",
     "videoId": "OYcOkQhwVNg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
-    "title": "Generator and new parser discussion (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/865.",
-    "videoId": "b4KcouHm958"
   }
 ]
