@@ -2,14 +2,10 @@ const { readdir, writeFile, readFile } = require('fs').promises;
 const { convertToJson } = require('../utils');
 const { resolve } = require('path');
 
-const dirWithAdopters = 'config/adopters';
 module.exports = async function buildAdoptersList() {
-    let files = await readdir(dirWithAdopters);
     let AdoptersList = [];
     try {
-        for (let file of files) {
-            const AdoptersFileName = [dirWithAdopters, file].join('/');
-            const AdoptersContent = await readFile(AdoptersFileName, 'utf-8');
+            const AdoptersContent = await readFile('config/adopters/adopters.yml', 'utf-8');
             const jsonContent = convertToJson(AdoptersContent);
             
             AdoptersList.push(jsonContent);
@@ -18,7 +14,7 @@ module.exports = async function buildAdoptersList() {
                 JSON.stringify(AdoptersList)
             )
         }
-    } catch (err) {
+     catch (err) {
         console.log(err);
         throw err
     }
