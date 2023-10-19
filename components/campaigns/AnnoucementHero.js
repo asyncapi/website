@@ -52,7 +52,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           <Button
             href="https://www.youtube.com/watch?v=FN5eR1Zqh9c"
             target="_blank"
-            text="Join us Live"
+            text="Join us live"
             data-testid="AnnouncementHero-submit-session"
           />
         </div>
