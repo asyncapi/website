@@ -67,10 +67,10 @@ Server -->> Client: Response
 In Slack, WebSocket is employed as part of its [Socket Mode](https://api.slack.com/apis/connections/socket) feature to facilitate real-time notifications between Slack's servers and third-party applications or bots. Socket Mode makes it easier to create Slack apps without dealing with complex infrastructure issues. Building these apps using HTTP had challenges when working from certain environments. With Socket Mode, this becomes simpler and more feature-rich for app developers.
 
 
-The [Slack Event API](https://api.slack.com/apis/connections/events-api) is a tool that lets developers receive real-time notifications of specific events in a Slack workspace. By subscribing to event types like messages, reactions, and user presence changes, third-party apps can react to these events instantly. This API enhances automation and interactivity within the Slack platform, making it a powerful resource for building custom integrations and chatbots.
+The [Slack Event API](https://api.slack.com/apis/connections/events-api) is a tool that lets developers receive real-time notifications of specific events in a Slack workspace. By subscribing to event types like messages, reactions, and user presence changes, third-party apps can react to these events instantly. The API enhances automation and interactivity within the Slack platform, making it a powerful resource for building custom integrations and chatbots.
 
 ## Create AsyncAPI document
-In this section, you will learn how to write an AsyncAPI document for the Slackbot. This document will serve as a resource for understanding and interacting with your Slackbot, making it easier for others to integrate and work with your API.
+In this section, you will learn how to write an AsyncAPI document for the Slackbot. The document will serve as a resource for understanding and interacting with your Slackbot, making it easier for others to integrate and work with your API.
 
 **Step 1: Define AsyncAPI Version, API Information, and Server**
 
@@ -90,7 +90,7 @@ servers:
     description: "Websocket URL generated to communicate with Slack"
 
 ```
-You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slackbot API. This includes details such as the `title`, `version` and `description`.
+You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slackbot API which includes details such as the `title`, `version` and `description`.
 
 In the `ws` server section, the WebSocket URL is generated at runtime by invoking the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API. You use the authorization tokens obtained during the Slackbot configuration to generate this URL.
 
@@ -119,9 +119,9 @@ Now, moving on to the `channel` section, you have the `reactionListener` channel
 
 **Step 3: Define Messages and Schemas**
 
-Next up, we have the  `messages` section and this is where things get slightly technical. In the context of your Slackbot, it actively listens for the "reaction_added" event type which gets triggered each time a user reacts to a message using an emoji.
+Next up comes the  `messages` section and this is where things get slightly technical. In the context of your Slackbot, it actively listens for the "reaction_added" event type which gets triggered each time a user reacts to a message using an emoji.
 
-Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. This is where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
+Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. Here's where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
 
 ```
 components:
@@ -162,7 +162,7 @@ components:
 And that brings us to what the `payload` attribute does. It specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
 For example, in this schema definition, any API message received from this channel must follow the constant value for the "reaction" property which is clearly defined as “heart”.
 
-This feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
+The const value feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
 
 And there you have it! Putting these blocks together gives you your AsyncAPI document all ready to go.
 
