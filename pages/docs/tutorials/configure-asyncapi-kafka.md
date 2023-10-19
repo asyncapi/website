@@ -50,11 +50,11 @@ servers:
 
 In the above snippet:
 
-- The AsyncApi field indicates that you are using AsyncAPI version 3.0.0.
+- The `asyncapi` field indicates that you are using AsyncAPI version 3.0.0.
   
-- The info field provides information about the API. Here the the APIs title, version, and description are being defined.
+- The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
   
-- The server field specifies the details of the server, including the hostname, description, and the protocol that is being used i.e. Kafka.
+- The `server` field specifies the details of the server, including the `hostname`, `description`, and the `protocol` that is being used i.e. Kafka.
 
 ### Step 2: Define Channels and Operations
 
@@ -77,9 +77,9 @@ channels:
 
 In the above snippet:
 
-- The operation object specifies onUserSignedUp operation. The action property suggests that the operation will be receiving the information. The channel and message properties point to the channel where the operation occurs and the message associated with the operation.
+- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` and `message` properties point to the channel where the operation occurs and the message associated with the operation.
   
-- The channel object describes the userSignedUp event, where your API will be publishing/subscribing to the information.
+- The `channels` object describes the userSignedUp event, where your API will be publishing/subscribing to the information.
 
 ### Step 3: Define Messages and Schemas
 
@@ -104,7 +104,7 @@ In the above snippet:
 
 - The userSignedUp message is defined which describes the payload of the event.
   
-- The payload property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain a user-id which is an integer and a user-email property which is a string property
+- The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain a user-id which is an integer and a user-email property which is a string property
 
 
 ## Summary
