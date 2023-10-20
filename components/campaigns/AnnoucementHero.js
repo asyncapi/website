@@ -18,7 +18,7 @@ function shouldShowBanner(cfpDeadline) {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-10-20T06:00:00Z'
+    const cfpDeadline = '2023-10-28T06:00:00Z'
     const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
@@ -42,31 +42,17 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-<<<<<<< HEAD
-          Bangalore Edition
+          Paris Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          30th of November, 2023 | Bangalore, India
+          8th of December, 2023 | Paris, France
         </Paragraph>
         <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://conference.asyncapi.com/venue/Bangalore"
+            href="https://conference.asyncapi.com/venue/Paris"
             target="_blank"
             text="Submit a Session"
-=======
-           Madrid Edition
-        </Heading>
-        <Paragraph typeStyle="body-lg">
-          The Madrid Edition is happening now!!!
-        </Paragraph>
-        {/* <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers" /> */}
-        <div className="mt-6 pb-2 space-x-2">
-          <Button
-            href="https://www.youtube.com/watch?v=FN5eR1Zqh9c"
-            target="_blank"
-            text="Join us live"
->>>>>>> 9f40adf49be8e385cee65a3ebcdb6fb9d81ed496
             data-testid="AnnouncementHero-submit-session"
           />
         </div>
