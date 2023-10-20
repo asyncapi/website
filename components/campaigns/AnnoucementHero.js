@@ -2,10 +2,10 @@ import Paragraph from '../typography/Paragraph'
 import Button from '../buttons/Button'
 import Heading from '../typography/Heading'
 import Container from '../layout/Container'
-// import AnnouncementRemainingDays from './AnnouncementRamainingDays'
+import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
 function shouldShowBanner(cfpDeadline) {
-  const currentDate = new Date(); // Get the current date
+  const currentDate = new Date(); // G et the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
