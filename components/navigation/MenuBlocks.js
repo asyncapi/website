@@ -24,7 +24,7 @@ export default function MenuBlocks ({
                   <Paragraph typeStyle="body-md" textColor="text-gray-900" fontWeight="font-semibold">
                     <span className={item.comingSoon && 'opacity-50'} >{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
                   </Paragraph>
-                  <Paragraph typeStyle="body-sm" className={item.comingSoon && 'opacity-50'}>
+                  <Paragraph typeStyle="body-sm" className={`${item.comingSoon ? 'opacity-50' : ''} whitespace-pre-line`}>
                     {item.description}
                   </Paragraph>
                 </div>
