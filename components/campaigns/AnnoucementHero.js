@@ -5,8 +5,7 @@ import Container from '../layout/Container'
 import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
 function shouldShowBanner(cfpDeadline) {
-  const currentDate = new Date(); // Get the current date
-  console.log(currentDate)
+  const currentDate = new Date(); // G et the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
@@ -19,7 +18,7 @@ function shouldShowBanner(cfpDeadline) {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-10-19T06:00:00Z'
+    const cfpDeadline = '2023-10-28T06:00:00Z'
     const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
@@ -43,15 +42,15 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-          Bangalore Edition
+          Paris Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          30th of November, 2023 | Bangalore, India
+          8th of December, 2023 | Paris, France
         </Paragraph>
         <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="the end of Call for Speakers" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://conference.asyncapi.com/venue/Bangalore"
+            href="https://conference.asyncapi.com/venue/Paris"
             target="_blank"
             text="Submit a Session"
             data-testid="AnnouncementHero-submit-session"
