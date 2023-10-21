@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 36.75834735990512
+      "score": 37.619871126152894
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -64,6 +64,17 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDOCVQpZM5M_dcV",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "DocsUI: Messages Object output",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
+      "repo": "asyncapi/asyncapi-react",
+      "labels": [],
+      "score": 16.36895155870775
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -143,17 +154,6 @@
           "color": "FF8AE2"
         }
       ],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOBW5R_c5RI5z2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add testimonial carousel",
-      "author": "Lucif3r-in",
-      "resourcePath": "/asyncapi/website/pull/1704",
-      "repo": "asyncapi/website",
-      "labels": [],
       "score": 13.210031082465903
     }
   ],
