@@ -59,6 +59,7 @@ export default function ToolDashboard() {
       }
     }, 1000)
   }, [])
+
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
   useEffect(() => {
     const checkIfClickOutside = (e) => {
