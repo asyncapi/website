@@ -1,0 +1,33 @@
+name: Tools preview on PR level
+
+on:
+  workflow_dispatch:
+
+jobs:
+  suggestChanges:
+    if: github.repository == 'asyncapi/website'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Regenerate
+      run: npm run generate:tools
+
+    - name: Suggest changes
+      run: |
+        git diff > changes.diff
+        if [[ -s changes.diff ]]; then
+          # Adding suggestions with changes
+          gh pr review ${{ github.event.pull_request.number }} --comment -b "Changes based on the regeneration: \n\n\`\`\`diff\n$(cat changes.diff)\n\`\`\`"
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
