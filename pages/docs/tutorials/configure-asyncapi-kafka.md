@@ -17,7 +17,7 @@ Basically, you want to build a system that can track the users who have signed u
   
 - Your application will connect to the broker and receive a stream of events from the users who have signed up. 
 
-## Background Context
+## Background context
 
 [Event-driven architecture (EDA)](/docs/tutorials/getting-started/event-driven-architectures) is a design pattern that revolves around the production, detection, and reaction to events over time. It consists of three main components: a message broker, event publishers, and subscribers, which together serve as the backbone for event exchange within different services. 
 
@@ -27,7 +27,7 @@ Basically, you want to build a system that can track the users who have signed u
 
 ## Creating AsyncAPI document for Kafka
 
-In this section, you’ll create an AsyncAPI document to describe the UserSignUp API. The same document can be later used to generate code and documentation as per requirement. 
+In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement. 
 
 ### Step 1: Define AsyncAPI Version, API Information, and Server
 
