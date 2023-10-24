@@ -4,9 +4,8 @@ description: In this tutorial, you'll learn how to configure an AsyncAPI documen
 weight: 80
 ---
 
-## Introduction
 
-In this tutorial, you will learn how to create a schema document for Kafka Messages using AsyncAPI. Additionally, you will learn about event-driven architecture, pub/sub model, and brokers concerning Kafka. 
+In this tutorial, you will learn how to create a schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
   
 Let’s assume, you have a service that publishes data to a Kafka topic whenever a new user signs up into the application.
 
@@ -43,7 +42,7 @@ info:
     The API notifies you whenever a new user signups into the application
 servers:
   kafkaServer:
-    host: kafka://test.mykafkacluster.org:8092/
+    host: test.mykafkacluster.org:8092
     description: "Kafka Server"
     protocol: kafka
 ```
@@ -54,11 +53,11 @@ In the above snippet:
   
 - The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
   
-- The `server` field specifies the details of the server, including the `hostname`, `description`, and the `protocol` that is being used i.e. Kafka.
+- The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka.
 
 ### Step 2: Define Channels and Operations
 
-Next, let's move on to the channels and operations section. The channels are like topics in Kafka, they are the routes to which your API will be publishing/subscribing. The Operations section is used to describe a specific operation like how the services must interact with the channels.
+Next, let's move on to the channels and operations section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The Operations section is used to describe a specific operation like how the services must interact with the channels.
 
 ```
 operations:
@@ -77,9 +76,9 @@ channels:
 
 In the above snippet:
 
-- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` and `message` properties point to the channel where the operation occurs and the message associated with the operation.
+- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` property points to the channel where the operation occurs.
   
-- The `channels` object describes the userSignedUp event, where your API will be publishing/subscribing to the information.
+- The `channels` object describes the userSignedUp event, where your API will be sending/receiving the information and the associated message definition.
 
 ### Step 3: Define Messages and Schemas
 
