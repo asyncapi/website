@@ -9,7 +9,7 @@ module.exports = async function buildAdoptersList() {
         
         await writeFile(
             resolve(__dirname, '../../config', 'adopters.json'),
-            JSON.stringify([jsonContent])
+            JSON.stringify(jsonContent)
         );
     } catch (err) {
         console.error(err);

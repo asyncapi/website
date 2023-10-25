@@ -71,7 +71,7 @@ export default function Casestudies() {
             </tr>
           </thead>
           <tbody>
-            {AdoptersList[0].map((entry, index) => (
+            {AdoptersList.map((entry, index) => (
               <tr key={index}>
                 <td className="border-2 p-2">{entry.companyName}</td>
                 <td className="border-2 p-2">{entry.useCase}</td>
