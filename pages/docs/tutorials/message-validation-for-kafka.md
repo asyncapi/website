@@ -4,7 +4,7 @@ description: The goal of this tutorial is to help you validate messages for Kafk
 weight: 100
 ---
 
-# Message Validation for Kafka 
+[Comment] <> (Add an image to show a process - flowchart)
 
 ## Introduction
 
@@ -24,19 +24,17 @@ By the end of this tutorial, you will:
 	What is Kafka?
 	Why do people use Kafka with AsyncAPI?
 
-### Prerequisites
-
 [comment:] <> (What does the reader need to accomplish this task?)
 
 
-## Installation / Validation
+## Installation Guide
 	
 ### Validating at the Broker level
 
 ### Validating at the client level
 
 
-### Summary
+## Summary
 
 [comment:] <> (Here is what we learned and did.)
 
