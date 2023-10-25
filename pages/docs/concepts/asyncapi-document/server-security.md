@@ -11,17 +11,23 @@ You can secure a server by using the `security` property where you define or dec
 
 Here is a example of adding security to your server:
 ```yml
-asyncapi: '3.0.0'
+asyncapi: 3.0.0
 info:
-  title: My AsyncAPI
-  version: '1.0.0'
+  title: Streetlights Kafka API
+  version: 1.0.0
 servers:
-  production:
-    url: api.example.com
-    protocol: amqp
+  scram-connections:
+    host: 'test.mykafkacluster.org:18092'
+    protocol: kafka-secure
+    description: Test broker secured with scramSha256
     security:
-      - saslScram: []
-      - certs: []
+      - $ref: '#/components/securitySchemes/saslScram'
+  mtls-connections:
+    host: 'test.mykafkacluster.org:28092'
+    protocol: kafka-secure
+    description: Test broker secured with X509
+    security:
+      - $ref: '#/components/securitySchemes/certs'
 components:
   securitySchemes:
     saslScram:
@@ -35,19 +41,30 @@ components:
 Here is a illustration of securing servers: 
 ```mermaid
 graph LR
-  A[asyncapi: '3.0.0'] --> B[info]
-  A --> C[servers]
-  A --> D[components]
-  D --> I
-  D --> J
+  A[Servers]
+  B[server-object1]
+  C[server-object2]
+  F[host]
+  G[host]
+  H[protocol]
+  I[protocol]
+  D[security]
+  E[security]
 
-  B --> E[title, version]
+  A --> B
+  B --> F
+  C --> G
+  A --> C
+  B --> D
+  C --> E
+  B --> H
+  C --> I
 
-  C -->F[production]
-  F --> G[url, protocol, security]
-  G -->|Security Schemes| H[saslScram, certs]
-  I[type, description]
-  J[type, description]
+  style A fill:#47BCEE,stroke:#000;
+  style B fill:#47BCEE,stroke:#000;
+  style C fill:#47BCEE,stroke:#000;
+  style D fill:#47BCEE,stroke:#000;
+  style E fill:#47BCEE,stroke:#000
 ```
 
 Here are some of the security schemes that AsyncAPI supports:
