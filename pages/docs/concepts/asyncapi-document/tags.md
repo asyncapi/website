@@ -78,7 +78,6 @@ graph LR
   B --> C[host]
   B --> D[description]
   B --> E[protocol]
-  B --> F[protocolVersion]
   B --> G[tags]
   G --> H[name]
   G --> I[description]
@@ -127,14 +126,9 @@ Here's a visual representation of the `tags` object inside a `channels` object i
 graph LR
   A[channel]
   B(address)
-  C(title)
   D(description)
   E(messages)
-  H(parameters)
-  J(servers)
-  M(bindings)
   P(tags)
-  R(externalDocs)
   F(name)
   G(description)
   I(externalDocs)
@@ -142,14 +136,9 @@ graph LR
 
   Z --> A
   A --> B
-  A --> C
   A --> D
   A --> E
-  A --> H
-  A --> J
-  A --> M
   A --> P
-  A --> R
   P --> F
   P --> G 
   P --> I 
@@ -188,16 +177,9 @@ Here's a visual representation of the `tags` object inside a `operations` object
 ```mermaid
 graph LR
   A[operation]
-  B(title)
-  C(summary)
-  D(description)
   E(channel)
   F(action)
-  G(security)
   H(tags)
-  I(bindings)
-  J(traits)
-  K(messages)
   L(reply)
   M(address)
   N(channel)
@@ -207,16 +189,9 @@ graph LR
   Z(externalDocs)
   
   W --> A
-  A --> B
-  A --> C
-  A --> D
   A --> E
   A --> F
-  A --> G
   A --> H
-  A --> I
-  A --> J
-  A --> K
   A --> L
   L --> M
   L --> N
