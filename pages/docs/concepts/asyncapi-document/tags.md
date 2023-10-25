@@ -58,10 +58,14 @@ info:
   tags:
     - name: Applications
       description: All applications related topics. 
-      url: https://applications.example.com/docs
+      externalDocs:
+        description: More info about applications
+        url: https://applications.example.com/docs
     - name: Time
       description: All time related topics.
-      url: https://time.example.com/docs
+      externalDocs:
+        description: More info about time
+        url: https://time.example.com/docs
 ```
 
 ### `Tags` in `Servers` Object
@@ -89,23 +93,29 @@ graph LR
 
 Below is an example of the `tags` object inside the `servers` object in an AsyncAPI document:
 ```yaml
+asyncapi: 3.0.0
+
+info:
+  title: AsyncAPI Documentation
+  version: 1.0.0
+
 servers:
-    development:
-        host: localhost:5672
-        description: Development AMQP broker.
-        protocol: amqp
-        protocolVersion: 0-9-1
-        tags:
-            - name: "env:development"
-              description: "This environment is meant for developers to run their tests."
-    production:
-        host: rabbitmq.in.mycompany.com:5672
-        description: RabbitMQ broker for the production environment.
-        protocol: amqp
-        protocolVersion: 0-9-1
-        tags:
-            - name: "env:production"
-              description: "This environment is the live environment available for final users."
+  development:
+    host: localhost:5672
+    description: Development AMQP broker.
+    protocol: amqp
+    protocolVersion: 0-9-1
+    tags:
+      - name: "env:development"
+        description: "This environment is meant for developers to run their tests."
+  production:
+    host: rabbitmq.in.mycompany.com:5672
+    description: RabbitMQ broker for the production environment.
+    protocol: amqp
+    protocolVersion: 0-9-1
+    tags:
+      - name: "env:production"
+        description: "This environment is the live environment available for final users."
 ```
 
 ### `Tags` in `Channels` object
@@ -153,12 +163,19 @@ graph LR
 
 Below is an example of the `tags` object inside the `channels` object in an AsyncAPI document:
 ```yaml
+asyncapi: 3.0.0
+
+info:
+  title: AsyncAPI Documentation
+  version: 1.0.0
+
 channels:
   SignedUp:
     address: 'user.signedup'
     messages:
       userSignedUp:
-        $ref: '#/components/messages/userSignedUp'
+        payload:
+          type: object
     tags:
       - name: user
         description: User-related messages
