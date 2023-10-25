@@ -14,10 +14,8 @@ Validating messages with Kafka involves defining the message schemas using Async
 
 In this tutorial, you'll learn how to validate messages for Kafka. In addition, you'll learn more about EDAs, and the role of Kafka in validating messages.
 
-By the end of this tutorial, you will:
-* 
-* 
-* 
+By the end of this tutorial, you will ****
+
 
 ## Background context
 	Define a message.
