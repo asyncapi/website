@@ -4,7 +4,6 @@ description: The goal of this tutorial is to help you validate messages for Kafk
 weight: 100
 ---
 
-[Comment] <> (Add an image to show a process - flowchart that summarizes the tutorial)
 
 ## Introduction
 
@@ -16,6 +15,7 @@ In this tutorial, you'll learn how to validate messages for Kafka. In addition, 
 
 By the end of this tutorial, you will ****
 
+[Comment] <> (Add an image to show a process - flowchart that summarizes the tutorial)
 
 ## Background context
 	Define a message.
