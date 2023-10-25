@@ -1,6 +1,22 @@
 {
   "hotDiscussions": [
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 41.35314077989326
+    },
+    {
       "id": "PR_kwDOBW5R_c5Xb72L",
       "isPR": true,
       "isAssigned": false,
@@ -9,7 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 37.619871126152894
+      "score": 38.48139489240067
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -20,7 +36,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 27.56876051992884
+      "score": 28.430284286176615
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -55,6 +71,30 @@
       "score": 18.666348268701817
     },
     {
+      "id": "PR_kwDOBW5R_c5VAjCE",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 17.517649913704783
+    },
+    {
       "id": "PR_kwDOBW5R_c5Worbr",
       "isPR": true,
       "isAssigned": false,
@@ -63,7 +103,7 @@
       "resourcePath": "/asyncapi/website/pull/2008",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.65612614745701
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -108,6 +148,17 @@
       "score": 15.220253203710714
     },
     {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "MDU6SXNzdWUxMjMwODQwMDM4",
       "isPR": false,
       "isAssigned": false,
@@ -117,44 +168,6 @@
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 14.358729437462937
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
-      "id": "PR_kwDOCoBobc42aMuI",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: release for version 3.0.0 of the spec",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/parser-js/pull/526",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOBW5R_c5RVOOY",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Community cards implementation.",
-      "author": "Mayaleeeee",
-      "resourcePath": "/asyncapi/website/issues/930",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ],
-      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
@@ -731,29 +744,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385m6IlQ",
-      "title": "Add runtime testing for Kotlin",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1334",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Kotlin generator",
-          "color": "61A95C"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -828,7 +818,7 @@
     {
       "id": "I_kwDOFi_gUM5hpuWl",
       "title": "Improve kafka adapter",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/glee/issues/411",
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
@@ -1129,6 +1119,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     }
