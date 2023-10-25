@@ -65,18 +65,20 @@ operations:
     action: receive
     channel:
       $ref: "#/channels/userSignedUp"
-    messages:
-      - $ref: "#/components/messages/userSignedUp"
 
 
 channels:
   userSignedUp:
     description: When the User Signs up
+    address: 'user_signedup'
+    messages:
+      userSignedUp:
+        $ref: "#/components/messages/userSignedUp"
 ```
 
 In the above snippet:
 
-- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` property points to the channel where the operation occurs.
+- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` and `message` propertie points to the channel where the operation occurs and the message associated with the operation.
   
 - The `channels` object describes the userSignedUp event, where your API will be sending/receiving the information and the associated message definition.
 
