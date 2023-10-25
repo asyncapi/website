@@ -67,9 +67,7 @@ You start your AsyncAPI document by specifying the AsyncAPI version and essentia
 
 The `ws` server section allows you to define the protocol and specify information about the URLs your application will use, such as  `host`, `pathname`, and `description`.
 
-<Remember title="Note">
 The WebSocket URL is generated  by invoking the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API. You use the authorization tokens obtained during the Slack Bot configuration to generate this URL.
-</Remember>
 
 ```
 asyncapi: '3.0.0'
