@@ -9,7 +9,7 @@ In this tutorial, you will learn how to generate an AsyncAPI document designed f
 
 Consider a scenario where you are in charge of maintaining a highly active Slack workspace. You want an easy way to keep track of the popular messages across all the channels but doing this manually would be a difficult task. To simplify this process, you’re going to build a Slackbot called my-slack-bot that actively monitors reactions added to a message and determine its popularity by counting the reactions of the “heart” emoji.
 
-Here’s a visual representation of how your Slackbot should work.
+Here’s a visual representation of how my-slack-bot should work.
 
 ```mermaid
 sequenceDiagram
@@ -63,36 +63,35 @@ The [Slack Event API](https://api.slack.com/apis/connections/events-api) is a to
 
 ## Define AsyncAPI Version, API Information, and Server
 
-You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slackbot API which includes details such as the `title`, `version` and `description`.
+You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slack application's API which includes details such as the `title`, `version` and `description`.
 
 The `ws` server section allows you to define the protocol and specify information about the URLs your application will use, such as  `host`, `pathname`, and `description`.
 
-The WebSocket URL is generated  by invoking the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API. You use the authorization tokens obtained during the Slack Bot configuration to generate this URL.
+The WebSocket URL is generated  by invoking the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API. You use the authorization tokens obtained during the configuration of  my-slack-bot to generate this URL.
 
 ```
 asyncapi: '3.0.0'
 info:
-  title: SlackBot API
+  title: MySlackBot API
   version: '1.0.0'
   description:  |
     The SlackBot App manages popular messages in a workspace by monitoring message reaction data from Slack's Event API.
     
 servers:
   ws:
-    host: wss.slack.com/
-    pathname:  ticket=$ticketId&app_id=$appId      
-    protocol: ws
+    host: wss://wss-primary.slack.com/
+    pathname: link/?ticket=13748dac-b866-4ea7-b98e-4fb7895c0a7f&app_id=fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f
+    protocol: wss
     description: "Websocket URL generated to communicate with Slack"
-
 ```
 
 
 ## Define Operations and Channels
-The  `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how your Slackbot interacts with Slack.
+The  `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how your my-slack-bot interacts with Slack.
 
 In this example, we make use of two operations. The `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the reaction_added event type.
 
-Your Slackbot is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to receive events.
+Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to receive events.
 
 Now, moving on to the `channels` section. The `address` specifies where the channel is tuned in to receive messages while the `messages`  property  defines the structure of the event it's set up to handle.
 
@@ -122,11 +121,16 @@ operations:
       $ref: "#/channels/reactionListener"
 ```
 
-## Step 3: Define Messages and Schemas
+## Define Messages and Schemas
 
-In the context of your Slackbot, it actively monitors two events. The first is the "hello" event, received upon successfully securing a WebSocket connection. The second is the "reaction_added" event type, triggered whenever a user reacts to a message using an emoji.
+In the context of my-slack-bot, it actively monitors two events. The first is the "hello" event, received upon successfully securing a WebSocket connection. The second is the "reaction_added" event type, triggered whenever a user reacts to a message using an emoji.
 
 Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. Here's where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
+
+And that brings us to what the `payload` attribute does. It specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
+For example, in `reactionPayload` schema definition, any API message received from this channel must follow the constant value for the "reaction" property which is clearly defined as “heart”.
+
+The const value feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
 
 ```
 components:
@@ -194,10 +198,7 @@ components:
             approximate_connection_time:
               type: integer
 ```
-And that brings us to what the `payload` attribute does. It specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
-For example, in `reactionPayload` schema definition, any API message received from this channel must follow the constant value for the "reaction" property which is clearly defined as “heart”.
 
-The const value feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
 
 And there you have it! Putting these blocks together gives you your AsyncAPI document all ready to go.
 
