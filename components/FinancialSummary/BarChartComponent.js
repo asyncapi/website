@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import ExpensesLink from '../../config/finance/json-data/2023/ExpensesLink.json'
 import Expenses from '../../config/finance/json-data/2023/Expenses.json'
@@ -103,27 +103,27 @@ const BarChartComponent = () => {
         Amount: categoryAmounts[category],
     }));
 
-  // Create a ref for the handleResize function
-  const handleResizeRef = useRef(null);
+    // Create a ref for the handleResize function
+    const handleResizeRef = useRef(null);
 
-  // Define the handleResize function
-  handleResizeRef.current = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  // Update the window width when the component mounts and when the window is resized
-  useEffect(() => {
-    // Initial width
-    handleResizeRef.current();
-
-    // Listen for window resize events
-    window.addEventListener("resize", handleResizeRef.current);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResizeRef.current);
+    // Define the handleResize function
+    handleResizeRef.current = () => {
+        setWindowWidth(window.innerWidth);
     };
-  }, []);
+
+    // Update the window width when the component mounts and when the window is resized
+    useEffect(() => {
+        // Initial width
+        handleResizeRef.current();
+
+        // Listen for window resize events
+        window.addEventListener("resize", handleResizeRef.current);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("resize", handleResizeRef.current);
+        };
+    }, []);
 
 
     const barWidth = windowWidth < 900 ? null : 800;
@@ -136,7 +136,10 @@ const BarChartComponent = () => {
                     <h1 id="budget-analysis" className="text-3xl font-semibold mb-4 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
                     <div className="md:flex md:items-center md:justify-between md:m-8">
-                        <h4 className="text-md font-semibold my-4">Total Expenses:<br></br> ${totalAmount.toFixed(2)}</h4>
+                        <div>
+                            <p className="text-left">Expenses</p>
+                            <p class="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
+                        </div>
                         {/* Select for category filter */}
                         <div className="flex space-x-2">
                             <select
