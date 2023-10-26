@@ -38,7 +38,7 @@ User-->>Slack Server (Socket Mode): Adds emoji to a message.
 Slack Server (Socket Mode)->>my-slack-bot: Sending "reaction_added" payload
 
 
-Note left of my-slack-bot: Event received by Slackbot
+Note left of my-slack-bot: Event received
 ``` 
 
 ## Background context
@@ -75,7 +75,7 @@ info:
   title: MySlackBot API
   version: '1.0.0'
   description:  |
-    The SlackBot App manages popular messages in a workspace by monitoring message reaction data from Slack's Event API.
+    The MySlackBot App manages popular messages in a workspace by monitoring message reaction data from Slack's Event API.
     
 servers:
   ws:
@@ -87,9 +87,9 @@ servers:
 
 
 ## Define Operations and Channels
-The  `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how your my-slack-bot interacts with Slack.
+The  `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how my-slack-bot interacts with Slack.
 
-In this example, we make use of two operations. The `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the reaction_added event type.
+In this example, the `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the reaction_added event type.
 
 Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to receive events.
 
@@ -122,8 +122,6 @@ operations:
 ```
 
 ## Define Messages and Schemas
-
-In the context of my-slack-bot, it actively monitors two events. The first is the "hello" event, received upon successfully securing a WebSocket connection. The second is the "reaction_added" event type, triggered whenever a user reacts to a message using an emoji.
 
 Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. Here's where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
 
@@ -208,7 +206,7 @@ info:
   title: MySlackBot API
   version: '1.0.0'
   description:  |
-    The SlackBot App manages popular messages in a workspace by monitoring message reaction data from Slack's Event API.
+    The MySlackBot App manages popular messages in a workspace by monitoring message reaction data from Slack's Event API.
     
 servers:
   ws:
