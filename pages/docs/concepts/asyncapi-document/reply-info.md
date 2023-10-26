@@ -31,13 +31,15 @@ The second approach is when the requester already knows exactly where the respon
 ## Dynamic response Channel
 There are situations where you do not know the reply channel at the design time. Instead, the reply channel is dynamically determined at runtime, based on factors such as the request message payload or header. 
 
-In this case, since you don't know what the address of the reply channel is yet, you can either assign null to the `address` property or omit the property entirely indicating that the address is not known yet. You can now use `Operation Reply Address` object to dynamically specify where the reply has to be sent. The `Operation Reply Address` object has a property called `location` which essentially takes in a runtime expression that specifies the address of the reply channel.
+In the case where you don't know the address of the reply channel yet, you have the option to either assign null to the `address` property or omit the property entirely indicating that the address is not known at the moment. The `address` property being referred to in this case is part of the channel that the operation with the reply references to. To dynamically specify where the reply should be sent, you can use the `Operation Reply Address` object. The `Operation Reply Address` object has a property called `location` that allows you to define a runtime expression that specifies the address of the reply channel. 
+
+For example, you can use such an expression to specify that the reply should be sent to the channel specified by the requestor in the request header under a specific property, like REPLY_TOPIC.
 
 ```yml
 asyncapi: 3.0.0
 
 info:
-  title: Ping/pong example for dynamic reply channel sub-pattern
+  title: Ping/pong example for a requester with a dynamic reply channel
   version: 1.0.0
   description: Example with a requester that initiates the request/reply pattern where the reply will happen on whatever is defined in the header `replyTo` of the request.
 
@@ -64,16 +66,6 @@ operations:
         location: "$message.header#/replyTo"
       channel: 
         $ref: '#/channels/pong'
-  pongReply:
-    action: receive
-    channel: 
-      $ref: '#/channels/ping'
-    reply:
-      address:
-        description: The reply address is dynamically determined based on the request header `replyTo`
-        location: "$message.header#/replyTo"
-      channel: 
-        $ref: '#/channels/pong'
 ```
 
 ## Request/reply over the same channel
@@ -84,9 +76,9 @@ Here's a example of setting up both requestor and replier in the same channel:
 asyncapi: 3.0.0
 
 info:
-  title: Ping/pong example with requester
+  title: Ping/pong example with requester over the same channel
   version: 1.0.0
-  description: Requester example initiating the request-reply pattern.
+  description: Requester example initiating the request-reply pattern that are using the same channel for the reply
 
 channels:
   ping:
@@ -103,13 +95,6 @@ channels:
 operations:
   pingRequest:
     action: send
-    channel: 
-      $ref: '#/channels/ping'
-    reply:
-      channel: 
-        $ref: '#/channels/pong'
-  pongReply:
-    action: receive
     channel: 
       $ref: '#/channels/ping'
     reply:
