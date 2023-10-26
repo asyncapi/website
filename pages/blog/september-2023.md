@@ -1,28 +1,46 @@
 ---
-title: "Community Update: September 2023"
-date: 2023-10-02T06:00:00+01:00
+title: "Community Update: September & October 2023"
+date: 2023-11-03T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
-cover: /img/posts/2023-summary/blog-banner-september.webp
+cover: /img/posts/2023-summary/blog-banner-october.webp
 authors:
   - name: Thulisile Sibanda
     photo: /img/avatars/thulieblack.webp
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
-excerpt: 'September Community Update'
+excerpt: 'September and October Community Update'
 featured: true
 ---
 
-Our first in-person AsyncAPI Conf on Tour took place on the 20th of September, hosted by IBM in London. The day was packed with excellent sessions from esteemed industry experts. Although we planned the conference during the summer holidays, the turnout was great, and it was nice to finally interact with people who support and use AsyncAPI in person. We are excited and pleased to have received positive feedback from the participants, and we are grateful to the speakers for the informative sessions while enriching the event.
+Our second AsyncAPI Conf on Tour took place on the 19th of October, hosted by SNGULAR in Madrid. The day was well-organized, packed with informative talks from industry experts and great networking sessions, making it a valuable experience for attendees. Additionally, the conference was live-streamed, and every session was recorded, so even if you missed out on attending the event in person, you can still [watch the recordings on YouTube](https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_) and catch up on all the insightful talks.
+ Our gratitude goes to [Ivan Garcia Sainz-Aja](https://www.linkedin.com/in/ivangarciasainzaja/) for helping us bring SNGULAR on board, plan, and host the event.
 
-## AACoT'23 Madrid Edition
-We're excited that AACoT'23 is heading to Madrid next on the 19th of October, and Sngular will host us. Our full-day agenda is now live on the [AsyncAPI conference website](https://conference.asyncapi.com/venue/Madrid), and we have excellent sessions and fantastic speakers lined up.
-If you know someone or are interested in joining us in person, please fill out the [Free Ticket Form](https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform) and get ready to learn more about EDAs and experience the culture in Madrid. We can't wait to see everyone there!
 
-## Call for Proposals
-The Call for Speakers for both [AACoT'23 Bangalore](https://conference.asyncapi.com/venue/Bangalore) and [AACoT'23 Paris](https://conference.asyncapi.com/venue/Paris) are now open! If you have an idea for a talk that focuses on AsyncAPI spec or tools or an idea that will benefit the community, make sure to submit a session proposal. The deadline for AACoT'23 Bangalore will be on the 12th of October and for AACoT'23 Paris on the 20th of October, so make sure to head over to the [AsyncAPI conference website](https://conference.asyncapi.com/) and share your ideas and insights with the community.
+## AACoT'23 Bangalore Edition
+We're excited that AACoT'23 is heading to Bangalore next on the 30th of November, and Postma will be hosting us. Our full-day agenda will be live soon on the [AsyncAPI conference website](https://conference.asyncapi.com/venue/Bangalore), and we have excellent sessions and fantastic speakers lined up.
+If you know someone or are interested in joining us in person, [get your tickets](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187) and get ready to learn more about EDAs and experience the culture in Bangalore. We can't wait to see everyone there!
 
-## Coming in October
-- **AsyncAPI Community Updates Newsletter** - The next issue will drop on the 5th of October. Make sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter). 
-- **AACoT'23 Madrid Edition** - Our next stop for AACoT'23 will be held at the [Sngular Madrid office](https://www.sngular.com/) on the 19th of October. [Be sure to fill out the free tickets form](https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform) to join us. See you there!
+
+## Spec x Tooling
+[Sergio Moya](https://github.com/smoya), [Peter Ramos](https://github.com/peter-rr), and the team are currently working on measuring the AsyncAPI adoption by collecting metrics through the usage of our tools. If you are interested in participating or following up on the progress, you can join the public discussion on [Measuring AsyncAPI Adoption](https://github.com/asyncapi/community/issues/879).
+
+We're excited to share that we have migrated Modelina from v1 to v2. The new version will focus more on creating accurate array types. For more information, please check out the [Modelina v2 migration guide](https://modelina.org/docs/migrations/version-1-to-2). 
+
+## Mentorship Program
+The first evaluation for the 2nd cohort of the AsyncAPI Mentorship Program just concluded, and we are happy that [all the mentees participating](https://github.com/orgs/asyncapi/discussions/907) are doing well in their projects. They are now eligible to request the first half of their stipend, which they will [submit and expense via Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship-2023). We are proud and can't wait for the final results.
+
+
+## AsyncAPI Bounty Program
+After a successful trial, we are happy that the official AsyncAPI Bounty Program is in full swing. The program will be run by three outstanding individuals, [Viacheslav Turovskyi](https://github.com/aeworxet), [Aishat Muibudeen](https://github.com/Mayaleeeee), and [Abir Pal](https://github.com/imabp), who will ensure the rules are correctly implemented and oversee the smooth running of the program. 
+[Maintainers can now submit issues they'd like to participate in this Bounty Issue Q4 submission](://github.com/orgs/asyncapi/discussions/908).
+
+## In Case You Missed It
+Missed the live streaming of AACoT'23 Madrid? Don't fret catch up on all the sessions by watching the recordings.
+
+<YouTube id="FN5eR1Zqh9c?si" />
+
+## Coming in November
+- **AsyncAPI Community Updates Newsletter** - The next issue will drop on the 9th of November. Make sure to [subscribe to the AsyncAPI Newsletter](https://www.asyncapi.com/newsletter). 
+- **AACoT'23 Bangalore Edition** - Our next stop for AACoT'23 will be held at the [Postman Bangalore office](https://www.postman.com/company/about-postman/) on the 30th of November. [Be sure to get your tickets](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187) to join us. See you there!
