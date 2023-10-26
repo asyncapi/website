@@ -1,0 +1,74 @@
+{
+    "main": {
+        "header": "이벤트 중심 아키텍처(EDA)의",
+        "subHeader": "미래를 구축합니다",
+        "body_pretext": "이벤트 중심 아키텍처를 쉽게 구축하고 유지 관리할 수 있는 오픈 소스 도구입니다. 모두 비동기 API 정의를 위한 ",
+        "body_boldtext": "업계 표준인",
+        "body_posttext": " AsyncAPI 사양을 기반으로 제공합니다.",
+        "docs_btn": "문서 읽어보기",
+        "search_btn": "빠른 검색...",
+        "slogan_text": "일원이 된 것을 자랑스럽게 생각합니다: ",
+        "slogan_link": "리눅스 재단"
+    },
+    "features": {
+        "title": "왜 AsyncAPI인가요?",
+        "description": "이벤트 중심 아키텍처(EDA)의 현재 상태 개선",
+
+        "specification.name": "명세화",
+        "specification.description": "비동기 API의 인터페이스를 정의할 수 있으며 프로토콜에 구애받지 않습니다.",
+        "specification.links.whyasyncapi-spec-documentation-link": "문서",
+
+        "document-apis.name": "API 문서",
+        "document-apis.description": "우리의 도구를 사용하여 빌드 수준, 서버 및 클라이언트에서 문서를 생성하세요.",
+        "document-apis.links.whyasyncapi-apis-htmltemplate-link": "HTML 템플릿",
+        "document-apis.links.whyasyncapi-apis-reactcomponents-link": "React 컴포넌트",
+
+        "code-generation.name": "코드 생성",
+        "code-generation.description": "AsyncAPI 파일에서 문서, 코드(TypeScript, Java, C# 등) 등을 생성합니다.",
+        "code-generation.links.whyasyncapi-generation-generator-link": "Generator",
+        "code-generation.links.whyasyncapi-generation-modelina-link": "Modelina",
+
+        "community.name": "커뮤니티",
+        "community.description": "AsyncAPI와 이벤트 중심 아키텍처에 열정을 갖고 있는 훌륭한 사람들로 구성된 커뮤니티입니다.",
+        "community.links.whyasyncapi-community-slack-link": "Slack에 가입하기",
+
+        "open-governance.name": "개방형 거버넌스",
+        "open-governance.description": "우리의 오픈 소스 프로젝트는 리눅스 재단의 일부이며 개방형 거버넌스 모델에 따라 작동합니다.",
+        "open-governance.links.whyasyncapi-governance-more-link": "개방형 거버넌스에 대해 더 알아보기",
+        "open-governance.links.whyasyncapi-governance-tsc-link": "TSC Members",
+
+        "much-more.name": "더 많은 것들...",
+        "much-more.description": "우리는 다양한 툴을 보유하고 있으며, AsyncAPI에 우리의 아이디어를 탐색하고 새로운 아이디어를 제안해 주신 것을 환영합니다.",
+        "much-more.links.whyasyncapi-muchmore-github-link": "GitHub Discussions 확인하기"
+    },
+    "adopters": {
+        "title": "세계의 많은 브랜드에서 채택되었습니다",
+        "description": "이 브랜드들은 이미 프로덕션에서 AsyncAPI를 사용하고 있습니다. 당신의 회사는 AsyncAPI를 사용하고 있으며 목록에 포함되기를 원하나요?",
+        "linkText": "여기서 알려 드릴게요!"
+    },
+    "community": {
+        "title": "우리의 훌륭한 커뮤니티에 참가하세요!",
+        "subtitle": "우리는 AsyncAPI 및 이벤트 중심 아키텍처에 대해 열정을 가지고 있는 훌륭한 사람들로 구성된 커뮤니티입니다.",
+        "slackCTATitle": "Slack Workspace 참여하기",
+        "slackCTADesc": "슬랙 작업 공간에 참여해 주신 모든 분들을 환영합니다. AsyncAPI 사용법에 대해 질문이 있거나, 기여를 하고 싶거나, 단순히 인사만 해도 좋아요 👋 &nbsp;저희는 좋은 사람들입니다 🙂",
+        "slackCTABtn": "가입하기!",
+        "meetingTitle": "공개 미팅에 참여하기",
+        "meetingDesc": "AsyncAPI는 매주 다른 회의를 개최합니다. 때로는 순수한 기술적인 주제와 때로는 커뮤니티 구축에 대한 주제로 진행됩니다. 하나를 선택하고 참여하세요!",
+        "meetingLink": "미팅에 대해 자세히 알아보기"
+    },
+    "sponsors": {
+        "platinumTitle": "플래티넘 후원사",
+        "goldTitle": "골드 후원사",
+        "silverTitle": "실버 후원사",
+        "sponsorCTATitle": "후원하고 싶나요?",
+        "sponsorCTADesc": "이 훌륭한 조직들은 이미 AsyncAPI를 지원하고 있습니다. 후원자가 되시겠습니까?",
+        "sponsorCTALink": "후원하기!",
+        "supportedByTitle": "지원사",
+        "supportedByPretext": "아래 회사들은 자사 제품을 무료로 사용할 수 있도록 지원하고 있습니다. 지원에 관심이 있으신가요?",
+        "supportedByLink": "메일을 보내",
+        "supportedByPosttext": " 자세한 정보를 받으세요."
+    },
+    "testimonials": {
+        "title": "전문가들의 의견"
+    }
+}

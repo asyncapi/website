@@ -1,0 +1,25 @@
+{
+    "cli": {
+        "title": "CLI를 통한 Async API와 상호 작용",
+        "description": "CLI 도구를 사용하여 AsyncAPI 파일을 생성, 검증 및 탐색할 수 있습니다.",
+        "installationTitle": "설치 & 사용법",
+        "installationDescription": "시작할 명령 중 하나를 선택하여 몇 초 이내에 AsyncAPI CLI 사용을 시작하세요.",
+        "docsButton": "문서 보기",
+        "installingTitle": "설치",
+        "exampleTitle": "예제",
+        "exampleDescription": "새로운 AsyncAPI 파일 만들기",
+        "featuresTitle": "기능",
+        "featuresDescription": "AsyncAPI CLI 도구를 사용하여 AsyncAPI 파일을 생성, 개발 및 유지 관리할 수 있습니다.",
+        "features": {
+            "new-files.name": "새 파일",
+            "new-files.description": "CLI 도구를 사용하여 새 AsyncAPI 파일을 빠르게 만듭니다. 템플릿 종류(MQTT, WebSockets, Kafka 등) 중에서 선택합니다",
+            "validate.name": "검증",
+            "validate.description": "CLI를 사용하여 AsyncAPI 문서의 유효성을 검사합니다. 빠른 피드백을 받아 AsyncAPI 문서가 올바른 형식인지 확인합니다.",
+            "open-studio.name": "스튜디오 열기",
+            "open-studio.description_pretext": "로컬에 AsyncAPI 파일이 있나요?",
+            "open-studio.description_posttext": "를 실행해 몇 초 안에 스튜디오에서 열 수 있습니다.",
+            "open-source.name": "오픈 소스",
+            "open-source.description": "모든 도구들은 오픈 소스이므로 언제든지 새로운 명령어를 만들거나 기존 명령에 기여하세요."
+        }
+    }
+}
