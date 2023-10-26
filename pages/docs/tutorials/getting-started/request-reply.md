@@ -70,7 +70,45 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-While the above example is a simple implementation of request/reply pattern, in an protocol-agnostic world there are many different sub-patterns to the simple request/reply. All of which are supported by AsyncAPI.
+While the above example is a simple implementation of request/reply pattern, in an protocol-agnostic world there are many different ways to represent the simple request/reply. All of which are supported by AsyncAPI.
 
-## Sub-patterns
-### Dynamic Response Channel 
+## Dynamic Response Channel 
+Sometimes, you do not know where the reply needs to be sent and is determined dynamically at runtime.
+
+Here's how you can dynamically determine the reply channel:
+```yml
+asyncapi: 3.0.0
+
+info:
+  title: Ping/pong example for a requester with a dynamic reply channel
+  version: 1.0.0
+  description: Example with a requester that initiates the request/reply pattern where the reply will happen on whatever is defined in the header `replyTo` of the request.
+
+channels:
+  ping:
+    address: /ping
+    messages:
+      ping:
+        $ref: '#/components/messages/ping'
+  pong:
+    address: null
+    messages:
+      pong:
+        $ref: '#/components/messages/pong'
+
+operations:
+  pingRequest:
+    action: send
+    channel: 
+      $ref: '#/channels/ping'
+    reply:
+      address:
+        description: The reply address is dynamically determined based on the request header `replyTo`
+        location: "$message.header#/replyTo"
+      channel: 
+        $ref: '#/channels/pong'
+```
+
+In the above example, since we don't know the address or the reply channel at the design time, you can set the `address` property to null or you can choose to omit entirely. You can use the `Operation Reply Address ` object to to define the address of the reply channel dynamically using a runtime expression. 
+
+In this case, we use `$message.header#/replyTo` as the value of the `location` which is a runtime expression and determines where the reply channel is by using the value of the `replyTO` header in the request message. 
