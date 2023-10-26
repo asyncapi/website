@@ -4,7 +4,7 @@ const { resolve } = require('path');
 
 module.exports = async function buildAdoptersList() {
     try {
-        const AdoptersContent = await readFile('config/adopters/adopters.yml', 'utf-8');
+        const AdoptersContent = await readFile('config/adopters.yml', 'utf-8');
         const jsonContent = convertToJson(AdoptersContent);
         
         await writeFile(
