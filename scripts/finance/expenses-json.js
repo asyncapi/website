@@ -10,8 +10,7 @@ function readYamlFromFile(filePath) {
         const parsedYaml = yaml.parse(yamlContent); // Parse YAML using the "yaml" package
         return parsedYaml;
     } catch (error) {
-        console.error('Error reading YAML file:', error.message);
-        throw error;
+        throw new Error('Error reading YAML file:', error.message);
     }
 }
 

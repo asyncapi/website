@@ -11,7 +11,7 @@ function SuccessStories() {
                         Success Stories
                     </h1>
                     <p className="my-3 max-w-4xl mx-auto text-lg text-darkGunMetal text-center">
-                        Thanks to financial support we can already see many<br></br> success stories in
+                        Thanks to financial support we can already see many<br class="hidden lg:inline-block"></br> success stories in
                         the project.
                     </p>
                     </div>

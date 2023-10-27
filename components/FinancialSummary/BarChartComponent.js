@@ -1,8 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
-import ExpensesLink from '../../config/finance/json-data/2023/ExpensesLink.json'
-import Expenses from '../../config/finance/json-data/2023/Expenses.json'
-
+import React, { useState, useEffect, useRef } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import ExpensesLink from '../../config/finance/json-data/2023/ExpensesLink.json';
+import Expenses from '../../config/finance/json-data/2023/Expenses.json';
+import { getUniqueCategories } from '../../lib/getUniqueCategories';
+/**
+ * CustomTooltip component for the bar chart. Displays additional information on hover.
+ *
+ * @param {Object} props - The component's props.
+ * @param {boolean} props.active - Indicates if the tooltip is active.
+ * @param {Object[]} props.payload - An array of data points.
+ * @returns {JSX.Element} The rendered CustomTooltip component.
+ */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         const data = payload[0].payload;
@@ -17,21 +25,24 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-const getUniqueCategories = () => {
-    const allCategories = [];
-    for (const month in Expenses) {
-        Expenses[month].forEach(entry => {
-            if (!allCategories.includes(entry.Category)) {
-                allCategories.push(entry.Category);
-            }
-        });
-    }
-    return allCategories;
-};
+/**
+ * Retrieves unique expense categories from the Expenses data.
+ *
+ * @returns {string[]} An array of unique expense categories.
+ */
 
 const months = Object.keys(Expenses);
 const categories = getUniqueCategories();
 
+/**
+ * Card component displays monthly expense data.
+ *
+ * @param {Object} props - The component's props.
+ * @param {string} props.month - The month for which expenses are displayed.
+ * @param {Object[]} props.data - The expense data for the month.
+ * @param {Object[]} props.links - Links to additional information for each category.
+ * @returns {JSX.Element} The rendered Card component.
+ */
 const Card = ({ month, data, links }) => {
     return (
         <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-56 overflow-hidden">
@@ -54,6 +65,11 @@ const Card = ({ month, data, links }) => {
     );
 };
 
+/**
+ * ExpensesCard component displays a grid of expense cards for each month.
+ *
+ * @returns {JSX.Element} The rendered ExpensesCard component.
+ */
 const ExpensesCard = () => {
     return (
         <div className="overflow-x-auto">
@@ -66,6 +82,11 @@ const ExpensesCard = () => {
     );
 };
 
+/**
+ * BarChartComponent displays a budget analysis bar chart with filtering options.
+ *
+ * @returns {JSX.Element} The rendered BarChartComponent component.
+ */
 const BarChartComponent = () => {
     // State for selected filters
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -125,7 +146,6 @@ const BarChartComponent = () => {
         };
     }, []);
 
-
     const barWidth = windowWidth < 900 ? null : 800;
     const barHeight = windowWidth < 900 ? null : 400;
 
@@ -138,7 +158,7 @@ const BarChartComponent = () => {
                     <div className="md:flex md:items-center md:justify-between md:m-8">
                         <div>
                             <p className="text-left">Expenses</p>
-                            <p class="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
+                            <p className="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                         </div>
                         {/* Select for category filter */}
                         <div className="flex space-x-2 mt-3">
@@ -194,4 +214,4 @@ const BarChartComponent = () => {
     );
 };
 
-export default BarChartComponent
+export default BarChartComponent;
