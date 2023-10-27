@@ -98,8 +98,10 @@ npm run build
 Generated files of the website go to the `.next` folder.
 
 ### Run locally using Docker
-Prerequisites:
-- Docker installed
+
+#### Prerequisites:
+
+- [install Docker](https://docs.docker.com/get-docker/)
 
 #### Steps:
 1. Build the Docker image:
