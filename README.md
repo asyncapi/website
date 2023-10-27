@@ -108,17 +108,12 @@ Prerequisites:
     ```
 2. Start the container:
     ```bash
-    docker run -d -p 3000:3000 asyncapi-website
+    docker run --rm -it -v "$PWD":/async -p 3000:3000 asyncapi-website
     ```
-##### Note: To run a Docker container from the image, mapping the local fork of the repo to the container, run the following command (build the image first!)
-```bash
-docker run -d -v "$PWD":/async -p 3000:3000 asyncapi-website
-```
 
-##### To shutdown the Docker container:
-```bash
-docker run --rm
-```
+Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
+
+
 ## Case studies
 
 ### Overview
