@@ -18,7 +18,7 @@ function AsyncAPISummary() {
                     </Paragraph>
                 </div>
             </div>
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-20">
                 <Button
                     text="Become a Sponsor"
                     href="https://opencollective.com/asyncapi#category-CONTRIBUTE"
@@ -39,15 +39,16 @@ function AsyncAPISummary() {
 
             <div className="text-center">
                 <a href="https://opencollective.com/asyncapi" target='_blank'>
-                    <img className="mx-4 inline w-10 h-10" src="/img/logos/OpenCollective.svg" alt="Open Collective" />
+                    <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/OpenCollective.svg" alt="Open Collective" />
                 </a>
                 <a href="https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc" target='_blank'>
-                    <img className="mx-4 inline w-10 h-10" src="/img/logos/LFX.svg" alt="Linux Foundation" />
+                    <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/LFX.svg" alt="Linux Foundation" />
                 </a>
                 <a href="https://github.com/sponsors/asyncapi" target='_blank'>
-                    <img className="mx-4 inline w-10 h-10" src="/img/logos/github-black.svg" alt="Github" />
+                    <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/github-black.svg" alt="Github" />
                 </a>
             </div>
+
         </div>
     );
 }

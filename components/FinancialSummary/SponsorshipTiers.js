@@ -11,8 +11,8 @@ function SponsorshipTiers() {
                     </Heading>
 
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-auto text-base text-darkGunMetal">
-                        AsyncAPI offers various sponsorship tiers, each with its own set<br></br>
-                        of benefits and privileges. These tiers include Bronze, Silver,<br></br>
+                        AsyncAPI offers various sponsorship tiers, each with its own set<br class="hidden lg:inline-block"></br>
+                        of benefits and privileges. These tiers include Bronze, Silver,<br class="hidden lg:inline-block"></br>
                         Gold, and Platinum.
                     </Paragraph>
                 </div>

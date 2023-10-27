@@ -34,7 +34,7 @@ const categories = getUniqueCategories();
 
 const Card = ({ month, data, links }) => {
     return (
-        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-52 overflow-hidden">
+        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-56 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
             <div className="flex flex-col justify-center overflow-x-auto">
                 {data.map((item, index) => (
@@ -141,7 +141,7 @@ const BarChartComponent = () => {
                             <p class="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                         </div>
                         {/* Select for category filter */}
-                        <div className="flex space-x-2">
+                        <div className="flex space-x-2 mt-3">
                             <select
                                 className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs"
                                 value={selectedCategory}

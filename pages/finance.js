@@ -41,13 +41,13 @@ function FinancialSummary() {
       <StickyNavbar>
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      <AsyncAPISummary />
-      <SponsorshipTiers />
-      <OtherFormsComponent />
-      <ExpenseBreakdown />
-      <BarChartComponent />
-      <SuccessStories />
-      <ContactUs />
+      <AsyncAPISummary className="px-4 sm:px-6 lg:px-8" />
+      <SponsorshipTiers className="px-4 sm:px-6 lg:px-8" />
+      <OtherFormsComponent className="px-4 sm:px-6 lg:px-8" />
+      <ExpenseBreakdown className="px-4 sm:px-6 lg:px-8" />
+      <BarChartComponent className="px-4 sm:px-6 lg:px-8" />
+      <SuccessStories className="px-4 sm:px-6 lg:px-8" />
+      <ContactUs className="px-4 sm:px-6 lg:px-8" />
     </>
   );
 
