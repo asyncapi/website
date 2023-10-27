@@ -103,6 +103,9 @@ Generated files of the website go to the `.next` folder.
 
 - [install Docker](https://docs.docker.com/get-docker/)
 
+
+After cloning repository to your local, perform the following steps from the root of the repository.
+
 #### Steps:
 1. Build the Docker image:
     ```bash 
