@@ -104,7 +104,7 @@ Prerequisites:
 #### Steps:
 1. Build the Docker image:
     ```bash 
-    docker build -t asyncapi-website -f Dockerfile .`
+    docker build -t asyncapi-website .`
     ```
 2. Start the container:
     ```bash
