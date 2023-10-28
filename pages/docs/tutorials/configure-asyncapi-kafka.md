@@ -4,6 +4,7 @@ description: In this tutorial, you'll learn how to configure an AsyncAPI documen
 weight: 80
 ---
 
+## Introduction
 
 In this tutorial, you will learn how to create a schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
   
@@ -29,7 +30,7 @@ Basically, you want to build a system that can track the users who have signed u
 
 In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement. 
 
-### Step 1: Define AsyncAPI Version, API Information, and Server
+### Define AsyncAPI Version, API Information, and Server
 
 Initially, you need to describe your application, including the AsyncAPI version, the info about the document, and the server your application is based upon.
 
@@ -55,7 +56,7 @@ In the above snippet:
   
 - The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka.
 
-### Step 2: Define Channels and Operations
+### Define Channels and Operations
 
 Next, let's move on to the channels and operations section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The Operations section is used to describe a specific operation like how the services must interact with the channels.
 
@@ -78,11 +79,11 @@ channels:
 
 In the above snippet:
 
-- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` and `message` propertie points to the channel where the operation occurs and the message associated with the operation.
+- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` property points to the channel where the operation occurs.
   
-- The `channels` object describes the userSignedUp event, where your API will be sending/receiving the information and the associated message definition.
+- The `channels` object describes the userSignedUp event, where your API will be sending/receiving the information and the associated message definition. The `address` field represents the path of the channel and the `messages` field describes the structure of the message. 
 
-### Step 3: Define Messages and Schemas
+### Define Messages and Schemas
 
 Finally, you'll define the messages and their payload. The payload defines how the event would look line that will be sent from the channel.
 
