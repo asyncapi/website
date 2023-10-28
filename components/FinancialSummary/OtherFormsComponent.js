@@ -4,11 +4,11 @@ import Paragraph from '../typography/Paragraph'
 
 function OtherFormsComponent() {
     return (
-        <div>
-            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center bg-[#F5F5F5]">
+        <div className="px-4 sm:px-6 lg:px-8 bg-[#F5F5F5]">
+            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center">
                 <div className="col-start-2 col-span-7 my-12">
                     <div className="mx-2">
-                        <Heading className="mt-10 mb-5 mx-3 text-base">
+                        <Heading className="mt-10 mb-5 mx-3 text-center text-base">
                             Other Forms Of Financial Support
                         </Heading>
                         <Paragraph typeStyle="body-md" className="mb-3 max-w-4xl mx-auto text-center text-darkGunMetal">

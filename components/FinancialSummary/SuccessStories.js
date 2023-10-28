@@ -3,11 +3,11 @@ import Paragraph from '../typography/Paragraph'
 
 function SuccessStories() {
     return (
-        <div>
-            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16 bg-purple-100">
+        <div className="px-4 sm:px-6 lg:px-8 bg-purple-100">
+            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16">
                 <div className="col-start-2 col-span-7 my-12">
                     <div className="mx-2">
-                    <h1 id="success-stories" className="font-bold my-3 mx-3 text-4xl">
+                    <h1 id="success-stories" className="font-bold text-center my-3 mx-3 text-4xl">
                         Success Stories
                     </h1>
                     <p className="my-3 max-w-4xl mx-auto text-lg text-darkGunMetal text-center">

@@ -4,7 +4,7 @@ import Paragraph from '../typography/Paragraph'
 
 function ContactUs() {
     return (
-        <div>
+        <div className="px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-4">
                 <div className="col-start-3 col-span-5">
                     <div className="mx-2">

@@ -150,18 +150,18 @@ const BarChartComponent = () => {
     const barHeight = windowWidth < 900 ? null : 400;
 
     return (
-        <div className="flex justify-center items-center mt-8">
+        <div className="flex justify-center items-center sm:px-6 lg:px-8 mt-8">
             <div className="w-full lg:w-2/3 px-4 text-center">
                 <div className='mb-5'>
                     <h1 id="budget-analysis" className="text-3xl font-semibold mb-4 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
-                    <div className="md:flex md:items-center md:justify-between md:m-8">
+                    <div className="flex justify-between my-4 md:flex md:items-center md:justify-between md:m-8">
                         <div>
                             <p className="text-left">Expenses</p>
                             <p className="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                         </div>
                         {/* Select for category filter */}
-                        <div className="flex space-x-2 mt-3">
+                        <div className="flex space-x-2 mt-3 justify-end">
                             <select
                                 className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs"
                                 value={selectedCategory}

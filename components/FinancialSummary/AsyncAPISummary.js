@@ -4,7 +4,7 @@ import Paragraph from '../typography/Paragraph'
 
 function AsyncAPISummary() {
     return (
-        <div>
+        <div className="px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8 mx-4">
                 <div className="col-start-3 col-span-5">
                     <Heading level="h2" className="text-5xl my-3 mx-3">
@@ -32,8 +32,8 @@ function AsyncAPISummary() {
             </div>
             <div className="text-center my-4 text-base max-width text-darkGunMetal">
                 <Paragraph typeStyle="body-sm" className="my-4">
-                    The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br />there are alternative options,
-                    they may involve greater effort. Contribute <br />monetarily using the following channels.
+                    The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br class="hidden lg:inline-block"></br>there are alternative options,
+                    they may involve greater effort. Contribute <br class="hidden lg:inline-block"></br>monetarily using the following channels.
                 </Paragraph>
             </div>
 

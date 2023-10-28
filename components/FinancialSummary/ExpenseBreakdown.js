@@ -3,11 +3,11 @@ import Paragraph from '../typography/Paragraph'
 
 function ExpenseBreakdown() {
     return (
-        <div>
-            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mb-16 bg-[#EFFAFE]">
+        <div className="px-4 sm:px-6 lg:px-8 bg-[#EFFAFE]">
+            <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mb-16">
                 <div className="col-start-2 col-span-7 my-12">
                     <div className="mx-2">
-                        <Heading className="my-3 mx-3 text-base">
+                        <Heading className="my-3 mx-3 text-center text-base">
                             Expense Breakdown
                         </Heading>
                         <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-auto text-center text-darkGunMetal">

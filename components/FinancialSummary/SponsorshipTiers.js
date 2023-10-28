@@ -3,7 +3,7 @@ import Paragraph from '../typography/Paragraph'
 
 function SponsorshipTiers() {
     return (
-        <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mt-16 bg-purple-100">
+        <div className="grid lg:grid-cols-9 lg:gap-8 px-4 sm:px-6 lg:px-8 lg:text-center mt-16 bg-purple-100">
             <div className="col-start-2 col-span-7 my-12">
                 <div id="sponsorship" className="mx-2">
                     <Heading level="h1" typeStyle="heading-md my-3 mx-3">
@@ -11,7 +11,7 @@ function SponsorshipTiers() {
                     </Heading>
 
                     <Paragraph typeStyle="body-md" className="my-3 max-w-4xl mx-auto text-base text-darkGunMetal">
-                        AsyncAPI offers various sponsorship tiers, each with its own set<br class="hidden lg:inline-block"></br>
+                        AsyncAPI offers various sponsorship tiers, each with its own set <br class="hidden lg:inline-block"></br>
                         of benefits and privileges. These tiers include Bronze, Silver,<br class="hidden lg:inline-block"></br>
                         Gold, and Platinum.
                     </Paragraph>
