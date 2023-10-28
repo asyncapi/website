@@ -12,11 +12,11 @@ Let’s assume, you have a service that publishes data to a Kafka topic whenever
 
 Basically, you want to build a system that can track the users who have signed up for your application, the entire flow of the application would be:
 
-- You will implement an event-driven architecture with a message broker in its center. As a central piece, the broker will act as an orchestrator for sending and receiving messages between different system parts. 
-  
-- The service will publish information whenever the user signs up to the broker.
-  
-- Your application will connect to the broker and receive a stream of events from the users who have signed up. 
+graph LR
+    Service[Service] -->|Publishes Event| Broker[Message Broker]
+    App[Your Application] -->|Connects to a topic| Broker
+    Broker -->|Sends Event Stream| App
+
 
 ## Background context
 
@@ -108,7 +108,10 @@ In the above snippet:
   
 - The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain a user-id which is an integer and a user-email property which is a string property
 
-
 ## Summary
 
-In this tutorial, you learned how to create an AsyncAPI specification document via a real-world example. This tutorial is just a starting point; you'll need to add your own business logic to it. Take some time to play with it. There are still lots of things to be covered, but the intent of this tutorial is to make it simple for you to get an idea of the potential.
+In this tutorial, you learned how to create an AsyncAPI specification document for Kafka. You generated an AsyncAPI document which defines the structure of the Kafka messages in a machine readabe format which makes it easier to maintian event driven architecture. Try adding your own buisness logic and playing around with it.
+
+## Next Steps
+
+Now that you know how to write an AsyncAPI document, proceed to learn how to validate your message in Kafka using AsyncAPI.
