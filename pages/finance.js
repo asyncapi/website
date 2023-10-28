@@ -33,7 +33,7 @@ function FinancialSummary() {
   const description = "Financial Summary of AsyncAPI";
 
   const renderComponents = () => (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -48,7 +48,7 @@ function FinancialSummary() {
       <BarChartComponent/>
       <SuccessStories/>
       <ContactUs/>
-    </div>
+    </>
   );
 
   const shouldUseContainer = windowWidth > 1700;
