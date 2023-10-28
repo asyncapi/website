@@ -12,10 +12,12 @@ Let’s assume, you have a service that publishes data to a Kafka topic whenever
 
 Basically, you want to build a system that can track the users who have signed up for your application, the entire flow of the application would be:
 
-graph LR
+```mermaid
+flowchart TD
     Service[Service] -->|Publishes Event| Broker[Message Broker]
     App[Your Application] -->|Connects to a topic| Broker
     Broker -->|Sends Event Stream| App
+```    
 
 
 ## Background context
