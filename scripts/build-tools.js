@@ -6,19 +6,45 @@ const manualTools = require('../config/tools-manual.json')
 const fs = require('fs');
 const { resolve } = require('path');
 
-const buildTools = async () => {
-  try {
-    let githubExtractData = await getData();
-    let automatedTools = await convertTools(githubExtractData);
-    fs.writeFileSync(
-      resolve(__dirname, '../config', 'tools-automated.json'),
-      JSON.stringify(automatedTools, null, '  ')
-    );
-    await combineTools(automatedTools, manualTools);
-  } catch (err) {
-    console.log(err);
-    throw err
-  }
+const combineAutomatedAndManualTools = async (automatedTools) => {
+    try {
+        await combineTools(automatedTools, manualTools);
+    } catch (err) {
+        console.log("Error while combining tools:", err);
+        throw err;
+    }
 };
 
-buildTools();
+const buildTools = async () => {
+    try {
+        let githubExtractData = await getData();
+        let automatedTools = await convertTools(githubExtractData);
+        fs.writeFileSync(
+            resolve(__dirname, '../config', 'tools-automated.json'),
+            JSON.stringify(automatedTools, null, '  ')
+        );
+        await combineAutomatedAndManualTools(automatedTools);
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+};
+
+const buildToolsManual = async () => {
+    try {
+        const automatedTools = require('../config/tools-automated.json');
+        await combineAutomatedAndManualTools(automatedTools);
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+};
+
+if (require.main === module) {
+    buildTools();
+}
+
+module.exports = {
+    buildTools,
+    buildToolsManual
+};
