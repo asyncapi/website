@@ -20,13 +20,13 @@ const buildTools = async () => {
     let githubExtractData = await getData();
     let automatedTools = await convertTools(githubExtractData);
     fs.writeFileSync(
-        resolve(__dirname, '../config', 'tools-automated.json'),
-        JSON.stringify(automatedTools, null, '  ')
+      resolve(__dirname, '../config', 'tools-automated.json'),
+      JSON.stringify(automatedTools, null, '  ')
     );
     await combineAutomatedAndManualTools(automatedTools);
   } catch (err) {
     console.log(err);
-    throw err;
+    throw err
   }
 };
 
