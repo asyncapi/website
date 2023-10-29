@@ -11,9 +11,9 @@ weight: 100
 
 Validating messages with Kafka involves defining the message schemas using AsyncAPI, and then using those schemas to validate incoming and outgoing messages in your Kafka-based applications. 
 
-In this tutorial, you'll learn how to validate messages for Kafka. In addition, you'll learn more about EDAs, and the role of Kafka in validating messages.
+In this tutorial, you'll learn how to validate messages for Kafka. 
 
-By the end of this tutorial, you will ****
+
 
 [Comment] <> (Add an image to show a process - flowchart that summarizes the tutorial)
 
@@ -29,8 +29,14 @@ By the end of this tutorial, you will ****
 	
 ## Broker-Level Message Validation
 
+Integrating message validation with Kafka producers
+Validating outgoing messages before sending to Kafka
+
+
 ## Client-Level Message Validation
 
+Integrating message validation with Kafka consumers
+Validating incoming messages before processing
 
 ## Summary
 
