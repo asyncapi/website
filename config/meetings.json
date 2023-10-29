@@ -1,19 +1,5 @@
 [
   {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aGdqYmk0NDdiMGE4cGo4NzFuaWxycjNiYmsgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/761",
-    "banner": "",
-    "date": "2023-07-19T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NzU0aGMxOWY5MmYyYzA3OTduazF0MWZqY2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/790",
-    "banner": "",
-    "date": "2023-07-20T14:30:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Docs Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=cG9iOHNqZGlrbmg4cnUxanMzMTgyN3AxdnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/792",
@@ -33,13 +19,6 @@
     "url": "https://github.com/asyncapi/community/issues/798",
     "banner": "https://user-images.githubusercontent.com/40604284/252807786-f93110e3-c344-4080-9c4f-9d32cb324680.png",
     "date": "2023-07-25T08:00:00.000Z"
-  },
-  {
-    "title": "Design meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=czVxbG5jZXV2MThxczJjczdhMmtxZzE1djAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/800",
-    "banner": "",
-    "date": "2023-07-18T08:00:00.000Z"
   },
   {
     "title": "Community Meeting",
