@@ -19,7 +19,7 @@ Our second AsyncAPI Conf on Tour took place on the 19th of October, hosted by SN
 
 
 ## AACoT'23 Bangalore Edition
-We're excited that AACoT'23 is heading to Bangalore next on the 30th of November, and Postma will be hosting us. Our full-day agenda will be live soon on the [AsyncAPI conference website](https://conference.asyncapi.com/venue/Bangalore), and we have excellent sessions and fantastic speakers lined up.
+We're excited that AACoT'23 is heading to Bangalore next on the 30th of November, and Postman will be hosting us. Our full-day agenda will be live soon on the [AsyncAPI conference website](https://conference.asyncapi.com/venue/Bangalore), and we have excellent sessions and fantastic speakers lined up.
 If you know someone or are interested in joining us in person, [get your tickets](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187) and get ready to learn more about EDAs and experience the culture in Bangalore. We can't wait to see everyone there!
 
 
