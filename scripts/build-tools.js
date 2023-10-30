@@ -40,6 +40,7 @@ const buildToolsManual = async () => {
   }
 };
 
+// Default action when triggered from package.json or run standalone.
 if (require.main === module) {
   buildTools();
 }
