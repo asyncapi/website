@@ -9,4 +9,7 @@ module.exports = defineConfig({
     video : false,
     screenshotOnRunFailure : false
   },
+  retries: {
+    runMode: 3
+  }
 });
