@@ -26,7 +26,7 @@ If you know someone or are interested in joining us in person, [get your tickets
 ## Spec x Tooling
 [Sergio Moya](https://github.com/smoya), [Peter Ramos](https://github.com/peter-rr), and the team are currently working on measuring the AsyncAPI adoption by collecting metrics through the usage of our tools. If you are interested in participating or following up on the progress, you can join the public discussion on [Measuring AsyncAPI Adoption](https://github.com/asyncapi/community/issues/879).
 
-We're excited to share that we have migrated Modelina from v1 to v2. The new version will focus more on creating accurate array types. For more information, please check out the [Modelina v2 migration guide](https://modelina.org/docs/migrations/version-1-to-2). 
+We're excited to share that we have successfully migrated Modelina from v1 to v2. The new version will focus more on creating accurate array types. For more information, please check out the [Modelina v2 migration guide](https://modelina.org/docs/migrations/version-1-to-2). 
 
 ## Mentorship Program
 The first evaluation for the 2nd cohort of the AsyncAPI Mentorship Program just concluded, and we are happy that [all the mentees participating](https://github.com/orgs/asyncapi/discussions/907) are doing well in their projects. They are now eligible to request the first half of their stipend, which they will [submit and expense via Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship-2023). We are proud and can't wait for the final results.
