@@ -34,7 +34,7 @@ The first evaluation for the 2nd cohort of the AsyncAPI Mentorship Program just 
 
 ## AsyncAPI Bounty Program
 After a successful trial, we are happy that the official AsyncAPI Bounty Program is in full swing. The program will be run by three outstanding individuals, [Viacheslav Turovskyi](https://github.com/aeworxet), [Aishat Muibudeen](https://github.com/Mayaleeeee), and [Abir Pal](https://github.com/imabp), who will ensure the rules are correctly implemented and oversee the smooth running of the program. 
-[Maintainers can now submit issues they'd like to participate in this Bounty Issue Q4 submission](://github.com/orgs/asyncapi/discussions/908).
+
 
 ## In Case You Missed It
 Missed the live streaming of AACoT'23 Madrid? Don't fret! Catch up on all the sessions by watching the recordings.
