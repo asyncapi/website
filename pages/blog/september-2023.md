@@ -29,7 +29,7 @@ If you know someone or are interested in joining us in person, [get your tickets
 We're excited to share that we have successfully migrated Modelina from v1 to v2. The new version will focus more on creating accurate array types. For more information, please check out the [Modelina v2 migration guide](https://modelina.org/docs/migrations/version-1-to-2). 
 
 ## Mentorship Program
-The first evaluation for the 2nd cohort of the AsyncAPI Mentorship Program just concluded, and we are happy that [all the mentees participating](https://github.com/orgs/asyncapi/discussions/907) are doing well in their projects. They are now eligible to request the first half of their stipend, which they will [submit and expense via Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship-2023). We are proud and can't wait for the final results.
+The first evaluation for the 2nd cohort of the AsyncAPI Mentorship Program just concluded, and we are happy that [all the mentees participating](https://github.com/orgs/asyncapi/discussions/907) are doing well in their projects. They are now eligible to request the first half of their stipend by [submitting an expense through Open Collective](https://opencollective.com/asyncapi/projects/asyncapi-mentorship-2023). We are proud and can't wait for the final results.
 
 
 ## AsyncAPI Bounty Program
@@ -37,7 +37,7 @@ After a successful trial, we are happy that the official AsyncAPI Bounty Program
 [Maintainers can now submit issues they'd like to participate in this Bounty Issue Q4 submission](://github.com/orgs/asyncapi/discussions/908).
 
 ## In Case You Missed It
-Missed the live streaming of AACoT'23 Madrid? Don't fret catch up on all the sessions by watching the recordings.
+Missed the live streaming of AACoT'23 Madrid? Don't fret! Catch up on all the sessions by watching the recordings.
 
 <YouTube id="FN5eR1Zqh9c?si" />
 
