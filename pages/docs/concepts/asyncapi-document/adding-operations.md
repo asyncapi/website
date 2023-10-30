@@ -13,78 +13,48 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 - The purpose of these operations is to provide a standardized means for describing the process of publishing, subscribing to, requesting, or replying to messages within the messaging system.
 
-## Adding Operations
+## Defining Operations
 
-<<<<<<< HEAD
-`operations` are no longer under `channels` in AsyncAPI Spec 3.0.0, instead, `operations` are separate objects in the AsyncAPI document on the same level. 
-`channels` can be linked within `operations` by referencing them within the `channels`, just like the following example -
-=======
-For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
->>>>>>> ea076418ab78d66461395ed61bde92c967204bf7
+Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for it's definition. More information about each field names that are used to define operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
+Additionally, an example to show the usage of each field names in defining operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationsObject).
 
-```
-onUserSignUp:
-  title: User sign up
-  summary: Action to sign a user up.
-  description: A longer description
-  channel:
-    $ref: '#/channels/userSignup'
-```
+The following diagram briefs the important field names that are frequently used to define AsyncAPI operations in Spec 3.0.0 -
 
-<<<<<<< HEAD
-Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for it's definition -
-=======
-- Locate the `channels` section in your AsyncAPI document. The `channels` section defines the messaging channels and their associated operations.
->>>>>>> ea076418ab78d66461395ed61bde92c967204bf7
-
-|  Field Name | Type | Description |
-|---|---|---|
-| title | string | An easy to understand headline about the operation |
-| summary | string | A brief overview of the purpose of the operation |
-| description | string | A detailed explanation of the operation |
-| Channel | Reference Object Link | A `ref` pointer to the definition of the channel in which the operation is performed |
-| Action | "send" or "receive" | Uses `send` when the application sends a message to the given channel, and uses `receive` when the application receives a message from the given channel |
-| Tags | Tag Object | List of tags for logical grouping and categorization of operations |
-| Bindings | Bindings Object | A map where keys store the name of protocol and the values store protocol-specific definitions for the operation |
-| Traits | Traits Object | A list of traits to apply to the operation object. Traits must be merged using Traits Merge Mechanism. The resulting object should be a valid Operation Object |
-
-<<<<<<< HEAD
-```
-onUserSignUp:
-  title: User sign up
-  summary: Action to sign a user up.
-  description: A longer description
-  channel:
-    $ref: '#/channels/userSignup'
-  action: send
-  tags:
-    - name: user
-    - name: signup
-    - name: register
-  bindings:
-    amqp:
-      ack: false
-  traits:
-    - $ref: '#/components/operationTraits/kafka'
-=======
-- Inside the channel definition, specify the desired operations by creating sub-properties for each operation. Common operations include `publish`, `subscribe`, `publishSubscribe`, `requestReply`, and `request`.
-
-- For each operation, define its details using the appropriate keywords and properties. These details typically include the operation type, payload schema, headers, bindings, and other relevant information.
-
-```mermaid
 flowchart TD
 style A fill:#E5EE8C,stroke:#333,stroke-width:2px
-style B fill:#F3A06A,stroke:#333,stroke-width:2px
-style C fill:#CBF399,stroke:#333,stroke-width:2px
-style D fill:#F5B5EF,stroke:#333,stroke-width:2px
-style E fill:#F568A8,stroke:#333,stroke-width:2px
-    A(Open AsyncAPI document) --> B(Locate the `channels` section)
-    B --> C(Add a new channel)
-    C --> D(Specify operations)
-    D --> E(Define operation details)
- classDef labelStyle color:#000000;
-    class A,B,C,D,E,F,G,H,I,J labelStyle;
->>>>>>> ea076418ab78d66461395ed61bde92c967204bf7
+style B fill:#CBF399,stroke:#333,stroke-width:2px
+style C fill:#F5B5EF,stroke:#333,stroke-width:2px
+style D fill:#F568A8,stroke:#333,stroke-width:2px
+
+style E fill:#B40486,stroke:#333,stroke-width:2px
+style F fill:#86B404,stroke:#333,stroke-width:2px
+style G fill:#01A9DB,stroke:#333,stroke-width:2px
+style H fill:#F781F3,stroke:#333,stroke-width:2px
+
+  A[Fields required to define AsyncAPI Operations] -->|1| B[Summary]
+  A -->|2| C[Description]
+  A -->|3| D[Channel]
+  A -->|4| E[Action]
+  A -->|5| F[Tags]
+  A -->|6| G[Bindings]
+  A -->|7| H[Traits]
+
+classDef labelStyle color:#000000;
+    class A,B,C,D,E,F,G,H labelStyle;
+
+## Adding Operations
+
+`operations` are no longer under `channels` in AsyncAPI Spec 3.0.0, instead, `operations` are separate objects in the AsyncAPI document on the same level. 
+`channels` can be linked within `operations` by referencing them within the `channels`, just like the following example - 
+
+```
+onUserSignUp:
+  title: User sign up
+  summary: Action to sign a user up.
+  description: A longer description
+  action: send
+  channel:
+    $ref: '#/channels/userSignup'
 ```
 
 ## Types
