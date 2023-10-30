@@ -11,12 +11,15 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 - In a messaging channel, an operation represents a particular action or interaction that can be performed. 
 
-- The purpose of these operations is to provide a standardized means for describing the process of publishing, subscribing to, requesting, or replying to messages within the messaging system.
+- The purpose of these operations is to provide a standardized means for describing the process of sending, receiving from, requesting, or replying to messages within the messaging system.
 
 ## Defining Operations
 
 Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for it's definition. More information about each field names that are used to define operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
 Additionally, an example to show the usage of each field names in defining operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationsObject).
+`operations` are separate objects in the AsyncAPI document on the same level. 
+`channels` can be linked within `operations` by referencing them within the `channels`, just like the following example -
+For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
 
 The following diagram briefs the important field names that are frequently used to define AsyncAPI operations in Spec 3.0.0 -
 
@@ -46,6 +49,19 @@ classDef labelStyle color:#000000;
 
 `operations` are no longer under `channels` in AsyncAPI Spec 3.0.0, instead, `operations` are separate objects in the AsyncAPI document on the same level. 
 `channels` can be linked within `operations` by referencing them within the `channels`, just like the following example - 
+Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for it's definition -
+- Locate the `channels` section in your AsyncAPI document. The `channels` section defines the messaging channels and their associated operations.
+
+|  Field Name | Type | Description |
+|---|---|---|
+| title | string | An easy to understand headline about the operation |
+| summary | string | A brief overview of the purpose of the operation |
+| description | string | A detailed explanation of the operation |
+| Channel | Reference Object Link | A `ref` pointer to the definition of the channel in which the operation is performed |
+| Action | "send" or "receive" | Uses `send` when the application sends a message to the given channel, and uses `receive` when the application receives a message from the given channel |
+| Tags | Tag Object | List of tags for logical grouping and categorization of operations |
+| Bindings | Bindings Object | A map where keys store the name of protocol and the values store protocol-specific definitions for the operation |
+| Traits | Traits Object | A list of traits to apply to the operation object. Traits must be merged using Traits Merge Mechanism. The resulting object should be a valid Operation Object |
 
 ```
 onUserSignUp:
@@ -55,6 +71,18 @@ onUserSignUp:
   action: send
   channel:
     $ref: '#/channels/userSignup'
+  channel:
+    $ref: '#/channels/userSignup'
+  action: send
+  tags:
+    - name: user
+    - name: signup
+    - name: register
+  bindings:
+    amqp:
+      ack: false
+  traits:
+    - $ref: '#/components/operationTraits/kafka'
 ```
 
 ## Types
