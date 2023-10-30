@@ -15,7 +15,7 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 ## Adding Operations
 
-`operations` are no longer under `channels` in AsyncAPI Spec 3.0.0, instead, `operations` are separate objects in the AsyncAPI document on the same level. 
+`operations` are separate objects in the AsyncAPI document on the same level. 
 `channels` can be linked within `operations` by referencing them within the `channels`, just like the following example -
 For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
 
