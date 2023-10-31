@@ -49,7 +49,7 @@ classDef labelStyle color:#000000;
 
 ## Adding Operations
 
-`operations` are no longer under `channels` in AsyncAPI Spec 3.0.0, instead, `operations` are separate objects in the AsyncAPI document on the same level. 
+`operations` are separate objects in the AsyncAPI document on the root level together with `channels` and other objects. 
 `channels` can be linked within `operations` by referencing them within the `channels`, just like the following example - 
 
 ```
