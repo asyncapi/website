@@ -50,7 +50,7 @@ classDef labelStyle color:#000000;
 ## Adding Operations
 
 `operations` are separate objects in the AsyncAPI document on the root level together with `channels` and other objects. 
-`channels` can be linked within `operations` by referencing them within the `channels`, just like the following example - 
+Operation must specify on what channel it is performed. You do it by referencing the `channel` with `$ref`, just like in the following example:
 
 ```
 onUserSignUp:
