@@ -15,11 +15,8 @@ In a messaging system, the term "operations" refers to the various methods by wh
 
 ## Defining Operations
 
-Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for it's definition. More information about each field names that are used to define operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
-Additionally, an example to show the usage of each field names in defining operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationsObject).
-`operations` are separate objects in the AsyncAPI document on the same level. 
-`channels` can be linked within `operations` by referencing them within the `channels`, just like the following example -
-For adding operations to an AsyncAPI document, we need to define them within the channels section of the document. You can add operations to an AsyncAPI document as follows - 
+Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for their definition. More information about each field name that is used to define operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
+Additionally, an example to show the usage of each field name in defining operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationsObject).
 
 The following diagram briefs the important field names that are frequently used to define AsyncAPI operations in Spec 3.0.0 -
 
@@ -50,7 +47,7 @@ classDef labelStyle color:#000000;
 ## Adding Operations
 
 `operations` are separate objects in the AsyncAPI document on the root level together with `channels` and other objects. 
-Operation must specify on what channel it is performed. You do it by referencing the `channel` with `$ref`, just like in the following example:
+Operations must specify on what channel it is performed. You do it by referencing the `channel` with `$ref`, just like in the following example:
 
 ```
 onUserSignUp:
