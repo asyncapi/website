@@ -21,27 +21,37 @@ Additionally, an example to show the usage of each field name in defining operat
 The following diagram briefs the important field names that are frequently used to define AsyncAPI operations in Spec 3.0.0 -
 
 ```mermaid
-flowchart TD
-style A fill:#E5EE8C,stroke:#333,stroke-width:2px
-style B fill:#CBF399,stroke:#333,stroke-width:2px
-style C fill:#F5B5EF,stroke:#333,stroke-width:2px
-style D fill:#F568A8,stroke:#333,stroke-width:2px
+graph LR
+A[Required Fields to define AsyncAPI Operations]
+B[Summary]
+C[Action]
+D[Optional Fields to define AsyncAPI Operations]
+E[Description]
+F[Channel]
+G[Tags]
+H[Bindings]
+I[Traits]
 
-style E fill:#B40486,stroke:#333,stroke-width:2px
-style F fill:#86B404,stroke:#333,stroke-width:2px
-style G fill:#01A9DB,stroke:#333,stroke-width:2px
-style H fill:#F781F3,stroke:#333,stroke-width:2px
+A -->|1.| B
+A -->|2.| C
+D --> |1.| E
+D --> |2.| F
+D --> |3.| G
+D --> |4.| H
+D --> |5.| I
 
-  A[Fields required to define AsyncAPI Operations] -->|1| B[Summary]
-  A -->|2| C[Description]
-  A -->|3| D[Channel]
-  A -->|4| E[Action]
-  A -->|5| F[Tags]
-  A -->|6| G[Bindings]
-  A -->|7| H[Traits]
+style A fill:#E5EE8C,stroke:#000
+style B fill:#DF7401,stroke:#000
+style C fill:#F5B5EF,stroke:#000
+style D fill:#E5EE8C,stroke:#000
+style E fill:#B40486,stroke:#000
+style F fill:#86B404,stroke:#000
+style G fill:#01A9DB,stroke:#000
+style H fill:#F781F3,stroke:#000
+style I fill:#F568A8,stroke:#000
 
 classDef labelStyle color:#000000;
-    class A,B,C,D,E,F,G,H labelStyle;
+    class A,B,C,D,E,F,G,H,I labelStyle;
 ```
 
 ## Adding Operations
