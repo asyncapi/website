@@ -1,6 +1,22 @@
 {
   "hotDiscussions": [
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 41.35314077989326
+    },
+    {
       "id": "PR_kwDOBW5R_c5Xb72L",
       "isPR": true,
       "isAssigned": false,
@@ -9,7 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 33.02507770616476
+      "score": 38.48139489240067
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -20,7 +36,7 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 25.845712987433288
+      "score": 29.004633463675134
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -39,20 +55,39 @@
       "score": 19.527872034949596
     },
     {
-      "id": "I_kwDOBW5R_c5BIl5P",
-      "isPR": false,
+      "id": "PR_kwDOBW5R_c5VAjCE",
+      "isPR": true,
       "isAssigned": true,
-      "title": "Add new page for collecting user testing participants",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/website/issues/529",
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
         }
       ],
-      "score": 18.666348268701817
+      "score": 17.517649913704783
+    },
+    {
+      "id": "PR_kwDOBW5R_c5Worbr",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add v3 migration guide",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/website/pull/2008",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -63,7 +98,7 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 16.08177696995849
+      "score": 16.36895155870775
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -97,6 +132,17 @@
       "score": 15.220253203710714
     },
     {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "MDU6SXNzdWUxMjMwODQwMDM4",
       "isPR": false,
       "isAssigned": false,
@@ -108,69 +154,41 @@
       "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOCoBobc42aMuI",
+      "id": "PR_kwDOBW5R_c5VmsTR",
       "isPR": true,
-      "isAssigned": false,
-      "title": "feat: release for version 3.0.0 of the spec",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/parser-js/pull/526",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Improve overall performance of the website but especially Blog",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/89",
+      "isAssigned": true,
+      "title": "docs: tags in a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1957",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "📑 docs",
+          "color": "E50E99"
         },
         {
-          "name": "Epic",
-          "color": "3E4B9E"
-        }
-      ],
-      "score": 13.210031082465903
-    },
-    {
-      "id": "PR_kwDOBW5R_c5RI5z2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add testimonial carousel",
-      "author": "Lucif3r-in",
-      "resourcePath": "/asyncapi/website/pull/1704",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "I_kwDODyzcIc5gD3jB",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Automate `paper work` around project governance",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/.github/issues/210",
-      "repo": "asyncapi/.github",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "area/docs",
+          "color": "e50e99"
         },
         {
-          "name": "gsoc",
-          "color": "F4D03F"
+          "name": "gsod",
+          "color": "7B5DB8"
         }
       ],
-      "score": 12.635681904967385
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODou01c504XI9",
+      "title": "Other issues types are missing",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/studio/issues/826",
+      "repo": "asyncapi/studio",
+      "author": "Amzani",
+      "area": "Unknown",
+      "labels": []
+    },
     {
       "id": "I_kwDOFDnrNc5yy6e0",
       "title": "The new glee command is generating a 2.1.0 document",
@@ -214,36 +232,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5ydv8_",
-      "title": "Remove this unused import of 'MiddlewareCallback'.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/527",
-      "repo": "asyncapi/glee",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "016479"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5ydvwN",
-      "title": "Unexpected empty block",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/36",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
@@ -315,36 +303,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385ydtaD",
-      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1529",
-      "repo": "asyncapi/modelina",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385ydtLO",
-      "title": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1526",
-      "repo": "asyncapi/modelina",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N85yZpkH",
       "title": "Venue sub menu doesn't close",
       "isAssigned": false,
@@ -369,25 +327,6 @@
       "isAssigned": false,
       "resourcePath": "/asyncapi/conference-website/issues/202",
       "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5yRiQ8",
-      "title": "Fix cognitive complexity issue",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1040",
-      "repo": "asyncapi/generator",
       "author": "derberg",
       "area": "javascript",
       "labels": [
@@ -804,29 +743,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385m6IlQ",
-      "title": "Add runtime testing for Kotlin",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1334",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Kotlin generator",
-          "color": "61A95C"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -901,7 +817,7 @@
     {
       "id": "I_kwDOFi_gUM5hpuWl",
       "title": "Improve kafka adapter",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/glee/issues/411",
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
@@ -1054,48 +970,6 @@
       ]
     },
     {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185B-xnK",
-      "title": "What do we define as a breaking change?",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/spec/issues/688",
-      "repo": "asyncapi/spec",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "❔ Question",
-          "color": "54B65C"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFGbvC85AWog3",
       "title": "Automate Helm chart release version bump",
       "isAssigned": false,
@@ -1202,6 +1076,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     }
