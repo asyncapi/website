@@ -57,7 +57,7 @@ To follow this tutorial, you need:
 
 ## Installation guide
 
-[Comment] - What goes in the installation guide?
+
 
 	
 ## Broker-level message validation
@@ -73,6 +73,7 @@ Configure Kafka
 
 
 ## Client-level message validation
+
 <!--- 
 Integrating message validation with Kafka consumers
 Validating incoming messages before processing
