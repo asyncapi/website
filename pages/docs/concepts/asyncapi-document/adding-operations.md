@@ -3,7 +3,7 @@ title: Adding Operations
 weight: 60
 ---
 
-In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. 
+In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. Operations are useful for understanding how the messaging system in AsyncAPI works, and how different components within the system communicate with each other asynchronously. They help developers and users to understand the tasks that API can perform.
 
 ## Features
 
@@ -58,3 +58,76 @@ onUserSignUp:
   channel:
     $ref: '#/channels/userSignup'
 ```
+
+## Field Names in Operations
+
+### Summary:
+
+This section has a short summary of what the operation is about
+
+```
+"summary": "Action to sign a user up.",
+```
+
+### Actions:
+
+Uses the value `send` when the application sends a message to a given channel and uses the value `receive` when the application receives a message from a given channel.
+
+```
+"action": "receive",
+```
+
+### Description
+
+A detailed explanation of the operation.
+
+```
+"description": "A longer description"
+```
+
+### Channel
+
+A `$ref` link is added to link the channels.
+
+```
+"channel": {
+      "$ref": "#/channels/userSignup"
+    }
+```
+
+### Tags
+
+A list of tags are used for logical grouping and categorization of operations
+
+```
+"tags": [
+      { "name": "user" },
+      { "name": "signup" },
+      { "name": "register" }
+    ]
+```
+
+### Bindings
+
+A map that stores names of protocols as keys, and protocol-specific definitions as values.
+
+```
+"bindings": {
+      "amqp": {
+        "ack": false
+      }
+    }
+```
+
+### Traits
+
+A list of traits is added to Operations, which are merged into operations using `JSON Merge Patch`.
+
+```
+"traits": [
+      { "$ref": "#/components/operationTraits/kafka" }
+    ]
+```
+
+
+
