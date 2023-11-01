@@ -22,36 +22,26 @@ The following diagram briefs the important field names that are frequently used 
 
 ```mermaid
 graph LR
-A[Required Fields to define AsyncAPI Operations]
+A[Required Fields]
 B[Summary]
 C[Action]
-D[Optional Fields to define AsyncAPI Operations]
+D[Optional Fields]
 E[Description]
 F[Channel]
 G[Tags]
 H[Bindings]
 I[Traits]
 
-A -->|1.| B
-A -->|2.| C
-D --> |1.| E
-D --> |2.| F
-D --> |3.| G
-D --> |4.| H
-D --> |5.| I
+A --> B
+A --> C
+D --> E
+D --> F
+D --> G
+D --> H
+D --> I
 
-style A fill:#E5EE8C,stroke:#000
-style B fill:#DF7401,stroke:#000
-style C fill:#F5B5EF,stroke:#000
-style D fill:#E5EE8C,stroke:#000
-style E fill:#B40486,stroke:#000
-style F fill:#86B404,stroke:#000
-style G fill:#01A9DB,stroke:#000
-style H fill:#F781F3,stroke:#000
-style I fill:#F568A8,stroke:#000
-
-classDef labelStyle color:#000000;
-    class A,B,C,D,E,F,G,H,I labelStyle;
+style A fill:#47BCEE,stroke:#000;
+style D fill:#47BCEE,stroke:#000
 ```
 
 ## Adding Operations
