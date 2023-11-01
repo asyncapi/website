@@ -63,14 +63,24 @@ To follow this tutorial, you need:
 	
 ## Broker-Level Message Validation
 
+<!--- 
 Integrating message validation with Kafka producers
 Validating outgoing messages before sending to Kafka
+--->
+At the broker level, message validation is about ensuring that the messages sent to Kafka topics comply with a certain predefined schema. In Kafka, you can use a Schema Registry to manage and validate schemas. Also, at the broker level, ensure that only valid messages are written to the Kafka topics.
+ 
+Define an AsyncAPI schema
+Configure Kafka
 
 
 ## Client-Level Message Validation
-
+<!--- 
 Integrating message validation with Kafka consumers
 Validating incoming messages before processing
+--->
+
+Generate Code
+Implement Validation
 
 ## Summary
 
