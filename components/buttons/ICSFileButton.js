@@ -1,16 +1,20 @@
 import Button from './Button';
 import IconCalendar from '../icons/Calendar';
+import { useTranslation } from '../../lib/i18n';
 
 export default function ICSFButton({
-  text = 'Download ICS File',
+  text = 'icsFileBtn',
   href,
   target = '_blank',
   iconPosition = 'left',
   className,
 }) {
+
+  const { t } = useTranslation('common');
+
   return (
     <Button
-      text={text}
+      text={t(text)}
       icon={<IconCalendar />}
       href={href}
       iconPosition={iconPosition}
