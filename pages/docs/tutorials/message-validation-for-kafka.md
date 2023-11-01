@@ -1,7 +1,7 @@
 ---
 title: Message validation for Kafka
 description: The goal of this tutorial is to help you validate messages for Kafka.
-weight: 100
+weight: 150
 ---
 
 This tutorial will teach you how to validate messages within a Kafka-based system using AsyncAPI specifications.
@@ -11,8 +11,7 @@ Validating messages for Kafka involves defining message schemas using AsyncAPI, 
 By the end of the tutorial, you should understand the importance of message validation, know how to specify message schemas using AsyncAPI, and apply validation to ensure that the messages exchanged between different components in a Kafka-based system are consistent and adhere to predefined rules.
 
 
-[Comment] <> (Add an image to show a process - flowchart that summarizes the tutorial)
-
+```mermaid
 graph TB
     A[Producer Service] -->|Publish Message| B[AsyncAPI Validation]
     B -->|Valid Message| C[Kafka Broker]
@@ -37,7 +36,7 @@ graph TB
     A -->|Publish Invalid Message| B
     B -->|Invalid Message| F[Error Handling]
     D -->|Invalid Message| G[Error Handling]
-
+```
 
 ## Background context
 
@@ -56,12 +55,12 @@ To follow this tutorial, you need:
 * An understanding of Event driven Architectures (EDAs).
 
 
-## Installation Guide
+## Installation guide
 
 [Comment] - What goes in the installation guide?
 
 	
-## Broker-Level Message Validation
+## Broker-level message validation
 
 <!--- 
 Integrating message validation with Kafka producers
@@ -73,7 +72,7 @@ Define an AsyncAPI schema
 Configure Kafka
 
 
-## Client-Level Message Validation
+## Client-level message validation
 <!--- 
 Integrating message validation with Kafka consumers
 Validating incoming messages before processing
