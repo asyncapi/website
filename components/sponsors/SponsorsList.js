@@ -7,13 +7,6 @@ export const sponsors = [
       imageClass: 'inline-block px-4 sm:h-14',
     },
     {
-      name: 'IQVIA Technologies',
-      link: 'https://www.iqvia.com',
-      imageSrc: '/img/sponsors/iqvia.png',
-      altText: 'IQVIA Technologies',
-      imageClass: 'inline-block px-4 sm:h-10',
-    },
-    {
       name: 'Postman',
       link: 'https://www.postman.com',
       imageSrc: '/img/sponsors/postman.png',

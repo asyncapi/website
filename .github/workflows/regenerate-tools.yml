@@ -16,16 +16,26 @@ jobs:
       steps:
         - name: Checkout repository
           uses: actions/checkout@v3
-        - name: Use Node.js ${{ matrix.node-version }}
+
+        - name: Check package-lock version
+          uses: asyncapi/.github/.github/actions/get-node-version-from-package-lock@master
+          id: lockversion
+  
+        - name: Use Node.js
           uses: actions/setup-node@v3
           with:
-            node-version: 16.x
+            node-version: "${{ steps.lockversion.outputs.version }}"
+            cache: 'npm'
+            cache-dependency-path: '**/package-lock.json'
+
         - name: Install dependencies
           run: npm install
+
         - name: Regenerate
           run: npm run generate:tools
+
         - name: Create Pull Request with new tools.json version
-          uses: peter-evans/create-pull-request@v4
+          uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # use 4.2.4 https://github.com/peter-evans/create-pull-request/releases/tag/v4.2.4
           with:
             token: ${{ secrets.GH_TOKEN }}
             commit-message: 'chore: update tools.json'
@@ -33,9 +43,10 @@ jobs:
             author: asyncapi-bot <info@asyncapi.io>
             title: 'chore: update tools.json'
             branch: update-tools/${{ github.job }}
+            
         - if: failure() # Only, on failure, send a message on the 94_bot-failing-ci slack channel
           name: Report workflow run status to Slack
-          uses: 8398a7/action-slack@v3
+          uses: 8398a7/action-slack@fbd6aa58ba854a740e11a35d0df80cb5d12101d8 #using https://github.com/8398a7/action-slack/releases/tag/v3.15.1
           with:
             status: ${{ job.status }}
             fields: repo,action,workflow

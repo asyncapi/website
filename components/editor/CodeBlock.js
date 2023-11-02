@@ -104,8 +104,8 @@ export default function CodeBlock({
         {
           showCopy && (
             <div className="z-10">
-              <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard">
-                {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2">Copied!</span>}
+              <button onClick={onClickCopy} className="absolute bg-code-editor-dark z-50 text-xs text-gray-500 right-2 top-1 cursor-pointer hover:text-gray-300 focus:outline-none" title="Copy to clipboard" data-test="copy-button">
+                {showIsCopied && <span className="inline-block pl-2 pt-1 mr-2" data-testid="clicked-text">Copied!</span>}
                 <span className="inline-block pt-1"><IconClipboard className="inline-block w-4 h-4 -mt-0.5" /></span>
               </button>
             </div>
