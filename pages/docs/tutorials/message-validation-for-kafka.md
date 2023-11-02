@@ -84,12 +84,9 @@ Implement Validation
 
 ## Summary
 
-[comment:] <> ( What did we learn, what we built, and how to apply this to real life.)
+Combining Kafka's robust message streaming capabilities with AsyncAPI's standardized documentation and tooling, developers can ensure that the messages being exchanged in a distributed system are validated effectively, ensuring data integrity and system reliability.
 
-
-By combining Kafka's robust message streaming capabilities with AsyncAPI's standardized documentation and tooling, developers can ensure that the messages being exchanged in a distributed system are validated effectively, ensuring data integrity and system reliability.
-
-By following these steps, you have defined and validated Kafka messages using AsyncAPI at both the broker and client levels, therefore ensuring that the messages conform to the specified schema before processing or sending them, which helps maintain data integrity, reliability, and consistency in your Kafka-based applications.
+In this tutorial, you have defined and validated Kafka messages using AsyncAPI at both the broker and client levels, therefore ensuring that the messages conform to the specified schema before processing or sending them, which helps maintain data integrity, reliability, and consistency in your Kafka-based applications.
 
 ## Next steps
 
@@ -97,4 +94,6 @@ Now that you have completed this tutorial, go ahead to automate the validation a
 
 ## Additional resources
 
-[Create an AsyncAPI document for Kafka Messages using AsyncAPI]()
+<!---
+Add Joy's tutorial on how to Create an AsyncAPI document for Kafka Messages using AsyncAPI
+--->
