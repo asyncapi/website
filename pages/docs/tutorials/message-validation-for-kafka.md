@@ -4,6 +4,8 @@ description: The goal of this tutorial is to help you validate messages for Kafk
 weight: 150
 ---
 
+## Introduction
+
 This tutorial will teach you how to validate messages within a Kafka-based system using AsyncAPI specifications.
 
 Validating messages for Kafka involves defining message schemas using AsyncAPI, and then using those schemas to validate incoming and outgoing messages in your Kafka-based applications. 
