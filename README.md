@@ -156,21 +156,11 @@ This repository has the following structure:
 ## Connect with AsyncAPI Community
 
 <p align="left">
-    <a href="https://asyncapi.slack.com/" target="blank">
-      <img align="center" src="https://img.icons8.com/color/48/null/slack-new.png" alt="AsyncAPI Slack" height="30" width="40" />
-    </a>
-    <a href="https://twitter.com/asyncapispec" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="AsyncAPI Twitter" height="30" width="40" />
-    </a>
-    <a href="https://www.linkedin.com/company/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="AsyncAPI LinkedIn" height="30" width="40" />
-    </a>
-    <a href="https://www.youtube.com/c/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="AsyncAPI YouTube" height="30" width="40" />
-    </a>
-    <a href="https://www.twitch.tv/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="AsyncAPI Twitch" height="30" width="40" />
-    </a>
+  <a href='https://asyncapi.slack.com/' target="_blank"><img alt='slack' src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'/></a>
+<a href='https://twitter.com/asyncapispec' target="_blank"><img alt='x' src='https://img.shields.io/badge/Twitter-100000?style=for-the-badge&logo=x&logoColor=FFFFFF&labelColor=000000&color=000000'/></a>
+<a href='https://www.linkedin.com/company/asyncapi' target="_blank"><img alt='linkedin' src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'/></a>
+<a href='https://www.youtube.com/c/asyncapi' target="_blank"><img alt='youtube' src='https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white'/></a>
+<a href='https://www.twitch.tv/asyncapi' target="_blank"><img alt='twitch' src='https://img.shields.io/badge/Twitch-100000?style=for-the-badge&logo=twitch&logoColor=FFFFFF&labelColor=9146ff&color=9146ff'/></a>
 </p>
 
 ## AsyncAPI Contributors ✨
