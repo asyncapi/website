@@ -72,18 +72,15 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
             </div>
           </div>
           <div className="py-2 px-5 space-y-2" onClick={() => showMenu('learning')}>
-              <h4 className="text-gray-800 font-medium flex justify-between">
-                <a className="cursor-pointer">Docs</a>
-                <NavItemDropdown />
-              </h4>
-              {open === 'learning' && <MenuBlocks items={learningItems} />}
-            </div>
+            <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/docs" className="flex">Docs</Link></a><NavItemDropdown/></h4>
+            {open === 'learning' && <MenuBlocks items={learningItems} />}
+          </div>
           <div className="py-2 px-5 space-y-2" onClick={() => showMenu('tooling')}>
-            <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer">Tools</a> <NavItemDropdown /> </h4>
+            <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/tools" className="flex">Tools</Link></a><NavItemDropdown/></h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
           <div className="py-2 px-5 space-y-2" onClick={() => showMenu('community')}>
-            <h4 className="text-gray-800 font-medium flex justify-between"><a className="cursor-pointer">Community</a><NavItemDropdown /></h4>
+            <h4 className="text-gray-800 font-medium flex justify-between"><a className="cursor-pointer"><Link href="/community" className="flex">Community</Link></a><NavItemDropdown/></h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
           <div className="py-2 px-5 space-y-2" onClick={() => showMenu('others')}>
