@@ -1,6 +1,9 @@
 ---
 title: "Migrating to v3"
 ---
+
+
+
 Migration to a new major version is always difficult, and AsyncAPI is no exception. To provide as smooth a transition as possible, this document shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
 
 If you want to update your AsyncAPI document, use the [AsyncAPI converter](https://github.com/asyncapi/converter-js) directly in the CLI with the following command:
@@ -11,9 +14,8 @@ asyncapi convert asyncapi.json --output=asyncapi_v3.json --target-version=3.0.0
 
 For a detailed read-through about all the changes (non-breaking as well), read all the [v3 release notes](/blog/release-notes-3.0.0) first to acquire additional context about the changes introduced in v3.
 
-import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison, Asyncapi3ServerComparison} from '../../../components/Asyncapi3Comparison'
-
-<Asyncapi3Comparison className="my-8" />
+import {Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison, Asyncapi3ServerComparison,
+Asyncapi3ParameterComparison} from '../../../components/Asyncapi3Comparison'
 
 ## Moved metadata
 
@@ -236,6 +238,8 @@ channels:
         ...
 ```
 
+This also means that we have removed the property `messageId` from the Message Object, as the ID of the Message Object is now the key in the key/value pair.
+
 ## Unifying explicit and implicit references
 
 In v2, implicit references were allowed in certain instances. For instance, the server security configuration was identified by name, linking to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) within the components. Similarly, a channel could reference global servers by name.
@@ -392,4 +396,45 @@ channels: {}
 ```yml
 asyncapi: 3.0.0
 ...
+```
+
+## Restricted parameters object
+
+Parameters has always been one that did not reflect the use-cases of the real world for the sacrifice of convenience.
+
+<Asyncapi3ParameterComparison className="my-8" />
+
+In v2, you had the full capability of the Schema Object, however it provides too many options that are rarely used. On-top of that, how are you ever going to serialize an object or boolean in the channel path?
+
+In v2, we have simplified it significantly, so by constantly being of string type, and only giving a limited number of properties to use. Now you only have access to `enum`, `default`, `description`, `examples`, and `location`.
+
+```yml
+asyncapi: 2.6.0
+...
+channels: 
+  user/{user_id}/signedup:
+    parameters:
+      location: "$message.payload"
+      description: Just a test description
+      schema:
+        type: string
+        enum: ["test"]
+        default: "test"
+        examples: ["test"]
+    ...
+```
+
+```yml
+asyncapi: 3.0.0
+...
+channels: 
+  userSignedUp:
+    address: user/{user_id}/signedup
+    parameters:
+      user_id: 
+        enum: ["test"]
+        default: "test"
+        description: Just a test description
+        examples: ["test"]
+        location: "$message.payload"
 ```
