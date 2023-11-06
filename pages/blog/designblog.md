@@ -1,6 +1,6 @@
 ---
 title: "Contributing to Open Source as a Product Design and UX Researcher"
-date: 2023-09-15T06:00:00+01:00
+date: 2023-11-09T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
