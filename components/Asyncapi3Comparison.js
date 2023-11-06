@@ -24,47 +24,6 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
               <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
                 Channel Item
 
-            <div className="flex flex-wrap flex-1">
-              <div className={'bg-white border border-yellow-600 p-2 m-2'}>
-                parameters
-
-                <div className="flex flex-wrap flex-1">
-                  <div className={'bg-white border border-yellow-600 p-2 m-2'}>
-                    parameter
-                    <div className="flex flex-wrap flex-1">
-                      <div className={(hoverState.location ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, location: true }))} onMouseLeave={() => setHoverState({ location: false })}>
-                      location
-                      </div>
-                      <div className={(hoverState.description ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState({ description: false })}>
-                      description
-                      </div>
-
-                      <div className="flex-1 bg-white border border-yellow-600 p-2 m-2">
-                        schema
-                        <div className="flex flex-wrap flex-1">
-                          <div className={'bg-white flex-1 bg-red-300 p-2 m-2'}>type</div>
-                          <div className={(hoverState.enum ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, enum: true }))} onMouseLeave={() => setHoverState({ enum: false })}>
-                          enum
-                          </div>
-                          <div className={(hoverState.examples ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, examples: true }))} onMouseLeave={() => setHoverState({ examples: false })}>
-                          examples
-                          </div>
-                          <div className={(hoverState.default ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, default: true }))} onMouseLeave={() => setHoverState({ default: false })}>
-                          default
-                          </div>
-                          <div className={(hoverState.description ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState({ description: false })}>
-                          description
-                          </div>
-                          <div className={'bg-white flex-1 bg-red-300 p-2 m-2'}>pattern</div>
-                          <div className={'bg-white flex-1 bg-red-300 p-2 m-2'}>multipleOf</div>
-                          <div className={'bg-white flex-1 bg-red-300 p-2 m-2'}>And all other properties</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
                 <div className="flex flex-wrap flex-1">
                   <div className={(hoverState.Operation ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Operation: true }))} onMouseLeave={() => setHoverState({ Operation: false })}>
                     Operation (Publish and Subscribe)
@@ -434,7 +393,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
 }
 
 /**
- * Compares how the schema and schemaFormat changed location from v2 to v3
+ * Compares how the parameter object changed location from v2 to v3
  */
 export function Asyncapi3ParameterComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
