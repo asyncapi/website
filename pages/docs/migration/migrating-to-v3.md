@@ -205,14 +205,17 @@ channels:
   user/signedup:
     message: 
       oneOf:
-        - ...
-        - ...
+        - messageId: UserMessage
+          ...
+        - messageId: UserMessage2
+          ...
 
 asyncapi: 2.6.0
 ...
 channels:
   user/signedup:
     message: 
+      messageId: UserMessage
       ...
 ```
 
