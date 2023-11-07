@@ -42,28 +42,16 @@ Here is a illustration of securing servers:
 ```mermaid
 graph LR
   A[Servers]
-  B[server-object1]
-  C[server-object2]
+  C[server-object]
   F[host]
-  G[host]
-  H[protocol]
   I[protocol]
-  D[security]
   E[security]
-
-  A --> B
-  B --> F
-  C --> G
+  C --> F
   A --> C
-  B --> D
   C --> E
-  B --> H
   C --> I
-
   style A fill:#47BCEE,stroke:#000;
-  style B fill:#47BCEE,stroke:#000;
   style C fill:#47BCEE,stroke:#000;
-  style D fill:#47BCEE,stroke:#000;
   style E fill:#47BCEE,stroke:#000
 ```
 
