@@ -68,7 +68,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
       title: "AsyncAPI Conf",
       city: "Bengaluru",
       dateLocation: "30th of November, 2023 | Bengaluru, India",
-      cfaText: "Submit Talk Proposal",
+      cfaText: "Get Your Tickets",
       eventName: "AACoT'23 Bengaluru Edition",
       cfpDeadline: cfpDeadlineIndia,
       link: "https://conference.asyncapi.com/venue/Bangalore",
