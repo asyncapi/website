@@ -81,7 +81,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
       cfaText: "Submit Talk Proposal",
       eventName: "AACoT'23 Paris Edition",
       cfpDeadline: cfpDeadlineFrance,
-      link: "https://conference.asyncapi.com/venue/Paris",
+      link: "https://ticket.apidays.global/event/apidays-paris-2023/8a1f3904-e2be-4c69-a880-37d2ddf1027d/cart?coupon=ASYNCAPICONF23",
       show: showBannerFrance
     }
   ];
