@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'August Community Update'
-featured: true
 ---
 As August comes to a close, many of us have had a slow month. Most of the community took some well-deserved time off, and the project has been quiet these past few weeks. We're looking forward to September and can't wait for everything to get back in full swing.
 

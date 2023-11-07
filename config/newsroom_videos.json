@@ -1,5 +1,23 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/Vm4ZKFb2PVE/hqdefault.jpg",
+    "title": "Community Meeting(October 31th, 2023)",
+    "description": "Powered by Restream https://restream.io https://github.com/asyncapi/community/issues/916.",
+    "videoId": "Vm4ZKFb2PVE"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/FN5eR1Zqh9c/hqdefault.jpg",
+    "title": "AsyncAPI Conf on Tour 2023 in Madrid",
+    "description": "AACoT'23 Madrid Edition streamed live from StageOne at SNGULAR. 00:00 Waiting 57:12 Opening 1:26:07 Everything You Wish ...",
+    "videoId": "FN5eR1Zqh9c"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/zSbv4ibqYds/hqdefault.jpg",
+    "title": "Community Meeting(October 17th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/912.",
+    "videoId": "zSbv4ibqYds"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KTnFoXY_evs/hqdefault.jpg",
     "title": "Hacktoberfest (October 6th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/894.",
@@ -10,23 +28,5 @@
     "title": "Spec 3.0 docs meeting (September 28, 2023)",
     "description": "https://github.com/asyncapi/community/issues/885.",
     "videoId": "qjMojQ-fFew"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
-    "title": "Community meeting (September 19, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/874.",
-    "videoId": "SfATYVwcSQk"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/857.",
-    "videoId": "OYcOkQhwVNg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
-    "title": "Generator and new parser discussion (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/865.",
-    "videoId": "b4KcouHm958"
   }
 ]

@@ -8,8 +8,7 @@ import ArrowLeft from '../icons/ArrowLeft'
 import ArrowRight from '../icons/ArrowRight'
 
 function shouldShowBanner(cfpDeadline) {
-  const currentDate = new Date(); // Get the current date
-  console.log(currentDate)
+  const currentDate = new Date(); // G et the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
