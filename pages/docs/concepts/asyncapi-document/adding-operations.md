@@ -5,13 +5,7 @@ weight: 60
 
 In a messaging system, the term "operations" refers to the various methods by which messages are exchanged between participants or components. Operations are useful for understanding how the messaging system in AsyncAPI works, and how different components within the system communicate with each other asynchronously. They help developers and users to understand the tasks that API can perform.
 
-## Features
-
-- Operations describe the behaviors and capabilities of the messaging channels described in the AsyncAPI document.
-
-- In a messaging channel, an operation represents a particular action or interaction that can be performed. 
-
-- The purpose of these operations is to provide a standardized means for describing the process of sending, receiving from, requesting, or replying to messages within the messaging system.
+In a AsyncAPI document, Operations describe the behaviors and capabilities of the messaging channels described in the AsyncAPI document. In a messaging channel, an `operation` represents a particular action or interaction that can be performed. The purpose of operations is to provide a standardized means for describing the process of sending, receiving from, requesting, or replying to messages within the messaging system. 
 
 ## Defining Operations
 
