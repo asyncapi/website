@@ -12,7 +12,7 @@ In a AsyncAPI document, Operations describe the behaviors and capabilities of th
 Operations can be defined as an independent object in the AsyncAPI document. Operations have the following components for their definition. More information about each field name that is used to define operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
 Additionally, an example to show the usage of each field name in defining operations can be found [here](https://v3.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationsObject).
 
-The following diagram briefs the important field names that are frequently used to define AsyncAPI operations in Spec 3.0.0 -
+The following diagram briefs the some field names that are frequently used to define operations in a AsyncAPI document:
 
 ```mermaid
 graph LR
