@@ -78,7 +78,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
       title: "AsyncAPI Conf",
       city: "Paris",
       dateLocation: "8th of December, 2023 | Paris, France",
-      cfaText: "Submit Talk Proposal",
+      cfaText: "Get Your Tickets",
       eventName: "AACoT'23 Paris Edition",
       cfpDeadline: cfpDeadlineFrance,
       link: "https://ticket.apidays.global/event/apidays-paris-2023/8a1f3904-e2be-4c69-a880-37d2ddf1027d/cart?coupon=ASYNCAPICONF23",
