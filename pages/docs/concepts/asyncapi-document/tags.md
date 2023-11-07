@@ -7,12 +7,12 @@ A tag is a label or category that helps you logically group related objects such
 
 In AyncAPI, the `tags` object is essentially a list of `tag` objects. Within the `tags` object, you can define individual `tag`s, specifying a name and providing an optional description that adds further context to the tag's purpose or usage.
 
-`tags` can be defined in the [`components` object](../../reference/specification/v3.0.0-next-major-spec.12.md#componentsObject) of an AsyncAPI document, which enables the reusability of the tags. `tags` included in the `components` object can be re-used by using [reference objects](../../reference/specification/v3.0.0-next-major-spec.12.md#referenceObject).
+`tags` can be defined in the [`components` object](../../reference/specification/v3.0.0-next-major-spec.12#componentsObject) of an AsyncAPI document, which enables the reusability of the tags. `tags` included in the `components` object can be re-used by using [reference objects](../../reference/specification/v3.0.0-next-major-spec.12#referenceObject).
 
 Additionally, you can define a list of tags you wanna use across the document under the `tags` object on the `info` level and you can reuse those tags under individual components such as `servers` or `channels` allowing you to group components logically.
 
 ## `Tags` in AsyncAPI Document
-The `tags` object is a list of `tag` objects that can be referenced by [reference object](../../reference/specification/v3.0.0-next-major-spec.12.md#referenceObject).
+The `tags` object is a list of `tag` objects that can be referenced by [reference object](../../reference/specification/v3.0.0-next-major-spec.12#referenceObject).
 
 The `tags` object is a list of tags and individual `tag` objects contain some fields.
 
