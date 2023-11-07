@@ -57,62 +57,62 @@ graph LR
 
 Here are some of the security schemes that AsyncAPI supports:
 - User/Password
-  ```yml
+```yml
   type: userPassword
-  ```
+```
 
 - API key (either as a user or as a password)
 ```yml
-type: apiKey
-in: user
+  type: apiKey
+  in: user
 ```
 
 - X.509 certificate
 ```yml
-type: X509
+  type: X509
 ```
 
 - End-to-end encryption (either symmetric or asymmetric)
 ```yml
-type: symmetricEncryption
+  type: symmetricEncryption
 ```
 
 - HTTP authentication
 ```yml
-type: http
-scheme: basic
+  type: http
+  scheme: basic
 ```
 
 - HTTP API key
 ```yml
-type: httpApiKey
-name: api_key
-in: header
+  type: httpApiKey
+  name: api_key
+  in: header
 ```
 
 - JWT Bearer
 ```yml
-type: http
-scheme: bearer
-bearerFormat: JWT
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
 ```
 
 - Implicit oauth2
 ```yml
-type: oauth2
-flows:
-  implicit:
-    authorizationUrl: https://example.com/api/oauth/dialog
-    availableScopes:
-      write:pets: modify pets in your account
-      read:pets: read your pets
-scopes:
-  - 'write:pets'
+  type: oauth2
+  flows:
+    implicit:
+      authorizationUrl: https://example.com/api/oauth/dialog
+      availableScopes:
+        write:pets: modify pets in your account
+        read:pets: read your pets
+  scopes:
+    - 'write:pets'
 ```
 
 - SASL (Simple Authentication and Security Layer) as defined in RFC4422
 ```yml
-type: scramSha512
+  type: scramSha512
 ```
 
 Although, the `security` property is not mandatory to be implemented, it is a good practise to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure, it really depends on other factors such as the protocol used, use case, business perspective and more.
