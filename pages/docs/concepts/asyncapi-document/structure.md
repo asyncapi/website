@@ -9,7 +9,7 @@ The structure of an AsyncAPI document can be defined as a specific format in whi
 Root elements of an AsyncAPI document provide an overview of the API's characteristics and behaviour. These root elements collectively define the metadata, channels, components and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behaviour.
 
 ```mermaid
-graph LR
+graph 
 A[asyncapi]
 B[info]
 C[servers]
@@ -42,7 +42,7 @@ Some of the fields `info` object holds are:
 
 Here's a visual representation of the `info` object and its properties:
 ```mermaid
-graph LR
+graph
   B(info)
   C(title)
   D(version)
@@ -108,7 +108,7 @@ Some of the fields `servers` object holds for each server object are:
 
 Here's a visual representation of the `server` object and its properties:
 ```mermaid
-graph LR
+graph 
   A[server]
   B(host)
   C(pathname)
@@ -198,7 +198,7 @@ Some of the fields `channels` object holds for each channel object are:
 
 Here's a visual representation of the `channels` object and its properties:
 ```mermaid
-graph LR
+graph 
   A[channel]
   B(address)
   C(title)
@@ -272,7 +272,7 @@ Some of the fields `operations` object holds for each `operation` object are:
 
 Here's a visual representation of the `operations` object and its properties:
 ```mermaid
-graph LR
+graph 
   A[operation]
   B(title)
   C(summary)
@@ -366,7 +366,7 @@ Some of the fields `components` object holds are:
 
 Here's a visual representation of the `components` object and its properties:
 ```mermaid
-graph LR
+graph 
   A[components]
   B(schemas)
   C(category)
