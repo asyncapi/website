@@ -24,8 +24,8 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const cfpDeadlineIndia = '2023-10-19T06:00:00Z'
-  const cfpDeadlineFrance = '2023-10-26T06:00:00Z'
+  const cfpDeadlineIndia = '2023-11-30T06:00:00Z'
+  const cfpDeadlineFrance = '2023-12-6T06:00:00Z'
   const showBannerIndia = shouldShowBanner(cfpDeadlineIndia);
   const showBannerFrance = shouldShowBanner(cfpDeadlineFrance);
 
