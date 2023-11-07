@@ -3,7 +3,7 @@ title: Dynamic Channel Address
 weight: 80
 ---
 
-Dynamic channel addresses are used to specify dynamic parts of a channel name, which becomes particularly useful when you want to use and reuse parameters in the channel name. It provides flexibility in how you structure your event-driven interfaces.
+Dynamic channel addresses specify dynamic parts of a channel address, which becomes particularly useful when you want to use and reuse parameters in a channel address.
 
 Here is the diagram explaining dynamic channel address:
 
@@ -60,7 +60,7 @@ graph TD
 
 This diagram shows how the channel address includes the same parameters as the channel address, and each parameter's name matches the one used in the address.
 
-Here is an example of parameter context:
+Here is an example of a dynamic channel address and its parameter:
 
 ```yml
 user/{userId}/signup:
@@ -73,13 +73,13 @@ user/{userId}/signup:
       $ref: "#/components/messages/userSignedUp"
 ```
 
-In the above document, `user/{userId}/signedup` is the endpoint where `{userId}` is a path parameter.
+In the above document, `user/{userId}/signedup` is the address where `{userId}` is a parameter for that address.
 
 ## Reusing parameters
 
-Parameters can be reused. This reuse optimizes the usage of parameters within the event-driven interface by letting you use the parameters again.
+Parameters can be reused. This reuse optimizes the usage of parameters within the API by letting you use the parameters again.
 
-If there is another message, for example, a `UserUpdated` message, which also requires the `userId`, the parameter can be reused like the following following diagram:
+If there is another message, for example, a `UserUpdated` message, which also requires the `userId` parameter, it can be reused like in the following example:
 
 ```mermaid
 graph TD
@@ -103,23 +103,22 @@ graph TD
 
 In this diagram, a channel named `userSignedUp` that requires a parameter `userId` .Additionally, the parameter `userId` is reused for another message, `UserUpdated`.
 
-Here is a code of reusing parameters:
+Here is an example of reusing parameters:
 
 ```yml
 channels:
-  userSignedUp:
+  UserSignedUp:
     address: 'user/{userId}/signedup'
     parameters:
-      userId:
-        description: Id of the user.
+      $ref: '#/components/parameters/userId'
+  UserUpdated:
+    address: 'user/{userId}/updated'
     parameters:
-      UserUpdated:
-        description: Updated Id of the user.    
-operations: 
-  userSignedUp:
-    action: receive
-    channel: 
-      $ref: '#/channels/userSignedUp'  
+      $ref: '#/components/parameters/userId'
+components:
+  parameters:
+    userId:
+      description: Id of the user.
 ```
 
-In this AsyncAPI document, the previously defined `userId` parameter is reused to form the channel address for `UserUpdated` message.
+In the previous example, the `userId` parameter is defined under `components`, and both channels  `UserSignedUp` and `UserUpdated` are reusing it in their address by referencing via `$ref`.
