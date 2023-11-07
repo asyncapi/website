@@ -161,9 +161,9 @@ const BarChartComponent = () => {
                             <p className="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                         </div>
                         {/* Select for category filter */}
-                        <div className="flex space-x-2 mt-3 justify-end">
+                        <div>
                             <select
-                                className="p-2 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs"
+                                className="p-2 m-1 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs w-full sm:w-auto" // w-full for mobile, w-auto for other devices
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                             >
@@ -175,7 +175,7 @@ const BarChartComponent = () => {
 
                             {/* Select for month filter */}
                             <select
-                                className="p-2 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs"
+                                className="p-2 m-1 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs w-full sm:w-auto" // w-full for mobile, w-auto for other devices
                                 value={selectedMonth}
                                 onChange={(e) => setSelectedMonth(e.target.value)}
                             >
@@ -184,6 +184,8 @@ const BarChartComponent = () => {
                                     <option key={month} value={month}>{month}</option>
                                 ))}
                             </select>
+
+
                         </div>
                     </div>
                 </div>
