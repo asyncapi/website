@@ -1,6 +1,22 @@
 {
   "hotDiscussions": [
     {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 54.2759972736099
+    },
+    {
       "id": "MDU6SXNzdWUzNjkwNDExMDc=",
       "isPR": false,
       "isAssigned": false,
@@ -14,7 +30,7 @@
           "color": "fce250"
         }
       ],
-      "score": 41.35314077989326
+      "score": 41.64031536864252
     },
     {
       "id": "PR_kwDOBW5R_c5Xb72L",
@@ -25,7 +41,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 38.48139489240067
+      "score": 39.34291865864845
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -36,23 +52,23 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 29.004633463675134
+      "score": 30.440506407421427
     },
     {
-      "id": "I_kwDODou01c5AqLB8",
+      "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
+      "isAssigned": true,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
+      "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
-          "color": "a2eeef"
+          "color": "84b6eb"
         }
       ],
-      "score": 19.527872034949596
+      "score": 18.953522857451077
     },
     {
       "id": "PR_kwDOBW5R_c5VAjCE",
@@ -77,17 +93,6 @@
         }
       ],
       "score": 17.517649913704783
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Worbr",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add v3 migration guide",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2008",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 17.230475324955524
     },
     {
       "id": "I_kwDOCVQpZM5M_dcV",
@@ -143,17 +148,6 @@
       "score": 14.645904026212197
     },
     {
-      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Usages of allOf within message payload could be flattened",
-      "author": "jamescrowley",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
       "id": "PR_kwDOBW5R_c5VmsTR",
       "isPR": true,
       "isAssigned": true,
@@ -176,18 +170,83 @@
         }
       ],
       "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDOCoBobc42aMuI",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: release for version 3.0.0 of the spec",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/parser-js/pull/526",
+      "repo": "asyncapi/parser-js",
+      "labels": [],
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODou01c504XI9",
-      "title": "Other issues types are missing",
+      "id": "I_kwDOCxglSM513Nta",
+      "title": "Remove messageId from v3 conversion",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/studio/issues/826",
-      "repo": "asyncapi/studio",
-      "author": "Amzani",
+      "resourcePath": "/asyncapi/converter-js/issues/201",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODCuNRs51jd3x",
+      "title": "Implement GitHub Action to Validate examples Field in Schemas",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/bindings/issues/217",
+      "repo": "asyncapi/bindings",
+      "author": "KhudaDad414",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N851VGrF",
+      "title": "Unhandled Runtime Error",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/230",
+      "repo": "asyncapi/conference-website",
+      "author": "PUNEET-EMM",
       "area": "Unknown",
-      "labels": []
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM51UQ-5",
+      "title": "Show a warning if glee can't process a received message",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/558",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
       "id": "I_kwDOFDnrNc5yy6e0",
@@ -459,6 +518,10 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -473,6 +536,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -489,6 +556,10 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -503,6 +574,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -548,6 +623,10 @@
       "author": "jonaslagoni",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -703,25 +782,6 @@
       "author": "AceTheCreator",
       "area": "Unknown",
       "labels": []
-    },
-    {
-      "id": "I_kwDOFi_gUM5oKd1h",
-      "title": "Generating docs failes if project is a git repository. ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/461",
-      "repo": "asyncapi/glee",
-      "author": "Souvikns",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "016479"
-        }
-      ]
     },
     {
       "id": "I_kwDOE8Qh385nTCST",
