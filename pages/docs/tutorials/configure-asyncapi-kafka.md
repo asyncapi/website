@@ -97,10 +97,10 @@ components:
         properties:
           user-id:
             type: integer
-            description: id of the user
+            description: This property describes the id of the user
           user-email:
             type: string
-            description: email of the user
+            description: This property describes the id of the user
 ```
 
 In the above snippet:
