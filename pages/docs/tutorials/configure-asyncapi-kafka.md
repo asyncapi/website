@@ -1,12 +1,12 @@
 ---
 title: Configuring Schemas for Kafka messages using AsyncAPI
-description: In this tutorial, you'll learn how to configure an AsyncAPI document for Kafka messages.
-weight: 80
+description: Explore configuring AsyncAPI document for Kafka messages.
+weight: 70
 ---
 
 ## Introduction
 
-In this tutorial, you will learn how to create a schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
+The tutorial will walk you through the process of creating an schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
   
 Let’s assume, you have a service that publishes data to a Kafka topic whenever a new user signs up into the application.
 
@@ -32,7 +32,7 @@ flowchart TD
 
 In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement. 
 
-### Define AsyncAPI Version, API Information, and Server
+### Define AsyncAPI version, API information, and server
 
 Initially, you need to describe your application, including the AsyncAPI version, the info about the document, and the server your application is based upon.
 
@@ -57,7 +57,7 @@ In the above snippet:
   
 - The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka.
 
-### Define Channels and Operations
+### Define channels and operations
 
 Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The `operations` section is used to describe how your application interacts with the channels.
 
@@ -84,7 +84,7 @@ In the above snippet:
   
 - The `userSignedUp` object inside `channels` describes the Kafka topic where our application will be receiving the information and the associated message definition. The `address` field represents the actual name of the Kafka topic. The `messages` field describes the expected messages in that topic. 
 
-### Define Messages and Schemas
+### Define messages and its schemas
 
 Finally, you'll define the messages and their payload. The payload defines how the event would look line that will be sent from the channel.
 
@@ -109,10 +109,53 @@ In the above snippet:
   
 - The `payload` property defines the content of the message using [JSON Schema](https://json-schema.org/). It means that your message payload should contain a `user-id` which is an integer and a `user-email` property which is a string property.
 
+You've reached the end of the tutorial, and piecing together these components will provide you with a fully-prepared AsyncAPI document.
+
+```
+asyncapi: 3.0.0
+info:
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
+
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+
+components:
+  messages:
+    userSignedUp:
+      payload:
+        type: object
+        properties:
+          user-id:
+            type: integer
+            description: This property describes the id of the user
+          user-email:
+            type: string
+            description: This property describes the email of the user
+```
+
 ## Summary
 
-In this tutorial, you learned how to create an AsyncAPI specification document for Kafka. You generated an AsyncAPI document that defines the structure of the Kafka messages in a machine-readable format which makes it easier to maintain event-driven architecture. Try adding your own business logic and playing around with it.
+The ability to generate an AsyncAPI document for Kafka is now in your toolkit. You generated an AsyncAPI document that defines the structure of the Kafka messages in a machine-readable format which makes it easier to maintain event-driven architecture. Try adding your own business logic and playing around with it.
 
-## Next Steps
+## Next steps
 
 Now that you know how to write an AsyncAPI document, proceed to learn how to validate your message in Kafka using AsyncAPI.
