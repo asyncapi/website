@@ -115,4 +115,4 @@ Here are some of the security schemes that AsyncAPI supports:
   type: scramSha512
 ```
 
-Although, the `security` property is not mandatory to be implemented, it is a good practise to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure, it really depends on other factors such as the protocol used, use case, business perspective and more.
+Although, the `security` property is not mandatory to be implemented, it is a good practise to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure, it really depends on other factors such as the protocol used, use case, business perspective and more. Additionally, you can also [add security on the `operation` level](securing-operations)
