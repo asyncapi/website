@@ -46,16 +46,14 @@ Here is an example of using server bindings to specify protocol-specific informa
 
 ```yml
 servers:
-    - url: amqp://localhost
-    protocol: amqp
+  production:
     bindings:
-        amqp:
-        exchange:
-            name: myExchange
-            type: direct
-            durable: true
-            vhost: /
+      pulsar:
+        tenant: contoso
+        bindingVersion: '0.1.0'
 ```
+
+This document shows how to set up server bindings for a pulsar server.
 
 ## Channel bindings
 
@@ -77,26 +75,22 @@ Here is an example of using channel bindings to specify protocol-specific inform
 
 ```yml
 channels:
-  user/signedup:
+  user-signedup:
     bindings:
-      amqp:
-        is: routingKey
-        queue:
-          name: my-queue-name
-          durable: true
-          exclusive: true
-          autoDelete: false
-          vhost: /
-        exchange:
-          name: userExchange
-          type: topic
-          durable: true
-          autoDelete: false
-          vhost: /
-        bindingVersion: 0.2.0
+      kafka:
+        topic: 'my-specific-topic-name'
+        partitions: 20
+        replicas: 3
+        topicConfiguration:
+          cleanup.policy: ["delete", "compact"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'
 ```
 
-This document shows how to set up channel bindings for a RabbitMQ channel.
+This document shows how to set up channel bindings for a kafka channel.
 
 ## Message bindings
 
@@ -118,16 +112,21 @@ Here is an example of using message bindings to provide protocol-specific inform
 
 ```yml
 channels:
-  user/signedup:
-  publish:
-    message:
-      bindings:
-        amqp:
-          timestamp: true
-          ack: false
+  test:
+    publish:
+      message:
+        bindings:
+          http:
+            headers:
+              type: object
+              properties:
+                Content-Type:
+                  type: string
+                  enum: ['application/json']
+            bindingVersion: '0.1.0'
 ```
 
-This document shows how to set up message bindings for a RabbitMQ message.
+This document shows how to set up message bindings for a HTTP message.
 
 ## Operation Bindings
 
@@ -150,14 +149,17 @@ Here is an example of using operation bindings to specify protocol-specific info
 
 ```yml
 channels:
-  user/signedup:
-    subscribe:
-      x-microcks-operation:
-        frequency: 30
-      message:
-        $ref: '#/components/messages/UserSignedUp'
+  user/signup:
+operations:
+  userSignup:
+    action: receive
+    bindings:
+      mqtt:
+        qos: 2
+        retain: true
+        bindingVersion: 0.2.0
 ```
 
-This document shows how to set up operation bindings for a RabbitMQ operation.
+This document shows how to set up operation bindings for a MQTT operation.
 
 By using bindings, you can enhance the AsyncAPI documentation with protocol-specific details, making it easier for developers to understand and implement the API.
