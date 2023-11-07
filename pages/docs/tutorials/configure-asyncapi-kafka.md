@@ -37,16 +37,15 @@ In this section, you’ll create an AsyncAPI document to describe the `UserSignU
 Initially, you need to describe your application, including the AsyncAPI version, the info about the document, and the server your application is based upon.
 
 ```
-asyncapi: "3.0.0"
+asyncapi: 3.0.0
 info:
-  title: "User Signup API"
-  version: "1.0.0"
-  description: |
-    The API notifies you whenever a new user signups into the application
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
 servers:
   kafkaServer:
     host: test.mykafkacluster.org:8092
-    description: "Kafka Server"
+    description: Kafka Server
     protocol: kafka
 ```
 
@@ -60,30 +59,30 @@ In the above snippet:
 
 ### Define Channels and Operations
 
-Next, let's move on to the channels and operations section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The Operations section is used to describe a specific operation like how the services must interact with the channels.
+Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The `operations` section is used to describe how your application interacts with the channels.
 
 ```
 operations:
   onUserSignedUp:
     action: receive
     channel:
-      $ref: "#/channels/userSignedUp"
+      $ref: '#/channels/userSignedUp'
 
 
 channels:
   userSignedUp:
-    description: When the User Signs up
-    address: 'user_signedup'
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
     messages:
       userSignedUp:
-        $ref: "#/components/messages/userSignedUp"
+        $ref: '#/components/messages/userSignedUp'
 ```
 
 In the above snippet:
 
-- The `operation` object specifies onUserSignedUp operation. The `action` property suggests that the operation will be receiving the information. The `channel` property points to the channel where the operation occurs.
+- The `onUserSignedUp` object specifies the nature of the operation. The `action` property indicates that our application will be receiving the information. The `channel` property points to the channel where the operation occurs.
   
-- The `channels` object describes the userSignedUp event, where your API will be sending/receiving the information and the associated message definition. The `address` field represents the path of the channel and the `messages` field describes the structure of the message. 
+- The `userSignedUp` object inside `channels` describes the Kafka topic where our application will be receiving the information and the associated message definition. The `address` field represents the actual name of the Kafka topic. The `messages` field describes the expected messages in that topic. 
 
 ### Define Messages and Schemas
 
@@ -98,21 +97,21 @@ components:
         properties:
           user-id:
             type: integer
-            description: "id of the user"
+            description: id of the user
           user-email:
             type: string
-            description: "email of the user"
+            description: email of the user
 ```
 
 In the above snippet:
 
-- The userSignedUp message is defined which describes the payload of the event.
+- The `userSignedUp` message is defined which describes the payload (content) of the message.
   
-- The `payload` property defines the content of the event using AsyncAPI schemas. It means that your event payload should contain a user-id which is an integer and a user-email property which is a string property
+- The `payload` property defines the content of the message using [JSON Schema](https://json-schema.org/). It means that your message payload should contain a `user-id` which is an integer and a `user-email` property which is a string property.
 
 ## Summary
 
-In this tutorial, you learned how to create an AsyncAPI specification document for Kafka. You generated an AsyncAPI document which defines the structure of the Kafka messages in a machine readabe format which makes it easier to maintian event driven architecture. Try adding your own buisness logic and playing around with it.
+In this tutorial, you learned how to create an AsyncAPI specification document for Kafka. You generated an AsyncAPI document that defines the structure of the Kafka messages in a machine-readable format which makes it easier to maintain event-driven architecture. Try adding your own business logic and playing around with it.
 
 ## Next Steps
 
