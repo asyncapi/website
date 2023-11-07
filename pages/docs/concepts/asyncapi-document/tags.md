@@ -29,16 +29,15 @@ When defined within the `tags` property of the info object, tags provide a high-
 Here's a visual representation of the `tags` object inside an `info` object in an AsyncAPI document:
 ```mermaid
 graph LR
-  A[asyncapi] --> B[info]
+  B[info]
   B --> C[title]
   B --> D[version]
-  B --> E[description]
   B --> F[tags]
   F --> G[name]
   F --> I[description]
   F --> K[externalDocs]
 
-  style A fill:#47BCEE,stroke:#000;
+
   style B fill:#47BCEE,stroke:#000;
   style F fill:#47BCEE,stroke:#000;
   style I fill:#47BCEE,stroke:#000;
@@ -74,15 +73,13 @@ Tags when used within the `tags` property of the `servers` object, are specific 
 Here's a visual representation of the `tags` object inside a `servers` object in an AsyncAPI document:
 ```mermaid
 graph LR
-  A[asyncapi] --> B[servers]
+  B[servers]
   B --> C[host]
-  B --> D[description]
   B --> E[protocol]
   B --> G[tags]
   G --> H[name]
   G --> I[description]
   G --> J[externalDocs]
-  style A fill:#47BCEE,stroke:#000;
   style B fill:#47BCEE,stroke:#000;
   style G fill:#47BCEE,stroke:#000;
   style I fill:#47BCEE,stroke:#000;
@@ -126,24 +123,19 @@ Here's a visual representation of the `tags` object inside a `channels` object i
 graph LR
   A[channel]
   B(address)
-  D(description)
   E(messages)
   P(tags)
   F(name)
   G(description)
   I(externalDocs)
-  Z(asyncapi)
 
-  Z --> A
   A --> B
-  A --> D
   A --> E
   A --> P
   P --> F
   P --> G 
   P --> I 
   style A fill:#47BCEE,stroke:#000;
-  style Z fill:#47BCEE,stroke:#000;
   style P fill:#47BCEE,stroke:#000;
   style F fill:#47BCEE,stroke:#000;
   style G fill:#47BCEE,stroke:#000;
@@ -183,12 +175,10 @@ graph LR
   L(reply)
   M(address)
   N(channel)
-  W(asyncapi)
   X(name)
   Y(description)
   Z(externalDocs)
-  
-  W --> A
+
   A --> E
   A --> F
   A --> H
@@ -200,7 +190,6 @@ graph LR
   H --> Z
   style A fill:#47BCEE,stroke:#000;
   style Z fill:#47BCEE,stroke:#000;
-  style W fill:#47BCEE,stroke:#000;
   style H fill:#47BCEE,stroke:#000;
   style Y fill:#47BCEE,stroke:#000;
   style X fill:#47BCEE,stroke:#000;
