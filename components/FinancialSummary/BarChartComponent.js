@@ -155,15 +155,17 @@ const BarChartComponent = () => {
                 <div className='mb-5'>
                     <h1 id="budget-analysis" className="text-3xl font-semibold mb-4 my-2">Budget Analysis</h1>
                     <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
-                    <div className="flex justify-between my-4 md:flex md:items-center md:justify-between md:m-8">
-                        <div>
-                            <p className="text-left">Expenses</p>
-                            <p className="text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
+                    <div className="flex flex-col md:flex-row justify-between my-4 md:items-center md:justify-between md:m-8">
+                        <div className="my-2">
+                            <p className="text-center sm:text-left">Expenses</p>
+                            <p className="text-center sm:text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                         </div>
-                        {/* Select for category filter */}
-                        <div>
+                        <div className="md:flex space-x-4">
+
+                        <div className="mx-auto">
+                            {/* Select for category filter */}
                             <select
-                                className="p-2 m-1 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs w-full sm:w-auto" // w-full for mobile, w-auto for other devices
+                                className="p-2 m-1 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs w-full sm:w-auto md:w-48"
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                             >
@@ -175,7 +177,7 @@ const BarChartComponent = () => {
 
                             {/* Select for month filter */}
                             <select
-                                className="p-2 m-1 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs w-full sm:w-auto" // w-full for mobile, w-auto for other devices
+                                className="p-2 m-1 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs w-full sm:w-auto md:w-48"
                                 value={selectedMonth}
                                 onChange={(e) => setSelectedMonth(e.target.value)}
                             >
@@ -184,10 +186,10 @@ const BarChartComponent = () => {
                                     <option key={month} value={month}>{month}</option>
                                 ))}
                             </select>
-
-
+                            </div>
                         </div>
                     </div>
+
                 </div>
                 {/* Recharts BarChart */}
                 <BarChart width={barWidth} height={barHeight} data={chartData}>
