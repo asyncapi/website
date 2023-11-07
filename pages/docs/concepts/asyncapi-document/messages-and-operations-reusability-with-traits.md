@@ -1,9 +1,9 @@
 ---
-title: Reusing Traits
+title: Messages and Operations reusability with Traits
 weight: 200
 ---
 
-Traits are a powerful way to define properties that can be reused across multiple message objects within the specification. Reusing traits promotes code maintainability, reduces duplication, and makes your AsyncAPI documents cleaner and easier to manage.
+Traits allows to define properties that can be reused across multiple message and operations within the specification. Reusing traits promotes code maintainability, reduces duplication, and makes your AsyncAPI documents cleaner and easier to manage.
 
 ## Defining traits
 
@@ -21,6 +21,26 @@ graph TD
 
     style C fill:#47BCEE,stroke:#47BCEE;
     style D fill:#47BCEE,stroke:#47BCEE;
+```
+
+Here is an AsyncAPI document wehre an object like the following:
+
+```yaml
+description: Example description.
+traits:
+  - name: UserSignup
+    description: Trait description.
+  - tags:
+      - name: user
+```
+
+The document will look like the following after applying traits:
+
+```yaml
+name: UserSignup
+description: Example description.
+tags:
+  - name: user
 ```
 
 ## Applying traits to operations
@@ -95,7 +115,7 @@ In this document, the `commonHeaders` trait, which includes a `Content-Type` hea
 
 ## Trait merging
 
-Traits in AsyncAPI are merged into the message object using the [JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7386) protocol, which means that traits are merged into the operation or message object.
+Traits in AsyncAPI are merged into the message object in the same order they are defined and traits are merged into the operation or message object.
 
 ```mermaid
 graph TD
