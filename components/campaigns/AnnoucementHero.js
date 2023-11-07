@@ -71,7 +71,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
       cfaText: "Get Your Tickets",
       eventName: "AACoT'23 Bengaluru Edition",
       cfpDeadline: cfpDeadlineIndia,
-      link: "https://conference.asyncapi.com/venue/Bangalore",
+      link: "https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187",
       show: showBannerIndia
     },
     {
