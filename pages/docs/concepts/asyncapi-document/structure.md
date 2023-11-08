@@ -344,25 +344,25 @@ The purpose of the `components` object is to promote reusability and maintainabi
 
 Some of the fields `components` object holds are:
 
-- `schemas`: An object to hold reusable [Schema Object](../../reference/specification/latest#schemaObject). 
-- `servers`: An object to hold reusable [Server Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject).
-- `channels`: An object to hold reusable [Channel Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
-- `operations`: An object to hold reusable [Operation Item Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
-- `messages`: An object to hold reusable [Messages Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageObject).
-- `securitySchemes`: An object to hold reusable [Security Scheme Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#securitySchemeObject).
-- `serverVariables`: An object to hold reusable [Server Variable Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverVariableObject).
-- `parameters`: Contains reusable [parameter objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#parameterObject) that can be used in various parts of the AsyncAPI document.
-- `correlationIds`: An object to hold reusable [Correlation ID Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#correlationIdObject).
-- `replies`: An object to hold reusable [Operation Reply Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationReplyObject).
-- `replyAddresses`: An object to hold reusable [Operation Reply Address Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationReplyAddressObject).
-- `externalDocs`: An object to hold reusable [External Documentation Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#externalDocumentationObject).
-- `tags`: An object to hold reusable [Tag Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#tagObject).
-- `operationTraits`: An object to hold reusable [Operation Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationTraitObject).
-- `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusable [Message Trait Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageTraitObject).
-- `serverBindings`: An object to hold reusable [Server Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverBindingsObject).
-- `channelBindings`: An object to hold reusable [Channel Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelBindingsObject).
-- `operationBindings`: An object to hold reusable [Operation Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationBindingsObject).
-- `messageBindings`: An object to hold reusable [Message Bindings Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messageBindingsObject).
+- `schemas`: An object to hold reusable [Schema Object](/pages/docs/reference/specification/latest#schemaObject). 
+- `servers`: An object to hold reusable [Server Objects](/pages/docs/reference/specification/latest#serverObject).
+- `channels`: An object to hold reusable [Channel Objects](/pages/docs/reference/specification/latest#channelObject).
+- `operations`: An object to hold reusable [Operation Item Objects](/pages/docs/reference/specification/latest#operationObject).
+- `messages`: An object to hold reusable [Messages Objects](/pages/docs/reference/specification/latest#messageObject).
+- `securitySchemes`: An object to hold reusable [Security Scheme Objects](/pages/docs/reference/specification/latest#securitySchemeObject).
+- `serverVariables`: An object to hold reusable [Server Variable Objects](/pages/docs/reference/specification/latest#serverVariableObject).
+- `parameters`: Contains reusable [parameter objects](/pages/docs/reference/specification/latest#parameterObject) that can be used in various parts of the AsyncAPI document.
+- `correlationIds`: An object to hold reusable [Correlation ID Objects](/pages/docs/reference/specification/latest#correlationIdObject).
+- `replies`: An object to hold reusable [Operation Reply Objects](/pages/docs/reference/specification/latest#operationReplyObject).
+- `replyAddresses`: An object to hold reusable [Operation Reply Address Objects](/pages/docs/reference/specification/latest#operationReplyAddressObject).
+- `externalDocs`: An object to hold reusable [External Documentation Objects](/pages/docs/reference/specification/latest#externalDocumentationObject).
+- `tags`: An object to hold reusable [Tag Objects](/pages/docs/reference/specification/latest#tagObject).
+- `operationTraits`: An object to hold reusable [Operation Trait Objects](/pages/docs/reference/specification/latest#operationTraitObject).
+- `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusable [Message Trait Objects](/pages/docs/reference/specification/latest#messageTraitObject).
+- `serverBindings`: An object to hold reusable [Server Bindings Objects](/pages/docs/reference/specification/latest#serverBindingsObject).
+- `channelBindings`: An object to hold reusable [Channel Bindings Objects](/pages/docs/reference/specification/latest#channelBindingsObject).
+- `operationBindings`: An object to hold reusable [Operation Bindings Objects](/pages/docs/reference/specification/latest#operationBindingsObject).
+- `messageBindings`: An object to hold reusable [Message Bindings Objects](/pages/docs/reference/specification/latest#messageBindingsObject).
 
 Here's a visual representation of the `components` object and its properties:
 ```mermaid
