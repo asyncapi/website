@@ -92,10 +92,10 @@ Let's fix the errors one by one until we end up with a valid AsyncAPI document.
 3. Fix the incorrect server information. Use `host` instead of `url`
  
 ```yaml
-asyncapi: '3.0.0'
-info:
-  title: Account Service
-  version: 1.0.0
+servers:
+  mosquitto:
+    host: test.mosquitto.org
+    protocol: mqtt
 ```
 <Remember>
 Notice how <b>description</b> property is missing; that doesn't make the AsyncAPI document invalid, but it's always better to include.
