@@ -1,7 +1,6 @@
 import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos';
 
-Cypress._.times(100, () => {
-  describe('Newsroom Videos', () => {
+describe('Newsroom Videos', () => {
     // eslint-disable-next-line cypress/no-async-tests
     it('fetches and saves newsroom videos', async () => {
       // Define the data that the API should return (stubbed response)
@@ -44,9 +43,8 @@ Cypress._.times(100, () => {
         body: stubbedResponse,
       }).as('getYoutubeVideos');
 
+      // Manually trigger the function
       cy.invoke(buildNewsroomVideos()).then((videoData) => {
           expect(videoData).to.exist;
         });
-    });
-  });
 });
