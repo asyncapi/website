@@ -101,7 +101,7 @@ servers:
 Notice how <b>description</b> property is missing; that doesn't make the AsyncAPI document invalid, but it's always better to include.
 </Remember>
 
-4. Read the next error: `must be number`. Fix the `minimum` by changing it to: `0`.
+4. Read the next error: `"minimum" property type must be number`. Fix the `minimum` by changing it to: `0`.
 
 ```yaml
           properties:
