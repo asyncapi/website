@@ -131,7 +131,7 @@ Now let's fix this error by changing the type to `string`
 This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the error message directions in diagnostics. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
 
 ## Next steps
-Now that you have completed this tutorial, go ahead to learn [generate AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/generate-code) which you will be sending to your application.
+Now that you have completed this tutorial, go ahead to learn [generate AsyncAPI messages (events)](/docs/tutorials/generate-code) which you will be sending to your application.
 
 You may also enjoy reading our [AsyncAPI document validation guide](https://asyncapi.com/docs/guides/validate).
 
