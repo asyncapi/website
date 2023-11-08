@@ -98,7 +98,13 @@ channels:
         payload:
           schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
           schema:
-            $ref: 'https://example.europe-west3.gcp.confluent.cloud/subjects/test/versions/1/schema'
+            $ref: 'https://raw.githubusercontent.com/asyncapi/website/20a31a0396b41dd24b1bac877ab7ce3f58037c28/public/resources/casestudies/adeo/CostingRequestPayload.avsc'
+
+operations:
+  onMessage:
+    action: receive
+    channel:
+      $ref: '#/channels/example'
 ```
 
 ---
