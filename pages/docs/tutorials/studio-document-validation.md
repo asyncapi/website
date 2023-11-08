@@ -133,6 +133,6 @@ This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI 
 ## Next steps
 Now that you have completed this tutorial, go ahead to learn [generate AsyncAPI messages (events)](/docs/tutorials/generate-code) which you will be sending to your application.
 
-You may also enjoy reading our [AsyncAPI document validation guide](https://asyncapi.com/docs/guides/validate).
+You may also enjoy reading our [AsyncAPI document validation guide](/docs/guides/validate).
 
 ---
