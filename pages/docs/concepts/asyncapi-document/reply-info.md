@@ -68,10 +68,10 @@ operations:
         $ref: '#/channels/pong'
 ```
 
-## Request/reply over the same channel
-The request/reply pattern can also be implemented over the same channel. You can do this by specifying the same address for both the requester and the replier.
+## Multiple channels with single message
+The request/reply pattern can also be implemented over multiple channels with single message. You can do this by specifying multiple channels with single message and specifying the same address for both the requester and the replier.
 
-Here's a example of setting up both requestor and replier in the same channel:
+Here's a example of setting up both requestor and replier over the same address:
 ```yml
 asyncapi: 3.0.0
 
@@ -103,7 +103,7 @@ operations:
 ```
 
 ## Multiple messages over the same channel
-When working with protocols like websockets, you can have multiple messages under the same channel. In such scenarios, you can use the `messages` property in the `Operation` object to explicitly define which message among the multiple messages available over the same channel is a request and which is a reply.  
+Sometimes, you would want to use another approach to represent the [same information above](#multiple-channels-with-single-message). You can do so by specifying multiple messages under the same channel. In such scenarios, you can use the `messages` property in the `Operation` object to explicitly define which message among the multiple messages available over the same channel is a request and which is a reply.  
 
 Here's a example where we have multiple messages over the same channel with the same address and we define in the `Operation` object explicitly which message among the available messages is a request and which is a reply:
 ```yml
