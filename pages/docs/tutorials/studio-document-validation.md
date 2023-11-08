@@ -36,7 +36,7 @@ You can also skip the step below by clicking on New File in Studio and opening t
 2. Copy and paste the below invalid AsyncAPI document:
 
 ```yaml
-asyncapi: 1.0.0
+asyncapi: 3.0.0
 info:
   title: Streetlights API
   version: '1.0.0'
@@ -49,7 +49,7 @@ info:
 
 servers:
   mosquitto:
-    host: test.mosquitto.org
+    url: test.mosquitto.org
     protocol: mqtt
 
 channels:
@@ -63,7 +63,7 @@ channels:
           properties:
             id:
               type: integer
-              minimum: 0
+              minimum: true
               description: Id of the streetlight.
             lumens:
               type: integer
@@ -78,7 +78,6 @@ operations:
   onLightMeasured:
     action: 'receive'
     summary: Inform about environmental lighting conditions for a particular streetlight.
-    operationId: onLightMeasured
     channel:
       $ref: '#/channels/lightMeasured'
 ``` 
