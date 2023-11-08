@@ -344,7 +344,7 @@ The purpose of the `components` object is to promote reusability and maintainabi
 
 Some of the fields `components` object holds are:
 
-- `schemas`: An object to hold reusable [Schema Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#schemaObject). 
+- `schemas`: An object to hold reusable [Schema Object](../../reference/specification/v3.0.0#schemaObject). 
 - `servers`: An object to hold reusable [Server Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject).
 - `channels`: An object to hold reusable [Channel Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
 - `operations`: An object to hold reusable [Operation Item Objects](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject).
