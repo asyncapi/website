@@ -89,7 +89,7 @@ Let's fix the errors one by one until we end up with a valid AsyncAPI document.
 
 2. Open **DIAGNOSTICS**, you can see more information related to your errors.
 
-3. Fix the incorrect AsyncAPI specification number to `3.0.0`.
+3. Fix the incorrect server information. Use `host` instead of `url`
  
 ```yaml
 asyncapi: '3.0.0'
