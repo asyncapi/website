@@ -41,7 +41,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 39.34291865864845
+      "score": 39.63009324739771
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -52,7 +52,23 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 30.440506407421427
+      "score": 30.727680996170687
+    },
+    {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 21.538094156194408
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -170,17 +186,6 @@
         }
       ],
       "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOCoBobc42aMuI",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: release for version 3.0.0 of the spec",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/parser-js/pull/526",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
