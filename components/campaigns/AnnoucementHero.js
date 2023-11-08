@@ -5,8 +5,7 @@ import Container from '../layout/Container'
 import AnnouncementRemainingDays from './AnnouncementRamainingDays'
 
 function shouldShowBanner(cfpDeadline) {
-  const currentDate = new Date(); // Get the current date
-  console.log(currentDate)
+  const currentDate = new Date(); // G et the current date
   const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
   // Check if the current date is after the deadline
@@ -19,7 +18,7 @@ function shouldShowBanner(cfpDeadline) {
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }) {
   //return null;
 
-    const cfpDeadline = '2023-10-19T06:00:00Z'
+    const cfpDeadline = '2023-11-30T06:00:00Z'
     const showBanner = shouldShowBanner(cfpDeadline);
   if (!showBanner) return null;
 
@@ -43,17 +42,17 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           level="h3"
           typeStyle="heading-sm"
         >
-          Madrid Edition
+          Bangalore Edition
         </Heading>
         <Paragraph typeStyle="body-lg">
-          19th of October, 2023 | Madrid, Spain
+          30th of November, 2023 | Bangalore, India
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 Madrid Edition" />
+        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName="AACoT'23 Bangalore Edition" />
         <div className="mt-6 pb-2 space-x-2">
           <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdwqi27LpsIi8tKQoQBcUWDUJZi0be0cHpWnDtWhhHVn00hFA/viewform"
+            href="https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187"
             target="_blank"
-            text="Get Free Tickets"
+            text="Get Your Tickets"
             data-testid="AnnouncementHero-submit-session"
           />
         </div>

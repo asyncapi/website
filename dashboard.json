@@ -1,6 +1,38 @@
 {
   "hotDiscussions": [
     {
+      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Proposal to solve publish/subscribe confusion",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/spec/issues/618",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 54.2759972736099
+    },
+    {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 41.64031536864252
+    },
+    {
       "id": "PR_kwDOBW5R_c5Xb72L",
       "isPR": true,
       "isAssigned": false,
@@ -9,7 +41,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 31.87637935116772
+      "score": 39.63009324739771
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -20,7 +52,23 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 25.845712987433288
+      "score": 30.727680996170687
+    },
+    {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 21.538094156194408
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -36,35 +84,15 @@
           "color": "84b6eb"
         }
       ],
-      "score": 18.666348268701817
+      "score": 18.953522857451077
     },
     {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 18.666348268701817
-    },
-    {
-      "id": "PR_kwDOBW5R_c5YEren",
+      "id": "PR_kwDOBW5R_c5VAjCE",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: introducing request/reply ",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2071",
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
       "repo": "asyncapi/website",
       "labels": [
         {
@@ -74,6 +102,10 @@
         {
           "name": "area/docs",
           "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
         }
       ],
       "score": 17.517649913704783
@@ -87,7 +119,7 @@
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
-      "score": 16.08177696995849
+      "score": 16.36895155870775
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -110,33 +142,6 @@
       "score": 15.794602381209232
     },
     {
-      "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Proposal to solve publish/subscribe confusion",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/spec/issues/618",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "💭 Strawman (RFC 0)",
-          "color": "C2E0C6"
-        }
-      ],
-      "score": 15.504217951581506
-    },
-    {
-      "id": "PR_kwDOBW5R_c5Worbr",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add v3 migration guide",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/website/pull/2008",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.220253203710714
-    },
-    {
       "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
@@ -148,38 +153,200 @@
       "score": 15.220253203710714
     },
     {
-      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
-      "isPR": false,
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
       "isAssigned": false,
-      "title": "Usages of allOf within message payload could be flattened",
-      "author": "jamescrowley",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
-      "repo": "asyncapi/asyncapi-react",
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.358729437462937
+      "score": 14.645904026212197
     },
     {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Improve overall performance of the website but especially Blog",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/89",
+      "id": "PR_kwDOBW5R_c5VmsTR",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: tags in a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1957",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
+          "name": "📑 docs",
+          "color": "E50E99"
         },
         {
-          "name": "Epic",
-          "color": "3E4B9E"
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
         }
       ],
-      "score": 13.210031082465903
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOCxglSM513Nta",
+      "title": "Remove messageId from v3 conversion",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/converter-js/issues/201",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODCuNRs51jd3x",
+      "title": "Implement GitHub Action to Validate examples Field in Schemas",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/bindings/issues/217",
+      "repo": "asyncapi/bindings",
+      "author": "KhudaDad414",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N851VGrF",
+      "title": "Unhandled Runtime Error",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/230",
+      "repo": "asyncapi/conference-website",
+      "author": "PUNEET-EMM",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM51UQ-5",
+      "title": "Show a warning if glee can't process a received message",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/558",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5yy6e0",
+      "title": "The new glee command is generating a 2.1.0 document",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/829",
+      "repo": "asyncapi/cli",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt85yyn4B",
+      "title": "Update tooling doc with info about new category",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/899",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yh95N",
+      "title": "would be nice if venue from past events is grayed out",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/208",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvrx",
+      "title": "Remove this commented out code.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/35",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvh1",
+      "title": "Consider using \"forEach\" instead of \"map\" as its return value is not being used here.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/32",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5ydvaR",
+      "title": "Nested block is redundant.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/822",
+      "repo": "asyncapi/cli",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c5yduk_",
       "title": "Single backtick is recognised as Codeblock",
@@ -224,25 +391,6 @@
       "isAssigned": false,
       "resourcePath": "/asyncapi/conference-website/issues/202",
       "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCHlHJM5yRiQ8",
-      "title": "Fix cognitive complexity issue",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/generator/issues/1040",
-      "repo": "asyncapi/generator",
       "author": "derberg",
       "area": "javascript",
       "labels": [
@@ -375,6 +523,10 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -389,6 +541,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -405,6 +561,10 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -419,6 +579,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -464,6 +628,10 @@
       "author": "jonaslagoni",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
@@ -640,29 +808,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh385m6IlQ",
-      "title": "Add runtime testing for Kotlin",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1334",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Kotlin generator",
-          "color": "61A95C"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5mwLzC",
       "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
       "isAssigned": true,
@@ -737,7 +882,7 @@
     {
       "id": "I_kwDOFi_gUM5hpuWl",
       "title": "Improve kafka adapter",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/glee/issues/411",
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
@@ -746,21 +891,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385hfhvh",
-      "title": "[📑 Docs]: Use code to represent the internal models",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1182",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
@@ -776,21 +906,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM5gx6CN",
-      "title": "error when running `npm install` in glee",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/glee/issues/403",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
@@ -920,48 +1035,6 @@
       ]
     },
     {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185B-xnK",
-      "title": "What do we define as a breaking change?",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/spec/issues/688",
-      "repo": "asyncapi/spec",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "819cd3"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "❔ Question",
-          "color": "54B65C"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFGbvC85AWog3",
       "title": "Automate Helm chart release version bump",
       "isAssigned": false,
@@ -1068,6 +1141,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     }
