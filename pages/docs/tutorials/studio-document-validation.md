@@ -109,23 +109,7 @@ Notice how <b>description</b> property is missing; that doesn't make the AsyncAP
               type: integer
               minimum: 0
 ``` 
-5. You see three errors:
-- must be equal to one of the allowed values
-- must be array
-- must match a schema in `anyOf`
-
-`anyOf` means it should match any one the above schemas then it is valid.
-
-Now let's fix this error by changing the type to `string`
-
-```yaml
-            sentAt:
-              type: string
-              format: date-time
-              description: Date and time when the message was sent.
-```
-
-6. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
+5. Congratulations! You identified and fixed all the errors, and now have a valid AsyncAPI document.
 
 ## Summary
 This tutorial taught us how to validate an AsyncAPI document using the AsyncAPI Studio tool. We also learned to troubleshoot an invalid AsyncAPI document by following the error message directions in diagnostics. In doing so, we learned how to identify `REQUIRED` properties in all AsyncAPI documents.
