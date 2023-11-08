@@ -1,4 +1,4 @@
-import {buildNewsroomVideos} from '../../../scripts/build-newsroom-videos';
+import { buildNewsroomVideos } from '../../../scripts/build-newsroom-videos';
 
 describe('Newsroom Videos', () => {
   // eslint-disable-next-line cypress/no-async-tests
