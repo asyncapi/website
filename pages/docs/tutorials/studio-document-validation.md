@@ -87,7 +87,7 @@ Let's fix the errors one by one until we end up with a valid AsyncAPI document.
  
 1. You can see the error message on the screen: `Empty or invalid document. Please fix errors/define AsyncAPI document.`
 
-2. Open diagnostics, you can see more information related to your errors.
+2. Open **DIAGNOSTICS**, you can see more information related to your errors.
 
 3. Fix the incorrect AsyncAPI specification number to `3.0.0`.
  
