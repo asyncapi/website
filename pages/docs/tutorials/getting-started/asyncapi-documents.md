@@ -16,7 +16,6 @@ The format of the file must be JSON or YAML; however, only the subset of YAML th
 info:
   title: Example application
   version: '0.1.0'
-
 channels:
   userSignup:
     address: 'user/signedup'
@@ -35,7 +34,6 @@ channels:
             age:
               type: integer
               minimum: 18
-
 operations:
   publishUserSignedup:
     action: 'send'
