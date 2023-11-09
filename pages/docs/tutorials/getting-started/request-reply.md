@@ -15,7 +15,7 @@ Here's how you can implement the request/reply pattern when the address of the r
 You can define a requester using the `send` operation that sends a message to the `ping` channel and expects a reply over the `pong` channel. 
 
 In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
-<CodeBlock highlightedLines={[27,28,31,30,29,39,40,41,42,43,44,45]}>
+<CodeBlock highlightedLines={[6,7,8,9,10,11,18,19,20,21,22,23,24]}>
 {`asyncapi: 3.0.0
 info:
   title: Ping/pong example with static reply channel
@@ -62,7 +62,7 @@ components:
 While in the [above section](#static-response-channel) you know the address of the response channel, sometimes, you do not know where the reply needs to be sent at the time of design or compile time. Instead the address of the response channel is determined dynamically at runtime.
 
 Here's how you can implement request/reply while dynamically determining the reply channel:
-<CodeBlock highlightedLines={[78,79,80,81,82,94,95,96,97]}>
+<CodeBlock highlightedLines={[13,14,15,16,22,23,24,25,26,27,30,31,32,33,34,35]}>
 {`asyncapi: 3.0.0
 info:
   title: Ping/pong example with reply specified as dynamic information provided in the runtime
