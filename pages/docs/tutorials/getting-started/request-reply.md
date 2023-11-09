@@ -9,15 +9,14 @@ Before we begin, it would be beneficial and easy to follow if you have a basic u
 
 [Request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html) is a common messaging pattern where we have a component known as the **requester** that sends a request message to another component known as **replier**, which receives the request and responds to the request with a reply. So, the request/reply pattern consists of majorly two components, a requester and a replier. 
 
-## Static Response Channel 
+## Static Reply Address 
 Here's how you can implement the request/reply pattern when the address of the response channel(i.e address of the reply) is known at the compile time or at the time of design. 
 
 You can define a requester using the `send` operation that sends a message to the `ping` channel and expects a reply over the `pong` channel. 
 
 In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
 <CodeBlock highlightedLines={[27,28,31,30,29,39,40,41,42,43,44,45]}>
-{```yml
-asyncapi: 3.0.0
+{`asyncapi: 3.0.0
 
 info:
   title: Ping/pong example with static reply channel
@@ -60,17 +59,15 @@ components:
         properties:
           event:
             type: string
-            const: pong
-```}
+            const: pong`}
 </CodeBlock>
 
-## Dynamic Response Channel 
+## Dynamic Reply Address 
 While in the [above section](#static-response-channel) you know the address of the response channel, sometimes, you do not know where the reply needs to be sent at the time of design or compile time. Instead the address of the response channel is determined dynamically at runtime.
 
 Here's how you can implement request/reply while dynamically determining the reply channel:
 <CodeBlock highlightedLines={[78,79,80,81,82,94,95,96,97]}>
-{```
-asyncapi: 3.0.0
+{`asyncapi: 3.0.0
 
 info:
   title: Ping/pong example with reply specified as dynamic information provided in the runtime
@@ -122,8 +119,7 @@ components:
         properties:
           event:
             type: string
-            const: pong
-```}
+            const: pong`}
 </CodeBlock>
 
 In the above example, since we don't know the address or the reply channel at the design time, you can set the `address` property to null or you can choose to omit entirely. You can use the `Operation Reply Address ` object to to define the address of the reply channel dynamically using a runtime expression. 
