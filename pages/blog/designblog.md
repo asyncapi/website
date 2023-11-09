@@ -20,7 +20,7 @@ public/img/posts/oss_image.webp
 
 Open Source Software (OSS) refers to software shared with its source code, allowing users to access, modify, and distribute. OSS allows everyone to contribute to the source code, make changes, or suggest new features. You can use the code for your purpose or contribute to improving the entire project’s features.
 
-Some examples of Open Source Software are available, including AsyncAPI, Linux Kernel, Oppia Foundation, VLC Media Player, Mozilla Firefox, Audacity, Blender, and more. These software are free to download, use, and distribute. It’s essential to recognise that some individuals put in much effort to make these projects available to a broad audience. Pursuing a career in Open Source can be beneficial, as it allows you to give back to the community and assist as many users as possible.
+Some examples of Open Source Software are available, including AsyncAPI, Linux Kernel, Oppia Foundation, VLC Media Player, Mozilla Firefox, Audacity, Blender, and more. These software are free to download, use, and distribute. It’s essential to recognize that some individuals put in much effort to make these projects available to a broad audience. Pursuing a career in Open Source can be beneficial, as it allows you to give back to the community and assist as many users as possible.
 
 It is worth noting that not all open-source projects are free of charge. To determine whether a project is free, you can check the project’s LICENSE file on GitHub.
 
