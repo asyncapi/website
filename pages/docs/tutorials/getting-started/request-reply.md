@@ -14,6 +14,26 @@ Here's how you can implement the request/reply pattern when the address of the r
 
 You can define a requester using the `send` operation that sends a message to the `ping` channel and expects a reply over the `pong` channel. 
 
+
+<CodeBlock highlightedLines={[5,6,7,8,9]}>
+{`asyncapi: 2.5.0
+info:
+  title: Hello world application
+  version: '0.1.0'
+servers:
+  production:
+    url: broker.mycompany.com
+    protocol: amqp
+    description: This is "My Company" broker.
+channels:
+  hello:
+    publish:
+      message:
+        payload:
+          type: string
+          pattern: '^hello .+$'`}
+</CodeBlock>
+
 In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
 <CodeBlock highlightedLines={[27,28,31,30,29,39,40,41,42,43,44,45]}>
 {`asyncapi: 3.0.0
@@ -127,22 +147,3 @@ In the above example, since we don't know the address or the reply channel at th
 In this case, we use `$message.header#/replyTo` as the value of the `location` property which is a runtime expression and determines where the reply channel is by using the value of the `replyTO` header in the request message. 
 
 While the above examples are a simple implementation of request/reply pattern, in an protocol-agnostic world there are many different ways to represent the request/reply pattern. All of which are supported by AsyncAPI.
-
-<CodeBlock highlightedLines={[5,6,7,8,9]}>
-{`asyncapi: 2.5.0
-info:
-  title: Hello world application
-  version: '0.1.0'
-servers:
-  production:
-    url: broker.mycompany.com
-    protocol: amqp
-    description: This is "My Company" broker.
-channels:
-  hello:
-    publish:
-      message:
-        payload:
-          type: string
-          pattern: '^hello .+$'`}
-</CodeBlock>
