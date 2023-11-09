@@ -3,7 +3,7 @@ import Paragraph from '../typography/Paragraph'
 import Button from '../buttons/Button'
 import Heading from '../typography/Heading'
 import Container from '../layout/Container'
-import AnnouncementRemainingDays from './AnnouncementRamainingDays'
+import AnnouncementRemainingDays from './AnnouncementRemainingDays'
 import ArrowLeft from '../icons/ArrowLeft'
 import ArrowRight from '../icons/ArrowRight'
 
@@ -25,7 +25,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const [activeIndex, setActiveIndex] = useState(0);
 
   const cfpDeadlineIndia = '2023-11-30T06:00:00Z'
-  const cfpDeadlineFrance = '2023-12-6T06:00:00Z'
+  const cfpDeadlineFrance = '2023-12-06T06:00:00Z'
   const showBannerIndia = shouldShowBanner(cfpDeadlineIndia);
   const showBannerFrance = shouldShowBanner(cfpDeadlineFrance);
 
@@ -116,7 +116,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           <ArrowLeft className='w-4 text-white' />
         </div>
         <div className='relative w-5/6 flex flex-col gap-2 justify-center items-center'>
-          <div className='relative w-[17rem] h-[19rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
+          <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
           {banners.map((banner, index) => (
             banner.show && (
               <Banner
