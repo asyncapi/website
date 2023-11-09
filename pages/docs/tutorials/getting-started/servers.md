@@ -16,13 +16,11 @@ In this article, you'll learn how to add `servers` to your AsyncAPI document. Ad
 info:
   title: Hello world application
   version: '0.1.0'
-
 servers:
   production:
     host: broker.mycompany.com
     protocol: amqp
     description: This is "My Company" broker.
-
 channels:
   hello:
     address: 'hello'
@@ -31,7 +29,6 @@ channels:
         payload:
           type: string
           pattern: '^hello .+$'
-
 operations:
   receiveHello:
     action: 'receive'
