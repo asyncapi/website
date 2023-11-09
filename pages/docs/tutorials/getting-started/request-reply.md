@@ -86,7 +86,7 @@ operations:
       $ref: '#/channels/ping'
     reply:
       address:
-        description: Reply is sent to topic specified in `replyTo` property in the message header
+        description: Reply is sent to topic specified in 'replyTo' property in the message header
         location: "$message.header#/replyTo"
       channel: 
         $ref: '#/channels/pong'
