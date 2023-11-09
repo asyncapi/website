@@ -16,7 +16,7 @@ You can define a requester using the `send` operation that sends a message to th
 
 In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
 <CodeBlock highlightedLines={[27,28,31,30,29,39,40,41,42,43,44,45]}>
-{ `asyncapi: 3.0.0
+{`asyncapi: 3.0.0
 
 info:
   title: Ping/pong example with static reply channel
@@ -59,7 +59,7 @@ components:
         properties:
           event:
             type: string
-            const: pong `}
+            const: pong`}
 </CodeBlock>
 
 ## Dynamic Response Channel 
@@ -67,7 +67,7 @@ While in the [above section](#static-response-channel) you know the address of t
 
 Here's how you can implement request/reply while dynamically determining the reply channel:
 <CodeBlock highlightedLines={[78,79,80,81,82,94,95,96,97]}>
-{ `asyncapi: 3.0.0
+{`asyncapi: 3.0.0
 
 info:
   title: Ping/pong example with reply specified as dynamic information provided in the runtime
@@ -119,7 +119,7 @@ components:
         properties:
           event:
             type: string
-            const: pong `}
+            const: pong`}
 </CodeBlock>
 
 In the above example, since we don't know the address or the reply channel at the design time, you can set the `address` property to null or you can choose to omit entirely. You can use the `Operation Reply Address ` object to to define the address of the reply channel dynamically using a runtime expression. 
