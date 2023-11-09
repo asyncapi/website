@@ -14,12 +14,6 @@ An AsyncAPI document is a file that defines and annotates the different componen
 
 The AsyncAPI Studio tool allows you to develop an AsyncAPI document, validate it, preview it, convert it to the latest version, and visualize event flows.
 
-<Remember>
-
-If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one using `asyncapi new --example=tutorial.yml --no-tty` command.
-
-</Remember>
-
 Now let's experiment with an invalid file to see how errors are displayed and how to make that file valid again.
 
 ## Copy invalid AsyncAPI document
