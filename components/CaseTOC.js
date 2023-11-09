@@ -4,6 +4,10 @@ import { twMerge } from "tailwind-merge";
 import ArrowRight from "./icons/ArrowRight";
 import { useHeadingsObserver } from "./helpers/useHeadingsObserver";
 
+const checkIfActive = (item, currSelected) => {
+  return item.slug === currSelected || item.children?.some((child) => checkIfActive(child, currSelected));
+}
+
 const convertContentToTocItems = (content, level = 1) => {
   const tocItems = [];
 
@@ -34,13 +38,14 @@ function TOCItem({ item, index, currSelected, closeMenu }) {
     closeMenu();
     setOpen(false);
   };
+  const active = useMemo(() => checkIfActive(item, currSelected), [item, currSelected]);
 
   return (
     <>
       <nav className="relative block max-w-max">
         <a
           className={`mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline flex items-center ${
-            currSelected === item.slug && "text-primary-500 font-bold"
+             active && "text-primary-500 font-bold"
           }`}
           href={`#${item.slug}`}
           key={index}
