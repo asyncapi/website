@@ -37,26 +37,28 @@ function TOCItem({ item, index, currSelected, closeMenu }) {
 
   return (
     <>
-      {item.children && item.children.length > 0 && (
-        <span onClick={() => setOpen(!open)}>
-          <ArrowRight
-            className={`${
-              open ? "rotate-90" : "0"
-            } transform transition duration-200 ease-in-out h-6 inline-block mr-1 -mt-0.5 text-primary-500 absolute -left-1`}
-          />
-        </span>
-      )}
-      <a
-        className={`mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline flex items-center ${
-          currSelected === item.slug && "text-primary-500 font-bold"
-        }`}
-        href={`#${item.slug}`}
-        key={index}
-        style={{ marginLeft: `${(item.lvl - 1) * 16}px` }}
-        onClick={handleClick}
-      >
-        {item.content}
-      </a>
+      <nav className="relative block max-w-max">
+        <a
+          className={`mb-1 transition duration-100 ease-in-out text-gray-900 font-normal text-sm font-sans antialiased hover:underline flex items-center ${
+            currSelected === item.slug && "text-primary-500 font-bold"
+          }`}
+          href={`#${item.slug}`}
+          key={index}
+          style={{ marginLeft: `${(item.lvl - 1) * 16}px` }}
+          onClick={handleClick}
+        >
+          {item.content}
+        </a>
+        {item.children && item.children.length > 0 && (
+          <span onClick={() => setOpen(!open)} className="cursor-pointer absolute -right-6 top-0 ">
+            <ArrowRight
+              className={`${
+                open ? "rotate-90" : "0"
+              } transform transition duration-200 ease-in-out h-5 text-gray-500`}
+            />
+          </span>
+        )}
+      </nav>
       {item.children && item.children.length > 0 && (
         <ul
           className={`left-0 relative ${
@@ -133,13 +135,7 @@ export default function CaseTOC({
           cssBreakingPoint === "xl" ? "xl:block" : "lg:block"
         }`}
       >
-        <Scrollspy
-          items={tocItems.map((item) => item.slug)}
-          currentClassName="text-primary-500 font-bold"
-          componentTag="div"
-          rootEl={contentSelector}
-          offset={-120}
-        >
+        <ul className="mt-2">
           {tocItems.map((item, index) => (
             <TOCItem
               item={item}
@@ -149,7 +145,7 @@ export default function CaseTOC({
               currSelected={selected}
             />
           ))}
-        </Scrollspy>
+        </ul>
       </div>
     </div>
   );
