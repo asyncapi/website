@@ -17,12 +17,10 @@ You can define a requester using the `send` operation that sends a message to th
 In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
 <CodeBlock highlightedLines={[27,28,31,30,29,39,40,41,42,43,44,45]}>
 {`asyncapi: 3.0.0
-
 info:
   title: Ping/pong example with static reply channel
   version: 1.0.0
   description: Example with a requester that initiates the request/reply pattern on a different channel than the reply is using.
-
 channels:
   ping:
     address: /ping
@@ -34,7 +32,6 @@ channels:
     messages:
       pong:
         $ref: '#/components/messages/pong'
-
 operations:
   pingRequest:
     action: send
@@ -43,7 +40,6 @@ operations:
     reply:
       channel: 
         $ref: '#/channels/pong'
-
 components: 
   messages: 
     ping:
@@ -68,12 +64,10 @@ While in the [above section](#static-response-channel) you know the address of t
 Here's how you can implement request/reply while dynamically determining the reply channel:
 <CodeBlock highlightedLines={[78,79,80,81,82,94,95,96,97]}>
 {`asyncapi: 3.0.0
-
 info:
   title: Ping/pong example with reply specified as dynamic information provided in the runtime
   version: 1.0.0
   description: Example document for an application that accepts ping requests and responds to the address that was specified in runtime by the requestor, in the message header
-
 channels:
   ping:
     address: /ping
@@ -85,7 +79,6 @@ channels:
     messages:
       pong:
         $ref: '#/components/messages/pong'
-
 operations:
   pingRequest:
     action: receive
@@ -97,7 +90,6 @@ operations:
         location: "$message.header#/replyTo"
       channel: 
         $ref: '#/channels/pong'
-
 components:
   messages:
     ping:
@@ -112,7 +104,6 @@ components:
           event:
             type: string
             const: ping
-
     pong:
       payload:
         type: object
