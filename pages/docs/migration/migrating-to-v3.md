@@ -241,7 +241,7 @@ channels:
         ...
 ```
 
-This also means that we have removed the property `messageId` from the Message Object, as the ID of the Message Object is now the key in the key/value pair.
+We have updated the structure of the Message Object by eliminating the `messageId` property. We now use the ID of the Message Object itself as the key in the key/value pairing, rendering a separate `messageId` property redundant.
 
 ## Unifying explicit and implicit references
 
