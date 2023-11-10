@@ -403,13 +403,13 @@ asyncapi: 3.0.0
 
 ## Restricted parameters object
 
-Parameters has always been one that did not reflect the use-cases of the real world for the sacrifice of convenience.
+Parameters have often prioritized convenience over accurately reflecting real-world use cases.
 
 <Asyncapi3ParameterComparison className="my-8" />
 
-In v2, you had the full capability of the Schema Object, however it provides too many options that are rarely used. On-top of that, how are you ever going to serialize an object or boolean in the channel path?
+In v2, we significantly streamlined the Schema Object. While the previous version offered full capability with numerous, often underutilized options, it posed challenges in serializing objects or booleans in the channel path. 
 
-In v2, we have simplified it significantly, so by constantly being of string type, and only giving a limited number of properties to use. Now you only have access to `enum`, `default`, `description`, `examples`, and `location`.
+The new v3 simplifies this by consistently using the string type and limiting available properties. Now, you can only access `enum`, `default`, `description`, `examples`, and `location`, ensuring a more focused and practical approach."
 
 ```yml
 asyncapi: 2.6.0
