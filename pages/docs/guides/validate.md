@@ -5,7 +5,7 @@ weight: 120
 ---
 
 ## Introduction
-This guide teaches multiple ways to validate AsyncAPI documents. 
+In this guide, you'll learn multiple ways to validate AsyncAPI documents.
 
 ## Validate AsyncAPI documents
 Validating an AsyncAPI document can mean one of two things: 
@@ -51,7 +51,7 @@ Let's discuss an example. While the `summary` property is optional in an AsyncAP
 
 </Remember>
 
-One way this can be done is by using **Spectral** open source tool. It enables you to define company-specific rules that you can use internally.  
+One way to do this is to use the **Spectral** open-source tool. It enables you to define company-specific rules that you can use internally.  
 
 To get started:
 1. Install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). 
