@@ -9,7 +9,7 @@ weight: 110
 
 In the previous lesson, you learned how to create the definition of a simple [Hello World application](/docs/getting-started/hello-world). Let's take it from there.
 
-In this article, you'll learn how to add `servers` to your AsyncAPI document. Adding and defining servers is useful, because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+In this tutorial, you'll learn how to add `servers` to your AsyncAPI document. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
 
 <CodeBlock highlightedLines={[6,7,8,9,10]}>
 {`asyncapi: 3.0.0
@@ -38,19 +38,19 @@ operations:
 
 You've now added a new section called `servers` in your AsyncAPI document.
 
-You might have noticed that our example mentions `amqp`. This protocol is very common and was popularized by RabbitMQ (among others). We picked `amqp` for our example, but you can use any protocol. The most common protocols used are `mqtt` (widely adopted by the Internet of Things and mobile apps), `kafka` (popular for its streaming solution), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs).
+You might have noticed that our example mentions `amqp`, a very common protocol that was popularized by RabbitMQ (among others). While our example uses `amqp`, you can use any protocol. The most common protocols used are `mqtt` (widely adopted by the Internet of Things and mobile apps), `kafka` (popular for its streaming solution), `ws` (WebSockets are frequently used in browsers), and `http` (used in HTTP streaming APIs).
 
 <Remember>
 
 The `servers` section defines where your application should connect to start sending and receiving messages. 
 
-1. If you are using a <a href="https://dev.to/fmvilas/event-driven-architectures--asyncapi-db7" target="_blank" className="text-secondary-600 font-medium hover:underline">broker-centric architecture</a> such as Kafka or RabbitMQ, usually you specify the URL of the broker. 
+1. If you are using a broker-centric architecture such as Kafka or RabbitMQ, specify the broker URL. 
 2. If you have the classic client-server model such as for REST APIs, then your `server` should be the URL of the server.
 
 </Remember>
 
 ## Conclusion
 
-Now you know where `Hello world application` connects to and you can start receiving `hello {name}` messages.
+Now you know where the `Hello world application` connects to, and you can start receiving `hello {name}` messages.
 
-In the next chapter, you'll learn how to add security requirements to your server.
+In the next section, you'll learn how to add security requirements to your server.
