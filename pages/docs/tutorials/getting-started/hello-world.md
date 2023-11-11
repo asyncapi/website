@@ -3,7 +3,8 @@ title: "Hello world"
 weight: 30
 ---
 
-Let's define an application that's capable of receiving a "hello {name}" message.
+Let's define an application that's capable of receiving a `"hello {name}"` message:
+
 <CodeBlock>
 {`asyncapi: 3.0.0
 info:
@@ -46,7 +47,7 @@ operations:
       $ref: '#/channels/hello'`}
 </CodeBlock>
 
-The first line of the specification starts with the document type `asyncapi` and the version (3.0.0). This line doesn't have to be the first one, but it's a recommended practice.
+The first line of the specification starts with the document type `asyncapi` and the version (3.0.0). That line doesn't have to be the first one, but it's a best practice.
 
 <CodeBlock highlightedLines={[2,3,4]}>
 {`asyncapi: 3.0.0
@@ -92,7 +93,7 @@ operations:
 
 The `channels` section of the specification houses all of the mediums where messages flow through. For example, some systems use `topic`, `event name` or `routing key`. Different kinds of information flow through each channel similar to the analogy of TV channels.
 
-You only have one channel called `hello` and you see what message is available in this channel and how it must be structured. The `payload` object defines that the message must be a string and match the given regular expression in string format like `hello {name}`.
+You only have one channel called `hello`, and you see what message is available in this channel and how it must be structured. The `payload` object defines that the message must be a string and match the given regular expression in a string format such as `hello {name}`.
 
 <CodeBlock highlightedLines={[13,14,15,16,17]}>
 {`asyncapi: 3.0.0
@@ -114,6 +115,6 @@ operations:
       $ref: '#/channels/hello'`}
 </CodeBlock>
 
-The `operations` section is where you describe what the application is doing. Is application a consumer that `receive` messages or producer that `send` messages, or both? Each operation has unique identifier like for example `receiveHello`.
+The `operations` section is where you describe what the application is doing. Each operation has a unique identifier for example, `receiveHello`.
 
-In above example you see that `Hello world application` is a consumer that listens to `sayHelloMessage` message comming from `hello` channel. In other words, you can say that `Hello world application` subscribes to `hello` topic to `recive` the `sayHelloMessage` message. This AsyncAPI document describes what `Hello world application` is doing, and not what others can do with it.
+In the above example, you see that the `Hello world application` is a consumer listening to the `sayHelloMessage` message from the `hello` channel. In other words, you can say that the `Hello world application` subscribes to the `hello` topic to `receive` the `sayHelloMessage` message. That AsyncAPI document describes what the `Hello world application` is doing, not what others can do with it. 
