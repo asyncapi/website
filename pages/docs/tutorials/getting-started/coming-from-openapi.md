@@ -1,5 +1,5 @@
 ---
-title: "Coming from OpenAPI and beyond"
+title: "Coming from OpenAPI"
 weight: 20
 ---
 
