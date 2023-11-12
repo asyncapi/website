@@ -30,7 +30,52 @@ flowchart TD
 
 ## Creating AsyncAPI document for Kafka
 
-In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement. 
+In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement.
+
+Let's begin by analysing the document. As we move forward in the tutorial, we'll break down each segment uncovering its purpose and functionality.
+
+```
+asyncapi: 3.0.0
+info:
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
+
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+
+components:
+  messages:
+    userSignedUp:
+      payload:
+        type: object
+        properties:
+          user-id:
+            type: integer
+            description: This property describes the id of the user
+          user-email:
+            type: string
+            description: This property describes the email of the user
+```
+
+Let's now break it down into pieces:
 
 ### Define AsyncAPI version, API information, and server
 
@@ -108,49 +153,6 @@ In the above snippet:
 - The `userSignedUp` message is defined which describes the payload (content) of the message.
   
 - The `payload` property defines the content of the message using [JSON Schema](https://json-schema.org/). It means that your message payload should contain a `user-id` which is an integer and a `user-email` property which is a string property.
-
-You've reached the end of the tutorial, and piecing together these components will provide you with a fully-prepared AsyncAPI document.
-
-```
-asyncapi: 3.0.0
-info:
-  title: User Signup API
-  version: 1.0.0
-  description: The API notifies you whenever a new user signs up in the application.
-
-servers:
-  kafkaServer:
-    host: test.mykafkacluster.org:8092
-    description: Kafka Server
-    protocol: kafka
-
-operations:
-  onUserSignedUp:
-    action: receive
-    channel:
-      $ref: '#/channels/userSignedUp'
-
-channels:
-  userSignedUp:
-    description: This channel contains a message per each user who signs up in our application.
-    address: user_signedup
-    messages:
-      userSignedUp:
-        $ref: '#/components/messages/userSignedUp'
-
-components:
-  messages:
-    userSignedUp:
-      payload:
-        type: object
-        properties:
-          user-id:
-            type: integer
-            description: This property describes the id of the user
-          user-email:
-            type: string
-            description: This property describes the email of the user
-```
 
 ## Summary
 
