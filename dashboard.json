@@ -41,7 +41,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 39.34291865864845
+      "score": 39.63009324739771
     },
     {
       "id": "PR_kwDOFLhIt85Vmgtj",
@@ -52,7 +52,39 @@
       "resourcePath": "/asyncapi/community/pull/805",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 30.440506407421427
+      "score": 30.727680996170687
+    },
+    {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 21.538094156194408
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -146,41 +178,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5VmsTR",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: tags in a AsyncAPI document",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/website/pull/1957",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        },
-        {
-          "name": "area/docs",
-          "color": "e50e99"
-        },
-        {
-          "name": "gsod",
-          "color": "7B5DB8"
-        }
-      ],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOCoBobc42aMuI",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: release for version 3.0.0 of the spec",
-      "author": "jonaslagoni",
-      "resourcePath": "/asyncapi/parser-js/pull/526",
-      "repo": "asyncapi/parser-js",
-      "labels": [],
-      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
@@ -739,35 +736,10 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5qCIUD",
-      "title": "[📑 Docs]: Remove v2 spec links for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1855",
-      "repo": "asyncapi/website",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5qCG1z",
       "title": "[📑 Docs]: Adapt github action tooling page for v3",
       "isAssigned": true,
       "resourcePath": "/asyncapi/website/issues/1854",
-      "repo": "asyncapi/website",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": []
-    },
-    {
-      "id": "I_kwDOBW5R_c5qCC_7",
-      "title": "[📑 Docs]: Adapt frontpage animation for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1853",
       "repo": "asyncapi/website",
       "author": "jonaslagoni",
       "area": "Unknown",
