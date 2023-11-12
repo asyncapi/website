@@ -1,5 +1,5 @@
 ---
-title: Configuring Schemas for Kafka messages using AsyncAPI
+title: Create AsyncAPI Document for applications interacting with Kafka
 description: Explore configuring AsyncAPI document for Kafka messages.
 weight: 70
 ---
