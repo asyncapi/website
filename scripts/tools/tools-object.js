@@ -60,7 +60,7 @@ async function convertTools(data) {
 
   for (let tool of dataArray) {
     try {
-      if (tool.name === '.asyncapi-tool') {
+      if (tool.name.startsWith('.asyncapi-tool')) {
         // extracting the reference id of the repository which will be used to extract the path of the .asyncapi-tool file in the Tools repository
         // ex: for a url = "https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873"
         // the text (id) present after '=' gives us a reference id for the repo

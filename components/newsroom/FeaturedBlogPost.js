@@ -26,17 +26,17 @@ export default function FeaturedBlogPost({ post, className = ''}) {
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
           <Link href={post.slug} passHref>
-            <a className={`h-full flex flex-col md:flex-row md:max-w-164 border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`}>
-              <img className="w-full md:w-56 object-cover" src={post.cover} alt="" />  
+            <a className={`h-full flex flex-col md:flex-row md:max-w-164 border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`} data-testid="FeaturedBlogPostItem-Link">
+              <img className="w-full md:w-56 object-cover" src={post.cover} alt="" data-testid="FeaturedBlogPostItem-Img"/>  
               <div className="flex-1 bg-white p-6 flex flex-col justify-between text-left border-none">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
-                    <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`}>
+                    <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`} data-testid="FeaturedBlogPost-type">
                       {post.type}
                     </span>
                   </Paragraph>
                   <Link href={post.slug}>
-                    <a className="block">
+                    <a className="block" data-testid="FeaturedBlog-title">
                       <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
                         {post.title}
                       </Heading>
@@ -47,23 +47,23 @@ export default function FeaturedBlogPost({ post, className = ''}) {
                   </Link>
                 </div>
                 <div className="mt-6 flex items-center">
-                  <div className="relative flex-shrink-0">
+                  <div className="relative flex-shrink-0" data-testid="FeaturedBlog-Authorimg">
                     <AuthorAvatars authors={post.authors} />
                   </div>
                   <div className="ml-3">
                     <Heading level="h3" typeStyle="heading-xs-semibold" textColor="text-gray-900">
-                      <span className="hover:underline">
+                      <span className="hover:underline" data-testid="FeaturedBlogPost-AuthorName">
                         {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link} onClick={e => { e.stopPropagation() }} target="_blank" rel="noreferrer">{author.name}</a> : author.name).reduce((prev, curr) => [prev, ' & ', curr])}
                       </span>
                     </Heading>
                     <Paragraph typeStyle="body-sm" className="flex">
-                      <time dateTime={post.date}>
+                      <time dateTime={post.date} data-testid="FeaturedBlogPost-date">
                         {moment(post.date).format('MMMM D, YYYY')}
                       </time>
                       <span className="mx-1">
                         &middot;
                       </span>
-                      <span>
+                      <span  data-testid="FeaturedBlogPost-RT">
                         {post.readingTime} min read
                       </span>
                     </Paragraph>
