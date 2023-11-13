@@ -37,6 +37,8 @@ describe('Newsroom Videos', () => {
       ],
     };
 
+    const t = "empty";
+
     // Intercept the API request and stub the response
     cy.intercept('GET', 'https://youtube.googleapis.com/youtube/v3/search*', {
       statusCode: 200,
