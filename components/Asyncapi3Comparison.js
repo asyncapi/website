@@ -313,7 +313,8 @@ export function Asyncapi3OperationComparison({ className = '' }) {
 export function Asyncapi3SchemaFormatComparison({ className = '' }) {
   const [hoverState, setHoverState] = useState({
     SchemaFormat: false,
-    Payload: false
+    Payload: false,
+    Schema: false
   });
 
   return (
@@ -340,7 +341,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
                       <div className={(hoverState.Payload ? `bg-yellow-300` : 'bg-white') + ` flex-1 border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Payload: true }))} onMouseLeave={() => setHoverState({ Payload: false })}>
                         payload
                         <div className="flex flex-wrap flex-1">
-                          <div className={'bg-white flex-1 border border-orange-300 p-2 m-2'}>
+                          <div className={(hoverState.Schema ? `bg-blue-300` : 'bg-white') + ' flex-1 border border-orange-300 p-2 m-2'} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Schema: true }))} onMouseLeave={() => setHoverState({ Schema: false })}>
                           schema
                           </div>
                         </div>
@@ -375,7 +376,7 @@ export function Asyncapi3SchemaFormatComparison({ className = '' }) {
                           <div className={(hoverState.SchemaFormat ? `bg-orange-100` : 'bg-white ') + ` flex-1 border border-orange-300 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, SchemaFormat: true }))} onMouseLeave={() => setHoverState({ SchemaFormat: false })}>
                           schemaFormat
                           </div>
-                          <div className={'bg-white flex-1 border border-orange-300 p-2 m-2'}>
+                          <div className={(hoverState.Schema ? `bg-blue-300` : 'bg-white') + ' flex-1 border border-orange-300 p-2 m-2'} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Schema: true }))} onMouseLeave={() => setHoverState({ Schema: false })}>
                           schema
                           </div>
                         </div>
