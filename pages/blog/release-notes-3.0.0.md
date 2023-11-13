@@ -59,7 +59,7 @@ operations:
 | [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827) | [Operation, channel, and message decoupling](/docs/migration/migrating-to-v3#operation-channel-and-message-decoupling) |
 
 ### Messages instead of message
-As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs. This was part of the request-reply feature to enable easier referencing of messages.
+As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs in the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). This was part of the request-reply feature to enable easier referencing of messages.
 
 ```
 asyncapi: 3.0.0
@@ -79,7 +79,7 @@ channels:
 ### Publish and subscribe confusion
 In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application publishes to the channel? Does it mean you publish for me? Who are you in this context? 
 
-In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new operation keywords, `send` and `receive`, i.e. your application either sends or receives something.
+In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) keywords, `send` and `receive`, i.e. your application either sends or receives something.
 
 This description of course alters slightly based on protocol; for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
@@ -145,7 +145,7 @@ components:
 
 In v2, there were two instances where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. To stay as consistent as possible, we wanted to unify how references were used, which means that in v3, we ONLY use explicit references. 
 
-The server security information is also now an array instead of an object.
+The `scopes` information in the [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject) is also now an array instead of an object.
 
 ```
 asyncapi: 3.0.0
@@ -171,9 +171,9 @@ components:
 
 ### Common metadata fields
 There has been some inconsistency between which metadata fields are available in the different objects. Now we have added a few extra fields:
-- added `title`, `summary`, and `externalDocs` fields in Server Object
-- added `title` and `summary` fields in Channel Object
-- added `title` field in Operation Object and Operation Trait Object
+- added `title`, `summary`, and `externalDocs` fields in the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject)
+- added `title` and `summary` fields in the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#channelObject)
+- added `title` field in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) and [Operation Trait Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationTraitObject)
 
 ```
 asyncapi: 3.0.0
@@ -202,7 +202,7 @@ operations:
 ### Cleaning up the root object
 There was two meta information lingering in the root of the AsyncAPI object, which did not make much sense since we have the `info` object for all the meta information.
 
-Therefore the root `tags` and `externalDocs` have been moved to the info object.
+Therefore the root `tags` and `externalDocs` have been moved to the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject).
 
 ```
 asyncapi: 3.0.0
@@ -222,7 +222,7 @@ info:
 | [#794](https://github.com/asyncapi/spec/pull/794) | [Moved metadata](/docs/migration/migrating-to-v3#moved-metadata) |
 
 ### Splitting out server URL into host and pathname
-There has been some confusion about what the `url` of a server should contain; is it both protocol + host + path? What about the protocol field, then? Therefore each field now has its field for the host, path, and protocol.
+There has been some confusion about what the `url` of a server should contain; is it both protocol + host + path? What about the protocol field, then? Therefore each field now has its field for the host, path, and protocol in the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject).
 
 ```
 asyncapi: 3.0.0
@@ -239,7 +239,7 @@ servers:
 | [#547](https://github.com/asyncapi/spec/issues/547), [#274](https://github.com/asyncapi/spec/issues/274) | [#888](https://github.com/asyncapi/spec/pull/888) | [Server URL splitting up](/docs/migration/migrating-to-v3#server-url-splitting-up) |
 
 ### More reusable objects in components
-This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under components:
+This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under the [Components Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#componentsObject):
 - Replies
 - Reply addresses
 - Tags
@@ -273,7 +273,7 @@ components:
 ### New trait behavior
 Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant, for example, if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
 
-In v3, this has now been changed so that main objects have a higher priority than what ever you define in traits.
+In v3, this has now been changed so that [a property on a trait MUST NOT override the same property on the target object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#traitsMergeMechanism).
 
 For example, take a look at this message:
 ```
@@ -307,7 +307,7 @@ payload:
 ### Schema format and payload definition
 With schemas, one thing that has always been impossible was reusing schemas with different schema formats. That's because the schema format information is part of the message object. That means that if you reference a Schema object, it has no information about the schema format because it's not located together.
 
-In v3, schemaFormat has been removed from the message object and message trait object, and a new schema Object called `Multi Format Schema Object` has been introduced, which pairs a schema together with its schema format. Which now enables much better reusability:
+In v3, schemaFormat has been removed from the [Message Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messageObject) and [Message Trait Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messageTraitObject), and a new [schema Object called `Multi Format Schema Object`](https://www.asyncapi.com/docs/reference/specification/v3.0.0#multiFormatSchemaObject) has been introduced, which pairs a schema together with its schema format. Which now enables much better reusability:
 
 ```
 asyncapi: 3.0.0
@@ -333,7 +333,7 @@ components:
 ### Simplified Parameters
 In v2, it was possible to use the full power of JSON Schema to define parameters, however, it introduced a lot of complexity to parameters, so for v3 it was dialed way down to only allow a very small set of properties.
 
-In v3, the new [Parameter object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.16#parameterObject) can now only have the following properties: `enum`, `default`, `description`, `examples`, and `location`. 
+In v3, the new [Parameter object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#parameterObject) can now only have the following properties: `enum`, `default`, `description`, `examples`, and `location`. 
 
 ```
 asyncapi: 3.0.0
