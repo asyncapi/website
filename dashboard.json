@@ -68,7 +68,7 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 21.538094156194408
+      "score": 21.825268744943667
     },
     {
       "id": "I_kwDOGJ23c85V9C3c",
@@ -100,7 +100,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 18.953522857451077
+      "score": 19.527872034949596
     },
     {
       "id": "PR_kwDOBW5R_c5VAjCE",
@@ -127,37 +127,6 @@
       "score": 17.517649913704783
     },
     {
-      "id": "I_kwDOCVQpZM5M_dcV",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "DocsUI: Messages Object output",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/618",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 15.794602381209232
-    },
-    {
       "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
@@ -177,7 +146,42 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOBW5R_c5QjwOq",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add table of contents in case study",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/website/pull/1673",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VmsTR",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: tags in a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1957",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
@@ -212,28 +216,9 @@
       ]
     },
     {
-      "id": "I_kwDODwv8N851VGrF",
-      "title": "Unhandled Runtime Error",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/230",
-      "repo": "asyncapi/conference-website",
-      "author": "PUNEET-EMM",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFi_gUM51UQ-5",
       "title": "Show a warning if glee can't process a received message",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/glee/issues/558",
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
@@ -242,6 +227,36 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zovn3",
+      "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/876",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zosuk",
+      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/875",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
         }
       ]
     },
