@@ -100,11 +100,11 @@ export default function NewsletterSubscribe({
       <Paragraph className="mb-8" textColor={paragraphTextColor}>
         {t('newsletterCTA.subtitle')}
       </Paragraph>
-       <form className="md:flex" onSubmit={handleSubmit}>
+      {status === "loading" ? <Loader /> : <form className="md:flex" onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder={t('newsletterCTA.nameInput')} value={name} onChange={(e) => setName(e.target.value)} className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-text-input" />
         <input type="email" name="email" placeholder={t('newsletterCTA.emailInput')} value={email} onChange={(e) => setEmail(e.target.value)} className="form-input block w-full mt-2 sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-email-input" />
         <Button type="submit" text={t('newsletterCTA.subscribeBtn')} className="w-full mt-2 md:mr-2 md:mt-0 md:flex-1" />
-      </form>
+      </form>}
     </div>
   )
 }

@@ -2,10 +2,9 @@ import { twMerge } from "tailwind-merge"
 
 export default function Loader({ className = "" }) {
     return (
-        <div className="relative">
-            <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 ">
-                <div className="border-t-transparent border-solid animate-spin rounded-full border-blue-400 border-8 h-64 w-64"></div>
-            </div>
+        <div className="w-fit flex flex-col m-auto">
+        <svg class="animate-spin mx-auto border-4 border-t-transparent border-white h-10 w-10 rounded-full" viewBox="0 0 24 24"></svg>
+        <div className="text-white my-2">Waiting for response...</div>
         </div>
     )
 }
