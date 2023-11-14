@@ -28,7 +28,7 @@ This diagram illustrates the structure of an AsyncAPI document and the areas whe
 
 ## Server bindings
 
-Server bindings provide protocol-specific information related to the server configuration. For example, if you use RabbitMQ (AMQP protocol) as your message broker, you can specify the exchange name, type, durability, and virtual host in the server bindings.
+Server bindings provide protocol-specific information related to the server configuration. For example, if you use Pulsar as your message broker, you can specify tenant name in the server bindings.
 
 Here is a diagram explaining server binding:
 
@@ -53,11 +53,11 @@ servers:
         bindingVersion: '0.1.0'
 ```
 
-This document shows how to set up server bindings for a pulsar server.
+This document shows how to set up server bindings for a server that is a Pulsar broker.
 
 ## Channel bindings
 
-Channel bindings are used to specify protocol-specific information for a specific channel. For example, in RabbitMQ, you can specify the exchange type, durability, and virtual host for a specific channel.
+Channel bindings are used to specify protocol-specific information for a specific channel. For example, in Kafka, you can specify number of partitions for a given topic.
 
 Here is a diagram explaining channel binding:
 
@@ -90,11 +90,11 @@ channels:
         bindingVersion: '0.4.0'
 ```
 
-This document shows how to set up channel bindings for a kafka channel.
+This document shows how to set up channel bindings for a channel that represents Kafka topic.
 
 ## Message bindings
 
-Message bindings provide protocol-specific information for a specific message. You can define properties like the timestamp and acknowledgment settings for a message in the bindings.
+Message bindings provide protocol-specific information for a specific message. For example, for AMQP protocol you can specify the type of the message in a protocol specific notation.
 
 Here is a diagram explaining message binding:
 
@@ -112,25 +112,22 @@ Here is an example of using message bindings to provide protocol-specific inform
 
 ```yml
 channels:
-  test:
-    publish:
-      message:
+  userSignup:
+    address: 'user/signup'
+    messages:
+      userSignupMessage:
         bindings:
-          http:
-            headers:
-              type: object
-              properties:
-                Content-Type:
-                  type: string
-                  enum: ['application/json']
-            bindingVersion: '0.1.0'
+          amqp:
+            contentEncoding: gzip
+            messageType: 'user.signup'
+            bindingVersion: 0.3.0
 ```
 
-This document shows how to set up message bindings for a HTTP message.
+This document shows how to set up message bindings for a message transported using AMQP protocol.
 
 ## Operation Bindings
 
-Operation bindings allow you to specify protocol-specific information for a specific operation. For example, in AMQP, you can specify the operation frequency.
+Operation bindings allow you to specify protocol-specific information for a specific operation. For example, for MQTT, you can specify the quality of the service for given operation.
 
 Here is a diagram explaining operation binding:
 
@@ -160,6 +157,6 @@ operations:
         bindingVersion: 0.2.0
 ```
 
-This document shows how to set up operation bindings for a MQTT operation.
+This document shows how to set up operation bindings for operation that describes how application that uses MQTT as transport, receives the message.
 
 By using bindings, you can enhance the AsyncAPI documentation with protocol-specific details, making it easier for developers to understand and implement the API.
