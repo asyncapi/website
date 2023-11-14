@@ -15,12 +15,15 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
           <div className="pt-5 pb-6 px-5 space-y-6">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex">
-                <a className="cursor-pointer">
+                <a className="cursor-pointer" data-testid="MobileNav-Logo">
                   <AsyncAPILogo className="h-8 w-auto" />
                 </a>
               </Link>
-              <div className="flex flex-row items-center justify-content -mr-2">
-                <SearchButton className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+              <div className="flex flex-row items-center justify-content -mr-2" data-testid="MobileNav-button">
+                <SearchButton
+                  className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                  aria-label="Open Search"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -60,7 +63,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
             <div className="py-2 space-y-2">
               <Link href="/docs" className="flex">
                 <h4 className="text-gray-500 font-medium block mb-4">
-                  <a className="cursor-pointer">Docs</a>
+                  <a className="cursor-pointer" data-testid="MobileNav-docs">Docs</a>
                 </h4>
               </Link>
               <MenuBlocks items={learningItems} />
@@ -69,12 +72,14 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
           <div className="py-2 px-5 space-y-2">
             <Link href="/tools" 
             className="flex">
-              <h4 className="text-gray-500 font-medium block mb-4"> <a className="cursor-pointer">Tools</a></h4>
+              <h4 className="text-gray-500 font-medium block mb-4"> <a className="cursor-pointer" data-testid="MobileNav-tools" >Tools</a></h4>
             </Link>
               <MenuBlocks items={toolingItems} />
           </div>
           <div className="py-2 px-5 space-y-2">
-            <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
+            <Link href="/community" className="flex">
+              <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
+            </Link>
             <MenuBlocks items={communityItems} />
             <div className="grid gap-4">
               <div>
@@ -86,6 +91,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
                       rel="noopener noreferrer"
                       key={index}
                       className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4"
+                      data-testid="MobileNav-others"
                     >
                       {item.text}
                     </a>

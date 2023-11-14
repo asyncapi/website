@@ -12,7 +12,6 @@ authors:
     link: https://twitter.com/vladimirgorej
     byline: Open Source Software Engineer, OSS contributor, author and content creator.
 excerpt: "The release of AsyncAPI 2.5 brings helpful additions, such as extended Server Variables reusability and many clarifications."
-featured: true
 ---
 
 The new version of the AsyncAPI specification - 2.5.0 - is now available.

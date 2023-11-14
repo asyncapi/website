@@ -381,9 +381,166 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "BhaswatiRoy",
+      "name": "Bhaswati Roy ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78029145?v=4",
+      "profile": "https://bhaswatiroy.github.io/Bhaswati-Roy-Portfolio/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Mayaleeeee",
+      "name": "AISHAT MUIBUDEEN",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105395613?v=4",
+      "profile": "https://www.behance.net/muibudeenaisha",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "nawed2611",
+      "name": "Nawed Ali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83456083?v=4",
+      "profile": "https://nawedali.tech",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Olaleye-Blessing",
+      "name": "Olaleye Blessing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70102539?v=4",
+      "profile": "https://www.blessingolaleye.xyz/",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
+    },
+    {
+      "login": "niranjan-kurhade",
+      "name": "niranjan-kurhade",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97905637?v=4",
+      "profile": "https://github.com/niranjan-kurhade",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rukundob451",
+      "name": "Benjamin Rukundo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67878128?v=4",
+      "profile": "https://linkfree.eddiehub.io/rukundob451",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tthijm",
+      "name": "tthijm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59415467?v=4",
+      "profile": "https://github.com/tthijm",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "CynthiaPeter",
+      "name": "Cynthia Peter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33583060?v=4",
+      "profile": "http://cynthiapeter.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Florence-Njeri",
+      "name": "Florence Njeri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40742916?v=4",
+      "profile": "https://florence-njeri.github.io/NjeriPortfolio",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anshgoyalevil",
+      "name": "Ansh Goyal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94157520?v=4",
+      "profile": "https://ansh.live",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "SumantxD",
+      "name": "Sumant.xD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65810424?v=4",
+      "profile": "https://github.com/SumantxD",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "Shriansh2002",
+      "name": "Shriansh Agarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41548480?v=4",
+      "profile": "http://shrianshagarwal.in",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "reachaadrika",
+      "name": "Aadrika Bhargava",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64789514?v=4",
+      "profile": "https://github.com/reachaadrika",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vishvamsinh28",
+      "name": "Vishvamsinh Vaghela",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90895835?v=4",
+      "profile": "https://github.com/vishvamsinh28",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AnimeshKumar923",
+      "name": "Animesh Kumar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99868037?v=4",
+      "profile": "https://github.com/AnimeshKumar923",
+      "contributions": [
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "captain-Akshay",
+      "name": "Akshay Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59491379?v=4",
+      "profile": "https://github.com/captain-Akshay",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "yuvrxj-afk",
+      "name": "Yuvraj Singh Sisodiya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/63532070?v=4",
+      "profile": "https://web-yuvrxj-afk.vercel.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "skipCi": false,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }

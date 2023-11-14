@@ -1,35 +1,26 @@
-import moment from 'moment';
 import eventsData from '../config/meetings.json';
 import GoogleCalendarButton from './buttons/GoogleCalendarButton';
 import Heading from './typography/Heading';
+import { getEvents } from '../lib/staticHelpers';
+import { useTranslation } from '../lib/i18n';
 
 export default function Calendar({ className = '', size, text="text-left" }) {
+
+  const { t } = useTranslation('common');
+
   const CALENDAR_URL =
     'https://calendar.google.com/calendar/embed?src=c_q9tseiglomdsj6njuhvbpts11c%40group.calendar.google.com&ctz=UTC';
   const eventsExist = eventsData.length > 0;
-
-  function getEvents() {
-      let meetingsWithDates = eventsData.map((event) => ({
-        ...event,
-        date: moment(event.date),
-      }));
-      meetingsWithDates.sort((a, b) => a.date - b.date);
-      return meetingsWithDates
-        .filter((meeting) => meeting.date > new Date())
-        .slice(0, size || meetingsWithDates.length);
-  }
-
-
   return (
     <div
       className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4`}
     >
       <Heading level="h2" typeStyle="heading-md-semibold">
-        Upcoming events
+        {t("calendar.title")}
       </Heading> 
       <ul>
-        {getEvents().map((event, index) => (
-          <li key={index}>
+        {getEvents(eventsData, size).map((event, index) => (
+          <li key={index} data-testid="Calendar-list-item">
             <a
               href={event.url}
               className="flex-grow flex sm:items-center items-start flex-col sm:flex-row mb-1 mt-2"
@@ -53,15 +44,15 @@ export default function Calendar({ className = '', size, text="text-left" }) {
         ))}
       </ul>
       {eventsExist ? 
-        <div className='pt-4'>
+        <div className='pt-4' data-testid="Calendar-button">
           <GoogleCalendarButton 
             href={CALENDAR_URL}
-            text="View Calendar"
+            text={t("calendar.viewCalendarBtn")}
           />
         </div>
         :
         <div className="mt-2 text-gray-700">
-          There are no meetings scheduled for next few days.
+        {t("calendar.noMeetingsMessage")}
         </div>
       }
     </div>

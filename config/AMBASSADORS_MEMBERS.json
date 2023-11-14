@@ -49,54 +49,54 @@
     ]
   },
   {
-		"name": "Daniel Kocot",
+    "name": "Daniel Kocot",
     "img": "https://avatars.githubusercontent.com/u/466609?v=4",
     "bio": "Daniel has been part of the codecentric team since October 2016. Since the beginning of 2022 he works as Senior Solution Architect at the Dortmund branch. Starting as a consultant with a focus on application lifecycle management, his focus shifted more and more towards APIs. In addition to numerous customer projects and his involvement in the open source world around APIs, our Head of API Experience & Operations is also a frequent speaker at conferences.",
-    "title": "Senior Solution Architect / Head of API Experience and Operations"
+    "title": "Senior Solution Architect / Head of API Experience and Operations",
     "github": "danielkocot",
     "twitter": "dk_1977",
-    "linkedin": "daniel-kocot",
+    "linkedin": "danielkocot",
     "company": "Codecentric AG",
     "country": "🇩🇪",
     "contributions": [
-			{
-				"type": "article",
+      {
+	"type": "article",
         "title": "AsyncAPI - Documentation of event and message-driven architectures",
         "date": {
           "year": 2021,
-         	"month": "September"
+          "month": "September"
         },
         "link": "https://blog.codecentric.de/en/2021/09/asyncapi-documentation-event-message-driven-architectures/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral"
-			},
-			{	
+      },
+      {	
        	"type": "article",
         "title": "AsyncAPI specification updates",
         "date": {
-         	"year": 2022,
+          "year": 2022,
           "month": "February"
         },
        	"link": "https://blog.codecentric.de/en/2022/02/asyncapi-version-2-3-0-specification-updates/"
-  		},
-			{
+      },
+      {
         "type": "presentation",
        	"title": "AsyncAPI 101",
         "date": {
-         	"year": 2022,
+          "year": 2022,
           "month": "May"
-			   },
-         "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
-   		},
-			{
+	},
+        "link": "https://www.buildingiot.de/veranstaltung-13856-0-asyncapi-101.html"
+      },
+      {
         "type": "presentation",
        	"title": "Adopting AsyncAPI in Enterprisey Contexts, AsyncAPI Conference",
         "date": {
-         	"year": 2022,
-         	"month": "November"
+          "year": 2022,
+          "month": "November"
        	},
        	"link": "https://www.youtube.com/watch?v=_wTcV63jrnU"
- 			}
-		]
-	},
+      }
+    ]
+  },
   {
     "name": "Hugo Guerrero",
     "img": "https://avatars.githubusercontent.com/u/1001939?v=4",
@@ -217,6 +217,184 @@
           "month": "August"
         },
         "link": "https://www.youtube.com/watch?v=eJewFUR-OaM"
+      }
+    ]
+  },
+  {
+    "name": "Ludovic Dussart",
+    "github": "M3lkior",
+    "twitter": "ldussart",
+    "country": "🇫🇷",
+    "bio": "Ludovic has been working for Ineat for the last 10 years. Starting as a java developer, he is now a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
+    "linkedin": "ludovic-dussart-846a8063",
+    "company": "Ineat",
+    "title": "Solutions Architect",
+    "img": "https://avatars.githubusercontent.com/u/5501911?s=400&u=d3f33c22f67788aba810ba8e910452aff62ad7c9&v=4",
+    "contributions": [
+      {
+        "type": "presentation",
+        "title": "From specification to production, how to provide a living doc of your asynchronous exchanges?",
+        "date": {
+          "year": 2021,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/watch?v=WwhRbvrf6Rs"
+      },
+      {
+        "type": "presentation",
+        "title": "AsyncApi Conference 2021 - Panel discussion",
+        "date": {
+          "year": 2021,
+          "month": "November"
+        },
+        "link": "https://www.youtube.com/live/3EeMHhbwyOQ?feature=share&t=23438"
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture - Meetup Ineat",
+        "date": {
+          "year": 2022,
+          "month": "January"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at AXA",
+        "date": {
+          "year": 2022,
+          "month": "March"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at NoConsulting",
+        "date": {
+          "year": 2022,
+          "month": "March"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at Adeo",
+        "date": {
+          "year": 2022,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at Decathlon",
+        "date": {
+          "year": 2022,
+          "month": "April"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at Sfeir Lille",
+        "date": {
+          "year": 2023,
+          "month": "January"
+        },
+        "link": ""
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI - Adeo case study",
+        "date": {
+          "year": 2023
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Building the future of Event-Driven Architecture at Sfeir Paris",
+        "date": {
+          "year": 2023,
+          "month": "March"
+        },
+        "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Standardisez votre monde d'événements en documentant vos EDA avec AsyncAPI ! - Cloud Nord 2023",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": ""
+      }
+    ]
+  },
+  {
+    "name": "Mete Atamel",
+    "github": "meteatamel",
+    "twitter": "meteatamel",
+    "country": "🇬🇧",
+    "bio": "Mete is a Software Engineer and a Developer Advocate with 18+ years of experience. Currently, he works in the Developer Relations team at Google in London. He builds tools, demos, tutorials, and gives talks to educate and help developers to be successful on Google Cloud. As a regular speaker at tech conferences, he has spoken over 345+ events since 2016 on modern application development topics such as Kubernetes, Istio, Knative, serverless, event-driven architectures, and microservice orchestration. Prior to his current role, he was a Software Engineer/Architect/Tech Lead at Nokia, EMC, Adobe, Skype, and Microsoft building various client and server technologies, resulting in multiple patents.",
+    "linkedin": "mete-atamel",
+    "company": "Google",
+    "title": "Software Engineer and Developer Advocate at Google",
+    "img": "https://avatars.githubusercontent.com/u/1177542?v=4",
+    "contributions": [
+      {
+        "type": "article",
+        "title": "AsyncAPI Basics",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-basics-6e6394c9587"
+      },
+      {
+        "type": "article",
+        "title": "AsyncAPI Tools",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/asyncapi-tools-dd59f9236b20"
+      },
+      {
+        "type": "article",
+        "title": "Understanding AsyncAPI’s publish & subscribe semantics with an example",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/understanding-asyncapis-publish-subscribe-semantics-with-an-example-cfa1cc3faef5"
+      },
+      {
+        "type": "article",
+        "title": "CloudEvents + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/cloudevents-asyncapi-fa8ef63f28e0"
+      },
+      {
+        "type": "article",
+        "title": "Google Cloud Pub/Sub + AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://medium.com/google-cloud/google-cloud-pub-sub-asyncapi-6ea3c1ed3c49"
+      },
+      {
+        "type": "presentation",
+        "title": "Open standards for building event-driven applications in the cloud",
+        "date": {
+          "year": 2023,
+          "month": "June"
+        },
+        "link": "https://www.youtube.com/watch?v=6Igp4DhK_hE"
       }
     ]
   }

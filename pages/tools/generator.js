@@ -6,6 +6,7 @@ import GithubButton from '../../components/buttons/GithubButton'
 import GeneratorInstallation from '../../components/GeneratorInstallation'
 import Heading from '../../components/typography/Heading'
 import Paragraph from '../../components/typography/Paragraph'
+import Button from '../../components/buttons/Button'
 
 export default function GeneratorPage() {
   function renderButtons () {
@@ -22,8 +23,9 @@ export default function GeneratorPage() {
           className="w-full sm:w-auto"
           href="https://www.github.com/asyncapi/generator"
         />
+      <Button text="View Docs" href="/docs/tools/generator" className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"/>
       </div>
-    )
+    );
   }
 
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.'
@@ -57,7 +59,7 @@ export default function GeneratorPage() {
               </Paragraph>
               {renderButtons()}
             </div>
-            
+
             <GeneratorInstallation />
 
             <div className="relative mt-20">

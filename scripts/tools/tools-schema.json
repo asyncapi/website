@@ -34,10 +34,10 @@
                     "description": "You can provide URL to project documentation in case you have more than just a readme file.",
                     "format": "uri"
                 },
-               "repoUrl": {
-                  "type": "string",
-                  "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository.",
-                  "format": "uri"
+                "repoUrl": {
+                    "type": "string",
+                    "description": "You can provide URL to project codebase in case you have more than one tool present inside single repository.",
+                    "format": "uri"
                 }
             }
         },
@@ -49,33 +49,70 @@
             ],
             "properties": {
                 "language": {
-                    "type": "string",
-                    "description": "Provide information on how other can integrate with the tool in case it is possible. If your code generator generates Python code, then specify Python, even if code generator itself is written in JavaScript. If we forgot about some language then please add it through a pull request to AsyncAPI website repository.",
+                    "description": "The language referred to is the runtime language selected by the user, not the generator or library language. For example, the Generator written in JavaScript generates Python code from the JavaScript template and the result of generation is a Python app, so the language for Generator is specified as Python. But for the Bundler library, users need to know if it can be integrated into their TypeScript codebase, so its language is specified as TypeScript. If some language in the schema's enum is omitted, it can be added through a pull request to the AsyncAPI website repository.",
                     "anyOf": [
                         {
                             "type": "string",
-                            "enum": [
-                                "Go",
-                                "Java",
-                                "JavaScript",
-                                "HTML",
-                                "C/C++",
-                                "C#",
-                                "Python",
-                                "TypeScript",
-                                "Kotlin",
-                                "Scala",
-                                "Markdown",
-                                "YAML",
-                                "R",
-                                "Rubby",
-                                "Rust",
-                                "Shell",
-                                "Groovy"
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "enum": [
+                                        "Go",
+                                        "Java",
+                                        "JavaScript",
+                                        "HTML",
+                                        "C/C++",
+                                        "C#",
+                                        "Python",
+                                        "TypeScript",
+                                        "Kotlin",
+                                        "Scala",
+                                        "Markdown",
+                                        "YAML",
+                                        "R",
+                                        "Rubby",
+                                        "Rust",
+                                        "Shell",
+                                        "Groovy"
+                                    ]
+                                },
+                                {
+                                    "type": "string"
+                                }
                             ]
                         },
                         {
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "enum": [
+                                            "Go",
+                                            "Java",
+                                            "JavaScript",
+                                            "HTML",
+                                            "C/C++",
+                                            "C#",
+                                            "Python",
+                                            "TypeScript",
+                                            "Kotlin",
+                                            "Scala",
+                                            "Markdown",
+                                            "YAML",
+                                            "R",
+                                            "Rubby",
+                                            "Rust",
+                                            "Shell",
+                                            "Groovy"
+                                        ]
+                                    },
+                                    {
+                                        "type": "string"
+                                    }
+                                ]    
+                            }
                         }
                     ]
                 },
@@ -153,23 +190,23 @@
                     "minItems": 1,
                     "examples": [
                         "api",
-                          "code-first",
-                          "code-generator",
-                          "converter",
-                          "directory",
-                          "documentation-generator",
-                          "editor",
-                          "ui-component",
-                          "dsl",
-                          "framework",
-                          "github-action",
-                          "mocking-and-testing",
-                          "validator",
-                          "compare-tool",
-                          "other",
-                          "cli",
-                          "bundler",
-                          "ide-extension"
+                        "code-first",
+                        "code-generator",
+                        "converter",
+                        "directory",
+                        "documentation-generator",
+                        "editor",
+                        "ui-component",
+                        "dsl",
+                        "framework",
+                        "github-action",
+                        "mocking-and-testing",
+                        "validator",
+                        "compare-tool",
+                        "other",
+                        "cli",
+                        "bundler",
+                        "ide-extension"
                     ]
                 },
                 "hasCommercial": {

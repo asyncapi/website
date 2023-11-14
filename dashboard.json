@@ -1,55 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5ARCuj",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for message validation",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1005",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 38.48139489240067
-    },
-    {
-      "id": "PR_kwDOBGu-185AIQgf",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: request/response support",
-      "author": "GreenRover",
-      "resourcePath": "/asyncapi/spec/pull/847",
-      "repo": "asyncapi/spec",
-      "labels": [],
-      "score": 35.609649004908086
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 30.153331818672168
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AyxaN",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"validate asyncapi documents using studio\"",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1022",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 27.56876051992884
-    },
-    {
       "id": "MDU6SXNzdWU5ODkyOTg0MzY=",
       "isPR": false,
       "isAssigned": true,
@@ -63,75 +14,101 @@
           "color": "C2E0C6"
         }
       ],
-      "score": 24.914618792310346
+      "score": 54.2759972736099
     },
     {
-      "id": "PR_kwDOFLhIt85AY9Ib",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: how changes in the spec are introduced",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/pull/488",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 23.548316277439216
-    },
-    {
-      "id": "PR_kwDOFLhIt849RhNn",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: docs folder for new asyncapi community section",
-      "author": "Dule-martins",
-      "resourcePath": "/asyncapi/community/pull/442",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 22.9739670999407
-    },
-    {
-      "id": "PR_kwDOBW5R_c5A3jNS",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new tutorial \"generate code\"",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1025",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
-      "id": "PR_kwDOBW5R_c5AL1kI",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "docs: new guide for validation of AsyncAPI files",
-      "author": "Annysah",
-      "resourcePath": "/asyncapi/website/pull/1002",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.112443333692923
-    },
-    {
-      "id": "I_kwDOBW5R_c5Pi3rO",
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
       "isPR": false,
       "isAssigned": false,
-      "title": "Epic roadmap to the new AsyncAPI community section",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/website/issues/903",
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 41.64031536864252
+    },
+    {
+      "id": "PR_kwDOBW5R_c5Xb72L",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: implement the asyncapi financial summary page",
+      "author": "vishvamsinh28",
+      "resourcePath": "/asyncapi/website/pull/2038",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 39.63009324739771
+    },
+    {
+      "id": "PR_kwDOFLhIt85Vmgtj",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: youtube to anchor workflow",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/community/pull/805",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 30.727680996170687
+    },
+    {
+      "id": "I_kwDOBGu-184_rP6l",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Let channels be identified by an ID rather than their address.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/spec/issues/663",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "💭 Strawman (RFC 0)",
+          "color": "C2E0C6"
+        }
+      ],
+      "score": 21.825268744943667
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDOBW5R_c5BIl5P",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
       "repo": "asyncapi/website",
       "labels": [
         {
-          "name": "🎨 design",
-          "color": "0D67D3"
+          "name": "enhancement",
+          "color": "84b6eb"
         }
       ],
-      "score": 21.538094156194408
+      "score": 19.527872034949596
     },
     {
-      "id": "PR_kwDOBW5R_c5B0oU6",
+      "id": "PR_kwDOBW5R_c5VAjCE",
       "isPR": true,
       "isAssigned": true,
-      "title": "docs: new tutorial validation of messages/events",
-      "author": "starlightknown",
-      "resourcePath": "/asyncapi/website/pull/1061",
+      "title": "docs: structure of a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1922",
       "repo": "asyncapi/website",
       "labels": [
         {
@@ -147,33 +124,785 @@
           "color": "7B5DB8"
         }
       ],
-      "score": 18.666348268701817
+      "score": 17.517649913704783
     },
     {
-      "id": "PR_kwDOBW5R_c5GeFJh",
+      "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: blog post on SIO-AsyncAPI",
-      "author": "daler-rahimov",
-      "resourcePath": "/asyncapi/website/pull/1196",
+      "title": "fix: help command",
+      "author": "sambhavgupta0705",
+      "resourcePath": "/asyncapi/cli/pull/593",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOBW5R_c5QjwOq",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add table of contents in case study",
+      "author": "Shurtu-gal",
+      "resourcePath": "/asyncapi/website/pull/1673",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 16.36895155870775
+      "score": 14.645904026212197
+    },
+    {
+      "id": "PR_kwDOBW5R_c5VmsTR",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "docs: tags in a AsyncAPI document",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/website/pull/1957",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        },
+        {
+          "name": "area/docs",
+          "color": "e50e99"
+        },
+        {
+          "name": "gsod",
+          "color": "7B5DB8"
+        }
+      ],
+      "score": 14.07155484871368
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c5eFgGT",
-      "title": "Add 'Jump To Category' functionality for Tools Dashboard",
+      "id": "I_kwDOCxglSM513Nta",
+      "title": "Remove messageId from v3 conversion",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1319",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
+      "resourcePath": "/asyncapi/converter-js/issues/201",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODCuNRs51jd3x",
+      "title": "Implement GitHub Action to Validate examples Field in Schemas",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/bindings/issues/217",
+      "repo": "asyncapi/bindings",
+      "author": "KhudaDad414",
+      "area": "ci-cd",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM51UQ-5",
+      "title": "Show a warning if glee can't process a received message",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/glee/issues/558",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zovn3",
+      "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/876",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCoBobc5zosuk",
+      "title": "Parser do not validate and throw error when `parameters` are provided but address is null",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/parser-js/issues/875",
+      "repo": "asyncapi/parser-js",
+      "author": "derberg",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5yy6e0",
+      "title": "The new glee command is generating a 2.1.0 document",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/829",
+      "repo": "asyncapi/cli",
+      "author": "fmvilas",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFLhIt85yyn4B",
+      "title": "Update tooling doc with info about new category",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/899",
+      "repo": "asyncapi/community",
+      "author": "derberg",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yh95N",
+      "title": "would be nice if venue from past events is grayed out",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/208",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
       "area": "javascript",
       "labels": [
         {
           "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvrx",
+      "title": "Remove this commented out code.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/35",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOIUldZc5ydvh1",
+      "title": "Consider using \"forEach\" instead of \"map\" as its return value is not being used here.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/EDAVisualiser/issues/32",
+      "repo": "asyncapi/EDAVisualiser",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFDnrNc5ydvaR",
+      "title": "Nested block is redundant.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/cli/issues/822",
+      "repo": "asyncapi/cli",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5yduk_",
+      "title": "Single backtick is recognised as Codeblock",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2188",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yZpkH",
+      "title": "Venue sub menu doesn't close",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/205",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85yTwat",
+      "title": "venues addresses to be clickable links that take you you google map location",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/202",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N85xwvMi",
+      "title": "Update `Get Free Tickets` on main page to link to proper google form",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/198",
+      "repo": "asyncapi/conference-website",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODtTERs5wDOAH",
+      "title": "Support decimal min and max",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/java-spring-template/issues/326",
+      "repo": "asyncapi/java-spring-template",
+      "author": "Tenischev",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5sqLtN",
+      "title": "[📑 Docs]: import Glee docs under tools folder",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2003",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5soAAM",
+      "title": "Create a research page to have participants sign up for the research study",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1991",
+      "repo": "asyncapi/website",
+      "author": "Mayaleeeee",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
           "color": "84b6eb"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5rh81V",
+      "title": "[📑 Docs]: suggestions on 'create-asyncapi-document.md' file",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1945",
+      "repo": "asyncapi/website",
+      "author": "AnimeshKumar923",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5rHafV",
+      "title": "Glee crashes when body is not proper json in http request",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/glee/issues/476",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBGu-185qGt6A",
+      "title": "Ensure consistency when using either `Application` or `API` terms",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/spec/issues/949",
+      "repo": "asyncapi/spec",
+      "author": "smoya",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qGUNf",
+      "title": "docs: validate messages (interactive version) - adapt for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1872",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qGUND",
+      "title": "docs: validate document with studio (interactive version) - adapt for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1871",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qGUMg",
+      "title": "docs: generate code (interactive version) - adapt for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1870",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qGUMB",
+      "title": "docs: create an AsyncAPI document (interactive version) - adapt for v3 ",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1869",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qChBD",
+      "title": "[📑 Docs]: Adapt message validation guide for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1865",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCfY8",
+      "title": "[📑 Docs]: Adapt Validate AsyncAPI documents guide for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1864",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCdE5",
+      "title": "[📑 Docs]: Adapt Streetlights - Interactive tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1863",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCcei",
+      "title": "[📑 Docs]: Adapt studio document validation tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1862",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCbgt",
+      "title": "[📑 Docs]: Adapt Create AsyncAPI document tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1861",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCX8o",
+      "title": "[📑 Docs]: Adapt Server Security tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1860",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCUxQ",
+      "title": "[📑 Docs]: Adapt Servers tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1859",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCQYN",
+      "title": "[📑 Docs]: Adapt AsyncAPI Documents tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1858",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCNJX",
+      "title": "[📑 Docs]: Adapt hello world tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1857",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCLdo",
+      "title": "[📑 Docs]: Adapt coming from OpenAPI tutorial for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1856",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5qCG1z",
+      "title": "[📑 Docs]: Adapt github action tooling page for v3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1854",
+      "repo": "asyncapi/website",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOFLhIt85o9dDJ",
+      "title": "Add 2023 mentorship directory",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/community/issues/753",
+      "repo": "asyncapi/community",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": []
+    },
+    {
+      "id": "I_kwDOE8Qh385nTCST",
+      "title": "Improve layout of playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1346",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "design",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5mwLzC",
+      "title": "[📑 Docs]: Create an Onboarding guide for technical writers",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1712",
+      "repo": "asyncapi/website",
+      "author": "CynthiaPeter",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5lGICH",
+      "title": "Make group dropdown for each section in Navbar",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/1625",
+      "repo": "asyncapi/website",
+      "author": "akshatnema",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c5jJLzD",
+      "title": "[📑 Docs]: new fragment for contributor questions section",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1555",
+      "repo": "asyncapi/website",
+      "author": "alequetzalli",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
+          "name": "📑 docs",
+          "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385iZlgl",
+      "title": "TypeScript uses Location as reserved keyword",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1206",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "title": "Improve kafka adapter",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "author": "KhudaDad414",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOB5hCo85hBDME",
+      "title": "Enable reusability of schemas between versions",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/spec-json-schemas/issues/364",
+      "repo": "asyncapi/spec-json-schemas",
+      "author": "jonaslagoni",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODCuNRs5e58gr",
+      "title": "MQTT `retain` flag should be applied only to `publish` operations",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/bindings/issues/187",
+      "repo": "asyncapi/bindings",
+      "author": "KhudaDad414",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
@@ -184,45 +913,11 @@
       "resourcePath": "/asyncapi/website/issues/1318",
       "repo": "asyncapi/website",
       "author": "akshatnema",
-      "area": "javascript",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
           "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385d5_27",
-      "title": "Add Python JSON serialization preset",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1130",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5dvrae",
-      "title": "Integrate CLI docs with asyncapi website",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/448",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -240,83 +935,27 @@
           "color": "a2eeef"
         },
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "Kotlin generator",
           "color": "61A95C"
         }
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5cXK3J",
-      "title": "Add Clear Filters option in Tools Dashboard",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1230",
+      "id": "I_kwDOBW5R_c5dfidP",
+      "title": "docs: new style guide - Glossary",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/website/issues/1294",
       "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
+      "author": "alequetzalli",
+      "area": "docs",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5cXBuu",
-      "title": "Add tooltips to the fields inside Tool Card",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1229",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5cV4aC",
-      "title": "make a preloader for Tools Dashboard",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1228",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5bqInA",
-      "title": "Add Kotlin support for model generation",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/432",
-      "repo": "asyncapi/cli",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Xq_8W",
-      "title": "Testing workflow could skip earlier",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/200",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "📑 docs",
+          "color": "E50E99"
         }
       ]
     },
@@ -332,6 +971,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -347,146 +990,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385UFEXW",
-      "title": "Add Support for CPP language ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/953",
-      "repo": "asyncapi/modelina",
-      "author": "Willena",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "help wanted",
-          "color": "008672"
-        },
-        {
-          "name": "generator",
-          "color": "fef2c0"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85Ttv6g",
-      "title": "Traits can be defined as double arrays",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/273",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
         },
         {
           "name": "stale",
           "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5TFZp2",
-      "title": "Add support for JetStream push subscribe",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/296",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODou01c5TDLWP",
-      "title": "Unnecessary assertion since it does not change the type of the expression.",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/447",
-      "repo": "asyncapi/studio",
-      "author": "AceTheCreator",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "hacktoberfest",
-          "color": "5B0291"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5R6p0n",
-      "title": "Update Modelina dependency to use `next`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/949",
-      "repo": "asyncapi/website",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5M4GpA",
-      "title": "Help validate Windows installer publishing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/302",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOCoBobc5KYpv0",
-      "title": "Document how to fix randomly failing tests during development",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/558",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385I5ryn",
-      "title": "Implement PHP generator",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/744",
-      "repo": "asyncapi/modelina",
-      "author": "Leamsi9",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -500,137 +1007,12 @@
       "area": "docs",
       "labels": [
         {
+          "name": "stale",
+          "color": "ededed"
+        },
+        {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODyzcIc5Gl6TS",
-      "title": "Validate workflow on PR level",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/150",
-      "repo": "asyncapi/.github",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFiHaLM5DeQ4y",
-      "title": "Add support for HTML output",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/diff/issues/85",
-      "repo": "asyncapi/diff",
-      "author": "aayushmau5",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85C_oCM",
-      "title": "Cleaning up how sub schemas are defined with references",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/167",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5C-CyC",
-      "title": "Provide mirror client for testing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/215",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOEOBLdM5C9YVz",
-      "title": "Make namespace part of the template parameters",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/dotnet-nats-template/issues/214",
-      "repo": "asyncapi/dotnet-nats-template",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBGu-185B-xnK",
-      "title": "What do we define as a breaking change?",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/688",
-      "repo": "asyncapi/spec",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "❔ Question",
-          "color": "54B65C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFDnrNc5AXInF",
-      "title": "Improve help message with list of available examples",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/cli/issues/162",
-      "repo": "asyncapi/cli",
-      "author": "derberg",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -646,25 +1028,6 @@
         {
           "name": "keep-open",
           "color": "1DAEAC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFLhIt84_RlG5",
-      "title": "we should have a GH workflow that posts a welcome message to the PR that is merged that contained new TSC member",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/178",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
@@ -707,25 +1070,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh3848ZA4u",
-      "title": "Show how to change the naming format for properties",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/414",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFGbvC8473gxV",
       "title": "Define a better API that can be used by other applications",
       "isAssigned": false,
@@ -758,27 +1102,12 @@
           "color": "a2eeef"
         },
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU4NjM2OTUzMjM=",
-      "title": "Move to JSX renderer",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/html-template/issues/185",
-      "repo": "asyncapi/html-template",
-      "author": "magicmatatjahu",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
           "name": "stale",
           "color": "ededed"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "FF8AE2"
         }
       ]
     },
@@ -794,109 +1123,10 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU3OTEzNDUxNTI=",
-      "title": "Incorrect test case for Schema Object with additional keys",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/tck/issues/52",
-      "repo": "asyncapi/tck",
-      "author": "AgustinBettati",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU5OTU3MDg4OTM=",
-      "title": "Documentation of MessageObject \"deprecated\" property",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/92",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "c-pius",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2ODQ4MjI5ODQ=",
-      "title": "Integrate eslint plugin for jsdoc validation and fix potential issues",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-js/issues/164",
-      "repo": "asyncapi/parser-js",
-      "author": "derberg",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         },
         {
           "name": "stale",
           "color": "ededed"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU5NTI5MzE1MjY=",
-      "title": "Issues with the machine readable file for AsyncAPI 2.0.0",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/81",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ]
-    },
-    {
-      "id": "MDU6SXNzdWU2MDYzODgzNzM=",
-      "title": "Improve overall performance of the website but especially Blog",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/89",
-      "repo": "asyncapi/website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "Epic",
-          "color": "3E4B9E"
         }
       ]
     }

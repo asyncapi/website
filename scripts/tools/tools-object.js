@@ -3,11 +3,11 @@ const axios = require('axios')
 const Ajv = require("ajv")
 const addFormats = require("ajv-formats")
 const Fuse = require("fuse.js")
-const yaml = require('yaml');
 const { categoryList } = require("./categorylist")
 const ajv = new Ajv()
 addFormats(ajv, ["uri"])
 const validate = ajv.compile(schema)
+const { convertToJson } = require('../utils');
 
 
 // Config options set for the Fuse object
@@ -60,7 +60,7 @@ async function convertTools(data) {
 
   for (let tool of dataArray) {
     try {
-      if (tool.name === '.asyncapi-tool') {
+      if (tool.name.startsWith('.asyncapi-tool')) {
         // extracting the reference id of the repository which will be used to extract the path of the .asyncapi-tool file in the Tools repository
         // ex: for a url = "https://api.github.com/repositories/351453552/contents/.asyncapi-tool?ref=61855e7365a881e98c2fe667a658a0005753d873"
         // the text (id) present after '=' gives us a reference id for the repo
@@ -110,17 +110,4 @@ async function convertTools(data) {
   return finalToolsObject;
 }
 
-async function convertToJson(contentYAMLorJSON) {
-
-  //Axios handles conversion to JSON by default, if data returned for the server allows it
-  //So if returned content is not string (not YAML) we just return JSON back
-  if (typeof contentYAMLorJSON !== "string") return contentYAMLorJSON;
-
-  //in some cases json can be passed here as string as it failed parsing to json because of json related error
-  //instead of passint it to yaml parser, return same stuff that came in so it fails on JSON Schema validation later
-  if (contentYAMLorJSON.trimLeft().startsWith('{')) return contentYAMLorJSON
-
-  return yaml.parse(contentYAMLorJSON);
-}
-
-module.exports = { convertTools, createToolObject }
+module.exports = {convertTools, createToolObject}

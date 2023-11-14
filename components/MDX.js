@@ -10,7 +10,7 @@ import ChapterSuggestions from '../components/buttons/ChapterSuggestions'
 import CodeBlock from '../components/editor/CodeBlock'
 import Remember from '../components/Remember'
 import Warning from '../components/Warning'
-import Sponsors from '../components/Sponsors'
+import Sponsors from "./sponsors/Sponsors";
 import Caption from '../components/Caption'
 import Row from '../components/layout/Row'
 import Column from '../components/layout/Column'
@@ -24,7 +24,7 @@ let mermaidInitialized = false;
 initializeMermaid();
 const mdxComponents = getMDXComponents();
 
-export default function MDXProvider({ children }) {
+export function MDXProvider({ children }) {
   return (
     <CoreMDXProvider components={mdxComponents}>
       {children}
@@ -32,7 +32,7 @@ export default function MDXProvider({ children }) {
   );
 }
 
-function getMDXComponents() {
+export function getMDXComponents() {
   return {
     h1: props => <h1 {...props} className={`${props.className || ''} my-4 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,
     h2: props => <h2 {...props} className={`${props.className || ''} mb-4 mt-6 font-heading antialiased font-semibold tracking-heading text-gray-900 text-2xl`} />,

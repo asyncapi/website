@@ -32,6 +32,16 @@ You can install in Linux via `dpkg`, a debian package manager:
 </details>
 
 <details>
+<summary>Windows</summary>
+
+For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
+
+Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+
+
+</details>
+
+<details>
 <summary>Other OS</summary>
 
 [Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).

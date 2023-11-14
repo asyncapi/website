@@ -81,12 +81,12 @@ const convertDocPosts = (docObject) => {
       })
     }
     return docsArray
-  }
+}
   
 
- function addDocButtons(docPosts, treePosts){ 
-  structuredPosts = []
-  rootSections = []
+function addDocButtons(docPosts, treePosts){ 
+  let structuredPosts = [];
+  let rootSections = [];
 
   // Traversing the whole DocTree and storing each post inside them in sequential order
   Object.keys(treePosts).forEach((rootElement) => {    
@@ -160,4 +160,5 @@ const convertDocPosts = (docObject) => {
   return structuredPosts
 }
 
-module.exports = {buildNavTree, addDocButtons}
+
+module.exports = {buildNavTree, addDocButtons, convertDocPosts}

@@ -3,6 +3,7 @@ type: Engineering
 cover: /img/posts/asyncapi-codegen_pic-00.webp
 title: "AsyncAPI Code Generation: Microservices Using Spring Cloud Stream"
 date: 2020-06-02T06:00:00+01:00
+canonical: https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/
 tags:
    - Solace
    - Java

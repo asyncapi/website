@@ -1,0 +1,109 @@
+[
+[
+  {
+    "id": "item",
+    "img": "/img/homepage/reaction.webp",
+    "alt": "reaction"
+  },
+  {
+    "id": "item",
+    "img": "/img/homepage/ale.webp",
+    "alt": "ale"
+  },
+  {
+    "id": "item",
+    "img": "/img/homepage/idea.webp",
+    "alt": "idea"
+  },
+  {
+    "id": "item",
+    "img": "/img/homepage/lukasz-homepage-slack.webp",
+    "alt": "lukasz"
+  },
+  {
+    "id": "item",
+    "img": "/img/homepage/comment.webp",
+    "alt": "comment"
+  },
+  {
+    "id": "item",
+    "img": "/img/homepage/fran.webp",
+    "alt": "fran"
+  }
+],
+[
+  {
+    "id": "item-2",
+    "img": "/img/homepage/jonas.webp",
+    "alt": "jonas"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/slack.webp",
+    "alt": "slack"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/missy.webp",
+    "alt": "missy"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/check.webp",
+    "alt": "check"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/eve-and-chan.webp",
+    "alt": "eve-chan"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/maciej.webp",
+    "alt": "maciej"
+  },
+  {
+    "id": "item-2",
+    "img": "/img/homepage/git.webp",
+    "alt": "git"
+  }
+],
+[
+  {
+    "id": "item-3",
+    "img": "/img/homepage/ace.webp",
+    "alt": "ace"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/star.webp",
+    "alt": "star"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/barbano.webp",
+    "alt": "barbano"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/dale.webp",
+    "alt": "dale"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/kuda.webp",
+    "alt": "kuda"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/yash.webp",
+    "alt": "yash"
+  },
+  {
+    "id": "item-3",
+    "img": "/img/homepage/sergio.webp",
+    "alt": "sergio"
+  }
+]
+
+]

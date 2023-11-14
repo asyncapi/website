@@ -6,7 +6,12 @@ node_modules
 .swc
 out
 config/posts.json
+config/case-studies.json
 public/rss.xml
 .env.local
 yarn.lock
 meetings.json
+.netlify
+.env
+cypress/screenshots
+cypress/videos

@@ -12,7 +12,6 @@ authors:
     photo: /img/avatars/harsh.webp
     link: https://www.linkedin.com/in/harshcasper/
 excerpt: 'Announcing the start of work on AsyncAPI Spec 3.0. Check out all the potential new features coming to AsyncAPI 3.0 and how you can get involved!'
-featured: false
 ---
 
 AsyncAPI is a specification for describing your event-driven architecture. Our specification allows you to describe and document your message-driven APIs into a human-readable format. The AsyncAPI community is currently inching towards a 3.0 release that will bring together multiple features, enhancements, and breaking changes. We follow [release cadence](https://github.com/asyncapi/spec/blob/master/RELEASE_PROCESS.md#release-cadence) and we will continue to release the Spec to the community as we continue to build on it.

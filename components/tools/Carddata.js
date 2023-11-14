@@ -3,7 +3,7 @@ import InfoIcon from '../icons/InfoIcon'
 import TextTruncate from 'react-text-truncate';
 
 export const Carddata = (props) => {
-  const { classes, visible, heading, data, read, setRead, setVisible, type } = props
+  const { className, visible, heading, data, read, setRead, setVisible, type } = props
   const [outsideClick, setOutsideClick] = useState(true)
   const [description, setshowDescription] = useState(false)
   const initial = {
@@ -34,10 +34,10 @@ export const Carddata = (props) => {
   },[])
   
   return (
-    <div className={classes || "text-sm text-gray-500"}>
+    <div className={className || "text-sm text-gray-500 text-left"}>
       {heading}
       <span className="group relative" >
-        {outsideClick && visible[type] && <span ref={domNode} className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-2/3 absolute translate-x-1/3 -top-4 rounded px-2 py-1">
+        {outsideClick && visible[type] && <span ref={domNode}   data-testid="Carddata-description" className="w-48 text-xs border z-10 bg-white border-gray-200 shadow-md -left-2/3 absolute translate-x-1/3 -top-4 rounded px-2 py-1">
        {read ? data :<div >
                 <TextTruncate
                   element="span"
@@ -46,7 +46,7 @@ export const Carddata = (props) => {
                 /></div>}
           {description && <button className='cursor-pointer text-cyan-600' onClick={() => {setOutsideClick(true);setRead(!read)}}>{read ? " Show Less" : " Show More"}</button>}
         </span>}
-        <button onClick={() =>{setRead(false);setVisible({ ...initial, [type]: !visible[type] }) }} className="mx-1" >
+        <button onClick={() =>{setRead(false);setVisible({ ...initial, [type]: !visible[type] }) }} className="mx-1" data-testid="Carddata-button">
           <InfoIcon />
         </button>
       </span>

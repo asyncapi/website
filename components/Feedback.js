@@ -50,7 +50,7 @@ export default function Feedback(className = '') {
                 <div className='block mx-auto w-fit'>
                     <img src='/img/illustrations/icons/icon-check.svg' className='md:w-14' />
                 </div>
-                <div className='text-center mx-auto text-lg mt-4'>
+                <div className='text-center mx-auto text-lg mt-4' data-testid="Feedback-div">
                     Thank you for your feedback!
                 </div>
                 <div className='text-center mx-auto text-md text-gray-500'>
@@ -71,7 +71,7 @@ export default function Feedback(className = '') {
             <div className='block mx-auto w-fit'>
                 <img src='/img/illustrations/icons/icon-x.svg' className='md:w-14' />
             </div>
-            <div className='text-center mx-auto text-lg mt-4'>
+            <div className='text-center mx-auto text-lg mt-4' data-testid="Feedback-error">
                 Oops! Something went wrong...
             </div>
             <div className='text-center mx-auto text-md text-gray-500'>
@@ -84,7 +84,7 @@ export default function Feedback(className = '') {
     return (
         <div className={`flex flex-col rounded-md shadow-md border border-gray-200 p-4 ${className}`}>
             <div className='flex flex-row'>
-                <img src="/img/illustrations/icons/icon.svg" className='w-28 md:w-14' />
+                <img src="/img/illustrations/icons/icon.svg" className='w-28 md:w-14' alt="" aria-hidden="true" />
                 <div className='flex flex-col ml-4'>
                     <div className='text-xl'>
                         Was this helpful?

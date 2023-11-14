@@ -1,0 +1,61 @@
+name: Validate case studies structures
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - 'config/casestudies/*.yml'
+
+jobs:
+  validate:
+    if: github.event.pull_request.draft == false
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@af292f1e845a0377b596972698a8598734eb2796   # using https://github.com/tj-actions/changed-files/releases/tag/v40
+        with:
+          files: config/casestudies/*.yml
+
+      - name: Install ajv and yaml
+        run: npm install ajv@8.12.0 ajv-formats@2.1.1 yaml@2.2.1
+        
+      - name: Run validation script
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { readFile } = require("fs/promises");
+            const Ajv = require("ajv");
+            const addFormats = require("ajv-formats");
+            const YAML = require("yaml");
+
+            const ajv = new Ajv({
+              allErrors: true,
+            });
+
+            addFormats(ajv);
+
+            try {
+              const schema = await readFile("scripts/casestudies/schema.json", "utf-8");
+              const fileNames = `${{steps.changed-files.outputs.all_changed_files}}`.trim().split(" ");
+
+              const validate = ajv.compile(JSON.parse(schema));
+
+              for (const fileName of fileNames) {
+                const study = await readFile(fileName, "utf-8");
+                const valid = validate(YAML.parse(study));
+
+                if (valid === true) {
+                  core.info(`${fileName} is valid`);
+                } else {
+                  core.setFailed(`${fileName} is invalid:`);
+                  core.setFailed(validate.errors);
+                }
+              }
+            } catch (error) {
+              core.setFailed(error);
+            }

@@ -14,6 +14,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /docs/getting-started/asyncapi-documents /docs/tutorials/getting-started/asyncapi-documents 301!
 /docs/getting-started/servers /docs/tutorials/getting-started/servers 301!
 /docs/getting-started/security /docs/tutorials/getting-started/security 301!
+/docs/tutorials/streetlights /docs/tutorials/create-asyncapi-document 301!
 /docs/community/tooling /docs/tools 301!
 
 # Redirection will be handled automatically by Action.
@@ -22,7 +23,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/reference/specification/3.0.0-next-major-spec.9 /docs/reference/specification/v3.0.0-next-major-spec.9 302!
+/docs/reference/specification/3.0.0-next-major-spec.16 /docs/reference/specification/v3.0.0-next-major-spec.16 302!
 /docs/reference/specification/2.6.0 /docs/reference/specification/v2.6.0 302!
 /docs/reference/specification/2.5.0 /docs/reference/specification/v2.5.0 302!
 /docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
@@ -55,7 +56,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-153ifujzl-fD4W~~LxiRroF8E5bx80qA 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-2329g7esz-jPKWhnRBX0NKJMK4gatqKQ 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi
@@ -68,3 +69,6 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /generator /tools/generator 301!
 /github-actions /tools/github-actions 301!
 # TOOLS-REDIRECTION:END
+
+# Additional redirection
+/community/meetings /community/events 301!

@@ -76,11 +76,11 @@ function getColors(color, shades) {
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./config/tools.json"
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './config/tools.json',
   ],
-  theme:{
+  theme: {
     fontWeight: {
       'extra-light': 200,
       light: 300,
@@ -89,42 +89,52 @@ module.exports = {
       semibold: 600,
       bold: 700,
       extrabold: 800,
-      black: 900
+      black: 900,
+    },
+    backgroundImage: {
+      ambassador: "url('/img/homepage/ambassador.webp')",
+      eventCover: "url('/img/homepage/event-cover.webp')",
+      channelCover: "url('/img/homepage/slack-cover.webp')",
+      usecases: "url('/img/homepage/usecases.webp')",
+      roadmapCover: "url('/img/homepage/roadmap.webp')",
+      confBg: "url('/img/homepage/confBlurBg.webp')",
+      ambassadorCover: "url('/img/homepage/gathering.webp')",
+      mapCover: "url('/img/homepage/mapbase.webp')",
     },
     fontFamily: {
-      'sans': ['Inter', ...defaultTheme.fontFamily.sans], 
-      'heading': ['Work Sans', ...defaultTheme.fontFamily.sans],
-      'body': ['Inter', ...defaultTheme.fontFamily.sans], 
-      'mono': ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      heading: ['Work Sans', ...defaultTheme.fontFamily.sans],
+      body: ['Inter', ...defaultTheme.fontFamily.sans],
+      mono: ['Fira Code VF', 'Fira Code', ...defaultTheme.fontFamily.mono],
     },
     minWidth: {
-      '72': '18rem',
-      '40': '10rem',
-      '12': '3rem',
+      72: '18rem',
+      40: '10rem',
+      12: '3rem',
     },
     extend: {
       colors: {
-        'gray': colorGray,
-        'primary': colorPrimary,
-        'secondary': colorSecondary,
-        'pink': colorPink,
-        'yellow': colorYellow,
+        gray: colorGray,
+        primary: colorPrimary,
+        secondary: colorSecondary,
+        pink: colorPink,
+        yellow: colorYellow,
         'code-editor': {
-          'dark' : '#252f3f',
+          dark: '#252f3f',
           'dark-highlight': '#3e4d64',
         },
-        'dark': '#1B1130',
-        'cool-gray':'#9C96A8',
-        'hub': '#252f3f',
-        'slack': '#371038',
+        dark: '#1B1130',
+        'cool-gray': '#9C96A8',
+        hub: '#252f3f',
+        slack: '#371038',
         'mac-window': {
-          'close': '#ff5f56',
-          'minimize': '#ffbd2e',
-          'maximize': '#28c93f',
+          close: '#ff5f56',
+          minimize: '#ffbd2e',
+          maximize: '#28c93f',
         },
       },
       scale: {
-        '25': '.25',
+        25: '.25',
       },
       padding: {
         '2ch': '2ch',
@@ -135,54 +145,60 @@ module.exports = {
         '12ch': '12ch',
         '14ch': '14ch',
       },
-      width:{
-         'fit': 'fit-content'
+      width: {
+        fit: 'fit-content',
+        beforeHalf: '49%',
       },
       height: {
-        '88': '22rem',
-        '100': '25rem',
-        '104': '26rem',
-        '108': '27rem',
-        '112': '28rem',
-        '116': '29rem',
-        '120': '30rem',
+        72: '18rem',
+        80: '20rem',
+        88: '22rem',
+        100: '25rem',
+        104: '26rem',
+        108: '27rem',
+        112: '28rem',
+        116: '29rem',
+        120: '30rem',
+        130: '40rem',
         'half-screen': '50vh',
+        'full-screen': '100vh',
+        beforeHalf: '49%',
       },
       maxWidth: {
         '(screen-16)': 'calc(100vw - 16rem)',
         '(screen-34)': 'calc(100vw - 34rem)',
-        '64': '16rem',
-        '164': '41rem',
-        '172': '43rem',
-        '184': '46rem',
+        64: '16rem',
+        164: '41rem',
+        172: '43rem',
+        184: '46rem',
       },
       minHeight: {
-        '108': '27rem',
+        108: '27rem',
       },
       maxHeight: {
         '(screen-16)': 'calc(100vh - 4rem)',
-        '108': '27rem',
+        108: '27rem',
         '(screen-14)': 'calc(100vh - 81px)',
-        '120': '37rem'
+        120: '37rem',
       },
       margin: {
-        '36': '9rem'
-      },  
+        36: '9rem',
+      },
       borderRadius: {
-        'xl': '1rem',
+        xl: '1rem',
       },
       letterSpacing: {
         heading: '-0.03em',
-        body: '-0.01em'
+        body: '-0.01em',
       },
       zIndex: {
-        '60': 60,
+        60: 60,
       },
       rotate: {
-        '-15': '-7deg'
+        '-15': '-7deg',
       },
       fontSize: {
-        'xxs': ['0.6rem', '0.6rem'],
+        xxs: ['0.6rem', '0.6rem'],
         'heading-xs': ['16px', '1.375'],
         'heading-sm': ['20px', '1.375'],
         'heading-md': ['24px', '1.375'],
@@ -190,9 +206,12 @@ module.exports = {
         'heading-xl': ['64px', '1.375'],
         'body-sm': ['14px', '1.625'],
         'body-md': ['16px', '1.625'],
-        'body-lg': ['18px', '1.625']
+        'body-lg': ['18px', '1.625'],
       },
-    }
+      screens: {
+        'xs':'475px'
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
@@ -202,25 +221,26 @@ module.exports = {
     plugin(({ addUtilities }) => {
       addUtilities({
         '.hljs-asyncapi-file': {
-          'color': colors.yellow[200],
+          color: colors.yellow[200],
         },
         '.hljs-generator-template': {
-          'color': colors.teal[400],
+          color: colors.teal[400],
         },
         '.hljs-generator-param': {
-          'color': colors.pink[400],
+          color: colors.pink[400],
         },
         '.font-ligatures-contextual': {
           'font-variant-ligatures': 'contextual',
         },
-        '.scroll-none':{
+        '.scroll-none': {
           'scrollbar-width': 'none',
-          '-ms-overflow-style': 'none', 
+          '-ms-overflow-style': 'none',
         },
-        '.scroll-none::-webkit-scrollbar':{
-          'display':'none',
-          'scroll-behavior':'smooth',
-        }
-      })})
+        '.scroll-none::-webkit-scrollbar': {
+          display: 'none',
+          'scroll-behavior': 'smooth',
+        },
+      });
+    }),
   ],
-}
+};

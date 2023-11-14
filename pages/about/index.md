@@ -44,8 +44,9 @@ We apologize in advance if we failed to recognize your work. Feel free to contac
 
 ## AsyncAPI, in numbers
 Interested to know more about our growth? Feel free to check our annual summary report: 
-- [Summary report 2020](https://www.asyncapi.com/blog/2020-summary)
+- [Summary report 2022](https://www.asyncapi.com/blog/2022-summary)
 - [Summary report 2021](https://www.asyncapi.com/blog/2021-summary)
+- [Summary report 2020](https://www.asyncapi.com/blog/2020-summary)
           
 ## Companies support
 

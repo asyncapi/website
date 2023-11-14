@@ -10,7 +10,6 @@ authors:
     link: https://www.linkedin.com/in/mauro-bosetti/?locale=en_US
     byline: Argentinian software explorer.
 excerpt: This post demonstrates how documenting event-driven architectures is possible, using SQS as a (real-world) example.
-featured: true
 ---
 
 > Hey, do you remember what this field looks like in GET /operations?

@@ -22,9 +22,9 @@ export default function Slack({
         <div className="mb-1 h-2 rounded-xl bg-white bg-opacity-25 w-1/4"></div>
         <div className="mb-1 h-2 rounded-xl bg-white bg-opacity-25 w-1/3"></div>
       </div>
-      <div className="flex-1 py-2">
+      <div className="flex-1 py-2"   data-testid="SlackMessage">
         <SlackMessage
-          avatar="/img/homepage/lukasz-homepage-slack.jpg"
+          avatar="/img/homepage/lukasz-homepage-slack.webp"
           name="Lukasz Gornicki"
           text={
             <>
@@ -41,7 +41,7 @@ export default function Slack({
           ]}
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <span className="text-gray-500">
@@ -50,7 +50,7 @@ export default function Slack({
           }
         />
         <SlackMessage
-          avatar="/img/homepage/eve-and-chan.png"
+          avatar="/img/homepage/eve-and-chan.webp"
           name="Eve & Chan"
           text={
             <>

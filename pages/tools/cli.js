@@ -11,6 +11,8 @@ import {
 import CodeBlock from '../../components/editor/CodeBlock';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
+import DocsButton from '../../components/buttons/DocsButton';
+import Button from '../../components/buttons/Button';
 
 const features = [
   {
@@ -55,6 +57,7 @@ export default function CliPage() {
           className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
           href="https://www.github.com/asyncapi/cli"
         />
+        <Button text="View Docs" href="/docs/tools/cli" className="block mt-2 md:ml-2 md:mt-0 md:inline-block w-full sm:w-auto" />
       </div>
     );
   }
@@ -66,6 +69,15 @@ export default function CliPage() {
 	const getPkgCode = () => {
 		return `# Download latest PKG file\ncurl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.pkg\n# Install application on MacOS\nsudo installer -pkg asyncapi.pkg -target /`;
 	};
+
+  const setUpWin = () => {
+    return `# Download latest asyncapi.x64.exe for 64-bit Windows\n https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe\n# Download asyncapi.x86.exe for 32-bit Windows\n https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe`;
+  };
+
+  const setUpLinux = () => {
+    return `# For Debian based distros, you can install the AsycAPI CLI using the dpkg package manager for Debian\ncurl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb\n# To download a specific release of the CLI, run this command in your terminal\ncurl -OL https://github.com/asyncapi/cli/releases/download/<replace this with the specific CLI version e.g v0.13.0>/asyncapi.deb /`;
+  };
+  
 
   return (
     <GenericLayout title="CLI" description={description} image={image} wide>
@@ -116,7 +128,15 @@ export default function CliPage() {
 										{
 											language: '.pkg',
 											code: getPkgCode()
-										}
+										},
+                    {
+                      language: 'windows',
+                      code: setUpWin()
+                    },
+                    {
+                      language: 'linux',
+                      code: setUpLinux() 
+                    }
                   ]}
                 />
               </div>
@@ -170,7 +190,7 @@ export default function CliPage() {
                           />
                         </div>
                         <Heading level="h4" typeStyle="heading-sm-semibold" className="ml-16">
-                          {feature.name} 
+                          {feature.name}
                         </Heading>
                       </dt>
                       <dd className="mt-2 ml-16 pr-10">

@@ -28,6 +28,7 @@ export default function Filters({
   className,
   issues,
   setSelectedRepo,
+  allIssues,
   setSelectedArea,
   selectedArea,
   selectedRepo,
@@ -37,15 +38,16 @@ export default function Filters({
     placement: 'left-start',
     open,
   });
+  
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, setOpen);
-  const areas = issues.map((issue) => issue.area);
+  const areas = allIssues.map((issue) => issue.area);
   const uniqueAreas = ['All', ...new Set(areas)].map((area) => ({
     key: area,
     text: area,
   }));
 
-  const repos = issues.map((issue) => issue.repo);
+  const repos = allIssues.map((issue) => issue.repo);
   const uniqueRepos = ['All', ...new Set(repos)].map((repo) => ({
     key: repo,
     text: repo,
@@ -59,18 +61,21 @@ export default function Filters({
         alt='filter menu'
         src="/img/illustrations/icons/filters-icon.svg"
         className={`cursor-pointer ${className}`}
+        data-testid="Filters-img-container"
       />
-      <div ref={wrapperRef}>
+        
+        <div ref={wrapperRef} >
         {open && (
           <div
             ref={floating}
+            className={`${strategy} ${(x && x > 0) ? `left-[${x}px]` : "left-[14px]"}`}
             style={{
-              position: strategy,
               top: y ?? '',
-              left: x ?? '',
+              left: x > 0 ? x : "",
             }}
+            data-testid="Filter-menu"
           >
-            <div className="bg-white w-96 shadow-xl rounded">
+            <div className="bg-white shadow-xl w-96 rounded max-w-[19rem]">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
                 <button onClick={() => setOpen(!open)} className="ml-auto">

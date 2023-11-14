@@ -12,7 +12,9 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
   };
 
   return (
-    <div className="max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150">
+    <>
+    {checkedValues.length>0 && 
+    <div className="max-w-lg flex gap-2 flex-wrap p-2 duration-200 delay-150" data-testid="FiltersDisplay-main">
       {checkedValues.map((items, index) => {
         return (
           <div
@@ -22,11 +24,12 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
             )}
           >
             <div className="text-xs m-auto h-fit">{items}</div>
-            <button className="hover:bg-gray-100 p-1 rounded-full -mt-[2px]" onClick={(e) => handleClickOption(e, items, checkedValues, setValues)}>
+            <button className="hover:bg-gray-100 p-1 rounded-full -mt-[2px]" onClick={(e) => handleClickOption(e, items, checkedValues, setValues)} data-testid="Filters-Display-Button">
             <img src="/img/illustrations/icons/close-icon.svg" width="10" /></button>
           </div>
         );
       })}
-    </div>
+    </div> }
+    </>
   );
 }
