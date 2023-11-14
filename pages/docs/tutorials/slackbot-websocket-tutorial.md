@@ -88,7 +88,7 @@ servers:
 Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. Here's where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
 
 The `payload` attribute specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
-For example, in `reactionPayload` schema definition, any API message received from this channel must follow the constant value for the `reaction` property which is clearly defined as “heart”.
+For example, in `reaction` schema definition, any API message received from this channel must follow the constant value for the `reaction` property which is clearly defined as “heart”.
 
 The `const` value feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
 
@@ -179,6 +179,7 @@ channels:
       ws:
         query:
           type: object
+          description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
           properties:
             ticket:
               type: string
@@ -193,7 +194,7 @@ channels:
 ## Define operations 
 The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
 
-In this example, the `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
+In this example, the `helloListener` operation keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
 
 Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
 
@@ -244,6 +245,7 @@ channels:
       ws:
         query:
           type: object
+          description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
           properties:
             ticket:
               type: string
