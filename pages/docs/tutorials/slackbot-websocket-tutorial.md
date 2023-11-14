@@ -78,71 +78,16 @@ info:
 servers:
   production:
     host: wss://wss-primary.slack.com
-    pathname: /link/
+    pathname: /link
     protocol: wss
     description: Slack's server in Socket Mode for real-time communication 
-```
-
-
-## Define channels and  bindings
-
-The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
-
-The WebSocket URL generated for `Heart-Counter` includes authentication tokens, and this protocol-specific data is represented using the `bindings` attribute. By utilizing the `query` object, you can outline the parameters needed for the connection and the conditions they must meet. 
-
-```
-channels:
-  root:
-    address: /
-    messages:
-      helloListener:
-        $ref: '#/components/messages/helloListenerMessage'
-      reactionListener:
-        $ref: '#/components/messages/reactionListenerMessage'
-
-    bindings:
-      ws:
-        query:
-          type: object
-          description: Contains the authentication tokens for the WebSocket URL
-          properties:
-            ticket:
-              type: string
-              const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
-            app_id:
-              type: string
-              const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
-```
-
-## Define operations 
-The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
-
-In this example, the `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
-
-Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
-
-```
-operations:
-  helloListenerOperation:
-    action: receive
-    channel:
-      $ref: '#/channels/root'
-    messages:
-      - $ref: '#/channels/root/messages/helloListener'
-
-  reactionListenerOperation:
-    action: receive
-    channel: 
-      $ref: '#/channels/root'
-    messages:
-      - $ref: '#/channels/root/messages/reactionListener'
 ```
 
 ## Define messages and schemas
 
 Your AsyncAPI document needs to be very clear on the type of event it is expected to receive. Here's where the `messages` component steps in. Using the `payload` property, you can specify what these events should look like, their structure, and what content they carry.
 
-That leads us to the function of the `payload` attribute. It specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
+The `payload` attribute specifies the name, format, and description of all expected properties, and can even set constant values that must be followed during schema validation.
 For example, in `reactionPayload` schema definition, any API message received from this channel must follow the constant value for the `reaction` property which is clearly defined as “heart”.
 
 The `const` value feature ensures that the data exchanged through your API complies with your specified constants, helping to maintain data integrity and accuracy.
@@ -150,18 +95,18 @@ The `const` value feature ensures that the data exchanged through your API compl
 ```
 components:
   messages:
-    reactionListenerMessage:
+    reaction:
       summary: Action triggered when the channel receives a new reaction-added event
       payload:
-        $ref: '#/components/schemas/reactionPayload'
+        $ref: '#/components/schemas/reaction'
     
-    helloListenerMessage:
+    hello:
       summary: Action triggered when a successful WebSocket connection is established
       payload:
-        $ref: '#/components/schemas/helloPayload'
+        $ref: '#/components/schemas/hello'
 
   schemas:
-    helloPayload:
+    hello:
       type: object
       properties:
         type:
@@ -187,7 +132,7 @@ components:
             approximate_connection_time:
               type: integer
               
-    reactionPayload:
+    reaction:
       type: object
       properties:
         user:
@@ -214,6 +159,60 @@ components:
           description: Reaction timestamp
 ```
 
+## Define channels and  bindings
+
+The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
+
+The WebSocket URL generated for `Heart-Counter` includes authentication tokens, and this protocol-specific data is represented using the `bindings` attribute. By utilizing the `query` object, you can outline the parameters needed for the connection and the conditions they must meet. 
+
+```
+channels:
+  root:
+    address: /
+    messages:
+      hello:
+        $ref: '#/components/messages/hello'
+      reaction:
+        $ref: '#/components/messages/reaction'
+
+    bindings:
+      ws:
+        query:
+          type: object
+          properties:
+            ticket:
+              type: string
+              description: Temporary token generated when connection is initiated
+              const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
+            app_id:
+              type: string
+              description: Unique identifier assigned to the Slack app
+              const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
+```
+
+## Define operations 
+The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
+
+In this example, the `helloListenerOperation` keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
+
+Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
+
+```
+operations:
+  helloListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/hello'
+
+  reactionListener:
+    action: receive
+    channel: 
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/reaction'
+```
 
 You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
 
@@ -228,7 +227,7 @@ info:
 servers:
   production:
     host: wss://wss-primary.slack.com
-    pathname: /link/
+    pathname: /link
     protocol: wss
     description: Slack's server in Socket Mode for real-time communication 
 
@@ -236,53 +235,54 @@ channels:
   root:
     address: /
     messages:
-      helloListener:
-        $ref: '#/components/messages/helloListenerMessage'
-      reactionListener:
-        $ref: '#/components/messages/reactionListenerMessage'
+      hello:
+        $ref: '#/components/messages/hello'
+      reaction:
+        $ref: '#/components/messages/reaction'
 
     bindings:
       ws:
         query:
           type: object
-          description: Contains the authentication tokens for the WebSocket URL
           properties:
             ticket:
               type: string
+              description: Temporary token generated when connection is initiated
               const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
             app_id:
               type: string
+              description: Unique identifier assigned to the Slack app
               const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
 
 operations:
-  helloListenerOperation:
+  helloListener:
     action: receive
     channel:
       $ref: '#/channels/root'
     messages:
-      - $ref: '#/channels/root/messages/helloListener'
+      - $ref: '#/channels/root/messages/hello'
 
-  reactionListenerOperation:
+  reactionListener:
     action: receive
     channel: 
       $ref: '#/channels/root'
     messages:
-      - $ref: '#/channels/root/messages/reactionListener'
+      - $ref: '#/channels/root/messages/reaction'
 
 components:
   messages:
-    reactionListenerMessage:
+    reaction:
       summary: Action triggered when the channel receives a new reaction-added event
       payload:
-        $ref: '#/components/schemas/reactionPayload'
+        $ref: '#/components/schemas/reaction'
     
-    helloListenerMessage:
+    hello:
       summary: Action triggered when a successful WebSocket connection is established
       payload:
-        $ref: '#/components/schemas/helloPayload'
+        $ref: '#/components/schemas/hello'
 
   schemas:
-    helloPayload:
+    hello:
       type: object
       properties:
         type:
@@ -308,7 +308,7 @@ components:
             approximate_connection_time:
               type: integer
               
-    reactionPayload:
+    reaction:
       type: object
       properties:
         user:
