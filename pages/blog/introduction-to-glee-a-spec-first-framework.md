@@ -1,6 +1,6 @@
 ---
 title: An Introduction to Glee
-date: 2023-07-07T4:52:19+05:30
+date: 2023-11-15T4:52:19+05:30
 type: Engineering
 canonical: https://souvikns.com/blog/AsyncAPI/Introduction-to-glee
 tags: ['guide']
@@ -78,23 +78,35 @@ Glee being a spec-first framework, development starts with defining your API spe
 
 
 ```yaml:asyncapi.yaml
-asyncapi: 2.1.0
+asyncapi: 3.0.0
 info:
   title: Greet Bot
   version: 0.1.0
 servers:
   websockets:
-    url: ws://0.0.0.0:3000
+    host: '0.0.0.0:3000'
     protocol: ws
 channels:
   greet:
-    publish:
-      operationId: onGreet
-      message:
+    address: greet
+    messages:
+      onGreet.message:
         $ref: '#/components/messages/time'
-    subscribe:
-      message:
+      subscribe.message:
         $ref: '#/components/messages/greet'
+operations:
+  onGreet: # operationId
+    action: receive
+    channel:
+      $ref: '#/channels/greet'
+    messages:
+      - $ref: '#/components/messages/time'
+  greet.subscribe:
+    action: send
+    channel:
+      $ref: '#/channels/greet'
+    messages:
+      - $ref: '#/components/messages/greet'
 components:
   messages:
     time:
