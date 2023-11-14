@@ -120,7 +120,7 @@ export function Asyncapi3Comparison({ className = '' }) {
             Channels
 
             <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
-              Channel Item
+              Channel
               <div className="flex flex-col flex-wrap flex-1">
                 <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2">
                   address
@@ -229,7 +229,7 @@ export function Asyncapi3ChannelComparison({ className = '' }) {
             Channels
 
             <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
-              Channel Item
+              Channel
               <div className="flex flex-col flex-wrap flex-1">
                 <div className={(hoverState.Message ? `bg-red-400` : 'bg-white') + ` flex-1 border border-red-600 p-2 m-2`} onMouseEnter={() => setHoverState(prevState => ({ ...prevState, Message: true }))} onMouseLeave={() => setHoverState({ Message: false })}>
                   Messages
@@ -303,7 +303,7 @@ export function Asyncapi3IdAndAddressComparison({ className = '' }) {
             Channels
 
             <div className={(hoverState.PathItem ? `bg-yellow-300` : 'bg-white') + ` border border-yellow-600 p-2 m-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, PathItem: true }))} onMouseLeave={() => setHoverState({ PathItem: false })}>
-              Channel Item
+              Channel
 
               <div className="flex flex-col flex-wrap flex-1">
                 <div className="border border-blue-500 bg-white hover:bg-blue-200 p-2 m-2">
