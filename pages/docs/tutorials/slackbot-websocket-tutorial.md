@@ -163,7 +163,7 @@ components:
 
 The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
 
-The WebSocket URL generated for `Heart-Counter` includes authentication tokens, and this protocol-specific data is represented using the `bindings` attribute. By utilizing the `query` object, you can outline the parameters needed for the connection and the conditions they must meet. 
+The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using query parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is a protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
 
 ```
 channels:
