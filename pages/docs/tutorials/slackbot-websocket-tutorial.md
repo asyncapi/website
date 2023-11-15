@@ -5,7 +5,7 @@ weight: 140
 ---
 
 ## Introduction
-In this tutorial, you will learn how to generate an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol.
+In this tutorial, you will learn how to write an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol. You will learn how to write AsyncAPI document for a consumer-only application receiving a stream of messages from a Websocket server. You will also learn why AsyncAPI bindings feature exist and how to use it.
 
 Consider a scenario where you are in charge of maintaining a highly active Slack workspace. You want an easy way to keep track of the popular messages across all the channels but doing this manually would be a difficult task. To simplify this process, you’re going to build a Slackbot called `Heart-Counter` that actively monitors reactions added to a message and determine its popularity by counting the reactions of the “heart” emoji.
 
