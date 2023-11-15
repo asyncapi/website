@@ -6,7 +6,7 @@ weight: 150
 
 ## Introduction
 
-In this tutorial, you will learn how bindings with Kafka works. You will learn how to extend your AsyncAPI document with Protocol-specific information, such as how to use Kafka bindings. You will also learn about server bindings and channel bindings.
+In this tutorial, you will learn how bindings with Kafka works. You will learn how to extend your AsyncAPI document with Protocol-specific information, such as how to specify kafka topic-specific configurations or how to define kafka message key content.
 
 ## Background Context
 
@@ -16,11 +16,10 @@ Kafka is a messaging system that allows for the efficient handling and processin
 **What is binding?**
 In the context of Kafka, "bindings" refer to the connections between Kafka and other systems or applications. There are several levels of bindings as described below:
 
-<!---How many levels or types of binding are there exactly and where is the best place to place them in this tutorial?--->
 
-- Server Binding
-- Channel binding
-- Operation Binding
+- Server Bindings
+- Channel Bindings
+- Operation Bindings
 
 **How binding works in Kafka**
 You must understand some essential parts of the process to understand how binding works. 
@@ -37,7 +36,7 @@ Bindings: Bindings are relevant when integrating Kafka with other programs or se
 - How should messages be formatted?
 - What are the rules for interacting with various forms of data or messages?
 
-Bindings are vital because they ensure that applications and Kafka can communicate effectively with each other's message formats, protocols, and expectations, ensuring data flows securely and efficiently within a system.
+Bindings are important because they indicate how Kafka components are configured.
 
 <!---
 Add a visual representation of how Kafka bindings work. 
@@ -57,10 +56,3 @@ Step 3
 ## Summary
 ## Next Steps
 
-<!---
-My questions - yet to be answered.
-- Is there a needed installation guide for this topic?
-- Do I need to build an app to demonstrate this topic? - An AsyncAPI file maybe?
-- What kind of thing can i build to ensure that the reader understands and follows through?
-- How best do I structure this?
---->
