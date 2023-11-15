@@ -3,9 +3,10 @@ title: AsyncAPI document structure
 weight: 60
 ---
 
-The structure of an AsyncAPI document can be defined as a specific format in which the document of the specification is to be written and defined. The structure of an AsyncAPI document has certain fields that need to be followed and implemented.
+The structure of an AsyncAPI document is defined in a specific format and must follow [AsyncAPI specification](/docs/reference/specification/latest). The structure of an AsyncAPI document has certain fields that you need to follow, although not all of them are mandatory.
 
-## Root Elements 
+## Root Elements
+
 Root elements of an AsyncAPI document provide an overview of the API's characteristics and behaviour. These root elements collectively define the metadata, channels, components and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behaviour.
 
 ```mermaid
@@ -24,12 +25,11 @@ A --> E
 A --> F
 ```
 
-### `Info` Object
-The `info` object in an AsyncAPI document provides essential information about the API in the form of fields such as title, version, description, contact details and license. It serves as metadata that gives consumers a high-level understanding of the API's purpose and functionality.
+### `info` field
 
-The purpose of the `info` object is to provide descriptive and contact information about the specific API. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
+With the `info` field you provide essential information about the API in the form of fields such as title, version, description, contact details and license. It serves as metadata that gives consumers a high-level understanding of the API's purpose and functionality. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
 
-Some of the fields `info` object holds are:
+Some of the fields `info` field holds are:
 
 - `title`: The title of the API.
 - `version`: The version of the API.
@@ -40,9 +40,9 @@ Some of the fields `info` object holds are:
 - `tags`: A list of tags for application API documentation control. Tags can be used for logical grouping of applications.
 - `externalDocs`: Additional external documentation of the exposed API.
 
-Here's a visual representation of the `info` object and its properties:
+Here's a visual representation of the `info` field and its properties:
 ```mermaid
-graph
+graph LR
   B(info)
   C(title)
   D(version)
@@ -51,7 +51,7 @@ graph
   G(contact)
   J(license)
   M(tags)
-  P((externalDocs))
+  P(externalDocs)
 
   B --> C
   B --> D
@@ -63,9 +63,8 @@ graph
   B --> P
 ```
 
-Below is an example of the `info` object in the AsyncAPI document:
+Below is an example of the `info` field:
 ```yaml
-asyncapi: 3.0.0
 info:
   title: My Event-Driven API
   version: 1.0.0
@@ -87,12 +86,11 @@ info:
     url: https://example.com/docs
 ```
 
-### `Servers` Object
-The `servers` object in an AsyncAPI document is a map of `server` objects that defines the network endpoints or brokers that applications can connect to for exchanging messages. It specifies the details necessary to establish a connection, such as the protocol, host, port, and additional connection options.
+### `servers` field
 
-The purpose of the `servers` object is to provide the necessary information for clients to connect to the message broker or server and participate in the message exchange or listen to the events. By defining multiple servers, the AsyncAPI document can accommodate different environments or deployment scenarios, such as production, staging, or development.
+With the `servers` field you can provide a map of different servers that define the network endpoints or brokers that applications can connect to for exchanging messages. It specifies the details necessary to establish a connection, such as the protocol, host, port, and additional connection options. You can accommodate different environments or deployment scenarios, such as production, staging, or development.
 
-Some of the fields `servers` object holds for each server object are:
+Some of the fields of individual `servers` field are:
 
 - `host`: The server host name. It may include the port. 
 - `protocol`: The protocol or messaging protocol used by the server (e.g., AMQP, MQTT, WebSocket).
@@ -108,7 +106,7 @@ Some of the fields `servers` object holds for each server object are:
 
 Here's a visual representation of the `server` object and its properties:
 ```mermaid
-graph 
+graph LR
   A[server]
   B(host)
   C(pathname)
@@ -117,10 +115,11 @@ graph
   F(description)
   G(title)
   H(summary)
-  I(security)
-  J(tags)
-  K(externalDocs)
-  L(bindings)
+  I(variables)
+  J(security)
+  K(tags)
+  L(externalDocs)
+  M(bindings)
 
   A --> B
   A --> C
@@ -133,20 +132,23 @@ graph
   A --> J
   A --> K
   A --> L
+  A --> M
 ```
 
-Here's a code example of the servers object with multiple servers in an AsyncAPI document:
+Below is an example of the `servers` field with multiple servers:
 ```yaml
 servers:
-  - host: rabbitmq.in.mycompany.com:5672
-    pathname: /production
+  production:
+    host: rabbitmq.in.mycompany.com:5672
+    pathname: /v1
     protocol: amqp
-    protocolVersion: 1.0
+    protocolVersion: "1.0"
     description: Production RabbitMQ broker (uses the `production` vhost).
     title: Production Server
     summary: Production environment server
     security:
-      - apiKey: []
+      - type: http
+        scheme: bearer
     tags:
       - name: production
         description: Production environment
@@ -157,15 +159,18 @@ servers:
       amqp:
         exchange: my-exchange
         queue: my-queue
-  - host: rabbitmq.in.mycompany.com:5672
-    pathname: /staging
+  staging:
+    host: rabbitmq.in.mycompany.com:5672
+    pathname: /v1
     protocol: amqp
-    protocolVersion: 1.0
+    protocolVersion: "1.0"
     description: Staging RabbitMQ broker (uses the `staging` vhost).
     title: Staging Server
     summary: Staging environment server
     security:
-      - apiKey: []
+      - type: apiKey
+        in: user
+        description: Provide your API key as the user and leave the password empty.
     tags:
       - name: staging
         description: Staging environment
@@ -178,27 +183,26 @@ servers:
         queue: my-queue
 ```
 
-### `Channels` Object
-The `channels` object in an AsyncAPI document holds all the individual `channel` object definitions that the application must use during runtime. The `channels` represent the communication pathways through which messages are exchanged. The `channel` object describes a shared communication channel. 
+### `channels` field
 
-The purpose of the `channels` object is to provide a structured way to define the messaging patterns and topics within the API. It allows API developers to specify the available channels, their purpose, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
+With the `channels` field you can provide a map of different channels the application communicates with during runtime. The `channels` represent the communication pathways through which messages are exchanged. You can specify their purpose, address, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
-Some of the fields `channels` object holds for each channel object are:
+Some of the fields of individual `channels` field are:
 
 - `address`: A string representation of this channel's address.
 - `messages`: A map of the messages that will be sent to this channel by any application at any time.
 - `title`: A human-readable title for the channel.
 - `summary`: A short yet brief summary of the channel.
 - `description`: A description of the channel, providing additional context and details of the message.
-- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers are absent or empty, this channel must be available on all the servers defined in the `Servers` Object. 
+- `servers`: An array of `$ref` pointers to the definition of the servers in which this channel is available. If servers are absent or empty, this channel must be available on all the servers defined in the `servers` field. 
 - `parameters`: A map of the parameters included in the channel address.
 - `tags`: A list of tags for logical grouping of channels.
 - `externalDocs`: Additional external documentation for this channel.
 - `bindings`: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the channel.
 
-Here's a visual representation of the `channels` object and its properties:
+Here's a visual representation of the `channels` field and its properties:
 ```mermaid
-graph 
+graph LR
   A[channel]
   B(address)
   C(title)
@@ -221,41 +225,41 @@ graph
   A --> R
 ```
 
-Here's a code example illustrating the structure of the channels object in an AsyncAPI document:
+Below is an example of of the `channels` field with one channel:
 ```yaml
-address: 'users.{userId}'
-title: Users channel
-description: This channel is used to exchange messages about user events.
-messages:
-  userSignedUp:
-    $ref: '#/components/messages/userSignedUp'
-  userCompletedOrder:
-    $ref: '#/components/messages/userCompletedOrder'
-parameters:
-  userId:
-    $ref: '#/components/parameters/userId'
-servers:
-  - $ref: '#/servers/rabbitmqInProd'
-  - $ref: '#/servers/rabbitmqInStaging'
-bindings:
-  amqp:
-    is: queue
-    queue:
-      exclusive: true
-tags:
-  - name: user
-    description: User-related messages
-externalDocs:
-  description: 'Find more info here'
-  url: 'https://example.com'
+channels:
+  user:
+    address: 'users.{userId}'
+    title: Users channel
+    description: This channel is used to exchange messages about user events.
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+      userCompletedOrder:
+        $ref: '#/components/messages/userCompletedOrder'
+    parameters:
+      userId:
+        $ref: '#/components/parameters/userId'
+    servers:
+      - $ref: '#/servers/production'
+    bindings:
+      amqp:
+        is: queue
+        queue:
+          exclusive: true
+    tags:
+      - name: user
+        description: User-related messages
+    externalDocs:
+      description: 'Find more info here'
+      url: 'https://example.com'
 ```
 
-### `Operations` Object
-The `operations` object holds a dictionary with all the operations the application must implement. The purpose of the `operations` object is to provide a clear and structured definition of the operations that an application must support within an event-driven API.
+### `operations` field
 
-The `operations` object is located within the AsyncAPI document and is separate from the components/operations section, which is used for optional or additional operations that may or may not be implemented by the application.
+With the `operations` field you can describe all the operations the application performs. Use it to provide a clear and structured definition of the operations. Specify if your application is sending or receiving messages, and what is the purpose of such operation.
 
-Some of the fields `operations` object holds for each `operation` object are:
+Some of the fields of individual `operations` field are:
 
 - `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect to receive messages from the given channel.
 - `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
@@ -270,9 +274,9 @@ Some of the fields `operations` object holds for each `operation` object are:
 - `messages`:	A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
 - `reply`:	The definition of the reply in a request-reply operation.
 
-Here's a visual representation of the `operations` object and its properties:
+Here's a visual representation of the `operations` field and its properties:
 ```mermaid
-graph 
+graph LR
   A[operation]
   B(title)
   C(summary)
@@ -303,46 +307,51 @@ graph
   L --> N
 ```
 
-Here's a code example illustrating the structure of the `operations` object in an AsyncAPI document:
+Below is an example of of the `operations` field with one operation:
 ```yaml
-title: User sign up
-summary: Action to sign a user up.
-description: A longer description
-channel:
-  $ref: '#/channels/userSignup'
-action: send
-security:
-  - petstore_auth:
-    - write:pets
-    - read:pets
-tags:
-  - name: user
-  - name: signup
-  - name: register
-bindings:
-  amqp:
-    ack: false
-traits:
-  - $ref: "#/components/operationTraits/kafka"
-messages:
-  - $ref: '#/components/messages/userSignedUp'
-reply:
-  address:
-    location: '$message.header#/replyTo'
-  channel:
-    $ref: '#/channels/userSignupReply'
-  messages:
-    - $ref: '#/components/messages/userSignedUpReply'
+operations:
+  sendUserSignUp:
+    action: send
+    title: User sign up
+    summary: Action to sign a user up.
+    description: A longer description
+    channel:
+      $ref: '#/channels/user'
+    security:
+      - type: oauth2
+        description: The oauth security descriptions
+        flows:
+          clientCredentials:
+            tokenUrl: 'https://example.com/api/oauth/dialog'
+            availableScopes:
+              'subscribe:auth_revocations': Scope required for authorization revocation topic
+        scopes:
+          - 'subscribe:auth_revocations'
+    tags:
+      - name: user
+      - name: signup
+      - name: register
+    bindings:
+      amqp:
+        ack: false
+    traits:
+      - $ref: "#/components/operationTraits/kafka"
+    messages:
+      - $ref: '#/components/messages/userSignedUp'
+    reply:
+      address:
+        location: '$message.header#/replyTo'
+      channel:
+        $ref: '#/channels/userSignupReply'
+      messages:
+        - $ref: '#/channels/userSignupReply/messages/userSignedUpReply'
 ```
 
-### `Components` Object
-The `components` object in an AsyncAPI document serves as a container for reusable structures or definitions that can be used across different parts of the AsyncAPI document. It allows you to define and manage common elements such as message schemas, security schemes, headers, and other custom components that are referenced throughout the API specification.
+### `components` field
 
-All objects defined within the `components` object will not affect the specific API unless they are explicitly referenced from properties outside the components object.
+With `components` field you can define a set of reusable structures or definitions that can be used across different parts of your document. Information provide under `components` are not part of the API unless they are explicitly referenced from properties outside the `components` field. Use it to not repeat yourself and improve maintainability of the document. 
 
-The purpose of the `components` object is to promote reusability and maintainability of the AsyncAPI document. By centralizing common definitions in the components section, you can avoid duplicating code and ensure consistency across different parts of the API specification. It also enhances the readability and understandability of the document by providing a clear separation of concerns.
-
-Some of the fields `components` object holds are:
+Some of the fields of individual `channels` field are:
 
 - `schemas`: An object to hold reusable [Schema Object](/docs/reference/specification/latest#schemaObject). 
 - `servers`: An object to hold reusable [Server Objects](/docs/reference/specification/latest#serverObject).
@@ -351,7 +360,7 @@ Some of the fields `components` object holds are:
 - `messages`: An object to hold reusable [Messages Objects](/docs/reference/specification/latest#messageObject).
 - `securitySchemes`: An object to hold reusable [Security Scheme Objects](/docs/reference/specification/latest#securitySchemeObject).
 - `serverVariables`: An object to hold reusable [Server Variable Objects](/docs/reference/specification/latest#serverVariableObject).
-- `parameters`: Contains reusable [parameter objects](/docs/reference/specification/latest#parameterObject) that can be used in various parts of the AsyncAPI document.
+- `parameters`: Contains reusable [Parameter Objects](/docs/reference/specification/latest#parameterObject) that can be used in various parts of the AsyncAPI document.
 - `correlationIds`: An object to hold reusable [Correlation ID Objects](/docs/reference/specification/latest#correlationIdObject).
 - `replies`: An object to hold reusable [Operation Reply Objects](/docs/reference/specification/latest#operationReplyObject).
 - `replyAddresses`: An object to hold reusable [Operation Reply Address Objects](/docs/reference/specification/latest#operationReplyAddressObject).
@@ -364,38 +373,55 @@ Some of the fields `components` object holds are:
 - `operationBindings`: An object to hold reusable [Operation Bindings Objects](/docs/reference/specification/latest#operationBindingsObject).
 - `messageBindings`: An object to hold reusable [Message Bindings Objects](/docs/reference/specification/latest#messageBindingsObject).
 
-Here's a visual representation of the `components` object and its properties:
+Here's a visual representation of the `components` field and its properties:
 ```mermaid
-graph 
+graph LR
   A[components]
   B(schemas)
-  C(category)
-  D(tag)
+  C(messages)
+  D(serverVariables)
+  E(replies)
+  F(replyAddresses)
   G(servers)
-  H(development)
-  I(serverVariables)
+  H(operations)
+  I(securitySchemes)
+  J(tags)
+  K(operationTraits)
   L(channels)
-  P(messages)
+  M(serverBindings)
+  N(channelBindings)
+  O(operationBindings)
+  R(messageBindings)
+  P(externalDocs)
   U(parameters)
   W(correlationIds)
   Y(messageTraits)
 
   A --> B
-  B --> C
-  B --> D
+  A --> C
+  A --> H
   A --> G
-  G --> H
-  H --> I
+  A --> D
   A --> L
-  A --> P
   A --> U
+  A --> P
+  A --> I
   A --> W
   A --> Y
+  A --> K
+  A --> J
+  A --> E
+  A --> F
+  A --> M
+  A --> N
+  A --> O
+  A --> R
 ```
 
 Here's a code example of the components object in an AsyncAPI document:
 ```yaml
 components:
+
   schemas:
     Category:
       type: object
@@ -403,70 +429,111 @@ components:
         id:
           type: integer
           format: int64
-        name:
-          type: string
-    Tag:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
     AvroExample:
       schemaFormat: application/vnd.apache.avro+json;version=1.9.0
       schema:
         $ref: 'path/to/user-create.avsc/#UserCreate'
+
   servers:
     development:
-      url: "{stage}.in.mycompany.com:{port}"
-      description: RabbitMQ broker
+      host: '{stage}.in.mycompany.com'
       protocol: amqp
-      protocolVersion: 0-9-1
+      description: RabbitMQ broker
+      bindings:
+        $ref: '#/components/serverBindings/devAmqp'
       variables:
         stage:
-          $ref: "#/components/serverVariables/stage"
-        port:
-          $ref: "#/components/serverVariables/port"
+          $ref: '#/components/serverVariables/stage'
+      security:
+        - $ref: '#/components/securitySchemes/oauth'
+
   serverVariables:
     stage:
       default: demo
       description: This value is assigned by the service provider, in this example `mycompany.com`
-    port:
-      enum: [5671, 5672]
-      default: 5672
+
   channels:
+    user:
+      address: 'users.{userId}'
+      title: Users channel
+      description: This channel is used to exchange messages about user events.
+      messages:
+        userSignedUp:
+          $ref: '#/components/messages/userSignUp'
+      parameters:
+        userId:
+          $ref: '#/components/parameters/userId'
+      servers:
+        - $ref: '#/components/servers/development'
+      bindings:
+        $ref: '#/components/channelBindings/user'
+      tags:
+        - $ref: '#/components/tags/user'
+      externalDocs:
+        $ref: '#/components/externalDocs/infoDocs'
+
   messages:
     userSignUp:
       summary: Action to sign a user up.
-      description: |
-        Multiline description of what this action does.
-        Here you have another line.
-      tags:
-        - name: user
-        - name: signup
-      headers:
-        type: object
-        properties:
-          applicationInstanceId:
-            description: Unique identifier for a given instance of the publishing application
-            type: string
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
       payload:
-        type: object
-        properties:
-          user:
-            $ref: "#/components/schemas/userCreate"
-          signup:
-            $ref: "#/components/schemas/signup"
+        $ref: '#/components/schemas/Category'
+      correlationId:
+          $ref: '#/components/correlationIds/default'
+      bindings:
+        $ref: '#/components/messageBindings/user'
+
   parameters:
     userId:
       description: Id of the user.
-      schema:
-        type: string
+
   correlationIds:
     default:
       description: Default Correlation ID
       location: $message.header#/correlationId
+
+  operations:
+    sendUserSignUp:
+      action: send
+      title: User sign up
+      bindings:
+        $ref: '#/components/operationBindings/sendUser'
+      traits:
+        - $ref: '#/components/operationTraits/binding'
+      reply:
+        $ref: '#/components/replies/signupReply'
+
+  replies:
+    signupReply:
+      address:
+        $ref: '#/components/replyAddresses/signupReply'
+      channel:
+        $ref: '#/channels/userSignupReply'
+
+  replyAddresses:
+    signupReply:
+      location: '$message.header#/replyTo'
+
+
+  securitySchemes:
+    oauth:
+      type: oauth2
+      description: The oauth security descriptions
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://example.com/api/oauth/dialog'
+          availableScopes:
+            'subscribe:auth_revocations': Scope required for authorization revocation topic
+      scopes:
+        - 'subscribe:auth_revocations'
+
+  operationTraits:
+    binding:
+      bindings:
+        amqp:
+          ack: false
+
   messageTraits:
     commonHeaders:
       headers:
@@ -476,4 +543,39 @@ components:
             type: integer
             minimum: 0
             maximum: 100
+
+  tags:
+    user:
+      name: user
+      description: User-related messages
+
+  externalDocs:
+    infoDocs:
+      url: https://example.com/docs
+      description: 'Find more info here'
+
+  serverBindings:
+    devAmqp:
+      amqp:
+        exchange: my-exchange
+        queue: my-queue
+
+  channelBindings:
+    user:
+      amqp:
+        is: queue
+        queue:
+          exclusive: true
+
+  operationBindings:
+    sendUser:
+      amqp:
+        ack: false
+
+  messageBindings:
+    user:
+      amqp:
+        contentEncoding: gzip
+        messageType: 'user.signup'
+        bindingVersion: '0.2.0'
 ```
