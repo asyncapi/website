@@ -11,9 +11,11 @@ In this tutorial, you will learn how bindings with Kafka works. You will learn h
 ## Background Context
 
 **What is Kafka**
+
 Kafka is a messaging system that allows for the efficient handling and processing of data streams. 
 
 **What is binding?**
+
 In the context of Kafka, "bindings" refer to the connections between Kafka and other systems or applications. There are several levels of bindings as described below:
 
 
@@ -21,7 +23,8 @@ In the context of Kafka, "bindings" refer to the connections between Kafka and o
 - Channel Bindings
 - Operation Bindings
 
-**How binding works in Kafka**
+**How binding works with Kafka**
+
 You must understand some essential parts of the process to understand how binding works. 
 
 Kafka as a messaging system - Think of Kafka as a courier service - A messaging system that handles sending and receiving messages between applications. 
@@ -38,18 +41,40 @@ Bindings: Bindings are relevant when integrating Kafka with other programs or se
 
 Bindings are important because they indicate how Kafka components are configured.
 
-<!---
-Add a visual representation of how Kafka bindings work. 
---->
+The diagram below shows how bindings with Kafka works. 
+
+```mermaid
+graph LR
+    A[Producer] -->|Sends Messages| B[Kafka Topic]
+    B -->|Bindings| C{Kafka Broker}
+    C -->|Delivers Messages| D[Consumer 1]
+    C -->|Delivers Messages| E[Consumer 2]
+    C -->|Delivers Messages| F[Consumer N]
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#fc6,stroke:#333,stroke-width:2px
+```
+
+In the diagram above;
+
+- The **producer** represents the system or service that transmits messages to Kafka.
+
+- **Kafka Topic**: The name of the category or feed where messages are stored.
+
+- **Bindings**: The connection or configuration between Kafka topics and the broker.
+
+- **Kafka Broker**: The central node in charge of message distribution.
+
+- **Consumer 1, 2, N**: Various systems or services that receive Kafka messages.
 
 Now, let’s see how to use bindings with Kafka.
 
 ## Installation Guide
 
 <!---
-Step 1
-Step 2
-Step 3
+Step 1 - Server bindings
+Step 2 - Channel Bindings
+Step 3 - Operation Bindings
 --->
 
 
