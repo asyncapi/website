@@ -10,11 +10,13 @@ Before we begin, it would be beneficial and easy to follow if you have a basic u
 [Request-reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html) is a common messaging pattern where we have a component known as the **requester** that sends a request message to another component known as **replier**, which receives the request and responds to the request with a reply. So, the request/reply pattern consists of majorly two components, a requester and a replier. 
 
 ## Static Reply Address 
-Here's how you can implement the request/reply pattern when the address of the response channel(i.e address of the reply) is known at the compile time or at the time of design. 
+
+Here's how you can implement the request/reply pattern when the address of the response is known at the compile time or at the time of design. 
 
 You can define a requester using the `send` operation that sends a message to the `ping` channel and expects a reply over the `pong` channel. 
 
-In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to**(address of the response channel) and what message to properly reply to the request. 
+In the below example, the `Operation Reply` object in the `pingRequest` operation describes the necessary information such as **where to** reply is sent. Reply goes to `pong` channel. There is no need to specify exactly what is the reply message because `pong` channel has only one message defined. In below example there is also no need to specify inside operation what message is send in the request, because `ping` channel has just one message defined.
+
 <CodeBlock highlightedLines={[6,7,8,9,10,11,18,19,20,21,22,23,24]}>
 {`asyncapi: 3.0.0
 info:
@@ -59,9 +61,13 @@ components:
 </CodeBlock>
 
 ## Dynamic Reply Address 
-While in the [above section](#static-response-channel) you know the address of the response channel, sometimes, you do not know where the reply needs to be sent at the time of design or compile time. Instead the address of the response channel is determined dynamically at runtime.
 
-Here's how you can implement request/reply while dynamically determining the reply channel:
+Sometimes, you do not know where the reply needs to be sent at the time of design or compile time. Instead the address of the reply is determined dynamically at runtime.
+
+In the below example, when you don't know the address or the reply channel at the design time, you can set the `address` property to `null` or you can choose to omit `address` field entirely. You can use the `Operation Reply Address` object to define reply address using a runtime expression. You can describe that `requester` specifies where `replier` delivers reply, where is the address located, in what part of the request.
+
+In this case, we use `$message.header#/replyTo` as the value of the `location` property which is a runtime expression and determines that reply address is located in the header of the request, under `replyTo` field.
+
 <CodeBlock highlightedLines={[13,14,15,16,22,23,24,25,26,27,30,31,32,33,34,35]}>
 {`asyncapi: 3.0.0
 info:
@@ -98,23 +104,38 @@ components:
         properties:
           replyTo:
             type: string
+            description: Provide path to which reply must be provided
+          requestId:
+            type: string
+            format: uuid
+            description: Provide request id that you will use to identify the reply match
       payload:
         type: object
         properties:
           event:
             type: string
             const: ping
+      correlationId:
+        $ref: "#/components/correlationIds/pingCorrelationId"
     pong:
+      headers:
+        type: object
+        properties:
+          requestId:
+            type: string
+            format: uuid
+            description: Reply message must contain id of the request message
       payload:
         type: object
         properties:
           event:
             type: string
-            const: pong`}
+            const: pong
+      correlationId:
+        $ref: "#/components/correlationIds/pingCorrelationId"
+  correlationIds:
+    pingCorrelationId:
+      location: '$message.header#/requestId'`}
 </CodeBlock>
-
-In the above example, since we don't know the address or the reply channel at the design time, you can set the `address` property to null or you can choose to omit entirely. You can use the `Operation Reply Address ` object to to define the address of the reply channel dynamically using a runtime expression. 
-
-In this case, we use `$message.header#/replyTo` as the value of the `location` property which is a runtime expression and determines where the reply channel is by using the value of the `replyTO` header in the request message. 
 
 While the above examples are a simple implementation of request/reply pattern, in an protocol-agnostic world there are many different ways to represent the request/reply pattern. All of which are supported by AsyncAPI.
