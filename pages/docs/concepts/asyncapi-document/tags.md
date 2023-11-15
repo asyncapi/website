@@ -12,6 +12,7 @@ In AyncAPI, the `tags` object is essentially a list of `tag` objects. Within the
 Additionally, you can define a list of tags you wanna use across the document under the `tags` object on the `info` level and you can reuse those tags under individual components such as `servers` or `channels` allowing you to group components logically.
 
 ## `Tags` in AsyncAPI Document
+
 The `tags` object is a list of `tag` objects that can be referenced by [reference object](/docs/reference/specification/latest#referenceObject).
 
 The `tags` object is a list of tags and individual `tag` objects contain some fields.
@@ -24,6 +25,7 @@ Some of the fields that the `tags` object holds are:
 - `externalDocs`: Additional external documentation for this tag.
 
 ### `Tags` in `Info` Object
+
 When defined within the `tags` property of the info object, tags provide a high-level categorization and classification for the entire AsyncAPI document. These tags that are defined under the `info` object give a global context to the entire application, representing overarching themes or functional areas within the event-driven system. They serve as a way to group objects such as channels or servers based on their broader significance, providing a holistic understanding of the application's structure.
 
 Here's a visual representation of the `tags` object inside an `info` object in an AsyncAPI document:
@@ -115,6 +117,7 @@ servers:
 ```
 
 ### `Tags` in `Channels` object
+
 Tags are associated with individual channels allowing for logical grouping and categorization of channels based on specific functionalities or business domains. The `tags` object when used within a `channels` object, the context is either restricted to the `channels` object and the individual `channel` of the AsyncAPI document, meaning they only affect the `channels` object of the AsyncAPI document or they could be used for consistency of tags across the document for logical grouping. Using the `tags` object under the `channels` object is optional.
 
 
@@ -163,6 +166,7 @@ channels:
 ```
 
 ### `Tags` in `Operations` Object
+
 The `tags` object within the `operations` object of the AsyncAPI document allows for logical grouping and categorization of individual `operation` objects based on the type of operation or functionality and more. The `tags` object when used within an `operations` object, it can either only affect the `operations` object for a specific purpose or it could be to be in consistent use of tags for logical grouping of components. Using the `tags` object in the `operations` object is optional.
 
 Here's a visual representation of the `tags` object inside a `operations` object in an AsyncAPI document:
@@ -172,9 +176,6 @@ graph LR
   E(channel)
   F(action)
   H(tags)
-  L(reply)
-  M(address)
-  N(channel)
   X(name)
   Y(description)
   Z(externalDocs)
@@ -182,9 +183,6 @@ graph LR
   A --> E
   A --> F
   A --> H
-  A --> L
-  L --> M
-  L --> N
   H --> X
   H --> Y
   H --> Z
@@ -220,6 +218,7 @@ operations:
 ```
 
 ### `Tags` in `message` object
+
 Tags are associated with individual message objects allowing for logical grouping and categorization of messages based on specific requirements or criteria or given channels and operations and more. The `tags` object when used within a `message` object, the context is either restricted to the `message` object of the AsyncAPI document, meaning they only affect the `message` object of the AsyncAPI document or it could be a part of consistent use of tags across the document for logical grouping. 
 
 Here's a visual representation of a `tags` object inside a `message` object in an AsyncAPI document:
@@ -230,8 +229,6 @@ graph LR
   C --> D[name]
   C --> E[description]
   A --> F[headers]
-  F --> G[correlationId]
-  F --> H[applicationInstanceId]
   A --> I[payload]
   C --> Y[externalDocs]
   style A fill:#47BCEE,stroke:#000;
@@ -259,7 +256,9 @@ payload:
 ```
 
 ## Example
+
 Here's an example illustrating all the tags being defined in the `components` object and then referenced in other components such as `servers`, `channels` and more:
+
 ```yml
 asyncapi: 3.0.0
 
@@ -280,7 +279,7 @@ info:
     of the event-driven system.
   tags:
     - $ref: '#/components/tags/speech'
-    - $ref: '#/components/tags/audio'
+    - $ref: '#/components/tags/video'
 
 servers:
   speech:
@@ -291,7 +290,7 @@ servers:
       - $ref: '#/components/tags/speech'
   video:
     host: localhost:5673
-    description: RabbitMQ broker for audio information.
+    description: RabbitMQ broker for video information.
     protocol: amqp
     tags:
        - $ref: '#/components/tags/video'
