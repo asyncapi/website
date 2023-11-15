@@ -7,9 +7,9 @@ Server security refers to the measures and practices implemented to protect serv
 
 In the context of AsyncAPI, securing servers ensures secure exchange of messages between clients and servers. While also protecting sensitive data, preventing unauthorized access, and maintaining the overall security of the API or server.
 
-You can secure a server by using the `security` property where you define or declare which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation such as a API key or username and password. 
+You can describe how is your server secured with `security` property where you define which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation, such as a API key or username and password. 
 
-Here is a example of adding security to your server:
+Here is a example of adding security to your server that shows that different server can have different security mechanisms:
 ```yml
 asyncapi: 3.0.0
 info:
@@ -41,64 +41,61 @@ components:
 Here is a illustration of securing servers: 
 ```mermaid
 graph LR
-  A[Servers]
-  C[server-object]
+  C[servers]
   F[host]
   I[protocol]
   E[security]
   C --> F
-  A --> C
   C --> E
   C --> I
-  style A fill:#47BCEE,stroke:#000;
   style C fill:#47BCEE,stroke:#000;
   style E fill:#47BCEE,stroke:#000
 ```
 
 Here are some of the security schemes that AsyncAPI supports:
 - User/Password
-```yml
+  ```yml
   type: userPassword
-```
+  ```
 
 - API key (either as a user or as a password)
-```yml
+  ```yml
   type: apiKey
   in: user
-```
+  ```
 
 - X.509 certificate
-```yml
+  ```yml
   type: X509
-```
+  ```
 
 - End-to-end encryption (either symmetric or asymmetric)
-```yml
+  ```yml
   type: symmetricEncryption
-```
+  ```
 
 - HTTP authentication
-```yml
+  ```yml
   type: http
   scheme: basic
-```
+  ```
 
 - HTTP API key
-```yml
+  ```yml
   type: httpApiKey
   name: api_key
   in: header
-```
+  ```
 
 - JWT Bearer
-```yml
+  ```yml
   type: http
   scheme: bearer
   bearerFormat: JWT
-```
+  ```
 
 - Implicit oauth2
-```yml
+  ```yml
   type: oauth2
   flows:
     implicit:
@@ -108,11 +105,11 @@ Here are some of the security schemes that AsyncAPI supports:
         read:pets: read your pets
   scopes:
     - 'write:pets'
-```
+  ```
 
 - SASL (Simple Authentication and Security Layer) as defined in RFC4422
-```yml
+  ```yml
   type: scramSha512
-```
+  ```
 
 Although, the `security` property is not mandatory to be implemented, it is a good practise to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure, it really depends on other factors such as the protocol used, use case, business perspective and more. Additionally, you can also [add security on the `operation` level](securing-operations)
