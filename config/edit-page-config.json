@@ -1,22 +1,18 @@
 [
-  {
-    "value": "/tools/generator",
-    "href": "https://github.com/asyncapi/generator/tree/master/docs"
-  },
-  {
-    "value": "reference/specification/",
-    "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md"
-  },
-  {
-    "value": "/tools/cli",
-    "href": "https://github.com/asyncapi/cli/tree/master/docs"
-  },
-  {
-    "value": "",
-    "href": "https://github.com/asyncapi/website/blob/master/pages"
-  },
-  {
-    "value": "reference/extensions/",
-    "href": "https://github.com/asyncapi/extensions-catalog/tree/master/extensions"
-  }
+    {
+        "value": "/tools/generator",
+        "href": "https://github.com/asyncapi/generator/tree/master/docs"
+    },
+    {
+        "value": "reference/specification/",
+        "href": "https://github.com/asyncapi/spec/blob/master/spec/asyncapi.md"
+    },
+    {
+        "value":"/tools/cli",
+        "href":"https://github.com/asyncapi/cli/tree/master/docs"
+    },
+    {
+        "value": "",
+        "href": "https://github.com/asyncapi/website/blob/master/pages"
+    }
 ]
