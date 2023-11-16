@@ -1,4 +1,4 @@
 ---
-title: AsyncAPI document
+title: 'AsyncAPI Document'
 weight: 50
 ---
