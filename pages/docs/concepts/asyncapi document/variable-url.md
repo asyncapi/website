@@ -1,5 +1,5 @@
 ---
-title: URL Variables
+title: Variable URL
 weight: 275
 ---
 
