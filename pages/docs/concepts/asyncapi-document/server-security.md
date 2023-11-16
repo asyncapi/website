@@ -7,9 +7,9 @@ Server security refers to the measures and practices implemented to protect serv
 
 In the context of AsyncAPI, securing servers ensures secure exchange of messages between clients and servers. While also protecting sensitive data, preventing unauthorized access, and maintaining the overall security of the API or server.
 
-You can describe how is your server secured with `security` property where you define which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation, such as a API key or username and password. 
+You can describe how your server is secured with the `security` property where you define which security schemes can be used with the server in context. Each `server` in the AsyncAPI document can have one or more security schemes declared. A security scheme defines a security requirement that must be satisfied to authorize an operation, such as an API key or a username and password. 
 
-Here is a example of adding security to your server that shows that different server can have different security mechanisms:
+Here is an example of adding security to your server, demonstrating that different servers can employ various security mechanisms:
 ```yml
 asyncapi: 3.0.0
 info:
@@ -38,7 +38,7 @@ components:
       description: Download the certificate files from service provider
 ```
 
-Here is a illustration of securing servers: 
+Here is an illustration of securing servers: 
 ```mermaid
 graph LR
   C[servers]
@@ -112,4 +112,4 @@ Here are some of the security schemes that AsyncAPI supports:
   type: scramSha512
   ```
 
-Although, the `security` property is not mandatory to be implemented, it is a good practise to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure, it really depends on other factors such as the protocol used, use case, business perspective and more. Additionally, you can also [add security on the `operation` level](securing-operations)
+Although the `security` property is not mandatory, it is a good practice to always secure your server(s) in production. Similarly, having multiple security schemes declared does not necessarily mean that the server is more secure; it depends on other factors such as the protocol used, use case, business perspective, and more. Additionally, you can also [add security at the `operation` level](securing-operations).
