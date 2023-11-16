@@ -5,30 +5,29 @@ weight: 280
 
 Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. You can reuse specific document sections such as Messages or schema definitions.
 
-Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the Reference Object. You can use the $ref keyword to reference the same or another local file or external URL.
+Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the Reference Object. You can use the $ref keyword to reference the same or another local file or external URL. The diagram below describes how to reuse parts in AsyncAPI.
+
+```mermaid
+graph TD
+
+    A[Message]
+    B[Payload]
+    C[Reusable Part]
+
+style A fill:#47BCEE,stroke:#47BCEE;
+style B fill:#47BCEE,stroke:#47BCEE;
+style C fill:#47BCEE,stroke:#47BCEE;
+
+  A -->|references| B
+  B -->|local file reference| C
+  B -->|same file reference| C
+  B -->|external URL reference| C
+
+```
 
 ## Same file
 
-You can use the $ref keyword to reference a component within the same document. The diagram below defines referencing a component within the same document.
-
-```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
-
-A[MyMessageSchema]
-B[components]
-C[myChannel]
-D[$ref keyword]
-
-C -->|publishes| D
-D -->|references| B
-B -->|references| A
-```
-
-In the example below, you define a component called MyMessageSchema under the schemas section to describe the structure of a message. Under the publish operation of myChannel, you reference the MyMessageSchema component using the $ref keyword.
+You can use the $ref keyword to reference a component within the same document. In the example below, you define a component called MyMessageSchema under the schemas section to describe the structure of a message. Under the publish operation of myChannel, you reference the MyMessageSchema component using the $ref keyword.
 
 ```yaml
 channels:
@@ -46,28 +45,11 @@ components:
           type: string
 ```
 
-## Another local document
+## Another local file
 
 You can use the $ref keyword to reference another local document. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
 
 The diagram below defines the process of referencing another local document.
-
-```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
-
-A[Main AsyncAPI Document]
-B[message-schema.yaml]
-C[components/schemas]
-D[MyMessageSchema]
-
-A -->|references| B
-B -->|contains| C
-C -->|defines| D
-```
 
 In the code below, you reference the component from another local document, such as message-schema.yaml.
 
@@ -95,28 +77,7 @@ channels:
 
 ## External URL
 
-You can use the $ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON.
-
-The diagram below defines the process of referencing an external URL.
-
-```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
-
-A[AsyncAPI Document]
-B[https://example.com/my-component.yaml]
-C[components/schemas]
-D[MyComponent]
-
-A -->|references| B
-B -->|contains| C
-C -->|defines| D
-```
-
-In the example below, you reference the component from an external URL. The $ref value specifies the full URL to the external resource and the component's location.
+You can use the $ref keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON. In the example below, you reference the component from an external URL. The $ref value specifies the full URL to the external resource and the component's location.
 
 ```yaml
 channels:
