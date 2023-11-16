@@ -3,11 +3,11 @@ title: AsyncAPI document structure
 weight: 60
 ---
 
-The structure of an AsyncAPI document is defined in a specific format and must follow [AsyncAPI specification](/docs/reference/specification/latest). The structure of an AsyncAPI document has certain fields that you need to follow, although not all of them are mandatory.
+The structure of an AsyncAPI document is defined in a specific format and must follow the [AsyncAPI specification](/docs/reference/specification/latest). The structure of an AsyncAPI document has certain fields that you need to follow, although not all of them are mandatory.
 
-## Root Elements
+## Root elements
 
-Root elements of an AsyncAPI document provide an overview of the API's characteristics and behaviour. These root elements collectively define the metadata, channels, components and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behaviour.
+Root elements of an AsyncAPI document provide an overview of the API's characteristics and behavior. These root elements collectively define the metadata, channels, components, and more of an AsyncAPI document. They provide a comprehensive overview of the API's characteristics and behavior.
 
 ```mermaid
 graph 
@@ -27,18 +27,18 @@ A --> F
 
 ### `info` field
 
-With the `info` field you provide essential information about the API in the form of fields such as title, version, description, contact details and license. It serves as metadata that gives consumers a high-level understanding of the API's purpose and functionality. It helps developers, architects, and other stakeholders quickly identify and comprehend the API's characteristics without diving into the technical details. Plus, `info` is a required component of the AsyncAPI document and often the first point of reference for users exploring the API documentation.
+The `info` field in an API document offers crucial metadata, including the API's title, version, description, contact details, and license. This field provides a comprehensive overview of the API, aiding developers, architects, and other stakeholders in quickly grasping its purpose and capabilities. As a mandatory element of the AsyncAPI specification, the `info` field often serves as the initial reference point for users navigating the API documentation.
 
-Some of the fields `info` field holds are:
+The `info` field encompasses various fields such as:
 
-- `title`: The title of the API.
-- `version`: The version of the API.
-- `description`: A brief description explaining the purpose and features of the API.
-- `termsOfService`: The URL or document specifying the terms of service for using the API.
-- `contact`: Contact information for the owner or maintainer of the API, including name, email, and URL.
-- `license`: Information about the license under which the API is provided, including name and URL.
-- `tags`: A list of tags for application API documentation control. Tags can be used for logical grouping of applications.
-- `externalDocs`: Additional external documentation of the exposed API.
+- `title`: API title.
+- `version`: API version.
+- `description`: Brief description describing the API's purpose and features.
+- `termsOfService`: URL or document specifying the API's terms of service.
+- `contact`: Contact information of the API's owner or maintainer (name, email, and URL).
+- `license`: API's license information, including name and URL.
+- `tags`: Tags for categorizing and organizing API documentation. Also used for grouping applications logically.
+- `externalDocs`:  Links to additional, external documentation related to the API.
 
 Here's a visual representation of the `info` field and its properties:
 ```mermaid
@@ -72,7 +72,7 @@ info:
   termsOfService: https://example.com/terms-of-service
   contact:
     name: Rohit
-    email: rohit@asyncapi.com
+    email: rohitwashere@asyncapi.com
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -88,7 +88,7 @@ info:
 
 ### `servers` field
 
-With the `servers` field you can provide a map of different servers that define the network endpoints or brokers that applications can connect to for exchanging messages. It specifies the details necessary to establish a connection, such as the protocol, host, port, and additional connection options. You can accommodate different environments or deployment scenarios, such as production, staging, or development.
+The `servers` field allows you to detail a range of servers, outlining the network endpoints or message brokers to which applications can connect. That field includes vital connection information like protocol, host, port, and other options, facilitating connectivity across various environments such as production, staging, or development.
 
 Some of the fields of individual `servers` field are:
 
@@ -185,9 +185,9 @@ servers:
 
 ### `channels` field
 
-With the `channels` field you can provide a map of different channels the application communicates with during runtime. The `channels` represent the communication pathways through which messages are exchanged. You can specify their purpose, address, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
+With the `channels` field, you can provide a map of different channels the application communicates with during runtime. The `channels` represent the communication pathways through which messages are exchanged. You can specify their purpose, address, and the expected message formats for communication. Consumers of the specific API can understand the supported message-based interactions and the corresponding data models.
 
-Some of the fields of individual `channels` field are:
+Key components within the `channels` field include:
 
 - `address`: A string representation of this channel's address.
 - `messages`: A map of the messages that will be sent to this channel by any application at any time.
@@ -257,9 +257,9 @@ channels:
 
 ### `operations` field
 
-With the `operations` field you can describe all the operations the application performs. Use it to provide a clear and structured definition of the operations. Specify if your application is sending or receiving messages, and what is the purpose of such operation.
+The `operations` field is used to comprehensively outline the various operations performed by the application. It offers a clear, structured description, detailing whether the application sends or receives messages and the specific purpose of each operation.
 
-Some of the fields of individual `operations` field are:
+Key components within the `operations` field include:
 
 - `action`: Use `send` type when it's expected that the application will send a message to the given channel, and `receive` type when the application should expect to receive messages from the given channel.
 - `channel`: A `$ref` pointer to the definition of the channel in which this operation is performed. 
@@ -272,7 +272,7 @@ Some of the fields of individual `operations` field are:
 - `bindings`	A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
 - `traits`:	A list of traits to apply to the operation object. 
 - `messages`:	A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation.
-- `reply`:	The definition of the reply in a request-reply operation.
+- `reply`:	The definition of the reply in a reply/request operation.
 
 Here's a visual representation of the `operations` field and its properties:
 ```mermaid
@@ -349,29 +349,29 @@ operations:
 
 ### `components` field
 
-With `components` field you can define a set of reusable structures or definitions that can be used across different parts of your document. Information provide under `components` are not part of the API unless they are explicitly referenced from properties outside the `components` field. Use it to not repeat yourself and improve maintainability of the document. 
+The `components` field allows for the definition of reusable structures or definitions applicable across various sections of your document. Items detailed within `components` only become part of the API when explicitly referenced by properties external to this field. Utilize it to avoid repetition and enhance the document's maintainability.
 
-Some of the fields of individual `channels` field are:
+Key components of the `channels` field include:
 
-- `schemas`: An object to hold reusable [Schema Object](/docs/reference/specification/latest#schemaObject). 
-- `servers`: An object to hold reusable [Server Objects](/docs/reference/specification/latest#serverObject).
-- `channels`: An object to hold reusable [Channel Objects](/docs/reference/specification/latest#channelObject).
-- `operations`: An object to hold reusable [Operation Item Objects](/docs/reference/specification/latest#operationObject).
-- `messages`: An object to hold reusable [Messages Objects](/docs/reference/specification/latest#messageObject).
-- `securitySchemes`: An object to hold reusable [Security Scheme Objects](/docs/reference/specification/latest#securitySchemeObject).
-- `serverVariables`: An object to hold reusable [Server Variable Objects](/docs/reference/specification/latest#serverVariableObject).
+- `schemas`: An object to hold the reusable [Schema Object](/docs/reference/specification/latest#schemaObject). 
+- `servers`: An object to hold the reusable [Server Objects](/docs/reference/specification/latest#serverObject).
+- `channels`: An object to hold the reusable [Channel Objects](/docs/reference/specification/latest#channelObject).
+- `operations`: An object to hold the reusable [Operation Item Objects](/docs/reference/specification/latest#operationObject).
+- `messages`: An object to hold the reusable [Messages Objects](/docs/reference/specification/latest#messageObject).
+- `securitySchemes`: An object to hold the reusable [Security Scheme Objects](/docs/reference/specification/latest#securitySchemeObject).
+- `serverVariables`: An object to hold the reusable [Server Variable Objects](/docs/reference/specification/latest#serverVariableObject).
 - `parameters`: Contains reusable [Parameter Objects](/docs/reference/specification/latest#parameterObject) that can be used in various parts of the AsyncAPI document.
-- `correlationIds`: An object to hold reusable [Correlation ID Objects](/docs/reference/specification/latest#correlationIdObject).
-- `replies`: An object to hold reusable [Operation Reply Objects](/docs/reference/specification/latest#operationReplyObject).
-- `replyAddresses`: An object to hold reusable [Operation Reply Address Objects](/docs/reference/specification/latest#operationReplyAddressObject).
-- `externalDocs`: An object to hold reusable [External Documentation Objects](docs/reference/specification/latest#externalDocumentationObject).
-- `tags`: An object to hold reusable [Tag Objects](/docs/reference/specification/latest#tagObject).
-- `operationTraits`: An object to hold reusable [Operation Trait Objects](/docs/reference/specification/latest#operationTraitObject).
+- `correlationIds`: An object to hold the reusable [Correlation ID Objects](/docs/reference/specification/latest#correlationIdObject).
+- `replies`: An object to hold the reusable [Operation Reply Objects](/docs/reference/specification/latest#operationReplyObject).
+- `replyAddresses`: An object to hold the reusable [Operation Reply Address Objects](/docs/reference/specification/latest#operationReplyAddressObject).
+- `externalDocs`: An object to hold the reusable [External Documentation Objects](docs/reference/specification/latest#externalDocumentationObject).
+- `tags`: An object to hold the reusable [Tag Objects](/docs/reference/specification/latest#tagObject).
+- `operationTraits`: An object to hold the reusable [Operation Trait Objects](/docs/reference/specification/latest#operationTraitObject).
 - `messageTraits`: Represents common traits or characteristics that can be applied to messages or hold reusable [Message Trait Objects](/docs/reference/specification/latest#messageTraitObject).
-- `serverBindings`: An object to hold reusable [Server Bindings Objects](/docs/reference/specification/latest#serverBindingsObject).
-- `channelBindings`: An object to hold reusable [Channel Bindings Objects](/docs/reference/specification/latest#channelBindingsObject).
-- `operationBindings`: An object to hold reusable [Operation Bindings Objects](/docs/reference/specification/latest#operationBindingsObject).
-- `messageBindings`: An object to hold reusable [Message Bindings Objects](/docs/reference/specification/latest#messageBindingsObject).
+- `serverBindings`: An object to hold the reusable [Server Bindings Objects](/docs/reference/specification/latest#serverBindingsObject).
+- `channelBindings`: An object to hold the reusable [Channel Bindings Objects](/docs/reference/specification/latest#channelBindingsObject).
+- `operationBindings`: An object to hold the reusable [Operation Bindings Objects](/docs/reference/specification/latest#operationBindingsObject).
+- `messageBindings`: An object to hold the reusable [Message Bindings Objects](/docs/reference/specification/latest#messageBindingsObject).
 
 Here's a visual representation of the `components` field and its properties:
 ```mermaid
@@ -450,7 +450,7 @@ components:
   serverVariables:
     stage:
       default: demo
-      description: This value is assigned by the service provider, in this example `mycompany.com`
+      description: This value is assigned by the service provider in this example of `mycompany.com`
 
   channels:
     user:
