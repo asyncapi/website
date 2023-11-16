@@ -5,31 +5,35 @@ weight: 295
 
 A server represents a message broker handling communication between producers and consumers. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
 
-A unique key identifies the server and contains information about the server's connection details, such as the URL, protocol, and authentication.
-
-The diagram below depicts how to define and add servers.
+A unique key identifies the server and contains information about the server's connection details, such as the URL, protocol, and authentication. The diagram below describes how to define and add servers in AsyncAPI.
 
 ```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style E fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
+graph TD
+  subgraph AsyncAPI
+    A[Channel: userActions]
+    B[Operation: subscribe]
+    C[Message]
+    D[Payload]
+  end
 
-A[AsyncAPI Specification File]
-B[Servers Section]
-C[Server Reference]
-D[Channels or Components]
-E[x-server Extension Field]
+  subgraph Servers
+    SA[Servers: development, production]
+  end
 
-A -->|contains| B
-A -->|references| D
-B -->|describes| C
-D -->|has| E
+style A fill:#47BCEE,stroke:#47BCEE;
+style B fill:#47BCEE,stroke:#47BCEE;
+style C fill:#47BCEE,stroke:#47BCEE;
+style SA fill:#47BCEE,stroke:#47BCEE;
+style D fill:#47BCEE,stroke:#47BCEE;
+
+  SA --> A
+
+  A -->|inherits servers| B
+  B -->|references| C
+  C -->|references| D
 ```
 
-For more information, refer [introduction to servers](../server.md)
+For more information, refer [introduction to servers](/docs/server.md)
 
 ## Define Servers
 
@@ -46,15 +50,13 @@ In this example, you define a server with the URL using the MQTT protocol and de
 
 ### Define Server reference
 
-Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component using the x-server extension field.
-
-Here's an example of how to add a server reference to a channel:
+Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component. Here's an example of how to add a server reference to a channel:
 
 ```yaml
 channels:
   myChannel:
     publish:
-      x-server: mqttServer
+      server: mqttServer
       message:
         $ref: '#/components/messages/myMessage'
 ```
