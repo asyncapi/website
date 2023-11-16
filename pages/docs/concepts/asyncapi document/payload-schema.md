@@ -17,26 +17,22 @@ Define the Avro schema for the message payload. You can choose one of the follow
 - Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
 - Local file reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.avsc'`.
 
-The diagram below defines the AsyncAPI specification file using the local reference method.
+The diagram below describes how to use complex payloads.
 
 ```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
-style E fill:#47BCEE, stroke:#333, stroke-width:2px;
+graph TD
+    A[Message]
+    B[Payload]
+    C[Avro Schema]
 
-A[Define Avro Schema]
-B[Local Reference]
-C[Avro Schema File]
-D[Message Payload]
-E[AsyncAPI Specification File]
+style A fill:#47BCEE,stroke:#47BCEE;
+style B fill:#47BCEE,stroke:#47BCEE;
+style C fill:#47BCEE,stroke:#47BCEE;
 
-A -->|Specifies| B
-B -->|Specifies schema| D
-E -->|Uses| C
-C -->|Defines structure| D
+  A -->|references| B
+  B -->|local file reference| C
+  B -->|remote reference| C
+  B -->|embedded notation| C
 ```
 
 Here is an example of an AsyncAPI specification file that uses the local reference method:
