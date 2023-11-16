@@ -1,5 +1,5 @@
 ---
-title: Server Security 
+title: Server security 
 weight: 200
 ---
 
