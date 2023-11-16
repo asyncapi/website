@@ -3,7 +3,7 @@ title: URL Variables
 weight: 275
 ---
 
-[Event-driven architecture](../../tutorials/getting-started/event-driven-architectures) benefits from a defined base URL and rules for URL variables. You can easily manage multiple API endpoints, handling various server configurations and environments.
+[Event-driven architecture](/docs/tutorials/getting-started/event-driven-architectures) benefits from a defined base URL and rules for URL variables. You can easily manage multiple API endpoints, handling various server configurations and environments.
 
 URL variables are placeholders for values you can replace during runtime. AsyncAPI enables you to construct dynamic URLs with query parameters and additional information while enhancing the flexibility and maintainability of your API specifications.
 
@@ -11,29 +11,21 @@ URL variables are placeholders for values you can replace during runtime. AsyncA
 
 To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` fields to enable reusable variables across multiple servers.
 
-The diagram below depicts how to construct dynamic URLs with query parameters.
+The diagram below describes how to use variable urls in AsyncAPI.
 
 ```mermaid
-graph LR
-style A fill:#47BCEE, stroke:#333, stroke-width:2px;
-style E fill:#47BCEE, stroke:#333, stroke-width:2px;
-style C fill:#47BCEE, stroke:#333, stroke-width:2px;
-style D fill:#47BCEE, stroke:#333, stroke-width:2px;
-style B fill:#47BCEE, stroke:#333, stroke-width:2px;
-style F fill:#47BCEE, stroke:#333, stroke-width:2px;
+graph TD
 
-A[AsyncAPI Document]
-B[Servers Section]
-C[Base URLs]
-D[components.serverVariables Section]
-E[Domain Variable]
-F[Port Variable]
+    A[AsyncAPI Server]
+    B[Components]
+    C[Server URL]
 
-A -->|contains| B
-A -->|contains| D
-B -->|includes| C
-D -->|defines| E
-D -->|defines| F
+style A fill:#47BCEE,stroke:#47BCEE;
+style B fill:#47BCEE,stroke:#47BCEE;
+style C fill:#47BCEE,stroke:#47BCEE;
+
+  B -->|Defines serverVariables| C
+  C -->|Reusable variables| A
 ```
 
 ### Servers section
