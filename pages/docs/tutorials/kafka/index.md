@@ -1,7 +1,7 @@
 ---
 title: Create AsyncAPI Document for applications interacting with Kafka
 description: Explore configuring AsyncAPI document for Kafka messages.
-weight: 70
+weight: 10
 ---
 
 ## Introduction
