@@ -19,31 +19,28 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 
 # Redirection will be handled automatically by Action.
 # LATEST-SPEC-REDIRECTION:START
-/docs/reference/specification/latest /docs/reference/specification/v2.6.0 302!
+/docs/reference/specification/latest /docs/reference/specification/v3.0.0 302!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/reference/specification/3.0.0-next-major-spec.12 /docs/reference/specification/v3.0.0-next-major-spec.12 302!
-/docs/reference/specification/2.6.0 /docs/reference/specification/v2.6.0 302!
-/docs/reference/specification/2.5.0 /docs/reference/specification/v2.5.0 302!
-/docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
-/docs/reference/specification/2.3.0 /docs/reference/specification/v2.3.0 302!
-/docs/reference/specification/2.2.0 /docs/reference/specification/v2.2.0 302!
-/docs/reference/specification/2.1.0 /docs/reference/specification/v2.1.0 302!
-/docs/reference/specification/2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/reference/specification/3.0.0 /docs/reference/specification/v3.0.0 302!
 # SPEC-REDIRECTION:END
 
 /docs/specifications/latest /docs/reference/specification/latest 302!
-/docs/specifications/2.4.0 /docs/reference/specification/v2.4.0 302!
-/docs/specifications/2.3.0 /docs/reference/specification/v2.3.0 302!
-/docs/specifications/2.2.0 /docs/reference/specification/v2.2.0 302!
-/docs/specifications/2.1.0 /docs/reference/specification/v2.1.0 302!
-/docs/specifications/2.0.0 /docs/reference/specification/v2.0.0 302!
-/docs/specifications/v2.4.0 /docs/reference/specification/v2.4.0 302!
-/docs/specifications/v2.3.0 /docs/reference/specification/v2.3.0 302!
-/docs/specifications/v2.2.0 /docs/reference/specification/v2.2.0 302!
-/docs/specifications/v2.1.0 /docs/reference/specification/v2.1.0 302!
-/docs/specifications/v2.0.0 /docs/reference/specification/v2.0.0 302!
+/docs/specifications/2.6.0 https://v2.asyncapi.com/docs/reference/specification/v2.6.0 302!
+/docs/specifications/2.5.0 https://v2.asyncapi.com/docs/reference/specification/v2.5.0 302!
+/docs/specifications/2.4.0 https://v2.asyncapi.com/docs/reference/specification/v2.4.0 302!
+/docs/specifications/2.3.0 https://v2.asyncapi.com/docs/reference/specification/v2.3.0 302!
+/docs/specifications/2.2.0 https://v2.asyncapi.com/docs/reference/specification/v2.2.0 302!
+/docs/specifications/2.1.0 https://v2.asyncapi.com/docs/reference/specification/v2.1.0 302!
+/docs/specifications/2.0.0 https://v2.asyncapi.com/docs/reference/specification/v2.0.0 302!
+/docs/specifications/v2.6.0 https://v2.asyncapi.com/docs/reference/specification/v2.6.0 302!
+/docs/specifications/v2.5.0 https://v2.asyncapi.com/docs/reference/specification/v2.5.0 302!
+/docs/specifications/v2.4.0 https://v2.asyncapi.com/docs/reference/specification/v2.4.0 302!
+/docs/specifications/v2.3.0 https://v2.asyncapi.com/docs/reference/specification/v2.3.0 302!
+/docs/specifications/v2.2.0 https://v2.asyncapi.com/docs/reference/specification/v2.2.0 302!
+/docs/specifications/v2.1.0 https://v2.asyncapi.com/docs/reference/specification/v2.1.0 302!
+/docs/specifications/v2.0.0 https://v2.asyncapi.com/docs/reference/specification/v2.0.0 302!
 
 /docs/specifications/1.0.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.0.0/asyncapi.md 302!
 /docs/specifications/1.1.0 https://github.com/asyncapi/asyncapi/blob/master/versions/1.1.0/asyncapi.md 302!
