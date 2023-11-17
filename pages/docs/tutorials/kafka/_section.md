@@ -1,4 +1,4 @@
 ---
-title: Kafka
+title: 'Kafka'
 weight: 20
 ---
