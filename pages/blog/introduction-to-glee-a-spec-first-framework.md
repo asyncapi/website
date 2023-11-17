@@ -55,7 +55,7 @@ We recommend creating a new Glee app using our official [CLI](https://github.com
 
 ```bash
 
-asyncapi new Glee 
+asyncapi new glee 
 
 ```
 
