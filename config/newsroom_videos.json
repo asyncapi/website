@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/KDort611FNg/hqdefault.jpg",
+    "title": "Community Meeting(November 14th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/917.",
+    "videoId": "KDort611FNg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/Vm4ZKFb2PVE/hqdefault.jpg",
     "title": "Community Meeting(October 31th, 2023)",
     "description": "Powered by Restream https://restream.io https://github.com/asyncapi/community/issues/916.",
@@ -22,11 +28,5 @@
     "title": "Hacktoberfest (October 6th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/894.",
     "videoId": "KTnFoXY_evs"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
-    "title": "Spec 3.0 docs meeting (September 28, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/885.",
-    "videoId": "qjMojQ-fFew"
   }
 ]
