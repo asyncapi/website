@@ -13,6 +13,10 @@ To handle the evolving complexity of modern Event-Driven Architecture, the need 
 In this tutorial, we’ve used the Apicurio Registry, which is a popular Schema Registry implementation, in combination with Avro which is a language-neutral data serialization system.
 
 ## Prerequisites
+Before you begin with this tutorial, it is already assumed that you already have:
+- Set up an instance of Apicurio Registry 
+- Created an AsyncAPI document 
+- Have some knowledge of Avro serialization
 
 ## Steps
 
