@@ -5,6 +5,7 @@ weight: 30
 ---
 
 ## Introduction
+This tutorial will teach you how to manage schemas with Schema Registry. This will enable us to ensure a consistent exchange of data across distributed systems, thus minimizing any errors.
 
 ## Background context
 
