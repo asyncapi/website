@@ -16,7 +16,7 @@ In this tutorial, we’ve used the Apicurio Registry, which is a popular Schema 
 Before you begin with this tutorial, it is already assumed that you already have:
 - Set up an instance of Apicurio Registry 
 - Created an AsyncAPI document 
-- Have some knowledge of Avro serialization
+- Some knowledge of Avro serialization
 
 ## Steps
 
