@@ -17,22 +17,6 @@
       "score": 54.2759972736099
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 41.64031536864252
-    },
-    {
       "id": "PR_kwDOBW5R_c5Xb72L",
       "isPR": true,
       "isAssigned": false,
@@ -41,7 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 40.77879160239474
+      "score": 41.065966191144
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -112,6 +96,22 @@
       "score": 20.102221212448114
     },
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 20.070109582694446
+    },
+    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -173,21 +173,6 @@
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOE8Qh38521iLW",
-      "title": "CSharp generator does not generate DateTime properties",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1607",
-      "repo": "asyncapi/modelina",
-      "author": "jano-petras",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
     {
       "id": "I_kwDODCuNRs51jd3x",
       "title": "Implement GitHub Action to Validate examples Field in Schemas",
