@@ -64,7 +64,7 @@ info:
   version: 0.1.0
 servers:
   websockets:
-    url: ws://0.0.0.0:3000
+    host: 0.0.0.0:3000
     protocol: ws
 channels:
   greet:

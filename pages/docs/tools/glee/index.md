@@ -83,14 +83,14 @@ These scripts refer to the different stages of developing an application.
 Create a yaml file that supports capable of receiving a "hello {name}" message with the protocol as `ws` and the channel name  as `hello` the hello API will subscribe to. The operationId property is `onHello` that's the name of function and the payload property is type string publishing to that channel.
 
 ```yaml
-asyncapi: 2.6.0
+asyncapi: 3.0.0
 info:
   title: Hello, Glee!
   version: 0.1.0
 
 servers:
   websockets:
-    url: ws://0.0.0.0:3000
+    host: 0.0.0.0:3000
     protocol: ws
 
 channels:
