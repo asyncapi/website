@@ -18,7 +18,7 @@ In the [previous tutorial](https://asyncapi.com/docs/tutorials/generate-code), y
 ## Validate messages
 In this step, you will send a message to your application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
 
-1. Start your generated application.
+1. Start your generated application:
 
 <CodeBlock language="bash">
 {`npm run dev`}
@@ -38,7 +38,7 @@ Go back to the previous terminal and check if your application logged the street
 ❗  Message Rejected. data.lumens should be integer`}
 </CodeBlock>
 
-Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`.
+Here, you can see that the property `lumens` has type `integer`, but you are sending a message with type `string`:
 
 <CodeBlock language="yaml" highlightedLines={[10,11]}>
   {`  message:
