@@ -35,7 +35,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
     Let's break down the previous command:
     - `asyncapi new glee` is how you use Glee via the AsyncAPI CLI. 
     - `--name=tutorial` is how you tell the AsyncAPI CLI to name your new Glee project. 
-    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the a template of a Glee project that was created especifically for this tutorial. 
+    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the template of a Glee project that was created especifically for this tutorial. 
 
 2. List all files in directory and check that the Glee project is created:
     <CodeBlock language="bash">
@@ -49,13 +49,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
     README.md
     asyncapi.yaml
     functions
-    package-lock.json
     package.json`}
-    </CodeBlock>
-
-3. Create the necessary functions:
-    <CodeBlock language="bash">
-    {`touch functions/onLightMeasured.js`}
     </CodeBlock>
 
 ## Start generated application
