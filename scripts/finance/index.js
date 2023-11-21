@@ -4,8 +4,8 @@ const { resolve } = require('path');
 
 module.exports = async function buildFinanceInfoList() {
     try {
-        const ExpensesContent = await readFile('../../config/finance/2023/Expenses.yml', 'utf-8');
-        const ExpensesLinkContent = await readFile('../../config/finance/2023/ExpensesLink.yml', 'utf-8');
+        const ExpensesContent = await readFile('config/finance/2023/Expenses.yml', 'utf-8');
+        const ExpensesLinkContent = await readFile('config/finance/2023/ExpensesLink.yml', 'utf-8');
 
         const Expenses = convertToJson(ExpensesContent);
         const ExpensesLink = convertToJson(ExpensesLinkContent);
