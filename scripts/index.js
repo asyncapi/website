@@ -1,7 +1,7 @@
 const rssFeed = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
-const buildFinanceInfoList = require('./finance/expenses-json')
+const buildFinanceInfoList = require('./finance')
 
 async function start() {
   await buildPostList();
