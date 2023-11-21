@@ -29,12 +29,13 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 1. Trigger the creation of the Glee project:
     <CodeBlock language="bash">
-    {`asyncapi new glee --name=tutorial`}
+    {`asyncapi new glee --name=tutorial --template tutorial`}
     </CodeBlock>
 
     Let's break down the previous command:
     - `asyncapi new glee` is how you use Glee via the AsyncAPI CLI. 
     - `--name=tutorial` is how you tell the AsyncAPI CLI to name your new Glee project. 
+    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the a template of a Glee project that was created especifically for this tutorial. 
 
 2. List all files in directory and check that the Glee project is created:
     <CodeBlock language="bash">
@@ -52,19 +53,10 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
     package.json`}
     </CodeBlock>
 
-    By default, Glee provides a sample `asyncapi.yaml` file. If you want to use the [AsyncAPI document created in the previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document), either replace the file if you have it somewhere else or generate a new one by running `rm asyncapi.yaml && asyncapi new --example=tutorial.yml --no-tty`.
-
 3. Create the necessary functions:
     <CodeBlock language="bash">
     {`touch functions/onLightMeasured.js`}
     </CodeBlock>
-
-    <Remember>
-
-    If you look at the content of the `functions` folder, you should also see another file named `onHello.js`. You can safely delete it
-    by running `rm functions/onHello.js`. 
-
-    </Remember>
 
 ## Start generated application
 1. Install dependencies of the newly generated application:
@@ -90,7 +82,7 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
     <CodeBlock language="bash">
-    {`light/measured was received:
+    {`lightMeasured was received from mosquitto:
     { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
     </CodeBlock>
 ## Summary

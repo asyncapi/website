@@ -13,20 +13,7 @@ Message validation can be performed at both the **producer** and **consumer** le
 
 You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here publishers and subscribers are MQTT clients. The publisher and subscriber labels refer to whether the client is publishing or subscribing to receive messages.
 
-In the previous tutorial, you generated your application using the [AsyncAPI Generator](https://github.com/asyncapi/generator) Node.js template.
-<Remember>
-
-If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, then generate one by running: 
-`asyncapi new --example=tutorial.yml --no-tty`.
-
-Next, generate a server by running:
-
-    asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto
-    cd output && npm install
-
-</Remember>
-
-Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and an MQTT client.
+In the [previous tutorial](https://asyncapi.com/docs/tutorials/generate-code), you generated your application using [Glee](https://github.com/asyncapi/glee). Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and an MQTT client.
 
 ## Validate messages
 In this step, you will send a message to your application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
@@ -34,7 +21,7 @@ In this step, you will send a message to your application using an MQTT broker a
 1. Start your generated application.
 
 <CodeBlock language="bash">
-{`npm start`}
+{`npm run dev`}
 </CodeBlock>
 
 2. Let's send a message:
@@ -46,7 +33,7 @@ In this step, you will send a message to your application using an MQTT broker a
 Go back to the previous terminal and check if your application logged the streetlight condition you just sent, with errors related to the invalid message. You should see something displayed in the terminal similar to the following:
 
 <CodeBlock language="bash">
-  {`light/measured was received:
+  {`lightMeasured was received from mosquitto:
 { id: 1, lumens: '3', sentAt: '2017-06-07T12:34:32.000Z' }
 ❗  Message Rejected. data.lumens should be integer`}
 </CodeBlock>
@@ -78,11 +65,11 @@ Here, you can see that the property `lumens` has type `integer`, but you are sen
 You can see that your generated application received a message in the terminal:
 
 <CodeBlock language="bash">
-  {`light/measured was received:
+  {`lightMeasured was received from mosquitto:
 { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
 </CodeBlock>
 
-This indicates that your message is valid and the application recieved it correctly.
+This indicates that your message is valid and the application received it correctly.
 
 ## Summary
 In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message. 
