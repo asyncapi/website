@@ -10,16 +10,15 @@ module.exports = async function buildFinanceInfoList() {
         const Expenses = convertToJson(ExpensesContent);
         const ExpensesLink = convertToJson(ExpensesLinkContent);
 
-        console.log(__dirname, '../../config/finance/json-data/2023/', 'Expenses.json')
         // Write Expenses to a JSON file
         await writeFile(
-            resolve(__dirname, '../../config/finance/json-data/2023/', 'Expenses.json'),
+            resolve('config/finance/json-data/2023/', 'Expenses.json'),
             JSON.stringify(Expenses, null, 2)
         );
 
         // Write ExpensesLink to a JSON file
         await writeFile(
-            resolve(__dirname, '../../config/finance/json-data/2023/', 'ExpensesLink.json'),
+            resolve('config/finance/json-data/2023/', 'ExpensesLink.json'),
             JSON.stringify(ExpensesLink, null, 2)
         );
     } catch (err) {
