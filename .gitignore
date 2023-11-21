@@ -15,5 +15,4 @@ meetings.json
 .env
 cypress/screenshots
 cypress/videos
-config/finance/json-data/2023/Expenses.json
-config/finance/json-data/2023/ExpensesLink.json
+config/finance/json-data
