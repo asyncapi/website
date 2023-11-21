@@ -33,7 +33,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     return (
       <div
         className={`bg-gray-50 w-full h-full border border-gray-200 absolute py-6 rounded transform transition-transform ${className} ${small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
-          } ${activeBanner ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} data-testid="AnnouncementHero-main-div"
+          } ${activeBanner ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`} data-testid="AnnouncementHero-main-div"
       >
         <Heading
           className="countdown-text-gradient"
@@ -102,12 +102,12 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     setActiveIndex(index);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [activeIndex]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [activeIndex]);
 
   return (
     <Container as="section" padding='' className={`text-center`}>
