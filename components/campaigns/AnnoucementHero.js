@@ -102,12 +102,12 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     setActiveIndex(index);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [activeIndex]);
+  useEffect(() => {
+    const interval = setInterval(() => setActiveIndex(index => index + 1), 5000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [activeIndex]);
 
   return (
     <Container as="section" padding='' className={`text-center`}>
