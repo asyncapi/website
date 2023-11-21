@@ -15,4 +15,3 @@ meetings.json
 .env
 cypress/screenshots
 cypress/videos
-config/finance/json-data
