@@ -120,6 +120,7 @@ export default async function (event) {
     }]
   }
 }
+```
 
 #### Run the Development Server
 

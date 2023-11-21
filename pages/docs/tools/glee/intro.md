@@ -125,8 +125,9 @@ export default async function (event) {
 
 Every file in the functions folder acts as a handler to develop business logic for glee, every file should export an async function that receives an event parameter, where you have access to payload and server details.
 
-Running and testing your application
-We will not execute the application and carry out testing with Postman to ensure that it is functioning as intended.
+#### Running and testing your application
+
+We will execute the application and carry out testing with Postman to ensure that it is functioning as intended.
 
 Now to run your glee application, just run:
 
