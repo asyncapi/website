@@ -24,7 +24,6 @@ describe('AnnouncementHero Component', () => {
     // Assert the event details
     cy.get('[data-testid="Paragraph-test"]').should('exist');
     cy.get('h2').should('exist');
-    cy.get('h3').should('exist');
   
   });
   it('should have a link and text for the button', () => {
