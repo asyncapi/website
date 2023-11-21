@@ -1,6 +1,6 @@
 ---
 title: 'Introduction'
-weight: 1
+weight: 50
 ---
 
 The AsyncAPI document is a YAML or JSON file that describes your implementation of the AsyncAPI specification. Providing a standardized way to document and describe asynchronous and event-driven systems, the AsyncAPI document generates documentation/code and defines the different components of your event-driven application, such as the events, channels, and message formats.
