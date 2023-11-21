@@ -54,11 +54,10 @@
     "ajv": "^8.11.0",
     "ajv-formats": "^2.1.1",
     "autoprefixer": "^10.4.7",
-    "axios": "^0.27.2",
+    "axios": "^1.6.0",
     "clsx": "^1.1.1",
     "cssnano": "^5.1.12",
     "dotenv": "^8.2.0",
-    "eslint-plugin-cypress": "^2.13.3",
     "fuse.js": "^6.6.2",
     "googleapis": "^100.0.0",
     "gray-matter": "^4.0.2",
@@ -97,13 +96,12 @@
     "yaml": "^2.2.2"
   },
   "devDependencies": {
+    "@anshgoyalevil/eslint-config": "^1.0.3",
     "@cypress/react": "^7.0.3",
     "@netlify/functions": "^1.4.0",
     "@netlify/plugin-nextjs": "^4.37.2",
     "cypress": "^10.11.0",
     "dedent": "^0.7.0",
-    "eslint": "^7.0.0",
-    "eslint-plugin-react": "^7.27.1",
     "inquirer": "^8.2.0",
     "postcss-import": "^14.1.0"
   }
