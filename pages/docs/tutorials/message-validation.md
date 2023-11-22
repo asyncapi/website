@@ -75,7 +75,8 @@ You can see that your generated application received a message in the terminal:
 
 <CodeBlock language="bash">
   {`lightMeasured was received from mosquitto:
-{ id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
+{ id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
+Streetlight with id "1" updated its lighting information to 3 lumens at 2017-06-07T12:34:32.000Z.`}
 </CodeBlock>
 
 This indicates that your message is valid and the application received it correctly.
