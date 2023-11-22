@@ -13,6 +13,15 @@ In this tutorial, you'll learn how to generate an application that uses [Glee](h
 
 Glee is often used with the [AsyncAPI CLI](/tools/cli) for a better development experience.
 
+In the previous tutorial, you created an AsyncAPI document that is used in this tutorial.
+
+<Remember>
+
+If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file for overview, then generate one by running the following command using AsyncAPI CLI: 
+`asyncapi new --example=tutorial.yml --no-tty`.
+
+</Remember>
+
 ## Installation guide
 <Remember>
 
