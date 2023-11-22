@@ -40,5 +40,5 @@ operations:
 <Remember>
 You might have additional fields depending on the implemented protocol (i.e., MQTT, AMQP, Kafka, etc.). 
   
-For example, your AsyncAPI document could have additional fields for <a href= "https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object">configuring Kafka bindings</a>.
+For example, your AsyncAPI document could have additional fields for <a href= "https://github.com/asyncapi/bindings/tree/master/kafka">configuring Kafka bindings</a>.
 </Remember>
