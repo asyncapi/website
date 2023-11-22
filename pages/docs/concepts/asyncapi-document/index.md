@@ -3,10 +3,9 @@ title: 'Introduction'
 weight: 50
 ---
 
-The AsyncAPI document is a file describing the message-driven API in accordance with the AsyncAPI Specification via JSON objects that conform to the JSON standards. (YAML, being a superset of JSON, can also be used.)
-The AsyncAPI document offers a standardized approach for documenting and describing asynchronous and event-driven systems, clearly defining various components like channels and messages. Additionally, users can leverage both the AsyncAPI document and tools like the AsyncAPI Generator for code and documentation generation, enhancing efficiency and consistency in their development processes.
+The AsyncAPI Specification defines a set of files required to describe the API of an application. One of those files is the AsyncAPI document; it describes the message-driven API in accordance with the AsyncAPI Specification via JSON objects that conform to the JSON standards. (YAML, being a superset of JSON, can also be used.) The AsyncAPI document offers a standardized approach for documenting and describing asynchronous and event-driven systems, clearly defining various components like channels and messages. Additionally, users can leverage both the AsyncAPI document and tools like the AsyncAPI Generator for code and documentation generation, enhancing efficiency and consistency in their development processes.
 
-Furthermore, the AsyncAPI document acts as a communication contract between `receivers` and `senders` within an event-driven system. It specifies the payload content required when a service produces a message and offers clear guidance to the consumer regarding the message's properties.
+Furthermore, the AsyncAPI document acts as a communication contract between `receivers` and `senders` within an event-driven system. It specifies the payload content required when a service produces a message and offers clear guidance to the receiver regarding the message's properties.
 
 ```YAML
 asyncapi: 3.0.0
