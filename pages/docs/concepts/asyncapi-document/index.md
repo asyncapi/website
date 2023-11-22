@@ -37,31 +37,6 @@ operations:
       $ref: '#/channels/userSignedUp'
 ```
 
-## AsyncAPI document components
-
-The AsyncAPI document follows a specific structure with certain fields:
-
-- **`asyncapi`**: This is a required field that specifies the AsyncAPI specification version that your document adheres to.
-
-- **`info`**: This required field holds metadata about the API. The `info` section must include the following sub-fields:
-   
-   - `title`: A descriptive title of the API.
-   
-   - `version`: An API version identifier.
-   
-   Optional fields within the `info` section could include `description`, `termsOfService`, `contact` (with subfields for `name`, `url`, `email`), and `license` (with `name` and `url` subfields).
-
-- **`servers`**: An optional field specifying the server(s) where the API is available. Each server must have a `url` and may have `protocol`, `protocolVersion`, `description`, `variables`, `security`, and `bindings`.
-
-- **`channels`**: This required field describes the paths available to the API and must include at least one channel. Each channel could include fields such as `description`, `subscribe`, `publish`, `parameters`, and `bindings`.
-
-- **`components`**: An optional section for defining reusable components like `messages`, `schemas`, `securitySchemes`, and others.
-
-- **`tags`**: An optional array of tags used by the specification with additional metadata. Each tag object can have `name` and `description`.
-
-- **`externalDocs`**: An optional section to provide more information, such as a link to the API’s external documentation with a `description` and a `url`.
-
-
 <Remember>
 You might have additional fields depending on the implemented protocol (i.e., MQTT, AMQP, Kafka, etc.).
 </Remember>
