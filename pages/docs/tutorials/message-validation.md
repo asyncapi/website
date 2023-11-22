@@ -13,7 +13,16 @@ Message validation can be performed at both the **producer** and **consumer** le
 
 You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here publishers and subscribers are MQTT clients. The publisher and subscriber labels refer to whether the client is publishing or subscribing to receive messages.
 
-In the [previous tutorial](https://asyncapi.com/docs/tutorials/generate-code), you generated your application using [Glee](https://github.com/asyncapi/glee). Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and an MQTT client.
+In the [previous tutorial](https://asyncapi.com/docs/tutorials/generate-code), you generated your application that uses [Glee](https://github.com/asyncapi/glee) framework. Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and an MQTT client.
+
+<Remember>
+
+If you did not follow the previous tutorial and do not have an application generated, then follow these instructions: 
+
+    asyncapi new glee --name=tutorial --template tutorial`.
+    cd tutorial && npm install
+
+</Remember>
 
 ## Validate messages
 In this step, you will send a message to your application using an MQTT broker and check the errors logged when you accidentally send an invalid message.
