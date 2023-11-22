@@ -77,7 +77,8 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
     <CodeBlock language="bash">
     {`lightMeasured was received from mosquitto:
-    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
+    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
+    Streetlight with id "1" updated its lighting information to 3 lumens at 2017-06-07T12:34:32.000Z.`}
     </CodeBlock>
 ## Summary
 In this tutorial, you learned how to create a Glee project from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document). 
