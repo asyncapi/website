@@ -23,7 +23,7 @@ messages:
   userSignedUp:
     payload:
       schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
-      payload: |
+      schema:
         type: record
         name: UserSignedUp
         namespace: com.company
@@ -36,8 +36,8 @@ messages:
 ```
 
 In the above snippet: 
-- The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat`.
-- The `payload` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `user-id` and `user-email`, defining their data types as `int` and `string` respectively.
+- The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat` and the `schema`.
+- The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `user-id` and `user-email`, defining their data types as `int` and `string` respectively.
 
 Now that you've understood how to define messages using Avro Schemas, combining it with the previous tutorial will provide you with a fully prepared AsyncAPI document using Avro Schema!
 
@@ -69,7 +69,7 @@ components:
     userSignedUp:
       payload:
         schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
-        payload: |
+        schema:
           type: record
           name: UserSignedUp
           namespace: com.company
