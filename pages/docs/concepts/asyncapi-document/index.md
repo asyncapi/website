@@ -13,9 +13,10 @@ info:
   title: Cool Example
   version: 0.1.0
 channels:
-  user/signedup:
-    subscribe:
-      message:
+  userSignedUp:
+    address: user/signedup
+    messages:
+      userSignedUp:
         description: An event describing that a user just signed up.
         payload:
           type: object
@@ -29,6 +30,11 @@ channels:
             age:
               type: integer
               minimum: 18
+operations: 
+  userSignedUp:
+    action: send
+    channel: 
+      $ref: '#/channels/userSignedUp'
 ```
 
 ## AsyncAPI document components
