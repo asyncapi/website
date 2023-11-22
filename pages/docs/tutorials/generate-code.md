@@ -6,7 +6,7 @@ weight: 100
 
 ## Introduction
 
-In this tutorial, you'll learn how to generate code from your AsyncAPI document using [Glee](https://github.com/asyncapi/glee).
+In this tutorial, you'll learn how to generate an application that uses [Glee](https://github.com/asyncapi/glee) framework. You'll do it with AsyncAPI document and [AsyncAPI CLI](/tools/cli).
 
 ## Background context
 [Glee](https://github.com/asyncapi/glee) is a TS/JS framework that enables you to create APIs and messaging clients based on the AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific
