@@ -113,7 +113,7 @@ AsyncAPI Financial Summary page aims to provide transparency and clarity regardi
 
 - When a new year begins, create a corresponding folder for that year under both `config/finance` and `config/finance/json-data`, and place the YAML files inside the year's folder(not under json-data). For example, create folders `config/finance/2024` and `config/finance/json-data/2024`.
 
-- Modify the years within the `scripts/finance/expenses-json.js` script to handle data for different years effectively.
+- Modify the years within the `scripts/finance/index.js` , `lib/getUniqueCategories.js` and `components/FinancialSummary/BarChartComponent.js` to handle data for different years effectively.
 
 ## Case studies
 

@@ -6,8 +6,8 @@ module.exports = async function buildFinanceInfoList() {
     try {
         const currentDir = resolve(__dirname, '../../');
 
-        const expensesPath = resolve(currentDir, 'config', 'finance', '2024', 'Expenses.yml');
-        const expensesLinkPath = resolve(currentDir, 'config', 'finance', '2024', 'ExpensesLink.yml');
+        const expensesPath = resolve(currentDir, 'config', 'finance', '2025', 'Expenses.yml');
+        const expensesLinkPath = resolve(currentDir, 'config', 'finance', '2025', 'ExpensesLink.yml');
 
         const ExpensesContent = await readFile(expensesPath, 'utf-8');
         const ExpensesLinkContent = await readFile(expensesLinkPath, 'utf-8');
@@ -16,7 +16,7 @@ module.exports = async function buildFinanceInfoList() {
         const ExpensesLink = convertToJson(ExpensesLinkContent);
 
         // Ensure the directory exists before writing the files
-        const jsonDirectory = resolve(currentDir, 'config', 'finance', 'json-data', '2024');
+        const jsonDirectory = resolve(currentDir, 'config', 'finance', 'json-data', '2025');
         await mkdir(jsonDirectory, { recursive: true });
 
         // Write Expenses to a JSON file
