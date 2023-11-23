@@ -55,27 +55,21 @@ operations:
 To specify different security requirements for a specific operation, you can include the `security` property within the operation's definition. 
 The security property is an array where you can define one or more security requirement objects.
 
-For example, let's say you have an AsyncAPI document with a channel called users and two operations within that channel: createUser and getUser. 
+For example, let's say you have an AsyncAPI document with a channel called users and two operations within that channel: `createUser` and `getUser`. 
 The server-level security is set to use API key authentication for all operations within all channels. 
 However, you want to enforce OAuth2 authentication specifically for the getUser operation.
 
-You can achieve this by including the security property at the operation level, as shown in the following example:
+The following example explains how to include security requirement for operations definition
 
 ```yaml
-channels:
-  users:
-    publish:
-      summary: Creates a user
-      operationId: createUser
-      message:
-        ...
-    subscribe:
-      summary: Retrieves user information
-      operationId: getUser
-      message:
-        ...
-      security:
-        - OAuth2: []
+title: User sign up
+summary: Action to sign a user up.
+description: A longer description
+channel:
+  $ref: '#/channels/userSignup'
+action: send
+security:
+  - OAuth2: []
 ```
 
 In the above example, the `security` property is added under the `getUser` operation, indicating that the OAuth2 security requirement should be applied to that specific operation within the user's channel. The empty array [] signifies that no additional configuration is needed for the OAuth2 security mechanism.
