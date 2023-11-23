@@ -111,7 +111,7 @@ AsyncAPI Financial Summary page aims to provide transparency and clarity regardi
 
 - In `ExpensesLink.yml`, provide discussion links related to expense categories.
 
-- When a new year begins, create a corresponding folder for that year under both `config/finance` and `config/finance/json-data`, and place the YAML files inside the year's folder(not under json-data). For example, create folders `config/finance/2024` and `config/finance/json-data/2024`.
+- When a new year begins, create a corresponding folder for that year under `config/finance` and place the YAML files inside the folder for that specific year. For example, create a folder named `config/finance/2024` for the year 2024 and `config/finance/2025` for the year 2025. Place the YAML file for each respective year inside its designated folder.
 
 - Modify the years within the `scripts/finance/index.js` , `lib/getUniqueCategories.js` and `components/FinancialSummary/BarChartComponent.js` to handle data for different years effectively.
 
