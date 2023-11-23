@@ -51,7 +51,7 @@ channels:
         $ref: '#/components/messages/myMessage'
 ```
 
-In this example, specify the server reference mqttServer for the myChannel channel.
+In this example, specify the server reference `mqttServer` for the `myChannel` channel.
 
 ## AsyncAPI apps
 
