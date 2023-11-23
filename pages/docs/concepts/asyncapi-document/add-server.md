@@ -23,7 +23,7 @@ style SA fill:#47BCEE,stroke:#47BCEE;
   C -->|references| D
 ```
 
-For more information, refer [introduction to servers](/docs/server.md)
+For more information, refer to the [introduction to servers](/docs/server.md) document.
 
 ## Define servers
 
