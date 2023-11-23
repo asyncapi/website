@@ -9,25 +9,15 @@ A unique key identifies the server and contains information about the server's c
 
 ```mermaid
 graph TD
-  subgraph AsyncAPI
-    A[Channel: userActions]
-    B[Operation: subscribe]
-    C[Message]
-    D[Payload]
-  end
+    A[channel: userActions]
+    B[operation: subscribe]
+    C[message]
+    D[payload]
+    SA[servers: development, production]
 
-  subgraph Servers
-    SA[Servers: development, production]
-  end
-
-style A fill:#47BCEE,stroke:#47BCEE;
-style B fill:#47BCEE,stroke:#47BCEE;
-style C fill:#47BCEE,stroke:#47BCEE;
 style SA fill:#47BCEE,stroke:#47BCEE;
-style D fill:#47BCEE,stroke:#47BCEE;
 
-  SA --> A
-
+  SA -->|AsyncAPI| A
   A -->|inherits servers| B
   B -->|references| C
   C -->|references| D
