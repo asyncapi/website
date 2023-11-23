@@ -7,11 +7,48 @@ In an AsyncAPI document, the concept of server security implies that the securit
 
 ## Features of Security in AsyncAPI Documents
 
-- The security requirements specified at the server level are enforced consistently across the entire asyncapi document.
+The security requirements specified at the server level are enforced consistently across the entire Asyncapi document. There may be situations where certain operations within specific channels require different security measures than the default server-level settings. 
 
-There may be situations where certain operations within specific channels require different security measures than the default server-level settings. To accommodate for such scenarios, AsyncAPI document allows you to use the `security` property at the `operation` level.
+- To accommodate such scenarios, the AsyncAPI document allows you to use the `security` property at the `operation` level. This means users can define security requirements at both the global level and the operation (endpoint) level.
+  By using the `security` property at the `operation` level, the user can override the default server-level security and define unique security requirements for individual operations. This also gives the flexibility to tailor the security measures to the specific needs of each operation, even if they differ from the broader server-level settings.
 
-By using the `security` property at the `operation` level, you can override the default server-level security and define unique security requirements for individual operations. Thereby also giving you the flexibility to tailor the security measures to the specific needs of each operation, even if they differ from the broader server-level settings.
+```yaml
+channels:
+   AUTHORIZATION_REVOCATION:
+    address: AUTHORIZATION_REVOCATION
+    messages:
+      subscribe.message:
+        $ref: '#/components/messages/message'
+
+security:
+  - apiKey: []
+```
+
+- One more way is when users don't use the `server` feature from AsyncAPI, and only include `channels` and `operations`. In this case, the user needs to specify the security of the operation within the `operations`.
+
+```yaml
+channels:
+  AUTHORIZATION_REVOCATION:
+    address: AUTHORIZATION_REVOCATION
+    messages:
+      subscribe.message:
+        $ref: '#/components/messages/message'
+operations:
+  AUTHORIZATION_REVOCATION.subscribe:
+    action: send
+    channel:
+      $ref: '#/channels/AUTHORIZATION_REVOCATION'
+    security:
+      - type: oauth2
+        description: The oauth security descriptions
+        flows:
+          clientCredentials:
+            tokenUrl: 'https://example.com/api/oauth/dialog'
+            availableScopes:
+              'subscribe:auth_revocations': Scope required for authorization revocation topic
+        scopes:
+          - 'subscribe:auth_revocations'
+```
 
 ## Specifying Security Requirement 
 
