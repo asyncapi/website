@@ -61,7 +61,7 @@ Here's an example of a server to publish messages to a channel.
 
 1. The server establishes connections based on the server configurations in the AsyncAPI document.
 1. The server uses the `publishMessage` operation ID to publish messages to the channel. The message payload follows the defined schema in the `ChatMessage` message component.
-1. When an app subscribes to the chat.message channel, it receives the published messages.
+1. When an app subscribes to the `chat.message` channel, it receives the published messages.
 
 ```yaml
 channels:
