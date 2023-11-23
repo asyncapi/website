@@ -25,7 +25,7 @@ style SA fill:#47BCEE,stroke:#47BCEE;
 
 For more information, refer [introduction to servers](/docs/server.md)
 
-## Define Servers
+## Define servers
 
 Define the servers in your AsyncAPI specification file. Server definitions specify the server to which a channel or operation is connected. Here's an example of how to define a server in AsyncAPI:
 
