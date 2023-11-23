@@ -10,7 +10,6 @@ The concept of server security implies that the security measures defined at the
 The security requirements specified at the server level are enforced consistently across the entire Asyncapi document. There may be situations where certain operations within specific channels require different security measures than the default server-level settings. 
 
 - To accommodate such scenarios, the AsyncAPI document allows you to use the `security` property at the `operation` level. This means users can define security requirements at both the global level and the operation (endpoint) level.
-  By using the `security` property at the `operation` level, the user can override the default server-level security and define unique security requirements for individual operations. This also gives the flexibility to tailor the security measures to the specific needs of each operation, even if they differ from the broader server-level settings.
 
 ```yaml
 channels:
@@ -49,6 +48,12 @@ operations:
         scopes:
           - 'subscribe:auth_revocations'
 ```
+
+The `security` field comprises of 2 parts -
+
+- Security scheme object = This portion mentions the security schemes associated with the given operation. One of the security scheme objects must be satisfied to authorize an operation.
+
+- Reference object = This portion references a definition by linking to somewhere else in the document using the `$ref:` keyword.
 
 ## Specifying Security Requirement 
 
