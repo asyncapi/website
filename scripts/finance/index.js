@@ -19,11 +19,10 @@ module.exports = async function buildFinanceInfoList() {
         const jsonDirectory = resolve(currentDir, 'config', 'finance', 'json-data', '2023');
         await mkdir(jsonDirectory, { recursive: true });
 
-        // Write Expenses to a JSON file
+        // Write Expenses to a JSON files
         const expensesJsonPath = resolve(jsonDirectory, 'Expenses.json');
         await writeFile(expensesJsonPath, JSON.stringify(Expenses, null, 2));
 
-        // Write ExpensesLink to a JSON file
         const expensesLinkJsonPath = resolve(jsonDirectory, 'ExpensesLink.json');
         await writeFile(expensesLinkJsonPath, JSON.stringify(ExpensesLink, null, 2));
 
