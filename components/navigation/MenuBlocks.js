@@ -20,11 +20,11 @@ export default function MenuBlocks ({
                 <div className={`flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-lg ${item.className ? item.className : 'border border-gray-800 bg-secondary-100'} text-gray-900 sm:h-12 sm:w-12 ${item.comingSoon && 'opacity-50'}`} data-testid="MenuBlock-icon">
                   <item.icon className="h-6 w-6" />
                 </div>
-                <div className="space-y-1">
+                <div className="space-y-1 whitespace-pre-line">
                   <Paragraph typeStyle="body-md" textColor="text-gray-900" fontWeight="font-semibold">
                     <span className={item.comingSoon && 'opacity-50'} >{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
                   </Paragraph>
-                  <Paragraph typeStyle="body-sm" className={item.comingSoon && 'opacity-50'}>
+                  <Paragraph typeStyle="body-sm" className={`${item.comingSoon && 'opacity-50'}`}>
                     {item.description}
                   </Paragraph>
                 </div>
