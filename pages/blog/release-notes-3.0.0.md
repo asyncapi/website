@@ -79,7 +79,7 @@ channels:
 ### Publish and subscribe confusion
 In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application is published to the channel? Does it mean you publish for me? Who are you in this context? 
 
-In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) keywords, `send` and `receive`, i.e. your application either sends or receives something.
+In v3, we try to clear this up. You only need to worry about your application's behavior. No more confusion about what and who does what. We achieve this through two new [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) keywords, `send` and `receive`, i.e. your application either sends or receives something.
 
 This description, of course, alters slightly based on protocol; for the generic message brokers, you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
