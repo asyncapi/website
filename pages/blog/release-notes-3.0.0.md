@@ -29,7 +29,7 @@ This post will give you an overview of all the changes done in v3.
 
 In v2, it has never been possible to re-use channels, because it was directly coupled with operations of an application.
 
-In v3, this is now possible, with the mindset a channel and message should be detached from the operations performed. This means for any message broker, for example, for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces, it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
+In v3, this is now possible, with the mindset that a channel and message should be detached from the operations performed. This means for any message broker, for example, for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces, it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
 
 This change makes the channels reusable across multiple AsyncAPI documents.
 
@@ -59,7 +59,7 @@ operations:
 | [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827) | [Operation, channel, and message decoupling](/docs/migration/migrating-to-v3#operation-channel-and-message-decoupling) |
 
 ### Messages instead of message
-As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs in the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). This was part of the request-reply feature to enable easier referencing of messages.
+As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead, messages are defined as key/value pairs in the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). This was part of the request-reply feature to enable easier referencing of messages.
 
 ```
 asyncapi: 3.0.0
@@ -77,11 +77,11 @@ channels:
 | [#94](https://github.com/asyncapi/spec/issues/94) | [#827](https://github.com/asyncapi/spec/pull/827) | [Messages instead of message](/docs/migration/migrating-to-v3#messages-instead-of-message) |
 
 ### Publish and subscribe confusion
-In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application publishes to the channel? Does it mean you publish for me? Who are you in this context? 
+In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application is published to the channel? Does it mean you publish for me? Who are you in this context? 
 
 In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) keywords, `send` and `receive`, i.e. your application either sends or receives something.
 
-This description of course alters slightly based on protocol; for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
+This description, of course, alters slightly based on protocol; for the generic message brokers, you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
 ```
 asyncapi: 3.0.0
