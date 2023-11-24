@@ -62,7 +62,6 @@ The security property is an array where you can define one or more security requ
 
 For example, let's say you have an AsyncAPI document with a channel called users and two operations within that channel: `createUser` and `getUser`. 
 The server-level security is set to use API key authentication for all operations within all channels. 
-However, you want to enforce OAuth2 authentication specifically for the getUser operation.
 
 The following example explains how to include security requirement for operations definition
 
