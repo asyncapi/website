@@ -9,12 +9,10 @@ This tutorial teaches you how to create a simple glee template. You'll use the A
 info:
   title: Hello, Glee!
   version: '0.1.0'
-
 servers:
   websockets:
     url: ws://0.0.0.0:3000
     protocol: ws
-
 channels:
   hello:
     publish:
@@ -24,7 +22,6 @@ channels:
     subscribe:
       message:
         $ref: '#/components/messages/hello'
-
 components:
   messages:
     hello:
