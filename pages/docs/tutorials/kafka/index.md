@@ -14,14 +14,14 @@ Basically, you want to build a system that can track the users who have signed u
 
 ```mermaid
 sequenceDiagram
-    participant Your Application(Consumer)
+    participant Your Application (Consumer)
     participant Message Broker
-    participant Producer
+    participant Service (Producer)
     participant User
-    Your Application(Consumer)->> Message Broker: Connects to "userSignedUp" topic
-    User-->> Producer: Signs Up
-    Producer->> Message Broker: Publishes Events
-    Message Broker->> Your Application(Consumer): Sends "user signup" payload
+    Your Application (Consumer)->> Message Broker: Connects to "userSignedUp" topic
+    User-->> Service (Producer): Signs Up
+    Service (Producer)->> Message Broker: Publishes Events
+    Message Broker->> Your Application (Consumer): Sends "user_signup" payload
 ```    
 
 
@@ -33,7 +33,7 @@ sequenceDiagram
 
 [Publish/Subscribe (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, the publishers of event notifications act as publishers and the consumers act as corresponding subscribers.
 
-## Creating AsyncAPI document for Kafka
+## Creating AsyncAPI document for Kafka Messages  
 
 In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement.
 
@@ -109,7 +109,7 @@ In the above snippet:
 
 ### Define channels and operations
 
-Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The `operations` section is used to describe how your application interacts with the channels.
+Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The `operations` property is used to describe how your application interacts with the channels.
 
 ```
 operations:
@@ -134,7 +134,7 @@ In the above snippet:
   
 - The `userSignedUp` object inside `channels` describes the Kafka topic where our application will be receiving the information and the associated message definition. The `address` field represents the actual name of the Kafka topic. The `messages` field describes the expected messages in that topic. 
 
-### Define messages and its schemas
+### Define messages and schemas
 
 Finally, you'll define the messages and their payload. The payload defines how the event would look line that will be sent from the channel.
 
