@@ -6,11 +6,11 @@ weight: 20
 
 ## Introduction
 
-The tutorial will walk you through the process of creating an schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
+The tutorial will walk you through the process of creating a schema document for Kafka Messages using AsyncAPI. Additionally, you will also learn about event-driven architecture, pub/sub model, and brokers in relation to Kafka. 
   
 Let’s assume, you have a service that publishes data to a Kafka topic whenever a new user signs up into the application.
 
-Basically, you want to build a system that can track the users who have signed up for your application, the entire flow of the application would be:
+Basically, if you want to build a system that can track the users who have signed up for your application, the entire flow of the application would be:
 
 ```mermaid
 sequenceDiagram
@@ -109,7 +109,7 @@ In the above snippet:
 
 ### Define channels and operations
 
-Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving. The `operations` property is used to describe how your application interacts with the channels.
+Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving messages. The `operations` property is used to describe how your application interacts with the channels.
 
 ```
 operations:
@@ -136,7 +136,7 @@ In the above snippet:
 
 ### Define messages and schemas
 
-Finally, you'll define the messages and their payload. The payload defines how the event would look line that will be sent from the channel.
+Finally, you'll define the messages and their payload. The payload defines how the event would look like when it's sent from the channel.
 
 ```
 components:
