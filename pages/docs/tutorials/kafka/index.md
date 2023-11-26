@@ -31,7 +31,7 @@ sequenceDiagram
 
 [Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) facilitate asynchronous communications between services, meaning that the sending service doesn't have to wait for the receiving service's response. This allows multiple services to talk to each other directly, even if they are written in different languages. A great example of such a message broker is Apache Kafka. [Apache Kafka](https://kafka.apache.org/) is a distributed system that is used by thousands of companies for their event-driven system.
 
-[Publish/Subscribe (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, the publishers of event notifications act as publishers and the consumers act as corresponding subscribers.
+[Publish/Subscribe (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, those generating event notifications act as publishers, while those receiving the notifications act as the corresponding subscribers.
 
 ## Creating AsyncAPI document for Kafka Messages  
 
