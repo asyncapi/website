@@ -55,7 +55,7 @@ components:
   serverVariables:
     subdomain:
       default: 'api'
-      description: The domain of the API server port
+      description: The subdomain
         default: '8080'
         description: The port of the API server
 ```
