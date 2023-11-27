@@ -23,7 +23,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 # LATEST-SPEC-REDIRECTION:END
 
 # SPEC-REDIRECTION:START
-/docs/reference/specification/3.0.0-next-major-spec.12 /docs/reference/specification/v3.0.0-next-major-spec.12 302!
+/docs/reference/specification/3.0.0-next-major-spec.16 /docs/reference/specification/v3.0.0-next-major-spec.16 302!
 /docs/reference/specification/2.6.0 /docs/reference/specification/v2.6.0 302!
 /docs/reference/specification/2.5.0 /docs/reference/specification/v2.5.0 302!
 /docs/reference/specification/2.4.0 /docs/reference/specification/v2.4.0 302!
@@ -56,7 +56,7 @@ https://www.asyncapi.io/* https://www.asyncapi.com/:splat 301!
 /asyncapi-react https://asyncapi.github.io/asyncapi-react 301!
 
 # Slack
-/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-1vd6bk0j5-54Kh5C1kM6y0yxux1WikrA 302!
+/slack-invite https://join.slack.com/t/asyncapi/shared_invite/zt-27m89oa1t-ZC~UIa5B2Vujm6oq7fa~gQ 302!
 
 # Central Maven repository verification
 /OSSRH-63280 https://github.com/asyncapi/java-asyncapi

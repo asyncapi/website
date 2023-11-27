@@ -68,13 +68,14 @@ export default function Filters({
         {open && (
           <div
             ref={floating}
+            className={`${strategy} ${(x && x > 0) ? `left-[${x}px]` : "left-[14px]"}`}
             style={{
-              position: strategy,
               top: y ?? '',
-              left: x ?? '',
+              left: x > 0 ? x : "",
             }}
-            data-testid="Filter-menu">
-            <div className="bg-white w-96 shadow-xl rounded">
+            data-testid="Filter-menu"
+          >
+            <div className="bg-white shadow-xl w-96 rounded max-w-[19rem]">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
                 <button onClick={() => setOpen(!open)} className="ml-auto">

@@ -9,7 +9,7 @@ import LearningPanel from './LearningPanel'
 import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
-import Button from '../buttons/Button'
+
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
@@ -105,12 +105,12 @@ export default function NavBar({
   return (
     <div className={`bg-white ${className} z-50`}>
       <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a>
-      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
+      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10 whitespace-nowrap">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
-            <div className="flex">
+            <div className="flex" >
               <Link href="/">
-                <a className="cursor-pointer" aria-label="AsyncAPI">
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
                   <AsyncAPILogo className="h-8 w-auto sm:h-8" />
                 </a>
               </Link>
@@ -118,7 +118,7 @@ export default function NavBar({
           </div>
         )}
 
-        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden">
+        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
           <SearchButton
             className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
@@ -133,7 +133,7 @@ export default function NavBar({
           </button>
         </div>
 
-        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full">
+        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full" data-testid="Navbar-main">
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
             <NavItem
               text="Docs"
@@ -197,6 +197,7 @@ export default function NavBar({
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
       {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+
     </div>
   )
 }
