@@ -84,5 +84,5 @@ channels:
   myChannel:
     publish:
       message:
-        $ref: https://example.com/my-component.yaml#/components/schemas/MyComponent
+        $ref: https://example.com/my-components.yaml#/schemas/MySchema
 ```
