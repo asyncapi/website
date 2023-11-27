@@ -53,7 +53,7 @@ Define the components.serverVariables section in your AsyncAPI document. For eac
 ```yaml
 components:
   serverVariables:
-    domain:
+    subdomain:
       default: 'api'
       description: The domain of the API server port
         default: '8080'
