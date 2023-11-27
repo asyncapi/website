@@ -36,16 +36,14 @@ Define the servers section in your AsyncAPI document, and include the base URLs 
 servers:
   production:
     url: 'https://{subdomain}.example.com:{port}/v1'
-    description:
-      Production server:
-      variables:
-        domain:
-          enum:
-            - development
-            - staging
-            - production
-        port:
-          default: '8080'
+    variables:
+      subdomain:
+        enum:
+          - development
+          - staging
+          - production
+      port:
+        default: '8080'
 ```
 
 ### `serverVariables` section
