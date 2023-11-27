@@ -9,7 +9,7 @@ URL variables are placeholders for values you can replace during runtime. AsyncA
 
 ## Add dynamic variables
 
-To add variables to the URL using AsyncAPI between two servers. You can use the `server.url` and `components.serverVariables` fields to enable reusable variables across multiple servers.
+Use the `server.url` and `server.variables` to add variables to a server URL. Leverage `components.serverVariables` to enable reusable variable definitions across multiple servers.
 
 The diagram below describes how to use variable urls in AsyncAPI.
 
