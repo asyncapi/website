@@ -92,7 +92,7 @@ components:
 In an AsyncAPI document, `schemas` are used to represent the format and structure of the defined events. In the last tutorial, the `reaction` schema was simplified to just include the `event` payload. However, in this instance, you will be elaborating on the schema for the complete request it is anticipated to receive.
 
 <Remember>
-The sample request and response payloads are extracted from Slack's official documentation available [here](https://example.com).
+The sample request and response payloads are extracted from Slack's official documentation available <a href="https://api.slack.com/apis/connections/socket#events">here</a>.
 </Remember>
 
 The `acknowledge` schema makes use of the `envelope_id` field in the object you received from the WebSocket represented by the `reaction` schema to send a response back to Slack acknowledging that event has been received.
