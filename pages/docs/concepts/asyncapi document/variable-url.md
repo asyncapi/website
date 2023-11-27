@@ -56,8 +56,6 @@ components:
     subdomain:
       default: 'api'
       description: The subdomain
-        default: '8080'
-        description: The port of the API server
 ```
 
 ### Define domain and port variables
