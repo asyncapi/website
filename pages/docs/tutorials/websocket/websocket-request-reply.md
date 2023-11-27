@@ -257,6 +257,169 @@ operations:
 
 Putting all this together, we have our AsyncAPI document ready to go!
 ```
+asyncapi: 3.0.0
+info:
+  title: Implement Request Reply in an AsyncAPI Document for a Slack App
+  version: 1.0.0
+  description: >
+    The Heart-Counter manages popular messages in a Slack workspace by
+    monitoring message reaction data. It also sends an acknowledgment message
+    back to the Slack Server to indicate it has received the message.
+servers:
+  production:
+    host: wss-primary.slack.com
+    pathname: /link
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication
+channels:
+  root:
+    address: /
+    messages:
+      hello:
+        $ref: '#/components/messages/hello'
+      reaction:
+        $ref: '#/components/messages/reaction'
+      acknowledge:
+        $ref: '#/components/messages/acknowledge'
+    bindings:
+      ws:
+        query:
+          type: object
+          description: >-
+            Tokens are produced in the WebSocket URL generated from the
+            [apps.connections.open](https://api.slack.com/methods/apps.connections.open)
+            method from Slack's API
+          properties:
+            ticket:
+              type: string
+              description: Temporary token generated when connection is initiated
+              const: 13748dac-b866-4ea7-b98e-4fb7895c0a7f
+            app_id:
+              type: string
+              description: Unique identifier assigned to the Slack app
+              const: fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f
+operations:
+  helloListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/hello'
+  reactionListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/reaction'
+    reply:
+      messages:
+        - $ref: '#/channels/root/messages/acknowledge'
+      channel:
+        $ref: '#/channels/root'
+components:
+  messages:
+    reaction:
+      summary: Action triggered when the channel receives a new reaction-added event
+      payload:
+        $ref: '#/components/schemas/reaction'
+    hello:
+      summary: Action triggered when a successful WebSocket connection is established
+      payload:
+        $ref: '#/components/schemas/hello'
+    acknowledge:
+      summary: Acknowledgement response sent to Server
+      payload:
+        $ref: '#/components/schemas/acknowledge'
+  schemas:
+    hello:
+      type: object
+      properties:
+        type:
+          type: string
+          description: A hello string confirming WebSocket connection
+          const: hello
+        connection_info:
+          type: object
+          properties:
+            app_id:
+              type: string
+        num_connections:
+          type: integer
+        debug_info:
+          type: object
+          properties:
+            host:
+              type: string
+            started:
+              type: string
+            build_number:
+              type: integer
+            approximate_connection_time:
+              type: integer
+    reaction:
+      type: object
+      properties:
+        envelope_id:
+          type: string
+          description: ''
+        payload:
+          type: object
+          description: ''
+          properties:
+            token:
+              type: string
+              description: ''
+            team_id:
+              type: string
+              description: ''
+            event:
+              type: object
+              properties:
+                user:
+                  type: string
+                  description: User ID who performed this event
+                reaction:
+                  type: string
+                  description: The only reaction that we need is a heart emoji
+                  const: heart
+                item_user:
+                  type: string
+                  description: >-
+                    User ID that created the original item that has been reacted
+                    to
+                item:
+                  type: object
+                  properties:
+                    channel:
+                      type: string
+                      description: Channel information of original message
+                    ts:
+                      type: string
+                      description: Timestamp information of original message
+                event_ts:
+                  type: string
+                  description: Reaction timestamp
+        type:
+          type: string
+          description: ''
+        accepts_response_payload:
+          type: boolean
+          description: ''
+        retry_attempt:
+          type: integer
+          description: ''
+        retry_reason:
+          type: string
+          description: ''
+    acknowledge:
+      type: object
+      properties:
+        envelope_id:
+          type: string
+          description: ''
+        payload:
+          type: object
+          description: ''
 
 ```
 
