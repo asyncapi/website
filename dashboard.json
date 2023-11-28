@@ -25,7 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 41.065966191144
+      "score": 41.35314077989326
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -42,6 +42,17 @@
         }
       ],
       "score": 33.31225229491402
+    },
+    {
+      "id": "PR_kwDOB5hCo85gDiV-",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: new script and ci for JSON Schema validation",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/452",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 25.55853839868403
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -176,17 +187,6 @@
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 14.933078614961456
-    },
-    {
-      "id": "PR_kwDOBW5R_c5QjwOq",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add table of contents in case study",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/website/pull/1673",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
