@@ -1,0 +1,32 @@
+name: Code Coverage Report
+
+on:
+  pull_request:
+    branches:
+      - code_coverage_setup
+
+jobs:
+  code-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Instrumentation
+        run:  npx nyc instrument ./ instrumented
+
+      - name: Move folder
+        run: mv config instrumented
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
+      - name: Comment coverage
+        if: always()
+        uses: Tintef/nyc-reporter-action@0.2.5
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_COVERAGE_FOLDER: 'true'
