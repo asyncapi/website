@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI 3.0.0 Release Notes
-date: 2023-09-15T19:00:00+01:00
+date: 2023-12-10T19:00:00+01:00
 type: Communication
 tags:
   - Specification
@@ -10,7 +10,7 @@ authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
-excerpt: 'The new era has arrived'
+excerpt: 'The new era of AsyncAPI'
 featured: true
 ---
 
@@ -20,7 +20,7 @@ To make the information as clear as possible, we have split up the information i
 
 If you want to get an overview of:
 - All the changes done in v3, you are in the right place! 
-- All the breaking changes between v2 and v3, i.e. migration guide - Read the [AsyncAPI 3.0.0 migration guide](/docs/migration/migrating-to-v3) 
+- [Migration guide for all the breaking changes between v2 and v3](/docs/migration/migrating-to-v3) 
 
 ## Overview
 This post will give you an overview of all the changes done in v3.
@@ -29,7 +29,7 @@ This post will give you an overview of all the changes done in v3.
 
 In v2, it has never been possible to re-use channels, because it was directly coupled with operations of an application.
 
-In v3, this is now possible, with the mindset a channel and message should be detached from the operations performed. This means for any message broker, for example, for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces, it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
+In v3, this is now possible, with the mindset that a channel and message should be detached from the operations performed. This means for any message broker, for example, for Kafka, channels now ONLY define topics and the messages it contains. For REST interfaces, it's all the paths and corresponding messages across all request types. For WebSocket, it's all the messages flowing through the WebSocket server. For Socket.Io, it defines all the rooms and messages therein.
 
 This change makes the channels reusable across multiple AsyncAPI documents.
 
@@ -54,10 +54,12 @@ operations:
       $ref: "#/channels/UserSignup"
 ```
 
-Issues: [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | Pull request: [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#618](https://github.com/asyncapi/spec/issues/618), [#663](https://github.com/asyncapi/spec/issues/663) | [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827) | [Operation, channel, and message decoupling](/docs/migration/migrating-to-v3#operation-channel-and-message-decoupling) |
 
 ### Messages instead of message
-As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead messages are defined as key/value pairs. This was part of the request-reply feature to enable easier referencing of messages.
+As you probably noticed above, messages in channels are no longer singular, and with `oneOf`, instead, messages are defined as key/value pairs in the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). This was part of the request-reply feature to enable easier referencing of messages.
 
 ```
 asyncapi: 3.0.0
@@ -70,14 +72,16 @@ channels:
         ...
 ```
 
-Related to: [#94](https://github.com/asyncapi/spec/issues/94) | Pull request: [#827](https://github.com/asyncapi/spec/pull/827)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#94](https://github.com/asyncapi/spec/issues/94) | [#827](https://github.com/asyncapi/spec/pull/827) | [Messages instead of message](/docs/migration/migrating-to-v3#messages-instead-of-message) |
 
 ### Publish and subscribe confusion
-In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application publishes to the channel? Does it mean you publish for me? Who are you in this context? 
+In v2, the `publish` and `subscribe` operation keywords have always been confusing. Does it mean my application is published to the channel? Does it mean you publish for me? Who are you in this context? 
 
-In v3, we try to clear this up. You only need to worry about your and your application's behavior. No more confusion about what and who does what. We achieve this through two new operation keywords, `send` and `receive`, i.e. your application either sends or receives something.
+In v3, we try to clear this up. You only need to worry about your application's behavior. No more confusion about what and who does what. We achieve this through two new [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) keywords, `send` and `receive`, i.e. your application either sends or receives something.
 
-This description of course alters slightly based on protocol; for the generic message brokers you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
+This description, of course, alters slightly based on protocol; for the generic message brokers, you produce or consume messages, but in the abstract AsyncAPI perspective, you still send or receive messages.
 
 ```
 asyncapi: 3.0.0
@@ -89,7 +93,9 @@ operations:
     action: receive
 ```
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#829](https://github.com/asyncapi/spec/issues/829) | [#847](https://github.com/asyncapi/spec/pull/847) | [Operation keywords](/docs/migration/migrating-to-v3#operation-keywords) |
 
 ### Request/Reply
 One of the longest requested features is request and reply... and it's finally here! 
@@ -117,7 +123,9 @@ reply:
 
 Read more about the [Operation Reply Object here](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationReplyObject).
 
-Issues: [#94](https://github.com/asyncapi/spec/issues/94), [#558](https://github.com/asyncapi/spec/issues/558) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847)
+| Issue(s)      | PR(s) |
+| ----------- | ----------- |
+| [#94](https://github.com/asyncapi/spec/issues/94), [#558](https://github.com/asyncapi/spec/issues/558) | [#847](https://github.com/asyncapi/spec/pull/847) |
 
 ### Optional channels
 We have seen many use cases where an AsyncAPI document has been used as a form of menu or collection of definitions. To do this in v2 would require a bit of a hack. But in v3, channels are now entirely optional. This means that it's now possible to have a valid AsyncAPI document as such:
@@ -129,13 +137,15 @@ components:
   ...
 ```
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847)
+| Issue(s)      | PR(s) |
+| ----------- | ----------- |
+| [#829](https://github.com/asyncapi/spec/issues/829) | [#847](https://github.com/asyncapi/spec/pull/847) |
 
 ### Unified referencing behaviors
 
 In v2, there were two instances where we used implicit references; server security configuration, by name referencing security requirement object in components, for channels to reference global servers by name. To stay as consistent as possible, we wanted to unify how references were used, which means that in v3, we ONLY use explicit references. 
 
-The server security information is also now an array instead of an object.
+The `scopes` information in the [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject) is also now an array instead of an object.
 
 ```
 asyncapi: 3.0.0
@@ -155,13 +165,15 @@ components:
       scopes: [...]
 ```
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#852](https://github.com/asyncapi/spec/pull/852)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#829](https://github.com/asyncapi/spec/issues/829) | [#852](https://github.com/asyncapi/spec/pull/852) | [Unifying explicit and implicit references](/docs/migration/migrating-to-v3#unifying-explicit-and-implicit-references) |
 
 ### Common metadata fields
 There has been some inconsistency between which metadata fields are available in the different objects. Now we have added a few extra fields:
-- added `title`, `summary`, and `externalDocs` fields in Server Object
-- added `title` and `summary` fields in Channel Object
-- added `title` field in Operation Object and Operation Trait Object
+- added `title`, `summary`, and `externalDocs` fields in the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject)
+- added `title` and `summary` fields in the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#channelObject)
+- added `title` field in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject) and [Operation Trait Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationTraitObject)
 
 ```
 asyncapi: 3.0.0
@@ -183,12 +195,14 @@ operations:
       - title: Some operation traits title
 ```
 
-Issues: [#795](https://github.com/asyncapi/spec/issues/795) | Pull request: [#796](https://github.com/asyncapi/spec/pull/796)
+| Issue(s)      | PR(s) |
+| ----------- | ----------- |
+| [#795](https://github.com/asyncapi/spec/issues/795) | [#796](https://github.com/asyncapi/spec/pull/796) |
 
 ### Cleaning up the root object
 There was two meta information lingering in the root of the AsyncAPI object, which did not make much sense since we have the `info` object for all the meta information.
 
-Therefore the root `tags` and `externalDocs` have been moved to the info object.
+Therefore the root `tags` and `externalDocs` have been moved to the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject).
 
 ```
 asyncapi: 3.0.0
@@ -203,10 +217,12 @@ info:
 ...
 ```
 
-Pull request: [#794](https://github.com/asyncapi/spec/pull/794)
+| PR(s) | Migration Guide |
+| ----------- | ----------- |
+| [#794](https://github.com/asyncapi/spec/pull/794) | [Moved metadata](/docs/migration/migrating-to-v3#moved-metadata) |
 
 ### Splitting out server URL into host and pathname
-There has been some confusion about what the `url` of a server should contain; is it both protocol + host + path? What about the protocol field, then? Therefore each field now has its field for the host, path, and protocol.
+There has been some confusion about what the `url` of a server should contain; is it both protocol + host + path? What about the protocol field, then? Therefore each field now has its field for the host, path, and protocol in the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject).
 
 ```
 asyncapi: 3.0.0
@@ -218,10 +234,12 @@ servers:
     protocol: mqtt
 ```
 
-Issues: [#547](https://github.com/asyncapi/spec/issues/547), [#274](https://github.com/asyncapi/spec/issues/274) | Pull request: [#888](https://github.com/asyncapi/spec/pull/888)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#547](https://github.com/asyncapi/spec/issues/547), [#274](https://github.com/asyncapi/spec/issues/274) | [#888](https://github.com/asyncapi/spec/pull/888) | [Server URL splitting up](/docs/migration/migrating-to-v3#server-url-splitting-up) |
 
 ### More reusable objects in components
-This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under components:
+This is a bit of a mixture between some of the features, that all added a little to this. It's now possible to add more stuff under the [Components Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#componentsObject):
 - Replies
 - Reply addresses
 - Tags
@@ -248,12 +266,14 @@ components:
     ...
 ```
 
-Issues: [#829](https://github.com/asyncapi/spec/issues/829) | Pull request: [#847](https://github.com/asyncapi/spec/pull/847), [#792](https://github.com/asyncapi/spec/pull/792), [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827)
+| Issue(s)      | PR(s) | 
+| ----------- | ----------- |
+| [#829](https://github.com/asyncapi/spec/issues/829) | [#847](https://github.com/asyncapi/spec/pull/847), [#792](https://github.com/asyncapi/spec/pull/792), [#806](https://github.com/asyncapi/spec/pull/806), [#827](https://github.com/asyncapi/spec/pull/827) |
 
 ### New trait behavior
 Traits in v2 always replaced any duplicate properties that were defined both in traits and the associated object. This meant, for example, if the message traits defined headers and the message object did as well, only the message trait headers would be applied because it overwrote anything you wrote in the message object.
 
-In v3, this has now been changed so that main objects have a higher priority than what ever you define in traits.
+In v3, this has now been changed so that [a property on a trait MUST NOT override the same property on the target object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#traitsMergeMechanism).
 
 For example, take a look at this message:
 ```
@@ -279,12 +299,15 @@ payload:
   $ref: '#/components/schemas/userSignupPayload'
 ```
 
-Issues: [#505](https://github.com/asyncapi/spec/issues/505) | Pull request: [#517](https://github.com/asyncapi/spec/pull/517), [#532](https://github.com/asyncapi/spec/pull/532), [#907](https://github.com/asyncapi/spec/pull/907)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#505](https://github.com/asyncapi/spec/issues/505) | [#517](https://github.com/asyncapi/spec/pull/517), [#532](https://github.com/asyncapi/spec/pull/532), [#907](https://github.com/asyncapi/spec/pull/907) | [New trait behavior](/docs/migration/migrating-to-v3#new-trait-behavior) |
+
 
 ### Schema format and payload definition
 With schemas, one thing that has always been impossible was reusing schemas with different schema formats. That's because the schema format information is part of the message object. That means that if you reference a Schema object, it has no information about the schema format because it's not located together.
 
-In v3, schemaFormat has been removed from the message object and message trait object, and a new schema Object called `Multi Format Schema Object` has been introduced, which pairs a schema together with its schema format. Which now enables much better reusability:
+In v3, schemaFormat has been removed from the [Message Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messageObject) and [Message Trait Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messageTraitObject), and a new [schema Object called `Multi Format Schema Object`](https://www.asyncapi.com/docs/reference/specification/v3.0.0#multiFormatSchemaObject) has been introduced, which pairs a schema together with its schema format. Which now enables much better reusability:
 
 ```
 asyncapi: 3.0.0
@@ -303,11 +326,14 @@ components:
             type: string
 ```
 
-Issues: [#622](https://github.com/asyncapi/spec/issues/622) | Pull request: [#797](https://github.com/asyncapi/spec/pull/797), [#910](https://github.com/asyncapi/spec/pull/910)
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#622](https://github.com/asyncapi/spec/issues/622) | [#797](https://github.com/asyncapi/spec/pull/797), [#910](https://github.com/asyncapi/spec/pull/910) | [Schema format and schemas](/docs/migration/migrating-to-v3#schema-format-and-schemas) |
 
 ### Simplified Parameters
 In v2, it was possible to use the full power of JSON Schema to define parameters, however, it introduced a lot of complexity to parameters, so for v3 it was dialed way down to only allow a very small set of properties.
-Parameters can now only have the following properties: `enum`, `default`, `description`, `examples`, and `location`. 
+
+In v3, the new [Parameter object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#parameterObject) can now only have the following properties: `enum`, `default`, `description`, `examples`, and `location`. 
 
 ```
 asyncapi: 3.0.0
@@ -320,7 +346,11 @@ channels:
         description: Id of the user.
 ```
 
-Issues: [#583](https://github.com/asyncapi/spec/issues/583) | Pull request: [#935](https://github.com/asyncapi/spec/pull/935) | Specification information: https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#parameterObject
+By default this means that any parameter is of type `string`.
+
+| Issue(s)      | PR(s) | Migration Guide |
+| ----------- | ----------- | ----------- |
+| [#583](https://github.com/asyncapi/spec/issues/583) | [#935](https://github.com/asyncapi/spec/pull/935) | [Restricted parameters object](/docs/migration/migrating-to-v3#restricted-parameters-object) |
 
 ### Editorial Changes
 
