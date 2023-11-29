@@ -1,4 +1,4 @@
 ---
-title: Tutorial-1
+title: Kafka Tutorial
 weight: 20
 ---
