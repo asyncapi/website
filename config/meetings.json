@@ -1,24 +1,10 @@
 [
   {
     "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cG9iOHNqZGlrbmg4cnUxanMzMTgyN3AxdnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/792",
-    "banner": "",
-    "date": "2023-08-17T14:30:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/793",
     "banner": "",
     "date": "2023-08-31T14:30:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YmlybTZwODdmMzBnNGg0b3J1OWxmdnBxNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/818",
-    "banner": "https://user-images.githubusercontent.com/40604284/256949583-958c34c8-4256-4ac5-852b-e00ec094fad0.png",
-    "date": "2023-08-08T16:00:00.000Z"
   },
   {
     "title": "Community Meeting",
@@ -124,5 +110,12 @@
     "url": "https://github.com/asyncapi/community/issues/918",
     "banner": "https://user-images.githubusercontent.com/40604284/277314435-ec985247-c575-4449-9f79-442b3077541a.png",
     "date": "2023-11-28T16:00:00.000Z"
+  },
+  {
+    "title": "Overview of AsyncAPI v3",
+    "calLink": "https://www.google.com/calendar/event?eid=ZWFpYjBwYzhoODRqMHA2bWRlcnIyZ241c3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/968",
+    "banner": "https://private-user-images.githubusercontent.com/40604284/285945520-e06ff77c-0e37-432e-964d-b4d47167cc18.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDExMDM4MzQsIm5iZiI6MTcwMTEwMzUzNCwicGF0aCI6Ii80MDYwNDI4NC8yODU5NDU1MjAtZTA2ZmY3N2MtMGUzNy00MzJlLTk2NGQtYjRkNDcxNjdjYzE4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzExMjclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMTI3VDE2NDUzNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTgxMGM4ZGY0NWJmMTI3ZjA2NzcxNzc0YjQxYTBmMDNiY2NhZmQ5NDBlZTA0NzZkNzQ5NTgwNGRiZGRmNGQ0NjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.PWfbBWAz2eGVDAGi8L1eFipmbAokRypMu9QDJBuv-Gk",
+    "date": "2023-12-14T13:00:00.000Z"
   }
 ]
