@@ -33,7 +33,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     return (
       <div
         className={`bg-gray-50 w-full h-full border border-gray-200 absolute py-6 rounded transform transition-transform ${className} ${small ? 'mb-4' : 'mx-3 mt-3 p-3 mb-6'
-          } ${activeBanner ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`} data-testid="AnnouncementHero-main-div"
+          } ${activeBanner ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`} data-testid="AnnouncementHero-main-div"
       >
         <Heading
           className="countdown-text-gradient"
@@ -71,7 +71,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
       cfaText: "Grab Free Tickets",
       eventName: "AACoT'23 Bengaluru Edition",
       cfpDeadline: cfpDeadlineIndia,
-      link: "https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1/contribute/aacot-london-edition-66187",
+      link: "https://conference.asyncapi.com/venue/bangalore",
       show: showBannerIndia
     },
     {
@@ -115,7 +115,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
           <ArrowLeft className='w-4 text-white' />
         </div>
-        <div className='relative w-5/6 flex flex-col gap-2 justify-center items-center'>
+        <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
           <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
           {banners.map((banner, index) => (
             banner.show && (
