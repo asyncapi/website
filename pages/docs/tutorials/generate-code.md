@@ -6,10 +6,10 @@ weight: 100
 
 ## Introduction
 
-In this tutorial, you'll learn how to generate an application that uses [Glee](https://github.com/asyncapi/glee) framework. You'll do it with AsyncAPI document and [AsyncAPI CLI](/tools/cli).
+In this tutorial, you'll learn how to generate an application that uses the [Glee](https://github.com/asyncapi/glee) framework. You'll do it with an AsyncAPI document and the [AsyncAPI CLI](/tools/cli).
 
 ## Background context
-[Glee](https://github.com/asyncapi/glee) is a TS/JS framework that enables you to create APIs and messaging clients based on the AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific AsyncAPI operations. You only have to provide the code for these functions and Glee will take care of the rest.
+[Glee](https://github.com/asyncapi/glee) is a TypeScript/JavaScript framework that enables you to create APIs and messaging clients based on your AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific AsyncAPI operations. You only have to provide the code for these functions and Glee handles the rest.
 
 Glee is often used with the [AsyncAPI CLI](/tools/cli) for a better development experience.
 
@@ -17,7 +17,7 @@ In the previous tutorial, you created an AsyncAPI document that is used in this 
 
 <Remember>
 
-If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file for overview, then generate one by running the following command using AsyncAPI CLI: 
+If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file for overview, then generate one by running the following command using the AsyncAPI CLI: 
 `asyncapi new --example=tutorial.yml --no-tty`.
 
 </Remember>
@@ -43,9 +43,9 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
     Let's break down the previous command:
     - `asyncapi new glee` is how you use Glee via the AsyncAPI CLI. 
     - `--name=tutorial` is how you tell the AsyncAPI CLI to name your new Glee project. 
-    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the template of a Glee project that was created especifically for this tutorial. 
+    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the template of a Glee project that was created specifically for this tutorial. 
 
-2. List all files in directory and check that the Glee project is created:
+2. List all files in the directory and confirm your Glee project creation:
     <CodeBlock language="bash">
     {`cd tutorial && ls`}
     </CodeBlock>

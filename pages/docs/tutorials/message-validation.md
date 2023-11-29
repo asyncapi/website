@@ -13,7 +13,7 @@ Message validation can be performed at both the **producer** and **consumer** le
 
 You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here publishers and subscribers are MQTT clients. The publisher and subscriber labels refer to whether the client is publishing or subscribing to receive messages.
 
-In the [previous tutorial](https://asyncapi.com/docs/tutorials/generate-code), you generated your application that uses [Glee](https://github.com/asyncapi/glee) framework. Now you will be validating the messages which you will be sending to your application using a Mosquitto broker and an MQTT client.
+In the [previous tutorial, you generated an application](https://asyncapi.com/docs/tutorials/generate-code) that uses [Glee](https://github.com/asyncapi/glee) framework. Now you will be validating the messages that you will be sending to your application using a Mosquitto broker and an MQTT client.
 
 <Remember>
 
@@ -33,7 +33,7 @@ In this step, you will send a message to your application using an MQTT broker a
 {`npm run dev`}
 </CodeBlock>
 
-2. Let's send a message:
+2. Send a message:
 
 <CodeBlock language="bash">
   {`mqtt pub -t 'light/measured' -h 'test.mosquitto.org' -m '{"id": 1, "lumens": "3", "sentAt": "2017-06-07T12:34:32.000Z"}'`}
@@ -100,7 +100,7 @@ You can see that your generated application received a message in the terminal:
 Streetlight with id "1" updated its lighting information to 3 lumens at 2017-06-07T12:34:32.000Z.`}
 </CodeBlock>
 
-This indicates that your message is valid and the application received it correctly.
+Such a terminal message indicates that your message is valid and the application received it correctly.
 
 ## Summary
 In this tutorial, you learned how to connect your generated application to an MQTT broker, send messages through it, identify when an invalid message is sent to your application, and how to correct an invalid message. 
@@ -108,4 +108,3 @@ In this tutorial, you learned how to connect your generated application to an MQ
 ## Next steps
 Now that you've completed this tutorial, enjoy our [AsyncAPI message validation guide](https://www.asyncapi.com/docs/guides/message-validation).
 
----
