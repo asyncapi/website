@@ -1,6 +1,9 @@
 ---
 title: "Migrating to v3"
 ---
+
+
+
 Migration to a new major version is always difficult, and AsyncAPI is no exception. To provide as smooth a transition as possible, this document shows the breaking changes between AsyncAPI v2 and v3 in an interactive manner.
 
 If you want to update your AsyncAPI document, use the [AsyncAPI converter](https://github.com/asyncapi/converter-js) directly in the CLI with the following command:
@@ -11,9 +14,8 @@ asyncapi convert asyncapi.json --output=asyncapi_v3.json --target-version=3.0.0
 
 For a detailed read-through about all the changes (non-breaking as well), read all the [v3 release notes](/blog/release-notes-3.0.0) first to acquire additional context about the changes introduced in v3.
 
-import {Asyncapi3Comparison, Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison, Asyncapi3ServerComparison} from '../../../components/Asyncapi3Comparison'
-
-<Asyncapi3Comparison className="my-8" />
+import {Asyncapi3ChannelComparison, Asyncapi3IdAndAddressComparison, Asyncapi3MetaComparison, Asyncapi3OperationComparison,Asyncapi3SchemaFormatComparison, Asyncapi3ServerComparison,
+Asyncapi3ParameterComparison} from '../../../components/Asyncapi3Comparison'
 
 ## Moved metadata
 
@@ -203,14 +205,17 @@ channels:
   user/signedup:
     message: 
       oneOf:
-        - ...
-        - ...
+        - messageId: UserMessage
+          ...
+        - messageId: UserMessage2
+          ...
 
 asyncapi: 2.6.0
 ...
 channels:
   user/signedup:
     message: 
+      messageId: UserMessage
       ...
 ```
 
@@ -235,6 +240,8 @@ channels:
       UserMessage: 
         ...
 ```
+
+We have updated the structure of the Message Object by eliminating the `messageId` property. We now use the ID of the Message Object itself as the key in the key/value pairing, rendering a separate `messageId` property redundant.
 
 ## Unifying explicit and implicit references
 
@@ -392,4 +399,45 @@ channels: {}
 ```yml
 asyncapi: 3.0.0
 ...
+```
+
+## Restricted parameters object
+
+Parameters have often prioritized convenience over accurately reflecting real-world use cases.
+
+<Asyncapi3ParameterComparison className="my-8" />
+
+In v2, we significantly streamlined the Schema Object. While the previous version offered full capability with numerous, often underutilized options, it posed challenges in serializing objects or booleans in the channel path. 
+
+The new v3 simplifies this by consistently using the string type and limiting available properties. Now, you can only access `enum`, `default`, `description`, `examples`, and `location`, ensuring a more focused and practical approach."
+
+```yml
+asyncapi: 2.6.0
+...
+channels: 
+  user/{user_id}/signedup:
+    parameters:
+      location: "$message.payload"
+      description: Just a test description
+      schema:
+        type: string
+        enum: ["test"]
+        default: "test"
+        examples: ["test"]
+    ...
+```
+
+```yml
+asyncapi: 3.0.0
+...
+channels: 
+  userSignedUp:
+    address: user/{user_id}/signedup
+    parameters:
+      user_id: 
+        enum: ["test"]
+        default: "test"
+        description: Just a test description
+        examples: ["test"]
+        location: "$message.payload"
 ```
