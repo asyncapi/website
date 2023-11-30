@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/p68PUXDMsks/hqdefault.jpg",
+    "title": "Community Meeting(November 28th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/918.",
+    "videoId": "p68PUXDMsks"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/KDort611FNg/hqdefault.jpg",
     "title": "Community Meeting(November 14th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/917.",
@@ -22,11 +28,5 @@
     "title": "Community Meeting(October 17th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/912.",
     "videoId": "zSbv4ibqYds"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/KTnFoXY_evs/hqdefault.jpg",
-    "title": "Hacktoberfest (October 6th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/894.",
-    "videoId": "KTnFoXY_evs"
   }
 ]
