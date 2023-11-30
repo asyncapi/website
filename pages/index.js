@@ -41,7 +41,7 @@ function HomePage() {
           <Hero className="mb-24" />
         </Container>
 
-        <Container className="text-center pb-12" wide as="section">
+        {/* <Container className="text-center pb-12" wide as="section">
           <Heading
             level="h3"
             typeStyle="heading-lg"
@@ -254,7 +254,7 @@ function HomePage() {
               authorDescription="CEO at Streamdata.io"
             />
           </ul>
-        </Container>
+        </Container> */}
       </main>
     </>
   )

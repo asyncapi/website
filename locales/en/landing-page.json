@@ -1,11 +1,11 @@
 {
     "main": {
-        "header": "Building the future of",
+        "header": "AsyncAPI v2 Docs",
         "subHeader": "Event-Driven Architectures (EDA)",
-        "body_pretext": "Open-Source tools to easily build and maintain your event-driven architecture. All powered by the AsyncAPI specification, the ",
+        "body_pretext": "This v2 domain is here to preserve docs for users of AsyncAPI v2 that did not yet migrate to v3.",
         "body_boldtext": "industry standard",
         "body_posttext": " for defining asynchronous APIs.",
-        "docs_btn": "Read the docs",
+        "docs_btn": "Read v2 Docs",
         "search_btn": "Quick search...",
         "slogan_text": "Proud to be part of the",
         "slogan_link": "Linux Foundation"

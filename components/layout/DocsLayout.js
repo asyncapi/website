@@ -217,9 +217,9 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   <div>
                     <DocsButton post={post} />
                   </div>
-                  <div className="">
+                  {/* <div className="">
                     <Feedback />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </main>

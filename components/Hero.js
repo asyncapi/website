@@ -17,25 +17,27 @@ export default function Hero({ className = '' }) {
 
   return (
     <>
-      <AnnouncementHero className='my-4' />
-      <header className={`px-2 mt-12 ${className}`}>
+      {/* <AnnouncementHero className='my-4' /> */}
+      <header className={`px-2 mt-24 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">
             {t('main.header')} {` `}
-            <span className="block md:-mt-4">
+            {/* <span className="block md:-mt-4">
               {" "}
               {t('main.subHeader')}
-            </span>
+            </span> */}
           </Heading>
           <Heading level="h2" typeStyle="body-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">
             {t('main.body_pretext')}{" "}
-            <strong>{t('main.body_boldtext')}</strong>{t('main.body_posttext')}
+            {/* <strong>{t('main.body_boldtext')}</strong>{t('main.body_posttext')} */}
           </Heading>
           <div className='flex flex-col md:flex-row gap-2 items-center justify-center'>
             <Button className="block w-full md:w-auto" text={t('main.docs_btn')} href="/docs" icon={<ArrowRight className="-mb-1 h-5 w-5" />}
               data-testid="Hero-Button" />
+            <Button className="block w-full md:w-auto" text={'Read v3 Migration Guide'} href="https://www.asyncapi.com/docs/migration/migrating-to-v3" icon={<ArrowRight className="-mb-1 h-5 w-5" />}
+              data-testid="Hero-Button" />
             {/* Wrap SearchButton with AlgoliaSearch component */}
-            <AlgoliaSearch>
+            {/* <AlgoliaSearch>
               <SearchButton
                 className="flex items-center text-left w-full md:w-auto space-x-3 px-4 py-3 border-secondary-500 border text-secondary-500 hover:text-white shadow-md bg-secondary-100 hover:bg-secondary-500 transition-all duration-500 ease-in-out rounded-md"
               >
@@ -57,19 +59,19 @@ export default function Hero({ className = '' }) {
                   </>
                 )}
               </SearchButton>
-            </AlgoliaSearch>
+            </AlgoliaSearch> */}
           </div>
-          <Paragraph typeStyle="body-sm" className="mt-4" textColor="text-gray-500">
+          {/* <Paragraph typeStyle="body-sm" className="mt-4" textColor="text-gray-500">
             {t('main.slogan_text')} {" "}
             <a className="underline" href="https://www.linuxfoundation.org/">
               {t('main.slogan_link')}
             </a>
-          </Paragraph>
+          </Paragraph> */}
         </div>
-        <div className="mt-8 md:mt-16">
+        {/* <div className="mt-8 md:mt-16">
           <DemoAnimation />
         </div>
-        <Features />
+        <Features /> */}
       </header>
     </>
   );

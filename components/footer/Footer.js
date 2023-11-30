@@ -35,30 +35,13 @@ export default function Footer() {
                   </div>
                 </div>
                 <ul className="justify-center">
-                  {initiativeLinks.map((link, index) => (
-                    <li className="py-2" key={index} data-testid="Footer-initiative-links">
-                      <Link href={link.url}>
-                        <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">{link.label}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
-                <div className="py-2">
-                  <div className="text-white">
-                    <Heading typeStyle="heading-sm-semibold">News</Heading>
-                  </div>
-                </div>
-                <ul className="justify-center">
-                  {/* <li className="py-2">
+                  <li className="py-2">
                     <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <Link href="">
-                        <a>Press</a>
-                      </Link>
+                      <a href="https://www.asyncapi.com">
+                        Latest website
+                      </a>
                     </div>
-                  </li> */}
+                  </li>
                   <li className="py-2">
                     <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <a href="mailto:press@asyncapi.io">
@@ -67,7 +50,40 @@ export default function Footer() {
                     </div>
                   </li>
                 </ul>
+                {/* <ul className="justify-center">
+                  {initiativeLinks.map((link, index) => (
+                    <li className="py-2" key={index} data-testid="Footer-initiative-links">
+                      <Link href={link.url}>
+                        <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">{link.label}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul> */}
               </div>
+
+              {/* <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
+                <div className="py-2">
+                  <div className="text-white">
+                    <Heading typeStyle="heading-sm-semibold">News</Heading>
+                  </div>
+                </div>
+                <ul className="justify-center">
+                  <li className="py-2">
+                    <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
+                      <Link href="">
+                        <a>Press</a>
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="py-2">
+                    <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
+                      <a href="mailto:press@asyncapi.io">
+                        Email Us
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div> */}
 
             </div>
 
