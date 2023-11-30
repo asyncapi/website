@@ -18,7 +18,7 @@ export default function Hero({ className = '' }) {
   return (
     <>
       {/* <AnnouncementHero className='my-4' /> */}
-      <header className={`px-2 mt-24 ${className}`}>
+      <header className={`px-2 mt-64 ${className}`}>
         <div className="text-center">
           <Heading level="h1" typeStyle="heading-xl" className="mb-4">
             {t('main.header')} {` `}
@@ -27,7 +27,7 @@ export default function Hero({ className = '' }) {
               {t('main.subHeader')}
             </span> */}
           </Heading>
-          <Heading level="h2" typeStyle="body-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">
+          <Heading level="h2" typeStyle="heading-lg" textColor="text-gray-700" className="mb-10 max-w-4xl mx-auto">
             {t('main.body_pretext')}{" "}
             {/* <strong>{t('main.body_boldtext')}</strong>{t('main.body_posttext')} */}
           </Heading>
