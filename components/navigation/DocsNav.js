@@ -42,13 +42,13 @@ export default function DocsNav({
   return (
     <li className='mb-4' key={item.item.title} data-testid="DocsNav-item">
       <div className='flex gap-2'>
-        <DocsArrow isDropDown={Object.values(subCategories).length > 0} activeDropDown={openSubCategory} onClick={() => setOpenSubCategory(!openSubCategory)} />
+        <DocsArrow isDropDown={Object.values(subCategories).length > 0} activeDropDownItem={openSubCategory} onClick={() => setOpenSubCategory(!openSubCategory)} />
         <DocsNavItem {...item.item} activeSlug={active} defaultClassName='font-body text-sm text-black hover:font-semibold' inactiveClassName='font-regular' activeClassName='font-semibold' bucket={bucket} onClick={onClickHandler} />
       </div>
       {openSubCategory && (
         <ul className='border-l border-gray-200 pl-4 ml-3 mt-1'>
           {Object.values(subCategories).map((subCategory) => (
-            <SubCategoryDocsNav key={subCategory.item.title} subCategory={subCategory} active={active} onClick={onClick} />
+            <SubCategoryDocsNav key={subCategory.item.title} subCategory={subCategory} activeItem={active} onClick={onClick} />
           ))}
         </ul>
       )}
