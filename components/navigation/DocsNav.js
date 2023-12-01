@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DocsNavItem from './DocsNavItem';
 import IconHome from '../icons/Home';
 import SubCategoryDocsNav from './SubCategoryDocsNav';
 import DocsArrow from '../icons/DocsArrow';
 
 import { buckets } from '../data/buckets';
-import { useEffect } from 'react';
 
 
 const serializedBuckets = buckets.reduce((acc, bucket) => {
