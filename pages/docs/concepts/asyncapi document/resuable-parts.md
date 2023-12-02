@@ -54,15 +54,13 @@ The diagram below defines the process of referencing another local document.
 In the code below, you reference the component from another local document, such as message-schema.yaml.
 
 ```yaml
-components:
-  messages:
-    UserSignup:
-      name: UserSignup
-      title: User signup
-      summary: Action to sign a user up.
-      description: A longer description
-      contentType: application/json
-      payload: null
+UserSignup:
+  name: UserSignup
+  title: User signup
+  summary: Action to sign a user up.
+  description: A longer description
+  contentType: application/json
+  payload: null
 ```
 
 In the code below, you use another local document message-schema.yaml in another local document such as consume-schema.yaml.
