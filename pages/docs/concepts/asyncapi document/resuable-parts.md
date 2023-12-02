@@ -49,8 +49,6 @@ components:
 
 You can use the $ref keyword to reference another local document. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
 
-The diagram below defines the process of referencing another local document.
-
 In the code below, you reference the component from another local document, such as message-schema.yaml.
 
 ```yaml
@@ -68,9 +66,17 @@ In the code below, you use another local document message-schema.yaml in another
 ```yaml
 channels:
   user/signedup:
-    publish:
-      message:
-        $ref: ./message-schema.yaml#/components/messages/UserSignup
+    address: user/signedup
+    messages:
+      publish.message:
+        $ref: './message-schema.yaml#/UserSignup'
+operations:
+  user/signedup.publish:
+    action: receive
+    channel:
+      $ref: '#/channels/user~1signedup'
+    messages:
+      - $ref: '#/channels/user~1signedup/messages/publish.message'
 ```
 
 ## External URL
@@ -79,8 +85,16 @@ You can use the $ref keyword to reference an external URL. Ensure the external U
 
 ```yaml
 channels:
-  myChannel:
-    publish:
-      message:
+  user/signedup:
+    address: user/signedup
+    messages:
+      publish.message:
         $ref: https://example.com/my-components.yaml#/schemas/MySchema
+operations:
+  user/signedup.publish:
+    action: receive
+    channel:
+      $ref: '#/channels/user~1signedup'
+    messages:
+      - $ref: '#/channels/user~1signedup/messages/publish.message'
 ```
