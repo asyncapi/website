@@ -48,19 +48,24 @@ servers:
 
 ### `serverVariables` section
 
-Define the components.serverVariables section in your AsyncAPI document. For each variable used in the server URLs, provide a default value and an optional description:
+Define the components.serverVariables section in your AsyncAPI document. For each variable used in the server URLs, provide a default value and an optional description. This helps you avoid repeating variable defination. For example,
 
 ```yaml
 components:
   serverVariables:
     subdomain:
-      default: 'api'
-      description: The subdomain
+      enum:
+        - development
+        - staging
+        - production
+      default: development
+    port:
+      default: '8080'
 ```
 
 ### Define domain and port variables
 
-Both servers use the components.serverVariables definitions for the domain and port variables. To change the values of these variables, update their default values in the components.serverVariables section. Both servers' URLs will reflect the changes.
+You can use components.serverVariables to avoid repeating variable definations such as domains and ports. To change the values of these variables, update their default values in the components.serverVariables section. Both servers' URLs will reflect the changes.
 
 Here's the complete AsyncAPI document with the server URL variables:
 
@@ -70,27 +75,31 @@ info:
   version: '1.0.0'
 servers:
   production:
-    url: 'https://{domain}.example.com:{port}/v1'
-    description: Production server
+    host: '{subdomain}.example.com:{port}'
+    pathname: /v1
+    protocol: amqp
     variables:
-      domain:
-        $ref: '#/components/serverVariables/domain'
+      subdomain:
+        $ref: '#/components/serverVariables/subdomain'
       port:
         $ref: '#/components/serverVariables/port'
-  staging:
-    url: 'https://{domain}.example.com:{port}/v1'
-    description: Staging server
+  development:
+    host: '{subdomain}.example.com:{port}'
+    pathname: /v1
+    protocol: amqp
     variables:
-      domain:
-        $ref: '#/components/serverVariables/domain'
+      subdomain:
+        $ref: '#/components/serverVariables/subdomain'
       port:
         $ref: '#/components/serverVariables/port'
 components:
   serverVariables:
-    domain:
-      default: 'api'
-      description: The domain of the API server
+    subdomain:
+      enum:
+        - development
+        - staging
+        - production
+      default: development
     port:
       default: '8080'
-      description: The port of the API server
 ```
