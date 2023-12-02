@@ -115,7 +115,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
         <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
           <ArrowLeft className='w-4 text-white' />
         </div>
-        <div className='relative w-5/6 flex flex-col gap-2 justify-center items-center'>
+        <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
           <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
           {banners.map((banner, index) => (
             banner.show && (
