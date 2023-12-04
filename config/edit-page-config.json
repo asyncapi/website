@@ -12,10 +12,6 @@
         "href":"https://github.com/asyncapi/cli/tree/master/docs"
     },
     {
-        "value":"/tools/glee",
-        "href":"https://github.com/asyncapi/glee/tree/master/docs/pages"
-    },
-    {
         "value": "",
         "href": "https://github.com/asyncapi/website/blob/master/pages"
     }
