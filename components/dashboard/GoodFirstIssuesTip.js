@@ -15,6 +15,7 @@ export default function GoodFirstIssuesTip() {
         onMouseEnter={() => setOpen(true)}
         ref={reference}
         src="/img/illustrations/icons/tip-icon.svg"
+        data-testid="GoodFirstIssuesTip-hover-icon"
       />
 
       {open && (

@@ -18,8 +18,8 @@ export default function Banner({}) {
   }
 
   return (
-    <div className="bg-gray-100">
-      <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8">
+    <div className="bg-gray-100" data-testid="Banner-main-div">
+      <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8" >
         <div className="flex items-center justify-between flex-wrap">
           <div className="hidden md:flex w-0 flex-1 flex items-center text-xs">
             <p className="font-medium text-gray-700">

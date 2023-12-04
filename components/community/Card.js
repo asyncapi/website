@@ -11,16 +11,16 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
         <a target={link.includes('http') && '_blank'}>
           <div
             className={`p-3 cursor-pointer border shadow-xl rounded w-full border-[#ad20e2] ${bg}`}
-          >
+            data-testid="Card-small-bg">
             <div className="p-2 rounded-xl bg-gray-100 text-center w-min text-xs flex justify-between">
               <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
             </div>
-            <div className="mt-3">
+            <div className="mt-3" data-testid="Card-heading">
               <Heading level="h1" typeStyle="heading-md">
                 {heading}
               </Heading>
             </div>
-            <div className="mt-2">
+            <div className="mt-2" data-testid="Card-desc">
               <Paragraph
                 textColor={bg ? 'text-black' : 'text-gray-600'}
                 typeStyle="body-sm"
@@ -28,7 +28,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
                 {description}
               </Paragraph>
             </div>
-            <div className="text-right w-full flex justify-end">
+            <div className="text-right w-full flex justify-end" data-testid="Card-icon">
               <IconArrowUp className="w-[20px]" />
             </div>
           </div>
@@ -41,14 +41,14 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
       className={`h-140 w-full shadow-xl rounded p-6 border ${
         !bg && 'border-[#ad20e2]'
       } ${bg}`}
-    >
+    data-testid="Card-lg-bg">
       <div
         className={`p-2 rounded-xl text-center w-min text-xs flex justify-between ${taglineBg}`}
-      >
+      data-testid="Card-lg-tagline">
         <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10" data-testid="Card-heading-lg">
         <Heading
           level="h1"
           typeStyle="heading-lg"
@@ -57,12 +57,12 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
           {heading}
         </Heading>
       </div>
-      <div className="mt-6">
+      <div className="mt-6" data-testid="Card-desc-lg">
         <Paragraph textColor={bg && 'text-gray-400'}>{description}</Paragraph>
       </div>
       <div className="mt-10">
         <Link href={link}>
-          <a>
+          <a data-testid="Card-link-lg">
             <div className={`flex ${btnBg} cursor-pointer`}>
               <IconArrowUp className={`w-[20px] ${btnBg}`} />{' '}
               <span className="ml-2 text-sm">{btnText}</span>
