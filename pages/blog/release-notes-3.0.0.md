@@ -1,6 +1,6 @@
 ---
 title: AsyncAPI 3.0.0 Release Notes
-date: 2023-12-04T22:00:00+01:00
+date: 2023-12-05T17:00:00+01:00
 type: Communication
 tags:
   - Specification
