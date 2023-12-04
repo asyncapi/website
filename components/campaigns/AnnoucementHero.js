@@ -8,13 +8,13 @@ import ArrowLeft from '../icons/ArrowLeft'
 import ArrowRight from '../icons/ArrowRight'
 
 function shouldShowBanner(cfpDeadline) {
-  const currentDate = new Date(); // G et the current date
-  const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
+  // const currentDate = new Date(); // G et the current date
+  // const deadline = new Date(cfpDeadline); // Convert the cfpDeadline string to a Date object
 
-  // Check if the current date is after the deadline
-  if (currentDate > deadline) {
-    return false;
-  }
+  // // Check if the current date is after the deadline
+  // if (currentDate > deadline) {
+  //   return false;
+  // }
 
   return true;
 }
@@ -25,7 +25,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   const [activeIndex, setActiveIndex] = useState(0);
 
   const cfpDeadlineIndia = '2023-11-30T06:00:00Z'
-  const cfpDeadlineFrance = '2023-12-06T06:00:00Z'
+  const cfpDeadlineFrance = '2023-12-01T06:00:00Z'
   const showBannerIndia = shouldShowBanner(cfpDeadlineIndia);
   const showBannerFrance = shouldShowBanner(cfpDeadlineFrance);
 
@@ -36,21 +36,21 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
           } ${activeBanner ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-90 z-0'}`} data-testid="AnnouncementHero-main-div"
       >
         <Heading
-          className="countdown-text-gradient"
+          className="countdown-text-gradient mt-7"
           level="h2"
           typeStyle="heading-lg" >
           {title}
         </Heading>
-        <Heading
+        {/* <Heading
           className="countdown-text-gradient"
           level="h2"
           typeStyle="heading-md" >
           {city}
-        </Heading>
+        </Heading> */}
         <Paragraph typeStyle="body-lg">
           {dateLocation}
         </Paragraph>
-        <AnnouncementRemainingDays dateTime={cfpDeadline} eventName={eventName} />
+        {/* <AnnouncementRemainingDays dateTime={cfpDeadline} eventName={eventName} /> */}
         <div className="mt-6 pb-2 space-x-2">
           <Button
             href={link}
@@ -65,23 +65,10 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
 
   const banners = [
     {
-      title: "AsyncAPI Conf",
-      city: "Bengaluru",
-      dateLocation: "30th of November, 2023 | Bengaluru, India",
-      cfaText: "Grab Free Tickets",
-      eventName: "AACoT'23 Bengaluru Edition",
-      cfpDeadline: cfpDeadlineIndia,
-      link: "https://conference.asyncapi.com/venue/bangalore",
-      show: showBannerIndia
-    },
-    {
-      title: "AsyncAPI Conf",
-      city: "Paris",
-      dateLocation: "8th of December, 2023 | Paris, France",
-      cfaText: "Get Free Tickets",
-      eventName: "AACoT'23 Paris Edition",
-      cfpDeadline: cfpDeadlineFrance,
-      link: "https://ticket.apidays.global/event/apidays-paris-2023/8a1f3904-e2be-4c69-a880-37d2ddf1027d/cart?coupon=ASYNCAPICONF23",
+      title: "AsyncAPI v3",
+      dateLocation: "Check out the new version of the spec.",
+      cfaText: "Release Notes",
+      link: "https://www.asyncapi.com/blog/release-notes-3.0.0",
       show: showBannerFrance
     }
   ];
@@ -112,11 +99,11 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
   return (
     <Container as="section" padding='' className={`text-center`}>
       <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
-        <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
+        {/* <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
           <ArrowLeft className='w-4 text-white' />
-        </div>
+        </div> */}
         <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
-          <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
+          <div className='w-full h-[18rem]'>
           {banners.map((banner, index) => (
             banner.show && (
               <Banner
@@ -133,7 +120,7 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
             )
           ))}
           </div>
-          <div className="flex justify-center m-auto">
+          {/* <div className="flex justify-center m-auto">
             {banners.map((banner, index) => (
               <div
                 key={index}
@@ -143,14 +130,14 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
                 onClick={() => goToIndex(index)}
               />
             ))}
-      </div>
+      </div> */}
         </div>
-        <div
+        {/* <div
           className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 z-10 absolute right-0 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100"
           onClick={goToNext}
         >
           <ArrowRight className='text-white' />
-        </div>
+        </div> */}
       </div>
     </Container>
   );
