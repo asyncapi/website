@@ -5,7 +5,7 @@ type: Communication
 tags:
   - Specification
   - Release Notes
-cover: /img/posts/release-notes-3.0.0/v3-blog-banner.webp
+cover: /img/posts/v3-blog-banner.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
