@@ -24,11 +24,11 @@ async function getHotDiscussions(discussions) {
 
         const finalInteractionsCount = isPR
           ? interactionsCount +
-            discussion.reviews.totalCount +
-            discussion.reviews.nodes.reduce(
-              (acc, curr) => acc + curr.comments.totalCount,
-              0
-            )
+          discussion.reviews.totalCount +
+          discussion.reviews.nodes.reduce(
+            (acc, curr) => acc + curr.comments.totalCount,
+            0
+          )
           : interactionsCount;
         return {
           id: discussion.id,
@@ -59,7 +59,7 @@ async function getHotDiscussions(discussions) {
 }
 async function writeToFile(content) {
   writeFileSync(
-    resolve(__dirname,'..', '..', 'dashboard.json'),
+    resolve(__dirname, '..', '..', 'dashboard.json'),
     JSON.stringify(content, null, '  ')
   );
 }
@@ -129,12 +129,15 @@ async function getDiscussions(query, pageSize, endCursor = null) {
 }
 async function getDiscussionByID(isPR, id) {
   try {
-    return await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
+    let result = await graphql(isPR ? Queries.pullRequestById : Queries.issueById, {
       id,
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
-    });
+
+    }
+    );
+    return result;
   } catch (e) {
     console.error(e);
   }
@@ -158,3 +161,5 @@ async function start() {
   }
 }
 start();
+
+module.exports = { getLabel, monthsSince, mapGoodFirstIssues, getHotDiscussions, getDiscussionByID }

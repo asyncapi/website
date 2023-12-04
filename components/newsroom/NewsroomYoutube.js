@@ -17,7 +17,7 @@ export default function NewsroomYoutube({ className = '' }) {
   const buttonClass = 'shadow-md rounded border mx-2 mb-2 focus:outline-none';
 
   return (
-    <div className="flex-col overflow-auto">
+    <div className={`flex-col overflow-auto ${className}`} data-testid="NewsroomYoutube-main">
       <Swiper
         modules={[Navigation, A11y]}
         spaceBetween={8}
@@ -41,10 +41,10 @@ export default function NewsroomYoutube({ className = '' }) {
       </Swiper>
 
       <div className="flex flex-row ml-2 justify-content-center md:justify-content-start">
-        <button ref={prevElRef} className={`${buttonClass} py-3 px-6 ml-0 ${current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
+        <button ref={prevElRef} className={`${buttonClass} py-3 px-6 ml-0 ${current === 0 ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`} data-testid="Youtube-Prev-button">
           <ArrowLeft className='w-4' />
         </button>
-        <button ref={nextElRef} className={`${buttonClass} py-1 px-4 ${checkLastSnapIndex(current) ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}>
+        <button ref={nextElRef} className={`${buttonClass} py-1 px-4 ${checkLastSnapIndex(current) ? 'cursor-not-allowed bg-white border-gray-200 text-gray-200' : 'bg-secondary-100  hover:bg-secondary-500 border-secondary-500  text-secondary-500 hover:text-white'}`}  data-testid="Youtube-Next-button">
           <ArrowRight className='w-8' />
         </button>
       </div>
