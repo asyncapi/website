@@ -1,16 +1,16 @@
 ---
 title: AsyncAPI 3.0.0 Release Notes
-date: 2023-12-10T19:00:00+01:00
+date: 2023-06-10T19:00:00+01:00
 type: Communication
 tags:
   - Specification
   - Release Notes
-cover: /img/posts/release-notes-3.0.0/cover.webp
+cover: /img/posts/release-notes-3.0.0/v3-blog-banner.webp
 authors:
   - name: Jonas Lagoni
     photo: /img/avatars/jonaslagoni.webp
     link: https://github.com/jonaslagoni
-excerpt: 'The new era of AsyncAPI'
+excerpt: 'The New Era of AsyncAPI'
 featured: true
 ---
 
