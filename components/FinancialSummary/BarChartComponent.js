@@ -177,7 +177,7 @@ const BarChartComponent = () => {
 
                             {/* Select for month filter */}
                             <select
-                                className="p-2 m-1 pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs w-full sm:w-auto md:w-48"
+                                className="p-2 m-1 outline pr-8 border border-gray-600 rounded-md bg-violet text-white font-semibold text-xs w-full sm:w-auto md:w-48"
                                 value={selectedMonth}
                                 onChange={(e) => setSelectedMonth(e.target.value)}
                             >
