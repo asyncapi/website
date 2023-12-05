@@ -109,49 +109,50 @@ export default function AnnouncementHero({ className = '', small = false, hideVi
     };
   }, [activeIndex]);
 
-  return (
-    <Container as="section" padding='' className={`text-center`}>
-      <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
-        <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
-          <ArrowLeft className='w-4 text-white' />
-        </div>
-        <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
-          <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
-          {banners.map((banner, index) => (
-            banner.show && (
-              <Banner
-                key={index}
-                title={banner.title}
-                dateLocation={banner.dateLocation}
-                cfaText={banner.cfaText}
-                eventName={banner.eventName}
-                cfpDeadline={banner.cfpDeadline}
-                link={banner.link}
-                city={banner.city}
-                activeBanner={index === activeIndex % len}
-              />
-            )
-          ))}
-          </div>
-          <div className="flex justify-center m-auto">
-            {banners.map((banner, index) => (
-              <div
-                key={index}
-                className={`h-2 w-2 rounded-full mx-1 cursor-pointer ${
-                  activeIndex % len === index ? 'bg-primary-500' : 'bg-gray-300'
-                }`}
-                onClick={() => goToIndex(index)}
-              />
-            ))}
-      </div>
-        </div>
-        <div
-          className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 z-10 absolute right-0 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100"
-          onClick={goToNext}
-        >
-          <ArrowRight className='text-white' />
-        </div>
-      </div>
-    </Container>
-  );
+  return ''
+  // return (
+  //   <Container as="section" padding='' className={`text-center`}>
+  //     <div className="relative flex flex-row justify-center items-center md:gap-4 overflow-x-hidden">
+  //       <div className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 absolute left-0 z-10 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100 flex justify-center items-center" onClick={goToPrevious}>
+  //         <ArrowLeft className='w-4 text-white' />
+  //       </div>
+  //       <div className='relative w-5/6 pr-3 flex flex-col gap-2 justify-center items-center'>
+  //         <div className='relative w-full h-[18rem] lg:w-[38rem] lg:h-[17rem] overflow-hidden'>
+  //         {banners.map((banner, index) => (
+  //           banner.show && (
+  //             <Banner
+  //               key={index}
+  //               title={banner.title}
+  //               dateLocation={banner.dateLocation}
+  //               cfaText={banner.cfaText}
+  //               eventName={banner.eventName}
+  //               cfpDeadline={banner.cfpDeadline}
+  //               link={banner.link}
+  //               city={banner.city}
+  //               activeBanner={index === activeIndex % len}
+  //             />
+  //           )
+  //         ))}
+  //         </div>
+  //         <div className="flex justify-center m-auto">
+  //           {banners.map((banner, index) => (
+  //             <div
+  //               key={index}
+  //               className={`h-2 w-2 rounded-full mx-1 cursor-pointer ${
+  //                 activeIndex % len === index ? 'bg-primary-500' : 'bg-gray-300'
+  //               }`}
+  //               onClick={() => goToIndex(index)}
+  //             />
+  //           ))}
+  //     </div>
+  //       </div>
+  //       <div
+  //         className="h-8 w-8 rounded-full bg-primary-500 hover:bg-primary-600 cursor-pointer mb-2 z-10 absolute right-0 top-1/2 transform -translate-y-1/2 opacity-50 md:opacity-100"
+  //         onClick={goToNext}
+  //       >
+  //         <ArrowRight className='text-white' />
+  //       </div>
+  //     </div>
+  //   </Container>
+  // );
 }
