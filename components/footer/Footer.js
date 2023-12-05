@@ -26,48 +26,45 @@ export default function Footer() {
 
           <div className="flex flex-col sm:flex-row">
 
-            <div className="flex">
-
-              <div className="px-0 lg:px-10 lg:ml-5 mb-5">
-                <div className="py-2">
-                  <div className="text-white">
-                    <Heading typeStyle="heading-sm-semibold">The Initiative</Heading>
-                  </div>
+            <div className="px-0 lg:px-10 lg:ml-5 mb-5">
+              <div className="py-2">
+                <div className="text-white">
+                  <Heading typeStyle="heading-sm-semibold">The Initiative</Heading>
                 </div>
-                <ul className="justify-center">
-                  {initiativeLinks.map((link, index) => (
-                    <li className="py-2" key={index} data-testid="Footer-initiative-links">
-                      <Link href={link.url}>
-                        <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">{link.label}</a>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
               </div>
+              <ul className="justify-center">
+                {initiativeLinks.map((link, index) => (
+                  <li className="py-2" key={index} data-testid="Footer-initiative-links">
+                    <Link href={link.url}>
+                      <a className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">{link.label}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
-                <div className="py-2">
-                  <div className="text-white">
-                    <Heading typeStyle="heading-sm-semibold">News</Heading>
-                  </div>
+            <div className="sm:px-14 sm:ml-10 md:ml-5 mb-5">
+              <div className="py-2">
+                <div className="text-white">
+                  <Heading typeStyle="heading-sm-semibold">News</Heading>
                 </div>
-                <ul className="justify-center">
-                  {/* <li className="py-2">
+              </div>
+              <ul className="justify-center">
+                {/* <li className="py-2">
                     <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
                       <Link href="">
                         <a>Press</a>
                       </Link>
                     </div>
                   </li> */}
-                  <li className="py-2">
-                    <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
-                      <a href="mailto:press@asyncapi.io">
-                        Email Us
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                <li className="py-2">
+                  <div className="text-base leading-6 text-cool-gray hover:text-white transition ease-in-out duration-300">
+                    <a href="mailto:press@asyncapi.io">
+                      Email Us
+                    </a>
+                  </div>
+                </li>
+              </ul>
 
             </div>
 
