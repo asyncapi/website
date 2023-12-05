@@ -19,7 +19,7 @@ Asyncapi3ParameterComparison} from '../../../components/Asyncapi3Comparison'
 
 ## Moved metadata
 
-In v2, two properties of `tags` and `externalDocs` were placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#infoObject). For consistency, `info` has been moved in v3. 
+In v2, two properties of `tags` and `externalDocs` were placed outside of the [Info Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#infoObject). For consistency, `info` has been moved in v3. 
 
 <Asyncapi3MetaComparison className="my-8" />
 
@@ -45,7 +45,7 @@ info:
 ```
 
 ## Server URL splitting up
-There was occasional confusion regarding what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) should include.
+There was occasional confusion regarding what the URL of a [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject) should include.
 
 <Asyncapi3ServerComparison className="my-8" />
 
@@ -124,7 +124,7 @@ Read more about the confusion between publishing and subscribing in the [Operati
 
 ## Channel address and channel key
 
-Another breaking change is that the channel key no longer represents the channel path. Instead, it's now an arbitrary unique ID. The channel paths are now defined using the `address` property within the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#channelObject).
+Another breaking change is that the channel key no longer represents the channel path. Instead, it's now an arbitrary unique ID. The channel paths are now defined using the `address` property within the [Channel Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#channelObject).
 
 <Asyncapi3IdAndAddressComparison className="my-8" />
 
@@ -149,7 +149,7 @@ channels:
 
 ## Operation keywords
 
-Another significant change is the shift away from defining operations using `publish` and `subscribe`, which had inverse meanings for your application. Now, you directly specify your application's behavior using `send` and `receive` via the `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#operationObject). 
+Another significant change is the shift away from defining operations using `publish` and `subscribe`, which had inverse meanings for your application. Now, you directly specify your application's behavior using `send` and `receive` via the `action` property in the [Operation Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationObject). 
 
 <Asyncapi3OperationComparison className="my-8" />
 
@@ -196,7 +196,7 @@ operations:
 ## Messages instead of message
 In v2, channels were defined with one or more messages using the `oneOf` property.
 
-In v3, messages are defined using the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#messagesObject). For a channel with multiple messages, you specify multiple key-value pairs. For a channel with just one message, you use a single key-value pair.
+In v3, messages are defined using the [Messages Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#messagesObject). For a channel with multiple messages, you specify multiple key-value pairs. For a channel with just one message, you use a single key-value pair.
 
 ```yml
 asyncapi: 2.6.0
@@ -247,7 +247,7 @@ We have updated the structure of the Message Object by eliminating the `messageI
 
 In v2, implicit references were allowed in certain instances. For instance, the server security configuration was identified by name, linking to a [Security Schema Object](https://www.asyncapi.com/docs/reference/specification/v2.6.0#securitySchemeObject) within the components. Similarly, a channel could reference global servers by name.
 
-In v3, all such references MUST be explicit. As a result, we made a minor modification to the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#serverObject) `security` property, transforming it from an object to an array. The details regarding required scopes for OAuth and OpenID Connect were then relocated to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#securitySchemeObject). 
+In v3, all such references MUST be explicit. As a result, we made a minor modification to the [Server Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#serverObject) `security` property, transforming it from an object to an array. The details regarding required scopes for OAuth and OpenID Connect were then relocated to the [Security Scheme Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject). 
 
 ```yml
 asyncapi: 2.6.0
@@ -347,7 +347,7 @@ One limitation with schemas has always been the inability to reuse them across d
 
 In v2, the details about which schema format the payload uses are found within the message object, rather than being directly linked to the schema itself. Such separation hampers reusability, as the two data points aren't directly correlated.
 
-To address this in v3, we've introduced [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.12#multiFormatSchemaObject) that consolidates this information. Consequently, whenever you utilize `schemaFormat`, you'll need to modify the schema as follows: 
+To address this in v3, we've introduced [a multi-format schema object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#multiFormatSchemaObject) that consolidates this information. Consequently, whenever you utilize `schemaFormat`, you'll need to modify the schema as follows: 
 
 ```yml
 asyncapi: 2.6.0
