@@ -12,7 +12,7 @@ export default function Banner({}) {
   const day = new Date().getUTCDate();
   const month = new Date().getUTCMonth();
   const year = new Date().getUTCFullYear();
-  // month=11 is December. Show only between 6-30 November.
+  // month=11 is December. Show only between 6-31 December.
   if (year > 2023 || month > 11 || day < 6) {
     return null;
   }
@@ -21,7 +21,7 @@ export default function Banner({}) {
     <div className="bg-gray-100" data-testid="Banner-main-div">
       <div className="mx-auto max-w-screen-xl py-1 px-3 sm:px-6 lg:px-8" >
         <div className="flex items-center justify-between flex-wrap">
-          <div className="hidden md:flex w-0 flex-1 flex items-center text-xs">
+          <div className="md:flex w-0 flex-1 flex items-center text-xs">
             <p className="font-medium text-gray-700">
               <span className="md:inline">
                 AsyncAPI v3 has landed! ⭐️
@@ -35,6 +35,13 @@ export default function Banner({}) {
               target="_blank" rel="noopener noreferrer"
             >
               Release notes
+            </a>
+            <a
+              href="https://v2.asyncapi.com/"
+              className="flex items-center justify-center ml-2 px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-indigo-400 focus:text-indigo-600 bg-white hover:bg-indigo-50"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Old v2 docs
             </a>
           </div>
         </div>
