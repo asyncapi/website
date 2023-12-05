@@ -13,7 +13,7 @@ export default function Banner({}) {
   const month = new Date().getUTCMonth();
   const year = new Date().getUTCFullYear();
   // month=11 is December. Show only between 6-30 November.
-  if (year > 2023 && month > 11 && day < 6) {
+  if (year > 2023 || month > 11 || day < 6) {
     return null;
   }
 
