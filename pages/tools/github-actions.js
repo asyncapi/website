@@ -78,10 +78,10 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Generating HTML from my AsyncAPI document
-        uses: asyncapi/github-action-for-generator@v0.2.0
+        uses: asyncapi/github-action-for-generator
         
       - name: Deploy GH page
-        uses: JamesIves/github-pages-deploy-action@3.4.2
+        uses: JamesIves/github-pages-deploy-action
         with:
           ACCESS_TOKEN: \${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
