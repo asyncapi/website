@@ -13,7 +13,7 @@ Bindings enhances AsyncAPI documentation by providing protocol-specific informat
 
 Bindings improve the understanding and usability of the API by offering more setup options and context for various protocols. It includes information such as topics an application reads from or writes to, how the messages are formatted, and the rules for interacting with various data or messages. 
 
-Bindings configure ecosystems to accommodate specific functionalities not supported by AsyncAPI's core features.
+Bindings definitions allow you to specify the protocol specific functionalities not supported by AsyncAPI's core features.
 
 You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on two levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object) and [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object). 
 
