@@ -1,7 +1,7 @@
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
-function SuccessStories() {
+export default function SuccessStories() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 bg-purple-100">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-16">
@@ -47,5 +47,3 @@ function SuccessStories() {
         </div>
     )
 }
-
-export default SuccessStories

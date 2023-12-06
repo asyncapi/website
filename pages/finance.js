@@ -11,7 +11,7 @@ import BarChartComponent from "../components/FinancialSummary/BarChartComponent"
 import SuccessStories from "../components/FinancialSummary/SuccessStories";
 import ContactUs from "../components/FinancialSummary/ContactUs";
 
-function FinancialSummary() {
+export default function FinancialSummary() {
   const [windowWidth, setWindowWidth] = useState(0);
 
   const handleResizeRef = useRef(null);
@@ -55,5 +55,3 @@ function FinancialSummary() {
 
   return <div>{shouldUseContainer ? <Container wide>{renderComponents()}</Container> : renderComponents()}</div>;
 }
-
-export default FinancialSummary;

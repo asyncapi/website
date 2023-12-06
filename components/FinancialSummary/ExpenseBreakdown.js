@@ -1,7 +1,7 @@
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
-function ExpenseBreakdown() {
+export default function ExpenseBreakdown() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 bg-[#EFFAFE]">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mb-16">
@@ -84,5 +84,3 @@ function ExpenseBreakdown() {
         </div>
     )
 }
-
-export default ExpenseBreakdown

@@ -2,7 +2,7 @@ import Container from '../layout/Container'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
-function OtherFormsComponent() {
+export default function OtherFormsComponent() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 bg-[#F5F5F5]">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center">
@@ -49,5 +49,3 @@ function OtherFormsComponent() {
         </div>
     );
 }
-
-export default OtherFormsComponent

@@ -1,7 +1,7 @@
 import Heading from "../typography/Heading"
 import Paragraph from '../typography/Paragraph'
 
-function SponsorshipTiers() {
+export default function SponsorshipTiers() {
     return (
         <div className="grid lg:grid-cols-9 lg:gap-8 px-4 sm:px-6 lg:px-8 lg:text-center mt-16 bg-purple-100">
             <div className="col-start-2 col-span-7 my-12">
@@ -69,5 +69,3 @@ function SponsorshipTiers() {
         </div>
     );
 }
-
-export default SponsorshipTiers

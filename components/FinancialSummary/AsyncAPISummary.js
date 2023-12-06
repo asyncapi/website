@@ -2,7 +2,7 @@ import Button from '../buttons/Button'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
-function AsyncAPISummary() {
+export default function AsyncAPISummary() {
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8 mx-4">
@@ -52,5 +52,3 @@ function AsyncAPISummary() {
         </div>
     );
 }
-
-export default AsyncAPISummary
