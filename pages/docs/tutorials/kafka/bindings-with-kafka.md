@@ -9,11 +9,11 @@ In a previous tutorial, you learnt how to manage schemas with schema registry. I
 
 ## Background Context
 
-Bindings enhances AsyncAPI documentation by providing protocol-specific information. They append to different document sections, such as servers, channels, or messages, and they include standard information that is unique to a particular protocol. 
+Bindings provide protocol-specific information for your Event-Driven application. Protocols have specific ways of handling messages, and bindings abstract these details away from your application's core logic. Bindings improve the understanding and usability of the API by offering more setup options and context for various protocols. It includes information such as topics an application reads from or writes to, how the messages are formatted, and the rules for interacting with various data or messages. 
 
-Bindings improve the understanding and usability of the API by offering more setup options and context for various protocols. It includes information such as topics an application reads from or writes to, how the messages are formatted, and the rules for interacting with various data or messages. 
+In an AsyncAPI document, bindings can be appended to different document sections, such as servers, channels, or messages. They include standard information that is unique to a particular protocol. Bindings definitions allow you to specify the protocol-specific functionalities not supported by AsyncAPI's core features.
 
-Bindings definitions allow you to specify the protocol specific functionalities not supported by AsyncAPI's core features.
+
 
 You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on two levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object) and [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object). 
 
