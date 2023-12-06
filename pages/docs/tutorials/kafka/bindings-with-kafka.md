@@ -1,6 +1,6 @@
 ---
-title: Adding Kafka information using bindings.
-description: In this tutorial, you'll learn how how to add specific bindings to AsyncAPI document.
+title: Kafka-specific Bindings
+description: In this tutorial, you'll learn how how to add specific Kafka information to an AsyncAPI document using bindings.
 ---
 
 ## Introduction
