@@ -259,7 +259,7 @@ servers:
 ...
 channels: 
   test/path:
-    severs:
+    servers:
       - production
 components:
   securitySchemes:
@@ -285,7 +285,7 @@ servers:
 ...
 channels: 
   test/path:
-    severs:
+    servers:
       - $ref: "#/servers/production"
 components:
   securitySchemes:
