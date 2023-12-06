@@ -5,7 +5,7 @@ description: In this tutorial, you'll learn how how to add specific Kafka inform
 
 ## Introduction
 
-In a previous tutorial, you learnt how to manage schemas with schema registry. In this tutorial, you will learn how bindings with Kafka works by defining Kafka message key content and extending your AsyncAPI document with protocol-specific information.
+In a previous tutorial, you learnt how to manage schemas with schema registry. In this tutorial, you will learn how bindings with Kafka work by defining Kafka message key content and extending your AsyncAPI document with protocol-specific information.
 
 ## Background Context
 
