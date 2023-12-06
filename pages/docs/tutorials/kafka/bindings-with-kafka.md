@@ -5,7 +5,7 @@ description: In this tutorial, you'll learn how how to add specific bindings to 
 
 ## Introduction
 
-In a previous tutorial, you learnt how to manage schemas with schema registry. In this tutorial, you will learn how bindings with Kafka works. You will learn how to define Kafka message key content and extend your AsyncAPI document with protocol-specific information.
+In a previous tutorial, you learnt how to manage schemas with schema registry. In this tutorial, you will learn how bindings with Kafka works by defining Kafka message key content and extending your AsyncAPI document with protocol-specific information.
 
 ## Background Context
 
@@ -20,7 +20,20 @@ You can configure several objects using Kafka bindings. However, for the scope o
 
 The diagram below shows how bindings with Kafka work. 
 
-
+```mermaid
+graph TD
+    A[AsyncAPI Application] -->|Kafka Server Bindings| B[Kafka Broker/Cluster]
+    B -->|Kafka Channel Bindings| C[Producer Channel]
+    B -->|Kafka Channel Bindings| D[Consumer Channel]
+    C -->|Kafka Message Bindings| E[Producer Message]
+    D -->|Kafka Message Bindings| F[Consumer Message]
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style B fill:#ccf,stroke:#333,stroke-width:4px
+    style C fill:#fcf,stroke:#333,stroke-width:4px
+    style D fill:#fcf,stroke:#333,stroke-width:4px
+    style E fill:#cff,stroke:#333,stroke-width:4px
+    style F fill:#cff,stroke:#333,stroke-width:4px
+```
 
 ## Server Bindings
 
