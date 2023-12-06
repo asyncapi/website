@@ -7,7 +7,12 @@
         "subscribeBtn": "Abonnieren",
         "successTitle": "Vielen Dank für Ihr Abonnement!",
         "errorTitle": "Etwas ist schief gelaufen",
-        "errorSubtitle": "Bitte versuchen Sie es später noch einmal."
+        "errorSubtitle": "Bitte versuchen Sie es später noch einmal.",
+        "subscriptionOptions" : {
+            "newsletter": "Rundbrief",
+            "meeting": "Sitzungen",
+            "tscvoting": "TSC-Abstimmung"
+        }
     },
     "newsroomSection": {
         "title": "Aktuelle Nachrichten und Blogs",

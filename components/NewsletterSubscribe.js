@@ -3,6 +3,7 @@ import Button from "./buttons/Button";
 import Heading from "./typography/Heading";
 import Paragraph from "./typography/Paragraph";
 import Loader from "./Loader";
+import MultiSelect from "./form/MultiSelect";
 import { useTranslation } from "../lib/i18n";
 
 export default function NewsletterSubscribe({
@@ -14,18 +15,26 @@ export default function NewsletterSubscribe({
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [status, setStatus] = useState("normal");
+  const [selectedSubscriptions, setSelectedSubscriptions] = useState([]);
 
   const { t } = useTranslation('common');
 
   const headTextColor = dark ? 'text-white' : ''
   const paragraphTextColor = dark ? 'text-gray-300' : ''
 
+  const subscriptionOptions = [
+    { text: t('newsletterCTA.subscriptionOptions.newsletter'), value: 'Newsletter' },
+    { text: t('newsletterCTA.subscriptionOptions.meeting'), value: 'Meetings' },
+    { text: t('newsletterCTA.subscriptionOptions.tscvoting'), value: 'TSC Voting' }
+  ]
+
   const handleSubmit = (e) => {
     setStatus("loading");
     e.preventDefault()
     const data = {
       name: name,
-      email: email
+      email: email,
+      interests: selectedSubscriptions
     }
 
     fetch("/.netlify/functions/newsletter_subscription", {
@@ -100,9 +109,10 @@ export default function NewsletterSubscribe({
       <Paragraph className="mb-8" textColor={paragraphTextColor}>
         {t('newsletterCTA.subtitle')}
       </Paragraph>
-      {status === "loading" ? <Loader /> : <form className="md:flex" onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder={t('newsletterCTA.nameInput')} value={name} onChange={(e) => setName(e.target.value)} className="form-input block w-full sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-text-input" />
-        <input type="email" name="email" placeholder={t('newsletterCTA.emailInput')} value={email} onChange={(e) => setEmail(e.target.value)} className="form-input block w-full mt-2 sm:text-sm sm:leading-5 md:mr-2 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-email-input" />
+      {status === "loading" ? <Loader /> : <form className="flex flex-col md:flex-row gap-4" onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder={t('newsletterCTA.nameInput')} value={name} onChange={(e) => setName(e.target.value)} className="form-input block w-full sm:text-sm sm:leading-5 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-text-input" />
+        <input type="email" name="email" placeholder={t('newsletterCTA.emailInput')} value={email} onChange={(e) => setEmail(e.target.value)} className="form-input block w-full mt-2 sm:text-sm sm:leading-5 md:mt-0 md:flex-1 rounded-md" required data-testid="NewsletterSubscribe-email-input" />
+        <MultiSelect options={subscriptionOptions} className="form-input min-h-[6vh]" selected={selectedSubscriptions} onChange={setSelectedSubscriptions} />
         <Button type="submit" text={t('newsletterCTA.subscribeBtn')} className="w-full mt-2 md:mr-2 md:mt-0 md:flex-1" />
       </form>}
     </div>

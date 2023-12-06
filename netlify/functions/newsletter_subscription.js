@@ -2,15 +2,15 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 const md5 = require("md5");
 const config = require("../../config/mailchimp-ids.json");
 
-const getInterests = (interests) => {
+const getInterests = (userInterests) => {
     const interestsObject = {};
     const allInterests = config.interests;
-    Object.keys(interests).forEach((key) => {
-        interestsObject[allInterests[key]] = interests[key]==true ? true : false;
-    })
+
+    Object.entries(allInterests).forEach(([key, value]) => {
+        interestsObject[value] = userInterests.includes(key);
+    });
     return interestsObject;
 }
-
 
 exports.handler = async function (event) {
     if (event.httpMethod == 'POST') {
