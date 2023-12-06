@@ -5,7 +5,7 @@ weight: 220
 ---
 
 ## Introduction
-In the [previous]() tutorial, you learnt how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, Heart-Counter responds by sending a message back to the Slack server through WebSocket to confirm the event reception. 
+In the [Create an AsyncAPI Document for a Slackbot with WebSockets]() tutorial, you learnt how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds by sending a message back to the Slack server through WebSocket to confirm the event reception. 
 
 The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request-Reply messaging pattern discussed in this context. The aim of this tutorial is to provide a clear understanding of the Request-Reply Messaging pattern and showcase how AsyncAPI v3 effectively describes it.
 
@@ -28,8 +28,8 @@ Heart-Counter->>Slack Server (Socket Mode): Sending acknowledgement
 
 ## Background context
 
-The inclusion of Request-Reply Messaging Pattern in AsyncAPI v3 is an exciting and a highly anticipated feature.  This messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
-This messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system.
+The Request-Reply Messaging Pattern in AsyncAPI v3 is an exciting and a highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
+The messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system.
 
 ```mermaid
 sequenceDiagram
@@ -46,7 +46,7 @@ sequenceDiagram
 
 ## Define AsyncAPI version, API information, and server
 
-Begin your AsyncAPI document by detailing the `title`, `version`, and `description` for your Slack app's API. In the `servers` section, you can outline the protocol and provide details about the URLs your application will utilize. As you are building upon the existing `Heart-Counter` document from the [previous]() tutorial, there are no new changed needed in this section.
+Begin your AsyncAPI document by detailing the `title`, `version`, and `description` for your Slack app's API. In the `servers` section, you can outline the protocol and provide details about the URLs your application will utilize. As you are building upon the existing `Heart-Counter` document from the last tutorial, there are no new changed needed in this section.
 
 ```
 asyncapi: '3.0.0'
@@ -89,13 +89,13 @@ components:
 
 ## Define schemas
 
-In an AsyncAPI document, `schemas` are used to represent the format and structure of the defined events. In the last tutorial, the `reaction` schema was simplified to just include the `event` payload. However, in this instance, you will be elaborating on the schema for the complete request it is anticipated to receive.
+= In the last tutorial, the `reaction` schema was simplified to just include the `event` payload. However, in this instance, you will be elaborating on the schema for the complete request it is anticipated to receive.
 
 <Remember>
-The sample request and response payloads are extracted from Slack's official documentation available <a href="https://api.slack.com/apis/connections/socket#events">here</a>.
+The sample request and response payloads are extracted from <a href="https://api.slack.com/apis/connections/socket#events">Slack's official documentation</a>.
 </Remember>
 
-The `acknowledge` schema makes use of the `envelope_id` field in the object you received from the WebSocket represented by the `reaction` schema to send a response back to Slack acknowledging that event has been received.
+The `acknowledge` schema makes use of the `envelope_id` attribute to send a reply back to Slack acknowledging that event has been received.
 
 ```
   schemas:
@@ -105,7 +105,7 @@ The `acknowledge` schema makes use of the `envelope_id` field in the object you 
         type:
           type: string
           description: A hello string confirming WebSocket connection
-          const: "hello"
+          const: hello
         connection_info:
           type: object
           properties:
@@ -124,23 +124,20 @@ The `acknowledge` schema makes use of the `envelope_id` field in the object you 
               type: integer
             approximate_connection_time:
               type: integer
-              
     reaction:
       type: object
       properties:
         envelope_id:
           type: string
-          description: ""      
+          description: 'Unique ID assigned to payload'
         payload:
           type: object
-          description : ""
-          properties: 
+          description: 'Payload of the reaction added event'
+          properties:
             token:
               type: string
-              description: ""
             team_id:
               type: string
-              description: ""
             event:
               type: object
               properties:
@@ -150,10 +147,12 @@ The `acknowledge` schema makes use of the `envelope_id` field in the object you 
                 reaction:
                   type: string
                   description: The only reaction that we need is a heart emoji
-                  const: "heart"
+                  const: heart
                 item_user:
                   type: string
-                  description: User ID that created the original item that has been reacted to
+                  description: >-
+                    User ID that created the original item that has been reacted
+                    to
                 item:
                   type: object
                   properties:
@@ -168,32 +167,21 @@ The `acknowledge` schema makes use of the `envelope_id` field in the object you 
                   description: Reaction timestamp
         type:
           type: string
-          description: ""
         accepts_response_payload:
           type: boolean
-          description: ""
-        retry_attempt:
-          type: integer
-          description: ""                   
-        retry_reason:
-          type: string
-          description: ""               
-
     acknowledge:
       type: object
       properties:
         envelope_id:
           type: string
-          description: ""
+          description: 'Unique ID of acknowledged payload'
         payload:
           type: object
-          description: ""
+          description: 'Optional payload of event'
 ```
 
 ## Define channels 
-Since the `Heart-Counter` makes use of just one WebSocket channel for communication you can define the `root` channel. However, this one channel can accomodate different types of message, so it is important to utilize the `messages` attribute to provide a key value pair of all the message types the application can expect which in our example is the `hello`, `reaction` and `acknowledge` message.
-
-You can refer the [last]() tutorial on how the `bindings` attribute is used here to represent the generated WebSocket URL.
+Since the `Heart-Counter` makes use of just one WebSocket channel for communication you can define the `root` channel. The channel can accommodate different types of messages, which in our example is the `hello`, `reaction` and `acknowledge` message.
 
 ```
 channels:
@@ -227,7 +215,9 @@ channels:
 
 That brings to the important part of the tutorial where we get to finally represent the request reply pattern. The `operations` attribute represents how `Heart-Counter` will interact with Slack. 
 
-Both `helloListener` and `reactionListener` operations are set to `receive` events. However,in the case of `reactionListener` we also want to represent the message that is sent back to the server. This is where the `reply` attribute comes into play. Since both the request and reply function happens over the same WebSocket URL, both the `channel` values stay the same. However, we can differentiate the message each operation conveys by specifying the message it will send or receive. 
+Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener` we also want to represent the message that is sent back to the server. This is where the `reply` attribute comes into play. 
+
+Since both the request and reply function happens over the same WebSocket URL, both the `channel` values stay the same. However, we can differentiate the message each operation conveys by specifying the message it will send or receive. 
 Thus, we can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
 
 ```
@@ -361,17 +351,15 @@ components:
       properties:
         envelope_id:
           type: string
-          description: ''
+          description: 'Unique ID assigned to payload'
         payload:
           type: object
-          description: ''
+          description: 'Payload of the reaction added event'
           properties:
             token:
               type: string
-              description: ''
             team_id:
               type: string
-              description: ''
             event:
               type: object
               properties:
@@ -401,27 +389,19 @@ components:
                   description: Reaction timestamp
         type:
           type: string
-          description: ''
         accepts_response_payload:
           type: boolean
-          description: ''
-        retry_attempt:
-          type: integer
-          description: ''
-        retry_reason:
-          type: string
-          description: ''
     acknowledge:
       type: object
       properties:
         envelope_id:
           type: string
-          description: ''
+          description: 'Unique ID of acknowledged payload'
         payload:
           type: object
-          description: ''
+          description: 'Optional payload of event'
 
 ```
 
 ## Summary
-You made it to the end! In this tutorial you learnt how to create an AsyncAPI document for a use case that implemented the Request Reply messaging pattern.  
+Great job getting to the end! In this tutorial you learnt how to create an AsyncAPI document for a use case that implemented the Request Reply messaging pattern. Now you can try exploring this pattern with sub patterns to see how it works with different use cases in real life. 
