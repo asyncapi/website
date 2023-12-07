@@ -104,7 +104,7 @@ export default function NavBar({
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a>
+      {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">

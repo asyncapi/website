@@ -60,7 +60,8 @@ export function getMDXComponents() {
     th: props => <th {...props} className={`${props.className || ''} px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs leading-4 font-medium font-body text-gray-900 uppercase tracking-wider`} />,
     tr: props => <tr {...props} className={`${props.className || ''} bg-white`} />,
     td: props => <td {...props} className={`${props.className || ''} px-6 py-4 border-b border-gray-200 text-sm leading-5 text-gray-700 tracking-tight`} />,
-    pre: props => <div {...props} className={`${props.className || ''} my-8`} />,
+    pre: props => CodeComponent(props.children.props),
+    code:  props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
     inlineCode: props => <code {...props} className={`${props.className || ''} px-1 py-0.5 bg-gray-200 text-gray-800 rounded font-mono text-sm`} />,
     details: (props) => 
       <details {...props} className={`${ props.className || ''} mb-1 font-heading antialiased text-gray-900`}/>,
@@ -68,8 +69,6 @@ export function getMDXComponents() {
       <summary {...props} className={`${props.className || ''} my-2 font-heading cursor-pointer antialiased font-semibold text-gray-900`}/>,
     p: (props) => 
     <p {...props} className={`${props.className || ''} ml-4 cursor-pointer`}/>,
-      
-    code: CodeComponent,
     hr: props => <hr {...props} className={`${props.className || ''} my-8`} />,
     CodeBlock,
     ChapterSuggestions,

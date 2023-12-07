@@ -5,10 +5,10 @@ weight: 130
 ---
 
 ## Introduction
-This guide explains different concepts of validating AsyncAPI messages. You will also learn what role AsyncAPI documents play in validation.
+This guide explains different concepts of validating messages in event-driven communication. You will also learn what role AsyncAPI documents play in validation.
 
 ## Message validation
-To understand AsyncAPI message validation, we must first understand the basic components involved.
+To understand message validation in event-driven communication, we must first understand the basic components involved.
 - Producer: responsible for producing messages.
 - Consumer: responsible for getting the producer's messages.
 - Broker: acts as a bridge between the consumer and the producer because messages travel through the broker.
@@ -85,17 +85,26 @@ With the Schema Registry in place, the producer first talks to the Schema Regist
 AsyncAPI is not directly involved in validation based on the Schema Registry. The good thing is that you do not have to duplicate schemas in your AsyncAPI document stored in Schema Registry. You can reference schemas from Schema Registry in your AsyncAPI documents.
 Here's an example of an AsyncAPI document where you can see both `schemaFormat` and `payload` referenced from the Schema Registry:
 ```yml
-asyncapi: 2.6.0
+asyncapi: 3.0.0
 info:
   title: Example with Avro
   version: 0.1.0
+
 channels:
   example:
-    publish:
-      message:
-        schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+    address: 'example'
+    messages:
+      avroMessage:
         payload:
-          $ref: 'https://example.europe-west3.gcp.confluent.cloud/subjects/test/versions/1/schema'
+          schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+          schema:
+            $ref: 'https://raw.githubusercontent.com/asyncapi/website/20a31a0396b41dd24b1bac877ab7ce3f58037c28/public/resources/casestudies/adeo/CostingRequestPayload.avsc'
+
+operations:
+  onMessage:
+    action: receive
+    channel:
+      $ref: '#/channels/example'
 ```
 
 ---

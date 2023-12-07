@@ -27,6 +27,10 @@
             }
         ]
     },
+    "AsyncAPI Generator Templates": {
+        "description": "The following is a list of templates compatible with AsyncAPI Generator. You can use them to generate apps, clients or documentation from your AsyncAPI documents.",
+        "toolsList": []
+    },
     "Code-first tools": {
         "description": "The following is a list of tools that generate AsyncAPI documents from your code.",
         "toolsList": [
@@ -136,6 +140,19 @@
                     "language": "C#",
                     "technology": [".NET"],
                     "categories": ["code-first"]
+                }
+            },
+            {
+                "title": "FastStream",
+                "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
+                "links": {
+                    "websiteUrl": "https://faststream.airt.ai",
+                    "repoUrl": "https://github.com/airtai/FastStream"
+                },
+                "filters": {
+                    "language": "Python",
+                    "categories": ["code-first", "framework"],
+                    "hasCommercial": false
                 }
             }
         ]
@@ -264,7 +281,8 @@
                         "react"
                     ],
                     "categories": [
-                        "documentation-generator"
+                        "documentation-generator",
+                        "generator-template"
                     ],
                     "hasCommercial": false
                 }
@@ -398,6 +416,19 @@
                     "language": "Python",
                     "technology": ["Flask"],
                     "categories": ["framework"]
+                }
+            },
+            {
+                "title": "FastStream",
+                "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ and NATS.",
+                "links": {
+                    "websiteUrl": "https://faststream.airt.ai",
+                    "repoUrl": "https://github.com/airtai/FastStream"
+                },
+                "filters": {
+                    "language": "Python",
+                    "categories": ["code-first", "framework"],
+                    "hasCommercial": false
                 }
             }
         ]
