@@ -5,7 +5,7 @@ weight: 210
 ---
 
 ## Introduction
-In this tutorial, you will learn how to write an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol. You will learn how to write AsyncAPI document for a consumer-only application receiving a stream of messages from a WebSocket server. You will also learn why AsyncAPI bindings feature exist and how to use it.
+In this tutorial, you will learn how to write an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol. You will learn how to write AsyncAPI document for a consumer-only application receiving a stream of messages from a WebSocket server. You will also learn why the AsyncAPI bindings feature exist and how to use it.
 
 Consider a scenario where you are in charge of maintaining a highly active Slack workspace. You want an easy way to keep track of the popular messages across all the channels but doing this manually would be a difficult task. To simplify this process, you’re going to build a Slackbot called `Heart-Counter` that actively monitors reactions added to a message and determine its popularity by counting the reactions of the “heart” emoji.
 
@@ -77,7 +77,7 @@ info:
     
 servers:
   production:
-    host: wss://wss-primary.slack.com
+    host: wss-primary.slack.com
     pathname: /link
     protocol: wss
     description: Slack's server in Socket Mode for real-time communication 
@@ -163,7 +163,7 @@ components:
 
 The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
 
-The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is a protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
+The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
 
 ```
 channels:
@@ -227,7 +227,7 @@ info:
     
 servers:
   production:
-    host: wss://wss-primary.slack.com
+    host: wss-primary.slack.com
     pathname: /link
     protocol: wss
     description: Slack's server in Socket Mode for real-time communication 
