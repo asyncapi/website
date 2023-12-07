@@ -44,7 +44,7 @@ describe('Newsroom Videos', () => {
     }).as('getYoutubeVideos');
 
     // Manually trigger the function
-    await buildNewsroomVideos().then((videoData) => {
+    cy.invoke(buildNewsroomVideos()).then((videoData) => {
       expect(videoData).to.exist;
     });
   });
