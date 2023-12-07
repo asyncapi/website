@@ -11,7 +11,6 @@ import {
 import CodeBlock from '../../components/editor/CodeBlock';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
-import DocsButton from '../../components/buttons/DocsButton';
 import Button from '../../components/buttons/Button';
 
 const features = [
