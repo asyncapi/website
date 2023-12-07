@@ -1,52 +1,10 @@
 [
   {
     "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=cG9iOHNqZGlrbmg4cnUxanMzMTgyN3AxdnMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/792",
-    "banner": "",
-    "date": "2023-08-17T14:30:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Docs Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/793",
     "banner": "",
     "date": "2023-08-31T14:30:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MmpwYXMxYjBscjlnYWhtMHR2MnQ2MTMwM2cgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/798",
-    "banner": "https://user-images.githubusercontent.com/40604284/252807786-f93110e3-c344-4080-9c4f-9d32cb324680.png",
-    "date": "2023-07-25T08:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=YmlybTZwODdmMzBnNGg0b3J1OWxmdnBxNmMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/818",
-    "banner": "https://user-images.githubusercontent.com/40604284/256949583-958c34c8-4256-4ac5-852b-e00ec094fad0.png",
-    "date": "2023-08-08T16:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=NG9lc2RwN3A2djFmNmRxaHZoaWRjMnRhaDAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/823",
-    "banner": "",
-    "date": "2023-08-02T16:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Z3YzNDRwamprYzMwNTluYTdtNG1iaHA5NjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/845",
-    "banner": "https://user-images.githubusercontent.com/40604284/260686941-20c44493-65de-4a09-9dac-a8f7d1f0fcaf.png",
-    "date": "2023-08-22T08:00:00.000Z"
-  },
-  {
-    "title": "Spec 3.0 Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=Y281MHE2dGo1ZmE1cmtobmtyOGYzb3VsazAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/847",
-    "banner": "",
-    "date": "2023-08-23T16:00:00.000Z"
   },
   {
     "title": "Spec 3.0 Meeting",
@@ -138,5 +96,31 @@
     "url": "https://github.com/asyncapi/community/issues/918",
     "banner": "https://user-images.githubusercontent.com/40604284/277314435-ec985247-c575-4449-9f79-442b3077541a.png",
     "date": "2023-11-28T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=M2I4MXRidmpqb2ZyZTUyajhsZm41ZjN0bTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/979",
+    "banner": "https://user-images.githubusercontent.com/40604284/288050762-4d064212-22ea-4af0-9d1a-b23c8fd70d6b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3ODI2MDUsIm5iZiI6MTcwMTc4MjMwNSwicGF0aCI6Ii80MDYwNDI4NC8yODgwNTA3NjItNGQwNjQyMTItMjJlYS00YWYwLTlkMWEtYjIzYzhmZDcwZDZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA1VDEzMTgyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYzOGFhZmI5NzAxODljZDQ4NTFhNDc0NGIxNGQzZDZlZmU3ZjhhYTExOGU1YTRkN2FjODU1MzgzZGU0M2UzNmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-FT5AFf2Np1cFxMyXVga0zAfLjFc9fspwL-BJ_t7KLg",
+    "date": "2023-12-12T08:00:00.000Z"
+  },
+  {
+    "title": "Overview of AyncAPI v3",
+    "calLink": "https://www.google.com/calendar/event?eid=c3E0Ym1qMTFnMDY5ODljdGk1ajh2anRrdjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/981",
+    "banner": "https://user-images.githubusercontent.com/40604284/285945520-e06ff77c-0e37-432e-964d-b4d47167cc18.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3ODI1NzUsIm5iZiI6MTcwMTc4MjI3NSwicGF0aCI6Ii80MDYwNDI4NC8yODU5NDU1MjAtZTA2ZmY3N2MtMGUzNy00MzJlLTk2NGQtYjRkNDcxNjdjYzE4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA1VDEzMTc1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY5MjBhNTEwMjIwNDQxNzczY2EyMDI1YjQzOWIwYzRhY2MxNTU3ZDYyMGY2NzMxYjVkYzYyNmViZTM5Yjg4ZTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Dm-WJy2AQO2xUMAJ1nO6ADZuBFYXKj0NEFgdcDd44Fg",
+    "date": "2023-12-19T13:00:00.000Z"
+  },
+  {
+    "title": "AsyncAPI v3 announcement",
+    "calLink": "https://www.google.com/calendar/event?eid=NmhzMGZnNTRnZHNnZTFtbnRjbmhpZnJzbjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "date": "2023-12-06T15:00:00.000Z"
+  },
+  {
+    "title": "3 Request/Reply Use Cases",
+    "calLink": "https://www.google.com/calendar/event?eid=b3NvM2c0dW9tcTk1djRiMDJmbWU4dG9odGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/985",
+    "banner": "https://user-images.githubusercontent.com/40604284/288488243-e274e624-c5b3-4bff-b0ec-8c1929a24aae.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE4ODI2MTUsIm5iZiI6MTcwMTg4MjMxNSwicGF0aCI6Ii80MDYwNDI4NC8yODg0ODgyNDMtZTI3NGU2MjQtYzViMy00YmZmLWIwZWMtOGMxOTI5YTI0YWFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA2VDE3MDUxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUyMGYyNDE3Nzg4OGUyZGVmYjNlMDkxYzVkOWFkNjEwYjM4ZDI2YzZjZmUyYjRjMDliMDQ3YWJiNTVlNDI1MmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jYmY72ZRresQv1lMFeKwA49Wi6VkAozRpIHH4uE0J8g",
+    "date": "2023-12-14T18:00:00.000Z"
   }
 ]
