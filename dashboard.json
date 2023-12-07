@@ -17,22 +17,6 @@
       "score": 54.2759972736099
     },
     {
-      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Support request/reply pattern",
-      "author": "adrianhopebailie",
-      "resourcePath": "/asyncapi/spec/issues/94",
-      "repo": "asyncapi/spec",
-      "labels": [
-        {
-          "name": "keep-open",
-          "color": "fce250"
-        }
-      ],
-      "score": 41.64031536864252
-    },
-    {
       "id": "PR_kwDOBW5R_c5Xb72L",
       "isPR": true,
       "isAssigned": false,
@@ -41,7 +25,7 @@
       "resourcePath": "/asyncapi/website/pull/2038",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 40.77879160239474
+      "score": 41.35314077989326
     },
     {
       "id": "I_kwDOFLhIt84-OUI3",
@@ -58,6 +42,17 @@
         }
       ],
       "score": 33.31225229491402
+    },
+    {
+      "id": "PR_kwDOB5hCo85gDiV-",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: new script and ci for JSON Schema validation",
+      "author": "AnimeshKumar923",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/452",
+      "repo": "asyncapi/spec-json-schemas",
+      "labels": [],
+      "score": 25.55853839868403
     },
     {
       "id": "MDU6SXNzdWU5OTMxODc5ODM=",
@@ -112,6 +107,22 @@
       "score": 20.102221212448114
     },
     {
+      "id": "MDU6SXNzdWUzNjkwNDExMDc=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support request/reply pattern",
+      "author": "adrianhopebailie",
+      "resourcePath": "/asyncapi/spec/issues/94",
+      "repo": "asyncapi/spec",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "fce250"
+        }
+      ],
+      "score": 20.070109582694446
+    },
+    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -126,6 +137,34 @@
         }
       ],
       "score": 19.527872034949596
+    },
+    {
+      "id": "I_kwDOE8Qh385nTCST",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Improve layout of playground",
+      "author": "jonaslagoni",
+      "resourcePath": "/asyncapi/modelina/issues/1346",
+      "repo": "asyncapi/modelina",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/design",
+          "color": "0d67d3"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        }
+      ],
+      "score": 18.37917367995256
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -148,43 +187,21 @@
       "repo": "asyncapi/asyncapi-react",
       "labels": [],
       "score": 14.933078614961456
-    },
-    {
-      "id": "PR_kwDOBW5R_c5QjwOq",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add table of contents in case study",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/website/pull/1673",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dJ7hJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: Tutorial for WebSockets with AsyncAPI",
-      "author": "VaishnaviNandakumar",
-      "resourcePath": "/asyncapi/website/pull/2245",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOE8Qh38521iLW",
-      "title": "CSharp generator does not generate DateTime properties",
+      "id": "I_kwDOBGu-1853mU6h",
+      "title": "Fix description of Operation Trait object",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1607",
-      "repo": "asyncapi/modelina",
-      "author": "jano-petras",
-      "area": "typescript",
+      "resourcePath": "/asyncapi/spec/issues/994",
+      "repo": "asyncapi/spec",
+      "author": "smoya",
+      "area": "Unknown",
       "labels": [
         {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "🤷‍♀️ Ambiguity",
+          "color": "286AFC"
         }
       ]
     },
@@ -196,21 +213,6 @@
       "repo": "asyncapi/bindings",
       "author": "KhudaDad414",
       "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOFi_gUM51UQ-5",
-      "title": "Show a warning if glee can't process a received message",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/glee/issues/558",
-      "repo": "asyncapi/glee",
-      "author": "KhudaDad414",
-      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -362,25 +364,6 @@
       ]
     },
     {
-      "id": "I_kwDODwv8N85yZpkH",
-      "title": "Venue sub menu doesn't close",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/205",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N85yTwat",
       "title": "venues addresses to be clickable links that take you you google map location",
       "isAssigned": false,
@@ -393,21 +376,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N85xwvMi",
-      "title": "Update `Get Free Tickets` on main page to link to proper google form",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/198",
-      "repo": "asyncapi/conference-website",
-      "author": "derberg",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
