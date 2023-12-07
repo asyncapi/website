@@ -25,6 +25,30 @@ After installing Node.js and NPM, run the following command to install the Async
 ```sh
 npm install -g @asyncapi/cli
 ```
+## Docker
+
+Install [Docker](https://docs.docker.com/get-docker/) first, then use docker to build the image using the following command :
+``` 
+docker build -t asyncapi/cli:latest . 
+``` 
+and run the image using the following command :
+
+```bash
+docker run --rm -it \
+--user=root \
+-v [ASYNCAPI SPEC FILE LOCATION]:/app/asyncapi.yml \
+-v [GENERATED FILES LOCATION]:/app/output \
+asyncapi/cli [COMMAND HERE]
+
+# Example that you can run inside the cli directory after cloning this repository. First, you specify the mount in the location of your AsyncAPI specification file and then you mount it in the directory where the generation result should be saved.
+docker run --rm -it \
+   --user=root \
+   -v ${PWD}/test/integration/fixtures/asyncapi_v1.yml:/app/asyncapi.yml \
+   -v ${PWD}/output:/app/output \
+   asyncapi/cli generate fromTemplate -o /app/output /app/asyncapi.yml @asyncapi/html-template --force-write
+```
+Note: Use ``` ` ``` instead of `\` for Windows.
+
 
 ## Mac
 There are two ways to install the AsyncAPI CLI on your macOS: using the `brew` package manager or `pkg` files.
@@ -68,9 +92,39 @@ sudo installer -pkg asyncapi.pkg -target /
 ```
 
 ## Windows 
-For Windows just install the appropriate installer and simply follow the default installation steps to complete the installation process.
+
+There are two ways to install the AsyncAPI CLI on your Windows operating system: using the `chocolatey` package manager or executable files.
+
+### Chocolatey
+
+Prerequisites:
+[Chocolatey](https://chocolatey.org/install) must be installed on your Windows operating system. The installation instructions can be found [here](https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey-cli).
+
+To install the AsyncAPI CLI using the `chocolatey` package manager, run the following command in your terminal with administrator privileges:
+
+```sh
+# Install AsyncAPI CLI
+choco install asyncapi
+```
+
+To upgrade run this command:- 
+```sh
+# Upgrade AsyncAPI CLI
+choco upgrade asyncapi
+```
+To install a specific version run this command:
+```sh
+# Install AsyncAPI CLI version xx.xx.xx
+choco install asyncapi --version xx.xx.xx
+```
+All the AsyncAPI CLI versions can be found [here](https://chocolatey.org/packages/asyncapi).
+
+### Executable files
+
+Just install the appropriate installer and simply follow the default installation steps to complete the installation process.
 
 Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and download [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+
 
 ## Linux
 Selecting the appropriate AsyncAPI CLI installation method on a Linux operating system depends on your Linux distro.

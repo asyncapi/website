@@ -10,8 +10,9 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "16.13.2"
-  NPM_VERSION = "8.1.2"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "16.15.0"
+  NPM_VERSION = "8.5.5"
 
 # Used by JSON Schema definitions fetched directly from AsyncAPI website
 [[redirects]]
@@ -32,3 +33,6 @@ path = "/definitions/*"
 [[edge_functions]]
 function = "serve-definitions"
 path = "/schema-store/*"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

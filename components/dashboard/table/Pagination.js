@@ -21,6 +21,7 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
       <div className="inline-flex mt-2 xs:mt-0">
         <Button
           text="Prev"
+          data-testid="Pagination-prev-button"
           onClick={(event) => {
             event.preventDefault();
             if (currentPage - 1) paginate(currentPage - 1);
@@ -28,16 +29,19 @@ const Pagination = ({ issuesPerPage, currentPage, totalIssues, paginate }) => {
         />
         {pageNumbers.map((number) => (
           <Button
+          data-testid={`Pagination-page-button-${number}`}
             key={number}
             text={number}
             onClick={(event) => {
               event.preventDefault();
               paginate(number);
             }}
+           
           />
         ))}
         <Button
           text="Next"
+          data-testid="Pagination-next-button"
           onClick={(event) => {
             event.preventDefault();
             if (currentPage < totalIssues / issuesPerPage)

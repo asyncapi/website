@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'April Community Update'
-featured: true
 ---
 
 April brought ecstatic news that AsyncAPI is participating in the 2023 Google Season of Docs (GSoD). This achievement is a result of the exceptional work done by [Alejandra Quetzalli](https://www.linkedin.com/in/alejandra-quetzalli/), our lead documentation engineer and author of [Docs-as-Ecosystem: The Community Approach to Engineering](https://docsasecosystem.com/). Alejandra's contributions to the documentation process have been vital in improving the quality of AsyncAPI documentation, and her hard work has not gone unnoticed. As part of the GSoD program, Ale carefully reviewed and selected the best applicants out of the 87 applications received, and she conducted live writing/editing interviews. We are excited to welcome the five selected candidates, Mahfuza, Bhaswati, Rohit, Abhishek, and Hridyesh! We can't wait to see them contribute to AsyncAPI's documentation with Ale's guidance and mentorship. Do check out [Alejandra's Q1 AsyncAPI documentation report](https://www.asyncapi.com/blog/2023-Q1-docs-report) to learn more about our docs community's recent efforts.

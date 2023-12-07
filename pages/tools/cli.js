@@ -11,7 +11,6 @@ import {
 import CodeBlock from '../../components/editor/CodeBlock';
 import Heading from '../../components/typography/Heading';
 import Paragraph from '../../components/typography/Paragraph';
-import DocsButton from '../../components/buttons/DocsButton';
 import Button from '../../components/buttons/Button';
 
 const features = [
@@ -57,7 +56,7 @@ export default function CliPage() {
           className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
           href="https://www.github.com/asyncapi/cli"
         />
-        <Button text="View Docs" href="/docs/tools/cli" className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto" />
+        <Button text="View Docs" href="/docs/tools/cli" className="block mt-2 md:ml-2 md:mt-0 md:inline-block w-full sm:w-auto" />
       </div>
     );
   }

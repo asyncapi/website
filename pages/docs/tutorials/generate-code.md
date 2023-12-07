@@ -6,12 +6,21 @@ weight: 100
 
 ## Introduction
 
-In this tutorial, you'll learn how to generate code from your AsyncAPI document using the AsyncAPI generator tool.
+In this tutorial, you'll learn how to generate an application that uses the [Glee](https://github.com/asyncapi/glee) framework. You'll do it with an AsyncAPI document and the [AsyncAPI CLI](/tools/cli).
 
 ## Background context
-The [AsyncAPI Generator](https://github.com/asyncapi/generator) is a tool that you can use to generate whatever you want based on the AsyncAPI document. You can generate docs and code. It can be used as a library in a Node.js application or through the [AsyncAPI CLI](https://github.com/asyncapi/cli).
+[Glee](https://github.com/asyncapi/glee) is a TypeScript/JavaScript framework that enables you to create APIs and messaging clients based on your AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific AsyncAPI operations. You only have to provide the code for these functions and Glee handles the rest.
 
-The generator tool supports a number of templates to generate code for a variety of different languages and protocols as the output. These templates help to specify what exactly must be generated, and in this tutorial, you'll use a [Node.js template](https://github.com/asyncapi/nodejs-template).
+Glee is often used with the [AsyncAPI CLI](/tools/cli) for a better development experience.
+
+In the previous tutorial, you created an AsyncAPI document that is used in this tutorial.
+
+<Remember>
+
+If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file for overview, then generate one by running the following command using the AsyncAPI CLI: 
+`asyncapi new --example=tutorial.yml --no-tty`.
+
+</Remember>
 
 ## Installation guide
 <Remember>
@@ -24,42 +33,30 @@ import CliInstallation from '../../../assets/docs/fragments/cli-installation.md'
 
 <CliInstallation/>
 
-## Generate code
+## Create a Glee project
 
-To generate code from the [AsyncAPI document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document), follow the steps listed below:
-
-<Remember>
-
-If you did not follow the previous tutorial and do not have an `asyncapi.yaml` file ready, generate one running `asyncapi new --example=tutorial.yml --no-tty`.
-
-</Remember>
-
-1. Trigger generation of the Node.js code:
+1. Trigger the creation of the Glee project:
     <CodeBlock language="bash">
-    {`asyncapi generate fromTemplate asyncapi.yaml @asyncapi/nodejs-template -o output -p server=mosquitto`}
+    {`asyncapi new glee --name=tutorial --template tutorial`}
     </CodeBlock>
 
     Let's break down the previous command:
-    - `asyncapi generate fromTemplate` is how you use AsyncAPI Generator via the AsyncAPI CLI. 
-    - ` asyncapi.yaml` is how you point to your AsyncAPI document and can be a URL. 
-    - `@asyncapi/nodejs-template` is how you specify the Node.js template.
-    - `-o` determines where to output the result.
-    - `-p` defines additional parameters you want to pass to the template. Here, the `server` parameter specifies the server's name as it is defined in AsyncAPI document.
+    - `asyncapi new glee` is how you use Glee via the AsyncAPI CLI. 
+    - `--name=tutorial` is how you tell the AsyncAPI CLI to name your new Glee project. 
+    - `--template=tutorial` is how you tell the AsyncAPI CLI to use the template of a Glee project that was created specifically for this tutorial. 
 
-2. List all files in directory and check that the Node.js application is generated:
+2. List all files in the directory and confirm your Glee project creation:
     <CodeBlock language="bash">
-    {`cd output && ls`}
+    {`cd tutorial && ls`}
     </CodeBlock>
 
     Upon execution of the command above, the following is an example of the expected result:
     <CodeBlock language="bash">
     {`$ ls
-    Dockerfile
-    asyncapi.yaml
-    docs
-    src
+    LICENSE
     README.md
-    config
+    asyncapi.yaml
+    functions
     package.json`}
     </CodeBlock>
 
@@ -71,7 +68,7 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 
 2. Start the application:
     <CodeBlock language="bash">
-    {`npm start`}
+    {`npm run dev`}
     </CodeBlock>
 
 ## Send message to broker
@@ -87,13 +84,14 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 
 3. Go back to the previous terminal to check if your application logged the streetlight condition you just sent. You should see something like this displayed in the terminal:
     <CodeBlock language="bash">
-    {`light/measured was received:
-    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }`}
+    {`lightMeasured was received from mosquitto:
+    { id: 1, lumens: 3, sentAt: '2017-06-07T12:34:32.000Z' }
+    Streetlight with id "1" updated its lighting information to 3 lumens at 2017-06-07T12:34:32.000Z.`}
     </CodeBlock>
 ## Summary
-In this tutorial, you learned how to generate your code from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document) using the AsyncAPI generator tool. 
+In this tutorial, you learned how to create a Glee project from the [Streetlights API specification document created in a previous tutorial](https://asyncapi.com/docs/tutorials/create-asyncapi-document). 
 
-Additionally, you've learned how to run your code by installing the generated code's dependencies and sending several test messages to the Streelights application using the MQTT client.
+Additionally, you've learned how to run your code by installing the project's dependencies and sending several test messages to the Streelights application using the MQTT client.
 
 ## Next steps
-Now that you've completed this tutorial, go ahead and learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation.md) through the message validation techniques supported by AsyncAPI.
+Now that you've completed this tutorial, go ahead and learn how to [validate your AsyncAPI messages (events)](https://asyncapi.com/docs/tutorials/message-validation) through the message validation techniques supported by AsyncAPI.
