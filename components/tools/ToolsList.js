@@ -6,7 +6,7 @@ export default function toolsList({ toolsData }) {
     <div className="" data-testid="ToolsList-main" >
       {Object.keys(toolsData).map((categoryName, index) => {
         if(toolsData[categoryName].toolsList.length > 0) return (
-        <div className='my-8 scroll-m-[100px]' key={index} id={categoryName}>
+        <div className='my-8 scroll-m-[6.25rem]' key={index} id={categoryName}>
           <Heading typeStyle='heading-md-semibold' className='my-2' >
             {categoryName}
           </Heading>
