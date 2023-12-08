@@ -9,7 +9,6 @@ import LearningPanel from './LearningPanel'
 import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
-
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
@@ -100,12 +99,12 @@ export default function NavBar({
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpen(null);
-  }, [asPath])
+  }, [asPath]);
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a>
-      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10 whitespace-nowrap">
+      {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
+      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
             <div className="flex" >
