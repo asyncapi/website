@@ -100,11 +100,47 @@ All the information about the project's economy, the amount of the donations, th
 
 ## FAQs
 
-- **What is the goal of the project?** To make asynchronous APIs as successful and mature as REST APIs.
-- **What protocols does it support?** AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
-- **Who are the users of AsyncAPI?** AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka.
-- **What is the AsyncAPI Community?** It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.
-- **Who can use it?** Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.
-- **Where can I find more information?**
-    - [Official AsyncAPI Documentation](/docs)
-    - [Presentation by Fran Méndez, explaining the project](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
+<details class="cursor-pointer">
+<summary>What is the goal of the project?</summary>
+
+<p> To make asynchronous APIs as successful and mature as REST APIs.</p>
+
+</details>
+
+<details class="cursor-pointer ">
+<summary>What protocols does it support?</summary>
+
+<p>AsyncAPI is protocol-agnostic, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, Mercure, etc). For more information, refer to the [AsyncAPI specification documentation](https://www.asyncapi.com/docs/reference/specification/latest#serverBindingsObject).
+</p>
+
+</details>
+
+<details class="cursor-pointer">
+<summary>Who are the users of AsyncAPI?</summary>
+
+<p>AsyncAPI users are those who implement and maintain event-driven architecture. For example, people that write backend API using WebSocket, or people that maintain communication between their microservices using Kafka.</p>
+
+</details>
+
+<details class="cursor-pointer">
+<summary>What is the AsyncAPI Community?</summary>
+
+<p>It’s the core of the initiative. The AsyncAPI community contributes to the development of the tool, it promotes access and distribution of the specification allowing freedom of use, study, copying, modification, and redistribution to anyone who wishes to do so. The cooperation between these people in all areas of software production generates a substantial improvement in the quality of the software, as well as greater dissemination and sustainability over time, and prioritizing the benefit of society over any other.</p>
+
+</details>
+
+<details class="cursor-pointer">
+<summary>Who can use it?</summary>
+
+<p>Anyone. All projects under AsyncAPI Initiative are part of the Linux Foundation, licensed under the Apache 2.0 license. It’s open to use and contribution.</p>
+
+</details>
+
+<details class="cursor-pointer">
+<summary>Where can I find more information?</summary>
+
+&nbsp;[Official AsyncAPI Documentation](/docs)
+
+&nbsp;[Presentation by Fran Méndez, explaining the project](https://www.youtube.com/watch?v=UID1nnuFDtM&list=PLbi1gRlP7piitNgvqhIAvGNZM_kvP0r8R)
+
+</details>
