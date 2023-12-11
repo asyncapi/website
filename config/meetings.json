@@ -1,24 +1,10 @@
 [
   {
-    "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/793",
-    "banner": "",
-    "date": "2023-08-31T14:30:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NDEzM2E1ZGE5YWttYXVpYW9zbTl1cWM1YWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/857",
     "banner": "",
     "date": "2023-09-06T16:00:00.000Z"
-  },
-  {
-    "title": "AsyncAPI spec v3 support in Diff",
-    "calLink": "https://www.google.com/calendar/event?eid=YnVvZWt1azlwcTQxNzZnNzNpZ2c3cjdmbzAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/858",
-    "banner": "",
-    "date": "2023-08-29T13:30:00.000Z"
   },
   {
     "title": "Brainstorm on AsyncAPI Cheat Sheet Poster",
@@ -112,10 +98,15 @@
     "date": "2023-12-19T13:00:00.000Z"
   },
   {
-    "title": "4 Request/Reply Use Cases",
-    "calLink": "https://www.google.com/calendar/event?eid=Nmw4dWN1c2piYnBtYTgwcTM3ZDdqbW1kdHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/983",
-    "banner": "https://user-images.githubusercontent.com/40604284/288090985-e34cee85-2ad1-4109-a841-678e7435a88d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3OTAwMjgsIm5iZiI6MTcwMTc4OTcyOCwicGF0aCI6Ii80MDYwNDI4NC8yODgwOTA5ODUtZTM0Y2VlODUtMmFkMS00MTA5LWE4NDEtNjc4ZTc0MzVhODhkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA1VDE1MjIwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZlNjg0N2Y1NGU5YWI2YWM5Yjc5ZGY4MzMyYzY2ZjRmMmNhYTAwMWVkZWI3MTE5MGRmZjAwNzE2NWRhYjkzYWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.TZLYLUFI1kKex1hzyaEGIkpK-JUN0wM2TPusmOivfeE",
+    "title": "AsyncAPI v3 announcement",
+    "calLink": "https://www.google.com/calendar/event?eid=NmhzMGZnNTRnZHNnZTFtbnRjbmhpZnJzbjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "date": "2023-12-06T15:00:00.000Z"
+  },
+  {
+    "title": "3 Request/Reply Use Cases",
+    "calLink": "https://www.google.com/calendar/event?eid=b3NvM2c0dW9tcTk1djRiMDJmbWU4dG9odGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/985",
+    "banner": "https://user-images.githubusercontent.com/40604284/288488243-e274e624-c5b3-4bff-b0ec-8c1929a24aae.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE4ODI2MTUsIm5iZiI6MTcwMTg4MjMxNSwicGF0aCI6Ii80MDYwNDI4NC8yODg0ODgyNDMtZTI3NGU2MjQtYzViMy00YmZmLWIwZWMtOGMxOTI5YTI0YWFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA2VDE3MDUxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUyMGYyNDE3Nzg4OGUyZGVmYjNlMDkxYzVkOWFkNjEwYjM4ZDI2YzZjZmUyYjRjMDliMDQ3YWJiNTVlNDI1MmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jYmY72ZRresQv1lMFeKwA49Wi6VkAozRpIHH4uE0J8g",
     "date": "2023-12-14T18:00:00.000Z"
   }
 ]

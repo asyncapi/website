@@ -9,7 +9,6 @@ import LearningPanel from './LearningPanel'
 import CommunityPanel from "./CommunityPanel"
 import MobileNavMenu from './MobileNavMenu'
 import otherItems from './otherItems'
-
 import GithubButton from "../buttons/GithubButton"
 import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
@@ -100,7 +99,7 @@ export default function NavBar({
   useEffect(() => {
     setMobileMenuOpen(false);
     setOpen(null);
-  }, [asPath])
+  }, [asPath]);
 
   return (
     <div className={`bg-white ${className} z-50`}>
