@@ -7,7 +7,7 @@ export default function AsyncAPISummary() {
         <div className="px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-8 mx-4">
                 <div className="col-start-3 col-span-5">
-                    <Heading level="h2" className="text-5xl my-3 mx-3">
+                    <Heading level="h2" className="text-5xl text-center my-3 mx-3">
                         AsyncAPI Financial Summary
                     </Heading>
                     <Paragraph typeStyle="body-md" className="my-1 max-w-4xl text-darkGunMetal">
