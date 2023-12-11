@@ -1,4 +1,4 @@
-import type { Context } from "netlify:edge";
+import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
 
 const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
 const NR_API_KEY = Deno.env.get("NR_API_KEY");
