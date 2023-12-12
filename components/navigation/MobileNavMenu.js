@@ -71,19 +71,19 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
               </div>
             </div>
           </div>
-          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('learning')}>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('learning')} data-testid="MobileNav-docs">
             <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/docs" className="flex">Docs</Link></a><NavItemDropdown/></h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
-          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('tooling')}>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('tooling')} data-testid="MobileNav-tools">
             <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/tools" className="flex">Tools</Link></a><NavItemDropdown/></h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
-          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('community')}>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('community')} data-testid="MobileNav-community">
             <h4 className="text-gray-800 font-medium flex justify-between"><a className="cursor-pointer"><Link href="/community" className="flex">Community</Link></a><NavItemDropdown/></h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
-          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('others')}>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('others')} data-testid="MobileNav-others">
             <div className="grid gap-4">
               <div>
                 <h4 className="text-gray-800 font-medium mb-4 flex justify-between"><a className="cursor-pointer">Others</a><NavItemDropdown /></h4>
