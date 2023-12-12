@@ -9,39 +9,36 @@ In a previous tutorial, you learnt how to manage schemas with schema registry. I
 
 ## Background Context
 
-Bindings enhances AsyncAPI documentation by providing protocol-specific information. They append to different document sections, such as servers, channels, or messages, and they include standard information that is unique to a particular protocol. 
+Bindings provide protocol-specific information for your Event-Driven application. Protocols have specific ways of handling messages; bindings abstract these details away from your application's core logic. Bindings improve the understanding and usability of the API by offering more setup options and context for various protocols. It includes information such as topics an application reads from or writes to, how the messages are formatted, and the rules for interacting with multiple data or messages. 
 
-Bindings improve the understanding and usability of the API by offering more setup options and context for various protocols. It includes information such as topics an application reads from or writes to, how the messages are formatted, and the rules for interacting with various data or messages. 
+In an AsyncAPI document, bindings can be appended to different document sections, such as servers, channels, or messages. They include standard information that is unique to a particular protocol. Bindings definitions allow you to specify the protocol-specific functionalities not supported by AsyncAPI's core features.
 
-Bindings definitions allow you to specify the protocol specific functionalities not supported by AsyncAPI's core features.
-
-You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on two levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object) and [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object). 
+You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on three levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object), [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object) and [message bindings](https://github.com/asyncapi/bindings/tree/master/kafka#message-binding-object).
 
 
 The diagram below shows how bindings with Kafka work. 
 
 ```mermaid
 graph TD
-    A[AsyncAPI Application] -->|Kafka Server Bindings| B[Kafka Broker/Cluster]
+    A[AsyncAPI Application] -->|Kafka Server Bindings| B[Kafka Broker]
     B -->|Kafka Channel Bindings| C[Producer Channel]
     B -->|Kafka Channel Bindings| D[Consumer Channel]
     C -->|Kafka Message Bindings| E[Producer Message]
     D -->|Kafka Message Bindings| F[Consumer Message]
-    style A fill:#f9f,stroke:#333,stroke-width:4px
-    style B fill:#ccf,stroke:#333,stroke-width:4px
-    style C fill:#fcf,stroke:#333,stroke-width:4px
-    style D fill:#fcf,stroke:#333,stroke-width:4px
-    style E fill:#cff,stroke:#333,stroke-width:4px
-    style F fill:#cff,stroke:#333,stroke-width:4px
+    style A fill:#47BCEE,stroke:#333,stroke-width:4px
 ```
 
-## Server Bindings
+## Add server bindings
 
 Server bindings provide protocol-specific configuration details for connecting and interacting with a server.
 
-## Channel Bindings
+## Add channel bindings
 
 Channel bindings provide protocol-specific information for a particular channel. For example, in Kafka, you can specify number of partitions or replicas for a given topic.
+
+## Add message bindings
+
+Message bindings provide protocol-specific information for a specific message. Like the Kafka topic it's associated with, message key (if any), and Kafka-specific properties.
 
 ## Summary
 
