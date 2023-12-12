@@ -1,13 +1,13 @@
 ---
-title: Server Variables
+title: Server variables
 weight: 275
 ---
 
-Server's URL consists of `host` and `pathname` fields. These values are not always known when you design your system. AsyncAPI enables you to construct dynamic URLs while enhancing the flexibility and maintainability of your AsyncAPI documents. These dynamic values (variables) are placeholders for values you can replace during runtime. This way you can easily manage multiple endpoints, handling various server configurations and environments.
+The server's URL consists of the `host` and `pathname` fields. These values are not always known when you design your system. AsyncAPI enables you to construct dynamic URLs while enhancing the flexibility and maintainability of your AsyncAPI documents. These dynamic values (variables) are placeholders for values you can replace during runtime. You can easily manage multiple endpoints, handling various server configurations and environments.
 
 ## Add variables
 
-You can add variables to `server.host` and `server.pathname` and you do it by adding a variable in between curly braces like `{braces}`. Next, you use `server.variables` to provide definitions of your variables. Leverage `components.serverVariables` to enable reusable variable definitions across multiple servers.
+You can add variables to `server.host` and `server.pathname` by adding a variable between curly braces like `{braces}`. Next, you use `server.variables` to provide definitions of your variables. Finally, leverage `components.serverVariables` to enable reusable variable definitions across multiple servers.
 
 The diagram below describes how to use reusable variables in AsyncAPI.
 
@@ -33,11 +33,11 @@ graph LR
   style E fill:#47BCEE,stroke:#000
 ```
 
-You put variables in `host` and/or `pathname`. Next, you define reusable variables in `components.serverVariables`. Last, you make sure that `server.variables` from your server reference definitions from `components.serverVariables` using `$ref`.
+First, configure the variables in `host` and/or `pathname`. Next, define reusable variables in `components.serverVariables`. Finally, ensure that your `server.variables` from the server reference definitions in the `components.serverVariables` uses `$ref`.
 
 ### Servers section
 
-Define the servers section in your AsyncAPI document, and include the `host` and `pathname` for your API servers. Use placeholders enclosed in curly braces {} to represent the variables in the server. For example:
+Define the servers section in your AsyncAPI document, including the `host` and `pathname` for your API servers. Use placeholders enclosed in curly braces {} to represent the variables in the server. For example:
 
 ```yaml
 servers:
@@ -60,7 +60,7 @@ servers:
 
 ### `serverVariables` section
 
-Define the `components.serverVariables` section in your AsyncAPI document. For each variable used in the server `host` or `pathname`, provide a default value and an optional description. This helps you avoid repeating variable defination. For example:
+Define the `components.serverVariables` section in your AsyncAPI document. For each variable used in the server `host` or `pathname`, provide a default value and an optional description to avoid repeating the variable definitions. For example:
 
 ```yaml
 components:
@@ -81,7 +81,7 @@ components:
 
 ### Define domain and port variables
 
-Use `components.serverVariables` in your server using [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) to avoid repeating the information:
+Use `components.serverVariables` in your server using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) to avoid repeating information:
 
 ```yml
     variables:
