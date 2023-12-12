@@ -1,124 +1,86 @@
 ---
-title: Dynamic Channel Address
+title: Parameters in Channel Address
 weight: 80
 ---
 
-Dynamic channel addresses specify dynamic parts of a channel address, which becomes particularly useful when you want to use and reuse parameters in a channel address.
+Parameters in channel addresses specify dynamic parts of an address, which becomes particularly useful is a setup like for example IoT, where you have topic per device or segment of devices. This way the setup you describe with your AsyncAPI document is a system with multiple channels that have the same definition, messages and purpose and the only difference is the channel address that is different per device because of device identifier. In such cases you provide one channel definition, and part of the address that is dynamic, you describe using parameters. 
 
-Here is the diagram explaining dynamic channel address:
+## Add parameters
 
-```mermaid
-      graph TD
-      A[AsyncAPI]
-      B[Dynamic Channel Address]
-      D[Variable Usage in Channel Address]
-      E[Adapted to Multiple APIs and Protocols]
-      F[Reused Across Channels]
+You can add parameters to `channel.address` by adding a parameter between curly braces like `{braces}`. Next, you use `channel.parameters` to provide definitions of your parameters. Finally, leverage `components.parameters` to enable reusable parameters' definitions across multiple channels.
 
-      style B fill:#47BCEE,stroke:#47BCEE;
-
-      A --> B
-      B --> D
-      D --> E
-      D --> F
-```
-
-The diagram shows how dynamic channel addresses allow flexible event-driven interfaces by using and reusing parameters in channel names, adapting well to various APIs and protocols.
-
-Here is an example of dynamic channel address:
-
-```yml
-userSignedUp:
-  address: 'user.signedup'
-  messages:
-    userSignedUp:
-      $ref: '#/components/messages/userSignedUp'
-```
-
-This document defines a dynamic channel address for a `userSignedUp` event message, making it easy to include and reuse specific details in the channel address.
-
-## Parameter context
-
-In a channel address, there's a map of parameters, which needs to include all the same parameters that are in the main channel address. The names you use for the parameters in this map must be exactly the same as the names you used in the channel address.
-
-Here is a diagram explaining parameter context:
+The diagram below describes how to use reusable parameters in AsyncAPI.
 
 ```mermaid
-graph TD
-    A[Channel Address] --> B{Parameter Map}
-    B --> C{Parameters}
-    C --> D[Parameter 1]
-    C --> E[Parameter 2]
-    C --> F[Parameter 3]
-    D --> G{Parameter Name}
-    E --> G
-    F --> G
-    A --> G
-
-    style B fill:#47BCEE,stroke:#47BCEE;
+graph LR
+  C[channels]
+  F[address]
+  I[messages]
+  A[components]
+  B[parameters]
+  D[parameters]
+  C --> F
+  C --> I
+  C --> D
+  D --> |$ref| B
+  A --> B
+  
+  style C fill:#47BCEE,stroke:#000;
+  style D fill:#47BCEE,stroke:#000;
+  style F fill:#47BCEE,stroke:#000;
 ```
 
-This diagram shows how the channel address includes the same parameters as the channel address, and each parameter's name matches the one used in the address.
+First, configure the variables in `address`. Next, define reusable variables in `components.parameters`. Finally, ensure that your `channel.parameters` reference definitions in the `components.parameters` using `$ref`.
 
-Here is an example of a dynamic channel address and its parameter:
+### Channels section
+
+Here is an example of parametrized channel address:
 
 ```yml
-user/{userId}/signup:
-  parameters:
-    userId:
-      description: Id of the user.
-      location: $message.payload#/user/id
-  subscribe:
-    message:
-      $ref: "#/components/messages/userSignedUp"
-```
-
-In the above document, `user/{userId}/signedup` is the address where `{userId}` is a parameter for that address.
-
-## Reusing parameters
-
-Parameters can be reused. This reuse optimizes the usage of parameters within the API by letting you use the parameters again.
-
-If there is another message, for example, a `UserUpdated` message, which also requires the `userId` parameter, it can be reused like in the following example:
-
-```mermaid
-graph TD
-    subgraph Channels
-        userSignedUp["userSignedUp"]
-    end
-
-    subgraph Parameters
-        userId["userId"]
-    end
-
-    userSignedUp -->|requires| userId
-
-    subgraph Reused Parameters
-        UserUpdated["UserUpdated"]
-    style UserUpdated fill:#47BCEE,stroke:#47BCEE;
-    
-    end
-    UserUpdated -->|reuses| userId
-```
-
-In this diagram, a channel named `userSignedUp` that requires a parameter `userId` .Additionally, the parameter `userId` is reused for another message, `UserUpdated`.
-
-Here is an example of reusing parameters:
-
-```yml
-channels:
-  UserSignedUp:
-    address: 'user/{userId}/signedup'
+  lightingMeasured:
+    address: 'smartylighting/streetlights/1/0/event/{streetlightId}/lighting/measured'
+    description: The topic on which measured values may be produced and consumed.
     parameters:
-      $ref: '#/components/parameters/userId'
-  UserUpdated:
-    address: 'user/{userId}/updated'
-    parameters:
-      $ref: '#/components/parameters/userId'
+      streetlightId:
+        description: The ID of the streetlight.
+```
+
+In above example you can see a definition of a `lightingMeasured` channel that contains a `streetlightId` parameter. This means that in runtime there can be two or more channels that serve the same purpose but different devices. There can be for example channel `smartylighting/streetlights/1/0/event/2/lighting/measured` and `smartylighting/streetlights/1/0/event/1/lighting/measured`.
+
+### `parameters` section
+
+Define the `components.parameters` section in your AsyncAPI document. For each parameter used in the channel `address`, provide a good description and other details that help understand what parameter represents. Avoid repeating the parameter definitions. For example:
+
+```yaml
 components:
   parameters:
-    userId:
-      description: Id of the user.
+    streetlightId:
+      description: The ID of the streetlight.
 ```
 
-In the previous example, the `userId` parameter is defined under `components`, and both channels  `UserSignedUp` and `UserUpdated` are reusing it in their address by referencing via `$ref`.
+You can reuse parameters using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) like in the following example:
+
+```yml
+    parameters:
+      streetlightId:
+        $ref: '#/components/parameters/streetlightId'
+```
+
+Here's the complete AsyncAPI document with the channels' parameters for the `address` field:
+```yaml
+asyncapi: 3.0.0
+info:
+  title: Example API
+  version: '1.0.0'
+channels:
+  lightingMeasured:
+    address: 'smartylighting/streetlights/1/0/event/{streetlightId}/lighting/measured'
+    description: The topic on which measured values may be produced and consumed.
+    parameters:
+      streetlightId:
+        $ref: '#/components/parameters/streetlightId'
+components:
+  parameters:
+    streetlightId:
+      description: The ID of the streetlight.
+```
