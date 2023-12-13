@@ -1,13 +1,13 @@
 ---
-title: Parameters in Channel Address
+title: Parameters in channel address
 weight: 80
 ---
 
-Parameters in channel addresses specify dynamic parts of an address, which becomes particularly useful is a setup like for example IoT, where you have topic per device or segment of devices. This way the setup you describe with your AsyncAPI document is a system with multiple channels that have the same definition, messages and purpose and the only difference is the channel address that is different per device because of device identifier. In such cases you provide one channel definition, and part of the address that is dynamic, you describe using parameters. 
+In the context of channel addresses within AsyncAPI documents, parameters play a crucial role in defining the dynamic components of an address. That aspect is particularly beneficial in setups like IoT, where topics are often assigned per device or device segment. In this scenario, your AsyncAPI document would describe a system composed of multiple channels. While these channels share the same definition, messages, and purpose, they differ in their channel addresses, which vary according to each device's identifier. To efficiently manage this setup, you provide a singular channel definition. The dynamic segment of each channel address, which corresponds to the device identifier, is then articulated through the use of parameters. 
 
 ## Add parameters
 
-You can add parameters to `channel.address` by adding a parameter between curly braces like `{braces}`. Next, you use `channel.parameters` to provide definitions of your parameters. Finally, leverage `components.parameters` to enable reusable parameters' definitions across multiple channels.
+You can add parameters to the `channel.address` by adding a parameter between curly braces like `{braces}`. Next, use `channel.parameters` to define your parameters. Finally, leverage the `components.parameters` to enable reusable parameters' definitions across multiple channels.
 
 The diagram below describes how to use reusable parameters in AsyncAPI.
 
@@ -30,11 +30,11 @@ graph LR
   style F fill:#47BCEE,stroke:#000;
 ```
 
-First, configure the variables in `address`. Next, define reusable variables in `components.parameters`. Finally, ensure that your `channel.parameters` reference definitions in the `components.parameters` using `$ref`.
+First, configure the variables in `address`. Next, define reusable variables in `components.parameters`. Finally, ensure that your `channel.parameters` references definitions in the `components.parameters` using `$ref`.
 
 ### Channels section
 
-Here is an example of parametrized channel address:
+Here is an example of a parametrized channel address:
 
 ```yml
   lightingMeasured:
@@ -45,11 +45,11 @@ Here is an example of parametrized channel address:
         description: The ID of the streetlight.
 ```
 
-In above example you can see a definition of a `lightingMeasured` channel that contains a `streetlightId` parameter. This means that in runtime there can be two or more channels that serve the same purpose but different devices. There can be for example channel `smartylighting/streetlights/1/0/event/2/lighting/measured` and `smartylighting/streetlights/1/0/event/1/lighting/measured`.
+In the above example, you can see a definition of a `lightingMeasured` channel that contains a `streetlight` parameter. During runtime, there can be two or more channels serving the same purpose, but with different devices. For example, you could have channels for  `smartylighting/streetlights/1/0/event/2/lighting/measured` and `smartylighting/streetlights/1/0/event/1/lighting/measured`.
 
 ### `parameters` section
 
-Define the `components.parameters` section in your AsyncAPI document. For each parameter used in the channel `address`, provide a good description and other details that help understand what parameter represents. Avoid repeating the parameter definitions. For example:
+In your AsyncAPI document, it's important to carefully define the `components.parameters` section. For each parameter utilized in the channel `address`, provide a comprehensive description along with other pertinent details. Avoid repeating the parameter definitions. For example:
 
 ```yaml
 components:
