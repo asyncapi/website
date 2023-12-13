@@ -3,134 +3,154 @@ title: Adding Messages
 weight: 140
 ---
 
-Adding [messages](../message) in an AsyncAPI document primarily involves defining channels, operations, and messages, which is crucial for documenting the exchange of data between your applications. In AsyncAPI, you define the interaction of your application with a message broker in terms of channels and operations. [Channels](../channel) are the medium through which messages are sent or received, while operations represent the actions of publishing or subscribing to these channels.
+Adding [messages](/docs/reference/specification/v3.0.0#messageObject) in an AsyncAPI document primarily involves defining channels and operations which is crucial for documenting the exchange of data between your applications. Although it is possible that you may want to use AsyncAPI document to only describe the messages and nothing else.
 
-Here is a diagram explaining messages:
+## Add messages
+
+You define messages under channels. Although best practice is first define messages under components as reusable definitions so you can reference them from a channel.
+
+
+Here is a diagram showing some channel fields and the relation between channel messages and components messages:
 
 ```mermaid
-graph TD;
-    A[AsyncAPI Message] --> B[Headers]
-    A --> C[Payload]
-
-    style A fill:#47BCEE,stroke:#47BCEE;
+graph LR
+  C[channels]
+  F[title]
+  I[address]
+  A[components]
+  B[messages]
+  D[messages]
+  C --> F
+  C --> I
+  C --> D
+  D --> |$ref| B
+  A --> B
+  
+  style C fill:#47BCEE,stroke:#000;
+  style D fill:#47BCEE,stroke:#000;
 ```
 
-The above diagram shows the components of AsyncAPI messages: headers and payload.
+### Channels section
 
-Here is an example of a simple message:
+Define the channels section in your AsyncAPI document, including the `messages` your channel accepts. For example:
 
-```yml
+```yaml
 channels:
-  user/signedup:
-    address: 'application/json'
+  allCommentLiked:
+    address: comment/liked
     messages:
-      userSignUp:
-        $ref: '#/components/messages/userSignUp'
+      commentLiked:
+        description: Message that is being sent when a comment has been liked by someone.
+        payload:
+           type: object
+           title: commentLikedPayload
+           additionalProperties: false
+           properties:
+               commentId: 
+                 type: string
+                 description: Id of the comment that was liked
+    description: Notification channel for all the services that need to know comment is liked.
 ```
 
-This document defines a `user/signedup` channel where a `userSignUp` message can be made.
+Above example presents an application that communicates over `allCommentLiked` channel. This channel that accepts only one message called `commentLiked`.
 
-## Using multiple message types
+### `messages` section
 
-AsyncAPI supports defining multiple possible message types for a single channel.
+Define the `components.messages` section in your AsyncAPI document. For each message relevant to your application, provide reusable message definition so when defininig multiple channels you avoid repeating the message definitions. For example:
 
-Here is a diagram showing the use of multiple message types:
-
-```mermaid
-graph TD;
-    A[Operations] --> B[Messages]
-    B --> C[Message Type 1]
-    B --> D[Message Type 2]
-    style B fill:#47BCEE,stroke:#47BCEE;
-```
-
-This diagram shows how AsyncAPI uses multiple message types for a single channel.
-
-Here is an example document of how AsyncAPI supports the use of multiple message types for a single channel:
-
-```yml
-channels:
-  userSignupWithReply:
-    messages:
-      signup:
-        $ref: '#/components/messages/userSignedUp'
-      reply:
-        $ref: '#/components/messages/userSignedUpReply'
-```
-
-The above document shows a channel `userSignupWithReply` under which two messages can be sent or received: `userSignedUp` or `userSignedUpReply`.
-
-## Specifying `contentType` in messages
-
-The `contentType` field specifies the format of the payload. If it's not provided, the default payload format is `application/json`.
-
-Here is a diagram showing how to specify `contentType` in messages:
-
-```mermaid
-graph TD;
-    A[AsyncAPI Message] --> B[contentType]
-    style A fill:#47BCEE,stroke:#47BCEE;
-```
-
-The above diagram shows an AsyncAPI message that can specify a content type (`contentType`), which defaults to `application/json`.
-
-The following code shows how `contentType` is added to the Message:
-
-```yml
-messageId: userSignup
-name: UserSignup
-title: User signup
-summary: Action to sign a user up.
-description: A longer description
-contentType: application/json
-```
-
-In this document, the `contentType` is specified as `application/json` for the `userSignup` message.
-
-## Reusing components
-
-The components object in the AsyncAPI specification contains reusable objects, but they will only impact the application if they are specifically referred to outside the components object.
-
-Here is a diagram explaining how to reuse components:
-
-```mermaid
-flowchart TB
-
-subgraph Components Object
-  Component_1
-  Component_2
-  Component_3
-end
-
-subgraph API
-  API_implementation --> Component_1:Uses
-  API_implementation --> Component_2:Uses
-  API_implementation --> Component_3:Uses
-
-  style API_implementation fill:#47BCEE,stroke:#47BCEE;
-end
-```
-
-The above diagram shows how components in the API implementation are used by various components, emphasizing their impact when referred to outside the components object.
-
-Here is an example demonstrating how components are reused in AsyncAPI:
-
-```yml
+```yaml
 components:
   messages:
-    user:
-      contentType: 'application/json'
-      schema:
-        $ref: '#/components/schemas/User'
-
-  schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
+    commentLiked:
+        description: Message that is being sent when a comment has been liked by someone.
+        payload:
+           type: object
+           title: commentLikedPayload
+           additionalProperties: false
+           properties:
+               commentId: 
+                 type: string
+                 description: Id of the comment that was liked
 ```
 
-The above document shows reuse of a component by defining a `User` schema.
+You can reuse messages using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) like in the following example:
+
+```yml
+    messages:
+      commentLiked:
+        $ref: '#/components/messages/commentLiked'
+```
+
+Here's the complete AsyncAPI document with channels reusing the same message:
+```yml
+asyncapi: 3.0.0
+info:
+  title: Example API
+  version: '1.0.0'
+channels:
+  allCommentLiked:
+    address: comment/liked
+    messages:
+      commentLiked:
+        $ref: '#/components/messages/commentLikedUnliked'
+    description: Notification channel for all the services that need to know comment is liked.
+  allCommentUnliked:
+    address: comment/unliked
+    messages:
+      commentUnliked:
+        $ref: '#/components/messages/commentLikedUnliked'
+    description: Notification channel for all the services that need to know comment is liked.
+components:
+  messages:
+    commentLikedUnliked:
+        description: Message that is being sent when a comment has been liked or unliked by someone.
+        payload:
+           type: object
+           title: commentInfoPayload
+           additionalProperties: false
+           properties:
+               commentId: 
+                 type: string
+                 description: Id of the comment that was liked or unliked
+```
+
+### Identifier of the message
+
+Name of the key that represents a message in AsyncAPI document must be interpreted as `messageId`. In case your document defines channels, the key of the message defined in the channel is the `messageId`.
+
+```yaml
+channels:
+  allCommentLiked:
+    address: comment/liked
+    messages:
+      commentLiked:
+        $ref: '#/components/messages/commentLikedUnliked'
+    description: Notification channel for all the services that need to know comment is liked.
+```
+
+Above example shows a `commentLiked` message under `allCommentLiked` channel. It references a reusable message definition from the `components` section that is represented by `commentLikedUnliked` key. In this setup `commentLiked` key is the `messageId` and not `commentLikedUnliked`.
+
+### Messages under operations
+
+Operations reference what channels the are performed against. If channel definition contains multiple different messages but your operation relates to only one of these, you need to specify under operation what message it uses.
+
+```yaml
+channels:
+  allComments:
+    address: comments
+    messages:
+      commentLiked:
+        $ref: '#/components/messages/commentLikedMsg'
+      commentUnliked:
+        $ref: '#/components/messages/commentUnlikedMsg'
+    description: Notification channel for all the services that need to know comment is liked.
+operations:
+  onCommentLiked:
+    action: receive
+    channel:
+      $ref: '#/channels/allComments'
+    messages:
+      - $ref: '#/channels/allComments/messages/commentLiked'
+```
+
+Above example shows how you can specify what message `onCommentLiked` operation will receive from the `allCommentLiked` channel. Notice that the reference information about the message points to the channel, not components section. This way you get a proper information about the `messageId`, which is `commentLiked` and not `commentLikedMsg`.
