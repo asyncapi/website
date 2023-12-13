@@ -3,27 +3,26 @@ title: Add servers
 weight: 295
 ---
 
-A server represents a message broker handling communication between producers and consumers. Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+A server may represent a message broker handling communication between producers and consumers. It can also represent other things so please first familiarize first with [Server](/docs/concepts/server) concept.
 
-A unique key identifies the server and contains information about the server's connection details, such as the URL, protocol, and authentication. The diagram below describes how to define and add servers in AsyncAPI.
+Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+
+A unique key identifies the server and contains information about the server's connection details, such as the host, protocol, and authentication. 
+
+Here is an illustration of server information with selected fields: 
 
 ```mermaid
-graph TD
-    A[channel: userActions]
-    B[operation: subscribe]
-    C[message]
-    D[payload]
-    SA[servers: development, production]
-
-style SA fill:#47BCEE,stroke:#47BCEE;
-
-  SA -->|AsyncAPI| A
-  A -->|inherits servers| B
-  B -->|references| C
-  C -->|references| D
+graph LR
+  C[servers]
+  F[host]
+  I[protocol]
+  E[security]
+  C --> F
+  C --> E
+  C --> I
 ```
 
-For more information, refer to the [introduction to servers](/docs/server.md) document.
+Server is one of main sections of AsyncAPI document next to others like `info`, `channels` or `operations`.
 
 ## Define servers
 
@@ -31,55 +30,61 @@ Define the servers in your AsyncAPI specification file. Server definitions speci
 
 ```yaml
 servers:
-  url: mqtt://test.mosquitto.org
-  protocol: mqtt
-  description: Test MQTT server
+  prod:
+    host: test.mosquitto.org
+    protocol: mqtt
+    description: Test MQTT server
 ```
 
-In this example, you define a server with the URL using the MQTT protocol and describe the server.
+In this example, you define a server that uses MQTT protocol and messages are sent or received from `test.mosquitto.org` host.
 
-### Define Server reference
+## Server reusability
 
-Add the server reference to your channels or components in the AsyncAPI specification. You can specify the server for each channel or component. Here's an example of how to add a server reference to a channel:
+Reuse servers by adding their definitions in one place, like `components.servers` and then reference to them using `$ref` keyword.
+
+Here's an example of AsyncAPI document with two servers referenced from `components` section:
+```yaml
+servers:
+  kafka-test:
+    $ref: '#/components/servers/kafka-test
+  mqtt-test:
+    $ref: '#/components/servers/mqtt-test
+components
+  servers:
+    kafka-test:
+      host: my.kafka.pl
+      protocol: kafka-secure
+      description: Test Kafka server
+    mqtt-test:
+      host: test.mosquitto.org
+      protocol: mqtt
+      description: Test MQTT server
+```
+
+In this example main `servers` section contains a list of servers but their definitions are sharable. You can also put servers definitions in a separate location and share across multiple AsyncAPI documents.
+
+## Channel only on specific server
+
+Your AsyncAPI document can describe an application that receives messages on one channel from server operating over MQTT, but sends messages on another channel operating over Kafka. This means you have two servers defined, but your channels are not available on all servers. In other words, you have one channel available only on MQTT server, and one channel available only on Kafka server. You can describe it in AsyncAPI document by adding `servers` array directly to channel. It should contain references to respective servers definitions.
+
+Here's an example of how to add a server reference to a channel:
 
 ```yaml
+servers:
+  kafka-test:
+    host: my.kafka.pl
+    protocol: kafka-secure
+    description: Test Kafka server
+  mqtt-test:
+    host: test.mosquitto.org
+    protocol: mqtt
+    description: Test MQTT server
 channels:
   myChannel:
-    publish:
-      server: mqttServer
-      message:
-        $ref: '#/components/messages/myMessage'
+    servers:
+      $ref: "#/servers/mqtt-test"
+    message:
+      $ref: '#/components/messages/myMessage'
 ```
 
-In this example, specify the server reference `mqttServer` for the `myChannel` channel.
-
-## AsyncAPI apps
-
-Servers interact with AsyncAPI apps by following configurations defined in the AsyncAPI document. They establish connections, subscribe to channels, publish and consume messages, handle errors, and enforce security measures based on the defined server configurations.
-
-Here's an example of a server to publish messages to a channel.
-
-1. The server establishes connections based on the server configurations in the AsyncAPI document.
-1. The server uses the `publishMessage` operation ID to publish messages to the channel. The message payload follows the defined schema in the `ChatMessage` message component.
-1. When an app subscribes to the `chat.message` channel, it receives the published messages.
-
-```yaml
-channels:
-  chat.message:
-    publish:
-      operationId: publishMessage
-      message:
-        $ref: '#/components/messages/ChatMessage'
-components:
-  messages:
-    ChatMessage:
-      payload:
-        type: object
-        properties:
-          sender:
-            type: string
-          content:
-            type: string
-```
-
-The server can also validate the incoming requests from the app.
+In this example, `myChannel` channel is available only on `mqtt-test` server.
