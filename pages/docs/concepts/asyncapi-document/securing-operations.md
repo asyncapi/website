@@ -1,42 +1,44 @@
 ---
-title: 'Securing Operations'
+title: 'Operation security'
 weight: 120
 ---
 
-The server security concept implies that the security measures defined at the server level apply to all operations within all channels by default. 
+The server security concept implies that the security measures defined at the server level apply to all operations within all channels by default. To change that default behaviour for specific operation, you need to apply security information directly on that operation.
 
-## Security Features 
+## Add security
 
-The security requirements specified at the server level are enforced consistently across the entire Asyncapi document. There may be situations where certain operations within specific channels require different security measures than the default server-level settings. 
+To accommodate such scenarios, the AsyncAPI document allows you to use the `security` field at the `operation` level. You can have multiple security schemes but only one must be satisfied to authorize such operation.
 
-- To accommodate such scenarios, the AsyncAPI document allows you to use the `security` property at the `operation` level. This means users can define security requirements at both the global level and the operation (endpoint) level.
+The diagram below describes how to use reusable security schemes:
 
-```yaml
-channels:
-   AUTHORIZATION_REVOCATION:
-    address: AUTHORIZATION_REVOCATION
-    messages:
-      subscribe.message:
-        $ref: '#/components/messages/message'
-
-security:
-  - apiKey: []
+```mermaid
+graph LR
+  C[components]
+  F[address]
+  I[messages]
+  A[components]
+  B[securitySchemes]
+  D[security]
+  C --> F
+  C --> I
+  C --> D
+  D --> |$ref| B
+  A --> B
+  
+  style C fill:#47BCEE,stroke:#000;
+  style D fill:#47BCEE,stroke:#000;
 ```
 
-- One more way is when users don't use the `server` feature from AsyncAPI, and only include `channels` and `operations`. In this case, the user needs to specify the security of the operation within the `operations`.
+## Operation section
+
+Operation security information is represented by [Security scheme](/docs/reference/specification/v3.0.0#securitySchemeObject) on operation level. You can also use `$ref` keyword to reference the scheme stored in different location, like for example `components.securitySchemes`.
 
 ```yaml
-channels:
-  AUTHORIZATION_REVOCATION:
-    address: AUTHORIZATION_REVOCATION
-    messages:
-      subscribe.message:
-        $ref: '#/components/messages/message'
 operations:
-  AUTHORIZATION_REVOCATION.subscribe:
+  sendAuthRevoke:
     action: send
     channel:
-      $ref: '#/channels/AUTHORIZATION_REVOCATION'
+      $ref: '#/channels/authRevoke'
     security:
       - type: oauth2
         description: The oauth security descriptions
@@ -49,34 +51,33 @@ operations:
           - 'subscribe:auth_revocations'
 ```
 
-The `security` field comprises of 2 parts -
+Above example shows an `sendAuthRevoke` operation from AsyncAPI document that explains what operations client app can perform with existing notification service. In case there would be a server with separate server security, operation must satisfy it as well.
 
-- Security scheme object = This portion mentions the security schemes associated with the given operation. One of the security scheme objects must be satisfied to authorize an operation.
+## `securitySchemes` section
 
-- Reference object = This portion references a definition by linking to somewhere else in the document using the `$ref:` keyword.
-
-## Specifying Security Requirement 
-
-To specify different security requirements for a specific operation, you can include the `security` property within the operation's definition. 
-The security property is an array where you can define one or more security requirement objects.
-
-For example, let's say you have an AsyncAPI document with a channel called users and two operations within that channel: `createUser` and `getUser`. 
-The server-level security is set to use API key authentication for all operations within all channels. 
-
-The following example explains how to include security requirements for operations definition
+To reuse security schemes between operations, place them in `components.securitySchemes` and reference through `$ref` keyword in your operation:
 
 ```yaml
+operations:
+  sendAuthRevoke:
+    action: send
+    channel:
+      $ref: '#/channels/authRevoke'
+    security:
+      - $ref: '#/components/securitySchemes/oauth'
 
-title: User sign up
-summary: Action to sign a user up.
-description: A longer description
-channel:
-  $ref: '#/channels/userSignup'
-action: send
-security:
-  - OAuth2: []
+components:
+  securitySchemes:
+    oauth:
+       type: oauth2
+        description: The oauth security descriptions
+        flows:
+          clientCredentials:
+            tokenUrl: 'https://example.com/api/oauth/dialog'
+            availableScopes:
+              'subscribe:auth_revocations': Scope required for authorization revocation topic
+        scopes:
+          - 'subscribe:auth_revocations'
 ```
 
-In the above example, the `security` property is added under the `getUser` operation, indicating that the OAuth2 security requirement should be applied to that specific operation within the user's channel. The empty array [] signifies that no additional configuration is needed for the OAuth2 security mechanism.
-
-Utilizing the security property at the operation level allows you to deviate from the server-level security settings and define unique security requirements for individual operations within your AsyncAPI document. The capability ensures that you can adequately secure your API operations, even if they require different security measures.
+With above approach you can reuse scheme within multiple operations, even across multiple AsyncAPI documents.
