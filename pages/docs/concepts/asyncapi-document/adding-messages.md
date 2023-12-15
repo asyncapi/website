@@ -35,7 +35,7 @@ Define the channels section in your AsyncAPI document, including the `messages` 
 
 ```yaml
 channels:
-  allCommentLiked:
+  allCommentsLiked:
     address: comment/liked
     messages:
       commentLiked:
@@ -51,11 +51,11 @@ channels:
     description: Notification channel for all the services that need to know comment is liked.
 ```
 
-The above example presents an application that communicates over the `allCommentLiked` channel, which only accepts one message called `commentLiked`.
+The above example presents an application that communicates over the `allCommentsLiked` channel, which only accepts one message called `commentLiked`.
 
 ### `messages` section
 
-Define the `components.messages` section in your AsyncAPI document. For each message relevant to your application, provide reusable message definition so when defininig multiple channels you avoid repeating the message definitions. For example:
+In your AsyncAPI document, create a `components.messages` section to define each message your application uses as a reusable message. When setting up multiple channels, you won't have to repeat the same message definitions. For example:
 
 ```yaml
 components:
@@ -72,7 +72,7 @@ components:
                  description: Id of the comment that was liked
 ```
 
-You can reuse messages using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject) like in the following example:
+You can reuse messages using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject). For example:
 
 ```yml
     messages:
@@ -87,7 +87,7 @@ info:
   title: Example API
   version: '1.0.0'
 channels:
-  allCommentLiked:
+  allCommentsLiked:
     address: comment/liked
     messages:
       commentLiked:
@@ -115,11 +115,11 @@ components:
 
 ### Identifier of the message
 
-Name of the key that represents a message in AsyncAPI document must be interpreted as `messageId`. In case your document defines channels, the key of the message defined in the channel is the `messageId`.
+The key name that represents a message in your AsyncAPI document must be interpreted as `messageId`. If your document defines channels, the message key defined in the channel is the `messageId`.
 
 ```yaml
 channels:
-  allCommentLiked:
+  allCommentsLiked:
     address: comment/liked
     messages:
       commentLiked:
@@ -127,11 +127,11 @@ channels:
     description: Notification channel for all the services that need to know comment is liked.
 ```
 
-Above example shows a `commentLiked` message under `allCommentLiked` channel. It references a reusable message definition from the `components` section that is represented by `commentLikedUnliked` key. In this setup `commentLiked` key is the `messageId` and not `commentLikedUnliked`.
+The above example shows a `commentLiked` message under the `allCommentsLiked` channel. It references a reusable message definition from the `components` section represented by the `commentLikedUnliked` key. In this setup, the `commentLiked` key is the `messageId` and not `commentLikedUnliked`.
 
 ### Messages under operations
 
-Operations reference what channels the are performed against. If channel definition contains multiple different messages but your operation relates to only one of these, you need to specify under operation what message it uses.
+Operations specify which channels they interact with. If a channel has several messages, but your operation only involves one, indicate which specific message the operation uses. 
 
 ```yaml
 channels:
@@ -152,4 +152,4 @@ operations:
       - $ref: '#/channels/allComments/messages/commentLiked'
 ```
 
-Above example shows how you can specify what message `onCommentLiked` operation will receive from the `allCommentLiked` channel. Notice that the reference information about the message points to the channel, not components section. This way you get a proper information about the `messageId`, which is `commentLiked` and not `commentLikedMsg`.
+The above example demonstrates how to specify the message for the `onCommentsLiked` operation received from the `allCommentLiked` channel. It's important to note that the message reference points to the channel, not the components section. That ensures accurate information about the `messageId`, which in this case is `commentLiked`, not `commentLikedMsg`.
