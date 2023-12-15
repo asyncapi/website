@@ -1,5 +1,17 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/WCK9_ZDv6K4/hqdefault.jpg",
+    "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo(14th Dece…",
+    "description": "Participez à ce live pour découvrir les nouveautés de la V3 et comment migrer une version 2 en version 3 sur un use-case de ...",
+    "videoId": "WCK9_ZDv6K4"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
+    "title": "3 Request/Reply Use Cases",
+    "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
+    "videoId": "-OsMet9h_dg"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/yOc_fI-i9C8/hqdefault.jpg",
     "title": "Community Meeting(12th December)",
     "description": "https://github.com/asyncapi/community/issues/979.",
@@ -16,17 +28,5 @@
     "title": "Community Meeting(November 28th, 2023)",
     "description": "https://github.com/asyncapi/community/issues/918.",
     "videoId": "p68PUXDMsks"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/KDort611FNg/hqdefault.jpg",
-    "title": "Community Meeting(November 14th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/917.",
-    "videoId": "KDort611FNg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/Vm4ZKFb2PVE/hqdefault.jpg",
-    "title": "Community Meeting(October 31th, 2023)",
-    "description": "Powered by Restream https://restream.io https://github.com/asyncapi/community/issues/916.",
-    "videoId": "Vm4ZKFb2PVE"
   }
 ]
