@@ -1,12 +1,5 @@
 [
   {
-    "title": "Spec 3.0 Docs Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aHJwdnA1bzI1ajVjNzliZ2h2bm1nZnI3b3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/793",
-    "banner": "",
-    "date": "2023-08-31T14:30:00.000Z"
-  },
-  {
     "title": "Spec 3.0 Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=NDEzM2E1ZGE5YWttYXVpYW9zbTl1cWM1YWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/857",
@@ -26,13 +19,6 @@
     "url": "https://github.com/asyncapi/community/issues/865",
     "banner": "",
     "date": "2023-09-06T15:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=aTNsZXN2YzkwbWdyanBxdDgwY2RrbGxnMTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/868",
-    "banner": "https://user-images.githubusercontent.com/40604284/264583319-519e721e-3112-43ca-adab-d68bac288666.png",
-    "date": "2023-09-05T16:00:00.000Z"
   },
   {
     "title": "Community Meeting",
@@ -115,5 +101,12 @@
     "url": "https://github.com/asyncapi/community/issues/985",
     "banner": "https://user-images.githubusercontent.com/40604284/288488243-e274e624-c5b3-4bff-b0ec-8c1929a24aae.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE4ODI2MTUsIm5iZiI6MTcwMTg4MjMxNSwicGF0aCI6Ii80MDYwNDI4NC8yODg0ODgyNDMtZTI3NGU2MjQtYzViMy00YmZmLWIwZWMtOGMxOTI5YTI0YWFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA2VDE3MDUxNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUyMGYyNDE3Nzg4OGUyZGVmYjNlMDkxYzVkOWFkNjEwYjM4ZDI2YzZjZmUyYjRjMDliMDQ3YWJiNTVlNDI1MmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jYmY72ZRresQv1lMFeKwA49Wi6VkAozRpIHH4uE0J8g",
     "date": "2023-12-14T18:00:00.000Z"
+  },
+  {
+    "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
+    "calLink": "https://www.google.com/calendar/event?eid=Nmk1dm8yZm10dWc0ZXI3MTNtczRhbWkzdTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/988",
+    "banner": "https://user-images.githubusercontent.com/40604284/289498866-12bffa57-7db8-491f-917e-8e4f8f5b20a7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDIyODk0MDMsIm5iZiI6MTcwMjI4OTEwMywicGF0aCI6Ii80MDYwNDI4NC8yODk0OTg4NjYtMTJiZmZhNTctN2RiOC00OTFmLTkxN2UtOGU0ZjhmNWIyMGE3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMTElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjExVDEwMDUwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA4ZmVlODI0YzY4OTEwMTVkMWMxNzA3MzE5NGNkZDE4N2RmOTIzMWIwMTExNmQ2YzNiNjRhZGMwYWI5YmU2NjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.4vALVenjnYGjuQYn4FAT5X3yYBJHi8-bKVpGMriehJc",
+    "date": "2023-12-14T10:00:00.000Z"
   }
 ]
