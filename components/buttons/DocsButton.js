@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 export default function DocsButton({ post, className='' }) {
   return (
-    <div className={`flex flex-row gap-4 mb-4 h-full ${className}`}>
-      <div className="w-1/2 h-auto">
+    <div className={`flex flex-row gap-4 mb-4 max-h-[100%] ${className}`}>
+      <div className="w-1/2 h-full">
         { post?.prevPage && <Link href={post.prevPage.href} passHref>
             <a>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-left cursor-pointer">
+            <div className="p-4  rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-left cursor-pointer">
               <div className="text-secondary-500" data-testid="DocsButton-Prevdiv">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -32,10 +32,10 @@ export default function DocsButton({ post, className='' }) {
           </Link>
         }
       </div>
-      <div className="w-1/2 h-auto">
+      <div className="w-1/2 bg-white">
         { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
+            <div className="p-4 rounded shadow-md border h-[100%] border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
               <div className="text-secondary-500" data-testid="DocsButton-Nextdiv">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
