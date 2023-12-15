@@ -1,14 +1,13 @@
 ---
-title: Adding Messages
+title: Adding messages
 weight: 140
 ---
 
-Adding [messages](/docs/reference/specification/v3.0.0#messageObject) in an AsyncAPI document primarily involves defining channels and operations which is crucial for documenting the exchange of data between your applications. Although it is possible that you may want to use AsyncAPI document to only describe the messages and nothing else.
+In an AsyncAPI document, adding [messages](/docs/reference/specification/v3.0.0#messageObject) mainly means setting up channels and operations. This is key for explaining how data moves between your applications. However, sometimes you might just want to use the AsyncAPI document to describe the messages themselves, without anything else.
 
 ## Add messages
 
-You define messages under channels. Although best practice is first define messages under components as reusable definitions so you can reference them from a channel.
-
+In an AsyncAPI document, you define message definitions under channels. However, the best practice is to first define these messages under the 'components' section as reusable definitions. That way, you can reference them easily from a channel.
 
 Here is a diagram showing some channel fields and the relation between channel messages and components messages:
 
@@ -52,7 +51,7 @@ channels:
     description: Notification channel for all the services that need to know comment is liked.
 ```
 
-Above example presents an application that communicates over `allCommentLiked` channel. This channel that accepts only one message called `commentLiked`.
+The above example presents an application that communicates over the `allCommentLiked` channel, which only accepts one message called `commentLiked`.
 
 ### `messages` section
 
