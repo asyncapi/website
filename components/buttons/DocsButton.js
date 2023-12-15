@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function DocsButton({ post, className='' }) {
   return (
-    <div className={`flex flex-row gap-4 mb-4 max-h-[100%] ${className}`}>
+    <div className={`flex flex-row gap-4 mb-4  ${className}`}>
       <div className="w-1/2 h-full">
         { post?.prevPage && <Link href={post.prevPage.href} passHref>
             <a>
@@ -32,7 +32,7 @@ export default function DocsButton({ post, className='' }) {
           </Link>
         }
       </div>
-      <div className="w-1/2 bg-white">
+      <div className="w-1/2">
         { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
             <div className="p-4 rounded shadow-md border h-[100%] border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
