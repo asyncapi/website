@@ -12,33 +12,6 @@
       "score": 43.363362901138075
     },
     {
-      "id": "PR_kwDOB5hCo85gDiV-",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: new script and ci for JSON Schema validation",
-      "author": "AnimeshKumar923",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/452",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 33.886601472412536
-    },
-    {
-      "id": "I_kwDOFLhIt84-OUI3",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create educational & technical video explaining AsyncAPI's main features",
-      "author": "alequetzalli",
-      "resourcePath": "/asyncapi/community/issues/155",
-      "repo": "asyncapi/community",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 33.31225229491402
-    },
-    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -77,6 +50,22 @@
       "score": 16.65612614745701
     },
     {
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.056087666155555
+    },
+    {
       "id": "PR_kwDOFDnrNc5RUbi_",
       "isPR": true,
       "isAssigned": false,
@@ -97,17 +86,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 15.507427792459973
-    },
-    {
-      "id": "MDU6SXNzdWUxMjMwODQwMDM4",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Usages of allOf within message payload could be flattened",
-      "author": "jamescrowley",
-      "resourcePath": "/asyncapi/asyncapi-react/issues/596",
-      "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 14.933078614961456
     },
     {
       "id": "PR_kwDOBW5R_c5RI5z2",
@@ -132,6 +110,34 @@
       "score": 14.07155484871368
     },
     {
+      "id": "I_kwDOFDnrNc5rjrK-",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve `new glee` command",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/cli/issues/683",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "FD6F9E"
+        },
+        {
+          "name": "level/medium",
+          "color": "FD6F9E"
+        },
+        {
+          "name": "bounty/2023-Q4",
+          "color": "FD6F9E"
+        }
+      ],
+      "score": 13.497205671215161
+    },
+    {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
       "isPR": true,
       "isAssigned": false,
@@ -141,6 +147,22 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
