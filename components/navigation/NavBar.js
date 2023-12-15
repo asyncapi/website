@@ -101,6 +101,15 @@ export default function NavBar({
     setOpen(null);
   }, [asPath]);
 
+  function showMobileMenu(){
+    setMobileMenuOpen(!mobileMenuOpen)
+    if (typeof window != 'undefined' && window.document && mobileMenuOpen==false) {
+      document.body.style.overflow = 'hidden';
+    }else if(mobileMenuOpen==true){
+      document.body.style.overflow = 'auto';
+    }
+  }
+
   return (
     <div className={`bg-white ${className} z-50`}>
       {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
@@ -124,7 +133,7 @@ export default function NavBar({
           >
             <IconLoupe />
           </SearchButton>
-          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+          <button onClick={showMobileMenu} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -195,7 +204,7 @@ export default function NavBar({
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && <MobileNavMenu onClickClose={showMobileMenu} />}
 
     </div>
   )
