@@ -1,22 +1,22 @@
 ---
-title: Payload Schema
+title: Payload schema
 weight: 270
 ---
 
-The payload schema defines a message's format, data types, and properties to ensure that the payload follows a specific structure and data format.
+The payload schema sets the format, data types, and properties of a message. Such an approach ensures the message's payload follows a specific structure and data format.
 
-It is recommended to use AsyncAPI Schema (superset of JSON Schema) or JSON Schema to handle complex messages and structured data models. Enabling consumers to gain insights into the structure and data types of the payload. Remember though that AsyncAPI enables you to use any schema format you want. For example if you use Avro schema format, then define your message payload using Avro, and not try to represent your Avro schemas in JSON Schema format
+It's recommended to use AsyncAPI Schema (a superset of JSON Schema) for handling complex messages and structured data.  AsyncAPI Schema helps consumers understand the payload's structure and data types. However, AsyncAPI allows any schema format. For example, when using the Avro schema format, define your message payload in Avro directly instead of trying to represent it in JSON Schema format.
 
 ## Define schema
 
 Define the schema for the message payload with one of the following methods:
 
 - Inline: Define the JSON schema within the message payload property.
-- Components reference: Specify the schema using a reference to `components.schemas` section, such as `$ref: '#/components/schemas/user`.
+- Components reference: Specify the schema using a reference to the `components.schemas` section, such as `$ref: '#/components/schemas/user`.
 - Remote reference: Specify the schema using an absolute remote endpoint, such as `$ref: 'https://schemas.example.com/user'`.
 - Local file reference: Specify the schema using a relative reference, such as `$ref: './user-signedup.json'`.
 
-The diagram below describes how payload referencing works within component reference:
+The diagram below describes how payload referencing works within the component reference:
 
 ```mermaid
 graph LR
@@ -36,7 +36,7 @@ graph LR
   style D fill:#47BCEE,stroke:#000;
 ```
 
-Here is an example of an AsyncAPI document file that defines schema of the payload inline:
+Here is an example of an AsyncAPI document where the payload's schema is defined directly within it:
 
 ```yaml
 channels:
@@ -55,7 +55,7 @@ channels:
 
 ## Attach examples
 
-Although optional, it is highly recommended to attach examples to the AsyncAPI document. You can use JSON or YAML format for binary encodings. Attach the examples to the examples property within the message payload definition. Here is an example,
+Although optional, attaching examples to the AsyncAPI document is highly recommended. You can use JSON or YAML format for binary encodings. Attach the examples to the examples property within the message payload definition. For example:
 
 ```yaml
 examples:
@@ -69,7 +69,7 @@ examples:
 
 ## Reuse schemas between messages
 
-To reuse a schema in your AsyncAPI document, define it in the `components/schemas` section and reference it using the `$ref` keyword. Using `$ref` helps to avoid duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI.
+To reuse a schema in your AsyncAPI document, define it in the `components/schemas` section and reference it using the `$ref` keyword. Using `$ref` avoids duplication and ensures consistency. Here's an example of reusing a schema from components in AsyncAPI:
 
 ```yaml
 components:
@@ -97,11 +97,13 @@ schemas:
 
 ## Schema formats
 
-Default schema that you use is AsyncAPI schema. You can also use different schema formats, like JSON Schema, Avro, OpenAPI Schema, Protobuf and others. To use different schema formats you need to specify in your AsyncAPI document what schema you want to use.
+The default schema in an AsyncAPI document is the AsyncAPI schema itself. However, you can choose from other formats like JSON Schema, Avro, OpenAPI Schema, Protobuf, and more. Remember to indicate in your AsyncAPI document which schema format you're using.
 
-You specify format of the schema inside the `payload` field. Type of the information you can put in `payload` can be described as tuple. This means that if you use AsyncAPI Schema, `payload` must represent a reference or the payload schema definition like described in previous sections. 
+You specify the format of the schema inside the `payload` field. The type of information you can put in `payload` can be described as a tuple. (A tuple is an ordered sequence of elements that can't be changed during a program's execution.) 
 
-In case you use different formats `payload` field consists of `payload.schemaFormat` and `payload.schema`. For example:
+When using AsyncAPI Schema, the `payload` must represent a reference or the payload schema definition as described in previous sections. 
+
+If you're using various formats, the `payload` field should include both `payload.schemaFormat` and `payload.schema`. For example:
 ```yaml
   payload:
     schemaFormat: application/vnd.apache.avro;version=1.9.0
@@ -109,11 +111,11 @@ In case you use different formats `payload` field consists of `payload.schemaFor
       $ref: "https://www.asyncapi.com/resources/casestudies/adeo/CostingRequestPayload.avsc"
 ```
 
-Above example specifies that provided schema of the message payload is in Avro 1.9.0 version. It also specifies where the file with the Avro schema is located.
+The above example specifies that the provided schema of the message payload is in Avro, version 1.9.0. It also specifies where the Avro schema file is located.
 
 ## Schema formats and limitations related to their structures
 
-Some schema formats are complicated to handle in JSON/YAML. In cases like Avro schema or AsyncAPI schema (and others JSON-based schemas) you can easily inline such schemas inside AsyncAPI document, and you can also use `$ref` to point to specific parts of it:
+Some schema formats are too challenging to manage in JSON/YAML. Complex schema formats — Avro, AsyncAPI schemas, and other JSON-based schemas — can be directly included in the AsyncAPI document or referenced using `$ref` for specific sections.
 ```yaml
     payload:
         schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
@@ -131,7 +133,7 @@ Some schema formats are complicated to handle in JSON/YAML. In cases like Avro s
               type: int
 ```
 
-In case of Protobuf it is more complex, as Protocol Buffers are not based on JSON. You cannot reference just part of it with `$ref` and you need to remember to pass Protobuf schema definition as a string:
+The process is more complex for Protobuf schemas, as their Protocol Buffers are not JSON-based. You cannot use `$ref` to reference parts of the schema. Instead, you must include the entire Protobuf schema definition as a string:
 
 ```yaml
       payload:
