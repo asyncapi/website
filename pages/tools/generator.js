@@ -13,7 +13,7 @@ export default function GeneratorPage() {
     return (
       <div className="mt-8">
         <div
-        className='flex'
+        className='flex '
         >
 
         {/* <Button
@@ -27,7 +27,7 @@ export default function GeneratorPage() {
           className="w-full sm:w-auto text-xs sm:text-lg flex justify-center items-center"
           href="https://www.github.com/asyncapi/generator"
         />
-      <Button text="View Docs" href="/docs/tools/generator" className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto text-xs sm:text-xl text-center"/>
+      <Button text="View Docs" href="/docs/tools/generator" className="ml-2 block w-full sm:w-auto  text-center h-[100]"/>
       </div>
       </div>
     );
