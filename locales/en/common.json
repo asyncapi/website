@@ -7,12 +7,7 @@
         "subscribeBtn": "Subscribe",
         "successTitle": "Thank you for subscribing!",
         "errorTitle": "Something went wrong",
-        "errorSubtitle": "Please try again later.",
-        "subscriptionOptions" : {
-            "newsletter": "Newsletter",
-            "meeting": "Meetings",
-            "tscvoting": "TSC Voting"
-        }
+        "errorSubtitle": "Please try again later."
     },
     "newsroomSection": {
         "title": "Latest news and blogs",

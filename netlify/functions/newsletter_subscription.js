@@ -1,21 +1,12 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const md5 = require("md5");
-const config = require("../../config/mailchimp-ids.json");
+const config = require("../../config/mailchimp-config.json");
 
-const getInterests = (userInterests) => {
-    const interestsObject = {};
-    const allInterests = config.interests;
-
-    Object.entries(allInterests).forEach(([key, value]) => {
-        interestsObject[value] = userInterests.includes(key);
-    });
-    return interestsObject;
-}
 
 exports.handler = async function (event) {
     if (event.httpMethod == 'POST') {
         const listId = config.listId;
-        const { email, name, interests } = JSON.parse(event.body)
+        const { email, name, interest } = JSON.parse(event.body)
         const subscriberHash = md5(email.toLowerCase());
         try {
             mailchimp.setConfig({
@@ -29,7 +20,9 @@ exports.handler = async function (event) {
                     FNAME: name
                 },
                 status: "subscribed",
-                interests: getInterests(interests)
+                interests: {
+                    [config.interests[interest]]: true
+                }
             });
 
             return {

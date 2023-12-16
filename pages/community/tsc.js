@@ -110,7 +110,7 @@ export default function TSC() {
         </div>
         <div className="mt-8">
           <NewsletterSubscribe
-            type="tsc-voting-email"
+            type="TSC Voting"
             title="Get notified when TSC is voting"
             subtitle="You'll receive an email whenever someone requests the TSC to vote."
           />
