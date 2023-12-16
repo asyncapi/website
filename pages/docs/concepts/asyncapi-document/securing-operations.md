@@ -3,13 +3,13 @@ title: 'Operation security'
 weight: 120
 ---
 
-The server security concept implies that the security measures defined at the server level apply to all operations within all channels by default. To change that default behaviour for specific operation, you need to apply security information directly on that operation.
+The server security concept in AsyncAPI means that the security settings specified at the server level automatically apply to all operations across all channels. If you want to modify these default security settings for a particular operation, you need to specify the security details directly on that operation.
 
 ## Add security
 
-To accommodate such scenarios, the AsyncAPI document allows you to use the `security` field at the `operation` level. You can have multiple security schemes but only one must be satisfied to authorize such operation.
+To accommodate such scenarios, the AsyncAPI document allows you to use the `security` field at the `operation` level. You can have multiple security schemes, but only one must be satisfied to authorize such an operation.
 
-The diagram below describes how to use reusable security schemes:
+The diagram below describes how to implement reusable security schemes:
 
 ```mermaid
 graph LR
@@ -31,7 +31,7 @@ graph LR
 
 ## Operation section
 
-Operation security information is represented by [Security scheme](/docs/reference/specification/v3.0.0#securitySchemeObject) on operation level. You can also use `$ref` keyword to reference the scheme stored in different location, like for example `components.securitySchemes`.
+Security information for an operation is defined using a [Security Scheme](/docs/reference/specification/v3.0.0#securitySchemeObject) at the operation level. You can reference a scheme from another location, such as `components.securitySchemes`, using the `$ref` keyword.
 
 ```yaml
 operations:
@@ -51,11 +51,11 @@ operations:
           - 'subscribe:auth_revocations'
 ```
 
-Above example shows an `sendAuthRevoke` operation from AsyncAPI document that explains what operations client app can perform with existing notification service. In case there would be a server with separate server security, operation must satisfy it as well.
+The previous example, featuring the `sendAuthRevoke` operation in an AsyncAPI document, demonstrates the capabilities of a client application with an existing notification service. If a server has its own security requirements, this operation must also comply with those.
 
 ## `securitySchemes` section
 
-To reuse security schemes between operations, place them in `components.securitySchemes` and reference through `$ref` keyword in your operation:
+To reuse security schemes between operations, place them in `components.securitySchemes` and reference them via the `$ref` keyword in your operation:
 
 ```yaml
 operations:
@@ -80,4 +80,4 @@ components:
           - 'subscribe:auth_revocations'
 ```
 
-With above approach you can reuse scheme within multiple operations, even across multiple AsyncAPI documents.
+The previous code snippet shows the approach for reusing schema within multiple operations, even across multiple AsyncAPI documents.
