@@ -3,13 +3,13 @@ title: Reusable parts
 weight: 280
 ---
 
-Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. You can reuse majority of document sections such as messages or schema definitions, but also channels, operations and many others.
+Reusable parts in AsyncAPI provide flexibility, modularity, and code reusability. You can reuse the majority of document sections like messages, schema definitions, channels, operations, and more.
 
-Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject). You can use the `$ref` keyword to reference the same or another local file or external URL. The diagram below describes how to reuse parts in AsyncAPI.
+Reusable parts allow you to split up the AsyncAPI document into many files and reference them using the [Reference Object](/docs/reference/specification/v3.0.0#referenceObject). You can use the `$ref` keyword to reference the same document, another local file, or an external URL. The diagram below describes how to reuse parts in AsyncAPI:
 
 ## Same document
 
-You can use the `$ref` keyword to reference a component within the same document. In the example below, you define a component called `MyMessageSchema` under the `schemas` section to describe the structure of a message. Under `myChannel` channel you have a message, its payload definition is represented as a reference to `MyMessageSchema` schema using the `$ref` keyword.
+You can use the `$ref` keyword to reference a component in an AsyncAPI document. In the example below, you define a component called `MyMessageSchema` under the `schemas` section to describe the structure of a message. Under the `myChannel` channel, you have a message with a payload definition that's represented as a reference to the `MyMessageSchema` schema via the `$ref` keyword.
 
 ```yaml
 channels:
@@ -29,7 +29,7 @@ components:
 
 ## Another local file
 
-You can use the `$ref` keyword to reference another local document. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
+You can reference another local document using the `$ref` keyword. Ensure the path to the local file is correct and accessible from your main AsyncAPI document.
 
 In the code below, you reference the component from another local document, such as `message-schema.yaml`.
 
@@ -43,7 +43,7 @@ UserSignup:
   payload: null
 ```
 
-In the code below, you use another local document `message-schema.yaml` through a reference inside AsyncAPI document.
+In the code below, you use another local document, `message-schema.yaml`, through a reference inside the AsyncAPI document. 
 
 ```yaml
 channels:
@@ -63,7 +63,7 @@ operations:
 
 ## External URL
 
-You can use the `$ref` keyword to reference an external URL. Ensure the external URL should provide the referenced component in a compatible format, such as YAML or JSON. In the example below, you reference the component from an external URL. The `$ref` value specifies the full URL to the external resource and the component's location.
+You can reference an external URL using the `$ref` keyword. Ensure the external URL provides the referenced component in a compatible format, such as YAML or JSON. In the example below, you reference the component from an external URL. The `$ref` value specifies the full URL to the external resource and the component's location.
 
 ```yaml
 channels:
