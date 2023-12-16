@@ -1,13 +1,13 @@
 ---
-title: Reusability with Traits
+title: Reusability with traits
 weight: 200
 ---
 
-Traits work only with `operations` and `messages` fields. Traits allows to define properties that can be reused across multiple message and operations within the specification. Reusing traits promotes code maintainability, reduces duplication, and makes your AsyncAPI documents cleaner and easier to manage.
+Traits work only with the `operations` and `messages` fields. Traits allow the definition of properties to be reused across multiple messages and operations within the specification. Reusing traits promotes code maintainability and reduces duplication while making your AsyncAPI documents cleaner to manage.
 
 ## Defining traits
 
-You can inline traits definitions as part of an `operation` or a `message` but because goal of traits is reusability, you should do it under the `components` section of your AsyncAPI document, within `operationTraits` or `messageTraits`, depending on whether you want to apply them to operations or messages, respectively. Each trait is given a unique name and contains the properties that will be applied. Since you point to trait using `$ref` keyword, it means that you also can store your reusable traits outside AsyncAPI document. Read [Reusable parts document](/docs/concepts/asyncapi-document/reusable-parts) to learn more about different ways of using `$ref`.
+Traits are meant to be reused, so it's best to define them in the `components` section of your AsyncAPI document, either under `operationTraits` or `messageTraits`. Choose depending on whether they're for operations or messages. Give each trait a unique name and list the properties it includes. You can reference these traits with the `$ref` keyword, allowing you to keep traits in a separate file outside the AsyncAPI document. For more on using `$ref` and reusability, check out the [reusable parts document](/docs/concepts/asyncapi-document/reusable-parts).
 
 ```mermaid
 graph LR
@@ -23,7 +23,7 @@ graph LR
     style E fill:#47BCEE,stroke:#47BCEE;
 ```
 
-[Message Trait](/docs/reference/specification/latest#messageTraitObject) do not fully cover all fields that normal message has, like for example `payload`. The same is with [Operation Trait](/docs/reference/specification/latest#operationTraitObject) that represents only selected fields you usually use in an operation.
+[Message traits](/docs/reference/specification/latest#messageTraitObject) do not fully cover all fields that a normal message has, such as the `payload`. The same is true with [Operation traits](/docs/reference/specification/latest#operationTraitObject) which represent only selected fields usually used in an operation.
 
 Here is a part of a message that has a trait defined inline in a message:
 
@@ -36,7 +36,7 @@ traits:
       - name: user
 ```
 
-Traits are merged into the message object and later message look like in the example below:
+When traits are combined with a message object, the resulting message will look like the example shown below:
 
 ```yaml
 name: UserSignup
@@ -45,7 +45,7 @@ tags:
   - name: user
 ```
 
-Notice that description from trait did not override the description that was already there defined in a message outside the trait.
+Notice that the trait description didn't override the already defined description in a message outside the trait. 
 
 ## Applying traits from components
 
@@ -79,7 +79,7 @@ traits:
   - $ref: '#/components/messageTraits/commonHeaders'
 ```
 
-In such document, the `commonHeaders` trait, which includes a `content-type` header, is merged into `headers` object in a message and will look like in the following example:
+Notice how the `commonHeaders` trait includes a `content-type` header and is merged into the `headers` object in a message:
 
 ```yaml
 name: lightMeasured
@@ -96,5 +96,5 @@ headers:
 
 ## Trait merging mechanism
 
-Traits in AsyncAPI document are merged into the message object in the same order they are defined and traits are merged into the operation or message object. There is no override of properties possible. For more info on [the merge mechanism check further specification reference documentation](/docs/reference/specification/#traitsMergeMechanism).
+In the AsyncAPI document, traits are merged into the operation or message object in the order they are defined, without overriding any properties. For detailed information on how this merging works, refer to [the specification's section on the traits merge mechanism](/docs/reference/specification/#traitsMergeMechanism).
 
