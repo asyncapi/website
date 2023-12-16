@@ -3,13 +3,13 @@ title: Add servers
 weight: 295
 ---
 
-A server may represent a message broker handling communication between producers and consumers. It can also represent other things so please first familiarize first with [Server](/docs/concepts/server) concept.
+A server often acts as a message broker, managing communication between producers and consumers. However, it can represent different concepts too. To understand this better, please first review our [server concepts doc](/docs/concepts/server).
 
-Adding and defining servers is useful because it specifies where and how to connect. The connection facilitates where to send and receive messages.
+Adding and defining servers is important because it specifies how and where connections are made, enabling the sending and receiving of messages.
 
-A unique key identifies the server and contains information about the server's connection details, such as the host, protocol, and authentication. 
+Unique keys identify the server and contain information about the server's connection details, such as the host, protocol, and authentication. 
 
-Here is an illustration of server information with selected fields: 
+Here is a diagram of server information with selected fields: 
 
 ```mermaid
 graph LR
@@ -22,11 +22,11 @@ graph LR
   C --> I
 ```
 
-Server is one of main sections of AsyncAPI document next to others like `info`, `channels` or `operations`.
+The server is one of the main sections of the AsyncAPI document next to others like `info`, `channels`, or `operations`.
 
 ## Define servers
 
-Define the servers in your AsyncAPI specification file. Server definitions specify the server to which a channel or operation is connected. Here's an example of how to define a server in AsyncAPI:
+Include server definitions in your AsyncAPI document to specify which server a channel or operation connects to. Here is an example of defining a server in AsyncAPI:
 
 ```yaml
 servers:
@@ -36,13 +36,13 @@ servers:
     description: Test MQTT server
 ```
 
-In this example, you define a server that uses MQTT protocol and messages are sent or received from `test.mosquitto.org` host.
+The previous example shows a server setup using the MQTT protocol, where messages are sent to or received from the `test.mosquitto.org` host.
 
 ## Server reusability
 
-Reuse servers by adding their definitions in one place, like `components.servers` and then reference to them using `$ref` keyword.
+Add server definitions in a single location, such as `components.servers`, and then refer to them using the `$ref` keyword for easy reuse.
 
-Here's an example of AsyncAPI document with two servers referenced from `components` section:
+Here's an example of an AsyncAPI document with two servers referenced from the `components` section:
 ```yaml
 servers:
   kafka-test:
@@ -61,11 +61,11 @@ components
       description: Test MQTT server
 ```
 
-In this example main `servers` section contains a list of servers but their definitions are sharable. You can also put servers definitions in a separate location and share across multiple AsyncAPI documents.
+In this example, the main `servers` section lists multiple servers with sharable definitions. You can also store these server definitions separately and use them across various AsyncAPI documents.
 
 ## Channel only on specific server
 
-Your AsyncAPI document can describe an application that receives messages on one channel from server operating over MQTT, but sends messages on another channel operating over Kafka. This means you have two servers defined, but your channels are not available on all servers. In other words, you have one channel available only on MQTT server, and one channel available only on Kafka server. You can describe it in AsyncAPI document by adding `servers` array directly to channel. It should contain references to respective servers definitions.
+Your AsyncAPI document can outline an application that receives messages on a channel from an MQTT server, while sending messages on a different channel via a Kafka server. This setup requires defining two servers, with each channel being exclusive to one server – one channel is only available on the MQTT server and the other only on the Kafka server. The AsyncAPI document describes this by adding a `servers` array to each channel, containing references to the respective server definitions.
 
 Here's an example of how to add a server reference to a channel:
 
@@ -87,4 +87,4 @@ channels:
       $ref: '#/components/messages/myMessage'
 ```
 
-In this example, `myChannel` channel is available only on `mqtt-test` server.
+In this example, the `myChannel` channel is only available on the `mqtt-test` server.
