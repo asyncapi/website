@@ -17,7 +17,7 @@ export default function SubCategoryDocsNav({ subCategory, activeItem, onClick })
     return (
       <li key={subCategory.item.title} data-testid="DocsNav-subitem">
         <div className='flex gap-2'>
-          <DocsArrow isDropDown={subCategory.children} activeDropDown={openSubCategoryChildren} onClick={() => setOpenSubCategoryChildren(!openSubCategoryChildren)} />
+          <DocsArrow isDropDown={subCategory.children} activeDropDownItem={openSubCategoryChildren} onClick={() => setOpenSubCategoryChildren(!openSubCategoryChildren)} />
           <DocsNavItem {...subCategory.item} activeSlug={activeItem} defaultClassName={`font-body text-sm text-black leading-8 ${subCategory.children ? 'hover:font-semibold' : 'hover:text-secondary-600'}`} inactiveClassName='font-regular' activeClassName={subCategory.children ? 'font-semibold' : 'text-secondary-600'} onClick={onClickHandler} />
         </div>
         {openSubCategoryChildren && (
