@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-weight: 80
+weight: 30
 ---
 
 ## Introduction
@@ -51,7 +51,7 @@ We recommend creating a new Glee app using our official CLI which sets up everyt
 
 Once the process is completed, you should have a new Glee app ready for development and see these files that were made.
 
-![glee_structure](glee_struct.png)
+![glee_structure](glee-struct.png)
 
 #### Define our Spec for our API
 
@@ -154,6 +154,6 @@ npm run start
 ```
 To send a WebSocket request with a payload e.g. `{"name":"john", "time": "1567906535"}` to `ws://localhost:3000/greet`, open Postman and checkout the endpoint:
 
-![glee_response](glee_resp.png)
+![glee_response](glee-resp.png)
 
 So, this is how easy it is to build a WebSocket API using Glee. You can also check out the example code [here](https://github.com/Souvikns/greet-bot).

@@ -1,6 +1,6 @@
 ---
-title: 'httpAPIKey'
-weight: 5
+title: 'HttpApiKey Authentication'
+weight: 90
 ---
 
 ## Getting started with httpAPIKey authentication

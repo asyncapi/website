@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Glee Authentication'
-weight: 30
+weight: 60
 ---
 
 Glee comes with Authentication features which help you erifying the identity of users or entities attempting to access a system or application. It ensures that only authorised individuals or systems are granted access, protecting against unauthorised intrusions and data breaches. Glee simplifies this vital process by offering multiple authentication methods, each tailored to different use cases:

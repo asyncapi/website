@@ -1,6 +1,6 @@
 ---
 title: 'Authentication functions'
-weight: 3
+weight: 70
 ---
 
 # Getting started with Authentication functions

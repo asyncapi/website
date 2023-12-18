@@ -1,6 +1,6 @@
 ---
-title: 'userPassword'
-weight: 5
+title: 'Username and Password Authentication'
+weight: 100
 ---
 
 ## Getting started with username and password authentication
