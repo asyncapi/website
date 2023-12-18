@@ -12,6 +12,26 @@
       "score": 43.363362901138075
     },
     {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 19.527872034949596
+    },
+    {
       "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
       "isAssigned": true,
@@ -74,7 +94,7 @@
       "resourcePath": "/asyncapi/cli/pull/593",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 15.507427792459973
+      "score": 15.794602381209232
     },
     {
       "id": "PR_kwDOBW5R_c5QjwOq",
@@ -147,22 +167,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 13.497205671215161
-    },
-    {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
@@ -178,6 +182,25 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh38548Idt",
+      "title": "PythonGenerator with Pydantic  If a property is Optional not required the json expected a key None",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1644",
+      "repo": "asyncapi/modelina",
+      "author": "tornabene",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Python generator",
+          "color": "5319e7"
         }
       ]
     },
@@ -282,6 +305,25 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385yzOft",
+      "title": "TypeScript include documentation for properties instead of getters",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1548",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
         }
       ]
     },
