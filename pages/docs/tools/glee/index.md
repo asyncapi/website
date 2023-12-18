@@ -141,7 +141,7 @@ Every file in the functions folder acts as a handler to develop business logic f
 
 #### Running and testing your application
 
-We will not execute the application and carry out testing with Postman to ensure that it is functioning as intended.
+We will now execute the application and carry out testing with Postman to ensure that it is functioning as intended.
 
 Now to execute your glee application, just run:
 
