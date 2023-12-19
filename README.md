@@ -155,11 +155,21 @@ This repository has the following structure:
 ## Connect with AsyncAPI Community
 
 <p align="left">
-  <a href='https://asyncapi.slack.com/' target="_blank"><img alt='slack' src='https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white'/></a>
-<a href='https://twitter.com/asyncapispec' target="_blank"><img alt='x' src='https://img.shields.io/badge/Twitter-100000?style=for-the-badge&logo=x&logoColor=FFFFFF&labelColor=000000&color=000000'/></a>
-<a href='https://www.linkedin.com/company/asyncapi' target="_blank"><img alt='linkedin' src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'/></a>
-<a href='https://www.youtube.com/c/asyncapi' target="_blank"><img alt='youtube' src='https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white'/></a>
-<a href='https://www.twitch.tv/asyncapi' target="_blank"><img alt='twitch' src='https://img.shields.io/badge/Twitch-100000?style=for-the-badge&logo=twitch&logoColor=FFFFFF&labelColor=9146ff&color=9146ff'/></a>
+<a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+  <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+</a>
+<a href="https://twitter.com/asyncapispec" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23gray.svg?style=flat&logo=X&label=Twitter&labelColor=rgb(86%2C86%2C86)" alt="AsyncAPI Twitter">
+</a>
+<a href="https://www.linkedin.com/company/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%230077B5.svg?logo=linkedin&logoColor=white&label=LinkedIn&labelColor=rgb(86%2C86%2C86)&style=flat" alt="AsyncAPI LinkedIn">
+</a>
+<a href="https://www.youtube.com/c/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-AsyncAPI-red?style=flat&logo=youtube&logoColor=white" alt="YouTube">
+</a>
+<a href="https://www.twitch.tv/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23833fe6?style=flat&logo=twitch&label=Twitch&logoColor=white" alt="AsyncAPI Twitch">
+</a>
 </p>
 
 ## AsyncAPI Contributors ✨
