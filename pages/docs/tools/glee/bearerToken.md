@@ -1,6 +1,6 @@
 ---
-title: 'Http (Bearer Token)'
-weight: 5
+title: 'Http Authentication(Bearer Token)'
+weight: 80
 ---
 
 ## Getting started with Bearer Token authentication
