@@ -1,6 +1,6 @@
 ---
-title: 'httpAPIKey'
-weight: 5
+title: 'HttpApiKey Authentication'
+weight: 90
 ---
 
 ## Getting started with httpAPIKey authentication
@@ -108,4 +108,3 @@ export async serverAuth({ authProps, done }) {
 ```
 
 `getHttpAPIKeys(name)` takes a name parameter to specify the name of the httpApiKey that is desired. Then it returns an object containing the httpApiKey value that was sent from the client.
-
