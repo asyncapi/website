@@ -36,7 +36,6 @@ Use the following tools to set up the project:
 - [Node.js](https://nodejs.org/) v16.0.0+
 - [npm](https://www.npmjs.com/) v7.10.0+
 
-
 ## Run locally
 
 1. Fork the repository by clicking on `Fork` option on top right of the main repository.
