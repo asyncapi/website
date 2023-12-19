@@ -1,5 +1,5 @@
 ---
-title: Adding Bindings
+title: Adding bindings
 weight: 260
 ---
 
