@@ -339,6 +339,18 @@
         ]
     },
     {
+        "name": "Prince Rajpoot",
+        "github": "princerajpoot20",
+        "linkedin": "princerajpoot",
+        "slack": "U04STTQHV18",
+        "twitter": "iamPrince_2003",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
         "name": "Richard Coppen",
         "github": "rcoppen",
         "linkedin": "richard-coppen",

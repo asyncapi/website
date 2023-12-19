@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/FN5eR1Zqh9c/hqdefault.jpg",
-    "title": "AsyncAPI Conf on Tour 2023 in Madrid",
-    "description": "AACoT'23 Madrid Edition streamed live from StageOne at SNGULAR. 00:00 Waiting 57:12 Opening 1:26:07 Everything You Wish ...",
-    "videoId": "FN5eR1Zqh9c"
+    "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
+    "title": "3 Request/Reply Use Cases",
+    "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
+    "videoId": "-OsMet9h_dg"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/zSbv4ibqYds/hqdefault.jpg",
-    "title": "Community Meeting(October 17th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/912.",
-    "videoId": "zSbv4ibqYds"
+    "image_url": "https://i.ytimg.com/vi/WCK9_ZDv6K4/hqdefault.jpg",
+    "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo(14th Dece…",
+    "description": "Participez à ce live pour découvrir les nouveautés de la V3 et comment migrer une version 2 en version 3 sur un use-case de ...",
+    "videoId": "WCK9_ZDv6K4"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/KTnFoXY_evs/hqdefault.jpg",
-    "title": "Hacktoberfest (October 6th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/894.",
-    "videoId": "KTnFoXY_evs"
+    "image_url": "https://i.ytimg.com/vi/yOc_fI-i9C8/hqdefault.jpg",
+    "title": "Community Meeting(12th December)",
+    "description": "https://github.com/asyncapi/community/issues/979.",
+    "videoId": "yOc_fI-i9C8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
-    "title": "Spec 3.0 docs meeting (September 28, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/885.",
-    "videoId": "qjMojQ-fFew"
+    "image_url": "https://i.ytimg.com/vi/g6CPg77Lf5Q/hqdefault.jpg",
+    "title": "AsyncAPI Conf on Tour 2023 in Bangalore, India",
+    "description": "AACoT'23 Bangalore Edition live from Postman Offices in India.",
+    "videoId": "g6CPg77Lf5Q"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
-    "title": "Community meeting (September 19, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/874.",
-    "videoId": "SfATYVwcSQk"
+    "image_url": "https://i.ytimg.com/vi/p68PUXDMsks/hqdefault.jpg",
+    "title": "Community Meeting(November 28th, 2023)",
+    "description": "https://github.com/asyncapi/community/issues/918.",
+    "videoId": "p68PUXDMsks"
   }
 ]

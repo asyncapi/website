@@ -39,7 +39,7 @@ jobs:
 
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Await Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@v1
+        uses: jakepartusch/wait-for-netlify-action@f1e137043864b9ab9034ae3a5adc1c108e3f1a48 #version 1.4 https://github.com/JakePartusch/wait-for-netlify-action/releases/tag/v1.4
         id: netlify
         with:
           site_name: asyncapi-website
@@ -48,7 +48,7 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: Lighthouse Audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@9.3.0
+        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 #version 10.1 https://github.com/treosh/lighthouse-ci-action/releases/tag/10.1.0
         with:
           urls: |
             https://deploy-preview-$PR_NUMBER--asyncapi-website.netlify.app/
@@ -87,9 +87,9 @@ jobs:
       - if: steps.should_run.outputs.shouldrun == 'true'
         name: LightHouse Statistic Comment
         id: lighthouse_statistic_comment
-        uses: marocchino/sticky-pull-request-comment@v2.2.0
+        uses: marocchino/sticky-pull-request-comment@efaaab3fd41a9c3de579aba759d2552635e590fd # version 2.8 https://github.com/marocchino/sticky-pull-request-comment/releases/tag/v2.8.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           number: ${{ github.event.pull_request.number }}
           header: lighthouse
           message: ${{ steps.lighthouse_score_report.outputs.comment }}
