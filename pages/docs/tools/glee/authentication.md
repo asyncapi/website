@@ -116,10 +116,8 @@ export async function serverAuth({ authProps, done }) {
 **Parameters for done():**
 
 - Authentication Result (Boolean): true for success, false for failure.
-- HTTP Status Code (Integer): Code for authentication failure (e.g., 401 for Unauthorized).
-- Status Message (String): Description of the authentication result (e.g., "Unauthorized").
 
-When `true` is passed to the done parameter, the server/broker knows to go ahead and allow the client to connect, which means authentication has succeeded. However if the `done` parameter is called with `false` then the server knows to throw an error message and reject the client, which means authenticatio has failed.
+When `true` is passed to the done parameter, the server/broker knows to go ahead and allow the client to connect, which means authentication has succeeded. However if the `done` parameter is called with `false` then the server knows to throw an error message and reject the client, which means authentication has failed.
 
 `done()` should always be the last thing called in a `serverAuth` function, Glee won't execute any logic beyond the `done()` call.
 
