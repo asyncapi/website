@@ -1,5 +1,4 @@
-import Heading from '../typography/Heading'
-import Paragraph from '../typography/Paragraph'
+import TextLink from '../typography/TextLink'
 
 export default function SuccessStories() {
     return (
@@ -11,7 +10,7 @@ export default function SuccessStories() {
                         Success Stories
                     </h1>
                     <p className="my-3 max-w-4xl mx-auto text-lg text-darkGunMetal text-center">
-                        Thanks to financial support we can already see many<br class="hidden lg:inline-block"></br> success stories in
+                        Thanks to financial support we can already see many<br className="hidden lg:inline-block" /> success stories in
                         the project.
                     </p>
                     </div>
@@ -21,7 +20,7 @@ export default function SuccessStories() {
                             <p className="text-base text-darkGunMetal">
                                 With the addition of a dedicated Community Manager, we now have a monthly newsletter,
                                 regular status updates, an active social media presence, and the ability to drive
-                                initiatives such as event organization.
+                                initiatives such as event organization. Dedicated focus enables us to also focus on  <TextLink href='https://github.com/orgs/asyncapi/discussions/948' target='_blank' className='text-violet'>a year to year vision</TextLink>.
                             </p>
                         </div>
                         <div className="m-4 p-2">
@@ -35,13 +34,11 @@ export default function SuccessStories() {
                         <div className="m-4 p-2">
                             <h1 className="mb-2 text-2xl font-semibold">AsyncAPI Conference</h1>
                             <p className="text-base text-darkGunMetal">
-                                Every year we organize a conference that attracts many participants. Only last year
-                                the conference generated <span><a href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" target='_blank' style={{ color: "rgb(128,92,218)", fontWeight: 700, textDecoration: "underline" }}>3k views</a></span>. We
-                                plan to do a series of events in different locations every year.
+                                Every year we organize a conference that attracts many participants. In 2022
+                                the online conference generated <TextLink href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" target='_blank' className='text-violet'>3k views</TextLink>. In 2023 we organized <TextLink href="https://conference.asyncapi.com" target='_blank' className='text-violet'>four different in person events</TextLink>, some that was also live streamed.
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
