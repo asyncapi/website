@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/prFgD14u7T0/hqdefault.jpg",
+    "title": "Overview of AsyncAPI v3",
+    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
+    "videoId": "prFgD14u7T0"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
     "title": "3 Request/Reply Use Cases",
     "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
@@ -22,11 +28,5 @@
     "title": "AsyncAPI Conf on Tour 2023 in Bangalore, India",
     "description": "AACoT'23 Bangalore Edition live from Postman Offices in India.",
     "videoId": "g6CPg77Lf5Q"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/p68PUXDMsks/hqdefault.jpg",
-    "title": "Community Meeting(November 28th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/918.",
-    "videoId": "p68PUXDMsks"
   }
 ]
