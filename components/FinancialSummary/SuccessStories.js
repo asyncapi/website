@@ -1,6 +1,3 @@
-import Heading from '../typography/Heading'
-import Paragraph from '../typography/Paragraph'
-
 export default function SuccessStories() {
     return (
         <div className="px-4 sm:px-6 lg:px-8 bg-purple-100">
@@ -21,7 +18,7 @@ export default function SuccessStories() {
                             <p className="text-base text-darkGunMetal">
                                 With the addition of a dedicated Community Manager, we now have a monthly newsletter,
                                 regular status updates, an active social media presence, and the ability to drive
-                                initiatives such as event organization.
+                                initiatives such as event organization. Dedicated focus enables us to also focus on <a href="https://github.com/orgs/asyncapi/discussions/948" target='_blank' className="dark:text-purple-900 font-medium underline">a year to year vision</a>.
                             </p>
                         </div>
                         <div className="m-4 p-2">
@@ -35,9 +32,8 @@ export default function SuccessStories() {
                         <div className="m-4 p-2">
                             <h1 className="mb-2 text-2xl font-semibold">AsyncAPI Conference</h1>
                             <p className="text-base text-darkGunMetal">
-                                Every year we organize a conference that attracts many participants. Only last year
-                                the conference generated <span><a href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" target='_blank' style={{ color: "rgb(128,92,218)", fontWeight: 700, textDecoration: "underline" }}>3k views</a></span>. We
-                                plan to do a series of events in different locations every year.
+                                Every year we organize a conference that attracts many participants. In 2022
+                                the online conference generated <a href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl" target='_blank' className="dark:text-purple-900 font-medium underline">3k views</a>. In 2023 we organized <a href="https://conference.asyncapi.com" target='_blank' className="dark:text-purple-900 font-medium underline">four different in person events</a>, some that was also live streamed.
                             </p>
                         </div>
                     </div>
