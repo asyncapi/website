@@ -6,6 +6,15 @@ const manualTools = require('../config/tools-manual.json')
 const fs = require('fs');
 const { resolve } = require('path');
 
+const combineAutomatedAndManualTools = async (automatedTools) => {
+  try {
+    await combineTools(automatedTools, manualTools);
+  } catch (err) {
+    console.log("Error while combining tools:", err);
+    throw err;
+  }
+};
+
 const buildTools = async () => {
   try {
     let githubExtractData = await getData();
@@ -14,11 +23,29 @@ const buildTools = async () => {
       resolve(__dirname, '../config', 'tools-automated.json'),
       JSON.stringify(automatedTools, null, '  ')
     );
-    await combineTools(automatedTools, manualTools);
+    await combineAutomatedAndManualTools(automatedTools);
   } catch (err) {
     console.log(err);
     throw err
   }
 };
 
-buildTools();
+const buildToolsManual = async () => {
+  try {
+    const automatedTools = require('../config/tools-automated.json');
+    await combineAutomatedAndManualTools(automatedTools);
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
+};
+
+// Default action when triggered from package.json or run standalone.
+if (require.main === module) {
+  buildTools();
+}
+
+module.exports = {
+  buildTools,
+  buildToolsManual
+};
