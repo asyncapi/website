@@ -1,6 +1,6 @@
 ---
-title: 'userPassword'
-weight: 5
+title: 'Username and Password Authentication'
+weight: 100
 ---
 
 ## Getting started with username and password authentication
@@ -57,7 +57,7 @@ components:
 
 ```
 
-**The Client asyncapi.yaml file does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like &*userPassword* here.**
+**The Client asyncapi.yaml file does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *userPassword* here.**
 
 ### Client Side
 
@@ -103,4 +103,4 @@ export async serverAuth({ authProps, done }) {
 
 ```
 
-`getUserPass()` return an object containing the username and password that was sent from the client.
+`getUserPass()` returns an object containing the username and password that was sent from the client.
