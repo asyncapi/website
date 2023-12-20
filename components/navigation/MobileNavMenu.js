@@ -93,7 +93,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
                       target={item.target || '_self'}
                       rel="noopener noreferrer"
                       key={index}
-                      className="py-1 text-base leading-6 font-medium text-gray-600 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150 block mb-4"
+                      className="py-1 text-base leading-6 font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150 block mb-4"
                       data-testid="MobileNav-others"
                     >
                       {item.text}
