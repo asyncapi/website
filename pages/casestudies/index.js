@@ -43,7 +43,7 @@ export default function Casestudies() {
           />
         </div>
 
-        <div className="adopters">
+        <div className="adopters" data-testid="Adopters">
           <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mt-8">
             <div className="col-start-3 col-span-5">
               <Heading level="h1" typeStyle="heading-lg">
