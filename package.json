@@ -85,6 +85,7 @@
     "react-typing-animation": "^1.6.2",
     "react-youtube-embed": "^1.0.3",
     "reading-time": "^1.2.0",
+    "recharts": "^2.10.1",
     "remark-frontmatter": "^2.0.0",
     "remark-gemoji-to-emoji": "^1.1.0",
     "remark-heading-id": "^1.0.0",

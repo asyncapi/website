@@ -60,6 +60,10 @@ export const initiativeLinks = [
     url: "https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md",
   },
   {
+    label:"Finance",
+    url:"/finance"
+  },
+  {
     label: "FAQs",
     url: "/about#faqs",
   },
