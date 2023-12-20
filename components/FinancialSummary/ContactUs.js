@@ -1,6 +1,7 @@
 import Button from '../buttons/Button'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
+import TextLink from '../typography/TextLink'
 
 export default function ContactUs() {
     return (
@@ -8,10 +9,10 @@ export default function ContactUs() {
             <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center my-4">
                 <div className="col-start-3 col-span-5">
                     <div className="mx-2">
-                    <Heading level="h1" typeStyle="heading-lg"><h1 id="contact-us">Interested in getting in touch?</h1></Heading>
+                    <Heading level="h1" typeStyle="heading-lg">Interested in getting in touch?</Heading>
                     <Paragraph typeStyle="body-md" className="my-2 max-w-4xl">
                         Feel free to contact us if you need more explanation. We are happy to hop on a call and help with
-                        onboarding to the project as a sponsor. Write email to <span><a className="text-violet text-base font-semibold" href="mailto:info@asyncapi.io" target='_blank'>info@asyncapi.io</a></span>
+                        onboarding to the project as a sponsor. Write email to <span><TextLink className="text-violet text-base font-semibold" href="mailto:info@asyncapi.io" target='_blank'>info@asyncapi.io</TextLink></span>
                     </Paragraph>
                     </div>
                 </div>
