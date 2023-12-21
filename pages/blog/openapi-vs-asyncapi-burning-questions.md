@@ -108,7 +108,7 @@ One of the cool things about AsyncAPI is that you can use a variety of different
 ![Figure 13: AsyncAPI covers a wide array of asynchronous protocols](/img/posts/openapi-vs-asyncapi-burning-questions/asyncapi-openapi-post_pic-13.webp)
 
 # How can I create an Asynchronous API with AsyncAPI?
-If you want to see examples of how AsyncAPI can help you create an asynchronous API, there’s a great series with [WebSockets examples](https://www.asyncapi.com/blog/websocket-part1), and you can check out this [code generation example from Solace](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/). If you’re looking for how to create an AsyncAPI API from scratch, the easiest way is with the [AsyncAPI playground](https://playground.asyncapi.io/?load=https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/2.0.0/simple.yml).
+If you want to see examples of how AsyncAPI can help you create an asynchronous API, there’s a great series with [WebSockets examples](https://www.asyncapi.com/blog/websocket-part1), and you can check out this [code generation example from Solace](https://solace.com/blog/asyncapi-codegen-microservices-using-spring-cloud-stream/). If you’re looking for how to create an AsyncAPI API from scratch, the easiest way is with the [AsyncAPI playground](https://playground.asyncapi.io/?load=https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple-asyncapi.yml).
 
 # What's next for API specs?
 AsyncAPI and OpenAPI are now both part of the Linux Foundation, which means:
