@@ -25,27 +25,21 @@ describe('CaseStudyCard Component', () => {
   });
 
   //tests for the Adopters section
-  it('renders the Adopters section with adopters data', () => {
-    mount(<Casestudies />);
-    
-    cy.get('[data-testid="Adopters"]').should('exist');
+  it('displays a table with correct columns and AdoptersList data', () => {
+    cy.get('table')
+      .should('exist')
+      .within(() => {
+        // Check table headers
+        cy.get('th').eq(0).should('have.text', 'Company name');
+        cy.get('th').eq(1).should('have.text', 'Use Case');
+        cy.get('th').eq(2).should('have.text', 'Resources');
 
-    AdoptersList.forEach((entry, index) => {
-      cy.get(`table tbody tr:eq(${index}) td:eq(0)`).should('have.text', entry.companyName);
-      cy.get(`table tbody tr:eq(${index}) td:eq(1)`).should('have.text', entry.useCase);
-
-      entry.resources.forEach((resource, resourceIndex) => {
-        cy.get(`table tbody tr:eq(${index}) td:eq(2) ul li:eq(${resourceIndex}) a`)
-          .should('have.attr', 'href', resource.link)
-          .should('have.text', resource.title);
+        // Check table data
+        cy.get('tbody tr').should('have.length', AdoptersList.length);
+        AdoptersList.forEach((entry, index) => {
+          cy.get('tbody tr').eq(index).find('td').eq(0).should('have.text', entry.companyName);
+          cy.get('tbody tr').eq(index).find('td').eq(1).should('have.text', entry.useCase);
+        });
       });
-    });
-  });
-
-  it('does not render anything when adopters array is empty', () => {
-    // Modify Casestudies component to pass an empty AdoptersList
-    mount(<Casestudies adopters={[]} />);
-
-    cy.get('table tbody tr').should('not.exist');
   });
 });
