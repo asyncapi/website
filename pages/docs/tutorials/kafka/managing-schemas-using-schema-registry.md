@@ -14,10 +14,6 @@ While several Schema Registry implementations exist, you will use the Apicurio R
 
 ## Installation guide
 1. Install [Docker](https://docs.docker.com/engine/install/) from the official website.
-2. Open the command prompt and pull up the Apicurio Registry Docker Image from Docker Hub using the following command:
-    <CodeBlock language="bash">
-    {`docker pull apicurio/apicurio-registry`}
-    </CodeBlock>
 
 ## Steps
 1. Run Apicurio Registry Docker Image in a Docker container by using the command:
