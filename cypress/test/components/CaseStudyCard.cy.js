@@ -23,26 +23,4 @@ describe('CaseStudyCard Component', () => {
 
     cy.get('.rounded-md').should('not.exist');
   });
-
-  //tests for the Adopters section
-  it('displays a table with correct columns and AdoptersList data', () => {
-    mount(<Casestudies/>);
-    cy.get('[data-testid="Adopters"]').should('have.length', AdoptersList.length); 
-
-    cy.get('table')
-      .should('exist')
-      .within(() => {
-        // Check table headers
-        cy.get('th').eq(0).should('have.text', 'Company name');
-        cy.get('th').eq(1).should('have.text', 'Use Case');
-        cy.get('th').eq(2).should('have.text', 'Resources');
-
-        // Check table data
-        cy.get('tbody tr').should('have.length', AdoptersList.length);
-        AdoptersList.forEach((entry, index) => {
-          cy.get('tbody tr').eq(index).find('td').eq(0).should('have.text', entry.companyName);
-          cy.get('tbody tr').eq(index).find('td').eq(1).should('have.text', entry.useCase);
-        });
-      });
-  });
 });

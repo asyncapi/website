@@ -43,7 +43,7 @@ export default function Casestudies() {
           />
         </div>
 
-        <div className="adopters" data-testid="Adopters">
+        <div className="adopters">
           <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mt-8">
             <div className="col-start-3 col-span-5">
               <Heading level="h1" typeStyle="heading-lg">
@@ -74,7 +74,7 @@ export default function Casestudies() {
             </thead>
             <tbody>
               {AdoptersList.map((entry, index) => (
-                <tr key={index}>
+                <tr key={index} data-testid="Adopters">
                   <td className="border-2 p-2">{entry.companyName}</td>
                   <td className="border-2 p-2">{entry.useCase}</td>
                   <td className="border-2 p-2">
