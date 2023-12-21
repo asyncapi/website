@@ -69,7 +69,9 @@ export default async (request: Request, context: Context) => {
 
 function buildRewrite(originalRequest: Request): (Request | null) {
   const extractResult = legitimateRequestRegex.exec(new URL(originalRequest.url).pathname);
-  if (extractResult === null) {
+
+  // No need to rewrite the request if it's not a legitimate request for a definition file
+  if (extractResult === null || extractResult.length < 2 || !extractResult[2]) {
     return null;
   }
 
