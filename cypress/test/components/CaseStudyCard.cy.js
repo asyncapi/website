@@ -26,7 +26,7 @@ describe('CaseStudyCard Component', () => {
 
   //tests for the Adopters section
   it('displays a table with correct columns and AdoptersList data', () => {
-    mount(<CaseStudyCard/>);
+    mount(<Casestudies/>);
     cy.get('[data-testid="Adopters"]').should('have.length', AdoptersList.length); 
 
     cy.get('table')
