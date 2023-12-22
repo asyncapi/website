@@ -12,6 +12,16 @@ const validRequests = [
       "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/definitions/2.4.0/info.json",
   },
   {
+    requestURL: "https://asyncapi.com/definitions/2.4.0.json",
+    responseURL:
+      "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/2.4.0.json",
+  },
+  {
+    requestURL: "https://asyncapi.com/schema-store/2.5.0/operation.json",
+    responseURL:
+      "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/definitions/2.5.0/operation.json",
+  },
+  {
     requestURL: "https://asyncapi.com/schema-store/2.5.0-without-$id.json",
     responseURL:
       "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/2.5.0-without-$id.json",
@@ -27,7 +37,10 @@ const invalidRequests = [
   },
   {
     requestURL: "https://asyncapi.com/foobar",
-  }
+  },
+  {
+    requestURL: "https://asyncapi.com/",
+  },
 ];
 
 const context = {
@@ -75,6 +88,7 @@ Deno.test("serve-definitions test for validRequests", async () => {
     const body = await response.json();
 
     assertEquals(response.status, 200);
+    assertEquals(response.headers.get("Content-Type"), "application/schema+json");
     assertEquals(body.url, entry.responseURL);
 
     console.log("\n");

@@ -1,3 +1,4 @@
+// Changes to URL from 'netlify:edge' because we don't have package aliasing setup in our workflow.
 import type { Context } from "https://edge-bootstrap.netlify.app/v1/index.ts";
 
 const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN_NR");
