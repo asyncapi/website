@@ -38,13 +38,13 @@ export default function AsyncAPISummary() {
             </div>
 
             <div className="text-center">
-                <a href="https://opencollective.com/asyncapi" target='_blank'>
+                <a href="https://opencollective.com/asyncapi" target='_blank' data-testid="open-collective-link">
                     <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/OpenCollective.svg" alt="Open Collective" />
                 </a>
-                <a href="https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc" target='_blank'>
+                <a href="https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc" target='_blank' data-testid="lfx-link">
                     <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/LFX.svg" alt="Linux Foundation" />
                 </a>
-                <a href="https://github.com/sponsors/asyncapi" target='_blank'>
+                <a href="https://github.com/sponsors/asyncapi" target='_blank' data-testid="github-sponsors-link">
                     <img className="mx-4 inline w-10 h-10 transform transition-transform hover:scale-110 active:scale-90" src="/img/logos/github-black.svg" alt="Github" />
                 </a>
             </div>
