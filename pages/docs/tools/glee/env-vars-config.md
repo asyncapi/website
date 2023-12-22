@@ -8,9 +8,9 @@ weight: 50
 Glee provides a few environment variables for you to customize the Glee application's behavior according to your specific requirements:
 |Variable|Description|Example|
 |---|---|---|
-|GLEE_SERVER_NAMES|A comma-separated list of the servers to load on startup.|`GLEE_SERVER_NAMES=websockets,mosquitto`
-|GLEE_SERVER_CERTS|A comma-separated list of `${serverName}:${pathToCertificateFile}`. These are the certificates to use when establishing the connection to the given server.|`GLEE_SERVER_CERTS=mosquitto:mosquitto.org.crt`
-|GLEE_SERVER_VARIABLES|A comma-separated list of `${serverName}:${serverVariable}:${value}`. These are the values to use for each server variable.|`GLEE_SERVER_VARIABLES=websockets:namespace:public`
+|GLEE_SERVER_NAMES|A comma-separated list of the servers to load on startup.|`GLEE_SERVER_NAMES=websockets,mosquitto`|
+|GLEE_SERVER_CERTS|A comma-separated list of `${serverName}:${pathToCertificateFile}`. These are the certificates to use when establishing the connection to the given server.|`GLEE_SERVER_CERTS=mosquitto:mosquitto.org.crt`|
+|GLEE_SERVER_VARIABLES|A comma-separated list of `${serverName}:${serverVariable}:${value}`. These are the values to use for each server variable.|`GLEE_SERVER_VARIABLES=websockets:namespace:public`|
 
 ## Configuring Glee
 
@@ -111,13 +111,14 @@ Inside the return statement, you can specify the following options:
 These configurations apply to Glee itself, rather than any specific protocol.
 |Field|Default|Description|
 |--|--|--|
-|glee.gleeDir|`.glee`|Sets the Glee directory. Your sources will be compiled here.|
-|glee.lifecycleDir|`lifecycle`|Path to the directory that stores your [lifecycle events](./lifecycle-events.md).|
-|glee.functionsDir|`functions`| Path to the directory that stores your [functions](./functions.md).|
-|glee.asyncapiFilePath|`asyncapi.(yaml \| yml \| json)`| Path to your AsyncAPI file. |
-|glee.logs|  | glee logs channel and payload by default. you can change this behaviour for incoming and outgoing messages. |
-|glee.logs.incoming| "all" | supported values are `channel-only` and `none`. |
-|glee.logs.outgoing| "all" | supported values are `channel-only` and `none`. |
+|glee.gleeDir|`.glee`|Sets the Glee directory. Your sources will be compiled here.
+|glee.lifecycleDir|`lifecycle`|Path to the directory that stores your [lifecycle events](./lifecycle-events.md).
+|glee.functionsDir|`functions`| Path to the directory that stores your [functions](./functions.md).
+|glee.asyncapiFilePath|`asyncapi.(yaml \| yml \| json)`| Path to your AsyncAPI file.
+|glee.logs| default | glee logs channel and payload by default. you can change this behaviour for incoming and outgoing messages.
+|glee.logs.incoming| "all" | Supported values are `channel-only` and `none`.
+|glee.logs.outgoing| "all" | Supported values are `channel-only` and `none`.
+
 #### Generating Documentation
 |Field|Description|
 |--|--|
