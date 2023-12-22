@@ -20,6 +20,7 @@ Functions take a single argument, which is the event received from a broker or a
 |headers|The headers/metadata of the received event.
 |channel|The name of the channel/topic from which the event was read.
 |serverName|The name of the server/broker from which the event was received.
+
 Functions may return an object to tell Glee what to do next. For instance, the following example greets the user back:
 ```js
 /* onHello.js */
@@ -75,7 +76,7 @@ export default async function ({
 export const lifecycleEvent = 'onConnect'
 ```
 
-Each file in the `lifecycle` directory must export a default async function and the `lifecycleEvent` field, which is the [name of the event](#list-of-events) you want to subscribe to. Optionally, your function can return an object following exactly the same syntax [as described in the functions documentation](functions.md).
+Each file in the `lifecycle` directory must export a default async function and the `lifecycleEvent` field, which is the [name of the event](#list-of-events) you want to subscribe to. Optionally, your function can return an object following exactly the same syntax as described above in the functions definition.
 
 ## List of events
 
