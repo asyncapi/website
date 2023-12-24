@@ -120,36 +120,36 @@ export default function NavBar({
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      {/* <a href="#main-content" className="absolute block p-5 font-semibold text-gray-700 transform -translate-y-20 bg-gray-100 md:inline-block focus:translate-y-0 text-md" alt="Skip to main content">Skip to main content</a> */}
-      <div className="flex items-center justify-between w-full py-6 lg:justify-start lg:space-x-10">
+      {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
+      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
             <div className="flex" >
               <Link href="/">
                 <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
-                  <AsyncAPILogo className="w-auto h-8 sm:h-8" />
+                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
                 </a>
               </Link>
             </div>
           </div>
         )}
 
-        <div className="flex flex-row items-center justify-center -my-2 -mr-2 lg:hidden" data-testid="Navbar-search">
+        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
           <SearchButton
-            className="flex items-center p-2 space-x-2 text-left text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
+            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
           >
             <IconLoupe />
           </SearchButton>
-          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
-            <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
 
-        <nav className="hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10" data-testid="Navbar-main">
+        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full" data-testid="Navbar-main">
           <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
             <NavItem
               text="Docs"
@@ -189,7 +189,7 @@ export default function NavBar({
 
           <div className="flex flex-row items-center justify-content">
             <SearchButton
-              className="flex items-center p-2 space-x-2 text-left text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
+              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
               aria-label="Open Search"
             >
               <IconLoupe />
