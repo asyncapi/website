@@ -97,23 +97,6 @@ export default function NavBar({
   }
 
   useEffect(() => {
-    const handleWindowResize = () => {
-      if (window.innerWidth > 1023 && mobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-  
-    window.addEventListener('resize', handleWindowResize);
-  
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto';
-  
-    return () => {
-      document.body.style.overflow = 'auto';
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, [mobileMenuOpen]);
-  
-  useEffect(() => {
     setMobileMenuOpen(false);
     setOpen(null);
   }, [asPath]);
@@ -141,8 +124,11 @@ export default function NavBar({
           >
             <IconLoupe />
           </SearchButton>
-          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-            <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <button onClick={() => {
+            setMobileMenuOpen(true);
+            document.body.style.overflow = 'hidden'
+            }} type="button" className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+            <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -212,7 +198,10 @@ export default function NavBar({
       </div>
 
       {/* Mobile menu, show/hide based on mobile menu state. */}
-      {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
+      {mobileMenuOpen && <MobileNavMenu onClickClose={() => {
+        setMobileMenuOpen(false);
+        document.body.style.overflow = 'auto'
+        }} />}
 
     </div>
   )
