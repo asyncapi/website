@@ -77,13 +77,12 @@ info:
     The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
 
 servers:
-production:
-host: wss-primary.slack.com
-pathname: /link
-protocol: wss
-description: Slack's server in Socket Mode for real-time communication
+  production:
+    host: wss-primary.slack.com
+    pathname: /link
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication
 `}
-
 </CodeBlock>
 
 ## Define messages and schemas
@@ -106,32 +105,32 @@ components:
       payload:
         $ref: '#/components/schemas/hello'
 
-schemas:
-hello:
-type: object
-properties:
-type:
-type: string
-description: A hello string confirming WebSocket connection
-const: "hello"
-connection_info:
-type: object
-properties:
-app_id:
-type: string
-num_connections:
-type: integer
-debug_info:
-type: object
-properties:
-host:
-type: string
-started:
-type: string
-build_number:
-type: integer
-approximate_connection_time:
-type: integer
+  schemas:
+  hello:
+    type: object
+    properties:
+      type:
+        type: string
+        description: A hello string confirming WebSocket connection
+        const: "hello"
+      connection_info:
+        type: object
+        properties:
+          app_id:
+          type: string
+      num_connections:
+          type: integer
+      debug_info:
+        type: object
+        properties:
+        host:
+          type: string
+        started:
+          type: string
+        build_number:
+          type: integer
+        approximate_connection_time:
+          type: integer
 
     reaction:
       type: object
@@ -212,11 +211,11 @@ operations:
       - $ref: '#/channels/root/messages/hello'
 
 reactionListener:
-action: receive
-channel:
-$ref: '#/channels/root'
-messages:
-- $ref: '#/channels/root/messages/reaction'
+  action: receive
+  channel:
+    $ref: '#/channels/root'
+  messages:
+    - $ref: '#/channels/root/messages/reaction'
 `}
 </CodeBlock>
 
@@ -232,20 +231,20 @@ info:
     The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
 
 servers:
-production:
-host: wss-primary.slack.com
-pathname: /link
-protocol: wss
-description: Slack's server in Socket Mode for real-time communication
+  production:
+    host: wss-primary.slack.com
+    pathname: /link
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication
 
 channels:
-root:
-address: /
-messages:
-hello:
-$ref: '#/components/messages/hello'
-reaction:
-$ref: '#/components/messages/reaction'
+  root:
+    address: /
+    messages:
+      hello:
+        $ref: '#/components/messages/hello'
+      reaction:
+        $ref: '#/components/messages/reaction'
 
     bindings:
       ws:
@@ -263,26 +262,26 @@ $ref: '#/components/messages/reaction'
               const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
 
 operations:
-helloListener:
-action: receive
-channel:
-$ref: '#/channels/root'
-messages:
-- $ref: '#/channels/root/messages/hello'
+  helloListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/hello'
 
-reactionListener:
-action: receive
-channel:
-$ref: '#/channels/root'
-messages:
-- $ref: '#/channels/root/messages/reaction'
+  reactionListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/reaction'
 
 components:
-messages:
-reaction:
-summary: Action triggered when the channel receives a new reaction-added event
-payload:
-$ref: '#/components/schemas/reaction'
+  messages:
+    reaction:
+      summary: Action triggered when the channel receives a new reaction-added event
+      payload:
+        $ref: '#/components/schemas/reaction'
 
     hello:
       summary: Action triggered when a successful WebSocket connection is established
@@ -290,31 +289,31 @@ $ref: '#/components/schemas/reaction'
         $ref: '#/components/schemas/hello'
 
 schemas:
-hello:
-type: object
-properties:
-type:
-type: string
-description: A hello string confirming WebSocket connection
-const: "hello"
-connection_info:
-type: object
-properties:
-app_id:
-type: string
-num_connections:
-type: integer
-debug_info:
-type: object
-properties:
-host:
-type: string
-started:
-type: string
-build_number:
-type: integer
-approximate_connection_time:
-type: integer
+  hello:
+    type: object
+    properties:
+      type:
+        type: string
+        description: A hello string confirming WebSocket connection
+        const: "hello"
+      connection_info:
+        type: object
+        properties:
+          app_id:
+            type: string
+          num_connections:
+            type: integer
+          debug_info:
+            type: object
+            properties:
+              host:
+                type: string
+              started:
+                type: string
+              build_number:
+                type: integer
+              approximate_connection_time:
+                type: integer
 
     reaction:
       type: object
