@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Heading from '../typography/Heading'
 import Paragraph from '../typography/Paragraph'
 
@@ -22,7 +23,7 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/MentorshipProgram.webp" alt="Mentorship Program" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Mentorship Program</h2>
+                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal hover:underline cursor-pointer"><Link href="https://www.asyncapi.com/blog/beyond-boundaries">Mentorship Program</Link></h2>
                                 </div>
                                 <p className="text-base text-center text-darkGunMetal">Our AsyncAPI Mentorship program offers paid guidance to develop valuable features, investing in tools and motivated individuals for community benefit.</p>
                             </div>
@@ -32,7 +33,7 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/BountyProgram.webp" alt="Bounty Program" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl text-center font-semibold my-2 text-darkGunMetal">Bounty Program</h2>
+                                    <h2 className="text-2xl text-center font-semibold my-2 text-darkGunMetal hover:underline cursor-pointer"><Link href="https://github.com/orgs/asyncapi/discussions/541">Bounty Program</Link></h2>
                                 </div>
                                 <p className="text-base text-center text-darkGunMetal">Rewarding contributors regardless of affiliation or volunteer status. Free mentoring and support for newcomers to build portfolios and unlock tech prospects.</p>
                             </div>
@@ -42,7 +43,7 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Events.webp" alt="Events" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl text-center font-semibold my-2 text-darkGunMetal">Events</h2>
+                                    <h2 className="text-2xl text-center font-semibold my-2 text-darkGunMetal hover:underline cursor-pointer"><Link href="https://www.asyncapi.com/community/events">Events</Link></h2>
                                 </div>
                                 <p className="text-base text-center text-darkGunMetal">Supporting AsyncAPI conferences incurs costs for services and travel arrangements. Your contributions facilitate event hosting and community growth.</p>
                             </div>
@@ -52,7 +53,7 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/SwagStore.webp" alt="Swag Store" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Swag Store</h2>
+                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal hover:underline cursor-pointer"><Link href="https://www.store.asyncapi.com/collections/all-products">Swag Store</Link></h2>
                                 </div>
                                 <p className="text-base text-center text-darkGunMetal">Creating a swag store for seamless distribution to contributors, mentees, ambassadors, and community members. Store profits can fund complimentary swag expenses.</p>
                             </div>
@@ -62,9 +63,9 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Hiring.webp" alt="Hiring" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Hiring</h2>
+                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal hover:underline cursor-pointer"><Link href="https://opencollective.com/">Hiring</Link></h2>
                                 </div>
-                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand the team. our team</p>
+                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <Link href="https://www.linkedin.com/in/v-thulisile-sibanda/"><span className=' cursor-pointer underline'>Thulie</span></Link> joins as community manager, with plans to expand our team.</p>
                             </div>
                         </div>
 
@@ -72,7 +73,7 @@ export default function ExpenseBreakdown() {
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Services.webp" alt="Services" className="w-1/5 h-auto object-cover rounded-md m-1" />
-                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Services</h2>
+                                    <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal hover:underline cursor-pointer"><Link href="https://zoom.us/pricing">Services</Link></h2>
                                 </div>
                                 <p className="text-base text-center text-darkGunMetal">Occasionally, we must pay for services such as Zoom or Descript, as they are not available through specific Open Source support programs.</p>
                             </div>
