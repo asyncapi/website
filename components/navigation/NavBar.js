@@ -98,6 +98,7 @@ export default function NavBar({
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    document.body.style.overflow = 'auto'
     setOpen(null);
   }, [asPath]);
 
