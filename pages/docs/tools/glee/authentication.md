@@ -19,12 +19,12 @@ export async function clientAuth({ parsedAsyncAPI, serverName }) {
 }
 ```
 
-Glee looks for authentication files in the `auth` directory by default but it can be configured using [glee config file](config-file).
+Glee looks for authentication files in the `auth` directory by default but it can be configured using [glee config file](env-vars-config).
 The name of the authentication file should be the name of the targeted server that the authentication logic should work for.
 
 ## Supported Authentication Values in asyncapi.yaml file
 
-AsyncAPI currently supports a variety of authentication formats as specified in the [documentation](https://www.asyncapi.com/docs/reference/specification/v3.0.0-next-major-spec.15#securitySchemeObject), however Glee supports the following authentication schemas.
+AsyncAPI currently supports a variety of authentication formats as specified in the [documentation](https://www.asyncapi.com/docs/reference/specification/v3.0.0#securitySchemeObject), however Glee supports the following authentication schemas.
 
 - userPassword
 - http ("bearer")
@@ -56,7 +56,7 @@ components:
 
 ```
 
-A sample `asyncapi.yaml` for a **client** that implements some of the requirements of the server above:
+A sample `asyncapi.yaml` for a **client** that implements some of the requirements of the server above is as follows:
 
 ```yaml
 ##client asyncAPI schema
@@ -81,7 +81,7 @@ components:
 
 ```
 
-Glee can act as both a server and a client. Hence, the need for `serverAuth` and `clientAuth`. Glee acts as a client when the server name is included in the `x-remoteServers` property in the `asyncapi.yaml` file.
+Glee can act as both a server and a client. So the need for `serverAuth` and `clientAuth`. Glee acts as a client when the server name is included in the `x-remoteServers` property in the `asyncapi.yaml` file.
 
 When Glee acts as a client, it can connect to a Glee server, and when Glee acts as a server it accepts connections from other Glee clients. Hence a Glee application can both accept connections from clients while also sending requests to other Glee applications (servers) at the same time.
 
@@ -109,19 +109,19 @@ export async function serverAuth({ authProps, done }) {
   if (isValidUser(authProps)) {
     done(true);
   } else {
-    done(false, 401, "Unauthorized");
+    done(false);
   }
 }
 ```
 **Parameters for done():**
 
-- Authentication Result (Boolean): true for success, false for failure.
+*Authentication Result (Boolean): true for success, false for failure.*
 
 When `true` is passed to the done parameter, the server/broker knows to go ahead and allow the client to connect, which means authentication has succeeded. However if the `done` parameter is called with `false` then the server knows to throw an error message and reject the client, which means authentication has failed.
 
 `done()` should always be the last thing called in a `serverAuth` function, Glee won't execute any logic beyond the `done()` call.
 
-### authProps
+#### authProps
 
 `authProps` implements a couple of methods that allows the server to retrieve the authentication parameters from the client, below are the current available methods;
 
@@ -134,7 +134,6 @@ export async function serverAuth({ authProps, done }) {
   authProps.getToken()
   authProps.getUserPass()
 
-  // done(false, 401, "Unauthorized");
   done(false)
 }
 ```
@@ -173,7 +172,7 @@ export async function clientAuth({ serverName }) {
 }
 ```
 
-**The name of the authentication parameters should be the same as the names specified in the `asyncapi.yaml` file.**
+The name of the authentication parameters should be the same as **the names specified in the `asyncapi.yaml` file.**
 
 | auth type                             | values                                                                 |
 | ------------------------------------- | ---------------------------------------------------------------------- |
