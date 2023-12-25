@@ -209,7 +209,7 @@ operations:
       $ref: '#/channels/root'
     messages:
       - $ref: '#/channels/root/messages/reaction'
-<CodeBlock>
+</CodeBlock>
 
 You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
 
