@@ -228,8 +228,7 @@ info:
   title: Create an AsyncAPI Document for a Slackbot with WebSockets
   version: '1.0.0'
   description:  |
-    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
-
+    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
 servers:
   production:
     host: wss-primary.slack.com
