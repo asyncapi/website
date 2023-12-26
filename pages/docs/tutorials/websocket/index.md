@@ -68,21 +68,18 @@ The WebSocket URL is generated  by invoking the <a href="https://api.slack.com/m
 </Remember>
 
 <CodeBlock language="yaml">
-{`
-asyncapi: '3.0.0'
-info:
-  title: Create an AsyncAPI Document for a Slackbot with WebSockets
-  version: '1.0.0'
-  description:  |
-    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
-
-servers:
-  production:
-    host: wss-primary.slack.com
-    pathname: /link
-    protocol: wss
-    description: Slack's server in Socket Mode for real-time communication
-`}
+{`  asyncapi: '3.0.0'
+    info:
+      title: Create an AsyncAPI Document for a Slackbot with WebSockets
+      version: '1.0.0'
+      description:  |
+        The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
+    servers:
+      production:
+        host: wss-primary.slack.com
+        pathname: /link
+        protocol: wss
+        description: Slack's server in Socket Mode for real-time communication `}
 </CodeBlock>
 
 ## Define messages and schemas
@@ -92,216 +89,31 @@ Your AsyncAPI document needs to be very clear on the type of event it is expecte
 The `payload` attribute specifies the name, format, and description of all the expected properties. `Heart-Counter` starts the popularity count of a message by validating if the `reaction` property set in the `reaction` schema definition corresponds to "heart".
 
 <CodeBlock language="yaml">
-{`
-components:
-  messages:
-    reaction:
-      summary: Action triggered when the channel receives a new reaction-added event
-      payload:
-        $ref: '#/components/schemas/reaction'
-
-    hello:
-      summary: Action triggered when a successful WebSocket connection is established
-      payload:
-        $ref: '#/components/schemas/hello'
-
-  schemas:
-  hello:
-    type: object
-    properties:
-      type:
-        type: string
-        description: A hello string confirming WebSocket connection
-        const: "hello"
-      connection_info:
-        type: object
-        properties:
-          app_id:
-          type: string
-      num_connections:
-          type: integer
-      debug_info:
-        type: object
-        properties:
-        host:
-          type: string
-        started:
-          type: string
-        build_number:
-          type: integer
-        approximate_connection_time:
-          type: integer
-
-    reaction:
-      type: object
-      properties:
-        user:
-          type: string
-          description: User ID who performed this event
-        reaction:
-          type: string
-          description: The only reaction that we need is a heart emoji
-        item_user:
-          type: string
-          description: User ID that created the original item that has been reacted to
-        item:
-          type: object
-          properties:
-            channel:
-              type: string
-              description: Channel information of original message
-            ts:
-              type: string
-              description: Timestamp information of original message
-        event_ts:
-          type: string
-          description: Reaction timestamp
-`}
-</CodeBlock>
-
-## Define channels and  bindings
-
-The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
-
-The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
-
-<CodeBlock language="yaml">
-{`
-channels:
-  root:
-    address: /
+{`  components:
     messages:
-      hello:
-        $ref: '#/components/messages/hello'
       reaction:
-        $ref: '#/components/messages/reaction'
-
-    bindings:
-      ws:
-        query:
-          type: object
-          description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
-          properties:
-            ticket:
-              type: string
-              description: Temporary token generated when connection is initiated
-              const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
-            app_id:
-              type: string
-              description: Unique identifier assigned to the Slack app
-              const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
-`}
-</CodeBlock>
-
-## Define operations 
-The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
-
-In this example, the `helloListener` operation keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
-
-Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
-
-<CodeBlock language="yaml">
-{`
-operations:
-  helloListener:
-    action: receive
-    channel:
-      $ref: '#/channels/root'
-    messages:
-      - $ref: '#/channels/root/messages/hello'
-
-reactionListener:
-  action: receive
-  channel:
-    $ref: '#/channels/root'
-  messages:
-    - $ref: '#/channels/root/messages/reaction'
-`}
-</CodeBlock>
-
-You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
-
-<CodeBlock language="yaml">
-{`
-asyncapi: '3.0.0'
-info:
-  title: Create an AsyncAPI Document for a Slackbot with WebSockets
-  version: '1.0.0'
-  description:  |
-    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
-servers:
-  production:
-    host: wss-primary.slack.com
-    pathname: /link
-    protocol: wss
-    description: Slack's server in Socket Mode for real-time communication
-
-channels:
-  root:
-    address: /
-    messages:
+        summary: Action triggered when the channel receives a new reaction-added event
+        payload:
+          $ref: '#/components/schemas/reaction'
       hello:
-        $ref: '#/components/messages/hello'
-      reaction:
-        $ref: '#/components/messages/reaction'
-
-    bindings:
-      ws:
-        query:
-          type: object
-          description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
-          properties:
-            ticket:
-              type: string
-              description: Temporary token generated when connection is initiated
-              const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
-            app_id:
-              type: string
-              description: Unique identifier assigned to the Slack app
-              const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
-
-operations:
-  helloListener:
-    action: receive
-    channel:
-      $ref: '#/channels/root'
-    messages:
-      - $ref: '#/channels/root/messages/hello'
-
-  reactionListener:
-    action: receive
-    channel:
-      $ref: '#/channels/root'
-    messages:
-      - $ref: '#/channels/root/messages/reaction'
-
-components:
-  messages:
-    reaction:
-      summary: Action triggered when the channel receives a new reaction-added event
-      payload:
-        $ref: '#/components/schemas/reaction'
-
-    hello:
-      summary: Action triggered when a successful WebSocket connection is established
-      payload:
-        $ref: '#/components/schemas/hello'
-
-schemas:
-  hello:
-    type: object
-    properties:
-      type:
-        type: string
-        description: A hello string confirming WebSocket connection
-        const: "hello"
-      connection_info:
+        summary: Action triggered when a successful WebSocket connection is established
+        payload:
+          $ref: '#/components/schemas/hello'
+    schemas:
+      hello:
         type: object
         properties:
-          app_id:
+          type:
             type: string
+            description: A hello string confirming WebSocket connection
+            const: "hello"
+          connection_info:
+            type: object
+            properties:
+              app_id:
+              type: string
           num_connections:
-            type: integer
+              type: integer
           debug_info:
             type: object
             properties:
@@ -313,32 +125,196 @@ schemas:
                 type: integer
               approximate_connection_time:
                 type: integer
-
-    reaction:
-      type: object
-      properties:
-        user:
-          type: string
-          description: User ID who performed this event
         reaction:
-          type: string
-          description: The only reaction that we need is a heart emoji
-        item_user:
-          type: string
-          description: User ID that created the original item that has been reacted to
-        item:
           type: object
           properties:
-            channel:
+            user:
               type: string
-              description: Channel information of original message
-            ts:
+              description: User ID who performed this event
+            reaction:
               type: string
-              description: Timestamp information of original message
-        event_ts:
-          type: string
-          description: Reaction timestamp
-`}
+              description: The only reaction that we need is a heart emoji
+            item_user:
+              type: string
+              description: User ID that created the original item that has been reacted to
+            item:
+              type: object
+              properties:
+                channel:
+                  type: string
+                  description: Channel information of original message
+                ts:
+                  type: string
+                  description: Timestamp information of original message
+            event_ts:
+              type: string
+              description: Reaction timestamp `}
+</CodeBlock>
+
+## Define channels and  bindings
+
+The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
+
+The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
+
+<CodeBlock language="yaml">
+{`  channels:
+      root:
+        address: /
+        messages:
+          hello:
+            $ref: '#/components/messages/hello'
+          reaction:
+            $ref: '#/components/messages/reaction'
+        bindings:
+          ws:
+            query:
+              type: object
+              description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
+              properties:
+                ticket:
+                  type: string
+                  description: Temporary token generated when connection is initiated
+                  const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
+                app_id:
+                  type: string
+                  description: Unique identifier assigned to the Slack app
+                  const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f' `}
+</CodeBlock>
+
+## Define operations 
+The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
+
+In this example, the `helloListener` operation keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
+
+Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
+
+<CodeBlock language="yaml">
+{`  operations:
+      helloListener:
+        action: receive
+        channel:
+          $ref: '#/channels/root'
+        messages:
+          - $ref: '#/channels/root/messages/hello'
+      reactionListener:
+        action: receive
+        channel:
+          $ref: '#/channels/root'
+        messages:
+          - $ref: '#/channels/root/messages/reaction' `}
+</CodeBlock>
+
+You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
+
+<CodeBlock language="yaml">
+{`  asyncapi: '3.0.0'
+    info:
+      title: Create an AsyncAPI Document for a Slackbot with WebSockets
+      version: '1.0.0'
+      description:  |
+        The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
+    servers:
+      production:
+        host: wss-primary.slack.com
+        pathname: /link
+        protocol: wss
+        description: Slack's server in Socket Mode for real-time communication
+    channels:
+      root:
+        address: /
+        messages:
+          hello:
+            $ref: '#/components/messages/hello'
+          reaction:
+            $ref: '#/components/messages/reaction'
+        bindings:
+          ws:
+            query:
+              type: object
+              description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
+              properties:
+                ticket:
+                  type: string
+                  description: Temporary token generated when connection is initiated
+                  const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
+                app_id:
+                  type: string
+                  description: Unique identifier assigned to the Slack app
+                  const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
+    operations:
+      helloListener:
+        action: receive
+        channel:
+          $ref: '#/channels/root'
+        messages:
+          - $ref: '#/channels/root/messages/hello'
+      reactionListener:
+        action: receive
+        channel:
+          $ref: '#/channels/root'
+        messages:
+          - $ref: '#/channels/root/messages/reaction'
+    components:
+      messages:
+        reaction:
+          summary: Action triggered when the channel receives a new reaction-added event
+          payload:
+            $ref: '#/components/schemas/reaction'
+        hello:
+          summary: Action triggered when a successful WebSocket connection is established
+          payload:
+            $ref: '#/components/schemas/hello'
+    schemas:
+      hello:
+        type: object
+        properties:
+          type:
+            type: string
+            description: A hello string confirming WebSocket connection
+            const: "hello"
+          connection_info:
+            type: object
+            properties:
+              app_id:
+                type: string
+              num_connections:
+                type: integer
+              debug_info:
+                type: object
+                properties:
+                  host:
+                    type: string
+                  started:
+                    type: string
+                  build_number:
+                    type: integer
+                  approximate_connection_time:
+                    type: integer
+        reaction:
+          type: object
+          properties:
+            user:
+              type: string
+              description: User ID who performed this event
+            reaction:
+              type: string
+              description: The only reaction that we need is a heart emoji
+            item_user:
+              type: string
+              description: User ID that created the original item that has been reacted to
+            item:
+              type: object
+              properties:
+                channel:
+                  type: string
+                  description: Channel information of original message
+                ts:
+                  type: string
+                  description: Timestamp information of original message
+            event_ts:
+              type: string
+              description: Reaction timestamp `}
 </CodeBlock>
 
 
