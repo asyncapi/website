@@ -83,9 +83,11 @@ components:
               type: string
 ```
 
-## Defining messages using Avro Schema in JSON
+## Reusing existing Avro Schemas
 
-In this section you'll learn to add the Avro schemas using external JSON file. Start by creating a file called `userSchema.json`.
+Occasionally you might find yourself with a set of existing Avro Schemas. In such cases, instead of defining these schemas again anew in your AsyncAPI document, you can integrate them seamlessly by calling out existing files.
+
+Assume you have a file named `userSchema.json` that encapsulates the Avro Schema that resembles the following:
 
 ```
 // userSchema.json
@@ -101,9 +103,7 @@ In this section you'll learn to add the Avro schemas using external JSON file. S
 }
 ```
 
-In the above snippet, the structure captures the same Avro schema information, but this time it is represented in JSON format and saved into an external file named `userSchema.json`.
-
-To incorporate this external JSON schema into the AsyncAPI document, you can use the `$ref` property to reference the path to the JSON file. This way, your AsyncAPI document will be fully equipped with the Avro Schema provided by the external JSON file.
+To seamlessly incorporate this existing Avro schema into your AsyncAPI document, you can use the `$ref` property to reference the path to the JSON file. This way, your AsyncAPI document will incorporate the Avro Schema from the external JSON file, ensuring consistency and interoperability in your Kafka ecosystem. 
 
 ```
 asyncapi: 3.0.0
