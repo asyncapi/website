@@ -1,5 +1,5 @@
 ---
-title: Create AsyncAPI Document for applications interacting with Kafka
+title: Create AsyncAPI Document for applications consuming from Kafka
 description: Explore configuring AsyncAPI document for Kafka messages.
 weight: 20
 ---
@@ -18,10 +18,10 @@ sequenceDiagram
     participant Message Broker
     participant Service (Producer)
     participant User
-    Your Application (Consumer)->> Message Broker: Connects to "userSignedUp" topic
+    Your Application (Consumer)->> Message Broker: Subscribes to "userSignedUp" topic
     User-->> Service (Producer): Signs Up
     Service (Producer)->> Message Broker: Publishes Events
-    Message Broker->> Your Application (Consumer): Sends "user_signup" payload
+    Message Broker->> Your Application (Consumer): Sends "user_signup" message
 ```    
 
 
@@ -31,7 +31,7 @@ sequenceDiagram
 
 [Message brokers](/docs/tutorials/getting-started/event-driven-architectures#message-broker) facilitate asynchronous communications between services, meaning that the sending service doesn't have to wait for the receiving service's response. This allows multiple services to talk to each other directly, even if they are written in different languages. A great example of such a message broker is Apache Kafka. [Apache Kafka](https://kafka.apache.org/) is a distributed system that is used by thousands of companies for their event-driven system.
 
-[Publish/Subscribe (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, those generating event notifications act as publishers, while those receiving the notifications act as the corresponding subscribers.
+[Publisher/Subscriber (Pub/Sub)](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is a typical model in EDAs, providing flexible coupling between publishers and subscribers. In this model, those that `send` event notifications act as publishers, while those that `receive` the notifications act as the corresponding subscribers.
 
 ## Creating AsyncAPI document for Kafka Messages  
 
