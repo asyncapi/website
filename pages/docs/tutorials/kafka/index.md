@@ -15,13 +15,13 @@ Basically, if you want to build a system that can track the users who have signe
 ```mermaid
 sequenceDiagram
     participant Your Application (Consumer)
-    participant Message Broker
+    participant Kafka
     participant Service (Producer)
     participant User
-    Your Application (Consumer)->> Message Broker: Subscribes to "userSignedUp" topic
+    Your Application (Consumer)->> Kafka: Subscribes to "userSignedUp" topic
     User-->> Service (Producer): Signs Up
-    Service (Producer)->> Message Broker: Publishes Events
-    Message Broker->> Your Application (Consumer): Sends "user_signup" message
+    Service (Producer)->> Kafka: Publishes Events
+    Kafka->> Your Application (Consumer): Sends "user_signup" message
 ```    
 
 
