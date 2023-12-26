@@ -51,7 +51,7 @@ export default function TSC() {
       wide
     >
       <div className="py-12 relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid max-w-xl lg:grid-cols-3 lg:gap-8 lg:max-w-screen-xl" data-testid="TSC-content">
+        <div className="grid max-w-xl my-0 mx-auto lg:grid-cols-3 lg:gap-8 lg:max-w-screen-xl" data-testid="TSC-content">
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
               What is a TSC?
