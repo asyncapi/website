@@ -27,13 +27,13 @@ export default function GeneratorInstallation({ }) {
   }
 
   function getNpmCode() {
-    return `npm install -g @asyncapi/generator
-ag ${specPath} ${template} ${params}`
+    return `npm install -g @asyncapi/cli
+asyncapi generate fromTemplate ${specPath} ${template} ${params}`
   }
 
   function getDockerCode() {
-    return `docker run --rm -it -v \${PWD}/example:/app/example \\
-asyncapi/generator ${specPath} ${template} ${params}`
+    return `docker run --rm -it -v \${PWD}/example:/app/example -v \${PWD}/output:/app/output \\
+asyncapi/cli generate fromTemplate ${specPath} ${template} ${params}`
   }
 
   return (
@@ -56,10 +56,12 @@ asyncapi/generator ${specPath} ${template} ${params}`
         codeBlocks={[{
           language: 'npm',
           code: getNpmCode(),
-        }, {
+        },
+        {
           language: 'Docker',
           code: getDockerCode(),
-        }]}
+        },
+      ]}
       />
     </div>
   )
