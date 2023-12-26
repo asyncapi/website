@@ -7,7 +7,8 @@ weight: 220
 ## Introduction
 In the [Create an AsyncAPI Document for a Slackbot with WebSockets]() tutorial, you learnt how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds by sending a message back to the Slack server through WebSocket to confirm the event reception. 
 
-The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request-Reply messaging pattern discussed in this context. The aim of this tutorial is to provide a clear understanding of the Request-Reply Messaging pattern and showcase how AsyncAPI effectively describes it using a practical example.
+The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request-Reply messaging pattern discussed in this context. You can refer the [Request/reply pattern](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) tutorial for an introduction to the Request Reply pattern implementation.
+The aim of this tutorial is to provide a clear understanding of the Request-Reply Messaging pattern and showcase how AsyncAPI effectively describes it using a practical use case.
 
 
 ```mermaid
@@ -28,7 +29,7 @@ Heart-Counter->>Slack Server (Socket Mode): Sending acknowledgement
 
 ## Background context
 
-The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) in AsyncAPI is an exciting and a highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
+The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info) in AsyncAPI is an exciting and a highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
 The messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system. 
 
 ```mermaid
@@ -67,7 +68,6 @@ In this tutorial, you'll be adding the `acknowledge` message to your AsyncAPI do
       payload:
         $ref: '#/components/schemas/acknowledge' `}
 </CodeBlock>
-```
 
 ## Define schemas
 
@@ -85,7 +85,6 @@ The sample request and response payloads are extracted from <a href="https://api
         type:
           type: string
           description: A hello string confirming WebSocket connection
-          const: hello
         connection_info:
           type: object
           properties:
@@ -126,11 +125,10 @@ The sample request and response payloads are extracted from <a href="https://api
                   description: User ID who performed this event
                 reaction:
                   type: string
-                  description: The only reaction that we need is a heart emoji
-                  const: heart
+                  description: The only reaction that you need is a heart emoji
                 item_user:
                   type: string
-                  description: >-
+                  description: |
                     User ID that created the original item that has been reacted
                     to
                 item:
@@ -183,14 +181,15 @@ Since the `Heart-Counter` makes use of just one WebSocket channel for communicat
 
 ## Define operations
 
-That brings to the important part of the tutorial where we get to finally represent the request reply pattern. 
+That brings to the important part of the tutorial where you get to finally represent the request reply pattern. 
 
-Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener` we also want to represent the message that is sent back to the server. This is where the `reply` attribute comes into play. 
+Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener` you also want to represent the message that is sent back to the server. This is where the `reply` attribute comes into play. 
 
-Since both the request and reply function happens over the same WebSocket URL, both the `channel` values stay the same. However, we can differentiate the message each operation conveys by specifying the message it will send or receive. 
-Thus, we can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
+Since both the request and reply function happens over the same WebSocket URL, both the `channel` values stay the same. However, you can differentiate the message each operation conveys by specifying the message it will send or receive. 
+Thus, you can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
 
-<CodeBlock language="yaml">
+
+<CodeBlock language="yaml" highlightedLines={[14,18]}>
 {`operations:
   helloListener:
     action: receive
@@ -211,7 +210,7 @@ Thus, we can say that for a `reaction` message received over the `root` channel,
         $ref: '#/channels/root' `}
 </CodeBlock>
 
-Putting all this together, we have our AsyncAPI document ready to go!
+Putting all this together, you have your AsyncAPI document ready to go!
 <CodeBlock language="yaml">
 {`asyncapi: 3.0.0
 info:
@@ -293,7 +292,6 @@ components:
         type:
           type: string
           description: A hello string confirming WebSocket connection
-          const: hello
         connection_info:
           type: object
           properties:
@@ -334,11 +332,10 @@ components:
                   description: User ID who performed this event
                 reaction:
                   type: string
-                  description: The only reaction that we need is a heart emoji
-                  const: heart
+                  description: The only reaction that you need is a heart emoji
                 item_user:
                   type: string
-                  description: >-
+                  description: |
                     User ID that created the original item that has been reacted
                     to
                 item:
