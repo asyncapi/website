@@ -68,18 +68,18 @@ The WebSocket URL is generated  by invoking the <a href="https://api.slack.com/m
 </Remember>
 
 <CodeBlock language="yaml">
-{`  asyncapi: '3.0.0'
-    info:
-      title: Create an AsyncAPI Document for a Slackbot with WebSockets
-      version: '1.0.0'
-      description:  |
-        The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
-    servers:
-      production:
-        host: wss-primary.slack.com
-        pathname: /link
-        protocol: wss
-        description: Slack's server in Socket Mode for real-time communication `}
+{`asyncapi: '3.0.0'
+info:
+  title: Create an AsyncAPI Document for a Slackbot with WebSockets
+  version: '1.0.0'
+  description:  |
+    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
+servers:
+  production:
+    host: wss-primary.slack.com
+    pathname: /link
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication `}
 </CodeBlock>
 
 ## Define messages and schemas
@@ -106,7 +106,6 @@ The `payload` attribute specifies the name, format, and description of all the e
           type:
             type: string
             description: A hello string confirming WebSocket connection
-            const: "hello"
           connection_info:
             type: object
             properties:
@@ -208,113 +207,113 @@ Your Slack application is designed to be notified of events within your workspac
 You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
 
 <CodeBlock language="yaml">
-{`  asyncapi: '3.0.0'
-    info:
-      title: Create an AsyncAPI Document for a Slackbot with WebSockets
-      version: '1.0.0'
-      description:  |
-        The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
-    servers:
-      production:
-        host: wss-primary.slack.com
-        pathname: /link
-        protocol: wss
-        description: Slack's server in Socket Mode for real-time communication
-    channels:
-      root:
-        address: /
-        messages:
-          hello:
-            $ref: '#/components/messages/hello'
-          reaction:
-            $ref: '#/components/messages/reaction'
-        bindings:
-          ws:
-            query:
-              type: object
-              description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
-              properties:
-                ticket:
-                  type: string
-                  description: Temporary token generated when connection is initiated
-                  const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
-                app_id:
-                  type: string
-                  description: Unique identifier assigned to the Slack app
-                  const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
-    operations:
-      helloListener:
-        action: receive
-        channel:
-          $ref: '#/channels/root'
-        messages:
-          - $ref: '#/channels/root/messages/hello'
-      reactionListener:
-        action: receive
-        channel:
-          $ref: '#/channels/root'
-        messages:
-          - $ref: '#/channels/root/messages/reaction'
-    components:
-      messages:
-        reaction:
-          summary: Action triggered when the channel receives a new reaction-added event
-          payload:
-            $ref: '#/components/schemas/reaction'
-        hello:
-          summary: Action triggered when a successful WebSocket connection is established
-          payload:
-            $ref: '#/components/schemas/hello'
-    schemas:
+{`  
+asyncapi: '3.0.0'
+info:
+  title: Create an AsyncAPI Document for a Slackbot with WebSockets
+  version: '1.0.0'
+  description:  |
+    The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
+servers:
+  production:
+    host: wss-primary.slack.com
+    pathname: /link
+    protocol: wss
+    description: Slack's server in Socket Mode for real-time communication
+channels:
+  root:
+    address: /
+    messages:
       hello:
+        $ref: '#/components/messages/hello'
+      reaction:
+        $ref: '#/components/messages/reaction'
+    bindings:
+      ws:
+        query:
+          type: object
+          description: Tokens are produced in the WebSocket URL generated from the [apps.connections.open](https://api.slack.com/methods/apps.connections.open) method from Slack’s API
+          properties:
+            ticket:
+              type: string
+              description: Temporary token generated when connection is initiated
+              const: '13748dac-b866-4ea7-b98e-4fb7895c0a7f'
+            app_id:
+              type: string
+              description: Unique identifier assigned to the Slack app
+              const: 'fe684dfa62159c6ac646beeac31c8f4ef415e4f39c626c2dbd1530e3a690892f'
+operations:
+  helloListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/hello'
+  reactionListener:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/reaction'
+components:
+  messages:
+    reaction:
+      summary: Action triggered when the channel receives a new reaction-added event
+      payload:
+        $ref: '#/components/schemas/reaction'
+    hello:
+      summary: Action triggered when a successful WebSocket connection is established
+      payload:
+        $ref: '#/components/schemas/hello'
+schemas:
+  hello:
+    type: object
+    properties:
+      type:
+        type: string
+        description: A hello string confirming WebSocket connection
+      connection_info:
         type: object
         properties:
-          type:
+          app_id:
             type: string
-            description: A hello string confirming WebSocket connection
-            const: "hello"
-          connection_info:
+          num_connections:
+            type: integer
+          debug_info:
             type: object
             properties:
-              app_id:
+              host:
                 type: string
-              num_connections:
+              started:
+                type: string
+              build_number:
                 type: integer
-              debug_info:
-                type: object
-                properties:
-                  host:
-                    type: string
-                  started:
-                    type: string
-                  build_number:
-                    type: integer
-                  approximate_connection_time:
-                    type: integer
+              approximate_connection_time:
+                type: integer
+    reaction:
+      type: object
+      properties:
+        user:
+          type: string
+          description: User ID who performed this event
         reaction:
+          type: string
+          description: The only reaction that we need is a heart emoji
+        item_user:
+          type: string
+          description: User ID that created the original item that has been reacted to
+        item:
           type: object
           properties:
-            user:
+            channel:
               type: string
-              description: User ID who performed this event
-            reaction:
+              description: Channel information of original message
+            ts:
               type: string
-              description: The only reaction that we need is a heart emoji
-            item_user:
-              type: string
-              description: User ID that created the original item that has been reacted to
-            item:
-              type: object
-              properties:
-                channel:
-                  type: string
-                  description: Channel information of original message
-                ts:
-                  type: string
-                  description: Timestamp information of original message
-            event_ts:
-              type: string
-              description: Reaction timestamp `}
+              description: Timestamp information of original message
+        event_ts:
+          type: string
+          description: Reaction timestamp `}
 </CodeBlock>
 
 
