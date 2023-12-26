@@ -1,5 +1,5 @@
 ---
-title: Create AsyncAPI Document for applications interacting with Kafka using Avro Schema
+title: Describe Kafka message payload using Avro Schema
 description: Explore configuring AsyncAPI document for Kafka messages with Avro Schema.
 weight: 30
 ---
