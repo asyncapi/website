@@ -16,7 +16,7 @@ AsyncAPI is a specification for describing Event-Driven Architectures (EDAs) in 
 
 Avro is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
 
-## Defining messages using Avro Schema in YAML
+## Defining message payload with Avro Schema directly in AsyncAPI document
 
 In this section, let's focus on defining messages using Avro Schemas using YAML. 
 
