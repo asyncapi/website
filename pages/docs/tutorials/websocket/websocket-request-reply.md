@@ -198,7 +198,6 @@ Thus, we can say that for a `reaction` message received over the `root` channel,
       $ref: '#/channels/root'
     messages:
       - $ref: '#/channels/root/messages/hello'
-
   reactionListener:
     action: receive
     channel: 
