@@ -22,9 +22,10 @@ import {
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
 
 const isMobile = isMobileDevice();
-const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
-  key: repo,
-  text: repo,
+const uniqueLangs = ["EN", "DE"].map((lang) => ({
+  key: lang,
+  text: lang,
+  value: lang
 }));
 
 export default function NavBar({
@@ -184,12 +185,7 @@ export default function NavBar({
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=""
-              value={() => {
-                if (i18n.language) {
-                  return i18n.language.toLocaleUpperCase();
-                }
-                return "EN";
-              }}
+              selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
             />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
