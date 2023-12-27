@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-weight: 80
+weight: 10
 ---
 
 ## Introduction
@@ -49,9 +49,7 @@ To setup a project, you should follow our installation page on how to setup glee
 
 We recommend creating a new Glee app using our official CLI which sets up everything automatically. (You don't need to create an empty directory. create-glee-app will make one for you.) To create a project, run: `asyncapi new glee`
 
-Once the process is completed, you should have a new Glee app ready for development and see these files that were made.
-
-![glee_structure](glee_struct.png)
+Once the process is completed, you should have a new Glee app ready for development and find the files that were made.
 
 #### Define our Spec for our API
 
@@ -141,11 +139,11 @@ export default async function (event) {
 
 Every file in the functions folder acts as a handler to develop business logic for glee, every file should export an async function that receives an event parameter, where you have access to payload and server details.
 
-#### Running and testing your application
+#### Running and testing our application
 
-We will not execute the application and carry out testing with Postman to ensure that it is functioning as intended.
+We will execute the application and carry out testing with Postman to ensure that it is functioning as intended.
 
-Now to execute your glee application, just run:
+Now to execute our glee application, just run:
 
 ```
 npm run dev
@@ -153,7 +151,5 @@ npm run dev
 npm run start
 ```
 To send a WebSocket request with a payload e.g. `{"name":"john", "time": "1567906535"}` to `ws://localhost:3000/greet`, open Postman and checkout the endpoint:
-
-![glee_response](glee_resp.png)
 
 So, this is how easy it is to build a WebSocket API using Glee. You can also check out the example code [here](https://github.com/Souvikns/greet-bot).

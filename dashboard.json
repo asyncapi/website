@@ -1,15 +1,24 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5Xb72L",
-      "isPR": true,
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
       "repo": "asyncapi/website",
-      "labels": [],
-      "score": 43.363362901138075
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 19.815046623698855
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -74,25 +83,42 @@
       "resourcePath": "/asyncapi/cli/pull/593",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 15.507427792459973
+      "score": 15.794602381209232
     },
     {
-      "id": "PR_kwDOBW5R_c5QjwOq",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add table of contents in case study",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/website/pull/1673",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.507427792459973
+      "id": "I_kwDOFDnrNc5rjrK-",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve `new glee` command",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/cli/issues/683",
+      "repo": "asyncapi/cli",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "bounty",
+          "color": "0e8a16"
+        },
+        {
+          "name": "level/medium",
+          "color": "0e8a16"
+        },
+        {
+          "name": "bounty/2023-Q4",
+          "color": "0e8a16"
+        }
+      ],
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDOBW5R_c5RI5z2",
       "isPR": true,
       "isAssigned": false,
       "title": "feat: add testimonial carousel",
-      "author": "Lucif3r-in",
+      "author": "ashutosh-rath02",
       "resourcePath": "/asyncapi/website/pull/1704",
       "repo": "asyncapi/website",
       "labels": [],
@@ -110,34 +136,6 @@
       "score": 14.07155484871368
     },
     {
-      "id": "I_kwDOFDnrNc5rjrK-",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve `new glee` command",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/cli/issues/683",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "FD6F9E"
-        },
-        {
-          "name": "level/medium",
-          "color": "FD6F9E"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "FD6F9E"
-        }
-      ],
-      "score": 13.497205671215161
-    },
-    {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
       "isPR": true,
       "isAssigned": false,
@@ -146,7 +144,7 @@
       "resourcePath": "/asyncapi/website/pull/2245",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 13.497205671215161
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -162,10 +160,135 @@
           "color": "ededed"
         }
       ],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fTNfJ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Mailchimp integration using netlify function",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/2315",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh3856EyqD",
+      "title": "Add missing PHP constraint docs",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1673",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "PHP generator",
+          "color": "20DC39"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3856EybC",
+      "title": "Add missing Kotlin constraint docs",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1672",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Kotlin generator",
+          "color": "61A95C"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3856EyLo",
+      "title": "Add missing C++ constraint docs",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1671",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "docs",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C++ generator",
+          "color": "1573BB"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3856Eu2Z",
+      "title": "Add C++ constraint tests",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1670",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C++ generator",
+          "color": "1573BB"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3856EtdU",
+      "title": "Add Python constraint tests",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1669",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "Python generator",
+          "color": "5319e7"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3856EtEg",
+      "title": "Add PHP constraint tests",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1668",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        }
+      ]
+    },
     {
       "id": "I_kwDOB5hCo855VB2E",
       "title": "Add code linting (eslint) as part of CI script",
@@ -286,17 +409,21 @@
       ]
     },
     {
-      "id": "I_kwDOFLhIt85yyn4B",
-      "title": "Update tooling doc with info about new category",
+      "id": "I_kwDOE8Qh385yzOft",
+      "title": "TypeScript include documentation for properties instead of getters",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/899",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "docs",
+      "resourcePath": "/asyncapi/modelina/issues/1548",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
       "labels": [
         {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
         }
       ]
     },
@@ -390,7 +517,7 @@
       "resourcePath": "/asyncapi/java-spring-template/issues/326",
       "repo": "asyncapi/java-spring-template",
       "author": "Tenischev",
-      "area": "Unknown",
+      "area": "java",
       "labels": [
         {
           "name": "bug",
