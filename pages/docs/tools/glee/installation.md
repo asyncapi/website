@@ -1,6 +1,6 @@
 ---
 title: 'Installation guide'
-weight: 30
+weight: 20
 ---
 
 ## Glee Installation
@@ -78,7 +78,7 @@ These scripts refer to the different stages of developing an application.
 
 - `glee start`: This script is responsible for starting your project or application. It is used to launch a production-ready server or application instance.
 
-#### Creating `asyncapi.yaml` file and other required directories
+#### Create `asyncapi.yaml` file and other required directories
 
 Create a yaml file that supports capable of receiving a "hello {name}" message with the protocol as `ws` and the channel name  as `hello` the hello API will subscribe to. The operationId property is `onHello` that's the name of function and the payload property is type string publishing to that channel.
 
