@@ -6,19 +6,35 @@ weight: 30
 
 ## Introduction
 
-The previous tutorial taught you about writing an AsyncAPI document for Kafka messages using the default schema. This turorial will teach you to write the same document using Avro Schema.
+The [previous tutorial](https://deploy-preview-2252--asyncapi-website.netlify.app/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
 
-While AsyncAPI schemas can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
+While AsyncAPI schemas can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial, you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
 
 ## Background Context
 
-AsyncAPI is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. It allows developers to define how messages are exchanged between different services by providing a agreement for communication.
+[AsyncAPI](https://www.asyncapi.com/) is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. It allows developers to define how messages are exchanged between different services by providing an agreement for communication.
 
-Avro is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
+[Avro](https://avro.apache.org/) is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
 
-## Defining message payload with Avro Schema directly in AsyncAPI document
+## Defining message payload with Avro Schema directly in the AsyncAPI document
 
-In this section, let's focus on defining messages using Avro Schemas using YAML. 
+Defining message schemas with the default schema is already covered in the [previous tutorial](https://deploy-preview-2252--asyncapi-website.netlify.app/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
+
+```
+messages:
+  userSignedUp:
+    payload:
+      type: object
+      properties:
+        user-id:
+          type: integer
+          description: This property describes the id of the user
+        user-email:
+          type: string
+          description: This property describes the id of the user
+```
+
+In this section, let's shift our focus to defining messages using Avro Schemas directly within our document. 
 
 ```
 messages:
@@ -41,7 +57,7 @@ In the above snippet:
 - The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat` and the `schema`.
 - The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `user-id` and `user-email`, defining their data types as `int` and `string` respectively.
 
-By combining the Avro Schema discussed above into the previous tutorial, you'll have a AsyncAPI document fully equipped with Avro Schema!
+By combining the Avro Schema discussed above into the previous tutorial, you'll have an AsyncAPI document fully equipped with Avro Schema!
 
 ```
 asyncapi: 3.0.0
