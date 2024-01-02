@@ -1,7 +1,7 @@
 export const features = [
   {
     id: "specification",
-    links: [{ label: "Documentation", href: "docs/specifications/latest", id: 'whyasyncapi-spec-documentation-link' }],
+    links: [{ label: "Documentation", href: "docs/reference/specification/v3.0.0", id: 'whyasyncapi-spec-documentation-link' }],
   },
   {
     id: 'document-apis',
