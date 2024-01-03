@@ -7,10 +7,10 @@ export default function Footer() {
   return (
     <footer className="bg-dark mt-12 margin: 0 auto">
       <div className="max-w-screen-xl mx-auto py-4 sm:py-6 md:py-12 xl:py-16 px-3 overflow-hidden sm:px-6 lg:px-8 divide-y divide-cool-gray">
-        <nav className="py-4 sm:py-10 flex flex-wrap justify-between">
+        <nav className="py-4 sm:py-10 flex flex-wrap justify-center sm:justify-between">
 
-          <div className="mr-14 w-full md:w-auto">
-            <div className="">
+          <div className="sm:mr-14 w-full md:w-auto text-center sm:text-left">
+            <div className="inline-block sm:block">
               <Link href="/">
                 <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Footer-logo-link">
                   <AsyncAPILogoLight className="h-10 w-auto mt-3" />
@@ -45,7 +45,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
+              <div className="pl-14 pr-0 sm:px-8 sm:ml-10 md:ml-5 mb-5">
                 <div className="py-2">
                   <div className="text-white">
                     <Heading typeStyle="heading-sm-semibold">News</Heading>
@@ -96,16 +96,16 @@ export default function Footer() {
 
         <div className="sm:flex justify-between xl:mt-20 py-8 sm:py-12" data-testid="Footer-content">
           <div className="w-full sm:w-2/3">
-            <p className="text-left text-base leading-6 mb-3 text-cool-gray">
+            <p className="text-center sm:text-left text-base leading-6 mb-3 text-cool-gray">
               Made with <span className="font-mono text-secondary-500">:love:</span> by the AsyncAPI Initiative.
             </p>
-            <p className="text-left text-sm leading-6 text-cool-gray w-full sm:w-2/3" data-testid="Footer-copyright">
+            <p className="text-center sm:text-left text-sm leading-6 text-cool-gray w-full sm:w-2/3" data-testid="Footer-copyright">
               Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
               For web site terms of use, trademark policy and general project policies please see <a href="https://lfprojects.org" className="text-secondary-500 hover:text-white transition ease-in-out duration-300 underline" target="_blank" rel="noopener noreferrer">https://lfprojects.org</a>
             </p>
           </div>
           <div className="block mt-8 sm:mt-0">
-            <p className="block text-sm leading-6">
+            <p className="block text-sm leading-6 text-center sm:text-left">
               <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
                 <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" className="inline" alt="Deploys by Netlify" />
               </a>
