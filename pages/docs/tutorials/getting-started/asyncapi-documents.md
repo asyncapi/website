@@ -9,7 +9,7 @@ weight: 101
 
 An AsyncAPI document is a file that defines and annotates the different components of **a specific Event-Driven API**.
 
-The file format must be JSON or YAML; however, only the subset of YAML that matches the JSON capabilities is allowed.
+The file format must be [JSON](https://www.json.org/json-en.html) or [YAML](https://yaml.org/); however, only the subset of YAML that matches the JSON capabilities is allowed. Below we have an example AsyncAPI document in YAML file format.
 
 <CodeBlock>
 {`asyncapi: 3.0.0
