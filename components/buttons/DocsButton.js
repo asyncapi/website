@@ -35,7 +35,7 @@ export default function DocsButton({ post, className='' }) {
       <div className="w-1/2 h-auto">
         { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
-            <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
+            <div className="p-4 rounded shadow-md border h-[100%] border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer">
               <div className="text-secondary-500" data-testid="DocsButton-Nextdiv">
                 <div className="font-bold my-auto text-sm inline uppercase">
                   Up Next
