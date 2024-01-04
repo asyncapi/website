@@ -14,6 +14,7 @@ export default async function (event) {
 ```
 
 Functions take a single argument, which is the event received from a broker or a client, depending which kind of API you're building. The `event` argument has the following shape:
+
 |Attribute|Description|
 |----|----|
 |payload|The payload/body of the received event.
