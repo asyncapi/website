@@ -290,6 +290,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/captain-Akshay"><img src="https://avatars.githubusercontent.com/u/59491379?v=4?s=100" width="100px;" alt="Akshay Sharma"/><br /><sub><b>Akshay Sharma</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=captain-Akshay" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://web-yuvrxj-afk.vercel.app/"><img src="https://avatars.githubusercontent.com/u/63532070?v=4?s=100" width="100px;" alt="Yuvraj Singh Sisodiya"/><br /><sub><b>Yuvraj Singh Sisodiya</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=yuvrxj-afk" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shiva953"><img src="https://avatars.githubusercontent.com/u/120790871?v=4?s=100" width="100px;" alt="Neutron"/><br /><sub><b>Neutron</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shiva953" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sagarkori143"><img src="https://avatars.githubusercontent.com/u/129517558?v=4?s=100" width="100px;" alt="Sagar Kori"/><br /><sub><b>Sagar Kori</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=sagarkori143" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
