@@ -546,6 +546,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "sagarkori143",
+      "name": "Sagar Kori",
+      "avatar_url": "https://avatars.githubusercontent.com/u/129517558?v=4",
+      "profile": "https://github.com/sagarkori143",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
