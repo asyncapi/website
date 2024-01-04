@@ -163,50 +163,18 @@
       "score": 12.635681904967385
     },
     {
-      "id": "I_kwDOFi_gUM5hpuWl",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        }
-      ],
-      "score": 12.348507316218127
+      "id": "PR_kwDOCHlHJM5ezPwM",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: allow generator to pull from private npm repo",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/generator/pull/1061",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
-    {
-      "id": "I_kwDOE8Qh3856jMJn",
-      "title": "Add missing Scala constraint docs",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1692",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
-        }
-      ]
-    },
     {
       "id": "I_kwDOE8Qh3856iLHJ",
       "title": "Add Scala generator to playground",
@@ -227,78 +195,6 @@
         {
           "name": "Scala Generator",
           "color": "A25F2B"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EyqD",
-      "title": "Add missing PHP constraint docs",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1673",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "PHP generator",
-          "color": "20DC39"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EybC",
-      "title": "Add missing Kotlin constraint docs",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1672",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Kotlin generator",
-          "color": "61A95C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EtdU",
-      "title": "Add Python constraint tests",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1669",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c555-2-",
-      "title": "Update the link to AsyncAPI Shop in the footer",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2465",
-      "repo": "asyncapi/website",
-      "author": "devilkiller-ag",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
