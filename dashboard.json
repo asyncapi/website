@@ -48,17 +48,6 @@
       "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
       "id": "I_kwDOFLhIt84-OUI3",
       "isPR": false,
       "isAssigned": false,
@@ -111,7 +100,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 14.645904026212197
+      "score": 14.933078614961456
     },
     {
       "id": "PR_kwDOBW5R_c5RI5z2",
@@ -121,17 +110,6 @@
       "author": "ashutosh-rath02",
       "resourcePath": "/asyncapi/website/pull/1704",
       "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
       "labels": [],
       "score": 14.07155484871368
     },
@@ -172,120 +150,51 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "PR_kwDOCHlHJM5ezPwM",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: allow generator to pull from private npm repo",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/generator/pull/1061",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOE8Qh3856EyqD",
-      "title": "Add missing PHP constraint docs",
+      "id": "I_kwDOE8Qh3856iLHJ",
+      "title": "Add Scala generator to playground",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1673",
+      "resourcePath": "/asyncapi/modelina/issues/1690",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
-      "area": "docs",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "PHP generator",
-          "color": "20DC39"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EybC",
-      "title": "Add missing Kotlin constraint docs",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1672",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "website",
+          "color": "57A793"
         },
         {
-          "name": "Kotlin generator",
-          "color": "61A95C"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EyLo",
-      "title": "Add missing C++ constraint docs",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1671",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "C++ generator",
-          "color": "1573BB"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856Eu2Z",
-      "title": "Add C++ constraint tests",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1670",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "C++ generator",
-          "color": "1573BB"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EtdU",
-      "title": "Add Python constraint tests",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1669",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856EtEg",
-      "title": "Add PHP constraint tests",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1668",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
+          "name": "Scala Generator",
+          "color": "A25F2B"
         }
       ]
     },
@@ -637,10 +546,6 @@
       "area": "docs",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -655,10 +560,6 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
         {
           "name": "📑 docs",
           "color": "E50E99"

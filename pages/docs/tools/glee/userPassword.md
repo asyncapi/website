@@ -32,7 +32,7 @@ components:
 
 ```
 
-A sample `asyncapi.yaml` for a client that implements some of the requirements of the server above:
+A sample `asyncapi.yaml` for a client that implements some of the requirements of the server above is as follows:
 
 ```yaml
 ##client asyncAPI schema
@@ -103,4 +103,4 @@ export async serverAuth({ authProps, done }) {
 
 ```
 
-`getUserPass()` returns an object containing the username and password that was sent from the client.
+So, `getUserPass()` returns an object containing the username and password that is sent from the client.
