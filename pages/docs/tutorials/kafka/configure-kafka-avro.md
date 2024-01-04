@@ -55,6 +55,7 @@ messages:
 
 In the above snippet: 
 - The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat` and the `schema`.
+- Use the `schemaFormat` to specify using a MIME type, that you use Avro and what version of Avro Schema.
 - The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `user-id` and `user-email`, defining their data types as `int` and `string` respectively.
 
 By combining the Avro Schema discussed above into the previous tutorial, you'll have an AsyncAPI document fully equipped with Avro Schema!
