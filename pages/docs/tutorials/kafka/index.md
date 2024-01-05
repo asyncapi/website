@@ -37,7 +37,7 @@ sequenceDiagram
 
 In this section, you’ll create an AsyncAPI document to describe the `UserSignUp` API. The same document can be later used to generate code and documentation as per requirement.
 
-Let's begin by analysing the document. As we move forward in the tutorial, we'll break down each segment uncovering its purpose and functionality.
+Let's begin by analysing the document. As you move forward in the tutorial, we'll break down each segment uncovering its purpose and functionality.
 
 ```
 asyncapi: 3.0.0
@@ -93,9 +93,17 @@ info:
   version: 1.0.0
   description: The API notifies you whenever a new user signs up in the application.
 servers:
-  kafkaServer:
-    host: test.mykafkacluster.org:8092
-    description: Kafka Server
+  centralKafkaServer:
+    host: central.mykafkacluster.org:8092
+    description: Kafka broker running in central warehouse
+    protocol: kafka
+  westKafkaServer:
+    host: west.mykafkacluster.org:8092
+    description: Kafka broker running in west warehouse
+    protocol: kafka
+  eastKafkaServer:
+    host: east.mykafkacluster.org:8092
+    description: Kafka broker running in east warehouse
     protocol: kafka
 ```
 
@@ -105,7 +113,11 @@ In the above snippet:
   
 - The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
   
-- The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka.
+- The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka. This section allows you to define multiple clusters or servers, as shown in the provided code block.
+
+<Remember>
+If an application has multiple servers hidden from the user behind a load balancer, then only the address of the load balancer need to be included in the AsyncAPI document. 
+</Remember>
 
 ### Define channels and operations
 
