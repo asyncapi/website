@@ -113,10 +113,10 @@ In the above snippet:
   
 - The `info` field provides information about the API. Here the the APIs `title`, `version`, and `description` are being defined.
   
-- The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e. Kafka. This section allows you to define multiple clusters or servers, as shown in the provided code block.
+- The `server` field specifies the details of the server, including the `host`, `description`, and the `protocol` that is being used i.e., Kafka. This section allows you to define multiple clusters or servers, as shown in the provided code block.
 
 <Remember>
-If an application has multiple servers hidden from the user behind a load balancer, then only the address of the load balancer need to be included in the AsyncAPI document. 
+If an application has multiple servers hidden from the user behind a load balancer, then only the address of the load balancer needs to be included in the AsyncAPI document. 
 </Remember>
 
 ### Define channels and operations
