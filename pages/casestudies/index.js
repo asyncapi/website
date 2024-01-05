@@ -53,7 +53,7 @@ export default function Casestudies() {
                 Check out how different companies use AsyncAPI and what problems they solve.
               </Paragraph>
               <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
-                Feel free to <a className="underline" href="https://github.com/asyncapi/website/tree/master/config/adopters/adopters.yml">submit a pull request</a> with information about how your company uses AsyncAPI. We know that
+                Feel free to <a className="underline" href="https://github.com/asyncapi/website/blob/master/config/adopters.yml">submit a pull request</a> with information about how your company uses AsyncAPI. We know that
                 writing an official case study might be time consuming and requires too much internal paper work.
                 Let's make sure we can at least capture a use case that is already a great learning information for the
                 community.
