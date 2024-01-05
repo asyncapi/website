@@ -47,9 +47,17 @@ info:
   description: The API notifies you whenever a new user signs up in the application.
 
 servers:
-  kafkaServer:
-    host: test.mykafkacluster.org:8092
-    description: Kafka Server
+  centralKafkaServer:
+    host: central.mykafkacluster.org:8092
+    description: Kafka broker running in central warehouse
+    protocol: kafka
+  westKafkaServer:
+    host: west.mykafkacluster.org:8092
+    description: Kafka broker running in west warehouse
+    protocol: kafka
+  eastKafkaServer:
+    host: east.mykafkacluster.org:8092
+    description: Kafka broker running in east warehouse
     protocol: kafka
 
 operations:
