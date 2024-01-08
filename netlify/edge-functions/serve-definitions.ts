@@ -21,13 +21,12 @@ export default async (request: Request, context: Context) => {
   let rewriteRequest = buildRewrite(request);
   let response: Response;
   if (rewriteRequest === null) {
-    rewriteRequest = request;
-
-    response = await context.next();
-  } else {
-    // Fetching the definition file
-    response = await fetch(rewriteRequest);
+    // This is not a legitimate request, let it go through.
+    return await context.next();
   }
+
+  // Fetching the definition file
+  response = await fetch(rewriteRequest);
 
   const isRequestingAFile = request.url.endsWith('.json');
   if (isRequestingAFile) {
@@ -56,6 +55,7 @@ export default async (request: Request, context: Context) => {
         default:
           // Notifying NR of the error.
           metricName = "asyncapi.jsonschema.download.error";
+          console.log("Error downloading JSON Schema file: " + response.status + " " + response.statusText);
           break;
       }
     }
