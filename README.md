@@ -162,7 +162,33 @@ All AsyncAPI JSON Schema definition files are being served within the `/definiti
 This is possible thanks to the following:
 
 1. A [Netlify Rewrite rule](https://docs.netlify.com/routing/redirects/rewrites-proxies/) located in the [netlify.toml](netlify.toml) file, which acts as proxy for all requests to the `/definitions/<file>` path, serving the content from GH without having an HTTP redirect.
-2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.
+2. A [Netlify Edge Function](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/) that modifies the `Content-Type` header of the rewrite response to become `application/schema+json`. This lets tooling, such as [Hyperjump](https://json-schema.hyperjump.io), to fetch the schemas directly from their URL.  
+  Please find a flowchart explaining the flow this edge function should accomplish:
+  ```mermaid
+  flowchart TD
+    Request(Request) -->legitimate{Is it legitimate?}
+    legitimate -->|No| req_no_legitimate[Let the original request go through]
+    req_no_legitimate --> Response(Response)
+    
+    legitimate -->|Yes| req_legitimate[Fetch from GitHub]
+    req_legitimate-->req_json{Was requesting a .json file?}
+    
+    req_json -->|No| Response(Response)
+    req_json -->|Yes| response_status{Response Status?}
+    
+    response_status -->|2xx| response_ok[OK]
+    response_status -->|304| response_cached[Not Modified]
+    response_status -->|Any other| response_ko
+
+    response_ok --> set_headers[Set Response Content-Type header to application/schema+json]
+    set_headers --> send_metric_success[Send success metric]
+    response_cached -- cached:true --> send_metric_success
+    response_ko --> send_metric_error[Send error metric]
+
+    send_metric_success -- file served from raw GH --> Response(Response)
+    send_metric_error --the errored response --> Response(Response)
+  ```
+   
 
 ## Project structure
 
