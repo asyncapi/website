@@ -188,6 +188,29 @@ function CommunityIndexPage() {
           className="bg-channelCover"
         />
       </div>
+      <div className="flex sm:flex-row flex-col mt-10">
+        <div className="m-5">
+          <Card
+            type="small"
+            tagline="Finance"
+            icon="💰"
+            heading="Track Company Spending with Budget Analysis"
+            description="Delve into our finance section for a detailed analysis of the project's budget. Gain insights into how funds are allocated, track expenses, and ensure transparent financial management."
+            link="https://www.store.asyncapi.com/"
+          />
+        </div>
+        <div className="m-5">
+          <Card
+            type="small"
+            tagline="Store"
+            icon="🛒"
+            heading="Get Stylish Swags and Goodies"
+            description="Explore our collection of project-themed t-shirts and goodies. Show your support and grab some cool swags to represent the community!"
+            link="/finance"
+            bg="bg-primary-200"
+          />
+        </div>
+      </div>
       <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg" data-testid="CommunityCard-subscribe">
         <NewsletterSubscribe dark />
       </div>
