@@ -196,7 +196,7 @@ function CommunityIndexPage() {
             icon="💰"
             heading="Track Company Spending with Budget Analysis"
             description="Delve into our finance section for a detailed analysis of the project's budget. Gain insights into how funds are allocated, track expenses, and ensure transparent financial management."
-            link="https://www.store.asyncapi.com/"
+            link="/finance"
           />
         </div>
         <div className="m-5">
@@ -206,7 +206,7 @@ function CommunityIndexPage() {
             icon="🛒"
             heading="Get Stylish Swags and Goodies"
             description="Explore our collection of project-themed t-shirts and goodies. Show your support and grab some cool swags to represent the community!"
-            link="/finance"
+            link="https://www.store.asyncapi.com/"
             bg="bg-primary-200"
           />
         </div>
