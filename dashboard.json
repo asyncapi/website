@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5Xb72L",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: implement the asyncapi financial summary page",
-      "author": "vishvamsinh28",
-      "resourcePath": "/asyncapi/website/pull/2038",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 43.363362901138075
-    },
-    {
       "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
@@ -29,7 +18,7 @@
           "color": "ededed"
         }
       ],
-      "score": 19.527872034949596
+      "score": 19.815046623698855
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -55,17 +44,6 @@
       "author": "mcturco",
       "resourcePath": "/asyncapi/asyncapi-react/issues/618",
       "repo": "asyncapi/asyncapi-react",
-      "labels": [],
-      "score": 16.65612614745701
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
       "labels": [],
       "score": 16.65612614745701
     },
@@ -97,39 +75,6 @@
       "score": 15.794602381209232
     },
     {
-      "id": "PR_kwDOBW5R_c5QjwOq",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add table of contents in case study",
-      "author": "Shurtu-gal",
-      "resourcePath": "/asyncapi/website/pull/1673",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
-      "id": "PR_kwDOBW5R_c5RI5z2",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add testimonial carousel",
-      "author": "Lucif3r-in",
-      "resourcePath": "/asyncapi/website/pull/1704",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 14.07155484871368
-    },
-    {
       "id": "I_kwDOFDnrNc5rjrK-",
       "isPR": false,
       "isAssigned": true,
@@ -144,18 +89,29 @@
         },
         {
           "name": "bounty",
-          "color": "FD6F9E"
+          "color": "0e8a16"
         },
         {
           "name": "level/medium",
-          "color": "FD6F9E"
+          "color": "0e8a16"
         },
         {
           "name": "bounty/2023-Q4",
-          "color": "FD6F9E"
+          "color": "0e8a16"
         }
       ],
-      "score": 13.497205671215161
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOBW5R_c5RI5z2",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add testimonial carousel",
+      "author": "ashutosh-rath02",
+      "resourcePath": "/asyncapi/website/pull/1704",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.07155484871368
     },
     {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
@@ -166,10 +122,82 @@
       "resourcePath": "/asyncapi/website/pull/2245",
       "repo": "asyncapi/website",
       "labels": [],
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
       "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fTNfJ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Mailchimp integration using netlify function",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/2315",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 13.210031082465903
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "PR_kwDOCHlHJM5ezPwM",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: allow generator to pull from private npm repo",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/generator/pull/1061",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh3856iLHJ",
+      "title": "Add Scala generator to playground",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1690",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "website",
+          "color": "57A793"
+        },
+        {
+          "name": "Scala Generator",
+          "color": "A25F2B"
+        }
+      ]
+    },
     {
       "id": "I_kwDOB5hCo855VB2E",
       "title": "Add code linting (eslint) as part of CI script",
@@ -182,25 +210,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38548Idt",
-      "title": "PythonGenerator with Pydantic  If a property is Optional not required the json expected a key None",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1644",
-      "repo": "asyncapi/modelina",
-      "author": "tornabene",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "Python generator",
-          "color": "5319e7"
         }
       ]
     },
@@ -328,21 +337,6 @@
       ]
     },
     {
-      "id": "I_kwDOFLhIt85yyn4B",
-      "title": "Update tooling doc with info about new category",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/community/issues/899",
-      "repo": "asyncapi/community",
-      "author": "derberg",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODwv8N85yh95N",
       "title": "would be nice if venue from past events is grayed out",
       "isAssigned": false,
@@ -432,7 +426,7 @@
       "resourcePath": "/asyncapi/java-spring-template/issues/326",
       "repo": "asyncapi/java-spring-template",
       "author": "Tenischev",
-      "area": "Unknown",
+      "area": "java",
       "labels": [
         {
           "name": "bug",
@@ -552,10 +546,6 @@
       "area": "docs",
       "labels": [
         {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
           "name": "📑 docs",
           "color": "E50E99"
         }
@@ -570,10 +560,6 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
         {
           "name": "📑 docs",
           "color": "E50E99"

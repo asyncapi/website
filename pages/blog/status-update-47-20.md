@@ -106,7 +106,7 @@ Now it should be easier for you to use this component in non-React projects. Tha
     <script src="https://unpkg.com/@asyncapi/web-component@0.17.5/lib/asyncapi-web-component.js" defer></script>
     <script>
         var schema = {
-            url: "https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/2.0.0/simple.yml"
+            url: "https://raw.githubusercontent.com/asyncapi/asyncapi/master/examples/simple-asyncapi.yml"
         };
 
         window.onload = function() {

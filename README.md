@@ -117,6 +117,23 @@ After cloning repository to your local, perform the following steps from the roo
 
 Now you're running AsyncAPI website in a development mode. Container is mapped with your local copy of the website. Whenever you make changes to the code, the website will refresh and changes visible in localhost:3000.
 
+## Updating information about project finance
+
+AsyncAPI Financial Summary page aims to provide transparency and clarity regarding the organization's financial activities. It serves as a platform to showcase how donations are accepted, different sponsorship options, and how the generated funds are utilized.
+
+### How to update information
+
+- YAML files must be stored in the `config/finance` directory.
+
+- Create separate folders for each year under `config/finance`, such as `config/finance/2023`. Inside each year's folder, include two YAML files: `Expenses.yml` and `ExpensesLink.yml`.
+
+- In `Expenses.yml`, record expenses for each month, specifying the `Category` and `Amount`.
+
+- In `ExpensesLink.yml`, provide discussion links related to expense categories.
+
+- When a new year begins, create a corresponding folder for that year under `config/finance` and place the YAML files inside the folder for that specific year. For example, create a folder named `config/finance/2024` for the year 2024 and `config/finance/2025` for the year 2025. Place the YAML file for each respective year inside its designated folder.
+
+- Modify the years within the `scripts/finance/index.js` , `lib/getUniqueCategories.js` and `components/FinancialSummary/BarChartComponent.js` to handle data for different years effectively.
 
 ## Case studies
 
@@ -272,6 +289,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AnimeshKumar923"><img src="https://avatars.githubusercontent.com/u/99868037?v=4?s=100" width="100px;" alt="Animesh Kumar"/><br /><sub><b>Animesh Kumar</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=AnimeshKumar923" title="Documentation">📖</a> <a href="https://github.com/asyncapi/website/pulls?q=is%3Apr+reviewed-by%3AAnimeshKumar923" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/captain-Akshay"><img src="https://avatars.githubusercontent.com/u/59491379?v=4?s=100" width="100px;" alt="Akshay Sharma"/><br /><sub><b>Akshay Sharma</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=captain-Akshay" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://web-yuvrxj-afk.vercel.app/"><img src="https://avatars.githubusercontent.com/u/63532070?v=4?s=100" width="100px;" alt="Yuvraj Singh Sisodiya"/><br /><sub><b>Yuvraj Singh Sisodiya</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=yuvrxj-afk" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shiva953"><img src="https://avatars.githubusercontent.com/u/120790871?v=4?s=100" width="100px;" alt="Neutron"/><br /><sub><b>Neutron</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=Shiva953" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sagarkori143"><img src="https://avatars.githubusercontent.com/u/129517558?v=4?s=100" width="100px;" alt="Sagar Kori"/><br /><sub><b>Sagar Kori</b></sub></a><br /><a href="https://github.com/asyncapi/website/commits?author=sagarkori143" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
