@@ -166,12 +166,11 @@ This is possible thanks to the following:
   Please find a flowchart explaining the flow this edge function should accomplish:
   ```mermaid
   flowchart TD
-    Request(Request) -->legitimate{Is it legitimate?}
-    legitimate -->|No| req_no_legitimate[Let the original request go through]
-    req_no_legitimate --> Response(Response)
-    
-    legitimate -->|Yes| req_legitimate[Fetch from GitHub]
-    req_legitimate-->req_json{Was requesting a .json file?}
+    Request(Request) -->schema-related{Is it requesting Schemas?}
+    schema-related -->|No| req_no_schemas[Let the original request go through]
+    req_no_schemas --> Response(Response)
+    schema-related -->|Yes| req_schemas[Fetch from GitHub]
+    req_schemas-->req_json{Was requesting a .json file?}
     
     req_json -->|No| Response(Response)
     req_json -->|Yes| response_status{Response Status?}

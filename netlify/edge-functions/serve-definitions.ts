@@ -7,21 +7,21 @@ const NR_METRICS_ENDPOINT = Deno.env.get("NR_METRICS_ENDPOINT") || "https://metr
 const URL_DEST_SCHEMAS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas";
 const URL_DEST_DEFINITIONS = "https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/definitions";
 
-// Legitimate request:
+// Schemas-related request:
 //   Patterns: /<source> OR /<source>/<file> OR /<source>/<version>/<file>
 //   Examples: /definitions OR /schema-store/2.5.0-without-$id.json OR /definitions/2.4.0/info.json
-// Non-legitimate request:
+// Schemas-unrelated request:
 //   Patterns: /<source>/<randompath>/*
 //   Examples: /definitions/asyncapi.yaml OR /schema-store/2.4.0.JSON (uppercase)
 //
-// Non-legitimate requests should not use our GitHub Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
-const legitimateRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json))?$/
+// Schemas-unrelated requests should not use our GitHub Token and affect the rate limit. Those shouldn't send metrics to NR either as they just add noise.
+const SchemasRelatedRequestRegex = /^\/[\w\-]*\/?(?:([\w\-\.]*\/)?([\w\-$%\.]*\.json))?$/
 
 export default async (request: Request, context: Context) => {
   let rewriteRequest = buildRewrite(request);
   let response: Response;
   if (rewriteRequest === null) {
-    // This is not a legitimate request, let it go through.
+    // This is a Schema-unrelated request. Let it go through and do not intercept it.
     return await context.next();
   }
 
@@ -68,7 +68,7 @@ export default async (request: Request, context: Context) => {
 };
 
 function buildRewrite(originalRequest: Request): (Request | null) {
-  const extractResult = legitimateRequestRegex.exec(new URL(originalRequest.url).pathname);
+  const extractResult = SchemasRelatedRequestRegex.exec(new URL(originalRequest.url).pathname);
   if (extractResult === null) {
     return null;
   }
