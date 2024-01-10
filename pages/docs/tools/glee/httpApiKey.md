@@ -64,7 +64,7 @@ components:
 
 The `httpApiKey` could be in either the header or query parameter.
 
-**The Client asyncapi.yaml file does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *httpApiKey* here.**
+The Client asyncapi.yaml file **does not need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *httpApiKey* here.**
 
 ### Client Side
 
@@ -95,7 +95,7 @@ From the server `asyncapi.yaml` file above, create a file named `trendingAnimeSe
 touch auth/trendingAnimeServer.ts
 ```
 
-On the server side, you can retrieve the values as follows
+On the server side, you can retrieve the values as follows:
 
 ```js
 
@@ -107,4 +107,4 @@ export async serverAuth({ authProps, done }) {
 
 ```
 
-`getHttpAPIKeys(name)` takes a name parameter to specify the name of the httpApiKey that is desired. Then it returns an object containing the httpApiKey value that was sent from the client.
+So, `getHttpAPIKeys(name)` takes a name parameter to specify the name of the httpApiKey that is desired. Then it returns an object containing the `httpApiKey` value that is sent from the client.
