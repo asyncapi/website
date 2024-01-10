@@ -49,7 +49,7 @@ export const initiativeLinks = [
   },
   {
     label: "Shop",
-    url: "https://asyncapi.threadless.com",
+    url: "https://www.store.asyncapi.com/",
   },
   {
     label: "Jobs",
@@ -58,6 +58,10 @@ export const initiativeLinks = [
   {
     label: "Brand",
     url: "https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md",
+  },
+  {
+    label:"Finance",
+    url:"/finance"
   },
   {
     label: "FAQs",

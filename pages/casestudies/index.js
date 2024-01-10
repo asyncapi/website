@@ -4,6 +4,7 @@ import Paragraph from '../../components/typography/Paragraph';
 import TextLink from '../../components/typography/TextLink';
 import Heading from "../../components/typography/Heading";
 import CaseStudiesList from "../../config/case-studies.json";
+import AdoptersList from "../../config/adopters.json"
 
 export default function Casestudies() {
   const description =
@@ -41,7 +42,61 @@ export default function Casestudies() {
           <CaseStudyCard studies={CaseStudiesList}
           />
         </div>
+
+        <div className="adopters">
+          <div className="grid lg:grid-cols-9 lg:gap-8 lg:text-center mt-8">
+            <div className="col-start-3 col-span-5">
+              <Heading level="h1" typeStyle="heading-lg">
+                Adopters
+              </Heading>
+              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl" >
+                Check out how different companies use AsyncAPI and what problems they solve.
+              </Paragraph>
+              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+                Feel free to <a className="underline" href="https://github.com/asyncapi/website/blob/master/config/adopters.yml">submit a pull request</a> with information about how your company uses AsyncAPI. We know that
+                writing an official case study might be time consuming and requires too much internal paper work.
+                Let's make sure we can at least capture a use case that is already a great learning information for the
+                community.
+              </Paragraph>
+            </div>
+          </div>
+        </div>
+
+        <center>
+          <div className="overflow-x-auto">
+          <table className="my-8 w-full max-w-full border-collapse border">
+            <thead>
+              <tr>
+                <th className="border p-2 font-bold">Company name</th>
+                <th className="border-2 p-2 font-bold">Use Case</th>
+                <th className="border-2 p-2 font-bold">Resources</th>
+              </tr>
+            </thead>
+            <tbody>
+              {AdoptersList.map((entry, index) => (
+                <tr key={index} data-testid="Adopters">
+                  <td className="border-2 p-2">{entry.companyName}</td>
+                  <td className="border-2 p-2">{entry.useCase}</td>
+                  <td className="border-2 p-2">
+                    <ul>
+                      {entry.resources.map((resource, resourceIndex) => (
+                        <li className="p-2" key={resourceIndex}>
+                          <a className="text-cyan-500 underline" href={resource.link}>
+                            {resource.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+        </center>
       </div>
     </GenericLayout>
   );
 }
+
+

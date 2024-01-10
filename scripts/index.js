@@ -1,6 +1,8 @@
 const rssFeed = require('./build-rss');
 const buildPostList = require('./build-post-list');
 const buildCaseStudiesList = require('./casestudies');
+const buildAdoptersList = require('./adopters')
+const buildFinanceInfoList = require('./finance')
 
 async function start() {
   await buildPostList();
@@ -17,6 +19,8 @@ async function start() {
     'jobs/rss.xml'
   );
   await buildCaseStudiesList();
+  await buildAdoptersList();
+  await buildFinanceInfoList();
 }
 
 start();
