@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOCHlHJM5ezPwM",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: allow generator to pull from private npm repo",
+      "author": "AayushSaini101",
+      "resourcePath": "/asyncapi/generator/pull/1061",
+      "repo": "asyncapi/generator",
+      "labels": [],
+      "score": 23.835490866188476
+    },
+    {
       "id": "I_kwDOBW5R_c5J6qNe",
       "isPR": false,
       "isAssigned": false,
@@ -19,17 +30,6 @@
         }
       ],
       "score": 19.815046623698855
-    },
-    {
-      "id": "PR_kwDOCHlHJM5ezPwM",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: allow generator to pull from private npm repo",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/generator/pull/1061",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 19.240697446200336
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -98,6 +98,17 @@
       "score": 14.933078614961456
     },
     {
+      "id": "PR_kwDOBW5R_c5dJ7hJ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for WebSockets with AsyncAPI",
+      "author": "VaishnaviNandakumar",
+      "resourcePath": "/asyncapi/website/pull/2245",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 13.78438025996442
+    },
+    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -126,13 +137,13 @@
       "score": 13.497205671215161
     },
     {
-      "id": "PR_kwDOBW5R_c5dJ7hJ",
+      "id": "PR_kwDOB5hCo85iLvXV",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: tutorial for WebSockets with AsyncAPI",
-      "author": "VaishnaviNandakumar",
-      "resourcePath": "/asyncapi/website/pull/2245",
-      "repo": "asyncapi/website",
+      "title": "ci: added code linting",
+      "author": "Min2who",
+      "resourcePath": "/asyncapi/spec-json-schemas/pull/473",
+      "repo": "asyncapi/spec-json-schemas",
       "labels": [],
       "score": 13.497205671215161
     },
@@ -186,30 +197,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 13.210031082465903
-    },
-    {
-      "id": "MDU6SXNzdWU4MzMyMzI2MzI=",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Generator doesn't pull template from private repo",
-      "author": "alextrs",
-      "resourcePath": "/asyncapi/generator/issues/538",
-      "repo": "asyncapi/generator",
-      "labels": [
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/medium",
-          "color": "0e8a16"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
@@ -358,6 +345,21 @@
       ]
     },
     {
+      "id": "I_kwDOB5hCo854UrcU",
+      "title": "We probably need `stableSchemas` in npm package",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/spec-json-schemas/issues/459",
+      "repo": "asyncapi/spec-json-schemas",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
       "id": "I_kwDODou01c531nlO",
       "title": "Misalignment of Code Editor Highlight Box",
       "isAssigned": false,
@@ -459,36 +461,6 @@
           "name": "enhancement",
           "color": "a2eeef"
         },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5ydvrx",
-      "title": "Remove this commented out code.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/35",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOIUldZc5ydvh1",
-      "title": "Consider using \"forEach\" instead of \"map\" as its return value is not being used here.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/EDAVisualiser/issues/32",
-      "repo": "asyncapi/EDAVisualiser",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
@@ -862,6 +834,25 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385XYlR7",
+      "title": "Support JSONSchema draft 2020-12 in the input processing",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1016",
+      "repo": "asyncapi/modelina",
+      "author": "kennethaasan",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep",
+          "color": "FBCA04"
         }
       ]
     },
