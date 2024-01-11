@@ -18,7 +18,7 @@ While several Schema Registry implementations exist, you will use the Apicurio R
 ## Steps
 1. Run Apicurio Registry Docker Image in a Docker container by using the command:
     <CodeBlock language="bash">
-    {`docker run -it -p 8080:8080 apicurio/apicurio-registry:latest-snapshot`}
+    {`docker run -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.7.Final`}
     </CodeBlock>
 2. Once your Apicurio Registry is running, you can upload the schema in another terminal window. Create an Avro Schema Artifact using the following command:
 <CodeBlock>
