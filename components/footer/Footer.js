@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="sm:flex justify-between xl:mt-20 py-8 sm:py-12" data-testid="Footer-content">
           <div className="w-full sm:w-2/3">
             <p className="text-left text-base leading-6 mb-3 text-cool-gray">
-              Made with <span className="font-mono text-secondary-500">:love:</span> by the AsyncAPI Initiative.
+              Made with <span>❤️</span> by the AsyncAPI Initiative.
             </p>
             <p className="text-left text-sm leading-6 text-cool-gray w-full sm:w-2/3" data-testid="Footer-copyright">
               Copyright &copy; AsyncAPI Project a Series of LF Projects, LLC.
