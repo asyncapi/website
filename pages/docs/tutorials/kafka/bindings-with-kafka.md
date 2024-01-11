@@ -16,18 +16,6 @@ In an AsyncAPI document, bindings can be appended to different document sections
 You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on three levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object), [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object) and [message bindings](https://github.com/asyncapi/bindings/tree/master/kafka#message-binding-object).
 
 
-The diagram below shows how bindings with Kafka work. 
-
-```mermaid
-graph TD
-    A[AsyncAPI Application] -->|Kafka Server Bindings| B[Kafka Broker]
-    B -->|Kafka Channel Bindings| C[Producer Channel]
-    B -->|Kafka Channel Bindings| D[Consumer Channel]
-    C -->|Kafka Message Bindings| E[Producer Message]
-    D -->|Kafka Message Bindings| F[Consumer Message]
-    style A fill:#47BCEE,stroke:#333,stroke-width:4px
-```
-
 ## Add server bindings
 
 Server bindings provide protocol-specific configuration details for connecting and interacting with a server.
