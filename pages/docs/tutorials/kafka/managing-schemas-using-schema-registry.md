@@ -20,7 +20,32 @@ While several Schema Registry implementations exist, you will use the Apicurio R
     <CodeBlock language="bash">
     {`docker run -it -p 8080:8080 apicurio/apicurio-registry:latest-snapshot`}
     </CodeBlock>
-2. Access Apicurio Registry once the container is running by navigating to http://localhost:8080.
+2. Once your Apicurio Registry is running, you can upload the schema in another terminal window. Create an Avro Schema Artifact using the following command by replacing {Avro_Schema} with your Avro Schema:
+<CodeBlock>
+curl \
+http://localhost:8080/apis/registry/v2/groups/my-group/artifacts \
+-X POST  \
+-H "Content-Type: application/json; artifactType=AVRO" \
+-H "X-Registry-ArtifactId: UserSignedUp" \
+--data @- << EOF
+{
+  "type": "record",
+  "name": "UserSignedUp",
+  "namespace": "com.company",
+  "doc": "User sign-up information",
+  "fields": [
+    {
+      "name": "userId",
+      "type": "int"
+    },
+    {
+      "name": "userEmail",
+      "type": "string"
+    }
+  ]
+}
+EOF
+</CodeBlock>
 
 ## Summary
 
