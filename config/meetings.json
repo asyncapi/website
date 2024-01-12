@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=MmlicWJyZ2puMzB2c3B1ZmJzdXUxMWFtanMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/894",
-    "banner": "https://user-images.githubusercontent.com/40604284/271795752-eda6bcf3-4d74-47f0-9061-b2610e710ab2.png",
-    "date": "2023-10-03T16:00:00.000Z"
-  },
-  {
     "title": "Let's talk about contributing Hacktoberfest 2023",
     "calLink": "https://www.google.com/calendar/event?eid=aDRpaTZsbmIyOWIyNnJmZmc0dDRlNXVjN3MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/895",
