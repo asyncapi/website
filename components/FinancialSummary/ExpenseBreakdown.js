@@ -18,7 +18,7 @@ export default function ExpenseBreakdown() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8 mx-3">
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://www.asyncapi.com/blog/beyond-boundaries', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/MentorshipProgram.webp" alt="Mentorship Program" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -28,7 +28,7 @@ export default function ExpenseBreakdown() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://github.com/orgs/asyncapi/discussions/541', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/BountyProgram.webp" alt="Bounty Program" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -38,7 +38,7 @@ export default function ExpenseBreakdown() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://www.asyncapi.com/community/events', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Events.webp" alt="Events" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -48,7 +48,7 @@ export default function ExpenseBreakdown() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://www.store.asyncapi.com/collections/all-products', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/SwagStore.webp" alt="Swag Store" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -58,17 +58,17 @@ export default function ExpenseBreakdown() {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://opencollective.com', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Hiring.webp" alt="Hiring" className="w-1/5 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Hiring</h2>
                                 </div>
-                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand the team. our team</p>
+                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand our team.</p>
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer"onClick={() => window.open('https://zoom.us/pricing', '_blank')}>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Services.webp" alt="Services" className="w-1/5 h-auto object-cover rounded-md m-1" />
