@@ -84,7 +84,7 @@ export default function Feedback(className = '') {
     return (
         <div className={`flex flex-col rounded-md shadow-md border border-gray-200 p-4 ${className}`}>
             <div className='flex flex-row'>
-                <img src="/img/illustrations/icons/icon.svg" className='w-28 md:w-14' alt="" aria-hidden="true" />
+                <img src="/img/illustrations/icons/icon.svg" className='lg:w-16 sm:w-14 sm:h-14 my-auto' alt="" aria-hidden="true" />
                 <div className='flex flex-col ml-4'>
                     <div className='text-xl'>
                         Was this helpful?

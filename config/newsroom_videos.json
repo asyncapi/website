@@ -1,15 +1,15 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/prFgD14u7T0/hqdefault.jpg",
+    "title": "Overview of AsyncAPI v3",
+    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
+    "videoId": "prFgD14u7T0"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
     "title": "3 Request/Reply Use Cases",
     "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
     "videoId": "-OsMet9h_dg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/WCK9_ZDv6K4/hqdefault.jpg",
-    "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo(14th Dece…",
-    "description": "Participez à ce live pour découvrir les nouveautés de la V3 et comment migrer une version 2 en version 3 sur un use-case de ...",
-    "videoId": "WCK9_ZDv6K4"
   },
   {
     "image_url": "https://i.ytimg.com/vi/yOc_fI-i9C8/hqdefault.jpg",
