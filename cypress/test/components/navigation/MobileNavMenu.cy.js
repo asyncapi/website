@@ -13,5 +13,6 @@ describe('MobileNavMenu', () => {
         cy.get('[data-testid="MobileNav-docs"]').should('exist')
         cy.get('[data-testid="MobileNav-tools"]').should('exist')
         cy.get('[data-testid="MobileNav-others"]').should('exist')
+        cy.get('[data-testid="MobileNav-community"]').should('exist')
     });
 });

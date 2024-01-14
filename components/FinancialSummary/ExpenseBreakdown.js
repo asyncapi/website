@@ -54,7 +54,7 @@ export default function ExpenseBreakdown() {
                                 </div>
                             </div>
                         </Link>
-
+      
                         <Link href="https://www.store.asyncapi.com/collections/all-products">
                             <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center cursor-pointer">
                                 <div className="text-darkGunMetal">
