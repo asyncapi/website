@@ -52,7 +52,7 @@ In the `Heart-Counter` tutorial, you dealt with the `hello` event that was trigg
 
 In this tutorial, you'll be adding the `acknowledge` message to your AsyncAPI document to represent the acknowledgement sent by the Slack application back to the server to indicate that it has successfully received the message.
 
-<CodeBlock language="yaml">
+<CodeBlock language="yaml" highlightedLines={[11,12,13,14]}>
 {`components:
   messages:
     reaction:
@@ -151,7 +151,7 @@ The sample request and response payloads are extracted from <a href="https://api
 
 Additionally, you will also be adding the `acknowledge` schema that makes use of the `envelope_id` attribute to send a reply back to Slack acknowledging that event has been received.
 
-<CodeBlock language="yaml">
+<CodeBlock language="yaml" highlightedLines={[4,5,6]}>
 {`    acknowledge:
       type: object
       properties:
@@ -163,10 +163,10 @@ Additionally, you will also be adding the `acknowledge` schema that makes use of
           description: 'Optional payload of event' `}
 </CodeBlock>
 
-## Define channels 
-Since the `Heart-Counter` makes use of just one WebSocket channel for communication you can define the `root` channel. The channel can accommodate different types of messages, which in our example is the `hello`, `reaction` and `acknowledge` message.
+## Define acknowledge message to channel
+You can extend the channel used by  `Heart-Counter` to now include the `acknowledge` message.
 
-<CodeBlock language="yaml">
+<CodeBlock language="yaml" highlightedLines={[9,10]}>
 {`channels:
   root:
     address: /
@@ -189,7 +189,7 @@ Since both the request and reply function happens over the same WebSocket URL, b
 Thus, you can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
 
 
-<CodeBlock language="yaml" highlightedLines={[14,18]}>
+<CodeBlock language="yaml" highlightedLines={[14,15,16,17,18]}>
 {`operations:
   helloListener:
     action: receive
