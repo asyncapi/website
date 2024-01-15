@@ -1,5 +1,4 @@
 import Container from '../components/layout/Container'
-import NavBar from '../components/navigation/NavBar'
 import Hero from '../components/Hero'
 import NewsletterSubscribe from '../components/NewsletterSubscribe'
 import Sponsors from '../components/sponsors/Sponsors'
@@ -19,7 +18,6 @@ import TextLink from '../components/typography/TextLink'
 import GoldSponsors from '../components/sponsors/GoldSponsors'
 import SilverSponsors from '../components/sponsors/SilverSponsors'
 import SupportUs from '../components/SupportUs/SupportUs'
-import StickyNavbar from '../components/navigation/StickyNavbar'
 import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
 import ICSFileButton from '../components/buttons/ICSFileButton';
 import SubscribeButton from '../components/buttons/SubscribeButton';
@@ -32,10 +30,6 @@ function HomePage() {
   return (
     <>
       <Head />
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-
       <main id="main-content" className="scroll-mt-5">
         <Container wide>
           <Hero className="mb-24" />
