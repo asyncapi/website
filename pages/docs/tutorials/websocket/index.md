@@ -156,7 +156,7 @@ The `channels` attribute defines a communication channel for the event. The `add
 
 The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
 
-<CodeBlock language="yaml" highlightedLines={[9,10,11]}>
+<CodeBlock language="yaml" highlightedLines={[9]}>
 {`channels:
   root:
     address: /
