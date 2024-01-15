@@ -88,7 +88,7 @@ Your AsyncAPI document needs to be very clear on the type of event it is expecte
 
 The `payload` attribute specifies the name, format, and description of all the expected properties. `Heart-Counter` starts the popularity count of a message by validating if the `reaction` property set in the `reaction` schema definition corresponds to "heart".
 
-<CodeBlock language="yaml">
+<CodeBlock language="yaml" highlightedLines={[5,6,9,10,42,43,44]}>
 {`components:
   messages:
     reaction:
@@ -188,7 +188,7 @@ In this example, the `helloListener` operation keeps an eye out for the message 
 
 Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
 
-<CodeBlock language="yaml">
+<CodeBlock language="yaml" highlightedLines={[3,9]}>
 {`operations:
   helloListener:
     action: receive
