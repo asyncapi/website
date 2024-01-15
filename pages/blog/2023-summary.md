@@ -87,7 +87,7 @@ The AsyncAPI YouTube channel performed way better than expected, especially as w
 
 #### Newsletter
 On the 5th of April, 2023, we sent out our first AsyncAPI Community Updates Newsletter. The main aim was to summarize monthly activities and initiatives in the community straight to your inbox.
-Out of over 1.6k successful emails sent over the last nine months, the December Edition was the most popular. The reason is that that was when we released the AsyncAPI v3, one of our huge accomplishments in 2023.
+Over the past nine months, the December Edition was the most popular. This was due to the release of the AsyncAPI v3, which was one of our major accomplishments in 2023.
 
 <Figure
   src="/img/posts/2023-summary/total-opens.webp"
