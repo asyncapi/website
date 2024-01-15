@@ -6,8 +6,18 @@ import toolingItems from './toolingItems';
 import communityItems from './communityItems';
 import otherItems from './otherItems';
 import Link from 'next/link';
+import NavItemDropdown from '../icons/NavItemDropdown';
+import { useState } from 'react';
 
 export default function MobileNavMenu({ onClickClose = () => {} }) {
+  const [open, setOpen] = useState();
+  function showMenu(menu) {
+    if (open === menu) {
+      setOpen(null)
+      return;
+    }
+    setOpen(menu);
+  }
   return (
     <div className="fixed top-0 z-60 inset-x-0 py-2 transition transform origin-top-right max-h-full lg:hidden overflow-y-scroll">
       <div className="rounded-lg shadow-lg">
@@ -60,37 +70,30 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
                 </button>
               </div>
             </div>
-            <div className="py-2 space-y-2">
-              <Link href="/docs" className="flex">
-                <h4 className="text-gray-500 font-medium block mb-4">
-                  <a className="cursor-pointer" data-testid="MobileNav-docs">Docs</a>
-                </h4>
-              </Link>
-              <MenuBlocks items={learningItems} />
-            </div>
           </div>
-          <div className="py-2 px-5 space-y-2">
-            <Link href="/tools" 
-            className="flex">
-              <h4 className="text-gray-500 font-medium block mb-4"> <a className="cursor-pointer" data-testid="MobileNav-tools" >Tools</a></h4>
-            </Link>
-              <MenuBlocks items={toolingItems} />
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('learning')} data-testid="MobileNav-docs">
+            <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/docs" className="flex">Docs</Link></a><NavItemDropdown/></h4>
+            {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
-          <div className="py-2 px-5 space-y-2">
-            <Link href="/community" className="flex">
-              <h4 className="text-gray-500 font-medium block mb-4">Community</h4>
-            </Link>
-            <MenuBlocks items={communityItems} />
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('tooling')} data-testid="MobileNav-tools">
+            <h4 className="text-gray-800 font-medium flex justify-between"> <a className="cursor-pointer"><Link href="/tools" className="flex">Tools</Link></a><NavItemDropdown/></h4>
+            {open === 'tooling' && <MenuBlocks items={toolingItems} />}
+          </div>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('community')} data-testid="MobileNav-community">
+            <h4 className="text-gray-800 font-medium flex justify-between"><a className="cursor-pointer"><Link href="/community" className="flex">Community</Link></a><NavItemDropdown/></h4>
+            {open === 'community' && <MenuBlocks items={communityItems} />}
+          </div>
+          <div className="py-2 px-5 space-y-2" onClick={() => showMenu('others')} data-testid="MobileNav-others">
             <div className="grid gap-4">
               <div>
-                <h4 className="text-gray-500 font-medium block mb-4">Others</h4>
-                {otherItems.map((item, index) => (
+                <h4 className="text-gray-800 font-medium mb-4 flex justify-between"><a className="cursor-pointer">Others</a><NavItemDropdown /></h4>
+                {open === 'others' && otherItems.map((item, index) => (
                   <Link href={item.href} key={index}>
                     <a
                       target={item.target || '_self'}
                       rel="noopener noreferrer"
                       key={index}
-                      className="text-base leading-6 font-medium text-gray-900 hover:text-gray-700 transition ease-in-out duration-150 block mb-4"
+                      className="py-1 text-base leading-6 font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150 block mb-4"
                       data-testid="MobileNav-others"
                     >
                       {item.text}
