@@ -79,7 +79,7 @@ Although the decline is shallow, I'm not extremely worried. Most top tweets for 
 
 #### YouTube
 
-The AsyncAPI YouTube channel performed way better than expected, especially as we moved from online to in-person conferences. Our live streams and conference recordings bring in a lot of views, and I'm optimistic about 2024 as well.
+The AsyncAPI YouTube channel performed way better than expected, especially as we moved from online to in-person conferences. We currently have over 364 people subscribed to our channel, increasing total subscribers to over 1,46k. Our live streams and conference recordings bring in a lot of views, and I'm optimistic about 2024 as well.
 
 <Figure
   src="/img/posts/2023-summary/youtube.webp"
@@ -87,11 +87,6 @@ The AsyncAPI YouTube channel performed way better than expected, especially as w
 
 #### Newsletter
 On the 5th of April, 2023, we sent out our first AsyncAPI Community Updates Newsletter. The main aim was to summarize monthly activities and initiatives in the community straight to your inbox.
-
-<Figure
-  src="/img/posts/2023-summary/success-sent.webp"
-/> 
-
 Out of over 1.6k successful emails sent over the last nine months, the December Edition was the most popular. The reason is that that was when we released the AsyncAPI v3, one of our huge accomplishments in 2023.
 
 <Figure
@@ -157,7 +152,7 @@ We achieved so much this year, and here are some of the highlights from the Asyn
 - The [Ambassador Program](https://www.asyncapi.com/community/ambassadors) increased this year. 
 - We launched the AsyncAPI Community Updates newsletter.
 - Released the [Parser-JS v2](https://github.com/asyncapi/parser-js).
-- Launched the AsyncAPI Bounty Program.
+- We launched the [AsyncAPI Bounty Program](https://github.com/asyncapi/community/pull/897/files#diff-25ecb20a61754c225d6511ca08d7e7c9a14b9ca5a93e89bd42331e51c9ebf26dR155), where we successfully resolved and paid out a total of 11 out of 16 issues during the initial trial and 2023-Q4 round.
 - Established our very first [Code of Conduct Committee](https://github.com/orgs/asyncapi/discussions/682#discussioncomment-7498209).
 - Hosted a few series of live streams with other women in tech.
 - Barbaño González shared a detailed article on [Why Women Are Underrepresentation In Open-Source](https://thenewstack.io/why-women-are-underrepresented-in-open-source/).
