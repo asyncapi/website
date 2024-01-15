@@ -7,11 +7,12 @@ exports.handler = async function (event) {
     if (event.httpMethod == 'POST') {
         const listId = config.listId;
         const { email, name, interest } = JSON.parse(event.body)
+        
         const subscriberHash = md5(email.toLowerCase());
         try {
             mailchimp.setConfig({
                 apiKey: process.env.MAILCHIMP_API_KEY,
-                server: process.env.MAILCHIMP_API_SERVER
+                server: 'us12'
             });
 
             const response = await mailchimp.lists.setListMember(listId, subscriberHash, {
