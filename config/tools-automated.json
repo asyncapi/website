@@ -304,23 +304,6 @@
     "toolsList": [
       {
         "title": "GitHub Action for Generator",
-        "description": "GitHub Action to generate all the things from your AsyncAPI document using the AsyncAPI generator",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/github-action-for-generator"
-        },
-        "filters": {
-          "technology": [
-            "AsyncAPI Generator"
-          ],
-          "categories": [
-            "github-action"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "GitHub Action for Generator",
         "description": null,
         "links": {
           "repoUrl": "https://github.com/actions-marketplace-validations/asyncapi_github-action-for-generator"
@@ -334,6 +317,23 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "GitHub Action for CLI",
+        "description": "GitHub Action with generator, validator, converter and others - all in one for your AsyncAPI documents with AsyncAPI CLI as backbone",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/github-action-for-cli"
+        },
+        "filters": {
+          "technology": [
+            "AsyncAPI CLI"
+          ],
+          "categories": [
+            "github-action"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       }
     ]
@@ -413,6 +413,24 @@
           "hasCommercial": false,
           "isAsyncAPIOwner": false
         }
+      },
+      {
+        "title": "AsyncAPI Validation",
+        "description": "Message validation package for YAML and JSON AsyncAPI documents.",
+        "links": {
+          "repoUrl": "https://github.com/Elhebert/asyncapi-validation"
+        },
+        "filters": {
+          "language": "TypeScript",
+          "technology": [
+            "Node.js"
+          ],
+          "categories": [
+            "validator"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": false
+        }
       }
     ]
   },
@@ -463,25 +481,6 @@
     "description": "The following is a list of tools that you can work with in terminal or do some CI/CD automation.",
     "toolsList": [
       {
-        "title": "AsyncAPI CLI",
-        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
-        "links": {
-          "websiteUrl": "https://www.asyncapi.com/tools/cli",
-          "repoUrl": "https://github.com/asyncapi/cli"
-        },
-        "filters": {
-          "technology": [
-            "TypeScript"
-          ],
-          "categories": [
-            "others",
-            "cli"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
         "title": "ZenWave SDK",
         "description": "DDD and API-First for Event-Driven Microservices",
         "links": {
@@ -505,6 +504,25 @@
           ],
           "hasCommercial": false,
           "isAsyncAPIOwner": false
+        }
+      },
+      {
+        "title": "AsyncAPI CLI",
+        "description": "One CLI to rule them all. \nThis is a CLI that aims to integrate all AsyncAPI tools that you need while AsyncAPI document development and maintainance. \nYou can use it to generate docs or code, validate AsyncAPI document and event create new documents.\n",
+        "links": {
+          "websiteUrl": "https://www.asyncapi.com/tools/cli",
+          "repoUrl": "https://github.com/asyncapi/cli"
+        },
+        "filters": {
+          "technology": [
+            "TypeScript"
+          ],
+          "categories": [
+            "others",
+            "cli"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
         }
       },
       {
@@ -555,6 +573,24 @@
     "description": "The following is a list of extensions for different IDEs like VSCode, IntelliJ IDEA and others",
     "toolsList": [
       {
+        "title": "asyncapi-preview",
+        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
+        },
+        "filters": {
+          "technology": [
+            "VSCode",
+            "SmartPaste"
+          ],
+          "categories": [
+            "ide-extension"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "jAsyncAPI - IDEA plugin",
         "description": "Idea plugin for the java-asyncapi - Helps to edit and validate AsyncAPI schemas.",
         "links": {
@@ -567,24 +603,6 @@
           "technology": [
             "JetBrains",
             "IntelliJ IDEA"
-          ],
-          "categories": [
-            "ide-extension"
-          ],
-          "hasCommercial": false,
-          "isAsyncAPIOwner": true
-        }
-      },
-      {
-        "title": "asyncapi-preview",
-        "description": "VSCode extension that enables you to:\n  - Preview documentation generated using you AsyncAPI document. It uses AsyncAPI React component under the hood,\n  - Create AsyncAPI documents faster using SmartPaste functionality\n",
-        "links": {
-          "repoUrl": "https://github.com/asyncapi/vs-asyncapi-preview"
-        },
-        "filters": {
-          "technology": [
-            "VSCode",
-            "SmartPaste"
           ],
           "categories": [
             "ide-extension"
@@ -635,6 +653,24 @@
         }
       },
       {
+        "title": "Node.js Multiprotocol Template",
+        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "links": {
+          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+        },
+        "filters": {
+          "language": "javascript",
+          "technology": [
+            "Node.js"
+          ],
+          "categories": [
+            "generator-template"
+          ],
+          "hasCommercial": false,
+          "isAsyncAPIOwner": true
+        }
+      },
+      {
         "title": "Node.js Websockets Template",
         "description": "Node.js WebSockets template for the AsyncAPI Generator. It showcases how from a single AsyncAPI document you can generate a server and a client at the same time.",
         "links": {
@@ -653,15 +689,17 @@
         }
       },
       {
-        "title": "Node.js Multiprotocol Template",
-        "description": "This template generates a server using your AsyncAPI document. It supports multiple different protocols, like Kafka or MQTT.  It is designed in the way that generated code is a library and with it's API you can start the server, send messages or register a middleware for listening incoming messages. Runtime message validation included.",
+        "title": "Java Template",
+        "description": "Java template for the AsyncAPI Generator",
         "links": {
-          "repoUrl": "https://github.com/asyncapi/nodejs-template"
+          "repoUrl": "https://github.com/asyncapi/java-template"
         },
         "filters": {
-          "language": "javascript",
+          "language": [
+            "javascript"
+          ],
           "technology": [
-            "Node.js"
+            "Java"
           ],
           "categories": [
             "generator-template"

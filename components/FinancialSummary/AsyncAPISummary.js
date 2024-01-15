@@ -32,8 +32,8 @@ export default function AsyncAPISummary() {
             </div>
             <div className="text-center my-4 text-base max-width text-darkGunMetal">
                 <Paragraph typeStyle="body-sm" className="my-4">
-                    The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br class="hidden lg:inline-block"></br>there are alternative options,
-                    they may involve greater effort. Contribute <br class="hidden lg:inline-block"></br>monetarily using the following channels.
+                    The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br className="hidden lg:inline-block" />there are alternative options,
+                    they may involve greater effort. Contribute <br className="hidden lg:inline-block" />monetarily using the following channels.
                 </Paragraph>
             </div>
 

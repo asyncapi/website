@@ -5,7 +5,7 @@ weight: 80
 
 ## Getting started with Bearer Token authentication
 
-Bearer Token authentication is one of the most popular forms of authentication and is widely used because of its percieved security. This guide will walk through how to implement bearer token authentication in Glee.
+Bearer Token authentication is one of the most popular forms of authentication and is widely used because of its perceived security. This guide will walk through how to implement bearer token authentication in Glee.
 
 A sample `asyncapi.yaml` for a server with security requirements and user password security scheme is shown below:
 
@@ -61,7 +61,7 @@ components:
 
 ```
 
-**The Client asyncapi.yaml file does't need to implement all the security requirements in the server, it only needs to implement the ones that it uses like &*http (bearer token)* here.**
+The Client asyncapi.yaml file **does't need to implement all the security requirements in the server, it only needs to implement the ones that it uses like *http (bearer token)* here.**
 
 ### Client Side
 
@@ -103,7 +103,7 @@ export async serverAuth({ authProps, done }) {
 
 ```
 
-`getToken()` return a string which contains the token that was sent from the client.
+So, `getToken()` returns a string which contains the token that is sent from the client.
 
 
 
