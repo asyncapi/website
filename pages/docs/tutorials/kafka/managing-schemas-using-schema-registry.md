@@ -10,7 +10,7 @@ You will learn how to manage schemas with Schema Registry. Managing schemas will
 ## Background context
 The need for schema management has become increasingly prevalent to handle the evolving complexity of modern Event-Driven Architecture. A Schema Registry is a centralized service that stores and maintains the schemas for data exchanged between various components of a modern distributed system. Validating data being exchanged helps in maintaining data consistency and compatibility. 
 
-While several Schema Registry implementations exist, you will use the Apicurio Registry in this tutorial. Apicurio Registry is a popular open-source Schema Registry implementation that supports multiple serialization formats and facilitates schema management for diverse data in distributed systems. You will be using the Apicurio Registry in combination with Avro, which is a language-neutral data serialization system.
+While several Schema Registry implementations exist, you will use the [Apicurio Registry](https://www.apicur.io/registry/) in this tutorial. Apicurio Registry is a popular open-source Schema Registry implementation that supports multiple serialization formats and facilitates schema management for diverse data in distributed systems. You will be using the Apicurio Registry in combination with Avro, which is a language-neutral data serialization system.
 
 ## Installation guide
 1. Install [Docker](https://docs.docker.com/engine/install/) from the official website.
