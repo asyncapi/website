@@ -195,4 +195,4 @@ The ability to generate an AsyncAPI document for Kafka is now in your toolkit. Y
 
 ## Next steps
 
-Now that you know how to write an AsyncAPI document for Kafka messages using the default schema, let's proceed to learn how to compose an AsyncAPI document using Avro Schema instead. 
+Now that you know how to write an AsyncAPI document for Kafka messages using the default schema, let's proceed to learn how to compose an [AsyncAPI document using Avro Schema instead](/docs/tutorials/kafka/configure-kafka-avro). 
