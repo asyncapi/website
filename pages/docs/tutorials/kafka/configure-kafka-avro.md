@@ -18,7 +18,7 @@ While AsyncAPI schema can be the default choice for describing payloads, many pr
 
 ## Defining message payload with Avro Schema directly in the AsyncAPI document
 
-Defining message schemas with the default schema is already covered in the [previous tutorial](/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
+Defining message schema with the default schema is already covered in the [previous tutorial](/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
 
 ```
 messages:
@@ -28,7 +28,7 @@ messages:
       properties:
         userId:
           type: integer
-          description: This property describes the id of the user
+          description: This property describes the ID of the user
         userEmail:
           type: string
           description: This property describes the email of the user
