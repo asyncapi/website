@@ -49,15 +49,15 @@ info:
 servers:
   centralKafkaServer:
     host: central.mykafkacluster.org:8092
-    description: Kafka broker running in central warehouse
+    description: Kafka broker running in a central warehouse
     protocol: kafka
   westKafkaServer:
     host: west.mykafkacluster.org:8092
-    description: Kafka broker running in west warehouse
+    description: Kafka broker running in the west warehouse
     protocol: kafka
   eastKafkaServer:
     host: east.mykafkacluster.org:8092
-    description: Kafka broker running in east warehouse
+    description: Kafka broker running in the east warehouse
     protocol: kafka
 
 operations:
@@ -80,10 +80,10 @@ components:
       payload:
         type: object
         properties:
-          user-id:
+          userId:
             type: integer
             description: This property describes the id of the user
-          user-email:
+          userEmail:
             type: string
             description: This property describes the email of the user
 ```
@@ -103,15 +103,15 @@ info:
 servers:
   centralKafkaServer:
     host: central.mykafkacluster.org:8092
-    description: Kafka broker running in central warehouse
+    description: Kafka broker running in a central warehouse
     protocol: kafka
   westKafkaServer:
     host: west.mykafkacluster.org:8092
-    description: Kafka broker running in west warehouse
+    description: Kafka broker running in the west warehouse
     protocol: kafka
   eastKafkaServer:
     host: east.mykafkacluster.org:8092
-    description: Kafka broker running in east warehouse
+    description: Kafka broker running in the east warehouse
     protocol: kafka
 ```
 
@@ -127,18 +127,11 @@ In the above snippet:
 If an application has multiple servers hidden from the user behind a load balancer, then only the address of the load balancer needs to be included in the AsyncAPI document. 
 </Remember>
 
-### Define channels and operations
+### Define channels
 
-Next, let's move on to the `channels` and `operations` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving messages. The `operations` property is used to describe how your application interacts with the channels.
+Next, let's move on to the `channels` section. The channel addresses are the topics in Kafka, they are the routes to which your API will be sending/receiving messages. 
 
 ```
-operations:
-  onUserSignedUp:
-    action: receive
-    channel:
-      $ref: '#/channels/userSignedUp'
-
-
 channels:
   userSignedUp:
     description: This channel contains a message per each user who signs up in our application.
@@ -149,10 +142,27 @@ channels:
 ```
 
 In the above snippet:
-
-- The `onUserSignedUp` object specifies the nature of the operation. The `action` property indicates that our application will be receiving the information. The `channel` property points to the channel where the operation occurs.
   
-- The `userSignedUp` object inside `channels` describes the Kafka topic where our application will be receiving the information and the associated message definition. The `address` field represents the actual name of the Kafka topic. The `messages` field describes the expected messages in that topic. 
+- The `userSignedUp` object inside `channels` describes the Kafka topic where the application will be receiving the information and the associated message definition. 
+- The `address` field represents the actual name of the Kafka topic and the `messages` field describes the expected messages in that topic.
+
+### Define operations
+
+Now, let's move on to the `operations` section. The `operations` property is used to describe how your application interacts with the defined channels.
+
+```
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+```
+
+In the above snippet:
+
+- The `onUserSignedUp` object specifies the nature of the operation, that occurs when user sign-ups. 
+- The `action` property indicates that the application will be receiving the information.
+- The `channel` property points to the channel where the operation occurs.
 
 ### Define messages and schemas
 
@@ -165,19 +175,19 @@ components:
       payload:
         type: object
         properties:
-          user-id:
+          userId:
             type: integer
-            description: This property describes the id of the user
-          user-email:
+            description: This property describes the ID of the user
+          userEmail:
             type: string
-            description: This property describes the id of the user
+            description: This property describes the ID of the user
 ```
 
 In the above snippet:
 
 - The `userSignedUp` message is defined which describes the payload (content) of the message.
   
-- The `payload` property defines the content of the message using [JSON Schema](https://json-schema.org/). It means that your message payload should contain a `user-id` which is an integer and a `user-email` property which is a string property.
+- The `payload` property defines the content of the message. It means that your message payload should contain a `userId` which is an integer and a `userEmail` property which is a string property.
 
 ## Summary
 
