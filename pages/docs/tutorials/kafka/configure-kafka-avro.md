@@ -6,9 +6,9 @@ weight: 30
 
 ## Introduction
 
-The [previous tutorial](https://deploy-preview-2252--asyncapi-website.netlify.app/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
+The [previous tutorial](/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
 
-While AsyncAPI schemas can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial, you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
+While AsyncAPI schema can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial, you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
 
 ## Background Context
 
@@ -18,7 +18,7 @@ While AsyncAPI schemas can be the default choice for describing payloads, many p
 
 ## Defining message payload with Avro Schema directly in the AsyncAPI document
 
-Defining message schemas with the default schema is already covered in the [previous tutorial](https://deploy-preview-2252--asyncapi-website.netlify.app/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
+Defining message schemas with the default schema is already covered in the [previous tutorial](/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
 
 ```
 messages:
@@ -26,12 +26,12 @@ messages:
     payload:
       type: object
       properties:
-        user-id:
+        userId:
           type: integer
           description: This property describes the id of the user
-        user-email:
+        userEmail:
           type: string
-          description: This property describes the id of the user
+          description: This property describes the email of the user
 ```
 
 In this section, let's shift our focus to defining messages using Avro Schemas directly within our document. 
@@ -47,16 +47,16 @@ messages:
         namespace: com.company
         doc: User sign-up information
         fields:
-          - name: user-id
+          - name: userId
             type: int
-          - name: user-email
+          - name: userEmail
             type: string
 ```
 
 In the above snippet: 
 - The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat` and the `schema`.
 - Use the `schemaFormat` to specify using a MIME type, that you use Avro and what version of Avro Schema.
-- The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `user-id` and `user-email`, defining their data types as `int` and `string` respectively.
+- The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `userId` and `userEmail`, defining their data types as `int` and `string` respectively.
 
 By combining the Avro Schema discussed above into the previous tutorial, you'll have an AsyncAPI document fully equipped with Avro Schema!
 
@@ -94,9 +94,9 @@ components:
           namespace: com.company
           doc: User sign-up information
           fields:
-            - name: user-id
+            - name: userId
               type: int
-            - name: user-email
+            - name: userEmail
               type: string
 ```
 
@@ -114,8 +114,8 @@ Assume you have a file named `userSchema.json` that encapsulates the Avro Schema
   "namespace": "com.company",
   "doc": "User sign-up information",
   "fields": [
-    { "name": "user_id", "type": "int" },
-    { "name": "user_email", "type": "string" }
+    { "name": "userId", "type": "int" },
+    { "name": "userEmail", "type": "string" }
   ]
 }
 ```
@@ -159,4 +159,4 @@ components:
 Through this tutorial, you have smoothly progressed from the default schema to utilizing the capabilities of Avro Schema. The use of Avro Schema with AsyncAPI ensures improved interoperability and schema-aware communication in event-driven systems.  Now, you can further experiment by incorporating your business logic and experimenting with more advanced capabilities.
 
 ## Next Steps
-Now you know how to write an AsyncAPI document using Avro Schemas. Let's now proceed to learn to how use Schema Registry with AsyncAPI. 
+Now you know how to write an AsyncAPI document using Avro Schemas. Let's now proceed to learn to how use [Schema Registry with AsyncAPI](/docs/tutorials/kafka/managing-schemas-using-schema-registry). 
