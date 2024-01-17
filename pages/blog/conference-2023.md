@@ -150,7 +150,7 @@ They contributed to the design of website prototypes, conference design implemen
   }
 ]} />
 
-## Where Too Next?
+## Where To Next?
 
 As we plan for AACoT'24, we have three potential locations - one in Lagos (happening early Q2), U.K. hosted by APIdays London, and the other in France at APIdays Paris(happening in Q4). If you are interested, we are currently seeking sponsors for AACoT'24, either as our financial sponsor or event and host sponsor.
 
