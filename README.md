@@ -79,7 +79,7 @@ To get started as a Docs contributor:
 
 3) Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you may have on how to get started.
 
-Learn more about contributing to documentation [here].(https://github.com/asyncapi/website/blob/master/assets/docs/fragments/how-to-contribute.md)
+Learn more about contributing to documentation [here](https://github.com/asyncapi/website/blob/master/assets/docs/fragments/how-to-contribute.md).
 
 ## Compose new blog post
 
