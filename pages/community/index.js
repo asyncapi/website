@@ -194,8 +194,8 @@ function CommunityIndexPage() {
             type="small"
             tagline="Finance"
             icon="💰"
-            heading="Track Company Spending with Budget Analysis"
-            description="Delve into our finance section for a detailed analysis of the project's budget. Gain insights into how funds are allocated, track expenses, and ensure transparent financial management."
+            heading="Track Initiative Spending with Budget Analysis"
+            description="Explore our finance section for a detailed analysis of the project's budget. Track expenses, gain insights into funds allocation, and transparent financial management."
             link="/finance"
           />
         </div>
