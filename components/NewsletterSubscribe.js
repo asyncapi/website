@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./buttons/Button";
 import Heading from "./typography/Heading";
+import TextLink from "./typography/TextLink";
 import Paragraph from "./typography/Paragraph";
 import Loader from "./Loader";
 import { useTranslation } from "../lib/i18n";
@@ -84,7 +85,7 @@ export default function NewsletterSubscribe({
           {t('newsletterCTA.errorTitle')}
         </Heading>
         <Paragraph className="mb-8" textColor={paragraphTextColor}>
-          {t('newsletterCTA.errorSubtitle')}
+          {t('newsletterCTA.errorSubtitle')}{' '}<TextLink href="https://github.com/asyncapi/website/issues/new?template=bug.md" target="_blank">{t('newsletterCTA.errorLinkText')}</TextLink> 
         </Paragraph>
       </div>
     )
