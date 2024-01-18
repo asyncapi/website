@@ -18,7 +18,7 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 ## Steps
 1. Start Apicurio Registry locally using below docker command:
     <CodeBlock language="bash">
-    {`docker run -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.7.Final`}
+    {`docker run --env CORS_ALLOWED_ORIGINS=* -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final`}
     </CodeBlock>
 2. Once your local instance of Apicurio Registry is running, you can upload your Avro schema to it. Open new terminal window and create an Avro schema artifact using the following command:
 <CodeBlock>
@@ -46,9 +46,9 @@ http://localhost:8080/apis/registry/v2/groups/my-group/artifacts \
 }
 EOF
 </CodeBlock>
-3. You can download the Avro schema by visiting the URL below and replacing {UserSignedUp} with the id of the schema used in the previous step.
+1. You can download the Avro schema by visiting the URL below and replacing {UserSignedUp} with the id of the schema used in the previous step.
 http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/{UserSignedUp}
-4. An alternative to having the schema in a separate file as in (Joy's tutorial), would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
+1. An alternative to having the schema in a separate file as in (Joy's tutorial), would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
 $ref: {url}
 Replace {url} with the url from the previous step.
 
