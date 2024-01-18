@@ -11,6 +11,7 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: In 2023, we hosted our very first in-person conference edition. Find out how it all went down!
+featured: true
 ---
 
 For three consecutive years, we have hosted online conferences, and in 2023, we decided to take it up a notch and move to in-person events.
@@ -50,6 +51,15 @@ Firstly, having open communication and fostering strong partnerships with our sp
 Secondly, open up sponsorship tiers for companies and individuals who want to support us. Running AACoT requires a lot of funds, especially when it comes to swag costs, shipping, and going further to provide travel scholarships to community members who would like to participate. So, having a separate budget for AACoT is very crucial in this regard.
 
 Lastly, spacing all the conferences this year. Instead of what happened in 2023, where we had all meetups lined up a few weeks apart from each other, in 2024, we plan to have one conference each quarter. Additionally, this will give people time to prepare and plan to travel.
+
+##  Attendance
+
+Though you may have an idea of how the attendance went, the best takeaway is that we had time to network, connect, and learn during the conferences. 
+Being our first year, we did fairly well regarding attendance numbers. Here is a breakdown of attendance in each city: 
+- In London, over 30 people attended in person. 
+- In Madrid, we had 50 people attend in person, and the livestream had 437 views. 
+- In Bangalore, we had around 25 people attend in person, and the livestream received 377 views. 
+- In Paris, we don't have a total number, but we had a full house on the conference day. We had a booth where we advertised AsyncAPI on a vendor-neutral stand.
 
 
 ## Who Made AACoT'23 Possible
