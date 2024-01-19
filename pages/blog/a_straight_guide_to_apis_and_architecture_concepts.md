@@ -76,7 +76,7 @@ A simple example might be LinkedIn notifying us that someone wants to connect wi
 
 Now that we have seen the classification of APIs, let's focus on the most representative types of architecture. 
 
-In my opinion, this is the most interesting part. Understanding different construction models bring us closer to the skeleton of the system. By understanding this part, we can better sustain the concepts of APIs, supporting them on fundamental pillars.
+In my opinion, this is the most interesting part. Understanding different construction models bring us closer to the skeleton of the system. By understanding this part, we can better sustain the concepts of APIs, supporting them on fundamental pillars.   
 
 -  **Monolithic architecture**
 
