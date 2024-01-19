@@ -10,18 +10,18 @@ cover: /img/posts/a_straight_guide_to_apis_and_architecture_concepts/cover.webp
 authors:
   - name: Barbaño González
     photo: /img/avatars/barbano.webp
-    link: https://www.linkedin.com/in/barbano-gonzalez-moreno
-excerpt: Basic concepts about APIs and architectures for beginners and non-developers.
+    link: https://www.linkedin.com/in/barbano-gonzalez-moreno 
+excerpt: Basic concepts about APIs and architectures for beginners and non-developers. 
 featured: true
 ---
 
-It has not been such a long journey into the technology realm for me. Then I started to work at AsyncAPI, and suddenly, I needed to understand a complex world. New terms, code, and ways of seeing things were waiting for me. Coming from other fields of knowledge, the challenge was huge. How to begin? How to have a clue?
+It has not been such a long journey into the technology realm for me. Then I started to work at AsyncAPI and suddenly I needed to understand a complex world. New terms, code and ways of seeing things were waiting for me. Coming from other fields of knowledge, the challenge was huge. How to begin? How to have a clue?
 
 I decided to start with the basics: trying to find a way to catch the meaning of some key ideas related to APIs. I read and reread over and over again definitions and more definitions. They were full of technical terms that distanced me from them rather than bringing me closer to understanding the concepts. I found myself diving into a deep and dark ocean. And I was too squared to flow in those turbulent currents. The alphabetical order is not a natural one. A dictionary is not a good tool for starting to know a language.
  
-Then, I decided to change direction, looking for data. I thought that checking some visual and intelligible sources might clarify my head. So I could understand where to put the information, helping me start weaving a tapestry. Nevertheless, not knowing the code made it difficult for me, if not impossible, to interpret rough data. 
+Then, I decided to change direction, looking for data. I thought that checking some visual and intelligible sources might clarify my head. So I could understand where to put the information, helping me start weaving a tapestry. Nevertheless, not knowing the code made it difficult for me if not impossible to interpret rough data. 
 
-Third attempt… I just remembered that someone said that practice makes perfect. So, the next try was in that direction. Playing an instrument is a better way to understand it than reading definitions or pentagrams. See it and touch it; feel the shape directly, the stage, the environment. It was time to take action: a colleague volunteered to guide me, practicing somehow with these concepts without prior knowledge. Just making fun, as a child, looking for references, playing, and understanding the technique while finding similarities and comparisons with real situations that anyone could understand pretty well. 
+Third attempt… I just remembered that someone said that practice makes perfect. So, the next try was in that direction. Playing an instrument is a better way to understand it than reading definitions or pentagrams. See it and touch it; feel the shape directly, the stage, the environment. It was time to take action: a colleague volunteered to guide me, practicing somehow with these concepts without prior knowledge. Just making fun, as a child looking for references, playing and understanding the technique while finding similarities and comparisons with real situations that anyone could understand pretty well. 
  
 So, let’s talk some basic concepts:
  
@@ -29,16 +29,16 @@ So, let’s talk some basic concepts:
 
 ### What is an API?
 
-APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. 
+APIs are program connectors. Synchronous or asynchronous, they act as glue between different applications or programs. As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._01.webp"
   widthClass="w-1/2"
   float="left"
-  altOnly="This image shows a pipeline system"
+  altOnly="This image shows a pipeline system" 
 />
 
-As cables or pipes connecting different locations to facilitate information exchange or optimize resources.
+
  
 ### How does an API work?
  
@@ -64,11 +64,11 @@ It is essential to choose the architecture style or pattern that best fits the d
 
 - **REST** (representational transfer state), this architecture style separates the needs of the API user from those of the provider, thanks to commands embedded in the underlying network protocol. For example, Twitter provides a REST API that you can query for the latest tweets.
 
-- **RPCs** (remote procedure calls), are styles that usually demand developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent, making them potentially compatible with many protocols, although they do not include the benefits of using native protocol features. 
+- **RPCs** (remote procedure calls), are styles that usually demand developers to perform specific code blocks on another system or different systems. RPCs are protocol-independent making them potentially compatible with many protocols although they do not include the benefits of using native protocol features. 
  
-For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is, to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
+For example, the Network File System (NFS) plays an essential role in Unix and Linux. This system uses RPC between client and server to mount the set of files from a remote computer on a local computer, that is to make them partially or entirely available on the latter, allowing the user to manage the files located on a remote device as if they had them on their computer.
 
-- **Event-driven**, real-time, asynchronous, doesn't wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
+- **Event-driven**, real-time and asynchronous doesn't wait for the API user to make the call before sending a response. The response is issued as soon as an event occurs.  
 
 A simple example might be LinkedIn notifying us that someone wants to connect with us.
  
@@ -117,7 +117,7 @@ It is a computing model that uses the cloud as the environment for executing app
   altOnly="This image shows a cloud"
 />
 
-They can dispense with tasks such as allocating server resources, and focusing solely on application development. With Serverless, the code runs directly in containers. 
+They can dispense with tasks such as allocating server resources and focusing solely on application development. With Serverless, the code runs directly in containers. 
  
 Any task requiring executing several functions simultaneously is a good use for serverless technology. These can be applied whenever concurrent computing is required. 
 
@@ -125,7 +125,7 @@ There isn't a better graphic example than a cloud.
 
 -  **Event-driven architecture**
 
-Event-driven architecture, also known as EDA, is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. 
+Event-driven architecture, also known as EDA is a software model and architecture used to design applications. Unlike other architectures, this one is characterized by asynchronous communication, which does not occur simultaneously. 
 
 <Figure
   src="/img/posts/a_straight_guide_to_apis_and_architecture_concepts/guide-pic._05.webp"
@@ -134,7 +134,7 @@ Event-driven architecture, also known as EDA, is a software model and architectu
   altOnly="This image shows a message in a bottle"
 />
 
-That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes, or 5 hours later just because the server was attending to other deliveries.
+That is to say, the receiver will attend to the sender's message later after receiving it, so the sender can perform other tasks without waiting for the request to be answered. For example, sending an email that might be received 5, 50 minutes or 5 hours later just because the server was attending to other deliveries.
 
 This is the kind of architecture that AsyncAPI works with. Its main goal is to make working with EDA as easy as working with REST APIs, from documentation to code generation, from discovery to event management.
 
@@ -154,3 +154,8 @@ _* Photo 2 by [Eric Muhr](https://unsplash.com/es/@ericmuhr) on Unsplash_;
 _* Photo 3 by [Sophie N.](https://unsplash.com/es/@storiesbysoph) on Unsplash_;
 _* Photo 4 by [Sendi Gibran](https://unsplash.com/es/s/usuarios/sendi-gibran) on Unsplash_;
 _* Photo 5 by [Snapwire](https://www.pexels.com/es-es/@snapwire/) on Pexels_.
+
+
+
+
+// commas and grammer mistakes    
