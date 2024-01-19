@@ -87,10 +87,10 @@ In my opinion, this is the most interesting part. Understanding different constr
   altOnly="This image shows menhirs"
 />
 
-Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock, a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
+Monolithic architecture describes a kind of construction made from a single piece of material, historically from a rock a standing stone. Indivisible. As a menhir, the simplest megalithic monument.
 
 The same goes for the traditional structure of software applications. Monolithic is an end-to-end architecture in which all aspects of the software function as a single unit. 
-
+    
 -  **Microservices architecture**
 
 Microservices architecture is a method for developing software applications that consist of small, autonomous services. Each microservice's code can be written in a different language and perform specific functions. Microservices communicate with each other through APIs and have their own storage systems, which avoid overloading and crashing the application.
