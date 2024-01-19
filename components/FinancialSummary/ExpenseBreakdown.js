@@ -74,9 +74,12 @@ export default function ExpenseBreakdown() {
                                         <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Hiring</h2>
                                     </a>
                                 </div>
-                                <p className="text-base text-center text-darkGunMetal">To support our community, we a require full-time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand the team on our team.</p>
+                                <p className="text-base text-center text-darkGunMetal">
+                                    To strengthen our community, we require a full-time commitment. Open Collective supports us in hiring for AsyncAPI. We are excited to announce that <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie Sibanda</a> has joined as our new community manager. We have plans to expand our team further in the near future.
+                                </p>
                             </div>
                         </div>
+
 
                         <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
                             <div className="text-darkGunMetal">
