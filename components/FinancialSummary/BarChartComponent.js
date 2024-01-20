@@ -45,9 +45,9 @@ const categories = getUniqueCategories();
  */
 const Card = ({ month, data, links }) => {
     return (
-        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-56 overflow-hidden">
+        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
-            <div className="flex flex-col justify-center overflow-x-auto">
+            <div className="flex flex-col overflow-x-auto overflow-y-auto">
                 {data.map((item, index) => (
                     <div key={index} className="flex justify-between">
                         <div className="text-sm m-2" onClick={(links) => {
@@ -65,17 +65,19 @@ const Card = ({ month, data, links }) => {
     );
 };
 
-const ExpensesCard = () => {
+const ExpensesCard = ({  }) => {
     return (
+    //   <div className="expenses-card-container" style={{ height: '300px', display: 'flex', flexDirection: 'column' }}>
         <div className="overflow-x-auto">
-            <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
-                {Object.keys(Expenses).map((month, index) => (
-                    <Card key={index} month={month} data={Expenses[month]} />
-                ))}
-            </div>
+          <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
+            {Object.keys(Expenses).map((month, index) => (
+             <Card key={index} month={month} data={Expenses[month]} />
+            ))}
+          </div>
         </div>
+      
     );
-};
+  };
 
 const BarChartComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -138,7 +140,7 @@ const BarChartComponent = () => {
                   <p className="text-center sm:text-left mt-1 text-xl font-semibold">${totalAmount.toFixed(2)}</p>
                 </div>
                 <div className="md:flex space-x-4">
-                  <div className="mx-auto">
+                  <div className="mx-auto" mt-8="true">
                     <select
                       className="p-2 m-1 border text-gray-600 font-semibold border-gray-600 rounded-md bg-white text-violet text-xs w-full sm:w-auto md:w-48"
                       value={selectedCategory}
