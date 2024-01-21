@@ -46,9 +46,9 @@ http://localhost:8080/apis/registry/v2/groups/my-group/artifacts \
 }
 EOF
 </CodeBlock>
-1. You can download the Avro schema by visiting the URL below and replacing {UserSignedUp} with the id of the schema used in the previous step.
-http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/{UserSignedUp}
-1. An alternative to having the schema in a separate file as in (Joy's tutorial), would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
+3. You can download the Avro schema by visiting the URL below:
+http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
+4. An alternative to having the schema in a separate file as in (Joy's tutorial), would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
 $ref: {url}
 Replace {url} with the url from the previous step.
 
