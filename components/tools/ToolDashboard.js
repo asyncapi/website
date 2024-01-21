@@ -45,7 +45,7 @@ export default function ToolDashboard() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1000);z
   }, []);
 
   // useEffect function to enable the close Category dropdown Modal feature when clicked outside of the modal
