@@ -16,7 +16,7 @@ featured: true
 
 It's almost unbelievable that we are in 2024. And if you are reading this, Happy New Year to you and your loved ones. Continuing the tradition, we look at how the community has grown over the last 365 days and look forward to our next phase.
 
-If you are curious about our past achievements, [please read the previous summary](https://www.asyncapi.com/blog/2022-summary).
+If you are curious about our past achievements, please [read the previous 2022 AsyncAPI summary](https://www.asyncapi.com/blog/2022-summary).
 
 ## Community Metrics
 What better way to reflect on the past year than with numbers? This is the most significant way to gauge our growth and measure our visible impact as an open-source community.
