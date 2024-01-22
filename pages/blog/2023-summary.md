@@ -1,6 +1,6 @@
 ---
 title: "Annual Review: State of AsyncAPI Initiative 2023"
-date: 2024-01-18T06:00:00+01:00
+date: 2024-01-29T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
