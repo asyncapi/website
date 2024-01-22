@@ -61,7 +61,7 @@ For our LinkedIn page, we are currently sitting at **2988** overall followers, a
   src="/img/posts/2023-summary/linkedin.webp"
 />
 
-We also don't use any premium or marketing services; everything you see here is 100% organic, and even though LinkedIn still has much to offer users, it is way better than the X/Twitter app, in my opinion.
+We also don't use any premium or marketing services; everything you see here is 100% organic. Even though LinkedIn still has much to offer, it is better than the X/Twitter app.
 
 <Figure
   src="/img/posts/2023-summary/referred-by-LinkedIn.webp"
