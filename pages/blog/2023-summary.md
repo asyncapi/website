@@ -75,7 +75,7 @@ I don't have much to say regarding Twitter, but on the bright side, we gained al
   src="/img/posts/2023-summary/referred-by-Twitter.webp"
 /> 
 
-Although the decline is shallow, I'm not extremely worried. Most top tweets for this year were appreciation tweets balanced up with technical tweets. Additionally, we don't use any paid services, and having any additional investment in this platform is not worth it, at least for now.
+Although the decline is shallow, I'm not extremely worried. Most top tweets for this year were appreciation tweets balanced with technical tweets. We don't use advertising because we don't consider the X/Twitter platform worth additional investment.
 
 #### YouTube
 
