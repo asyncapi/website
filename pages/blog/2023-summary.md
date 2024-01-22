@@ -22,7 +22,8 @@ If you are curious about our past achievements, please [read the previous 2022 A
 What better way to reflect on the past year than with numbers? Data is the most significant way to gauge our growth and measure our visible impact as an open-source community.
 
 ### Slack
-As of 2024, we are currently sitting at an overall total of **4,471** members in the AsyncAPI workspace. This is where all our community activities happen, from communication to sharing updates and helping contributors and new adopters for the AsyncAPI spec and tools. 
+As of 2024, we are currently at an overall total of **4,471** members in the AsyncAPI workspace. The Slack workspace is our primary communication medium, from updates to helping contributors and new adopters onboard with the AsyncAPI spec and tools. 
+
 
 In 2023, we had 1488 people joining our workspace:
 
@@ -55,7 +56,7 @@ Let's dive into the data:
 
 #### LinkedIn
 
-For our LinkedIn page, we are currently sitting at **2988** overall followers, and during 2023, we gained a total of **849** followers since 2022.
+For our LinkedIn page, we are currently sitting at **2988** overall followers. During 2023, we gained a total of **849** followers since 2022.
 
 <Figure
   src="/img/posts/2023-summary/linkedin.webp"
@@ -69,7 +70,7 @@ We also don't use any premium or marketing services; everything you see here is 
 
 #### X/Twitter
 
-I don't have much to say regarding Twitter, but on the bright side, we gained almost 1K followers since 2022, and we currently have 4.4k overall followers. When it comes to website referrals via Twitter, we have seen a decline compared to last year, 2022
+We gained almost 1K followers since 2022, and now have 4.4k overall followers. When it comes to website referrals via Twitter, we have seen a decline compared to last year, 2022
 
 <Figure
   src="/img/posts/2023-summary/referred-by-Twitter.webp"
@@ -86,7 +87,7 @@ The AsyncAPI YouTube channel performed way better than expected, especially as w
 /> 
 
 #### Newsletter
-On the 5th of April, 2023, we sent out our first AsyncAPI Community Updates Newsletter. The main aim was to summarize monthly activities and initiatives in the community straight to your inbox.
+On the 5th of April, 2023, we sent out our first AsyncAPI Community Updates Newsletter. The main aim was to summarize monthly community activities/initiatives straight to your inbox.
 Over the past nine months, the December Edition was the most popular due to the release of the AsyncAPI v3 (one of our major accomplishments in 2023).
 
 <Figure
@@ -103,7 +104,7 @@ Looking forward to sending the 2024 Editions!!🎉🎉
 
 ### Google Analytics
 
-The pageviews on the AsyncAPI website increased significantly over the past year. Our major contributor to these metrics comes from docs, and we expect to see more in the coming year as people want to know more about the AsyncAPI v3.
+AsyncAPI website sessions and unique user have increased significantly over the past year. Our major contributor to these metrics comes from docs, and we expect to see more in the coming year as people want to know more about the AsyncAPI v3.
 
 <Figure
   src="/img/posts/2023-summary/google-analytics.webp"
@@ -113,7 +114,7 @@ We also lost 21 days' worth of data during October due to a PR update that affec
 
 ### Google Search Console
 
-Google Search Console is one of my favorite tools as it shows how much impact and interest we are gaining. Compared to 2022, we can see a surge in impressions and, slowly but surely, in clicks as well. 
+Google Search Console is one of my favorite tools as it shows how much impact and interest we are gaining. Compared to 2022, we can see a surge in impressions and clicks. 
 
 <Figure
   src="/img/posts/2023-summary/google-console.webp"
@@ -135,13 +136,13 @@ Although we have a handful of maintainers, we try our best to manage, resolve, a
 
 ### NPM
 
-Numbers don't lie, and yes, these are the total downloads of the top AsyncAPI packages hosted in the Node Package Manager. We can also see the adoption of AsyncAPI spec downloads increased from 5M to 17M since 2022.
+Numbers don't lie; and yes, these are the total downloads of the top AsyncAPI packages hosted in the Node Package Manager. We can also see the adoption of AsyncAPI spec downloads increased from 5M to 17M since 2022.
 
 <Figure
   src="/img/posts/2023-summary/NPM-packages.webp"
 /> 
 
-So, if you are worried about the project slowing down anytime soon, we are still growing strong.
+If you are worried about the project slowing down anytime soon, we are still growing strong.
 
 ## Community Achievements
 
@@ -149,16 +150,15 @@ We achieved so much this year, and here are some of the highlights from the Asyn
 
 - We had our first community hire, [Thulisile Sibanda](https://www.linkedin.com/in/v-thulisile-sibanda/), to work full-time as the project's Community Manager.
 - [Lukasz Gornicki](https://twitter.com/derberq) went from Community Guardian to Executive Director (boss moves right there 😂😂). And yes, he's planning to get rid of the title soon.
-- The [Ambassador Program](https://www.asyncapi.com/community/ambassadors) increased this year. 
+- The [Ambassador Program](https://www.asyncapi.com/community/ambassadors) increased this year from having 3 ambassadors to 5. 
 - We launched the AsyncAPI Community Updates newsletter.
 - Released the [Parser-JS v2](https://github.com/asyncapi/parser-js).
-- We launched the [AsyncAPI Bounty Program](https://github.com/asyncapi/community/pull/897/files#diff-25ecb20a61754c225d6511ca08d7e7c9a14b9ca5a93e89bd42331e51c9ebf26dR155), where we successfully resolved and paid out a total of 11 out of 16 issues during the initial trial and 2023-Q4 round.
-- Established our very first [Code of Conduct Committee](https://github.com/orgs/asyncapi/discussions/682#discussioncomment-7498209).
-- Hosted a few series of live streams with other women in tech.
-- Barbaño González shared a detailed article on [Why Women Are Underrepresentation In Open-Source](https://thenewstack.io/why-women-are-underrepresented-in-open-source/).
-- Participated in [GSoC'23](https://github.com/orgs/asyncapi/discussions/997) and [GSoD'23](https://github.com/orgs/asyncapi/discussions/961) and kickstarted the [AsyncAPI Mentorship Program II](https://github.com/asyncapi/community/tree/master/mentorship/asyncapi-mentorship/2023).
-- Held our first in-person [AsyncAPI Conference on Tour](https://conference.asyncapi.com/) in four different locations.
+- We launched the [AsyncAPI Bounty Program](https://github.com/asyncapi/community/pull/897/files#diff-25ecb20a61754c225d6511ca08d7e7c9a14b9ca5a93e89bd42331e51c9ebf26dR155), where we successfully resolved and paid out a total of 11 out of 16 issues during the initial trial and 2023 Q4 round.
+- Established our very first [AsyncAPI Code of Conduct Committee](https://github.com/orgs/asyncapi/discussions/682#discussioncomment-7498209).
+- Barbaño González shared a detailed article on [Why Women Are Underrepresented In Open-Source](https://thenewstack.io/why-women-are-underrepresented-in-open-source/).
+- Participated in [GSoC'23](https://github.com/orgs/asyncapi/discussions/997) and [GSoD'23](https://github.com/orgs/asyncapi/discussions/961), while kickstarting the [AsyncAPI Mentorship Program II](https://github.com/asyncapi/community/tree/master/mentorship/asyncapi-mentorship/2023).
+- Held our first in-person [AsyncAPI Conference on Tour](https://conference.asyncapi.com/) in London, Madrid, Bangalore and Paris.
 - Released the [AsyncAPI v3](https://www.asyncapi.com/blog/release-notes-3.0.0).
-- Launch the [AsyncAPI Store](https://asyncapi-store.com/).
+- Launched the [AsyncAPI Store](https://asyncapi-store.com/).
 
 This is just a glimpse of the highlights we had in 2023, and we have even more planned in 2024, which you can learn about in our [AsyncAPI Community Building Goals 2024](https://github.com/orgs/asyncapi/discussions/948). 
