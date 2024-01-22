@@ -46,7 +46,7 @@ Additionally, our weekly activity continues to grow as we run different mentorsh
 
 ### Social Media 
 
-Social media is a medium we use for sharing news and updates around our community. We don't use it for marketing purposes but mainly for communication.
+We use social media to communicate news and updates around our community. We don't use it for marketing.
 
 
 > And honestly, I didn't invest much when it came to socials, so don't expect big big numbers 😝
