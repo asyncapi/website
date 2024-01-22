@@ -19,7 +19,7 @@ It's almost unbelievable that we are in 2024. And if you are reading this, Happy
 If you are curious about our past achievements, please [read the previous 2022 AsyncAPI summary](https://www.asyncapi.com/blog/2022-summary).
 
 ## Community Metrics
-What better way to reflect on the past year than with numbers? This is the most significant way to gauge our growth and measure our visible impact as an open-source community.
+What better way to reflect on the past year than with numbers? Data is the most significant way to gauge our growth and measure our visible impact as an open-source community.
 
 ### Slack
 As of 2024, we are currently sitting at an overall total of **4,471** members in the AsyncAPI workspace. This is where all our community activities happen, from communication to sharing updates and helping contributors and new adopters for the AsyncAPI spec and tools. 
