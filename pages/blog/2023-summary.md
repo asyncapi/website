@@ -30,7 +30,7 @@ In 2023, we had 1488 people joining our workspace:
   src="/img/posts/2023-summary/new-users-joining-per-year.webp"
 />
 
-Below are our top 5 members who joined the community in 2023 and have been the most active among other newcomers. As a community, we are proud of their contributions as part of our Mentorship programs and even keeping us entertained with memes 😀.
+Below are our top 5 members who joined the community in 2023 and have been the most active among other newcomers. As a community, we are proud of their contributions to our Mentorship programs. They even keep us entertained with memes 😀.
 
 <Figure
   src="/img/posts/2023-summary/Top-5-members.webp"
