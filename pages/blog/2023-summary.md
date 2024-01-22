@@ -161,4 +161,4 @@ We achieved so much this year, and here are some of the highlights from the Asyn
 - Released the [AsyncAPI v3](https://www.asyncapi.com/blog/release-notes-3.0.0).
 - Launched the [AsyncAPI Store](https://asyncapi-store.com/).
 
-This is just a glimpse of the highlights we had in 2023, and we have even more planned in 2024, which you can learn about in our [AsyncAPI Community Building Goals 2024](https://github.com/orgs/asyncapi/discussions/948). 
+We hope you enjoyed a glimpse into our 2023 highlights; we have even more planned for 2024! Learn about our [2024 AsyncAPI Community Building Goals](https://github.com/orgs/asyncapi/discussions/948). 
