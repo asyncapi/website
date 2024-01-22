@@ -79,7 +79,7 @@ Although the decline is shallow, I'm not extremely worried. Most top tweets for 
 
 #### YouTube
 
-The AsyncAPI YouTube channel performed way better than expected, especially as we moved from online to in-person conferences. We currently have over 364 people subscribed to our channel, increasing total subscribers to over 1,46k. Our live streams and conference recordings bring in a lot of views, and I'm optimistic about 2024 as well.
+The AsyncAPI YouTube channel performed way better than expected, especially as we moved from online to in-person conferences. We currently have over 364 people subscribed to our channel, increasing total subscribers to over 1.46k. Our live streams and conference recordings bring in a lot of views, leaving us optimistic for 2024.
 
 <Figure
   src="/img/posts/2023-summary/youtube.webp"
