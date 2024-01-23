@@ -1,35 +1,24 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOCHlHJM5ezPwM",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: allow generator to pull from private npm repo",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/generator/pull/1061",
-      "repo": "asyncapi/generator",
-      "labels": [],
-      "score": 29.578982641173653
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
+      "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
       "labels": [
         {
           "name": "enhancement",
-          "color": "84b6eb"
+          "color": "a2eeef"
         },
         {
-          "name": "stale",
-          "color": "ededed"
+          "name": "keep-open",
+          "color": "f9dd4b"
         }
       ],
-      "score": 19.815046623698855
+      "score": 19.527872034949596
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -62,13 +51,9 @@
         {
           "name": "level/medium",
           "color": "0e8a16"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "0e8a16"
         }
       ],
-      "score": 17.230475324955524
+      "score": 17.804824502454043
     },
     {
       "id": "PR_kwDOFDnrNc5f0Nm0",
@@ -79,7 +64,34 @@
       "resourcePath": "/asyncapi/cli/pull/890",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 15.794602381209232
+      "score": 16.943300736206268
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fTNfJ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add Mailchimp integration using netlify function",
+      "author": "akshatnema",
+      "resourcePath": "/asyncapi/website/pull/2315",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.220253203710714
     },
     {
       "id": "I_kwDOFDnrNc5rjrK-",
@@ -121,17 +133,6 @@
       "score": 14.933078614961456
     },
     {
-      "id": "PR_kwDOBW5R_c5fTNfJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Mailchimp integration using netlify function",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/pull/2315",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -154,6 +155,17 @@
       "score": 14.07155484871368
     },
     {
+      "id": "PR_kwDOBW5R_c5jw3SL",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "chore(blog): annual review",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/website/pull/2549",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 13.78438025996442
+    },
+    {
       "id": "PR_kwDOBW5R_c5dT1NT",
       "isPR": true,
       "isAssigned": false,
@@ -163,33 +175,43 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 13.78438025996442
-    },
+    }
+  ],
+  "goodFirstIssues": [
     {
-      "id": "I_kwDOFi_gUM5hpuWl",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
+      "id": "I_kwDOE8Qh3858hQCM",
+      "title": "Add OpenAPI 3.1 support",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1749",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
+          "name": "openapi",
+          "color": "960C58"
         }
-      ],
-      "score": 13.210031082465903
-    }
-  ],
-  "goodFirstIssues": [
+      ]
+    },
+    {
+      "id": "I_kwDOCVQpZM58chHc",
+      "title": "Workflows failing because of some leftovers scripts",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/asyncapi-react/issues/888",
+      "repo": "asyncapi/asyncapi-react",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh38572qE9",
       "title": "Add runtime tests for Python",
