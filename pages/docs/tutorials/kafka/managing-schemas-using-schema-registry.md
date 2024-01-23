@@ -12,8 +12,8 @@ The need for schema management has become increasingly prevalent to handle the e
 
 While several Schema Registry implementations exist, you will use the [Apicurio Registry](https://www.apicur.io/registry/) in this tutorial. Apicurio Registry is a popular open-source Schema Registry implementation that supports multiple serialization formats and facilitates schema management for diverse data in distributed systems. You will be using the Apicurio Registry in combination with Avro, which is a language-neutral data serialization system.
 
-## Installation guide
-1. Install [Docker](https://docs.docker.com/engine/install/) from the official website.
+## Prerequisites
+Install [Docker](https://docs.docker.com/engine/install/) from the official website.
 
 ## Steps
 1. Start Apicurio Registry locally using below docker command:
