@@ -4,7 +4,11 @@
         "subtitle": "Wir respektieren Ihren Posteingang. Kein Spam, versprochen ✌️",
         "nameInput": "Ihr Name",
         "emailInput": "Deine E-Mail",
-        "subscribeBtn": "Abonnieren"
+        "subscribeBtn": "Abonnieren",
+        "successTitle": "Vielen Dank für Ihr Abonnement!",
+        "errorTitle": "Etwas ist schief gelaufen",
+        "errorSubtitle": "Das Abonnement ist fehlgeschlagen, bitte informieren Sie uns darüber, indem Sie einen Fehler melden",
+        "errorLinkText": "hier"
     },
     "newsroomSection": {
         "title": "Aktuelle Nachrichten und Blogs",
