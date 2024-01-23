@@ -1,10 +1,13 @@
 import Paragraph from '../typography/Paragraph';
 import Label from './Label'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+
 
 export default function MenuBlocks ({
   items = [],
 }) {
+  const router = useRouter()
   return (
     <>
       {
@@ -13,7 +16,7 @@ export default function MenuBlocks ({
           return (
             <Link href={item.comingSoon ? '' : item.href} key={index}>
               <a data-testid="MenuBlocks-Link"
-                className="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150" 
+                                className={`flex items-start p-3 -m-3 space-x-4 transition duration-150 ease-in-out rounded-lg  ${router.asPath === item.href ? 'bg-secondary-100 shadow-sm': 'hover:bg-gray-50'}`}
                 target={isExternalHref ? "_blank" : undefined} 
                 rel={isExternalHref ? "noopener noreferrer" : undefined}
               >
