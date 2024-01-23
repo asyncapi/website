@@ -5,12 +5,12 @@ Follow the [AsyncAPI CLI installation](https://github.com/asyncapi/cli#installat
 <summary>MacOS</summary>
 
 `brew`
-<br/>
-You can install in MacOS via brew: `brew install asyncapi`.
+
+> You can install in MacOS via brew: `brew install asyncapi`.
 
 `pkg`
-<br/>
-Each release of CLI produces a MacOS dedicated pkg file that enables you to install this CLI as MacOS application.
+
+> Each release of CLI produces a MacOS dedicated pkg file that enables you to install this CLI as MacOS application.
 
 ```
 # Download latest release. To download specific release, your link should look similar to https://github.com/asyncapi/cli/releases/download/v0.13.0/asyncapi.pkg. All releases are listed in https://github.com/asyncapi/cli/releases
@@ -24,19 +24,19 @@ sudo installer -pkg asyncapi.pkg -target /
 <details>
 <summary>Linux</summary>
 
-You can install in Linux via `dpkg`, a debian package manager:
-
-1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
-2. `sudo dpkg -i asyncapi.deb`
+> You can install in Linux via `dpkg`, a debian package manager:
+>
+> 1. `curl -OL https://github.com/asyncapi/cli/releases/latest/download/asyncapi.deb` 
+> 2. `sudo dpkg -i asyncapi.deb`
 
 </details>
 
 <details>
 <summary>Windows</summary>
 
-For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
-
-Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
+> For Windows, install the appropriate installer and follow the default installation steps to complete the installation process.
+>
+> Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x64.exe) for 64-bit Windows and [asyncapi.x86.exe](https://github.com/asyncapi/cli/releases/latest/download/asyncapi.x86.exe) for 32-bit Windows.
 
 
 </details>
@@ -44,7 +44,8 @@ Download [asyncapi.x64.exe](https://github.com/asyncapi/cli/releases/latest/down
 <details>
 <summary>Other OS</summary>
 
-[Read further AsyncAPI CLI installation instructions for different operating systems](https://github.com/asyncapi/cli#installation).
+> [Read further AsyncAPI CLI installation instructions for different operating systems.](https://github.com/asyncapi/cli#installation).
+
 </details>
 
 #### Using NPM and Node.js
