@@ -31,12 +31,12 @@ The successful contributions from the _2023 Google Season of Docs_ and the _2023
 - `/docs/reference`: **6,834 sessions** with **2,629 unique users**.
 
 ## Google Season of Docs 2023 (GSoD)
-[AsyncAPI was accepted into Google Season of Docs 2023 for two projects](https://developers.google.com/season-of-docs/docs/participants): **documenting the AsyncAPI document in detail** and **create a 100-level interactive learning path**. We received a total budget of $10,350 .
+[AsyncAPI was accepted into Google Season of Docs 2023 for two projects](https://developers.google.com/season-of-docs/docs/participants): **documenting the AsyncAPI document in detail** and **create a 100-level interactive learning path**. We received a total budget of $10,350.
 
 ### Project 1: AsyncAPI document structure 
 Our first identified challenge involved updating the documentation for the structure of an AsyncAPI document to align with the latest specification, version 3.0.0. The new version introduces numerous changes and features, necessitating a revision of the configuration guidelines for AsyncAPI documents. To facilitate easier implementation of Event-Driven Architectures (EDAs), our documentation needs to provide more comprehensive explanations of the different sections within an AsyncAPI document. We've introduced a dedicated `/AsyncAPI-document` subdirectory within the **Concepts** area. That new section delves into the structure of an AsyncAPI document, with each component meticulously detailed on its own page.
 
-### Project 2: create a 100-level interactive learning path
+### Project 2: Create a 100-level interactive learning path
 The second challenge we've addressed is launching a beginner-friendly, 100-level introduction to AsyncAPI. Our new interactive learning path is enhanced with engaging e-characters and a creative storyline, employing creative metaphors to effectively convey technical concepts. That new interactive educational resource will soon be available on our [AsyncAPI Killercoda profile](https://killercoda.com/asyncapi/). To support this initiative, we've established a dedicated repository for interactive learning content at `https://github.com/asyncapi/learning-paths`. 
 
 Our new interactive learning path features a narrative where the [AsyncAPI mascot Eve assists Chan](https://github.com/asyncapi/brand/blob/master/illustrations/eve-and-chan/eve-chan-v2.png) in repairing his spaceship following an unexpected crash in Eve's backyard. Throughout this journey, various API concepts are elucidated using the engaging theme of fixing Chan's spaceship. In _"Module 1: Introduction to AsyncAPI,"_ Chan's spaceship crash lands in Eve's backyard, serving as a backdrop to explore AsyncAPI, its usage, and real-world applications. The story progresses to _"Module 2: Event-Driven Architectures,"_ where Eve examines the spaceship's engine, introducing event-driven systems and their design using AsyncAPI, particularly for microservices. The _"Module 3: AsyncAPI Specification"_ sees Eve helping Chan program his spaceship, delving into the AsyncAPI document structure, including its various components like info, channels, and schemas. The narrative continues with _"Module 4: Creating and Validating AsyncAPI Code and Documents,"_ where Chan returns to his planet to test communications with Eve, focusing on writing, validating, and hands-on exercises for AsyncAPI documents. The journey concludes with Module 5, a summary of the learning outcomes, a teaser about checking AsyncAPI tools, and a link back to the documentation.
@@ -95,7 +95,7 @@ A --> H
 ---
 
 ### How to contribute to AsyncAPI Docs
-Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; docs are a **huge** help that benefit the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
+Did you know that you can contribute Docs to AsyncAPI as well? Code isn't the only way to contribute to OSS; docs are a **huge** help that benefits the entire OSS ecosystem. At AsyncAPI, we value Doc contributions as much as every other type of contribution. ❤️
 
 To get started as a Docs contributor:
 1. Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
@@ -105,7 +105,7 @@ To get started as a Docs contributor:
 5. Send me a DM in Slack! 
 
 #### Tag me in your AsyncAPI Doc PRs
-Do you have a documentation contributor question and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
+Do you have a documentation contributor question, and you're wondering how to tag me into a GitHub discussion or PR? Never fear!
 
 Tag me in your AsyncAPI Doc PRs or [GitHub Discussions](https://github.com/asyncapi/community/discussions/categories/docs) via my GitHub handle, [`/alequetzalli`](https://github.com/alequetzalli) 🐙.
 
