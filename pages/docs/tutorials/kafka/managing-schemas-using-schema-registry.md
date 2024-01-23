@@ -55,6 +55,7 @@ $ref: {url}
 Replace {url} with the url from the previous step.
 
 ## Summary
+In this tutorial you’ve gained insights about managing Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications. It is important to note that this approach is valid for various other schema types.
 
 ## Next steps
 In the next tutorial, you are going to learn about Kafka bindings.
