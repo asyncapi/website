@@ -6,7 +6,7 @@ weight: 30
 
 ## Introduction
 
-The [previous tutorial](/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
+The tutorial on [creating an AsyncAPI document for applications consuming from Kafka](/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
 
 While AsyncAPI schema can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial, you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
 
