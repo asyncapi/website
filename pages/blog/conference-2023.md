@@ -55,12 +55,9 @@ Lastly, spacing all the conferences this year. Instead of what happened in 2023,
 ##  Attendance
 
 Though you may have an idea of how the attendance went, the best takeaway is that we had time to network, connect, and learn during the conferences. 
-Being our first year, we did fairly well regarding attendance numbers. Here is a breakdown of attendance in each city: 
-- In London, over 30 people attended in person. 
-- In Madrid, we had 50 people attend in person, and the livestream had 437 views. 
-- In Bangalore, we had around 25 people attend in person, and the livestream received 377 views. 
-- In Paris, we don't have a total number, but we had a full house on the conference day. We had a booth where we advertised AsyncAPI on a vendor-neutral stand.
+Being our first year, we did fairly well regarding attendance numbers. We had 230+ individuals who attended in person, and our conference livestream received over 820 views. 
 
+In addition, we had an AsyncAPI vendor-neutral booth in Paris, where people could learn about the specification and promote the conference.
 
 ## Who Made AACoT'23 Possible
 
@@ -162,7 +159,10 @@ They contributed to the design of website prototypes, conference design implemen
 
 ## Where To Next?
 
-As we plan for AACoT'24, we have three potential locations - one in Lagos (happening early Q2), U.K. hosted by APIdays London, and the other in France at APIdays Paris(happening in Q4). If you are interested, we are currently seeking sponsors for AACoT'24, either as our financial sponsor or event and host sponsor.
+As we plan for AACoT'24, we are excited to announce that APIdays will be hosting us in Helsinki on May 28-29th, London on September 17-18th, and Paris on December 3-5th. 
+Additionally, we are exploring the possibility of holding the event in Lagos in early Q2.
+
+If you are interested in sponsoring AACoT'24, we welcome financial sponsors or event and host sponsors. 
 
 You can check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1) to see the current sponsorship tiers or download our sponsorship prospectus for more information.
 
