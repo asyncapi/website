@@ -12,9 +12,9 @@ While AsyncAPI schema can be the default choice for describing payloads, many pr
 
 ## Background Context
 
-[AsyncAPI](https://www.asyncapi.com/) is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. It allows developers to define how messages are exchanged between different services by providing an agreement for communication.
+[AsyncAPI](https://www.asyncapi.com/) is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. AsyncAPI schema outlines the format and content specifications that enable a consistent representation of agreements for communication between services in an Event-Driven Architecture.
 
-[Avro](https://avro.apache.org/) is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
+[Avro](https://avro.apache.org/), on the other hand is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
 
 ## Defining message payload with Avro Schema directly in the AsyncAPI document
 
