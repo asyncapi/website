@@ -57,7 +57,7 @@ Lastly, spacing all the conferences this year. Instead of what happened in 2023,
 Though you may have an idea of how the attendance went, the best takeaway is that we had time to network, connect, and learn during the conferences. 
 Being our first year, we did fairly well regarding attendance numbers. We had 225+ individuals who attended in person, and two of our events were live-streamed, receiving over 820+ views.
 
-In addition,  during our time in Paris, we also organized an `API Specs and Standards`` booth, where we held discussions with people about APIs while promoting the conference.
+In addition, during our time in Paris, we also organized an `API Specs and Standards` booth, where we held discussions with people from the API world while promoting the conference.
 
 ## Who Made AACoT'23 Possible
 
@@ -159,8 +159,8 @@ They contributed to the design of website prototypes, conference design implemen
 
 ## Where To Next?
 
-As we plan for AACoT'24, we are excited to announce that APIdays will be hosting us in Helsinki on May 28-29th, London on September 17-18th, and Paris on December 3-5th. 
-Additionally, we are exploring the possibility of holding the event in Lagos in early Q2 or so.
+As we plan for AACoT'24, we are excited to announce that [APIdays](https://www.apidays.global/) will be hosting us in Helsinki on May 28-29th, London on September 17-18th, and Paris on December 3-5th. 
+Additionally, we are exploring the possibility of holding the event in Lagos in early Q2 or later.
 
 If you are interested in sponsoring AACoT'24, we welcome financial sponsors or event and host sponsors. 
 
