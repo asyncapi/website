@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.102221212448114
+    },
+    {
       "id": "I_kwDODou01c5AqLB8",
       "isPR": false,
       "isAssigned": false,
@@ -21,15 +32,15 @@
       "score": 19.527872034949596
     },
     {
-      "id": "PR_kwDOFLhIt85bqKL8",
+      "id": "PR_kwDOFDnrNc5f0Nm0",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
+      "title": "feat: improve glee command",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/cli/pull/890",
+      "repo": "asyncapi/cli",
       "labels": [],
-      "score": 19.240697446200336
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -56,17 +67,6 @@
       "score": 17.804824502454043
     },
     {
-      "id": "PR_kwDOFDnrNc5f0Nm0",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: improve glee command",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/cli/pull/890",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
       "id": "I_kwDODou01c5E_LV0",
       "isPR": false,
       "isAssigned": false,
@@ -81,17 +81,6 @@
         }
       ],
       "score": 16.08177696995849
-    },
-    {
-      "id": "PR_kwDOBW5R_c5fTNfJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Mailchimp integration using netlify function",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/pull/2315",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.220253203710714
     },
     {
       "id": "I_kwDOFDnrNc5rjrK-",
@@ -119,6 +108,17 @@
           "color": "0e8a16"
         }
       ],
+      "score": 15.220253203710714
+    },
+    {
+      "id": "PR_kwDOBW5R_c5jw3SL",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "chore(blog): annual review",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/website/pull/2549",
+      "repo": "asyncapi/website",
+      "labels": [],
       "score": 14.933078614961456
     },
     {
@@ -133,6 +133,17 @@
       "score": 14.933078614961456
     },
     {
+      "id": "PR_kwDOBW5R_c5dT1NT",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: using AsyncAPI with Kafka",
+      "author": "J0SAL",
+      "resourcePath": "/asyncapi/website/pull/2252",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -141,7 +152,7 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     },
     {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
@@ -152,32 +163,49 @@
       "resourcePath": "/asyncapi/website/pull/2245",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.07155484871368
+      "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOBW5R_c5jw3SL",
-      "isPR": true,
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "isPR": false,
       "isAssigned": true,
-      "title": "chore(blog): annual review",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/website/pull/2549",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dT1NT",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: using AsyncAPI with Kafka",
-      "author": "J0SAL",
-      "resourcePath": "/asyncapi/website/pull/2252",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 13.78438025996442
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c58jyBx",
+      "title": "Inconsistnecy in finance cards",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2574",
+      "repo": "asyncapi/website",
+      "author": "sambhavgupta0705",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh3858hQCM",
       "title": "Add OpenAPI 3.1 support",
@@ -209,6 +237,21 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM58YMi8",
+      "title": "Improve arborist (npm installation) to have no hacks",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1102",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
@@ -505,21 +548,6 @@
         {
           "name": "🤷‍♀️ Ambiguity",
           "color": "286AFC"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODCuNRs51jd3x",
-      "title": "Implement GitHub Action to Validate examples Field in Schemas",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/bindings/issues/217",
-      "repo": "asyncapi/bindings",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
