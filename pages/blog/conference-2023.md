@@ -164,5 +164,5 @@ Additionally, we are exploring the possibility of holding the event in Lagos in 
 
 If you are interested in sponsoring AACoT'24, we welcome financial sponsors or event and host sponsors. 
 
-You can check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1) to see the current sponsorship tiers or download our sponsorship prospectus for more information.
+You can check out our [Open Collective Page](https://opencollective.com/asyncapi/events/asyncapi-conference-on-tour-6b3c0aa1) to see the current sponsorship tiers or [download our conference sponsorship prospectus](https://drive.google.com/file/d/15rQ7cp-LLmxSCcAb2aBFitgJkGhYXBrd/view?usp=sharing) for more information.
 
