@@ -69,18 +69,6 @@ Use the following tools to set up the project:
 
 7. Access the live development server at [localhost:3000](http://localhost:3000).
 
-## Contributing to Docs
-
-To get started as a Docs contributor:
-
-1) Familiarize yourself with our [project's Contribution Guide](https://github.com/asyncapi/community/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/asyncapi/.github/blob/master/CODE_OF_CONDUCT.md).
-
-2) Head over to our Docs GH Board [here](https://github.com/orgs/asyncapi/projects/12).
-
-3) Pick an issue you would like to contribute to and leave a comment introducing yourself. This is also the perfect place to leave any questions you may have on how to get started.
-
-Learn more about contributing to documentation [here].(https://github.com/asyncapi/website/blob/master/assets/docs/fragments/how-to-contribute.md)
-
 ## Compose new blog post
 
 To bootstrap a new post, run this command:
