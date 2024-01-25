@@ -83,6 +83,17 @@
       "score": 16.08177696995849
     },
     {
+      "id": "PR_kwDOBW5R_c5jw3SL",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "chore(blog): annual review",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/website/pull/2549",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.794602381209232
+    },
+    {
       "id": "I_kwDOFDnrNc5rjrK-",
       "isPR": false,
       "isAssigned": true,
@@ -109,17 +120,6 @@
         }
       ],
       "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOBW5R_c5jw3SL",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore(blog): annual review",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/website/pull/2549",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.933078614961456
     },
     {
       "id": "PR_kwDOB5hCo85iLvXV",
@@ -166,31 +166,37 @@
       "score": 14.358729437462937
     },
     {
-      "id": "I_kwDOFi_gUM5hpuWl",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
+      "id": "PR_kwDOBW5R_c5UN5SB",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore(blog): add new blog about introduction to glee ",
+      "author": "Souvikns",
+      "resourcePath": "/asyncapi/website/pull/1874",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 13.78438025996442
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh3859IP7G",
+      "title": "Add example and documentation for TS mapType",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1755",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
+          "name": "TS generator",
+          "color": "33943E"
         }
-      ],
-      "score": 13.210031082465903
-    }
-  ],
-  "goodFirstIssues": [
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c58jyBx",
       "title": "Inconsistnecy in finance cards",
@@ -290,25 +296,6 @@
         {
           "name": "Dart generator",
           "color": "296FBA"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38572pUJ",
-      "title": "Add runtime testing for Scala",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1743",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
         }
       ]
     },
