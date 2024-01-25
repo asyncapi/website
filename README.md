@@ -34,7 +34,7 @@ This repository contains the sources of AsyncAPI website:
 Use the following tools to set up the project:
 
 - [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v7.10.0+
+- [npm](https://www.npmjs.com/) v8.10.0+
 
 ## Run locally
 
@@ -68,6 +68,7 @@ Use the following tools to set up the project:
 ```
 
 7. Access the live development server at [localhost:3000](http://localhost:3000).
+
 
 ## Compose new blog post
 
