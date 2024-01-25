@@ -49,7 +49,7 @@ export const initiativeLinks = [
   },
   {
     label: "Shop",
-    url: "https://www.store.asyncapi.com/collections/all-products/",
+    url: "https://www.store.asyncapi.com/",
   },
   {
     label: "Jobs",

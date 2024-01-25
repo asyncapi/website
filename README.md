@@ -34,7 +34,7 @@ This repository contains the sources of AsyncAPI website:
 Use the following tools to set up the project:
 
 - [Node.js](https://nodejs.org/) v16.0.0+
-- [npm](https://www.npmjs.com/) v7.10.0+
+- [npm](https://www.npmjs.com/) v8.10.0+
 
 ## Run locally
 
@@ -219,21 +219,21 @@ This repository has the following structure:
 ## Connect with AsyncAPI Community
 
 <p align="left">
-    <a href="https://asyncapi.slack.com/" target="blank">
-      <img align="center" src="https://img.icons8.com/color/48/null/slack-new.png" alt="AsyncAPI Slack" height="30" width="40" />
-    </a>
-    <a href="https://twitter.com/asyncapispec" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="AsyncAPI Twitter" height="30" width="40" />
-    </a>
-    <a href="https://www.linkedin.com/company/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="AsyncAPI LinkedIn" height="30" width="40" />
-    </a>
-    <a href="https://www.youtube.com/c/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="AsyncAPI YouTube" height="30" width="40" />
-    </a>
-    <a href="https://www.twitch.tv/asyncapi" target="blank">
-      <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitch.svg" alt="AsyncAPI Twitch" height="30" width="40" />
-    </a>
+<a href="https://asyncapi.slack.com/" alt="AsyncAPI Slack">
+  <img src="https://img.shields.io/badge/Slack-AsyncAPI-@website.svg?logo=slack&color=yellow" />
+</a>
+<a href="https://twitter.com/asyncapispec" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23gray.svg?style=flat&logo=X&label=Twitter&labelColor=rgb(86%2C86%2C86)" alt="AsyncAPI Twitter">
+</a>
+<a href="https://www.linkedin.com/company/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%230077B5.svg?logo=linkedin&logoColor=white&label=LinkedIn&labelColor=rgb(86%2C86%2C86)&style=flat" alt="AsyncAPI LinkedIn">
+</a>
+<a href="https://www.youtube.com/c/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-AsyncAPI-red?style=flat&logo=youtube&logoColor=white" alt="YouTube">
+</a>
+<a href="https://www.twitch.tv/asyncapi" target="_blank">
+  <img src="https://img.shields.io/badge/asyncapi-%23833fe6?style=flat&logo=twitch&label=Twitch&logoColor=white" alt="AsyncAPI Twitch">
+</a>
 </p>
 
 ## AsyncAPI Contributors ✨
