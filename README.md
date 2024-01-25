@@ -75,7 +75,7 @@ To bootstrap a new post, run this command:
 
 ```bash
     npm run write:blog
-```
+```  
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
 
