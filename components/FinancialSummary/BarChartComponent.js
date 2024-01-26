@@ -43,11 +43,12 @@ const categories = getUniqueCategories();
  * @param {Object[]} props.links - Links to additional information for each category.
  * @returns {JSX.Element} The rendered Card component.
  */
+
 const Card = ({ month, data, links }) => {
     return (
-        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col justify-between h-56 overflow-hidden">
+        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
-            <div className="flex flex-col justify-center overflow-x-auto">
+            <div className="flex flex-col overflow-x-auto overflow-y-auto">
                 {data.map((item, index) => (
                     <div key={index} className="flex justify-between">
                         <div className="text-sm m-2" onClick={(links) => {
