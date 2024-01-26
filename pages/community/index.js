@@ -136,7 +136,7 @@ function CommunityIndexPage() {
         </div>
       </div>
       <div className="flex sm:flex-row flex-col mt-10">
-        <div className="m-5">
+        <div className="m-5" data-testid="CommunityCards-Goals">
           <Card
             type="small"
             tagline="Goals"
@@ -146,7 +146,7 @@ function CommunityIndexPage() {
             link="https://github.com/orgs/asyncapi/discussions/948"
           />
         </div>
-        <div className="m-5">
+        <div className="m-5" data-testid="CommunityCards-TSC">
           <Card
             type="small"
             tagline="TSC"
