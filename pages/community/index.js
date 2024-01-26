@@ -135,42 +135,24 @@ function CommunityIndexPage() {
           </ul>
         </div>
       </div>
-      <div className="md:flex md:justify-between w-full mt-20" >
-        <div className="md:w-[45%] flex flex-col justify-between mt-10 md:mt-0">
-          <div data-testid="CommunityCards-Goals">
-            <Card
-              type="small"
-              tagline="Goals"
-              icon="🎯"
-              heading="Community Goals 2023"
-              description="Look into the AsyncAPI community building/maintenance goals for
-              2023 and help us improve."
-              link="https://github.com/asyncapi/community/discussions/513"
-            />
-          </div>
-          <div className="mt-10 md:mt-0" data-testid="CommunityCards-Contributors">
-            <Card
-              type="small"
-              taglineBg=""
-              tagline="Contributors"
-              icon="🏅"
-              heading="Recognize AsyncAPI OSS contributors"
-              description="Recognize the people who inspire and contribute to our OSS
-                    project and community."
-              bg="bg-primary-200"
-              link="https://github.com/orgs/asyncapi/discussions/593"
-            />
-          </div>
-        </div>
-        <div className="md:w-[50%] mt-10 md:mt-0" data-testid="CommunityCards-TSC">
+      <div className="flex sm:flex-row flex-col mt-10">
+        <div className="m-5">
           <Card
-            taglineBg="bg-primary-200"
-            heading="Meet Folks Redefining the Initiative"
-            description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
+            type="small"
+            tagline="Goals"
+            icon="🎯"
+            heading="Community Goals 2024"
+            description="Look into the AsyncAPI community building/maintenance goals for 2024 and help us improve."
+            link="https://github.com/orgs/asyncapi/discussions/948"
+          />
+        </div>
+        <div className="m-5">
+          <Card
+            type="small"
             tagline="TSC"
             icon="🚀"
-            btnText="Meet all TSC members"
-            btnBg="fill-primary-500 text-primary-500"
+            heading="Meet Folks Redefining the Initiative"
+            description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
             link="/community/tsc"
           />
         </div>
