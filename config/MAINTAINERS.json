@@ -375,6 +375,19 @@
         ]
     },
     {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
         "name": "Sergio Moya",
         "github": "smoya",
         "linkedin": "smoya",
