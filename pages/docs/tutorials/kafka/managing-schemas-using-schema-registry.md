@@ -17,11 +17,14 @@ Install [Docker](https://docs.docker.com/engine/install/) from the official webs
 
 ## Steps
 1. Start Apicurio Registry locally using below docker command:
-    <CodeBlock language="bash">
-    {`docker run --env CORS_ALLOWED_ORIGINS=* -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final`}
-    </CodeBlock>
+   
+```
+{`docker run --env CORS_ALLOWED_ORIGINS=* -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final`}
+```
+
 2. Once your local instance of Apicurio Registry is running, you can upload your Avro schema to it. Open new terminal window and create an Avro schema artifact using the following command:
-<CodeBlock>
+   
+```
 curl \
 http://localhost:8080/apis/registry/v2/groups/my-group/artifacts \
 -X POST  \
@@ -45,14 +48,48 @@ http://localhost:8080/apis/registry/v2/groups/my-group/artifacts \
   ]
 }
 EOF
-</CodeBlock>
+```
+
 <Remember>
 Download your Avro schema by visiting the following URL: 
 http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp.
 </Remember>
-1. An alternative to having the schema in a separate file as you learned in the [previous tutorial](/docs/tutorials/kafka/configure-kafka-avro) where you used the existing Avro schema in your AsyncAPI document, would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
+
+3. An alternative to having the schema in a separate file as you learned in the [previous tutorial](/docs/tutorials/kafka/configure-kafka-avro) where you used the existing Avro schema in your AsyncAPI document, would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
 $ref: {url}
 Replace {url} with the url from the previous step.
+
+```
+asyncapi: 3.0.0
+info:
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+components:
+  messages:
+    userSignedUp:
+      payload:
+        schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
+        schema:
+          $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
+```
 
 ## Summary
 In this tutorial you’ve gained insights about managing Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications. It is important to note that this approach is valid for various other schema types.
