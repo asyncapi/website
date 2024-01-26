@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/cli/pull/890",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 18.37917367995256
+      "score": 18.953522857451077
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -83,6 +83,17 @@
       "score": 16.08177696995849
     },
     {
+      "id": "PR_kwDOBW5R_c5jw3SL",
+      "isPR": true,
+      "isAssigned": true,
+      "title": "chore(blog): annual review",
+      "author": "thulieblack",
+      "resourcePath": "/asyncapi/website/pull/2549",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 15.794602381209232
+    },
+    {
       "id": "I_kwDOFDnrNc5rjrK-",
       "isPR": false,
       "isAssigned": true,
@@ -111,17 +122,6 @@
       "score": 15.220253203710714
     },
     {
-      "id": "PR_kwDOBW5R_c5jw3SL",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore(blog): annual review",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/website/pull/2549",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
       "id": "PR_kwDOB5hCo85iLvXV",
       "isPR": true,
       "isAssigned": false,
@@ -133,6 +133,17 @@
       "score": 14.933078614961456
     },
     {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOBW5R_c5dT1NT",
       "isPR": true,
       "isAssigned": false,
@@ -142,17 +153,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.358729437462937
     },
     {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
@@ -191,6 +191,25 @@
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh3859IP7G",
+      "title": "Add example and documentation for TS mapType",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1755",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "TS generator",
+          "color": "33943E"
+        }
+      ]
+    },
     {
       "id": "I_kwDOBW5R_c58jyBx",
       "title": "Inconsistnecy in finance cards",
@@ -290,25 +309,6 @@
         {
           "name": "Dart generator",
           "color": "296FBA"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38572pUJ",
-      "title": "Add runtime testing for Scala",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1743",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
         }
       ]
     },

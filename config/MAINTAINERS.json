@@ -71,6 +71,18 @@
         ]
     },
     {
+        "name": "Ashish Padhy",
+        "github": "Shurtu-gal",
+        "linkedin": "ashish-padhy3023",
+        "slack": "U0572R8J927",
+        "twitter": "Shurtu_Gal",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "github-action-for-cli"
+        ]
+    },
+    {
         "name": "Cameron Rushton",
         "github": "cameronrushton",
         "slack": "U01DVKKAV5K",
