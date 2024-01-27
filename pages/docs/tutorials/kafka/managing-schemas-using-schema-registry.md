@@ -95,4 +95,9 @@ components:
 In this tutorial you’ve gained insights about managing Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications. It is important to note that this approach is valid for various other schema types.
 
 ## Next steps
-In the next tutorial, you are going to learn about Kafka bindings.
+Now that you have learnt how to manage schemas, check out our tutorial for [bindings with Kafka](/docs/tutorials/kafka/bindings-with-kafka) to start sending messages between your services.
+
+
+
+
+
