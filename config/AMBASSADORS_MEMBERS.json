@@ -225,10 +225,10 @@
     "github": "M3lkior",
     "twitter": "ldussart",
     "country": "🇫🇷",
-    "bio": "Ludovic has been working for Ineat for the last 10 years. Starting as a java developer, he is now a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
+    "bio": "Ludovic is a Solutions Architect, working with his customers to build EDA-oriented digital products wherever possible. His first contributions to AsyncAPI date back to 2020 around the kafka and avro specifications. Since then, Ludovic has been spreading the word about AsyncAPI to companies in Northern France, to accelerate adoption of the initiative.",
     "linkedin": "ludovic-dussart-846a8063",
-    "company": "Ineat",
-    "title": "Solutions Architect",
+    "company": "zatsit",
+    "title": "Solutions Architect / DevRel",
     "img": "https://avatars.githubusercontent.com/u/5501911?s=400&u=d3f33c22f67788aba810ba8e910452aff62ad7c9&v=4",
     "contributions": [
       {
@@ -309,7 +309,7 @@
         "date": {
           "year": 2023
         },
-        "link": ""
+        "link": "https://www.asyncapi.com/casestudies/adeogroup"
       },
       {
         "type": "presentation",
@@ -327,7 +327,25 @@
           "year": 2023,
           "month": "October"
         },
+        "link": "https://www.youtube.com/watch?v=pFMmQVppV6s"
+      },
+      {
+        "type": "special contribution",
+        "title": "Stay at API Days AsyncAPI Booth to share with attendees.",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
         "link": ""
+      },
+      {
+        "type": "presentation",
+        "title": "Quoi de neuf dans AsyncAPI v3 ? Découvrez le en live avec la migration du use-case Adeo",
+        "date": {
+          "year": 2023,
+          "month": "December"
+        },
+        "link": "https://www.youtube.com/watch?v=WCK9_ZDv6K4"
       }
     ]
   },

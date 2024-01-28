@@ -40,7 +40,7 @@
       "resourcePath": "/asyncapi/cli/pull/890",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 18.37917367995256
+      "score": 18.953522857451077
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -133,6 +133,17 @@
       "score": 14.933078614961456
     },
     {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
       "id": "PR_kwDOBW5R_c5dT1NT",
       "isPR": true,
       "isAssigned": false,
@@ -142,17 +153,6 @@
       "repo": "asyncapi/website",
       "labels": [],
       "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.358729437462937
     },
     {
       "id": "PR_kwDOBW5R_c5dJ7hJ",
@@ -166,15 +166,28 @@
       "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDOBW5R_c5UN5SB",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore(blog): add new blog about introduction to glee ",
-      "author": "Souvikns",
-      "resourcePath": "/asyncapi/website/pull/1874",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 13.78438025996442
+      "id": "I_kwDOFi_gUM5hpuWl",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Improve kafka adapter",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/glee/issues/411",
+      "repo": "asyncapi/glee",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "area/typescript",
+          "color": "007acc"
+        }
+      ],
+      "score": 13.210031082465903
     }
   ],
   "goodFirstIssues": [
