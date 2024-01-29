@@ -193,7 +193,8 @@ const BarChartComponent = () => {
 
                 </div>
                 {/* Recharts BarChart */}
-                <BarChart width={barWidth} height={barHeight} data={chartData}>
+               <div className='flex justify-center'> 
+               <BarChart width={barWidth} height={barHeight} data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <YAxis tickFormatter={(value) => `$${value}`} />
                     <Tooltip content={<CustomTooltip />} />
@@ -213,6 +214,7 @@ const BarChartComponent = () => {
                         }}
                     />
                 </BarChart>
+                </div>
                 {windowWidth < 900 ? <ExpensesCard data={Expenses} /> : null}
             </div>
         </div>

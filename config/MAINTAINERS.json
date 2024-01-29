@@ -375,6 +375,19 @@
         ]
     },
     {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
+        ]
+    },
+    {
         "name": "Sergio Moya",
         "github": "smoya",
         "linkedin": "smoya",
@@ -671,6 +684,18 @@
         "repos": [
             "website",
             "community"
+        ]
+    },
+    {
+        "name": "Ashmit JaiSarita Gupta",
+        "github": "devilkiller-ag",
+        "linkedin": "jaisarita",
+        "twitter": "jaisarita",
+        "slack": "U062LA14E58",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "modelina"
         ]
     }
 ]
