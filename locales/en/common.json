@@ -4,7 +4,11 @@
         "subtitle": "We respect your inbox. No spam, promise ✌️",
         "nameInput": "Your name",
         "emailInput": "Your email",
-        "subscribeBtn": "Subscribe"
+        "subscribeBtn": "Subscribe",
+        "successTitle": "Thank you for subscribing!",
+        "errorTitle": "Something went wrong",
+        "errorSubtitle": "Subscription failed, please let us know about it by submitting a bug",
+        "errorLinkText": "here"
     },
     "newsroomSection": {
         "title": "Latest news and blogs",
