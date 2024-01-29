@@ -2,7 +2,7 @@ import Button from './Button'
 import IconRocket from '../icons/Rocket'
 
 export default function OpenInPlaygroundButton() {
-  const playgroundLoadUrl = encodeURI('https://raw.githubusercontent.com/asyncapi/asyncapi/v2.2.0/examples/simple.yml')
+  const playgroundLoadUrl = encodeURI('https://raw.githubusercontent.com/asyncapi/asyncapi/v3.0.0/examples/simple-asyncapi.yml')
   return (
     <Button
       className="block mt-2 md:mt-0 md:inline-block md:ml-2"
