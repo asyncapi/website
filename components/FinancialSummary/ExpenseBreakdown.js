@@ -73,7 +73,7 @@ export default function ExpenseBreakdown() {
                                     <img src="/img/illustrations/Hiring.webp" alt="Hiring" className="w-1/5 h-auto object-cover rounded-md m-1" />
                                     <h2 className="text-2xl font-semibold my-2 text-center text-darkGunMetal">Hiring</h2>
                                 </div>
-                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joins as community manager, with plans to expand our team.</p>
+                                <p className="text-base text-center text-darkGunMetal">To support our community, we require full time commitment. Open Collective helps us hire for AsyncAPI. <a style={{ textDecoration: "underline" }} href="https://www.linkedin.com/in/v-thulisile-sibanda/" target='_blank'>Thulie</a> joined us as a community manager, with plans to expand our team.</p>
                             </div>
                             </a>
                         </div>
