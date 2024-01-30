@@ -1,6 +1,6 @@
 ---
 title: Managing schemas using Schema Registry
-description: The guide explains how you can manage schemas using Schema Registry.
+description: The tutorial explains how you can manage schemas using Schema Registry.
 weight: 50
 ---
 
@@ -96,8 +96,3 @@ In this tutorial you’ve gained insights about managing Avro schemas using a ce
 
 ## Next steps
 Now that you have learnt how to manage schemas, check out our tutorial for [bindings with Kafka](/docs/tutorials/kafka/bindings-with-kafka) to start sending messages between your services.
-
-
-
-
-
