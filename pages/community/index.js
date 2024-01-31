@@ -141,8 +141,8 @@ function CommunityIndexPage() {
             type="small"
             tagline="Goals"
             icon="🎯"
-            heading="Community Goals 2024"
-            description="Look into the AsyncAPI community building/maintenance goals for 2024 and help us improve."
+            heading="2024 AsyncAPI Community Goals"
+            description="Help us improve our 2024 AsyncAPI community building and maintenance goals."
             link="https://github.com/orgs/asyncapi/discussions/948"
           />
         </div>
@@ -177,7 +177,7 @@ function CommunityIndexPage() {
             tagline="Finance"
             icon="💰"
             heading="Track Initiative Spending with Budget Analysis"
-            description="Explore our finance section for a detailed analysis of the project's budget. Track expenses, gain insights into funds allocation, and transparent financial management."
+            description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
             link="/finance"
           />
         </div>
@@ -186,8 +186,8 @@ function CommunityIndexPage() {
             type="small"
             tagline="Store"
             icon="🛒"
-            heading="Get Stylish Swags and Goodies"
-            description="Explore our collection of project-themed t-shirts and goodies. Show your support and grab some cool swags to represent the community!"
+            heading="Swags and Goodies"
+            description="Explore our swag collection of AsyncAPI-themed t-shirts and goodies."
             link="https://www.store.asyncapi.com/"
             bg="bg-primary-200"
           />
