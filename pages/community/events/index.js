@@ -181,7 +181,7 @@ function Eventindex() {
       <div className="bg-dark py-12 mt-8 md:mt-20 rounded-lg">
         <NewsletterSubscribe
           dark={true}
-          type="meetings-email"
+          type="Meetings"
           title="Get a weekly email in your inbox"
           subtitle="You'll receive a weekly email with a summary of all the planned meetings for this week."
         />

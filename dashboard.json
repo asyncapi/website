@@ -1,35 +1,15 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOCHlHJM5ezPwM",
+      "id": "PR_kwDOFDnrNc5f0Nm0",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: allow generator to pull from private npm repo",
-      "author": "AayushSaini101",
-      "resourcePath": "/asyncapi/generator/pull/1061",
-      "repo": "asyncapi/generator",
+      "title": "feat: improve glee command",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/cli/pull/890",
+      "repo": "asyncapi/cli",
       "labels": [],
-      "score": 29.578982641173653
-    },
-    {
-      "id": "I_kwDOBW5R_c5J6qNe",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 19.815046623698855
+      "score": 20.67657038994663
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -40,7 +20,38 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 19.240697446200336
+      "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 19.527872034949596
+    },
+    {
+      "id": "PR_kwDOBW5R_c5f0CJh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for managing schemas with Schema Registry",
+      "author": "Arya-Gupta",
+      "resourcePath": "/asyncapi/website/pull/2331",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -62,24 +73,25 @@
         {
           "name": "level/medium",
           "color": "0e8a16"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "0e8a16"
         }
       ],
-      "score": 17.230475324955524
+      "score": 17.804824502454043
     },
     {
-      "id": "PR_kwDOFDnrNc5f0Nm0",
-      "isPR": true,
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
       "isAssigned": false,
-      "title": "feat: improve glee command",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/cli/pull/890",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 15.794602381209232
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOFDnrNc5rjrK-",
@@ -107,7 +119,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 14.933078614961456
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOB5hCo85iLvXV",
@@ -121,17 +133,6 @@
       "score": 14.933078614961456
     },
     {
-      "id": "PR_kwDOBW5R_c5fTNfJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add Mailchimp integration using netlify function",
-      "author": "akshatnema",
-      "resourcePath": "/asyncapi/website/pull/2315",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -140,18 +141,7 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 14.07155484871368
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dJ7hJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for WebSockets with AsyncAPI",
-      "author": "VaishnaviNandakumar",
-      "resourcePath": "/asyncapi/website/pull/2245",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.07155484871368
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDOBW5R_c5dT1NT",
@@ -162,34 +152,120 @@
       "resourcePath": "/asyncapi/website/pull/2252",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 13.78438025996442
+      "score": 14.645904026212197
     },
     {
-      "id": "I_kwDOFi_gUM5hpuWl",
+      "id": "PR_kwDOBW5R_c5dJ7hJ",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for WebSockets with AsyncAPI",
+      "author": "VaishnaviNandakumar",
+      "resourcePath": "/asyncapi/website/pull/2245",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
+      "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 13.497205671215161
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c59bL0s",
+      "title": "Regarding links redirection",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2601",
+      "repo": "asyncapi/website",
+      "author": "sagarkori143",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3859IP7G",
+      "title": "Add example and documentation for TS mapType",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1755",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "good first issue",
-          "color": "7057ff"
+          "name": "TS generator",
+          "color": "33943E"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh3858hQCM",
+      "title": "Add OpenAPI 3.1 support",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1749",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
         },
         {
-          "name": "area/typescript",
-          "color": "007acc"
+          "name": "openapi",
+          "color": "960C58"
         }
-      ],
-      "score": 13.210031082465903
-    }
-  ],
-  "goodFirstIssues": [
+      ]
+    },
+    {
+      "id": "I_kwDOCVQpZM58chHc",
+      "title": "Workflows failing because of some leftovers scripts",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/asyncapi-react/issues/888",
+      "repo": "asyncapi/asyncapi-react",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOCHlHJM58YMi8",
+      "title": "Improve arborist (npm installation) to have no hacks",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/generator/issues/1102",
+      "repo": "asyncapi/generator",
+      "author": "derberg",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh38572qE9",
       "title": "Add runtime tests for Python",
@@ -225,25 +301,6 @@
         {
           "name": "Dart generator",
           "color": "296FBA"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh38572pUJ",
-      "title": "Add runtime testing for Scala",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/modelina/issues/1743",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
         }
       ]
     },
@@ -291,16 +348,6 @@
           "color": "a2eeef"
         }
       ]
-    },
-    {
-      "id": "I_kwDOB5hCo857l5pC",
-      "title": "Reduce cognitive complexity in `validate-schemas.js`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/482",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "AnimeshKumar923",
-      "area": "javascript",
-      "labels": []
     },
     {
       "id": "I_kwDOE8Qh3857Kllp",
@@ -487,21 +534,6 @@
       ]
     },
     {
-      "id": "I_kwDODCuNRs51jd3x",
-      "title": "Implement GitHub Action to Validate examples Field in Schemas",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/bindings/issues/217",
-      "repo": "asyncapi/bindings",
-      "author": "KhudaDad414",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOCoBobc5zovn3",
       "title": "Parser do not validate if channel that is referenced in reply with location has `null` in address",
       "isAssigned": false,
@@ -600,6 +632,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },

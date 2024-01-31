@@ -11,7 +11,6 @@ authors:
     link: https://www.linkedin.com/in/v-thulisile-sibanda/
     byline: AsyncAPI Community Manager
 excerpt: 'September and October Community Update'
-featured: true
 ---
 
 Our second AsyncAPI Conf on Tour took place on the 19th of October, hosted by SNGULAR in Madrid. The day was well-organized, packed with informative talks from industry experts and great networking sessions, making it a valuable experience for attendees. Additionally, the conference was live-streamed, and every session was recorded, so even if you missed out on attending the event in person, you can still [watch the recordings on YouTube](https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_) and catch up on all the insightful talks.
