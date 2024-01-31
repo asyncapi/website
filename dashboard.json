@@ -1,6 +1,17 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOFDnrNc5f0Nm0",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: improve glee command",
+      "author": "ayushnau",
+      "resourcePath": "/asyncapi/cli/pull/890",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 20.67657038994663
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -32,15 +43,15 @@
       "score": 19.527872034949596
     },
     {
-      "id": "PR_kwDOFDnrNc5f0Nm0",
+      "id": "PR_kwDOBW5R_c5f0CJh",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: improve glee command",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/cli/pull/890",
-      "repo": "asyncapi/cli",
+      "title": "docs: tutorial for managing schemas with Schema Registry",
+      "author": "Arya-Gupta",
+      "resourcePath": "/asyncapi/website/pull/2331",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.953522857451077
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -81,17 +92,6 @@
         }
       ],
       "score": 16.08177696995849
-    },
-    {
-      "id": "PR_kwDOBW5R_c5jw3SL",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore(blog): annual review",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/website/pull/2549",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.794602381209232
     },
     {
       "id": "I_kwDOFDnrNc5rjrK-",
@@ -166,31 +166,38 @@
       "score": 14.358729437462937
     },
     {
-      "id": "I_kwDOFi_gUM5hpuWl",
+      "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
+          "color": "84b6eb"
         }
       ],
-      "score": 13.210031082465903
+      "score": 13.497205671215161
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOBW5R_c59bL0s",
+      "title": "Regarding links redirection",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2601",
+      "repo": "asyncapi/website",
+      "author": "sagarkori143",
+      "area": "javascript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh3859IP7G",
       "title": "Add example and documentation for TS mapType",
@@ -207,21 +214,6 @@
         {
           "name": "TS generator",
           "color": "33943E"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c58jyBx",
-      "title": "Inconsistnecy in finance cards",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2574",
-      "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
-      "area": "javascript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
         }
       ]
     },
@@ -356,16 +348,6 @@
           "color": "a2eeef"
         }
       ]
-    },
-    {
-      "id": "I_kwDOB5hCo857l5pC",
-      "title": "Reduce cognitive complexity in `validate-schemas.js`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/482",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "AnimeshKumar923",
-      "area": "javascript",
-      "labels": []
     },
     {
       "id": "I_kwDOE8Qh3857Kllp",
@@ -650,6 +632,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
