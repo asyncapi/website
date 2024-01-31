@@ -28,7 +28,7 @@ function EventPostItem({ post, className, id }) {
     type = 'WORKSHOP';
   }
 
-  const defaultCover = '/img/homepage/confBlurBg.webp';
+  const defaultCover = 'https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813';
   let active = true;
   let postDate = moment(post.date); // Convert post.date to a moment object if necessary
 
