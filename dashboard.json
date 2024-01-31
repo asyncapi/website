@@ -43,6 +43,17 @@
       "score": 19.527872034949596
     },
     {
+      "id": "PR_kwDOBW5R_c5f0CJh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for managing schemas with Schema Registry",
+      "author": "Arya-Gupta",
+      "resourcePath": "/asyncapi/website/pull/2331",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 18.37917367995256
+    },
+    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -65,17 +76,6 @@
         }
       ],
       "score": 17.804824502454043
-    },
-    {
-      "id": "PR_kwDOBW5R_c5f0CJh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for managing schemas with Schema Registry",
-      "author": "Arya-Gupta",
-      "resourcePath": "/asyncapi/website/pull/2331",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 16.36895155870775
     },
     {
       "id": "I_kwDODou01c5E_LV0",
