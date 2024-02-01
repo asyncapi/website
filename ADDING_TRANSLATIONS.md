@@ -1,19 +1,20 @@
 # Adding Translations to AsyncAPI Website <!-- omit in toc -->
 
-We love your contributions to the AsyncAPI website by adding or improving the existing translations.
+We appreciate your valuable contributions to the AsyncAPI website, whether it's adding or improving existing translations.
 
-## Table of contents: <!-- omit in toc -->
+## Table of contents <!-- omit in toc -->
 - [Improving existing translations:](#improving-existing-translations)
 - [Adding translations to a partially localized page:](#adding-translations-to-a-partially-localized-page)
 - [Adding translations to a new page:](#adding-translations-to-a-new-page)
 - [Adding a new locale:](#adding-a-new-locale)
 
-## Improving existing translations:
+## Improving existing translations
 
-To improve/modify the existing translation for any page or component, navigate to the `locales` folder and modify the existing `JSON` files according to the language of your choice.
+To modify or improve existing translations, simply navigate to the `locales` folder and edit the appropriate `JSON` files for your preferred language.
 
-Here is an example file structure for the `locales` folder containing various sub-folders named according to the languages which further contains `JSON` files with the key-value structure for translations.
-The `common.json` includes some common translation keys, like buttons, CTAs, etc. The rest of the JSON files include translation keys according to the page on the website, for example, `tools.json` contains translations for all the tools-related pages on the website.
+Here is an example directory structure for the `locales` folder. It contains sub-folders named after different languages, each of which contains `JSON` files with key-value pairs for translations.
+
+The file `common.json` contains common translation keys such as buttons and CTAs. The other JSON files are specific to certain pages on the website. For instance, `tools.json` includes translations for all the tools-related pages on the website.
 
 ```
 📦locales
@@ -29,24 +30,24 @@ The `common.json` includes some common translation keys, like buttons, CTAs, etc
  ┃ ┗ 📜....json
 ```
 
-For example, you want to modify the `Landing Page`'s heading:
-- Navigate to the `locales` folder
+To modify a `Landing Page`'s heading:
+- Navigate to the `locales` folder.
 - Select a language, e.g. `de` (German) - go to the `de` folder.
-- Open `landing-page.json`
+- Open `landing-page.json`.
 - Change the values according to your needs.
-- Create a pull request with the changes
+- Create a pull request with the changes.
 
-## Adding translations to a partially localized page:
+## Adding translations to a partially localized page
 
-Some parts of any page might not contain a translation for the available language.
+The text on any given page may not have a translation available in your language.
 
-You may use the translation hook along with the key of the translation specified in the `locales` folder.
+Use the translation hook with the key specified in the `locales` folder.
 
-For example, suppose there is a button on the `Landing Page` that is still written in the `English` language even on the `German` locale.
+Suppose the Landing Page has a button that is still in English when the language is set to German:
 - Navigate to the file where the component is defined.
 - Import the `useTranslation` hook from `lib/i18n`.
-- Now extract the translation function from the hook `const { t } = useTranslation();`
-- Use it to pass the key of the required translation value. Make sure to add the required key to the `locales` folder according to the scope of the page. In this example, we are adding translation for a button, since all translation keys related to buttons need to be specified in `common.json`.
+- Extract the translation function from the hook `const { t } = useTranslation();`.
+- Use it to pass the key of the required translation value. Make sure to add the required key to the `locales` folder according to the page's scope. In this example, we are adding translation for a button, since all translation keys related to buttons need to be specified in `common.json`.
 
 Example:
 
@@ -87,16 +88,16 @@ export default function ICSFButton({
 }
 ```
 
-Make sure to use the same name in all `locales/[lang]/[file].json` files, and add a translation for all the locales present in the `locales` folder, in case you introduce a new translation.
+Ensure consistent naming in all `locales/[lang]/[file].json` files, and add a translation for all the locales present in the `locales` folder.
 
-> **NOTE**: You might also need to fix the cypress tests after adding a new translation key
+> **NOTE**: You may also need to fix the cypress tests after adding a new translation key.
 
-## Adding translations to a new page:
+## Adding translations to a new page
 
 The process for adding translations to a page that is not yet available in any existing locale is different from adding translations to a specific part of the page that is partially translated.
 
 **1. Create new JSON Files**
-  - Navigate to the `locales` folder
+  - Navigate to the `locales` folder.
   - Create new `JSON` files with the same name in each of the `locales` folder. You may not need to create new `JSON` files in case there already exists a file with the same scope as your page. For example, all pages under the `tools/*` use the translation keys defined in `locales/[lang]/tools.json`.
   - Skip to `Step 3` in case you haven't created new `JSON` files.
 
@@ -125,10 +126,11 @@ The process for adding translations to a page that is not yet available in any e
         };
     }
     ```
-- You may now follow the [Adding Translations](#adding-translations) guide to start translating the components
+    
+  - Follow the [Adding Translations guide](#adding-translations) to start translating the components
 
 **4. Configure i18n routing**
-With the addition of a new internationalized page, you would need to make sure it is being served on the website when someone visits it.
+After adding a new internationalized page, test it to sure the page is being served on the website when someone visits it.
   - Replace the `next/link` component with the `LinkComponent` from `components/link.js` in the files where the page's `href` is being referenced.
   - Make sure to add the exact same `href` to the `lib/i18nPaths.js` in the respective locales which support that `href`.
 
@@ -213,7 +215,7 @@ With the addition of a new internationalized page, you would need to make sure i
   + }
   ```
 
-  - Add custom route `LinkComponent` wherever the `next/link` is used for routing to `/newsletter` href.
+  - Add custom route `LinkComponent` wherever the `next/link` is used for routing to the `/newsletter` href.
 
   `lib/i18nPaths.js`
   ```diff
@@ -233,30 +235,31 @@ With the addition of a new internationalized page, you would need to make sure i
 
 You are now done with adding the localization to the `newsletter` page.
 
-> **Note**: Make sure to fix the Cypress tests after using the `useTranslation()` hook inside any component that is being tested by Cypress.
+> **Note**: Make sure to fix the Cypress tests after using the `useTranslation()` hook inside any component that Cypress is testing.
 
-## Adding a new locale:
+## Adding a new locale
 
-AsyncAPI welcomes people from all over the world irrespective of their languages.
+AsyncAPI welcomes people from all over the world.
+
 There exist a few locales like `en` (English) and `de` (German) which have available localizations present.
 
-If you want to introduce a new locale like `fr` so that the AsyncAPI website can then serve pages in the French locale, you would need to follow a series of steps.
+If you want to add a new locale like `fr` to serve pages in the French locale on the AsyncAPI website, follow these steps.
 
 **1. Create new JSON Files**
-  - Navigate to the `locales` folder
+  - Navigate to the `locales` folder.
   - Create a new folder with the name of the locale you want to introduce.
   - Create new `JSON` files with the same name as present in each of the other `locales` folders.
-  - You may copy the existing `JSON` files present in the `en` folder. Change the values of those translation keys according to the new localization.
+  - Copy the existing `JSON` files present in the `en` folder. Change the values of those translation keys according to the new localization.
 
 **2. Modify i18n configuration**
   - Navigate to the `next-i18next-static-site.config.js` file in the root of the project folder.
   - Add the name of the newly added `locale` to the `languages` array.
 
 **3. Configure i18n routing**
-With the addition of a new internationalized page, you would need to make sure it is being served on the website when someone visits it.
-  - Make sure to add the exact same `href` to the `lib/i18nPaths.js` in the respective locales which support that `href`.
+After adding a new internationalized page, ensure it is being served on the website when someone visits.
+  - Make sure to add the same `href` to the `lib/i18nPaths.js` in the respective locales supporting that `href`.
 
-For example, if you have added `fr` locale and have completed translating the `tools/cli` page so that if someone clicks `Tools -> CLI` from the navigation menu, it redirects the user to the `asyncapi.com/fr/tools/cli` href.
+If you have added the 'fr' locale and translated the 'tools/cli' page, clicking 'Tools -> CLI' in the navigation menu will redirect the user to 'asyncapi.com/fr/tools/cli'.
 
 `locales` folder structure
 ```diff
@@ -275,7 +278,7 @@ For example, if you have added `fr` locale and have completed translating the `t
 +  ┃ ┗ tools.json
 ```
 
-- Change `next-i18next-static-site.config.js` config.
+- Change the `next-i18next-static-site.config.js` config.
 
 `next-i18next-static-site.config.js`
 ```diff
@@ -289,7 +292,7 @@ module.exports = {
     },
 };
 ```
- - Add new locale routing
+ - Add new locale routing.
 
 `lib/i18nPaths.js`
 ```diff
