@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/cli/pull/890",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 20.67657038994663
+      "score": 22.68679251119144
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -130,7 +130,7 @@
       "resourcePath": "/asyncapi/spec-json-schemas/pull/473",
       "repo": "asyncapi/spec-json-schemas",
       "labels": [],
-      "score": 14.933078614961456
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDOBW5R_c5fbyLb",
@@ -817,25 +817,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5lGICH",
-      "title": "Make group dropdown for each section in Navbar",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1625",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
         }
       ]
     },
