@@ -12,7 +12,7 @@ aliases:
 
 AsyncAPI is an open source initiative that seeks to improve the current state of Event-Driven Architectures (EDA). Our long-term goal is to make working with EDAs as easy as working with REST APIs. That goes from documentation to code generation, and from discovery to event management. Most of the processes you apply to your REST APIs nowadays would be applicable to your event-driven/asynchronous APIs too.
 
-To make this happen, the first step is to create a specification that allows **developers, architects, and product managers** to define the interfaces of an async API. Much like [OpenAPI (aka Swagger)](https://github.com/OAI/OpenAPI-Specification) does for REST APIs.
+To make this happen, the first step is to create a specification that allows **developers, architects, and product managers** to define the interfaces of an async API. Much like <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI (aka Swagger)</a> does for REST APIs.
 
 **The AsyncAPI specification lays the foundation for a greater and better tooling ecosystem for EDAs**.
 

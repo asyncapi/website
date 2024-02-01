@@ -6,10 +6,10 @@ weight: 100
 
 ## Introduction
 
-In this tutorial, you'll learn how to generate an application that uses the [Glee](https://github.com/asyncapi/glee) framework. You'll do it with an AsyncAPI document and the [AsyncAPI CLI](/tools/cli).
+In this tutorial, you'll learn how to generate an application that uses the <a href="https://github.com/asyncapi/glee" target="_blank">Glee</a> framework. You'll do it with an AsyncAPI document and the [AsyncAPI CLI](/tools/cli).
 
 ## Background context
-[Glee](https://github.com/asyncapi/glee) is a TypeScript/JavaScript framework that enables you to create APIs and messaging clients based on your AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific AsyncAPI operations. You only have to provide the code for these functions and Glee handles the rest.
+<a href="https://github.com/asyncapi/glee" target="_blank">Glee</a> is a TypeScript/JavaScript framework that enables you to create APIs and messaging clients based on your AsyncAPI document. Instead of generating code, this framework tightly integrates with your AsyncAPI document and binds functions to specific AsyncAPI operations. You only have to provide the code for these functions and Glee handles the rest.
 
 Glee is often used with the [AsyncAPI CLI](/tools/cli) for a better development experience.
 
@@ -25,7 +25,7 @@ If you did not follow the previous tutorial and do not have an `asyncapi.yaml` f
 ## Installation guide
 <Remember>
 
-It is important to have [Node.js](https://nodejs.org/en/download/) installed which will enable the installation of the required dependencies using <b>npm</b>.
+It is important to have <a href="https://nodejs.org/en/download/" target="_blank">Node.js</a> installed which will enable the installation of the required dependencies using <b>npm</b>.
 
 </Remember>
 

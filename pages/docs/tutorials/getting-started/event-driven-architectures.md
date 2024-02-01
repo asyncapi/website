@@ -7,7 +7,7 @@ menu:
 weight: 11
 ---
 
-Many developers, architects, and product managers have used REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL (e.g., www.google.com) in the browser's address bar and it sends a request to the server. The server then sends the response with the website content. **The web is the greatest implementation of a REST API.**
+Many developers, architects, and product managers have used REST APIs and are familiar with the synchronous communication paradigm. You make a request and wait for the response. This is exactly how the world wide web works. You enter a URL (e.g., ```www.google.com ```) in the browser's address bar and it sends a request to the server. The server then sends the response with the website content. **The web is the greatest implementation of a REST API.**
 
 However, there are certain situations where you don't need a response from the server. In most cases, it's only important to have some confirmation that the request was received. This is also called _"fire and forget"_, and it's very useful when you just want to communicate or inform that "something happened." You're not requesting or asking for anything, thus you don't need a response.  
 
@@ -34,7 +34,7 @@ In most cases, EDAs are broker-centric, as seen in the diagram above. There are 
 
 ### Message broker
 
-A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are [RabbitMQ](https://rabbitmq.com), [Apache Kafka](http://kafka.apache.org/), [Solace](http://solace.com), etc.
+A message broker (or _"broker"_) is a piece of infrastructure in charge of receiving messages and delivering them to those who have shown interest. They often store messages until they are delivered, which makes EDAs very resilient to failures. Examples of brokers are <a href="https://rabbitmq.com" target="_blank">RabbitMQ</a>, <a href="http://kafka.apache.org/" target="_blank">Apache Kafka</a>, <a href="http://solace.com" target="_blank">Solace</a>, etc.
 
 ### Publisher/Subscriber
 
@@ -61,7 +61,7 @@ You will find both used interchangeably, although they are not the same. You wil
 Theoretically, _"message-driven"_ is the most generic term -meaning you may use events and commands- while _event-driven_ means that it's purely about events.
 
 However, that's not always the case, as Martin Fowler explains in his
-talk ["the many meanings of Event-Driven Architecture"](https://www.youtube.com/watch?v=STKCRSUsyP0).
+talk <a href="https://www.youtube.com/watch?v=STKCRSUsyP0" target="_blank">"the many meanings of Event-Driven Architecture"</a> .
 
 ## Conclusion
 

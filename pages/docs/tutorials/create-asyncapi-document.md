@@ -29,13 +29,13 @@ Event-driven architecture (EDA) is a design pattern built around the production,
 
 Furthermore, the [Pub/sub](/docs/tutorials/getting-started/event-driven-architectures#publishersubscriber) is appealing for IoT use cases due to two key features: support for flexible coupling between publishers/subscribers and inherent support for point-to-multipoint transmission.  
 
-[MQTT](https://mqtt.org/), is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
+<a href="https://mqtt.org/" target="_blank">MQTT</a> is a well-known protocol that is widely used in IoT applications because it was created particularly to address machine-to-machine (M2M) communication.
 
 ## Create AsyncAPI document
 
 In this step, you will create an AsyncAPI document to describe the Streelights application. It will help you generate the code and the documentation later on.
 
-To create one, you can either use the [AsyncAPI Studio](https://studio.asyncapi.com) or the [AsyncAPI CLI](https://github.com/asyncapi/cli), depending on your project's needs.
+To create one, you can either use the <a href="https://studio.asyncapi.com" target="_blank">AsyncAPI Studio</a> or the <a href="https://github.com/asyncapi/cli" target="_blank">AsyncAPI CLI</a>, depending on your project's needs.
 
 <Remember>
 
@@ -117,7 +117,7 @@ Moving on, let's talk about the `servers` section:
     protocol: mqtt`}
 </CodeBlock> 
 
-In this section, you point to the Eclipse Mosquitto message broker. The `url` points to a real broker instance [hosted by the Mosquitto community](https://test.mosquitto.org/), and the `protocol` is MQTT. If you do not want to use the test instance, you can spin up your own broker locally with `docker run -it -p 1883:1883 eclipse-mosquitto:1.5`. Remember to change the `url` to `mqtt://localhost`.
+In this section, you point to the Eclipse Mosquitto message broker. The `url` points to a real broker instance <a href="https://test.mosquitto.org/" target="_blank">hosted by the Mosquitto community</a>, and the `protocol` is MQTT. If you do not want to use the test instance, you can spin up your own broker locally with `docker run -it -p 1883:1883 eclipse-mosquitto:1.5`. Remember to change the `url` to `mqtt://localhost`.
 
 Now, let's move on to the `channels` section. In the `servers` section, you specified how to connect to the broker where the application sends messages to or receives messages from. In `channels`, you go into more details about the connection `address` inside the broker. (Example: A topic name that specifies what `messages` are available in the channel.)
 
@@ -156,7 +156,7 @@ Next is the `payload` property, which is used to understand how the event should
 
 The `payload` property defines the event's content using AsyncAPI schemas. It means that your event payload should contain an `id` and a `lumens` property —which are integers bigger than zero—and a `sentAt` property which should be a string containing a date and time.
 
->  JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as [Avro](https://github.com/asyncapi/avro-schema-parser#usage).
+>  JSON Schema Draft 07 is 100% compatible with AsyncAPI schemas. You can also use other standards to describe payload schema, such as <a href="https://github.com/asyncapi/avro-schema-parser#usage" target="_blank">Avro</a>.
 
 The last section is `operations`, where you describe what the application described in the AsyncAPI document is doing. 
 

@@ -11,9 +11,9 @@ In this tutorial, you'll learn how to validate messages (events) that are sent t
 ## Background context
 Message validation can be performed at both the **producer** and **consumer** levels. Message validation requires the participation of the producer, consumer, and broker. We will learn how to validate messages at the consumer level by discarding invalid messages based on the parameters provided.
 
-You will be using the [Eclipse Mosquitto](https://mosquitto.org/) broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here producers and consumers are MQTT clients. The producer and consumer labels refer to whether the client is sending or receiving messages.
+You will be using the <a href="https://mosquitto.org/" target="_blank">Eclipse Mosquitto</a> broker. The MQTT protocol provides a lightweight method of messaging using a publish/subscribe model. You will also use an MQTT client that runs an MQTT library and connects to an MQTT broker over a network. Here producers and consumers are MQTT clients. The producer and consumer labels refer to whether the client is sending or receiving messages.
 
-In the [previous tutorial, you generated an application](https://asyncapi.com/docs/tutorials/generate-code) that uses [Glee](https://github.com/asyncapi/glee) framework. Now you will be validating the messages that you will be sending to your application using a Mosquitto broker and an MQTT client.
+In the [previous tutorial, you generated an application](https://asyncapi.com/docs/tutorials/generate-code) that uses <a href="https://github.com/asyncapi/glee" target="_blank">Glee</a> framework. Now you will be validating the messages that you will be sending to your application using a Mosquitto broker and an MQTT client.
 
 <Remember>
 

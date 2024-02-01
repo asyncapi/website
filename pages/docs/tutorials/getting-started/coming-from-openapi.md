@@ -3,9 +3,9 @@ title: "Coming from OpenAPI"
 weight: 20
 ---
 
-If you're coming from OpenAPI, you must know that AsyncAPI [started as an adaptation of the OpenAPI specification](https://medium.com/asyncapi/whats-new-on-asyncapi-lots-2d9019a1869d). AsyncAPI wanted to be as compatible as possible with OpenAPI so that the users could reuse parts in both.
+If you're coming from OpenAPI, you must know that AsyncAPI <a href="https://medium.com/asyncapi/whats-new-on-asyncapi-lots-2d9019a1869d" target="_blank">started as an adaptation of the OpenAPI specification</a>. AsyncAPI wanted to be as compatible as possible with OpenAPI so that the users could reuse parts in both.
 
-Before AsyncAPI `3.0.0`, you could find many similarities between OpenAPI and AsyncAPI. Remember that in the world of Event-Driven Architectures, you have more than one protocol; therefore, some things are different. Check out the following comparison chart, inspired by [Darrel Miller's blog post](https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2):
+Before AsyncAPI `3.0.0`, you could find many similarities between OpenAPI and AsyncAPI. Remember that in the world of Event-Driven Architectures, you have more than one protocol; therefore, some things are different. Check out the following comparison chart, inspired by <a href="https://www.openapis.org/news/blogs/2016/10/tdc-structural-improvements-explaining-30-spec-part-2" target="_blank">Darrel Miller's blog post</a>:
 
 import OpenAPIComparison from '../../../../components/OpenAPIComparison'
 
@@ -20,7 +20,7 @@ import OpenAPIComparisonV3 from '../../../../components/OpenAPIComparisonV3'
 Aside from structural differences, you should know:
 
 1. AsyncAPI is compatible with OpenAPI schemas.
-1. The message payload in AsyncAPI can be any value, not just an AsyncAPI/OpenAPI schema. For instance, it could be an [Avro](https://avro.apache.org/) schema.
+1. The message payload in AsyncAPI can be any value, not just an AsyncAPI/OpenAPI schema. For instance, it could be an <a href="https://avro.apache.org/" target="_blank">Avro</a> schema.
 1. The [AsyncAPI server object](/docs/specifications/2.2.0/#serverObject) is almost identical to its OpenAPI counterpart, with the exception that `scheme` has been renamed to `protocol` and AsyncAPI introduces a new property called `protocolVersion`. AsyncAPI supports multiple protocols, not only HTTP, like in the case of OpenAPI.
 1. OpenAPI path parameters and [AsyncAPI channel parameters](/docs/specifications/2.2.0/#parameterObject) are a bit different since AsyncAPI doesn't have the notion of "query" and "cookie", and header parameters can be defined in the [message object](/docs/specifications/2.2.0/#messageObject). Therefore, AsyncAPI channel parameters are the equivalent of OpenAPI path parameters.
 

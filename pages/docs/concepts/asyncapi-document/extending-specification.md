@@ -31,4 +31,4 @@ AsyncAPI tools might not support AsyncAPI extensions. Our tools can be extended 
 
 ## Extending unsupported features
 
-If you need a feature not covered by the AsyncAPI specification, you can create an extension for it. Should this extension be useful to others, consider contributing it back to the AsyncAPI community. You can do this by [opening a spec issue](https://github.com/asyncapi/spec) in the AsyncAPI GitHub repository. Before contributing, review the [AsyncAPI contribution guidelines](https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md).
+If you need a feature not covered by the AsyncAPI specification, you can create an extension for it. Should this extension be useful to others, consider contributing it back to the AsyncAPI community. You can do this by <a href="https://github.com/asyncapi/spec" target="_blank">opening a spec issue</a> in the AsyncAPI GitHub repository. Before contributing, review the <a href="https://github.com/asyncapi/spec/blob/master/CONTRIBUTING.md" target="_blank">AsyncAPI contribution guidelines</a>.

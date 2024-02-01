@@ -7,7 +7,7 @@ In this tutorial, you'll learn how to implement the request/reply pattern in an 
 
 Before we begin, it would be beneficial for you to have a basic understanding of AsyncAPI and Event-Driven Architectures (EDA). If you need a refresher, refer to our [Event-Driven Architecture](/docs/tutorials/getting-started/event-driven-architectures) document.
 
-[Request/reply](https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html) is a messaging pattern involving two key components: the **requester**, which sends a request message, and the **replier**, responsible for receiving this request and responding with a reply. This pattern fundamentally revolves around these two roles, requester and replier.
+<a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/RequestReply.html" target="_blank">Request/reply</a> is a messaging pattern involving two key components: the **requester**, which sends a request message, and the **replier**, responsible for receiving this request and responding with a reply. This pattern fundamentally revolves around these two roles, requester and replier.
 
 ## Static reply address 
 
