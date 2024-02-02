@@ -20,13 +20,9 @@ import {
   useTranslation,
 } from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
+import i18nPaths from "../../lib/i18nPaths";
 
 const isMobile = isMobileDevice();
-const uniqueLangs = ["EN", "DE"].map((lang) => ({
-  key: lang,
-  text: lang,
-  value: lang
-}));
 
 export default function NavBar({
   className = '',
@@ -37,6 +33,20 @@ export default function NavBar({
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
+
+  const getUniqueLangs = () => {
+    let pathnameWithoutLocale = pathname;
+    if (pathname && pathname.includes("/[lang]")) {
+      pathnameWithoutLocale = pathname.replace("/[lang]", "");
+    }
+    let uniqueLangs = Object.keys(i18nPaths).filter(lang => i18nPaths[lang].includes(pathnameWithoutLocale)).map(lang => lang.toUpperCase());
+    return uniqueLangs.length === 0 ? ["EN"] : uniqueLangs;
+  }
+  const uniqueLangs = getUniqueLangs().map((lang) => ({
+    key: lang,
+    text: lang,
+    value: lang
+  }));
 
   const changeLanguage = async (locale, langPicker) => {
 
