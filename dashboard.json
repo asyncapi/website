@@ -83,17 +83,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "PR_kwDOB5hCo85iLvXV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "ci: added code linting",
-      "author": "Min2who",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/473",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 15.507427792459973
-    },
-    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -181,6 +170,26 @@
         }
       ],
       "score": 13.210031082465903
+    },
+    {
+      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "remove puppeteer from dependencies",
+      "author": "flamewow",
+      "resourcePath": "/asyncapi/html-template/issues/256",
+      "repo": "asyncapi/html-template",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
@@ -400,21 +409,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo855VB2E",
-      "title": "Add code linting (eslint) as part of CI script",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/467",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "smoya",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
