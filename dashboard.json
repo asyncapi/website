@@ -32,15 +32,15 @@
       "score": 19.527872034949596
     },
     {
-      "id": "PR_kwDOFDnrNc5f0Nm0",
+      "id": "PR_kwDOBW5R_c5f0CJh",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: improve glee command",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/cli/pull/890",
-      "repo": "asyncapi/cli",
+      "title": "docs: tutorial for managing schemas with Schema Registry",
+      "author": "Arya-Gupta",
+      "resourcePath": "/asyncapi/website/pull/2331",
+      "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.953522857451077
+      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -83,56 +83,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "PR_kwDOBW5R_c5jw3SL",
-      "isPR": true,
-      "isAssigned": true,
-      "title": "chore(blog): annual review",
-      "author": "thulieblack",
-      "resourcePath": "/asyncapi/website/pull/2549",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 15.794602381209232
-    },
-    {
-      "id": "I_kwDOFDnrNc5rjrK-",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve `new glee` command",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/cli/issues/683",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/medium",
-          "color": "0e8a16"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOB5hCo85iLvXV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "ci: added code linting",
-      "author": "Min2who",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/473",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -166,6 +116,38 @@
       "score": 14.358729437462937
     },
     {
+      "id": "I_kwDOBW5R_c580Z0o",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "New Contributor Guide and Maintenance Setup",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/2586",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        }
+      ],
+      "score": 13.497205671215161
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
+      "score": 13.497205671215161
+    },
+    {
       "id": "I_kwDOFi_gUM5hpuWl",
       "isPR": false,
       "isAssigned": true,
@@ -188,35 +170,36 @@
         }
       ],
       "score": 13.210031082465903
-    }
-  ],
-  "goodFirstIssues": [
+    },
     {
-      "id": "I_kwDOE8Qh3859IP7G",
-      "title": "Add example and documentation for TS mapType",
+      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
+      "isPR": false,
       "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1755",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
+      "title": "remove puppeteer from dependencies",
+      "author": "flamewow",
+      "resourcePath": "/asyncapi/html-template/issues/256",
+      "repo": "asyncapi/html-template",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         },
         {
-          "name": "TS generator",
-          "color": "33943E"
+          "name": "stale",
+          "color": "ededed"
         }
-      ]
-    },
+      ],
+      "score": 12.635681904967385
+    }
+  ],
+  "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c58jyBx",
-      "title": "Inconsistnecy in finance cards",
+      "id": "I_kwDOBW5R_c59bL0s",
+      "title": "Regarding links redirection",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2574",
+      "resourcePath": "/asyncapi/website/issues/2601",
       "repo": "asyncapi/website",
-      "author": "sambhavgupta0705",
+      "author": "sagarkori143",
       "area": "javascript",
       "labels": [
         {
@@ -358,16 +341,6 @@
       ]
     },
     {
-      "id": "I_kwDOB5hCo857l5pC",
-      "title": "Reduce cognitive complexity in `validate-schemas.js`",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/482",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "AnimeshKumar923",
-      "area": "javascript",
-      "labels": []
-    },
-    {
       "id": "I_kwDOE8Qh3857Kllp",
       "title": "Add loading animation for when playground generate models ",
       "isAssigned": false,
@@ -436,44 +409,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3856iLHJ",
-      "title": "Add Scala generator to playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1690",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo855VB2E",
-      "title": "Add code linting (eslint) as part of CI script",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/467",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "smoya",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -650,6 +585,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -831,25 +770,6 @@
         {
           "name": "📑 docs",
           "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5lGICH",
-      "title": "Make group dropdown for each section in Navbar",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/1625",
-      "repo": "asyncapi/website",
-      "author": "akshatnema",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        },
-        {
-          "name": "Hacktoberfest",
-          "color": "FF8AE2"
         }
       ]
     },
