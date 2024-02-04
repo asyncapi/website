@@ -34,6 +34,11 @@ export default function NavBar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
 
+  /**
+ * Retrieves unique language options based on the current path and i18nPaths configuration.
+ *
+ * @returns {string[]} - An array of unique language options in uppercase.
+ */
   const getUniqueLangs = () => {
     let pathnameWithoutLocale = pathname;
 
@@ -48,12 +53,23 @@ export default function NavBar({
     // If no unique languages are found, default to ["EN"]
     return uniqueLangs.length === 0 ? ["EN"] : uniqueLangs;
   }
+
   const uniqueLangs = getUniqueLangs().map((lang) => ({
     key: lang,
     text: lang,
     value: lang
   }));
 
+  /**
+ * Changes the language and updates the URL accordingly.
+ *
+ * @async
+ * @param {string} locale - The new locale/language to set.
+ * @param {boolean} langPicker - Indicates whether the change is from the language picker.
+ *                              If true, stores the language in local storage.
+ * @returns {Promise<void>} - A promise representing the completion of the language change.
+ * @throws {Error} - If an error occurs during the language change process.
+ */
   const changeLanguage = async (locale, langPicker) => {
 
     // Verifies if the language change is from langPicker or the browser-api
@@ -88,8 +104,12 @@ export default function NavBar({
     router.push(href);
   };
 
-  // First param: Passes the language based on the browser's defalt language
-  // Second param: Prevents the language change from being saved in the local storage
+  /*
+  useEffect to set the initial language on component mount
+  Detects the user's preferred language using browserLanguageDetector 
+  and updates the language without affecting the localStorage.
+  This ensures the components renders with the correct initial language.
+  */
   useEffect(() => {
     changeLanguage(browserLanguageDetector(), false);
   }, []);
