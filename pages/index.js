@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { languageDetection } from "../lib/i18n";
 
 function HomePage() {
