@@ -1,7 +1,6 @@
 import LinkComponent from '../link';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label'
-import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 

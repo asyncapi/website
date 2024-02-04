@@ -36,10 +36,16 @@ export default function NavBar({
 
   const getUniqueLangs = () => {
     let pathnameWithoutLocale = pathname;
+
+    // Check if the pathname includes "/[lang]", if so, replace it with an empty string
     if (pathname && pathname.includes("/[lang]")) {
       pathnameWithoutLocale = pathname.replace("/[lang]", "");
     }
+
+    // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
     let uniqueLangs = Object.keys(i18nPaths).filter(lang => i18nPaths[lang].includes(pathnameWithoutLocale)).map(lang => lang.toUpperCase());
+
+    // If no unique languages are found, default to ["EN"]
     return uniqueLangs.length === 0 ? ["EN"] : uniqueLangs;
   }
   const uniqueLangs = getUniqueLangs().map((lang) => ({
@@ -82,6 +88,8 @@ export default function NavBar({
     router.push(href);
   };
 
+  // First param: Passes the language based on the browser's defalt language
+  // Second param: Prevents the language change from being saved in the local storage
   useEffect(() => {
     changeLanguage(browserLanguageDetector(), false);
   }, []);
