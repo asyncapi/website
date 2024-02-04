@@ -111,6 +111,10 @@ export default function NavBar({
   This ensures the components renders with the correct initial language.
   */
   useEffect(() => {
+    /**
+     * First param: Passes the language based on the browser's default language
+     * Second param: Prevents the language change from being saved in the local storage
+     */
     changeLanguage(browserLanguageDetector(), false);
   }, []);
 
