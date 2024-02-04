@@ -91,6 +91,10 @@ export default function NavBar({
   // First param: Passes the language based on the browser's defalt language
   // Second param: Prevents the language change from being saved in the local storage
   useEffect(() => {
+    /**
+     * First param: Passes the language based on the browser's default language
+     * Second param: Prevents the language change from being saved in the local storage
+     */
     changeLanguage(browserLanguageDetector(), false);
   }, []);
 
