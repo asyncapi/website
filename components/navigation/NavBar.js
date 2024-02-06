@@ -104,17 +104,13 @@ export default function NavBar({
     router.push(href);
   };
 
-  /*
-  useEffect to set the initial language on component mount
-  Detects the user's preferred language using browserLanguageDetector 
-  and updates the language without affecting the localStorage.
-  This ensures the components renders with the correct initial language.
-  */
+  /**
+   * useEffect to set the initial language on component mount
+   * Detects the user's preferred language using browserLanguageDetector 
+   * and updates the language without affecting the localStorage.
+   * This ensures the components renders with the correct initial language.
+   */
   useEffect(() => {
-    /**
-     * First param: Passes the language based on the browser's default language
-     * Second param: Prevents the language change from being saved in the local storage
-     */
     changeLanguage(browserLanguageDetector(), false);
   }, []);
 
