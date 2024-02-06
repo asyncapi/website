@@ -14,10 +14,10 @@ import {
   defaultNamespace,
 } from "../lib/i18n";
 import loadLocales from "../lib/locales";
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { ThemeProvider } from 'next-themes';
 
 function App({ Component, pageProps, router }) {
-
   const i18n = {
     languages,
     defaultLanguage,
@@ -27,25 +27,27 @@ function App({ Component, pageProps, router }) {
   };
 
   return (
-    <I18nProvider i18n={i18n} /* Pass the i18n options to the i18n provider */>
+    <I18nProvider i18n={i18n}>
       <AppContext.Provider value={{ path: router.asPath }}>
         <Head>
           <script async defer src="https://buttons.github.io/buttons.js"></script>
         </Head>
-        <MDXProvider>
-          <AlgoliaSearch>
-            <div className="flex flex-col min-h-screen">
-              <Banner />
-              <Layout>
-                <Component {...pageProps} />
-                <ScrollButton />
-              </Layout>
-              <div className="mt-auto">
-                <Footer />
+        <ThemeProvider attribute="class">
+          <MDXProvider>
+            <AlgoliaSearch>
+              <div className="flex flex-col min-h-screen">
+                <Banner />
+                <Layout>
+                  <Component {...pageProps} />
+                  <ScrollButton />
+                </Layout>
+                <div className="mt-auto">
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </AlgoliaSearch>
-        </MDXProvider>
+            </AlgoliaSearch>
+          </MDXProvider>
+        </ThemeProvider>
       </AppContext.Provider>
     </I18nProvider>
   )

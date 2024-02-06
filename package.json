@@ -73,6 +73,7 @@
     "moment": "^2.29.4",
     "next": "^12.0.0",
     "next-mdx-remote": "^4.4.1",
+    "next-themes": "^0.2.1",
     "node-fetch": "^2.6.7",
     "postcss": "^8.4.31",
     "react": "^17.0.2",
