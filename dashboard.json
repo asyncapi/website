@@ -129,7 +129,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 13.497205671215161
+      "score": 14.07155484871368
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -146,30 +146,6 @@
         }
       ],
       "score": 13.497205671215161
-    },
-    {
-      "id": "I_kwDOFi_gUM5hpuWl",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve kafka adapter",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/glee/issues/411",
-      "repo": "asyncapi/glee",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "area/typescript",
-          "color": "007acc"
-        }
-      ],
-      "score": 13.210031082465903
     },
     {
       "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
@@ -190,6 +166,17 @@
         }
       ],
       "score": 12.635681904967385
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
@@ -470,21 +457,6 @@
       "author": "princerajpoot20",
       "area": "typescript",
       "labels": []
-    },
-    {
-      "id": "I_kwDOBGu-1853mU6h",
-      "title": "Fix description of Operation Trait object",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/994",
-      "repo": "asyncapi/spec",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🤷‍♀️ Ambiguity",
-          "color": "286AFC"
-        }
-      ]
     },
     {
       "id": "I_kwDOCoBobc5zovn3",
