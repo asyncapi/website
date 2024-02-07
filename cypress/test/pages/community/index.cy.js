@@ -44,9 +44,7 @@ describe('CommunityIndexPage', () => {
 
   it('should display other cards correctly', () => {
     cy.get('[data-testid="CommunityCards-Goals"]').should('exist');
-    cy.get('[href="https://github.com/asyncapi/community/discussions/513"]').should('exist');
-    cy.get('[data-testid="CommunityCards-Contributors"]').should('exist');
-    cy.get('[href="https://github.com/orgs/asyncapi/discussions/593"]').should('exist');
+    cy.get('[href="https://github.com/orgs/asyncapi/discussions/948"]').should('exist');
     cy.get('[data-testid="CommunityCards-TSC"]').should('exist');
     cy.get('[href="/community/tsc"]').should('exist');
   });
