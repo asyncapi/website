@@ -1,14 +1,15 @@
 ---
-title: Implement Request Reply in an AsyncAPI Document for a Slack App
-description: In this tutorial, you'll learn to write an AsyncAPI document that implements the request reply feature for a Slack application using the WebSocket Protocol.
+title: Implement Request/Reply in an AsyncAPI document for a Slack app
+description: In this tutorial, you'll learn how to write an AsyncAPI document that implements the request/reply feature in a Slack application using the WebSocket protocol.
 weight: 220
 ---
 
 ## Introduction
-In the [Create an AsyncAPI Document for a Slackbot with WebSockets]() tutorial, you learnt how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds by sending a message back to the Slack server through WebSocket to confirm the event reception. 
+In the [Create an AsyncAPI Document for a Slackbot with WebSockets](https://www.asyncapi.com/docs/tutorials/websocket) tutorial, you learned how to write an AsyncAPI document for a Slackbot `Heart-Counter`  that actively monitored reactions associated with a message. In this lesson, let's go a step further. After receiving a reaction, `Heart-Counter` responds via a message back to the Slack server through WebSocket to confirm the event reception. 
 
-The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request-Reply messaging pattern discussed in this context. You can refer the [Request/reply pattern](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) tutorial for an introduction to the Request Reply pattern implementation.
-The aim of this tutorial is to provide a clear understanding of the Request-Reply Messaging pattern and showcase how AsyncAPI effectively describes it using a practical use case.
+The interaction where the Slackbot acknowledges the event and replies with a specific response sets the stage for the Request/Reply messaging pattern discussed in this context. 
+
+> Refer to the [Request/Reply pattern tutorial](https://www.asyncapi.com/docs/tutorials/getting-started/request-reply) for an introduction to its implementation. 
 
 
 ```mermaid
@@ -29,7 +30,7 @@ Heart-Counter->>Slack Server (Socket Mode): Sending acknowledgement
 
 ## Background context
 
-The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info) in AsyncAPI is an exciting and a highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
+The [Request-Reply Messaging Pattern](https://www.asyncapi.com/docs/concepts/asyncapi-document/reply-info) in AsyncAPI is an exciting and highly anticipated feature.  The messaging pattern mirrors a traditional conversation, where one "requester" entity initiates a query or request, and the "responder" entity provides a specific and expected response.
 The messaging pattern can work in both synchronous and asynchronous environments and is very beneficial to decouple components by allowing them to operate independently in a distributed system. 
 
 ```mermaid
@@ -48,9 +49,9 @@ sequenceDiagram
 
 ## Define messages
 
-In the `Heart-Counter` tutorial, you dealt with the `hello` event that was triggered when the WebSocket connection was established and the `reaction` event that was expected when a new reaction-added event was triggered.
+In the `Heart-Counter` tutorial, you dealt with the `hello` event triggered when the WebSocket connection was established and the `reaction` event expected when a new reaction-added event was triggered.
 
-In this tutorial, you'll be adding the `acknowledge` message to your AsyncAPI document to represent the acknowledgement sent by the Slack application back to the server to indicate that it has successfully received the message.
+In this tutorial, you'll add the `acknowledge` message to your AsyncAPI document to represent the acknowledgment sent by the Slack application back to the server to indicate that it has successfully received the message.
 
 <CodeBlock language="yaml" highlightedLines={[11,12,13,14]}>
 {`components:
@@ -71,7 +72,7 @@ In this tutorial, you'll be adding the `acknowledge` message to your AsyncAPI do
 
 ## Define schemas
 
-Previously, the `reaction` schema was simplified to just include the `event` payload. However, in this instance, you will be elaborating on the schema for the complete request it is anticipated to receive.
+Previously, the `reaction` schema was simplified to include the `event` payload. However, in this instance, you will be able to elaborate on the schema for the complete request it is expected to receive.
 
 <Remember>
 The sample request and response payloads are extracted from <a href="https://api.slack.com/apis/connections/socket#events">Slack's official documentation</a>.
@@ -164,7 +165,7 @@ Additionally, you will also be adding the `acknowledge` schema that makes use of
 </CodeBlock>
 
 ## Define acknowledge message to channel
-You can extend the channel used by  `Heart-Counter` to now include the `acknowledge` message.
+Extend the channel the `Heart-Counter` used to include the `acknowledge` message.
 
 <CodeBlock language="yaml" highlightedLines={[9,10]}>
 {`channels:
@@ -181,11 +182,11 @@ You can extend the channel used by  `Heart-Counter` to now include the `acknowle
 
 ## Define operations
 
-That brings to the important part of the tutorial where you get to finally represent the request reply pattern. 
+Now you've reached the most important part of the tutorial; it's time to represent the Request/Reply pattern. 
 
-Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener` you also want to represent the message that is sent back to the server. This is where the `reply` attribute comes into play. 
+Both `helloListener` and `reactionListener` operations are set to `receive` events. However, in the case of `reactionListener`, you also want to represent the message sent back to the server. This is where the `reply` attribute comes into play. 
 
-Since both the request and reply function happens over the same WebSocket URL, both the `channel` values stay the same. However, you can differentiate the message each operation conveys by specifying the message it will send or receive. 
+Since both the request and reply function happens over the same WebSocket URL, both `channel` values stay the same. However, you can differentiate each operation's message by specifying the messages sent or received. 
 Thus, you can say that for a `reaction` message received over the `root` channel, the `reactionListener` operation will reply with the `acknowledge` message over the same channel.
 
 
@@ -214,7 +215,7 @@ Putting all this together, you have your AsyncAPI document ready to go!
 <CodeBlock language="yaml">
 {`asyncapi: 3.0.0
 info:
-  title: Implement Request Reply in an AsyncAPI Document for a Slack App
+  title: Implement Request/Reply in an AsyncAPI document for a Slack app
   version: 1.0.0
   description: >
     The Heart-Counter manages popular messages in a Slack workspace by
@@ -366,4 +367,4 @@ components:
 </CodeBlock>
 
 ## Summary
-Great job getting to the end! In this tutorial you learnt how to create an AsyncAPI document for a use case that implemented the Request Reply messaging pattern. Now you can try exploring this pattern with sub patterns to see how it works with different use cases in real life. 
+Great job getting to the end! In this tutorial, you learned how to create an AsyncAPI document for a use case that implemented the Request-Reply messaging pattern. Now, you can explore this pattern with sub-patterns to see how it works with real-life use cases. 
