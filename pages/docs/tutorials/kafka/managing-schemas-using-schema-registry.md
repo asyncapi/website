@@ -59,9 +59,10 @@ http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp.
 </Remember>
 
 ### Replace link using JSON pointer
-3. An alternative to having the schema in a separate file as you learned in [Describe Kafka message payload using Avro Schema](/docs/tutorials/kafka/configure-kafka-avro) where you used the existing Avro schema in your AsyncAPI document, would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
-$ref: {url}
-Replace {url} with the url from the previous step.
+3. An alternative to having the schema in a separate file as you learned in [Describe Kafka message payload using Avro Schema](/docs/tutorials/kafka/configure-kafka-avro) where you used the existing Avro schema in your AsyncAPI document, would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and a $ref that points to the url from the previous step.
+```
+$ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
+```
 
 ```
 asyncapi: 3.0.0
