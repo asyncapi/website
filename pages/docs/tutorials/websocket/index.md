@@ -1,15 +1,15 @@
 ---
-title: Create an AsyncAPI Document for a Slackbot with WebSockets
-description: In this tutorial, you'll learn how to create an AsyncAPI document designed for a Slack application that operates in Socket Mode using the WebSockets protocol.
+title: Create an AsyncAPI document for a Slackbot with WebSocket.
+description: In this tutorial, you'll learn how to create an AsyncAPI document designed for a Slack application that operates in Socket Mode using the WebSocket protocol.
 weight: 210
 ---
 
 ## Introduction
-In this tutorial, you will learn how to write an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol. You will learn how to write AsyncAPI document for a consumer-only application receiving a stream of messages from a WebSocket server. You will also learn why the AsyncAPI bindings feature exist and how to use it.
+In this tutorial, you will learn how to write an AsyncAPI document designed for a Slack application that operates in Socket Mode. The aim is to help you grasp a real-world application of AsyncAPI with the WebSocket protocol. You will learn how to write an AsyncAPI document for a consumer-only application receiving a stream of messages from a WebSocket server. You will also learn why the AsyncAPI bindings feature exists and how to use it.
 
-Consider a scenario where you are in charge of maintaining a highly active Slack workspace. You want an easy way to keep track of the popular messages across all the channels but doing this manually would be a difficult task. To simplify this process, you’re going to build a Slackbot called `Heart-Counter` that actively monitors reactions added to a message and determine its popularity by counting the reactions of the “heart” emoji.
+Consider a scenario where you are in charge of maintaining a highly active Slack workspace. You want an easy way to keep track of the popular messages across all channels, but doing this manually would be difficult. To simplify this process, you will build a Slackbot called `Heart-Counter` that actively monitors reactions added to a message and determines its popularity by counting the reactions of the “heart” emoji.
 
-Here’s a visual representation of how `Heart-Counter` should work: 
+Here’s a visual representation of how the `Heart-Counter` should work: 
 
 ```mermaid
 sequenceDiagram
@@ -42,7 +42,7 @@ Note left of Heart-Counter: Event received
 ``` 
 
 ## Background context
-[WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a communication protocol that enables simultaneous bidirectional data exchange between a client and a server over a single, long-lived connection. Unlike HTTP, which relies on the request-response model, WebSocket is ideal for scenarios where real-time, interactive and low-latency communication is necessary.
+[WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a communication protocol that enables simultaneous bidirectional data exchange between a client and a server over a single, long-lived connection. Unlike HTTP, which relies on the request-response model, WebSocket is ideal for scenarios where real-time, interactive, and low-latency communication is necessary.
 
 
 ```mermaid
@@ -59,9 +59,9 @@ In Slack, WebSocket is employed as part of its [Socket Mode](https://api.slack.c
 
 ## Define AsyncAPI version, API information, and server
 
-You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slack application's API which includes details such as the `title`, `version` and `description`.
+You start your AsyncAPI document by specifying the AsyncAPI version and essential information about your Slack application's API, which includes details such as the `title,` `version,` and `description.`
 
-The `servers` section allows you to define the protocol and specify information about the URLs your application will use, such as  `host`, `pathname`, `protocol` and `description`.
+The `servers` section allows you to define the protocol and specify information about the URLs your application will use, such as  `host`, `pathname`, `protocol`, and `description`.
 
 <Remember>
 The WebSocket URL is generated  by invoking the <a href="https://api.slack.com/methods/apps.connections.open">apps.connections.open</a> method from Slack’s API. You use the authentication tokens obtained during the configuration of your Slackbot to generate this URL.
@@ -70,7 +70,7 @@ The WebSocket URL is generated  by invoking the <a href="https://api.slack.com/m
 <CodeBlock language="yaml">
 {`asyncapi: '3.0.0'
 info:
-  title: Create an AsyncAPI Document for a Slackbot with WebSockets
+  title: Create an AsyncAPI document for a Slackbot with WebSocket
   version: '1.0.0'
   description:  |
     The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data
@@ -154,7 +154,7 @@ The `payload` attribute specifies the name, format, and description of all the e
 
 The `channels` attribute defines a communication channel for the event. The `address` specifies where the channel is tuned in to receive messages while the `messages` property defines a key-value pair where each key corresponds to the event it's set up to handle.
 
-The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and also partially to WebSocket that uses HTTP to establish connection between client and server. Since this is protocol-specific information you need to use AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
+The WebSocket URL generated for `Heart-Counter` includes authentication tokens. This information is represented using `query` parameters. Query parameters are specific to HTTP protocol and partially to WebSocket, which uses HTTP to connect client and server. Since this is protocol-specific information, you must use an AsyncAPI feature called `bindings` that enables you to provide protocol-specific information inside the AsyncAPI document using the `bindings` attribute. By utilizing the `query` object from the WebSocket binding, you can outline the parameters needed for the connection and the conditions they must meet. 
 
 <CodeBlock language="yaml" highlightedLines={[9]}>
 {`channels:
@@ -182,11 +182,11 @@ The WebSocket URL generated for `Heart-Counter` includes authentication tokens. 
 </CodeBlock>
 
 ## Define operations 
-The `operation` property, is all about defining specific tasks your application can perform. Essentially, it's how `Heart-Counter` interacts with Slack.
+The `operation` property is all about defining specific tasks your application can perform. Essentially, it's how the `Heart-Counter` interacts with Slack.
 
 In this example, the `helloListener` operation keeps an eye out for the message sent by the Slack server when a WebSocket connection is successfully established. On the other hand, the `reactionListener` is focused on the `reaction_added` event type.
 
-Your Slack application is designed to be notified of events within your workspace. It does this by subscribing to a specific event type making use of Slack's Event API.  So in this case the `action` property in both the operations is set to `receive` events.
+Your Slack application is designed to be notified of events within your workspace. It subscribes to a specific event type and uses Slack's Event API. In this case, both operations' `action` property is set to `receive` events.
 
 <CodeBlock language="yaml" highlightedLines={[3,9]}>
 {`operations:
@@ -204,12 +204,12 @@ Your Slack application is designed to be notified of events within your workspac
       - $ref: '#/channels/root/messages/reaction' `}
 </CodeBlock>
 
-You've now completed the tutorial! Putting these blocks together gives you your AsyncAPI document all ready to go.
+Congratulations, you've completed the tutorial! Putting these blocks together gives you an AsyncAPI document all ready to go.
 
 <CodeBlock language="yaml">
 {`asyncapi: '3.0.0'
 info:
-  title: Create an AsyncAPI Document for a Slackbot with WebSockets
+  title: Create an AsyncAPI document for a Slackbot with WebSocket
   version: '1.0.0'
   description:  |
     The Heart-Counter manages popular messages in a Slack workspace by monitoring message reaction data.
@@ -318,4 +318,4 @@ schemas:
 
 
 ## Summary
-In this tutorial, you learned to create an AsyncAPI document for a Slackbot using WebSocket in Socket Mode. You gained practical insights into the functionality of operations, channels, messages, and schemas. Now you're equipped to handle real-world applications that facilitates bidirectional real-time data exchange such as chatbots and live-streaming platforms.
+In this tutorial, you learned to create an AsyncAPI document for a Slackbot using WebSocket in Socket Mode. You gained practical insights into the functionality of operations, channels, messages, and schemas. Now you're equipped to handle real-world applications that facilitate bidirectional real-time data exchange, such as chatbots and live-streaming platforms.
