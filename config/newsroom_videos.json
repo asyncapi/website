@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/8xiLLyIpFpw/hqdefault.jpg",
+    "title": "Community Meeting, February 6th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1042.",
+    "videoId": "8xiLLyIpFpw"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/cb7lrq5hxuE/hqdefault.jpg",
     "title": "Community Meeting, January 23rd 2024",
     "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
@@ -22,11 +28,5 @@
     "title": "Community Meeting(12th December)",
     "description": "https://github.com/asyncapi/community/issues/979.",
     "videoId": "yOc_fI-i9C8"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/g6CPg77Lf5Q/hqdefault.jpg",
-    "title": "AsyncAPI Conf on Tour 2023 in Bangalore, India",
-    "description": "AACoT'23 Bangalore Edition live from Postman Offices in India.",
-    "videoId": "g6CPg77Lf5Q"
   }
 ]
