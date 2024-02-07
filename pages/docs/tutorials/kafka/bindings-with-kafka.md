@@ -15,18 +15,75 @@ In an AsyncAPI document, bindings can be appended to different document sections
 
 You can configure several objects using Kafka bindings. However, for the scope of this tutorial, we are focusing on three levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object), [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object) and [message bindings](https://github.com/asyncapi/bindings/tree/master/kafka#message-binding-object).
 
+Using the code snippets from the previous tutorial, where you learned [how to manage Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications](pages/docs/tutorials/kafka/managing-schemas-using-schema-registry.md), you will add configurations for server, channel, and message bindings.
 
 ## Add server bindings
 
-Server bindings provide protocol-specific configuration details for connecting and interacting with a server.
+Server bindings provide protocol-specific configuration details for connecting and interacting with a server. For server bindings, we will add three fields to configure the server bindings. 
+
+```
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+  production:
+    bindings:
+      kafka:
+        schemaRegistryUrl: '$ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp'
+        schemaRegistryVendor: 'apicurio'
+        bindingVersion: '0.4.0'
+```
 
 ## Add channel bindings
 
 Channel bindings provide protocol-specific information for a particular channel. For example, in Kafka, you can specify number of partitions or replicas for a given topic.
 
+
+```
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+    bindings:
+      kafka:
+        topic: 'UserSignedUp'
+        partitions: 10
+        replicas: 2
+        topicConfiguration:
+          cleanup.policy: ["delete", "compact"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'
+```
+
+
 ## Add message bindings
 
-Message bindings provide protocol-specific information for a specific message. Like the Kafka topic it's associated with, message key (if any), and Kafka-specific properties.
+Message bindings provide protocol-specific information for a specific message. Like the Kafka topic it's associated with, message key (if any), and Kafka-specific properties. 
+
+```
+components:
+  messages:
+    userSignedUp:
+      bindings:
+        kafka:
+            key:
+              type: string
+              enum: ['myKey']
+            schemaIdLocation: 'payload'
+            schemaIdPayloadEncoding: '4'
+            bindingVersion: '0.4.0'
+      payload:
+        schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
+        schema:
+          $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
+```
 
 ## Summary
 
