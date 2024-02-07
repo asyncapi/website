@@ -16,12 +16,15 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 Install [Docker](https://docs.docker.com/engine/install/) from the official website.
 
 ## Steps
+
+### Start Apicurio Registry
 1. Start Apicurio Registry locally using below docker command:
    
 ```
 {`docker run --env CORS_ALLOWED_ORIGINS=* -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final`}
 ```
 
+### Upload Avro Schema
 2. Once your local instance of Apicurio Registry is running, you can upload your Avro schema to it. Open new terminal window and create an Avro schema artifact using the following command:
    
 ```
@@ -55,6 +58,7 @@ Download your Avro schema by visiting the following URL:
 http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp.
 </Remember>
 
+### Replace link using JSON pointer
 3. An alternative to having the schema in a separate file as you learned in the [previous tutorial](/docs/tutorials/kafka/configure-kafka-avro) where you used the existing Avro schema in your AsyncAPI document, would be to store it in the registry. After uploading your Avro schema, remove the schema from your document, and replace it with the following:
 $ref: {url}
 Replace {url} with the url from the previous step.
