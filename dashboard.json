@@ -1,17 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFDnrNc5f0Nm0",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: improve glee command",
-      "author": "ayushnau",
-      "resourcePath": "/asyncapi/cli/pull/890",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 22.68679251119144
-    },
-    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -94,45 +83,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "I_kwDOFDnrNc5rjrK-",
-      "isPR": false,
-      "isAssigned": true,
-      "title": "Improve `new glee` command",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/cli/issues/683",
-      "repo": "asyncapi/cli",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "bounty",
-          "color": "0e8a16"
-        },
-        {
-          "name": "level/medium",
-          "color": "0e8a16"
-        },
-        {
-          "name": "bounty/2023-Q4",
-          "color": "0e8a16"
-        }
-      ],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDOB5hCo85iLvXV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "ci: added code linting",
-      "author": "Min2who",
-      "resourcePath": "/asyncapi/spec-json-schemas/pull/473",
-      "repo": "asyncapi/spec-json-schemas",
-      "labels": [],
-      "score": 15.220253203710714
-    },
-    {
       "id": "PR_kwDOBW5R_c5fbyLb",
       "isPR": true,
       "isAssigned": false,
@@ -179,7 +129,54 @@
           "color": "84b6eb"
         }
       ],
+      "score": 14.07155484871368
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
       "score": 13.497205671215161
+    },
+    {
+      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "remove puppeteer from dependencies",
+      "author": "flamewow",
+      "resourcePath": "/asyncapi/html-template/issues/256",
+      "repo": "asyncapi/html-template",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 12.635681904967385
+    },
+    {
+      "id": "I_kwDOFLhIt85bebeO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Meeting Banners Storage",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/community/issues/568",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.348507316218127
     }
   ],
   "goodFirstIssues": [
@@ -195,25 +192,6 @@
         {
           "name": "bug",
           "color": "ee0701"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3859IP7G",
-      "title": "Add example and documentation for TS mapType",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1755",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
         }
       ]
     },
@@ -422,44 +400,6 @@
       ]
     },
     {
-      "id": "I_kwDOE8Qh3856iLHJ",
-      "title": "Add Scala generator to playground",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1690",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "website",
-          "color": "57A793"
-        },
-        {
-          "name": "Scala Generator",
-          "color": "A25F2B"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo855VB2E",
-      "title": "Add code linting (eslint) as part of CI script",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/467",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "smoya",
-      "area": "ci-cd",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
       "id": "I_kwDODyzcIc54mr9C",
       "title": "Fix wrong format for Co-authored automerged commits + pagination",
       "isAssigned": false,
@@ -517,21 +457,6 @@
       "author": "princerajpoot20",
       "area": "typescript",
       "labels": []
-    },
-    {
-      "id": "I_kwDOBGu-1853mU6h",
-      "title": "Fix description of Operation Trait object",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec/issues/994",
-      "repo": "asyncapi/spec",
-      "author": "smoya",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "🤷‍♀️ Ambiguity",
-          "color": "286AFC"
-        }
-      ]
     },
     {
       "id": "I_kwDOCoBobc5zovn3",
