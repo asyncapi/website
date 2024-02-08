@@ -1,5 +1,4 @@
 import { useContext, useEffect } from 'react';
-import Head from 'next/head';
 import AppContext from '../context/AppContext';
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module';
@@ -11,8 +10,7 @@ export default function HeadComponent({
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
   rssLink = '/rss.xml',
 }) {
-  // const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:8888';
-  const url = 'https://asyncapi.com'
+  const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
 
@@ -39,7 +37,7 @@ export default function HeadComponent({
 
 
   return (
-    <Head>
+      <>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -76,6 +74,6 @@ export default function HeadComponent({
       <meta property="og:description" content={description} />
 
       <title>{title}</title>
-    </Head>
+      </>
   );
 }
