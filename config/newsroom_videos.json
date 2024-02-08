@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday February 7th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1041.",
+    "videoId": "4t4nAmDekDA"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/8xiLLyIpFpw/hqdefault.jpg",
     "title": "Community Meeting, February 6th 2024",
     "description": "https://github.com/asyncapi/community/issues/1042.",
@@ -8,7 +14,7 @@
   {
     "image_url": "https://i.ytimg.com/vi/cb7lrq5hxuE/hqdefault.jpg",
     "title": "Community Meeting, January 23rd 2024",
-    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
+    "description": "",
     "videoId": "cb7lrq5hxuE"
   },
   {
@@ -22,11 +28,5 @@
     "title": "3 Request/Reply Use Cases",
     "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
     "videoId": "-OsMet9h_dg"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/yOc_fI-i9C8/hqdefault.jpg",
-    "title": "Community Meeting(12th December)",
-    "description": "https://github.com/asyncapi/community/issues/979.",
-    "videoId": "yOc_fI-i9C8"
   }
 ]
