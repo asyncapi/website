@@ -11,7 +11,8 @@ export default function HeadComponent({
   rssTitle = 'RSS Feed for AsyncAPI Initiative Blog',
   rssLink = '/rss.xml',
 }) {
-  const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:3000';
+  // const url = process.env.NEXT_PUBLIC_DEPLOY_PRIME_URL || process.env.NEXT_PUBLIC_DEPLOY_URL || 'http://localhost:8888';
+  const url = 'https://asyncapi.com'
   const appContext = useContext(AppContext);
   const { path = '' } = appContext || {};
 
