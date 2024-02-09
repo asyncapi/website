@@ -21,7 +21,6 @@ import {
 } from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
 import DarkModeToggle from "../DarkModeToggle";
-import { useTheme } from "next-themes";
 
 const isMobile = isMobileDevice();
 const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
@@ -38,23 +37,6 @@ export default function NavBar({
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
-  const { theme, setTheme } = useTheme();
-
-  const toggleDarkMode = () => { // Function to toggle dark mode
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
-  // Define styles for light and dark themes
-  const navbarStyles = {
-    light: {
-      backgroundColor: 'white',
-      color: 'black',
-    },
-    dark: {
-      backgroundColor: 'black',
-      color: 'white',
-    },
-  };
 
   const changeLanguage = async (locale, langPicker) => {
 
@@ -121,7 +103,7 @@ export default function NavBar({
   }, [asPath]);
 
   return (
-    <div style={navbarStyles[theme]} className={`${className} z-50`}>
+    <div className={`dark:bg-slate-800 ${className} z-50`}>
     {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
     <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
       {!hideLogo && (
