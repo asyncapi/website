@@ -4,7 +4,7 @@ export default function Slack({
   className = ''
 }) {
   return (
-    <div className={`flex rounded-md border border-gray-200 overflow-hidden bg-white ${className}`}>
+    <div className={`flex rounded-md border border-gray-200 overflow-hidden dark:bg-slate-700 bg-white ${className}`}>
       <div className="hidden bg-slack p-2 w-1/5 sm:block">
         <div className="mb-1 h-2 rounded-xl bg-white bg-opacity-25 w-3/4"></div>
         <div className="mb-1 h-2 rounded-xl bg-white bg-opacity-25 w-1/3"></div>

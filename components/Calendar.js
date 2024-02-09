@@ -13,7 +13,7 @@ export default function Calendar({ className = '', size, text="text-left" }) {
   const eventsExist = eventsData.length > 0;
   return (
     <div
-      className={`rounded-md border border-gray-200 overflow-hidden bg-white p-4`}
+      className={`rounded-md border border-gray-200 overflow-hidden dark:bg-slate-700 bg-white p-4`}
     >
       <Heading level="h2" typeStyle="heading-md-semibold">
         {t("calendar.title")}
