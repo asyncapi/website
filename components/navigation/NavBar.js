@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { isMobileDevice } from '../helpers/is-mobile'
 import { useOutsideClick } from '../helpers/use-outside-click';
 import AsyncAPILogo from '../AsyncAPILogo'
+import AsyncAPILogoLight from '../AsyncAPILogoLight'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
 import LearningPanel from './LearningPanel'
@@ -21,6 +22,7 @@ import {
 } from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
 import DarkModeToggle from "../DarkModeToggle";
+import { useTheme } from "next-themes";
 
 const isMobile = isMobileDevice();
 const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
@@ -37,6 +39,7 @@ export default function NavBar({
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
+  const {theme} = useTheme();
 
   const changeLanguage = async (locale, langPicker) => {
 
@@ -109,23 +112,31 @@ export default function NavBar({
       {!hideLogo && (
         <div className="lg:w-auto lg:flex-1">
           <div className="flex" >
-            <Link href="/">
-              <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
-                <AsyncAPILogo className="h-8 w-auto sm:h-8" />
-              </a>
-            </Link>
+          { theme !== 'light' ? (
+              <Link href="/">
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
+                  <AsyncAPILogoLight className="h-8 w-auto sm:h-8" />
+                </a>
+              </Link>
+            ) : (
+              <Link href="/">
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
+                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+                </a>
+              </Link>
+            )}
           </div>
         </div>
       )}
 
       <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
         <SearchButton
-          className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+          className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 dark:focus:text-slate-400 transition duration-150 ease-in-out"
           aria-label="Open Search"
         >
           <IconLoupe />
         </SearchButton>
-        <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+        <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:focus:text-slate-400 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
           <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             <title>Menu</title>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -173,7 +184,7 @@ export default function NavBar({
 
         <div className="flex flex-row items-center justify-content">
           <SearchButton
-            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none dark:focus:text-slate-400 focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
           >
             <IconLoupe />

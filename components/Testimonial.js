@@ -24,7 +24,7 @@ export default function Testimonial({
               <img className="h-12 w-12 rounded-full" src={authorAvatar} alt={authorName} data-testid="Testimonial-img"/>
             </figure>
             <div className="ml-4 text-left">
-              <p className="text-base leading-6 font-bold text-gray-900">{authorName}</p>
+              <p className="text-base leading-6 font-bold dark:text-gray-400 text-gray-900">{authorName}</p>
               <p className="text-base leading-6 font-medium text-primary-500">{authorDescription}</p>
             </div>
           </div>

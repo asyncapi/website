@@ -16,7 +16,7 @@ export default function MenuBlocks ({
           return (
             <Link href={item.comingSoon ? '' : item.href} key={index}>
               <a data-testid="MenuBlocks-Link"
-                                className={`flex items-start p-3 -m-3 space-x-4 transition duration-150 ease-in-out rounded-lg  ${router.asPath === item.href ? 'bg-secondary-100 shadow-sm': 'hover:bg-gray-50'}`}
+                                className={`flex items-start p-3 -m-3 space-x-4 transition duration-150 ease-in-out rounded-lg  ${router.asPath === item.href ? 'bg-secondary-100 dark:bg-slate-800 shadow-sm': 'hover:bg-gray-50 dark:hover:bg-slate-600'}`}
                 target={isExternalHref ? "_blank" : undefined} 
                 rel={isExternalHref ? "noopener noreferrer" : undefined}
               >
@@ -24,10 +24,10 @@ export default function MenuBlocks ({
                   <item.icon className="h-6 w-6" />
                 </div>
                 <div className="space-y-1 whitespace-pre-line">
-                  <Paragraph typeStyle="body-md" textColor="text-gray-900" fontWeight="font-semibold">
+                  <Paragraph typeStyle="body-md" textColor="dark:text-white text-gray-900" fontWeight="font-semibold">
                     <span className={item.comingSoon && 'opacity-50'} >{ item.title }</span> { item.comingSoon && <Label text="Coming soon" /> } { item.beta && <Label text="Beta" /> }
                   </Paragraph>
-                  <Paragraph typeStyle="body-sm" className={`${item.comingSoon && 'opacity-50'}`}>
+                  <Paragraph typeStyle="body-sm" textColor="dark:text-gray-600" className={`${item.comingSoon && 'opacity-50'}`}>
                     {item.description}
                   </Paragraph>
                 </div>
