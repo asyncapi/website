@@ -12,7 +12,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
           <div
             className={`p-3 cursor-pointer border shadow-xl rounded w-full border-[#ad20e2] ${bg}`}
             data-testid="Card-small-bg">
-            <div className="p-2 rounded-xl bg-gray-100 text-center w-min text-xs flex justify-between">
+            <div className="p-2 rounded-xl bg-gray-100 text-center dark:text-black w-min text-xs flex justify-between">
               <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
             </div>
             <div className="mt-3" data-testid="Card-heading">
@@ -43,7 +43,7 @@ export default function SmallHomeCards({icon, tagline, taglineBg, type="large", 
       } ${bg}`}
     data-testid="Card-lg-bg">
       <div
-        className={`p-2 rounded-xl text-center w-min text-xs flex justify-between ${taglineBg}`}
+        className={`p-2 rounded-xl dark:text-black text-center w-min text-xs flex justify-between ${taglineBg}`}
       data-testid="Card-lg-tagline">
         <span>{icon}</span> <span className="ml-[5px]">{tagline}</span>
       </div>
