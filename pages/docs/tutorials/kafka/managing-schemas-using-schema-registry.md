@@ -1,7 +1,7 @@
 ---
 title: Managing schemas using Schema Registry
 description: A tutorial teaching how to manage schemas using Schema Registry.
-weight: 50
+weight: 250
 ---
 
 ## Introduction
