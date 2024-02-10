@@ -211,7 +211,7 @@ function Index() {
             {ambassadorList.tokens.map((token) => (
               <li
                 key={token}
-                className="mt-4 bg-white p-3 shadow-lg rounded-lg flex"
+                className="mt-4 bg-white dark:bg-slate-600 p-3 shadow-lg rounded-lg flex"
               >
                 <div>
                   <div className="bg-pink-200 rounded-full w-[30px] h-[30px] flex flex-col items-center justify-center">
@@ -220,7 +220,7 @@ function Index() {
                 </div>
                 <div className="ml-[10px]">
                   <Heading typeStyle="heading-xs">{token.title}</Heading>
-                  <p className="text-xs mt-[5px] text-slate-600">
+                  <p className="text-xs dark:text-gray-400 mt-[5px] text-slate-600">
                     {token.details}
                   </p>
                 </div>

@@ -19,7 +19,7 @@ export default function Newsroom() {
         </Heading>
         <Paragraph typeStyle="body-md" className="max-w-2xl mx-auto mt-5">
           Get a glimpse of latest news, events, and blog posts. Want to publish a blog post? We love community stories.
-          <TextLink href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
+          <TextLink className="dark:hover:text-white" href="https://github.com/asyncapi/website/issues/new?template=blog.md" target="_blank">
             Submit yours!
           </TextLink>
         </Paragraph>
@@ -34,7 +34,7 @@ export default function Newsroom() {
             Check out these articles written by community members
           </Paragraph>
           <div className="my-5" data-testid="Newsroom-Blog-Link">
-            <TextLink href="/blog" className="mt-5">
+            <TextLink href="/blog" className="mt-5 dark:hover:text-white">
               Read all blog posts
               <ArrowRight className="inline w-6" />
             </TextLink>
@@ -56,7 +56,7 @@ export default function Newsroom() {
             Read about what people are <br /> saying about AsyncAPI
           </Paragraph>
           <div className="my-5" data-testid="Newsroom-Twitter-Link">
-            <TextLink href="https://twitter.com/AsyncAPISpec" className="mt-4" target="_blank">
+            <TextLink className="dark:hover:text-white mt-4" href="https://twitter.com/AsyncAPISpec" target="_blank">
               Follow us on Twitter
               <ArrowRight className="inline w-6" />
             </TextLink>
@@ -94,7 +94,7 @@ export default function Newsroom() {
             Watch our latest videos and live streams on the AsyncAPI YouTube channel
           </Paragraph>
           <div className="my-5" data-testid="Newsroom-Youtube">
-            <TextLink href="https://www.youtube.com/c/AsyncAPI" className="mt-4" target="_blank">
+            <TextLink className="mt-4 dark:hover:text-white" href="https://www.youtube.com/c/AsyncAPI" target="_blank">
               Visit our YouTube channel
               <ArrowRight className="inline w-6" />
             </TextLink>

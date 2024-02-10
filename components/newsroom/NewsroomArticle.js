@@ -8,7 +8,7 @@ export default function NewsroomArticle() {
       { articlesData.map((article, index) => (
         <li key={ index }>
           <a
-            className="bg-white block p-6 rounded-md mb-2 shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg lg:w-full text-left"
+            className="bg-white dark:bg-slate-700 block p-6 rounded-md mb-2 shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg lg:w-full text-left"
             href={ article.url }
             target="_blank"
             rel="noopener noreferrer"
@@ -19,7 +19,7 @@ export default function NewsroomArticle() {
               <Heading
                 level="h4"
                 typeStyle="heading-xs-semibold"
-                className="mt-3"
+                className="mt-3 dark:text-gray-300"
               >
                 { article.title }
               </Heading>

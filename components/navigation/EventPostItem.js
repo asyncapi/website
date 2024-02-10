@@ -41,7 +41,7 @@ function EventPostItem({ post, className, id }) {
 
   return (
     <li key={id} className={`${className}`} data-testid="EventPostItem-main">
-      <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
+      <article className='h-full dark:bg-slate-700 rounded-lg shadow-md hover:shadow-lg'>
         <a href={post.url} target='_blank' rel='noreferrer' data-testid="EventPostItem-link">
           <img
             src={post.banner ? post.banner : defaultCover}

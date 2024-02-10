@@ -19,7 +19,7 @@ export default function Table({
           <p>There aren't any good first issues open for the given repository and area at the moment.</p>
           <ul className='list-disc pl-5 mt-3 font-[400] text-sm'>
             <li className="mb-2">Join our <a href="https://asyncapi.com/slack-invite" className="text-blue-500 underline">Slack</a> to seek help.</li>
-            <li className="mb-2">In the <span className="text-green-900 font-semibold">#11_contributing</span> channel, call out the maintainers that you want to work with. Ask them if there are any issues you could solve. You know who these people are from <span className='font-bold'>CODEOWNERS</span> file in each repo.</li>
+            <li className="mb-2">In the <span className="text-green-900 dark:text-white font-semibold">#11_contributing</span> channel, call out the maintainers that you want to work with. Ask them if there are any issues you could solve. You know who these people are from <span className='font-bold'>CODEOWNERS</span> file in each repo.</li>
             <li className="mb-2">If there is no response, you need to look for a different issue from different repository.</li>
           </ul>
         </div>
