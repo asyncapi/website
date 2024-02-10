@@ -3,7 +3,7 @@ import ToolsData from '../../config/tools.json';
 export default function CategoryDropdown({ setopenCategory }) {
 
   return (
-    <div className="absolute z-10 w-52 lg:w-56 origin-top-right h-60 overflow-y-auto rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button"
+    <div className="absolute z-10 w-52 lg:w-56 origin-top-right h-60 overflow-y-auto rounded-md dark:bg-slate-700 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button"
       data-testid="CategoryDropdown-div">
       <div className="py-1" role="none">
         { Object.keys(ToolsData).map((categoryName, index) => {

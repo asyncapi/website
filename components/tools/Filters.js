@@ -84,7 +84,7 @@ export default function Filters({ setOpenFilter }) {
 
   return (
     <ToolFilter>
-      <div className="bg-white z-20 py-4 border rounded-lg border-gray-300 shadow-md" data-testid="Filters-div">
+      <div className="bg-white dark:bg-slate-700 z-20 py-4 border rounded-lg border-gray-300 shadow-md" data-testid="Filters-div">
         <div className="flex flex-col gap-2 mx-4">
           <div className="flex gap-2 items-baseline justify-between">
             <div className="text-sm text-gray-500">
@@ -96,11 +96,11 @@ export default function Filters({ setOpenFilter }) {
           </div>
           <div className="flex gap-2" data-testid="Applied-filters">
             <div className={ twMerge(`bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${ checkPaid === "free" ? 'bg-secondary-100 border-secondary-500' : '' }`) } onClick={ () => (checkPaid === "free" ? setCheckPaid("all") : setCheckPaid("free")) }>
-              <div className='text-sm'>Open Source</div>
+              <div className='text-sm dark:text-black'>Open Source</div>
               <img src="/img/illustrations/icons/FreeIcon.svg" />
             </div>
             <div className={ `bg-gray-200 px-4 py-2 flex gap-1 rounded-md hover:bg-secondary-100 border hover:border-secondary-500 cursor-pointer ${ checkPaid === "paid" ? 'bg-secondary-100 border-secondary-500' : '' }` } onClick={ () => (checkPaid === "paid" ? setCheckPaid("all") : setCheckPaid("paid")) }>
-              <div className='text-sm'>Commercial</div>
+              <div className='text-sm dark:text-black'>Commercial</div>
               <img src="/img/illustrations/icons/PaidIcon.svg" />
             </div>
           </div>
