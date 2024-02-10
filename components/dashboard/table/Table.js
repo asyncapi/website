@@ -8,9 +8,9 @@ export default function Table({
 }) {
   return (
     <div
-      className={`bg-gray-50 lg:w-1/2 border  border-gray-200 rounded ${className}`}
+      className={`bg-gray-50 lg:w-1/2 border dark:bg-slate-700 dark:border-slate-800 border-gray-200 rounded ${className}`}
     >
-      <div className="inline-flex bg-white w-full p-5 rounded">
+      <div className="inline-flex dark:bg-slate-600 bg-white w-full p-5 rounded">
         <h2 className="font-semibold text-base w-full">{title}</h2>
       </div>
       <div className="inline-block min-w-full overflow-y-scroll">
@@ -25,7 +25,7 @@ export default function Table({
         </div>
         )
         }
-        <ul className={`grid gap-4 m-4  ${listClassName}`}>
+        <ul className={`grid gap-4 m-4 ${listClassName}`}>
           {data.map((item) => (
             <Row key={item.id} item={item} />
           ))}
