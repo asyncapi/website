@@ -125,15 +125,15 @@ export default function RoadmapPage() {
                 <div className="w-5 my-1 mr-2 bg-green-300 rounded"></div>
                 <div className="w-5 my-1 mr-2 bg-yellow-200 rounded"></div>
                 <div className="w-5 my-1 mr-2 bg-orange-200 rounded"></div>
-                <div className="mr-4">Outcome <InlineHelp text="An outcome is the result of implementing a solution and represents a specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an outcome is a Key Result." /></div>
+                <div className="mr-4 dark:text-gray-500">Outcome <InlineHelp text="An outcome is the result of implementing a solution and represents a specific milestone towards our goals and, therefore, our vision. If you're into OKRs, an outcome is a Key Result." /></div>
               </div>
               <div className="flex mb-2 justify-center">
                 <div className="w-5 my-1 mr-2 bg-blue-400 rounded"></div>
-                <div className="mr-4">Solution <InlineHelp text="A solution is an idea we have to achieve its related outcome. It may produce the outcome partially or totally." /></div>
+                <div className="mr-4 dark:text-gray-500">Solution <InlineHelp text="A solution is an idea we have to achieve its related outcome. It may produce the outcome partially or totally." /></div>
               </div>
               <div className="flex mb-2 justify-center">
                 <div className="w-5 my-1 mr-2 bg-black rounded"></div>
-                <div className="mr-4">Implementation <InlineHelp text="Related repos, issues, or pull requests implementing the solution. They may implement the solution partially or totally." /></div>
+                <div className="mr-4 dark:text-gray-500">Implementation <InlineHelp text="Related repos, issues, or pull requests implementing the solution. They may implement the solution partially or totally." /></div>
               </div>
             </div>
 

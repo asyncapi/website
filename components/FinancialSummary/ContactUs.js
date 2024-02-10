@@ -12,7 +12,7 @@ export default function ContactUs() {
                     <Heading level="h1" typeStyle="heading-lg">Interested in getting in touch?</Heading>
                     <Paragraph typeStyle="body-md" className="my-2 max-w-4xl">
                         Feel free to contact us if you need more explanation. We are happy to hop on a call and help with
-                        onboarding to the project as a sponsor. Write email to <span><TextLink className="text-violet text-base font-semibold" href="mailto:info@asyncapi.io" target='_blank'>info@asyncapi.io</TextLink></span>
+                        onboarding to the project as a sponsor. Write email to <span><TextLink className="text-violet text-base dark:hover:text-white font-semibold" href="mailto:info@asyncapi.io" target='_blank'>info@asyncapi.io</TextLink></span>
                     </Paragraph>
                     </div>
                 </div>

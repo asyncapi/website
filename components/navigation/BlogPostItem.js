@@ -30,7 +30,7 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
           <Link href={post.slug} passHref>
             <a className={`h-full flex flex-col border border-gray-200 rounded-lg shadow-md divide-y divide-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg overflow-hidden cursor-pointer`} data-testid="BlogPostItem-Link">
               <img className="h-48 w-full object-cover" src={post.cover} alt="" loading="lazy" data-testid="BlogPostItem-Img"/>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+              <div className="flex-1 bg-white dark:bg-slate-700 p-6 flex flex-col justify-between">
                 <div className="flex-1">
                   <Paragraph typeStyle="body-sm" textColor="text-indigo-500">
                     <span className={`inline-flex items-center px-3 py-0.5 rounded-full ${typeColors[0]} ${typeColors[1]}`}>
@@ -42,7 +42,7 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
                       <Heading level="h3" typeStyle="heading-sm-semibold" className="mt-2">
                         {post.title}
                       </Heading>
-                      <Paragraph typeStyle="body-sm" className="mt-3">
+                      <Paragraph typeStyle="body-sm" className="dark:text-gray-600 mt-3">
                         <TextTruncate element="span" line={4} text={post.excerpt} />
                       </Paragraph>
                     </a>
@@ -53,12 +53,12 @@ export default forwardRef(function BlogPostItem({ post, className = '', id=''}, 
                     <AuthorAvatars authors={post.authors} />
                   </div>
                   <div className="ml-3">
-                    <Heading level="h3" typeStyle="heading-xs-semibold" textColor="text-gray-900">
+                    <Heading level="h3" typeStyle="heading-xs-semibold" textColor="text-gray-900 dark:text-white">
                       <span className="hover:underline">
                         {post.authors.map((author, index) => author.link ? <a key={index} alt={author.name} href={author.link} onClick={e => { e.stopPropagation() }} target="_blank" rel="noreferrer">{author.name}</a> : author.name).reduce((prev, curr) => [prev, ' & ', curr])}
                       </span>
                     </Heading>
-                    <Paragraph typeStyle="body-sm" className="flex">
+                    <Paragraph typeStyle="body-sm" className="flex dark:text-gray-400">
                       <time dateTime={post.date}>
                         {moment(post.date).format('MMMM D, YYYY')}
                       </time>

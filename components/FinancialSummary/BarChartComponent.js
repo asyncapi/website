@@ -46,7 +46,7 @@ const categories = getUniqueCategories();
 
 const Card = ({ month, data, links }) => {
     return (
-        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
+        <div className="bg-slate-100 dark:bg-slate-700 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
             <div className="flex flex-col overflow-x-auto overflow-y-auto">
                 {data.map((item, index) => (
