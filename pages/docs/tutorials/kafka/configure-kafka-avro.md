@@ -1,24 +1,24 @@
 ---
 title: Describe Kafka message payload using Avro Schema
-description: Explore configuring AsyncAPI document for Kafka messages with Avro Schema.
-weight: 30
+description: Explore configuring an AsyncAPI document for Kafka messages with Avro Schema.
+weight: 230
 ---
 
 ## Introduction
 
 The previous tutorial on [creating an AsyncAPI document for applications consuming from Kafka](/docs/tutorials/kafka) taught you about writing an AsyncAPI document for Kafka messages using the default schema. This tutorial will teach you to write the same document using Avro Schema.
 
-While AsyncAPI schema can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. Through this tutorial, you'll learn to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
+While AsyncAPI schema can be the default choice for describing payloads, many prefer using Avro Schemas to define messages in Kafka. This tutorial teaches you to modify your existing AsyncAPI schema to add Avro schema into your document in both YAML and JSON formats.
 
-## Background Context
+## Background context
 
-[AsyncAPI](https://www.asyncapi.com/) is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. AsyncAPI schema outlines the format and content specifications that enable a consistent representation of agreements for communication between services in an Event-Driven Architecture.
+AsyncAPI is a specification for describing Event-Driven Architectures (EDAs) in a machine-readable format. AsyncAPI schema outlines the format and content specifications that enable a consistent representation of agreements for communication between services in an Event-Driven Architecture.
 
-[Avro](https://avro.apache.org/), on the other hand is an efficient binary serialization format, used to ensure schema-aware communications between the messages within Apache Kafka. With Avro Schema there is a standardized method for serializing data allowing for interoperability and schema evolution capabilities. Avro promotes data exchange among systems by offering a common schema that fosters compatibility, between different components. 
+[Avro](https://avro.apache.org/) is a sophisticated tool in Apache Kafka that handles data communication efficiently. It provides a standardized method for organizing and transmitting data, ensuring that different parts of the system can understand each other effectively. With Avro, there's a common language for messages, promoting compatibility and smooth operation between various components. It's like having a shared rulebook that helps different system parts communicate and exchange information seamlessly.
 
-## Defining message payload with Avro Schema directly in the AsyncAPI document
+## Define message payload with Avro Schema directly in AsyncAPI document
 
-Defining message schema with the default schema is already covered in the [previous tutorial](/docs/tutorials/kafka). The default choice was the AsyncAPI schemas which is a superset of JSON Schema that looked as follows, 
+Defining message schema with the default schema is already covered in the [previous Kafka tutorial](/docs/tutorials/Kafka). The default choice was the AsyncAPI schema, a JSON Schema superset. Here's an example of what the AsyncAPI schema looks like: 
 
 ```
 messages:
@@ -34,7 +34,7 @@ messages:
           description: This property describes the email of the user
 ```
 
-In this section, let's shift our focus to defining messages using Avro Schemas directly within our document. 
+Now it's time to shift your focus to defining messages using Avro Schemas directly within your document. 
 
 ```
 messages:
@@ -53,12 +53,12 @@ messages:
             type: string
 ```
 
-In the above snippet: 
+In the above code snippet: 
 - The `userSignedUp` message is defined with Avro Schema, using the specified `schemaFormat` and the `schema`.
-- Use the `schemaFormat` to specify using a MIME type, that you use Avro and what version of Avro Schema.
-- The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `userId` and `userEmail`, defining their data types as `int` and `string` respectively.
+- Use the `schemaFormat` to indicate that you're using Avro and specify the version of Avro Schema by using a MIME type.
+- The `schema` includes a `record` named `UserSignedUp` within the `com.company` namespace. It also describes two fields, `userId` and `userEmail,` defining their data types as `int` and `string`, respectively.
 
-By combining the Avro Schema discussed above into the previous tutorial, you'll have an AsyncAPI document fully equipped with Avro Schema!
+Now let's combine the above Avro Schema with the AsyncAPI document that you created in the previous tutorial. Check out below what an AsyncAPI document fully equipped with Avro Schema looks like!
 
 ```
 asyncapi: 3.0.0
@@ -102,7 +102,7 @@ components:
 
 ## Reusing existing Avro Schemas
 
-Occasionally you might find yourself with a set of existing Avro Schemas. In such cases, instead of defining these schemas again anew in your AsyncAPI document, you can integrate them seamlessly by calling out existing files.
+Occasionally, you might find yourself with an existing set of Avro Schemas. In such cases, instead of repeatedly defining these schemas in your AsyncAPI document, integrate them seamlessly by calling out existing files.
 
 Assume you have a file named `userSchema.json` that encapsulates the Avro Schema that resembles the following:
 
@@ -156,7 +156,7 @@ components:
 
 ## Summary
 
-Through this tutorial, you have smoothly progressed from the default schema to utilizing the capabilities of Avro Schema. The use of Avro Schema with AsyncAPI ensures improved interoperability and schema-aware communication in event-driven systems.  Now, you can further experiment by incorporating your business logic and experimenting with more advanced capabilities.
+In this tutorial, you smoothly updated from the default schema to utilize the capabilities of Avro Schema. The use of Avro Schema with AsyncAPI ensures improved communication in event-driven systems.  Now, you can further experiment by incorporating your business logic and experimenting with more advanced capabilities.
 
 ## Next Steps
-Now you know how to write an AsyncAPI document using Avro Schemas. Let's now proceed to learn to how use [Schema Registry with AsyncAPI](/docs/tutorials/kafka/managing-schemas-using-schema-registry). 
+Now that you know how to write an AsyncAPI document using Avro Schemas, let's learn how to use [Schema Registry with AsyncAPI](/docs/tutorials/kafka/managing-schemas-using-schema-registry). 
