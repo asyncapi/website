@@ -20,7 +20,7 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
           <div
             key={index}
             className={twMerge(
-                `hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pb-0 rounded-2xl flex gap-1 items-start`
+                `hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pb-0 pl-1.5 rounded-2xl flex align-center gap-1 items-start`
             )}
           >
             <div className="text-xs m-auto h-fit">{items}</div>
