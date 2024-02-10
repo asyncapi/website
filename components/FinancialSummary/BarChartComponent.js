@@ -15,9 +15,9 @@ const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         const data = payload[0].payload;
         return (
-            <div className="bg-opacity-90 bg-white border border-gray-300 p-2 shadow-md rounded-md">
+            <div className="bg-opacity-90 bg-white dark:bg-gray-700 border border-gray-300 p-2 shadow-md rounded-md">
                 <p className="text-14 font-bold mb-1">{data.Category}</p>
-                <p className="text-12 text-gray-900">${data.Amount.toFixed(2)}</p>
+                <p className="text-12 text-gray-900 dark:text-gray-300">${data.Amount.toFixed(2)}</p>
                 <p>Click the bar to learn more</p>
             </div>
         );
