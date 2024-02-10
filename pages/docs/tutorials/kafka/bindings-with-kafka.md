@@ -1,5 +1,5 @@
 ---
-title: Kafka specific bindings
+title: Kafka bindings
 description: Learn how to configure Kafka bindings in your AsyncAPI document.
 ---
 
