@@ -35,7 +35,7 @@ export default function BlogLayout({ post, children }) {
         <main className="mt-8 px-4 sm:px-6 lg:pr-8 lg:pl-0 lg:flex-1 lg:max-w-172 xl:max-w-172">
           <header className="pr-4 sm:pr-6 md:pr-8">
             <h1
-              className="text-4xl font-normal text-gray-800 font-sans antialiased"
+              className="text-4xl font-normal dark:text-gray-500 text-gray-800 font-sans antialiased"
               data-testid="BlogLayout-main"
             >
               {post.title}
@@ -45,7 +45,7 @@ export default function BlogLayout({ post, children }) {
                 <AuthorAvatars authors={post.authors} />
               </div>
               <div className="ml-3">
-                <p className="text-sm leading-5 font-medium text-gray-900">
+                <p className="text-sm leading-5 font-medium dark:text-gray-300 text-gray-900">
                   <span className="hover:underline">
                     {post.authors
                       .map((author, index) =>
