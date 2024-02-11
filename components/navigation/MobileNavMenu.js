@@ -10,6 +10,7 @@ import NavItemDropdown from '../icons/NavItemDropdown';
 import { useState } from 'react';
 import AsyncAPILogoLight from '../AsyncAPILogoLight';
 import { useTheme } from 'next-themes';
+import DarkModeToggle from '../DarkModeToggle';
 
 export default function MobileNavMenu({ onClickClose = () => { } }) {
   const [open, setOpen] = useState();
@@ -28,17 +29,9 @@ export default function MobileNavMenu({ onClickClose = () => { } }) {
           <div className="pt-5 pb-6 px-5 space-y-6">
             <div className="flex items-center justify-between">
               {theme === 'light' ? (
-                <Link href="/" className="flex">
-                  <a className="cursor-pointer" data-testid="MobileNav-Logo">
-                    <AsyncAPILogo className="h-8 w-auto" />
-                  </a>
-                </Link>
+              <DarkModeToggle/>
               ) : (
-                <Link href="/" className="flex">
-                  <a className="cursor-pointer" data-testid="MobileNav-Logo">
-                    <AsyncAPILogoLight className="h-8 w-auto" />
-                  </a>
-                </Link>
+              <DarkModeToggle/>
               )}
               <div className="flex flex-row items-center justify-content -mr-2" data-testid="MobileNav-button">
                 <SearchButton
