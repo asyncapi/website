@@ -41,6 +41,7 @@
     "@floating-ui/react-dom-interactions": "^0.1.1",
     "@heroicons/react": "^1.0.5",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@mdx-js/loader": "1.6.4",
     "@mdx-js/react": "^1.6.4",
     "@next/mdx": "^9.4.2",
     "@octokit/graphql": "^4.6.0",
