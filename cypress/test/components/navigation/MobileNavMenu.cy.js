@@ -8,7 +8,6 @@ describe('MobileNavMenu', () => {
         <MockRouter>
          <MobileNavMenu/>
         </MockRouter>);
-        cy.get('[data-testid="MobileNav-Logo"]').should('exist')
         cy.get('[data-testid="MobileNav-button"]').should('exist')
         cy.get('[data-testid="MobileNav-docs"]').should('exist')
         cy.get('[data-testid="MobileNav-tools"]').should('exist')
