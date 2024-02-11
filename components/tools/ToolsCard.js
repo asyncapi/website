@@ -32,7 +32,7 @@ export default function ToolsCard({ toolData }) {
   })
 
   return (
-    <div className="border shadow-md h-auto flex flex-col rounded-lg">
+    <div className="dark:bg-gray-900 border shadow-md h-auto flex flex-col rounded-lg">
       <div className="pt-8 px-6 mb-6">
         <div className="flex flex-col gap-2">
           <div className="flex gap-4 justify-between w-full">
@@ -48,7 +48,7 @@ export default function ToolsCard({ toolData }) {
           </div>
           <div className='relative'>
             <Paragraph typeStyle="body-sm">
-              <div ref={descriptionRef} className={`w-full ${showMoreDescription ? 'cursor-pointer' : ''}`} onMouseEnter={() => (setTimeout(() => { if (showMoreDescription) setShowDescription(true) }, 500))}>
+              <div ref={descriptionRef} className={`dark:text-gray-600 w-full ${showMoreDescription ? 'cursor-pointer' : ''}`} onMouseEnter={() => (setTimeout(() => { if (showMoreDescription) setShowDescription(true) }, 500))}>
                 <TextTruncate
                   element="span"
                   line={3}
@@ -92,7 +92,7 @@ export default function ToolsCard({ toolData }) {
           </div>}
         </div> :
           <div className="w-full relative p-8 text-center h-full text-gray-700">
-            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'> No further details provided </div>
+            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:text-gray-500'> No further details provided </div>
           </div>}
       </div>
       {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
@@ -100,32 +100,32 @@ export default function ToolsCard({ toolData }) {
         <div className="flex">
           {toolData.links.repoUrl && <>
             {onGit ?
-              <a className="w-full text-center border-x py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-repoUrl">
+              <a className="dark:hover:bg-gray-700 w-full text-center border-x py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-repoUrl">
                 <div className="m-auto flex w-fit gap-2">
                   <img src="/img/logos/github-black.svg" className="w-5" />
-                  <div className="text-gray-700 text-sm">View Github</div>
+                  <div className="dark:text-gray-500 text-gray-700 text-sm">View Github</div>
                 </div>
               </a> :
-              <a className="w-full text-center border-x border-gray-200 py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
+              <a className="dark:hover:bg-gray-700 w-full text-center border-x border-gray-200 py-6 px-1 hover:bg-gray-200 cursor-pointer" href={toolData.links.repoUrl} target='_blank' rel='noreferrer'>
                 <div className="m-auto flex w-fit gap-2">
-                  <div className="text-gray-700 text-sm">View Source Code</div>
+                  <div className="dark:text-gray-500 text-gray-700 text-sm">View Source Code</div>
                 </div>
               </a>
             }
           </>}
           {toolData.links.websiteUrl && (
-            <a className="w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-websiteUrl">
+            <a className="dark:hover:bg-zinc-700 w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.websiteUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-websiteUrl">
               <div className="m-auto flex w-fit gap-2">
                 <img src="/img/illustrations/icons/share.svg" className="w-5" />
-                <div className="text-gray-700 text-sm">Visit Website</div>
+                <div className="dark:text-gray-500 text-gray-700 text-sm">Visit Website</div>
               </div>
             </a>
           )}
           {toolData.links.docsUrl && (
-            <a className="w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.docsUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-docsUrl">
+            <a className="dark:hover:bg-gray-700 w-full text-center py-6 px-1 hover:bg-gray-200 border-x border-gray-200 cursor-pointer" href={toolData.links.docsUrl} target='_blank' rel='noreferrer' data-testid="ToolsCard-docsUrl">
               <div className="m-auto flex w-fit gap-2">
                 <img src="/img/illustrations/icons/docs-icon.svg" className="w-5" />
-                <div className="text-gray-700 text-sm">Visit Docs</div>
+                <div className="dark:text-gray-500 text-gray-700 text-sm">Visit Docs</div>
               </div>
             </a>
           )}
