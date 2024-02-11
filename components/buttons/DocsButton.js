@@ -3,11 +3,11 @@ import Link from 'next/link';
 export default function DocsButton({ post, className='' }) {
   return (
     <div className={`flex flex-row gap-4 mb-4 h-full ${className}`}>
-      <div className="w-1/2 h-auto">
+      <div className="w-1/2 h-auto dark:bg-slate-500">
         { post?.prevPage && <Link href={post.prevPage.href} passHref>
             <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-left cursor-pointer">
-              <div className="text-secondary-500" data-testid="DocsButton-Prevdiv">
+              <div className="text-secondary-500 dark:text-gray-200" data-testid="DocsButton-Prevdiv">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 inline mr-1"
@@ -22,7 +22,7 @@ export default function DocsButton({ post, className='' }) {
                     d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
                   />
                 </svg>
-                <div className="my-auto font-bold text-sm inline uppercase">
+                <div className="my-auto dark:text-gray-200 font-bold text-sm inline uppercase">
                   Go Back
                 </div>
               </div>
@@ -32,12 +32,12 @@ export default function DocsButton({ post, className='' }) {
           </Link>
         }
       </div>
-      <div className="w-1/2 h-auto">
+      <div className="w-1/2 h-auto dark:bg-slate-500">
         { post?.nextPage && <Link href={post.nextPage.href} className='h-auto' passHref>
             <a>
             <div className="p-4 rounded shadow-md border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 text-center lg:text-right cursor-pointer h-full">
-              <div className="text-secondary-500" data-testid="DocsButton-Nextdiv">
-                <div className="font-bold my-auto text-sm inline uppercase">
+              <div className="text-secondary-500 dark:text-gray-200" data-testid="DocsButton-Nextdiv">
+                <div className="font-bold dark:text-gray-200 my-auto text-sm inline uppercase">
                   Up Next
                 </div>
                 <svg

@@ -18,7 +18,7 @@ export default function DocsMobileMenu({
           ></div>
         </div>
 
-        <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
+        <div className="relative flex-1 flex flex-col max-w-xs w-full dark:bg-slate-800 bg-white">
           <div className="absolute top-0 right-0 -mr-14 p-1">
             <button
               onClick={ onClickClose }

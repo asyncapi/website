@@ -29,7 +29,7 @@ export default function GenericPostLayout({ post, children }) {
         >
           <header className="pr-4 sm:pr-6 md:pr-8">
             <h1
-              className="text-4xl font-normal text-gray-800 font-sans antialiased"
+              className="text-4xl font-normal  text-gray-800 font-sans antialiased"
               data-testid="GenericPostLayout-Heading"
             >
               {post.title}
