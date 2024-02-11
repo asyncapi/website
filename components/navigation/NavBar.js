@@ -224,7 +224,7 @@ export default function NavBar({
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=""
+              className="dark:bg-slate-500 dark:text-white dark:border-slate-500"
               selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
             />
 
