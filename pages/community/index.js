@@ -79,6 +79,7 @@ function CommunityIndexPage() {
               heading="Never Get Left Behind"
               description="Do you want to get the latest news with recent activities happening in the community?"
               link="/community/newsroom"
+              bg="dark:bg-zinc-500"
             />
           </div>
           <div className="mt-10 md:mt-0" data-testid="CommunityIndex-Toolings-Card">
@@ -89,7 +90,7 @@ function CommunityIndexPage() {
               icon="🧰"
               heading="Check out our collection of Toolings"
               description="Discover various AsyncAPI tools to optimize your journey! These tools are made by the community, for the community."
-              bg="bg-pink-200"
+              bg="bg-pink-200 dark:bg-pink-400"
               link="/tools"
             />
           </div>
@@ -144,6 +145,7 @@ function CommunityIndexPage() {
             heading="2024 AsyncAPI Community Goals"
             description="Help us improve our 2024 AsyncAPI community building and maintenance goals."
             link="https://github.com/orgs/asyncapi/discussions/948"
+            bg="dark:bg-slate-500"
           />
         </div>
         <div className="m-5" data-testid="CommunityCards-TSC">
@@ -154,6 +156,7 @@ function CommunityIndexPage() {
             heading="Meet Folks Redefining the Initiative"
             description="Learn how to become a Technical Steering Committee (TSC) member and see our current members."
             link="/community/tsc"
+            bg="dark:bg-slate-500"
           />
         </div>
       </div>
@@ -179,6 +182,7 @@ function CommunityIndexPage() {
             heading="Track Initiative Spending with Budget Analysis"
             description="Explore our transparent finance section for a detailed analysis of our project's budget. See how we track expenses and gain insights into funds allocation."
             link="/finance"
+            bg="dark:bg-slate-500"
           />
         </div>
         <div className="m-5">
@@ -189,7 +193,7 @@ function CommunityIndexPage() {
             heading="Swags and Goodies"
             description="Explore our swag collection of AsyncAPI-themed t-shirts and goodies."
             link="https://www.store.asyncapi.com/"
-            bg="bg-primary-200"
+            bg="bg-primary-200 dark:bg-pink-400"
           />
         </div>
       </div>

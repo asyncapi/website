@@ -59,7 +59,7 @@ function Eventindex() {
             </Heading>
           </div>
         </div>
-        <hr className="mt-20 border-dotted border-t-2 border-black " />
+        <hr className="dark:border-gray-400 mt-20 border-dotted border-t-2 border-black " />
       </div>
       <div className="mt-24 w-full h-auto sm:h-[400px]">
         <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
@@ -131,7 +131,7 @@ function Eventindex() {
                 name="Community Meeting"
                 purpose="This is an open community meeting to discuss important topics around the AsyncAPI Initiative regularly. We organize it every two weeks in different time zones."
                 host="Azeez Elegbede"
-                bg="gray-100"
+                bg="dark:bg-gray-800 gray-100"
                 hostProfile="https://github.com/AceTheCreator"
                 youtube="https://www.youtube.com/playlist?list=PLbi1gRlP7pijUwZJErzyYf_Rc-PWu4lXS"
               />
@@ -151,7 +151,7 @@ function Eventindex() {
           <div className="">
             <Meeting
               name="Thinking Out Loud"
-              bg="gray-100"
+              bg="dark:bg-gray-800 gray-100"
               purpose="This is a live stream about diverse topics related to the AsyncAPI Initiative and Event-Driven Architectures. It is always an open discussion between a host and a guest."
               host="Fran Mendez"
               hostProfile="https://github.com/fmvilas"
@@ -170,7 +170,7 @@ function Eventindex() {
           <div className="">
             <Meeting
               name="Ad Hoc Meeting"
-              bg="gray-100"
+              bg="dark:bg-gray-800 gray-100"
               purpose="Do you want to discuss something with the community and our other meeting formats don't apply? Use this meeting to schedule ad hoc topics with the community."
               host="Any of the hosts"
               youtube="https://www.youtube.com/asyncapi"

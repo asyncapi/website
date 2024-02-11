@@ -81,7 +81,7 @@ Join us!
 
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3"></div>
+          <div className="dark:bg-slate-800 bg-white h-1/3 sm:h-2/3"></div>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
@@ -155,7 +155,7 @@ Join us!
               </button>
             ) : (
               <div className="mt-8 flex flex-col items-stretch sm:rounded-md text-left">
-                <ul className="bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
+                <ul className="dark:bg-slate-800 bg-white shadow overflow-hidden divide-y divide-gray-200 sm:w-2/3 sm:self-center">
                   {closedJobPosts.map((post, index) => (
                     <JobPostItem key={index} job={post} />
                   ))}

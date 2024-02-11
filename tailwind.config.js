@@ -80,6 +80,7 @@ module.exports = {
     './components/**/*.{js,jsx}',
     './config/tools.json',
   ],
+  darkMode:"class",
   theme: {
     fontWeight: {
       'extra-light': 200,
