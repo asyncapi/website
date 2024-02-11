@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { isMobileDevice } from '../helpers/is-mobile'
 import { useOutsideClick } from '../helpers/use-outside-click';
 import AsyncAPILogo from '../AsyncAPILogo'
+import AsyncAPILogoLight from '../AsyncAPILogoLight'
 import NavItem from './NavItem'
 import ToolsPanel from './ToolsPanel'
 import LearningPanel from './LearningPanel'
@@ -21,6 +22,8 @@ import {
 } from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
 import i18nPaths from "../../lib/i18nPaths";
+import DarkModeToggle from "../DarkModeToggle";
+import { useTheme } from "next-themes";
 
 const isMobile = isMobileDevice();
 
@@ -33,6 +36,7 @@ export default function NavBar({
   const [open, setOpen] = useState();
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
+  const {theme} = useTheme();
 
   /**
  * Retrieves unique language options based on the current path and i18nPaths configuration.
@@ -130,29 +134,37 @@ export default function NavBar({
   }, [asPath]);
 
   return (
-    <div className={`bg-white ${className} z-50`}>
+    <div className={`bg-white dark:bg-slate-800 ${className} z-50`}>
       {/* <a href="#main-content" className="block md:inline-block absolute transform -translate-y-20 focus:translate-y-0 bg-gray-100 text-gray-700 p-5 text-md font-semibold" alt="Skip to main content">Skip to main content</a> */}
       <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
         {!hideLogo && (
           <div className="lg:w-auto lg:flex-1">
             <div className="flex" >
+            { theme !== 'light' ? (
+              <Link href="/">
+                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
+                  <AsyncAPILogoLight className="h-8 w-auto sm:h-8" />
+                </a>
+              </Link>
+            ) : (
               <Link href="/">
                 <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
                   <AsyncAPILogo className="h-8 w-auto sm:h-8" />
                 </a>
               </Link>
+            )}
             </div>
           </div>
         )}
 
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
           <SearchButton
-            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            className="dark:hover:bg-gray-600 dark:focus:text-slate-900 flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
           >
             <IconLoupe />
           </SearchButton>
-          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+          <button onClick={() => setMobileMenuOpen(true)} type="button" className="dark:focus:text-slate-400 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
               <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -198,9 +210,9 @@ export default function NavBar({
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <div className="flex flex-row items-center justify-content">
+          <div className="flex flex-row items-center space-x-4 justify-content">
             <SearchButton
-              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+              className="flex dark:focus:text-slate-400 items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
               aria-label="Open Search"
             >
               <IconLoupe />
@@ -217,6 +229,7 @@ export default function NavBar({
             />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
+            <DarkModeToggle />
           </div>
         </nav>
 

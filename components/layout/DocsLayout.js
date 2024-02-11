@@ -75,7 +75,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
       <StickyNavbar>
         <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
       </StickyNavbar>
-      <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
+      <div className="dark:bg-slate-800 bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         {showMenu && (
           <DocsMobileMenu
             onClickClose={() => setShowMenu(false)}
@@ -89,7 +89,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             className="hidden lg:flex lg:flex-shrink-0"
             data-testid="DocsLayout-main"
           >
-            <div className="flex flex-col w-72 border-r border-gray-200 bg-white py-2">
+            <div className="dark:bg-slate-800 flex flex-col w-72 border-r border-gray-200 bg-white py-2">
               <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
                 <SearchButton
                   className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"
@@ -111,7 +111,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
                   )}
                 </SearchButton>
 
-                <nav className="flex-1 bg-white">
+                <nav className="dark:bg-slate-800 flex-1 bg-white">
                   <ul>
                     {Object.values(navigation).map((navItem) => (
                       <DocsNav
