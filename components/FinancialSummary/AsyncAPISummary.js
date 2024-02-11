@@ -10,7 +10,7 @@ export default function AsyncAPISummary() {
                     <Heading level="h2" className="text-5xl text-center my-3 mx-3">
                         AsyncAPI Financial Summary
                     </Heading>
-                    <Paragraph typeStyle="body-md" className="my-1 max-w-4xl text-darkGunMetal">
+                    <Paragraph typeStyle="body-md" className="dark:text-gray-600 my-1 max-w-4xl text-darkGunMetal">
                         To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
                         the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
                             Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
@@ -31,7 +31,7 @@ export default function AsyncAPISummary() {
                 </Heading>
             </div>
             <div className="text-center my-4 text-base max-width text-darkGunMetal">
-                <Paragraph typeStyle="body-sm" className="my-4">
+                <Paragraph typeStyle="body-sm" className="dark:text-gray-600 my-4">
                     The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br className="hidden lg:inline-block" />there are alternative options,
                     they may involve greater effort. Contribute <br className="hidden lg:inline-block" />monetarily using the following channels.
                 </Paragraph>
