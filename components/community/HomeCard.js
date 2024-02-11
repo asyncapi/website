@@ -4,7 +4,7 @@ import Button from '../buttons/Button';
 
 export default function HomeCards({headline, title, description, btnText, link, className}) {
   return (
-    <div className="z-40 mt-20 bg-white w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
+    <div className="z-40 mt-20 bg-white dark:bg-slate-700 w-full md:h-130 rounded-lg shadow-xl md:flex md:justify-between">
       <div className="p-10 flex justify-between w-full md:w-2/5 h-auto flex-col text-center md:text-left">
         <div  data-testid="HomeCard-main">
           <Heading
