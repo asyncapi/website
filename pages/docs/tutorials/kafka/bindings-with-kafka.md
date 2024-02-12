@@ -1,6 +1,7 @@
 ---
 title: Kafka bindings
 description: Learn how to configure Kafka bindings in your AsyncAPI document.
+weight: 300
 ---
 
 ## Introduction
