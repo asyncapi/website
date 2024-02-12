@@ -18,7 +18,7 @@ export default function ExpenseBreakdown() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8 mx-3">
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
                             <a href='https://www.asyncapi.com/blog/beyond-boundaries' target= '_blank'>
                                 <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
@@ -30,7 +30,7 @@ export default function ExpenseBreakdown() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
                             <a href='https://github.com/orgs/asyncapi/discussions/541' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
@@ -42,8 +42,8 @@ export default function ExpenseBreakdown() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
-                            <a href='https://www.asyncapi.com/community/events' target='_blank'>
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
+                            <a href='https://github.com/orgs/asyncapi/discussions/categories/asyncapi-conf-2022-organization' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Events.webp" alt="Events" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -54,7 +54,7 @@ export default function ExpenseBreakdown() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
                             <a href='https://www.store.asyncapi.com/collections/all-products' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
@@ -66,8 +66,8 @@ export default function ExpenseBreakdown() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
-                            <a href='https://opencollective.com' target='_blank'>
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
+                            <a href='https://github.com/orgs/asyncapi/discussions/515' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Hiring.webp" alt="Hiring" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -78,8 +78,8 @@ export default function ExpenseBreakdown() {
                             </a>
                         </div>
 
-                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center">
-                            <a href='https://zoom.us/pricing' target='_blank'>
+                        <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
+                            <a href='https://github.com/orgs/asyncapi/discussions/295' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Services.webp" alt="Services" className="w-1/5 h-auto object-cover rounded-md m-1" />
