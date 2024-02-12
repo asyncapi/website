@@ -49,6 +49,15 @@ abbr[title] {
   animation: GradientAnimation 50s ease infinite alternate;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
 @keyframes GradientAnimation {
   0% {
     background-position: 0% 50%
