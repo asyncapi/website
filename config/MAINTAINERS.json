@@ -71,6 +71,18 @@
         ]
     },
     {
+        "name": "Ashish Padhy",
+        "github": "Shurtu-gal",
+        "linkedin": "ashish-padhy3023",
+        "slack": "U0572R8J927",
+        "twitter": "Shurtu_Gal",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "github-action-for-cli"
+        ]
+    },
+    {
         "name": "Cameron Rushton",
         "github": "cameronrushton",
         "slack": "U01DVKKAV5K",
@@ -360,6 +372,19 @@
         "isTscMember": true,
         "repos": [
             "bindings"
+        ]
+    },
+    {
+        "name": "Samir AMZANI",
+        "github": "Amzani",
+        "slack": "U01N6AW5V5G",
+        "twitter": "amzani",
+        "linkedin": "amzani",
+        "availableForHire": false,
+        "company": "Postman",
+        "isTscMember": true,
+        "repos": [
+            "studio"
         ]
     },
     {
@@ -659,6 +684,18 @@
         "repos": [
             "website",
             "community"
+        ]
+    },
+    {
+        "name": "Ashmit JaiSarita Gupta",
+        "github": "devilkiller-ag",
+        "linkedin": "jaisarita",
+        "twitter": "jaisarita",
+        "slack": "U062LA14E58",
+        "availableForHire": true,
+        "isTscMember": true,
+        "repos": [
+            "modelina"
         ]
     }
 ]
