@@ -12,6 +12,17 @@
       "score": 24.984189221185513
     },
     {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -21,17 +32,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 19.815046623698855
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -107,7 +107,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 14.358729437462937
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -124,37 +124,6 @@
         }
       ],
       "score": 13.497205671215161
-    },
-    {
-      "id": "PR_kwDOBW5R_c5bb9gi",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: enable i18n support for AsyncAPI website",
-      "author": "anshgoyalevil",
-      "resourcePath": "/asyncapi/website/pull/2184",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 12.922856493716644
-    },
-    {
-      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "remove puppeteer from dependencies",
-      "author": "flamewow",
-      "resourcePath": "/asyncapi/html-template/issues/256",
-      "repo": "asyncapi/html-template",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 12.635681904967385
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -177,6 +146,37 @@
       "repo": "asyncapi/glee",
       "labels": [],
       "score": 12.348507316218127
+    },
+    {
+      "id": "I_kwDOFLhIt85xI2wH",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measure AsyncAPI Adoption",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/879",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.061332727468868
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
