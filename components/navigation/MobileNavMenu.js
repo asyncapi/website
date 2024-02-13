@@ -28,11 +28,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }) {
         <div className="rounded-lg shadow-xs dark:bg-slate-800 bg-white divide-y-2 divide-gray-50 dark:divide-slate-700">
           <div className="pt-5 pb-6 px-5 space-y-6">
             <div className="flex items-center justify-between">
-            {theme === 'light' ? (
               <DarkModeToggle/>
-              ) : (
-              <DarkModeToggle/>
-              )}
               <div className="flex flex-row items-center justify-content -mr-2" data-testid="MobileNav-button">
                 <SearchButton
                   className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
