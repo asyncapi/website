@@ -1,6 +1,28 @@
 {
   "hotDiscussions": [
     {
+      "id": "PR_kwDOBW5R_c5f0CJh",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for managing schemas with Schema Registry",
+      "author": "Arya-Gupta",
+      "resourcePath": "/asyncapi/website/pull/2331",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 24.984189221185513
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 21.25091956744515
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -30,17 +52,6 @@
         }
       ],
       "score": 19.527872034949596
-    },
-    {
-      "id": "PR_kwDOBW5R_c5f0CJh",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for managing schemas with Schema Registry",
-      "author": "Arya-Gupta",
-      "resourcePath": "/asyncapi/website/pull/2331",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 18.37917367995256
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -83,39 +94,6 @@
       "score": 16.08177696995849
     },
     {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dT1NT",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: using AsyncAPI with Kafka",
-      "author": "J0SAL",
-      "resourcePath": "/asyncapi/website/pull/2252",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dJ7hJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for WebSockets with AsyncAPI",
-      "author": "VaishnaviNandakumar",
-      "resourcePath": "/asyncapi/website/pull/2245",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.358729437462937
-    },
-    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -129,7 +107,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 14.07155484871368
+      "score": 14.645904026212197
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -148,26 +126,6 @@
       "score": 13.497205671215161
     },
     {
-      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "remove puppeteer from dependencies",
-      "author": "flamewow",
-      "resourcePath": "/asyncapi/html-template/issues/256",
-      "repo": "asyncapi/html-template",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 12.635681904967385
-    },
-    {
       "id": "I_kwDOFLhIt85bebeO",
       "isPR": false,
       "isAssigned": false,
@@ -177,21 +135,82 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 12.348507316218127
+    },
+    {
+      "id": "PR_kwDOFi_gUM5iqowR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: adds try/catch block to increase resilience",
+      "author": "ankur0904",
+      "resourcePath": "/asyncapi/glee/pull/666",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 12.348507316218127
+    },
+    {
+      "id": "I_kwDOFLhIt85xI2wH",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measure AsyncAPI Adoption",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/879",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.061332727468868
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c59bL0s",
-      "title": "Regarding links redirection",
+      "id": "I_kwDOE8Qh385-gvCP",
+      "title": "Add \"generated-code\" XmlDoc and `[GeneratedCode]` attribute to C# models.",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2601",
-      "repo": "asyncapi/website",
-      "author": "sagarkori143",
-      "area": "javascript",
+      "resourcePath": "/asyncapi/modelina/issues/1784",
+      "repo": "asyncapi/modelina",
+      "author": "RowlandBanks",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385-cgLR",
+      "title": "Incorrect C# code generated for Enum in System.Text.Json JsonConverter.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1783",
+      "repo": "asyncapi/modelina",
+      "author": "RowlandBanks",
+      "area": "typescript",
       "labels": [
         {
           "name": "bug",
-          "color": "ee0701"
+          "color": "d73a4a"
         }
       ]
     },
@@ -349,7 +368,7 @@
     {
       "id": "I_kwDOE8Qh3857KkLT",
       "title": "Introduce Modelina CLI that can be extended by AsyncAPI CLI",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/modelina/issues/1724",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
@@ -523,6 +542,10 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
