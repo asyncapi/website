@@ -25,6 +25,9 @@ module.exports = withMDX({
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    unoptimized: true, // Disable Image Optimization
+  },
   webpack(config, { isServer }) {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
