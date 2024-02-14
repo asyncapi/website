@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router';
 import DocsLayout from './DocsLayout';
 import BlogLayout from './BlogLayout';
-import JobsLayout from './JobsLayout';
 import GenericPostLayout from './GenericPostLayout';
 import BlogContext from '../../context/BlogContext';
-import JobsContext from '../../context/JobsContext';
 import { getPostBySlug, getAllPosts, getDocBySlug } from '../../lib/api';
 
 export default function Layout({ children }) {
@@ -38,15 +36,6 @@ export default function Layout({ children }) {
       </BlogContext.Provider>
       </div>
     );
-  } else if (pathname === '/jobs') {
-    return (
-      <JobsContext.Provider value={{ navItems: posts['jobs'] }}>
-        {children}
-      </JobsContext.Provider>
-    );
-  } else if (pathname.startsWith('/jobs/')) {
-    const post = getPostBySlug(pathname, 'jobs');
-    return <div data-testid="Jobs-main-container"><JobsLayout post={post}>{children}</JobsLayout></div>;
   } else {
     const post = getPostBySlug(pathname);
     if (post) {

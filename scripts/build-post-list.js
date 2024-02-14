@@ -12,7 +12,6 @@ const result = {
   docs: [],
   blog: [], 
   about: [],
-  jobs: [],
   docsTree: {}
 }
 const releaseNotes = []
@@ -22,7 +21,6 @@ const postDirectories = [
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/docs`, '/docs'],
   [`${basePath}/about`, '/about'],
-  [`${basePath}/jobs`, '/jobs'],
   [`${basePath}/community`, '/community'],
 ];
 
@@ -33,8 +31,6 @@ const addItem = (details) => {
     result["blog"].push(details)
   else if(details.slug.startsWith('/about'))
     result["about"].push(details)
-  else if(details.slug.startsWith('/jobs'))
-    result["jobs"].push(details)
   else {}
 }
 

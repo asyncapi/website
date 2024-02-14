@@ -28,19 +28,6 @@ export const mockData = [
 
 ];
 
-export const job = {
-    title: 'Front-end Developer',
-    company: {
-        name: 'Cypress',
-        logoUrl: 'https://cypress.io/logo.png'
-    },
-    employmentType: 'full-time',
-    category: 'engineering',
-    location: 'remote',
-    region: 'any',
-    closingOn: '2023-08-31',
-    slug: '/jobs/front-end-developer'
-}
 
 export const Docsitem = {
     item: {

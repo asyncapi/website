@@ -52,10 +52,6 @@ export const initiativeLinks = [
     url: "https://www.store.asyncapi.com/",
   },
   {
-    label: "Jobs",
-    url: "/jobs",
-  },
-  {
     label: "Brand",
     url: "https://github.com/asyncapi/brand/blob/master/brand-guidelines/README.md",
   },
