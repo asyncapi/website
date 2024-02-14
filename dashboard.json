@@ -20,7 +20,27 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 21.25091956744515
+      "score": 21.538094156194408
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 20.102221212448114
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -134,7 +154,7 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 12.348507316218127
+      "score": 12.635681904967385
     },
     {
       "id": "PR_kwDOFi_gUM5iqowR",
@@ -157,26 +177,6 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 12.061332727468868
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
@@ -196,21 +196,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385-cgLR",
-      "title": "Incorrect C# code generated for Enum in System.Text.Json JsonConverter.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1783",
-      "repo": "asyncapi/modelina",
-      "author": "RowlandBanks",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
