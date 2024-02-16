@@ -20,7 +20,7 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 Start the Apicurio Registry locally with the following docker command:
    
 ```
-{`docker run --env CORS_ALLOWED_ORIGINS=* -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final`}
+docker run --env CORS_ALLOWED_ORIGINS='*' -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final
 ```
 
 ### Upload Avro Schema
