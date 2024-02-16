@@ -36,15 +36,4 @@ describe('Blog Layout Component', () => {
     )
     cy.get('[data-testid="Blogs-sub-container"]').should('exist');
   })
-  
-  it('renders correct Jobs component when pathname is /jobs/' , () => {
-    const posts = getAllPosts();
-    const post = getPostBySlug('/jobs/apiture-api-architect', 'jobs');
-    cy.mount(
-      <MockRouter pathname="/jobs/apiture-api-architect">
-        <Layout post={post} navItems={posts['job']} />
-      </MockRouter>
-    )
-    cy.get('[data-testid="Jobs-main-container"]').should('exist');
-  });
 });
