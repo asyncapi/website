@@ -12,12 +12,6 @@ async function start() {
     'AsyncAPI Initiative Blog',
     'rss.xml'
   );
-  rssFeed(
-    'jobs',
-    'AsyncAPI Initiative Jobs RSS Feed',
-    'AsyncAPI Initiative Jobs Board',
-    'jobs/rss.xml'
-  );
   await buildCaseStudiesList();
   await buildAdoptersList();
   await buildFinanceInfoList();
