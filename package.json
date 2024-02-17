@@ -4,8 +4,8 @@
   "description": "AsyncAPI website",
   "private": true,
   "scripts": {
-    "dev": "node scripts/index.js && next -p 3000",
-    "build": "node scripts/index.js && next build",
+    "dev": "next -p 3000",
+    "build": "next build",
     "write:blog": "node ./scripts/compose.js",
     "start": "next start",
     "export": "next export",
@@ -14,7 +14,9 @@
     "generate:meetings": "node scripts/build-meetings.js",
     "generate:dashboard": "node scripts/dashboard/build-dashboard.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
-    "generate:tools": "node scripts/build-tools.js"
+    "generate:tools": "node scripts/build-tools.js",
+    "previous-dev": "node scripts/index.js && next -p 3000",
+    "previous-build": ""
   },
   "repository": {
     "type": "git",
