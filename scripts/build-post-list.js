@@ -20,8 +20,7 @@ const postDirectories = [
   // order of these directories is important, as the blog should come before docs, to create a list of available release notes, which will later be used to release-note-link for spec docs
   [`${basePath}/blog`, '/blog'],
   [`${basePath}/docs`, '/docs'],
-  [`${basePath}/about`, '/about'],
-  [`${basePath}/community`, '/community'],
+  [`${basePath}/about`, '/about']
 ];
 
 const addItem = (details) => {
