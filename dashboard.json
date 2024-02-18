@@ -54,26 +54,6 @@
       "score": 20.102221212448114
     },
     {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 19.527872034949596
-    },
-    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -96,22 +76,6 @@
         }
       ],
       "score": 17.804824502454043
-    },
-    {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.08177696995849
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
@@ -177,6 +141,28 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 12.635681904967385
+    },
+    {
+      "id": "PR_kwDOFi_gUM5iqowR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: adds try/catch block to increase resilience",
+      "author": "ankur0904",
+      "resourcePath": "/asyncapi/glee/pull/666",
+      "repo": "asyncapi/glee",
+      "labels": [],
+      "score": 12.348507316218127
+    },
+    {
+      "id": "I_kwDOFLhIt85xI2wH",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measure AsyncAPI Adoption",
+      "author": "fmvilas",
+      "resourcePath": "/asyncapi/community/issues/879",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 12.061332727468868
     }
   ],
   "goodFirstIssues": [
