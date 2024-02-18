@@ -14,10 +14,32 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack(config, { isServer }) {
+  webpack(config, { isServer, defaultLoaders }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+
+    // This is the new part
+    config.module.rules.push({
+      test: /\.md$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            remarkPlugins: [
+              frontmatter,
+              gemoji,
+              headingId,
+              slug,
+              images,
+              a11yEmoji,
+            ],
+          },
+        },
+      ],
+    });
+
     return config;
   },
 };
