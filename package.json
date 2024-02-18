@@ -61,7 +61,6 @@
     "gray-matter": "^4.0.3",
     "i18next": "^23.8.2",
     "jgexml": "^0.4.4",
-    "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
     "markdown-to-txt": "^2.0.1",
     "markdown-toc": "^1.2.0",
