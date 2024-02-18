@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2331",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 24.984189221185513
+      "score": 25.845712987433288
     },
     {
       "id": "PR_kwDOBW5R_c5fbyLb",
@@ -54,26 +54,6 @@
       "score": 20.102221212448114
     },
     {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 19.527872034949596
-    },
-    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -98,22 +78,6 @@
       "score": 17.804824502454043
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.08177696995849
-    },
-    {
       "id": "I_kwDOBW5R_c580Z0o",
       "isPR": false,
       "isAssigned": false,
@@ -130,6 +94,17 @@
       "score": 14.645904026212197
     },
     {
+      "id": "PR_kwDODou01c5Iv4zR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added table of contents and introduction document for Studio tool",
+      "author": "Jagrutiti",
+      "resourcePath": "/asyncapi/studio/pull/553",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 14.358729437462937
+    },
+    {
       "id": "PR_kwDODou01c5YJ7kV",
       "isPR": true,
       "isAssigned": false,
@@ -143,7 +118,18 @@
           "color": "ededed"
         }
       ],
-      "score": 13.497205671215161
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 13.210031082465903
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -489,25 +475,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385yzOft",
-      "title": "TypeScript include documentation for properties instead of getters",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1548",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
         }
       ]
     },
