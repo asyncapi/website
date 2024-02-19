@@ -31,7 +31,7 @@ servers:
   production:
     bindings:
       kafka:
-        schemaRegistryUrl: '$ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp'
+        schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
         schemaRegistryVendor: 'apicurio'
         bindingVersion: '0.4.0'
 ```
