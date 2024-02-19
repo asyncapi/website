@@ -6,14 +6,15 @@ import slug from 'remark-slug';
 import headingId from 'remark-heading-id';
 import withMDX from '@next/mdx';
 
-/** 
- * @type {import('next').NextConfig} 
+/**
+ * @type {import('next').NextConfig}
  */
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md'],
   eslint: {
     ignoreDuringBuilds: true,
   },
+  output: "export",
   webpack(config, { isServer, defaultLoaders }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;

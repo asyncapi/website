@@ -5,14 +5,14 @@
     Access-Control-Allow-Origin = "*"
 
 [build]
-  command = "npm run build && npm run export"
+  command = "npm run build"
   functions = "netlify/functions"
   publish = "out"
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  NODE_VERSION = "16.16.0"
-  NPM_VERSION = "8.11.0"
+  NODE_VERSION = "20.11.0"
+  NPM_VERSION = "10.2.4"
 
 # Used by JSON Schema definitions fetched directly from AsyncAPI website
 [[redirects]]
