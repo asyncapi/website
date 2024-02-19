@@ -1,7 +1,7 @@
 // ---
 // title: 'API Architect'
 // date: 06/22/2021
-export interface Job {
+export interface IJob {
   title: string
   date: string
   category: string

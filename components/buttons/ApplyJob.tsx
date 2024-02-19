@@ -1,8 +1,8 @@
-import { Job } from '@/types/job';
+import { IJob } from '@/types/job';
 import Button from './Button'
 
 interface IApplyJobButtonProps {
-  job: Job
+  job: IJob
   className?: string
 }
 

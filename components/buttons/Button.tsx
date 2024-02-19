@@ -8,7 +8,7 @@ type IButtonProps = {
   target?: string;
   bgClassName?: string;
   textClassName?: string;
-  buttonSize?: 'small' | 'large';
+  buttonSize?: 'small' | 'default';
   type?: 'submit' | 'reset' | 'button';
 } & 
 ({
