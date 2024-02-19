@@ -1,15 +1,10 @@
 import Button from './Button'
 import IconGithub from '../icons/Github'
-import { HTMLAttributeAnchorTarget } from 'react';
+import { IButtonDefaultProps } from './types';
 // TODO: add this again when we have i18n
 // import { useTranslation } from '../../lib/i18n'
 
-interface IGithubButtonProps {
-  text?: string;
-  href?: string;
-  target?: HTMLAttributeAnchorTarget;
-  iconPosition?: "left" | "right";
-  className?: string;
+interface IGithubButtonProps extends IButtonDefaultProps {
   inNav?: boolean;
 }
 
