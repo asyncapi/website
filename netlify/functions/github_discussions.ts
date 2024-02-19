@@ -25,6 +25,7 @@ const handler: Handler = async function (event: HandlerEvent) {
     const { title, feedback } = JSON.parse(event.body || '');
 
     try {
+      // eslint-disable-next-line function-paren-newline
       const createDiscussion: GraphQlQueryResponseData = await graphql(
         `mutation {
             createDiscussion(input:{repositoryId:"${repositoryID}", categoryId:"${categoryID}", title:"${title}", body:"${feedback}"}){
@@ -37,31 +38,32 @@ const handler: Handler = async function (event: HandlerEvent) {
           owner: 'asyncapi',
           repo: 'community',
           headers: {
-            authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`,
-          },
-        }
-      );
+            authorization: `token ${process.env.GITHUB_TOKEN_CREATE_DISCUSSION}`
+          }
+        });
       const { url } = createDiscussion.createDiscussion.discussion;
+
       return {
         statusCode: 200,
         body: JSON.stringify({
           url,
-          message: 'Feedback submitted successfully',
-        }),
+          message: 'Feedback submitted successfully'
+        })
       };
     } catch (err) {
       const error: ErrorResponse = err;
+
       return {
         statusCode: error.response.status,
-        message: error.response.data.message,
+        message: error.response.data.message
       };
     }
   } else {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'The specified HTTP method is not allowed.',
-      }),
+        message: 'The specified HTTP method is not allowed.'
+      })
     };
   }
 };

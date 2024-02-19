@@ -10,43 +10,42 @@ export const handler: Handler = async (event: HandlerEvent) => {
     const { email, name, interest } = JSON.parse(event.body || '');
 
     const subscriberHash = md5(email.toLowerCase());
+
     try {
       mailchimp.setConfig({
         apiKey: process.env.MAILCHIMP_API_KEY,
-        server: 'us12',
+        server: 'us12'
       });
 
-      const response = await mailchimp.lists.setListMember(
-        listId,
+      const response = await mailchimp.lists.setListMember(listId,
         subscriberHash,
         {
           email_address: email,
           merge_fields: {
-            FNAME: name,
+            FNAME: name
           },
           status: 'subscribed',
           interests: {
-            [config.interests[interest]]: true,
-          },
-        }
-      );
+            [config.interests[interest]]: true
+          }
+        });
 
       return {
         statusCode: 200,
-        body: JSON.stringify(response),
+        body: JSON.stringify(response)
       };
     } catch (err) {
       return {
         statusCode: err.status,
-        body: JSON.stringify(err),
+        body: JSON.stringify(err)
       };
     }
   } else {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'The specified HTTP method is not allowed.',
-      }),
+        message: 'The specified HTTP method is not allowed.'
+      })
     };
   }
 };

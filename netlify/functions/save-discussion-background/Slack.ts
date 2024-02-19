@@ -1,7 +1,6 @@
 import { WebClient } from '@slack/web-api';
 import axios from 'axios';
-
-import type { Discussion, DiscussionCategory, Reply } from './index.d';
+import { Discussion, DiscussionCategory, Reply } from './index.d';
 
 export namespace Slack {
   const slackClient = new WebClient(process.env.SLACK_TOKEN);
@@ -26,7 +25,7 @@ export namespace Slack {
           title: 'Save to GitHub',
           submit_label: 'Save',
           notify_on_cancel: false,
-          state, // The state of the dialog is used to preserve the discussion details between calls.
+          state: state, // The state of the dialog is used to preserve the discussion details between calls.
           elements: [
             {
               type: 'text',
