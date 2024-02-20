@@ -112,8 +112,6 @@
           "error",
           "last"
         ],
-        "computed-property-spacing": "error",
-        "consistent-this": "off",
         "eol-last": "error",
         "func-call-spacing": "error",
         "func-name-matching": "error",
@@ -123,9 +121,6 @@
           "error",
           "never"
         ],
-        "id-blacklist": "error",
-        "id-length": "off",
-        "id-match": "error",
         "implicit-arrow-linebreak": [
           "error",
           "beside"
@@ -168,13 +163,6 @@
             "allowArrayEnd": false
           }
         ],
-        "lines-between-class-members": [
-          "error",
-          "always",
-          {
-            "exceptAfterSingleLine": true
-          }
-        ],
         "max-depth": "error",
         "max-len": [
           "error",
@@ -189,8 +177,6 @@
           }
         ],
         "max-nested-callbacks": "error",
-        "max-params": "off",
-        "max-statements": "off",
         "max-statements-per-line": [
           "error",
           {
@@ -209,9 +195,6 @@
         ],
         "newline-after-var": ["error", "always"],
         "no-array-constructor": "error",
-        "no-bitwise": "off",
-        "no-continue": "off",
-        "no-inline-comments": "off",
         "no-lonely-if": "error",
         "no-mixed-operators": "off",
         "no-mixed-spaces-and-tabs": "error",
@@ -229,7 +212,6 @@
         "no-tabs": "error",
         "no-ternary": "off",
         "no-trailing-spaces": "error",
-        "no-underscore-dangle": "off",
         "no-unneeded-ternary": "error",
         "no-whitespace-before-property": "error",
         "nonblock-statement-body-position": "error",
@@ -239,12 +221,6 @@
           "always"
         ],
         "object-property-newline": "off",
-        "one-var-declaration-per-line": "error",
-        "operator-assignment": "error",
-        "operator-linebreak": [
-          "error",
-          "after"
-        ],
         "padded-blocks": [
           "error",
           "never"
@@ -312,10 +288,7 @@
             }
           }
         ],
-        "switch-colon-spacing": "error",
-        "template-tag-spacing": "error",
-        "unicode-bom": "error",
-        "wrap-regex": "error"
+        "switch-colon-spacing": "error"
       }
     }
   ]

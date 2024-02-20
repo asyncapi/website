@@ -7,7 +7,7 @@
     "dev": "node scripts/index.js && next -p 3000",
     "build": "next build",
     "write:blog": "node ./scripts/compose.js",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "export": "next export",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
