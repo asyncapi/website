@@ -6,18 +6,41 @@ import slug from 'remark-slug';
 import headingId from 'remark-heading-id';
 import withMDX from '@next/mdx';
 
-/** 
- * @type {import('next').NextConfig} 
+/**
+ * @type {import('next').NextConfig}
  */
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'md'],
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack(config, { isServer }) {
+  output: "export",
+  webpack(config, { isServer, defaultLoaders }) {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+
+    // This is the new part
+    config.module.rules.push({
+      test: /\.md$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: '@mdx-js/loader',
+          options: {
+            remarkPlugins: [
+              frontmatter,
+              gemoji,
+              headingId,
+              slug,
+              images,
+              a11yEmoji,
+            ],
+          },
+        },
+      ],
+    });
+
     return config;
   },
 };
