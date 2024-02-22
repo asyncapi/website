@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import ExpensesLink from '../../config/finance/json-data/2024/ExpensesLink.json';
-import Expenses from '../../config/finance/json-data/2024/Expenses.json';
+const currentYear = String(new Date().getFullYear());
+const ExpensesLink = require(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`);
+const Expenses = require(`../../config/finance/json-data/${currentYear}/Expenses.json`);
+
 import { getUniqueCategories } from '../../lib/getUniqueCategories';
 /**
  * CustomTooltip component for the bar chart. Displays additional information on hover.
