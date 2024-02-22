@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2331",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 25.845712987433288
+      "score": 26.707236753681066
     },
     {
       "id": "PR_kwDOBW5R_c5fbyLb",
@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 21.538094156194408
+      "score": 22.112443333692923
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -75,7 +75,18 @@
           "color": "0e8a16"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.091999091203302
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
@@ -91,7 +102,7 @@
           "color": "84b6eb"
         }
       ],
-      "score": 14.645904026212197
+      "score": 16.08177696995849
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -101,6 +112,17 @@
       "author": "Jagrutiti",
       "resourcePath": "/asyncapi/studio/pull/553",
       "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOKp3ICM5g9w8f",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: adding content for module 3",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/learning-paths/pull/9",
+      "repo": "asyncapi/learning-paths",
       "labels": [],
       "score": 14.358729437462937
     },
@@ -121,17 +143,6 @@
       "score": 13.78438025996442
     },
     {
-      "id": "PR_kwDOFLhIt85js7KX",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 13.210031082465903
-    },
-    {
       "id": "I_kwDOFLhIt85bebeO",
       "isPR": false,
       "isAssigned": false,
@@ -143,29 +154,33 @@
       "score": 12.635681904967385
     },
     {
-      "id": "PR_kwDOFi_gUM5iqowR",
+      "id": "PR_kwDOFDnrNc5dgyM7",
       "isPR": true,
       "isAssigned": false,
-      "title": "feat: adds try/catch block to increase resilience",
-      "author": "ankur0904",
-      "resourcePath": "/asyncapi/glee/pull/666",
-      "repo": "asyncapi/glee",
+      "title": "feat: add POC for measuring adoption",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
       "labels": [],
-      "score": 12.348507316218127
-    },
-    {
-      "id": "I_kwDOFLhIt85xI2wH",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Measure AsyncAPI Adoption",
-      "author": "fmvilas",
-      "resourcePath": "/asyncapi/community/issues/879",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.061332727468868
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh385_rNaC",
+      "title": "Create a one for all input document for runtime to test all functionality",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1825",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh385-gvCP",
       "title": "Add \"generated-code\" XmlDoc and `[GeneratedCode]` attribute to C# models.",
@@ -747,21 +762,6 @@
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
       "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85hBDME",
-      "title": "Enable reusability of schemas between versions",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/364",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "javascript",
       "labels": [
         {
           "name": "enhancement",
