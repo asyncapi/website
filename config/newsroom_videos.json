@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/g6CPg77Lf5Q/hqdefault.jpg",
-    "title": "AsyncAPI Conf on Tour 2023 in Bangalore, India",
-    "description": "AACoT'23 Bangalore Edition live from Postman Offices in India.",
-    "videoId": "g6CPg77Lf5Q"
+    "image_url": "https://i.ytimg.com/vi/ZovE6evW8s8/hqdefault.jpg",
+    "title": "Community Meeting(20th of Feb, 2024)",
+    "description": "https://github.com/asyncapi/community/issues/1067.",
+    "videoId": "ZovE6evW8s8"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/p68PUXDMsks/hqdefault.jpg",
-    "title": "Community Meeting(November 28th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/918.",
-    "videoId": "p68PUXDMsks"
+    "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday February 7th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1041.",
+    "videoId": "4t4nAmDekDA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/KDort611FNg/hqdefault.jpg",
-    "title": "Community Meeting(November 14th, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/917.",
-    "videoId": "KDort611FNg"
+    "image_url": "https://i.ytimg.com/vi/8xiLLyIpFpw/hqdefault.jpg",
+    "title": "Community Meeting, February 6th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1042.",
+    "videoId": "8xiLLyIpFpw"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/Vm4ZKFb2PVE/hqdefault.jpg",
-    "title": "Community Meeting(October 31th, 2023)",
-    "description": "Powered by Restream https://restream.io https://github.com/asyncapi/community/issues/916.",
-    "videoId": "Vm4ZKFb2PVE"
+    "image_url": "https://i.ytimg.com/vi/cb7lrq5hxuE/hqdefault.jpg",
+    "title": "Community Meeting, January 23rd 2024",
+    "description": "",
+    "videoId": "cb7lrq5hxuE"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/FN5eR1Zqh9c/hqdefault.jpg",
-    "title": "AsyncAPI Conf on Tour 2023 in Madrid",
-    "description": "AACoT'23 Madrid Edition streamed live from StageOne at SNGULAR. 00:00 Waiting 57:12 Opening 1:26:07 Everything You Wish ...",
-    "videoId": "FN5eR1Zqh9c"
+    "image_url": "https://i.ytimg.com/vi/prFgD14u7T0/hqdefault.jpg",
+    "title": "Overview of AsyncAPI v3",
+    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
+    "videoId": "prFgD14u7T0"
   }
 ]

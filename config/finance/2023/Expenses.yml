@@ -1,0 +1,107 @@
+January:
+  - Category: Ambassador Program
+    Amount: '68.95'
+  - Category: Google Season of Docs 2022
+    Amount: '35.62'
+  - Category: Google Season of Docs 2022
+    Amount: '1666.67'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+
+February:
+  - Category: Community Manager
+    Amount: '1000.39'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+
+March:
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+  - Category: AsyncAPI Mentorship 2022
+    Amount: '1500'
+
+April:
+  - Category: Community Manager
+    Amount: '2000.39'
+
+May:
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: Swag Store
+    Amount: '75.11'
+  - Category: Bounty Program
+    Amount: '400'
+
+June:
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: Bounty Program
+    Amount: '200'
+  - Category: 3rd Party Services
+    Amount: '28.31'
+  - Category: Bounty Program
+    Amount: '200'
+  - Category: Bounty Program
+    Amount: '200'
+  - Category: Bounty Program
+    Amount: '200'
+
+July:
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: Bounty Program
+    Amount: '400'
+
+August:
+  - Category: 3rd Party Services
+    Amount: '1093.92'
+  - Category: Swag Store
+    Amount: '15672.02'
+  - Category: Bounty Program
+    Amount: '800.78'
+  - Category: Community Manager
+    Amount: '2000.39'
+    
+September:
+  - Category: Ambassador Program
+    Amount: '139.10'
+  - Category: Community Manager
+    Amount: '2000.39'
+
+October:
+  - Category: Mentorship Program 2023
+    Amount: '5277.78'
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: AsyncAPI Conf on Tour 2023
+    Amount: '943.07'
+  - Category: Swag Store
+    Amount: '7893.72'
+  - Category: 3rd Party Services
+    Amount: '247.04'
+
+November:
+  - Category: Mentorship Program 2023
+    Amount: '1363.50'
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: Swag Store
+    Amount: '873.87'
+
+December:
+  - Category: Mentorship Program 2023
+    Amount: '675.39'
+  - Category: Community Manager
+    Amount: '2000.39'
+  - Category: AsyncAPI Conf on Tour 2023
+    Amount: '1356.34'
+  - Category: Swag Store
+    Amount: '1415.90'
+  - Category: Bounty Program
+    Amount: '813.10'
