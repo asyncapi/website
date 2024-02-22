@@ -1,5 +1,11 @@
+enum ParagraphTypeStyle {
+  lg = 'body-lg',
+  md = 'body-md',
+  sm = 'body-sm',
+}
+
 interface ParagraphProps {
-  typeStyle?: 'body-lg' | 'body-md' | 'body-sm';
+  typeStyle?: ParagraphTypeStyle;
   textColor?: string; 
   fontWeight?: string;
   className?: string;
@@ -7,7 +13,7 @@ interface ParagraphProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({
-  typeStyle = 'body-lg',
+  typeStyle = ParagraphTypeStyle.lg,
   textColor = 'text-gray-700',
   fontWeight,
   className,
@@ -16,13 +22,13 @@ const Paragraph: React.FC<ParagraphProps> = ({
   let classNames = '';
 
   switch (typeStyle) {
-    case 'body-lg':
+    case ParagraphTypeStyle.lg:
       classNames = `text-lg ${fontWeight ?? ''} ${className || ''}`;
       break;
-    case 'body-md':
+    case ParagraphTypeStyle.md:
       classNames = `text-md ${fontWeight ?? ''} ${className || ''}`;
       break;
-    case 'body-sm':
+    case ParagraphTypeStyle.sm:
       classNames = `text-sm ${fontWeight ?? ''} ${className || ''}`;
       break;
     default:
