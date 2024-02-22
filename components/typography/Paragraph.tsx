@@ -3,7 +3,7 @@ interface ParagraphProps {
   textColor?: string; 
   fontWeight?: string;
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({

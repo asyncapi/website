@@ -4,7 +4,7 @@ interface TextLinkProps {
   href: string;
   className?: string;
   target?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   id?: string;
 }
 
