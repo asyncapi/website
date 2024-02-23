@@ -1,8 +1,8 @@
-import Button from './Button';
 import IconCalendar from '../icons/Calendar';
+import Button from './Button';
 // TODO: add this again when we have i18n
 // import { useTranslation } from '../../lib/i18n';
-import { IButtonDefaultProps } from './types';
+import type { IButtonDefaultProps } from './types';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
 
@@ -11,9 +11,8 @@ export default function ICSFButton({
   href,
   target = '_blank',
   iconPosition = 'left',
-  className,
+  className
 }: IICSFButtonProps) {
-
   // TODO: add this again when we have i18n
   // const { t } = useTranslation('common');
 
@@ -26,9 +25,9 @@ export default function ICSFButton({
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={`text-center block mt-2 md:mt-0 md:inline-block text-gray-900 ${className}`}
-      bgClassName="bg-gray-200 hover:bg-gray-100"
+      className={`mt-2 block text-center text-gray-900 md:mt-0 md:inline-block ${className}`}
+      bgClassName='bg-gray-200 hover:bg-gray-100'
     />
-  )
+  );
 }
 

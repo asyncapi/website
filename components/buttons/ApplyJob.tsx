@@ -1,5 +1,6 @@
-import { IJob } from '@/types/job';
-import Button from './Button'
+import type { IJob } from '@/types/job';
+
+import Button from './Button';
 
 interface IApplyJobButtonProps {
   job: IJob
@@ -11,18 +12,18 @@ export default function ApplyJobButton({ job,  className = '' }: IApplyJobButton
     try {
       new URL(contact);
     } catch (_) {
-      return `mailto:${contact}`;  
+      return `mailto:${contact}`;
     }
 
     return contact;
-  }
+  };
 
   return (
     <Button
       href={getHref(job.contact)}
-      target="_blank"
-      text="Apply for this job"
+      target='_blank'
+      text='Apply for this job'
       className={className}
     />
-  )
+  );
 }

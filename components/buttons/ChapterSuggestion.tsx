@@ -1,7 +1,8 @@
-import { HTMLAttributeAnchorTarget } from 'react'
-import IconArrowRight from '../icons/ArrowRight'
-import Link from 'next/link'
-import { Url } from 'url'
+import Link from 'next/link';
+import type { HTMLAttributeAnchorTarget } from 'react';
+import type { Url } from 'url';
+
+import IconArrowRight from '../icons/ArrowRight';
 
 export interface IChapterSuggestionProps {
   href: Url
@@ -13,7 +14,7 @@ export interface IChapterSuggestionProps {
 }
 
 /**
- * 
+ *
  * @param {Object} props - The props of the component
  * @param {string} props.href - The URL of the chapter
  * @param {string} props.target - The target of the link
@@ -28,24 +29,24 @@ export default function ChapterSuggestion({
   title,
   description,
   linkText,
-  className,
+  className
 }: IChapterSuggestionProps) {
   return (
     <Link href={href}>
       <a
         target={target}
-        rel="noopener noreferrer"
+        rel='noopener noreferrer'
         title={description}
-        className={`${className} flex flex-col mt-4 p-6 max-w-lg rounded shadow-md border border-gray-200 text-gray-900 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300`}
-       data-testid="ChapterSuggestion-link"
+        className={`${className} mt-4 flex max-w-lg flex-col rounded border border-gray-200 p-6 text-gray-900 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg`}
+        data-testid='ChapterSuggestion-link'
       >
-        <h5 className="text-lg font-medium font-sans antialiased mb-2">{title}</h5>
-        <p className="flex-1 mb-2 font-normal text-gray-600 font-sans antialiased">{description}</p>
-        <p className="text-primary-500 font-medium font-sans antialiased">
+        <h5 className='mb-2 font-sans text-lg font-medium antialiased'>{title}</h5>
+        <p className='mb-2 flex-1 font-sans font-normal text-gray-600 antialiased'>{description}</p>
+        <p className='text-primary-500 font-sans font-medium antialiased'>
           {linkText}
-          <IconArrowRight className="inline-block h-4" />
+          <IconArrowRight className='inline-block h-4' />
         </p>
       </a>
     </Link>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import Button from './Button';
 import IconSlack from '../icons/Slack';
-import { IButtonDefaultProps } from './types';
+import Button from './Button';
+import type { IButtonDefaultProps } from './types';
 
 interface ISlackButtonProps extends IButtonDefaultProps {}
 
@@ -9,18 +9,18 @@ export default function SlackButton({
   href = '/slack-invite',
   target = '_blank',
   iconPosition = 'left',
-  className,
+  className
 }: ISlackButtonProps) {
   return (
     <Button
       text={text}
-      icon={<IconSlack className="inline-block p-0.5 -mt-1 w-6 h-6" />}
+      icon={<IconSlack className='-mt-1 inline-block size-6 p-0.5' />}
       href={href}
       iconPosition={iconPosition}
       target={target}
       className={className}
-      data-testid="Slack-button"
-      bgClassName="bg-slack  hover:bg-slack-light"
+      data-testid='Slack-button'
+      bgClassName='bg-slack  hover:bg-slack-light'
     />
   );
 }

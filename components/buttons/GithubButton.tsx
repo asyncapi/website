@@ -1,6 +1,6 @@
-import Button from './Button'
-import IconGithub from '../icons/Github'
-import { IButtonDefaultProps } from './types';
+import IconGithub from '../icons/Github';
+import Button from './Button';
+import type { IButtonDefaultProps } from './types';
 // TODO: add this again when we have i18n
 // import { useTranslation } from '../../lib/i18n'
 
@@ -16,7 +16,6 @@ export default function GithubButton({
   className,
   inNav
 }: IGithubButtonProps) {
-
   // TODO: add this again when we have i18n
   // const { t } = useTranslation("common");
 
@@ -25,15 +24,15 @@ export default function GithubButton({
       // TODO: add this again when we have i18n
       // text={t(text)}
       text={text}
-      icon={<IconGithub className="inline-block -mt-1 w-6 h-6" />}
+      icon={<IconGithub className='-mt-1 inline-block size-6' />}
       href={href}
       iconPosition={iconPosition}
       target={target}
       className={className}
-      data-testid="Github-button"
-      bgClassName="bg-gray-800 hover:bg-gray-700"
-      buttonSize={ inNav ? "small" : "default" }
+      data-testid='Github-button'
+      bgClassName='bg-gray-800 hover:bg-gray-700'
+      buttonSize={ inNav ? 'small' : 'default' }
     />
-  )
+  );
 }
 

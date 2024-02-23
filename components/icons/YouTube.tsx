@@ -1,7 +1,7 @@
 export default function IconYoutube({ className = '' }) {
   return (
-    <svg className={className} version="1.1" id="Layer_1" x="0px" y="0px" width="64px" height="45px" viewBox="0 0 64 45" enableBackground="new 0 0 64 45" xmlSpace="preserve">  <image id="image0" width="64" height="45" x="0" y="0"
-    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAtCAMAAAAp3Z1oAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+    <svg className={className} version='1.1' id='Layer_1' x='0px' y='0px' width='64px' height='45px' viewBox='0 0 64 45' enableBackground='new 0 0 64 45' xmlSpace='preserve'>  <image id='image0' width='64' height='45' x='0' y='0'
+      href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAtCAMAAAAp3Z1oAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB8lBMVEX/GRn/AAD/FRX/IiL/
 Bwf/Cgr/Hx//AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/
 AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/
@@ -327,8 +327,8 @@ JqKnMnovoDcTejfitzM6H6ATCjoj4VMaPifqkmqHWNHJ39vZpRZ1fyVVE1MzvXp6+/oHBoeGR0bH
 xicmp6ZnZufmNZoFrXZBo5mfm52ZnppcHB9bWl5ZXVvf2NzqMbhMzT8Bnmd9YsI73/UAAAAldEVY
 dGRhdGU6Y3JlYXRlADIwMjItMDQtMTRUMTQ6NTE6MzcrMDA6MDAQOFClAAAAJXRFWHRkYXRlOm1v
 ZGlmeQAyMDIyLTA0LTE0VDE0OjUxOjM3KzAwOjAwYWXoGQAAABl0RVh0U29mdHdhcmUAQWRvYmUg
-SW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" />
-</svg>
+SW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=' />
+    </svg>
 
-  )
+  );
 }

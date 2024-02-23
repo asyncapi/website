@@ -1,7 +1,7 @@
-import Button from './Button';
 import IconSubscribe from '../icons/Subscribe';
+import Button from './Button';
 // import { useTranslation } from '../../lib/i18n';
-import { IButtonDefaultProps } from './types';
+import type { IButtonDefaultProps } from './types';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 
@@ -10,9 +10,8 @@ export default function GoogleCalendarButton({
   href,
   target = '_blank',
   iconPosition = 'left',
-  className,
+  className
 }: IGoogleCalendarButtonProps) {
-
   // const { t } = useTranslation('common');
 
   return (
@@ -24,9 +23,9 @@ export default function GoogleCalendarButton({
       href={href}
       iconPosition={iconPosition}
       target={target}
-      className={`text-center block mt-2 md:mt-0 md:inline-block text-gray-900 ${className}`}
-      bgClassName="bg-gray-200 hover:bg-gray-100"
+      className={`mt-2 block text-center text-gray-900 md:mt-0 md:inline-block ${className}`}
+      bgClassName='bg-gray-200 hover:bg-gray-100'
     />
-  )
+  );
 }
 

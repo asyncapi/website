@@ -1,4 +1,5 @@
-import ChapterSuggestion, { IChapterSuggestionProps } from "./ChapterSuggestion";
+import type { IChapterSuggestionProps } from './ChapterSuggestion';
+import ChapterSuggestion from './ChapterSuggestion';
 
 interface IChapterSuggestionsProps {
   suggestions: IChapterSuggestionProps[]
@@ -6,7 +7,7 @@ interface IChapterSuggestionsProps {
 }
 
 /**
- * 
+ *
  * @param {Object} props - The props of the component
  * @param {Array} props.suggestions - The suggestions of the chapter
  * @param {string} props.className - The class name of the component
@@ -27,5 +28,5 @@ export default function ChapterSuggestions({ suggestions = [], className = '' }:
         ))
       }
     </div>
-  )
+  );
 }
