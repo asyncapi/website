@@ -14,7 +14,7 @@ type IButtonProps = {
 ({
   href: string;
 } & React.AnchorHTMLAttributes<HTMLAnchorElement> | {
-  href: undefined | null;
+  href?: undefined | null;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>)
 
 /**
@@ -55,8 +55,7 @@ export default function Button({
   }
 
   return (
-    <Link href={props.href} passHref>
-      <a {...props} target={target} rel='noopener noreferrer' className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid='Button-link'>
+    <Link passHref {...props} target={target} rel='noopener noreferrer' className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid='Button-link'>
         {
           icon && iconPosition === 'left' && (
             <span className='mr-2 inline-block'>{icon}</span>
@@ -68,7 +67,6 @@ export default function Button({
             <span className='ml-2 inline-block'>{icon}</span>
           )
         }
-      </a>
     </Link>
   );
 }
