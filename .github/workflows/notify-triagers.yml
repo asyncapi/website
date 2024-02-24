@@ -26,4 +26,4 @@ jobs:
         with:
           message: "The PR contains modifications to `.md` files, hence tagging Docs triagers for review and approval.
                     cc: @VaishnaviNandakumar"
-          repo-token: ${{ secrets.GH_TOKEN }}
+          repo-token: ${{ github.token }}
