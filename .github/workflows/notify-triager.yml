@@ -1,0 +1,55 @@
+name: Notify Triagers
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  Notify-triagers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Check PR Changes for .md files
+        id: md-pr-changes
+        uses: tj-actions/changed-files@v42
+        with:
+          files: |
+            **.md
+
+      - name: Check PR Changes for non-.md files
+        id: non-md-pr-changes
+        uses: tj-actions/changed-files@v42
+        with:
+          files: |
+            !**.md
+
+      - name: Read triagers.json
+        if: steps.md-pr-changes.outputs.any_changed == 'true' || steps.non-md-pr-changes.outputs.any_changed == 'true'
+        id: read-triagers-json
+        run: |
+          mdTriagers=$(jq -r '.mdTriagers[]' triagers.json | tr '\n' ' ')
+          codeTriagers=$(jq -r '.codeTriagers[]' triagers.json | tr '\n' ' ')
+          echo "md-triagers=$mdTriagers" >> $GITHUB_OUTPUT
+          echo "code-triagers=$codeTriagers" >> $GITHUB_OUTPUT
+
+      - name: Create Comment for .md files
+        if: steps.md-pr-changes.outputs.any_changed == 'true'
+        uses: mshick/add-pr-comment@v2.8.2
+        with:
+          message: "The PR contains modifications to `.md` files, hence tagging Docs triagers for review and approval.
+                    cc: ${{ steps.read-triagers-json.outputs.md-triagers }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Comment for non-.md files
+        if: steps.non-md-pr-changes.outputs.any_changed == 'true'
+        uses: mshick/add-pr-comment@v2.8.2
+        with:
+          message: "The PR contains modifications to code related files, hence tagging Code triagers for review and approval.
+                    cc: ${{ steps.read-triagers-json.outputs.code-triagers }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
