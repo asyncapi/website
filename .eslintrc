@@ -5,6 +5,11 @@
     "eslint:recommended",
     "plugin:prettier/recommended"
   ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
   "plugins": [
     "react",
     "jsx-a11y"

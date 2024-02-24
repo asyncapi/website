@@ -18,8 +18,21 @@ type IButtonProps = {
 } & React.ButtonHTMLAttributes<HTMLButtonElement>)
 
 /**
- * @description The Button component is a reusable button component that can be used to render a button or an anchor tag. It accepts a variety of props to customize the button's appearance and behavior.
- * @description The component accepts button or anchor tag props based on the presence of the href prop. If the href prop is present, the component will render an anchor tag, otherwise it will render a button tag.
+ * @name Button
+ * @param {string} props.text - The text to be displayed on the button.
+ * @param {string} props.type - The type of the button. Defaults to 'button'.
+ * @param {string} props.target - The target attribute for the anchor tag. Defaults to '_self'.
+ * @param {React.ReactNode} props.icon - The icon to be displayed on the button.
+ * @param {string} props.iconPosition - The position of the icon. Defaults to 'right'.
+ * @param {string} props.className - The class name to be applied to the button.
+ * @param {string} props.bgClassName - The class name to be applied to the button's background.
+ * @param {string} props.textClassName - The class name to be applied to the button's text.
+ * @param {string} props.buttonSize - The size of the button. Defaults to 'default'.
+ * @param {string} props.href - The href attribute for the anchor tag.
+ * @description The Button component is a reusable button component that can be used to render a button or an anchor tag
+ * @description The component accepts button or anchor tag props based on the presence of the href prop.
+ * @description If the href prop is present, the component will render an anchor tag,
+ * otherwise it will render a button tag.
  */
 export default function Button({
   text,
@@ -56,17 +69,17 @@ export default function Button({
 
   return (
     <Link passHref {...props} target={target} rel='noopener noreferrer' className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid='Button-link'>
-        {
-          icon && iconPosition === 'left' && (
-            <span className='mr-2 inline-block'>{icon}</span>
-          )
-        }
-        <span className='inline-block'>{text}</span>
-        {
-          icon && iconPosition === 'right' && (
-            <span className='ml-2 inline-block'>{icon}</span>
-          )
-        }
+      {
+        icon && iconPosition === 'left' && (
+          <span className='mr-2 inline-block'>{icon}</span>
+        )
+      }
+      <span className='inline-block'>{text}</span>
+      {
+        icon && iconPosition === 'right' && (
+          <span className='ml-2 inline-block'>{icon}</span>
+        )
+      }
     </Link>
   );
 }
