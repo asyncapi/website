@@ -1,7 +1,10 @@
+import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
+import formsPlugin from '@tailwindcss/forms';
+import lineClampPlugin from '@tailwindcss/line-clamp';
+import typographyPlugin from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
-import { defineConfig } from 'tailwindcss/helpers';
 import plugin from 'tailwindcss/plugin';
 
 const colorPrimary: Record<string, string> = {
@@ -61,7 +64,7 @@ const colorGray: Record<string, string> = {
   900: '#242929'
 };
 
-const config: Config = defineConfig({
+const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -69,14 +72,14 @@ const config: Config = defineConfig({
   ],
   theme: {
     fontWeight: {
-      'extra-light': 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 700,
-      extrabold: 800,
-      black: 900
+      'extra-light': '200',
+      light: '300',
+      regular: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+      extrabold: '800',
+      black: '900'
     },
     backgroundImage: {
       ambassador: 'url(\'/img/homepage/ambassador.webp\')',
@@ -181,7 +184,7 @@ const config: Config = defineConfig({
         body: '-0.01em'
       },
       zIndex: {
-        60: 60
+        60: '60'
       },
       rotate: {
         '-15': '-7deg'
@@ -203,10 +206,10 @@ const config: Config = defineConfig({
     }
   },
   plugins: [
-    import('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
+    formsPlugin,
+    typographyPlugin,
+    aspectRatioPlugin,
+    lineClampPlugin,
     plugin(({ addUtilities }) => {
       const utilities = {
         '.hljs-asyncapi-file': {
@@ -234,6 +237,6 @@ const config: Config = defineConfig({
       addUtilities(utilities);
     })
   ]
-});
+};
 
 export default config;
