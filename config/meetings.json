@@ -1,13 +1,6 @@
 [
   {
     "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=b3BvZGhqN2xwZXFiMmtvOTQ1M2cwNGRlZTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/917",
-    "banner": "https://user-images.githubusercontent.com/40604284/277314352-f62224d8-03a9-46b2-94bf-13bfae6f973b.png",
-    "date": "2023-11-14T08:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ODNjM2h0bGQ4dGhwcWd2Mmw2MWhkcGcycGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/918",
     "banner": "https://user-images.githubusercontent.com/40604284/277314435-ec985247-c575-4449-9f79-442b3077541a.png",
