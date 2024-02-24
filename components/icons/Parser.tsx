@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
  * @description Icons for asyncapi website
  */

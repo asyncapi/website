@@ -5,12 +5,12 @@ import type { Url } from 'url';
 import IconArrowRight from '../icons/ArrowRight';
 
 export interface IChapterSuggestionProps {
-  href: string | Url
-  target?: HTMLAttributeAnchorTarget
-  title: string
-  description: string
-  linkText: string
-  className?: string
+  href: string | Url;
+  target?: HTMLAttributeAnchorTarget;
+  title: string;
+  description: string;
+  linkText: string;
+  className?: string;
 }
 
 /**

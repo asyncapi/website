@@ -21,7 +21,21 @@
         "singleQuote": true,
         "endOfLine": "auto"
       }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignorePattern": "<path([\\s\\S]*?)/>" // Ignore SVG path
+      }
     ]
+  },
+  "globals": {
+    "React": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
   },
   "overrides": [
     // Configuration for TypeScript files

@@ -31,8 +31,7 @@ export default function GithubButton({
       className={className}
       data-testid='Github-button'
       bgClassName='bg-gray-800 hover:bg-gray-700'
-      buttonSize={ inNav ? 'small' : 'default' }
+      buttonSize={inNav ? 'small' : 'default'}
     />
   );
 }
-

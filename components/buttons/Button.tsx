@@ -10,12 +10,14 @@ type IButtonProps = {
   textClassName?: string;
   buttonSize?: 'small' | 'default';
   type?: 'submit' | 'reset' | 'button';
-} &
-({
-  href: string;
-} & React.AnchorHTMLAttributes<HTMLAnchorElement> | {
-  href?: undefined | null;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>)
+} & (
+  | ({
+      href: string;
+    } & React.AnchorHTMLAttributes<HTMLAnchorElement>)
+  | ({
+      href?: undefined | null;
+    } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+);
 
 /**
  * @name Button
@@ -45,42 +47,47 @@ export default function Button({
   textClassName = twMerge('text-white'),
   buttonSize,
   ...props
-}: IButtonProps) : React.ReactElement {
-  const smallButtonClasses = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`);
-  const classNames = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`);
+}: IButtonProps): React.ReactElement {
+  const smallButtonClasses = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 
+                            ease-in-out rounded-md px-3 py-2 text-sm font-medium tracking-heading ${className || ''}`);
+  const classNames = twMerge(`${bgClassName} ${textClassName} transition-all duration-500 ease-in-out 
+                          rounded-md px-4 py-3 text-md font-semibold tracking-heading ${className || ''}`);
 
   if (!props.href) {
     return (
-      <button {...props as React.ButtonHTMLAttributes<HTMLButtonElement>} type={type} className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid='Button-main' >
-        {
-          icon && iconPosition === 'left' && (
-            <span className='mr-2 inline-block' data-testid='Button-icon-left'>{icon}</span>
-          )
-        }
+      <button
+        {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+        type={type}
+        className={buttonSize === 'small' ? smallButtonClasses : classNames}
+        data-testid='Button-main'
+      >
+        {icon && iconPosition === 'left' && (
+          <span className='mr-2 inline-block' data-testid='Button-icon-left'>
+            {icon}
+          </span>
+        )}
         <span className='inline-block'>{text}</span>
-        {
-          icon && iconPosition === 'right' && (
-            <span className='ml-2 inline-block' data-testid='Button-icon-right'>{icon}</span>
-          )
-        }
+        {icon && iconPosition === 'right' && (
+          <span className='ml-2 inline-block' data-testid='Button-icon-right'>
+            {icon}
+          </span>
+        )}
       </button>
     );
   }
 
   return (
-    <Link passHref {...props} target={target} rel='noopener noreferrer' className={buttonSize === 'small' ? smallButtonClasses : classNames} data-testid='Button-link'>
-      {
-        icon && iconPosition === 'left' && (
-          <span className='mr-2 inline-block'>{icon}</span>
-        )
-      }
+    <Link
+      passHref
+      {...props}
+      target={target}
+      rel='noopener noreferrer'
+      className={buttonSize === 'small' ? smallButtonClasses : classNames}
+      data-testid='Button-link'
+    >
+      {icon && iconPosition === 'left' && <span className='mr-2 inline-block'>{icon}</span>}
       <span className='inline-block'>{text}</span>
-      {
-        icon && iconPosition === 'right' && (
-          <span className='ml-2 inline-block'>{icon}</span>
-        )
-      }
+      {icon && iconPosition === 'right' && <span className='ml-2 inline-block'>{icon}</span>}
     </Link>
   );
 }
-
