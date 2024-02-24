@@ -20,7 +20,18 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 22.112443333692923
+      "score": 22.399617922442182
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.38939580119737
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -40,17 +51,6 @@
           "color": "ededed"
         }
       ],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
       "score": 20.102221212448114
     },
     {
@@ -143,6 +143,26 @@
       "score": 13.78438025996442
     },
     {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.210031082465903
+    },
+    {
       "id": "I_kwDOFLhIt85bebeO",
       "isPR": false,
       "isAssigned": false,
@@ -152,20 +172,24 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 12.635681904967385
-    },
-    {
-      "id": "PR_kwDOFDnrNc5dgyM7",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add POC for measuring adoption",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/cli/pull/859",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODyzcIc6AItqs",
+      "title": "bug fix in bug template 😃 ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/.github/issues/271",
+      "repo": "asyncapi/.github",
+      "author": "derberg",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh385_rNaC",
       "title": "Create a one for all input document for runtime to test all functionality",
@@ -420,25 +444,6 @@
       ]
     },
     {
-      "id": "I_kwDOFXtyC854XYL2",
-      "title": "Add migration guides ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-api/issues/106",
-      "repo": "asyncapi/parser-api",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOB5hCo854UrcU",
       "title": "We probably need `stableSchemas` in npm package",
       "isAssigned": false,
@@ -509,10 +514,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
