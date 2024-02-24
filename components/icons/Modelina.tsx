@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconModelina({ className = '' }) {
   return (
     <svg className={className} strokeWidth='.3' fill='currentColor' viewBox='2 2 20 20'>

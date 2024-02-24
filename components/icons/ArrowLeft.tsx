@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function ArrowLeft({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} viewBox='0 0 16 20' fill='currentColor'>

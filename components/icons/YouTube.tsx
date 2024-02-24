@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconYoutube({ className = '' }) {
   return (
     <svg className={className} version='1.1' id='Layer_1' x='0px' y='0px' width='64px' height='45px' viewBox='0 0 64 45' enableBackground='new 0 0 64 45' xmlSpace='preserve'>  <image id='image0' width='64' height='45' x='0' y='0'

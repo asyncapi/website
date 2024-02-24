@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconGithubOrganization({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} width='24.63' height='26.6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.63 26.6'>

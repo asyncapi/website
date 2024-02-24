@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconLightBulb({ className = '' }) {
   return (
     <svg className={className} xmlns='http://www.w3.org/2000/svg' fillRule='evenodd' fill='currentColor' clipRule='evenodd' viewBox='0 0 22 25'>

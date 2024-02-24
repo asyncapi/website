@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconNewsroom(className = '') {
   return (
     <svg className={className} width='42' height='37' viewBox='0 0 42 37' fill='none' xmlns='http://www.w3.org/2000/svg'>

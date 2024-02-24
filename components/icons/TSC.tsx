@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconTSC({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} width='28.15' height='18.69' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28.15 18.69'>

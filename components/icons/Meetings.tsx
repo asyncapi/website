@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconMeetings({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} width='26.97' height='21.55' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26.97 21.55'>

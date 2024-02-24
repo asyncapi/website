@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function Community({ className = '' }) {
   return (
     <svg className={className} width='20px' height='20px' viewBox='0 0 24 24' fill='green'>

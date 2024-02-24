@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconGradCap(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg fill='currentColor' viewBox='0 0 18 18' {...props}>

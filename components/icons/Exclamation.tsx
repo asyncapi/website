@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconExclamation({ className = '' }) {
   return (
     <svg className={className} fill='currentColor' viewBox='0 0 20 20'>

@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 interface DocsArrowProps {
   isDropDown: boolean;
   activeDropDownItem: boolean;

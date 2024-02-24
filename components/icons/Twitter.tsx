@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconTwitter({ className = '' }) {
   return (
     <svg className={className} width='50px' height='50px' viewBox='0 0 1200 1227' fill='currentColor' >

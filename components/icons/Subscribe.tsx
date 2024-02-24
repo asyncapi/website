@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconSubscribe() {
   return (
     <svg className='-mt-1 inline-block size-6' width='400' height='400' enableBackground='new 0 0 400 400' viewBox='0 0 400 400'><path fill='#FFBE55' d='M235.26,321.7c0,19.479-15.78,35.26-35.26,35.26s-35.26-15.78-35.26-35.26c0-1.47,0.09-2.91,0.26-4.33

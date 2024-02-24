@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconContributing({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} xmlns='http://www.w3.org/2000/svg' width='29.07' height='26.59' viewBox='0 0 29.07 26.59'>

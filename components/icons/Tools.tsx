@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconTools({ className = '' }) {
   return (
     <svg className={className || 'inline-block'} id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' width='26' height='27.49' viewBox='0 0 26 27.49'>

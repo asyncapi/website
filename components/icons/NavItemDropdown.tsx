@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 const NavItemDropdown = () => (
   <span className='inline-block'>
     <svg

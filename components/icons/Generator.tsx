@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconGenerator({ className = '' }) {
   return (
     <svg className={className} stroke='currentColor' strokeWidth='.3' fill='currentColor' viewBox='0 0 20 20'>

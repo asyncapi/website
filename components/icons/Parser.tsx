@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconParser({ className = '' }) {
   return (
     <svg className={className} stroke='currentColor' strokeWidth='.5' fill='currentColor' viewBox='0 0 20 20'>

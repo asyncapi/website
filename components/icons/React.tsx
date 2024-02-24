@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function IconReact({ className = '' }) {
   return (
     <svg

@@ -1,3 +1,6 @@
+/**
+ * @description Icons for asyncapi website
+ */
 export default function Webinar({ className = '' }) {
   return (
     <svg className={className} width='20px' height='20px' viewBox='0 0 256 256'>
