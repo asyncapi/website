@@ -6,6 +6,14 @@ import type { IButtonDefaultProps } from './types';
 
 interface IICSFButtonProps extends IButtonDefaultProps {}
 
+/**
+ * @description The ICSFButton component is a button that links to an ICS file.
+ * @param {string} props.text - The text to display on the button.
+ * @param {string} props.href - The href attribute for the anchor tag.
+ * @param {string} props.target - The target attribute for the anchor tag.
+ * @param {string} props.iconPosition - The position of the icon in the button.
+ * @param {string} props.className - The class name to be applied to the button.
+ */
 export default function ICSFButton({
   text = 'icsFileBtn',
   href,

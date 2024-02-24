@@ -37,7 +37,8 @@ export default function ChapterSuggestion({
       target={target}
       rel='noopener noreferrer'
       title={description}
-      className={`${className} mt-4 flex max-w-lg flex-col rounded border border-gray-200 p-6 text-gray-900 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg`}
+      className={`${className} mt-4 flex max-w-lg flex-col rounded border border-gray-200 p-6
+      text-gray-900 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg`}
       data-testid='ChapterSuggestion-link'
     >
       <h5 className='mb-2 font-sans text-lg font-medium antialiased'>{title}</h5>

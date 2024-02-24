@@ -27,7 +27,7 @@
       {
         "code": 120,
         "ignoreUrls": true,
-        "ignorePattern": "<path([\\s\\S]*?)/>" // Ignore SVG path
+        "ignorePattern": "*className=([\\s\\S]*?)*" // Ignore classnames
       }
     ]
   },

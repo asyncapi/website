@@ -7,13 +7,21 @@ export interface IDocsButtonProps {
   className?: string;
 }
 
+/**
+ * @description The DocsButton component is a button that links to the previous and next pages of the documentation.
+ * @param {Object} props - The props of the component
+ * @param {IPost} props.post - The post object
+ * @param {string} props.className - The class name of the component
+ * @returns {JSX.Element} The DocsButton component
+ */
 export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
   return (
     <div className={`mb-4 flex h-full flex-row gap-4 ${className}`}>
       <div className='h-auto w-1/2'>
         {post?.prevPage && (
           <Link href={post.prevPage.href} passHref>
-            <div className='cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-left'>
+            <div className={`cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all 
+                            duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-left`}>
               <div className='text-secondary-500' data-testid='DocsButton-Prevdiv'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -41,7 +49,8 @@ export default function DocsButton({ post, className = '' }: IDocsButtonProps) {
       <div className='h-auto w-1/2'>
         {post?.nextPage && (
           <Link href={post.nextPage.href} className='h-auto' passHref>
-            <div className='h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-right'>
+            <div className={`h-full cursor-pointer rounded border border-gray-200 p-4 text-center shadow-md 
+                          transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg lg:text-right`}>
               <div className='text-secondary-500' data-testid='DocsButton-Nextdiv'>
                 <div className='my-auto inline text-sm font-bold uppercase'>Up Next</div>
                 <svg

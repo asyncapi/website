@@ -17,6 +17,7 @@ export default function IconDashboard({ className = '' }) {
       stroke-line-join='miter'
       fill='none'
       color='#000000'
+      className={className}
     >
       {' '}
       <title id='dashboardIconTitle'>Dashboard</title> <rect width='20' height='20' x='2' y='2' />{' '}

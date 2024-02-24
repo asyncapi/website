@@ -2,7 +2,6 @@
 /**
  * @description Icons for asyncapi website
  */
-
 export default function IconSlack({ className = '' }) {
   return (
     <svg

@@ -6,6 +6,14 @@ import type { IButtonDefaultProps } from './types';
 
 interface IGoogleCalendarButtonProps extends IButtonDefaultProps {}
 
+/**
+ * @description The GoogleCalendarButton component is a button that links to the Google Calendar.
+ * @param {string} props.text - The text to display on the button.
+ * @param {string} props.href - The href attribute for the anchor tag.
+ * @param {string} props.target - The target attribute for the anchor tag.
+ * @param {string} props.iconPosition - The position of the icon in the button.
+ * @param {string} props.className - The class name to be applied to the button.
+ */
 export default function GoogleCalendarButton({
   text = 'googleCalendarBtn',
   href,

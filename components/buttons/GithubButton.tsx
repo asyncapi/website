@@ -8,6 +8,14 @@ interface IGithubButtonProps extends IButtonDefaultProps {
   inNav?: boolean;
 }
 
+/**
+ * @description The GithubButton component is a button that links to the AsyncAPI GitHub repository.
+ * @param {string} props.text - The text to display on the button.
+ * @param {string} props.href - The href attribute for the anchor tag.
+ * @param {string} props.target - The target attribute for the anchor tag.
+ * @param {string} props.iconPosition - The position of the icon in the button.
+ * @param {string} props.className - The class name to be applied to the button.
+ */
 export default function GithubButton({
   text = 'githubButton',
   href = 'https://github.com/asyncapi',
