@@ -1,12 +1,12 @@
 import { ParagraphTypeStyle, ParagraphProps } from "@/types/typography/Paragraph";
 
-const Paragraph: React.FC<ParagraphProps> = ({
+export default function Paragraph({
   typeStyle = ParagraphTypeStyle.lg,
   textColor = 'text-gray-700',
   fontWeight,
   className,
   children,
-}) => {
+}: ParagraphProps) {
   let classNames = '';
 
   switch (typeStyle) {
@@ -26,6 +26,4 @@ const Paragraph: React.FC<ParagraphProps> = ({
   return (
     <p data-testid="Paragraph-test" className={`${textColor} ${classNames}`}>{children}</p>
   );
-};
-
-export default Paragraph;
+}

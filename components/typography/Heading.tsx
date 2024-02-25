@@ -1,13 +1,13 @@
 import { HeadingLevel,HeadingTypeStyle,HeadingProps } from "@/types/typography/Heading";
 
-const Heading: React.FC<HeadingProps> = ({
+export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
   level = HeadingLevel.h2,
   textColor = 'text-primary-800',
   className,
   children,
   id,
-}) => {
+}: HeadingProps) {
   let classNames = '';
   const Tag = level ?? HeadingLevel.h2;
 
@@ -39,11 +39,11 @@ const Heading: React.FC<HeadingProps> = ({
     case HeadingTypeStyle.bodyLg:
       classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;
       break;
-    case HeadingTypeStyle.bodyLg:
+    case HeadingTypeStyle.bodyMd:
       classNames = `font-heading text-body-md tracking-body font-regular ${className || ''}`;
       break;
     case HeadingTypeStyle.bodySm:
-      classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;
+      classNames = `font-heading text-body-sm tracking-body font-regular ${className || ''}`;
       break;
     default:
       classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;
@@ -54,6 +54,4 @@ const Heading: React.FC<HeadingProps> = ({
       {children}
     </Tag>
   );
-};
-
-export default Heading;
+}
