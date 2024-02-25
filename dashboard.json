@@ -20,7 +20,7 @@
       "resourcePath": "/asyncapi/website/pull/2318",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 22.399617922442182
+      "score": 22.9739670999407
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -127,22 +127,6 @@
       "score": 14.358729437462937
     },
     {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 13.78438025996442
-    },
-    {
       "id": "I_kwDODou01c5BZZv-",
       "isPR": false,
       "isAssigned": false,
@@ -160,7 +144,23 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 13.210031082465903
+      "score": 13.78438025996442
+    },
+    {
+      "id": "PR_kwDODou01c5YJ7kV",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "Add Form component",
+      "author": "KhudaDad414",
+      "resourcePath": "/asyncapi/studio/pull/773",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
+      "score": 13.78438025996442
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -635,44 +635,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5qGUNf",
-      "title": "docs: validate messages (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1872",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUND",
-      "title": "docs: validate document with studio (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1871",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5qGUMg",
       "title": "docs: generate code (interactive version) - adapt for v3",
       "isAssigned": true,
@@ -730,25 +692,6 @@
       "author": "CynthiaPeter",
       "area": "docs",
       "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5jJLzD",
-      "title": "[📑 Docs]: new fragment for contributor questions section",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1555",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
         {
           "name": "📑 docs",
           "color": "E50E99"
