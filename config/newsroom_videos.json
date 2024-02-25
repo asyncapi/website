@@ -1,5 +1,11 @@
 [
   {
+    "image_url": "https://i.ytimg.com/vi/ZovE6evW8s8/hqdefault.jpg",
+    "title": "Community Meeting(20th of Feb, 2024)",
+    "description": "https://github.com/asyncapi/community/issues/1067.",
+    "videoId": "ZovE6evW8s8"
+  },
+  {
     "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
     "title": "AACoT&#39;24 Community Meeting, Wednesday February 7th 2024",
     "description": "https://github.com/asyncapi/community/issues/1041.",
@@ -22,11 +28,5 @@
     "title": "Overview of AsyncAPI v3",
     "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
     "videoId": "prFgD14u7T0"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
-    "title": "3 Request/Reply Use Cases",
-    "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
-    "videoId": "-OsMet9h_dg"
   }
 ]
