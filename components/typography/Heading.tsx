@@ -1,25 +1,5 @@
-enum HeadingTypeStyle {
-  xl = 'heading-xl',
-  lg = 'heading-lg',
-  md = 'heading-md',
-  md_semibold = 'heading-md-semibold',
-  sm = 'heading-sm',
-  sm_semibold = 'heading-sm-semibold',
-  xs = 'heading-xs',
-  xs_semibold = 'heading-xs-semibold',
-  body_lg = 'body-lg',
-  body_md = 'body-md',
-  body_sm = 'body-sm',
-}
-
-enum HeadingLevel {
-  h1 = 'h1',
-  h2 = 'h2',
-  h3 = 'h3',
-  h4 = 'h4',
-  h5 = 'h5',
-  h6 = 'h6',
-}
+import { HeadingLevel } from "@/types/HeadingLevel";
+import { HeadingTypeStyle } from "@/types/HeadingTypeStyle";
 
 interface HeadingProps {
   typeStyle?: HeadingTypeStyle;
@@ -51,28 +31,28 @@ const Heading: React.FC<HeadingProps> = ({
     case HeadingTypeStyle.md:
       classNames = `font-heading text-heading-md font-bold tracking-heading ${className || ''}`;
       break;
-    case HeadingTypeStyle.md_semibold:
+    case HeadingTypeStyle.mdSemibold:
       classNames = `font-heading text-heading-md font-semibold tracking-heading ${className || ''}`;
       break;
     case HeadingTypeStyle.sm:
       classNames = `font-heading text-heading-sm font-bold tracking-heading ${className || ''}`;
       break;
-    case HeadingTypeStyle.sm_semibold:
+    case HeadingTypeStyle.smSemibold:
       classNames = `font-heading text-heading-sm font-semibold tracking-heading ${className || ''}`;
       break;
     case HeadingTypeStyle.xs:
       classNames = `font-heading text-heading-xs font-bold tracking-heading ${className || ''}`;
       break;
-    case HeadingTypeStyle.xs_semibold:
+    case HeadingTypeStyle.xsSemibold:
       classNames = `font-heading text-heading-xs font-semibold tracking-heading ${className || ''}`;
       break;
-    case HeadingTypeStyle.body_lg:
+    case HeadingTypeStyle.bodyLg:
       classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;
       break;
-    case HeadingTypeStyle.body_md:
+    case HeadingTypeStyle.bodyLg:
       classNames = `font-heading text-body-md tracking-body font-regular ${className || ''}`;
       break;
-    case HeadingTypeStyle.body_sm:
+    case HeadingTypeStyle.bodySm:
       classNames = `font-heading text-body-lg tracking-body font-regular ${className || ''}`;
       break;
     default:

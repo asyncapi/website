@@ -1,8 +1,4 @@
-enum ParagraphTypeStyle {
-  lg = 'body-lg',
-  md = 'body-md',
-  sm = 'body-sm',
-}
+import { ParagraphTypeStyle } from "@/types/ParagraphTypeStyle";
 
 interface ParagraphProps {
   typeStyle?: ParagraphTypeStyle;
