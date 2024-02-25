@@ -57,7 +57,7 @@ Download your Avro schema by visiting the following URL:
 http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp.
 </Remember>
 
-### Replace link using JSON pointer
+### Update schema reference
 One alternative is to keep your schema in a separate file, as you learned in the previous tutorial, [Describe Kafka message payload using Avro Schema](/docs/tutorials/kafka/configure-kafka-avro). After uploading your Avro schema, remove the schema from your AsyncAPI document and add a `$ref` pointing to the previous step's URL.
 ```
 $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
