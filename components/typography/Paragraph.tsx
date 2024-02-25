@@ -1,12 +1,4 @@
-import { ParagraphTypeStyle } from "@/types/ParagraphTypeStyle";
-
-interface ParagraphProps {
-  typeStyle?: ParagraphTypeStyle;
-  textColor?: string; 
-  fontWeight?: string;
-  className?: string;
-  children?: React.ReactNode;
-}
+import { ParagraphTypeStyle, ParagraphProps } from "@/types/typography/Paragraph";
 
 const Paragraph: React.FC<ParagraphProps> = ({
   typeStyle = ParagraphTypeStyle.lg,

@@ -1,14 +1,4 @@
-import { HeadingLevel } from "@/types/HeadingLevel";
-import { HeadingTypeStyle } from "@/types/HeadingTypeStyle";
-
-interface HeadingProps {
-  typeStyle?: HeadingTypeStyle;
-  level?: HeadingLevel;
-  textColor?: string;
-  className?: string;
-  children?: React.ReactNode;
-  id?: string;
-}
+import { HeadingLevel,HeadingTypeStyle,HeadingProps } from "@/types/typography/Heading";
 
 const Heading: React.FC<HeadingProps> = ({
   typeStyle = HeadingTypeStyle.lg,
