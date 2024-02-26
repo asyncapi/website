@@ -5,7 +5,7 @@ const { resolve, dirname } = require('path');
 module.exports = async function buildFinanceInfoList() {
     try {
         const currentDir = resolve(__dirname, '../../');
-		const currentYear = String(new Date().getFullYear());
+		    const currentYear = String(new Date().getFullYear());
 
         const expensesPath = resolve(currentDir, 'config', 'finance', currentYear, 'Expenses.yml');
         const expensesLinkPath = resolve(currentDir, 'config', 'finance', currentYear, 'ExpensesLink.yml');
