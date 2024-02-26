@@ -1,8 +1,9 @@
 export const goldSponsors = [
   {
-    name: 'Red Hat',
-    imageSrc: '/img/sponsors/redhat.svg',
-    website: 'https://www.redhat.com/',
-  },
-
+    name: 'Postman',
+    link: 'https://www.postman.com',
+    imageSrc: '/img/sponsors/postman.png',
+    altText: 'Postman',
+    imageClass: 'inline-block px-4 sm:h-18',
+  }
 ];
