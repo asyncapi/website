@@ -1,2 +1,13 @@
 import { createContext } from 'react';
-export default createContext<string>("");
+import { Post } from '@/types/context/GenericPostContext';
+
+const defaultPost: Post = {
+  title: '',
+  slug: '',
+  excerpt: '',
+  cover: '',
+};
+
+export default createContext<{ post: Post }>({
+  post: defaultPost,
+});

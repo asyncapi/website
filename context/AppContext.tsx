@@ -1,7 +1,4 @@
 import { createContext } from 'react';
-
-interface AppContextType {
-    path: string;
-}
+import { AppContextType } from '@/types/context/AppContext';
 
 export default createContext<AppContextType>({ path: "" });

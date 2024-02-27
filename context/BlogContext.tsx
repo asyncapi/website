@@ -1,2 +1,4 @@
 import { createContext } from 'react';
-export default createContext<string>("");
+import { BlogContextValue } from '@/types/context/BlogContext';
+
+export default createContext<BlogContextValue>({});
