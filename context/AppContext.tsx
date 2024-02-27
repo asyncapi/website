@@ -1,2 +1,7 @@
 import { createContext } from 'react';
-export default createContext<string>("");
+
+interface AppContextType {
+    path: string;
+}
+
+export default createContext<AppContextType>({ path: "" });
