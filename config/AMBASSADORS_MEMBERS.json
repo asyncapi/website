@@ -155,6 +155,90 @@
     ]
   },
   {
+    "name": "Ivan Garcia Sainz-Aja",
+    "github": "ivangsa",
+    "twitter": "ivangsa",
+    "bio": "Java Architect with a deep understanding of Java, Spring-Boot, Spring-Cloud technologies, specializing in Domain-Driven Design (DDD) and Event-Driven Architectures creating Software Easy to Understand. Building ZenWave 360º. ZenWave 360º is a set of tools built on the foundations of Domain Driven Design and API-First principles for Event-Driven Architectures, to help you create software easy to understand. https://www.zenwave360.io/",
+    "linkedin": "ivangarciasainzaja",
+    "company": "SNGULAR",
+    "title": "Java Architect. Speaker. Building ZenWave 360°.",  
+    "img": "https://avatars.githubusercontent.com/u/1246876?v=4",
+    "contributions": [
+      {
+        "type": "iniciative_driver",
+        "title": "AsyncAPI Conference On Tour 2023 - Madrid",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/playlist?list=PLbi1gRlP7pihD-7XYb6c9wcTdkavDzF3_"
+      },
+      {
+        "type": "iniciative_driver",
+        "title": "ZenWave SDK - Code Generator for AsyncAPI with Spring Cloud Streams",
+        "date": {
+          "year": 2024,
+          "month": "2022"
+        },
+        "link": "https://www.zenwave360.io/zenwave-sdk/plugins/asyncapi-spring-cloud-streams3/"
+      },
+      {
+        "type": "article",
+        "title": "API-First with AsyncAPI",
+        "date": {
+          "year": 2023,
+          "month": "March"
+        },
+        "link": "https://www.zenwave360.io/posts/API-First-with-AsyncAPI-And-ZenWave-SDK/"
+      },
+      {
+        "type": "article",
+        "title": "ZenWave AsyncAPI Code Generator",
+        "date": {
+          "year": 2023,
+          "month": "March"
+        },
+        "link": "https://www.zenwave360.io/posts/ZenWave-AsyncAPI-Code-Generator/"
+      },
+      {
+        "type": "article",
+        "title": "Generating AsyncAPI definition files from JDL with ZenWaveSDK",
+        "date": {
+          "year": 2023,
+          "month": "April"
+        },
+        "link": "https://www.zenwave360.io/posts/JHipster-As-IDL-for-AsyncAPIv2/"
+      },
+      {
+        "type": "presentation",
+        "title": "KIT - API-First with AsyncAPI for Event Driven Architectures",
+        "date": {
+          "year": 2023,
+          "month": "May"
+        },
+        "link": "https://www.youtube.com/watch?v=EoWFZfmspFM"
+      },
+      {
+        "type": "presentation",
+        "title": "Practical Event Storming with AsyncAPI v3 and ZenWave SDK",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=-uHONzz-a6U"
+      },
+      {
+        "type": "presentation",
+        "title": "Code Generation For Enterprise Integration Patterns w/ AsyncAPI & ZenWave SDK",
+        "date": {
+          "year": 2023,
+          "month": "October"
+        },
+        "link": "https://www.youtube.com/watch?v=gUsoD8RaCuw"
+      }
+    ]
+  },
+  {
     "name": "Jesse Menning",
     "github": "jessemenning",
     "twitter": "JesseMenning",
