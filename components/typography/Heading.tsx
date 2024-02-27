@@ -1,4 +1,5 @@
 import { HeadingLevel,HeadingTypeStyle,HeadingProps } from "@/types/typography/Heading";
+import { twMerge } from 'tailwind-merge';
 
 export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
@@ -50,8 +51,8 @@ export default function Heading({
   }
 
   return (
-    <Tag className={`${textColor} ${classNames}`} id={id}>
+    <Tag id={id} className={twMerge(textColor, classNames)}>
       {children}
     </Tag>
-  );
+);
 }
