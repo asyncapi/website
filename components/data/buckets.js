@@ -4,6 +4,7 @@ import IconUseCases from '../icons/UseCases'
 import IconGuide from '../icons/Guide'
 import IconSpec from '../icons/Spec'
 import IconUsers from '../icons/Users'
+import IconMigration from '../icons/Migration'
 
 export const buckets = [
   {
@@ -51,7 +52,16 @@ export const buckets = [
     borderClassName: 'border-yellow-200',
     Icon: IconSpec,
   },
-    {
+  {
+    name: 'migration',
+    title: 'Migration',
+    description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.',
+    link: '/docs/migration',
+    className: 'bg-blue-400',
+    borderClassName: 'border-blue-400',
+    Icon: IconMigration,
+  },
+  {
     name: 'community',
     title: 'Community',
     description: 'Our Community section documents the community guidelines and resources.',
@@ -61,7 +71,7 @@ export const buckets = [
     Icon: IconUsers,
   },
 ].map(bucket => {
-  // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc. 
+  // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc.
   return {
     ...bucket,
     href: bucket.link,

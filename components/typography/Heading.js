@@ -3,7 +3,8 @@ export default function Heading({
     level = 'h2',
     textColor = 'text-primary-800',
     className,
-    children
+    children,
+    id
 }) {
     let classNames = ''
     const Tag = `${level}`;
@@ -46,7 +47,7 @@ export default function Heading({
     }
 
     return (
-        <Tag className={`${textColor} ${classNames}`}>
+        <Tag className={`${textColor} ${classNames}`} id={id}>
             {children}
         </Tag>
     )
