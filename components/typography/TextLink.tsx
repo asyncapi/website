@@ -18,7 +18,6 @@ export default function TextLink({
       rel="noreferrer noopener" 
       className={classNames}
       id={id}
-      data-testid="TextLink-href"
     >
       <span className={classNames}>
         {children}
