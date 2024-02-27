@@ -14,7 +14,7 @@
     "generate:dashboard": "node scripts/dashboard/build-dashboard.js",
     "generate:videos": "node scripts/build-newsroom-videos.js",
     "generate:tools": "node scripts/build-tools.js",
-    "test": "npx cypress run --component",
+    "test:components": "npx cypress run --component",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
