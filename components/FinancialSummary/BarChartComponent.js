@@ -1,8 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-const currentYear = String(new Date().getFullYear());
-const ExpensesLink = require(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`);
-const Expenses = require(`../../config/finance/json-data/${currentYear}/Expenses.json`);
 
 import { getUniqueCategories } from '../../lib/getUniqueCategories';
 /**
@@ -28,13 +25,10 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 /**
- * Retrieves unique expense categories from the Expenses data.
- *
- * @returns {string[]} An array of unique expense categories.
+ * @type {string}
+ * This variable stores the current year
  */
-
-const months = Object.keys(Expenses);
-const categories = getUniqueCategories();
+const currentYear = String(new Date().getFullYear());
 
 /**
  * Card component displays monthly expense data.
@@ -53,13 +47,15 @@ const Card = ({ month, data, links }) => {
             <div className="flex flex-col overflow-x-auto overflow-y-auto">
                 {data.map((item, index) => (
                     <div key={index} className="flex justify-between">
-                        <div className="text-sm m-2" onClick={(links) => {
-                            const category = item.Category;
-                            const matchedLinkObject = ExpensesLink.find(obj => obj.category === category);
-                            if (matchedLinkObject) {
-                                window.open(matchedLinkObject.link, '_blank');
-                            }
-                        }}>{item.Category}</div>
+						<div className="text-sm m-2" onClick={(e) => {
+							const category = item.Category;
+							const matchedLinkObject = links.find(obj => obj.category === category);
+							if (matchedLinkObject) {
+								window.open(matchedLinkObject.link, '_blank');
+							}
+						}}>
+							{item.Category}
+						</div>
                         <div className="text-sm m-2">${item.Amount}</div>
                     </div>
                 ))}
@@ -70,15 +66,17 @@ const Card = ({ month, data, links }) => {
 
 /**
  * ExpensesCard component displays a grid of expense cards for each month.
- *
+ * @param {Object} props - The component's props.
+ * @param {any[]} props.Expenses - The month for which expenses are displayed.
+ * @param {any[]} props.ExpensesLinks
  * @returns {JSX.Element} The rendered ExpensesCard component.
  */
-const ExpensesCard = () => {
+const ExpensesCard = ({Expenses,ExpensesLinks}) => {
     return (
         <div className="overflow-x-auto">
             <div className="grid grid-flow-col auto-cols-max gap-4 p-4">
                 {Object.keys(Expenses).map((month, index) => (
-                    <Card key={index} month={month} data={Expenses[month]} />
+                    <Card key={index} month={month} data={Expenses[month]} links={ExpensesLinks} />
                 ))}
             </div>
         </div>
@@ -96,18 +94,23 @@ const BarChartComponent = () => {
     const [selectedMonth, setSelectedMonth] = useState("All Months");
     const [windowWidth, setWindowWidth] = useState(null);
 
-    // Get unique categories and months from the Expenses data
-    const categories = getUniqueCategories();
-    const months = Object.keys(Expenses);
+	const [Expenses,setExpenses] = useState([]);
+	const [ExpensesLink,setExpensesLink] = useState(null);
+	
+
+
+	// Get unique categories and months from the Expenses data
+	const categories = useMemo(()=>getUniqueCategories(Expenses),[Expenses]);
+    const months = useMemo(()=>Object.keys(Expenses),[Expenses]);
 
     // Filter the expenses data based on selectedCategory and selectedMonth
-    const filteredData = Object.entries(Expenses).flatMap(([month, entries]) =>
+    const filteredData = useMemo(()=>Object.entries(Expenses).flatMap(([month, entries]) =>
         (selectedMonth === "All Months" || selectedMonth === month) ?
             entries.filter(entry =>
                 selectedCategory === "All Categories" || entry.Category === selectedCategory
             )
             : []
-    );
+    ),[selectedCategory,selectedMonth,Expenses]);
 
     // Calculate total amount for the filtered data
     const totalAmount = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
@@ -142,6 +145,15 @@ const BarChartComponent = () => {
 
         // Listen for window resize events
         window.addEventListener("resize", handleResizeRef.current);
+
+		const importComponents = async ()=>{
+			const Expenses = await import(`../../config/finance/json-data/${currentYear}/Expenses.json`);
+			const ExpensesLink = await import(`../../config/finance/json-data/${currentYear}/ExpensesLink.json`);
+				setExpenses(Expenses.default);
+				setExpensesLink(ExpensesLink.default);
+			}
+			importComponents();
+		
 
         // Clean up the event listener when the component unmounts
         return () => {
@@ -201,23 +213,29 @@ const BarChartComponent = () => {
                     <YAxis tickFormatter={(value) => `$${value}`} />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend />
-                    <Bar
-                        dataKey="Amount"
-                        fill="#7B5DD3FF"
-                        onClick={(data) => {
-                            // Get the category from the clicked bar's payload
-                            const category = data.payload.Category;
-                            // Replace the URL with the external website URL you want to open
-                            const matchedLinkObject = ExpensesLink.find(obj => obj.category === category);
-                            if (matchedLinkObject) {
-                                // Extract the link from the matched object and open it in a new tab/window
-                                window.open(matchedLinkObject.link, '_blank');
-                            }
-                        }}
-                    />
+					
+						{
+							ExpensesLink &&
+							<Bar
+								dataKey="Amount"
+								fill="#7B5DD3FF"
+								onClick={(data) => {
+									// Get the category from the clicked bar's payload
+									const category = data.payload.Category;
+									console.log(ExpensesLink);
+									// Replace the URL with the external website URL you want to open
+									const matchedLinkObject = ExpensesLink.find(obj => obj.category === category);
+									if (matchedLinkObject) {
+										// Extract the link from the matched object and open it in a new tab/window
+										window.open(matchedLinkObject.link, '_blank');
+									}
+								}}
+							/>
+						}
+					
                 </BarChart>
                 </div>
-                {windowWidth < 900 ? <ExpensesCard data={Expenses} /> : null}
+                {windowWidth < 900 ? Expenses && ExpensesLink && <ExpensesCard Expenses={Expenses} ExpensesLinks={ExpensesLink} /> : null}
             </div>
         </div>
     );
