@@ -25,7 +25,7 @@ export default function Paragraph({
   }
 
   return (
-    <p className={twMerge(textColor, classNames)}>{children}</p>
+    <p data-testid="Paragraph-test" className={twMerge(textColor, classNames)}>{children}</p>
 );
   
 }
