@@ -13,7 +13,7 @@ export default function GoldSponsors({ className = '', showSupportBanner = true 
               data-testid="GoldSponsors-link"
             >
               <img
-                className="inline-block sm:h-12"
+                className={sponsor.imageClass}
                 src={sponsor.imageSrc}
                 alt={sponsor.name}
                 data-testid="GoldSponsors-img"
