@@ -31,7 +31,7 @@ export default function ExpenseBreakdown() {
                         </div>
 
                         <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
-                            <a href='https://github.com/orgs/asyncapi/discussions/541' target='_blank'>
+                            <a href='https://github.com/orgs/asyncapi/discussions/541#discussioncomment-5462792' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/BountyProgram.webp" alt="Bounty Program" className="w-1/5 h-auto object-cover rounded-md m-1" />
@@ -43,7 +43,7 @@ export default function ExpenseBreakdown() {
                         </div>
 
                         <div className="bg-white rounded-md shadow-md p-4 flex flex-col items-center transform transition-transform hover:scale-105 active:scale-90">
-                            <a href='https://github.com/orgs/asyncapi/discussions/categories/asyncapi-conf-2022-organization' target='_blank'>
+                            <a href='https://github.com/orgs/asyncapi/discussions/381' target='_blank'>
                             <div className="text-darkGunMetal">
                                 <div className="flex flex-col items-center">
                                     <img src="/img/illustrations/Events.webp" alt="Events" className="w-1/5 h-auto object-cover rounded-md m-1" />
