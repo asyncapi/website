@@ -20,7 +20,17 @@ We are starting the year off with a bang as we got accepted to the [Google Summe
 The planning of AACoT'24 is already underway as we prepare for our first conference in Helsinki on the 28th - 29th of May. We are putting in the final touches to update our conference website with the latest details, and we will soon announce the Call for Speakers. In the meantime, be sure to start crafting those proposals and get ready to share your expertise with the community.
 
 ## Financial Sponsors
-We are thrilled to share that the initiative has secured new sponsors who generously paid for the entire year in advance. We welcome [Postman](https://www.postman.com/) as a gold sponsor, who contributed $12,000, and [HiveMQ](https://www.hivemq.com/), our silver sponsor, who gave $6,000. For more information about our financial budget, please [refer to the 2024 Budget discussion](https://github.com/orgs/asyncapi/discussions/1017).
+We are thrilled to share that the initiative has secured new sponsors who generously paid for the entire year in advance. We welcome [Postman](https://www.postman.com/) as a gold sponsor, who contributed $12,000, and [HiveMQ](https://www.hivemq.com/), our silver sponsor, who gave $6,000. 
+
+<a href='https://www.postman.com/' target='_blank'>
+<img src='/img/sponsors/postman.png' alt='postman' width='500px' />
+</a>
+
+<a href='https://www.hivemq.com/' target='_blank'>
+<img src='/img/sponsors/hivemq_logo.png' alt='hivemq' width='500px' />
+</a>
+
+For more information about our financial budget, please [refer to the 2024 Budget discussion](https://github.com/orgs/asyncapi/discussions/1017).
 
 ## Community Discussions
 We have important discussions that require the community's attention:
@@ -37,6 +47,50 @@ We have important discussions that require the community's attention:
   We're on the lookout for maintainers for the AsyncAPI Cupid. The library focuses on finding and analyzing the relationships between AsyncAPI documents. If you're well-versed in Event-Driven Architecture and AsyncAPI, please [join the Cupid repository discussion](https://github.com/asyncapi/cupid/issues/182) and help us drive its development.
 - ### AsyncAPI Working Groups
   We are finally officializing working groups throughout the AsyncAPI community. A working group will be a community where people share similar interests beyond GitHub repositories. You can read the [Working Groups docs](https://github.com/asyncapi/community/blob/master/WORKING_GROUPS.md) or view the [Working Group public discussion](https://github.com/orgs/asyncapi/discussions/1037) for more comprehensive details.
+
+## TSC Members x Ambassadors
+
+We are excited to welcome five new [Technical Steering Committee](https://www.asyncapi.com/community/tsc) (TSC) members.
+
+<Profile profiles={[
+{
+    name: 'Ashish Padhy',
+    avatar: 'https://avatars.githubusercontent.com/Shurtu-gal',
+    link: 'https://github.com/Shurtu-gal'
+  }, 
+  {
+    name: 'Ashmit JaiSarita Gupta',
+    avatar: 'https://avatars.githubusercontent.com/devilkiller-ag',
+    link: 'https://github.com/devilkiller-ag'
+  },
+  {
+    name: 'Prince Rajpoot',
+    avatar: 'https://avatars.githubusercontent.com/princerajpoot20',
+    link: 'https://github.com/princerajpoot20'
+  },
+  {
+    name: 'Sambhav Gupta',
+    avatar: 'https://avatars.githubusercontent.com/sambhavgupta0705',
+    link: 'https://github.com/sambhavgupta0705'
+  },
+  {
+    name: 'Samir AMZANI',
+    avatar: 'https://avatars.githubusercontent.com/Amzani',
+    link: 'https://github.com/Amzani'
+  }
+]} />
+
+Additionally, we have a new addition to the [AsyncAPI Ambassadors](https://www.asyncapi.com/community/ambassadors) team, raising the number to seven.
+
+<Profile profiles={[
+  {
+    name: 'Iván García Sainz-Aja',
+    avatar: 'https://avatars.githubusercontent.com/ivangsa',
+    link: 'https://github.com/ivangsa'
+  }
+]} />
+
+Exciting times for our growing community!
 
 ## Coming in March
 - **AACoT'24 Helsinki Call for Speakers** - We will announce our Call for Speakers for AACoT'24 Helsinki by the first week of March. Start crafting those proposals and get ready to submit them.
