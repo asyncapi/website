@@ -15,9 +15,9 @@ const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         const data = payload[0].payload;
         return (
-            <div className="bg-opacity-90 bg-white border border-gray-300 p-2 shadow-md rounded-md">
+            <div className="bg-opacity-90 dark:bg-gray-700 bg-white border border-gray-300 p-2 shadow-md rounded-md">
                 <p className="text-14 font-bold mb-1">{data.Category}</p>
-                <p className="text-12 text-gray-900">${data.Amount.toFixed(2)}</p>
+                <p className="text-12 text-gray-900 dark:text-gray-300">${data.Amount.toFixed(2)}</p>
                 <p>Click the bar to learn more</p>
             </div>
         );
@@ -46,7 +46,7 @@ const categories = getUniqueCategories();
 
 const Card = ({ month, data, links }) => {
     return (
-        <div className="bg-slate-100 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
+        <div className="bg-slate-100 dark:bg-slate-700 shadow-lg rounded-lg p-4 flex flex-col h-56 overflow-hidden">
             <div className="text-lg font-semibold mb-4">{month}</div>
             <div className="flex flex-col overflow-x-auto overflow-y-auto">
                 {data.map((item, index) => (

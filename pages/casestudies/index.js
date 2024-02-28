@@ -26,7 +26,7 @@ export default function Casestudies() {
             <Heading level="h1" typeStyle="heading-lg">
               {title}
             </Heading>
-            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl" >
+            <Paragraph typeStyle="body-md" className="my-4 max-w-4xl dark:text-gray-600" >
               The best way to learn how to use AsyncAPI is not only through documentation that usually is focused on recommendations and best practices.
               It is also good to confront with real-life case studies that explain how people really use AsyncAPI and what are their flows.
             </Paragraph>
@@ -49,10 +49,10 @@ export default function Casestudies() {
               <Heading level="h1" typeStyle="heading-lg">
                 Adopters
               </Heading>
-              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl" >
+              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl dark:text-gray-600" >
                 Check out how different companies use AsyncAPI and what problems they solve.
               </Paragraph>
-              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl">
+              <Paragraph typeStyle="body-md" className="my-4 max-w-4xl dark:text-gray-600">
                 Feel free to <a className="underline" href="https://github.com/asyncapi/website/blob/master/config/adopters.yml">submit a pull request</a> with information about how your company uses AsyncAPI. We know that
                 writing an official case study might be time consuming and requires too much internal paper work.
                 Let's make sure we can at least capture a use case that is already a great learning information for the
@@ -75,8 +75,8 @@ export default function Casestudies() {
             <tbody>
               {AdoptersList.map((entry, index) => (
                 <tr key={index} data-testid="Adopters">
-                  <td className="border-2 p-2">{entry.companyName}</td>
-                  <td className="border-2 p-2">{entry.useCase}</td>
+                  <td className="border-2 p-2 dark:text-gray-400">{entry.companyName}</td>
+                  <td className="border-2 p-2 dark:text-gray-400">{entry.useCase}</td>
                   <td className="border-2 p-2">
                     <ul>
                       {entry.resources.map((resource, resourceIndex) => (

@@ -341,3 +341,9 @@ abbr[title] {
 .meeting-card:hover > div:nth-child(2) > p  {
   color: white;
 }
+
+@layer base{
+  body {
+      @apply dark:bg-slate-800 bg-white
+  }
+}

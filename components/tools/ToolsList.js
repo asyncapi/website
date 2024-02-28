@@ -10,7 +10,7 @@ export default function toolsList({ toolsData }) {
           <Heading typeStyle='heading-md-semibold' className='my-2' >
             {categoryName}
           </Heading>
-          <Paragraph typeStyle='body-md'>
+          <Paragraph typeStyle='body-md' className='dark:text-gray-400'>
             {toolsData[categoryName].description}
           </Paragraph>
           <hr className='my-8' />

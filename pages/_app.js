@@ -14,7 +14,8 @@ import {
   defaultNamespace,
 } from "../lib/i18n";
 import loadLocales from "../lib/locales";
-import '../styles/globals.css'
+import '../styles/globals.css';
+import { ThemeProvider } from 'next-themes';
 
 function App({ Component, pageProps, router }) {
 
@@ -32,6 +33,7 @@ function App({ Component, pageProps, router }) {
         <Head>
           <script async defer src="https://buttons.github.io/buttons.js"></script>
         </Head>
+        <ThemeProvider attribute="class">
         <MDXProvider>
           <AlgoliaSearch>
             <div className="flex flex-col min-h-screen">
@@ -46,6 +48,7 @@ function App({ Component, pageProps, router }) {
             </div>
           </AlgoliaSearch>
         </MDXProvider>
+        </ThemeProvider>
       </AppContext.Provider>
     </I18nProvider>
   )

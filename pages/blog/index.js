@@ -56,7 +56,7 @@ export default function BlogIndexPage() {
 
       <div className="relative pt-8 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8" id="main-content">
         <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3"></div>
+          <div className="dark:bg-slate-800 bg-white h-1/3 sm:h-2/3"></div>
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
@@ -94,7 +94,7 @@ export default function BlogIndexPage() {
             <Filter
               data={navItems}
               onFilter={onFilter}
-              className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
+              className="dark:bg-zinc-700 dark:text-gray-500 w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
               checks={toFilter}
             />
             {showClearFilters && (

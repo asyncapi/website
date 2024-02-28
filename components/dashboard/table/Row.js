@@ -1,7 +1,7 @@
 export default function Row({ item }) {
   return (
     <li>
-      <div className=" p-4 bg-white rounded-md border border-gray-200">
+      <div className=" p-4 bg-white dark:bg-gray-600 rounded-md dark:border-gray-600 border border-gray-200">
         <a target='_blank' rel='noreferrer' href={`https://github.com/${item.resourcePath}`}>
           <div className="flex justify-between">
             <div className="flex flex-col gap-2">
@@ -34,7 +34,7 @@ export default function Row({ item }) {
                   {item.labels.map((label) => (
                     <span
                       key={label.name}
-                      className={`bg-secondary-300 text-sm leading-5 px-2 rounded-full`}
+                      className={`dark:bg-purple-700 bg-secondary-300 text-sm leading-5 px-2 rounded-full`}
                     >
                       {label.name}
                     </span>

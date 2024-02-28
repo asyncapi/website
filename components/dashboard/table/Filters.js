@@ -75,7 +75,7 @@ export default function Filters({
             }}
             data-testid="Filter-menu"
           >
-            <div className="bg-white shadow-xl w-96 rounded max-w-[19rem]">
+            <div className="dark:bg-slate-500 bg-white shadow-xl w-96 rounded max-w-[19rem]">
               <div className="flex p-4">
                 <h4 className="text-base">Filter Issues</h4>
                 <button onClick={() => setOpen(!open)} className="ml-auto">
