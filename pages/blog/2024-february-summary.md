@@ -1,6 +1,6 @@
 ---
 title: "Community Update: February 2024"
-date: 2024-03-04T06:00:00+01:00
+date: 2024-02-29T06:00:00+01:00
 type: Communication
 tags:
   - Project Status
