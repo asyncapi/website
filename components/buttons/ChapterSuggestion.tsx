@@ -42,8 +42,8 @@ export default function ChapterSuggestion({
       data-testid='ChapterSuggestion-link'
     >
       <h5 className='mb-2 font-sans text-lg font-medium antialiased'>{title}</h5>
-      <p className='mb-2 flex-1 font-sans font-normal text-gray-600 antialiased'>{description}</p>
-      <p className='text-primary-500 font-sans font-medium antialiased'>
+      <p className='font-normal mb-2 flex-1 font-sans text-gray-600 antialiased'>{description}</p>
+      <p className='font-sans font-medium text-primary-500 antialiased'>
         {linkText}
         <IconArrowRight className='inline-block h-4' />
       </p>

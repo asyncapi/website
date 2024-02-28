@@ -13,8 +13,8 @@ export default function OpenInStudioButton({ text = 'Open in Studio', className 
 
   return (
     <Button
-      className={`border-secondary-500 text-secondary-500 group 
-                  block border text-center shadow-md hover:text-white md:mt-0 md:inline-block ${className}`}
+      className={`group block border border-secondary-500 text-center text-secondary-500 shadow-md 
+                hover:text-white md:mt-0 md:inline-block ${className}`}
       bgClassName='bg-secondary-100 hover:bg-secondary-500'
       text={text}
       href={`https://studio.asyncapi.com?url=${sampleSpec}`}
