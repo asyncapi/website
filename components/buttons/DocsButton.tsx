@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import type { IPost } from '@/types/post';
+import type { IDocs } from '@/types/post';
 
 export interface IDocsButtonProps {
-  post: IPost;
+  post: IDocs[number];
   className?: string;
 }
 
