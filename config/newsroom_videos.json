@@ -1,32 +1,32 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/qjMojQ-fFew/hqdefault.jpg",
-    "title": "Spec 3.0 docs meeting (September 28, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/885.",
-    "videoId": "qjMojQ-fFew"
+    "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, Wednesday February 7th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1041.",
+    "videoId": "4t4nAmDekDA"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/SfATYVwcSQk/hqdefault.jpg",
-    "title": "Community meeting (September 19, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/874.",
-    "videoId": "SfATYVwcSQk"
+    "image_url": "https://i.ytimg.com/vi/8xiLLyIpFpw/hqdefault.jpg",
+    "title": "Community Meeting, February 6th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1042.",
+    "videoId": "8xiLLyIpFpw"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/OYcOkQhwVNg/hqdefault.jpg",
-    "title": "Spec 3.0 meeting (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/857.",
-    "videoId": "OYcOkQhwVNg"
+    "image_url": "https://i.ytimg.com/vi/cb7lrq5hxuE/hqdefault.jpg",
+    "title": "Community Meeting, January 23rd 2024",
+    "description": "",
+    "videoId": "cb7lrq5hxuE"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/b4KcouHm958/hqdefault.jpg",
-    "title": "Generator and new parser discussion (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/865.",
-    "videoId": "b4KcouHm958"
+    "image_url": "https://i.ytimg.com/vi/prFgD14u7T0/hqdefault.jpg",
+    "title": "Overview of AsyncAPI v3",
+    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
+    "videoId": "prFgD14u7T0"
   },
   {
-    "image_url": "https://i.ytimg.com/vi/1BjJWxAQ4Uk/hqdefault.jpg",
-    "title": "Brainstorm on AsyncAPI Cheat Sheet Poster (September 6, 2023)",
-    "description": "https://github.com/asyncapi/community/issues/862.",
-    "videoId": "1BjJWxAQ4Uk"
+    "image_url": "https://i.ytimg.com/vi/-OsMet9h_dg/hqdefault.jpg",
+    "title": "3 Request/Reply Use Cases",
+    "description": "Explain Request/Reply use cases to me like I'm a 5 year old.",
+    "videoId": "-OsMet9h_dg"
   }
 ]
