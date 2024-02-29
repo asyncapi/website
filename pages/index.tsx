@@ -2,6 +2,9 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
+/**
+ * @description The Home component is the main page of the application.
+ */
 export default function Home() {
   return (
     <main
