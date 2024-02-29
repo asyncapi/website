@@ -1,6 +1,6 @@
+import type { TextLinkProps } from '@/types/typography/TextLink';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
-import { TextLinkProps } from '@/types/typography/TextLink';
 
 export default function TextLink({
   href,

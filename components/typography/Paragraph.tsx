@@ -1,4 +1,5 @@
-import { ParagraphTypeStyle, ParagraphProps } from "@/types/typography/Paragraph";
+import type { ParagraphProps } from "@/types/typography/Paragraph";
+import { ParagraphTypeStyle } from "@/types/typography/Paragraph";
 import { twMerge } from 'tailwind-merge';
 
 export default function Paragraph({
@@ -26,6 +27,5 @@ export default function Paragraph({
 
   return (
     <p data-testid="Paragraph-test" className={twMerge(textColor, classNames)}>{children}</p>
-);
-  
+  );
 }
