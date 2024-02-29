@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/index.js && next -p 3000",
-    "build": "next build",
+    "build": "node scripts/index.js && next build",
     "write:blog": "node ./scripts/compose.js",
     "start": "npx serve@latest out",
     "export": "next export",
