@@ -22,7 +22,7 @@ export default function TextLink({
   className = '',
   target = '_blank',
   children,
-  id,
+  id
 }: TextLinkProps) {
   // eslint-disable-next-line max-len
   const classNames = twMerge(`text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`);

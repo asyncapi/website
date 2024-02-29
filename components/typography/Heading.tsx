@@ -32,6 +32,7 @@ export default function Heading({
   const Tag = level ?? HeadingLevel.h2;
 
   let classNames = '';
+
   switch (typeStyle) {
     case HeadingTypeStyle.xl:
       classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;

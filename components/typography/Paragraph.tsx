@@ -23,9 +23,10 @@ export default function Paragraph({
   textColor = 'text-gray-700',
   fontWeight = '',
   className = '',
-  children,
+  children
 }: ParagraphProps) {
   let classNames = '';
+
   switch (typeStyle) {
     case ParagraphTypeStyle.lg:
       classNames = `text-lg ${fontWeight || ''} ${className || ''}`;
@@ -41,7 +42,7 @@ export default function Paragraph({
   }
 
   return (
-    <p data-testid="Paragraph-test" className={twMerge(textColor, classNames)}>
+    <p data-testid='Paragraph-test' className={twMerge(textColor, classNames)}>
       {children}
     </p>
   );
