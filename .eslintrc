@@ -5,6 +5,11 @@
     "eslint:recommended",
     "plugin:prettier/recommended"
   ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
   "plugins": [
     "react",
     "jsx-a11y"
@@ -16,7 +21,21 @@
         "singleQuote": true,
         "endOfLine": "auto"
       }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignorePattern": "*className=([\\s\\S]*?)*" // Ignore classnames
+      }
     ]
+  },
+  "globals": {
+    "React": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
   },
   "overrides": [
     // Configuration for TypeScript files
