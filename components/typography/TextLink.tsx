@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export default function TextLink({
   href,
-  className,
-  target,
+  className = '',
+  target = '_blank',
   children,
-  id
+  id,
 }: TextLinkProps) {
   const classNames = twMerge(`text-secondary-500 underline hover:text-gray-800 font-medium transition ease-in-out duration-300 ${className || ''}`);
 

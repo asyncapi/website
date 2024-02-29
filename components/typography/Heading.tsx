@@ -6,13 +6,13 @@ export default function Heading({
   typeStyle = HeadingTypeStyle.lg,
   level = HeadingLevel.h2,
   textColor = 'text-primary-800',
-  className,
+  className = '',
   children,
   id,
 }: HeadingProps) {
-  let classNames = '';
   const Tag = level ?? HeadingLevel.h2;
 
+  let classNames = '';
   switch (typeStyle) {
     case HeadingTypeStyle.xl:
       classNames = `font-heading text-heading-md font-bold tracking-heading md:text-heading-xl ${className || ''}`;
