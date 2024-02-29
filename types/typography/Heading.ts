@@ -20,12 +20,3 @@ export enum HeadingTypeStyle {
     bodyMd = 'body-md',
     bodySm = 'body-sm',
 }
-
-export interface HeadingProps {
-    typeStyle?: HeadingTypeStyle;
-    level?: HeadingLevel;
-    textColor?: string;
-    className?: string;
-    children?: React.ReactNode;
-    id?: string;
-  }
