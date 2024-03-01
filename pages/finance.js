@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Container from "../components/layout/Container";
-import StickyNavbar from "../components/navigation/StickyNavbar";
-import NavBar from "../components/navigation/NavBar";
 import AsyncAPISummary from "../components/FinancialSummary/AsyncAPISummary";
 import SponsorshipTiers from "../components/FinancialSummary/SponsorshipTiers";
 import OtherFormsComponent from "../components/FinancialSummary/OtherFormsComponent";
@@ -38,9 +36,6 @@ export default function FinancialSummary() {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <AsyncAPISummary/>
       <SponsorshipTiers/>
       <OtherFormsComponent/>

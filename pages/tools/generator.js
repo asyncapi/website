@@ -23,7 +23,7 @@ export default function GeneratorPage() {
           className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
           href="https://www.github.com/asyncapi/generator"
         />
-      <Button text="View Docs" href="/docs/tools/generator" className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"/>
+       <Button text="View Docs" href="/docs/tools/generator" className="ml-2 mt-2 md:mt-0 w-full sm:w-auto"/>
       </div>
     );
   }

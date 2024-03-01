@@ -3,7 +3,7 @@ title: Request/reply pattern
 weight: 40
 ---
 
-In this tutorial, you'll learn how to implement the request/reply pattern in an AsyncAPI document using a straightforward pong-pong example.
+In this tutorial, you'll learn how to implement the request/reply pattern in an AsyncAPI document using a straightforward ping-pong example.
 
 Before we begin, it would be beneficial for you to have a basic understanding of AsyncAPI and Event-Driven Architectures (EDA). If you need a refresher, refer to our [Event-Driven Architecture](/docs/tutorials/getting-started/event-driven-architectures) document.
 
