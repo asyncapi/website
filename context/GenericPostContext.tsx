@@ -1,13 +1,4 @@
 import { createContext } from 'react';
-import { Post } from '@/types/context/GenericPostContext';
+import { IDocs } from '@/types/post';
 
-const defaultPost: Post = {
-  title: '',
-  slug: '',
-  excerpt: '',
-  cover: '',
-};
-
-export default createContext<{ post: Post }>({
-  post: defaultPost,
-});
+export default createContext<IDocs>([]);

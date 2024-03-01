@@ -1,12 +1,4 @@
-export interface Post {
-    title: string;
-    slug?: string;
-    excerpt?: string;
-    cover?: string;
-    toc?: { id: string; title: string }[];
-    sectionTitle?: string;
-    releaseNoteLink?: string;
-}
+import { IDocs } from "../post";
   
 export interface NavigationItem {
     title: string;
@@ -17,6 +9,6 @@ export interface NavigationItems {
 }
   
 export interface DocsContextType {
-    post: Post;
+    post: IDocs;
     navItems: NavigationItems;
 }

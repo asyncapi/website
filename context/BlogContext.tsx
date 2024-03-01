@@ -1,4 +1,4 @@
 import { createContext } from 'react';
-import { BlogContextValue } from '@/types/context/BlogContext';
+import { IDocs } from '@/types/post';
 
-export default createContext<BlogContextValue>({});
+export default createContext<IDocs>([]);
