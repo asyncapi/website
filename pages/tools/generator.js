@@ -23,11 +23,11 @@ export default function GeneratorPage() {
           className="w-full sm:w-auto"
           href="https://www.github.com/asyncapi/generator"
         />
-       <Button text="View Docs" href="/docs/tools/generator" className="ml-2 mt-2 md:mt-0 md:inline-block w-full sm:w-auto"/>
+       <Button text="View Docs" href="/docs/tools/generator" className="ml-2 mt-2 md:mt-0 w-full sm:w-auto"/>
       </div>
     );
   }
-
+  // ml-2 md:mt-0 md:inline-block w-full sm:w-auto
   const description = 'Generate documentation, code, and more out of your AsyncAPI files with the Generator.'
   const image = '/img/social/generator-card.jpg'
 
