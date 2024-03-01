@@ -1,5 +1,5 @@
 ---
-title: Create an AsyncAPI document for a Slackbot with WebSocket.
+title: Create an AsyncAPI document for a Slackbot with WebSocket
 description: In this tutorial, you'll learn how to create an AsyncAPI document designed for a Slack application that operates in Socket Mode using the WebSocket protocol.
 weight: 210
 ---

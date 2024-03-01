@@ -1,37 +1,6 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOFLhIt85bqKL8",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: add Bounty Program Rules",
-      "author": "aeworxet",
-      "resourcePath": "/asyncapi/community/pull/897",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 20.102221212448114
-    },
-    {
-      "id": "I_kwDODou01c5AqLB8",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "\"Open with Studio\" button for Markdown files.",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/218",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 19.527872034949596
-    },
-    {
       "id": "PR_kwDOBW5R_c5f0CJh",
       "isPR": true,
       "isAssigned": false,
@@ -40,7 +9,49 @@
       "resourcePath": "/asyncapi/website/pull/2331",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 18.37917367995256
+      "score": 27.28158593117958
+    },
+    {
+      "id": "PR_kwDOBW5R_c5fbyLb",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: tutorial for bindings with Kafka",
+      "author": "CynthiaPeter",
+      "resourcePath": "/asyncapi/website/pull/2318",
+      "repo": "asyncapi/website",
+      "labels": [],
+      "score": 22.9739670999407
+    },
+    {
+      "id": "PR_kwDOFLhIt85bqKL8",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: add Bounty Program Rules",
+      "author": "aeworxet",
+      "resourcePath": "/asyncapi/community/pull/897",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOBW5R_c5J6qNe",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Measuring AsyncAPI spec adoption",
+      "author": "derberg",
+      "resourcePath": "/asyncapi/website/issues/780",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "84b6eb"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -64,56 +75,18 @@
           "color": "0e8a16"
         }
       ],
-      "score": 17.804824502454043
+      "score": 18.091999091203302
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ],
-      "score": 16.08177696995849
-    },
-    {
-      "id": "PR_kwDOBW5R_c5fbyLb",
+      "id": "PR_kwDOFLhIt85js7KX",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
       "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dT1NT",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: using AsyncAPI with Kafka",
-      "author": "J0SAL",
-      "resourcePath": "/asyncapi/website/pull/2252",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "PR_kwDOBW5R_c5dJ7hJ",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: tutorial for WebSockets with AsyncAPI",
-      "author": "VaishnaviNandakumar",
-      "resourcePath": "/asyncapi/website/pull/2245",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 14.358729437462937
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
@@ -129,7 +102,49 @@
           "color": "84b6eb"
         }
       ],
-      "score": 14.07155484871368
+      "score": 16.08177696995849
+    },
+    {
+      "id": "PR_kwDODou01c5Iv4zR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added table of contents and introduction document for Studio tool",
+      "author": "Jagrutiti",
+      "resourcePath": "/asyncapi/studio/pull/553",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 14.933078614961456
+    },
+    {
+      "id": "PR_kwDOKp3ICM5g9w8f",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: adding content for module 3",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/learning-paths/pull/9",
+      "repo": "asyncapi/learning-paths",
+      "labels": [],
+      "score": 14.645904026212197
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 13.78438025996442
     },
     {
       "id": "PR_kwDODou01c5YJ7kV",
@@ -145,27 +160,7 @@
           "color": "ededed"
         }
       ],
-      "score": 13.497205671215161
-    },
-    {
-      "id": "MDU6SXNzdWU5OTE0Mzc3MjY=",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "remove puppeteer from dependencies",
-      "author": "flamewow",
-      "resourcePath": "/asyncapi/html-template/issues/256",
-      "repo": "asyncapi/html-template",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
-        }
-      ],
-      "score": 12.635681904967385
+      "score": 13.78438025996442
     },
     {
       "id": "I_kwDOFLhIt85bebeO",
@@ -176,22 +171,56 @@
       "resourcePath": "/asyncapi/community/issues/568",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 12.348507316218127
+      "score": 12.635681904967385
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDOBW5R_c59bL0s",
-      "title": "Regarding links redirection",
+      "id": "I_kwDODyzcIc6AItqs",
+      "title": "bug fix in bug template 😃 ",
       "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2601",
-      "repo": "asyncapi/website",
-      "author": "sagarkori143",
-      "area": "javascript",
+      "resourcePath": "/asyncapi/.github/issues/271",
+      "repo": "asyncapi/.github",
+      "author": "derberg",
+      "area": "Unknown",
       "labels": [
         {
           "name": "bug",
-          "color": "ee0701"
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385_rNaC",
+      "title": "Create a one for all input document for runtime to test all functionality",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1825",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh385-gvCP",
+      "title": "Add \"generated-code\" XmlDoc and `[GeneratedCode]` attribute to C# models.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1784",
+      "repo": "asyncapi/modelina",
+      "author": "RowlandBanks",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "C# generator",
+          "color": "c5def5"
         }
       ]
     },
@@ -349,7 +378,7 @@
     {
       "id": "I_kwDOE8Qh3857KkLT",
       "title": "Introduce Modelina CLI that can be extended by AsyncAPI CLI",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/modelina/issues/1724",
       "repo": "asyncapi/modelina",
       "author": "jonaslagoni",
@@ -415,25 +444,6 @@
       ]
     },
     {
-      "id": "I_kwDOFXtyC854XYL2",
-      "title": "Add migration guides ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/parser-api/issues/106",
-      "repo": "asyncapi/parser-api",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOB5hCo854UrcU",
       "title": "We probably need `stableSchemas` in npm package",
       "isAssigned": false,
@@ -485,25 +495,6 @@
         {
           "name": "bug",
           "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh385yzOft",
-      "title": "TypeScript include documentation for properties instead of getters",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1548",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "TS generator",
-          "color": "33943E"
         }
       ]
     },
@@ -644,44 +635,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5qGUNf",
-      "title": "docs: validate messages (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1872",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUND",
-      "title": "docs: validate document with studio (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1871",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOBW5R_c5qGUMg",
       "title": "docs: generate code (interactive version) - adapt for v3",
       "isAssigned": true,
@@ -746,25 +699,6 @@
       ]
     },
     {
-      "id": "I_kwDOBW5R_c5jJLzD",
-      "title": "[📑 Docs]: new fragment for contributor questions section",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1555",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "stale",
-          "color": "ededed"
-        },
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
       "id": "I_kwDOFi_gUM5hpuWl",
       "title": "Improve kafka adapter",
       "isAssigned": true,
@@ -772,21 +706,6 @@
       "repo": "asyncapi/glee",
       "author": "KhudaDad414",
       "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOB5hCo85hBDME",
-      "title": "Enable reusability of schemas between versions",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/spec-json-schemas/issues/364",
-      "repo": "asyncapi/spec-json-schemas",
-      "author": "jonaslagoni",
-      "area": "javascript",
       "labels": [
         {
           "name": "enhancement",

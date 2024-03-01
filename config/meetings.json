@@ -1,20 +1,6 @@
 [
   {
     "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ZGk3ZHJybXZhNmM3aWJzNWdzZWdtNTZjMHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/916",
-    "banner": "https://user-images.githubusercontent.com/40604284/277314120-f03a06ea-0820-462a-85af-18b1706ea5c6.png",
-    "date": "2023-10-31T16:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=b3BvZGhqN2xwZXFiMmtvOTQ1M2cwNGRlZTAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/917",
-    "banner": "https://user-images.githubusercontent.com/40604284/277314352-f62224d8-03a9-46b2-94bf-13bfae6f973b.png",
-    "date": "2023-11-14T08:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=ODNjM2h0bGQ4dGhwcWd2Mmw2MWhkcGcycGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/918",
     "banner": "https://user-images.githubusercontent.com/40604284/277314435-ec985247-c575-4449-9f79-442b3077541a.png",
@@ -80,5 +66,19 @@
     "url": "https://github.com/asyncapi/community/issues/1042",
     "banner": "https://github.com/asyncapi/community/assets/40604284/01c2b8de-fa5c-44dd-81a5-70cb96df4813",
     "date": "2024-02-06T08:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZzZ0OG1iNmkyZW5lbnF2bnE5ZnY5ZW9ua28gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1067",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/897e0278-8da4-41dc-b2b2-b5add9370d6f",
+    "date": "2024-02-20T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=dHJ1dGxncm81b3VvZjI0ZjE1MDkxY25lcjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1068",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/70eff71e-5de5-4c99-bc89-86a1b9b81e81",
+    "date": "2024-03-05T08:00:00.000Z"
   }
 ]
