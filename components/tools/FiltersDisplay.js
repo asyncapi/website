@@ -20,12 +20,12 @@ export default function FiltersDisplay({ checkedValues = [], setValues }) {
           <div
             key={index}
             className={twMerge(
-                `hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pb-0 pl-1.5 rounded-2xl flex align-center gap-1 items-start`
+                `hover:border-black border border-gray-600 text-gray-600 hover:text-black p-1 pl-1.5 rounded-2xl flex align-center gap-1 items-start`
             )}
           >
             <div className="text-xs m-auto h-fit">{items}</div>
             <button className="hover:bg-gray-100 p-1 rounded-full -mt-[2px]" onClick={(e) => handleClickOption(e, items, checkedValues, setValues)} data-testid="Filters-Display-Button">
-            <img src="/img/illustrations/icons/close-icon.svg" width="10" /></button>
+            <img src="/img/illustrations/icons/close-icon.svg" width="10" className="mt-[0.15rem]" /></button>
           </div>
         );
       })}
