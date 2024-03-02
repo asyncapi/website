@@ -52,7 +52,7 @@ To add your own tests follow the following steps :
 
 1. Navigate to the "test" folder  . 
 
-2. Add tests in the respective testing folder : 
+2. Add tests in the respective testing folder.
 For eg : Include tests for "scripts" in the scripts folder . 
 For creating a new component , create a new folder with the same name as component is named in the code . 
 
