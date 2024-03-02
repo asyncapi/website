@@ -32,7 +32,7 @@ Assuming you have all the necessary website dependencies installed:
 
 2. Run it on your local CLI  
 ```bash
-    npm run test 
+    npm run test:component
 ```
 
 ## Cypress Folder structure
@@ -50,10 +50,7 @@ Assuming you have all the necessary website dependencies installed:
 
 To add your own tests follow the following steps : 
 
-1. Navigate to the "test" folder  . 
-
-2. Add tests in the respective testing folder.
-For eg : Include tests for "scripts" in the scripts folder . 
-For creating a new component , create a new folder with the same name as component is named in the code . 
-
-3. Create testing files using extension "cy.js"
+1. Consider all the test cases for the component, you are adding tests for.
+2. Navigate to the `test` folder and create/navigate to the directory as the same, it is created from root folder to store the component.
+3. Create the test file using the name convention as `{componentName}.cy.js` in same directory inside `test`
+4. Verify all the tests are working for the component with correct assertions and checks.
