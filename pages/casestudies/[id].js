@@ -17,7 +17,7 @@ const renderContent = (content, allComponents, level) => {
   return content.map((item) => {
     return (
       <div
-        className="mt-10"
+        className="mt-10 w-11/12 mx-auto"
         key={item.title}
       >
         <Heading typeStyle={typeStyle} className="mt-8"  id={item.title
@@ -143,9 +143,9 @@ function Index({
       wide
     >
     <div className="max-w-screen lg:flex-row-reverse lg:flex lg:justify-between">
-      <CaseTOC toc={content} cssBreakingPoint="lg" className="lg:flex-1 bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-[265px] lg:max-w-72 lg:-mr-14" />
-      <div className="px-4 sm:px-6 xl:px-0 lg:flex-1 lg:max-w-[812px] xl:max-w-5xl case-study">
-        <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center">
+      <CaseTOC toc={content} cssBreakingPoint="lg" className="lg:flex-1 bg-blue-100 mt-4 p-4 sticky top-20 overflow-y-auto max-h-screen lg:bg-transparent lg:mt-2 lg:pt-0 lg:pb-8 lg:top-24 lg:max-h-(screen-16) lg:border-l lg:border-gray-200 lg:min-w-[200px] lg:max-w-72 lg:-mr-0" />
+      <div className="xl:max-w-5xl case-study">
+        <div className=" mt-10 md:mt-20 flex flex-col md:flex-row justify-between items-center w-11/12 mx-auto">
           <div className="w-full md:w-[65%]">
             <Heading typeStyle="heading-xl" className="countdown-text-gradient">
               {casestudy.company.name}
@@ -189,13 +189,11 @@ function Index({
               </Heading>
             </div>
           </div>
-          <div className="mt-10 md:mt-0">
-            <img
+          <img
               src={casestudy.company.logo}
               alt={casestudy.company.name}
-              className="w-[350px] rounded-lg"
+              className="w-[300px] mt-5 md:mt-0 rounded-lg"
             />
-          </div>
         </div>
         {renderContent(content, allComponents, 0)}
         </div>
