@@ -15,6 +15,47 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 ## Prerequisites
 [Install Docker](https://docs.docker.com/engine/install/) from the official website.
 
+## AsyncAPI document with Avro Schema
+The previous tutorial taught you how to write an AsyncAPI document for Kafka messages using the Avro Schema. Here's an example of what an AsyncAPI document fully equipped with Avro Schema looks like:
+```
+asyncapi: 3.0.0
+info:
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+components:
+  messages:
+    userSignedUp:
+      payload:
+        schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
+        schema:
+          type: record
+          name: UserSignedUp
+          namespace: com.company
+          doc: User sign-up information
+          fields:
+            - name: userId
+              type: int
+            - name: userEmail
+              type: string
+```
 
 ### Start Apicurio Registry
 Start the Apicurio Registry locally with the following docker command:
