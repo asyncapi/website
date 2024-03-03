@@ -46,6 +46,18 @@ export default function BlogIndexPage() {
   const description = 'Find the latest and greatest stories from our community';
   const image = '/img/social/blog.webp';
 
+
+  const isFilterSelected = () => {
+    const queryType = Object.keys(router.query)
+    let result = false
+    if (queryType.length) {
+      toFilter.forEach((filter) => {
+        if(queryType.includes(filter.name)) result = true
+      })
+    }
+    return result;
+  }
+
   return (
     <GenericLayout
       title="Blog"
@@ -90,23 +102,35 @@ export default function BlogIndexPage() {
               , too!
             </Paragraph>
           </div>
-          <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
-            <Filter
-              data={navItems}
-              onFilter={onFilter}
-              className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
-              checks={toFilter}
-            />
-            {showClearFilters && (
-              <button
-                type="button"
-                className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading md:mt-0 mt-1 md:py-0 py-2"
-                onClick={clearFilters}
-              >
-                <span className="inline-block">Clear filters</span>
-              </button>
-            )}
-          </div>
+
+            <div className="mt-12 mx:64 md:flex md:justify-center lg:justify-start">
+              <Filter
+                data={navItems}
+                onFilter={onFilter}
+                className="w-full mx-px md:mt-0 mt-1 md:w-1/5 md: md:text-sm"
+                checks={toFilter}
+              />
+              {showClearFilters && (
+                <button
+                  type="button"
+                  className="bg-none border border-gray-200 text-gray-800 hover:text-gray-700 shadow-none transition-all duration-500 ease-in-out rounded-md px-4 text-md font-semibold tracking-heading md:mt-0 mt-1 md:py-0 py-2"
+                  onClick={clearFilters}
+                >
+                  <span className="inline-block">Clear filters</span>
+                </button>
+              )}
+            </div>
+
+            {
+              isFilterSelected() && (
+                <div className="mt-6 ml-1">
+                  <Paragraph typeStyle="body-md">
+                    <b>{posts.length}</b> results found
+                  </Paragraph>
+                </div>
+              )
+            }
+           
           <div>
             {!Object.keys(posts).length ? (
               <div className="flex flex-col items-center justify-center mt-16">
