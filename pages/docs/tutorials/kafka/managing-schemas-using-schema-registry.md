@@ -5,7 +5,7 @@ weight: 250
 ---
 
 ## Introduction
-In this tutorial, you'll learn how to manage schemas with Schema Registry. Managing schemas ensures a consistent data exchange across distributed systems, thus minimizing errors.
+In the [previous tutorial](/docs/tutorials/kafka/configure-kafka-avro), you've learned how to add Avro Schemas to your AsyncAPI document. Now, you will learn how to save your schema in a central Schema Registry and reuse it from there.
 
 ## Background context
 The need for schema management has become increasingly prevalent to handle the evolving complexity of modern Event-Driven Architecture. A Schema Registry is a centralized service that stores and maintains schemas for data exchanged between various components of a modern distributed system. Validating exchanged data maintains data consistency and compatibility. 
