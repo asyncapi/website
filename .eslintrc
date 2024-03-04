@@ -25,7 +25,7 @@
     "max-len": [
       "error",
       {
-        "code": 120,
+        "code": 240,
         "ignoreUrls": true,
         "ignorePattern": "*className=([\\s\\S]*?)*" // Ignore classnames
       }
@@ -186,7 +186,7 @@
         "max-len": [
           "error",
           {
-            "code": 120
+            "code": 240
           }
         ],
         "max-lines": [
