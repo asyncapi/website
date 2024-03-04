@@ -12,7 +12,7 @@ export default function FiltersDropdown({ dataList = [], checkedOptions = [], se
   };
 
   return (
-    <div className={twMerge(`max-w-lg max-h-[25rem] overflow-y-auto border-4 flex gap-2 flex-col p-2 duration-200 delay-150 ${className}`)} data-testid="FiltersDropdown-div">
+    <div className={twMerge(`max-w-[20rem] max-h-[25rem] overflow-y-auto border-4 flex gap-2 flex-col p-2 duration-200 delay-150 ${className}`)} data-testid="FiltersDropdown-div">
       {dataList.map((data, index) => {
         const checked = checkedOptions.includes(data.name);
         return (
