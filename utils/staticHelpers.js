@@ -1,6 +1,5 @@
 import { getPostBySlug, getAllPosts } from './api';
 import moment from 'moment';
-// import markdownToHtml from './markdownToHtml'
 
 export function getStaticPropsHelper(path) {
   return async function getStaticProps({ params }) {
