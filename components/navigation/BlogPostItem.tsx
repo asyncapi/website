@@ -35,10 +35,8 @@ interface Props {
   id?: string;
 }
 
-const BlogPostItem = forwardRef(function BlogPostItem(
-  { post, className = '', id = '' }: Props,
-  ref: Ref<HTMLLIElement>
-) {
+const BlogPostItem = forwardRef(function BlogPostItem({ post, className = '', id = '' }: Props,
+  ref: Ref<HTMLLIElement>) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
@@ -102,24 +100,22 @@ const BlogPostItem = forwardRef(function BlogPostItem(
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline'>
                       {post.authors
-                        .map((author, index) =>
-                          author.link ? (
-                            <a
-                              key={index}
-                              data-alt={author.name}
-                              href={author.link}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
-                              target='_blank'
-                              rel='noreferrer'
-                            >
-                              {author.name}
-                            </a>
-                          ) : (
-                            author.name
-                          )
-                        )
+                        .map((author, index) => author.link ? (
+                          <a
+                            key={index}
+                            data-alt={author.name}
+                            href={author.link}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                            }}
+                            target='_blank'
+                            rel='noreferrer'
+                          >
+                            {author.name}
+                          </a>
+                        ) : (
+                          author.name
+                        ))
                         .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
                     </span>
                   </Heading>

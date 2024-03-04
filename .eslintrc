@@ -22,14 +22,7 @@
         "endOfLine": "auto"
       }
     ],
-    "max-len": [
-      "error",
-      {
-        "code": 240,
-        "ignoreUrls": true,
-        "ignorePattern": "*className=([\\s\\S]*?)*" // Ignore classnames
-      }
-    ]
+    "max-len": 0
   },
   "globals": {
     "React": true,
@@ -183,12 +176,7 @@
           }
         ],
         "max-depth": "error",
-        "max-len": [
-          "error",
-          {
-            "code": 240
-          }
-        ],
+        "max-len": 0,
         "max-lines": [
           "error",
           {
