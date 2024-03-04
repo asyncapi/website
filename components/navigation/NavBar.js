@@ -147,7 +147,7 @@ export default function NavBar({
 
         <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
           <SearchButton
-            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out mr-2"
+            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
             aria-label="Open Search"
           >
             <IconLoupe />
