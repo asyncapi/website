@@ -1,11 +1,11 @@
 import posts from '../config/posts.json';
-import { IPost, Posts } from './types';
+import type { IPost, IPosts } from '../types/post';
 
 /**
  * Retrieves all posts.
  * @returns {Object} All posts.
  */
-export function getAllPosts(): object {
+export function getAllPosts(): IPosts {
   return posts;
 }
 
@@ -18,24 +18,19 @@ export function getAllPosts(): object {
 export function getPostBySlug(
   slug: string,
   type: string = ''
-): IPost | undefined {
-  if (type)
-    return (posts as any)[type as keyof Posts].find(
-      (post: IPost) => post.slug === slug && !post.isSection
-    );
+) {
+  if(type)
+    return (posts as any)[type].find((post: IPost) => post.slug === slug && !post.isSection )
   else {
-    let item: IPost | undefined;
-    Object.entries(posts).forEach(([key, value]: [string, any]) => {
-      let content;
-      if (key !== 'docsTree') {
-        content = (posts as any)[key as keyof Posts].find(
-          (post: IPost) => post.slug === slug && !post.isSection
-        );
-        if (content) item = content;
-      }
-    });
-    return item;
-  }
+      let item;
+      Object.entries(posts).forEach(([key, value]) => {
+        let content
+        if(key!== 'docsTree')
+          content = (posts as any)[key].find((post: IPost) => post.slug === slug && !post.isSection)
+          if(content) item = content
+      })
+      return item
+    }
 }
 
 /**
@@ -49,6 +44,6 @@ export function getDocBySlug(
   slug: string
 ): object | undefined {
   return structuredPosts.find(
-    (post: IPost) => post.slug === slug && !post.isSection
+    (post) => post.slug === slug && !post.isSection
   );
 }
