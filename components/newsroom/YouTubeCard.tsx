@@ -19,6 +19,11 @@ interface Props {
   video: YouTubeVideo;
 }
 
+/**
+ * Represents a YouTube video card.
+ * @param {Props} video - The video object containing image, title, description, and videoId.
+ * @returns {JSX.Element} The JSX element representing the YouTube video card.
+ */
 const YouTubeCard: React.FC<Props> = ({ video }) => {
   return (
     <li className={'min-w-full h-full max-w-md rounded-lg px-2 pb-6'}>

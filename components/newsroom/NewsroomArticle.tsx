@@ -13,6 +13,10 @@ interface Article {
   title: string;
 }
 
+/**
+ * Represents an article in the newsroom section.
+ * @returns {JSX.Element} The JSX element representing the newsroom article.
+ */
 const NewsroomArticle: React.FC = () => {
   return (
     <ul className='flex w-full flex-col gap-2 px-2 pb-4'>
