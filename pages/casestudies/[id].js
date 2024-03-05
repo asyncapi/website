@@ -10,14 +10,14 @@ import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
 import { generateCaseStudyContent } from "../../lib/staticHelpers";
 
-const renderContent = (content, allComponents, level) => {
+const renderContent = (content, allComponents, level, isAgain=false) => {
   const typeStyle =
     level === 0 ? "heading-lg" : level === 1 ? "heading-md" : "heading-sm";
 
   return content.map((item) => {
     return (
       <div
-        className="mt-10 w-11/12 mx-auto"
+        className={`mt-10 mx-auto ${!isAgain?'w-11/12':''}`}
         key={item.title}
       >
         <Heading typeStyle={typeStyle} className="mt-8"  id={item.title
@@ -44,7 +44,7 @@ const renderContent = (content, allComponents, level) => {
               ))}
             </div>
             {item.children &&
-              renderContent(item.children, allComponents, level + 1)}
+              renderContent(item.children, allComponents, level + 1, true)}
           </div>
         )}
       </div>
@@ -192,7 +192,7 @@ function Index({
           <img
               src={casestudy.company.logo}
               alt={casestudy.company.name}
-              className="w-[300px] mt-5 md:mt-0 rounded-lg"
+              className="w-[250px] mt-5 md:mt-0 mx-auto rounded-lg"
             />
         </div>
         {renderContent(content, allComponents, 0)}
