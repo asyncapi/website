@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2331",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 27.28158593117958
+      "score": 27.56876051992884
     },
     {
       "id": "PR_kwDOBW5R_c5fbyLb",
@@ -31,7 +31,7 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 21.538094156194408
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -52,6 +52,26 @@
         }
       ],
       "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 19.527872034949596
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -102,7 +122,34 @@
           "color": "84b6eb"
         }
       ],
-      "score": 16.08177696995849
+      "score": 16.65612614745701
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "PR_kwDOKp3ICM5g9w8f",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: adding content for module 3",
+      "author": "TRohit20",
+      "resourcePath": "/asyncapi/learning-paths/pull/9",
+      "repo": "asyncapi/learning-paths",
+      "labels": [],
+      "score": 15.220253203710714
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -114,17 +161,6 @@
       "repo": "asyncapi/studio",
       "labels": [],
       "score": 14.933078614961456
-    },
-    {
-      "id": "PR_kwDOKp3ICM5g9w8f",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: adding content for module 3",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/learning-paths/pull/9",
-      "repo": "asyncapi/learning-paths",
-      "labels": [],
-      "score": 14.645904026212197
     },
     {
       "id": "I_kwDODou01c5BZZv-",
@@ -144,49 +180,22 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.635681904967385
+      "score": 14.645904026212197
     }
   ],
   "goodFirstIssues": [
     {
-      "id": "I_kwDODyzcIc6AItqs",
-      "title": "bug fix in bug template 😃 ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/271",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
+      "id": "I_kwDODou01c6Aib3a",
+      "title": "Disable the generators that are not yet supported in V3",
+      "isAssigned": true,
+      "resourcePath": "/asyncapi/studio/issues/979",
+      "repo": "asyncapi/studio",
+      "author": "Amzani",
       "area": "Unknown",
       "labels": [
         {
-          "name": "bug",
-          "color": "d73a4a"
+          "name": "enhancement",
+          "color": "a2eeef"
         }
       ]
     },
@@ -221,25 +230,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3858hQCM",
-      "title": "Add OpenAPI 3.1 support",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1749",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "openapi",
-          "color": "960C58"
         }
       ]
     },
@@ -461,7 +451,7 @@
     {
       "id": "I_kwDODou01c531nlO",
       "title": "Misalignment of Code Editor Highlight Box",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/studio/issues/861",
       "repo": "asyncapi/studio",
       "author": "princerajpoot20",
