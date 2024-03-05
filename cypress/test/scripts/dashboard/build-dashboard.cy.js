@@ -17,9 +17,13 @@ describe('getLabel function', () => {
 describe('monthsSince function', () => {
   // Define some sample dates and expected results
   const today = new Date();
-  const oneMonthAgo = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-  const twoMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 2, today.getDate());
-  const threeMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 3, today.getDate());
+  
+  // number of miliseconds in a month
+  const month = 30 * 24 * 60 * 60 * 1000;
+  
+  const oneMonthAgo = today - month;
+  const twoMonthsAgo = today - 2 * month;
+  const threeMonthsAgo = today - 3 * month;
 
   // Write the test cases
   it('should return 0 for the same date', () => {
