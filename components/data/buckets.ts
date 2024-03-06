@@ -7,7 +7,7 @@ import IconSpec from '../icons/Spec'
 import IconUsers from '../icons/Users'
 import IconMigration from '../icons/Migration'
 
-type IconType = (props: any) => JSX.Element;
+type IconType = (props: any) => React.ReactElement;
 
 interface bucketType {
   name: string;
