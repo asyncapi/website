@@ -1,85 +1,20 @@
-import Container from '../components/layout/Container'
 import NavBar from '../components/navigation/NavBar'
-import Hero from '../components/Hero'
-import NewsletterSubscribe from '../components/NewsletterSubscribe'
-import Sponsors from '../components/sponsors/Sponsors'
 import Head from '../components/Head'
-import Slack from '../components/slack'
-import Button from '../components/buttons/Button'
-import Calendar from '../components/Calendar'
-import AdidasLogo from '../components/logos/Adidas'
-import AxwayLogo from '../components/logos/Axway'
-import SlackLogo from '../components/logos/Slack'
-import SalesforceLogo from '../components/logos/Salesforce'
-import SapLogo from '../components/logos/SAP'
-import Testimonial from '../components/Testimonial'
-import Heading from '../components/typography/Heading'
-import Paragraph from '../components/typography/Paragraph'
-import TextLink from '../components/typography/TextLink'
-import GoldSponsors from '../components/sponsors/GoldSponsors'
-import SilverSponsors from '../components/sponsors/SilverSponsors'
-import SupportUs from '../components/SupportUs/SupportUs'
 import StickyNavbar from '../components/navigation/StickyNavbar'
-import GoogleCalendarButton from '../components/buttons/GoogleCalendarButton';
-import ICSFileButton from '../components/buttons/ICSFileButton';
-import SubscribeButton from '../components/buttons/SubscribeButton';
-import NewsroomSection from '../components/newsroom/NewsroomSection'
 import { languageDetection } from "../lib/i18n";
 
 function HomePage() {
-  //To be enabled in a future PR
-  //languageDetection();
+  const loader = 'img/loaders/loader.png'; // preloader image for the tools
+  languageDetection();
+
   return (
     <>
       <Head />
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-
-      <main id="main-content" className="scroll-mt-5">
-        <Container wide>
-          <Hero className="mb-24" />
-        </Container>
-
-        <Container className="text-center pb-12" wide as="section">
-          <Heading
-            level="h3"
-            typeStyle="heading-lg"
-            className="mb-4"
-          >
-            Adopted by the world leading brands
-          </Heading>
-          <Paragraph className="mt-2 mb-20 md:w-2/3 md:mx-auto">
-            These brands are already using AsyncAPI in production. Is your company using AsyncAPI and wants to be included in this list?
-            <TextLink href="https://github.com/asyncapi/website/issues/new" target="_blank">
-              Let us know here!
-            </TextLink>
-          </Paragraph>
-          <ul className="md:grid md:gap-8 md:grid-cols-2 lg:grid-cols-5">
-            <li className="justify-center flex">
-              <AdidasLogo className="h-8 text-gray-400 hover:text-black" />
-            </li>
-            <li className="justify-center flex">
-              <AxwayLogo className="mt-12 md:-mt-5 lg:-mt-5 h-14 text-gray-400 group hover:text-black" />
-            </li>
-            <li className="justify-center flex">
-              <SlackLogo className="mt-12 md:mt-2 lg:-mt-1 h-10 text-gray-400 hover:text-black group" />
-            </li>
-            <li className="justify-center flex">
-              <SalesforceLogo className="mt-12 md:mt-2 lg:-mt-4 h-16 text-gray-400" />
-            </li>
-            <li className="justify-center flex">
-              <SapLogo className="mt-12 md:mt-2 lg:-mt-2 h-12 text-gray-400" />
-            </li>
-          </ul>
-        </Container>
-
-        <div className="bg-dark py-12 mt-8">
-          <Container wide as="section">
-            <NewsletterSubscribe dark />
-          </Container>
+      <div className="h-screen">
+        <div className="flex animate-pulse w-fit mx-auto my-60 gap-4 text-black">
+          <img src={loader} className="mx-auto w-16" />
+          <div className="text-xl my-auto">Loading...</div>
         </div>
-
         <Container className="text-center py-12" wide as="section">
           <Heading
             level="h3"
