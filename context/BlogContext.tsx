@@ -1,4 +1,5 @@
 import { createContext } from 'react';
-import { IDocs } from '@/types/post';
 
-export default createContext<IDocs>([]);
+import type { IBlogs } from '@/types/post';
+
+export default createContext<{ post?: IBlogs[number], navItems?: IBlogs } | undefined>(undefined);

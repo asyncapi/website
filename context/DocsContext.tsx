@@ -3,7 +3,7 @@ import { DocsContextType } from '@/types/context/DocsContext';
 
 const initialDocsContext: DocsContextType = {
   post: [],
-  navItems: {},
+  navItems: {}
 };
 
 export default createContext<DocsContextType>(initialDocsContext);

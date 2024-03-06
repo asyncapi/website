@@ -26,8 +26,7 @@
       "error",
       {
         "code": 120,
-        "ignoreUrls": true,
-        "ignorePattern": "*className=([\\s\\S]*?)*" // Ignore classnames
+        "ignoreUrls": true
       }
     ]
   },
