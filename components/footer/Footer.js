@@ -18,17 +18,14 @@ export default function Footer() {
               </Link>
             </div>
             <div className="">
-              <Heading className="mt-12 mb-14 text-white" typeStyle="heading-sm-semibold">
+              <Heading className="mt-10 mb-6 text-white" typeStyle="heading-sm-semibold">
                 Building the future of <br /> Event-Driven Architectures.
               </Heading>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row">
-
-            <div className="flex">
-
-              <div className="px-0 lg:px-10 lg:ml-5 mb-5">
+              <div className="px-0 lg:px-10 lg:ml-5 mb-6">
                 <div className="py-2">
                   <div className="text-white">
                     <Heading typeStyle="heading-sm-semibold">The Initiative</Heading>
@@ -45,7 +42,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className="px-14 sm:px-8 sm:ml-10 md:ml-5 mb-5">
+              <div className="sm:px-8 sm:ml-10 md:ml-5 mb-6">
                 <div className="py-2">
                   <div className="text-white">
                     <Heading typeStyle="heading-sm-semibold">News</Heading>
@@ -69,10 +66,8 @@ export default function Footer() {
                 </ul>
               </div>
 
-            </div>
-
             <div className="px-0 sm:px-10 sm:ml-5 mb-5" >
-              <div className="py-2 hidden sm:block">
+              <div className="py-2">
                 <div className="mr-12 text-white">
                   <Heading typeStyle="heading-sm-semibold">Social</Heading>
                 </div>
