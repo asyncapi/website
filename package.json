@@ -99,9 +99,11 @@
   "devDependencies": {
     "@netlify/functions": "^2.6.0",
     "@netlify/plugin-nextjs": "^4.41.3",
+    "@types/lowlight": "^0.0.7",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
     "@types/react-dom": "^18",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "dedent": "^1.5.1",
