@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable unused-imports/no-unused-vars */
 import { useRouter } from 'next/router';
 
 import type { IPosts } from '@/types/post';
@@ -5,7 +7,7 @@ import type { IPosts } from '@/types/post';
 import BlogContext from '../../context/BlogContext';
 import { getAllPosts, getDocBySlug, getPostBySlug } from '../../lib/api';
 import BlogLayout from './BlogLayout';
-import DocsLayout from './DocsLayout';
+// import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
 
 interface ILayoutProps {
@@ -24,13 +26,13 @@ export default function Layout({ children }: ILayoutProps) {
   if (pathname.startsWith('/docs')) {
     const post = getDocBySlug(posts.docs, pathname);
 
-    return (
-      <div data-testid='Docs-main-container'>
-        <DocsLayout post={post} navItems={allDocPosts}>
-          {children}
-        </DocsLayout>
-      </div>
-    );
+    return null;
+    // <div data-testid='Docs-main-container'>
+    //   <DocsLayout post={post} navItems={allDocPosts}>
+    //     {children}
+    //   </DocsLayout>
+    // </div>
+    // );
   } if (pathname.startsWith('/blog/')) {
     const post = getPostBySlug(pathname, 'blog');
 
