@@ -50,8 +50,8 @@ export default function TSC() {
       image={image}
       wide
     >
-      <div className="py-12 relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-        <div className="grid lg:grid-cols-3 lg:gap-8" data-testid="TSC-content">
+      <div className="py-12 relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid max-w-xl my-0 mx-auto lg:grid-cols-3 lg:gap-8 lg:max-w-screen-xl" data-testid="TSC-content">
           <div>
             <h3 className="font-semibold  text-primary-800 mb-2 lg:text-2xl lg:text-center">
               What is a TSC?
@@ -110,7 +110,7 @@ export default function TSC() {
         </div>
         <div className="mt-8">
           <NewsletterSubscribe
-            type="tsc-voting-email"
+            type="TSC Voting"
             title="Get notified when TSC is voting"
             subtitle="You'll receive an email whenever someone requests the TSC to vote."
           />

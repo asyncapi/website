@@ -5,7 +5,7 @@ weight: 120
 ---
 
 ## Introduction
-This guide teaches multiple ways to validate AsyncAPI documents. 
+In this guide, you'll learn multiple ways to validate AsyncAPI documents.
 
 ## Validate AsyncAPI documents
 Validating an AsyncAPI document can mean one of two things: 
@@ -51,7 +51,7 @@ Let's discuss an example. While the `summary` property is optional in an AsyncAP
 
 </Remember>
 
-One way this can be done is by using **Spectral**, an API linting tool which has a built-in [custom ruleset properties](https://meta.stoplight.io/docs/spectral/e5b9616d6d50c-custom-rulesets) with [AsyncAPI rules](https://meta.stoplight.io/docs/spectral/1e63ffd0220f3-async-api-rules) for the AsyncAPI specification. It also enables you to define company-specific rules that you can use internally.  
+One way to do this is to use the **Spectral** open-source tool. It enables you to define company-specific rules that you can use internally.  
 
 To get started:
 1. Install [Spectral](https://meta.stoplight.io/docs/spectral/b8391e051b7d8-installation). 
@@ -59,8 +59,6 @@ To get started:
     Example:
     ```js
     {
-      "formats": ["asyncapi2"],
-      "extends": "spectral:asyncapi",
       "rules": {
         // add your own rules here
       }
@@ -69,31 +67,24 @@ To get started:
 
 3. Create and add your own custom ruleset:
  ```js
-    {
-      "formats": ["asyncapi2"],
-      "extends": "spectral:asyncapi",
+  {
       "rules": {
-        // add your own rules here
-        "valid-document-version": {
-          "message": "Version must match 2.x.x",
-          "severity": "hint",
-          "given": "$.info",
-          "then": [
-            {
-              "field": "version",
-              "function": "defined"
-            },
-            {
-              "field": "version",
-              "function": "pattern",
-              "functionOptions": {
-                "match": "^[0-9]+$"
-              }
-            }
-          ]
-        }
+          "valid-document-version": {
+              "message": "Application title must start with upper case",
+              "severity": "error",
+              "given": "$.info",
+              "then": [
+                  {
+                      "field": "title",
+                      "function": "pattern",
+                      "functionOptions": {
+                          "match": "^[A-Z]"
+                      }
+                  }
+              ]
+          }
       }
-    }
+  }
   ```
 
 4. After setting up Spectral and creating custom rules following steps 1 - 3, validate your AsyncAPI document using this Spectral CLI command:
