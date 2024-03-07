@@ -20,12 +20,9 @@ import {
   useTranslation,
 } from "../../lib/i18n";
 import browserLanguageDetector from "../../lib/browserLanguageDetector";
+import i18nPaths from "../../lib/i18nPaths";
 
 const isMobile = isMobileDevice();
-const uniqueLangs = [...new Set(["EN", "DE"])].map((repo) => ({
-  key: repo,
-  text: repo,
-}));
 
 export default function NavBar({
   className = '',
@@ -37,10 +34,46 @@ export default function NavBar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState();
   const { i18n } = useTranslation();
 
+  /**
+ * Retrieves unique language options based on the current path and i18nPaths configuration.
+ *
+ * @returns {string[]} - An array of unique language options in uppercase.
+ */
+  const getUniqueLangs = () => {
+    let pathnameWithoutLocale = pathname;
+
+    // Check if the pathname includes "/[lang]", if so, replace it with an empty string
+    if (pathname && pathname.includes("/[lang]")) {
+      pathnameWithoutLocale = pathname.replace("/[lang]", "");
+    }
+
+    // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
+    let uniqueLangs = Object.keys(i18nPaths).filter(lang => i18nPaths[lang].includes(pathnameWithoutLocale)).map(lang => lang.toUpperCase());
+
+    // If no unique languages are found, default to ["EN"]
+    return uniqueLangs.length === 0 ? ["EN"] : uniqueLangs;
+  }
+
+  const uniqueLangs = getUniqueLangs().map((lang) => ({
+    key: lang,
+    text: lang,
+    value: lang
+  }));
+
+  /**
+ * Changes the language and updates the URL accordingly.
+ *
+ * @async
+ * @param {string} locale - The new locale/language to set.
+ * @param {boolean} langPicker - Indicates whether the change is from the language picker.
+ *                              If true, stores the language in local storage.
+ * @returns {Promise<void>} - A promise representing the completion of the language change.
+ * @throws {Error} - If an error occurs during the language change process.
+ */
   const changeLanguage = async (locale, langPicker) => {
 
     // Verifies if the language change is from langPicker or the browser-api
-    if(langPicker){
+    if (langPicker) {
       localStorage.setItem('i18nLang', locale);
     }
 
@@ -70,11 +103,6 @@ export default function NavBar({
 
     router.push(href);
   };
-
-  // To be enabled on the last PR
-  // useEffect(() => {
-  //   changeLanguage(browserLanguageDetector(), false);
-  // }, []);
 
   function outsideClick(menu) {
     if (open !== menu) return;
@@ -181,21 +209,21 @@ export default function NavBar({
 
           <div className="flex flex-row items-center justify-content">
             <SearchButton
-              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out mr-2"
               aria-label="Open Search"
             >
               <IconLoupe />
             </SearchButton>
 
             {/* // Language Picker Component */}
-            {/* <LanguageSelect
+            <LanguageSelect
               options={uniqueLangs}
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
               className=""
-              selected={i18n.language.toLocaleUpperCase()}
-            /> */}
+              selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
+            />
 
             <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav="true" />
           </div>

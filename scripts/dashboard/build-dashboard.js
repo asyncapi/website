@@ -90,6 +90,7 @@ function getLabel(issue, filter) {
 
 function monthsSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+  // 2592000 = number of seconds in a month = 30 * 24 * 60 * 60
   const months = seconds / 2592000;
   return Math.floor(months);
 }
