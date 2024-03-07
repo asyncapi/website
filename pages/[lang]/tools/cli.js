@@ -72,7 +72,7 @@ export default function CliPage() {
                     className="block mt-2 md:mt-0 md:inline-block w-full sm:w-auto"
                     href="https://www.github.com/asyncapi/cli"
                 />
-                <Button text={t("cli.docsButton")} href="/docs/tools/cli" className="ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto" />
+                <Button text={t("cli.docsButton")} href="/docs/tools/cli" className="md:ml-2 block mt-2 md:mt-0 md:inline-block w-full sm:w-auto" />
             </div>
         );
     }
@@ -156,7 +156,7 @@ export default function CliPage() {
                             </div>
 
                             <div>
-                                <Heading level="h3" typeStyle="heading-sm-semibold" className="text-center md:text-left">
+                                <Heading level="h3" typeStyle="heading-sm-semibold" className="mb-4 text-center md:text-left">
                                     {t("cli.exampleTitle")}
                                 </Heading>
                                 <div className="space-y-5">

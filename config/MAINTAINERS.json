@@ -709,5 +709,15 @@
         "repos": [
             "website"
         ]
+    },
+    {
+        "name": "Viacheslav Turovskyi",
+        "github": "aeworxet",
+        "slack": "U01G3U01SVC",
+        "availableForHire": false,
+        "isTscMember": false,
+        "repos": [
+            "bundler"
+        ]
     }
 ]

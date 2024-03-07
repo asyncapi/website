@@ -10,9 +10,6 @@ function HomePage() {
   return (
     <>
       <Head />
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <div className="h-screen">
         <div className="flex animate-pulse w-fit mx-auto my-60 gap-4 text-black">
           <img src={loader} className="mx-auto w-16" />

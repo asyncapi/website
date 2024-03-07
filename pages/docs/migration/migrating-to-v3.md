@@ -409,7 +409,7 @@ Parameters have often prioritized convenience over accurately reflecting real-wo
 
 In v2, we significantly streamlined the Schema Object. While the previous version offered full capability with numerous, often underutilized options, it posed challenges in serializing objects or booleans in the channel path. 
 
-The new v3 simplifies this by consistently using the string type and limiting available properties. Now, you can only access `enum`, `default`, `description`, `examples`, and `location`, ensuring a more focused and practical approach."
+The new v3 simplifies this by consistently using the string type and limiting available properties. Now, you can only access `enum`, `default`, `description`, `examples`, and `location`, ensuring a more focused and practical approach.
 
 ```yml
 asyncapi: 2.6.0

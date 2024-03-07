@@ -7,10 +7,8 @@ import TOC from '../TOC';
 import DocsNav from '../navigation/DocsNav';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsButton from '../buttons/DocsButton';
-import NavBar from '../navigation/NavBar';
 import ArrowRight from '../icons/ArrowRight';
 import Feedback from '../Feedback';
-import StickyNavbar from '../navigation/StickyNavbar';
 import Heading from '../typography/Heading';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
@@ -72,9 +70,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         {showMenu && (
           <DocsMobileMenu

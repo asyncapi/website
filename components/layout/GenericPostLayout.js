@@ -2,10 +2,8 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from '../Head'
 import GenericPostContext from '../../context/GenericPostContext'
-import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import AnnouncementHero from '../campaigns/AnnoucementHero'
-import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function GenericPostLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />
@@ -18,9 +16,6 @@ export default function GenericPostLayout({ post, children }) {
 
   return (
     <GenericPostContext.Provider value={{ post }}>
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <AnnouncementHero className="text-center m-4" small={true} />
       <Container>
         <main
