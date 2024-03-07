@@ -15,7 +15,7 @@ Notes and warning blocks are used to draw attention to important information. Us
 - Use short paragraphs or bullet points to convey the information.
 - Keep the language simple and direct.
 - Use an `>` in markdown to indicate the nature of the note or warning. 
-- Use the following syntax to apply a style. Currently our documenation supports **Remember** `<Remember>`:
+- Use the following syntax to apply a style. Currently our documentation supports **Remember** `<Remember>`:
   * Surround the text you want to style with an opening <Remember> tag and a closing </Remember> tag.
   * Note that the word 'Remember' does not need to be included within the tags, as it automatically provides the necessary styling.
   * Use the following syntax to apply a style:
@@ -33,7 +33,7 @@ Notes and warning blocks are used to draw attention to important information. Us
 Code blocks are used to display code examples or snippets. 
 
 - In a Markdown document, use the `<CodeBlock>` tag and specify the language.
-  Use the following syntax to apply a codeblock:
+  Use the following syntax to apply a code block:
   ```
   <CodeBlock language="bash">
   {`npm start`}
@@ -80,7 +80,7 @@ function myFunction() {
   ```
 ## Spacing
 
-Line spacing, or the amount of vertical space between lines of text in a paragraph, can aid or hinder reading. Adequate line spacing aids readers in navigating from the end of one line to the start of the next.
+Line spacing, or the vertical space between lines of text in a paragraph, can aid or hinder reading. Adequate line spacing aids readers in navigating from the end of one line to the start of the next.
 
 - Leave a blank line between paragraphs to visually separate them. This helps readers distinguish between different sections of content.
 - For headings and subheadings, leave a single blank line before and after them to provide clear visual separation.
