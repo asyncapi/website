@@ -10,14 +10,14 @@ import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
 import { generateCaseStudyContent } from "../../lib/staticHelpers";
 
-const renderContent = (content, allComponents, level, isAgain=false) => {
+const renderContent = (content, allComponents, level) => {
   const typeStyle =
     level === 0 ? "heading-lg" : level === 1 ? "heading-md" : "heading-sm";
 
   return content.map((item) => {
     return (
       <div
-        className={`mt-10 mx-auto ${!isAgain?'w-11/12':''}`}
+        className={`mt-10 mx-auto w-11/12`}
         key={item.title}
       >
         <Heading typeStyle={typeStyle} className="mt-8"  id={item.title
@@ -44,7 +44,7 @@ const renderContent = (content, allComponents, level, isAgain=false) => {
               ))}
             </div>
             {item.children &&
-              renderContent(item.children, allComponents, level + 1, true)}
+              renderContent(item.children, allComponents, level + 1)}
           </div>
         )}
       </div>
