@@ -17,7 +17,7 @@ const renderContent = (content, allComponents, level) => {
   return content.map((item) => {
     return (
       <div
-        className={`mt-10 mx-auto w-11/12`}
+        className="mt-10 mx-auto w-11/12"
         key={item.title}
       >
         <Heading typeStyle={typeStyle} className="mt-8"  id={item.title
