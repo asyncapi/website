@@ -105,7 +105,7 @@ const CodeBlock: React.FC<codeBlockProps> = ({
               <ul>
                 {
                   codeBlocks?.map((block, index) => (
-                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.title ? block.title : block.language}</li>
+                    <li key={index} className={activeBlock === index ? tabItemsActiveClassNames : tabItemsClassNames} onClick={() => setActiveBlock(index)}>{block.title || block.language}</li>
                   ))
                 }
               </ul>
@@ -141,7 +141,7 @@ const CodeBlock: React.FC<codeBlockProps> = ({
               className: 'mr-8'
             }}
           >
-            {codeBlocks && [codeBlocks[activeBlock].code]}
+            {codeBlocks ? [codeBlocks[activeBlock].code] : ""}
           </Highlight>
         </div>
       </div>

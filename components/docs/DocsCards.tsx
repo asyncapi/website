@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-
 import { buckets } from '../data/buckets';
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 type IconType = (props: { className: string }) => JSX.Element;
 
@@ -33,8 +34,8 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
         <div className="h-full border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300 ease-in-out rounded-lg p-6">
           <div data-testid="Docs-div-contents">
             <Heading
-              level="h3"
-              typeStyle="heading-sm-semibold"
+              level={HeadingLevel.h3}
+              typeStyle={HeadingTypeStyle.smSemibold}
               className='pb-4 border-b border-gray-300'
               id={title}
             >
@@ -45,7 +46,7 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
                 <span className='ml-4'>{title}</span>
               </div>
             </Heading>
-            <Paragraph typeStyle="body-sm" className="mt-5" fontWeight="light">
+            <Paragraph typeStyle={ParagraphTypeStyle.sm} className="mt-5" fontWeight="light">
               {description}
             </Paragraph>
           </div>
