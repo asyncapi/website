@@ -16,7 +16,7 @@ interface ILayoutProps {
  * @param props.children - The content of the layout
  * @description The layout with the content
  */
-export default function Layout({ children }: ILayoutProps) {
+export default function Layout({ children }: ILayoutProps) : JSX.Element {
   const { pathname } = useRouter();
   const posts = getAllPosts();
   // const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
@@ -24,7 +24,7 @@ export default function Layout({ children }: ILayoutProps) {
   if (pathname.startsWith('/docs')) {
     // const post = getDocBySlug(posts.docs as IPost[], pathname);
 
-    return null;
+    return <></>;
     // <div data-testid='Docs-main-container'>
     //   <DocsLayout post={post} navItems={allDocPosts}>
     //     {children}
@@ -56,5 +56,5 @@ export default function Layout({ children }: ILayoutProps) {
     return <GenericPostLayout post={post as unknown as IPosts['blog'][number]}>{children}</GenericPostLayout>;
   }
 
-  return children;
+  return children as JSX.Element;
 }
