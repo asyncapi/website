@@ -6,7 +6,7 @@ interface CaptionProps {
 
 const Caption: React.FC<CaptionProps> = ({ children }) => {
   return (
-    <p className="text-center text-xs text-gray-500 mt-2" data-testid="Caption-paragraph">
+    <p className='mt-2 text-center text-xs text-gray-500' data-testid='Caption-paragraph'>
       {children}
     </p>
   );
