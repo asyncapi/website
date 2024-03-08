@@ -21,7 +21,7 @@ const OtherFormsComponent: React.FC = () => {
               <img src='/img/illustrations/EmployeeInvolvement.webp' alt='Employee involvement' className='m-2 h-auto w-1/3 object-cover' />
               <h2 className='my-2 text-2xl font-semibold'>Employee involvement</h2>
               <p className='mx-2 mt-1 text-base text-darkGunMetal'>
-                                Assign your employees to contribute to projects under the AsyncAPI Initiative on a regular basis, and we'll welcome them as new maintainers.
+                                Assign your employees to contribute to projects under the AsyncAPI Initiative on a regular basis, and we&apos;ll welcome them as new maintainers.
               </p>
             </div>
 

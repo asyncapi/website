@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -7,19 +5,23 @@ import Button from '../buttons/Button';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
+/**
+ * Component representing the AsyncAPI Financial Summary.
+ * @returns {JSX.Element} The JSX representation of the component.
+ */
 export default function AsyncAPISummary() {
   return (
     <div className='px-4 sm:px-6 lg:px-8'>
       <div className='mx-4 my-8 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
         <div className='col-span-5 col-start-3'>
           <Heading level={HeadingLevel.h2} className='m-3 text-center text-5xl'>
-                        AsyncAPI Financial Summary
+            AsyncAPI Financial Summary
           </Heading>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-1 max-w-4xl text-darkGunMetal'>
-                        To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
-                        the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
-                            Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
-                        while Linux Foundation Crowdfunding operates separately.
+            To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
+            the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
+            Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
+            while Linux Foundation Crowdfunding operates separately.
           </Paragraph>
         </div>
       </div>
@@ -32,13 +34,13 @@ export default function AsyncAPISummary() {
       </div>
       <div className='mt-4 text-center text-sm'>
         <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.md} className='4xl'>
-                    Ways to Support Us?
+          Ways to Support Us?
         </Heading>
       </div>
       <div className='max-width my-4 text-center text-base text-darkGunMetal'>
         <Paragraph typeStyle={ParagraphTypeStyle.sm} className='my-4'>
-                    The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br className='hidden lg:inline-block' />there are alternative options,
-                    they may involve greater effort. Contribute <br className='hidden lg:inline-block' />monetarily using the following channels.
+          The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br className='hidden lg:inline-block' />there are alternative options,
+          they may involve greater effort. Contribute <br className='hidden lg:inline-block' />monetarily using the following channels.
         </Paragraph>
       </div>
 

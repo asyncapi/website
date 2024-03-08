@@ -17,7 +17,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
     const data = payload[0].payload;
 
     return (
-      <div className='rounded-md border border-gray-300 bg-white bg-opacity-90 p-2 shadow-md'>
+      <div className='bg-opacity-90/90 rounded-md border border-gray-300 bg-white p-2 shadow-md'>
         <p className='text-14 mb-1 font-bold'>{data.Category}</p>
         <p className='text-12 text-gray-900'>${data.Amount.toFixed(2)}</p>
         <p>Click the bar to learn more</p>
@@ -137,7 +137,7 @@ const BarChartComponent: React.FC = () => {
             <div className='space-x-4 md:flex'>
               <div className='mx-auto'>
                 <select
-                  className='m-1 w-full rounded-md border border-gray-600 bg-white p-2 text-xs font-semibold text-gray-600 text-violet sm:w-auto md:w-48'
+                  className='m-1 w-full rounded-md border border-gray-600 bg-white p-2 text-xs font-semibold text-violet sm:w-auto md:w-48'
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
