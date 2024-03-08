@@ -6,9 +6,6 @@ import Paragraph from "./typography/Paragraph";
 import Loader from "./Loader";
 import { useTranslation } from "../lib/i18n";
 import axios from "axios";
-import dotenv from "dotenv";
-
-require('dotenv').config();
 
 export default function NewsletterSubscribe({
   className = 'p-8 text-center',
@@ -27,7 +24,7 @@ export default function NewsletterSubscribe({
   const headTextColor = dark ? 'text-white' : ''
   const paragraphTextColor = dark ? 'text-gray-300' : ''
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     setStatus("loading");
     e.preventDefault()
     const data = {
