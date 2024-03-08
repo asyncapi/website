@@ -1,13 +1,15 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
-import Head from "next/head";
-import Container from "@/components/layout/Container";
-import AsyncAPISummary from "../components/FinancialSummary/AsyncAPISummary";
-import SponsorshipTiers from "../components/FinancialSummary/SponsorshipTiers";
-import OtherFormsComponent from "../components/FinancialSummary/OtherFormsComponent";
-import ExpenseBreakdown from "../components/FinancialSummary/ExpenseBreakdown";
-import BarChartComponent from "../components/FinancialSummary/BarChartComponent";
-import SuccessStories from "../components/FinancialSummary/SuccessStories";
-import ContactUs from "../components/FinancialSummary/ContactUs";
+import Head from 'next/head';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+
+import Container from '@/components/layout/Container';
+
+import AsyncAPISummary from '../components/FinancialSummary/AsyncAPISummary';
+import BarChartComponent from '../components/FinancialSummary/BarChartComponent';
+import ContactUs from '../components/FinancialSummary/ContactUs';
+import ExpenseBreakdown from '../components/FinancialSummary/ExpenseBreakdown';
+import OtherFormsComponent from '../components/FinancialSummary/OtherFormsComponent';
+import SponsorshipTiers from '../components/FinancialSummary/SponsorshipTiers';
+import SuccessStories from '../components/FinancialSummary/SuccessStories';
 
 /**
  * FinancialSummary component renders the financial summary page.
@@ -29,19 +31,20 @@ const FinancialSummary: React.FC = () => {
     /**
      * Set the initial window width on the client-side.
      */
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
     }
 
     handleResizeRef.current = handleResize;
-    window.addEventListener("resize", handleResizeRef.current);
+    window.addEventListener('resize', handleResizeRef.current);
+
     return () => {
-      window.removeEventListener("resize", handleResizeRef.current);
+      window.removeEventListener('resize', handleResizeRef.current);
     };
   }, [handleResize]);
 
-  const title: string = "AsyncAPI Finance Summary";
-  const description: string = "Financial Summary of AsyncAPI";
+  const title: string = 'AsyncAPI Finance Summary';
+  const description: string = 'Financial Summary of AsyncAPI';
 
   /**
    * Render all components of the financial summary page.
@@ -51,7 +54,7 @@ const FinancialSummary: React.FC = () => {
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name='description' content={description} />
       </Head>
       <AsyncAPISummary />
       <SponsorshipTiers />
