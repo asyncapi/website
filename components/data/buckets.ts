@@ -10,7 +10,7 @@ import IconUsers from '../icons/Users';
 
 type IconType = (props: any) => React.ReactElement;
 
-interface bucketType {
+interface BucketType {
   name: string;
   title: string;
   description: string;
@@ -20,7 +20,7 @@ interface bucketType {
   Icon: IconType;
 }
 
-export const buckets : bucketType[] = [
+export const buckets : BucketType[] = [
   {
     name: 'concepts',
     title: 'Concepts',

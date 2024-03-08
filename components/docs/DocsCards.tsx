@@ -18,22 +18,12 @@ interface CardProps {
   Icon: IconType;
 }
 
-export const DocsCards: React.FC = () => {
-  return (
-    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >
-      {buckets.map(card => (
-        <Card key={card.title} {...card} />
-      ))}
-
-    </div>
-  );
-};
-
 const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }) => {
   return (
     <Link href={link}>
       <a href={link} className='cursor-pointer' data-testid='Docs-link'>
-        <div className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'>
+        <div className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
+          hover:shadow-lg'>
           <div data-testid='Docs-div-contents'>
             <Heading
               level={HeadingLevel.h3}
@@ -42,7 +32,8 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
               id={title}
             >
               <div className='flex flex-row items-center'>
-                <div className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className} text-gray-900 sm:size-12`} data-testid='Docs-icon'>
+                <div className={`flex size-12 shrink-0 items-center justify-center rounded-lg ${className}
+                  text-gray-900 sm:size-12`} data-testid='Docs-icon'>
                   <Icon className='size-6' />
                 </div>
                 <span className='ml-4'>{title}</span>
@@ -55,5 +46,16 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
         </div>
       </a>
     </Link>
+  );
+};
+
+export const DocsCards: React.FC = () => {
+  return (
+    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >
+      {buckets.map(card => (
+        <Card key={card.title} {...card} />
+      ))}
+
+    </div>
   );
 };
