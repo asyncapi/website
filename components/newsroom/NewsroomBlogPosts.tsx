@@ -9,8 +9,7 @@ import BlogPostItem from '../navigation/BlogPostItem';
 import { checkLastSnapIndex, useSwiperRef } from './swiper';
 
 /**
- * React component for displaying blog posts in a newsroom.
- * @returns {JSX.Element} JSX element representing the NewsroomBlogPosts component.
+ * @description This component displays the latest blog posts.
  */
 export default function NewsroomBlogPosts() {
   const [nextEl, nextElRef] = useSwiperRef();

@@ -8,16 +8,16 @@ import ArrowRight from '../icons/ArrowRight';
 import { checkLastSnapIndex, useSwiperRef } from './swiper';
 import YouTubeCard from './YouTubeCard';
 
-interface Props {
+interface NewsroomYoutubeProps {
   className?: string;
 }
 
 /**
  * Newsroom Youtube component displays a Swiper carousel of YouTubeCard components.
- * @param {Props} props - The props for the component.
- * @returns {JSX.Element} - Rendered component.
+ * @description This component displays the latest videos from the AsyncAPI YouTube channel.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
-export default function NewsroomYoutube({ className = '' }: Props) {
+export default function NewsroomYoutube({ className = '' }: NewsroomYoutubeProps) {
   const [nextEl, nextElRef] = useSwiperRef();
   const [prevEl, prevElRef] = useSwiperRef();
   const [current, setCurrent] = useState<number>(0);

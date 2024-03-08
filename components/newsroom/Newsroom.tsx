@@ -12,17 +12,13 @@ import NewsroomBlogPosts from './NewsroomBlogPosts';
 import NewsroomYoutube from './NewsroomYoutube';
 
 /**
- * A component representing the newsroom section of AsyncAPI website.
- * @returns {JSX.Element} The JSX element representing the newsroom section.
+ * @description This component displays the latest updates, blog posts, news, and videos.
  */
 export default function Newsroom() {
   return (
     <>
       <div className='mt-12 text-center' data-testid='Newsroom-main'>
-        <Heading
-          level={HeadingLevel.h2}
-          typeStyle={HeadingTypeStyle.lg}
-        >
+        <Heading level={HeadingLevel.h2} typeStyle={HeadingTypeStyle.lg}>
           Latest Updates
         </Heading>
         <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto mt-5 max-w-2xl'>
@@ -81,11 +77,7 @@ export default function Newsroom() {
           </div>
           <div className='w-full px-2 md:w-1/2 md:pl-4 md:pr-0'>
             <div className='mx-auto mt-8 w-full rounded-xl shadow-md md:mt-0' data-testid='Newsroom-Twitter'>
-              <TwitterTimelineEmbed
-                sourceType='profile'
-                screenName='AsyncAPISpec'
-                options={{ tweetLimit: '2' }}
-              />
+              <TwitterTimelineEmbed sourceType='profile' screenName='AsyncAPISpec' options={{ tweetLimit: '2' }} />
             </div>
           </div>
         </div>

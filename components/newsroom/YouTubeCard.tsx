@@ -15,25 +15,24 @@ interface YouTubeVideo {
   videoId: string;
 }
 
-interface Props {
+interface YouTubeCardProps {
   video: YouTubeVideo;
 }
 
 /**
- * Represents a YouTube video card.
+ * @description This component displays a YouTube video card with an image, title, description, and link to the video.
  * @param {Props} video - The video object containing image, title, description, and videoId.
- * @returns {JSX.Element} The JSX element representing the YouTube video card.
  */
-const YouTubeCard: React.FC<Props> = ({ video }) => {
+export default function YouTubeCard({ video }: YouTubeCardProps) {
   return (
     <li className={'min-w-full h-full max-w-md rounded-lg px-2 pb-6'}>
       <article className='h-full rounded-lg'>
-        <div className={'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'}>
-          <img data-testid='YoutubeCard-img'
-            src={video.image_url}
-            alt='video'
-            className='h-60 w-full object-cover'
-          />
+        <div
+          className={
+            'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg'
+          }
+        >
+          <img data-testid='YoutubeCard-img' src={video.image_url} alt='video' className='h-60 w-full object-cover' />
 
           <div className='flex flex-1 flex-col justify-between bg-white p-6' data-testid='YoutubeCard-main'>
             <div>
@@ -46,10 +45,7 @@ const YouTubeCard: React.FC<Props> = ({ video }) => {
             </div>
 
             <div className='mt-6 block'>
-              <TextLink
-                href={`https://youtube.com/watch?v=${video.videoId}`}
-                target='_blank'
-              >
+              <TextLink href={`https://youtube.com/watch?v=${video.videoId}`} target='_blank'>
                 Watch on Youtube
                 <ArrowRight className='inline w-6' />
               </TextLink>
@@ -59,6 +55,4 @@ const YouTubeCard: React.FC<Props> = ({ video }) => {
       </article>
     </li>
   );
-};
-
-export default YouTubeCard;
+}

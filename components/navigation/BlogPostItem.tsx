@@ -4,6 +4,8 @@ import type { Ref } from 'react';
 import { forwardRef } from 'react';
 import TextTruncate from 'react-text-truncate';
 
+import { BlogPostType } from '@/types/components/navigation/BlogPostType';
+import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -11,45 +13,35 @@ import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-interface Author {
-  name: string;
-  photo: string;
-  link?: string;
-}
-
-interface Post {
-  type: string;
-  alt?: string;
-  slug: string;
-  cover: string;
-  title: string;
-  excerpt: string;
-  authors: Author[];
-  date: string;
-  readingTime: number;
-}
-
-interface Props {
-  post: Post;
+interface BlogPostItemProps {
+  post: IBlogPost;
   className?: string;
   id?: string;
 }
 
-const BlogPostItem = forwardRef(function BlogPostItem({ post, className = '', id = '' }: Props,
+/**
+ * @description Functional component representing a single blog post item.
+ * @param {Object} props - Props for the BlogPostItem component.
+ * @param {IBlogPost} props.post - The blog post data.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
+ * @param {string} [props.id=''] - The HTML id attribute for the component.
+ * @param {Ref<HTMLLIElement>} ref - Reference object for the component.
+ */
+export default forwardRef(function BlogPostItem({ post, className = '', id = '' }: BlogPostItemProps,
   ref: Ref<HTMLLIElement>) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
-    case 'video':
+    case BlogPostType.Video:
       typeColors = ['bg-pink-100', 'text-pink-800'];
       break;
-    case 'marketing':
+    case BlogPostType.Marketing:
       typeColors = ['bg-orange-100', 'text-orange-800'];
       break;
-    case 'strategy':
+    case BlogPostType.Strategy:
       typeColors = ['bg-green-100', 'text-green-800'];
       break;
-    case 'communication':
+    case BlogPostType.Communication:
       typeColors = ['bg-teal-100', 'text-teal-800'];
       break;
     default:
@@ -133,5 +125,3 @@ const BlogPostItem = forwardRef(function BlogPostItem({ post, className = '', id
     </li>
   );
 });
-
-export default BlogPostItem;

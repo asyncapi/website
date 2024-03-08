@@ -2,6 +2,8 @@ import moment from 'moment';
 import Link from 'next/link';
 import TextTruncate from 'react-text-truncate';
 
+import { BlogPostType } from '@/types/components/navigation/BlogPostType';
+import type { IBlogPost } from '@/types/post';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -9,45 +11,30 @@ import AuthorAvatars from '../AuthorAvatars';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-interface Author {
-    name: string;
-    photo: string;
-    link?: string;
-  }
-
 interface FeaturedBlogPostProps {
-  post: {
-    type: string;
-    slug: string;
-    cover: string;
-    title: string;
-    excerpt: string;
-    authors: Author[];
-    date: string;
-    readingTime: number;
-  };
+  post: IBlogPost;
   className?: string;
 }
 
 /**
- * React component for rendering a featured blog post.
+ * @description Renders a featured blog post with the provided data.
  * @param {FeaturedBlogPostProps} props - The component props.
- * @returns {JSX.Element} JSX element representing the featured blog post.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogPostProps) {
   let typeColors = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
-    case 'video':
+    case BlogPostType.Video:
       typeColors = ['bg-pink-100', 'text-pink-800'];
       break;
-    case 'marketing':
+    case BlogPostType.Marketing:
       typeColors = ['bg-orange-100', 'text-orange-800'];
       break;
-    case 'strategy':
+    case BlogPostType.Strategy:
       typeColors = ['bg-green-100', 'text-green-800'];
       break;
-    case 'communication':
+    case BlogPostType.Communication:
       typeColors = ['bg-teal-100', 'text-teal-800'];
       break;
     default:

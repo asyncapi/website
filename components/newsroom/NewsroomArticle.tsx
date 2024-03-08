@@ -14,10 +14,9 @@ interface Article {
 }
 
 /**
- * Represents an article in the newsroom section.
- * @returns {JSX.Element} The JSX element representing the newsroom article.
+ * @description This component renders an article in the newsroom section.
  */
-const NewsroomArticle: React.FC = () => {
+export default function NewsroomArticl() {
   return (
     <ul className='flex w-full flex-col gap-2 px-2 pb-4'>
       {articlesData.map((article: Article, index: number) => (
@@ -42,6 +41,4 @@ const NewsroomArticle: React.FC = () => {
       ))}
     </ul>
   );
-};
-
-export default NewsroomArticle;
+}

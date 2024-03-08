@@ -9,8 +9,7 @@ import Paragraph from '../typography/Paragraph';
 import FeaturedBlogPost from './FeaturedBlogPost';
 
 /**
- * Represents the Newsroom section component.
- * @returns {JSX.Element} JSX representation of the component.
+ * @description This component displays the latest news, events, and blog posts.
  */
 export default function NewsroomSection() {
   const { t } = useTranslation('common');

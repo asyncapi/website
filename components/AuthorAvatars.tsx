@@ -10,7 +10,12 @@ interface AuthorAvatarsProps {
   authors: Author[];
 }
 
-const AuthorAvatars: React.FC<AuthorAvatarsProps> = ({ authors = [] }) => {
+/**
+ * @description This component takes an array of authors and renders their avatars.
+ * @param {AuthorAvatarsProps} props - The component props.
+ * @param {Author[]} props.authors - The authors to render avatars for.
+ */
+export default function AuthorAvatars({ authors = [] }: AuthorAvatarsProps) {
   return (
     <>
       {authors.map((author, index) => {
@@ -36,6 +41,4 @@ const AuthorAvatars: React.FC<AuthorAvatarsProps> = ({ authors = [] }) => {
       })}
     </>
   );
-};
-
-export default AuthorAvatars;
+}
