@@ -14,6 +14,9 @@ import FeaturedBlogPost from './FeaturedBlogPost';
 export default function NewsroomSection() {
   const { t } = useTranslation('common');
 
+  /**
+   * Retrieves all blog posts and news and sorts them based on their date and featured status.
+   */
   const posts = getAllPosts()
     .blog.sort((i1, i2) => {
       const i1Date = new Date(i1.date);
