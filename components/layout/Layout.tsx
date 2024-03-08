@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import type { IPost, IPosts } from '@/types/post';
+import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
-import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
+import { getAllPosts, getPostBySlug } from '../../utils/api';
 import BlogLayout from './BlogLayout';
 // import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
@@ -19,10 +19,10 @@ interface ILayoutProps {
 export default function Layout({ children }: ILayoutProps) {
   const { pathname } = useRouter();
   const posts = getAllPosts();
-  const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
+  // const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
 
   if (pathname.startsWith('/docs')) {
-    const post = getDocBySlug(posts.docs as IPost[], pathname);
+    // const post = getDocBySlug(posts.docs as IPost[], pathname);
 
     return null;
     // <div data-testid='Docs-main-container'>
