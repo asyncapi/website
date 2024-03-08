@@ -43,7 +43,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
   return (
     <div className={`rounded-lg ${className}`}>
       <article className='h-full rounded-lg'>
-        <Link href={post.slug} passHref>
+        <Link legacyBehavior href={post.slug} passHref>
           <a
             className={'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'}
             data-testid='FeaturedBlogPostItem-Link'
@@ -64,7 +64,7 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                     {post.type}
                   </span>
                 </Paragraph>
-                <Link href={post.slug}>
+                <Link legacyBehavior href={post.slug}>
                   <a className='block' data-testid='FeaturedBlog-title'>
                     <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.smSemibold} className='mt-2'>
                       {post.title}
