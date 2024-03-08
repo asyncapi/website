@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable @next/next/no-page-custom-font */
 import Head from 'next/head';
 import { useContext } from 'react';
@@ -10,7 +9,7 @@ import AppContext from '../context/AppContext';
 interface IHeadProps {
   title: string;
   description?: string;
-  image?: string;
+  image: string;
   rssTitle?: string;
   rssLink?: string;
 }
@@ -21,7 +20,7 @@ interface IHeadProps {
  * @param {String} props.image - The image of the page
  * @param {String} props.rssTitle - The RSS title of the page
  * @param {String} props.rssLink - The RSS link of the page
- * @returns The head of the page with the meta tags
+ * @description The head of the page with the meta tags
  */
 export default function HeadComponent({
   title,
@@ -69,6 +68,7 @@ export default function HeadComponent({
       {/* Load Work Sans font */}
       <link rel='preconnect' href='https://fonts.googleapis.com' />
       <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
+      { /* eslint-disable-next-line max-len */ }
       <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' />
 
       {/* Icons */}

@@ -5,7 +5,7 @@ import Row from './Row';
 interface IGenericWideLayoutProps {
   title: string;
   description: string;
-  image?: string;
+  image: string;
   children?: React.ReactNode;
   wide?: boolean;
 }
@@ -16,7 +16,7 @@ interface IGenericWideLayoutProps {
  * @param props.image - The image of the page
  * @param props.children - The content of the page
  * @param props.wide - The width of the page
- * @returns The generic layout with the content
+ * @description The generic layout with the content
  */
 export default function GenericWideLayout({
   title,

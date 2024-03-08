@@ -4,7 +4,7 @@ interface IColumnProps {
 
 /**
  * @param props.children - The content of the column
- * @returns The column layout with the content
+ * @description The column layout with the content
  */
 export default function Column({ children }: IColumnProps) {
   return (

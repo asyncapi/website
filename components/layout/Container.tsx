@@ -20,7 +20,7 @@ interface IContainerProps {
  * @param {String} props.cssBreakingPoint - The CSS breaking point of the container
  * @param {String} props.className - The class name of the container
  * @param {React.ElementType} props.as - The element type of the container
- * @returns The container
+ * @description The container
  */
 export default function Container({
   children,

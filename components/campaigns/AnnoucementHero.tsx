@@ -29,7 +29,7 @@ interface IAnnouncementHeroProps {
  * @param {String} props.className - The class name of the announcement hero
  * @param {Boolean} props.small - Whether the banner is small
  * @param {Boolean} props.hideVideo - Whether the video should be hidden
- * @returns The announcement hero
+ * @description The announcement hero
  */
 export default function AnnouncementHero({ className = '', small = false, hideVideo = false }: IAnnouncementHeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);

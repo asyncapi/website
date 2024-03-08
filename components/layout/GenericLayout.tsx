@@ -5,7 +5,7 @@ import Container from './Container';
 interface IGenericLayoutProps {
   title: string;
   description: string;
-  image?: string;
+  image: string;
   children?: React.ReactNode;
   wide?: boolean;
   hideBanner?: boolean;
@@ -18,7 +18,7 @@ interface IGenericLayoutProps {
  * @param props.children - The content of the page
  * @param props.wide - The width of the page
  * @param props.hideBanner - The banner of the page
- * @returns The generic layout with the content
+ * @description The generic layout with the content
  */
 export default function GenericLayout({
   title,

@@ -17,7 +17,7 @@ interface IGenericPostLayoutProps {
 /**
  * @param props.post - The blog post to render in the layout
  * @param props.children - The content of the blog post
- * @returns The blog layout with the post and its content
+ * @description The blog layout with the post and its content
  */
 export default function GenericPostLayout({ post, children } : IGenericPostLayoutProps) {
   const router = useRouter();

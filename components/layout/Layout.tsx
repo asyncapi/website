@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable unused-imports/no-unused-vars */
 import { useRouter } from 'next/router';
 
-import type { IPosts } from '@/types/post';
+import type { IPost, IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
-import { getAllPosts, getDocBySlug, getPostBySlug } from '../../lib/api';
+import { getAllPosts, getDocBySlug, getPostBySlug } from '../../utils/api';
 import BlogLayout from './BlogLayout';
 // import DocsLayout from './DocsLayout';
 import GenericPostLayout from './GenericPostLayout';
@@ -16,7 +14,7 @@ interface ILayoutProps {
 
 /**
  * @param props.children - The content of the layout
- * @returns The layout with the content
+ * @description The layout with the content
  */
 export default function Layout({ children }: ILayoutProps) {
   const { pathname } = useRouter();
@@ -24,7 +22,7 @@ export default function Layout({ children }: ILayoutProps) {
   const allDocPosts = posts.docs.filter((p) => p.slug.startsWith('/docs/'));
 
   if (pathname.startsWith('/docs')) {
-    const post = getDocBySlug(posts.docs, pathname);
+    const post = getDocBySlug(posts.docs as IPost[], pathname);
 
     return null;
     // <div data-testid='Docs-main-container'>

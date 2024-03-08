@@ -22,7 +22,7 @@ interface ITOCProps {
  * @param toc - The table of contents
  * @param contentSelector - The content selector
  * @param depth - The depth of the TOC
- * @returns The table of contents
+ * @description The table of contents
 */
 export default function TOC({
   className,
