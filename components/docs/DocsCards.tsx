@@ -20,8 +20,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }) => {
   return (
-    <Link href={link}>
-      <a href={link} className='cursor-pointer' data-testid='Docs-link'>
+    <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
         <div className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
           hover:shadow-lg'>
           <div data-testid='Docs-div-contents'>
@@ -44,7 +43,6 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
             </Paragraph>
           </div>
         </div>
-      </a>
     </Link>
   );
 };
