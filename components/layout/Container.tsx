@@ -11,6 +11,7 @@ interface IContainerProps {
 }
 
 /**
+ * @description The container component which sets proper padding and width
  * @param {React.ReactNode} props.children - The children of the container
  * @param {Boolean} props.fluid - Whether the container is fluid
  * @param {Boolean} props.flex - Whether the container is flex
@@ -20,7 +21,6 @@ interface IContainerProps {
  * @param {String} props.cssBreakingPoint - The CSS breaking point of the container
  * @param {String} props.className - The class name of the container
  * @param {React.ElementType} props.as - The element type of the container
- * @description The container
  */
 export default function Container({
   children,

@@ -12,13 +12,13 @@ interface IGenericLayoutProps {
 }
 
 /**
+ * @description The generic layout with the content
  * @param props.title - The title of the page
  * @param props.description - The description of the page
  * @param props.image - The image of the page
  * @param props.children - The content of the page
  * @param props.wide - The width of the page
  * @param props.hideBanner - The banner of the page
- * @description The generic layout with the content
  */
 export default function GenericLayout({
   title,

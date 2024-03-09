@@ -3,8 +3,8 @@ interface IColumnProps {
 }
 
 /**
- * @param props.children - The content of the column
  * @description The column layout with the content
+ * @param props.children - The content of the column
  */
 export default function Column({ children }: IColumnProps) {
   return (

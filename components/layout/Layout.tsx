@@ -13,8 +13,8 @@ interface ILayoutProps {
 }
 
 /**
- * @param props.children - The content of the layout
  * @description The layout with the content
+ * @param props.children - The content of the layout
  */
 export default function Layout({ children }: ILayoutProps) : JSX.Element {
   const { pathname } = useRouter();

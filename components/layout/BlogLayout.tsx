@@ -19,9 +19,9 @@ interface IBlogLayoutProps {
 }
 
 /**
+ * @description The blog layout with the post and its content
  * @param props.post - The blog post to render in the layout
  * @param props.children - The content of the blog post
- * @description The blog layout with the post and its content
  */
 export default function BlogLayout({ post, children,
   // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
