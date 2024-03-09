@@ -3,7 +3,8 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 
-import {   defaultLanguage,
+import { 
+  defaultLanguage,
   defaultNamespace,
   I18nProvider,
   languages,
