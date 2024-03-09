@@ -10,7 +10,7 @@ import { getUniqueCategories } from '../../utils/getUniqueCategories';
 /**
  * CustomTooltip component displays custom tooltip for BarChart.
  * @param {CustomTooltipProps} props - Props for CustomTooltip component.
- * @returns {JSX.Element} CustomTooltip component.
+ * {JSX.Element} CustomTooltip component.
  */
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -33,7 +33,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
  * @param {Object} props - Props for Card component.
  * @param {string} props.month - Month for which expenses are displayed.
  * @param {ExpenseItem[]} props.data - Expense data for the month.
- * @returns {JSX.Element} Card component.
+ * {JSX.Element} Card component.
  */
 const Card: React.FC<{ month: keyof Expenses; data: ExpenseItem[]; }> = ({ month, data }) => {
   return (
@@ -60,7 +60,7 @@ const Card: React.FC<{ month: keyof Expenses; data: ExpenseItem[]; }> = ({ month
 
 /**
  * ExpensesCard component displays all expenses for each month.
- * @returns {JSX.Element} ExpensesCard component.
+ * {JSX.Element} ExpensesCard component.
  */
 const ExpensesCard: React.FC = () => {
   return (
@@ -76,7 +76,7 @@ const ExpensesCard: React.FC = () => {
 
 /**
  * BarChartComponent component displays a bar chart for expense analysis.
- * @returns {JSX.Element} BarChartComponent component.
+ * {JSX.Element} BarChartComponent component.
  */
 const BarChartComponent: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');

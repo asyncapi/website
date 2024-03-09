@@ -91,7 +91,6 @@ const ExpenseBreakdown: React.FC = () => {
                 </div>
               </a>
             </div>
-
           </div>
         </div>
       </div>

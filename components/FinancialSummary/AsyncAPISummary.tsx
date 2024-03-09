@@ -7,7 +7,7 @@ import Paragraph from '../typography/Paragraph';
 
 /**
  * Component representing the AsyncAPI Financial Summary.
- * @returns {JSX.Element} The JSX representation of the component.
+ * {JSX.Element} The JSX representation of the component.
  */
 export default function AsyncAPISummary() {
   return (
