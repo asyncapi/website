@@ -183,12 +183,6 @@
           }
         ],
         "max-depth": "error",
-        "max-len": [
-          "error",
-          {
-            "code": 120
-          }
-        ],
         "max-lines": [
           "error",
           {
