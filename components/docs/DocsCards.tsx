@@ -18,6 +18,18 @@ interface CardProps {
   Icon: IconType;
 }
 
+/**
+ * @description This component displays a card with title, description, link, and an associated icon.
+ *
+ * @component
+ * @param {CardProps} props - The props for the Card component.
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.description - The description of the card.
+ * @param {string} props.link - The link associated with the card.
+ * @param {string} props.className - CSS class for styling the card.
+ * @param {IconType} props.Icon - The Icon component for the card.
+ * @returns {JSX.Element} - The rendered Card component.
+ */
 const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }) => {
   return (
     <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
@@ -47,6 +59,12 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
   );
 };
 
+/**
+ * @description This component renders a grid of cards based on the 'buckets' data.
+ *
+ * @component
+ * @returns {JSX.Element} - The rendered DocsCards component.
+ */
 export const DocsCards: React.FC = () => {
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >

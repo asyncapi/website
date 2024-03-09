@@ -1,7 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-useless-escape */
-import lowlight from 'lowlight';
 import { useState } from 'react';
 import Highlight from 'react-syntax-highlighter';
 
@@ -35,33 +31,6 @@ interface Theme {
     fontStyle?: string;
     textDecoration?: string;
   }
-}
-
-type Literal = 'true' | 'false' | 'yes' | 'no' | 'null';
-
-interface ValueContainer {
-  end: string;
-  endsWithParent: boolean;
-  excludeEnd: boolean;
-  contains: string[];
-  keywords: Literal[];
-  relevance: number;
-}
-
-interface Object {
-  begin: string;
-  end: string;
-  contains: ValueContainer[];
-  illegal: string;
-  relevance: number;
-}
-
-interface Array {
-  begin: string;
-  end: string;
-  contains: ValueContainer[];
-  illegal: string;
-  relevance: number;
 }
 
 const theme: Theme = {
@@ -206,6 +175,28 @@ const theme: Theme = {
   }
 };
 
+/**
+ * @description This component displays code snippets with syntax highlighting.
+ *
+ * @component
+ * @param {CodeBlockProps} props - The component props.
+ * @param {string} props.children - The code snippet to be displayed.
+ * @param {Array<{ code: string; title?: string; language?: string }>} props.codeBlocks - An array of code blocks
+ *  with optional titles and languages.
+ * @param {string} props.className - Additional CSS class for styling the CodeBlock component.
+ * @param {string} props.highlightClassName - Additional CSS class for styling the code highlighting area.
+ * @param {number[]} props.highlightedLines - An array of line numbers to be highlighted.
+ * @param {string} props.language - The programming language for syntax highlighting (default is 'yaml').
+ * @param {boolean} props.hasWindow - Indicates whether window controls should be displayed.
+ * @param {boolean} props.showCopy - Indicates whether the copy-to-clipboard button should be displayed.
+ * @param {boolean} props.showCaption - Indicates whether the caption should be displayed.
+ * @param {string} props.caption - The caption text to be displayed.
+ * @param {boolean} props.showLineNumbers - Indicates whether line numbers should be displayed.
+ * @param {number} props.startingLineNumber - The starting line number for line numbering.
+ * @param {string} props.textSizeClassName - Additional CSS class for controlling the text size.
+ * @param {string} props.title - The title of the code block (default is the specified language).
+ * @returns {JSX.Element} - The rendered CodeBlock component.
+ */
 export default function CodeBlock({
   children,
   codeBlocks,
@@ -220,6 +211,7 @@ export default function CodeBlock({
   showLineNumbers = true,
   startingLineNumber = 1,
   textSizeClassName = 'text-xs',
+  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   title = language
 } : CodeBlockProps) {
   const [activeBlock, setActiveBlock] = useState<number>(0);
@@ -233,6 +225,9 @@ export default function CodeBlock({
   const tabItemsClassNames = `${tabItemsCommonClassNames} text-gray-300`;
   const tabItemsActiveClassNames = `${tabItemsCommonClassNames} text-teal-300 border-b-2`;
 
+  /**
+   * @description This function handles the copy button click event by copying the active code block to the clipboard.
+   */
   function onClickCopy() {
     // check if navigator with clipboard exists (fallback for older browsers)
     if (navigator && navigator.clipboard && (codeBlocks && codeBlocks[activeBlock])) {
@@ -245,6 +240,10 @@ export default function CodeBlock({
     }
   }
 
+  /**
+   * @description This function renders the syntax-highlighted code blocks.
+   * @returns {JSX.Element} - The rendered code blocks.
+   */
   function renderHighlight() {
     return (
       <div className='h-full max-h-screen'>
@@ -344,238 +343,3 @@ export default function CodeBlock({
     </>
   );
 };
-
-lowlight.registerLanguage('asyncapi+yaml', (hljs : any) => {
-  const LITERALS: Literal[] = ['true', 'false', 'yes', 'no', 'null'];
-
-  // YAML spec allows non-reserved URI characters in tags.
-  const URI_CHARACTERS = '[\\w#/?:@&=+$,.~*\\\'()[\\]]+';
-
-  // Define keys as starting with a word character
-  // ...containing word chars, spaces, colons, forward-slashes, hyphens and periods
-  // ...and ending with a colon followed immediately by a space, tab or newline.
-  // The YAML spec allows for much more than this, but this covers most use-cases.
-  const KEY = {
-    className: 'attr',
-    variants: [
-      { begin: '\\w[\\w :\\/.-]*:(?=[ \t]|$)' },
-      { begin: '"\\w[\\w :\\/.-]*":(?=[ \t]|$)' }, // double quoted keys
-      { begin: '\'\\w[\\w :\\/.-]*\':(?=[ \t]|$)' } // single quoted keys
-    ]
-  };
-
-  const $REF_KEY = {
-    className: '$ref',
-    variants: [
-      { begin: '\\$\\w[\\w :\\/.-]*:(?=[ \t]|$)' },
-      { begin: '"\\$\\w[\\w :\\/.-]*":(?=[ \t]|$)' }, // double quoted keys
-      { begin: '\'\\$\\w[\\w :\\/.-]*\':(?=[ \t]|$)' } // single quoted keys
-    ]
-  };
-
-  const TEMPLATE_VARIABLES = {
-    className: 'template-variable',
-    variants: [
-      { begin: '{{', end: '}}' }, // jinja templates Ansible
-      { begin: '%{', end: '}' } // Ruby i18n
-    ]
-  };
-  const STRING = {
-    className: 'string',
-    relevance: 0,
-    variants: [
-      { begin: /'/, end: /'/ },
-      { begin: /"/, end: /"/ },
-      { begin: /\S+/ }
-    ],
-    contains: [
-      hljs.BACKSLASH_ESCAPE,
-      TEMPLATE_VARIABLES
-    ]
-  };
-
-  // Strings inside of value containers (objects) can't contain braces,
-  // brackets, or commas
-  const CONTAINER_STRING = hljs.inherit(STRING, {
-    variants: [
-      { begin: /'/, end: /'/ },
-      { begin: /"/, end: /"/ },
-      { begin: /[^\s,{}[\]]+/ }
-    ]
-  });
-
-  const DATE_RE = '[0-9]{4}(-[0-9][0-9]){0,2}';
-  const TIME_RE = '([Tt \\t][0-9][0-9]?(:[0-9][0-9]){2})?';
-  const FRACTION_RE = '(\\.[0-9]*)?';
-  const ZONE_RE = '([ \\t])*(Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?';
-  const TIMESTAMP = {
-    className: 'number',
-    begin: `\\b${  DATE_RE  }${TIME_RE  }${FRACTION_RE  }${ZONE_RE  }\\b`
-  };
-
-  const VALUE_CONTAINER: ValueContainer = {
-    end: ',',
-    endsWithParent: true,
-    excludeEnd: true,
-    contains: [],
-    keywords: LITERALS,
-    relevance: 0
-  };
-
-  const OBJECT: Object = {
-    begin: '{',
-    end: '}',
-    contains: [VALUE_CONTAINER],
-    illegal: '\\n',
-    relevance: 0
-  };
-
-  const ARRAY: Array = {
-    begin: '\\[',
-    end: '\\]',
-    contains: [VALUE_CONTAINER],
-    illegal: '\\n',
-    relevance: 0
-  };
-
-  const MODES = [
-    KEY,
-    $REF_KEY,
-    {
-      className: 'meta',
-      begin: '^---\s*$',
-      relevance: 10
-    },
-    { // multi line string
-      // Blocks start with a | or > followed by a newline
-      //
-      // Indentation of subsequent lines must be the same to
-      // be considered part of the block
-      className: 'string',
-      begin: '[\\|>]([0-9]?[+-])?[ ]*\\n( *)[\\S ]+\\n(\\2[\\S ]+\\n?)*'
-    },
-    { // Ruby/Rails erb
-      begin: '<%[%=-]?',
-      end: '[%-]?%>',
-      subLanguage: 'ruby',
-      excludeBegin: true,
-      excludeEnd: true,
-      relevance: 0
-    },
-    { // named tags
-      className: 'type',
-      begin: `!\\w+!${  URI_CHARACTERS}`
-    },
-    // https://yaml.org/spec/1.2/spec.html#id2784064
-    { // verbatim tags
-      className: 'type',
-      begin: `!<${  URI_CHARACTERS  }>`
-    },
-    { // primary tags
-      className: 'type',
-      begin: `!${  URI_CHARACTERS}`
-    },
-    { // secondary tags
-      className: 'type',
-      begin: `!!${  URI_CHARACTERS}`
-    },
-    { // fragment id &ref
-      className: 'meta',
-      begin: `&${  hljs.UNDERSCORE_IDENT_RE  }$`
-    },
-    { // fragment reference *ref
-      className: 'meta',
-      begin: `\\*${  hljs.UNDERSCORE_IDENT_RE  }$`
-    },
-    { // array listing
-      className: 'bullet',
-      // TODO: remove |$ hack when we have proper look-ahead support
-      begin: '\\-(?=[ ]|$)',
-      relevance: 0
-    },
-    hljs.HASH_COMMENT_MODE,
-    {
-      beginKeywords: LITERALS,
-      keywords: { literal: LITERALS }
-    },
-    TIMESTAMP,
-    // numbers are any valid C-style number that
-    // sit isolated from other words
-    {
-      className: 'number',
-      begin: `${hljs.C_NUMBER_RE  }\\b`
-    },
-    OBJECT,
-    ARRAY,
-    STRING
-  ];
-
-  const VALUE_MODES = [...MODES];
-
-  VALUE_MODES.pop();
-  VALUE_MODES.push(CONTAINER_STRING);
-  VALUE_CONTAINER.contains = VALUE_MODES;
-
-  return {
-    name: 'asyncapi+yaml',
-    aliases: ['asyncapi'],
-    case_insensitive: true,
-    contains: MODES
-  };
-});
-
-lowlight.registerLanguage('generator-cli', (hljs: any) => ({
-  name: 'generator-cli',
-  case_insensitive: true,
-  contains: [
-    {
-      className: 'generator-command',
-      begin: 'ag',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: / [\.\~\w\d_\/]+/,
-          end: ' ',
-          contains: [
-            {
-              className: 'generator-template',
-              begin: / [\@\.\~\w\d\-_\/]+/,
-              end: '-template',
-              contains: [
-                {
-                  className: 'generator-param',
-                  begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/
-                }
-              ]
-            }
-          ]
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\.\-_=]+/
-        }
-      ]
-    },
-    {
-      className: 'generator-docker-command',
-      begin: 'docker',
-      end: /[^\\]{1}$/,
-      contains: [
-        {
-          className: 'asyncapi-file',
-          begin: 'https://bit.ly/asyncapi'
-        },
-        {
-          className: 'generator-template',
-          begin: '@asyncapi/',
-          end: '-template'
-        },
-        {
-          className: 'generator-param',
-          begin: /[\-]{1,2}[\w]+ [\$\{\}\/:\'\"\w\d\-_=]+/
-        }
-      ]
-    }
-  ]
-}));
