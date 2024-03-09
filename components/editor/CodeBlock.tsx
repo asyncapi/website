@@ -178,7 +178,6 @@ const theme: Theme = {
 /**
  * @description This component displays code snippets with syntax highlighting.
  *
- * @component
  * @param {CodeBlockProps} props - The component props.
  * @param {string} props.children - The code snippet to be displayed.
  * @param {Array<{ code: string; title?: string; language?: string }>} props.codeBlocks - An array of code blocks
@@ -195,7 +194,6 @@ const theme: Theme = {
  * @param {number} props.startingLineNumber - The starting line number for line numbering.
  * @param {string} props.textSizeClassName - Additional CSS class for controlling the text size.
  * @param {string} props.title - The title of the code block (default is the specified language).
- * @returns {JSX.Element} - The rendered CodeBlock component.
  */
 export default function CodeBlock({
   children,
@@ -242,7 +240,6 @@ export default function CodeBlock({
 
   /**
    * @description This function renders the syntax-highlighted code blocks.
-   * @returns {JSX.Element} - The rendered code blocks.
    */
   function renderHighlight() {
     return (

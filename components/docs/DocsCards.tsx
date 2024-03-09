@@ -8,7 +8,7 @@ import { buckets } from '../data/buckets';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-type IconType = (props: { className: string }) => JSX.Element;
+type IconType = (props: { className: string }) => React.ReactElement;
 
 interface CardProps {
   title: string;
@@ -28,7 +28,6 @@ interface CardProps {
  * @param {string} props.link - The link associated with the card.
  * @param {string} props.className - CSS class for styling the card.
  * @param {IconType} props.Icon - The Icon component for the card.
- * @returns {JSX.Element} - The rendered Card component.
  */
 function Card({ title, description, link, className, Icon } : CardProps): JSX.Element {
   return (
@@ -65,7 +64,7 @@ function Card({ title, description, link, className, Icon } : CardProps): JSX.El
  * @component
  * @returns {JSX.Element} - The rendered DocsCards component.
  */
-export default function DocsCards(): JSX.Element {
+export default function DocsCards(): React.ReactNode {
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >
       {buckets.map(card => (
