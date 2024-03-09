@@ -6,7 +6,7 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import TextLink from '../typography/TextLink';
 
-export default function ContactUs(){
+export default function ContactUs() {
   return (
     <div className='px-4 sm:px-6 lg:px-8'>
       <div className='my-4 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>

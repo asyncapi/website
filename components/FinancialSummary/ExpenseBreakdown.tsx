@@ -1,7 +1,8 @@
-import { expenseData } from './data/ExpenseBreakdownData';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
+import { expenseData } from './data/ExpenseBreakdownData';
 
 export default function ExpenseBreakdown() {
   return (

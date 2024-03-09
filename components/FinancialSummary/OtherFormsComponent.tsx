@@ -1,4 +1,5 @@
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import { otherFormsData } from './data/otherFormsData';

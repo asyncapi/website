@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
+
 import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
+
 import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
 import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
@@ -11,7 +13,7 @@ import ExpensesCard from './ExpensesCard';
  * BarChartComponent component displays a bar chart for expense analysis.
  * {JSX.Element} BarChartComponent component.
  */
-export default function BarChartComponent(){
+export default function BarChartComponent() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);

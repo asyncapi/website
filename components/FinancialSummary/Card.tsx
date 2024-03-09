@@ -1,4 +1,5 @@
 import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartComponent';
+
 import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
 
 /**
@@ -24,9 +25,9 @@ export default function Card({ month, data }: { month: keyof Expenses; data: Exp
         {data.map((item, index) => (
           <div key={index} className='flex justify-between'>
             <div className='m-2 text-sm' onClick={() => handleExpenseClick(item.Category)}>{item.Category}</div>
-              <div className='m-2 text-sm'>${item.Amount}</div>
-            </div>
-          ))}
+            <div className='m-2 text-sm'>${item.Amount}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
