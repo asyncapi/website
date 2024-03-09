@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import type { IPosts } from '@/types/post';
 
 import GenericPostContext from '../../context/GenericPostContext';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+// import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import Container from './Container';
 
@@ -31,7 +31,7 @@ export default function GenericPostLayout({ post, children } : IGenericPostLayou
 
   return (
     <GenericPostContext.Provider value={{ post }}>
-      <AnnouncementHero className='m-4 text-center' small={true} />
+      {/* <AnnouncementHero className='m-4 text-center' small={true} /> */}
       <Container>
         <main
           className='mt-8 px-4 sm:px-6'

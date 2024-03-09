@@ -1,5 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable no-unused-vars */
 import moment from 'moment';
 import ErrorPage from 'next/error';
 import HtmlHead from 'next/head';
@@ -9,7 +7,7 @@ import type { IPosts } from '@/types/post';
 
 import BlogContext from '../../context/BlogContext';
 import AuthorAvatars from '../AuthorAvatars';
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+// import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import TOC from '../TOC';
 import Container from './Container';
@@ -25,7 +23,9 @@ interface IBlogLayoutProps {
  * @param props.children - The content of the blog post
  * @description The blog layout with the post and its content
  */
-export default function BlogLayout({ post, children, navItems } : IBlogLayoutProps) {
+export default function BlogLayout({ post, children,
+  // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
+  navItems } : IBlogLayoutProps) {
   const router = useRouter();
 
   if (!post) return <ErrorPage statusCode={404} />;
@@ -37,7 +37,7 @@ export default function BlogLayout({ post, children, navItems } : IBlogLayoutPro
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <AnnouncementHero className='mx-8 my-4' />
+      {/* <AnnouncementHero className='mx-8 my-4' /> */}
       <Container cssBreakingPoint='lg' flex flexReverse>
         <TOC
           toc={post.toc}

@@ -1,4 +1,4 @@
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+// import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import Row from './Row';
 
@@ -33,7 +33,7 @@ export default function GenericWideLayout({
     <>
       <Head title={title} description={description} image={image} />
       <Row>
-        <AnnouncementHero className='m-4 text-center' small={true} />
+        {/* <AnnouncementHero className='m-4 text-center' small={true} /> */}
         {children}
       </Row>
     </>

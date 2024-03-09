@@ -1,4 +1,4 @@
-import AnnouncementHero from '../campaigns/AnnoucementHero';
+// import AnnouncementHero from '../campaigns/AnnoucementHero';
 import Head from '../Head';
 import Container from './Container';
 
@@ -26,6 +26,7 @@ export default function GenericLayout({
   image,
   children,
   wide = true,
+  // eslint-disable-next-line unused-imports/no-unused-vars, no-unused-vars
   hideBanner = false
 }: IGenericLayoutProps) {
   if (!title || !description || !image) {
@@ -37,10 +38,10 @@ export default function GenericLayout({
       <Head title={title} description={description} image={image} />
       <Container wide={wide}>
         <div data-testid='GenericLayout-banner'>
-          <AnnouncementHero
+          {/* <AnnouncementHero
             className={`m-4 text-center ${hideBanner && 'hidden'}`}
             small={true}
-          />
+          /> */}
         </div>
         <div id='main-content' data-testid='Generic-main'>
           {children}
