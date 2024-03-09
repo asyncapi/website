@@ -30,7 +30,7 @@ interface CardProps {
  * @param {IconType} props.Icon - The Icon component for the card.
  * @returns {JSX.Element} - The rendered Card component.
  */
-const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }) => {
+function Card({ title, description, link, className, Icon } : CardProps): JSX.Element {
   return (
     <Link href={link} className='cursor-pointer' data-testid='Docs-link'>
       <div className='h-full rounded-lg border border-gray-200 p-6 shadow-md transition-all duration-300 ease-in-out
@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = ({ title, description, link, className, Icon }
  * @component
  * @returns {JSX.Element} - The rendered DocsCards component.
  */
-export const DocsCards: React.FC = () => {
+export default function DocsCards(): JSX.Element {
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >
       {buckets.map(card => (
