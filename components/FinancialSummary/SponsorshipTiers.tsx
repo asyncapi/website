@@ -4,7 +4,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-const SponsorshipTiers: React.FC = () => {
+export default function SponsorshipTiers(){
   return (
     <div className='mt-16 grid bg-purple-100 px-4 sm:px-6 lg:grid-cols-9 lg:gap-8 lg:px-8 lg:text-center'>
       <div className='col-span-7 col-start-2 my-12'>
@@ -71,5 +71,3 @@ const SponsorshipTiers: React.FC = () => {
     </div>
   );
 };
-
-export default SponsorshipTiers;

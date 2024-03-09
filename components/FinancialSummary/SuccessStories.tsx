@@ -1,6 +1,6 @@
 import TextLink from '../typography/TextLink';
 
-const SuccessStories: React.FC = () => {
+export default function SuccessStories(){
   return (
     <div className='bg-purple-100 px-4 sm:px-6 lg:px-8'>
       <div className='my-16 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
@@ -44,5 +44,3 @@ const SuccessStories: React.FC = () => {
     </div>
   );
 };
-
-export default SuccessStories;

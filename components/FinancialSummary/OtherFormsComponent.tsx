@@ -3,7 +3,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-const OtherFormsComponent: React.FC = () => {
+export default function OtherFormsComponent(){
   return (
     <div className='bg-[#F5F5F5] px-4 sm:px-6 lg:px-8'>
       <div className='grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
@@ -46,5 +46,3 @@ const OtherFormsComponent: React.FC = () => {
     </div>
   );
 };
-
-export default OtherFormsComponent;

@@ -3,7 +3,7 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-const ExpenseBreakdown: React.FC = () => {
+export default function ExpenseBreakdown(){
   return (
     <div className='bg-[#EFFAFE] px-4 sm:px-6 lg:px-8'>
       <div className='mb-16 grid lg:grid-cols-9 lg:gap-8 lg:text-center'>
@@ -97,5 +97,3 @@ const ExpenseBreakdown: React.FC = () => {
     </div>
   );
 };
-
-export default ExpenseBreakdown;

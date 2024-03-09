@@ -1,84 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, YAxis } from 'recharts';
-
-import type { CustomTooltipProps, ExpenseItem, Expenses, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
-
+import type { ExpenseItem, ExpensesLinkItem } from '@/types/FinancialSummary/BarChartComponent';
 import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
 import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
 import { getUniqueCategories } from '../../utils/getUniqueCategories';
-
-/**
- * CustomTooltip component displays custom tooltip for BarChart.
- * @param {CustomTooltipProps} props - Props for CustomTooltip component.
- * {JSX.Element} CustomTooltip component.
- */
-const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-
-    return (
-      <div className='bg-opacity-90/90 rounded-md border border-gray-300 bg-white p-2 shadow-md'>
-        <p className='text-14 mb-1 font-bold'>{data.Category}</p>
-        <p className='text-12 text-gray-900'>${data.Amount.toFixed(2)}</p>
-        <p>Click the bar to learn more</p>
-      </div>
-    );
-  }
-
-  return null;
-};
-
-/**
- * Card component displays expense details for a specific month.
- * @param {Object} props - Props for Card component.
- * @param {string} props.month - Month for which expenses are displayed.
- * @param {ExpenseItem[]} props.data - Expense data for the month.
- * {JSX.Element} Card component.
- */
-const Card: React.FC<{ month: keyof Expenses; data: ExpenseItem[]; }> = ({ month, data }) => {
-  return (
-    <div className='flex h-56 flex-col overflow-hidden rounded-lg bg-slate-100 p-4 shadow-lg'>
-      <div className='mb-4 text-lg font-semibold'>{month}</div>
-      <div className='flex flex-col overflow-auto'>
-        {data.map((item, index) => (
-          <div key={index} className='flex justify-between'>
-            <div className='m-2 text-sm' onClick={() => {
-              const category = item.Category;
-              const matchedLinkObject = ExpensesLinkData.find(obj => obj.category === category);
-
-              if (matchedLinkObject) {
-                window.open(matchedLinkObject.link, '_blank');
-              }
-            }}>{item.Category}</div>
-            <div className='m-2 text-sm'>${item.Amount}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-/**
- * ExpensesCard component displays all expenses for each month.
- * {JSX.Element} ExpensesCard component.
- */
-const ExpensesCard: React.FC = () => {
-  return (
-    <div className='overflow-x-auto'>
-      <div className='grid auto-cols-max grid-flow-col gap-4 p-4'>
-        {Object.entries(ExpensesData).map(([month, data], index) => (
-          <Card key={index} month={month as keyof Expenses} data={data} />
-        ))}
-      </div>
-    </div>
-  );
-};
+import CustomTooltip from './CustomTooltip';
+import ExpensesCard from './ExpensesCard';
 
 /**
  * BarChartComponent component displays a bar chart for expense analysis.
  * {JSX.Element} BarChartComponent component.
  */
-const BarChartComponent: React.FC = () => {
+export default function BarChartComponent(){
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -185,5 +118,3 @@ const BarChartComponent: React.FC = () => {
     </div>
   );
 };
-
-export default BarChartComponent;
