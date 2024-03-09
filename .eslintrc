@@ -183,7 +183,6 @@
           }
         ],
         "max-depth": "error",
-        "max-len": 0,
         "max-lines": [
           "error",
           {
