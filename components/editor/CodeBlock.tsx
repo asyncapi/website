@@ -206,7 +206,7 @@ const theme: Theme = {
   }
 };
 
-const CodeBlock: React.FC<CodeBlockProps> = ({
+export default function CodeBlock({
   children,
   codeBlocks,
   className = '',
@@ -221,7 +221,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   startingLineNumber = 1,
   textSizeClassName = 'text-xs',
   title = language
-}) => {
+} : CodeBlockProps) {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 
@@ -579,5 +579,3 @@ lowlight.registerLanguage('generator-cli', (hljs: any) => ({
     }
   ]
 }));
-
-export default CodeBlock;
