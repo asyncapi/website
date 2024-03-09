@@ -2,11 +2,9 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from '../Head'
 import JobsContext from '../../context/JobsContext'
-import NavBar from '../navigation/NavBar'
 import Container from './Container'
 import JobSummary from '../JobSummary'
 import ApplyJobButton from '../buttons/ApplyJob'
-import StickyNavbar from '../navigation/StickyNavbar'
 
 export default function JobsLayout({ post, children }) {
   if (!post) return <ErrorPage statusCode={404} />;
@@ -19,10 +17,6 @@ export default function JobsLayout({ post, children }) {
 
   return (
     <JobsContext.Provider value={{ post }}>
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
-
       <Container cssBreakingPoint="lg" flex flexReverse>
         <div className="">
           <JobSummary
