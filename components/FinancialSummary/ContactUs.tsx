@@ -6,6 +6,10 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import TextLink from '../typography/TextLink';
 
+/**
+ * ContactUs component displays information about getting in touch.
+ * {JSX.Element} ContactUs component.
+ */
 export default function ContactUs() {
   return (
     <div className='px-4 sm:px-6 lg:px-8'>

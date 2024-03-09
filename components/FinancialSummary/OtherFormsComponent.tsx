@@ -4,6 +4,10 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import { otherFormsData } from './data/otherFormsData';
 
+/**
+ * OtherFormsComponent displays other forms of financial support.
+ * {JSX.Element} OtherFormsComponent.
+ */
 export default function OtherFormsComponent() {
   return (
     <div className='bg-[#F5F5F5] px-4 sm:px-6 lg:px-8'>

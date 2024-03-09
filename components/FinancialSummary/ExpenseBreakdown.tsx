@@ -4,6 +4,10 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import { expenseData } from './data/ExpenseBreakdownData';
 
+/**
+ * ExpenseBreakdown component displays a breakdown of expenses.
+ * {JSX.Element} ExpenseBreakdown component.
+ */
 export default function ExpenseBreakdown() {
   return (
     <div className='bg-[#EFFAFE] px-4 sm:px-6 lg:px-8'>

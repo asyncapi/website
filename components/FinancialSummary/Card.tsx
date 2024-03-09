@@ -10,6 +10,12 @@ import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.j
  * {JSX.Element} Card component.
  */
 export default function Card({ month, data }: { month: keyof Expenses; data: ExpenseItem[]; }) {
+  /**
+ * Handles the click event on an expense category.
+ * Opens a new window with the corresponding link if available.
+ * @param {string} category - The expense category clicked.
+ * {void}
+ */
   function handleExpenseClick(category: string) {
     const matchedLinkObject = ExpensesLinkData.find(obj => obj.category === category);
 

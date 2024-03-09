@@ -1,6 +1,10 @@
 import TextLink from '../typography/TextLink';
 import { successStories } from './data/successStoriesData';
 
+/**
+ * SuccessStories component displays success stories related to financial support.
+ * {JSX.Element} SuccessStories component.
+ */
 export default function SuccessStories() {
   return (
     <div className='bg-purple-100 px-4 sm:px-6 lg:px-8'>
