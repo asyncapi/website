@@ -101,6 +101,8 @@
     "@netlify/plugin-nextjs": "^4.41.3",
     "@types/node": "^20",
     "@types/react": "^18.0.1",
+    "@types/react-dom": "^18",
+    "@types/react-text-truncate": "^0.14.4",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "dedent": "^1.5.1",
