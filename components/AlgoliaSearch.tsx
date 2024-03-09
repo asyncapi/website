@@ -53,8 +53,8 @@ type ISearchButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'c
 
 /**
  *
- * @param {StoredDocSearchHit[]} items - The items to be transformed
  * @description The function used to transform the items
+ * @param {StoredDocSearchHit[]} items - The items to be transformed
  */
 function transformItems(items: DocSearchHit[]) {
   return items.map((item, index) => {
@@ -88,8 +88,8 @@ function transformItems(items: DocSearchHit[]) {
 
 /**
  *
- * @param {IHitProps} props - The props of the hit
  * @description The hit component used for the Algolia search
+ * @param {IHitProps} props - The props of the hit
  */
 function Hit({ hit, children }: IHitProps) {
   return (
@@ -110,8 +110,8 @@ function Hit({ hit, children }: IHitProps) {
 
 /**
  *
- * @param {IAlgoliaModalProps} props - The props of the Algolia modal
  * @description The Algolia modal used for searching the website
+ * @param {IAlgoliaModalProps} props - The props of the Algolia modal
  */
 function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
   const router = useRouter();
@@ -143,9 +143,9 @@ function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
 }
 
 /**
+ * @description The function used to check if the content is being edited
  * @param {KeyboardEvent} event - The keyboard event
  * @returns {boolean} - Whether the content is being edited
- * @description The function used to check if the content is being edited
  */
 function isEditingContent(event: KeyboardEvent) {
   const element = event.target;
@@ -160,8 +160,8 @@ function isEditingContent(event: KeyboardEvent) {
 }
 
 /**
- * @returns {Object} - The action key
  * @description The function used to get the action key
+ * @returns {Object} - The action key
  */
 function getActionKey() {
   if (typeof navigator !== 'undefined') {
@@ -186,19 +186,22 @@ function getActionKey() {
 
 /**
  *
- * @param {IUseDocSearchKeyboardEvents} props - The props of the useDocSearchKeyboardEvents hook
  * @description The hook used for the Algolia search keyboard events
+ * @param {IUseDocSearchKeyboardEvents} props - The props of the useDocSearchKeyboardEvents hook
  */
 function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKeyboardEvents) {
   useEffect(() => {
     /**
+     * @description The function used to handle the keyboard event.
+     * @description It opens the search modal when the '/' key is pressed
+     * @description It closes the search modal when the 'Escape' key is pressed
+     * @description It opens the search modal when the 'k' key is pressed with the 'Command' or 'Control' key
      * @param {KeyboardEvent} event - The keyboard event
      * @returns {void}
-     * @description The function used to handle the keyboard event
      */
     function onKeyDown(event: KeyboardEvent): void {
       if (
-        (event.keyCode === 27 && isOpen) ||
+        (event.key === 'Escape' && isOpen) ||
         (event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
         (!isEditingContent(event) && event.key === '/' && !isOpen)
       ) {
@@ -229,8 +232,8 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
 
 /**
  *
- * @param {React.ReactNode} children - The content of the page
  * @description The Algolia search component used for searching the website
+ * @param {React.ReactNode} children - The content of the page
  */
 export default function AlgoliaSearch({ children } : { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -276,8 +279,8 @@ export default function AlgoliaSearch({ children } : { children: React.ReactNode
 
 /**
  *
- * @param {ISearchButtonProps} props - The props of the search button
  * @description The search button component used for opening the Algolia search
+ * @param {ISearchButtonProps} props - The props of the search button
  */
 export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISearchButtonProps) {
   const { onOpen, onInput } = useContext(SearchContext);
@@ -286,13 +289,14 @@ export function SearchButton({ children, indexName = INDEX_NAME, ...props }: ISe
 
   useEffect(() => {
     /**
+     * @description It triggers the onInput event when a key is pressed and the search button is focused
+     * @description It starts search with the key pressed
      * @param {KeyboardEvent} event - The keyboard event
      * @returns {void}
-     * @description The function used to handle the keyboard event
      */
     function onKeyDown(event: KeyboardEvent) {
       if (searchButtonRef && searchButtonRef.current === document.activeElement && onInput) {
-        if (/[a-zA-Z0-9]/.test(String.fromCharCode(event.keyCode))) {
+        if (/[a-zA-Z0-9]/.test(event.key)) {
           onInput(event as unknown as React.KeyboardEvent);
         }
       }
