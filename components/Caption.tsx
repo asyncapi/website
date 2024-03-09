@@ -4,12 +4,10 @@ interface CaptionProps {
   children: React.ReactNode;
 }
 
-const Caption: React.FC<CaptionProps> = ({ children }) => {
+export default function Caption({ children } : CaptionProps) {
   return (
     <p className='mt-2 text-center text-xs text-gray-500' data-testid='Caption-paragraph'>
       {children}
     </p>
   );
 };
-
-export default Caption;
