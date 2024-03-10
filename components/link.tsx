@@ -9,7 +9,7 @@ interface LinkComponentProps {
   href?: string;
 }
 
-export default function LinkComponent ({ children, locale, ...props }: LinkComponentProps){
+export default function LinkComponent({ children, locale, ...props }: LinkComponentProps) {
   const router = useRouter();
 
   // If there is no router available (e.g., during server-side rendering & cypress tests), render a standard Link
