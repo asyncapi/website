@@ -1,13 +1,6 @@
 [
   {
     "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=ODNjM2h0bGQ4dGhwcWd2Mmw2MWhkcGcycGcgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/918",
-    "banner": "https://user-images.githubusercontent.com/40604284/277314435-ec985247-c575-4449-9f79-442b3077541a.png",
-    "date": "2023-11-28T16:00:00.000Z"
-  },
-  {
-    "title": "Community Meeting",
     "calLink": "https://www.google.com/calendar/event?eid=M2I4MXRidmpqb2ZyZTUyajhsZm41ZjN0bTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/979",
     "banner": "https://user-images.githubusercontent.com/40604284/288050762-4d064212-22ea-4af0-9d1a-b23c8fd70d6b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3ODI2MDUsIm5iZiI6MTcwMTc4MjMwNSwicGF0aCI6Ii80MDYwNDI4NC8yODgwNTA3NjItNGQwNjQyMTItMjJlYS00YWYwLTlkMWEtYjIzYzhmZDcwZDZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA1VDEzMTgyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYzOGFhZmI5NzAxODljZDQ4NTFhNDc0NGIxNGQzZDZlZmU3ZjhhYTExOGU1YTRkN2FjODU1MzgzZGU0M2UzNmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-FT5AFf2Np1cFxMyXVga0zAfLjFc9fspwL-BJ_t7KLg",
@@ -87,5 +80,12 @@
     "url": "https://github.com/asyncapi/community/issues/1084",
     "banner": "",
     "date": "2024-03-12T20:00:00.000Z"
+  },
+  {
+    "title": "AACoT'24 Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=aG9xMzUyam82cDluaDNpY2c2aDBlb25pdDggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1087",
+    "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
+    "date": "2024-03-13T14:00:00.000Z"
   }
 ]
