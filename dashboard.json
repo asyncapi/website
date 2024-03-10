@@ -9,7 +9,7 @@
       "resourcePath": "/asyncapi/website/pull/2331",
       "repo": "asyncapi/website",
       "labels": [],
-      "score": 27.28158593117958
+      "score": 27.56876051992884
     },
     {
       "id": "PR_kwDOBW5R_c5fbyLb",
@@ -23,6 +23,26 @@
       "score": 22.9739670999407
     },
     {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 22.68679251119144
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -31,7 +51,7 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 20.38939580119737
+      "score": 22.112443333692923
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -52,6 +72,26 @@
         }
       ],
       "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDODou01c5AqLB8",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "\"Open with Studio\" button for Markdown files.",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/218",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 19.527872034949596
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -75,7 +115,27 @@
           "color": "0e8a16"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.953522857451077
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 18.953522857451077
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -102,38 +162,45 @@
           "color": "84b6eb"
         }
       ],
-      "score": 16.08177696995849
+      "score": 16.65612614745701
     },
     {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
-      "id": "PR_kwDOKp3ICM5g9w8f",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: adding content for module 3",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/learning-paths/pull/9",
-      "repo": "asyncapi/learning-paths",
-      "labels": [],
-      "score": 14.645904026212197
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
+      "id": "I_kwDODou01c5E_LV0",
       "isPR": false,
       "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
       "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 16.36895155870775
+    },
+    {
+      "id": "PR_kwDOFDnrNc5dgyM7",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add POC for measuring adoption",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 15.507427792459973
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOCxglSM6Bxg4I",
+      "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/converter-js/issues/233",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -141,52 +208,37 @@
         },
         {
           "name": "keep-open",
-          "color": "f9dd4b"
+          "color": "f4d473"
         }
-      ],
-      "score": 13.78438025996442
+      ]
     },
     {
-      "id": "PR_kwDODou01c5YJ7kV",
-      "isPR": true,
+      "id": "I_kwDOE8Qh386BZ9dP",
+      "title": "[BUG] C# setter for property named `value` prevents assignment.",
       "isAssigned": false,
-      "title": "Add Form component",
-      "author": "KhudaDad414",
-      "resourcePath": "/asyncapi/studio/pull/773",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 13.78438025996442
-    },
-    {
-      "id": "I_kwDOFLhIt85bebeO",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Meeting Banners Storage",
-      "author": "AceTheCreator",
-      "resourcePath": "/asyncapi/community/issues/568",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 12.635681904967385
-    }
-  ],
-  "goodFirstIssues": [
-    {
-      "id": "I_kwDODyzcIc6AItqs",
-      "title": "bug fix in bug template 😃 ",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/.github/issues/271",
-      "repo": "asyncapi/.github",
-      "author": "derberg",
-      "area": "Unknown",
+      "resourcePath": "/asyncapi/modelina/issues/1862",
+      "repo": "asyncapi/modelina",
+      "author": "RowlandBanks",
+      "area": "typescript",
       "labels": [
         {
           "name": "bug",
           "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c6BEfZr",
+      "title": "[BUG] CaseStudy page horizontal spacing",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2727",
+      "repo": "asyncapi/website",
+      "author": "RamGoel",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "ee0701"
         }
       ]
     },
@@ -221,25 +273,6 @@
         {
           "name": "C# generator",
           "color": "c5def5"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh3858hQCM",
-      "title": "Add OpenAPI 3.1 support",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1749",
-      "repo": "asyncapi/modelina",
-      "author": "jonaslagoni",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "openapi",
-          "color": "960C58"
         }
       ]
     },
@@ -461,7 +494,7 @@
     {
       "id": "I_kwDODou01c531nlO",
       "title": "Misalignment of Code Editor Highlight Box",
-      "isAssigned": false,
+      "isAssigned": true,
       "resourcePath": "/asyncapi/studio/issues/861",
       "repo": "asyncapi/studio",
       "author": "princerajpoot20",
@@ -790,6 +823,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
