@@ -23,6 +23,26 @@
       "score": 22.9739670999407
     },
     {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 22.68679251119144
+    },
+    {
       "id": "PR_kwDOFLhIt85bqKL8",
       "isPR": true,
       "isAssigned": false,
@@ -31,7 +51,7 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 21.538094156194408
+      "score": 22.112443333692923
     },
     {
       "id": "I_kwDOBW5R_c5J6qNe",
@@ -95,7 +115,27 @@
           "color": "0e8a16"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.953522857451077
+    },
+    {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 18.953522857451077
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -141,35 +181,26 @@
       "score": 16.36895155870775
     },
     {
-      "id": "PR_kwDOKp3ICM5g9w8f",
+      "id": "PR_kwDOFDnrNc5dgyM7",
       "isPR": true,
       "isAssigned": false,
-      "title": "docs: adding content for module 3",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/learning-paths/pull/9",
-      "repo": "asyncapi/learning-paths",
-      "labels": [],
-      "score": 15.220253203710714
-    },
-    {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
+      "title": "feat: add POC for measuring adoption",
       "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 15.507427792459973
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOCxglSM6Bxg4I",
+      "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/converter-js/issues/233",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -177,25 +208,37 @@
         },
         {
           "name": "keep-open",
-          "color": "f9dd4b"
+          "color": "f4d473"
         }
-      ],
-      "score": 14.645904026212197
-    }
-  ],
-  "goodFirstIssues": [
+      ]
+    },
     {
-      "id": "I_kwDODou01c6Aib3a",
-      "title": "Disable the generators that are not yet supported in V3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/979",
-      "repo": "asyncapi/studio",
-      "author": "Amzani",
+      "id": "I_kwDOE8Qh386BZ9dP",
+      "title": "[BUG] C# setter for property named `value` prevents assignment.",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1862",
+      "repo": "asyncapi/modelina",
+      "author": "RowlandBanks",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOBW5R_c6BEfZr",
+      "title": "[BUG] CaseStudy page horizontal spacing",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/website/issues/2727",
+      "repo": "asyncapi/website",
+      "author": "RamGoel",
       "area": "Unknown",
       "labels": [
         {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "name": "bug",
+          "color": "ee0701"
         }
       ]
     },
@@ -780,6 +823,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
