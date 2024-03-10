@@ -10,6 +10,7 @@
   publish = "out"
 
 [build.environment]
+  NPM_FLAGS = "--production=false"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "20.11.0"
   NPM_VERSION = "10.2.4"
