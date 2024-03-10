@@ -4,12 +4,9 @@ import {sortBy} from 'lodash';
 import NewsletterSubscribe from "../../components/NewsletterSubscribe";
 import TextLink from '../../components/typography/TextLink';
 import { useState } from 'react';
-import GithubFilled from '../../components/icons/GithubFilled';
 import IconGithub from '../../components/icons/Github';
 import IconLinkedIn from '../../components/icons/LinkedIn';
-import LinkedInFilled from '../../components/icons/LinkedInFilled';
 import IconTwitter from '../../components/icons/Twitter';
-import TwitterFilled from '../../components/icons/TwitterFilled';
 
 function addAdditionalUserInfo(user) {
   const userData = {
@@ -251,13 +248,13 @@ function TwitterSVG() {
 	const [ isHovered, setIsHovered ] = useState(false);
 
 	return (
-		<div
-			className="relative w-5 h-5"
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-		>
-			{isHovered ? <TwitterFilled /> : <IconTwitter />}
-		</div>
+		<div 
+      className="w-5 h-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <IconTwitter className={isHovered ? 'hover:fill-black' : ''} />
+    </div>
 	);
 }
 
@@ -265,13 +262,13 @@ function GithubSVG() {
 	const [ isHovered, setIsHovered ] = useState(false);
 
 	return (
-		<div
-			className="relative w-5 h-5"
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-		>
-			{isHovered ? <GithubFilled /> : <IconGithub />}
-		</div>
+		<div 
+      className="w-5 h-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <IconGithub className={isHovered ? 'hover:fill-black' : ''} />
+    </div>  
 	);
 }
 
@@ -279,12 +276,13 @@ function LinkedInSVG() {
 	const [ isHovered, setIsHovered ] = useState(false);
 
 	return (
-		<div
-			className="relative w-5 h-5"
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-		>
-			{isHovered ? <LinkedInFilled /> : <IconLinkedIn />}
-		</div>
+		<div 
+      className="w-5 h-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Use the imported SVG icon component */}
+      <IconLinkedIn className={isHovered ? 'hover:fill-linkedin':'' } />
+    </div>
 	);
 }

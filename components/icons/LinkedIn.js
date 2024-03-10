@@ -1,9 +1,9 @@
 export default function IconLinkedIn({ className }) {
   return (
      <svg
-       aria-hidden="true"
-       fill="currentColor"
-       viewBox="0 0 20 20"
+      className={className}
+      fill='currentColor'
+      viewBox="0 0 19 19"
      >
        <path
          fillRule="evenodd"
