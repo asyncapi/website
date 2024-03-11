@@ -211,7 +211,7 @@ export default function CodeBlock({
   textSizeClassName = 'text-xs',
   // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   title = language
-} : CodeBlockProps) {
+} : CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
 

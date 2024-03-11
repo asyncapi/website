@@ -60,9 +60,6 @@ function Card({ title, description, link, className, Icon } : CardProps): JSX.El
 
 /**
  * @description This component renders a grid of cards based on the 'buckets' data.
- *
- * @component
- * @returns {JSX.Element} - The rendered DocsCards component.
  */
 export default function DocsCards(): React.ReactNode {
   return (
