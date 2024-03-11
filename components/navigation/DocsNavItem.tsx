@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { DocsNavItemProps } from '@/types/navigation/DocsNavItem';
 
 function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): boolean {
   if (slug === '/docs' || (sectionSlug !== undefined && slug === sectionSlug)) {
@@ -9,22 +10,6 @@ function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): b
   const partialActiveSlug = activeSlug.split('/');
   const activeParts = partialActiveSlug.filter((a, idx) => a === partialSlug[idx]);
   return activeParts.length === partialSlug.length;
-}
-
-interface DocsNavItemProps {
-  title: string;
-  slug: string;
-  href?: string;
-  activeSlug: string;
-  sectionSlug?: string;
-  onClick?: () => void;
-  defaultClassName?: string;
-  inactiveClassName?: string;
-  activeClassName?: string;
-  bucket?: {
-    className: string;
-    icon: React.ComponentType<any>;
-  };
 }
 
 const DocsNavItem: React.FC<DocsNavItemProps> = ({

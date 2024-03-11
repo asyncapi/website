@@ -4,22 +4,7 @@ import IconHome from '../icons/Home';
 import SubCategoryDocsNav from './SubCategoryDocsNav';
 import DocsArrow from '../icons/DocsArrow';
 import { buckets } from '../data/buckets';
-
-interface Bucket {
-  name?: string;
-  title?: string;
-  description?: string;
-  link?: string;
-  className?: string;
-  borderClassName?: string;
-  Icon?: React.ComponentType<any>;
-  href?: string;
-  icon?: React.ComponentType<any> | null;
-}
-
-interface SerializedBuckets {
-  [key: string]: Bucket;
-}
+import { SerializedBuckets , DocsNavProps } from '@/types/navigation/DocsNav';
 
 const serializedBuckets: SerializedBuckets = buckets.reduce((acc, bucket) => {
   acc[bucket.name || ''] = {
@@ -33,21 +18,6 @@ const serializedBuckets: SerializedBuckets = buckets.reduce((acc, bucket) => {
     className: 'bg-gray-300 border-gray-300',
   },
 } as SerializedBuckets);
-
-interface DocsNavProps {
-  item: {
-    children: {
-      [key: string]: any;
-    };
-    item: {
-      rootSectionId: string;
-      slug: string;
-      title: string;
-    };
-  };
-  active: string;
-  onClick?: () => void;
-}
 
 const DocsNav: React.FC<DocsNavProps> = ({
   item,
