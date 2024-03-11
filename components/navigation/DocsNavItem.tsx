@@ -12,7 +12,7 @@ function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): b
   return activeParts.length === partialSlug.length;
 }
 
-const DocsNavItem: React.FC<DocsNavItemProps> = ({
+export default function DocsNavItem ({
   title,
   slug,
   href,
@@ -23,7 +23,7 @@ const DocsNavItem: React.FC<DocsNavItemProps> = ({
   inactiveClassName = '',
   activeClassName = '',
   bucket,
-}) => {
+}: DocsNavItemProps) {
   const isActive = isActiveSlug(slug, activeSlug, sectionSlug);
   const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block w-full`;
 
@@ -44,5 +44,3 @@ const DocsNavItem: React.FC<DocsNavItemProps> = ({
     </div>
   );
 };
-
-export default DocsNavItem;

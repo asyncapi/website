@@ -19,11 +19,11 @@ const serializedBuckets: SerializedBuckets = buckets.reduce((acc, bucket) => {
   },
 } as SerializedBuckets);
 
-const DocsNav: React.FC<DocsNavProps> = ({
+export default function DocsNav ({
   item,
   active,
   onClick = () => {},
-}) => {
+}:DocsNavProps ) {
   const subCategories = item.children;
   const bucket = serializedBuckets[item.item.rootSectionId];
   const [openSubCategory, setOpenSubCategory] = useState(active.startsWith(item.item.slug));
@@ -56,5 +56,3 @@ const DocsNav: React.FC<DocsNavProps> = ({
     </li>
   );
 }
-
-export default DocsNav;
