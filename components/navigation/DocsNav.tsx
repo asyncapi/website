@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DocsNavItem from './DocsNavItem';
 import IconHome from '../icons/Home';
 import SubCategoryDocsNav from './SubCategoryDocsNav';
