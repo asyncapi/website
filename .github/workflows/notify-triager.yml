@@ -1,10 +1,8 @@
 name: Notify Triagers
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited, ready_for_review]
 
 jobs:
   Notify-triagers:
@@ -36,23 +34,19 @@ jobs:
           echo "md-triagers=$mdTriagers" >> $GITHUB_OUTPUT
           echo "code-triagers=$codeTriagers" >> $GITHUB_OUTPUT
 
-      # - name: Create Comment for .md files
-      #   if: steps.md-pr-changes.outputs.any_changed == 'true'
-      #   uses: mshick/add-pr-comment@v2.8.2
-      #   with:
-      #     message: "The PR contains modifications to `.md` files, hence tagging Docs triagers for review and approval.
-      #               cc: ${{ steps.read-triagers-json.outputs.md-triagers }}"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      # - name: Create Comment for non-.md files
-      #   if: steps.non-md-pr-changes.outputs.any_changed == 'true'
-      #   uses: mshick/add-pr-comment@v2.8.2
-      #   with:
-      #     message: "The PR contains modifications to code related files, hence tagging Code triagers for review and approval.
-      #               cc: ${{ steps.read-triagers-json.outputs.code-triagers }}"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Create Comment for non-.md files
+        if: steps.non-md-pr-changes.outputs.any_changed == 'true'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: | 
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `The PR contains modifications to `code` files, hence tagging Docs triagers for review and approval.
+              #               cc: ${{ steps.read-triagers-json.outputs.code-triagers }}`
+            })
 
       - name: Create comment for .md files
         if: steps.md-pr-changes.outputs.any_changed == 'true'
