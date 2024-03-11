@@ -94,6 +94,26 @@
       "score": 19.527872034949596
     },
     {
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 19.240697446200336
+    },
+    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -113,26 +133,6 @@
         {
           "name": "level/medium",
           "color": "0e8a16"
-        }
-      ],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
         }
       ],
       "score": 18.953522857451077
@@ -189,7 +189,7 @@
       "resourcePath": "/asyncapi/cli/pull/859",
       "repo": "asyncapi/cli",
       "labels": [],
-      "score": 15.507427792459973
+      "score": 15.794602381209232
     }
   ],
   "goodFirstIssues": [
@@ -209,21 +209,6 @@
         {
           "name": "keep-open",
           "color": "f4d473"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh386BZ9dP",
-      "title": "[BUG] C# setter for property named `value` prevents assignment.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1862",
-      "repo": "asyncapi/modelina",
-      "author": "RowlandBanks",
-      "area": "typescript",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
         }
       ]
     },
