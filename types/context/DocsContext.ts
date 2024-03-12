@@ -9,6 +9,6 @@ export interface NavigationItems {
 }
   
 export interface DocsContextType {
-    post: IDoc[];
+    post: IDoc;
     navItems: NavigationItems;
 }
