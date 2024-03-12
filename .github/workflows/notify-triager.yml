@@ -29,10 +29,10 @@ jobs:
         run: |
           mdTriagers=$(jq -c '.mdTriagers' triagers.json)
           codeTriagers=$(jq -c '.codeTriagers' triagers.json)
-          echo "::set-output name=md-triagers::$mdTriagers"
-          echo "::set-output name=code-triagers::$codeTriagers"
+          echo "md-triagers=$mdTriagers" >> $GITHUB_OUTPUT
+          echo "code-triagers=$codeTriagers" >> $GITHUB_OUTPUT
 
-      - name: Create Comment for non-.md files
+      - name: Add reviewers for non-.md files
         if: steps.non-md-pr-changes.outputs.any_changed == 'true'
         run: |
           curl \
@@ -43,7 +43,7 @@ jobs:
           -d '{
             "reviewers": ${{ steps.read-triagers-json.outputs.code-triagers }}
           }'
-      - name: Create comment for .md files
+      - name: Add reviewers for .md files
         if: steps.md-pr-changes.outputs.any_changed == 'true'
         run: |
           curl \
