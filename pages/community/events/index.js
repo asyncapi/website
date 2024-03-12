@@ -74,11 +74,11 @@ function Eventindex() {
               typeStyle="heading-sm-semibold"
               className="mt-10 lg:text-2xl"
             >
-              Watch the AsyncAPI 2022 conference recordings from anywhere around
+              Watch the AsyncAPI 2023 conference recordings from anywhere around
               the world for free
             </Heading>
             <a data-testid="Recordings-Link"
-              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl"
+              href="https://youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB"
               target="_blank"
               rel="noreferrer"
             >
