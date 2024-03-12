@@ -2,7 +2,7 @@ import { createContext } from 'react';
 import { DocsContextType } from '@/types/context/DocsContext';
 
 const initialDocsContext: DocsContextType = {
-  post: [],
+  post:[],
   navItems: {},
 };
 
