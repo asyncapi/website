@@ -1,6 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
+
 import NavItemDropdown from '../icons/NavItemDropdown';
 
 interface NavItemProps {
@@ -13,24 +14,24 @@ interface NavItemProps {
   className?: string;
 }
 
-export default function NavItem ({
+export default function NavItem({
   text,
   href,
   target = '_self',
   onClick = () => {},
   onMouseEnter = () => {},
   hasDropdown = false,
-  className = '',
+  className = ''
 }: NavItemProps) {
   const router = useRouter();
-  
+
   if (href && !hasDropdown) {
     return (
       <Link href={href}>
         <a
           target={target}
-          rel="noopener noreferrer"
-          className={`${className} font-body text-base leading-6 font-semibold text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150 ${
+          rel='noopener noreferrer'
+          className={`${className} font-body text-base font-semibold leading-6 text-gray-700 transition duration-150 ease-in-out hover:text-gray-900 focus:text-gray-900 focus:outline-none ${
             router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
           }`}
         >
@@ -43,7 +44,7 @@ export default function NavItem ({
   const attrs = {
     onClick,
     onMouseEnter,
-    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`,
+    className: `${className} group inline-flex items-center space-x-2 font-body text-base leading-6 font-semibold hover:text-gray-900 focus:outline-none focus:text-gray-900 tracking-heading transition ease-in-out duration-150`
   };
 
   if (href) {
@@ -55,7 +56,7 @@ export default function NavItem ({
             router.pathname.startsWith(href) ? 'text-black' : 'text-gray-700'
           }`}
           target={target}
-          data-testid="NavItem-Link"
+          data-testid='NavItem-Link'
         >
           <span>{text}</span>
           {hasDropdown && <NavItemDropdown />}
@@ -66,7 +67,7 @@ export default function NavItem ({
 
   return (
     <button
-      type="button"
+      type='button'
       {...attrs}
       className={`${attrs.className} text-gray-700`}
     >

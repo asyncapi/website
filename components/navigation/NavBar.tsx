@@ -1,25 +1,27 @@
-import { useState, useEffect } from "react";
-import { useRouter, NextRouter } from "next/router";
+import Link from 'next/link';
+import type { NextRouter } from 'next/router';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+
+import {
+  defaultLanguage,
+  languages,
+  useTranslation
+} from '../../utils/i18n';
+import i18nPaths from '../../utils/i18nPaths';
+import { SearchButton } from '../AlgoliaSearch';
+import AsyncAPILogo from '../AsyncAPILogo';
+import GithubButton from '../buttons/GithubButton';
 import { isMobileDevice } from '../helpers/is-mobile';
 import { useOutsideClick } from '../helpers/use-outside-click';
-import AsyncAPILogo from '../AsyncAPILogo';
-import NavItem from './NavItem';
-import ToolsPanel from './ToolsPanel';
-import LearningPanel from './LearningPanel';
-import CommunityPanel from "./CommunityPanel";
-import MobileNavMenu from './MobileNavMenu';
-import otherItems from './otherItems';
-import GithubButton from "../buttons/GithubButton";
-import { SearchButton } from '../AlgoliaSearch';
 import IconLoupe from '../icons/Loupe';
-import Link from 'next/link';
 import LanguageSelect from '../languageSelector/LanguageSelect';
-import {
-    defaultLanguage,
-    languages,
-    useTranslation,
-  } from "../../utils/i18n";
-import i18nPaths from "../../utils/i18nPaths";
+import CommunityPanel from './CommunityPanel';
+import LearningPanel from './LearningPanel';
+import MobileNavMenu from './MobileNavMenu';
+import NavItem from './NavItem';
+import otherItems from './otherItems';
+import ToolsPanel from './ToolsPanel';
 
 interface NavBarProps {
   className?: string;
@@ -28,9 +30,9 @@ interface NavBarProps {
 
 const isMobile = isMobileDevice();
 
-export default function NavBar ({
+export default function NavBar({
   className = '',
-  hideLogo = false,
+  hideLogo = false
 }: NavBarProps) {
   const router: NextRouter = useRouter();
   const { pathname, query, asPath } = router;
@@ -47,16 +49,16 @@ export default function NavBar ({
     let pathnameWithoutLocale = pathname;
 
     // Check if the pathname includes "/[lang]", if so, replace it with an empty string
-    if (pathname && pathname.includes("/[lang]")) {
-      pathnameWithoutLocale = pathname.replace("/[lang]", "");
+    if (pathname && pathname.includes('/[lang]')) {
+      pathnameWithoutLocale = pathname.replace('/[lang]', '');
     }
 
     // Filter unique languages based on i18nPaths that include the modified pathnameWithoutLocale
-    let uniqueLangs = Object.keys(i18nPaths).filter(lang => i18nPaths[lang].includes(pathnameWithoutLocale)).map(lang => lang.toUpperCase());
+    const uniqueLangs = Object.keys(i18nPaths).filter(lang => i18nPaths[lang].includes(pathnameWithoutLocale)).map(lang => lang.toUpperCase());
 
     // If no unique languages are found, default to ["EN"]
-    return uniqueLangs.length === 0 ? ["EN"] : uniqueLangs;
-  }
+    return uniqueLangs.length === 0 ? ['EN'] : uniqueLangs;
+  };
 
   const uniqueLangs = getUniqueLangs().map((lang) => ({
     key: lang,
@@ -81,28 +83,26 @@ export default function NavBar ({
     }
 
     // Detect current language
-    const slug = asPath.split("/")[1];
+    const slug = asPath.split('/')[1];
     const langSlug = languages.includes(slug) && slug;
     const language = query.lang || langSlug || defaultLanguage;
 
     let href = pathname;
 
     if (locale) {
-      if (pathname.startsWith("/404")) {
+      if (pathname.startsWith('/404')) {
         href = `/${locale}`;
       } else {
-        href = pathname.replace("[lang]", locale);
+        href = pathname.replace('[lang]', locale);
       }
+    } else if (language) {
+      href = `/${language}${href}`;
     } else {
-      if (language) {
-        href = `/${language}${href}`;
-      } else {
-        href = `/${href}`;
-      }
+      href = `/${href}`;
     }
 
     // Fix double slashes
-    href = href.replace(/([^:]\/)\/+/g, "$1").replace("//", "/");
+    href = href.replace(/([^:]\/)\/+/g, '$1').replace('//', '/');
 
     router.push(href);
   };
@@ -134,38 +134,38 @@ export default function NavBar ({
 
   return (
     <div className={`bg-white ${className} z-50`}>
-      <div className="flex w-full justify-between items-center py-6 lg:justify-start lg:space-x-10">
+      <div className='flex w-full items-center justify-between py-6 lg:justify-start lg:space-x-10'>
         {!hideLogo && (
-          <div className="lg:w-auto lg:flex-1">
-            <div className="flex" >
-              <Link href="/">
-                <a className="cursor-pointer" aria-label="AsyncAPI" data-testid="Navbar-logo">
-                  <AsyncAPILogo className="h-8 w-auto sm:h-8" />
+          <div className='lg:w-auto lg:flex-1'>
+            <div className='flex' >
+              <Link href='/'>
+                <a className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
+                  <AsyncAPILogo className='h-8 w-auto sm:h-8' />
                 </a>
               </Link>
             </div>
           </div>
         )}
 
-        <div className="flex flex-row items-center justify-center -mr-2 -my-2 lg:hidden" data-testid="Navbar-search">
+        <div className='-my-2 -mr-2 flex flex-row items-center justify-center lg:hidden' data-testid='Navbar-search'>
           <SearchButton
-            className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
-            aria-label="Open Search"
+            className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+            aria-label='Open Search'
           >
             <IconLoupe />
           </SearchButton>
-          <button onClick={() => setMobileMenuOpen(true)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-            <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+          <button onClick={() => setMobileMenuOpen(true)} type='button' className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'>
+            <svg className='size-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
               <title>Menu</title>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16' />
             </svg>
           </button>
         </div>
 
-        <nav className="hidden lg:flex lg:items-center lg:justify-end space-x-6 xl:space-x-10 w-full" data-testid="Navbar-main">
-          <div className="relative" onMouseLeave={() => showMenu(null)} ref={learningRef}>
+        <nav className='hidden w-full space-x-6 lg:flex lg:items-center lg:justify-end xl:space-x-10' data-testid='Navbar-main'>
+          <div className='relative' onMouseLeave={() => showMenu(null)} ref={learningRef}>
             <NavItem
-              text="Docs"
+              text='Docs'
               href='/docs'
               onClick={() => showOnClickMenu('learning')}
               onMouseEnter={() => showMenu('learning')}
@@ -174,9 +174,9 @@ export default function NavBar ({
             {open === 'learning' && <LearningPanel />}
           </div>
 
-          <div className="relative" onMouseLeave={() => showMenu(null)} ref={toolingRef}>
+          <div className='relative' onMouseLeave={() => showMenu(null)} ref={toolingRef}>
             <NavItem
-              text="Tools"
+              text='Tools'
               href='/tools'
               onClick={() => showOnClickMenu('tooling')}
               onMouseEnter={() => showMenu('tooling')}
@@ -185,10 +185,10 @@ export default function NavBar ({
             {open === 'tooling' && <ToolsPanel />}
           </div>
 
-          <div className="relative" onMouseLeave={() => showMenu(null)} ref={communityRef}>
+          <div className='relative' onMouseLeave={() => showMenu(null)} ref={communityRef}>
             <NavItem
-              text="Community"
-              href="/community"
+              text='Community'
+              href='/community'
               onClick={() => showOnClickMenu('community')}
               onMouseEnter={() => showMenu('community')}
               hasDropdown
@@ -200,10 +200,10 @@ export default function NavBar ({
             <NavItem href={item.href} key={index} text={item.text} target={item.target} className={item.className} />
           ))}
 
-          <div className="flex flex-row items-center justify-content">
+          <div className='justify-content flex flex-row items-center'>
             <SearchButton
-              className="flex items-center text-left space-x-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out mr-2"
-              aria-label="Open Search"
+              className='mr-2 flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
+              aria-label='Open Search'
             >
               <IconLoupe />
             </SearchButton>
@@ -214,11 +214,11 @@ export default function NavBar ({
               onChange={(value) => {
                 changeLanguage(value.toLowerCase(), true);
               }}
-              className=""
-              selected={i18n.language ? i18n.language.toUpperCase() : "EN"}
+              className=''
+              selected={i18n.language ? i18n.language.toUpperCase() : 'EN'}
             />
 
-            <GithubButton text="Star on GitHub" href="https://github.com/asyncapi/spec" className="py-2 ml-2" inNav={true} />
+            <GithubButton text='Star on GitHub' href='https://github.com/asyncapi/spec' className='ml-2 py-2' inNav={true} />
           </div>
         </nav>
 
@@ -228,5 +228,5 @@ export default function NavBar ({
       {mobileMenuOpen && <MobileNavMenu onClickClose={() => setMobileMenuOpen(false)} />}
 
     </div>
-  )
+  );
 }

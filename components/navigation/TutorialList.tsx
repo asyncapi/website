@@ -1,9 +1,11 @@
-import { useContext } from 'react';
-import DocsContext from '../../context/DocsContext';
-import { DocsContextType } from '@/types/context/DocsContext';
-import { IDoc } from '@/types/post';
-import IconArrowRight from '../icons/ArrowRight';
 import Link from 'next/link';
+import { useContext } from 'react';
+
+import type { DocsContextType } from '@/types/context/DocsContext';
+import type { IDoc } from '@/types/post';
+
+import DocsContext from '../../context/DocsContext';
+import IconArrowRight from '../icons/ArrowRight';
 
 interface TutorialListProps {
   className?: string;
@@ -20,13 +22,13 @@ export default function TutorialList({ className = '' }: TutorialListProps) {
       {tutorials.map((tuto: IDoc, index: number) => (
         <Link href={tuto.slug} key={index}>
           <a
-            className="flex flex-col mt-4 p-6 max-w-lg rounded shadow-md border border-gray-200 text-gray-700 transition-all duration-300 ease-in-out hover:shadow-lg hover:border-gray-300 cursor-pointer"
+            className='mt-4 flex max-w-lg cursor-pointer flex-col rounded border border-gray-200 p-6 text-gray-700 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg'
           >
-            <h5 className="text-lg font-medium font-sans antialiased mb-2">{tuto.title}</h5>
-            <p className="flex-1 mb-2 font-normal font-sans antialiased">{tuto.description}</p>
-            <p className="text-primary-600 font-medium font-sans antialiased">
+            <h5 className='mb-2 font-sans text-lg font-medium antialiased'>{tuto.title}</h5>
+            <p className='font-normal mb-2 flex-1 font-sans antialiased'>{tuto.description}</p>
+            <p className='font-sans font-medium text-primary-600 antialiased'>
               Start tutorial
-              <IconArrowRight className="inline-block h-4" />
+              <IconArrowRight className='inline-block h-4' />
             </p>
           </a>
         </Link>

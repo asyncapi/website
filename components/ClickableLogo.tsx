@@ -1,5 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+
 import AsyncAPILogo from './AsyncAPILogo';
 
 interface ClickableLogoProps {
@@ -8,11 +9,11 @@ interface ClickableLogoProps {
   logoClassName?: string;
 }
 
-export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: ClickableLogoProps){
+export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: ClickableLogoProps) {
   return (
     <Link href={href}>
       <a className={className}>
-        <AsyncAPILogo className={logoClassName || ""} />
+        <AsyncAPILogo className={logoClassName || ''} />
       </a>
     </Link>
   );

@@ -1,10 +1,10 @@
 import IconGettingStarted from '../icons/GettingStarted';
+import IconGuide from '../icons/Guide';
+import IconMigration from '../icons/Migration';
+import IconSpec from '../icons/Spec';
 import IconTutorials from '../icons/Tutorials';
 import IconUseCases from '../icons/UseCases';
-import IconGuide from '../icons/Guide';
-import IconSpec from '../icons/Spec';
 import IconUsers from '../icons/Users';
-import IconMigration from '../icons/Migration';
 
 interface Bucket {
   name: string;
@@ -28,7 +28,7 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-secondary-200',
     Icon: IconGettingStarted,
     href: '/docs/concepts',
-    icon: IconGettingStarted,
+    icon: IconGettingStarted
   },
   {
     name: 'tutorials',
@@ -39,18 +39,18 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-pink-100',
     Icon: IconTutorials,
     href: '/docs/tutorials',
-    icon: IconTutorials,
+    icon: IconTutorials
   },
   {
     name: 'guides',
     title: 'Guides',
-    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
+    description: 'Our Guides section teaches AsyncAPI\'s capabilities at a high level.',
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
     Icon: IconGuide,
     href: '/docs/guides',
-    icon: IconGuide,
+    icon: IconGuide
   },
   {
     name: 'tools',
@@ -61,7 +61,7 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-green-200',
     Icon: IconUseCases,
     href: '/docs/tools',
-    icon: IconUseCases,
+    icon: IconUseCases
   },
   {
     name: 'reference',
@@ -72,7 +72,7 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-yellow-200',
     Icon: IconSpec,
     href: '/docs/reference',
-    icon: IconSpec,
+    icon: IconSpec
   },
   {
     name: 'migration',
@@ -83,7 +83,7 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-blue-400',
     Icon: IconMigration,
     href: '/docs/migration',
-    icon: IconMigration,
+    icon: IconMigration
   },
   {
     name: 'community',
@@ -94,12 +94,12 @@ export const buckets: Bucket[] = [
     borderClassName: 'border-orange-200',
     Icon: IconUsers,
     href: '/docs/community',
-    icon: IconUsers,
-  },
+    icon: IconUsers
+  }
 ].map(bucket => {
   return {
     ...bucket,
     href: bucket.link,
-    icon: bucket.Icon,
+    icon: bucket.Icon
   };
 });

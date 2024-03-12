@@ -1,12 +1,15 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import React from 'react';
 import moment from 'moment';
+import React from 'react';
+
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+
 import IconCalendar from '../icons/Calendar';
 import Community from '../icons/Community';
 import Conference from '../icons/Conference';
 import Webinar from '../icons/Webinar';
 import Heading from '../typography/Heading';
-import { HeadingLevel , HeadingTypeStyle} from '@/types/typography/Heading';
+
 interface Event {
   title: string;
   url: string;
@@ -22,7 +25,7 @@ interface EventPostItemProps {
 
 function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.Element {
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
-  const currentDate = localTime + 'T00:00:00.000Z';
+  const currentDate = `${localTime  }T00:00:00.000Z`;
   const title = post.title || '';
   let color = '';
   let icon = <></>;
@@ -44,7 +47,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.El
 
   const defaultCover = '/img/homepage/confBlurBg.webp';
   let active = true;
-  let postDate = moment(post.date); // Convert post.date to a moment object if necessary
+  const postDate = moment(post.date); // Convert post.date to a moment object if necessary
 
   if (!postDate.isValid()) {
     // Handle invalid date if necessary
@@ -54,20 +57,20 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.El
   }
 
   return (
-    <li key={id} className={className} data-testid="EventPostItem-main">
+    <li key={id} className={className} data-testid='EventPostItem-main'>
       <article className='h-full rounded-lg shadow-md hover:shadow-lg'>
-        <a href={post.url} target='_blank' rel='noreferrer' data-testid="EventPostItem-link">
+        <a href={post.url} target='_blank' rel='noreferrer' data-testid='EventPostItem-link'>
           <img
             src={post.banner ? post.banner : defaultCover}
             alt={post.title}
-            className='w-full h-52 object-cover rounded-t-lg'
-            data-testid="EventPostItem-img"
+            className='h-52 w-full rounded-t-lg object-cover'
+            data-testid='EventPostItem-img'
           />
-          <div className='mt-2 p-5 flex flex-col justify-between h-52 ' data-testid="EventPostItem-post">
+          <div className='mt-2 flex h-52 flex-col justify-between p-5 ' data-testid='EventPostItem-post'>
             <div>
               <div className='flex items-center'>
                 {icon}
-                <p className={`ml-3 font-bold text-md ${color}`}>{type}</p>
+                <p className={`text-md ml-3 font-bold ${color}`}>{type}</p>
               </div>
               <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.bodyLg} className='mt-4'>
                 {post.title}
@@ -75,12 +78,12 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.El
             </div>
             <div className='flex items-center'>
               <IconCalendar />
-              <span className='text-sm font-semibold ml-4' data-testid="Event-span">
+              <span className='ml-4 text-sm font-semibold' data-testid='Event-span'>
                 {active
                   ? moment(postDate).format('MMMM D, YYYY')
                   : 'View Recording'}
               </span>
-              <ArrowRightIcon className='w-4 ml-3' />
+              <ArrowRightIcon className='ml-3 w-4' />
             </div>
           </div>
         </a>

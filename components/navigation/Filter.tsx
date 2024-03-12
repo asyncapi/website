@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
-import { useRouter, NextRouter } from "next/router";
-import Select from "../form/Select";
-import { applyFilterList, onFilterApply } from "../helpers/applyFilter";
-import { FilterProps, Option } from "@/types/navigation/Filter";
+import type { NextRouter } from 'next/router';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
-export default function Filter ({ data, onFilter, checks, className }: FilterProps) {
+import type { FilterProps, Option } from '@/types/navigation/Filter';
+
+import Select from '../form/Select';
+import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
+
+export default function Filter({ data, onFilter, checks, className }: FilterProps) {
   const router: NextRouter = useRouter();
   const [filters, setFilters] = useState<{ [key: string]: Option[] }>({});
   const [query, setQuery] = useState<{ [key: string]: string }>({});
@@ -21,7 +24,8 @@ export default function Filter ({ data, onFilter, checks, className }: FilterPro
   return (
     <>
       {checks.map((check) => {
-        let selected = "";
+        let selected = '';
+
         if (Object.keys(query).length) {
           if (query[check.name]) {
             selected = `${query[check.name]}`;
@@ -30,10 +34,10 @@ export default function Filter ({ data, onFilter, checks, className }: FilterPro
 
         const selectOptions: Option[] = [
           {
-            value: "",
-            text: `Filter by ${check.name}...`,
+            value: '',
+            text: `Filter by ${check.name}...`
           },
-          ...(filters[check.name] || []),
+          ...(filters[check.name] || [])
         ];
 
         return (
@@ -44,7 +48,7 @@ export default function Filter ({ data, onFilter, checks, className }: FilterPro
               const { query } = router;
               const newQuery = {
                 ...query,
-                [check.name]: e,
+                [check.name]: e
               };
 
               if (!e) {
@@ -52,13 +56,12 @@ export default function Filter ({ data, onFilter, checks, className }: FilterPro
               }
 
               const queryParams = new URLSearchParams(newQuery as { [key: string]: string }).toString();
-              router.push(
-                `${router.pathname}?${queryParams}`,
+
+              router.push(`${router.pathname}?${queryParams}`,
                 undefined,
                 {
-                  shallow: true,
-                }
-              );
+                  shallow: true
+                });
             }}
             selected={selected}
             className={`${className} md:mr-4`}

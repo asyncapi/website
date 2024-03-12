@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { DocsNavItemProps } from '@/types/navigation/DocsNavItem';
+
+import type { DocsNavItemProps } from '@/types/navigation/DocsNavItem';
 
 function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): boolean {
   if (slug === '/docs' || (sectionSlug !== undefined && slug === sectionSlug)) {
@@ -9,10 +10,11 @@ function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): b
   const partialSlug = slug.split('/');
   const partialActiveSlug = activeSlug.split('/');
   const activeParts = partialActiveSlug.filter((a, idx) => a === partialSlug[idx]);
+
   return activeParts.length === partialSlug.length;
 }
 
-export default function DocsNavItem ({
+export default function DocsNavItem({
   title,
   slug,
   href,
@@ -22,7 +24,7 @@ export default function DocsNavItem ({
   defaultClassName = '',
   inactiveClassName = '',
   activeClassName = '',
-  bucket,
+  bucket
 }: DocsNavItemProps) {
   const isActive = isActiveSlug(slug, activeSlug, sectionSlug);
   const classes = `${isActive ? activeClassName : inactiveClassName} ${defaultClassName} inline-block w-full`;
@@ -34,7 +36,7 @@ export default function DocsNavItem ({
           <a className='inline-block w-full' href={href || slug} onClick={onClick}>
             {bucket && (
               <div className={`${(slug === '/docs' ? slug === activeSlug : activeSlug.startsWith(slug)) ? bucket.className : ''} inline-block rounded`} style={{ marginRight: '5px', marginBottom: '-6px', padding: '2px' }}>
-                <bucket.icon className='h-5 w-5' />
+                <bucket.icon className='size-5' />
               </div>
             )}
             <span>{title}</span>

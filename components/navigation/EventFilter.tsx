@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+import React, { useEffect, useState } from 'react';
+
 import { getEvents } from '../../utils/staticHelpers';
 
 interface Event {
@@ -13,7 +14,7 @@ interface EventFilterProps {
 
 function EventFilter({ data, setData }: EventFilterProps) {
   const localTime = moment().format('YYYY-MM-DD');
-  const currentDate = localTime + 'T00:00:00.000Z';
+  const currentDate = `${localTime  }T00:00:00.000Z`;
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
   const [active, setActive] = useState<string>('All');
 
@@ -23,18 +24,14 @@ function EventFilter({ data, setData }: EventFilterProps) {
         setData(getEvents(data));
         break;
       case 'Upcoming':
-        setData(
-          getEvents(data).filter((a: Event) => {
-            return a.date.format() > currentDate;
-          })
-        );
+        setData(getEvents(data).filter((a: Event) => {
+          return a.date.format() > currentDate;
+        }));
         break;
       case 'Recorded':
-        setData(
-          getEvents(data).filter((a: Event) => {
-            return a.date.format() < currentDate;
-          })
-        );
+        setData(getEvents(data).filter((a: Event) => {
+          return a.date.format() < currentDate;
+        }));
         break;
       default:
         break;
@@ -42,13 +39,13 @@ function EventFilter({ data, setData }: EventFilterProps) {
   }, [active, data, setData, currentDate]);
 
   return (
-    <div className="p-2 bg-secondary-200 rounded-md flex justify-between w-full sm:w-[400px] text-secondary-600" data-testid="EventFilters-main">
+    <div className='flex w-full justify-between rounded-md bg-secondary-200 p-2 text-secondary-600 sm:w-[400px]' data-testid='EventFilters-main'>
       {filterList.map((list) => (
         <div
-          data-testid="EventFilter-click"
+          data-testid='EventFilter-click'
           key={list}
-          className={`p-3 w-[100px] cursor-pointer text-center ${
-            active === list ? 'bg-secondary-600 rounded-md text-white' : 'hover:text-black'
+          className={`w-[100px] cursor-pointer p-3 text-center ${
+            active === list ? 'rounded-md bg-secondary-600 text-white' : 'hover:text-black'
           }`}
           onClick={() => setActive(list)}
         >
