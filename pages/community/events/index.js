@@ -78,7 +78,7 @@ function Eventindex() {
               the world for free
             </Heading>
             <a data-testid="Recordings-Link"
-              href="https://youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB"
+              href="https://www.youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB"
               target="_blank"
               rel="noreferrer"
             >
