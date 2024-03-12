@@ -13,7 +13,7 @@ jobs:
 
       - name: Check PR Changes for .md files
         id: md-pr-changes
-        uses: tj-actions/changed-files@v42
+        uses: tj-actions/changed-filesaa08304bd477b800d468db44fe10f6c61f7f7b11 # version 42.1.0 https://github.com/tj-actions/changed-files/releases/tag/v42.1.0
         with:
           files: |
             **.md
