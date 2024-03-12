@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
+
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
+
 import IconArrowUp from '../icons/ArrowUp';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
-import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 interface SmallHomeCardProp {
   icon: string;
@@ -17,10 +19,10 @@ interface SmallHomeCardProp {
   btnText: string;
   btnBg: string;
   link: string;
-}
+};
 
 /**
- * @description This component displays support items.
+ * @description This component displays Small Home Card.
  * @param {SmallHomeCardProp} props - The props for Small Home Card component.
  * @param {string} props.icon - The icon for the card.
  * @param {string} props.tagline - The tagline for the card.
@@ -31,13 +33,13 @@ interface SmallHomeCardProp {
  * @param {string} props.bg - The background color for the card.
  * @param {string} props.btnText - The text for the button.
  * @param {string} props.btnBg - The background color for the button.
- * @param {string} props.link - The link for the card.
+ * @param {string} props.link - The link for the button.
  */
 export default function SmallHomeCard({
   icon,
   tagline,
   taglineBg,
-  type='large',
+  type = 'large',
   heading,
   description,
   bg,
@@ -45,14 +47,14 @@ export default function SmallHomeCard({
   btnBg,
   link
 } : SmallHomeCardProp) : React.ReactNode {
-  if(type === 'small'){
+  if (type === 'small') {
     return (
       <Link href={link} target='_blank'>
         <a target={link.includes('http') ? '_blank' : undefined}>
           <div
-            className={`p-3 cursor-pointer border shadow-xl rounded w-full border-[#ad20e2] ${bg}`}
+            className={`w-full cursor-pointer rounded border border-[#ad20e2] p-3 shadow-xl ${bg}`}
             data-testid='Card-small-bg'>
-            <div className='p-2 rounded-xl bg-gray-100 text-center w-min text-xs flex justify-between'>
+            <div className='flex w-min justify-between rounded-xl bg-gray-100 p-2 text-center text-xs'>
               <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
             </div>
             <div className='mt-3' data-testid='Card-heading'>
@@ -68,7 +70,7 @@ export default function SmallHomeCard({
                 {description}
               </Paragraph>
             </div>
-            <div className='text-right w-full flex justify-end' data-testid='Card-icon'>
+            <div className='flex w-full justify-end text-right' data-testid='Card-icon'>
               <IconArrowUp className='w-[20px]' />
             </div>
           </div>
@@ -76,15 +78,16 @@ export default function SmallHomeCard({
       </Link>
     );
   }
+
   return (
     <div
-      className={`h-140 w-full shadow-xl rounded p-6 border ${
+      className={`h-140 w-full rounded border p-6 shadow-xl ${
         !bg && 'border-[#ad20e2]'
       } ${bg}`}
-    data-testid='Card-lg-bg'>
+      data-testid='Card-lg-bg'>
       <div
-        className={`p-2 rounded-xl text-center w-min text-xs flex justify-between ${taglineBg}`}
-      data-testid='Card-lg-tagline'>
+        className={`flex w-min justify-between rounded-xl p-2 text-center text-xs ${taglineBg}`}
+        data-testid='Card-lg-tagline'>
         <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
       </div>
 
@@ -112,4 +115,4 @@ export default function SmallHomeCard({
       </div>
     </div>
   );
-}
+};

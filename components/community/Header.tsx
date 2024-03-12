@@ -1,16 +1,17 @@
 import React from 'react';
 
+import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
+
 import Button from '../buttons/Button';
 import IconRocket from '../icons/Rocket';
 import Heading from '../typography/Heading';
-import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 interface HeaderProps {
   className: string;
-}
+};
 
 /**
- * @description This component displays support items.
+ * @description This component displays Header.
  * @param {HeaderProps} props - The props for Header component.
  * @param {string} props.className - Additional CSS classes for styling.
  */
@@ -59,5 +60,4 @@ export default function Header({
       </div>
     </div>
   );
-}
-
+};
