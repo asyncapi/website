@@ -1,4 +1,4 @@
-name: Notify Triagers
+name: Notify Triage Maintainers
 
 on:
   pull_request_target:
@@ -17,47 +17,40 @@ jobs:
         with:
           files: |
             **.md
-
       - name: Check PR Changes for non-.md files
         id: non-md-pr-changes
         uses: tj-actions/changed-files@v42
         with:
           files: |
             !**.md
-
+  
       - name: Read triagers.json
-        if: steps.md-pr-changes.outputs.any_changed == 'true' || steps.non-md-pr-changes.outputs.any_changed == 'true'
         id: read-triagers-json
         run: |
-          mdTriagers=$(jq -r '.mdTriagers[]' triagers.json | tr '\n' ' ')
-          codeTriagers=$(jq -r '.codeTriagers[]' triagers.json | tr '\n' ' ')
-          echo "md-triagers=$mdTriagers" >> $GITHUB_OUTPUT
-          echo "code-triagers=$codeTriagers" >> $GITHUB_OUTPUT
+          mdTriagers=$(jq -c '.mdTriagers' triagers.json)
+          codeTriagers=$(jq -c '.codeTriagers' triagers.json)
+          echo "::set-output name=md-triagers::$mdTriagers"
+          echo "::set-output name=code-triagers::$codeTriagers"
 
       - name: Create Comment for non-.md files
         if: steps.non-md-pr-changes.outputs.any_changed == 'true'
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: | 
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `The PR contains modifications to `code` files, hence tagging Docs triagers for review and approval.
-              #               cc: ${{ steps.read-triagers-json.outputs.code-triagers }}`
-            })
-
+        run: |
+          curl \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
+          -d '{
+            "reviewers": ${{ steps.read-triagers-json.outputs.code-triagers }}
+          }'
       - name: Create comment for .md files
         if: steps.md-pr-changes.outputs.any_changed == 'true'
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: | 
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `The PR contains modifications to `.md` files, hence tagging Docs triagers for review and approval.
-              #               cc: ${{ steps.read-triagers-json.outputs.md-triagers }}`
-            })
+        run: |
+          curl \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
+          -d '{
+            "reviewers": ${{ steps.read-triagers-json.outputs.md-triagers }}
+          }'
