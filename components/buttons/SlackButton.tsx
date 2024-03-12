@@ -1,5 +1,5 @@
 import IconSlack from '../icons/Slack';
-import Button from './Button';
+import Button, { ButtonIconPositionType } from './Button';
 import type { IButtonDefaultProps } from './types';
 
 interface ISlackButtonProps extends IButtonDefaultProps {}
@@ -9,14 +9,14 @@ interface ISlackButtonProps extends IButtonDefaultProps {}
  * @param {string} props.text - The text to display on the button.
  * @param {string} props.href - The href attribute for the anchor tag.
  * @param {string} props.target - The target attribute for the anchor tag.
- * @param {string} props.iconPosition - The position of the icon in the button.
+ * @param {ButtonIconPositionType} props.iconPosition - The position of the icon in the button.
  * @param {string} props.className - The class name to be applied to the button.
  */
 export default function SlackButton({
   text = 'Join on Slack',
   href = '/slack-invite',
   target = '_blank',
-  iconPosition = 'left',
+  iconPosition = ButtonIconPositionType.left,
   className
 }: ISlackButtonProps) {
   return (
