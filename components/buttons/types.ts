@@ -1,5 +1,6 @@
 import type { HTMLAttributeAnchorTarget } from 'react';
-import { ButtonIconPositionType } from './Button';
+
+import type { ButtonIconPositionType } from './Button';
 
 export interface IButtonDefaultProps {
   text?: string;
