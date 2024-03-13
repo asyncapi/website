@@ -10,17 +10,55 @@ In a previous tutorial, you learned how to manage schemas with a schema registry
 
 ## Background context
 
-Bindings are essential for event-driven applications because they provide protocol-specific details, abstracting the complexities of message handling from your application's core logic. They enhance the API's clarity and usability by offering setup options and context for different protocols. Bindings include details like the topics your application reads from or writes to, message formatting, and rules for interacting with multiple data or messages.
+Bindings are essential for event-driven applications because they provide protocol-specific details, abstracting the complexities of message handling from your application's core logic. They enhance the API's clarity and usability by offering setup options and context for different protocols. [Bindings](docs/concepts/asyncapi-document/adding-bindings) include details like the topics your application reads from or writes to, message formatting, and rules for interacting with multiple data or messages.
 
 In an AsyncAPI document, bindings can be added to various sections like servers, channels, or messages. They contain protocol-specific details unique to each protocol. Binding definitions let you specify functionalities specific to the protocol, which are not covered by AsyncAPI's core features.
 
-You can configure several objects using Kafka bindings. However, for the scope of this tutorial, you will focus on four levels of bindings: [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object), [operations binding](https://github.com/asyncapi/bindings/tree/master/kafka#operation-binding-object), [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object) and [message bindings](https://github.com/asyncapi/bindings/tree/master/kafka#message-binding-object).
+You can configure several objects using [Kafka bindings](https://github.com/asyncapi/bindings/tree/master/kafka#readme). However, for the scope of this tutorial, you will focus on four levels of bindings: server bindings, operations binding, channel bindings and message bindings.
 
-Using the code snippets from the previous tutorial, where you learned [how to manage Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications](pages/docs/tutorials/kafka/managing-schemas-using-schema-registry), you will add configurations for server, operations, channel, and message bindings.
+Using the code snippets from the previous tutorial, where you learned [how to manage Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications](/docs/tutorials/kafka/managing-schemas-using-schema-registry), you will add configurations for server, operations, channel, and message bindings.
+
+Below, you can find the updated Schema reference file that we'll be using for this tutorial.
+
+```yaml
+asyncapi: 3.0.0
+info:
+  title: User Signup API
+  version: 1.0.0
+  description: The API notifies you whenever a new user signs up in the application.
+servers:
+  kafkaServer:
+    host: test.mykafkacluster.org:8092
+    description: Kafka Server
+    protocol: kafka
+operations:
+  onUserSignedUp:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignedUp'
+channels:
+  userSignedUp:
+    description: This channel contains a message per each user who signs up in our application.
+    address: user_signedup
+    messages:
+      userSignedUp:
+        $ref: '#/components/messages/userSignedUp'
+components:
+  messages:
+    userSignedUp:
+      payload:
+        schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
+        schema:
+          $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
+```
 
 ## Add server bindings
 
-Server bindings provide protocol-specific configuration details for connecting and interacting with a server. For server bindings, we will add three fields: 
+Server bindings provide protocol-specific configuration details for connecting and interacting with a server. 
+
+Server bindings allows you to specify a `schemaRegistryUrl` which provides an API Url for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry read [this guide on message validation](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
+
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case "Apicurio".
 
 ```yaml
 servers:
@@ -28,20 +66,24 @@ servers:
     host: test.mykafkacluster.org:8092
     description: Kafka Server
     protocol: kafka
-  production:
     bindings:
       kafka:
         schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
         schemaRegistryVendor: 'apicurio'
-        bindingVersion: '0.5.0'
+        bindingVersion: '0.4.0'
 ```
 
-> Important: `Binding-version` is the field version of a binding. If omitted, the "latest" version MUST be assumed. The `bindingversion` field is an optional field that is available for all bindings.
+[Learn more about server specific bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
+> Important: `BindingVersion` is the field version of a binding. If omitted, the "latest" version MUST be assumed. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings and ensures that as the specifications for different messaging systems evolve, APIs based on these specifications can remain consistent, compatible, and maintainable over time.  
 
 ## Add operation bindings
 
 Operation bindings object contains information about the operation representation in Kafka (eg. the way to consume messages).
+
+The operation binding object provides a structured way to describe how a particular operation (publish, subscribe) should behave on a Kafka topic. The `groupid`, for example, is the Id of the consumer group, while the `cliendID` is the Id of the consumer within a consumer group.	
+
+These configurations are vital for distributed message consumption and load balancing among consumers. Learn more about other fields you can configure under [operations binding](https://github.com/asyncapi/bindings/tree/master/kafka#operation-binding-object).
 
 ```yaml
 operations:
@@ -51,6 +93,7 @@ operations:
       $ref: '#/channels/userSignedUp'
     bindings:
       kafka:
+        bindingVersion: '0.4.0'
         groupId:
           type: string
           enum: ['myGroupId']
@@ -61,7 +104,12 @@ operations:
 
 ## Add channel bindings
 
-Channel bindings provide protocol-specific information for a particular channel. In Kafka, you can specify a given topic's number of partitions or replicas.
+Channel bindings provide protocol-specific information for a particular channel.
+
+These configurations may include information about how to connect with the Kafka topic, plus any specific settings or behaviors to be used. The Channel Binding Object is part of AsyncAPI's wider bindings architecture, which specifies how the API interacts with the messaging system — in this case, Kafka.
+
+In Kafka, you can specify a given topic's number of partitions or replicas therefore, enabling parallel processing of data or consumers. Learn more about other fields that you can configure under [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object).
+
 
 ```yaml
 channels:
@@ -73,7 +121,7 @@ channels:
         $ref: '#/components/messages/userSignedUp'
     bindings:
       kafka:
-        topic: 'UserSignedUp'
+        bindingVersion: '0.4.0'
         partitions: 10
         replicas: 2
         topicConfiguration:
@@ -84,9 +132,18 @@ channels:
           max.message.bytes: 1048588
 ```
 
+<Remember>
+If you need to follow specific naming conventions for example, Kafka topic name is different from channel name.
+</Remember>
+
+
 ## Add message bindings
 
 Message bindings provide protocol-specific information for a specific message. Like the Kafka topic, it's associated with a message key (if any) and Kafka-specific properties. 
+
+For example, the `schemaIdLocation` field, if specified is used to indicate where the schema identifier (ID) for the message payload's schema is located. It is useful for message serialization and deserialization, enabling consumers to understand how to interpret the message payload.
+
+Learn more about other fields that you can configure under [message bindings](https://github.com/asyncapi/bindings/tree/master/kafka#message-binding-object)
 
 ```yaml
 components:
@@ -100,7 +157,7 @@ components:
             schemaIdLocation: 'payload'
             schemaIdPayloadEncoding: 'apicurio-new'
             schemaLookupStrategy: 'TopicIdStrategy'
-            bindingVersion: '0.5.0'
+            bindingVersion: '0.4.0'
       payload:
         schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
         schema:
@@ -125,7 +182,7 @@ servers:
       kafka:
         schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
         schemaRegistryVendor: 'apicurio'
-        bindingVersion: '0.5.0'
+        bindingVersion: '0.4.0'
 operations:
   onUserSignedUp:
     action: receive
@@ -133,6 +190,7 @@ operations:
       $ref: '#/channels/userSignedUp'
     bindings:
       kafka:
+        bindingVersion: '0.4.0'
         groupId:
           type: string
           enum: ['myGroupId']
@@ -148,6 +206,7 @@ channels:
         $ref: '#/components/messages/userSignedUp'
     bindings:
       kafka:
+        bindingVersion: '0.4.0'
         partitions: 10
         replicas: 2
         topicConfiguration:
@@ -161,6 +220,7 @@ components:
     userSignedUp:
       bindings:
         kafka:
+          bindingVersion: '0.4.0'
             key:
               type: string
               enum: ['myKey']
