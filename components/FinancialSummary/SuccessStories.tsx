@@ -1,5 +1,5 @@
-import TextLink from '../typography/TextLink';
 import { successStories } from '../data/successStoriesData';
+import TextLink from '../typography/TextLink';
 
 /**
  * @description SuccessStories component displays success stories related to financial support.

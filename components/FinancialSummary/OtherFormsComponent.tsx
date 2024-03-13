@@ -1,8 +1,8 @@
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import { otherFormsData } from '../data/otherFormsData';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { otherFormsData } from '../data/otherFormsData';
 
 /**
  * @description OtherFormsComponent displays other forms of financial support.

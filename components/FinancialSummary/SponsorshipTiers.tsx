@@ -1,9 +1,9 @@
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import { sponsorshipTiers } from '../data/sponsorshipData';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { sponsorshipTiers } from '../data/sponsorshipData';
 
 /**
  * @description SponsorshipTiers component displays various sponsorship tiers with their benefits and amounts.

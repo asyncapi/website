@@ -1,8 +1,8 @@
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
+import { expenseData } from '../data/ExpenseBreakdownData';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { expenseData } from '../data/ExpenseBreakdownData';
 
 /**
  * @description ExpenseBreakdown component displays a breakdown of expenses.
