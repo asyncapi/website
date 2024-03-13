@@ -6,7 +6,7 @@ weight: 300
 
 ## Introduction
 
-In a previous tutorial, you learned how to manage schemas with a schema registry. This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
+In a [previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry.md), you learned how to manage schemas with a schema registry. This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
 
 ## Background context
 
@@ -177,7 +177,6 @@ servers:
     host: test.mykafkacluster.org:8092
     description: Kafka Server
     protocol: kafka
-  production:
     bindings:
       kafka:
         schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
@@ -235,7 +234,7 @@ components:
 
 ## Summary
 
-In this tutorial, you learned how to configure server and channel bindings. You also learned that bindings are essential when integrating Kafka with different systems, platforms, or protocols — especially in API specifications like AsyncAPI. 
+In this tutorial, you learned how to configure server, operation, message, and channel bindings. You also learned that bindings are essential when integrating Kafka with different systems, platforms, or protocols — especially in API specifications like AsyncAPI. 
 
 
 ## Next steps
