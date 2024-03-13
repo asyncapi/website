@@ -1,7 +1,7 @@
-import IconSubscribe from '../icons/Subscribe';
-import Button from './Button';
 import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 
+import IconSubscribe from '../icons/Subscribe';
+import Button from './Button';
 // import { useTranslation } from '../../lib/i18n';
 import type { IButtonDefaultProps } from './types';
 
