@@ -46,7 +46,7 @@ export default function SmallHomeCard({
   btnText,
   btnBg,
   link
-}: SmallHomeCardProp): React.ReactNode {
+}: SmallHomeCardProp) {
   if (type === 'small') {
     return (
       <Link href={link} target={link.includes('http') ? '_blank' : undefined}>

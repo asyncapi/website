@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 
 import Button from '../buttons/Button';
@@ -40,7 +41,6 @@ export default function HomeCards({
             level={HeadingLevel.h2}
             typeStyle={HeadingTypeStyle.md}
             textColor='text-purple-300'
-
           >
             {headline}
           </Heading>
@@ -58,7 +58,7 @@ export default function HomeCards({
             {description}
           </Heading>
           <div className='mt-10' data-testid='HomeCard-button'>
-            <Button text={btnText} buttonSize='default' href={link} />
+            <Button text={btnText} buttonSize={ButtonSize.DEFAULT} href={link} />
           </div>
         </div>
       </div>

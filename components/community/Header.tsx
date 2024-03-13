@@ -17,7 +17,7 @@ interface HeaderProps {
  */
 export default function Header({
   className = ''
-}: HeaderProps): JSX.Element {
+}: HeaderProps) {
   return (
     <div className={`md:mt-0' data-testid='Header-hero-heading mt-10 flex flex-col items-center justify-center text-center ${className}`}>
       <Heading

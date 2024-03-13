@@ -12,7 +12,7 @@ interface HeroProps {
  */
 export default function Hero({
   className = ''
-}: HeroProps): React.ReactNode {
+}: HeroProps) {
   return (
     <>
       <div className={`orbits overflow-hidden ${className}`}>
