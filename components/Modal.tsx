@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 interface IModalProps {
-    title: string;
-    children: React.ReactNode;
-    onModalClose?: () => void;
-    }
+  title: string;
+  children: React.ReactNode;
+  onModalClose?: () => void;
+}
 
 /**
  * @description Modal component.
