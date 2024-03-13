@@ -12,7 +12,11 @@ interface EventFilterProps {
   setData: React.Dispatch<React.SetStateAction<Event[]>>;
 }
 
-function EventFilter({ data, setData }: EventFilterProps) {
+/**
+ * @description A component for filtering events based on date.
+ * @param {EventFilterProps} props - The props for the EventFilter component.
+ */
+export default function EventFilter({ data, setData }: EventFilterProps) {
   const localTime = moment().format('YYYY-MM-DD');
   const currentDate = `${localTime  }T00:00:00.000Z`;
   const filterList: string[] = ['All', 'Upcoming', 'Recorded'];
@@ -55,5 +59,3 @@ function EventFilter({ data, setData }: EventFilterProps) {
     </div>
   );
 }
-
-export default EventFilter;

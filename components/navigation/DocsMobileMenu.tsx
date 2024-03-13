@@ -7,6 +7,10 @@ import ClickableLogo from '../ClickableLogo';
 import IconLoupe from '../icons/Loupe';
 import DocsNav from './DocsNav';
 
+/**
+ * @description Component representing the mobile menu for documentation.
+ * @param {DocsMobileMenuProps} props - The props for the DocsMobileMenu component.
+ */
 export default function DocsMobileMenu({
   post,
   navigation,

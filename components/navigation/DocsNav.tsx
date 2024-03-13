@@ -22,6 +22,10 @@ const serializedBuckets: SerializedBuckets = buckets.reduce((acc, bucket) => {
   }
 } as SerializedBuckets);
 
+/**
+ * @description Component representing a navigation item in the documentation sidebar.
+ * @param {DocsNavProps} props - The props for the DocsNav component.
+ */
 export default function DocsNav({
   item,
   active,

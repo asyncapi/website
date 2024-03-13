@@ -20,9 +20,17 @@ interface MobileNavMenuProps {
   onClickClose?: () => void;
 }
 
+/**
+ * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
+ * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
+ */
 export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
+  /**
+   * @description Function to toggle the visibility of a menu.
+   * @param {string} menu - The menu to toggle.
+   */
   function showMenu(menu: string) {
     if (open === menu) {
       setOpen(null);

@@ -2,6 +2,12 @@ import Link from 'next/link';
 
 import type { DocsNavItemProps } from '@/types/navigation/DocsNavItem';
 
+/**
+ * @description Determines if a given slug is active.
+ * @param {string} slug - The slug of the item.
+ * @param {string} activeSlug - The active slug.
+ * @param {string | undefined} sectionSlug - The slug of the section.
+ */
 function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): boolean {
   if (slug === '/docs' || (sectionSlug !== undefined && slug === sectionSlug)) {
     return slug === activeSlug;
@@ -14,6 +20,10 @@ function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): b
   return activeParts.length === partialSlug.length;
 }
 
+/**
+ * @description Component representing an item in the documentation navigation.
+ * @param {DocsNavItemProps} props - The props for the DocsNavItem component.
+ */
 export default function DocsNavItem({
   title,
   slug,

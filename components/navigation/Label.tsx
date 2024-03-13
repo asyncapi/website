@@ -3,6 +3,10 @@ interface LabelProps {
     color?: 'gray' | 'green'; // Define the color prop as optional with specific values
 }
 
+/**
+ * @description Component representing a label with optional color styling.
+ * @param {LabelProps} props - The props for the Label component.
+ */
 export default function Label({ text, color = 'gray' }: LabelProps) {
   let colorClasses: string;
 

@@ -7,7 +7,11 @@ import type { FilterProps, Option } from '@/types/navigation/Filter';
 import Select from '../form/Select';
 import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
 
-export default function Filter({ data, onFilter, checks, className }: FilterProps) {
+/**
+ * @description Component representing a filter for data.
+ * @param {FilterProps} props - The props for the Filter component.
+ */
+export default function Filter({ data, onFilter, checks, className }: FilterProps): JSX.Element {
   const router: NextRouter = useRouter();
   const [filters, setFilters] = useState<{ [key: string]: Option[] }>({});
   const [query, setQuery] = useState<{ [key: string]: string }>({});
@@ -45,9 +49,9 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
             key={check.name}
             options={selectOptions}
             onChange={(e) => {
-              const { query } = router;
+              const { query: currentQuery } = router;
               const newQuery = {
-                ...query,
+                ...currentQuery,
                 [check.name]: e
               };
 
@@ -70,4 +74,4 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
       })}
     </>
   );
-};
+}

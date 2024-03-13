@@ -12,6 +12,10 @@ interface LanguageSelectProps {
   selected: string;
 }
 
+/**
+ * @description LanguageSelect component for selecting a language.
+ * @param {LanguageSelectProps} props - The props for the LanguageSelect component.
+ */
 export default function LanguageSelect({
   className = '',
   onChange = () => {},

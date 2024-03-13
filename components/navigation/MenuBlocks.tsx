@@ -7,6 +7,10 @@ import LinkComponent from '../link';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label';
 
+/**
+ * @description Component representing a set of menu blocks.
+ * @param {MenuBlocksProps} props - The props for the MenuBlocks component.
+ */
 export default function MenuBlocks({ items = [] }: MenuBlocksProps) {
   const router = useRouter();
 

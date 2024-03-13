@@ -6,6 +6,10 @@ interface FlyoutProps {
   items?: MenuItem[];
 }
 
+/**
+ * @description Component representing a flyout menu.
+ * @param {FlyoutProps} props - The props for the Flyout component.
+ */
 export default function Flyout({ items = [] }: FlyoutProps) {
   return (
     <div className='absolute z-50 -ml-4 w-screen max-w-md pt-3 md:ml-12 md:-translate-x-1/2 lg:left-1/2 lg:max-w-3xl lg:-translate-x-1/2' data-testid='Flyout-main'>

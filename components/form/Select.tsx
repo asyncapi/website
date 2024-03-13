@@ -4,6 +4,10 @@ import { twMerge } from 'tailwind-merge';
 
 import type { SelectProps } from '@/types/form/Select';
 
+/**
+ * @description Select component for form dropdown.
+ * @param {SelectProps} props - The props for the Select component.
+ */
 export default function Select({
   className = '',
   onChange = () => {},

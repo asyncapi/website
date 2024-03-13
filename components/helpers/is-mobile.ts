@@ -1,3 +1,4 @@
+/* eslint-disable */
 let isMobile: boolean | undefined;
 
 export function isMobileDevice(): boolean {

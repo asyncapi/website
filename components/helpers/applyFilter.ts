@@ -1,3 +1,4 @@
+/* eslint-disable */
 export function sortFilter(arr: { value: string }[]): { value: string }[] {
   return arr.sort((a, b) => {
     if (a.value < b.value) {

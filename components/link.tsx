@@ -10,6 +10,10 @@ interface LinkComponentProps {
   href?: string;
 }
 
+/**
+ * @description Custom Link component for handling internationalization (i18n).
+ * @param {LinkComponentProps} props - Props for the Link component.
+ */
 export default function LinkComponent({ children, locale, ...props }: LinkComponentProps) {
   const router = useRouter();
 
@@ -44,7 +48,6 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
       </Link>
     );
   }
-
   // If a locale is provided, update the href with the locale
   if (locale) {
     if (props.href) {
@@ -52,31 +55,24 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
     } else {
       // If the current path starts with "/404", update href to be the root path with the locale
       // Otherwise, replace "[lang]" placeholder with the locale
-      if (pathname.startsWith('/404')) {
-        href = `/${locale}`;
-      } else {
-        href = pathname.replace('[lang]', locale);
-      }
+      href = pathname.startsWith('/404') ? `/${locale}` : pathname.replace('[lang]', locale);
     }
   } else {
     // If no locale is provided, update the href with the current language or keep it as is
-    if (language) {
-      href = `/${language}${href}`;
-    } else {
-      href = `/${href}`;
-    }
+    href = language ? `/${language}${href}` : `/${href}`;
   }
 
   // Fix double slashes
-  href = href.replace(/([^:\/]|^)\/{2,}/g, '$1/');
+  href = href.replace(/([^:/]|^)\/{2,}/g, '$1/');
 
   return (
     <Link href={href} passHref>
       {children}
     </Link>
   );
-};
+}
 
-export const LinkText = ({ href, children, ...props }: LinkComponentProps) => {
+/* eslint-disable-next-line no-unused-vars */
+export const LinkText = ({ href, children, ..._props }: LinkComponentProps) => {
   return <Link href={href || ''}>{children}</Link>;
 };

@@ -2,6 +2,10 @@ import Link from 'next/link';
 
 import type { JobPostItemProps } from '@/types/navigation/JobPostItem';
 
+/**
+ * @description Component representing an item in the job post list.
+ * @param {JobPostItemProps} props - The props for the JobPostItem component.
+ */
 export default function JobPostItem({ job }: JobPostItemProps) {
   return (
     <li>
@@ -10,7 +14,7 @@ export default function JobPostItem({ job }: JobPostItemProps) {
           <div className='p-4 sm:px-6'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center'>
-                <img src={job.company.logoUrl} className='mr-2 h-6' />
+                <img src={job.company.logoUrl} alt={job.company.name} className='mr-2 h-6' />
                 <p className='truncate text-sm font-medium text-indigo-600'>
                   {job.title} at {job.company.name}
                 </p>

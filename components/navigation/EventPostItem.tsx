@@ -23,6 +23,10 @@ interface EventPostItemProps {
   id: string;
 }
 
+/**
+ * @description Component representing an event post item.
+ * @param {EventPostItemProps} props - The props for the EventPostItem component.
+ */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.Element {
   const localTime = moment().format('YYYY-MM-DD'); // store localTime
   const currentDate = `${localTime  }T00:00:00.000Z`;
