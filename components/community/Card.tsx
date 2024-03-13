@@ -12,7 +12,7 @@ interface SmallHomeCardProp {
   icon: string;
   tagline: string;
   taglineBg: string;
-  type: string;
+  type?: string;
   heading: string;
   description: string;
   bg: string;
