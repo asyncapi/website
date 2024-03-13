@@ -20,7 +20,6 @@ interface IRoadmapListProps {
 /**
  * @description RoadmapList is a component to display a list of roadmap items.
  * @param {RoadmapListProps} props - The props for the RoadmapList component.
- * @returns {JSX.Element} A JSX.Element representing the RoadmapList component.
  */
 export default function RoadmapList({
   colorClass,
