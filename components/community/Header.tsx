@@ -19,7 +19,7 @@ export default function Header({
   className = ''
 }: HeaderProps): JSX.Element {
   return (
-    <div className={`mt-10 flex flex-col items-center justify-center text-center md:mt-0' data-testid='Header-hero-heading ${className}`}>
+    <div className={`md:mt-0' data-testid='Header-hero-heading mt-10 flex flex-col items-center justify-center text-center ${className}`}>
       <Heading
         className='countdown-text-gradient font-bold'
         level={HeadingLevel.h6}

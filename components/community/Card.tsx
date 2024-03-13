@@ -80,7 +80,7 @@ export default function SmallHomeCard({
   return (
     <div
       className={`h-140 w-full rounded border p-6 shadow-xl ${!bg && 'border-[#ad20e2]'
-        } ${bg}`}
+      } ${bg}`}
       data-testid='Card-lg-bg'>
       <div
         className={`flex w-min justify-between rounded-xl p-2 text-center text-xs ${taglineBg}`}
