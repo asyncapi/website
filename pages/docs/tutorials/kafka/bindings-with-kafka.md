@@ -148,7 +148,6 @@ channels:
         $ref: '#/components/messages/userSignedUp'
     bindings:
       kafka:
-        topic: 'UserSignedUp'
         partitions: 10
         replicas: 2
         topicConfiguration:
