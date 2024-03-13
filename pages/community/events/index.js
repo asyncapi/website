@@ -64,7 +64,7 @@ function Eventindex() {
       <div className="mt-24 w-full h-auto sm:h-[400px]">
         <div className="w-full h-full bg-confBg rounded-md bg-cover bg-center p-10 flex flex-col justify-between text-white">
           <img data-testid="RecordingsCard-img"
-            src="/img/logos/confLogo.webp"
+            src="/img/logos/confLogo.png"
             alt="conf-logo"
             className="w-[100px] sm:w-[150px]"
           />
