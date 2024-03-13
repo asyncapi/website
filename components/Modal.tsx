@@ -8,7 +8,9 @@ interface IModalProps {
 
 /**
  * @description Modal component.
- * @param {ModalProps} props - The props for the Modal component.
+ * @param {string} props.title - The title of the modal.
+ * @param {React.ReactNode} props.children - The content of the modal.
+ * @param {function} props.onModalClose=()=>{} - Function to handle modal close event.
  */
 export default function Modal({
   title,
