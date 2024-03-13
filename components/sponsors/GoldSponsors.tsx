@@ -1,12 +1,12 @@
 import { goldSponsors } from './GoldSponsorsList';
 
 interface GoldSponsorsProps {
-  className: string;
-  showSupportBanner: boolean;
+  className?: string;
+  showSupportBanner?: boolean;
 };
 
 /**
- * This component displays Gold Sponsors.
+ * @description This component displays Gold Sponsors.
  * @param {GoldSponsorsProps} props - The props for GoldSponsors component.
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.

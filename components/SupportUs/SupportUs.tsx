@@ -1,12 +1,12 @@
 import { items } from './SupportItemsList';
 
 interface SupportUsProps {
-  className: string;
-  showSupportBanner: boolean;
+  className?: string;
+  showSupportBanner?: boolean;
 };
 
 /**
- * This component displays support items.
+ * @description This component displays support items.
  * @param {SupportUsProps} props - The props for SupportUs component.
  * @param {string} props.className - Additional CSS classes for styling.
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
