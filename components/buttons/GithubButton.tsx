@@ -22,7 +22,7 @@ export default function GithubButton({
   text = 'githubButton',
   href = 'https://github.com/asyncapi',
   target = '_blank',
-  iconPosition = ButtonIconPosition.left,
+  iconPosition = ButtonIconPosition.LEFT,
   className,
   inNav
 }: IGithubButtonProps) {
@@ -41,7 +41,7 @@ export default function GithubButton({
       className={className}
       data-testid='Github-button'
       bgClassName='bg-gray-800 hover:bg-gray-700'
-      buttonSize={inNav ? ButtonSize.small : ButtonSize.default}
+      buttonSize={inNav ? ButtonSize.SMALL : ButtonSize.DEFAULT}
     />
   );
 }

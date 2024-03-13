@@ -19,7 +19,7 @@ export default function GoogleCalendarButton({
   text = 'subscribeBtn',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.left,
+  iconPosition = ButtonIconPosition.LEFT,
   className
 }: IGoogleCalendarButtonProps) {
   // const { t } = useTranslation('common');

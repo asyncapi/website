@@ -40,10 +40,10 @@ type IButtonProps = {
  */
 export default function Button({
   text,
-  type = ButtonType.button,
+  type = ButtonType.BUTTON,
   target = '_self',
   icon,
-  iconPosition = ButtonIconPosition.right,
+  iconPosition = ButtonIconPosition.RIGHT,
   className,
   bgClassName = twMerge('bg-primary-500 hover:bg-primary-400'),
   textClassName = twMerge('text-white'),
@@ -60,16 +60,16 @@ export default function Button({
       <button
         {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
         type={type}
-        className={buttonSize === ButtonSize.small ? smallButtonClasses : classNames}
+        className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
         data-testid='Button-main'
       >
-        {icon && iconPosition === ButtonIconPosition.left && (
+        {icon && iconPosition === ButtonIconPosition.LEFT && (
           <span className='mr-2 inline-block' data-testid='Button-icon-left'>
             {icon}
           </span>
         )}
         <span className='inline-block'>{text}</span>
-        {icon && iconPosition === ButtonIconPosition.right && (
+        {icon && iconPosition === ButtonIconPosition.RIGHT && (
           <span className='ml-2 inline-block' data-testid='Button-icon-right'>
             {icon}
           </span>
@@ -84,12 +84,12 @@ export default function Button({
       {...props}
       target={target}
       rel='noopener noreferrer'
-      className={buttonSize === ButtonSize.small ? smallButtonClasses : classNames}
+      className={buttonSize === ButtonSize.SMALL ? smallButtonClasses : classNames}
       data-testid='Button-link'
     >
-      {icon && iconPosition === ButtonIconPosition.left && <span className='mr-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.LEFT && <span className='mr-2 inline-block'>{icon}</span>}
       <span className='inline-block'>{text}</span>
-      {icon && iconPosition === ButtonIconPosition.right && <span className='ml-2 inline-block'>{icon}</span>}
+      {icon && iconPosition === ButtonIconPosition.RIGHT && <span className='ml-2 inline-block'>{icon}</span>}
     </Link>
   );
 }

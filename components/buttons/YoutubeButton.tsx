@@ -18,7 +18,7 @@ export default function YoutubeButton({
   text = 'Watch on YouTube',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.left,
+  iconPosition = ButtonIconPosition.LEFT,
   className
 }: IYoutubeButtonProps) {
   return (

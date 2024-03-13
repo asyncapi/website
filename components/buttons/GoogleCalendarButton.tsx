@@ -20,7 +20,7 @@ export default function GoogleCalendarButton({
   text = 'googleCalendarBtn',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.left,
+  iconPosition = ButtonIconPosition.LEFT,
   className
 }: IGoogleCalendarButtonProps) {
   // TODO: add this again when we have i18n

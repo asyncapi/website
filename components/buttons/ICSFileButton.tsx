@@ -20,7 +20,7 @@ export default function ICSFButton({
   text = 'icsFileBtn',
   href,
   target = '_blank',
-  iconPosition = ButtonIconPosition.left,
+  iconPosition = ButtonIconPosition.LEFT,
   className
 }: IICSFButtonProps) {
   // TODO: add this again when we have i18n
