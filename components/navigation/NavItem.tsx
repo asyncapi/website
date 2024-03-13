@@ -14,6 +14,10 @@ interface NavItemProps {
   className?: string;
 }
 
+/**
+ * @description NavItem component renders a navigation item.
+ * @param {NavItemProps} props - Props object for NavItem component.
+ */
 export default function NavItem({
   text,
   href,

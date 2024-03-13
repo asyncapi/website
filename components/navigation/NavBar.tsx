@@ -30,6 +30,12 @@ interface NavBarProps {
 
 const isMobile = isMobileDevice();
 
+/**
+ * @description Renders the navigation bar component.
+ * @param {Object} props - Props object for NavBar component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
+ * @param {boolean} [props.hideLogo=false] - Indicates whether to hide the logo.
+ */
 export default function NavBar({
   className = '',
   hideLogo = false
@@ -67,14 +73,10 @@ export default function NavBar({
   }));
 
   /**
-   * Changes the language and updates the URL accordingly.
-   *
-   * @async
+   * @description Changes the language and updates the URL accordingly.
    * @param {string} locale - The new locale/language to set.
    * @param {boolean} langPicker - Indicates whether the change is from the language picker.
    *                              If true, stores the language in local storage.
-   * @returns {Promise<void>} - A promise representing the completion of the language change.
-   * @throws {Error} - If an error occurs during the language change process.
    */
   const changeLanguage = async (locale: string, langPicker: boolean): Promise<void> => {
     // Verifies if the language change is from langPicker or the browser-api
@@ -107,6 +109,10 @@ export default function NavBar({
     router.push(href);
   };
 
+  /**
+ * @description Handles the outside click event for closing menus.
+ * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to close if clicked outside.
+ */
   function outsideClick(menu: 'learning' | 'tooling' | 'community' | null) {
     if (open !== menu) return;
     setOpen(null);
@@ -116,15 +122,26 @@ export default function NavBar({
   const toolingRef = useOutsideClick(() => outsideClick('tooling'));
   const communityRef = useOutsideClick(() => outsideClick('community'));
 
+  /**
+ * @description Shows or hides the specified menu.
+ * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to show or hide.
+ */
   function showMenu(menu: 'learning' | 'tooling' | 'community' | null) {
     if (open === menu) return;
     setOpen(menu);
   }
 
+  /**
+ * @description Shows or hides the specified menu on click (for mobile).
+ * @param {('learning' | 'tooling' | 'community' | null)} menu - The menu to show or hide.
+ */
   function showOnClickMenu(menu: 'learning' | 'tooling' | 'community' | null) {
     if (!isMobile) return;
-    if (open === menu) return setOpen(null);
-    setOpen(menu);
+    if (open === menu) {
+      setOpen(null);
+    } else {
+      setOpen(menu);
+    }
   }
 
   useEffect(() => {

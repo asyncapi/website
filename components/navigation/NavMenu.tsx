@@ -16,6 +16,11 @@ interface NavMenuProps {
   items: NavMenuItem[];
 }
 
+/**
+ * @description NavMenu component renders a navigation menu with a list of items.
+ * @param {Object} props - Props object for NavMenu component.
+ * @param {NavMenuItem[]} props.items - Array of navigation menu items..
+ */
 export default function NavMenu({ items = [] }: NavMenuProps) {
   if (!items.length) return null;
 

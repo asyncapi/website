@@ -5,6 +5,13 @@ import type { SubCategoryDocsNavProps } from '@/types/navigation/SubCategoryDocs
 import DocsArrow from '../icons/DocsArrow';
 import DocsNavItem from './DocsNavItem';
 
+/**
+ * @description Renders a navigation component for a subcategory in the documentation.
+ * @param {Object} props - The properties passed to the SubCategoryDocsNav component.
+ * @param {Object} props.subCategory - The subcategory object containing item and children properties.
+ * @param {string} props.activeItem - The slug of the currently active item.
+ * @param {Function} props.onClick - The onClick event handler.
+ */
 export default function SubCategoryDocsNav({
   subCategory,
   activeItem,

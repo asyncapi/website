@@ -11,6 +11,11 @@ interface TutorialListProps {
   className?: string;
 }
 
+/**
+ * @description Renders a list of tutorials based on the current post and navigation items.
+ * @param {Object} props - The properties passed to the TutorialList component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
+ */
 export default function TutorialList({ className = '' }: TutorialListProps) {
   const { post, navItems }: DocsContextType = useContext(DocsContext);
 
