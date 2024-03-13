@@ -16,11 +16,10 @@ interface HeaderProps {
  * @param {string} props.className - Additional CSS classes for styling.
  */
 export default function Header({
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   className = ''
-}: HeaderProps): React.ReactNode {
+}: HeaderProps): JSX.Element {
   return (
-    <div className='mt-10 flex flex-col items-center justify-center text-center md:mt-0' data-testid='Header-hero-heading'>
+    <div className={`mt-10 flex flex-col items-center justify-center text-center md:mt-0' data-testid='Header-hero-heading ${className}`}>
       <Heading
         className='countdown-text-gradient font-bold'
         level={HeadingLevel.h6}
