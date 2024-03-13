@@ -11,8 +11,7 @@ import CustomTooltip from './CustomTooltip';
 import ExpensesCard from './ExpensesCard';
 
 /**
- * BarChartComponent component displays a bar chart for expense analysis.
- * {JSX.Element} BarChartComponent component.
+ * @description BarChartComponent component displays a bar chart for expense analysis.
  */
 export default function BarChartComponent() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');

@@ -6,8 +6,7 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
 /**
- * Component representing the AsyncAPI Financial Summary.
- * {JSX.Element} The JSX representation of the component.
+ * @description Component representing the AsyncAPI Financial Summary.
  */
 export default function AsyncAPISummary() {
   return (

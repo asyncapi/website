@@ -3,11 +3,10 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { sponsorshipTiers } from './data/sponsorshipData';
+import { sponsorshipTiers } from '../data/sponsorshipData';
 
 /**
- * SponsorshipTiers component displays various sponsorship tiers with their benefits and amounts.
- * {JSX.Element} SponsorshipTiers component.
+ * @description SponsorshipTiers component displays various sponsorship tiers with their benefits and amounts.
  */
 export default function SponsorshipTiers() {
   return (

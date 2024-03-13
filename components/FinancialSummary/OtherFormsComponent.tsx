@@ -2,11 +2,10 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { otherFormsData } from './data/otherFormsData';
+import { otherFormsData } from '../data/otherFormsData';
 
 /**
- * OtherFormsComponent displays other forms of financial support.
- * {JSX.Element} OtherFormsComponent.
+ * @description OtherFormsComponent displays other forms of financial support.
  */
 export default function OtherFormsComponent() {
   return (

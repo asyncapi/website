@@ -7,8 +7,7 @@ import Paragraph from '../typography/Paragraph';
 import TextLink from '../typography/TextLink';
 
 /**
- * ContactUs component displays information about getting in touch.
- * {JSX.Element} ContactUs component.
+ * @description ContactUs component displays information about getting in touch.
  */
 export default function ContactUs() {
   return (

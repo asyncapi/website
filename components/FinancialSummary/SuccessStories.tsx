@@ -1,9 +1,8 @@
 import TextLink from '../typography/TextLink';
-import { successStories } from './data/successStoriesData';
+import { successStories } from '../data/successStoriesData';
 
 /**
- * SuccessStories component displays success stories related to financial support.
- * {JSX.Element} SuccessStories component.
+ * @description SuccessStories component displays success stories related to financial support.
  */
 export default function SuccessStories() {
   return (

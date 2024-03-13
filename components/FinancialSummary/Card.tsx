@@ -3,11 +3,10 @@ import type { ExpenseItem, Expenses } from '@/types/FinancialSummary/BarChartCom
 import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.json';
 
 /**
- * Card component displays expense details for a specific month.
+ * @description Card component displays expense details for a specific month.
  * @param {Object} props - Props for Card component.
  * @param {string} props.month - Month for which expenses are displayed.
  * @param {ExpenseItem[]} props.data - Expense data for the month.
- * {JSX.Element} Card component.
  */
 export default function Card({ month, data }: { month: keyof Expenses; data: ExpenseItem[]; }) {
   /**

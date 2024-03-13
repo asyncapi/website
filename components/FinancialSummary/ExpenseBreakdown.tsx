@@ -2,11 +2,10 @@ import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-import { expenseData } from './data/ExpenseBreakdownData';
+import { expenseData } from '../data/ExpenseBreakdownData';
 
 /**
- * ExpenseBreakdown component displays a breakdown of expenses.
- * {JSX.Element} ExpenseBreakdown component.
+ * @description ExpenseBreakdown component displays a breakdown of expenses.
  */
 export default function ExpenseBreakdown() {
   return (

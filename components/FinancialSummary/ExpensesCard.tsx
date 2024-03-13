@@ -4,8 +4,7 @@ import ExpensesData from '../../config/finance/json-data/2024/Expenses.json';
 import Card from './Card';
 
 /**
-* ExpensesCard component displays all expenses for each month.
-* {JSX.Element} ExpensesCard component.
+* @description ExpensesCard component displays all expenses for each month.
 */
 export default function ExpensesCard() {
   return (
