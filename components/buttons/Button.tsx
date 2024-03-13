@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
+
 import { ButtonIconPosition, ButtonSize, ButtonType } from '@/types/components/buttons/ButtonPropsType';
 
 type IButtonProps = {

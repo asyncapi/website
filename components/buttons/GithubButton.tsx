@@ -1,6 +1,7 @@
+import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
+
 import IconGithub from '../icons/Github';
 import Button from './Button';
-import { ButtonIconPosition, ButtonSize } from '@/types/components/buttons/ButtonPropsType';
 import type { IButtonDefaultProps } from './types';
 // TODO: add this again when we have i18n
 // import { useTranslation } from '../../lib/i18n'

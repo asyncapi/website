@@ -1,6 +1,7 @@
+import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
+
 import IconYoutube from '../icons/YouTube';
 import Button from './Button';
-import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 import type { IButtonDefaultProps } from './types';
 
 interface IYoutubeButtonProps extends IButtonDefaultProps {}

@@ -1,6 +1,7 @@
+import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
+
 import IconSlack from '../icons/Slack';
 import Button from './Button';
-import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 import type { IButtonDefaultProps } from './types';
 
 interface ISlackButtonProps extends IButtonDefaultProps {}
