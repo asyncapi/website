@@ -1,4 +1,4 @@
-import type { SponsorType } from './sponsors.types';
+import { SponsorType } from "@/types/components/sponsors/SponsorType";
 
 export const Silversponsors : SponsorType[] = [
   {

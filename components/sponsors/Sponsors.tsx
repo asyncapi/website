@@ -13,7 +13,6 @@ interface SponsorsProps {
  */
 export default function Sponsors({
   className = '',
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   showSupportBanner = true
 }: SponsorsProps): React.ReactNode {
   return (

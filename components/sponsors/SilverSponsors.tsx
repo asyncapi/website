@@ -12,9 +12,7 @@ interface SilverSponsorsProps {
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
  */
 export default function SilverSponsors({
-  className = '',
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
-  showSupportBanner = true
+  className = ''
 }: SilverSponsorsProps): React.ReactNode {
   return (
     <div className={`text-center ${className}`}>

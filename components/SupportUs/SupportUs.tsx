@@ -12,9 +12,7 @@ interface SupportUsProps {
  * @param {boolean} props.showSupportBanner - Indicates whether support banner should be displayed.
  */
 export default function SupportUs({
-  className = '',
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
-  showSupportBanner = true
+  className = ''
 } : SupportUsProps): React.ReactNode {
   return (
     <div className={ `text-center ${ className }` } data-testid='SupportUs-main'>
