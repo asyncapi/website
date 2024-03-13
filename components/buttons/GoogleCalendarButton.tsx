@@ -1,7 +1,6 @@
-import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
-
 import IconGoogleCalendar from '../icons/GoogleCalendar';
 import Button from './Button';
+import { ButtonIconPosition } from '@/types/components/buttons/ButtonPropsType';
 import type { IButtonDefaultProps } from './types';
 // TODO: add this again when we have i18n
 // import { useTranslation } from '../../lib/i18n';
