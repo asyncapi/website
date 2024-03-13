@@ -17,7 +17,11 @@ interface IRoadmapColumnProps {
 
 /**
  * @description RoadmapColumn component.
- * @param {RoadmapColumnProps} props - The props for the RoadmapColumn component.
+ * @param {string} props.title - The title of the column.
+ * @param {string} props.description - The description of the column.
+ * @param {string} props.colorClass - The color class for styling.
+ * @param {array} props.items - The array of items.
+ * @param {boolean} props.childrenCollapsed - Whether children items are collapsed.
  */
 export default function RoadmapColumn({
   title,

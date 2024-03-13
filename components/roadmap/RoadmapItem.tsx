@@ -20,7 +20,15 @@ interface IPillProps {
 
 /**
  * @description Pill is a component to display a roadmap item.
- * @param {PillProps} props - The props for the Pill component.
+ * @param {object} props.item - The roadmap item.
+ * @param {boolean} props.item.done - Whether the item is done.
+ * @param {string} props.item.url - The URL associated with the item.
+ * @param {string} props.item.description - The description of the item.
+ * @param {string} props.item.title - The title of the item.
+ * @param {string} props.colorClass - The color class for styling.
+ * @param {boolean} props.isCollapsible - Whether the item is collapsible.
+ * @param {boolean} props.isCollapsed - Whether the item is collapsed.
+ * @param {function} props.onClickCollapse - Function to handle click on collapse.
  */
 function Pill({
   item,
@@ -86,7 +94,14 @@ export interface IRoadmapItemProps {
 
 /**
  * @description RoadmapItem is a component to display a roadmap item.
- * @param {RoadmapItemProps} props - The props for the RoadmapItem component.
+ * @param {object} props.item - The roadmap item.
+ * @param {boolean} props.item.done - Whether the item is done.
+ * @param {string} props.item.url - The URL associated with the item.
+ * @param {string} props.item.description - The description of the item.
+ * @param {string} props.item.title - The title of the item.
+ * @param {string} props.colorClass - The color class for styling.
+ * @param {boolean} props.showConnector - Whether to show the connector.
+ * @param {boolean} props.collapsed - Whether the list is collapsed.
  */
 export default function RoadmapItem({
   item,

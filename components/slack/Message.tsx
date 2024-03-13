@@ -17,16 +17,16 @@ interface ISlackMessageProps {
 /**
    * @description Component to render a Slack message.
    * @param {Object} props - The component props.
-   * @param {string} [props.className=''] - Additional CSS classes for styling.
+   * @param {string} props.className - Additional CSS classes for styling.
    * @param {string} props.avatar - URL of the user's avatar.
    * @param {string} props.name - Name of the user.
    * @param {React.ReactNode} props.text - Text of the message.
-   * @param {Object[]} [props.reactions=[]] - Array of reaction objects.
+   * @param {Object[]} props.reactions - Array of reaction objects.
    * @param {string} props.reactions[].emoji - Emoji representing the reaction.
-   * @param {string} [props.reactions[].icon] - URL of the reaction icon.
-   * @param {string} [props.reactions[].name] - Name of the reaction icon.
+   * @param {string} props.reactions[].icon - URL of the reaction icon.
+   * @param {string} props.reactions[].name - Name of the reaction icon.
    * @param {number} props.reactions[].count - Number of reactions.
-   * @param {boolean} [props.reactions[].mine] - Indicates if the reaction is from the current user.
+   * @param {boolean} props.reactions[].mine - Indicates if the reaction is from the current user.
    */
 export default function SlackMessage({
   className = '',

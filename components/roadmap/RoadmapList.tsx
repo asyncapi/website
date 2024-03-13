@@ -19,7 +19,12 @@ interface IRoadmapListProps {
 
 /**
  * @description RoadmapList is a component to display a list of roadmap items.
- * @param {RoadmapListProps} props - The props for the RoadmapList component.
+ * @param {string} props.colorClass - The color class for styling.
+ * @param {string} props.className='mt-3' - The optional CSS class name.
+ * @param {object[]} props.items=[] - The array of roadmap items.
+ * @param {boolean} props.showConnector=true - Whether to show the connector.
+ * @param {boolean} props.collapsed=false - Whether the list is collapsed.
+ * @param {boolean} props.childrenCollapsed=true - Whether children items are collapsed.
  */
 export default function RoadmapList({
   colorClass,

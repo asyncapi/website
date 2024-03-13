@@ -6,7 +6,7 @@ interface SlackProps {
 
 /**
  * @description Slack component for displaying Slack-like UI.
- * @param {SlackProps} props - Slack component props.
+ * @param {string} props.className - Additional CSS classes for styling.
  */
 export default function Slack({
   className = ''
@@ -61,9 +61,9 @@ export default function Slack({
           avatar='/img/homepage/eve-and-chan.webp'
           name='Eve & Chan'
           text={
-            <>
+            <span>
               Hey folks! 👋
-            </>
+            </span>
           }
           reactions={[
             { emoji: '👋', count: 21, mine: true }
@@ -73,9 +73,9 @@ export default function Slack({
           avatar='/img/avatars/fmvilas.webp'
           name='fmvilas'
           text={
-            <>
+            <span>
               Hey Eve & Chan! Welcome to the AsyncAPI workspace!
-            </>
+            </span>
           }
         />
       </div>
