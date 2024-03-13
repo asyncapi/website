@@ -6,7 +6,7 @@ import IconPlant from '../icons/Plant';
 import IconRocket from '../icons/Rocket';
 import IconUsers from '../icons/Users';
 
-export default [
+const learningItems = [
   { href: '/docs/concepts', icon: IconRocket, className: 'bg-secondary-200', title: 'Concepts', description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.' },
   { href: '/docs/tutorials', icon: IconGradCap, className: 'bg-pink-100', title: 'Tutorials', description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.' },
   { href: '/docs/tools', icon: IconPlant, className: 'bg-green-200', title: 'Tools', description: 'Our Tools section documents the AsyncAPI tools ecosystem.' },
@@ -15,3 +15,5 @@ export default [
   { href: '/docs/migration', icon: IconMigration, className: 'bg-blue-400', title: 'Migrations', description: 'Our migration guides on how to upgrade to newer AsyncAPI versions.' },
   { href: '/docs/community', icon: IconUsers, className: 'bg-red-200', title: 'Community', description: 'Our Community section documents the community guidelines and resources.' }
 ];
+
+export default learningItems;
