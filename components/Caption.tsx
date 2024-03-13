@@ -7,7 +7,6 @@ interface CaptionProps {
 /**
  * @description This component displays textual captions.
  *
- * @component
  * @param {CaptionProps} props - The props for the Caption component.
  * @param {React.ReactNode} props.children - The content to be displayed as the caption.
  * @returns {JSX.Element} - The rendered Caption component.
