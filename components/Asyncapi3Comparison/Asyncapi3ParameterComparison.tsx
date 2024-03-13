@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import type { Asyncapi3ParameterComparisonProps } from '@/types/Asyncapi3Comparison/Asyncapi3ParameterComparison';
 
+/**
+ * @description React component for comparing AsyncAPI parameters between versions 2.x and 3.0.
+ * @param {Asyncapi3ParameterComparisonProps} props - The props for the component.
+ */
 export default function Asyncapi3ParameterComparison({ className = '' }: Asyncapi3ParameterComparisonProps) {
   const [hoverState, setHoverState] = useState({
     location: false,
@@ -38,7 +42,7 @@ export default function Asyncapi3ParameterComparison({ className = '' }: Asyncap
                       <div className='m-2 flex-1 border border-yellow-600 bg-white p-2'>
                         schema
                         <div className='flex flex-1 flex-wrap'>
-                          <div className={'m-2 flex-1 bg-red-300 bg-white p-2'}>type</div>
+                          <div className={'m-2 flex-1 bg-white p-2'}>type</div>
                           <div className={`${hoverState.enum ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, enum: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, enum: false }))}>
                             enum
                           </div>
@@ -51,9 +55,9 @@ export default function Asyncapi3ParameterComparison({ className = '' }: Asyncap
                           <div className={`${hoverState.description ? 'bg-orange-300' : 'bg-white '  } m-2 flex-1 border border-orange-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, description: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, description: false }))}>
                             description
                           </div>
-                          <div className={'m-2 flex-1 bg-red-300 bg-white p-2'}>pattern</div>
-                          <div className={'m-2 flex-1 bg-red-300 bg-white p-2'}>multipleOf</div>
-                          <div className={'m-2 flex-1 bg-red-300 bg-white p-2'}>And all other properties</div>
+                          <div className={'m-2 flex-1 bg-white p-2'}>pattern</div>
+                          <div className={'m-2 flex-1 bg-white p-2'}>multipleOf</div>
+                          <div className={'m-2 flex-1 bg-white p-2'}>And all other properties</div>
                         </div>
                       </div>
                     </div>

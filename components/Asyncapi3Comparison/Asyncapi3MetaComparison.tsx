@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import type { Asyncapi3MetaComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/Asyncapi3MetaComparison';
 
+/**
+ * @description React component for comparing AsyncAPI metadata between versions 2.x and 3.0.
+ * @param {Asyncapi3MetaComparisonProps} props - The props for the component.
+ */
 export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3MetaComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({
     Info: false,

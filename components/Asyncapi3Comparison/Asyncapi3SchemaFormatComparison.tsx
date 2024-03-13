@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import type { Asyncapi3SchemaFormatComparisonProps } from '@/types/Asyncapi3Comparison/Asyncapi3SchemaFormatComparison';
 
+/**
+ * @description React component for comparing AsyncAPI schema formats between versions 2.x and 3.0.
+ * @param {Asyncapi3SchemaFormatComparisonProps} props - The props for the component.
+ */
 export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asyncapi3SchemaFormatComparisonProps) {
   const [hoverState, setHoverState] = useState({
     SchemaFormat: false,

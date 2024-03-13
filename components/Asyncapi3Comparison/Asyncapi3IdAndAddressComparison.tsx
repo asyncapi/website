@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import type { AsyncAPI3IdAndAddressComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
 
+/**
+ * @description Component for comparing AsyncAPI versions based on ID and address.
+ * @param {AsyncAPI3IdAndAddressComparisonProps} props - Props for the component.
+ */
 export default function Asyncapi3IdAndAddressComparison({ className = '' }: AsyncAPI3IdAndAddressComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({
     Paths: false,

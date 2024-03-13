@@ -2,6 +2,10 @@ import React from 'react';
 
 import type { Asyncapi3OperationComparisonProps } from '@/types/Asyncapi3Comparison/Asyncapi3OperationComparison';
 
+/**
+ * @description React component for comparing AsyncAPI operations between versions 2.x and 3.0.
+ * @param {Asyncapi3OperationComparisonProps} props - The props for the component.
+ */
 export default function Asyncapi3OperationComparison({ className = '' }: Asyncapi3OperationComparisonProps) {
   return (
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>

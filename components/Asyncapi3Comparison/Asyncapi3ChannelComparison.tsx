@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import type { AsyncAPI3ChannelComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/AsyncAPI3ChannelComparison';
 
+/**
+ * @description Component to compare AsyncAPI 2.x and AsyncAPI 3.0 channels.
+ * @param {AsyncAPI3ChannelComparisonProps} props - Props for the component.
+ */
 export default function Asyncapi3ChannelComparison({ className = '' }: AsyncAPI3ChannelComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({
     Paths: false,
