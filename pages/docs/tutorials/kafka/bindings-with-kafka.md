@@ -220,12 +220,12 @@ components:
       bindings:
         kafka:
           bindingVersion: '0.4.0'
-            key:
-              type: string
-              enum: ['myKey']
-            schemaIdLocation: 'payload'
-            schemaIdPayloadEncoding: 'apicurio-new'
-            schemaLookupStrategy: 'TopicIdStrategy'
+          key:
+            type: string
+            enum: ['myKey']
+          schemaIdLocation: 'payload'
+          schemaIdPayloadEncoding: 'apicurio-new'
+          schemaLookupStrategy: 'TopicIdStrategy'
       payload:
         schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
         schema:
