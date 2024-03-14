@@ -106,7 +106,7 @@ operations:
 
 Channel bindings provide protocol-specific information for a particular channel.
 
-These configurations may include information about how to connect with the Kafka topic, plus any specific settings or behaviors to be used. The Channel Binding Object is part of AsyncAPI's wider bindings architecture, which specifies how the API interacts with the messaging system — in this case, Kafka.
+These configurations may include information how the Kafka topic has been configured. The Channel Binding Object is part of AsyncAPI's wider bindings architecture, which specifies how the API interacts with the messaging system — in this case, Kafka.
 
 In Kafka, you can specify a given topic's number of partitions or replicas therefore, enabling parallel processing of data or consumers. Learn more about other fields that you can configure under [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object).
 
