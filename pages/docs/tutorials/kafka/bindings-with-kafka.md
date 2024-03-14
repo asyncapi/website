@@ -139,7 +139,7 @@ If you need to follow specific naming conventions for example, Kafka topic name 
 
 ## Add message bindings
 
-Message bindings provide protocol-specific information for a specific message. Like the Kafka topic, it's associated with a message key (if any) and Kafka-specific properties. 
+Message bindings provide protocol-specific information for a specific message. For Kafka topics, this can include how message keys are used, and details about how serialized message data has been encoded. 
 
 For example, the `schemaIdLocation` field, if specified is used to indicate where the schema identifier (ID) for the message payload's schema is located. It is useful for message serialization and deserialization, enabling consumers to understand how to interpret the message payload.
 
