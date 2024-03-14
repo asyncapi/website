@@ -58,7 +58,7 @@ Server bindings provide protocol-specific configuration details for connecting a
 
 Server bindings allows you to specify a `schemaRegistryUrl` which provides an API Url for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry read [this guide on message validation](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
-`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case "Apicurio".
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case "Apicurio". Learn more about [server bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
 ```yaml
 servers:
@@ -73,9 +73,8 @@ servers:
         bindingVersion: '0.4.0'
 ```
 
-[Learn more about server specific bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
-> Important: `BindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings and ensures that as the specifications for different messaging systems evolve, APIs based on these specifications can remain consistent, compatible, and maintainable over time.  
+> Important: `BindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings.  
 
 ## Add operation bindings
 
