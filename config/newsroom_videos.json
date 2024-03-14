@@ -1,9 +1,15 @@
 [
   {
-    "image_url": "https://i.ytimg.com/vi/lV6t-S2C5Yo/hqdefault.jpg",
-    "title": "AsyncAPI v3 retrospective",
-    "description": "https://github.com/asyncapi/spec/issues/1012.",
-    "videoId": "lV6t-S2C5Yo"
+    "image_url": "https://i.ytimg.com/vi/FXgpzqtggYo/hqdefault.jpg",
+    "title": "AACoT&#39;24 Community Meeting, March 13th 2024",
+    "description": "https://github.com/asyncapi/community/issues/1087.",
+    "videoId": "FXgpzqtggYo"
+  },
+  {
+    "image_url": "https://i.ytimg.com/vi/fic5PKFGG28/hqdefault.jpg",
+    "title": "Essential building blocks for AsyncAPI (12th of March, 2024)",
+    "description": "https://github.com/asyncapi/community/issues/1084.",
+    "videoId": "fic5PKFGG28"
   },
   {
     "image_url": "https://i.ytimg.com/vi/4t4nAmDekDA/hqdefault.jpg",
@@ -22,11 +28,5 @@
     "title": "Community Meeting, January 23rd 2024",
     "description": "",
     "videoId": "cb7lrq5hxuE"
-  },
-  {
-    "image_url": "https://i.ytimg.com/vi/prFgD14u7T0/hqdefault.jpg",
-    "title": "Overview of AsyncAPI v3",
-    "description": "Join us for an insightful stream diving deep into the latest advancements of AsyncAPI v3! We'll explore this cutting-edge ...",
-    "videoId": "prFgD14u7T0"
   }
 ]
