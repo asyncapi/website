@@ -155,7 +155,7 @@ components:
             schemaIdLocation: 'payload'
             schemaIdPayloadEncoding: 'apicurio-new'
             schemaLookupStrategy: 'TopicIdStrategy'
-            bindingVersion: '0.4.0'
+            bindingVersion: '0.5.0'
       payload:
         schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
         schema:
