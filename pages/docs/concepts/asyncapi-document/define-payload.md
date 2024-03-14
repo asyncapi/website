@@ -85,7 +85,7 @@ components:
         user:
           name: Demo
           email: demo@demo.io
-schemas:
+  schemas:
     SimpleSignup:
       type: object
       properties:
