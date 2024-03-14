@@ -58,7 +58,7 @@ Server bindings provide protocol-specific configuration details for connecting a
 
 Server bindings allows you to specify a `schemaRegistryUrl` which provides an API Url for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry read [this guide on message validation](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
-`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case "Apicurio".
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case Apicurio Registry.
 
 ```yaml
 servers:
