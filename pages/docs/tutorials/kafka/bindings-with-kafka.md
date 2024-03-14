@@ -91,7 +91,7 @@ operations:
       $ref: '#/channels/userSignedUp'
     bindings:
       kafka:
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
         groupId:
           type: string
           enum: ['myGroupId']
