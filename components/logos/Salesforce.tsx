@@ -1,5 +1,6 @@
 /**
  * @description Logo for Salesforce
+ * @param {string} className - used to style the svg
  */
 export default function SalesforceLogo({ className }: { className?: string }) {
   return (

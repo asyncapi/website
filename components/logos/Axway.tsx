@@ -1,5 +1,6 @@
 /**
  * @description Logo for Axway
+ * @param {string} className - used to style the svg
  */
 export default function AxwayLogo({ className }: { className?: string }) {
   return (

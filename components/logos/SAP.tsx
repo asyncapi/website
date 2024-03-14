@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 /**
  * @description Logo for SAP
+ * @param {string} className - used to style the svg
  */
 export default function SapLogo({ className }: { className?: string }) {
   const [isHovered, setIsHovered] = useState(false);

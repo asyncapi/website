@@ -1,3 +1,4 @@
+// Since a RoadmapList may contain other RoadmapItems, we need to import RoadmapItem to display them.
 /* eslint-disable import/no-cycle*/
 import RoadmapItem from './RoadmapItem';
 
@@ -36,9 +37,9 @@ export default function RoadmapList({
 }: IRoadmapListProps) {
   return (
     <>
-    items && items.length && (
+      items && items.length && (
       <ul className={className} data-testid='RoadmapList-list'>
-        { !collapsed && (
+        {!collapsed &&
           items.map((item, index) => (
             <RoadmapItem
               key={index}
@@ -47,10 +48,9 @@ export default function RoadmapList({
               showConnector={showConnector}
               collapsed={childrenCollapsed}
             />
-          ))
-        )}
+          ))}
       </ul>
-    )
+      )
     </>
   );
 }

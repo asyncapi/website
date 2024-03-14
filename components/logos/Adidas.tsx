@@ -1,5 +1,6 @@
 /**
  * @description Logo for Adidas
+ * @param {string} className - used to style the svg
  */
 export default function AdidasLogo({ className }: { className?: string }) {
   return (

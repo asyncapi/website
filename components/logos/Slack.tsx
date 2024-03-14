@@ -1,5 +1,6 @@
 /**
  * @description Logo for Slack
+ * @param {string} className - used to style the svg
  */
 export default function SlackLogo({ className }: { className?: string }) {
   return (
