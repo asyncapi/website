@@ -130,10 +130,6 @@ channels:
           max.message.bytes: 1048588
 ```
 
-<Remember>
-If you need to follow specific naming conventions for example, Kafka topic name is different from channel name.
-</Remember>
-
 
 ## Add message bindings
 
