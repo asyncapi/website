@@ -58,7 +58,7 @@ Server bindings provide protocol-specific configuration details for connecting a
 
 Server bindings allows you to specify a `schemaRegistryUrl` which provides an API Url for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry read [this guide on message validation](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
-`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case "Apicurio". Learn more about [server bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case Apicurio Registry.
 
 ```yaml
 servers:
@@ -73,8 +73,7 @@ servers:
         bindingVersion: '0.4.0'
 ```
 
-
-> Important: `BindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings.  
+> Important: `bindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings.  
 
 ## Add operation bindings
 
@@ -105,7 +104,7 @@ operations:
 
 Channel bindings provide protocol-specific information for a particular channel.
 
-These configurations may include information about how to connect with the Kafka topic, plus any specific settings or behaviors to be used. The Channel Binding Object is part of AsyncAPI's wider bindings architecture, which specifies how the API interacts with the messaging system — in this case, Kafka.
+These configurations may include information how the Kafka topic has been configured. The Channel Binding Object is part of AsyncAPI's wider bindings architecture, which specifies how the API interacts with the messaging system — in this case, Kafka.
 
 In Kafka, you can specify a given topic's number of partitions or replicas therefore, enabling parallel processing of data or consumers. Learn more about other fields that you can configure under [channel bindings](https://github.com/asyncapi/bindings/tree/master/kafka#channel-binding-object).
 
@@ -138,7 +137,7 @@ If you need to follow specific naming conventions for example, Kafka topic name 
 
 ## Add message bindings
 
-Message bindings provide protocol-specific information for a specific message. Like the Kafka topic, it's associated with a message key (if any) and Kafka-specific properties. 
+Message bindings provide protocol-specific information for a specific message. For Kafka topics, this can include how message keys are used, and details about how serialized message data has been encoded. 
 
 For example, the `schemaIdLocation` field, if specified is used to indicate where the schema identifier (ID) for the message payload's schema is located. It is useful for message serialization and deserialization, enabling consumers to understand how to interpret the message payload.
 
@@ -219,12 +218,12 @@ components:
       bindings:
         kafka:
           bindingVersion: '0.4.0'
-            key:
-              type: string
-              enum: ['myKey']
-            schemaIdLocation: 'payload'
-            schemaIdPayloadEncoding: 'apicurio-new'
-            schemaLookupStrategy: 'TopicIdStrategy'
+          key:
+            type: string
+            enum: ['myKey']
+          schemaIdLocation: 'payload'
+          schemaIdPayloadEncoding: 'apicurio-new'
+          schemaLookupStrategy: 'TopicIdStrategy'
       payload:
         schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
         schema:
