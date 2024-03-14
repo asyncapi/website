@@ -58,7 +58,7 @@ Server bindings provide protocol-specific configuration details for connecting a
 
 Server bindings allows you to specify a `schemaRegistryUrl` which provides an API Url for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry read [this guide on message validation](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
-`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case Apicurio Registry.
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case Apicurio Registry. Learn more about other fields you can configure under [server bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
 ```yaml
 servers:
@@ -70,7 +70,7 @@ servers:
       kafka:
         schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
         schemaRegistryVendor: 'apicurio'
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
 ```
 
 > Important: `bindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings.  
@@ -91,7 +91,7 @@ operations:
       $ref: '#/channels/userSignedUp'
     bindings:
       kafka:
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
         groupId:
           type: string
           enum: ['myGroupId']
@@ -119,7 +119,7 @@ channels:
         $ref: '#/components/messages/userSignedUp'
     bindings:
       kafka:
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
         partitions: 10
         replicas: 2
         topicConfiguration:
@@ -155,7 +155,7 @@ components:
             schemaIdLocation: 'payload'
             schemaIdPayloadEncoding: 'apicurio-new'
             schemaLookupStrategy: 'TopicIdStrategy'
-            bindingVersion: '0.4.0'
+            bindingVersion: '0.5.0'
       payload:
         schemaFormat: 'application/vnd.apache.avro+json;version=1.9.0'
         schema:
@@ -179,7 +179,7 @@ servers:
       kafka:
         schemaRegistryUrl: 'http://localhost:8080/apis/registry/'
         schemaRegistryVendor: 'apicurio'
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
 operations:
   onUserSignedUp:
     action: receive
@@ -187,7 +187,7 @@ operations:
       $ref: '#/channels/userSignedUp'
     bindings:
       kafka:
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
         groupId:
           type: string
           enum: ['myGroupId']
@@ -203,7 +203,7 @@ channels:
         $ref: '#/components/messages/userSignedUp'
     bindings:
       kafka:
-        bindingVersion: '0.4.0'
+        bindingVersion: '0.5.0'
         partitions: 10
         replicas: 2
         topicConfiguration:
@@ -217,7 +217,7 @@ components:
     userSignedUp:
       bindings:
         kafka:
-          bindingVersion: '0.4.0'
+          bindingVersion: '0.5.0'
           key:
             type: string
             enum: ['myKey']
