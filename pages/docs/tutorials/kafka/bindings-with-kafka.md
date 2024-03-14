@@ -75,7 +75,7 @@ servers:
 
 [Learn more about server specific bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
-> Important: `BindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings and ensures that as the specifications for different messaging systems evolve, APIs based on these specifications can remain consistent, compatible, and maintainable over time.  
+> Important: `bindingVersion` is the field version of a binding. It specifies the version of the binding specification that is used to describe how an API interacts with Kafka. The `bindingVersion` field is an optional field that is available for all bindings and ensures that as the specifications for different messaging systems evolve, APIs based on these specifications can remain consistent, compatible, and maintainable over time.  
 
 ## Add operation bindings
 
