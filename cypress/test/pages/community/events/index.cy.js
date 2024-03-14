@@ -18,26 +18,26 @@ describe('CommunityIndexPage', () => {
 
   it('displays recording card', () => {
     cy.get('[data-testid="RecordingsCard-img"]').should('exist');
-    cy.get('[data-testid="Recordings-Link"]').should('have.attr', 'href', 'https://www.youtube.com/playlist?list=PLbi1gRlP7pijRiA32SU36hD_FW-2qyPhl')
+    cy.get('[data-testid="Recordings-Link"]').should('have.attr', 'href', 'https://www.youtube.com/playlist?list=PLbi1gRlP7pijHAnmN-n_OiTH6CAXxGthw&si=st3gY7Ri5uzhechB')
     cy.get('[data-testid="Recordings-text"]').should('exist');
   });
 
   it('check for Events Filters', () => {
     cy.get('[data-testid="EventFilters-main"]').should('exist');
     cy.get('[data-testid="EventFilter-click"]').contains('All').click({ force: true });
-    
+
     meetings.forEach((event) => {
       cy.contains(event.title).should('be.visible');
     });
     cy.get('[data-testid="EventFilter-click"]').contains('Upcoming').click({ force: true });
-    
+
     const currentDate = moment().format('YYYY-MM-DD');
     meetings.forEach((event) => {
       if (moment(event.date).isAfter(currentDate)) {
         cy.contains(event.title).should('be.visible');
       }
     });
-    
+
     cy.get('[data-testid="EventFilter-click"]').contains('Recorded').click({ force: true });
     const currentDate1 = moment().format('YYYY-MM-DD');
     meetings.forEach((event) => {
