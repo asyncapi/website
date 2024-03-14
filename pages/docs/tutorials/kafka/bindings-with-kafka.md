@@ -6,7 +6,7 @@ weight: 300
 
 ## Introduction
 
-In a [previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry.md), you learned how to manage schemas with a schema registry. This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
+In a [previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry), you learned how to manage schemas with a schema registry. This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
 
 ## Background context
 
