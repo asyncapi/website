@@ -5,9 +5,10 @@ import type { CustomTooltipProps } from '@/types/FinancialSummary/BarChartCompon
  * @param {boolean} props.active - The active state of the tooltip
  * @param {TooltipPayload[]} props.payload - The payload of the tooltip
  */
-export default function CustomTooltip(props: CustomTooltipProps) {
-  const { active, payload } = props;
-
+export default function CustomTooltip({ active, payload }: CustomTooltipProps) {
+  /**
+   * If the tooltip is active and the payload has data, display the category and amount of the bar
+   */
   if (active && payload && payload.length) {
     const data = payload[0].payload;
 
