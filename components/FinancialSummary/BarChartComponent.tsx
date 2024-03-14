@@ -33,15 +33,15 @@ export default function BarChartComponent() {
     };
   }, []);
 
-  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) => (selectedMonth === 'All Months' || selectedMonth === month) ?
-    entries.filter(entry => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
+  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) => selectedMonth === 'All Months' || selectedMonth === month
+    ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
     : []);
 
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
 
   const categoryAmounts: { [category: string]: number } = {};
 
-  filteredData.forEach(entry => {
+  filteredData.forEach((entry) => {
     if (categoryAmounts[entry.Category]) {
       categoryAmounts[entry.Category] += parseFloat(entry.Amount);
     } else {
@@ -49,7 +49,7 @@ export default function BarChartComponent() {
     }
   });
 
-  const chartData: { Category: string; Amount: number }[] = Object.keys(categoryAmounts).map(category => ({
+  const chartData: { Category: string; Amount: number }[] = Object.keys(categoryAmounts).map((category) => ({
     Category: category,
     Amount: categoryAmounts[category]
   }));
@@ -61,7 +61,9 @@ export default function BarChartComponent() {
     <div className='mt-8 flex items-center justify-center sm:px-6 lg:px-8'>
       <div className='w-full px-4 text-center lg:w-2/3'>
         <div className='mb-5'>
-          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold'>Budget Analysis</h1>
+          <h1 id='budget-analysis' className='my-2 mb-4 text-3xl font-semibold'>
+            Budget Analysis
+          </h1>
           <p>Gain insights into the allocation of funds across different categories through our Budget Analysis</p>
           <div className='my-4 flex flex-col justify-between md:m-8 md:flex-row md:items-center md:justify-between'>
             <div className='my-2'>
@@ -76,8 +78,10 @@ export default function BarChartComponent() {
                   onChange={(e) => setSelectedCategory(e.target.value)}
                 >
                   <option value='All Categories'>All Categories</option>
-                  {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
                   ))}
                 </select>
                 <select
@@ -86,8 +90,10 @@ export default function BarChartComponent() {
                   onChange={(e) => setSelectedMonth(e.target.value)}
                 >
                   <option value='All Months'>All Months</option>
-                  {months.map(month => (
-                    <option key={month} value={month}>{month}</option>
+                  {months.map((month) => (
+                    <option key={month} value={month}>
+                      {month}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -105,7 +111,7 @@ export default function BarChartComponent() {
               fill='#7B5DD3FF'
               onClick={(data) => {
                 const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(obj => obj.category === category);
+                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find((obj) => obj.category === category);
 
                 if (matchedLinkObject) {
                   window.open(matchedLinkObject.link, '_blank');
@@ -118,4 +124,4 @@ export default function BarChartComponent() {
       </div>
     </div>
   );
-};
+}

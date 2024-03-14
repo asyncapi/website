@@ -8,15 +8,15 @@ import ExpensesLinkData from '../../config/finance/json-data/2024/ExpensesLink.j
  * @param {string} props.month - Month for which expenses are displayed.
  * @param {ExpenseItem[]} props.data - Expense data for the month.
  */
-export default function Card({ month, data }: { month: keyof Expenses; data: ExpenseItem[]; }) {
+export default function Card({ month, data }: { month: keyof Expenses; data: ExpenseItem[] }) {
   /**
- * Handles the click event on an expense category.
- * Opens a new window with the corresponding link if available.
- * @param {string} category - The expense category clicked.
- * {void}
- */
+   * Handles the click event on an expense category.
+   * Opens a new window with the corresponding link if available.
+   * @param {string} category - The expense category clicked.
+   * {void}
+   */
   function handleExpenseClick(category: string) {
-    const matchedLinkObject = ExpensesLinkData.find(obj => obj.category === category);
+    const matchedLinkObject = ExpensesLinkData.find((obj) => obj.category === category);
 
     if (matchedLinkObject) {
       window.open(matchedLinkObject.link, '_blank');
@@ -29,7 +29,9 @@ export default function Card({ month, data }: { month: keyof Expenses; data: Exp
       <div className='flex flex-col overflow-auto'>
         {data.map((item, index) => (
           <div key={index} className='flex justify-between'>
-            <div className='m-2 text-sm' onClick={() => handleExpenseClick(item.Category)}>{item.Category}</div>
+            <div className='m-2 text-sm' onClick={() => handleExpenseClick(item.Category)}>
+              {item.Category}
+            </div>
             <div className='m-2 text-sm'>${item.Amount}</div>
           </div>
         ))}

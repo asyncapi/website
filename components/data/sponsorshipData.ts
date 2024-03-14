@@ -17,6 +17,7 @@ export const sponsorshipTiers = [
   {
     tier: 'Platinum',
     amount: '$2000/month',
-    benefits: 'Company logo in README on GitHub and asyncapi.com. Up to 2 hours of support per month. Support will be remote with the option of a shared screen or via private chat. Support hours do not accumulate.'
+    benefits:
+      'Company logo in README on GitHub and asyncapi.com. Up to 2 hours of support per month. Support will be remote with the option of a shared screen or via private chat. Support hours do not accumulate.'
   }
 ];

@@ -17,10 +17,11 @@ export default function AsyncAPISummary() {
             AsyncAPI Financial Summary
           </Heading>
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='my-1 max-w-4xl text-darkGunMetal'>
-            To help improve the current state of Event-Driven Architectures and their tooling, you can show your support for
-            the AsyncAPI Initiative by making a financial contribution. We offer three donation options: <strong>Open Collective, GitHub
-            Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are managed through Open Collective and GitHub Sponsors,
-            while Linux Foundation Crowdfunding operates separately.
+            To help improve the current state of Event-Driven Architectures and their tooling, you can show your support
+            for the AsyncAPI Initiative by making a financial contribution. We offer three donation options:{' '}
+            <strong>Open Collective, GitHub Sponsors, and Linux Foundation Crowdfunding</strong>. Our expenses are
+            managed through Open Collective and GitHub Sponsors, while Linux Foundation Crowdfunding operates
+            separately.
           </Paragraph>
         </div>
       </div>
@@ -38,23 +39,40 @@ export default function AsyncAPISummary() {
       </div>
       <div className='max-width my-4 text-center text-base text-darkGunMetal'>
         <Paragraph typeStyle={ParagraphTypeStyle.sm} className='my-4'>
-          The easiest way to support AsyncAPI is by becoming a financial sponsor. While <br className='hidden lg:inline-block' />there are alternative options,
-          they may involve greater effort. Contribute <br className='hidden lg:inline-block' />monetarily using the following channels.
+          The easiest way to support AsyncAPI is by becoming a financial sponsor. While{' '}
+          <br className='hidden lg:inline-block' />
+          there are alternative options, they may involve greater effort. Contribute{' '}
+          <br className='hidden lg:inline-block' />
+          monetarily using the following channels.
         </Paragraph>
       </div>
 
       <div className='text-center'>
         <a href='https://opencollective.com/asyncapi' target='_blank'>
-          <img className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90' src='/img/logos/OpenCollective.svg' alt='Open Collective' />
+          <img
+            className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
+            src='/img/logos/OpenCollective.svg'
+            alt='Open Collective'
+          />
         </a>
-        <a href='https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc' target='_blank'>
-          <img className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90' src='/img/logos/LFX.svg' alt='Linux Foundation' />
+        <a
+          href='https://crowdfunding.lfx.linuxfoundation.org/projects/445898e9-42a2-4965-9e0a-c2a714f381bc'
+          target='_blank'
+        >
+          <img
+            className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
+            src='/img/logos/LFX.svg'
+            alt='Linux Foundation'
+          />
         </a>
         <a href='https://github.com/sponsors/asyncapi' target='_blank'>
-          <img className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90' src='/img/logos/github-black.svg' alt='Github' />
+          <img
+            className='mx-4 inline size-10 transition-transform hover:scale-110 active:scale-90'
+            src='/img/logos/github-black.svg'
+            alt='Github'
+          />
         </a>
       </div>
-
     </div>
   );
 }

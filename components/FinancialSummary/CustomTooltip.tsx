@@ -2,7 +2,8 @@ import type { CustomTooltipProps } from '@/types/FinancialSummary/BarChartCompon
 
 /**
  * @description CustomTooltip component displays custom tooltip for BarChart.
- * @param {CustomTooltipProps} props - Props for CustomTooltip component.
+ * @param {boolean} props.active - The active state of the tooltip
+ * @param {TooltipPayload[]} props.payload - The payload of the tooltip
  */
 export default function CustomTooltip(props: CustomTooltipProps) {
   const { active, payload } = props;

@@ -19,7 +19,8 @@ export default function SponsorshipTiers() {
 
           <Paragraph typeStyle={ParagraphTypeStyle.md} className='mx-auto my-3 max-w-4xl text-base text-darkGunMetal'>
             AsyncAPI offers various sponsorship tiers, each with its own set <br className='hidden lg:inline-block' />
-            of benefits and privileges. These tiers include Bronze, Silver,<br className='hidden lg:inline-block' />
+            of benefits and privileges. These tiers include Bronze, Silver,
+            <br className='hidden lg:inline-block' />
             Gold, and Platinum.
           </Paragraph>
         </div>
@@ -38,9 +39,15 @@ export default function SponsorshipTiers() {
               <tbody className='font-normal text-sm'>
                 {sponsorshipTiers.map((tier, index) => (
                   <tr key={index}>
-                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>{tier.tier}</td>
-                    <td className='border border-gray-500 p-2 text-darkGunMetal md:px-10 md:py-2 md:text-base'>{tier.amount}</td>
-                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>{tier.benefits}</td>
+                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                      {tier.tier}
+                    </td>
+                    <td className='border border-gray-500 p-2 text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                      {tier.amount}
+                    </td>
+                    <td className='border border-gray-500 p-2 text-left text-darkGunMetal md:px-10 md:py-2 md:text-base'>
+                      {tier.benefits}
+                    </td>
                   </tr>
                 ))}
               </tbody>

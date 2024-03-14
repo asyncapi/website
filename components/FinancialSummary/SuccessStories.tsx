@@ -14,8 +14,8 @@ export default function SuccessStories() {
               Success Stories
             </h1>
             <p className='mx-auto my-3 max-w-4xl text-center text-lg text-darkGunMetal'>
-              Thanks to financial support we can already see many<br className='hidden lg:inline-block' /> success stories in
-              the project.
+              Thanks to financial support we can already see many
+              <br className='hidden lg:inline-block' /> success stories in the project.
             </p>
           </div>
           <div className='mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
