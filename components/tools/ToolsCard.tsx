@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import TextTruncate from 'react-text-truncate';
 
+import type { ToolData } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -11,25 +12,6 @@ import { CardData } from './CardData';
 import Tag from './Tags';
 
 type VisibleType = Record<string, boolean>;
-
-interface Link {
-  repoUrl?: string;
-  websiteUrl?: string;
-  docsUrl?: string;
-};
-
-interface Filter {
-  language: { name: string; color: string; borderColor: string }[];
-  technology: { name: string; color: string; borderColor: string }[];
-  hasCommercial: boolean;
-};
-
-interface ToolData {
-  title: string;
-  description: string;
-  links: Link;
-  filters: Filter;
-};
 
 interface ToolsCardProp {
   toolData: ToolData;
@@ -139,7 +121,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               ))}
             </div>
           </div>}
-          {toolData.filters.technology.length > 0 && <div className='mx-6 my-4 flex flex-col gap-2'>
+          {toolData?.filters?.technology?.length > 0 && <div className='mx-6 my-4 flex flex-col gap-2'>
             <CardData
               className='text-sm text-gray-700'
               heading='TECHNOLOGIES'
@@ -151,7 +133,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               setRead={setReadMore}
             />
             <div className='flex flex-wrap gap-2'>
-              {toolData.filters.technology.map((item, index) => (
+              {toolData?.filters?.technology.map((item, index) => (
                 <Tag key={index}
                   name={item.name}
                   bgColor={item.color}
