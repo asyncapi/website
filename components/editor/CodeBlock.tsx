@@ -208,9 +208,7 @@ export default function CodeBlock({
   caption = '',
   showLineNumbers = true,
   startingLineNumber = 1,
-  textSizeClassName = 'text-xs',
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
-  title = language
+  textSizeClassName = 'text-xs'
 } : CodeBlockProps): React.ReactNode {
   const [activeBlock, setActiveBlock] = useState<number>(0);
   const [showIsCopied, setShowIsCopied] = useState<boolean>(false);
