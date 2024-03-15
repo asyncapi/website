@@ -7,10 +7,8 @@ import TOC from '../TOC';
 import DocsNav from '../navigation/DocsNav';
 import DocsMobileMenu from '../navigation/DocsMobileMenu';
 import DocsButton from '../buttons/DocsButton';
-import NavBar from '../navigation/NavBar';
 import ArrowRight from '../icons/ArrowRight';
 import Feedback from '../Feedback';
-import StickyNavbar from '../navigation/StickyNavbar';
 import Heading from '../typography/Heading';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 import { SearchButton, DOCS_INDEX_NAME } from '../AlgoliaSearch';
@@ -72,9 +70,6 @@ export default function DocsLayout({ post, navItems = {}, children }) {
 
   return (
     <DocsContext.Provider value={{ post, navItems }}>
-      <StickyNavbar>
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <div className="bg-white px-4 sm:px-6 lg:px-8 w-full xl:max-w-7xl xl:mx-auto">
         {showMenu && (
           <DocsMobileMenu
@@ -89,7 +84,7 @@ export default function DocsLayout({ post, navItems = {}, children }) {
             className="hidden lg:flex lg:flex-shrink-0"
             data-testid="DocsLayout-main"
           >
-            <div className="flex flex-col w-64 border-r border-gray-200 bg-white py-2">
+            <div className="flex flex-col w-72 border-r border-gray-200 bg-white py-2">
               <div className="flex-1 flex flex-col md:overflow-y-auto md:sticky md:top-20 md:max-h-(screen-14)">
                 <SearchButton
                   className="mt-8 mb-4 mr-2 flex items-center text-left text-sm space-x-3 px-3 py-1.5 bg-white hover:bg-secondary-100 border-gray-300 hover:border-secondary-500 border text-gray-700 hover:text-secondary-500 shadow-sm transition-all duration-500 ease-in-out rounded-md"

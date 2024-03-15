@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { mount } from '@cypress/react';
-import AnnouncementRemainingDays from '../../../../components/campaigns/AnnouncementRamainingDays';
+import AnnouncementRemainingDays from '../../../../components/campaigns/AnnouncementRemainingDays';
 
 describe('AnnouncementRemainingDays', () => {
   it('displays correct countdown text', () => {
