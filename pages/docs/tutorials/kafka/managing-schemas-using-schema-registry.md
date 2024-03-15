@@ -64,7 +64,7 @@ Start the Apicurio Registry locally with the following docker command:
 docker run --env CORS_ALLOWED_ORIGINS='*' -it -p 8080:8080 apicurio/apicurio-registry-mem:2.5.8.Final
 ```
 
-### Upload Avro Schema
+### Upload Avro schema
 Once your local instance of Apicurio Registry is running, upload your Avro schema. Open a new terminal window and create an Avro schema artifact with the following command:
    
 ```
