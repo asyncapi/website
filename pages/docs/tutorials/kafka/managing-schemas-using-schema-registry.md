@@ -5,7 +5,7 @@ weight: 250
 ---
 
 ## Introduction
-In the [previous tutorial](/docs/tutorials/kafka/configure-kafka-avro), you've learned how to add Avro Schemas to your AsyncAPI document. Now, you will learn how to save your schema in a central Schema Registry and reuse it from there.
+In the [previous Kafka and Avro configuration tutorial](/docs/tutorials/kafka/configure-kafka-avro), you learned how to add Apache Avro schemas to your AsyncAPI document. Now, you will learn how to save your schema in a central Schema Registry and reuse it.
 
 ## Background context
 The need for schema management has become increasingly prevalent to handle the evolving complexity of modern Event-Driven Architecture. A Schema Registry is a centralized service that stores and maintains schemas for data exchanged between various components of a modern distributed system. Validating exchanged data maintains data consistency and compatibility. 
@@ -16,7 +16,7 @@ While several Schema Registry implementations exist, you will use the [Apicurio 
 [Install Docker](https://docs.docker.com/engine/install/) from the official website.
 
 ## AsyncAPI document with Avro Schema
-The previous tutorial taught you how to write an AsyncAPI document for Kafka messages using the Avro Schema. Here's an example of what an AsyncAPI document fully equipped with Avro Schema looks like:
+The previous tutorial taught you how to write an AsyncAPI document for Kafka messages using the Avro schema. Here's an example of what an AsyncAPI document fully equipped with Avro schema looks like:
 ```
 asyncapi: 3.0.0
 info:
@@ -99,7 +99,7 @@ http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp.
 </Remember>
 
 ### Update schema reference
-One alternative is to keep your schema in a separate file, as you learned in the previous tutorial, [Describe Kafka message payload using Avro Schema](/docs/tutorials/kafka/configure-kafka-avro). After uploading your Avro schema, remove the schema from your AsyncAPI document and add a `$ref` pointing to the previous step's URL.
+One alternative is to keep your schema in a separate file, as you learned in the previous tutorial, [describe Kafka message payload using Avro schema](/docs/tutorials/kafka/configure-kafka-avro). After uploading your Avro schema, remove the schema from your AsyncAPI document and add a `$ref` pointing to the previous step's URL.
 ```
 $ref: http://localhost:8080/apis/registry/v2/groups/my-group/artifacts/UserSignedUp
 ```
