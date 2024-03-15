@@ -18,7 +18,7 @@ You can configure several objects using [Kafka bindings](https://github.com/asyn
 
 Using the code snippets from the previous tutorial, where you learned [how to manage Avro schemas using a centralized schema registry that enables you to share schemas across multiple applications](/docs/tutorials/kafka/managing-schemas-using-schema-registry), you will add configurations for server, operations, channel, and message bindings.
 
-Below, you can find the updated Schema reference file that we'll be using for this tutorial.
+Below, you can find the updated schema reference file you'll use for this tutorial.
 
 ```yaml
 asyncapi: 3.0.0
@@ -56,7 +56,7 @@ components:
 
 Server bindings provide protocol-specific configuration details for connecting and interacting with a server. 
 
-Server bindings allow you to specify a `schemaRegistryUrl`, which provides an API URL for a given server where a schema registry was used. A Schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry, read the [message validation guide for schema registry](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
+Server bindings allow you to specify a `schemaRegistryUrl`, which provides an API URL for a given server where a schema registry was used. A schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry, read the [message validation guide for schema registry](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
 `schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case, Apicurio Registry. Learn about other fields you can configure under [server bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
