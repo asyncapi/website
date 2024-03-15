@@ -16,6 +16,18 @@ interface CardDataProps {
   type: string;
 };
 
+/**
+ * @description This component displays Card.
+ *
+ * @param {SelectTagsProps} props - The props for the Cards Data component.
+ * @param {string} props.className - Additional CSS classes for the component.
+ * @param {VisibleType} props.visible - Visibility status for different types.
+ * @param {string} props.heading - The heading text.
+ * @param {string} props.data - The data to be displayed.
+ * @param {boolean} props.read - Read status.
+ * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setRead - Function to set read status.
+ * @param {React.Dispatch<React.SetStateAction<VisibleType>>} props.type - Function to set visibility status.
+ */
 export const CardData = ({
   className,
   visible,
