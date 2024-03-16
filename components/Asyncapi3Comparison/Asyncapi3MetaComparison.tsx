@@ -25,7 +25,6 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
     <div className={`${className} flex flex-col flex-wrap gap-1 text-center md:flex-row`}>
       <div className='ml-1 flex-1 border border-black p-2'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 2.x</h3>
-
         <div>
           <div className={`${hoverState.Info ? 'bg-blue-100 ' : ' '  }m-2 border border-blue-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Info: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Info: false }))}>
             Info
@@ -42,7 +41,6 @@ export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3Met
       </div>
       <div className='ml-1 flex-1 border border-black p-2'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-
         <div>
           <div className={`${hoverState.Info ? 'bg-blue-100 ' : ' '  }m-2 border border-blue-300 p-2`} onMouseOver={() => setHoverState(prevState => ({ ...prevState, Info: true }))} onMouseLeave={() => setHoverState(prevState => ({ ...prevState, Info: false }))}>
             Info

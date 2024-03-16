@@ -23,11 +23,9 @@ export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asy
         <div>
           <div className={'m-2 border border-yellow-300 p-2'}>
             components | channels
-
             <div className='flex flex-1 flex-wrap'>
               <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                 messages
-
                 <div className='flex flex-1 flex-wrap'>
                   <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                     message
@@ -54,11 +52,9 @@ export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asy
       </div>
       <div className='ml-1 flex-1 border border-black p-2'>
         <h3 className='mb-4 ml-2 font-sans text-lg font-medium'>AsyncAPI 3.0</h3>
-
         <div>
           <div className={'m-2 border border-yellow-300 p-2'}>
             components | channels
-
             <div className='flex flex-1 flex-wrap'>
               <div className={'m-2 border border-yellow-600 bg-white p-2'}>
                 messages
