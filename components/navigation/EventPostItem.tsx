@@ -28,7 +28,7 @@ interface EventPostItemProps {
  * @param {EventPostItemProps} props - The props for the EventPostItem component.
  * @param {Event} post - The event post object.
  * @param {string} [className] - The optional CSS class name.
- * 
+ *
  */
 function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.Element {
   const localTime = moment().format('YYYY-MM-DD'); // store localTime

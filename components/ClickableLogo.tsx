@@ -18,9 +18,9 @@ interface ClickableLogoProps {
 export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: ClickableLogoProps) {
   return (
     <Link href={href}>
-      <a className={className}>
+      <span className={className}>
         <AsyncAPILogo className={logoClassName || ''} />
-      </a>
+      </span>
     </Link>
   );
 }

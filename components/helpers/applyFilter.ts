@@ -1,4 +1,8 @@
-/* eslint-disable */
+/**
+ * @description Sorts an array of objects based on a string property called 'value'.
+ * @param arr Array of objects with a 'value' property of type string.
+ * @returns Sorted array of objects.
+ */
 export function sortFilter(arr: { value: string }[]): { value: string }[] {
   return arr.sort((a, b) => {
     if (a.value < b.value) {
@@ -12,29 +16,33 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
   });
 }
 
+/**
+ * @description Apply filters to data and update the filters.
+ * @param checks Array of filter criteria objects.
+ * @param data Array of data objects to filter.
+ * @param setFilters Function to update the filters.
+ */
 export const applyFilterList = (checks: { name: string }[],
   data: { [key: string]: any }[],
   setFilters: (lists: { [key: string]: { value: string; text: string }[] }) => void): void => {
   if (Object.keys(checks).length) {
     const lists: { [key: string]: { value: string; text: string }[] } = {};
 
-    checks.map((check) => {
+    checks.forEach((check) => {
       lists[check.name] = [];
     });
     for (let i = 0; i < data.length; i++) {
       const res = data[i];
 
-      for (const key in lists) {
+      Object.keys(lists).forEach((key) => {
         const result = data[i][key];
 
         if (res) {
           if (lists[key].length) {
             if (Array.isArray(result)) {
-              result.map((a: any) => {
+              result.forEach((a) => {
                 if (a.name) {
-                  if (lists[key].some((e) => e.value === a.name)) {
-
-                  } else {
+                  if (!lists[key].some((e) => e.value === a.name)) {
                     const newData = {
                       value: a.name,
                       text: a.name
@@ -43,9 +51,7 @@ export const applyFilterList = (checks: { name: string }[],
                     lists[key].push(newData);
                     sortFilter(lists[key]);
                   }
-                } else if (lists[key].some((e) => e.value === a)) {
-
-                } else {
+                } else if (!lists[key].some((e) => e.value === a)) {
                   const newData = {
                     value: a,
                     text: a
@@ -55,9 +61,7 @@ export const applyFilterList = (checks: { name: string }[],
                   sortFilter(lists[key]);
                 }
               });
-            } else if (lists[key].some((e) => e.value === result)) {
-              continue;
-            } else {
+            } else if (!lists[key].some((e) => e.value === result)) {
               const newData = {
                 value: result,
                 text: result
@@ -67,7 +71,7 @@ export const applyFilterList = (checks: { name: string }[],
               sortFilter(lists[key]);
             }
           } else if (Array.isArray(result)) {
-            result.map((e: any) => {
+            result.forEach((e) => {
               if (e.name) {
                 const newData = {
                   value: e.name,
@@ -93,38 +97,43 @@ export const applyFilterList = (checks: { name: string }[],
             lists[key].push(newData);
           }
         }
-      }
+      });
     }
     setFilters(lists);
   }
 };
 
-export const onFilterApply = (data: { [key: string]: any }[],
+/**
+ * @description Apply filters to data and trigger the filter action.
+ * @param data Array of data objects to filter.
+ * @param onFilter Function to apply the filter action.
+ * @param query Filter criteria.
+ */
+export const onFilterApply = (inputData: { [key: string]: any }[],
   onFilter: (result: { [key: string]: any }[], query: { [key: string]: string }) => void,
   query: { [key: string]: string }): void => {
-  let result = data;
+  let result = inputData;
 
   if (query && Object.keys(query).length >= 1) {
-    for (const property in query) {
+    Object.keys(query).forEach((property) => {
       const res = result.filter((e) => {
         if (!query[property] || e[property] === query[property]) {
           return e[property];
         }
         if (Array.isArray(e[property])) {
-          if (e[property].some((data: any) => data.name === query[property])) {
-            return e[property].some((data: any) => data.name === query[property]);
-          }
-
           return (
-            e[property].some((data: any) => data.name === query[property]) ||
-                        e[property].includes(query[property]) ||
-                        false
+            e[property].some((data:any) => data.name === query[property]) ||
+            e[property].includes(query[property]) ||
+            false
           );
         }
+
+        return false; // Fixing missing return value issue
       });
 
       result = res;
-    }
+    });
   }
   onFilter(result, query);
 };
+

@@ -13,7 +13,6 @@ interface Bucket {
   link: string;
   className: string;
   borderClassName: string;
-  Icon: React.ComponentType<any>;
   href: string;
   icon: React.ComponentType<any>;
 }
@@ -26,7 +25,6 @@ export const buckets: Bucket[] = [
     link: '/docs/concepts',
     className: 'bg-secondary-200',
     borderClassName: 'border-secondary-200',
-    Icon: IconGettingStarted,
     href: '/docs/concepts',
     icon: IconGettingStarted
   },
@@ -37,7 +35,6 @@ export const buckets: Bucket[] = [
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     borderClassName: 'border-pink-100',
-    Icon: IconTutorials,
     href: '/docs/tutorials',
     icon: IconTutorials
   },
@@ -48,7 +45,6 @@ export const buckets: Bucket[] = [
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
-    Icon: IconGuide,
     href: '/docs/guides',
     icon: IconGuide
   },
@@ -59,7 +55,6 @@ export const buckets: Bucket[] = [
     link: '/docs/tools',
     className: 'bg-green-200',
     borderClassName: 'border-green-200',
-    Icon: IconUseCases,
     href: '/docs/tools',
     icon: IconUseCases
   },
@@ -70,7 +65,6 @@ export const buckets: Bucket[] = [
     link: '/docs/reference',
     className: 'bg-yellow-200',
     borderClassName: 'border-yellow-200',
-    Icon: IconSpec,
     href: '/docs/reference',
     icon: IconSpec
   },
@@ -81,7 +75,6 @@ export const buckets: Bucket[] = [
     link: '/docs/migration',
     className: 'bg-blue-400',
     borderClassName: 'border-blue-400',
-    Icon: IconMigration,
     href: '/docs/migration',
     icon: IconMigration
   },
@@ -92,7 +85,6 @@ export const buckets: Bucket[] = [
     link: '/docs/community',
     className: 'bg-orange-200',
     borderClassName: 'border-orange-200',
-    Icon: IconUsers,
     href: '/docs/community',
     icon: IconUsers
   }
@@ -100,6 +92,6 @@ export const buckets: Bucket[] = [
   return {
     ...bucket,
     href: bucket.link,
-    icon: bucket.Icon
+    icon: bucket.icon
   };
 });
