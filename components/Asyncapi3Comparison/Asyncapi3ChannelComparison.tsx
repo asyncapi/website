@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 
-import type { AsyncAPI3ChannelComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/AsyncAPI3ChannelComparison';
+export interface HoverState {
+  Paths: boolean;
+  PathItem: boolean;
+  Operation: boolean;
+  Message: boolean;
+}
+
+export interface AsyncAPI3ChannelComparisonProps {
+  className?: string;
+}
 
 /**
  * @description Component to compare AsyncAPI 2.x and AsyncAPI 3.0 channels.
- * @param {AsyncAPI3ChannelComparisonProps} props - Props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3ChannelComparison({ className = '' }: AsyncAPI3ChannelComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({

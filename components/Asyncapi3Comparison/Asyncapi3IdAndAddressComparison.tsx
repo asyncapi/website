@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 
-import type { AsyncAPI3IdAndAddressComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/Asyncapi3IdAndAddressComparison';
+export interface HoverState {
+  Paths: boolean;
+  PathItem: boolean;
+}
+
+export interface AsyncAPI3IdAndAddressComparisonProps {
+  className?: string;
+}
 
 /**
  * @description Component for comparing AsyncAPI versions based on ID and address.
- * @param {AsyncAPI3IdAndAddressComparisonProps} props - Props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3IdAndAddressComparison({ className = '' }: AsyncAPI3IdAndAddressComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({

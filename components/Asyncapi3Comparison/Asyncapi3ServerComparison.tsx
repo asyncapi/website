@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 
-import type { Asyncapi3ServerComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/Asyncapi3ServerComparison';
+export interface Asyncapi3ServerComparisonProps {
+  className?: string;
+}
+
+export interface HoverState {
+  Host: boolean;
+  Path: boolean;
+}
 
 /**
  * @description React component for comparing AsyncAPI servers between versions 2.x and 3.0.
- * @param {Asyncapi3ServerComparisonProps} props - The props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3ServerComparison({ className = '' }: Asyncapi3ServerComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({

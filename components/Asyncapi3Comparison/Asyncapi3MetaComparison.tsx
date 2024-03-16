@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 
-import type { Asyncapi3MetaComparisonProps, HoverState } from '@/types/Asyncapi3Comparison/Asyncapi3MetaComparison';
+export interface Asyncapi3MetaComparisonProps {
+  className?: string;
+}
+
+export interface HoverState {
+  Info: boolean;
+  Tags: boolean;
+  External: boolean;
+}
 
 /**
  * @description React component for comparing AsyncAPI metadata between versions 2.x and 3.0.
- * @param {Asyncapi3MetaComparisonProps} props - The props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3MetaComparison({ className = '' }: Asyncapi3MetaComparisonProps) {
   const [hoverState, setHoverState] = useState<HoverState>({

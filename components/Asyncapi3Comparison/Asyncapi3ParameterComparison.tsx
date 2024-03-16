@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-import type { Asyncapi3ParameterComparisonProps } from '@/types/Asyncapi3Comparison/Asyncapi3ParameterComparison';
+export interface Asyncapi3ParameterComparisonProps {
+  className?: string;
+}
 
 /**
  * @description React component for comparing AsyncAPI parameters between versions 2.x and 3.0.
- * @param {Asyncapi3ParameterComparisonProps} props - The props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3ParameterComparison({ className = '' }: Asyncapi3ParameterComparisonProps) {
   const [hoverState, setHoverState] = useState({

@@ -1,10 +1,12 @@
 import React from 'react';
 
-import type { Asyncapi3OperationComparisonProps } from '@/types/Asyncapi3Comparison/Asyncapi3OperationComparison';
+export interface Asyncapi3OperationComparisonProps {
+  className?: string;
+}
 
 /**
  * @description React component for comparing AsyncAPI operations between versions 2.x and 3.0.
- * @param {Asyncapi3OperationComparisonProps} props - The props for the component.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3OperationComparison({ className = '' }: Asyncapi3OperationComparisonProps) {
   return (
