@@ -1,27 +1,19 @@
 import { twMerge } from 'tailwind-merge';
-
-interface Option {
-  value: string;
-  text: string;
-}
-
-interface LanguageSelectProps {
-  className?: string;
-  onChange: (value: string) => void;
-  options: Option[];
-  selected: string;
-}
+import { SelectProps } from '@/types/form/Select';
 
 /**
  * @description LanguageSelect component for selecting a language.
- * @param {LanguageSelectProps} props - The props for the LanguageSelect component.
+ * @param {string} [props.className=''] - Additional classes for styling.
+ * @param {Function} [props.onChange=()=>{}] - The callback function invoked when the selection changes.
+ * @param {Array} [props.options=[]] - An array of options for the select dropdown.
+ * @param {string} props.selected - The currently selected option value.
  */
 export default function LanguageSelect({
   className = '',
   onChange = () => {},
   options = [],
   selected
-}: LanguageSelectProps) {
+}: SelectProps) {
   return (
     <select
       data-testid='Select-form'

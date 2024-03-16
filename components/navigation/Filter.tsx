@@ -20,11 +20,13 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
   const [filters, setFilters] = useState<{ [key: string]: Option[] }>({});
   const [query, setQuery] = useState<{ [key: string]: string }>({});
 
+  // Set initial query and filter options when router changes
   useEffect(() => {
     setQuery(router.query as { [key: string]: string });
     applyFilterList(checks, data, setFilters);
   }, [router]);
 
+  // Apply filter when query or data changes
   useEffect(() => {
     onFilterApply(data, onFilter, query);
   }, [query, data, onFilter]);

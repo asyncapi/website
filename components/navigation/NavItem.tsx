@@ -51,6 +51,8 @@ export default function NavItem({
     );
   }
 
+  // Object 'attrs' defines HTML element attributes, including event handlers and styling classes.
+  // 'onClick' and 'onMouseEnter' handle events, 'className' defines styling with hover and focus effects.
   const attrs = {
     onClick,
     onMouseEnter,

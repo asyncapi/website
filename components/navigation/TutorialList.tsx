@@ -26,7 +26,7 @@ export default function TutorialList({ className = '' }: TutorialListProps) {
     <div className={`${className} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
       {tutorials.map((tuto: IDoc, index: number) => (
         <Link href={tuto.slug} key={index}>
-          <a
+          <span
             className='mt-4 flex max-w-lg cursor-pointer flex-col rounded border border-gray-200 p-6 text-gray-700 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg'
           >
             <h5 className='mb-2 font-sans text-lg font-medium antialiased'>{tuto.title}</h5>
@@ -35,7 +35,7 @@ export default function TutorialList({ className = '' }: TutorialListProps) {
               Start tutorial
               <IconArrowRight className='inline-block h-4' />
             </p>
-          </a>
+          </span>
         </Link>
       ))}
     </div>

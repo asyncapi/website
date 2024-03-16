@@ -35,7 +35,7 @@ function EventPostItem({ post, className = '', id }: EventPostItemProps): JSX.El
   const currentDate = `${localTime  }T00:00:00.000Z`;
   const title = post.title || '';
   let color = '';
-  let icon = <></>;
+  let icon: React.ReactElement | null = null;
   let type = '';
 
   if (title.includes('community')) {

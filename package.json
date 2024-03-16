@@ -39,7 +39,7 @@
     "@docsearch/react": "^3.5.2",
     "@fec/remark-a11y-emoji": "^4.0.2",
     "@floating-ui/react-dom-interactions": "^0.13.3",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.1.1",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",

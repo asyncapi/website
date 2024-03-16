@@ -6,6 +6,6 @@ export interface Option {
 export interface SelectProps {
     className?: string;
     onChange?: (selected: string) => void;
-    options: Option[];
-    selected: string;
+    options?: Option[];
+    selected?: string;
 }

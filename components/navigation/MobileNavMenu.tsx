@@ -9,6 +9,7 @@ import learningItems from './learningItems';
 import MenuBlocks from './MenuBlocks';
 import otherItems from './otherItems';
 import toolingItems from './toolingItems';
+import SearchIcon from '../icons/SearchIcon';
 
 interface MenuItem {
   href: string;
@@ -24,7 +25,7 @@ interface MobileNavMenuProps {
  * @description MobileNavMenu component for displaying a responsive navigation menu on mobile devices.
  * @param {MobileNavMenuProps} props - The props for the MobileNavMenu component.
  */
-export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenuProps) {
+export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMenuProps) {
   const [open, setOpen] = useState<string | null>(null);
 
   /**
@@ -56,20 +57,7 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
                   className='flex items-center space-x-2 rounded-md p-2 text-left text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none'
                   aria-label='Open Search'
                 >
-                  <svg
-                    width='24'
-                    height='24'
-                    fill='none'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    className='flex-none text-slate-300 dark:text-slate-400'
-                    aria-hidden='true'
-                  >
-                    <path d='m19 19-3.5-3.5' />
-                    <circle cx='11' cy='11' r='6' />
-                  </svg>
+                  <SearchIcon />
                 </SearchButton>
                 <button
                   onClick={onClickClose}
@@ -94,15 +82,15 @@ export default function MobileNavMenu({ onClickClose = () => {} }: MobileNavMenu
             </div>
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('learning')} data-testid='MobileNav-docs'>
-            <h4 className='flex justify-between font-medium text-gray-800'> <a className='cursor-pointer'><Link href='/docs' passHref className='flex'>Docs</Link></a><NavItemDropdown/></h4>
+            <h4 className='flex justify-between font-medium text-gray-800'> <a className='cursor-pointer'><Link href='/docs' passHref className='flex'>Docs</Link></a><NavItemDropdown /></h4>
             {open === 'learning' && <MenuBlocks items={learningItems} />}
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('tooling')} data-testid='MobileNav-tools'>
-            <h4 className='flex justify-between font-medium text-gray-800'> <a className='cursor-pointer'><Link href='/tools' passHref className='flex'>Tools</Link></a><NavItemDropdown/></h4>
+            <h4 className='flex justify-between font-medium text-gray-800'> <a className='cursor-pointer'><Link href='/tools' passHref className='flex'>Tools</Link></a><NavItemDropdown /></h4>
             {open === 'tooling' && <MenuBlocks items={toolingItems} />}
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('community')} data-testid='MobileNav-community'>
-            <h4 className='flex justify-between font-medium text-gray-800'><a className='cursor-pointer'><Link href='/community' passHref className='flex'>Community</Link></a><NavItemDropdown/></h4>
+            <h4 className='flex justify-between font-medium text-gray-800'><a className='cursor-pointer'><Link href='/community' passHref className='flex'>Community</Link></a><NavItemDropdown /></h4>
             {open === 'community' && <MenuBlocks items={communityItems} />}
           </div>
           <div className='space-y-2 px-5 py-2' onClick={() => showMenu('others')} data-testid='MobileNav-others'>
