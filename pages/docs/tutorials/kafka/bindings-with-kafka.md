@@ -6,11 +6,11 @@ weight: 300
 
 ## Introduction
 
-In a [previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry), you learned how to manage schemas with a schema registry. This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
+[You learned how to manage schemas with a schema registry in the previous tutorial](/docs/tutorials/kafka/managing-schemas-using-schema-registry). This tutorial teaches you how Kafka bindings function by defining Kafka messages and expanding your AsyncAPI document with protocol-specific details.
 
 ## Background context
 
-Bindings are essential for event-driven applications because they provide protocol-specific details, abstracting the complexities of message handling from your application's core logic. They enhance the API's clarity and usability by offering setup options and context for different protocols. [Bindings](docs/concepts/asyncapi-document/adding-bindings) include details like the topics your application reads from or writes to, message formatting, and rules for interacting with multiple data or messages.
+Bindings are essential for event-driven applications because they provide protocol-specific details, abstracting the complexities of message handling from your application's core logic. They enhance the API's clarity and usability by offering setup options and context for different protocols. Bindings include the topics your application reads from or writes to, message formatting, and rules for interacting with multiple data or messages.
 
 In an AsyncAPI document, bindings can be added to various sections like servers, channels, or messages. They contain protocol-specific details unique to each protocol. Binding definitions let you specify functionalities specific to the protocol, which are not covered by AsyncAPI's core features.
 
@@ -58,7 +58,7 @@ Server bindings provide protocol-specific configuration details for connecting a
 
 Server bindings allow you to specify a `schemaRegistryUrl`, which provides an API URL for a given server where a schema registry was used. A schema registry is a repository for managing and validating messages' schemas. To learn more about schema registry, read the [message validation guide for schema registry](https://www.asyncapi.com/docs/guides/message-validation#schema-registry-validation).
 
-`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case, Apicurio Registry. Learn about other fields you can configure under [server bindings.](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
+`schemaRegistryVendor` is used optionally to refer to vendors or platforms that provide the schema registry service, in this case, Apicurio Registry. Learn about other fields you can configure under [server bindings](https://github.com/asyncapi/bindings/tree/master/kafka#server-binding-object).
 
 ```yaml
 servers:
