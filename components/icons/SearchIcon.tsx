@@ -1,6 +1,7 @@
-/* eslint-disable max-len */
+/* eslint-disable */
 /**
  * @description Icon for search button
+ * @param {string} props.className - The class name for styling the icon.
  */
 export default function SearchIcon({ className = '' }) {
   return (

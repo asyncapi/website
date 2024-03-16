@@ -39,6 +39,9 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
           return a.date.format() < currentDate;
         }));
         break;
+      default:
+        setData(getEvents(data));
+        break;
     }
   }, [active, data, setData, currentDate]);
 
