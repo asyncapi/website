@@ -13,32 +13,40 @@ import ExpensesCard from './ExpensesCard';
  * @description BarChartComponent component displays a bar chart for expense analysis.
  */
 export default function BarChartComponent() {
+  // Setting up state variables using useState hook
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
   const [selectedMonth, setSelectedMonth] = useState<string>('All Months');
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
+  // Extracting unique categories and months from the data
   const categories: string[] = getUniqueCategories();
   const months: string[] = Object.keys(ExpensesData);
 
+  // Effect hook to update windowWidth state on resize
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    // Initial setup and event listener
     handleResize();
     window.addEventListener('resize', handleResize);
 
+    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  // Filtering data based on selected month and category
   const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) => selectedMonth === 'All Months' || selectedMonth === month
     ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
     : []);
 
+  // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
 
+  // Calculating total amount per category
   const categoryAmounts: { [category: string]: number } = {};
 
   filteredData.forEach((entry) => {
@@ -49,6 +57,7 @@ export default function BarChartComponent() {
     }
   });
 
+  // Formatting data for the chart
   const chartData: { Category: string; Amount: number }[] = Object.keys(categoryAmounts).map((category) => ({
     Category: category,
     Amount: categoryAmounts[category]
