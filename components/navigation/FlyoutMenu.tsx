@@ -8,7 +8,7 @@ interface FlyoutProps {
 
 /**
  * @description Component representing a flyout menu.
- * @param {FlyoutProps} props - The props for the Flyout component.
+ * @param {MenuItem[]} [props.items=[]] - The list of items to be displayed in the flyout menu.
  */
 export default function Flyout({ items = [] }: FlyoutProps) {
   return (

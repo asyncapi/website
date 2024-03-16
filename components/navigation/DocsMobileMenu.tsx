@@ -9,7 +9,10 @@ import DocsNav from './DocsNav';
 
 /**
  * @description Component representing the mobile menu for documentation.
- * @param {DocsMobileMenuProps} props - The props for the DocsMobileMenu component.
+ * @param {Object} props - Props for the DocsMobileMenu component.
+ * @param {DocsMobileMenuProps} props.post - The post data.
+ * @param {Object} props.navigation - The navigation data.
+ * @param {Function} [props.onClickClose] - The function to handle closing the mobile menu.
  */
 export default function DocsMobileMenu({
   post,

@@ -11,7 +11,9 @@ interface ClickableLogoProps {
 
 /**
  * @description Renders a logo that is clickable and redirects to a specified URL.
- * @param {ClickableLogoProps} props - The props for the component.
+ * @param {string} [href='/'] - The URL to redirect to when the logo is clicked.
+ * @param {string} [className='flex'] - The CSS class for the container of the logo.
+ * @param {string} [logoClassName] - The CSS class for the logo itself.
  */
 export default function ClickableLogo({ href = '/', className = 'flex', logoClassName }: ClickableLogoProps) {
   return (

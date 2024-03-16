@@ -14,7 +14,9 @@ interface EventFilterProps {
 
 /**
  * @description A component for filtering events based on date.
- * @param {EventFilterProps} props - The props for the EventFilter component.
+ * @param {Object} props - The props for the EventFilter component.
+ * @param {Event[]} props.data - The array of events to filter.
+ * @param {React.Dispatch<React.SetStateAction<Event[]>>} props.setData - The function to update the filtered events.
  */
 export default function EventFilter({ data, setData }: EventFilterProps) {
   const localTime = moment().format('YYYY-MM-DD');

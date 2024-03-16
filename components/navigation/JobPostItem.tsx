@@ -4,7 +4,7 @@ import type { JobPostItemProps } from '@/types/navigation/JobPostItem';
 
 /**
  * @description Component representing an item in the job post list.
- * @param {JobPostItemProps} props - The props for the JobPostItem component.
+ * @param {JobPostItemProps} props.job - The job post item to be displayed.
  */
 export default function JobPostItem({ job }: JobPostItemProps) {
   return (

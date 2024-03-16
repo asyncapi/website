@@ -12,7 +12,10 @@ interface LinkComponentProps {
 
 /**
  * @description Custom Link component for handling internationalization (i18n).
- * @param {LinkComponentProps} props - Props for the Link component.
+ * @param {Object} props - Props for the Link component.
+ * @param {React.ReactNode} props.children - The content to render within the Link.
+ * @param {string} [props.locale] - The locale for the link.
+ * @param {string} [props.href] - The URL the link points to.
  */
 export default function LinkComponent({ children, locale, ...props }: LinkComponentProps) {
   const router = useRouter();

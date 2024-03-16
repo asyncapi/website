@@ -16,7 +16,13 @@ interface NavItemProps {
 
 /**
  * @description NavItem component renders a navigation item.
- * @param {NavItemProps} props - Props object for NavItem component.
+ * @param {string} props.text - The text to be displayed in the navigation item.
+ * @param {string} [props.href] - The URL to link to. If provided, the navigation item will be a link.
+ * @param {string} [props.target='_self'] - The target attribute for the link.
+ * @param {Function} [props.onClick] - Event handler for click event.
+ * @param {Function} [props.onMouseEnter] - Event handler for mouse enter event.
+ * @param {boolean} [props.hasDropdown=false] - Indicates if the navigation item has a dropdown menu.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function NavItem({
   text,

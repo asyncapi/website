@@ -9,7 +9,11 @@ import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
 
 /**
  * @description Component representing a filter for data.
- * @param {FilterProps} props - The props for the Filter component.
+ * @param {Object} props - The props for the Filter component.
+ * @param {Object[]} props.data - The data to be filtered.
+ * @param {(data: Object[]) => void} props.onFilter - The callback function to handle filtering.
+ * @param {Object[]} props.checks - The list of filter options.
+ * @param {string} [props.className] - Additional CSS classes for styling.
  */
 export default function Filter({ data, onFilter, checks, className }: FilterProps): JSX.Element {
   const router: NextRouter = useRouter();

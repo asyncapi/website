@@ -5,7 +5,8 @@ interface LabelProps {
 
 /**
  * @description Component representing a label with optional color styling.
- * @param {LabelProps} props - The props for the Label component.
+ * @param {string} props.text - The text to be displayed in the label.
+ * @param {'gray' | 'green'} [props.color='gray'] - The color of the label, either 'gray' or 'green'. Default is 'gray'.
  */
 export default function Label({ text, color = 'gray' }: LabelProps) {
   let colorClasses: string;
