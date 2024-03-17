@@ -82,5 +82,19 @@
     "url": "https://github.com/asyncapi/community/issues/1087",
     "banner": "https://github.com/asyncapi/community/assets/66913810/43114d9e-ee7f-4479-8714-475d67a374aa",
     "date": "2024-03-13T14:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=OTE2Y3YxdGVzNzhqNXJrZThqYml0M2Uwa2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1103",
+    "banner": "https://github-production-user-asset-6210df.s3.amazonaws.com/40604284/313431824-6d286502-6a69-4584-9c01-a2f6984d8320.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240316T213213Z&X-Amz-Expires=300&X-Amz-Signature=558069f389931870f0ec70cc3f7f4e3bf0e1c4f669a2bd74763f6ed5ae4b2206&X-Amz-SignedHeaders=host&actor_id=40604284&key_id=0&repo_id=347621559",
+    "date": "2024-03-19T08:00:00.000Z"
+  },
+  {
+    "title": "Let's talk about contributing GSoC FAQ",
+    "calLink": "https://www.google.com/calendar/event?eid=ZmVkcTI2aTNsZjhwcHZuNWZhb2UwNHE1a2MgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1104",
+    "banner": "https://github-production-user-asset-6210df.s3.amazonaws.com/40604284/313431821-e905e25c-87b1-466a-adc5-e8551556d7ba.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240316T213412Z&X-Amz-Expires=300&X-Amz-Signature=4bbf99e0b0da3bfd2b5c3a42394f49314acf5cec64be0394487a5809dc489d71&X-Amz-SignedHeaders=host&actor_id=40604284&key_id=0&repo_id=347621559",
+    "date": "2024-03-21T14:00:00.000Z"
   }
 ]
