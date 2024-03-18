@@ -7,9 +7,9 @@ interface DataListType {
 };
 
 interface FiltersDropdownProps {
-  dataList: DataListType[];
-  checkedOptions: string[];
-  setStateFunction: React.Dispatch<React.SetStateAction<string[]>>;
+  dataList?: DataListType[];
+  checkedOptions?: string[];
+  setCheckedOptions: React.Dispatch<React.SetStateAction<string[]>>;
   className?: string;
 };
 
@@ -18,13 +18,13 @@ interface FiltersDropdownProps {
  *
  * @param {DataListType[]} props.dataList - List of filter options.
  * @param {string[]} props.checkedOptions - List of options that are currently checked.
- * @param {React.Dispatch<React.SetStateAction<string[]>>} props.setStateFunction - Function to set check state of options.
+ * @param {React.Dispatch<React.SetStateAction<string[]>>} props.setCheckedOptions - Function to set check state of options.
  * @param {string} props.className - Additional CSS classes for the component.
  */
 export default function FiltersDropdown({
   dataList = [],
   checkedOptions = [],
-  setStateFunction,
+  setCheckedOptions,
   className = ''
 }: FiltersDropdownProps) {
   const handleClickOption = (event: React.MouseEvent, option: string) => {
@@ -33,7 +33,7 @@ export default function FiltersDropdown({
       ? checkedOptions.filter(item => item !== option)
       : [...checkedOptions, option];
 
-    setStateFunction(updatedOptions);
+    setCheckedOptions(updatedOptions);
   };
 
   return (
