@@ -267,7 +267,7 @@ export default function AlgoliaSearch({ children } : { children: React.ReactNode
   return (
     <>
       <Head>
-        <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='true' />
+        <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
       </Head>
       <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
         {children}
