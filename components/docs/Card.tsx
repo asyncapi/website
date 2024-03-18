@@ -1,12 +1,11 @@
 import Link from 'next/link';
 
+import type { IconType } from '@/types/components/IconType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
-
-type IconType = (props: { className: string }) => React.ReactElement;
 
 interface CardProps {
   title: string;

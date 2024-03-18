@@ -1,4 +1,5 @@
-import type React from 'react';
+
+import type { IconType } from '@/types/components/IconType';
 
 import IconGettingStarted from '../icons/GettingStarted';
 import IconGuide from '../icons/Guide';
@@ -7,8 +8,6 @@ import IconSpec from '../icons/Spec';
 import IconTutorials from '../icons/Tutorials';
 import IconUseCases from '../icons/UseCases';
 import IconUsers from '../icons/Users';
-
-type IconType = (props: any) => React.ReactElement;
 
 interface BucketType {
   name: string;
@@ -20,7 +19,7 @@ interface BucketType {
   Icon: IconType;
 }
 
-export const buckets : BucketType[] = [
+export const buckets: BucketType[] = [
   {
     name: 'concepts',
     title: 'Concepts',
