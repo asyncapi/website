@@ -1,26 +1,64 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5f0CJh",
-      "isPR": true,
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: tutorial for managing schemas with Schema Registry",
-      "author": "Arya-Gupta",
-      "resourcePath": "/asyncapi/website/pull/2331",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 27.56876051992884
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 33.59942688366328
     },
     {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 25.55853839868403
+    },
+    {
+      "id": "I_kwDOBW5R_c5Pi3rO",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Epic roadmap to the new AsyncAPI community section",
+      "author": "AceTheCreator",
+      "resourcePath": "/asyncapi/website/issues/903",
       "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.9739670999407
+      "labels": [
+        {
+          "name": "keep-open",
+          "color": "ffee84"
+        },
+        {
+          "name": "🎨 design",
+          "color": "0D67D3"
+        }
+      ],
+      "score": 22.68679251119144
     },
     {
       "id": "PR_kwDOFLhIt85bqKL8",
@@ -31,27 +69,23 @@
       "resourcePath": "/asyncapi/community/pull/897",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 21.538094156194408
+      "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBW5R_c5J6qNe",
+      "id": "I_kwDOBW5R_c5BIl5P",
       "isPR": false,
-      "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
+      "isAssigned": true,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
       "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
           "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
-      "score": 20.102221212448114
+      "score": 19.815046623698855
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -95,7 +129,7 @@
           "color": "0e8a16"
         }
       ],
-      "score": 18.091999091203302
+      "score": 18.953522857451077
     },
     {
       "id": "PR_kwDOFLhIt85js7KX",
@@ -106,7 +140,50 @@
       "resourcePath": "/asyncapi/community/pull/1013",
       "repo": "asyncapi/community",
       "labels": [],
-      "score": 18.091999091203302
+      "score": 18.953522857451077
+    },
+    {
+      "id": "I_kwDODou01c5E_LV0",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Create onboarding for features of Studio",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/studio/issues/284",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 17.517649913704783
+    },
+    {
+      "id": "PR_kwDOBW5R_c5ol2IR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: migrate docs, data, and editor components to typescript",
+      "author": "devilkiller-ag",
+      "resourcePath": "/asyncapi/website/pull/2735",
+      "repo": "asyncapi/website",
+      "labels": [
+        {
+          "name": "autoupdate",
+          "color": "ededed"
+        }
+      ],
+      "score": 17.230475324955524
+    },
+    {
+      "id": "PR_kwDOFDnrNc5dgyM7",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "feat: add POC for measuring adoption",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
+      "labels": [],
+      "score": 16.943300736206268
     },
     {
       "id": "I_kwDOBW5R_c580Z0o",
@@ -123,53 +200,66 @@
         }
       ],
       "score": 16.65612614745701
+    }
+  ],
+  "goodFirstIssues": [
+    {
+      "id": "I_kwDOE8Qh386CSg4-",
+      "title": "Java generator does not include import for dictionary models",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1892",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Java generator",
+          "color": "d4c5f9"
+        }
+      ]
     },
     {
-      "id": "I_kwDODou01c5E_LV0",
-      "isPR": false,
+      "id": "I_kwDODwv8N86CATWV",
+      "title": "Unaligned hero section",
       "isAssigned": false,
-      "title": "Create onboarding for features of Studio",
-      "author": "mcturco",
-      "resourcePath": "/asyncapi/studio/issues/284",
-      "repo": "asyncapi/studio",
+      "resourcePath": "/asyncapi/conference-website/issues/267",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
       "labels": [
         {
           "name": "enhancement",
           "color": "a2eeef"
         }
-      ],
-      "score": 16.36895155870775
+      ]
     },
     {
-      "id": "PR_kwDOKp3ICM5g9w8f",
-      "isPR": true,
+      "id": "I_kwDODwv8N86CASyz",
+      "title": "Card text is unreadable ",
       "isAssigned": false,
-      "title": "docs: adding content for module 3",
-      "author": "TRohit20",
-      "resourcePath": "/asyncapi/learning-paths/pull/9",
-      "repo": "asyncapi/learning-paths",
-      "labels": [],
-      "score": 15.220253203710714
+      "resourcePath": "/asyncapi/conference-website/issues/266",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
     },
     {
-      "id": "PR_kwDODou01c5Iv4zR",
-      "isPR": true,
+      "id": "I_kwDOCxglSM6Bxg4I",
+      "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
       "isAssigned": false,
-      "title": "docs: added table of contents and introduction document for Studio tool",
-      "author": "Jagrutiti",
-      "resourcePath": "/asyncapi/studio/pull/553",
-      "repo": "asyncapi/studio",
-      "labels": [],
-      "score": 14.933078614961456
-    },
-    {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
+      "resourcePath": "/asyncapi/converter-js/issues/233",
+      "repo": "asyncapi/converter-js",
+      "author": "jonaslagoni",
+      "area": "typescript",
       "labels": [
         {
           "name": "enhancement",
@@ -177,25 +267,7 @@
         },
         {
           "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 14.645904026212197
-    }
-  ],
-  "goodFirstIssues": [
-    {
-      "id": "I_kwDODou01c6Aib3a",
-      "title": "Disable the generators that are not yet supported in V3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/studio/issues/979",
-      "repo": "asyncapi/studio",
-      "author": "Amzani",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
+          "color": "f4d473"
         }
       ]
     },
@@ -780,6 +852,10 @@
       "author": "alequetzalli",
       "area": "docs",
       "labels": [
+        {
+          "name": "stale",
+          "color": "ededed"
+        },
         {
           "name": "📑 docs",
           "color": "E50E99"
