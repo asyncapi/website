@@ -32,7 +32,7 @@ export default function HomeCards({
   btnText,
   link,
   className
-} : HomeCardProp) : React.ReactNode {
+} : HomeCardProp) {
   return (
     <div className='z-40 mt-20 w-full rounded-lg bg-white shadow-xl md:flex md:h-130 md:justify-between'>
       <div className='flex h-auto w-full flex-col justify-between p-10 text-center md:w-2/5 md:text-left'>

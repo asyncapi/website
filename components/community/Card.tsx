@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
+import { CardType } from '@/types/components/community/CardPropsType';
 import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -12,7 +13,7 @@ interface SmallHomeCardProp {
   icon: string;
   tagline: string;
   taglineBg: string;
-  type?: string;
+  type?: CardType;
   heading: string;
   description: string;
   bg: string;
@@ -27,7 +28,7 @@ interface SmallHomeCardProp {
  * @param {string} props.icon - The icon for the card.
  * @param {string} props.tagline - The tagline for the card.
  * @param {string} props.taglineBg - The background color for the tagline.
- * @param {string} props.type - The type of the card (either 'small' or 'large').
+ * @param {CardType} props.type - The type of the card (either 'small' or 'large').
  * @param {string} props.heading - The heading for the card.
  * @param {string} props.description - The description for the card.
  * @param {string} props.bg - The background color for the card.
@@ -35,11 +36,11 @@ interface SmallHomeCardProp {
  * @param {string} props.btnBg - The background color for the button.
  * @param {string} props.link - The link for the button.
  */
-export default function SmallHomeCard({
+export default function Card({
   icon,
   tagline,
   taglineBg,
-  type = 'large',
+  type = CardType.LARGE,
   heading,
   description,
   bg,
@@ -47,7 +48,7 @@ export default function SmallHomeCard({
   btnBg,
   link
 }: SmallHomeCardProp) {
-  if (type === 'small') {
+  if (type === CardType.SMALL) {
     return (
       <Link href={link} target={link.includes('http') ? '_blank' : undefined}>
         <div
