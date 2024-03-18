@@ -8,7 +8,7 @@ export interface Filter {
   categories: string[];
   hasCommercial: boolean;
   isAsyncAPIOwner: boolean;
-  language: { name: string; color: string; borderColor: string }[];
+  language?: { name: string; color: string; borderColor: string }[];
   technology: { name: string; color: string; borderColor: string }[];
 };
 
@@ -18,3 +18,10 @@ export interface ToolData {
   links: Link;
   filters: Filter;
 };
+
+export interface ToolsListType {
+  [category: string]: {
+    description: string;
+    toolsList: ToolData[];
+  }
+}

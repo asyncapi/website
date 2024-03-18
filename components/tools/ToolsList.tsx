@@ -1,17 +1,10 @@
-import type { ToolData } from '@/types/components/tools/ToolDataType';
+import type { ToolsListType } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import ToolsCard from './ToolsCard';
-
-interface ToolsListType {
-  [category: string]: {
-    description: string;
-    toolsList: ToolData[];
-  }
-}
 
 interface ToolsListProp {
   toolsListData: ToolsListType;
