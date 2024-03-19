@@ -16,7 +16,7 @@ interface BucketType {
   link: string;
   className: string;
   borderClassName: string;
-  Icon: IconType;
+  icon: IconType;
 }
 
 export const buckets: BucketType[] = [
@@ -27,7 +27,7 @@ export const buckets: BucketType[] = [
     link: '/docs/concepts',
     className: 'bg-secondary-200',
     borderClassName: 'border-secondary-200',
-    Icon: IconGettingStarted
+    icon: IconGettingStarted
   },
   {
     name: 'tutorials',
@@ -36,7 +36,7 @@ export const buckets: BucketType[] = [
     link: '/docs/tutorials',
     className: 'bg-pink-100',
     borderClassName: 'border-pink-100',
-    Icon: IconTutorials
+    icon: IconTutorials
   },
   {
     name: 'guides',
@@ -45,7 +45,7 @@ export const buckets: BucketType[] = [
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
-    Icon: IconGuide
+    icon: IconGuide
   },
   {
     name: 'tools',
@@ -54,7 +54,7 @@ export const buckets: BucketType[] = [
     link: '/docs/tools',
     className: 'bg-green-200',
     borderClassName: 'border-green-200',
-    Icon: IconUseCases
+    icon: IconUseCases
   },
   {
     name: 'reference',
@@ -63,7 +63,7 @@ export const buckets: BucketType[] = [
     link: '/docs/reference',
     className: 'bg-yellow-200',
     borderClassName: 'border-yellow-200',
-    Icon: IconSpec
+    icon: IconSpec
   },
   {
     name: 'migration',
@@ -72,7 +72,7 @@ export const buckets: BucketType[] = [
     link: '/docs/migration',
     className: 'bg-blue-400',
     borderClassName: 'border-blue-400',
-    Icon: IconMigration
+    icon: IconMigration
   },
   {
     name: 'community',
@@ -81,13 +81,13 @@ export const buckets: BucketType[] = [
     link: '/docs/community',
     className: 'bg-orange-200',
     borderClassName: 'border-orange-200',
-    Icon: IconUsers
+    icon: IconUsers
   }
 ].map(bucket => {
-  // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc.
+  // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `icon` etc.
   return {
     ...bucket,
     href: bucket.link,
-    icon: bucket.Icon
+    icon: bucket.icon
   };
 });
