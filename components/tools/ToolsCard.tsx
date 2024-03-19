@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import TextTruncate from 'react-text-truncate';
 
-import type { ToolData } from '@/types/components/tools/ToolDataType';
+import type { ToolData, VisibleDataListType } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -10,8 +10,6 @@ import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 import { CardData } from './CardData';
 import Tag from './Tags';
-
-type VisibleType = Record<string, boolean>;
 
 interface ToolsCardProp {
   toolData: ToolData;
@@ -42,7 +40,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
 
   let onGit = false;
 
-  if (toolData.links.repoUrl) {
+  if (toolData?.links?.repoUrl) {
     const url = new URL(toolData.links.repoUrl);
 
     if (url.host === 'github.com') {
@@ -52,7 +50,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
     }
   }
 
-  const [visible, setVisible] = useState<VisibleType>({
+  const [visible, setVisible] = useState<VisibleDataListType>({
     lang: false,
     tech: false,
     desc: false
@@ -72,7 +70,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
                 className='group relative'
                 onMouseLeave={() => (setTimeout(() => { if (visible.desc) setVisible({ ...visible, desc: false }); }, 300))}
               >
-                {toolData.filters.hasCommercial === false ? 'Open Source' : 'Commercial'}
+                {toolData.filters?.hasCommercial === false ? 'Open Source' : 'Commercial'}
                 {visible.desc && <span className='absolute -left-2/3 top-8 z-10 w-48 -translate-x-12 rounded border border-gray-200 bg-white px-2 py-1 text-left text-gray-700 shadow-md'>
                   {Data.properties.filters.properties.hasCommercial.description}
                 </span>}
@@ -98,7 +96,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
       </div>
       <hr className='mx-6' />
       <div className='grow'>
-        {(toolData?.filters?.language || toolData?.filters?.technology?.length > 0) ? <div className='my-6'>
+        {(toolData.filters?.language || toolData?.filters?.technology?.length) ? <div className='my-6'>
           {toolData.filters.language && <div className='mx-6 flex flex-col gap-2'>
             <CardData
               className='text-sm
@@ -112,7 +110,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               setRead={setReadMore}
             />
             <div className='flex gap-2'>
-              {toolData.filters.language.map((item, index) => (
+              {toolData.filters?.language && toolData.filters?.language.map((item, index) => (
                 <Tag key={index}
                   name={item.name}
                   bgColor={item.color}
@@ -121,7 +119,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               ))}
             </div>
           </div>}
-          {toolData?.filters?.technology?.length > 0 && <div className='mx-6 my-4 flex flex-col gap-2'>
+          {toolData.filters?.technology?.length && <div className='mx-6 my-4 flex flex-col gap-2'>
             <CardData
               className='text-sm text-gray-700'
               heading='TECHNOLOGIES'
@@ -133,7 +131,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
               setRead={setReadMore}
             />
             <div className='flex flex-wrap gap-2'>
-              {toolData?.filters?.technology.map((item, index) => (
+              {toolData.filters?.technology && toolData.filters.technology.map((item, index) => (
                 <Tag key={index}
                   name={item.name}
                   bgColor={item.color}
@@ -147,7 +145,7 @@ export default function ToolsCard({ toolData }: ToolsCardProp) {
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'> No further details provided </div>
           </div>}
       </div>
-      {(toolData.links.repoUrl || toolData.links.websiteUrl || toolData.links.docsUrl) && <>
+      {(toolData?.links?.repoUrl || toolData?.links?.websiteUrl || toolData?.links?.docsUrl) && <>
         <hr className='' />
         <div className='flex'>
           {toolData.links.repoUrl && <>

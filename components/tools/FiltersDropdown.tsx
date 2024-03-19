@@ -1,13 +1,11 @@
 import { twMerge } from 'tailwind-merge';
 
-interface DataListType {
-  name: string;
-  color: string;
-  borderColor: string;
-};
+import type { Category, Language, Technology } from '@/types/components/tools/ToolDataType';
+
+type DataList = Language[] | Technology[] | Category[];
 
 interface FiltersDropdownProps {
-  dataList?: DataListType[];
+  dataList?: DataList;
   checkedOptions?: string[];
   setCheckedOptions: React.Dispatch<React.SetStateAction<string[]>>;
   className?: string;
@@ -16,7 +14,7 @@ interface FiltersDropdownProps {
 /**
  * @description This component displays Filter Dropdown Component.
  *
- * @param {DataListType[]} props.dataList - List of filter options.
+ * @param {DataList} props.dataList - List of filter options.
  * @param {string[]} props.checkedOptions - List of options that are currently checked.
  * @param {React.Dispatch<React.SetStateAction<string[]>>} props.setCheckedOptions - Function to set check state of options.
  * @param {string} props.className - Additional CSS classes for the component.

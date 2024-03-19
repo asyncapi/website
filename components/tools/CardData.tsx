@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TextTruncate from 'react-text-truncate';
 
+import type { VisibleDataListType } from '@/types/components/tools/ToolDataType';
+
 import InfoIcon from '../icons/InfoIcon';
 
-type VisibleType = Record<string, boolean>;
-
 interface CardDataProps {
-  className: string;
-  visible: VisibleType;
+  visible: VisibleDataListType;
   heading: string;
   data: string;
   read: boolean;
   setRead: React.Dispatch<React.SetStateAction<boolean>>;
-  setVisible: React.Dispatch<React.SetStateAction<VisibleType>>;
-  type: string;
+  setVisible: React.Dispatch<React.SetStateAction<VisibleDataListType>>;
+  type: keyof VisibleDataListType;
+  className?: string;
 };
 
 /**
@@ -21,22 +21,23 @@ interface CardDataProps {
  *
  * @param {SelectTagsProps} props - The props for the Cards Data component.
  * @param {string} props.className - Additional CSS classes for the component.
- * @param {VisibleType} props.visible - Visibility status for different types.
+ * @param {VisibleDataListType} props.visible - Visibility status for different types.
  * @param {string} props.heading - The heading text.
  * @param {string} props.data - The data to be displayed.
  * @param {boolean} props.read - Read status.
  * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setRead - Function to set read status.
- * @param {React.Dispatch<React.SetStateAction<VisibleType>>} props.type - Function to set visibility status.
+ * @param {React.Dispatch<React.SetStateAction<VisibleDataListType>>} props.setVisible - Function to set visibility status.
+ * @param {string} props.type - Type of the card data.
  */
 export const CardData = ({
-  className,
   visible,
   heading,
   data,
   read,
   setRead,
   setVisible,
-  type
+  type,
+  className = ''
 }: CardDataProps) => {
   const [outsideClick, setOutsideClick] = useState<boolean>(true);
   const [description, setShowDescription] = useState<boolean>(false);
