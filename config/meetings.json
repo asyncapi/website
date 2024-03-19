@@ -96,5 +96,19 @@
     "url": "https://github.com/asyncapi/community/issues/1104",
     "banner": "https://github-production-user-asset-6210df.s3.amazonaws.com/40604284/313431821-e905e25c-87b1-466a-adc5-e8551556d7ba.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240316T213412Z&X-Amz-Expires=300&X-Amz-Signature=4bbf99e0b0da3bfd2b5c3a42394f49314acf5cec64be0394487a5809dc489d71&X-Amz-SignedHeaders=host&actor_id=40604284&key_id=0&repo_id=347621559",
     "date": "2024-03-21T14:00:00.000Z"
+  },
+  {
+    "title": "Essential building blocks",
+    "calLink": "https://www.google.com/calendar/event?eid=cjFnc2VrNjIzMGZmOXE2Y2FqazF1aHJobWMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1107",
+    "banner": "",
+    "date": "2024-03-26T18:00:00.000Z"
+  },
+  {
+    "title": "Essential building blocks",
+    "calLink": "https://www.google.com/calendar/event?eid=NW42YmtrcTl1ajRscThmMm9qMzhqMG05dHMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1108",
+    "banner": "",
+    "date": "2024-04-02T18:00:00.000Z"
   }
 ]
