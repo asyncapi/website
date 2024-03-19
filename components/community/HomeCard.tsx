@@ -6,7 +6,7 @@ import { HeadingLevel, HeadingTypeStyle } from '@/types/typography/Heading';
 import Button from '../buttons/Button';
 import Heading from '../typography/Heading';
 
-interface HomeCardProp {
+interface HomeCardProps {
   headline: string;
   title: string;
   description: string;
@@ -17,7 +17,7 @@ interface HomeCardProp {
 
 /**
  * @description This component displays Home Card.
- * @param {HomeCardProp} props - The props for Home Card component.
+ * @param {HomeCardProps} props - The props for Home Card component.
  * @param {string} props.headline - The headline for the home card.
  * @param {string} props.title - The title for the home card.
  * @param {string} props.description - The description for the home card.
@@ -32,7 +32,7 @@ export default function HomeCards({
   btnText,
   link,
   className
-} : HomeCardProp) {
+} : HomeCardProps) {
   return (
     <div className='z-40 mt-20 w-full rounded-lg bg-white shadow-xl md:flex md:h-130 md:justify-between'>
       <div className='flex h-auto w-full flex-col justify-between p-10 text-center md:w-2/5 md:text-left'>

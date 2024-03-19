@@ -9,7 +9,7 @@ import IconArrowUp from '../icons/ArrowUp';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 
-interface SmallHomeCardProp {
+interface CardProps {
   icon: string;
   tagline: string;
   taglineBg: string;
@@ -24,7 +24,6 @@ interface SmallHomeCardProp {
 
 /**
  * @description This component displays Small Home Card.
- * @param {SmallHomeCardProp} props - The props for Small Home Card component.
  * @param {string} props.icon - The icon for the card.
  * @param {string} props.tagline - The tagline for the card.
  * @param {string} props.taglineBg - The background color for the tagline.
@@ -47,7 +46,7 @@ export default function Card({
   btnText,
   btnBg,
   link
-}: SmallHomeCardProp) {
+}: CardProps) {
   if (type === CardType.SMALL) {
     return (
       <Link href={link} target={link.includes('http') ? '_blank' : undefined}>
