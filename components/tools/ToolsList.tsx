@@ -1,4 +1,4 @@
-import type { ToolsListType } from '@/types/components/tools/ToolDataType';
+import type { ToolsListData } from '@/types/components/tools/ToolDataType';
 import { HeadingTypeStyle } from '@/types/typography/Heading';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
@@ -7,14 +7,14 @@ import Paragraph from '../typography/Paragraph';
 import ToolsCard from './ToolsCard';
 
 interface ToolsListProp {
-  toolsListData: ToolsListType;
+  toolsListData: ToolsListData;
 }
 
 /**
  * @description This component displays list of tools.
  *
  * @param {ToolsListProp} props - Props for the ToolsList component.
- * @param {ToolsListType} props.toolsListData - List of Tools.
+ * @param {ToolsListData} props.toolsListData - List of Tools.
  */
 export default function ToolsList({ toolsListData }: ToolsListProp) {
   return (

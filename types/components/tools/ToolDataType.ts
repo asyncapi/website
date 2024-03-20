@@ -8,19 +8,19 @@ export interface Language {
   name: string;
   color: string;
   borderColor: string;
-}
+};
 
 export interface Technology {
   name: string;
   color: string;
   borderColor: string;
-}
+};
 
 export interface Category {
   name: string;
   tag: string;
   description: string;
-}
+};
 
 export interface Filter {
   categories: string[];
@@ -37,7 +37,7 @@ export interface ToolData {
   filters: Filter;
 };
 
-export interface ToolsListType {
+export interface ToolsListData {
   [category: string]: {
     description: string;
     toolsList: ToolData[];
