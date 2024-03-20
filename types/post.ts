@@ -1,3 +1,4 @@
+import type caseStudies from '../config/case-studies.json';
 import type posts from '../config/posts.json';
 
 export type IPosts = typeof posts;
@@ -14,3 +15,6 @@ export type IAboutPost = IAbout[number];
 export type IPost = IDoc & IBlogPost & IAboutPost;
 
 export type IDocsTree = IPosts['docsTree'];
+
+export type ICaseStudies = typeof caseStudies;
+export type ICaseStudy = ICaseStudies[number];
