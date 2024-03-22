@@ -1,26 +1,44 @@
 {
   "hotDiscussions": [
     {
-      "id": "PR_kwDOBW5R_c5f0CJh",
-      "isPR": true,
+      "id": "I_kwDOFLhIt84-OUI3",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: tutorial for managing schemas with Schema Registry",
-      "author": "Arya-Gupta",
-      "resourcePath": "/asyncapi/website/pull/2331",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 27.56876051992884
+      "title": "Create educational & technical video explaining AsyncAPI's main features",
+      "author": "alequetzalli",
+      "resourcePath": "/asyncapi/community/issues/155",
+      "repo": "asyncapi/community",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
+        }
+      ],
+      "score": 33.59942688366328
     },
     {
-      "id": "PR_kwDOBW5R_c5fbyLb",
-      "isPR": true,
+      "id": "I_kwDODou01c5BZZv-",
+      "isPR": false,
       "isAssigned": false,
-      "title": "docs: tutorial for bindings with Kafka",
-      "author": "CynthiaPeter",
-      "resourcePath": "/asyncapi/website/pull/2318",
-      "repo": "asyncapi/website",
-      "labels": [],
-      "score": 22.9739670999407
+      "title": "Open Graph link preview image according to the document to open",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/studio/issues/224",
+      "repo": "asyncapi/studio",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        },
+        {
+          "name": "keep-open",
+          "color": "f9dd4b"
+        }
+      ],
+      "score": 26.420062164931807
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -54,24 +72,47 @@
       "score": 22.112443333692923
     },
     {
-      "id": "I_kwDOBW5R_c5J6qNe",
+      "id": "PR_kwDODou01c5Iv4zR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added table of contents and introduction document for Studio tool",
+      "author": "Jagrutiti",
+      "resourcePath": "/asyncapi/studio/pull/553",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
       "isPR": false,
       "isAssigned": false,
-      "title": "Measuring AsyncAPI spec adoption",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/780",
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 20.102221212448114
+    },
+    {
+      "id": "I_kwDOBW5R_c5BIl5P",
+      "isPR": false,
+      "isAssigned": true,
+      "title": "Add new page for collecting user testing participants",
+      "author": "mcturco",
+      "resourcePath": "/asyncapi/website/issues/529",
       "repo": "asyncapi/website",
       "labels": [
         {
           "name": "enhancement",
           "color": "84b6eb"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ],
-      "score": 20.102221212448114
+      "score": 19.815046623698855
     },
     {
       "id": "I_kwDODou01c5AqLB8",
@@ -92,6 +133,17 @@
         }
       ],
       "score": 19.527872034949596
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 19.240697446200336
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -118,51 +170,15 @@
       "score": 18.953522857451077
     },
     {
-      "id": "I_kwDODou01c5BZZv-",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "Open Graph link preview image according to the document to open",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/studio/issues/224",
-      "repo": "asyncapi/studio",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
-        },
-        {
-          "name": "keep-open",
-          "color": "f9dd4b"
-        }
-      ],
-      "score": 18.953522857451077
-    },
-    {
-      "id": "PR_kwDOFLhIt85js7KX",
+      "id": "PR_kwDOFDnrNc5dgyM7",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
+      "title": "feat: add POC for measuring adoption",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
       "labels": [],
       "score": 18.091999091203302
-    },
-    {
-      "id": "I_kwDOBW5R_c580Z0o",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "New Contributor Guide and Maintenance Setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/2586",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 16.65612614745701
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -178,21 +194,59 @@
           "color": "a2eeef"
         }
       ],
-      "score": 16.36895155870775
-    },
-    {
-      "id": "PR_kwDOFDnrNc5dgyM7",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add POC for measuring adoption",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/cli/pull/859",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 15.507427792459973
+      "score": 17.517649913704783
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODou01c6C8lNQ",
+      "title": "FIx linting issues in studio-next",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/studio/issues/1029",
+      "repo": "asyncapi/studio",
+      "author": "Amzani",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDOE8Qh386CSg4-",
+      "title": "Java generator does not include import for dictionary models",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/modelina/issues/1892",
+      "repo": "asyncapi/modelina",
+      "author": "jonaslagoni",
+      "area": "typescript",
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "Java generator",
+          "color": "d4c5f9"
+        }
+      ]
+    },
+    {
+      "id": "I_kwDODwv8N86CASyz",
+      "title": "Card text is unreadable ",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/conference-website/issues/266",
+      "repo": "asyncapi/conference-website",
+      "author": "AceTheCreator",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOCxglSM6Bxg4I",
       "title": "Convert OpenAPI 3.0 to AsyncAPI 3.0",
@@ -209,36 +263,10 @@
         {
           "name": "keep-open",
           "color": "f4d473"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOE8Qh386BZ9dP",
-      "title": "[BUG] C# setter for property named `value` prevents assignment.",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/modelina/issues/1862",
-      "repo": "asyncapi/modelina",
-      "author": "RowlandBanks",
-      "area": "typescript",
-      "labels": [
+        },
         {
-          "name": "bug",
-          "color": "d73a4a"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c6BEfZr",
-      "title": "[BUG] CaseStudy page horizontal spacing",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/website/issues/2727",
-      "repo": "asyncapi/website",
-      "author": "RamGoel",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "bug",
-          "color": "ee0701"
+          "name": "bounty",
+          "color": "0E8A16"
         }
       ]
     },
@@ -664,36 +692,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUMg",
-      "title": "docs: generate code (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1870",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUMB",
-      "title": "docs: create an AsyncAPI document (interactive version) - adapt for v3 ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1869",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
