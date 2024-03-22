@@ -1,5 +1,3 @@
-
-
 export default function IconTwitter({ className, isHovered, setIsHovered }) {
 	return (
 		<svg 
