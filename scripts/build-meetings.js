@@ -50,4 +50,5 @@ async function buildMeetings() {
     console.error(e);
   }
 }
+module.exports=buildMeetings
 buildMeetings();
