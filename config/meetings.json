@@ -1,12 +1,5 @@
 [
   {
-    "title": "Community Meeting",
-    "calLink": "https://www.google.com/calendar/event?eid=M2I4MXRidmpqb2ZyZTUyajhsZm41ZjN0bTggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
-    "url": "https://github.com/asyncapi/community/issues/979",
-    "banner": "https://user-images.githubusercontent.com/40604284/288050762-4d064212-22ea-4af0-9d1a-b23c8fd70d6b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3ODI2MDUsIm5iZiI6MTcwMTc4MjMwNSwicGF0aCI6Ii80MDYwNDI4NC8yODgwNTA3NjItNGQwNjQyMTItMjJlYS00YWYwLTlkMWEtYjIzYzhmZDcwZDZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA1VDEzMTgyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYzOGFhZmI5NzAxODljZDQ4NTFhNDc0NGIxNGQzZDZlZmU3ZjhhYTExOGU1YTRkN2FjODU1MzgzZGU0M2UzNmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-FT5AFf2Np1cFxMyXVga0zAfLjFc9fspwL-BJ_t7KLg",
-    "date": "2023-12-12T08:00:00.000Z"
-  },
-  {
     "title": "Overview of AyncAPI v3",
     "calLink": "https://www.google.com/calendar/event?eid=c3E0Ym1qMTFnMDY5ODljdGk1ajh2anRrdjAgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
     "url": "https://github.com/asyncapi/community/issues/981",
@@ -124,5 +117,12 @@
     "url": "https://github.com/asyncapi/community/issues/1110",
     "banner": "https://github.com/asyncapi/community/assets/66913810/8769dbe0-baef-42f7-b55e-74f5a288da55",
     "date": "2024-03-27T14:00:00.000Z"
+  },
+  {
+    "title": "Community Growth Working Group",
+    "calLink": "https://www.google.com/calendar/event?eid=MXU4ZXJnOW5sbWZuOW5ndmE3MGwyYzRvdjggY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1118",
+    "banner": "",
+    "date": "2024-03-27T16:00:00.000Z"
   }
 ]
