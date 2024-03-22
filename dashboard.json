@@ -38,7 +38,7 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 25.55853839868403
+      "score": 26.420062164931807
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -70,6 +70,33 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
+    },
+    {
+      "id": "PR_kwDODou01c5Iv4zR",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "docs: added table of contents and introduction document for Studio tool",
+      "author": "Jagrutiti",
+      "resourcePath": "/asyncapi/studio/pull/553",
+      "repo": "asyncapi/studio",
+      "labels": [],
+      "score": 20.38939580119737
+    },
+    {
+      "id": "I_kwDOGJ23c85V9C3c",
+      "isPR": false,
+      "isAssigned": false,
+      "title": "Support `referenceIntoComponents` for other components than `message`",
+      "author": "thake",
+      "resourcePath": "/asyncapi/bundler/issues/97",
+      "repo": "asyncapi/bundler",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ],
+      "score": 20.102221212448114
     },
     {
       "id": "I_kwDOBW5R_c5BIl5P",
@@ -108,6 +135,17 @@
       "score": 19.527872034949596
     },
     {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 19.240697446200336
+    },
+    {
       "id": "I_kwDOFDnrNc51TZDT",
       "isPR": false,
       "isAssigned": true,
@@ -132,15 +170,15 @@
       "score": 18.953522857451077
     },
     {
-      "id": "PR_kwDOFLhIt85js7KX",
+      "id": "PR_kwDOFDnrNc5dgyM7",
       "isPR": true,
       "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
+      "title": "feat: add POC for measuring adoption",
+      "author": "smoya",
+      "resourcePath": "/asyncapi/cli/pull/859",
+      "repo": "asyncapi/cli",
       "labels": [],
-      "score": 18.953522857451077
+      "score": 18.091999091203302
     },
     {
       "id": "I_kwDODou01c5E_LV0",
@@ -157,52 +195,24 @@
         }
       ],
       "score": 17.517649913704783
-    },
-    {
-      "id": "PR_kwDOBW5R_c5ol2IR",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: migrate docs, data, and editor components to typescript",
-      "author": "devilkiller-ag",
-      "resourcePath": "/asyncapi/website/pull/2735",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "autoupdate",
-          "color": "ededed"
-        }
-      ],
-      "score": 17.230475324955524
-    },
-    {
-      "id": "PR_kwDOFDnrNc5dgyM7",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "feat: add POC for measuring adoption",
-      "author": "smoya",
-      "resourcePath": "/asyncapi/cli/pull/859",
-      "repo": "asyncapi/cli",
-      "labels": [],
-      "score": 16.943300736206268
-    },
-    {
-      "id": "I_kwDOBW5R_c580Z0o",
-      "isPR": false,
-      "isAssigned": false,
-      "title": "New Contributor Guide and Maintenance Setup",
-      "author": "derberg",
-      "resourcePath": "/asyncapi/website/issues/2586",
-      "repo": "asyncapi/website",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "84b6eb"
-        }
-      ],
-      "score": 16.65612614745701
     }
   ],
   "goodFirstIssues": [
+    {
+      "id": "I_kwDODou01c6C8lNQ",
+      "title": "FIx linting issues in studio-next",
+      "isAssigned": false,
+      "resourcePath": "/asyncapi/studio/issues/1029",
+      "repo": "asyncapi/studio",
+      "author": "Amzani",
+      "area": "Unknown",
+      "labels": [
+        {
+          "name": "enhancement",
+          "color": "a2eeef"
+        }
+      ]
+    },
     {
       "id": "I_kwDOE8Qh386CSg4-",
       "title": "Java generator does not include import for dictionary models",
@@ -219,21 +229,6 @@
         {
           "name": "Java generator",
           "color": "d4c5f9"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDODwv8N86CATWV",
-      "title": "Unaligned hero section",
-      "isAssigned": false,
-      "resourcePath": "/asyncapi/conference-website/issues/267",
-      "repo": "asyncapi/conference-website",
-      "author": "AceTheCreator",
-      "area": "Unknown",
-      "labels": [
-        {
-          "name": "enhancement",
-          "color": "a2eeef"
         }
       ]
     },
@@ -268,6 +263,10 @@
         {
           "name": "keep-open",
           "color": "f4d473"
+        },
+        {
+          "name": "bounty",
+          "color": "0E8A16"
         }
       ]
     },
@@ -693,36 +692,6 @@
         {
           "name": "enhancement",
           "color": "a2eeef"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUMg",
-      "title": "docs: generate code (interactive version) - adapt for v3",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1870",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
-        }
-      ]
-    },
-    {
-      "id": "I_kwDOBW5R_c5qGUMB",
-      "title": "docs: create an AsyncAPI document (interactive version) - adapt for v3 ",
-      "isAssigned": true,
-      "resourcePath": "/asyncapi/website/issues/1869",
-      "repo": "asyncapi/website",
-      "author": "alequetzalli",
-      "area": "docs",
-      "labels": [
-        {
-          "name": "📑 docs",
-          "color": "E50E99"
         }
       ]
     },
