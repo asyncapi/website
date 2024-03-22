@@ -1,6 +1,6 @@
 module.exports = {
     i18n: {
-        languages: ["en", "de","hi"],
+        languages: ["en", "de"],
         defaultLanguage: "en",
         namespaces: ["landing-page", "common", "tools"],
         defaultNamespace: "landing-page",
