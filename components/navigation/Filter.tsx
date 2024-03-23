@@ -15,7 +15,7 @@ import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
  * @param {Object[]} props.checks - The list of filter options.
  * @param {string} [props.className] - Additional CSS classes for styling.
  */
-export default function Filter({ data, onFilter, checks, className }: FilterProps): JSX.Element {
+export default function Filter({ data, onFilter, checks, className }: FilterProps) {
   const router: NextRouter = useRouter();
   const [filters, setFilters] = useState<{ [key: string]: Option[] }>({});
   const [query, setQuery] = useState<{ [key: string]: string }>({});

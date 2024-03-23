@@ -1,7 +1,23 @@
+interface DataObject {
+  [key: string]: any;
+}
+
+interface FilterCriteria {
+  name: string;
+}
+
+interface Filter {
+  [key: string]: string;
+}
+
+interface FilterOption {
+  value: string;
+  text: string;
+}
+
 /**
  * @description Sorts an array of objects based on a string property called 'value'.
  * @param arr Array of objects with a 'value' property of type string.
- * @returns Sorted array of objects.
  */
 export function sortFilter(arr: { value: string }[]): { value: string }[] {
   return arr.sort((a, b) => {
@@ -22,11 +38,11 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
  * @param data Array of data objects to filter.
  * @param setFilters Function to update the filters.
  */
-export const applyFilterList = (checks: { name: string }[],
-  data: { [key: string]: any }[],
-  setFilters: (lists: { [key: string]: { value: string; text: string }[] }) => void): void => {
+export const applyFilterList = (checks: FilterCriteria[],
+  data: DataObject[],
+  setFilters: (lists: { [key: string]: FilterOption[] }) => void): void => {
   if (Object.keys(checks).length) {
-    const lists: { [key: string]: { value: string; text: string }[] } = {};
+    const lists: { [key: string]: FilterOption[] } = {};
 
     checks.forEach((check) => {
       lists[check.name] = [];
@@ -109,9 +125,9 @@ export const applyFilterList = (checks: { name: string }[],
  * @param onFilter Function to apply the filter action.
  * @param query Filter criteria.
  */
-export const onFilterApply = (inputData: { [key: string]: any }[],
-  onFilter: (result: { [key: string]: any }[], query: { [key: string]: string }) => void,
-  query: { [key: string]: string }): void => {
+export const onFilterApply = (inputData: DataObject[],
+  onFilter: (result: DataObject[], query: Filter) => void,
+  query: Filter): void => {
   let result = inputData;
 
   if (query && Object.keys(query).length >= 1) {
@@ -122,7 +138,7 @@ export const onFilterApply = (inputData: { [key: string]: any }[],
         }
         if (Array.isArray(e[property])) {
           return (
-            e[property].some((data:any) => data.name === query[property]) ||
+            e[property].some((data: any) => data.name === query[property]) ||
             e[property].includes(query[property]) ||
             false
           );
@@ -136,4 +152,3 @@ export const onFilterApply = (inputData: { [key: string]: any }[],
   }
   onFilter(result, query);
 };
-

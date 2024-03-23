@@ -36,7 +36,18 @@ function isActiveSlug(slug: string, activeSlug: string, sectionSlug?: string): b
 
 /**
  * @description Component representing an item in the documentation navigation.
- * @param {DocsNavItemProps} props - The props for the DocsNavItem component.
+ * @param {string} props.title - The title of the navigation item.
+ * @param {string} props.slug - The slug representing the item.
+ * @param {string} [props.href] - The href for the link.
+ * @param {string} props.activeSlug - The active slug.
+ * @param {string} [props.sectionSlug] - The slug of the section.
+ * @param {() => void} [props.onClick] - Function to call when the item is clicked.
+ * @param {string} [props.defaultClassName] - Default class name for the item.
+ * @param {string} [props.inactiveClassName] - Class name when the item is inactive.
+ * @param {string} [props.activeClassName] - Class name when the item is active.
+ * @param {object} [props.bucket] - Optional bucket configuration.
+ * @param {string} props.bucket.className - Class name for the bucket.
+ * @param {React.ComponentType<any>} props.bucket.icon - Icon component for the bucket.
  */
 export default function DocsNavItem({
   title,

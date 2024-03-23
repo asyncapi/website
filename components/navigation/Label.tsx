@@ -5,7 +5,7 @@ enum LabelColor {
 
 interface LabelProps {
   text: string;
-  color?: LabelColor; // Define the color prop as optional with specific values
+  color?: LabelColor;
 }
 
 /**
