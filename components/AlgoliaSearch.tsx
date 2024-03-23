@@ -29,7 +29,7 @@ interface IHitProps {
     __is_child?: () => boolean;
     __is_first?: () => boolean;
     __is_last?: () => boolean;
-  }
+  };
   children: React.ReactNode;
 }
 
@@ -76,10 +76,7 @@ function transformItems(items: DocSearchHit[]) {
       url: `${a.pathname}${hash}`,
       __is_result: () => true,
       __is_parent: () => item.type === 'lvl1' && items.length > 1 && index === 0,
-      __is_child: () => item.type !== 'lvl1' &&
-        items.length > 1 &&
-        items[0].type === 'lvl1' &&
-        index !== 0,
+      __is_child: () => item.type !== 'lvl1' && items.length > 1 && items[0].type === 'lvl1' && index !== 0,
       __is_first: () => index === 1,
       __is_last: () => index === items.length - 1 && index !== 0
     };
@@ -116,30 +113,32 @@ function Hit({ hit, children }: IHitProps) {
 function AlgoliaModal({ onClose, initialQuery, indexName }: AlgoliaModalProps) {
   const router = useRouter();
 
-  return createPortal(<DocSearchModal
-    initialQuery={initialQuery}
-    initialScrollY={window.scrollY}
-    searchParameters={{
-      distinct: 1
-    }}
-    placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
-    onClose={onClose}
-    indexName={indexName}
-    apiKey={API_KEY}
-    appId={APP_ID}
-    navigator={{
-      navigate({ itemUrl }) {
-        onClose();
-        router.push(itemUrl);
-      }
-    }}
-    hitComponent={Hit}
-    transformItems={transformItems}
-    getMissingResultsUrl={({ query }) => {
-      return `https://github.com/asyncapi/website/issues/new?title=Cannot%20search%20given%20query:%20${query}`;
-    }}
-  />,
-  document.body);
+  return createPortal(
+    <DocSearchModal
+      initialQuery={initialQuery}
+      initialScrollY={window.scrollY}
+      searchParameters={{
+        distinct: 1
+      }}
+      placeholder={indexName === DOCS_INDEX_NAME ? 'Search documentation' : 'Search resources'}
+      onClose={onClose}
+      indexName={indexName}
+      apiKey={API_KEY}
+      appId={APP_ID}
+      navigator={{
+        navigate({ itemUrl }) {
+          onClose();
+          router.push(itemUrl);
+        }
+      }}
+      hitComponent={Hit}
+      transformItems={transformItems}
+      getMissingResultsUrl={({ query }) => {
+        return `https://github.com/asyncapi/website/issues/new?title=Cannot%20search%20given%20query:%20${query}`;
+      }}
+    />,
+    document.body
+  );
 }
 
 /**
@@ -152,10 +151,7 @@ function isEditingContent(event: KeyboardEvent) {
   const { tagName } = element as HTMLElement;
 
   return (
-    (element as HTMLElement).isContentEditable ||
-    tagName === 'INPUT' ||
-    tagName === 'SELECT' ||
-    tagName === 'TEXTAREA'
+    (element as HTMLElement).isContentEditable || tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA'
   );
 }
 
@@ -235,27 +231,32 @@ function useDocSearchKeyboardEvents({ isOpen, onOpen, onClose }: IUseDocSearchKe
  * @description The Algolia search component used for searching the website
  * @param {React.ReactNode} children - The content of the page
  */
-export default function AlgoliaSearch({ children } : { children: React.ReactNode }) {
+export default function AlgoliaSearch({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [indexName, setIndexName] = useState<string>(INDEX_NAME);
   const [initialQuery, setInitialQuery] = useState<string>();
 
-  const onOpen = useCallback((_indexName?: string) => {
-    if (_indexName) {
-      setIndexName(_indexName);
-    }
-    setIsOpen(true);
-  }, [setIsOpen, setIndexName]);
+  const onOpen = useCallback(
+    (_indexName?: string) => {
+      if (_indexName) {
+        setIndexName(_indexName);
+      }
+      setIsOpen(true);
+    },
+    [setIsOpen, setIndexName]
+  );
 
   const onClose = useCallback(() => {
     setIsOpen(false);
   }, [setIsOpen]);
 
-  const onInput = useCallback((e: React.KeyboardEvent) => {
-    setIsOpen(true);
-    setInitialQuery(e.key);
-  },
-  [setIsOpen, setInitialQuery]);
+  const onInput = useCallback(
+    (e: React.KeyboardEvent) => {
+      setIsOpen(true);
+      setInitialQuery(e.key);
+    },
+    [setIsOpen, setInitialQuery]
+  );
 
   useDocSearchKeyboardEvents({
     isOpen,
@@ -269,9 +270,7 @@ export default function AlgoliaSearch({ children } : { children: React.ReactNode
       <Head>
         <link rel='preconnect' href={`https://${APP_ID}-dsn.algolia.net`} crossOrigin='anonymous' />
       </Head>
-      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>
-        {children}
-      </SearchContext.Provider>
+      <SearchContext.Provider value={{ isOpen, onOpen, onClose, onInput }}>{children}</SearchContext.Provider>
       {isOpen && <AlgoliaModal initialQuery={initialQuery ?? ''} onClose={onClose} indexName={indexName} />}
     </>
   );

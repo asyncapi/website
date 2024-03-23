@@ -20,7 +20,7 @@ interface CardProps {
   btnText: string;
   btnBg: string;
   link: string;
-};
+}
 
 /**
  * @description This component displays Small Home Card.
@@ -52,7 +52,8 @@ export default function Card({
       <Link href={link} target={link.includes('http') ? '_blank' : undefined}>
         <div
           className={`w-full cursor-pointer rounded border border-[#ad20e2] p-3 shadow-xl ${bg}`}
-          data-testid='Card-small-bg'>
+          data-testid='Card-small-bg'
+        >
           <div className='flex w-min justify-between rounded-xl bg-gray-100 p-2 text-center text-xs'>
             <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
           </div>
@@ -62,10 +63,7 @@ export default function Card({
             </Heading>
           </div>
           <div className='mt-2' data-testid='Card-desc'>
-            <Paragraph
-              textColor={bg ? 'text-black' : 'text-gray-600'}
-              typeStyle={ParagraphTypeStyle.sm}
-            >
+            <Paragraph textColor={bg ? 'text-black' : 'text-gray-600'} typeStyle={ParagraphTypeStyle.sm}>
               {description}
             </Paragraph>
           </div>
@@ -79,21 +77,18 @@ export default function Card({
 
   return (
     <div
-      className={`h-140 w-full rounded border p-6 shadow-xl ${!bg && 'border-[#ad20e2]'
-      } ${bg}`}
-      data-testid='Card-lg-bg'>
+      className={`h-140 w-full rounded border p-6 shadow-xl ${!bg && 'border-[#ad20e2]'} ${bg}`}
+      data-testid='Card-lg-bg'
+    >
       <div
         className={`flex w-min justify-between rounded-xl p-2 text-center text-xs ${taglineBg}`}
-        data-testid='Card-lg-tagline'>
+        data-testid='Card-lg-tagline'
+      >
         <span>{icon}</span> <span className='ml-[5px]'>{tagline}</span>
       </div>
 
       <div className='mt-10' data-testid='Card-heading-lg'>
-        <Heading
-          level={HeadingLevel.h1}
-          typeStyle={HeadingTypeStyle.lg}
-          textColor={bg && 'text-white'}
-        >
+        <Heading level={HeadingLevel.h1} typeStyle={HeadingTypeStyle.lg} textColor={bg && 'text-white'}>
           {heading}
         </Heading>
       </div>
@@ -103,11 +98,10 @@ export default function Card({
       <div className='mt-10'>
         <Link href={link} data-testid='Card-link-lg'>
           <div className={`flex ${btnBg} cursor-pointer`}>
-            <IconArrowUp className={`w-[20px] ${btnBg}`} />{' '}
-            <span className='ml-2 text-sm'>{btnText}</span>
+            <IconArrowUp className={`w-[20px] ${btnBg}`} /> <span className='ml-2 text-sm'>{btnText}</span>
           </div>
         </Link>
       </div>
     </div>
   );
-};
+}

@@ -8,10 +8,10 @@ import Card from './Card';
  */
 export default function DocsCards() {
   return (
-    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div' >
-      {buckets.map(card => (
+    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2' data-testid='Docs-main-div'>
+      {buckets.map((card) => (
         <Card key={card.title} {...card} />
       ))}
     </div>
   );
-};
+}

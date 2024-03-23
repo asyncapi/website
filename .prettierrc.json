@@ -3,5 +3,10 @@
   "jsxSingleQuote": true,
   "arrowParens": "always",
   "trailingComma": "es5",
-  "printWidth": 120
+  "printWidth": 120,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true,
+  "useTabs": false,
+  "parser": "typescript"
 }

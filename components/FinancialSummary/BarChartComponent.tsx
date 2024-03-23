@@ -39,9 +39,11 @@ export default function BarChartComponent() {
   }, []);
 
   // Filtering data based on selected month and category
-  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) => selectedMonth === 'All Months' || selectedMonth === month
-    ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
-    : []);
+  const filteredData: ExpenseItem[] = Object.entries(ExpensesData).flatMap(([month, entries]) =>
+    selectedMonth === 'All Months' || selectedMonth === month
+      ? entries.filter((entry) => selectedCategory === 'All Categories' || entry.Category === selectedCategory)
+      : []
+  );
 
   // Calculating total amount of filtered data
   const totalAmount: number = filteredData.reduce((total, entry) => total + parseFloat(entry.Amount), 0);
@@ -120,7 +122,9 @@ export default function BarChartComponent() {
               fill='#7B5DD3FF'
               onClick={(data) => {
                 const category = data.payload.Category;
-                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find((obj) => obj.category === category);
+                const matchedLinkObject: ExpensesLinkItem | undefined = ExpensesLinkData.find(
+                  (obj) => obj.category === category
+                );
 
                 if (matchedLinkObject) {
                   window.open(matchedLinkObject.link, '_blank');

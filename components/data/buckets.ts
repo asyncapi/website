@@ -1,4 +1,3 @@
-
 import type { IconType } from '@/types/components/IconType';
 
 import IconGettingStarted from '../icons/GettingStarted';
@@ -41,7 +40,7 @@ export const buckets: BucketType[] = [
   {
     name: 'guides',
     title: 'Guides',
-    description: 'Our Guides section teaches AsyncAPI\'s capabilities at a high level.',
+    description: "Our Guides section teaches AsyncAPI's capabilities at a high level.",
     link: '/docs/guides',
     className: 'bg-primary-200',
     borderClassName: 'border-primary-200',
@@ -83,7 +82,7 @@ export const buckets: BucketType[] = [
     borderClassName: 'border-orange-200',
     Icon: IconUsers
   }
-].map(bucket => {
+].map((bucket) => {
   // we need such a mapping for some parts of website, e.g navigation blocks use the `icon` property, not `Icon` etc.
   return {
     ...bucket,
