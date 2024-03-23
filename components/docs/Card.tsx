@@ -12,7 +12,7 @@ interface CardProps {
   description: string;
   link: string;
   className: string;
-  Icon: IconType;
+  Icon: React.ComponentType<any>;
 }
 
 /**
