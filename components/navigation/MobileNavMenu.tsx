@@ -47,10 +47,10 @@ export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMen
         <div className='shadow-xs divide-y-2 divide-gray-50 rounded-lg bg-white'>
           <div className='space-y-6 px-5 pb-6 pt-5'>
             <div className='flex items-center justify-between'>
-              <Link href='/' passHref>
-                <a className='cursor-pointer' data-testid='MobileNav-Logo'>
-                  <AsyncAPILogo className='h-8 w-auto' />
-                </a>
+              <Link href='/' passHref className='cursor-pointer' data-testid='MobileNav-Logo'>
+
+                <AsyncAPILogo className='h-8 w-auto' />
+
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton
@@ -98,17 +98,18 @@ export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMen
               <div>
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'><a className='cursor-pointer'>Others</a><NavItemDropdown /></h4>
                 {open === 'others' && otherItems.map((item: MenuItem, index: number) => (
-                  <Link href={item.href} key={index} passHref>
-                    <a
-                      target={item.target || '_self'}
-                      rel='noopener noreferrer'
-                      key={index}
-                      className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
-                      data-testid='MobileNav-others'
-                    >
-                      {item.text}
-                    </a>
-                  </Link>
+                  (<Link
+                    href={item.href}
+                    key={index}
+                    passHref
+                    target={item.target || '_self'}
+                    rel='noopener noreferrer'
+                    className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                    data-testid='MobileNav-others'>
+
+                    {item.text}
+
+                  </Link>)
                 ))}
               </div>
             </div>
