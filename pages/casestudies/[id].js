@@ -9,7 +9,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
 import { generateCaseStudyContent } from "../../lib/staticHelpers";
-import { readYamlFile } from '../../scripts/casestudies/readyaml.js'
+import { readYamlFile } from '../../components/helpers/read-yaml-file.js'
 
 const renderContent = (content, allComponents, level) => {
   const typeStyle =
