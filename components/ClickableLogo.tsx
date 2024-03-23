@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AsyncAPILogo from './AsyncAPILogo';
 
 interface IClickableLogoProps {
-  href: string;
+  href?: string;
   className?: string;
   logoClassName?: string;
 }
