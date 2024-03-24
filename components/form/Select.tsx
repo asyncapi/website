@@ -17,8 +17,8 @@ export default function Select({
   options,
   selected
 }: SelectProps) {
-  const handleOnChange = (ev: ChangeEvent<HTMLSelectElement>) => {
-    onChange(ev.target.value);
+  const handleOnChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    onChange(event.target.value);
   };
 
   return (

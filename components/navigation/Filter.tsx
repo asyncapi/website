@@ -2,10 +2,20 @@ import type { NextRouter } from 'next/router';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import type { FilterProps, Option } from '@/types/navigation/Filter';
-
 import Select from '../form/Select';
 import { applyFilterList, onFilterApply } from '../helpers/applyFilter';
+
+export interface Option {
+  value: string;
+  text: string;
+}
+
+export interface FilterProps {
+  data: any[];
+  onFilter: (data: any[]) => void;
+  checks: { name: string; options?: Option[] }[];
+  className: string;
+}
 
 /**
  * @description Component representing a filter for data.
@@ -28,7 +38,9 @@ export default function Filter({ data, onFilter, checks, className }: FilterProp
 
   // Apply filter when query or data changes
   useEffect(() => {
-    onFilterApply(data, onFilter, query);
+    const filterWithValue = { value: JSON.stringify(query), ...query };
+
+    onFilterApply(data, onFilter, filterWithValue);
   }, [query, data, onFilter]);
 
   return (

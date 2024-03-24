@@ -1,9 +1,24 @@
 import { useEffect, useState } from 'react';
 
-import type { SubCategoryDocsNavProps } from '@/types/navigation/SubCategoryDocsNav';
-
 import DocsArrow from '../icons/DocsArrow';
 import DocsNavItem from './DocsNavItem';
+
+export interface SubCategoryDocsNavProps {
+  subCategory: {
+    item: {
+      title: string;
+      slug: string;
+      href?: string;
+    };
+    children?: {
+      title: string;
+      slug: string;
+      href?: string;
+    }[];
+  };
+  activeItem: string;
+  onClick: () => void;
+}
 
 /**
  * @description Renders a navigation component for a subcategory in the documentation.

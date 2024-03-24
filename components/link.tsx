@@ -75,7 +75,6 @@ export default function LinkComponent({ children, locale, ...props }: LinkCompon
   );
 }
 
-/* eslint-disable-next-line no-unused-vars */
-export const LinkText = ({ href, children, ..._props }: LinkComponentProps) => {
+export const LinkText = ({ href, children }: LinkComponentProps) => {
   return <Link href={href || ''}>{children}</Link>;
 };

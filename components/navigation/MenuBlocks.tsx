@@ -1,11 +1,24 @@
 import { useRouter } from 'next/router';
 
-import type { MenuBlocksProps } from '@/types/navigation/MenuBlocks';
 import { ParagraphTypeStyle } from '@/types/typography/Paragraph';
 
 import LinkComponent from '../link';
 import Paragraph from '../typography/Paragraph';
 import Label from './Label';
+
+export interface MenuItem {
+  title: string;
+  href: string;
+  description: string;
+  icon: React.ElementType;
+  className?: string;
+  comingSoon?: boolean;
+  beta?: boolean;
+}
+
+export interface MenuBlocksProps {
+  items?: MenuItem[];
+}
 
 /**
  * @description Component representing a set of menu blocks.

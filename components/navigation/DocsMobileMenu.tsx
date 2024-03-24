@@ -1,11 +1,19 @@
 import React from 'react';
 
-import type { DocsMobileMenuProps } from '@/types/navigation/DocsMobileMenu';
-
 import { DOCS_INDEX_NAME, SearchButton } from '../AlgoliaSearch';
 import ClickableLogo from '../ClickableLogo';
 import IconLoupe from '../icons/Loupe';
 import DocsNav from './DocsNav';
+
+export interface DocsMobileMenuProps {
+  post: {
+      slug: string;
+  };
+  navigation: {
+      [key: string]: any;
+  };
+  onClickClose?: () => void;
+}
 
 /**
  * @description Component representing the mobile menu for documentation.
