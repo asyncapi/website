@@ -4,7 +4,6 @@ import AlgoliaSearch, { SearchButton } from '@/components/AlgoliaSearch';
 import Button from '@/components/buttons/Button';
 import IconArrowRight from '@/components/icons/ArrowRight';
 import IconLoupe from '@/components/icons/Loupe';
-import NavBar from '@/components/navigation/NavBar';
 
 import { useTranslation } from '../utils/i18n';
 
@@ -20,7 +19,6 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <NavBar/>
       <div className='flex flex-col items-center justify-center gap-2 md:flex-row'>
         <Button
           className='block w-full md:w-auto'
