@@ -277,4 +277,3 @@ asyncapi:
     * [AsyncAPI JavaScript Parser](https://github.com/asyncapi/parser-js) with [Avro Schema Parser](https://github.com/asyncapi/avro-schema-parser).
   fullExample: resources/casestudies/adeo/asyncapi.yaml
 additionalResources: Watch [this video presentation about AsyncAPI case study](https://www.youtube.com/watch?v=WwhRbvrf6Rs) from Ludovic Dussart, Ineat & Antoine Delequeuche, Adeo.
-examples: ./public/resources/casestudies/adeo/asyncapi.yaml

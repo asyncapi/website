@@ -9,7 +9,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import GenericLayout from "../../components/layout/GenericLayout";
 import CaseTOC from "../../components/CaseTOC";
 import { generateCaseStudyContent } from "../../lib/staticHelpers";
-import { readYamlFile } from '../../components/helpers/read-yaml-file.js'
+import { readYamlFile } from '../../components/helpers/read-yaml-file.js';
 
 const renderContent = (content, allComponents, level) => {
   const typeStyle =
@@ -55,7 +55,7 @@ const renderContent = (content, allComponents, level) => {
 
 export async function getStaticProps({ params }) {
   const data = CaseStudiesList.filter((p) => p.id === params.id);
-  const asyncapiDoc = await readYamlFile(data[0].examples);
+  const asyncapiDoc = await readYamlFile(data[0].asyncapi.fullExample);
 
   return {
     props: {
@@ -77,7 +77,7 @@ export async function getStaticProps({ params }) {
       asyncapiBindings: await serialize(data[0].asyncapi.bindings),
       asyncapiTools: await serialize(data[0].asyncapi.tools),
       additionalResources: await serialize(data[0].additionalResources),
-      examples: await serialize(asyncapiDoc),
+      fullExample: await serialize(asyncapiDoc),
     },
   };
 }
@@ -111,7 +111,7 @@ function Index({
   asyncapiBindings,
   asyncapiTools,
   additionalResources,
-  examples,
+  fullExample,
 }) {
   const image = "/img/social/website-card.png";
   const allComponents = getMDXComponents();
@@ -136,7 +136,7 @@ function Index({
     asyncapiTools,
     additionalResources,
     casestudy,
-    examples,
+    fullExample,
   });
 
   return (
