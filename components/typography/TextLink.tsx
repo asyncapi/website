@@ -35,7 +35,7 @@ export default function TextLink({
       className={classNames}
       id={id}
       data-testid='TextLink-href'
-    >
+      legacyBehavior>
       <span className={classNames}>
         {children}
       </span>
