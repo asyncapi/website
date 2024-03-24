@@ -25,7 +25,7 @@ export default function TutorialList({ className = '' }: TutorialListProps) {
   return (
     <div className={`${className} grid grid-cols-1 gap-4 sm:grid-cols-2`}>
       {tutorials.map((tuto: IDoc, index: number) => (
-        <Link href={tuto.slug} key={index}>
+        <Link href={tuto.slug} key={index} legacyBehavior>
           <span
             className='mt-4 flex max-w-lg cursor-pointer flex-col rounded border border-gray-200 p-6 text-gray-700 shadow-md transition-all duration-300 ease-in-out hover:border-gray-300 hover:shadow-lg'
           >
