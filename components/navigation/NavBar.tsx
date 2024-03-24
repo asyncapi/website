@@ -155,10 +155,14 @@ export default function NavBar({
         {!hideLogo && (
           <div className='lg:w-auto lg:flex-1'>
             <div className='flex' >
-              <Link href='/'>
-                <a className='cursor-pointer' aria-label='AsyncAPI' data-testid='Navbar-logo'>
-                  <AsyncAPILogo className='h-8 w-auto sm:h-8' />
-                </a>
+              <Link
+                href='/'
+                className='cursor-pointer'
+                aria-label='AsyncAPI'
+                data-testid='Navbar-logo'>
+
+                <AsyncAPILogo className='h-8 w-auto sm:h-8' />
+
               </Link>
             </div>
           </div>
