@@ -1,4 +1,4 @@
-import type { MenuItem } from '@/types/navigation/MenuBlocks';
+import { MenuItem } from './MenuBlocks';
 
 import MenuBlocks from './MenuBlocks';
 
