@@ -1,5 +1,4 @@
-import { MenuItem } from './MenuBlocks';
-
+import type { MenuItem } from './MenuBlocks';
 import MenuBlocks from './MenuBlocks';
 
 interface FlyoutProps {
