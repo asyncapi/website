@@ -20,10 +20,10 @@ export default function ClickableLogo({
   logoClassName
 }: IClickableLogoProps) {
   return (
-    <Link href={href}>
-      <a className={className}>
-        <AsyncAPILogo className={logoClassName} />
-      </a>
-    </Link>
+    (<Link href={href} className={className}>
+
+      <AsyncAPILogo className={logoClassName} />
+
+    </Link>)
   );
 }
