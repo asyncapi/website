@@ -104,14 +104,14 @@ export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMen
                 <h4 className='mb-4 flex justify-between font-medium text-gray-800'><a className='cursor-pointer'>Others</a><NavItemDropdown /></h4>
                 {open === 'others' && otherItems.map((item: MenuItem, index: number) => (
                   (<Link
-                  href={item.href}
-                  key={index}
-                  passHref
-                  target={item.target || '_self'}
-                  rel='noopener noreferrer'
-                  className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
-                  data-testid='MobileNav-others'
-                  legacyBehavior>
+                    href={item.href}
+                    key={index}
+                    passHref
+                    target={item.target || '_self'}
+                    rel='noopener noreferrer'
+                    className='mb-4 block rounded-lg py-1 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-50'
+                    data-testid='MobileNav-others'
+                    legacyBehavior>
 
                     {item.text}
 
