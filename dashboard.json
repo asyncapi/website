@@ -38,7 +38,7 @@
           "color": "f9dd4b"
         }
       ],
-      "score": 26.420062164931807
+      "score": 26.707236753681066
     },
     {
       "id": "I_kwDOBW5R_c5Pi3rO",
@@ -70,6 +70,17 @@
       "repo": "asyncapi/community",
       "labels": [],
       "score": 22.112443333692923
+    },
+    {
+      "id": "PR_kwDOFLhIt85js7KX",
+      "isPR": true,
+      "isAssigned": false,
+      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
+      "author": "Barbanio",
+      "resourcePath": "/asyncapi/community/pull/1013",
+      "repo": "asyncapi/community",
+      "labels": [],
+      "score": 20.38939580119737
     },
     {
       "id": "PR_kwDODou01c5Iv4zR",
@@ -133,17 +144,6 @@
         }
       ],
       "score": 19.527872034949596
-    },
-    {
-      "id": "PR_kwDOFLhIt85js7KX",
-      "isPR": true,
-      "isAssigned": false,
-      "title": "chore: add documents CoC Committee and Incident Resolution Procedures",
-      "author": "Barbanio",
-      "resourcePath": "/asyncapi/community/pull/1013",
-      "repo": "asyncapi/community",
-      "labels": [],
-      "score": 19.240697446200336
     },
     {
       "id": "I_kwDOFDnrNc51TZDT",
@@ -541,6 +541,10 @@
         {
           "name": "bug",
           "color": "d73a4a"
+        },
+        {
+          "name": "stale",
+          "color": "ededed"
         }
       ]
     },
@@ -609,10 +613,6 @@
         {
           "name": "Hacktoberfest",
           "color": "FF8AE2"
-        },
-        {
-          "name": "stale",
-          "color": "ededed"
         }
       ]
     },
