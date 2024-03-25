@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 
-import type { TabsProps } from '@/types/tabs/tabs';
+export interface Tab {
+  id: string;
+  content: React.ReactNode;
+}
+
+export interface TabsProps {
+  tabs?: Tab[];
+  className?: string;
+}
 
 /**
  * @description Tabs component to display a set of tabs with associated content.
- * @param {TabsProps} props - The props for the Tabs component.
+ * @param {Tab[]} [tabs=[]] - An array of tab objects.
+ * @param {string} [className=''] - Additional CSS classes to apply to the Tabs component.
  */
 export default function Tabs({ tabs = [], className = '' }: TabsProps): React.ReactElement {
   const filteredTabs = tabs.filter(Boolean);

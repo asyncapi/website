@@ -5,8 +5,8 @@ export interface Asyncapi3SchemaFormatComparisonProps {
 }
 
 /**
- * @param {string} [props.className=''] - Additional CSS classes for styling.
  * @description React component for comparing AsyncAPI schema formats between versions 2.x and 3.0.
+ * @param {string} [props.className=''] - Additional CSS classes for styling.
  */
 export default function Asyncapi3SchemaFormatComparison({ className = '' } : Asyncapi3SchemaFormatComparisonProps) {
   const [hoverState, setHoverState] = useState({
