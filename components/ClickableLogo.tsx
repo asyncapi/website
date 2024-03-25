@@ -21,9 +21,7 @@ export default function ClickableLogo({
 }: IClickableLogoProps) {
   return (
     (<Link href={href} className={className}>
-
       <AsyncAPILogo className={logoClassName} />
-
     </Link>)
   );
 }

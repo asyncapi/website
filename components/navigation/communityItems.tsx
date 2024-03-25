@@ -7,7 +7,15 @@ import IconNewsroom from '../icons/Newsroom';
 import IconSlack from '../icons/Slack';
 import IconTSC from '../icons/TSC';
 
-const communityItems = [
+interface CommunityItem {
+  icon: React.ComponentType<any>;
+  title: string;
+  href: string;
+  target?: string;
+  description: string;
+}
+
+const communityItems: CommunityItem[] = [
   {
     icon: IconGithubOrganization,
     title: 'GitHub Organization',

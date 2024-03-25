@@ -69,10 +69,8 @@ export default function NavItem({
         }`}
         target={target}
         data-testid='NavItem-Link'>
-
         <span>{text}</span>
         {hasDropdown && <NavItemDropdown />}
-
       </Link>)
     );
   }

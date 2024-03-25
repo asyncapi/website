@@ -53,9 +53,7 @@ export default function MobileNavMenu({ onClickClose = () => { } }: MobileNavMen
                 className='cursor-pointer'
                 data-testid='MobileNav-Logo'
                 legacyBehavior>
-
                 <AsyncAPILogo className='h-8 w-auto' />
-
               </Link>
               <div className='justify-content -mr-2 flex flex-row items-center' data-testid='MobileNav-button'>
                 <SearchButton

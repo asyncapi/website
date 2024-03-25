@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 
-import type { SelectProps } from '@/types/form/Select';
+import type { SelectProps } from '../form/Select';
 
 /**
  * @description LanguageSelect component for selecting a language.

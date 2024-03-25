@@ -160,9 +160,7 @@ export default function NavBar({
                 className='cursor-pointer'
                 aria-label='AsyncAPI'
                 data-testid='Navbar-logo'>
-
                 <AsyncAPILogo className='h-8 w-auto sm:h-8' />
-
               </Link>
             </div>
           </div>

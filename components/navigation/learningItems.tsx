@@ -6,7 +6,15 @@ import IconPlant from '../icons/Plant';
 import IconRocket from '../icons/Rocket';
 import IconUsers from '../icons/Users';
 
-const learningItems = [
+interface LearningItem {
+  href: string;
+  icon: React.ComponentType<any>;
+  className: string;
+  title: string;
+  description: string;
+}
+
+const learningItems: LearningItem[] = [
   { href: '/docs/concepts', icon: IconRocket, className: 'bg-secondary-200', title: 'Concepts', description: 'Our Concepts section defines the concepts of AsyncAPI features and capabilities.' },
   { href: '/docs/tutorials', icon: IconGradCap, className: 'bg-pink-100', title: 'Tutorials', description: 'Our Tutorials section teaches beginner processes with AsyncAPI, guiding you from Point A to Point B.' },
   { href: '/docs/tools', icon: IconPlant, className: 'bg-green-200', title: 'Tools', description: 'Our Tools section documents the AsyncAPI tools ecosystem.' },

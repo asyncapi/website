@@ -37,14 +37,12 @@ export default function NavMenu({ items = [] }: NavMenuProps) {
                 rel='noopener noreferrer'
                 className='-m-3 block space-y-1 rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50'
                 data-testid='NavMenu-Link'>
-
                 <Paragraph typeStyle={ParagraphTypeStyle.sm} textColor='text-gray-900' className='font-semibold'>
                   {item.text}
                 </Paragraph>
                 <Paragraph typeStyle={ParagraphTypeStyle.sm}>
                   {item.description}
                 </Paragraph>
-
               </Link>)
             ))}
           </div>

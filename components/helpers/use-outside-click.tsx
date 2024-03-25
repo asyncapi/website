@@ -8,9 +8,7 @@ import { useEffect, useRef } from 'react';
 export function useOutsideClick(callback: (e: MouseEvent) => void): RefObject<HTMLDivElement> {
   const callbackRef = useRef<((e: MouseEvent) => void) | null>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => { callbackRef.current = callback; }, [callback]);
-
   useEffect(() => {
     /**
      * @description Handles the click event outside the specified element.
@@ -21,11 +19,8 @@ export function useOutsideClick(callback: (e: MouseEvent) => void): RefObject<HT
         !innerRef.current.contains(e.target as Node)
       ) callbackRef.current(e);
     }
-
     document.addEventListener('click', handleClick);
-
     return () => document.removeEventListener('click', handleClick);
   }, [innerRef]);
-
   return innerRef;
 }

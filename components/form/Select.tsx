@@ -2,7 +2,17 @@ import type { ChangeEvent } from 'react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import type { SelectProps } from '@/types/form/Select';
+export interface Option {
+  value: string;
+  text: string;
+}
+
+export interface SelectProps {
+  className?: string;
+  onChange?: (selected: string) => void;
+  options: Option[];
+  selected?: string;
+}
 
 /**
  * @description Select component for form dropdown.
