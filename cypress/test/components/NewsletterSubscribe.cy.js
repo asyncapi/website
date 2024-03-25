@@ -9,8 +9,6 @@ describe('NewsletterSubscribe Component', () => {
     cy.get('[data-testid="NewsletterSubscribe-main"]').should('exist');
     cy.get('[data-testid="NewsletterSubscribe-text-input"]').type("name");
     cy.get('[data-testid="NewsletterSubscribe-email-input"]').type("test@gmail.com")
-    cy.get('form[name="form 1"]').should('exist');
-    cy.get('input[name="type"]').should('exist');
     cy.get('input[name="name"]').should('exist');
     cy.get('input[name="email"]').should('exist');
    

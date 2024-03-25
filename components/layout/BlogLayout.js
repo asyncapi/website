@@ -5,10 +5,8 @@ import moment from 'moment';
 import Head from '../Head';
 import BlogContext from '../../context/BlogContext';
 import TOC from '../TOC';
-import NavBar from '../navigation/NavBar';
 import Container from './Container';
 import AuthorAvatars from '../AuthorAvatars';
-import StickyNavbar from '../navigation/StickyNavbar';
 import AnnouncementHero from '../campaigns/AnnoucementHero';
 
 export default function BlogLayout({ post, children }) {
@@ -22,9 +20,6 @@ export default function BlogLayout({ post, children }) {
 
   return (
     <BlogContext.Provider value={{ post }}>
-      <StickyNavbar data-testid="BlogLayout-Navbar">
-        <NavBar className="max-w-screen-xl block px-4 sm:px-6 lg:px-8 mx-auto" />
-      </StickyNavbar>
       <AnnouncementHero className="my-4 mx-8" />
       <Container cssBreakingPoint="lg" flex flexReverse>
         <TOC
