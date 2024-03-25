@@ -29,6 +29,7 @@ export function sortFilter(arr: { value: string }[]): { value: string }[] {
     if (a.value > b.value) {
       return 1;
     }
+
     return 0;
   });
 }
@@ -44,13 +45,16 @@ export const applyFilterList = (checks: FilterCriteria[],
   setFilters: (lists: { [key: string]: FilterOption[] }) => void): void => {
   if (Object.keys(checks).length) {
     const lists: { [key: string]: FilterOption[] } = {};
+
     checks.forEach((check) => {
       lists[check.name] = [];
     });
     for (let i = 0; i < data.length; i++) {
       const res = data[i];
+
       Object.keys(lists).forEach((key) => {
         const result = data[i][key];
+
         if (res) {
           if (lists[key].length) {
             if (Array.isArray(result)) {
@@ -61,6 +65,7 @@ export const applyFilterList = (checks: FilterCriteria[],
                       value: a.name,
                       text: a.name
                     };
+
                     lists[key].push(newData);
                     sortFilter(lists[key]);
                   }
@@ -69,6 +74,7 @@ export const applyFilterList = (checks: FilterCriteria[],
                     value: a,
                     text: a
                   };
+
                   lists[key].push(newData);
                   sortFilter(lists[key]);
                 }
@@ -78,6 +84,7 @@ export const applyFilterList = (checks: FilterCriteria[],
                 value: result,
                 text: result
               };
+
               lists[key].push(newData);
               sortFilter(lists[key]);
             }
@@ -88,12 +95,14 @@ export const applyFilterList = (checks: FilterCriteria[],
                   value: e.name,
                   text: e.name
                 };
+
                 lists[key].push(newData);
               } else {
                 const newData = {
                   value: e,
                   text: e
                 };
+
                 lists[key].push(newData);
               }
             });
@@ -102,6 +111,7 @@ export const applyFilterList = (checks: FilterCriteria[],
               value: result,
               text: result
             };
+
             lists[key].push(newData);
           }
         }
@@ -121,6 +131,7 @@ export const onFilterApply = (inputData: DataObject[],
   onFilter: (result: DataObject[], query: Filter) => void,
   query: Filter): void => {
   let result = inputData;
+
   if (query && Object.keys(query).length >= 1) {
     Object.keys(query).forEach((property) => {
       const res = result.filter((e) => {
@@ -134,8 +145,10 @@ export const onFilterApply = (inputData: DataObject[],
             false
           );
         }
+
         return false; // Fixing missing return value issue
       });
+
       result = res;
     });
   }
