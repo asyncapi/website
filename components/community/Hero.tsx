@@ -3,16 +3,14 @@ import Header from './Header';
 
 interface HeroProps {
   className?: string;
-};
+}
 
 /**
  * @description This component displays Hero Section.
  * @param {HeroProps} props - The props for Hero component.
  * @param {string} props.className - Additional CSS classes for styling.
  */
-export default function Hero({
-  className = ''
-}: HeroProps) {
+export default function Hero({ className = '' }: HeroProps) {
   return (
     <>
       <div className={`orbits overflow-hidden ${className}`}>
@@ -45,4 +43,4 @@ export default function Hero({
       </div>
     </>
   );
-};
+}

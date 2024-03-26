@@ -27,8 +27,10 @@ interface BlogPostItemProps {
  * @param {string} [props.id=''] - The HTML id attribute for the component.
  * @param {Ref<HTMLLIElement>} ref - Reference object for the component.
  */
-export default forwardRef(function BlogPostItem({ post, className = '', id = '' }: BlogPostItemProps,
-  ref: Ref<HTMLLIElement>) {
+export default forwardRef(function BlogPostItem(
+  { post, className = '', id = '' }: BlogPostItemProps,
+  ref: Ref<HTMLLIElement>
+) {
   let typeColors: [string, string] = ['bg-indigo-100', 'text-indigo-800'];
 
   switch (post.type.toLowerCase()) {
@@ -92,22 +94,24 @@ export default forwardRef(function BlogPostItem({ post, className = '', id = '' 
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline'>
                       {post.authors
-                        .map((author, index) => author.link ? (
-                          <a
-                            key={index}
-                            data-alt={author.name}
-                            href={author.link}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                            }}
-                            target='_blank'
-                            rel='noreferrer'
-                          >
-                            {author.name}
-                          </a>
-                        ) : (
-                          author.name
-                        ))
+                        .map((author, index) =>
+                          author.link ? (
+                            <a
+                              key={index}
+                              data-alt={author.name}
+                              href={author.link}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                              target='_blank'
+                              rel='noreferrer'
+                            >
+                              {author.name}
+                            </a>
+                          ) : (
+                            author.name
+                          )
+                        )
                         .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
                     </span>
                   </Heading>

@@ -45,7 +45,9 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
       <article className='h-full rounded-lg'>
         <Link legacyBehavior href={post.slug} passHref>
           <a
-            className={'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'}
+            className={
+              'flex h-full cursor-pointer flex-col divide-y divide-gray-200 overflow-hidden rounded-lg border border-gray-200 shadow-md transition-all duration-300 ease-in-out hover:shadow-lg md:max-w-164 md:flex-row'
+            }
             data-testid='FeaturedBlogPostItem-Link'
           >
             <img
@@ -83,22 +85,24 @@ export default function FeaturedBlogPost({ post, className = '' }: FeaturedBlogP
                   <Heading level={HeadingLevel.h3} typeStyle={HeadingTypeStyle.xsSemibold} textColor='text-gray-900'>
                     <span className='hover:underline' data-testid='FeaturedBlogPost-AuthorName'>
                       {post.authors
-                        .map((author, index) => author.link ? (
-                          <a
-                            key={index}
-                            data-alt={author.name}
-                            href={author.link}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                            }}
-                            target='_blank'
-                            rel='noreferrer'
-                          >
-                            {author.name}
-                          </a>
-                        ) : (
-                          author.name
-                        ))
+                        .map((author, index) =>
+                          author.link ? (
+                            <a
+                              key={index}
+                              data-alt={author.name}
+                              href={author.link}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                              target='_blank'
+                              rel='noreferrer'
+                            >
+                              {author.name}
+                            </a>
+                          ) : (
+                            author.name
+                          )
+                        )
                         .reduce((prev, curr) => [prev, ' & ', curr].join(''))}
                     </span>
                   </Heading>

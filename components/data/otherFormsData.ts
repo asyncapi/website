@@ -3,7 +3,8 @@ export const otherFormsData = [
     title: 'Employee involvement',
     imageUrl: '/img/illustrations/EmployeeInvolvement.webp',
     description:
-      'Assign your employees to contribute to projects under the AsyncAPI Initiative on a regular basis, and we\'ll welcome them as new maintainers.'
+      // eslint-disable-next-line max-len
+      "Assign your employees to contribute to projects under the AsyncAPI Initiative on a regular basis, and we'll welcome them as new maintainers."
   },
   {
     title: 'Service provision',
