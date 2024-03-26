@@ -110,5 +110,19 @@
     "url": "https://github.com/asyncapi/community/issues/1118",
     "banner": "",
     "date": "2024-03-27T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=bWdldGthMGpycXBtaHZ2MXA0dmJlOGpvOXMgY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1123",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/10c8e2ef-8c1b-4758-9751-d37a7e123864",
+    "date": "2024-04-02T16:00:00.000Z"
+  },
+  {
+    "title": "Community Meeting",
+    "calLink": "https://www.google.com/calendar/event?eid=ZGRuZ290dGk0aGQ3cmtoMXFhc205NHVsYW8gY19xOXRzZWlnbG9tZHNqNm5qdWh2YnB0czExY0Bn",
+    "url": "https://github.com/asyncapi/community/issues/1124",
+    "banner": "https://github.com/asyncapi/community/assets/40604284/e4085ee6-6e1a-45d7-8bbe-11b44432f8ef",
+    "date": "2024-04-16T08:00:00.000Z"
   }
 ]
