@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Bucket } from '../data/buckets';
 
 export interface DocsNavItemProps {
   title: string;
@@ -10,10 +11,7 @@ export interface DocsNavItemProps {
   defaultClassName?: string;
   inactiveClassName?: string;
   activeClassName?: string;
-  bucket?: {
-    className: string;
-    icon: React.ComponentType<any>;
-  };
+  bucket?: Bucket;
 }
 
 /**

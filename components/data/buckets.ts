@@ -6,7 +6,7 @@ import IconTutorials from '../icons/Tutorials';
 import IconUseCases from '../icons/UseCases';
 import IconUsers from '../icons/Users';
 
-interface Bucket {
+export interface Bucket {
   name: string;
   title: string;
   description: string;

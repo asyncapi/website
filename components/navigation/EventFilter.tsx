@@ -3,6 +3,12 @@ import React, { useEffect, useState } from 'react';
 
 import { getEvents } from '../../utils/staticHelpers';
 
+enum ActiveState {
+  All = 'All',
+  Upcoming = 'Upcoming',
+  Recorded = 'Recorded'
+}
+
 interface Event {
   date: moment.Moment;
 }
@@ -26,17 +32,17 @@ export default function EventFilter({ data, setData }: EventFilterProps) {
 
   useEffect(() => {
     switch (active) {
-      case 'All':
+      case ActiveState.All:
         setData(getEvents(data));
         break;
-      case 'Upcoming':
+      case ActiveState.Upcoming:
         setData(
           getEvents(data).filter((a: Event) => {
             return a.date.format() > currentDate;
           })
         );
         break;
-      case 'Recorded':
+      case ActiveState.Recorded:
         setData(
           getEvents(data).filter((a: Event) => {
             return a.date.format() < currentDate;
