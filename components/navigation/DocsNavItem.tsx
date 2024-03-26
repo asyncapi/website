@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Bucket } from '../data/buckets';
+
+import type { Bucket } from '../data/buckets';
 
 export interface DocsNavItemProps {
   title: string;
